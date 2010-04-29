@@ -11,6 +11,7 @@ XObject = imports.XObject.XObject;
 console = imports.console;
 
 
+Roo             = imports.Builder.Provider.Palete.Roo.Roo;
 Window =
 
 
@@ -23,7 +24,7 @@ Window =
 MidPropTree = new XObject({
          
         
-        xtype: 'Gtk.ScrolledWindow',
+        xtype: Gtk.ScrolledWindow,
         smooth_scroll : true,
         pack : [ 'pack_end', false, true, 0 ],
         
@@ -111,10 +112,6 @@ MidPropTree = new XObject({
                         currentData : false,
                         init : function() {
                             XObject.prototype.init.call(this); 
-                 
-                        
-                 
-                         
                             this.el.set_column_types ( 5, [
                                 GObject.TYPE_STRING,  // real key
                                  GObject.TYPE_STRING, // real type
@@ -135,7 +132,7 @@ MidPropTree = new XObject({
                             if (!fullpath.length) {
                                 return;
                             }
-                            this.currentData = Builder.Provider.Palete.Roo.proplist[fullpath];
+                            this.currentData = Roo.proplist[fullpath];
                             
                              
                              
@@ -155,9 +152,9 @@ MidPropTree = new XObject({
                             }
                             
                             Seed.print('Showing right?');
-                            if (!_win.el.visible) {
-                                Builder.Window._left.el.position = Builder.Window._left.el.position  + 150;
-                                _win.el.show();
+                            if (!MidPropTree.el.visible) {
+                                Window.get('left').el.position = Window.get('left').el.position  + 150;
+                                MidPropTree.el.show();
                             }
                             
                             
@@ -194,24 +191,18 @@ MidPropTree = new XObject({
 
                     {
                         
-                        xtype: 'TreeViewColumn',
+                        xtype: Gtk.TreeViewColumn,
                         pack : ['append_column'],
-                        listeners : {
-                            _rendered : function ()
-                            {
-                                this.el.add_attribute(this.items[0].el , 'markup', 4  );
-                            }
-                        },
+                        init : function() {
+                            XObject.prototype.init.call(this); 
+                 
+                        
+                            this.el.add_attribute(this.items[0].el , 'markup', 4  );
+                        }
                         items : [
-                        
-                        
-                        
                             {
-                                
-                                xtype : Gtk.CellRendererText',
+                                xtype : Gtk.CellRendererText,
                                 pack : ['pack_start'],
-                                
-
                             }
                         ]
                     }
