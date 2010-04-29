@@ -19,7 +19,7 @@ LeftTreeMenu = new XObject({
             {
                 
                 xtype : Gtk.MenuItem,
-                pakc : [ 'append' ],
+                pack : [ 'append' ],
                 label : "Delete Element",
                 listeners : {
                     activate : function () {
