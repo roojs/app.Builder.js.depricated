@@ -7,6 +7,8 @@ console = imports.console;
 Builder = imports['Builder.js'];
 Roo = imports['Roo.js'];
 
+StandardErrorDialog = imports.Builder.StandardErrorDialog.StandardErrorDialog;
+ProjectManager =      imports.Builder.Provider.ProjectManager.ProjectManager;
 /**
  * add/edit project
  * 
@@ -20,33 +22,24 @@ Roo = imports['Roo.js'];
 
 var _form = { };
 
-
-
-function create() // parent?
-{
+EditProject = new XObject({
     
-    
-    return {
-        xns : 'Gtk',
-        xtype : 'Dialog',
+        
+        xtype : Gtk.Dialog,
+        
         type: Gtk.WindowType.TOPLEVEL,
         deletable : false,
         modal : true,
-         
-        project : false,
+        
+        project : {},
         
         show : function (c) 
         {
             c = c || { name : '' , xtype : '' };
             this.project  = c;
             
-            for (k in _form) {
-                if (!_form[k]) {
-                    Seed.print(k);
-                    continue;
-                }
-                
-                _form[k].setValue(typeof(c[k]) == 'undefined' ? '' : c[k]);
+            [ 'xtype' , 'name' ].forEach(function(k) {
+                this.get(k).setValue(typeof(c[k]) == 'undefined' ? '' : c[k]);
             }
             this.el.show_all();
             this.success = c.success;
@@ -54,8 +47,8 @@ function create() // parent?
             
         },
         
-        listeners : 
-        {
+        listeners :  {
+            
             'delete-event' : function (widget, event) {
                 this.el.hide();
                 return true;
@@ -68,34 +61,9 @@ function create() // parent?
                     this.el.hide();
                     return;
                 }
-                if (!_form.xtype.getValue().length) {
-                    
-                    XN.xnew({
-                        xtype : 'MessageDialog',
-                        xns : 'Gtk',
-                        modal : true,
-                        buttons : Gtk.ButtonsType.OK,
-                        'message-type' : Gtk.MessageType.ERROR,
-                        //"secondary-text"           gchar*                : Read / Write
-                        //"secondary-use-markup"     gboolean              : Read / Write
-                        text   : "You have to set Project type",
-                        "use-markup"     : true,
-                        listeners : 
-                        {
-                            'delete-event' : function (widget, event) {
-                                this.el.hide();
-                                return true;
-                            },
-                            _rendered : function()
-                            {
-                                this.el.show_all();
-                            },
-                            response : function () {
-                                this.el.hide();
-                            }
-                        }
-                   });
-                    
+                if (!this.get('xtype').getValue().length) {
+                    StandardErrorDialog.show("You have to set Project type");
+                     
                     return;
                 }
                 this.el.hide();
@@ -103,8 +71,8 @@ function create() // parent?
                 
                 
                 
-                this.project.name  = _form.name.getValue();
-                this.project.xtype  = _form.xtype.getValue();
+                this.project.name  = this.get('name').getValue();
+                this.project.xtype  = this.get('xtype').getValue();
                 
                 
                 
@@ -139,31 +107,31 @@ function create() // parent?
         items : [
             {
                 
-                xtype : 'VBox',
+                xtype : Gtk.VBox',
                 xns: 'Gtk',
                 
-                packing : function(p,e) {
+                pack : function(p,e) {
                     p.el.get_content_area().add(e.el)
                 },
                 items : [
                     {
-                        xtype : 'HBox',
+                        xtype : Gtk.HBox',
                         xns: 'Gtk',
-                        packing : [ 'pack_start', false, true , 0 ],
+                        pack : [ 'pack_start', false, true , 0 ],
                         
                         items : [
                             {
-                                xtype : 'Label',
-                                packing : [ 'pack_start', false, true , 0 ],
+                                xtype : Gtk.Label',
+                                pack : [ 'pack_start', false, true , 0 ],
                                 xns: 'Gtk',
                                 label : "Project Name:"
                             },
                             
                             {
-                                xtype : 'Entry',
+                                xtype : Gtk.Entry',
                                 
                                 xns: 'Gtk',
-                                packing : [ 'pack_end', true, true , 0 ],
+                                pack : [ 'pack_end', true, true , 0 ],
                                 listeners : {
                                     _rendered  : function(self) {
                                         
@@ -183,14 +151,14 @@ function create() // parent?
                         
                     },
                     {
-                        xtype : 'HBox',
+                        xtype : Gtk.HBox',
                         xns: 'Gtk',
-                        packing : [ 'pack_start', false, true , 0 ],
+                        pack : [ 'pack_start', false, true , 0 ],
                         
                         items : [
                             {
-                                xtype : 'Label',
-                                packing : [ 'pack_start', false, true , 0 ],
+                                xtype : Gtk.Label',
+                                pack : [ 'pack_start', false, true , 0 ],
                                 xns: 'Gtk',
                                 label : "Project Type:"
                             },
@@ -198,9 +166,9 @@ function create() // parent?
                             
                             {
                 
-                                xns : 'Gtk',
-                                xtype : 'ComboBox',
-                                packing : [ 'pack_end', true, true , 0 ],
+                                
+                                xtype : Gtk.ComboBox',
+                                pack : [ 'pack_end', true, true , 0 ],
                                 set : {
                                  //   set_text_column : [1]
                                    //set_size_request : [150,-1]
@@ -260,17 +228,17 @@ function create() // parent?
                                         
                                         
                                    
-                                        xns : 'Gtk',
-                                        xtype : 'CellRendererText',
-                                        packing : ['pack_start'],
+                                        
+                                        xtype : Gtk.CellRendererText',
+                                        pack : ['pack_start'],
                                         
 
                                          
                                     },
                                     {
-                                        xns : 'Gtk',
-                                        packing : [ 'set_model' ],
-                                        xtype : 'ListStore',
+                                        
+                                        pack : [ 'set_model' ],
+                                        xtype : Gtk.ListStore',
                                         
                                         listeners : {
                                             _new : function()
@@ -332,8 +300,8 @@ function create() // parent?
                         ]
                     },
                     {
-                        xtype : 'Label',
-                        packing : [ 'pack_end', true, true , 0 ],
+                        xtype : Gtk.Label',
+                        pack : [ 'pack_end', true, true , 0 ],
                         xns: 'Gtk',
                         label : ""
                     },
