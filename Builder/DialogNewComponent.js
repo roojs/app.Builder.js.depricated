@@ -42,8 +42,7 @@ DialogNewComponent = new XObject({
             
             //show_all : []
         },
-            
-        },
+       
         show : function (c) 
         {
             
@@ -161,34 +160,30 @@ DialogNewComponent = new XObject({
         items : [
             {
                 
-                xtype : 'VBox',
-                xns: 'Gtk',
+                xtype : Gtk.VBox,
                 
-                packing : function(p,e) {
+                pack: function(p,e) {
                     p.el.get_content_area().add(e.el)
                 },
                 items : [
                     {
-                        xtype : 'HBox',
-                        xns: 'Gtk',
-                        packing : [ 'pack_start', false, true , 0 ],
+                        xtype : Gtk.HBox,
+                        pack : [ 'pack_start', false, true , 0 ],
                         
                         items : [
                             {
-                                xtype : 'Label',
-                                packing : [ 'pack_start', false, true , 0 ],
-                                xns: 'Gtk',
+                                xtype : Gtk.Label,
                                 label : "Component Name:"
+                                pack : [ 'pack_start', false, true , 0 ],
+                                
                             },
                             
                             {
-                                xid : 'xnsid',
-                                xtype : 'Entry',
-                                
-                                xns: 'Gtk',
-                                packing : [ 'pack_end', true, true , 0 ],
-                                
-                                setValue : function(v) {
+                                id : 'xnsid',
+                                xtype : Gtk.Entry,
+                                pack : [ 'pack_end', true, true , 0 ],
+                                setValue : function(v) 
+                                {
                                     this.el.set_text(v);
                                 },
                                 getValue : function()
@@ -201,40 +196,41 @@ DialogNewComponent = new XObject({
                         
                     },
                     {
-                        xtype : 'HBox',
-                        xns: 'Gtk',
-                        packing : [ 'pack_start', false, true , 0 ],
+                        xtype : Gtk.HBox,
+                        pack : [ 'pack_start', false, true , 0 ],
                         
                         items : [
                             {
-                                xtype : 'Label',
-                                packing : [ 'pack_start', false, true , 0 ],
-                                xns: 'Gtk',
+                                xtype : Gtk.Label,
                                 label : "Using Template:"
+                                pack : [ 'pack_start', false, true , 0 ],
+                                
                             },
                             
                             
                             {
-                                xid : 'template',
-                                xns : 'Gtk',
-                                xtype : 'ComboBox',
-                                packing : [ 'pack_end', true, true , 0 ],
-                                set : {
-                                 //   set_text_column : [1]
-                                   //set_size_request : [150,-1]
+                                id : 'template',
+                                xtype : Gtk.ComboBox,
+                                pack : [ 'pack_end', true, true , 0 ],
+                                init : function()
+                                {
+                                    XObject.prototype.init.call(this); 
+                                    this.el.add_attribute(this.items[0].el , 'markup', 1 );  
+                                       
                                 },
-                                
                             
                                 setValue : function(v)
                                 {
                                     var el = this.el;
                                     el.set_active(-1);
-                                    Roo.each(XN.get(this).template_model.templates, function(n) {
-                                        if (v == n ) {
-                                            el.set_active(ix);
-                                            return false;
+                                    DialogNewComponent.get('template_model').templates.forEach(
+                                        function(n, ix) {
+                                            if (v == n ) {
+                                                el.set_active(ix);
+                                                return false;
+                                            }
                                         }
-                                    });
+                                    );
                                 },
                                 getValue : function() 
                                 {
@@ -242,68 +238,34 @@ DialogNewComponent = new XObject({
                                     if (ix < 0 ) {
                                         return '';
                                     }
-                                    return XN.get(this).template_model.templates[ix];
-                                    /*
-                                    var iter = new Gtk.TreeIter();
-                                    if (this.el.get_active_iter(iter)) {
-                                        return '';
-                                    }
-                                    var value = new GObject.Value('');
-                                    this.model.el.get_value(iter, 0, value);
-                                    return value.value;
-                                    */
+                                    return DialogNewComponent.get('template_model').templates[ix];
+                                  
                                 },
                                 
-                                
-                                listeners : {
-                                    
-                                    
-                                    _rendered  : function ()
+                                 
+                                items : [
                                     {
                                         
-                                       // _form.xtype = this;
-                                        this.el.add_attribute(this.items[0].el , 'markup', 1 );  
-                                        //this.el.add_attribute(this.items[0].el , 'popup', 2 );     
-                                         
-                                     
-                                  
-                                    }
-                                },
-                                items : [
-                                   {
+                                        xtype : Gtk.CellRendererText,
+                                        pack : ['pack_start'],
                                         
-                                        
-                                   
-                                        xns : 'Gtk',
-                                        xtype : 'CellRendererText',
-                                        packing : ['pack_start'],
-                                        
-
-                                         
                                     },
                                     {
-                                        xid : 'template_model',
-                                        xns : 'Gtk',
-                                        packing : [ 'set_model' ],
-                                        xtype : 'ListStore',
+                                        id : 'template_model',
+                                        pack : [ 'set_model' ],
+                                        xtype : Gtk.ListStore,
                                         
-                                        listeners : {
-                                         
-                                            _rendered :  function ()
-                                            {
-                                             
-                                                this.el.set_column_types ( 2, [
+                                        init : 
+                                        listeners :  function ()
+                                        {
+                                            XObject.prototype.init.call(this); 
+                                            this.el.set_column_types ( 2, [
                                                     GObject.TYPE_STRING,  // real key
                                                     GObject.TYPE_STRING // real type
-                                                    
-                                                    
-                                                ] );
+                                            ] );
                                              
-                                                return;
-                                               
                                             
-                                            
-                                            }
+                                        
                                         },
                                        
                                         templates : false,
@@ -312,7 +274,7 @@ DialogNewComponent = new XObject({
                                             this.el.clear();
                                             var iter = new Gtk.TreeIter();
                                             var el = this.el;
-                                            Roo.each(this.templates, function(p) {
+                                            this.templates.forEach(function(p) {
                                                 
                                                 el.append(iter);
                                                 
@@ -335,40 +297,42 @@ DialogNewComponent = new XObject({
                         ]
                     },
                     {
-                        xtype : 'HBox',
-                        xns: 'Gtk',
-                        packing : [ 'pack_start', false, true , 0 ],
+                        xtype : Gtk.HBox,
+                        
+                        pack : [ 'pack_start', false, true , 0 ],
                         
                         items : [
                             {
-                                xtype : 'Label',
-                                packing : [ 'pack_start', false, true , 0 ],
-                                xns: 'Gtk',
+                                xtype : Gtk.Label,
+                                pack : [ 'pack_start', false, true , 0 ],
                                 label : "In Directory:"
                             },
                             
-                            
                             {
-                                xid : 'directory',
-                                xns : 'Gtk',
-                                xtype : 'ComboBox',
-                                packing : [ 'pack_end', true, true , 0 ],
-                                set : {
-                                 //   set_text_column : [1]
-                                   //set_size_request : [150,-1]
-                                },
+                                id : 'directory',
                                 
+                                xtype : Gtk.ComboBox,
+                                pack : [ 'pack_end', true, true , 0 ],
+                            
+                                 init : function()
+                                {
+                                    XObject.prototype.init.call(this); 
+                                   this.el.add_attribute(this.items[0].el , 'markup', 1 );  
+                                       
+                                },
                             
                                 setValue : function(v)
                                 {
                                     var el = this.el;
                                     el.set_active(-1);
-                                    Roo.each(XN.get(this).directory_model.data, function(n, ix) {
-                                        if (v == n.xtype) {
-                                            el.set_active(ix);
-                                            return false;
+                                    DialogNewComponent.get('directory_model').data.forEach(
+                                        function(n,ix) {
+                                            if (v == n.xtype) {
+                                                el.set_active(ix);
+                                                return false;
+                                            }
                                         }
-                                    })
+                                    )
                                 },
                                 getValue : function() 
                                 {
@@ -376,68 +340,30 @@ DialogNewComponent = new XObject({
                                     if (ix < 0 ) {
                                         return '';
                                     }
-                                    return XN.get(this).directory_model.data[ix].xtype;
-                                    /*
-                                    var iter = new Gtk.TreeIter();
-                                    if (this.el.get_active_iter(iter)) {
-                                        return '';
-                                    }
-                                    var value = new GObject.Value('');
-                                    this.model.el.get_value(iter, 0, value);
-                                    return value.value;
-                                    */
+                                    return  DialogNewComponent.get('directory_model').data[ix].xtype;
+                                    
                                 },
                                 
-                                
-                                listeners : {
-                                    
-                                    
-                                    _rendered  : function ()
-                                    {
-                                        
-                                       // _form.xtype = this;
-                                        this.el.add_attribute(this.items[0].el , 'markup', 1 );  
-                                        //this.el.add_attribute(this.items[0].el , 'popup', 2 );     
-                                         
-                                     
-                                  
-                                    }
-                                },
+                                 
                                 items : [
-                                   {
-                                        
-                                        
-                                   
-                                        xns : 'Gtk',
-                                        xtype : 'CellRendererText',
-                                        packing : ['pack_start'],
-                                        
-
-                                         
+                                    {
+                                        xtype : Gtk.CellRendererText,
+                                        pack : ['pack_start'],
                                     },
                                     {
-                                        xns : 'Gtk',
-                                        packing : [ 'set_model' ],
-                                        xtype : 'ListStore',
-                                        xid: 'directory_model',
-                                        listeners : {
-                                           
-                                            _rendered :  function ()
-                                            {
-                                             
-                                                this.el.set_column_types ( 2, [
-                                                    GObject.TYPE_STRING,  // real key
-                                                    GObject.TYPE_STRING // real type
-                                                    
-                                                    
-                                                ] );
-                                             
-                                                return;
-                                               
-                                            
-                                            
-                                            }
+                                        
+                                        xtype : Gtk.ListStore,
+                                        pack : [ 'set_model' ],
+                                        id: 'directory_model',
+                                        init : function()
+                                        {
+                                            XObject.prototype.init.call(this); 
+                                            this.el.set_column_types ( 2, [
+                                                GObject.TYPE_STRING,  // real key
+                                                GObject.TYPE_STRING // real type
+                                            ]); 
                                         },
+                                     
                                        
                                        
                                         
@@ -445,7 +371,7 @@ DialogNewComponent = new XObject({
                                             this.el.clear();
                                             var iter = new Gtk.TreeIter();
                                             var el = this.el;
-                                            Roo.each(data, function(p) {
+                                            data.forEach( function(p) {
                                                 
                                                 el.append(iter);
                                                 
@@ -469,13 +395,10 @@ DialogNewComponent = new XObject({
                         ]
                     },
                     {
-                        xtype : 'Label',
-                        packing : [ 'pack_end', true, true , 0 ],
-                        xns: 'Gtk',
+                        xtype : Gtk.Label
+                        pack : [ 'pack_end', true, true , 0 ],
                         label : ""
                     }
-                    
-                    
                     
                     
                 ]
