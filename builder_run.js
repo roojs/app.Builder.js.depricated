@@ -1,5 +1,20 @@
 //<Script type="text/javascript">
-Builder = imports['Builder.js'].Builder; // this!
+
+Gtk = imports.gi.Gtk;
 
 
-Builder.run();
+ProjectManager = imports.Builder.Provider.ProjectManager.ProjectManager;
+Window = imports.Builder.Window.Window;
+
+ProjectManager.loadConfig();
+     
+     
+Seed.print('done import window');
+
+Gtk.init(0, null);
+
+Window.create();
+Window.show();
+          
+Gtk.main();
+ 
