@@ -9,6 +9,7 @@ XObject = imports.XObject;
 console = imports.console;
 
 ProjectManager = imports.Builder.ProjectManager.ProjectManager; 
+LeftProjectTree = imports.Builder.LeftProjectTree.LeftProjectTree;
 // vbox
 // expander
 // notebook
@@ -25,7 +26,7 @@ LeftTopPanel = new XObject({
                 xtype : Gtk.Expander,
                 
                 label : 'Project Tree',
-                packing : ['pack_start', false , true ], // expand // fill.
+                pack : ['pack_start', false , true ], // expand // fill.
                 init : function(){
                     XObject.prototype.init.call(this); 
                     this.el.add_events (Gdk.EventMask.BUTTON_MOTION_MASK );
@@ -37,15 +38,13 @@ LeftTopPanel = new XObject({
                         var nb = LeftTopPanel.get('notebook');
                         if (this.el.expanded) {
                             // now expanded..
-                            var pm  = Builder.Provider.ProjectManager;
+                            var pm  = ProjectManager;
                             
-                            console.dump(XN.dumpRegistry());
-                            var model = XN.get('Builder.LeftProjectTree.combomodel');
+                           
+                            var model = LeftProjectTree.get('combomodel');
                             
-                            
-                            model.loadData(pm.projects);
-                            
-                            
+                            model.loadData(ProjectManager.projects);
+                             
                             
                             nb.el.set_current_page(1);
                             //pm.on('changed', function() {
@@ -81,28 +80,19 @@ LeftTopPanel = new XObject({
             },
             {
                     
-                xtype : 'Notebook',
-                xns: 'Gtk',
-                
-                xid: 'notebook',
-                
-                
+                xtype : Gtk.Notebook,
+                id: 'notebook',
                 label : 'Project Tree',
                 'show-border' : false,
                 'show-tabs' : false,
-                packing : ['pack_start', true , true ], // expand // fill.
-                set : {
-                    set_show_border : [false],
-                    set_show_tabs : [false],
-                },
+                pack : ['pack_start', true , true ], // expand // fill.
                 
-                listeners : {
-                    
-                    _rendered : function()
-                    {
-                        this.el.set_current_page(0);
-                    }
-                },
+                init : function()
+                {
+                    XObject.prototype.init.call(this); 
+                    this.el.set_current_page(0);
+                }
+                
                 items :  [
                    
                     {
