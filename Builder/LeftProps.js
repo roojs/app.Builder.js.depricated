@@ -3,17 +3,13 @@ Gio = imports.gi.Gio;
 Gtk = imports.gi.Gtk;
 GLib = imports.gi.GLib;
 GObject = imports.gi.GObject;
-XN = imports.xnew;
-console = imports.console;
 Pango = imports.gi.Pango ;
 Soup = imports.gi.Soup ;
 
-Builder = imports['Builder.js']
+
+
+
  
-var _view;
-var _model;
-var _lview;
-var _lmodel;
 
 
 /**
