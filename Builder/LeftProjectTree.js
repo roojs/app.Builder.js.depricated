@@ -346,7 +346,7 @@ LeftProjectTree = new XObject({
                         enable_tree_lines :  true ,
                         tooltip_column : 1,
                           //  set_reorderable: [1]
-                        }, 
+                        
                         init :  function ()
                         {
                             XObject.prototype.init.call(this); 
@@ -415,11 +415,7 @@ LeftProjectTree = new XObject({
                                             GObject.TYPE_STRING, // tip
                                             GObject.TYPE_STRING // id..
                                             ] );
-                    
-                                        
-                                        
-                                   
-                                     
+                           
                                     
                                 },
                                 activeIter : false, // fixme - should not use iters..
@@ -467,7 +463,7 @@ LeftProjectTree = new XObject({
                                 
                                 getValue: function (iter, col) {
                                     var gval = new GObject.Value('');
-                                     LeftProjectTree.get('model').el.get_value(iter, col ,gval);
+                                    this.el.get_value(iter, col ,gval);
                                     return  gval.value;
                                     
                                     
@@ -482,20 +478,21 @@ LeftProjectTree = new XObject({
                             {
                                 pack : ['append_column'],
                                 
-                                xtype : Gtk.TreeViewColumn',
+                                xtype : Gtk.TreeViewColumn,
                                 items : [
                                     {
                                         
-                                        xtype : Gtk.CellRendererText',
+                                        xtype : Gtk.CellRendererText,
                                         pack: [ 'pack_start']
                                           
                                     } 
                                 ],
-                                listeners : {
-                                    _rendered : function ()
-                                    {
-                                        this.el.add_attribute(this.items[0].el , 'markup', 0 );
-                                    }
+                                     init :  function ()
+                                {
+                                    XObject.prototype.init.call(this);    
+                            
+                                    this.el.add_attribute(this.items[0].el , 'markup', 0 );
+                                    
                                 }
                               
                             }
@@ -504,8 +501,8 @@ LeftProjectTree = new XObject({
                     }
                 ]
                         
-                 
             }
         ]
-    };
-}
+                     
+    }
+);
