@@ -3,14 +3,13 @@ Gio = imports.gi.Gio;
 Gtk = imports.gi.Gtk;
 Gdk = imports.gi.Gdk;
 GObject = imports.gi.GObject;
-XN = imports.xnew;
-console = imports.console;
 Pango = imports.gi.Pango ;
-Builder = imports['Builder.js'];
-Roo = imports['Roo.js'];
 
-var _view;
-var _model;
+
+XObject = imports.XObject.XObject;
+console = imports.console;
+
+
 
 // http://www.google.com/codesearch/p?hl=en#EKZaOgYQHwo/unstable/sources/sylpheed-2.2.9.tar.bz2%7C1erxr_ilM1o/sylpheed-2.2.9/src/folderview.c&q=gtk_tree_view_get_drag_dest_row
 
@@ -21,79 +20,47 @@ Gtk.rc_parse_string(
             "class \"GtkComboBox\" style \"gtkcombobox-style\"\n");
 
 
-var _combo;
-
  
-function create() // parent?
-{
-    
-    return {
-        xnsid : 'Builder.LeftProjectTree',
-        xid : 'box',
-        xns : 'Gtk',
-        xtype: 'VBox',
+LeftProjectTree = new XObject({
+        
+        xns : Gtk.VBox,
         
         showNoProjectSelected : function()
         {
-           
-            XN.xnew({
-                xtype : 'MessageDialog',
-                xns : 'Gtk',
-                modal : true,
-                buttons : Gtk.ButtonsType.OK,
-                'message-type' : Gtk.MessageType.ERROR,
-                //"secondary-text"           gchar*                : Read / Write
-                //"secondary-use-markup"     gboolean              : Read / Write
-                text   : "Select a Project first.",
-                "use-markup"     : true,
-                listeners : 
-                {
-                    'delete-event' : function (widget, event) {
-                        this.el.hide();
-                        return true;
-                    },
-                    _rendered : function()
-                    {
-                        this.el.show_all();
-                    },
-                    response : function () {
-                        this.el.hide();
-                    }
-                }
-           });
-              
+           StandardErrorDialog.show("Select a Project first.");
         },
         
         
         
         items : [
             {
-                xns : 'Gtk',
-                xtype: 'Toolbar',
-                packing : ['pack_start', false , true ], // expand // fill.
+                
+                xtype: Gtk.Toolbar',
+                pack : ['pack_start', false , true ], // expand // fill.
                 listeners : {
-                    "size-allocate": function(w,a) {
+                    'size-allocate': function(w,a) {
                         ////Seed.print(a);
                         
-                        _combo.el.set_size_request( Gtk.allocation_get_width(a)-50,-1);
+                        LeftProjectTree.get('combo').el.set_size_request( 
+                                Gtk.allocation_get_width(a)-50,-1);
                         
                         
                     }
                 },
                 items : [
                     {
-                        xns : 'Gtk',
-                        xtype: 'ToolItem',
-                        packing : [ 'insert', 0],
+                        
+                        xtype: Gtk.ToolItem',
+                        pack : [ 'insert', 0],
                         expand: true,
                         
                         items : [
                         
                             {
                                 xid : 'combo',
-                                xns : 'Gtk',
+                                
                                 xtype : 'ComboBox',
-                                //packing : [ 'insert', 1],
+                                //pack : [ 'insert', 1],
                                 expand: true,
                                 set : {
                                  //   set_text_column : [1]
@@ -160,16 +127,16 @@ function create() // parent?
                                         
                                         
                                    
-                                        xns : 'Gtk',
+                                        
                                         xtype : 'CellRendererText',
-                                        packing : ['pack_start'],
+                                        pack : ['pack_start'],
                                         
 
                                          
                                     },
                                     {
-                                        xns : 'Gtk',
-                                        packing : [ 'set_model' ],
+                                        
+                                        pack : [ 'set_model' ],
                                         xtype : 'ListStore',
                                         xid : 'combomodel',
                                         listeners : {
@@ -232,9 +199,9 @@ function create() // parent?
                     },
                     {
                         
-                        xns : 'Gtk',
-                        xtype: 'ToolButton',
-                        packing : [ 'insert', 1],
+                        
+                        xtype: Gtk.ToolButton',
+                        pack : [ 'insert', 1],
                         label : 'Manage',
                         'stock-id' :  Gtk.STOCK_EDIT,
                         listeners : {
@@ -247,17 +214,17 @@ function create() // parent?
                         
                         items : [
                             {
-                                xns : 'Gtk',
+                                
                                 xtype : 'Menu',
-                                packing : [ false ],
+                                pack : [ false ],
                                 
                                 
                                 items :  [
                                     {
                                         
-                                        xns : 'Gtk',
+                                        
                                         xtype : 'MenuItem',
-                                        packing : [ 'append' ],
+                                        pack : [ 'append' ],
                                         label : 'New Project',
                                         listeners : {
                                             activate : function () {
@@ -276,9 +243,9 @@ function create() // parent?
                                     },
                                     {
                                         
-                                        xns : 'Gtk',
+                                        
                                         xtype : 'MenuItem',
-                                        packing : [ 'append' ],
+                                        pack : [ 'append' ],
                                         label : 'Add Directory To Current Project',
                                         listeners : {
                                             activate : function () {
@@ -315,9 +282,9 @@ function create() // parent?
                                     },
                                     {
                                         
-                                        xns : 'Gtk',
+                                        
                                         xtype : 'MenuItem',
-                                        packing : [ 'append' ],
+                                        pack : [ 'append' ],
                                         label : 'Add File To Current Project',
                                         listeners : {
                                             activate : function () {
@@ -356,9 +323,9 @@ function create() // parent?
                                     
                                     {
                                          
-                                        xns : 'Gtk',
+                                        
                                         xtype : 'MenuItem',
-                                        packing : [ 'append' ],
+                                        pack : [ 'append' ],
                                         label : 'Add Component',
                                         listeners : {
                                             activate : function () {
@@ -393,10 +360,10 @@ function create() // parent?
 
             {
                 
-                xns : 'Gtk',
-                xtype: 'ScrolledWindow',
+                
+                xtype: Gtk.ScrolledWindow',
                 smooth_scroll : true,
-               // packing : ['pack_start', true , true ],
+               // pack : ['pack_start', true , true ],
                 set : {
                     set_shadow_type : [ Gtk.ShadowType.IN ],
                     set_policy : [Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC] //,
@@ -406,7 +373,7 @@ function create() // parent?
                     {
                         
                             
-                        xns : 'Gtk',
+                        
                         xtype : 'TreeView',
                         set : {
                             set_headers_visible : [ false],
@@ -474,9 +441,9 @@ function create() // parent?
                         
                         items  : [
                             {
-                                packing : ['set_model'],
+                                pack : ['set_model'],
                                 
-                                xns : 'Gtk',
+                                
                                 xtype : 'TreeStore',
                                 xid : 'model',
                                 listeners : {
@@ -561,14 +528,14 @@ function create() // parent?
                             
                               
                             {
-                                packing : ['append_column'],
-                                xns : 'Gtk',
+                                pack : ['append_column'],
+                                
                                 xtype : 'TreeViewColumn',
                                 items : [
                                     {
-                                        xns : 'Gtk',
+                                        
                                         xtype : 'CellRendererText',
-                                        packing: [ 'pack_start']
+                                        pack: [ 'pack_start']
                                           
                                     } 
                                 ],
