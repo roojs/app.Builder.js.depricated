@@ -3,91 +3,74 @@ Gio = imports.gi.Gio;
 Gtk = imports.gi.Gtk;
 Gdk = imports.gi.Gdk;
 GObject = imports.gi.GObject;
-XN = imports.xnew;
-console = imports.console;
 Pango = imports.gi.Pango ;
-Builder = imports['Builder.js'];
- 
-var _view = false;
+
+XObject = imports.XObject.XObject;
+console = imports.console;
 
 // normally appears as a vbox with a expander button,
 // when you put your mouse over though, it expands.
 
-
-function create() // parent?
-{
-    
-    return {
+RightPalete = new XObject({
+         
         
-        xns : 'Gtk',
-        xtype: 'VBox',
-        packing : [ 'pack_start', false, false ],
-        listeners : {
-            _new : function() {
-                _palete = this;
-            }
-        },
+        xtype: Gtk.VBox,
+        pack : [ 'pack_start', false, false ],
+        
         hide : function() {
-            _hidden.el.show();
-            _visible.el.hide();
+            this.get('hidden').el.show();
+            this.get('visible').el.hide();
         },
         show : function() {
-            _hidden.el.hide();
-            _visible.el.show();
-            
-            _model.expanded();
+            this.get('hidden').el.hide();
+            this.get('visible').el.show();
+            this.get('model').expanded();
             
         },
         
         items : [
             {
                     
-                xns : 'Gtk',
-                xtype: 'VBox',
-                
-                listeners : {
-                    _new : function() {
-                        _hidden = this;
-                    }
-                },
-                
+                id : 'hidden',
+                xtype: Gtk.VBox,
+                 
                 items : [
                 
                 
                     {
-                        xns : 'Gtk',
-                        xtype: 'Button',
-                        packing : [ 'pack_start', false, true ],
+                        
+                        xtype: Gtk.Button,
+                        pack : [ 'pack_start', false, true ],
                         listeners : {
                             clicked : function() {
-                                _palete.show();
+                                RightPalete.show();
                             }
                         },
                         items : [
                             {
-                                xns : 'Gtk',
-                                xtype: 'Image',
+                                
+                                xtype: Gtk.Image,
                                 xtype : 'Image',
                                 stock : Gtk.STOCK_GOTO_FIRST,
                                 'icon-size' : Gtk.IconSize.MENU,
-                                
-                                packing : ['add']
+                                pack : ['add']
                             }
                         ]
                     },
                     {
-                        packing : [ 'pack_start', true, true ],
-                        xns : 'Gtk',
-                        xtype: 'Label',
+                        pack : [ 'pack_start', true, true ],
+                        
+                        xtype: Gtk.Label,
                         label: 'Palete',
                         angle : 270,
-                        set : {
-                            add_events : [ Gdk.EventMask.BUTTON_MOTION_MASK ]
+                        init : function() {
+                            XObject.prototype.init.call(this);  
+                            this.el.add_events ( Gdk.EventMask.BUTTON_MOTION_MASK );
                         },
                         listeners : {
                             'enter-notify-event' : function (w,e)
                             {
-                                _palete.show();
+                                RightPalete.show();
                                 //console.log("enter!");
                                 //this.el.expanded = !this.el.expanded;
                                 //this.listeners.activate.call(this);
@@ -100,40 +83,36 @@ function create() // parent?
             
             {
                     
-                xns : 'Gtk',
-                xtype: 'VBox',
-                listeners : {
-                    _new : function() {
-                        _visible = this;
-                    }
-                },
+                id : 'visible',
+                xtype: Gtk.VBox,
+                
                 items : [         
                     {
                         
-                        xns : 'Gtk',
-                        xtype: 'HBox',
-                        packing : [ 'pack_start', false, true ],
+                        
+                        xtype: Gtk.HBox,
+                        pack : [ 'pack_start', false, true ],
                         items : [
                             {
                                  
-                                xns : 'Gtk',
-                                xtype: 'Label',
-                                label: 'Palete'
+                                
+                                xtype: Gtk.Label,
+                                label: "Palete"
                              
                             },
                             {
-                                xns : 'Gtk',
-                                xtype: 'Button',
-                                packing : [ 'pack_start', false, true ],
+                                
+                                xtype: Gtk.Button,
+                                pack : [ 'pack_start', false, true ],
                                 listeners : {
                                     clicked : function() {
-                                        _palete.hide();
+                                        RightPalete.hide();
                                     }
                                 },
                                 items : [
                                     {
-                                        xns : 'Gtk',
-                                        xtype: 'Image',
+                                        
+                                        xtype: Gtk.Image,
                                         stock : Gtk.STOCK_GOTO_LAST,
                                         'icon-size' : Gtk.IconSize.MENU,
                                 
@@ -152,61 +131,64 @@ function create() // parent?
                     
                     {
                 
-                        xns : 'Gtk',
-                        xtype: 'ScrolledWindow',
+                        
+                        xtype: Gtk.ScrolledWindow,
                         smooth_scroll : true,
-                       // packing : ['pack_start', true , true ],
-                        set : {
-                            set_shadow_type : [ Gtk.ShadowType.IN ],
-                            set_policy : [Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC],
-                            set_size_request : [-1,200]
+                        shadow_type :  Gtk.ShadowType.IN ,
+                        
+                        init : function() {
+                            XObject.prototype.init.call(this);  
+                       
+                            this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
+                            this.el.set_size_request(-1,200);
                         },
                         items : [        
                             {
                                 
                                     
-                                xns : 'Gtk',
-                                xtype : 'TreeView',
-                                set : {
-                                    set_headers_visible : [ false],
-                                    set_enable_tree_lines : [ true] ,
-                                    set_tooltip_column : [1],
-                                    set_size_request : [150,-1]
+                                id : 'view',
+                                xtype : Gtk.TreeView,
+                                headers_visible :  false,
+                                enable_tree_lines :  true ,
+                                tooltip_column : 1,
+                                init : function() {
+                                    XObject.prototype.init.call(this);  
+                                    this.el.set_size_request(150,-1);
                                   //  set_reorderable: [1]
+                                  
+                                    var description = new Pango.FontDescription.c_new();
+                                    description.set_size(8000);
+                                    this.el.modify_font(description);
+                                    
+                                    this.selection = this.el.get_selection();
+                                    this.selection.set_mode( Gtk.SelectionMode.SINGLE);
+                                   // this.selection.signal['changed'].connect(function() {
+                                    //    _view.listeners['cursor-changed'].apply(_view, [ _view, '']);
+                                    //});
+                                    // see: http://live.gnome.org/GnomeLove/DragNDropTutorial
+                                    
+                                    Gtk.drag_source_set (
+                                            this.el,            /* widget will be drag-able */
+                                            Gdk.ModifierType.BUTTON1_MASK,       /* modifier that will start a drag */
+                                            null,            /* lists of target to support */
+                                            0,              /* size of list */
+                                            Gdk.DragAction.COPY         /* what to do with data after dropped */
+                                    );
+                                    
+                                    
+                                    targets = new Gtk.TargetList();
+                                    targets.add( LeftTree.atoms["STRING"], 0, 0);
+                                    Gtk.drag_source_set_target_list(this.el, targets);
+                                    //if you want to allow text to be output elsewhere..
+                                    //Gtk.drag_source_add_text_targets(this.el);
+                                    return true; 
                                 },  
                                 listeners : {
-                                    _new : function () {
-                                        _view = this;
-                                    },
+                                    
                                     _rendered: function()
                                     {
                                         
-                                        var description = new Pango.FontDescription.c_new();
-                                        description.set_size(8000);
-                                        this.el.modify_font(description);
-                                        
-                                        this.selection = this.el.get_selection();
-                                        this.selection.set_mode( Gtk.SelectionMode.SINGLE);
-                                       // this.selection.signal['changed'].connect(function() {
-                                        //    _view.listeners['cursor-changed'].apply(_view, [ _view, '']);
-                                        //});
-                                        // see: http://live.gnome.org/GnomeLove/DragNDropTutorial
-                                        
-                                        Gtk.drag_source_set (
-                                                this.el,            /* widget will be drag-able */
-                                                Gdk.ModifierType.BUTTON1_MASK,       /* modifier that will start a drag */
-                                                null,            /* lists of target to support */
-                                                0,              /* size of list */
-                                                Gdk.DragAction.COPY         /* what to do with data after dropped */
-                                        );
-                                        
-                                        
-                                        targets = new Gtk.TargetList();
-                                        targets.add( Builder.atoms["STRING"], 0, 0);
-                                        Gtk.drag_source_set_target_list(this.el, targets);
-                                        //if you want to allow text to be output elsewhere..
-                                        //Gtk.drag_source_add_text_targets(this.el);
-                                        return true;  
+                                         
                                         
                                     }, 
                                     
@@ -304,9 +286,9 @@ function create() // parent?
                                 
                                 items  : [
                                     {
-                                        packing : ['set_model'],
+                                        pack : ['set_model'],
                                         
-                                        xns : 'Gtk',
+                                        
                                         xtype : 'ListStore',
                                          
                                         listeners : {
@@ -393,14 +375,14 @@ function create() // parent?
                                     
                                       
                                     {
-                                        packing : ['append_column'],
-                                        xns : 'Gtk',
+                                        pack : ['append_column'],
+                                        
                                         xtype : 'TreeViewColumn',
                                         items : [
                                             {
-                                                xns : 'Gtk',
+                                                
                                                 xtype : 'CellRendererText',
-                                                packing: [ 'pack_start']
+                                                pack: [ 'pack_start']
                                                   
                                             } 
                                         ],
