@@ -97,47 +97,32 @@ EditProject = new XObject({
             
         },
         
-        set : {
-           
-            
-            //show_all : []
-        },
-     
+      
         items : [
             {
                 
-                xtype : Gtk.VBox',
-                xns: 'Gtk',
-                
+                xtype : Gtk.VBox,
                 pack : function(p,e) {
                     p.el.get_content_area().add(e.el)
                 },
                 items : [
                     {
-                        xtype : Gtk.HBox',
-                        xns: 'Gtk',
+                        xtype : Gtk.HBox,
                         pack : [ 'pack_start', false, true , 0 ],
-                        
                         items : [
                             {
-                                xtype : Gtk.Label',
+                                xtype : Gtk.Label,
                                 pack : [ 'pack_start', false, true , 0 ],
-                                xns: 'Gtk',
                                 label : "Project Name:"
                             },
                             
                             {
-                                xtype : Gtk.Entry',
-                                
-                                xns: 'Gtk',
+                                xtype : Gtk.Entry,
+                                id : 'name',
                                 pack : [ 'pack_end', true, true , 0 ],
-                                listeners : {
-                                    _rendered  : function(self) {
-                                        
-                                        _form.name = this;
-                                    }
-                                },
-                                setValue : function(v) {
+                                
+                                setValue : function(v) 
+                                {
                                     this.el.set_text(v);
                                 },
                                 getValue : function()
@@ -151,39 +136,31 @@ EditProject = new XObject({
                     },
                     {
                         xtype : Gtk.HBox',
-                        xns: 'Gtk',
                         pack : [ 'pack_start', false, true , 0 ],
-                        
                         items : [
                             {
-                                xtype : Gtk.Label',
+                                xtype : Gtk.Label,
                                 pack : [ 'pack_start', false, true , 0 ],
-                                xns: 'Gtk',
                                 label : "Project Type:"
                             },
-                            
-                            
                             {
-                
-                                
-                                xtype : Gtk.ComboBox',
+                                xtype : Gtk.ComboBox,
+                                id : 'xtype',
                                 pack : [ 'pack_end', true, true , 0 ],
-                                set : {
-                                 //   set_text_column : [1]
-                                   //set_size_request : [150,-1]
-                                },
-                                
-                            
+                                init : function() {
+                                    XObject.prototype.init.call(this); 
+                                    this.el.add_attribute(this.items[0].el , 'markup', 1 );  
+                                }
                                 setValue : function(v)
                                 {
                                     var el = this.el;
                                     el.set_active(-1);
-                                    Roo.each(this.model.data, function(n, ix) {
+                                    this.get('model').data.forEach(function(n, ix) {
                                         if (v == n.xtype) {
                                             el.set_active(ix);
                                             return false;
                                         }
-                                    })
+                                    });
                                 },
                                 getValue : function() 
                                 {
@@ -191,7 +168,7 @@ EditProject = new XObject({
                                     if (ix < 0 ) {
                                         return '';
                                     }
-                                    return this.model.data[ix].xtype;
+                                    return this.get('model').data[ix].xtype;
                                     /*
                                     var iter = new Gtk.TreeIter();
                                     if (this.el.get_active_iter(iter)) {
@@ -204,69 +181,37 @@ EditProject = new XObject({
                                 },
                                 
                                 
-                                listeners : {
-                                    
-                                    _new : function ()
-                                    {
-                                        _view = this;
-                                    },
-                                    
-                                    _rendered  : function ()
-                                    {
-                                        
-                                        _form.xtype = this;
-                                        this.el.add_attribute(this.items[0].el , 'markup', 1 );  
-                                        //this.el.add_attribute(this.items[0].el , 'popup', 2 );     
-                                         
-                                     
-                                  
-                                    }
-                                },
                                 items : [
-                                   {
-                                        
-                                        
-                                   
-                                        
-                                        xtype : Gtk.CellRendererText',
+                                    {
+                                        xtype : Gtk.CellRendererText,
                                         pack : ['pack_start'],
-                                        
-
-                                         
                                     },
                                     {
-                                        
+                                        id : 'model',
                                         pack : [ 'set_model' ],
                                         xtype : Gtk.ListStore',
-                                        
-                                        listeners : {
-                                            _new : function()
-                                            {
-                                                _view.model = this;
-                                            },
-                                            _rendered :  function ()
-                                            {
-                                             
-                                                this.el.set_column_types ( 2, [
-                                                    GObject.TYPE_STRING,  // real key
-                                                    GObject.TYPE_STRING // real type
-                                                    
-                                                    
-                                                ] );
+                                        init : function ()
+                                        {
+                                            XObject.prototype.init.call(this); 
+                             
+                                     
+                                            this.el.set_column_types ( 2, [
+                                                GObject.TYPE_STRING,  // real key
+                                                GObject.TYPE_STRING // real type
                                                 
-                                                this.data = [
-                                                    { xtype: 'Roo', desc : "Roo Project" },
-                                                    { xtype: 'Gtk', desc : "Gtk Project" },    
-                                                    //{ xtype: 'JS', desc : "Javascript Class" }
-                                                ]
                                                 
-                                                this.loadData(this.data);
+                                            ] );
+                                            
+                                            this.data = [
+                                                { xtype: 'Roo', desc : "Roo Project" },
+                                                { xtype: 'Gtk', desc : "Gtk Project" },    
+                                                //{ xtype: 'JS', desc : "Javascript Class" }
+                                            ]
+                                            
+                                            this.loadData(this.data);
                                                 
-                                                return;
-                                               
                                             
                                             
-                                            }
                                         },
                                        
                                        
@@ -275,7 +220,7 @@ EditProject = new XObject({
                                             
                                             var iter = new Gtk.TreeIter();
                                             var el = this.el;
-                                            Roo.each(data, function(p) {
+                                            data.forEach(function(p) {
                                                 
                                                 el.append(iter);
                                                 
@@ -299,11 +244,11 @@ EditProject = new XObject({
                         ]
                     },
                     {
-                        xtype : Gtk.Label',
+                        xtype : Gtk.Label,
                         pack : [ 'pack_end', true, true , 0 ],
-                        xns: 'Gtk',
+                        
                         label : ""
-                    },
+                    }
                     
                     
                     
