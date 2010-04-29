@@ -5,6 +5,10 @@ Gdk = imports.gi.Gdk;
 GObject = imports.gi.GObject;
 Pango = imports.gi.Pango ;
 
+XObject = imports.XObject.XObject;
+console = imports.console;
+
+
 Roo             = imports.Builder.Provider.Palete.Roo.Roo;
 LeftTreeMenu    = imports.Builder.LeftTreeMenu.LeftTreeMenu;
 LeftPanel       = imports.Builder.LeftPanel.LeftPanel;
