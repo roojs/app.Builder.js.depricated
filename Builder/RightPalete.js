@@ -8,6 +8,9 @@ Pango = imports.gi.Pango ;
 XObject = imports.XObject.XObject;
 console = imports.console;
 
+
+LeftTree = 
+Roo = Builder.Provider.Palete.Roo.Roo;
 // normally appears as a vbox with a expander button,
 // when you put your mouse over though, it expands.
 
@@ -217,8 +220,8 @@ RightPalete = new XObject({
                                         
                                         var iter = new Gtk.TreeIter();
                                         var s = this.selection;
-                                        s.get_selected(_model, iter);
-                                        var path = _model.el.get_path(iter);
+                                        s.get_selected(RightPalete.get('model').el, iter);
+                                        var path = RightPalete.get('model').el.get_path(iter);
                                         
                                         var pix = this.el.create_row_drag_icon ( path);
                                             
@@ -231,8 +234,8 @@ RightPalete = new XObject({
                                             -10);
                                         
                                         var value = new GObject.Value('');
-                                        _model.el.get_value(iter, 0, value);
-                                        this.el.dropList = _model.provider.getDropList(value.value);
+                                        RightPalete.get('model').el.get_value(iter, 0, value);
+                                        this.el.dropList = RightPalete.get('model').provider.getDropList(value.value);
                                         this.el.dragData = value.value;
                                         
                                         
@@ -245,7 +248,7 @@ RightPalete = new XObject({
                                         Seed.print('SOURCE: drag-end');
                                         this.el.dragData = false;
                                         this.el.dropList = false;
-                                        Builder.LeftTree._view.highlight(false);
+                                        LeftTree.get('view').highlight(false);
                                         return true;
                                     },
                                     
@@ -288,30 +291,26 @@ RightPalete = new XObject({
                                     {
                                         pack : ['set_model'],
                                         
-                                        
-                                        xtype : 'ListStore',
+                                        id : 'model',
+                                        xtype : Gtk.ListStore,
                                          
-                                        listeners : {
-                                            _rendered : function()
-                                            {
-                                                _model = this;
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                
-                                                this.el.set_column_types ( 2, [
-                                                        GObject.TYPE_STRING, // title 
-                                                        GObject.TYPE_STRING // tip
-                                                        
-                                                        ] );
-                                
-                                                this.provider = new Builder.Provider.Palete.Roo();
-                                                this.provider.load();
-                                                
-                                            }
-                                             
+                                        init  :  function()
+                                        {
+                                           
+                                           XObject.prototype.init.call(this);  
+                                 
+                                            
+                                            
+                                            
+                                            this.el.set_column_types ( 2, [
+                                                    GObject.TYPE_STRING, // title 
+                                                    GObject.TYPE_STRING // tip
+                                                    
+                                                    ] );
+                            
+                                            this.provider = new Roo();
+                                            this.provider.load();
+                                              
                                             
                                         },
                                         expanded : function() // event handler realy.
@@ -362,7 +361,7 @@ RightPalete = new XObject({
                                         
                                         getValue: function (iter, col) {
                                             var gval = new GObject.Value('');
-                                             _model.el.get_value(iter, col ,gval);
+                                             this.el.get_value(iter, col ,gval);
                                             return  gval.value;
                                             
                                             
@@ -377,21 +376,24 @@ RightPalete = new XObject({
                                     {
                                         pack : ['append_column'],
                                         
-                                        xtype : 'TreeViewColumn',
+                                        xtype : Gtk.TreeViewColumn,
+                                        init  :  function()
+                                        {
+                                           
+                                            XObject.prototype.init.call(this);  
+                                            this.el.add_attribute(this.items[0].el , 'markup', 0 );
+                                        },
+
                                         items : [
                                             {
                                                 
-                                                xtype : 'CellRendererText',
+                                                xtype : Gtk.CellRendererText,
                                                 pack: [ 'pack_start']
                                                   
                                             } 
                                         ],
-                                        listeners : {
-                                            _rendered : function ()
-                                            {
-                                                this.el.add_attribute(this.items[0].el , 'markup', 0 );
-                                            }
-                                        }
+                                        
+                                    
                                       
                                     }
                                     
