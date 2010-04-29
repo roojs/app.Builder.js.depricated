@@ -3,31 +3,26 @@ Gio = imports.gi.Gio;
 Gtk = imports.gi.Gtk;
 Gdk = imports.gi.Gdk;
 GObject = imports.gi.GObject;
-XN = imports.xnew;
-console = imports.console;
 Pango = imports.gi.Pango ;
-Builder = imports['Builder.js'];
-Roo = imports['Roo.js'];
 
-var _view;
-var _model;
+
 
 // http://www.google.com/codesearch/p?hl=en#EKZaOgYQHwo/unstable/sources/sylpheed-2.2.9.tar.bz2%7C1erxr_ilM1o/sylpheed-2.2.9/src/folderview.c&q=gtk_tree_view_get_drag_dest_row
 
 
  
-function create() // parent?
+LeftTree = new XObject({
 {
     
    return {
-        xnsid : 'Builder.LeftTree',
-        xns : 'Gtk',
-        xtype: 'ScrolledWindow',
+        
+        
+        xtype: Gtk.ScrolledWindow',
         smooth_scroll : true,
         
-        set : {
-            set_shadow_type : [ Gtk.ShadowType.IN ],
-            set_policy : [Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC]
+        shadow_type :  Gtk.ShadowType.IN,
+        init : function() {
+            this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
         },
         
         
@@ -37,8 +32,8 @@ function create() // parent?
             {
                 
                     
-                xns : 'Gtk',
-                xtype : 'TreeView',
+                
+                xtype: Gtk.TreeView',
                 set : {
                     set_headers_visible : [ false],
                     set_enable_tree_lines : [ true] ,
@@ -313,8 +308,8 @@ function create() // parent?
                         xid : 'model',
                         packing : ['set_model'],
                         
-                        xns : 'Gtk',
-                        xtype : 'TreeStore',
+                        
+                        xtype: Gtk.TreeStore',
                          
                         listeners : {
                             _rendered : function()
@@ -792,12 +787,12 @@ function create() // parent?
                       
                     {
                         packing : ['append_column'],
-                        xns : 'Gtk',
-                        xtype : 'TreeViewColumn',
+                        
+                        xtype: Gtk.TreeViewColumn',
                         items : [
                             {
-                                xns : 'Gtk',
-                                xtype : 'CellRendererText',
+                                
+                                xtype: Gtk.CellRendererText',
                                 packing: [ 'pack_start']
                                   
                             } 
