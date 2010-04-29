@@ -13,12 +13,7 @@ Roo = imports['Roo.js'];
 // expander
 // notebook
 
- 
- 
-function create() 
-{
-    
-    return {
+LeftTopPanel = new XObject({
         
         xnsid : 'Builder.LeftTopPanel',
         xtype : 'VBox',
