@@ -28,14 +28,16 @@ EditProject = new XObject({
         type: Gtk.WindowType.TOPLEVEL,
         deletable : false,
         modal : true,
-        
+        border_width : 0,
+        title "Project Properties",
         project : {},
         init : function()
         {
             XObject.prototype.init.call(this); 
             this.el.add_button("OK",1 );
             this.el.add_button("Cancel",0 );
-            
+             
+            this.el.set_default_size(600, 400);
         },
         show : function (c) 
         {
@@ -96,9 +98,7 @@ EditProject = new XObject({
         },
         
         set : {
-            set_border_width : [ 0 ],
-            set_title : [ 'Project Properties' ],
-            set_default_size: [600, 400] //,
+           
             
             //show_all : []
         },
