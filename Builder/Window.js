@@ -39,12 +39,14 @@ Window = new XObject({
     
     init : function()
     {
+        XObject.prototype.init.call(this); 
+        
         this.el.show_all();
         this.get('MidPropTree').hideWin();
         this.get('RightPalete.palete').hide();
         
         this.el.set_default_size(900, 600);
-        XObject.prototype.init.call(this); 
+        
     }
     
     listeners : {
@@ -62,47 +64,20 @@ Window = new XObject({
         {
             xtype : Gtk.VBox,
             items : [
-                
-                TopMenu
-                
-                
+                TopMenu,
                 {
-                    xtype : 'HPaned',
-                    xns: 'Gtk',
-                    set : {
-                            set_position : [ 400 ]
-                    },
-                    listeners : {
-                        _new : function(self) {
-                            _left = this;
-                        }
-                    },
+                    id : 'left',
+                    xtype : Gtk.HPaned,
+                    position : 400,
                     items : [
-                        // in my original design - the child elements get loaded by a 'module loader...',
-                          
                         {
-                            xtype : 'HBox',
-                            xns: 'Gtk',
-                            
-                    
+                            xtype : Gtk.HBox,
                             items : [
-                                
-                               
                                 {
-                                    xtype : 'VPaned',
-                                    xns: 'Gtk',
-                                    listeners : {
-                                        _new  : function()
-                                        {
-                                            _leftvpaned = this;
-                                        }
-                                    },
-                                    set : {
-                                        set_position : [ 300 ]
-                                    },
+                                    id : 'leftvpaned',
+                                    xtype : Gtk.VPaned,
+                                    position : 300,
                                     items : [
-                                       
-                                                 
                                         {
                                             xtype : 'Include',
                                             xns : 'xnew',
