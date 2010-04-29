@@ -1,0 +1,45 @@
+TODO list
+
+Loader bar... - load configs.. / save!
+
+Add properties/handlers..
+
+console log box
+
+add elements.... = palete...
+
+Drag drop tree nodes..
+
+
+toggle javascript values prefix '|' <-> ''
+
+
+CACHE the data...
+
+implemetn a provider API - so we can do GTK...
+
+
+
+Pallete
+
+-> context sensitive list..
+** Generated over time..
+
+-> ability to list all available... 
+
+
+Full Palete shows on right
+
+Our pallete bar is at top, ?? looks like toolbar..?
+[ > All Elements ]
+
+double click... to add
+
+Categories:
+
+Layout
+menu
+form
+grid
+
+
