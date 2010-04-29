@@ -320,7 +320,7 @@ LeftTree = new XObject({
                 items  : [
                     {
                         id : 'model',
-                        packing : ['set_model'],
+                        pack : ['set_model'],
                         
                         
                         xtype: Gtk.TreeStore,
@@ -752,7 +752,7 @@ LeftTree = new XObject({
                       
                     {
                         xtype: Gtk.TreeViewColumn,
-                        packing : ['append_column'],
+                        pack : ['append_column'],
                         init : function(){
                             XObject.prototype.init.call(this); 
                             this.el.add_attribute(this.items[0].el , 'markup', 0 );
@@ -762,7 +762,7 @@ LeftTree = new XObject({
                             {
                                 
                                 xtype: Gtk.CellRendererText',
-                                packing: [ 'pack_start']
+                                pack: [ 'pack_start']
                                   
                             } 
                         ],
