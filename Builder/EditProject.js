@@ -77,7 +77,7 @@ EditProject = new XObject({
                 
                 
                 
-                var pr = Builder.Provider.ProjectManager.update(this.project);
+                var pr = ProjectManager.update(this.project);
                 
                 this.success(pr);
                 Seed.print(id);
