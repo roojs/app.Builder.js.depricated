@@ -10,7 +10,7 @@ XObject = imports.XObject.XObject;
 console = imports.console;
 
 
-MidPropTree
+MidPropTree = imports.Builder.MidPropTree.MidPropTree;
  
 
 
