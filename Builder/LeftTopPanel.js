@@ -3,9 +3,9 @@ Gio = imports.gi.Gio;
 Gtk = imports.gi.Gtk;
 Gdk = imports.gi.Gdk;
 Pango = imports.gi.Pango ;
-
 GObject = imports.gi.GObject;
-XObject = imports.XObject;
+
+XObject = imports.XObject.XObject;
 console = imports.console;
 
 ProjectManager      = imports.Builder.ProjectManager.ProjectManager; 
