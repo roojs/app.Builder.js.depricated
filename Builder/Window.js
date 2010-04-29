@@ -46,8 +46,8 @@ Window = new XObject({
         XObject.prototype.init.call(this); 
         
         this.el.show_all();
-        this.get('MidPropTree').hideWin();
-        this.get('RightPalete.palete').hide();
+        MidPropTree.hideWin();
+        RightPalete.get('palete').hide();
         
         this.el.set_default_size(900, 600);
         
