@@ -381,8 +381,6 @@ DialogNewComponent = new XObject({
                                                 
                                             });
                                              
-                                            
-                                            
                                         }
                                          
                                     }
