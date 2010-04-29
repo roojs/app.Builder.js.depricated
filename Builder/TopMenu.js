@@ -8,121 +8,119 @@ console = imports.console;
  
  
 TopMenu = new XObject({
-        xtype : Gtk.MenuBar
-        pack : [ 'pack_start', false,false ],
-        id : 'menu', 
-        items :  [
-            {
-                
-                xtype: Gtk.MenuItem,
-                pack : [ 'append' ],
-                label : 'File',
-                
-                items : [
-                    {
-                        xns : 'Gtk',
-                        xtype : 'Menu',
-                        pack : [ 'set_submenu' ],
-                        items : [
-                          {
-                
-                                xns : 'Gtk',
-                                xtype : 'MenuItem',
-                                pack : [ 'append' ],
-                                label : 'New Project (from directory)',
-                                listeners : {
-                                    activate : function () {
-                                        
-                                    }
-                                }
-                            },
-                            {
-                
-                                xns : 'Gtk',
-                                xtype : 'MenuItem',
-                                pack : [ 'append' ],
-                                label : 'Open Project File',
-                                listeners : {
-                                    activate : function () {
-                                        
-                                    }
-                                }
-                            },
-                            {
-                
-                                xns : 'Gtk',
-                                xtype : 'MenuItem',
-                                pack : [ 'append' ],
-                                label : 'Recent (with submenu)',
-                                listeners : {
-                                    activate : function () {
-                                        
-                                    }
-                                }
-                            },
-                            
-                              {
+    xtype : Gtk.MenuBar
+    pack : [ 'pack_start', false,false ],
+    id : 'menu', 
+    items :  [
+        {
             
-                                xns : 'Gtk',
-                                xtype : 'SeparatorMenuItem',
-                                pack : [ 'append' ] 
-                                 
-                            },
-                            
-                            {
-                
-                                xns : 'Gtk',
-                                xtype : 'MenuItem',
-                                pack : [ 'append' ],
-                                label : "Test Loader",
-                                listeners : {
-                                    activate : function () {
-                                        
-                                        
-                                        
-                                        
-                                    }
-                                }
-                            },
-                            
-                              {
+            xtype: Gtk.MenuItem,
+            pack : [ 'append' ],
+            label : 'File',
             
-                                xns : 'Gtk',
-                                xtype : 'SeparatorMenuItem',
-                                pack : [ 'append' ] 
-                                 
-                            },
-                            {
-                
-                                xns : 'Gtk',
-                                xtype : 'MenuItem',
-                                pack : [ 'append' ],
-                                label : 'Quit',
-                                listeners : {
-                                    activate : function () {
-                                        Seed.quit();
-                                    }
+            items : [
+                {
+                    
+                    xtype : Gtk.Menu',
+                    pack : [ 'set_submenu' ],
+                    items : [
+                      {
+            
+                            
+                            xtype : Gtk.MenuItem,
+                            pack : [ 'append' ],
+                            label : "New Project (from directory)",
+                            listeners : {
+                                activate : function () {
+                                    
                                 }
-                            },
-                        ]
-                    }
-                ]
-            },
-        
-            {
-                
-                xns : 'Gtk',
-                xtype : 'MenuItem',
-                pack : [ 'append' ],
-                label : 'Settings',
-                listeners : {
-                    activate : function () {
+                            }
+                        },
+                        {
+            
+                            
+                            xtype : Gtk.MenuItem,
+                            pack : [ 'append' ],
+                            label : 'Open Project File',
+                            listeners : {
+                                activate : function () {
+                                    
+                                }
+                            }
+                        },
+                        {
+            
+                            
+                            xtype : Gtk.MenuItem,
+                            pack : [ 'append' ],
+                            label : 'Recent (with submenu)',
+                            listeners : {
+                                activate : function () {
+                                    
+                                }
+                            }
+                        },
                         
-                    }
+                          {
+        
+                            
+                            xtype : Gtk.SeparatorMenuItem,
+                            pack : [ 'append' ] 
+                             
+                        },
+                        
+                        {
+            
+                            
+                            xtype : Gtk.MenuItem,
+                            pack : [ 'append' ],
+                            label : "Test Loader",
+                            listeners : {
+                                activate : function () {
+                                    
+                                    
+                                    
+                                    
+                                }
+                            }
+                        },
+                        
+                          {
+        
+                            
+                            xtype : Gtk.SeparatorMenuItem,
+                            pack : [ 'append' ] 
+                             
+                        },
+                        {
+            
+                            
+                            xtype : Gtk.MenuItem,
+                            pack : [ 'append' ],
+                            label : 'Quit',
+                            listeners : {
+                                activate : function () {
+                                    Seed.quit();
+                                }
+                            }
+                        },
+                    ]
                 }
-            } 
-        ]
-    };
+            ]
+        },
     
-}
+        {
+            
+            
+            xtype : Gtk.MenuItem,
+            pack : [ 'append' ],
+            label : 'Settings',
+            listeners : {
+                activate : function () {
+                    
+                }
+            }
+        } 
+    ]
+};
  
