@@ -210,8 +210,7 @@ MidPropTree = new XObject({
             }
         ]    
             
-    };
+    }
 
-
-}
+);
     
