@@ -45,7 +45,9 @@ DialogNewComponent = new XObject({
        
         show : function (c) 
         {
-            
+            if (!this.el) {
+                this.init();
+            }
             c = c || { name : '' , xtype : '' };
             // check whic project we are adding to..
             XObject.extend(this, c);
