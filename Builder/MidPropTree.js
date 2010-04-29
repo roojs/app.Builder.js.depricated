@@ -3,17 +3,15 @@ Gio = imports.gi.Gio;
 Gtk = imports.gi.Gtk;
 GLib = imports.gi.GLib;
 GObject = imports.gi.GObject;
-XN = imports.xnew;
-console = imports.console;
 Pango = imports.gi.Pango ;
 Soup = imports.gi.Soup ;
 
-Builder = imports['Builder.js']
- 
-var _win;
-var _view;
-var _model;
- 
+
+XObject = imports.XObject.XObject;
+console = imports.console;
+
+
+Window =
 
 
 /**
@@ -22,155 +20,117 @@ var _model;
  * 
  */
  
-                        
-function create() // parent?
-{
-    
-             
-    return {
+MidPropTree = new XObject({
+         
         
-        xns : 'Gtk',
-        xtype: 'ScrolledWindow',
+        xtype: 'Gtk.ScrolledWindow',
         smooth_scroll : true,
-        packing : [ 'pack_end', false, true, 0 ],
+        pack : [ 'pack_end', false, true, 0 ],
         
-        listeners : {
-            _new : function() {
-                _win = this;
-            }
+          
+        shadow_type :  Gtk.ShadowType.IN,
+        init : function() {
+            XObject.prototype.init.call(this); 
+            this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
+            this.set_size_request ( 150, -1 );
+             
         },
-        set : {
-            set_shadow_type : [ Gtk.ShadowType.IN ],
-            set_policy : [Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC],
-            set_size_request : [ 150, -1]
-        },
+        
         hideWin : function() {
             
-            if (!_win.el || !_win.el.visible || Builder.Window._left.el.position < 160) {
+            if (Window.get('left').el.position < 160) {
                 return;
             }
-            Builder.Window._left.el.position = Builder.Window._left.el.position  - 150;
+            Window.get('left').el.position = Window.get('left').el.position  - 150;
                 
             this.el.hide();
         },
         items : [
             {
                    
-                xns : 'Gtk',
-                xtype : 'TreeView',
-                set : {
-                    set_tooltip_column : [2],
-                    set_headers_visible : [ false],
-                    set_enable_tree_lines : [true]
-                    
-                },
-
                 
-                listeners : {
+                xtype : Gtk.TreeView,
+                
+                enable_tree_lines :  true,
+                tooltip_column : 2,
+                headers_visible : false,
+                // selection  -- set by init..
+                init : function() {
+                    XObject.prototype.init.call(this); 
                     
-                    _new : function ()
-                    {
-                        _view = this;
-                    },
+           
                     
-                    _rendered  : function ()
-                    {
-                        
-                        this.selection = this.el.get_selection();
-                        this.selection.set_mode( Gtk.SelectionMode.SINGLE);
-                     
+                    this.selection = this.el.get_selection();
+                    this.selection.set_mode( Gtk.SelectionMode.SINGLE);
+                 
+                
                     
-                        
-                        var description = new Pango.FontDescription.c_new();
-                        description.set_size(8000);
-                        this.el.modify_font(description);
-                        
+                    var description = new Pango.FontDescription.c_new();
+                    description.set_size(8000);
+                    this.el.modify_font(description);
+                    
                        // this.column.add_attribute(this.column.items[1], "text", 1);
                         
                          
                      
                   //  this.expand_all();
-                    },
+                },
+                listeners : {
+                    
                     'cursor-changed' : function () {
                         var iter = new Gtk.TreeIter();
                         
                         //console.log('changed');
                         var s = this.selection;
-                        s.get_selected(_model, iter);
+                        s.get_selected(MidPropTree.get('model').el, iter);
                         
                         
                         // var val = "";
                         value = new GObject.Value('');
-                        _model.el.get_value(iter, 0, value);
+                        MidPropTree.get('model').el.get_value(iter, 0, value);
                         var key = value.value;
                         value = new GObject.Value('');
-                        _model.el.get_value(iter, 1, value);
+                        MidPropTree.get('model').el.get_value(iter, 1, value);
                         
                         var type = value.value;
                         value = new GObject.Value('');
-                        _model.el.get_value(iter, 4, value);
+                        MidPropTree.get('model').el.get_value(iter, 4, value);
                         
                         var skel = value.value;
-                        _win.hideWin();
-                        Builder.LeftPanel._model.add(key, type, skel);
+                        MidPropTree.hideWin();
+                        LeftPanel.get('model').add(key, type, skel);
                         
                     }
                 },
                 items : [
                 
                     {
-                        xns : 'Gtk',
-                        packing : [ 'set_model' ],
-                        xtype : 'ListStore',
+                        id : 'model',
+                        pack : [ 'set_model' ],
+                        xtype : Gtk.ListStore,
                         currentData : false,
-                        listeners : {
-                            _new : function()
-                            {
-                                _model = this;
-                            },
-                            _rendered :  function ()
-                            {
-                             
-                                this.el.set_column_types ( 5, [
-                                    GObject.TYPE_STRING,  // real key
-                                     GObject.TYPE_STRING, // real type
-                                     GObject.TYPE_STRING, // docs ?
-                                     GObject.TYPE_STRING, // visable desc
-                                     GObject.TYPE_STRING // function desc
-                                    
-                                ] );
-                                /*
-                                var session = new Soup.SessionAsync();
- 
-                                var request = new Soup.Message({
-                                    method:"GET", 
-                                    
-                                    uri: new Soup.URI.c_new(
-                                        "http://www.akbkhome.com/Builder/index.php/Builder/PropList.php?xtype=*all"
-                                    )
-                                });
-                             
-                                // loads our map!
-                                var status = session.queue_message(request, function(ses,msg) {
-                                        Seed.print('data loaded'); // prints 8062
-                                    _model.data = JSON.parse(msg.response_body.data).data;
-                                    //Seed.print(msg.response_body.data); // prints empty string.
-                                    //Seed.print(msg.status_code); // prints 200
-                                   // Seed.print(msg.request_body.data);
-                                });
-                                */
+                        init : function() {
+                            XObject.prototype.init.call(this); 
+                 
+                        
+                 
+                         
+                            this.el.set_column_types ( 5, [
+                                GObject.TYPE_STRING,  // real key
+                                 GObject.TYPE_STRING, // real type
+                                 GObject.TYPE_STRING, // docs ?
+                                 GObject.TYPE_STRING, // visable desc
+                                 GObject.TYPE_STRING // function desc
                                 
-                               
-                            
-                            
-                            }
+                            ] );
+                                
                         },
                  
                         load : function (ar)
                         {
                             this.el.clear();
                             // roo specific..
-                            var fullpath = Builder.Provider.Palete.Roo.guessName(ar);
+                            var fullpath = Roo.guessName(ar);
                             this.currentData  = false;
                             if (!fullpath.length) {
                                 return;
@@ -233,9 +193,9 @@ function create() // parent?
                     
 
                     {
-                        xns : 'Gtk',
+                        
                         xtype: 'TreeViewColumn',
-                        packing : ['append_column'],
+                        pack : ['append_column'],
                         listeners : {
                             _rendered : function ()
                             {
@@ -247,9 +207,9 @@ function create() // parent?
                         
                         
                             {
-                                xns : 'Gtk',
-                                xtype : 'CellRendererText',
-                                packing : ['pack_start'],
+                                
+                                xtype : Gtk.CellRendererText',
+                                pack : ['pack_start'],
                                 
 
                             }
