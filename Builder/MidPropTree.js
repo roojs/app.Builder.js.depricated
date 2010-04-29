@@ -202,7 +202,7 @@ MidPropTree = new XObject({
                         items : [
                             {
                                 xtype : Gtk.CellRendererText,
-                                pack : ['pack_start'],
+                                pack : ['pack_start']
                             }
                         ]
                     }
