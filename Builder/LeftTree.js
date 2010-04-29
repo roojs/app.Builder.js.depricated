@@ -5,94 +5,98 @@ Gdk = imports.gi.Gdk;
 GObject = imports.gi.GObject;
 Pango = imports.gi.Pango ;
 
-
-
+LeftTreeMenu
+Roo     = Builder.Provider.Palete.Roo.Roo;
+LeftPanel.get('model').load( false);
+MidPropTree 
+RightBrowser            
+RightPalete
+RightEditor
 // http://www.google.com/codesearch/p?hl=en#EKZaOgYQHwo/unstable/sources/sylpheed-2.2.9.tar.bz2%7C1erxr_ilM1o/sylpheed-2.2.9/src/folderview.c&q=gtk_tree_view_get_drag_dest_row
 
 
- 
 LeftTree = new XObject({
 {
     
-   return {
+   
         
-        
-        xtype: Gtk.ScrolledWindow',
+        xtype: Gtk.ScrolledWindow,
         smooth_scroll : true,
         
         shadow_type :  Gtk.ShadowType.IN,
         init : function() {
+            XObject.prototype.init.call(this); 
             this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
+            
+             
         },
         
-        
+        atoms : {
+           "STRING" : Gdk.atom_intern("STRING")
+        },
                         
         
         items : [        
             {
-                
+                id : 'view',
+                xtype: Gtk.TreeView,
+                headers_visible :  false,
+                enable_tree_lines :  true,
+                tooltip_column : 0,
+                // selection  -- set by init..
+                init : function() {
+                    XObject.prototype.init.call(this); 
                     
+                    var description = new Pango.FontDescription.c_new();
+                    description.set_size(8000);
+                    this.el.modify_font(description);
+                    
+                    this.selection = this.el.get_selection();
+                    this.selection.set_mode( Gtk.SelectionMode.SINGLE);
+                    this.selection.signal['changed'].connect(function() {
+                        LeftTree.get('view').listeners['cursor-changed'].apply(LeftTree.get('view'), [ LeftTree.get('view'), '']);
+                    });
+                    
+                    Gtk.drag_source_set (
+                        this.el,            /* widget will be drag-able */
+                        Gdk.ModifierType.BUTTON1_MASK,       /* modifier that will start a drag */
+                        null,            /* lists of target to support */
+                        0,              /* size of list */
+                        Gdk.DragAction.COPY   | Gdk.DragAction.MOVE           /* what to do with data after dropped */
+                    );
+                    var targets = new Gtk.TargetList();
+                    targets.add( LeftTree.atoms["STRING"], 0, 0);
+                    Gtk.drag_source_set_target_list(this.el, targets);
+
+                    Gtk.drag_source_add_text_targets(this.el); 
+                    Gtk.drag_dest_set
+                    (
+                            this.el,              /* widget that will accept a drop */
+                            Gtk.DestDefaults.MOTION  | Gtk.DestDefaults.HIGHLIGHT,
+                            null,            /* lists of target to support */
+                            0,              /* size of list */
+                            Gdk.DragAction.COPY   | Gdk.DragAction.MOVE       /* what to do with data after dropped */
+                    );
+                     
+                    Gtk.drag_dest_set_target_list(this.el, targets);
+                    Gtk.drag_dest_add_text_targets(this.el);
+                    
+                    
+                },
                 
-                xtype: Gtk.TreeView',
-                set : {
-                    set_headers_visible : [ false],
-                    set_enable_tree_lines : [ true] ,
-                    set_tooltip_column : [0] //,
-                   // set_reorderable: [1]
-                }, 
                 highlight : function(treepath_ar) {
                     if (treepath_ar.length) {
-                        this .el.set_drag_dest_row( new  Gtk.TreePath.from_string( treepath_ar[0] ),  treepath_ar[1]);
+                        this.el.set_drag_dest_row( 
+                            new  Gtk.TreePath.from_string( treepath_ar[0] ),  treepath_ar[1]);
                     } else {
                         this.el.set_drag_dest_row(null, Gtk.TreeViewDropPosition.INTO_OR_AFTER);
                     }
                     
                     
-                    
                 },
                 listeners : {
-                    _new : function () {
-                        _view = this;
-                    },
-                    _rendered: function()
-                    {
-                        
-                        var description = new Pango.FontDescription.c_new();
-                        description.set_size(8000);
-                        this.el.modify_font(description);
-                        
-                        this.selection = this.el.get_selection();
-                        this.selection.set_mode( Gtk.SelectionMode.SINGLE);
-                        this.selection.signal['changed'].connect(function() {
-                            _view.listeners['cursor-changed'].apply(_view, [ _view, '']);
-                        });
-                        
-                        Gtk.drag_source_set (
-                            this.el,            /* widget will be drag-able */
-                            Gdk.ModifierType.BUTTON1_MASK,       /* modifier that will start a drag */
-                            null,            /* lists of target to support */
-                            0,              /* size of list */
-                            Gdk.DragAction.COPY   | Gdk.DragAction.MOVE           /* what to do with data after dropped */
-                        );
-                        var targets = new Gtk.TargetList();
-                        targets.add( Builder.atoms["STRING"], 0, 0);
-                        Gtk.drag_source_set_target_list(this.el, targets);
-
-                        Gtk.drag_source_add_text_targets(this.el); 
-                        Gtk.drag_dest_set
-                        (
-                                this.el,              /* widget that will accept a drop */
-                                Gtk.DestDefaults.MOTION  | Gtk.DestDefaults.HIGHLIGHT,
-                                null,            /* lists of target to support */
-                                0,              /* size of list */
-                                Gdk.DragAction.COPY   | Gdk.DragAction.MOVE       /* what to do with data after dropped */
-                        );
-                         
-                        Gtk.drag_dest_set_target_list(this.el, targets);
-                        Gtk.drag_dest_add_text_targets(this.el);
-                        
-                        
-                    },
+                    
+                    
                     
                     'button-press-event' : function(tv, ev) {
                         console.log("button press?");
@@ -103,11 +107,13 @@ LeftTree = new XObject({
                       
                     
                         
-                        var res = _view.el.get_path_at_pos(ev.button.x,ev.button.y);
+                        var res = LeftTree.get('view').el.get_path_at_pos(ev.button.x,ev.button.y);
                         
+                        if (!LeftTreeMenu.el)  LeftTreeMenu.init();
                         
-                        Builder.LeftTreeMenu._menu.el.set_screen(Gdk.Screen.get_default());
-                        Builder.LeftTreeMenu._menu.el.popup(null, null, null, null, 3, ev.button.time);
+                        LeftTreeMenu.el.set_screen(Gdk.Screen.get_default());
+                        LeftTreeMenu.el.show_all();
+                        LeftTreeMenu.el.popup(null, null, null, null, 3, ev.button.time);
                         Seed.print("click:" + res.column.title);
                         return false;
                         
@@ -121,20 +127,20 @@ LeftTree = new XObject({
                         // find what is selected in our tree...
                         var iter = new Gtk.TreeIter();
                         var s = this.selection;
-                        s.get_selected(_model.el, iter);
+                        s.get_selected(LeftTree.get('model').el, iter);
 
                         // set some properties of the tree for use by the dropped element.
                         var value = new GObject.Value('');
-                        _model.el.get_value(iter, 2, value);
+                        LeftTree.get('model').el.get_value(iter, 2, value);
                         var data = JSON.parse(value.value);
-                        var xname = Builder.Provider.Palete.Roo.guessName(data);
+                        var xname = Roo.guessName(data);
                         
                         this.el.dragData = xname;
-                        this.el.dropList = _model.provider.getDropList(xname);
+                        this.el.dropList = LeftTree.get('model').provider.getDropList(xname);
 
 
                         // make the drag icon a picture of the node that was selected
-                        var path = _model.el.get_path(iter);
+                        var path = LeftTree.get('model').el.get_path(iter);
                         var pix = this.el.create_row_drag_icon ( path);
                         Gtk.drag_set_icon_pixmap (ctx,
                             pix.get_colormap(),
@@ -155,7 +161,7 @@ LeftTree = new XObject({
                         this.el.dragData = false;
                         this.el.dropList = false;
                         this.targetData = false;
-                        _view.highlight(false);
+                        LeftTree.get('view').highlight(false);
                         return true;
                       
                       
@@ -178,12 +184,12 @@ LeftTree = new XObject({
                             action = Gdk.DragAction.MOVE;
                         }
                         var data = {};
-                        _view.el.get_dest_row_at_pos(x,y, data);
+                        LeftTree.get('view').el.get_dest_row_at_pos(x,y, data);
                         // path, pos
                         
                         Seed.print(data.path.to_string() +' => '+  data.pos);
-                        var tg = _model.findDropNodeByPath(data.path.to_string(), src.dropList, data.pos);
-                        _view.highlight(tg);
+                        var tg = LeftTree.get('model').findDropNodeByPath(data.path.to_string(), src.dropList, data.pos);
+                        LeftTree.get('view').highlight(tg);
                         if (!tg.length) {
                             this.targetData = false;
                             Gdk.drag_status(ctx, 0, time);
@@ -239,10 +245,10 @@ LeftTree = new XObject({
  
                             if (this.targetData) {
                                 if (source != this.el) {
-                                    _model.dropNode(this.targetData,  source.dragData);
+                                    LeftTree.get('model').dropNode(this.targetData,  source.dragData);
                                 } else {
                                     // drag around.. - reorder..
-                                    _model.moveNode(this.targetData);
+                                    LeftTree.get('model').moveNode(this.targetData);
                                     
                                     
                                 }
@@ -271,26 +277,26 @@ LeftTree = new XObject({
                         var iter = new Gtk.TreeIter();
                         
                         if (this.selection.count_selected_rows() < 1) {
-                            Builder.LeftPanel._model.load( false);
-                            Builder.MidPropTree._model.load(data);
-                            Builder.MidPropTree._win.hideWin();
+                            LeftPanel.get('model').load( false);
+                            MidPropTree.get('model').load(data);
+                            MidPropTree.hideWin();
                             return;
                         }
                         
                         //console.log('changed');
                         var s = this.selection;
-                        s.get_selected(_model.el, iter);
+                        s.get_selected(LeftTree.get('model').el, iter);
                         
                         
                         // var val = "";
                         value = new GObject.Value('');
-                        _model.el.get_value(iter, 2, value);
-                        _model.activeIter = iter;
+                        LeftTree.get('model').el.get_value(iter, 2, value);
+                        LeftTree.get('model').activeIter = iter;
                         
                         var data = JSON.parse(value.value);
-                        Builder.MidPropTree._model.load(data);
-                        Builder.MidPropTree._win.hideWin();
-                        Builder.LeftPanel._model.load( data);
+                        MidPropTree.get('model').load(data);
+                        MidPropTree.hideWin();
+                        LeftPanel.get('model').load( data);
                         
                         console.log(value.value);
                        // _g.button.set_label(''+value.get_string());
@@ -305,86 +311,36 @@ LeftTree = new XObject({
                 
                 items  : [
                     {
-                        xid : 'model',
+                        id : 'model',
                         packing : ['set_model'],
                         
                         
-                        xtype: Gtk.TreeStore',
+                        xtype: Gtk.TreeStore,
                          
-                        listeners : {
-                            _rendered : function()
-                            {
-                                _model = this;
-                                 
-                                
-                                this.el.set_column_types ( 3, [
-                                                        GObject.TYPE_STRING, // title 
-                                                        GObject.TYPE_STRING, // tip
-                                                        GObject.TYPE_STRING // source..
-                                                        ] );
-                                
-                                
-                                this.provider = new Builder.Provider.Palete.Roo();
-                                this.provider.load();
-                                /*
-                                var iter = new Gtk.TreeIter();
-                                
-                                var file = Gio.file_new_for_path("/home/alan/test.json");
-                                
-                                
-                                
-                                file.read_async(0, null, function(source,result) {
-                                    var stream = source.read_finish(result);
-                                    var dstream = new Gio.DataInputStream.c_new(stream);
-                                  
-                                    var data =  JSON.parse(dstream.read_until(""));
-                                    _model.el.append(iter);
-                                    _model.el.set_value(iter, 0, [GObject.TYPE_STRING, _model.nodeTitle(data.data[1])]);
-                                    _model.el.set_value(iter, 1, [GObject.TYPE_STRING, _model.nodeTitle(data.data[1])]);
-                                    
-                                    _model.el.set_value(iter, 2, [GObject.TYPE_STRING, _model.nodeToJSON(data.data[1])]);
-                                    
-                                  
-                                    
-                                    var jstr =  JSON.parse(data.data[1].json);
-                                    _model.loadTree(jstr.items,iter);
-                                    
-                                    _view.el.expand_all();
-                                     imports['Builder/RightEditor.js']._win.el.hide();
-                                    //Seed.quit();
-                                   
-                                });
-                                */
-                                //Builder.RightEditor._win.el.hide();
-                                
-                            },
-                            'row-changed' : function(tm, path, iter, ud)
-                            {
-                                //Seed.print('row-changed');
-                            },
-                            'row-inserted' : function(tm, path, iter, ud)
-                            {
-                                //Seed.print('row-inserted');
-                                // this is probalby where we record stuff and validate..
-                                ///if we are in drag/drop, then we can flag it to restore if not valie..
-                                
-                                
-                            },
-                            'row-deleted' : function(tm, path, iter, ud)
-                            {
-                               // Seed.print('row-deleted');
-                            }
+                        init : function() {
+                            XObject.prototype.init.call(this); 
+                 
                             
+                            this.el.set_column_types ( 3, [
+                                                    GObject.TYPE_STRING, // title 
+                                                    GObject.TYPE_STRING, // tip
+                                                    GObject.TYPE_STRING // source..
+                                                    ] );
+                            
+                            
+                            this.provider = new Roo();
+                            this.provider.load();
+                           
                         },
                         activeIter : false,
                         changed : function( n, refresh) {
                             if (!this.activeIter) {
                                 return;
                             }
-                            _model.el.set_value(this.activeIter, 0, [GObject.TYPE_STRING, _model.nodeTitle(n)]);
-                            _model.el.set_value(this.activeIter, 1, [GObject.TYPE_STRING, _model.nodeTitle(n)]);
+                            this.el.set_value(this.activeIter, 0, [GObject.TYPE_STRING, this.nodeTitle(n)]);
+                            this.el.set_value(this.activeIter, 1, [GObject.TYPE_STRING, this.nodeTitle(n)]);
                             
-                            _model.el.set_value(this.activeIter, 2, [GObject.TYPE_STRING, _model.nodeToJSON(n)]);
+                            this.el.set_value(this.activeIter, 2, [GObject.TYPE_STRING, this.nodeToJSON(n)]);
                             
                             //this.currentTree = this.toJS(false, true)[0];
                             this.file.items = this.toJS(false, true);
@@ -393,8 +349,8 @@ LeftTree = new XObject({
                             
                             if (refresh) {
                                  
-                                Builder.RightBrowser._view.renderJS(this.currentTree);
-                                var pm = Builder.RightPalete._model;
+                                RightBrowser.get('view').renderJS(this.currentTree);
+                                var pm = RightPalete.get('model');
                                 pm.load( pm.provider.gatherList(this.listAllTypes()));
                                 //imports['Builder/RightBrowser.js'].renderJS(this.toJS());
                             }
@@ -424,19 +380,19 @@ LeftTree = new XObject({
                             }
                             if (typeof(f.items[0]) == 'string') {
                             
-                                Builder.RightEditor._win.el.show();
-                                Builder.RightEditor._view.load( f.items[0]);
+                                RightEditor.el.show();
+                                RightEditor.get('view').load( f.items[0]);
                                 return;
                             }
                             
                             this.load(f.items);
-                            _view.el.expand_all();
+                            LeftTree.get('view').el.expand_all();
                             if ((f.items.length == 1) && !f.items[0].items
                                 && (typeof(f.items[0]['*class']) != 'undefined')) {
                                 // single item..
-                                Builder.Window._leftvpaned.el.set_position(80);
+                                Window.get('leftvpaned').el.set_position(80);
                                 // select first...
-                                _view.el.set_cursor( new  Gtk.TreePath.from_string('0'), null, false);
+                                LeftTree.get('view').el.set_cursor( new  Gtk.TreePath.from_string('0'), null, false);
                                 
                                 
                             } else {
@@ -445,7 +401,7 @@ LeftTree = new XObject({
                             
                             
                             
-                            Builder.RightEditor._win.el.hide();
+                            RightEditor.el.hide();
                             this.currentTree = this.toJS(false, true)[0];
                             Builder.RightBrowser._view.renderJS(this.currentTree);
                             console.dump(this.map);
@@ -518,15 +474,15 @@ LeftTree = new XObject({
                             var n_iter = new Gtk.TreeIter();
                             var iter_par = new Gtk.TreeIter();
                             var iter_after = after ? new Gtk.TreeIter() : false;
-                            _model.el.get_iter(iter_par, parent);
+                            this.el.get_iter(iter_par, parent);
                             
                             if (after) {
                                 Seed.print(target_data[1]  > 0 ? 'insert_after' : 'insert_before');
-                                _model.el.get_iter(iter_after, after);
-                                _model.el[ target_data[1]  > 0 ? 'insert_after' : 'insert_before'](n_iter, iter_par, iter_after);
+                                this.el.get_iter(iter_after, after);
+                                this.el[ target_data[1]  > 0 ? 'insert_after' : 'insert_before'](n_iter, iter_par, iter_after);
                                 
                             } else {
-                                _model.el.append(n_iter, iter_par);
+                                this.el.append(n_iter, iter_par);
                                 
                             }
                             
@@ -548,7 +504,7 @@ LeftTree = new XObject({
                                 this.load(xitems, n_iter);
                             }
                             if (xitems || after) {
-                                _view.el.expand_row(_model.el.get_path(iter_par), true);
+                                LeftTree.get('view').el.expand_row(this.el.get_path(iter_par), true);
                             }
                             // wee need to get the empty proptypes from somewhere..
                             
@@ -558,7 +514,7 @@ LeftTree = new XObject({
                             
                             
                             
-                            _view.el.set_cursor(_model.el.get_path(n_iter), null, false);
+                            LeftTree.get('view').el.set_cursor(this.el.get_path(n_iter), null, false);
                             
                             //Builder.MidPropTree._model.load(node);
                             //Builder.MidPropTree._win.hideWin();
@@ -573,10 +529,10 @@ LeftTree = new XObject({
                             
                             
                             var old_iter = new Gtk.TreeIter();
-                            var s = _view.selection;
-                            s.get_selected(_model.el, old_iter);
+                            var s = LeftTree.get('view').selection;
+                            s.get_selected(this.el, old_iter);
                             var node = this.nodeToJS(old_iter,false);
-                            _model.el.remove(old_iter);
+                            this.el.remove(old_iter);
                             this.dropNode(target_data, node);
                             
                             
@@ -639,20 +595,20 @@ LeftTree = new XObject({
                             var par = new Gtk.TreeIter(); 
                             
                             var k = JSON.parse(this.getValue(iter, 2));
-                            if (k.json && !_model.el.iter_parent( par, iter  )) {
+                            if (k.json && !this.el.iter_parent( par, iter  )) {
                                 delete k.json;
                             }
                             
                             if (with_id) {
                                 k.id = Roo.id(null,'builder-');
-                                this.map[k.id] = _model.el.get_path(iter).to_string();
+                                this.map[k.id] = this.el.get_path(iter).to_string();
                                 this.treemap[  this.map[k.id]  ] = k;
                                 k.xtreepath = this.map[k.id];
                                 
                             }
-                            if (_model.el.iter_has_child(iter)) {
+                            if (this.el.iter_has_child(iter)) {
                                 citer = new Gtk.TreeIter();
-                                _model.el.iter_children(citer, iter);
+                                this.el.iter_children(citer, iter);
                                 k.items = this.toJS(citer,with_id);
                             }
                             return k;
@@ -671,7 +627,7 @@ LeftTree = new XObject({
                                 this.treemap = { }; 
                                 
                                 iter = new Gtk.TreeIter();
-                                _model.el.get_iter_first(iter);
+                                this.el.get_iter_first(iter);
                                 first = true;
                             } 
                             
@@ -683,7 +639,7 @@ LeftTree = new XObject({
                                 ar.push(k);
                                 
                                 
-                                if (!_model.el.iter_next(iter)) {
+                                if (!this.el.iter_next(iter)) {
                                     break;
                                 }
                             }
@@ -695,7 +651,7 @@ LeftTree = new XObject({
                         },
                         getValue: function (iter, col) {
                             var gval = new GObject.Value('');
-                             _model.el.get_value(iter, col ,gval);
+                            this.el.get_value(iter, col ,gval);
                             return  gval.value;
                             
                             
