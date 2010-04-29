@@ -139,10 +139,7 @@ Window = new XObject({
                                 },
                                 RightPalete
                                  
-                               
                                 
-                                
-                               
                             ]
                         }
                     ]
