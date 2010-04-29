@@ -4,75 +4,51 @@ Gtk = imports.gi.Gtk;
 Gdk = imports.gi.Gdk;
 GLib = imports.gi.GLib;
 GObject = imports.gi.GObject;
-XN = imports.xnew;
-console = imports.console;
+
 Pango = imports.gi.Pango ;
-Builder = imports['Builder.js']
 
 
-var _view;
-var _model;
-var _win;
+console = imports.console;
 
+LeftTree        = imports.Builder.LeftTree.LeftTree;
+LeftPanelPopup  = imports.Builder.LeftPanelPopup.LeftPanelPopup;
+RightEditor     = imports.Builder.RightEditor.RightEditor;
 
-
-function create() // parent?
-{
-    
-            
-    return {
+LeftPanel = new XObject({
         
-        xns : 'Gtk',
-        xtype: 'ScrolledWindow',
+        xtype: Gtk.ScrolledWindow,
         smooth_scroll : true,
-        packing : [ 'pack_end', true, true, 0 ],
+        pack : [ 'pack_end', true, true, 0 ],
+        shadow_type : Gtk.ShadowType.IN,
         
-        listeners : {
-            _new : function() {
-                _win = this;
-            }
-        },
-        set : {
-            set_shadow_type : [ Gtk.ShadowType.IN ],
-            set_policy : [Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC]
+        init : function () {
+            XObject.prototype.init.call(this); 
+            this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
         },
         items : [
             {
-                   
-                xns : 'Gtk',
-                xtype : 'TreeView',
-                set : {
-                    set_tooltip_column : [1],
-                    set_headers_visible : [ false],
-                    set_enable_tree_lines : [true]
-                    
-                },
-
+                id : 'view',
                 
+                xtype : Gtk.TreeView,
+                
+                tooltip_column : 1,
+                headers_visible :   false ,
+                enable_tree_lines :  true ,
+                     
+                init : function () {
+                    XObject.prototype.init.call(this); 
+                       
+                    this.selection = this.el.get_selection();
+                    this.selection.set_mode( Gtk.SelectionMode.SINGLE);
+                 
+                    
+                    var description = new Pango.FontDescription.c_new();
+                    description.set_size(8000);
+                    this.el.modify_font(description);
+                },     
                 listeners : {
                     
-                    _new : function ()
-                    {
-                        _view = this;
-                    },
-                    
-                    _rendered  : function ()
-                    {
-                        
-                        this.selection = this.el.get_selection();
-                        this.selection.set_mode( Gtk.SelectionMode.SINGLE);
-                     
-                        
-                        var description = new Pango.FontDescription.c_new();
-                        description.set_size(8000);
-                        this.el.modify_font(description);
-                        
-                       // this.column.add_attribute(this.column.items[1], "text", 1);
-                        
-                         
-                     
-                  //  this.expand_all();
-                    },
+                  
                     'button-press-event' : function(tv, ev) {
                         if (ev.type != Gdk.EventType.BUTTON_PRESS  || ev.button.button != 3) {
                             Seed.print("click" + ev.type);
@@ -81,13 +57,13 @@ function create() // parent?
                       
                     
                         
-                        var res = _view.el.get_path_at_pos(ev.button.x,ev.button.y);
+                        var res = this.el.get_path_at_pos(ev.button.x,ev.button.y);
                         
                         if (res.column.title == 'value') {
                             return false;
                         }
-                        Builder.LeftPanelPopup._menu.el.set_screen(Gdk.Screen.get_default());
-                        Builder.LeftPanelPopup._menu.el.popup(null, null, null, null, 3, ev.button.time);
+                        LeftPanelPopup.el.set_screen(Gdk.Screen.get_default());
+                        LeftPanelPopup.el.popup(null, null, null, null, 3, ev.button.time);
                         Seed.print("click:" + res.column.title);
                         return false;
                         
@@ -96,32 +72,23 @@ function create() // parent?
                 items : [
                 
                     {
-                        xns : 'Gtk',
-                        packing : [ 'set_model' ],
+                        id : 'model',
+                        pack : [ 'set_model' ],
                         xtype : 'ListStore',
                         
-                        listeners : {
-                            _new : function()
-                            {
-                                _model = this;
-                            },
-                            _rendered :  function ()
-                            {
-                             
-                                var isSeed = typeof(Seed) != 'undefined';
-                                this.el.set_column_types ( 5, [
-                                    GObject.TYPE_STRING,  // real key
-                                     GObject.TYPE_STRING, // real value 
-                                     GObject.TYPE_STRING,  // visable key
-                                     GObject.TYPE_STRING, // visable value
-                                     GObject.TYPE_STRING// need to store type of!!!
-                                     ] );
-                                
-                                 return;
-                               
+                        init : function ()
+                        {
+                            XObject.prototype.init.call(this); 
+                            this.el.set_column_types ( 5, [
+                                GObject.TYPE_STRING,  // real key
+                                 GObject.TYPE_STRING, // real value 
+                                 GObject.TYPE_STRING,  // visable key
+                                 GObject.TYPE_STRING, // visable value
+                                 GObject.TYPE_STRING// need to store type of!!!
+                                ] );
+                                    
                             
-                            
-                            }
+                         
                         },
                         toShort: function(str) {
                             var a = typeof(str) == 'string' ? str.split("\n") : [];
@@ -131,7 +98,7 @@ function create() // parent?
                         {
                             this.el.clear();
                             
-                            Builder.RightEditor._win.el.hide();
+                            RightEditor.el.hide();
                             if (ar === false) {
                                 return ;
                             }
@@ -178,7 +145,7 @@ function create() // parent?
                             data[key] = val;
                             
                             this.load(data);
-                            Builder.LeftTree._model.changed(data, true); 
+                            LeftTree.get('model').changed(data, true); 
                             
                             
                         },
@@ -267,9 +234,9 @@ function create() // parent?
                     },
 
                     {
-                        xns : 'Gtk',
-                        xtype: 'TreeViewColumn',
-                        packing : ['append_column'],
+                        
+                        xtype: Gtk.TreeViewColumn',
+                        pack : ['append_column'],
                         title : 'key',
                         listeners : {
                             _rendered : function ()
@@ -282,9 +249,9 @@ function create() // parent?
                         
                         
                             {
-                                xns : 'Gtk',
+                                
                                 xtype : 'CellRendererText',
-                                packing : ['pack_start'],
+                                pack : ['pack_start'],
                                 
 
                             }
@@ -292,9 +259,9 @@ function create() // parent?
                     },
                             
                     {
-                        xns : 'Gtk',
-                        xtype: 'TreeViewColumn',
-                        packing : ['append_column'],
+                        
+                        xtype: Gtk.TreeViewColumn',
+                        pack : ['append_column'],
                         title : 'value',
                         listeners : {
                             _rendered : function ()
@@ -307,9 +274,9 @@ function create() // parent?
                         
                         
                             {
-                                xns : 'Gtk',
+                                
                                 xtype : 'CellRendererText',
-                                packing : ['pack_start'],
+                                pack : ['pack_start'],
                                 editable : true,
                                 
                                 
