@@ -3,7 +3,7 @@
 console = imports.console;
 XObject = imports.XObject.XObject;
 
-JSDOC = imports['JSDOC.js'];
+Lang = imports.JSDOC.Lang.Lang; //???
 
 
 // File Provider..
@@ -375,7 +375,7 @@ Base = XObject.define(
         
         toJsProp:  function(v) {
             var vv = v[0] == '|' ? v.substring(1) : v;
-            if (JSDOC.Lang.isKeyword(vv) || JSDOC.Lang.isBuiltin(vv)) {
+            if (Lang.isKeyword(vv) || Lang.isBuiltin(vv)) {
                 return "'" + vv + "'";
             }
             if (vv.match(/[^A-Z_]+/i)) {
