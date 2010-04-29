@@ -8,7 +8,7 @@ GLib = imports.gi.GLib;
 console = imports.console;
 XObject = imports.XObject.XObject;
 
-Window          = imports.Builder.Window.Window;
+Window                = imports.Builder.Window.Window;
 StandardErrorDialog = imports.Builder.StandardErrorDialog.StandardErrorDialog;
 /**
  * add a component
