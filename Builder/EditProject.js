@@ -20,19 +20,23 @@ ProjectManager =      imports.Builder.Provider.ProjectManager.ProjectManager;
  * 
  */
 
-var _form = { };
-
+ 
 EditProject = new XObject({
     
         
         xtype : Gtk.Dialog,
-        
         type: Gtk.WindowType.TOPLEVEL,
         deletable : false,
         modal : true,
         
         project : {},
-        
+        init : function()
+        {
+            XObject.prototype.init.call(this); 
+            this.el.add_button("OK",1 );
+            this.el.add_button("Cancel",0 );
+            
+        },
         show : function (c) 
         {
             c = c || { name : '' , xtype : '' };
@@ -83,17 +87,8 @@ EditProject = new XObject({
                 Seed.print(id);
             },
             
-            _new  : function(self) {
-                _win = this;
-                _form = { };
-            },
-            _rendered : function()
-            {
-                this.el.add_button("OK",1 );
-                this.el.add_button("Cancel",0 );
-                
-                
-            }
+        
+            
         },
         
         set : {
