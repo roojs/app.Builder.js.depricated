@@ -775,6 +775,6 @@ LeftTree = new XObject({
         ]
                 
          
-    };
-}
+    }
+);
     
