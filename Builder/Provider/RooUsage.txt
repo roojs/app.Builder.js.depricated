@@ -1,0 +1,189 @@
+
+// what can be added where...
+
+left:
+ *top
+right:
+ Roo.LayoutDialog         
+ Roo.NestedLayoutPanel
+ Roo.ContentPanel         
+ Roo.GridPanel         
+ Roo.TreePanel         
+
+           
+left: 
+ Roo.LayoutDialog:center
+ Roo.LayoutDialog:east          
+ Roo.LayoutDialog:west          
+ Roo.LayoutDialog:south          
+ Roo.LayoutDialog:north          
+ Roo.BorderLayout:center          
+ Roo.BorderLayout:east          
+ Roo.BorderLayout:west          
+ Roo.BorderLayout:south          
+ Roo.BorderLayout:north          
+right:
+ Roo.LayoutRegion
+           
+left:
+  Roo.LayoutRegion 
+right:
+  Roo.ContentPanel         
+  Roo.NestedLayoutPanel         
+  Roo.GridPanel         
+  Roo.TreePanel         
+           
+left:
+  Roo.NestedLayoutPanel:layout 
+right: 
+  Roo.BorderLayout         
+           
+           
+left: 
+  Roo.ContentPanel 
+right: 
+  Roo.form.Form         
+           
+           
+           
+           
+// Parent items         
+left: 
+ Roo.form.Form
+ Roo.form.FieldSet 
+ Roo.form.Column 
+ Roo.form.Row
+
+right: 
+  Roo.form.Column         
+  Roo.form.FieldSet         
+  Roo.form.Row         
+  Roo.form.Hidden         
+  Roo.form.TextField         
+  Roo.form.DateField         
+  Roo.form.NumberField         
+  Roo.form.Checkbox         
+  Roo.form.Radio         
+  Roo.form.ComboBox         
+  Roo.form.TextArea         
+  Roo.form.HtmlEditor         
+  Roo.form.FCKeditor         
+  Roo.Button         
+
+left: 
+  Roo.grid.GridEditor
+right:
+  Roo.form.TextField         
+  Roo.form.DateField         
+  Roo.form.NumberField         
+  Roo.form.Checkbox         
+  Roo.form.Radio         
+  Roo.form.ComboBox         
+  Roo.form.TextArea         
+           
+           
+           
+           
+left:
+ Roo.form.Form:buttons[] 
+right:
+ Roo.Button         
+           
+           
+           
+           
+           
+//Toolbar           
+left: 
+ Roo.Toolbar 
+ Roo.PagingToolbar 
+right: 
+  Roo.Toolbar.Button         
+  Roo.Toolbar.Fill         
+  Roo.Toolbar.Separator         
+  Roo.Toolbar.Spacer         
+  Roo.Toolbar.SplitButton         
+  Roo.Toolbar.TextItem         
+           
+left:            
+ Roo.Toolbar.Button:menu 
+ Roo.Toolbar.SplitButton:menu
+ Roo.menu.Item:menu 
+right: 
+ Roo.menu.Menu         
+           
+           
+           
+           
+//Menu           
+left:
+ Roo.menu.Menu
+right:
+  Roo.menu.CheckItem         
+  Roo.menu.ColorItem         
+  Roo.menu.DateItem         
+  Roo.menu.DateMenu         
+  Roo.menu.Separator         
+  Roo.menu.TextItem         
+  Roo.menu.Item         
+           
+ 
+//Grids           
+left: 
+ Roo.GridPanel:grid
+right:
+  Roo.grid.Grid         
+  Roo.grid.EditorGrid         
+
+left:
+ Roo.grid.GridPanel:footer
+right:
+ Roo.PagingToolbar         
+           
+           
+left:
+  Roo.grid.Grid:sm
+  Roo.grid.EditorGrid:sm
+right:  
+ Roo.grid.CellSelectionModel         
+ Roo.grid.RowSelectionModel         
+           
+left:
+ Roo.grid.Grid:view
+right:
+ Roo.grid.EditorGrid:view          
+ Roo.grid.GridView                 
+
+left:   
+ Roo.grid.Grid:cm[] 
+ Roo.grid.EditorGrid:cm[]          
+right:
+ Roo.grid.ColumnModel
+
+left:           
+ Roo.grid.ColumnModel:editor
+right:
+ Roo.grid.GridEditor         
+           
+//Tree           
+left:
+ Roo.TreePanel:tree
+right:
+ Roo.tree.TreePanel         
+
+left:     
+ Roo.tree.TreePanel:root
+right:
+ Roo.tree.AsyncTreeNode         
+  Roo.tree.TreeNode         
+
+left:           
+ Roo.tree.TreePanel:loader 
+right:
+ Roo.tree.TreeLoader         
+ 
+left:
+ Roo.tree.TreePanel:sm
+right:
+ Roo.tree.DefaultSelectionModel         
+  Roo.tree.MultiSelectionModel         
