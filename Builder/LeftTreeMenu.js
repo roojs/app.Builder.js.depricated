@@ -31,7 +31,7 @@ LeftTreeMenu = new XObject({
             // our palete should handle this.. really.
          
         ]
-    };
+    }
     
 });
  
