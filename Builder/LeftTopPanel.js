@@ -2,12 +2,12 @@
 Gio = imports.gi.Gio;
 Gtk = imports.gi.Gtk;
 Gdk = imports.gi.Gdk;
-GObject = imports.gi.GObject;
-XN = imports.xnew;
-console = imports.console;
 Pango = imports.gi.Pango ;
-Builder = imports['Builder.js'];
-Roo = imports['Roo.js'];
+
+GObject = imports.gi.GObject;
+XObject = imports.XObject;
+console = imports.console;
+
  
 // vbox
 // expander
@@ -21,21 +21,20 @@ LeftTopPanel = new XObject({
         items : [
             
             {
-                xid : 'expander',
-                xtype : 'Expander',
-                xns: 'Gtk',
+                id : 'expander',
+                xtype : Gtk.Expander,
+                
                 label : 'Project Tree',
                 packing : ['pack_start', false , true ], // expand // fill.
-                set : {
-                    add_events : [ Gdk.EventMask.BUTTON_MOTION_MASK ]
+                init : function(){
+                    XObject.prototype.init.call(this); 
+                    this.el.add_events (Gdk.EventMask.BUTTON_MOTION_MASK );
                 },
                 listeners : {
-                    _new : function () {
-                        _expander = this;
-                    },
+                    
                     activate : function () 
                     {
-                       var nb = XN.get(this, 'notebook');
+                        var nb = this.get('*notebook');
                         if (this.el.expanded) {
                             // now expanded..
                             var pm  = Builder.Provider.ProjectManager;
