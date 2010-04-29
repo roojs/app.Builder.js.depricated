@@ -1,14 +1,15 @@
 //<Script type="text/javascript">
 
-XN = imports.xnew;
 Gtk = imports.gi.Gtk;
 GObject = imports.gi.GObject;
 Gio = imports.gi.Gio;
 GLib = imports.gi.GLib;
-console = imports.console;
-Builder = imports['Builder.js'];
-Roo = imports['Roo.js'];
 
+console = imports.console;
+XObject = imports.XObject.XObject;
+
+Window          = imports.Builder.Window.Window;
+StandardErrorDialog = imports.Builder.StandardErrorDialog.StandardErrorDialog;
 /**
  * add a component
  * 
@@ -20,13 +21,9 @@ Roo = imports['Roo.js'];
  * 
  */
 
-
-
-XN.create(  {
-        xnsid : 'Builder.DialogNewComponent',
-        xid : 'dialog',
-        xns : 'Gtk',
-        xtype : 'Dialog',
+DialogNewComponent = new XObject({
+        
+        xns : Gtk.Dialog,
       //  type: Gtk.WindowType.TOPLEVEL,
         deletable : false,
         modal : true,
@@ -39,9 +36,9 @@ XN.create(  {
             
             c = c || { name : '' , xtype : '' };
             // check whic project we are adding to..
-            Roo.apply(this, c);
+            XObject.extend(this, c);
             
-            this.el.set_screen(XN.get('Builder.Window').window.el.get_screen());
+            this.el.set_screen(Window.el.get_screen());
             
             var paths = [];
             for (var i in this.project.paths) {
@@ -52,14 +49,14 @@ XN.create(  {
             }
             
             // load the paths.
-            XN.get(this).directory_model.loadData(paths);
+            this.get('directory_model').loadData(paths);
                 
             
             
             this.el.show_all();
             this.success = c.success;
             
-            var tm = XN.get(this).template_model;
+            var tm = this.get('template_model');
             if (tm.templates) {
                 return;
             }
@@ -104,23 +101,23 @@ XN.create(  {
                     
                    
             
-                if (!XN.get(this).xnsid.el.get_text().length || 
-                    XN.get(this).template.getValue().length ||
-                    XN.get(this).directory.getValue().length 
+                if (!DialogNewComponent.get(xnsid).el.get_text().length || 
+                   DialogNewComponent.get('template').getValue().length ||
+                   DialogNewComponent.get('directory').getValue().length 
                 ) {
-                    XN.get('Builder.StandardErrorDialog').dialog.show(
+                    StandardErrorDialog.show(
                         "You have to set Project name ,template and directory"
                     );
                      
                     return;
                 }
                 
-                var dir = XN.get(this).template.getValue();
-                var xidns = XN.get(this).xnsid.get_text();
+                var dir = DialogNewComponent.get('template').getValue();
+                var xidns = DialogNewComponent.get('xnsid').get_text();
                 
                 
                  if (GLib.file_test (GLib.dir + '/' + xidns + '.js', GLib.FileTest.EXISTS)) {
-                    XN.get('Builder.StandardErrorDialog').dialog.show(
+                    StandardErrorDialog..show(
                         "That file already exists"
                     ); 
                     return;
