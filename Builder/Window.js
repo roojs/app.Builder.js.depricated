@@ -11,6 +11,7 @@ LeftTopPanel    = imports.Builder.LeftTopPanel.LeftTopPanel;
 LeftProps       = imports.Builder.LeftProps.LeftProps;
 LeftPanel       = imports.Builder.LeftPanel.LeftPanel;
 MidPropTree     = imports.Builder.MidPropTree.MidPropTree;
+RightBrowser    = imports.Builder.RightBrowser.RightBrowser;
 // concept:
 /**
  * 
@@ -87,13 +88,15 @@ Window = new XObject({
                             
                                                     xns : Gtk.HBox,
                                                     pack : [ 'pack_start', false, true, 0 ],
-                                                    items : [    LeftProps ]
+                                                    items : [  
+                                                        LeftProps 
+                                                    ]
                                                 },
                                                 LeftPanel
                                                 
                                             ]
                                         }
-                                        //LeftProps.add()
+                                        
                                     ]
                                 },
                                 MidPropTree
@@ -111,11 +114,8 @@ Window = new XObject({
                                         {
                                             xtype : Gtk.VBox,
                                             items : [
-                                                {
-                                                    xtype : 'Include',
-                                                    xns : 'xnew',
-                                                    cls : Builder.RightBrowser
-                                                },
+                                                RightBrowser,
+                                                
                                                 {
                                                     xtype : 'Expander',
                                                     xns: 'Gtk',
