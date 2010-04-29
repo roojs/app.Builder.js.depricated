@@ -24,12 +24,12 @@ console = imports.console;
 var _win;
 var _left;
  
- Seed.print('window loaded');
+//print('window loaded');
 
 Window = new XObject({
     
-        xnsid: 'Builder.Window',
-        xid : 'window',
+        id: 'Builder.Window',
+        
         xns : 'Gtk',
         xtype : 'Window',
         type: Gtk.WindowType.TOPLEVEL,
