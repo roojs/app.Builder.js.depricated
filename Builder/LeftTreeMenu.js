@@ -2,41 +2,28 @@
 Gtk = imports.gi.Gtk;
 GLib = imports.gi.GLib;
 GObject = imports.gi.GObject;
-XN = imports.xnew;
+
+
+XObject = imports.XObject.XObject;
 console = imports.console;
-Builder = imports['Builder.js']
 
+LeftTree = imports.Builder.LeftTree.LeftTree;
 
- 
-var _menu;
-
-
-function create() // parent?
+LeftTreeMenu = new XObject({
 {
-    return {
-        xns : 'Gtk',
-        xtype : 'Menu',
+  
+        xtype : Gtk.Menu,
         
-        listeners : {
-            _new : function () {
-                _menu = this;
-            },
-            _rendered : function() {
-                this.el.show_all();
-            }
-            
-        },
         
         items :  [
             {
                 
-                xns : 'Gtk',
-                xtype : 'MenuItem',
+                xtype : Gtk.MenuItem,
                 packing : [ 'append' ],
-                label : 'Delete Element',
+                label : "Delete Element",
                 listeners : {
                     activate : function () {
-                        Builder.LeftTree._model.deleteSelected();
+                        LeftTree.get('model').deleteSelected();
                     }
                 }
             }
@@ -47,4 +34,4 @@ function create() // parent?
     };
     
 }
-XN.xnew(create());
+ 
