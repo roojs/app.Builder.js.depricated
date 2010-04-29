@@ -28,9 +28,22 @@ DialogNewComponent = new XObject({
         deletable : false,
         modal : true,
         title  : "New Component",
-         
+        border_width : 0,
         project : false,
+        init : function()
+        {
+            XObject.prototype.init.call(this); 
+            this.el.add_button("OK",1 );
+            this.el.add_button("Cancel",0 );
+           
         
+           
+            this.el.set_default_size (600, 400);
+            
+            //show_all : []
+        },
+            
+        },
         show : function (c) 
         {
             
@@ -125,7 +138,7 @@ DialogNewComponent = new XObject({
                 this.el.hide();
                 
                 
-                var tmpl = this.project.loadFileOnly(XN.get(this).template.getValue());
+                var tmpl = this.project.loadFileOnlyDialogNewComponent.get('template').getValue());
                 
                 var _this = this;
                 tmpl.copyTo(dir + '/' + xidns + '.js', function() {
@@ -137,28 +150,13 @@ DialogNewComponent = new XObject({
                 
                 
                 
-            },
-            
-            _new  : function(self) {
-                
-                
-            },
-            _rendered : function()
-            {
-                this.el.add_button("OK",1 );
-                this.el.add_button("Cancel",0 );
-                
-                
             }
+            
+            
+            
         },
         
-        set : {
-            set_border_width : [ 0 ],
-           // set_title : [ 'Project Properties' ],
-            set_default_size: [600, 400] //,
-            
-            //show_all : []
-        },
+       
      
         items : [
             {
