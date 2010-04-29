@@ -28,33 +28,33 @@ var _left;
 
 Window = new XObject({
     
-        id: 'Builder.Window',
+    id: 'Builder.Window',
+    
+    xtype : 'Gtk.Window',
+    
+    type: Gtk.WindowType.TOPLEVEL,
+    title : "Application Builder",
+    border_width : 0,
+    
+    init : function()
+    {
+        this.get('MidPropTree').hideWin();
+        this.get('RightPalete.palete').hide();
         
-        xtype : 'Gtk.Window',
-        
-        type: Gtk.WindowType.TOPLEVEL,
-        title : "Application Builder",
-        border_width : 0,
-        
-        init : function()
-        {
-            XObject.get(this, 'MidPropTree').hideWin();
-            XObject.get(this, 'RightPalete.palete').hide();
-            
-            this.el.set_default_size(900, 600);
-            XObject.prototype.init.call(this); 
-        }
-        
-        listeners : {
-            'delete-event' : function (widget, event) {
-                return false;
-            },
-            destroy  : function (widget) {
-                Gtk.main_quit();
-            },
-             
+        this.el.set_default_size(900, 600);
+        XObject.prototype.init.call(this); 
+    }
+    
+    listeners : {
+        'delete-event' : function (widget, event) {
+            return false;
         },
-        
+        destroy  : function (widget) {
+            Gtk.main_quit();
+        },
+         
+    },
+    
         
         items : [
             {
