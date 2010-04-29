@@ -4,7 +4,7 @@
 Gtk = imports.gi.Gtk;
 GObject = imports.gi.GObject;
 console = imports.console;
- 
+XObject = imports.XObject.XObject;
 
 StandardErrorDialog = imports.Builder.StandardErrorDialog.StandardErrorDialog;
 ProjectManager =      imports.Builder.Provider.ProjectManager.ProjectManager;
