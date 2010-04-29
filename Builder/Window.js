@@ -5,6 +5,7 @@ Gtk = imports.gi.Gtk;
 XObject = imports.XObject;
 console = imports.console;
 
+TopMenu = imports.Builder.TopMenu.TopMenu;
   
 // concept:
 /**
@@ -30,7 +31,7 @@ Window = new XObject({
     
     id: 'Builder.Window',
     
-    xtype : 'Gtk.Window',
+    xtype : Gtk.Window,
     
     type: Gtk.WindowType.TOPLEVEL,
     title : "Application Builder",
@@ -56,187 +57,182 @@ Window = new XObject({
     },
     
         
-        items : [
-            {
-                xtype : 'VBox',
-                xns: 'Gtk',
-                items : [
-                    
-                    {
-                        xtype : 'Include',
-                        xns : 'xnew',
-                        cls : Builder.TopMenu
+    items : [
+        {
+            xtype : Gtk.VBox,
+            items : [
+                
+                TopMenu
+                
+                
+                {
+                    xtype : 'HPaned',
+                    xns: 'Gtk',
+                    set : {
+                            set_position : [ 400 ]
                     },
+                    listeners : {
+                        _new : function(self) {
+                            _left = this;
+                        }
+                    },
+                    items : [
+                        // in my original design - the child elements get loaded by a 'module loader...',
+                          
+                        {
+                            xtype : 'HBox',
+                            xns: 'Gtk',
+                            
                     
-                    
-                    {
-                        xtype : 'HPaned',
-                        xns: 'Gtk',
-                        set : {
-                                set_position : [ 400 ]
-                        },
-                        listeners : {
-                            _new : function(self) {
-                                _left = this;
-                            }
-                        },
-                        items : [
-                            // in my original design - the child elements get loaded by a 'module loader...',
-                              
-                            {
-                                xtype : 'HBox',
-                                xns: 'Gtk',
+                            items : [
                                 
-                        
-                                items : [
-                                    
-                                   
-                                    {
-                                        xtype : 'VPaned',
-                                        xns: 'Gtk',
-                                        listeners : {
-                                            _new  : function()
-                                            {
-                                                _leftvpaned = this;
-                                            }
+                               
+                                {
+                                    xtype : 'VPaned',
+                                    xns: 'Gtk',
+                                    listeners : {
+                                        _new  : function()
+                                        {
+                                            _leftvpaned = this;
+                                        }
+                                    },
+                                    set : {
+                                        set_position : [ 300 ]
+                                    },
+                                    items : [
+                                       
+                                                 
+                                        {
+                                            xtype : 'Include',
+                                            xns : 'xnew',
+                                            cls : Builder.LeftTopPanel
                                         },
-                                        set : {
-                                            set_position : [ 300 ]
-                                        },
-                                        items : [
-                                           
-                                                     
-                                            {
-                                                xtype : 'Include',
-                                                xns : 'xnew',
-                                                cls : Builder.LeftTopPanel
-                                            },
-                                            
-                                                    
-                                            {
-                        
-                                                xns : 'Gtk',
-                                                xtype: 'VBox',
+                                        
                                                 
-                                                items : [
-                                              
-                                                    {
-                                
-                                                        xns : 'Gtk',
-                                                        xtype: 'HBox',
-                                                        packing : [ 'pack_start', false, true, 0 ],
-                                                        items : [   
-                                                            {
-                                                                xtype : 'Include',
-                                                                xns : 'xnew',
-                                                                cls : Builder.LeftProps
-                                                            }
-                                                         
-                                                        ]
-                                                    },
-                                                    {
-                                                        xtype : 'Include',
-                                                        xns : 'xnew',
-                                                        cls : Builder.LeftPanel
-                                                    }
-                                                    
-                                                ]
-                                            }
-                                            //LeftProps.add()
-                                        ]
-                                    },
-                                    {
-                                        xtype : 'Include',
-                                        xns : 'xnew',
-                                        cls : Builder.MidPropTree
-                                    }
-                                    
-                                ]
-                            },
-                                    
-                                    
-                            {
-                                xtype : 'HBox',
-                                xns: 'Gtk',
-                                
-                        
-                                items : [
-                           
-                                
-                                    {
-                                        xtype : 'VPaned',
-                                        xns: 'Gtk',
-                                        set : {
-                                            set_position : [ 300 ]
-                                        },
-                                        items : [
-                                            {
-                                                xtype : 'VBox',
-                                                xns: 'Gtk',
-                                                items : [
-                                                    {
-                                                        xtype : 'Include',
-                                                        xns : 'xnew',
-                                                        cls : Builder.RightBrowser
-                                                    },
-                                                    {
-                                                        xtype : 'Expander',
-                                                        xns: 'Gtk',
-                                                        label : 'Console',
-                                                        packing : ['pack_start', false , false ],
-                                                        set : {
-                                                            //set_position : [ 300 ]
-                                                        },
-                                                        items : [
-                                                        //    Builder.ProjectTree.create()
-                                                            {
-                                                                xtype : 'Button',
-                                                                xns: 'Gtk',
-                                                                label : 'Console Goes here'
-                                                            }
-                                                        ]
-                                                    }
-                                                   
-                                                  
-                                                            
-                                                      
-                                                   
-                                                ]
-                                            },
-                                        
-                                        
-                                           
-                                            {
-                                                xtype : 'Include',
-                                                xns : 'xnew',
-                                                cls : Builder.RightEditor
-                                            }
-                                           
-                                           
-                                           
+                                        {
+                    
+                                            xns : 'Gtk',
+                                            xtype: 'VBox',
+                                            
+                                            items : [
                                           
-                                            //LeftProps.add()
-                                        ]
+                                                {
+                            
+                                                    xns : 'Gtk',
+                                                    xtype: 'HBox',
+                                                    packing : [ 'pack_start', false, true, 0 ],
+                                                    items : [   
+                                                        {
+                                                            xtype : 'Include',
+                                                            xns : 'xnew',
+                                                            cls : Builder.LeftProps
+                                                        }
+                                                     
+                                                    ]
+                                                },
+                                                {
+                                                    xtype : 'Include',
+                                                    xns : 'xnew',
+                                                    cls : Builder.LeftPanel
+                                                }
+                                                
+                                            ]
+                                        }
+                                        //LeftProps.add()
+                                    ]
+                                },
+                                {
+                                    xtype : 'Include',
+                                    xns : 'xnew',
+                                    cls : Builder.MidPropTree
+                                }
+                                
+                            ]
+                        },
+                                
+                                
+                        {
+                            xtype : 'HBox',
+                            xns: 'Gtk',
+                            
+                    
+                            items : [
+                       
+                            
+                                {
+                                    xtype : 'VPaned',
+                                    xns: 'Gtk',
+                                    set : {
+                                        set_position : [ 300 ]
                                     },
+                                    items : [
+                                        {
+                                            xtype : 'VBox',
+                                            xns: 'Gtk',
+                                            items : [
+                                                {
+                                                    xtype : 'Include',
+                                                    xns : 'xnew',
+                                                    cls : Builder.RightBrowser
+                                                },
+                                                {
+                                                    xtype : 'Expander',
+                                                    xns: 'Gtk',
+                                                    label : 'Console',
+                                                    packing : ['pack_start', false , false ],
+                                                    set : {
+                                                        //set_position : [ 300 ]
+                                                    },
+                                                    items : [
+                                                    //    Builder.ProjectTree.create()
+                                                        {
+                                                            xtype : 'Button',
+                                                            xns: 'Gtk',
+                                                            label : 'Console Goes here'
+                                                        }
+                                                    ]
+                                                }
+                                               
+                                              
+                                                        
+                                                  
+                                               
+                                            ]
+                                        },
                                     
-                                    {
-                                        xtype : 'Include',
-                                        xns : 'xnew',
-                                        cls : Builder.RightPalete
-                                    }
-                                   
                                     
-                                    
-                                   
-                                ]
-                            }
-                        ]
-                    }
-                    
-                ]
-           }
-                    
-        ]
+                                       
+                                        {
+                                            xtype : 'Include',
+                                            xns : 'xnew',
+                                            cls : Builder.RightEditor
+                                        }
+                                       
+                                       
+                                       
+                                      
+                                        //LeftProps.add()
+                                    ]
+                                },
+                                
+                                {
+                                    xtype : 'Include',
+                                    xns : 'xnew',
+                                    cls : Builder.RightPalete
+                                }
+                               
+                                
+                                
+                               
+                            ]
+                        }
+                    ]
+                }
+                
+            ]
+       }
+                
+    ]
 }); 
  
     
