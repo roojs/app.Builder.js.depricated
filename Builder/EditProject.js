@@ -256,7 +256,7 @@ EditProject = new XObject({
                 ]
             }
         ]
-    };
+    }
     
-}
+)
 //_win = XN.xnew(create());
