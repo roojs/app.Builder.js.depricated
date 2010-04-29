@@ -393,7 +393,7 @@ DialogNewComponent = new XObject({
                         ]
                     },
                     {
-                        xtype : Gtk.Label
+                        xtype : Gtk.Label,
                         pack : [ 'pack_end', true, true , 0 ],
                         label : ""
                     }
