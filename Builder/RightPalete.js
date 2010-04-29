@@ -9,8 +9,8 @@ XObject = imports.XObject.XObject;
 console = imports.console;
 
 
-LeftTree = 
-Roo = Builder.Provider.Palete.Roo.Roo;
+LeftTree = = imports.Builder.LeftTree.LeftTree;
+Roo = imports.Builder.Provider.Palete.Roo.Roo;
 // normally appears as a vbox with a expander button,
 // when you put your mouse over though, it expands.
 
