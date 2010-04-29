@@ -153,18 +153,18 @@ LeftPanel = new XObject({
                         {
                             var data = this.toJS();
                             var iter = new Gtk.TreeIter();
-                            var s = _view.selection;
+                            var s = LeftPanel.get('view').selection;
                             s.get_selected(_model.el, iter);
                                  
                                
                             var gval = new GObject.Value('');
-                            _model.el.get_value(iter, 0 ,gval);
+                            LeftPanel.get('model').el.get_value(iter, 0 ,gval);
                             if (typeof(data[gval.value]) == 'undefined') {
                                 return;
                             }
                             delete data[gval.value];
                             this.load(data);
-                            Builder.LeftTree._model.changed(data, true); 
+                            LeftTree.get('model').changed(data, true);
                             
                         },
                         
@@ -180,12 +180,12 @@ LeftPanel = new XObject({
                             this.el.set_value(this.activeIter, 3, '' + this.toShort(str));
                             // update the tree...
                             
-                            Builder.LeftTree._model.changed(this.toJS(), true); 
+                            LeftTree.get('model').changed(this.toJS(), true); 
                         },
                         toJS: function()
                         {
                             var iter = new Gtk.TreeIter();
-                            _model.el.get_iter_first(iter);
+                            LeftPanel.get('model').el.get_iter_first(iter);
                             var ar = {};
                                
                             while (true) {
@@ -200,7 +200,7 @@ LeftPanel = new XObject({
                                     ar[ k ] = this.getValue(iter, 1);
                                 }
                                 
-                                if (!_model.el.iter_next(iter)) {
+                                if (! LeftPanel.get('model').el.iter_next(iter)) {
                                     break;
                                 }
                             }
@@ -212,13 +212,13 @@ LeftPanel = new XObject({
                         },
                         getValue: function (iter, col) {
                             var gval = new GObject.Value('');
-                             _model.el.get_value(iter, col ,gval);
+                            LeftPanel.get('model').el.get_value(iter, col ,gval);
                             var val = '' + gval.value;
                             if (col != 1) {
                                 return val;
                             }
                             gval = new GObject.Value('');
-                             _model.el.get_value(iter,4  ,gval);
+                              LeftPanel.get('model').el.get_value(iter,4  ,gval);
                             switch(gval.value) {
                                 case 'number':
                                     return parseFloat(val);
@@ -235,47 +235,39 @@ LeftPanel = new XObject({
 
                     {
                         
-                        xtype: Gtk.TreeViewColumn',
+                        xtype: Gtk.TreeViewColumn,
                         pack : ['append_column'],
                         title : 'key',
-                        listeners : {
-                            _rendered : function ()
-                            {
-                                this.el.add_attribute(this.items[0].el , 'markup', 2 );
-                            }
+                        init : function ()
+                        {
+                            XObject.prototype.init.call(this); 
+                            this.el.add_attribute(this.items[0].el , 'markup', 2 );
                         },
                         items : [
-                        
-                        
-                        
                             {
-                                
-                                xtype : 'CellRendererText',
+                                xtype : Gtk.CellRendererText,
                                 pack : ['pack_start'],
-                                
-
                             }
                         ]
                     },
                             
                     {
                         
-                        xtype: Gtk.TreeViewColumn',
+                        xtype: Gtk.TreeViewColumn,
                         pack : ['append_column'],
                         title : 'value',
-                        listeners : {
-                            _rendered : function ()
-                            {
-                                this.el.add_attribute(this.items[0].el , 'text', 3 );
-                            }
+                        init : function ()
+                        {
+                            XObject.prototype.init.call(this); 
+                            this.el.add_attribute(this.items[0].el , 'text', 3 );
+                             
                         },
                         items : [
                         
-                        
-                        
+                         
                             {
                                 
-                                xtype : 'CellRendererText',
+                                xtype : Gtk.CellRendererText,
                                 pack : ['pack_start'],
                                 editable : true,
                                 
@@ -284,27 +276,27 @@ LeftPanel = new XObject({
                                 listeners : {
  
                                     edited : function(r,p, t) {
-                                        _model.changed(t, true);
-                                        _model.activeIter = false;
+                                        LeftPanel.get('model').changed(t, true);
+                                        LeftPanel.get('model').activeIter = false;
                                         
                                     },
                                    
                                     'editing-started' : function(r, e, p) {
                                         
-                                         var iter = new Gtk.TreeIter();
-                                        var s = _view.selection;
-                                        s.get_selected(_model.el, iter);
+                                        var iter = new Gtk.TreeIter();
+                                        var s = LeftPanel.get('view').selection;
+                                        s.get_selected(LeftPanel.get('model').el, iter);
                                          
                                        
                                         var gval = new GObject.Value('');
-                                         _model.el.get_value(iter, 0 ,gval);
+                                        LeftPanel.get('model').el.get_value(iter, 0 ,gval);
                                         var val = '' + gval.value;
                                         
                                         gval = new GObject.Value('');
-                                         _model.el.get_value(iter, 1 ,gval);
+                                        LeftPanel.get('model').el.get_value(iter, 1 ,gval);
                                         var rval = gval.value;
                                          
-                                        _model.activeIter = iter;
+                                        LeftPanel.get('model').activeIter = iter;
                                         //  not listener...
                                         
                                         var showEditor = false;
@@ -319,40 +311,40 @@ LeftPanel = new XObject({
                                         }
                                         
                                         if (!showEditor) {
-                                            imports['Builder/RightEditor.js']._win.el.hide();
+                                            RightEditor.el.hide();
 
-                                            var type = _model.getValue(iter,4);
+                                            var type = LeftPanel.get('model').getValue(iter,4);
                                             
                                             // toggle boolean
                                             if (type == 'boolean') {
-                                                val = ! _model.getValue(iter,1);
+                                                val = ! LeftPanel.get('model').getValue(iter,1);
                                                 
                                                 
-                                                 _model.activeIter = false;
+                                                LeftPanel.get('model').activeIter = false;
                                                 GLib.timeout_add(0, 1, function() {
                                                     //   Gdk.threads_enter();
                                                      
                                                     e.editing_done();
                                                     e.remove_widget();
-                                                    _model.activeIter = iter;
-                                                    _model.changed(''+val,true);
+                                                    LeftPanel.get('model').activeIter = iter;
+                                                    LeftPanel.get('model').changed(''+val,true);
                                                     
                                              
                                                     return false;
-                                                    });
+                                                });
                                             }
                                             
                                             return;
                                         }
-                                         _model.activeIter = false;
+                                        LeftPanel.get('model').activeIter = false;
                                         GLib.timeout_add(0, 1, function() {
                                             //   Gdk.threads_enter();
-                                            imports['Builder/RightEditor.js']._win.el.show();
-                                            imports['Builder/RightEditor.js']._view.load( rval );
+                                            RightEditor.el.show();
+                                            RightEditor.get('view').load( rval );
                                             
                                             e.editing_done();
                                             e.remove_widget();
-                                            _model.activeIter = iter;
+                                            LeftPanel.get('model').activeIter = iter;
                                             
                                      //       Gdk.threads_leave();
                                             return false;
