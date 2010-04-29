@@ -1,11 +1,10 @@
 //<Script type="text/javascript">
 
-XN = imports.xnew;
+ 
 Gtk = imports.gi.Gtk;
 GObject = imports.gi.GObject;
 console = imports.console;
-Builder = imports['Builder.js'];
-Roo = imports['Roo.js'];
+ 
 
 StandardErrorDialog = imports.Builder.StandardErrorDialog.StandardErrorDialog;
 ProjectManager =      imports.Builder.Provider.ProjectManager.ProjectManager;
