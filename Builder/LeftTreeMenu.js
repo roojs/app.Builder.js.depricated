@@ -33,5 +33,5 @@ LeftTreeMenu = new XObject({
         ]
     };
     
-}
+});
  
