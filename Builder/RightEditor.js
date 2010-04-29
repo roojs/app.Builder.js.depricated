@@ -11,6 +11,12 @@ if (!GtkSource) {
     Seed.die("Failed to load SourceView");
 }
 
+XObject = imports.XObject.XObject;
+console = imports.console;
+
+LeftPanel = imports.Builder.LeftPanel.LeftPanel;
+
+
 RightEditor = new XObject({
          
         xtype: GtkScrolledWindow,
