@@ -20,7 +20,7 @@ LeftTree            = imports.Builder.LeftTree.LeftTree;
 
 LeftTopPanel = new XObject({
         
-        xnsid : 'Builder.LeftTopPanel',
+        id: 'LeftTopPanel',
         xtype : 'VBox',
         xns: 'Gtk',
         items : [
