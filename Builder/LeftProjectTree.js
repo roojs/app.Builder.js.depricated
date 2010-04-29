@@ -9,9 +9,14 @@ Pango = imports.gi.Pango ;
 XObject = imports.XObject.XObject;
 console = imports.console;
 
-ProjectManager = Builder.Provider.ProjectManager.ProjectManager;
+ProjectManager      = imports.Builder.Provider.ProjectManager.ProjectManager;
+EditProject         = imports.Builder.EditProject.EditProject;
+DialogNewComponent  = imports.Builder.DialogNewComponent.DialogNewComponent;
+LeftTree            = imports.Builder.LeftTree.LeftTree;
+LeftTopPanel        = imports.Builder.LeftTopPanel.LeftTopPanel;
 
 // http://www.google.com/codesearch/p?hl=en#EKZaOgYQHwo/unstable/sources/sylpheed-2.2.9.tar.bz2%7C1erxr_ilM1o/sylpheed-2.2.9/src/folderview.c&q=gtk_tree_view_get_drag_dest_row
+
 
 Gtk.rc_parse_string(
             "style \"gtkcombobox-style\" {\n" + 
@@ -144,8 +149,8 @@ LeftProjectTree = new XObject({
                                                 el.set_value(iter, 1, p.name);
                                                 
                                             });
-                                             
-                                            _comboLeftProjectTree.get('combo').setValue(ov);
+                                            
+                                            LeftProjectTree.get('combo').setValue(ov);
                                             
                                         }
                                          
@@ -191,13 +196,10 @@ LeftProjectTree = new XObject({
                                         listeners : {
                                             activate : function () {
                                                 
-                                                if (!Builder.EditProject._win) {
-                                                    XN.xnew(Builder.EditProject.create());
-                                                }
                                                 
-                                                Builder.EditProject._win.show({
+                                                EditProject.show({
                                                     success : function(pr) {
-                                                        _combo.setValue(pr.fn);
+                                                        LeftProjectTree.get('combo').setValue(pr.fn);
                                                     }
                                                 });
                                             }
@@ -206,14 +208,15 @@ LeftProjectTree = new XObject({
                                     {
                                         
                                         
-                                        xtype : Gtk.MenuItem',
+                                        xtype : Gtk.MenuItem,
                                         pack : [ 'append' ],
-                                        label : 'Add Directory To Current Project',
+                                        label : "Add Directory To Current Project",
                                         listeners : {
                                             activate : function () {
-                                                var fn = _combo.getValue();
+                                                
+                                                var fn = LeftProjectTree.get('combo').getValue();
                                                 if (!fn) {
-                                                    XN.get(this).box.showNoProjectSelected();
+                                                    LeftProjectTree.showNoProjectSelected();
                                                     return true;
                                                 }
                                                 
@@ -234,7 +237,7 @@ LeftProjectTree = new XObject({
                                                 }
                                                     
                                                 //Seed.print(dc.get_filename());
-                                                var pm  = Builder.Provider.ProjectManager;
+                                                var pm  = ProjectManager;
                                                 pm.getByFn(fn).add(dc.get_filename(), 'dir');
                                                 dc.destroy();
                                                 
@@ -245,14 +248,14 @@ LeftProjectTree = new XObject({
                                     {
                                         
                                         
-                                        xtype : Gtk.MenuItem',
+                                        xtype : Gtk.MenuItem,
                                         pack : [ 'append' ],
-                                        label : 'Add File To Current Project',
+                                        label : "Add File To Current Project",
                                         listeners : {
                                             activate : function () {
-                                                var fn = _combo.getValue();
+                                                var fn = LeftProjectTree.get('combo').getValue();
                                                 if (!fn) {
-                                                    XN.get(this).box.showNoProjectSelected();
+                                                    LeftProjectTree.showNoProjectSelected();
                                                     return true;
                                                 }
                                                 
@@ -274,8 +277,8 @@ LeftProjectTree = new XObject({
                                                 }
                                                     
                                                 //Seed.print(dc.get_filename());
-                                                var pm  = Builder.Provider.ProjectManager;
-                                                pm.getByFn(fn).add(dc.get_filename(), 'file');
+                                                
+                                                ProjectManager.getByFn(fn).add(dc.get_filename(), 'file');
                                                 dc.destroy();
                                                 
                                                  
@@ -291,14 +294,14 @@ LeftProjectTree = new XObject({
                                         label : 'Add Component',
                                         listeners : {
                                             activate : function () {
-                                                var fn = _combo.getValue();
+                                                var fn = LeftProjectTree.get('combo').getValue();
                                                 if (!fn) {
-                                                    XN.get(this).box.showNoProjectSelected();
+                                                    LeftProjectTree.showNoProjectSelected();
                                                     return true;
                                                 }
-                                                var pm  = Builder.Provider.ProjectManager;
-                                                XN.get('Builder.DialogNewComponent').dialog.show({
-                                                    project : pm.getByFn(fn)
+                                                
+                                                DialogNewComponent.show({
+                                                    project : ProjectManager.getByFn(fn)
                                                 });
                                                 
                                                  
@@ -323,55 +326,50 @@ LeftProjectTree = new XObject({
             {
                 
                 
-                xtype: Gtk.ScrolledWindow',
+                xtype: Gtk.ScrolledWindow,
                 smooth_scroll : true,
-               // pack : ['pack_start', true , true ],
-                set : {
-                    set_shadow_type : [ Gtk.ShadowType.IN ],
-                    set_policy : [Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC] //,
+                shadow_type : Gtk.ShadowType.IN,
+                 init :  function ()
+                {
+                    XObject.prototype.init.call(this); 
+              
+                    this.el.set_policy  (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC );
                     //set_size_request : [-1,400]
                 },
                 items : [        
                     {
                         
-                            
+                        id : 'view',  
                         
-                        xtype : Gtk.TreeView',
-                        set : {
-                            set_headers_visible : [ false],
-                            set_enable_tree_lines : [ true] ,
-                            set_tooltip_column : [1],
+                        xtype : Gtk.TreeView,
+                        headers_visible :  false,
+                        enable_tree_lines :  true ,
+                        tooltip_column : 1,
                           //  set_reorderable: [1]
-                        },  
+                        }, 
+                        init :  function ()
+                        {
+                            XObject.prototype.init.call(this); 
+                            var description = new Pango.FontDescription.c_new();
+                            description.set_size(8000);
+                            this.el.modify_font(description);
+                            
+                            this.selection = this.el.get_selection();
+                            this.selection.set_mode( Gtk.SelectionMode.SINGLE);
+                        },
                         listeners : {
-                            _new : function () {
-                                _view = this;
-                            },
-                            _rendered: function()
-                            {
-                                
-                                var description = new Pango.FontDescription.c_new();
-                                description.set_size(8000);
-                                this.el.modify_font(description);
-                                
-                                this.selection = this.el.get_selection();
-                                this.selection.set_mode( Gtk.SelectionMode.SINGLE);
-                               // this.selection.signal['changed'].connect(function() {
-                                //    _view.listeners['cursor-changed'].apply(_view, [ _view, '']);
-                                //});
-                                
-                            }, 
+                            
                             'cursor-changed'  : function(tv, a) { 
                                 //select -- should save existing...
                                 var iter = new Gtk.TreeIter();
                                 
                                 if (this.selection.count_selected_rows() < 1) {
                                     //XN.get('Builder.LeftTree.model').
-                                    Builder.LeftTree._model.load( false);
+                                    LeftTree.get('model').load( false);
                                     
                                     return;
                                 }
-                                var model = XN.get(this, 'model');
+                                var model = LefProjectTree.get('model');
                                 //console.log('changed');
                                 var s = this.selection;
                                 s.get_selected(model, iter);
@@ -386,12 +384,12 @@ LeftProjectTree = new XObject({
                                 console.log(file);
                                 
                                 
-                                var nb = XN.get('Builder.LeftTopPanel.expander');
+                                var nb = LeftTopPanel.get('expander');
                                 nb.el.expanded = false;
                                 nb.listeners.activate.call(nb);
                                 //_expander.el.set_expanded(false);
 
-                                var ltm = XN.get('Builder.LeftTree.model');
+                                var ltm = LeftTree.get('model');
                                 ltm.loadFile(file);
                                 
                                 return true;
@@ -405,36 +403,27 @@ LeftProjectTree = new XObject({
                             {
                                 pack : ['set_model'],
                                 
+                                xtype : Gtk.TreeStore,
+                                id : 'model',
+                                init :  function ()
+                                {
+                                    XObject.prototype.init.call(this);    
+                                        
+                                        
+                                    this.el.set_column_types ( 3, [
+                                            GObject.TYPE_STRING, // title 
+                                            GObject.TYPE_STRING, // tip
+                                            GObject.TYPE_STRING // id..
+                                            ] );
+                    
+                                        
+                                        
+                                   
+                                     
+                                    
+                                },
+                                activeIter : false, // fixme - should not use iters..
                                 
-                                xtype : Gtk.TreeStore',
-                                xid : 'model',
-                                listeners : {
-                                    _rendered : function()
-                                    {
-                                        _model = this;
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        this.el.set_column_types ( 3, [
-                                                GObject.TYPE_STRING, // title 
-                                                GObject.TYPE_STRING, // tip
-                                                GObject.TYPE_STRING // id..
-                                                ] );
-                        
-                                        
-                                        
-                                    }
-                                     
-                                    
-                                },
-                                activeIter : false,
-                                changed : function( n, refresh) {
-                                    
-                                     
-                                },
                                 
                                 project : false,
                                 
@@ -446,7 +435,7 @@ LeftProjectTree = new XObject({
                                         return;
                                     }
                                     this.load(pr.toTree());
-                                    _view.el.expand_all();
+                                    LeftProjectTree.get('view').el.expand_all();
                                 },
                                 
                                 load : function(tr,iter)
@@ -455,20 +444,21 @@ LeftProjectTree = new XObject({
                                     console.log('Project tree load: ' + tr.length);
                                     var citer = new Gtk.TreeIter();
                                     //this.insert(citer,iter,0);
-                                    Roo.each(tr, function (r) {
+                                    var _this = this;
+                                    tr.forEach(function (r) {
                                         if (!iter) {
-                                            LeftProjectTree.get('model').el.append(citer);   
+                                            _this.el.append(citer);   
                                         } else {
-                                            this.el.insert(citer,iter,-1);
+                                            _this.el.insert(citer,iter,-1);
                                         }
-                                        this.el.set_value(citer, 0, '' + r.getTitle()); // title 
-                                        this.el.set_value(citer, 1, '' + r.getTitleTip()); // tip
-                                        this.el.set_value(citer, 2, '' + r.id); //id
+                                        _this.el.set_value(citer, 0, '' + r.getTitle()); // title 
+                                        _this.el.set_value(citer, 1, '' + r.getTitleTip()); // tip
+                                        _this.el.set_value(citer, 2, '' + r.id); //id
                                         if (r.cn && r.cn.length) {
-                                            this.load(r.cn, citer);
+                                            _this.load(r.cn, citer);
                                         }
                                         
-                                    }, this);
+                                    });
                                     
                                 },
                                 
