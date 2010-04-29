@@ -39,6 +39,7 @@ Window = new XObject({
     
     init : function()
     {
+        this.el.show_all();
         this.get('MidPropTree').hideWin();
         this.get('RightPalete.palete').hide();
         
