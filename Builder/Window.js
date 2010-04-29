@@ -101,12 +101,8 @@ Window = new XObject({
                             ]
                         },
                                 
-                                
                         {
-                            xtype : 'HBox',
-                            xns: 'Gtk',
-                            
-                    
+                            xtype : Gtk.HBox
                             items : [
                        
                             
