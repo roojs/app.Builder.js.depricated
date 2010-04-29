@@ -12,8 +12,8 @@ console = imports.console;
 
 
 Roo             = imports.Builder.Provider.Palete.Roo.Roo;
-Window =
-
+Window          = imports.Builder.Window.Window;
+LeftPanel       = imports.Builder.LeftPanel.LeftPanel;
 
 /**
  * 
