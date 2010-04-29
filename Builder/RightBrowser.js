@@ -3,59 +3,58 @@ Gio = imports.gi.Gio;
 Gtk = imports.gi.Gtk;
 Gdk = imports.gi.Gdk;
 GObject = imports.gi.GObject;
-XN = imports.xnew;
-console = imports.console;
 Pango = imports.gi.Pango ;
+WebKit= imports.gi.WebKit;
 
-Builder = imports['Builder.js'];
 
-var _view;
- 
-var _view = false;
 
-function create() // parent?
-{
-    
-            
-    return {
-        xns : 'Gtk',
-        xtype: 'ScrolledWindow',
-        smooth_scroll : true,
+XObject = imports.XObject.XObject;
+console = imports.console;
+
+LeftTree = imports.Builder.LeftTree.LeftTree;
+
+
+MidPropTree = new XObject({
+         
+             
         
-        set : {
-            set_shadow_type : [ Gtk.ShadowType.IN ],
-            set_policy : [Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC]
+        xtype: Gtk.ScrolledWindow,
+        smooth_scroll : true,
+        shadow_type : Gtk.ShadowType.IN 
+        init : function() {
+            XObject.prototype.init.call(this); 
+             
+            this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
         },
         
         items : [
             {
-                xns : 'WebKit',
-                xtype : 'WebView',
+                id : 'view',
+                xtype : WebKit.WebView,
                 packing : ['add' ],
                 ready : false,
+                init : function() {
+                    XObject.prototype.init.call(this); 
+                    // fixme!
+                    this.el.open('http://www.akbkhome.com/Builder/Pman/Builder/Gtk/index.html?ts='+Math.random());
+                        
+                        
+                    Gtk.drag_dest_set
+                    (
+                            this.el,              /* widget that will accept a drop */
+                            Gtk.DestDefaults.MOTION  | Gtk.DestDefaults.HIGHLIGHT,
+                            null,            /* lists of target to support */
+                            0,              /* size of list */
+                            Gdk.DragAction.COPY         /* what to do with data after dropped */
+                    );
+                    targets = new Gtk.TargetList();
+                    targets.add( LeftTree.atoms["STRING"], 0, 0);
+                    Gtk.drag_dest_set_target_list(this.el, targets);
+                    Gtk.drag_dest_add_text_targets(this.el);
+                },   
                 listeners : {
-                    _new : function () {
-                        _view = this;
-                    },
-                    _rendered : function()
-                    {
-                        this.el.open('http://www.akbkhome.com/Builder/Pman/Builder/Gtk/index.html?ts='+Math.random());
-                        
-                        
-                        Gtk.drag_dest_set
-                        (
-                                this.el,              /* widget that will accept a drop */
-                                Gtk.DestDefaults.MOTION  | Gtk.DestDefaults.HIGHLIGHT,
-                                null,            /* lists of target to support */
-                                0,              /* size of list */
-                                Gdk.DragAction.COPY         /* what to do with data after dropped */
-                        );
-                        targets = new Gtk.TargetList();
-                        targets.add( Builder.atoms["STRING"], 0, 0);
-                        Gtk.drag_dest_set_target_list(this.el, targets);
-                        Gtk.drag_dest_add_text_targets(this.el);
-                        
-                    },
+                    
+                     
                    
                     'load-finished' : function() {
                         if (this.ready) { // dont do it twice!
@@ -63,7 +62,7 @@ function create() // parent?
                         }
                         this.ready = true;
                         
-                        _view.renderJS(imports['Builder/LeftTree.js']._model.toJS()[0]);
+                        this.renderJS(LeftTree.get('model').toJS()[0]);
                        // this.el.execute_script("alert(document.documentElement.innerHTML);");
                     },
                     // we should really use console...
@@ -113,18 +112,18 @@ function create() // parent?
                         }
                         // b) get what we are over.. (from activeNode)
                         // tree is empty.. - list should be correct..
-                        if (!Builder.LeftTree._model.currentTree) {
+                        if (!LeftTree.get('model').currentTree) {
                             Gdk.drag_status(ctx, Gdk.DragAction.COPY,time);
                             return true;
                             
                         }
                         // c) ask tree where it should be dropped... - eg. parent.. (after node ontop)
                         
-                        var tg = Builder.LeftTree._model.findDropNode(this.activeNode, src.dropList);
+                        var tg = LeftTree.get('model').findDropNode(this.activeNode, src.dropList);
                      //   Seed.print(tg);
                         if (!tg.length) {
                             Gdk.drag_status(ctx, 0,time);
-                            Builder.LeftTree._view.highlight(false);
+                            LeftTree.get('view').highlight(false);
                             return true;
                         }
                         
@@ -133,7 +132,7 @@ function create() // parent?
                         // -> highlight it! (in tree)
                         
                         Gdk.drag_status(ctx, Gdk.DragAction.COPY,time);
-                        Builder.LeftTree._view.highlight(tg);
+                        LeftTree.get('view').highlight(tg);
                         this.targetData = tg;
                         // for tree we should handle this...
                         return true;
@@ -149,7 +148,7 @@ function create() // parent?
                         (
                                 w,         /* will receive 'drag-data-received' signal */
                                 ctx,        /* represents the current state of the DnD */
-                                Builder.atoms["STRING"],    /* the target type we want */
+                                LeftTree.atoms["STRING"],    /* the target type we want */
                                 time            /* time stamp */
                         );
                         
@@ -181,7 +180,7 @@ function create() // parent?
                             Seed.print("Browser: source.DRAGDATA? " + source.dragData);
                             if (this.targetData) {
                                 Seed.print(this.targetData);
-                                Builder.LeftTree._model.dropNode(this.targetData,  source.dragData);
+                                LeftTree.get('model').dropNode(this.targetData,  source.dragData);
                             }
                             
                             
@@ -211,69 +210,14 @@ function create() // parent?
                     Seed.print(str);
                     this.el.execute_script("Builder.render(" + JSON.stringify(data) + ");");
                 }
-                
-                
-                /* things we can read.. - to copy settings..
-                    this.get_show_line_numbers ();
-                    this.get_show_line_marks ();
-                    this.get_show_right_margin ();
-
-                    this.get_highlight_current_line ();
-                    this.get_wrap_mode () != Gtk.WRAP_NONE
-
-                    this.get_auto_indent ();
-                    this.get_insert_spaces_instead_of_tabs ();
-                    this.get_indent_width ();
-
-                    
-                    
-                */
-                
-                
-                
-                
-                /*Color color;
-                
-                function mark_tooltip_func  (mark)
-                {
-                    var iter = new Gtk.TextIter;;
-                    var buf = mark.get_buffer ();                                
-                    buf.get_iter_at_mark (iter, mark);
-                    var line = iter.get_line (iter) + 1;
-                    column = iter.get_line_offset (iter);
-
-                    if ((mark.get_category () == "one")) {
-                        return "Line:" + line + "  Column: " + column;
-                    }
-                    
-                    return "<b>Line</b>:" + line + "\n<i>Column:</i>" + column;
-                    
-                }
-                
-                var color = new Gdk.Color();
-                
-                Gtk.Color.parse("lightgreen", color);
-                
-                this.set_mark_category_background (view, "one", color);
-                this.set_mark_category_icon_from_stock (view, "one", GTK_STOCK_YES);
-                this.set_mark_category_priority (view, "one", 1);
-                this.set_mark_category_tooltip_func (view,  "one", mark_tooltip_func, null, null);
-
-                gdk_color_parse ("pink", color);
-                this.set_mark_category_background (view, "two", &color);
-                this.set_mark_category_icon_from_stock (view, "two", GTK_STOCK_NO);
-                this.set_mark_category_priority (view, "two", 2);
-                this.set_mark_category_tooltip_markup_func (view, "two", mark_tooltip_func, NULL, NULL);
-       */
-
-                
+              
             }
         ]
-    };
+    }
         
         
     
     
     
-}
+);
     
