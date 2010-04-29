@@ -9,7 +9,7 @@ Pango = imports.gi.Pango ;
 XObject = imports.XObject.XObject;
 console = imports.console;
 
-
+ProjectManager = Builder.Provider.ProjectManager.ProjectManager;
 
 // http://www.google.com/codesearch/p?hl=en#EKZaOgYQHwo/unstable/sources/sylpheed-2.2.9.tar.bz2%7C1erxr_ilM1o/sylpheed-2.2.9/src/folderview.c&q=gtk_tree_view_get_drag_dest_row
 
@@ -50,35 +50,36 @@ LeftProjectTree = new XObject({
                 items : [
                     {
                         
-                        xtype: Gtk.ToolItem',
+                        xtype: Gtk.ToolItem,
                         pack : [ 'insert', 0],
                         expand: true,
                         
                         items : [
                         
                             {
-                                xid : 'combo',
+                                id : 'combo',
                                 
-                                xtype : 'ComboBox',
+                                xtype : Gtk.ComboBox,
                                 //pack : [ 'insert', 1],
                                 expand: true,
-                                set : {
-                                 //   set_text_column : [1]
-                                   //set_size_request : [150,-1]
-                                },
                                 
+                                init : function () 
+                                {
+                                    XObject.prototype.init.call(this); 
+                                    this.el.add_attribute(this.items[0].el , 'markup', 1 );  
+                                },
                             
                                 setValue : function(fn)
                                 {
                                     var el = this.el;
                                     el.set_active(-1);
-                                    var data = Builder.Provider.ProjectManager.projects;
-                                    Roo.each(data, function(n, ix) {
+                                    var data = ProjectManager.projects;
+                                    data.forEach(function(n, ix) {
                                         if (fn == n.fn) {
                                             el.set_active(ix);
                                             return false;
                                         }
-                                    })
+                                    });
                                 },
                                 getValue : function() 
                                 {
@@ -86,93 +87,55 @@ LeftProjectTree = new XObject({
                                     if (ix < 0 ) {
                                         return false;
                                     }
-                                    var data = Builder.Provider.ProjectManager.projects;
+                                    var data =  ProjectManager.projects;
                                     return data[ix].fn;
-                                    /*
-                                    var iter = new Gtk.TreeIter();
-                                    if (this.el.get_active_iter(iter)) {
-                                        return '';
-                                    }
-                                    var value = new GObject.Value('');
-                                    this.model.el.get_value(iter, 0, value);
-                                    return value.value;
-                                    */
+                                    
                                 },
                                 
                                 
                                 listeners : {
-                                    
-                                    _new : function ()
-                                    {
-                                        _combo = this;
-                                    },
-                                    
-                                    _rendered  : function ()
-                                    {
-                                        
-                                        this.el.add_attribute(this.items[0].el , 'markup', 1 );  
-                                        //this.el.add_attribute(this.items[0].el , 'popup', 2 );     
-                                         
-                                     
-                                  
-                                    },
+                                      
                                     changed : function() {
                                         var fn = this.getValue();
-                                        var pm  = Builder.Provider.ProjectManager;
-                                        _model.loadProject(pm.getByFn(fn))
+                                        var pm  = ProjectManager;
+                                        LeftProjectTree.get('model').loadProject(pm.getByFn(fn))
                                     }
                                 },
                                 items : [
                                    {
+                                          
+                                        xtype : Gtk.CellRendererText,
+                                        pack : ['pack_start']
                                         
-                                        
-                                   
-                                        
-                                        xtype : 'CellRendererText',
-                                        pack : ['pack_start'],
-                                        
-
-                                         
                                     },
                                     {
-                                        
+                                        id : 'combomodel',
                                         pack : [ 'set_model' ],
-                                        xtype : 'ListStore',
-                                        xid : 'combomodel',
-                                        listeners : {
-                                            _new : function()
-                                            {
+                                        xtype : Gtk.ListStore',
+                                        
+                                        init :  function ()
+                                        {
+                                            XObject.prototype.init.call(this); 
+                          
+                                            this.el.set_column_types ( 2, [
+                                                GObject.TYPE_STRING,  // real key
+                                                GObject.TYPE_STRING // real type
                                                 
-                                                _combo.model = this;
-                                            },
-                                            _rendered :  function ()
-                                            {
+                                                
+                                            ] );
+                                                
                                              
-                                                this.el.set_column_types ( 2, [
-                                                    GObject.TYPE_STRING,  // real key
-                                                    GObject.TYPE_STRING // real type
-                                                    
-                                                    
-                                                ] );
-                                                
-                                                 
-                                                
-                                                return;
-                                               
-                                            
-                                            
-                                            }
                                         },
                                        
                                        
                                         
                                         loadData : function (data) {
                                             
-                                            var ov = _combo.getValue();
+                                            var ov = LeftProjectTree.get('combo').getValue();
                                             this.el.clear();
                                             var iter = new Gtk.TreeIter();
                                             var el = this.el;
-                                            Roo.each(data, function(p) {
+                                            data.forEach(function(p) {
                                                 
                                                 el.append(iter);
                                                 
@@ -182,7 +145,7 @@ LeftProjectTree = new XObject({
                                                 
                                             });
                                              
-                                            _combo.setValue(ov);
+                                            _comboLeftProjectTree.get('combo').setValue(ov);
                                             
                                         }
                                          
@@ -215,7 +178,7 @@ LeftProjectTree = new XObject({
                         items : [
                             {
                                 
-                                xtype : 'Menu',
+                                xtype : Gtk.Menu',
                                 pack : [ false ],
                                 
                                 
@@ -223,7 +186,7 @@ LeftProjectTree = new XObject({
                                     {
                                         
                                         
-                                        xtype : 'MenuItem',
+                                        xtype : Gtk.MenuItem',
                                         pack : [ 'append' ],
                                         label : 'New Project',
                                         listeners : {
@@ -244,7 +207,7 @@ LeftProjectTree = new XObject({
                                     {
                                         
                                         
-                                        xtype : 'MenuItem',
+                                        xtype : Gtk.MenuItem',
                                         pack : [ 'append' ],
                                         label : 'Add Directory To Current Project',
                                         listeners : {
@@ -283,7 +246,7 @@ LeftProjectTree = new XObject({
                                     {
                                         
                                         
-                                        xtype : 'MenuItem',
+                                        xtype : Gtk.MenuItem',
                                         pack : [ 'append' ],
                                         label : 'Add File To Current Project',
                                         listeners : {
@@ -324,7 +287,7 @@ LeftProjectTree = new XObject({
                                     {
                                          
                                         
-                                        xtype : 'MenuItem',
+                                        xtype : Gtk.MenuItem',
                                         pack : [ 'append' ],
                                         label : 'Add Component',
                                         listeners : {
@@ -374,7 +337,7 @@ LeftProjectTree = new XObject({
                         
                             
                         
-                        xtype : 'TreeView',
+                        xtype : Gtk.TreeView',
                         set : {
                             set_headers_visible : [ false],
                             set_enable_tree_lines : [ true] ,
@@ -444,7 +407,7 @@ LeftProjectTree = new XObject({
                                 pack : ['set_model'],
                                 
                                 
-                                xtype : 'TreeStore',
+                                xtype : Gtk.TreeStore',
                                 xid : 'model',
                                 listeners : {
                                     _rendered : function()
@@ -495,7 +458,7 @@ LeftProjectTree = new XObject({
                                     //this.insert(citer,iter,0);
                                     Roo.each(tr, function (r) {
                                         if (!iter) {
-                                            _model.el.append(citer);   
+                                            LeftProjectTree.get('model').el.append(citer);   
                                         } else {
                                             this.el.insert(citer,iter,-1);
                                         }
@@ -515,7 +478,7 @@ LeftProjectTree = new XObject({
                                 
                                 getValue: function (iter, col) {
                                     var gval = new GObject.Value('');
-                                     _model.el.get_value(iter, col ,gval);
+                                     LeftProjectTree.get('model').el.get_value(iter, col ,gval);
                                     return  gval.value;
                                     
                                     
@@ -530,11 +493,11 @@ LeftProjectTree = new XObject({
                             {
                                 pack : ['append_column'],
                                 
-                                xtype : 'TreeViewColumn',
+                                xtype : Gtk.TreeViewColumn',
                                 items : [
                                     {
                                         
-                                        xtype : 'CellRendererText',
+                                        xtype : Gtk.CellRendererText',
                                         pack: [ 'pack_start']
                                           
                                     } 
