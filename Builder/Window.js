@@ -1,12 +1,13 @@
 //<Script type="text/javascript">
 
 Gtk = imports.gi.Gtk;
-
+// core libs
 XObject = imports.XObject;
 console = imports.console;
 
-TopMenu = imports.Builder.TopMenu.TopMenu;
-  
+// components.
+TopMenu         = imports.Builder.TopMenu.TopMenu;
+LeftTopPanel    = imports.Builder.LeftTopPanel.LeftTopPanel;
 // concept:
 /**
  * 
@@ -78,24 +79,13 @@ Window = new XObject({
                                     xtype : Gtk.VPaned,
                                     position : 300,
                                     items : [
+                                        LeftTopPanel,
                                         {
-                                            xtype : 'Include',
-                                            xns : 'xnew',
-                                            cls : Builder.LeftTopPanel
-                                        },
-                                        
-                                                
-                                        {
-                    
-                                            xns : 'Gtk',
-                                            xtype: 'VBox',
-                                            
+                                            xtype: Gtk.VBox,
                                             items : [
-                                          
                                                 {
                             
-                                                    xns : 'Gtk',
-                                                    xtype: 'HBox',
+                                                    xns : Gtk.HBox,
                                                     packing : [ 'pack_start', false, true, 0 ],
                                                     items : [   
                                                         {
