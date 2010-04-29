@@ -1,13 +1,14 @@
 //<Script type="text/javascript">
 
-XN = imports.xnew;
 Gtk = imports.gi.Gtk;
 GObject = imports.gi.GObject;
 Gio = imports.gi.Gio;
 GLib = imports.gi.GLib;
+
+XObject = imports.XObject.XObject;
 console = imports.console;
-Builder = imports['Builder.js'];
-Roo = imports['Roo.js'];
+
+
 
 /**
  * add a component
@@ -21,12 +22,11 @@ Roo = imports['Roo.js'];
  */
 
 
-
-XN.create(  {
-    xnsid : 'Builder.StandardErrorDialog',
-    xid: 'dialog',
-    xtype : 'MessageDialog',
-    xns : 'Gtk',
+StandardErrorDialog = new XObject({
+    
+    
+    
+    xtype : Gtk.MessageDialog,
     modal : true,
     buttons : Gtk.ButtonsType.OK,
     'message-type' : Gtk.MessageType.ERROR,
@@ -37,20 +37,19 @@ XN.create(  {
     
     show : function(msg)
     {
+        if (!this.el) {
+            this.init();
+        }
         this.el.text =  msg;
         this.el.show_all();
     },
     
-    listeners : 
-    {
+    listeners :  {
         'delete-event' : function (widget, event) {
             this.el.hide();
             return true;
         },
-        _rendered : function()
-        {
-          //  this.el.show_all();
-        },
+        
         response : function () {
             this.el.hide();
         }
