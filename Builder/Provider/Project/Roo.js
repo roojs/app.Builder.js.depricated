@@ -1,57 +1,30 @@
 //<Script type="text/javascript">
-console = imports['console.js']; 
-Roo = imports['Roo.js']; 
-XN = imports.xnew;
-Gio = imports.gi.Gio;
+
+console = imports.console;
+XObject = imports.XObject.XObject;
  
-Builder = imports['Builder.js']
 
+Base = imports.Builder.Provider.File.Base;
 
-Builder.Provider.Project.Roo = function(cfg) {
-    
-    
-    Builder.Provider.Project.Roo.superclass.constructor.call(this, cfg);
+id = 1;
 
-   
-    // various loader methods..
-    this.id = Roo.id();
-}
-
-
-Roo.extend(Builder.Provider.Project.Roo, Builder.Provider.Project,  {
-    
-    
-    file : false
-    
-    
-    /*
-    // is this used??
-    fetchTree : function (o) {
-        var file = Gio.file_new_for_path(this.file);
-                                
-        var _this = this;                        
-        this.files = [];
-                                
-        file.read_async(0, null, function(source,result) {
-            var stream = source.read_finish(result);
-            var dstream = new Gio.DataInputStream.c_new(stream);
-          
-            var data =  JSON.parse(dstream.read_until(""));
-            Roo.each(data.data, function(d) {
-                d.Project = this;
-                _this.files.push(new Builder.Provider.File.Roo(d));
-                
-               //console.dump(data);
-            });
-            
-            o.success.apply(o.scope || this, [this]);
-            //Seed.quit();
-           
-        }); 
+Roo = XObject.define(
+    function(cfg) {
         
-        return true;
-    }
-    */
+        
+        Roo.superclass.constructor.call(this, cfg);
+
+       
+        // various loader methods..
+        this.id = 'project-gti-' + (id++);
+    }, 
+    Base,
+    {
+         
+        file : false
+    
+    
+    
 });
  
  
