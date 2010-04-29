@@ -185,11 +185,9 @@ LeftProjectTree = new XObject({
                                 
                                 items :  [
                                     {
-                                        
-                                        
-                                        xtype : Gtk.MenuItem',
+                                        xtype : Gtk.MenuItem,
                                         pack : [ 'append' ],
-                                        label : 'New Project',
+                                        label : "New Project",
                                         listeners : {
                                             activate : function () {
                                                 
