@@ -6,9 +6,11 @@ GObject = imports.gi.GObject;
 Pango = imports.gi.Pango ;
 Soup = imports.gi.Soup ;
 
+XObject = imports.XObject.XObject;
+console = imports.console;
 
 
-
+MidPropTree
  
 
 
@@ -18,28 +20,21 @@ Soup = imports.gi.Soup ;
  * 
  */
 
- 
-function create() // parent?
-{
-    
-    return  {
-        xnsid : 'Builder.LeftProps',
-        xns : 'Gtk',
-        xtype: 'HBox',
+LeftProps = new XObject({
+        
+        xtype: Gtk.HBox',
         packing : [ 'pack_start', false, true, 0 ],
         items : [       
             {
                 
-                xns : 'Gtk',
-                xtype : 'Button',
+                
+                xtype: Gtk.Button,
                  
-                
-                
                 listeners : {
                     // pressed...
                     'button-press-event' : function(w, ev ){
                         console.log('pressed');
-                        Builder.MidPropTree._model.showData('props');
+                        MidPropTree.get('model').showData('props');
                         return true;
                         // show the MidPropTree..
                     }
@@ -47,13 +42,13 @@ function create() // parent?
                 },
                 items : [
                     {
-                        xns: 'Gtk',
-                        xtype : 'HBox',
+                        
+                        xtype: Gtk.HBox',
                         packing : ['add'],
                         items : [
                             {
-                                xns: 'Gtk',
-                                xtype : 'Image',
+                                
+                                xtype: Gtk.Image,
                                 'stock' : Gtk.STOCK_ADD,
                                 'icon-size' : Gtk.IconSize.MENU,
                                 
@@ -61,10 +56,10 @@ function create() // parent?
                                 
                             },
                             {
-                                xns: 'Gtk',
-                                xtype : 'Label',
+                                
+                                xtype: Gtk.Label,
                                 packing : ['add'],
-                                label: 'Property'
+                                label: "Property"
                                 
                             }
                         
@@ -75,8 +70,8 @@ function create() // parent?
             },
              {
                 
-                xns : 'Gtk',
-                xtype : 'Button',
+                
+                xtype: Gtk.Button,
                  
                 
                 
@@ -84,7 +79,7 @@ function create() // parent?
                     // pressed...
                     'button-press-event' : function(w, ev ){
                         console.log('pressed');
-                        Builder.MidPropTree._model.showData('events');
+                        MidPropTree.get('model').showData('events');
                         return true;
                         // show the MidPropTree..
                     }
@@ -92,13 +87,13 @@ function create() // parent?
                 },
                 items : [
                     {
-                        xns: 'Gtk',
-                        xtype : 'HBox',
+                        
+                        xtype: Gtk.HBox',
                         packing : ['add'],
                         items : [
                             {
-                                xns: 'Gtk',
-                                xtype : 'Image',
+                                
+                                xtype: Gtk.Image',
                                 'stock' : Gtk.STOCK_ADD,
                                 'icon-size' : Gtk.IconSize.MENU,
                                 
@@ -106,8 +101,8 @@ function create() // parent?
                                 
                             },
                             {
-                                xns: 'Gtk',
-                                xtype : 'Label',
+                                
+                                xtype: Gtk.Label',
                                 packing : ['add'],
                                 label: 'Handler'
                                 
@@ -120,8 +115,8 @@ function create() // parent?
             },
               {
                 
-                xns : 'Gtk',
-                xtype : 'Button',
+                
+                xtype: Gtk.Button,
                  
                 
                 
@@ -139,13 +134,13 @@ function create() // parent?
                 },
                 items : [
                     {
-                        xns: 'Gtk',
-                        xtype : 'HBox',
+                        
+                        xtype: Gtk.HBox,
                         packing : ['add'],
                         items : [
                             {
-                                xns: 'Gtk',
-                                xtype : 'Image',
+                                
+                                xtype: Gtk.Image,
                                 'stock' : Gtk.STOCK_ADD,
                                 'icon-size' : Gtk.IconSize.MENU,
                                 
@@ -153,8 +148,8 @@ function create() // parent?
                                 
                             },
                             {
-                                xns: 'Gtk',
-                                xtype : 'Label',
+                                
+                                xtype: Gtk.Label,
                                 packing : ['add'],
                                 label: 'Other'
                                 
@@ -168,8 +163,8 @@ function create() // parent?
         ]
         
              
-    };
+    }
 
 
-}
+)
     
