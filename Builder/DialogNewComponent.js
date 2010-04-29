@@ -332,7 +332,7 @@ DialogNewComponent = new XObject({
                                                 return false;
                                             }
                                         }
-                                    )
+                                    );
                                 },
                                 getValue : function() 
                                 {
