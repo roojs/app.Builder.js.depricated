@@ -163,22 +163,23 @@ LeftProjectTree = new XObject({
                     {
                         
                         
-                        xtype: Gtk.ToolButton',
+                        xtype: Gtk.ToolButton,
                         pack : [ 'insert', 1],
-                        label : 'Manage',
+                        label : "Manage",
                         'stock-id' :  Gtk.STOCK_EDIT,
                         listeners : {
                             clicked: function() {
-                                this.items[0].el.show_all();
-                                this.items[0].el.popup(null, null, null, null, 1, Gtk.get_current_event_time());
+                                this.get('menu').el.show_all();
+                                this.get('menu').el.popup(null, null, null, 
+                                    null, 1, Gtk.get_current_event_time());
                                 
                             }
                         },
                         
                         items : [
                             {
-                                
-                                xtype : Gtk.Menu',
+                                id : menu
+                                xtype : Gtk.Menu,
                                 pack : [ false ],
                                 
                                 
