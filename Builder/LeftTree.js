@@ -5,13 +5,13 @@ Gdk = imports.gi.Gdk;
 GObject = imports.gi.GObject;
 Pango = imports.gi.Pango ;
 
-LeftTreeMenu
-Roo     = Builder.Provider.Palete.Roo.Roo;
-LeftPanel.get('model').load( false);
-MidPropTree 
-RightBrowser            
-RightPalete
-RightEditor
+Roo             = imports.Builder.Provider.Palete.Roo.Roo;
+LeftTreeMenu    = imports.Builder.LeftTreeMenu.LeftTreeMenu;
+LeftPanel       = imports.Builder.LeftPanel.LeftPanel;
+MidPropTree     = imports.Builder.MidPropTree.MidPropTree;
+RightBrowser    = imports.Builder.RightBrowser.RightBrowser;
+RightPalete     = imports.Builder.RightPalete.RightPalete;
+RightEditor     = imports.Builder.RightEditor.RightEditor;
 // http://www.google.com/codesearch/p?hl=en#EKZaOgYQHwo/unstable/sources/sylpheed-2.2.9.tar.bz2%7C1erxr_ilM1o/sylpheed-2.2.9/src/folderview.c&q=gtk_tree_view_get_drag_dest_row
 
 idSeed = 0;
