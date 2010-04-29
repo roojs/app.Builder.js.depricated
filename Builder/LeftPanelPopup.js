@@ -18,7 +18,7 @@ LeftPanelPopup = new XObject({
         {
             
             
-            xtype : Gtk.MenuItem',
+            xtype : Gtk.MenuItem,
             pack : [ 'append' ],
             label : 'Delete Property / Event',
             listeners : {
