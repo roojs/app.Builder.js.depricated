@@ -1,10 +1,11 @@
 //<Script type="text/javascript">
 
-XN = imports.xnew;
 Gtk = imports.gi.Gtk;
+
+XObject = imports.XObject;
 console = imports.console;
-Builder = imports['Builder.js']
-var _this = Builder.Window; 
+
+  
 // concept:
 /**
  * 
@@ -24,12 +25,9 @@ var _win;
 var _left;
  
  Seed.print('window loaded');
- 
-function create() // parent?
-{
+
+Window = new XObject({
     
-    
-    return {
         xnsid: 'Builder.Window',
         xid : 'window',
         xns : 'Gtk',
@@ -263,9 +261,9 @@ function create() // parent?
            }
                     
         ]
-    };
+}); 
+ 
     
-}
-
+ 
  
   
