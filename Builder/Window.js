@@ -13,6 +13,7 @@ LeftPanel       = imports.Builder.LeftPanel.LeftPanel;
 MidPropTree     = imports.Builder.MidPropTree.MidPropTree;
 RightBrowser    = imports.Builder.RightBrowser.RightBrowser;
 RightEditor     = imports.Builder.RightEditor.RightEditor;
+RightPalete     = imports.Builder.RightPalete.RightPalete;
 // concept:
 /**
  * 
@@ -133,24 +134,11 @@ Window = new XObject({
                                             ]
                                         },
                                         RightEditor
-                                        {
-                                            xtype : 'Include',
-                                            xns : 'xnew',
-                                            cls : Builder.RightEditor
-                                        }
-                                       
-                                       
-                                       
-                                      
-                                        //LeftProps.add()
+                                         
                                     ]
                                 },
-                                
-                                {
-                                    xtype : 'Include',
-                                    xns : 'xnew',
-                                    cls : Builder.RightPalete
-                                }
+                                RightPalete
+                                 
                                
                                 
                                 
