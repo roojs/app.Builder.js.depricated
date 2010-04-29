@@ -8,7 +8,7 @@ GObject = imports.gi.GObject;
 XObject = imports.XObject;
 console = imports.console;
 
- 
+ProjectManager = imports.Builder.ProjectManager.ProjectManager; 
 // vbox
 // expander
 // notebook
@@ -34,7 +34,7 @@ LeftTopPanel = new XObject({
                     
                     activate : function () 
                     {
-                        var nb = this.get('*notebook');
+                        var nb = LeftTopPanel.get('notebook');
                         if (this.el.expanded) {
                             // now expanded..
                             var pm  = Builder.Provider.ProjectManager;
