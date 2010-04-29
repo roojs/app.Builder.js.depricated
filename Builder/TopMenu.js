@@ -3,7 +3,7 @@ Gtk = imports.gi.Gtk;
 GLib = imports.gi.GLib;
 GObject = imports.gi.GObject;
 
-XObject = imports.XObject;
+XObject = imports.XObject.XObject;
 console = imports.console;
  
  
