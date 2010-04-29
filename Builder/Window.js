@@ -9,7 +9,8 @@ console = imports.console;
 TopMenu         = imports.Builder.TopMenu.TopMenu;
 LeftTopPanel    = imports.Builder.LeftTopPanel.LeftTopPanel;
 LeftProps       = imports.Builder.LeftProps.LeftProps;
-LeftPanel       = imports.Builder.LeftProps.LeftPanel;
+LeftPanel       = imports.Builder.LeftPanel.LeftPanel;
+MidPropTree     = imports.Builder.MidPropTree.MidPropTree;
 // concept:
 /**
  * 
@@ -88,19 +89,14 @@ Window = new XObject({
                                                     pack : [ 'pack_start', false, true, 0 ],
                                                     items : [    LeftProps ]
                                                 },
-                                                 LeftPanel
-                                                }
+                                                LeftPanel
                                                 
                                             ]
                                         }
                                         //LeftProps.add()
                                     ]
                                 },
-                                {
-                                    xtype : 'Include',
-                                    xns : 'xnew',
-                                    cls : Builder.MidPropTree
-                                }
+                                MidPropTree
                                 
                             ]
                         },
