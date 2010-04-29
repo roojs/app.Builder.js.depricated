@@ -104,18 +104,12 @@ Window = new XObject({
                         {
                             xtype : Gtk.HBox
                             items : [
-                       
-                            
                                 {
-                                    xtype : 'VPaned',
-                                    xns: 'Gtk',
-                                    set : {
-                                        set_position : [ 300 ]
-                                    },
+                                    xtype : Gtk.VPaned,
+                                    position :  300,
                                     items : [
                                         {
-                                            xtype : 'VBox',
-                                            xns: 'Gtk',
+                                            xtype : Gtk.VBox,
                                             items : [
                                                 {
                                                     xtype : 'Include',
