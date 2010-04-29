@@ -8,6 +8,8 @@ console = imports.console;
 // components.
 TopMenu         = imports.Builder.TopMenu.TopMenu;
 LeftTopPanel    = imports.Builder.LeftTopPanel.LeftTopPanel;
+LeftProps       = imports.Builder.LeftProps.LeftProps;
+LeftPanel       = imports.Builder.LeftProps.LeftPanel;
 // concept:
 /**
  * 
@@ -22,10 +24,7 @@ LeftTopPanel    = imports.Builder.LeftTopPanel.LeftTopPanel;
  */
  
  
- 
-var _win;
-var _left;
- 
+  
 //print('window loaded');
 
 Window = new XObject({
@@ -86,20 +85,10 @@ Window = new XObject({
                                                 {
                             
                                                     xns : Gtk.HBox,
-                                                    packing : [ 'pack_start', false, true, 0 ],
-                                                    items : [   
-                                                        {
-                                                            xtype : 'Include',
-                                                            xns : 'xnew',
-                                                            cls : Builder.LeftProps
-                                                        }
-                                                     
-                                                    ]
+                                                    pack : [ 'pack_start', false, true, 0 ],
+                                                    items : [    LeftProps ]
                                                 },
-                                                {
-                                                    xtype : 'Include',
-                                                    xns : 'xnew',
-                                                    cls : Builder.LeftPanel
+                                                 LeftPanel
                                                 }
                                                 
                                             ]
