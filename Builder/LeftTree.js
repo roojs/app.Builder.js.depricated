@@ -14,6 +14,14 @@ RightPalete
 RightEditor
 // http://www.google.com/codesearch/p?hl=en#EKZaOgYQHwo/unstable/sources/sylpheed-2.2.9.tar.bz2%7C1erxr_ilM1o/sylpheed-2.2.9/src/folderview.c&q=gtk_tree_view_get_drag_dest_row
 
+idSeed = 0;
+function id(el, prefix){
+    prefix = prefix || "roo-gen";
+    //el = Roo.getDom(el);
+    var id = prefix + (++idSeed);
+    return id;
+    //return el ? (el.id ? el.id : (el.id = id)) : id;
+}
 
 LeftTree = new XObject({
 {
@@ -396,16 +404,16 @@ LeftTree = new XObject({
                                 
                                 
                             } else {
-                                Builder.Window._leftvpaned.el.set_position(200);
+                                  Window.get('leftvpaned').el.set_position(200);
                             }
                             
                             
                             
                             RightEditor.el.hide();
                             this.currentTree = this.toJS(false, true)[0];
-                            Builder.RightBrowser._view.renderJS(this.currentTree);
+                            RightBrowser.get('view').renderJS(this.currentTree);
                             console.dump(this.map);
-                            var pm = Builder.RightPalete._model;
+                            var pm = RightPalete.get('model');
                             pm.load( pm.provider.gatherList(this.listAllTypes()));
                             
                             
@@ -423,7 +431,7 @@ LeftTree = new XObject({
                             //Gtk.TreeViewDropPosition.AFTER
                             //Seed.print('treepath : ' + this.map[dropid]);
                             var path = this.map[dropid];
-                            return findDropNodeByPath(path,targets) 
+                            return this.findDropNodeByPath(path,targets) 
                         },
                         findDropNodeByPath : function (path, targets, pref)
                         {
@@ -434,7 +442,7 @@ LeftTree = new XObject({
                                     return [];
                                 }
                                 
-                                var xname = Builder.Provider.Palete.Roo.guessName(this.treemap[path]);
+                                var xname = Roo.guessName(this.treemap[path]);
                                 if (targets.indexOf(xname) > -1) {
                                     if (last) { // pref is after/before..
                                         // then it's after last
@@ -479,7 +487,8 @@ LeftTree = new XObject({
                             if (after) {
                                 Seed.print(target_data[1]  > 0 ? 'insert_after' : 'insert_before');
                                 this.el.get_iter(iter_after, after);
-                                this.el[ target_data[1]  > 0 ? 'insert_after' : 'insert_before'](n_iter, iter_par, iter_after);
+                                this.el[ target_data[1]  > 0 ? 'insert_after' : 'insert_before'](
+                                        n_iter, iter_par, iter_after);
                                 
                             } else {
                                 this.el.append(n_iter, iter_par);
@@ -554,7 +563,7 @@ LeftTree = new XObject({
                             {
                                 Roo.each(li, function(el) {
                                     // this is specific to roo!!!?
-                                    var fullpath = Builder.Provider.Palete.Roo.guessName(el);
+                                    var fullpath =  Roo.guessName(el);
                                     if (fullpath.length && ret.indexOf(fullpath) < 0) {
                                         ret.push(fullpath);
                                     }
@@ -600,7 +609,7 @@ LeftTree = new XObject({
                             }
                             
                             if (with_id) {
-                                k.id = Roo.id(null,'builder-');
+                                k.id = id(null,'builder-');
                                 this.map[k.id] = this.el.get_path(iter).to_string();
                                 this.treemap[  this.map[k.id]  ] = k;
                                 k.xtreepath = this.map[k.id];
@@ -742,9 +751,13 @@ LeftTree = new XObject({
                     
                       
                     {
+                        xtype: Gtk.TreeViewColumn,
                         packing : ['append_column'],
-                        
-                        xtype: Gtk.TreeViewColumn',
+                        init : function(){
+                            XObject.prototype.init.call(this); 
+                            this.el.add_attribute(this.items[0].el , 'markup', 0 );
+                           
+                        },
                         items : [
                             {
                                 
@@ -753,12 +766,7 @@ LeftTree = new XObject({
                                   
                             } 
                         ],
-                        listeners : {
-                            _rendered : function ()
-                            {
-                                this.el.add_attribute(this.items[0].el , 'markup', 0 );
-                            }
-                        }
+                     
                       
                     }
                     
