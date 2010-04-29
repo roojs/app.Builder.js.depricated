@@ -4,10 +4,9 @@ Gtk = imports.gi.Gtk;
 Gdk = imports.gi.Gdk;
 GLib = imports.gi.GLib;
 GObject = imports.gi.GObject;
-
 Pango = imports.gi.Pango ;
 
-
+XObject = imports.XObject.XObject;
 console = imports.console;
 
 LeftTree        = imports.Builder.LeftTree.LeftTree;
