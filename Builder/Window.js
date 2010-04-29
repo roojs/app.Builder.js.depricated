@@ -12,6 +12,7 @@ LeftProps       = imports.Builder.LeftProps.LeftProps;
 LeftPanel       = imports.Builder.LeftPanel.LeftPanel;
 MidPropTree     = imports.Builder.MidPropTree.MidPropTree;
 RightBrowser    = imports.Builder.RightBrowser.RightBrowser;
+RightEditor     = imports.Builder.RightEditor.RightEditor;
 // concept:
 /**
  * 
@@ -115,34 +116,23 @@ Window = new XObject({
                                             xtype : Gtk.VBox,
                                             items : [
                                                 RightBrowser,
-                                                
                                                 {
-                                                    xtype : 'Expander',
-                                                    xns: 'Gtk',
+                                                    xtype : Gtk.Expander,
+                                                    
                                                     label : 'Console',
-                                                    packing : ['pack_start', false , false ],
-                                                    set : {
-                                                        //set_position : [ 300 ]
-                                                    },
+                                                    pack : ['pack_start', false , false ],
+                                                    
                                                     items : [
-                                                    //    Builder.ProjectTree.create()
                                                         {
-                                                            xtype : 'Button',
-                                                            xns: 'Gtk',
+                                                            xtype : Gtk.Button,
                                                             label : 'Console Goes here'
                                                         }
                                                     ]
                                                 }
                                                
-                                              
-                                                        
-                                                  
-                                               
                                             ]
                                         },
-                                    
-                                    
-                                       
+                                        RightEditor
                                         {
                                             xtype : 'Include',
                                             xns : 'xnew',
