@@ -8,9 +8,13 @@ GObject = imports.gi.GObject;
 XObject = imports.XObject;
 console = imports.console;
 
-ProjectManager = imports.Builder.ProjectManager.ProjectManager; 
-LeftProjectTree = imports.Builder.LeftProjectTree.LeftProjectTree;
+ProjectManager      = imports.Builder.ProjectManager.ProjectManager; 
+LeftProjectTree     = imports.Builder.LeftProjectTree.LeftProjectTree;
+LeftTree            = imports.Builder.LeftTree.LeftTree;
+
 // vbox
+
+
 // expander
 // notebook
 
@@ -94,17 +98,9 @@ LeftTopPanel = new XObject({
                 }
                 
                 items :  [
-                   
-                    {
-                        xtype : 'Include',
-                        xns : 'xnew',
-                        cls : Builder.LeftTree
-                    },
-                     {
-                        xtype : 'Include',
-                        xns : 'xnew',
-                        cls : Builder.LeftProjectTree
-                    },
+                    LeftTree,
+                    LeftProjectTree
+                    
                 ]
             }
             
