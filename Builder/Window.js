@@ -30,9 +30,21 @@ Window = new XObject({
     
         id: 'Builder.Window',
         
-        xns : 'Gtk',
-        xtype : 'Window',
+        xtype : 'Gtk.Window',
+        
         type: Gtk.WindowType.TOPLEVEL,
+        title : "Application Builder",
+        border_width : 0,
+        
+        init : function()
+        {
+            XObject.get(this, 'MidPropTree').hideWin();
+            XObject.get(this, 'RightPalete.palete').hide();
+            
+            this.el.set_default_size(900, 600);
+            XObject.prototype.init.call(this); 
+        }
+        
         listeners : {
             'delete-event' : function (widget, event) {
                 return false;
@@ -40,45 +52,9 @@ Window = new XObject({
             destroy  : function (widget) {
                 Gtk.main_quit();
             },
-            _new  : function(self) {
-                _win = self;
-            },
-            _rendered : function()
-            {
-                Builder.MidPropTree._win.hideWin();
-                Builder.RightPalete._palete.hide();
-                
-                
-                /*
-                var pr = new Builder.Provider.Project.Roo({
-                    file : "/home/alan/test.json"
-                });
-                pr.load({
-                    scope : this,
-                    success : function()
-                    {
-                        //console.log("loaded");
-                        
-                        //Seed.quit();
-                        Builder.projects.push(pr);
-                        Builder.LeftProjectTree._model.loadProject(pr);
-                        Builder.LeftProjectTree._expander.el.set_expanded(true);
-
-                    }
-                });
-                */
-                
-                
-            }
+             
         },
-       
-        set : {
-            set_border_width : [ 0 ],
-            set_title : [ 'Application Builder' ],
-            set_default_size: [900, 600],
-            
-            show_all : []
-        },
+        
         
         items : [
             {
