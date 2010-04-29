@@ -126,11 +126,17 @@ Gtk = XObject.define(
             
             
         },
+        /** 
+         * fixme - update to new style
+         * 
+         * 
+         * 
+         */
         
         toSourceStdClass: function()
         {
             var cfg = this.items[0]
-            var fcfg = Roo.apply({ },  this.items[0]);
+            var fcfg = XObject.extend({ },  this.items[0]);
             delete fcfg['*class'];
             delete fcfg['*extends'];
             delete fcfg['*static'];
