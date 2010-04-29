@@ -63,6 +63,7 @@ LeftPanel = new XObject({
                             return false;
                         }
                         LeftPanelPopup.el.set_screen(Gdk.Screen.get_default());
+                        LeftPanelPopup.el.show_all();
                         LeftPanelPopup.el.popup(null, null, null, null, 3, ev.button.time);
                         Seed.print("click:" + res.column.title);
                         return false;
