@@ -2,11 +2,12 @@
 Gtk = imports.gi.Gtk;
 GLib = imports.gi.GLib;
 GObject = imports.gi.GObject;
-XN = imports.xnew;
+
+XObject = imports.XObject.XObject;
 console = imports.console;
  
 
- 
+LeftPanel = imports.Buidler.LeftPanel.LeftPanel;
 
 LeftPanelPopup = new XObject({
     
