@@ -391,7 +391,7 @@ RightPalete = new XObject({
                                                 pack: [ 'pack_start']
                                                   
                                             } 
-                                        ],
+                                        ]
                                         
                                     
                                       
@@ -406,5 +406,5 @@ RightPalete = new XObject({
             }
         ]
             
-    };
-}
+    }
+)
