@@ -212,7 +212,11 @@ XObject.prototype = {
       * @arg cfg {Object} same as XObject constructor.
       */
     addItem : function(o) {
-        
+        if (typeof(o) == 'undefined') {
+            print("Invalid Item added to this!");
+            imports.console.dump(this);
+            Seed.quit();
+           }
         
         var item = (o.constructor == XObject) ? o : new XObject(o);
        
