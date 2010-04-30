@@ -127,7 +127,7 @@ DialogNewComponent = new XObject({
                 }
                 
                 var dir = DialogNewComponent.get('template').getValue();
-                var xidns = DialogNewComponent.get('xnsid').get_text();
+                var xidns = DialogNewComponent.get('xnsid').el.get_text();
                 
                 
                  if (GLib.file_test (GLib.dir + '/' + xidns + '.bjs', GLib.FileTest.EXISTS)) {
