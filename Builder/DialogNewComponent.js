@@ -115,7 +115,7 @@ DialogNewComponent = new XObject({
                     
                    
             
-                if (!DialogNewComponent.get(xnsid).el.get_text().length || 
+                if (!DialogNewComponent.get('xnsid').el.get_text().length || 
                    DialogNewComponent.get('template').getValue().length ||
                    DialogNewComponent.get('directory').getValue().length 
                 ) {
