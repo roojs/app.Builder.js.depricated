@@ -217,8 +217,8 @@ XObject.prototype = {
         var item = (o.constructor == XObject) ? o : new XObject(o);
        
         item.init();
-        print("CTR:PROTO:" + ( item.id ? item.id : '??'));
-        print("addItem - call init [" + item.pack.join(',') + ']');
+        //print("CTR:PROTO:" + ( item.id ? item.id : '??'));
+       // print("addItem - call init [" + item.pack.join(',') + ']');
         if (!item.el) {
             print("NO EL!");
             imports.console.dump(item);
