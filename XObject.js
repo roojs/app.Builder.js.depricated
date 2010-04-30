@@ -159,7 +159,7 @@ XObject.prototype = {
         for (var i in this.el) {
             print(i);
             if ([ 'signal'].indexOf(i) > -1) continue;
-            if (typeof(this.el[i]) == 'function') continue;
+            //if (typeof(this.el[i]) == 'function') continue;
             if (typeof(this.el[i]) == 'object') continue;
             
             print(i + ':' + this.el[i]);
