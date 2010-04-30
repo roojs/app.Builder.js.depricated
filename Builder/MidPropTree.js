@@ -198,7 +198,7 @@ MidPropTree = new XObject({
                  
                         
                             this.el.add_attribute(this.items[0].el , 'markup', 4  );
-                        }
+                        },
                         items : [
                             {
                                 xtype : Gtk.CellRendererText,
