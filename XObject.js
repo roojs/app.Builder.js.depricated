@@ -152,6 +152,9 @@ XObject.prototype = {
             
         }
         // always overlay props..
+        // check for 'write' on object..
+        
+        
         for (var i in o) {
             this.el[i] = o[i];
         }
