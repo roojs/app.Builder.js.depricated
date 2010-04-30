@@ -8,7 +8,7 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 
 ProjectManager = imports.Builder.Provider.ProjectManager;
-ProjectManager = imports.Observable.Observable;
+Observable = imports.Observable.Observable;
 
 Base = XObject.define( 
     function(cfg) {
