@@ -8,7 +8,7 @@ GLib = imports.gi.GLib;
 console = imports.console.console;
 XObject = imports.XObject.XObject;
 
-Window                = imports.Builder.Window.Window;
+
 StandardErrorDialog = imports.Builder.StandardErrorDialog.StandardErrorDialog;
 /**
  * add a component
@@ -51,7 +51,7 @@ DialogNewComponent = new XObject({
             c = c || { name : '' , xtype : '' };
             // check whic project we are adding to..
             XObject.extend(this, c);
-            
+            var Window                = imports.Builder.Window.Window;
             this.el.set_screen(Window.el.get_screen());
             
             var paths = [];
