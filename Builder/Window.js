@@ -69,6 +69,7 @@ Window = new XObject({
     items : [
         {
             xtype : Gtk.VBox,
+            id: 'w-vbox',
             items : [
                 TopMenu,
                 {
