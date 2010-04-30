@@ -111,9 +111,9 @@ XObject.prototype = {
     {
          
         var items = [];
-        this.items.forEach(function(i)) {
+        this.items.forEach(function(i) {
             items.push(i);
-        };
+        });
         // remove items.
         this.listeners = this.listeners || {}; 
         this.items = [];
