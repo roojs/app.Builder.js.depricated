@@ -570,7 +570,7 @@ LeftTree = new XObject(
                             
                             function addall(li)
                             {
-                                Roo.each(li, function(el) {
+                                li.forEach(function(el) {
                                     // this is specific to roo!!!?
                                     var fullpath =  Roo.guessName(el);
                                     if (fullpath.length && ret.indexOf(fullpath) < 0) {
