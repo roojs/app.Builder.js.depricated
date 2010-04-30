@@ -210,9 +210,9 @@ XObject.prototype = {
         print(o.constructor.prototype == XObject.prototype);
         
         var item = (o.constructor == XObject) ? o : new XObject(o);
-        print("addItem - call init" + item.pack.join(','));
+       
         item.init();
-        
+         print("addItem - call init" + item.pack.join(','));
         item.parent = this;
         this.items.push(item);
         
