@@ -40,11 +40,14 @@ Base = XObject.define(
             }
             
             this.map.forEach(function(m) {
+                var done = false
                 Roo.each(m.left, function(left) {
+                    if (done) return;
                     var l = left.replace(/:.*$/, '');
                     if (existing.indexOf(l) > -1) {
                         addRight(m.right);
-                        return true; // no more needed..
+                        done =true;
+                        //return true; // no more needed..
                     }
                 });
                 
