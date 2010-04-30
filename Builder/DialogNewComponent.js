@@ -23,7 +23,7 @@ StandardErrorDialog = imports.Builder.StandardErrorDialog.StandardErrorDialog;
 
 DialogNewComponent = new XObject({
         
-        xns : Gtk.Dialog,
+        xtype : Gtk.Dialog,
       //  type: Gtk.WindowType.TOPLEVEL,
         deletable : false,
         modal : true,
