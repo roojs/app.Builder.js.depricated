@@ -208,11 +208,11 @@ XObject.prototype = {
       */
     addItem : function(o) {
         
-        print("CTR:PROTO:" + ( o.id ? o.id : '??'));
-        print(o.constructor.prototype == XObject.prototype);
+        
         
         var item = (o.constructor == XObject) ? o : new XObject(o);
-       
+       print("CTR:PROTO:" + ( item.id ? item.id : '??'));
+        
         item.init();
         print("addItem - call init [" + item.pack.join(',') + ']');
         print(item.el);
