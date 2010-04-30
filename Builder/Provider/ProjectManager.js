@@ -1,13 +1,11 @@
 //<Script type="text/javascript">
 Gio = imports.gi.Gio;
 GLib = imports.gi.GLib;
-console = imports['console.js']; 
 
-Roo = imports['Roo.js']; 
-XN = imports.xnew;
 
+console = imports.console;
+XObject = imports.XObject.XObject;
  
-Builder = imports['Builder.js']
 
 
 /**
@@ -17,7 +15,7 @@ Builder = imports['Builder.js']
  * 
  */
 
-Builder.Provider.ProjectManager = new Roo.Observable({
+ProjectManager =  new Observable({
     
     events : {
         'changed' : true,
