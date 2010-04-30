@@ -341,7 +341,9 @@ DialogNewComponent = new XObject({
                                     if (ix < 0 ) {
                                         return '';
                                     }
-                                    return  DialogNewComponent.get('directory_model').data[ix].xtype;
+                                    var data = DialogNewComponent.get('directory_model').data;
+                                    
+                                    return  data[ix].desc;
                                     
                                 },
                                 
