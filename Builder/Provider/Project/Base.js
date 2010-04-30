@@ -183,7 +183,7 @@ Base = XObject.define(
             this.addFile(ret);
             return ret;
             
-        }
+        },
         
         
         addFile: function(pfile) { // add a single file, and trigger changed.
