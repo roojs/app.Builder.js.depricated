@@ -26,9 +26,12 @@ StandardErrorDialog = new XObject({
     
     
     
-    xtype : Gtk.MessageDialog,
+    xtype : function () {
+        return Gtk.MessageDialog({ buttons : Gtk.ButtonsType.OK });
+            
+    },
     modal : true,
-    buttons : Gtk.ButtonsType.OK,
+    
     'message-type' : Gtk.MessageType.ERROR,
     //"secondary-text"           gchar*                : Read / Write
     //"secondary-use-markup"     gboolean              : Read / Write
