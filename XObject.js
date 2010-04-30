@@ -152,7 +152,7 @@ XObject.prototype = {
             this.el  =   isSeed ? new constructor(o) : new constructor();
             
         }
-        print("init: typeof(el):" + this.typeof(el));
+        print("init: typeof(el):" + typeof(this.el));
         
         // always overlay props..
         // check for 'write' on object..
