@@ -371,7 +371,7 @@ XObject.extend(XObject,
         return function(constructor, parentClass, overrides) {
             if (typeof(parentClass) == 'undefined') {
                 print("XObject.define: Missing parentClass: when applying: " );
-                print(new String(parentClass));
+                print(new String(constructor));
                 Seed.quit(); 
             }
             if (typeof(parentClass.prototype) == 'undefined') {
