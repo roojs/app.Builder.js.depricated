@@ -372,12 +372,12 @@ XObject.extend(XObject,
             if (typeof(parentClass) == 'undefined') {
                 print("XObject.define: Missing constructor: when applying: " );
                 print(parentClass);
-                quit(); 
+                Seed.quit(); 
             }
             if (typeof(parentClass.prototype) == 'undefined') {
                 print("Missing protype: when applying: " );
                 print(parentClass);
-                quit(); 
+                Seed.quit(); 
             }
             var F = function(){};
             var sbp;
