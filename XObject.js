@@ -65,7 +65,8 @@ function XObject (cfg) {
         this.cfg[i] = cfg[i];
     }
     this.items = this.items || [];
-    
+    // pack can be false!
+    this.pack = typeof(this.pack) == 'undefined' ? ['add'] : this.pack;
     
     
 }
