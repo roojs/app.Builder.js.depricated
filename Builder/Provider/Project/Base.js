@@ -70,6 +70,7 @@ Base = XObject.define(
             ret.files = { }; 
             // deal with files..
             for (var f in this.files) {
+                print(f);
                 ret.files[f] = this.files[f].toJsonArray();
             }
             
