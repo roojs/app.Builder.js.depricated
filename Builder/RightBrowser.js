@@ -12,7 +12,8 @@ XObject = imports.XObject.XObject;
 console = imports.console;
 
 LeftTree = imports.Builder.LeftTree.LeftTree;
-
+ console.dump(LeftTree);
+ Seed.quit();
 
 RightBrowser = new XObject({
          
@@ -48,7 +49,7 @@ RightBrowser = new XObject({
                             Gdk.DragAction.COPY         /* what to do with data after dropped */
                     );
                     targets = new Gtk.TargetList();
-                    console.dump(LeftTree);
+                   
                     targets.add( LeftTree.atoms["STRING"], 0, 0);
                     Gtk.drag_dest_set_target_list(this.el, targets);
                     Gtk.drag_dest_add_text_targets(this.el);
