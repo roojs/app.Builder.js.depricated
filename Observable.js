@@ -300,7 +300,7 @@ var createSingle = function(h, e, fn, scope){
 
 
 
-Event = XObject.define({
+Event = XObject.define(
     function(obj, name){
         this.name = name;
         this.obj = obj;
