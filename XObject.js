@@ -129,12 +129,12 @@ XObject.prototype = {
         // xtype= Gtk.Menu ?? what about c_new stuff?
         print("init: typeof(xtype): "  + typeof(this.xtype));
         if (!this.el && typeof(this.xtype) == 'function') {
-            print("func?"  + XObject.keys(cfg).join(','));
-            this.el = this.xtype(cfg);
+            print("func?"  + XObject.keys(this.config).join(','));
+            this.el = this.xtype(this.config);
         }
         if (!this.el && typeof(this.xtype) == 'object') {
-            print("obj?"  + XObject.keys(o).join(','));
-            this.el = new (this.xtype)(cfg);
+            print("obj?"  + XObject.keys(this.config).join(','));
+            this.el = new (this.xtype)(this.config);
         }
         //print(this.el);
         if (!this.el && this.xns) {
