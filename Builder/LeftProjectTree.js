@@ -369,7 +369,7 @@ LeftProjectTree = new XObject({
                                     
                                     return;
                                 }
-                                var model = LefProjectTree.get('model');
+                                var model = LeftProjectTree.get('model');
                                 //console.log('changed');
                                 var s = this.selection;
                                 s.get_selected(model, iter);
