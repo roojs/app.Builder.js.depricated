@@ -5,7 +5,7 @@ GObject = imports.gi.GObject;
 Gio = imports.gi.Gio;
 GLib = imports.gi.GLib;
 
-console = imports.console;
+console = imports.console.console;
 XObject = imports.XObject.XObject;
 
 Window                = imports.Builder.Window.Window;
@@ -139,7 +139,7 @@ DialogNewComponent = new XObject({
                 this.el.hide();
                 
                 
-                var tmpl = this.project.loadFileOnlyDialogNewComponent.get('template').getValue());
+                var tmpl = this.project.loadFileOnly(DialogNewComponent.get('template').getValue());
                 
                 var _this = this;
                 tmpl.copyTo(dir + '/' + xidns + '.js', function() {
