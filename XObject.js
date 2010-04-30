@@ -368,32 +368,37 @@ XObject.extend(XObject,
                 this[m] = o[m];
             }
         };
-        return function(sb, sp, overrides) {
-            if (typeof(sp) == 'undefined') {
-                // error condition - try and dump..
-                throw "Missing superclass: when applying: " + sb
+        return function(constructor, parentClass, overrides) {
+            if (typeof(parentClass) == 'undefined') {
+                print("XObject.define: Missing constructor: when applying: " );
+                print(parentClass);
+                quit(); 
             }
-
+            if (typeof(parentClass.prototype) == 'undefined') {
+                print("Missing protype: when applying: " );
+                print(parentClass);
+                quit(); 
+            }
             var F = function(){};
             var sbp;
-            var spp = sp.prototype;
+            var spp = parentClass.prototype;
             
             F.prototype = spp;
-            sbp = sb.prototype = new F();
-            sbp.constructor=sb;
-            sb.superclass=spp;
+            sbp = constructor.prototype = new F();
+            sbp.constructor=constructor;
+            constructor.superclass=spp;
 
             // extends Object.
             if(spp.constructor == Object.prototype.constructor){
-                spp.constructor=sp;
+                spp.constructor=parentClass;
             }
             
-            sb.override = function(o){
-                Object.extend(sb.prototype, o);
+            constructor.override = function(o){
+                Object.extend(constructor.prototype, o);
             };
             sbp.override = io;
-            XObject.extend(sb.prototype, overrides);
-            return sb;
+            XObject.extend(constructor.prototype, overrides);
+            return constructor;
         };
     }(),
 
