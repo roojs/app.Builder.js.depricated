@@ -64,6 +64,7 @@ function XObject (cfg) {
         }
         this.cfg[i] = cfg[i];
     }
+    this.items = this.items || [];
     
     
     
