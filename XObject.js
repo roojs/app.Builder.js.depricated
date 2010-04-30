@@ -233,7 +233,7 @@ XObject.prototype = {
         }
         if (typeof(item.pack) == 'function') {
             // parent, child
-            item.pack.apply(o, [ o , o.items[i] ]);
+            item.pack.apply(o, [ o , item ]);
             item.parent = this;
             return;
         }
@@ -326,7 +326,7 @@ XObject.prototype = {
                 print("invalid item...");
                 imports.console.dump(_this);
                 Seed.quit();
-               }
+            }
             ret = ch.get(xid);
             
         })
