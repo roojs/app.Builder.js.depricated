@@ -23,8 +23,9 @@ ProjectManager =      imports.Builder.Provider.ProjectManager.ProjectManager;
 EditProject = new XObject({
     
         
-        xtype : Gtk.Dialog,
-        type: Gtk.WindowType.TOPLEVEL,
+        xtype : function () {
+            return new Gtk.Dialog(type: Gtk.WindowType.TOPLEVEL);
+        },
         deletable : false,
         modal : true,
         border_width : 0,
