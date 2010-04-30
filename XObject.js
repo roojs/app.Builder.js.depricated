@@ -306,9 +306,11 @@ XObject.prototype = {
         
         
         this.items.forEach(function(ch) {
+            if (ret) {
+                return;
+            }
             if (ch.id == xid) {
                 ret = ch;
-                return true;
             }
         })
         if (ret) {
@@ -316,10 +318,11 @@ XObject.prototype = {
         }
         // iterate children.
         this.items.forEach(function(ch) {
-            ret = ch.get(xid);
             if (ret) {
-                return true;
+                return;
             }
+            ret = ch.get(xid);
+            
         })
         return ret;
     }
