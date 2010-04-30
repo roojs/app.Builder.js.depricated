@@ -211,9 +211,9 @@ XObject.prototype = {
         
         
         var item = (o.constructor == XObject) ? o : new XObject(o);
-       print("CTR:PROTO:" + ( item.id ? item.id : '??'));
-        
+       
         item.init();
+        print("CTR:PROTO:" + ( item.id ? item.id : '??'));
         print("addItem - call init [" + item.pack.join(',') + ']');
         print(item.el);
         item.parent = this;
