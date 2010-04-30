@@ -34,6 +34,7 @@ Base = XObject.define(
         save : function()
         {
             var write = { }; 
+            var _this = this;
             var data = ['name', 'parent', 'title', 'items'].forEach( function(k) {
                 write[k] = _this[k];
             });
