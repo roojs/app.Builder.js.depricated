@@ -3,7 +3,7 @@
 console = imports.console;
 XObject = imports.XObject.XObject;
 
-Lang = imports.Builder.Provider.File.Lang;
+Lang = imports.Builder.Provider.File.Lang.Lang;
 
 
 // File Provider..
