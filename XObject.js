@@ -177,7 +177,7 @@ XObject.prototype = {
           //  if (XObject.writeablePropsCache[this.xtype.type].indexOf(i) < 0) {
           //      continue;
            // }
-            this.el[i] = o[i];
+            this.el[i] = this.config[i];
         }
         // register it!
         //if (o.xnsid  && o.id) {
