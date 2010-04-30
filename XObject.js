@@ -187,8 +187,11 @@ XObject.prototype = {
          //   XObject.registry[o.xnsid] = XObject.registry[o.xnsid] || {}; 
          //   XObject.registry[o.xnsid][o.id] = this;
         //}
-        
-        cfg.items.forEach(this.addItem, this);
+        var _this=this;
+        cfg.items.forEach(function(i) {
+            _this.addItem(i);
+        }
+            
         
         for (var i in this.listeners) {
             this.addListener(i, this.listeners[i]);
@@ -208,8 +211,7 @@ XObject.prototype = {
       */
     addItem : function(o) {
         
-        
-        
+         
         var item = (o.constructor.prototype == XObject.prototype) ? o : new XObject(o);
        
         item.init();
