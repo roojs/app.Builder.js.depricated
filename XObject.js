@@ -190,7 +190,7 @@ XObject.prototype = {
         var _this=this;
         cfg.items.forEach(function(i) {
             _this.addItem(i);
-        }
+        })
             
         
         for (var i in this.listeners) {
