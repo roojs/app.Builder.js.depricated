@@ -408,8 +408,6 @@ LeftProjectTree = new XObject({
                                 init :  function ()
                                 {
                                     XObject.prototype.init.call(this);    
-                                        
-                                        
                                     this.el.set_column_types ( 3, [
                                             GObject.TYPE_STRING, // title 
                                             GObject.TYPE_STRING, // tip
