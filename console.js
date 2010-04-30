@@ -28,28 +28,27 @@ function _dump(arr,level) {
     
     if(level > 15) return  level_padding + "[ ... to deep ...]\n";
     
-    if(typeof(arr) == 'object') { //Array/Hashes/Objects 
-     
-    
-        for(var item in arr) {
-            var value = arr[item];
-            switch (typeof(value)) {
-                case 'object' : 
-                    dumped_text += level_padding + "'" + item + "' ...\n";
-                    dumped_text += _dump(value,level+1) + "\n";
-                    break;
-                
-                case 'function' : 
-                    dumped_text += level_padding + "'" + item + "' => FUNCTION \n";
-                    break;
-                
-                default: 
-                    dumped_text += level_padding + "'" + item + "' => \"" + value + "\"\n";
-                    break;
-            }
-        }
-    } else { //Stings/Chars/Numbers etc.
-        dumped_text = "===>"+arr+"<===("+typeof(arr)+")";
+    if (typeof(arr) != 'object') { //Array/Hashes/Objects 
+        return "===>"+arr+"<===("+typeof(arr)+")";
     }
+
+    for(var item in arr) {
+        var value = arr[item];
+        switch (typeof(value)) {
+            case 'object' : 
+                dumped_text += level_padding + "'" + item + "' ...\n";
+                dumped_text += _dump(value,level+1) + "\n";
+                break;
+            
+            case 'function' : 
+                dumped_text += level_padding + "'" + item + "' => FUNCTION \n";
+                break;
+            
+            default: 
+                dumped_text += level_padding + "'" + item + "' => \"" + value + "\"\n";
+                break;
+        }
+    }
+        
     return dumped_text;
 }
