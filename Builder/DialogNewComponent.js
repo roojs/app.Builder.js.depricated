@@ -143,7 +143,10 @@ DialogNewComponent = new XObject({
                 
                 var _this = this;
                 var nf = _this.project.create(dir + '/' + xidns + '.bjs');
-                this.success(_this.project, nf);
+                if (DialogNewComponent.success) {
+                    DialogNewComponent.success(_this.project, nf);
+                }
+                
                 //tmpl.copyTo(dir + '/' + xidns + '.bjs', function() {
                 //    tmpl.setNSID(xidns);
                 ///    _this.project.addFile(tmpl);
