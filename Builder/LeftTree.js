@@ -399,6 +399,7 @@ LeftTree = new XObject(
                             if ((f.items.length == 1) && !f.items[0].items
                                 && (typeof(f.items[0]['*class']) != 'undefined')) {
                                 // single item..
+                                var Window = imports.Builder.Window.Window;
                                 Window.get('leftvpaned').el.set_position(80);
                                 // select first...
                                 LeftTree.get('view').el.set_cursor( new  Gtk.TreePath.from_string('0'), null, false);
