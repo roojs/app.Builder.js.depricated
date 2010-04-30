@@ -12,7 +12,7 @@ XObject = imports.XObject.XObject;
 console = imports.console;
 
 LeftTree = imports.Builder.LeftTree.LeftTree.prototype;
- console.dump(LeftTree);
+ console.dump(imports.Builder.LeftTree);
  Seed.quit();
 
 RightBrowser = new XObject({
