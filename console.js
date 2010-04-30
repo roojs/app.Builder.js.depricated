@@ -9,48 +9,47 @@
  * 
  */
 
-var console = {
-    log : function (v)  {
+ 
+function log (v)  {
         print(v);
-    },
-    dump : function (ar) {
-        print(this._dump(ar, 0));
-    },
+}
+function dump (ar) {
+        print(_dump(ar, 0));
+}
 
-    _dump: function(arr,level) {
-        var dumped_text = "";
-        if(!level) level = 0;
-        
-        
-        //The padding given at the beginning of the line.
-        var level_padding = "";
-        for(var j=0;j<level+1;j++) level_padding += "    ";
-        
-        if(level > 15) return  level_padding + "[ ... to deep ...]\n";
-        
-        if(typeof(arr) == 'object') { //Array/Hashes/Objects 
-         
-        
-            for(var item in arr) {
-                var value = arr[item];
-                switch (typeof(value)) {
-                    case 'object' : 
-                        dumped_text += level_padding + "'" + item + "' ...\n";
-                        dumped_text += this._dump(value,level+1) + "\n";
-                        break;
-                    
-                    case 'function' : 
-                        dumped_text += level_padding + "'" + item + "' => FUNCTION \n";
-                        break;
-                    
-                    default: 
-                        dumped_text += level_padding + "'" + item + "' => \"" + value + "\"\n";
-                        break;
-                }
+function _dump(arr,level) {
+    var dumped_text = "";
+    if(!level) level = 0;
+    
+    
+    //The padding given at the beginning of the line.
+    var level_padding = "";
+    for(var j=0;j<level+1;j++) level_padding += "    ";
+    
+    if(level > 15) return  level_padding + "[ ... to deep ...]\n";
+    
+    if(typeof(arr) == 'object') { //Array/Hashes/Objects 
+     
+    
+        for(var item in arr) {
+            var value = arr[item];
+            switch (typeof(value)) {
+                case 'object' : 
+                    dumped_text += level_padding + "'" + item + "' ...\n";
+                    dumped_text += _dump(value,level+1) + "\n";
+                    break;
+                
+                case 'function' : 
+                    dumped_text += level_padding + "'" + item + "' => FUNCTION \n";
+                    break;
+                
+                default: 
+                    dumped_text += level_padding + "'" + item + "' => \"" + value + "\"\n";
+                    break;
             }
-        } else { //Stings/Chars/Numbers etc.
-            dumped_text = "===>"+arr+"<===("+typeof(arr)+")";
         }
-        return dumped_text;
+    } else { //Stings/Chars/Numbers etc.
+        dumped_text = "===>"+arr+"<===("+typeof(arr)+")";
     }
+    return dumped_text;
 }
