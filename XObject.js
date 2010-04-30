@@ -327,9 +327,7 @@ XObject.prototype = {
       
 } 
          
-
-XObject.writeablePropsCache = { }; 
-         
+     
 /**
  * Copies all the properties of config to obj.
  *
@@ -357,6 +355,11 @@ XObject.extend = function(o, c, defaults){
 
 XObject.extend(XObject,
 {
+    /**
+     * @property {Boolean} debug XObject  debugging.  - set to true to debug.
+     * 
+     */
+    debug : false,
     /**
      * Copies all the properties of config to obj, if the do not exist.
      * @param {Object} obj The receiver of the properties
