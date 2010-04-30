@@ -140,7 +140,8 @@ ProjectManager =  new Observable({
             return proj;
             return;
         }
-        var pr = new Builder.Provider.Project[proj.xtype](proj);
+        var cls = imports.Builder.Provider.Project[proj.xtype][proj.xtype];
+        var pr = new cls(proj);
         this.projects.push(pr );
         this.fireEvent('changed', this);
         return pr;
