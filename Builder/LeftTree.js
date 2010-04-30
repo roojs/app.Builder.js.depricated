@@ -415,6 +415,7 @@ LeftTree = new XObject(
                             print("hide right editior");
                             RightEditor.el.hide();
                             this.currentTree = this.toJS(false, true)[0];
+                            console.dump(this.currentTree);
                             var RightBrowser    = imports.Builder.RightBrowser.RightBrowser;
                             RightBrowser.get('view').renderJS(this.currentTree);
                             console.dump(this.map);
