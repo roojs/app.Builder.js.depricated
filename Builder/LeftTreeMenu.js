@@ -10,7 +10,7 @@ console = imports.console;
 LeftTree = imports.Builder.LeftTree.LeftTree;
 
 LeftTreeMenu = new XObject( 
-{
+    {
   
         xtype : Gtk.Menu,
         
@@ -31,7 +31,8 @@ LeftTreeMenu = new XObject(
             // our palete should handle this.. really.
          
         ]
-    }
     
-});
+    
+    }
+);
  
