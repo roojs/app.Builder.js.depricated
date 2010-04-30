@@ -41,7 +41,7 @@ Base = XObject.define(
             
             this.map.forEach(function(m) {
                 var done = false
-                Roo.each(m.left, function(left) {
+                m.left.forEach( function(left) {
                     if (done) return;
                     var l = left.replace(/:.*$/, '');
                     if (existing.indexOf(l) > -1) {
