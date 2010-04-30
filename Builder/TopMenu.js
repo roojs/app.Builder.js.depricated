@@ -8,7 +8,7 @@ console = imports.console;
  
  
 TopMenu = new XObject({
-    xtype : Gtk.MenuBar
+    xtype : Gtk.MenuBar,
     pack : [ 'pack_start', false,false ],
     id : 'menu', 
     items :  [
@@ -21,7 +21,7 @@ TopMenu = new XObject({
             items : [
                 {
                     
-                    xtype : Gtk.Menu',
+                    xtype : Gtk.Menu,
                     pack : [ 'set_submenu' ],
                     items : [
                       {
