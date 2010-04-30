@@ -160,7 +160,7 @@ Observable = XObject.define(
             eventName = eventName.toLowerCase();
             var ce = this.events[eventName] || true;
             if(typeof ce == "boolean"){
-                ce = new Roo.Event(this, eventName);
+                ce = new Event(this, eventName);
                 this.events[eventName] = ce;
             }
             ce.addListener(fn, scope, o);
@@ -211,7 +211,7 @@ Observable = XObject.define(
             if(!this.events){
                 this.events = {};
             }
-            Roo.applyIf(this.events, o);
+            XObject.extendIf(this.events, o);
         },
 
         /**
@@ -248,53 +248,61 @@ Observable.releaseCapture = function(o){
     o.fireEvent = Observable.prototype.fireEvent;
 };
 
-(function(){
+ 
 
-    var createBuffered = function(h, o, scope){
-        var task = new Roo.DelayedTask();
-        return function(){
-            task.delay(o.buffer, h, scope, Array.prototype.slice.call(arguments, 0));
-        };
+var createSingle = function(h, e, fn, scope){
+    return function(){
+        e.removeListener(fn, scope);
+        return h.apply(scope, arguments);
     };
+};
 
-    var createSingle = function(h, e, fn, scope){
-        return function(){
-            e.removeListener(fn, scope);
-            return h.apply(scope, arguments);
-        };
-    };
+// NOT SUPPORTED YET>
+//var createBuffered = function(h, o, scope){
+//    var task = new Roo.DelayedTask();
+//    return function(){
+//        task.delay(o.buffer, h, scope, Array.prototype.slice.call(arguments, 0));
+//    };
+//};
 
-    var createDelayed = function(h, o, scope){
-        return function(){
-            var args = Array.prototype.slice.call(arguments, 0);
-            setTimeout(function(){
-                h.apply(scope, args);
-            }, o.delay || 10);
-        };
-    };
 
-    Roo.Event = function(obj, name){
+//var createDelayed = function(h, o, scope){
+//    return function(){
+//        var args = Array.prototype.slice.call(arguments, 0);
+//        setTimeout(function(){
+//            h.apply(scope, args);
+//        }, o.delay || 10);
+//    };
+//};
+
+
+
+
+
+
+Event = XObject.define({
+    function(obj, name){
         this.name = name;
         this.obj = obj;
         this.listeners = [];
-    };
-
-    Roo.Event.prototype = {
+    },
+    Object, 
+    {
         addListener : function(fn, scope, options){
             var o = options || {};
             scope = scope || this.obj;
             if(!this.isListening(fn, scope)){
                 var l = {fn: fn, scope: scope, options: o};
                 var h = fn;
-                if(o.delay){
-                    h = createDelayed(h, o, scope);
-                }
+               // if(o.delay){
+                //       h = createDelayed(h, o, scope);
+               // }
                 if(o.single){
                     h = createSingle(h, this, fn, scope);
                 }
-                if(o.buffer){
-                    h = createBuffered(h, o, scope);
-                }
+                //if(o.buffer){
+               //     h = createBuffered(h, o, scope);
+                //}
                 l.fireFn = h;
                 if(!this.firing){ // if we are currently firing this event, don't disturb the listener loop
                     this.listeners.push(l);
@@ -355,5 +363,5 @@ Observable.releaseCapture = function(o){
             }
             return true;
         }
-    };
-})();
+    }
+);
