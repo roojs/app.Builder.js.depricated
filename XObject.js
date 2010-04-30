@@ -370,13 +370,13 @@ XObject.extend(XObject,
         };
         return function(constructor, parentClass, overrides) {
             if (typeof(parentClass) == 'undefined') {
-                print("XObject.define: Missing constructor: when applying: " );
-                print(parentClass);
+                print("XObject.define: Missing parentClass: when applying: " );
+                print(new String(parentClass));
                 Seed.quit(); 
             }
             if (typeof(parentClass.prototype) == 'undefined') {
                 print("Missing protype: when applying: " );
-                print(parentClass);
+                print(new String(parentClass));
                 Seed.quit(); 
             }
             var F = function(){};
