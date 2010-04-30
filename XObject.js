@@ -154,7 +154,10 @@ XObject.prototype = {
         }
         // always overlay props..
         // check for 'write' on object..
-        var gi = GIRepository.IRepository.get_default();
+        //var gi = GIRepository.IRepository.get_default();
+        //var ty = gi.find_by_gtype(this.el.
+        print (this.el.type);
+        
         
         
         for (var i in o) {
