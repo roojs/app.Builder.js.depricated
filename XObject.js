@@ -323,7 +323,7 @@ XObject.prototype = {
             }
             if (!ch.get) {
                 print("invalid item...");
-                console.dump(_this);
+                imports.console.dump(_this);
                 Seed.quit();
                }
             ret = ch.get(xid);
