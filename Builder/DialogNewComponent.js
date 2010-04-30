@@ -113,10 +113,10 @@ DialogNewComponent = new XObject({
                 
                 
                     
-                  // DialogNewComponent.get('template').getValue().length || 
+                   
             
                 if (!DialogNewComponent.get('xnsid').el.get_text().length || 
-                  
+               //    DialogNewComponent.get('template').getValue().length ||
                    DialogNewComponent.get('directory').getValue().length 
                 ) {
                     StandardErrorDialog.show(
@@ -130,7 +130,7 @@ DialogNewComponent = new XObject({
                 var xidns = DialogNewComponent.get('xnsid').get_text();
                 
                 
-                 if (GLib.file_test (GLib.dir + '/' + xidns + '.js', GLib.FileTest.EXISTS)) {
+                 if (GLib.file_test (GLib.dir + '/' + xidns + '.bjs', GLib.FileTest.EXISTS)) {
                     StandardErrorDialog.show(
                         "That file already exists"
                     ); 
@@ -139,14 +139,16 @@ DialogNewComponent = new XObject({
                 this.el.hide();
                 
                 
-                var tmpl = this.project.loadFileOnly(DialogNewComponent.get('template').getValue());
+                //var tmpl = this.project.loadFileOnly(DialogNewComponent.get('template').getValue());
                 
                 var _this = this;
-                tmpl.copyTo(dir + '/' + xidns + '.js', function() {
-                    tmpl.setNSID(xidns);
-                    _this.project.addFile(tmpl);
-                    this.success(_this.project, tmpl);
-                });
+                var nf = _this.project.create(dir + '/' + xidns + '.bjs');
+                this.success(_this.project, nf);
+                //tmpl.copyTo(dir + '/' + xidns + '.bjs', function() {
+                //    tmpl.setNSID(xidns);
+                ///    _this.project.addFile(tmpl);
+                //    this.success(_this.project, tmpl);
+                //});
                 
                 
                 
