@@ -5,7 +5,7 @@ XObject = imports.XObject.XObject;
 
 Lang = imports.Builder.Provider.File.Lang.Lang;
 
-
+File = imports.File.File;
 // File Provider..
 
 Base = XObject.define(
@@ -39,7 +39,7 @@ Base = XObject.define(
                 write[k] = _this[k];
             });
             print("WRITE: " + this.path + "\n" + JSON.stringify(write));
-            //File.write(this.path, JSON.stringify(write));
+            File.write(this.path, JSON.stringify(write));
         },
         
         /**
