@@ -46,7 +46,7 @@ EditProject = new XObject({
             
             [ 'xtype' , 'name' ].forEach(function(k) {
                 this.get(k).setValue(typeof(c[k]) == 'undefined' ? '' : c[k]);
-            }
+            });
             if (!this.el) {
                 this.init();
             }
@@ -134,7 +134,7 @@ EditProject = new XObject({
                         
                     },
                     {
-                        xtype : Gtk.HBox',
+                        xtype : Gtk.HBox,
                         pack : [ 'pack_start', false, true , 0 ],
                         items : [
                             {
@@ -149,7 +149,7 @@ EditProject = new XObject({
                                 init : function() {
                                     XObject.prototype.init.call(this); 
                                     this.el.add_attribute(this.items[0].el , 'markup', 1 );  
-                                }
+                                },
                                 setValue : function(v)
                                 {
                                     var el = this.el;
@@ -183,12 +183,12 @@ EditProject = new XObject({
                                 items : [
                                     {
                                         xtype : Gtk.CellRendererText,
-                                        pack : ['pack_start'],
+                                        pack : ['pack_start']
                                     },
                                     {
                                         id : 'model',
                                         pack : [ 'set_model' ],
-                                        xtype : Gtk.ListStore',
+                                        xtype : Gtk.ListStore,
                                         init : function ()
                                         {
                                             XObject.prototype.init.call(this); 
