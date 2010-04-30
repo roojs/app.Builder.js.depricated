@@ -136,7 +136,7 @@ XObject.prototype = {
         }
         if (!this.el && typeof(this.xtype) == 'object') {
             print("obj?"  + XObject.keys(o).join(','));
-            this.el = new this.xtype(o);
+            this.el = new (this.xtype)(o);
         }
         //print(this.el);
         if (!this.el && o.xns) {
