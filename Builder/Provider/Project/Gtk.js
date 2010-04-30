@@ -23,8 +23,7 @@ Gtk = XObject.define(
          
         file : false
     
-    
-    
-});
+    }
+);
  
  
