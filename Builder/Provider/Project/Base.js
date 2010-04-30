@@ -35,7 +35,7 @@ Base = XObject.define(
         this.scanDirs();
         
     },
-    Object, 
+    Observable, 
     {
         id : false,
         fn:  false,
