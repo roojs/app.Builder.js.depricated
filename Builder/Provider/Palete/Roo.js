@@ -74,7 +74,7 @@ Roo = XObject.define(
                    
                 }); 
                 _this.map = cfg;
-                o.success.apply(o.scope || _this, [_this]);
+                if (o.success) o.success.apply(o.scope || _this, [_this]);
                 //console.dump(cfg);
             });
         }
