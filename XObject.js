@@ -374,7 +374,10 @@ XObject.extend(XObject,
                 throw "Missing superclass: when applying: " + sb
             }
 
-            var F = function(){}, sbp, spp = sp.prototype;
+            var F = function(){};
+            var sbp;
+            var spp = sp.prototype;
+            
             F.prototype = spp;
             sbp = sb.prototype = new F();
             sbp.constructor=sb;
