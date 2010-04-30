@@ -233,7 +233,7 @@ XObject.prototype = {
         }
         if (typeof(item.pack) == 'function') {
             // parent, child
-            item.pack.apply(item, [ o , item  ]);
+            item.pack.apply(item, [ this , item  ]);
             item.parent = this;
             return;
         }
