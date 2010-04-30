@@ -127,13 +127,13 @@ XObject.prototype = {
         var isSeed = typeof(Seed) != 'undefined';
          
         // xtype= Gtk.Menu ?? what about c_new stuff?
-        print("init: typeof(xtype): "  + typeof(this.xtype));
+        if (XObject.debug) print("init: typeof(xtype): "  + typeof(this.xtype));
         if (!this.el && typeof(this.xtype) == 'function') {
-            print("func?"  + XObject.keys(this.config).join(','));
+            if (XObject.debug) print("func?"  + XObject.keys(this.config).join(','));
             this.el = this.xtype(this.config);
         }
         if (!this.el && typeof(this.xtype) == 'object') {
-            print("obj?"  + XObject.keys(this.config).join(','));
+            if (XObject.debug) print("obj?"  + XObject.keys(this.config).join(','));
             this.el = new (this.xtype)(this.config);
         }
         //print(this.el);
@@ -150,7 +150,7 @@ XObject.prototype = {
             this.el  =   isSeed ? new constructor(this.config) : new constructor();
             
         }
-        print("init: typeof(el):" + typeof(this.el));
+        if (XObject.debug) print("init: typeof(el):" + typeof(this.el));
         
         // always overlay props..
         // check for 'write' on object..
@@ -256,7 +256,7 @@ XObject.prototype = {
         //Seed.print('Pack ' + this.el + '.'+ pack_m + '(' + item.el + ')');
 
         args.unshift(item.el);
-        print('[' + args.join(',') +']');
+        if (XObject.debug) print('[' + args.join(',') +']');
         //Seed.print('args: ' + args.length);
         if (pack_m) {
             this.el[pack_m].apply(this.el, args);
@@ -275,7 +275,7 @@ XObject.prototype = {
     addListener  : function(sig, fn) 
     {
  
-        Seed.print("Add signal " + sig);
+        if (XObject.debug) Seed.print("Add signal " + sig);
  
         var _li = XObject.createDelegate(fn,this);
         // private listeners that are not copied to GTk.
