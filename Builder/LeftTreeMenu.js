@@ -9,7 +9,7 @@ console = imports.console;
 
 LeftTree = imports.Builder.LeftTree.LeftTree;
 
-LeftTreeMenu = new XObject({
+LeftTreeMenu = new XObject( 
 {
   
         xtype : Gtk.Menu,
