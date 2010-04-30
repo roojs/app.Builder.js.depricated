@@ -24,7 +24,7 @@ EditProject = new XObject({
     
         
         xtype : function () {
-            return new Gtk.Dialog(type: Gtk.WindowType.TOPLEVEL);
+            return new Gtk.Dialog({type: Gtk.WindowType.TOPLEVEL});
         },
         deletable : false,
         modal : true,
