@@ -2,7 +2,7 @@
 
 Gtk = imports.gi.Gtk;
 // core libs
-XObject = imports.XObject;
+XObject = imports.XObject.XObject;
 console = imports.console;
 
 // components.
