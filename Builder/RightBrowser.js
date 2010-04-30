@@ -11,7 +11,7 @@ WebKit= imports.gi.WebKit;
 XObject = imports.XObject.XObject;
 console = imports.console;
 
-LeftTree = imports.Builder.LeftTree.LeftTree;
+LeftTree = imports.Builder.LeftTree.LeftTree.prototype;
  console.dump(LeftTree);
  Seed.quit();
 
