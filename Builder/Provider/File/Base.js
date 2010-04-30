@@ -39,7 +39,7 @@ Base = XObject.define(
             });
             print("WRITE: " + this.path + "\n" + JSON.stringify(write));
             //File.write(this.path, JSON.stringify(write));
-        }
+        },
         
         /**
          * accepts:
