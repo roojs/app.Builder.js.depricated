@@ -51,7 +51,7 @@ Window = new XObject({
         
         this.el.set_default_size(900, 600);
         
-    }
+    },
     
     listeners : {
         'delete-event' : function (widget, event) {
@@ -107,7 +107,7 @@ Window = new XObject({
                         },
                                 
                         {
-                            xtype : Gtk.HBox
+                            xtype : Gtk.HBox,
                             items : [
                                 {
                                     xtype : Gtk.VPaned,
