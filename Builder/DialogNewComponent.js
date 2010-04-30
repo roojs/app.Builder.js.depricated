@@ -204,7 +204,7 @@ DialogNewComponent = new XObject({
                         items : [
                             {
                                 xtype : Gtk.Label,
-                                label : "Using Template:"
+                                label : "Using Template:",
                                 pack : [ 'pack_start', false, true , 0 ],
                                 
                             },
@@ -257,8 +257,7 @@ DialogNewComponent = new XObject({
                                         pack : [ 'set_model' ],
                                         xtype : Gtk.ListStore,
                                         
-                                        init : 
-                                        listeners :  function ()
+                                        init :   function ()
                                         {
                                             XObject.prototype.init.call(this); 
                                             this.el.set_column_types ( 2, [
