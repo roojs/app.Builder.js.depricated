@@ -28,7 +28,7 @@ Gtk.rc_parse_string(
  
 LeftProjectTree = new XObject({
         
-        xns : Gtk.VBox,
+        xtype : Gtk.VBox,
         
         showNoProjectSelected : function()
         {
