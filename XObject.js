@@ -156,7 +156,10 @@ XObject.prototype = {
         // check for 'write' on object..
         //var gi = GIRepository.IRepository.get_default();
         //var ty = gi.find_by_gtype(this.el.
-        print (this.el.constructor.type);
+        for (var i in this.el) {
+            print(i + ':' + this.el[i]);
+        }
+        //print (this.el.constructor.type);
         
         
         
