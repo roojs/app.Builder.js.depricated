@@ -188,13 +188,7 @@ RightPalete = new XObject({
                                 },  
                                 listeners : {
                                     
-                                    _rendered: function()
-                                    {
-                                        
-                                         
-                                        
-                                    }, 
-                                    
+                              
                                     'drag-data-get' : function (w, ctx, selection_data, target_type,  time, ud) 
                                     {
                                         
