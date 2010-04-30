@@ -321,6 +321,11 @@ XObject.prototype = {
             if (ret) {
                 return;
             }
+            if (!ch.get) {
+                print("invalid item...");
+                console.dump(_this);
+                Seed.quit();
+               }
             ret = ch.get(xid);
             
         })
