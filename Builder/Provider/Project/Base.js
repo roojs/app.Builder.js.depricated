@@ -226,14 +226,15 @@ Base = XObject.define(
             // this should be done async -- but since we are getting the protvgo up..
             var gdir = GLib.dir_open(dir,0);
             var subs = [];
+            var _this = this;
             while (true) {
                 var fn = GLib.dir_read_name(gdir);
                 //console.log('trying ' + path + '/' + fn);
                 if (!fn) {
                     GLib.dir_close(gdir);
-                    Roo.each(subs, function(s) {
-                        this.scanDir(s, dp+1);
-                    },this);
+                    subs.forEach( function(s) {
+                        _this.scanDir(s, dp+1);
+                    });
                     return;
                 }
                 if (fn[0] == '.') { // skip hidden
