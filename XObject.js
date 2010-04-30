@@ -210,7 +210,7 @@ XObject.prototype = {
         print(o.constructor.prototype == XObject.prototype);
         
         var item = (o.constructor == XObject) ? o : new XObject(o);
-        print("addItem - call init");
+        print("addItem - call init" + item.pack.join(','));
         item.init();
         
         item.parent = this;
@@ -245,7 +245,7 @@ XObject.prototype = {
 
         args.unshift(item.el);
         print('[' + args.join(',') +']');
-        Seed.print('args: ' + args.length);
+        //Seed.print('args: ' + args.length);
         if (pack_m) {
             this.el[pack_m].apply(this.el, args);
         }
