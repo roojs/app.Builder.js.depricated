@@ -365,6 +365,5 @@ LeftPanel = new XObject({
     }
 );
     
-    
-}
+     
     
