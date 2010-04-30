@@ -417,7 +417,7 @@ LeftTree = new XObject(
                             print("set current tree");
                             this.currentTree = this.toJS(false, true)[0];
                             console.dump(this.currentTree);
-                            this.currentTree = this.currentTree || [];
+                            this.currentTree = this.currentTree || { items: [] };
                             var RightBrowser    = imports.Builder.RightBrowser.RightBrowser;
                             RightBrowser.get('view').renderJS(this.currentTree);
                             console.dump(this.map);
