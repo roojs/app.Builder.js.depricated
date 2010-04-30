@@ -3,7 +3,7 @@
 console = imports.console;
 XObject = imports.XObject.XObject;
 
-Lang = imports.JSDOC.Lang.Lang; //???
+Lang = imports.Builder.Provider.File.Lang.js
 
 
 // File Provider..
