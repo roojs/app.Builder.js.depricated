@@ -12,8 +12,8 @@ XObject = imports.XObject.XObject;
 console = imports.console;
 
 LeftTree = imports.Builder.LeftTree.LeftTree ;
- console.dump(imports.Builder.LeftTree);
- Seed.quit();
+ //console.dump(imports.Builder.LeftTree);
+ //Seed.quit();
 
 RightBrowser = new XObject({
          
