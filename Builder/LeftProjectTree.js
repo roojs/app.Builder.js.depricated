@@ -13,7 +13,6 @@ ProjectManager      = imports.Builder.Provider.ProjectManager.ProjectManager;
 EditProject         = imports.Builder.EditProject.EditProject;
 DialogNewComponent  = imports.Builder.DialogNewComponent.DialogNewComponent;
 LeftTree            = imports.Builder.LeftTree.LeftTree;
-LeftTopPanel        = imports.Builder.LeftTopPanel.LeftTopPanel;
 
 // http://www.google.com/codesearch/p?hl=en#EKZaOgYQHwo/unstable/sources/sylpheed-2.2.9.tar.bz2%7C1erxr_ilM1o/sylpheed-2.2.9/src/folderview.c&q=gtk_tree_view_get_drag_dest_row
 
@@ -383,7 +382,8 @@ LeftProjectTree = new XObject({
                                 
                                 console.log(file);
                                 
-                                
+                                var LeftTopPanel        = imports.Builder.LeftTopPanel.LeftTopPanel;
+
                                 var nb = LeftTopPanel.get('expander');
                                 nb.el.expanded = false;
                                 nb.listeners.activate.call(nb);
