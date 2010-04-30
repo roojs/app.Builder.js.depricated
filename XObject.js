@@ -55,6 +55,7 @@ function XObject (cfg) {
     if (cfg.init) {
         this.init = cfg.init; // override!
     }
+    this.constructor = XObject;
     
     
 }
@@ -213,7 +214,7 @@ XObject.prototype = {
     addItem : function(o) {
         
         
-        var item = (o.constructor.prototype == XObject.prototype) ? o : new XObject(o);
+        var item = (o.constructor == XObject) ? o : new XObject(o);
        
         item.init();
         print("CTR:PROTO:" + ( item.id ? item.id : '??'));
