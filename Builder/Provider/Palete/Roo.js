@@ -155,4 +155,4 @@ XObject.extend(Roo, {
     }
 );
 
-Builder.Provider.Palete.Roo.load();
+Roo.load();
