@@ -27,7 +27,7 @@ function id(el, prefix){
     //return el ? (el.id ? el.id : (el.id = id)) : id;
 }
 
-LeftTree = new XObject( 
+LeftTree = new XObject(
 {
         xtype: Gtk.ScrolledWindow,
         smooth_scroll : true,
