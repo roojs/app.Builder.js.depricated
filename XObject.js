@@ -50,9 +50,8 @@ GObject = imports.gi.GObject;
 
 function XObject (cfg) {
     // first apply cfg if set.
-    this.config = cfg;
-    //print("new XOBJECT!!!");
-  
+      //print("new XOBJECT!!!");
+    this.config = {};
     this.constructor = XObject;
     
     // copy down all elements into self..
@@ -62,7 +61,17 @@ function XObject (cfg) {
         if ((typeof(cfg[i]) == 'function') || (typeof(cfg[i]) == 'function')) {
             continue;
         }
-        this.cfg[i] = cfg[i];
+        // these properties are not copied to cfg.
+        if (i == 'pack' ||
+                i == 'id' ||
+                i == 'xtype' ||
+                i == 'xdebug' ||
+                i == 'xns') {
+            continue;
+        }
+        
+        
+        this.config[i] = cfg[i];
     }
     this.items = this.items || [];
     // pack can be false!
@@ -101,38 +110,15 @@ XObject.prototype = {
     init : function()
     {
         var cfg = this.config;
-    
-        print("init:XOBJECT?"  + XObject.keys(cfg).join(','));
-        //print(cfg);
-        o =  {};
-        
-        cfg.items = cfg.items || [];
-        
-        XObject.extend(o, cfg); // copy everything into o.
-        
-        this.pack = typeof(cfg.pack) == 'undefined' ? ['add'] : cfg.pack;
-        
-        XObject.extend(this, o);
-
+      
+        var items = [];
+        this.items.forEach(function(i)) {
+            items.push(i);
+        };
         // remove items.
-        
         this.listeners = this.listeners || {}; 
         this.items = [];
-        
-        // remove objects/functions from o, so they can be sent to the contructor.
-        for (var i in o) {
-            if ((typeof(o[i]) == 'object') || 
-                (typeof(o[i]) == 'function') || 
-                i == 'pack' ||
-                i == 'id' ||
-                i == 'xtype' ||
-                i == 'xdebug' ||
-                i == 'xns'
-            ) {
-                delete o[i];
-            }
-        }
-        
+         
         // do we need to call 'beforeInit here?'
          
         // handle include?
