@@ -154,11 +154,16 @@ XObject.prototype = {
         }
         // always overlay props..
         // check for 'write' on object..
-        //var gi = GIRepository.IRepository.get_default();
-        //var ty = gi.find_by_gtype(this.el.
-        print(this.xtype.type);
-        //print (this.el.constructor.type);
-        
+        var gi = GIRepository.IRepository.get_default();
+        var ty = gi.find_by_gtype(this.xtype.type);
+        var write = [];
+        for (var i =0; i < GIRepository.object_info_get_n_properties(ty);i++) {
+            var p = < GIRepository.object_info_get_property(ty,i);
+            if (GIRepository.property_info_get_flags(p) & GObject.ParamFlags.WRITABLE) {
+                write.push(GIRepository.base_info_get_name(p));
+            }
+        }
+        print(write.join(','));
         
         
         for (var i in o) {
