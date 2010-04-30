@@ -446,9 +446,9 @@ LeftProjectTree = new XObject({
                                         } else {
                                             _this.el.insert(citer,iter,-1);
                                         }
-                                        _this.el.set_value(citer, 0, [ '' + r.getTitle() ]); // title 
-                                        _this.el.set_value(citer, 1, ['' + r.getTitleTip()]); // tip
-                                        _this.el.set_value(citer, 2, ['' + r.id ]); //id
+                                        _this.el.set_value(citer, 0,  '' + r.getTitle() ); // title 
+                                        _this.el.set_value(citer, 1, '' + r.getTitleTip()); // tip
+                                        _this.el.set_value(citer, 2, '' + r.id ); //id
                                         if (r.cn && r.cn.length) {
                                             _this.load(r.cn, citer);
                                         }
