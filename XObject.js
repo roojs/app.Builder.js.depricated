@@ -158,6 +158,7 @@ XObject.prototype = {
         //var ty = gi.find_by_gtype(this.el.
         for (var i in this.el) {
             print(i);
+            if (typeof(i) == 'function') continue;
             if ([ 'signal'].indexOf(i) > -1) continue;
             print(i + ':' + this.el[i]);
         }
