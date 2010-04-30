@@ -92,7 +92,7 @@ Roo = XObject.define(
                 var src = dstream.read_until("")
                 
                 var cfg = JSON.parse(src);
-                this.items = cfg .items;
+                this.items = cfg.items;
                 cb();
                 /*
                 var tstream =  new JSDOC.TextStream(src);
