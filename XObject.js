@@ -109,8 +109,7 @@ XObject.prototype = {
       */ 
     init : function()
     {
-        var cfg = this.config;
-      
+         
         var items = [];
         this.items.forEach(function(i)) {
             items.push(i);
@@ -130,25 +129,25 @@ XObject.prototype = {
         // xtype= Gtk.Menu ?? what about c_new stuff?
         print("init: typeof(xtype): "  + typeof(this.xtype));
         if (!this.el && typeof(this.xtype) == 'function') {
-            print("func?"  + XObject.keys(o).join(','));
-            this.el = this.xtype(o);
+            print("func?"  + XObject.keys(cfg).join(','));
+            this.el = this.xtype(cfg);
         }
         if (!this.el && typeof(this.xtype) == 'object') {
             print("obj?"  + XObject.keys(o).join(','));
-            this.el = new (this.xtype)(o);
+            this.el = new (this.xtype)(cfg);
         }
         //print(this.el);
-        if (!this.el && o.xns) {
+        if (!this.el && this.xns) {
             
-            var NS = imports.gi[o.xns];
+            var NS = imports.gi[this.xns];
             if (!NS) {
-                Seed.print('Invalid xns: ' + o.xns);
+                Seed.print('Invalid xns: ' + this.xns);
             }
-            constructor = NS[o.xtype];
+            constructor = NS[this.xtype];
             if (!constructor) {
-                Seed.print('Invalid xtype: ' + o.xns + '.' + o.xtype);
+                Seed.print('Invalid xtype: ' + this.xns + '.' + this.xtype);
             }
-            this.el  =   isSeed ? new constructor(o) : new constructor();
+            this.el  =   isSeed ? new constructor(this.config) : new constructor();
             
         }
         print("init: typeof(el):" + typeof(this.el));
@@ -173,7 +172,7 @@ XObject.prototype = {
         
         */
         
-        for (var i in o) {
+        for (var i in this.config) {
             // only write to writable properties
           //  if (XObject.writeablePropsCache[this.xtype.type].indexOf(i) < 0) {
           //      continue;
@@ -187,7 +186,7 @@ XObject.prototype = {
          //   XObject.registry[o.xnsid][o.id] = this;
         //}
         var _this=this;
-        cfg.items.forEach(function(i) {
+        items.forEach(function(i) {
             _this.addItem(i);
         })
             
