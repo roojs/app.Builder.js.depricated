@@ -51,6 +51,7 @@ GObject = imports.gi.GObject;
 function XObject (cfg) {
     // first apply cfg if set.
     this.config = cfg;
+    print("new !!!");
     if (cfg.init) {
         this.init = cfg.init; // override!
     }
@@ -211,7 +212,7 @@ XObject.prototype = {
       */
     addItem : function(o) {
         
-         
+        
         var item = (o.constructor.prototype == XObject.prototype) ? o : new XObject(o);
        
         item.init();
