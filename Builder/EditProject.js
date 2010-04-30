@@ -28,7 +28,7 @@ EditProject = new XObject({
         deletable : false,
         modal : true,
         border_width : 0,
-        title "Project Properties",
+        title : "Project Properties",
         project : {},
         init : function()
         {
