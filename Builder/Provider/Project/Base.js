@@ -19,7 +19,7 @@ Base = XObject.define(
         this.on('changed' , function() {
             Seed.print("Calling PM - changed");
             
-            ProjectManager.fireEvent('changed'));
+            ProjectManager.fireEvent('changed');
         });
         XObject.extend(this, cfg);
         
