@@ -52,10 +52,19 @@ function XObject (cfg) {
     // first apply cfg if set.
     this.config = cfg;
     //print("new XOBJECT!!!");
-    if (cfg.init) {
-        this.init = cfg.init; // override!
-    }
+  
     this.constructor = XObject;
+    
+    // copy down all elements into self..
+    
+    for (var i in cfg) {
+        this[i] = cfg[i];
+        if ((typeof(cfg[i]) == 'function') || (typeof(cfg[i]) == 'function')) {
+            continue;
+        }
+        this.cfg[i] = cfg[i];
+    }
+    
     
     
 }
