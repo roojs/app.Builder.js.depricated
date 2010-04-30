@@ -10,16 +10,21 @@
  */
 
  
-function log (v)  {
+function log (v)  
+{
         print(v);
 }
-function dump (ar) {
+function dump (ar) 
+{
         print(_dump(ar, 0));
 }
 
-function _dump(arr,level) {
-    var dumped_text = "";
+function _dump(arr,level) 
+{
     level = level || 0;
+    
+    var dumped_text = "";
+    
     
     
     //The padding given at the beginning of the line.
