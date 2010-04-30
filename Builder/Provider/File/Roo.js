@@ -90,6 +90,11 @@ Roo = XObject.define(
                 var dstream = new Gio.DataInputStream.c_new(stream);
                 
                 var src = dstream.read_until("")
+                
+                var cfg = JSON.parse(src);
+                this.items = cfg .items;
+                cb();
+                /*
                 var tstream =  new JSDOC.TextStream(src);
                 var tr = new  JSDOC.TokenReader( {
                     keepWhite : true,
@@ -113,7 +118,7 @@ Roo = XObject.define(
                 // try parsing self..
                 _this.items = [ rd.cfg ];
                 cb();
-                
+                */
                 
             });
             
