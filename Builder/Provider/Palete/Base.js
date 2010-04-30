@@ -1,7 +1,5 @@
 //<Script type="text/javascript">
-
-Gio = imports.gi.Gio;
-
+ 
 console = imports.console;
 XObject = imports.XObject.XObject;
 
