@@ -210,7 +210,7 @@ XObject.prototype = {
         
         
         
-        var item = (o.constructor == XObject) ? o : new XObject(o);
+        var item = (o.constructor.prototype == XObject.prototype) ? o : new XObject(o);
        
         item.init();
         print("CTR:PROTO:" + ( item.id ? item.id : '??'));
