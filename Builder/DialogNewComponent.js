@@ -331,7 +331,7 @@ DialogNewComponent = new XObject({
                                 {
                                     var el = this.el;
                                     el.set_active(-1);
-                                    DialogNewComponent.get('directory_model').data.forEach(
+                                    this.get('directory_model').data.forEach(
                                         function(n,ix) {
                                             if (v == n.xtype) {
                                                 el.set_active(ix);
@@ -346,7 +346,7 @@ DialogNewComponent = new XObject({
                                     if (ix < 0 ) {
                                         return '';
                                     }
-                                    var data = DialogNewComponent.get('directory_model').data;
+                                    var data = this.get('directory_model').data;
                                     
                                     return  data[ix].desc;
                                     
