@@ -645,7 +645,9 @@ LeftTree = new XObject(
                                 this.treemap = { }; 
                                 
                                 iter = new Gtk.TreeIter();
-                                this.el.get_iter_first(iter);
+                                if (!this.el.get_iter_first(iter)) {
+                                    return [];
+                                }
                                 first = true;
                             } 
                             
