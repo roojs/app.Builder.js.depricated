@@ -44,6 +44,9 @@ function _dump(arr,level)
 
     for(var item in arr) {
         var value = arr[item];
+        if (item == 'prototype') {
+            continue;
+           }
         switch (typeof(value)) {
             case 'object' : 
                 dumped_text += level_padding + "'" + item + "' ...\n";
