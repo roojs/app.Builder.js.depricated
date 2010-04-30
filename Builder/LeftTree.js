@@ -403,7 +403,8 @@ LeftTree = new XObject(
                                 
                                 Window.get('leftvpaned').el.set_position(80);
                                 // select first...
-                                LeftTree.get('view').el.set_cursor( new  Gtk.TreePath.from_string('0'), null, false);
+                                LeftTree.get('view').el.set_cursor( 
+                                    new  Gtk.TreePath.from_string('0'), null, false);
                                 
                                 
                             } else {
