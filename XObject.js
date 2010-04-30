@@ -215,7 +215,12 @@ XObject.prototype = {
         item.init();
         print("CTR:PROTO:" + ( item.id ? item.id : '??'));
         print("addItem - call init [" + item.pack.join(',') + ']');
-        print(item.el);
+        if (!item.el) {
+            print("NO EL!");
+            imports.console.dump(this);
+            Seed.quit();
+        }
+        
         item.parent = this;
         this.items.push(item);
         
