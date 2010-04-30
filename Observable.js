@@ -238,7 +238,7 @@ Observable = XObject.define(
             var e = this.events[eventName];
             return typeof e == "object" && e.listeners.length > 0;
         }
-};
+});
  
 /**
  * Starts capture on the specified Observable. All events will be passed
