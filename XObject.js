@@ -154,7 +154,7 @@ XObject.prototype = {
         }
         // always overlay props..
         // check for 'write' on object..
-        if (XObject.writeablePropsCache[this.xtype.type] == 'undefined') {
+        if (typeof(XObject.writeablePropsCache[this.xtype.type]) == 'undefined') {
                 
             var gi = GIRepository.IRepository.get_default();
             var ty = gi.find_by_gtype(this.xtype.type);
