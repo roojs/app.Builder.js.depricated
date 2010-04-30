@@ -27,7 +27,7 @@ StandardErrorDialog = new XObject({
     
     
     xtype : function () {
-        return Gtk.MessageDialog({ buttons : Gtk.ButtonsType.OK });
+        return ne wGtk.MessageDialog({ buttons : Gtk.ButtonsType.OK });
             
     },
     modal : true,
