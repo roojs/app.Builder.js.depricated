@@ -37,7 +37,7 @@ Window = new XObject({
     
     xtype : function() {
         return new Gtk.Window({type: Gtk.WindowType.TOPLEVEL});
-    }
+    },
     
     //type: Gtk.WindowType.TOPLEVEL,
     title : "Application Builder",
