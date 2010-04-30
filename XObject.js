@@ -161,7 +161,7 @@ XObject.prototype = {
             var write = [];
             for (var i =0; i < GIRepository.object_info_get_n_properties(ty);i++) {
                 var p =   GIRepository.object_info_get_property(ty,i);
-                if (GIRepository.property_info_get_flags(p) & GObject.ParamFlags.WRITABLE) {
+                if (GIRepository.property_info_get_flags(p) & 2) {
                     write.push(GIRepository.base_info_get_name(p));
                 }
             }
