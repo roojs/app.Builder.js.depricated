@@ -22,7 +22,7 @@ MidPropTree = imports.Builder.MidPropTree.MidPropTree;
 
 LeftProps = new XObject({
         
-        xtype: Gtk.HBox',
+        xtype: Gtk.HBox,
         packing : [ 'pack_start', false, true, 0 ],
         items : [       
             {
@@ -43,7 +43,7 @@ LeftProps = new XObject({
                 items : [
                     {
                         
-                        xtype: Gtk.HBox',
+                        xtype: Gtk.HBox,
                         packing : ['add'],
                         items : [
                             {
