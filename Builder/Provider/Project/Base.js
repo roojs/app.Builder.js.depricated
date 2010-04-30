@@ -179,7 +179,7 @@ Base = XObject.define(
         create : function(filename)
         {
             var ret = this.loadFileOnly(filename);
-            ret.write();
+            ret.save();
             this.addFile(ret);
             return ret;
             
