@@ -157,6 +157,8 @@ XObject.prototype = {
         //var gi = GIRepository.IRepository.get_default();
         //var ty = gi.find_by_gtype(this.el.
         for (var i in this.el) {
+            print(i);
+            if ([ 'signal'].indexOf(i) > -1) continue;
             print(i + ':' + this.el[i]);
         }
         //print (this.el.constructor.type);
