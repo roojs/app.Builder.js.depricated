@@ -126,7 +126,7 @@ DialogNewComponent = new XObject({
                     return;
                 }
                 
-                var dir = DialogNewComponent.get('template').getValue();
+                var dir = DialogNewComponent.get('directory').getValue();
                 var xidns = DialogNewComponent.get('xnsid').el.get_text();
                 
                 
