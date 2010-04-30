@@ -605,8 +605,9 @@ LeftTree = new XObject(
                           
                             
                             var par = new Gtk.TreeIter(); 
-                            
-                            var k = JSON.parse(this.getValue(iter, 2));
+                            var iv = this.getValue(iter, 2);
+                            print("IV" + iv);
+                            var k = JSON.parse(iv);
                             if (k.json && !this.el.iter_parent( par, iter  )) {
                                 delete k.json;
                             }
