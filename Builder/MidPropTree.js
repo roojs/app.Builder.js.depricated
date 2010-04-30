@@ -33,7 +33,7 @@ MidPropTree = new XObject({
         init : function() {
             XObject.prototype.init.call(this); 
             this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
-            this.set_size_request ( 150, -1 );
+            this.el.set_size_request ( 150, -1 );
              
         },
         
