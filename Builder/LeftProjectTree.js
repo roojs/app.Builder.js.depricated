@@ -40,7 +40,7 @@ LeftProjectTree = new XObject({
         items : [
             {
                 
-                xtype: Gtk.Toolbar',
+                xtype: Gtk.Toolbar,
                 pack : ['pack_start', false , true ], // expand // fill.
                 listeners : {
                     'size-allocate': function(w,a) {
@@ -116,7 +116,7 @@ LeftProjectTree = new XObject({
                                     {
                                         id : 'combomodel',
                                         pack : [ 'set_model' ],
-                                        xtype : Gtk.ListStore',
+                                        xtype : Gtk.ListStore,
                                         
                                         init :  function ()
                                         {
@@ -183,7 +183,7 @@ LeftProjectTree = new XObject({
                         
                         items : [
                             {
-                                id : menu
+                                id : 'menu',
                                 xtype : Gtk.Menu,
                                 pack : [ false ],
                                 
@@ -289,7 +289,7 @@ LeftProjectTree = new XObject({
                                     {
                                          
                                         
-                                        xtype : Gtk.MenuItem',
+                                        xtype : Gtk.MenuItem,
                                         pack : [ 'append' ],
                                         label : 'Add Component',
                                         listeners : {
