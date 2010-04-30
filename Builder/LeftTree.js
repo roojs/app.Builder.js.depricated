@@ -379,7 +379,7 @@ LeftTree = new XObject(
                             }
                             
                             // load the file if not loaded..
-                            if (!f.items.length ) {
+                            if (f.items === false) {
                                 var _this = this;
                                 f.loadItems(function() {
                                     _this.loadFile(f);
