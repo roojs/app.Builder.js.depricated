@@ -20,7 +20,7 @@ MidPropTree = new XObject({
         
         xtype: Gtk.ScrolledWindow,
         smooth_scroll : true,
-        shadow_type : Gtk.ShadowType.IN 
+        shadow_type : Gtk.ShadowType.IN ,
         init : function() {
             XObject.prototype.init.call(this); 
              
