@@ -8,7 +8,7 @@ GObject = imports.gi.GObject;
 XObject = imports.XObject.XObject;
 console = imports.console;
 
-ProjectManager      = imports.Builder.ProjectManager.ProjectManager; 
+ProjectManager      = imports.Builder.Provider.ProjectManager.ProjectManager; 
 LeftProjectTree     = imports.Builder.LeftProjectTree.LeftProjectTree;
 LeftTree            = imports.Builder.LeftTree.LeftTree;
 
