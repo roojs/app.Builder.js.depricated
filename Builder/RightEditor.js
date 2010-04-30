@@ -30,12 +30,13 @@ RightEditor = new XObject({
                 
                 init : function() {
                     XObject.prototype.init.call(this); 
+                    var _this = this;
                     this.el.get_buffer().signal.changed.connect(function() {
                             var s = new Gtk.TextIter();
                             var e = new Gtk.TextIter();
-                            _view.el.get_buffer().get_start_iter(s);
-                            _view.el.get_buffer().get_end_iter(e);
-                            var str = _view.el.get_buffer().get_text(s,e,true);
+                            this.el.get_buffer().get_start_iter(s);
+                            this.el.get_buffer().get_end_iter(e);
+                            var str = this.el.get_buffer().get_text(s,e,true);
                             LeftPanel.get('model').changed(  str , false);
                     });
                    
