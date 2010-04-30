@@ -75,7 +75,7 @@ LeftPanel = new XObject({
                     {
                         id : 'model',
                         pack : [ 'set_model' ],
-                        xtype : 'ListStore',
+                        xtype : Gtk.ListStore,
                         
                         init : function ()
                         {
