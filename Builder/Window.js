@@ -49,7 +49,7 @@ Window = new XObject({
         
         this.el.show_all();
         MidPropTree.hideWin();
-        RightPalete.get('palete').hide();
+        RightPalete.hide();
         
         this.el.set_default_size(900, 600);
         
