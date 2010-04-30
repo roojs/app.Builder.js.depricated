@@ -180,6 +180,7 @@ Base = XObject.define(
         {
             var ret = this.loadFileOnly(filename);
             ret.write();
+            this.addFile(ret);
             return ret;
             
         }
