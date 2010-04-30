@@ -79,7 +79,7 @@ Roo = XObject.define(
         loadItems : function(cb)
         {
             console.log("load Items!");
-            if (this.items.length) {
+            if (this.items == false) {
                 return false;
             }
             var file = Gio.file_new_for_path(this.path);
