@@ -1,6 +1,6 @@
 //<script type="text/javascript">
 GIRepository = imports.gi.GIRepository;
-
+GObject = imports.gi.GObject;
 /**
  * XObject
  * Yet another attempt to create a usable object construction library for seed..
