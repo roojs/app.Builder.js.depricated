@@ -14,7 +14,7 @@ Seed.print('done import window');
 Gtk.init(0, null);
 
 Window.init();
-Window.el.show_all();
+ 
           
 Gtk.main();
  
