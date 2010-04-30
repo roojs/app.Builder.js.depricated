@@ -206,7 +206,7 @@ XObject.prototype = {
       */
     addItem : function(o) {
         
-        
+        print("CTR:PROTO");
         print(o.constructor.prototype );
         
         var item = (o.constructor == XObject) ? o : new XObject(o);
