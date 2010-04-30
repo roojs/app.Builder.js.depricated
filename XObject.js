@@ -206,9 +206,9 @@ XObject.prototype = {
       */
     addItem : function(o) {
         
-        if (o.constructor == XObject) {
-            print("already made");
-        }
+        
+        print(o.constructor );
+        
         var item = (o.constructor == XObject) ? o : new XObject(o);
         print("addItem - call init");
         item.init();
