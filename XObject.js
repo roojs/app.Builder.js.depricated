@@ -217,7 +217,7 @@ XObject.prototype = {
         print("addItem - call init [" + item.pack.join(',') + ']');
         if (!item.el) {
             print("NO EL!");
-            imports.console.dump(this);
+            imports.console.dump(item);
             Seed.quit();
         }
         
