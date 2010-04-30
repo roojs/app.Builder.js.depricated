@@ -51,7 +51,7 @@ GObject = imports.gi.GObject;
 function XObject (cfg) {
     // first apply cfg if set.
     this.config = cfg;
-    print("new !!!");
+    print("new XOBJECT!!!");
     if (cfg.init) {
         this.init = cfg.init; // override!
     }
