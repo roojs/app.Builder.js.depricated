@@ -765,7 +765,7 @@ LeftTree = new XObject(
                         items : [
                             {
                                 
-                                xtype: Gtk.CellRendererText',
+                                xtype: Gtk.CellRendererText,
                                 pack: [ 'pack_start']
                                   
                             } 
