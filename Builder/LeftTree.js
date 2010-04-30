@@ -8,7 +8,7 @@ Pango = imports.gi.Pango ;
 XObject = imports.XObject.XObject;
 console = imports.console;
 
-// recursive imports break!!?
+// recursive imports here break!!?
 Roo             = imports.Builder.Provider.Palete.Roo.Roo;
 LeftTreeMenu    = imports.Builder.LeftTreeMenu.LeftTreeMenu;
 LeftPanel       = imports.Builder.LeftPanel.LeftPanel;
