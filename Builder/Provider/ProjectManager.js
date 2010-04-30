@@ -6,7 +6,7 @@ GLib = imports.gi.GLib;
 console = imports.console;
 XObject = imports.XObject.XObject;
  
-
+Observable = imports.Observable.Observable;
 
 /**
  * 
