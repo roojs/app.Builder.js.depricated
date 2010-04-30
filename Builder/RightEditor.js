@@ -19,7 +19,7 @@ LeftPanel = imports.Builder.LeftPanel.LeftPanel;
 
 RightEditor = new XObject({
          
-        xtype: GtkScrolledWindow,
+        xtype: Gtk.ScrolledWindow,
         
         shadow_type :  Gtk.ShadowType.IN  ,
         
