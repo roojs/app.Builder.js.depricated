@@ -317,6 +317,7 @@ XObject.prototype = {
             return ret;
         }
         // iterate children.
+        var _this = this;
         this.items.forEach(function(ch) {
             if (ret) {
                 return;
