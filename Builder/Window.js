@@ -91,7 +91,7 @@ Window = new XObject({
                                             items : [
                                                 {
                             
-                                                    xns : Gtk.HBox,
+                                                    xtype : Gtk.HBox,
                                                     pack : [ 'pack_start', false, true, 0 ],
                                                     items : [  
                                                         LeftProps 
