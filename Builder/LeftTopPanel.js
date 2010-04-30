@@ -94,7 +94,7 @@ LeftTopPanel = new XObject({
                 {
                     XObject.prototype.init.call(this); 
                     this.el.set_current_page(0);
-                }
+                },
                 
                 items :  [
                     LeftTree,
@@ -104,8 +104,8 @@ LeftTopPanel = new XObject({
             }
             
         ]
-    };
-}
+    }
+);
             
             
             
