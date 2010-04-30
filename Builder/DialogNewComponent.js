@@ -113,10 +113,10 @@ DialogNewComponent = new XObject({
                 
                 
                     
-                   
+                  // DialogNewComponent.get('template').getValue().length || 
             
                 if (!DialogNewComponent.get('xnsid').el.get_text().length || 
-                   DialogNewComponent.get('template').getValue().length ||
+                  
                    DialogNewComponent.get('directory').getValue().length 
                 ) {
                     StandardErrorDialog.show(
