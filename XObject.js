@@ -162,7 +162,7 @@ XObject.prototype = {
             if (typeof(this.el[i]) == 'function') continue;
             //if (typeof(this.el[i]) == 'object') continue;
             
-            print(i + ':' + this.el[i]);
+            print(i + ':' + typeof(this.el[i]));
         }
         //print (this.el.constructor.type);
         
