@@ -23,7 +23,7 @@ MidPropTree = imports.Builder.MidPropTree.MidPropTree;
 LeftProps = new XObject({
         
         xtype: Gtk.HBox,
-        packing : [ 'pack_start', false, true, 0 ],
+        pack : [ 'pack_start', false, true, 0 ],
         items : [       
             {
                 
@@ -44,7 +44,7 @@ LeftProps = new XObject({
                     {
                         
                         xtype: Gtk.HBox,
-                        packing : ['add'],
+                        pack : ['add'],
                         items : [
                             {
                                 
@@ -52,13 +52,13 @@ LeftProps = new XObject({
                                 'stock' : Gtk.STOCK_ADD,
                                 'icon-size' : Gtk.IconSize.MENU,
                                 
-                                packing : ['add']
+                                pack : ['add']
                                 
                             },
                             {
                                 
                                 xtype: Gtk.Label,
-                                packing : ['add'],
+                                pack : ['add'],
                                 label: "Property"
                                 
                             }
@@ -88,22 +88,22 @@ LeftProps = new XObject({
                 items : [
                     {
                         
-                        xtype: Gtk.HBox',
-                        packing : ['add'],
+                        xtype: Gtk.HBox,
+                        pack : ['add'],
                         items : [
                             {
                                 
-                                xtype: Gtk.Image',
+                                xtype: Gtk.Image,
                                 'stock' : Gtk.STOCK_ADD,
                                 'icon-size' : Gtk.IconSize.MENU,
                                 
-                                packing : ['add']
+                                pack : ['add']
                                 
                             },
                             {
                                 
-                                xtype: Gtk.Label',
-                                packing : ['add'],
+                                xtype: Gtk.Label,
+                                pack : ['add'],
                                 label: 'Handler'
                                 
                             }
@@ -136,7 +136,7 @@ LeftProps = new XObject({
                     {
                         
                         xtype: Gtk.HBox,
-                        packing : ['add'],
+                        pack : ['add'],
                         items : [
                             {
                                 
@@ -144,13 +144,13 @@ LeftProps = new XObject({
                                 'stock' : Gtk.STOCK_ADD,
                                 'icon-size' : Gtk.IconSize.MENU,
                                 
-                                packing : ['add']
+                                pack : ['add']
                                 
                             },
                             {
                                 
                                 xtype: Gtk.Label,
-                                packing : ['add'],
+                                pack : ['add'],
                                 label: 'Other'
                                 
                             }
