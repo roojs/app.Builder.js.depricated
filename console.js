@@ -19,7 +19,7 @@ function dump (ar) {
 
 function _dump(arr,level) {
     var dumped_text = "";
-    if(!level) level = 0;
+    level = level || 0;
     
     
     //The padding given at the beginning of the line.
