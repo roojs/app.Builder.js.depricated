@@ -291,7 +291,12 @@ var createSingle = function(h, e, fn, scope){
 //};
 
 
-
+/**
+ * Event Object - manages a specific event.
+ * 
+ * 
+ * 
+ */
 
 
 
