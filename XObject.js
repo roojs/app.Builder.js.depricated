@@ -97,7 +97,7 @@ XObject.prototype = {
         
         XObject.extend(o, cfg); // copy everything into o.
         
-        o.pack = typeof(o.pack) == 'undefined' ? 'add' : o.pack;
+        o.pack = typeof(o.pack) == 'undefined' ? ['add'] : o.pack;
         
         XObject.extend(this, o);
 
