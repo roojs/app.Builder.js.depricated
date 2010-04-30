@@ -175,8 +175,8 @@ DialogNewComponent = new XObject({
                         items : [
                             {
                                 xtype : Gtk.Label,
-                                label : "Component Name:"
-                                pack : [ 'pack_start', false, true , 0 ],
+                                label : "Component Name:",
+                                pack : [ 'pack_start', false, true , 0 ]
                                 
                             },
                             
