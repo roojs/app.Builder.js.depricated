@@ -10,10 +10,10 @@ Lang = imports.Builder.Provider.File.Lang.Lang;
 
 Base = XObject.define(
     
-   function(cfg) {
+    function(cfg) {
     
         XObject.extend(this, cfg);
-    }
+    },
     Object,
     {
         
