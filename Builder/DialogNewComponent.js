@@ -370,6 +370,7 @@ DialogNewComponent = new XObject({
                                         
                                         loadData : function (data) {
                                             this.el.clear();
+                                            this.data   = data;
                                             var iter = new Gtk.TreeIter();
                                             var el = this.el;
                                             data.forEach( function(p) {
