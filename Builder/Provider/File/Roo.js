@@ -93,7 +93,7 @@ Roo = XObject.define(
                 
                 var cfg = JSON.parse(src);
                 _this.items = [ {
-                     //'|module' : cfg.name,
+                    '|module' : cfg.name,
                     '*class' : cfg.name,
                     '*parent' : cfg.parent,
                     'title' : cfg.title,
