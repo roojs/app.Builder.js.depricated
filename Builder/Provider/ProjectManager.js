@@ -27,7 +27,7 @@ ProjectManager =  new Observable({
             this.saveConfig();
         }
         
-   },
+    },
     
     
     projects : [],
@@ -96,7 +96,8 @@ ProjectManager =  new Observable({
     
     saveConfig : function()
     {
-        Roo.each(this.projects, function(p) {
+        var _this = this;
+        this.projects.forEach( function(p) {
             
             if (!p.fn) {
                 // make the filename..
@@ -110,7 +111,7 @@ ProjectManager =  new Observable({
             }
             
             
-            var file = Gio.file_new_for_path(this.dirname + '/' + p.fn + '.json');
+            var file = Gio.file_new_for_path(_this.dirname + '/' + p.fn + '.json');
             
             var stream = file.replace(null,false,0);
             var  s =  p.toJSON();
@@ -118,7 +119,7 @@ ProjectManager =  new Observable({
             stream.close();
            
            
-        }, this);
+        });
         
         
         
@@ -128,7 +129,7 @@ ProjectManager =  new Observable({
         
         Seed.print(JSON.stringify(proj));
         var found = false;
-        Roo.each(this.projects , function(p) {
+        this.projects.forEach( function(p) {
             if (proj == p) {
                 found = true;
                 return true;
@@ -148,7 +149,7 @@ ProjectManager =  new Observable({
     },
     getByFn : function (fn) {
         var  ret = false;
-        Roo.each(this.projects, function(p) {
+        this.projects.forEach(function(p) {
             if (p.fn == fn) {
                 ret = p;
                 return true;
