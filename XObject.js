@@ -154,6 +154,7 @@ XObject.prototype = {
         }
         // always overlay props..
         // check for 'write' on object..
+        /*
         if (typeof(XObject.writeablePropsCache[this.xtype.type]) == 'undefined') {
                 
             var gi = GIRepository.IRepository.get_default();
@@ -169,13 +170,13 @@ XObject.prototype = {
             print(write.join(", "));
         }
         
-        
+        */
         
         for (var i in o) {
             // only write to writable properties
-            if (XObject.writeablePropsCache[this.xtype.type].indexOf(i) < 0) {
-                continue;
-            }
+          //  if (XObject.writeablePropsCache[this.xtype.type].indexOf(i) < 0) {
+          //      continue;
+           // }
             this.el[i] = o[i];
         }
         // register it!
