@@ -31,6 +31,11 @@ Base = XObject.define(
         cn : false, // array used by project tree.
         
         
+        save : function()
+        {
+            File.write(this.path, JSON.stringify(this.items);
+        }
+        
         /**
          * accepts:
          * { success : , failure : , scope : }
