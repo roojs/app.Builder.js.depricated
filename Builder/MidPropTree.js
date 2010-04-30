@@ -12,7 +12,7 @@ console = imports.console;
 
 
 Roo             = imports.Builder.Provider.Palete.Roo.Roo;
-Window          = imports.Builder.Window.Window;
+
 LeftPanel       = imports.Builder.LeftPanel.LeftPanel;
 
 /**
@@ -38,7 +38,7 @@ MidPropTree = new XObject({
         },
         
         hideWin : function() {
-            
+            var Window          = imports.Builder.Window.Window;            
             if (Window.get('left').el.position < 160) {
                 return;
             }
