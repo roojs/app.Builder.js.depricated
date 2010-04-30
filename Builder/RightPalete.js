@@ -53,7 +53,7 @@ RightPalete = new XObject({
                             {
                                 
                                 xtype: Gtk.Image,
-                                xtype : 'Image',
+                                
                                 stock : Gtk.STOCK_GOTO_FIRST,
                                 'icon-size' : Gtk.IconSize.MENU,
                                 pack : ['add']
