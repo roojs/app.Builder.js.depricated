@@ -55,7 +55,7 @@ Roo = XObject.define(
         
         this.cn = [];
         */
-        Builder.Provider.File.Roo.superclass.constructor.call(this, cfg);
+        Roo.superclass.constructor.call(this, cfg);
 
         
         // super?!?!
