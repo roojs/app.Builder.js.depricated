@@ -89,9 +89,9 @@ Observable = XObject.define(
          * @param {Object}   options (optional) An object containing handler configuration
          * properties. This may contain any of the following properties:<ul>
          * <li>scope {Object} The scope in which to execute the handler function. The handler function's "this" context.</li>
-         * <li>delay {Number} The number of milliseconds to delay the invocation of the handler after te event fires.</li>
+         * <li>delay {Number} The number of milliseconds to delay the invocation of the handler after te event fires.NOT AVAIALBLE</li>
          * <li>single {Boolean} True to add a handler to handle just the next firing of the event, and then remove itself.</li>
-         * <li>buffer {Number} Causes the handler to be scheduled to run in an {@link Roo.DelayedTask} delayed
+         * <li>buffer {Number} Causes the handler to be scheduled to run in an {@link DelayedEvent} delayed NOT AVAIALBLE
          * by the specified number of milliseconds. If the event fires again within that time, the original
          * handler is <em>not</em> invoked, but the new handler is scheduled in its place.</li>
          * </ul><br>
@@ -189,11 +189,26 @@ Observable = XObject.define(
                 }
             }
         },
-
+        _combine : function(){
+            var as = arguments, l = as.length, r = [];
+            for(var i = 0; i < l; i++){
+                var a = as[i];
+                if(a instanceof Array){
+                    r = r.concat(a);
+                }else if(a.length !== undefined && !a.substr){
+                    r = r.concat(Array.prototype.slice.call(a, 0));
+                }else{
+                    r.push(a);
+                }
+            }
+            return r;
+        },
+        
         relayEvents : function(o, events){
             var createHandler = function(ename){
                 return function(){
-                    return this.fireEvent.apply(this, Roo.combine(ename, Array.prototype.slice.call(arguments, 0)));
+                    return this.fireEvent.apply(this, Event.prototype.combine(ename, 
+                            Array.prototype.slice.call(arguments, 0)));
                 };
             };
             for(var i = 0, len = events.length; i < len; i++){
@@ -259,7 +274,7 @@ var createSingle = function(h, e, fn, scope){
 
 // NOT SUPPORTED YET>
 //var createBuffered = function(h, o, scope){
-//    var task = new Roo.DelayedTask();
+//    var task = new DelayedTask();
 //    return function(){
 //        task.delay(o.buffer, h, scope, Array.prototype.slice.call(arguments, 0));
 //    };
