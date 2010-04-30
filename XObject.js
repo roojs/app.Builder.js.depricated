@@ -376,7 +376,7 @@ XObject.extend(XObject,
             }
             if (typeof(parentClass.prototype) == 'undefined') {
                 print("Missing protype: when applying: " );
-                print(new String(parentClass));
+                print(new String(constructor));
                 Seed.quit(); 
             }
             var F = function(){};
