@@ -114,7 +114,7 @@ ProjectManager =  new Observable({
             var file = Gio.file_new_for_path(_this.dirname + '/' + p.fn + '.json');
             
             var stream = file.replace(null,false,0);
-            console.dump(p);
+            //console.dump(p);
             var  s =  p.toJSON();
             stream.write(s, s.length);
             stream.close();
