@@ -11,6 +11,9 @@ WebKit= imports.gi.WebKit;
 XObject = imports.XObject.XObject;
 console = imports.console;
 
+LeftTree = imports.Builder.LeftTree.LeftTree;
+
+
 RightBrowser = new XObject({
          
              
