@@ -43,9 +43,9 @@ EditProject = new XObject({
             
             c = c || { name : '' , xtype : '' };
             this.project  = c;
-            
+            var _this = this;
             [ 'xtype' , 'name' ].forEach(function(k) {
-                this.get(k).setValue(typeof(c[k]) == 'undefined' ? '' : c[k]);
+                _this.get(k).setValue(typeof(c[k]) == 'undefined' ? '' : c[k]);
             });
             if (!this.el) {
                 this.init();
