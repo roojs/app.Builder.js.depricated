@@ -7,7 +7,7 @@ XObject = imports.XObject.XObject;
 console = imports.console;
  
 
-LeftPanel = imports.Buidler.LeftPanel.LeftPanel;
+LeftPanel = imports.Builder.LeftPanel.LeftPanel;
 
 LeftPanelPopup = new XObject({
     
