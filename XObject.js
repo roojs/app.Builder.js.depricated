@@ -166,7 +166,7 @@ XObject.prototype = {
                 }
             }
             XObject.writeablePropsCache[this.xtype.type] = write;
-            print(write.join(", ");
+            print(write.join(", "));
         }
         
         
