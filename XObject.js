@@ -1,4 +1,5 @@
 //<script type="text/javascript">
+GIRepository = imports.gi.GIRepository;
 
 /**
  * XObject
@@ -153,6 +154,7 @@ XObject.prototype = {
         }
         // always overlay props..
         // check for 'write' on object..
+        var gi = GIRepository.IRepository.get_default();
         
         
         for (var i in o) {
