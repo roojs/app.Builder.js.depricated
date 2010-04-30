@@ -24,9 +24,14 @@ function _dump(arr,level) {
     
     //The padding given at the beginning of the line.
     var level_padding = "";
-    for(var j=0;j<level+1;j++) level_padding += "    ";
     
-    if(level > 15) return  level_padding + "[ ... to deep ...]\n";
+    for(var j=0;j<level+1;j++) {
+        level_padding += "    ";
+    }
+    
+    if(level > 15) {
+        return  level_padding + "[ ... to deep ...]\n";
+    }
     
     if (typeof(arr) != 'object') { //Array/Hashes/Objects 
         return "===>"+arr+"<===("+typeof(arr)+")";
