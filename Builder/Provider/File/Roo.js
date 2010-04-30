@@ -92,11 +92,13 @@ Roo = XObject.define(
                 var src = dstream.read_until("")
                 
                 var cfg = JSON.parse(src);
-                _this.items = [
+                _this.items = [ {
+                    
                     '*class' : cfg.name,
                     '*parent' : cfg.parent,
                     'title' : cfg.title,
                     items : cfg.items
+                    }
                 ];
                 cb();
                 /*
