@@ -176,6 +176,14 @@ Base = XObject.define(
                 parent : ''
             });
         },
+        create : function(filename)
+        {
+            var ret = this.loadFileOnly(filename);
+            ret.write();
+            return ret;
+            
+        }
+        
         
         addFile: function(pfile) { // add a single file, and trigger changed.
             this.files[pfile.path] = pfile
