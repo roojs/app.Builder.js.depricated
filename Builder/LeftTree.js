@@ -345,7 +345,10 @@ LeftTree = new XObject(
                            
                         },
                         activeIter : false,
-                        changed : function( n, refresh) {
+                        
+                        
+                        changed : function( n, refresh) 
+                        {
                             if (!this.activeIter) {
                                 return;
                             }
@@ -360,6 +363,8 @@ LeftTree = new XObject(
                             console.log(this.file.toSource());
                             
                             if (refresh) {
+                                print("REDNER BROWSER?!");
+                                
                                 var RightBrowser    = imports.Builder.RightBrowser.RightBrowser;                                 
                                 RightBrowser.get('view').renderJS(this.currentTree);
                                 var RightPalete     = imports.Builder.RightPalete.RightPalete;
