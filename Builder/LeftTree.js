@@ -17,7 +17,7 @@ MidPropTree     = imports.Builder.MidPropTree.MidPropTree;
 RightEditor     = imports.Builder.RightEditor.RightEditor;
 // http://www.google.com/codesearch/p?hl=en#EKZaOgYQHwo/unstable/sources/sylpheed-2.2.9.tar.bz2%7C1erxr_ilM1o/sylpheed-2.2.9/src/folderview.c&q=gtk_tree_view_get_drag_dest_row
 
-idSeed = 0;
+var idSeed = 0;
 function id(el, prefix){
     prefix = prefix || "roo-gen";
     //el = Roo.getDom(el);
