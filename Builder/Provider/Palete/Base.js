@@ -27,7 +27,7 @@ Base = XObject.define(
          */
         gatherList: function (existing) {
             existing = existing || [];
-            existing.push('*top'); // always have top
+           // existing.push('*top'); // always have top
             var ret  = []; 
             console.dump(this.map);
             function addRight(right) {
