@@ -153,7 +153,7 @@ LeftPanel = new XObject({
                                 if (type == 'Number') {
                                     val = 0;
                                 }
-                                console.log('add type');
+                                console.log('add type' + type);
                                 
                             }
                             data[key] = val;
