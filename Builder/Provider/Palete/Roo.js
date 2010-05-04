@@ -73,6 +73,13 @@ Roo = XObject.define(
                     //Seed.quit();
                    
                 }); 
+                if (left.length ){
+                            
+                    cfg.push({
+                        left : left,
+                        right: right
+                    });
+                }
                 _this.map = cfg;
                 if (o && o.success) o.success.apply(o.scope || _this, [_this]);
                 //console.dump(cfg);
