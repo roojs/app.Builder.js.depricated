@@ -196,7 +196,7 @@ LeftPanel = new XObject({
                             this.el.set_value(this.activeIter, 3, '' + this.toShort(str));
                             // update the tree...
                             var LeftTree        = imports.Builder.LeftTree.LeftTree;
-                            LeftTree.get('model').changed(this.toJS(), true); 
+                            LeftTree.get('model').changed(this.toJS(), doRefresh); 
                         },
                         toJS: function()
                         {
