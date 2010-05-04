@@ -18,7 +18,7 @@ LeftTree = imports.Builder.LeftTree.LeftTree ;
 RightBrowser = new XObject({
          
              
-        
+        renderedData : { }, 
         xtype: Gtk.ScrolledWindow,
         smooth_scroll : true,
         shadow_type : Gtk.ShadowType.IN ,
@@ -204,6 +204,7 @@ RightBrowser = new XObject({
                     
                 },
                 renderJS: function(data) {
+                    this.renderedData = data;
                     var str = JSON.stringify(data) ;
                     if (!this.ready) {
                         console.log('not loaded yet');
