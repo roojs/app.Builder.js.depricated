@@ -130,7 +130,7 @@ RightBrowser = new XObject({
                             }
                         }
                         // if no active node.. then check if tree is empty..
-                        
+                        console.dump(LeftTree.get('model').map);
                      //   Seed.print(tg);
                 
                         
