@@ -33,11 +33,12 @@ LeftTree = new XObject(
         
         shadow_type :  Gtk.ShadowType.IN,
         init : function() {
-            print("SET TARGETS");
-            this.targets[0].target="STRING";
-            this.targets[0].info=0;
-            this.targets[0].flags=2;
-             print("TARGET SET" +  this.targets[0].target);
+            this.targetList.add( this.atoms["STRING"], 0 , 1);
+            var r = {}; 
+            var found = this.targetList.find(this.atoms["STRING"], r)
+            print(r);
+            console.dump(found);
+            
             XObject.prototype.init.call(this); 
             this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
             
@@ -48,13 +49,7 @@ LeftTree = new XObject(
            "STRING" : Gdk.atom_intern("STRING")
         },
                         
-        targets : [
-            new Gtk.TargetEntry( {
-                target: "STRING",
-                info: 0,
-                flags: 2
-               })
-        ],
+        targetList :  new Gtk.TargetList(),
         
         items : [        
             {
