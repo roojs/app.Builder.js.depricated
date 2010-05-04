@@ -60,8 +60,8 @@ LeftPanel = new XObject({
                         }
                       
                     
-                        
-                        var res = this.el.get_path_at_pos(ev.button.x,ev.button.y);
+                        var res = { }; 
+                        this.el.get_path_at_pos(ev.button.x,ev.button.y, res);
                         
                         if (res.column.title == 'value') {
                             return false;
