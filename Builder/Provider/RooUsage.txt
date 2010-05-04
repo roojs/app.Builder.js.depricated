@@ -10,7 +10,9 @@ right:
  Roo.GridPanel         
  Roo.TreePanel         
 
-           
+
+// added with a property.. 
+ 
 left: 
  Roo.LayoutDialog:center
  Roo.LayoutDialog:east          
