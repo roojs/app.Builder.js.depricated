@@ -451,6 +451,8 @@ LeftTree = new XObject(
                         
                         findDropNode : function (treepath_str, targets)
                         {
+                            
+                            
                             var path = treepath_str.replace(/^builder-/, '');
                             
                             if (!XObject.keys(this.treemap).length) {
@@ -459,6 +461,10 @@ LeftTree = new XObject(
                             }
                             print("FIND treepath: " + path);
                             //console.dump(this.treemap);
+                            
+                            if (!treepath_str.match(/^builder-/)) {
+                                return []; // nothing!
+                            }
                             if (targets === true) {
                                 return [ path ];
                             }
