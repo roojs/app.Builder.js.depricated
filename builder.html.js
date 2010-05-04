@@ -273,7 +273,7 @@ Builder  = {
       // console.log(ftg.id);
         if (ftg.id && typeof(ftg.id) == 'string' && ftg.id.match(/builder-/)) {
             var nid = ftg.id.replace('builder-', '').replace('x-form-el-', '');
-            tthis[method]( nid );
+            this[method]( nid );
             return true;
         }
         // needs fixing..
