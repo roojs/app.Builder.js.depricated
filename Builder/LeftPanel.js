@@ -135,18 +135,24 @@ LeftPanel = new XObject({
                             
                         },
                         
-                        add : function(key, type, skel) {
+                        
+                        
+                        add : function(key, type,   val) {
                             
                             var data = this.toJS();
-                            if (typeof(data[key]) != 'undefined') {
+                            if ((typeof(data[key]) != 'undefined') && 
+                                (typeof(val) == 'undefined') ) {
                                 return;
                             }
-                            val = '';
-                            if (type == 'Boolean') {
-                                val = true;
-                            }
-                            if (type == 'Number') {
-                                val = 0;
+                            if (typeof(val) == 'undefined') {
+                                    
+                                val = '';
+                                if (type == 'Boolean') {
+                                    val = true;
+                                }
+                                if (type == 'Number') {
+                                    val = 0;
+                                }
                             }
                             data[key] = val;
                             
