@@ -486,7 +486,7 @@ LeftTree = new XObject(
                         dropNode: function(target_data, node) {
                             
                             console.dump(target_data);
-                            var tp = new  Gtk.TreePath.from_string( target_data[0] );
+                            var tp = target_data[0].length ? new  Gtk.TreePath.from_string( target_data[0] ) : null;
                             
                             
                             var parent = tp;
