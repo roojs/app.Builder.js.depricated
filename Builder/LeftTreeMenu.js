@@ -7,7 +7,6 @@ GObject = imports.gi.GObject;
 XObject = imports.XObject.XObject;
 console = imports.console;
 
-LeftTree = imports.Builder.LeftTree.LeftTree;
 
 LeftTreeMenu = new XObject( 
     {
@@ -23,7 +22,7 @@ LeftTreeMenu = new XObject(
                 label : "Delete Element",
                 listeners : {
                     activate : function () {
-                        LeftTree.get('model').deleteSelected();
+                        imports.Builder.LeftTree.LeftTree.get('model').deleteSelected();
                     }
                 }
             }
