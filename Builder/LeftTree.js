@@ -642,7 +642,7 @@ LeftTree = new XObject(
                         {
                             
                              var s = LeftTree.get('model').selection;
-                             if (s.count_selected_rows() {
+                             if (s.count_selected_rows()) {
                                      
                                 s.get_selected(LeftTree.get('model').el, iter);
 
