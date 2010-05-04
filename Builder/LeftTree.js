@@ -364,7 +364,7 @@ LeftTree = new XObject(
                             console.dump(this.file.items);
                             
                             this.currentTree = this.file.items[0];
-                            console.log(this.file.toSource());
+                            //console.log(this.file.toSource());
                             
                             if (refresh) {
                                 print("REDNER BROWSER?!");
