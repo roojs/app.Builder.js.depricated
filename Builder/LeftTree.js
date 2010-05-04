@@ -467,6 +467,7 @@ LeftTree = new XObject(
                             
                             pref = typeof(pref) == 'undefined' ?  Gtk.TreeViewDropPosition.INTO_OR_AFTER : pref;
                             var last = false;
+                            console.dump(this.treemap);
                             while (path.length) {
                                 if (typeof(this.treemap[path]) == 'undefined') {
                                     return [];
