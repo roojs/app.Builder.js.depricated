@@ -164,7 +164,7 @@ LeftTree = new XObject(
                     'drag-end' : function ( w,  drag_context, x, y, time, user_data)   
                     {
                         // i'm not sure if this would work, without implementing the whole kaboodle.
-                        Seed.print('SOURCE: drag-end');
+                        Seed.print('LEFT-TREE-SOURCE: drag-end');
                         this.el.dragData = false;
                         this.el.dropList = false;
                         this.targetData = false;
