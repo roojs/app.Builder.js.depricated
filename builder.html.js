@@ -71,7 +71,9 @@ Builder  = {
             //cfg.items[0].y = xy[1];
             //cfg.items[0].constraintoviewport = false;
         
-            this.dialogroot = Roo.get( document.body).createChild();
+            this.dialogroot = Roo.get( document.body).createChild({
+                id : cfg.id
+               });
              
             this.dialog = new Roo[cfg.xtype](this.dialogroot, cfg);
             //this.dialog.el.on('click', this.panelClick, this);
