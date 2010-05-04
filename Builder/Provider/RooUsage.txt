@@ -193,3 +193,25 @@ left:
 right:
  Roo.tree.DefaultSelectionModel         
   Roo.tree.MultiSelectionModel         
+
+  
+// combos
+
+left: 
+  Roo.form.ComboBox:store
+right: 
+  Roo.data.Store
+
+left: 
+  Roo.data.Store:proxy
+right:
+  Roo.data.HttpProxy
+  
+ 
+
+left: 
+  Roo.data.Store:reader
+right:
+  Roo.data.JsonReader
+ 
+  
