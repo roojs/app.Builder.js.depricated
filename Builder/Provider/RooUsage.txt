@@ -206,12 +206,13 @@ left:
   Roo.data.Store:proxy
 right:
   Roo.data.HttpProxy
-  
+  Roo.data.MemoryProxy
  
 
 left: 
   Roo.data.Store:reader
 right:
   Roo.data.JsonReader
- 
+  Roo.data.ArrayReader
+  Roo.data.XmlReader
   
