@@ -120,25 +120,14 @@ RightBrowser = new XObject({
                             
                         }
                         // c) ask tree where it should be dropped... - eg. parent.. (after node ontop)
-                        var tg = false;
-                        if (this.activeNode) {
-                            tg = LeftTree.get('model').findDropNode(this.activeNode, src.dropList);
-                            if (!tg.length) {
-                                Gdk.drag_status(ctx, 0,time);
-                                LeftTree.get('view').highlight(false);
-                                return true;
-                            }
-                        }
-                        // if no active node.. then check if tree is empty..
-                        if (XObject.keys(LeftTree.get('model').map).length) {
-                            // not found..
+                        
+                        var tg = LeftTree.get('model').findDropNode(this.activeNode, src.dropList);
+                        if (!tg.length) {
                             Gdk.drag_status(ctx, 0,time);
                             LeftTree.get('view').highlight(false);
                             return true;
                         }
-                     //   Seed.print(tg);
-                
-                        
+                         
                         // if we have a target..
                         // -> highlight it! (in browser)
                         // -> highlight it! (in tree)
