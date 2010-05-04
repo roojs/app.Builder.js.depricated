@@ -98,12 +98,14 @@ MidPropTree = new XObject({
                         var key = value.value;
                         value = new GObject.Value('');
                         MidPropTree.get('model').el.get_value(iter, 1, value);
-                        
                         var type = value.value;
-                        value = new GObject.Value('');
-                        MidPropTree.get('model').el.get_value(iter, 4, value);
                         
+                        
+                        value = new GObject.Value('');
+                        MidPropTree.get('model').el.get_value(iter, 3, value);
                         var skel = value.value;
+                        
+                        
                         MidPropTree.hideWin();
                         
                         if (type == 'function') {
