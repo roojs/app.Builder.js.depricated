@@ -450,6 +450,7 @@ LeftTree = new XObject(
                                 print("NO KEYS");
                                 return [ '',  Gtk.TreeViewDropPosition.INTO_OR_AFTER];
                             }
+                            console.dump(this.map);
                             if (typeof(this.map[dropid]) == 'undefined') {
                                 Seed.print("not found: " + dropid);
                                 return [];
