@@ -175,7 +175,7 @@ Builder  = {
         
         // we can overlay some event handlers here..
         var xtype = (cfg.xns || '')  + '.' + (cfg.xtype || '');
-        
+        console.log('xtype'  + xtype)
         switch(xtype) {
             case 'Roo.LayoutDialog':
                 cfg.listeners.resize = function(dlg, w,h)
