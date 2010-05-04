@@ -500,7 +500,10 @@ LeftTree = new XObject(
                             var n_iter = new Gtk.TreeIter();
                             var iter_par = new Gtk.TreeIter();
                             var iter_after = after ? new Gtk.TreeIter() : false;
-                            this.el.get_iter(iter_par, parent);
+                            if (parent !== false) {
+                                this.el.get_iter(iter_par, parent);
+                            }
+                            
                             
                             if (after) {
                                 Seed.print(target_data[1]  > 0 ? 'insert_after' : 'insert_before');
