@@ -659,7 +659,9 @@ LeftTree = new XObject(
                                 var data = JSON.parse(value.value);
                                 var xname = Roo.guessName(data);
                                 console.log('selected:' + xname);
-                                
+                                if (xname.length) {
+                                    return [ xname ];
+                               }
                             }
                             
                             var ret = [ ];
