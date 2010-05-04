@@ -54,18 +54,18 @@ Builder  = {
         
         var cfg =  this.tree;
         //console.log(this.dump(cfg));
-        if (!cfg || !cfg.items || !cfg.items[0]) {
+        if (!cfg) {
             return;
         }
         
         
-        this.munge(cfg.items[0]);
+        this.munge(cfg);
         
         // we draw either a dialog or a tab..
         
-        if (cfg.items[0].xtype == 'LayoutDialog') {
+        if (cfg.xtype == 'LayoutDialog') {
             
-            cfg.items[0].modal = false;
+            cfg.modal = false;
             //var xy  = Pman.Tab.BuilderPanel.panel.el.getXY();
             //cfg.items[0].x = xy[0];
             //cfg.items[0].y = xy[1];
@@ -73,7 +73,7 @@ Builder  = {
         
             this.dialogroot = Roo.get( document.body).createChild();
              
-            this.dialog = new Roo[cfg.items[0].xtype](this.dialogroot, cfg.items[0]);
+            this.dialog = new Roo[cfg.xtype](this.dialogroot, cfg);
             //this.dialog.el.on('click', this.panelClick, this);
             this.dialog.show();
             return;
