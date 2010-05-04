@@ -459,7 +459,9 @@ LeftTree = new XObject(
                             }
                             print("FIND treepath: " + path);
                             //console.dump(this.treemap);
-                             
+                            if (targets === true) {
+                                return [ path ];
+                            }
                             return this.findDropNodeByPath(path,targets) 
                         },
                         findDropNodeByPath : function (treepath_str, targets, pref)
