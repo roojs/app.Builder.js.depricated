@@ -436,6 +436,10 @@ LeftTree = new XObject(
                         
                         findDropNode : function (dropid, targets)
                         {
+                            
+                            if (!XObject.keys(this.map).length) {
+                                return [ '',  Gtk.TreeViewDropPosition.INTO_OR_AFTER];
+                            }
                             if (typeof(this.map[dropid]) == 'undefined') {
                                 Seed.print("not found: " + dropid);
                                 return [];
@@ -448,6 +452,8 @@ LeftTree = new XObject(
                         },
                         findDropNodeByPath : function (path, targets, pref)
                         {
+                            
+                            
                             pref = typeof(pref) == 'undefined' ?  Gtk.TreeViewDropPosition.AFTER : pref;
                             var last = false;
                             while (path.length) {
