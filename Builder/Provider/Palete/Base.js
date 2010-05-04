@@ -43,7 +43,9 @@ Base = XObject.define(
                 var done = false
                 m.left.forEach( function(left) {
                     if (done) return; 
+                    
                     var l = left.replace(/:.*$/, '');
+                    print("chk:" + l + " in " + existing.join(','); 
                     if (existing.indexOf(l) > -1) {
                         addRight(m.right);
                         done =true;
