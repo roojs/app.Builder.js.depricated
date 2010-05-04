@@ -1,0 +1,9 @@
+
+These fixes may need adding to the various .gir's 
+
+Then compile the with g-ir-compile /usr/share/gir-1.0/XXXX.gir -o /usr/lib/girepository-1.0/XXXX.typelib
+
+
+
+gtk_tree_view_get_dest_row_at_pos
+ - path & pos both need direction="out"
