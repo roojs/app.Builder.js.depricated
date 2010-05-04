@@ -95,14 +95,10 @@ Roo = XObject.define(
                 print("loaded data");
                 console.dump(cfg);
                 
-                _this.items = [ {
-                    '|module' : cfg.name,
-                    '*class' : cfg.name,
-                    '*parent' : cfg.parent,
-                    'title' : cfg.title,
-                    items : cfg.items
-                    }
-                ];
+                _this.name = cfg.name;
+                _this.parent =  cfg.parent;
+                _this.title =  cfg.title;
+                _this.items = cfg.items || []; 
                 cb();
                 /*
                 var tstream =  new JSDOC.TextStream(src);
