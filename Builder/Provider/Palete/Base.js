@@ -54,7 +54,7 @@ Base = XObject.define(
                 });
                 
             });
-            console.dump(ret);
+           // console.dump(ret);
             return ret;
             
             
