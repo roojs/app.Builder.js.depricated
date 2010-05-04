@@ -34,10 +34,15 @@ MidPropTree = new XObject({
             XObject.prototype.init.call(this); 
             this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
             this.el.set_size_request ( 150, -1 );
-             
+            this.shown = true;
         },
         
         hideWin : function() {
+            
+            if (!this.shown) {
+                return;
+            }
+            
             var Window          = imports.Builder.Window.Window;            
             if (Window.get('left').el.position < 160) {
                 return;
