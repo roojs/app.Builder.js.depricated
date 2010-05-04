@@ -484,12 +484,17 @@ LeftTree = new XObject(
                                 
                                 var xname = Roo.guessName(this.treemap[path]);
                                 var match = false;
+                                var prop = '';
                                 targets.forEach(function(tg) {
                                     if (match) {
                                         return;;
                                     }
-                                    if ((tg == xname)  || tg.indexOf(xname +':') === 0) {
+                                    if ((tg == xname)  ) {
                                         match = tg;
+                                    }
+                                    if (tg.indexOf(xname +':') === 0) {
+                                        match = tg;
+                                        prop = xname.split(':').shift();
                                     }
                                 });
                                 
@@ -499,10 +504,10 @@ LeftTree = new XObject(
                                         if (pref > 1) {
                                             return []; // do not allow..
                                         }
-                                        return [ last, pref ];
+                                        return [ last, pref , prop];
                                         
                                     }
-                                    return [ path , Gtk.TreeViewDropPosition.INTO_OR_AFTER ];
+                                    return [ path , Gtk.TreeViewDropPosition.INTO_OR_AFTER , prop];
                                 }
                                 var par = path.split(':');
                                 last = path;
