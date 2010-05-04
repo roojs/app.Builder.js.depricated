@@ -661,7 +661,8 @@ LeftTree = new XObject(
                                 console.log('selected:' + xname);
                                 if (xname.length) {
                                     return [ xname ];
-                               }
+                                }
+                                return []; // could not find it..
                             }
                             
                             var ret = [ ];
