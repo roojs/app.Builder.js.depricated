@@ -122,6 +122,7 @@ RightBrowser = new XObject({
                         // c) ask tree where it should be dropped... - eg. parent.. (after node ontop)
                         
                         var tg = LeftTree.get('model').findDropNode(this.activeNode, src.dropList);
+                        console.dump(tg);
                         if (!tg.length) {
                             Gdk.drag_status(ctx, 0,time);
                             LeftTree.get('view').highlight(false);
