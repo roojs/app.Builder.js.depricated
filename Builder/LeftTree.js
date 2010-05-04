@@ -447,6 +447,7 @@ LeftTree = new XObject(
                         {
                             
                             if (!XObject.keys(this.map).length) {
+                                print("NO KEYS");
                                 return [ '',  Gtk.TreeViewDropPosition.INTO_OR_AFTER];
                             }
                             if (typeof(this.map[dropid]) == 'undefined') {
