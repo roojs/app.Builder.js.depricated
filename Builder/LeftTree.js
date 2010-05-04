@@ -649,7 +649,7 @@ LeftTree = new XObject(
                         {
                             
                              var s = LeftTree.get('view').selection;
-                             if (s.count_selected_rows()) {
+                             if (s.count_selected_rows() > 0) {
                                 var iter = new Gtk.TreeIter();    
                                 s.get_selected(LeftTree.get('model').el, iter);
 
