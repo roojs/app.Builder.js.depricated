@@ -14,7 +14,7 @@ Gio = imports.gi.Gio;
 JSDOC =  imports['JSDOC.js'];
 //----------------------- our roo verison
 
-id = 0;
+var rid = 0;
 
 Roo = XObject.define(
     function(cfg) {
@@ -59,7 +59,7 @@ Roo = XObject.define(
 
         
         // super?!?!
-        this.id = 'roo-file-' + (id++);
+        this.id = 'roo-file-' + (rid++);
         // various loader methods..
     },
     Base,
