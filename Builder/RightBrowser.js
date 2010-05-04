@@ -39,7 +39,7 @@ RightBrowser = new XObject({
                     // fixme!
                     this.el.open('file:///' + __script_path__ + '/../builder.html');
                         
-                     print(LeftTree.targets[0]);
+                     print(LeftTree.targets[0].target);
                     Gtk.drag_dest_set
                     (
                             this.el,              /* widget that will accept a drop */
