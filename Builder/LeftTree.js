@@ -225,7 +225,7 @@ LeftTree = new XObject(
                         (
                                 w,         /* will receive 'drag-data-received' signal */
                                 ctx,        /* represents the current state of the DnD */
-                                Builder.atoms["STRING"],    /* the target type we want */
+                                LeftTree.atoms["STRING"],    /* the target type we want */
                                 time            /* time stamp */
                         );
                         
