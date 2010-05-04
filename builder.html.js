@@ -127,6 +127,7 @@ Builder  = {
             cfg.background = false;
         }
         
+        var xtype = (cfg['|xns'] || '')  + '.' + (cfg.xtype || '');
         
         for(var p in cfg){
             // key is not string?!?!?!!?
@@ -174,7 +175,7 @@ Builder  = {
         }
         
         // we can overlay some event handlers here..
-        var xtype = (cfg.xns || '')  + '.' + (cfg.xtype || '');
+        
         console.log('xtype'  + xtype)
         switch(xtype) {
             case 'Roo.LayoutDialog':
