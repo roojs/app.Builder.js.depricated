@@ -48,7 +48,7 @@ RightBrowser = new XObject({
                             0,              /* size of list */
                             Gdk.DragAction.COPY         /* what to do with data after dropped */
                     );
-                    targets = new Gtk.TargetList();
+                   // targets = new Gtk.TargetList();
                    
                     //targets.add( LeftTree.atoms["STRING"], 0, 0);
                     //Gtk.drag_dest_set_target_list(this.el, targets);
