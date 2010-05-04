@@ -137,7 +137,7 @@ LeftPanel = new XObject({
                         
                         
                         
-                        add : function(key, type,   val) {
+                        add : function(key, type,   val, skel) {
                             
                             var data = this.toJS();
                             if ((typeof(data[key]) != 'undefined') && 
@@ -153,9 +153,7 @@ LeftPanel = new XObject({
                                 if (type == 'Number') {
                                     val = 0;
                                 }
-                                if (type == 'function') {
-                                    key = '|' + key;
-                                }
+                                
                                 
                             }
                             data[key] = val;
