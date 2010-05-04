@@ -488,7 +488,7 @@ LeftTree = new XObject(
                             console.dump(target_data);
                             var tp = target_data[0].length ? new  Gtk.TreePath.from_string( target_data[0] ) : null;
                             
-                            
+                            print("add where: " + target_data[1]  );
                             var parent = tp;
                             var after = false;
                             if (target_data[1]  < 2) { // before or after..
