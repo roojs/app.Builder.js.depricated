@@ -86,7 +86,7 @@ RightBrowser = new XObject({
                         
                          if (typeof(val['id']) != 'undefined') {
                            // this.activeNode = val['id'];
-                            var tg = LeftTree.get('model').findDropNode(val['id'], []); 
+                            var tg = LeftTree.get('model').findDropNode(val['id'], true); 
                             if (!tg) {
                                 return false;
                             }
