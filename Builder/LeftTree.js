@@ -351,15 +351,14 @@ LeftTree = new XObject(
                         changed : function( n, refresh) 
                         {
                             print("MODEL CHANGED CALLED" + this.activeIter);
-                            if (!this.activeIter) {
-                                return;
+                            if (this.activeIter) {
+                                    
+                                this.el.set_value(this.activeIter, 0, [GObject.TYPE_STRING, this.nodeTitle(n)]);
+                                this.el.set_value(this.activeIter, 1, [GObject.TYPE_STRING, this.nodeTitle(n)]);
+                                
+                                this.el.set_value(this.activeIter, 2, [GObject.TYPE_STRING, this.nodeToJSON(n)]);
                             }
-                            this.el.set_value(this.activeIter, 0, [GObject.TYPE_STRING, this.nodeTitle(n)]);
-                            this.el.set_value(this.activeIter, 1, [GObject.TYPE_STRING, this.nodeTitle(n)]);
-                            
-                            this.el.set_value(this.activeIter, 2, [GObject.TYPE_STRING, this.nodeToJSON(n)]);
-                            
-                            //this.currentTree = this.toJS(false, true)[0];
+                                //this.currentTree = this.toJS(false, true)[0];
                             this.file.items = this.toJS(false, true);
                             print("AFTER CHANGED")
                             console.dump(this.file.items);
@@ -603,7 +602,7 @@ LeftTree = new XObject(
                             s.get_selected(this.el, old_iter);
                             
                             this.el.remove(old_iter);
-                            
+                            this.changed(false,true);
                             
                             
                             
