@@ -650,9 +650,8 @@ LeftTree = new XObject(
                             
                              var s = LeftTree.get('view').selection;
                              if (s.count_selected_rows()) {
-                                     
-                                s.get_selected(LeftTree.
-                                get('model').el, iter);
+                                var iter = new Gtk.TreeIter();    
+                                s.get_selected(LeftTree.get('model').el, iter);
 
                                 // set some properties of the tree for use by the dropped element.
                                 var value = new GObject.Value('');
