@@ -211,7 +211,7 @@ right:
   Roo.data.MemoryProxy
  
 
-left: 
+left:
   Roo.data.Store:reader
 right:
   Roo.data.JsonReader
