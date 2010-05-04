@@ -11,7 +11,7 @@ right:
  Roo.TreePanel         
 
 
-// added with a property.. 
+// added with a property..  (*prop)
  
 left: 
  Roo.LayoutDialog:center
