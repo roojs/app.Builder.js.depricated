@@ -35,9 +35,7 @@ Base = XObject.define(
         {
             var write = { }; 
             var _this = this;
-            var data = ['name', 'parent', 'title', 'items'].forEach( function(k) {
-                write[k] = _this[k];
-            });
+            var data = this.toJsonArray()
             print("WRITE: " + this.path + "\n" + JSON.stringify(write));
             File.write(this.path, JSON.stringify(write));
         },
