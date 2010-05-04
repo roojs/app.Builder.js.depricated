@@ -7,7 +7,7 @@ XObject = imports.XObject.XObject;
 console = imports.console;
  
 
-LeftPanel = imports.Builder.LeftPanel.LeftPanel;
+
 
 LeftPanelPopup = new XObject({
     
@@ -24,7 +24,7 @@ LeftPanelPopup = new XObject({
             label : 'Delete Property / Event',
             listeners : {
                 activate : function () {
-                    LeftPanel.get('model').deleteSelected();
+                    imports.Builder.LeftPanel.LeftPanel.get('model').deleteSelected();
                 }
             }
         },
@@ -37,7 +37,7 @@ LeftPanelPopup = new XObject({
             label : 'Change Property to Javascript Value',
             listeners : {
                 activate : function () {
-                   LeftPanel.get('model').setSelectedToJS();
+                   imports.Builder.LeftPanel.LeftPanel.get('model').setSelectedToJS();
                 }
             }
         },
