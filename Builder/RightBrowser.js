@@ -44,8 +44,8 @@ RightBrowser = new XObject({
                     (
                             this.el,              /* widget that will accept a drop */
                             Gtk.DestDefaults.MOTION  | Gtk.DestDefaults.HIGHLIGHT,
-                            null,            /* lists of target to support */
-                            0,              /* size of list */
+                            LeftTree.targets,            /* lists of target to support */
+                            LeftTree.targets.length,              /* size of list */
                             Gdk.DragAction.COPY         /* what to do with data after dropped */
                     );
                     targets = new Gtk.TargetList();
