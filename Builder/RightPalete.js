@@ -181,6 +181,7 @@ RightPalete = new XObject({
                                     print("RP: TARGET:" + LeftTree.atoms["STRING"]);
                                     targets = new Gtk.TargetList();
                                     targets.add( LeftTree.atoms["STRING"], 0, 0);
+                                    targets.add_text_targets( 1 );
                                     Gtk.drag_source_set_target_list(this.el, targets);
                                     //if you want to allow text to be output elsewhere..
                                     //Gtk.drag_source_add_text_targets(this.el);
