@@ -99,6 +99,7 @@ RightBrowser = new XObject({
                     'drag-motion' : function (w, ctx,  x,   y,   time, ud) 
                     {
                         
+                    
                         console.log('DRAG MOTION'); 
                         // status:
                         // if lastCurrentNode == this.currentNode.. -- don't change anything..
@@ -119,14 +120,19 @@ RightBrowser = new XObject({
                             
                         }
                         // c) ask tree where it should be dropped... - eg. parent.. (after node ontop)
-                        
-                        var tg = LeftTree.get('model').findDropNode(this.activeNode, src.dropList);
-                     //   Seed.print(tg);
-                        if (!tg.length) {
-                            Gdk.drag_status(ctx, 0,time);
-                            LeftTree.get('view').highlight(false);
-                            return true;
+                        var tg = false;
+                        if (this.activeNode) {
+                            tg = LeftTree.get('model').findDropNode(this.activeNode, src.dropList);
+                            if (!tg.length) {
+                                Gdk.drag_status(ctx, 0,time);
+                                LeftTree.get('view').highlight(false);
+                                return true;
+                            }
                         }
+                        // if no active node.. then check if tree is empty..
+                        
+                     //   Seed.print(tg);
+                
                         
                         // if we have a target..
                         // -> highlight it! (in browser)
