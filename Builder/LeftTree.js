@@ -21,8 +21,8 @@ var idSeed = 0;
 function id(el, prefix){
     prefix = prefix || "roo-gen";
     //el = Roo.getDom(el);
-    var id = prefix + (++idSeed);
-    return id;
+    var ret = prefix + (++idSeed);
+    return ret;
     //return el ? (el.id ? el.id : (el.id = id)) : id;
 }
 
