@@ -326,6 +326,9 @@ LeftTree = new XObject(
                         
                         console.log(value.value);
                        // _g.button.set_label(''+value.get_string());
+                        var RightPalete     = imports.Builder.RightPalete.RightPalete;
+                        var pm = RightPalete.get('model');
+                        pm.load( pm.provider.gatherList(LeftTree.get('model').listAllTypes()));
                        
                         
                        
