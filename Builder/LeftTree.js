@@ -400,7 +400,7 @@ LeftTree = new XObject(
                                 return;
                                 
                             }
-                            if (typeof(f.items[0]) == 'string') {
+                            if (f.items.length && typeof(f.items[0]) == 'string') {
                             
                                 RightEditor.el.show();
                                 RightEditor.get('view').load( f.items[0]);
