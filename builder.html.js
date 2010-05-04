@@ -268,6 +268,7 @@ Builder  = {
         
         var el = document.elementFromPoint(x,y);
         console.log(el);
+        console.log(document.body.innerHTML);
         this.hover( {
             getTarget : function () {
                 return el;
