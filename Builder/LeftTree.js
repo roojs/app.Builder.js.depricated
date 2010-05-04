@@ -439,7 +439,7 @@ LeftTree = new XObject(
                             this.currentTree = this.currentTree || { items: [] };
                             var RightBrowser    = imports.Builder.RightBrowser.RightBrowser;
                             RightBrowser.get('view').renderJS(this.currentTree);
-                            console.dump(this.map);
+                            //console.dump(this.map);
                             var RightPalete     = imports.Builder.RightPalete.RightPalete;
                             var pm = RightPalete.get('model');
                             pm.load( pm.provider.gatherList(this.listAllTypes()));
@@ -449,31 +449,21 @@ LeftTree = new XObject(
                             
                         },
                         
-                        findDropNode : function (dropid, targets)
+                        findDropNode : function (treepath_str, targets)
                         {
                             
-                            if (!XObject.keys(this.map).length) {
+                            if (!XObject.keys(this.treemap).length) {
                                 print("NO KEYS");
                                 return [ '',  Gtk.TreeViewDropPosition.INTO_OR_AFTER];
                             }
-                            console.dump(this.map);
-                            if (typeof(this.map[dropid]) == 'undefined') {
-                                Seed.print("not found: " + dropid);
-                                return [];
-                            }
-                            //Gtk.TreeViewDropPosition.INTO_OR_AFTER
-                            //Gtk.TreeViewDropPosition.AFTER
-                            //Seed.print('treepath : ' + this.map[dropid]);
-                            var path = this.map[dropid];
-                            if (targets === true) {
-                                return [ path, 0];
-                            }
-                            return this.findDropNodeByPath(path,targets) 
+                            console.dump(this.treemap);
+                             
+                            return this.findDropNodeByPath(treepath_str,targets) 
                         },
-                        findDropNodeByPath : function (path, targets, pref)
+                        findDropNodeByPath : function (treepath_str, targets, pref)
                         {
                             
-                            
+                            var path = treepath_str + ''; // dupe it..
                             pref = typeof(pref) == 'undefined' ?  Gtk.TreeViewDropPosition.INTO_OR_AFTER : pref;
                             var last = false;
                             console.dump(this.treemap);
@@ -626,7 +616,7 @@ LeftTree = new XObject(
                         
                         
                         currentTree  : false,
-                        map : false, // map of builder-ids=>treepaths.
+                         
                         treemap: false, // map of treepath to nodes.
                         
                         listAllTypes : function()
@@ -684,10 +674,11 @@ LeftTree = new XObject(
                             }
                             
                             if (with_id) {
-                                k.id = id(null,'builder-');
-                                this.map[k.id] = this.el.get_path(iter).to_string();
-                                this.treemap[  this.map[k.id]  ] = k;
-                                k.xtreepath = this.map[k.id];
+                                var treepath_str = his.el.get_path(iter).to_string();
+                                k.id =  'builder-'+ treepath_str ;
+                               
+                                this.treemap[  treepath_str ] = k;
+                                k.xtreepath = treepath_str ;
                                 
                             }
                             if (this.el.iter_has_child(iter)) {
@@ -707,7 +698,7 @@ LeftTree = new XObject(
                             
                             var first = false;
                             if (!iter) {
-                                this.map = { }; 
+                                
                                 this.treemap = { }; 
                                 
                                 iter = new Gtk.TreeIter();
