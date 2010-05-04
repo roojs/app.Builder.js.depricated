@@ -456,7 +456,8 @@ LeftTree = new XObject(
                                 print("NO KEYS");
                                 return [ '',  Gtk.TreeViewDropPosition.INTO_OR_AFTER];
                             }
-                            console.dump(this.treemap);
+                            print("FIND treepath: " + treepath_str);
+                            //console.dump(this.treemap);
                              
                             return this.findDropNodeByPath(treepath_str,targets) 
                         },
