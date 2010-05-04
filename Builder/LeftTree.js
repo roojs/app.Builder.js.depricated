@@ -43,6 +43,14 @@ LeftTree = new XObject(
            "STRING" : Gdk.atom_intern("STRING")
         },
                         
+        targets : [
+            new Gtk.TargetEntry({
+                target: "STRING",
+                info: 0,
+                flags : 2
+            })
+            
+        ],
         
         items : [        
             {
