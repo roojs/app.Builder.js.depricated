@@ -27,7 +27,7 @@ left:
 right:
  Roo.LayoutRegion
 
- 
+// add with region? region= 
  
 left:
   Roo.LayoutDialog
