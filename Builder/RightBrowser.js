@@ -44,17 +44,13 @@ RightBrowser = new XObject({
                     (
                             this.el,              /* widget that will accept a drop */
                             Gtk.DestDefaults.MOTION  | Gtk.DestDefaults.HIGHLIGHT,
-                            LeftTree.targets,            /* lists of target to support */
-                            LeftTree.targets.length,              /* size of list */
+                            null,            /* lists of target to support */
+                            0,              /* size of list */
                             Gdk.DragAction.COPY         /* what to do with data after dropped */
                     );
-                    //targets = new Gtk.TargetList();
-                   
-                  //  targets.add( LeftTree.atoms["STRING"], 0, 0);
-                   // targets.add_text_targets( 1 );
                     
                    // print("RB: TARGETS : " + LeftTree.atoms["STRING"]);
-                   // Gtk.drag_dest_set_target_list(this.el, targets);
+                    Gtk.drag_dest_set_target_list(this.el, LeftTree.targetList);
                     //Gtk.drag_dest_add_text_targets(this.el);
                 },   
                 listeners : {
