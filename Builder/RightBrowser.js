@@ -48,13 +48,13 @@ RightBrowser = new XObject({
                             LeftTree.targets.length,              /* size of list */
                             Gdk.DragAction.COPY         /* what to do with data after dropped */
                     );
-                    targets = new Gtk.TargetList();
+                    //targets = new Gtk.TargetList();
                    
-                    targets.add( LeftTree.atoms["STRING"], 0, 0);
-                    targets.add_text_targets( 1 );
+                  //  targets.add( LeftTree.atoms["STRING"], 0, 0);
+                   // targets.add_text_targets( 1 );
                     
-                    print("RB: TARGETS : " + LeftTree.atoms["STRING"]);
-                    Gtk.drag_dest_set_target_list(this.el, targets);
+                   // print("RB: TARGETS : " + LeftTree.atoms["STRING"]);
+                   // Gtk.drag_dest_set_target_list(this.el, targets);
                     //Gtk.drag_dest_add_text_targets(this.el);
                 },   
                 listeners : {
