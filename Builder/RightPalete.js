@@ -170,14 +170,7 @@ RightPalete = new XObject({
                                     //});
                                     // see: http://live.gnome.org/GnomeLove/DragNDropTutorial
                                     
-                                    LeftTree.targets = [
-                                        new Gtk.TargetEntry({
-                                            target:"STRING",
-                                            info : 0,
-                                            flags : 2,
-                                        });
-                                    ];
-                                    
+                                  
                                     
                                     
                                     Gtk.drag_source_set (
