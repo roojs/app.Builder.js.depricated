@@ -50,7 +50,6 @@ LeftTree = new XObject(
                         
         targets : [
             new Gtk.TargetEntry()
-            
         ],
         
         items : [        
