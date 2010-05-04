@@ -68,7 +68,9 @@ LeftTree = new XObject(
                     this.selection = this.el.get_selection();
                     this.selection.set_mode( Gtk.SelectionMode.SINGLE);
                     this.selection.signal['changed'].connect(function() {
-                        LeftTree.get('view').listeners['cursor-changed'].apply(LeftTree.get('view'), [ LeftTree.get('view'), '']);
+                        LeftTree.get('view').listeners['cursor-changed'].apply(
+                            LeftTree.get('view'), [ LeftTree.get('view'), '']
+                        );
                     });
                     
                     Gtk.drag_source_set (
@@ -300,7 +302,11 @@ LeftTree = new XObject(
                             LeftPanel.get('model').load( false);
                             MidPropTree.get('model').load(data);
                             MidPropTree.hideWin();
-                            return;
+                            var RightPalete     = imports.Builder.RightPalete.RightPalete;
+                            var pm = RightPalete.get('model');
+                            pm.load( pm.provider.gatherList(LeftTree.get('model').listAllTypes()));
+                           
+                            return true;
                         }
                         
                         //console.log('changed');
@@ -321,11 +327,7 @@ LeftTree = new XObject(
                         console.log(value.value);
                        // _g.button.set_label(''+value.get_string());
                        
-                        var RightPalete     = imports.Builder.RightPalete.RightPalete;
-                        var pm = RightPalete.get('model');
                         
-                        pm.load( pm.provider.gatherList(LeftTree.get('model').listAllTypes()));
-                       
                        
                        
                         //Seed.print( value.get_string());
