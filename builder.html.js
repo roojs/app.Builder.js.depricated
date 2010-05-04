@@ -73,7 +73,7 @@ Builder  = {
         
             this.dialogroot = Roo.get( document.body).createChild({
                 id : cfg.id
-               });
+            });
              
             this.dialog = new Roo[cfg.xtype](this.dialogroot, cfg);
             //this.dialog.el.on('click', this.panelClick, this);
@@ -269,7 +269,7 @@ Builder  = {
     {
         
         var el = document.elementFromPoint(x,y);
-        console.log(el);
+        console.log(el.id);
         console.log(document.body.innerHTML);
         this.hover( {
             getTarget : function () {
