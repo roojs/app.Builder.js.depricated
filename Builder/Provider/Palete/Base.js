@@ -29,7 +29,7 @@ Base = XObject.define(
             existing = existing || [];
            // existing.push('*top'); // always have top
             var ret  = []; 
-            console.dump(this.map);
+           // console.dump(this.map);
             function addRight(right) {
                 right.forEach(function(r) {
                     if (ret.indexOf(r) > -1) {
@@ -42,7 +42,7 @@ Base = XObject.define(
             this.map.forEach(function(m) {
                 var done = false
                 m.left.forEach( function(left) {
-                    //if (done) return; -- can have multiple matches!
+                    if (done) return; 
                     var l = left.replace(/:.*$/, '');
                     if (existing.indexOf(l) > -1) {
                         addRight(m.right);
@@ -52,6 +52,7 @@ Base = XObject.define(
                 });
                 
             });
+            console.dump(ret);
             return ret;
             
             
