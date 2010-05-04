@@ -176,7 +176,9 @@ Builder  = {
         
         // we can overlay some event handlers here..
         cfg.listeners = cfg.listeners || {};
-           
+        cfg.listeners.click = function(e) {
+            console.log('{ "id" : "' + e.id + '}');
+        };
         console.log('xtype'  + xtype)
         switch(xtype) {
             case 'Roo.LayoutDialog':
