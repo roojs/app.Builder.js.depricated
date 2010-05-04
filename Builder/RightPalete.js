@@ -178,7 +178,7 @@ RightPalete = new XObject({
                                             Gdk.DragAction.COPY         /* what to do with data after dropped */
                                     );
                                     
-                                    
+                                    print("ATOM:" + LeftTree.atoms["STRING"]);
                                     targets = new Gtk.TargetList();
                                     targets.add( LeftTree.atoms["STRING"], 0, 0);
                                     Gtk.drag_source_set_target_list(this.el, targets);
