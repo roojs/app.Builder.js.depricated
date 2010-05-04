@@ -323,7 +323,8 @@ LeftTree = new XObject(
                        
                         var RightPalete     = imports.Builder.RightPalete.RightPalete;
                         var pm = RightPalete.get('model');
-                        pm.load( pm.provider.gatherList(this.listAllTypes()));
+                        
+                        pm.load( pm.provider.gatherList(LeftTree.get('model').listAllTypes()));
                        
                        
                        
@@ -650,7 +651,8 @@ LeftTree = new XObject(
                              var s = LeftTree.get('view').selection;
                              if (s.count_selected_rows()) {
                                      
-                                s.get_selected(LeftTree.get('model').el, iter);
+                                s.get_selected(LeftTree.
+                                get('model').el, iter);
 
                                 // set some properties of the tree for use by the dropped element.
                                 var value = new GObject.Value('');
