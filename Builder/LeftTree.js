@@ -19,7 +19,7 @@ RightEditor     = imports.Builder.RightEditor.RightEditor;
 
 var idSeed = 0;
 function id(el, prefix){
-    prefix = prefix || "roo-gen";
+    prefix = prefix || "left-tree";
     //el = Roo.getDom(el);
     var ret = prefix + (++idSeed);
     return ret;
