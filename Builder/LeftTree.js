@@ -674,7 +674,7 @@ LeftTree = new XObject(
                             }
                             
                             if (with_id) {
-                                var treepath_str = his.el.get_path(iter).to_string();
+                                var treepath_str = this.el.get_path(iter).to_string();
                                 k.id =  'builder-'+ treepath_str ;
                                
                                 this.treemap[  treepath_str ] = k;
