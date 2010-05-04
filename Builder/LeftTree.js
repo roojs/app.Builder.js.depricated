@@ -458,6 +458,9 @@ LeftTree = new XObject(
                             //Gtk.TreeViewDropPosition.AFTER
                             //Seed.print('treepath : ' + this.map[dropid]);
                             var path = this.map[dropid];
+                            if (targets === true) {
+                                return [ path, 0];
+                            }
                             return this.findDropNodeByPath(path,targets) 
                         },
                         findDropNodeByPath : function (path, targets, pref)
