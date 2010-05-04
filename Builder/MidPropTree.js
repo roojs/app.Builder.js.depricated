@@ -157,10 +157,11 @@ MidPropTree = new XObject({
                             }
                             
                             Seed.print('Showing right?');
-                            if (!MidPropTree.el.visible) {
+                            if (!MidPropTree.shown) {
                                 var Window          = imports.Builder.Window.Window;
                                 Window.get('left').el.position = Window.get('left').el.position  + 150;
                                 MidPropTree.el.show();
+                                MidPropTree.shown = true;
                             }
                             
                             
