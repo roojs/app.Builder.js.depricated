@@ -98,7 +98,7 @@ LeftTree = new XObject(
                 },
                 
                 highlight : function(treepath_ar) {
-                    if (treepath_ar.length) {
+                    if (treepath_ar.length && treepath_ar[0].length ) {
                         this.el.set_drag_dest_row( 
                             new  Gtk.TreePath.from_string( treepath_ar[0] ),  treepath_ar[1]);
                     } else {
