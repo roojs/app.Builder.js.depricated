@@ -49,7 +49,7 @@ LeftPanelPopup = new XObject({
             label : 'Change Property to String (or native) Value',
             listeners : {
                 activate : function () {
-                    LeftPanel.get('model').setSelectedToNoJS();
+                    imports.Builder.LeftPanel.LeftPanel.get('model').setSelectedToNoJS();
                 }
             }
         },
