@@ -36,7 +36,7 @@ LeftTree = new XObject(
             this.targetList.add( this.atoms["STRING"], 0 , 1);
             var r = {}; 
             var found = this.targetList.find(this.atoms["STRING"], r)
-            print(r);
+            console.dump(r);
             console.dump(found);
             
             XObject.prototype.init.call(this); 
