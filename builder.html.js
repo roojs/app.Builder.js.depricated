@@ -54,7 +54,7 @@ Builder  = {
         
         var cfg =  this.tree;
         //console.log(this.dump(cfg));
-        if (!cfg.items[0]) {
+        if (!cfg || !cfg.items || !cfg.items[0]) {
             return;
         }
         
