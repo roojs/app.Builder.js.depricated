@@ -107,6 +107,13 @@ LeftTree = new XObject(
                     }
                      
                 },
+                
+                selectNode : function(treepath_str) 
+                {
+                   var tp = new  Gtk.TreePath.from_string( treepath_str);
+                   
+                },
+                
                 listeners : {
                     
                     
