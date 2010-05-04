@@ -105,7 +105,7 @@ MidPropTree = new XObject({
                         
                         var skel = value.value;
                         MidPropTree.hideWin();
-                        LeftPanel.get('model').add(key, type, skel);
+                        LeftPanel.get('model').add(key, type) //, skel);
                         
                     }
                 },
