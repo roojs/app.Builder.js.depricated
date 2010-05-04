@@ -84,7 +84,16 @@ RightBrowser = new XObject({
                             return true;
                         }
                         
-                        
+                         if (typeof(val['id']) != 'undefined') {
+                           // this.activeNode = val['id'];
+                            var tg = LeftTree.get('model').findDropNode(val['id'], src.dropList); 
+                            if (!tg) {
+                                return false;
+                            }
+                            LeftTree.get('view').highlight(tg)
+                            console.log('active node: ' + this.activeNode);
+                            return true;
+                        }
                         //Seed.print('a:'+a);
                         //Seed.print('b:'+b);
                         //Seed.print('c:'+c);
