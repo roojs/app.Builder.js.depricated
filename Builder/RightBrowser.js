@@ -100,7 +100,7 @@ RightBrowser = new XObject({
                     {
                         
                     
-                        console.log('DRAG MOTION'); 
+                       // console.log('DRAG MOTION'); 
                         // status:
                         // if lastCurrentNode == this.currentNode.. -- don't change anything..
                         this.targetData = [];
