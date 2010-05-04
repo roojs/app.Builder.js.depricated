@@ -90,6 +90,7 @@ right:
            
            
 left:
+ Roo.LayoutDialog:buttons[]
  Roo.form.Form:buttons[] 
 right:
  Roo.Button         
