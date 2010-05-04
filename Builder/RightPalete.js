@@ -174,16 +174,18 @@ RightPalete = new XObject({
                                     Gtk.drag_source_set (
                                             this.el,            /* widget will be drag-able */
                                             Gdk.ModifierType.BUTTON1_MASK,       /* modifier that will start a drag */
-                                            LeftTree.targets,            /* lists of target to support */
-                                            LeftTree.targets.length,              /* size of list */
+                                            null,            /* lists of target to support */
+                                            0,              /* size of list */
                                             Gdk.DragAction.COPY         /* what to do with data after dropped */
                                     );
+                                    Gtk.drag_source_set_target_list(this.el, LeftTree.targetList);
                                     /*
                                     print("RP: TARGET:" + LeftTree.atoms["STRING"]);
                                     targets = new Gtk.TargetList();
                                     targets.add( LeftTree.atoms["STRING"], 0, 0);
                                     targets.add_text_targets( 1 );
-                                    Gtk.drag_source_set_target_list(this.el, targets);
+                                    Gtk.drag_dest_set_target_list(this.el, LeftTree.targetList);
+                                    
                                     //if you want to allow text to be output elsewhere..
                                     //Gtk.drag_source_add_text_targets(this.el);
                                     */
