@@ -130,7 +130,7 @@ RightBrowser = new XObject({
                             }
                         }
                         // if no active node.. then check if tree is empty..
-                        if (XObject.keys(LeftTree.get('model').map).length)) {
+                        if (XObject.keys(LeftTree.get('model').map).length) {
                             // not found..
                             Gdk.drag_status(ctx, 0,time);
                             LeftTree.get('view').highlight(false);
