@@ -34,12 +34,8 @@ LeftTree = new XObject(
         shadow_type :  Gtk.ShadowType.IN,
         init : function() {
             this.targetList.add( this.atoms["STRING"], 0 , 1);
-            var r = {}; 
-            var ta_ar = Gtk.target_table_new_from_list(this.targetList,r);
-            print(typeof(ta_ar));
-            print("MADE TA_AR"+ ta_ar[0]);
-            print();
-            console.dump(ta_ar);
+            // will not work without changes to gir..
+           // var ta_ar = Gtk.target_table_new_from_list(this.targetList,r);
             
             XObject.prototype.init.call(this); 
             this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
