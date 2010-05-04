@@ -349,6 +349,7 @@ LeftTree = new XObject(
                         
                         changed : function( n, refresh) 
                         {
+                            print("MODEL CHANGED CALLED" + this.activeIter);
                             if (!this.activeIter) {
                                 return;
                             }
