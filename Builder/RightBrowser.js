@@ -90,8 +90,8 @@ RightBrowser = new XObject({
                             if (!tg) {
                                 return false;
                             }
-                            LeftTree.get('view').highlight(tg)
-                            console.log('active node: ' + this.activeNode);
+                            LeftTree.get('view').selectNode(tg[0])
+                            //console.log('active node: ' + this.activeNode);
                             return true;
                         }
                         //Seed.print('a:'+a);
