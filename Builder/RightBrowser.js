@@ -18,7 +18,7 @@ LeftTree = imports.Builder.LeftTree.LeftTree ;
 RightBrowser = new XObject({
          
              
-        renderedData : { }, 
+        renderedData : false, 
         xtype: Gtk.ScrolledWindow,
         smooth_scroll : true,
         shadow_type : Gtk.ShadowType.IN ,
