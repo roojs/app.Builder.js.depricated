@@ -84,23 +84,26 @@ RightBrowser = new XObject({
                             console.log('active node: ' + this.activeNode);
                             return true;
                         }
-                        
+                        var ret = false;
                          if (typeof(val['id']) != 'undefined') {
                            // this.activeNode = val['id'];
                             var tg = LeftTree.get('model').findDropNode(val['id'], true); 
                             if (!tg) {
                                 return false;
                             }
-                            LeftTree.get('view').selectNode(tg[0])
+                            LeftTree.get('view').selectNode(tg[0]);
+                            ret  = true;
                             
+                        } 
+                        if ((typeof(val['set']) != 'undefined') {
                             LeftPanel.get('model').add(val['set'], null, val['value']);
                             //console.log('active node: ' + this.activeNode);
-                            return true;
+                            
                         }
                         //Seed.print('a:'+a);
                         //Seed.print('b:'+b);
                         //Seed.print('c:'+c);
-                        return false;
+                        return ret;
                     },
                     
                     "drag-leave" : function () {
