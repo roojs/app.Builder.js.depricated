@@ -34,10 +34,8 @@ LeftTree = new XObject(
         shadow_type :  Gtk.ShadowType.IN,
         init : function() {
             this.targetList.add( this.atoms["STRING"], 0 , 1);
-            var r = {}; 
-            var found = this.targetList.find(this.atoms["STRING"], r)
-            console.dump(r);
-            console.dump(found);
+            var ta_ar = Gtk.target_table_new_from_list(this.targetList);
+            console.dump(ta_ar);
             
             XObject.prototype.init.call(this); 
             this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
