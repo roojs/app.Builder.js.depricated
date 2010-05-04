@@ -51,9 +51,11 @@ RightBrowser = new XObject({
                     targets = new Gtk.TargetList();
                    
                     targets.add( LeftTree.atoms["STRING"], 0, 0);
+                    targets.add_text_targets( 1 );
+                    
                     print("RB: TARGETS : " + LeftTree.atoms["STRING"]);
                     Gtk.drag_dest_set_target_list(this.el, targets);
-                    Gtk.drag_dest_add_text_targets(this.el);
+                    //Gtk.drag_dest_add_text_targets(this.el);
                 },   
                 listeners : {
                     
