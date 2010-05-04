@@ -9,7 +9,7 @@ Pango = imports.gi.Pango ;
 XObject = imports.XObject.XObject;
 console = imports.console;
 
-LeftTree        = imports.Builder.LeftTree.LeftTree;
+
 LeftPanelPopup  = imports.Builder.LeftPanelPopup.LeftPanelPopup;
 RightEditor     = imports.Builder.RightEditor.RightEditor;
 
@@ -146,6 +146,7 @@ LeftPanel = new XObject({
                             data[key] = val;
                             
                             this.load(data);
+                            var LeftTree        = imports.Builder.LeftTree.LeftTree;
                             LeftTree.get('model').changed(data, true); 
                             
                             
@@ -165,6 +166,7 @@ LeftPanel = new XObject({
                             }
                             delete data[gval.value];
                             this.load(data);
+                            var LeftTree        = imports.Builder.LeftTree.LeftTree;
                             LeftTree.get('model').changed(data, true);
                             
                         },
@@ -180,7 +182,7 @@ LeftPanel = new XObject({
                             this.el.set_value(this.activeIter, 1, str);
                             this.el.set_value(this.activeIter, 3, '' + this.toShort(str));
                             // update the tree...
-                            
+                            var LeftTree        = imports.Builder.LeftTree.LeftTree;
                             LeftTree.get('model').changed(this.toJS(), true); 
                         },
                         toJS: function()
