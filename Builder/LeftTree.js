@@ -648,6 +648,7 @@ LeftTree = new XObject(
                         listAllTypes : function()
                         {
                             
+                            print ("LIST ALL TYPES: " + s.count_selected_rows() );
                              var s = LeftTree.get('view').selection;
                              if (s.count_selected_rows() > 0) {
                                 var iter = new Gtk.TreeIter();    
