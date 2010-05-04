@@ -49,7 +49,11 @@ LeftTree = new XObject(
         },
                         
         targets : [
-            new Gtk.TargetEntry()
+            new Gtk.TargetEntry( {
+                target: "STRING",
+                info: 0,
+                flags: 2
+               })
         ],
         
         items : [        
