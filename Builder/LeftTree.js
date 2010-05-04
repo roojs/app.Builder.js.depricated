@@ -494,7 +494,7 @@ LeftTree = new XObject(
                                     }
                                     if (tg.indexOf(xname +':') === 0) {
                                         match = tg;
-                                        prop = xname.split(':').shift();
+                                        prop = xname.split(':').pop();
                                     }
                                 });
                                 
