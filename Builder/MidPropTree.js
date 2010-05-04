@@ -50,6 +50,7 @@ MidPropTree = new XObject({
             Window.get('left').el.position = Window.get('left').el.position  - 150;
                 
             this.el.hide();
+            this.shown = false;
         },
         items : [
             {
