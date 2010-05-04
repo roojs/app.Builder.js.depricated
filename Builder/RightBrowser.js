@@ -37,7 +37,7 @@ RightBrowser = new XObject({
                 init : function() {
                     XObject.prototype.init.call(this); 
                     // fixme!
-                    this.el.open('http://www.akbkhome.com/Builder/Pman/Builder/Gtk/index.html?ts='+Math.random());
+                    this.el.open('file:///' + __script_path__ + '/../builder.html?ts='+Math.random());
                         
                         
                     Gtk.drag_dest_set
