@@ -12,6 +12,7 @@ XObject = imports.XObject.XObject;
 console = imports.console;
 
 LeftTree = imports.Builder.LeftTree.LeftTree ;
+LeftPanel = imports.Builder.LeftPanel.LeftPanel;
  //console.dump(imports.Builder.LeftTree);
  //Seed.quit();
 
