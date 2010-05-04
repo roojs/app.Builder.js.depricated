@@ -562,6 +562,10 @@ LeftTree = new XObject(
                                     '|xns' : ar.join('.'),
                                     'xtype' : xtype
                                 };
+                                if (target_data.length == 3 && target_data[2].length) {
+                                    node['*prop'] = target_data[2];
+                                }
+                                
                             }
                             var xitems = [];
                             if (node.items) {
