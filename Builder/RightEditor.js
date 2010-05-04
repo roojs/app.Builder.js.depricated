@@ -30,6 +30,7 @@ RightEditor = new XObject({
                 init : function() {
                     XObject.prototype.init.call(this); 
                     var _this = this;
+                    this.buffer =new GtkSource.Buffer();
                     this.el.get_buffer().signal.changed.connect(function() {
                             var s = new Gtk.TextIter();
                             var e = new Gtk.TextIter();
@@ -74,7 +75,7 @@ RightEditor = new XObject({
                     this.el.grab_focus();
                 },
                 // neeed???
-                //buffer : new GtkSource.Buffer()
+                
                 
                 
             }
