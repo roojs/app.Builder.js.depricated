@@ -603,6 +603,12 @@ LeftTree = new XObject(
                             s.unselect_all();
                             
                             this.el.remove(old_iter);
+                            
+                            // rebuild treemap.
+                            this.map = {};
+                            this.treemap = { };
+                            this.toJS(null, true)
+                            
                             this.changed(false,true);
                             
                             
