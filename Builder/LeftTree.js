@@ -176,7 +176,7 @@ LeftTree = new XObject(
                     'drag-motion' : function (w, ctx,  x,   y,   time, ud) 
                     {
                         
-                        
+                        console.log("LEFT-TREE: drag-motion");
                         var src = Gtk.drag_get_source_widget(ctx);
 
                         // a drag from  elsewhere...- prevent drop..
