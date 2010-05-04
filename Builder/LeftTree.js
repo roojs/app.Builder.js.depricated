@@ -359,6 +359,9 @@ LeftTree = new XObject(
                             
                             //this.currentTree = this.toJS(false, true)[0];
                             this.file.items = this.toJS(false, true);
+                            print("AFTER CHANGED")
+                            console.dump(this.file.items);
+                            
                             this.currentTree = this.file.items[0];
                             console.log(this.file.toSource());
                             
