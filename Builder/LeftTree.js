@@ -600,6 +600,7 @@ LeftTree = new XObject(
                             var old_iter = new Gtk.TreeIter();
                             var s = LeftTree.get('view').selection;
                             s.get_selected(this.el, old_iter);
+                            s.unselect_all();
                             
                             this.el.remove(old_iter);
                             this.changed(false,true);
