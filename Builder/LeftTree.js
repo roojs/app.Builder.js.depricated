@@ -482,7 +482,7 @@ LeftTree = new XObject(
                                     if ((tg == xname)  || tg.indexOf(xname +':') === 0) {
                                         var match = tg;
                                     }
-                                }
+                                });
                                 
                                 if (match) {
                                     if (last) { // pref is after/before..
