@@ -438,7 +438,7 @@ LeftTree = new XObject(
                         {
                             
                             if (!XObject.keys(this.map).length) {
-                                return [ '',  Gtk.TreeViewDropPosition.INTO_OR_AFTER];
+                                return [ '',  Gtk.TreeViewDropPosition.AFTER ];
                             }
                             if (typeof(this.map[dropid]) == 'undefined') {
                                 Seed.print("not found: " + dropid);
@@ -495,7 +495,6 @@ LeftTree = new XObject(
                                 var ar = target_data[0].split(':');
                                 ar.pop();
                                 parent  = new  Gtk.TreePath.from_string( ar.join(':') );
-                                
                                 after = tp;
                             }
                             var n_iter = new Gtk.TreeIter();
