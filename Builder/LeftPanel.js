@@ -12,6 +12,11 @@ console = imports.console;
 
 LeftPanelPopup  = imports.Builder.LeftPanelPopup.LeftPanelPopup;
 RightEditor     = imports.Builder.RightEditor.RightEditor;
+/**
+ * 
+ * really the properties..
+ */
+
 
 LeftPanel = new XObject({
         
