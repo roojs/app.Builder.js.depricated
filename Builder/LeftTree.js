@@ -608,7 +608,7 @@ LeftTree = new XObject(
                             this.map = {};
                             this.treemap = { };
                             this.toJS(null, true)
-                            
+                            this.activeIter = false;
                             this.changed(false,true);
                             
                             
