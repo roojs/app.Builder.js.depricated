@@ -206,6 +206,12 @@ Builder  = {
                 var pr = xi['*prop'];
                 this.munge(xi);
                 // if prop is an array - then it's items are really the value..
+                if (pr.match(/\[\]$/)) {
+                    pr = pr.replace(/\[\]$/, '');
+                    cfg[pr] = cfg[pr]  || [];
+                    cfg[pr].push(xi);
+                }
+                
                 
                 if (xi.xtype && xi.xtype  == 'Array') {
                     cfg[pr] = xi.items;
