@@ -42,7 +42,7 @@ Base = XObject.define(
             this.map.forEach(function(m) {
                 var done = false
                 m.left.forEach( function(left) {
-                    //if (done) return;
+                    //if (done) return; -- can have multiple matches!
                     var l = left.replace(/:.*$/, '');
                     if (existing.indexOf(l) > -1) {
                         addRight(m.right);
