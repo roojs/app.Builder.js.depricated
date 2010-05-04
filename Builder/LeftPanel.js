@@ -161,7 +161,7 @@ LeftPanel = new XObject({
                             var data = this.toJS();
                             var iter = new Gtk.TreeIter();
                             var s = LeftPanel.get('view').selection;
-                            s.get_selected(_model.el, iter);
+                            s.get_selected(this.el, iter);
                                  
                                
                             var gval = new GObject.Value('');
