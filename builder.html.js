@@ -172,6 +172,24 @@ Builder  = {
             // normal..
               
         }
+        
+        // we can overlay some event handlers here..
+        var xtype = (cfg.xns || '')  + '.' + (cfg.xtype || '');
+        
+        switch(xtype) {
+            case 'Roo.LayoutDialog':
+                cfg.listeners.resize = function(dlg, w,h)
+                {
+                    console.log('{ "id" : "' + dlg.id + '", "set" : "width", "value": ' + w + '}');
+                    console.log('{ "id" : "' + dlg.id + '", "set" : "height", "value": ' + h + '}');
+                }
+                break;
+        }
+        
+        
+        
+        
+        
         // now for all the children.. (items)
         if (xitems === false) {
             return;
