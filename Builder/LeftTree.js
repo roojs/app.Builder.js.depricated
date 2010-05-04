@@ -640,6 +640,21 @@ LeftTree = new XObject(
                         
                         listAllTypes : function()
                         {
+                            
+                             var s = LeftTree.get('model').selection;
+                             if (s.count_selected_rows() {
+                                     
+                                s.get_selected(LeftTree.get('model').el, iter);
+
+                                // set some properties of the tree for use by the dropped element.
+                                var value = new GObject.Value('');
+                                LeftTree.get('model').el.get_value(iter, 2, value);
+                                var data = JSON.parse(value.value);
+                                var xname = Roo.guessName(data);
+                                console.log('selected:' + xname);
+                                
+                            }
+                            
                             var ret = [ ];
                             
                             function addall(li)
