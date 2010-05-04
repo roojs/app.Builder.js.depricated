@@ -647,7 +647,7 @@ LeftTree = new XObject(
                         listAllTypes : function()
                         {
                             
-                             var s = LeftTree.get('voew').selection;
+                             var s = LeftTree.get('view').selection;
                              if (s.count_selected_rows()) {
                                      
                                 s.get_selected(LeftTree.get('model').el, iter);
