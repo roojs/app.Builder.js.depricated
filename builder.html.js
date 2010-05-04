@@ -342,7 +342,11 @@ Builder  = {
         //console.log('no target in parents');
         
     },
-    logClick : function(
+    logClick : function(id) 
+    {
+         var bid = id.length ? 'builder-' + id : '';
+         console.log('{ "id" :  "' + bid + '"}');
+    },
     
     
     hover : function(e) {
