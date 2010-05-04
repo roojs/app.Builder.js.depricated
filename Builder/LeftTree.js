@@ -474,7 +474,17 @@ LeftTree = new XObject(
                                 }
                                 
                                 var xname = Roo.guessName(this.treemap[path]);
-                                if (targets.indexOf(xname) > -1) {
+                                var match = false;
+                                targets.forEach(function(tg) {
+                                    if (match) {
+                                        continue;
+                                    }
+                                    if ((tg == xname)  || tg.indexOf(xname +':') === 0) {
+                                        var match = tg;
+                                    }
+                                }
+                                
+                                if (match) {
                                     if (last) { // pref is after/before..
                                         // then it's after last
                                         if (pref > 1) {
