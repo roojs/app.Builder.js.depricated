@@ -7,9 +7,9 @@ Builder  = {
     {
         this.tree = data;
         
-        if (!Builder.docMove) {
-          //  Builder.docMove = Roo.get(document.body).on('mousemove', this.hover, this);
-         //   Builder.docMove = Roo.get(document.body).on('dragover', this.hover, this);
+        if (!Builder.click) {
+            Builder.click= Roo.get(document.body).on('click', this.onclick, this);
+         
         }
         
         this.redraw(false);
@@ -176,9 +176,7 @@ Builder  = {
         
         // we can overlay some event handlers here..
         cfg.listeners = cfg.listeners || {};
-        cfg.listeners.click = function(e) {
-            console.log('{ "id" : "' + e.id + '}');
-        };
+       
         console.log('xtype'  + xtype)
         switch(xtype) {
             case 'Roo.LayoutDialog':
@@ -229,6 +227,9 @@ Builder  = {
         
         
     },
+    
+    
+    
     cloneConfig : function(config) {
 		if (!config) { return null; }
 		var newConfig = {};
@@ -265,7 +266,7 @@ Builder  = {
         }
         return dumped_text;
     },
-    findNode : function(ftg) {
+    findNode : function(ftg , method) {
         if (!ftg) {
             return; false
         }
@@ -276,11 +277,11 @@ Builder  = {
             return true;
         }
         // needs fixing..
-        //console.log(ftg.dom.className);
-        var cmat = ftg.dom.className.match(/x-grid-hd-builder-(form-gen-[0-9]+)/);
+        console.log(ftg.dom.className);
+        var cmat = ftg.dom.className.match(/x-grid-hd-builder-(form-gen-[0-9:]+)/);
         
         if (cmat) {
-            this.logMove( cmat[1] );
+            this[method]( cmat[1] );
             return true;
         }
         
@@ -304,6 +305,44 @@ Builder  = {
         
         
     },
+    onclick: function(e) {
+        var tg = Roo.get(e.getTarget());
+        if (!tg) {
+            //console.log('no target');
+            return;
+           }
+         
+        if (this.findNode(tg,'logClick')) {
+            return;
+        }
+        var dp = Roo.get(tg.up(''));
+        if (dp && this.findNode(dp,'logClick')) {
+            return;
+        }
+        
+        var ns = Roo.get(tg.getNextSibling());
+        if (ns && this.findNode(ns,'logClick')) {
+          
+            return;
+        }
+        if (ns && ns.down('') && this.findNode(Roo.get(ns.down('')) ,'logClick') ) {
+            return;
+        }
+        
+        for(var i =0; i < 5; i++) {
+            tg = Roo.get(tg.up(''));
+            if (!tg) {
+                //console.log('no parent' + i);
+                return;
+            }
+            if (tg && this.findNode(tg,'logClick')) {
+                return;
+            }
+        }
+        //console.log('no target in parents');
+        
+    },
+    logClick : function(
     
     
     hover : function(e) {
@@ -316,22 +355,22 @@ Builder  = {
             return;
            }
          
-        if (this.findNode(tg)) {
+        if (this.findNode(tg,'logMove')) {
             e.stopEvent();
             return;
         }
         var dp = Roo.get(tg.up(''));
-        if (dp && this.findNode(dp)) {
+        if (dp && this.findNode(dp,'logMove')) {
             e.stopEvent();
             return;
         }
         
         var ns = Roo.get(tg.getNextSibling());
-        if (ns && this.findNode(ns)) {
+        if (ns && this.findNode(ns,'logMove')) {
             e.stopEvent();
             return;
         }
-        if (ns && ns.down('') && this.findNode(Roo.get(ns.down('')))) {
+        if (ns && ns.down('') && this.findNode(Roo.get(ns.down('')) ,'logMove' )) {
             e.stopEvent();
             return;
         }
@@ -343,7 +382,7 @@ Builder  = {
                 this.logMove('');
                 return;
             }
-            if (tg && this.findNode(tg)) {
+            if (tg && this.findNode(tg,'logMove')) {
                 e.stopEvent();
                 return;
             }
