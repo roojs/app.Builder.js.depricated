@@ -210,6 +210,7 @@ Builder  = {
                     pr = pr.replace(/\[\]$/, '');
                     cfg[pr] = cfg[pr]  || [];
                     cfg[pr].push(xi);
+                    continue;
                 }
                 
                 
