@@ -99,8 +99,7 @@ LeftTree = new XObject(
                     } else {
                         this.el.set_drag_dest_row(null, Gtk.TreeViewDropPosition.INTO_OR_AFTER);
                     }
-                    
-                    
+                     
                 },
                 listeners : {
                     
