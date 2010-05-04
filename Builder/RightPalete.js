@@ -170,9 +170,7 @@ RightPalete = new XObject({
                                     //});
                                     // see: http://live.gnome.org/GnomeLove/DragNDropTutorial
                                     
-                                  
-                                    
-                                    
+                                   
                                     Gtk.drag_source_set (
                                             this.el,            /* widget will be drag-able */
                                             Gdk.ModifierType.BUTTON1_MASK,       /* modifier that will start a drag */
