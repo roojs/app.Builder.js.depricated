@@ -184,7 +184,7 @@ RightPalete = new XObject({
                                             this.el,            /* widget will be drag-able */
                                             Gdk.ModifierType.BUTTON1_MASK,       /* modifier that will start a drag */
                                             LeftTree.targets,            /* lists of target to support */
-                                            0,              /* size of list */
+                                            LeftTree.targets.length,              /* size of list */
                                             Gdk.DragAction.COPY         /* what to do with data after dropped */
                                     );
                                     /*
