@@ -32,7 +32,6 @@ right:
 left:
   Roo.LayoutDialog
   Roo.BorderLayout
-  
 right:
   Roo.ContentPanel         
   Roo.NestedLayoutPanel         
