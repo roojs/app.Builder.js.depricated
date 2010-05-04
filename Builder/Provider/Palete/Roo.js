@@ -112,7 +112,8 @@ XObject.extend(Roo, {
             
             // console.log('xns:' + ar.xns + ', xtype:' + ar.xtype);
             
-            
+            ar = ar || { };
+               
             if (!this.proplist) {
                 return '';
             }
