@@ -34,9 +34,9 @@ RightEditor = new XObject({
                     this.el.get_buffer().signal.changed.connect(function() {
                             var s = new Gtk.TextIter();
                             var e = new Gtk.TextIter();
-                            this.el.get_buffer().get_start_iter(s);
-                            this.el.get_buffer().get_end_iter(e);
-                            var str = this.el.get_buffer().get_text(s,e,true);
+                            _this.el.get_buffer().get_start_iter(s);
+                            _this.el.get_buffer().get_end_iter(e);
+                            var str = _this.el.get_buffer().get_text(s,e,true);
                             LeftPanel.get('model').changed(  str , false);
                     });
                    
