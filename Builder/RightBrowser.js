@@ -206,10 +206,11 @@ RightBrowser = new XObject({
                 renderJS: function(data) {
                     this.renderedData = data;
                     var str = JSON.stringify(data) ;
+                    
                     if (!this.ready) {
                         console.log('not loaded yet');
                     }
-                    Seed.print(str);
+                    Seed.print("RENDER:" + str);
                     this.el.execute_script("Builder.render(" + JSON.stringify(data) + ");");
                 }
               
