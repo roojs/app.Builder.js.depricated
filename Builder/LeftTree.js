@@ -35,7 +35,7 @@ LeftTree = new XObject(
         init : function() {
             this.targetList.add( this.atoms["STRING"], 0 , 1);
             var ta_ar = Gtk.target_table_new_from_list(this.targetList);
-            print("MADE TA_AR"+ ta_ar.length);
+            print("MADE TA_AR"+ ta_ar[0]);
             print();
             console.dump(ta_ar);
             
