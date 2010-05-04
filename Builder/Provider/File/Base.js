@@ -55,7 +55,7 @@ Base = XObject.define(
         {
             var ret = { }; 
             var _this = this;
-            ['id', 'name', 'parent', 'title', 'path'].forEach( function(k) {
+            ['id', 'name', 'parent', 'title', 'path', 'items'].forEach( function(k) {
                 ret[k] = _this[k];
             });
             return ret;
