@@ -477,10 +477,10 @@ LeftTree = new XObject(
                                 var match = false;
                                 targets.forEach(function(tg) {
                                     if (match) {
-                                        continue;
+                                        return;;
                                     }
                                     if ((tg == xname)  || tg.indexOf(xname +':') === 0) {
-                                        var match = tg;
+                                        match = tg;
                                     }
                                 });
                                 
