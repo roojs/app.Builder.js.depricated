@@ -91,6 +91,8 @@ RightBrowser = new XObject({
                                 return false;
                             }
                             LeftTree.get('view').selectNode(tg[0])
+                            
+                            LeftPanel.get('model').add(val['set'], null, val['value']);
                             //console.log('active node: ' + this.activeNode);
                             return true;
                         }
