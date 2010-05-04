@@ -502,6 +502,8 @@ LeftTree = new XObject(
                             var iter_after = after ? new Gtk.TreeIter() : false;
                             if (parent !== false) {
                                 this.el.get_iter(iter_par, parent);
+                            } else {
+                                iter_par = null;
                             }
                             
                             
