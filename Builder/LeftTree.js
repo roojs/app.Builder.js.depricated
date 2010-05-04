@@ -1,4 +1,5 @@
 //<Script type="text/javascript">
+//<Script type="text/javascript">
 Gio = imports.gi.Gio;
 Gtk = imports.gi.Gtk;
 Gdk = imports.gi.Gdk;
@@ -593,7 +594,20 @@ LeftTree = new XObject(
                             
                         },
                         
-                               
+                        deleteSelected: function() {
+                            
+                            
+                            
+                            var old_iter = new Gtk.TreeIter();
+                            var s = LeftTree.get('view').selection;
+                            s.get_selected(this.el, old_iter);
+                            
+                            this.el.remove(old_iter);
+                            
+                            
+                            
+                            
+                        },    
                         
                         
                         currentTree  : false,
