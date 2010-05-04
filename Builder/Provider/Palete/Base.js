@@ -42,7 +42,7 @@ Base = XObject.define(
             this.map.forEach(function(m) {
                 var done = false
                 m.left.forEach( function(left) {
-                    if (done) return; 
+                   // if (done) return; 
                     
                     var l = left.replace(/:.*$/, '');
                     print("chk:" + l + " in " + existing.join(',')); 
