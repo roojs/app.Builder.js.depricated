@@ -37,7 +37,7 @@ LeftTree = new XObject(
             this.targets[0].target="STRING";
             this.targets[0].info=0;
             this.targets[0].flags=2;
-            
+             print("TARGET SET" +  this.targets[0].target);
             XObject.prototype.init.call(this); 
             this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
             
