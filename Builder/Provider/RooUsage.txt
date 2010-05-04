@@ -204,7 +204,7 @@ left:
 right: 
   Roo.data.Store
 
-left: 
+left:
   Roo.data.Store:proxy
 right:
   Roo.data.HttpProxy
@@ -217,4 +217,6 @@ right:
   Roo.data.JsonReader
   Roo.data.ArrayReader
   Roo.data.XmlReader
+ 
+  
   
