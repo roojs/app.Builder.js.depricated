@@ -33,7 +33,7 @@ Roo = XObject.define(
         }
         
         
-        this.items = [];
+        this.items = false;
         if (cfg.json) {
             var jstr =  JSON.parse(cfg.json);
             this.items = [ jstr ];
