@@ -38,8 +38,8 @@ RightBrowser = new XObject({
                     XObject.prototype.init.call(this); 
                     // fixme!
                     this.el.open('file:///' + __script_path__ + '/../builder.html');
-                        print("LT TARGET LEN : " + LeftTree.targets.length);
-                    print(LeftTree.targets[0].target);
+                    print("LT TARGET LEN : " + LeftTree.targets.length);
+                    print(LeftTree.targets[0]);
                     Gtk.drag_dest_set
                     (
                             this.el,              /* widget that will accept a drop */
