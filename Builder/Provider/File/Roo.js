@@ -92,6 +92,9 @@ Roo = XObject.define(
                 var src = dstream.read_until("")
                 
                 var cfg = JSON.parse(src);
+                print("loaded data");
+                console.dump(cfg);
+                
                 _this.items = [ {
                     '|module' : cfg.name,
                     '*class' : cfg.name,
