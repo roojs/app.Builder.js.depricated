@@ -26,9 +26,13 @@ left:
  Roo.BorderLayout:north          
 right:
  Roo.LayoutRegion
-           
+
+ 
+ 
 left:
-  Roo.LayoutRegion 
+  Roo.LayoutDialog
+  Roo.BorderLayout
+  
 right:
   Roo.ContentPanel         
   Roo.NestedLayoutPanel         
