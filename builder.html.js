@@ -265,9 +265,7 @@ Builder  = {
         
         if(typeof(arr) == 'object') { //Array/Hashes/Objects 
             for(var item in arr) {
-                if (item == 'dom' && level > 2) {
-                    continue;
-                }
+                
                 var value = arr[item];
                 
                 if(typeof(value) == 'function') { //If it is an array,
