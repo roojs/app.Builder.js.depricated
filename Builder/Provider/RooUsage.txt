@@ -42,7 +42,7 @@ right:
 //  Roo.ContentPanel:region=center         
 //  Roo.NestedLayoutPanel:region=center
 // Roo.GridPanel:region=center
-/. Roo.TreePanel:region=center
+// Roo.TreePanel:region=center
            
 left:
   Roo.NestedLayoutPanel:layout 
