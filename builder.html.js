@@ -40,11 +40,8 @@ Builder  = {
             this.dialogroot.remove();
             this.dialogroot = false;
         }
-        if (this.layoutbase) {
-            
-            while (document.body.childNodes.length) {
-                Roo.get(document.body.childNodes[0]).remove();
-            }
+        if (this.layoutbase.el) {
+            console.dump(this.layoutbase);
             
             this.layoutbase= false;
         }
