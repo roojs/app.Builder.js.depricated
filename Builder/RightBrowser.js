@@ -22,7 +22,7 @@ LeftPanel = imports.Builder.LeftPanel.LeftPanel;
 
 RightBrowser = new XObject({
         xtype : Gtk.VBox,
-        pack : [ 'pack_start', false, true, 0 ],
+        pack : [ 'pack_start', true, true, 0 ],
         items : [
         
             {
