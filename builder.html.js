@@ -87,15 +87,25 @@ Builder  = {
         
         // otherwise we are creating a layout area on the document..
         
-        
-        return
+         
         // handles 
         // contentpanel, nestedlayoutpanel, contentpanel.. etc. 
         // force center region..
         cfg.region = 'center';
         cfg.background = false;
-
-        this.layoutbase = new Roo[cfg.xtype](Roo.get( document.body), cfg); 
+        this.layoutbase = new Ext.BorderLayout(document.body, {
+          
+             center: {
+                titlebar: false,
+                autoScroll:false,
+                closeOnTab: true,
+                tabPosition: 'top',
+                //resizeTabs: true,
+                alwaysShowTabs: true,
+                minTabWidth: 140
+            }
+        });
+        this.layoutbase.add( new Roo[cfg.xtype](Roo.get( document.body), cfg)); 
         
         
         
