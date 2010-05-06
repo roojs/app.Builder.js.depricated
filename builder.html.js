@@ -273,9 +273,10 @@ Builder  = {
                 if(typeof(value) == 'object') { //If it is an array,
                     dumped_text += level_padding + "'" + item + "' ...\n";
                     dumped_text += this.dump(value,level+1);
-                } else {
-                    dumped_text += level_padding + "'" + item + "' => \"" + value + "\"\n";
+                    continue;
                 }
+                dumped_text += level_padding + "'" + item + "' => \"" + value + "\"\n";
+                
             }
         } else { //Stings/Chars/Numbers etc.
             dumped_text = "===>"+arr+"<===("+typeof(arr)+")";
