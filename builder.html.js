@@ -82,25 +82,17 @@ Builder  = {
             
         }
         
+        // otherwise we are creating a layout area on the document..
+        
+        
         return
-     /*
+        // handles 
+        // contentpanel, nestedlayoutpanel, contentpanel.. etc. 
         // force center region..
-        cfg.items[0].region = 'center';
-        cfg.items[0].background = false;
-        
-        this.panelroot = this.layout.addxtype(cfg.items[0]);
-        
-         
-        this.highlightElement(Pman.Tab.BuilderTree.currentNode);
-        
-        if (this.panelroot.el) {
-                
-                this.panelroot.el.scrollTo('top', this.scroll.top);
-                this.panelroot.el.scrollTo('left', this.scroll.left);
-            
-        }
-        
-        */
+        cfg.region = 'center';
+        cfg.background = false;
+        cfg.el = Roo.get( document.body);
+        new Roo[cfg.xtype](cfg); 
         
         
         
