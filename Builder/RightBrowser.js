@@ -54,8 +54,10 @@ RightBrowser = new XObject({
                             // pressed...
                             'button-press-event' : function(w, ev ){
                                 /// dump..
-                                 RightBrowser.get('view').el.execute_script(
+                                RightBrowser.get('view').el.execute_script(
                                     "console.log(document.body.innerHTML);");
+                                RightBrowser.get('view').el.execute_script(
+                                    "Builder.dump(Builder);");   
                                 return true;
                                 // show the MidPropTree..
                             }
