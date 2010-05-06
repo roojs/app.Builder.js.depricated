@@ -57,7 +57,7 @@ RightBrowser = new XObject({
                                 RightBrowser.get('view').el.execute_script(
                                     "console.log(document.body.innerHTML);");
                                 RightBrowser.get('view').el.execute_script(
-                                    "console.log(Builder.dump(Builder)();");   
+                                    "console.log(Builder.dump(Builder));");   
                                 return true;
                                 // show the MidPropTree..
                             }
