@@ -40,7 +40,10 @@ Builder  = {
             this.dialogroot.remove();
             this.dialogroot = false;
         }
-        
+        if (this.layoutbase) {
+            this.layoutbase.remove();
+            this.layoutbase= false;
+        }
          
         
     },
@@ -92,7 +95,7 @@ Builder  = {
         cfg.region = 'center';
         cfg.background = false;
 
-        new Roo[cfg.xtype](Roo.get( document.body), cfg); 
+        this.layoutbase = new Roo[cfg.xtype](Roo.get( document.body), cfg); 
         
         
         
