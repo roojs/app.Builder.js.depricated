@@ -267,7 +267,7 @@ Builder  = {
                 
                 if(typeof(value) == 'function') { //If it is an array,
                     // fake dump...
-                    dumped_text += level_padding + "'" + item + "' => \"FUNCTION\"\n";
+                    dumped_text += level_padding + "'" + item + "' : function() { ... },\n";
                     continue;
                 }
                 if(typeof(value) == 'object') { //If it is an array,
