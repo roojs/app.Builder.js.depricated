@@ -265,6 +265,11 @@ Builder  = {
             for(var item in arr) {
                 var value = arr[item];
                 
+                if(typeof(value) == 'function') { //If it is an array,
+                    // fake dump...
+                    dumped_text += level_padding + "'" + item + "' => \"FUNCTION\"\n";
+                    continue;
+                }
                 if(typeof(value) == 'object') { //If it is an array,
                     dumped_text += level_padding + "'" + item + "' ...\n";
                     dumped_text += this.dump(value,level+1);
