@@ -108,7 +108,7 @@ Builder  = {
         var layoutroot = Roo.get( document.body).createChild({
                 id : cfg.id
         });
-        this.layoutbase.add( new Roo[cfg.xtype](layoutroot , cfg)); 
+        this.layoutbase.add( 'center', new Roo[cfg.xtype](layoutroot , cfg)); 
         
         
         
