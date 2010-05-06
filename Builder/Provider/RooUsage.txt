@@ -33,10 +33,16 @@ left:
   Roo.LayoutDialog
   Roo.BorderLayout
 right:
-  Roo.ContentPanel:region=center         
-  Roo.NestedLayoutPanel:region=center
-  Roo.GridPanel:region=center
-  Roo.TreePanel:region=center
+  Roo.ContentPanel         
+  Roo.NestedLayoutPanel
+  Roo.GridPanel
+  Roo.TreePanel
+  
+// should probably look like this
+//  Roo.ContentPanel:region=center         
+//  Roo.NestedLayoutPanel:region=center
+ // Roo.GridPanel:region=center
+  //Roo.TreePanel:region=center
            
 left:
   Roo.NestedLayoutPanel:layout 
