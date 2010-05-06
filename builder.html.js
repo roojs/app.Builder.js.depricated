@@ -91,8 +91,8 @@ Builder  = {
         // force center region..
         cfg.region = 'center';
         cfg.background = false;
-        cfg.el = Roo.get( document.body);
-        new Roo[cfg.xtype](cfg); 
+
+        new Roo[cfg.xtype](Roo.get( document.body), cfg); 
         
         
         
