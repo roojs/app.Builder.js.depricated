@@ -42,7 +42,9 @@ RightBrowser = new XObject({
                                 // show the MidPropTree..
                             }
                           
-                        },
+                        }
+                    }
+                ]
             }, 
             {
             
