@@ -34,6 +34,7 @@ RightBrowser = new XObject({
                         
                         xtype: Gtk.Button,
                         label : 'Dump HTML',
+                         pack : [ 'pack_start', false, false, 0 ],
                         listeners : {
                             // pressed...
                             'button-press-event' : function(w, ev ){
