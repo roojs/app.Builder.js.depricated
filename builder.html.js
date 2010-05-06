@@ -94,19 +94,21 @@ Builder  = {
         // force center region..
         cfg.region = 'center';
         cfg.background = false;
-        this.layoutbase = new Ext.BorderLayout(document.body, {
-          
-             center: {
-                titlebar: false,
-                autoScroll:false,
-                closeOnTab: true,
-                tabPosition: 'top',
-                //resizeTabs: true,
-                alwaysShowTabs: true,
-                minTabWidth: 140
-            }
-        });
-         
+        if (!this.layoutbase) {
+                
+            this.layoutbase = new Ext.BorderLayout(document.body, {
+              
+                 center: {
+                    titlebar: false,
+                    autoScroll:false,
+                    closeOnTab: true,
+                    tabPosition: 'top',
+                    //resizeTabs: true,
+                    alwaysShowTabs: true,
+                    minTabWidth: 140
+                }
+            });
+                }
         this.layoutbase.addxtype(  cfg ); 
         
         
