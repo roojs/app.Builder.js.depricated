@@ -41,7 +41,11 @@ Builder  = {
             this.dialogroot = false;
         }
         if (this.layoutbase) {
-            this.layoutbase.el.remove();
+            
+            while (document.body.childNodes.length) {
+                Roo.get(document.body.childNodes[0]).remove();
+            }
+            
             this.layoutbase= false;
         }
          
