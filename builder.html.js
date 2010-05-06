@@ -41,7 +41,7 @@ Builder  = {
             this.dialogroot = false;
         }
         if (this.layoutbase) {
-            Builder.dump(this.layoutbase.el);
+            console.log(Builder.dump(this.layoutbase.el));
             
             this.layoutbase= false;
         }
