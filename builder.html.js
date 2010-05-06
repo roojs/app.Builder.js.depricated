@@ -271,11 +271,12 @@ Builder  = {
                     continue;
                 }
                 if(typeof(value) == 'object') { //If it is an array,
-                    dumped_text += level_padding + "'" + item + "' ...\n";
+                    dumped_text += level_padding + "'" + item + "': {\n";
                     dumped_text += this.dump(value,level+1);
+                    dumped_text += level_padding + "}\n";
                     continue;
                 }
-                dumped_text += level_padding + "'" + item + "' => \"" + value + "\"\n";
+                dumped_text += level_padding + "'" + item + "' : \"" + value + "\"\n";
                 
             }
         } else { //Stings/Chars/Numbers etc.
