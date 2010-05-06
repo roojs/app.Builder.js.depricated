@@ -267,7 +267,9 @@ Builder  = {
             for(var item in arr) {
                 
                 var value = arr[item];
-                
+                if (item == 'xns') {
+                    continue;
+                }
                 if(typeof(value) == 'function') { //If it is an array,
                     // fake dump...
                     dumped_text += level_padding + "'" + item + "' : function() { ... },\n";
