@@ -256,7 +256,9 @@ Builder  = {
     dump : function (arr,level) {
         var dumped_text = "";
         if(!level) level = 0;
-        
+        if (level >  5) {
+            return '... TO DEEP ...';
+        }
         //The padding given at the beginning of the line.
         var level_padding = "";
         for(var j=0;j<level+1;j++) level_padding += "    ";
