@@ -51,7 +51,7 @@ RightBrowser = new XObject({
                      
                 renderedData : false, 
                 xtype: Gtk.ScrolledWindow,
-                 pack : [ 'pack_end', true, true, 0 ],
+               
                 smooth_scroll : true,
                 shadow_type : Gtk.ShadowType.IN ,
                 init : function() {
