@@ -198,8 +198,8 @@ right:
 // combos
 
 left: 
-  Roo.grid.EditorGrid:dataModel
-  Roo.grid.Grid:dataModel
+  Roo.grid.EditorGrid:ds
+  Roo.grid.Grid:ds
   Roo.form.ComboBox:store
 right: 
   Roo.data.Store
