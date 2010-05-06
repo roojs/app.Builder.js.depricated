@@ -42,7 +42,11 @@ Builder  = {
         }
         if (this.layoutbase) {
             //console.log(Builder.dump(this.layoutbase.el));
-            
+            try {
+                this.layoutbase.remove('center', this.layoutbase.getRegion('center'));
+            } catch( e) {
+                // reload!!?
+            }
             this.layoutbase= false;
         }
          
@@ -108,7 +112,7 @@ Builder  = {
                     minTabWidth: 140
                 }
             });
-                }
+        }
         this.layoutbase.addxtype(  cfg ); 
         
         
