@@ -9,6 +9,18 @@ WebKit= imports.gi.WebKit;
 /**
  * The based browser component - draws html/js lib based elements.
  * 
+ * the API for the rendered HTML goes like this:
+ * 
+ * Builder.render(.... json string ...)
+ * Builder.overPos(" + x +','+ y + ");");  // mouse hovering over this pos.. 
+ * 
+ * 
+ * callbacks are done with.. console.log(
+ *   .. { id : 'xxx' } - highlights an elements
+ *      { width : xx }  = sets the width of the selected element (with id)
+ *      { height: xx }  = sets the width of the selected element (with id)
+ * .. { hover-node : 'xxx' } - response to overPos
+ * 
  */
 
 
@@ -39,6 +51,7 @@ RightBrowser = new XObject({
                             // pressed...
                             'button-press-event' : function(w, ev ){
                                 /// dump..
+                                
                                 return true;
                                 // show the MidPropTree..
                             }
