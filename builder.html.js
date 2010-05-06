@@ -40,8 +40,8 @@ Builder  = {
             this.dialogroot.remove();
             this.dialogroot = false;
         }
-        if (this.layoutbase.el) {
-            console.dump(this.layoutbase);
+        if (this.layoutbase) {
+            console.dump(this.layoutbase.el);
             
             this.layoutbase= false;
         }
