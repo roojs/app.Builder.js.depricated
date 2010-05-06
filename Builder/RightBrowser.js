@@ -6,6 +6,10 @@ GObject = imports.gi.GObject;
 Pango = imports.gi.Pango ;
 WebKit= imports.gi.WebKit;
 
+/**
+ * The based browser component - draws html/js lib based elements.
+ * 
+ */
 
 
 XObject = imports.XObject.XObject;
