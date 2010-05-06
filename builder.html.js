@@ -105,10 +105,8 @@ Builder  = {
                 minTabWidth: 140
             }
         });
-        var layoutroot = Roo.get( document.body).createChild({
-                id : cfg.id
-        });
-        this.layoutbase.add( 'center', new Roo[cfg.xtype](layoutroot , cfg)); 
+         
+        this.layoutbase.add( 'center', new Roo[cfg.xtype](cfg)); 
         
         
         
