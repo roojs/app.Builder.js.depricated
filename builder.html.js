@@ -106,7 +106,7 @@ Builder  = {
             }
         });
          
-        this.layoutbase.add( 'center', new Roo[cfg.xtype](cfg)); 
+        this.layoutbase.addxtype(  cfg ); 
         
         
         
