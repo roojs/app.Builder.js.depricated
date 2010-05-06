@@ -21,6 +21,9 @@ WebKit= imports.gi.WebKit;
  *      { height: xx }  = sets the width of the selected element (with id)
  * .. { hover-node : 'xxx' } - response to overPos
  * 
+ * basic dumping is done with alert();
+ * 
+ * 
  */
 
 
