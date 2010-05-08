@@ -4,7 +4,7 @@ Gtk = imports.gi.Gtk;
 GLib = imports.gi.GLib;
 GObject = imports.gi.GObject;
 Pango = imports.gi.Pango ;
-Soup = imports.gi.Soup ;
+
 
 
 XObject = imports.XObject.XObject;
