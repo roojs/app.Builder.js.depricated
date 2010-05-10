@@ -60,6 +60,7 @@ Base = XObject.define(
         },
         getPalete : function()
         {
+            print("GET PROVIDER FOR " + this.xtype);
             return  ProjectManager.getPalete(this.xtype);
         },
         toJSON : function()
