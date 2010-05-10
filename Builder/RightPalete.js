@@ -234,6 +234,9 @@ RightPalete = new XObject({
                                         
                                         var value = new GObject.Value('');
                                         RightPalete.get('model').el.get_value(iter, 0, value);
+                                        if (!RightPalete.provider) {
+                                            return false;
+                                        }
                                         this.el.dropList = RightPalete.provider.getDropList(value.value);
                                         this.el.dragData = value.value;
                                         
