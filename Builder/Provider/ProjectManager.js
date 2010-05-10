@@ -164,7 +164,7 @@ ProjectManager =  new Observable({
         if (typeof(ProjectManager[type]) != 'undefined') {
             return ProjectManager[type];
         }
-        ProjectManager[type] =  new imports.Builder.Provider.Palete[type][xtype]();
+        ProjectManager[type] =  new imports.Builder.Provider.Palete[type][type]();
         return ProjectManager[type];
     }
 
