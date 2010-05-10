@@ -461,9 +461,9 @@ LeftTree = new XObject(
                             var pm = RightPalete.get('model');
                             
                             var LeftProjectTree     = imports.Builder.LeftProjectTree.LeftProjectTree;
-                            if (!LeftProjectTree.project) {
-                                pm.provider = false;
-                            }
+                            //if (!LeftProjectTree.project) {
+                            //    pm.provider = false;
+                            //}
                             RightPalete.provider = LeftProjectTree.project.getPalete();
                             
                             
