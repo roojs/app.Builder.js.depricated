@@ -58,7 +58,10 @@ Base = XObject.define(
             return this.fetchTree(o);
             
         },
-        
+        getPalete : function()
+        {
+            return  ProjectManager.getPalete(this.xtype);
+        }
         toJSON : function()
         {
             var ret = { };
