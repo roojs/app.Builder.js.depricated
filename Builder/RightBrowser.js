@@ -280,6 +280,7 @@ RightBrowser = new XObject({
                                 console.log('not loaded yet');
                             }
                             Seed.print("RENDER:" + str);
+                            File.write('/tmp/builder.debug.js', "Builder.render(" + JSON.stringify(data) + ");");
                             this.el.execute_script("Builder.render(" + JSON.stringify(data) + ");");
                         }
                       
