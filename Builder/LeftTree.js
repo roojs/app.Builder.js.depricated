@@ -359,7 +359,7 @@ LeftTree = new XObject(
                                                     GObject.TYPE_STRING // source..
                                                     ] );
                             
-                            
+                            //if (LeftProjectTree.project).getProvider()
                             this.provider = new Roo();
                             this.provider.load();
                            
@@ -392,6 +392,12 @@ LeftTree = new XObject(
                                 RightBrowser.get('view').renderJS(this.toJS(false,true)[0]);
                                 var RightPalete     = imports.Builder.RightPalete.RightPalete;
                                 var pm = RightPalete.get('model');
+                                if (!pm.provider) {
+                                    pm.load([]);
+                                    return;
+                                }
+                                
+                                
                                 pm.load( pm.provider.gatherList(this.listAllTypes()));
                                 //imports['Builder/RightBrowser.js'].renderJS(this.toJS());
                             }
@@ -454,6 +460,14 @@ LeftTree = new XObject(
                             //console.dump(this.map);
                             var RightPalete     = imports.Builder.RightPalete.RightPalete;
                             var pm = RightPalete.get('model');
+                            
+                            var LeftProjectTree     = imports.Builder.LeftProjectTree.LeftProjectTree;
+                            if (!LeftProjectTree.project) {
+                                pm.provider = false;
+                            }
+                            pm.provider = LeftProjectTree.project.getProvider();
+                            
+                            
                             pm.load( pm.provider.gatherList(this.listAllTypes()));
                             
                             
