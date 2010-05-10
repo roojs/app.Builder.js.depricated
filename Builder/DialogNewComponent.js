@@ -50,6 +50,7 @@ DialogNewComponent = new XObject({
             c = c || { name : '' , xtype : '' };
             // check whic project we are adding to..
             XObject.extend(this, c);
+            // causes problems.. get_screen?? not transfer ownership?
            /// var Window                = imports.Builder.Window.Window;
             //this.el.set_screen(Window.el.get_screen());
             
