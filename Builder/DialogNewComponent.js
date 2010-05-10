@@ -69,7 +69,7 @@ DialogNewComponent = new XObject({
             
             this.el.show_all();
             this.success = c.success;
-            
+            /*
             var tm = this.get('template_model');
             if (tm.templates) {
                 return;
@@ -94,6 +94,7 @@ DialogNewComponent = new XObject({
                 tm.loadData();
                 
             }, null);
+            */
             
         },
         
