@@ -167,7 +167,7 @@ ProjectManager =  new Observable({
         var cls = imports.Builder.Provider.Palete[type][type];
         
         ProjectManager.palete[type] =  new cls();
-        print (typeof(ProjectManager.palete[type]);
+        print (typeof(ProjectManager.palete[type]));
         return ProjectManager.palete[type];
     }
 
