@@ -46,7 +46,12 @@ Builder  = {
             
             
             //try {
-                this.layoutbase.remove('center', this.layoutbase.getRegion('center'));
+                var pan = this.layoutbase.getRegion('center');
+                if (pan) {
+                    this.layoutbase.regions['center'].remove('pan');
+                }
+                
+                
             //} catch( e) {
             //    console.log(e);
                 // reload!!?
