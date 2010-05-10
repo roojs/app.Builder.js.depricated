@@ -29,7 +29,7 @@ ProjectManager =  new Observable({
         
     },
     
-    providers : { }, 
+    palete : { }, 
     projects : [],
     filename : false,
     
@@ -161,11 +161,14 @@ ProjectManager =  new Observable({
         
     },
     getPalete: function(type) {
-        if (typeof(ProjectManager[type]) != 'undefined') {
-            return ProjectManager[type];
+        if (typeof(ProjectManager.palete[type]) != 'undefined') {
+            return ProjectManager.palete[type];
         }
-        ProjectManager[type] =  new imports.Builder.Provider.Palete[type][type]();
-        return ProjectManager[type];
+        var cls = imports.Builder.Provider.Palete[type][type];
+        
+        ProjectManager.palete[type] =  new cls();
+        print (typeof(ProjectManager.palete[type]);
+        return ProjectManager.palete[type];
     }
 
     
