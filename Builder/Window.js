@@ -124,6 +124,11 @@ Window = new XObject({
                                                 {
                                                     xtype : Gtk.Notebook,
                                                     pack : ['pack_start', true,true],
+                                                    init : function()
+                                                    {
+                                                        XObject.prototype.init.call(this); 
+                                                        this.set_current_page(0);
+                                                    },
                                                     items : [
                                                        RightBrowser,
                                                        RightGtkView,
