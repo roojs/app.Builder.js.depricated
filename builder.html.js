@@ -313,13 +313,17 @@ Builder  = {
             return true;
         }
         // needs fixing..
-        console.log(ftg.dom.className);
-        var cmat = ftg.dom.className.match(/x-grid-hd-builder-(form-gen-[0-9:]+)/);
-        
-        if (cmat) {
-            this[method]( cmat[1] );
-            return true;
+        if (ftg.dom.className.match(/[0-9]+/)) {
+            console.log(ftg.dom.className);
+            var cmat = ftg.dom.className.match(/x-grid-hd-builder-(form-gen-[0-9:]+)/);
+            if (cmat) {
+                this[method]( cmat[1] );
+                return true;
+            }
         }
+        
+        
+        
         
         return false;
     },
