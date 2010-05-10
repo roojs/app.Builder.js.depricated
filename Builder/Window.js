@@ -12,6 +12,7 @@ LeftProps       = imports.Builder.LeftProps.LeftProps;
 LeftPanel       = imports.Builder.LeftPanel.LeftPanel;
 MidPropTree     = imports.Builder.MidPropTree.MidPropTree;
 RightBrowser    = imports.Builder.RightBrowser.RightBrowser;
+RightGtkView    = imports.Builder.RightGtkView.RightGtkView;
 RightEditor     = imports.Builder.RightEditor.RightEditor;
 RightPalete     = imports.Builder.RightPalete.RightPalete;
 // concept:
