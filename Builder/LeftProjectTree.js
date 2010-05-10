@@ -423,11 +423,13 @@ LeftProjectTree = new XObject({
                                 
                                 loadProject : function (pr)
                                 {
-                                    this.project = pr;
+                                    
+                                    
                                     this.el.clear();
                                     if (!pr) {
                                         return;
                                     }
+                                    LeftProjectTree.project = pr;
                                     this.load(pr.toTree());
                                     LeftProjectTree.get('view').el.expand_all();
                                 },
