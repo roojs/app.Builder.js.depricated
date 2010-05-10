@@ -45,12 +45,12 @@ Builder  = {
             //console.log(Builder.dump(this.layoutbase.el));
             
             
-            try {
+            //try {
                 this.layoutbase.remove('center', this.layoutbase.getRegion('center'));
-            } catch( e) {
-                console.log(e);
+            //} catch( e) {
+            //    console.log(e);
                 // reload!!?
-            }
+            //}
             
             
             
