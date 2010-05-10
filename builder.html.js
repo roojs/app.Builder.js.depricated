@@ -5,8 +5,7 @@ Builder  = {
     
     render : function(data)
     {
-        console.log(data);
-        return;
+         
         this.tree = data;
         
         if (!Builder.click) {
@@ -216,6 +215,7 @@ Builder  = {
             
             var xi = xitems[i];
             if (typeof(xi['*prop']) != 'undefined') {
+                console.log('adding prop' + xi['*prop']);
                 var pr = xi['*prop'];
                 this.munge(xi);
                 // if prop is an array - then it's items are really the value..
