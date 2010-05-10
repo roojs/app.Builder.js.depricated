@@ -124,8 +124,8 @@ Window = new XObject({
                                                 {
                                                     id : 'notebook',
                                                     xtype : Gtk.Notebook,
-                                                    show_tabs : false,
-                                                    tab_border : 0,
+                                                 //   show_tabs : false,
+                                                 //   tab_border : 0,
                                                     pack : ['pack_start', true,true],
                                                     init : function()
                                                     {
