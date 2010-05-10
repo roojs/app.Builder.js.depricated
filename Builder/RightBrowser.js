@@ -28,6 +28,7 @@ WebKit= imports.gi.WebKit;
 
 
 XObject = imports.XObject.XObject;
+File = imports.File.File;
 console = imports.console;
 
 LeftTree = imports.Builder.LeftTree.LeftTree ;
