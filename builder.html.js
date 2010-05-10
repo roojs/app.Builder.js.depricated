@@ -48,7 +48,7 @@ Builder  = {
             try {
                 this.layoutbase.remove('center', this.layoutbase.getRegion('center'));
             } catch( e) {
-                //console.log(e);
+                console.log(e);
                 // reload!!?
             }
             
