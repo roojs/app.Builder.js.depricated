@@ -391,13 +391,13 @@ LeftTree = new XObject(
                                 RightBrowser.get('view').renderJS(this.toJS(false,true)[0]);
                                 var RightPalete     = imports.Builder.RightPalete.RightPalete;
                                 var pm = RightPalete.get('model');
-                                if (!pm.provider) {
+                                if (!RightPalete.provider) {
                                     pm.load([]);
                                     return;
                                 }
                                 
                                 
-                                pm.load( pm.provider.gatherList(this.listAllTypes()));
+                                pm.load( RightPalete.provider.gatherList(this.listAllTypes()));
                                 //imports['Builder/RightBrowser.js'].renderJS(this.toJS());
                             }
                              
