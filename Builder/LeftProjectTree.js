@@ -48,8 +48,8 @@ LeftProjectTree = new XObject({
                         }
                         
                         
-                        LeftProjectTree.get('combo').el.set_size_request( 
-                                Gtk.allocation_get_width(a)-50,-1);
+                        //LeftProjectTree.get('combo').el.set_size_request( 
+                        //        Gtk.allocation_get_width(a)-50,-1);
                         
                         
                     }
