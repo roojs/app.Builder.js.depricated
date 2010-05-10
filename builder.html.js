@@ -48,7 +48,7 @@ Builder  = {
             //try {
                 var pan = this.layoutbase.getRegion('center');
                 if (pan) {
-                    this.layoutbase.regions['center'].remove('pan');
+                    this.layoutbase.regions['center'].remove(pan);
                 }
                 
                 
