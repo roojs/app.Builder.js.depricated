@@ -122,7 +122,7 @@ Window = new XObject({
                                             items : [
                                             
                                                 {
-                                                    id : 'notebook',
+                                                    id : 'view-notebook',
                                                     xtype : Gtk.Notebook,
                                                  //   show_tabs : false,
                                                  //   tab_border : 0,
