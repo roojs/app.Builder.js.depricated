@@ -232,6 +232,7 @@ Builder  = {
                 if (xi.xtype && xi.xtype  == 'Array') {
                     cfg[pr] = xi.items;
                 } else {
+                    console.log('setting property' + pr);
                     cfg[pr] = xi;
                 }
                 
