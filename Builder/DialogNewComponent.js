@@ -32,6 +32,7 @@ DialogNewComponent = new XObject({
         project : false,
         init : function()
         {
+            XObject.debug = true;
             XObject.prototype.init.call(this); 
             this.el.add_button("OK",1 );
             this.el.add_button("Cancel",0 );
