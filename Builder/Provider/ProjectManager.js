@@ -162,6 +162,7 @@ ProjectManager =  new Observable({
     },
     getPalete: function(type) {
         if (typeof(ProjectManager.palete[type]) != 'undefined') {
+            
             return ProjectManager.palete[type];
         }
         var cls = imports.Builder.Provider.Palete[type][type];
