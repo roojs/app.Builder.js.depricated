@@ -304,7 +304,7 @@ LeftTree = new XObject(
                             MidPropTree.hideWin();
                             var RightPalete     = imports.Builder.RightPalete.RightPalete;
                             var pm = RightPalete.get('model');
-                            pm.load( pm.provider.gatherList(LeftTree.get('model').listAllTypes()));
+                            pm.load( RightPalete.provider.gatherList(LeftTree.get('model').listAllTypes()));
                            
                             return true;
                         }
@@ -465,10 +465,10 @@ LeftTree = new XObject(
                             if (!LeftProjectTree.project) {
                                 pm.provider = false;
                             }
-                            pm.provider = LeftProjectTree.project.getProvider();
+                            RightPalete.provider = LeftProjectTree.project.getProvider();
                             
                             
-                            pm.load( pm.provider.gatherList(this.listAllTypes()));
+                            pm.load( RightPalete.provider.gatherList(this.listAllTypes()));
                             
                             
                             
