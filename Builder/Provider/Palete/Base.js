@@ -29,7 +29,9 @@ Base = XObject.define(
             existing = existing || [];
            // existing.push('*top'); // always have top
             var ret  = []; 
-            console.dump("GATHER LIST? ");
+            console.log("GATHER LIST? " + this.map.length);
+            
+            
             function addRight(right) {
                 right.forEach(function(r) {
                     if (ret.indexOf(r) > -1) {
