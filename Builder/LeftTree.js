@@ -469,7 +469,7 @@ LeftTree = new XObject(
                             var pr = LeftProjectTree.project;
                             pm.load( RightPalete.provider.gatherList(this.listAllTypes()));
                             
-                            var Window = imports.Builder.Window.Window;
+                            
                                     
                             Window.get('view-notebook').el.set_current_page(pr.xtype == 'Roo' ? 0 : -1);
                                     
