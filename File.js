@@ -90,7 +90,7 @@ var File = {
     },
     /**
      * write
-     * @arg path {String} File to write to
+     * @arg path {String} File to write to alwasy overwrites.
      * @arg string {String} Contents of file.
      * 
      */
