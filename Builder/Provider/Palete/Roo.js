@@ -30,7 +30,7 @@ Roo = XObject.define(
             
              
          
-            var data  = File.read(__script_path__ +'/../RooUsage.txt').data.split(/\n/g);
+            var data  = File.read(__script_path__ +'/../RooUsage.txt').split(/\n/g);
             var state = 0;
             var cfg = [];
             var left = [];
