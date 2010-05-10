@@ -16,8 +16,9 @@ Roo = XObject.define(
         
        
         // various loader methods..
+         this.map = [];
         this.load();
-        this.map = [];
+       
         // no parent...
         
        
