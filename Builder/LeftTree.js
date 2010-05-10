@@ -389,7 +389,7 @@ LeftTree = new XObject(
                                 print("REDNER BROWSER?!");
                                 
                                 var RightBrowser    = imports.Builder.RightBrowser.RightBrowser;                                 
-                                RightBrowser.get('view').renderJS(this.toJS(false,true));
+                                RightBrowser.get('view').renderJS(this.toJS(false,true)[0]);
                                 var RightPalete     = imports.Builder.RightPalete.RightPalete;
                                 var pm = RightPalete.get('model');
                                 pm.load( pm.provider.gatherList(this.listAllTypes()));
@@ -715,8 +715,6 @@ LeftTree = new XObject(
                          */
                         nodeToJS: function (iter, with_id) 
                         {
-                          
-                            
                             var par = new Gtk.TreeIter(); 
                             var iv = this.getValue(iter, 2);
                             print("IV" + iv);
