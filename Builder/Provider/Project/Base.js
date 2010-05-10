@@ -61,7 +61,7 @@ Base = XObject.define(
         getPalete : function()
         {
             return  ProjectManager.getPalete(this.xtype);
-        }
+        },
         toJSON : function()
         {
             var ret = { };
