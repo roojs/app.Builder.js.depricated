@@ -23,7 +23,7 @@ LeftPanel = imports.Builder.LeftPanel.LeftPanel;
 
 RightGtkView = new XObject({
         xtype : Gtk.VBox,
-        pack : [ 'pack_start', true, true, 0 ],
+        pack : [ 'append_page', new Gtk.Label({ label : "Gtk View" })  ],
         items : [
         
             {
