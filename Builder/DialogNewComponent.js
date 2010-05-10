@@ -5,7 +5,7 @@ GObject = imports.gi.GObject;
 Gio = imports.gi.Gio;
 GLib = imports.gi.GLib;
 
-console = imports.console.console;
+console = imports.console;
 XObject = imports.XObject.XObject;
 
 
