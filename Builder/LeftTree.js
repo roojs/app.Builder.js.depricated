@@ -128,8 +128,8 @@ LeftTree = new XObject(
                         }
                       
                     
-                        
-                        var res = LeftTree.get('view').el.get_path_at_pos(ev.button.x,ev.button.y);
+                        var res = {}; 
+                        LeftTree.get('view').el.get_path_at_pos(ev.button.x,ev.button.y, res);
                         
                         if (!LeftTreeMenu.el)  LeftTreeMenu.init();
                         
