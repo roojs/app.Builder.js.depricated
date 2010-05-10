@@ -136,7 +136,7 @@ LeftTree = new XObject(
                         LeftTreeMenu.el.set_screen(Gdk.Screen.get_default());
                         LeftTreeMenu.el.show_all();
                         LeftTreeMenu.el.popup(null, null, null, null, 3, ev.button.time);
-                        Seed.print("click:" + res.column.title);
+                        Seed.print("click:" + res.path.to_string());
                         return false;
                         
                     },
