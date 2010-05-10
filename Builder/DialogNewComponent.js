@@ -36,11 +36,9 @@ DialogNewComponent = new XObject({
             XObject.prototype.init.call(this); 
             this.el.add_button("OK",1 );
             this.el.add_button("Cancel",0 );
-           
-        
-           
-            this.el.set_default_size (600, 400);
             
+            this.el.set_default_size (600, 400);
+            console.log('shown all');
             //show_all : []
         },
        
