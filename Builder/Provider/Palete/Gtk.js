@@ -93,7 +93,7 @@ Gtk = XObject.define(
 );
 
     // static load @ starttime.
-XObject.extend(Roo, {
+XObject.extend(Gtk, {
         proplist:  [],
          
         load : function()
