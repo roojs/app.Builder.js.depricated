@@ -119,7 +119,18 @@ Window = new XObject({
                                         {
                                             xtype : Gtk.VBox,
                                             items : [
-                                                RightBrowser,
+                                            
+                                                {
+                                                    xtype : Gtk.Notebook,
+                                                    pack : ['pack_start', true,true],
+                                                    items : [
+                                                       RightBrowser,
+                                                       RightGtkView,
+                                                    ]
+                                                },
+                                            
+                                            
+                                                
                                                 {
                                                     xtype : Gtk.Expander,
                                                     
