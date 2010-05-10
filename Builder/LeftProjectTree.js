@@ -432,6 +432,10 @@ LeftProjectTree = new XObject({
                                     LeftProjectTree.project = pr;
                                     this.load(pr.toTree());
                                     LeftProjectTree.get('view').el.expand_all();
+                                    // needs more thought!!??
+                                    Window.get('notebook').el.set_current_page(pr.xtype == 'Roo' ? 0 : 1);
+                                    
+                                    
                                 },
                                 
                                 load : function(tr,iter)
