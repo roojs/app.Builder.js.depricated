@@ -54,6 +54,7 @@ Builder  = {
         
     },
     
+    
     redraw: function(isAuto)
     {
         
