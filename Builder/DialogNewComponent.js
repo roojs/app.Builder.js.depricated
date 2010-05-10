@@ -60,12 +60,13 @@ DialogNewComponent = new XObject({
                     desc : i
                 });
             }
-            
+             console.log('load paths');
+             
             // load the paths.
             this.get('directory_model').loadData(paths);
                 
             
-            
+            console.log('show all');
             this.el.show_all();
             this.success = c.success;
             /*
