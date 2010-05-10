@@ -16,7 +16,7 @@ Roo = XObject.define(
         
        
         // various loader methods..
-        
+        this.load();
         this.map = [];
         // no parent...
         
@@ -27,7 +27,7 @@ Roo = XObject.define(
     
      
         load: function ( o ) {
-           //  Seed.print(__script_path__ +'/RooUsage.txt');
+           Seed.print(__script_path__ +'/RooUsage.txt');
              var file = Gio.file_new_for_path(__script_path__ +'/../RooUsage.txt');
                                         
              var _this = this;                        
