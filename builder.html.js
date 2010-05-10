@@ -69,7 +69,7 @@ Builder  = {
         
         
         this.munge(cfg);
-        
+        print(cfg);return;
         // we draw either a dialog or a tab..
         
         if (cfg.xtype == 'LayoutDialog') {
