@@ -206,7 +206,9 @@ LeftTree = new XObject(
                             action = Gdk.DragAction.MOVE;
                         }
                         var data = {};
-                        LeftTree.get('view').el.get_dest_row_at_pos(x,y, data);
+                        if (!LeftTree.get('view').el.get_dest_row_at_pos(x,y, data)) {
+                            return false; // not over apoint!?!
+                        }
                         // path, pos
                         
                         Seed.print(data.path.to_string() +' => '+  data.pos);
