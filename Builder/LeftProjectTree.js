@@ -435,7 +435,7 @@ LeftProjectTree = new XObject({
                                     // needs more thought!!??
                                     var Window = imports.Builder.Window.Window;
                                     Window.get('notebook').el.set_current_page(pr.xtype == 'Roo' ? 0 : 1);
-                                    
+                                    print ("SET notebook to " + pr.xtype);
                                     
                                 },
                                 
