@@ -360,8 +360,7 @@ LeftTree = new XObject(
                                                     ] );
                             
                             //if (LeftProjectTree.project).getProvider()
-                            this.provider = new Roo();
-                            this.provider.load();
+                            
                            
                         },
                         activeIter : false,
