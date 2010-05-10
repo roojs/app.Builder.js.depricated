@@ -45,17 +45,17 @@ Builder  = {
             //console.log(Builder.dump(this.layoutbase.el));
             
             
-            //try {
-                var pan = this.layoutbase.getRegion('center');
+            try {
+                var pan = this.layoutbasegetRegion('center').getPanel(0);
                 if (pan) {
-                    this.layoutbase.regions['center'].remove(pan);
+                    this.layoutbase.remove('center', pan);
                 }
                 
                 
-            //} catch( e) {
-            //    console.log(e);
+            } catch( e) {
+                console.log(e);
                 // reload!!?
-            //}
+            }
             
             
             
