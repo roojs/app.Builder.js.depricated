@@ -378,7 +378,7 @@ LeftTree = new XObject(
                                 this.el.set_value(this.activeIter, 2, [GObject.TYPE_STRING, this.nodeToJSON(n)]);
                             }
                                 //this.currentTree = this.toJS(false, true)[0];
-                            this.file.items = this.toJS(false, true);
+                            this.file.items = this.toJS(false, false);
                             print("AFTER CHANGED")
                             console.dump(this.file.items);
                             this.file.save();
@@ -389,7 +389,7 @@ LeftTree = new XObject(
                                 print("REDNER BROWSER?!");
                                 
                                 var RightBrowser    = imports.Builder.RightBrowser.RightBrowser;                                 
-                                RightBrowser.get('view').renderJS(this.currentTree);
+                                RightBrowser.get('view').renderJS(this.toJS(false,true));
                                 var RightPalete     = imports.Builder.RightPalete.RightPalete;
                                 var pm = RightPalete.get('model');
                                 pm.load( pm.provider.gatherList(this.listAllTypes()));
@@ -446,11 +446,11 @@ LeftTree = new XObject(
                             print("hide right editior");
                             RightEditor.el.hide();
                             print("set current tree");
-                            this.currentTree = this.toJS(false, true)[0];
+                            this.currentTree = this.toJS(false, false)[0];
                             console.dump(this.currentTree);
                             this.currentTree = this.currentTree || { items: [] };
                             var RightBrowser    = imports.Builder.RightBrowser.RightBrowser;
-                            RightBrowser.get('view').renderJS(this.currentTree);
+                            RightBrowser.get('view').renderJS(this.toJS(false,true)[0]);
                             //console.dump(this.map);
                             var RightPalete     = imports.Builder.RightPalete.RightPalete;
                             var pm = RightPalete.get('model');
@@ -637,7 +637,7 @@ LeftTree = new XObject(
                             // rebuild treemap.
                             this.map = {};
                             this.treemap = { };
-                            this.toJS(null, true)
+                            //this.toJS(null, true) // does not do anything?
                             this.activeIter = false;
                             this.changed(false,true);
                             
