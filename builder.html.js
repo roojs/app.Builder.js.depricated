@@ -43,12 +43,18 @@ Builder  = {
         }
         if (this.layoutbase) {
             //console.log(Builder.dump(this.layoutbase.el));
+            
+            
             try {
                 this.layoutbase.remove('center', this.layoutbase.getRegion('center'));
             } catch( e) {
+                console.log(e);
                 // reload!!?
             }
-            this.layoutbase= false;
+            
+            
+            
+            //this.layoutbase= false;
         }
          
         
