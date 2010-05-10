@@ -377,7 +377,7 @@ LeftProjectTree = new XObject({
                                 
                                 console.log(value.value);// id..
                                 
-                                var file = model.project.getById(value.value);
+                                var file = LeftProjectTree.project.getById(value.value);
                                 
                                 
                                 console.log(file);
@@ -419,7 +419,7 @@ LeftProjectTree = new XObject({
                                 activeIter : false, // fixme - should not use iters..
                                 
                                 
-                                project : false,
+                                 
                                 
                                 loadProject : function (pr)
                                 {
