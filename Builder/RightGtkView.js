@@ -211,7 +211,6 @@ RightGtkView = new XObject({
                         renderJS: function(data) {
                             return;
                         }
-                      
                     }
                 ]
             }
