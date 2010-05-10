@@ -160,7 +160,7 @@ ProjectManager =  new Observable({
         return ret;
         
     },
-    function getProvider(type) {
+     getProvider: function(type) {
         if (typeof(ProjectManager[type]) != 'undefined') {
             return ProjectManager[type];
         }
