@@ -22,9 +22,7 @@ Roo = XObject.define(
     {
          
         file : false
-    
-    
-    
-});
+    }
+);
  
  
