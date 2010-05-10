@@ -129,7 +129,7 @@ Window = new XObject({
                                                     init : function()
                                                     {
                                                         XObject.prototype.init.call(this); 
-                                                        this.set_current_page(0);
+                                                        this.el.set_current_page(0);
                                                     },
                                                     items : [
                                                        RightBrowser,
