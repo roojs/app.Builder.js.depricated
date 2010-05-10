@@ -30,6 +30,7 @@ RightPalete = new XObject({
             this.get('model').expanded();
             
         },
+        provider : false,
         
         items : [
             {
@@ -233,7 +234,7 @@ RightPalete = new XObject({
                                         
                                         var value = new GObject.Value('');
                                         RightPalete.get('model').el.get_value(iter, 0, value);
-                                        this.el.dropList = RightPalete.get('model').provider.getDropList(value.value);
+                                        this.el.dropList = RightPalete.provider.getDropList(value.value);
                                         this.el.dragData = value.value;
                                         
                                         
@@ -305,9 +306,7 @@ RightPalete = new XObject({
                                                     GObject.TYPE_STRING // tip
                                                     
                                                     ] );
-                            
-                                            this.provider = new Roo();
-                                            this.provider.load();
+                                             
                                               
                                             
                                         },
@@ -355,7 +354,7 @@ RightPalete = new XObject({
                                         },
                                         
                                         
-                                        provider : false,
+                                        
                                         
                                         getValue: function (iter, col) {
                                             var gval = new GObject.Value('');
