@@ -29,7 +29,7 @@ ProjectManager =  new Observable({
         
     },
     
-    
+    providers : { }, 
     projects : [],
     filename : false,
     
@@ -159,7 +159,14 @@ ProjectManager =  new Observable({
         });
         return ret;
         
-    }
+    },
+    function getProvider(type) {
+        if (typeof(ProjectManager[type]) != 'undefined') {
+            return ProjectManager[type];
+        }
+       ProjectManager[type] =  new imports.Builder.Provider.Palete[type][xtype]();
+       return ProjectManager[type];
+    
 
     
     
