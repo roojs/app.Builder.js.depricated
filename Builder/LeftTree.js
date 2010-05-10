@@ -465,7 +465,7 @@ LeftTree = new XObject(
                             if (!LeftProjectTree.project) {
                                 pm.provider = false;
                             }
-                            RightPalete.provider = LeftProjectTree.project.getProvider();
+                            RightPalete.provider = LeftProjectTree.project.getPalete();
                             
                             
                             pm.load( RightPalete.provider.gatherList(this.listAllTypes()));
