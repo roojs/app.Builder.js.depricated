@@ -43,7 +43,7 @@ LeftProjectTree = new XObject({
                 pack : ['pack_start', false , true ], // expand // fill.
                 listeners : {
                     'size-allocate': function(w,a) {
-                        ////Seed.print(a);
+                        Seed.print(a);
                         
                         LeftProjectTree.get('combo').el.set_size_request( 
                                 Gtk.allocation_get_width(a)-50,-1);
