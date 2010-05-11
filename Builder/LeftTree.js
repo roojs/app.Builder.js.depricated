@@ -687,9 +687,12 @@ LeftTree = new XObject(
                             s.get_selected(this.el, old_iter);
                             var node = this.nodeToJS(old_iter,false);
                             console.dump(node);
-                            this.el.remove(old_iter);
-                            this.dropNode(target_data, node);
                             
+                            // target data is now invalid!!!
+                            // wee need to find the new tree path after it's drop
+                            
+                            this.dropNode(target_data, node);
+                            this.el.remove(old_iter);
                             
                             
                         },
