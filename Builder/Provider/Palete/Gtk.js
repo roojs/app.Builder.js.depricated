@@ -132,30 +132,24 @@ Gtk = XObject.define(
                 }
                 this.proplist[ename]['props'].push(add)
             }
-            // parent!!?!!?
+           
             // signals..
             
             for (var i =0;i <  GIRepository.object_info_get_n_signals(bi); i++) {
                 var prop = GIRepository.object_info_get_signal(bi, i);  
                 var n_original =  base_info_get_name(prop);
-                
-                var flags =  GI.property_info_get_flags(prop); // check for readonly..
-                var ty = typeToName(GIRepository.property_info_get_type(prop));
-                
-                if (ty === false) {
-                    continue;
-                }
+                 
                 var add = {
                     name :  n_original.replace(/\-/g, '_'),
                     type : 'function', //???
                     desc : this.doc(ename + '.' + n_original),
                     sig  : '' // fixme..
                 }
-                this.proplist[ename]['props'].push(add)
+                this.proplist[ename]['events'].push(add)
             }
+             // parent!!?!!?
             
-            
-             return this.proplist[ename][type];
+            return this.proplist[ename][type];
             
         }
         
