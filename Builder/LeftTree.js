@@ -238,6 +238,8 @@ LeftTree = new XObject(
                         }
                         // drag node is parent of child..
                         console.log("SRC TREEPATH: " + src.treepath);
+                        console.log("TARGET TREEPATH: " + data.path.to_string());
+                        
                         if (src.treepath  && 
                             src.treepath == data.path.to_string().substring(src.treepath.length)) {
                                 
