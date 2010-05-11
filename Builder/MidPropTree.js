@@ -143,6 +143,7 @@ MidPropTree = new XObject({
                         {
                             this.el.clear();
                             // roo specific..
+                            var LeftPanel       = imports.Builder.LeftPanel.LeftPanel;
                             var fullpath = LeftTree.get('model').file.guessName.guessName(ar);
                             this.currentData  = false;
                             if (!fullpath.length) {
