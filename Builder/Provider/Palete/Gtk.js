@@ -18,7 +18,7 @@ Gtk = XObject.define(
         // various loader methods..
           this.map = [];
         this.load();
-      
+        this.proplist = {}; 
         // no parent...
         
        
@@ -79,8 +79,12 @@ Gtk = XObject.define(
        
         getPropertiesFor: function(ename, type)
         {
-            
+            if (typeof(this.proplist[ename]) != 'undefined' &&
+                typeof(this.proplist[ename][type]) != 'undefined' ) {
+                    return this.proplist[ename][type];
+            }
             // use introspection to get lists..
+            var gi = GI.IRepository.get_default();
             
             
             this.loadProps();
@@ -88,7 +92,7 @@ Gtk = XObject.define(
                 typeof(this.proplist[ename][type]) == 'undefined' ) {
                     return [];
             }
-            return this.proplist[ename][type];
+            
         }
         
         
