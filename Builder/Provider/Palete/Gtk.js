@@ -80,7 +80,7 @@ Gtk = XObject.define(
         getPropertiesFor: function(ename, type)
         {
             
-            
+            // use introspection to get lists..
             
             
             this.loadProps();
