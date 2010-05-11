@@ -187,7 +187,7 @@ RightGtkView = new XObject({
                                     Seed.print("Browser: source.DRAGDATA? " + source.dragData);
                                     if (this.targetData) {
                                         Seed.print(this.targetData);
-                                        //LeftTree.get('model').dropNode(this.targetData,  source.dragData);
+                                        LeftTree.get('model').dropNode(this.targetData,  source.dragData);
                                     }
                                     
                                     
