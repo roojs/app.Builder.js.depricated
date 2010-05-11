@@ -531,7 +531,7 @@ LeftTree = new XObject(
                                     return [];
                                 }
                                 
-                                var xname = LeftTree.get('model').file..guessName(this.treemap[path]);
+                                var xname = LeftTree.get('model').file.guessName(this.treemap[path]);
                                 var match = false;
                                 var prop = '';
                                 targets.forEach(function(tg) {
@@ -704,7 +704,7 @@ LeftTree = new XObject(
                                 var data = JSON.parse(value.value);
                                 
                                 
-                                var xname = LeftTree.get('model').file..guessName(data);
+                                var xname = LeftTree.get('model').file.guessName(data);
                                 console.log('selected:' + xname);
                                 if (xname.length) {
                                     return [ xname ];
@@ -718,7 +718,7 @@ LeftTree = new XObject(
                             {
                                 li.forEach(function(el) {
                                     // this is specific to roo!!!?
-                                    var fullpath =  LeftTree.get('model').file..guessName(el);
+                                    var fullpath =  LeftTree.get('model').file.guessName(el);
                                     if (fullpath.length && ret.indexOf(fullpath) < 0) {
                                         ret.push(fullpath);
                                     }
