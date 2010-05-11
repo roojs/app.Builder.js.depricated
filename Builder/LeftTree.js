@@ -492,14 +492,14 @@ LeftTree = new XObject(
                             var pm = RightPalete.get('model');
                             // set up provider..
                             
-                            RightPalete.provider = LeftTree.getPaleteProvider();;
+                            RightPalete.provider = LeftTree.getPaleteProvider();
                             
                             if (!RightPalete.provider) {
                                 print ("********* PALETE PROVIDER MISSING?!!");
                             }
                             LeftTree.renderView();
                             var pr = LeftProjectTree.project;
-                            pm.load( RightPalete.provider.gatherList(this.listAllTypes()));
+                            pm.load( LeftTree.getPaleteProvider().gatherList(this.listAllTypes()));
                             
                             
                                     
