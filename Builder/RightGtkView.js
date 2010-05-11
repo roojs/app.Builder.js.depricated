@@ -248,8 +248,7 @@ RightGtkView = new XObject({
         {
             var keys = [];
             var isArray = false;
-            print(obj.constructor);
-            print(obj.constructor.toString() === Array.toString() ? "ARRAY?" : "-");
+            
             if (obj.constructor.toString() === Array.toString()) {
                 for (var i= 0; i < obj.length; i++) {
                     keys.push(i);
@@ -260,11 +259,24 @@ RightGtkView = new XObject({
                     keys.push(i);
                 }
             }
-    
-            var _this = this;
             var els = [];
+            var skip = [];
+            if (!isArray && 
+                    typeof(obj['|xns']) != 'undefined' &&
+                    typeof(obj['xtype']) != 'undefined'
+                ) {
+                    els.push('xtype: '+ obj['|xns'] + '.' + obj['|xns']);
+                    skip.push('|xns','xtype');
+                }
+            
+            var _this = this;
+            
             keys.forEach(function(i) {
                 var el = obj[i];
+                if (!isArray && skip.index(i) > -1) {
+                    return;
+                }
+                
                 if (typeof(i) == 'string' && i[0] == '|') {
                     // does not hapepnd with arrays..
                     els.push(JSON.stringify(i.substring(1)) + ":" + obj[i]);
