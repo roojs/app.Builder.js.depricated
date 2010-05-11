@@ -226,7 +226,7 @@ RightGtkView = new XObject({
         {
             /**
              * first effort..
-             * 
+             * sandbox it?
              */
             
             
