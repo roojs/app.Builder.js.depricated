@@ -96,7 +96,9 @@ Gtk = XObject.define(
             // properties.. -- and parent ones...!!!
             for (var i =0;i <  GIRepository.object_info_get_n_properties(bi); i++) {
                 var pi = GIRepository.object_info_get_property(bi, i);
-                
+                 var add = {
+                     base_info_get_name(pi);
+                    }
                 
             }
             
