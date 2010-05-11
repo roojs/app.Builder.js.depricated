@@ -224,24 +224,6 @@ RightGtkView = new XObject({
         {
             // can we mess with data?!?!?
             
-            data.listeners['show'] = function() {
-                var r = new Gdk.Rectangle();
-                   
-                var pb = ow.get_snapshot(r);
-                print(r.width);print(r.height);
-                var gc = new Gdk.GC.c_new(x.window);
-                
-                // 10 points all round..
-                var full = new Gdk.Pixmap.c_new (x.window, r.width+20, r.height+20, pb.get_depth());
-                Gdk.draw_drawable (full, gc, pb, 0, 0, 10, 10, r.width, r.height);
-                Gdk.draw_rectangle(full, gc, true, 1, 1, 10, 10);
-
-                var img = new Gtk.Image.from_pixmap ( full, null);
-                //var img = new Gtk.Image.from_file("/home/alan/solarpanels.jpeg");
-                x.add(img)
-                img.show();
-                return 0;
-            })
             /**
              * first effort..
              * sandbox it? - nope then will have dificulting passing. stuff aruond..
