@@ -257,7 +257,7 @@ LeftTree = new XObject(
                             Gdk.drag_status(ctx, 0, time);
                             return true;
                         }
-                        console.dump(tg);
+                        //console.dump(tg);
                         this.targetData = tg;    
                         
                         
