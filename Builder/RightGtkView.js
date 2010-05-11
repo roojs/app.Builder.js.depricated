@@ -243,7 +243,13 @@ RightGtkView = new XObject({
             x.add_globals();
             //x.get_global_object().a = "hello world";
             print(src);
-            x.eval(src);
+            try {
+                x.eval(src);
+            } catch( e) {
+                print(e);
+                return;
+            }
+            
             var r = new Gdk.Rectangle();
             x.get_global_object()._top.el.show_all();
             
