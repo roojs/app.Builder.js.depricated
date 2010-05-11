@@ -209,8 +209,10 @@ Gtk = XObject.define(
             this.proplist[ename] = {}
             this.proplist[ename]['props'] = [];
             this.proplist[ename]['events'] = [];
+            this.proplist[ename]['inherits']= [];
             var plist = this.proplist[ename]['props'] ;
             var elist = this.proplist[ename]['events'];
+            var ilist = this.proplist[ename]['inherits'];
              /*
              we need...
              p.name
@@ -283,7 +285,7 @@ Gtk = XObject.define(
             
             // parent!!?!!?
             var pi = GIRepository.object_info_get_parent(bi);
-            this.proplist[ename]['inherits'] = [];
+            
             if (pi) {
                 
                    
@@ -293,7 +295,7 @@ Gtk = XObject.define(
             
                 evlist.push.apply(evlist,this.proplist[pname]['events']);
                 plist.push.apply(plist,this.proplist[pname]['props']);
-                this.proplist[ename]['inherits'].push.apply(this.proplist[pname]['inherits']);
+                ilist.push.apply(ilist,this.proplist[pname]['inherits']);
             }
             
             // implements needs to be more carefull as it could add dupes..
@@ -303,11 +305,11 @@ Gtk = XObject.define(
                 var prop = GIRepository.object_info_get_interface(bi,i);
                 var iface = GIRepository.base_info_get_namespace(prop) +'.'+ 
                     GIRepository.base_info_get_name(prop);
-                if ( this.proplist[ename]['inherits'].indexOf(iface) > -1) {
+                if ( ilist.indexOf(iface) > -1) {
                     continue;
                 }
                 this.getPropertiesFor(iface, 'props');
-                this.proplist[ename]['inherits'].push(iface);
+                ilist.push(iface);
                 evlist.push.apply(evlist,this.proplist[iface]['events']);
                 plist.push.apply(plist,this.proplist[iface]['props']);
             }
