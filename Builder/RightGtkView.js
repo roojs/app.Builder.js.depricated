@@ -215,7 +215,7 @@ RightGtkView = new XObject({
                         getActiveNode : function(x,y)
                         {
                            // workout what node is here..
-                            return '';
+                            return '0'; // top..
                         }
                     }
                 ]
