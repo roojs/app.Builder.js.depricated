@@ -236,7 +236,7 @@ RightGtkView = new XObject({
             }
              x.get_global_object()._top.el.show_all();
             
-        }
+        },
         
         buildJS: function(data) {
             var i = [ 'Gtk', 'Gdk', 'Pango' ];
