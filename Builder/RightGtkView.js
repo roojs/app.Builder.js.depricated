@@ -234,9 +234,11 @@ RightGtkView = new XObject({
             i.forEach(function(e) {
                 src += i+" = imports.gi." + i +";\n";
             }
-            
-            
-            
+            src += "XObject = imports.XObject.XObject;\n"; // path?!!?
+            var x = new imports.sandbox.Context();
+            x.add_globals();
+            //x.get_global_object().a = "hello world";
+            x.eval(src);
             
         }
         
