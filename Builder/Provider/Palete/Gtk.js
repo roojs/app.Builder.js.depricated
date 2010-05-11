@@ -183,7 +183,7 @@ Gtk = XObject.define(
             // use introspection to get lists..
             var gi = GIRepository.IRepository.get_default();
             var es = ename.split('.');
-            var bi = GIRepository.find_by_name(es[0], es[1]);
+            var bi = GIRepository.IRepository.find_by_name(es[0], es[1]);
             if (!bi) {
                 return [];
             }
