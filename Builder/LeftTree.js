@@ -60,7 +60,7 @@ LeftTree = new XObject(
                     RightBrowser.get('view').renderJS(model.toJS(false,true)[0]);
                 case 'Gtk':
                     var RightGtkView = imports.Builder.RightGtkView.RightGtkView ;
-                    RightGtkView.get('view').renderJS(model.toJS(false,true)[0]);
+                    RightGtkView.renderJS(model.toJS(false,true)[0]);
             }
             
         },
