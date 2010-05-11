@@ -427,7 +427,7 @@ LeftTree = new XObject(
                         
                         loadFile : function(f)
                         {
-                            //console.dump(f);
+                            console.dump(f);
                             this.el.clear();
                             this.file = f;
                             
