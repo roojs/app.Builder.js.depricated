@@ -204,7 +204,7 @@ Gtk = XObject.define(
                     'interface_info_get_property',
                     'interface_info_get_n_signals',
                     'interface_info_get_signal'
-                ] : 
+                ]; 
             
             
             this.proplist[ename] = {}
