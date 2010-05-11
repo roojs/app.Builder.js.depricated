@@ -498,12 +498,13 @@ LeftTree = new XObject(
                                 print ("********* PALETE PROVIDER MISSING?!!");
                             }
                             LeftTree.renderView();
-                            var pr = LeftProjectTree.project;
+                            
                             pm.load( LeftTree.getPaleteProvider().gatherList(this.listAllTypes()));
                             
                             
                                     
-                            Window.get('view-notebook').el.set_current_page(pr.xtype == 'Roo' ? 0 : -1);
+                            Window.get('view-notebook').el.set_current_page(
+                                LeftTree.get('model').file.getType()== 'Roo' ? 0 : -1);
                                     
                             
                             
