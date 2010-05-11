@@ -102,13 +102,13 @@ Gtk = XObject.define(
                                 
             // properties.. -- and parent ones...!!!
             for (var i =0;i <  GIRepository.object_info_get_n_properties(bi); i++) {
-                var pi = GIRepository.object_info_get_property(bi, i);  
+                var prop = GIRepository.object_info_get_property(bi, i);  
                 var flags =  GI.property_info_get_flags(prop); // check for readonly..
-
+                n_original = this.typeToName(GIRepository.property_info_get_type(prop));
                 var add = {
-                     name : base_info_get_name(pi),
-                     type :   this.typeToName(GIRepository.property_info_get_type(prop)),
-                     desc : 
+                     name : base_info_get_name(prop),
+                     type :   n_original.replace(/\-/g, '_')
+                     desc : this.doc(ename + '.' + n_original);
                      sig : ''
                 }
                 this.proplist[ename]['props'].push(add)
