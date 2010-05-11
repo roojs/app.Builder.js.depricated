@@ -195,15 +195,15 @@ Gtk = XObject.define(
             var etype = GIRepository.base_info_get_type(bi);
             var meth = etype == GIRepository.IInfoType.INTERFACE ?
                 [ 
-                    'object_info_get_n_properties',
-                    'object_info_get_property',
-                    'object_info_get_n_signals',
-                    'object_info_get_signal'
-                ] : [ 
                     'interface_info_get_n_properties',
                     'interface_info_get_property',
                     'interface_info_get_n_signals',
                     'interface_info_get_signal'
+                ] : [ 
+                    'object_info_get_n_properties',
+                    'object_info_get_property',
+                    'object_info_get_n_signals',
+                    'object_info_get_signal'
                 ]; 
             
             
