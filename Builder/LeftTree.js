@@ -59,7 +59,6 @@ LeftTree = new XObject(
             
         },
         
-        
         atoms : {
            "STRING" : Gdk.atom_intern("STRING")
         },
@@ -171,7 +170,7 @@ LeftTree = new XObject(
                         var value = new GObject.Value('');
                         LeftTree.get('model').el.get_value(iter, 2, value);
                         var data = JSON.parse(value.value);
-                        var xname = Roo.guessName(data);
+                        var xname = LeftTree.get('model').file.guessName(data);
                         
                         this.el.dragData = xname;
                         this.el.dropList = LeftTree.get('model').provider.getDropList(xname);
@@ -532,7 +531,7 @@ LeftTree = new XObject(
                                     return [];
                                 }
                                 
-                                var xname = Roo.guessName(this.treemap[path]);
+                                var xname = LeftTree.get('model').file..guessName(this.treemap[path]);
                                 var match = false;
                                 var prop = '';
                                 targets.forEach(function(tg) {
@@ -703,7 +702,9 @@ LeftTree = new XObject(
                                 var value = new GObject.Value('');
                                 LeftTree.get('model').el.get_value(iter, 2, value);
                                 var data = JSON.parse(value.value);
-                                var xname = Roo.guessName(data);
+                                
+                                
+                                var xname = LeftTree.get('model').file..guessName(data);
                                 console.log('selected:' + xname);
                                 if (xname.length) {
                                     return [ xname ];
@@ -717,7 +718,7 @@ LeftTree = new XObject(
                             {
                                 li.forEach(function(el) {
                                     // this is specific to roo!!!?
-                                    var fullpath =  Roo.guessName(el);
+                                    var fullpath =  LeftTree.get('model').file..guessName(el);
                                     if (fullpath.length && ret.indexOf(fullpath) < 0) {
                                         ret.push(fullpath);
                                     }
