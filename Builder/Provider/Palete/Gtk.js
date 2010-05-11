@@ -266,7 +266,7 @@ Gtk = XObject.define(
             for (var i =0;i <  GIRepository[meth[2]](bi); i++) {
                 var prop = GIRepository[meth[3]](bi, i);  
                 var n_original =  GIRepository.base_info_get_name(prop);
-                 
+                 print ('signal: ' + n_original); 
                 var add = {
                     name :  n_original.replace(/\-/g, '_'),
                     type : 'function', //???
