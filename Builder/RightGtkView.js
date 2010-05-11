@@ -224,6 +224,24 @@ RightGtkView = new XObject({
         {
             // can we mess with data?!?!?
             
+            data.listeners['show'] = function() {
+                var r = new Gdk.Rectangle();
+                   
+                var pb = ow.get_snapshot(r);
+                print(r.width);print(r.height);
+                var gc = new Gdk.GC.c_new(x.window);
+                
+                // 10 points all round..
+                var full = new Gdk.Pixmap.c_new (x.window, r.width+20, r.height+20, pb.get_depth());
+                Gdk.draw_drawable (full, gc, pb, 0, 0, 10, 10, r.width, r.height);
+                Gdk.draw_rectangle(full, gc, true, 1, 1, 10, 10);
+
+                var img = new Gtk.Image.from_pixmap ( full, null);
+                //var img = new Gtk.Image.from_file("/home/alan/solarpanels.jpeg");
+                x.add(img)
+                img.show();
+                return 0;
+            })
             /**
              * first effort..
              * sandbox it? - nope then will have dificulting passing. stuff aruond..
@@ -238,12 +256,27 @@ RightGtkView = new XObject({
             
             src += '_top=new XObject('+ this.mungeToString(data) + ')\n;';
             src += '_top.init();\n';
-            src += '_top.el.show_all();\n';
+            src += '_top.el.show_all();\n'; // not needed??
             var x = new imports.sandbox.Context();
             x.add_globals();
             //x.get_global_object().a = "hello world";
             print(src);
             x.eval(src);
+            var r = new Gdk.Rectangle();
+            var pb = x.get_global_object()._top.el.get_snapshot(r);
+            x.get_global_object().el.destroy();
+            x._top = false;
+            
+            var gc = new Gdk.GC.c_new(this.el.window);
+                
+                // 10 points all round..
+            var full = new Gdk.Pixmap.c_new (this.el.window, r.width+20, r.height+20, pb.get_depth());
+            Gdk.draw_drawable (full, gc, pb, 0, 0, 10, 10, r.width, r.height);
+            Gdk.draw_rectangle(full, gc, true, 1, 1, 10, 10);
+            this.get('view').el.set_from_pixmap(full, null);
+            //var img = new Gtk.Image.from_file("/home/alan/solarpanels.jpeg");
+            
+            
             
         },
         mungeToString:  function(obj)
