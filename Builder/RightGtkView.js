@@ -238,15 +238,15 @@ RightGtkView = new XObject({
             
             src += '_top=new XObject('+ this.mungeToString(data) + ')\n;';
             src += '_top.init();\n';
-            src += '_top.el.show_all();\n'; // not needed??
+            
             var x = new imports.sandbox.Context();
             x.add_globals();
             //x.get_global_object().a = "hello world";
             print(src);
             x.eval(src);
             var r = new Gdk.Rectangle();
-            var pb = x.get_global_object()._top.el.show_all();
-            var pb = x.get_global_object()._top.el.hide();
+            x.get_global_object()._top.el.show_all();
+            x.get_global_object()._top.el.hide();
             var pb = x.get_global_object()._top.el.get_snapshot(r);
             x.get_global_object()._top.el.destroy();
             x._top = false;
