@@ -76,7 +76,7 @@ Roo = XObject.define(
         
         getType: function() {
             return 'Roo';
-        }
+        },
          
         loadItems : function(cb)
         {
