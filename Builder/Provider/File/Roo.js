@@ -78,8 +78,7 @@ Roo = XObject.define(
             return 'Roo';
         },
         
-        
-    }
+      
         loadItems : function(cb)
         {
             console.log("load Items!");
