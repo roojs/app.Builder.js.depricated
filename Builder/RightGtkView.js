@@ -273,7 +273,7 @@ RightGtkView = new XObject({
             
             keys.forEach(function(i) {
                 var el = obj[i];
-                if (!isArray && skip.index(i) > -1) {
+                if (!isArray && skip.indexOf(i) > -1) {
                     return;
                 }
                 
