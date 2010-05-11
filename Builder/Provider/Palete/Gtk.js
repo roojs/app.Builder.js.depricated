@@ -230,10 +230,13 @@ Gtk = XObject.define(
                     return ty;
                 }
                 // we can accept enum types here..
+                var interface_info = GIRepository.type_info_get_interface (type_info);        
+                var interface_type = GIRepository.base_info_get_type (interface_info);
+                if (interface_type != GIRepository.IInfoType.ENUM) {
+                    return false;
+                }
+                return GIRepository.base_info_get_name(interface_info);
                 
-                
-                
-                return false;
             }
             // properties.. -- and parent ones...!!!
             for (var i =0;i <  GIRepository[meth[0]](bi); i++) {
