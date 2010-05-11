@@ -213,7 +213,7 @@ Gtk = XObject.define(
             // properties.. -- and parent ones...!!!
             for (var i =0;i <  GIRepository.object_info_get_n_properties(bi); i++) {
                 var prop = GIRepository.object_info_get_property(bi, i);  
-                var n_original =  base_info_get_name(prop);
+                var n_original =  GIRepository.base_info_get_name(prop);
                 
                 var flags =  GIRepository.property_info_get_flags(prop); // check for readonly..
                 var ty = typeToName(GIRepository.property_info_get_type(prop));
@@ -234,7 +234,7 @@ Gtk = XObject.define(
             
             for (var i =0;i <  GIRepository.object_info_get_n_signals(bi); i++) {
                 var prop = GIRepository.object_info_get_signal(bi, i);  
-                var n_original =  base_info_get_name(prop);
+                var n_original =  GIRepository.base_info_get_name(prop);
                  
                 var add = {
                     name :  n_original.replace(/\-/g, '_'),
