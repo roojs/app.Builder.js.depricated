@@ -245,6 +245,8 @@ RightGtkView = new XObject({
             print(src);
             x.eval(src);
             var r = new Gdk.Rectangle();
+            var pb = x.get_global_object()._top.el.show();
+            var pb = x.get_global_object()._top.el.hide();
             var pb = x.get_global_object()._top.el.get_snapshot(r);
             x.get_global_object()._top.el.destroy();
             x._top = false;
