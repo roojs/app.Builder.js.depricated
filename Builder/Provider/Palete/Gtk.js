@@ -276,7 +276,7 @@ Gtk = XObject.define(
                     desc : this.doc(ename + '.' + n_original),
                     sig  : '' // fixme..
                 }
-                evlist.push(add);
+                elist.push(add);
             }
             
             if (etype == GIRepository.IInfoType.INTERFACE ) {
@@ -293,7 +293,7 @@ Gtk = XObject.define(
                     GIRepository.base_info_get_name(pi);
                 this.getPropertiesFor(pname, 'props');
             
-                evlist.push.apply(evlist,this.proplist[pname]['events']);
+                elist.push.apply(elist,this.proplist[pname]['events']);
                 plist.push.apply(plist,this.proplist[pname]['props']);
                 ilist.push.apply(ilist,this.proplist[pname]['inherits']);
             }
@@ -310,7 +310,7 @@ Gtk = XObject.define(
                 }
                 this.getPropertiesFor(iface, 'props');
                 ilist.push(iface);
-                evlist.push.apply(evlist,this.proplist[iface]['events']);
+                elist.push.apply(elist,this.proplist[iface]['events']);
                 plist.push.apply(plist,this.proplist[iface]['props']);
             }
             
