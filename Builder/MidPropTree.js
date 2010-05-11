@@ -13,7 +13,7 @@ console = imports.console;
 
 Roo             = imports.Builder.Provider.Palete.Roo.Roo;
 
-LeftPanel       = imports.Builder.LeftPanel.LeftPanel;
+
 
 /**
  * 
@@ -107,8 +107,9 @@ MidPropTree = new XObject({
                         
                         
                         MidPropTree.hideWin();
-                        
+                        var LeftPanel       = imports.Builder.LeftPanel.LeftPanel;
                         if (type == 'function') {
+                            
                             LeftPanel.get('model').add('|' +key, type, skel) //, skel);
                             return;
                         }
