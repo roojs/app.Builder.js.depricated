@@ -47,7 +47,7 @@ LeftTree = new XObject(
         renderView: function() // renders into the preview pane..
         {
             var model = this.get('model');
-            print("RENDER VIEW?" + model.file.xtype);
+            print("RENDER VIEW?" + model.file.getType());
             switch( model.file.xtype) {
                 case 'Roo':
                     var RightBrowser    = imports.Builder.RightBrowser.RightBrowser;
