@@ -78,7 +78,7 @@ Roo = XObject.define(
             this.map = cfg;
             
         }
-        load : function()
+        loadProps: function()
         {
              
 
@@ -94,6 +94,7 @@ Roo = XObject.define(
         }
         getPropertiesFor: function(ename, type)
         {
+            this.loadProps();
             if (typeof(this.proplist[ename]) == 'undefined' || 
                 typeof(this.proplist[ename][type]) == 'undefined' ) {
                     return [];
