@@ -248,7 +248,7 @@ RightGtkView = new XObject({
         {
             var keys = [];
             var isArray = false;
-            if (obj.constructor == Array) {
+            if (obj.constructor === Array) {
                 for (var i= 0; i < obj.length; i++) {
                     keys.push(i);
                 }
