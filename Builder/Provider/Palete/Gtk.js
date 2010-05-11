@@ -104,38 +104,4 @@ Gtk = XObject.define(
         
     }
 );
-
-    // static load @ starttime.
-XObject.extend(Gtk, {
-        proplist:  [],
-         
-        load : function()
-        {
-             
-            return;
-            if (this.proplist) {
-                return;
-            }
-            
-            var file = Gio.file_new_for_path(__script_path__ +'/../rooprops.json');
-            var _this = this;
-            file.read_async(0, null, function(source,result) {
-                var stream = source.read_finish(result)
-                var dstream = new Gio.DataInputStream.c_new(stream);
-                var data =  dstream.read_until("");       
-                _this.proplist = JSON.parse(data).data;
-
-            });
-        },
-        guessName : function(ar)
-        {
-            
-           
-                                
-                                 
-        }
-        
-    }
-);
-
-Gtk.load();
+ 
