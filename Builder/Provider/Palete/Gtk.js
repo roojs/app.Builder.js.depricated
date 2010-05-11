@@ -187,10 +187,26 @@ Gtk = XObject.define(
             var gi = GIRepository.IRepository.get_default();
             var es = ename.split('.');
             var bi = gi.find_by_name(es[0], es[1]);
+            
             if (!bi) {
                 print("COULND NOT FIND BY NAME");
                 return [];
             }
+            var etype = GIRepository.base_info_get_type(bi);
+            var meth = etype == GIRepository.IInfoType.INTERFACE ?
+                [ 
+                    'object_info_get_n_properties',
+                    'object_info_get_property',
+                    'object_info_get_n_signals',
+                    'object_info_get_signal'
+                ] : [ 
+                    'interface_info_get_n_properties',
+                    'interface_info_get_property',
+                    'interface_info_get_n_signals',
+                    'interface_info_get_signal'
+                ] : 
+            
+            
             this.proplist[ename] = {}
             this.proplist[ename]['props'] = [];
             this.proplist[ename]['events'] = [];
@@ -215,8 +231,8 @@ Gtk = XObject.define(
                 return false;
             }
             // properties.. -- and parent ones...!!!
-            for (var i =0;i <  GIRepository.object_info_get_n_properties(bi); i++) {
-                var prop = GIRepository.object_info_get_property(bi, i);  
+            for (var i =0;i <  GIRepository[meth[0]](bi); i++) {
+                var prop = GIRepository[meth[1]](bi, i);  
                 var n_original =  GIRepository.base_info_get_name(prop);
                 
                 var flags =  GIRepository.property_info_get_flags(prop); // check for readonly..
@@ -238,8 +254,8 @@ Gtk = XObject.define(
            
             // signals..
             
-            for (var i =0;i <  GIRepository.object_info_get_n_signals(bi); i++) {
-                var prop = GIRepository.object_info_get_signal(bi, i);  
+            for (var i =0;i <  GIRepository[meth[2]](bi); i++) {
+                var prop = GIRepository[meth[3]](bi, i);  
                 var n_original =  GIRepository.base_info_get_name(prop);
                  
                 var add = {
