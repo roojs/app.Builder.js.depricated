@@ -226,8 +226,15 @@ RightGtkView = new XObject({
         {
             /**
              * first effort..
-             * sandbox it?
+             * sandbox it? - nope then will have dificulting passing. stuff aruond..
+             * 
              */
+            var i = [ 'Gtk', 'Gdk', 'Pango' ];
+            var src = "";
+            i.forEach(function(e) {
+                src += i+" = imports.gi." + i +";\n";
+            }
+            
             
             
             
