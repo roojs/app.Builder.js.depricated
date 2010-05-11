@@ -185,7 +185,7 @@ MidPropTree = new XObject({
                             }
                             
                             var elementList = palete.getPropertiesFor(fullpath, type);
-                            
+                            print ("GOT " + elementList.length + " items for " + fullpath + "|" + type);
                             
                            
                             
