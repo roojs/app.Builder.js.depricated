@@ -222,7 +222,9 @@ LeftTree = new XObject(
                         }
                         var data = {};
                         print("GETTING POS");
-                        if (!LeftTree.get('view').el.get_dest_row_at_pos(x,y, data)) {
+                        var isOver = LeftTree.get('view').el.get_dest_row_at_pos(x,y, data);
+                        print("ISOVER? " + isOver);
+                        if (!isOver) {
                             return false; // not over apoint!?!
                         }
                         print("DUMPING DATA");
