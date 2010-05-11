@@ -74,7 +74,9 @@ Roo = XObject.define(
         },
         
         
-        
+        getType: function() {
+            return 'Gtk';
+        }
          
         loadItems : function(cb)
         {
