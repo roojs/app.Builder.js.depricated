@@ -76,6 +76,96 @@ Gtk = XObject.define(
             this.map = cfg;
              
         },
+        
+        
+     commentLoad : function(ns)
+     {
+         
+         if (typeof(this.comments[ns]) != 'undefined') {
+             return;
+         }
+         
+         console.log("LOAD DOCS: " + ns);
+         var gi = GIRepository.IRepository.get_default();
+         var ver = GIRepository.get_version(ns);
+         if (!ver) {
+             this.comments[ns] = {};
+             return;
+         }
+         var ret = { };
+         
+         // no idea why this is broken on my build system.
+         var  getAttribute = function(n, name){
+             var properties = n.properties;
+             while (properties){
+                 if (properties.name == name)
+                     return properties.children.content;
+                 properties = properties.next
+             }
+             return null;
+         }
+                 
+         
+         function walk (element, path) {
+             
+             
+             if (!element) {
+                 return;
+             }
+             
+             var n =  getAttribute(element, 'name') ;
+             //console.log("WALK" + n);
+             if (n) {
+                 path += path.length ? '.' : '';
+                 path += n;
+             }
+             if (element.name == 'return-value') {
+                 path += '.return-value';
+             }
+             
+             
+                var d =   getAttribute(element,'doc');
+                if (d) {
+                 //   Seed.print(path + ':' + d);
+                    ret[path] = d;
+                }
+                
+                var child = element.children;
+
+                while (child){
+                    //console.log(child.tag);
+                    if (child.type == "element"){
+                        walk (child, path);
+                    }
+                    child = child.next;
+                }
+            }
+            
+            var pth = GIRepository.IRepository.get_search_path ();
+            
+            
+            var gir_path = pth[0].replace(/lib\/girepository-1.0/, 'share\/gir-1.0');
+           
+            
+            //console.log(fn);
+            var  fn = gir_path + '/'+ ns + '-' + ver + '.gir';
+           // console.log(fn);
+            
+            if (!GLib.file_test(fn, GLib.FileTest.EXISTS)) {
+                console.log('missing docc file ' + fn);
+                this.comments[ns] = {};
+                
+                return;
+            }
+            var doc = xml.parseFile(fn);
+            //console.log("xmldoc?" + doc);
+            walk (doc.root, '');
+            //console.dump(ret);
+            this.comments[ns] = ret;
+
+        },
+       
+        
         doc : function(what) {
             var ns = what.split('.').shift();
             this.commentLoad(ns);
@@ -89,9 +179,9 @@ Gtk = XObject.define(
                     return this.proplist[ename][type];
             }
             // use introspection to get lists..
-            var gi = GI.IRepository.get_default();
+            var gi = GIRepository.IRepository.get_default();
             var es = ename.split('.');
-            var bi = gi.find_by_name(es[0], es[1]);
+            var bi = GIRepository.find_by_name(es[0], es[1]);
             if (!bi) {
                 return [];
             }
@@ -105,9 +195,9 @@ Gtk = XObject.define(
             p.desc
             p.sig */
            function typeToName (type_info) {
-               var ty = GI.type_tag_to_string( GI.type_info_get_tag(type_info));
+               var ty = GIRepository.type_tag_to_string( GIRepository.type_info_get_tag(type_info));
                
-                if ((ty == 'void') && GI.type_info_is_pointer(type_info)) {
+                if ((ty == 'void') && GIRepository.type_info_is_pointer(type_info)) {
                     return false;
                 }
                 if (ty == 'array') {
@@ -123,7 +213,7 @@ Gtk = XObject.define(
                 var prop = GIRepository.object_info_get_property(bi, i);  
                 var n_original =  base_info_get_name(prop);
                 
-                var flags =  GI.property_info_get_flags(prop); // check for readonly..
+                var flags =  GIRepository.property_info_get_flags(prop); // check for readonly..
                 var ty = typeToName(GIRepository.property_info_get_type(prop));
                 
                 if (ty === false) {
