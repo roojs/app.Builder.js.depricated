@@ -184,7 +184,10 @@ LeftTree = new XObject(
 
                         // make the drag icon a picture of the node that was selected
                         var path = LeftTree.get('model').el.get_path(iter);
+                        this.el.treepath = path.to_string();
+                        
                         var pix = this.el.create_row_drag_icon ( path);
+                        
                         Gtk.drag_set_icon_pixmap (ctx,
                             pix.get_colormap(),
                             pix,
@@ -233,8 +236,10 @@ LeftTree = new XObject(
                         if (!isOver) {
                             return false; // not over apoint!?!
                         }
-                        print("DUMPING DATA");
-                        console.dump(data);
+                        
+                        // check that 
+                        //print("DUMPING DATA");
+                        //console.dump(data);
                         // path, pos
                         
                         Seed.print(data.path.to_string() +' => '+  data.pos);
