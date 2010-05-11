@@ -91,7 +91,7 @@ Roo = XObject.define(
             
             var data =  File.read(__script_path__ +'/../rooprops.json');
             this.proplist = JSON.parse(data).data;
-        }
+        },
         getPropertiesFor: function(ename, type)
         {
             this.loadProps();
