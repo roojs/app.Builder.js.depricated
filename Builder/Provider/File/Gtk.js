@@ -59,7 +59,7 @@ Gtk = XObject.define(
     },
     Base,   
     {
-        
+        xtype : 'Gtk',
         setNSID : function(id)
         {
             
