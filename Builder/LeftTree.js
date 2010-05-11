@@ -323,7 +323,7 @@ LeftTree = new XObject(
                             var pm = RightPalete.get('model');
                             if (!RightPalete.provider) {
                                 // it may not be loaded yet..
-                                returnt true;
+                                return  true;
                             }
                             pm.load( RightPalete.provider.gatherList(LeftTree.get('model').listAllTypes()));
                            
