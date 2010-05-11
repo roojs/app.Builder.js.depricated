@@ -81,7 +81,13 @@ Base = XObject.define(
                 return a.path > b.path;// ? 1 : -1;
             });
         },
-        
+        guessName : function(ar) // turns the object into full name.
+        {
+             // eg. xns: Roo, xtype: XXX -> Roo.xxx
+            return ar['|xns'] +'.' + ar['xtype'];
+                            
+                                 
+        }
         
         /*
         Roo specific?
