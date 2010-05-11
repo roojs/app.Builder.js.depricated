@@ -83,47 +83,47 @@ Gtk = XObject.define(
      commentLoad : function(ns)
      {
          
-         if (typeof(this.comments[ns]) != 'undefined') {
-             return;
-         }
-         
-         console.log("LOAD DOCS: " + ns);
-         var gi = GIRepository.IRepository.get_default();
-         var ver = GIRepository.get_version(ns);
-         if (!ver) {
-             this.comments[ns] = {};
-             return;
-         }
-         var ret = { };
-         
-         // no idea why this is broken on my build system.
-         var  getAttribute = function(n, name){
-             var properties = n.properties;
-             while (properties){
-                 if (properties.name == name)
+        if (typeof(this.comments[ns]) != 'undefined') {
+            return;
+        }
+
+        console.log("LOAD DOCS: " + ns);
+        var gi = GIRepository.IRepository.get_default();
+        var ver = GIRepository.get_version(ns);
+        if (!ver) {
+            this.comments[ns] = {};
+            return;
+        }
+        var ret = { };
+
+        // no idea why this is broken on my build system.
+        function getAttribute(n, name){
+            var properties = n.properties;
+            while (properties){
+                if (properties.name == name)
                      return properties.children.content;
                  properties = properties.next
-             }
-             return null;
-         }
+            }
+            return null;
+        }
                  
          
-         function walk (element, path) {
+        function walk(element, path) {
              
              
-             if (!element) {
-                 return;
-             }
-             
-             var n =  getAttribute(element, 'name') ;
-             //console.log("WALK" + n);
-             if (n) {
-                 path += path.length ? '.' : '';
-                 path += n;
-             }
-             if (element.name == 'return-value') {
-                 path += '.return-value';
-             }
+            if (!element) {
+                return;
+            }
+            
+            var n =  getAttribute(element, 'name') ;
+            //console.log("WALK" + n);
+            if (n) {
+                path += path.length ? '.' : '';
+                path += n;
+            }
+            if (element.name == 'return-value') {
+                path += '.return-value';
+            }
              
              
                 var d =   getAttribute(element,'doc');
