@@ -1,0 +1,21 @@
+
+// what can be added where...
+
+left:
+ *top
+right:
+ Gtk.Window 
+ Gtk.Dialog
+ Gtk.MessageDialog
+ Gtk.AboutDialog
+ Gtk.Dialog
+
+// these should really be based on heirachy..
+ 
+left: 
+ Gtk.Window
+ Gtk.Dialog
+ Gtk.MessageDialog
+ Gtk.AboutDialog
+ Gtk.Dialog
+ Gtk.Bin
