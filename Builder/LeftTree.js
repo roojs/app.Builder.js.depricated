@@ -321,6 +321,10 @@ LeftTree = new XObject(
                             MidPropTree.hideWin();
                             var RightPalete     = imports.Builder.RightPalete.RightPalete;
                             var pm = RightPalete.get('model');
+                            if (!RightPalete.provider) {
+                                // it may not be loaded yet..
+                                returnt true;
+                            }
                             pm.load( RightPalete.provider.gatherList(LeftTree.get('model').listAllTypes()));
                            
                             return true;
