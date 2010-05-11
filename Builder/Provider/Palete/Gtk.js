@@ -187,6 +187,7 @@ Gtk = XObject.define(
             var es = ename.split('.');
             var bi = gi.find_by_name(es[0], es[1]);
             if (!bi) {
+                print("COULND NOT FIND BY NAME");
                 return [];
             }
             this.proplist[ename] = {}
