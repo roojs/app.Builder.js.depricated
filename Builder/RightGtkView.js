@@ -222,6 +222,8 @@ RightGtkView = new XObject({
         ],
         renderJS : function(data)
         {
+            // can we mess with data?!?!?
+            
             /**
              * first effort..
              * sandbox it? - nope then will have dificulting passing. stuff aruond..
