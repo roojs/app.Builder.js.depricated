@@ -265,12 +265,12 @@ RightGtkView = new XObject({
                 if (typeof(i) == 'string' && i[0] == '|') {
                     // does not hapepnd with arrays..
                     els.push(JSON.stringify(i.substring(1)) + ":" + obj[i]);
-                    continue;
+                    return;
                 }
                 var left = isArray ? ('' +i) : (JSON.stringify(i) + " : " )
                 if (typeof(el) == 'object') {
                     els.push(left + _this.mungeToString(el));
-                    continue;
+                    return;
                 }
                 els.push(JSON.stringify(i) + ":" + obj[i]);
             });
