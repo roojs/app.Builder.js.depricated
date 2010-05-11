@@ -20,7 +20,8 @@ Gtk = XObject.define(
         // various loader methods..
           this.map = [];
         this.load();
-        this.proplist = {}; 
+        this.proplist = {};
+        this.comments = { }; 
         // no parent...
         
        
