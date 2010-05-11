@@ -238,7 +238,8 @@ LeftTree = new XObject(
                         }
                         // drag node is parent of child..
                         if (src.treepath  && 
-                            src.treepath == data.path.to_string().substring(src.treepath.length))
+                            src.treepath == data.path.to_string().substring(src.treepath.length)) {
+                                
                             return false;
                         }
                         
