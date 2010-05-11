@@ -678,7 +678,7 @@ LeftTree = new XObject(
                             
                             
                         },
-                        moveNode: function(target_data, type) {
+                        moveNode: function(target_data) {
                             
                             print("MOVE NODE");
                             console.dump(target_data);
