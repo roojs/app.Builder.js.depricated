@@ -142,7 +142,7 @@ MidPropTree = new XObject({
                         {
                             this.el.clear();
                             // roo specific..
-                            var fullpath = Roo.guessName(ar);
+                            var fullpath = LeftTree.get('model').file.guessName.guessName(ar);
                             this.currentData  = false;
                             if (!fullpath.length) {
                                 return;
