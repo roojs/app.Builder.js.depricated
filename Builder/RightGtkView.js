@@ -256,8 +256,7 @@ RightGtkView = new XObject({
             // draw a white background..
             gc.set_rgb_fg_color({ red: 0, white: 0, black : 0 });
             Gdk.draw_rectangle(full, gc, true, 0, 0, r.width+20, r.height+20);
-            
-            
+            // paint image..
             Gdk.draw_drawable (full, gc, pb, 0, 0, 10, 10, r.width, r.height);
             // boxes..
             gc.set_rgb_fg_color({ red: 255, white: 255, black : 255 });
