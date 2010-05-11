@@ -231,7 +231,7 @@ RightGtkView = new XObject({
             var src = "";
             i.forEach(function(e) {
                 src += i+" = imports.gi." + i +";\n";
-            }
+            });
             src += "XObject = imports.XObject.XObject;\n"; // path?!!?
             
             src += '_top=new XObject('+ this.mungeToString(data) + ');';
