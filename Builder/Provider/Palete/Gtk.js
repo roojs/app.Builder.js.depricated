@@ -1,13 +1,15 @@
 //<Script type="text/javascript">
  
 Gio = imports.gi.Gio;
-
+GIRepository  = imports.gi.GIRepository;
+xml     = imports.libxml;
 console = imports.console;
 XObject = imports.XObject.XObject;
 
 Base = imports.Builder.Provider.Palete.Base.Base;
 File = imports.File.File;
 //----------------------- our roo verison
+
 
 
 
