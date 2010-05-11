@@ -226,8 +226,13 @@ Gtk = XObject.define(
                     return false; // unspported   
                 }
                 if (ty != 'interface') {
+                    
                     return ty;
                 }
+                // we can accept enum types here..
+                
+                
+                
                 return false;
             }
             // properties.. -- and parent ones...!!!
@@ -269,7 +274,7 @@ Gtk = XObject.define(
             
             if (etype == GIRepository.IInfoType.INTERFACE ) {
                   return this.proplist[ename][type];
-               }
+            }
             
             // parent!!?!!?
             var pi = GIRepository.object_info_get_parent(bi);
