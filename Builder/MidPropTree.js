@@ -167,7 +167,7 @@ MidPropTree = new XObject({
                         showData : function (type) 
                         {
                             this.el.clear();
-                            if (!MidPropTree.activeElement) {
+                            if (!MidPropTree.activeElement || !type) {
                                 return; // no active element
                             }
                             var LeftTree       = imports.Builder.LeftTree.LeftTree;
