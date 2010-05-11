@@ -234,6 +234,7 @@ LeftTree = new XObject(
                         var isOver = LeftTree.get('view').el.get_dest_row_at_pos(x,y, data);
                         print("ISOVER? " + isOver);
                         if (!isOver) {
+                            Gdk.drag_status(ctx, 0 ,time);
                             return false; // not over apoint!?!
                         }
                         // drag node is parent of child..
@@ -242,7 +243,7 @@ LeftTree = new XObject(
                         
                         if (typeof(src.treepath) != 'undefined'  && 
                             src.treepath == data.path.to_string().substring(0,src.treepath.length)) {
-                                
+                             Gdk.drag_status(ctx, 0 ,time);
                             return false;
                         }
                         
