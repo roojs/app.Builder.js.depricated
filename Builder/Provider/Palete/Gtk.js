@@ -98,13 +98,31 @@ Gtk = XObject.define(
             p.type
             p.desc
             p.sig */
-           
-                                
+           function typeToName (type_info) {
+               var ty = GI.type_tag_to_string( GI.type_info_get_tag(type_info));
+               
+                if ((ty == 'void') && GI.type_info_is_pointer(type_info)) {
+                    return false;
+                }
+                if (ty == 'array') {
+                    return false; // unspported   
+                }
+                if (ty != 'interface') {
+                    return ty;
+                }
+                return false;
+            }
             // properties.. -- and parent ones...!!!
             for (var i =0;i <  GIRepository.object_info_get_n_properties(bi); i++) {
                 var prop = GIRepository.object_info_get_property(bi, i);  
+                var n_original =  base_info_get_name(prop);
+                
                 var flags =  GI.property_info_get_flags(prop); // check for readonly..
-                n_original = this.typeToName(GIRepository.property_info_get_type(prop));
+                var ty = typeToName(GIRepository.property_info_get_type(prop));
+                
+                if (ty === false) {
+                    continue;
+                }
                 var add = {
                      name : base_info_get_name(prop),
                      type :   n_original.replace(/\-/g, '_'),
@@ -113,7 +131,7 @@ Gtk = XObject.define(
                 }
                 this.proplist[ename]['props'].push(add)
             }
-            
+            // parent!!?!!?
             
             
         }
