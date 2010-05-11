@@ -309,7 +309,7 @@ LeftTree = new XObject(
                             }
 
                             if (ctx.action == Gdk.DragAction.MOVE) {
-                                delete_selection_data = true;
+                                //delete_selection_data = true;
                             }
                             
                             var source = Gtk.drag_get_source_widget(ctx);
