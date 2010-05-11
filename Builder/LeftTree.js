@@ -479,17 +479,14 @@ LeftTree = new XObject(
                             //console.dump(this.map);
                             var RightPalete     = imports.Builder.RightPalete.RightPalete;
                             var pm = RightPalete.get('model');
-                            
+                            // set up provider..
                             var LeftProjectTree     = imports.Builder.LeftProjectTree.LeftProjectTree;
-                            //if (!LeftProjectTree.project) {
-                            //    pm.provider = false;
-                            //}
                             RightPalete.provider = LeftProjectTree.project.getPalete();
                             
                             if (!RightPalete.provider) {
                                 print ("********* PALETE PROVIDER MISSING?!!");
-                               }
-                            
+                            }
+                            LeftTree.renderView();
                             var pr = LeftProjectTree.project;
                             pm.load( RightPalete.provider.gatherList(this.listAllTypes()));
                             
