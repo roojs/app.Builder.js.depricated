@@ -209,9 +209,7 @@ RightGtkView = new XObject({
                            
                             
                         },
-                        renderJS: function(data) {
-                            
-                        },
+                         
                         getActiveNode : function(x,y)
                         {
                            // workout what node is here..
