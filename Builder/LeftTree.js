@@ -323,7 +323,7 @@ LeftTree = new XObject(
                                     
                                     
                                 }
-                                Seed.print(this.targetData);
+                                //Seed.print(this.targetData);
                               
                             }
                             
