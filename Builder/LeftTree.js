@@ -349,7 +349,7 @@ LeftTree = new XObject(
                         
                         if (this.selection.count_selected_rows() < 1) {
                             LeftPanel.get('model').load( false);
-                            MidPropTree.setActiveElement(data);
+                           MidPropTree.activeElement =  false;
                             MidPropTree.hideWin();
                             var RightPalete     = imports.Builder.RightPalete.RightPalete;
                             var pm = RightPalete.get('model');
@@ -373,7 +373,7 @@ LeftTree = new XObject(
                         LeftTree.get('model').activeIter = iter;
                         
                         var data = JSON.parse(value.value);
-                        MidPropTree.setActiveElement(data);
+                        MidPropTree.activeElement =  data;
                         MidPropTree.hideWin();
                         LeftPanel.get('model').load( data);
                         
