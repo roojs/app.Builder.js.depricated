@@ -230,7 +230,7 @@ RightGtkView = new XObject({
             var i = [ 'Gtk', 'Gdk', 'Pango' ];
             var src = "";
             i.forEach(function(e) {
-                src += i+" = imports.gi." + i +";\n";
+                src += e+" = imports.gi." + e +";\n";
             });
             src += "XObject = imports.XObject.XObject;\n"; // path?!!?
             
