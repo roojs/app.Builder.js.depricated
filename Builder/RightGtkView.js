@@ -34,12 +34,13 @@ RightGtkView = new XObject({
                         
                         
                         xtype: Gtk.Button,
-                        label : 'Redraw',
+                        label : 'Show in New Window',
                         pack : [ 'pack_start', false, false, 0 ],
                         listeners : {
                             // pressed...
                             'button-press-event' : function(w, ev ){
                                 /// dump..
+                                RightGtkView.showInWindow();
                                 return true;
                                 // show the MidPropTree..
                             }
@@ -220,15 +221,13 @@ RightGtkView = new XObject({
             }
                 
         ],
-        renderJS : function(data)
+        
+        showInWindow: function ()
         {
-            // can we mess with data?!?!?
             
-            /**
-             * first effort..
-             * sandbox it? - nope then will have dificulting passing. stuff aruond..
-             * 
-             */
+        }
+        
+        buildJS: function(data) {
             var i = [ 'Gtk', 'Gdk', 'Pango' ];
             var src = "";
             i.forEach(function(e) {
@@ -238,11 +237,25 @@ RightGtkView = new XObject({
             
             src += '_top=new XObject('+ this.mungeToString(data) + ')\n;';
             src += '_top.init();\n';
+            print(src);
+            this.lastSrc = src;
+            return src;
+        },
+        
+        renderJS : function(data)
+        {
+            // can we mess with data?!?!?
             
+            /**
+             * first effort..
+             * sandbox it? - nope then will have dificulting passing. stuff aruond..
+             * 
+             */
+            var src = this.buildJS(data);
             var x = new imports.sandbox.Context();
             x.add_globals();
             //x.get_global_object().a = "hello world";
-            print(src);
+            
             try {
                 x.eval(src);
             } catch( e) {
