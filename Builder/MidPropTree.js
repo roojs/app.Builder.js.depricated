@@ -28,7 +28,7 @@ MidPropTree = new XObject({
         smooth_scroll : true,
         pack : [ 'pack_end', false, true, 0 ],
         
-          
+        activeElement : false, // used by left tree to set what list to show.  
         shadow_type :  Gtk.ShadowType.IN,
         init : function() {
             XObject.prototype.init.call(this); 
@@ -145,10 +145,15 @@ MidPropTree = new XObject({
                             // roo specific..
                             var LeftTree       = imports.Builder.LeftTree.LeftTree;
                             var fullpath = LeftTree.get('model').file.guessName(ar);
+                            var palete = LeftTree.getPaleteProvider();
+                            
+                            
                             this.currentData  = false;
                             if (!fullpath.length) {
                                 return;
                             }
+                            palete.getProperties()
+                            
                             this.currentData = Roo.proplist[fullpath];
                             
                              
@@ -162,7 +167,10 @@ MidPropTree = new XObject({
                         showData : function (type) 
                         {
                             
-                             this.el.clear();
+                            var LeftTree       = imports.Builder.LeftTree.LeftTree;
+                            var fullpath = LeftTree.get('model').file.guessName(ar);
+                            var palete = LeftTree.getPaleteProvider();
+                            this.el.clear();
                             if (!this.currentData) {
                                 Seed.print('data not loaded yet');
                                 return;
