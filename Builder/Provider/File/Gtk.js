@@ -27,7 +27,7 @@ Gtk = XObject.define(
         }
         
         
-        this.items = [];
+        this.items = false;
         if (cfg.json) {
             var jstr =  JSON.parse(cfg.json);
             this.items = [ jstr ];
@@ -78,7 +78,7 @@ Gtk = XObject.define(
             if (this.items !== false) {
                 return false;
             }
-              if (!cb) {
+            if (!cb) {
                 throw "no callback for loadItems";
             }
             Seed.print("load: " + this.path);
