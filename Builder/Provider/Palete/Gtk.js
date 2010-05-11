@@ -85,13 +85,13 @@ Gtk = XObject.define(
             }
             // use introspection to get lists..
             var gi = GI.IRepository.get_default();
-            
-            
-            this.loadProps();
-            if (typeof(this.proplist[ename]) == 'undefined' || 
-                typeof(this.proplist[ename][type]) == 'undefined' ) {
-                    return [];
+            var es = ename.split('.');
+            var bi = gi.find_by_name(es[0], es[1]);
+            if (!bi) {
+                return [];
             }
+            
+            
             
         }
         
