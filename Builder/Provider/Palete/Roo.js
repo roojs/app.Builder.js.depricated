@@ -10,6 +10,7 @@ File = imports.File.File;
 //----------------------- our roo verison
 
 
+// single instance controlled by projectmanager.
 
 Roo = XObject.define(
     function(cfg) {
@@ -77,17 +78,6 @@ Roo = XObject.define(
             this.map = cfg;
             
         }
-        
-         
-        
-        
-    }
-);
-
-    // static load @ starttime.
-XObject.extend(Roo, {
-        proplist:  false,
-         
         load : function()
         {
              
@@ -98,14 +88,29 @@ XObject.extend(Roo, {
             
             var file = Gio.file_new_for_path(__script_path__ +'/../rooprops.json');
             var _this = this;
-            file.read_async(0, null, function(source,result) {
-                var stream = source.read_finish(result)
-                var dstream = new Gio.DataInputStream.c_new(stream);
-                var data =  dstream.read_until("");       
-                _this.proplist = JSON.parse(data).data;
-
-            });
+            
+            var data =  File.read(__script_path__ +'/../rooprops.json');
+            this.proplist = JSON.parse(data).data;
         }
+        getPropertiesFor: function(ename, type)
+        {
+            if (typeof(this.proplist[ename]) == 'undefined' || 
+                typeof(this.proplist[ename][type]) == 'undefined' ) {
+                    return [];
+            }
+            return this.proplist[ename][type];
+        }
+        
+        
+        
+    }
+);
+
+    // static load @ starttime.
+XObject.extend(Roo, {
+        proplist:  false,
+         
+        
        
 });
 
