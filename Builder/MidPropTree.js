@@ -138,7 +138,7 @@ MidPropTree = new XObject({
                             ] );
                                 
                         },
-                 
+                        /*
                         load : function (ar)
                         {
                             this.el.clear();
@@ -161,20 +161,20 @@ MidPropTree = new XObject({
                             
                         },
                         
-                        
+                        */
                         
                         
                         showData : function (type) 
                         {
-                            
-                            var LeftTree       = imports.Builder.LeftTree.LeftTree;
-                            var fullpath = LeftTree.get('model').file.guessName(ar);
-                            var palete = LeftTree.getPaleteProvider();
                             this.el.clear();
-                            if (!this.currentData) {
-                                Seed.print('data not loaded yet');
-                                return;
+                            if (!MidPropTree.activeElement) {
+                                return; // no active element
                             }
+                            var LeftTree       = imports.Builder.LeftTree.LeftTree;
+                            var fullpath = LeftTree.get('model').file.guessName(MidPropTree.activeElement);
+                            var palete = LeftTree.getPaleteProvider();
+                            
+                             
                             
                             Seed.print('Showing right?');
                             if (!MidPropTree.shown) {
@@ -184,13 +184,14 @@ MidPropTree = new XObject({
                                 MidPropTree.shown = true;
                             }
                             
+                            var elementList = palete.getPropertiesFor(fullpath, type);
                             
                             
                            
                             
                             var iter = new Gtk.TreeIter();
-                            for(var i =0 ; i < this.currentData[type].length; i++) {
-                                var p=this.currentData[type][i];
+                            for(var i =0 ; i < elementList.length; i++) {
+                                var p=elementList[i];
                                 this.el.append(iter);
                               //  console.log( '<b>' + p.name +'</b> ['+p.type+']');
                                     //GObject.TYPE_STRING,  // real key
