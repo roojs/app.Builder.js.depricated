@@ -105,54 +105,8 @@ XObject.extend(Roo, {
                 _this.proplist = JSON.parse(data).data;
 
             });
-        },
-        guessName : function(ar)
-        {
-            
-            // console.log('xns:' + ar.xns + ', xtype:' + ar.xtype);
-            
-            ar = ar || { };
-               
-            if (!this.proplist) {
-                return '';
-            }
-            
-            var data = this.proplist;
-            
-            var xns = typeof(ar['|xns']) != 'undefined' ? ar['|xns'] : false;
-            
-            if (xns && ar.xtype) {
-                if (typeof(data[xns + '.' + ar.xtype]) == 'undefined') {
-                    console.log('no-match');
-                    return '';
-                }
-                console.log('match');
-                return xns + '.' + ar.xtype;
-
-            }        
-            if (typeof(data[ ar.xtype]) !== 'undefined') {
-                console.log('match xtype');
-                return ar.xtype;
-            }
-            
-            // do guess work..
-            var opts = [ 'Roo',  'Roo.menu' , 'Roo.form',  'Roo.data',   'Roo.grid',   'Roo.Toolbar' ];
-            for(var i in opts) {
-                var o = opts[i];
-                if (typeof(data[ o + '.'  + ar.xtype]) !== 'undefined') {
-                    console.log('match:' + o);
-                    return o + '.'  + ar.xtype;
-                   
-                }
-                
-            }
-            console.log('no-match');
-            return '';
-                                
-                                 
         }
-        
-    }
+       
 );
 
 Roo.load();
