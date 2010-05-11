@@ -90,7 +90,7 @@ Gtk = XObject.define(
 
         console.log("LOAD DOCS: " + ns);
         var gi = GIRepository.IRepository.get_default();
-        var ver = GIRepository.get_version(ns);
+        var ver = gi.get_version(ns);
         if (!ver) {
             this.comments[ns] = {};
             return;
