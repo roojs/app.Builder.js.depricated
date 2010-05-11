@@ -75,7 +75,32 @@ Gtk = XObject.define(
             }
             this.map = cfg;
              
+        },
+        loadProps : function()
+        {
+             
+
+            if (this.proplist) {
+                return;
+            }
+            
+            var file = Gio.file_new_for_path(__script_path__ +'/../rooprops.json');
+            var _this = this;
+            
+            var data =  File.read(__script_path__ +'/../rooprops.json');
+            this.proplist = JSON.parse(data).data;
         }
+        getPropertiesFor: function(ename, type)
+        {
+            this.loadProps();
+            if (typeof(this.proplist[ename]) == 'undefined' || 
+                typeof(this.proplist[ename][type]) == 'undefined' ) {
+                    return [];
+            }
+            return this.proplist[ename][type];
+        }
+        
+        
         
     }
 );
