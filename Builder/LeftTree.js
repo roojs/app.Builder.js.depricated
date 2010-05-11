@@ -44,6 +44,21 @@ LeftTree = new XObject(
              
         },
         
+        renderView: function() // renders into the preview pane..
+        {
+            var model = this.get('model');
+            switch( model.file.xtype) {
+                case 'Roo':
+                    var RightBrowser    = imports.Builder.RightBrowser.RightBrowser;
+                    RightBrowser.get('view').renderJS(model.toJS(false,true)[0]);
+                case 'Gtk':
+                    var RightGtkView = imports.Builder.RightGtkView.RightGtkView ;
+                    RightGtkView.get('view').renderJS(model.toJS(false,true)[0]);
+            }
+            
+        },
+        
+        
         atoms : {
            "STRING" : Gdk.atom_intern("STRING")
         },
@@ -388,9 +403,8 @@ LeftTree = new XObject(
                             
                             if (refresh) {
                                 print("REDNER BROWSER?!");
+                                LeftTree.renderView();
                                 
-                                var RightBrowser    = imports.Builder.RightBrowser.RightBrowser;                                 
-                                RightBrowser.get('view').renderJS(this.toJS(false,true)[0]);
                                 var RightPalete     = imports.Builder.RightPalete.RightPalete;
                                 var pm = RightPalete.get('model');
                                 if (!RightPalete.provider) {
@@ -456,8 +470,7 @@ LeftTree = new XObject(
                             this.currentTree = this.toJS(false, false)[0];
                             console.dump(this.currentTree);
                             this.currentTree = this.currentTree || { items: [] };
-                            var RightBrowser    = imports.Builder.RightBrowser.RightBrowser;
-                            RightBrowser.get('view').renderJS(this.toJS(false,true)[0]);
+                            LeftTree.renderView();
                             //console.dump(this.map);
                             var RightPalete     = imports.Builder.RightPalete.RightPalete;
                             var pm = RightPalete.get('model');
