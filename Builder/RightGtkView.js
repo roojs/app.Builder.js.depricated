@@ -260,7 +260,7 @@ RightGtkView = new XObject({
     
             var _this = this;
             var els = [];
-            keys.foreach(function(i) {
+            keys.forEach(function(i) {
                 var el = obj[i];
                 if (typeof(i) == 'string' && i[0] == '|') {
                     // does not hapepnd with arrays..
