@@ -107,6 +107,6 @@ XObject.extend(Roo, {
             });
         }
        
-);
+});
 
 Roo.load();
