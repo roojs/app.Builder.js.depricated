@@ -8,7 +8,7 @@ XObject = imports.XObject.XObject;
 //----------------------- our roo verison
 Base = imports.Builder.Provider.File.Base.Base;
 
-id = 1;
+var gid = 1;
 
 Gtk = XObject.define( 
     function(cfg) {
@@ -53,7 +53,7 @@ Gtk = XObject.define(
 
         
         // super?!?!
-        this.id = 'file-gtk-' + id++;
+        this.id = 'file-gtk-' + gid++;
         // various loader methods..
        
     },
