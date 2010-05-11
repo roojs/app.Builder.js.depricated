@@ -179,8 +179,7 @@ Gtk = XObject.define(
         {
             print("Loading for " + ename);
             
-            if (typeof(this.proplist[ename]) != 'undefined' &&
-                typeof(this.proplist[ename][type]) != 'undefined' ) {
+            if (typeof(this.proplist[ename]) != 'undefined') {
                     return this.proplist[ename][type];
             }
             // use introspection to get lists..
