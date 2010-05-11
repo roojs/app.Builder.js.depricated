@@ -23,6 +23,7 @@ LeftPanel = imports.Builder.LeftPanel.LeftPanel;
 
 RightGtkView = new XObject({
         xtype : Gtk.VBox,
+        lastSrc : '',
         pack : [ 'append_page', new Gtk.Label({ label : "Gtk View" })  ],
         items : [
         
@@ -224,6 +225,16 @@ RightGtkView = new XObject({
         
         showInWindow: function ()
         {
+             
+            var x = new imports.sandbox.Context();
+            x.add_globals();
+            try {
+                x.eval(src);
+            } catch( e) {
+                print(e);
+                return;
+            }
+             x.get_global_object()._top.el.show_all();
             
         }
         
