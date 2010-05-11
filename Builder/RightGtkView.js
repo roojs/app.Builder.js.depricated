@@ -231,6 +231,7 @@ RightGtkView = new XObject({
                }
             var x = new imports.sandbox.Context();
             x.add_globals();
+            print(src);
             try {
                 x.eval(src);
             } catch( e) {
