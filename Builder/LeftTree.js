@@ -241,7 +241,12 @@ LeftTree = new XObject(
                         console.log("SRC TREEPATH: " + src.treepath);
                         console.log("TARGET TREEPATH: " + data.path.to_string());
                         
-                        // nned to check a  few here.. Gtk.TreeViewDropPosition.INTO_OR_AFTER
+                        // nned to check a  few here..
+                        //Gtk.TreeViewDropPosition.INTO_OR_AFTER
+                        //Gtk.TreeViewDropPosition.INTO_OR_BEFORE
+                        //Gtk.TreeViewDropPosition.AFTER
+                        //Gtk.TreeViewDropPosition.BEFORE
+                        
                         if (typeof(src.treepath) != 'undefined'  && 
                             src.treepath == data.path.to_string().substring(0,src.treepath.length)) {
                              Gdk.drag_status(ctx, 0 ,time);
