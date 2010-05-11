@@ -107,8 +107,8 @@ Gtk = XObject.define(
                 n_original = this.typeToName(GIRepository.property_info_get_type(prop));
                 var add = {
                      name : base_info_get_name(prop),
-                     type :   n_original.replace(/\-/g, '_')
-                     desc : this.doc(ename + '.' + n_original);
+                     type :   n_original.replace(/\-/g, '_'),
+                     desc : this.doc(ename + '.' + n_original),
                      sig : ''
                 }
                 this.proplist[ename]['props'].push(add)
