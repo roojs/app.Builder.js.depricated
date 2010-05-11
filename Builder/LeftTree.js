@@ -240,7 +240,7 @@ LeftTree = new XObject(
                         console.log("SRC TREEPATH: " + src.treepath);
                         console.log("TARGET TREEPATH: " + data.path.to_string());
                         
-                        if (src.treepath  && 
+                        if (typeof(src.treepath) != 'undefined'  && 
                             src.treepath == data.path.to_string().substring(src.treepath.length)) {
                                 
                             return false;
