@@ -138,7 +138,7 @@ LeftPanel = new XObject({
                         
                         
                         add : function(key, type,   val, skel) {
-                            
+                            type = type.toLowerCase();
                             var data = this.toJS();
                             if ((typeof(data[key]) != 'undefined') && 
                                 (typeof(val) == 'undefined') ) {
@@ -147,12 +147,13 @@ LeftPanel = new XObject({
                             if (typeof(val) == 'undefined') {
                                     
                                 val = '';
-                                if (type == 'Boolean') {
+                                if (type == 'boolean') {
                                     val = true;
                                 }
-                                if (type == 'Number') {
+                                if (type == 'number') {
                                     val = 0;
                                 }
+                                // utf8 == string..
                                 
                                 
                             }
