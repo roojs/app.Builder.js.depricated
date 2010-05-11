@@ -451,7 +451,8 @@ LeftTree = new XObject(
                                 RightEditor.get('view').load( f.items[0]);
                                 return;
                             }
-                            
+                            print("LOAD");
+                            console.dump(f.items);
                             this.load(f.items);
                             LeftTree.get('view').el.expand_all();
                             var Window = imports.Builder.Window.Window;
