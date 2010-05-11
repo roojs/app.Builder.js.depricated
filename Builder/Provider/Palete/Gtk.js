@@ -176,6 +176,8 @@ Gtk = XObject.define(
   
         getPropertiesFor: function(ename, type)
         {
+            print("Loading for " + ename);
+            
             if (typeof(this.proplist[ename]) != 'undefined' &&
                 typeof(this.proplist[ename][type]) != 'undefined' ) {
                     return this.proplist[ename][type];
