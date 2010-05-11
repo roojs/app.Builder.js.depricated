@@ -91,7 +91,8 @@ Gtk = XObject.define(
                 return [];
             }
             this.proplist[ename] = {}
-            this.proplist[ename]['props'] = []
+            this.proplist[ename]['props'] = [];
+            this.proplist[ename]['events'] = [];
              /*
              we need...
              p.name
