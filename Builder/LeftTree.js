@@ -373,7 +373,7 @@ LeftTree = new XObject(
                         LeftTree.get('model').activeIter = iter;
                         
                         var data = JSON.parse(value.value);
-                        //MidPropTree.get('model').load(data);
+                        MidPropTree.get('model').setActiveElement(data);
                         MidPropTree.hideWin();
                         LeftPanel.get('model').load( data);
                         
