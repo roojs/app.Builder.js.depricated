@@ -481,6 +481,10 @@ LeftTree = new XObject(
                             //}
                             RightPalete.provider = LeftProjectTree.project.getPalete();
                             
+                            if (!RightPalete.provider) {
+                                print ("********* PALETE PROVIDER MISSING?!!");
+                               }
+                            
                             var pr = LeftProjectTree.project;
                             pm.load( RightPalete.provider.gatherList(this.listAllTypes()));
                             
