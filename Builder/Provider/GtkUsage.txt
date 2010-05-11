@@ -4,12 +4,15 @@
 left:
  *top
 right:
- Gtk.Window 
- Gtk.Dialog
- Gtk.MessageDialog
- Gtk.AboutDialog
- Gtk.Dialog
-
+	Gtk.Window 
+	Gtk.Dialog
+	Gtk.MessageDialog
+	Gtk.AboutDialog
+	Gtk.Dialog
+	GtkFontSelectionDialog 
+	GtkInputDialog 
+	GtkColorSelectionDialog 
+	GtkFileChooserDialog --
 // these should really be based on heirachy..
  
 left: 
@@ -22,8 +25,22 @@ left:
  Gtk.VBox
  
 right:
-	Gtk.HBox
-	Gtk.VBox
+	 
+	GtkAlignment 
+	GtkAspectFrame 
+	GtkHBox 
+	GtkVBox 
+	GtkHButtonBox 
+	GtkVButtonBox 
+	GtkFixed 
+	GtkHPaned 
+	GtkVPaned 
+	GtkLayout 
+	GtkNotebook 
+	GtkTable 
+	GtkExpander 
+ 
+	
 	Gtk.AccelLabel 
 	Gtk.Image 
 	Gtk.Label 
@@ -55,9 +72,14 @@ right:
 	
 	GtkToolPalette
 	
-
-
-
+	GtkColorButton 
+	GtkColorSelection
+	GtkHSV
+	 
+	GtkFileChooserButton 
+	GtkFileChooserWidget
+	GtkFontButton 
+	
 
  
 
