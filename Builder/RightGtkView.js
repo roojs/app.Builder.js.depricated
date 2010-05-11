@@ -265,7 +265,7 @@ RightGtkView = new XObject({
                     typeof(obj['|xns']) != 'undefined' &&
                     typeof(obj['xtype']) != 'undefined'
                 ) {
-                    els.push('xtype: '+ obj['|xns'] + '.' + obj['|xns']);
+                    els.push('xtype: '+ obj['|xns'] + '.' + obj['xtype']);
                     skip.push('|xns','xtype');
                 }
             
