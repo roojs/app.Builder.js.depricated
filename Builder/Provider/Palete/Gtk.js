@@ -76,7 +76,12 @@ Gtk = XObject.define(
             this.map = cfg;
              
         },
-       
+        doc : function(what) {
+            var ns = what.split('.').shift();
+            this.commentLoad(ns);
+            return typeof(this.comments[ns][what]) == 'undefined' ?  '' : this.comments[ns][what];
+        },
+  
         getPropertiesFor: function(ename, type)
         {
             if (typeof(this.proplist[ename]) != 'undefined' &&
