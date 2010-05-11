@@ -93,7 +93,7 @@ Gtk = XObject.define(
             this.proplist[ename] = {}
             this.proplist[ename]['props'] = {  };
              
-            // properties..
+            // properties.. -- and parent ones...!!!
             for (var i =0;i <  GIRepository.object_info_get_n_properties(bi); i++) {
                 var pi = GIRepository.object_info_get_property(bi, i);
                 
