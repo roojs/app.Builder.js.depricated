@@ -87,7 +87,7 @@ Base = XObject.define(
             return ar['|xns'] +'.' + ar['xtype'];
                             
                                  
-        }
+        },
         
         /*
         Roo specific?
