@@ -266,6 +266,11 @@ Gtk = XObject.define(
                 }
                 this.proplist[ename]['events'].push(add)
             }
+            
+            if (etype == GIRepository.IInfoType.INTERFACE ) {
+                  return this.proplist[ename][type];
+               }
+            
             // parent!!?!!?
             var pi = GIRepository.object_info_get_parent(bi);
             this.proplist[ename]['inherits'] = [];
