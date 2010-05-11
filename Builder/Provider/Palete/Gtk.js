@@ -267,10 +267,11 @@ Gtk = XObject.define(
             
             // implements needs to be more carefull as it could add dupes..
             // use the parent implements list to ensure no dupes..
-            for(var i =0; i < GI.object_info_get_n_interfaces(bi); i++) {
+            for(var i =0; i < GIRepository.object_info_get_n_interfaces(bi); i++) {
                  
-                var prop = GI.object_info_get_interface(bi,i);
-                var iface = GI.base_info_get_namespace(prop) +'.'+ GI.base_info_get_name(prop);
+                var prop = GIRepository.object_info_get_interface(bi,i);
+                var iface = GIRepository.base_info_get_namespace(prop) +'.'+ 
+                    GIRepository.base_info_get_name(prop);
                 if ( this.proplist[ename]['inherits'].indexOf(iface) > -1) {
                     continue;
                 }
