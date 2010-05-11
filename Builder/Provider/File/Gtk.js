@@ -91,10 +91,18 @@ Gtk = XObject.define(
                 var dstream = new Gio.DataInputStream.c_new(stream);
                 
                 var src = dstream.read_until("");
+                var cfg = JSON.parse(src);
+                print("loaded data");
+                console.dump(cfg);
                 
+                _this.name = cfg.name;
+                _this.parent =  cfg.parent;
+                _this.title =  cfg.title;
+                _this.items = cfg.items || []; 
+                cb();
                 
                 // update to new JSDOC api!?
-                
+                /*
                 var tstream =  new JSDOC.TextStream(src);
                 var tr = new  JSDOC.TokenReader( {
                     keepWhite : true,
@@ -124,7 +132,7 @@ Gtk = XObject.define(
                 
                 cb();
                 
-                
+                */
             });
             
             
