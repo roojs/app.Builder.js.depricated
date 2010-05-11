@@ -250,7 +250,13 @@ Gtk = XObject.define(
                 }
                 this.proplist[ename]['events'].push(add)
             }
-             // parent!!?!!?
+            // parent!!?!!?
+            var pi = GI.object_info_get_parent(bi);
+            this.getPropertiesFor(GI.base_info_get_namespace(pi) + '.' GI.base_info_get_name(pi), 'props');
+            
+            // implements needs to be more carefull as it could add dupes..
+            
+            
             
             return this.proplist[ename][type];
             
