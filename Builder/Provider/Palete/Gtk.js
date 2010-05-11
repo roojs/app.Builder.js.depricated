@@ -209,6 +209,8 @@ Gtk = XObject.define(
             this.proplist[ename] = {}
             this.proplist[ename]['props'] = [];
             this.proplist[ename]['events'] = [];
+            var plist = this.proplist[ename]['props'] ;
+            var elist = this.proplist[ename]['events'];
              /*
              we need...
              p.name
@@ -257,7 +259,7 @@ Gtk = XObject.define(
                      desc : this.doc(ename + '.' + n_original),
                      sig : ''
                 }
-                this.proplist[ename]['props'].push(add)
+                plist.push(add)
             }
            
             // signals..
@@ -272,7 +274,7 @@ Gtk = XObject.define(
                     desc : this.doc(ename + '.' + n_original),
                     sig  : '' // fixme..
                 }
-                this.proplist[ename]['events'].push(add);
+                evlist.push(add);
             }
             
             if (etype == GIRepository.IInfoType.INTERFACE ) {
@@ -289,8 +291,8 @@ Gtk = XObject.define(
                     GIRepository.base_info_get_name(pi);
                 this.getPropertiesFor(pname, 'props');
             
-                this.proplist[ename]['events'].push.apply(this.proplist[pname]['events']);
-                this.proplist[ename]['props'].push.apply(this.proplist[pname]['props']);
+                evlist.push.apply(evlist,this.proplist[pname]['events']);
+                plist.push.apply(plist,this.proplist[pname]['props']);
                 this.proplist[ename]['inherits'].push.apply(this.proplist[pname]['inherits']);
             }
             
@@ -306,8 +308,8 @@ Gtk = XObject.define(
                 }
                 this.getPropertiesFor(iface, 'props');
                 this.proplist[ename]['inherits'].push(iface);
-                this.proplist[ename]['events'].push.apply(this.proplist[iface]['events']);
-                this.proplist[ename]['props'].push.apply(this.proplist[iface]['props']);
+                evlist.push.apply(evlist,this.proplist[iface]['events']);
+                plist.push.apply(plist,this.proplist[iface]['props']);
             }
             
             return this.proplist[ename][type];
