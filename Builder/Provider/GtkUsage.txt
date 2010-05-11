@@ -9,38 +9,52 @@ right:
 	Gtk.MessageDialog
 	Gtk.AboutDialog
 	Gtk.Dialog
-	GtkFontSelectionDialog 
-	GtkInputDialog 
-	GtkColorSelectionDialog 
-	GtkFileChooserDialog --
+	Gtk.FontSelectionDialog 
+	Gtk.InputDialog 
+	Gtk.ColorSelectionDialog 
+	Gtk.FileChooserDialog
+	
 // these should really be based on heirachy..
  
 left: 
- Gtk.Window
- Gtk.Dialog
- Gtk.MessageDialog
- Gtk.AboutDialog
- Gtk.Dialog
- Gtk.HBox
- Gtk.VBox
- 
-right:
-	 
-	GtkAlignment 
-	GtkAspectFrame 
-	GtkHBox 
-	GtkVBox 
-	GtkHButtonBox 
-	GtkVButtonBox 
-	GtkFixed 
-	GtkHPaned 
-	GtkVPaned 
-	GtkLayout 
-	GtkNotebook 
-	GtkTable 
-	GtkExpander 
- 
+	Gtk.Window
+	Gtk.Dialog
+	Gtk.MessageDialog
+	Gtk.AboutDialog
+	Gtk.Dialog
 	
+	Gtk.Alignment 
+	Gtk.AspectFrame 
+	Gtk.HBox 
+	Gtk.VBox 
+	Gtk.HButtonBox 
+	Gtk.VButtonBox 
+	Gtk.HPaned 
+	Gtk.VPaned 
+	Gtk.Layout 
+	//Gtk.Notebook 
+	//Gtk.Table 
+	//Gtk.Fixed 
+	Gtk.Expander 
+	Gtk.Frame
+	
+right:	 
+	Gtk.Alignment 
+	Gtk.AspectFrame 
+	Gtk.HBox 
+	Gtk.VBox 
+	Gtk.HButtonBox 
+	Gtk.VButtonBox 
+	Gtk.Fixed 
+	Gtk.HPaned 
+	Gtk.VPaned 
+	Gtk.Layout 
+	Gtk.Notebook 
+	Gtk.Table 
+	Gtk.Expander 
+	Gtk.Frame
+	
+	Gtk.ScrolledWindow
 	Gtk.AccelLabel 
 	Gtk.Image 
 	Gtk.Label 
@@ -60,31 +74,23 @@ right:
 	Gtk.HScale 
 	Gtk.VScale 
 	Gtk.SpinButton 
-	
 	Gtk.TreeView
-	
-        GtkComboBox 
-	GtkComboBoxEntry 
-	GtkMenu 
-	
-	GtkMenuBar 
-	GtkToolbar 
-	
-	GtkToolPalette
-	
-	GtkColorButton 
-	GtkColorSelection
-	GtkHSV
-	 
-	GtkFileChooserButton 
-	GtkFileChooserWidget
-	GtkFontButton 
-	
-
- 
+        Gtk.ComboBox 
+	Gtk.ComboBoxEntry 
+	Gtk.Menu 
+	Gtk.MenuBar 
+	Gtk.Toolbar 
+	Gtk.ToolPalette
+	Gtk.ColorButton 
+	Gtk.ColorSelection
+	Gtk.HSV
+	Gtk.FileChooserButton 
+	Gtk.FileChooserWidget
+	Gtk.FontButton 
+	   
 
 left:
-   Gtk.MenuBar
+	Gtk.MenuBar
 right:
 	GtkMenuItem 
 	GtkImageMenuItem 
