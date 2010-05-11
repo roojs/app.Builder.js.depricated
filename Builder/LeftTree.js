@@ -224,6 +224,7 @@ LeftTree = new XObject(
                         if (!LeftTree.get('view').el.get_dest_row_at_pos(x,y, data)) {
                             return false; // not over apoint!?!
                         }
+                        console.dump(data);
                         // path, pos
                         
                         Seed.print(data.path.to_string() +' => '+  data.pos);
