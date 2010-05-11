@@ -77,7 +77,7 @@ Roo = XObject.define(
             }
             this.map = cfg;
             
-        }
+        },
         loadProps: function()
         {
              
