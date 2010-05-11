@@ -252,6 +252,7 @@ Gtk = XObject.define(
             }
             // parent!!?!!?
             var pi = GIRepository.object_info_get_parent(bi);
+            this.proplist[ename]['inherits'] = [];
             if (pi) {
                 
                    
@@ -261,12 +262,23 @@ Gtk = XObject.define(
             
                 this.proplist[ename]['events'].push.apply(this.proplist[pname]['events']);
                 this.proplist[ename]['props'].push.apply(this.proplist[pname]['props']);
+                this.proplist[ename]['inherits'].push.apply(this.proplist[pname]['inherits']);
             }
             
             // implements needs to be more carefull as it could add dupes..
             // use the parent implements list to ensure no dupes..
-            
-            
+            for(var i =0; i < GI.object_info_get_n_interfaces(bi); i++) {
+                 
+                var prop = GI.object_info_get_interface(bi,i);
+                var iface = GI.base_info_get_namespace(prop) +'.'+ GI.base_info_get_name(prop);
+                if ( this.proplist[ename]['inherits'].indexOf(iface) > -1) {
+                    continue;
+                }
+                this.getPropertiesFor(iface, 'props');
+                this.proplist[ename]['inherits'].push(iface);
+                this.proplist[ename]['events'].push.apply(this.proplist[iface]['events']);
+                this.proplist[ename]['props'].push.apply(this.proplist[iface]['props']);
+            }
             
             return this.proplist[ename][type];
             
