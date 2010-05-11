@@ -219,8 +219,10 @@ Gtk = XObject.define(
                 var n_original =  GIRepository.base_info_get_name(prop);
                 
                 var flags =  GIRepository.property_info_get_flags(prop); // check for readonly..
-                var ty = typeToName(GIRepository.property_info_get_type(prop));
                 
+                
+                var ty = typeToName(GIRepository.property_info_get_type(prop));
+                print (n_original +":"+ ty);
                 if (ty === false) {
                     continue;
                 }
