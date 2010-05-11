@@ -272,7 +272,7 @@ Gtk = XObject.define(
                     desc : this.doc(ename + '.' + n_original),
                     sig  : '' // fixme..
                 }
-                this.proplist[ename]['events'].push(add)
+                this.proplist[ename]['events'].push(add);
             }
             
             if (etype == GIRepository.IInfoType.INTERFACE ) {
