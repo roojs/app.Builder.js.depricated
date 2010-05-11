@@ -77,7 +77,7 @@ Gtk = XObject.define(
                 throw "no callback for loadItems";
             }
             console.log("load Items!");
-            if (this.items.length) {
+            if (this.items !== false) {
                 return false;
             }
             Seed.print("load: " + this.path);
