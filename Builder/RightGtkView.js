@@ -235,10 +235,53 @@ RightGtkView = new XObject({
                 src += i+" = imports.gi." + i +";\n";
             }
             src += "XObject = imports.XObject.XObject;\n"; // path?!!?
+            
+            src += '_top=new XObject('+ this.mungeToString(data) + ');';
+            src += '_top.el.show_all();';
             var x = new imports.sandbox.Context();
             x.add_globals();
             //x.get_global_object().a = "hello world";
             x.eval(src);
+            
+        },
+        mungeToString:  function(obj)
+        {
+            var keys = [];
+            var isArray = false;
+            if (obj.constructor == Array) {
+                for (var i= 0; i < obj.length; i++) {
+                    keys.push(i);
+                }
+                isArray = true;
+            } else {
+                for (var i in obj) {
+                    keys.push(i);
+                }
+            }
+    
+            var _this = this;
+            var els = [];
+            keys.foreach(function(i) {
+                var el = obj[i]);
+                if (typeof(i) == 'string' && i[0] == '|') {
+                    // does not hapepnd with arrays..
+                    els.push(JSON.stringify(i.substring(1)) + ":" + obj[i]);
+                    continue;
+                }
+                var left = isArray ? ('' +i) : (JSON.stringify(i) + " : " )
+                if (typeof(el) == 'object') {
+                    els.push(left + _this.mungeToString(el));
+                    continue;
+                }
+                els.push(JSON.stringify(i) + ":" + obj[i]);
+            }
+            return (isArray ? '[' : '{') + 
+                els.join(', ') +
+                (isArray ? ']' : '}');
+               
+                
+             
+            
             
         }
         
