@@ -210,7 +210,7 @@ RightGtkView = new XObject({
                             
                         },
                         renderJS: function(data) {
-                            return;
+                            
                         },
                         getActiveNode : function(x,y)
                         {
@@ -221,7 +221,18 @@ RightGtkView = new XObject({
                 ]
             }
                 
-        ]
+        ],
+        renderJs : function(data)
+        {
+            /**
+             * first effort..
+             * 
+             */
+            
+            
+            
+        }
+        
     }
     
     
