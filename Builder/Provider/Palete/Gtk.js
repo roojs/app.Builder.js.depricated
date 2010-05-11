@@ -277,7 +277,7 @@ Gtk = XObject.define(
             }
             
             if (etype == GIRepository.IInfoType.INTERFACE ) {
-                  return this.proplist[ename][type];
+                  return;
             }
             
             // parent!!?!!?
