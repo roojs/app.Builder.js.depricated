@@ -225,7 +225,10 @@ RightGtkView = new XObject({
         
         showInWindow: function ()
         {
-             
+            var src= this.lastSrc;
+            if (!this.lastSrc.length) {
+                return;
+               }
             var x = new imports.sandbox.Context();
             x.add_globals();
             try {
