@@ -681,7 +681,7 @@ LeftTree = new XObject(
                         moveNode: function(target_data, type) {
                             
                             print("MOVE NODE");
-                            
+                            console.dump(target_data);
                             var old_iter = new Gtk.TreeIter();
                             var s = LeftTree.get('view').selection;
                             s.get_selected(this.el, old_iter);
