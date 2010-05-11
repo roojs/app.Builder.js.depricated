@@ -106,12 +106,4 @@ Roo = XObject.define(
     }
 );
 
-    // static load @ starttime.
-XObject.extend(Roo, {
-        proplist:  false,
-         
-        
-       
-});
-
-Roo.load();
+   
