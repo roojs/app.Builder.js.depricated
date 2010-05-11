@@ -44,6 +44,12 @@ LeftTree = new XObject(
              
         },
         
+        getPaleteProvider: function ()
+        {
+            var LeftProjectTree     = imports.Builder.LeftProjectTree.LeftProjectTree;
+            return LeftProjectTree.project.getPalete();
+        },
+        
         renderView: function() // renders into the preview pane..
         {
             var model = this.get('model');
@@ -173,8 +179,8 @@ LeftTree = new XObject(
                         var xname = LeftTree.get('model').file.guessName(data);
                         
                         this.el.dragData = xname;
-                        this.el.dropList = LeftTree.get('model').provider.getDropList(xname);
-
+                        this.el.dropList = LeftTree.getPaleteProvider().getDropList(xname);
+                        
 
                         // make the drag icon a picture of the node that was selected
                         var path = LeftTree.get('model').el.get_path(iter);
@@ -326,11 +332,11 @@ LeftTree = new XObject(
                             MidPropTree.hideWin();
                             var RightPalete     = imports.Builder.RightPalete.RightPalete;
                             var pm = RightPalete.get('model');
-                            if (!RightPalete.provider) {
+                            if (!LeftTree.getPaleteProvider()) {
                                 // it may not be loaded yet..
                                 return  true;
                             }
-                            pm.load( RightPalete.provider.gatherList(LeftTree.get('model').listAllTypes()));
+                            pm.load( LeftTree.getPaleteProvider().gatherList(LeftTree.get('model').listAllTypes()));
                            
                             return true;
                         }
@@ -485,8 +491,8 @@ LeftTree = new XObject(
                             var RightPalete     = imports.Builder.RightPalete.RightPalete;
                             var pm = RightPalete.get('model');
                             // set up provider..
-                            var LeftProjectTree     = imports.Builder.LeftProjectTree.LeftProjectTree;
-                            RightPalete.provider = LeftProjectTree.project.getPalete();
+                            
+                            RightPalete.provider = LeftTree.getPaleteProvider();;
                             
                             if (!RightPalete.provider) {
                                 print ("********* PALETE PROVIDER MISSING?!!");
