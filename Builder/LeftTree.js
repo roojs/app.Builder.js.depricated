@@ -558,7 +558,7 @@ LeftTree = new XObject(
                             var path = treepath_str + ''; // dupe it..
                             pref = typeof(pref) == 'undefined' ?  Gtk.TreeViewDropPosition.INTO_OR_AFTER : pref;
                             var last = false;
-                            console.dump(this.treemap);
+                            //console.dump(this.treemap);
                             while (path.length) {
                                 if (typeof(this.treemap[path]) == 'undefined') {
                                     return [];
@@ -680,16 +680,17 @@ LeftTree = new XObject(
                         },
                         moveNode: function(target_data) {
                             
-                            print("MOVE NODE");
-                            console.dump(target_data);
+                            //print("MOVE NODE");
+                           // console.dump(target_data);
                             var old_iter = new Gtk.TreeIter();
                             var s = LeftTree.get('view').selection;
                             s.get_selected(this.el, old_iter);
                             var node = this.nodeToJS(old_iter,false);
-                            console.dump(node);
+                            //console.dump(node);
                             
-                            // target data is now invalid!!!
-                            // wee need to find the new tree path after it's drop
+                            
+                            // needs to drop first, otherwise the target_data 
+                            // treepath will be invalid.
                             
                             this.dropNode(target_data, node);
                             this.el.remove(old_iter);
