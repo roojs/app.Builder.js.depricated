@@ -349,7 +349,7 @@ LeftTree = new XObject(
                         
                         if (this.selection.count_selected_rows() < 1) {
                             LeftPanel.get('model').load( false);
-                           MidPropTree.activeElement =  false;
+                            MidPropTree.activeElement =  false;
                             MidPropTree.hideWin();
                             var RightPalete     = imports.Builder.RightPalete.RightPalete;
                             var pm = RightPalete.get('model');
