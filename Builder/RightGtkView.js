@@ -106,9 +106,8 @@ RightGtkView = new XObject({
                                // console.log('DRAG MOTION'); 
                                 // status:
                                 // if lastCurrentNode == this.currentNode.. -- don't change anything..
-                                this.targetData = [];
-                                return true; 
-                                /*
+                                 
+                                
                                 // A) find out from drag all the places that node could be dropped.
                                 var src = Gtk.drag_get_source_widget(ctx);
                                 if (!src.dropList) {
@@ -141,7 +140,7 @@ RightGtkView = new XObject({
                                 this.targetData = tg;
                                 // for tree we should handle this...
                                 return true;
-                                */
+                                
                             },
                             "drag-drop"  : function (w, ctx,x,y,time, ud) 
                             {
