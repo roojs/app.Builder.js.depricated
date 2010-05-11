@@ -235,7 +235,8 @@ Gtk = XObject.define(
                 if (interface_type != GIRepository.IInfoType.ENUM) {
                     return false;
                 }
-                return GIRepository.base_info_get_name(interface_info);
+                return GIRepository.base_info_get_namespace(interface_info) + '.' +
+                        GIRepository.base_info_get_name(interface_info);
                 
             }
             // properties.. -- and parent ones...!!!
