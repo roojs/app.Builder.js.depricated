@@ -251,11 +251,12 @@ Gtk = XObject.define(
                 this.proplist[ename]['events'].push(add)
             }
             // parent!!?!!?
-            var pi = GI.object_info_get_parent(bi);
+            var pi = GIRepository.object_info_get_parent(bi);
             if (pi) {
                 
                    
-                var pname = GI.base_info_get_namespace(pi) + '.' GI.base_info_get_name(pi);
+                var pname = GIRepository.base_info_get_namespace(pi) + '.' +
+                    GIRepository.base_info_get_name(pi);
                 this.getPropertiesFor(pname, 'props');
             
                 this.proplist[ename]['events'].push.apply(this.proplist[pname]['events']);
