@@ -132,7 +132,7 @@ Gtk = XObject.define(
                 this.proplist[ename]['props'].push(add)
             }
             // parent!!?!!?
-            
+            // signals..
             
             
             
