@@ -151,7 +151,7 @@ Gtk = XObject.define(
             var  fn = gir_path + '/'+ ns + '-' + ver + '.gir';
            // console.log(fn);
             
-            if (!GLib.file_test(fn, GLib.FileTest.EXISTS)) {
+            if (!File.exists(fn)) {
                 console.log('missing docc file ' + fn);
                 this.comments[ns] = {};
                 
