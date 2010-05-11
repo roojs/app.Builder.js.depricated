@@ -234,8 +234,8 @@ RightGtkView = new XObject({
             });
             src += "XObject = imports.XObject.XObject;\n"; // path?!!?
             
-            src += '_top=new XObject('+ this.mungeToString(data) + ');';
-            src += '_top.el.show_all();';
+            src += '_top=new XObject('+ this.mungeToString(data) + ')\n;';
+            src += '_top.el.show_all();\n';
             var x = new imports.sandbox.Context();
             x.add_globals();
             //x.get_global_object().a = "hello world";
