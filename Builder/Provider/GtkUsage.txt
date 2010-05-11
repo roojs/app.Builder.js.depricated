@@ -18,4 +18,64 @@ left:
  Gtk.MessageDialog
  Gtk.AboutDialog
  Gtk.Dialog
- Gtk.Bin
+ Gtk.HBox
+ Gtk.VBox
+ 
+right:
+	Gtk.HBox
+	Gtk.VBox
+	Gtk.AccelLabel 
+	Gtk.Image 
+	Gtk.Label 
+	Gtk.ProgressBar
+	Gtk.Statusbar
+	Gtk.InfoBar 
+	Gtk.StatusIcon
+	Gtk.Spinner 
+	Gtk.Button
+	Gtk.CheckButton 
+	Gtk.RadioButton 
+	Gtk.ToggleButton
+	Gtk.LinkButton
+	Gtk.ScaleButton 
+	Gtk.VolumeButton 
+	Gtk.Entry 
+	Gtk.HScale 
+	Gtk.VScale 
+	Gtk.SpinButton 
+	
+	Gtk.TreeView
+	
+        GtkComboBox 
+	GtkComboBoxEntry 
+	GtkMenu 
+	
+	GtkMenuBar 
+	GtkToolbar 
+	
+	GtkToolPalette
+	
+
+
+
+
+ 
+
+left:
+   Gtk.MenuBar
+right:
+	GtkMenuItem 
+	GtkImageMenuItem 
+	GtkRadioMenuItem 
+	GtkCheckMenuItem 
+	GtkSeparatorMenuItem 
+	GtkTearoffMenuItem 
+left:
+	Gtk.Toolbar
+right:
+	GtkToolButton 
+	GtkMenuToolButton 
+	GtkToggleToolButton
+	GtkRadioToolButton 
+	GtkToolItemGroup 
+	GtkSeparatorToolItem 
