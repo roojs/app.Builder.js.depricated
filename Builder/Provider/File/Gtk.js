@@ -73,12 +73,13 @@ Gtk = XObject.define(
         
         loadItems : function(cb)
         {
-            if (!cb) {
-                throw "no callback for loadItems";
-            }
+          
             console.log("load Items!");
             if (this.items !== false) {
                 return false;
+            }
+              if (!cb) {
+                throw "no callback for loadItems";
             }
             Seed.print("load: " + this.path);
             
