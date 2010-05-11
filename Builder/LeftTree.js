@@ -236,6 +236,11 @@ LeftTree = new XObject(
                         if (!isOver) {
                             return false; // not over apoint!?!
                         }
+                        // drag node is parent of child..
+                        if (src.treepath  && 
+                            src.treepath == data.path.to_string().substring(src.treepath.length))
+                            return false;
+                        }
                         
                         // check that 
                         //print("DUMPING DATA");
