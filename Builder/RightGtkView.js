@@ -122,8 +122,10 @@ RightGtkView = new XObject({
                                     
                                 }
                                 // c) ask tree where it should be dropped... - eg. parent.. (after node ontop)
+                                var activeNode = this.getActiveNode(x, y);
                                 
-                                var tg = LeftTree.get('model').findDropNode(this.activeNode, src.dropList);
+                                
+                                var tg = LeftTree.get('model').findDropNode(activeNode, src.dropList);
                                 console.dump(tg);
                                 if (!tg.length) {
                                     Gdk.drag_status(ctx, 0,time);
@@ -209,6 +211,11 @@ RightGtkView = new XObject({
                         },
                         renderJS: function(data) {
                             return;
+                        },
+                        getActiveNode : function(x,y)
+                        {
+                           // workout what node is here..
+                            return '';
                         }
                     }
                 ]
