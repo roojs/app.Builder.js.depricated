@@ -16,8 +16,9 @@ Gtk = XObject.define(
         
        
         // various loader methods..
+          this.map = [];
         this.load();
-        this.map = [];
+      
         // no parent...
         
        
@@ -26,54 +27,54 @@ Gtk = XObject.define(
     {
     
      
+    
+        var data = File.read(__script_path__ +'/../GtkUsage.txt');
+        print(data);
+        data  = data.split(/\n/g);
+        var state = 0;
+        var cfg = [];
+        var left = [];
+        var right = [];
         
-            var data = File.read(__script_path__ +'/../GtkUsage.txt');
-            print(data);
-            data  = data.split(/\n/g);
-            var state = 0;
-            var cfg = [];
-            var left = [];
-            var right = [];
-            
-            data.forEach( function(d) {
-                if (!d.length || d.match(/^\s+$/) || d.match(/^\//)) { //empty
-                    return;
-                }
-                if (d.match(/^left:/)) { 
-                    state = 1;
-                    if (left.length ){
-                        
-                        cfg.push({
-                            left : left,
-                            right: right
-                        });
-                        }
-                    left = [];
-                    right = [];
-                    return;
-                }
-                if (d.match(/^right:/)) { 
-                    state = 2;
-                    return;
-                }
-                if (state == 1) {
-                    left.push(d.replace(/\s+/g, ''));
-                    return;
-                }
-                right.push(d.replace(/\s+/g, ''));
-                //Seed.quit();
-               
-            }); 
-            if (left.length ){
-                        
-                cfg.push({
-                    left : left,
-                    right: right
-                });
+        data.forEach( function(d) {
+            if (!d.length || d.match(/^\s+$/) || d.match(/^\//)) { //empty
+                return;
             }
-            this.map = cfg;
-         
+            if (d.match(/^left:/)) { 
+                state = 1;
+                if (left.length ){
+                    
+                    cfg.push({
+                        left : left,
+                        right: right
+                    });
+                    }
+                left = [];
+                right = [];
+                return;
+            }
+            if (d.match(/^right:/)) { 
+                state = 2;
+                return;
+            }
+            if (state == 1) {
+                left.push(d.replace(/\s+/g, ''));
+                return;
+            }
+            right.push(d.replace(/\s+/g, ''));
+            //Seed.quit();
+           
+        }); 
+        if (left.length ){
+                    
+            cfg.push({
+                left : left,
+                right: right
+            });
         }
+        this.map = cfg;
+         
+         
         
     }
 );
