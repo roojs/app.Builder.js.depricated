@@ -7,7 +7,7 @@ console = imports.console;
 XObject = imports.XObject.XObject;
  
 Observable = imports.Observable.Observable;
-File = imports.File;
+File = imports.File.File;
 /**
  * 
  * /home/alan/.BuilderConfig/*
