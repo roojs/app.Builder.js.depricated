@@ -151,7 +151,7 @@ MidPropTree = new XObject({
                             var iter = new Gtk.TreeIter();
                             this.el.get_iter (iter, tp);
                             var value = new GObject.Value('');
-                            MidPropTree.get('model').el.get_value(iter, col, value);
+                            this.el.get_value(iter, col, value);
                             return value.value;
                             
                         },
