@@ -252,12 +252,12 @@ Gtk = XObject.define(
             for (var i =0;i <  GIRepository[meth[2]](bi); i++) {
                 var prop = GIRepository[meth[3]](bi, i);  
                 var n_original =  GIRepository.base_info_get_name(prop);
-                 print ('signal: ' + n_original); 
+                // print ('signal: ' + n_original); 
                 var add = {
                     name :  n_original.replace(/\-/g, '_'),
                     type : 'function', //???
                     desc : this.doc(ename + '.signal.' + n_original),
-                    sig  : '' // fixme..
+                    sig  : this.genSkel(prop) // fixme..
                 }
                 elist.push(add);
             }
@@ -310,8 +310,8 @@ Gtk = XObject.define(
             if (ret_type == 'boolean') {
                 ret = "    return false;\n";
             }
-            for(var a_i  =0; a_i   < GIRepository.callable_info_get_n_args(m); a_i++) {
-                var arg = GIRepository.callable_info_get_arg(m, a_i);
+            for(var a_i  =0; a_i   < GIRepository.callable_info_get_n_args(sig); a_i++) {
+                var arg = GIRepository.callable_info_get_arg(sig, a_i);
                 
                 args.push(GIRepository.base_info_get_name(arg));
             }
