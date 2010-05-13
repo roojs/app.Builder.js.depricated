@@ -299,9 +299,9 @@ Gtk = XObject.define(
             
             return this.proplist[ename][type];
             
-        }
+        },
         
-         genSkel: function(sig)
+        genSkel: function(sig)
         {
             var args = ['self'];
             var ret = "\n";
