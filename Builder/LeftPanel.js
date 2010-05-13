@@ -188,10 +188,10 @@ LeftPanel = new XObject({
                             var val = gval.value;
                             if (val[0] == '!') {
                                 // listener..
-                                if (!data.listeners || typeof(data.listeners['|' + val.substring(1)]) == 'undefined') {
+                                if (!data.listeners || typeof(data.listeners[  val.substring(1)]) == 'undefined') {
                                     return;
                                 }
-                                delete data.listeners['|' + val.substring(1)];
+                                delete data.listeners[  val.substring(1)];
                                 if (!XObject.keys(data.listeners).length) {
                                     delete data.listeners;
                                 }
