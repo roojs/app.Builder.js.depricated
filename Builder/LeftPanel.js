@@ -184,10 +184,26 @@ LeftPanel = new XObject({
                                
                             var gval = new GObject.Value('');
                             LeftPanel.get('model').el.get_value(iter, 0 ,gval);
-                            if (typeof(data[gval.value]) == 'undefined') {
-                                return;
+                            
+                            var val = gval.value;
+                            if (val[0] == '!') {
+                                // listener..
+                                if (!data.listeners || typeof(data.listeners[val.substring(1)]) == 'undefined') {
+                                    return;
+                                }
+                                delete data.listeners[val.substring(1)];
+                                if (!XObject.keys(data.listeners).length) {
+                                    delete data.listeners;
+                                }
+                                
+                            } else {
+                                if (typeof(data[val]) == 'undefined') {
+                                    return;
+                                }
+                                delete data[val];
                             }
-                            delete data[gval.value];
+                            
+                            
                             this.load(data);
                             var LeftTree        = imports.Builder.LeftTree.LeftTree;
                             LeftTree.get('model').changed(data, true);
@@ -244,7 +260,7 @@ LeftPanel = new XObject({
                                 return val;
                             }
                             gval = new GObject.Value('');
-                              LeftPanel.get('model').el.get_value(iter,4  ,gval);
+                            LeftPanel.get('model').el.get_value(iter,4  ,gval);
                             switch(gval.value) {
                                 case 'number':
                                     return parseFloat(val);
