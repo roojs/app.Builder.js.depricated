@@ -305,10 +305,11 @@ RightGtkView = new XObject({
             
             
         },
-        mungeToString:  function(obj)
+        mungeToString:  function(obj, isListener)
         {
             var keys = [];
             var isArray = false;
+            isListener = isListener || false;
             
             if (obj.constructor.toString() === Array.toString()) {
                 for (var i= 0; i < obj.length; i++) {
@@ -337,7 +338,10 @@ RightGtkView = new XObject({
                 if (!isArray && skip.indexOf(i) > -1) {
                     return;
                 }
-                
+                if (isListener) {
+                    els.push(JSON.stringify(i) + ":" + obj[i]);
+                    return;
+                }
                 if (typeof(i) == 'string' && i[0] == '|') {
                     // does not hapepnd with arrays..
                     els.push(JSON.stringify(i.substring(1)) + ":" + obj[i]);
@@ -345,7 +349,7 @@ RightGtkView = new XObject({
                 }
                 var left = isArray ? '' : (JSON.stringify(i) + " : " )
                 if (typeof(el) == 'object') {
-                    els.push(left + _this.mungeToString(el));
+                    els.push(left + _this.mungeToString(el, i == 'listeners'));
                     return;
                 }
                 els.push(JSON.stringify(i) + ":" + JSON.stringify(obj[i]));
