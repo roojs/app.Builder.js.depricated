@@ -139,8 +139,8 @@ MidPropTree = new XObject({
                                  GObject.TYPE_STRING, // real type
                                  GObject.TYPE_STRING, // docs ?
                                  GObject.TYPE_STRING, // visable desc
-                                 GObject.TYPE_STRING // function desc
-                                 GObject.TYPE_STRING, // element type (event|prop)
+                                 GObject.TYPE_STRING, // function desc
+                                 GObject.TYPE_STRING // element type (event|prop)
                                 
                             ] );
                                 
