@@ -260,6 +260,7 @@ LeftPanel = new XObject({
                         
                             
                         },
+                        /** get's a value, and tries to use type column to work out what type */
                         getValue: function (iter, col) {
                             var gval = new GObject.Value('');
                             LeftPanel.get('model').el.get_value(iter, col ,gval);
