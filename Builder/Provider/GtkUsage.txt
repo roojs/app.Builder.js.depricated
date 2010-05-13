@@ -91,6 +91,7 @@ right:
 
 left:
 	Gtk.MenuBar
+	Gtk.Menu
 right:
 	Gtk.MenuItem 
 	Gtk.ImageMenuItem 
