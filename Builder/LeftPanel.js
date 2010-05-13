@@ -188,7 +188,7 @@ LeftPanel = new XObject({
                             
                             var LeftTree        = imports.Builder.LeftTree.LeftTree;
                             LeftTree.get('model').changed(data, true); 
-                            this.selection.select_path(new Gtk.TreePath.from_string(map[k]));
+                             LeftPanel.get('view').selection.select_path(new Gtk.TreePath.from_string(map[k]));
                             this.editSelected( true )
                             
                             
