@@ -34,6 +34,7 @@ TODO
 * sort out add heirachy for Gtk..
 * make heirachy editor...
 * use application to write itself...
+* Help view - load docs..
 
 -----------------------------------------------------
 Concepts
