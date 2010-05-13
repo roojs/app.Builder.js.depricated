@@ -206,7 +206,7 @@ MidPropTree = new XObject({
                                 this.el.set_value(iter, 2, '<span size="small"><b>' + p.name +'</b> ['+p.type+']</span>' + "\n" + p.desc);
                                 this.el.set_value(iter, 3, p.sig ? p.sig  : '');
                                 this.el.set_value(iter, 4, '<span size="small"><b>' + p.name +'</b> ['+p.type+']</span>');
-                                this.el.set_value(iter, 4, type);
+                                this.el.set_value(iter, 5, type);
                                 
                             }
                              
