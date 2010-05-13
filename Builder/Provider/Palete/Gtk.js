@@ -41,7 +41,7 @@ Gtk = XObject.define(
             var right = [];
             
             data.forEach( function(d) {
-                if (!d.length || d.match(/^\s+$/) || d.match(/^\//)) { //empty
+                if (!d.length || d.match(/^\s+$/) || d.match(/^\s*\//)) { //empty
                     return;
                 }
                 if (d.match(/^left:/)) { 
