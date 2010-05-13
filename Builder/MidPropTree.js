@@ -107,7 +107,7 @@ MidPropTree = new XObject({
                         if (type == 'function') {
                             
                             LeftPanel.get('model').add({
-                                name : '|' +key, 
+                                key : '|' +key, 
                                 type : type,
                                 skel  : skel,
                                 etype : etype
@@ -116,7 +116,7 @@ MidPropTree = new XObject({
                         }
                         
                         LeftPanel.get('model').add( {
-                            name : key, 
+                            key : key, 
                             type : type,
                             //skel  : skel,
                             etype : etype
