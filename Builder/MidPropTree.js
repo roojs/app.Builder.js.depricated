@@ -154,7 +154,7 @@ MidPropTree = new XObject({
                             MidPropTree.get('model').el.get_value(iter, col, value);
                             return value.value;
                             
-                        }
+                        },
                         /*
                         load : function (ar)
                         {
