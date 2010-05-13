@@ -191,7 +191,7 @@ LeftPanel = new XObject({
                             LeftPanel.get('view').selection.select_path(new Gtk.TreePath.from_string(map[k]));
                             //this.editSelected( true )
                             LeftPanel.get('view').el.set_cursor(new Gtk.TreePath.from_string(map[k]), 
-                                this.get('editableCell').el, true);
+                                LeftPanel.editableCell, true);
                             
                             
                             
@@ -394,6 +394,7 @@ LeftPanel = new XObject({
                         {
                             XObject.prototype.init.call(this); 
                             this.el.add_attribute(this.items[0].el , 'markup', 2 );
+                            
                         },
                         items : [
                             {
@@ -412,13 +413,13 @@ LeftPanel = new XObject({
                         {
                             XObject.prototype.init.call(this); 
                             this.el.add_attribute(this.items[0].el , 'text', 3 );
-                             
+                            LeftPanel.editableCell = this.items[0].el;
                         },
                         items : [
                         
                          
                             {
-                                id : 'editableCell',
+                                
                                 xtype : Gtk.CellRendererText,
                                 pack : ['pack_start'],
                                 editable : true,
