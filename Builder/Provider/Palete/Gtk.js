@@ -276,7 +276,7 @@ Gtk = XObject.define(
                 var add = {
                     name :  n_original.replace(/\-/g, '_'),
                     type : 'function', //???
-                    desc : this.doc(ename + '.' + n_original),
+                    desc : this.doc(ename + '.signal.' + n_original),
                     sig  : '' // fixme..
                 }
                 elist.push(add);
