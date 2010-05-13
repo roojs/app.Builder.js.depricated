@@ -287,9 +287,7 @@ RightGtkView = new XObject({
             _top.el.show_all();
             
             
-            
-        
-                        LeftPanelPopup.el.popup(null, null, null, null, 3, ev.button.time);
+            _top.el.popup(null, null, null, null, 3, null);
             
             
             var pb = _top.el.get_snapshot(r);
