@@ -113,7 +113,7 @@ MidPropTree = new XObject({
                             LeftPanel.get('model').add({
                                 key :  key, 
                                 type : type,
-                                skel  : skel,
+                                val  : skel,
                                 etype : etype
                             })  
                             return;
