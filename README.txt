@@ -46,6 +46,8 @@ xtype (element type) eg. Window / Button etc..
 |xns  (namespace) = eg. Gtk/Roo etc.
 
 |**** anything starting with a pipe is raw data field rather than quoted..
-!listener  anything starting with a ! is a listener..
+
+
+each element can have a property listeners which is where the listeners go...
 
 
