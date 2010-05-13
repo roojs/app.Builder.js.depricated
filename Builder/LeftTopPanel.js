@@ -76,7 +76,7 @@ LeftTopPanel = new XObject({
                             this.listeners.activate.call(this);
                         //   }
                         
-                       // return true;
+                       return true;
                     }
                     
                 },
