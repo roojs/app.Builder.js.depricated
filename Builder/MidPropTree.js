@@ -114,7 +114,12 @@ MidPropTree = new XObject({
                             return;
                         }
                         
-                        LeftPanel.get('model').add(key, type) //, skel);
+                        LeftPanel.get('model').add( {
+                            name : key, 
+                            type : type,
+                            //skel  : skel,
+                            etype : 
+                           }) //, skel);
                         
                         
                     }
@@ -139,6 +144,16 @@ MidPropTree = new XObject({
                             ] );
                                 
                         },
+                        getValue : function(treepath, col)
+                        {
+                            var tp = new Gtk.TreePath.from_string (treepath);
+                            var iter = new Gtk.TreeIter();
+                            this.el.get_iter (iter, tp);
+                            var value = new GObject.Value('');
+                            MidPropTree.get('model').el.get_value(iter, col, value);
+                            return value.value;
+                            
+                        }
                         /*
                         load : function (ar)
                         {
