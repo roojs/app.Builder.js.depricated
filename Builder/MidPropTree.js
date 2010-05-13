@@ -90,20 +90,16 @@ MidPropTree = new XObject({
                         //console.log('changed');
                         var s = this.selection;
                         s.get_selected(MidPropTree.get('model').el, iter);
+                        var tp = this.el.get_path(iter).to_string();
                         
                         
                         // var val = "";
-                        value = new GObject.Value('');
-                        MidPropTree.get('model').el.get_value(iter, 0, value);
-                        var key = value.value;
-                        value = new GObject.Value('');
-                        MidPropTree.get('model').el.get_value(iter, 1, value);
-                        var type = value.value;
                         
+                        var key = this.getValue(tp, 0);
                         
-                        value = new GObject.Value('');
-                        MidPropTree.get('model').el.get_value(iter, 3, value);
-                        var skel = value.value;
+                        var type = this.getValue(tp, 1);
+                        var skel = this.getValue(tp, 3);
+                        var etype = this.getValue(tp, 4);
                         
                         
                         MidPropTree.hideWin();
@@ -118,7 +114,7 @@ MidPropTree = new XObject({
                             name : key, 
                             type : type,
                             //skel  : skel,
-                            etype : 
+                            etype : etype
                            }) //, skel);
                         
                         
