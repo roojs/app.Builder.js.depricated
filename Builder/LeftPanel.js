@@ -86,13 +86,13 @@ LeftPanel = new XObject({
                         {
                             XObject.prototype.init.call(this); 
                             this.el.set_column_types ( 5, [
-                                GObject.TYPE_STRING,  // real key
-                                GObject.TYPE_STRING, // real value 
-                                 GObject.TYPE_STRING,  // visable key
-                                 GObject.TYPE_STRING, // visable value
-                                 GObject.TYPE_STRING, // need to store type of!!!
-                                 GObject.TYPE_STRING, // is listener..
-                                 GObject.TYPE_STRING, // is raw..
+                                GObject.TYPE_STRING,  // 0 real key
+                                GObject.TYPE_STRING, // 1 real value 
+                                 GObject.TYPE_STRING,  // 2 visable key
+                                 GObject.TYPE_STRING, // 3 visable value
+                                 GObject.TYPE_STRING, // 4 need to store type of!!!
+                                 GObject.TYPE_STRING, // 5 is listener..
+                                 GObject.TYPE_STRING, // 6 is raw..
                             ] );
                                     
                             
