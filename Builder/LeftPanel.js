@@ -91,7 +91,7 @@ LeftPanel = new XObject({
                                  GObject.TYPE_STRING,  // visable key
                                  GObject.TYPE_STRING, // visable value
                                  GObject.TYPE_STRING// need to store type of!!!
-                                ] );
+                            ] );
                                     
                             
                          
