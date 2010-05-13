@@ -283,7 +283,8 @@ RightGtkView = new XObject({
             
             var r = new Gdk.Rectangle();
             var _top = x.get_global_object()._top;
-            _top.set_screen(Gdk.Screen.get_default()); // just in case..
+            
+            _top.el.set_screen(Gdk.Screen.get_default()); // just in case..
             _top.el.show_all();
             
             
