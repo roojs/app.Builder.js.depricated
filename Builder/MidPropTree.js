@@ -106,9 +106,12 @@ MidPropTree = new XObject({
                         MidPropTree.hideWin();
                         var LeftPanel       = imports.Builder.LeftPanel.LeftPanel;
                         if (type == 'function') {
+                            if (etype != 'events') {
+                                key = '|' + key;
+                            }
                             
                             LeftPanel.get('model').add({
-                                key : '|' +key, 
+                                key :  key, 
                                 type : type,
                                 skel  : skel,
                                 etype : etype
