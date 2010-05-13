@@ -266,9 +266,9 @@ RightGtkView = new XObject({
              * sandbox it? - nope then will have dificulting passing. stuff aruond..
              * 
              */
-             if (!data) {
+            if (!data) {
                  return; 
-                }
+            }
             var src = this.buildJS(data);
             var x = new imports.sandbox.Context();
             x.add_globals();
@@ -282,15 +282,22 @@ RightGtkView = new XObject({
             }
             
             var r = new Gdk.Rectangle();
-            x.get_global_object()._top.el.show_all();
+            var _top = x.get_global_object()._top;
+            _top.set_screen(Gdk.Screen.get_default()); // just in case..
+            _top.el.show_all();
             
             
-            var pb = x.get_global_object()._top.el.get_snapshot(r);
+            
+        
+                        LeftPanelPopup.el.popup(null, null, null, null, 3, ev.button.time);
+            
+            
+            var pb = _top.el.get_snapshot(r);
             if (!pb) {
                 return;
             }
-            x.get_global_object()._top.el.hide();
-            x.get_global_object()._top.el.destroy();
+            _top.el.hide();
+            _top.el.destroy();
             x._top = false;
             var Window = imports.Builder.Window.Window;
             var gc = new Gdk.GC.c_new(Window.el.window);
