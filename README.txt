@@ -8,6 +8,16 @@ and the gobject introspection bindings.
 
 It's kind of like Glade on steroids..
 
+----------------------------------------------------
+Usage:
+
+seed builder_run.js
+
+-> create a project
+-> add a folder to the project
+-> add a file to the project..
+Files are JSON data files at present.. 
+
 -----------------------------------------------------
 Where it is..
 
@@ -22,4 +32,5 @@ TODO
 * sort out add heirachy for Gtk..
 * make heirachy editor...
 * use application to write itself...
+* create output to JS ...
 
