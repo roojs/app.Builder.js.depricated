@@ -266,6 +266,9 @@ RightGtkView = new XObject({
              * sandbox it? - nope then will have dificulting passing. stuff aruond..
              * 
              */
+             if (!data) {
+                 return; 
+                }
             var src = this.buildJS(data);
             var x = new imports.sandbox.Context();
             x.add_globals();
