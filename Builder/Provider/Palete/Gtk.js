@@ -118,6 +118,9 @@ Gtk = XObject.define(
                 
                 var n =  getAttribute(element, 'name') ;
                 //console.log("WALK" + n);
+                if (element.name == 'signal') {
+                    path += '.signal';
+                } 
                 if (n) {
                     path += path.length ? '.' : '';
                     path += n;
@@ -126,9 +129,7 @@ Gtk = XObject.define(
                     path += '.return-value';
                 }
                 
-                if (element.name == 'signal') {
-                    path += '.signal';
-                } 
+                
              
                 var d =   getAttribute(element,'doc');
                 if (d) {
