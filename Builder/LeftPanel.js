@@ -279,7 +279,85 @@ LeftPanel = new XObject({
                                     return val;
                             }
                             
-                        } 
+                        },
+                        
+                        editSelected: function()
+                        {
+                            var iter = new Gtk.TreeIter();
+                            var s = LeftPanel.get('view').selection;
+                            s.get_selected(LeftPanel.get('model').el, iter);
+                            var m = LeftPanel.get('model');
+                           
+                            var gval = new GObject.Value('');
+                            m.el.get_value(iter, 0 ,gval);
+                            var val = '' + gval.value;
+                            
+                            gval = new GObject.Value('');
+                            m.el.get_value(iter, 1 ,gval);
+                            var rval = gval.value;
+                            var activePath = m.el.get_path(iter).to_string(); 
+                            m.activePath = activePath ;
+                            // was activeIter...
+                            //  not listener...
+                            
+                            var showEditor = false;
+                            
+                            if (val[0] == '!') {
+                                showEditor = true;
+                            }
+                            if (val[0] == '|') {
+                                if (rval.match(/function/g) || rval.match(/\n/g)) {
+                                    showEditor = true;
+                                }
+                            }
+                            if (showEditor) {
+                                    
+                                m.activePath = false;
+                                GLib.timeout_add(0, 1, function() {
+                                    //   Gdk.threads_enter();
+                                    RightEditor.el.show();
+                                    RightEditor.get('view').load( rval );
+                                    
+                                    e.editing_done();
+                                    e.remove_widget();
+                                    LeftPanel.get('model').activePath = activePath ;
+                                    
+                             //       Gdk.threads_leave();
+                                    return false;
+                                });
+                                return;
+                            }
+                             
+                            RightEditor.el.hide();
+
+                            var type = LeftPanel.get('model').getValue(iter,4);
+                            
+                            // toggle boolean
+                            if (type == 'boolean') {
+                                val = ! LeftPanel.get('model').getValue(iter,1);
+                                
+                                
+                                LeftPanel.get('model').activeIter = false;
+                                GLib.timeout_add(0, 1, function() {
+                                    //   Gdk.threads_enter();
+                                     
+                                    e.editing_done();
+                                    e.remove_widget();
+                                    LeftPanel.get('model').activeIter = iter;
+                                    LeftPanel.get('model').changed(''+val,true);
+                                    
+                             
+                                    return false;
+                                });
+                            }
+                            
+                             // otherwise we are going to show the text editor..   
+                                
+                            }
+                            
+                            //r.stop_editing(true);
+                        }
+                        }
                           
                         
                     },
