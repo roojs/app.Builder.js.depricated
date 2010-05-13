@@ -111,7 +111,7 @@ MidPropTree = new XObject({
                                 type : type,
                                 skel  : skel,
                                 etype : etype
-                               }) //, skel);
+                            })  
                             return;
                         }
                         
