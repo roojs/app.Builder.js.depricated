@@ -150,7 +150,10 @@ RightBrowser = new XObject({
                                     
                                 } 
                                 if (ret && typeof(val['set']) != 'undefined') {
-                                    LeftPanel.get('model').add(val['set'], null, val['value']);
+                                    LeftPanel.get('model').add({
+                                        key : val['set'],
+                                        val : val['value']
+                                    });
                                     //console.log('active node: ' + this.activeNode);
                                     
                                 }
