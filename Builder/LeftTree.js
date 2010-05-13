@@ -357,7 +357,8 @@ LeftTree = new XObject(
                                 // it may not be loaded yet..
                                 return  true;
                             }
-                            pm.load( LeftTree.getPaleteProvider().gatherList(LeftTree.get('model').listAllTypes()));
+                            pm.load( LeftTree.getPaleteProvider().gatherList(
+                                LeftTree.get('model').listAllTypes()));
                            
                             return true;
                         }
@@ -381,7 +382,8 @@ LeftTree = new XObject(
                        // _g.button.set_label(''+value.get_string());
                         var RightPalete     = imports.Builder.RightPalete.RightPalete;
                         var pm = RightPalete.get('model');
-                        pm.load( RightPalete.provider.gatherList(LeftTree.get('model').listAllTypes()));
+                        pm.load( RightPalete.provider.gatherList(
+                            LeftTree.get('model').listAllTypes()));
                        
                         
                        
@@ -483,7 +485,7 @@ LeftTree = new XObject(
                                 return;
                             }
                             print("LOAD");
-                            console.dump(f.items);
+                            //console.dump(f.items);
                             this.load(f.items);
                             LeftTree.get('view').el.expand_all();
                             var Window = imports.Builder.Window.Window;
