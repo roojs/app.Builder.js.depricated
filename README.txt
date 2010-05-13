@@ -27,7 +27,7 @@ Where it is..
 -----------------------------------------------------
 TODO
 
-
+* listeners (for gtk need prototypes);
 * create output to JS ...
 * templates for elements... - eg. defaults for classic elements.
 * sort out add heirachy for Gtk..
