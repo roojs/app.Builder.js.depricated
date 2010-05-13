@@ -7,3 +7,9 @@ Then compile the with g-ir-compile /usr/share/gir-1.0/XXXX.gir -o /usr/lib/girep
 
 gtk_tree_view_get_dest_row_at_pos
  - path & pos both need direction="out"
+ 
+ 
+ --------------------------
+ 
+ Eventually GIR's should be downloadable from the doc site (or upstreamed into releases)
+ 
