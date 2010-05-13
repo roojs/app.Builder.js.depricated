@@ -88,18 +88,19 @@ MidPropTree = new XObject({
                         var iter = new Gtk.TreeIter();
                         
                         //console.log('changed');
+                        var m = this.get('model');
                         var s = this.selection;
-                        s.get_selected(MidPropTree.get('model').el, iter);
-                        var tp = this.el.get_path(iter).to_string();
+                        s.get_selected(m.el, iter);
+                        var tp = m.get_path(iter).to_string();
                         
                         
                         // var val = "";
                         
-                        var key = this.getValue(tp, 0);
+                        var key = m.getValue(tp, 0);
                         
-                        var type = this.getValue(tp, 1);
-                        var skel = this.getValue(tp, 3);
-                        var etype = this.getValue(tp, 4);
+                        var type = m.getValue(tp, 1);
+                        var skel = m.getValue(tp, 3);
+                        var etype = m.getValue(tp, 4);
                         
                         
                         MidPropTree.hideWin();
