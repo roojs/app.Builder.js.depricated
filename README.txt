@@ -28,6 +28,7 @@ Where it is..
 TODO
 
 * listeners (for gtk need prototypes);
+* calculate mouseover for rendered view of Gtk preview.
 * create output to JS ...
 * templates for elements... - eg. defaults for classic elements.
 * sort out add heirachy for Gtk..
