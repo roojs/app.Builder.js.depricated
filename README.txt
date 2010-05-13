@@ -22,11 +22,11 @@ Files are JSON data files at present..
 Where it is..
 
 * basic builder app runs - you can build a tree of elements making up a interface for roo and gtk.
-
+* listeners are  created correctly.
 
 -----------------------------------------------------
 TODO
-* listeners need to created correctly.
+
 
 * create output to JS ...
 * templates for elements... - eg. defaults for classic elements.
