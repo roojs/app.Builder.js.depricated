@@ -286,7 +286,7 @@ RightGtkView = new XObject({
             
             
             var pb = x.get_global_object()._top.el.get_snapshot(r);
-            if (pb) {
+            if (!pb) {
                 return;
             }
             x.get_global_object()._top.el.hide();
