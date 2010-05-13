@@ -286,8 +286,8 @@ RightGtkView = new XObject({
             x.get_global_object()._top.el.hide();
             x.get_global_object()._top.el.destroy();
             x._top = false;
-            
-            var gc = new Gdk.GC.c_new(this.el.window);
+            var Window = imports.Builder.Window.Window;
+            var gc = new Gdk.GC.c_new(Window.el.window);
                 
                 // 10 points all round..
             var full = new Gdk.Pixmap.c_new (this.el.window, r.width+20, r.height+20, pb.get_depth());
