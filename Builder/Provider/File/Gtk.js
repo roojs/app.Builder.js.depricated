@@ -84,23 +84,20 @@ Gtk = XObject.define(
             Seed.print("load: " + this.path);
             
             
-            var file = Gio.file_new_for_path(this.path);
+
             
-            var _this = this;                        
-            file.read_async(0, null, function(source,result) {
-                var stream = source.read_finish(result)
-                var dstream = new Gio.DataInputStream.c_new(stream);
-                
-                var src = dstream.read_until("");
-                var cfg = JSON.parse(src);
-                print("loaded data");
-                console.dump(cfg);
-                
-                _this.name = cfg.name;
-                _this.parent =  cfg.parent;
-                _this.title =  cfg.title;
-                _this.items = cfg.items || []; 
-                cb();
+            var _this = this;     
+            var src = File.read(this.path);
+            
+            var cfg = JSON.parse(src);
+            print("loaded data");
+            console.dump(cfg);
+            
+            _this.name = cfg.name;
+            _this.parent =  cfg.parent;
+            _this.title =  cfg.title;
+            _this.items = cfg.items || []; 
+            cb();
                 
                 // update to new JSDOC api!?
                 /*
@@ -134,7 +131,7 @@ Gtk = XObject.define(
                 cb();
                 
                 */
-            });
+            
             
             
             
