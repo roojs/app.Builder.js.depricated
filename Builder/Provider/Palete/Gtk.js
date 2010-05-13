@@ -125,7 +125,7 @@ Gtk = XObject.define(
                 if (element.name == 'return-value') {
                     path += '.return-value';
                 }
-                print(element.name );
+                
                 if (element.name == 'signal') {
                     path += '.signal';
                 } 
