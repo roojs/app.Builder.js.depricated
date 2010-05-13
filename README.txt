@@ -34,4 +34,17 @@ TODO
 * make heirachy editor...
 * use application to write itself...
 
+-----------------------------------------------------
+Concepts
+
+Basically both Roo and JS are built using a tree of elements (tagged with xtype/xns)
+sub elements always go in the items array..
+we have some special properties of elements, eg.
+
+*prop (a property of the parent)
+xtype (element type) eg. Window / Button etc..
+|xns  (namespace) = eg. Gtk/Roo etc.
+
+
+
 
