@@ -91,7 +91,7 @@ MidPropTree = new XObject({
                         var m = this.get('model');
                         var s = this.selection;
                         s.get_selected(m.el, iter);
-                        var tp = m.get_path(iter).to_string();
+                        var tp = m.el.get_path(iter).to_string();
                         
                         
                         // var val = "";
