@@ -191,11 +191,14 @@ LeftPanel = new XObject({
                             LeftTree.get('model').changed(data, true); 
                             //LeftPanel.get('view').selection.select_path(new Gtk.TreePath.from_string(map[k]));
                             //this.editSelected( true )
-                            LeftPanel.get('view').el.set_cursor_on_cell(
-                                new Gtk.TreePath.from_string(map[k]), 
-                                LeftPanel.editableColumn.el,
-                                LeftPanel.editableColumn.items[0].el,
-                                true);
+                             GLib.timeout_add(0, 1, function() {
+                                
+                                LeftPanel.get('view').el.set_cursor_on_cell(
+                                    new Gtk.TreePath.from_string(map[k]), 
+                                    LeftPanel.editableColumn.el,
+                                    LeftPanel.editableColumn.items[0].el,
+                                    true);
+                            });
                             /*
                             LeftPanel.get('view').el.row_activated(
                                 new Gtk.TreePath.from_string(map[k]), 
