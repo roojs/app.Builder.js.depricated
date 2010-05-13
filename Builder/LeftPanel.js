@@ -109,6 +109,7 @@ LeftPanel = new XObject({
                             if (ar === false) {
                                 return ;
                             }
+                            var ret = {}; 
                             
                             // sort!!!?
                             var iter = new Gtk.TreeIter();
@@ -117,6 +118,8 @@ LeftPanel = new XObject({
                                     continue;
                                 }
                                 this.el.append(iter);
+                                var p = this.el.get_path(iter).to_string();
+                                ret[i] = p;
                                 this.el.set_value(iter, 0, i);
                                 this.el.set_value(iter, 1, '' + ar[i]);
                                 this.el.set_value(iter, 2, i);
@@ -126,6 +129,9 @@ LeftPanel = new XObject({
                             ar.listeners = ar.listeners || {};
                             for (var i in ar.listeners ) {
                                 this.el.append(iter);
+                                var p = this.el.get_path(iter).to_string();
+                                ret['!' + i] = p;
+                                
                                 this.el.set_value(iter, 0, '!'+  i  );
                                 this.el.set_value(iter, 1, '' + ar.listeners[i]);
                                 this.el.set_value(iter, 2, '<b>'+ i + '</b>');
