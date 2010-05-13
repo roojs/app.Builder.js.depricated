@@ -3,7 +3,7 @@
 Gio = imports.gi.Gio;
 console = imports.console;
 XObject = imports.XObject.XObject;
-
+File = imports.File.File;
   
 //----------------------- our roo verison
 Base = imports.Builder.Provider.File.Base.Base;
