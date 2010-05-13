@@ -224,29 +224,7 @@ Gtk = XObject.define(
             p.type
             p.desc
             p.sig */
-           function typeToName (type_info) {
-               var ty = GIRepository.type_tag_to_string( GIRepository.type_info_get_tag(type_info));
-               
-                if ((ty == 'void') && GIRepository.type_info_is_pointer(type_info)) {
-                    return false;
-                }
-                if (ty == 'array') {
-                    return false; // unspported   
-                }
-                if (ty != 'interface') {
-                    
-                    return ty;
-                }
-                // we can accept enum types here..
-                var interface_info = GIRepository.type_info_get_interface (type_info);        
-                var interface_type = GIRepository.base_info_get_type (interface_info);
-                if (interface_type != GIRepository.IInfoType.ENUM) {
-                    return false;
-                }
-                return GIRepository.base_info_get_namespace(interface_info) + '.' +
-                        GIRepository.base_info_get_name(interface_info);
-                
-            }
+            
             // properties.. -- and parent ones...!!!
             for (var i =0;i <  GIRepository[meth[0]](bi); i++) {
                 var prop = GIRepository[meth[1]](bi, i);  
@@ -255,7 +233,7 @@ Gtk = XObject.define(
                 var flags =  GIRepository.property_info_get_flags(prop); // check for readonly..
                 
                 
-                var ty = typeToName(GIRepository.property_info_get_type(prop));
+                var ty = this.typeToName(GIRepository.property_info_get_type(prop));
                 print (n_original +":"+ ty);
                 if (ty === false) {
                     continue;
@@ -323,8 +301,48 @@ Gtk = XObject.define(
             
         }
         
-        
-        
+         genSkel: function(sig)
+        {
+            var args = ['self'];
+            var ret = "\n";
+            var ret_type = this.typeToName(GIRepository.callable_info_get_return_type(sig)) } ],
+            // might be a numbeR??
+            if (ret_type == 'boolean') {
+                ret = "    return false;\n";
+            }
+            for(var a_i  =0; a_i   < GIRepository.callable_info_get_n_args(m); a_i++) {
+                var arg = GIRepository.callable_info_get_arg(m, a_i);
+                
+                args.push(GIRepository.base_info_get_name(arg));
+            }
+            return 'function (' + args.join(', ') + ") {\n" + ret + "}"; 
+                
+            
+            
+        },
+        typeToName  : function (type_info) {
+               var ty = GIRepository.type_tag_to_string( GIRepository.type_info_get_tag(type_info));
+               
+                if ((ty == 'void') && GIRepository.type_info_is_pointer(type_info)) {
+                    return false;
+                }
+                if (ty == 'array') {
+                    return false; // unspported   
+                }
+                if (ty != 'interface') {
+                    
+                    return ty;
+                }
+                // we can accept enum types here..
+                var interface_info = GIRepository.type_info_get_interface (type_info);        
+                var interface_type = GIRepository.base_info_get_type (interface_info);
+                if (interface_type != GIRepository.IInfoType.ENUM) {
+                    return false;
+                }
+                return GIRepository.base_info_get_namespace(interface_info) + '.' +
+                        GIRepository.base_info_get_name(interface_info);
+                
+            }
     }
 );
  
