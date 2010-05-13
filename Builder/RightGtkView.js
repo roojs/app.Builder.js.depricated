@@ -238,8 +238,14 @@ RightGtkView = new XObject({
                 print(e.toString());
                 return;
             }
-             x.get_global_object()._top.el.show_all();
+             
+            var _top = x.get_global_object()._top;
             
+            _top.el.set_screen(Gdk.Screen.get_default()); // just in case..
+            _top.el.show_all();
+            if (_top.el.popup) {
+                _top.el.popup(null, null, null, null, 3, null);
+            }
         },
         
         buildJS: function(data) {
@@ -286,9 +292,10 @@ RightGtkView = new XObject({
             
             _top.el.set_screen(Gdk.Screen.get_default()); // just in case..
             _top.el.show_all();
+            if (_top.el.popup) {
+                _top.el.popup(null, null, null, null, 3, null);
+            }
             
-            
-            _top.el.popup(null, null, null, null, 3, null);
             
             
             var pb = _top.el.get_snapshot(r);
