@@ -93,7 +93,7 @@ LeftPanel = new XObject({
                                  GObject.TYPE_STRING, // 4 need to store type of!!!
                                  GObject.TYPE_STRING, // 5 is listener..
                                  GObject.TYPE_STRING, // 6 is raw..
-                            ] );
+                            ]);
                                     
                             
                          
