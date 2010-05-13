@@ -135,7 +135,7 @@ MidPropTree = new XObject({
                         currentData : false,
                         init : function() {
                             XObject.prototype.init.call(this); 
-                            this.el.set_column_types ( 5, [
+                            this.el.set_column_types ( 6, [
                                 GObject.TYPE_STRING,  // real key
                                  GObject.TYPE_STRING, // real type
                                  GObject.TYPE_STRING, // docs ?
