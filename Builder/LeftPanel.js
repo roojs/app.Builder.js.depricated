@@ -160,8 +160,8 @@ LeftPanel = new XObject({
                                 
                             }
                             if (info.etype == 'event') {
-                                data.listeners  = data.listeners  || { };
-                                data.listeners[info.key] = info.val;
+                                 
+                                data['!' + info.key] = info.val;
                             } else {
                                 data[info.key] = info.val;
                             }
