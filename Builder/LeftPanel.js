@@ -137,27 +137,29 @@ LeftPanel = new XObject({
                         
                         
                         
-                        add : function(key, type,   val, skel) {
-                            type = type.toLowerCase();
+                        add : function( info ) {
+                            // info includes key, val, skel, etype..
+                            
+                            type = info.type.toLowerCase();
                             var data = this.toJS();
-                            if ((typeof(data[key]) != 'undefined') && 
-                                (typeof(val) == 'undefined') ) {
+                            if ((typeof(data[info.key]) != 'undefined') && 
+                                (typeof(info.val) == 'undefined') ) {
                                 return;
                             }
-                            if (typeof(val) == 'undefined') {
+                            if (typeof(info.val) == 'undefined') {
                                     
-                                val = '';
-                                if (type == 'boolean') {
-                                    val = true;
+                                info.val = '';
+                                if (info.type == 'boolean') {
+                                    info.val = true;
                                 }
                                 if (type == 'number') {
-                                    val = 0;
+                                    info.val = 0;
                                 }
                                 // utf8 == string..
                                 
                                 
                             }
-                            data[key] = val;
+                            data[info.key] = info.val;
                             
                             this.load(data);
                             var LeftTree        = imports.Builder.LeftTree.LeftTree;
