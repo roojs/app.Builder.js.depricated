@@ -106,7 +106,12 @@ MidPropTree = new XObject({
                         var LeftPanel       = imports.Builder.LeftPanel.LeftPanel;
                         if (type == 'function') {
                             
-                            LeftPanel.get('model').add('|' +key, type, skel) //, skel);
+                            LeftPanel.get('model').add({
+                                name : '|' +key, 
+                                type : type,
+                                skel  : skel,
+                                etype : etype
+                               }) //, skel);
                             return;
                         }
                         
