@@ -330,11 +330,11 @@ LeftPanel = new XObject({
                              
                             RightEditor.el.hide();
 
-                            var type = LeftPanel.get('model').getValue(iter,4);
+                            var type = m.getValue(iter,4);
                             
                             // toggle boolean
                             if (type == 'boolean') {
-                                val = ! LeftPanel.get('model').getValue(iter,1);
+                                val = ! m.getValue(iter,1);
                                 
                                 
                                 LeftPanel.get('model').activeIter = false;
