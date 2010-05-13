@@ -290,7 +290,7 @@ RightGtkView = new XObject({
             var gc = new Gdk.GC.c_new(Window.el.window);
                 
                 // 10 points all round..
-            var full = new Gdk.Pixmap.c_new (this.el.window, r.width+20, r.height+20, pb.get_depth());
+            var full = new Gdk.Pixmap.c_new (Window.el.window, r.width+20, r.height+20, pb.get_depth());
             // draw a white background..
            // gc.set_rgb_fg_color({ red: 0, white: 0, black : 0 });
             Gdk.draw_rectangle(full, gc, true, 0, 0, r.width+20, r.height+20);
