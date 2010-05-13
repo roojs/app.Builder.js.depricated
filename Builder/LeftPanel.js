@@ -320,7 +320,7 @@ LeftPanel = new XObject({
                                     
                                     e.editing_done();
                                     e.remove_widget();
-                                    LeftPanel.get('model').activePath = activePath ;
+                                    m.activePath = activePath ;
                                     
                              //       Gdk.threads_leave();
                                     return false;
@@ -343,8 +343,8 @@ LeftPanel = new XObject({
                                      
                                     e.editing_done();
                                     e.remove_widget();
-                                    LeftPanel.get('model').activeIter = iter;
-                                    LeftPanel.get('model').changed(''+val,true);
+                                    m.activePath = activePath ;
+                                    m.changed(''+val,true);
                                     
                              
                                     return false;
