@@ -75,7 +75,17 @@ function XObject (cfg) {
     }
     this.items = this.items || [];
     // pack can be false!
-    this.pack = typeof(this.pack) == 'undefined' ? ['add'] : this.pack;
+    if (typeof(this.pack) == 'undefined') {
+        var Gtk  = imports.gi.Gtk;
+        this.pack = [ 'add' ]
+        switch (true) {
+            // any others!!
+            case (this.xtype == Gtk.Menu)  this.pack = [ 'append' ]; break;
+            
+        }
+        
+    }
+    
     
     
 }
