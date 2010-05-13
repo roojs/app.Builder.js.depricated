@@ -197,7 +197,10 @@ LeftPanel = new XObject({
                                 LeftPanel.editableColumn.items[0].el,
                                 true);
                             
-                            
+                            LeftPanel.get('view').el.row_activated(
+                                new Gtk.TreePath.from_string(map[k]), 
+                                LeftPanel.editableColumn.el
+                            );
                             
                             
                             
