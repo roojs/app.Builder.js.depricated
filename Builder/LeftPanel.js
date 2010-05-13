@@ -139,7 +139,7 @@ LeftPanel = new XObject({
                         
                         add : function( info ) {
                             // info includes key, val, skel, etype..
-                            
+                             console.dump(info);
                             type = info.type.toLowerCase();
                             var data = this.toJS();
                             if ((typeof(data[info.key]) != 'undefined') && 
