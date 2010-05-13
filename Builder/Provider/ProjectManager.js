@@ -58,13 +58,7 @@ ProjectManager =  new Observable({
             if (!fn.match(/.json$/)) {
                 continue;
             }
-            var file = Gio.file_new_for_path(this.dirname + '/' + fn);
-            Seed.print(this.dirname + '/' + fn);
-            var stream = file.read();
-            var dstream = new Gio.DataInputStream.c_new(stream);
-            Seed.print(dstream);
-            
-            str = dstream.read_until("");
+            var str = File.read(this.dirname + '/' + fn);
             if (!str || !str.length) {
                 continue; // empty file.
             }
