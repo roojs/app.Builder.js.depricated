@@ -304,7 +304,7 @@ LeftPanel = new XObject({
                         
                         editSelected: function( e)
                         {
-                            
+                            print("EDIT SELECTED?");
                             var iter = new Gtk.TreeIter();
                             var s = LeftPanel.get('view').selection;
                             s.get_selected(LeftPanel.get('model').el, iter);
