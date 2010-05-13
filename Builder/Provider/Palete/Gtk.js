@@ -305,7 +305,7 @@ Gtk = XObject.define(
         {
             var args = ['self'];
             var ret = "\n";
-            var ret_type = this.typeToName(GIRepository.callable_info_get_return_type(sig)) } ],
+            var ret_type = this.typeToName(GIRepository.callable_info_get_return_type(sig));
             // might be a numbeR??
             if (ret_type == 'boolean') {
                 ret = "    return false;\n";
