@@ -80,7 +80,7 @@ function XObject (cfg) {
         this.pack = [ 'add' ]
         switch (true) {
             // any others!!
-            case (this.xtype == Gtk.Menu)  this.pack = [ 'append' ]; break;
+            case (this.xtype == Gtk.Menu):  this.pack = [ 'append' ]; break;
             
         }
         
