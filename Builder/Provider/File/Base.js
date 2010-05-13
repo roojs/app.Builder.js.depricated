@@ -84,6 +84,10 @@ Base = XObject.define(
         guessName : function(ar) // turns the object into full name.
         {
              // eg. xns: Roo, xtype: XXX -> Roo.xxx
+            if (typeof( ar['|xns'] ) == 'undefined' || typeof( ar['xtyle'] ) == 'undefined') {
+                return '';
+               }
+             
             return ar['|xns'] +'.' + ar['xtype'];
                             
                                  
