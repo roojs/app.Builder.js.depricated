@@ -354,7 +354,7 @@ LeftPanel = new XObject({
                             RightEditor.el.hide();
 
                             var type = this.getValue(iter,4);
-                            
+                            print("type = " + type);
                             // toggle boolean
                             if (type == 'boolean') {
                                 val = ! this.getValue(iter,1);
