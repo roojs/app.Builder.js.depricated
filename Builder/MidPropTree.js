@@ -100,7 +100,7 @@ MidPropTree = new XObject({
                         
                         var type = m.getValue(tp, 1);
                         var skel = m.getValue(tp, 3);
-                        var etype = m.getValue(tp, 4);
+                        var etype = m.getValue(tp, 5);
                         
                         
                         MidPropTree.hideWin();
