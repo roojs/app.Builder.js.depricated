@@ -289,14 +289,14 @@ LeftPanel = new XObject({
                             var m = LeftPanel.get('model');
                            
                             var gval = new GObject.Value('');
-                            m.el.get_value(iter, 0 ,gval);
+                            this.el.get_value(iter, 0 ,gval);
                             var val = '' + gval.value;
                             
                             gval = new GObject.Value('');
-                            m.el.get_value(iter, 1 ,gval);
+                            this.el.get_value(iter, 1 ,gval);
                             var rval = gval.value;
-                            var activePath = m.el.get_path(iter).to_string(); 
-                            m.activePath = activePath ;
+                            var activePath = this.el.get_path(iter).to_string(); 
+                            this.activePath = activePath ;
                             // was activeIter...
                             //  not listener...
                             
@@ -310,9 +310,10 @@ LeftPanel = new XObject({
                                     showEditor = true;
                                 }
                             }
+                            
                             if (showEditor) {
-                                    
-                                m.activePath = false;
+                                var _this = this;
+                                this.activePath = false;
                                 GLib.timeout_add(0, 1, function() {
                                     //   Gdk.threads_enter();
                                     RightEditor.el.show();
@@ -320,7 +321,7 @@ LeftPanel = new XObject({
                                     
                                     e.editing_done();
                                     e.remove_widget();
-                                    m.activePath = activePath ;
+                                    _this.activePath = activePath ;
                                     
                              //       Gdk.threads_leave();
                                     return false;
@@ -330,21 +331,21 @@ LeftPanel = new XObject({
                              
                             RightEditor.el.hide();
 
-                            var type = m.getValue(iter,4);
+                            var type = this.getValue(iter,4);
                             
                             // toggle boolean
                             if (type == 'boolean') {
-                                val = ! m.getValue(iter,1);
+                                val = ! this.getValue(iter,1);
                                 
-                                
-                                LeftPanel.get('model').activeIter = false;
+                                this.activePath = false;
+                                var _this = this;
                                 GLib.timeout_add(0, 1, function() {
                                     //   Gdk.threads_enter();
                                      
                                     e.editing_done();
                                     e.remove_widget();
-                                    m.activePath = activePath ;
-                                    m.changed(''+val,true);
+                                    _this.activePath = activePath ;
+                                    _this.changed(''+val,true);
                                     
                              
                                     return false;
@@ -352,11 +353,10 @@ LeftPanel = new XObject({
                             }
                             
                              // otherwise we are going to show the text editor..   
-                                
-                            }
+                             
                             
                             //r.stop_editing(true);
-                        }
+                       
                         }
                           
                         
@@ -411,75 +411,8 @@ LeftPanel = new XObject({
                                     },
                                    
                                     'editing-started' : function(r, e, p) {
-                                        
-                                        var iter = new Gtk.TreeIter();
-                                        var s = LeftPanel.get('view').selection;
-                                        s.get_selected(LeftPanel.get('model').el, iter);
-                                         
-                                       
-                                        var gval = new GObject.Value('');
-                                        LeftPanel.get('model').el.get_value(iter, 0 ,gval);
-                                        var val = '' + gval.value;
-                                        
-                                        gval = new GObject.Value('');
-                                        LeftPanel.get('model').el.get_value(iter, 1 ,gval);
-                                        var rval = gval.value;
-                                         
-                                        LeftPanel.get('model').activeIter = iter;
-                                        //  not listener...
-                                        
-                                        var showEditor = false;
-                                        
-                                        if (val[0] == '!') {
-                                            showEditor = true;
-                                        }
-                                        if (val[0] == '|') {
-                                            if (rval.match(/function/g) || rval.match(/\n/g)) {
-                                                showEditor = true;
-                                            }
-                                        }
-                                        
-                                        if (!showEditor) {
-                                            RightEditor.el.hide();
-
-                                            var type = LeftPanel.get('model').getValue(iter,4);
-                                            
-                                            // toggle boolean
-                                            if (type == 'boolean') {
-                                                val = ! LeftPanel.get('model').getValue(iter,1);
-                                                
-                                                
-                                                LeftPanel.get('model').activeIter = false;
-                                                GLib.timeout_add(0, 1, function() {
-                                                    //   Gdk.threads_enter();
-                                                     
-                                                    e.editing_done();
-                                                    e.remove_widget();
-                                                    LeftPanel.get('model').activeIter = iter;
-                                                    LeftPanel.get('model').changed(''+val,true);
-                                                    
-                                             
-                                                    return false;
-                                                });
-                                            }
-                                            
-                                            return;
-                                        }
-                                        LeftPanel.get('model').activeIter = false;
-                                        GLib.timeout_add(0, 1, function() {
-                                            //   Gdk.threads_enter();
-                                            RightEditor.el.show();
-                                            RightEditor.get('view').load( rval );
-                                            
-                                            e.editing_done();
-                                            e.remove_widget();
-                                            LeftPanel.get('model').activeIter = iter;
-                                            
-                                     //       Gdk.threads_leave();
-                                            return false;
-                                        });
-                                        //r.stop_editing(true);
-                                    }
+                                        LeftPanel.get('model').editSelected();
+                                    }    
                                 },
                                 
                             }
