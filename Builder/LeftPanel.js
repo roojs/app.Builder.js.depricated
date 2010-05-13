@@ -190,7 +190,7 @@ LeftPanel = new XObject({
                             this.changed(data, true); 
                             LeftPanel.get('view').selection.select_path(new Gtk.TreePath.from_string(map[k]));
                             //this.editSelected( true )
-                            LeftPanel.get('view').set_cursor(new Gtk.TreePath.from_string(map[k]), 
+                            LeftPanel.get('view').el.set_cursor(new Gtk.TreePath.from_string(map[k]), 
                                 this.get('editableCell').el, true);
                             
                             
