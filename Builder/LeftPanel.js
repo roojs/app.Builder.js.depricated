@@ -220,14 +220,17 @@ LeftPanel = new XObject({
                         
                         
                         
-                        activeIter : false,
+                        activePath : false,
                         changed : function(str, doRefresh)
                         {
-                            if (!this.activeIter) {
+                            if (!this.activePath) {
                                 return;
                             }
-                            this.el.set_value(this.activeIter, 1, str);
-                            this.el.set_value(this.activeIter, 3, '' + this.toShort(str));
+                            var iter = new Gtk.TreeIter();
+                            this.el.get_iter(iter, new Gtk.TreePath.from_string(this.activePath));
+                            
+                            this.el.set_value(iter, 1, str);
+                            this.el.set_value(iter, 3, '' + this.toShort(str));
                             // update the tree...
                             var LeftTree        = imports.Builder.LeftTree.LeftTree;
                             LeftTree.get('model').changed(this.toJS(), doRefresh); 
@@ -406,7 +409,7 @@ LeftPanel = new XObject({
  
                                     edited : function(r,p, t) {
                                         LeftPanel.get('model').changed(t, true);
-                                        LeftPanel.get('model').activeIter = false;
+                                        LeftPanel.get('model').activePath = false;
                                         
                                     },
                                    
