@@ -92,18 +92,19 @@ right:
 left:
 	Gtk.MenuBar
 right:
-	GtkMenuItem 
-	GtkImageMenuItem 
-	GtkRadioMenuItem 
-	GtkCheckMenuItem 
-	GtkSeparatorMenuItem 
-	GtkTearoffMenuItem 
-left:
+	Gtk.MenuItem 
+	Gtk.ImageMenuItem 
+	Gtk.RadioMenuItem 
+	Gtk.CheckMenuItem 
+	Gtk.SeparatorMenuItem 
+	Gtk.TearoffMenuItem 
+left:       
 	Gtk.Toolbar
 right:
-	GtkToolButton 
-	GtkMenuToolButton 
-	GtkToggleToolButton
-	GtkRadioToolButton 
-	GtkToolItemGroup 
-	GtkSeparatorToolItem 
+	Gtk.ToolButton 
+	Gtk.MenuToolButton 
+	Gtk.ToggleToolButton
+	Gtk.RadioToolButton 
+	Gtk.ToolItemGroup 
+	Gtk.SeparatorToolItem 
+           
