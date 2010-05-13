@@ -207,7 +207,7 @@ MidPropTree = new XObject({
                             
                             var elementList = palete.getPropertiesFor(fullpath, type);
                             print ("GOT " + elementList.length + " items for " + fullpath + "|" + type);
-                            
+                            console.dump(elementList);
                            
                             
                             var iter = new Gtk.TreeIter();
