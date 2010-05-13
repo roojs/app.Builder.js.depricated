@@ -302,7 +302,7 @@ LeftPanel = new XObject({
                             
                         },
                         
-                        editSelected: function( ignoreBool)
+                        editSelected: function( e)
                         {
                             
                             var iter = new Gtk.TreeIter();
@@ -357,9 +357,6 @@ LeftPanel = new XObject({
                             
                             // toggle boolean
                             if (type == 'boolean') {
-                                if (ignoreBool) {
-                                    return;
-                                }
                                 val = ! this.getValue(iter,1);
                                 
                                 this.activePath = false;
@@ -437,7 +434,7 @@ LeftPanel = new XObject({
                                     },
                                    
                                     'editing-started' : function(r, e, p) {
-                                        LeftPanel.get('model').editSelected();
+                                        LeftPanel.get('model').editSelected(e);
                                     }    
                                 },
                                 
