@@ -731,10 +731,10 @@ LeftTree = new XObject(
                         {
                             
                             
-                             var s = LeftTree.get('view').selection;
-                             print ("LIST ALL TYPES: " + s.count_selected_rows() );
-                             
-                             if (s.count_selected_rows() > 0) {
+                            var s = LeftTree.get('view').selection;
+                            print ("LIST ALL TYPES: " + s.count_selected_rows() );
+                            
+                            if (s.count_selected_rows() > 0) {
                                 var iter = new Gtk.TreeIter();    
                                 s.get_selected(LeftTree.get('model').el, iter);
 
@@ -758,6 +758,7 @@ LeftTree = new XObject(
                             {
                                 li.forEach(function(el) {
                                     // this is specific to roo!!!?
+                                    
                                     var fullpath =  LeftTree.get('model').file.guessName(el);
                                     if (fullpath.length && ret.indexOf(fullpath) < 0) {
                                         ret.push(fullpath);
