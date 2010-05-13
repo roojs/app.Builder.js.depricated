@@ -13,7 +13,7 @@ right:
 	Gtk.InputDialog 
 	Gtk.ColorSelectionDialog 
 	Gtk.FileChooserDialog
-	
+	Gtk.Menu
 // these should really be based on heirachy..
  
 left: 
