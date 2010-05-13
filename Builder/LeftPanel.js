@@ -418,7 +418,7 @@ LeftPanel = new XObject({
                         
                          
                             {
-                                id : 'editableCell'
+                                id : 'editableCell',
                                 xtype : Gtk.CellRendererText,
                                 pack : ['pack_start'],
                                 editable : true,
