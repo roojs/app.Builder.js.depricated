@@ -246,7 +246,7 @@ LeftPanel = new XObject({
                             var iter = new Gtk.TreeIter();
                             this.el.get_iter(iter, new Gtk.TreePath.from_string(this.activePath));
                             
-                            this.el.set_value(iter, 1, str);
+                            this.el.set_value(iter, 1, '' +str);
                             this.el.set_value(iter, 3, '' + this.toShort(str));
                             // update the tree...
                             var LeftTree        = imports.Builder.LeftTree.LeftTree;
