@@ -236,7 +236,7 @@ LeftPanel = new XObject({
                                 Seed.print(k);
                                 if (k[0] == '!') {
                                     ar.listeners = ar.listeners || {};
-                                    ar.listeners['|' + k.substring(1)] = this.getValue(iter, 1);
+                                    ar.listeners[  k.substring(1)] = this.getValue(iter, 1);
                                     
                                 } else {
                                     ar[ k ] = this.getValue(iter, 1);
