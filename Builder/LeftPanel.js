@@ -174,17 +174,23 @@ LeftPanel = new XObject({
                                 
                                 
                             }
+                            var k = info.key;
                             if (info.etype == 'events') {
                              
                                 data.listeners[info.key] = info.val;
+                                k = '!' + info.key;
                             } else {
                                 data[info.key] = info.val;
                             }
                             
                             
-                            this.load(data);
+                            var map = this.load(data);
+                            
                             var LeftTree        = imports.Builder.LeftTree.LeftTree;
                             LeftTree.get('model').changed(data, true); 
+                            this.selection.select_path(new Gtk.TreePath.from_string(map[k]));
+                            this.editSelected( true )
+                            
                             
                             
                         },
@@ -290,8 +296,9 @@ LeftPanel = new XObject({
                             
                         },
                         
-                        editSelected: function()
+                        editSelected: function( ignoreBool)
                         {
+                            
                             var iter = new Gtk.TreeIter();
                             var s = LeftPanel.get('view').selection;
                             s.get_selected(LeftPanel.get('model').el, iter);
@@ -344,6 +351,9 @@ LeftPanel = new XObject({
                             
                             // toggle boolean
                             if (type == 'boolean') {
+                                if (ignoreBool) {
+                                    return;
+                                }
                                 val = ! this.getValue(iter,1);
                                 
                                 this.activePath = false;
