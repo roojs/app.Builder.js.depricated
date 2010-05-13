@@ -168,6 +168,7 @@ Gtk = XObject.define(
             walk (doc.root, '');
             //console.dump(ret);
             this.comments[ns] = ret;
+            console.dump(ret);
 
         },
        
