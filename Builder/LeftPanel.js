@@ -191,7 +191,7 @@ LeftPanel = new XObject({
                             LeftTree.get('model').changed(data, true); 
                             //LeftPanel.get('view').selection.select_path(new Gtk.TreePath.from_string(map[k]));
                             //this.editSelected( true )
-                             GLib.timeout_add(0, 1, function() {
+                             GLib.timeout_add(0, 10, function() {
                                 
                                 LeftPanel.get('view').el.set_cursor_on_cell(
                                     new Gtk.TreePath.from_string(map[k]), 
