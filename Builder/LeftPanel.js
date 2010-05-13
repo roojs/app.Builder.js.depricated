@@ -143,10 +143,18 @@ LeftPanel = new XObject({
                              console.dump(info);
                             type = info.type.toLowerCase();
                             var data = this.toJS();
-                            if ((typeof(data[info.key]) != 'undefined') && 
-                                (typeof(info.val) == 'undefined') ) {
-                                return;
+                            
+                            if (info.etype == 'events') {
+                                data.listeners = data.listeners || { };
+                                if (typeof(data.listeners[info.key]) != 'undefined') {
+                                    return; //already set!
+                                }
+                            } else {
+                                if (typeof(data[info.key]) != 'undefined') {
+                                    return;
+                                }
                             }
+                            
                             if (typeof(info.val) == 'undefined') {
                                     
                                 info.val = '';
@@ -161,8 +169,8 @@ LeftPanel = new XObject({
                                 
                             }
                             if (info.etype == 'events') {
-                                 
-                                data['!' + info.key] = info.val;
+                             
+                                data.listeners[info.key] = info.val;
                             } else {
                                 data[info.key] = info.val;
                             }
