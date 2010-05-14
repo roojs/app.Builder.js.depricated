@@ -438,7 +438,7 @@ LeftPanel = new XObject({
                                    // sort!!!?
                                 this.el.append(iter);
                                 this.el.set_value(iter, 0, i);
-                            }
+                            });
                             
                             
                           
