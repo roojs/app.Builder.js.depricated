@@ -187,7 +187,7 @@ XObject.prototype = {
         
          
         for (var i in this.config) {
-            if (i == 'type') { // problem with Gtk.Window...
+            if (i == 'type') { // problem with Gtk.Window... - not decided on a better way to handle this.
                 continue;
             }
             this.el[i] = this.config[i];
