@@ -25,6 +25,8 @@ LeftPanel = new XObject({
         pack : [ 'pack_end', true, true, 0 ],
         shadow_type : Gtk.ShadowType.IN,
         
+        editing : false,
+        
         init : function () {
             XObject.prototype.init.call(this); 
             this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
@@ -69,6 +71,9 @@ LeftPanel = new XObject({
                             if (res.column.title != 'value') {
                                 return false; // ignore..
                             }
+                            if (  LeftPanel.editing) {
+                                return false;
+                               }
                             var renderer = LeftPanel.editableColumn.items[0].el; // set has_entry..
                             LeftPanel.editableColumn.items[0].el.stop_editing();
                             var type = LeftPanel.get('model').getType(res.path.to_string());
@@ -524,6 +529,7 @@ LeftPanel = new XObject({
                                 listeners : {
  
                                     edited : function(r,p, t) {
+                                        LeftPanel.editing = false;
                                         print("EDITED? p:" + p + " t:" + t);
                                         LeftPanel.get('model').changed(t, true);
                                         LeftPanel.get('model').activePath = false;
@@ -531,6 +537,7 @@ LeftPanel = new XObject({
                                     },
                                     
                                     'editing-started' : function(r, e, p) {
+                                        LeftPanel.editing  = true;
                                       //  console.log('editing started');
                                        // r.has_entry = false;
                                         LeftPanel.get('model').editSelected(e);
