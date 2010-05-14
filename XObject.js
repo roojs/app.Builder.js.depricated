@@ -58,7 +58,7 @@ function XObject (cfg) {
     
     for (var i in cfg) {
         this[i] = cfg[i];
-        if ((typeof(cfg[i]) == 'function') || (typeof(cfg[i]) == 'function')) {
+        if ((typeof(cfg[i]) == 'function') || (typeof(cfg[i]) == 'object')) {
             continue;
         }
         // these properties are not copied to cfg.
