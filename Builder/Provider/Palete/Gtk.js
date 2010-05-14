@@ -383,8 +383,14 @@ Gtk = XObject.define(
                 return Base.prototype.findOptions(ename);
             }
             var gi = GIRepository.IRepository.get_default();
-
             var bi = gi.find_by_name(es[0], es[1]);
+            var etype = GIRepository.base_info_get_type(bi);
+            if (etype != GIRepository.IInfoType.ENUM) {
+                console.log("Options not handled yet!!!");
+                return;
+            }
+            // got an enum.. let's return the values..
+            
             
         }
         
