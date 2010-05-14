@@ -489,7 +489,7 @@ LeftPanel = new XObject({
                                 },
                                 pack : ['pack_start'],
                                 editable : true,
-                                has_entry : true,
+                                has_entry : false,
                                 text_column : 0,
                                 listeners : {
  
