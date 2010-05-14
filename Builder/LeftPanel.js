@@ -72,7 +72,7 @@ LeftPanel = new XObject({
                             var renderer = LeftPanel.editableColumn.items[0].el; // set has_entry..
                             
                             var type = LeftPanel.get('model').getType(res.path.to_string());
-                            
+                            LeftPanel.editableColumn.setOptions([]);
                             switch( type.toLowerCase() ) {
                                 
                                 case 'utf8' : 
