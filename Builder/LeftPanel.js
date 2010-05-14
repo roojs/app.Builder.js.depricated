@@ -176,7 +176,7 @@ LeftPanel = new XObject({
                                     continue;
                                 }
                                 
-                                var type = provider.getType(ar, i, ar[i]);
+                                var type = provider.findType(ar, i, ar[i]);
                                 
                                 this.el.append(iter);
                                 var p = this.el.get_path(iter).to_string();
