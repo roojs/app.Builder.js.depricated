@@ -86,7 +86,7 @@ LeftPanel = new XObject({
                                     renderer.has_entry = false;
                                     break;
                                 default : 
-                                    console.log(type);
+                                    console.log('col type:' +type);
                                     renderer.has_entry = false;
                             }
                             
