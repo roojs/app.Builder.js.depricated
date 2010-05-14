@@ -454,8 +454,17 @@ LeftPanel = new XObject({
                                 xtype : Gtk.CellRendererCombo,
                                 pack : ['pack_start'],
                                 editable : true,
-                                
-                                 
+                                has_entry : true,
+                                init : function() {
+                                    XObject.prototype.init.call(this); 
+                                    this.el.model = new Gtk.ListStore();
+                                    this.el.model.set_column_types ( 1, [
+                                        GObject.TYPE_STRING,  // 0 real key
+                                        
+                                    ]);
+                                    
+                                    
+                                }
                                 listeners : {
  
                                     edited : function(r,p, t) {
@@ -468,6 +477,7 @@ LeftPanel = new XObject({
                                         LeftPanel.get('model').editSelected(e);
                                     }    
                                 },
+                                
                                 
                             }
                         ]
