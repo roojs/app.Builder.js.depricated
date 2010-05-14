@@ -451,20 +451,20 @@ LeftPanel = new XObject({
                             */
                             {
                                 
-                                xtype : Gtk.CellRendererCombo,
-                                pack : ['pack_start'],
-                                editable : false,
-                                has_entry : true,
-                                init : function() {
-                                    XObject.prototype.init.call(this); 
-                                    this.el.model = new Gtk.ListStore();
-                                    this.el.model.set_column_types ( 1, [
+                                xtype : function() {
+                                    var  ret = new Gtk.CellRendererCombo();
+                                    ret.model = new Gtk.ListStore();
+                                    ret.model.set_column_types ( 1, [
                                         GObject.TYPE_STRING,  // 0 real key
                                         
                                     ]);
-                                    this.el.model.text_column = 0;
                                     
-                                },
+                                    return  retl
+                                }
+                                pack : ['pack_start'],
+                                editable : false,
+                                has_entry : true,
+                                text_column : 0,
                                 listeners : {
  
                                     edited : function(r,p, t) {
