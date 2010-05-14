@@ -370,9 +370,9 @@ LeftPanel = new XObject({
                                 return val;
                             }
                             var type = this.getType();
-                            switch(gval.value) {
+                            print("TYPE: " +type + " -  val:" + val);
+                            switch(type.toLowerCase()) {
                                 case 'number':
-                                case 'Number':
                                     return parseFloat(val);
                                 case 'boolean':
                                     return val == 'true' ? true : false;
