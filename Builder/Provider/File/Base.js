@@ -81,6 +81,8 @@ Base = XObject.define(
                 return a.path > b.path;// ? 1 : -1;
             });
         },
+        // should be in palete provider really..
+        
         guessName : function(ar) // turns the object into full name.
         {
              // eg. xns: Roo, xtype: XXX -> Roo.xxx
