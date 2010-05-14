@@ -464,7 +464,7 @@ LeftPanel = new XObject({
                                     ]);
                                     
                                     
-                                }
+                                },
                                 listeners : {
  
                                     edited : function(r,p, t) {
