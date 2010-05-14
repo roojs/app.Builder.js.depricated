@@ -88,7 +88,7 @@ LeftPanel = new XObject({
                             }
                             
                             Seed.print("click" + ev.type);
-                            console.dump(res);
+                            //console.dump(res);
                             return false;
                         }
                       
