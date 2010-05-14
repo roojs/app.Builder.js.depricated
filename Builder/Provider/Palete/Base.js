@@ -119,7 +119,9 @@ Base = XObject.define(
                 case 'uint': 
                 case 'function': 
                     return false;
-                 
+                default: 
+                    console.log("OOPS: = unknown type: " + ename);
+                    return false;
             }
         },
         confirmCanAdd: function(parent, child) {
