@@ -356,8 +356,8 @@ Gtk = XObject.define(
             }
             
             var qname = this.guessName(data);
-            if (qname[0] == '|') {
-                qname = qname.substring(1);
+            if (prop[0] == '|') {
+                prop= prop.substring(1);
             }
             
             var prs = this.getPropertiesFor(qname, 'props');
