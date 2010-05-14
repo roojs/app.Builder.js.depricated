@@ -373,7 +373,21 @@ Gtk = XObject.define(
              
             // got the type
             return e.type;
+        },
+        
+        findOptions : function(ename)
+        {
+            
+            var es = ename.split('.');
+            if (es.length !=2) {
+                return Base.prototype.findOptions(ename);
+            }
+            var gi = GIRepository.IRepository.get_default();
+
+            var bi = gi.find_by_name(es[0], es[1]);
+            
         }
+        
         
     }
 );
