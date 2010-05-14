@@ -82,6 +82,19 @@ LeftPanel = new XObject({
                             LeftPanel.editableColumn.items[0].el.stop_editing();
                             var type = LeftPanel.get('model').getType(res.path.to_string());
                             LeftPanel.editableColumn.setOptions([]);
+                             
+                            var LeftTree = imports.Builder.LeftTree.LeftTree;
+                            var provider = LeftTree.getPaleteProvider();
+                            
+                            var opts = provider.findOptions(type);
+                            
+                            if (type === false) {
+                                renderer.has_entry = true;
+                            } else {
+                                LeftPanel.editableColumn.setOptions(opts);
+                                renderer.has_entry = false;
+                            }
+                            
                             switch( type.toLowerCase() ) {
                                 
                                 case 'utf8' : 
