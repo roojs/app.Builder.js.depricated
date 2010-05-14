@@ -368,7 +368,7 @@ LeftPanel = new XObject({
                                 // let's show a pulldown..
                                 LeftPanel.editableColumn.setOptions([ 'true' , 'false']);
                                 
-                                
+                                return;
                                 val = ! this.getValue(iter,1);
                                 
                                 this.activePath = false;
