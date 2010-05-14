@@ -431,6 +431,7 @@ LeftPanel = new XObject({
                         setOptions : function(ar)
                         {
                             this.items[0].el.has_entry = false; // stop editable.
+                            this.items[0].el.editable = false;
                             var m = this.items[0].el.model;
                             m.clear();
                             var iter = new Gtk.TreeIter();
