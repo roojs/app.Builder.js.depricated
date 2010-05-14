@@ -83,7 +83,10 @@ Base = XObject.define(
             return ret;
             
         },
-        
+        /**
+         * basic guess type.. 
+         * 
+         */
         findType : function (data, prop, value)
         {
             if (prop[0] == '|') {
