@@ -71,7 +71,7 @@ LeftPanel = new XObject({
                             }
                             var renderer = LeftPanel.editableColumn.items[0].el; // set has_entry..
                             
-                            var type = this.getType(res.path.to_string());
+                            var type = LeftPanel.get('model').getType(res.path.to_string());
                             
                             switch( type.toLowerCase() ) {
                                 
