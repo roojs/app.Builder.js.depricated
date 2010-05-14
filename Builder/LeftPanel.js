@@ -31,6 +31,17 @@ LeftPanel = new XObject({
             XObject.prototype.init.call(this); 
             this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
         },
+        
+          
+        getPaleteProvider: function ()
+        {
+            var pm = imports.Builder.LeftTree.LeftTree;
+            var model = LeftTree.get('model');
+            var pm = imports.Builder.Provider.ProjectManager.ProjectManager;
+            return pm.getPalete(model.file.getType());
+            
+        },
+        
         items : [
             {
                 id : 'view',
@@ -161,6 +172,8 @@ LeftPanel = new XObject({
                                 return ;
                             }
                             var ret = {}; 
+                            
+                            
                             
                             // sort!!!?
                             var iter = new Gtk.TreeIter();
