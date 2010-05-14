@@ -329,7 +329,7 @@ LeftPanel = new XObject({
                             while (true) {
                                 
                                 var k = this.getValue(iter, 0);
-                                Seed.print(k);
+                               // Seed.print(k);
                                 if (k[0] == '!') {
                                     ar.listeners = ar.listeners || {};
                                     ar.listeners[  k.substring(1)] = this.getValue(iter, 1);
@@ -342,7 +342,9 @@ LeftPanel = new XObject({
                                     break;
                                 }
                             }
-                                Seed.print(JSON.stringify(ar));
+                            
+                            
+                            Seed.print(JSON.stringify(ar));
                             return ar;
                             // convert the list into a json string..
                         
@@ -360,16 +362,17 @@ LeftPanel = new XObject({
                         
                         /** get's a value, and tries to use type column to work out what type */
                         getValue: function (iter, col) {
+                            
                             var gval = new GObject.Value('');
                             LeftPanel.get('model').el.get_value(iter, col ,gval);
                             var val = '' + gval.value;
                             if (col != 1) {
                                 return val;
                             }
-                            gval = new GObject.Value('');
-                            LeftPanel.get('model').el.get_value(iter,4  ,gval);
+                            var type = this.getType();
                             switch(gval.value) {
                                 case 'number':
+                                case 'Number':
                                     return parseFloat(val);
                                 case 'boolean':
                                     return val == 'true' ? true : false;
