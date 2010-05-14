@@ -500,7 +500,7 @@ LeftPanel = new XObject({
                                     },
                                    
                                     'editing-started' : function(r, e, p) {
-                                        console.log('editing starte');
+                                        console.log('editing started');
                                         r.has_entry = false;
                                         LeftPanel.get('model').editSelected(e);
                                     }    
