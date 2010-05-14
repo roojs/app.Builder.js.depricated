@@ -431,8 +431,29 @@ LeftPanel = new XObject({
                                 pack : ['pack_start'],
                                 editable : true,
                                 
+                                 
+                                listeners : {
+ 
+                                    edited : function(r,p, t) {
+                                        LeftPanel.get('model').changed(t, true);
+                                        LeftPanel.get('model').activePath = false;
+                                        
+                                    },
+                                   
+                                    'editing-started' : function(r, e, p) {
+                                        LeftPanel.get('model').editSelected(e);
+                                    }    
+                                },
                                 
+                            },
+                            
+                            {
                                 
+                                xtype : Gtk.CellRendererCombo,
+                                pack : ['pack_start'],
+                                editable : true,
+                                
+                                 
                                 listeners : {
  
                                     edited : function(r,p, t) {
