@@ -496,7 +496,7 @@ LeftPanel = new XObject({
                                     edited : function(r,p, t) {
                                         LeftPanel.get('model').changed(t, true);
                                         LeftPanel.get('model').activePath = false;
-                                        
+                                        this.el.has_entry = false;
                                     },
                                     
                                     'editing-started' : function(r, e, p) {
