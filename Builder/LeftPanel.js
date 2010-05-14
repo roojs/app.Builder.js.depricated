@@ -77,7 +77,7 @@ LeftPanel = new XObject({
                         return false;
                         
                     },
-                    row_activated : function() 
+                    'row-activated' : function() 
                     {
                         console.print('row activated');  
                           // always set the cmobo entry to not ediable..
