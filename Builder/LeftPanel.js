@@ -73,7 +73,8 @@ LeftPanel = new XObject({
                             
                             var type = this.getType(res.path.to_string());
                             
-                            switch( type.toLowerCase() )
+                            switch( type.toLowerCase() ) {
+                                
                                 case 'utf8' : 
                                 case 'string' : 
                                 case 'number' : 
