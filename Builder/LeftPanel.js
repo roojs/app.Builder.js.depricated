@@ -498,7 +498,7 @@ LeftPanel = new XObject({
                                         LeftPanel.get('model').activePath = false;
                                         
                                     },
-                                    'before:editing-started' 
+                                    
                                     'editing-started' : function(r, e, p) {
                                       //  console.log('editing started');
                                        // r.has_entry = false;
