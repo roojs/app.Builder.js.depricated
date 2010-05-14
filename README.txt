@@ -24,11 +24,13 @@ Where it is..
 * basic builder app runs - you can build a tree of elements making up a interface for roo and gtk.
 * listeners are  created correctly.
 * listeners with gtk prototypes
+* Gtk properties that are enums - now show a combo selector..
 
 -----------------------------------------------------
 TODO
 
-* Gtk properties that are enums - should show some kind of selector.
+* order of palete needs fixing.
+* support user functions/properties..
 * adding a file does not display on project tree straight awya..
 * calculate mouseover for rendered view of Gtk preview.
 * create output to JS ...
