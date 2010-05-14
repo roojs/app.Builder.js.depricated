@@ -350,6 +350,9 @@ Gtk = XObject.define(
          */
         findType : function (data, prop, value)
         {
+            if ((prop == '|xns') || (prop == 'xtype'))  {
+                return 'string';
+            }
             
             var qname = this.guessName(data);
             var prs = this.getPropertiesFor(qname, 'props');
