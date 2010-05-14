@@ -350,6 +350,7 @@ Gtk = XObject.define(
          */
         findType : function (data, prop, value)
         {
+            // specials??
             if ((prop == '|xns') || (prop == 'xtype'))  {
                 return 'string';
             }
