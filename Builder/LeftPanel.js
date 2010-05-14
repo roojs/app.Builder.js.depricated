@@ -56,13 +56,22 @@ LeftPanel = new XObject({
                     'button-press-event' : function(tv, ev) {
                         
                         
-                        LeftPanel.editableColumn.items[0].el.has_entry = true; //make it ediable..
+                        
                         
                         var res = { }; 
                         this.el.get_path_at_pos(ev.button.x,ev.button.y, res);
                         
                         
                         if (ev.type != Gdk.EventType.BUTTON_PRESS  || ev.button.button != 3) {
+                            
+                            if (res.column.title != 'value') {
+                                return false; // ignore..
+                            }
+                            var has_entry = 
+                            
+                            LeftPanel.editableColumn.items[0].el.has_entry = true; //make it ediable..
+                            
+                            
                             Seed.print("click" + ev.type);
                             console.dump(res);
                             return false;
@@ -308,6 +317,16 @@ LeftPanel = new XObject({
                         
                             
                         },
+                        getType :function(treepath_str)
+                        {
+                            var iter = new Gtk.TreeIter();
+                            this.el.get_iter(iter, new Gtk.TreePath.from_string(treepath_str));
+                            
+                            var gval = new GObject.Value('');
+                            LeftPanel.get('model').el.get_value(iter,4  ,gval);
+                            return gval.value + '';
+                        },
+                        
                         /** get's a value, and tries to use type column to work out what type */
                         getValue: function (iter, col) {
                             var gval = new GObject.Value('');
