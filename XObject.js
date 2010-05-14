@@ -62,8 +62,8 @@ function XObject (cfg) {
             continue;
         }
         // these properties are not copied to cfg.
-        if (i == 'pack' ||
-            i == 'items' ||
+        if (    i == 'pack' ||
+                i == 'items' ||
                 i == 'id' ||
                 i == 'xtype' ||
                 i == 'xdebug' ||
