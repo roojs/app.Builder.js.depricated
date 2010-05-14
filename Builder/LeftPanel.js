@@ -60,7 +60,7 @@ LeftPanel = new XObject({
                         
                         var res = { }; 
                         if (!this.el.get_path_at_pos(ev.button.x,ev.button.y, res)) {
-                            return; //not on a element.
+                            return false; //not on a element.
                         }
                         
                         
