@@ -446,6 +446,7 @@ LeftPanel = new XObject({
                         },
                         listeners :  {
                             clicked : function () {
+                                console.log('clicked');
                                 this.items[0].el.has_entry = false;
                             }
                         },
@@ -499,6 +500,7 @@ LeftPanel = new XObject({
                                     },
                                    
                                     'editing-started' : function(r, e, p) {
+                                        console.log('editing starte');
                                         r.has_entry = false;
                                         LeftPanel.get('model').editSelected(e);
                                     }    
