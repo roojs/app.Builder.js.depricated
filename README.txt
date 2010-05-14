@@ -28,6 +28,7 @@ Where it is..
 -----------------------------------------------------
 TODO
 
+* adding a file does not display on project tree straight awya..
 * calculate mouseover for rendered view of Gtk preview.
 * create output to JS ...
 * templates for elements... - eg. defaults for classic elements.
