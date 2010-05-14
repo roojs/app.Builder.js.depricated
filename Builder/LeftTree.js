@@ -46,8 +46,11 @@ LeftTree = new XObject(
         
         getPaleteProvider: function ()
         {
-            var LeftProjectTree     = imports.Builder.LeftProjectTree.LeftProjectTree;
-            return LeftProjectTree.project.getPalete();
+            var model = this.get('model');
+             
+            var pm = imports.Builder.Provider.ProjectManager.ProjectManager;
+            return pm.getPalete(model.file.getType());
+            
         },
         
         renderView: function() // renders into the preview pane..
