@@ -59,7 +59,9 @@ LeftPanel = new XObject({
                         
                         
                         var res = { }; 
-                        this.el.get_path_at_pos(ev.button.x,ev.button.y, res);
+                        if (!this.el.get_path_at_pos(ev.button.x,ev.button.y, res)) {
+                            return; //not on a element.
+                        }
                         
                         
                         if (ev.type != Gdk.EventType.BUTTON_PRESS  || ev.button.button != 3) {
@@ -67,9 +69,9 @@ LeftPanel = new XObject({
                             if (res.column.title != 'value') {
                                 return false; // ignore..
                             }
-                            var has_entry = 
+                            var renderer = LeftPanel.editableColumn.items[0].el; // set has_entry..
                             
-                            LeftPanel.editableColumn.items[0].el.has_entry = true; //make it ediable..
+                            this.getType(res.path.to_string())
                             
                             
                             Seed.print("click" + ev.type);
