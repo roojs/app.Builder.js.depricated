@@ -54,6 +54,9 @@ LeftPanel = new XObject({
                     
                   
                     'button-press-event' : function(tv, ev) {
+                        // always set the cmobo entry to not ediable..
+                        LeftPanel.editableColumn.el.has_entry = false;
+                        
                         if (ev.type != Gdk.EventType.BUTTON_PRESS  || ev.button.button != 3) {
                             Seed.print("click" + ev.type);
                             return false;
@@ -71,6 +74,8 @@ LeftPanel = new XObject({
                         LeftPanelPopup.el.show_all();
                         LeftPanelPopup.el.popup(null, null, null, null, 3, ev.button.time);
                         Seed.print("click:" + res.column.title);
+                        
+                        
                         return false;
                         
                     }
@@ -444,12 +449,7 @@ LeftPanel = new XObject({
                             
                           
                         },
-                        listeners :  {
-                            clicked : function () {
-                                console.log('clicked');
-                                this.items[0].el.has_entry = false;
-                            }
-                        },
+                        
                         items : [
                         /*
                          
@@ -498,7 +498,7 @@ LeftPanel = new XObject({
                                         LeftPanel.get('model').activePath = false;
                                         
                                     },
-                                   
+                                    'before:editing-started' 
                                     'editing-started' : function(r, e, p) {
                                         console.log('editing started');
                                         r.has_entry = false;
