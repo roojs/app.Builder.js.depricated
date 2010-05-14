@@ -84,6 +84,14 @@ Base = XObject.define(
             
         },
         
+        findType : function (data, prop, value)
+        {
+            if (prop[0] == '|') {
+                return 'function';
+            }
+            return typeof(value);
+        }
+        
         
         confirmCanAdd: function(parent, child) {
             // confirms that one obj can be added to another.
