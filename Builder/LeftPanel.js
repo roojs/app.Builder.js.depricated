@@ -499,7 +499,7 @@ LeftPanel = new XObject({
                                     },
                                    
                                     'editing-started' : function(r, e, p) {
-                                        this.el.has_entry = false;
+                                        r.el.has_entry = false;
                                         LeftPanel.get('model').editSelected(e);
                                     }    
                                 },
