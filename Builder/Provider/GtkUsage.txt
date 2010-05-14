@@ -4,7 +4,7 @@
 left:
  *top
 right:
-	Gtk.Window.c_new 
+	Gtk.Window 
 	Gtk.Dialog
 	Gtk.MessageDialog
 	Gtk.AboutDialog
