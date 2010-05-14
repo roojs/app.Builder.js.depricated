@@ -321,28 +321,42 @@ Gtk = XObject.define(
             
         },
         typeToName  : function (type_info) {
-               var ty = GIRepository.type_tag_to_string( GIRepository.type_info_get_tag(type_info));
-               
-                if ((ty == 'void') && GIRepository.type_info_is_pointer(type_info)) {
-                    return false;
-                }
-                if (ty == 'array') {
-                    return false; // unspported   
-                }
-                if (ty != 'interface') {
-                    
-                    return ty;
-                }
-                // we can accept enum types here..
-                var interface_info = GIRepository.type_info_get_interface (type_info);        
-                var interface_type = GIRepository.base_info_get_type (interface_info);
-                if (interface_type != GIRepository.IInfoType.ENUM) {
-                    return false;
-                }
-                return GIRepository.base_info_get_namespace(interface_info) + '.' +
-                        GIRepository.base_info_get_name(interface_info);
-                
+           var ty = GIRepository.type_tag_to_string( GIRepository.type_info_get_tag(type_info));
+           
+            if ((ty == 'void') && GIRepository.type_info_is_pointer(type_info)) {
+                return false;
             }
+            if (ty == 'array') {
+                return false; // unspported   
+            }
+            if (ty != 'interface') {
+                
+                return ty;
+            }
+            // we can accept enum types here..
+            var interface_info = GIRepository.type_info_get_interface (type_info);        
+            var interface_type = GIRepository.base_info_get_type (interface_info);
+            if (interface_type != GIRepository.IInfoType.ENUM) {
+                return false;
+            }
+            return GIRepository.base_info_get_namespace(interface_info) + '.' +
+                    GIRepository.base_info_get_name(interface_info);
+            
+        }
+        /**
+         * guess type..
+         * 
+         */
+        findType : function (data, prop, value)
+        {
+            
+            var qname = this.guessName(data);
+            
+            
+            
+            return typeof(value);
+        }
+        
     }
 );
  
