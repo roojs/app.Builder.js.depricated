@@ -102,7 +102,7 @@ right:
 left:
 	Gtk.MenuItem
 right:	
-	Gtk.Menu
+	Gtk.Menu:submenu
 	
 left:       
 	Gtk.Toolbar
