@@ -372,7 +372,7 @@ Gtk = XObject.define(
             }
              
             // got the type
-            return e.type;
+            return ret.type;
         },
         
         findOptions : function(ename)
