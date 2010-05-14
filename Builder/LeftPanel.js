@@ -420,7 +420,7 @@ LeftPanel = new XObject({
                         {
                             XObject.prototype.init.call(this); 
                             this.el.add_attribute(this.items[0].el , 'text', 3 );
-                            this.el.set_cell_data_func(cell, age_cell_data_func, NULL, NULL);
+                           // this.el.set_cell_data_func(cell, age_cell_data_func, NULL, NULL);
 
                             LeftPanel.editableColumn= this;
                         },
