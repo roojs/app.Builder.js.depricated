@@ -54,8 +54,6 @@ LeftPanel = new XObject({
                     
                   
                     'button-press-event' : function(tv, ev) {
-                        // always set the cmobo entry to not ediable..
-                        LeftPanel.editableColumn.el.has_entry = false;
                         
                         if (ev.type != Gdk.EventType.BUTTON_PRESS  || ev.button.button != 3) {
                             Seed.print("click" + ev.type);
@@ -78,7 +76,17 @@ LeftPanel = new XObject({
                         
                         return false;
                         
+                    },
+                    row_activated : function() 
+                    {
+                        console.print('row activated');  
+                          // always set the cmobo entry to not ediable..
+                        LeftPanel.editableColumn.el.has_entry = false;
+                      
                     }
+
+                    
+                    
                 },
                 items : [
                 
