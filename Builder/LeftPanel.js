@@ -95,22 +95,6 @@ LeftPanel = new XObject({
                                 renderer.has_entry = false;
                             }
                             
-                            switch( type.toLowerCase() ) {
-                                
-                                case 'utf8' : 
-                                case 'string' : 
-                                case 'number' : 
-                                    renderer.has_entry = true;
-                                    break;
-                                
-                                case 'boolean' : 
-                                    LeftPanel.editableColumn.setOptions([ 'true' , 'false']);
-                                    renderer.has_entry = false;
-                                    break;
-                                default : 
-                                    console.log('col type:' +type);
-                                    renderer.has_entry = false;
-                            }
                             
                             Seed.print("click" + ev.type);
                             //console.dump(res);
