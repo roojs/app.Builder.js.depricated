@@ -57,7 +57,7 @@ LeftPanel = new XObject({
                         
                         if (ev.type != Gdk.EventType.BUTTON_PRESS  || ev.button.button != 3) {
                             Seed.print("click" + ev.type);
-                            return false;
+                            return true;
                         }
                       
                     
