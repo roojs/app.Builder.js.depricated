@@ -21,6 +21,17 @@ Base = XObject.define(
         items : false, // the tree of nodes.
         
         
+        guessName : function(ar) // turns the object into full name.
+        {
+             // eg. xns: Roo, xtype: XXX -> Roo.xxx
+            if (typeof( ar['|xns'] ) == 'undefined' || typeof( ar['xtype'] ) == 'undefined') {
+                return '';
+               }
+             
+            return ar['|xns'] +'.' + ar['xtype'];
+                            
+                                 
+        },
         /**
          * gather a  list of potentional objects that can be added..
          * 
