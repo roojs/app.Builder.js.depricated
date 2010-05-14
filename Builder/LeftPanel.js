@@ -477,6 +477,8 @@ LeftPanel = new XObject({
                         {
                             XObject.prototype.init.call(this); 
                             this.el.add_attribute(this.items[0].el , 'text', 3 );
+                            this.el.add_attribute(this.items[0].el , 'sensitive', 3 );
+                            this.el.add_attribute(this.items[0].el , 'editable', 3 );
                            // this.el.set_cell_data_func(cell, age_cell_data_func, NULL, NULL);
 
                             LeftPanel.editableColumn= this;
@@ -499,30 +501,7 @@ LeftPanel = new XObject({
                         },
                         
                         items : [
-                        /*
                          
-                            {
-                                
-                                xtype : Gtk.CellRendererText,
-                                pack : ['pack_start'],
-                                editable : true,
-                                
-                                 
-                                listeners : {
- 
-                                    edited : function(r,p, t) {
-                                        LeftPanel.get('model').changed(t, true);
-                                        LeftPanel.get('model').activePath = false;
-                                        
-                                    },
-                                   
-                                    'editing-started' : function(r, e, p) {
-                                        LeftPanel.get('model').editSelected(e);
-                                    }    
-                                },
-                                
-                            },
-                            */
                             {
                                 
                                 xtype : function() {
