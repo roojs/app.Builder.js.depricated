@@ -398,7 +398,7 @@ LeftPanel = new XObject({
                                     return false;
                                 });
                             }
-                            LeftPanel.editableColumn.el.has_entry = true; // alwo editing?
+                            //LeftPanel.editableColumn.el.has_entry = true; // alwo editing?
                              // otherwise we are going to show the text editor..   
                              
                             
@@ -443,7 +443,7 @@ LeftPanel = new XObject({
                         },
                         setOptions : function(ar)
                         {
-                            this.items[0].el.has_entry = false; // stop editable.
+                            //this.items[0].el.has_entry = false; // stop editable.
                            //this.items[0].el.editable = false;
                             var m = this.items[0].el.model;
                             m.clear();
@@ -497,7 +497,7 @@ LeftPanel = new XObject({
                                 },
                                 pack : ['pack_start'],
                                 editable : true,
-                                has_entry : false,
+                                has_entry : true,
                                 text_column : 0,
                                 listeners : {
  
