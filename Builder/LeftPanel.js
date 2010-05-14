@@ -70,7 +70,7 @@ LeftPanel = new XObject({
                                 return false; // ignore..
                             }
                             var renderer = LeftPanel.editableColumn.items[0].el; // set has_entry..
-                            LeftPanel.editableColumn.el.stop_editing();
+                            LeftPanel.editableColumn.items[0].el.stop_editing();
                             var type = LeftPanel.get('model').getType(res.path.to_string());
                             LeftPanel.editableColumn.setOptions([]);
                             switch( type.toLowerCase() ) {
