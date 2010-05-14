@@ -142,10 +142,12 @@ XObject.prototype = {
         if (!this.el && typeof(this.xtype) == 'function') {
             if (XObject.debug) print("func?"  + XObject.keys(this.config).join(','));
             this.el = this.xtype(this.config);
+            this.config = [];
         }
         if (!this.el && typeof(this.xtype) == 'object') {
             if (XObject.debug) print("obj?"  + XObject.keys(this.config).join(','));
             this.el = new (this.xtype)(this.config);
+            this.config = [];
         }
         //print(this.el);
         if (!this.el && this.xns) {
@@ -183,13 +185,12 @@ XObject.prototype = {
         
         */
         
+         
         for (var i in this.config) {
-            // only write to writable properties
-          //  if (XObject.writeablePropsCache[this.xtype.type].indexOf(i) < 0) {
-          //      continue;
-           // }
+           
             this.el[i] = this.config[i];
         }
+        
         // register it!
         //if (o.xnsid  && o.id) {
          //   XObject.registry = XObject.registry || { };
