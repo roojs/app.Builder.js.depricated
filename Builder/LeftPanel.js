@@ -54,7 +54,7 @@ LeftPanel = new XObject({
                     
                   
                     'button-press-event' : function(tv, ev) {
-                         LeftPanel.editableColumn.items[0].elhas_entry = true; //make it ediable..
+                         LeftPanel.editableColumn.items[0].el.has_entry = true; //make it ediable..
                         if (ev.type != Gdk.EventType.BUTTON_PRESS  || ev.button.button != 3) {
                             Seed.print("click" + ev.type);
                             return false;
