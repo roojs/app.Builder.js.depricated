@@ -368,11 +368,7 @@ Gtk = XObject.define(
             }
              
             // got the type
-            
-            
-            
-            
-            return typeof(value);
+            return e.type;
         }
         
     }
