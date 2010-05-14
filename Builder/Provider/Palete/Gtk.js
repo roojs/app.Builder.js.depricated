@@ -343,7 +343,7 @@ Gtk = XObject.define(
             return GIRepository.base_info_get_namespace(interface_info) + '.' +
                     GIRepository.base_info_get_name(interface_info);
             
-        }
+        },
         /**
          * guess type..
          * 
