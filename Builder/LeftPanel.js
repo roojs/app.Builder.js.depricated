@@ -462,7 +462,7 @@ LeftPanel = new XObject({
                                         GObject.TYPE_STRING,  // 0 real key
                                         
                                     ]);
-                                    
+                                    this.el.model.text_column = 0;
                                     
                                 },
                                 listeners : {
