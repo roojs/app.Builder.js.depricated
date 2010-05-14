@@ -358,12 +358,18 @@ RightGtkView = new XObject({
                     return;
                 }
                 if (isListener) {
+                    if (obj[i].match(/Gtk.main_quit/)) { // we can not handle this very well..
+                        return;
+                    }
                     els.push(JSON.stringify(i) + ":" + obj[i]);
                     return;
                 }
                 if (typeof(i) == 'string' && i[0] == '|') {
                     // does not hapepnd with arrays..
                     if (!obj[i].length) { //skip empty.
+                        return;
+                    }
+                    if (obj[i].match(/Gtk.main_quit/)) { // we can not handle this very well..
                         return;
                     }
                     els.push(JSON.stringify(i.substring(1)) + ":" + obj[i]);
