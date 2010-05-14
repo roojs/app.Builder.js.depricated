@@ -71,8 +71,19 @@ LeftPanel = new XObject({
                             }
                             var renderer = LeftPanel.editableColumn.items[0].el; // set has_entry..
                             
-                            this.getType(res.path.to_string())
+                            var type = this.getType(res.path.to_string());
                             
+                            switch( type.toLowerCase() )
+                                case 'utf8' : 
+                                case 'string' : 
+                                case 'number' : 
+                                    renderer.has_entry = true;
+                                    break;
+                                case 'boolean' : 
+                                default : 
+                                    console.log(type);
+                                    renderer.has_entry = false;
+                            }
                             
                             Seed.print("click" + ev.type);
                             console.dump(res);
