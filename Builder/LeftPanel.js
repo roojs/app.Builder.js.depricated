@@ -524,7 +524,7 @@ LeftPanel = new XObject({
                                 listeners : {
  
                                     edited : function(r,p, t) {
-                                        print("EDITED?");
+                                        print("EDITED?", p , t);
                                         LeftPanel.get('model').changed(t, true);
                                         LeftPanel.get('model').activePath = false;
                                         //this.el.has_entry = false;
