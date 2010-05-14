@@ -81,7 +81,7 @@ LeftPanel = new XObject({
                     {
                         console.print('row activated');  
                           // always set the cmobo entry to not ediable..
-                        LeftPanel.editableColumn.el.has_entry = false;
+                        LeftPanel.editableColumn.el.has_entry = true; //make it ediable..
                       
                     }
 
@@ -497,7 +497,7 @@ LeftPanel = new XObject({
                                 },
                                 pack : ['pack_start'],
                                 editable : true,
-                                has_entry : true,
+                                has_entry : false,
                                 text_column : 0,
                                 listeners : {
  
