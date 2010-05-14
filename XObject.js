@@ -142,12 +142,12 @@ XObject.prototype = {
         if (!this.el && typeof(this.xtype) == 'function') {
             if (XObject.debug) print("func?"  + XObject.keys(this.config).join(','));
             this.el = this.xtype(this.config);
-            this.config = [];
+           
         }
         if (!this.el && typeof(this.xtype) == 'object') {
             if (XObject.debug) print("obj?"  + XObject.keys(this.config).join(','));
             this.el = new (this.xtype)(this.config);
-            this.config = [];
+      
         }
         //print(this.el);
         if (!this.el && this.xns) {
@@ -187,7 +187,9 @@ XObject.prototype = {
         
          
         for (var i in this.config) {
-           
+            if (i == 'type') { // problem with Gtk.Window...
+                continue;
+            }
             this.el[i] = this.config[i];
         }
         
