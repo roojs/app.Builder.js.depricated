@@ -81,7 +81,7 @@ LeftPanel = new XObject({
                             var renderer = LeftPanel.editableColumn.items[0].el; // set has_entry..
                             LeftPanel.editableColumn.items[0].el.stop_editing();
                             var type = LeftPanel.get('model').getType(res.path.to_string());
-                            LeftPanel.editableColumn.setOptions([]);
+                            
                              
                             var LeftTree = imports.Builder.LeftTree.LeftTree;
                             var provider = LeftTree.getPaleteProvider();
@@ -89,7 +89,7 @@ LeftPanel = new XObject({
                             var opts = provider.findOptions(type);
                             
                             if (opts === false) {
-                                
+                                LeftPanel.editableColumn.setOptions([]);
                                 renderer.has_entry = true;
                             } else {
                                 LeftPanel.editableColumn.setOptions(opts);
