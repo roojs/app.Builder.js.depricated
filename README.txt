@@ -23,11 +23,11 @@ Where it is..
 
 * basic builder app runs - you can build a tree of elements making up a interface for roo and gtk.
 * listeners are  created correctly.
+* listeners with gtk prototypes
 
 -----------------------------------------------------
 TODO
 
-* listeners (for gtk need prototypes);
 * calculate mouseover for rendered view of Gtk preview.
 * create output to JS ...
 * templates for elements... - eg. defaults for classic elements.
