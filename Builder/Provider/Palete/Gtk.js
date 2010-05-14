@@ -363,7 +363,9 @@ Gtk = XObject.define(
                 }
                 
             });
-            // now got it..
+            if (!ret) {
+                return Base.prototype.findType(data, prop,value);
+            }
              
             // got the type
             
