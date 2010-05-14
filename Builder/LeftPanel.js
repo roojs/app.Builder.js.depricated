@@ -365,6 +365,10 @@ LeftPanel = new XObject({
                             print("type = " + type);
                             // toggle boolean
                             if (type == 'boolean') {
+                                // let's show a pulldown..
+                                LeftPanel.editableColumn.setOptions([ 'true' , 'false']);
+                                
+                                
                                 val = ! this.getValue(iter,1);
                                 
                                 this.activePath = false;
@@ -424,6 +428,21 @@ LeftPanel = new XObject({
 
                             LeftPanel.editableColumn= this;
                         },
+                        setOptions : function(ar)
+                        {
+                            this.items[0].el.has_entry = false; // stop editable.
+                            var m = this.items[0].el.model;
+                            m.clear();
+                            var iter = new Gtk.TreeIter();
+                            ar.forEach(function(i) {
+                                   // sort!!!?
+                                this.el.append(iter);
+                                this.el.set_value(iter, 0, i);
+                            }
+                            
+                            
+                          
+                        },
                         items : [
                         /*
                          
@@ -474,7 +493,7 @@ LeftPanel = new XObject({
                                     },
                                    
                                     'editing-started' : function(r, e, p) {
-                                        //this.el.has_entry = false;
+                                        this.el.has_entry = true;
                                         LeftPanel.get('model').editSelected(e);
                                     }    
                                 },
