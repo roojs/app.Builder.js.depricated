@@ -352,6 +352,16 @@ Gtk = XObject.define(
         {
             
             var qname = this.guessName(data);
+             
+            // use introspection to get lists..
+            var gi = GIRepository.IRepository.get_default();
+            var es = ename.split('.');
+            var bi = gi.find_by_name(es[0], es[1]);
+            if (!bi) {
+                return Base.prototype.findType(data, prop,value);
+            }
+            // got the type
+            
             
             
             
