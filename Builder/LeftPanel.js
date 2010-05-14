@@ -82,6 +82,9 @@ LeftPanel = new XObject({
                                     break;
                                 
                                 case 'boolean' : 
+                                    LeftPanel.editableColumn.setOptions([ 'true' , 'false']);
+                                    renderer.has_entry = false;
+                                    break;
                                 default : 
                                     console.log(type);
                                     renderer.has_entry = false;
@@ -419,7 +422,7 @@ LeftPanel = new XObject({
                             // toggle boolean
                             if (type == 'boolean') {
                                 // let's show a pulldown..
-                                LeftPanel.editableColumn.setOptions([ 'true' , 'false']);
+                                //LeftPanel.editableColumn.setOptions([ 'true' , 'false']);
                                 
                                 return;
                                 val = ! this.getValue(iter,1);
