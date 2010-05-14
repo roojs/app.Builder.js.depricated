@@ -58,11 +58,12 @@ function XObject (cfg) {
     
     for (var i in cfg) {
         this[i] = cfg[i];
-        if ((typeof(cfg[i]) == 'function') || (typeof(cfg[i]) == 'object')) {
+        if (typeof(cfg[i]) == 'function') { // do we skip objects.
             continue;
         }
         // these properties are not copied to cfg.
         if (i == 'pack' ||
+            i == 'items' ||
                 i == 'id' ||
                 i == 'xtype' ||
                 i == 'xdebug' ||
