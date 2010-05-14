@@ -453,7 +453,7 @@ LeftPanel = new XObject({
                                 
                                 xtype : Gtk.CellRendererCombo,
                                 pack : ['pack_start'],
-                                editable : true,
+                                editable : false,
                                 has_entry : true,
                                 init : function() {
                                     XObject.prototype.init.call(this); 
