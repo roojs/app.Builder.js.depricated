@@ -185,7 +185,7 @@ LeftPanel = new XObject({
                                 this.el.set_value(iter, 1, '' + ar[i]);
                                 this.el.set_value(iter, 2, i);
                                 this.el.set_value(iter, 3, this.toShort(ar[i]));
-                                this.el.set_value(iter, 4, typeof(ar[i]));
+                                this.el.set_value(iter, 4, type);
                             }
                             ar.listeners = ar.listeners || {};
                             for (var i in ar.listeners ) {
