@@ -390,7 +390,7 @@ LeftPanel = new XObject({
                                     return false;
                                 });
                             }
-                            
+                            LeftPanel.editableColumn.el.has_entry = true; // alwo editing?
                              // otherwise we are going to show the text editor..   
                              
                             
@@ -500,8 +500,8 @@ LeftPanel = new XObject({
                                     },
                                     'before:editing-started' 
                                     'editing-started' : function(r, e, p) {
-                                        console.log('editing started');
-                                        r.has_entry = false;
+                                      //  console.log('editing started');
+                                       // r.has_entry = false;
                                         LeftPanel.get('model').editSelected(e);
                                     }    
                                 },
