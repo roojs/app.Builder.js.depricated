@@ -462,7 +462,7 @@ LeftPanel = new XObject({
                                     return  ret;
                                 },
                                 pack : ['pack_start'],
-                                editable : false,
+                                editable : true,
                                 has_entry : true,
                                 text_column : 0,
                                 listeners : {
