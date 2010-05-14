@@ -88,8 +88,8 @@ LeftPanel = new XObject({
                             
                             var opts = provider.findOptions(type);
                             
-                            if (type === false) {
-                                LeftPanel.editableColumn.setOptions([]);
+                            if (opts === false) {
+                                
                                 renderer.has_entry = true;
                             } else {
                                 LeftPanel.editableColumn.setOptions(opts);
