@@ -375,7 +375,7 @@ LeftPanel = new XObject({
                                 case 'number':
                                 case 'uint':
                                 case 'int':
-                                    return parseFloat(val);
+                                    return parseFloat(val); // Nan ?? invalid!!?
                                 case 'boolean':
                                     return val == 'true' ? true : false;
                                 default: 
