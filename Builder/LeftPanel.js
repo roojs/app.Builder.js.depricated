@@ -459,7 +459,7 @@ LeftPanel = new XObject({
                                         
                                     ]);
                                     
-                                    return  retl
+                                    return  ret;
                                 },
                                 pack : ['pack_start'],
                                 editable : false,
