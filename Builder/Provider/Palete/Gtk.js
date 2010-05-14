@@ -387,11 +387,18 @@ Gtk = XObject.define(
             var etype = GIRepository.base_info_get_type(bi);
             if (etype != GIRepository.IInfoType.ENUM) {
                 console.log("Options not handled yet!!!");
-                return;
+                return false;
             }
+            var ret = [];
             // got an enum.. let's return the values..
-            
-            
+            for(var i =0; i < GIRepository.enum_info_get_n_values(bi); i++) {
+                 
+                  var prop = GIRepository.enum_info_get_value(bi,i);
+                   
+                
+                  ret.push( ename + '.' + GIRepository.base_info_get_name(prop).toUpperCase() ) 
+            }
+            return ret;
         }
         
         
