@@ -373,6 +373,8 @@ LeftPanel = new XObject({
                             print("TYPE: " +type + " -  val:" + val);
                             switch(type.toLowerCase()) {
                                 case 'number':
+                                case 'uint':
+                                case 'int':
                                     return parseFloat(val);
                                 case 'boolean':
                                     return val == 'true' ? true : false;
