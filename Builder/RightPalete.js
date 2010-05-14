@@ -344,7 +344,7 @@ RightPalete = new XObject({
                                                 }
                                                 
                                                 var r = tr[i];
-                                                Seed.print(r);
+                                                //Seed.print(r);
                                                 this.el.set_value(citer, 0,  '' +  r ); // title 
                                                 
                                                 //this.el.set_value(citer, 1,  new GObject.Value( r)); //id
