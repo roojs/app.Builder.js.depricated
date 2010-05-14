@@ -104,9 +104,24 @@ Base = XObject.define(
                 return 'function';
             }
             return typeof(value);
-        }
+        },
         
         
+        findOptions : function(ename)
+        {
+            switch(ename) {
+                case 'boolean': 
+                    return [ 'true', 'false' ];
+                // everything else does not have options.
+                case 'string': 
+                case 'utf8': 
+                case 'int': 
+                case 'uint': 
+                case 'function': 
+                    return false;
+                 
+            }
+        },
         confirmCanAdd: function(parent, child) {
             // confirms that one obj can be added to another.
             // returns true, for items, or list of properties that can hold it..
