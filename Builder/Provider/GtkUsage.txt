@@ -100,9 +100,9 @@ right:
 	Gtk.SeparatorMenuItem 
 	Gtk.TearoffMenuItem 
 left:
-	Gtk.MenuItem
+	Gtk.MenuItem:submenu
 right:	
-	Gtk.Menu:submenu
+	Gtk.Menu
 	
 left:       
 	Gtk.Toolbar
