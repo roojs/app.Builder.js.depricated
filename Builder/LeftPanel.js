@@ -35,7 +35,7 @@ LeftPanel = new XObject({
           
         getPaleteProvider: function ()
         {
-            var pm = imports.Builder.LeftTree.LeftTree;
+            var LeftTree = imports.Builder.LeftTree.LeftTree;
             var model = LeftTree.get('model');
             var pm = imports.Builder.Provider.ProjectManager.ProjectManager;
             return pm.getPalete(model.file.getType());
