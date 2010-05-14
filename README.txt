@@ -28,6 +28,7 @@ Where it is..
 -----------------------------------------------------
 TODO
 
+* Gtk properties that are enums - should show some kind of selector.
 * adding a file does not display on project tree straight awya..
 * calculate mouseover for rendered view of Gtk preview.
 * create output to JS ...
