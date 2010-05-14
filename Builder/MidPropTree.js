@@ -106,6 +106,7 @@ MidPropTree = new XObject({
                         MidPropTree.hideWin();
                         var LeftPanel       = imports.Builder.LeftPanel.LeftPanel;
                         if (type == 'function') {
+                            
                             if (etype != 'events') {
                                 key = '|' + key;
                             }
@@ -117,6 +118,11 @@ MidPropTree = new XObject({
                                 etype : etype
                             })  
                             return;
+                        }
+                        
+                        if (type.indexOf('.') > -1 || 
+                                type == 'boolean') {
+                             key = '|' + key;
                         }
                         
                         LeftPanel.get('model').add( {
