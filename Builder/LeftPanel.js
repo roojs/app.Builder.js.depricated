@@ -436,8 +436,8 @@ LeftPanel = new XObject({
                             var iter = new Gtk.TreeIter();
                             ar.forEach(function(i) {
                                    // sort!!!?
-                                this.el.append(iter);
-                                this.el.set_value(iter, 0, i);
+                                m.append(iter);
+                                m.set_value(iter, 0, i);
                             });
                             
                             
