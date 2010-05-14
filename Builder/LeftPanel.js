@@ -33,14 +33,7 @@ LeftPanel = new XObject({
         },
         
           
-        getPaleteProvider: function ()
-        {
-            var LeftTree = imports.Builder.LeftTree.LeftTree;
-            var model = LeftTree.get('model');
-            var pm = imports.Builder.Provider.ProjectManager.ProjectManager;
-            return pm.getPalete(model.file.getType());
-            
-        },
+    
         
         items : [
             {
@@ -173,7 +166,8 @@ LeftPanel = new XObject({
                             }
                             var ret = {}; 
                             
-                            
+                            var LeftTree = imports.Builder.LeftTree.LeftTree;
+                            var provider = LeftTree.getPaleteProvider();
                             
                             // sort!!!?
                             var iter = new Gtk.TreeIter();
@@ -181,6 +175,9 @@ LeftPanel = new XObject({
                                 if (typeof(ar[i]) == 'object') {
                                     continue;
                                 }
+                                
+                                var type = provider.getType(ar, i, ar[i]);
+                                
                                 this.el.append(iter);
                                 var p = this.el.get_path(iter).to_string();
                                 ret[i] = p;
@@ -201,7 +198,7 @@ LeftPanel = new XObject({
                                 this.el.set_value(iter, 2, '<b>'+ i + '</b>');
                                 
                                 this.el.set_value(iter, 3, '' + this.toShort(ar.listeners[i]));
-                                this.el.set_value(iter, 4, typeof(ar[i]));
+                                this.el.set_value(iter, 4, 'function');
                             }
                             return ret;
                         },
