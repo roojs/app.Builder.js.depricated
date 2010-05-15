@@ -1,6 +1,7 @@
 //<Script type="text/javascript">
 Gio = imports.gi.Gio;
 Gtk = imports.gi.Gtk;
+Gdk = imports.gi.Gtk;
 GLib = imports.gi.GLib;
 GObject = imports.gi.GObject;
 Pango = imports.gi.Pango ;
