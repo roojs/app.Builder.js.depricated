@@ -52,6 +52,7 @@ LeftPanelPopup = new XObject({
                     imports.Builder.LeftPanel.LeftPanel.get('model').setSelectedToNoJS();
                 }
             }
+            
         },
     ]
 });
