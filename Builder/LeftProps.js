@@ -127,7 +127,7 @@ LeftProps = new XObject({
                         // show the menu..
                         if (!AddPropertyPopup.el) {
                             AddPropertyPopup.init();
-                           }
+                        }
                         AddPropertyPopup.el.set_screen(Gdk.Screen.get_default());
                         AddPropertyPopup.el.show_all();
                         AddPropertyPopup.el.popup(null, null, null, null, 3, ev.button.time);
