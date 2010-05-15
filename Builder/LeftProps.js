@@ -124,7 +124,9 @@ LeftProps = new XObject({
                     // pressed...
                     'button-press-event' : function(w, ev ){
                         // show the menu..
-                        
+                        AddPropertyPopup.el.set_screen(Gdk.Screen.get_default());
+                        AddProperty.el.show_all();
+                        AddProperty.el.popup(null, null, null, null, 3, ev.button.time);
                         console.log('pressed');
                         //Builder.MidPropTree._model.showData('events');
                         return true;
@@ -156,7 +158,8 @@ LeftProps = new XObject({
                             }
                         
                         ]
-                    }
+                    } 
+             
                          
                 ]
             }
