@@ -25,7 +25,14 @@ AddPropertyPopup = new XObject({
             tooltip_markup : "Set what type of packing is to be used.",
             listeners : {
                 activate : function () {
-                 
+                    var LeftPanel = imports.Builder.LeftPanel.LeftPanel;
+                    LeftPanel.get('model').add( {
+                        key : 'pack', 
+                        type : 'string',
+                        val : 'add',
+                        //skel  : skel,
+                        etype : 'props'
+                    }) //, skel);
                 }
             }
         },
@@ -40,14 +47,7 @@ AddPropertyPopup = new XObject({
             listeners : {
                 activate : function () {
                     // popup with name.
-                    var LeftPanel = imports.Builder.LeftPanel.LeftPanel;
-                     LeftPanel.get('model').add( {
-                            key : 'pack', 
-                            type : 'string',
-                            val : 'add',
-                            //skel  : skel,
-                            etype : 'props'
-                           }) //, skel);
+                   
                 }
             }
             
