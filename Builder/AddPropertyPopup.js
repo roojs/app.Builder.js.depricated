@@ -17,11 +17,9 @@ AddPropertyPopup = new XObject({
      
     items :  [
         {
-            
-            
             xtype : Gtk.MenuItem,
             pack : [ 'append' ],
-            label : 'Add "pack"',
+            label : 'Gtk - Add "pack"',
             tooltip_markup : "Set what type of packing is to be used.",
             listeners : {
                 activate : function () {
@@ -31,6 +29,24 @@ AddPropertyPopup = new XObject({
                         type : 'string',
                         val : 'add',
                         //skel  : skel,
+                        etype : 'props'
+                    }) //, skel);
+                }
+            }
+        },
+        {
+            xtype : Gtk.MenuItem,
+            pack : [ 'append' ],
+            label : 'Gtk - Add "init"',
+            tooltip_markup : "Set what type of packing is to be used.",
+            listeners : {
+                activate : function () {
+                    var LeftPanel = imports.Builder.LeftPanel.LeftPanel;
+                    LeftPanel.get('model').add( {
+                        key : '|init', 
+                        type : 'function',
+                        val : 'add',
+                        skel  : "function() {\n    XObject.prototype.init.call(this);\n}\n",
                         etype : 'props'
                     }) //, skel);
                 }
