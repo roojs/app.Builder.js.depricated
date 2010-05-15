@@ -25,29 +25,18 @@ AddPropertyPopup = new XObject({
             tooltip_markup : "Set what type of packing is to be used.",
             listeners : {
                 activate : function () {
-                    imports.Builder.LeftPanel.LeftPanel.get('model').deleteSelected();
+                 
                 }
             }
         },
     
-      {
-            
-            
-            xtype : Gtk.MenuItem,
-            pack : [ 'append' ],
-            label : 'Change Property to Javascript Value',
-            listeners : {
-                activate : function () {
-                   imports.Builder.LeftPanel.LeftPanel.get('model').setSelectedToJS();
-                }
-            }
-        },
+       
         {
             
             
             xtype : Gtk.MenuItem,
             pack : [ 'append' ],
-            label : 'Change Property to String (or native) Value',
+            label : 'Add Function or Property',
             listeners : {
                 activate : function () {
                     imports.Builder.LeftPanel.LeftPanel.get('model').setSelectedToNoJS();
