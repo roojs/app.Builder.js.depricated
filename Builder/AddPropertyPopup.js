@@ -39,7 +39,7 @@ AddPropertyPopup = new XObject({
             label : 'Add Function or Property',
             listeners : {
                 activate : function () {
-                    imports.Builder.LeftPanel.LeftPanel.get('model').setSelectedToNoJS();
+                    // popup with name.
                 }
             }
             
