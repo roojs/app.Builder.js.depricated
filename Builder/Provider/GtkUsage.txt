@@ -37,6 +37,7 @@ left:
 	//Gtk.Fixed 
 	Gtk.Expander 
 	Gtk.Frame
+	Gtk.ScrolledWindow
 	
 right:	 
 	Gtk.Alignment 
