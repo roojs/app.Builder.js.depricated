@@ -55,7 +55,7 @@ RightGtkView = new XObject({
                      
                 renderedData : false, 
                 xtype: Gtk.ScrolledWindow,
-               
+                id: 'view-sw',
                 smooth_scroll : true,
                 shadow_type : Gtk.ShadowType.IN ,
                 init : function() {
@@ -71,8 +71,8 @@ RightGtkView = new XObject({
                             xtype : Gtk.ViewPort,
                             init : function () {
                                 XObject.prototype.init.call(this); 
-                                this.el.set_hadjustment(RightGtkView.get('view').el.get_hadjustment);
-                                this.el.set_vadjustment(RightGtkView.get('view').el.get_vadjustment);
+                                this.el.set_hadjustment(RightGtkView.get('view-sw').el.get_hadjustment);
+                                this.el.set_vadjustment(RightGtkView.get('view-sw').el.get_vadjustment);
                                     
                             },
                             packing : ['add' ],
