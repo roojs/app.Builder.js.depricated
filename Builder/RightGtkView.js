@@ -68,8 +68,8 @@ RightGtkView = new XObject({
                     {
                         
                             id : 'view-vbox',
-                            xtype : Gtk.VBox,
-                            packing : ['add_with_viewport' ],
+                            xtype : Gtk.ViewPort,
+                            packing : ['add' ],
                             items: [
                             {
                                 id : 'view',
