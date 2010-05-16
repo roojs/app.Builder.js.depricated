@@ -256,9 +256,9 @@ XObject.prototype = {
         if (typeof(item.pack) == 'string') {
             pack_m = item.pack.split(',');
             pack_m.forEach(function(e, i) {
-                if (e == 'false') pack_m[i] = false;
-                if (e == 'true') pack_m[i] = true;
-                if (parseInt(e) == NaN) pack_m[i] = parseInt(e);
+                if (e == 'false') { pack_m[i] = false; return; }
+                if (e == 'true') {  pack_m[i] = true;  return; }
+                if (parseInt(e) == NaN)  { pack_m[i] = parseInt(e); return; }
             })
         } else {
             pack_m = item.pack.shift();
