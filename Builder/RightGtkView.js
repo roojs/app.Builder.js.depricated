@@ -243,7 +243,7 @@ RightGtkView = new XObject({
                }
             var x = new imports.sandbox.Context();
             x.add_globals();
-            print(src);
+            //print(src);
             try {
                 x.eval(src);
             } catch( e) {
@@ -270,7 +270,8 @@ RightGtkView = new XObject({
             
             src += '_top=new XObject('+ this.mungeToString(data) + ')\n;';
             src += '_top.init();\n';
-            print(src);
+            File.write('/tmp/BuilderGtkView.js', src);
+            print("Test code  in /tmp/BuilderGtkView.js");
             this.lastSrc = src;
             return src;
         },
