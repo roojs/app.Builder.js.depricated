@@ -19,6 +19,24 @@ AddPropertyPopup = new XObject({
         {
             xtype : Gtk.MenuItem,
             pack : [ 'append' ],
+            label : 'Add "id"',
+            tooltip_markup : "Using this.get('*someid') will find any id in an application.",
+            listeners : {
+                activate : function () {
+                    var LeftPanel = imports.Builder.LeftPanel.LeftPanel;
+                    LeftPanel.get('model').add( {
+                        key : 'id', 
+                        type : 'string',
+                        val : 'add',
+                        //skel  : skel,
+                        etype : 'props'
+                    }) //, skel);
+                }
+            }
+        },
+        {
+            xtype : Gtk.MenuItem,
+            pack : [ 'append' ],
             label : 'Gtk - Add "pack"',
             tooltip_markup : "Set what type of packing is to be used.",
             listeners : {
