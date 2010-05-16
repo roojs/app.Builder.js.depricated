@@ -875,7 +875,7 @@ LeftTree = new XObject(
                             if (sr) txt.push('<s>');
                             if (typeof(c['*prop']) != 'undefined')   { txt.push(c['*prop']+ ':'); }
                             if (c.xtype)      { txt.push(c.xtype); }
-                            if (c.id)      { txt.push('<b>[' + c.id + ']</b>'); }
+                            if (c.id)      { txt.push('<b>[id=' + c.id + ']</b>'); }
                             if (c.fieldLabel) { txt.push('[' + c.fieldLabel + ']'); }
                             if (c.boxLabel)   { txt.push('[' + c.boxLabel + ']'); }
                             
