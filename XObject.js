@@ -254,12 +254,13 @@ XObject.prototype = {
         var args = [];
         var pack_m  = false;
         if (typeof(item.pack) == 'string') {
-            pack_m = item.pack.split(',');
-            pack_m.forEach(function(e, i) {
-                if (e == 'false') { pack_m[i] = false; return; }
-                if (e == 'true') {  pack_m[i] = true;  return; }
-                if (parseInt(e) == NaN)  { pack_m[i] = parseInt(e); return; }
-            })
+            var args = item.pack.split(',');
+            args.forEach(function(e, i) {
+                if (e == 'false') { args[i] = false; return; }
+                if (e == 'true') {  args[i] = true;  return; }
+                if (parseInt(e) == NaN) { args[i] = parseInt(e); return; }
+            });
+            pack_m = args.shift();
         } else {
             pack_m = item.pack.shift();
             args = item.pack;
