@@ -61,7 +61,7 @@ RightGtkView = new XObject({
                 init : function() {
                     XObject.prototype.init.call(this); 
                      
-                    this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
+                    //this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
                 },
                 
                 items : [
