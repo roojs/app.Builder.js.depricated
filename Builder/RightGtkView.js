@@ -71,8 +71,8 @@ RightGtkView = new XObject({
                             xtype : Gtk.ViewPort,
                             init : function () {
                                 XObject.prototype.init.call(this); 
-                                this.el.set_hadjustment(this.xparent.el.get_hadjustment);
-                                this.el.set_vadjustment(this.xparent.el.get_vadjustment);
+                                this.el.set_hadjustment(this.get('.view').el.get_hadjustment);
+                                this.el.set_vadjustment(this.get('.view').el.get_vadjustment);
                                     
                             },
                             packing : ['add' ],
