@@ -73,7 +73,7 @@ RightGtkView = new XObject({
                             return new Gtk.Image.from_stock (Gtk.STOCK_HOME, 100) 
 
                         },
-                        packing : ['add' ],
+                        packing : ['add_with_viewport' ],
                         ready : false,
                         init : function() {
                             XObject.prototype.init.call(this); 
