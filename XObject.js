@@ -230,7 +230,7 @@ XObject.prototype = {
         
         var item = (o.constructor == XObject) ? o : new XObject(o);
        
-        item.init();
+        item.init(this);
         //print("CTR:PROTO:" + ( item.id ? item.id : '??'));
        // print("addItem - call init [" + item.pack.join(',') + ']');
         if (!item.el) {
