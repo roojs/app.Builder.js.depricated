@@ -29,7 +29,7 @@ Where it is..
 -----------------------------------------------------
 TODO
 
-* packing - gather from methods to find out which match..
+* packing - gather from methods to find out which match.. (including false)
 * order of palete needs fixing.
 * support user functions/properties..
 * adding a file does not display on project tree straight awya..
