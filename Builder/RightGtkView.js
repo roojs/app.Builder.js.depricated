@@ -331,7 +331,7 @@ RightGtkView = new XObject({
             //gc.set_rgb_fg_color({ red: 255, white: 255, black : 255 });
             Gdk.draw_rectangle(full, gc, true, 0, 0, 10, 10);
             this.get('view').el.set_from_pixmap(full, null);
-            this.get('view-vbox').el.set_size_request( r.width+20, r.height+20);
+            //this.get('view-vbox').el.set_size_request( r.width+20, r.height+20);
             //var img = new Gtk.Image.from_file("/home/alan/solarpanels.jpeg");
             
             
