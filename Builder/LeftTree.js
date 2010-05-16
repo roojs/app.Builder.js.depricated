@@ -436,7 +436,7 @@ LeftTree = new XObject(
                                 //this.currentTree = this.toJS(false, true)[0];
                             this.file.items = this.toJS(false, false);
                             print("AFTER CHANGED")
-                            console.dump(this.file.items);
+                            //console.dump(this.file.items);
                             this.file.save();
                             this.currentTree = this.file.items[0];
                             //console.log(this.file.toSource());
@@ -462,7 +462,7 @@ LeftTree = new XObject(
                         
                         loadFile : function(f)
                         {
-                            console.dump(f);
+                            //console.dump(f);
                             this.el.clear();
                             this.file = f;
                             
@@ -509,7 +509,7 @@ LeftTree = new XObject(
                             RightEditor.el.hide();
                             print("set current tree");
                             this.currentTree = this.toJS(false, false)[0];
-                            console.dump(this.currentTree);
+                            //console.dump(this.currentTree);
                             this.currentTree = this.currentTree || { items: [] };
                             LeftTree.renderView();
                             //console.dump(this.map);
