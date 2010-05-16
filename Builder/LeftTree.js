@@ -875,13 +875,14 @@ LeftTree = new XObject(
                             if (sr) txt.push('<s>');
                             if (typeof(c['*prop']) != 'undefined')   { txt.push(c['*prop']+ ':'); }
                             if (c.xtype)      { txt.push(c.xtype); }
+                            if (c.id)      { txt.push(['<b>[' c.id ']</b>'); }
                             if (c.fieldLabel) { txt.push('[' + c.fieldLabel + ']'); }
                             if (c.boxLabel)   { txt.push('[' + c.boxLabel + ']'); }
                             
                             
                             if (c.layout)     { txt.push('<i>' + c.layout + '</i>'); }
                             if (c.title)      { txt.push('<b>' + c.title + '</b>'); }
-                             if (c.label)      { txt.push('<b>' + c.label+ '</b>'); }
+                            if (c.label)      { txt.push('<b>' + c.label+ '</b>'); }
                             if (c.header)    { txt.push('<b>' + c.header + '</b>'); }
                             if (c.legend)      { txt.push('<b>' + c.legend + '</b>'); }
                             if (c.text)       { txt.push('<b>' + c.text + '</b>'); }
