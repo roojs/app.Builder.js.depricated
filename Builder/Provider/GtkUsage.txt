@@ -32,7 +32,7 @@ left:
 	Gtk.HPaned 
 	Gtk.VPaned 
 	Gtk.Layout 
-	//Gtk.Notebook 
+	Gtk.Notebook 
 	//Gtk.Table 
 	//Gtk.Fixed 
 	Gtk.Expander 
