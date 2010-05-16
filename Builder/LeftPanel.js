@@ -77,7 +77,7 @@ LeftPanel = new XObject({
                             }
                             if (  LeftPanel.editing) {
                                 return false;
-                               }
+                            }
                             var renderer = LeftPanel.editableColumn.items[0].el; // set has_entry..
                             LeftPanel.editableColumn.items[0].el.stop_editing();
                             var type = LeftPanel.get('model').getType(res.path.to_string());
@@ -248,6 +248,26 @@ LeftPanel = new XObject({
                             var LeftTree        = imports.Builder.LeftTree.LeftTree;
                             
                             LeftTree.get('model').changed(data, true); 
+                            
+                            var type = LeftPanel.get('model').getType(map[info.key]);
+                            
+                             
+                            var LeftTree = imports.Builder.LeftTree.LeftTree;
+                            var provider = LeftTree.getPaleteProvider();
+                            
+                            var opts = provider.findOptions(type);
+                            
+                            if (opts === false) {
+                                LeftPanel.editableColumn.setOptions([]);
+                                renderer.has_entry = true; /// probably does not have any effect.
+                            } else {
+                                LeftPanel.editableColumn.setOptions(opts);
+                                renderer.has_entry = false;
+                            }
+                            
+                            
+                            
+                            
                             //LeftPanel.get('view').selection.select_path(new Gtk.TreePath.from_string(map[k]));
                             //this.editSelected( true )
                              GLib.timeout_add(0, 100, function() {
