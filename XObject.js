@@ -255,6 +255,11 @@ XObject.prototype = {
         var pack_m  = false;
         if (typeof(item.pack) == 'string') {
             pack_m = item.pack.split(',');
+            pack_m.forEach(function(e, i) {
+                if (e == 'false') pack_m[i] = false;
+                if (e == 'true') pack_m[i] = true;
+                if (parseInt(e) != NaN) pack_m[i] = parseInt(e);
+            })
         } else {
             pack_m = item.pack.shift();
             args = item.pack;
