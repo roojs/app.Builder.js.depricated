@@ -63,7 +63,7 @@ AddPropertyPopup = new XObject({
                     LeftPanel.get('model').add( {
                         key : '|init', 
                         type : 'function',
-                        skel  : "function() {\n    XObject.prototype.init.call(this);\n}\n",
+                        val  : "function() {\n    XObject.prototype.init.call(this);\n}\n",
                         etype : 'props'
                     }) //, skel);
                 }
