@@ -296,6 +296,13 @@ Gtk = XObject.define(
                 elist.push.apply(elist,this.proplist[iface]['events']);
                 plist.push.apply(plist,this.proplist[iface]['props']);
             }
+            function sfunc(a,b) {
+                if (a.name == b.name) return 0;
+                return a.name > b.name ? 1 : -1
+            }
+            plist.sort(sfunc);
+            elist.sort(sfunc);
+            
             
             return this.proplist[ename][type];
             
