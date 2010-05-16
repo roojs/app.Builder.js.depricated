@@ -28,6 +28,7 @@ Where it is..
 
 -----------------------------------------------------
 TODO
+* change sourceview to use spaces rather than tabs.
 * fix pulldowns for types.. - it's a bit hap hazard with the delayed / loading of settings.
 * packing - gather from methods to find out which match.. (including false)
 * order of palete needs fixing.
