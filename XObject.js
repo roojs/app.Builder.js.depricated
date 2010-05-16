@@ -258,7 +258,7 @@ XObject.prototype = {
             pack_m.forEach(function(e, i) {
                 if (e == 'false') pack_m[i] = false;
                 if (e == 'true') pack_m[i] = true;
-                if (parseInt(e) != NaN) pack_m[i] = parseInt(e);
+                if (parseInt(e) == NaN) pack_m[i] = parseInt(e);
             })
         } else {
             pack_m = item.pack.shift();
