@@ -249,7 +249,7 @@ LeftPanel = new XObject({
                             
                             LeftTree.get('model').changed(data, true); 
                             
-                            var type = LeftPanel.get('model').getType(map[info.key]);
+                            var type = LeftPanel.get('model').getType(map[k]);
                             
                              
                             var LeftTree = imports.Builder.LeftTree.LeftTree;
