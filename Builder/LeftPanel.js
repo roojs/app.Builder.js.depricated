@@ -287,7 +287,7 @@ LeftPanel = new XObject({
                                 colObj = (!k.length || k == '|') ? 
                                     LeftPanel.propertyColumn : LeftPanel.editableColumn;
                             } else {
-                                colObj = col ? LeftPanel.propertyColumn : LeftPanel.editableColumn;
+                                colObj = col ? LeftPanel.editableColumn : LeftPanel.propertyColumn;
                             }
                             
                             // make sure the pulldown is set correctly..
