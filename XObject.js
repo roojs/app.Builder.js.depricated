@@ -342,6 +342,7 @@ XObject.prototype = {
             while (e.parent) {
                 e = e.parent;
             }
+            
             try {
                 ret = e.get(xid.substring(1));
             } catch (ex) { }
@@ -360,7 +361,21 @@ XObject.prototype = {
         if (xid.indexOf('.') > -1) {
             child = xid.split('.');
             xid = child.shift();
+            
             child = child.join('.');
+            if (xid == this.id) {
+                try {
+                    return this.get(child);
+                } catch (ex) {
+                    throw {
+                        name: "ArgumentError", 
+                        message : "ID not found : " + oid
+                    }
+                }
+                
+            }
+            
+            
         }
         
         this.items.forEach(function(ch) {
