@@ -263,9 +263,12 @@ LeftTree = new XObject(
                         // path, pos
                         
                         Seed.print(data.path.to_string() +' => '+  data.pos);
-                        var tg = LeftTree.get('model').findDropNodeByPath(data.path.to_string(), src.dropList, data.pos);
+                        var tg = LeftTree.get('model').findDropNodeByPath(
+                            data.path.to_string(), src.dropList, data.pos);
+                            
                         LeftTree.get('view').highlight(tg);
                         if (!tg.length) {
+                            print("Can not find dop node path");
                             this.targetData = false;
                             Gdk.drag_status(ctx, 0, time);
                             return true;
