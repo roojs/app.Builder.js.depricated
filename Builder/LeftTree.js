@@ -29,6 +29,7 @@ function id(el, prefix){
 
 LeftTree = new XObject(
 {
+        id : 'LeftTree',
         xtype: Gtk.ScrolledWindow,
         smooth_scroll : true,
         
