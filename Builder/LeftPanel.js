@@ -286,7 +286,7 @@ LeftPanel = new XObject({
                          */
                         startEditing : function(path, col)
                         {
-                            
+                            // fix tp (treepath) and path string..
                             var tp;
                             if (typeof(path) == 'string') {
                                 tp = new Gtk.TreePath.from_string(path);
@@ -295,19 +295,37 @@ LeftPanel = new XObject({
                                 var s = LeftPanel.get('view').selection;
                                 s.get_selected(this.el, iter);
                                 tp = this.el.get_path(iter);
+                                path = tp.to_string();
                             }
-                            colObj = false;
+                            
+                            // which colum is to be edited..
+                            var colObj = false;
                             if (typeof(col) == 'undefined') {
                                 colObj = (!k.length || k == '|') ? 
                                     LeftPanel.propertyColumn : LeftPanel.editableColumn;
                             } else {
                                 colObj = col ? LeftPanel.propertyColumn : LeftPanel.editableColumn;
                             }
+                            
+                            // make sure the pulldown is set correctly..
+                            // not really needed for second col...
+                            var type = LeftPanel.get('model').getType(path);
+                            var opts = provider.findOptions(type);
+                            var renderer = LeftPanel.editableColumn.items[0].el;
+                            
+                            if (opts === false) {
+                                LeftPanel.editableColumn.setOptions([]);
+                                renderer.has_entry = true; /// probably does not have any effect.
+                            } else {
+                                LeftPanel.editableColumn.setOptions(opts);
+                                renderer.has_entry = false;
+                            }
+                            
+                            
                             // iter now has row...
                             GLib.timeout_add(0, 100, function() {
-                                var col = (!k.length || k == '|') ? 
-                                    LeftPanel.propertyColumn : LeftPanel.editableColumn;
-                                col.items[0].el.editable = true;
+                                
+                                colObj.items[0].el.editable = true; // esp. need for col 0..
                                 LeftPanel.get('view').el.set_cursor_on_cell(
                                     tp,
                                     col.el,
