@@ -202,21 +202,28 @@ Gtk = XObject.define(
                     'interface_info_get_n_properties',
                     'interface_info_get_property',
                     'interface_info_get_n_signals',
-                    'interface_info_get_signal'
+                    'interface_info_get_signal',
+                    'interface_info_get_n_methods',
+                    'interface_info_get_method'
                 ] : [ 
                     'object_info_get_n_properties',
                     'object_info_get_property',
                     'object_info_get_n_signals',
-                    'object_info_get_signal'
+                    'object_info_get_signal',
+                    'object_info_get_n_methods',
+                    'object_info_get_method'
                 ]; 
             
             
             this.proplist[ename] = {}
             this.proplist[ename]['props'] = [];
             this.proplist[ename]['events'] = [];
+            this.proplist[ename]['methods'] = [];
             this.proplist[ename]['inherits']= [];
+            
             var plist = this.proplist[ename]['props'] ;
             var elist = this.proplist[ename]['events'];
+            var mlist = this.proplist[ename]['methods'];
             var ilist = this.proplist[ename]['inherits'];
              /*
              we need...
@@ -247,6 +254,10 @@ Gtk = XObject.define(
                 plist.push(add)
             }
            
+           
+           
+           
+           
             // signals..
             
             for (var i =0;i <  GIRepository[meth[2]](bi); i++) {
@@ -261,6 +272,25 @@ Gtk = XObject.define(
                 }
                 elist.push(add);
             }
+            // methods
+            
+            for (var i =0;i <  GIRepository[meth[4]](bi); i++) {
+                var prop = GIRepository[meth[5]](bi, i);  
+                var n_original =  GIRepository.base_info_get_name(prop);
+                // print ('signal: ' + n_original); 
+                var add = {
+                    name :  n_original.replace(/\-/g, '_'),
+                    type : 'function', //???
+                    desc : this.doc(ename + '.signal.' + n_original),
+                    params : this.genParams(prop) // fixme..
+                }
+                elist.push(add);
+            }
+            
+            
+            
+            
+            
             
             if (etype == GIRepository.IInfoType.INTERFACE ) {
                   return;
