@@ -491,7 +491,28 @@ Gtk = XObject.define(
          */
         getDefaultPack: function(pname, cname) {
             var list = this.getPackingList(pname,cname);
-            // should we do best match..
+            if (!list.every(function(e) { return e.name =='add'; })) {
+                return 'add'; // add is in our list..?? what about args..?!?
+            }
+            function toRet(e) {
+                var ret = [e.name];
+                e.params.forEach(function(p,i) {
+                    if (ret == false) { return; } // skip broken..
+                    if (i==0) { return; } // skip first..
+                    if (p.type == 'boolean') {
+                        ret.push('false');
+                        return;
+                    }
+                    if (p.type == 'number') {
+                        ret.push('0');
+                        return;
+                    }
+                    ret = false; // invalid!
+                })
+                return ret;
+            }
+            
+            // should we do best match..?
             return 'add';
         },
         /**
