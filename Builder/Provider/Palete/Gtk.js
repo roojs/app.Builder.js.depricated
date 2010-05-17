@@ -510,7 +510,7 @@ Gtk = XObject.define(
             function toRet(e) {
                 var ret = [e.name];
                 e.params.forEach(function(p,i) {
-                    if (ret == false) { return; } // skip broken..
+                    if (ret === false) { return; } // skip broken..
                     if (i==0) { return; } // skip first..
                     if (p.type == 'boolean') {
                         ret.push('false');
@@ -521,8 +521,8 @@ Gtk = XObject.define(
                         return;
                     }
                     ret = false; // invalid!
-                })
-                return ret;
+                });
+                return ret.join(',');
             };
             var packret = false;
             list.every(function(e) {
