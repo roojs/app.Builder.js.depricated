@@ -37,7 +37,7 @@ RightEditor = new XObject({
                             _this.el.get_buffer().get_start_iter(s);
                             _this.el.get_buffer().get_end_iter(e);
                             var str = _this.el.get_buffer().get_text(s,e,true);
-                            Seed.check_syntax(str);
+                            Seed.check_syntax('var e = ' + str);
                             
                             imports.Builder.LeftPanel.LeftPanel.get('model').changed(  str , false);
                     });
