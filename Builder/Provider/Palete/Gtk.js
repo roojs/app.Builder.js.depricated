@@ -283,7 +283,7 @@ Gtk = XObject.define(
                     type : 'function', //???
                     desc : this.doc(ename + '.signal.' + n_original),
                 }
-                this.getParams(prop,add);
+                this.genParams(prop,add);
                 mlist.push(add);
             }
             
