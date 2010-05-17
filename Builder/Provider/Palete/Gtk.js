@@ -410,6 +410,12 @@ Gtk = XObject.define(
                   ret.push( ename + '.' + GIRepository.base_info_get_name(prop).toUpperCase() ) 
             }
             return ret;
+        },
+        /**
+         * determine the packing types..
+         */
+        getDefaultPack: function(pname, cname) {
+            return 'add';
         }
         
         
