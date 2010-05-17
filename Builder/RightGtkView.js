@@ -302,7 +302,7 @@ RightGtkView = new XObject({
                 x.eval(src);
             } catch( e) {
                 if (!withDebug) {
-                   return this.renderJS(data,withDebug);
+                   return this.renderJS(data,true);
                 }
                 print(e.message || e.toString());
                 print(e);
