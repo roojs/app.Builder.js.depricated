@@ -268,7 +268,7 @@ LeftTree = new XObject(
                             
                         LeftTree.get('view').highlight(tg);
                         if (!tg.length) {
-                            print("Can not find dop node path");
+                            print("Can not find drop node path");
                             this.targetData = false;
                             Gdk.drag_status(ctx, 0, time);
                             return true;
@@ -569,11 +569,13 @@ LeftTree = new XObject(
                             var last = false;
                             //console.dump(this.treemap);
                             while (path.length) {
-                                if (typeof(this.treemap[path]) == 'undefined') {
+                                var node_data = this.singleNodeToJS(path);
+                                if (node_data === false) {
+                                    print("node not found");
                                     return [];
                                 }
                                 
-                                var xname = LeftTree.get('model').file.guessName(this.treemap[path]);
+                                var xname = LeftTree.get('model').file.guessName(node_data);
                                 var match = false;
                                 var prop = '';
                                 targets.forEach(function(tg) {
@@ -605,6 +607,7 @@ LeftTree = new XObject(
                                 par.pop();
                                 path = par.join(':');
                             }
+                            
                             return [];
                             
                             
@@ -794,7 +797,18 @@ LeftTree = new XObject(
                             
                             
                         },
-                        
+                        singleNodeToJS: function (treepath) 
+                        {
+                            var par = new Gtk.TreeIter(); 
+                            if (!this.el.get_iter(iter, new Gtk.TreePath.c_new(treepath))) {
+                                return false;
+                            }
+                            
+                            var iv = this.getValue(iter, 2);
+                           
+                            return JSON.parse(iv);
+                            
+                        },
                         
                         /**
                          * convert tree into a javascript array
