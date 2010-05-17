@@ -504,7 +504,7 @@ LeftPanel = new XObject({
                         items : [
                             {
                                 xtype : Gtk.CellRendererText,
-                                editable : true,
+                                editable : false,
                                 pack : ['pack_start'],
                             },
                             listeners : {
