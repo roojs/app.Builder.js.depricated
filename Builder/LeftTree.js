@@ -669,7 +669,7 @@ LeftTree = new XObject(
                                 
                             }
                             // work out what kind of packing to use..
-                            if (typeof(node.pack) == 'undefined') && parent !== false) {
+                            if (typeof(node.pack) == 'undefined'  && parent !== false) {
                                 var pal = this.get('/LeftTree').getPaleteProvider();
                                 
                                 var pname = pal.guessName(this.singleNodeToJS(parent));
