@@ -267,21 +267,8 @@ LeftPanel = new XObject({
                             }
                             
                             
-                            
-                            
-                            //LeftPanel.get('view').selection.select_path(new Gtk.TreePath.from_string(map[k]));
-                            //this.editSelected( true )
-                            GLib.timeout_add(0, 100, function() {
-                                var col = (!k.length || k == '|') ? 
-                                LeftPanel.propertyColumn : LeftPanel.editableColumn;
-                                col.items[0].el.editable = true;
-                                LeftPanel.get('view').el.set_cursor_on_cell(
-                                    new Gtk.TreePath.from_string(map[k]), 
-                                    col.el,
-                                    col.items[0].el,
-                                    true
-                                );
-                            });
+                            this.startEditing(map[k]);
+                             
                             /*
                             LeftPanel.get('view').el.row_activated(
                                 new Gtk.TreePath.from_string(map[k]), 
