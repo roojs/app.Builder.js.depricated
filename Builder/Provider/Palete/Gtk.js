@@ -522,7 +522,7 @@ Gtk = XObject.define(
                     }
                     ret = false; // invalid!
                 });
-                return ret.join(',');
+                return ret === false ? false : ret.join(',');
             };
             var packret = false;
             list.every(function(e) {
