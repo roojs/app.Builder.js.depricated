@@ -378,6 +378,18 @@ XObject.prototype = {
             
             
         }
+        if (xid == this.id) {
+            try {
+                return this.get(child);
+            } catch (ex) {
+                throw {
+                    name: "ArgumentError", 
+                    message : "ID not found : " + oid
+                }
+            }
+            
+        }
+        
         
         this.items.forEach(function(ch) {
             if (ret) {
