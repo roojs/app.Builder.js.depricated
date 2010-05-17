@@ -245,26 +245,9 @@ LeftPanel = new XObject({
                             
                             var map = this.load(data);
                             
+                            // flag it as changed to the interface..
                             var LeftTree        = imports.Builder.LeftTree.LeftTree;
-                            
                             LeftTree.get('model').changed(data, true); 
-                            
-                            var type = LeftPanel.get('model').getType(map[k]);
-                            
-                             
-                            var LeftTree = imports.Builder.LeftTree.LeftTree;
-                            var provider = LeftTree.getPaleteProvider();
-                            
-                            var opts = provider.findOptions(type);
-                            var renderer = LeftPanel.editableColumn.items[0].el;
-                            
-                            if (opts === false) {
-                                LeftPanel.editableColumn.setOptions([]);
-                                renderer.has_entry = true; /// probably does not have any effect.
-                            } else {
-                                LeftPanel.editableColumn.setOptions(opts);
-                                renderer.has_entry = false;
-                            }
                             
                             
                             this.startEditing(map[k]);
