@@ -509,7 +509,7 @@ Gtk = XObject.define(
                     ret.push(m);
                 }
             });
-             
+            return ret; 
         }
         
         
