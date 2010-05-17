@@ -513,6 +513,7 @@ LeftPanel = new XObject({
                                 listeners : {
                                     'editing-started' : function(r, e, p) {
                                         LeftPanel.get('model').activePath  = p;
+                                        this.editEvent = e;
                                     },
                                     edited : function(r,p, t) {
 
