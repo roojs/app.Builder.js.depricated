@@ -31,7 +31,7 @@ LeftProjectTree = new XObject({
         
         showNoProjectSelected : function()
         {
-           StandardErrorDialog.show("Select a Project first.");
+           imports.Builder.StandardErrorDialog.StandardErrorDialog.show("Select a Project first.");
         },
         
         
