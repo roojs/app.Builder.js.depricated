@@ -407,6 +407,11 @@ Gtk = XObject.define(
                     GIRepository.base_info_get_name(interface_info);
             
         },
+        /**
+         * merge two proprety arrays' ignoring what's overrriden.
+         * 
+         */
+        
         
         overrides : function (top, bottom)
         {
@@ -424,7 +429,7 @@ Gtk = XObject.define(
                 }
             }
             
-        }
+        },
         
         /**
          * guess type..
