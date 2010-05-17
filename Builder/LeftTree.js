@@ -638,6 +638,9 @@ LeftTree = new XObject(
                             var n_iter = new Gtk.TreeIter();
                             var iter_par = new Gtk.TreeIter();
                             var iter_after = after ? new Gtk.TreeIter() : false;
+                            
+                            
+                            
                             if (parent !== false) {
                                 this.el.get_iter(iter_par, parent);
                             } else {
@@ -672,8 +675,8 @@ LeftTree = new XObject(
                             // work out what kind of packing to use..
                             if (typeof(node.pack) == 'undefined'  && parent !== false) {
                                 var pal = this.get('/LeftTree').getPaleteProvider();
-                                
-                                var pname = pal.guessName(this.singleNodeToJS(parent));
+                                print ("PNAME : "  + pname);
+                                var pname = pal.guessName(this.singleNodeToJS(parent.to_string()));
                                 print ("PNAME : "  + pname);
                                 var cname = pal.file.guessName(node);
                                 print ("CNAME : "  + cname);
