@@ -131,6 +131,9 @@ Base = XObject.define(
             // returns true, for items, or list of properties that can hold it..
             return true;
             
+        },
+        getDefaultPack: function(pname, cname) {
+            return 'add';
         }
         
     }
