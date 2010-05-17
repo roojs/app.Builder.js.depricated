@@ -314,8 +314,8 @@ LeftPanel = new XObject({
                                 colObj.items[0].el.editable = true; // esp. need for col 0..
                                 LeftPanel.get('view').el.set_cursor_on_cell(
                                     tp,
-                                    col.el,
-                                    col.items[0].el,
+                                    colObj.el,
+                                    colObj.items[0].el,
                                     true
                                 );
                             });
