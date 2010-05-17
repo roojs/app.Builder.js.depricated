@@ -281,10 +281,11 @@ LeftPanel = new XObject({
                                 path = tp.to_string();
                             }
                             
-                            var k = this.getValue(path, 0);
+                           
                             // which colum is to be edited..
                             var colObj = false;
                             if (typeof(col) == 'undefined') {
+                                var k = this.getValue(path, 0);
                                 colObj = (!k.length || k == '|') ? 
                                     LeftPanel.propertyColumn : LeftPanel.editableColumn;
                             } else {
