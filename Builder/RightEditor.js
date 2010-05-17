@@ -37,7 +37,19 @@ RightEditor = new XObject({
                             _this.el.get_buffer().get_start_iter(s);
                             _this.el.get_buffer().get_end_iter(e);
                             var str = _this.el.get_buffer().get_text(s,e,true);
-                            Seed.check_syntax('var e = ' + str);
+                            try {
+                                Seed.check_syntax('var e = ' + str);
+                            } catch (e) {
+                                _this.el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({
+                                    red: 255, green: 0 , blue : 0
+                                   }));
+                                print(e);
+                                console.dump(e);
+                                return;
+                            }
+                            _this.el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({
+                                    red: 0, green: 0 , blue : 0
+                                   }));
                             
                             imports.Builder.LeftPanel.LeftPanel.get('model').changed(  str , false);
                     });
