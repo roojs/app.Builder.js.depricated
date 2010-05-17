@@ -322,17 +322,40 @@ XObject.prototype = {
     get : function(xid)
     {
         var ret=  false;
+        var oid = '' + xid;
+        if (!xid.length) {
+            throw {
+                name: "ArgumentError", 
+                message : "ID not found : empty id"
+            }
+        }
+        
         if (xid[0] == '.') {
             return this.parent.get(xid.substring(1));
         }
         if (xid[0] == '/') {
+            if (typeof(XObject.cache[xid]) != 'undefined') {
+                return XObject.cache[xid]; 
+            }
             var e = this;
             while (e.parent) {
                 e = e.parent;
             }
-            return e.get(xid.substring(1));
+            try {
+                ret = e.get(xid.substring(1));
+            } catch (ex) { }
+            
+            if (!ret) {
+                throw {
+                    name: "ArgumentError", 
+                    message : "ID not found : " + oid;
+                }
+            }
+            XObject.cache[xid] = ret;
+            return XObject.cache[xid];
         }
         var child = false;
+        
         if (xid.indexOf('.') > -1) {
             child = xid.split('.');
             xid = child.shift();
@@ -348,7 +371,15 @@ XObject.prototype = {
             }
         })
         if (ret) {
-            return child === false ? ret : ret.get(child);
+            try {
+                return child === false ? ret : ret.get(child);
+            } catch (ex) {
+                throw {
+                    name: "ArgumentError", 
+                    message : "ID not found : " + oid;
+                }
+            }
+            
         }
         // iterate children.
         var _this = this;
@@ -361,10 +392,26 @@ XObject.prototype = {
                 imports.console.dump(_this);
                 Seed.quit();
             }
-            ret = ch.get(xid);
+            try {
+                ret = ch.get(xid);
+            } catch (ex) { }
             
-        })
-        return !ret || child === false ? ret : ret.get(child);;
+            
+        });
+        if (!ret) {
+            throw {
+                name: "ArgumentError", 
+                message : "ID not found : " + oid;
+            }
+        }
+        try {
+            return child === false ? ret : ret.get(child);
+        } catch (ex) {
+            throw {
+                name: "ArgumentError", 
+                message : "ID not found : " + oid;
+            }
+        }
     }
       
       
@@ -398,11 +445,18 @@ XObject.extend = function(o, c, defaults){
 
 XObject.extend(XObject,
 {
+     
     /**
      * @property {Boolean} debug XObject  debugging.  - set to true to debug.
      * 
      */
     debug : false,
+    /**
+     * @property {Object} cache - cache of object ids
+     * 
+     */
+    cache: { },
+    
     /**
      * Copies all the properties of config to obj, if the do not exist.
      * @param {Object} obj The receiver of the properties
