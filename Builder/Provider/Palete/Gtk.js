@@ -400,7 +400,7 @@ Gtk = XObject.define(
             var interface_info = GIRepository.type_info_get_interface (type_info);        
             var interface_type = GIRepository.base_info_get_type (interface_info);
             
-            if (!allow_iterface && interface_type != GIRepository.IInfoType.ENUM) {
+            if (!allow_iface && interface_type != GIRepository.IInfoType.ENUM) {
                 return false;
             }
             return GIRepository.base_info_get_namespace(interface_info) + '.' +
