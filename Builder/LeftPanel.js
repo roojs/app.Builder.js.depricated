@@ -511,15 +511,24 @@ LeftPanel = new XObject({
                                 pack : ['pack_start'],
                             
                                 listeners : {
-                                    
+                                    'editing-started' : function(r, e, p) {
+                                        LeftPanel.get('model').activePath  = p;
+                                    }
                                     edited : function(r,p, t) {
-                                            //LeftPanel.editing = false;
-                                            //print("EDITED? p:" + p + " t:" + t);
+
+                                        // since our visiable col is differnt from the editable one..
+                                        var model = LeftPanel.get('model');
+                                        var path = LeftPanel.get('model').activePath;
+                                        var iter = new Gtk.TreeIter();
+                                        model.el.get_iter(iter, new Gtk.TreePath.from_string(path));
+                                        model.el.set_value(iter, 0, t);
+                                        model.el.set_value(iter, 2, t);
                                         
+                                        LeftPanel.get('model').activePath = false;
                                         var LeftTree        = imports.Builder.LeftTree.LeftTree;
                                         LeftTree.get('model').changed(LeftPanel.get('model').toJS(), true); 
                                         this.el.editable = false;
-                                        //LeftPanel.get('model').activePath = false;
+                                        
                                             //this.el.has_entry = false;
                                     }
                                 }
