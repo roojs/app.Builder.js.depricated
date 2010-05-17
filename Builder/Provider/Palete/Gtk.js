@@ -501,7 +501,8 @@ Gtk = XObject.define(
             var ret = [];
             var _this = this;
             // let's assume top down...
-            var inherits = this.getPropertiesFor(pname,'inherits');
+            var inherits = [ cname ];
+            inherits.push.apply(inherits, this.getPropertiesFor(cname,'inherits'));
             funcs.foreach(function(m) {
                 if (m.params.length && typeof(m.params[0].type) == 'string') &&
                     _this.isA(m.params[0].type, cname)) {
