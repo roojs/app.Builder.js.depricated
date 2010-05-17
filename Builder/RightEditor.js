@@ -42,7 +42,7 @@ RightEditor = new XObject({
                                 Seed.check_syntax('var e = ' + str);
                             } catch (e) {
                                 _this.el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({
-                                    red: 0xFFFF, green: 0 , blue : 0
+                                    red: 0xFFFF, green: 0xEEEE , blue : 0xEEEE
                                    }));
                                 print(e);
                                 console.dump(e);
