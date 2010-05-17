@@ -530,7 +530,7 @@ Gtk = XObject.define(
             list.every(function(e) {
                 
                 packret = toRet(e);
-                print("DEFAULT PACK TEST : " + e.name + " : " +packret);
+                //print("DEFAULT PACK TEST : " + e.name + " : " +packret);
                 if (packret !== false) {
                     return false;
                 }
