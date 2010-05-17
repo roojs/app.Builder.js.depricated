@@ -28,8 +28,19 @@ LeftPanelPopup = new XObject({
                 }
             }
         },
-    
-      {
+        {
+            
+            
+            xtype : Gtk.MenuItem,
+            pack : [ 'append' ],
+            label : 'Edit Property / Method Name',
+            listeners : {
+                activate : function () {
+                   imports.Builder.LeftPanel.LeftPanel.get('model').startEditing(false, 0);
+                }
+            }
+        },
+        {
             
             
             xtype : Gtk.MenuItem,
