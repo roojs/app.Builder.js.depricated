@@ -513,7 +513,7 @@ LeftPanel = new XObject({
                                 listeners : {
                                     'editing-started' : function(r, e, p) {
                                         LeftPanel.get('model').activePath  = p;
-                                    }
+                                    },
                                     edited : function(r,p, t) {
 
                                         // since our visiable col is differnt from the editable one..
