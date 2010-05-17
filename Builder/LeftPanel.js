@@ -270,12 +270,12 @@ LeftPanel = new XObject({
                             
                             //LeftPanel.get('view').selection.select_path(new Gtk.TreePath.from_string(map[k]));
                             //this.editSelected( true )
-                             GLib.timeout_add(0, 100, function() {
-                                
+                            GLib.timeout_add(0, 100, function() {
+                                var col = (!k.length || k == '|') LeftPanel.propertyColumn : LeftPanel.editableColumn;
                                 LeftPanel.get('view').el.set_cursor_on_cell(
                                     new Gtk.TreePath.from_string(map[k]), 
-                                    LeftPanel.editableColumn.el,
-                                    LeftPanel.editableColumn.items[0].el,
+                                    col.el,
+                                    col.items[0].el,
                                     true);
                             });
                             /*
@@ -499,7 +499,7 @@ LeftPanel = new XObject({
                         {
                             XObject.prototype.init.call(this); 
                             this.el.add_attribute(this.items[0].el , 'markup', 2 );
-                            
+                            LeftPanel.propertyColumn= this;
                         },
                         items : [
                             {
