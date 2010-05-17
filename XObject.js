@@ -312,7 +312,9 @@ XObject.prototype = {
      /**
       * @method get
       * Finds an object in the child elements using xid of object.
-      * prefix with '.' to look up the tree.. multiple '..' to look further up..
+      * prefix with '.' to look up the tree.. 
+      * prefix with multiple '..' to look further up..
+      * prefix with '^' to look from the top, eg. '^LeftTree.model'
       * 
       * @arg name  {String} name of signal
       * @return   {XObject|false} the object if found.
@@ -323,8 +325,13 @@ XObject.prototype = {
         if (xid[0] == '.') {
             return this.parent.get(xid.substring(1));
         }
-        
-        
+        if (xid[0] == '^') {
+            var e = this;
+            while (e.parent) {
+                e = e.parent;
+            }
+            return e.get(xid.substring(1));
+        }
         this.items.forEach(function(ch) {
             if (ret) {
                 return;
