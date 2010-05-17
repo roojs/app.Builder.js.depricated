@@ -332,6 +332,13 @@ XObject.prototype = {
             }
             return e.get(xid.substring(1));
         }
+        var child = false;
+        if (xid.indexOf('.')) {
+            child = xid.split('.');
+            xid = child.shift();
+            child = child.join('.');
+        }
+        
         this.items.forEach(function(ch) {
             if (ret) {
                 return;
@@ -341,7 +348,7 @@ XObject.prototype = {
             }
         })
         if (ret) {
-            return ret;
+            return child === false ? ret : ret.get(child);
         }
         // iterate children.
         var _this = this;
@@ -357,7 +364,7 @@ XObject.prototype = {
             ret = ch.get(xid);
             
         })
-        return ret;
+        return child === false ? ret : ret.get(child);;
     }
       
       
