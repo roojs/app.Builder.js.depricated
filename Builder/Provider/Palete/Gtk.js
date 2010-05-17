@@ -505,7 +505,7 @@ Gtk = XObject.define(
             inherits.push.apply(inherits, this.getPropertiesFor(cname,'inherits'));
             funcs.foreach(function(m) {
                 if (m.params.length && typeof(m.params[0].type) == 'string') &&
-                    _this.isA(m.params[0].type, cname)) {
+                    inherits.indexOf(m.params[0].type) > -1) {
                     ret.push(m);
                 }
             });
