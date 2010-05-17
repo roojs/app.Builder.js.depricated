@@ -427,7 +427,7 @@ Gtk = XObject.define(
                 if (!inTop(e)) {
                     top.push(e);
                 }
-            }
+            });
             
         },
         
