@@ -230,6 +230,7 @@ XObject.prototype = {
         // what about extended items!?!?!?
         var item = (o.constructor == XObject) ? o : new XObject(o);
         item.parent = this;
+        this.items.push(item);
         item.init();
         //print("CTR:PROTO:" + ( item.id ? item.id : '??'));
        // print("addItem - call init [" + item.pack.join(',') + ']');
@@ -240,7 +241,7 @@ XObject.prototype = {
         }
         
        
-        this.items.push(item);
+       
         
         if (item.pack===false) {  // no 
             return;
