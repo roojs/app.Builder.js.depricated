@@ -516,7 +516,7 @@ Gtk = XObject.define(
                     ret = false; // invalid!
                 })
                 return ret;
-            }
+            };
             var packret = false;
             list.every(function(e) {
                 packret = toRet(e);
@@ -539,7 +539,7 @@ Gtk = XObject.define(
             // let's assume top down...
             var inherits = [ cname ];
             inherits.push.apply(inherits, this.getPropertiesFor(cname,'inherits'));
-            funcs.foreach(function(m) {
+            funcs.forEach(function(m) {
                 if (m.params.length && typeof(m.params[0].type) == 'string') &&
                     inherits.indexOf(m.params[0].type) > -1) {
                     ret.push(m);
