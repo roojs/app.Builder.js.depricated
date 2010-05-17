@@ -333,7 +333,7 @@ XObject.prototype = {
             return e.get(xid.substring(1));
         }
         var child = false;
-        if (xid.indexOf('.')) {
+        if (xid.indexOf('.') > -1) {
             child = xid.split('.');
             xid = child.shift();
             child = child.join('.');
