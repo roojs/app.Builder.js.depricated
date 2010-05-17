@@ -222,6 +222,7 @@ LeftTree = new XObject(
 
                         // a drag from  elsewhere...- prevent drop..
                         if (!src.dragData) {
+                            print("no drag data!");
                             Gdk.drag_status(ctx, 0, time);
                             this.targetData = false;
                             return true;
@@ -251,6 +252,7 @@ LeftTree = new XObject(
                         
                         if (typeof(src.treepath) != 'undefined'  && 
                             src.treepath == data.path.to_string().substring(0,src.treepath.length)) {
+                            print("subpath drag");
                              Gdk.drag_status(ctx, 0 ,time);
                             return false;
                         }
