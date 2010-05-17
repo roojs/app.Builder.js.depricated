@@ -77,7 +77,7 @@ AddPropertyPopup = new XObject({
             label : 'Add String Property (User defined)',
             listeners : {
                 activate : function () {
-                     
+                    var LeftPanel = imports.Builder.LeftPanel.LeftPanel;
                     LeftPanel.get('model').add( {
                         key : '', 
                         type : 'string',
@@ -95,7 +95,7 @@ AddPropertyPopup = new XObject({
             label : 'Add Number Property (User defined)',
             listeners : {
                 activate : function () {
-                     
+                    var LeftPanel = imports.Builder.LeftPanel.LeftPanel;
                     LeftPanel.get('model').add( {
                         key : '', 
                         type : 'number',
@@ -113,7 +113,7 @@ AddPropertyPopup = new XObject({
             label : 'Add Boolean Property (User defined)',
             listeners : {
                 activate : function () {
-                     
+                    var LeftPanel = imports.Builder.LeftPanel.LeftPanel;
                     LeftPanel.get('model').add( {
                         key : '', 
                         type : 'boolean',
@@ -133,7 +133,7 @@ AddPropertyPopup = new XObject({
             label : 'Add Function (User defined)',
             listeners : {
                 activate : function () {
-                   
+                    var LeftPanel = imports.Builder.LeftPanel.LeftPanel;
                     LeftPanel.get('model').add( {
                         key : '|', 
                         type : 'function',
