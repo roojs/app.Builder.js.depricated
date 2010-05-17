@@ -114,4 +114,10 @@ right:
 	Gtk.RadioToolButton 
 	Gtk.ToolItemGroup 
 	Gtk.SeparatorToolItem 
-           
+
+	
+left:
+	Gtk.TreeView
+right:
+	Gtk.TreeStore
+	Gtk.ListStore
