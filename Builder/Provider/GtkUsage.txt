@@ -126,3 +126,9 @@ left:
 	Gtk.TreeViewColumn	
 right:
 	Gtk.CellRendererText
+	Gtk.CellRendererCombo
+left: 
+	Gtk.CellRendererCombo:model
+right:
+	Gtk.ListStore
+	
