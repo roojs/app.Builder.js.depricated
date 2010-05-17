@@ -674,8 +674,9 @@ LeftTree = new XObject(
                                 var pal = this.get('/LeftTree').getPaleteProvider();
                                 
                                 var pname = pal.guessName(this.singleNodeToJS(parent));
+                                print ("PNAME : "  + pname);
                                 var cname = pal.file.guessName(node);
-                                
+                                print ("CNAME : "  + cname);
                                 node.pack = pal.getDefaultPack(pname, cname);
                                 
                                 
