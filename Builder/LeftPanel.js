@@ -291,7 +291,9 @@ LeftPanel = new XObject({
                             
                             
                         },
-                        
+                        /**
+                         * start editing path (or selected if not set..)
+                         */
                         startEditing : function(path)
                         {
                             
