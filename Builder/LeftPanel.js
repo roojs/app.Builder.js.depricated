@@ -292,6 +292,9 @@ LeftPanel = new XObject({
                             
                             // make sure the pulldown is set correctly..
                             // not really needed for second col...
+                            var LeftTree = imports.Builder.LeftTree.LeftTree;
+                            var provider = LeftTree.getPaleteProvider();
+                           
                             var type = LeftPanel.get('model').getType(path);
                             var opts = provider.findOptions(type);
                             var renderer = LeftPanel.editableColumn.items[0].el;
