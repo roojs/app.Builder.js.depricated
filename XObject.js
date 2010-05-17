@@ -325,7 +325,7 @@ XObject.prototype = {
         if (xid[0] == '.') {
             return this.parent.get(xid.substring(1));
         }
-        if (xid[0] == '^') {
+        if (xid[0] == '/') {
             var e = this;
             while (e.parent) {
                 e = e.parent;
