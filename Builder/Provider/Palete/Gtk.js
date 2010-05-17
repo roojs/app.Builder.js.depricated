@@ -278,10 +278,10 @@ Gtk = XObject.define(
                 var prop = GIRepository[meth[5]](bi, i);  
                 var n_original =  GIRepository.base_info_get_name(prop);
                 var flags = GIRepository.function_info_get_flags (prop);
-                if (flags & GI.IFunctionInfoFlags.IS_CONSTRUCTOR) {
+                if (flags & GIRepository.IFunctionInfoFlags.IS_CONSTRUCTOR) {
                     continue;
                 }
-                if (!(flags & GI.IFunctionInfoFlags.IS_METHOD)) {
+                if (!(flags & GIRepository.IFunctionInfoFlags.IS_METHOD)) {
                     continue;
                 }
                 // print ('signal: ' + n_original); 
