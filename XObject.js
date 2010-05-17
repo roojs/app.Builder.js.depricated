@@ -226,8 +226,8 @@ XObject.prototype = {
             print("Invalid Item added to this!");
             imports.console.dump(this);
             Seed.quit();
-           }
-        
+        }
+        // what about extended items!?!?!?
         var item = (o.constructor == XObject) ? o : new XObject(o);
         item.parent = this;
         item.init();
