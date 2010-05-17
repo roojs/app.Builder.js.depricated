@@ -121,3 +121,8 @@ left:
 right:
 	Gtk.TreeStore
 	Gtk.ListStore
+	Gtk.TreeViewColumn
+left: 	
+	Gtk.TreeViewColumn	
+right:
+	Gtk.CellRendererText
