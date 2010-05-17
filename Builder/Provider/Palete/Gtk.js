@@ -309,6 +309,7 @@ Gtk = XObject.define(
                 
                 elist.push.apply(elist,this.proplist[pname]['events']);
                 plist.push.apply(plist,this.proplist[pname]['props']);
+                ilist.push(pname);
                 ilist.push.apply(ilist,this.proplist[pname]['inherits']);
                 this.overrides(this.proplist[pname]['methods'], mlist);
                 
@@ -499,8 +500,11 @@ Gtk = XObject.define(
             var funcs = this.getPropertiesFor(pname,'methods');
             var ret = [];
             var _this = this;
+            // let's assume top down...
+            var inherits = this.getPropertiesFor(pname,'inherits');
             funcs.foreach(function(m) {
-                if (m.params.length && _this.isA(m.params[0].type, cname)) {
+                if (m.params.length && typeof(m.params[0].type) == 'string') &&
+                    _this.isA(m.params[0].type, cname)) {
                     ret.push(m);
                 }
             });
