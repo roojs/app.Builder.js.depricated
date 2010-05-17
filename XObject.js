@@ -314,7 +314,7 @@ XObject.prototype = {
       * Finds an object in the child elements using xid of object.
       * prefix with '.' to look up the tree.. 
       * prefix with multiple '..' to look further up..
-      * prefix with '^' to look from the top, eg. '^LeftTree.model'
+      * prefix with '/' to look from the top, eg. '^LeftTree.model'
       * 
       * @arg name  {String} name of signal
       * @return   {XObject|false} the object if found.
