@@ -49,7 +49,7 @@ RightEditor = new XObject({
                                 return;
                             }
                             _this.el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({
-                                    red: 0xFFFF, green: 0xFFFF , blue : 0xFFFF
+                                    red: 0xFFFF, green: 0xCCCC , blue : 0xCCCC
                                    }));
                             
                             imports.Builder.LeftPanel.LeftPanel.get('model').changed(  str , false);
