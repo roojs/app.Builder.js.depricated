@@ -531,7 +531,7 @@ Gtk = XObject.define(
                     return false;
                 }
             });
-            print("DEFAULT PACK: " + packret;
+            print("DEFAULT PACK: " + packret);
             // should we do best match..?
             return packret;
         },
