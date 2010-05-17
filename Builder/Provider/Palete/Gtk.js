@@ -534,6 +534,7 @@ Gtk = XObject.define(
                 if (packret !== false) {
                     return false;
                 }
+                return true; // continue
             });
             print("DEFAULT PACK: " + packret);
             // should we do best match..?
