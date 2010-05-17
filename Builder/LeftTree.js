@@ -569,6 +569,7 @@ LeftTree = new XObject(
                             var last = false;
                             //console.dump(this.treemap);
                             while (path.length) {
+                                print("LOOKING FOR PATH: " + path);
                                 var node_data = this.singleNodeToJS(path);
                                 if (node_data === false) {
                                     print("node not found");
