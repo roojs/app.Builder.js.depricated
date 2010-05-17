@@ -506,6 +506,18 @@ LeftPanel = new XObject({
                                 xtype : Gtk.CellRendererText,
                                 editable : true,
                                 pack : ['pack_start'],
+                            },
+                            listeners : {
+                                
+                                edited : function(r,p, t) {
+                                        //LeftPanel.editing = false;
+                                        //print("EDITED? p:" + p + " t:" + t);
+                                    var LeftTree        = imports.Builder.LeftTree.LeftTree;
+                                    LeftTree.get('model').changed(LeftPanel.toJS(), true); 
+                                    
+                                    //LeftPanel.get('model').activePath = false;
+                                        //this.el.has_entry = false;
+                                }
                             }
                         ]
                     },
