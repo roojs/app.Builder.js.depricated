@@ -326,7 +326,7 @@ Gtk = XObject.define(
                 if ( ilist.indexOf(iface) > -1) {
                     continue;
                 }
-                this.getPropertiesFor(iface, 'props');
+                this.getPropertiesFor(iface, 'props'); // just load one of them..
                 ilist.push(iface);
                 
                 elist.push.apply(elist,this.proplist[iface]['events']);
