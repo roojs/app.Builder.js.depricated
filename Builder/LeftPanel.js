@@ -515,8 +515,9 @@ LeftPanel = new XObject({
                                     edited : function(r,p, t) {
                                             //LeftPanel.editing = false;
                                             //print("EDITED? p:" + p + " t:" + t);
+                                        
                                         var LeftTree        = imports.Builder.LeftTree.LeftTree;
-                                        LeftTree.get('model').changed(LeftPanel.toJS(), true); 
+                                        LeftTree.get('model').changed(LeftPanel.get('model').toJS(), true); 
                                         this.el.editable = false;
                                         //LeftPanel.get('model').activePath = false;
                                             //this.el.has_entry = false;
