@@ -72,15 +72,74 @@ AddPropertyPopup = new XObject({
     
        
         {
+            xtype : Gtk.MenuItem,
+            pack : [ 'append' ],
+            label : 'Add String Property (User defined)',
+            listeners : {
+                activate : function () {
+                     
+                    LeftPanel.get('model').add( {
+                        key : '', 
+                        type : 'string',
+                        val  : "",
+                        etype : 'props'
+                    });
+                   
+                }
+            }
+            
+        },
+        {
+            xtype : Gtk.MenuItem,
+            pack : [ 'append' ],
+            label : 'Add Number Property (User defined)',
+            listeners : {
+                activate : function () {
+                     
+                    LeftPanel.get('model').add( {
+                        key : '', 
+                        type : 'number',
+                        val  : 0,
+                        etype : 'props'
+                    });
+                   
+                }
+            }
+            
+        },
+        {
+            xtype : Gtk.MenuItem,
+            pack : [ 'append' ],
+            label : 'Add Boolean Property (User defined)',
+            listeners : {
+                activate : function () {
+                     
+                    LeftPanel.get('model').add( {
+                        key : '', 
+                        type : 'boolean',
+                        val  : false,
+                        etype : 'props'
+                    });
+                   
+                }
+            }
+            
+        },
+        {
             
             
             xtype : Gtk.MenuItem,
             pack : [ 'append' ],
-            label : 'Add Function or Property',
+            label : 'Add Function (User defined)',
             listeners : {
                 activate : function () {
-                    // popup with name.
                    
+                    LeftPanel.get('model').add( {
+                        key : '|', 
+                        type : 'function',
+                        val  : "function() {\n    XObject.prototype.init.call(this);\n}\n",
+                        etype : 'props'
+                    }) //, skel);
                 }
             }
             
