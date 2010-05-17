@@ -260,7 +260,7 @@ RightGtkView = new XObject({
             }
         },
         
-        buildJS: function(data) {
+        buildJS: function(data,withDebug) {
             var i = [ 'Gtk', 'Gdk', 'Pango', 'GLib', 'Gio', 'GObject' ];
             var src = "";
             i.forEach(function(e) {
@@ -268,7 +268,10 @@ RightGtkView = new XObject({
             });
             src += "console = imports.console;\n"; // path?!!?
             src += "XObject = imports.XObject.XObject;\n"; // path?!!?
-            //src += "XObject.debug=true;\n"; // perhaps we should add this if everything fails.
+            if (withDebug) {
+                src += "XObject.debug=true;\n"; 
+            }
+            
             
             src += '_top=new XObject('+ this.mungeToString(data) + ')\n;';
             src += '_top.init();\n';
@@ -278,7 +281,7 @@ RightGtkView = new XObject({
             return src;
         },
         
-        renderJS : function(data)
+        renderJS : function(data, withDebug)
         {
             // can we mess with data?!?!?
             
@@ -290,7 +293,7 @@ RightGtkView = new XObject({
             if (!data) {
                  return; 
             }
-            var src = this.buildJS(data);
+            var src = this.buildJS(data,withDebug);
             var x = new imports.sandbox.Context();
             x.add_globals();
             //x.get_global_object().a = "hello world";
@@ -298,8 +301,12 @@ RightGtkView = new XObject({
             try {
                 x.eval(src);
             } catch( e) {
-               print(e.message || e.toString());
-               return;
+                if (!withDebug) {
+                   return this.renderJS(data,withDebug);
+                }
+                print(e.message || e.toString());
+                print(e);
+                return;
             }
             
             var r = new Gdk.Rectangle();
