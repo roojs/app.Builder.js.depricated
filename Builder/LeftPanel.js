@@ -281,7 +281,7 @@ LeftPanel = new XObject({
                         /**
                          * start editing path (or selected if not set..)
                          */
-                        startEditing : function(path)
+                        startEditing : function(path, col)
                         {
                             
                             var tp;
@@ -292,6 +292,13 @@ LeftPanel = new XObject({
                                 var s = LeftPanel.get('view').selection;
                                 s.get_selected(this.el, iter);
                                 tp = this.el.get_path(iter);
+                            }
+                            colObj = false;
+                            if (typeof(col) == 'undefined') {
+                                colObj = (!k.length || k == '|') ? 
+                                    LeftPanel.propertyColumn : LeftPanel.editableColumn;
+                            } else {
+                                colObj = col ? LeftPanel.propertyColumn : LeftPanel.editableColumn;
                             }
                             // iter now has row...
                             GLib.timeout_add(0, 100, function() {
