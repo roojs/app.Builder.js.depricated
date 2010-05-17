@@ -490,6 +490,8 @@ Gtk = XObject.define(
          * determine the packing types..
          */
         getDefaultPack: function(pname, cname) {
+            var list = this.getPackingList(pname,cname);
+            // should we do best match..
             return 'add';
         },
         /**
