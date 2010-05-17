@@ -322,7 +322,7 @@ XObject.prototype = {
       */
     get : function(xid)
     {
-        if (XObject.debug("SEARCH FOR " + xid);
+        if (XObject.debug) print("SEARCH FOR " + xid);
         var ret=  false;
         var oid = '' + xid;
         if (!xid.length) {
