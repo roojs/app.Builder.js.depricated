@@ -281,6 +281,7 @@ LeftPanel = new XObject({
                                 path = tp.to_string();
                             }
                             
+                            var k = this.getValue(path, 0);
                             // which colum is to be edited..
                             var colObj = false;
                             if (typeof(col) == 'undefined') {
@@ -384,14 +385,14 @@ LeftPanel = new XObject({
                                
                             while (true) {
                                 
-                                var k = this.getValue(iter, 0);
+                                var k = this.getValue(this.el.get_path(iter).to_string(), 0);
                                // Seed.print(k);
                                 if (k[0] == '!') {
                                     ar.listeners = ar.listeners || {};
-                                    ar.listeners[  k.substring(1)] = this.getValue(iter, 1);
+                                    ar.listeners[  k.substring(1)] = this.getValue(this.el.get_path(iter).to_string(), 1);
                                     
                                 } else {
-                                    ar[ k ] = this.getValue(iter, 1);
+                                    ar[ k ] = this.getValue(this.el.get_path(iter).to_string(), 1);
                                 }
                                 
                                 if (! LeftPanel.get('model').el.iter_next(iter)) {
@@ -408,16 +409,14 @@ LeftPanel = new XObject({
                         },
                         getType :function(treepath_str)
                         {
-                            var iter = new Gtk.TreeIter();
-                            this.el.get_iter(iter, new Gtk.TreePath.from_string(treepath_str));
-                            
-                            var gval = new GObject.Value('');
-                            LeftPanel.get('model').el.get_value(iter,4  ,gval);
-                            return gval.value + '';
+                            return this.getValue(treepath_str, 4);
                         },
                         
                         /** get's a value, and tries to use type column to work out what type */
-                        getValue: function (iter, col) {
+                        getValue: function (treepath_str, col) {
+                            
+                            var iter = new Gtk.TreeIter();
+                            this.el.get_iter(iter, new Gtk.TreePath.from_string(treepath_str));
                             
                             var gval = new GObject.Value('');
                             LeftPanel.get('model').el.get_value(iter, col ,gval);
@@ -491,7 +490,7 @@ LeftPanel = new XObject({
                              
                             RightEditor.el.hide();
 
-                            var type = this.getValue(iter,4);
+                            var type = this.getValue(this.el.get_path(iter).to_string(),4);
                             print("type = " + type);
                             // toggle boolean
                             if (type == 'boolean') {
@@ -499,7 +498,7 @@ LeftPanel = new XObject({
                                 //LeftPanel.editableColumn.setOptions([ 'true' , 'false']);
                                 
                                 return;
-                                val = ! this.getValue(iter,1);
+                                val = ! this.getValue(this.el.get_path(iter).to_string(),1);
                                 
                                 this.activePath = false;
                                 var _this = this;
