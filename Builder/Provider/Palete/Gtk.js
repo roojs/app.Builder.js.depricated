@@ -528,7 +528,9 @@ Gtk = XObject.define(
             };
             var packret = false;
             list.every(function(e) {
+                
                 packret = toRet(e);
+                print("DEFAULT PACK TEST : " + e.name + " : " +packret);
                 if (packret !== false) {
                     return false;
                 }
