@@ -422,9 +422,15 @@ Gtk = XObject.define(
          */
         getPackingList :function (pname, cname)
         {
-            
-            
-            
+            var funcs = this.listMethods(pname);
+            var ret = [];
+            var _this = this;
+            funcs.foreach(function(m) {
+                if (m.params.length && _this.isA(m.params[0].type, cname)) {
+                    ret.push(m);
+                }
+            });
+             
         }
         
         
