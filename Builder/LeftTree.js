@@ -799,7 +799,7 @@ LeftTree = new XObject(
                         },
                         singleNodeToJS: function (treepath) 
                         {
-                            var par = new Gtk.TreeIter(); 
+                            var iter = new Gtk.TreeIter(); 
                             if (!this.el.get_iter(iter, new Gtk.TreePath.c_new(treepath))) {
                                 return false;
                             }
