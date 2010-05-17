@@ -305,10 +305,14 @@ Gtk = XObject.define(
                 var pname = GIRepository.base_info_get_namespace(pi) + '.' +
                     GIRepository.base_info_get_name(pi);
                 this.getPropertiesFor(pname, 'props');
-            
+                
+                
                 elist.push.apply(elist,this.proplist[pname]['events']);
                 plist.push.apply(plist,this.proplist[pname]['props']);
                 ilist.push.apply(ilist,this.proplist[pname]['inherits']);
+                this.overrides(this.proplist[pname]['methods'], mlist);
+                
+                
             }
             
             // implements needs to be more carefull as it could add dupes..
@@ -323,8 +327,10 @@ Gtk = XObject.define(
                 }
                 this.getPropertiesFor(iface, 'props');
                 ilist.push(iface);
+                
                 elist.push.apply(elist,this.proplist[iface]['events']);
                 plist.push.apply(plist,this.proplist[iface]['props']);
+                this.overrides(this.proplist[pname]['methods'], mlist);
             }
             function sfunc(a,b) {
                 if (a.name == b.name) return 0;
@@ -332,7 +338,7 @@ Gtk = XObject.define(
             }
             plist.sort(sfunc);
             elist.sort(sfunc);
-            
+            mlist.sort(sfunc);
             
             return this.proplist[ename][type];
             
@@ -400,6 +406,25 @@ Gtk = XObject.define(
                     GIRepository.base_info_get_name(interface_info);
             
         },
+        
+        overrides : function (top, bottom)
+        {
+            function inTop(b)
+            {
+                return top.every(function(t) {
+                    if (t.name == b.name) {
+                        return false;
+                    }
+                });
+            }
+            bottom.forEach(function(e) {
+                if (!inTop(e)) {
+                    top.push(e);
+                }
+            }
+            
+        }
+        
         /**
          * guess type..
          * 
