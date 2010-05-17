@@ -266,6 +266,7 @@ RightGtkView = new XObject({
             i.forEach(function(e) {
                 src += e+" = imports.gi." + e +";\n";
             });
+            src += "console = imports.console;\n"; // path?!!?
             src += "XObject = imports.XObject.XObject;\n"; // path?!!?
             //src += "XObject.debug=true;\n"; // perhaps we should add this if everything fails.
             
