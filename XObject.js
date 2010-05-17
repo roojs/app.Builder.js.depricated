@@ -364,17 +364,7 @@ XObject.prototype = {
             xid = child.shift();
             
             child = child.join('.');
-            if (xid == this.id) {
-                try {
-                    return this.get(child);
-                } catch (ex) {
-                    throw {
-                        name: "ArgumentError", 
-                        message : "ID not found : " + oid
-                    }
-                }
-                
-            }
+           
             
             
         }
