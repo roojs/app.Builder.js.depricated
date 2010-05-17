@@ -256,6 +256,7 @@ LeftPanel = new XObject({
                             var provider = LeftTree.getPaleteProvider();
                             
                             var opts = provider.findOptions(type);
+                            var renderer = LeftPanel.editableColumn.items[0].el;
                             
                             if (opts === false) {
                                 LeftPanel.editableColumn.setOptions([]);
@@ -273,7 +274,7 @@ LeftPanel = new XObject({
                             GLib.timeout_add(0, 100, function() {
                                 var col = (!k.length || k == '|') ? 
                                     LeftPanel.propertyColumn : LeftPanel.editableColumn;
-                                    
+                                col.el.editable = true;
                                 LeftPanel.get('view').el.set_cursor_on_cell(
                                     new Gtk.TreePath.from_string(map[k]), 
                                     col.el,
