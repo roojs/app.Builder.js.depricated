@@ -247,7 +247,7 @@ RightGtkView = new XObject({
             try {
                 x.eval(src);
             } catch( e) {
-                print(e.toString());
+                print(e.message || e.toString());
                 return;
             }
              
@@ -296,7 +296,7 @@ RightGtkView = new XObject({
             try {
                 x.eval(src);
             } catch( e) {
-               print(e.toString());
+               print(e.message || e.toString());
                return;
             }
             
