@@ -229,8 +229,8 @@ XObject.prototype = {
            }
         
         var item = (o.constructor == XObject) ? o : new XObject(o);
-       
-        item.init(this);
+        item.parent = this;
+        item.init();
         //print("CTR:PROTO:" + ( item.id ? item.id : '??'));
        // print("addItem - call init [" + item.pack.join(',') + ']');
         if (!item.el) {
@@ -239,7 +239,7 @@ XObject.prototype = {
             Seed.quit();
         }
         
-        item.parent = this;
+       
         this.items.push(item);
         
         if (item.pack===false) {  // no 
