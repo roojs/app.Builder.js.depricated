@@ -282,8 +282,8 @@ Gtk = XObject.define(
                     name :  n_original.replace(/\-/g, '_'),
                     type : 'function', //???
                     desc : this.doc(ename + '.signal.' + n_original),
-                    params : this.genParams(prop) // fixme..
                 }
+                this.getParams(prop,add);
                 elist.push(add);
             }
             
@@ -343,17 +343,16 @@ Gtk = XObject.define(
             var ret = "\n";
             meth.ret_type = this.typeToName(GIRepository.callable_info_get_return_type(sig));
             // might be a numbeR??
-            meth.args = [];
+            meth.params = [];
             for(var a_i  =0; a_i   < GIRepository.callable_info_get_n_args(sig); a_i++) {
                 var arg = GIRepository.callable_info_get_arg(sig, a_i);
-                
-                
-                meth.args.push({
+                 
+                meth.params.push({
                     name : GIRepository.base_info_get_name(arg),
                     type : this.typeToName(GIRepository.property_info_get_type(arg), true);
                 });
             }
-            return  
+            
                 
             
             
@@ -377,7 +376,7 @@ Gtk = XObject.define(
             
             
         },
-        typeToName  : function (type_info) // find type for properties or arguments.
+        typeToName  : function (type_info, allow_iface) // find type for properties or arguments.
         {
            var ty = GIRepository.type_tag_to_string( GIRepository.type_info_get_tag(type_info));
            
@@ -388,13 +387,13 @@ Gtk = XObject.define(
                 return false; // unspported   
             }
             if (ty != 'interface') {
-                
                 return ty;
             }
             // we can accept enum types here..
             var interface_info = GIRepository.type_info_get_interface (type_info);        
             var interface_type = GIRepository.base_info_get_type (interface_info);
-            if (interface_type != GIRepository.IInfoType.ENUM) {
+            
+            if (!allow_iterface && interface_type != GIRepository.IInfoType.ENUM) {
                 return false;
             }
             return GIRepository.base_info_get_namespace(interface_info) + '.' +
