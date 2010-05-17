@@ -357,7 +357,7 @@ Gtk = XObject.define(
             
             
         },
-        genSkel: function(sig)
+        genSkel: function(sig) // should really use genParams...
         {
             var args = ['self'];
             var ret = "\n";
