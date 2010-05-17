@@ -511,9 +511,16 @@ Gtk = XObject.define(
                 })
                 return ret;
             }
+            var packret = false;
+            list.every(function(e) {
+                packret = toRet(e);
+                if (packret !== false) {
+                    return false;
+                }
+            });
             
             // should we do best match..?
-            return 'add';
+            return packret;
         },
         /**
          * get packing list..
