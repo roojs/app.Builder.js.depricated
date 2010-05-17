@@ -851,7 +851,11 @@ LeftTree = new XObject(
                             
                             if (with_id) {
                                 var treepath_str = this.el.get_path(iter).to_string();
-                                k.id =  'builder-'+ treepath_str ;
+                                // not sure how we can handle mixed id stuff..
+                                if (typeof(k.id) == 'undefined')  {
+                                    k.id =  'builder-'+ treepath_str ;
+                                }
+                                
                                
                                 this.treemap[  treepath_str ] = k;
                                 k.xtreepath = treepath_str ;
