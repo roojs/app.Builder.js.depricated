@@ -491,6 +491,7 @@ Gtk = XObject.define(
          */
         getDefaultPack: function(pname, cname) {
             var list = this.getPackingList(pname,cname);
+            console.dump(list);
             if (!list.every(function(e) { return e.name =='add'; })) {
                 return 'add'; // add is in our list..?? what about args..?!?
             }
