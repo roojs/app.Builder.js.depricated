@@ -42,14 +42,14 @@ RightEditor = new XObject({
                                 Seed.check_syntax('var e = ' + str);
                             } catch (e) {
                                 _this.el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({
-                                    red: 0xFFFF, green: 0xEEEE , blue : 0xEEEE
+                                    red: 0xFFFF, green: 0xCCCC , blue : 0xCCCC
                                    }));
                                 print(e);
                                 console.dump(e);
                                 return;
                             }
                             _this.el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({
-                                    red: 0xFFFF, green: 0xCCCC , blue : 0xCCCC
+                                    red: 0xFFFF, green: 0xFFFF , blue : 0xFFFF
                                    }));
                             
                             imports.Builder.LeftPanel.LeftPanel.get('model').changed(  str , false);
