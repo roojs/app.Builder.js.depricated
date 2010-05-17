@@ -370,7 +370,7 @@ XObject.prototype = {
         }
         if (xid == this.id) {
             try {
-                return this.get(child);
+                return child === false ? this : this.get(child);
             } catch (ex) {
                 throw {
                     name: "ArgumentError", 
