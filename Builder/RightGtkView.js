@@ -69,10 +69,10 @@ RightGtkView = new XObject({
                         
                         id : 'view-vbox',
                         xtype : Gtk.Viewport,
-                        init : function (parent) {
+                        init : function () {
                             XObject.prototype.init.call(this); 
-                            this.el.set_hadjustment(parent.el.get_hadjustment());
-                            this.el.set_vadjustment(parent.el.get_vadjustment());
+                            this.el.set_hadjustment(this.parent.el.get_hadjustment());
+                            this.el.set_vadjustment(this.parent.el.get_vadjustment());
                                 
                         },
                         packing : ['add' ],
