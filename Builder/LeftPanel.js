@@ -273,13 +273,14 @@ LeftPanel = new XObject({
                             //this.editSelected( true )
                             GLib.timeout_add(0, 100, function() {
                                 var col = (!k.length || k == '|') ? 
-                                    LeftPanel.propertyColumn : LeftPanel.editableColumn;
+                                LeftPanel.propertyColumn : LeftPanel.editableColumn;
                                 col.items[0].el.editable = true;
                                 LeftPanel.get('view').el.set_cursor_on_cell(
                                     new Gtk.TreePath.from_string(map[k]), 
                                     col.el,
                                     col.items[0].el,
-                                    true);
+                                    true
+                                );
                             });
                             /*
                             LeftPanel.get('view').el.row_activated(
@@ -289,6 +290,35 @@ LeftPanel = new XObject({
                             */
                             
                             
+                        },
+                        
+                        startEditing : function(path)
+                        {
+                            
+                            var tp;
+                            if (path) {
+                                tp = new Gtk.TreePath.from_string(path);
+                            } else {
+                                var iter = new Gtk.TreeIter();
+                                var s = LeftPanel.get('view').selection;
+                                s.get_selected(this.el, iter);
+                                tp = this.el.get_path(iter);
+                            }
+                            // iter now has row...
+                            GLib.timeout_add(0, 100, function() {
+                                var col = (!k.length || k == '|') ? 
+                                    LeftPanel.propertyColumn : LeftPanel.editableColumn;
+                                col.items[0].el.editable = true;
+                                LeftPanel.get('view').el.set_cursor_on_cell(
+                                    tp,
+                                    col.el,
+                                    col.items[0].el,
+                                    true
+                                );
+                            });
+                            
+                          
+                          
                         },
                         deleteSelected : function()
                         {
