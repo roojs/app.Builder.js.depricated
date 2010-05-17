@@ -267,7 +267,7 @@ RightGtkView = new XObject({
                 src += e+" = imports.gi." + e +";\n";
             });
             src += "XObject = imports.XObject.XObject;\n"; // path?!!?
-            src += "XObject.debug=true;\n"; // path?!!?
+            //src += "XObject.debug=true;\n"; // perhaps we should add this if everything fails.
             
             src += '_top=new XObject('+ this.mungeToString(data) + ')\n;';
             src += '_top.init();\n';
