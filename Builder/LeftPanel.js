@@ -280,12 +280,15 @@ LeftPanel = new XObject({
                         },
                         /**
                          * start editing path (or selected if not set..)
+                         * @param {String|false} path  (optional) treepath to edit - selected tree gets
+                         *     edited by default.
+                         * @param {Number} 0 or 1 (optional)- column to edit. 
                          */
                         startEditing : function(path, col)
                         {
                             
                             var tp;
-                            if (path) {
+                            if (typeof(path) == 'string') {
                                 tp = new Gtk.TreePath.from_string(path);
                             } else {
                                 var iter = new Gtk.TreeIter();
