@@ -337,7 +337,27 @@ Gtk = XObject.define(
             return this.proplist[ename][type];
             
         },
-        
+        genParams: function(sig, meth)
+        {
+            var args = ['self'];
+            var ret = "\n";
+            meth.ret_type = this.typeToName(GIRepository.callable_info_get_return_type(sig));
+            // might be a numbeR??
+            meth.args = [];
+            for(var a_i  =0; a_i   < GIRepository.callable_info_get_n_args(sig); a_i++) {
+                var arg = GIRepository.callable_info_get_arg(sig, a_i);
+                
+                
+                meth.args.push({
+                    name : GIRepository.base_info_get_name(arg),
+                    type : this.typeToName(GIRepository.property_info_get_type(arg), true);
+                });
+            }
+            return  
+                
+            
+            
+        },
         genSkel: function(sig)
         {
             var args = ['self'];
