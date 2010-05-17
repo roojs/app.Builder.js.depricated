@@ -364,7 +364,7 @@ XObject.prototype = {
             ret = ch.get(xid);
             
         })
-        return child === false ? ret : ret.get(child);;
+        return !ret || child === false ? ret : ret.get(child);;
     }
       
       
