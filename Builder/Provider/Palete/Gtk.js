@@ -416,6 +416,15 @@ Gtk = XObject.define(
          */
         getDefaultPack: function(pname, cname) {
             return 'add';
+        },
+        /**
+         * get packing list..
+         */
+        getPackingList :function (pname, cname)
+        {
+            
+            
+            
         }
         
         
