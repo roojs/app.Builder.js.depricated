@@ -348,7 +348,7 @@ XObject.prototype = {
             if (!ret) {
                 throw {
                     name: "ArgumentError", 
-                    message : "ID not found : " + oid;
+                    message : "ID not found : " + oid
                 }
             }
             XObject.cache[xid] = ret;
@@ -376,7 +376,7 @@ XObject.prototype = {
             } catch (ex) {
                 throw {
                     name: "ArgumentError", 
-                    message : "ID not found : " + oid;
+                    message : "ID not found : " + oid
                 }
             }
             
@@ -401,7 +401,7 @@ XObject.prototype = {
         if (!ret) {
             throw {
                 name: "ArgumentError", 
-                message : "ID not found : " + oid;
+                message : "ID not found : " + oid
             }
         }
         try {
@@ -409,7 +409,7 @@ XObject.prototype = {
         } catch (ex) {
             throw {
                 name: "ArgumentError", 
-                message : "ID not found : " + oid;
+                message : "ID not found : " + oid
             }
         }
     }
