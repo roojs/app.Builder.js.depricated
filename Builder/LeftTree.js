@@ -613,6 +613,12 @@ LeftTree = new XObject(
                             
                             
                         },
+                        /** 
+                        * drop a node.. - tecncially add node..
+                        * 
+                        * @param {Array} target_data - [ treepath_string,  before/after/ , property (to add as)]
+                        * @param {Object} node with data..
+                        */
                         
                         dropNode: function(target_data, node) {
                             
@@ -662,6 +668,19 @@ LeftTree = new XObject(
                                 }
                                 
                             }
+                            // work out what kind of packing to use..
+                            if (typeof(node.pack) == 'undefined') && parent !== false) {
+                                var pal = this.get('/LeftTree').getPaleteProvider();
+                                
+                                var pname = pal.guessName(this.singleNodeToJS(parent));
+                                var cname = pal.file.guessName(node);
+                                
+                                pal.getDefaultPack(pname, cname);
+                                
+                                
+                            }
+                            
+                            
                             var xitems = [];
                             if (node.items) {
                                 xitems = node.items;
