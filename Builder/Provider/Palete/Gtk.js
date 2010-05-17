@@ -356,7 +356,7 @@ Gtk = XObject.define(
                  
                 meth.params.push({
                     name : GIRepository.base_info_get_name(arg),
-                    type : this.typeToName(GIRepository.property_info_get_type(arg), true);
+                    type : this.typeToName(GIRepository.property_info_get_type(arg), true)
                 });
             }
             
