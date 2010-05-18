@@ -260,7 +260,7 @@ XObject.prototype = {
                 
                 if (e == 'false') { args.push( false); return; }
                 if (e == 'true') {  args.push( true);  return; }
-                if (parseInt(e) !== NaN) { args.push( parseInt(e)); return; }
+                if (parseInt(e) != NaN) { args.push( parseInt(e)); return; }
                 args.push(e);
             });
             print(args.join(","));
