@@ -323,7 +323,9 @@ Gtk = XObject.define(
                 this.overrides(this.proplist[pname]['methods'], mlist);
                 
                 
-            }
+            } else {
+                print("NO PARENT FOUND?");
+               }
             
             // implements needs to be more carefull as it could add dupes..
             // use the parent implements list to ensure no dupes..
