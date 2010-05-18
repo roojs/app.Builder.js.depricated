@@ -277,7 +277,7 @@ XObject.prototype = {
         //Seed.print('Pack ' + this.el + '.'+ pack_m + '(' + item.el + ')');
 
         args.unshift(item.el);
-        if (XObject.debug) print('pack_m[' + args.join(',') +']');
+        if (XObject.debug) print(pack_m + '[' + args.join(',') +']');
         //Seed.print('args: ' + args.length);
         if (pack_m) {
             this.el[pack_m].apply(this.el, args);
