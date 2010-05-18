@@ -430,7 +430,7 @@ Gtk = XObject.define(
         {
             function inTop(b)
             {
-                return top.every(function(t) {
+                return !top.every(function(t) {
                     if (t.name == b.name) {
                         return false;
                     }
