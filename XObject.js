@@ -120,16 +120,14 @@ XObject.prototype = {
       */ 
     init : function()
     {
-        /* 
+         
         var items = [];
         this.items.forEach(function(i) {
             items.push(i);
         });
-        this.items = [];
-        */
         // remove items.
         this.listeners = this.listeners || {}; 
-        
+        this.items = [];
          
         // do we need to call 'beforeInit here?'
          
@@ -201,19 +199,11 @@ XObject.prototype = {
          //   XObject.registry[o.xnsid] = XObject.registry[o.xnsid] || {}; 
          //   XObject.registry[o.xnsid][o.id] = this;
         //}
-        
-        if (this.items) {
-            var items = [];
-            this.items.forEach(function(i) {
-                items.push(i);
-            });
-            this.items = [];
-            var _this=this;
+        var _this=this;
+        items.forEach(function(i) {
+            _this.addItem(i);
+        })
             
-            items.forEach(function(i) {
-                _this.addItem(i);
-            });
-        }
         
         for (var i in this.listeners) {
             this.addListener(i, this.listeners[i]);
@@ -231,8 +221,7 @@ XObject.prototype = {
       * uses pack property to determine how to add it.
       * @arg cfg {Object} same as XObject constructor.
       */
-    addItem : function(o) 
-    {
+    addItem : function(o) {
         if (typeof(o) == 'undefined') {
             print("Invalid Item added to this!");
             imports.console.dump(this);
@@ -241,20 +230,7 @@ XObject.prototype = {
         // what about extended items!?!?!?
         var item = (o.constructor == XObject) ? o : new XObject(o);
         item.parent = this;
-        
-        
-        
-        var items = [];
-        o.items = o.items || [];
-        o.items.forEach(function(i) {
-            items.push(i);
-        });
-        o.items = [];
-        
-        
         this.items.push(item);
-        
-        
         item.init();
         //print("CTR:PROTO:" + ( item.id ? item.id : '??'));
        // print("addItem - call init [" + item.pack.join(',') + ']');
@@ -268,21 +244,12 @@ XObject.prototype = {
        
         
         if (item.pack===false) {  // no 
-            items.forEach(function(i) {
-                item.addItem(i);
-            });
-        
             return;
         }
         if (typeof(item.pack) == 'function') {
             // parent, child
             item.pack.apply(item, [ this , item  ]);
             item.parent = this;
-            
-            
-            items.forEach(function(i) {
-                item.addItem(i);
-            });
             return;
         }
         var args = [];
@@ -319,14 +286,6 @@ XObject.prototype = {
         if (pack_m) {
             this.el[pack_m].apply(this.el, args);
         }
-        
-        
-        
-        items.forEach(function(i) {
-            item.addItem(i);
-        })
-        
-        
         
        
         
