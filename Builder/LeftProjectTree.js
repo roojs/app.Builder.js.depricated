@@ -496,7 +496,7 @@ LeftProjectTree = new XObject({
                                     {
                                         
                                         xtype : Gtk.CellRendererText,
-                                        pack: [ 'pack_start'],
+                                        pack: [ 'pack_start']
                                         
                                     } 
                                 ],
