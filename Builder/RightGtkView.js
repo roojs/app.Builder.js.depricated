@@ -245,7 +245,7 @@ RightGtkView = new XObject({
             x.add_globals();
             //print(src);
             try {
-                Seed.check_syntax(src);
+                Seed.check_syntax('var e = ' + src);
                 x.eval(src);
             } catch( e) {
                 print(e.message || e.toString());
@@ -315,7 +315,7 @@ RightGtkView = new XObject({
             //x.get_global_object().a = "hello world";
             
             try {
-                Seed.check_syntax(src);
+                Seed.check_syntax('var e = ' + src);
                 x.eval(src);
             } catch( e) {
                 if (!withDebug) {
