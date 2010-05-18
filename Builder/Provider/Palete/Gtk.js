@@ -185,7 +185,8 @@ Gtk = XObject.define(
             print("Loading for " + ename);
             
             if (typeof(this.proplist[ename]) != 'undefined') {
-                    return this.proplist[ename][type];
+                print("Using cache");
+                return this.proplist[ename][type];
             }
             // use introspection to get lists..
             var gi = GIRepository.IRepository.get_default();
@@ -310,7 +311,7 @@ Gtk = XObject.define(
             if (pi) {
                 
                    
-                var pname = GIRepository.base_info_get_namespace(pi) + '.' +
+                var pname = G IRepository.base_info_get_namespace(pi) + '.' +
                     GIRepository.base_info_get_name(pi);
                 this.getPropertiesFor(pname, 'props');
                 
