@@ -38,6 +38,7 @@ left:
 	Gtk.Expander 
 	Gtk.Frame
 	Gtk.ScrolledWindow
+	Gtk.ToolbarItem
 	
 right:	 
 	Gtk.Alignment 
