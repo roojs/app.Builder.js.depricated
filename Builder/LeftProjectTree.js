@@ -67,7 +67,11 @@ LeftProjectTree = new XObject({
                                 //pack : [ 'insert', 1],
                                 expand: true,
                                 
-                             
+                                init : function () 
+                                {
+                                    XObject.prototype.init.call(this); 
+                                    this.el.add_attribute(this.items[0].el , 'markup', 1 );  
+                                },
                             
                                 setValue : function(fn)
                                 {
@@ -105,12 +109,7 @@ LeftProjectTree = new XObject({
                                    {
                                           
                                         xtype : Gtk.CellRendererText,
-                                        pack : ['pack_start'],
-                                        init : function () 
-                                        {
-                                            XObject.prototype.init.call(this); 
-                                            this.parent.el.add_attribute(this.el , 'markup', 1 );  
-                                        },
+                                        pack : ['pack_start']
                                         
                                     },
                                     {
@@ -485,22 +484,21 @@ LeftProjectTree = new XObject({
                                 pack : ['append_column'],
                                 
                                 xtype : Gtk.TreeViewColumn,
-                                
-                                init :  function ()
-                                {
-                                    XObject.prototype.init.call(this);    
-                                    this.el.add_attribute(this.items[0].el , 'markup', 0 );
-                                    
-                                } ,
                                 items : [
                                     {
                                         
                                         xtype : Gtk.CellRendererText,
                                         pack: [ 'pack_start']
-                                        
+                                          
                                     } 
                                 ],
-                                  
+                                     init :  function ()
+                                {
+                                    XObject.prototype.init.call(this);    
+                            
+                                    this.el.add_attribute(this.items[0].el , 'markup', 0 );
+                                    
+                                }
                               
                             }
                             
