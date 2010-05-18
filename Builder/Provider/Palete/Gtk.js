@@ -433,6 +433,7 @@ Gtk = XObject.define(
                     if (t.name == b.name) {
                         return false;
                     }
+                    return true;
                 });
             }
             bottom.forEach(function(e) {
