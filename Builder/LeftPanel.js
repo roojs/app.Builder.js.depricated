@@ -624,7 +624,7 @@ LeftPanel = new XObject({
                                     this.parent.el.add_attribute(this.el , 'text', 3 );
                                     this.parent.el.add_attribute(this.el , 'sensitive', 3 );
                                     this.parent.el.add_attribute(this.el , 'editable', 3 );
-                                }
+                                },
                                 
                                 pack : ['pack_start'],
                                 editable : true,
