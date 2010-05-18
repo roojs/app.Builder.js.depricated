@@ -138,7 +138,7 @@ XObject.prototype = {
         var isSeed = typeof(Seed) != 'undefined';
          
         // xtype= Gtk.Menu ?? what about c_new stuff?
-        if (XObject.debug) print("init: typeof(xtype): "  + typeof(this.xtype));
+        if (XObject.debug) print("init: ID:"+ this.id +" typeof(xtype): "  + typeof(this.xtype));
         if (!this.el && typeof(this.xtype) == 'function') {
             if (XObject.debug) print("func?"  + XObject.keys(this.config).join(','));
             this.el = this.xtype(this.config);
@@ -163,7 +163,7 @@ XObject.prototype = {
             this.el  =   isSeed ? new constructor(this.config) : new constructor();
             
         }
-        if (XObject.debug) print("init: typeof(el):" + typeof(this.el));
+        if (XObject.debug) print("init: ID:"+ this.id +" typeof(el):" + typeof(this.el));
         
         // always overlay props..
         // check for 'write' on object..
