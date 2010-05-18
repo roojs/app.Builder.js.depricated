@@ -134,4 +134,10 @@ left:
 	Gtk.ComboBox
 right:
 	Gtk.ListStore
+
+	
+left: 
+	Gtk.ComboBox
+right:	
+	Gtk.CellRendererText
 	
