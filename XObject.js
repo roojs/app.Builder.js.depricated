@@ -207,7 +207,7 @@ XObject.prototype = {
             var _this=this;
             items.forEach(function(i) {
                 _this.addItem(i);
-            })
+            });
         }
         
         for (var i in this.listeners) {
