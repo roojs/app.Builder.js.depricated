@@ -256,12 +256,15 @@ XObject.prototype = {
         var pack_m  = false;
         if (typeof(item.pack) == 'string') {
             var args = item.pack.split(',');
+            
             args.forEach(function(e, i) {
                 
                 if (e == 'false') { args[i] = false; return; }
                 if (e == 'true') {  args[i] = true;  return; }
                 if (parseInt(e) !== NaN) { args[i] = parseInt(e); return; }
             });
+            print(args.join(","));
+            
             pack_m = args.shift();
         } else {
             pack_m = item.pack.shift();
