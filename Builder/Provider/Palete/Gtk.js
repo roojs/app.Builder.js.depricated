@@ -311,7 +311,7 @@ Gtk = XObject.define(
             if (pi) {
                 
                    
-                var pname = G IRepository.base_info_get_namespace(pi) + '.' +
+                var pname = GIRepository.base_info_get_namespace(pi) + '.' +
                     GIRepository.base_info_get_name(pi);
                 this.getPropertiesFor(pname, 'props');
                 
@@ -326,7 +326,7 @@ Gtk = XObject.define(
                 
             } else {
                 print("NO PARENT FOUND?");
-               }
+            }
             
             // implements needs to be more carefull as it could add dupes..
             // use the parent implements list to ensure no dupes..
