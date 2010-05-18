@@ -523,6 +523,10 @@ Gtk = XObject.define(
                         ret.push('false');
                         return;
                     }
+                    if (p.type == 'number') {
+                        ret.push('0');
+                        return;
+                    }
                     if (p.type == 'uint') {
                         ret.push('0');
                         return;
