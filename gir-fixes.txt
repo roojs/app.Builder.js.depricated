@@ -13,3 +13,8 @@ gtk_tree_view_get_dest_row_at_pos
  
  Eventually GIR's should be downloadable from the doc site (or upstreamed into releases)
  
+ 
+ gtk_tree_view_get_selection
+ 
+ ??? return value is currently tranfer-ownership = full??
+ 
