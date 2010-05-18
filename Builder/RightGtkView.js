@@ -240,7 +240,7 @@ RightGtkView = new XObject({
             var src= this.lastSrc;
             if (!this.lastSrc.length) {
                 return;
-               }
+            }
             var x = new imports.sandbox.Context();
             x.add_globals();
             //print(src);
@@ -284,9 +284,9 @@ RightGtkView = new XObject({
             });
             src += "console = imports.console;\n"; // path?!!?
             src += "XObject = imports.XObject.XObject;\n"; // path?!!?
-            if (withDebug) {
+            //if (withDebug) {
                 src += "XObject.debug=true;\n"; 
-            }
+            //}
             
             
             src += '_top=new XObject('+ this.mungeToString(data) + ')\n;';
