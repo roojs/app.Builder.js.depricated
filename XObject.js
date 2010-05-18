@@ -259,7 +259,7 @@ XObject.prototype = {
             args.forEach(function(e, i) {
                 if (e == 'false') { args[i] = false; return; }
                 if (e == 'true') {  args[i] = true;  return; }
-                if (parseInt(e) == NaN) { args[i] = parseInt(e); return; }
+                if (parseInt(e) !== NaN) { args[i] = parseInt(e); return; }
             });
             pack_m = args.shift();
         } else {
