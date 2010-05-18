@@ -185,7 +185,7 @@ Gtk = XObject.define(
             print("Loading for " + ename);
             
             if (typeof(this.proplist[ename]) != 'undefined') {
-                print("Using cache");
+                 
                 return this.proplist[ename][type];
             }
             // use introspection to get lists..
@@ -301,7 +301,7 @@ Gtk = XObject.define(
             
             
             if (etype == GIRepository.IInfoType.INTERFACE ) {
-                print("SKIPPING PARENT - it's an interface?!?!");
+               // print("SKIPPING PARENT - it's an interface?!?!");
                   return;
             }
             
@@ -321,7 +321,7 @@ Gtk = XObject.define(
                 ilist.push(pname);
                 ilist.push.apply(ilist,this.proplist[pname]['inherits']);
                 
-                this.overrides(this.proplist[pname]['methods'], mlist);
+                this.overrides(mlist, this.proplist[pname]['methods']);
                 
                 
             } else {
@@ -343,7 +343,7 @@ Gtk = XObject.define(
                 
                 elist.push.apply(elist,this.proplist[iface]['events']);
                 plist.push.apply(plist,this.proplist[iface]['props']);
-                this.overrides(this.proplist[pname]['methods'], mlist);
+                this.overrides(mlist, this.proplist[pname]['methods']);
             }
             function sfunc(a,b) {
                 if (a.name == b.name) return 0;
