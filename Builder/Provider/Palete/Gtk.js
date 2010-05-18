@@ -546,6 +546,7 @@ Gtk = XObject.define(
         getPackingList :function (pname, cname)
         {
             var funcs = this.getPropertiesFor(pname,'methods');
+            console.dump(funcs);
             var ret = [];
             var _this = this;
             // let's assume top down...
