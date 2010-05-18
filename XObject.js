@@ -203,10 +203,14 @@ XObject.prototype = {
         //}
         
         if (this.items) {
-            
+            var items = [];
+            this.items.forEach(function(i) {
+                items.push(i);
+            });
+            this.items = [];
             var _this=this;
             
-            this.items.forEach(function(i) {
+            items.forEach(function(i) {
                 _this.addItem(i);
             });
         }
