@@ -544,7 +544,7 @@ LeftPanel = new XObject({
                                 init : function ()
                                 {
                                     XObject.prototype.init.call(this); 
-                                    this.parent.el.add_attribute(this..el , 'markup', 2 );
+                                    this.parent.el.add_attribute(this.el , 'markup', 2 );
                                 },
                                 listeners : {
                                     'editing-started' : function(r, e, p) {
