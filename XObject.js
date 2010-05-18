@@ -268,12 +268,21 @@ XObject.prototype = {
        
         
         if (item.pack===false) {  // no 
+            items.forEach(function(i) {
+                item.addItem(i);
+            });
+        
             return;
         }
         if (typeof(item.pack) == 'function') {
             // parent, child
             item.pack.apply(item, [ this , item  ]);
             item.parent = this;
+            
+            
+            items.forEach(function(i) {
+                item.addItem(i);
+            });
             return;
         }
         var args = [];
