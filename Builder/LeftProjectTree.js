@@ -491,7 +491,7 @@ LeftProjectTree = new XObject({
                                     XObject.prototype.init.call(this);    
                                     this.el.add_attribute(this.items[0].el , 'markup', 0 );
                                     
-                                }
+                                },
                                 items : [
                                     {
                                         
