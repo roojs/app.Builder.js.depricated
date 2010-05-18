@@ -255,8 +255,7 @@ XObject.prototype = {
         var args = [];
         var pack_m  = false;
         if (typeof(item.pack) == 'string') {
-            
-            
+             
             item.pack.split(',').forEach(function(e, i) {
                 
                 if (e == 'false') { args.push( false); return; }
