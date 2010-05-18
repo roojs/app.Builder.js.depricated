@@ -108,7 +108,8 @@ right:
 left:       
 	Gtk.Toolbar
 right:
-	Gtk.ToolButton 
+	Gtk.ToolButton
+	Gtk.ToolItem
 	Gtk.MenuToolButton 
 	Gtk.ToggleToolButton
 	Gtk.RadioToolButton 
