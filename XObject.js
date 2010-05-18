@@ -77,13 +77,16 @@ function XObject (cfg) {
     this.items = this.items || [];
     // pack can be false!
     if (typeof(this.pack) == 'undefined') {
-        var Gtk  = imports.gi.Gtk;
+        
         this.pack = [ 'add' ]
+        /*
+        var Gtk  = imports.gi.Gtk;
         switch (true) {
             // any others!!
             case (this.xtype == Gtk.MenuItem):  this.pack = [ 'append' ]; break;
             
         }
+        */
         
     }
     
