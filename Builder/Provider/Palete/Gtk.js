@@ -300,6 +300,7 @@ Gtk = XObject.define(
             
             
             if (etype == GIRepository.IInfoType.INTERFACE ) {
+                print("SKIPPING PARENT - it's an interface?!?!");
                   return;
             }
             
@@ -318,6 +319,7 @@ Gtk = XObject.define(
                 plist.push.apply(plist,this.proplist[pname]['props']);
                 ilist.push(pname);
                 ilist.push.apply(ilist,this.proplist[pname]['inherits']);
+                
                 this.overrides(this.proplist[pname]['methods'], mlist);
                 
                 
