@@ -245,6 +245,7 @@ XObject.prototype = {
         
         
         var items = [];
+        o.items = o.items || [];
         o.items.forEach(function(i) {
             items.push(i);
         });
