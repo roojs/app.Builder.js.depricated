@@ -255,13 +255,14 @@ XObject.prototype = {
         var args = [];
         var pack_m  = false;
         if (typeof(item.pack) == 'string') {
-            var args = item.pack.split(',');
             
-            args.forEach(function(e, i) {
+            
+            item.pack.split(',').forEach(function(e, i) {
                 
-                if (e == 'false') { args[i] = false; return; }
-                if (e == 'true') {  args[i] = true;  return; }
-                if (parseInt(e) !== NaN) { args[i] = parseInt(e); return; }
+                if (e == 'false') { args.push( false); return; }
+                if (e == 'true') {  args.push( true);  return; }
+                if (parseInt(e) !== NaN) { args.push( parseInt(e)); return; }
+                args.push(e);
             });
             print(args.join(","));
             
