@@ -249,16 +249,17 @@ MidPropTree = new XObject({
                         
                         xtype: Gtk.TreeViewColumn,
                         pack : ['append_column'],
-                        init : function() {
-                            XObject.prototype.init.call(this); 
-                 
                         
-                            this.el.add_attribute(this.items[0].el , 'markup', 4  );
-                        },
                         items : [
                             {
                                 xtype : Gtk.CellRendererText,
-                                pack : ['pack_start']
+                                pack : ['pack_start'],
+                                init : function() {
+                                    XObject.prototype.init.call(this); 
+                         
+                                
+                                    this.parent.el.add_attribute(this.el , 'markup', 4  );
+                                }
                             }
                         ]
                     }
