@@ -67,11 +67,7 @@ LeftProjectTree = new XObject({
                                 //pack : [ 'insert', 1],
                                 expand: true,
                                 
-                                init : function () 
-                                {
-                                    XObject.prototype.init.call(this); 
-                                    this.el.add_attribute(this.items[0].el , 'markup', 1 );  
-                                },
+                             
                             
                                 setValue : function(fn)
                                 {
@@ -109,7 +105,12 @@ LeftProjectTree = new XObject({
                                    {
                                           
                                         xtype : Gtk.CellRendererText,
-                                        pack : ['pack_start']
+                                        pack : ['pack_start'],
+                                        init : function () 
+                                        {
+                                            XObject.prototype.init.call(this); 
+                                            this.parent.el.add_attribute(this.el , 'markup', 1 );  
+                                        },
                                         
                                     },
                                     {
@@ -489,16 +490,16 @@ LeftProjectTree = new XObject({
                                         
                                         xtype : Gtk.CellRendererText,
                                         pack: [ 'pack_start']
-                                          
+                                        init :  function ()
+                                        {
+                                            XObject.prototype.init.call(this);    
+                                    
+                                            this.parent.el.add_attribute(this.el , 'markup', 0 );
+                                            
+                                        }
                                     } 
                                 ],
-                                     init :  function ()
-                                {
-                                    XObject.prototype.init.call(this);    
-                            
-                                    this.el.add_attribute(this.items[0].el , 'markup', 0 );
-                                    
-                                }
+                                  
                               
                             }
                             
