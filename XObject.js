@@ -239,9 +239,7 @@ XObject.prototype = {
             imports.console.dump(item);
             Seed.quit();
         }
-        
-       
-       
+         
         
         if (item.pack===false) {  // no 
             return;
