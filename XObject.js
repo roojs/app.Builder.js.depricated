@@ -314,7 +314,7 @@ XObject.prototype = {
         
         
         items.forEach(function(i) {
-            o.addItem(i);
+            item.addItem(i);
         })
         
         
