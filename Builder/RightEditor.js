@@ -44,6 +44,7 @@ RightEditor = new XObject({
                                 _this.el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({
                                     red: 0xFFFF, green: 0xCCCC , blue : 0xCCCC
                                    }));
+                                print("SYNTAX ERROR IN EDITOR");   
                                 print(e);
                                 console.dump(e);
                                 return;
