@@ -510,7 +510,7 @@ Gtk = XObject.define(
          */
         getDefaultPack: function(pname, cname) {
             var list = this.getPackingList(pname,cname);
-            console.dump(list);
+           // console.dump(list);
             
             
             if (!list.every(function(e) { return e.name != 'add'; })) {
@@ -547,7 +547,7 @@ Gtk = XObject.define(
                 }
                 return true; // continue
             });
-            print("DEFAULT PACK: " + packret);
+            //print("DEFAULT PACK: " + packret);
             // should we do best match..?
             return packret;
         },
@@ -557,8 +557,8 @@ Gtk = XObject.define(
         getPackingList :function (pname, cname)
         {
             var funcs = this.getPropertiesFor(pname,'methods');
-            print("getPackingList : ALL FUNCS");
-            console.dump(funcs);
+            //print("getPackingList : ALL FUNCS");
+            //console.dump(funcs);
             var ret = [];
             var _this = this;
             // let's assume top down...
