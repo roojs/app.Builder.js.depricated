@@ -202,10 +202,11 @@ XObject.prototype = {
          //   XObject.registry[o.xnsid][o.id] = this;
         //}
         
-        if (!this.parent) {
+        if (this.items) {
             
             var _this=this;
-            items.forEach(function(i) {
+            
+            this.items.forEach(function(i) {
                 _this.addItem(i);
             });
         }
