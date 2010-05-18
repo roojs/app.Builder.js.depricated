@@ -534,7 +534,6 @@ LeftPanel = new XObject({
                         init : function ()
                         {
                             XObject.prototype.init.call(this); 
-                            this.el.add_attribute(this.items[0].el , 'markup', 2 );
                             LeftPanel.propertyColumn= this;
                         },
                         items : [
@@ -542,7 +541,11 @@ LeftPanel = new XObject({
                                 xtype : Gtk.CellRendererText,
                                 editable : false,
                                 pack : ['pack_start'],
-                            
+                                init : function ()
+                                {
+                                    XObject.prototype.init.call(this); 
+                                    this.parent.el.add_attribute(this..el , 'markup', 2 );
+                                },
                                 listeners : {
                                     'editing-started' : function(r, e, p) {
                                         LeftPanel.get('model').activePath  = p;
@@ -578,9 +581,7 @@ LeftPanel = new XObject({
                         init : function ()
                         {
                             XObject.prototype.init.call(this); 
-                            this.el.add_attribute(this.items[0].el , 'text', 3 );
-                            this.el.add_attribute(this.items[0].el , 'sensitive', 3 );
-                            this.el.add_attribute(this.items[0].el , 'editable', 3 );
+                           
                            // this.el.set_cell_data_func(cell, age_cell_data_func, NULL, NULL);
 
                             LeftPanel.editableColumn= this;
@@ -616,6 +617,15 @@ LeftPanel = new XObject({
                                     
                                     return  ret;
                                 },
+                                
+                                init : function () {
+                                    XObject.prototype.init.call(this); 
+                           
+                                    this.parent.el.add_attribute(this.el , 'text', 3 );
+                                    this.parent.el.add_attribute(this.el , 'sensitive', 3 );
+                                    this.parent.el.add_attribute(this.el , 'editable', 3 );
+                                }
+                                
                                 pack : ['pack_start'],
                                 editable : true,
                                 has_entry : false,
