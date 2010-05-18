@@ -131,6 +131,7 @@ right:
 	Gtk.CellRendererCombo
 left: 
 	Gtk.CellRendererCombo:model
+	Gtk.ComboBox
 right:
 	Gtk.ListStore
 	
