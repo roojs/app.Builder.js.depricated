@@ -245,9 +245,11 @@ RightGtkView = new XObject({
             x.add_globals();
             //print(src);
             try {
+                check_syntax(src);
                 x.eval(src);
             } catch( e) {
                 print(e.message || e.toString());
+                console.dump(e);
                 return;
             }
              
@@ -299,13 +301,14 @@ RightGtkView = new XObject({
             //x.get_global_object().a = "hello world";
             
             try {
+                check_syntax(src);
                 x.eval(src);
             } catch( e) {
                 if (!withDebug) {
                    return this.renderJS(data,true);
                 }
                 print(e.message || e.toString());
-                print(e);
+                console.dump(e);
                 return;
             }
             
