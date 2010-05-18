@@ -250,6 +250,20 @@ RightGtkView = new XObject({
             } catch( e) {
                 print(e.message || e.toString());
                 console.dump(e);
+                if (e.line) {
+                    var lines = src.split("\n");
+                    var start = Math.max(0, e.line - 10);
+                    var end = Math.min(lines.length, e.line + 10);
+                    for (var i =start ; i < end; i++) {
+                        if (i == e.line) {
+                            print(">>>>>" + lines[i]);
+                            continue;
+                        }
+                        print(lines[i]);
+                    }
+                    
+                }
+                
                 return;
             }
              
