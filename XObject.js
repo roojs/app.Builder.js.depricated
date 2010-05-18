@@ -201,12 +201,14 @@ XObject.prototype = {
          //   XObject.registry[o.xnsid] = XObject.registry[o.xnsid] || {}; 
          //   XObject.registry[o.xnsid][o.id] = this;
         //}
-        /*
-        var _this=this;
-        items.forEach(function(i) {
-            _this.addItem(i);
-        })
-        */  
+        
+        if (!this.parent) {
+            
+            var _this=this;
+            items.forEach(function(i) {
+                _this.addItem(i);
+            })
+        }
         
         for (var i in this.listeners) {
             this.addListener(i, this.listeners[i]);
