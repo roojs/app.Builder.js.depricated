@@ -136,31 +136,34 @@ Window = new XObject({
                                                        RightBrowser,
                                                        RightGtkView,
                                                     ]
-                                                },
-                                            
-                                            
-                                                
-                                                {
-                                                    xtype : Gtk.Expander,
-                                                    
-                                                    label : 'Console',
-                                                    pack : ['pack_start', false , false ],
-                                                    
-                                                    items : [
-                                                        {
-                                                            xtype : Gtk.Button,
-                                                            label : 'Console Goes here'
-                                                        }
-                                                    ]
-                                                }
+                                                } 
                                                
                                             ]
                                         },
-                                        RightEditor
-                                         
+                                        {
+                                            xtype: Gtk.Notebook,
+                                            "pack":"add",
+                                            "init":function() {
+                                                XObject.prototype.init.call(this);
+                                                this.el.set_tab_label(this.items[0].el, new Gtk.Label({ label : "Code Editor" }));
+                                                    this.el.set_tab_label(this.items[1].el, new Gtk.Label({ label : "Console" }));
+                                            },
+                                            items : [
+                                                RightPalete,
+                                                {
+                                                    xtype: Vte.Terminal,
+                                                    "pack":"add",
+                                                    "id":"Terminal",
+                                                    "feed":function(str) {
+                                                        this.el.feed(str,str.length);
+                                                    },
+                                                    
+                                                }
+                                            ]
+                                        }
                                     ]
                                 },
-                                RightPalete
+                               
                                  
                                 
                             ]
