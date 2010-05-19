@@ -182,8 +182,8 @@ RightGtkView = new XObject({
                                     "drag-data-received" : function (w, ctx,  x,  y, sel_data,  target_type,  time, ud) 
                                     {
                                         Seed.print("GtkView: drag-data-received");
-                                        delete_selection_data = false;
-                                        dnd_success = false;
+                                        var delete_selection_data = false;
+                                        var dnd_success = false;
                                         /* Deal with what we are given from source */
                                         if( sel_data && sel_data.length ) {
                                             
