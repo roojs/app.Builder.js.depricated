@@ -364,7 +364,7 @@ RightGtkView = new XObject({
             //_top.el.show_all();
             
             _top.el.remove(_top.items[0].el);
-            tp = new Gtk.OffscreenWindow();
+            var tp = new Gtk.OffscreenWindow();
             tp.add(_top.items[0].el);
             _top.items[0].el.show_all();
             var pb = tp.get_pixmap();
