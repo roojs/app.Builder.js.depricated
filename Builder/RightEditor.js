@@ -66,6 +66,7 @@ RightEditor = new XObject({
                 },
                 
                 load : function(str) {
+                    this.get('/BottomPane').el.set_current_page(0);
                     this.el.get_buffer().set_text(str, str.length);
                     var lm = GtkSource.LanguageManager.get_default();
                     
