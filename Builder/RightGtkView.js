@@ -370,7 +370,7 @@ RightGtkView = new XObject({
             
             
             
-            tp.signals.damage_event.connect(function() {
+            tp.signal.damage_event.connect(function() {
                 
                 var pb = tp.get_pixmap();
                 print("GOT PIXMAP");
