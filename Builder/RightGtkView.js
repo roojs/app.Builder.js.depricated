@@ -378,6 +378,7 @@ RightGtkView = new XObject({
             
             _top.el.remove(_top.items[0].el);
              tp.add(_top.items[0].el);
+             _top.items[0].el.show_all();
              tp.show();
             
             
