@@ -367,7 +367,8 @@ RightGtkView = new XObject({
             }
             
             var pb = _top.el.get_pixmap();
-            var r = pb.get_size();
+            var r = { }; 
+            pb.get_size(r);
             console.dump(r);
             //var pb = _top.el.get_snapshot(r);
             if (!pb) {
