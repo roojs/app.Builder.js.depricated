@@ -302,7 +302,7 @@ XObject.prototype = {
     {
  
         if (XObject.debug) Seed.print("Add signal " + sig);
- 
+        fn.name = this.id + ":signal:"+sig;
         var _li = XObject.createDelegate(fn,this);
         // private listeners that are not copied to GTk.
         
@@ -598,6 +598,8 @@ XObject.extend(XObject,
     createDelegate : function(method, obj, args, appendArgs){
         
         return function() {
+            if (XObject.debug) print("CALL: " + method.name);
+            
             var callArgs = args || arguments;
             if(appendArgs === true){
                 callArgs = Array.prototype.slice.call(arguments, 0);
