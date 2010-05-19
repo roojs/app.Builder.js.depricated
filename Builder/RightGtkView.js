@@ -362,15 +362,17 @@ RightGtkView = new XObject({
             
             //_top.el.set_screen(Gdk.Screen.get_default()); // just in case..
             //_top.el.show_all();
+             var tp = new Gtk.OffscreenWindow();
+           
             tp.signal.damage_event.connect(function() {
                 
                 var pb = tp.get_pixmap();
                 print("GOT PIXMAP");
             });
-            _top.el.remove(_top.items[0].el);
-            var tp = new Gtk.OffscreenWindow();
-            tp.add(_top.items[0].el);
             
+            _top.el.remove(_top.items[0].el);
+             tp.add(_top.items[0].el);
+           
             
             
             
