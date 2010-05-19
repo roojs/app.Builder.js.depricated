@@ -421,7 +421,7 @@ RightGtkView = new XObject({
                     if (typeof(el) == 'string' && !obj[i].length) { //skip empty.
                         return;
                     }
-                    
+                    // this needs to go...
                     if (typeof(el) == 'string'  && obj[i].match(new RegExp("Gtk.main" + "_quit")) { // we can not handle this very well..
                         return;
                     }
