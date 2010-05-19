@@ -90,7 +90,7 @@ right:
 	Gtk.FileChooserButton 
 	Gtk.FileChooserWidget
 	Gtk.FontButton 
-	   
+	GtkSource.View
 
 left:
 	Gtk.MenuBar
@@ -150,3 +150,7 @@ left:
 	Gtk.ScrolledWindow
 right: 
 	Gtk.Viewport
+left: 
+	GtkSource.View
+right: 
+	GtkSource.Buffer
