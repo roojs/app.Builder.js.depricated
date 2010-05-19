@@ -1,7 +1,7 @@
 //<Script type="text/javascript">
 
 Gtk = imports.gi.Gtk;
-Vte= imports.gi.Vte;
+Vte = imports.gi.Vte;
 // core libs
 XObject = imports.XObject.XObject;
 console = imports.console;
@@ -138,9 +138,13 @@ Window = new XObject({
                                                        RightGtkView,
                                                     ]
                                                 } 
-                                               
+                                            
+                                            
+                                                
                                             ]
                                         },
+                                        
+                                        
                                         {
                                             xtype: Gtk.Notebook,
                                             "pack":"add",
@@ -150,7 +154,7 @@ Window = new XObject({
                                                     this.el.set_tab_label(this.items[1].el, new Gtk.Label({ label : "Console" }));
                                             },
                                             items : [
-                                                RightPalete,
+                                                RightEditor,
                                                 {
                                                     xtype: Vte.Terminal,
                                                     "pack":"add",
@@ -162,9 +166,11 @@ Window = new XObject({
                                                 }
                                             ]
                                         }
+                                         
+                                         
                                     ]
                                 },
-                               
+                                RightPalete
                                  
                                 
                             ]
