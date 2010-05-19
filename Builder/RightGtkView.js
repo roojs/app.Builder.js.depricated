@@ -295,10 +295,17 @@ RightGtkView = new XObject({
                 src += e+" = imports.gi." + e +";\n";
             });
             
+            if (withDebug) {
+                "imports.searchPath.push(" + JSON.stringify(__script_path__) ");\n";
+            }
+            
             src += "console = imports.console;\n"; // path?!!?
             src += "XObject = imports.XObject.XObject;\n"; // path?!!?
             src += "XObject.cache = {};\n"; // reset cache!
             if (withDebug) {
+                
+                
+                
                 src += "Gtk.init(null,null);\n"; 
             }
             if (withDebug) {
