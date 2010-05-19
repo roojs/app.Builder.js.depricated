@@ -328,7 +328,7 @@ LeftTree = new XObject(
                                     LeftTree.get('model').dropNode(this.targetData,  source.dragData);
                                 } else {
                                     // drag around.. - reorder..
-                                    LeftTree.get('model').moveNode(this.targetData);
+                                    LeftTree.get('model').moveNode(this.targetData, ctx.action);
                                     
                                     
                                 }
@@ -716,7 +716,7 @@ LeftTree = new XObject(
                             
                             
                         },
-                        moveNode: function(target_data) {
+                        moveNode: function(target_data , action) {
                             
                             //print("MOVE NODE");
                            // console.dump(target_data);
@@ -731,6 +731,10 @@ LeftTree = new XObject(
                             // treepath will be invalid.
                             
                             this.dropNode(target_data, node);
+                            if (action & Gdk.DragAction.COPY) {
+                                return; // do not remove..
+                            }
+                            
                             this.el.remove(old_iter);
                             
                             
