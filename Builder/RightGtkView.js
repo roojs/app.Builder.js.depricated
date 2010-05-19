@@ -360,7 +360,7 @@ RightGtkView = new XObject({
             var r = new Gdk.Rectangle();
             var _top = x.get_global_object()._top;
             
-            _top.el.set_screen(Gdk.Screen.get_default()); // just in case..
+            _top.items[0].el.set_screen(Gdk.Screen.get_default()); // just in case..
             //_top.el.show_all();
             _top.items[0].el.show_all();
             
