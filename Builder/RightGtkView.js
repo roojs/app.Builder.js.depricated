@@ -296,7 +296,7 @@ RightGtkView = new XObject({
             });
             
             if (withDebug) {
-                "imports.searchPath.push(" + JSON.stringify(__script_path__) + ");\n";
+               src+= "imports.searchPath.push(" + JSON.stringify(__script_path__) + ");\n";
             }
             
             src += "console = imports.console;\n"; // path?!!?
