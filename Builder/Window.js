@@ -157,13 +157,19 @@ Window = new XObject({
                                             items : [
                                                 RightEditor,
                                                 {
-                                                    xtype: Vte.Terminal,
+                                                    xtype: Gtk.ScrolledWindow,
                                                     "pack":"add",
-                                                    "id":"Terminal",
-                                                    "feed":function(str) {
-                                                        this.el.feed(str,str.length);
-                                                    },
+                                                    "items" : [
+                                                        {
+                                                            xtype: Vte.Terminal,
+                                                            "pack":"add",
+                                                            "id":"Terminal",
+                                                            "feed":function(str) {
+                                                                this.el.feed(str,str.length);
+                                                            },
                                                     
+                                                        }
+                                                    ]
                                                 }
                                             ]
                                         }
