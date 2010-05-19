@@ -40,7 +40,7 @@ left:
 	Gtk.ScrolledWindow
 	Gtk.ToolItem
 	Gtk.Viewport
-	
+	Gtk.Button
 right:	 
 	Gtk.Alignment 
 	Gtk.AspectFrame 
@@ -144,15 +144,16 @@ left:
 	Gtk.ComboBox
 right:	
 	Gtk.CellRendererText
-left:
-	Gtk.Button
-right:
-	Gtk.Image
+
+	
 	
 left:
 	Gtk.ScrolledWindow
 right: 
 	Gtk.Viewport
+
+	
+	
 left: 
 	GtkSource.View
 right: 
