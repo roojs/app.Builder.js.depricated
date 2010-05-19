@@ -375,11 +375,12 @@ RightGtkView = new XObject({
                 return;
             }
             //_top.el.hide();
-            _top.el.destroy();
-            x._top = false;
+            
             var Window = imports.Builder.Window.Window;
+            
+            
             var gc = new Gdk.GC.c_new(Window.el.window);
-                
+            
                 // 10 points all round..
             var full = new Gdk.Pixmap.c_new (Window.el.window, r.width+20, r.height+20, pb.get_depth());
             // draw a white background..
@@ -390,7 +391,11 @@ RightGtkView = new XObject({
             // boxes..
             //gc.set_rgb_fg_color({ red: 255, white: 255, black : 255 });
             Gdk.draw_rectangle(full, gc, true, 0, 0, 10, 10);
+            
             this.get('view').el.set_from_pixmap(full, null);
+            
+            _top.el.destroy();
+            x._top = false;
             //this.get('view-vbox').el.set_size_request( r.width+20, r.height+20);
             //var img = new Gtk.Image.from_file("/home/alan/solarpanels.jpeg");
             
