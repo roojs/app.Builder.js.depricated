@@ -341,7 +341,7 @@ RightGtkView = new XObject({
             data.xtype = 'OffscreenWindow'
             
             var src = this.buildJS(data,withDebug);
-            return;
+            
             var x = new imports.sandbox.Context();
             x.add_globals();
             //x.get_global_object().a = "hello world";
