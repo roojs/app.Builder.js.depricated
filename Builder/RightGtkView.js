@@ -272,7 +272,7 @@ RightGtkView = new XObject({
                 
                 return;
             }
-            
+            this.get('/CodeArea').el.set_current_page(1);
             this.get('/Terminal').el.fork_command( null , [], [], "/tmp", false,false,false); 
             var cmd = "/usr/bin/seed /tmp/BuilderGtkView.js\n";
             this.get('/Terminal').el.feed_child(cmd, cmd.length);
