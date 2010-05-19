@@ -735,10 +735,10 @@ LeftTree = new XObject(
                             print("MOVENODE ACTION: " + action);
                             
                             if (action & Gdk.DragAction.MOVE) {
-                                return; // do not remove.
+                                this.el.remove(old_iter);
                                 
                             }
-                            this.el.remove(old_iter);
+                            return; // do not remove.
                             
                            
                             
