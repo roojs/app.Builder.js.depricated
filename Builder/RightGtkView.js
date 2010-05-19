@@ -79,10 +79,13 @@ RightGtkView = new XObject({
                         items: [
                             {
                                 id : 'view',
+                                xtype : Gtk.VBox,
+                                /*
                                 xtype : function() {
                                     return new Gtk.Image.from_stock (Gtk.STOCK_HOME, 100) 
 
                                 },
+                                */
                                 packing : ['add' ],
                                 ready : false,
                                 init : function() {
@@ -288,7 +291,8 @@ RightGtkView = new XObject({
             */
         },
         
-        buildJS: function(data,withDebug) {
+        buildJS: function(data,withDebug) 
+        {
             var i = [ 'Gtk', 'Gdk', 'Pango', 'GLib', 'Gio', 'GObject', 'GtkSource', 'WebKit', 'Vte' ];
             var src = "";
             i.forEach(function(e) {
@@ -338,6 +342,8 @@ RightGtkView = new XObject({
                  return; 
             }
             this.withDebug = false;
+            
+            return;
             
             
             var src = this.buildJS(data,withDebug);
@@ -486,7 +492,99 @@ RightGtkView = new XObject({
                
             
             
+        },
+        
+        buildView : function()
+        {
+            var tree =  this.get('/LeftTree.model').toJS()[0];
+            // in theory tree is actually window..
+            this.viewAdd(tree.items[0], this.get('view').el);
+            
         }
+        viewAdd : function(item, par)
+        {
+            // does something similar to xobject..
+            var pack = x.pack || 'add';
+            
+            if (item.pack===false || item.pack === 'false') {  // no ;
+                return;
+            }
+            
+            var ns = imports.gi[obj['|xns']];
+            var ctr = ns[obj['xtype']];
+            var ctr_args = { };
+            for(var k in item) {
+                var kv = item[k];
+                if (typeof(kv) == 'object' || typeof(kv) == 'function') {
+                    continue;
+                }
+                if ( 
+                    k == 'pack' ||
+                    k == 'items' ||
+                    k == 'id' ||
+                    k == 'xtype' ||
+                    k == 'xdebug' ||
+                    k == 'xns' ||
+                    k == '|xns'
+                ) {
+                    continue;
+                }
+                ctr_args[k] = kv;
+                
+            } 
+            
+            
+            var el = new ctr(ctr_args);
+            
+            
+            
+            
+            
+            
+            
+            var args = [];
+            var pack_m  = false;
+            if (typeof(item.pack) == 'string') {
+                 
+                item.pack.split(',').forEach(function(e, i) {
+                    
+                    if (e == 'false') { args.push( false); return; }
+                    if (e == 'true') {  args.push( true);  return; }
+                    if (!isNaN(parseInt(e))) { args.push( parseInt(e)); return; }
+                    args.push(e);
+                });
+                //print(args.join(","));
+                
+                pack_m = args.shift();
+            } else {
+                pack_m = item.pack.shift();
+                args = item.pack;
+            }
+            
+            // handle error.
+            if (pack_m && typeof(par[pack_m]) == 'undefined') {
+                Seed.print('pack method not available : ' + item.xtype + '.' +  pack_m);
+                return;
+            }
+            
+             
+            args.unshift(el);
+            //if (XObject.debug) print(pack_m + '[' + args.join(',') +']');
+            //Seed.print('args: ' + args.length);
+            if (pack_m) {
+                par[pack_m].apply(par, args);
+            }
+            
+            var _this = this;
+            item.forEach(function(ch) {
+                _this.viewAdd(ch, el);
+            });
+            
+            
+            
+        }
+        
+        
         
     }
     
