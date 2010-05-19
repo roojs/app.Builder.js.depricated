@@ -419,7 +419,7 @@ RightGtkView = new XObject({
                     }
                     
                     var str=  '' + obj[i];
-                    if (str.match(/\n/)) {
+                    if (str.match(/\\n/)) {
                         var lines = str.split("\n");
                         str = lines.join("\n" + pad);
                     }
