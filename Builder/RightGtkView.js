@@ -272,8 +272,9 @@ RightGtkView = new XObject({
                 
                 return;
             }
-            this.get('/Terminal').el.fork_command('seed', 
-                [ '/tmp/BuilderGtkView.js'], [], "/tmp", false,false,false);
+            
+            this.get('/Terminal').el.fork_command( null , [], [], "/tmp", false,false,false); 
+            //'/usr/bin/seed',  [ '/tmp/BuilderGtkView.js'], [], "/tmp", false,false,false);
             /*
             var _top = x.get_global_object()._top;
             
