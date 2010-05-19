@@ -338,7 +338,7 @@ RightGtkView = new XObject({
                  return; 
             }
             this.withDebug = false;
-            data.xtype = 'OffscreenWindow'
+            //data.xtype = 'OffscreenWindow'
             
             var src = this.buildJS(data,withDebug);
             
