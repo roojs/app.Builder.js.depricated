@@ -343,6 +343,18 @@ RightGtkView = new XObject({
             }
             this.withDebug = false;
             
+            if (this.renderedEl) {
+                this.get('view').el.remove(this.renderedEl);
+                this.renderedEl.destroy();
+                this.renderedEl = false;
+            }
+            
+            var tree =  this.get('/LeftTree.model').toJS()[0];
+            // in theory tree is actually window..
+            this.renderedEl = this.viewAdd(tree.items[0], this.get('view').el);
+            
+            this.get('view').el.show_all();
+            
             return;
             
             
@@ -496,22 +508,20 @@ RightGtkView = new XObject({
         
         buildView : function()
         {
-            var tree =  this.get('/LeftTree.model').toJS()[0];
-            // in theory tree is actually window..
-            this.viewAdd(tree.items[0], this.get('view').el);
             
-        }
+            
+        },
         viewAdd : function(item, par)
         {
             // does something similar to xobject..
-            var pack = x.pack || 'add';
+            item.pack = (typeof(item.pack) == 'undefined') ?  'add' : item.pack;
             
             if (item.pack===false || item.pack === 'false') {  // no ;
                 return;
             }
-            
-            var ns = imports.gi[obj['|xns']];
-            var ctr = ns[obj['xtype']];
+            print("CREATE: " + item['|xns'] + '.' + item['xtype']);
+            var ns = imports.gi[item['|xns']];
+            var ctr = ns[item['xtype']];
             var ctr_args = { };
             for(var k in item) {
                 var kv = item[k];
@@ -536,8 +546,8 @@ RightGtkView = new XObject({
             
             var el = new ctr(ctr_args);
             
-            
-            
+            print("PACK");
+            console.dump(item.pack);
             
             
             
@@ -567,7 +577,7 @@ RightGtkView = new XObject({
                 return;
             }
             
-             
+            console.dump(args);
             args.unshift(el);
             //if (XObject.debug) print(pack_m + '[' + args.join(',') +']');
             //Seed.print('args: ' + args.length);
@@ -576,11 +586,12 @@ RightGtkView = new XObject({
             }
             
             var _this = this;
-            item.forEach(function(ch) {
+            item.items = item.items || [];
+            item.items.forEach(function(ch) {
                 _this.viewAdd(ch, el);
             });
             
-            
+            return el;
             
         }
         
