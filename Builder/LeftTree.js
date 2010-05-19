@@ -735,9 +735,13 @@ LeftTree = new XObject(
                             print("MOVENODE ACTION: " + action);
                             
                             if (action & Gdk.DragAction.MOVE) {
+                                print("REMOVING OLD NODE");
                                 this.el.remove(old_iter);
                                 
                             }
+                            
+                            this.activeIter = false;
+                            this.changed(false,true);
                             return; // do not remove.
                             
                            
