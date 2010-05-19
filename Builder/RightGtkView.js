@@ -366,7 +366,7 @@ RightGtkView = new XObject({
                 _top.el.popup(null, null, null, null, 3, null);
             }
             
-            var pb = _top.el.get_pixbuf(r);
+            var pb = _top.el.get_pixmap(r);
             
             //var pb = _top.el.get_snapshot(r);
             if (!pb) {
