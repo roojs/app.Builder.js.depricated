@@ -274,7 +274,7 @@ RightGtkView = new XObject({
             }
             this.get('/Terminal').el.fork_command('seed', 
                 [ '/tmp/BuilderGtkView.js'], [], "/tmp", false,false,false);
-   
+            /*
             var _top = x.get_global_object()._top;
             
             _top.el.set_screen(Gdk.Screen.get_default()); // just in case..
@@ -282,6 +282,7 @@ RightGtkView = new XObject({
             if (_top.el.popup) {
                 _top.el.popup(null, null, null, null, 3, null);
             }
+            */
         },
         
         buildJS: function(data,withDebug) {
