@@ -391,7 +391,7 @@ RightGtkView = new XObject({
              tp.set_size_request(900,800);
              tp.add(_top.items[0].el);
              tp.set_screen(Gdk.Screen.get_default());
-             tp.show();
+             tp.show_all();
             
             
             
