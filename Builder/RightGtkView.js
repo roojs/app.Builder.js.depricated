@@ -284,6 +284,7 @@ RightGtkView = new XObject({
             });
             src += "console = imports.console;\n"; // path?!!?
             src += "XObject = imports.XObject.XObject;\n"; // path?!!?
+            src += "XObject.cache = {};\n"; // reset cache!
             if (withDebug) {
                 src += "XObject.debug=true;\n"; 
             }
