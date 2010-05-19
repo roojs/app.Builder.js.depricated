@@ -362,9 +362,8 @@ RightGtkView = new XObject({
             
             _top.el.set_screen(Gdk.Screen.get_default()); // just in case..
             //_top.el.show_all();
-            _top.items.forEach(function (i) {
-                i.el.show_all();
-            });
+            _top.items[0].el.show_all();
+            
             
             if (_top.el.popup) {
                 _top.el.popup(null, null, null, null, 3, null);
@@ -372,7 +371,7 @@ RightGtkView = new XObject({
             
             
             
-            var pb = _top.el.get_snapshot(r);
+            var pb = _top.items[0].el.get_snapshot(r);
             _top.el.hide();
             if (!pb) {
                 return;
