@@ -731,11 +731,12 @@ LeftTree = new XObject(
                             // treepath will be invalid.
                             
                             this.dropNode(target_data, node);
-                            if (action & Gdk.DragAction.COPY) {
-                                return; // do not remove..
+                            if (ctx.actions & Gdk.DragAction.MOVE) {
+                                this.el.remove(old_iter);
+                                
                             }
-                            
-                            this.el.remove(old_iter);
+                            return; // do not remove..
+                           
                             
                             
                         },
