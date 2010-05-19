@@ -3,7 +3,7 @@ Gio = imports.gi.Gio;
 Gtk = imports.gi.Gtk;
 Gdk = imports.gi.Gdk;
 GObject = imports.gi.GObject;
- 
+ GLib= imports.gi.GLib;
 
 /**
 * we use a hidden window to render the created dialog...
