@@ -1,6 +1,7 @@
 //<Script type="text/javascript">
 
 Gtk = imports.gi.Gtk;
+Vte= imports.gi.Vte;
 // core libs
 XObject = imports.XObject.XObject;
 console = imports.console;
