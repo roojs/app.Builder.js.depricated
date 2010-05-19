@@ -349,9 +349,9 @@ RightGtkView = new XObject({
                 Seed.check_syntax('var e = ' + src);
                 x.eval(src);
             } catch( e) {
-                if (!withDebug) {
-                   return this.renderJS(data,true);
-                }
+                //if (!withDebug) {
+                //   return this.renderJS(data,true);
+               // }
                 print(e.message || e.toString());
                 console.dump(e);
                 return;
