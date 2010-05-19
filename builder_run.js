@@ -11,7 +11,7 @@ ProjectManager.loadConfig();
      
 Seed.print('done import window');
 
-Gtk.init(0, null);
+Gtk.init(Seed.argv)
 
 Window.init();
  
