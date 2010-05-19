@@ -365,7 +365,7 @@ RightGtkView = new XObject({
              var tp = new Gtk.OffscreenWindow();
            
             var _this = this;
-            tp.signal.how.connect(function() {
+            tp.signal.show.connect(function() {
                 
                 var pb = tp.get_pixmap();
                 print("GOT PIXMAP" + pb);
@@ -379,7 +379,7 @@ RightGtkView = new XObject({
             _top.el.remove(_top.items[0].el);
              tp.add(_top.items[0].el);
              tp.set_screen();
-             //tp.show_all();
+             tp.show_all();
             
             
             
