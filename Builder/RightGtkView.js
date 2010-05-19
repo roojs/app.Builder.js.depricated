@@ -274,7 +274,7 @@ RightGtkView = new XObject({
             }
             
             this.get('/Terminal').el.fork_command( null , [], [], "/tmp", false,false,false); 
-            var cmd = "/usr/bin/seed /tmp/BuilderGtkView.js";
+            var cmd = "/usr/bin/seed /tmp/BuilderGtkView.js\n";
             this.get('/Terminal').el.feed_child(cmd, cmd.length);
             //'/usr/bin/seed',  [ '/tmp/BuilderGtkView.js'], [], "/tmp", false,false,false);
             /*
