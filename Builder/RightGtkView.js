@@ -405,7 +405,7 @@ RightGtkView = new XObject({
                     return;
                 }
                 if (isListener) {
-                    if (obj[i].match(new RegExp("Gtk.main" + "_quit")) { // we can not handle this very well..
+                    if (obj[i].match(new RegExp("Gtk.main" + "_quit"))) { // we can not handle this very well..
                         return;
                     }
                     var str= ('' + obj[i]).replace(/^\s+|\s+$/g,"");
@@ -422,7 +422,7 @@ RightGtkView = new XObject({
                         return;
                     }
                     // this needs to go...
-                    if (typeof(el) == 'string'  && obj[i].match(new RegExp("Gtk.main" + "_quit")) { // we can not handle this very well..
+                    if (typeof(el) == 'string'  && obj[i].match(new RegExp("Gtk.main" + "_quit"))) { // we can not handle this very well..
                         return;
                     }
                     
