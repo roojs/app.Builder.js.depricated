@@ -417,7 +417,14 @@ RightGtkView = new XObject({
                     if (typeof(el) == 'string'  && obj[i].match(/Gtk.main_quit/)) { // we can not handle this very well..
                         return;
                     }
-                    els.push(JSON.stringify(i.substring(1)) + ":" + obj[i]);
+                    
+                    var str=  '' + obj[i];
+                    if (str.match(/\n/)) {
+                        var lines = str.split("\n");
+                        str = lines.join("\n" + pad);
+                    }
+                    
+                    els.push(JSON.stringify(i.substring(1)) + ":" + str);
                     return;
                 }
                 var left = isArray ? '' : (JSON.stringify(i) + " : " )
