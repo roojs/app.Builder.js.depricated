@@ -362,11 +362,11 @@ RightGtkView = new XObject({
             
             _top.el.set_screen(Gdk.Screen.get_default()); // just in case..
             //_top.el.show_all();
-            _top.items[0].el.show_all();
             
+            _top.el.remove(_top.items[0].el);
             tp = new Gtk.OffscreenWindow();
             tp.add(_top.items[0].el);
-            
+            _top.items[0].el.show_all();
             var pb = tp.get_pixmap();
             return;
             if (_top.el.popup) {
