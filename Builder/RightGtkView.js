@@ -441,6 +441,7 @@ RightGtkView = new XObject({
                 }
                 els.push(JSON.stringify(i) + ":" + JSON.stringify(obj[i]));
             });
+            var spad = pad.substring(0, pad.length-4);
             return (isArray ? '[' : '{') + "\n" +
                 pad  + els.join(",\n" + pad ) + 
                 "\n" + pad + (isArray ? ']' : '}');
