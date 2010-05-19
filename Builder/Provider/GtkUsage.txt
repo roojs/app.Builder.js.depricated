@@ -91,7 +91,8 @@ right:
 	Gtk.FileChooserWidget
 	Gtk.FontButton 
 	GtkSource.View
-
+	WebKit.WebView
+	
 left:
 	Gtk.MenuBar
 	Gtk.Menu
