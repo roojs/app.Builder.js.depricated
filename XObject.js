@@ -598,7 +598,7 @@ XObject.extend(XObject,
     createDelegate : function(method, obj, args, appendArgs){
         
         return function() {
-            if (XObject.debug) print("CALL: " + method.name);
+            if (XObject.debug) print("CALL: " + obj.id + ':'+ method.id);
             
             var callArgs = args || arguments;
             if(appendArgs === true){
