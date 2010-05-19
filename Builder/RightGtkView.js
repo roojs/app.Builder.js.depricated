@@ -360,19 +360,19 @@ RightGtkView = new XObject({
             var r = new Gdk.Rectangle();
             var _top = x.get_global_object()._top;
             
-            _top.el.set_screen(Gdk.Screen.get_default()); // just in case..
+            //_top.el.set_screen(Gdk.Screen.get_default()); // just in case..
             _top.el.show_all();
             if (_top.el.popup) {
                 _top.el.popup(null, null, null, null, 3, null);
             }
             
+            var pb = _top.el.get_pixbuf(r);
             
-            
-            var pb = _top.el.get_snapshot(r);
+            //var pb = _top.el.get_snapshot(r);
             if (!pb) {
                 return;
             }
-            _top.el.hide();
+            //_top.el.hide();
             _top.el.destroy();
             x._top = false;
             var Window = imports.Builder.Window.Window;
@@ -397,7 +397,7 @@ RightGtkView = new XObject({
         },
         mungeToString:  function(obj, isListener, pad)
         {
-            pad = pad || '';
+            pad = pad || '    ';
             var keys = [];
             var isArray = false;
             isListener = isListener || false;
