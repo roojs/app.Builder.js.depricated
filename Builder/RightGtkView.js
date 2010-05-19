@@ -360,45 +360,9 @@ RightGtkView = new XObject({
             var r = new Gdk.Rectangle();
             var _top = x.get_global_object()._top;
             
-            //_top.el.set_screen(Gdk.Screen.get_default()); // just in case..
-            //_top.el.show_all();
-             var tp = new Gtk.OffscreenWindow();
-           
-            var _this = this;
-            tp.signal.show.connect(function() {
-                
-                var pb = tp.get_snapshot(r);
-                var Window = imports.Builder.Window.Window;
-                var gc = new Gdk.GC.c_new(Window.el.window);
-                    
-                    // 10 points all round..
-                var full = new Gdk.Pixmap.c_new (Window.el.window, r.width+20, r.height+20, pb.get_depth());
-                // draw a white background..
-               // gc.set_rgb_fg_color({ red: 0, white: 0, black : 0 });
-                Gdk.draw_rectangle(full, gc, true, 0, 0, r.width+20, r.height+20);
-                // paint image..
-                Gdk.draw_drawable (full, gc, pb, 0, 0, 10, 10, r.width, r.height);
-                // boxes..
-                //gc.set_rgb_fg_color({ red: 255, white: 255, black : 255 });
-                Gdk.draw_rectangle(full, gc, true, 0, 0, 10, 10);
-                _this.get('view').el.set_from_pixmap(full, null);
-                    
-                return true;
-                
-            });
-            
-            _top.el.remove(_top.items[0].el);
-             tp.set_size_request(900,800);
-             tp.add(_top.items[0].el);
-             tp.set_screen(Gdk.Screen.get_default());
-             tp.show_all();
-            
-            
-            
-            
-            //tp.show_all();
-            return;
-            //var pb = tp.get_pixmap();
+            _top.el.set_screen(Gdk.Screen.get_default()); // just in case..
+            _top.el.show_all();
+              
             
             if (_top.el.popup) {
                 _top.el.popup(null, null, null, null, 3, null);
