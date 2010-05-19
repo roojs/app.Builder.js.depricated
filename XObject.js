@@ -302,7 +302,7 @@ XObject.prototype = {
     {
  
         if (XObject.debug) Seed.print("Add signal " + sig);
-        fn.name = this.id + ":signal:"+sig;
+        fn.id= sig;
         var _li = XObject.createDelegate(fn,this);
         // private listeners that are not copied to GTk.
         
