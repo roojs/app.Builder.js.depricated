@@ -357,7 +357,7 @@ RightGtkView = new XObject({
                 return;
             }
             
-            var r = new Gdk.Rectangle();
+            //var r = new Gdk.Rectangle();
             var _top = x.get_global_object()._top;
             
             //_top.el.set_screen(Gdk.Screen.get_default()); // just in case..
@@ -366,8 +366,8 @@ RightGtkView = new XObject({
                 _top.el.popup(null, null, null, null, 3, null);
             }
             
-            var pb = _top.el.get_pixmap(r);
-            
+            var pb = _top.el.get_pixmap();
+            var r = pb.get_size();
             //var pb = _top.el.get_snapshot(r);
             if (!pb) {
                 return;
