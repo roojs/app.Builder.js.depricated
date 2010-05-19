@@ -249,17 +249,22 @@ RightGtkView = new XObject({
                 x.eval(src);
             } catch( e) {
                 print(e.message || e.toString());
-                console.dump(e);
+                console.dump(e)
+                //this.get('/Terminal').feed(e.message || e.toString() + "\n");
+                //this.get('/Terminal').feed(console._dump(e)+"\n");
                 if (e.line) {
                     var lines = src.split("\n");
                     var start = Math.max(0, e.line - 10);
                     var end = Math.min(lines.length, e.line + 10);
                     for (var i =start ; i < end; i++) {
                         if (i == e.line) {
+                          //  this.get('/Terminal').feed(">>>>>" + lines[i] + "\n");
+                            
                             print(">>>>>" + lines[i]);
                             continue;
                         }
                         print(lines[i]);
+                        //this.get('/Terminal').feed(lines[i] + "\n");
                     }
                     
                 }
