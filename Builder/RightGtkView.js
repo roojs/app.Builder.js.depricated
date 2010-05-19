@@ -341,6 +341,7 @@ RightGtkView = new XObject({
             data.xtype = 'OffscreenWindow'
             
             var src = this.buildJS(data,withDebug);
+            return;
             var x = new imports.sandbox.Context();
             x.add_globals();
             //x.get_global_object().a = "hello world";
@@ -356,6 +357,7 @@ RightGtkView = new XObject({
                 console.dump(e);
                 return;
             }
+            
             
             //var r = new Gdk.Rectangle();
             var _top = x.get_global_object()._top;
