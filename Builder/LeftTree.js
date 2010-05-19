@@ -230,8 +230,9 @@ LeftTree = new XObject(
                         }
                         var action = Gdk.DragAction.COPY;
                         if (src == this.el) {
+                            ctx.actions
                             // unless we are copying!!! ctl button..
-                            action = Gdk.DragAction.MOVE;
+                            action = ctx.actions & Gdk.DragAction.COPY ? Gdk.DragAction.COPY : Gdk.DragAction.MOVE;
                         }
                         var data = {};
                         print("GETTING POS");
