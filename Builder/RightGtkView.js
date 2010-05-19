@@ -377,13 +377,14 @@ RightGtkView = new XObject({
             //_top.el.hide();
             
             var Window = imports.Builder.Window.Window;
-            
+            print("new gc");
             
             var gc = new Gdk.GC.c_new(Window.el.window);
             
                 // 10 points all round..
             var full = new Gdk.Pixmap.c_new (Window.el.window, r.width+20, r.height+20, pb.get_depth());
             // draw a white background..
+            print("draw rect");
            // gc.set_rgb_fg_color({ red: 0, white: 0, black : 0 });
             Gdk.draw_rectangle(full, gc, true, 0, 0, r.width+20, r.height+20);
             // paint image..
@@ -391,9 +392,9 @@ RightGtkView = new XObject({
             // boxes..
             //gc.set_rgb_fg_color({ red: 255, white: 255, black : 255 });
             Gdk.draw_rectangle(full, gc, true, 0, 0, 10, 10);
-            
+            print("show it.");
             this.get('view').el.set_from_pixmap(full, null);
-            
+            print("destroy.");
             _top.el.destroy();
             x._top = false;
             //this.get('view-vbox').el.set_size_request( r.width+20, r.height+20);
