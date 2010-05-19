@@ -367,11 +367,22 @@ RightGtkView = new XObject({
             var _this = this;
             tp.signal.show.connect(function() {
                 
-                var pb = tp.get_pixmap();
-                print("GOT PIXMAP" + pb);
-                console.dump(pb.get_size());
-                _this.get('view').el.set_from_pixmap(pb, null);
-                
+                var pb = tp.get_snapshot(r);
+                var Window = imports.Builder.Window.Window;
+                var gc = new Gdk.GC.c_new(Window.el.window);
+                    
+                    // 10 points all round..
+                var full = new Gdk.Pixmap.c_new (Window.el.window, r.width+20, r.height+20, pb.get_depth());
+                // draw a white background..
+               // gc.set_rgb_fg_color({ red: 0, white: 0, black : 0 });
+                Gdk.draw_rectangle(full, gc, true, 0, 0, r.width+20, r.height+20);
+                // paint image..
+                Gdk.draw_drawable (full, gc, pb, 0, 0, 10, 10, r.width, r.height);
+                // boxes..
+                //gc.set_rgb_fg_color({ red: 255, white: 255, black : 255 });
+                Gdk.draw_rectangle(full, gc, true, 0, 0, 10, 10);
+                _this.get('view').el.set_from_pixmap(full, null);
+                    
                 return true;
                 
             });
