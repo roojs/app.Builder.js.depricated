@@ -316,7 +316,7 @@ RightGtkView = new XObject({
             src += '_top=new XObject('+ this.mungeToString(data) + ')\n;';
             src += '_top.init();\n';
             if (withDebug) {
-                src += "_top.show_all();\n"; 
+                src += "_top.el.show_all();\n"; 
                 src += "Gtk.main();\n"; 
             }
             File.write('/tmp/BuilderGtkView.js', src);
