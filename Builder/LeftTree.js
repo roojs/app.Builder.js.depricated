@@ -230,7 +230,7 @@ LeftTree = new XObject(
                         }
                         var action = Gdk.DragAction.COPY;
                         if (src == this.el) {
-                            ctx.actions
+                             
                             // unless we are copying!!! ctl button..
                             action = ctx.actions & Gdk.DragAction.COPY ? Gdk.DragAction.COPY : Gdk.DragAction.MOVE;
                         }
