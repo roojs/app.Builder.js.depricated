@@ -140,4 +140,7 @@ left:
 	Gtk.ComboBox
 right:	
 	Gtk.CellRendererText
-	
+left:
+	Gtk.Button
+right:
+	Gtk.Image
