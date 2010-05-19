@@ -362,6 +362,10 @@ RightGtkView = new XObject({
             
             _top.el.set_screen(Gdk.Screen.get_default()); // just in case..
             //_top.el.show_all();
+            _top.items.forEach(function (i) {
+                i.el.show_all();
+            });
+            
             if (_top.el.popup) {
                 _top.el.popup(null, null, null, null, 3, null);
             }
