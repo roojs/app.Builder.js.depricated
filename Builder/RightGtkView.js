@@ -338,10 +338,9 @@ RightGtkView = new XObject({
                  return; 
             }
             this.withDebug = false;
-            //data.xtype = 'OffscreenWindow'
+            
             
             var src = this.buildJS(data,withDebug);
-            
             var x = new imports.sandbox.Context();
             x.add_globals();
             //x.get_global_object().a = "hello world";
@@ -358,38 +357,30 @@ RightGtkView = new XObject({
                 return;
             }
             
-            
-            //var r = new Gdk.Rectangle();
+            var r = new Gdk.Rectangle();
             var _top = x.get_global_object()._top;
             
-            //_top.el.set_screen(Gdk.Screen.get_default()); // just in case..
+            _top.el.set_screen(Gdk.Screen.get_default()); // just in case..
             _top.el.show_all();
             if (_top.el.popup) {
                 _top.el.popup(null, null, null, null, 3, null);
             }
             
-            var pb = _top.el.get_pixbuf();  
             
             
-          
-            //var pb = _top.el.get_snapshot(r);
+            var pb = _top.el.get_snapshot(r);
             if (!pb) {
                 return;
             }
-            var pb = pb.copy();
-            this.get('view').el.set_from_pixbuf(pb);
-            return;
-            //_top.el.hide();
-            
+            _top.el.hide();
+            _top.el.destroy();
+            x._top = false;
             var Window = imports.Builder.Window.Window;
-            print("new gc");
-            
             var gc = new Gdk.GC.c_new(Window.el.window);
-            
+                
                 // 10 points all round..
             var full = new Gdk.Pixmap.c_new (Window.el.window, r.width+20, r.height+20, pb.get_depth());
             // draw a white background..
-            print("draw rect");
            // gc.set_rgb_fg_color({ red: 0, white: 0, black : 0 });
             Gdk.draw_rectangle(full, gc, true, 0, 0, r.width+20, r.height+20);
             // paint image..
@@ -397,11 +388,7 @@ RightGtkView = new XObject({
             // boxes..
             //gc.set_rgb_fg_color({ red: 255, white: 255, black : 255 });
             Gdk.draw_rectangle(full, gc, true, 0, 0, 10, 10);
-            print("show it.");
             this.get('view').el.set_from_pixmap(full, null);
-            print("destroy.");
-            _top.el.destroy();
-            x._top = false;
             //this.get('view-vbox').el.set_size_request( r.width+20, r.height+20);
             //var img = new Gtk.Image.from_file("/home/alan/solarpanels.jpeg");
             
@@ -410,7 +397,7 @@ RightGtkView = new XObject({
         },
         mungeToString:  function(obj, isListener, pad)
         {
-            pad = pad || '    ';
+            pad = pad || '';
             var keys = [];
             var isArray = false;
             isListener = isListener || false;
