@@ -364,12 +364,14 @@ RightGtkView = new XObject({
             
             
         },
-        mungeToString:  function(obj, isListener)
+        mungeToString:  function(obj, isListener, pad)
         {
+            pad = pad|| '';
             var keys = [];
             var isArray = false;
             isListener = isListener || false;
             
+            // am I munging a object or array...
             if (obj.constructor.toString() === Array.toString()) {
                 for (var i= 0; i < obj.length; i++) {
                     keys.push(i);
@@ -380,7 +382,9 @@ RightGtkView = new XObject({
                     keys.push(i);
                 }
             }
-            var els = [];
+            
+            
+            var els = []; 
             var skip = [];
             if (!isArray && 
                     typeof(obj['|xns']) != 'undefined' &&
@@ -418,17 +422,15 @@ RightGtkView = new XObject({
                 }
                 var left = isArray ? '' : (JSON.stringify(i) + " : " )
                 if (typeof(el) == 'object') {
-                    els.push(left + _this.mungeToString(el, i == 'listeners'));
+                    els.push(left + _this.mungeToString(el, i == 'listeners', pad + '    '));
                     return;
                 }
                 els.push(JSON.stringify(i) + ":" + JSON.stringify(obj[i]));
             });
             return (isArray ? '[' : '{') + 
-                els.join(', ') +
+                pad  + els.join(",\n" + pad ) +
                 (isArray ? ']' : '}');
                
-                
-             
             
             
         }
