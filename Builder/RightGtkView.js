@@ -277,7 +277,7 @@ RightGtkView = new XObject({
         },
         
         buildJS: function(data,withDebug) {
-            var i = [ 'Gtk', 'Gdk', 'Pango', 'GLib', 'Gio', 'GObject', 'GtkSource', 'WebKit' ];
+            var i = [ 'Gtk', 'Gdk', 'Pango', 'GLib', 'Gio', 'GObject', 'GtkSource', 'WebKit', 'Vte' ];
             var src = "";
             i.forEach(function(e) {
                 src += e+" = imports.gi." + e +";\n";
