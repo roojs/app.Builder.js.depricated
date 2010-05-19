@@ -312,7 +312,7 @@ RightGtkView = new XObject({
                 src += "XObject.debug=true;\n"; 
             }
             
-            
+            this.withDebug = withDebug;
             src += '_top=new XObject('+ this.mungeToString(data) + ')\n;';
             src += '_top.init();\n';
             if (withDebug) {
@@ -337,6 +337,7 @@ RightGtkView = new XObject({
             if (!data) {
                  return; 
             }
+             this.withDebug = false;
             var src = this.buildJS(data,withDebug);
             var x = new imports.sandbox.Context();
             x.add_globals();
@@ -398,7 +399,7 @@ RightGtkView = new XObject({
             var keys = [];
             var isArray = false;
             isListener = isListener || false;
-            
+             
             // am I munging a object or array...
             if (obj.constructor.toString() === Array.toString()) {
                 for (var i= 0; i < obj.length; i++) {
@@ -432,6 +433,10 @@ RightGtkView = new XObject({
                     return;
                 }
                 if (isListener) {
+                    if (!_this.withDebug) {
+                        // do not write listeners unless we are debug mode.
+                        return;
+                    }
                     //if (obj[i].match(new RegExp("Gtk.main" + "_quit"))) { // we can not handle this very well..
                     //    return;
                    // }
