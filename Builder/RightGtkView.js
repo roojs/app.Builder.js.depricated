@@ -376,6 +376,7 @@ RightGtkView = new XObject({
             if (!pb) {
                 return;
             }
+            var pb = pb.copy();
             this.get('view').el.set_from_pixbuf(pb);
             return;
             //_top.el.hide();
