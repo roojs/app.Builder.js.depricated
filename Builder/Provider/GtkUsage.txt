@@ -92,6 +92,8 @@ right:
 	Gtk.FontButton 
 	GtkSource.View
 	WebKit.WebView
+	Vte.Terminal
+	
 	
 left:
 	Gtk.MenuBar
