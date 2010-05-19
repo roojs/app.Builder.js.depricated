@@ -405,7 +405,7 @@ RightGtkView = new XObject({
                     if (obj[i].match(/Gtk.main_quit/)) { // we can not handle this very well..
                         return;
                     }
-                    var str= '' + obj[i];
+                    var str= '' + obj[i].trim();
                     var lines = str.split("\n");
                     if (lines.length > 1) {
                         str = lines.join("\n" + pad);
@@ -423,7 +423,7 @@ RightGtkView = new XObject({
                         return;
                     }
                     
-                    var str= '' + obj[i];
+                    var str= '' + obj[i];.trim()
                     var lines = str.split("\n");
                     if (lines.length > 1) {
                         str = lines.join("\n" + pad);
