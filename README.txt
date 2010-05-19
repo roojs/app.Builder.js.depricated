@@ -30,7 +30,7 @@ Where it is..
 TODO
 * change sourceview to use spaces rather than tabs.
 * Icon-size (should be an enum...??)
-* stock - should be a list of stock icons..
+* (Image|....??? ).stock - should be a list of stock icons..
 * fix pulldowns for types.. - it's a bit hap hazard with the delayed / loading of settings.
 * packing - gather from methods to find out which match.. (including false)
 * order of palete needs fixing.
