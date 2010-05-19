@@ -888,7 +888,7 @@ LeftTree = new XObject(
                           */
                         toJS: function(iter, with_id)
                         {
-                            Seed.print("WITHID: "+ with_id);
+                            //Seed.print("WITHID: "+ with_id);
                             
                             var first = false;
                             if (!iter) {
