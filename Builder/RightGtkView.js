@@ -370,7 +370,7 @@ RightGtkView = new XObject({
                 var pb = tp.get_pixmap();
                 print("GOT PIXMAP");
                 _this.get('view').el.set_from_pixmap(pb, null);
-                
+                return true;
                 
             });
             
