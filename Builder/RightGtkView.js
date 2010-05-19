@@ -364,10 +364,14 @@ RightGtkView = new XObject({
             //_top.el.show_all();
              var tp = new Gtk.OffscreenWindow();
            
+            var _this = this;
             tp.signal.damage_event.connect(function() {
                 
                 var pb = tp.get_pixmap();
                 print("GOT PIXMAP");
+                _this.get('view').el.set_from_pixmap(pb, null);
+                
+                
             });
             
             _top.el.remove(_top.items[0].el);
