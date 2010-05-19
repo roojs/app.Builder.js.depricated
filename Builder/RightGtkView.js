@@ -366,7 +366,7 @@ RightGtkView = new XObject({
         },
         mungeToString:  function(obj, isListener, pad)
         {
-            pad = pad|| '';
+            pad = pad || '';
             var keys = [];
             var isArray = false;
             isListener = isListener || false;
@@ -405,7 +405,12 @@ RightGtkView = new XObject({
                     if (obj[i].match(/Gtk.main_quit/)) { // we can not handle this very well..
                         return;
                     }
-                    els.push(JSON.stringify(i) + ":" + obj[i]);
+                    var str= '' + obj[i];
+                    var lines = str.split("\n");
+                    if (lines.length > 1) {
+                        str = lines.join("\n" + pad);
+                    }
+                    els.push(JSON.stringify(i) + ":" + str);
                     return;
                 }
                 if (i[0] == '|') {
