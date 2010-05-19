@@ -428,6 +428,8 @@ LeftPanel = new XObject({
                             var type = this.getType(this.el.get_path(iter).to_string());
                             //print("TYPE: " +type + " -  val:" + val);
                             switch(type.toLowerCase()) {
+                                case 'double':
+                                case 'float':
                                 case 'number':
                                 case 'uint':
                                 case 'int':
