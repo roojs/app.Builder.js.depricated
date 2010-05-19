@@ -369,13 +369,13 @@ RightGtkView = new XObject({
             
             
             
-            tp.show_all();
+            
             tp.signals.damage_event.connect(function() {
                 
                 var pb = tp.get_pixmap();
                 print("GOT PIXMAP");
             });
-            
+            tp.show_all();
             //var pb = tp.get_pixmap();
             
             if (_top.el.popup) {
