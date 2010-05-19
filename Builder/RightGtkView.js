@@ -368,14 +368,16 @@ RightGtkView = new XObject({
                 _top.el.popup(null, null, null, null, 3, null);
             }
             
-            var pb = _top.el.get_pixmap();
-            var r = { }; 
-            pb.get_size(r);
-            console.dump(r);
+            var pb = _top.el.get_pixbuf();  
+            
+            
+          
             //var pb = _top.el.get_snapshot(r);
             if (!pb) {
                 return;
             }
+            this.get('view').el.set_from_pixbuf(pb);
+            return;
             //_top.el.hide();
             
             var Window = imports.Builder.Window.Window;
