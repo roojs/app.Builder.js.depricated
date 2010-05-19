@@ -731,6 +731,9 @@ LeftTree = new XObject(
                             // treepath will be invalid.
                             
                             this.dropNode(target_data, node);
+                            
+                            print("MOVENODE ACTION: " + action);
+                            
                             if (action & Gdk.DragAction.MOVE) {
                                 this.el.remove(old_iter);
                                 
