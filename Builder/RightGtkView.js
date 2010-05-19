@@ -274,7 +274,9 @@ RightGtkView = new XObject({
                 
                 return;
             }
-             
+            //this.get('/Terminal').el.fork_command('seed', 
+                //[ '/tmp/BuilderGtkView.js'], [], "/tmp", false,false,false);
+   
             var _top = x.get_global_object()._top;
             
             _top.el.set_screen(Gdk.Screen.get_default()); // just in case..
