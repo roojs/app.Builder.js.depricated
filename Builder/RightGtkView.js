@@ -365,7 +365,7 @@ RightGtkView = new XObject({
              var tp = new Gtk.OffscreenWindow();
            
             var _this = this;
-            tp.signal.damage_event.connect(function() {
+            tp.signal.expose_event.connect(function() {
                 
                 var pb = tp.get_pixmap();
                 print("GOT PIXMAP" + pb);
