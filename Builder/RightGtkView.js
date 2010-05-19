@@ -376,6 +376,7 @@ RightGtkView = new XObject({
                 print("GOT PIXMAP");
             });
             tp.show_all();
+            return;
             //var pb = tp.get_pixmap();
             
             if (_top.el.popup) {
