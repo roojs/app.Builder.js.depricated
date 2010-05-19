@@ -39,6 +39,7 @@ left:
 	Gtk.Frame
 	Gtk.ScrolledWindow
 	Gtk.ToolItem
+	Gtk.Viewport
 	
 right:	 
 	Gtk.Alignment 
@@ -144,3 +145,8 @@ left:
 	Gtk.Button
 right:
 	Gtk.Image
+	
+left:
+	Gtk.ScrolledWindow
+right: 
+	Gtk.Viewport
