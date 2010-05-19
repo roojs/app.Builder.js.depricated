@@ -241,6 +241,9 @@ RightGtkView = new XObject({
             
             var src= this.buildJS(this.get('/LeftTree.model').toJS()[0], true);
             
+            
+            
+            
             var x = new imports.sandbox.Context();
             x.add_globals();
             //print(src);
@@ -250,21 +253,21 @@ RightGtkView = new XObject({
             } catch( e) {
                 print(e.message || e.toString());
                 console.dump(e)
-                //this.get('/Terminal').feed(e.message || e.toString() + "\n");
-                //this.get('/Terminal').feed(console._dump(e)+"\n");
+                //this.get('/Terminal').el.feed(e.message || e.toString() + "\n");
+                //this.get('/Terminal').el.feed(console._dump(e)+"\n");
                 if (e.line) {
                     var lines = src.split("\n");
                     var start = Math.max(0, e.line - 10);
                     var end = Math.min(lines.length, e.line + 10);
                     for (var i =start ; i < end; i++) {
                         if (i == e.line) {
-                          //  this.get('/Terminal').feed(">>>>>" + lines[i] + "\n");
+                          //  this.get('/Terminal').el.feed(">>>>>" + lines[i] + "\n");
                             
                             print(">>>>>" + lines[i]);
                             continue;
                         }
                         print(lines[i]);
-                        //this.get('/Terminal').feed(lines[i] + "\n");
+                        //this.get('/Terminal').el.feed(lines[i] + "\n");
                     }
                     
                 }
@@ -287,9 +290,13 @@ RightGtkView = new XObject({
             i.forEach(function(e) {
                 src += e+" = imports.gi." + e +";\n";
             });
+            
             src += "console = imports.console;\n"; // path?!!?
             src += "XObject = imports.XObject.XObject;\n"; // path?!!?
             src += "XObject.cache = {};\n"; // reset cache!
+            if (withDebug) {
+             //   src += "Gtk.init(null,null);\n"; 
+            }
             if (withDebug) {
                 src += "XObject.debug=true;\n"; 
             }
@@ -297,6 +304,10 @@ RightGtkView = new XObject({
             
             src += '_top=new XObject('+ this.mungeToString(data) + ')\n;';
             src += '_top.init();\n';
+            if (withDebug) {
+                src += "_top.show_all();\n"; 
+                src += "Gtk.main();\n"; 
+            }
             File.write('/tmp/BuilderGtkView.js', src);
             print("Test code  in /tmp/BuilderGtkView.js");
             this.lastSrc = src;
