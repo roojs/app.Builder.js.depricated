@@ -237,10 +237,10 @@ RightGtkView = new XObject({
         
         showInWindow: function ()
         {
-            var src= this.lastSrc;
-            if (!this.lastSrc.length) {
-                return;
-            }
+            
+            
+            var src= this.buildJS(this.get('/LeftTree.model').toJS()[0], true);
+            
             var x = new imports.sandbox.Context();
             x.add_globals();
             //print(src);
