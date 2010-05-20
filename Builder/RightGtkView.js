@@ -633,8 +633,7 @@ RightGtkView = new XObject({
         
         
         
-    },
-   
+    } 
     
     
 );
