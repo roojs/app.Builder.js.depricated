@@ -604,10 +604,10 @@ RightGtkView = new XObject({
             try {
                 
                    
-                el.signal.expose_event.connect(XObject.createDelegate(this.widgetExposeEvent, this, [ item  ]));
-                el.signal.drag_motion.connect(XObject.createDelegate(this.widgetDragMotionEvent, this,  [ item ]));
-                el.signal.drag_drop.connect(XObject.createDelegate(this.widgetDragDropEvent, this,   [ item ]));
-                el.signal.button_press_event.connect(XObject.createDelegate(this.widgetPressEvent, this, [ item ] ));
+                el.signal.expose_event.connect(XObject.createDelegate(this.widgetExposeEvent, this, false, [ item  ]));
+                el.signal.drag_motion.connect(XObject.createDelegate(this.widgetDragMotionEvent, this,false,  [ item ]));
+                el.signal.drag_drop.connect(XObject.createDelegate(this.widgetDragDropEvent, this, false,  [ item ]));
+                el.signal.button_press_event.connect(XObject.createDelegate(this.widgetPressEvent, this, false,[ item ] ));
             } catch(e) {
                 // ignore!
                }
