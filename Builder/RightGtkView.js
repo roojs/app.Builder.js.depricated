@@ -604,14 +604,16 @@ RightGtkView = new XObject({
             print ("GTYPE: " + el.prototype.gtype);
            
             
-            if (!el.signal.expose_event) {
-                return el;
+            try {
+                
+                   
+                el.signal.expose_event.connect(XObject.createDelegate(this.widgetExposeEvent, this));
+                el.signal.drag_motion.connect(XObject.createDelegate(this.widgetDragMotionEvent, this));
+                el.signal.drag_drop.connect(XObject.createDelegate(this.widgetDragDropEvent, this));
+                el.signal.button_press_event.connect(XObject.createDelegate(this.widgetPressEvent, this));
+            } catch(e) {
+                // ignore!
                }
-            el.signal.expose_event.connect(XObject.createDelegate(this.widgetExposeEvent, this));
-            el.signal.drag_motion.connect(XObject.createDelegate(this.widgetDragMotionEvent, this));
-            el.signal.drag_drop.connect(XObject.createDelegate(this.widgetDragDropEvent, this));
-            el.signal.button_press_event.connect(XObject.createDelegate(this.widgetPressEvent, this));
-            
             
             
             
