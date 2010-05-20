@@ -598,6 +598,9 @@ RightGtkView = new XObject({
             
             
             // add the signal handlers.
+            // is it a widget!?!!?
+            
+            print(el.g_type_instance);
             if (!el.signal.expose_event) {
                 return el;
                }
