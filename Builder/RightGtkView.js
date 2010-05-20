@@ -601,7 +601,7 @@ RightGtkView = new XObject({
             // is it a widget!?!!?
             
             
-            print (el.prototype.gtype);
+            print ("GTYPE: " + el.prototype.gtype);
            
             
             if (!el.signal.expose_event) {
