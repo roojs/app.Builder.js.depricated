@@ -604,10 +604,10 @@ RightGtkView = new XObject({
             try {
                 
                    
-                el.signal.expose_event.connect(XObject.createDelegate(this.widgetExposeEvent, this));
-                el.signal.drag_motion.connect(XObject.createDelegate(this.widgetDragMotionEvent, this));
-                el.signal.drag_drop.connect(XObject.createDelegate(this.widgetDragDropEvent, this));
-                el.signal.button_press_event.connect(XObject.createDelegate(this.widgetPressEvent, this));
+                el.signal.expose_event.connect(XObject.createDelegate(this.widgetExposeEvent, this, [ item ] ));
+                el.signal.drag_motion.connect(XObject.createDelegate(this.widgetDragMotionEvent, this, [ item ]));
+                el.signal.drag_drop.connect(XObject.createDelegate(this.widgetDragDropEvent, this, [ item ]));
+                el.signal.button_press_event.connect(XObject.createDelegate(this.widgetPressEvent, this, [ item ]));
             } catch(e) {
                 // ignore!
                }
@@ -632,9 +632,9 @@ RightGtkView = new XObject({
             print("WIDGET DRAGDROP"); 
             return true;
         },
-        widgetPressEvent : function(el)
+        widgetPressEvent : function(w,e,d)
         {
-            print("WIDGET PRESs" + el.xtreepath); 
+            print("WIDGET PRESs" + d.xtreepath); 
             return false;
         }
         
