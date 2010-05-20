@@ -632,7 +632,7 @@ RightGtkView = new XObject({
             print("WIDGET DRAGDROP"); 
             return true;
         },
-        widgetPressEvent : function(w,e,d)
+        widgetPressEvent : function(w,e,u,d)
         {
             print("WIDGET PRESs" ); 
             
