@@ -634,10 +634,8 @@ RightGtkView = new XObject({
         },
         widgetPressEvent : function(w,e,u,d)
         {
-            print("WIDGET PRESs" ); 
+            print("WIDGET PRESs" + d.xtreepath ); 
             
-            
-            console.dump(d);
             return false;
         }
         
