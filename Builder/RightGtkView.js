@@ -598,7 +598,9 @@ RightGtkView = new XObject({
             
             
             // add the signal handlers.
-            
+            if (!el.signal.expose_event) {
+                return el;
+               }
             el.signal.expose_event.connect(XObject.createDelegate(this.widgetExposeEvent, this));
             el.signal.drag_motion.connect(XObject.createDelegate(this.widgetDragMotionEvent, this));
             el.signal.drag_drop.connect(XObject.createDelegate(this.widgetDragDropEvent, this));
