@@ -620,7 +620,7 @@ RightGtkView = new XObject({
          widgetExposeEvent : function()
         {
             print("WIDGET EXPOSE"); // draw highlight??
-            return true;
+            return false;
         },
         widgetDragMotionEvent : function()
         {
