@@ -68,14 +68,14 @@ RightGtkView = new XObject({
                     {
                         
                         id : 'view-vbox',
-                        xtype : Gtk.Viewport,
+                        xtype : Gtk.Fixed,
                         init : function () {
                             XObject.prototype.init.call(this); 
-                            this.el.set_hadjustment(this.parent.el.get_hadjustment());
-                            this.el.set_vadjustment(this.parent.el.get_vadjustment());
+                            //this.el.set_hadjustment(this.parent.el.get_hadjustment());
+                            //this.el.set_vadjustment(this.parent.el.get_vadjustment());
                                 
                         },
-                        packing : ['add' ],
+                        pack : ['add' ],
                         items: [
                             {
                                 id : 'view',
@@ -86,7 +86,7 @@ RightGtkView = new XObject({
 
                                 },
                                 */
-                                packing : ['add' ],
+                                pack : 'put,15,15',
                                 ready : false,
                                 init : function() {
                                     XObject.prototype.init.call(this); 
