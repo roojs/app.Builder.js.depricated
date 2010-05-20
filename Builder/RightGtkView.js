@@ -353,6 +353,10 @@ RightGtkView = new XObject({
             // in theory tree is actually window..
             this.renderedEl = this.viewAdd(tree.items[0], this.get('view').el);
             
+            this.renderedEl.set_size_request(
+                tree.default_width || 600,
+                tree.default_height || 400
+            );
             this.get('view').el.show_all();
             
             return;
