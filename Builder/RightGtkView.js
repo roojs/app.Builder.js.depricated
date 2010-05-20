@@ -595,6 +595,16 @@ RightGtkView = new XObject({
                 _this.viewAdd(ch, el);
             });
             
+            
+            
+            // add the signal handlers.
+            
+            el.signal.expose_event.connect(XObject.createDelegate(this.widgetExposeEvent, this)));
+            
+            
+            
+            
+            
             return el;
             
         }
