@@ -635,7 +635,7 @@ RightGtkView = new XObject({
         widgetPressEvent : function()
         {
             print("WIDGET PRESs"); 
-            return true;
+            return false;
         }
         
         
