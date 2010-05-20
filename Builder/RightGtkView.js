@@ -75,7 +75,7 @@ RightGtkView = new XObject({
                             //this.el.set_vadjustment(this.parent.el.get_vadjustment());
                                 
                         },
-                        pack : ['add' ],
+                        pack : 'add_with_viewport',
                         items: [
                             {
                                 id : 'view',
