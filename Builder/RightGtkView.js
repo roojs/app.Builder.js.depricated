@@ -599,9 +599,6 @@ RightGtkView = new XObject({
             
             // add the signal handlers.
             // is it a widget!?!!?
-            
-            
-            print ("GTYPE: " + el.prototype.gtype);
            
             
             try {
