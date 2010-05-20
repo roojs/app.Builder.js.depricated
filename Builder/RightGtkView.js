@@ -609,31 +609,32 @@ RightGtkView = new XObject({
             
             return el;
             
+        },
+         widgetExposeEvent : function()
+        {
+            print("WIDGET EXPOSE"); // draw highlight??
+            return true;
+        },
+        widgetDragMotionEvent : function()
+        {
+            print("WIDGET DRAGMOTION"); 
+            return true;
+        },
+        widgetDragDropEvent : function()
+        {
+            print("WIDGET DRAGDROP"); 
+            return true;
+        },
+        widgetPressEvent : function()
+        {
+            print("WIDGET PRESs"); 
+            return true;
         }
         
         
         
     },
-    widgetExposeEvent : function()
-    {
-        print("WIDGET EXPOSE"); // draw highlight??
-        return true;
-    },
-    widgetDragMotionEvent : function()
-    {
-        print("WIDGET DRAGMOTION"); 
-        return true;
-    },
-    widgetDragDropEvent : function()
-    {
-        print("WIDGET DRAGDROP"); 
-        return true;
-    },
-    widgetPressEvent : function()
-    {
-        print("WIDGET PRESs"); 
-        return true;
-    }
+   
     
     
 );
