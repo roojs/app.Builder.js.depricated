@@ -349,7 +349,7 @@ RightGtkView = new XObject({
                 this.renderedEl = false;
             }
             
-            var tree =  this.get('/LeftTree.model').toJS(true)[0];
+            var tree =  this.get('/LeftTree.model').toJS(false,true)[0];
             // in theory tree is actually window..
             this.renderedEl = this.viewAdd(tree.items[0], this.get('view').el);
             
