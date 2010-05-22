@@ -27,6 +27,22 @@ Where it is..
 * Gtk properties that are enums - now show a combo selector..
 
 -----------------------------------------------------
+WHAT'S NEEDED SO ALL DEV CAN BE DONE USING IT..
+* Write files 'save' feature..
+ - Needs to prevent us 'breaking' stuff....
+ - Simple version...
+   Write to 'XXXX.js' - that is all that is really needed?!?!
+* Add support for subfiles..? - eg. the dialogs etc...
+ - in our sample file 'Sample/builder.js' (would be generated)
+ - this includes Builder/Provider/..... - for all the model code - M/(VC)
+ - this becomes problematic for Sample/StandardErrorDialog.js ????
+ - ?? unless the 'run file is a merge of the whole lot!!?? 
+ - ?? we could use '/' as an id to force registration (since we do not use sandbox anymore.. - this should be ok)
+* Add better test-time runner ... basically use source files, rather than generated ones..
+ - Will not work!!?! - due to any use of __script_path__ and complexities with { '|prop': Gtk.XXXX.YYYY }
+ 
+   
+
 TODO
 * change sourceview to use spaces rather than tabs.
 * Icon-size (should be an enum...??)

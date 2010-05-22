@@ -68,14 +68,14 @@ RightGtkView = new XObject({
                     {
                         
                         id : 'view-vbox',
-                        xtype : Gtk.Viewport,
+                        xtype : Gtk.Fixed,
                         init : function () {
                             XObject.prototype.init.call(this); 
-                            this.el.set_hadjustment(this.parent.el.get_hadjustment());
-                            this.el.set_vadjustment(this.parent.el.get_vadjustment());
+                           // this.el.set_hadjustment(this.parent.el.get_hadjustment());
+                            //this.el.set_vadjustment(this.parent.el.get_vadjustment());
                                 
                         },
-                        packing : ['add' ],
+                        pack  : 'add_with_viewport' ,
                         items: [
                             {
                                 id : 'view',
@@ -86,7 +86,7 @@ RightGtkView = new XObject({
 
                                 },
                                 */
-                                packing : ['add' ],
+                                pack : 'put,10,10',
                                 ready : false,
                                 init : function() {
                                     XObject.prototype.init.call(this); 
@@ -352,6 +352,9 @@ RightGtkView = new XObject({
             var tree =  this.get('/LeftTree.model').toJS()[0];
             // in theory tree is actually window..
             this.renderedEl = this.viewAdd(tree.items[0], this.get('view').el);
+            this.get('view').el.set_size_request(
+                tree.default_width * 1 || 400, tree.default_height * 1 || 400
+            ) ;
             
             this.get('view').el.show_all();
             
