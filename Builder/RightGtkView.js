@@ -71,9 +71,6 @@ RightGtkView = new XObject({
                         xtype : Gtk.Fixed,
                         init : function () {
                             XObject.prototype.init.call(this); 
-                           // this.el.set_hadjustment(this.parent.el.get_hadjustment());
-                            //this.el.set_vadjustment(this.parent.el.get_vadjustment());
-                                
                         },
                         pack  : 'add_with_viewport' ,
                         items: [
@@ -349,13 +346,17 @@ RightGtkView = new XObject({
                 this.renderedEl = false;
             }
             
-            var tree =  this.get('/LeftTree.model').toJS()[0];
+            var tree =  this.get('/LeftTree.model').toJS(false,true)[0];
             // in theory tree is actually window..
             this.renderedEl = this.viewAdd(tree.items[0], this.get('view').el);
             this.get('view').el.set_size_request(
                 tree.default_width * 1 || 400, tree.default_height * 1 || 400
             ) ;
             
+            this.renderedEl.set_size_request(
+                tree.default_width || 600,
+                tree.default_height || 400
+            );
             this.get('view').el.show_all();
             
             return;
@@ -594,13 +595,53 @@ RightGtkView = new XObject({
                 _this.viewAdd(ch, el);
             });
             
+            
+            
+            // add the signal handlers.
+            // is it a widget!?!!?
+           
+            
+            try {
+                
+                   
+                el.signal.expose_event.connect(XObject.createDelegate(this.widgetExposeEvent, this, [ item  ], true));
+                el.signal.drag_motion.connect(XObject.createDelegate(this.widgetDragMotionEvent, this,[ item  ], true));
+                el.signal.drag_drop.connect(XObject.createDelegate(this.widgetDragDropEvent, this, [ item  ], true));
+                el.signal.button_press_event.connect(XObject.createDelegate(this.widgetPressEvent, this, [ item  ], true ));
+            } catch(e) {
+                // ignore!
+               }
+            
+            
+            
             return el;
             
+        },
+         widgetExposeEvent : function()
+        {
+            print("WIDGET EXPOSE"); // draw highlight??
+            return false;
+        },
+        widgetDragMotionEvent : function()
+        {
+            print("WIDGET DRAGMOTION"); 
+            return true;
+        },
+        widgetDragDropEvent : function()
+        {
+            print("WIDGET DRAGDROP"); 
+            return true;
+        },
+        widgetPressEvent : function(w,e,u,d)
+        {
+            print("WIDGET PRESs" + d.xtreepath ); 
+            
+            return false;
         }
         
         
         
-    }
+    } 
     
     
 );
