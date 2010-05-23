@@ -246,7 +246,7 @@ Base = XObject.define(
                 }
                 
                 
-                var left = isArray ? '' : (JSON.stringify(i) + " : " )
+                //var left = isArray ? '' : (JSON.stringify(i) + " : " )
                 
                 if (i[0] == '|') {
                     // does not hapepnd with arrays..
