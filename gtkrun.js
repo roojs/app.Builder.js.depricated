@@ -49,7 +49,7 @@ files.forEach(function(f) {
     if (!f.match(/\.bjs$/)) {
         continue;
     }
-    if (File.exist(f.replace(/\.bjs$/, '.js')) {
+    if (File.exist(f.replace(/\.bjs$/, '.js'))) {
         olist.push(imports[f.replace(/\.bjs$/, '.js')]);
         continue;
     }
