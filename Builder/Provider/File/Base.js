@@ -258,6 +258,8 @@ Base = XObject.define(
                 
                 els.push(left + JSON.stringify(obj[i]));
             });
+            
+            //output the thing.
             var spad = pad.substring(0, pad.length-4);
             return (isArray ? '[' : '{') + "\n" +
                 pad  + els.join(",\n" + pad ) + 
