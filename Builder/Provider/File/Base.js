@@ -163,7 +163,14 @@ Base = XObject.define(
             
         },
         
-        
+        /**
+         * 
+         * munge JSON tree into Javascript code.
+         * 
+         * FIXME: + or / prefixes to properties hide it from renderer.
+         * FIXME: '*props' - not supported by this.. ?? - upto rendering code..
+         * 
+         */
         
         
         mungeToString:  function(obj, isListener, pad)
