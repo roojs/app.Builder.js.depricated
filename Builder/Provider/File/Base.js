@@ -288,23 +288,10 @@ Base = XObject.define(
                
             
             
-        },
+        } 
         
         
-           
-        stringToJsString :  function(v, k , o) {
-            // since most properties can use single quotes (non-translatable)
-            // we try to fix this here..
-            var val = JSON.stringify(v);
-            if (['xns', 'xtype'   ].indexOf(k) > -1) {
-                return "'" + val.substring(1, val.length-1).replace(/'/, "\\'") + "'";
-            }
-            return val;
-            
-            
-        },
-        
-        
+         
      
         
     }
