@@ -49,13 +49,13 @@ files.forEach(function(f) {
     if (!f.match(/\.bjs$/)) {
         continue;
     }
-    if (File.exist(f + '.js')) {
-        olist.push(imports[f + '.js']);
+    if (File.exist(f.replace(/\.bjs$/, '.js')) {
+        olist.push(imports[f.replace(/\.bjs$/, '.js')]);
         continue;
     }
     var gtkbuilder  new imports.Builder.Provider.File.Gtk.Gtk({ path : f });
     gtkbuilder.saveJS();
-    olist.push(imports[f + '.js']);
+    olist.push(imports[f.replace(/\.bjs$/, '.js')]);
     
     
 });
