@@ -205,7 +205,7 @@ Base = XObject.define(
             
             var _this = this;
             
-            
+            var left =  '';
             
             keys.forEach(function(i) {
                 var el = obj[i];
@@ -230,6 +230,19 @@ Base = XObject.define(
                     return;
                 }
                 
+                if (!isArray) {
+                    // set the key to be quoted with singel quotes..
+                    var leftv = i[0] == '|' ? i.substring(1) : i;
+                    if (Lang.isKeyword(leftv) || Lang.isBuiltin(leftv)) {
+                        left = "'" + leftv + "'";
+                    } else if (leftv.match(/[^A-Z_]+/i)) { // not plain a-z... - quoted.
+                        var val = JSON.stringify(leftv);
+                        left = "'" + leftv.substring(1, leftv.length-1).replace(/'/, "\\'") + "'";
+                    } else {
+                        left = '' + leftv;
+                    }
+                    
+                }
                 
                 
                 var left = isArray ? '' : (JSON.stringify(i) + " : " )
@@ -277,160 +290,7 @@ Base = XObject.define(
         },
         
         
-          
-        
-        objectToJsString : function (o, ind) 
-        {
-            ind = ind || 0;
-            
-            
-            var ret = '';
-            var ix = new Array(ind+1).join("    ");
-            var ix1 = new Array(ind).join("    ");
-            for (var k in o) {
-                var v = o[k];
-                if (k[0] == '+') { // + means  hide from renderer.. we do not save this.
-                    continue;
-                }
-                if (k[0] == '/') { //  means  hide from renderer.. we prefix the col with it..
-                    continue;
-                }
-            
-                
-                if (typeof(v) == 'object') {
-                    
-                    if ((v.constructor != Array) && !this.objectKeys(v).length) {
-                        continue;
-                    }
-                    if ((v.constructor == Array) && !v.length && k == 'items') {
-                        continue;
-                    }   
-                }
-                ret += ret.length ? ",\n" : '';
-                
-                var kk = k[0] == '|' ? k.substring(1) : k;
-                if (typeof(o['//' + kk]) != 'undefined') {
-                    ret += ix + o['//' + kk].split("\n").join( "\n" + ix) + "\n";
-                }
-                
-                switch(typeof(v)) {
-                    case 'object': 
-                        if (v.constructor == Array) {
-                            ret += ix + this.toJsProp(k) +  ' : ' + this.arrayToJsString(v, ind+1);
-                            continue;
-                        }
-                    
-                    
-                        ret += ix + this.toJsProp(k) +  ' : ' + this.objectToJsString(v, ind+1);
-                        continue;
-                    
-                    case 'boolean' : 
-                        ret += ix + this.toJsProp(k) +  ' : ' +  (v ? 'true' : 'false');
-                        continue;
-                    
-                    case 'number' : 
-                        ret += ix + this.toJsProp(k) +  ' : ' +  v;
-                        continue;
-                        
-                    
-                    case 'string': 
-                        if (k[0] == '|') {
-                            ret += ix + this.toJsProp(k) +  ' : ' +  v.split("\n").join( "\n" + ix);
-                            continue;
-                        }
-                        // fallthru
-                    
-                    default:
-                        // we should use special stuff here to determine if it's a singly or dobuley 
-                        // quoted string..
-                        ret += ix + this.toJsProp(k) +  ' : ' +  this.stringToJsString(v, k, o);
-                        continue;
-                        
-                     
-                    }
-            }
-            return "{\n" + ret + "\n" + ix1 + '}'; 
-            
-        },
-        arrayToJsString : function (ar, ind)
-        {
-            var isobjar = false;
-            ar.forEach( function(o) {
-                if (typeof(o) == 'object' && (o.constructor != Array)) {
-                    isobjar = true;
-                }
-            });
-            var ix = '';
-            var ix1 = '';
-            var cr = ', ';
-            var lb = ' ';
-            if (isobjar) {
-                ix = new Array(ind+1).join("    ");
-                ix1 = new Array(ind).join("    ");
-                cr = ",\n";
-                lb = "\n";
-                 
-            }
-            // array of parts...
-            var ret =  '';
-            var _this = this;
-            ar.forEach( function(v, n) {
-                // skip blank last element in an array
-                if ((n == (ar.length -1))  && typeof(v) == 'undefined') {
-                    return;
-                }
-                
-                // empty objects in array?
-                if (typeof(v) == 'object' && v.constructor != Array) {
-                    if (!_this.objectKeys(v).length) {
-                        return;
-                    }
-                }
-                    
-                
-                ret += ret.length ? cr : '';
-                
-                switch(typeof(v)) {
-                
-                    case 'object': 
-                        if (v.constructor == Array) {
-                            
-                            ret += ix + _this.arrayToJsString(v, ind+1);
-                            return;
-                        }
-                    
-                        ret += ix + _this.objectToJsString(v, ind+1);
-                        return;
-                    
-                    case 'boolean' : 
-                        ret += ix +  (v ? 'true' : 'false');
-                        return;
-                    
-                    case 'number' : 
-                        ret += ix +  v;
-                        return;
-                        
-                    
-                    case 'string': 
-                        if (k[0] == '|') {
-                            ret += ix + v.split("\n").join( "\n" + ix);
-                            return;
-                        }
-                        // fallthru
-                    
-                    default:
-                        // we should use special stuff here to determine if it's a singly or dobuley 
-                        // quoted string..
-                        ret += ix + JSON.stringify(v);
-                        return;
-                        
-                 
-                }
-                 
-            });
-            return "[" + lb  + ret + lb + ix1 + "]";
-            
-        },
+           
         stringToJsString :  function(v, k , o) {
             // since most properties can use single quotes (non-translatable)
             // we try to fix this here..
