@@ -169,7 +169,7 @@ Base = XObject.define(
          * 
          * FIXME: + or / prefixes to properties hide it from renderer.
          * FIXME: '*props' - not supported by this.. ?? - upto rendering code..
-         * 
+         * FIXME: needs to understand what properties might be translatable (eg. double quotes)
          */
         
         
@@ -305,18 +305,7 @@ Base = XObject.define(
         },
         
         
-        toJsProp:  function(v) {
-            var vv = v[0] == '|' ? v.substring(1) : v;
-            if (Lang.isKeyword(vv) || Lang.isBuiltin(vv)) {
-                return "'" + vv + "'";
-            }
-            if (vv.match(/[^A-Z_]+/i)) {
-                var val = JSON.stringify(vv);
-                return "'" + val.substring(1, val.length-1).replace(/'/, "\\'") + "'";
-            }
-            return vv;
-        }
-        
+     
         
     }
 );
