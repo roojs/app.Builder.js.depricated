@@ -22,7 +22,10 @@ Gtk = XObject.define(
         //console.dump(cfg);
         cfg.parent = cfg.parent || '';
         if (!cfg.name || !cfg.fullname ) {
-            cfg.name = cfg.path.split('/').pop().replace(/\.js$/, '');
+            
+            // name is in theory filename without .bjs (or .js eventually...)
+            cfg.name = cfg.path.split('/').pop().replace(/\.(bjs|js)$/, '');
+            
             cfg.fullname = (cfg.parent.length ? (cfg.parent + '.') : '' ) + cfg.name;
         }
         
@@ -157,17 +160,11 @@ Gtk = XObject.define(
             src += "console = imports.console;\n"; // path?!!?
             src += "XObject = imports.XObject.XObject;\n"; // path?!!?
             
-            //if (withDebug) {
-            //    src += "XObject.debug=true;\n"; 
-            //}
             
-            //this.withDebug = withDebug;
-            src += '_top=new XObject('+ this.mungeToString(data) + ')\n;';
-            src += '_top.init();\n';
-            if (withDebug) {
-                src += "_top.el.show_all();\n"; 
-                src += "Gtk.main();\n"; 
-            }
+            src += this.name + '=new XObject('+ this.mungeToString(data) + ')\n;';
+            src += this.name + '.init();\n';
+            
+            
             File.write('/tmp/BuilderGtkView.js', src);
             print("Test code  in /tmp/BuilderGtkView.js");
             this.lastSrc = src;
