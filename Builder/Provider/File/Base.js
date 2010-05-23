@@ -166,68 +166,109 @@ Base = XObject.define(
         
         
         
-        /**
-         * munges a prop object, removing all the special stuff..
-         * putting props back where they should go...
-         */
-        
-        mungePropObj : function(o)
+        mungeToString:  function(obj, isListener, pad)
         {
-            
-           // console.log('mungePropObj: enter');
-            var ret = {};
-            // standard props do not do anyting.
-            for (var i in o){
-                if (['items', '*prop'].indexOf(i) > -1) {
-                    continue;
+            pad = pad || '';
+            var keys = [];
+            var isArray = false;
+            isListener = isListener || false;
+             
+            // am I munging a object or array...
+            if (obj.constructor.toString() === Array.toString()) {
+                for (var i= 0; i < obj.length; i++) {
+                    keys.push(i);
                 }
-                
-                ret[i] = o[i];
+                isArray = true;
+            } else {
+                for (var i in obj) {
+                    keys.push(i);
+                }
             }
-            ret.items = [];
-            o.items = o.items || [];
+            
+            
+            var els = []; 
+            var skip = [];
+            if (!isArray && 
+                    typeof(obj['|xns']) != 'undefined' &&
+                    typeof(obj['xtype']) != 'undefined'
+                ) {
+                    els.push('xtype: '+ obj['|xns'] + '.' + obj['xtype']);
+                    skip.push('|xns','xtype');
+                }
+            
             var _this = this;
-            o.items.forEach( function(e) {
-                if (typeof(e) == 'undefined') {
+            
+            
+            
+            keys.forEach(function(i) {
+                var el = obj[i];
+                if (!isArray && skip.indexOf(i) > -1) { // things we do not write..
                     return;
                 }
                 
-                if (typeof(e) != 'object') {
-                    // should not really hapen?!!?
-                    ret.items.push(e); // could be 
-                    return;
-                }
-                if (typeof(e['*prop']) != 'undefined') {
-                    var pn = e['*prop'];
-                    var val = _this.mungePropObj(e);
-                    
-                    if (e['xtype'].match(/^Array/)) {
-                        ret[pn] = val.items;
+                if (isListener) {
+                    if (!_this.withDebug) {
+                        // do not write listeners unless we are debug mode.
                         return;
                     }
-                    
-                    ret[pn] = val;
+                    //if (obj[i].match(new RegExp("Gtk.main" + "_quit"))) { // we can not handle this very well..
+                    //    return;
+                   // }
+                    var str= ('' + obj[i]).replace(/^\s+|\s+$/g,"");
+                    var lines = str.split("\n");
+                    if (lines.length > 1) {
+                        str = lines.join("\n" + pad);
+                    }
+                    els.push(JSON.stringify(i) + ":" + str);
                     return;
                 }
-                // handle fake arrays...
-                var val = _this.mungePropObj(e);
                 
-                ret.items.push(val); // again should not really happen...
-                     
                 
+                
+                var left = isArray ? '' : (JSON.stringify(i) + " : " )
+                
+                if (i[0] == '|') {
+                    // does not hapepnd with arrays..
+                    if (typeof(el) == 'string' && !obj[i].length) { //skip empty.
+                        return;
+                    }
+                    // this needs to go...
+                    //if (typeof(el) == 'string'  && obj[i].match(new RegExp("Gtk.main" + "_quit"))) { // we can not handle this very well..
+                    //    return;
+                    //}
+                    
+                    var str= ('' + obj[i]).replace(/^\s+|\s+$/g,"");;
+                    var lines = str.split("\n");
+                    if (lines.length > 1) {
+                        str = lines.join("\n" + pad);
+                    }
+                    
+                    els.push(left + str);
+                    return;
+                }
+                
+                
+                
+                
+                if (typeof(el) == 'object') {
+                    els.push(left + _this.mungeToString(el, i == 'listeners', pad + '    '));
+                    return;
+                }
+                // standard. .
+                
+                els.push(left + JSON.stringify(obj[i]));
             });
-            //console.log('mungePropObj: leave');
-            // do we munge '*' xtypes?
-            return ret;
+            var spad = pad.substring(0, pad.length-4);
+            return (isArray ? '[' : '{') + "\n" +
+                pad  + els.join(",\n" + pad ) + 
+                "\n" + spad + (isArray ? ']' : '}');
+               
+            
             
         },
-        objectKeys : function(o) {
-            var ret = [];
-            for (var k in o) {
-                ret.push(k)
-            }
-            return ret;
-        },
+        
+        
+          
         
         objectToJsString : function (o, ind) 
         {
