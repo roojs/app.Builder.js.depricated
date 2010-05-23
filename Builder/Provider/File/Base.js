@@ -170,6 +170,10 @@ Base = XObject.define(
          * FIXME: + or / prefixes to properties hide it from renderer.
          * FIXME: '*props' - not supported by this.. ?? - upto rendering code..
          * FIXME: needs to understand what properties might be translatable (eg. double quotes)
+         * 
+         * @arg {object} obj the object or array to munge..
+         * @arg {boolean} isListener - is the array being sent a listener..
+         * @arg {string} pad - the padding to indent with. 
          */
         
         
