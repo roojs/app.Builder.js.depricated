@@ -164,11 +164,10 @@ Gtk = XObject.define(
             src += this.name + '=new XObject('+ this.mungeToString(data) + ')\n;';
             src += this.name + '.init();\n';
             
+            var fn = GLib.path_get_dirname(this.path) + '/' + this.name + '.js';
+            File.write(fn, src);
             
-            File.write('/tmp/BuilderGtkView.js', src);
-            print("Test code  in /tmp/BuilderGtkView.js");
-            this.lastSrc = src;
-            return src;
+            return fn;
         /*
         getTree : function( o ) {
             
