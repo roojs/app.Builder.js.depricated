@@ -241,6 +241,7 @@ Base = XObject.define(
                     } else {
                         left = '' + leftv;
                     }
+                    left += ' : ';
                     
                 }
                 
