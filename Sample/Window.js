@@ -880,6 +880,7 @@ Window=new XObject({
                                                                                         var s = this.get('/LeftTree.view').selection;
                                                                                         s.get_selected(this.el, old_iter);
                                                                                         var path = this.el.get_path(old_iter).to_string();
+                                                                            print("DELETE " + path);
                                                                                        this.activeIter = false;      
                                                                                         s.unselect_all();
                                                                             
