@@ -108,7 +108,9 @@ Base = XObject.define(
             var files = {};
             var parents = {};
             for (var k in this.files) {
+                
                 var f = this.files[k];
+                console.log(k);
                 f.hasParent = false;
                 f.cn = [];
                 //console.log(f.name);
