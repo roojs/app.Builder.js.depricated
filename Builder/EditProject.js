@@ -11,11 +11,11 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 EditProject=new XObject({
     xtype: Gtk.Dialog,
-    default_height : 300,
+    default_height : 500,
     default_width : 600,
     deletable : true,
     modal : true,
-    border_width : 0,
+    border_width : 3,
     title : "Project Properties",
     show : function(c) {
            c = c || { name : '' , xtype : '' };
@@ -24,9 +24,10 @@ EditProject=new XObject({
             this.init();
         }
         var _this = this;
-        [ 'xtype' , 'name' ].forEach(function(k) {
+        [ 'xtype'  ].forEach(function(k) {
             _this.get(k).setValue(typeof(c[k]) == 'undefined' ? '' : c[k]);
         });
+    	// shouild set path..
         
         this.el.show_all();
         this.success = c.success;
@@ -65,8 +66,8 @@ EditProject=new XObject({
         {
             xtype: Gtk.VBox,
             pack : function(p,e) {
-                                p.el.get_content_area().add(e.el)
-                            },
+                        p.el.get_content_area().add(e.el)
+                    },
             items : [
                 {
                     xtype: Gtk.HBox,
@@ -75,34 +76,11 @@ EditProject=new XObject({
                         {
                             xtype: Gtk.Label,
                             pack : "pack_start,false,true,3",
-                            label : "Project Name :"
-                        },
-                        {
-                            xtype: Gtk.Entry,
-                            pack : "pack_end,true,true,0",
-                            id : "name",
-                            getValue : function() {
-                                return this.el.get_text();
-                            },
-                            setValue : function(v) 
-                                                            {
-                                                                this.el.set_text(v);
-                                                            }
-                        }
-                    ]
-                },
-                {
-                    xtype: Gtk.HBox,
-                    pack : "pack_start,false,true,3",
-                    items : [
-                        {
-                            xtype: Gtk.Label,
-                            pack : "pack_start,false,true,0",
                             label : "Project type :"
                         },
                         {
                             xtype: Gtk.ComboBox,
-                            pack : "pack_end,true,true,0",
+                            pack : "pack_end,true,true,3",
                             id : "xtype",
                             setValue : function(v)
                                             {
@@ -177,7 +155,7 @@ EditProject=new XObject({
                 },
                 {
                     xtype: Gtk.FileChooserWidget,
-                    pack : "pack_end,true,true,3",
+                    pack : "pack_end,true,true,5",
                     action : Gtk.FileChooserAction.SELECT_FOLDER
                 }
             ]
