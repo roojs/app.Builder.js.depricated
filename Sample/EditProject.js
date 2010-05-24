@@ -74,35 +74,12 @@ EditProject=new XObject({
                     items : [
                         {
                             xtype: Gtk.Label,
-                            pack : "pack_start,false,true,3",
-                            label : "Project Name :"
-                        },
-                        {
-                            xtype: Gtk.Entry,
-                            pack : "pack_end,true,true,0",
-                            id : "name",
-                            getValue : function() {
-                                return this.el.get_text();
-                            },
-                            setValue : function(v) 
-                                                            {
-                                                                this.el.set_text(v);
-                                                            }
-                        }
-                    ]
-                },
-                {
-                    xtype: Gtk.HBox,
-                    pack : "pack_start,false,true,3",
-                    items : [
-                        {
-                            xtype: Gtk.Label,
                             pack : "pack_start,false,true,0",
                             label : "Project type :"
                         },
                         {
                             xtype: Gtk.ComboBox,
-                            pack : "pack_end,true,true,0",
+                            pack : "pack_end,true,true,3",
                             id : "xtype",
                             setValue : function(v)
                                             {
