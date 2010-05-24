@@ -1910,8 +1910,8 @@ builder=new XObject({
                                                                         
                                                                         this.el.set_value(iter, 1, '' +str);
                                                                         this.el.set_value(iter, 3, '' + this.toShort(str));
-                                                                        // update the tree...
-                                                                        var LeftTree        = imports.Builder.LeftTree.LeftTree;
+                                                                        // update the tree...  
+                                                                    
                                                                         this.get('/LeftTree.model').changed(this.toJS(), doRefresh); 
                                                                     },
                                                                     toJS : function() {
