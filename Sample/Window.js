@@ -2732,6 +2732,9 @@ Window=new XObject({
                                                                     if (k[0] == '|') { // should be boolean or number..
                                                             		k = k.substring(1);
                                                                     }
+                                                            	if (k == 'show_tabs') { // force tab showing for notebooks.
+                                                                       kv = true;
+                                                                    }
                                                                     ctr_args[k] = kv;
                                                                     
                                                                 } 
