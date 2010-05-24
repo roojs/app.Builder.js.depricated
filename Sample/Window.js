@@ -2418,7 +2418,7 @@ Window=new XObject({
                                                                             init : function() {
                                                                                 XObject.prototype.init.call(this);
                                                                                 // this may not work!?
-                                                                                //this.el.open('file:///' + __script_path__ + '/../builder.html');
+                                                                                this.el.open('file:///' + __script_path__ + '/../builder.html');
                                                                                                         
                                                                                 Gtk.drag_dest_set
                                                                                 (
