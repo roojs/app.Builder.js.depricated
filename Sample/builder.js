@@ -1097,6 +1097,24 @@ builder=new XObject({
                                                                             ]
                                                                         }
                                                                     ]
+                                                                },
+                                                                {
+                                                                    xtype: Gtk.Menu,
+                                                                    pack : false,
+                                                                    id : "LeftTreeMenu",
+                                                                    items : [
+                                                                        {
+                                                                            xtype: Gtk.MenuItem,
+                                                                            pack : "add",
+                                                                            label : "Delete Element",
+                                                                            listeners : {
+                                                                                "activate":function (self) {
+                                                                                
+                                                                                     this.get('/LeftTree.model').deleteSelected();
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    ]
                                                                 }
                                                             ]
                                                         },
