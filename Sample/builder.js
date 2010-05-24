@@ -387,6 +387,13 @@ builder=new XObject({
                                                                                             action = ctx.actions & Gdk.DragAction.MOVE ? Gdk.DragAction.MOVE : Gdk.DragAction.COPY ;
                                                                                         }
                                                                                         var data = {};
+                                                                        
+                                                                        		if (!this.get('/LeftTree.model').el.iter_n_children(null)) {
+                                                                        			// no children.. -- asume it's ok..
+                                                                        			Gdk.drag_status(ctx, action ,time);
+                                                                        			return true;
+                                                                        		}
+                                                                        
                                                                                         print("GETTING POS");
                                                                                         var isOver = this.get('/LeftTree.view').el.get_dest_row_at_pos(x,y, data);
                                                                                         print("ISOVER? " + isOver);
