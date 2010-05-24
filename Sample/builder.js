@@ -1,32 +1,5 @@
-Gtk = imports.gi.Gtk;
-Gdk = imports.gi.Gdk;
-Pango = imports.gi.Pango;
-GLib = imports.gi.GLib;
-Gio = imports.gi.Gio;
-GObject = imports.gi.GObject;
-GtkSource = imports.gi.GtkSource;
-WebKit = imports.gi.WebKit;
-Vte = imports.gi.Vte;
-console = imports.console;
-XObject = imports.XObject.XObject;
-builder=new XObject({
-    xtype: Gtk.Window,
-    type : Gtk.WindowType.TOPLEVEL,
-    title : "Application Builder",
-    border_width : 0,
-    init : function() {
-         this.atoms = {
-               "STRING" : Gdk.atom_intern("STRING")
-    	};
-    	this.targetList = new Gtk.TargetList();
-    	this.targetList.add( this.atoms["STRING"], 0, 0);
-    	//imports.Builder.Provider.ProjectManager.ProjectManager.loadConfig();
-    Gtk.rc_parse_string(
-                "style \"gtkcombobox-style\" {\n" + 
-                "    GtkComboBox::appears-as-list = 1\n" +
-                "}\n"+
-                "class \"GtkComboBox\" style \"gtkcombobox-style\"\n");
-        XObject.prototype.init.call(this);
+
+
         this.el.show_all();
         
        
@@ -143,12 +116,7 @@ builder=new XObject({
                                         {
                                             xtype: Gtk.MenuItem,
                                             label : "Quit",
-                                            pack : "add",
-                                            listeners : {
-                                                "activate":function (self) {
-                                                	Gtk.main_quit();
-                                                }
-                                            }
+                                            pack : "add"
                                         }
                                     ]
                                 }
@@ -822,8 +790,8 @@ builder=new XObject({
                                                                                             xitems = node.items;
                                                                                             delete node.items;
                                                                                         }
-                                                                            // load children - if it has any..
-                                                                            
+                                                                            	    print("loading xitem");
+                                                                              	    console.log(xitems);
                                                                                         if (xitems) {
                                                                                             this.load(xitems, n_iter);
                                                                                         }
@@ -833,9 +801,7 @@ builder=new XObject({
                                                                                         // wee need to get the empty proptypes from somewhere..
                                                                                         
                                                                                         //var olditer = this.activeIter;
-                                                                                        this.activePath = this.el.get_path(n_iter).to_string();
-                                                                            
-                                                                            	  // changed actually set's the node data..
+                                                                                        this.activeIter = n_iter;
                                                                                         this.changed(node, true);
                                                                                         
                                                                                         
@@ -1100,24 +1066,6 @@ builder=new XObject({
                                                                                     pack : "pack_start"
                                                                                 }
                                                                             ]
-                                                                        }
-                                                                    ]
-                                                                },
-                                                                {
-                                                                    xtype: Gtk.Menu,
-                                                                    pack : false,
-                                                                    id : "LeftTreeMenu",
-                                                                    items : [
-                                                                        {
-                                                                            xtype: Gtk.MenuItem,
-                                                                            pack : "add",
-                                                                            label : "Delete Element",
-                                                                            listeners : {
-                                                                                "activate":function (self) {
-                                                                                
-                                                                                     this.get('/LeftTree.model').deleteSelected();
-                                                                                }
-                                                                            }
                                                                         }
                                                                     ]
                                                                 }
@@ -2824,28 +2772,8 @@ builder=new XObject({
                                                                             listeners : {
                                                                                 "button_press_event":function (self, event) {
                                                                                   // call render on left tree - with special option!?!
-                                                                                 
-                                                                                
-                                                                                
-                                                                                	print("GET PROEJCT");
-                                                                                	var pr = this.get('/LeftProjectTree').getActiveProject();
-                                                                                  
-                                                                                var dir = '';
-                                                                                 for (var i in pr.paths) { 
-                                                                                      dir = i;
-                                                                                      break;
-                                                                                  }
-                                                                                   var runner = GLib.path_get_dirname (__script_path__) + '/gtkrun.js'; 
-                                                                                   print ("RUN DIR:" + dir);
-                                                                                   
-                                                                                   this.get('/BottomPane').el.set_current_page(1);
-                                                                                    this.get('/Terminal').el.fork_command( null , [], [], GLib.path_get_dirname (__script_path__) 
-                                                                                	, false,false,false); 
-                                                                                    var cmd = "/usr/bin/seed " + runner + " " + dir + "\n";
-                                                                                    this.get('/Terminal').el.feed_child(cmd, cmd.length);
+                                                                                	this.get('/RightGtkView').showInWindow();
                                                                                     return false;
-                                                                                  
-                                                                                
                                                                                 }
                                                                             }
                                                                         }
@@ -3248,8 +3176,6 @@ builder=new XObject({
                                                                 */
                                                                 return true; 
                                                             },
-                                                            headers_visible : false,
-                                                            enable_tree_lines : true,
                                                             listeners : {
                                                                 "drag_begin":function (self, ctx) {
                                                                     // we could fill this in now...
@@ -3382,6 +3308,5 @@ builder=new XObject({
             ]
         }
     ]
-});
-builder.init();
-XObject.cache['/builder'] = builder;
+})
+;builder.init();
