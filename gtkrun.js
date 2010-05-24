@@ -41,7 +41,7 @@ File = imports.File.File;
 Gtk.init(Seed.argv);
 
 // error checking todo..
-var files = Files.list(Seed.argv[2]);
+var files = File.list(Seed.argv[2]);
 var olist = [];
 
 var gtkbuilder = false;
@@ -49,11 +49,12 @@ files.forEach(function(f) {
     if (!f.match(/\.bjs$/)) {
         continue;
     }
-    if (File.exist(f.replace(/\.bjs$/, '.js'))) {
+    if (File.isFile(f.replace(/\.bjs$/, '.js'))) {
         olist.push(imports[f.replace(/\.bjs$/, '.js')]);
         continue;
     }
-    var gtkbuilder  new imports.Builder.Provider.File.Gtk.Gtk({ path : f });
+    var gtkbuilder =  new imports.Builder.Provider.File.Gtk.Gtk({ path : f });
+    gtkbuilder.loadItems();
     gtkbuilder.saveJS();
     olist.push(imports[f.replace(/\.bjs$/, '.js')]);
     

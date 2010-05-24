@@ -150,7 +150,7 @@ Gtk = XObject.define(
         saveJS: function()
         {
              
-        
+            var data = JSON.parse(JSON.stringify(this.items[0]));
             var i = [ 'Gtk', 'Gdk', 'Pango', 'GLib', 'Gio', 'GObject', 'GtkSource', 'WebKit', 'Vte' ];
             var src = "";
             i.forEach(function(e) {
@@ -168,6 +168,7 @@ Gtk = XObject.define(
             File.write(fn, src);
             
             return fn;
+        }
         /*
         getTree : function( o ) {
             
