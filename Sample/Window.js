@@ -2898,7 +2898,7 @@ Window=new XObject({
                                                                             init : function() {
                                                                                 XObject.prototype.init.call(this);
                                                                             this.el.modify_bg(Gtk.StateType.NORMAL, new Gdk.Color({
-                                                                                        red: 0xEEEE, green: 0xEEEE , blue : 0xEEEE
+                                                                                        red: 0x9F00, green: 0xB800 , blue : 0xA800
                                                                                        }));
                                                                             },
                                                                             items : [
