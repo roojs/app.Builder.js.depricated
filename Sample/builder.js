@@ -1093,6 +1093,9 @@ builder=new XObject({
                                                             showNoProjectSelected : function() {
                                                                this.get('/StandardErrorDialog').show("Select a Project first."); 
                                                             },
+                                                            getActiveProject : function() {
+                                                                 return this.project;
+                                                            },
                                                             listeners : {
                                                                 "leave_notify_event":function (self, event) {
                                                                     return false;
@@ -2563,97 +2566,42 @@ builder=new XObject({
                                                             xtype: Gtk.VBox,
                                                             pack : "add",
                                                             id : "RightGtkView",
-                                                            buildJS : function(data,withDebug) {
-                                                                var i = [ 'Gtk', 'Gdk', 'Pango', 'GLib', 'Gio', 'GObject', 
-                                                            	'GtkSource', 'WebKit', 'Vte' ];
-                                                                var src = "";
-                                                                i.forEach(function(e) {
-                                                                    src += e+" = imports.gi." + e +";\n";
-                                                                });
-                                                                src += "console = imports.console;\n"; // path?!!?
-                                                                src += "XObject = imports.XObject.XObject;\n"; // path?!!?
-                                                                if (withDebug) {
-                                                                    src += "XObject.debug=true;\n"; 
-                                                                }
-                                                                this.withDebug = withDebug;
-                                                                
-                                                                src += '_top=new XObject('+ this.mungeToString(data) + ')\n;';
-                                                                src += '_top.init();\n';
-                                                            
-                                                                imports.File.File.write('/tmp/BuilderGtkView.js', src);
-                                                                print("Test code  in /tmp/BuilderGtkView.js");
-                                                                this.lastSrc = src;
-                                                                return src;
-                                                            },
                                                             renderJS : function(data, withDebug)
                                                             {
-                                                                // can we mess with data?!?!?
-                                                                
-                                                                /**
-                                                                 * first effort..
-                                                                 * sandbox it? - nope then will have dificulting passing. stuff aruond..
-                                                                 * 
-                                                                 */
-                                                                if (!data) {
-                                                                     return; 
+                                                                 if (!data) {
+                                                                             return; 
                                                                 }
                                                                 this.withDebug = false;
-                                                                var src = this.buildJS(data,withDebug);
-                                                                var x = new imports.sandbox.Context();
-                                                                x.add_globals();
-                                                                //x.get_global_object().a = "hello world";
                                                                 
-                                                                try {
-                                                                    Seed.check_syntax('var e = ' + src);
-                                                                    x.eval(src);
-                                                                } catch( e) {
-                                                                   // if (!withDebug) {
-                                                                   //    return this.renderJS(data,true);
-                                                                    //}
-                                                                    print(e.message || e.toString());
-                                                                    console.dump(e);
-                                                                    return;
+                                                                if (this.renderedEl) {
+                                                                    this.get('view').el.remove(this.renderedEl);
+                                                                    this.renderedEl.destroy();
+                                                                    this.renderedEl = false;
                                                                 }
                                                                 
-                                                                var r = new Gdk.Rectangle();
-                                                                var _top = x.get_global_object()._top;
+                                                                var tree =  this.get('/LeftTree.model').toJS(false,true)[0];
+                                                                // in theory tree is actually window..
+                                                                this.renderedEl = this.viewAdd(tree.items[0], this.get('view').el);
+                                                                this.get('view').el.set_size_request(
+                                                                    tree.default_width * 1 || 400, tree.default_height * 1 || 400
+                                                                ) ;
                                                                 
-                                                                _top.el.set_screen(Gdk.Screen.get_default()); // just in case..
-                                                                _top.el.show_all();
-                                                                if (_top.el.popup) {
-                                                                    _top.el.popup(null, null, null, null, 3, null);
-                                                                }
-                                                                
-                                                                
-                                                                
-                                                                var pb = _top.el.get_snapshot(r);
-                                                                if (!pb) {
-                                                                    return;
-                                                                }
-                                                                _top.el.hide();
-                                                                _top.el.destroy();
-                                                                x._top = false;
-                                                            
-                                                                var gc = new Gdk.GC.c_new(this.get('/Window').el.window);
-                                                                    
-                                                                    // 10 points all round..
-                                                                var full = new Gdk.Pixmap.c_new (this.get('/Window').el.window, r.width+20, r.height+20, pb.get_depth());
-                                                                // draw a white background..
-                                                               // gc.set_rgb_fg_color({ red: 0, white: 0, black : 0 });
-                                                                Gdk.draw_rectangle(full, gc, true, 0, 0, r.width+20, r.height+20);
-                                                                // paint image..
-                                                                Gdk.draw_drawable (full, gc, pb, 0, 0, 10, 10, r.width, r.height);
-                                                                // boxes..
-                                                                //gc.set_rgb_fg_color({ red: 255, white: 255, black : 255 });
-                                                                Gdk.draw_rectangle(full, gc, true, 0, 0, 10, 10);
-                                                                this.get('view').el.set_from_pixmap(full, null);
-                                                                //this.get('view-vbox').el.set_size_request( r.width+20, r.height+20);
-                                                                //var img = new Gtk.Image.from_file("/home/alan/solarpanels.jpeg");
+                                                                this.renderedEl.set_size_request(
+                                                                    tree.default_width || 600,
+                                                                    tree.default_height || 400
+                                                                );
+                                                                this.get('view').el.show_all();
                                                                 
                                                                 
                                                                 
                                                             },
                                                             showInWindow : function() {
+                                                              print("GET PROEJCT");
+                                                            	var pr = this.get('/LeftProjectTree').getActiveProject();
+                                                              
+                                                            	console.log(pr.paths);
+                                                                return;
+                                                            /*
                                                                  var src= this.buildJS(
                                                             		this.get('/LeftTree.model').toJS()[0], 
                                                             		true);
@@ -2699,95 +2647,125 @@ builder=new XObject({
                                                                 }
                                                             */
                                                             },
-                                                            mungeToString : function(obj, isListener, pad)
+                                                            viewAdd : function(item, par)
                                                                     {
-                                                                        pad = pad || '';
-                                                                        var keys = [];
-                                                                        var isArray = false;
-                                                                        isListener = isListener || false;
+                                                                // does something similar to xobject..
+                                                                item.pack = (typeof(item.pack) == 'undefined') ?  'add' : item.pack;
+                                                                
+                                                                if (item.pack===false || item.pack === 'false') {  // no ;
+                                                                    return;
+                                                                }
+                                                                print("CREATE: " + item['|xns'] + '.' + item['xtype']);
+                                                                var ns = imports.gi[item['|xns']];
+                                                                var ctr = ns[item['xtype']];
+                                                                var ctr_args = { };
+                                                                for(var k in item) {
+                                                                    var kv = item[k];
+                                                                    if (typeof(kv) == 'object' || typeof(kv) == 'function') {
+                                                                        continue;
+                                                                    }
+                                                                    if ( 
+                                                                        k == 'pack' ||
+                                                                        k == 'items' ||
+                                                                        k == 'id' ||
+                                                                        k == 'xtype' ||
+                                                                        k == 'xdebug' ||
+                                                                        k == 'xns' ||
+                                                                        k == '|xns'
+                                                                    ) {
+                                                                        continue;
+                                                                    }
+                                                                    ctr_args[k] = kv;
+                                                                    
+                                                                } 
+                                                                
+                                                                
+                                                                var el = new ctr(ctr_args);
+                                                                
+                                                                print("PACK");
+                                                                console.dump(item.pack);
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                var args = [];
+                                                                var pack_m  = false;
+                                                                if (typeof(item.pack) == 'string') {
+                                                                     
+                                                                    item.pack.split(',').forEach(function(e, i) {
                                                                         
-                                                                        // am I munging a object or array...
-                                                                        if (obj.constructor.toString() === Array.toString()) {
-                                                                            for (var i= 0; i < obj.length; i++) {
-                                                                                keys.push(i);
-                                                                            }
-                                                                            isArray = true;
-                                                                        } else {
-                                                                            for (var i in obj) {
-                                                                                keys.push(i);
-                                                                            }
-                                                                        }
+                                                                        if (e == 'false') { args.push( false); return; }
+                                                                        if (e == 'true') {  args.push( true);  return; }
+                                                                        if (!isNaN(parseInt(e))) { args.push( parseInt(e)); return; }
+                                                                        args.push(e);
+                                                                    });
+                                                                    //print(args.join(","));
+                                                                    
+                                                                    pack_m = args.shift();
+                                                                } else {
+                                                                    pack_m = item.pack.shift();
+                                                                    args = item.pack;
+                                                                }
+                                                                
+                                                                // handle error.
+                                                                if (pack_m && typeof(par[pack_m]) == 'undefined') {
+                                                                    Seed.print('pack method not available : ' + item.xtype + '.' +  pack_m);
+                                                                    return;
+                                                                }
+                                                                
+                                                                console.dump(args);
+                                                                args.unshift(el);
+                                                                //if (XObject.debug) print(pack_m + '[' + args.join(',') +']');
+                                                                //Seed.print('args: ' + args.length);
+                                                                if (pack_m) {
+                                                                    par[pack_m].apply(par, args);
+                                                                }
+                                                                
+                                                                var _this = this;
+                                                                item.items = item.items || [];
+                                                                item.items.forEach(function(ch) {
+                                                                    _this.viewAdd(ch, el);
+                                                                });
+                                                                
+                                                                
+                                                                
+                                                                // add the signal handlers.
+                                                                // is it a widget!?!!?
+                                                               
+                                                                
+                                                                try {
+                                                                    
+                                                                       
+                                                                    el.signal.expose_event.connect(XObject.createDelegate(this.widgetExposeEvent, this, [ item  ], true));
+                                                                    el.signal.drag_motion.connect(XObject.createDelegate(this.widgetDragMotionEvent, this,[ item  ], true));
+                                                                    el.signal.drag_drop.connect(XObject.createDelegate(this.widgetDragDropEvent, this, [ item  ], true));
+                                                                    el.signal.button_press_event.connect(XObject.createDelegate(this.widgetPressEvent, this, [ item  ], true ));
+                                                                } catch(e) {
+                                                                    // ignore!
+                                                                   }
+                                                                
+                                                                
+                                                                
+                                                                return el;
+                                                                
+                                                            },
+                                                            widgetExposeEvent : function() {
+                                                               ///   print("WIDGET EXPOSE"); // draw highlight??
+                                                                        return false;
+                                                            },
+                                                            widgetDragMotionEvent : function() {
+                                                                 print("WIDGET DRAGMOTION"); 
+                                                                        return true;
+                                                            },
+                                                            widgetDragDropEvent : function() {
+                                                                  print("WIDGET DRAGDROP"); 
+                                                                        return true;
+                                                            },
+                                                            widgetPressEvent : function(w,e,u,d) {
+                                                                  print("WIDGET PRESS " + d.xtreepath ); 
                                                                         
-                                                                        
-                                                                        var els = []; 
-                                                                        var skip = [];
-                                                                        if (!isArray && 
-                                                                                typeof(obj['|xns']) != 'undefined' &&
-                                                                                typeof(obj['xtype']) != 'undefined'
-                                                                            ) {
-                                                                                els.push('xtype: '+ obj['|xns'] + '.' + obj['xtype']);
-                                                                                skip.push('|xns','xtype');
-                                                                            }
-                                                                        
-                                                                        var _this = this;
-                                                                        
-                                                                        
-                                                                        
-                                                                        keys.forEach(function(i) {
-                                                                            var el = obj[i];
-                                                                            if (!isArray && skip.indexOf(i) > -1) {
-                                                                                return;
-                                                                            }
-                                                                            if (isListener) {
-                                                            			if (!_this.withDebug) {
-                                                                                    // do not write listeners unless we are debug mode.
-                                                                                	    return;
-                                                                               	 }
-                                                                                //if (obj[i].match(new RegExp("Gtk.main" + "_quit"))) { // we can not handle this very well..
-                                                                                //    return;
-                                                                               // }
-                                                                                var str= ('' + obj[i]).replace(/^\s+|\s+$/g,"");
-                                                                                var lines = str.split("\n");
-                                                                                if (lines.length > 1) {
-                                                                                    str = lines.join("\n" + pad);
-                                                                                }
-                                                                                els.push(JSON.stringify(i) + ":" + str);
-                                                                                return;
-                                                                            }
-                                                                            if (i[0] == '|') {
-                                                                                // does not hapepnd with arrays..
-                                                                                if (typeof(el) == 'string' && !obj[i].length) { //skip empty.
-                                                                                    return;
-                                                                                }
-                                                                                // this needs to go...
-                                                                               // if (typeof(el) == 'string'  && obj[i].match(new RegExp("Gtk.main" + "_quit"))) { // we can not handle this very well..
-                                                                                //    return;
-                                                                                //}
-                                                                                
-                                                                                var str= ('' + obj[i]).replace(/^\s+|\s+$/g,"");;
-                                                                                var lines = str.split("\n");
-                                                                                if (lines.length > 1) {
-                                                                                    str = lines.join("\n" + pad);
-                                                                                }
-                                                                                
-                                                                                els.push(JSON.stringify(i.substring(1)) + ":" + str);
-                                                                                return;
-                                                                            }
-                                                                            var left = isArray ? '' : (JSON.stringify(i) + " : " )
-                                                                            if (typeof(el) == 'object') {
-                                                                                els.push(left + _this.mungeToString(el, i == 'listeners', pad + '    '));
-                                                                                return;
-                                                                            }
-                                                                            els.push(JSON.stringify(i) + ":" + JSON.stringify(obj[i]));
-                                                                        });
-                                                                        var spad = pad.substring(0, pad.length-4);
-                                                                        return (isArray ? '[' : '{') + "\n" +
-                                                                            pad  + els.join(",\n" + pad ) + 
-                                                                            "\n" + spad + (isArray ? ']' : '}');
-                                                                           
-                                                                        
-                                                                        
-                                                                    },
+                                                                        return false;
+                                                            },
                                                             items : [
                                                                 {
                                                                     xtype: Gtk.HBox,
@@ -2798,9 +2776,10 @@ builder=new XObject({
                                                                             pack : "pack_start,false,false,0",
                                                                             label : "Run The Application",
                                                                             listeners : {
-                                                                                "activate":function (self) {
-                                                                                    // call render on left tree - with special option!?!
+                                                                                "button_press_event":function (self, event) {
+                                                                                  // call render on left tree - with special option!?!
                                                                                 	this.get('/RightGtkView').showInWindow();
+                                                                                    return false;
                                                                                 }
                                                                             }
                                                                         }
@@ -2817,17 +2796,17 @@ builder=new XObject({
                                                                     },
                                                                     items : [
                                                                         {
-                                                                            xtype: Gtk.Viewport,
-                                                                            pack : "add",
+                                                                            xtype: Gtk.Fixed,
+                                                                            pack : "add_with_viewport",
                                                                             init : function() {
                                                                             	XObject.prototype.init.call(this);
-                                                                            	this.el.set_hadjustment(this.parent.el.get_hadjustment());
-                                                                            	this.el.set_vadjustment(this.parent.el.get_vadjustment());
+                                                                            	//this.el.set_hadjustment(this.parent.el.get_hadjustment());
+                                                                            	//this.el.set_vadjustment(this.parent.el.get_vadjustment());
                                                                             },
                                                                             items : [
                                                                                 {
-                                                                                    xtype: Gtk.Image,
-                                                                                    pack : "add",
+                                                                                    xtype: Gtk.VBox,
+                                                                                    pack : "put,10,10",
                                                                                     init : function() {
                                                                                     	this.el =     new Gtk.Image.from_stock (Gtk.STOCK_HOME,  Gtk.IconSize.MENU);
                                                                                     	XObject.prototype.init.call(this);
