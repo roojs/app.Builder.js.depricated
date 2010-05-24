@@ -166,9 +166,7 @@ EditProject=new XObject({
                                                     el.set_value(iter, 1, p.desc);
                                                     
                                                 });
-                                                 
-                                                
-                                                
+                                                  
                                                                          
                                     },
                                     id : "model"
