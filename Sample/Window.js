@@ -312,7 +312,10 @@ Window=new XObject({
                                                                                  
                                                                             },
                                                                     selectNode : function(treepath_str) {
-                                                                        this.selection.select_path(new  Gtk.TreePath.from_string( treepath_str));
+                                                                        //this.selection.select_path(new  Gtk.TreePath.from_string( treepath_str));
+                                                                     var tp = new Gtk.TreePath.from_string(d.xtreepath);
+                                                                              this.el.set_cursor(tp, null, false);  
+                                                                          this.el.scroll_to_cell(tp, null, false, 0,0);
                                                                     },
                                                                     listeners : {
                                                                         "button_press_event":function (self, ev) {
@@ -2834,9 +2837,7 @@ Window=new XObject({
                                                                  }
                                                             this.get('view').pressed = true;
                                                                   print("WIDGET PRESS " + d.xtreepath );       
-                                                                  var tp = new Gtk.TreePath.from_string(d.xtreepath);
-                                                                      this.get('/LeftTree.view').el.set_cursor(tp, null, false);  
-                                                                  this.get('/LeftTree.view').el.scroll_to_cell(tp, null, false, 0,0);
+                                                                      this.get('/LeftTree.view').selectNode(   d.xtreepath );        
                                                                         return false;
                                                             },
                                                             widgetReleaseEvent : function() {
