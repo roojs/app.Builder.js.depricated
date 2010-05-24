@@ -5,7 +5,7 @@
  * 
  * Projects can only contain one directory... - it can import other projects..(later)
  * 
- * 
+ * we need to sort out that - paths is currently a key/value array..
  * 
  * 
  * 
