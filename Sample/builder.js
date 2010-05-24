@@ -1,4 +1,3 @@
-//<script type="text/javascript">
 Gtk = imports.gi.Gtk;
 Gdk = imports.gi.Gdk;
 Pango = imports.gi.Pango;
@@ -388,6 +387,14 @@ builder=new XObject({
                                                                                             action = ctx.actions & Gdk.DragAction.MOVE ? Gdk.DragAction.MOVE : Gdk.DragAction.COPY ;
                                                                                         }
                                                                                         var data = {};
+                                                                        
+                                                                        		if (!this.get('/LeftTree.model').el.iter_n_children(null)) {
+                                                                        			// no children.. -- asume it's ok..
+                                                                        			this.targetData =  [ '' , Gtk.TreeViewDropPosition.INTO_OR_AFTER , ''];
+                                                                        			Gdk.drag_status(ctx, action ,time);
+                                                                        			return true;
+                                                                        		}
+                                                                        
                                                                                         print("GETTING POS");
                                                                                         var isOver = this.get('/LeftTree.view').el.get_dest_row_at_pos(x,y, data);
                                                                                         print("ISOVER? " + isOver);
@@ -746,7 +753,7 @@ builder=new XObject({
                                                                                         print("add where: " + target_data[1]  );
                                                                                         var parent = tp;
                                                                                         var after = false;
-                                                                                        if (target_data[1]  < 2) { // before or after..
+                                                                                        if (tp && target_data[1]  < 2) { // before or after..
                                                                                             var ar = target_data[0].split(':');
                                                                                             ar.pop();
                                                                                             parent  = new  Gtk.TreePath.from_string( ar.join(':') );
@@ -2162,6 +2169,7 @@ builder=new XObject({
                                               
                                                 
                                             },
+                                            pack : "add",
                                             listeners : {
                                                 "cursor_changed":function (self) {
                                                        var iter = new Gtk.TreeIter();
@@ -2345,9 +2353,6 @@ builder=new XObject({
                                                             xtype: Gtk.VBox,
                                                             pack : "add",
                                                             id : "RightBrowser",
-                                                            listeners : {
-                                                                
-                                                            },
                                                             items : [
                                                                 {
                                                                     xtype: Gtk.HBox,
@@ -2581,8 +2586,13 @@ builder=new XObject({
                                                                 }
                                                                 
                                                                 var tree =  this.get('/LeftTree.model').toJS(false,true)[0];
-                                                                // in theory tree is actually window..
+                                                                // in theory tree is actually window..  
+                                                               try {
                                                                 this.renderedEl = this.viewAdd(tree.items[0], this.get('view').el);
+                                                              } catch (e) {
+                                                                 print(e.message);
+                                                                return;
+                                                              }
                                                                 this.get('view').el.set_size_request(
                                                                     tree.default_width * 1 || 400, tree.default_height * 1 || 400
                                                                 ) ;
@@ -2710,7 +2720,13 @@ builder=new XObject({
                                                                 
                                                                 // handle error.
                                                                 if (pack_m && typeof(par[pack_m]) == 'undefined') {
-                                                                    Seed.print('pack method not available : ' + item.xtype + '.' +  pack_m);
+                                                                    throw {
+                                                                            name: "ArgumentError", 
+                                                                            message : 'pack method not available : ' + par.id + " : " + par + '.' +  pack_m +
+                                                                                    "ADDING : " + item.id + " " +  el
+                                                                                
+                                                            	    };
+                                                            
                                                                     return;
                                                                 }
                                                                 
@@ -2809,7 +2825,7 @@ builder=new XObject({
                                                                                     xtype: Gtk.VBox,
                                                                                     pack : "put,10,10",
                                                                                     init : function() {
-                                                                                    	this.el =     new Gtk.Image.from_stock (Gtk.STOCK_HOME,  Gtk.IconSize.MENU);
+                                                                                    	//this.el =     new Gtk.Image.from_stock (Gtk.STOCK_HOME,  Gtk.IconSize.MENU);
                                                                                     	XObject.prototype.init.call(this);
                                                                                     
                                                                                                 Gtk.drag_dest_set
@@ -3219,7 +3235,7 @@ builder=new XObject({
                                                                         return true;
                                                                 },
                                                                 "drag_data_get":function (self, drag_context, selection_data, info, time) {
-                                                                        Seed.print('Palete: drag-data-get: ' + target_type);
+                                                                 	//Seed.print('Palete: drag-data-get: ' + target_type);
                                                                         if (this.el.dragData && this.el.dragData.length ) {
                                                                             selection_data.set_text(this.el.dragData ,this.el.dragData.length);
                                                                         }
