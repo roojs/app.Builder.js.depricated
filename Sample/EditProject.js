@@ -24,9 +24,10 @@ EditProject=new XObject({
             this.init();
         }
         var _this = this;
-        [ 'xtype' , 'name' ].forEach(function(k) {
+        [ 'xtype'  ].forEach(function(k) {
             _this.get(k).setValue(typeof(c[k]) == 'undefined' ? '' : c[k]);
         });
+    	// shouild set path..
         
         this.el.show_all();
         this.success = c.success;
