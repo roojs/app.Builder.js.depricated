@@ -44,6 +44,7 @@ WHAT'S NEEDED SO ALL DEV CAN BE DONE USING IT..
    
 
 TODO
+* Dialog buttons - need special rendering on preview.
 * change sourceview to use spaces rather than tabs.
 * Icon-size (should be an enum...??)
 * (Image|....??? ).stock - should be a list of stock icons..
