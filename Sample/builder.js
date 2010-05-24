@@ -146,7 +146,7 @@ builder=new XObject({
                                             pack : "add",
                                             listeners : {
                                                 "activate":function (self) {
-                                                	Gtk.quit();
+                                                	Gtk.main_quit();
                                                 }
                                             }
                                         }
