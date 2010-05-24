@@ -1,6 +1,7 @@
 //<Script type="text/javascript">
  
 Gio = imports.gi.Gio;
+GLib = imports.gi.GLib;
 console = imports.console;
 XObject = imports.XObject.XObject;
 File = imports.File.File;
