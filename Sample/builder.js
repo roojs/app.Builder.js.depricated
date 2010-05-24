@@ -815,6 +815,8 @@ builder=new XObject({
                                                                                             xitems = node.items;
                                                                                             delete node.items;
                                                                                         }
+                                                                            	    print("loading xitem");
+                                                                              	    console.log(xitems);
                                                                                         if (xitems) {
                                                                                             this.load(xitems, n_iter);
                                                                                         }
