@@ -1,32 +1,5 @@
-Gtk = imports.gi.Gtk;
-Gdk = imports.gi.Gdk;
-Pango = imports.gi.Pango;
-GLib = imports.gi.GLib;
-Gio = imports.gi.Gio;
-GObject = imports.gi.GObject;
-GtkSource = imports.gi.GtkSource;
-WebKit = imports.gi.WebKit;
-Vte = imports.gi.Vte;
-console = imports.console;
-XObject = imports.XObject.XObject;
-builder=new XObject({
-    xtype: Gtk.Window,
-    type : Gtk.WindowType.TOPLEVEL,
-    title : "Application Builder",
-    border_width : 0,
-    init : function() {
-         this.atoms = {
-               "STRING" : Gdk.atom_intern("STRING")
-    	};
-    	this.targetList = new Gtk.TargetList();
-    	this.targetList.add( this.atoms["STRING"], 0, 0);
-    	//imports.Builder.Provider.ProjectManager.ProjectManager.loadConfig();
-    Gtk.rc_parse_string(
-                "style \"gtkcombobox-style\" {\n" + 
-                "    GtkComboBox::appears-as-list = 1\n" +
-                "}\n"+
-                "class \"GtkComboBox\" style \"gtkcombobox-style\"\n");
-        XObject.prototype.init.call(this);
+
+
         this.el.show_all();
         
        
@@ -817,8 +790,8 @@ builder=new XObject({
                                                                                             xitems = node.items;
                                                                                             delete node.items;
                                                                                         }
-                                                                            // load children - if it has any..
-                                                                            
+                                                                            	    print("loading xitem");
+                                                                              	    console.log(xitems);
                                                                                         if (xitems) {
                                                                                             this.load(xitems, n_iter);
                                                                                         }
@@ -828,9 +801,7 @@ builder=new XObject({
                                                                                         // wee need to get the empty proptypes from somewhere..
                                                                                         
                                                                                         //var olditer = this.activeIter;
-                                                                                        this.activePath = this.el.get_path(n_iter).to_string();
-                                                                            
-                                                                            	  // changed actually set's the node data..
+                                                                                        this.activeIter = n_iter;
                                                                                         this.changed(node, true);
                                                                                         
                                                                                         
