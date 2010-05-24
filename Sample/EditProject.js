@@ -129,7 +129,7 @@ EditProject=new XObject({
                             items : [
                                 {
                                     xtype: Gtk.CellRendererText,
-                                    pack : false
+                                    pack : "pack_start"
                                 },
                                 {
                                     xtype: Gtk.ListStore,
