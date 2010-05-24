@@ -81,8 +81,11 @@ Gtk = XObject.define(
             if (this.items !== false) {
                 return false;
             }
-            if (!cb) {
-                throw "no callback for loadItems";
+            if (!cb) {  
+                throw {
+                    name: "ArgumentError", 
+                    message : no callback for loadItems"
+                };
             }
             Seed.print("load: " + this.path);
             
