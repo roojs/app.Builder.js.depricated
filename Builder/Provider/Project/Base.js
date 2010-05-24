@@ -3,7 +3,8 @@
 /**
  * Project Object
  * 
- * Projects can only contain one directory... - it can import other projects..
+ * Projects can only contain one directory... - it can import other projects..(later)
+ * 
  * 
  * 
  * 
