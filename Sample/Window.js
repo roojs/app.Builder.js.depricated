@@ -880,12 +880,13 @@ Window=new XObject({
                                                                                         var s = this.get('/LeftTree.view').selection;
                                                                                         s.get_selected(this.el, old_iter);
                                                                                         var path = this.el.get_path(old_iter).to_string();
+                                                                                       this.activeIter = false;      
                                                                                         s.unselect_all();
                                                                             
                                                                                         this.activeIter = false;      
                                                                             	    var iter = new Gtk.TreeIter();
                                                                                         this.el.get_iter_from_string(iter, path);
-                                                                                        this.el.remove(old_iter);
+                                                                                        this.el.remove(iter);
                                                                                         
                                                                                         // rebuild treemap. -- depreciated.!!
                                                                                         this.map = {};
