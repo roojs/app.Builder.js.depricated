@@ -2729,7 +2729,9 @@ Window=new XObject({
                                                             		k = k.substring(1);
                                                                           print(k + '=' + kv);
                                                             	}
-                                                            
+                                                                    if (k[0] == '|') { // should be boolean or number..
+                                                            		k = k.substring(1);
+                                                                    }
                                                                     ctr_args[k] = kv;
                                                                     
                                                                 } 
