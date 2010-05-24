@@ -110,6 +110,9 @@ Base = XObject.define(
             for (var k in this.files) {
                 
                 var f = this.files[k];
+                if (!f) {
+                    continue;
+                   }
                 console.dump(f);
                 f.hasParent = false;
                 f.cn = [];
