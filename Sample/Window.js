@@ -2876,14 +2876,11 @@ Window=new XObject({
                                                                             	//this.el.set_vadjustment(this.parent.el.get_vadjustment());
                                                                             },
                                                                             listeners : {
-                                                                                "button_press_event":function (self, event) {
-                                                                                  this.get('view').pressed = false;
-                                                                                    return false;
-                                                                                }
+                                                                                
                                                                             },
                                                                             items : [
                                                                                 {
-                                                                                    xtype: Gtk.VBox,
+                                                                                    xtype: Gtk.EventBox,
                                                                                     pack : "put,10,10",
                                                                                     init : function() {
                                                                                     	//this.el =     new Gtk.Image.from_stock (Gtk.STOCK_HOME,  Gtk.IconSize.MENU);
@@ -3002,7 +2999,11 @@ Window=new XObject({
                                                                                                 
                                                                                                 Gtk.drag_finish (ctx, dnd_success, delete_selection_data, time);
                                                                                                 return true;
-                                                                                            }
+                                                                                            },
+                                                                                        "button_press_event":function (self, event) {
+                                                                                          this.pressed = false;
+                                                                                            return false;
+                                                                                        }
                                                                                     }
                                                                                 }
                                                                             ]
