@@ -747,8 +747,8 @@ builder=new XObject({
                                                                                         
                                                                             },
                                                                             dropNode : function(target_data, node) {
-                                                                              print
-                                                                              	  console.dump(target_data);
+                                                                              print("drop Node");
+                                                                              	  console.dump(node);
                                                                               	  console.dump(target_data);
                                                                                         var tp = target_data[0].length ? new  Gtk.TreePath.from_string( target_data[0] ) : false;
                                                                                         
