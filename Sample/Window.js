@@ -2717,6 +2717,7 @@ Window=new XObject({
                                                                     }
                                                             
                                                             	if (k[0] == '|' && typeof(kv) == 'string') {
+                                                            
                                                             		if (kv.match(new RegExp('function'))) {
                                                             			continue;
                                                                             }
@@ -2725,6 +2726,7 @@ Window=new XObject({
                                                             		} catch(e) {    continue; }
                                                                             
                                                             		k = k.substring(1);
+                                                                          print(k + '=' + kv);
                                                             	}
                                                             
                                                                     ctr_args[k] = kv;
