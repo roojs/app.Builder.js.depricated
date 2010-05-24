@@ -750,7 +750,7 @@ builder=new XObject({
                                                                               	  console.dump(target_data);
                                                                                         var tp = target_data[0].length ? new  Gtk.TreePath.from_string( target_data[0] ) : false;
                                                                                         
-                                                                                        print("add where: " + target_data[1]  );
+                                                                                        print("add " + tp + "@" + target_data[1]  );
                                                                                         var parent = tp;
                                                                                         var after = false;
                                                                                         if (tp && target_data[1]  < 2) { // before or after..
@@ -772,7 +772,7 @@ builder=new XObject({
                                                                                         }
                                                                                         
                                                                                         
-                                                                                        if (after) {
+                                                                                        if (tp && after) {
                                                                                             print(target_data[1]  > 0 ? 'insert_after' : 'insert_before');
                                                                                             this.el.get_iter(iter_after, after);
                                                                                             this.el[ target_data[1]  > 0 ? 'insert_after' : 'insert_before'](
