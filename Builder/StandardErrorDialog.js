@@ -1,60 +1,37 @@
-//<Script type="text/javascript">
-
 Gtk = imports.gi.Gtk;
-GObject = imports.gi.GObject;
-Gio = imports.gi.Gio;
+Gdk = imports.gi.Gdk;
+Pango = imports.gi.Pango;
 GLib = imports.gi.GLib;
-
-XObject = imports.XObject.XObject;
+Gio = imports.gi.Gio;
+GObject = imports.gi.GObject;
+GtkSource = imports.gi.GtkSource;
+WebKit = imports.gi.WebKit;
+Vte = imports.gi.Vte;
 console = imports.console;
-
-
-
-/**
- * add a component
- * 
- * basically uses a standard template ? pulled from the web?
- * 
- * you have to pick which template, and give it a name..
- * 
- * and pick which directory to put it in?
- * 
- */
-
-
-StandardErrorDialog = new XObject({
-    
-    
-    
-    xtype : function () {
-        return new Gtk.MessageDialog({ buttons : Gtk.ButtonsType.OK });
-            
-    },
+XObject = imports.XObject.XObject;
+StandardErrorDialog=new XObject({
+    xtype: Gtk.MessageDialog,
+    buttons : Gtk.ButtonsType.OK,
     modal : true,
-    
-    'message-type' : Gtk.MessageType.ERROR,
-    //"secondary-text"           gchar*                : Read / Write
-    //"secondary-use-markup"     gboolean              : Read / Write
-    text   : "FIXME",
-    "use-markup"     : true,
-    
-    show : function(msg)
-    {
-        if (!this.el) {
-            this.init();
-        }
-        this.el.text =  msg;
-        this.el.show_all();
+    message_type : Gtk.MessageType.ERROR,
+    text : "fixme",
+    use_markup : true,
+    show : function(msg) {
+         if (!this.el) {
+                this.init();
+            }
+            this.el.text =  msg;
+            this.el.show_all();
     },
-    
-    listeners :  {
-        'delete-event' : function (widget, event) {
+    listeners : {
+        "delete_event":function (self, event) {
             this.el.hide();
             return true;
         },
-        
-        response : function () {
-            this.el.hide();
+        "response":function (self, response_id) {
+           this.el.hide();
         }
     }
 });
+StandardErrorDialog.init();
+XObject.cache['/StandardErrorDialog'] = StandardErrorDialog;
