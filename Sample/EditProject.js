@@ -122,6 +122,10 @@ EditProject=new XObject({
                                         }
                                         return this.get('model').data[ix].xtype;
                             },
+                            init : function() {
+                                XObject.prototype.init.call(this);
+                              this.el.add_attribute(this.items[0].el , 'markup', 1 );  
+                            },
                             items : [
                                 {
                                     xtype: Gtk.CellRendererText,
