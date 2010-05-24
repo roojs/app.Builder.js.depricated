@@ -61,7 +61,8 @@ Window=new XObject({
                     items : [
                         {
                             xtype: Gtk.MenuItem,
-                            label : "File",
+                            use_underline : true,
+                            label : "_File",
                             items : [
                                 {
                                     xtype: Gtk.Menu,
@@ -69,7 +70,8 @@ Window=new XObject({
                                     items : [
                                         {
                                             xtype: Gtk.MenuItem,
-                                            label : "New Project",
+                                            use_underline : true,
+                                            label : "New _Project",
                                             listeners : {
                                                 "activate":function (self) {
                                                 	this.get('/EditProject').show({
@@ -82,7 +84,8 @@ Window=new XObject({
                                         },
                                         {
                                             xtype: Gtk.MenuItem,
-                                            label : "New File",
+                                            label : "_New File",
+                                            use_underline : true,
                                             listeners : {
                                                 "activate":function (self) {
                                                  	var fn = this.get('/LeftProjectTree.combo').getValue();
@@ -103,50 +106,12 @@ Window=new XObject({
                                         },
                                         {
                                             xtype: Gtk.MenuItem,
-                                            label : "Add Directory to Project",
                                             pack : "add",
+                                            label : "_Quit",
+                                            use_underline : true,
                                             listeners : {
                                                 "activate":function (self) {
-                                                	var fn = this.get('/LeftProjectTree').get('combo').getValue();
-                                                        if (!fn) {
-                                                            this.get('/LeftProjectTree').showNoProjectSelected();
-                                                            return true;
-                                                        }
-                                                        
-                                                        
-                                                        var dc = new Gtk.FileChooserDialog({
-                                                            action : Gtk.FileChooserAction.SELECT_FOLDER,
-                                                            modal: true,
-                                                            'select-multiple' : false,
-                                                            "show-hidden" : true,
-                                                        });
-                                                        dc.add_button("Add To Project", Gtk.ResponseType.ACCEPT );
-                                                        dc.add_button("Cancel",Gtk.ResponseType.CANCEL);
-                                                        
-                                                        if (dc.run() != Gtk.ResponseType.ACCEPT) {
-                                                            
-                                                            dc.destroy();
-                                                            return;
-                                                        }
-                                                            
-                                                        //Seed.print(dc.get_filename());
-                                                        var pm  = imports.Builder.Provider.ProjectManager.ProjectManager;
-                                                        pm.getByFn(fn).add(dc.get_filename(), 'dir');
-                                                        dc.destroy();
-                                                }
-                                            }
-                                        },
-                                        {
-                                            xtype: Gtk.SeparatorMenuItem,
-                                            pack : "add"
-                                        },
-                                        {
-                                            xtype: Gtk.MenuItem,
-                                            label : "Quit",
-                                            pack : "add",
-                                            listeners : {
-                                                "activate":function (self) {
-                                                	Gtk.main_quit();
+                                                   Gtk.main_quit();
                                                 }
                                             }
                                         }
@@ -312,7 +277,10 @@ Window=new XObject({
                                                                                  
                                                                             },
                                                                     selectNode : function(treepath_str) {
-                                                                        this.selection.select_path(new  Gtk.TreePath.from_string( treepath_str));
+                                                                        //this.selection.select_path(new  Gtk.TreePath.from_string( treepath_str));
+                                                                     var tp = new Gtk.TreePath.from_string(treepath_str);
+                                                                              this.el.set_cursor(tp, null, false);  
+                                                                          this.el.scroll_to_cell(tp, null, false, 0,0);
                                                                     },
                                                                     listeners : {
                                                                         "button_press_event":function (self, ev) {
@@ -513,6 +481,9 @@ Window=new XObject({
                                                                                         return true;
                                                                         },
                                                                         "cursor_changed":function (self) {
+                                                                         if (this.blockChanges) {
+                                                                           return true;
+                                                                         }
                                                                          var iter = new Gtk.TreeIter();
                                                                                         
                                                                                         if (this.selection.count_selected_rows() < 1) {
@@ -868,24 +839,31 @@ Window=new XObject({
                                                                                                             
                                                                                         }
                                                                                         
-                                                                                        this.activePath = false;
+                                                                                        this.activePath= false;
                                                                                         this.changed(false,true);
                                                                             },
                                                                             deleteSelected : function() {
-                                                                                        
+                                                                                        this.get('/LeftTree.view').blockChanges = true;
                                                                                         var old_iter = new Gtk.TreeIter();
                                                                                         var s = this.get('/LeftTree.view').selection;
                                                                                         s.get_selected(this.el, old_iter);
+                                                                                        var path = this.el.get_path(old_iter).to_string();
+                                                                            
+                                                                                        this.activePath= false;      
                                                                                         s.unselect_all();
-                                                                                        
-                                                                                        this.el.remove(old_iter);
+                                                                            
+                                                                                        this.activePath= false;      
+                                                                            	    var iter = new Gtk.TreeIter();
+                                                                                        this.el.get_iter_from_string(iter, path);
+                                                                                        this.el.remove(iter);
                                                                                         
                                                                                         // rebuild treemap. -- depreciated.!!
                                                                                         this.map = {};
                                                                                         this.treemap = { };
                                                                                         //this.toJS(null, true) // does not do anything?
-                                                                                        this.activePath = false;
+                                                                                    this.activePath= false;      
                                                                                         this.changed(false,true);
+                                                                                      this.get('/LeftTree.view').blockChanges = false;
                                                                             },
                                                                             currentTree : false,
                                                                             listAllTypes : function() {
@@ -2418,7 +2396,7 @@ Window=new XObject({
                                                                             init : function() {
                                                                                 XObject.prototype.init.call(this);
                                                                                 // this may not work!?
-                                                                                //this.el.open('file:///' + __script_path__ + '/../builder.html');
+                                                                                this.el.open('file:///' + __script_path__ + '/../builder.html');
                                                                                                         
                                                                                 Gtk.drag_dest_set
                                                                                 (
@@ -2432,7 +2410,7 @@ Window=new XObject({
                                                                                // print("RB: TARGETS : " + LeftTree.atoms["STRING"]);
                                                                                 Gtk.drag_dest_set_target_list(this.el, this.get('/Window').targetList);
                                                                             },
-                                                                            renderJS : function() {
+                                                                            renderJS : function(data) {
                                                                                 this.renderedData = data;
                                                                                 var str = JSON.stringify(data) ;
                                                                                 
@@ -2834,9 +2812,7 @@ Window=new XObject({
                                                                  }
                                                             this.get('view').pressed = true;
                                                                   print("WIDGET PRESS " + d.xtreepath );       
-                                                                  var tp = new Gtk.TreePath.from_string(d.xtreepath);
-                                                                      this.get('/LeftTree.view').el.set_cursor(tp, null, false);  
-                                                                  this.get('/LeftTree.view').el.scroll_to_cell(tp, null, false, 0,0);
+                                                                      this.get('/LeftTree.view').selectNode(   d.xtreepath );        
                                                                         return false;
                                                             },
                                                             widgetReleaseEvent : function() {
