@@ -171,7 +171,7 @@ Gtk = XObject.define(
             src += "XObject = imports.XObject.XObject;\n"; // path?!!?
             
             
-            src += this.name + '=new XObject('+ this.mungeToString(data) + ")\n;";
+            src += this.name + '=new XObject('+ this.mungeToString(data) + ");\n";
             src += this.name + '.init();\n';
             // register it in the cache
             src += "XObject.cache['/" + this.name + "'] = " + this.name + ";\n";
