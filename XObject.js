@@ -274,7 +274,14 @@ XObject.prototype = {
         
         // handle error.
         if (pack_m && typeof(this.el[pack_m]) == 'undefined') {
+            
             Seed.print('pack method not available : ' + this.xtype + '.' +  pack_m);
+            var p = this.parent;
+            while (p) {
+                Seed.print('PARENT: ' + p.xtype);
+                p = p.parent;
+            }
+            
             return;
         }
         
