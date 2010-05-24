@@ -1910,8 +1910,8 @@ builder=new XObject({
                                                                         
                                                                         this.el.set_value(iter, 1, '' +str);
                                                                         this.el.set_value(iter, 3, '' + this.toShort(str));
-                                                                        // update the tree...
-                                                                        //var LeftTree        = imports.Builder.LeftTree.LeftTree;
+                                                                        // update the tree...  
+                                                                    
                                                                         this.get('/LeftTree.model').changed(this.toJS(), doRefresh); 
                                                                     },
                                                                     toJS : function() {
@@ -2808,8 +2808,10 @@ builder=new XObject({
                                                                         return true;
                                                             },
                                                             widgetPressEvent : function(w,e,u,d) {
-                                                                  print("WIDGET PRESS " + d.xtreepath ); 
-                                                                        
+                                                                  print("WIDGET PRESS " + d.xtreepath );       
+                                                                  var tp = new Gtk.TreePath.from_string(d.xtreepath);
+                                                                      this.get('/LeftTree.view').el.set_cursor(tp, null, false);  
+                                                                  this.get('/LeftTree.view').el.scroll_to_cell(tp, null, false, 0,0);
                                                                         return false;
                                                             },
                                                             items : [
