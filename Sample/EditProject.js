@@ -11,7 +11,7 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 EditProject=new XObject({
     xtype: Gtk.Dialog,
-    default_height : 400,
+    default_height : 500,
     default_width : 600,
     deletable : true,
     modal : true,
