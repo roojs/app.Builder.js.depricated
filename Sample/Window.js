@@ -313,7 +313,7 @@ Window=new XObject({
                                                                             },
                                                                     selectNode : function(treepath_str) {
                                                                         //this.selection.select_path(new  Gtk.TreePath.from_string( treepath_str));
-                                                                     var tp = new Gtk.TreePath.from_string(d.xtreepath);
+                                                                     var tp = new Gtk.TreePath.from_string(treepath_str);
                                                                               this.el.set_cursor(tp, null, false);  
                                                                           this.el.scroll_to_cell(tp, null, false, 0,0);
                                                                     },
