@@ -50,11 +50,15 @@ files.forEach(function(f) {
     if (!fp.match(/\.bjs$/)) {
         return;
     }
-    if (File.isFile(fp.replace(/\.bjs$/, '.js'))) {
-        // check file time..
+    var js = fp.replace(/\.bjs$/, '.js');
+    if (File.isFile(js)) {
+        // check file time.. = bjs is less than compiled file..
+        if (File.mtime(fp) < File.mtime(js)) {
+            olist.push(imports[fp.replace(/\.bjs$/, '.js')]);
+            return;
+        }
         
-        olist.push(imports[fp.replace(/\.bjs$/, '.js')]);
-        return;
+        
     }
     var gtkbuilder =  new imports.Builder.Provider.File.Gtk.Gtk({ path : fp });
     gtkbuilder.loadItems(function() { });
