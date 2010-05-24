@@ -51,6 +51,8 @@ files.forEach(function(f) {
         return;
     }
     if (File.isFile(fp.replace(/\.bjs$/, '.js'))) {
+        // check file time..
+        
         olist.push(imports[fp.replace(/\.bjs$/, '.js')]);
         return;
     }
