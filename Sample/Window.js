@@ -2786,6 +2786,7 @@ Window=new XObject({
                                                                     el.signal.drag_motion.connect(XObject.createDelegate(this.widgetDragMotionEvent, this,[ item  ], true));
                                                                     el.signal.drag_drop.connect(XObject.createDelegate(this.widgetDragDropEvent, this, [ item  ], true));
                                                                     el.signal.button_press_event.connect(XObject.createDelegate(this.widgetPressEvent, this, [ item  ], true ));
+                                                              el.signal.button_release_event.connect(XObject.createDelegate(this.widgetReleaseEvent, this, [ item  ], true ));
                                                                 } catch(e) {
                                                                     // ignore!
                                                                    }
@@ -2817,6 +2818,9 @@ Window=new XObject({
                                                                       this.get('/LeftTree.view').el.set_cursor(tp, null, false);  
                                                                   this.get('/LeftTree.view').el.scroll_to_cell(tp, null, false, 0,0);
                                                                         return false;
+                                                            },
+                                                            widgetReleaseEvent : function() {
+                                                                this.get('view').pressed = false;
                                                             },
                                                             items : [
                                                                 {
