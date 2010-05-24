@@ -171,9 +171,10 @@ Gtk = XObject.define(
             src += "XObject = imports.XObject.XObject;\n"; // path?!!?
             
             
-            src += this.name + '=new XObject('+ this.mungeToString(data) + ')\n;';
+            src += this.name + '=new XObject('+ this.mungeToString(data) + ")\n;";
             src += this.name + '.init();\n';
             
+            src += "XObject.cache['/" + this.name + "'] = " + this.name + ";\n;";
             
             
             var fn = GLib.path_get_dirname(this.path) + '/' + this.name + '.js';
