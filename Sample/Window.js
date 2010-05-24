@@ -104,7 +104,8 @@ Window=new XObject({
                                         {
                                             xtype: Gtk.MenuItem,
                                             pack : "add",
-                                            label : "_Quit"
+                                            label : "_Quit",
+                                            use_underline : true
                                         }
                                     ]
                                 }
