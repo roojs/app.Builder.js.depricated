@@ -56,7 +56,7 @@ files.forEach(function(f) {
     var gtkbuilder =  new imports.Builder.Provider.File.Gtk.Gtk({ path : Seed.argv[2] + '/' + f });
     gtkbuilder.loadItems(function() { });
     var fn = gtkbuilder.saveJS();
-    olist.push(imports[fn])]);
+    olist.push(imports[fn]);
     
     
 });
