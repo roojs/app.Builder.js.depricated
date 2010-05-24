@@ -98,7 +98,7 @@ Gtk = XObject.define(
             
             var cfg = JSON.parse(src);
             print("loaded data");
-            console.dump(cfg);
+            //console.dump(cfg);
             
             _this.name = cfg.name;
             _this.parent =  cfg.parent;
