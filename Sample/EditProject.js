@@ -36,7 +36,7 @@ EditProject=new XObject({
              this.el.hide();
                         return true;
         },
-        "response":function (self, response_id) {
+        "response":function (self, id) {
          if (id < 1) {
                     this.el.hide();
                     return;
