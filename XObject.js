@@ -277,11 +277,6 @@ XObject.prototype = {
             
             Seed.print('pack method not available : ' + this.xtype + '.' +  pack_m);
             console.dump(this);
-            var p = this.parent;
-            while (p) {
-                Seed.print('PARENT: ' + p.xtype);
-                p = p.parent;
-            }
             
             return;
         }
