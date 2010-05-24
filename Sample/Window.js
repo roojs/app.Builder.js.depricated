@@ -2780,14 +2780,15 @@ Window=new XObject({
                                                                
                                                                 
                                                                 try {
-                                                                    el.add_events(Gtk.EventMask.BUTTON_PRESS_MASK
-                                                            			       | Gtk.EventMask.BUTTON_RELEASE_MASK
+                                                                    el.add_events(Gtk.EventMask.BUTTON_PRESS_MASK + 
+                                                             			Gtk.EventMask.BUTTON_RELEASE_MASK);
+                                                            /*
                                                             			       | Gtk.EventMask.BUTTON_MOTION_MASK
                                                             			       | Gtk.EventMask.ENTER_NOTIFY_MASK
                                                             			       | Gtk.EventMask.LEAVE_NOTIFY_MASK
                                                             			       | Gtk.EventMask.POINTER_MOTION_MASK
                                                                );
-                                                                       
+                                                              */         
                                                                     el.signal.expose_event.connect(XObject.createDelegate(this.widgetExposeEvent, this, [ item  ], true));
                                                                     el.signal.drag_motion.connect(XObject.createDelegate(this.widgetDragMotionEvent, this,[ item  ], true));
                                                                     el.signal.drag_drop.connect(XObject.createDelegate(this.widgetDragDropEvent, this, [ item  ], true));
