@@ -47,11 +47,11 @@ var olist = [];
 var gtkbuilder = false;
 files.forEach(function(f) {
     if (!f.match(/\.bjs$/)) {
-        continue;
+        return;
     }
     if (File.isFile(f.replace(/\.bjs$/, '.js'))) {
         olist.push(imports[f.replace(/\.bjs$/, '.js')]);
-        continue;
+        return;
     }
     var gtkbuilder =  new imports.Builder.Provider.File.Gtk.Gtk({ path : Seed.argv[2] + '/' + f });
     gtkbuilder.loadItems(function() { });
