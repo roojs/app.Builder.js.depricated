@@ -46,14 +46,15 @@ var olist = [];
 
 var gtkbuilder = false;
 files.forEach(function(f) {
-    if (!f.match(/\.bjs$/)) {
+    var fp = Seed.argv[2] + '/' + f;
+    if (!fp.match(/\.bjs$/)) {
         return;
     }
-    if (File.isFile(f.replace(/\.bjs$/, '.js'))) {
-        olist.push(imports[f.replace(/\.bjs$/, '.js')]);
+    if (File.isFile(fp.replace(/\.bjs$/, '.js'))) {
+        olist.push(imports[fp.replace(/\.bjs$/, '.js')]);
         return;
     }
-    var gtkbuilder =  new imports.Builder.Provider.File.Gtk.Gtk({ path : Seed.argv[2] + '/' + f });
+    var gtkbuilder =  new imports.Builder.Provider.File.Gtk.Gtk({ path : fp });
     gtkbuilder.loadItems(function() { });
     var fn = gtkbuilder.saveJS();
     olist.push(imports[fn]);
