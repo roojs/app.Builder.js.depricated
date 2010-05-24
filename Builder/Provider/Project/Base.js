@@ -285,7 +285,7 @@ Base = XObject.define(
                     path : dir  + '/' + fn,
                     parent : parent
                 });
-                
+                console.log(this.files[dir  + '/' + fn] );
                 /*
                 var f = Gio.file_new_for_path(dir + '/' + fn);
                 var inf = f.query_info('standard::*');
