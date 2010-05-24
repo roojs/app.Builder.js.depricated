@@ -22,7 +22,7 @@ Base = XObject.define(
             ProjectManager.fireEvent('changed');
         });
         XObject.extend(this, cfg);
-        
+        this.files = { }; 
         /*
         if (this.files ){
             for (var f in this.files) {
