@@ -260,7 +260,7 @@ Base = XObject.define(
                     continue;
                 }
                 
-                if (!fn.match(/\.bjs$/)) {
+                if (!fn.match(/.bjs$/)) {
                     continue;
                 }
                 var parent = '';
