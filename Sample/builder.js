@@ -2817,7 +2817,7 @@ builder=new XObject({
                                                                                     xtype: Gtk.VBox,
                                                                                     pack : "put,10,10",
                                                                                     init : function() {
-                                                                                    	this.el =     new Gtk.Image.from_stock (Gtk.STOCK_HOME,  Gtk.IconSize.MENU);
+                                                                                    	//this.el =     new Gtk.Image.from_stock (Gtk.STOCK_HOME,  Gtk.IconSize.MENU);
                                                                                     	XObject.prototype.init.call(this);
                                                                                     
                                                                                                 Gtk.drag_dest_set
