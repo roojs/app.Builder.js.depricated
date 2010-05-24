@@ -2717,7 +2717,14 @@ Window=new XObject({
                                                                     }
                                                             
                                                             	if (k[0] == '|') {
-                                                            		print(k + '=' + kv);
+                                                            		if (kv.match(new RegExp('function'))) {
+                                                            			continue;
+                                                                            }
+                                                            		try {
+                                                            			eval( 'kv = ' + kv);
+                                                            		} catch(e) {    continue; }
+                                                                            
+                                                            		k = k.substring(1);
                                                             	}
                                                             
                                                                     ctr_args[k] = kv;
