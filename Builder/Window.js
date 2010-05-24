@@ -868,7 +868,7 @@ Window=new XObject({
                                                                                                             
                                                                                         }
                                                                                         
-                                                                                        this.activeIter = false;
+                                                                                        this.activePath = false;
                                                                                         this.changed(false,true);
                                                                             },
                                                                             deleteSelected : function() {
@@ -884,7 +884,7 @@ Window=new XObject({
                                                                                         this.map = {};
                                                                                         this.treemap = { };
                                                                                         //this.toJS(null, true) // does not do anything?
-                                                                                        this.activeIter = false;
+                                                                                        this.activePath = false;
                                                                                         this.changed(false,true);
                                                                             },
                                                                             currentTree : false,
