@@ -155,8 +155,11 @@ EditProject=new XObject({
                 },
                 {
                     xtype: Gtk.FileChooserWidget,
-                    pack : "pack_end,true,true,3",
-                    action : Gtk.FileChooserAction.SELECT_FOLDER
+                    pack : "pack_end,true,true,10",
+                    action : Gtk.FileChooserAction.SELECT_FOLDER,
+                    listeners : {
+                        
+                    }
                 }
             ]
         },
