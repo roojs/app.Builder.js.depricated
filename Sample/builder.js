@@ -2710,7 +2710,12 @@ builder=new XObject({
                                                                 
                                                                 // handle error.
                                                                 if (pack_m && typeof(par[pack_m]) == 'undefined') {
-                                                                    Seed.print('pack method not available : ' + item.xtype + '.' +  pack_m);
+                                                                    throw {
+                                                                            name: "ArgumentError", 
+                                                                            message : 'pack method not available : ' + item.id + " : " + item.xtype + '.' +  pack_m
+                                                                                
+                                                            	    };
+                                                            
                                                                     return;
                                                                 }
                                                                 
