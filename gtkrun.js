@@ -54,7 +54,7 @@ files.forEach(function(f) {
         continue;
     }
     var gtkbuilder =  new imports.Builder.Provider.File.Gtk.Gtk({ path : f });
-    gtkbuilder.loadItems();
+    gtkbuilder.loadItems(function() { });
     gtkbuilder.saveJS();
     olist.push(imports[f.replace(/\.bjs$/, '.js')]);
     
