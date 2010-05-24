@@ -54,7 +54,8 @@ files.forEach(function(f) {
     if (File.isFile(js)) {
         // check file time.. = bjs is less than compiled file..
         if (File.mtime(fp) < File.mtime(js)) {
-            olist.push(imports[fp.replace(/\.bjs$/, '.js')]);
+            print ("LOADING" + js);
+            olist.push(imports[js]);
             return;
         }
         
@@ -62,6 +63,7 @@ files.forEach(function(f) {
     }
     var gtkbuilder =  new imports.Builder.Provider.File.Gtk.Gtk({ path : fp });
     gtkbuilder.loadItems(function() { });
+    print ("COMPILING" + js);
     var fn = gtkbuilder.saveJS();
     if (fn === false) { // skip files that do not contain anythng!
         return;
