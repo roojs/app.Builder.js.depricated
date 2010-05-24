@@ -2893,143 +2893,153 @@ Window=new XObject({
                                                                     },
                                                                     items : [
                                                                         {
-                                                                            xtype: Gtk.Fixed,
-                                                                            pack : "add_with_viewport",
+                                                                            xtype: Gtk.EventBox,
+                                                                            pack : "add",
                                                                             init : function() {
-                                                                            	XObject.prototype.init.call(this);
-                                                                            	//this.el.set_hadjustment(this.parent.el.get_hadjustment());
-                                                                            	//this.el.set_vadjustment(this.parent.el.get_vadjustment());
-                                                                             this.el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({
+                                                                                XObject.prototype.init.call(this);
+                                                                            this.el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({
                                                                                         red: 0xEEEE, green: 0xEEEE , blue : 0xEEEE
                                                                                        }));
                                                                             },
                                                                             items : [
                                                                                 {
-                                                                                    xtype: Gtk.EventBox,
-                                                                                    pack : "put,10,10",
+                                                                                    xtype: Gtk.Fixed,
+                                                                                    pack : "add",
                                                                                     init : function() {
-                                                                                    	//this.el =     new Gtk.Image.from_stock (Gtk.STOCK_HOME,  Gtk.IconSize.MENU);
                                                                                     	XObject.prototype.init.call(this);
-                                                                                    
-                                                                                                Gtk.drag_dest_set
-                                                                                                (
-                                                                                                        this.el,              /* widget that will accept a drop */
-                                                                                                        Gtk.DestDefaults.MOTION  | Gtk.DestDefaults.HIGHLIGHT,
-                                                                                                        null,            /* lists of target to support */
-                                                                                                        0,              /* size of list */
-                                                                                                        Gdk.DragAction.COPY         /* what to do with data after dropped */
-                                                                                                );
-                                                                                                
-                                                                                               // print("RB: TARGETS : " + LeftTree.atoms["STRING"]);
-                                                                                                Gtk.drag_dest_set_target_list(this.el, this.get('/Window').targetList);
+                                                                                    	//this.el.set_hadjustment(this.parent.el.get_hadjustment());
+                                                                                    	//this.el.set_vadjustment(this.parent.el.get_vadjustment());
+                                                                                     
                                                                                     },
-                                                                                    ready : false,
-                                                                                    getActiveNode : function(x,y)
-                                                                                    {
-                                                                                       // workout what node is here..
-                                                                                        return '0'; // top..
-                                                                                    },
-                                                                                    id : "view",
-                                                                                    listeners : {
-                                                                                        "drag_motion":function (self, ctx, x, y, time) {
+                                                                                    items : [
+                                                                                        {
+                                                                                            xtype: Gtk.EventBox,
+                                                                                            pack : "put,10,10",
+                                                                                            init : function() {
+                                                                                            	//this.el =     new Gtk.Image.from_stock (Gtk.STOCK_HOME,  Gtk.IconSize.MENU);
+                                                                                            	XObject.prototype.init.call(this);
                                                                                             
-                                                                                                        // A) find out from drag all the places that node could be dropped.
-                                                                                                        var src = Gtk.drag_get_source_widget(ctx);
-                                                                                                        if (!src.dropList) {
-                                                                                                            Gdk.drag_status(ctx, 0, time);
-                                                                                                            return true;
-                                                                                                        }
-                                                                                                        // b) get what we are over.. (from activeNode)
-                                                                                                        // tree is empty.. - list should be correct..
-                                                                                                        if (!this.get('/LeftTree.model').currentTree) {
-                                                                                                            Gdk.drag_status(ctx, Gdk.DragAction.COPY,time);
-                                                                                                            return true;
-                                                                                                            
-                                                                                                        }
-                                                                                                        // c) ask tree where it should be dropped... - eg. parent.. (after node ontop)
-                                                                                                        var activeNode = this.getActiveNode(x, y);
+                                                                                                        Gtk.drag_dest_set
+                                                                                                        (
+                                                                                                                this.el,              /* widget that will accept a drop */
+                                                                                                                Gtk.DestDefaults.MOTION  | Gtk.DestDefaults.HIGHLIGHT,
+                                                                                                                null,            /* lists of target to support */
+                                                                                                                0,              /* size of list */
+                                                                                                                Gdk.DragAction.COPY         /* what to do with data after dropped */
+                                                                                                        );
                                                                                                         
-                                                                                                        
-                                                                                                        var tg = this.get('/LeftTree.model').findDropNode(activeNode, src.dropList);
-                                                                                                        console.dump(tg);
-                                                                                                        if (!tg.length) {
-                                                                                                            Gdk.drag_status(ctx, 0,time);
-                                                                                                            this.get('/LeftTree.view').highlight(false);
-                                                                                                            return true;
-                                                                                                        }
-                                                                                                         
-                                                                                                        // if we have a target..
-                                                                                                        // -> highlight it! (in browser)
-                                                                                                        // -> highlight it! (in tree)
-                                                                                                        
-                                                                                                        Gdk.drag_status(ctx, Gdk.DragAction.COPY,time);
-                                                                                                        this.get('/LeftTree.view').highlight(tg);
-                                                                                                        this.targetData = tg;
-                                                                                                        // for tree we should handle this...
-                                                                                                        return true;
-                                                                                        },
-                                                                                        "drag_drop":function (self,ctx, x, y, time) {
-                                                                                        	Seed.print("TARGET: drag-drop");
-                                                                                                var is_valid_drop_site = true;
-                                                                                                
-                                                                                                 
-                                                                                                Gtk.drag_get_data
-                                                                                                (
-                                                                                                        self,         /* will receive 'drag-data-received' signal */
-                                                                                                        ctx,        /* represents the current state of the this.gDnD */
-                                                                                                        this.get('/Window').atoms["STRING"],    /* the target type we want */
-                                                                                                        time            /* time stamp */
-                                                                                                );
-                                                                                                
-                                                                                                
-                                                                                                /* No target offered by source => error */
-                                                                                               
-                                                                                        
-                                                                                                return  is_valid_drop_site;
-                                                                                          
-                                                                                        },
-                                                                                        "drag_data_received":function (w, ctx,  x,  y, sel_data,  target_type,  time, ud) 
-                                                                                            {
-                                                                                                Seed.print("GtkView: drag-data-received");
-                                                                                                var delete_selection_data = false;
-                                                                                                var dnd_success = false;
-                                                                                                /* Deal with what we are given from source */
-                                                                                                if( sel_data && sel_data.length ) {
-                                                                                                    
-                                                                                                    if (ctx.action == Gdk.DragAction.ASK)  {
-                                                                                                        /* Ask the user to move or copy, then set the ctx action. */
-                                                                                                    }
-                                                                                        
-                                                                                                    if (ctx.action == Gdk.DragAction.MOVE) {
-                                                                                                        delete_selection_data = true;
-                                                                                                    }
-                                                                                                    var source = Gtk.drag_get_source_widget(ctx);
-                                                                                        
-                                                                                                    Seed.print("Browser: source.DRAGDATA? " + source.dragData);
-                                                                                                    if (this.targetData) {
-                                                                                                        Seed.print(this.targetData);
-                                                                                                        this.get('/LeftTree.model').dropNode(this.targetData,  source.dragData);
-                                                                                                    }
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    dnd_success = true;
-                                                                                        
-                                                                                                }
-                                                                                        
-                                                                                                if (dnd_success == false)
-                                                                                                {
-                                                                                                        Seed.print ("DnD data transfer failed!\n");
-                                                                                                }
-                                                                                                
-                                                                                                Gtk.drag_finish (ctx, dnd_success, delete_selection_data, time);
-                                                                                                return true;
+                                                                                                       // print("RB: TARGETS : " + LeftTree.atoms["STRING"]);
+                                                                                                        Gtk.drag_dest_set_target_list(this.el, this.get('/Window').targetList);
                                                                                             },
-                                                                                        "button_press_event":function (self, event) {
-                                                                                          this.pressed = false;
-                                                                                            return false;
+                                                                                            ready : false,
+                                                                                            getActiveNode : function(x,y)
+                                                                                            {
+                                                                                               // workout what node is here..
+                                                                                                return '0'; // top..
+                                                                                            },
+                                                                                            id : "view",
+                                                                                            listeners : {
+                                                                                                "drag_motion":function (self, ctx, x, y, time) {
+                                                                                                    
+                                                                                                                // A) find out from drag all the places that node could be dropped.
+                                                                                                                var src = Gtk.drag_get_source_widget(ctx);
+                                                                                                                if (!src.dropList) {
+                                                                                                                    Gdk.drag_status(ctx, 0, time);
+                                                                                                                    return true;
+                                                                                                                }
+                                                                                                                // b) get what we are over.. (from activeNode)
+                                                                                                                // tree is empty.. - list should be correct..
+                                                                                                                if (!this.get('/LeftTree.model').currentTree) {
+                                                                                                                    Gdk.drag_status(ctx, Gdk.DragAction.COPY,time);
+                                                                                                                    return true;
+                                                                                                                    
+                                                                                                                }
+                                                                                                                // c) ask tree where it should be dropped... - eg. parent.. (after node ontop)
+                                                                                                                var activeNode = this.getActiveNode(x, y);
+                                                                                                                
+                                                                                                                
+                                                                                                                var tg = this.get('/LeftTree.model').findDropNode(activeNode, src.dropList);
+                                                                                                                console.dump(tg);
+                                                                                                                if (!tg.length) {
+                                                                                                                    Gdk.drag_status(ctx, 0,time);
+                                                                                                                    this.get('/LeftTree.view').highlight(false);
+                                                                                                                    return true;
+                                                                                                                }
+                                                                                                                 
+                                                                                                                // if we have a target..
+                                                                                                                // -> highlight it! (in browser)
+                                                                                                                // -> highlight it! (in tree)
+                                                                                                                
+                                                                                                                Gdk.drag_status(ctx, Gdk.DragAction.COPY,time);
+                                                                                                                this.get('/LeftTree.view').highlight(tg);
+                                                                                                                this.targetData = tg;
+                                                                                                                // for tree we should handle this...
+                                                                                                                return true;
+                                                                                                },
+                                                                                                "drag_drop":function (self,ctx, x, y, time) {
+                                                                                                	Seed.print("TARGET: drag-drop");
+                                                                                                        var is_valid_drop_site = true;
+                                                                                                        
+                                                                                                         
+                                                                                                        Gtk.drag_get_data
+                                                                                                        (
+                                                                                                                self,         /* will receive 'drag-data-received' signal */
+                                                                                                                ctx,        /* represents the current state of the this.gDnD */
+                                                                                                                this.get('/Window').atoms["STRING"],    /* the target type we want */
+                                                                                                                time            /* time stamp */
+                                                                                                        );
+                                                                                                        
+                                                                                                        
+                                                                                                        /* No target offered by source => error */
+                                                                                                       
+                                                                                                
+                                                                                                        return  is_valid_drop_site;
+                                                                                                  
+                                                                                                },
+                                                                                                "drag_data_received":function (w, ctx,  x,  y, sel_data,  target_type,  time, ud) 
+                                                                                                    {
+                                                                                                        Seed.print("GtkView: drag-data-received");
+                                                                                                        var delete_selection_data = false;
+                                                                                                        var dnd_success = false;
+                                                                                                        /* Deal with what we are given from source */
+                                                                                                        if( sel_data && sel_data.length ) {
+                                                                                                            
+                                                                                                            if (ctx.action == Gdk.DragAction.ASK)  {
+                                                                                                                /* Ask the user to move or copy, then set the ctx action. */
+                                                                                                            }
+                                                                                                
+                                                                                                            if (ctx.action == Gdk.DragAction.MOVE) {
+                                                                                                                delete_selection_data = true;
+                                                                                                            }
+                                                                                                            var source = Gtk.drag_get_source_widget(ctx);
+                                                                                                
+                                                                                                            Seed.print("Browser: source.DRAGDATA? " + source.dragData);
+                                                                                                            if (this.targetData) {
+                                                                                                                Seed.print(this.targetData);
+                                                                                                                this.get('/LeftTree.model').dropNode(this.targetData,  source.dragData);
+                                                                                                            }
+                                                                                                            
+                                                                                                            
+                                                                                                            
+                                                                                                            dnd_success = true;
+                                                                                                
+                                                                                                        }
+                                                                                                
+                                                                                                        if (dnd_success == false)
+                                                                                                        {
+                                                                                                                Seed.print ("DnD data transfer failed!\n");
+                                                                                                        }
+                                                                                                        
+                                                                                                        Gtk.drag_finish (ctx, dnd_success, delete_selection_data, time);
+                                                                                                        return true;
+                                                                                                    },
+                                                                                                "button_press_event":function (self, event) {
+                                                                                                  this.pressed = false;
+                                                                                                    return false;
+                                                                                                }
+                                                                                            }
                                                                                         }
-                                                                                    }
+                                                                                    ]
                                                                                 }
                                                                             ]
                                                                         }
