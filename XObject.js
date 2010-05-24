@@ -193,6 +193,9 @@ XObject.prototype = {
             if (i == 'type') { // problem with Gtk.Window... - not decided on a better way to handle this.
                 continue;
             }
+            if (i == 'buttons') { // problem with Gtk.MessageDialog..
+                continue;
+            }
             this.el[i] = this.config[i];
         }
         
