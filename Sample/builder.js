@@ -2714,7 +2714,8 @@ builder=new XObject({
                                                                 if (pack_m && typeof(par[pack_m]) == 'undefined') {
                                                                     throw {
                                                                             name: "ArgumentError", 
-                                                                            message : 'pack method not available : ' + item.id + " : " + item.xtype + '.' +  pack_m
+                                                                            message : 'pack method not available : ' + item.id + " : " + item.xtype + '.' +  pack_m +
+                                                                                    "ADDING : " + el
                                                                                 
                                                             	    };
                                                             
