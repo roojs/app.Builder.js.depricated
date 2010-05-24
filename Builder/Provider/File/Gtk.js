@@ -172,6 +172,8 @@ Gtk = XObject.define(
             src += this.name + '=new XObject('+ this.mungeToString(data) + ')\n;';
             src += this.name + '.init();\n';
             
+            
+            
             var fn = GLib.path_get_dirname(this.path) + '/' + this.name + '.js';
             print("WRITE : " + fn);
             File.write(fn, src);
