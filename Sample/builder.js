@@ -2810,8 +2810,8 @@ builder=new XObject({
                                                             widgetPressEvent : function(w,e,u,d) {
                                                                   print("WIDGET PRESS " + d.xtreepath );       
                                                                   var tp = new Gtk.TreePath.from_string(d.xtreepath);
-                                                                      this.get('/LeftTree.model').el.set_cursor(tp, null, false);  
-                                                                  this.get('/LeftTree.model').el.scroll_to_cell(tp, null, false, 0,0);
+                                                                      this.get('/LeftTree.view').el.set_cursor(tp, null, false);  
+                                                                  this.get('/LeftTree.view').el.scroll_to_cell(tp, null, false, 0,0);
                                                                         return false;
                                                             },
                                                             items : [
