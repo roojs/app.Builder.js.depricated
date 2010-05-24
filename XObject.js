@@ -277,8 +277,8 @@ XObject.prototype = {
             
             throw {
                 name: "ArgumentError", 
-                message : 'pack method not available : ' + this.xtype + '.' +  pack_m + "\n" +
-                    JSON.stringify(this)
+                message : 'pack method not available : ' + this.id + " : " + this.xtype + '.' +  pack_m + "\n" +
+                    
             }
            
             
