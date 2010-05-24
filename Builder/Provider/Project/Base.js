@@ -237,7 +237,7 @@ Base = XObject.define(
             if (dp > 5) { // no more than 5 deep?
                 return;
             }
-            // this should be done async -- but since we are getting the protvgo up..
+            // this should be done async -- but since we are getting the proto up ...
             var gdir = GLib.dir_open(dir,0);
             var subs = [];
             var _this = this;
@@ -260,7 +260,7 @@ Base = XObject.define(
                     continue;
                 }
                 
-                if (!fn.match(/.js$/)) {
+                if (!fn.match(/\.js$/)) {
                     continue;
                 }
                 var parent = '';
