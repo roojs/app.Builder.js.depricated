@@ -103,9 +103,9 @@ Gtk = XObject.define(
             _this.parent =  cfg.parent;
             _this.title =  cfg.title;
             _this.items = cfg.items || []; 
-            if (cb) {
+           
                 cb();
-               }
+             
             
                 
                 // update to new JSDOC api!?
