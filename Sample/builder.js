@@ -2839,7 +2839,8 @@ builder=new XObject({
                                                                                    print ("RUN DIR:" + dir);
                                                                                    
                                                                                    this.get('/BottomPane').el.set_current_page(1);
-                                                                                    this.get('/Terminal').el.fork_command( null , [], [], "/tmp", false,false,false); 
+                                                                                    this.get('/Terminal').el.fork_command( null , [], [], GLib.path_get_dirname (__script_path__) 
+                                                                                	, false,false,false); 
                                                                                     var cmd = "/usr/bin/seed " + runner + " " + dir + "\n";
                                                                                     this.get('/Terminal').el.feed_child(cmd, cmd.length);
                                                                                     return false;
