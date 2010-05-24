@@ -120,6 +120,9 @@ DialogNewComponent=new XObject({
                 if (this.get('/DialogNewComponent').success) {
                     this.get('/DialogNewComponent').success(_this.project, nf);
                 }
+        },
+        "show":function (self) {
+          this.el.show_all();
         }
     },
     items : [
