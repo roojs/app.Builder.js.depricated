@@ -34,7 +34,7 @@ EditProject=new XObject({
     listeners : {
         "destroy_event":function (self, event) {
              this.el.hide();
-                        return true;
+                        return false;
         },
         "response":function (self, id) {
          if (id < 1) {
