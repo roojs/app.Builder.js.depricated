@@ -2432,7 +2432,7 @@ Window=new XObject({
                                                                                // print("RB: TARGETS : " + LeftTree.atoms["STRING"]);
                                                                                 Gtk.drag_dest_set_target_list(this.el, this.get('/Window').targetList);
                                                                             },
-                                                                            renderJS : function() {
+                                                                            renderJS : function(data) {
                                                                                 this.renderedData = data;
                                                                                 var str = JSON.stringify(data) ;
                                                                                 
