@@ -143,7 +143,12 @@ builder=new XObject({
                                         {
                                             xtype: Gtk.MenuItem,
                                             label : "Quit",
-                                            pack : "add"
+                                            pack : "add",
+                                            listeners : {
+                                                "activate":function (self) {
+                                                	Gtk.quit();
+                                                }
+                                            }
                                         }
                                     ]
                                 }
@@ -3223,6 +3228,8 @@ builder=new XObject({
                                                                 */
                                                                 return true; 
                                                             },
+                                                            headers_visible : false,
+                                                            enable_tree_lines : true,
                                                             listeners : {
                                                                 "drag_begin":function (self, ctx) {
                                                                     // we could fill this in now...
