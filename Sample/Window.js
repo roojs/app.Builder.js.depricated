@@ -2717,10 +2717,11 @@ Window=new XObject({
                                                                     }
                                                             
                                                             	if (k[0] == '|' && typeof(kv) == 'string') {
-                                                            		 print("WASL " + k + '=' + kv);
+                                                            
                                                             		if (kv.match(new RegExp('function'))) {
                                                             			continue;
                                                                             }
+                                                            		 print("WASL " + k + '=' + kv);
                                                             		try {
                                                             			eval( 'kv = ' + kv);
                                                             		} catch(e) {    continue; }
