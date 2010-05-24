@@ -390,7 +390,7 @@ builder=new XObject({
                                                                         
                                                                         		if (!this.get('/LeftTree.model').el.iter_n_children(null)) {
                                                                         			// no children.. -- asume it's ok..
-                                                                        			this.targetData =  [ '0' , Gtk.TreeViewDropPosition.INTO_OR_AFTER , ''];
+                                                                        			this.targetData =  [ '' , Gtk.TreeViewDropPosition.INTO_OR_AFTER , ''];
                                                                         			Gdk.drag_status(ctx, action ,time);
                                                                         			return true;
                                                                         		}
