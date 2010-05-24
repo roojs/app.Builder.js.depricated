@@ -70,12 +70,12 @@ EditProject=new XObject({
             items : [
                 {
                     xtype: Gtk.HBox,
-                    pack : "pack_start,false,true,0",
+                    pack : "pack_start,false,true,3",
                     items : [
                         {
                             xtype: Gtk.Label,
-                            pack : "pack_start,false,true,0",
-                            label : "Project Name"
+                            pack : "pack_start,false,true,3",
+                            label : "Project Name :"
                         },
                         {
                             xtype: Gtk.Entry,
@@ -93,7 +93,7 @@ EditProject=new XObject({
                 },
                 {
                     xtype: Gtk.HBox,
-                    pack : "pack_start,false,true,0",
+                    pack : "pack_start,false,true,3",
                     items : [
                         {
                             xtype: Gtk.Label,
@@ -175,7 +175,7 @@ EditProject=new XObject({
                 },
                 {
                     xtype: Gtk.FileChooserWidget,
-                    pack : "add",
+                    pack : "pack_end,true,true,3",
                     action : Gtk.FileChooserAction.SELECT_FOLDER
                 }
             ]
