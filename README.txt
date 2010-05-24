@@ -11,7 +11,7 @@ It's kind of like Glade on steroids..
 ----------------------------------------------------
 Usage:
 
-seed builder_run.js
+seed gtkrun.js Builder
 
 -> create a project
 -> add a folder to the project
@@ -25,41 +25,25 @@ Where it is..
 * listeners are  created correctly.
 * listeners with gtk prototypes
 * Gtk properties that are enums - now show a combo selector..
+* application is used to write itself...
 
 -----------------------------------------------------
-WHAT'S NEEDED SO ALL DEV CAN BE DONE USING IT..
-* Write files 'save' feature..
- - Needs to prevent us 'breaking' stuff....
- - Simple version...
-   Write to 'XXXX.js' - that is all that is really needed?!?!
-* Add support for subfiles..? - eg. the dialogs etc...
- - in our sample file 'Sample/builder.js' (would be generated)
- - this includes Builder/Provider/..... - for all the model code - M/(VC)
- - this becomes problematic for Sample/StandardErrorDialog.js ????
- - ?? unless the 'run file is a merge of the whole lot!!?? 
- - ?? we could use '/' as an id to force registration (since we do not use sandbox anymore.. - this should be ok)
-* Add better test-time runner ... basically use source files, rather than generated ones..
- - Will not work!!?! - due to any use of __script_path__ and complexities with { '|prop': Gtk.XXXX.YYYY }
- 
-   
 
 TODO
+* Create project.. properly..
 * Dialog buttons - need special rendering on preview.
 * change sourceview to use spaces rather than tabs.
 * Icon-size (should be an enum...??)
 * (Image|....??? ).stock - should be a list of stock icons..
 * fix pulldowns for types.. - it's a bit hap hazard with the delayed / loading of settings.
 * packing - gather from methods to find out which match.. (including false)
-* order of palete needs fixing.
-* support user functions/properties..
 * adding a file does not display on project tree straight awya..
-* calculate mouseover for rendered view of Gtk preview.
-* create output to JS ...
+* highlight in gtk preview
 * templates for elements... - eg. defaults for classic elements.
 * sort out add heirachy for Gtk..
 * Project Tree needs to work perhaps like a left hand popout.
 * make heirachy editor...
-* use application to write itself...
+
 * Help view - load docs..
 
 -----------------------------------------------------
