@@ -110,7 +110,7 @@ Base = XObject.define(
             for (var k in this.files) {
                 
                 var f = this.files[k];
-                console.log(k);
+                console.dump(f);
                 f.hasParent = false;
                 f.cn = [];
                 //console.log(f.name);
@@ -285,6 +285,7 @@ Base = XObject.define(
                     path : dir  + '/' + fn,
                     parent : parent
                 });
+                
                 /*
                 var f = Gio.file_new_for_path(dir + '/' + fn);
                 var inf = f.query_info('standard::*');
