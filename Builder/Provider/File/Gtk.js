@@ -157,7 +157,9 @@ Gtk = XObject.define(
          */
         saveJS: function()
         {
-             
+            if (!this.items[0]) {
+                return false;
+            }
             var data = JSON.parse(JSON.stringify(this.items[0]));
             var i = [ 'Gtk', 'Gdk', 'Pango', 'GLib', 'Gio', 'GObject', 'GtkSource', 'WebKit', 'Vte' ];
             var src = "";
