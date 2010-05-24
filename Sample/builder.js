@@ -2835,56 +2835,15 @@ builder=new XObject({
                                                                                       dir = i;
                                                                                       break;
                                                                                   }
-                                                                                
-                                                                                print ("RUN DIR:" + dir);
-                                                                                
-                                                                                    return;
-                                                                                /*
-                                                                                     var src= this.buildJS(
-                                                                                		this.get('/LeftTree.model').toJS()[0], 
-                                                                                		true);
-                                                                                      // show term?? 
-                                                                                
-                                                                                
-                                                                                    //var x = new imports.sandbox.Context();
-                                                                                    //x.add_globals();
-                                                                                    //print(src);
-                                                                                    try {
-                                                                                        Seed.check_syntax('var e = ' + src);
-                                                                                        //x.eval(src);
-                                                                                    } catch( e) {
-                                                                                        this.get('/Terminal').feed(e.message || e.toString() + "\n");
-                                                                                        this.get('/Terminal').feed(console._dump(e)+"\n");
-                                                                                        if (e.line) {
-                                                                                            var lines = src.split("\n");
-                                                                                            var start = Math.max(0, e.line - 10);
-                                                                                            var end = Math.min(lines.length, e.line + 10);
-                                                                                            for (var i =start ; i < end; i++) {
-                                                                                                if (i == e.line) {
-                                                                                                    this.get('/Terminal').feed(">>>>>" + lines[i] + "\n");
-                                                                                                    continue;
-                                                                                                }
-                                                                                                this.get('/Terminal').feed(lines[i] + "\n");
-                                                                                            }
-                                                                                            
-                                                                                        }
-                                                                                        
-                                                                                        return;
-                                                                                    }
-                                                                                     this.get('/BottomPane').el.set_current_page(1);
+                                                                                   var runner = GLib.path_get_dirname (__script_path__) + '/gtkrun.js'; 
+                                                                                   print ("RUN DIR:" + dir);
+                                                                                   
+                                                                                   this.get('/BottomPane').el.set_current_page(1);
                                                                                     this.get('/Terminal').el.fork_command( null , [], [], "/tmp", false,false,false); 
-                                                                                    var cmd = "/usr/bin/seed /tmp/BuilderGtkView.js\n";
+                                                                                    var cmd = "/usr/bin/seed " + runner + " " + dir + "\n";
                                                                                     this.get('/Terminal').el.feed_child(cmd, cmd.length);
-                                                                                     /*
-                                                                                    var _top = x.get_global_object()._top;
-                                                                                    
-                                                                                    _top.el.set_screen(Gdk.Screen.get_default()); // just in case..
-                                                                                    _top.el.show_all();
-                                                                                    if (_top.el.popup) {
-                                                                                        _top.el.popup(null, null, null, null, 3, null);
-                                                                                    }
-                                                                                 */
                                                                                     return false;
+                                                                                  
                                                                                 
                                                                                 }
                                                                             }
