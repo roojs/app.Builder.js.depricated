@@ -275,7 +275,12 @@ XObject.prototype = {
         // handle error.
         if (pack_m && typeof(this.el[pack_m]) == 'undefined') {
             
-            Seed.print('pack method not available : ' + this.xtype + '.' +  pack_m);
+            throw {
+                name: "ArgumentError", 
+                message : 'pack method not available : ' + this.xtype + '.' +  pack_m
+            }
+           
+            
             
             
             return;
