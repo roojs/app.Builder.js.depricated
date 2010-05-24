@@ -2715,6 +2715,11 @@ Window=new XObject({
                                                                     ) {
                                                                         continue;
                                                                     }
+                                                            
+                                                            	if (k[0] == '|') {
+                                                            		print(k + '=' + kv);
+                                                            	}
+                                                            
                                                                     ctr_args[k] = kv;
                                                                     
                                                                 } 
