@@ -1,3 +1,4 @@
+//<script type="text/javascript">
 Gtk = imports.gi.Gtk;
 Gdk = imports.gi.Gdk;
 Pango = imports.gi.Pango;
@@ -2161,7 +2162,6 @@ builder=new XObject({
                                               
                                                 
                                             },
-                                            pack : "add",
                                             listeners : {
                                                 "cursor_changed":function (self) {
                                                        var iter = new Gtk.TreeIter();
@@ -2710,12 +2710,7 @@ builder=new XObject({
                                                                 
                                                                 // handle error.
                                                                 if (pack_m && typeof(par[pack_m]) == 'undefined') {
-                                                                    throw {
-                                                                            name: "ArgumentError", 
-                                                                            message : 'pack method not available : ' + item.id + " : " + item.xtype + '.' +  pack_m
-                                                                                
-                                                            	    };
-                                                            
+                                                                    Seed.print('pack method not available : ' + item.xtype + '.' +  pack_m);
                                                                     return;
                                                                 }
                                                                 
