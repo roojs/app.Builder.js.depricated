@@ -1,4 +1,3 @@
-//<script type="text/javascript">
 Gtk = imports.gi.Gtk;
 Gdk = imports.gi.Gdk;
 Pango = imports.gi.Pango;
@@ -2162,6 +2161,7 @@ builder=new XObject({
                                               
                                                 
                                             },
+                                            pack : "add",
                                             listeners : {
                                                 "cursor_changed":function (self) {
                                                        var iter = new Gtk.TreeIter();
@@ -2581,8 +2581,13 @@ builder=new XObject({
                                                                 }
                                                                 
                                                                 var tree =  this.get('/LeftTree.model').toJS(false,true)[0];
-                                                                // in theory tree is actually window..
+                                                                // in theory tree is actually window..  
+                                                               try {
                                                                 this.renderedEl = this.viewAdd(tree.items[0], this.get('view').el);
+                                                              } catch (e) {
+                                                                 print(e.message);
+                                                                return;
+                                                              }
                                                                 this.get('view').el.set_size_request(
                                                                     tree.default_width * 1 || 400, tree.default_height * 1 || 400
                                                                 ) ;
@@ -2710,7 +2715,12 @@ builder=new XObject({
                                                                 
                                                                 // handle error.
                                                                 if (pack_m && typeof(par[pack_m]) == 'undefined') {
-                                                                    Seed.print('pack method not available : ' + item.xtype + '.' +  pack_m);
+                                                                    throw {
+                                                                            name: "ArgumentError", 
+                                                                            message : 'pack method not available : ' + item.id + " : " + item.xtype + '.' +  pack_m
+                                                                                
+                                                            	    };
+                                                            
                                                                     return;
                                                                 }
                                                                 
