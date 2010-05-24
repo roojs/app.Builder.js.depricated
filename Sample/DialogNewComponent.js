@@ -128,7 +128,9 @@ DialogNewComponent=new XObject({
     items : [
         {
             xtype: Gtk.VBox,
-            pack : "add",
+            pack : function(p,e) {
+                                p.el.get_content_area().add(e.el)
+                            },,
             items : [
                 {
                     xtype: Gtk.HBox,
