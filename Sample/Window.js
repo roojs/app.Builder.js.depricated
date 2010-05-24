@@ -61,7 +61,8 @@ Window=new XObject({
                     items : [
                         {
                             xtype: Gtk.MenuItem,
-                            label : "File",
+                            use_underline : true,
+                            label : "_File",
                             items : [
                                 {
                                     xtype: Gtk.Menu,
@@ -69,7 +70,8 @@ Window=new XObject({
                                     items : [
                                         {
                                             xtype: Gtk.MenuItem,
-                                            label : "New Project",
+                                            use_underline : true,
+                                            label : "New _Project",
                                             listeners : {
                                                 "activate":function (self) {
                                                 	this.get('/EditProject').show({
@@ -82,7 +84,8 @@ Window=new XObject({
                                         },
                                         {
                                             xtype: Gtk.MenuItem,
-                                            label : "New File",
+                                            label : "_New File",
+                                            use_underline : true,
                                             listeners : {
                                                 "activate":function (self) {
                                                  	var fn = this.get('/LeftProjectTree.combo').getValue();
@@ -105,7 +108,12 @@ Window=new XObject({
                                             xtype: Gtk.MenuItem,
                                             pack : "add",
                                             label : "_Quit",
-                                            use_underline : true
+                                            use_underline : true,
+                                            listeners : {
+                                                "activate":function (self) {
+                                                   Gtk.main_quit();
+                                                }
+                                            }
                                         }
                                     ]
                                 }
