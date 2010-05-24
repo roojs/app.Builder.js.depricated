@@ -66,7 +66,7 @@ EditProject=new XObject({
         {
             xtype: Gtk.VBox,
             pack : function(p,e) {
-                                p.el.get_content_area().add(e.el)
+                                p.el.get_content_area().pack_start(e.el,true,true, 10)
                             },
             items : [
                 {
@@ -156,10 +156,7 @@ EditProject=new XObject({
                 {
                     xtype: Gtk.FileChooserWidget,
                     pack : "pack_end,true,true,10",
-                    action : Gtk.FileChooserAction.SELECT_FOLDER,
-                    listeners : {
-                        
-                    }
+                    action : Gtk.FileChooserAction.SELECT_FOLDER
                 }
             ]
         },
