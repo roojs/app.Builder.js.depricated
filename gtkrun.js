@@ -53,7 +53,7 @@ files.forEach(function(f) {
         olist.push(imports[f.replace(/\.bjs$/, '.js')]);
         continue;
     }
-    var gtkbuilder =  new imports.Builder.Provider.File.Gtk.Gtk({ path : f });
+    var gtkbuilder =  new imports.Builder.Provider.File.Gtk.Gtk({ path : Seed.argv[2] + '/' + f });
     gtkbuilder.loadItems(function() { });
     gtkbuilder.saveJS();
     olist.push(imports[f.replace(/\.bjs$/, '.js')]);
