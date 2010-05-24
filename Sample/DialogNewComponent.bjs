@@ -1,1 +1,1 @@
-{"id":"file-gtk-14","name":"DialogNewComponent","parent":"","title":false,"path":"/home/alan/gitlive/app.Builder.js/Sample/DialogNewComponent.bjs","items":[{"|xns":"Gtk","xtype":"Dialog","|deletable":false,"|modal":true,"title":"New Component"}]}
+{"id":"file-gtk-14","name":"DialogNewComponent","parent":"","title":false,"path":"/home/alan/gitlive/app.Builder.js/Sample/DialogNewComponent.bjs","items":[{"|xns":"Gtk","xtype":"Dialog","|deletable":false,"|modal":true,"title":"New Component","items":[{"|xns":"Gtk","xtype":"VBox","pack":"add"}]}]}
