@@ -11,11 +11,11 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 EditProject=new XObject({
     xtype: Gtk.Dialog,
-    default_height : 300,
+    default_height : 400,
     default_width : 600,
     deletable : true,
     modal : true,
-    border_width : 10,
+    border_width : 3,
     title : "Project Properties",
     show : function(c) {
            c = c || { name : '' , xtype : '' };
@@ -71,7 +71,7 @@ EditProject=new XObject({
             items : [
                 {
                     xtype: Gtk.HBox,
-                    pack : "pack_start,false,true,0",
+                    pack : "pack_start,false,true,3",
                     items : [
                         {
                             xtype: Gtk.Label,
