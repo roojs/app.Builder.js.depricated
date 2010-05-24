@@ -179,7 +179,7 @@ Base = XObject.define(
         
         mungeToString:  function(obj, isListener, pad)
         {
-            pad = pad || '';
+            pad = pad || '    ';
             var keys = [];
             var isArray = false;
             isListener = isListener || false;
