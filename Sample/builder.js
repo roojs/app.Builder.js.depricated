@@ -817,8 +817,8 @@ builder=new XObject({
                                                                                             xitems = node.items;
                                                                                             delete node.items;
                                                                                         }
-                                                                            	    print("loading xitem");
-                                                                              	    console.log(xitems);
+                                                                            // load children - if it has any..
+                                                                            
                                                                                         if (xitems) {
                                                                                             this.load(xitems, n_iter);
                                                                                         }
@@ -828,7 +828,9 @@ builder=new XObject({
                                                                                         // wee need to get the empty proptypes from somewhere..
                                                                                         
                                                                                         //var olditer = this.activeIter;
-                                                                                        this.activeIter = n_iter;
+                                                                                        this.activePath = this.el.get_path(n_iter).to_string();
+                                                                            
+                                                                            	  // changed actually set's the node data..
                                                                                         this.changed(node, true);
                                                                                         
                                                                                         
