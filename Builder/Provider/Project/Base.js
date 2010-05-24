@@ -1,5 +1,15 @@
 //<Script type="text/javascript">
 
+/**
+ * Project Object
+ * 
+ * Projects can only contain one directory... - it can import other projects..
+ * 
+ * 
+ * 
+ * 
+ */
+
 Gio = imports.gi.Gio;
 GLib = imports.gi.GLib; 
 
