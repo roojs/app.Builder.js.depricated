@@ -516,6 +516,9 @@ Window=new XObject({
                                                                                         return true;
                                                                         },
                                                                         "cursor_changed":function (self) {
+                                                                         if (this.blockChanges) {
+                                                                           return true;
+                                                                         }
                                                                          var iter = new Gtk.TreeIter();
                                                                                         
                                                                                         if (this.selection.count_selected_rows() < 1) {
@@ -875,7 +878,7 @@ Window=new XObject({
                                                                                         this.changed(false,true);
                                                                             },
                                                                             deleteSelected : function() {
-                                                                                        
+                                                                                        this.get('/LeftTree.view').blockChanges = true;
                                                                                         var old_iter = new Gtk.TreeIter();
                                                                                         var s = this.get('/LeftTree.view').selection;
                                                                                         s.get_selected(this.el, old_iter);
@@ -895,6 +898,7 @@ Window=new XObject({
                                                                                         //this.toJS(null, true) // does not do anything?
                                                                                   
                                                                                         this.changed(false,true);
+                                                                                      this.get('/LeftTree.view').blockChanges = false;
                                                                             },
                                                                             currentTree : false,
                                                                             listAllTypes : function() {
