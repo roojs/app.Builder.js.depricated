@@ -38,6 +38,8 @@ Vte = imports.gi.Vte;
 
 File = imports.File.File;
 
+XObject = imports.XObject.XObject;
+XObject.debug = true;
 Gtk.init(Seed.argv);
 
 // error checking todo..
