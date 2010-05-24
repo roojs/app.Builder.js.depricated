@@ -103,52 +103,8 @@ Window=new XObject({
                                         },
                                         {
                                             xtype: Gtk.MenuItem,
-                                            label : "Add Directory to Project",
                                             pack : "add",
-                                            listeners : {
-                                                "activate":function (self) {
-                                                	var fn = this.get('/LeftProjectTree').get('combo').getValue();
-                                                        if (!fn) {
-                                                            this.get('/LeftProjectTree').showNoProjectSelected();
-                                                            return true;
-                                                        }
-                                                        
-                                                        
-                                                        var dc = new Gtk.FileChooserDialog({
-                                                            action : Gtk.FileChooserAction.SELECT_FOLDER,
-                                                            modal: true,
-                                                            'select-multiple' : false,
-                                                            "show-hidden" : true,
-                                                        });
-                                                        dc.add_button("Add To Project", Gtk.ResponseType.ACCEPT );
-                                                        dc.add_button("Cancel",Gtk.ResponseType.CANCEL);
-                                                        
-                                                        if (dc.run() != Gtk.ResponseType.ACCEPT) {
-                                                            
-                                                            dc.destroy();
-                                                            return;
-                                                        }
-                                                            
-                                                        //Seed.print(dc.get_filename());
-                                                        var pm  = imports.Builder.Provider.ProjectManager.ProjectManager;
-                                                        pm.getByFn(fn).add(dc.get_filename(), 'dir');
-                                                        dc.destroy();
-                                                }
-                                            }
-                                        },
-                                        {
-                                            xtype: Gtk.SeparatorMenuItem,
-                                            pack : "add"
-                                        },
-                                        {
-                                            xtype: Gtk.MenuItem,
-                                            label : "Quit",
-                                            pack : "add",
-                                            listeners : {
-                                                "activate":function (self) {
-                                                	Gtk.main_quit();
-                                                }
-                                            }
+                                            label : "_Quit"
                                         }
                                     ]
                                 }
