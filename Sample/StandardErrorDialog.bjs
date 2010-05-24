@@ -1,1 +1,1 @@
-{"id":"file-gtk-17","name":"StandardErrorDialog","parent":"","title":false,"path":"/home/alan/gitlive/app.Builder.js/Sample/StandardErrorDialog.bjs","items":[{"|xns":"Gtk","xtype":"MessageDialog"}]}
+{"id":"file-gtk-17","name":"StandardErrorDialog","parent":"","title":false,"path":"/home/alan/gitlive/app.Builder.js/Sample/StandardErrorDialog.bjs","items":[{"|xns":"Gtk","xtype":"MessageDialog","|buttons":"","listeners":{}}]}
