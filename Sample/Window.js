@@ -2821,6 +2821,7 @@ Window=new XObject({
                                                             },
                                                             widgetReleaseEvent : function() {
                                                                 this.get('view').pressed = false;
+                                                               return false;
                                                             },
                                                             items : [
                                                                 {
