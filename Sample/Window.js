@@ -2808,11 +2808,15 @@ Window=new XObject({
                                                                         return true;
                                                             },
                                                             widgetPressEvent : function(w,e,u,d) {
+                                                                 if (this.get('view').pressed) {
+                                                                    return false;
+                                                                 }
+                                                            this.get('view').pressed = true;
                                                                   print("WIDGET PRESS " + d.xtreepath );       
                                                                   var tp = new Gtk.TreePath.from_string(d.xtreepath);
                                                                       this.get('/LeftTree.view').el.set_cursor(tp, null, false);  
                                                                   this.get('/LeftTree.view').el.scroll_to_cell(tp, null, false, 0,0);
-                                                                        return true;
+                                                                        return false;
                                                             },
                                                             items : [
                                                                 {
@@ -2870,6 +2874,12 @@ Window=new XObject({
                                                                             	XObject.prototype.init.call(this);
                                                                             	//this.el.set_hadjustment(this.parent.el.get_hadjustment());
                                                                             	//this.el.set_vadjustment(this.parent.el.get_vadjustment());
+                                                                            },
+                                                                            listeners : {
+                                                                                "button_press_event":function (self, event) {
+                                                                                  this.get('view').pressed = false;
+                                                                                    return false;
+                                                                                }
                                                                             },
                                                                             items : [
                                                                                 {
