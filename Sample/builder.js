@@ -2565,7 +2565,7 @@ builder=new XObject({
                                                         },
                                                         {
                                                             xtype: Gtk.VBox,
-                                                            pack : "add",
+                                                            pack : "pack_start,false,false",
                                                             id : "RightGtkView",
                                                             renderJS : function(data, withDebug)
                                                             {
