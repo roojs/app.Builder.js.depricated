@@ -218,10 +218,10 @@ Base = XObject.define(
                 }
                 
                 if (isListener) {
-                    if (!_this.withDebug) {
+                    //if (!_this.withDebug) {
                         // do not write listeners unless we are debug mode.
-                        return;
-                    }
+                    //    return;
+                    //}
                     //if (obj[i].match(new RegExp("Gtk.main" + "_quit"))) { // we can not handle this very well..
                     //    return;
                    // }
