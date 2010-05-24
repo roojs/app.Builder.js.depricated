@@ -23,7 +23,7 @@ Base = XObject.define(
         });
         XObject.extend(this, cfg);
         
-        // 
+        /*
         if (this.files ){
             for (var f in this.files) {
                 var xt = this.xtype;
@@ -31,6 +31,7 @@ Base = XObject.define(
                 this.files[f] = cls(this.files[f]);
             }
         }
+        */
         
         
         this.scanDirs();
