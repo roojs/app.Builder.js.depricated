@@ -41,7 +41,7 @@ File = imports.File.File;
 XObject = imports.XObject.XObject;
 XObject.debug = true;
 Gtk.init(Seed.argv);
-
+importer.searchPath.push('/'); // allow global paths..
 // error checking todo..
 var files = File.list(Seed.argv[2]);
 var olist = [];
