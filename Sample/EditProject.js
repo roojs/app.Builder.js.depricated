@@ -26,7 +26,7 @@ EditProject=new XObject({
                     items : [
                         {
                             xtype: Gtk.Label,
-                            pack : "add",
+                            pack : "pack_start,false,true,0",
                             label : "Project Name"
                         },
                         {
@@ -42,12 +42,12 @@ EditProject=new XObject({
                     items : [
                         {
                             xtype: Gtk.Label,
-                            pack : "add",
+                            pack : "pack_start,false,true,0",
                             label : "Project type :"
                         },
                         {
                             xtype: Gtk.Entry,
-                            pack : "add"
+                            pack : "pack_end,true,true,0"
                         }
                     ]
                 }
