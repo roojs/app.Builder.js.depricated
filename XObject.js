@@ -276,7 +276,7 @@ XObject.prototype = {
         if (pack_m && typeof(this.el[pack_m]) == 'undefined') {
             
             Seed.print('pack method not available : ' + this.xtype + '.' +  pack_m);
-            console.dump(this);
+            
             
             return;
         }
