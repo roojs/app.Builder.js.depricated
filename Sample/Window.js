@@ -2899,9 +2899,9 @@ Window=new XObject({
                                                                             	XObject.prototype.init.call(this);
                                                                             	//this.el.set_hadjustment(this.parent.el.get_hadjustment());
                                                                             	//this.el.set_vadjustment(this.parent.el.get_vadjustment());
-                                                                            },
-                                                                            listeners : {
-                                                                                
+                                                                             this.el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({
+                                                                                        red: 0xEEEE, green: 0xEEEE , blue : 0xEEEE
+                                                                                       }));
                                                                             },
                                                                             items : [
                                                                                 {
