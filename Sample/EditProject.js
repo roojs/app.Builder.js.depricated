@@ -74,7 +74,7 @@ EditProject=new XObject({
                     items : [
                         {
                             xtype: Gtk.Label,
-                            pack : "pack_start,false,true,0",
+                            pack : "pack_start,false,true,3",
                             label : "Project type :"
                         },
                         {
