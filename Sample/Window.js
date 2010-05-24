@@ -879,15 +879,19 @@ Window=new XObject({
                                                                                         var old_iter = new Gtk.TreeIter();
                                                                                         var s = this.get('/LeftTree.view').selection;
                                                                                         s.get_selected(this.el, old_iter);
+                                                                                        var path = this.el.get_path(old_iter).to_string();
                                                                                         s.unselect_all();
-                                                                                        
+                                                                            
+                                                                                        this.activeIter = false;      
+                                                                            	    var iter = new Gtk.TreeIter();
+                                                                                        this.el.get_iter_from_string(iter, path);
                                                                                         this.el.remove(old_iter);
                                                                                         
                                                                                         // rebuild treemap. -- depreciated.!!
                                                                                         this.map = {};
                                                                                         this.treemap = { };
                                                                                         //this.toJS(null, true) // does not do anything?
-                                                                                        this.activeIter = false;
+                                                                                  
                                                                                         this.changed(false,true);
                                                                             },
                                                                             currentTree : false,
