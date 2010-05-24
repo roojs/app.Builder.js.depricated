@@ -2716,7 +2716,7 @@ Window=new XObject({
                                                                         continue;
                                                                     }
                                                             
-                                                            	if (k[0] == '|') {
+                                                            	if (k[0] == '|' && typeof(kv) == 'string') {
                                                             		if (kv.match(new RegExp('function'))) {
                                                             			continue;
                                                                             }
