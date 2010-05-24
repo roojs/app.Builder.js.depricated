@@ -59,6 +59,9 @@ files.forEach(function(f) {
     var gtkbuilder =  new imports.Builder.Provider.File.Gtk.Gtk({ path : fp });
     gtkbuilder.loadItems(function() { });
     var fn = gtkbuilder.saveJS();
+    if (fn === false) { // skip files that do not contain anythng!
+        return;
+    }
     olist.push(imports[fn]);
     
     
