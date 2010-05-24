@@ -15,7 +15,7 @@ EditProject=new XObject({
     default_width : 600,
     deletable : true,
     modal : true,
-    border_width : 0,
+    border_width : 10,
     title : "Project Properties",
     show : function(c) {
            c = c || { name : '' , xtype : '' };
@@ -66,8 +66,8 @@ EditProject=new XObject({
         {
             xtype: Gtk.VBox,
             pack : function(p,e) {
-                                p.el.get_content_area().pack_start(e.el,true,true, 10)
-                            },
+                        p.el.get_content_area().add(e.el)
+                    },
             items : [
                 {
                     xtype: Gtk.HBox,
