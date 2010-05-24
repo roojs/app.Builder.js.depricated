@@ -874,7 +874,7 @@ Window=new XObject({
                                                                                                             
                                                                                         }
                                                                                         
-                                                                                        this.activeIter = false;
+                                                                                        this.activePath= false;
                                                                                         this.changed(false,true);
                                                                             },
                                                                             deleteSelected : function() {
@@ -883,11 +883,11 @@ Window=new XObject({
                                                                                         var s = this.get('/LeftTree.view').selection;
                                                                                         s.get_selected(this.el, old_iter);
                                                                                         var path = this.el.get_path(old_iter).to_string();
-                                                                            print("DELETE " + path);
-                                                                                       this.activeIter = false;      
+                                                                            
+                                                                                        this.activePath= false;      
                                                                                         s.unselect_all();
                                                                             
-                                                                                        this.activeIter = false;      
+                                                                                        this.activePath= false;      
                                                                             	    var iter = new Gtk.TreeIter();
                                                                                         this.el.get_iter_from_string(iter, path);
                                                                                         this.el.remove(iter);
@@ -896,7 +896,7 @@ Window=new XObject({
                                                                                         this.map = {};
                                                                                         this.treemap = { };
                                                                                         //this.toJS(null, true) // does not do anything?
-                                                                                  
+                                                                                    this.activePath= false;      
                                                                                         this.changed(false,true);
                                                                                       this.get('/LeftTree.view').blockChanges = false;
                                                                             },
