@@ -39,7 +39,7 @@ Vte = imports.gi.Vte;
 File = imports.File.File;
 
 XObject = imports.XObject.XObject;
-XObject.debug = true;
+//XObject.debug = true;
 Gtk.init(Seed.argv);
 imports.searchPath.push('/'); // allow global paths..
 // error checking todo..
