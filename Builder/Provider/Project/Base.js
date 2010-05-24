@@ -243,7 +243,7 @@ Base = XObject.define(
             var _this = this;
             while (true) {
                 var fn = GLib.dir_read_name(gdir);
-                //console.log('trying ' + path + '/' + fn);
+               console.log('trying ' + path + '/' + fn);
                 if (!fn) {
                     GLib.dir_close(gdir);
                     subs.forEach( function(s) {
