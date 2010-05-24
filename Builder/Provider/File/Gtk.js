@@ -101,7 +101,7 @@ Gtk = XObject.define(
             print("loaded data");
             //console.dump(cfg);
             
-            _this.name = cfg.name;
+            //_this.name = cfg.name; -- this should not happen - name should always match filename!!
             _this.parent =  cfg.parent;
             _this.title =  cfg.title;
             _this.items = cfg.items || []; 
