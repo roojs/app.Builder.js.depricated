@@ -56,7 +56,7 @@ TODO (Roo)
 Thoughts...
 * Widget definition files..
 -> defaults  { ... }
--> onAddTo(name_of_parent, cfg) { modifies defaults.. }
+-> onAdd(name_of_parent, cfg) { modifies defaults.. }
 -> validParents : [ .... ]
 -> validChildren???: [ .... ]
 
