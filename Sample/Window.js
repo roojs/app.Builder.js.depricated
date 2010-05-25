@@ -251,7 +251,7 @@ Window=new XObject({
                                                             },
                                                             getRenderer : function() {
                                                                    var model = this.get('model');
-                                                            //	print("RENDER VIEW?" + model.file.getType());
+                                                            	print("RENDER VIEW?" + model.file.getType());
                                                             	switch( model.file.getType()) {
                                                             		case 'Roo':
                                                             		    this.get('/RightBrowser.view');
