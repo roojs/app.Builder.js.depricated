@@ -247,6 +247,8 @@ Window=new XObject({
                                                                 var model = this.get('model');
                                                                 if (render) {
                                                                     render.renderJS(model.toJS(false,true)[0]);
+                                                                } else {
+                                                                    print("NO RENDER JS METHOD?");
                                                                 }
                                                             },
                                                             getRenderer : function() {
@@ -2471,21 +2473,8 @@ Window=new XObject({
                                                                     xtype: Gtk.VBox,
                                                                     pack : "add",
                                                                     id : "RightBrowser",
-                                                                    renderJS : function(data) {
-                                                                    
-                                                                     print("RENDER HTML");
-                                                                         var v = this.get('view');
-                                                                        v.renderedData = data;
-                                                                        var str = JSON.stringify(data) ;
+                                                                    listeners : {
                                                                         
-                                                                        if (!v.ready) {
-                                                                            console.log('not loaded yet');
-                                                                        }
-                                                                        Seed.print("RENDER:" + str);
-                                                                    //    imports.File.File.write('/tmp/builder.debug.js', "Builder.render(" + JSON.stringify(data) + ");");
-                                                                        v.el.execute_script("Builder.render(" + JSON.stringify(data) + ");");
-                                                                     
-                                                                    
                                                                     },
                                                                     items : [
                                                                         {
@@ -2538,6 +2527,7 @@ Window=new XObject({
                                                                                         Gtk.drag_dest_set_target_list(this.el, this.get('/Window').targetList);
                                                                                     },
                                                                                     renderJS : function(data) {
+                                                                                       print("HTML RENDERING");
                                                                                         this.renderedData = data;
                                                                                         var str = JSON.stringify(data) ;
                                                                                         
