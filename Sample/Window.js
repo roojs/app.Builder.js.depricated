@@ -116,9 +116,12 @@ Window=new XObject({
                                                 	var fn =  this.get('/LeftProjectTree').get('combo').getValue();
                                                 	if (!fn.length) {
                                                 		this.get('/StandardErrorDialog').show("Select a project")
+                                                		return;
                                                         }
+                                                	var pr  = imports.Builder.Provider.ProjectManager.ProjectManager.getByFn(fn);
+                                                
                                                 	// confirm..
-                                                	this.get('/DialogConfirm').show("Do you want to delete ????", function() {
+                                                	this.get('/DialogConfirm').show("Are you sure you want to delete project '" + pr.name + "'", function() {
                                                 		print("DELETE?");
                                                 	});
                                                 
