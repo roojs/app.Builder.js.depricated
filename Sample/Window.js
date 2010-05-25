@@ -1202,7 +1202,12 @@ Window=new XObject({
                                                                                             
                                                                                             
                                                                                         ] );
-                                                                                            
+                                                                                       var pm = imports.Builder.Provider.ProjectManager.ProjectManager;
+                                                                                       var _this = this;
+                                                                                       pm.on('changed', function() {
+                                                                                    	_this.loadData(pm.projects);
+                                                                                    
+                                                                                       });
                                                                                     },
                                                                                     loadData : function(data) {
                                                                                          var ov = this.get('/LeftProjectTree.combo').getValue();
