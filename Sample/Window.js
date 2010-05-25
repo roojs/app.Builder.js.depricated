@@ -2471,6 +2471,20 @@ Window=new XObject({
                                                                     xtype: Gtk.VBox,
                                                                     pack : "add",
                                                                     id : "RightBrowser",
+                                                                    renderJS : function(data) {
+                                                                         var v = this.get('view');
+                                                                        v.renderedData = data;
+                                                                        var str = JSON.stringify(data) ;
+                                                                        
+                                                                        if (!v.ready) {
+                                                                            console.log('not loaded yet');
+                                                                        }
+                                                                        Seed.print("RENDER:" + str);
+                                                                    //    imports.File.File.write('/tmp/builder.debug.js', "Builder.render(" + JSON.stringify(data) + ");");
+                                                                        v.el.execute_script("Builder.render(" + JSON.stringify(data) + ");");
+                                                                     
+                                                                    
+                                                                    },
                                                                     items : [
                                                                         {
                                                                             xtype: Gtk.HBox,
