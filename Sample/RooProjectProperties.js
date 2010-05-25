@@ -18,7 +18,7 @@ RooProjectProperties=new XObject({
     listeners : {
         "delete_event":function (self, event) {
             this.el.hide()
-            return false;
+            return true;
         }
     },
     items : [
