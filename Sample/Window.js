@@ -1386,7 +1386,7 @@ Window=new XObject({
                                                                                                 this.get('/LeftProjectTree.view').el.expand_all();
                                                                                     },
                                                                                     load : function(tr,iter) {
-                                                                                        console.dump(tr);
+                                                                                      //  console.dump(tr);
                                                                                                 console.log('Project tree load: ' + tr.length);
                                                                                                 var citer = new Gtk.TreeIter();
                                                                                                 //this.insert(citer,iter,0);
