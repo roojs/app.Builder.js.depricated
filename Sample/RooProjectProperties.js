@@ -25,12 +25,13 @@ RooProjectProperties=new XObject({
         {
             xtype: Gtk.VBox,
             pack : function(p,e) {
-                        p.el.get_content_area().add(e.el)
+                        p.el.get_content_area().add(e.el);
+                        e.border_width  =5;
                     },
             items : [
                 {
                     xtype: Gtk.Table,
-                    pack : "add",
+                    pack : "pack_start,true,true,3",
                     init : function() {
                         this.el = new Gtk.Table.c_new(2,2, false);
                         XObject.prototype.init.call(this);
@@ -42,31 +43,30 @@ RooProjectProperties=new XObject({
                     items : [
                         {
                             xtype: Gtk.Label,
-                            pack : "add",
-                            label : "baseURL",
-                            'eft-attac' : 0,
-                            'op-attac' : 0,
-                            'ight-attac' : 1
+                            pack : "attach,0,1,0,1",
+                            label : "baseURL"
                         },
                         {
                             xtype: Gtk.Entry,
-                            pack : "add",
-                            'eft-attac' : 1,
-                            'op-attac' : 0,
-                            'ight-attac' : 2
+                            pack : "attach,1,2,0,1",
+                            listeners : {
+                                
+                            }
                         },
                         {
                             xtype: Gtk.Label,
-                            pack : "add",
+                            pack : "attach,0,1,1,2",
                             label : "baseURL",
-                            left_attach : 0,
-                            'op-attac' : 1
+                            listeners : {
+                                
+                            }
                         },
                         {
                             xtype: Gtk.Entry,
-                            pack : "add",
-                            left_attach : 1,
-                            'op-attac' : 1
+                            pack : "attach,1,2,1,2",
+                            listeners : {
+                                
+                            }
                         }
                     ]
                 }
