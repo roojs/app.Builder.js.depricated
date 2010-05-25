@@ -51,6 +51,19 @@ TODO (Gtk)
 TODO (Roo)
 * Support for baseURL.. ?? auth? - project properties..
 
+-----------------------------------------------------
+
+Thoughts...
+* Widget definition files..
+-> defaults  { ... }
+-> onAddTo(name_of_parent, cfg) { modifies defaults.. }
+-> validParents : [ .... ]
+-> validChildren???: [ .... ]
+
+* how to handle stuff like GtkTable.. - 
+ - needs cols,rows in constructor.
+ - child properties do not appear to work?  -- investigate?
+
 
 -----------------------------------------------------
 Concepts
