@@ -20,6 +20,10 @@ RooProjectProperties=new XObject({
         "delete_event":function (self, event) {
             this.el.hide()
             return true;
+        },
+        "response":function (self, response_id) {
+           print(response_id);
+           this.el.hide();
         }
     },
     items : [
