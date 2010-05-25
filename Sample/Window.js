@@ -2906,7 +2906,10 @@ Window=new XObject({
                                                                         
                                                                     },
                                                                     widgetExposeEvent : function(widget, evt, ud, item) {
-                                                                       if (this.activePath != item.xtreepath) {
+                                                                         if (this.inRender) {
+                                                                             return;
+                                                                         }
+                                                                         if (this.activePath != item.xtreepath) {
                                                                             return false;
                                                                          }
                                                                          print("HIGHLIGHT: " + item.xtreepath ); // draw highlight??
@@ -2920,6 +2923,7 @@ Window=new XObject({
                                                                             h: r.height + 4
                                                                           }; 
                                                                           // let's draw it..
+                                                                          this.inRender = true;
                                                                           var dr = this.get('/Window').el.window;
                                                                           var gc = new Gdk.GC.c_new(dr);
                                                                     
@@ -2927,7 +2931,7 @@ Window=new XObject({
                                                                           gc.set_line_attributes(2,  Gdk.LineStyle.SOLID, Gdk.CapStyle.ROUND , Gdk.JoinStyle.ROUND);
                                                                           gc.set_foreground(new Gdk.Color({ red: 0xFFFF, green: 0, blue: 0}));
                                                                           Gdk.draw_rectangle(dr, gc, false, box.x , box.y, box.w, box.h);
-                                                                          
+                                                                                this.inRender = false;
                                                                                 return false;
                                                                     },
                                                                     widgetDragMotionEvent : function() {
