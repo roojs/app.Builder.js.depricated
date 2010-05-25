@@ -28,7 +28,9 @@ DialogConfirm=new XObject({
     listeners : {
         "response":function (self, response_id) {
            this.el.hide();
-            if (response_id > 0) {
+        print("RESPOSE: " + response_id);
+            if (response_id == -8) { //yes!
+           print("CALL SUCCES?")
               this.success();
             }
         },
