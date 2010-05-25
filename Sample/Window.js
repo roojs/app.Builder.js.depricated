@@ -2709,6 +2709,7 @@ Window=new XObject({
                                                                     id : "RightGtkView",
                                                                     renderJS : function(data, withDebug)
                                                                     {
+                                                                          this.highlightWidget = false;
                                                                          if (!data) {
                                                                                      return; 
                                                                         }
