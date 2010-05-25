@@ -13,6 +13,11 @@ RooProjectProperties=new XObject({
     xtype: Gtk.Dialog,
     modal : true,
     show : function() {
+        // get the active project.
+        
+        var project = this.get('/Window.LeftTree').getActiveFile().project;
+        print (project.fn);
+    
         this.el.show_all();
     },
     default_width : 500,
