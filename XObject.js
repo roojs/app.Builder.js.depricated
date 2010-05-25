@@ -358,16 +358,13 @@ XObject.prototype = {
                 return XObject.cache[xid]; 
             }
             if (xid.indexOf('.') > -1) {
-                var child = false;
-        
-                if (xid.indexOf('.') > -1) {
-                    child = xid.split('.');
-                    var nxid = child.shift();
+                
+                var child = xid.split('.');
+                var nxid = child.shift();
                     
-                    child = child.join('.');
-                    if (typeof(XObject.cache[nxid]) != 'undefined') {
-                        return XObject.cache[nxid].get(child);
-                    }
+                child = child.join('.');
+                if (typeof(XObject.cache[nxid]) != 'undefined') {
+                    return XObject.cache[nxid].get(child);
                 }
                 
                 
