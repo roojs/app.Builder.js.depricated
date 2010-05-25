@@ -14,7 +14,11 @@ RooProjectProperties=new XObject({
     modal : true,
     show : function() {
         // get the active project.
-        
+        var file = this.get('/Window.LeftTree').getActiveFile();
+        if (!file) {
+            this.get('/StandardErrorDialog').show("No file is currently active");
+            return;
+        }
         var project = this.get('/Window.LeftTree').getActiveFile().project;
         print (project.fn);
     
