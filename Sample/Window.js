@@ -47,6 +47,7 @@ Window=new XObject({
         imports.Builder.Provider.ProjectManager.ProjectManager.loadConfig();
          	this.get('/MidPropTree').hideWin();
             this.get('/RightPalete').hide();
+            this.get('/BottomPane').el.hide();
         
         }
     },
@@ -1987,57 +1988,58 @@ Window=new XObject({
                                                                     },
                                                                     editSelected : function(e) {
                                                                         print("EDIT SELECTED?");
-                                                                                var iter = new Gtk.TreeIter();
-                                                                                var s = this.get('/LeftPanel.view').selection;
-                                                                                s.get_selected(this.get('/LeftPanel.model').el, iter);
-                                                                                var m = this.get('/LeftPanel.model')
-                                                                               
-                                                                                var gval = new GObject.Value('');
-                                                                                this.el.get_value(iter, 0 ,gval);
-                                                                                var val = '' + gval.value;
-                                                                                
-                                                                                gval = new GObject.Value('');
-                                                                                this.el.get_value(iter, 1 ,gval);
-                                                                                var rval = gval.value;
-                                                                                var activePath = this.el.get_path(iter).to_string(); 
-                                                                                this.activePath = activePath ;
-                                                                                // was activeIter...
-                                                                                //  not listener...
-                                                                                
-                                                                                var showEditor = false;
-                                                                                
-                                                                                if (val[0] == '!') {
-                                                                                    showEditor = true;
-                                                                                }
-                                                                                if (val[0] == '|') {
-                                                                                    if (rval.match(/function/g) || rval.match(/\n/g)) {
-                                                                                        showEditor = true;
-                                                                                    }
-                                                                                }
-                                                                                
-                                                                                if (showEditor) {
-                                                                                    var _this = this;
-                                                                                    this.activePath = false;
-                                                                                    GLib.timeout_add(0, 1, function() {
-                                                                                        //   Gdk.threads_enter();
-                                                                                        _this.get('/RightEditor').el.show();
-                                                                    		   _this.get('/RightEditor.view').load( rval );
-                                                                                        
-                                                                                        e.editing_done();
-                                                                                        e.remove_widget();
-                                                                                        _this.activePath = activePath ;
-                                                                                        
-                                                                                 //       Gdk.threads_leave();
-                                                                                        return false;
-                                                                                    });
-                                                                                    return;
-                                                                                }
-                                                                                 
-                                                                                this.get('/RightEditor').el.hide();
+                                                                        var iter = new Gtk.TreeIter();
+                                                                        var s = this.get('/LeftPanel.view').selection;
+                                                                        s.get_selected(this.get('/LeftPanel.model').el, iter);
+                                                                        var m = this.get('/LeftPanel.model')
+                                                                       
+                                                                        var gval = new GObject.Value('');
+                                                                        this.el.get_value(iter, 0 ,gval);
+                                                                        var val = '' + gval.value;
+                                                                        
+                                                                        gval = new GObject.Value('');
+                                                                        this.el.get_value(iter, 1 ,gval);
+                                                                        var rval = gval.value;
+                                                                        var activePath = this.el.get_path(iter).to_string(); 
+                                                                        this.activePath = activePath ;
+                                                                        // was activeIter...
+                                                                        //  not listener...
                                                                     
-                                                                                //var type = this.getValue(this.el.get_path(iter).to_string(),4);
+                                                                        var showEditor = false;
+                                                                        
+                                                                        if (val[0] == '!') {
+                                                                            showEditor = true;
+                                                                        }
+                                                                        if (val[0] == '|') {
+                                                                            if (rval.match(/function/g) || rval.match(/\n/g)) {
+                                                                                showEditor = true;
+                                                                            }
+                                                                        }
+                                                                        
+                                                                        if (showEditor) {
+                                                                            var _this = this;
+                                                                            this.activePath = false;
+                                                                            GLib.timeout_add(0, 1, function() {
+                                                                                //   Gdk.threads_enter();
+                                                                                _this.get('/BottomPane').el.show();
+                                                                                _this.get('/RightEditor').el.show();
+                                                                       _this.get('/RightEditor.view').load( rval );
                                                                                 
+                                                                                e.editing_done();
+                                                                                e.remove_widget();
+                                                                                _this.activePath = activePath ;
                                                                                 
+                                                                         //       Gdk.threads_leave();
+                                                                                return false;
+                                                                            });
+                                                                            return;
+                                                                        }
+                                                                          this.get('/BottomPane').el.hide();
+                                                                        this.get('/RightEditor').el.hide();
+                                                                    
+                                                                            //var type = this.getValue(this.el.get_path(iter).to_string(),4);
+                                                                            
+                                                                            
                                                                     }
                                                                 },
                                                                 {
@@ -2895,7 +2897,7 @@ Window=new XObject({
                                                                                           }
                                                                                            var runner = GLib.path_get_dirname (__script_path__) + '/gtkrun.js'; 
                                                                                            print ("RUN DIR:" + dir);
-                                                                                           
+                                                                                            this.get('/BottomPane').el.show();
                                                                                            this.get('/BottomPane').el.set_current_page(1);
                                                                                             this.get('/Terminal').el.fork_command( null , [], [], GLib.path_get_dirname (__script_path__) 
                                                                                         	, false,false,false); 
