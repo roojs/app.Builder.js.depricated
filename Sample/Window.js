@@ -74,9 +74,10 @@ Window=new XObject({
                                             label : "New _Project",
                                             listeners : {
                                                 "activate":function (self) {
+                                                         var _this = this;
                                                 	this.get('/EditProject').show({
                                                 	    success : function(pr) {
-                                                		     this.get('/LeftProjectTree').get('combo').setValue(pr.fn);
+                                                		     _this.get('/LeftProjectTree').get('combo').setValue(pr.fn);
                                                 	    }
                                                 	});
                                                 }
