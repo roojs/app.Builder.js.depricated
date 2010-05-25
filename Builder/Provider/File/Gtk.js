@@ -58,7 +58,7 @@ Gtk = XObject.define(
         
         // super?!?!
         this.id = 'file-gtk-' + gid++;
-        console.dump(this);
+        //console.dump(this);
         // various loader methods..
        
     },
