@@ -247,14 +247,16 @@ Window=new XObject({
                                                                 var model = this.get('model');
                                                                 if (render) {
                                                                     render.renderJS(model.toJS(false,true)[0]);
+                                                                } else {
+                                                                    print("NO RENDER JS METHOD?");
                                                                 }
                                                             },
                                                             getRenderer : function() {
                                                                    var model = this.get('model');
-                                                            //	print("RENDER VIEW?" + model.file.getType());
+                                                            	print("RENDER VIEW?" + model.file.getType());
                                                             	switch( model.file.getType()) {
                                                             		case 'Roo':
-                                                            		    this.get('/RightBrowser.view');
+                                                            		    return this.get('/RightBrowser.view');
                                                             		case 'Gtk':
                                                             		    return this.get('/RightGtkView');
                                                             	}
@@ -2471,6 +2473,9 @@ Window=new XObject({
                                                                     xtype: Gtk.VBox,
                                                                     pack : "add",
                                                                     id : "RightBrowser",
+                                                                    listeners : {
+                                                                        
+                                                                    },
                                                                     items : [
                                                                         {
                                                                             xtype: Gtk.HBox,
@@ -2522,6 +2527,7 @@ Window=new XObject({
                                                                                         Gtk.drag_dest_set_target_list(this.el, this.get('/Window').targetList);
                                                                                     },
                                                                                     renderJS : function(data) {
+                                                                                       print("HTML RENDERING");
                                                                                         this.renderedData = data;
                                                                                         var str = JSON.stringify(data) ;
                                                                                         
