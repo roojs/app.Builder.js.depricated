@@ -252,9 +252,8 @@ Window=new XObject({
                                                                 }
                                                             },
                                                             getRenderer : function() {
-                                                                   var model = this.get('model');
-                                                            	print("RENDER VIEW?" + model.file.getType());
-                                                            	switch( model.file.getType()) {
+                                                            
+                                                            	switch( this.getActiveFile().getType()) {
                                                             		case 'Roo':
                                                             		    return this.get('/RightBrowser.view');
                                                             		case 'Gtk':
@@ -272,6 +271,9 @@ Window=new XObject({
                                                             
                                                                 view.selection.get_selected(model.el, iter);
                                                                 return model.el.get_path(iter).to_string();
+                                                            },
+                                                            getActiveFile : function() {
+                                                                return this.get('model').file;
                                                             },
                                                             items : [
                                                                 {
