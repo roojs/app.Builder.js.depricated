@@ -1164,6 +1164,9 @@ Window=new XObject({
                                                                                     return false;
                                                                                 }
                                                                                 var data = imports.Builder.Provider.ProjectManager.ProjectManager.projects;
+                                                                                if (typeof(data[ix]) == 'undefined') {
+                                                                             	return false; 
+                                                                                }
                                                                                 return data[ix].fn;
                                                                             },
                                                                             setValue : function(fn)
