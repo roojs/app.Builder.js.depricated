@@ -58,7 +58,7 @@ EditProject=new XObject({
                 
                 this.project.name  = GLib.basename(fn);
                 this.project.xtype  = this.get('xtype').getValue();
-                this.project.paths = [ fn ];
+                this.project.paths[ fn ] = 'dir';
                 
                 var pr = imports.Builder.Provider.ProjectManager.ProjectManager.update(this.project);
                 
