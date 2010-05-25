@@ -31,9 +31,14 @@ RooProjectProperties=new XObject({
                 {
                     xtype: Gtk.Table,
                     pack : "add",
-                    n_columns : 2,
-                    n_rows : 2,
-                    homogeneous : true,
+                    init : function() {
+                        this.el = new Gtk.Table.c_new(2,2, false);
+                        XObject.prototype.init.call(this);
+                    
+                    },
+                    listeners : {
+                        
+                    },
                     items : [
                         {
                             xtype: Gtk.Label,
