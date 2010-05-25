@@ -3161,6 +3161,7 @@ Window=new XObject({
                                                             insert_spaces_instead_of_tabs : true,
                                                             indent_width : 4,
                                                             auto_indent : true,
+                                                            show_line_numbers : true,
                                                             items : [
                                                                 {
                                                                     xtype: GtkSource.Buffer,
