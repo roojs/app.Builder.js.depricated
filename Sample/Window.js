@@ -2833,16 +2833,17 @@ Window=new XObject({
                                                                     		} catch(e) {    continue; }
                                                                                     
                                                                     		k = k.substring(1);
-                                                                                  print(k + '=' + kv);
+                                                                                 // print(k + '=' + kv);
                                                                     	}
                                                                             if (k[0] == '|') { // should be boolean or number..
                                                                     		k = k.substring(1);
-                                                                    		print(k + '=' + kv);
+                                                                    		//print(k + '=' + kv);
                                                                             }
                                                                              
                                                                     	if (k == 'show_tabs') { // force tab showing for notebooks.
                                                                                kv = true;
                                                                             }
+                                                                            print(k + '=' + typeof(kv) + " : " + kv);
                                                                             ctr_args[k] = kv;
                                                                             
                                                                         } 
