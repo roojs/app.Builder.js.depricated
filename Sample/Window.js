@@ -256,7 +256,7 @@ Window=new XObject({
                                                             	print("RENDER VIEW?" + model.file.getType());
                                                             	switch( model.file.getType()) {
                                                             		case 'Roo':
-                                                            		    this.get('/RightBrowser.view');
+                                                            		    return this.get('/RightBrowser.view');
                                                             		case 'Gtk':
                                                             		    return this.get('/RightGtkView');
                                                             	}
