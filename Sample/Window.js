@@ -118,10 +118,12 @@ Window=new XObject({
                                                 		this.get('/StandardErrorDialog').show("Select a project")
                                                 		return;
                                                         }
-                                                	var pr  = imports.Builder.Provider.ProjectManager.ProjectManager.getByFn(fn);
+                                                	var pm = imports.Builder.Provider.ProjectManager.ProjectManager;
+                                                	var pr  = pm.getByFn(fn);
                                                 
                                                 	// confirm..
                                                 	this.get('/DialogConfirm').show("Are you sure you want to delete project '" + pr.name + "'", function() {
+                                                		pm.deleteProject(fn);
                                                 		print("DELETE?");
                                                 	});
                                                 
