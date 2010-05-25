@@ -1371,10 +1371,12 @@ Window=new XObject({
                                                                                        
                                                                                     },
                                                                                     loadProject : function(pr) {
+                                                                                    print("LOAD PROJECT");
                                                                                                this.el.clear();
                                                                                                 if (!pr) {
                                                                                                     return;
                                                                                                 }
+                                                                                                
                                                                                                 this.get('/LeftProjectTree').project = pr;
                                                                                                 this.load(pr.toTree());
                                                                                                 this.get('/LeftProjectTree.view').el.expand_all();
