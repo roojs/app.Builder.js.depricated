@@ -149,8 +149,7 @@ ProjectManager =  new Observable({
         var newplist = [];
         var _this = this;
         this.projects.forEach(function(p) {
-            if (p.fn != p) {
-                
+            if (p.fn != fn) {
                 newplist.push(p);
                 return;
             }
