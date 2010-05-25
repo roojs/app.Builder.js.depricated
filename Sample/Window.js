@@ -2907,7 +2907,7 @@ Window=new XObject({
                                                                     },
                                                                     widgetExposeEvent : function(widget, evt, ud, item) {
                                                                          if (this.inRender) {
-                                                                             return;
+                                                                             return false;
                                                                          }
                                                                          if (this.activePath != item.xtreepath) {
                                                                             return false;
@@ -2925,7 +2925,7 @@ Window=new XObject({
                                                                           // let's draw it..
                                                                           this.inRender = true;
                                                                           var dr = this.get('/Window').el.window;
-                                                                          var gc = new Gdk.GC.c_new(dr);
+                                                                          var gc = (new Gdk.GC.c_new(dr)).copy();
                                                                     
                                                                           var dr = widget.get_window();
                                                                           gc.set_line_attributes(2,  Gdk.LineStyle.SOLID, Gdk.CapStyle.ROUND , Gdk.JoinStyle.ROUND);
