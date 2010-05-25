@@ -34,7 +34,7 @@ RooProjectProperties=new XObject({
                     xtype: Gtk.Table,
                     pack : "pack_start,true,true,3",
                     init : function() {
-                        this.el = new Gtk.Table.c_new(1,2, false);
+                        this.el = new Gtk.Table.c_new(1,2, true);
                         XObject.prototype.init.call(this);
                     
                     },
@@ -42,7 +42,7 @@ RooProjectProperties=new XObject({
                         {
                             xtype: Gtk.Label,
                             pack : "attach,0,1,0,1,0,0,0,0",
-                            label : "baseURL"
+                            label : "baseURL "
                         },
                         {
                             xtype: Gtk.Entry,
