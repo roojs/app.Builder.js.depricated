@@ -26,13 +26,13 @@ Where it is..
 * listeners with gtk prototypes
 * Gtk properties that are enums - now show a combo selector..
 * application is used to write itself...
-
+* Projects can be created and deleted (basically a directory)
+* sourceview to uses spaces rather than tabs. (and autoindents..)
+* Help view - load docs..
 -----------------------------------------------------
 
 TODO
-* Create project.. properly..
 * Dialog buttons - need special rendering on preview.
-* change sourceview to use spaces rather than tabs.
 * Icon-size (should be an enum...??)
 * (Image|....??? ).stock - should be a list of stock icons..
 * fix pulldowns for types.. - it's a bit hap hazard with the delayed / loading of settings.
@@ -43,8 +43,8 @@ TODO
 * sort out add heirachy for Gtk..
 * Project Tree needs to work perhaps like a left hand popout.
 * make heirachy editor...
-
-* Help view - load docs..
+* new file = should specify type (eg. gtk window etc..)
+* Help view - next/back.. url?
 
 -----------------------------------------------------
 Concepts
