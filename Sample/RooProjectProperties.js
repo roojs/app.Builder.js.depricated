@@ -46,10 +46,7 @@ RooProjectProperties=new XObject({
                         },
                         {
                             xtype: Gtk.Entry,
-                            pack : "attach,1,2,0,1",
-                            listeners : {
-                                
-                            }
+                            pack : "attach,1,2,0,1,5"
                         },
                         {
                             xtype: Gtk.Label,
@@ -58,10 +55,7 @@ RooProjectProperties=new XObject({
                         },
                         {
                             xtype: Gtk.Entry,
-                            pack : "attach,1,2,1,2",
-                            listeners : {
-                                
-                            }
+                            pack : "attach,1,2,1,2,5"
                         },
                         {
                             xtype: Gtk.Label,
@@ -70,7 +64,7 @@ RooProjectProperties=new XObject({
                         },
                         {
                             xtype: Gtk.Entry,
-                            pack : "attach,1,2,2,3",
+                            pack : "attach,1,2,2,3,5",
                             visibility : false
                         }
                     ]
