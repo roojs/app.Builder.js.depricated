@@ -107,6 +107,30 @@ Window=new XObject({
                                         },
                                         {
                                             xtype: Gtk.MenuItem,
+                                            use_underline : true,
+                                            pack : "add",
+                                            label : "D_elete Project",
+                                            listeners : {
+                                                "activate":function (self) {
+                                                
+                                                	var fn =  this.get('/LeftProjectTree').get('combo').getValue();
+                                                	if (!fn.length) {
+                                                		this.get('/StandardErrorDialog').show("Select a project")
+                                                        }
+                                                	// confirm..
+                                                	this.get('/DialogConfirm').show("Do you want to delete ????", function() {
+                                                		print("DELETE?");
+                                                	});
+                                                
+                                                }
+                                            }
+                                        },
+                                        {
+                                            xtype: Gtk.SeparatorMenuItem,
+                                            pack : "add"
+                                        },
+                                        {
+                                            xtype: Gtk.MenuItem,
                                             pack : "add",
                                             label : "_Quit",
                                             use_underline : true,
