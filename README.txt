@@ -49,7 +49,7 @@ TODO (Gtk)
 -----------------------------------------------------
 
 TODO (Roo)
-* Support for baseURL.. ?? auth?
+* Support for baseURL.. ?? auth? - project properties..
 
 
 -----------------------------------------------------
