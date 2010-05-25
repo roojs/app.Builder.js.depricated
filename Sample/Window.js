@@ -3158,6 +3158,9 @@ Window=new XObject({
                                                                  
                                                                 this.el.grab_focus();
                                                             },
+                                                            insert_spaces_instead_of_tabs : true,
+                                                            indent_width : 4,
+                                                            auto_indent : true,
                                                             items : [
                                                                 {
                                                                     xtype: GtkSource.Buffer,
