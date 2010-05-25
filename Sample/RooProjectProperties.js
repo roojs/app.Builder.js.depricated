@@ -33,17 +33,14 @@ RooProjectProperties=new XObject({
                     xtype: Gtk.Table,
                     pack : "pack_start,true,true,3",
                     init : function() {
-                        this.el = new Gtk.Table.c_new(2,2, false);
+                        this.el = new Gtk.Table.c_new(1,2, false);
                         XObject.prototype.init.call(this);
                     
-                    },
-                    listeners : {
-                        
                     },
                     items : [
                         {
                             xtype: Gtk.Label,
-                            pack : "attach,0,1,0,1",
+                            pack : "attach,0,1,0,1,0,0,0,0",
                             label : "baseURL"
                         },
                         {
@@ -55,11 +52,8 @@ RooProjectProperties=new XObject({
                         },
                         {
                             xtype: Gtk.Label,
-                            pack : "attach,0,1,1,2",
-                            label : "baseURL",
-                            listeners : {
-                                
-                            }
+                            pack : "attach,0,1,1,2,0,0,1,0",
+                            label : "login:"
                         },
                         {
                             xtype: Gtk.Entry,
@@ -67,6 +61,15 @@ RooProjectProperties=new XObject({
                             listeners : {
                                 
                             }
+                        },
+                        {
+                            xtype: Gtk.Label,
+                            pack : "attach,0,1,2,3,0,0,1,0",
+                            label : "password"
+                        },
+                        {
+                            xtype: Gtk.Entry,
+                            pack : "attach,1,2,2,3"
                         }
                     ]
                 }
