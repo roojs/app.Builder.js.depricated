@@ -43,18 +43,22 @@ EditProject=new XObject({
                     return;
                 }
                 if (!this.get('xtype').getValue().length) {
-                    this.get('/StandardErrorDialog').show("You have to set Project type");
-                     
+                    this.get('/StandardErrorDialog').show("You have to set Project type");             
                     return;
                 }
+                if (!this.get('dir').el.get_filename().length) {
+                    this.get('/StandardErrorDialog').show("You have to select a folder");             
+                    return;
+                }
+        
                 this.el.hide();
                 
                 
+                var fn = this.get('dir').el.get_filename();
                 
-                
-                this.project.name  = this.get('name').getValue();
+                this.project.name  = GLib.basename(fn);
                 this.project.xtype  = this.get('xtype').getValue();
-                
+                this.project.paths = [ fn ];
                 
                 var pr = imports.Builder.Provider.ProjectManager.ProjectManager.update(this.project);
                 
@@ -156,7 +160,9 @@ EditProject=new XObject({
                 {
                     xtype: Gtk.FileChooserWidget,
                     pack : "pack_end,true,true,5",
-                    action : Gtk.FileChooserAction.SELECT_FOLDER
+                    action : Gtk.FileChooserAction.SELECT_FOLDER,
+                    id : "dir",
+                    select_multiple : false
                 }
             ]
         },
