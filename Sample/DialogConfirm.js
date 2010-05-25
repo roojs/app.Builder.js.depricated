@@ -31,6 +31,7 @@ DialogConfirm=new XObject({
             return true;
         },
         "response":function (self, response_id) {
+           this.el.hide();
             if (response_id > 0) {
               this.success();
             }
