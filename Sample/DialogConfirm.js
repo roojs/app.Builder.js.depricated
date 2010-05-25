@@ -26,15 +26,15 @@ DialogConfirm=new XObject({
     use_markup : true,
     text : "-",
     listeners : {
-        "destroy_event":function (self, event) {
-            this.el.hide();
-            return true;
-        },
         "response":function (self, response_id) {
            this.el.hide();
             if (response_id > 0) {
               this.success();
             }
+        },
+        "delete_event":function (self, event) {
+            this.el.hide();
+            return true;
         }
     }
 });
