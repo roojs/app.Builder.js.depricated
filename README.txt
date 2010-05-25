@@ -29,22 +29,28 @@ Where it is..
 * Projects can be created and deleted (basically a directory)
 * sourceview to uses spaces rather than tabs. (and autoindents..)
 * Help view - load docs..
+* highlight in gtk preview - works but is klunky..
+
 -----------------------------------------------------
 
-TODO
+TODO (Gtk)
 * Dialog buttons - need special rendering on preview.
 * Icon-size (should be an enum...??)
 * (Image|....??? ).stock - should be a list of stock icons..
 * fix pulldowns for types.. - it's a bit hap hazard with the delayed / loading of settings.
 * packing - gather from methods to find out which match.. (including false)
 * adding a file does not display on project tree straight awya..
-* highlight in gtk preview
 * templates for elements... - eg. defaults for classic elements.
 * sort out add heirachy for Gtk..
 * Project Tree needs to work perhaps like a left hand popout.
 * make heirachy editor...
 * new file = should specify type (eg. gtk window etc..)
 * Help view - next/back.. url?
+-----------------------------------------------------
+
+TODO (Roo)
+* Support for baseURL.. ?? auth?
+
 
 -----------------------------------------------------
 Concepts
