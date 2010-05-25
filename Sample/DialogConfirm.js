@@ -25,6 +25,7 @@ DialogConfirm=new XObject({
     message_type : Gtk.MessageType.QUESTION,
     use_markup : true,
     text : "-",
+    modal : true,
     listeners : {
         "response":function (self, response_id) {
            this.el.hide();
