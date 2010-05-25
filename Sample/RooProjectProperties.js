@@ -70,6 +70,16 @@ RooProjectProperties=new XObject({
                     ]
                 }
             ]
+        },
+        {
+            xtype: Gtk.Button,
+            pack : "add_action_widget,1",
+            label : "OK"
+        },
+        {
+            xtype: Gtk.Button,
+            pack : "add_action_widget,0",
+            label : "Cancel"
         }
     ]
 });
