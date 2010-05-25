@@ -143,6 +143,28 @@ ProjectManager =  new Observable({
         
         
     },
+    
+    deleteProject : function (fn)
+    {
+        var newplist = [];
+        var _this = this;
+        this.projects.forEach(function(p) {
+            if (p.fn != p) {
+                
+                newplist.push(p);
+                return;
+            }
+            var file = _this.dirname + '/' + p.fn + '.json';
+            if (File.exists(file)) {
+                File.remove(file);
+            }
+            
+        });
+        this.projects = newplist;
+        this.fireEvent('changed', this);
+    },
+    
+    
     getByFn : function (fn) {
         var  ret = false;
         this.projects.forEach(function(p) {
