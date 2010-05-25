@@ -2472,6 +2472,8 @@ Window=new XObject({
                                                                     pack : "add",
                                                                     id : "RightBrowser",
                                                                     renderJS : function(data) {
+                                                                    
+                                                                     print("RENDER HTML");
                                                                          var v = this.get('view');
                                                                         v.renderedData = data;
                                                                         var str = JSON.stringify(data) ;
