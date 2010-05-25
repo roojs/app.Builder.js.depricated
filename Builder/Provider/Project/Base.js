@@ -207,7 +207,9 @@ Base = XObject.define(
             
         },
         
-        
+        /**
+         * DEPRECIATED !!!!!
+         */
         addFile: function(pfile) { // add a single file, and trigger changed.
             this.files[pfile.path] = pfile
             this.fireEvent('changed', this);
