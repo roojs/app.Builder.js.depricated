@@ -15,6 +15,7 @@ RooProjectProperties=new XObject({
     show : function() {
         this.el.show_all();
     },
+    default_width : 500,
     listeners : {
         "delete_event":function (self, event) {
             this.el.hide()
