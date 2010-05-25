@@ -2493,6 +2493,17 @@ Window=new XObject({
                                                                                         	    "console.log(Builder.dump(Builder));");   
                                                                                         }
                                                                                     }
+                                                                                },
+                                                                                {
+                                                                                    xtype: Gtk.Button,
+                                                                                    pack : "add",
+                                                                                    label : "Edit Roo Project",
+                                                                                    listeners : {
+                                                                                        "button_press_event":function (self, event) {
+                                                                                            this.get('/RooProjectProperties').show();
+                                                                                            return false;
+                                                                                        }
+                                                                                    }
                                                                                 }
                                                                             ]
                                                                         },
