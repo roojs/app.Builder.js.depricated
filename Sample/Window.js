@@ -1371,10 +1371,12 @@ Window=new XObject({
                                                                                        
                                                                                     },
                                                                                     loadProject : function(pr) {
+                                                                                    print("LOAD PROJECT");
                                                                                                this.el.clear();
                                                                                                 if (!pr) {
                                                                                                     return;
                                                                                                 }
+                                                                                                
                                                                                                 this.get('/LeftProjectTree').project = pr;
                                                                                                 this.load(pr.toTree());
                                                                                                 this.get('/LeftProjectTree.view').el.expand_all();
@@ -2905,18 +2907,55 @@ Window=new XObject({
                                                                         return el;
                                                                         
                                                                     },
-                                                                    widgetExposeEvent : function(widget, evt, ud, item) {
+                                                                    widgetExposeEvent : function(w, evt, ud, item) {
+                                                                        var widget = w;
                                                                          if (this.inRender) {
                                                                              return false;
                                                                          }
+                                                                         
+                                                                         if ( this.highlightWidget) {
+                                                                              this.inRender = true;
+                                                                              if (item.xtreepath.substring(0, this.activePath.length) == this.activePath) {
+                                                                                     Gdk.draw_rectangle(this.highlightWidget.window, this.gc, false, this.box.x , this.box.y, this.box.w, this.box.h);
+                                                                                }
+                                                                               this.inRender = false;
+                                                                               return false;
+                                                                         }
+                                                                         
+                                                                         
                                                                          if (this.activePath != item.xtreepath) {
                                                                             return false;
                                                                          }
-                                                                         print("HIGHLIGHT: " + item.xtreepath ); // draw highlight??
-                                                                         // work out the coords of the window..
-                                                                         var r  = widget.get_allocation();
                                                                          
-                                                                         var box = {
+                                                                       //  print("HIGHLIGHT: " + item.xtreepath ); // draw highlight??
+                                                                         // work out the coords of the window..
+                                                                         if (!this.gc) {
+                                                                          var dr = widget.window;
+                                                                          this.gc = (new Gdk.GC.c_new(dr));
+                                                                          this.gc.set_rgb_fg_color(new Gdk.Color({ red: 0xFFFF, green: 0, blue : 0 }));
+                                                                          this.gc.set_line_attributes(4,  Gdk.LineStyle.SOLID, Gdk.CapStyle.ROUND , Gdk.JoinStyle.ROUND);
+                                                                        }
+                                                                    
+                                                                        
+                                                                         var r  = evt.expose.area;
+                                                                         // console.dump([r.x, r.y, r.width, r.height ] );
+                                                                         //return false;
+                                                                    //     print(widget.get_parent().toString().match(/GtkScrolledWindow/);
+                                                                         if (widget.get_parent().toString().match(/GtkScrolledWindow/)) { // eak
+                                                                             // happens with gtkscrollview embedded stuff..
+                                                                             var np =this.activePath.split(':');
+                                                                             np.pop();
+                                                                             this.activePath = np.join(':');
+                                                                             this.renderedEl.queue_draw();
+                                                                             return true;
+                                                                    
+                                                                            
+                                                                         }
+                                                                    
+                                                                           
+                                                                         
+                                                                         
+                                                                          this.box = {
                                                                             x : r.x - 2,
                                                                             y : r.y - 2,
                                                                             w: r.width + 4,
@@ -2924,13 +2963,16 @@ Window=new XObject({
                                                                           }; 
                                                                           // let's draw it..
                                                                           this.inRender = true;
-                                                                          var dr = this.get('/Window').el.window;
-                                                                          var gc = (new Gdk.GC.c_new(dr)).copy();
                                                                     
-                                                                          var dr = widget.get_window();
-                                                                          gc.set_line_attributes(2,  Gdk.LineStyle.SOLID, Gdk.CapStyle.ROUND , Gdk.JoinStyle.ROUND);
-                                                                          gc.set_foreground(new Gdk.Color({ red: 0xFFFF, green: 0, blue: 0}));
-                                                                          Gdk.draw_rectangle(dr, gc, false, box.x , box.y, box.w, box.h);
+                                                                          
+                                                                          this.highlightWidget = widget;
+                                                                        
+                                                                        
+                                                                     
+                                                                    
+                                                                        //  print("DRAW BOX");
+                                                                           //console.dump(this.box);
+                                                                          Gdk.draw_rectangle(widget.window, this.gc, false, this.box.x , this.box.y, this.box.w,this.box.h);
                                                                                 this.inRender = false;
                                                                                 return false;
                                                                     },
@@ -2956,6 +2998,7 @@ Window=new XObject({
                                                                        return false;
                                                                     },
                                                                     redraw : function() {
+                                                                       this.highlightWidget = false;
                                                                         print("REDRAW CALLED");
                                                                         this.activePath = this.get('/LeftTree').getActivePath();
                                                                         if (this.renderedEl) {
