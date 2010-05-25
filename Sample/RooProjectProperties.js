@@ -23,6 +23,11 @@ RooProjectProperties=new XObject({
         },
         "response":function (self, response_id) {
            print(response_id);
+           if (!response_id) {
+              this.el.hide();
+              return;
+           }
+           // ok pressed..
            this.el.hide();
         }
     },
