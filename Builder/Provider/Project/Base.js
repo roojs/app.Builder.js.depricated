@@ -195,7 +195,8 @@ Base = XObject.define(
             var cls = imports.Builder.Provider.File[xt][xt];
             return  new cls({
                 path : path,
-                parent : ''
+                parent : '',
+                project : this
             });
         },
         create : function(filename)
