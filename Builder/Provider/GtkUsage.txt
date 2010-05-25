@@ -31,6 +31,7 @@ left:
 	Gtk.VButtonBox 
 	Gtk.HPaned 
 	Gtk.VPaned 
+	Gtk.Table
 	Gtk.Layout 
 	Gtk.Notebook
 	//Gtk.Table 
@@ -41,6 +42,8 @@ left:
 	Gtk.ToolItem
 	Gtk.Viewport
 	Gtk.Button
+	
+	
 right:	 
 	Gtk.Alignment 
 	Gtk.AspectFrame 
