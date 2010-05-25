@@ -54,7 +54,7 @@ TODO (Roo)
 -----------------------------------------------------
 
 Thoughts...
-* Widget definition files..
+* Widget definition files.. (to replace our 'Usage.txt' files)
 -> defaults  { ... }
 -> onAdd(name_of_parent, cfg) { modifies defaults.. }
 -> validParents : [ .... ]
