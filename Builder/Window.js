@@ -74,9 +74,10 @@ Window=new XObject({
                                             label : "New _Project",
                                             listeners : {
                                                 "activate":function (self) {
+                                                         var _this = this;
                                                 	this.get('/EditProject').show({
                                                 	    success : function(pr) {
-                                                		     this.get('/LeftProjectTree').get('combo').setValue(pr.fn);
+                                                		     _this.get('/LeftProjectTree').get('combo').setValue(pr.fn);
                                                 	    }
                                                 	});
                                                 }
@@ -97,6 +98,35 @@ Window=new XObject({
                                                         this.get('/DialogNewComponent').show({
                                                             project : pm.getByFn(fn)
                                                         });
+                                                }
+                                            }
+                                        },
+                                        {
+                                            xtype: Gtk.SeparatorMenuItem,
+                                            pack : "add"
+                                        },
+                                        {
+                                            xtype: Gtk.MenuItem,
+                                            use_underline : true,
+                                            pack : "add",
+                                            label : "D_elete Project",
+                                            listeners : {
+                                                "activate":function (self) {
+                                                
+                                                	var fn =  this.get('/LeftProjectTree').get('combo').getValue();
+                                                	if (!fn.length) {
+                                                		this.get('/StandardErrorDialog').show("Select a project")
+                                                		return;
+                                                        }
+                                                	var pm = imports.Builder.Provider.ProjectManager.ProjectManager;
+                                                	var pr  = pm.getByFn(fn);
+                                                
+                                                	// confirm..
+                                                	this.get('/DialogConfirm').show("Are you sure you want to delete project '" + pr.name + "'", function() {
+                                                		pm.deleteProject(fn);
+                                                		print("DELETE?");
+                                                	});
+                                                
                                                 }
                                             }
                                         },
@@ -1134,6 +1164,9 @@ Window=new XObject({
                                                                                     return false;
                                                                                 }
                                                                                 var data = imports.Builder.Provider.ProjectManager.ProjectManager.projects;
+                                                                                if (typeof(data[ix]) == 'undefined') {
+                                                                             	return false; 
+                                                                                }
                                                                                 return data[ix].fn;
                                                                             },
                                                                             setValue : function(fn)
@@ -1172,7 +1205,13 @@ Window=new XObject({
                                                                                             
                                                                                             
                                                                                         ] );
-                                                                                            
+                                                                                       var pm = imports.Builder.Provider.ProjectManager.ProjectManager;
+                                                                                       var _this = this;
+                                                                                       pm.on('changed', function() {
+                                                                                           print("caught changed hook on project manager - reloading data");
+                                                                                    	_this.loadData(pm.projects);
+                                                                                    
+                                                                                       });
                                                                                     },
                                                                                     loadData : function(data) {
                                                                                          var ov = this.get('/LeftProjectTree.combo').getValue();
@@ -2719,7 +2758,9 @@ Window=new XObject({
                                                                     	}
                                                                             if (k[0] == '|') { // should be boolean or number..
                                                                     		k = k.substring(1);
+                                                                    		print(k + '=' + kv);
                                                                             }
+                                                                             
                                                                     	if (k == 'show_tabs') { // force tab showing for notebooks.
                                                                                kv = true;
                                                                             }
@@ -3119,6 +3160,10 @@ Window=new XObject({
                                                                  
                                                                 this.el.grab_focus();
                                                             },
+                                                            insert_spaces_instead_of_tabs : true,
+                                                            indent_width : 4,
+                                                            auto_indent : true,
+                                                            show_line_numbers : true,
                                                             items : [
                                                                 {
                                                                     xtype: GtkSource.Buffer,
