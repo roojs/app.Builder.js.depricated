@@ -1,1 +1,1 @@
-{"id":"file-gtk-14","name":"RooProjectProperties","parent":"","title":false,"path":"/home/alan/gitlive/app.Builder.js/Sample/RooProjectProperties.bjs","items":[{"|xns":"Gtk","xtype":"Dialog","|modal":true}]}
+{"id":"file-gtk-14","name":"RooProjectProperties","parent":"","title":false,"path":"/home/alan/gitlive/app.Builder.js/Sample/RooProjectProperties.bjs","items":[{"|xns":"Gtk","xtype":"Dialog","|modal":true,"items":[{"|xns":"Gtk","xtype":"VBox","pack":"add"}]}]}
