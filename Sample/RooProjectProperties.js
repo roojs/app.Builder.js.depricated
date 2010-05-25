@@ -12,6 +12,9 @@ XObject = imports.XObject.XObject;
 RooProjectProperties=new XObject({
     xtype: Gtk.Dialog,
     modal : true,
+    show : function() {
+        this.el.show_all();
+    },
     items : [
         {
             xtype: Gtk.VBox,
@@ -22,17 +25,22 @@ RooProjectProperties=new XObject({
                 {
                     xtype: Gtk.Table,
                     pack : "add",
+                    n_columns : 2,
+                    n_rows : 2,
                     items : [
                         {
                             xtype: Gtk.Label,
                             pack : "add",
                             label : "baseURL",
-                            left_attach : 1
+                            left_attach : 0
                         },
                         {
                             xtype: Gtk.Entry,
                             pack : "add",
-                            left_attach : 2
+                            left_attach : 1,
+                            listeners : {
+                                
+                            }
                         }
                     ]
                 }
