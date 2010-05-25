@@ -1205,6 +1205,7 @@ Window=new XObject({
                                                                                        var pm = imports.Builder.Provider.ProjectManager.ProjectManager;
                                                                                        var _this = this;
                                                                                        pm.on('changed', function() {
+                                                                                           print("caught changed hook on project manager - reloading data");
                                                                                     	_this.loadData(pm.projects);
                                                                                     
                                                                                        });
