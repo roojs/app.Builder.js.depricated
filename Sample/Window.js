@@ -243,14 +243,33 @@ Window=new XObject({
                                                                 return pm.getPalete(model.file.getType());
                                                             },
                                                             renderView : function() {
-                                                               	 var model = this.get('model');
-                                                            	print("RENDER VIEW?" + model.file.getType());
+                                                                var render = this.getRenderer();
+                                                                var model = this.get('model');
+                                                                if (render) {
+                                                                    render.renderJS(model.toJS(false,true)[0]);
+                                                                }
+                                                            },
+                                                            getRenderer : function() {
+                                                                   var model = this.get('model');
+                                                            //	print("RENDER VIEW?" + model.file.getType());
                                                             	switch( model.file.getType()) {
                                                             		case 'Roo':
-                                                            		    this.get('/RightBrowser.view').renderJS(model.toJS(false,true)[0]);
+                                                            		    this.get('/RightBrowser.view');
                                                             		case 'Gtk':
-                                                            		    this.get('/RightGtkView').renderJS(model.toJS(false,true)[0]);
+                                                            		    return this.get('/RightGtkView');
                                                             	}
+                                                            
+                                                            },
+                                                            getActivePath : function() {
+                                                                var model = this.get('model');
+                                                                var view = this.get('view');
+                                                                if (view.selection.count_selected_rows() < 1) {
+                                                                    return false;
+                                                                }
+                                                                var iter = new Gtk.TreeIter();
+                                                            
+                                                                view.selection.get_selected(model.el, iter);
+                                                                return model.el.get_path(iter).to_string();
                                                             },
                                                             items : [
                                                                 {
@@ -259,7 +278,7 @@ Window=new XObject({
                                                                     id : "view",
                                                                     headers_visible : false,
                                                                     enable_tree_lines : true,
-                                                                    tooltip_column : 0,
+                                                                    tooltip_column : 1,
                                                                     init : function() {
                                                                         	XObject.prototype.init.call(this);
                                                                     	var description = new Pango.FontDescription.c_new();
@@ -269,6 +288,8 @@ Window=new XObject({
                                                                     	this.selection = this.el.get_selection();
                                                                     	this.selection.set_mode( Gtk.SelectionMode.SINGLE);
                                                                     	var _this = this;
+                                                                    
+                                                                    	// is this really needed??
                                                                     	this.selection.signal['changed'].connect(function() {
                                                                     		_this.get('/LeftTree.view').listeners.cursor_changed.apply(
                                                                     		    _this.get('/LeftTree.view'), [ _this.get('/LeftTree.view'), '']
@@ -299,8 +320,10 @@ Window=new XObject({
                                                                     	Gtk.drag_dest_add_text_targets(this.el);
                                                                     },
                                                                     highlight : function(treepath_ar) {
-                                                                                        if (treepath_ar.length && treepath_ar[0].length ) {
-                                                                                    this.el.set_drag_dest_row( 
+                                                                    
+                                                                            // highlighting for drag/drop
+                                                                            if (treepath_ar.length && treepath_ar[0].length ) {
+                                                                                this.el.set_drag_dest_row( 
                                                                                         new  Gtk.TreePath.from_string( treepath_ar[0] ),  treepath_ar[1]);
                                                                                 } else {
                                                                                     this.el.set_drag_dest_row(null, Gtk.TreeViewDropPosition.INTO_OR_AFTER);
@@ -316,22 +339,22 @@ Window=new XObject({
                                                                     listeners : {
                                                                         "button_press_event":function (self, ev) {
                                                                          	console.log("button press?");
-                                                                                        if (ev.type != Gdk.EventType.BUTTON_PRESS  || ev.button.button != 3) {
-                                                                                            print("click" + ev.type);
-                                                                                            return false;
-                                                                                        }
-                                                                                      
-                                                                                    
-                                                                                        var res = {}; 
-                                                                                        this.get('/LeftTree.view').el.get_path_at_pos(ev.button.x,ev.button.y, res);
-                                                                                        
-                                                                                        if (!this.get('/LeftTreeMenu').el)  this.get('/LeftTreeMenu').init();
-                                                                                        
-                                                                                        this.get('/LeftTreeMenu').el.set_screen(Gdk.Screen.get_default());
-                                                                                        this.get('/LeftTreeMenu').el.show_all();
-                                                                                        this.get('/LeftTreeMenu').el.popup(null, null, null, null, 3, ev.button.time);
-                                                                                        print("click:" + res.path.to_string());
-                                                                                        return false;
+                                                                                if (ev.type != Gdk.EventType.BUTTON_PRESS  || ev.button.button != 3) {
+                                                                                    print("click" + ev.type);
+                                                                                    return false;
+                                                                                }
+                                                                              
+                                                                            
+                                                                                var res = {}; 
+                                                                                this.get('/LeftTree.view').el.get_path_at_pos(ev.button.x,ev.button.y, res);
+                                                                                
+                                                                                if (!this.get('/LeftTreeMenu').el)  this.get('/LeftTreeMenu').init();
+                                                                                
+                                                                                this.get('/LeftTreeMenu').el.set_screen(Gdk.Screen.get_default());
+                                                                                this.get('/LeftTreeMenu').el.show_all();
+                                                                                this.get('/LeftTreeMenu').el.popup(null, null, null, null, 3, ev.button.time);
+                                                                                print("click:" + res.path.to_string());
+                                                                                return false;
                                                                         },
                                                                         "drag_begin":function (self, drag_context) {
                                                                         	print('SOURCE: drag-begin');
@@ -512,54 +535,60 @@ Window=new XObject({
                                                                                         return true;
                                                                         },
                                                                         "cursor_changed":function (self) {
-                                                                         if (this.blockChanges) {
-                                                                           return true;
-                                                                         }
-                                                                         var iter = new Gtk.TreeIter();
-                                                                                        
-                                                                                        if (this.selection.count_selected_rows() < 1) {
-                                                                                            this.get('/LeftPanel.model').load( false);
-                                                                                            this.get('/MidPropTree').activeElement =  false;
-                                                                                            this.get('/MidPropTree').hideWin();
+                                                                             if (this.blockChanges) { // probably not needed.. 
+                                                                               return true;
+                                                                             }
+                                                                             var render = this.get('/LeftTree').getRenderer();                
+                                                                           
+                                                                            
+                                                                            if (this.selection.count_selected_rows() < 1) {
+                                                                                this.get('/LeftPanel.model').load( false);
+                                                                                this.get('/MidPropTree').activeElement =  false;
+                                                                                this.get('/MidPropTree').hideWin();
                                                                         
-                                                                                            var pm = this.get('/RightPalete.model');
-                                                                                            if (!this.get('/LeftTree').getPaleteProvider()) {
-                                                                                                // it may not be loaded yet..
-                                                                                                return  true;
-                                                                                            }
-                                                                                            pm.load( this.get('/LeftTree').getPaleteProvider().gatherList(
-                                                                                                this.get('/LeftTree.model').listAllTypes()));
-                                                                                           
-                                                                                            return true;
-                                                                                        }
-                                                                                        
-                                                                                        //console.log('changed');
-                                                                                        var s = this.selection;
-                                                                                        s.get_selected(this.get('/LeftTree.model').el, iter);
-                                                                                        
-                                                                                        
-                                                                                        // var val = "";
-                                                                                        value = new GObject.Value('');
-                                                                                        this.get('/LeftTree.model').el.get_value(iter, 2, value);
-                                                                                        this.get('/LeftTree.model').activePath = this.get('/LeftTree.model').el.get_path(iter).to_string();
-                                                                                        
-                                                                                        var data = JSON.parse(value.value);
-                                                                                        this.get('/MidPropTree').activeElement =  data;
-                                                                                        this.get('/MidPropTree').hideWin();
-                                                                                        this.get('/LeftPanel.model').load( data);
-                                                                                        
-                                                                                        console.log(value.value);
-                                                                                       // _g.button.set_label(''+value.get_string());
+                                                                                var pm = this.get('/RightPalete.model');
+                                                                                if (!this.get('/LeftTree').getPaleteProvider()) {
+                                                                                    // it may not be loaded yet..
+                                                                                    return  true;
+                                                                                }
+                                                                                pm.load( this.get('/LeftTree').getPaleteProvider().gatherList(
+                                                                                    this.get('/LeftTree.model').listAllTypes()));
+                                                                                if (render && render.redraw) {
+                                                                                    render.redraw();
+                                                                                }
+                                                                                return true;
+                                                                            }
+                                                                                    
+                                                                                    //console.log('changed');
+                                                                                var s = this.selection;
+                                                                                  var iter = new Gtk.TreeIter();
+                                                                                s.get_selected(this.get('/LeftTree.model').el, iter);
+                                                                                
+                                                                                
+                                                                                // var val = "";
+                                                                                value = new GObject.Value('');
+                                                                                this.get('/LeftTree.model').el.get_value(iter, 2, value);
+                                                                                this.get('/LeftTree.model').activePath = this.get('/LeftTree.model').el.get_path(iter).to_string();
+                                                                                
+                                                                                var data = JSON.parse(value.value);
+                                                                                this.get('/MidPropTree').activeElement =  data;
+                                                                                this.get('/MidPropTree').hideWin();
+                                                                                this.get('/LeftPanel.model').load( data);
+                                                                                
+                                                                                console.log(value.value);
+                                                                               // _g.button.set_label(''+value.get_string());
                                                                         
-                                                                                        var pm =this.get('/RightPalete.model');
-                                                                                        pm.load( this.get('/RightPalete').provider.gatherList(
-                                                                                             this.get('/LeftTree.model').listAllTypes()));
-                                                                                       
-                                                                                        
-                                                                                       
-                                                                                       
-                                                                                        //Seed.print( value.get_string());
-                                                                                        return true;
+                                                                                var pm =this.get('/RightPalete.model');
+                                                                                pm.load( this.get('/RightPalete').provider.gatherList(
+                                                                                     this.get('/LeftTree.model').listAllTypes()));
+                                                                               
+                                                                                
+                                                                                   if (render && render.redraw) {
+                                                                                    render.redraw();
+                                                                                }
+                                                                                   
+                                                                                    //Seed.print( value.get_string());
+                                                                                    return true;
                                                                                         
                                                                         }
                                                                     },
@@ -580,35 +609,35 @@ Window=new XObject({
                                                                             changed : function(n, refresh) {
                                                                                      print("MODEL CHANGED CALLED" + this.activePath);
                                                                                      if (this.activePath) {
-                                                                                            var iter = new Gtk.TreeIter();
-                                                                                            this.el.get_iter(iter, new Gtk.TreePath.from_string(this.activePath))
-                                                                                            this.el.set_value(iter, 0, [GObject.TYPE_STRING, this.nodeTitle(n)]);
-                                                                                            this.el.set_value(iter, 1, [GObject.TYPE_STRING, this.nodeTitle(n)]);
-                                                                                            
-                                                                                            this.el.set_value(iter, 2, [GObject.TYPE_STRING, this.nodeToJSON(n)]);
-                                                                                        }
-                                                                                            //this.currentTree = this.toJS(false, true)[0];
-                                                                                        this.file.items = this.toJS(false, false);
-                                                                                        print("AFTER CHANGED");
-                                                                                        //console.dump(this.file.items);
-                                                                                        this.file.save();
-                                                                                        this.currentTree = this.file.items[0];
-                                                                                        //console.log(this.file.toSource());
+                                                                                        var iter = new Gtk.TreeIter();
+                                                                                        this.el.get_iter(iter, new Gtk.TreePath.from_string(this.activePath))
+                                                                                        this.el.set_value(iter, 0, [GObject.TYPE_STRING, this.nodeTitle(n)]);
+                                                                                        this.el.set_value(iter, 1, [GObject.TYPE_STRING, this.nodeTitle(n)]);
                                                                                         
-                                                                                        if (refresh) {
-                                                                                            print("REDNER BROWSER?!");
-                                                                                            this.get('/LeftTree').renderView();
+                                                                                        this.el.set_value(iter, 2, [GObject.TYPE_STRING, this.nodeToJSON(n)]);
+                                                                                    }
+                                                                                        //this.currentTree = this.toJS(false, true)[0];
+                                                                                    this.file.items = this.toJS(false, false);
+                                                                                    print("AFTER CHANGED");
+                                                                                    //console.dump(this.file.items);
+                                                                                    this.file.save();
+                                                                                    this.currentTree = this.file.items[0];
+                                                                                    //console.log(this.file.toSource());
+                                                                                    
+                                                                                    if (refresh) {
+                                                                                        print("REDNER BROWSER?!");
+                                                                                        this.get('/LeftTree').renderView();
                                                                             
-                                                                                            var pm = this.get('/RightPalete.model');
-                                                                                            if (!this.get('/RightPalete').provider) {
-                                                                                                pm.load([]);
-                                                                                                return;
-                                                                                            }
-                                                                                            
-                                                                                            
-                                                                                            pm.load( this.get('/RightPalete').provider.gatherList(this.listAllTypes()));
-                                                                                            //imports['Builder/RightBrowser.js'].renderJS(this.toJS());
+                                                                                        var pm = this.get('/RightPalete.model');
+                                                                                        if (!this.get('/RightPalete').provider) {
+                                                                                            pm.load([]);
+                                                                                            return;
                                                                                         }
+                                                                                        
+                                                                                        
+                                                                                        pm.load( this.get('/RightPalete').provider.gatherList(this.listAllTypes()));
+                                                                                        //imports['Builder/RightBrowser.js'].renderJS(this.toJS());
+                                                                                    }
                                                                             	          
                                                                             },
                                                                             loadFile : function(f) {
@@ -1088,13 +1117,42 @@ Window=new XObject({
                                                                                             }
                                                                                             
                                                                                             this.el.set_value(citer, 0, [GObject.TYPE_STRING, this.nodeTitle(tr[i]) ]);
-                                                                                            this.el.set_value(citer, 1, [GObject.TYPE_STRING, this.nodeTitle(tr[i]) ]);
+                                                                                            this.el.set_value(citer, 1, [GObject.TYPE_STRING, this.nodeTip(tr[i]) ]);
                                                                                             this.el.set_value(citer, 2, [GObject.TYPE_STRING, this.nodeToJSON(tr[i])]);
                                                                                             if (tr[i].items && tr[i].items.length) {
                                                                                                 this.load(tr[i].items, citer);
                                                                                             }
                                                                                         }     
+                                                                                    },
+                                                                            nodeTip : function(c) {
+                                                                                var ret = this.nodeTitle(c);
+                                                                                var funcs = '';
+                                                                            
+                                                                                
+                                                                                for( var i in c) {
+                                                                            
+                                                                                    if (!i.length || i[0] != '|') {
+                                                                                        continue;
                                                                                     }
+                                                                                    if (i == '|init') { 
+                                                                                        continue;
+                                                                                    }
+                                                                                    if (typeof(c[i]) != 'string') {
+                                                                                       continue;
+                                                                                    }
+                                                                                    //print("prop : " + i + ':' + c[i]);
+                                                                                    if (!c[i].match(new RegExp('function'))) {
+                                                                                        continue;
+                                                                                    }
+                                                                                    funcs += "\n<b>" + i.substring(1) + '</b> : ' + c[i].split(/\n/).shift();
+                                                                                        
+                                                                                }
+                                                                                if (funcs.length) {
+                                                                                    ret+="\n\nMethods:" + funcs;
+                                                                                }
+                                                                                return ret;
+                                                                                
+                                                                            }
                                                                         },
                                                                         {
                                                                             xtype: Gtk.TreeViewColumn,
@@ -2847,8 +2905,29 @@ Window=new XObject({
                                                                         return el;
                                                                         
                                                                     },
-                                                                    widgetExposeEvent : function() {
-                                                                       ///   print("WIDGET EXPOSE"); // draw highlight??
+                                                                    widgetExposeEvent : function(widget, evt, ud, item) {
+                                                                       if (this.activePath != item.xtreepath) {
+                                                                            return false;
+                                                                         }
+                                                                         print("HIGHLIGHT: " + item.xtreepath ); // draw highlight??
+                                                                         // work out the coords of the window..
+                                                                         var r  = widget.get_allocation();
+                                                                         
+                                                                         var box = {
+                                                                            x : r.x - 2,
+                                                                            y : r.y - 2,
+                                                                            w: r.width + 4,
+                                                                            h: r.height + 4
+                                                                          }; 
+                                                                          // let's draw it..
+                                                                          var dr = this.get('/Window').el.window;
+                                                                          var gc = new Gdk.GC.c_new(dr);
+                                                                    
+                                                                          var dr = widget.get_window();
+                                                                          gc.set_line_attributes(2,  Gdk.LineStyle.SOLID, Gdk.CapStyle.ROUND , Gdk.JoinStyle.ROUND);
+                                                                          gc.set_foreground(new Gdk.Color({ red: 0xFFFF, green: 0, blue: 0}));
+                                                                          Gdk.draw_rectangle(dr, gc, false, box.x , box.y, box.w, box.h);
+                                                                          
                                                                                 return false;
                                                                     },
                                                                     widgetDragMotionEvent : function() {
@@ -2871,6 +2950,14 @@ Window=new XObject({
                                                                     widgetReleaseEvent : function() {
                                                                         this.get('view').pressed = false;
                                                                        return false;
+                                                                    },
+                                                                    redraw : function() {
+                                                                        print("REDRAW CALLED");
+                                                                        this.activePath = this.get('/LeftTree').getActivePath();
+                                                                        if (this.renderedEl) {
+                                                                          print("QUEUE DRAW CALLING");
+                                                                          this.renderedEl.queue_draw();
+                                                                       }
                                                                     },
                                                                     items : [
                                                                         {
