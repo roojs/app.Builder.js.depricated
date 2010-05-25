@@ -125,7 +125,7 @@ Base = XObject.define(
                 if (!f) {
                     continue;
                    }
-                console.dump(f);
+                ///console.dump(f);
                 f.hasParent = false;
                 f.cn = [];
                 //console.log(f.name);
@@ -228,7 +228,7 @@ Base = XObject.define(
                 this.files[path] = this.loadFileOnly( path );
             }
             
-             console.dump(this.files);
+            // console.dump(this.files);
             this.fireEvent('changed', this);
             
         },
