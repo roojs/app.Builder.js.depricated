@@ -353,8 +353,24 @@ XObject.prototype = {
             return this.parent.get(xid.substring(1));
         }
         if (xid[0] == '/') {
+            
             if (typeof(XObject.cache[xid]) != 'undefined') {
                 return XObject.cache[xid]; 
+            }
+            if (xid.indexOf('.') > -1) {
+                var child = false;
+        
+                if (xid.indexOf('.') > -1) {
+                    child = xid.split('.');
+                    var nxid = child.shift();
+                    
+                    child = child.join('.');
+                    if (typeof(XObject.cache[nxid]) != 'undefined') {
+                        return XObject.cache[nxid].get(child);
+                    }
+                }
+                
+                
             }
             var e = this;
             while (e.parent) {
@@ -381,8 +397,6 @@ XObject.prototype = {
             xid = child.shift();
             
             child = child.join('.');
-           
-            
             
         }
         if (xid == this.id) {
