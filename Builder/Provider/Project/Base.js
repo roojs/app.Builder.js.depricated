@@ -298,7 +298,8 @@ Base = XObject.define(
                 Seed.print("Adding file " + dir  + '/' + fn);
                 this.files[dir  + '/' + fn] = new cls({
                     path : dir  + '/' + fn,
-                    parent : parent
+                    parent : parent,
+                    project : this
                 });
                 console.log(this.files[dir  + '/' + fn] );
                 /*
