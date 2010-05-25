@@ -69,7 +69,8 @@ RooProjectProperties=new XObject({
                         },
                         {
                             xtype: Gtk.Entry,
-                            pack : "attach,1,2,2,3"
+                            pack : "attach,1,2,2,3",
+                            visibility : false
                         }
                     ]
                 }
