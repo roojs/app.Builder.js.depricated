@@ -2345,681 +2345,711 @@ Window=new XObject({
                                                 {
                                                     xtype: Gtk.Notebook,
                                                     pack : "pack_start,true,true",
-                                                    id : "view-notebook",
-                                                    tab_border : 0,
+                                                    id : "view-help-nb",
                                                     init : function() {
                                                         XObject.prototype.init.call(this);
-                                                        this.el.set_current_page(0);
-                                                        print("SET LABEL?")
-                                                        this.el.set_tab_label(this.items[0].el, new Gtk.Label({ label : "Roo View" }));
-                                                        this.el.set_tab_label(this.items[1].el, new Gtk.Label({ label : "Gtk View" }));
+                                                       this.el.set_tab_label(this.items[0].el, new Gtk.Label({ label : "Preview" }));
+                                                        this.el.set_tab_label(this.items[1].el, new Gtk.Label({ label : "Help" }));
                                                     },
-                                                    show_tabs : false,
                                                     items : [
                                                         {
-                                                            xtype: Gtk.VBox,
+                                                            xtype: Gtk.Notebook,
                                                             pack : "add",
-                                                            id : "RightBrowser",
+                                                            id : "view-notebook",
+                                                            tab_border : 0,
+                                                            init : function() {
+                                                                XObject.prototype.init.call(this);
+                                                                this.el.set_current_page(0);
+                                                                print("SET LABEL?")
+                                                                this.el.set_tab_label(this.items[0].el, new Gtk.Label({ label : "Roo View" }));
+                                                                this.el.set_tab_label(this.items[1].el, new Gtk.Label({ label : "Gtk View" }));
+                                                            },
+                                                            show_tabs : false,
                                                             items : [
                                                                 {
-                                                                    xtype: Gtk.HBox,
-                                                                    pack : "pack_start,false,true,0",
-                                                                    items : [
-                                                                        {
-                                                                            xtype: Gtk.Button,
-                                                                            pack : "pack_start,false,false,0",
-                                                                            label : "Dump HTML to console",
-                                                                            listeners : {
-                                                                                "activate":function (self) {
-                                                                                 	this.get('/RightBrowser.view').el.execute_script(
-                                                                                            "console.log(document.body.innerHTML);");
-                                                                                        this.get('/RightBrowser.view').el.execute_script(
-                                                                                	    "console.log(Builder.dump(Builder));");   
-                                                                                }
-                                                                            }
-                                                                        }
-                                                                    ]
-                                                                },
-                                                                {
-                                                                    xtype: Gtk.ScrolledWindow,
+                                                                    xtype: Gtk.VBox,
                                                                     pack : "add",
-                                                                    shadow_type : Gtk.ShadowType.IN,
-                                                                    init : function() {
-                                                                        XObject.prototype.init.call(this);
-                                                                      this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
-                                                                    },
+                                                                    id : "RightBrowser",
                                                                     items : [
                                                                         {
-                                                                            xtype: WebKit.WebView,
-                                                                            pack : "add",
-                                                                            id : "view",
-                                                                            init : function() {
-                                                                                XObject.prototype.init.call(this);
-                                                                                // this may not work!?
-                                                                                this.el.open('file:///' + __script_path__ + '/../builder.html');
-                                                                                                        
-                                                                                Gtk.drag_dest_set
-                                                                                (
-                                                                                        this.el,              /* widget that will accept a drop */
-                                                                                        Gtk.DestDefaults.MOTION  | Gtk.DestDefaults.HIGHLIGHT,
-                                                                                        null,            /* lists of target to support */
-                                                                                        0,              /* size of list */
-                                                                                        Gdk.DragAction.COPY         /* what to do with data after dropped */
-                                                                                );
-                                                                                                        
-                                                                               // print("RB: TARGETS : " + LeftTree.atoms["STRING"]);
-                                                                                Gtk.drag_dest_set_target_list(this.el, this.get('/Window').targetList);
-                                                                            },
-                                                                            renderJS : function(data) {
-                                                                                this.renderedData = data;
-                                                                                var str = JSON.stringify(data) ;
-                                                                                
-                                                                                if (!this.ready) {
-                                                                                    console.log('not loaded yet');
-                                                                                }
-                                                                                Seed.print("RENDER:" + str);
-                                                                                imports.File.File.write('/tmp/builder.debug.js', "Builder.render(" + JSON.stringify(data) + ");");
-                                                                                this.el.execute_script("Builder.render(" + JSON.stringify(data) + ");");
-                                                                            },
-                                                                            listeners : {
-                                                                                "load_finished":function (self, object) {
-                                                                                	 if (this.ready) { // dont do it twice!
-                                                                                	    return; 
-                                                                                	}
-                                                                                	this.ready = true;
-                                                                                
-                                                                                	this.renderJS(this.get('/LeftTree.model').toJS()[0]);
-                                                                                },
-                                                                                "script_alert":function (self, object, p0) {
-                                                                                     	print(p0);
-                                                                                        return false;
-                                                                                        return true; // do not display anything...
-                                                                                },
-                                                                                "console_message":function (self, object, p0, p1) {
-                                                                                     console.log(object);
-                                                                                        if (!object.match(/^\{/)) {
-                                                                                            return false; // do not handle!!! -> later maybe in console..
+                                                                            xtype: Gtk.HBox,
+                                                                            pack : "pack_start,false,true,0",
+                                                                            items : [
+                                                                                {
+                                                                                    xtype: Gtk.Button,
+                                                                                    pack : "pack_start,false,false,0",
+                                                                                    label : "Dump HTML to console",
+                                                                                    listeners : {
+                                                                                        "activate":function (self) {
+                                                                                         	this.get('/RightBrowser.view').el.execute_script(
+                                                                                                    "console.log(document.body.innerHTML);");
+                                                                                                this.get('/RightBrowser.view').el.execute_script(
+                                                                                        	    "console.log(Builder.dump(Builder));");   
                                                                                         }
-                                                                                        console.log(object);
-                                                                                        var val =  JSON.parse(object);
-                                                                                
-                                                                                        if (typeof(val['hover-node']) != 'undefined') {
-                                                                                            this.activeNode = val['hover-node'];
-                                                                                            console.log('active node: ' + this.activeNode);
-                                                                                            return true;
-                                                                                        }
-                                                                                
-                                                                                         var ret = false;
-                                                                                         if (typeof(val['id']) != 'undefined') {
-                                                                                           // this.activeNode = val['id'];
-                                                                                            var tg = this.get('/LeftTree.model').findDropNode(val['id'], true); 
-                                                                                            if (!tg) {
-                                                                                                return false;
-                                                                                            }
-                                                                                            this.get('/LeftTree.view').selectNode(tg[0]);
-                                                                                            ret  = true;
-                                                                                            
-                                                                                        } 
-                                                                                        if (ret && typeof(val['set']) != 'undefined') {
-                                                                                           this.get('/LeftPanel.model').add({
-                                                                                                key : val['set'],
-                                                                                                val : val['value']
-                                                                                            });
-                                                                                            //console.log('active node: ' + this.activeNode);
-                                                                                            
-                                                                                        }
-                                                                                        //Seed.print('a:'+a);
-                                                                                        //Seed.print('b:'+b);
-                                                                                        //Seed.print('c:'+c);
-                                                                                        return ret;
-                                                                                },
-                                                                                "drag_motion":function (w, ctx,  x,   y,   time, ud) {
-                                                                                   // console.log('DRAG MOTION'); 
-                                                                                        // status:
-                                                                                        // if lastCurrentNode == this.currentNode.. -- don't change anything..
-                                                                                        this.targetData = [];
-                                                                                        this.el.execute_script("Builder.overPos(" + x +','+ y + ");");
-                                                                                        
-                                                                                        // A) find out from drag all the places that node could be dropped.
-                                                                                        var src = Gtk.drag_get_source_widget(ctx);
-                                                                                        if (!src.dropList) {
-                                                                                            Gdk.drag_status(ctx, 0, time);
-                                                                                            return true;
-                                                                                        }
-                                                                                        // b) get what we are over.. (from activeNode)
-                                                                                        // tree is empty.. - list should be correct..
-                                                                                        if (!this.get('/LeftTree.model').currentTree) {
-                                                                                            Gdk.drag_status(ctx, Gdk.DragAction.COPY,time);
-                                                                                            return true;
-                                                                                            
-                                                                                        }
-                                                                                        // c) ask tree where it should be dropped... - eg. parent.. (after node ontop)
-                                                                                        
-                                                                                        var tg = this.get('/LeftTree.model').findDropNode(this.activeNode, src.dropList);
-                                                                                        console.dump(tg);
-                                                                                        if (!tg.length) {
-                                                                                            Gdk.drag_status(ctx, 0,time);
-                                                                                            this.get('/LeftTree.view').highlight(false);
-                                                                                            return true;
-                                                                                        }
-                                                                                         
-                                                                                        // if we have a target..
-                                                                                        // -> highlight it! (in browser)
-                                                                                        // -> highlight it! (in tree)
-                                                                                        
-                                                                                        Gdk.drag_status(ctx, Gdk.DragAction.COPY,time);
-                                                                                        this.get('/LeftTree.view').highlight(tg);
-                                                                                        this.targetData = tg;
-                                                                                        // for tree we should handle this...
-                                                                                        return true;
-                                                                                },
-                                                                                "drag_drop":function (w, ctx, x, y,time, ud) {
-                                                                                	print("TARGET: drag-drop");
-                                                                                        var is_valid_drop_site = true;
-                                                                                        
-                                                                                         
-                                                                                        Gtk.drag_get_data
-                                                                                        (
-                                                                                                w,         /* will receive 'drag-data-received' signal */
-                                                                                                ctx,        /* represents the current state of the DnD */
-                                                                                                this.get('/Window').atoms["STRING"],    /* the target type we want */
-                                                                                                time            /* time stamp */
-                                                                                        );
-                                                                                                        
-                                                                                                        
-                                                                                                        /* No target offered by source => error */
-                                                                                                       
-                                                                                
-                                                                                	return  is_valid_drop_site;
-                                                                                },
-                                                                                "drag_data_received":function (w, ctx,  x,  y, sel_data,  target_type,  time, ud) 
-                                                                                    {
-                                                                                        print("Browser: drag-data-received");
-                                                                                        var delete_selection_data = false;
-                                                                                        vardnd_success = false;
-                                                                                        /* Deal with what we are given from source */
-                                                                                        if( sel_data && sel_data.length ) {
-                                                                                            
-                                                                                            if (ctx.action == Gdk.DragAction.ASK)  {
-                                                                                                /* Ask the user to move or copy, then set the ctx action. */
-                                                                                            }
-                                                                                
-                                                                                            if (ctx.action == Gdk.DragAction.MOVE) {
-                                                                                                delete_selection_data = true;
-                                                                                            }
-                                                                                            var source = Gtk.drag_get_source_widget(ctx);
-                                                                                
-                                                                                            print("Browser: source.DRAGDATA? " + source.dragData);
-                                                                                            if (this.targetData) {
-                                                                                                print(this.targetData);
-                                                                                                this.get('/LeftTree.model').dropNode(this.targetData,  source.dragData);
-                                                                                            }
-                                                                                            
-                                                                                            
-                                                                                            
-                                                                                            dnd_success = true;
-                                                                                
-                                                                                        }
-                                                                                
-                                                                                        if (dnd_success == false)
-                                                                                        {
-                                                                                                Seed.print ("DnD data transfer failed!\n");
-                                                                                        }
-                                                                                        
-                                                                                        Gtk.drag_finish (ctx, dnd_success, delete_selection_data, time);
-                                                                                        return true;
                                                                                     }
-                                                                            }
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ]
-                                                        },
-                                                        {
-                                                            xtype: Gtk.VBox,
-                                                            pack : "add",
-                                                            id : "RightGtkView",
-                                                            renderJS : function(data, withDebug)
-                                                            {
-                                                                 if (!data) {
-                                                                             return; 
-                                                                }
-                                                                this.withDebug = false;
-                                                                
-                                                                if (this.renderedEl) {
-                                                                    this.get('view').el.remove(this.renderedEl);
-                                                                    this.renderedEl.destroy();
-                                                                    this.renderedEl = false;
-                                                                }
-                                                                
-                                                                var tree =  this.get('/LeftTree.model').toJS(false,true)[0];
-                                                                // in theory tree is actually window..  
-                                                               try {
-                                                                this.renderedEl = this.viewAdd(tree.items[0], this.get('view').el);
-                                                              } catch (e) {
-                                                                 print(e.message);
-                                                                return;
-                                                              }
-                                                                this.get('view').el.set_size_request(
-                                                                    tree.default_width * 1 || 400, tree.default_height * 1 || 400
-                                                                ) ;
-                                                                
-                                                                this.renderedEl.set_size_request(
-                                                                    tree.default_width || 600,
-                                                                    tree.default_height || 400
-                                                                );
-                                                                this.get('view').el.show_all();
-                                                                
-                                                                
-                                                                
-                                                            },
-                                                            showInWindow : function() {
-                                                              print("GET PROEJCT");
-                                                            	var pr = this.get('/LeftProjectTree').getActiveProject();
-                                                              
-                                                            	console.log(pr.paths);
-                                                                return;
-                                                            /*
-                                                                 var src= this.buildJS(
-                                                            		this.get('/LeftTree.model').toJS()[0], 
-                                                            		true);
-                                                                  // show term?? 
-                                                            
-                                                            
-                                                                //var x = new imports.sandbox.Context();
-                                                                //x.add_globals();
-                                                                //print(src);
-                                                                try {
-                                                                    Seed.check_syntax('var e = ' + src);
-                                                                    //x.eval(src);
-                                                                } catch( e) {
-                                                                    this.get('/Terminal').feed(e.message || e.toString() + "\n");
-                                                                    this.get('/Terminal').feed(console._dump(e)+"\n");
-                                                                    if (e.line) {
-                                                                        var lines = src.split("\n");
-                                                                        var start = Math.max(0, e.line - 10);
-                                                                        var end = Math.min(lines.length, e.line + 10);
-                                                                        for (var i =start ; i < end; i++) {
-                                                                            if (i == e.line) {
-                                                                                this.get('/Terminal').feed(">>>>>" + lines[i] + "\n");
-                                                                                continue;
-                                                                            }
-                                                                            this.get('/Terminal').feed(lines[i] + "\n");
-                                                                        }
-                                                                        
-                                                                    }
-                                                                    
-                                                                    return;
-                                                                }
-                                                                 this.get('/BottomPane').el.set_current_page(1);
-                                                                this.get('/Terminal').el.fork_command( null , [], [], "/tmp", false,false,false); 
-                                                                var cmd = "/usr/bin/seed /tmp/BuilderGtkView.js\n";
-                                                                this.get('/Terminal').el.feed_child(cmd, cmd.length);
-                                                                 /*
-                                                                var _top = x.get_global_object()._top;
-                                                                
-                                                                _top.el.set_screen(Gdk.Screen.get_default()); // just in case..
-                                                                _top.el.show_all();
-                                                                if (_top.el.popup) {
-                                                                    _top.el.popup(null, null, null, null, 3, null);
-                                                                }
-                                                            */
-                                                            },
-                                                            viewAdd : function(item, par)
-                                                                    {
-                                                                // does something similar to xobject..
-                                                                item.pack = (typeof(item.pack) == 'undefined') ?  'add' : item.pack;
-                                                                
-                                                                if (item.pack===false || item.pack === 'false') {  // no ;
-                                                                    return;
-                                                                }
-                                                                print("CREATE: " + item['|xns'] + '.' + item['xtype']);
-                                                                var ns = imports.gi[item['|xns']];
-                                                                var ctr = ns[item['xtype']];
-                                                                var ctr_args = { };
-                                                                for(var k in item) {
-                                                                    var kv = item[k];
-                                                                    if (typeof(kv) == 'object' || typeof(kv) == 'function') {
-                                                                        continue;
-                                                                    }
-                                                                    if ( 
-                                                                        k == 'pack' ||
-                                                                        k == 'items' ||
-                                                                        k == 'id' ||
-                                                                        k == 'xtype' ||
-                                                                        k == 'xdebug' ||
-                                                                        k == 'xns' ||
-                                                                        k == '|xns'
-                                                                    ) {
-                                                                        continue;
-                                                                    }
-                                                            
-                                                            	if (k[0] == '|' && typeof(kv) == 'string') {
-                                                            
-                                                            		if (kv.match(new RegExp('function'))) {
-                                                            			continue;
-                                                                            }
-                                                            		 print("WASL " + k + '=' + kv);
-                                                            		try {
-                                                            			eval( 'kv = ' + kv);
-                                                            		} catch(e) {    continue; }
-                                                                            
-                                                            		k = k.substring(1);
-                                                                          print(k + '=' + kv);
-                                                            	}
-                                                                    if (k[0] == '|') { // should be boolean or number..
-                                                            		k = k.substring(1);
-                                                                    }
-                                                            	if (k == 'show_tabs') { // force tab showing for notebooks.
-                                                                       kv = true;
-                                                                    }
-                                                                    ctr_args[k] = kv;
-                                                                    
-                                                                } 
-                                                                
-                                                                
-                                                                var el = new ctr(ctr_args);
-                                                                
-                                                                //print("PACK");
-                                                                //console.dump(item.pack);
-                                                                
-                                                                
-                                                                
-                                                                
-                                                                var args = [];
-                                                                var pack_m  = false;
-                                                                if (typeof(item.pack) == 'string') {
-                                                                     
-                                                                    item.pack.split(',').forEach(function(e, i) {
-                                                                        
-                                                                        if (e == 'false') { args.push( false); return; }
-                                                                        if (e == 'true') {  args.push( true);  return; }
-                                                                        if (!isNaN(parseInt(e))) { args.push( parseInt(e)); return; }
-                                                                        args.push(e);
-                                                                    });
-                                                                    //print(args.join(","));
-                                                                    
-                                                                    pack_m = args.shift();
-                                                                } else {
-                                                                    pack_m = item.pack.shift();
-                                                                    args = item.pack;
-                                                                }
-                                                                
-                                                                // handle error.
-                                                                if (pack_m && typeof(par[pack_m]) == 'undefined') {
-                                                                    throw {
-                                                                            name: "ArgumentError", 
-                                                                            message : 'pack method not available : ' + par.id + " : " + par + '.' +  pack_m +
-                                                                                    "ADDING : " + item.id + " " +  el
-                                                                                
-                                                            	    };
-                                                            
-                                                                    return;
-                                                                }
-                                                                
-                                                                console.dump(args);
-                                                                args.unshift(el);
-                                                                //if (XObject.debug) print(pack_m + '[' + args.join(',') +']');
-                                                                //Seed.print('args: ' + args.length);
-                                                                if (pack_m) {
-                                                                    par[pack_m].apply(par, args);
-                                                                }
-                                                                
-                                                                var _this = this;
-                                                                item.items = item.items || [];
-                                                                item.items.forEach(function(ch) {
-                                                                    _this.viewAdd(ch, el);
-                                                                });
-                                                                
-                                                                
-                                                                
-                                                                // add the signal handlers.
-                                                                // is it a widget!?!!?
-                                                               
-                                                                
-                                                                try {
-                                                                     
-                                                                    
-                                                                    el.signal.expose_event.connect(XObject.createDelegate(this.widgetExposeEvent, this, [ item  ], true));
-                                                                    el.signal.drag_motion.connect(XObject.createDelegate(this.widgetDragMotionEvent, this,[ item  ], true));
-                                                                    el.signal.drag_drop.connect(XObject.createDelegate(this.widgetDragDropEvent, this, [ item  ], true));
-                                                                    el.signal.button_press_event.connect(XObject.createDelegate(this.widgetPressEvent, this, [ item  ], true ));
-                                                              el.signal.button_release_event.connect(XObject.createDelegate(this.widgetReleaseEvent, this, [ item  ], true ));
-                                                                } catch(e) {
-                                                                    // ignore!
-                                                                   }
-                                                                
-                                                                
-                                                                
-                                                                return el;
-                                                                
-                                                            },
-                                                            widgetExposeEvent : function() {
-                                                               ///   print("WIDGET EXPOSE"); // draw highlight??
-                                                                        return false;
-                                                            },
-                                                            widgetDragMotionEvent : function() {
-                                                                 print("WIDGET DRAGMOTION"); 
-                                                                        return true;
-                                                            },
-                                                            widgetDragDropEvent : function() {
-                                                                  print("WIDGET DRAGDROP"); 
-                                                                        return true;
-                                                            },
-                                                            widgetPressEvent : function(w,e,u,d) {
-                                                                 if (this.get('view').pressed) {
-                                                                    return false;
-                                                                 }
-                                                            this.get('view').pressed = true;
-                                                                  print("WIDGET PRESS " + d.xtreepath );       
-                                                                      this.get('/LeftTree.view').selectNode(   d.xtreepath );        
-                                                                        return false;
-                                                            },
-                                                            widgetReleaseEvent : function() {
-                                                                this.get('view').pressed = false;
-                                                               return false;
-                                                            },
-                                                            items : [
-                                                                {
-                                                                    xtype: Gtk.HBox,
-                                                                    pack : "pack_start,false,true,0",
-                                                                    items : [
-                                                                        {
-                                                                            xtype: Gtk.Button,
-                                                                            pack : "pack_start,false,false,0",
-                                                                            label : "Run The Application",
-                                                                            listeners : {
-                                                                                "button_press_event":function (self, event) {
-                                                                                  // call render on left tree - with special option!?!
-                                                                                 
-                                                                                
-                                                                                
-                                                                                	print("GET PROEJCT");
-                                                                                	var pr = this.get('/LeftProjectTree').getActiveProject();
-                                                                                  
-                                                                                var dir = '';
-                                                                                 for (var i in pr.paths) { 
-                                                                                      dir = i;
-                                                                                      break;
-                                                                                  }
-                                                                                   var runner = GLib.path_get_dirname (__script_path__) + '/gtkrun.js'; 
-                                                                                   print ("RUN DIR:" + dir);
-                                                                                   
-                                                                                   this.get('/BottomPane').el.set_current_page(1);
-                                                                                    this.get('/Terminal').el.fork_command( null , [], [], GLib.path_get_dirname (__script_path__) 
-                                                                                	, false,false,false); 
-                                                                                    var cmd = "/usr/bin/seed " + runner + " " + dir + "\n";
-                                                                                    this.get('/Terminal').el.feed_child(cmd, cmd.length);
-                                                                                    return false;
-                                                                                  
-                                                                                
                                                                                 }
-                                                                            }
-                                                                        }
-                                                                    ]
-                                                                },
-                                                                {
-                                                                    xtype: Gtk.ScrolledWindow,
-                                                                    pack : "add",
-                                                                    id : "view-sw",
-                                                                    shadow_type : Gtk.ShadowType.IN,
-                                                                    init : function() {
-                                                                        XObject.prototype.init.call(this);
-                                                                     this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
-                                                                    },
-                                                                    items : [
+                                                                            ]
+                                                                        },
                                                                         {
-                                                                            xtype: Gtk.EventBox,
+                                                                            xtype: Gtk.ScrolledWindow,
                                                                             pack : "add",
+                                                                            shadow_type : Gtk.ShadowType.IN,
                                                                             init : function() {
                                                                                 XObject.prototype.init.call(this);
-                                                                            this.el.modify_bg(Gtk.StateType.NORMAL, new Gdk.Color({
-                                                                                        red: 0x9F00, green: 0xB800 , blue : 0xA800
-                                                                                       }));
+                                                                              this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
                                                                             },
                                                                             items : [
                                                                                 {
-                                                                                    xtype: Gtk.Fixed,
+                                                                                    xtype: WebKit.WebView,
                                                                                     pack : "add",
+                                                                                    id : "view",
                                                                                     init : function() {
-                                                                                    	XObject.prototype.init.call(this);
-                                                                                    	//this.el.set_hadjustment(this.parent.el.get_hadjustment());
-                                                                                    	//this.el.set_vadjustment(this.parent.el.get_vadjustment());
-                                                                                     
+                                                                                        XObject.prototype.init.call(this);
+                                                                                        // this may not work!?
+                                                                                        this.el.open('file:///' + __script_path__ + '/../builder.html');
+                                                                                                                
+                                                                                        Gtk.drag_dest_set
+                                                                                        (
+                                                                                                this.el,              /* widget that will accept a drop */
+                                                                                                Gtk.DestDefaults.MOTION  | Gtk.DestDefaults.HIGHLIGHT,
+                                                                                                null,            /* lists of target to support */
+                                                                                                0,              /* size of list */
+                                                                                                Gdk.DragAction.COPY         /* what to do with data after dropped */
+                                                                                        );
+                                                                                                                
+                                                                                       // print("RB: TARGETS : " + LeftTree.atoms["STRING"]);
+                                                                                        Gtk.drag_dest_set_target_list(this.el, this.get('/Window').targetList);
+                                                                                    },
+                                                                                    renderJS : function(data) {
+                                                                                        this.renderedData = data;
+                                                                                        var str = JSON.stringify(data) ;
+                                                                                        
+                                                                                        if (!this.ready) {
+                                                                                            console.log('not loaded yet');
+                                                                                        }
+                                                                                        Seed.print("RENDER:" + str);
+                                                                                        imports.File.File.write('/tmp/builder.debug.js', "Builder.render(" + JSON.stringify(data) + ");");
+                                                                                        this.el.execute_script("Builder.render(" + JSON.stringify(data) + ");");
+                                                                                    },
+                                                                                    listeners : {
+                                                                                        "load_finished":function (self, object) {
+                                                                                        	 if (this.ready) { // dont do it twice!
+                                                                                        	    return; 
+                                                                                        	}
+                                                                                        	this.ready = true;
+                                                                                        
+                                                                                        	this.renderJS(this.get('/LeftTree.model').toJS()[0]);
+                                                                                        },
+                                                                                        "script_alert":function (self, object, p0) {
+                                                                                             	print(p0);
+                                                                                                return false;
+                                                                                                return true; // do not display anything...
+                                                                                        },
+                                                                                        "console_message":function (self, object, p0, p1) {
+                                                                                             console.log(object);
+                                                                                                if (!object.match(/^\{/)) {
+                                                                                                    return false; // do not handle!!! -> later maybe in console..
+                                                                                                }
+                                                                                                console.log(object);
+                                                                                                var val =  JSON.parse(object);
+                                                                                        
+                                                                                                if (typeof(val['hover-node']) != 'undefined') {
+                                                                                                    this.activeNode = val['hover-node'];
+                                                                                                    console.log('active node: ' + this.activeNode);
+                                                                                                    return true;
+                                                                                                }
+                                                                                        
+                                                                                                 var ret = false;
+                                                                                                 if (typeof(val['id']) != 'undefined') {
+                                                                                                   // this.activeNode = val['id'];
+                                                                                                    var tg = this.get('/LeftTree.model').findDropNode(val['id'], true); 
+                                                                                                    if (!tg) {
+                                                                                                        return false;
+                                                                                                    }
+                                                                                                    this.get('/LeftTree.view').selectNode(tg[0]);
+                                                                                                    ret  = true;
+                                                                                                    
+                                                                                                } 
+                                                                                                if (ret && typeof(val['set']) != 'undefined') {
+                                                                                                   this.get('/LeftPanel.model').add({
+                                                                                                        key : val['set'],
+                                                                                                        val : val['value']
+                                                                                                    });
+                                                                                                    //console.log('active node: ' + this.activeNode);
+                                                                                                    
+                                                                                                }
+                                                                                                //Seed.print('a:'+a);
+                                                                                                //Seed.print('b:'+b);
+                                                                                                //Seed.print('c:'+c);
+                                                                                                return ret;
+                                                                                        },
+                                                                                        "drag_motion":function (w, ctx,  x,   y,   time, ud) {
+                                                                                           // console.log('DRAG MOTION'); 
+                                                                                                // status:
+                                                                                                // if lastCurrentNode == this.currentNode.. -- don't change anything..
+                                                                                                this.targetData = [];
+                                                                                                this.el.execute_script("Builder.overPos(" + x +','+ y + ");");
+                                                                                                
+                                                                                                // A) find out from drag all the places that node could be dropped.
+                                                                                                var src = Gtk.drag_get_source_widget(ctx);
+                                                                                                if (!src.dropList) {
+                                                                                                    Gdk.drag_status(ctx, 0, time);
+                                                                                                    return true;
+                                                                                                }
+                                                                                                // b) get what we are over.. (from activeNode)
+                                                                                                // tree is empty.. - list should be correct..
+                                                                                                if (!this.get('/LeftTree.model').currentTree) {
+                                                                                                    Gdk.drag_status(ctx, Gdk.DragAction.COPY,time);
+                                                                                                    return true;
+                                                                                                    
+                                                                                                }
+                                                                                                // c) ask tree where it should be dropped... - eg. parent.. (after node ontop)
+                                                                                                
+                                                                                                var tg = this.get('/LeftTree.model').findDropNode(this.activeNode, src.dropList);
+                                                                                                console.dump(tg);
+                                                                                                if (!tg.length) {
+                                                                                                    Gdk.drag_status(ctx, 0,time);
+                                                                                                    this.get('/LeftTree.view').highlight(false);
+                                                                                                    return true;
+                                                                                                }
+                                                                                                 
+                                                                                                // if we have a target..
+                                                                                                // -> highlight it! (in browser)
+                                                                                                // -> highlight it! (in tree)
+                                                                                                
+                                                                                                Gdk.drag_status(ctx, Gdk.DragAction.COPY,time);
+                                                                                                this.get('/LeftTree.view').highlight(tg);
+                                                                                                this.targetData = tg;
+                                                                                                // for tree we should handle this...
+                                                                                                return true;
+                                                                                        },
+                                                                                        "drag_drop":function (w, ctx, x, y,time, ud) {
+                                                                                        	print("TARGET: drag-drop");
+                                                                                                var is_valid_drop_site = true;
+                                                                                                
+                                                                                                 
+                                                                                                Gtk.drag_get_data
+                                                                                                (
+                                                                                                        w,         /* will receive 'drag-data-received' signal */
+                                                                                                        ctx,        /* represents the current state of the DnD */
+                                                                                                        this.get('/Window').atoms["STRING"],    /* the target type we want */
+                                                                                                        time            /* time stamp */
+                                                                                                );
+                                                                                                                
+                                                                                                                
+                                                                                                                /* No target offered by source => error */
+                                                                                                               
+                                                                                        
+                                                                                        	return  is_valid_drop_site;
+                                                                                        },
+                                                                                        "drag_data_received":function (w, ctx,  x,  y, sel_data,  target_type,  time, ud) 
+                                                                                            {
+                                                                                                print("Browser: drag-data-received");
+                                                                                                var delete_selection_data = false;
+                                                                                                vardnd_success = false;
+                                                                                                /* Deal with what we are given from source */
+                                                                                                if( sel_data && sel_data.length ) {
+                                                                                                    
+                                                                                                    if (ctx.action == Gdk.DragAction.ASK)  {
+                                                                                                        /* Ask the user to move or copy, then set the ctx action. */
+                                                                                                    }
+                                                                                        
+                                                                                                    if (ctx.action == Gdk.DragAction.MOVE) {
+                                                                                                        delete_selection_data = true;
+                                                                                                    }
+                                                                                                    var source = Gtk.drag_get_source_widget(ctx);
+                                                                                        
+                                                                                                    print("Browser: source.DRAGDATA? " + source.dragData);
+                                                                                                    if (this.targetData) {
+                                                                                                        print(this.targetData);
+                                                                                                        this.get('/LeftTree.model').dropNode(this.targetData,  source.dragData);
+                                                                                                    }
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    dnd_success = true;
+                                                                                        
+                                                                                                }
+                                                                                        
+                                                                                                if (dnd_success == false)
+                                                                                                {
+                                                                                                        Seed.print ("DnD data transfer failed!\n");
+                                                                                                }
+                                                                                                
+                                                                                                Gtk.drag_finish (ctx, dnd_success, delete_selection_data, time);
+                                                                                                return true;
+                                                                                            }
+                                                                                    }
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    xtype: Gtk.VBox,
+                                                                    pack : "add",
+                                                                    id : "RightGtkView",
+                                                                    renderJS : function(data, withDebug)
+                                                                    {
+                                                                         if (!data) {
+                                                                                     return; 
+                                                                        }
+                                                                        this.withDebug = false;
+                                                                        
+                                                                        if (this.renderedEl) {
+                                                                            this.get('view').el.remove(this.renderedEl);
+                                                                            this.renderedEl.destroy();
+                                                                            this.renderedEl = false;
+                                                                        }
+                                                                        
+                                                                        var tree =  this.get('/LeftTree.model').toJS(false,true)[0];
+                                                                        // in theory tree is actually window..  
+                                                                       try {
+                                                                        this.renderedEl = this.viewAdd(tree.items[0], this.get('view').el);
+                                                                      } catch (e) {
+                                                                         print(e.message);
+                                                                        return;
+                                                                      }
+                                                                        this.get('view').el.set_size_request(
+                                                                            tree.default_width * 1 || 400, tree.default_height * 1 || 400
+                                                                        ) ;
+                                                                        
+                                                                        this.renderedEl.set_size_request(
+                                                                            tree.default_width || 600,
+                                                                            tree.default_height || 400
+                                                                        );
+                                                                        this.get('view').el.show_all();
+                                                                        
+                                                                        
+                                                                        
+                                                                    },
+                                                                    showInWindow : function() {
+                                                                      print("GET PROEJCT");
+                                                                    	var pr = this.get('/LeftProjectTree').getActiveProject();
+                                                                      
+                                                                    	console.log(pr.paths);
+                                                                        return;
+                                                                    /*
+                                                                         var src= this.buildJS(
+                                                                    		this.get('/LeftTree.model').toJS()[0], 
+                                                                    		true);
+                                                                          // show term?? 
+                                                                    
+                                                                    
+                                                                        //var x = new imports.sandbox.Context();
+                                                                        //x.add_globals();
+                                                                        //print(src);
+                                                                        try {
+                                                                            Seed.check_syntax('var e = ' + src);
+                                                                            //x.eval(src);
+                                                                        } catch( e) {
+                                                                            this.get('/Terminal').feed(e.message || e.toString() + "\n");
+                                                                            this.get('/Terminal').feed(console._dump(e)+"\n");
+                                                                            if (e.line) {
+                                                                                var lines = src.split("\n");
+                                                                                var start = Math.max(0, e.line - 10);
+                                                                                var end = Math.min(lines.length, e.line + 10);
+                                                                                for (var i =start ; i < end; i++) {
+                                                                                    if (i == e.line) {
+                                                                                        this.get('/Terminal').feed(">>>>>" + lines[i] + "\n");
+                                                                                        continue;
+                                                                                    }
+                                                                                    this.get('/Terminal').feed(lines[i] + "\n");
+                                                                                }
+                                                                                
+                                                                            }
+                                                                            
+                                                                            return;
+                                                                        }
+                                                                         this.get('/BottomPane').el.set_current_page(1);
+                                                                        this.get('/Terminal').el.fork_command( null , [], [], "/tmp", false,false,false); 
+                                                                        var cmd = "/usr/bin/seed /tmp/BuilderGtkView.js\n";
+                                                                        this.get('/Terminal').el.feed_child(cmd, cmd.length);
+                                                                         /*
+                                                                        var _top = x.get_global_object()._top;
+                                                                        
+                                                                        _top.el.set_screen(Gdk.Screen.get_default()); // just in case..
+                                                                        _top.el.show_all();
+                                                                        if (_top.el.popup) {
+                                                                            _top.el.popup(null, null, null, null, 3, null);
+                                                                        }
+                                                                    */
+                                                                    },
+                                                                    viewAdd : function(item, par)
+                                                                            {
+                                                                        // does something similar to xobject..
+                                                                        item.pack = (typeof(item.pack) == 'undefined') ?  'add' : item.pack;
+                                                                        
+                                                                        if (item.pack===false || item.pack === 'false') {  // no ;
+                                                                            return;
+                                                                        }
+                                                                        print("CREATE: " + item['|xns'] + '.' + item['xtype']);
+                                                                        var ns = imports.gi[item['|xns']];
+                                                                        var ctr = ns[item['xtype']];
+                                                                        var ctr_args = { };
+                                                                        for(var k in item) {
+                                                                            var kv = item[k];
+                                                                            if (typeof(kv) == 'object' || typeof(kv) == 'function') {
+                                                                                continue;
+                                                                            }
+                                                                            if ( 
+                                                                                k == 'pack' ||
+                                                                                k == 'items' ||
+                                                                                k == 'id' ||
+                                                                                k == 'xtype' ||
+                                                                                k == 'xdebug' ||
+                                                                                k == 'xns' ||
+                                                                                k == '|xns'
+                                                                            ) {
+                                                                                continue;
+                                                                            }
+                                                                    
+                                                                    	if (k[0] == '|' && typeof(kv) == 'string') {
+                                                                    
+                                                                    		if (kv.match(new RegExp('function'))) {
+                                                                    			continue;
+                                                                                    }
+                                                                    		 print("WASL " + k + '=' + kv);
+                                                                    		try {
+                                                                    			eval( 'kv = ' + kv);
+                                                                    		} catch(e) {    continue; }
+                                                                                    
+                                                                    		k = k.substring(1);
+                                                                                  print(k + '=' + kv);
+                                                                    	}
+                                                                            if (k[0] == '|') { // should be boolean or number..
+                                                                    		k = k.substring(1);
+                                                                            }
+                                                                    	if (k == 'show_tabs') { // force tab showing for notebooks.
+                                                                               kv = true;
+                                                                            }
+                                                                            ctr_args[k] = kv;
+                                                                            
+                                                                        } 
+                                                                        
+                                                                        
+                                                                        var el = new ctr(ctr_args);
+                                                                        
+                                                                        //print("PACK");
+                                                                        //console.dump(item.pack);
+                                                                        
+                                                                        
+                                                                        
+                                                                        
+                                                                        var args = [];
+                                                                        var pack_m  = false;
+                                                                        if (typeof(item.pack) == 'string') {
+                                                                             
+                                                                            item.pack.split(',').forEach(function(e, i) {
+                                                                                
+                                                                                if (e == 'false') { args.push( false); return; }
+                                                                                if (e == 'true') {  args.push( true);  return; }
+                                                                                if (!isNaN(parseInt(e))) { args.push( parseInt(e)); return; }
+                                                                                args.push(e);
+                                                                            });
+                                                                            //print(args.join(","));
+                                                                            
+                                                                            pack_m = args.shift();
+                                                                        } else {
+                                                                            pack_m = item.pack.shift();
+                                                                            args = item.pack;
+                                                                        }
+                                                                        
+                                                                        // handle error.
+                                                                        if (pack_m && typeof(par[pack_m]) == 'undefined') {
+                                                                            throw {
+                                                                                    name: "ArgumentError", 
+                                                                                    message : 'pack method not available : ' + par.id + " : " + par + '.' +  pack_m +
+                                                                                            "ADDING : " + item.id + " " +  el
+                                                                                        
+                                                                    	    };
+                                                                    
+                                                                            return;
+                                                                        }
+                                                                        
+                                                                        console.dump(args);
+                                                                        args.unshift(el);
+                                                                        //if (XObject.debug) print(pack_m + '[' + args.join(',') +']');
+                                                                        //Seed.print('args: ' + args.length);
+                                                                        if (pack_m) {
+                                                                            par[pack_m].apply(par, args);
+                                                                        }
+                                                                        
+                                                                        var _this = this;
+                                                                        item.items = item.items || [];
+                                                                        item.items.forEach(function(ch) {
+                                                                            _this.viewAdd(ch, el);
+                                                                        });
+                                                                        
+                                                                        
+                                                                        
+                                                                        // add the signal handlers.
+                                                                        // is it a widget!?!!?
+                                                                       
+                                                                        
+                                                                        try {
+                                                                             
+                                                                            
+                                                                            el.signal.expose_event.connect(XObject.createDelegate(this.widgetExposeEvent, this, [ item  ], true));
+                                                                            el.signal.drag_motion.connect(XObject.createDelegate(this.widgetDragMotionEvent, this,[ item  ], true));
+                                                                            el.signal.drag_drop.connect(XObject.createDelegate(this.widgetDragDropEvent, this, [ item  ], true));
+                                                                            el.signal.button_press_event.connect(XObject.createDelegate(this.widgetPressEvent, this, [ item  ], true ));
+                                                                      el.signal.button_release_event.connect(XObject.createDelegate(this.widgetReleaseEvent, this, [ item  ], true ));
+                                                                        } catch(e) {
+                                                                            // ignore!
+                                                                           }
+                                                                        
+                                                                        
+                                                                        
+                                                                        return el;
+                                                                        
+                                                                    },
+                                                                    widgetExposeEvent : function() {
+                                                                       ///   print("WIDGET EXPOSE"); // draw highlight??
+                                                                                return false;
+                                                                    },
+                                                                    widgetDragMotionEvent : function() {
+                                                                         print("WIDGET DRAGMOTION"); 
+                                                                                return true;
+                                                                    },
+                                                                    widgetDragDropEvent : function() {
+                                                                          print("WIDGET DRAGDROP"); 
+                                                                                return true;
+                                                                    },
+                                                                    widgetPressEvent : function(w,e,u,d) {
+                                                                         if (this.get('view').pressed) {
+                                                                            return false;
+                                                                         }
+                                                                    this.get('view').pressed = true;
+                                                                          print("WIDGET PRESS " + d.xtreepath );       
+                                                                              this.get('/LeftTree.view').selectNode(   d.xtreepath );        
+                                                                                return false;
+                                                                    },
+                                                                    widgetReleaseEvent : function() {
+                                                                        this.get('view').pressed = false;
+                                                                       return false;
+                                                                    },
+                                                                    items : [
+                                                                        {
+                                                                            xtype: Gtk.HBox,
+                                                                            pack : "pack_start,false,true,0",
+                                                                            items : [
+                                                                                {
+                                                                                    xtype: Gtk.Button,
+                                                                                    pack : "pack_start,false,false,0",
+                                                                                    label : "Run The Application",
+                                                                                    listeners : {
+                                                                                        "button_press_event":function (self, event) {
+                                                                                          // call render on left tree - with special option!?!
+                                                                                         
+                                                                                        
+                                                                                        
+                                                                                        	print("GET PROEJCT");
+                                                                                        	var pr = this.get('/LeftProjectTree').getActiveProject();
+                                                                                          
+                                                                                        var dir = '';
+                                                                                         for (var i in pr.paths) { 
+                                                                                              dir = i;
+                                                                                              break;
+                                                                                          }
+                                                                                           var runner = GLib.path_get_dirname (__script_path__) + '/gtkrun.js'; 
+                                                                                           print ("RUN DIR:" + dir);
+                                                                                           
+                                                                                           this.get('/BottomPane').el.set_current_page(1);
+                                                                                            this.get('/Terminal').el.fork_command( null , [], [], GLib.path_get_dirname (__script_path__) 
+                                                                                        	, false,false,false); 
+                                                                                            var cmd = "/usr/bin/seed " + runner + " " + dir + "\n";
+                                                                                            this.get('/Terminal').el.feed_child(cmd, cmd.length);
+                                                                                            return false;
+                                                                                          
+                                                                                        
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            ]
+                                                                        },
+                                                                        {
+                                                                            xtype: Gtk.ScrolledWindow,
+                                                                            pack : "add",
+                                                                            id : "view-sw",
+                                                                            shadow_type : Gtk.ShadowType.IN,
+                                                                            init : function() {
+                                                                                XObject.prototype.init.call(this);
+                                                                             this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
+                                                                            },
+                                                                            items : [
+                                                                                {
+                                                                                    xtype: Gtk.EventBox,
+                                                                                    pack : "add_with_viewport",
+                                                                                    init : function() {
+                                                                                        XObject.prototype.init.call(this);
+                                                                                    this.el.modify_bg(Gtk.StateType.NORMAL, new Gdk.Color({
+                                                                                                red: 0x9F00, green: 0xB800 , blue : 0xA800
+                                                                                               }));
                                                                                     },
                                                                                     items : [
                                                                                         {
-                                                                                            xtype: Gtk.EventBox,
-                                                                                            pack : "put,10,10",
+                                                                                            xtype: Gtk.Fixed,
+                                                                                            pack : "add",
                                                                                             init : function() {
-                                                                                            	//this.el =     new Gtk.Image.from_stock (Gtk.STOCK_HOME,  Gtk.IconSize.MENU);
                                                                                             	XObject.prototype.init.call(this);
-                                                                                            
-                                                                                                        Gtk.drag_dest_set
-                                                                                                        (
-                                                                                                                this.el,              /* widget that will accept a drop */
-                                                                                                                Gtk.DestDefaults.MOTION  | Gtk.DestDefaults.HIGHLIGHT,
-                                                                                                                null,            /* lists of target to support */
-                                                                                                                0,              /* size of list */
-                                                                                                                Gdk.DragAction.COPY         /* what to do with data after dropped */
-                                                                                                        );
-                                                                                                        
-                                                                                                       // print("RB: TARGETS : " + LeftTree.atoms["STRING"]);
-                                                                                                        Gtk.drag_dest_set_target_list(this.el, this.get('/Window').targetList);
+                                                                                            	//this.el.set_hadjustment(this.parent.el.get_hadjustment());
+                                                                                            	//this.el.set_vadjustment(this.parent.el.get_vadjustment());
+                                                                                             
                                                                                             },
-                                                                                            ready : false,
-                                                                                            getActiveNode : function(x,y)
-                                                                                            {
-                                                                                               // workout what node is here..
-                                                                                                return '0'; // top..
-                                                                                            },
-                                                                                            id : "view",
-                                                                                            listeners : {
-                                                                                                "drag_motion":function (self, ctx, x, y, time) {
+                                                                                            items : [
+                                                                                                {
+                                                                                                    xtype: Gtk.EventBox,
+                                                                                                    pack : "put,10,10",
+                                                                                                    init : function() {
+                                                                                                    	//this.el =     new Gtk.Image.from_stock (Gtk.STOCK_HOME,  Gtk.IconSize.MENU);
+                                                                                                    	XObject.prototype.init.call(this);
                                                                                                     
-                                                                                                                // A) find out from drag all the places that node could be dropped.
-                                                                                                                var src = Gtk.drag_get_source_widget(ctx);
-                                                                                                                if (!src.dropList) {
-                                                                                                                    Gdk.drag_status(ctx, 0, time);
-                                                                                                                    return true;
-                                                                                                                }
-                                                                                                                // b) get what we are over.. (from activeNode)
-                                                                                                                // tree is empty.. - list should be correct..
-                                                                                                                if (!this.get('/LeftTree.model').currentTree) {
-                                                                                                                    Gdk.drag_status(ctx, Gdk.DragAction.COPY,time);
-                                                                                                                    return true;
-                                                                                                                    
-                                                                                                                }
-                                                                                                                // c) ask tree where it should be dropped... - eg. parent.. (after node ontop)
-                                                                                                                var activeNode = this.getActiveNode(x, y);
+                                                                                                                Gtk.drag_dest_set
+                                                                                                                (
+                                                                                                                        this.el,              /* widget that will accept a drop */
+                                                                                                                        Gtk.DestDefaults.MOTION  | Gtk.DestDefaults.HIGHLIGHT,
+                                                                                                                        null,            /* lists of target to support */
+                                                                                                                        0,              /* size of list */
+                                                                                                                        Gdk.DragAction.COPY         /* what to do with data after dropped */
+                                                                                                                );
                                                                                                                 
-                                                                                                                
-                                                                                                                var tg = this.get('/LeftTree.model').findDropNode(activeNode, src.dropList);
-                                                                                                                console.dump(tg);
-                                                                                                                if (!tg.length) {
-                                                                                                                    Gdk.drag_status(ctx, 0,time);
-                                                                                                                    this.get('/LeftTree.view').highlight(false);
-                                                                                                                    return true;
-                                                                                                                }
-                                                                                                                 
-                                                                                                                // if we have a target..
-                                                                                                                // -> highlight it! (in browser)
-                                                                                                                // -> highlight it! (in tree)
-                                                                                                                
-                                                                                                                Gdk.drag_status(ctx, Gdk.DragAction.COPY,time);
-                                                                                                                this.get('/LeftTree.view').highlight(tg);
-                                                                                                                this.targetData = tg;
-                                                                                                                // for tree we should handle this...
-                                                                                                                return true;
-                                                                                                },
-                                                                                                "drag_drop":function (self,ctx, x, y, time) {
-                                                                                                	Seed.print("TARGET: drag-drop");
-                                                                                                        var is_valid_drop_site = true;
-                                                                                                        
-                                                                                                         
-                                                                                                        Gtk.drag_get_data
-                                                                                                        (
-                                                                                                                self,         /* will receive 'drag-data-received' signal */
-                                                                                                                ctx,        /* represents the current state of the this.gDnD */
-                                                                                                                this.get('/Window').atoms["STRING"],    /* the target type we want */
-                                                                                                                time            /* time stamp */
-                                                                                                        );
-                                                                                                        
-                                                                                                        
-                                                                                                        /* No target offered by source => error */
-                                                                                                       
-                                                                                                
-                                                                                                        return  is_valid_drop_site;
-                                                                                                  
-                                                                                                },
-                                                                                                "drag_data_received":function (w, ctx,  x,  y, sel_data,  target_type,  time, ud) 
-                                                                                                    {
-                                                                                                        Seed.print("GtkView: drag-data-received");
-                                                                                                        var delete_selection_data = false;
-                                                                                                        var dnd_success = false;
-                                                                                                        /* Deal with what we are given from source */
-                                                                                                        if( sel_data && sel_data.length ) {
-                                                                                                            
-                                                                                                            if (ctx.action == Gdk.DragAction.ASK)  {
-                                                                                                                /* Ask the user to move or copy, then set the ctx action. */
-                                                                                                            }
-                                                                                                
-                                                                                                            if (ctx.action == Gdk.DragAction.MOVE) {
-                                                                                                                delete_selection_data = true;
-                                                                                                            }
-                                                                                                            var source = Gtk.drag_get_source_widget(ctx);
-                                                                                                
-                                                                                                            Seed.print("Browser: source.DRAGDATA? " + source.dragData);
-                                                                                                            if (this.targetData) {
-                                                                                                                Seed.print(this.targetData);
-                                                                                                                this.get('/LeftTree.model').dropNode(this.targetData,  source.dragData);
-                                                                                                            }
-                                                                                                            
-                                                                                                            
-                                                                                                            
-                                                                                                            dnd_success = true;
-                                                                                                
-                                                                                                        }
-                                                                                                
-                                                                                                        if (dnd_success == false)
-                                                                                                        {
-                                                                                                                Seed.print ("DnD data transfer failed!\n");
-                                                                                                        }
-                                                                                                        
-                                                                                                        Gtk.drag_finish (ctx, dnd_success, delete_selection_data, time);
-                                                                                                        return true;
+                                                                                                               // print("RB: TARGETS : " + LeftTree.atoms["STRING"]);
+                                                                                                                Gtk.drag_dest_set_target_list(this.el, this.get('/Window').targetList);
                                                                                                     },
-                                                                                                "button_press_event":function (self, event) {
-                                                                                                  this.pressed = false;
-                                                                                                    return false;
+                                                                                                    ready : false,
+                                                                                                    getActiveNode : function(x,y)
+                                                                                                    {
+                                                                                                       // workout what node is here..
+                                                                                                        return '0'; // top..
+                                                                                                    },
+                                                                                                    id : "view",
+                                                                                                    listeners : {
+                                                                                                        "drag_motion":function (self, ctx, x, y, time) {
+                                                                                                            
+                                                                                                                        // A) find out from drag all the places that node could be dropped.
+                                                                                                                        var src = Gtk.drag_get_source_widget(ctx);
+                                                                                                                        if (!src.dropList) {
+                                                                                                                            Gdk.drag_status(ctx, 0, time);
+                                                                                                                            return true;
+                                                                                                                        }
+                                                                                                                        // b) get what we are over.. (from activeNode)
+                                                                                                                        // tree is empty.. - list should be correct..
+                                                                                                                        if (!this.get('/LeftTree.model').currentTree) {
+                                                                                                                            Gdk.drag_status(ctx, Gdk.DragAction.COPY,time);
+                                                                                                                            return true;
+                                                                                                                            
+                                                                                                                        }
+                                                                                                                        // c) ask tree where it should be dropped... - eg. parent.. (after node ontop)
+                                                                                                                        var activeNode = this.getActiveNode(x, y);
+                                                                                                                        
+                                                                                                                        
+                                                                                                                        var tg = this.get('/LeftTree.model').findDropNode(activeNode, src.dropList);
+                                                                                                                        console.dump(tg);
+                                                                                                                        if (!tg.length) {
+                                                                                                                            Gdk.drag_status(ctx, 0,time);
+                                                                                                                            this.get('/LeftTree.view').highlight(false);
+                                                                                                                            return true;
+                                                                                                                        }
+                                                                                                                         
+                                                                                                                        // if we have a target..
+                                                                                                                        // -> highlight it! (in browser)
+                                                                                                                        // -> highlight it! (in tree)
+                                                                                                                        
+                                                                                                                        Gdk.drag_status(ctx, Gdk.DragAction.COPY,time);
+                                                                                                                        this.get('/LeftTree.view').highlight(tg);
+                                                                                                                        this.targetData = tg;
+                                                                                                                        // for tree we should handle this...
+                                                                                                                        return true;
+                                                                                                        },
+                                                                                                        "drag_drop":function (self,ctx, x, y, time) {
+                                                                                                        	Seed.print("TARGET: drag-drop");
+                                                                                                                var is_valid_drop_site = true;
+                                                                                                                
+                                                                                                                 
+                                                                                                                Gtk.drag_get_data
+                                                                                                                (
+                                                                                                                        self,         /* will receive 'drag-data-received' signal */
+                                                                                                                        ctx,        /* represents the current state of the this.gDnD */
+                                                                                                                        this.get('/Window').atoms["STRING"],    /* the target type we want */
+                                                                                                                        time            /* time stamp */
+                                                                                                                );
+                                                                                                                
+                                                                                                                
+                                                                                                                /* No target offered by source => error */
+                                                                                                               
+                                                                                                        
+                                                                                                                return  is_valid_drop_site;
+                                                                                                          
+                                                                                                        },
+                                                                                                        "drag_data_received":function (w, ctx,  x,  y, sel_data,  target_type,  time, ud) 
+                                                                                                            {
+                                                                                                                Seed.print("GtkView: drag-data-received");
+                                                                                                                var delete_selection_data = false;
+                                                                                                                var dnd_success = false;
+                                                                                                                /* Deal with what we are given from source */
+                                                                                                                if( sel_data && sel_data.length ) {
+                                                                                                                    
+                                                                                                                    if (ctx.action == Gdk.DragAction.ASK)  {
+                                                                                                                        /* Ask the user to move or copy, then set the ctx action. */
+                                                                                                                    }
+                                                                                                        
+                                                                                                                    if (ctx.action == Gdk.DragAction.MOVE) {
+                                                                                                                        delete_selection_data = true;
+                                                                                                                    }
+                                                                                                                    var source = Gtk.drag_get_source_widget(ctx);
+                                                                                                        
+                                                                                                                    Seed.print("Browser: source.DRAGDATA? " + source.dragData);
+                                                                                                                    if (this.targetData) {
+                                                                                                                        Seed.print(this.targetData);
+                                                                                                                        this.get('/LeftTree.model').dropNode(this.targetData,  source.dragData);
+                                                                                                                    }
+                                                                                                                    
+                                                                                                                    
+                                                                                                                    
+                                                                                                                    dnd_success = true;
+                                                                                                        
+                                                                                                                }
+                                                                                                        
+                                                                                                                if (dnd_success == false)
+                                                                                                                {
+                                                                                                                        Seed.print ("DnD data transfer failed!\n");
+                                                                                                                }
+                                                                                                                
+                                                                                                                Gtk.drag_finish (ctx, dnd_success, delete_selection_data, time);
+                                                                                                                return true;
+                                                                                                            },
+                                                                                                        "button_press_event":function (self, event) {
+                                                                                                          this.pressed = false;
+                                                                                                            return false;
+                                                                                                        }
+                                                                                                    }
                                                                                                 }
-                                                                                            }
+                                                                                            ]
                                                                                         }
                                                                                     ]
                                                                                 }
                                                                             ]
                                                                         }
                                                                     ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            xtype: Gtk.ScrolledWindow,
+                                                            pack : "add",
+                                                            id : "Help",
+                                                            items : [
+                                                                {
+                                                                    xtype: WebKit.WebView,
+                                                                    pack : "add",
+                                                                    id : "help-view",
+                                                                    init : function() {
+                                                                        XObject.prototype.init.call(this);
+                                                                       this.get('/Window.help-view').el.open(
+                                                                         "http://devel.akbkhome.com/seed/");
+                                                                    
+                                                                    }
                                                                 }
                                                             ]
                                                         }
@@ -3054,6 +3084,18 @@ Window=new XObject({
                                                             
                                                             },
                                                             load : function(str) {
+                                                            
+                                                            // show the help page for the active node..
+                                                               this.get('/Window.view-help-nb').el.set_current_page(1);
+                                                            
+                                                            // get the active element being edited.
+                                                               var xtype = this.get('/LeftTree.model').file.guessName(
+                                                            	this.get('/MidPropTree').activeElement);
+                                                            // now load the help info in the page..
+                                                               this.get('/Window.help-view').el.open(
+                                                                 "http://devel.akbkhome.com/seed/" + xtype + ".html");
+                                                            
+                                                            
                                                                this.get('/BottomPane').el.set_current_page(0);
                                                                 this.el.get_buffer().set_text(str, str.length);
                                                                 var lm = GtkSource.LanguageManager.get_default();
