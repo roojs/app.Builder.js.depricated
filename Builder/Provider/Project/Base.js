@@ -51,7 +51,7 @@ Base = XObject.define(
     Observable, 
     {
         id : false,
-        fn:  false,
+        fn:  false, // the md5 sum for this one..
         paths : false,
         files : false,
         tree : false,
