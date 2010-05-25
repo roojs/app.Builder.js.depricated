@@ -24,7 +24,7 @@ Base = XObject.define(
         
         title : false,  // a title.. ?? nickname.. ??? - 
         project: false, // name...
-        Project : false, // link to container project!
+        //Project : false, // link to container project!
         
         items : false, // the tree of nodes.
         
@@ -55,7 +55,7 @@ Base = XObject.define(
         {
             var ret = { }; 
             var _this = this;
-            ['id', 'name', 'parent', 'title', 'path', 'items'].forEach( function(k) {
+            ['id', 'name', 'parent', 'title', 'path', 'items', 'project'].forEach( function(k) {
                 ret[k] = _this[k];
             });
             return ret;
