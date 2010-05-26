@@ -3298,18 +3298,22 @@ Window=new XObject({
                                                             id : "Help",
                                                             show : function() {
                                                                 
-                                                                  var file = this.get('/LeftTree').getActiveFile();
-                                                                  if (!file) {
+                                                                var file = this.get('/LeftTree').getActiveFile();
+                                                                if (!file) {
                                                                     return;
-                                                                  }
-                                                                  var activeEl = this.get('/LeftTree').getActiveElement();
-                                                                  var xtype = file.guessName( activeEl )
-                                                            
-                                                                  this.get('/Window.view-help-nb').el.set_current_page(1);
-                                                                    // get the active element being edited.
-                                                                  var helpurl = file.getHelpUrl(xtype);       
-                                                                    // now load the help info in the page..
-                                                                  this.get('help-view').el.open(helpurl);
+                                                                }
+                                                                var activeEl = this.get('/LeftTree').getActiveElement();
+                                                                var xtype = file.guessName( activeEl )
+                                                                if (!xtype || !xtype.length) {
+                                                                    return;
+                                                                }
+                                                                this.get('/Window.view-help-nb').el.set_current_page(1);
+                                                                
+                                                                // get the active element being edited.
+                                                                var helpurl = file.getHelpUrl(xtype);       
+                                                                
+                                                                // now load the help info in the page..
+                                                                this.get('help-view').el.open(helpurl);
                                                             },
                                                             items : [
                                                                 {
@@ -3358,14 +3362,7 @@ Window=new XObject({
                                                             load : function(str) {
                                                             
                                                             // show the help page for the active node..
-                                                               this.get('/Window.view-help-nb').el.set_current_page(1);
-                                                            
-                                                            // get the active element being edited.
-                                                               var xtype = this.get('/LeftTree.model').file.guessName(
-                                                            	this.get('/MidPropTree').activeElement);
-                                                            // now load the help info in the page..
-                                                               this.get('/Window.help-view').el.open(
-                                                                 "http://devel.akbkhome.com/seed/" + xtype + ".html");
+                                                               this.get('/Help').show();
                                                             
                                                             
                                                                this.get('/BottomPane').el.set_current_page(0);
