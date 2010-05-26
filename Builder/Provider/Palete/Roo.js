@@ -100,6 +100,24 @@ Roo = XObject.define(
                     return [];
             }
             return this.proplist[ename][type];
+        },
+        findType: function(name)
+        {
+            this.loadProps();
+            if (typeof(this.proplist[name]) != 'undefined') {
+                return name;
+            }
+            var match = name.split('.').pop();
+            for (var i in this.proplist) {
+                var last = i.split('.').pop();
+                if (last == match) {
+                    return i;
+                }
+                
+            }
+            return name;
+            
+            
         }
         
         
