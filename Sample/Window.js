@@ -2504,13 +2504,12 @@ Window=new XObject({
                                                                                     pack : "pack_start,false,false,0",
                                                                                     label : "Redraw",
                                                                                     listeners : {
-                                                                                        "activate":function (self) 
-                                                                                        {
-                                                                                         	 
-                                                                                            var js = this.get('/LeftTree.model').toJS();
+                                                                                        "button_press_event":function (self, event) {
+                                                                                              var js = this.get('/LeftTree.model').toJS();
                                                                                             if (js && js[0]) {
                                                                                                 this.get('/RightBrowser.view').renderJS(js[0]);
                                                                                             } 
+                                                                                            return false;
                                                                                         }
                                                                                     }
                                                                                 },
