@@ -261,7 +261,27 @@ Roo = XObject.define(
              ].join("\n");
         },
             
-        
+        guessName : function(ar) // turns the object into full name.
+        {
+             // eg. xns: Roo, xtype: XXX -> Roo.xxx
+            var ret = [];
+            ret.push(typeof( ar['|xns'] ) == 'undefined' ? 'Roo' : ar['|xns'] );
+            
+            
+            
+            if (typeof( ar['xtype'] ) == 'undefined') {
+                return false;
+            }
+            if (ar['xtype'].match(/^Roo/)) {
+                // already starts with roo...
+                ret = [];
+            }
+            ret.push(ar['xtype'] );
+            return ret.join('.');
+            
+                            
+                                 
+        },
         /*
         getTree : function( o ) {
             
