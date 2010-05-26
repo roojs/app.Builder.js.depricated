@@ -156,18 +156,52 @@ Roo = XObject.define(
                     node['|xns'] = bits.join('.');
                 }
                 // fix array???
-                
-                
-                
+                 
                 
             }
             if (!node.items || !node.items.length) {
                 return;
             }
             var _this = this;
+            var aitems = [];
+            var nitems = [];
             node.items.forEach(function(i) {
+                
+                
+                
                 _this.fixItems(i, true);
+                if (i.xtype == 'Array') {
+                    aitems.push(i);
+                    return;
+                }    
+                nitems.push(i);
             });
+            node.items = nitems; 
+            
+            if (!aitems.length) {
+                return;
+            }
+            
+            aitems.forEach(function(i) {
+                
+                if (!i.items || !i.items.length) {
+                    return;
+                }
+                var prop = i['*prop'] + '[]';
+                // colModel to cm?
+                i.items.forEach(function(c) {
+                    c['*prop']  = prop;
+                    node.items.push(c);
+                    
+                });
+                
+                
+            });
+            
+            
+            // array handling.. 
+            
+            
             
             
             
