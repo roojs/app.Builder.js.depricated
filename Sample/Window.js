@@ -2540,9 +2540,10 @@ Window=new XObject({
                                                                                         Gtk.drag_dest_set_target_list(this.el, this.get('/Window').targetList);
                                                                                     },
                                                                                     renderJS : function(data) {
-                                                                                        //print("HTML RENDERING");
+                                                                                        print("HTML RENDERING");
                                                                                         /// prevent looping..
                                                                                         if (this.pendingRedraw) {
+                                                                                            print("pending redraw active?!");
                                                                                             return;
                                                                                         }
                                                                                         
