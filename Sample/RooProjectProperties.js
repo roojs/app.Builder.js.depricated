@@ -49,41 +49,17 @@ RooProjectProperties=new XObject({
                     },
             items : [
                 {
-                    xtype: Gtk.Table,
-                    pack : "pack_start,true,true,3",
-                    init : function() {
-                        this.el = new Gtk.Table.c_new(1,2, true);
-                        XObject.prototype.init.call(this);
-                    
-                    },
+                    xtype: Gtk.Label,
+                    pack : "pack_start,false,false,0",
+                    label : "Javascript to run on before loading code"
+                },
+                {
+                    xtype: Gtk.ScrolledWindow,
+                    pack : "pack_end,true,true,0",
                     items : [
                         {
-                            xtype: Gtk.Label,
-                            pack : "attach,0,1,0,1,0,0,0,0",
-                            label : "baseURL "
-                        },
-                        {
-                            xtype: Gtk.Entry,
-                            pack : "attach,1,2,0,1,5"
-                        },
-                        {
-                            xtype: Gtk.Label,
-                            pack : "attach,0,1,1,2,0,0,1,0",
-                            label : "login:"
-                        },
-                        {
-                            xtype: Gtk.Entry,
-                            pack : "attach,1,2,1,2,5"
-                        },
-                        {
-                            xtype: Gtk.Label,
-                            pack : "attach,0,1,2,3,0,0,1,0",
-                            label : "password"
-                        },
-                        {
-                            xtype: Gtk.Entry,
-                            pack : "attach,1,2,2,3,5",
-                            visibility : false
+                            xtype: GtkSource.View,
+                            pack : "add"
                         }
                     ]
                 }
