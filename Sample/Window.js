@@ -2056,6 +2056,7 @@ Window=new XObject({
                                                                             case 'number':
                                                                             case 'uint':
                                                                             case 'int':
+                                                                            case 'float':
                                                                             case 'gfloat':
                                                                                 return parseFloat(val); // Nan ?? invalid!!?
                                                                             case 'boolean':
