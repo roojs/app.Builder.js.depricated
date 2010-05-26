@@ -2502,24 +2502,83 @@ Window=new XObject({
                                                                                 {
                                                                                     xtype: Gtk.Button,
                                                                                     pack : "pack_start,false,false,0",
-                                                                                    label : "Dump HTML to console",
+                                                                                    label : "Redraw",
                                                                                     listeners : {
-                                                                                        "activate":function (self) {
-                                                                                         	this.get('/RightBrowser.view').el.execute_script(
-                                                                                                    "console.log(document.body.innerHTML);");
-                                                                                                this.get('/RightBrowser.view').el.execute_script(
-                                                                                        	    "console.log(Builder.dump(Builder));");   
+                                                                                        "button_press_event":function (self, event) {
+                                                                                              var js = this.get('/LeftTree.model').toJS();
+                                                                                            if (js && js[0]) {
+                                                                                                this.get('/RightBrowser.view').renderJS(js[0]);
+                                                                                            } 
+                                                                                            return false;
                                                                                         }
                                                                                     }
                                                                                 },
                                                                                 {
                                                                                     xtype: Gtk.Button,
-                                                                                    pack : "add",
-                                                                                    label : "Set Default Javascript",
+                                                                                    pack : "pack_start,false,false,0",
+                                                                                    label : "Set extra HTML in render",
                                                                                     listeners : {
                                                                                         "button_press_event":function (self, event) {
                                                                                             this.get('/RooProjectProperties').show();
                                                                                             return false;
+                                                                                        }
+                                                                                    }
+                                                                                },
+                                                                                {
+                                                                                    xtype: Gtk.Button,
+                                                                                    pack : "pack_start,false,false,0",
+                                                                                    label : "test in Firefox",
+                                                                                    listeners : {
+                                                                                        "button_press_event":function (self, event) 
+                                                                                        {
+                                                                                                /* Firefox testing for debugging..
+                                                                                                  - we can create a /tmp directory, and put.
+                                                                                                    builder.html, builder.html.js, link roojs1 
+                                                                                                    add at the end of builder.html Roo.onload(function() {
+                                                                                        	  */
+                                                                                        	 if (!this.get('/Window.LeftTree').getActiveFile()) {
+                                                                                                    return;
+                                                                                                }
+                                                                                                
+                                                                                                var js = this.get('/LeftTree.model').toJS();
+                                                                                                 if (!js ||  !js[0]) {
+                                                                                                    return;
+                                                                                                }
+                                                                                                var project = this.get('/Window.LeftTree').getActiveFile().project;
+                                                                                                //print (project.fn);
+                                                                                                
+                                                                                                project.runhtml  = project.runhtml || '';
+                                                                                        
+                                                                                        
+                                                                                        	var File = imports.File.File;
+                                                                                        	
+                                                                                        	var target = "/tmp/firetest"; // fixme..
+                                                                                        	if (!File.isDirectory(target)) {
+                                                                                        	    File.mkdir(target);
+                                                                                                }
+                                                                                        	File.copy(__script_path__ + '/../builder.html.js', target+ '/builder.html.js', Gio.FileCopyFlags.OVERWRITE);
+                                                                                        	if (!File.exists( target+ '/roojs1')) {
+                                                                                                    File.link( target+ '/roojs1', __script_path__ + '/../roojs1');
+                                                                                            	}
+                                                                                                
+                                                                                                
+                                                                                                
+                                                                                                var html = imports.File.File.read(__script_path__ + '/../builder.html');
+                                                                                                html = html.replace('</head>', project.runhtml + '</head>');
+                                                                                                
+                                                                                               
+                                                                                                var     jsstr = JSON.stringify(js[0]);
+                                                                                               
+                                                                                                var runbuilder = '<script type="text/javascript">' + "\n" + 
+                                                                                                    "Roo.onReady(function() { Builder.render(" + jsstr + "); });\n" +
+                                                                                                    '</script>';
+                                                                                                
+                                                                                                html = html.replace('</body>', runbuilder + '</body>');
+                                                                                        
+                                                                                        	File.write( target+ '/builder.html', html);
+                                                                                        	
+                                                                                        	
+                                                                                             return false;
                                                                                         }
                                                                                     }
                                                                                 }
@@ -2627,11 +2686,13 @@ Window=new XObject({
                                                                                                 return true; // do not display anything...
                                                                                         },
                                                                                         "console_message":function (self, object, p0, p1) {
-                                                                                             console.log(object);
+                                                                                           //  console.log(object);
                                                                                                 if (!object.match(/^\{/)) {
-                                                                                                    return false; // do not handle!!! -> later maybe in console..
+                                                                                                
+                                                                                                    this.get('/Terminal').feed(object);
+                                                                                                    return true; // do not handle!!! -> later maybe in console..
                                                                                                 }
-                                                                                                console.log(object);
+                                                                                               // console.log(object);
                                                                                                 var val =  JSON.parse(object);
                                                                                         
                                                                                                 if (typeof(val['hover-node']) != 'undefined') {
@@ -3099,22 +3160,19 @@ Window=new XObject({
                                                                                     label : "Run The Application",
                                                                                     listeners : {
                                                                                         "button_press_event":function (self, event) {
-                                                                                          // call render on left tree - with special option!?!
+                                                                                            // call render on left tree - with special option!?!
                                                                                          
-                                                                                        
-                                                                                        
-                                                                                        	print("GET PROEJCT");
-                                                                                        	var pr = this.get('/LeftProjectTree').getActiveProject();
+                                                                                            //print("GET PROEJCT");
+                                                                                            var pr = this.get('/LeftProjectTree').getActiveProject();
                                                                                           
-                                                                                        var dir = '';
-                                                                                         for (var i in pr.paths) { 
-                                                                                              dir = i;
-                                                                                              break;
-                                                                                          }
-                                                                                           var runner = GLib.path_get_dirname (__script_path__) + '/gtkrun.js'; 
-                                                                                           print ("RUN DIR:" + dir);
-                                                                                            this.get('/BottomPane').el.show();
-                                                                                           this.get('/BottomPane').el.set_current_page(1);
+                                                                                            var dir = '';
+                                                                                            for (var i in pr.paths) { 
+                                                                                                dir = i;
+                                                                                                break;
+                                                                                            }
+                                                                                            var runner = GLib.path_get_dirname (__script_path__) + '/gtkrun.js'; 
+                                                                                            this.get('/Terminal').feed("RUN DIR:" + dir);
+                                                                                            
                                                                                             this.get('/Terminal').el.fork_command( null , [], [], GLib.path_get_dirname (__script_path__) 
                                                                                         	, false,false,false); 
                                                                                             var cmd = "/usr/bin/seed " + runner + " " + dir + "\n";
@@ -3437,9 +3495,20 @@ Window=new XObject({
                                                             xtype: Vte.Terminal,
                                                             pack : "add",
                                                             id : "Terminal",
-                                                            feed : function(str) {
-                                                                this.el.feed(str,str.length);
-                                                            }
+                                                            feed : function(istr) {
+                                                                var str = istr.replace(/\n/g, "\r\n") + "\r\n";
+                                                                // we should make ourselves visable!!!
+                                                                this.get('/BottomPane').el.show();
+                                                                this.get('/BottomPane').el.set_current_page(1);
+                                                            
+                                                                this.el.feed(str ,str.length);
+                                                            },
+                                                            scroll_on_output : true,
+                                                            init : function() {
+                                                                XObject.prototype.init.call(this);
+                                                                this.el.set_size (80, 1000);
+                                                            },
+                                                            scrollback_lines : 1000
                                                         }
                                                     ]
                                                 }
