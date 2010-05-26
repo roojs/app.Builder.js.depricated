@@ -80,9 +80,11 @@ Base = XObject.define(
             var ret = { };
             var _this = this;
             for (var k in _this) {
+                
                 if (['files', 'tree'].indexOf(k) > -1) {
                     continue;
                 }
+                print("Storing " + k);
                 ret[k] = _this[k];
                 
             }
