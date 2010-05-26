@@ -21,7 +21,9 @@ RooProjectProperties=new XObject({
         }
         var project = this.get('/Window.LeftTree').getActiveFile().project;
         print (project.fn);
-    
+        project.runjs = project.runjs || '';
+        this.get('view').el.get_buffer().set_text(project.runjs, project.runjs.length);
+        
         this.el.show_all();
     },
     default_width : 500,
@@ -34,8 +36,27 @@ RooProjectProperties=new XObject({
            print(response_id);
            if (!response_id) {
               this.el.hide();
+            
               return;
            }
+           var buf =    this.get('view').el.get_buffer()
+           var s = new Gtk.TextIter();
+            var e = new Gtk.TextIter();
+            buf.get_start_iter(s);
+            buf.get_end_iter(e);
+            var str = buf.get_text(s,e,true)
+         try {
+            Seed.check_syntax(str); 
+             } catch (e) {
+                 this.get('/StandardErrorDialog').show("There is a syntax error in the javascript");
+                return;
+             }
+           var project = this.get('/Window.LeftTree').getActiveFile().project;
+           
+           
+           project.runjs = str;
+        //   print (str);
+           //    this.get('view').el.get_buffer().get_text(project.runjs, project.runjs.length);
            // ok pressed..
            this.el.hide();
         }
