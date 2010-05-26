@@ -2056,6 +2056,7 @@ Window=new XObject({
                                                                             case 'number':
                                                                             case 'uint':
                                                                             case 'int':
+                                                                            case 'gfloat':
                                                                                 return parseFloat(val); // Nan ?? invalid!!?
                                                                             case 'boolean':
                                                                                 return val == 'true' ? true : false;
@@ -3326,7 +3327,9 @@ Window=new XObject({
                                                                          "http://devel.akbkhome.com/seed/");
                                                                     
                                                                     },
-                                                                    zoom_level : "0.8"
+                                                                    listeners : {
+                                                                        
+                                                                    }
                                                                 }
                                                             ]
                                                         }
