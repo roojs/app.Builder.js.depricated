@@ -3438,7 +3438,7 @@ Window=new XObject({
                                                             pack : "add",
                                                             id : "Terminal",
                                                             feed : function(istr) {
-                                                                var str = istr.replace("\n", "\r\n") + "\r\n";
+                                                                var str = istr.replace(/\n/g, "\r\n") + "\r\n";
                                                                 // we should make ourselves visable!!!
                                                                 this.get('/BottomPane').el.show();
                                                                 this.get('/BottomPane').el.set_current_page(1);
