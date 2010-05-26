@@ -2515,12 +2515,70 @@ Window=new XObject({
                                                                                 },
                                                                                 {
                                                                                     xtype: Gtk.Button,
-                                                                                    pack : "add",
+                                                                                    pack : "pack_start,false,false,0",
                                                                                     label : "Set extra HTML in render",
                                                                                     listeners : {
                                                                                         "button_press_event":function (self, event) {
                                                                                             this.get('/RooProjectProperties').show();
                                                                                             return false;
+                                                                                        }
+                                                                                    }
+                                                                                },
+                                                                                {
+                                                                                    xtype: Gtk.Button,
+                                                                                    pack : "pack_start,false,false,0",
+                                                                                    label : "test in Firefox",
+                                                                                    listeners : {
+                                                                                        "button_press_event":function (self, event) 
+                                                                                        {
+                                                                                                /* Firefox testing for debugging..
+                                                                                                  - we can create a /tmp directory, and put.
+                                                                                                    builder.html, builder.html.js, link roojs1 
+                                                                                                    add at the end of builder.html Roo.onload(function() {
+                                                                                        	  */
+                                                                                        	 if (!this.get('/Window.LeftTree').getActiveFile()) {
+                                                                                                    return;
+                                                                                                }
+                                                                                                
+                                                                                                var js = this.get('/LeftTree.model').toJS();
+                                                                                                 if (!js ||  !js[0]) {
+                                                                                                    return;
+                                                                                                }
+                                                                                                var project = this.get('/Window.LeftTree').getActiveFile().project;
+                                                                                                //print (project.fn);
+                                                                                                
+                                                                                                project.runhtml  = project.runhtml || '';
+                                                                                        
+                                                                                        
+                                                                                        	var File = imports.File.File;
+                                                                                        	
+                                                                                        	var target = "/tmp/firetest"; // fixme..
+                                                                                        	if (!File.isDirectory(target)) {
+                                                                                        	    File.mkdir(target);
+                                                                                                }
+                                                                                        	File.copy(__script_path__ + '/../builder.html.js', target+ '/builder.html.js', Gio.FileCopyFlags.OVERWRITE);
+                                                                                        	if (!File.exists( target+ '/roojs1')) {
+                                                                                                    File.link( target+ '/roojs1', __script_path__ + '/../roojs1');
+                                                                                            	}
+                                                                                                
+                                                                                                
+                                                                                                
+                                                                                                var html = imports.File.File.read(__script_path__ + '/../builder.html');
+                                                                                                html = html.replace('</head>', project.runhtml + '</head>');
+                                                                                                
+                                                                                               
+                                                                                                var     jsstr = JSON.stringify(js[0]);
+                                                                                               
+                                                                                                var runbuilder = '<script type="text/javascript">' + "\n" + 
+                                                                                                    "Roo.onReady(function() { Builder.render(" + jsstr + "); });\n" +
+                                                                                                    '</script>';
+                                                                                                
+                                                                                                html = html.replace('</body>', runbuilder + '</body>');
+                                                                                        
+                                                                                        	File.write( target+ '/builder.html', html);
+                                                                                        	
+                                                                                        	
+                                                                                             return false;
                                                                                         }
                                                                                     }
                                                                                 }

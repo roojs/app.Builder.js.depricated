@@ -83,13 +83,22 @@ var File = {
         return new Date(mtime.tv_sec * 1000);
     },
 
-    canonical : function (path) {
+    /**
+     * resolve the real path
+     * @arg path {String} Path to resolve
+     * @returns {String} the resolved path path.
+     * 
+     */
+    realpath :  function (path) { 
+        return this.canonical(path);
+    },
+    canonical : function (path) { 
         var f = Gio.file_new_for_path(String(path));
         var can = f.resolve_relative_path('');
         return can.get_path();
     },
     /**
-     * write
+     * write a string to a file
      * @arg path {String} File to write to alwasy overwrites.
      * @arg string {String} Contents of file.
      * 
@@ -144,20 +153,47 @@ var File = {
 
         }
     },
+    /**
+     * Make a symbolic link
+     * @arg  new_link {String} The new link
+     * @arg  target    {String} Where it links to.
+     */
+    link : function (new_link, target) {
+        var dest = Gio.file_new_for_path(String(new_link));
+        return dest.make_symbolic_link(target, null);
+    },
+    /**
+     * Make a directory
+     * @arg  directory  {String} Directory to make
+     */
 
     mkdir : function (destPath) {
         var dest = Gio.file_new_for_path(String(destPath));
-        return dest.make_directory(null, null);
+        return dest.make_directory(null);
     },
 
-    copyFile : function (srcPath, destPath) {
+    /**
+     * Copy a file or (directory maybe?)
+     * @arg  srcPath {String} source file
+     * @arg  destPath {String} destination file
+     * @arg  flags {Gio.FileCopyFlags} to overwrite etc...  Gio.FileCopyFlags.OVERWRITE
+     */
+    copy : function (srcPath, destPath, flags) {
+        return this.copyFile(srcPath, destPath, flags);
+    },
+    copyFile : function (srcPath, destPath, flags) {
+        
+        flags = typeof(flags) == 'undefined' ? Gio.FileCopyFlags.NONE : flags;
         var dest = Gio.file_new_for_path(String(destPath));
         var src = Gio.file_new_for_path(String(srcPath));
 
         // a bit of a hack for the fact that Gio.File.copy arguments
         // can be nulled, but not according to the GIR file
-        return src.copy(dest, Gio.FileCopyFlags.NONE);
+        return src.copy(dest, flags);
     },
+    
+    
+    
 
     recursiveListing : function (dir) {
 
