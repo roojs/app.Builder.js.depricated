@@ -220,6 +220,11 @@ Builder  = {
             }
              
         }
+        if (cfg.xtype) {
+            if (typeof(cfg.xns[cfg.xtype]) == 'undefined') {
+                throw "Invalid Xtype " + this.xtreepath;
+            }
+        }
         
         // we can overlay some event handlers here..
         cfg.listeners = cfg.listeners || {};
