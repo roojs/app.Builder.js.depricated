@@ -2594,9 +2594,9 @@ Window=new XObject({
                                                                                     },
                                                                                     listeners : {
                                                                                         "load_finished":function (self, object) {
-                                                                                        	 if (this.ready) { // dont do it twice!
-                                                                                        	    return; 
-                                                                                        	}
+                                                                                        	// if (this.ready) { // dont do it twice!
+                                                                                        	 //   return; 
+                                                                                        	//}
                                                                                         	this.ready = true;
                                                                                                 this.pendingRedraw = false;
                                                                                                 var js = this.get('/LeftTree.model').toJS();
