@@ -135,7 +135,7 @@ Builder  = {
             console.log(e);
             console.log(typeof(e));
             
-            console.log(JSON.stringify(e));
+            console.log(this.dump(e));
         }
         
         
