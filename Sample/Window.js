@@ -152,7 +152,12 @@ Window=new XObject({
                         },
                         {
                             xtype: Gtk.MenuItem,
-                            label : "Help"
+                            label : "About",
+                            listeners : {
+                                "activate":function (self) {
+                                    this.get('/About').el.run();
+                                }
+                            }
                         }
                     ]
                 },
