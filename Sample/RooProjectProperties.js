@@ -20,7 +20,7 @@ RooProjectProperties=new XObject({
             return;
         }
         var project = this.get('/Window.LeftTree').getActiveFile().project;
-        print (project.fn);
+        //print (project.fn);
         project.runjs = project.runjs || '';
         this.get('view').el.get_buffer().set_text(project.runjs, project.runjs.length);
         
