@@ -82,7 +82,7 @@ Builder  = {
         
         
         this.munge(cfg);
-        console.log(this.dump(cfg));return;
+        console.log(this.dump(cfg)); 
         // we draw either a dialog or a tab..
         
         if (cfg.xtype == 'LayoutDialog') {
