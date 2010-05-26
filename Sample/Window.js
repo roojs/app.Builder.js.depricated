@@ -3325,7 +3325,8 @@ Window=new XObject({
                                                                        this.get('/Window.help-view').el.open(
                                                                          "http://devel.akbkhome.com/seed/");
                                                                     
-                                                                    }
+                                                                    },
+                                                                    zoom_level : "0.8"
                                                                 }
                                                             ]
                                                         }
