@@ -259,7 +259,7 @@ Roo = XObject.define(
                  
                 
              ].join("\n");
-        }
+        },
             
         
         /*
@@ -269,5 +269,9 @@ Roo = XObject.define(
             
         }
         */
+         getHelpUrl : function(cls)
+        {
+            return 'http://www.akbkhome.com/roojs1/docs/symbol/' + cls + '.html';
+        }
         
 });
