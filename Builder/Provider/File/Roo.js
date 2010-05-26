@@ -269,14 +269,18 @@ Roo = XObject.define(
             
             
             
-            if (typeof( ar['xtype'] ) == 'undefined') {
+            if (typeof( ar['xtype'] ) == 'undefined' || !ar['xtype'].length) {
                 return false;
             }
-            if (ar['xtype'].match(/^Roo/)) {
+            var xtype = ar['xtype'] + '';
+            if (xtype == '*') { // prefixes????
+                xtype  = xtype.substring(1);
+            }
+            if (xtype.match(/^Roo/)) {
                 // already starts with roo...
                 ret = [];
             }
-            ret.push(ar['xtype'] );
+            ret.push(xtype);
             return ret.join('.');
             
                             
