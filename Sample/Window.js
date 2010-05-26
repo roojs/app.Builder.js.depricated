@@ -3440,6 +3440,8 @@ Window=new XObject({
                                                             pack : "add",
                                                             id : "Terminal",
                                                             feed : function(str) {
+                                                                // we should make ourselves visable!!!
+                                                                this.get('/BottomPane').el.set_current_page(1);
                                                                 this.el.feed(str,str.length);
                                                             }
                                                         }
