@@ -2568,7 +2568,7 @@ Window=new XObject({
                                                                                      
                                                                                             this.runhtml = project.runhtml;
                                                                                             
-                                                                                            var html = imports.File.File.read(script_path__ + '/../builder.html');
+                                                                                            var html = imports.File.File.read(__script_path__ + '/../builder.html');
                                                                                             var html = html.replace('</head>', this.runhtml + '</head>');
                                                                                             
                                                                                             this.el.load_html_string( html , 'file:///' + __script_path__ + '/../builder.html');
