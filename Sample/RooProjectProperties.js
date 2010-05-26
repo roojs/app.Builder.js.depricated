@@ -21,8 +21,8 @@ RooProjectProperties=new XObject({
         }
         var project = this.get('/Window.LeftTree').getActiveFile().project;
         //print (project.fn);
-        project.runjs = project.runjs || '';
-        this.get('view').el.get_buffer().set_text(project.runjs, project.runjs.length);
+        project.runhtml = project.runhtml || '';
+        this.get('view').el.get_buffer().set_text(project.runhtml, project.runhtml.length);
         
         this.el.show_all();
     },
@@ -44,17 +44,13 @@ RooProjectProperties=new XObject({
             var e = new Gtk.TextIter();
             buf.get_start_iter(s);
             buf.get_end_iter(e);
-            var str = buf.get_text(s,e,true)
-         try {
-            Seed.check_syntax(str); 
-             } catch (e) {
-                 this.get('/StandardErrorDialog').show("There is a syntax error in the javascript");
-                return;
-             }
+            var str = buf.get_text(s,e,true);
+            // ideally we should syntax check it.. but it's html!?
+            
            var project = this.get('/Window.LeftTree').getActiveFile().project;
            
            
-           project.runjs = str;
+           project.runhtml = str;
         //   print (str);
            //    this.get('view').el.get_buffer().get_text(project.runjs, project.runjs.length);
            // ok pressed..
@@ -72,7 +68,7 @@ RooProjectProperties=new XObject({
                 {
                     xtype: Gtk.Label,
                     pack : "pack_start,false,false,0",
-                    label : "Javascript to run on before loading code"
+                    label : "HTML To insert at end of <HEAD>"
                 },
                 {
                     xtype: Gtk.ScrolledWindow,
