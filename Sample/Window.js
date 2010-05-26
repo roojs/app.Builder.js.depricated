@@ -3441,7 +3441,7 @@ Window=new XObject({
                                                                 this.get('/BottomPane').el.show();
                                                                 this.get('/BottomPane').el.set_current_page(1);
                                                                 
-                                                                this.el.feed(str ,str.length);
+                                                                this.el.feed(str + "\n",str.length+1);
                                                             }
                                                         }
                                                     ]
