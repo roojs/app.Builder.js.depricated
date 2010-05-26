@@ -221,7 +221,7 @@ Builder  = {
              
         }
         if (cfg.xtype) {
-            if (typeof(cfg.xns[cfg.xtype]) == 'undefined') {
+            if (!cfg.xns || typeof(cfg.xns[cfg.xtype]) == 'undefined') {
                 throw "Invalid Xtype " + this.xtreepath;
             }
         }
