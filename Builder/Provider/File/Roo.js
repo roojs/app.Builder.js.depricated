@@ -165,7 +165,7 @@ Roo = XObject.define(
                 return;
             }
             var _this = this;
-            node.forEach(node.items, function(i) {
+            node.items.forEach(function(i) {
                 _this.fixItems(i, true);
             });
             
