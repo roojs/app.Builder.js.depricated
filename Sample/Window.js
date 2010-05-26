@@ -2577,7 +2577,12 @@ Window=new XObject({
                                                                                         
                                                                                         	File.write( target+ '/builder.html', html);
                                                                                         	
-                                                                                        	
+                                                                                                this.get('/Terminal').feed("RUN DIR:" + target);
+                                                                                            
+                                                                                            this.get('/Terminal').el.fork_command( null , [], [], target
+                                                                                        	, false,false,false); 
+                                                                                            var cmd = "firefox file://" + target + "/builder.html  \n";
+                                                                                            this.get('/Terminal').el.feed_child(cmd, cmd.length);
                                                                                              return false;
                                                                                         }
                                                                                     }
