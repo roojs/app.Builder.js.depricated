@@ -133,6 +133,8 @@ Builder  = {
         } catch (e) {
             console.log("GOT ERROR?");    
             console.log(e);
+            console.log(typeof(e));
+            
             console.log(JSON.stringify(e));
         }
         
