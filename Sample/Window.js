@@ -2627,11 +2627,13 @@ Window=new XObject({
                                                                                                 return true; // do not display anything...
                                                                                         },
                                                                                         "console_message":function (self, object, p0, p1) {
-                                                                                             console.log(object);
+                                                                                           //  console.log(object);
                                                                                                 if (!object.match(/^\{/)) {
-                                                                                                    return false; // do not handle!!! -> later maybe in console..
+                                                                                                
+                                                                                                    this.get('/Terminal').feed(object);
+                                                                                                    return true; // do not handle!!! -> later maybe in console..
                                                                                                 }
-                                                                                                console.log(object);
+                                                                                               // console.log(object);
                                                                                                 var val =  JSON.parse(object);
                                                                                         
                                                                                                 if (typeof(val['hover-node']) != 'undefined') {
