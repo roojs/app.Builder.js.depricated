@@ -317,7 +317,10 @@ Roo = XObject.define(
                 ret = [];
             }
             ret.push(xtype);
-            return ret.join('.');
+            var str =  ret.join('.');
+            
+            var pm = imports.Builder.Provider.ProjectManager.ProjectManager;
+            return pm.getPalete(ret.join('.'));
             
                             
                                  
