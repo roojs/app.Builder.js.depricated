@@ -82,7 +82,7 @@ Builder  = {
         
         
         this.munge(cfg);
-        //console.log(cfg);return;
+        console.log(this.dump(cfg));return;
         // we draw either a dialog or a tab..
         
         if (cfg.xtype == 'LayoutDialog') {
@@ -210,8 +210,7 @@ Builder  = {
             while (bits.length) {
                 cfg.xns = cfg.xns[bits.shift()]; 
             }
-            
-            
+             
         }
         
         // we can overlay some event handlers here..
