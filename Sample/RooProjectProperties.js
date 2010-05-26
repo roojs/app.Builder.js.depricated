@@ -80,7 +80,8 @@ RooProjectProperties=new XObject({
                     items : [
                         {
                             xtype: GtkSource.View,
-                            pack : "add"
+                            pack : "add",
+                            id : "view"
                         }
                     ]
                 }
