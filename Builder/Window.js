@@ -252,9 +252,8 @@ Window=new XObject({
                                                                 }
                                                             },
                                                             getRenderer : function() {
-                                                                   var model = this.get('model');
-                                                            	print("RENDER VIEW?" + model.file.getType());
-                                                            	switch( model.file.getType()) {
+                                                            
+                                                            	switch( this.getActiveFile().getType()) {
                                                             		case 'Roo':
                                                             		    return this.get('/RightBrowser.view');
                                                             		case 'Gtk':
@@ -272,6 +271,23 @@ Window=new XObject({
                                                             
                                                                 view.selection.get_selected(model.el, iter);
                                                                 return model.el.get_path(iter).to_string();
+                                                            },
+                                                            getActiveFile : function() {
+                                                                return this.get('model').file;
+                                                            },
+                                                            getActiveElement : function() {
+                                                            
+                                                                 var path = this.getActivePath();
+                                                                 if (!path) {
+                                                                    return false;
+                                                                 }
+                                                                 var iter = new Gtk.TreeIter();
+                                                                 this.get('model').el.get_iter_from_string(iter, path);
+                                                                 
+                                                                 var value = new GObject.Value('');
+                                                                 this.get('model').el.get_value(iter, 2, value);
+                                                                    
+                                                                 return JSON.parse(value.value);
                                                             },
                                                             items : [
                                                                 {
@@ -568,7 +584,7 @@ Window=new XObject({
                                                                                 
                                                                                 
                                                                                 // var val = "";
-                                                                                value = new GObject.Value('');
+                                                                                var value = new GObject.Value('');
                                                                                 this.get('/LeftTree.model').el.get_value(iter, 2, value);
                                                                                 this.get('/LeftTree.model').activePath = this.get('/LeftTree.model').el.get_path(iter).to_string();
                                                                                 
@@ -1384,7 +1400,7 @@ Window=new XObject({
                                                                                                 this.get('/LeftProjectTree.view').el.expand_all();
                                                                                     },
                                                                                     load : function(tr,iter) {
-                                                                                        console.dump(tr);
+                                                                                      //  console.dump(tr);
                                                                                                 console.log('Project tree load: ' + tr.length);
                                                                                                 var citer = new Gtk.TreeIter();
                                                                                                 //this.insert(citer,iter,0);
@@ -2040,6 +2056,8 @@ Window=new XObject({
                                                                             case 'number':
                                                                             case 'uint':
                                                                             case 'int':
+                                                                            case 'float':
+                                                                            case 'gfloat':
                                                                                 return parseFloat(val); // Nan ?? invalid!!?
                                                                             case 'boolean':
                                                                                 return val == 'true' ? true : false;
@@ -2493,6 +2511,17 @@ Window=new XObject({
                                                                                         	    "console.log(Builder.dump(Builder));");   
                                                                                         }
                                                                                     }
+                                                                                },
+                                                                                {
+                                                                                    xtype: Gtk.Button,
+                                                                                    pack : "add",
+                                                                                    label : "Set Default Javascript",
+                                                                                    listeners : {
+                                                                                        "button_press_event":function (self, event) {
+                                                                                            this.get('/RooProjectProperties').show();
+                                                                                            return false;
+                                                                                        }
+                                                                                    }
                                                                                 }
                                                                             ]
                                                                         },
@@ -2513,7 +2542,7 @@ Window=new XObject({
                                                                                         XObject.prototype.init.call(this);
                                                                                         // this may not work!?
                                                                                         this.el.open('file:///' + __script_path__ + '/../builder.html');
-                                                                                                                
+                                                                                                              
                                                                                         Gtk.drag_dest_set
                                                                                         (
                                                                                                 this.el,              /* widget that will accept a drop */
@@ -2527,25 +2556,70 @@ Window=new XObject({
                                                                                         Gtk.drag_dest_set_target_list(this.el, this.get('/Window').targetList);
                                                                                     },
                                                                                     renderJS : function(data) {
-                                                                                       print("HTML RENDERING");
+                                                                                        print("HTML RENDERING");
+                                                                                        /// prevent looping..
+                                                                                        //if (this.pendingRedraw) {
+                                                                                        //   print("pending redraw active?!");
+                                                                                         //   return;
+                                                                                        //}
+                                                                                        
+                                                                                        
+                                                                                        if (!this.get('/Window.LeftTree').getActiveFile()) {
+                                                                                            return;
+                                                                                        }
+                                                                                        
+                                                                                        var project = this.get('/Window.LeftTree').getActiveFile().project;
+                                                                                        //print (project.fn);
+                                                                                        
+                                                                                        project.runhtml  = project.runhtml || '';
+                                                                                        
+                                                                                    
+                                                                                        this.runhtml  = this.runhtml || '';
+                                                                                        
+                                                                                        if (project.runhtml != this.runhtml) {
+                                                                                            // then we need to reload the browser using
+                                                                                            // load_html_string..
+                                                                                            
+                                                                                            // then trigger a redraw once it's loaded..
+                                                                                            this.pendingRedraw = true;
+                                                                                     
+                                                                                            this.runhtml = project.runhtml;
+                                                                                            
+                                                                                            var html = imports.File.File.read(__script_path__ + '/../builder.html');
+                                                                                            html = html.replace('</head>', this.runhtml + '</head>');
+                                                                                            print("LOAD HTML " + html);
+                                                                                            this.el.load_html_string( html , 'file:///' + __script_path__ + '/../builder.html');
+                                                                                            // should trigger load_finished!
+                                                                                            return;
+                                                                                        
+                                                                                        }
+                                                                                        
+                                                                                        this.pendingRedraw = false;    
+                                                                                         
+                                                                                        
                                                                                         this.renderedData = data;
                                                                                         var str = JSON.stringify(data) ;
                                                                                         
                                                                                         if (!this.ready) {
                                                                                             console.log('not loaded yet');
                                                                                         }
-                                                                                        Seed.print("RENDER:" + str);
-                                                                                        imports.File.File.write('/tmp/builder.debug.js', "Builder.render(" + JSON.stringify(data) + ");");
+                                                                                        //Seed.print("RENDER:" + str);
+                                                                                        //imports.File.File.write('/tmp/builder.debug.js', "Builder.render(" + JSON.stringify(data) + ");");
+                                                                                     
                                                                                         this.el.execute_script("Builder.render(" + JSON.stringify(data) + ");");
                                                                                     },
                                                                                     listeners : {
                                                                                         "load_finished":function (self, object) {
-                                                                                        	 if (this.ready) { // dont do it twice!
-                                                                                        	    return; 
-                                                                                        	}
+                                                                                        	// if (this.ready) { // dont do it twice!
+                                                                                        	 //   return; 
+                                                                                        	//}
                                                                                         	this.ready = true;
+                                                                                                this.pendingRedraw = false;
+                                                                                                var js = this.get('/LeftTree.model').toJS();
+                                                                                                if (js && js[0]) {
+                                                                                                	this.renderJS(js[0]);
+                                                                                            	}
                                                                                         
-                                                                                        	this.renderJS(this.get('/LeftTree.model').toJS()[0]);
                                                                                         },
                                                                                         "script_alert":function (self, object, p0) {
                                                                                              	print(p0);
@@ -2698,6 +2772,7 @@ Window=new XObject({
                                                                     id : "RightGtkView",
                                                                     renderJS : function(data, withDebug)
                                                                     {
+                                                                          this.highlightWidget = false;
                                                                          if (!data) {
                                                                                      return; 
                                                                         }
@@ -2822,16 +2897,17 @@ Window=new XObject({
                                                                     		} catch(e) {    continue; }
                                                                                     
                                                                     		k = k.substring(1);
-                                                                                  print(k + '=' + kv);
+                                                                                 // print(k + '=' + kv);
                                                                     	}
                                                                             if (k[0] == '|') { // should be boolean or number..
                                                                     		k = k.substring(1);
-                                                                    		print(k + '=' + kv);
+                                                                    		//print(k + '=' + kv);
                                                                             }
                                                                              
                                                                     	if (k == 'show_tabs') { // force tab showing for notebooks.
                                                                                kv = true;
                                                                             }
+                                                                            print(k + '=' + typeof(kv) + " : " + kv);
                                                                             ctr_args[k] = kv;
                                                                             
                                                                         } 
@@ -3222,6 +3298,25 @@ Window=new XObject({
                                                             xtype: Gtk.ScrolledWindow,
                                                             pack : "add",
                                                             id : "Help",
+                                                            show : function() {
+                                                                
+                                                                var file = this.get('/LeftTree').getActiveFile();
+                                                                if (!file) {
+                                                                    return;
+                                                                }
+                                                                var activeEl = this.get('/LeftTree').getActiveElement();
+                                                                var xtype = file.guessName( activeEl )
+                                                                if (!xtype || !xtype.length) {
+                                                                    return;
+                                                                }
+                                                                this.get('/Window.view-help-nb').el.set_current_page(1);
+                                                                
+                                                                // get the active element being edited.
+                                                                var helpurl = file.getHelpUrl(xtype);       
+                                                                
+                                                                // now load the help info in the page..
+                                                                this.get('help-view').el.open(helpurl);
+                                                            },
                                                             items : [
                                                                 {
                                                                     xtype: WebKit.WebView,
@@ -3232,7 +3327,8 @@ Window=new XObject({
                                                                        this.get('/Window.help-view').el.open(
                                                                          "http://devel.akbkhome.com/seed/");
                                                                     
-                                                                    }
+                                                                    },
+                                                                    zoom_level : 0.8
                                                                 }
                                                             ]
                                                         }
@@ -3269,14 +3365,7 @@ Window=new XObject({
                                                             load : function(str) {
                                                             
                                                             // show the help page for the active node..
-                                                               this.get('/Window.view-help-nb').el.set_current_page(1);
-                                                            
-                                                            // get the active element being edited.
-                                                               var xtype = this.get('/LeftTree.model').file.guessName(
-                                                            	this.get('/MidPropTree').activeElement);
-                                                            // now load the help info in the page..
-                                                               this.get('/Window.help-view').el.open(
-                                                                 "http://devel.akbkhome.com/seed/" + xtype + ".html");
+                                                               this.get('/Help').show();
                                                             
                                                             
                                                                this.get('/BottomPane').el.set_current_page(0);
