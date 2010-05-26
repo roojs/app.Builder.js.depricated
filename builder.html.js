@@ -96,7 +96,7 @@ Builder  = {
             this.dialogroot = Roo.get( document.body).createChild({
                 id : cfg.id
             });
-             
+            
             this.dialog = new Roo[cfg.xtype](this.dialogroot, cfg);
             //this.dialog.el.on('click', this.panelClick, this);
             this.dialog.show();
@@ -127,8 +127,14 @@ Builder  = {
                 }
             });
         }
-        this.layoutbase.addxtype(  cfg ); 
-        
+        try {
+            console.log("ADDING CFG");    
+            this.layoutbase.addxtype(  cfg ); 
+        } catch (e) {
+            console.log("GOT ERROR?");    
+            console.log(e);
+            console.log(JSON.stringify(e));
+        }
         
         
     },
