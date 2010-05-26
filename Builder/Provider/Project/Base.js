@@ -79,16 +79,20 @@ Base = XObject.define(
         {
             var ret = { };
             var _this = this;
-            ['id', 'fn', 'paths', 'xtype', 'name'].forEach(  function(k) {
+            for (var k in _this) {
+                if (['files', 'tree'].indexOf(k) > -1) {
+                    continue;
+                }
                 ret[k] = _this[k];
                 
-            });
-            ret.files = { }; 
-            // deal with files..
-            for (var f in this.files) {
-                print(f);
-                ret.files[f] = this.files[f].toJsonArray();
             }
+            
+            
+            // deal with files..
+            //for (var f in this.files) {
+            //    print(f);
+            //    ret.files[f] = this.files[f].toJsonArray();
+           // }
             
             
             return JSON.stringify(ret);
