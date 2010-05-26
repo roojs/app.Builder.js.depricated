@@ -570,7 +570,7 @@ Window=new XObject({
                                                                                 
                                                                                 
                                                                                 // var val = "";
-                                                                                value = new GObject.Value('');
+                                                                                var value = new GObject.Value('');
                                                                                 this.get('/LeftTree.model').el.get_value(iter, 2, value);
                                                                                 this.get('/LeftTree.model').activePath = this.get('/LeftTree.model').el.get_path(iter).to_string();
                                                                                 
@@ -2548,7 +2548,16 @@ Window=new XObject({
                                                                                             console.log('not loaded yet');
                                                                                         }
                                                                                         Seed.print("RENDER:" + str);
-                                                                                        imports.File.File.write('/tmp/builder.debug.js', "Builder.render(" + JSON.stringify(data) + ");");
+                                                                                        //imports.File.File.write('/tmp/builder.debug.js', "Builder.render(" + JSON.stringify(data) + ");");
+                                                                                        if (!this.get('/Window.LeftTree').getActiveFile()) {
+                                                                                            return;
+                                                                                        }
+                                                                                        var project = this.get('/Window.LeftTree').getActiveFile().project;
+                                                                                        //print (project.fn);
+                                                                                        project.runjs = project.runjs || '';
+                                                                                        if (project.runjs.length) {
+                                                                                            this.el.execute_script(project.runjs);
+                                                                                        }
                                                                                         this.el.execute_script("Builder.render(" + JSON.stringify(data) + ");");
                                                                                     },
                                                                                     listeners : {
