@@ -3449,7 +3449,8 @@ Window=new XObject({
                                                             init : function() {
                                                                 XObject.prototype.init.call(this);
                                                                 this.el.set_size (80, 1000);
-                                                            }
+                                                            },
+                                                            scrollback_lines : 1000
                                                         }
                                                     ]
                                                 }
