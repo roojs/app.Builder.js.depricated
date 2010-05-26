@@ -3328,9 +3328,7 @@ Window=new XObject({
                                                                          "http://devel.akbkhome.com/seed/");
                                                                     
                                                                     },
-                                                                    listeners : {
-                                                                        
-                                                                    }
+                                                                    zoom_level : 0.8
                                                                 }
                                                             ]
                                                         }
