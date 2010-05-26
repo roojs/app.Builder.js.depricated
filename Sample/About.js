@@ -15,7 +15,16 @@ About=new XObject({
     copyright : "LGPL",
     license : "LGPL",
     program_name : "app.Builder.js",
-    modal : true
+    modal : true,
+    listeners : {
+        "response":function (self, response_id) {
+            this.el.hide();
+        },
+        "delete_event":function (self, event) {
+            this.el.hide();
+            return true;
+        }
+    }
 });
 About.init();
 XObject.cache['/About'] = About;
