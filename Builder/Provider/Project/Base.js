@@ -84,8 +84,10 @@ Base = XObject.define(
                 if (['files', 'tree'].indexOf(k) > -1) {
                     continue;
                 }
-                if ((typeof(_this[k]) == 'object') ||(typeof(_this[k]) == 'function')) {
-                    continue;
+                if (k != 'paths') {
+                    if ((typeof(_this[k]) == 'object') ||(typeof(_this[k]) == 'function')) {
+                        continue;
+                    }
                 }
                 print("Storing " + k);
                 ret[k] = _this[k];
