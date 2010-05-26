@@ -182,7 +182,7 @@ Gtk = XObject.define(
             File.write(fn, src);
             
             return fn;
-        }
+        },
         /*
         getTree : function( o ) {
             
@@ -190,5 +190,9 @@ Gtk = XObject.define(
             
         }
         */
+        getHelpUrl : function(cls)
+        {
+            return 'http://devel.akbkhome.com/seed/' + cls + '.html';
+        }
         
     });
