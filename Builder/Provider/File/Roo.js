@@ -345,7 +345,7 @@ Roo = XObject.define(
                 return false;
             }
             var xtype = ar['xtype'] + '';
-            if (xtype == '*') { // prefixes????
+            if (xtype[0] == '*') { // prefixes????
                 xtype  = xtype.substring(1);
             }
             if (xtype.match(/^Roo/)) {
