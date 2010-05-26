@@ -16,6 +16,7 @@ About=new XObject({
     license : "LGPL",
     program_name : "app.Builder.js",
     modal : true,
+    website : "http://www.akbkhome.com/blog.php",
     listeners : {
         "response":function (self, response_id) {
             this.el.hide();
