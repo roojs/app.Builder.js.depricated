@@ -184,7 +184,9 @@ Builder  = {
                     //    alert(cfg[p]);
                    // }
                    
-                } catch(e) {  console.log('Error evaluating: '  + cfg[p] + "\r\n" + JSON.stringify(e)); };
+                } catch(e) {  
+                    console.log('Error evaluating: '  + cfg[p] + "\r\n" + JSON.stringify(e)); 
+                };
                 delete cfg[p];
                     
                 
@@ -197,6 +199,19 @@ Builder  = {
             }
             // normal..
               
+        }
+        
+        if (cfg.xtype && cfg.xtype.match(/^Roo\./) && !cfg.xns) {
+            // xtype contains full path..
+            var bits = cfg.xtype.split('.');
+            bits.shift(); // remove roo..
+            cfg.xtype = bits.pop(); // get the last bit..
+            cfg.xns = Roo;
+            while (bits.length) {
+                cfg.xns = cfg.xns[bits.shift()]; 
+            }
+            
+            
         }
         
         // we can overlay some event handlers here..
