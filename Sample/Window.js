@@ -2570,7 +2570,7 @@ Window=new XObject({
                                                                                                 var     jsstr = JSON.stringify(js[0]);
                                                                                                
                                                                                                 var runbuilder = '<script type="text/javascript">' + "\n" + 
-                                                                                                    "Roo.onReady(function() { Builder.render(" + jsstr + "); });\n" +
+                                                                                                    " Builder.render(" + jsstr + ");\n" +
                                                                                                     '</script>';
                                                                                                 
                                                                                                 html = html.replace('</body>', runbuilder + '</body>');
