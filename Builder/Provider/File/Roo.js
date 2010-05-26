@@ -102,6 +102,11 @@ Roo = XObject.define(
                 _this.parent =  cfg.parent;
                 _this.title =  cfg.title;
                 _this.items = cfg.items || []; 
+                
+                _this.fixItems(_this, false);
+                
+                
+                
                 cb();
                 /*
                 var tstream =  new JSDOC.TextStream(src);
@@ -134,8 +139,39 @@ Roo = XObject.define(
             
             
         },
-        
-        
+        /**
+         * old code had broken xtypes and used arrays differently,
+         * this code should try and clean it up..
+         * 
+         * 
+         */
+        fixItems : function(node, fixthis)
+        {
+            if (fixthis) {
+                // fix xtype.
+                var fn = this.guessName(node);
+                if (fn) {
+                    var bits = fn.split('.');
+                    node.xtype = bits.pop();
+                    node['|xns'] = bits.join('.');
+                }
+                // fix array???
+                
+                
+                
+                
+            }
+            if (!node.items || !node.items.length) {
+                return;
+            }
+            var _this = this;
+            node.forEach(node.items, function(i) {
+                _this.fixItems(i, true);
+            });
+            
+            
+            
+        },
         
         toSource: function()
         {
