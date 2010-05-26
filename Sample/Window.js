@@ -2502,20 +2502,22 @@ Window=new XObject({
                                                                                 {
                                                                                     xtype: Gtk.Button,
                                                                                     pack : "pack_start,false,false,0",
-                                                                                    label : "Dump HTML to console",
+                                                                                    label : "Redraw",
                                                                                     listeners : {
-                                                                                        "activate":function (self) {
-                                                                                         	this.get('/RightBrowser.view').el.execute_script(
-                                                                                                    "console.log(document.body.innerHTML);");
-                                                                                                this.get('/RightBrowser.view').el.execute_script(
-                                                                                        	    "console.log(Builder.dump(Builder));");   
+                                                                                        "activate":function (self) 
+                                                                                        {
+                                                                                         	 
+                                                                                            var js = this.get('/LeftTree.model').toJS();
+                                                                                            if (js && js[0]) {
+                                                                                                this.get('/RightBrowser.view').renderJS(js[0]);
+                                                                                            } 
                                                                                         }
                                                                                     }
                                                                                 },
                                                                                 {
                                                                                     xtype: Gtk.Button,
                                                                                     pack : "add",
-                                                                                    label : "Set Default Javascript",
+                                                                                    label : "Set extra HTML in render",
                                                                                     listeners : {
                                                                                         "button_press_event":function (self, event) {
                                                                                             this.get('/RooProjectProperties').show();
