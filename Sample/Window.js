@@ -3437,12 +3437,18 @@ Window=new XObject({
                                                             xtype: Vte.Terminal,
                                                             pack : "add",
                                                             id : "Terminal",
-                                                            feed : function(str) {
+                                                            feed : function(istr) {
+                                                                var str = istr.replace("\n", "\r\n") + "\r\n";
                                                                 // we should make ourselves visable!!!
                                                                 this.get('/BottomPane').el.show();
                                                                 this.get('/BottomPane').el.set_current_page(1);
-                                                                
-                                                                this.el.feed(str + "\r\n",str.length+2);
+                                                            
+                                                                this.el.feed(str ,str.length);
+                                                            },
+                                                            scroll_on_output : true,
+                                                            init : function() {
+                                                                XObject.prototype.init.call(this);
+                                                                this.el.set_size (80, 1000);
                                                             }
                                                         }
                                                     ]
