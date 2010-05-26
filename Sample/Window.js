@@ -3101,22 +3101,19 @@ Window=new XObject({
                                                                                     label : "Run The Application",
                                                                                     listeners : {
                                                                                         "button_press_event":function (self, event) {
-                                                                                          // call render on left tree - with special option!?!
+                                                                                            // call render on left tree - with special option!?!
                                                                                          
-                                                                                        
-                                                                                        
-                                                                                        	print("GET PROEJCT");
-                                                                                        	var pr = this.get('/LeftProjectTree').getActiveProject();
+                                                                                            //print("GET PROEJCT");
+                                                                                            var pr = this.get('/LeftProjectTree').getActiveProject();
                                                                                           
-                                                                                        var dir = '';
-                                                                                         for (var i in pr.paths) { 
-                                                                                              dir = i;
-                                                                                              break;
-                                                                                          }
-                                                                                           var runner = GLib.path_get_dirname (__script_path__) + '/gtkrun.js'; 
-                                                                                           print ("RUN DIR:" + dir);
-                                                                                            this.get('/BottomPane').el.show();
-                                                                                           this.get('/BottomPane').el.set_current_page(1);
+                                                                                            var dir = '';
+                                                                                            for (var i in pr.paths) { 
+                                                                                                dir = i;
+                                                                                                break;
+                                                                                            }
+                                                                                            var runner = GLib.path_get_dirname (__script_path__) + '/gtkrun.js'; 
+                                                                                            this.get('/Terminal').feed("RUN DIR:" + dir);
+                                                                                            
                                                                                             this.get('/Terminal').el.fork_command( null , [], [], GLib.path_get_dirname (__script_path__) 
                                                                                         	, false,false,false); 
                                                                                             var cmd = "/usr/bin/seed " + runner + " " + dir + "\n";
@@ -3441,7 +3438,9 @@ Window=new XObject({
                                                             id : "Terminal",
                                                             feed : function(str) {
                                                                 // we should make ourselves visable!!!
+                                                                this.get('/BottomPane').el.show();
                                                                 this.get('/BottomPane').el.set_current_page(1);
+                                                            
                                                                 this.el.feed(str,str.length);
                                                             }
                                                         }
