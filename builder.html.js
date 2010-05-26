@@ -222,7 +222,7 @@ Builder  = {
         }
         if (cfg.xtype) {
             if (!cfg.xns || typeof(cfg.xns[cfg.xtype]) == 'undefined') {
-                throw "Invalid Xtype " + cfg.xtreepath;
+                throw "Invalid Xtype " + cfg.xtype + ' on ' + cfg.xtreepath;
             }
         }
         
