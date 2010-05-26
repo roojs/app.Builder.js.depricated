@@ -183,7 +183,7 @@ Builder  = {
                     //    alert(cfg[p]);
                    // }
                    
-                } catch(e) {  console.log('Error evaluating: '  + cfg[p]); };
+                } catch(e) {  console.log('Error evaluating: '  + cfg[p] + "\n" + e.toString()); };
                 delete cfg[p];
                     
                 
