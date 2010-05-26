@@ -101,7 +101,7 @@ Roo = XObject.define(
             }
             return this.proplist[ename][type];
         },
-        findType: function(name)
+        guessName: function(name)
         {
             this.loadProps();
             if (typeof(this.proplist[name]) != 'undefined') {
