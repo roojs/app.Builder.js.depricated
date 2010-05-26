@@ -2542,10 +2542,10 @@ Window=new XObject({
                                                                                     renderJS : function(data) {
                                                                                         print("HTML RENDERING");
                                                                                         /// prevent looping..
-                                                                                        if (this.pendingRedraw) {
-                                                                                            print("pending redraw active?!");
-                                                                                            return;
-                                                                                        }
+                                                                                        //if (this.pendingRedraw) {
+                                                                                        //   print("pending redraw active?!");
+                                                                                         //   return;
+                                                                                        //}
                                                                                         
                                                                                         
                                                                                         if (!this.get('/Window.LeftTree').getActiveFile()) {
