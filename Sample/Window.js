@@ -275,6 +275,20 @@ Window=new XObject({
                                                             getActiveFile : function() {
                                                                 return this.get('model').file;
                                                             },
+                                                            getActiveElement : function() {
+                                                            
+                                                                 var path = this.getActivePath();
+                                                                 if (!path) {
+                                                                    return false;
+                                                                 }
+                                                                 var iter = new Gtk.TreeIter();
+                                                                 this.get('model').el.get_iter_from_string(iter, path);
+                                                                 
+                                                                 var value = new GObject.Value('');
+                                                                 this.get('model').el.get_value(iter, 2, value);
+                                                                    
+                                                                 return JSON.parse(value.value);
+                                                            },
                                                             items : [
                                                                 {
                                                                     xtype: Gtk.TreeView,
@@ -3282,6 +3296,21 @@ Window=new XObject({
                                                             xtype: Gtk.ScrolledWindow,
                                                             pack : "add",
                                                             id : "Help",
+                                                            show : function() {
+                                                                
+                                                                  var file = this.get('/LeftTree').getActiveFile();
+                                                                  if (!file) {
+                                                                    return;
+                                                                  }
+                                                                  var activeEl = this.get('/LeftTree').getActiveElement();
+                                                                  var xtype = file.guessName( activeEl )
+                                                            
+                                                                  this.get('/Window.view-help-nb').el.set_current_page(1);
+                                                                    // get the active element being edited.
+                                                                  var helpurl = file.getHelpUrl(xtype);       
+                                                                    // now load the help info in the page..
+                                                                  this.get('help-view').el.open(helpurl);
+                                                            },
                                                             items : [
                                                                 {
                                                                     xtype: WebKit.WebView,
