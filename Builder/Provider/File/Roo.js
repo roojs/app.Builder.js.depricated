@@ -337,7 +337,7 @@ Roo = XObject.define(
                 "        module : " + this.name + ",",
                 "        region : '" + this.region   +"',",
                 "        parent : " + (this.parent ||  'false') + ",",
-                "        name : \"" + (b.title  || "unnamed module") + "\"",
+                "        name : \"" + (this.title  || "unnamed module") + "\"",
                 "        disabled : " + (this.disabled || 'false') +" ",
                 "    });",
                 "});",
