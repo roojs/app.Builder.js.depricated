@@ -133,23 +133,6 @@ DialogNewComponent=new XObject({
                             },
             items : [
                 {
-                    xtype: Gtk.HBox,
-                    pack : "pack_start,false,true,0",
-                    items : [
-                        {
-                            xtype: Gtk.Label,
-                            pack : "pack_start,false,true,0",
-                            label : "Component Name",
-                            xpad : 10
-                        },
-                        {
-                            xtype: Gtk.Entry,
-                            pack : "pack_end,true,true,0",
-                            id : "xnsid"
-                        }
-                    ]
-                },
-                {
                     xtype: Gtk.Table,
                     n_columns : 2,
                     n_rows : 3,
@@ -158,9 +141,23 @@ DialogNewComponent=new XObject({
                     items : [
                         {
                             xtype: Gtk.Label,
-                            x_options : 0,
-                            label : "parent",
+                            label : "Component Name",
                             pack : "add",
+                            x_options : 0,
+                            xalign : 1,
+                            justify : Gtk.Justification.RIGHT
+                        },
+                        {
+                            xtype: Gtk.Entry,
+                            id : "xnsid",
+                            pack : "add",
+                            visible : true
+                        },
+                        {
+                            xtype: Gtk.Label,
+                            label : "Title",
+                            pack : "add",
+                            x_options : 0,
                             xalign : 1,
                             justify : Gtk.Justification.RIGHT,
                             visible : true
