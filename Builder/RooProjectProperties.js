@@ -28,11 +28,11 @@ RooProjectProperties=new XObject({
     },
     default_width : 500,
     listeners : {
-        delete_event : function (self, event) {
+        "delete_event":function (self, event) {
             this.el.hide()
             return true;
         },
-        response : function (self, response_id) {
+        "response":function (self, response_id) {
            print(response_id);
            if (!response_id) {
               this.el.hide();
