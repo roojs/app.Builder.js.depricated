@@ -1868,7 +1868,7 @@ Window=new XObject({
                                                                             
                                                                             this.el.set_value(iter, 3, '' + this.toShort(ar.listeners[i]));
                                                                             this.el.set_value(iter, 4, 'function');
-                                                                            this.el.set_value(iter, 5, type + ' : ' + ar.listeners[i]);
+                                                                            this.el.set_value(iter, 5, i + ' : ' + ar.listeners[i]);
                                                                         }
                                                                         
                                                                         
