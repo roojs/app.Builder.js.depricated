@@ -203,7 +203,8 @@ Base = XObject.define(
                     typeof(obj['|xns']) != 'undefined' &&
                     typeof(obj['xtype']) != 'undefined'
                 ) {
-                    els.push('xtype: '+ obj['|xns'] + '.' + obj['xtype']);
+                    this.mungeXtype(obj['|xns'] + '.' + obj['xtype'], els);
+                    //els.push('xtype: '+ obj['|xns'] + '.' + obj['xtype']);
                     skip.push('|xns','xtype');
                 }
             
