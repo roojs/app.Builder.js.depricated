@@ -218,7 +218,8 @@ Base = XObject.define(
                         return;
                     }
                     // we have a prop...
-                    var prop = pl['*prop'];
+                    var prop = pl['*prop'] + '';
+                    delete pl['*prop'];
                     if (!prop.match(/\[\]$/)) {
                         // it's a standard prop..
                         obj[prop] = pl;
