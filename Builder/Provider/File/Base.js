@@ -221,20 +221,21 @@ Base = XObject.define(
                     var prop = pl['*prop'];
                     if (!prop.match(/\[\]$/)) {
                         // it's a standard prop..
-                        obj.items[prop] = pl;
+                        obj[prop] = pl;
                         keys.push(p);
                         return;
                     }
                     // it's an array type..
-                    obj.items[prop] = obj.item[prop]  || [];
-                    obj.items[prop].push(pl);
+                    obj[prop] = obj[prop]  || [];
+                    obj[prop].push(pl);
                     if (keys.indexOf(prop) < -1) {
                         keys.push(prop);
                     }
                     
                     
                     
-                })
+                });
+                obj.items = newitems;
                 
                 
             }
