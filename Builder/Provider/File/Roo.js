@@ -268,7 +268,7 @@ Roo = XObject.define(
             return [
                 "//<script type=\"text/javascript\">",
                 "",
-                "// Auto generated file - created by Builder Module - do not edit directly",
+                "// Auto generated file - created by app.Builder.js- do not edit directly",
                 ""
             ].join("\n");
             
