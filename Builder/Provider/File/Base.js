@@ -209,11 +209,35 @@ Base = XObject.define(
                 }
             
             
-            if (!isArray) {
-                if (obj.items && obj.items.length) {
-                     console.dump(obj.items);
-                }
-               }
+            if (!isArray && obj.items && obj.items.length) {
+                // look for props..
+                var newitems = [];
+                obj.items.forEach(function(pl) {
+                    if (typeof(pl['*prop']) == 'undefined') {
+                        newitems.push(pl);
+                        return;
+                    }
+                    // we have a prop...
+                    var prop = pl['*prop'];
+                    if (!prop.match(/\[\]$/)) {
+                        // it's a standard prop..
+                        obj.item[prop] = pl;
+                        keys.push(p);
+                        return;
+                    }
+                    // it's an array type..
+                    obj.item[prop] = obj.item[prop]  || [];
+                    obj.item[prop].push(pl);
+                    if (keys.indexOf(prop) < -1) {
+                        keys.push(prop);
+                    }
+                    
+                    
+                    
+                })
+                
+                
+            }
             
             
             
