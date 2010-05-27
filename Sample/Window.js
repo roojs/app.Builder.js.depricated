@@ -1895,7 +1895,7 @@ Window=new XObject({
                                                                     },
                                                                     add : function(info) {
                                                                           // info includes key, val, skel, etype..
-                                                                                                 console.dump(info);
+                                                                                  console.dump(info);
                                                                                 type = info.type.toLowerCase();
                                                                                 var data = this.toJS();
                                                                                 
