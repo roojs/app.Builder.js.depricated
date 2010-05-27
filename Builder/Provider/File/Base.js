@@ -208,6 +208,17 @@ Base = XObject.define(
                     skip.push('|xns','xtype');
                 }
             
+            
+            if (!isArray) {
+                if (obj.items && obj.items.length) {
+                    console.dump(obj.items);
+                }
+               }
+            
+            
+            
+            
+            
             var _this = this;
             
             var left =  '';
