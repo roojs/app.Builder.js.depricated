@@ -142,7 +142,7 @@ Builder  = {
     },
   
     
-    munge :function (cfg, isListeners)
+    munge :function (cfg, isListener)
     {
         var xitems = false;
         //cfg.cls = cfg.cls || '';
@@ -174,7 +174,7 @@ Builder  = {
                 continue;
             }
             // SPECIAL - PIPE
-            if (p.charAt(0) == '|' || isListeners) {
+            if (p.charAt(0) == '|' || isListener) {
                 
                 if (!cfg[p].length) {
                     delete cfg[p];
@@ -188,10 +188,10 @@ Builder  = {
                     /** eval:var:_tmp **/
                     // stupid IE can not return objects evaluated..
                     eval('_tmp =(' + cfg[p] + ')');
-                    cfg[isListeners ? p : p.substr(1)] = _tmp;
-                    if (typeof(_tmp) == 'undefined') {
-                        alert(cfg[p]);
-                    }
+                    cfg[isListener ? p : p.substr(1)] = _tmp;
+                    //if (typeof(_tmp) == 'undefined') {
+                    //    alert(cfg[p]);
+                   // }
                    
                 } catch(e) {  
                     console.log('Error evaluating: '  + cfg[p] + "\r\n" + JSON.stringify(e)); 
