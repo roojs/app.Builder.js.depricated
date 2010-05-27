@@ -3097,8 +3097,10 @@ Window=new XObject({
                                                                                 var c = n % item.n_columns;
                                                                                 var r = Math.floor(n/item.n_columns);
                                                                                 ch.pack = [ 'attach', c, c+1, r, r+1, 
-                                                                                        ch.x_options || 5,ch.y_options || 5,
-                                                                                         ch.x_padding || 0, ch.y_padding || 0
+                                                                                         typeof(ch.x_options) == 'undefined' ?  5 : ch.x_options,
+                                                                                            typeof(ch.y_options) == 'undefined' ?  5 : ch.y_options,
+                                                                                            typeof(ch.x_padding) == 'undefined' ?  0 : ch.x_padding,
+                                                                                            typeof(ch.x_padding) == 'undefined' ?  0 : ch.x_padding,
                                                                                 ].join(',');
                                                                             }
                                                                         
