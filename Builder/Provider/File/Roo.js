@@ -230,14 +230,18 @@ Roo = XObject.define(
         {
             // dump the file tree back out to a string.
             
-            if (typeof(this.items[0]['|module']) != 'undefined') {
-                return this.toSourceStdClass();
+            // we have 2 types = dialogs and components
+            // 
+            var top = this.guessType(this.items[0]);
+            if (top.match(/Dialog/) {
+                return this.toSourceDialog();
             }
+            return this.toSourceLayout();
             
-            if (this.items[0].region) {
-                return this.toSourceLayout();
-            }
-            return this.toSourceDialog();
+            /*
+            eventually support 'classes??'
+             return this.toSourceStdClass();
+            */
               
         },
        
