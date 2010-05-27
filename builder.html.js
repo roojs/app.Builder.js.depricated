@@ -143,7 +143,7 @@ Builder  = {
     },
   
     
-    munge :function (cfg)
+    munge :function (cfg, isListeners)
     {
         var xitems = false;
         //cfg.cls = cfg.cls || '';
@@ -165,17 +165,17 @@ Builder  = {
         
         for(var p in cfg){
             // key is not string?!?!?!!?
-            console.log(p);
+          
             if (typeof(p) != 'string') {
                 continue;
             }
             
             if (typeof(cfg[p]) == 'object') { // listeners!!!
-                this.munge(cfg[p]);
+                this.munge(cfg[p], p == 'listeners');
                 continue;
             }
             // SPECIAL - PIPE
-            if (p.charAt(0) == '|') {
+            if (p.charAt(0) == '|' || isListeners) {
                 
                 if (!cfg[p].length) {
                     delete cfg[p];
@@ -189,7 +189,7 @@ Builder  = {
                     /** eval:var:_tmp **/
                     // stupid IE can not return objects evaluated..
                     eval('_tmp =(' + cfg[p] + ')');
-                    cfg[p.substr(1)] = _tmp;
+                    cfg[isListeners ? p : p.substr(1)] = _tmp;
                     if (typeof(_tmp) == 'undefined') {
                         alert(cfg[p]);
                     }
