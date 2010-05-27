@@ -2000,9 +2000,10 @@ Window=new XObject({
                                                                             case 'number':
                                                                             case 'uint':
                                                                             case 'int':
+                                                                                return parseFloat(val); // Nan ?? invalid!!?        
                                                                             case 'float':
                                                                             case 'gfloat':
-                                                                                return parseFloat(val); // Nan ?? invalid!!?
+                                                                                return 1.0 * parseFloat(val); // Nan ?? invalid!!?
                                                                             case 'boolean':
                                                                                 return val == 'true' ? true : false;
                                                                             default: 
