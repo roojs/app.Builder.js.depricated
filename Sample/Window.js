@@ -36,13 +36,13 @@ Window=new XObject({
     default_height : 500,
     id : "Window",
     listeners : {
-        "delete_event":function (self, event) {
+        delete_event : :function (self, event) {
             return false;
         },
-        "destroy":function (self) {
+        destroy : :function (self) {
            Gtk.main_quit();
         },
-        "show":function (self) {
+        show : :function (self) {
           print("WINDOW SHOWING - trying to hide");
         imports.Builder.Provider.ProjectManager.ProjectManager.loadConfig();
          	this.get('/MidPropTree').hideWin();
@@ -74,7 +74,7 @@ Window=new XObject({
                                             use_underline : true,
                                             label : "New _Project",
                                             listeners : {
-                                                "activate":function (self) {
+                                                activate : :function (self) {
                                                          var _this = this;
                                                 	this.get('/EditProject').show({
                                                 	    success : function(pr) {
@@ -89,7 +89,7 @@ Window=new XObject({
                                             label : "_New File",
                                             use_underline : true,
                                             listeners : {
-                                                "activate":function (self) {
+                                                activate : :function (self) {
                                                  	var fn = this.get('/LeftProjectTree.combo').getValue();
                                                         if (!fn) {
                                                             this.get('/LeftProjectTree').showNoProjectSelected();
@@ -112,7 +112,7 @@ Window=new XObject({
                                             pack : "add",
                                             label : "D_elete Project",
                                             listeners : {
-                                                "activate":function (self) {
+                                                activate : :function (self) {
                                                 
                                                 	var fn =  this.get('/LeftProjectTree').get('combo').getValue();
                                                 	if (!fn.length) {
@@ -141,7 +141,7 @@ Window=new XObject({
                                             label : "_Quit",
                                             use_underline : true,
                                             listeners : {
-                                                "activate":function (self) {
+                                                activate : :function (self) {
                                                    Gtk.main_quit();
                                                 }
                                             }
@@ -160,8 +160,10 @@ Window=new XObject({
                             items : [
                                 {
                                     xtype: Gtk.Menu,
-                                    'pro' : "submenu",
                                     pack : "set_submenu",
+                                    listeners : {
+                                        
+                                    },
                                     items : [
                                         {
                                             xtype: Gtk.MenuItem,
@@ -169,7 +171,7 @@ Window=new XObject({
                                             label : "_About",
                                             use_underline : true,
                                             listeners : {
-                                                "activate":function (self) {
+                                                activate : :function (self) {
                                                     this.get('/About').el.run();
                                                 }
                                             }
@@ -207,7 +209,7 @@ Window=new XObject({
                                                        this.el.add_events (Gdk.EventMask.BUTTON_MOTION_MASK );
                                                     },
                                                     listeners : {
-                                                        "activate":function (self) {
+                                                        activate : :function (self) {
                                                         	var nb = this.get('/LeftTopPanel.notebook');
                                                         	if (this.el.expanded) {
                                                         	    // now expanded..
@@ -230,7 +232,7 @@ Window=new XObject({
                                                         	}
                                                         	nb.el.set_current_page(0);
                                                         },
-                                                        "enter_notify_event":function (self, event) {
+                                                        enter_notify_event : :function (self, event) {
                                                              this.el.expanded = !this.el.expanded;
                                                         //if (this.el.expanded ) {
                                                             this.listeners.activate.call(this);
@@ -379,7 +381,7 @@ Window=new XObject({
                                                                           this.el.scroll_to_cell(tp, null, false, 0,0);
                                                                     },
                                                                     listeners : {
-                                                                        "button_press_event":function (self, ev) {
+                                                                        button_press_event : :function (self, ev) {
                                                                          	console.log("button press?");
                                                                                 if (ev.type != Gdk.EventType.BUTTON_PRESS  || ev.button.button != 3) {
                                                                                     print("click" + ev.type);
@@ -398,7 +400,7 @@ Window=new XObject({
                                                                                 print("click:" + res.path.to_string());
                                                                                 return false;
                                                                         },
-                                                                        "drag_begin":function (self, drag_context) {
+                                                                        drag_begin : :function (self, drag_context) {
                                                                         	print('SOURCE: drag-begin');
                                                                                  this.targetData = false;
                                                                                 // find what is selected in our tree...
@@ -431,7 +433,7 @@ Window=new XObject({
                                                                                 
                                                                                 return true;
                                                                         },
-                                                                        "drag_end":function (self, drag_context) {
+                                                                        drag_end : :function (self, drag_context) {
                                                                         	Seed.print('LEFT-TREE: drag-end');
                                                                                 this.el.dragData = false;
                                                                                 this.el.dropList = false;
@@ -439,7 +441,7 @@ Window=new XObject({
                                                                                 this.get('/LeftTree.view').highlight(false);
                                                                                 return true;
                                                                         },
-                                                                        "drag_motion":function (self, ctx, x, y, time) {
+                                                                        drag_motion : :function (self, ctx, x, y, time) {
                                                                             console.log("LEFT-TREE: drag-motion");
                                                                                         var src = Gtk.drag_get_source_widget(ctx);
                                                                         
@@ -512,7 +514,7 @@ Window=new XObject({
                                                                                          
                                                                                         return true;
                                                                         },
-                                                                        "drag_drop":function (w, ctx, x, y, time) {
+                                                                        drag_drop : :function (w, ctx, x, y, time) {
                                                                               Seed.print("TARGET: drag-drop");
                                                                                                
                                                                                                 Gtk.drag_get_data
@@ -529,7 +531,7 @@ Window=new XObject({
                                                                         
                                                                                                 return  true;
                                                                         },
-                                                                        "drag_data_received":function (self, ctx, x, y, sel_data, info, time) {
+                                                                        drag_data_received : :function (self, ctx, x, y, sel_data, info, time) {
                                                                         	 print("Tree: drag-data-received");
                                                                         
                                                                                       var   delete_selection_data = false;
@@ -576,7 +578,7 @@ Window=new XObject({
                                                                                         Gtk.drag_finish (ctx, dnd_success, delete_selection_data, time);
                                                                                         return true;
                                                                         },
-                                                                        "cursor_changed":function (self) {
+                                                                        cursor_changed : :function (self) {
                                                                              if (this.blockChanges) { // probably not needed.. 
                                                                                return true;
                                                                              }
@@ -1227,7 +1229,7 @@ Window=new XObject({
                                                                             pack : "add",
                                                                             label : "Delete Element",
                                                                             listeners : {
-                                                                                "activate":function (self) {
+                                                                                activate : :function (self) {
                                                                                 
                                                                                      this.get('/LeftTree.model').deleteSelected();
                                                                                 }
@@ -1248,7 +1250,7 @@ Window=new XObject({
                                                                  return this.project;
                                                             },
                                                             listeners : {
-                                                                "leave_notify_event":function (self, event) {
+                                                                leave_notify_event : :function (self, event) {
                                                                     return false;
                                                                 }
                                                             },
@@ -1288,7 +1290,7 @@ Window=new XObject({
                                                                                 });
                                                                             },
                                                                             listeners : {
-                                                                                "changed":function (self) {
+                                                                                changed : :function (self) {
                                                                                 	var fn = this.getValue();
                                                                                 	var pm  = imports.Builder.Provider.ProjectManager.ProjectManager;
                                                                                 	this.get('/LeftProjectTree.model').loadProject(pm.getByFn(fn))
@@ -1367,7 +1369,7 @@ Window=new XObject({
                                                                             },
                                                                             id : "view",
                                                                             listeners : {
-                                                                                "cursor_changed":function (self) {
+                                                                                cursor_changed : :function (self) {
                                                                                  	var iter = new Gtk.TreeIter();
                                                                                                                 
                                                                                         if (this.selection.count_selected_rows() < 1) {
@@ -1495,7 +1497,7 @@ Window=new XObject({
                                                             xtype: Gtk.Button,
                                                             pack : "add",
                                                             listeners : {
-                                                                "button_press_event":function (self, event) {
+                                                                button_press_event : :function (self, event) {
                                                                     this.get('/MidPropTree.model').showData('props');
                                                                     return false;
                                                                 }
@@ -1524,7 +1526,7 @@ Window=new XObject({
                                                             xtype: Gtk.Button,
                                                             pack : "add",
                                                             listeners : {
-                                                                "button_press_event":function (self, event) {
+                                                                button_press_event : :function (self, event) {
                                                                     this.get('/MidPropTree.model').showData('events');
                                                                     return false;
                                                                 }
@@ -1553,7 +1555,7 @@ Window=new XObject({
                                                             xtype: Gtk.Button,
                                                             pack : "add",
                                                             listeners : {
-                                                                "button_press_event":function (self, ev) {
+                                                                button_press_event : :function (self, ev) {
                                                                 	var p = this.get('/AddPropertyPopup');
                                                                 	if (!p.el) {
                                                                 		p.init();
@@ -1593,7 +1595,7 @@ Window=new XObject({
                                                                             tooltip_markup : "Using this.get('*someid') will find any id in an application.",
                                                                             label : "ID",
                                                                             listeners : {
-                                                                                "activate":function (self) {
+                                                                                activate : :function (self) {
                                                                                 
                                                                                     this.get('/LeftPanel.model').add( {
                                                                                         key : 'id', 
@@ -1611,7 +1613,7 @@ Window=new XObject({
                                                                             tooltip_markup : "Add what type of packing is to be used",
                                                                             label : "PACK",
                                                                             listeners : {
-                                                                                "activate":function (self) {
+                                                                                activate : :function (self) {
                                                                                 
                                                                                     this.get('/LeftPanel.model').add( {
                                                                                     	 key : 'pack', 
@@ -1628,7 +1630,7 @@ Window=new XObject({
                                                                             tooltip_markup : "Override the init method",
                                                                             label : "INIT",
                                                                             listeners : {
-                                                                                "activate":function (self) {
+                                                                                activate : :function (self) {
                                                                                 
                                                                                     this.get('/LeftPanel.model').add( {
                                                                                        key : '|init', 
@@ -1649,7 +1651,7 @@ Window=new XObject({
                                                                             tooltip_markup : "Add a user defined string property",
                                                                             label : "String",
                                                                             listeners : {
-                                                                                "activate":function (self) {
+                                                                                activate : :function (self) {
                                                                                 
                                                                                     this.get('/LeftPanel.model').add( {
                                                                                   		  key : '', 
@@ -1666,7 +1668,7 @@ Window=new XObject({
                                                                             tooltip_markup : "Add a user defined number property",
                                                                             label : "Number",
                                                                             listeners : {
-                                                                                "activate":function (self) {
+                                                                                activate : :function (self) {
                                                                                 
                                                                                     this.get('/LeftPanel.model').add( {
                                                                                   		  key : '', 
@@ -1683,7 +1685,7 @@ Window=new XObject({
                                                                             tooltip_markup : "Add a user defined boolean property",
                                                                             label : "Boolean",
                                                                             listeners : {
-                                                                                "activate":function (self) {
+                                                                                activate : :function (self) {
                                                                                 
                                                                                     this.get('/LeftPanel.model').add( {
                                                                                   		  key : '', 
@@ -1704,7 +1706,7 @@ Window=new XObject({
                                                                             tooltip_markup : "Add a user function boolean property",
                                                                             label : "Function",
                                                                             listeners : {
-                                                                                "activate":function (self) {
+                                                                                activate : :function (self) {
                                                                                 
                                                                                     this.get('/LeftPanel.model').add( {
                                                                                   	    key : '|', 
@@ -1750,7 +1752,7 @@ Window=new XObject({
                                                                                 this.el.modify_font(description);
                                                             },
                                                             listeners : {
-                                                                "button_press_event":function (self, ev) {
+                                                                button_press_event : :function (self, ev) {
                                                                     
                                                                                 
                                                                                 var res = { }; 
@@ -2166,12 +2168,12 @@ Window=new XObject({
                                                                             xtype: Gtk.CellRendererText,
                                                                             pack : "pack_start",
                                                                             listeners : {
-                                                                                "editing_started":function (self, editable, path) {
+                                                                                editing_started : :function (self, editable, path) {
                                                                                 
                                                                                         this.get('/LeftPanel.model').activePath  = path;
                                                                                 
                                                                                 },
-                                                                                "edited":function (self, object, p0) {
+                                                                                edited : :function (self, object, p0) {
                                                                                 	var model = this.get('/LeftPanel.model');
                                                                                         var path = model.activePath;
                                                                                         var iter = new Gtk.TreeIter();
@@ -2226,13 +2228,13 @@ Window=new XObject({
                                                                                   ]);
                                                                             },
                                                                             listeners : {
-                                                                                "edited":function (self, object, p0) {
+                                                                                edited : :function (self, object, p0) {
                                                                                  	this.get('/LeftPanel').editing = false;
                                                                                 	print("EDITED? p:" + p0 + " t:" + p0);
                                                                                         this.get('/LeftPanel.model').changed(p0, true);
                                                                                         this.get('/LeftPanel.model').activePath = false;
                                                                                 },
-                                                                                "editing_started":function (self, editable, path) {
+                                                                                editing_started : :function (self, editable, path) {
                                                                                    this.get('/LeftPanel').editing  = true;
                                                                                 	//  console.log('editing started');
                                                                                        // r.has_entry = false;
@@ -2254,7 +2256,7 @@ Window=new XObject({
                                                                     pack : "append",
                                                                     label : "Delete",
                                                                     listeners : {
-                                                                        "activate":function (self) {
+                                                                        activate : :function (self) {
                                                                         	this.get('/LeftPanel.model').deleteSelected();
                                                                         }
                                                                     }
@@ -2264,7 +2266,7 @@ Window=new XObject({
                                                                     pack : "append",
                                                                     label : "Edit",
                                                                     listeners : {
-                                                                        "activate":function (self) {
+                                                                        activate : :function (self) {
                                                                         	this.get('/LeftPanel.model').startEditing(false, 0);
                                                                         }
                                                                     }
@@ -2328,7 +2330,7 @@ Window=new XObject({
                                             },
                                             pack : "add",
                                             listeners : {
-                                                "cursor_changed":function (self) {
+                                                cursor_changed : :function (self) {
                                                        var iter = new Gtk.TreeIter();
                                                                         
                                                                         //console.log('changed');
@@ -2533,7 +2535,7 @@ Window=new XObject({
                                                                                     pack : "pack_start,false,false,0",
                                                                                     label : "Redraw",
                                                                                     listeners : {
-                                                                                        "button_press_event":function (self, event) {
+                                                                                        button_press_event : :function (self, event) {
                                                                                               var js = this.get('/LeftTree.model').toJS();
                                                                                             if (js && js[0]) {
                                                                                                 this.get('/RightBrowser.view').renderJS(js[0]);
@@ -2547,7 +2549,7 @@ Window=new XObject({
                                                                                     pack : "pack_start,false,false,0",
                                                                                     label : "Set extra HTML in render",
                                                                                     listeners : {
-                                                                                        "button_press_event":function (self, event) {
+                                                                                        button_press_event : :function (self, event) {
                                                                                             this.get('/RooProjectProperties').show();
                                                                                             return false;
                                                                                         }
@@ -2558,7 +2560,7 @@ Window=new XObject({
                                                                                     pack : "pack_start,false,false,0",
                                                                                     label : "test in Firefox",
                                                                                     listeners : {
-                                                                                        "button_press_event":function (self, event) 
+                                                                                        button_press_event : :function (self, event) 
                                                                                         {
                                                                                                 /* Firefox testing for debugging..
                                                                                                   - we can create a /tmp directory, and put.
@@ -2702,7 +2704,7 @@ Window=new XObject({
                                                                                         this.el.execute_script("Builder.render(" + JSON.stringify(data) + ");");
                                                                                     },
                                                                                     listeners : {
-                                                                                        "load_finished":function (self, object) {
+                                                                                        load_finished : :function (self, object) {
                                                                                         	// if (this.ready) { // dont do it twice!
                                                                                         	 //   return; 
                                                                                         	//}
@@ -2714,12 +2716,12 @@ Window=new XObject({
                                                                                             	}
                                                                                         
                                                                                         },
-                                                                                        "script_alert":function (self, object, p0) {
+                                                                                        script_alert : :function (self, object, p0) {
                                                                                              	print(p0);
                                                                                                 return false;
                                                                                                 return true; // do not display anything...
                                                                                         },
-                                                                                        "console_message":function (self, object, p0, p1) {
+                                                                                        console_message : :function (self, object, p0, p1) {
                                                                                            //  console.log(object);
                                                                                                 if (!object.match(/^\{/)) {
                                                                                                 
@@ -2759,7 +2761,7 @@ Window=new XObject({
                                                                                                 //Seed.print('c:'+c);
                                                                                                 return ret;
                                                                                         },
-                                                                                        "drag_motion":function (w, ctx,  x,   y,   time, ud) {
+                                                                                        drag_motion : :function (w, ctx,  x,   y,   time, ud) {
                                                                                            // console.log('DRAG MOTION'); 
                                                                                                 // status:
                                                                                                 // if lastCurrentNode == this.currentNode.. -- don't change anything..
@@ -2799,7 +2801,7 @@ Window=new XObject({
                                                                                                 // for tree we should handle this...
                                                                                                 return true;
                                                                                         },
-                                                                                        "drag_drop":function (w, ctx, x, y,time, ud) {
+                                                                                        drag_drop : :function (w, ctx, x, y,time, ud) {
                                                                                         	print("TARGET: drag-drop");
                                                                                                 var is_valid_drop_site = true;
                                                                                                 
@@ -2818,7 +2820,7 @@ Window=new XObject({
                                                                                         
                                                                                         	return  is_valid_drop_site;
                                                                                         },
-                                                                                        "drag_data_received":function (w, ctx,  x,  y, sel_data,  target_type,  time, ud) 
+                                                                                        drag_data_received : :function (w, ctx,  x,  y, sel_data,  target_type,  time, ud) 
                                                                                             {
                                                                                                 print("Browser: drag-data-received");
                                                                                                 var delete_selection_data = false;
@@ -3193,7 +3195,7 @@ Window=new XObject({
                                                                                     pack : "pack_start,false,false,0",
                                                                                     label : "Run The Application",
                                                                                     listeners : {
-                                                                                        "button_press_event":function (self, event) {
+                                                                                        button_press_event : :function (self, event) {
                                                                                             // call render on left tree - with special option!?!
                                                                                          
                                                                                             //print("GET PROEJCT");
@@ -3276,7 +3278,7 @@ Window=new XObject({
                                                                                                     },
                                                                                                     id : "view",
                                                                                                     listeners : {
-                                                                                                        "drag_motion":function (self, ctx, x, y, time) {
+                                                                                                        drag_motion : :function (self, ctx, x, y, time) {
                                                                                                             
                                                                                                                         // A) find out from drag all the places that node could be dropped.
                                                                                                                         var src = Gtk.drag_get_source_widget(ctx);
@@ -3313,7 +3315,7 @@ Window=new XObject({
                                                                                                                         // for tree we should handle this...
                                                                                                                         return true;
                                                                                                         },
-                                                                                                        "drag_drop":function (self,ctx, x, y, time) {
+                                                                                                        drag_drop : :function (self,ctx, x, y, time) {
                                                                                                         	Seed.print("TARGET: drag-drop");
                                                                                                                 var is_valid_drop_site = true;
                                                                                                                 
@@ -3333,7 +3335,7 @@ Window=new XObject({
                                                                                                                 return  is_valid_drop_site;
                                                                                                           
                                                                                                         },
-                                                                                                        "drag_data_received":function (w, ctx,  x,  y, sel_data,  target_type,  time, ud) 
+                                                                                                        drag_data_received : :function (w, ctx,  x,  y, sel_data,  target_type,  time, ud) 
                                                                                                             {
                                                                                                                 Seed.print("GtkView: drag-data-received");
                                                                                                                 var delete_selection_data = false;
@@ -3370,7 +3372,7 @@ Window=new XObject({
                                                                                                                 Gtk.drag_finish (ctx, dnd_success, delete_selection_data, time);
                                                                                                                 return true;
                                                                                                             },
-                                                                                                        "button_press_event":function (self, event) {
+                                                                                                        button_press_event : :function (self, event) {
                                                                                                           this.pressed = false;
                                                                                                             return false;
                                                                                                         }
@@ -3492,7 +3494,7 @@ Window=new XObject({
                                                                     xtype: GtkSource.Buffer,
                                                                     pack : "set_buffer",
                                                                     listeners : {
-                                                                        "changed":function (self) {
+                                                                        changed : :function (self) {
                                                                             var s = new Gtk.TextIter();
                                                                             var e = new Gtk.TextIter();
                                                                             this.el.get_start_iter(s);
@@ -3577,7 +3579,7 @@ Window=new XObject({
                                                     xtype: Gtk.Button,
                                                     pack : "pack_start,false,true",
                                                     listeners : {
-                                                        "clicked":function (self) {
+                                                        clicked : :function (self) {
                                                         	this.get('/RightPalete').show();
                                                         }
                                                     },
@@ -3600,7 +3602,7 @@ Window=new XObject({
                                                         this.el.add_events ( Gdk.EventMask.BUTTON_MOTION_MASK );
                                                     },
                                                     listeners : {
-                                                        "enter_notify_event":function (self, event) {
+                                                        enter_notify_event : :function (self, event) {
                                                             this.get('/RightPalete').show();
                                                             return false;
                                                         }
@@ -3626,7 +3628,7 @@ Window=new XObject({
                                                             xtype: Gtk.Button,
                                                             pack : "pack_start,false,true",
                                                             listeners : {
-                                                                "clicked":function (self) {
+                                                                clicked : :function (self) {
                                                                 	this.get('/RightPalete').hide();
                                                                 }
                                                             },
@@ -3696,7 +3698,7 @@ Window=new XObject({
                                                             headers_visible : false,
                                                             enable_tree_lines : true,
                                                             listeners : {
-                                                                "drag_begin":function (self, ctx) {
+                                                                drag_begin : :function (self, ctx) {
                                                                     // we could fill this in now...
                                                                         Seed.print('SOURCE: drag-begin');
                                                                         
@@ -3730,7 +3732,7 @@ Window=new XObject({
                                                                         
                                                                         return true;
                                                                 },
-                                                                "drag_data_get":function (self, drag_context, selection_data, info, time) {
+                                                                drag_data_get : :function (self, drag_context, selection_data, info, time) {
                                                                  	//Seed.print('Palete: drag-data-get: ' + target_type);
                                                                         if (this.el.dragData && this.el.dragData.length ) {
                                                                             selection_data.set_text(this.el.dragData ,this.el.dragData.length);
@@ -3741,7 +3743,7 @@ Window=new XObject({
                                                                         
                                                                         
                                                                 },
-                                                                "drag_end":function (self, drag_context) {
+                                                                drag_end : :function (self, drag_context) {
                                                                  	Seed.print('SOURCE: drag-end');
                                                                 	this.el.dragData = false;
                                                                 	this.el.dropList = false;
