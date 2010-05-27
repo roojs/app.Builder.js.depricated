@@ -215,8 +215,16 @@ XObject.prototype = {
             this.addListener(i, this.listeners[i]);
         }
         // delete this.listeners ?
-        
-        
+        // do again so child props work!
+        for (var i in this.config) {
+            if (i == 'type') { // problem with Gtk.Window... - not decided on a better way to handle this.
+                continue;
+            }
+            if (i == 'buttons') { // problem with Gtk.MessageDialog..
+                continue;
+            }
+            this.el[i] = this.config[i];
+        }
         // do we need to call 'init here?'
     },
       
