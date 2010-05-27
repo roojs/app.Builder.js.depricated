@@ -150,7 +150,8 @@ DialogNewComponent=new XObject({
                         {
                             xtype: Gtk.Entry,
                             id : "xnsid",
-                            pack : "add"
+                            pack : "add",
+                            visible : true
                         },
                         {
                             xtype: Gtk.Label,
