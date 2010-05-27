@@ -277,7 +277,7 @@ Roo = XObject.define(
         // a standard dialog module.
         toSourceDialog : function() 
         {
-            var b = this.items[0]; 
+            
             var o = this.mungeToString(this.items[0], false, '            ');   
             return [
                 this.outputHeader(),
@@ -306,7 +306,7 @@ Roo = XObject.define(
                 "    create : function()",
                 "    {",
                 "        var _this = this;",
-                "        this.dialog = Roo.factory(" + b +  ");",
+                "        this.dialog = Roo.factory(" + o +  ");",
                 "    }",
                 "};",
                 ""
