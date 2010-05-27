@@ -1,5 +1,6 @@
 //<script type="text/javascript">
 
+_this = { } ; // a fake self for rendering.
 
 Builder  = {
     
