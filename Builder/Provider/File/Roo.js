@@ -251,7 +251,7 @@ Roo = XObject.define(
             // we have 2 types = dialogs and components
             // 
             var top = this.guessType(this.items[0]);
-            if (top.match(/Dialog/) {
+            if (top.match(/Dialog/)) {
                 return this.toSourceDialog();
             }
             return this.toSourceLayout();
