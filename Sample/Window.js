@@ -155,11 +155,46 @@ Window=new XObject({
                         },
                         {
                             xtype: Gtk.MenuItem,
+                            label : "_Edit",
+                            use_underline : true,
+                            items : [
+                                {
+                                    xtype: Gtk.Menu,
+                                    pack : "set_submenu",
+                                    listeners : {
+                                        
+                                    },
+                                    items : [
+                                        {
+                                            xtype: Gtk.MenuItem,
+                                            listeners : {
+                                                activate : function (self) {
+                                                 	var fn = this.get('/LeftTree').getActiveFile();
+                                                        if (!fn) {
+                                                            this.get('/StandardErrorDialog').show("No File active");
+                                                            return true;
+                                                        }
+                                                 
+                                                        this.get('/DialogNewComponent').show(fn);
+                                                        return true;
+                                                }
+                                            },
+                                            label : "File _Properties",
+                                            pack : "add",
+                                            use_underline : true
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            xtype: Gtk.MenuItem,
                             label : "_Help",
                             use_underline : true,
                             listeners : {
                                 
                             },
+                            pack : "add",
                             items : [
                                 {
                                     xtype: Gtk.Menu,
