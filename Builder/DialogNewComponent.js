@@ -148,6 +148,66 @@ DialogNewComponent=new XObject({
                             id : "xnsid"
                         }
                     ]
+                },
+                {
+                    xtype: Gtk.Table,
+                    n_columns : 2,
+                    n_rows : 3,
+                    pack : "pack_start,false,false,0",
+                    homogeneous : false,
+                    items : [
+                        {
+                            xtype: Gtk.Label,
+                            x_options : 0,
+                            label : "parent",
+                            pack : "add",
+                            xalign : 1,
+                            justify : Gtk.Justification.RIGHT,
+                            visible : true
+                        },
+                        {
+                            xtype: Gtk.Entry,
+                            pack : "add",
+                            visible : true,
+                            listeners : {
+                                
+                            }
+                        },
+                        {
+                            xtype: Gtk.Label,
+                            x_options : 0,
+                            label : "title",
+                            pack : "add",
+                            xalign : 0.9,
+                            justify : Gtk.Justification.RIGHT,
+                            visible : true
+                        },
+                        {
+                            xtype: Gtk.Entry,
+                            pack : "add",
+                            visible : true,
+                            listeners : {
+                                
+                            }
+                        },
+                        {
+                            xtype: Gtk.Label,
+                            x_options : 0,
+                            label : "parent",
+                            pack : "add",
+                            xalign : 1,
+                            justify : Gtk.Justification.RIGHT,
+                            visible : true
+                        },
+                        {
+                            xtype: Gtk.Entry,
+                            pack : "add",
+                            visible : true,
+                            listeners : {
+                                
+                            }
+                        }
+                    ]
                 }
             ]
         },
