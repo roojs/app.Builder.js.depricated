@@ -160,33 +160,30 @@ DialogNewComponent=new XObject({
                     items : [
                         {
                             xtype: Gtk.Label,
-                            '.bottom-attach' : 1,
                             label : "parent",
-                            '.left-attach' : 0,
                             pack : "add",
-                            '.right-attach' : 1,
-                            '.top_attach' : 0,
-                            visible : true
+                            visible : true,
+                            listeners : {
+                                
+                            }
                         },
                         {
                             xtype: Gtk.Label,
-                            'bottom-attach' : 2,
                             label : "title",
-                            'left-attach' : 0,
                             pack : "add",
-                            'right-attach' : 1,
-                            'top-attach' : 1,
-                            visible : true
+                            visible : true,
+                            listeners : {
+                                
+                            }
                         },
                         {
                             xtype: Gtk.Entry,
-                            '.bottom-attach' : 1,
                             label : "test",
-                            '.left-attach' : 1,
                             pack : "add",
-                            '.right-attach' : 2,
-                            '.top-attach' : 0,
-                            visible : true
+                            visible : true,
+                            listeners : {
+                                
+                            }
                         }
                     ]
                 }
