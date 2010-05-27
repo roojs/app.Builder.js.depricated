@@ -706,7 +706,7 @@ Window=new XObject({
                                                                                             return;
                                                                                             
                                                                                         }
-                                                                                        this.get('/Window').setTitle(f.name);
+                                                                                        this.get('/Window').setTitle(f.project.getName() + ' - ' + f.name);
                                                                                         
                                                                                         if (f.items.length && typeof(f.items[0]) == 'string') {
                                                                                         
