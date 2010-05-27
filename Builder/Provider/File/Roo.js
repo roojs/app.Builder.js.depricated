@@ -320,7 +320,7 @@ Roo = XObject.define(
         toSourceLayout : function() 
         {
             var b = this.items[0];
-            var o = this.mungeToString(this.items[0], false, '    ');
+            var o = this.mungeToString(this.items[0], false, '            ');
             
             var modkey = this.modOrder + '-' + this.name.replace('/[^A-Z]+/ig', '-');
             
