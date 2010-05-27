@@ -217,24 +217,6 @@ Base = XObject.define(
                 if (!isArray && skip.indexOf(i) > -1) { // things we do not write..
                     return;
                 }
-                
-                if (isListener) {
-                    //if (!_this.withDebug) {
-                        // do not write listeners unless we are debug mode.
-                    //    return;
-                    //}
-                    //if (obj[i].match(new RegExp("Gtk.main" + "_quit"))) { // we can not handle this very well..
-                    //    return;
-                   // }
-                    var str= ('' + obj[i]).replace(/^\s+|\s+$/g,"");
-                    var lines = str.split("\n");
-                    if (lines.length > 1) {
-                        str = lines.join("\n" + pad);
-                    }
-                    els.push(JSON.stringify(i) + ":" + str);
-                    return;
-                }
-                
                 if (!isArray) {
                     // set the key to be quoted with singel quotes..
                     var leftv = i[0] == '|' ? i.substring(1) : i;
@@ -249,6 +231,17 @@ Base = XObject.define(
                     left += ' : ';
                     
                 }
+                if (isListener) {
+                    // change the lines...
+                    var str= ('' + obj[i]).replace(/^\s+|\s+$/g,"");
+                    var lines = str.split("\n");
+                    if (lines.length > 1) {
+                        str = lines.join("\n" + pad);
+                    }
+                    els.push(left + ":" + str);
+                    return;
+                }
+                 
                 
                 
                 //var left = isArray ? '' : (JSON.stringify(i) + " : " )
