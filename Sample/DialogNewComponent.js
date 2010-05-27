@@ -90,7 +90,7 @@ DialogNewComponent=new XObject({
     modal : true,
     show : function (c) 
     {
-    
+        this.project = c.project;
         if (!this.el) {
             this.init();
         }
