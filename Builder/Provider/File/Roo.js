@@ -9,7 +9,7 @@ XObject = imports.XObject.XObject;
 //----------------------- our roo verison
 Base = imports.Builder.Provider.File.Base.Base;
 Gio = imports.gi.Gio;
- 
+File = imports.File;
 
 JSDOC =  imports['JSDOC.js'];
 //----------------------- our roo verison
@@ -219,7 +219,9 @@ Roo = XObject.define(
         {
             Base.prototype.save.call(this);
             // now write the js file..
-            print(this.toSource());
+            var js = this.path.replace(/\.bjs$/, '.js');
+            File.write(js, this.toSource());
+            
             
             
         },
