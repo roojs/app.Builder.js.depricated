@@ -209,7 +209,7 @@ XObject.prototype = {
          //   XObject.registry[o.xnsid][o.id] = this;
         //}
         
-        var type = GObject.type_name(this.xtype.type);
+        var type = this.xtype.type ? GObject.type_name(this.xtype.type) : '';
         print("MAKE " + type);
         
         
