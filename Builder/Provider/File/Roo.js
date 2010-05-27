@@ -9,7 +9,7 @@ XObject = imports.XObject.XObject;
 //----------------------- our roo verison
 Base = imports.Builder.Provider.File.Base.Base;
 Gio = imports.gi.Gio;
-File = imports.File;
+File = imports.File.File;
 
 //JSDOC =  imports['JSDOC.js'];
 //----------------------- our roo verison
