@@ -278,10 +278,10 @@ Roo = XObject.define(
         toSourceDialog : function() 
         {
             var b = this.items[0]; 
-            var o = this.mungePropObj(this.items[0]);
+            var o = this.mungeToString(this.items[0], false, '            ');   
             return [
                 this.outputHeader(),
-                b['|module'] + " = {",
+                this.name + " = {",
                 "",
                 "    dialog : false,",
                 "    callback:  false,",
@@ -306,7 +306,7 @@ Roo = XObject.define(
                 "    create : function()",
                 "    {",
                 "        var _this = this;",
-                "        this.dialog = Roo.factory(" + this.objectToJsString(o,3) +  ");",
+                "        this.dialog = Roo.factory(" + b +  ");",
                 "    }",
                 "};",
                 ""
@@ -319,7 +319,7 @@ Roo = XObject.define(
         // a layout compoent 
         toSourceLayout : function() 
         {
-            var b = this.items[0];
+            
             var o = this.mungeToString(this.items[0], false, '            ');
             
             var modkey = this.modOrder + '-' + this.name.replace('/[^A-Z]+/ig', '-');
