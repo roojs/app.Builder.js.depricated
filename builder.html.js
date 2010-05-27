@@ -187,8 +187,10 @@ Builder  = {
                     /** eval:var:_this **/
                     /** eval:var:_tmp **/
                     // stupid IE can not return objects evaluated..
+                    console.log('_tmp =(' + cfg[p] + ')');
                     eval('_tmp =(' + cfg[p] + ')');
                     cfg[isListener ? p : p.substr(1)] = _tmp;
+                    
                     //if (typeof(_tmp) == 'undefined') {
                     //    alert(cfg[p]);
                    // }
