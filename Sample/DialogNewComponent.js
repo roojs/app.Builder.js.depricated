@@ -146,27 +146,37 @@ DialogNewComponent=new XObject({
                             xtype: Gtk.Entry,
                             pack : "pack_end,true,true,0",
                             id : "xnsid"
+                        }
+                    ]
+                },
+                {
+                    xtype: Gtk.Table,
+                    n_columns : 3,
+                    n_rows : 2,
+                    pack : "add",
+                    listeners : {
+                        
+                    },
+                    items : [
+                        {
+                            xtype: Gtk.Label,
+                            bottom_attach : 1,
+                            label : "parent",
+                            left_attach : "0",
+                            pack : "add",
+                            right_attach : 1,
+                            top_attach : "0",
+                            visible : true
                         },
                         {
-                            xtype: Gtk.Table,
-                            n_columns : 3,
-                            n_rows : 2,
+                            xtype: Gtk.Label,
+                            bottom_attach : 1,
+                            label : "parent",
+                            left_attach : "0",
                             pack : "add",
-                            listeners : {
-                                
-                            },
-                            items : [
-                                {
-                                    xtype: Gtk.Label,
-                                    bottom_attach : 1,
-                                    label : "parent",
-                                    left_attach : "0",
-                                    pack : "add",
-                                    right_attach : 1,
-                                    top_attach : "0",
-                                    visible : true
-                                }
-                            ]
+                            right_attach : 1,
+                            top_attach : "0",
+                            visible : true
                         }
                     ]
                 }
