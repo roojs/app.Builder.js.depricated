@@ -3100,7 +3100,7 @@ Window=new XObject({
                                                                                          typeof(ch.x_options) == 'undefined' ?  5 : ch.x_options,
                                                                                             typeof(ch.y_options) == 'undefined' ?  5 : ch.y_options,
                                                                                             typeof(ch.x_padding) == 'undefined' ?  0 : ch.x_padding,
-                                                                                            typeof(ch.x_padding) == 'undefined' ?  0 : ch.x_padding,
+                                                                                            typeof(ch.x_padding) == 'undefined' ?  0 : ch.x_padding
                                                                                 ].join(',');
                                                                             }
                                                                         
