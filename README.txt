@@ -30,7 +30,7 @@ Where it is..
 * sourceview to uses spaces rather than tabs. (and autoindents..)
 * Help view - load docs..
 * highlight in gtk preview - works but is klunky..
-
+* Support for extra code in Roo HTML is done by "Set extra HTML in rendere"
 -----------------------------------------------------
 
 TODO (Gtk)
@@ -49,7 +49,7 @@ TODO (Gtk)
 -----------------------------------------------------
 
 TODO (Roo)
-* Support for baseURL.. ?? auth? - project properties..
+* file properties - title, parent etc..
 
 -----------------------------------------------------
 
