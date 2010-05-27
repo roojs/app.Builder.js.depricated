@@ -106,7 +106,7 @@ Base = XObject.define(
           
           
         },
-        getName()
+        getName :function()
         {
             //returns the basename of the first path..
             for (var i in this.paths) {
