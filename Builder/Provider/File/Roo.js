@@ -217,6 +217,18 @@ Roo = XObject.define(
             
             
         },
+         /**
+         * convert xtype for munged output..
+         * 
+         */
+        mungeXtype : function(xtype, els)
+        {
+            var bits = xtype.split('.');
+            // assume it has lenght!
+            
+            els.push("xtype: '"+ bits.pop()+"'");
+            els.push('xns: '+ bits.join('.'));
+        },
         
         /**
          * This needs to use some options on the project
@@ -301,7 +313,7 @@ Roo = XObject.define(
         // a layout compoent 
         toSourceLayout : function() 
         {
-            var b = this.items[0]; 
+            var b = this.items[0];
             var o = this.mungePropObj(this.items[0]);
             
             var disabled = typeof(b['|disabled']) == 'undefined' ? (b.disabled || false) : b['disabled'];
