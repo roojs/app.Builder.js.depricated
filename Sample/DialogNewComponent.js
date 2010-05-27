@@ -74,11 +74,11 @@ DialogNewComponent=new XObject({
                 
             },
     listeners : {
-        "delete_event":function (self, event) {
+        delete_event : function (self, event) {
             this.el.hide();
             return true;
         },
-        "response":function (self, response_id) {
+        response : function (self, response_id) {
         	if (response_id < 1) { // cancel!
                     this.el.hide();
                     return;
@@ -121,7 +121,7 @@ DialogNewComponent=new XObject({
                     this.get('/DialogNewComponent').success(_this.project, nf);
                 }
         },
-        "show":function (self) {
+        show : function (self) {
           this.el.show_all();
         }
     },
@@ -146,6 +146,28 @@ DialogNewComponent=new XObject({
                             xtype: Gtk.Entry,
                             pack : "pack_end,true,true,0",
                             id : "xnsid"
+                        },
+                        {
+                            xtype: Gtk.Table,
+                            n_columns : 3,
+                            n_rows : 2,
+                            pack : "add",
+                            init : function() {
+                                this.el = new Gtk.Table(this.n_columns, this.n_rows);
+                                XObject.prototype.init.call(this);
+                            },
+                            items : [
+                                {
+                                    xtype: Gtk.Label,
+                                    bottom_attach : 1,
+                                    label : "parent",
+                                    left_attach : "0",
+                                    pack : "add",
+                                    right_attach : 1,
+                                    top_attach : "0",
+                                    visible : true
+                                }
+                            ]
                         }
                     ]
                 }
