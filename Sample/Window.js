@@ -35,6 +35,9 @@ Window=new XObject({
     default_width : 800,
     default_height : 500,
     id : "Window",
+    setTitle : function(str) {
+        this.el.set_title(this.title + ' - ' + str);
+    },
     listeners : {
         delete_event : function (self, event) {
             return false;
@@ -703,6 +706,8 @@ Window=new XObject({
                                                                                             return;
                                                                                             
                                                                                         }
+                                                                                        this.get('/Window').setTitle(f.name);
+                                                                                        
                                                                                         if (f.items.length && typeof(f.items[0]) == 'string') {
                                                                                         
                                                                                             this.get('/RightEditor').el.show();
