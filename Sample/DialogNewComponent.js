@@ -154,7 +154,9 @@ DialogNewComponent=new XObject({
                     n_columns : 2,
                     n_rows : 3,
                     pack : "add",
-                    homogeneous : false,
+                    listeners : {
+                        
+                    },
                     items : [
                         {
                             xtype: Gtk.Label,
