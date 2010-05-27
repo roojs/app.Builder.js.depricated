@@ -69,6 +69,7 @@ Roo = XObject.define(
         region : 'center',
         parent : '',
         title : '', // the title on displayed when loading.
+        disable : '', // use a function to that returns false to disable this..
         
         setNSID : function(id)
         {
@@ -337,7 +338,7 @@ Roo = XObject.define(
                 "        region : '" + this.region   +"',",
                 "        parent : " + (this.parent ||  'false') + ",",
                 "        name : \"" + (b.title  || "unnamed module") + "\"",
-                "        disabled : " + disabled +" ",
+                "        disabled : " + (this.disabled || 'false') +" ",
                 "    });",
                 "});",
                 "",
@@ -354,7 +355,7 @@ Roo = XObject.define(
                 "        var _this = this;", // standard avaialbe..
                 "        this.parentLayout = parentLayout;",
                 "",
-                "        this.panel = parentLayout.addxtype(" + this.objectToJsString(o,3) +  ");",
+                "        this.panel = parentLayout.addxtype(" + o +  ");",
                 "        this.layout = this.panel.layout;",
                 "",
                 "    }",
