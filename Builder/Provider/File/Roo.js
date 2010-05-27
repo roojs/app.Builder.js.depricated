@@ -343,7 +343,7 @@ Roo = XObject.define(
                 "});",
                 "",
                 
-                b['|module']  +  " = new Roo.util.Observable({",
+                this.name  +  " = new Roo.util.Observable({",
                 "",
                 "    panel : false,",
                 "    disabled : false,",
