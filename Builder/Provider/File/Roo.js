@@ -208,7 +208,14 @@ Roo = XObject.define(
             
             
         },
-        
+        /**
+         * This needs to use some options on the project
+         * to determine how the file is output..
+         * 
+         * At present we are hard coding it..
+         * 
+         * 
+         */
         toSource: function()
         {
             // dump the file tree back out to a string.
@@ -221,14 +228,7 @@ Roo = XObject.define(
                 return this.toSourceLayout();
             }
             return this.toSourceDialog();
-            
-            
-                
-                    
-                
-                    
-                   
-            
+              
         },
        
         outputHeader : function()
