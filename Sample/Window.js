@@ -1863,7 +1863,7 @@ Window=new XObject({
                                                                                     var p = this.el.get_path(iter).to_string();
                                                                                     ret[i] = p;
                                                                                     this.el.set_value(iter, 0, i);
-                                                                                    this.el.set_value(iter, 1, '' + ar[i]);
+                                                                                    this.el.set_value(iter, 1, type + ' : ' + ar[i]); // tooltip!
                                                                                     this.el.set_value(iter, 2, i);
                                                                                     this.el.set_value(iter, 3, this.toShort(ar[i]));
                                                                                     this.el.set_value(iter, 4, type);
@@ -1875,7 +1875,7 @@ Window=new XObject({
                                                                                     ret['!' + i] = p;
                                                                                     
                                                                                     this.el.set_value(iter, 0, '!'+  i  );
-                                                                                    this.el.set_value(iter, 1, '' + ar.listeners[i]);
+                                                                                    this.el.set_value(iter, 1, 'listener : ' + ar.listeners[i]);
                                                                                     this.el.set_value(iter, 2, '<b>'+ i + '</b>');
                                                                                     
                                                                                     this.el.set_value(iter, 3, '' + this.toShort(ar.listeners[i]));
