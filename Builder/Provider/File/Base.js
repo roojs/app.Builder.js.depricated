@@ -222,7 +222,7 @@ Base = XObject.define(
                     if (!prop.match(/\[\]$/)) {
                         // it's a standard prop..
                         obj[prop] = pl;
-                        keys.push(p);
+                        keys.push(prop);
                         return;
                     }
                     // it's an array type..
