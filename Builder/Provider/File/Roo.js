@@ -11,7 +11,7 @@ Base = imports.Builder.Provider.File.Base.Base;
 Gio = imports.gi.Gio;
 File = imports.File;
 
-JSDOC =  imports['JSDOC.js'];
+//JSDOC =  imports['JSDOC.js'];
 //----------------------- our roo verison
 
 var rid = 0;
