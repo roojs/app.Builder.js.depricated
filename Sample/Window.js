@@ -2884,8 +2884,17 @@ Window=new XObject({
                                                                 },
                                                                 {
                                                                     xtype: Gtk.VBox,
-                                                                    pack : "add",
                                                                     id : "RightGtkView",
+                                                                    pack : "add",
+                                                                    redraw : function() {
+                                                                       this.highlightWidget = false;
+                                                                        print("REDRAW CALLED");
+                                                                        this.activePath = this.get('/LeftTree').getActivePath();
+                                                                        if (this.renderedEl) {
+                                                                          print("QUEUE DRAW CALLING");
+                                                                          this.renderedEl.queue_draw();
+                                                                       }
+                                                                    },
                                                                     renderJS : function(data, withDebug)
                                                                     {
                                                                           this.highlightWidget = false;
@@ -2982,6 +2991,7 @@ Window=new XObject({
                                                                             return;
                                                                         }
                                                                         print("CREATE: " + item['|xns'] + '.' + item['xtype']);
+                                                                        var type = item['|xns'] + '.' + item['xtype'];
                                                                         var ns = imports.gi[item['|xns']];
                                                                         var ctr = ns[item['xtype']];
                                                                         var ctr_args = { };
@@ -3079,6 +3089,15 @@ Window=new XObject({
                                                                         var _this = this;
                                                                         item.items = item.items || [];
                                                                         item.items.forEach(function(ch) {
+                                                                                 if (type == 'Gtk.Table' && ch.pack == 'add') {
+                                                                                    var c = n % item.n_columns;
+                                                                                    var r = Math.floor(n/item.n_columns);
+                                                                                    ch.pack = [ 'attach', c, c+1, r, r+1, 
+                                                                                            ch.x_options || 5, ch.x_padding || 0,
+                                                                                            ch.y_options || 5, ch.y_padding || 0
+                                                                                    ].join(',');
+                                                                                }
+                                                                        
                                                                             _this.viewAdd(ch, el);
                                                                         });
                                                                         
@@ -3104,6 +3123,14 @@ Window=new XObject({
                                                                         
                                                                         return el;
                                                                         
+                                                                    },
+                                                                    widgetDragDropEvent : function() {
+                                                                          print("WIDGET DRAGDROP"); 
+                                                                                return true;
+                                                                    },
+                                                                    widgetDragMotionEvent : function() {
+                                                                         print("WIDGET DRAGMOTION"); 
+                                                                                return true;
                                                                     },
                                                                     widgetExposeEvent : function(w, evt, ud, item) {
                                                                         var widget = w;
@@ -3174,14 +3201,6 @@ Window=new XObject({
                                                                                 this.inRender = false;
                                                                                 return false;
                                                                     },
-                                                                    widgetDragMotionEvent : function() {
-                                                                         print("WIDGET DRAGMOTION"); 
-                                                                                return true;
-                                                                    },
-                                                                    widgetDragDropEvent : function() {
-                                                                          print("WIDGET DRAGDROP"); 
-                                                                                return true;
-                                                                    },
                                                                     widgetPressEvent : function(w,e,u,d) {
                                                                          if (this.get('view').pressed) {
                                                                             return false;
@@ -3194,15 +3213,6 @@ Window=new XObject({
                                                                     widgetReleaseEvent : function() {
                                                                         this.get('view').pressed = false;
                                                                        return false;
-                                                                    },
-                                                                    redraw : function() {
-                                                                       this.highlightWidget = false;
-                                                                        print("REDRAW CALLED");
-                                                                        this.activePath = this.get('/LeftTree').getActivePath();
-                                                                        if (this.renderedEl) {
-                                                                          print("QUEUE DRAW CALLING");
-                                                                          this.renderedEl.queue_draw();
-                                                                       }
                                                                     },
                                                                     items : [
                                                                         {
