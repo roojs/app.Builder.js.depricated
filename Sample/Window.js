@@ -3088,15 +3088,19 @@ Window=new XObject({
                                                                         
                                                                         var _this = this;
                                                                         item.items = item.items || [];
-                                                                        item.items.forEach(function(ch) {
-                                                                                 if (type == 'Gtk.Table' && ch.pack == 'add') {
-                                                                                    var c = n % item.n_columns;
-                                                                                    var r = Math.floor(n/item.n_columns);
-                                                                                    ch.pack = [ 'attach', c, c+1, r, r+1, 
-                                                                                            ch.x_options || 5, ch.x_padding || 0,
-                                                                                            ch.y_options || 5, ch.y_padding || 0
-                                                                                    ].join(',');
-                                                                                }
+                                                                        item.items.forEach(function(ch,n) {
+                                                                    
+                                                                              print ("type:" + type);
+                                                                              
+                                                                               print ("ch.pack:" + ch.pack);
+                                                                             if (type == 'Gtk.Table' && ch.pack == 'add') {
+                                                                                var c = n % item.n_columns;
+                                                                                var r = Math.floor(n/item.n_columns);
+                                                                                ch.pack = [ 'attach', c, c+1, r, r+1, 
+                                                                                        ch.x_options || 5, ch.x_padding || 0,
+                                                                                        ch.y_options || 5, ch.y_padding || 0
+                                                                                ].join(',');
+                                                                            }
                                                                         
                                                                             _this.viewAdd(ch, el);
                                                                         });
