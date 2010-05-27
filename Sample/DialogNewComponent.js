@@ -43,7 +43,7 @@ DialogNewComponent=new XObject({
                 }
                
                 if (!isNew) {
-                    file.save();
+                    this.file.save();
                     this.el.hide();
                     return;
                 }
