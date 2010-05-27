@@ -223,7 +223,7 @@ XObject.prototype = {
                         typeof(i.x_options) == 'undefined' ?  5 : i.x_options,
                         typeof(i.y_options) == 'undefined' ?  5 : i.y_options,
                         typeof(i.x_padding) == 'undefined' ?  0 : i.x_padding,
-                        typeof(i.x_padding) == 'undefined' ?  1 : i.x_padding,
+                        typeof(i.x_padding) == 'undefined' ?  0 : i.x_padding,
                        
                 ]
             }
