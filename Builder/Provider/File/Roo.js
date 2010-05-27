@@ -219,7 +219,7 @@ Roo = XObject.define(
         {
             Base.prototype.save.call(this);
             // now write the js file..
-            
+            print(this.toSource());
             
             
         },
