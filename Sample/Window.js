@@ -2561,19 +2561,17 @@ Window=new XObject({
                                                                                 },
                                                                                 {
                                                                                     xtype: Gtk.Button,
-                                                                                    pack : "pack_start,false,false,0",
-                                                                                    label : "Set extra HTML in render",
                                                                                     listeners : {
                                                                                         button_press_event : function (self, event) {
                                                                                             this.get('/RooProjectProperties').show();
                                                                                             return false;
                                                                                         }
-                                                                                    }
+                                                                                    },
+                                                                                    label : "Set extra HTML in renderer",
+                                                                                    pack : "pack_start,false,false,0"
                                                                                 },
                                                                                 {
                                                                                     xtype: Gtk.Button,
-                                                                                    pack : "pack_start,false,false,0",
-                                                                                    label : "test in Firefox",
                                                                                     listeners : {
                                                                                         button_press_event : function (self, event) 
                                                                                         {
@@ -2631,7 +2629,9 @@ Window=new XObject({
                                                                                             this.get('/Terminal').el.feed_child(cmd, cmd.length);
                                                                                              return false;
                                                                                         }
-                                                                                    }
+                                                                                    },
+                                                                                    label : "Test in Firefox",
+                                                                                    pack : "pack_start,false,false,0"
                                                                                 }
                                                                             ]
                                                                         },
