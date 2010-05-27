@@ -208,6 +208,16 @@ Roo = XObject.define(
             
             
         },
+        
+        save : function()
+        {
+            Base.prototype.save.call(this);
+            // now write the js file..
+            
+            
+            
+        },
+        
         /**
          * This needs to use some options on the project
          * to determine how the file is output..
