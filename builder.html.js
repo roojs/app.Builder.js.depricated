@@ -165,6 +165,7 @@ Builder  = {
         
         for(var p in cfg){
             // key is not string?!?!?!!?
+            console.log(p);
             if (typeof(p) != 'string') {
                 continue;
             }
