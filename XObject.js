@@ -217,8 +217,8 @@ XObject.prototype = {
         items.forEach(function(i,n) {
             
             if (type == 'GtkTable' && i.pack == 'add') {
-                var c = n % this.config.n_columns;
-                var r = Math.floor(n/this.config.n_columns);
+                var c = n % _this.config.n_columns;
+                var r = Math.floor(n/_this.config.n_columns);
                 i.pack = [ 'attach', c, c+1, r, r+1, 
                         i.config.x_options || 5, i.config.x_padding || 0,
                         i.config.y_options || 5, i.config.y_padding || 0
