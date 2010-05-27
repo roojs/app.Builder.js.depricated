@@ -2007,7 +2007,7 @@ Window=new XObject({
                                                                                 return val == 'true' ? true : false;
                                                                             default: 
                                                                                 var nv = parseFloat(val);
-                                                                                if (!isNan(nv) && (val == ''+nv)) {
+                                                                                if (!isNaN(nv) && (val == ''+nv)) {
                                                                                     return nv;
                                                                                 }
                                                                                 return val;
