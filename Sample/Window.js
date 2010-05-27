@@ -1824,6 +1824,11 @@ Window=new XObject({
                                                                     activePath : false,
                                                                     id : "model",
                                                                     pack : "set_model",
+                                                                    getIterValue : function(iter, col) {
+                                                                         var gval = new GObject.Value('');
+                                                                        this.get('/LeftPanel.model').el.get_value(iter, col ,gval);
+                                                                        return '' + gval.value;
+                                                                    },
                                                                     add : function(info) {
                                                                           // info includes key, val, skel, etype..
                                                                                   console.dump(info);
@@ -1889,6 +1894,9 @@ Window=new XObject({
                                                                         
                                                                         this.el.set_value(iter, 1, '' +str);
                                                                         this.el.set_value(iter, 3, '' + this.toShort(str));
+                                                                        var type = this.getIterValue(iter, 4);
+                                                                    
+                                                                        this.el.set_value(iter, 5, type + ' : ' + str);
                                                                         // update the tree...  
                                                                     
                                                                         this.get('/LeftTree.model').changed(this.toJS(), doRefresh); 
