@@ -211,7 +211,7 @@ Base = XObject.define(
             
             if (!isArray) {
                 if (obj.items && obj.items.length) {
-                    //console.dump(obj.items);
+                     console.dump(obj.items);
                 }
                }
             
