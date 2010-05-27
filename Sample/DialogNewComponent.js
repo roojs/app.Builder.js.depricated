@@ -153,19 +153,15 @@ DialogNewComponent=new XObject({
                     xtype: Gtk.Table,
                     n_columns : 2,
                     n_rows : 3,
-                    pack : "add",
-                    listeners : {
-                        
-                    },
+                    pack : "pack_start,false,false,0",
+                    homogeneous : false,
                     items : [
                         {
                             xtype: Gtk.Label,
                             label : "parent",
                             pack : "add",
-                            visible : true,
-                            listeners : {
-                                
-                            }
+                            justify : Gtk.Justification.RIGHT,
+                            visible : true
                         },
                         {
                             xtype: Gtk.Entry,
@@ -178,6 +174,12 @@ DialogNewComponent=new XObject({
                         {
                             xtype: Gtk.Label,
                             label : "title",
+                            pack : "add",
+                            justify : Gtk.Justification.RIGHT,
+                            visible : true
+                        },
+                        {
+                            xtype: Gtk.Entry,
                             pack : "add",
                             visible : true,
                             listeners : {
