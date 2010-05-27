@@ -235,12 +235,7 @@ XObject.prototype = {
         
         // delete this.listeners ?
         // do again so child props work!
-        for (var i in this.config) {
-            if (i[0] != '.') { // problem with Gtk.Window... - not decided on a better way to handle this.
-                continue;
-            }
-            this.parent.el.child_set_property(this.el, i.substring(1), this.config[i]);
-        }
+       
         // do we need to call 'init here?'
     },
       
