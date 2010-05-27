@@ -154,6 +154,7 @@ DialogNewComponent=new XObject({
                     n_columns : 2,
                     n_rows : 3,
                     pack : "add",
+                    homogeneous : false,
                     items : [
                         {
                             xtype: Gtk.Label,
@@ -165,8 +166,7 @@ DialogNewComponent=new XObject({
                             }
                         },
                         {
-                            xtype: Gtk.Label,
-                            label : "title",
+                            xtype: Gtk.Entry,
                             pack : "add",
                             visible : true,
                             listeners : {
@@ -174,8 +174,8 @@ DialogNewComponent=new XObject({
                             }
                         },
                         {
-                            xtype: Gtk.Entry,
-                            label : "test",
+                            xtype: Gtk.Label,
+                            label : "title",
                             pack : "add",
                             visible : true,
                             listeners : {
