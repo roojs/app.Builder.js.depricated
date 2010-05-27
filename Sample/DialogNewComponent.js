@@ -11,68 +11,6 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 DialogNewComponent=new XObject({
     xtype: Gtk.Dialog,
-    deletable : false,
-    modal : true,
-    title : "New Component",
-    id : "DialogNewComponent",
-    default_width : 500,
-    default_height : 200,
-    show : function (c) 
-            {
-                if (!this.el) {
-                    this.init();
-                }
-                c = c || { name : '' , xtype : '' };
-                // check whic project we are adding to..
-                XObject.extend(this, c);
-                // causes problems.. get_screen?? not transfer ownership?
-               /// var Window                = imports.Builder.Window.Window;
-                //this.el.set_screen(Window.el.get_screen());
-                
-                //var paths = [];
-                //for (var i in this.project.paths) {
-                 //   paths.push({
-                 //       id : i,
-                 //       desc : i
-                 //   });
-               // }
-                 //console.log('load paths');
-                 
-                // load the paths.
-               // this.get('directory_model').loadData(paths);
-                    
-                
-                console.log('show all');
-                this.el.show_all();
-                this.success = c.success;
-                /*
-                var tm = this.get('template_model');
-                if (tm.templates) {
-                    return;
-                }
-                tm.templates = [];
-                var dir = __script_path__ + '/templates/';
-                
-                var f = Gio.file_new_for_path(dir);
-                f.enumerate_children_async ("*",  Gio.FileQueryInfoFlags.NONE, 
-                        GLib.PRIORITY_DEFAULT, null, function(o,ar) {
-                    // enum completed..
-                    var fe = f.enumerate_children_finish(ar);
-                    var ch = '';
-                    while (ch = fe.next_file(null)) {
-                        var add = dir + '/' + ch.get_name();
-                        if (!add.match(/\.js$/)) {
-                            continue;
-                        }
-                        tm.templates.push(add);
-                        
-                    }
-                    tm.loadData();
-                    
-                }, null);
-                */
-                
-            },
     listeners : {
         delete_event : function (self, event) {
             this.el.hide();
@@ -84,27 +22,43 @@ DialogNewComponent=new XObject({
                     return;
                 }
         
-        
-                    
-                   
-            
-                if (!this.get('xnsid').el.get_text().length ) {
+                if (!this.get('name').el.get_text().length ) {
                     this.get('/StandardErrorDialog').show(
                         "You have to set Project name "
                     );
                      
                     return;
                 }
+                var isNew = this.file.name.length ? false : true;
+                
+                if (this.file.name.length && this.file.name != this.get('name').el.get_text().length ) {
+                    this.get('/StandardErrorDialog').show(
+                        "Sorry changing names does not work yet. "
+                    );
+                     
+                    return;
+                }
+                for (var i in this.def) {
+                    this.file[i] =  this.get(i).el.get_text();
+                }
+               
+                if (!isNew) {
+                    file.save();
+                    this.el.hide();
+                    return;
+                }
+               
+            
         	var dir ='';
                 for (var i in this.project.paths) {
          		dir = i;
         		break;
         	}
         
-                var xidns = DialogNewComponent.get('xnsid').el.get_text();
+         
                 
                 // what about .js ?
-                 if (GLib.file_test (GLib.dir + '/' + xidns + '.bjs', GLib.FileTest.EXISTS)) {
+                 if (GLib.file_test (GLib.dir + '/' + this.file.name + '.bjs', GLib.FileTest.EXISTS)) {
                     StandardErrorDialog.show(
                         "That file already exists"
                     ); 
@@ -116,7 +70,10 @@ DialogNewComponent=new XObject({
                 //var tmpl = this.project.loadFileOnly(DialogNewComponent.get('template').getValue());
                 
                 var _this = this;
-                var nf = _this.project.create(dir + '/' + xidns + '.bjs');
+                var nf = _this.project.create(dir + '/' + this.file.name + '.bjs');
+                for (var i in this.file) {
+                    nf[i] = this.file[i];
+                }
                 if (this.get('/DialogNewComponent').success) {
                     this.get('/DialogNewComponent').success(_this.project, nf);
                 }
@@ -124,6 +81,38 @@ DialogNewComponent=new XObject({
         show : function (self) {
           this.el.show_all();
         }
+    },
+    default_height : 200,
+    default_width : 500,
+    id : "DialogNewComponent",
+    title : "New Component",
+    deletable : false,
+    modal : true,
+    show : function (c) 
+    {
+    
+        if (!this.el) {
+            this.init();
+        }
+        this.def =  { 
+            name : '' , 
+            title : '' ,
+            region : '' ,
+            parent: '',
+            disable: '',
+            modOrder : '0'
+        };
+        for (var i in this.def) {
+            c[i] = c[i] || this.def[i];
+            this.get(i).el.set_text(c[i]);
+        }
+         
+        this.file = c;
+        console.log('show all');
+        this.el.show_all();
+        this.success = c.success;
+        
+        
     },
     items : [
         {
@@ -143,13 +132,13 @@ DialogNewComponent=new XObject({
                             xtype: Gtk.Label,
                             label : "Component Name",
                             pack : "add",
-                            x_options : 0,
-                            xalign : 1,
+                            x_options : 4,
+                            xalign : 0.9,
                             justify : Gtk.Justification.RIGHT
                         },
                         {
                             xtype: Gtk.Entry,
-                            id : "xnsid",
+                            id : "name",
                             pack : "add",
                             visible : true
                         },
@@ -157,52 +146,77 @@ DialogNewComponent=new XObject({
                             xtype: Gtk.Label,
                             label : "Title",
                             pack : "add",
-                            x_options : 0,
-                            xalign : 1,
-                            justify : Gtk.Justification.RIGHT,
-                            visible : true
-                        },
-                        {
-                            xtype: Gtk.Entry,
-                            pack : "add",
-                            visible : true,
-                            listeners : {
-                                
-                            }
-                        },
-                        {
-                            xtype: Gtk.Label,
-                            x_options : 0,
-                            label : "title",
-                            pack : "add",
+                            x_options : 4,
                             xalign : 0.9,
                             justify : Gtk.Justification.RIGHT,
                             visible : true
                         },
                         {
                             xtype: Gtk.Entry,
+                            id : "title",
                             pack : "add",
-                            visible : true,
-                            listeners : {
-                                
-                            }
+                            visible : true
                         },
                         {
                             xtype: Gtk.Label,
-                            x_options : 0,
-                            label : "parent",
+                            label : "Region",
                             pack : "add",
-                            xalign : 1,
+                            tooltip_text : "center, north, south, east, west",
+                            x_options : 4,
+                            xalign : 0.9,
                             justify : Gtk.Justification.RIGHT,
                             visible : true
                         },
                         {
                             xtype: Gtk.Entry,
+                            id : "region",
                             pack : "add",
-                            visible : true,
-                            listeners : {
-                                
-                            }
+                            visible : true
+                        },
+                        {
+                            xtype: Gtk.Label,
+                            label : "Parent Name",
+                            pack : "add",
+                            x_options : 4,
+                            xalign : 0.9,
+                            justify : Gtk.Justification.RIGHT,
+                            visible : true
+                        },
+                        {
+                            xtype: Gtk.Entry,
+                            id : "parent",
+                            pack : "add",
+                            visible : true
+                        },
+                        {
+                            xtype: Gtk.Label,
+                            label : "Disable method",
+                            pack : "add",
+                            x_options : 4,
+                            xalign : 0.9,
+                            justify : Gtk.Justification.RIGHT,
+                            visible : true
+                        },
+                        {
+                            xtype: Gtk.Entry,
+                            id : "disable",
+                            pack : "add",
+                            visible : true
+                        },
+                        {
+                            xtype: Gtk.Label,
+                            label : "Order (for tabs)",
+                            pack : "add",
+                            x_options : 4,
+                            xalign : 0.9,
+                            justify : Gtk.Justification.RIGHT,
+                            visible : true
+                        },
+                        {
+                            xtype: Gtk.Entry,
+                            id : "modOrder",
+                            pack : "add",
+                            visible : true
                         }
                     ]
                 }
