@@ -107,6 +107,11 @@ Roo = XObject.define(
             if (typeof(this.proplist[name]) != 'undefined') {
                 return name;
             }
+            // roo toolbar is not in our DB!
+            if (name.match(/^Roo\.Toolbar\..*/)) {
+                return name;
+            }
+            
             var match = name.split('.').pop();
             for (var i in this.proplist) {
                 var last = i.split('.').pop();
