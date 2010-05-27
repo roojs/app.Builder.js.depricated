@@ -31,7 +31,7 @@ DialogNewComponent=new XObject({
                 }
                 var isNew = this.file.name.length ? false : true;
                 
-                if (this.file.name.length && this.file.name != this.get('name').el.get_text().length ) {
+                if (this.file.name.length && this.file.name != this.get('name').el.get_text()) {
                     this.get('/StandardErrorDialog').show(
                         "Sorry changing names does not work yet. "
                     );
@@ -105,6 +105,11 @@ DialogNewComponent=new XObject({
         for (var i in this.def) {
             c[i] = c[i] || this.def[i];
             this.get(i).el.set_text(c[i]);
+        }
+        if (c.name) {
+            this.el.set_title("Edit File Details - " + c.name);
+        } else {
+            this.el.set_title("Create New File");
         }
          
         this.file = c;
