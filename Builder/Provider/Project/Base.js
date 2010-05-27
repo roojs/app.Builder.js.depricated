@@ -106,6 +106,14 @@ Base = XObject.define(
           
           
         },
+        getName()
+        {
+            //returns the basename of the first path..
+            for (var i in this.paths) {
+                return GLib.basename(i);
+            }
+        },
+        
         toTree : function()
         {
             
