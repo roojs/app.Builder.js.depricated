@@ -1074,39 +1074,39 @@ Window=new XObject({
                                                                                 return k;
                                                                             },
                                                                             toJS : function(iter, with_id)
-                                                                                    {
-                                                                                        //Seed.print("WITHID: "+ with_id);
-                                                                                        
-                                                                                        var first = false;
-                                                                                        if (!iter) {
-                                                                                            
-                                                                                            this.treemap = { }; 
-                                                                                            
-                                                                                            iter = new Gtk.TreeIter();
-                                                                                            if (!this.el.get_iter_first(iter)) {
-                                                                                                return [];
-                                                                                            }
-                                                                                            first = true;
-                                                                                        } 
-                                                                                        
-                                                                                        var ar = [];
-                                                                                           
-                                                                                        while (true) {
-                                                                                            
-                                                                                            var k = this.nodeToJS(iter, with_id); 
-                                                                                            ar.push(k);
-                                                                                            
-                                                                                            
-                                                                                            if (!this.el.iter_next(iter)) {
-                                                                                                break;
-                                                                                            }
-                                                                                        }
-                                                                                        
-                                                                                        return ar;
-                                                                                        // convert the list into a json string..
+                                                                            {
+                                                                                //Seed.print("WITHID: "+ with_id);
+                                                                                
+                                                                                var first = false;
+                                                                                if (!iter) {
                                                                                     
-                                                                                        
-                                                                                    },
+                                                                                    this.treemap = { }; 
+                                                                                    
+                                                                                    iter = new Gtk.TreeIter();
+                                                                                    if (!this.el.get_iter_first(iter)) {
+                                                                                        return [];
+                                                                                    }
+                                                                                    first = true;
+                                                                                } 
+                                                                                
+                                                                                var ar = [];
+                                                                                   
+                                                                                while (true) {
+                                                                                    
+                                                                                    var k = this.nodeToJS(iter, with_id); 
+                                                                                    ar.push(k);
+                                                                                    
+                                                                                    
+                                                                                    if (!this.el.iter_next(iter)) {
+                                                                                        break;
+                                                                                    }
+                                                                                }
+                                                                                
+                                                                                return ar;
+                                                                                // convert the list into a json string..
+                                                                            
+                                                                                
+                                                                                },
                                                                             getIterValue : function (iter, col) {
                                                                                 var gval = new GObject.Value('');
                                                                                 this.el.get_value(iter, col ,gval);
@@ -2087,7 +2087,7 @@ Window=new XObject({
                                                                             return val;
                                                                         }
                                                                         var type = this.getType(this.el.get_path(iter).to_string());
-                                                                        //print("TYPE: " +type + " -  val:" + val);
+                                                                        print("TYPE: " +type + " -  val:" + val);
                                                                         switch(type.toLowerCase()) {
                                                                             case 'number':
                                                                             case 'uint':
