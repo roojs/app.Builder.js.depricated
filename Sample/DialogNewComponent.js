@@ -160,7 +160,7 @@ DialogNewComponent=new XObject({
                             xtype: Gtk.Label,
                             label : "parent",
                             pack : "add",
-                            xalign : 1,
+                            xalign : 0.9,
                             justify : Gtk.Justification.RIGHT,
                             visible : true
                         },
@@ -176,7 +176,7 @@ DialogNewComponent=new XObject({
                             xtype: Gtk.Label,
                             label : "title",
                             pack : "add",
-                            xalign : 1,
+                            xalign : 0.9,
                             justify : Gtk.Justification.RIGHT,
                             visible : true
                         },
