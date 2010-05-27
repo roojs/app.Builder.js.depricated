@@ -1850,11 +1850,13 @@ Window=new XObject({
                                                                         
                                                                     
                                                                         var provider = this.get('/LeftTree').getPaleteProvider();
-                                                                        
+                                                                         var iter = new Gtk.TreeIter();
+                                                                         
                                                                         // sort!!!?
                                                                         var keys  = XObject.keys(ar);
                                                                         keys.sort();
                                                                         ar.listeners = ar.listeners || {};
+                                                                        
                                                                         for (var i in ar.listeners ) {
                                                                             this.el.append(iter);
                                                                             var p = this.el.get_path(iter).to_string();
@@ -1870,7 +1872,7 @@ Window=new XObject({
                                                                         }
                                                                         
                                                                         
-                                                                        var iter = new Gtk.TreeIter();
+                                                                       
                                                                         var _this = this;
                                                                         keys.forEach(function(i) {
                                                                             if (typeof(ar[i]) == 'object') {
@@ -1882,11 +1884,11 @@ Window=new XObject({
                                                                             _this.el.append(iter);
                                                                             var p = _this.el.get_path(iter).to_string();
                                                                             ret[i] = p;
-                                                                            _this.el.set_value(iter, 0, i);
+                                                                            _this.el.set_value(iter, 0, ''+i);
                                                                             _this.el.set_value(iter, 1, '' + ar[i]);  
-                                                                            _this.el.set_value(iter, 2, i);
-                                                                            _this.el.set_value(iter, 3, _this.toShort(ar[i]));
-                                                                            _this.el.set_value(iter, 4, type);
+                                                                            _this.el.set_value(iter, 2, ''+i);
+                                                                            _this.el.set_value(iter, 3, ''+ _this.toShort(ar[i]));
+                                                                            _this.el.set_value(iter, 4, ''+type);
                                                                             _this.el.set_value(iter, 5, type + ' : ' + ar[i]);
                                                                         })
                                                                         return ret;
