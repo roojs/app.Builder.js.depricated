@@ -34,6 +34,7 @@ Where it is..
 -----------------------------------------------------
 
 TODO (Gtk)
+* Tables are not rendering first time round..
 * Dialog buttons - need special rendering on preview.
 * Icon-size (should be an enum...??)
 * (Image|....??? ).stock - should be a list of stock icons..
