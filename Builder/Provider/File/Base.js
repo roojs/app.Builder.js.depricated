@@ -235,7 +235,7 @@ Base = XObject.define(
                         left = "'" + leftv + "'";
                     } else if (leftv.match(/[^A-Z_]+/i)) { // not plain a-z... - quoted.
                         var val = JSON.stringify(leftv);
-                        left = "'" + leftv.substring(1, leftv.length-1).replace(/'/, "\\'") + "'";
+                        left = "'" + val.substring(1, val.length-1).replace(/'/, "\\'") + "'";
                     } else {
                         left = '' + leftv;
                     }
