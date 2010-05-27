@@ -2499,7 +2499,7 @@ Window=new XObject({
                                                     init : function() {
                                                         XObject.prototype.init.call(this);
                                                        this.el.set_tab_label(this.items[0].el, new Gtk.Label({ label : "Preview" }));
-                                                        this.el.set_tab_label(this.items[1].el, new Gtk.Label({ label : "Help" }));
+                                                        this.el.set_tab_label(this.items[1].el, new Gtk.Label({ label : "Manual Pages" }));
                                                     },
                                                     items : [
                                                         {
