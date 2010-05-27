@@ -208,6 +208,10 @@ XObject.prototype = {
          //   XObject.registry[o.xnsid] = XObject.registry[o.xnsid] || {}; 
          //   XObject.registry[o.xnsid][o.id] = this;
         //}
+        
+        var type = this.xtype.type;
+        
+        
         var _this=this;
         items.forEach(function(i) {
             _this.addItem(i);
@@ -217,6 +221,7 @@ XObject.prototype = {
         for (var i in this.listeners) {
             this.addListener(i, this.listeners[i]);
         }
+        
         // delete this.listeners ?
         // do again so child props work!
         for (var i in this.config) {
