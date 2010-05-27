@@ -1876,7 +1876,7 @@ Window=new XObject({
                                                                         var _this = this;
                                                                         keys.forEach(function(i) {
                                                                             if (typeof(ar[i]) == 'object') {
-                                                                                continue;
+                                                                                return;
                                                                             }
                                                                             
                                                                             var type = provider.findType(ar, i, ar[i]);
