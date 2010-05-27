@@ -189,9 +189,9 @@ Builder  = {
                     // stupid IE can not return objects evaluated..
                     eval('_tmp =(' + cfg[p] + ')');
                     cfg[p.substr(1)] = _tmp;
-                    //if (typeof(_tmp) == 'undefined') {
-                    //    alert(cfg[p]);
-                   // }
+                    if (typeof(_tmp) == 'undefined') {
+                        alert(cfg[p]);
+                    }
                    
                 } catch(e) {  
                     console.log('Error evaluating: '  + cfg[p] + "\r\n" + JSON.stringify(e)); 
