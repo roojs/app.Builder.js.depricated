@@ -249,7 +249,7 @@ Base = XObject.define(
                     if (lines.length > 1) {
                         str = lines.join("\n" + pad);
                     }
-                    els.push(left + ":" + str);
+                    els.push(left  + str);
                     return;
                 }
                  
