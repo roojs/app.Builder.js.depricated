@@ -1742,7 +1742,7 @@ Window=new XObject({
                                                         {
                                                             xtype: Gtk.TreeView,
                                                             id : "view",
-                                                            tooltip_column : 1,
+                                                            tooltip_column : 5,
                                                             headers_visible : false,
                                                             enable_tree_lines : true,
                                                             init : function() {
@@ -1831,6 +1831,7 @@ Window=new XObject({
                                                                                                      GObject.TYPE_STRING,  // 2 visable key
                                                                                                      GObject.TYPE_STRING, // 3 visable value
                                                                                                      GObject.TYPE_STRING, // 4 need to store type of!!!
+                                                                                                      GObject.TYPE_STRING // 5 tooltip
                                                                                                   
                                                                                                 ]);
                                                                     },
@@ -1839,49 +1840,56 @@ Window=new XObject({
                                                                             return a.length > 1 ? a[0] + '....' : '' + str;
                                                                     },
                                                                     load : function(ar) {
-                                                                         this.el.clear();
-                                                                                                
-                                                                                this.get('/RightEditor').el.hide();
-                                                                                if (ar === false) {
-                                                                                    return ;
-                                                                                }
-                                                                                var ret = {}; 
-                                                                                
+                                                                      this.el.clear();
+                                                                                            
+                                                                        this.get('/RightEditor').el.hide();
+                                                                        if (ar === false) {
+                                                                            return ;
+                                                                        }
+                                                                        var ret = {}; 
+                                                                        
                                                                     
-                                                                                var provider = this.get('/LeftTree').getPaleteProvider();
-                                                                                
-                                                                                // sort!!!?
-                                                                                var iter = new Gtk.TreeIter();
-                                                                                for (var i in ar) {
-                                                                                    if (typeof(ar[i]) == 'object') {
-                                                                                        continue;
-                                                                                    }
-                                                                                    
-                                                                                    var type = provider.findType(ar, i, ar[i]);
-                                                                                    
-                                                                                    this.el.append(iter);
-                                                                                    var p = this.el.get_path(iter).to_string();
-                                                                                    ret[i] = p;
-                                                                                    this.el.set_value(iter, 0, i);
-                                                                                    this.el.set_value(iter, 1, type + ' : ' + ar[i]); // tooltip!
-                                                                                    this.el.set_value(iter, 2, i);
-                                                                                    this.el.set_value(iter, 3, this.toShort(ar[i]));
-                                                                                    this.el.set_value(iter, 4, type);
-                                                                                }
-                                                                                ar.listeners = ar.listeners || {};
-                                                                                for (var i in ar.listeners ) {
-                                                                                    this.el.append(iter);
-                                                                                    var p = this.el.get_path(iter).to_string();
-                                                                                    ret['!' + i] = p;
-                                                                                    
-                                                                                    this.el.set_value(iter, 0, '!'+  i  );
-                                                                                    this.el.set_value(iter, 1, 'listener : ' + ar.listeners[i]);
-                                                                                    this.el.set_value(iter, 2, '<b>'+ i + '</b>');
-                                                                                    
-                                                                                    this.el.set_value(iter, 3, '' + this.toShort(ar.listeners[i]));
-                                                                                    this.el.set_value(iter, 4, 'function');
-                                                                                }
-                                                                                return ret;
+                                                                        var provider = this.get('/LeftTree').getPaleteProvider();
+                                                                        
+                                                                        // sort!!!?
+                                                                        var keys  = XObject.keys(ar);
+                                                                        keys.sort();
+                                                                        ar.listeners = ar.listeners || {};
+                                                                        for (var i in ar.listeners ) {
+                                                                            this.el.append(iter);
+                                                                            var p = this.el.get_path(iter).to_string();
+                                                                            ret['!' + i] = p;
+                                                                            
+                                                                            this.el.set_value(iter, 0, '!'+  i  );
+                                                                            this.el.set_value(iter, 1, '' + ar.listeners[i]);
+                                                                            this.el.set_value(iter, 2, '<b>'+ i + '</b>');
+                                                                            
+                                                                            this.el.set_value(iter, 3, '' + this.toShort(ar.listeners[i]));
+                                                                            this.el.set_value(iter, 4, 'function');
+                                                                            this.el.set_value(iter, 5, type + ' : ' + ar.listeners[i]);
+                                                                        }
+                                                                        
+                                                                        
+                                                                        var iter = new Gtk.TreeIter();
+                                                                        var _this = this;
+                                                                        keys.forEach(function(i) {
+                                                                            if (typeof(ar[i]) == 'object') {
+                                                                                continue;
+                                                                            }
+                                                                            
+                                                                            var type = provider.findType(ar, i, ar[i]);
+                                                                            
+                                                                            _this.el.append(iter);
+                                                                            var p = _this.el.get_path(iter).to_string();
+                                                                            ret[i] = p;
+                                                                            _this.el.set_value(iter, 0, i);
+                                                                            _this.el.set_value(iter, 1, '' + ar[i]);  
+                                                                            _this.el.set_value(iter, 2, i);
+                                                                            _this.el.set_value(iter, 3, _this.toShort(ar[i]));
+                                                                            _this.el.set_value(iter, 4, type);
+                                                                            _this.el.set_value(iter, 5, type + ' : ' + ar[i]);
+                                                                        })
+                                                                        return ret;
                                                                     },
                                                                     add : function(info) {
                                                                           // info includes key, val, skel, etype..
