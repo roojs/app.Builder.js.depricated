@@ -147,6 +147,16 @@ Gtk = XObject.define(
             
             
         },
+        /**
+         * convert xtype for munged output..
+         * 
+         */
+        mungeXtype : function(xtype, els)
+        {
+            els.push('xtype: '+ xtype);
+        },
+        
+        
         /** 
          *  saveJS
          * 
