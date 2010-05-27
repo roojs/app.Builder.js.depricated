@@ -355,6 +355,8 @@ Roo = XObject.define(
             ret.push(xtype);
             var str =  ret.join('.');
             
+            
+            
             var pm = imports.Builder.Provider.ProjectManager.ProjectManager;
             return pm.getPalete('Roo').guessName(ret.join('.'));
             
