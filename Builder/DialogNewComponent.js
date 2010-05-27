@@ -74,11 +74,11 @@ DialogNewComponent=new XObject({
                 
             },
     listeners : {
-        "delete_event":function (self, event) {
+        delete_event : function (self, event) {
             this.el.hide();
             return true;
         },
-        "response":function (self, response_id) {
+        response : function (self, response_id) {
         	if (response_id < 1) { // cancel!
                     this.el.hide();
                     return;
@@ -121,7 +121,7 @@ DialogNewComponent=new XObject({
                     this.get('/DialogNewComponent').success(_this.project, nf);
                 }
         },
-        "show":function (self) {
+        show : function (self) {
           this.el.show_all();
         }
     },
