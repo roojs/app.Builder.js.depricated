@@ -152,9 +152,8 @@ DialogNewComponent=new XObject({
                             n_columns : 3,
                             n_rows : 2,
                             pack : "add",
-                            init : function() {
-                                this.el = new Gtk.Table(this.n_columns, this.n_rows);
-                                XObject.prototype.init.call(this);
+                            listeners : {
+                                
                             },
                             items : [
                                 {
