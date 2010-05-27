@@ -64,7 +64,12 @@ Roo = XObject.define(
     },
     Base,
     {
-            
+        
+        modOrder : '001', /// sequence id that this uses.
+        region : 'center',
+        parent : '',
+        title : '', // the title on displayed when loading.
+        
         setNSID : function(id)
         {
             
@@ -314,9 +319,10 @@ Roo = XObject.define(
         toSourceLayout : function() 
         {
             var b = this.items[0];
-            var o = this.mungePropObj(this.items[0]);
+            var o = this.mungeToString(this.items[0], false, '    ');
             
-            var disabled = typeof(b['|disabled']) == 'undefined' ? (b.disabled || false) : b['disabled'];
+            var modkey = this.modOrder + '-' + this.name.replace('/[^A-Z]+/ig', '-');
+            
             
             return [
                 this.outputHeader(),
@@ -326,11 +332,11 @@ Roo = XObject.define(
                 "Pman.on('beforeload', function()",
                 "{",
                 "    Pman.register({",
-                "        modKey : '" + (b.modkey  || "000-unnumbered module") +"',",
-                "        module : " + b['|module']  + ",",
-                "        region : '" + (b.region  || '') +"',",
-                "        parent : " + (b.parent  || false) + ",",
-                "        name : \"" + (b.name  || "unnamed module") + "\"",
+                "        modKey : '" +modkey+"',",
+                "        module : " + this.name + ",",
+                "        region : '" + this.region   +"',",
+                "        parent : " + (this.parent ||  'false') + ",",
+                "        name : \"" + (b.title  || "unnamed module") + "\"",
                 "        disabled : " + disabled +" ",
                 "    });",
                 "});",
