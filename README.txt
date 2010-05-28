@@ -65,6 +65,9 @@ Thoughts...
  - needs cols,rows in constructor.
  - child properties do not appear to work?  -- investigate?
 
+* XObject - Use Buildable interface???
+  
+* Preview area - use glade widgets?
 
 -----------------------------------------------------
 Concepts
