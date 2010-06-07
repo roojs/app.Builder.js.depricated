@@ -93,13 +93,13 @@ DialogTemplateSelect=new XObject({
                                         this.el.clear();                                    
                                         var iter = new Gtk.TreeIter();
                                         var el = this.el;
-                                        data.forEach(function(p,i) {
-                                            print("add " + p);
+                                        data.forEach(function(p) {
+                                    
                                             el.append(iter);
                                             
                                              
-                                            el.set_value(iter, 0, ''+ i);
-                                            el.set_value(iter, 1, ''+ p);
+                                            el.set_value(iter, 0, ''+ p.path);
+                                            el.set_value(iter, 1, ''+ p.name);
                                             
                                         });
                                                   
