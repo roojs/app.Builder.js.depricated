@@ -35,7 +35,7 @@ DialogTemplateSelect=new XObject({
         this.el.show_all();
         this.el.run();
         this.el.hide();
-        var ix = this.el.get_active();
+        var ix = this.get('combo').el.get_active();
         if (ix < 1 ) {
             return node;
         }
@@ -67,7 +67,7 @@ DialogTemplateSelect=new XObject({
                             pack : "add",
                             init : function() {
                                 XObject.prototype.init.call(this);
-                                 this.el.add_attribute(this.items[0].el , 'markup', 1 );  
+                                 this.el.add_attribute(this.items[0].el , 'markup', 1 );
                             },
                             items : [
                                 {
@@ -78,12 +78,21 @@ DialogTemplateSelect=new XObject({
                                     xtype: Gtk.ListStore,
                                     id : "model",
                                     pack : "set_model",
+                                    init : function() {
+                                        XObject.prototype.init.call(this);
+                                                this.el.set_column_types ( 2, [
+                                                GObject.TYPE_STRING,  // real key
+                                                GObject.TYPE_STRING // real type
+                                                
+                                                
+                                            ] );
+                                    },
                                     loadData : function (data) {
                                         this.el.clear();                                    
                                         var iter = new Gtk.TreeIter();
                                         var el = this.el;
                                         data.forEach(function(p,i) {
-                                            
+                                            print("add " + p);
                                             el.append(iter);
                                             
                                              
