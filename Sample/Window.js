@@ -268,7 +268,7 @@ Window=new XObject({
                                                         html = html.replace('</head>', project.runhtml + '</head>');
                                                         
                                                        
-                                                        var     jsstr = JSON.stringify(js[0]);
+                                                        var     jsstr = JSON.stringify(js[0], null, 4);
                                                        
                                                         var runbuilder = '<script type="text/javascript">' + "\n" + 
                                                             " Builder.render(" + jsstr + ");\n" +
