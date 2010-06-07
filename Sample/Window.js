@@ -902,13 +902,11 @@ Window=new XObject({
                                                                                     // work out what kind of packing to use..
                                                                                     if (typeof(node.pack) == 'undefined'  && parent !== false) {
                                                                                         var pal = this.get('/LeftTree').getPaleteProvider();
-                                                                                        
-                                                                                        var pname = pal.guessName(this.singleNodeToJS(parent.to_string()));
-                                                                                        print ("PNAME : "  + pname);
-                                                                                        var cname = pal.guessName(node);
-                                                                                        print ("CNAME : "  + cname);
-                                                                                        node.pack = pal.getDefaultPack(pname, cname);
-                                                                                        
+                                                                                        if (pal.name == 'Gtk') {
+                                                                                            var pname = pal.guessName(this.singleNodeToJS(parent.to_string()));
+                                                                                            var cname = pal.guessName(node);
+                                                                                            node.pack = pal.getDefaultPack(pname, cname);
+                                                                                        }
                                                                                         
                                                                                     }
                                                                                     
