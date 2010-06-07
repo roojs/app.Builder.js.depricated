@@ -848,8 +848,8 @@ Window=new XObject({
                                                                             },
                                                                             dropNode : function(target_data, node) {
                                                                                      print("drop Node");
-                                                                                  console.dump(node);
-                                                                                  console.dump(target_data);
+                                                                                 // console.dump(node);
+                                                                              //    console.dump(target_data);
                                                                                     var tp = target_data[0].length ? new  Gtk.TreePath.from_string( target_data[0] ) : false;
                                                                                     
                                                                                     print("add " + tp + "@" + target_data[1]  );
@@ -896,6 +896,7 @@ Window=new XObject({
                                                                                         if (target_data.length == 3 && target_data[2].length) {
                                                                                             node['*prop'] = target_data[2];
                                                                                         }
+                                                                                        node = this.get('/DialogTemplateSelect').show(node);
                                                                                         
                                                                                     }
                                                                                     // work out what kind of packing to use..
