@@ -157,6 +157,7 @@ Window=new XObject({
                             xtype: Gtk.MenuItem,
                             label : "_Edit",
                             use_underline : true,
+                            pack : "add",
                             items : [
                                 {
                                     xtype: Gtk.Menu,
@@ -180,6 +181,113 @@ Window=new XObject({
                                                 }
                                             },
                                             label : "File _Properties",
+                                            pack : "add",
+                                            use_underline : true
+                                        },
+                                        {
+                                            xtype: Gtk.MenuItem,
+                                            listeners : {
+                                                activate : function (self, event) {
+                                                    this.get('/RooProjectProperties').show();
+                                                    return false;
+                                                }
+                                            },
+                                            label : "Modify Project HTML ",
+                                            pack : "add",
+                                            use_underline : true
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            xtype: Gtk.MenuItem,
+                            label : "_View",
+                            use_underline : true,
+                            items : [
+                                {
+                                    xtype: Gtk.Menu,
+                                    pack : "set_submenu",
+                                    listeners : {
+                                        
+                                    },
+                                    items : [
+                                        {
+                                            xtype: Gtk.MenuItem,
+                                            listeners : {
+                                                activate : function (self, event) {
+                                                      var js = this.get('/LeftTree.model').toJS();
+                                                    if (js && js[0]) {
+                                                        this.get('/RightBrowser.view').renderJS(js[0]);
+                                                    } 
+                                                    return false;
+                                                }
+                                            },
+                                            label : "_Redraw (Roo)",
+                                            pack : "add",
+                                            use_underline : true
+                                        },
+                                        {
+                                            xtype: Gtk.MenuItem,
+                                            listeners : {
+                                                activate : function (self, event) 
+                                                {
+                                                        /* Firefox testing for debugging..
+                                                          - we can create a /tmp directory, and put.
+                                                            builder.html, builder.html.js, link roojs1 
+                                                            add at the end of builder.html Roo.onload(function() {
+                                                	  */
+                                                	 if (!this.get('/Window.LeftTree').getActiveFile()) {
+                                                            return;
+                                                        }
+                                                        
+                                                        var js = this.get('/LeftTree.model').toJS();
+                                                         if (!js ||  !js[0]) {
+                                                            return;
+                                                        }
+                                                        var project = this.get('/Window.LeftTree').getActiveFile().project;
+                                                        //print (project.fn);
+                                                        
+                                                        project.runhtml  = project.runhtml || '';
+                                                
+                                                
+                                                	var File = imports.File.File;
+                                                	
+                                                	var target = "/tmp/firetest"; // fixme..
+                                                	if (!File.isDirectory(target)) {
+                                                	    File.mkdir(target);
+                                                        }
+                                                	File.copy(__script_path__ + '/../builder.html.js', target+ '/builder.html.js', Gio.FileCopyFlags.OVERWRITE);
+                                                	if (!File.exists( target+ '/roojs1')) {
+                                                            File.link( target+ '/roojs1', __script_path__ + '/../roojs1');
+                                                    	}
+                                                        
+                                                        
+                                                        
+                                                        var html = imports.File.File.read(__script_path__ + '/../builder.html');
+                                                        html = html.replace('</head>', project.runhtml + '</head>');
+                                                        
+                                                       
+                                                        var     jsstr = JSON.stringify(js[0]);
+                                                       
+                                                        var runbuilder = '<script type="text/javascript">' + "\n" + 
+                                                            " Builder.render(" + jsstr + ");\n" +
+                                                            '</script>';
+                                                        
+                                                        html = html.replace('</body>', runbuilder + '</body>');
+                                                
+                                                	File.write( target+ '/builder.html', html);
+                                                	
+                                                        this.get('/Terminal').feed("RUN DIR:" + target);
+                                                    
+                                                    this.get('/Terminal').el.fork_command( null , [], [], target
+                                                	, false,false,false); 
+                                                    var cmd = "firefox file://" + target + "/builder.html  \n";
+                                                    this.get('/Terminal').el.feed_child(cmd, cmd.length);
+                                                     return false;
+                                                }
+                                            },
+                                            label : "_Test in Firefox (Roo)",
                                             pack : "add",
                                             use_underline : true
                                         }
