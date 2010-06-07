@@ -134,6 +134,14 @@ Base = XObject.define(
         },
         getDefaultPack: function(pname, cname) {
             return 'add';
+        },
+        saveTemplate: function(data, name)
+        {
+            var gn = this.guessName(JSON.decode(data));
+            // store it in user's directory..
+            
+            
+            
         }
         
     }
