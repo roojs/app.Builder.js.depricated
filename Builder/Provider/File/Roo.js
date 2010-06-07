@@ -28,8 +28,8 @@ Roo = XObject.define(
         //console.dump(cfg);
         
         if (!cfg.name || !cfg.fullname ) {
-            cfg.name = cfg.path.split('/').pop().replace(/\.js$/, '');
-            cfg.fullname = (cfg.parent && cfg.parent.length ? (cfg.parent + '.') : '' ) + cfg.name;
+            cfg.name = cfg.path.split('/').pop().replace(/\.bjs$/, '');
+            //cfg.fullname = (cfg.parent && cfg.parent.length ? (cfg.parent + '.') : '' ) + cfg.name;
         }
         
         
