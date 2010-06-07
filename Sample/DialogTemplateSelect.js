@@ -28,7 +28,7 @@ DialogTemplateSelect=new XObject({
             return node;
         }
       
-        opts.unshift('Just add Element')
+        opts.unshift({ path: '' , name :'Just add Element' });
         this.get('combo.model').loadData(opts);
          this.get('combo').el.set_active(0);
          
@@ -39,8 +39,10 @@ DialogTemplateSelect=new XObject({
         if (ix < 1 ) {
             return node;
         }
-        var fn = opts[i];
-        return node;
+        
+    
+        return pal.loadTemplate(opts[ix].path)
+    
     },
     items : [
         {
