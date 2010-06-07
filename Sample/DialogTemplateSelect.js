@@ -30,7 +30,7 @@ DialogTemplateSelect=new XObject({
       
         opts.unshift('Just add Element')
         this.get('combo.model').loadData(opts);
-     
+         this.get('combo').el.set_active(0);
          
         this.el.show_all();
         this.el.run();
