@@ -27,7 +27,7 @@ DialogConfirm=new XObject({
     text : "-",
     modal : true,
     listeners : {
-        "response":function (self, response_id) {
+        response : function (self, response_id) {
            this.el.hide();
         print("RESPOSE: " + response_id);
             if (response_id == -8) { //yes!
@@ -35,7 +35,7 @@ DialogConfirm=new XObject({
               this.success();
             }
         },
-        "delete_event":function (self, event) {
+        delete_event : function (self, event) {
             this.el.hide();
             return true;
         }
