@@ -144,7 +144,7 @@ Base = XObject.define(
             var appdir = GLib.get_home_dir() + '/.Builder'; 
             
             if (!File.isDirectory(appdir+ '/' + gn)) {
-                File.createDir(appdir+ '/' + gn);
+                File.createDirectory(appdir+ '/' + gn);
             }
             File.write(appdir+ '/' + gn + '/' + cname + '.js', data);
             
