@@ -164,6 +164,8 @@ var File = {
     },
     /**
      * Make a directory
+     * FIXME - needs perms setting..
+     * 
      * @arg  directory  {String} Directory to make
      */
 
