@@ -36,7 +36,7 @@ DialogSaveTemplate=new XObject({
                 );
                  return;
             }
-            this.get('/Window.LeftTree').getPaletteProvider().saveTemplate(name, this.data);
+            this.get('/Window.LeftTree').getPaleteProvider().saveTemplate(name, this.data);
             // now we save it..
                 this.el.hide();
             
