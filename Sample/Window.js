@@ -2558,10 +2558,10 @@ Window=new XObject({
                                                             })  
                                                             return;
                                                         }
-                                                        
-                                                        if (type.indexOf('.') > -1 ||  type.toLowerCase() == 'boolean') {
-                                                             key = '|' + key;
-                                                        }
+                                                        // has dot in name, and is boolean???? this does not make sense..
+                                                        //if (type.indexOf('.') > -1 ||  type.toLowerCase() == 'boolean') {
+                                                        //     key = '|' + key;
+                                                       // }
                                                         
                                                         this.get('/LeftPanel.model').add( {
                                                             key : key, 
