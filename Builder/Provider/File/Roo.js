@@ -30,6 +30,7 @@ Roo = XObject.define(
         if (!cfg.name || !cfg.fullname ) {
             cfg.name = cfg.path.split('/').pop().replace(/\.bjs$/, '');
             //cfg.fullname = (cfg.parent && cfg.parent.length ? (cfg.parent + '.') : '' ) + cfg.name;
+            cfg.fullname = cfg.name;
         }
         
         
