@@ -4,6 +4,7 @@ console = imports.console;
 XObject = imports.XObject.XObject;
  
 GLib = imports.gi.GLib; 
+File = imports.File.File;
 
 // Palete Provider..
 Base = XObject.define(
