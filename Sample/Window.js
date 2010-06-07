@@ -2544,7 +2544,7 @@ Window=new XObject({
                                                         
                                                         this.get('/MidPropTree').hideWin();
                                                 
-                                                        if (type == 'function') {
+                                                        if (type.toLowerCase() == 'function') {
                                                             
                                                             if (etype != 'events') {
                                                                 key = '|' + key;
