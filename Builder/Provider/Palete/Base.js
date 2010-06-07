@@ -2,7 +2,8 @@
  
 console = imports.console;
 XObject = imports.XObject.XObject;
-
+Gio = imports.gi.Gio;
+GLib = imports.gi.GLib; 
 
 // Palete Provider..
 Base = XObject.define(
