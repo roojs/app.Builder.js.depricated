@@ -268,7 +268,7 @@ Window=new XObject({
                                                         html = html.replace('</head>', project.runhtml + '</head>');
                                                         
                                                        
-                                                        var     jsstr = JSON.stringify(js[0]);
+                                                        var     jsstr = JSON.stringify(js[0], null, 4);
                                                        
                                                         var runbuilder = '<script type="text/javascript">' + "\n" + 
                                                             " Builder.render(" + jsstr + ");\n" +
@@ -2002,11 +2002,6 @@ Window=new XObject({
                                                                     activePath : false,
                                                                     id : "model",
                                                                     pack : "set_model",
-                                                                    getIterValue : function(iter, col) {
-                                                                         var gval = new GObject.Value('');
-                                                                        this.get('/LeftPanel.model').el.get_value(iter, col ,gval);
-                                                                        return '' + gval.value;
-                                                                    },
                                                                     add : function(info) {
                                                                           // info includes key, val, skel, etype..
                                                                                   console.dump(info);
@@ -2027,7 +2022,7 @@ Window=new XObject({
                                                                                 if (typeof(info.val) == 'undefined') {
                                                                                         
                                                                                     info.val = '';
-                                                                                    if (info.type == 'boolean') {
+                                                                                    if (info.type.toLowerCase() == 'boolean') {
                                                                                         info.val = true;
                                                                                     }
                                                                                     if (type == 'number') {
@@ -2167,6 +2162,11 @@ Window=new XObject({
                                                                             
                                                                             
                                                                     },
+                                                                    getIterValue : function(iter, col) {
+                                                                         var gval = new GObject.Value('');
+                                                                        this.get('/LeftPanel.model').el.get_value(iter, col ,gval);
+                                                                        return '' + gval.value;
+                                                                    },
                                                                     getType : function(treepath) {
                                                                          return this.getValue(treepath, 4);
                                                                     },
@@ -2268,64 +2268,64 @@ Window=new XObject({
                                                                         return ret;
                                                                     },
                                                                     startEditing : function(path,col) {
-                                                                    /**
-                                                                    * start editing path (or selected if not set..)
-                                                                    * @param {String|false} path  (optional) treepath to edit - selected tree gets
-                                                                    *     edited by default.
-                                                                    * @param {Number} 0 or 1 (optional)- column to edit. 
-                                                                    */
+                                                                        /**
+                                                                        * start editing path (or selected if not set..)
+                                                                        * @param {String|false} path  (optional) treepath to edit - selected tree gets
+                                                                        *     edited by default.
+                                                                        * @param {Number} 0 or 1 (optional)- column to edit. 
+                                                                        */
                                                                          var tp;
-                                                                                if (typeof(path) == 'string') {
-                                                                                    tp = new Gtk.TreePath.from_string(path);
-                                                                                } else {
-                                                                                    var iter = new Gtk.TreeIter();
-                                                                                    var s = this.get('/LeftPanel.view').selection;
-                                                                                    s.get_selected(this.el, iter);
-                                                                                    tp = this.el.get_path(iter);
-                                                                                    path = tp.to_string();
-                                                                                }
-                                                                                
-                                                                               
-                                                                                // which colum is to be edited..
-                                                                                var colObj = false;
-                                                                                if (typeof(col) == 'undefined') {
-                                                                                    var k = this.getValue(path, 0);
-                                                                                    colObj = (!k.length || k == '|') ? 
-                                                                                        this.get('/LeftPanel').propertyColumn : this.get('/LeftPanel').editableColumn;
-                                                                                } else {
-                                                                                    colObj = col ? this.get('/LeftPanel').editableColumn : this.get('/LeftPanel').propertyColumn;
-                                                                                }
-                                                                                
-                                                                                // make sure the pulldown is set correctly..
-                                                                                // not really needed for second col...
+                                                                        if (typeof(path) == 'string') {
+                                                                            tp = new Gtk.TreePath.from_string(path);
+                                                                        } else {
+                                                                            var iter = new Gtk.TreeIter();
+                                                                            var s = this.get('/LeftPanel.view').selection;
+                                                                            s.get_selected(this.el, iter);
+                                                                            tp = this.el.get_path(iter);
+                                                                            path = tp.to_string();
+                                                                        }
+                                                                        
+                                                                       
+                                                                        // which colum is to be edited..
+                                                                        var colObj = false;
+                                                                        if (typeof(col) == 'undefined') {
+                                                                            var k = this.getValue(path, 0);
+                                                                            colObj = (!k.length || k == '|') ? 
+                                                                                this.get('/LeftPanel').propertyColumn : this.get('/LeftPanel').editableColumn;
+                                                                        } else {
+                                                                            colObj = col ? this.get('/LeftPanel').editableColumn : this.get('/LeftPanel').propertyColumn;
+                                                                        }
+                                                                        
+                                                                        // make sure the pulldown is set correctly..
+                                                                        // not really needed for second col...
                                                                     
-                                                                                var provider = this.get('/LeftTree').getPaleteProvider();
-                                                                               
-                                                                                var type = this.get('/LeftPanel.model').getType(path);
-                                                                                var opts = provider.findOptions(type);
-                                                                                var renderer = this.get('/LeftPanel').editableColumn.items[0].el;
-                                                                                
-                                                                                if (opts === false) {
-                                                                                    this.get('/LeftPanel').editableColumn.setOptions([]);
-                                                                                    renderer.has_entry = true; /// probably does not have any effect.
-                                                                                } else {
-                                                                                    this.get('/LeftPanel').editableColumn.setOptions(opts);
-                                                                                    renderer.has_entry = false;
-                                                                                }
-                                                                                
-                                                                                var _this=this;
-                                                                                // iter now has row...
-                                                                                GLib.timeout_add(0, 100, function() {
-                                                                                    
-                                                                                    colObj.items[0].el.editable = true; // esp. need for col 0..
-                                                                                    _this.get('/LeftPanel.view').el.set_cursor_on_cell(
-                                                                                        tp,
-                                                                                        colObj.el,
-                                                                                        colObj.items[0].el,
-                                                                                        true
-                                                                                    );
-                                                                                });
-                                                                                
+                                                                        var provider = this.get('/LeftTree').getPaleteProvider();
+                                                                       
+                                                                        var type = this.get('/LeftPanel.model').getType(path);
+                                                                        var opts = provider.findOptions(type);
+                                                                        var renderer = this.get('/LeftPanel').editableColumn.items[0].el;
+                                                                        
+                                                                        if (opts === false) {
+                                                                            this.get('/LeftPanel').editableColumn.setOptions([]);
+                                                                            renderer.has_entry = true; /// probably does not have any effect.
+                                                                        } else {
+                                                                            this.get('/LeftPanel').editableColumn.setOptions(opts);
+                                                                            renderer.has_entry = false;
+                                                                        }
+                                                                        
+                                                                        var _this=this;
+                                                                        // iter now has row...
+                                                                        GLib.timeout_add(0, 100, function() {
+                                                                            
+                                                                            colObj.items[0].el.editable = true; // esp. need for col 0..
+                                                                            _this.get('/LeftPanel.view').el.set_cursor_on_cell(
+                                                                                tp,
+                                                                                colObj.el,
+                                                                                colObj.items[0].el,
+                                                                                true
+                                                                            );
+                                                                        });
+                                                                        
                                                                     },
                                                                     toJS : function() {
                                                                          var iter = new Gtk.TreeIter();
@@ -2516,25 +2516,6 @@ Window=new XObject({
                                     items : [
                                         {
                                             xtype: Gtk.TreeView,
-                                            enable_tree_lines : true,
-                                            headers_visible : false,
-                                            tooltip_column : 2,
-                                            init : function() {
-                                            	XObject.prototype.init.call(this); 
-                                                                
-                                                   var description = new Pango.FontDescription.c_new();
-                                                 description.set_size(8000);
-                                                this.el.modify_font(description);     
-                                                                
-                                                //this.selection = this.el.get_selection();
-                                                // this.selection.set_mode( Gtk.SelectionMode.SINGLE);
-                                             
-                                            
-                                                
-                                              
-                                                
-                                            },
-                                            pack : "add",
                                             listeners : {
                                                 cursor_changed : function (self) {
                                                        var iter = new Gtk.TreeIter();
@@ -2563,7 +2544,7 @@ Window=new XObject({
                                                         
                                                         this.get('/MidPropTree').hideWin();
                                                 
-                                                        if (type == 'function') {
+                                                        if (type.toLowerCase() == 'function') {
                                                             
                                                             if (etype != 'events') {
                                                                 key = '|' + key;
@@ -2577,11 +2558,10 @@ Window=new XObject({
                                                             })  
                                                             return;
                                                         }
-                                                        
-                                                        if (type.indexOf('.') > -1 || 
-                                                                type == 'boolean') {
-                                                             key = '|' + key;
-                                                        }
+                                                        // has dot in name, and is boolean???? this does not make sense..
+                                                        //if (type.indexOf('.') > -1 ||  type.toLowerCase() == 'boolean') {
+                                                        //     key = '|' + key;
+                                                       // }
                                                         
                                                         this.get('/LeftPanel.model').add( {
                                                             key : key, 
@@ -2590,6 +2570,25 @@ Window=new XObject({
                                                             etype : etype
                                                            }) //, 
                                                 }
+                                            },
+                                            pack : "add",
+                                            tooltip_column : 2,
+                                            enable_tree_lines : true,
+                                            headers_visible : false,
+                                            init : function() {
+                                            	XObject.prototype.init.call(this); 
+                                                                
+                                                   var description = new Pango.FontDescription.c_new();
+                                                 description.set_size(8000);
+                                                this.el.modify_font(description);     
+                                                                
+                                                //this.selection = this.el.get_selection();
+                                                // this.selection.set_mode( Gtk.SelectionMode.SINGLE);
+                                             
+                                            
+                                                
+                                              
+                                                
                                             },
                                             items : [
                                                 {
