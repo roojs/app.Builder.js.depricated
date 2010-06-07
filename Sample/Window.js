@@ -2987,9 +2987,7 @@ Window=new XObject({
                                                                     renderJS : function(data, withDebug)
                                                                     {
                                                                           this.highlightWidget = false;
-                                                                         if (!data) {
-                                                                                     return; 
-                                                                        }
+                                                                       
                                                                         this.withDebug = false;
                                                                         
                                                                         if (this.renderedEl) {
@@ -2997,7 +2995,9 @@ Window=new XObject({
                                                                             this.renderedEl.destroy();
                                                                             this.renderedEl = false;
                                                                         }
-                                                                        
+                                                                          if (!data) {
+                                                                                     return; 
+                                                                        }
                                                                         var tree =  this.get('/LeftTree.model').toJS(false,true)[0];
                                                                         // in theory tree is actually window..  
                                                                        try {
