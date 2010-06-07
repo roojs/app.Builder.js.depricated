@@ -161,9 +161,14 @@ Base = XObject.define(
             if (!File.isDirectory(dir)) {
                 return [];
             }
-            
-            
-            
+            var ret =  [] 
+            File.list(dir).forEach(function(n)) {
+                if (!n.match(/\.json$/)) {
+                    return;
+                }
+                ret.push(n);
+            })
+            return ret;
             
         }
         
