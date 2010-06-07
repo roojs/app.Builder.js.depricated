@@ -1399,6 +1399,7 @@ Window=new XObject({
                                                                                      var tree = this.get('/LeftTree');
                                                                                       var model = this.get('/LeftTree.model');
                                                                                      var el = tree.getActivePath();
+                                                                                     print(el);
                                                                                      var js = model.toJS(el, false);
                                                                                      print(JSON.stringify(js));
                                                                                     
