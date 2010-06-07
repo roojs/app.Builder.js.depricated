@@ -1324,10 +1324,16 @@ Window=new XObject({
                                                                                         return JSON.parse(iv);
                                                                                         
                                                                                     },
-                                                                            toJS : function(iter, with_id)
+                                                                            toJS : function(treepath, with_id)
                                                                             {
                                                                                 //Seed.print("WITHID: "+ with_id);
-                                                                                
+                                                                                var iter = treepath;  // API used to be iter here..
+                                                                                if (typeof(iter) == 'string') {
+                                                                                    iter = new Gtk.TreeIter(); 
+                                                                                    if (!this.el.get_iter(iter, new Gtk.TreePath.from_string(treepath))) {
+                                                                                        return false;
+                                                                                    }
+                                                                                } 
                                                                                 var first = false;
                                                                                 if (!iter) {
                                                                                     
@@ -1357,7 +1363,7 @@ Window=new XObject({
                                                                                 // convert the list into a json string..
                                                                             
                                                                                 
-                                                                                }
+                                                                            }
                                                                         },
                                                                         {
                                                                             xtype: Gtk.TreeViewColumn,
