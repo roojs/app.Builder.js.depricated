@@ -18,10 +18,10 @@ About=new XObject({
     modal : true,
     website : "http://www.akbkhome.com/blog.php",
     listeners : {
-        response : function (self, response_id) {
+        "response":function (self, response_id) {
             this.el.hide();
         },
-        delete_event : function (self, event) {
+        "delete_event":function (self, event) {
             this.el.hide();
             return true;
         }
