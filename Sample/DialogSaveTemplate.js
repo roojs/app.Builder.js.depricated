@@ -17,7 +17,7 @@ DialogSaveTemplate=new XObject({
             return true;
         },
         response : function (self, response_id) {
-           print(response_id)
+        
             if (!response_id) {
                 this.el.hide();
                  return;
@@ -29,7 +29,8 @@ DialogSaveTemplate=new XObject({
                 );
                 return;
             }
-           if (!name.match(/^[A-Z ]$/i) || !name.match(/^[A-Z]/i)) {
+            print(name);
+           if (!name.match(/^[A-Z ]$/i) || !name.match(/[A-Z]/i)) {
                 this.get('/StandardErrorDialog').show(
                     "Template Nane must contain only letters and spaces. "
                 );
