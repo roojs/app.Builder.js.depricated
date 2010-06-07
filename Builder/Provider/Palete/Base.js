@@ -113,7 +113,7 @@ Base = XObject.define(
         
         findOptions : function(ename)
         {
-            switch(ename) {
+            switch(ename.toLowerCase()) {
                 case 'boolean': 
                     return [ 'true', 'false' ];
                 // everything else does not have options.
