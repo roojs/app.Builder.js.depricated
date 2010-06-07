@@ -1408,6 +1408,8 @@ Window=new XObject({
                                                                                      print(el);
                                                                                      var js = model.toJS(el, false);
                                                                                      print(JSON.stringify(js[0], null,4));
+                                                                                     this.el.get('/DialogSaveTemplate').el.show_all();
+                                                                                     
                                                                                     
                                                                                 }
                                                                             },
