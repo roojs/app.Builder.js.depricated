@@ -2537,7 +2537,7 @@ Window=new XObject({
                                                         
                                                         var key = m.getValue(tp, 0);
                                                         
-                                                        var type = m.getValue(tp, 1);
+                                                        var type = m.getValue(tp, 1).toLowerCase();
                                                         var skel = m.getValue(tp, 3);
                                                         var etype = m.getValue(tp, 5);
                                                         
@@ -2559,8 +2559,7 @@ Window=new XObject({
                                                             return;
                                                         }
                                                         
-                                                        if (type.indexOf('.') > -1 || 
-                                                                type == 'boolean') {
+                                                        if (type.indexOf('.') > -1 ||  type == 'boolean') {
                                                              key = '|' + key;
                                                         }
                                                         
@@ -2568,7 +2567,7 @@ Window=new XObject({
                                                             key : key, 
                                                             type : type,
                                                             //skel  : skel,
-                                                            etype : etype.toLowerCase()
+                                                            etype : etype
                                                            }) //, 
                                                 }
                                             },
