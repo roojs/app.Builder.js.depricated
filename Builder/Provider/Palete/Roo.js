@@ -101,8 +101,13 @@ Roo = XObject.define(
             }
             return this.proplist[ename][type];
         },
-        guessName: function(name)
+        guessName: function(ar)
         {
+            var name = ar;
+            if (typeof(name) !== 'string') {
+                name = Base.prototype.guessName(ar);
+            }
+            
             this.loadProps();
             if (typeof(this.proplist[name]) != 'undefined') {
                 return name;
