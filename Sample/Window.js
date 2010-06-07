@@ -847,100 +847,100 @@ Window=new XObject({
                                                                                       this.get('/LeftTree.view').blockChanges = false;
                                                                             },
                                                                             dropNode : function(target_data, node) {
-                                                                              print("drop Node");
-                                                                              	  console.dump(node);
-                                                                              	  console.dump(target_data);
-                                                                                        var tp = target_data[0].length ? new  Gtk.TreePath.from_string( target_data[0] ) : false;
+                                                                                     print("drop Node");
+                                                                                  console.dump(node);
+                                                                                  console.dump(target_data);
+                                                                                    var tp = target_data[0].length ? new  Gtk.TreePath.from_string( target_data[0] ) : false;
+                                                                                    
+                                                                                    print("add " + tp + "@" + target_data[1]  );
+                                                                                    var parent = tp;
+                                                                                    var after = false;
+                                                                                    if (tp && target_data[1]  < 2) { // before or after..
+                                                                                        var ar = target_data[0].split(':');
+                                                                                        ar.pop();
+                                                                                        parent  = new  Gtk.TreePath.from_string( ar.join(':') );
+                                                                                        after = tp;
+                                                                                    }
+                                                                                    var n_iter = new Gtk.TreeIter();
+                                                                                    var iter_par = new Gtk.TreeIter();
+                                                                                    var iter_after = after ? new Gtk.TreeIter() : false;
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    if (parent !== false) {
+                                                                                        this.el.get_iter(iter_par, parent);
+                                                                                    } else {
+                                                                                        iter_par = null;
+                                                                                    }
+                                                                                    
+                                                                                    
+                                                                                    if (tp && after) {
+                                                                                        print(target_data[1]  > 0 ? 'insert_after' : 'insert_before');
+                                                                                        this.el.get_iter(iter_after, after);
+                                                                                        this.el[ target_data[1]  > 0 ? 'insert_after' : 'insert_before'](
+                                                                                                n_iter, iter_par, iter_after);
                                                                                         
-                                                                                        print("add " + tp + "@" + target_data[1]  );
-                                                                                        var parent = tp;
-                                                                                        var after = false;
-                                                                                        if (tp && target_data[1]  < 2) { // before or after..
-                                                                                            var ar = target_data[0].split(':');
-                                                                                            ar.pop();
-                                                                                            parent  = new  Gtk.TreePath.from_string( ar.join(':') );
-                                                                                            after = tp;
-                                                                                        }
-                                                                                        var n_iter = new Gtk.TreeIter();
-                                                                                        var iter_par = new Gtk.TreeIter();
-                                                                                        var iter_after = after ? new Gtk.TreeIter() : false;
+                                                                                    } else {
+                                                                                        this.el.append(n_iter, iter_par);
                                                                                         
+                                                                                    }
+                                                                                    
+                                                                                    if (typeof(node) == 'string') {
+                                                                                        var ar = node.split('.');
+                                                                                        var xtype = ar.pop();
                                                                                         
-                                                                                        
-                                                                                        if (parent !== false) {
-                                                                                            this.el.get_iter(iter_par, parent);
-                                                                                        } else {
-                                                                                            iter_par = null;
-                                                                                        }
-                                                                                        
-                                                                                        
-                                                                                        if (tp && after) {
-                                                                                            print(target_data[1]  > 0 ? 'insert_after' : 'insert_before');
-                                                                                            this.el.get_iter(iter_after, after);
-                                                                                            this.el[ target_data[1]  > 0 ? 'insert_after' : 'insert_before'](
-                                                                                                    n_iter, iter_par, iter_after);
-                                                                                            
-                                                                                        } else {
-                                                                                            this.el.append(n_iter, iter_par);
-                                                                                            
-                                                                                        }
-                                                                                        
-                                                                                        if (typeof(node) == 'string') {
-                                                                                            var ar = node.split('.');
-                                                                                            var xtype = ar.pop();
-                                                                                            
-                                                                                            node = {
-                                                                                                '|xns' : ar.join('.'),
-                                                                                                'xtype' : xtype
-                                                                                            };
-                                                                                            if (target_data.length == 3 && target_data[2].length) {
-                                                                                                node['*prop'] = target_data[2];
-                                                                                            }
-                                                                                            
-                                                                                        }
-                                                                                        // work out what kind of packing to use..
-                                                                                        if (typeof(node.pack) == 'undefined'  && parent !== false) {
-                                                                                            var pal = this.get('/LeftTree').getPaleteProvider();
-                                                                                            
-                                                                                            var pname = pal.guessName(this.singleNodeToJS(parent.to_string()));
-                                                                                            print ("PNAME : "  + pname);
-                                                                                            var cname = pal.guessName(node);
-                                                                                            print ("CNAME : "  + cname);
-                                                                                            node.pack = pal.getDefaultPack(pname, cname);
-                                                                                            
-                                                                                            
+                                                                                        node = {
+                                                                                            '|xns' : ar.join('.'),
+                                                                                            'xtype' : xtype
+                                                                                        };
+                                                                                        if (target_data.length == 3 && target_data[2].length) {
+                                                                                            node['*prop'] = target_data[2];
                                                                                         }
                                                                                         
+                                                                                    }
+                                                                                    // work out what kind of packing to use..
+                                                                                    if (typeof(node.pack) == 'undefined'  && parent !== false) {
+                                                                                        var pal = this.get('/LeftTree').getPaleteProvider();
                                                                                         
-                                                                                        var xitems = [];
-                                                                                        if (node.items) {
-                                                                                            xitems = node.items;
-                                                                                            delete node.items;
-                                                                                        }
+                                                                                        var pname = pal.guessName(this.singleNodeToJS(parent.to_string()));
+                                                                                        print ("PNAME : "  + pname);
+                                                                                        var cname = pal.guessName(node);
+                                                                                        print ("CNAME : "  + cname);
+                                                                                        node.pack = pal.getDefaultPack(pname, cname);
+                                                                                        
+                                                                                        
+                                                                                    }
+                                                                                    
+                                                                                    
+                                                                                    var xitems = [];
+                                                                                    if (node.items) {
+                                                                                        xitems = node.items;
+                                                                                        delete node.items;
+                                                                                    }
                                                                             // load children - if it has any..
                                                                             
-                                                                                        if (xitems) {
-                                                                                            this.load(xitems, n_iter);
-                                                                                        }
-                                                                                        if (tp && (xitems || after)) {
-                                                                                            this.get('/LeftTree.view').el.expand_row(this.el.get_path(iter_par), true);
-                                                                                        }
-                                                                                        // wee need to get the empty proptypes from somewhere..
-                                                                                        
-                                                                                        //var olditer = this.activeIter;
-                                                                                        this.activePath = this.el.get_path(n_iter).to_string();
+                                                                                    if (xitems) {
+                                                                                        this.load(xitems, n_iter);
+                                                                                    }
+                                                                                    if (tp && (xitems || after)) {
+                                                                                        this.get('/LeftTree.view').el.expand_row(this.el.get_path(iter_par), true);
+                                                                                    }
+                                                                                    // wee need to get the empty proptypes from somewhere..
+                                                                                    
+                                                                                    //var olditer = this.activeIter;
+                                                                                    this.activePath = this.el.get_path(n_iter).to_string();
                                                                             
-                                                                            	  // changed actually set's the node data..
-                                                                                        this.changed(node, true);
-                                                                                        
-                                                                                        
-                                                                                        
-                                                                                        this.get('/LeftTree.view').el.set_cursor(this.el.get_path(n_iter), null, false);
-                                                                                        
-                                                                                        //Builder.MidPropTree._model.load(node);
-                                                                                        //Builder.MidPropTree._win.hideWin();
-                                                                                        //Builder.LeftPanel._model.load( node);
-                                                                                        
+                                                                              // changed actually set's the node data..
+                                                                                    this.changed(node, true);
+                                                                                    
+                                                                                    
+                                                                                    
+                                                                                    this.get('/LeftTree.view').el.set_cursor(this.el.get_path(n_iter), null, false);
+                                                                                    
+                                                                                    //Builder.MidPropTree._model.load(node);
+                                                                                    //Builder.MidPropTree._win.hideWin();
+                                                                                    //Builder.LeftPanel._model.load( node);
+                                                                                    
                                                                                         
                                                                             },
                                                                             findDropNode : function(treepath_str, targets) {
