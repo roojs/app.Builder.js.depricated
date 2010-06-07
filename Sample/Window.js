@@ -2516,25 +2516,6 @@ Window=new XObject({
                                     items : [
                                         {
                                             xtype: Gtk.TreeView,
-                                            enable_tree_lines : true,
-                                            headers_visible : false,
-                                            tooltip_column : 2,
-                                            init : function() {
-                                            	XObject.prototype.init.call(this); 
-                                                                
-                                                   var description = new Pango.FontDescription.c_new();
-                                                 description.set_size(8000);
-                                                this.el.modify_font(description);     
-                                                                
-                                                //this.selection = this.el.get_selection();
-                                                // this.selection.set_mode( Gtk.SelectionMode.SINGLE);
-                                             
-                                            
-                                                
-                                              
-                                                
-                                            },
-                                            pack : "add",
                                             listeners : {
                                                 cursor_changed : function (self) {
                                                        var iter = new Gtk.TreeIter();
@@ -2587,9 +2568,28 @@ Window=new XObject({
                                                             key : key, 
                                                             type : type,
                                                             //skel  : skel,
-                                                            etype : etype
+                                                            etype : etype.toLowerCase()
                                                            }) //, 
                                                 }
+                                            },
+                                            pack : "add",
+                                            tooltip_column : 2,
+                                            enable_tree_lines : true,
+                                            headers_visible : false,
+                                            init : function() {
+                                            	XObject.prototype.init.call(this); 
+                                                                
+                                                   var description = new Pango.FontDescription.c_new();
+                                                 description.set_size(8000);
+                                                this.el.modify_font(description);     
+                                                                
+                                                //this.selection = this.el.get_selection();
+                                                // this.selection.set_mode( Gtk.SelectionMode.SINGLE);
+                                             
+                                            
+                                                
+                                              
+                                                
                                             },
                                             items : [
                                                 {
