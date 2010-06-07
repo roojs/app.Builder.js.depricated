@@ -105,7 +105,7 @@ Roo = XObject.define(
                 print("loaded data");
                 console.dump(cfg);
                 
-                _this.name = cfg.name;
+                _this.name = cfg.name.replace(/\.bjs/, ''); // BC!
                 _this.parent =  cfg.parent;
                 _this.title =  cfg.title;
                 _this.items = cfg.items || []; 
