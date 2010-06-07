@@ -70,7 +70,23 @@ DialogTemplateSelect=new XObject({
                                 {
                                     xtype: Gtk.ListStore,
                                     id : "model",
-                                    pack : "set_model"
+                                    pack : "set_model",
+                                    loadData : function (data) {
+                                        this.el.clear();                                    
+                                        var iter = new Gtk.TreeIter();
+                                        var el = this.el;
+                                        data.forEach(function(p) {
+                                            
+                                            el.append(iter);
+                                            
+                                             
+                                            el.set_value(iter, 0, p.xtype);
+                                            el.set_value(iter, 1, p.desc);
+                                            
+                                        });
+                                                  
+                                                                         
+                                    }
                                 }
                             ]
                         }
