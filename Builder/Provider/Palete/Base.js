@@ -154,8 +154,14 @@ Base = XObject.define(
          * @param {String} name  - eg. Gtk.Window..
          * @return {Array} list of templates available..
          */
-        listTemplates : function(gn)
+        listTemplates : function(name)
         {
+            
+            var gn = name;
+            if (typeof(gn) != 'string') {
+                gn = this.guessName(gn);
+            }
+            
             
             var dir= GLib.get_home_dir() + '/.Builder/' + gn; 
             if (!File.isDirectory(dir)) {
