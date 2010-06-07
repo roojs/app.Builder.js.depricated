@@ -176,12 +176,15 @@ Base = XObject.define(
                 ret.push({
                     path : dir + '/' + n,
                     name:  n.replace(/\.json$/,'')
-                })
+                });
             });
             return ret;
             
         },
-        loadTemplate
+        loadTemplate : function(path)
+        {
+            return JSON.parse(File.read(path));
+        }
         
         
     }
