@@ -920,6 +920,7 @@ Window=new XObject({
                                                                             
                                                                                     if (xitems) {
                                                                                         this.load(xitems, n_iter);
+                                                                                        this.get('/LeftTree.view').el.expand_row(this.el.get_path(n_iter), true);
                                                                                     }
                                                                                     if (tp && (xitems || after)) {
                                                                                         this.get('/LeftTree.view').el.expand_row(this.el.get_path(iter_par), true);
