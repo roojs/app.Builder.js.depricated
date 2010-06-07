@@ -137,7 +137,7 @@ Base = XObject.define(
         },
         saveTemplate: function(name, data)
         {
-            var gn = this.guessName(JSON.decode(data));
+            var gn = this.guessName(JSON.parse(data));
             // store it in user's directory..
             var appdir = GLib.get_home_dir() + '/.Builder'; 
             
