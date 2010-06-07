@@ -57,12 +57,15 @@ DialogSaveTemplate=new XObject({
             items : [
                 {
                     xtype: Gtk.Label,
-                    id : "name",
                     label : "Name",
-                    pack : "add"
+                    pack : "add",
+                    listeners : {
+                        
+                    }
                 },
                 {
                     xtype: Gtk.Entry,
+                    id : "name",
                     pack : "add"
                 }
             ]
