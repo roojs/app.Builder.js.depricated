@@ -29,7 +29,7 @@ DialogSaveTemplate=new XObject({
                 );
                 return;
             }
-           if (!name.match(/^[A-Z ]$/i) || name.match(/^[A-Z]/i)) {
+           if (!name.match(/^[A-Z ]$/i) || !name.match(/^[A-Z]/i)) {
                 this.get('/StandardErrorDialog').show(
                     "Template Nane must contain only letters and spaces. "
                 );
