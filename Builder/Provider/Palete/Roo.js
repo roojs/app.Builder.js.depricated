@@ -27,7 +27,8 @@ Roo = XObject.define(
     Base,
     {
     
-     
+        name : 'Roo',
+        
         load: function ( o ) {
             
              
