@@ -33,7 +33,14 @@ DialogTemplateSelect=new XObject({
      
          
         this.el.show_all();
-        print(this.el.run());
+        this.el.run();
+        this.el.hide();
+        var ix = this.el.get_active();
+        if (ix < 1 ) {
+            return node;
+        }
+        var fn = opts[i];
+        return node;
     },
     items : [
         {
@@ -75,13 +82,13 @@ DialogTemplateSelect=new XObject({
                                         this.el.clear();                                    
                                         var iter = new Gtk.TreeIter();
                                         var el = this.el;
-                                        data.forEach(function(p) {
+                                        data.forEach(function(p,i) {
                                             
                                             el.append(iter);
                                             
                                              
-                                            el.set_value(iter, 0, p.xtype);
-                                            el.set_value(iter, 1, p.desc);
+                                            el.set_value(iter, 0, i);
+                                            el.set_value(iter, 1, p);
                                             
                                         });
                                                   
@@ -97,11 +104,6 @@ DialogTemplateSelect=new XObject({
         {
             xtype: Gtk.Button,
             label : "OK",
-            pack : "add_action_widget,1"
-        },
-        {
-            xtype: Gtk.Button,
-            label : "Just Add Element",
             pack : "add_action_widget,0"
         }
     ]
