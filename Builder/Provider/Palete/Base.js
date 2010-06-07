@@ -146,7 +146,7 @@ Base = XObject.define(
             if (!File.isDirectory(appdir+ '/' + gn)) {
                 File.mkdir(appdir+ '/' + gn);
             }
-            File.write(appdir+ '/' + gn + '/' + cname + '.js', data);
+            File.write(appdir+ '/' + gn + '/' +  name + '.json', data);
             
             
         }
