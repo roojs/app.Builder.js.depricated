@@ -28,6 +28,8 @@ Gtk = XObject.define(
     },
     Base,
     {
+        name : 'Gtk',
+        
         load: function () {
                 
          
