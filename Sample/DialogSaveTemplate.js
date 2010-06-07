@@ -18,15 +18,34 @@ DialogSaveTemplate=new XObject({
         },
         response : function (self, response_id) {
             if (!response_id) {
+                this.el.hide();
                  return;
             }
+            var name = this.get('name').el.get_text();
+            if (!name.length) {
+                this.get('/StandardErrorDialog').show(
+                    "You must give the template a name. "
+                );
+                return;
+            }
+           if (!name.match(/^[A-Z ]$/i) || name.match(/^[A-Z]/i)) {
+                this.get('/StandardErrorDialog').show(
+                    "Template Nane must contain only letters and spaces. "
+                );
+                 return;
+            }
+            this.get('/LeftTree').getPaletteProvider().saveTemplate(name, this.data);
             // now we save it..
-            
+                this.el.hide();
             
         }
     },
     default_height : 200,
     default_width : 400,
+    modal : true,
+    show : function(data) {
+        this.data = data;
+    },
     items : [
         {
             xtype: Gtk.HBox,
