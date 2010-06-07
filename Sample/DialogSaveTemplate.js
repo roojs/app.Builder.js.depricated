@@ -46,6 +46,7 @@ DialogSaveTemplate=new XObject({
     show : function(data) {
         this.data = data;
         this.get('name').el.set_text('');
+        this.el.show_all();
     },
     items : [
         {
