@@ -1057,7 +1057,9 @@ Window=new XObject({
                                                                                 {
                                                                                     li.forEach(function(el) {
                                                                                         // this is specific to roo!!!?
-                                                                                        
+                                                                                        if (!el) { // skip empty?
+                                                                                            return;
+                                                                                        }
                                                                                         var fullpath =  _this.file.guessName(el);
                                                                                         if (fullpath.length && ret.indexOf(fullpath) < 0) {
                                                                                             ret.push(fullpath);
