@@ -45,6 +45,7 @@ DialogSaveTemplate=new XObject({
     modal : true,
     show : function(data) {
         this.data = data;
+        this.get('name').el.set_text('');
     },
     items : [
         {
@@ -55,6 +56,7 @@ DialogSaveTemplate=new XObject({
             items : [
                 {
                     xtype: Gtk.Label,
+                    id : "name",
                     label : "Name",
                     pack : "add"
                 },
