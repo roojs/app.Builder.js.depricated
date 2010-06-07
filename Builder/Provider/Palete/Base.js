@@ -172,7 +172,11 @@ Base = XObject.define(
                 if (!n.match(/\.json$/)) {
                     return;
                 }
-                ret[dir + '/' + n] = n.replace(/\.json$/,'');
+                
+                ret.push({
+                    path : dir + '/' + n,
+                    name:  n.replace(/\.json$/,'')
+                })
             });
             return ret;
             
