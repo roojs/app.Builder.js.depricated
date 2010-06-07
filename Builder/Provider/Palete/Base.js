@@ -148,8 +148,25 @@ Base = XObject.define(
             }
             File.write(appdir+ '/' + gn + '/' +  name + '.json', data);
             
+        },
+        /**
+         * list templates - in home directory (and app dir in future...)
+         * @param {String} name  - eg. Gtk.Window..
+         * @return {Array} list of templates available..
+         */
+        listTemplates : function(gn)
+        {
+            
+            var dir= GLib.get_home_dir() + '/.Builder/' + gn; 
+            if (!File.isDirectory(dir)) {
+                return [];
+            }
+            
+            
+            
             
         }
+        
         
     }
 );
