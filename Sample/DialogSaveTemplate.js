@@ -13,7 +13,16 @@ DialogSaveTemplate=new XObject({
     xtype: Gtk.Dialog,
     listeners : {
         delete_event : function (self, event) {
+            this.el.hide();
             return true;
+        },
+        response : function (self, response_id) {
+            if (!response_id) {
+                 return;
+            }
+            // now we save it..
+            
+            
         }
     },
     default_height : 200,
@@ -41,7 +50,7 @@ DialogSaveTemplate=new XObject({
         },
         {
             xtype: Gtk.Button,
-            label : "Cancel",
+            label : "OK",
             pack : "add_action_widget,0"
         }
     ]
