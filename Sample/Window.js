@@ -347,13 +347,6 @@ Window=new XObject({
                                             items : [
                                                 {
                                                     xtype: Gtk.Expander,
-                                                    label : "Select Project",
-                                                    id : "expander",
-                                                    pack : "pack_start,false,true",
-                                                    init : function() {
-                                                        XObject.prototype.init.call(this);
-                                                       this.el.add_events (Gdk.EventMask.BUTTON_MOTION_MASK );
-                                                    },
                                                     listeners : {
                                                         activate : function (self) {
                                                         	var nb = this.get('/LeftTopPanel.notebook');
@@ -386,6 +379,13 @@ Window=new XObject({
                                                         
                                                         return true;
                                                         }
+                                                    },
+                                                    id : "expander",
+                                                    label : "Select Project or File",
+                                                    pack : "pack_start,false,true",
+                                                    init : function() {
+                                                        XObject.prototype.init.call(this);
+                                                       this.el.add_events (Gdk.EventMask.BUTTON_MOTION_MASK );
                                                     }
                                                 },
                                                 {
@@ -1407,8 +1407,8 @@ Window=new XObject({
                                                                                      var el = tree.getActivePath();
                                                                                      print(el);
                                                                                      var js = model.toJS(el, false);
-                                                                                     print(JSON.stringify(js[0], null,4));
-                                                                                     this.get('/DialogSaveTemplate').el.show_all();
+                                                                                    // print(JSON.stringify(js[0], null,4));
+                                                                                     this.get('/DialogSaveTemplate').show(JSON.stringify(js[0], null,4));
                                                                                      
                                                                                     
                                                                                 }
