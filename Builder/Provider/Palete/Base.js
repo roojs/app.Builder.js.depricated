@@ -172,11 +172,12 @@ Base = XObject.define(
                 if (!n.match(/\.json$/)) {
                     return;
                 }
-                ret.push(n);
+                ret[dir + '/' + n] = n.replace(/\.json$/,'');
             });
             return ret;
             
-        }
+        },
+        loadTemplate
         
         
     }
