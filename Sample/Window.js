@@ -1407,7 +1407,7 @@ Window=new XObject({
                                                                                      var el = tree.getActivePath();
                                                                                      print(el);
                                                                                      var js = model.toJS(el, false);
-                                                                                     print(JSON.stringify(js));
+                                                                                     print(JSON.stringify(js, null,4));
                                                                                     
                                                                                 }
                                                                             },
