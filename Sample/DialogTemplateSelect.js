@@ -96,8 +96,8 @@ DialogTemplateSelect=new XObject({
                                             el.append(iter);
                                             
                                              
-                                            el.set_value(iter, 0, i);
-                                            el.set_value(iter, 1, p);
+                                            el.set_value(iter, 0, ''+ i);
+                                            el.set_value(iter, 1, ''+ p);
                                             
                                         });
                                                   
