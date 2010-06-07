@@ -17,6 +17,7 @@ DialogSaveTemplate=new XObject({
             return true;
         },
         response : function (self, response_id) {
+           print(response_id)
             if (!response_id) {
                 this.el.hide();
                  return;
@@ -78,7 +79,7 @@ DialogSaveTemplate=new XObject({
         {
             xtype: Gtk.Button,
             label : "OK",
-            pack : "add_action_widget,0"
+            pack : "add_action_widget,1"
         }
     ]
 });
