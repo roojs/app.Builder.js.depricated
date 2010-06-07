@@ -371,6 +371,9 @@ Roo = XObject.define(
         guessName : function(ar) // turns the object into full name.
         {
              // eg. xns: Roo, xtype: XXX -> Roo.xxx
+            if (!ar) {
+                return false;
+            }
             var ret = [];
             ret.push(typeof( ar['|xns'] ) == 'undefined' ? 'Roo' : ar['|xns'] );
             
