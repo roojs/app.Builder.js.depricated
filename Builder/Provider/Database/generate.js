@@ -15,6 +15,7 @@
  * 
  */
 Gda  = imports.gi.Gda;
+console = imports['../../../console.js'].console;
 Gda.init();
 
 var   cnc = Gda.Connection.open_from_string ("mySQL", "DB_NAME=pman", 
