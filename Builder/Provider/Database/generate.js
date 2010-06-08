@@ -78,7 +78,7 @@ var map = {
 }
 
 var tables = Gda.execute_select_command(cnc, "SHOW TABLES").fetchAll();
-var readers = [];
+var readers = {};
 tables.forEach(function(table) {
     print(table);
     var schema = Gda.execute_select_command(cnc, "DESCRIBE " + table).fetchAll();
