@@ -30,8 +30,38 @@ var   cnc = Gda.Connection.open_from_string ("MySQL", "DB_NAME=pman",
                                               
 
  
-  
+Gda.DataModel.prototype.fetchAll = function()
+{
+    var cols = [];
+    
+    for (var i =0;i < this.get_n_columns(); i++) {
+        cols.push(this.get_column_name(i));
+    }
+
+    var iter = this.create_iter();
+    var res = [];
+    while (iter.move_next()) {
+        if (cols.length == 1) {
+            res.push(iter.get_value_at(0).value;
+            continue;
+        }
+        var add = { };
+        
+        cols.forEach(function(n,i) {
+            add[n] = iter.get_value_at(i).value;
+        });
+        
+        res.push(add);
+        
+    }
+    return res;
+
+}
+
 var     model = Gda.execute_select_command(cnc, "SHOW TABLES");
+
+console.log(model.fetchAll());
+/*
 var cols = [];
 for (var i =0;i < model.get_n_columns(); i++) {
     cols.push(model.get_column_name(i));
