@@ -82,7 +82,7 @@ var map = {
 var tables = Gda.execute_select_command(cnc, "SHOW TABLES").fetchAll();
 var readers = {};
 tables.forEach(function(table) {
-    print(table);
+   // print(table);
     var schema = Gda.execute_select_command(cnc, "DESCRIBE " + table).fetchAll();
     var reader = []; 
     schema.forEach(function(e)  {
