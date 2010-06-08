@@ -102,12 +102,13 @@ dirs.forEach(function(d) {
     if (!inis.length) {
         return;
     }
+    var ini = { }
     inis.forEach(function(i) {
         var key_file = GLib.key_file_new();
         if (!GLib.key_file_load_from_file (key_file, path + '/' + i , GLib.KeyFileFlags.NONE )) {
             return;
         }
-        var ini = { }
+       
         var groups = GLib.key_file_get_groups(key_file);
         groups.forEach(function(g) {
             ini[g] = {}
@@ -117,9 +118,9 @@ dirs.forEach(function(d) {
                 ini[g][k] = GLib.key_file_get_value(key_file,g,k);
             })
         })
-        console.dump(ini);
+        
     })
-    
+    console.dump(ini);
     
     
 })
