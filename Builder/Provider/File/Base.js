@@ -226,6 +226,7 @@ Base = XObject.define(
                         keys.push(prop);
                         return;
                     }
+                    prop  = prop.substring(0, prop.length -2); //strip []
                     // it's an array type..
                     obj[prop] = obj[prop]  || [];
                     obj[prop].push(pl);
