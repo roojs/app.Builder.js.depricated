@@ -65,11 +65,11 @@ Gda.DataSelect.prototype.fetchAll = function()
 }
 
 var map = {
-    'date' => 'date',
-    'int' => 'int',
-    'decimal' => 'float',
-    'varchar' => 'string',
-    'text' => 'string',
+    'date' : 'date',
+    'int' : 'int',
+    'decimal' : 'float',
+    'varchar' : 'string',
+    'text' : 'string',
     
 }
 
