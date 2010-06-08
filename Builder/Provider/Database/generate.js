@@ -70,6 +70,7 @@ var map = {
     'decimal' : 'float',
     'varchar' : 'string',
     'text' : 'string',
+    'enum' : 'string'
     
 }
 
@@ -87,9 +88,13 @@ tables.forEach(function(table) {
         }
         e.Type = type[1];
         e.Size = type[2];
+        
+        
         row.name = e.Field;
+        
+        
         if (typeof(map[e.Type]) == 'undefined') {
-            console.dump(e);
+           console.dump(e);
            throw {
                 name: "ArgumentError", 
                 message: "Unknown mapping for type : " + e.Type
