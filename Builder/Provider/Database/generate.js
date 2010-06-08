@@ -193,11 +193,14 @@ readers.forEach(function(reader) {
     for (var col in ini[reader.table]) {
         var kv = ini[reader.table][col].split(':');
         var add = readers.filter(function(r) { return r.table == kv[0] })[0];
-        add.forEach(function(col) {
-            
-        }
+        add.oreader.forEach(function(or) {
+            reader.reader.push({
+                name : col + '_' + or.name,
+                type : or.type
+            });
+        });
              
-    }
+    };
     
     
 });
