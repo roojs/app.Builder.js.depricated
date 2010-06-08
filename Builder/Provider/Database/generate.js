@@ -15,6 +15,7 @@
  * 
  */
 Gda  = imports.gi.Gda;
+GObject = imports.gi.GObject;
 console = imports['../../../console.js'];
 Gda.init();
 
