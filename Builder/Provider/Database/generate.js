@@ -16,6 +16,9 @@
  */
 Gda  = imports.gi.Gda;
 GObject = imports.gi.GObject;
+
+GLib = imports.gi.GLib;
+
 console = imports['../../../console.js'];
 File = imports['../../../File.js'].File;
 Gda.init();
@@ -78,6 +81,31 @@ var map = {
     'enum' : 'string'
     
 }
+
+//--- load ini files..
+// this is very specific.
+var dirs = File.list( GLib.get_home_dir() + '/gitlive').filter( function(e) {
+    return e.match(/^Pman/);
+});
+console.dump(dirs);
+Seed.exit;
+
+
+
+var key_file = GLib.key_file_new();
+
+
+GLib.key_file_load_from_file (key_file, String file, KeyFileFlags flags) : Boolean
+
+
+
+
+
+
+
+
+
+
 
 var tables = Gda.execute_select_command(cnc, "SHOW TABLES").fetchAll();
 var readers = {};
