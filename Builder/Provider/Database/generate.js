@@ -111,7 +111,7 @@ tables.forEach(function(table) {
     //console.dump(schema );
      
 });
-
+print(JSON.stringify(reader, null, 4));
 
 
 
