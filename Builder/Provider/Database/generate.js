@@ -104,7 +104,7 @@ tables.forEach(function(table) {
             };
         }
         row.type = map[e.Type];
-        
+        reader.push(row);
         
     })
     console.dump(schema );
