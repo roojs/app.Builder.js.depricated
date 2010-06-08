@@ -14,10 +14,19 @@
  * 
  * 
  */
- 
- 
+Gda  = imports.gi.Gda;
+Gda.init();
+
+var   cnc = Gda.Connection.open_from_string ("mySQL", "DB_NAME=pman", 
+                                              "USERNAME=root;PASSWORD=",
+                                              Gda.ConnectionOptions.NONE, none);
 
 
+   
+var    mstruct = new Gda.MetaStruct( { features :  GDA_META_STRUCT_FEATURE_NONE });
 
 
+var table = mstruct.complement (Gda.MetaDbObjectType.TABLE, null, null, "customers");
+
+console.dump(table);
 
