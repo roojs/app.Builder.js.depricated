@@ -50,7 +50,7 @@ while (iter.move_next()) {
     print(res.length);
 }
 
-
+console.dump(res);
 //print(model.dump_as_string());
 /*
 cnc.update_meta_store(null);
