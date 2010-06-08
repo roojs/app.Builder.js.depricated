@@ -19,7 +19,7 @@ console = imports['../../../console.js'];
 Gda.init();
 
 var prov = Gda.Config.list_providers ();
-print(prov.dump_as_string());
+//print(prov.dump_as_string());
 
 var   cnc = Gda.Connection.open_from_string ("MySQL", "DB_NAME=pman", 
                                               "USERNAME=root;PASSWORD=",
@@ -37,7 +37,7 @@ while (iter.move_next()) {
     print(iter.get_value_at(0).value);
 }
 
-print(model.dump_as_string());
+//print(model.dump_as_string());
 /*
 cnc.update_meta_store(null);
 var    mstruct = new Gda.MetaStruct.c_new (cnc.get_meta_store(),  Gda.MetaStructFeature.NONE);
