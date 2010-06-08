@@ -19,7 +19,7 @@ console = imports['../../../console.js'];
 Gda.init();
 
 var prov = Gda.Config.list_providers ();
-console.dump(prov);
+print(prov.dump_as_string());
 
 var   cnc = Gda.Connection.open_from_string ("mySQL", "DB_NAME=pman", 
                                               "USERNAME=root;PASSWORD=",
