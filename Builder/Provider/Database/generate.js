@@ -80,9 +80,7 @@ tables.forEach(function(table) {
         
     })
     console.dump(schema );
-    
-    
-    
+     
 });
 
 
