@@ -39,10 +39,10 @@ for (var i =0;i < model.get_n_columns(); i++) {
 var iter = model.create_iter();
 var res = [];
 while (iter.move_next()) {
-    var add = { }
+    var add = { };
     cols.forEach(function(n,i) {
         add[n] = iter.get_value_at(i).value;
-    })
+    });
     res.push(add);
 }
 console.dump(add);
