@@ -134,7 +134,7 @@ tables.forEach(function(table) {
      
 });
 
-print(JSON.stringify(readers, null, 4));
+//print(JSON.stringify(readers, null, 4));
 
 
 
