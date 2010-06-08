@@ -44,6 +44,7 @@ while (iter.move_next()) {
     cols.forEach(function(n,i) {
         add[n] = iter.get_value_at(i).value;
     });
+    print(iter.get_value_at(0).value);
     res.push(add);
 }
 console.dump(add);
