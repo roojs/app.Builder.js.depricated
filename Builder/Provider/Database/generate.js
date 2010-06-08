@@ -114,7 +114,7 @@ tables.forEach(function(table) {
     if (!File.isDirectory(dir)) {
         File.mkdir(dir);
     }
-    
+    print("WRITE: " +  dir + '/' + db_name + '_' + table + '.json');
     File.write(
         dir + '/' + db_name + '_' + table + '.json',
             
