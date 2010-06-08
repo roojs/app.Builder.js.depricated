@@ -95,7 +95,7 @@ Seed.exit;
 var key_file = GLib.key_file_new();
 
 
-GLib.key_file_load_from_file (key_file, String file, KeyFileFlags flags) : Boolean
+//GLib.key_file_load_from_file (key_file, String file, KeyFileFlags flags) : Boolean
 
 
 
