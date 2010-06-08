@@ -21,7 +21,7 @@ Gda.init();
 var prov = Gda.Config.list_providers ();
 print(prov.dump_as_string());
 
-var   cnc = Gda.Connection.open_from_string ("mySQL", "DB_NAME=pman", 
+var   cnc = Gda.Connection.open_from_string ("MySQL", "DB_NAME=pman", 
                                               "USERNAME=root;PASSWORD=",
                                               Gda.ConnectionOptions.NONE, null);
 
