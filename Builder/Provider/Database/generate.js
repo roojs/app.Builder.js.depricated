@@ -107,17 +107,24 @@ tables.forEach(function(table) {
         reader.push(row);
         
     });
-    readers[table] = {
-        '|xns' : 'Roo.data',
-        xtype : "JsonReader",
-        totalProperty : "total",
-        root : "data",
-        id : 'id', // maybe no..
-        fields : reader
-    }
+    
+    File.write(
+        
+        JSON.stringify({
+            '|xns' : 'Roo.data',
+            xtype : "JsonReader",
+            totalProperty : "total",
+            root : "data",
+            id : 'id', // maybe no..
+            fields : reader
+        }, null, 4)
+    )
+    
     //console.dump(schema );
+    
      
 });
+
 print(JSON.stringify(readers, null, 4));
 
 
