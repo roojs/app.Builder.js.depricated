@@ -70,10 +70,24 @@ var tables = Gda.execute_select_command(cnc, "SHOW TABLES").fetchAll();
 tables.forEach(function(table) {
     print(table);
     var schema = Gda.execute_select_command(cnc, "DESCRIBE " + table).fetchAll();
+    schema.forEach(function(e)) {
+        var type = e.Type.match(/([^(]+)\(([^\)]+)\)/);
+        if (!type) {
+            return;
+        }
+        e.Type = type[1];
+        e.Size = type[2];
+        
+    }
     console.dump(schema );
     
     
+    
 });
+
+
+
+
 
 
 
