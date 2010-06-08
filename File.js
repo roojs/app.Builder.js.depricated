@@ -23,6 +23,7 @@ var File = {
     SEPARATOR : '/',
 
     join : function () {
+        // fixme!
         imports['String.js'].load(String);
         
         var out = "";
