@@ -64,19 +64,38 @@ Gda.DataSelect.prototype.fetchAll = function()
 
 }
 
+var map = {
+    'date' => 'date',
+    'int' => 'int',
+    'decimal' => 'float',
+    'varchar' => 'string',
+    'text' => 'string',
+    
+}
 
 var tables = Gda.execute_select_command(cnc, "SHOW TABLES").fetchAll();
 
 tables.forEach(function(table) {
     print(table);
     var schema = Gda.execute_select_command(cnc, "DESCRIBE " + table).fetchAll();
+    var reader = []; 
     schema.forEach(function(e)  {
         var type = e.Type.match(/([^(]+)\(([^\)]+)\)/);
+        var row  = { }; 
         if (!type) {
             return;
         }
         e.Type = type[1];
         e.Size = type[2];
+        row.name = e.Field;
+        if (typeof(map[e.Type]) == 'undefined') {
+           throw {
+                name: "ArgumentError", 
+                message: "Unknown mapping for type : " + e.Type
+            };
+        }
+        row.type = map[e.Type];
+        
         
     })
     console.dump(schema );
