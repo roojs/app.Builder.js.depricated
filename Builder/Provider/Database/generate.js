@@ -29,7 +29,7 @@ var   cnc = Gda.Connection.open_from_string ("mySQL", "DB_NAME=pman",
    
 var    mstruct = new Gda.MetaStruct.c_new (cnc.get_meta_store(),  Gda.MetaStructFeature.NONE);
 
-var tabs  = mstruct.schema_get_all_tables();
+var tabs  = cnc.get_meta_store().schema_get_all_tables();
 console.dump(tabs);
 //var table = mstruct.complement (Gda.MetaDbObjectType.TABLE, null, null, "Projects");
 
