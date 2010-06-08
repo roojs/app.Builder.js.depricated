@@ -97,7 +97,7 @@ dirs.forEach(function(d) {
         return; //skip
     }
     var inis = File.list(path).filter(
-        function(e) { return e.match(/\.ini$/); }
+        function(e) { return e.match(/\.links\.ini$/); }
     );
     if (!inis.length) {
         return;
