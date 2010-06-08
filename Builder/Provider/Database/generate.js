@@ -106,7 +106,7 @@ tables.forEach(function(table) {
         row.type = map[e.Type];
         reader.push(row);
         
-    })
+    });
     readers[table] = {
         '|xns' : 'Roo.data',
         xtype : "JsonReader",
