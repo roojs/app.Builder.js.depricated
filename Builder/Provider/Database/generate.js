@@ -89,6 +89,7 @@ var dirs = File.list( GLib.get_home_dir() + '/gitlive').filter(
 );
 var ini = { }
 dirs.forEach(function(d) {
+    // this currently misses the web.*/Pman/XXXX/DataObjects..
     var path = GLib.get_home_dir() + '/gitlive/' + d + '/DataObjects';
     if (!File.isDirectory(path)) {
         path = GLib.get_home_dir() + '/gitlive/' + d + '/Pman/DataObjects';
