@@ -26,6 +26,14 @@ var   cnc = Gda.Connection.open_from_string ("MySQL", "DB_NAME=pman",
                                               Gda.ConnectionOptions.NONE, null);
 
 
+
+                                              
+var parser = gda_connection_create_parser (cnc);
+ 
+  
+var     model = cnc.statement_execute_select (cnc, "SHOW TABLES");
+print(model.dump_as_string());
+/*
 cnc.update_meta_store(null);
 var    mstruct = new Gda.MetaStruct.c_new (cnc.get_meta_store(),  Gda.MetaStructFeature.NONE);
 
@@ -34,4 +42,4 @@ var    mstruct = new Gda.MetaStruct.c_new (cnc.get_meta_store(),  Gda.MetaStruct
 var table = mstruct.complement (Gda.MetaDbObjectType.TABLE, null, null, "Projects");
 
 //console.dump(table);
-
+*/
