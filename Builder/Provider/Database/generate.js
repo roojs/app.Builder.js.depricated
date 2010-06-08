@@ -125,7 +125,7 @@ tables.forEach(function(table) {
             totalProperty : "total",
             root : "data",
             id : 'id', // maybe no..
-            fields : reader
+            '|fields' : JSON.stringify(JSON.stringify(reader));
         }, null, 4)
     )
     
