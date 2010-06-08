@@ -36,18 +36,17 @@ var cols = [];
 for (var i =0;i < model.get_n_columns(); i++) {
     cols.push(model.get_column_name(i));
 }
-print(cols);
+
 var iter = model.create_iter();
 var res = [];
 while (iter.move_next()) {
     var add = { };
     cols.forEach(function(n,i) {
-        print(n + ':' + i);
         add[n] = iter.get_value_at(i).value;
     });
-    print(iter.get_value_at(0).value);
+    
     res.push(add);
-    print(res.length);
+    
 }
 
 console.dump(res);
