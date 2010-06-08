@@ -237,7 +237,9 @@ Base = XObject.define(
                     
                 });
                 obj.items = newitems;
-                
+                if (!obj.items.length) {
+                    delete obj.items;
+                }
                 
             }
             
