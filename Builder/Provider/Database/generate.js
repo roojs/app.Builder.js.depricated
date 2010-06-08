@@ -84,9 +84,9 @@ var map = {
 
 //--- load ini files..
 // this is very specific.
-var dirs = File.list( GLib.get_home_dir() + '/gitlive').filter( function(e) {
-    return e.match(/^Pman/);
-});
+var dirs = File.list( GLib.get_home_dir() + '/gitlive').filter( 
+    function(e) { return e.match(/^Pman/); }
+);
 console.dump(dirs);
 Seed.exit();
 
