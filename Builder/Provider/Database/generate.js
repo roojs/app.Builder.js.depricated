@@ -172,9 +172,9 @@ tables.forEach(function(table) {
         
     });
     readers.push({
-        
         table : table ,
-        reader :  reader
+        reader :  reader,
+        oreader : JSON.parse(JSON.stringify(reader)) // dupe it..
     });
     
     //console.dump(schema );
@@ -189,7 +189,15 @@ readers.forEach(function(reader) {
     if (typeof(ini[reader.table]) == 'undefined') {
         return;
     }
-    
+    // we have a map..
+    for (var col in ini[reader.table]) {
+        var kv = ini[reader.table][col].split(':');
+        var add = readers.filter(function(r) { return r.table == kv[0] })[0];
+        add.forEach(function(col) {
+            
+        }
+             
+    }
     
     
 });
