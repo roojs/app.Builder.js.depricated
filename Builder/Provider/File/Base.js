@@ -230,7 +230,7 @@ Base = XObject.define(
                     // it's an array type..
                     obj[prop] = obj[prop]  || [];
                     obj[prop].push(pl);
-                    print("ADDNG PROP:" + prop);
+                    //print("ADDNG PROP:" + prop);
                     if (keys.indexOf(prop) < 0) {
                         keys.push(prop);
                     }
