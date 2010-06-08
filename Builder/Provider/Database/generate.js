@@ -107,8 +107,18 @@ dirs.forEach(function(d) {
         if (!GLib.key_file_load_from_file (key_file, path + '/' + i , GLib.KeyFileFlags.NONE )) {
             return;
         }
+        var ini = { }
+        var groups = GLib.key_file_get_groups(key_file);
+        groups.forEach(function(g) {
+            ini[g] = {}
+               
+            var keys = GLib.key_file_get_keys(key_file,g);
+            keys.forEach(function(k) {
+                init[g][k] = GLib.key_file_get_value(key_file,g,k);
+            })
+        })
         
-    }
+    })
     
     
     
