@@ -17,6 +17,7 @@
 Gda  = imports.gi.Gda;
 GObject = imports.gi.GObject;
 console = imports['../../../console.js'];
+File = imports['../../../File.js'].File;
 Gda.init();
 
 var prov = Gda.Config.list_providers ();
