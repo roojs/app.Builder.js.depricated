@@ -26,7 +26,7 @@ var   cnc = Gda.Connection.open_from_string ("MySQL", "DB_NAME=pman",
                                               Gda.ConnectionOptions.NONE, null);
 
 
-cnc.update_meta_store(null);
+//cnc.update_meta_store(null);
 var    mstruct = new Gda.MetaStruct.c_new (cnc.get_meta_store(),  Gda.MetaStructFeature.NONE);
 
 //var tabs  = cnc.get_meta_store().schema_get_all_tables();
