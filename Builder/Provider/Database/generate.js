@@ -58,9 +58,18 @@ Gda.DataSelect.prototype.fetchAll = function()
 
 }
 
-var     model = Gda.execute_select_command(cnc, "SHOW TABLES");
 
-console.dump(model.fetchAll());
+var tables = Gda.execute_select_command(cnc, "SHOW TABLES").fetchAll();
+
+tables.forEach(function(table)) {
+    var schema = Gda.execute_select_command(cnc, "DESCRIBE " + table).fetchAll();
+    console.dump(schema );
+    
+    
+})
+
+
+
 /*
 var cols = [];
 for (var i =0;i < model.get_n_columns(); i++) {
