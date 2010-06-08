@@ -212,9 +212,7 @@ readers.forEach(function(reader) {
     delete reader.oreader;
 });
 
-console.dump(readers);
-Seed.quit();
-
+ 
 
 
 
