@@ -34,7 +34,7 @@ var   cnc = Gda.Connection.open_from_string ("MySQL", "DB_NAME=pman",
 var     model = Gda.execute_select_command(cnc, "SHOW TABLES");
 var iter = model.create_iter();
 while (iter.move_next()) {
-    print(iter.get_value_at(0));
+    print(iter.get_value_at(0).value);
 }
 
 print(model.dump_as_string());
