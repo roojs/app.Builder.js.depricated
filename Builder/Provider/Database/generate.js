@@ -37,7 +37,7 @@ Gda.DataSelect.prototype.fetchAll = function()
     for (var i =0;i < this.get_n_columns(); i++) {
         cols.push(this.get_column_name(i));
     }
-
+    console.dump(cols);
     var iter = this.create_iter();
     var res = [];
     while (iter.move_next()) {
