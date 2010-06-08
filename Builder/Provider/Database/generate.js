@@ -182,6 +182,15 @@ tables.forEach(function(table) {
      
 });
 
+
+// merge in the linked tables..
+
+
+
+
+
+
+
 //print(JSON.stringify(readers, null, 4));
 
 readers.forEach(function(reader) {
