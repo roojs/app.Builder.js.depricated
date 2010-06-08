@@ -110,6 +110,9 @@ tables.forEach(function(table) {
     });
     
     var dir = GLib.get_home_dir() + '/.Builder/Roo.data.JsonReader'; 
+    if (!File.isDirectory(dir)) {
+        File.mkdir(dir);
+    }
     
     File.write(
         dir + '/' + db_name + '_' + table + '.json',
