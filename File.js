@@ -2,7 +2,7 @@
 GLib = imports.gi.GLib;
 Gio = imports.gi.Gio;
 
-imports['String.js'].load(String);
+
 
 /**
 * @namespace File
@@ -23,6 +23,8 @@ var File = {
     SEPARATOR : '/',
 
     join : function () {
+        imports['String.js'].load(String);
+        
         var out = "";
         for (var i = 0; i < arguments.length; i++) {
             if (i == 0) {
