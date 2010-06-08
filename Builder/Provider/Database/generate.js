@@ -47,8 +47,9 @@ while (iter.move_next()) {
     });
     print(iter.get_value_at(0).value);
     res.push(add);
+    print res.length();
 }
-console.dump(add);
+
 
 //print(model.dump_as_string());
 /*
