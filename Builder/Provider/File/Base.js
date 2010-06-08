@@ -311,10 +311,10 @@ Base = XObject.define(
                 if (typeof(el) == 'object') {
                     
                     // we can skip empty items lists and empty listeners..
-                    if (!isArray && i == 'items' && !el.length) {
-                        return; 
-                    }
-                    
+                    //if (!isArray && i == 'items' && !el.length) {
+                    //    return; 
+                    //}
+                   // 
                     
                     els.push(left + _this.mungeToString(el, i == 'listeners', pad + '    '));
                     return;
