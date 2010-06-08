@@ -117,7 +117,7 @@ dirs.forEach(function(d) {
                 init[g][k] = GLib.key_file_get_value(key_file,g,k);
             })
         })
-        
+        console.dump(ini);
     })
     
     
