@@ -47,7 +47,7 @@ while (iter.move_next()) {
     });
     print(iter.get_value_at(0).value);
     res.push(add);
-    print res.length();
+    print(res.length);
 }
 
 
