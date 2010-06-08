@@ -125,7 +125,7 @@ dirs.forEach(function(d) {
 })
 
 
-
+Seed.quit();
 
 //GLib.key_file_load_from_file (key_file, String file, KeyFileFlags flags) : Boolean
 
