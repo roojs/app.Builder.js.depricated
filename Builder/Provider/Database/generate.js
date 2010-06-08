@@ -187,6 +187,7 @@ tables.forEach(function(table) {
 // merge in the linked tables..
 readers.forEach(function(reader) {
     if (typeof(ini[reader.table]) == 'undefined') {
+        print("SKIP - " + reader.table);
         return;
     }
     // we have a map..
