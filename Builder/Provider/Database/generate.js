@@ -89,6 +89,7 @@ tables.forEach(function(table) {
         e.Size = type[2];
         row.name = e.Field;
         if (typeof(map[e.Type]) == 'undefined') {
+            console.dump(e);
            throw {
                 name: "ArgumentError", 
                 message: "Unknown mapping for type : " + e.Type
