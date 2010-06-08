@@ -27,7 +27,7 @@ var   cnc = Gda.Connection.open_from_string ("mySQL", "DB_NAME=pman",
 
 
    
-var    mstruct = new Gda.MetaStruct( { features :  GDA_META_STRUCT_FEATURE_NONE });
+var    mstruct = new Gda.MetaStruct( { features :  Gda.MetaStructFeature.NONE});
 
 
 var table = mstruct.complement (Gda.MetaDbObjectType.TABLE, null, null, "customers");
