@@ -30,7 +30,7 @@ var   cnc = Gda.Connection.open_from_string ("MySQL", "DB_NAME=pman",
                                               
 
  
-Gda.DataModel.prototype.fetchAll = function()
+Gda.DataSelect.prototype.fetchAll = function()
 {
     var cols = [];
     
