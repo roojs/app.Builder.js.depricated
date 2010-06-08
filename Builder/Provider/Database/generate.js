@@ -20,7 +20,7 @@ Gda.init();
 
 var   cnc = Gda.Connection.open_from_string ("mySQL", "DB_NAME=pman", 
                                               "USERNAME=root;PASSWORD=",
-                                              Gda.ConnectionOptions.NONE, none);
+                                              Gda.ConnectionOptions.NONE, null);
 
 
    
