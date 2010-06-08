@@ -32,10 +32,19 @@ var   cnc = Gda.Connection.open_from_string ("MySQL", "DB_NAME=pman",
  
   
 var     model = Gda.execute_select_command(cnc, "SHOW TABLES");
+var cols = [];
+for (var i =0;i < model.get_n_columns(); i++) {
+    cols.push(model.get_column_name(i));
+}
 var iter = model.create_iter();
 while (iter.move_next()) {
-    print(iter.get_value_at(0).value);
+    var add = { }
+    cols.forEach(function(n,i) {
+        add[n] = iter.get_value_at(i).value;
+    }
+    res.push(add);
 }
+console.dump(add);
 
 //print(model.dump_as_string());
 /*
