@@ -124,7 +124,7 @@ dirs.forEach(function(d) {
     
     
 });
-    console.dump(ini);
+console.dump(ini);
 
 
 Seed.quit();
@@ -183,8 +183,16 @@ tables.forEach(function(table) {
 });
 
 
-// merge in the linked tables..
 
+// merge in the linked tables..
+readers.forEach(function(reader) {
+    if (typeof(ini[reader.table]) == 'undefined') {
+        return;
+    }
+    
+    
+    
+});
 
 
 
