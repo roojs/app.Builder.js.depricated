@@ -28,7 +28,7 @@ var   cnc = Gda.Connection.open_from_string ("MySQL", "DB_NAME=pman",
 
 
                                               
-var parser = gda_connection_create_parser (cnc);
+
  
   
 var     model = cnc.statement_execute_select (cnc, "SHOW TABLES");
