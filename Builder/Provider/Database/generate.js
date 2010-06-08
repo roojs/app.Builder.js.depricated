@@ -87,7 +87,7 @@ var map = {
 var dirs = File.list( GLib.get_home_dir() + '/gitlive').filter( 
     function(e) { return e.match(/^Pman/); }
 );
-
+var ini = { }
 dirs.forEach(function(d) {
     var path = GLib.get_home_dir() + '/gitlive/' + d + '/DataObjects';
     if (!File.isDirectory(path)) {
@@ -102,7 +102,7 @@ dirs.forEach(function(d) {
     if (!inis.length) {
         return;
     }
-    var ini = { }
+    
     inis.forEach(function(i) {
         var key_file = GLib.key_file_new();
         if (!GLib.key_file_load_from_file (key_file, path + '/' + i , GLib.KeyFileFlags.NONE )) {
@@ -120,10 +120,11 @@ dirs.forEach(function(d) {
         })
         
     })
+
+    
+    
+});
     console.dump(ini);
-    
-    
-})
 
 
 Seed.quit();
