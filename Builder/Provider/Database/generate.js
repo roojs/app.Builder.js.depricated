@@ -171,25 +171,11 @@ tables.forEach(function(table) {
         reader.push(row);
         
     });
-    
-    var dir = GLib.get_home_dir() + '/.Builder/Roo.data.JsonReader'; 
-    if (!File.isDirectory(dir)) {
-        File.mkdir(dir);
-    }
-    print("WRITE: " +  dir + '/' + db_name + '_' + table + '.json');
-    File.write(
-        dir + '/' + db_name + '_' + table + '.json',
-            
-       
-        JSON.stringify({
-            '|xns' : 'Roo.data',
-            xtype : "JsonReader",
-            totalProperty : "total",
-            root : "data",
-            id : 'id', // maybe no..
-            '|fields' :  JSON.stringify(reader, null,4)
-        }, null, 4)
-    )
+    readers.push({
+        
+        table : table ,
+        reader :  reader
+    });
     
     //console.dump(schema );
     
@@ -198,38 +184,27 @@ tables.forEach(function(table) {
 
 //print(JSON.stringify(readers, null, 4));
 
-
-
-
-
-
-/*
-var cols = [];
-for (var i =0;i < model.get_n_columns(); i++) {
-    cols.push(model.get_column_name(i));
-}
-
-var iter = model.create_iter();
-var res = [];
-while (iter.move_next()) {
-    var add = { };
-    cols.forEach(function(n,i) {
-        add[n] = iter.get_value_at(i).value;
-    });
+readers.forEach(function(reader) {
     
-    res.push(add);
-    
-}
 
-console.dump(res);
-//print(model.dump_as_string());
-/*
-cnc.update_meta_store(null);
-var    mstruct = new Gda.MetaStruct.c_new (cnc.get_meta_store(),  Gda.MetaStructFeature.NONE);
+    var dir = GLib.get_home_dir() + '/.Builder/Roo.data.JsonReader'; 
+    if (!File.isDirectory(dir)) {
+        File.mkdir(dir);
+    }
+    print("WRITE: " +  dir + '/' + db_name + '_' + reader.table + '.json');
+    File.write(
+        dir + '/' + db_name + '_' + reader.table + '.json',
+            
+       
+        JSON.stringify({
+            '|xns' : 'Roo.data',
+            xtype : "JsonReader",
+            totalProperty : "total",
+            root : "data",
+            id : 'id', // maybe no..
+            '|fields' :  JSON.stringify(reader.reader, null,4)
+        }, null, 4)
+    )
 
-//var tabs  = cnc.get_meta_store().schema_get_all_tables();
-//console.dump(tabs);
-var table = mstruct.complement (Gda.MetaDbObjectType.TABLE, null, null, "Projects");
 
-//console.dump(table);
-*/
+});
