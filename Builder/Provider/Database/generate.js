@@ -124,10 +124,10 @@ dirs.forEach(function(d) {
     
     
 });
-console.dump(ini);
+//console.dump(ini);
 
 
-Seed.quit();
+//Seed.quit();
 
 //GLib.key_file_load_from_file (key_file, String file, KeyFileFlags flags) : Boolean
 
@@ -205,7 +205,12 @@ readers.forEach(function(reader) {
     
 });
 
+readers.forEach(function(reader) {
+    delete reader.oreader;
+});
 
+console.dump(readers);
+Seed.quit();
 
 
 
