@@ -88,7 +88,7 @@ var dirs = File.list( GLib.get_home_dir() + '/gitlive').filter( function(e) {
     return e.match(/^Pman/);
 });
 console.dump(dirs);
-Seed.exit;
+Seed.exit();
 
 
 
