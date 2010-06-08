@@ -15,7 +15,7 @@
  * 
  */
 Gda  = imports.gi.Gda;
-console = imports['../../../console.js'].console;
+console = imports['../../../console.js'];
 Gda.init();
 
 var prov = Gda.Config.list_providers ();
