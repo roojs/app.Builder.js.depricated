@@ -107,7 +107,14 @@ tables.forEach(function(table) {
         reader.push(row);
         
     })
-    readers[table] = reader;
+    readers[table] = {
+        '|xns' : 'Roo.data',
+        xtype : "JsonReader"
+        totalProperty : "total",
+        root : "data",
+        id : 'id', // maybe no..
+        fields : reader
+    }
     //console.dump(schema );
      
 });
