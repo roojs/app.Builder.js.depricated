@@ -50,6 +50,8 @@ Gda.DataSelect.prototype.fetchAll = function()
         
         cols.forEach(function(n,i) {
            var val = iter.get_value_at(i);
+           var type = GObject.type_name(val.g_type) ;
+           var vs = type == 'GdaBlob' ? val.to_string(1024) : val.value;
            print(n + " : TYPE: " + GObject.type_name(val.g_type) + " : " + val.get_string());
             //print (n + '=' + iter.get_value_at(i).value);
             add[n] = iter.get_value_at(i).get_string();
