@@ -31,7 +31,7 @@ var   cnc = Gda.Connection.open_from_string ("MySQL", "DB_NAME=pman",
 
  
   
-var     model = cnc.statement_execute_select (cnc, "SHOW TABLES");
+var     model = Gda.execute_select_command(cnc, "SHOW TABLES");
 print(model.dump_as_string());
 /*
 cnc.update_meta_store(null);
