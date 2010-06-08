@@ -107,7 +107,8 @@ tables.forEach(function(table) {
         reader.push(row);
         
     })
-    console.dump(schema );
+    reader[table] = reader;
+    //console.dump(schema );
      
 });
 
