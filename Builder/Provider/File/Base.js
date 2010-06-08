@@ -231,7 +231,7 @@ Base = XObject.define(
                     obj[prop] = obj[prop]  || [];
                     obj[prop].push(pl);
                     print("ADDNG PROP:" + prop);
-                    if (keys.indexOf(prop) < -1) {
+                    if (keys.indexOf(prop) < 0) {
                         keys.push(prop);
                     }
                     
