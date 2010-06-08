@@ -109,7 +109,7 @@ tables.forEach(function(table) {
     })
     readers[table] = {
         '|xns' : 'Roo.data',
-        xtype : "JsonReader"
+        xtype : "JsonReader",
         totalProperty : "total",
         root : "data",
         id : 'id', // maybe no..
