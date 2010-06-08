@@ -87,12 +87,34 @@ var map = {
 var dirs = File.list( GLib.get_home_dir() + '/gitlive').filter( 
     function(e) { return e.match(/^Pman/); }
 );
-console.dump(dirs);
-Seed.exit();
+
+dirs.forEach(function(d) {
+    var path = GLib.get_home_dir() + '/gitlive/' + d + '/DataObjects';
+    if (!File.isDirectory(path)) {
+        path = GLib.get_home_dir() + '/gitlive/' + d + '/Pman/DataObjects';
+    }
+    if (!File.isDirectory(path)) {
+        return; //skip
+    }
+    var inis = File.list(path).filter(
+        function(e) { return e.match(/\.ini$/); }
+    );
+    if (!inis.length) {
+        return;
+    }
+    inis.forEach(function(i) {
+        var key_file = GLib.key_file_new();
+        if (!GLib.key_file_load_from_file (key_file, path + '/' + i , GLib.KeyFileFlags.NONE )) {
+            return;
+        }
+        
+    }
+    
+    
+    
+})
 
 
-
-var key_file = GLib.key_file_new();
 
 
 //GLib.key_file_load_from_file (key_file, String file, KeyFileFlags flags) : Boolean
