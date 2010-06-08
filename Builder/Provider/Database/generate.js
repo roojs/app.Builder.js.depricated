@@ -48,7 +48,7 @@ Gda.DataSelect.prototype.fetchAll = function()
         var add = { };
         
         cols.forEach(function(n,i) {
-            print (n + '=' + iter.get_value_at(i).value);
+            //print (n + '=' + iter.get_value_at(i).value);
             add[n] = iter.get_value_at(i).get_string();
         });
         
