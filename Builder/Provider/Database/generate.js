@@ -60,7 +60,7 @@ Gda.DataSelect.prototype.fetchAll = function()
 
 var     model = Gda.execute_select_command(cnc, "SHOW TABLES");
 
-console.log(model.fetchAll());
+console.dump(model.fetchAll());
 /*
 var cols = [];
 for (var i =0;i < model.get_n_columns(); i++) {
