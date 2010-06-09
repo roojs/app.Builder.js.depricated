@@ -239,9 +239,9 @@ Base = XObject.define(
                     
                 });
                 obj.items = newitems;
-                //if (!obj.items.length) {
-                //    delete obj.items;
-                //}
+                if (!obj.items.length) {
+                    delete obj.items;
+                }
                 
             }
             
@@ -255,10 +255,9 @@ Base = XObject.define(
             
             keys.forEach(function(i) {
                 var el = obj[i];
-                if (tyoeof(obj) == 'undefined') { // empty or removed.
+                if (typeof(obj) == 'undefined') { // empty or removed.
                     return;
                 }
-                
                 
                 if (!isArray && skip.indexOf(i) > -1) { // things we do not write..
                     return;
@@ -322,8 +321,11 @@ Base = XObject.define(
                     //    return; 
                     //}
                    // 
-                    
-                    els.push(left + _this.mungeToString(el, i == 'listeners', pad + '    '));
+                    var right = _this.mungeToString(el, i == 'listeners', pad + '    ');
+                    if (typeof(right) != 'undefined') {
+                        els.push(left + right);
+                    }
+                
                     return;
                 }
                 // standard. .
@@ -331,6 +333,9 @@ Base = XObject.define(
                 els.push(left + JSON.stringify(obj[i]));
             });
             
+            if (!isArray && !els.length) {
+                return;
+            }
             //output the thing.
             var spad = pad.substring(0, pad.length-4);
             return (isArray ? '[' : '{') + "\n" +
