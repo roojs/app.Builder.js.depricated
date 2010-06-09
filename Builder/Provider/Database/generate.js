@@ -235,6 +235,7 @@ readers.forEach(function(reader) {
             xtype : "JsonReader",
             totalProperty : "total",
             root : "data",
+            '*prop' : "reader",
             id : 'id', // maybe no..
             '|fields' :  JSON.stringify(reader.reader, null,4)
         }, null, 4)
