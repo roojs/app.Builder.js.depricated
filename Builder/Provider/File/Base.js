@@ -255,6 +255,10 @@ Base = XObject.define(
             
             keys.forEach(function(i) {
                 var el = obj[i];
+                if (tyoeof(obj) == 'undefined') {
+                    return;
+                }
+                
                 if (!isArray && skip.indexOf(i) > -1) { // things we do not write..
                     return;
                 }
