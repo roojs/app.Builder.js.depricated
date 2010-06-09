@@ -241,6 +241,7 @@ Base = XObject.define(
                 obj.items = newitems;
                 if (!obj.items.length) {
                     delete obj.items;
+                    keys = 
                 }
                 
             }
@@ -254,11 +255,11 @@ Base = XObject.define(
             var left =  '';
             
             keys.forEach(function(i) {
-                var el = obj[i];
-                if (typeof(obj) == 'undefined') { // empty or removed.
+              
+                if (typeof(obj[i]) == 'undefined') { // empty or removed.
                     return;
                 }
-                
+                var el = obj[i];
                 if (!isArray && skip.indexOf(i) > -1) { // things we do not write..
                     return;
                 }
