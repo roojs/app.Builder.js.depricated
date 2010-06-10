@@ -2716,8 +2716,8 @@ Window=new XObject({
                                                             items : [
                                                                 {
                                                                     xtype: Gtk.VBox,
-                                                                    pack : "add",
                                                                     id : "RightBrowser",
+                                                                    pack : "add",
                                                                     items : [
                                                                         {
                                                                             xtype: Gtk.ScrolledWindow,
@@ -2730,78 +2730,6 @@ Window=new XObject({
                                                                             items : [
                                                                                 {
                                                                                     xtype: WebKit.WebView,
-                                                                                    pack : "add",
-                                                                                    id : "view",
-                                                                                    init : function() {
-                                                                                        XObject.prototype.init.call(this);
-                                                                                        // this may not work!?
-                                                                                        this.el.open('file:///' + __script_path__ + '/../builder.html');
-                                                                                                              
-                                                                                        Gtk.drag_dest_set
-                                                                                        (
-                                                                                                this.el,              /* widget that will accept a drop */
-                                                                                                Gtk.DestDefaults.MOTION  | Gtk.DestDefaults.HIGHLIGHT,
-                                                                                                null,            /* lists of target to support */
-                                                                                                0,              /* size of list */
-                                                                                                Gdk.DragAction.COPY         /* what to do with data after dropped */
-                                                                                        );
-                                                                                                                
-                                                                                       // print("RB: TARGETS : " + LeftTree.atoms["STRING"]);
-                                                                                        Gtk.drag_dest_set_target_list(this.el, this.get('/Window').targetList);
-                                                                                    },
-                                                                                    renderJS : function(data) {
-                                                                                        print("HTML RENDERING");
-                                                                                        /// prevent looping..
-                                                                                        //if (this.pendingRedraw) {
-                                                                                        //   print("pending redraw active?!");
-                                                                                         //   return;
-                                                                                        //}
-                                                                                        
-                                                                                        
-                                                                                        if (!this.get('/Window.LeftTree').getActiveFile()) {
-                                                                                            return;
-                                                                                        }
-                                                                                        
-                                                                                        var project = this.get('/Window.LeftTree').getActiveFile().project;
-                                                                                        //print (project.fn);
-                                                                                        
-                                                                                        project.runhtml  = project.runhtml || '';
-                                                                                        
-                                                                                    
-                                                                                        this.runhtml  = this.runhtml || '';
-                                                                                        
-                                                                                        if (project.runhtml != this.runhtml) {
-                                                                                            // then we need to reload the browser using
-                                                                                            // load_html_string..
-                                                                                            
-                                                                                            // then trigger a redraw once it's loaded..
-                                                                                            this.pendingRedraw = true;
-                                                                                     
-                                                                                            this.runhtml = project.runhtml;
-                                                                                            
-                                                                                            var html = imports.File.File.read(__script_path__ + '/../builder.html');
-                                                                                            html = html.replace('</head>', this.runhtml + '</head>');
-                                                                                            print("LOAD HTML " + html);
-                                                                                            this.el.load_html_string( html , 'file:///' + __script_path__ + '/../builder.html');
-                                                                                            // should trigger load_finished!
-                                                                                            return;
-                                                                                        
-                                                                                        }
-                                                                                        
-                                                                                        this.pendingRedraw = false;    
-                                                                                         
-                                                                                        
-                                                                                        this.renderedData = data;
-                                                                                        var str = JSON.stringify(data) ;
-                                                                                        
-                                                                                        if (!this.ready) {
-                                                                                            console.log('not loaded yet');
-                                                                                        }
-                                                                                        //Seed.print("RENDER:" + str);
-                                                                                        //imports.File.File.write('/tmp/builder.debug.js', "Builder.render(" + JSON.stringify(data) + ");");
-                                                                                     
-                                                                                        this.el.execute_script("Builder.render(" + JSON.stringify(data) + ");");
-                                                                                    },
                                                                                     listeners : {
                                                                                         load_finished : function (self, object) {
                                                                                         	// if (this.ready) { // dont do it twice!
@@ -2955,7 +2883,82 @@ Window=new XObject({
                                                                                                 
                                                                                                 Gtk.drag_finish (ctx, dnd_success, delete_selection_data, time);
                                                                                                 return true;
-                                                                                            }
+                                                                                            },
+                                                                                        resource_request_starting : function (self, object, p0, p1, p2) {
+                                                                                             this.get('/Terminal').feed( p1.get_uri() );
+                                                                                        }
+                                                                                    },
+                                                                                    id : "view",
+                                                                                    pack : "add",
+                                                                                    init : function() {
+                                                                                        XObject.prototype.init.call(this);
+                                                                                        // this may not work!?
+                                                                                        this.el.open('file:///' + __script_path__ + '/../builder.html');
+                                                                                                              
+                                                                                        Gtk.drag_dest_set
+                                                                                        (
+                                                                                                this.el,              /* widget that will accept a drop */
+                                                                                                Gtk.DestDefaults.MOTION  | Gtk.DestDefaults.HIGHLIGHT,
+                                                                                                null,            /* lists of target to support */
+                                                                                                0,              /* size of list */
+                                                                                                Gdk.DragAction.COPY         /* what to do with data after dropped */
+                                                                                        );
+                                                                                                                
+                                                                                       // print("RB: TARGETS : " + LeftTree.atoms["STRING"]);
+                                                                                        Gtk.drag_dest_set_target_list(this.el, this.get('/Window').targetList);
+                                                                                    },
+                                                                                    renderJS : function(data) {
+                                                                                        print("HTML RENDERING");
+                                                                                        /// prevent looping..
+                                                                                        //if (this.pendingRedraw) {
+                                                                                        //   print("pending redraw active?!");
+                                                                                         //   return;
+                                                                                        //}
+                                                                                        
+                                                                                        
+                                                                                        if (!this.get('/Window.LeftTree').getActiveFile()) {
+                                                                                            return;
+                                                                                        }
+                                                                                        
+                                                                                        var project = this.get('/Window.LeftTree').getActiveFile().project;
+                                                                                        //print (project.fn);
+                                                                                        
+                                                                                        project.runhtml  = project.runhtml || '';
+                                                                                        
+                                                                                    
+                                                                                        this.runhtml  = this.runhtml || '';
+                                                                                        
+                                                                                        if (project.runhtml != this.runhtml) {
+                                                                                            // then we need to reload the browser using
+                                                                                            // load_html_string..
+                                                                                            
+                                                                                            // then trigger a redraw once it's loaded..
+                                                                                            this.pendingRedraw = true;
+                                                                                     
+                                                                                            this.runhtml = project.runhtml;
+                                                                                            
+                                                                                            var html = imports.File.File.read(__script_path__ + '/../builder.html');
+                                                                                            html = html.replace('</head>', this.runhtml + '</head>');
+                                                                                            print("LOAD HTML " + html);
+                                                                                            this.el.load_html_string( html , 'file:///' + __script_path__ + '/../builder.html');
+                                                                                            // should trigger load_finished!
+                                                                                            return;
+                                                                                        
+                                                                                        }
+                                                                                        
+                                                                                        this.pendingRedraw = false;    
+                                                                                         
+                                                                                        
+                                                                                        this.renderedData = data;
+                                                                                        var str = JSON.stringify(data) ;
+                                                                                        
+                                                                                        if (!this.ready) {
+                                                                                            console.log('not loaded yet');
+                                                                                        }
+                                                                                        //Seed.print("RENDER:" + str);
+                                                                                        //imports.File.File.write('/tmp/builder.debug.js', "Builder.render(" + JSON.stringify(data) + ");");
+                                                                                     
+                                                                                        this.el.execute_script("Builder.render(" + JSON.stringify(data) + ");");
                                                                                     }
                                                                                 }
                                                                             ]
