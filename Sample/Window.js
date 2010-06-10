@@ -2885,7 +2885,7 @@ Window=new XObject({
                                                                                                 return true;
                                                                                             },
                                                                                         resource_request_starting : function (self, object, p0, p1, p2) {
-                                                                                             this.get('/Terminal').feed( p1.get_uri() );
+                                                                                          //   this.get('/Terminal').feed( p1.get_uri() );
                                                                                         }
                                                                                     },
                                                                                     id : "view",
