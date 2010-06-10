@@ -77,9 +77,11 @@ var map = {
     'char' : 'int',
     'tinyint' : 'int',
     'decimal' : 'float',
+    'float' : 'float',
     'varchar' : 'string',
     'text' : 'string',
-    'enum' : 'string'
+    'enum' : 'string',
+    
     
 }
 
