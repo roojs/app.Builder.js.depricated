@@ -152,10 +152,13 @@ tables.forEach(function(table) {
         var type = e.Type.match(/([^(]+)\(([^\)]+)\)/);
         var row  = { }; 
         if (!type) {
-            return;
-        }
-        e.Type = type[1];
-        e.Size = type[2];
+            e.Type = type;
+            e.Size = false;
+        } else {
+            e.Type = type[1];
+            e.Size = type[2];
+           }
+        
         
         
         row.name = e.Field;
