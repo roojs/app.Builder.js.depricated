@@ -172,6 +172,7 @@ tables.forEach(function(table) {
         reader.push(row);
         
     });
+    print(JSON.stringify(reader,null,4));
     readers.push({
         table : table ,
         reader :  reader,
