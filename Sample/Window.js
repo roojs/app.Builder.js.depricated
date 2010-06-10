@@ -1350,6 +1350,11 @@ Window=new XObject({
                                                                                     }
                                                                                 }
                                                                                 
+                                                                                if (treepath === false) {
+                                                                                    //dupe!!!
+                                                                                    return JSON.parse(JSON.stringify(ar));
+                                                                                }
+                                                                                
                                                                                 return ar;
                                                                                 // convert the list into a json string..
                                                                             
