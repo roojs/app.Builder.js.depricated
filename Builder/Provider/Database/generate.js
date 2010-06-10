@@ -175,7 +175,7 @@ tables.forEach(function(table) {
         }
         row.type = map[e.Type];
         if (row.type == 'date') {
-            row.format = 'Y-m-d';
+            row.dateFormat = 'Y-m-d';
         }
         reader.push(row);
         
