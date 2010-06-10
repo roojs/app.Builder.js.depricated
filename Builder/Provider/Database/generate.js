@@ -151,13 +151,11 @@ tables.forEach(function(table) {
     schema.forEach(function(e)  {
         var type = e.Type.match(/([^(]+)\(([^\)]+)\)/);
         var row  = { }; 
-        if (!type) {
-            e.Type = type;
-            e.Size = false;
-        } else {
+        if (type) {
+            
             e.Type = type[1];
             e.Size = type[2];
-           }
+        }
         
         
         
