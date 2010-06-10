@@ -80,6 +80,7 @@ var map = {
     'float' : 'float',
     'varchar' : 'string',
     'text' : 'string',
+    'longtext' : 'string',
     'enum' : 'string',
     
     
