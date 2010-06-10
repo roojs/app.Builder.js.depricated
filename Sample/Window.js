@@ -1123,7 +1123,7 @@ Window=new XObject({
                                                                                             return;
                                                                                         }
                                                                                         print("LOAD");
-                                                                                        print(JSON.stringify(f.items, null,4));
+                                                                                       // print(JSON.stringify(f.items, null,4));
                                                                                         //console.dump(f.items);
                                                                                         this.load(f.items);
                                                                                         this.get('/LeftTree.view').el.expand_all();
