@@ -1527,19 +1527,6 @@ Window=new XObject({
                                                                     items : [
                                                                         {
                                                                             xtype: Gtk.TreeView,
-                                                                            headers_visible : false,
-                                                                            enable_tree_lines : true,
-                                                                            tooltip_column : 1,
-                                                                            init : function() {
-                                                                                XObject.prototype.init.call(this);
-                                                                            var description = new Pango.FontDescription.c_new();
-                                                                                                        description.set_size(8000);
-                                                                                                        this.el.modify_font(description);
-                                                                                                        
-                                                                                                        this.selection = this.el.get_selection();
-                                                                                                        this.selection.set_mode( Gtk.SelectionMode.SINGLE);
-                                                                            },
-                                                                            id : "view",
                                                                             listeners : {
                                                                                 cursor_changed : function (self) {
                                                                                  	var iter = new Gtk.TreeIter();
@@ -1561,7 +1548,7 @@ Window=new XObject({
                                                                                         
                                                                                         var file = this.get('/LeftProjectTree').project.getById(value.value);
                                                                                         
-                                                                                        
+                                                                                        file.items = false;
                                                                                         console.log(file);
                                                                                         
                                                                                 
@@ -1576,6 +1563,19 @@ Window=new XObject({
                                                                                         
                                                                                         return true;
                                                                                 }
+                                                                            },
+                                                                            id : "view",
+                                                                            tooltip_column : 1,
+                                                                            enable_tree_lines : true,
+                                                                            headers_visible : false,
+                                                                            init : function() {
+                                                                                XObject.prototype.init.call(this);
+                                                                            var description = new Pango.FontDescription.c_new();
+                                                                                                        description.set_size(8000);
+                                                                                                        this.el.modify_font(description);
+                                                                                                        
+                                                                                                        this.selection = this.el.get_selection();
+                                                                                                        this.selection.set_mode( Gtk.SelectionMode.SINGLE);
                                                                             },
                                                                             items : [
                                                                                 {
