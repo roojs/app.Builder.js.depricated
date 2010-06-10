@@ -162,9 +162,6 @@ Window=new XObject({
                                 {
                                     xtype: Gtk.Menu,
                                     pack : "set_submenu",
-                                    listeners : {
-                                        
-                                    },
                                     items : [
                                         {
                                             xtype: Gtk.MenuItem,
@@ -208,9 +205,6 @@ Window=new XObject({
                                 {
                                     xtype: Gtk.Menu,
                                     pack : "set_submenu",
-                                    listeners : {
-                                        
-                                    },
                                     items : [
                                         {
                                             xtype: Gtk.MenuItem,
@@ -299,17 +293,11 @@ Window=new XObject({
                             xtype: Gtk.MenuItem,
                             label : "_Help",
                             use_underline : true,
-                            listeners : {
-                                
-                            },
                             pack : "add",
                             items : [
                                 {
                                     xtype: Gtk.Menu,
                                     pack : "set_submenu",
-                                    listeners : {
-                                        
-                                    },
                                     items : [
                                         {
                                             xtype: Gtk.MenuItem,
@@ -1667,9 +1655,6 @@ Window=new XObject({
                                         },
                                         {
                                             xtype: Gtk.VBox,
-                                            listeners : {
-                                                
-                                            },
                                             items : [
                                                 {
                                                     xtype: Gtk.HBox,
@@ -2727,9 +2712,6 @@ Window=new XObject({
                                                                     xtype: Gtk.VBox,
                                                                     pack : "add",
                                                                     id : "RightBrowser",
-                                                                    listeners : {
-                                                                        
-                                                                    },
                                                                     items : [
                                                                         {
                                                                             xtype: Gtk.ScrolledWindow,
