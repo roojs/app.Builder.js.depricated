@@ -71,6 +71,7 @@ Gda.DataSelect.prototype.fetchAll = function()
 
 var map = {
     'date' : 'date',
+    'datetime' : 'string',
     'int' : 'int',
     'bigint' : 'int',
     'char' : 'int',
@@ -152,7 +153,6 @@ tables.forEach(function(table) {
         var type = e.Type.match(/([^(]+)\(([^\)]+)\)/);
         var row  = { }; 
         if (type) {
-            
             e.Type = type[1];
             e.Size = type[2];
         }
