@@ -283,8 +283,8 @@ Roo = XObject.define(
         // a standard dialog module.
         toSourceDialog : function() 
         {
-            
-            var o = this.mungeToString(this.items[0], false, '            ');   
+            var items = JSON.parse(JSON.stringify(this.items[0]));
+            var o = this.mungeToString(items, false, '            ');   
             return [
                 this.outputHeader(),
                 this.name + " = {",
@@ -325,9 +325,9 @@ Roo = XObject.define(
         // a layout compoent 
         toSourceLayout : function() 
         {
-            
-            var o = this.mungeToString(this.items[0], false, '            ');
-            
+            var items = JSON.parse(JSON.stringify(this.items[0]));
+            var o = this.mungeToString(items, false, '            ');   
+             
             var modkey = this.modOrder + '-' + this.name.replace('/[^A-Z]+/ig', '-');
             
             
