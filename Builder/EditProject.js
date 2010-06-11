@@ -33,11 +33,11 @@ EditProject=new XObject({
         this.success = c.success;
     },
     listeners : {
-        destroy_event : function (self, event) {
+        "destroy_event":function (self, event) {
              this.el.hide();
                         return false;
         },
-        response : function (self, id) {
+        "response":function (self, id) {
          if (id < 1) {
                     this.el.hide();
                     return;
