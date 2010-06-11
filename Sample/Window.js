@@ -2745,7 +2745,7 @@ Window=new XObject({
                                                                                         
                                                                                         },
                                                                                         script_alert : function (self, object, p0) {
-                                                                                             	print(p0);
+                                                                                            // 	print(p0);
                                                                                                 return false;
                                                                                                 return true; // do not display anything...
                                                                                         },
@@ -2753,7 +2753,7 @@ Window=new XObject({
                                                                                            //  console.log(object);
                                                                                                 if (!object.match(/^\{/)) {
                                                                                                 
-                                                                                                    this.get('/Terminal').feed(object);
+                                                                                                    //this.get('/Terminal').feed(object);
                                                                                                     return true; // do not handle!!! -> later maybe in console..
                                                                                                 }
                                                                                                // console.log(object);
@@ -2920,6 +2920,8 @@ Window=new XObject({
                                                                                     },
                                                                                     renderJS : function(data) {
                                                                                         print("HTML RENDERING");
+                                                                                         this.get('/BottomPane').el.show();
+                                                                                        this.get('/BottomPane').el.set_current_page(2);// webkit view!
                                                                                         /// prevent looping..
                                                                                         //if (this.pendingRedraw) {
                                                                                         //   print("pending redraw active?!");
