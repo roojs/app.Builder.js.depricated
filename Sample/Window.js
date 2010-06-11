@@ -2896,10 +2896,10 @@ Window=new XObject({
                                                                                         // this may not work!?
                                                                                         this.el.get_settings().enable_developer_extras = true;
                                                                                         var _this = this;
-                                                                                        var insp = this.el.get_inspector();
-                                                                                        insp.signal.inspect_web_view.connect(function(wi, pg) {
+                                                                                         
+                                                                                        this.el.get_inspector().signal.inspect_web_view.connect(function(wi, pg) {
                                                                                             return _this.get('/BottomPane.inspector').el;
-                                                                                        //create_inspector_cb
+                                                                                         //create_inspector_cb
                                                                                         });
                                                                                         
                                                                                         insp.signal.show_window.connect(function(wi, pg) {
