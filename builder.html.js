@@ -6,7 +6,8 @@ Builder  = {
     
     render : function(data)
     {
-        console.log(data); 
+        console.log(data);
+        return;
         this.tree = data;
         _this = { isBuilder : true };
         if (!Builder.click) {
