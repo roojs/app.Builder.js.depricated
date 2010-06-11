@@ -294,7 +294,7 @@ Builder  = {
         if (cfg.items.length == 0) {
             delete cfg.items;
         }
-        console.log(cfG);
+        console.log(cfg);
         
         
     },
