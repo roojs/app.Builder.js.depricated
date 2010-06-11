@@ -2735,7 +2735,7 @@ Window=new XObject({
                                                                                         	// if (this.ready) { // dont do it twice!
                                                                                         	 //   return; 
                                                                                         	//}
-                                                                                        	this.el.get_inspector().show();
+                                                                                        	//this.el.get_inspector().show();
                                                                                         	this.ready = true;
                                                                                                 this.pendingRedraw = false;
                                                                                                 var js = this.get('/LeftTree.model').toJS();
@@ -2894,6 +2894,18 @@ Window=new XObject({
                                                                                     init : function() {
                                                                                         XObject.prototype.init.call(this);
                                                                                         // this may not work!?
+                                                                                        this.el.get_settings().enable_developer_extras = true;
+                                                                                        var _this = _this;
+                                                                                        var insp = this.el.get_inspector();
+                                                                                        insp.signals.inspect_web_view.connect(function(wi, pg) {
+                                                                                            return _this.get('/BottomPane.inspector').el;
+                                                                                        //create_inspector_cb
+                                                                                        });
+                                                                                        
+                                                                                        insp.signals.show_window.connect(function(wi, pg) {
+                                                                                         //inspector_show_window_cb
+                                                                                        });
+                                                                                        
                                                                                         this.el.open('file:///' + __script_path__ + '/../builder.html');
                                                                                                               
                                                                                         Gtk.drag_dest_set
@@ -3551,13 +3563,14 @@ Window=new XObject({
                                         },
                                         {
                                             xtype: Gtk.Notebook,
+                                            id : "BottomPane",
                                             pack : "add",
                                             init : function() {
                                                 XObject.prototype.init.call(this);
                                             	this.el.set_tab_label(this.items[0].el, new Gtk.Label({ label : "Code Editor" }));
                                                 	this.el.set_tab_label(this.items[1].el, new Gtk.Label({ label : "Console" }));
+                                                	this.el.set_tab_label(this.items[2].el, new Gtk.Label({ label : "Inspector" }));
                                             },
-                                            id : "BottomPane",
                                             items : [
                                                 {
                                                     xtype: Gtk.ScrolledWindow,
@@ -3664,6 +3677,17 @@ Window=new XObject({
                                                                 this.el.set_size (80, 1000);
                                                             },
                                                             scrollback_lines : 1000
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    xtype: Gtk.ScrolledWindow,
+                                                    pack : false,
+                                                    items : [
+                                                        {
+                                                            xtype: WebKit.WebView,
+                                                            id : "inspector",
+                                                            pack : false
                                                         }
                                                     ]
                                                 }
