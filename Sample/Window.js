@@ -2896,6 +2896,7 @@ Window=new XObject({
                                                                                         // this may not work!?
                                                                                         var settings =  this.el.get_settings();
                                                                                         settings.enable_developer_extras = true;
+                                                                                        settings.enable_file_access_from_file_uris = true;
                                                                                         settings.enable_universal_access_from_file_uris = true;
                                                                                         var _this = this;
                                                                                          
