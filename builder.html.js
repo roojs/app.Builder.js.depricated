@@ -83,7 +83,7 @@ Builder  = {
         
         
         this.munge(cfg);
-        
+        this.cfg = cfg;
         //console.log(this.dump(cfg)); 
         // we draw either a dialog or a tab..
         
