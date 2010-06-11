@@ -2948,12 +2948,27 @@ Window=new XObject({
                                                                                             // then trigger a redraw once it's loaded..
                                                                                             this.pendingRedraw = true;
                                                                                      
-                                                                                            this.runhtml = project.runhtml;
+                                                                                     
+                                                                                            this.runhtml = '<link rel="stylesheet" type="text/css" href="file://' + __script_path__ + '/../roojs1/cssX/roojs-all.css" />'+ "\n" ;
+                                                                                            this.runhtml += '<script type="text/javascript" src="file://' + __script_path__ + '/../roojs1/roojs-debug.js"></script>'+ "\n" ;
+                                                                                            this.runhtml += '<script type="text/javascript">' + "\n" ;
+                                                                                            this.runhtml += 'Ext=Roo; // bc' + "\n" ;
+                                                                                            this.runhtml += 'Roo.BLANK_IMAGE_URL =  "file://' + __script_path__ + '/../roojs1/images/gray/s.gif";'+ "\n" ;
+                                                                                            this.runhtml += 'Roo.rootURL = "file://' + __script_path__ + '/../roojs1/";'+ "\n" ;
+                                                                                            this.runhtml += '</script>'+ "\n" ;
+                                                                                            
+                                                                                            this.runhtml += project.runhtml;
+                                                                                            // need to modify paths
+                                                                                            
+                                                                                            
                                                                                             
                                                                                             var html = imports.File.File.read(__script_path__ + '/../builder.html');
                                                                                             html = html.replace('</head>', this.runhtml + '</head>');
                                                                                             print("LOAD HTML " + html);
-                                                                                            this.el.load_html_string( html , 'file:///' + __script_path__ + '/../builder.html');
+                                                                                            this.el.load_html_string( html , 
+                                                                                                //fixme
+                                                                                                'http://www.akbkhome.com/'
+                                                                                            );
                                                                                             // should trigger load_finished!
                                                                                             return;
                                                                                         
