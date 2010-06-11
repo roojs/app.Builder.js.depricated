@@ -2896,8 +2896,9 @@ Window=new XObject({
                                                                                         // this may not work!?
                                                                                         var settings =  this.el.get_settings();
                                                                                         settings.enable_developer_extras = true;
-                                                                                        settings.enable_file_access_from_file_uris = true;
-                                                                                        settings.enable_universal_access_from_file_uris = true;
+                                                                                       // settings.enable_file_access_from_file_uris = true;
+                                                                                       // settings.enable_offline_web_application_cache - true;
+                                                                                       // settings.enable_universal_access_from_file_uris = true;
                                                                                         var _this = this;
                                                                                          
                                                                                         this.el.get_inspector().signal.inspect_web_view.connect(function(wi, pg) {
@@ -2951,14 +2952,14 @@ Window=new XObject({
                                                                                             // then trigger a redraw once it's loaded..
                                                                                             this.pendingRedraw = true;
                                                                                      
-                                                                                     
-                                                                                            this.runhtml = '<link rel="stylesheet" type="text/css" href="file://' + __script_path__ + '/../roojs1/cssX/roojs-all.css" />'+ "\n" ;
-                                                                                            this.runhtml += '<script type="text/javascript" src="file://' + __script_path__ + '/../roojs1/roojs-debug.js"></script>'+ "\n" ;
-                                                                                            this.runhtml += '<script type="text/javascript">' + "\n" ;
-                                                                                            this.runhtml += 'Ext=Roo; // bc' + "\n" ;
-                                                                                            this.runhtml += 'Roo.BLANK_IMAGE_URL =  "file://' + __script_path__ + '/../roojs1/images/gray/s.gif";'+ "\n" ;
-                                                                                            this.runhtml += 'Roo.rootURL = "file://' + __script_path__ + '/../roojs1/";'+ "\n" ;
-                                                                                            this.runhtml += '</script>'+ "\n" ;
+                                                                                             this.runhtml = '';
+                                                                                    //        this.runhtml = '<link rel="stylesheet" type="text/css" href="file://' + __script_path__ + '/../roojs1/cssX/roojs-all.css" />'+ "\n" ;
+                                                                                     //       this.runhtml += '<script type="text/javascript" src="file://' + __script_path__ + '/../roojs1/roojs-debug.js"></script>'+ "\n" ;
+                                                                                      //      this.runhtml += '<script type="text/javascript">' + "\n" ;
+                                                                                       //     this.runhtml += 'Ext=Roo; // bc' + "\n" ;
+                                                                                        //    this.runhtml += 'Roo.BLANK_IMAGE_URL =  "file://' + __script_path__ + '/../roojs1/images/gray/s.gif";'+ "\n" ;
+                                                                                         //   this.runhtml += 'Roo.rootURL = "file://' + __script_path__ + '/../roojs1/";'+ "\n" ;
+                                                                                          //  this.runhtml += '</script>'+ "\n" ;
                                                                                             
                                                                                             this.runhtml += project.runhtml;
                                                                                             // need to modify paths
