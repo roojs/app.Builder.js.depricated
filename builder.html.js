@@ -258,13 +258,13 @@ Builder  = {
             
             var xi = xitems[i];
             if (typeof(xi['*prop']) != 'undefined') {
-                //console.log('adding prop:' + xi['*prop']);
+                console.log('adding prop:' + xi['*prop']);
                 
                 var pr = xi['*prop'];
                 this.munge(xi);
                 // if prop is an array - then it's items are really the value..
                 if (pr.match(/\[\]$/)) {
-                    //console.log('adding array?:' + pr);
+                    console.log('adding array?:' + pr);
                     pr = pr.replace(/\[\]$/, '');
                     cfg[pr] = cfg[pr]  || [];
                     cfg[pr].push(xi);
@@ -275,7 +275,7 @@ Builder  = {
                 if (xi.xtype && xi.xtype  == 'Array') {
                     cfg[pr] = xi.items;
                 } else {
-                    //console.log('setting property:' + pr);
+                    console.log('setting property:' + pr);
                     cfg[pr] = xi;
                 }
                 
