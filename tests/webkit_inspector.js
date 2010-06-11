@@ -7,14 +7,14 @@
  * 
  */
 Gtk = imports.gi.Gtk;
-Webkit = imports.gi.Webkit;
+WebKit = imports.gi.WebKit;
  
 w = new Gtk.Window({ type:  Gtk.WindowType.TopLEVEL });
 v = new Gtk.VBox();
 s1 = new Gtk.ScrolledWindow();
 s2 = new Gtk.ScrolledWindow();
-w1 = new Webkit.WebView();
-w2 = new Webkit.WebView();
+w1 = new WebKit.WebView();
+w2 = new WebKit.WebView();
 s1.add(w1);
 s2.add(s2);
 v.add(s1);
