@@ -2971,8 +2971,8 @@ Window=new XObject({
                                                                                             html = html.replace('</head>', runhtml + this.runhtml + '</head>');
                                                                                             print("LOAD HTML " + html);
                                                                                             this.el.load_html_string( html , 
-                                                                                                //fixme
-                                                                                                'http://www.akbkhome.com/'
+                                                                                                //fixme - should be a config option!
+                                                                                                'http://www.akbkhome.com/e/'
                                                                                             );
                                                                                             // should trigger load_finished!
                                                                                             return;
