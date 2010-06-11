@@ -9,7 +9,7 @@
 Gtk = imports.gi.Gtk;
 WebKit = imports.gi.WebKit;
  
-w = new Gtk.Window({ type:  Gtk.WindowType.TopLEVEL });
+w = new Gtk.Window({ type:  Gtk.WindowType.TOPLEVEL });
 v = new Gtk.VBox();
 s1 = new Gtk.ScrolledWindow();
 s2 = new Gtk.ScrolledWindow();
