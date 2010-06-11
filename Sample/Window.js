@@ -2898,11 +2898,11 @@ Window=new XObject({
                                                                                         var _this = this;
                                                                                          
                                                                                         this.el.get_inspector().signal.inspect_web_view.connect(function(wi, pg) {
+                                                                                         _this.get('/BottomPane.inspector').el.show();
                                                                                             return _this.get('/BottomPane.inspector').el;
                                                                                          //create_inspector_cb
                                                                                         });
-                                                                                        
-                                                                                       
+                                                                                         
                                                                                         
                                                                                         this.el.open('file:///' + __script_path__ + '/../builder.html');
                                                                                                               
@@ -3685,7 +3685,7 @@ Window=new XObject({
                                                         {
                                                             xtype: WebKit.WebView,
                                                             id : "inspector",
-                                                            pack : false
+                                                            pack : "add"
                                                         }
                                                     ]
                                                 }
