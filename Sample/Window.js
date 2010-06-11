@@ -2895,7 +2895,7 @@ Window=new XObject({
                                                                                         XObject.prototype.init.call(this);
                                                                                         // this may not work!?
                                                                                         this.el.get_settings().enable_developer_extras = true;
-                                                                                        this.el.get_settings().enable_file_access_from_file_uri = true;
+                                                                                        this.el.get_settings().enable_universal_access_from_file_uris = true;
                                                                                         var _this = this;
                                                                                          
                                                                                         this.el.get_inspector().signal.inspect_web_view.connect(function(wi, pg) {
