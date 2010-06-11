@@ -2769,7 +2769,7 @@ Window=new XObject({
                                                                                                  if (typeof(val['id']) != 'undefined') {
                                                                                                    // this.activeNode = val['id'];
                                                                                                     var tg = this.get('/LeftTree.model').findDropNode(val['id'], true); 
-                                                                                                    if (!tg) {
+                                                                                                    if (!tg || typeof(tg[0]) == 'undefined') {
                                                                                                         return false;
                                                                                                     }
                                                                                                     print("SELECT node " + tg[0]);
