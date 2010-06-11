@@ -1020,9 +1020,9 @@
                                                             "items": [
                                                                 {
                                                                     "id": "inspector",
+                                                                    "pack": "add",
                                                                     "xtype": "WebView",
-                                                                    "|xns": "WebKit",
-                                                                    "listeners": {}
+                                                                    "|xns": "WebKit"
                                                                 }
                                                             ]
                                                         }
