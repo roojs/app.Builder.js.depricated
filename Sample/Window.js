@@ -2740,7 +2740,7 @@ Window=new XObject({
                                                                                                 this.pendingRedraw = false;
                                                                                                 var js = this.get('/LeftTree.model').toJS();
                                                                                                 if (js && js[0]) {
-                                                                                                	this.renderJS(js[0]);
+                                                                                            	    this.renderJS(js[0]);
                                                                                             	}
                                                                                         
                                                                                         },
@@ -2992,6 +2992,7 @@ Window=new XObject({
                                                                                         //imports.File.File.write('/tmp/builder.debug.js', "Builder.render(" + JSON.stringify(data) + ");");
                                                                                      
                                                                                         this.el.execute_script("Builder.render(" + JSON.stringify(data) + ");");
+                                                                                         this.runhtml = false;
                                                                                     }
                                                                                 }
                                                                             ]
