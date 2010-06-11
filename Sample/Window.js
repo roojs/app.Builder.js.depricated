@@ -2735,7 +2735,7 @@ Window=new XObject({
                                                                                         	// if (this.ready) { // dont do it twice!
                                                                                         	 //   return; 
                                                                                         	//}
-                                                                                        	//this.el.get_inspector().show();
+                                                                                        	this.el.get_inspector().show();
                                                                                         	this.ready = true;
                                                                                                 this.pendingRedraw = false;
                                                                                                 var js = this.get('/LeftTree.model').toJS();
@@ -2895,7 +2895,7 @@ Window=new XObject({
                                                                                         XObject.prototype.init.call(this);
                                                                                         // this may not work!?
                                                                                         this.el.get_settings().enable_developer_extras = true;
-                                                                                        var _this = _this;
+                                                                                        var _this = this;
                                                                                         var insp = this.el.get_inspector();
                                                                                         insp.signal.inspect_web_view.connect(function(wi, pg) {
                                                                                             return _this.get('/BottomPane.inspector').el;
