@@ -3682,7 +3682,7 @@ Window=new XObject({
                                                 },
                                                 {
                                                     xtype: Gtk.ScrolledWindow,
-                                                    pack : false,
+                                                    pack : "add",
                                                     items : [
                                                         {
                                                             xtype: WebKit.WebView,
