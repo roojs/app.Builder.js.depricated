@@ -44,7 +44,7 @@ w.add(v);
 w1.signal.show.connect(function() {
     w1.load_uri("http://www.google.com");
     // enable the dev extras?
-    //w1.get_settings().enable_developer_extras = true;
+    w1.get_settings().enable_developer_extras = true;
 });
 // load the inspector when loading has finished!
 w1.signal.load_finished.connect(function(wv) {
