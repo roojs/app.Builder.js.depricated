@@ -2951,8 +2951,9 @@ Window=new XObject({
                                                                                             
                                                                                             // then trigger a redraw once it's loaded..
                                                                                             this.pendingRedraw = true;
-                                                                                     
-                                                                                             this.runhtml = '';
+                                                                                             this.runhtml = '<script type="text/javascript">' + "\n" ;
+                                                                                             this.runhtml +=imports.File.File.read(__script_path__ + '/../builder.html.js') + "\n";
+                                                                                             this.runhtml += '</script>'+ "\n" ;
                                                                                     //        this.runhtml = '<link rel="stylesheet" type="text/css" href="file://' + __script_path__ + '/../roojs1/cssX/roojs-all.css" />'+ "\n" ;
                                                                                      //       this.runhtml += '<script type="text/javascript" src="file://' + __script_path__ + '/../roojs1/roojs-debug.js"></script>'+ "\n" ;
                                                                                       //      this.runhtml += '<script type="text/javascript">' + "\n" ;
