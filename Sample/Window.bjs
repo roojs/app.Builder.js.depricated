@@ -819,13 +819,13 @@
                                                             "|init": "function() {\n    XObject.prototype.init.call(this);\n   this.el.set_tab_label(this.items[0].el, new Gtk.Label({ label : \"Preview\" }));\n    this.el.set_tab_label(this.items[1].el, new Gtk.Label({ label : \"Help\" }));\n}\n",
                                                             "items": [
                                                                 {
-                                                                    "|xns": "Gtk",
-                                                                    "xtype": "Notebook",
-                                                                    "pack": "add",
                                                                     "id": "view-notebook",
+                                                                    "pack": "add",
                                                                     "tab_border": 0,
-                                                                    "|init": "function() {\n    XObject.prototype.init.call(this);\n    this.el.set_current_page(0);\n    print(\"SET LABEL?\")\n    this.el.set_tab_label(this.items[0].el, new Gtk.Label({ label : \"Roo View\" }));\n    this.el.set_tab_label(this.items[1].el, new Gtk.Label({ label : \"Gtk View\" }));\n}\n",
+                                                                    "xtype": "Notebook",
+                                                                    "|init": "function() {\n    XObject.prototype.init.call(this);\n    this.el.set_current_page(0);\n    //print(\"SET LABEL?\")\n    this.el.set_tab_label(this.items[0].el, new Gtk.Label({ label : \"Roo View\" }));\n    this.el.set_tab_label(this.items[1].el, new Gtk.Label({ label : \"Gtk View\" }));\n}\n",
                                                                     "|show_tabs": false,
+                                                                    "|xns": "Gtk",
                                                                     "items": [
                                                                         {
                                                                             "id": "RightBrowser",
