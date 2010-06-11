@@ -38,20 +38,20 @@ v.add(s1);
 v.add(s2);
 w.add(v);
 
-
+// enable inspector..
+w1.get_settings().enable_developer_extras = true;
 
 // load google on show..
 w1.signal.show.connect(function() {
     w1.load_uri("http://www.google.com");
-    // enable the dev extras?
-    w1.get_settings().enable_developer_extras = true;
 });
+
 // load the inspector when loading has finished!
 w1.signal.load_finished.connect(function(wv) {
     w1.get_inspector().show();
- 
 });
 
+// return the bottom window as the inspector..
 w1.get_inspector().signal.inspect_web_view.connect(function() {
     return w2;
 })
