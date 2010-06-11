@@ -2772,6 +2772,8 @@ Window=new XObject({
                                                                                                     if (!tg) {
                                                                                                         return false;
                                                                                                     }
+                                                                                                    print("SELECT node " + tg[0]);
+                                                                                                    
                                                                                                     this.get('/LeftTree.view').selectNode(tg[0]);
                                                                                                     ret  = true;
                                                                                                     
