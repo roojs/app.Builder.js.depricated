@@ -83,6 +83,7 @@ Builder  = {
         
         
         this.munge(cfg);
+        
         //console.log(this.dump(cfg)); 
         // we draw either a dialog or a tab..
         
@@ -97,6 +98,7 @@ Builder  = {
             this.dialogroot = Roo.get( document.body).createChild({
                 id : cfg.id
             });
+            
             
             this.dialog = new Roo[cfg.xtype](this.dialogroot, cfg);
             //this.dialog.el.on('click', this.panelClick, this);
@@ -130,6 +132,7 @@ Builder  = {
         }
         try {
             console.log("ADDING CFG");    
+            console.log(cfg)
             this.layoutbase.addxtype(  cfg ); 
         } catch (e) {
             console.log("GOT ERROR?");    
