@@ -8,8 +8,10 @@
  */
 Gtk = imports.gi.Gtk;
 WebKit = imports.gi.WebKit;
- 
+
+Gtk.init(null,null,);
 w = new Gtk.Window.c_new( Gtk.WindowType.TOPLEVEL);
+
 v = new Gtk.VBox();
 s1 = new Gtk.ScrolledWindow();
 s2 = new Gtk.ScrolledWindow();
@@ -22,6 +24,7 @@ v.add(s2);
 w.add(v);
 
 w.show_all();
+Gtk.main();
 
 
 
