@@ -1018,9 +1018,11 @@
                                                             "pack": false,
                                                             "items": [
                                                                 {
-                                                                    "|xns": "WebKit",
+                                                                    "pack": false,
                                                                     "xtype": "WebView",
-                                                                    "pack": false
+                                                                    "|xns": "WebKit",
+                                                                    "id": "",
+                                                                    "listeners": {}
                                                                 }
                                                             ]
                                                         }
