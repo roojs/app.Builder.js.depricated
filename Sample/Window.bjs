@@ -1015,7 +1015,14 @@
                                                         {
                                                             "|xns": "Gtk",
                                                             "xtype": "ScrolledWindow",
-                                                            "pack": false
+                                                            "pack": false,
+                                                            "items": [
+                                                                {
+                                                                    "|xns": "WebKit",
+                                                                    "xtype": "WebView",
+                                                                    "pack": false
+                                                                }
+                                                            ]
                                                         }
                                                     ]
                                                 }
