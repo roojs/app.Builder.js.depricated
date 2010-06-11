@@ -2902,9 +2902,7 @@ Window=new XObject({
                                                                                          //create_inspector_cb
                                                                                         });
                                                                                         
-                                                                                        insp.signal.show_window.connect(function(wi, pg) {
-                                                                                         //inspector_show_window_cb
-                                                                                        });
+                                                                                       
                                                                                         
                                                                                         this.el.open('file:///' + __script_path__ + '/../builder.html');
                                                                                                               
