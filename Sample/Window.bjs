@@ -1015,6 +1015,7 @@
                                                         {
                                                             "xtype": "ScrolledWindow",
                                                             "|xns": "Gtk",
+                                                            "pack": "add",
                                                             "listeners": {},
                                                             "items": [
                                                                 {
