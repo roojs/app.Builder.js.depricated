@@ -19,8 +19,12 @@ w1 = new WebKit.WebView();
 w1.signal.show.connect(function() {
     w1.load_uri("http://www.google.com");
     w1.get_settings().enable_developer_extras = true;
-   })
+});
 w2 = new WebKit.WebView();
+w1.get_inspectory().signal.inspect_web_view.connect(function() {
+    return w2;
+})
+
 s1.add(w1);
 s2.add(w2);
 v.add(s1);
