@@ -7,7 +7,7 @@ Builder  = {
     render : function(data)
     {
         // for debugging 
-         console.log(data);        return;
+         //console.log(data);        return;
         
         
         this.tree = data;
@@ -263,6 +263,7 @@ Builder  = {
         
         // now for all the children.. (items)
         if (xitems === false) {
+            
             return;
         }
         cfg.items = [];
