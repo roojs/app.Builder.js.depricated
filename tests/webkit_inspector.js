@@ -20,7 +20,7 @@ s2.add(s2);
 v.add(s1);
 v.add(s2);
 w.add(v);
-w.show_all()l;
+w.show_all();
 
 
 
