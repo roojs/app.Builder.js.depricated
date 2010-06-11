@@ -154,6 +154,7 @@ Builder  = {
         if (!cfg.id) {
             this.dump(cfg);
         }
+        
         //console.log(cfg.xtype + ': ' + cfg.id);
         
         if (cfg.items) {
@@ -293,7 +294,7 @@ Builder  = {
         if (cfg.items.length == 0) {
             delete cfg.items;
         }
-        
+        console.log(cfG);
         
         
     },
