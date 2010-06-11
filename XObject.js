@@ -519,7 +519,7 @@ XObject.extend(XObject,
      * @property {Boolean} debug XObject  debugging.  - set to true to debug.
      * 
      */
-    debug : false,
+    debug : true,
     /**
      * @property {Object} cache - cache of object ids
      * 
