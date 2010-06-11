@@ -262,13 +262,13 @@ Builder  = {
             
             var xi = xitems[i];
             if (typeof(xi['*prop']) != 'undefined') {
-                console.log('adding prop:' + xi['*prop']);
+                //console.log('adding prop:' + xi['*prop']);
                 
                 var pr = xi['*prop'];
                 this.munge(xi);
                 // if prop is an array - then it's items are really the value..
                 if (pr.match(/\[\]$/)) {
-                    console.log('adding array?:' + pr);
+                    //console.log('adding array?:' + pr);
                     pr = pr.replace(/\[\]$/, '');
                     cfg[pr] = cfg[pr]  || [];
                     cfg[pr].push(xi);
@@ -279,7 +279,7 @@ Builder  = {
                 if (xi.xtype && xi.xtype  == 'Array') {
                     cfg[pr] = xi.items;
                 } else {
-                    console.log('setting property:' + pr);
+                    //console.log('setting property:' + pr);
                     cfg[pr] = xi;
                 }
                 
@@ -360,7 +360,7 @@ Builder  = {
         }
         // needs fixing..
         if (ftg.dom.className.match(/[0-9]+/)) {
-            console.log(ftg.dom.className);
+            //console.log(ftg.dom.className);
             var cmat = ftg.dom.className.match(/x-grid-hd-builder-(form-gen-[0-9:]+)/);
             if (cmat) {
                 this[method]( cmat[1] );
