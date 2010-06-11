@@ -20,13 +20,14 @@ w1.signal.show.connect(function() {
     w1.load_uri("http://www.google.com");
     w1.get_settings().enable_developer_extras = true;
 });
+var ins = w1.get_inspector();
 w1.signal.load_finished.connect(function(wv) {
     
-    w1.get_inspector().show();
+    ins.show();
     return true;
 });
 w2 = new WebKit.WebView();
-w1.get_inspector().signal.inspect_web_view.connect(function() {
+ins .signal.inspect_web_view.connect(function() {
     return w2;
 })
 
