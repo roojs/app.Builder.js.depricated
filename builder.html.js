@@ -186,8 +186,9 @@ Builder  = {
                     delete cfg[p];
                     continue;
                 }
+                var pp = p.charAt(0) == '|'  ? p.substring(1) : p;
                 try {
-                    var pp = p.charAt(0) == '|'  ? p.substring(1) : p;
+                    
                     
                     var _tmp = false;
                     
@@ -206,7 +207,10 @@ Builder  = {
                 } catch(e) {  
                     console.log('Error evaluating: '  + cfg[p] + "\r\n" + JSON.stringify(e)); 
                 };
-                delete cfg[p];
+                if (pp != p) {
+                    delete cfg[p];
+                }
+                
                     
                 
                 continue;
