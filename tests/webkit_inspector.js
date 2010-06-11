@@ -18,7 +18,7 @@ s2 = new Gtk.ScrolledWindow();
 w1 = new WebKit.WebView();
 w1.signal.show.connect(function() {
     w1.load_uri("http://www.google.com");
-    w1.get_settings().
+    w1.get_settings().enable_developer_extras = true;
    })
 w2 = new WebKit.WebView();
 s1.add(w1);
