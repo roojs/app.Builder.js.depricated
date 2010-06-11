@@ -242,9 +242,11 @@ Builder  = {
                 throw "Invalid Xtype " + cfg.xtype + ' on ' + cfg.xtreepath;
             }
         }
-        
+        if (!isListener) {
+            cfg.listeners = cfg.listeners || {};
+        }
         // we can overlay some event handlers here..
-        cfg.listeners = cfg.listeners || {};
+        
        
         //console.log('xtype'  + xtype)
         switch(xtype) {
