@@ -21,6 +21,7 @@ w1.signal.show.connect(function() {
     w1.get_settings().enable_developer_extras = true;
 });
 w1.signal.load_finished.connect(function() {
+    print("INSPECT?");
     w1.get_inspector().show();
 });
 w2 = new WebKit.WebView();
