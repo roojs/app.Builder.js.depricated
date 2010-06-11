@@ -49,7 +49,7 @@ w1.signal.show.connect(function() {
 // load the inspector when loading has finished!
 w1.signal.load_finished.connect(function(wv) {
     w1.get_inspector().show();
-    return true;
+ 
 });
 
 w1.get_inspector().signal.inspect_web_view.connect(function() {
