@@ -9,7 +9,7 @@
 Gtk = imports.gi.Gtk;
 WebKit = imports.gi.WebKit;
 
-Gtk.init(null,null,);
+Gtk.init(null,null);
 w = new Gtk.Window.c_new( Gtk.WindowType.TOPLEVEL);
 
 v = new Gtk.VBox();
