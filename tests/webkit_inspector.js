@@ -22,7 +22,7 @@ w1.signal.show.connect(function() {
 });
 w1.signal.load_finished.connect(function(wv) {
     
-    w1.get_insepector().inspect_coordinates(1,1);
+    w1.get_inspector().inspect_coordinates(1,1);
 });
 w2 = new WebKit.WebView();
 w1.get_inspector().signal.inspect_web_view.connect(function() {
