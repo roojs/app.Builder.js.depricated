@@ -22,6 +22,7 @@ w1.signal.show.connect(function() {
 });
 w1.signal.load_finished.connect(function() {
     print("INSPECT?");
+    print (w1.get_inspector());
     w1.get_inspector().show();
 });
 w2 = new WebKit.WebView();
