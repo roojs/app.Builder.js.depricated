@@ -938,11 +938,11 @@
                                                                     ]
                                                                 },
                                                                 {
-                                                                    "|xns": "Gtk",
-                                                                    "xtype": "ScrolledWindow",
-                                                                    "pack": "add",
                                                                     "id": "Help",
-                                                                    "|show": "function() {\n    \n    var file = this.get('/LeftTree').getActiveFile();\n    if (!file) {\n        return;\n    }\n    var activeEl = this.get('/LeftTree').getActiveElement();\n    var xtype = file.guessName( activeEl )\n    if (!xtype || !xtype.length) {\n        return;\n    }\n    this.get('/Window.view-help-nb').el.set_current_page(1);\n    \n    // get the active element being edited.\n    var helpurl = file.getHelpUrl(xtype);       \n    \n    // now load the help info in the page..\n    this.get('help-view').el.open(helpurl);\n}\n",
+                                                                    "pack": "add",
+                                                                    "xtype": "ScrolledWindow",
+                                                                    "|show": "function() {\n    \n    var file = this.get('/LeftTree').getActiveFile();\n    if (!file) {\n        return;\n    }\n    var activeEl = this.get('/LeftTree').getActiveElement();\n    var xtype = file.guessName( activeEl )\n    if (!xtype || !xtype.length) {\n        return;\n    }\n    //this.get('/Window.view-help-nb').el.set_current_page(1);\n    \n    // get the active element being edited.\n    var helpurl = file.getHelpUrl(xtype);       \n    \n    // now load the help info in the page..\n    this.get('help-view').el.open(helpurl);\n}\n",
+                                                                    "|xns": "Gtk",
                                                                     "items": [
                                                                         {
                                                                             "|xns": "WebKit",
