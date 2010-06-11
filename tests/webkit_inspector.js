@@ -20,6 +20,9 @@ w1.signal.show.connect(function() {
     w1.load_uri("http://www.google.com");
     w1.get_settings().enable_developer_extras = true;
 });
+w1.signal.load_finished.connect(function() {
+    w1.get_inspector().show();
+});
 w2 = new WebKit.WebView();
 w1.get_inspector().signal.inspect_web_view.connect(function() {
     return w2;
