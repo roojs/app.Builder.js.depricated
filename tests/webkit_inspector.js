@@ -56,7 +56,7 @@ w1.get_inspector().signal.inspect_web_view.connect(function() {
     return w2;
 })
 
-
+// show and go..
 w.show_all();
 Gtk.main();
 
