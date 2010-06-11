@@ -2135,7 +2135,7 @@ Window=new XObject({
                                                                                 //   Gdk.threads_enter();
                                                                                 _this.get('/BottomPane').el.show();
                                                                                 _this.get('/RightEditor').el.show();
-                                                                       _this.get('/RightEditor.view').load( rval );
+                                                                                _this.get('/RightEditor.view').load( rval );
                                                                                 
                                                                                 e.editing_done();
                                                                                 e.remove_widget();
@@ -2702,13 +2702,13 @@ Window=new XObject({
                                                     items : [
                                                         {
                                                             xtype: Gtk.Notebook,
-                                                            pack : "add",
                                                             id : "view-notebook",
+                                                            pack : "add",
                                                             tab_border : 0,
                                                             init : function() {
                                                                 XObject.prototype.init.call(this);
                                                                 this.el.set_current_page(0);
-                                                                print("SET LABEL?")
+                                                                //print("SET LABEL?")
                                                                 this.el.set_tab_label(this.items[0].el, new Gtk.Label({ label : "Roo View" }));
                                                                 this.el.set_tab_label(this.items[1].el, new Gtk.Label({ label : "Gtk View" }));
                                                             },
@@ -3542,8 +3542,8 @@ Window=new XObject({
                                                         },
                                                         {
                                                             xtype: Gtk.ScrolledWindow,
-                                                            pack : "add",
                                                             id : "Help",
+                                                            pack : "add",
                                                             show : function() {
                                                                 
                                                                 var file = this.get('/LeftTree').getActiveFile();
@@ -3555,7 +3555,7 @@ Window=new XObject({
                                                                 if (!xtype || !xtype.length) {
                                                                     return;
                                                                 }
-                                                                this.get('/Window.view-help-nb').el.set_current_page(1);
+                                                                //this.get('/Window.view-help-nb').el.set_current_page(1);
                                                                 
                                                                 // get the active element being edited.
                                                                 var helpurl = file.getHelpUrl(xtype);       
