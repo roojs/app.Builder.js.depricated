@@ -959,11 +959,11 @@
                                                     ]
                                                 },
                                                 {
-                                                    "|xns": "Gtk",
-                                                    "xtype": "Notebook",
-                                                    "pack": "add",
-                                                    "|init": "function() {\n    XObject.prototype.init.call(this);\n\tthis.el.set_tab_label(this.items[0].el, new Gtk.Label({ label : \"Code Editor\" }));\n    \tthis.el.set_tab_label(this.items[1].el, new Gtk.Label({ label : \"Console\" }));\n}\n",
                                                     "id": "BottomPane",
+                                                    "pack": "add",
+                                                    "xtype": "Notebook",
+                                                    "|init": "function() {\n    XObject.prototype.init.call(this);\n\tthis.el.set_tab_label(this.items[0].el, new Gtk.Label({ label : \"Code Editor\" }));\n    \tthis.el.set_tab_label(this.items[1].el, new Gtk.Label({ label : \"Console\" }));\n    \tthis.el.set_tab_label(this.items[1].el, new Gtk.Label({ label : \"Console\" }));\n}\n",
+                                                    "|xns": "Gtk",
                                                     "items": [
                                                         {
                                                             "|xns": "Gtk",
