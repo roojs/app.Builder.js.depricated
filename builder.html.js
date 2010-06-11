@@ -187,6 +187,8 @@ Builder  = {
                     continue;
                 }
                 try {
+                    var pp = p.charAt(0) == '|'  ? p.substring(1) : p;
+                    
                     var _tmp = false;
                     
                     
@@ -195,7 +197,7 @@ Builder  = {
                     // stupid IE can not return objects evaluated..
                    // console.log('_tmp =(' + cfg[p] + ')');
                     eval('_tmp =(' + cfg[p] + ')');
-                    cfg[isListener ? p : p.substr(1)] = _tmp;
+                    cfg[pp] = _tmp;
                     
                     //if (typeof(_tmp) == 'undefined') {
                     //    alert(cfg[p]);
