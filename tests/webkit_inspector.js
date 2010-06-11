@@ -18,7 +18,7 @@ s2 = new Gtk.ScrolledWindow();
 w1 = new WebKit.WebView();
 w2 = new WebKit.WebView();
 s1.add(w1);
-s2.add(s2);
+s2.add(w2);
 v.add(s1);
 v.add(s2);
 w.add(v);
