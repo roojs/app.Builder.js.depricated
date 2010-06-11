@@ -1011,6 +1011,11 @@
                                                                     "scrollback_lines": 1000
                                                                 }
                                                             ]
+                                                        },
+                                                        {
+                                                            "|xns": "Gtk",
+                                                            "xtype": "ScrolledWindow",
+                                                            "pack": false
                                                         }
                                                     ]
                                                 }
