@@ -1,13 +1,14 @@
 //<script type="text/javascript">
  
-
+var _this = { isBuilder : true };
+   
 Builder  = {
     
     render : function(data)
     {
          
         this.tree = data;
-        
+        _this = { isBuilder : true };
         if (!Builder.click) {
             Builder.click= Roo.get(document.body).on('click', this.onclick, this);
          
@@ -183,7 +184,7 @@ Builder  = {
                 try {
                     var _tmp = false;
                     
-                    var _this = this.renderObj; /// fake '_this' object..
+                    
                     /** eval:var:_this **/
                     /** eval:var:_tmp **/
                     // stupid IE can not return objects evaluated..
