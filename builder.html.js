@@ -103,9 +103,9 @@ Builder  = {
             });
             
             
-            this.dialog = new Roo[cfg.xtype](this.dialogroot, cfg);
+            _this.dialog = new Roo[cfg.xtype](this.dialogroot, cfg);
             //this.dialog.el.on('click', this.panelClick, this);
-            this.dialog.show();
+            _this.dialog.show();
             return;
             
         }
