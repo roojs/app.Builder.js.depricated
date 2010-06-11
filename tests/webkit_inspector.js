@@ -16,6 +16,10 @@ v = new Gtk.VBox();
 s1 = new Gtk.ScrolledWindow();
 s2 = new Gtk.ScrolledWindow();
 w1 = new WebKit.WebView();
+w1.signal.show.connect(function() {
+    w1.load("http://www.google.com");
+    
+   })
 w2 = new WebKit.WebView();
 s1.add(w1);
 s2.add(w2);
