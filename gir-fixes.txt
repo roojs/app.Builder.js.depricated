@@ -9,6 +9,8 @@ gtk_tree_view_get_dest_row_at_pos
  - path & pos both need direction="out"
  
  
+webkit get_settings / get_inspector need transfer none on return values
+ 
  --------------------------
  
  Eventually GIR's should be downloadable from the doc site (or upstreamed into releases)
