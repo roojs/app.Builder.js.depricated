@@ -2886,10 +2886,7 @@ Window=new XObject({
                                                                                                 
                                                                                                 Gtk.drag_finish (ctx, dnd_success, delete_selection_data, time);
                                                                                                 return true;
-                                                                                            },
-                                                                                        resource_request_starting : function (self, object, p0, p1, p2) {
-                                                                                          //   this.get('/Terminal').feed( p1.get_uri() );
-                                                                                        }
+                                                                                            }
                                                                                     },
                                                                                     id : "view",
                                                                                     pack : "add",
