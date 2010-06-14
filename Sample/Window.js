@@ -2888,7 +2888,8 @@ Window=new XObject({
                                                                                                 return true;
                                                                                             },
                                                                                         create_web_view : function (self, object) {
-                                                                                           return new WebKit.WebView();
+                                                                                          print("CREATE WEB VIEW");
+                                                                                           return null; //new WebKit.WebView();
                                                                                         }
                                                                                     },
                                                                                     id : "view",
