@@ -2891,10 +2891,6 @@ Window=new XObject({
                                                                                         print("new window policy decision");
                                                                                             return false;
                                                                                         },
-                                                                                        navigation_policy_decision_requested : function (self, object, p0, p1, p2) {
-                                                                                        print("navigation  policy decision");
-                                                                                            return false;
-                                                                                        },
                                                                                         mime_type_policy_decision_requested : function (self, object, p0, p1, p2) {
                                                                                         print("mime type policy decision");
                                                                                             return false;
