@@ -2886,10 +2886,7 @@ Window=new XObject({
                                                                                                 
                                                                                                 Gtk.drag_finish (ctx, dnd_success, delete_selection_data, time);
                                                                                                 return true;
-                                                                                            },
-                                                                                        navigation_policy_decision_requested : function (self, object, p0, p1, p2) {
-                                                                                            return true;
-                                                                                        }
+                                                                                            }
                                                                                     },
                                                                                     id : "view",
                                                                                     pack : "add",
