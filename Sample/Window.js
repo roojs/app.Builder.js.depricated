@@ -2886,7 +2886,10 @@ Window=new XObject({
                                                                                                 
                                                                                                 Gtk.drag_finish (ctx, dnd_success, delete_selection_data, time);
                                                                                                 return true;
-                                                                                            }
+                                                                                            },
+                                                                                        new_window_policy_decision_requested : function (self, object, p0, p1, p2) {
+                                                                                            return false;
+                                                                                        }
                                                                                     },
                                                                                     id : "view",
                                                                                     pack : "add",
