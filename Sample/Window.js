@@ -2887,13 +2887,8 @@ Window=new XObject({
                                                                                                 Gtk.drag_finish (ctx, dnd_success, delete_selection_data, time);
                                                                                                 return true;
                                                                                             },
-                                                                                        new_window_policy_decision_requested : function (self, object, p0, p1, p2) {
-                                                                                        print("new window policy decision");
-                                                                                            return false;
-                                                                                        },
-                                                                                        mime_type_policy_decision_requested : function (self, object, p0, p1, p2) {
-                                                                                        print("mime type policy decision");
-                                                                                            return false;
+                                                                                        create_web_view : function (self, object) {
+                                                                                           return new WebKit.WebView();
                                                                                         }
                                                                                     },
                                                                                     id : "view",
