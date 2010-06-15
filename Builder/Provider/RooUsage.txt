@@ -142,16 +142,12 @@ right:
  
 //Grids           
 left: 
- Roo.GridPanel:grid
+	Roo.GridPanel:grid
 right:
-  Roo.grid.Grid         
-  Roo.grid.EditorGrid         
+	Roo.grid.Grid         
+	Roo.grid.EditorGrid         
 
-left:
- Roo.grid.GridPanel:footer
-right:
- Roo.PagingToolbar         
-           
+
            
 left:
   Roo.grid.Grid:sm
@@ -176,7 +172,24 @@ left:
  Roo.grid.ColumnModel:editor
 right:
  Roo.grid.GridEditor         
-           
+        
+	
+left: 
+	Roo.EditorGrid:footer
+	Roo.Grid:footer
+right:
+	Roo.PagingToolbar
+	
+	
+left: 
+	Roo.EditorGrid:toolbar
+	Roo.Grid:toolbar
+right:
+	Roo.Toolbar
+		
+	
+	
+	
 //Tree           
 left:
  Roo.TreePanel:tree
@@ -195,10 +208,10 @@ right:
  Roo.tree.TreeLoader         
  
 left:
- Roo.tree.TreePanel:sm
+	Roo.tree.TreePanel:sm
 right:
- Roo.tree.DefaultSelectionModel         
-  Roo.tree.MultiSelectionModel         
+	Roo.tree.DefaultSelectionModel         
+	Roo.tree.MultiSelectionModel         
 
   
 // combos
