@@ -115,7 +115,10 @@ right:
   Roo.Toolbar.Separator         
   Roo.Toolbar.Spacer         
   Roo.Toolbar.SplitButton         
-  Roo.Toolbar.TextItem         
+  Roo.Toolbar.TextItem        
+  Roo.form.ComboBox
+  Roo.form.DateField
+
            
 left:            
  Roo.Toolbar.Button:menu 
