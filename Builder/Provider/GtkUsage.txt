@@ -171,3 +171,8 @@ left:
 	GtkClutter.Window
 right:
 	GtkClutter.Actor
+	
+left:	
+	GtkClutter.Actor
+right:
+	Gtk.Widget
