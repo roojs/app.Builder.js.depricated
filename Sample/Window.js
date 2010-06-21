@@ -3032,7 +3032,15 @@ Window=new XObject({
                                                                         var tree =  this.get('/LeftTree.model').toJS(false,true)[0];
                                                                         // in theory tree is actually window..  
                                                                        try {
-                                                                        this.renderedEl = this.viewAdd(tree.items[0], this.get('view').el);
+                                                                        if (tree['|xns'] == 'GtkClutter') {
+                                                                            GtkClutter = imports.gi.GtkClutter;
+                                                                            this.renderedEl = new GtkClutter.Embed();
+                                                                            this.get('view').el.add(this.renderedEl);
+                                                                            this.viewAdd(tree.items[0], this.renderedEl);
+                                                                        } else {
+                                                                       
+                                                                            this.renderedEl = this.viewAdd(tree.items[0], this.get('view').el);
+                                                                        }
                                                                       } catch (e) {
                                                                          print(e.message);
                                                                         return;
