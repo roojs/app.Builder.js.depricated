@@ -45,6 +45,7 @@ left:
 	Gtk.ToolItem
 	Gtk.Viewport
 	Gtk.Button
+	GtkClutter.Actor
 	
 	
 right:	 
@@ -172,7 +173,3 @@ left:
 right:
 	GtkClutter.Actor
 	
-left:	
-	GtkClutter.Actor
-right:
-	Gtk.Widget
