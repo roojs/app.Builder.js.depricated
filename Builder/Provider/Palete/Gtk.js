@@ -187,7 +187,7 @@ Gtk = XObject.define(
             print("Loading for " + ename);
             
             if (typeof(this.proplist[ename]) != 'undefined') {
-                 
+                print("using cache");
                 return this.proplist[ename][type];
             }
             // use introspection to get lists..
