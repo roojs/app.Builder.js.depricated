@@ -3034,6 +3034,7 @@ Window=new XObject({
                                                                        try {
                                                                         if (tree['|xns'] == 'GtkClutter') {
                                                                             GtkClutter = imports.gi.GtkClutter;
+                                                                            GtkClutter.init(null,null);
                                                                             this.renderedEl = new GtkClutter.Embed();
                                                                             this.get('view').el.add(this.renderedEl);
                                                                             this.viewAdd(tree.items[0], this.renderedEl);
