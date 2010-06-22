@@ -127,7 +127,7 @@
                         },
                         {
                             "pack": false,
-                            "x": 100,
+                            "x": 150,
                             "xtype": "Actor",
                             "y": 300,
                             "|init": "function() {\n\n    var child = new XObject(this.items[0]);\n    child.init();\n    child.parent = this;\n    //var contents = new Gtk.Button({ label: 'test' }); \n    var contents = child.el;\n   \n    print(JSON.stringify(this.items));\n    \n    \n    this.el = new GtkClutter.Actor.with_contents (  contents) ;\n    XObject.prototype.init.call(this);\n}\n",
