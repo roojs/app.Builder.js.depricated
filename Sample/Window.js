@@ -3036,6 +3036,7 @@ Window=new XObject({
                                                                             GtkClutter = imports.gi.GtkClutter;
                                                                             GtkClutter.init(null,null);
                                                                             this.renderedEl = new GtkClutter.Embed();
+                                                                            this.renderedEl.set_usize(500,500);
                                                                             this.get('view').el.add(this.renderedEl);
                                                                             this.viewAdd(tree.items[0], this.renderedEl);
                                                                         } else {
