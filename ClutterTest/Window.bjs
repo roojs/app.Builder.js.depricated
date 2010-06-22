@@ -1,0 +1,70 @@
+{
+    "id": "file-gtk-11",
+    "name": "Window",
+    "parent": "",
+    "title": false,
+    "path": "/home/alan/cluttertest/Window.bjs",
+    "items": [
+        {
+            "default_height": 600,
+            "default_width": 600,
+            "xtype": "Window",
+            "|init": "function() {\n    XObject.prototype.init.call(this);\n    this.el.show_all();\n}\n",
+            "|xns": "Gtk",
+            "items": [
+                {
+                    "listeners": {
+                        "show": "function() { \n   var stage = this.el.get_stage(); \n   print(this.items.length);\n   this.items.forEach( \n      function(e) { \n          print(e.xtype);\n          stage.add_actor(e.el);\n        }\n     );\n}"
+                    },
+                    "pack": "add",
+                    "xtype": "Embed",
+                    "|xns": "GtkClutter",
+                    "items": [
+                        {
+                            "pack": false,
+                            "x": 100,
+                            "xtype": "Actor",
+                            "y": 100,
+                            "|init": "function() {\n\n    var child = new XObject(this.items[0]);\n    child.init();\n    child.parent = this;\n    //var contents = new Gtk.Button({ label: 'test' }); \n    var contents = child.el;\n   \n    print(JSON.stringify(this.items));\n    \n    \n    this.el = new GtkClutter.Actor.with_contents (  contents) ;\n    XObject.prototype.init.call(this);\n}\n",
+                            "|xns": "GtkClutter",
+                            "items": [
+                                {
+                                    "listeners": {
+                                        "clicked": "function (self) {\n   Clutter = imports.gi.Clutter;\n        var animate = this.parent.el.animate(\n\t\tClutter.AnimationMode.EASE_OUT_ELASTIC, 2000,\n\t\t{\n\t\t\t   scale_x : 5,\n\t\t\t  scale_y: 5,\n\n\t\t}\n\t\t);\n\t\tanimate.timeline.start();\n\n}"
+                                    },
+                                    "height_request": 100,
+                                    "label": "test",
+                                    "pack": false,
+                                    "width_request": 100,
+                                    "xtype": "Button",
+                                    "|xns": "Gtk"
+                                }
+                            ]
+                        },
+                        {
+                            "pack": false,
+                            "x": 300,
+                            "xtype": "Actor",
+                            "y": 100,
+                            "|init": "function() {\n\n    var child = new XObject(this.items[0]);\n    child.init();\n    child.parent = this;\n    //var contents = new Gtk.Button({ label: 'test' }); \n    var contents = child.el;\n    print (\"actor.items\");\n    print(JSON.stringify(this.items));\n    \n    \n    this.el = new GtkClutter.Actor.with_contents (  contents) ;\n    XObject.prototype.init.call(this);\n}\n",
+                            "|xns": "GtkClutter",
+                            "items": [
+                                {
+                                    "listeners": {
+                                        "clicked": "function (self) {\n   Clutter = imports.gi.Clutter;\n        var animate = this.parent.el.animate(\n\t\tClutter.AnimationMode.EASE_OUT_ELASTIC, 2000,\n\t\t{\n\t\t\t   scale_x : 5,\n\t\t\t  scale_y: 5,\n\n\t\t}\n\t\t);\n\t\tanimate.timeline.start();\n\n}"
+                                    },
+                                    "height_request": 100,
+                                    "label": "test",
+                                    "pack": false,
+                                    "width_request": 100,
+                                    "xtype": "Button",
+                                    "|xns": "Gtk"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
