@@ -7,7 +7,7 @@
     "items": [
         {
             "default_height": 900,
-            "default_width": 600,
+            "default_width": 900,
             "xtype": "Window",
             "|init": "function() {\n    XObject.prototype.init.call(this);\n    this.el.show_all();\n}\n",
             "|xns": "Gtk",
