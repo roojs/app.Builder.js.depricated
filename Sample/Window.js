@@ -452,68 +452,6 @@ Window=new XObject({
                                                             items : [
                                                                 {
                                                                     xtype: Gtk.TreeView,
-                                                                    pack : "add",
-                                                                    id : "view",
-                                                                    headers_visible : false,
-                                                                    enable_tree_lines : true,
-                                                                    tooltip_column : 1,
-                                                                    init : function() {
-                                                                        	XObject.prototype.init.call(this);
-                                                                    	var description = new Pango.FontDescription.c_new();
-                                                                    	description.set_size(8000);
-                                                                    	this.el.modify_font(description);
-                                                                    
-                                                                    	this.selection = this.el.get_selection();
-                                                                    	this.selection.set_mode( Gtk.SelectionMode.SINGLE);
-                                                                    	var _this = this;
-                                                                    
-                                                                    	// is this really needed??
-                                                                    	this.selection.signal['changed'].connect(function() {
-                                                                    		_this.get('/LeftTree.view').listeners.cursor_changed.apply(
-                                                                    		    _this.get('/LeftTree.view'), [ _this.get('/LeftTree.view'), '']
-                                                                    		);
-                                                                    	});
-                                                                    
-                                                                    	Gtk.drag_source_set (
-                                                                    		this.el,            /* widget will be drag-able */
-                                                                    		Gdk.ModifierType.BUTTON1_MASK,       /* modifier that will start a drag */
-                                                                    		null,            /* lists of target to support */
-                                                                    		0,              /* size of list */
-                                                                    		Gdk.DragAction.COPY   | Gdk.DragAction.MOVE           /* what to do with data after dropped */
-                                                                    	);
-                                                                    
-                                                                    	Gtk.drag_source_set_target_list(this.el, this.get('/Window').targetList);
-                                                                    
-                                                                    	Gtk.drag_source_add_text_targets(this.el); 
-                                                                    	Gtk.drag_dest_set
-                                                                    	(
-                                                                    	    this.el,              /* widget that will accept a drop */
-                                                                    	    Gtk.DestDefaults.MOTION  | Gtk.DestDefaults.HIGHLIGHT,
-                                                                    	    null,            /* lists of target to support */
-                                                                    	    0,              /* size of list */
-                                                                    	    Gdk.DragAction.COPY   | Gdk.DragAction.MOVE       /* what to do with data after dropped */
-                                                                    	);
-                                                                    
-                                                                    	Gtk.drag_dest_set_target_list(this.el, this.get('/Window').targetList);
-                                                                    	Gtk.drag_dest_add_text_targets(this.el);
-                                                                    },
-                                                                    highlight : function(treepath_ar) {
-                                                                    
-                                                                            // highlighting for drag/drop
-                                                                            if (treepath_ar.length && treepath_ar[0].length ) {
-                                                                                this.el.set_drag_dest_row( 
-                                                                                        new  Gtk.TreePath.from_string( treepath_ar[0] ),  treepath_ar[1]);
-                                                                                } else {
-                                                                                    this.el.set_drag_dest_row(null, Gtk.TreeViewDropPosition.INTO_OR_AFTER);
-                                                                                }
-                                                                                 
-                                                                            },
-                                                                    selectNode : function(treepath_str) {
-                                                                        //this.selection.select_path(new  Gtk.TreePath.from_string( treepath_str));
-                                                                     var tp = new Gtk.TreePath.from_string(treepath_str);
-                                                                              this.el.set_cursor(tp, null, false);  
-                                                                          this.el.scroll_to_cell(tp, null, false, 0,0);
-                                                                    },
                                                                     listeners : {
                                                                         button_press_event : function (self, ev) {
                                                                          	console.log("button press?");
@@ -757,7 +695,7 @@ Window=new XObject({
                                                                                // _g.button.set_label(''+value.get_string());
                                                                         
                                                                                 var pm =this.get('/RightPalete.model');
-                                                                                pm.load( this.get('/RightPalete').provider.gatherList(
+                                                                                pm.load(  this.get('/LeftTree').getPaleteProvider().gatherList(
                                                                                      this.get('/LeftTree.model').listAllTypes()));
                                                                                
                                                                                 
@@ -769,6 +707,68 @@ Window=new XObject({
                                                                                     return true;
                                                                                         
                                                                         }
+                                                                    },
+                                                                    id : "view",
+                                                                    pack : "add",
+                                                                    tooltip_column : 1,
+                                                                    enable_tree_lines : true,
+                                                                    headers_visible : false,
+                                                                    highlight : function(treepath_ar) {
+                                                                    
+                                                                            // highlighting for drag/drop
+                                                                            if (treepath_ar.length && treepath_ar[0].length ) {
+                                                                                this.el.set_drag_dest_row( 
+                                                                                        new  Gtk.TreePath.from_string( treepath_ar[0] ),  treepath_ar[1]);
+                                                                                } else {
+                                                                                    this.el.set_drag_dest_row(null, Gtk.TreeViewDropPosition.INTO_OR_AFTER);
+                                                                                }
+                                                                                 
+                                                                            },
+                                                                    init : function() {
+                                                                        	XObject.prototype.init.call(this);
+                                                                    	var description = new Pango.FontDescription.c_new();
+                                                                    	description.set_size(8000);
+                                                                    	this.el.modify_font(description);
+                                                                    
+                                                                    	this.selection = this.el.get_selection();
+                                                                    	this.selection.set_mode( Gtk.SelectionMode.SINGLE);
+                                                                    	var _this = this;
+                                                                    
+                                                                    	// is this really needed??
+                                                                    	this.selection.signal['changed'].connect(function() {
+                                                                    		_this.get('/LeftTree.view').listeners.cursor_changed.apply(
+                                                                    		    _this.get('/LeftTree.view'), [ _this.get('/LeftTree.view'), '']
+                                                                    		);
+                                                                    	});
+                                                                    
+                                                                    	Gtk.drag_source_set (
+                                                                    		this.el,            /* widget will be drag-able */
+                                                                    		Gdk.ModifierType.BUTTON1_MASK,       /* modifier that will start a drag */
+                                                                    		null,            /* lists of target to support */
+                                                                    		0,              /* size of list */
+                                                                    		Gdk.DragAction.COPY   | Gdk.DragAction.MOVE           /* what to do with data after dropped */
+                                                                    	);
+                                                                    
+                                                                    	Gtk.drag_source_set_target_list(this.el, this.get('/Window').targetList);
+                                                                    
+                                                                    	Gtk.drag_source_add_text_targets(this.el); 
+                                                                    	Gtk.drag_dest_set
+                                                                    	(
+                                                                    	    this.el,              /* widget that will accept a drop */
+                                                                    	    Gtk.DestDefaults.MOTION  | Gtk.DestDefaults.HIGHLIGHT,
+                                                                    	    null,            /* lists of target to support */
+                                                                    	    0,              /* size of list */
+                                                                    	    Gdk.DragAction.COPY   | Gdk.DragAction.MOVE       /* what to do with data after dropped */
+                                                                    	);
+                                                                    
+                                                                    	Gtk.drag_dest_set_target_list(this.el, this.get('/Window').targetList);
+                                                                    	Gtk.drag_dest_add_text_targets(this.el);
+                                                                    },
+                                                                    selectNode : function(treepath_str) {
+                                                                        //this.selection.select_path(new  Gtk.TreePath.from_string( treepath_str));
+                                                                     var tp = new Gtk.TreePath.from_string(treepath_str);
+                                                                              this.el.set_cursor(tp, null, false);  
+                                                                          this.el.scroll_to_cell(tp, null, false, 0,0);
                                                                     },
                                                                     items : [
                                                                         {
