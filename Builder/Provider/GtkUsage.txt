@@ -170,6 +170,7 @@ right:
 	
 left:
 	GtkClutter.Window
+	GtkClutter.Embed
 right:
 	GtkClutter.Actor
 	
