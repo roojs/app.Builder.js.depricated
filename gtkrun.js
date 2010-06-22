@@ -36,6 +36,11 @@ GtkSource = imports.gi.GtkSource;
 WebKit = imports.gi.WebKit;
 Vte = imports.gi.Vte;
 
+GtkClutter = imports.gi.GtkClutter;
+if (GtkClutter) {    
+    GtkClutter.GtkClutter.init(Seed.argv);
+}
+
 File = imports.File.File;
 
 XObject = imports.XObject.XObject;
