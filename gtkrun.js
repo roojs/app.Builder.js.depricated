@@ -38,7 +38,7 @@ Vte = imports.gi.Vte;
 
 GtkClutter = imports.gi.GtkClutter;
 if (GtkClutter) {    
-    GtkClutter.GtkClutter.init(Seed.argv);
+    GtkClutter.init(Seed.argv);
 }
 
 File = imports.File.File;
