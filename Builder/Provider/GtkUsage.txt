@@ -100,7 +100,7 @@ right:
 	GtkSource.View
 	WebKit.WebView
 	Vte.Terminal
-	
+	GtkClutter.Embed
 	
 left:
 	Gtk.MenuBar
