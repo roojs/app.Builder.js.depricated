@@ -3020,8 +3020,8 @@ Window=new XObject({
                                                                           this.highlightWidget = false;
                                                                        
                                                                         this.withDebug = false;
-                                                                        while (this.get('view').el.children.length) {
-                                                                            var c = this.get('view').el.children[0];
+                                                                        while (this.get('view').el.get_children().length) {
+                                                                            var c = this.get('view').el.get_children()[0];
                                                                             this.get('view').el.remove(c);        
                                                                             c.destroy();
                                                                         }
