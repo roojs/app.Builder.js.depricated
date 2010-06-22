@@ -10,11 +10,15 @@ GtkClutter.init(null,null);
 //win = new Gtk.Window.c_new(Gtk.WindowType.TOPLEVEL);
 
 
-clutter  = new GtkClutter.Window({ 
+win   = new Gtk.Window({ 
 	type:Gtk.WindowType.TOPLEVEL, 
 	default_width : 500,
 	default_height : 500
  } );
+
+clutter  = new GtkClutter.Embed({ 
+});
+win.add(clutter);
  print(clutter);
 //win.add(clutter); 
 
@@ -75,7 +79,7 @@ clutter.signal.show.connect(function() {
 */
  });
 
-clutter.show_all();
+win.show_all();
 
 Gtk.main(); 
 
