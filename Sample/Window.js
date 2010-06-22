@@ -3043,11 +3043,12 @@ Window=new XObject({
                                                                         this.get('view').el.set_size_request(
                                                                             tree.default_width * 1 || 400, tree.default_height * 1 || 400
                                                                         ) ;
-                                                                        
-                                                                        this.renderedEl.set_size_request(
-                                                                            tree.default_width || 600,
-                                                                            tree.default_height || 400
-                                                                        );
+                                                                        if (this.renderedEl) {
+                                                                            this.renderedEl.set_size_request(
+                                                                                tree.default_width || 600,
+                                                                                tree.default_height || 400
+                                                                            );
+                                                                        }
                                                                         this.get('view').el.show_all();
                                                                         
                                                                         
@@ -3117,7 +3118,7 @@ Window=new XObject({
                                                                         var type = item['|xns'] + '.' + item['xtype'];
                                                                         
                                                                         if (item['|xns'] == 'GtkClutter') { // we can not add this yet!
-                                                                            return;
+                                                                            return false;
                                                                         }
                                                                         var ns = imports.gi[item['|xns']];
                                                                         var ctr = ns[item['xtype']];
