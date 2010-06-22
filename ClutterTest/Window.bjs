@@ -159,7 +159,7 @@
                                         "clicked": "function (self) {\n   Clutter = imports.gi.Clutter;\n        var animate = this.parent.el.animate(\n\t\tClutter.AnimationMode.EASE_OUT_ELASTIC, 2000,\n\t\t{\n\t\t\t   scale_x : 5,\n\t\t\t  scale_y: 5,\n\n\t\t}\n\t\t);\n\t\tanimate.timeline.start();\n\n}"
                                     },
                                     "height_request": 100,
-                                    "label": "pallete",
+                                    "label": "palete",
                                     "pack": false,
                                     "width_request": 100,
                                     "xtype": "Button",
