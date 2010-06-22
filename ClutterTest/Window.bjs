@@ -6,7 +6,7 @@
     "path": "/home/alan/gitlive/app.Builder.js/ClutterTest/Window.bjs",
     "items": [
         {
-            "default_height": 600,
+            "default_height": 900,
             "default_width": 600,
             "xtype": "Window",
             "|init": "function() {\n    XObject.prototype.init.call(this);\n    this.el.show_all();\n}\n",
