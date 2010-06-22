@@ -3033,20 +3033,9 @@ Window=new XObject({
                                                                         var tree =  this.get('/LeftTree.model').toJS(false,true)[0];
                                                                         // in theory tree is actually window..  
                                                                        try {
-                                                                            if (tree['|xns'] == 'GtkClutter') {
-                                                                                GtkClutter = imports.gi.GtkClutter;
-                                                                                GtkClutter.init(null,null);
-                                                                                this.renderedEl = new GtkClutter.Embed();
-                                                                    
-                                                                                //this.renderedEl..set_size_request(500,500);
-                                                                                this.get('view').el.add(this.renderedEl);
-                                                                                
-                                                                                this.viewAdd(tree.items[0], this.renderedEl);
-                                                                                this.renderedEl.show_all();
-                                                                            } else {
-                                                                           
-                                                                                this.renderedEl = this.viewAdd(tree.items[0], this.get('view').el);
-                                                                            }
+                                                                      
+                                                                            this.renderedEl = this.viewAdd(tree.items[0], this.get('view').el);
+                                                                          
                                                                       } catch (e) {
                                                                          print(e.message);
                                                                         return;
