@@ -25,7 +25,7 @@ Gda.init();
 
 var prov = Gda.Config.list_providers ();
 //print(prov.dump_as_string());
-print(JSON.stringify(Seed.args));
+print(JSON.stringify(Seed.argv));
 Seed.quit();
 var db_name = "pman";
 var   cnc = Gda.Connection.open_from_string ("MySQL", "DB_NAME=" + db_name, 
