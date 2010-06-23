@@ -219,7 +219,7 @@ tables.forEach(function(table) {
         colmodel.push({
             "xtype": "ColumnModel",
             "header": row.name,
-            "width":  row.type == 'string' : 200 : 75,
+            "width":  row.type == 'string' ? 200 : 75,
             "dataIndex": row.name,
             "|renderer": row.type != 'date' ? 
                     "function(v) { return String.format('{0}', v); }" :
