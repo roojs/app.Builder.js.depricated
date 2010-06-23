@@ -184,6 +184,7 @@ tables.forEach(function(table) {
     //print(table);
     var schema = Gda.execute_select_command(cnc, "DESCRIBE `" + table+'`').fetchAll();
     var reader = []; 
+    var colmodel = []; 
     schema.forEach(function(e)  {
         var type = e.Type.match(/([^(]+)\(([^\)]+)\)/);
         var row  = { }; 
@@ -209,13 +210,26 @@ tables.forEach(function(table) {
             row.dateFormat = 'Y-m-d';
         }
         reader.push(row);
-        
+        colmodel.push({
+            "xtype": "ColumnModel",
+            "header": row.name,
+            "width": 100,
+            "dataIndex": row.name
+            "|renderer": "function(v) { return String.format('{0}', v); }", // special for dates?
+            "|xns": "Roo.grid",
+            "*prop": "colModel[]"
+        })
     });
-    print(JSON.stringify(reader,null,4));
+    
+    
+    
+    
+    //print(JSON.stringify(reader,null,4));
     readers.push({
         table : table ,
         reader :  reader,
         oreader : JSON.parse(JSON.stringify(reader)) // dupe it..
+        colmodel : colmodel
     });
     
     //console.dump(schema );
