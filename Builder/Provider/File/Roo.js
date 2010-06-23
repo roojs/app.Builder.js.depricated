@@ -281,6 +281,7 @@ Roo = XObject.define(
        
         },
         // a standard dialog module.
+        // fixme - this could be alot neater..
         toSourceDialog : function() 
         {
             var items = JSON.parse(JSON.stringify(this.items[0]));
