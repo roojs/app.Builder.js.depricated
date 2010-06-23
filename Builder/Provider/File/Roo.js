@@ -376,6 +376,25 @@ Roo = XObject.define(
                     
                  ].join("\n");
             }
+            
+            
+                return [
+                    this.outputHeader(),
+                    
+                    this.name  +  " = new Roo.XComponent({",
+                    "    order: '" +modkey+"',",
+                    "    region : '" + this.region   +"',",
+                    "    parent : " + (this.parent ||  'false') + ",",
+                    "    name : " + JSON.stringify(this.title  || "unnamed module") + ",",
+                    "    disabled : " + (this.disabled || 'false') +" ",
+                    "    items : [ ",
+                    o,
+                    "    ]",
+                    "});",
+                    ""
+                     
+                 ].join("\n");
+            
         },
             
         guessName : function(ar) // turns the object into full name.
