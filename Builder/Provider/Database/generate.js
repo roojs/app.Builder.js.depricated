@@ -334,7 +334,7 @@ readers.forEach(function(reader) {
                     "autoExpandColumn": reader.firstTxtCol,
                     "loadMask": true,
                     "listeners": {
-                        "|render": "function() \n" + "
+                        "|render": "function() \n" +
                             "{\n" +
                             "   _this.grid = this; \n" +
                             "    //_this.dialog = Pman.Dialog.FILL_IN\n" +
