@@ -332,9 +332,68 @@ readers.forEach(function(reader) {
                     "emptyMsg": "No " + reader.table + " found",
                     "|xns": "Roo"
                 },
-
-            
-            
+                {
+                    "*prop": "toolbar",
+                    "xtype": "Toolbar",
+                    "|xns": "Roo",
+                    "items": [
+                        {
+                            "text": "Add",
+                            "xtype": "Button",
+                            "cls": "x-btn-text-icon",
+                            "|icon": "Roo.rootURL + 'images/default/dd/drop-add.gif'",
+                            "listeners": {
+                                "|click": "function()\n"+
+                                    "{\n"+
+                                    "   //yourdialog.show( { id : 0 } , function() {\n"+
+                                    "   //  _this.grid.footer.onClick('first');\n"+
+                                    "   //}); \n"+
+                                    "}\n"
+                            },
+                            "|xns": "Roo"
+                        },
+                        {
+                            "text": "Edit",
+                            "xtype": "Button",
+                            "cls": "x-btn-text-icon",
+                            "|icon": "Roo.rootURL + 'images/default/tree/leaf.gif'",
+                            "listeners": {
+                                "|click": "function()\n"+
+                                    "{\n"+
+                                    "    var s = _this.grid.getSelectionModel().getSelections();\n"+
+                                    "    if (!s.length || (s.length > 1))  {\n"+
+                                    "        Roo.MessageBox.alert(\"Error\", s.length ? \"Select only one Row\" : \"Select a Row\");\n"+
+                                    "        return;\n"+
+                                    "    }\n"+
+                                    "    \n"+
+                                    "    //_this.dialog.show(s[0].data, function() {\n"+
+                                    "    //    _this.grid.footer.onClick('first');\n"+
+                                    "    //   }); \n"+
+                                    "    \n"+
+                                    "}\n" 
+                                
+                            },
+                            "|xns": "Roo"
+                        },
+                        {
+                            "text": "Delete",
+                            "cls": "x-btn-text-icon",
+                            "|icon": "rootURL + '/Pman/templates/images/trash.gif'",
+                            "xtype": "Button",
+                            "listeners": {
+                                "|click": "function()\n"+
+                                    "{\n"+
+                                    "   //Pman.genericDelete(_this, _this.grid.tableName); \n"+
+                                    "}\n"+
+                                    "        "
+                            },
+                            "|xns": "Roo"
+                        }
+                    ]
+                }, // end toolbar
+                
+                
+                
             
             
         }, null, 4)
