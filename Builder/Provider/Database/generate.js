@@ -216,6 +216,7 @@ tables.forEach(function(table) {
             row.dateFormat = 'Y-m-d';
         }
         reader.push(row);
+        
         colmodel.push({
             "xtype": "ColumnModel",
             "header": row.name,
