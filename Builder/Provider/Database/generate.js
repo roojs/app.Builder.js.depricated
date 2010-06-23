@@ -220,8 +220,10 @@ tables.forEach(function(table) {
             "xtype": "ColumnModel",
             "header": row.name,
             "width": 100,
-            "dataIndex": row.name
-            "|renderer": "function(v) { return String.format('{0}', v); }", // special for dates?
+            "dataIndex": row.name,
+            "|renderer": row.type == 'date ' ? 
+                    "function(v) { return String.format('{0}', v); }" :
+                    "function(v) { return String.format('{0}', v ? v.format('d/M/Y') : ''); }" , // special for date
             "|xns": "Roo.grid",
             "*prop": "colModel[]"
         })
