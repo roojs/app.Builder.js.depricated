@@ -357,7 +357,7 @@ readers.forEach(function(reader) {
                                     "*prop": "proxy",
                                     "xtype": "HttpProxy",
                                     "method": "GET",
-                                    "|url": "baseURL + '/Roo/" + reader.table ".php'",
+                                    "|url": "baseURL + '/Roo/" + reader.table + ".php'",
                                     "|xns": "Roo.data"
                                 },
                                 jreader
