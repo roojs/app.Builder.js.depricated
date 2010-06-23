@@ -31,7 +31,7 @@ if (args.length < 2) {
     print("Usage : seed generate.js  DBNAME  'USERNAME=xxx;PASSWORD=yyy'");
     
 }
-var db_name = "pman";
+var db_name = args[0];
 var   cnc = Gda.Connection.open_from_string ("MySQL", "DB_NAME=" + args[0], 
                                               args[1],
                                               Gda.ConnectionOptions.NONE, null);
