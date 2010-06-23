@@ -28,8 +28,14 @@ var prov = Gda.Config.list_providers ();
 var args = Array.prototype.slice.call(Seed.argv);
 args.shift();args.shift();// remove first 2
 if (args.length < 2) {
-    print("Usage : seed generate.js  DBNAME  'USERNAME=xxx;PASSWORD=yyy'");
-    
+    var sample = {
+        DB_NAME : "XXX",
+        USERNAME : "YYY",
+        PASSWORD: "ZZZ",
+        INI : "/path/to/mydb.ini",
+    }
+    print("Usage : seed generate.js  '" + JSON.stringify(sample));
+    Seed.quit();
 }
 var db_name = args[0];
 var   cnc = Gda.Connection.open_from_string ("MySQL", "DB_NAME=" + args[0], 
