@@ -181,7 +181,7 @@ if (File.isDirectory(cfg.INI)) {
 var tables = Gda.execute_select_command(cnc, "SHOW TABLES").fetchAll();
 var readers = [];
 tables.forEach(function(table) {
-    print(table);
+    //print(table);
     var schema = Gda.execute_select_command(cnc, "DESCRIBE `" + table+'`').fetchAll();
     var reader = []; 
     schema.forEach(function(e)  {
@@ -266,20 +266,88 @@ readers.forEach(function(reader) {
         File.mkdir(dir);
     }
     print("WRITE: " +  dir + '/' + cfg.DB_NAME + '_' + reader.table + '.json');
+    
+                
+    var jreader = {
+        '|xns' : 'Roo.data',
+        xtype : "JsonReader",
+        totalProperty : "total",
+        root : "data",
+        '*prop' : "reader",
+        id : 'id', // maybe no..
+        '|fields' :  JSON.stringify(reader.reader, null,4)
+    };
+    
     File.write(
+        dir + '/' + cfg.DB_NAME + '_' + reader.table + '.json',
+        JSON.stringify(jreader, null, 4)
+    )
+    
+    dir = GLib.get_home_dir() + '/.Builder/Roo.GridPanel'; 
+    if (!File.isDirectory(dir)) {
+        File.mkdir(dir);
+    }
+    print("WRITE: " +  dir + '/' + cfg.DB_NAME + '_' + reader.table + '.json');
+    
+      File.write(
         dir + '/' + cfg.DB_NAME + '_' + reader.table + '.json',
             
        
         JSON.stringify({
-            '|xns' : 'Roo.data',
-            xtype : "JsonReader",
-            totalProperty : "total",
-            root : "data",
-            '*prop' : "reader",
-            id : 'id', // maybe no..
-            '|fields' :  JSON.stringify(reader.reader, null,4)
+            '|xns' : 'Roo',
+            xtype : "GridPanel",
+            "title": reader.table,
+            "fitToframe": true,
+            "fitContainer": true,
+            "tableName": reader.table,
+            "background": true,
+            "listeners": {
+                "|activate": "function() {\n    _this.panel = this;\n    if (_this.grid) {\n        _this.grid.footer.onClick('first');\n    }\n}"
+            },
+        
+            "items": [
+                {
+                    "*prop": "dataSource",
+                    "xtype": "Store",
+                    
+                    "|xns": "Roo.data",
+                    "items": [
+                        
+                        {
+                            "*prop": "proxy",
+                            "xtype": "HttpProxy",
+                            "method": "GET",
+                            "|url": "baseURL + '/Roo/" + reader.table ".php'",
+                            "|xns": "Roo.data"
+                        },
+                        jreader
+                    ]
+                },
+                {
+                    "*prop": "footer",
+                    "xtype": "PagingToolbar",
+                    "pageSize": 25,
+                    "displayInfo": true,
+                    "displayMsg": "Displaying " + reader.table + "{0} - {1} of {2}",
+                    "emptyMsg": "No " + reader.table + " found",
+                    "|xns": "Roo"
+                },
+
+            
+            
+            
+            
         }, null, 4)
     )
-
+    
+    
+    
+    
+    
 
 });
+
+
+
+
+
