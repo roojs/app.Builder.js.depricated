@@ -38,7 +38,7 @@ if (args.length < 1) {
     Seed.quit();
 }
 var cfg = JSON.parse(args[0]);
- 
+
 var   cnc = Gda.Connection.open_from_string ("MySQL", "DB_NAME=" + cfg.DB_NAME, 
                                               "USERNAME=" + cfg.USERNAME + ';PASSWORD=' + cfg.PASSWORD,
                                               Gda.ConnectionOptions.NONE, null);
@@ -265,9 +265,9 @@ readers.forEach(function(reader) {
     if (!File.isDirectory(dir)) {
         File.mkdir(dir);
     }
-    print("WRITE: " +  dir + '/' + db_name + '_' + reader.table + '.json');
+    print("WRITE: " +  dir + '/' + cfg.DB_NAME + '_' + reader.table + '.json');
     File.write(
-        dir + '/' + db_name + '_' + reader.table + '.json',
+        dir + '/' + cfg.DB_NAME + '_' + reader.table + '.json',
             
        
         JSON.stringify({
