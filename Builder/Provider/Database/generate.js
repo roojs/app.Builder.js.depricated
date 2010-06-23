@@ -391,7 +391,7 @@ readers.forEach(function(reader) {
                         }
                     ]
                 }, // end toolbar
-            ].concat( reader.colmodels)
+            ].concat( reader.colmodel)
                 
                 
             
