@@ -34,7 +34,7 @@ if (args.length < 1) {
         PASSWORD: "ZZZ",
         INI : "/path/to/mydb.ini",
     }
-    print("Usage : seed generate.js  '" + JSON.stringify(sample));
+    print("Usage : seed generate.js  '" + JSON.stringify(sample) +"'");
     Seed.quit();
 }
 var cfg = JSON.parse(args[0]);
