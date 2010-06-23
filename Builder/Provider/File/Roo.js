@@ -384,11 +384,11 @@ Roo = XObject.define(
                 this.name  +  " = new Roo.XComponent({",
                 "    order: '" +modkey+"',",
                 "    region : '" + this.region   +"',",
-                "    parent : " + (this.parent ||  'false') + ",",
+                "    parent : " '+ (this.parent ||  'false') + "',",
                 "    name : " + JSON.stringify(this.title  || "unnamed module") + ",",
                 "    disabled : " + (this.disabled || 'false') +" ",
                 "    items : [ ",
-                o,
+                "        " + o,
                 "    ]",
                 "});",
                 ""
