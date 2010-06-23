@@ -332,7 +332,7 @@ Roo = XObject.define(
             var modkey = this.modOrder + '-' + this.name.replace('/[^A-Z]+/ig', '-');
             
             
-            if (this.name.match(/^Pman/) {
+            if (this.name.match(/^Pman/)) {
                     
                 
                 // old BC way we did things..
@@ -377,23 +377,23 @@ Roo = XObject.define(
                  ].join("\n");
             }
             
-            
-                return [
-                    this.outputHeader(),
-                    
-                    this.name  +  " = new Roo.XComponent({",
-                    "    order: '" +modkey+"',",
-                    "    region : '" + this.region   +"',",
-                    "    parent : " + (this.parent ||  'false') + ",",
-                    "    name : " + JSON.stringify(this.title  || "unnamed module") + ",",
-                    "    disabled : " + (this.disabled || 'false') +" ",
-                    "    items : [ ",
-                    o,
-                    "    ]",
-                    "});",
-                    ""
-                     
-                 ].join("\n");
+        
+            return [
+                this.outputHeader(),
+                
+                this.name  +  " = new Roo.XComponent({",
+                "    order: '" +modkey+"',",
+                "    region : '" + this.region   +"',",
+                "    parent : " + (this.parent ||  'false') + ",",
+                "    name : " + JSON.stringify(this.title  || "unnamed module") + ",",
+                "    disabled : " + (this.disabled || 'false') +" ",
+                "    items : [ ",
+                o,
+                "    ]",
+                "});",
+                ""
+                 
+             ].join("\n");
             
         },
             
