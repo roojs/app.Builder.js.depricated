@@ -40,7 +40,7 @@ if (args.length < 1) {
 var cfg = JSON.parse(args[0]);
  
 var   cnc = Gda.Connection.open_from_string ("MySQL", "DB_NAME=" + cfg.DB_NAME, 
-                                              "USERNAME=" + cfg.USERNAME + ';PASSWORD=' + cfg.PASSWORD
+                                              "USERNAME=" + cfg.USERNAME + ';PASSWORD=' + cfg.PASSWORD,
                                               Gda.ConnectionOptions.NONE, null);
 
 
