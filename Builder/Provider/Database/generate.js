@@ -27,7 +27,7 @@ var prov = Gda.Config.list_providers ();
 //print(prov.dump_as_string());
 var args = Array.prototype.slice.call(Seed.argv);
 args.shift();args.shift();// remove first 2
-if (args.length < 2) {
+if (args.length < 1) {
     var sample = {
         DB_NAME : "XXX",
         USERNAME : "YYY",
@@ -37,9 +37,10 @@ if (args.length < 2) {
     print("Usage : seed generate.js  '" + JSON.stringify(sample));
     Seed.quit();
 }
-var db_name = args[0];
-var   cnc = Gda.Connection.open_from_string ("MySQL", "DB_NAME=" + args[0], 
-                                              args[1],
+var cfg = JSON.parse(args[0]);
+ 
+var   cnc = Gda.Connection.open_from_string ("MySQL", "DB_NAME=" + cfg.DB_NAME, 
+                                              "USERNAME=" + cfg.USERNAME + ';PASSWORD=' + cfg.PASSWORD
                                               Gda.ConnectionOptions.NONE, null);
 
 
@@ -98,49 +99,68 @@ var map = {
     
 }
 
-//--- load ini files..
-// this is very specific.
-var dirs = File.list( GLib.get_home_dir() + '/gitlive').filter( 
-    function(e) { return e.match(/^Pman/); }
-);
 var ini = { }
-dirs.forEach(function(d) {
-    // this currently misses the web.*/Pman/XXXX/DataObjects..
-    var path = GLib.get_home_dir() + '/gitlive/' + d + '/DataObjects';
-    if (!File.isDirectory(path)) {
-        path = GLib.get_home_dir() + '/gitlive/' + d + '/Pman/DataObjects';
-    }
-    if (!File.isDirectory(path)) {
-        return; //skip
-    }
-    var inis = File.list(path).filter(
-        function(e) { return e.match(/\.links\.ini$/); }
-    );
-    if (!inis.length) {
+
+function readIni(fn)
+{
+    var key_file = GLib.key_file_new();
+    if (!GLib.key_file_load_from_file (key_file, fn , GLib.KeyFileFlags.NONE )) {
         return;
     }
+   
+    var groups = GLib.key_file_get_groups(key_file);
+    groups.forEach(function(g) {
+        ini[g] = {}
+           
+        var keys = GLib.key_file_get_keys(key_file,g);
+        keys.forEach(function(k) {
+            ini[g][k] = GLib.key_file_get_value(key_file,g,k);
+        })
+    })
     
-    inis.forEach(function(i) {
-        var key_file = GLib.key_file_new();
-        if (!GLib.key_file_load_from_file (key_file, path + '/' + i , GLib.KeyFileFlags.NONE )) {
+}
+if (File.isFile(cfg.INI)) {
+    if (cfg.INI.match(/links\.ini$/)) {
+        readIni(cfg.INI);
+    } else {
+        readIni(cfg.INI.replace(/\.ini$/, ".links.ini"));
+    }
+}
+
+if (File.isDirectory(cfg.INI)) {
+        
+
+    //--- load ini files..
+    // this is very specific.
+    var dirs = File.list( GLib.get_home_dir() + '/gitlive').filter( 
+        function(e) { return e.match(/^Pman/); }
+    );
+    
+    dirs.forEach(function(d) {
+        // this currently misses the web.*/Pman/XXXX/DataObjects..
+        var path = GLib.get_home_dir() + '/gitlive/' + d + '/DataObjects';
+        if (!File.isDirectory(path)) {
+            path = GLib.get_home_dir() + '/gitlive/' + d + '/Pman/DataObjects';
+        }
+        if (!File.isDirectory(path)) {
+            return; //skip
+        }
+        var inis = File.list(path).filter(
+            function(e) { return e.match(/\.links\.ini$/); }
+        );
+        if (!inis.length) {
             return;
         }
-       
-        var groups = GLib.key_file_get_groups(key_file);
-        groups.forEach(function(g) {
-            ini[g] = {}
-               
-            var keys = GLib.key_file_get_keys(key_file,g);
-            keys.forEach(function(k) {
-                ini[g][k] = GLib.key_file_get_value(key_file,g,k);
-            })
-        })
         
-    })
+        inis.forEach(function(i) {
+            readIni(path + '/' + i); 
+            
+        })
 
-    
-    
-});
+        
+        
+    });
+}
  //console.dump(ini);
 
 
