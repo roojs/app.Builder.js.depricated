@@ -25,7 +25,7 @@ Gda.init();
 
 var prov = Gda.Config.list_providers ();
 //print(prov.dump_as_string());
-var args = Array.prototype.slice(Seed.argv);
+var args = Array.prototype.slice.call(Seed.argv);
 print(JSON.stringify(args));
 Seed.quit();
 var db_name = "pman";
