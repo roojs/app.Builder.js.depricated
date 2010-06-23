@@ -26,11 +26,14 @@ Gda.init();
 var prov = Gda.Config.list_providers ();
 //print(prov.dump_as_string());
 var args = Array.prototype.slice.call(Seed.argv);
-print(JSON.stringify(args));
-Seed.quit();
+args.shift();args.shift();// remove first 2
+if (args.length < 2) {
+    print("Usage : seed generate.js  DBNAME  'USERNAME=xxx;PASSWORD=yyy'");
+    
+}
 var db_name = "pman";
-var   cnc = Gda.Connection.open_from_string ("MySQL", "DB_NAME=" + db_name, 
-                                              "USERNAME=root;PASSWORD=",
+var   cnc = Gda.Connection.open_from_string ("MySQL", "DB_NAME=" + args[0], 
+                                              args[1],
                                               Gda.ConnectionOptions.NONE, null);
 
 
