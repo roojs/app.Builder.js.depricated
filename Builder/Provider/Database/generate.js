@@ -221,7 +221,7 @@ tables.forEach(function(table) {
             "header": row.name,
             "width": 100,
             "dataIndex": row.name,
-            "|renderer": row.type == 'date ' ? 
+            "|renderer": row.type != 'date ' ? 
                     "function(v) { return String.format('{0}', v); }" :
                     "function(v) { return String.format('{0}', v ? v.format('d/M/Y') : ''); }" , // special for date
             "|xns": "Roo.grid",
