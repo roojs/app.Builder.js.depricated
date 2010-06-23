@@ -228,7 +228,7 @@ tables.forEach(function(table) {
     readers.push({
         table : table ,
         reader :  reader,
-        oreader : JSON.parse(JSON.stringify(reader)) // dupe it..
+        oreader : JSON.parse(JSON.stringify(reader)), // dupe it..
         colmodel : colmodel
     });
     
