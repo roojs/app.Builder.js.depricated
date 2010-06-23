@@ -185,6 +185,7 @@ tables.forEach(function(table) {
     var schema = Gda.execute_select_command(cnc, "DESCRIBE `" + table+'`').fetchAll();
     var reader = []; 
     var colmodel = []; 
+    var firstTxtCol = '';
     schema.forEach(function(e)  {
         var type = e.Type.match(/([^(]+)\(([^\)]+)\)/);
         var row  = { }; 
@@ -206,6 +207,11 @@ tables.forEach(function(table) {
             };
         }
         row.type = map[e.Type];
+        
+        if (row.type == 'string' && !firstTxtCol.length) {
+            firstTxtCol = row.name;
+        }
+        
         if (row.type == 'date') {
             row.dateFormat = 'Y-m-d';
         }
@@ -229,7 +235,8 @@ tables.forEach(function(table) {
         table : table ,
         reader :  reader,
         oreader : JSON.parse(JSON.stringify(reader)), // dupe it..
-        colmodel : colmodel
+        colmodel : colmodel,
+        firstTxtCol : firstTxtCol
     });
     
     //console.dump(schema );
@@ -318,96 +325,113 @@ readers.forEach(function(reader) {
             "listeners": {
                 "|activate": "function() {\n    _this.panel = this;\n    if (_this.grid) {\n        _this.grid.footer.onClick('first');\n    }\n}"
             },
-        
             "items": [
                 {
-                    "*prop": "dataSource",
-                    "xtype": "Store",
-                    
-                    "|xns": "Roo.data",
-                    "items": [
-                        
-                        {
-                            "*prop": "proxy",
-                            "xtype": "HttpProxy",
-                            "method": "GET",
-                            "|url": "baseURL + '/Roo/" + reader.table ".php'",
-                            "|xns": "Roo.data"
-                        },
-                        jreader
-                    ]
-                },
-                {
-                    "*prop": "footer",
-                    "xtype": "PagingToolbar",
-                    "pageSize": 25,
-                    "displayInfo": true,
-                    "displayMsg": "Displaying " + reader.table + "{0} - {1} of {2}",
-                    "emptyMsg": "No " + reader.table + " found",
-                    "|xns": "Roo"
-                },
-                {
-                    "*prop": "toolbar",
-                    "xtype": "Toolbar",
-                    "|xns": "Roo",
+                    "*prop": "grid",
+                    "xtype": "Grid",
+                    "autoExpandColumn": reader.firstTxtCol,
+                    "loadMask": true,
+                    "listeners": {
+                        "|render": "function() \n" + "
+                            "{\n" +
+                            "   _this.grid = this; \n" +
+                            "    //_this.dialog = Pman.Dialog.FILL_IN\n" +
+                            "    if (_this.panel.active) {\n" +
+                            "       this.footer.onClick('first');\n" +
+                            "    }\n" +
+                            "}"
+                    },
+                    "|xns": "Roo.grid",
+
                     "items": [
                         {
-                            "text": "Add",
-                            "xtype": "Button",
-                            "cls": "x-btn-text-icon",
-                            "|icon": "Roo.rootURL + 'images/default/dd/drop-add.gif'",
-                            "listeners": {
-                                "|click": "function()\n"+
-                                    "{\n"+
-                                    "   //yourdialog.show( { id : 0 } , function() {\n"+
-                                    "   //  _this.grid.footer.onClick('first');\n"+
-                                    "   //}); \n"+
-                                    "}\n"
-                            },
-                            "|xns": "Roo"
-                        },
-                        {
-                            "text": "Edit",
-                            "xtype": "Button",
-                            "cls": "x-btn-text-icon",
-                            "|icon": "Roo.rootURL + 'images/default/tree/leaf.gif'",
-                            "listeners": {
-                                "|click": "function()\n"+
-                                    "{\n"+
-                                    "    var s = _this.grid.getSelectionModel().getSelections();\n"+
-                                    "    if (!s.length || (s.length > 1))  {\n"+
-                                    "        Roo.MessageBox.alert(\"Error\", s.length ? \"Select only one Row\" : \"Select a Row\");\n"+
-                                    "        return;\n"+
-                                    "    }\n"+
-                                    "    \n"+
-                                    "    //_this.dialog.show(s[0].data, function() {\n"+
-                                    "    //    _this.grid.footer.onClick('first');\n"+
-                                    "    //   }); \n"+
-                                    "    \n"+
-                                    "}\n" 
+                            "*prop": "dataSource",
+                            "xtype": "Store",
+                            
+                            "|xns": "Roo.data",
+                            "items": [
                                 
-                            },
+                                {
+                                    "*prop": "proxy",
+                                    "xtype": "HttpProxy",
+                                    "method": "GET",
+                                    "|url": "baseURL + '/Roo/" + reader.table ".php'",
+                                    "|xns": "Roo.data"
+                                },
+                                jreader
+                            ]
+                        },
+                        {
+                            "*prop": "footer",
+                            "xtype": "PagingToolbar",
+                            "pageSize": 25,
+                            "displayInfo": true,
+                            "displayMsg": "Displaying " + reader.table + "{0} - {1} of {2}",
+                            "emptyMsg": "No " + reader.table + " found",
                             "|xns": "Roo"
                         },
                         {
-                            "text": "Delete",
-                            "cls": "x-btn-text-icon",
-                            "|icon": "rootURL + '/Pman/templates/images/trash.gif'",
-                            "xtype": "Button",
-                            "listeners": {
-                                "|click": "function()\n"+
-                                    "{\n"+
-                                    "   //Pman.genericDelete(_this, _this.grid.tableName); \n"+
-                                    "}\n"+
-                                    "        "
-                            },
-                            "|xns": "Roo"
-                        }
-                    ]
-                }, // end toolbar
-            ].concat( reader.colmodel)
-                
-                
+                            "*prop": "toolbar",
+                            "xtype": "Toolbar",
+                            "|xns": "Roo",
+                            "items": [
+                                {
+                                    "text": "Add",
+                                    "xtype": "Button",
+                                    "cls": "x-btn-text-icon",
+                                    "|icon": "Roo.rootURL + 'images/default/dd/drop-add.gif'",
+                                    "listeners": {
+                                        "|click": "function()\n"+
+                                            "{\n"+
+                                            "   //yourdialog.show( { id : 0 } , function() {\n"+
+                                            "   //  _this.grid.footer.onClick('first');\n"+
+                                            "   //}); \n"+
+                                            "}\n"
+                                    },
+                                    "|xns": "Roo"
+                                },
+                                {
+                                    "text": "Edit",
+                                    "xtype": "Button",
+                                    "cls": "x-btn-text-icon",
+                                    "|icon": "Roo.rootURL + 'images/default/tree/leaf.gif'",
+                                    "listeners": {
+                                        "|click": "function()\n"+
+                                            "{\n"+
+                                            "    var s = _this.grid.getSelectionModel().getSelections();\n"+
+                                            "    if (!s.length || (s.length > 1))  {\n"+
+                                            "        Roo.MessageBox.alert(\"Error\", s.length ? \"Select only one Row\" : \"Select a Row\");\n"+
+                                            "        return;\n"+
+                                            "    }\n"+
+                                            "    \n"+
+                                            "    //_this.dialog.show(s[0].data, function() {\n"+
+                                            "    //    _this.grid.footer.onClick('first');\n"+
+                                            "    //   }); \n"+
+                                            "    \n"+
+                                            "}\n" 
+                                        
+                                    },
+                                    "|xns": "Roo"
+                                },
+                                {
+                                    "text": "Delete",
+                                    "cls": "x-btn-text-icon",
+                                    "|icon": "rootURL + '/Pman/templates/images/trash.gif'",
+                                    "xtype": "Button",
+                                    "listeners": {
+                                        "|click": "function()\n"+
+                                            "{\n"+
+                                            "   //Pman.genericDelete(_this, _this.grid.tableName); \n"+
+                                            "}\n"+
+                                            "        "
+                                    },
+                                    "|xns": "Roo"
+                                }
+                            ]
+                        }, // end toolbar
+                    ].concat( reader.colmodel)
+                }
+            ]
             
             
         }, null, 4)
