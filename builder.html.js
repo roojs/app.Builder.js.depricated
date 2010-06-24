@@ -1,7 +1,11 @@
 //<script type="text/javascript">
  
-var _this = { isBuilder : true };
-   
+
+var MODULE = { isBuilder : true };
+// BC
+var _this = MODULE;
+
+// the apprenderer.
 Builder  = {
     
     render : function(data)
@@ -11,7 +15,7 @@ Builder  = {
         
         
         this.tree = data;
-        _this = { isBuilder : true };
+        MODULE = { isBuilder : true };
         if (!Builder.click) {
             Builder.click= Roo.get(document.body).on('click', this.onclick, this);
          
@@ -103,9 +107,9 @@ Builder  = {
             });
             
             
-            _this.dialog = new Roo[cfg.xtype](this.dialogroot, cfg);
+            MODULE.dialog = new Roo[cfg.xtype](this.dialogroot, cfg);
             //this.dialog.el.on('click', this.panelClick, this);
-            _this.dialog.show();
+            MODULE.dialog.show();
             return;
             
         }
