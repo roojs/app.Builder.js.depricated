@@ -387,7 +387,7 @@ Roo = XObject.define(
                 "    parent   : "+ (this.parent ?  "'" + this.parent + "'" :  'false') + ",",
                 "    name     : " + JSON.stringify(this.title  || "unnamed module") + ",",
                 "    disabled : " + (this.disabled || 'false') +", ",
-                "    items : function()",
+                "    tree : function()",
                 "    {",
                 "        _this = this;",
                 "        MODULE = this;", /// this looks like a better name.
