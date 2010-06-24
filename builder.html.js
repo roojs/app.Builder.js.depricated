@@ -15,7 +15,8 @@ Builder  = {
         
         
         this.tree = data;
-        MODULE = { isBuilder : true };
+        MODULE = { isBuilder : true }; 
+        _this = MODULE;
         if (!Builder.click) {
             Builder.click= Roo.get(document.body).on('click', this.onclick, this);
          
@@ -198,7 +199,7 @@ Builder  = {
                     
                     var _tmp = false;
                     
-                    
+                    /** eval:var:MOUDULE **/
                     /** eval:var:_this **/
                     /** eval:var:_tmp **/
                     // stupid IE can not return objects evaluated..
