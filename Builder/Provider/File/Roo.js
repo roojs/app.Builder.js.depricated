@@ -389,11 +389,9 @@ Roo = XObject.define(
                 "    disabled : " + (this.disabled || 'false') +", ",
                 "    items : function()",
                 "    {",
-                "        _this = this;
+                "        _this = this;",
                 "        return " + o + ';',
                 "    }",
-                   
-                
                 "});",
                 ""
                  
