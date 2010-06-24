@@ -390,7 +390,7 @@ Roo = XObject.define(
                 "    items : function()",
                 "    {",
                 "        _this = this;
-                "       return " + o + ';',
+                "        return " + o + ';',
                 "    }",
                    
                 
