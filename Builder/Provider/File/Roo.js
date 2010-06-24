@@ -390,7 +390,7 @@ Roo = XObject.define(
                 "    items : function()",
                 "    {",
                 "        _this = this;",
-                "        MODULE = this;",
+                "        MODULE = this;", /// this looks like a better name.
                 "        return " + o + ';',
                 "    }",
                 "});",
