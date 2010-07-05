@@ -24,6 +24,7 @@ Setup = {
         // set up this.dir..
         
         
+        
         if (!File.isDirectory(this.dir)) {
             File.mkdir(this.dir);
         }
@@ -103,33 +104,42 @@ Setup = {
             '    "mod_compress",' + "\n" +
             ')' + "\n" +
            
-            'fastcgi.server = ( ".php" => (( ' + "\n" +
-            '                     "bin-path" => "/usr/bin/php5-cgi",' + "\n" +
-            '                     "socket" => "' + this.dir + '/lighttpd/php5.socket" ' + "\n" +
-            '                 )))' + "\n" +
             
             'server.document-root       = "' + this.dir + '"' + "\n" +
             'server.upload-dirs = ( "' + this.dir + '/lighttpd/uploads" )' + "\n" +
             'server.errorlog            = "' + this.dir + '/lighttpd/logs/error.log"' + "\n" +
 
-            'index-file.names           = ( "index.php", "index.html",' + "\n" +
-            '                               "index.htm", "default.htm",' + "\n" +
-            '                               "index.lighttpd.html" )' + "\n" +
-           
-            'static-file.exclude-extensions = ( ".php", ".pl", ".fcgi" )' + "\n" +
-            'server.port               = 8090' + "\n" +
-            'server.bind                = "localhost"' + "\n" +
+            
+            
             'server.pid-file            = "' + this.dir + '/lighttpd/run/lighttpd.pid"' + "\n" +
          
-            'dir-listing.encoding        = "utf-8"' + "\n" +
-            'server.dir-listing          = "enable"' + "\n" +
+            
             'server.username            = "' + this.user + '"' + "\n" +
             'server.groupname           = "' + this.user + '"' + "\n" +
            
             'compress.cache-dir          = "' + this.dir+ '/lighttpd/cache/"' + "\n" +
+            
+            // check??
+            'server.port               = 8090' + "\n" +
+            // chekc php path...
+            'fastcgi.server = ( ".php" => (( ' + "\n" +
+            '                     "bin-path" => "/usr/bin/php5-cgi",' + "\n" +
+            '                     "socket" => "' + this.dir + '/lighttpd/php5.socket" ' + "\n" +
+            '                 )))' + "\n" +
+            
+            // non dependant stuff..
+            'static-file.exclude-extensions = ( ".php", ".pl", ".fcgi" )' + "\n" +
+            'server.bind                = "localhost"' + "\n" +
+            'dir-listing.encoding        = "utf-8"' + "\n" +
+            'server.dir-listing          = "enable"' + "\n" +
             'compress.filetype           = ("text/plain", "text/html", "application/x-javascript", "text/css")' + "\n" +
             'include_shell "/usr/share/lighttpd/create-mime.assign.pl"' + "\n" +
-            'include_shell "/usr/share/lighttpd/include-conf-enabled.pl"' + "\n"
+            'include_shell "/usr/share/lighttpd/include-conf-enabled.pl"' + "\n" +
+            
+            'index-file.names           = ( "index.php", "index.html",' + "\n" +
+            '                               "index.htm", "default.htm",' + "\n" +
+            '                               "index.lighttpd.html" )' + "\n" 
+           
         );
           
          
