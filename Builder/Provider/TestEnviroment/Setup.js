@@ -89,7 +89,7 @@ Setup = {
             '                     "socket" => "' + this.home + '/www/php5.socket" ' + "\n" +
             '                 )))' + "\n" +
             
-            'server.document-root       = "' + this.home + '/www/docs"' + "\n" +
+            'server.document-root       = "' + this.dir + '"' + "\n" +
             'server.upload-dirs = ( "' + this.home + '/www/uploads" )' + "\n" +
             'server.errorlog            = "' + this.home + '/www/logs/error.log"' + "\n" +
 
