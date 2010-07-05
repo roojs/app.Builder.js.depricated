@@ -2949,7 +2949,7 @@ Window=new XObject({
                                                                                     
                                                                                         this.runhtml  = this.runhtml || '';
                                                                                         
-                                                                                        if (project.runhtml != this.runhtml) {
+                                                                                        if (!this.runhtml.length || project.runhtml != this.runhtml) {
                                                                                             // then we need to reload the browser using
                                                                                             // load_html_string..
                                                                                             
