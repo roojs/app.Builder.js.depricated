@@ -41,7 +41,10 @@ Setup = {
             'lighttpd/uploads', 'lighttpd/logs',  'lighttpd/run', 'lighttpd/cache'
         
         ].forEach(function(n) {
-            _this.ensureDir(n);
+            if (!File.isDirectory(_this.dir + '/' + n)) {
+                File.mkdir(_this.dir + '/' + n);
+           }
+        
         });
         
             
