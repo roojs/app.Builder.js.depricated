@@ -18,8 +18,8 @@ Setup = {
     
     dir:  '', // home appbulider...
     user : '', // the runnning user..
-    home : '',
-    cloneModules : function()
+   
+    build : function()
     {
         this.cloneModule('Pman.Core');
         this.cloneModule('Pman.Base');
@@ -35,7 +35,14 @@ Setup = {
             'Pman.Base/Pman/templates' : 'Pman/templates',
             'Pman.Core' : 'Pman/Core',
         });
-            
+        var _this = this;
+        [ 
+            'uploads', 'logs',  'run', 'cache'
+        
+        ].forEach(function(n) {
+            _this.ensureDir(n);
+        });
+        
             
             
     },
@@ -86,12 +93,12 @@ Setup = {
            
             'fastcgi.server = ( ".php" => (( ' + "\n" +
             '                     "bin-path" => "/usr/bin/php5-cgi",' + "\n" +
-            '                     "socket" => "' + this.home + '/www/php5.socket" ' + "\n" +
+            '                     "socket" => "' + this.dir + '/php5.socket" ' + "\n" +
             '                 )))' + "\n" +
             
             'server.document-root       = "' + this.dir + '"' + "\n" +
-            'server.upload-dirs = ( "' + this.home + '/www/uploads" )' + "\n" +
-            'server.errorlog            = "' + this.home + '/www/logs/error.log"' + "\n" +
+            'server.upload-dirs = ( "' + this.dir + '/uploads" )' + "\n" +
+            'server.errorlog            = "' + this.dir + '/logs/error.log"' + "\n" +
 
             'index-file.names           = ( "index.php", "index.html",' + "\n" +
             '                               "index.htm", "default.htm",' + "\n" +
@@ -100,14 +107,14 @@ Setup = {
             'static-file.exclude-extensions = ( ".php", ".pl", ".fcgi" )' + "\n" +
             'server.port               = 8090' + "\n" +
             'server.bind                = "localhost"' + "\n" +
-            'server.pid-file            = "' + this.home + '/www/run/lighttpd.pid"' + "\n" +
+            'server.pid-file            = "' + this.dir + '/run/lighttpd.pid"' + "\n" +
          
             'dir-listing.encoding        = "utf-8"' + "\n" +
             'server.dir-listing          = "enable"' + "\n" +
             'server.username            = "' + this.user + '"' + "\n" +
             'server.groupname           = "' + this.user + '"' + "\n" +
            
-            'compress.cache-dir          = "' + this.home + '/cache/lighttpd/compress/"' + "\n" +
+            'compress.cache-dir          = "' + this.dir+ '/cache/"' + "\n" +
             'compress.filetype           = ("text/plain", "text/html", "application/x-javascript", "text/css")' + "\n" +
             'include_shell "/usr/share/lighttpd/create-mime.assign.pl"' + "\n" +
             'include_shell "/usr/share/lighttpd/include-conf-enabled.pl"' + "\n"
