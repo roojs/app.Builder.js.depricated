@@ -24,7 +24,8 @@ Setup = {
             Spawn.run(this.dir + '/Pman.Base', 'git pull');
         }
         Spawn.run(this.dir, 'git clone http://git.akbkhome.com/Pman.Base');
-    }
+    },
+    
     
     
 }
