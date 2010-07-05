@@ -104,7 +104,7 @@ Setup = {
             'server.upload-dirs         = ( "' + this.dir + '/lighttpd/uploads" )' + "\n" +
             'server.errorlog            =   "' + this.dir + '/lighttpd/logs/error.log"' + "\n" +
             'server.pid-file            =   "' + this.dir + '/lighttpd/run/lighttpd.pid"' + "\n" +
-            'compress.cache-dir          =  "' + this.dir+ '/lighttpd/cache/"' + "\n" +
+            'compress.cache-dir          =  "' + this.dir + '/lighttpd/cache/"' + "\n" +
 
             'server.username            =   "' + this.user + '"' + "\n" +
             'server.groupname           =   "' + this.user + '"' + "\n" +
