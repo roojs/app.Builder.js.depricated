@@ -2944,7 +2944,7 @@ Window=new XObject({
                                                                                         var project = this.get('/Window.LeftTree').getActiveFile().project;
                                                                                         //print (project.fn);
                                                                                         // set it to non-empty.
-                                                                                        project.runhtml  = project.runhtml || '<script type="text/javascript"></script>'; 
+                                                                                        project.runhtml  = project.runhtml.length ?  project.runhtml : '<script type="text/javascript"></script>'; 
                                                                                         
                                                                                     
                                                                                         this.runhtml  = this.runhtml || '';
