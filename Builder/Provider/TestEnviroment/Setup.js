@@ -11,7 +11,7 @@
  * B) Pman.Core
  * C) Pman.Base
  * D) files linked together..
- * 
+ * E) lightttpd.conf file..
  */
 
  
