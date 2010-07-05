@@ -2911,8 +2911,11 @@ Window=new XObject({
                                                                                          //create_inspector_cb
                                                                                         });
                                                                                          
-                                                                                        
-                                                                                        this.el.open('file:///' + __script_path__ + '/../builder.html');
+                                                                                        this.el.load_html_string( "Render not ready" , 
+                                                                                                //fixme - should be a config option!
+                                                                                                'http://www.akbkhome.com/e/'
+                                                                                            );
+                                                                                       //this.el.open('file:///' + __script_path__ + '/../builder.html');
                                                                                                               
                                                                                         Gtk.drag_dest_set
                                                                                         (
