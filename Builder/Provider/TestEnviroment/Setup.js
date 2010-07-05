@@ -98,24 +98,14 @@ Setup = {
     createHttpConf : function()
     {
         File.write(this.dir + 'lighttpd/lighttpd.conf',
-            'server.modules = (' + "\n" +
-            '    "mod_alias",' + "\n" +
-            '    "mod_fastcgi",' + "\n" +
-            '    "mod_compress",' + "\n" +
-            ')' + "\n" +
-           
-            
-            'server.document-root       = "' + this.dir + '"' + "\n" +
-            'server.upload-dirs = ( "' + this.dir + '/lighttpd/uploads" )' + "\n" +
-            'server.errorlog            = "' + this.dir + '/lighttpd/logs/error.log"' + "\n" +
-
             
             
-            'server.pid-file            = "' + this.dir + '/lighttpd/run/lighttpd.pid"' + "\n" +
-         
-            
-            'server.username            = "' + this.user + '"' + "\n" +
-            'server.groupname           = "' + this.user + '"' + "\n" +
+            'server.document-root       =   "' + this.dir + '"' + "\n" +
+            'server.upload-dirs         = ( "' + this.dir + '/lighttpd/uploads" )' + "\n" +
+            'server.errorlog            =   "' + this.dir + '/lighttpd/logs/error.log"' + "\n" +
+            'server.pid-file            =   "' + this.dir + '/lighttpd/run/lighttpd.pid"' + "\n" +
+            'server.username            =   "' + this.user + '"' + "\n" +
+            'server.groupname           =   "' + this.user + '"' + "\n" +
            
             'compress.cache-dir          = "' + this.dir+ '/lighttpd/cache/"' + "\n" +
             
@@ -128,6 +118,12 @@ Setup = {
             '                 )))' + "\n" +
             
             // non dependant stuff..
+            'server.modules = (' + "\n" +
+            '    "mod_alias",' + "\n" +
+            '    "mod_fastcgi",' + "\n" +
+            '    "mod_compress",' + "\n" +
+            ')' + "\n" +
+           
             'static-file.exclude-extensions = ( ".php", ".pl", ".fcgi" )' + "\n" +
             'server.bind                = "localhost"' + "\n" +
             'dir-listing.encoding        = "utf-8"' + "\n" +
