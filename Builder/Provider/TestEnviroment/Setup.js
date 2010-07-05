@@ -17,7 +17,7 @@
 Setup = {
     
     dir:  '', // home appbulider...
-    
+    user : '', // the runnning user..
     
     cloneModules : function()
     {
@@ -75,13 +75,49 @@ Setup = {
         );
              
     }
-    
-    
-    
-    
-    
-}
- 
+    createHttpConf : function()
+    {
+        File.write(this.dir + '/lighttpd.conf',
+            'server.modules = (' + "\n" +
+            '    "mod_alias",' + "\n" +
+            '    "mod_fastcgi",' + "\n" +
+            '    "mod_compress",' + "\n" +
+            ')' + "\n" +
+           
+            'fastcgi.server = ( ".php" => (( ' + "\n" +
+            '                     "bin-path" => "/usr/bin/php5-cgi",' + "\n" +
+            '                     "socket" => "/home/alan/www/php5.socket" ' + "\n" +
+            '                 )))' + "\n" +
+            
+            'server.document-root       = "/home/alan/www/docs"' + "\n" +
+            'server.upload-dirs = ( "/home/alan/www/uploads" )' + "\n" +
+            'server.errorlog            = "/home/alan/www/logs/error.log"' + "\n" +
+
+            'index-file.names           = ( "index.php", "index.html",' + "\n" +
+            '                               "index.htm", "default.htm",' + "\n" +
+            '                               "index.lighttpd.html" )' + "\n" +
+           
+            'static-file.exclude-extensions = ( ".php", ".pl", ".fcgi" )' + "\n" +
+            'server.port               = 8090' + "\n" +
+            'server.bind                = "localhost"' + "\n" +
+            'server.pid-file            = "/home/alan/www/run/lighttpd.pid"' + "\n" +
+         
+            'dir-listing.encoding        = "utf-8"' + "\n" +
+            'server.dir-listing          = "enable"' + "\n" +
+            'server.username            = "alan"' + "\n" +
+            'server.groupname           = "alan"' + "\n" +
+           
+            'compress.cache-dir          = "/home/alan/cache/lighttpd/compress/"' + "\n" +
+            'compress.filetype           = ("text/plain", "text/html", "application/x-javascript", "text/css")' + "\n" +
+            'include_shell "/usr/share/lighttpd/create-mime.assign.pl"' + "\n" +
+            'include_shell "/usr/share/lighttpd/include-conf-enabled.pl"' + "\n"
+        );
+          
+         
+         
+         
+}        
+         
 
  
 
