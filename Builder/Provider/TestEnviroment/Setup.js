@@ -14,7 +14,15 @@
  * E) lightttpd.conf file..
  */
 
- 
+Setup = {
+    
+    cloneModules : function()
+    {
+        
+    }
+    
+    
+}
  
 
  
