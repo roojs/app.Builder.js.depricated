@@ -7,7 +7,7 @@ console = imports.console;
 XObject = imports.XObject.XObject;
  
 Observable = imports.Observable.Observable;
-File = imports['../File'].File;
+File = imports['../../File.js'].File;
 /**
  * 
  * /home/alan/.BuilderConfig/*
