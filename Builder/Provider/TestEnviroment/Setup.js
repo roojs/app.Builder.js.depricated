@@ -21,6 +21,12 @@ Setup = {
    
     build : function()
     {
+        
+        if (!File.isDirectory(this.dir)) {
+            File.mkdir(this.dir);
+        }
+    
+        
         this.cloneModule('Pman.Core');
         this.cloneModule('Pman.Base');
         this.cloneModule('pear');
