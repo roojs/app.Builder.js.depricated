@@ -21,6 +21,8 @@ Setup = {
    
     build : function()
     {
+        // set up this.dir..
+        
         
         if (!File.isDirectory(this.dir)) {
             File.mkdir(this.dir);
