@@ -43,7 +43,7 @@ Setup = {
         ].forEach(function(n) {
             if (!File.isDirectory(_this.dir + '/' + n)) {
                 File.mkdir(_this.dir + '/' + n);
-           }
+            }
         
         });
         
