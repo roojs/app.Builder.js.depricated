@@ -48,7 +48,33 @@ Setup = {
         Spawn.run(this.dir, 'git clone http://git.akbkhome.com/' + name);
     },
     
-    
+    createIndex : function()
+    {
+        out = "<?php \n" +
+            "ini_set('include_path', \n" +
+            "    dirname(__FILE__). ':' .  \n" +
+            "    dirname(__FILE__).'/pear:' .  \n" +
+            "    ini_get('include_path')); \n" 
+            "define('DB_DATAOBJECT_NO_OVERLOAD', true); \n" +
+            "require_once 'HTML/FlexyFramework.php'; \n" +
+            
+            "new HTML_FlexyFramework( array(\n" +
+            "    'project'=> 'Pman',\n" +
+            "    'debug' => 0,\n" +
+            "    'version' => '1.2',\n" +
+            "    'enable' => 'Core', \n" +
+            
+            "    'appNameShort' => \"PROJECT\",\n" +
+            "    'appName' => \"PROJECT\",\n" +
+            "    'database' => 'mysql://root:@localhost/pman',\n" +
+            "    'Pman' => array(\n" +
+            "        'isDev' => true,  \n" +
+            "    ),\n" +
+            "));";
+            
+        ));
+        
+    }
     
     
     
