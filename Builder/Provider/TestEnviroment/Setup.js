@@ -34,7 +34,7 @@ Setup = {
             'Pman.Base/Pman/GnumericToExcel.php' : 'Pman/GnumericToExcel.php',
             'Pman.Base/Pman/templates' : 'Pman/templates',
             'Pman.Core' : 'Pman/Core',
-            
+        });
             
             
             
