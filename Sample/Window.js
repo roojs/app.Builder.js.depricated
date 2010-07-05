@@ -2943,13 +2943,13 @@ Window=new XObject({
                                                                                         
                                                                                         var project = this.get('/Window.LeftTree').getActiveFile().project;
                                                                                         //print (project.fn);
-                                                                                        
-                                                                                        project.runhtml  = project.runhtml || '';
+                                                                                        // set it to non-empty.
+                                                                                        project.runhtml  = project.runhtml || '<script type="text/javascript"></script>'; 
                                                                                         
                                                                                     
                                                                                         this.runhtml  = this.runhtml || '';
                                                                                         
-                                                                                        if (!this.runhtml.length || project.runhtml != this.runhtml) {
+                                                                                        if (project.runhtml != this.runhtml) {
                                                                                             // then we need to reload the browser using
                                                                                             // load_html_string..
                                                                                             
