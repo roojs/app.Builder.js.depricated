@@ -50,7 +50,8 @@ Setup = {
     
     createIndex : function()
     {
-        out = "<?php \n" +
+        File.write(this.dir + "/index.php",
+            "<" + "?php \n" +
             "ini_set('include_path', \n" +
             "    dirname(__FILE__). ':' .  \n" +
             "    dirname(__FILE__).'/pear:' .  \n" +
@@ -70,7 +71,8 @@ Setup = {
             "    'Pman' => array(\n" +
             "        'isDev' => true,  \n" +
             "    ),\n" +
-            "));";
+            "));"
+        );
              
     }
     
