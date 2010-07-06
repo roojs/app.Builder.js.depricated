@@ -19,7 +19,6 @@ Builder  = {
         _this = MODULE;
         if (!Builder.click) {
             Builder.click= Roo.get(document.body).on('click', this.onclick, this);
-         
         }
         
         this.redraw(false);
