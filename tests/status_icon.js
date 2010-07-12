@@ -30,7 +30,7 @@ function active(status_icon, button, time, data)
     var area = new Gdk.Rectangle();
      
     var ret = {}; 
-    status_icon.get_geometry(ret, area, orient);
+    status_icon.get_geometry(ret, area);
     console.log(JSON.stringify(area));
     console.log(JSON.stringify(ret));
     
