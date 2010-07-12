@@ -30,6 +30,8 @@ function active(status_icon, button, time, data)
     var orient = new Gtk.Orientation();
     var ret = {}; 
     status_icon.get_geometry(ret, area, orient);
+    console.log(JSON.stringify(area));
+    console.log(JSON.stringify(orient));
     
     menu.popup(null, null, Gtk.StatusIcon.position_menu, status_icon, button, time);
 }
