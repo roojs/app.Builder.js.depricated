@@ -31,8 +31,8 @@ function active(status_icon, button, time, data)
      
     var ret = {}; 
     status_icon.get_geometry(ret, area);
-    console.log(JSON.stringify(area));
-    console.log(JSON.stringify(ret));
+    print(JSON.stringify(area));
+    print(JSON.stringify(ret));
     
     menu.popup(null, null, Gtk.StatusIcon.position_menu, status_icon, button, time);
 }
