@@ -10,7 +10,7 @@ window.set_default_size(600, 500);
 window.signal.hide.connect(Gtk.main_quit);
 
 // Create the GtkStatusIcon from a file
-var icon = new Gtk.StatusIcon({file : "/home/marin/Bureau/Bric_a_brac/notify/icon.png"});
+var icon = new Gtk.StatusIcon({stock : Gtk.STOCK_MEDIA_PLAY});
 
 // Create the menu
 var menu = new Gtk.Menu();
