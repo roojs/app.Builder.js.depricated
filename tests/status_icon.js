@@ -2,6 +2,7 @@
 
 // Import and initialize GTK+
 Gtk = imports.gi.Gtk;
+Gdk = imports.gi.Gtk;
 Gtk.init(null, null);
 
 // Create the window
