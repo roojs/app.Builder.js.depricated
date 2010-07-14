@@ -279,10 +279,10 @@ Base = XObject.define(
             var subs = [];
             var _this = this;
             while (true) {
-                var fn = GLib.dir_read_name(gdir);
+                var fn = gdir.read_name();
                 console.log('trying ' + dir + '/' + fn);
                 if (!fn) {
-                    GLib.dir_close(gdir);
+                    gdir.close();
                     subs.forEach( function(s) {
                         _this.scanDir(s, dp+1);
                     });
