@@ -110,7 +110,7 @@ Roo = XObject.define(
                 _this.title =  cfg.title;
                 _this.items = cfg.items || []; 
                 
-                //_this.fixItems(_this, false);
+                _this.fixItems(_this, false);
                 
                 
                 
