@@ -2733,6 +2733,7 @@ Window=new XObject({
                                                                                     xtype: WebKit.WebView,
                                                                                     listeners : {
                                                                                         load_finished : function (self, object) {
+                                                                                            print("load_finished");
                                                                                         	// if (this.ready) { // dont do it twice!
                                                                                         	 //   return; 
                                                                                         	//}
