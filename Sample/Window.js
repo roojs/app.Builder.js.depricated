@@ -2734,6 +2734,7 @@ Window=new XObject({
                                                                                     listeners : {
                                                                                         load_finished : function (self, object) {
                                                                                             print("load_finished");
+                                                                                        return;
                                                                                         	// if (this.ready) { // dont do it twice!
                                                                                         	 //   return; 
                                                                                         	//}
