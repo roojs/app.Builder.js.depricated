@@ -2733,11 +2733,13 @@ Window=new XObject({
                                                                                     xtype: WebKit.WebView,
                                                                                     listeners : {
                                                                                         load_finished : function (self, object) {
-                                                                                            print("load_finished");
-                                                                                        return;
+                                                                                        //    print("load_finished"); return;
                                                                                         	// if (this.ready) { // dont do it twice!
                                                                                         	 //   return; 
                                                                                         	//}
+                                                                                        	if (this.ready) {
+                                                                                                	return;
+                                                                                        	}
                                                                                         	 this.el.get_inspector().show();
                                                                                         	this.ready = true;
                                                                                                 this.pendingRedraw = false;
