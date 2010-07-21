@@ -2756,6 +2756,7 @@ Window=new XObject({
                                                                                                 return true; // do not display anything...
                                                                                         },
                                                                                         console_message : function (self, object, p0, p1) {
+                                                                                            print(object);
                                                                                            //  console.log(object);
                                                                                                 if (!object.match(/^\{/)) {
                                                                                                 
