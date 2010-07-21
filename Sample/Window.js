@@ -2744,10 +2744,10 @@ Window=new XObject({
                                                                                         
                                                                                         	this.ready = true;
                                                                                                 this.pendingRedraw = false;
-                                                                                                var js = this.get('/LeftTree.model').toJS();
-                                                                                                if (js && js[0]) {
-                                                                                            	    this.renderJS(js[0]);
-                                                                                            	}
+                                                                                                //var js = this.get('/LeftTree.model').toJS();
+                                                                                                //if (js && js[0]) {
+                                                                                            	//    this.renderJS(js[0]);
+                                                                                            	//}
                                                                                         
                                                                                         },
                                                                                         script_alert : function (self, object, p0) {
