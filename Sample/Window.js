@@ -2737,11 +2737,11 @@ Window=new XObject({
                                                                                         	// if (this.ready) { // dont do it twice!
                                                                                         	 //   return; 
                                                                                         	//}
-                                                                                        	if (this.inspectorShown) {
-                                                                                                	return;
+                                                                                        	if (!this.inspectorShown) {
+                                                                                                   this.el.get_inspector().show();
+                                                                                                   this.inspectorShown = true;
                                                                                         	}
-                                                                                        	 this.el.get_inspector().show();
-                                                                                        	 this.inspectorShown = true;
+                                                                                        
                                                                                         	this.ready = true;
                                                                                                 this.pendingRedraw = false;
                                                                                                 var js = this.get('/LeftTree.model').toJS();
