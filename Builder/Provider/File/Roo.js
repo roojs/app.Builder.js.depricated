@@ -301,7 +301,7 @@ Roo = XObject.define(
                 "",
                 "        this.callback = cb;",
                 "        this.data = data;",
-                "        this.dialog.show();",
+                "        this.dialog.show(this.data._el);",
                 "        if (this.form) {",
                 "           this.form.reset();",
                 "           this.form.setValues(data);",
