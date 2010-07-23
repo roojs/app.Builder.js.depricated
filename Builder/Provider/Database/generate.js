@@ -283,6 +283,41 @@ tables.forEach(function(table) {
         fieldLabel : table,  // SET WHEN USED
         hiddenName : '', // SET WHEN USED eg. project_id
         name : '', // SET WHEN USED eg. project_id_name
+        items : [
+            {
+                    
+                '*prop' : 'store',
+                'xtype' : 'Store',
+                '|xns' : 'Roo.data',
+                listeners : {
+                    '|beforeload' : 'function (_self, o)' +
+                    "{\n" +
+                    "    o.params = o.params || {};\n" +
+                    "    // set more here\n" +
+                    "}\n"
+                },
+                items : [
+                    {
+                        '*prop' : 'proxy',
+                        'xtype' : 'HttpProxy',
+                        'method' : 'GET',
+                        '|xns' : 'Roo.data',
+                        '|url' : "baseURL + '/Roo/" + table + ".php'",
+                    },
+                    
+                    {
+                        '*prop' : 'reader',
+                        'xtype' : 'JsonReader',
+                        '|xns' : 'Roo.data',
+                        'id' : 'id',
+                        'root' : 'data',
+                        'totalProperty' : 'total',
+                        '|fields' : JSON.stringify(combofields),
+                        
+                    },
+            
+        
+        
         
         
     }
