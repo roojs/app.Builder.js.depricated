@@ -615,7 +615,7 @@ readers.forEach(function(reader) {
                 
                 "|rendered" : "function (form)\n"+
                     "{\n"+
-                    "    _this.form= form;
+                    "    _this.form= form;\n"+
                     "}\n"
             }
             method : "POST",
