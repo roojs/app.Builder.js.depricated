@@ -284,7 +284,7 @@ tables.forEach(function(table) {
         selectOnFocus: true,
         tirggerAction : 'all',
         typeAhead: true,
-        valueField : id,
+        valueField : 'id',
         width: 300,
         tpl : '<div class="x-grid-cell-text x-btn button"><b>{name}</b> </div>', // SET WHEN USED
         queryParam : '',// SET WHEN USED
