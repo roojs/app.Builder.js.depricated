@@ -250,26 +250,34 @@ readers.forEach(function(reader) {
      
         return;
     }
-   print("OVERLAY - " + reader.table);
+    print("OVERLAY - " + reader.table);
     // we have a map..
     for (var col in ini[reader.table]) {
         var kv = ini[reader.table][col].split(':');
         var add = readers.filter(function(r) { return r.table == kv[0] })[0];
+        
+        // merge in data (eg. project_id => project_id_*****
+        
         add.oreader.forEach(function(or) {
             reader.reader.push({
                 name : col + '_' + or.name,
                 type : or.type
             });
         });
+        
+        
+        
+        
+        
              
     };
     
     
 });
 
-readers.forEach(function(reader) {
-    delete reader.oreader;
-});
+//readers.forEach(function(reader) {
+//    delete reader.oreader;
+//});
 
  
 
@@ -492,6 +500,8 @@ readers.forEach(function(reader) {
             style : "margin:10px;",
             "|url" : "baseURL + '/Roo/" + reader.table + ".php'",
             items : reader.formElements
+        })
+    );
             
             
                    
