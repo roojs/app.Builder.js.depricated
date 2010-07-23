@@ -443,6 +443,23 @@ readers.forEach(function(reader) {
     
     /// FORMS..
     
+    dir = GLib.get_home_dir() + '/.Builder/Roo.form.Form'; 
+    if (!File.isDirectory(dir)) {
+        File.mkdir(dir);
+    }
+    
+
+    print("WRITE: " +  dir + '/' + cfg.DB_NAME + '_' + reader.table + '.json');
+    
+    File.write(
+        dir + '/' + cfg.DB_NAME + '_' + reader.table + '.json',
+            
+       
+        JSON.stringify({
+            '|xns' : 'Roo.form',
+            xtype : "Form",
+            
+            
     
     
 
