@@ -333,6 +333,7 @@ tables.forEach(function(table) {
     readers.push({
         table : table ,
         combo : combo,
+        combofields : combofields,
         reader :  reader,
         oreader : JSON.parse(JSON.stringify(reader)), // dupe it..
         colmodel : colmodel,
@@ -360,11 +361,9 @@ readers.forEach(function(reader) {
         var add = readers.filter(function(r) { return r.table == kv[0] })[0];
         
         // merge in data (eg. project_id => project_id_*****
-        var fc = false;
+     
         add.oreader.forEach(function(or) {
-            if (or.type == 'string' && !fc) {
-                fc = or.name
-            }
+           
             
             
             reader.reader.push({
@@ -374,13 +373,14 @@ readers.forEach(function(reader) {
         });
         
         // col is mapped to something..
-        if (fc) {
-            
-            reader.form[col] = JSON.parse(JSON.stringify(add.combo)); // clone
-            
-            
-        }
-        
+        var combofields = add.combofields;
+        var combofields_name = add.combofields[1].name;
+        var old =   reader.form[col];
+        reader.form[col] = JSON.parse(JSON.stringify(add.combo)); // clone
+        reader.form[col].queryParam  = 'query[' + combofields_name + ']',// SET WHEN USED
+        reader.form[col].fieldLabel = old.fieldLabel,  // SET WHEN USED
+        reader.form[col].hiddenName : old.name, // SET WHEN USED eg. project_id
+        reader.form[col].name : old.name + '_' + combofields_name, // SET WHEN USED eg. project_id_name
         
         
         
