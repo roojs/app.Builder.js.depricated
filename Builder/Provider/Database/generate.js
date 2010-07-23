@@ -219,6 +219,10 @@ tables.forEach(function(table) {
         }
         reader.push(row);
         
+        if (combofields.length == 1 && row.type == 'string') {
+            combofields.push(row);
+        }
+        
         
         var title = row.name.replace(/_id/, '').replace(/_/g, ' ');
         title  = title[0].toUpperCase() + title.substring(1);
@@ -328,6 +332,7 @@ tables.forEach(function(table) {
     //print(JSON.stringify(reader,null,4));
     readers.push({
         table : table ,
+        combo : combo,
         reader :  reader,
         oreader : JSON.parse(JSON.stringify(reader)), // dupe it..
         colmodel : colmodel,
