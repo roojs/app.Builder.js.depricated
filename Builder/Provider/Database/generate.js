@@ -291,14 +291,27 @@ readers.forEach(function(reader) {
         var add = readers.filter(function(r) { return r.table == kv[0] })[0];
         
         // merge in data (eg. project_id => project_id_*****
-        
+        var fc = false;
         add.oreader.forEach(function(or) {
+            if (or.type == 'string' && !fc) {
+                fc = or.name
+            }
+            
+            
             reader.reader.push({
                 name : col + '_' + or.name,
                 type : or.type
             });
         });
         
+        // col is mapped to something..
+        if (fc) {
+            reader.form[col] = {
+                
+            }
+            
+            
+        }
         
         
         
