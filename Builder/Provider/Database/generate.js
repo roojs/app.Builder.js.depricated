@@ -609,7 +609,7 @@ readers.forEach(function(reader) {
                     "            _this.callback.call(_this, _this.form.getValues());\n"+
                     "         }\n"+
                     "         _this.form.reset();\n"+
-                    "         return;"\n"+
+                    "         return;\n"+
                     "    }\n"+
                     "}\n",
                 
