@@ -180,7 +180,8 @@ tables.forEach(function(table) {
     var schema = Gda.execute_select_command(cnc, "DESCRIBE `" + table+'`').fetchAll();
     var reader = []; 
     var colmodel = []; 
-    var combofields= []; 
+    var combofields= [ { name : 'id', type: 'int' } ]; // technically the primary key..
+         
     var form = {}
        
     var firstTxtCol = '';
