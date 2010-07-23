@@ -180,6 +180,8 @@ tables.forEach(function(table) {
     var schema = Gda.execute_select_command(cnc, "DESCRIBE `" + table+'`').fetchAll();
     var reader = []; 
     var colmodel = []; 
+    var form = {}
+       
     var firstTxtCol = '';
     schema.forEach(function(e)  {
         var type = e.Type.match(/([^(]+)\(([^\)]+)\)/);
@@ -212,9 +214,13 @@ tables.forEach(function(table) {
         }
         reader.push(row);
         
+        
+        var title = row.name.replace(/_id/, '').replace(/_/g, ' ');
+        title  = title[0].toUpperCase() + title.substring(1);
+        
         colmodel.push({
             "xtype": "ColumnModel",
-            "header": row.name,
+            "header": title,
             "width":  row.type == 'string' ? 200 : 75,
             "dataIndex": row.name,
             "|renderer": row.type != 'date' ? 
@@ -222,7 +228,27 @@ tables.forEach(function(table) {
                     "function(v) { return String.format('{0}', v ? v.format('d/M/Y') : ''); }" , // special for date
             "|xns": "Roo.grid",
             "*prop": "colModel[]"
-        })
+        });
+        var xtype = 'TextField';
+        if (row.type == 'number') {
+            xtype = 'NumberField';
+        }
+        if (row.type == 'date') {
+            xtype = 'DateField';
+        }
+        // what about booleans.. -> checkboxes..
+        
+        
+        form[row.name] = {
+            fieldLabel : title,
+            name : row.name,
+            width : row.type == 'string' ? 200 : 75,
+            '|xns' : 'Roo.form',
+            
+            
+        }
+        
+        
     });
     
     
@@ -234,7 +260,8 @@ tables.forEach(function(table) {
         reader :  reader,
         oreader : JSON.parse(JSON.stringify(reader)), // dupe it..
         colmodel : colmodel,
-        firstTxtCol : firstTxtCol
+        firstTxtCol : firstTxtCol,
+        form : form
     });
     
     //console.dump(schema );
