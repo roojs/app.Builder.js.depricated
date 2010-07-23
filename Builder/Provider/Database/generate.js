@@ -106,17 +106,17 @@ var ini = { }
 function readIni(fn)
 {
     var key_file = new GLib.KeyFile.c_new();
-    if (!key_file.load_from_file (key_file, fn , GLib.KeyFileFlags.NONE )) {
+    if (!key_file.load_from_file (fn , GLib.KeyFileFlags.NONE )) {
         return;
     }
    
-    var groups = key_file.get_groups(key_file);
+    var groups = key_file.get_groups();
     groups.forEach(function(g) {
         ini[g] = {}
            
-        var keys = key_file.get_keys(key_file,g);
+        var keys = key_file.get_keys(g);
         keys.forEach(function(k) {
-            ini[g][k] = key_file.get_value(key_file,g,k);
+            ini[g][k] = key_file.get_value(g,k);
         })
     })
     
