@@ -12,6 +12,7 @@
  * 
  * write readers..
  * 
+ * usage: seed generate.js 
  * 
  */
 Gda  = imports.gi.Gda;
