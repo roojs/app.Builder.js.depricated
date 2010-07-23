@@ -376,11 +376,7 @@ readers.forEach(function(reader) {
         // col is mapped to something..
         if (fc) {
             
-            
-            reader.form[col] = {
-                
-                    // a combo!!!
-            }
+            reader.form[col] = JSON.parse(JSON.stringify(add.combo)); // clone
             
             
         }
