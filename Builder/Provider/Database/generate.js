@@ -105,7 +105,7 @@ var ini = { }
 
 function readIni(fn)
 {
-    var key_file = new GLib.KeyFile();
+    var key_file = new GLib.KeyFile.c_new();
     if (!key_file.load_from_file (key_file, fn , GLib.KeyFileFlags.NONE )) {
         return;
     }
