@@ -236,7 +236,11 @@ tables.forEach(function(table) {
         if (row.type == 'date') {
             xtype = 'DateField';
         }
+        if (e.Type == 'text') {
+            xtype = 'TextArea';
+        }
         // what about booleans.. -> checkboxes..
+        
         
         
         form[row.name] = {
