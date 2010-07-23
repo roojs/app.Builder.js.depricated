@@ -12,7 +12,7 @@
  * 
  * write readers..
  * 
- * usage: seed generate.js 
+ * usage: seed generate.js  '{"DB_NAME":"XXX","USERNAME":"YYY","PASSWORD":"ZZZ","INI":"/path/to/mydb.ini"}'
  * 
  */
 Gda  = imports.gi.Gda;
@@ -105,18 +105,18 @@ var ini = { }
 
 function readIni(fn)
 {
-    var key_file = GLib.key_file_new();
-    if (!GLib.key_file_load_from_file (key_file, fn , GLib.KeyFileFlags.NONE )) {
+    var key_file = new GLib.KeyFile();
+    if (!key_file.load_from_file (key_file, fn , GLib.KeyFileFlags.NONE )) {
         return;
     }
    
-    var groups = GLib.key_file_get_groups(key_file);
+    var groups = key_file.get_groups(key_file);
     groups.forEach(function(g) {
         ini[g] = {}
            
-        var keys = GLib.key_file_get_keys(key_file,g);
+        var keys = key_file.get_keys(key_file,g);
         keys.forEach(function(k) {
-            ini[g][k] = GLib.key_file_get_value(key_file,g,k);
+            ini[g][k] = key_file.get_value(key_file,g,k);
         })
     })
     
