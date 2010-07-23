@@ -284,11 +284,15 @@ tables.forEach(function(table) {
         selectOnFocus: true,
         tirggerAction : 'all',
         typeAhead: true,
-        valueField : 'id',
+        
         width: 300,
+        valueField : 'id',
+        
+        
         tpl : '<div class="x-grid-cell-text x-btn button"><b>{name}</b> </div>', // SET WHEN USED
         queryParam : '',// SET WHEN USED
         fieldLabel : table,  // SET WHEN USED
+        displayField : '', // SET WHEN USED eg. project_id_name
         hiddenName : '', // SET WHEN USED eg. project_id
         name : '', // SET WHEN USED eg. project_id_name
         items : [
