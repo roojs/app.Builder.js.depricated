@@ -622,7 +622,7 @@ readers.forEach(function(reader) {
             style : "margin:10px;",
             "|url" : "baseURL + '/Roo/" + reader.table + ".php'",
             items : formElements
-        })
+        }, null, 4)
     );
             
             
