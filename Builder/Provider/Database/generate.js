@@ -180,6 +180,7 @@ tables.forEach(function(table) {
     var schema = Gda.execute_select_command(cnc, "DESCRIBE `" + table+'`').fetchAll();
     var reader = []; 
     var colmodel = []; 
+    var combofields= []; 
     var form = {}
        
     var firstTxtCol = '';
@@ -312,16 +313,13 @@ tables.forEach(function(table) {
                         'id' : 'id',
                         'root' : 'data',
                         'totalProperty' : 'total',
-                        '|fields' : JSON.stringify(combofields),
+                        '|fields' : JSON.stringify(combofields)
                         
-                    },
-            
-        
-        
-        
-        
+                    }
+                ]
+            }
+        ]
     }
-    
     
     
     
