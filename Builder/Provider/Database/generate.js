@@ -581,9 +581,10 @@ readers.forEach(function(reader) {
     for (var k in reader.form) {
         if (k == 'id') { // should really do primary key testing..
             continue;
-           }
+        }
         formElements.push(reader.form[k]);
     }
+    formElements.push(reader.form['id']);
 
     print("WRITE: " +  dir + '/' + cfg.DB_NAME + '_' + reader.table + '.json');
     
