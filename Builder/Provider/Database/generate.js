@@ -290,6 +290,8 @@ readers.forEach(function(reader) {
     if (!File.isDirectory(dir)) {
         File.mkdir(dir);
     }
+    
+    // READERS
     print("WRITE: " +  dir + '/' + cfg.DB_NAME + '_' + reader.table + '.json');
     
                 
@@ -308,13 +310,17 @@ readers.forEach(function(reader) {
         JSON.stringify(jreader, null, 4)
     )
     
+    
+    // GRIDS
     dir = GLib.get_home_dir() + '/.Builder/Roo.GridPanel'; 
     if (!File.isDirectory(dir)) {
         File.mkdir(dir);
     }
+    
+
     print("WRITE: " +  dir + '/' + cfg.DB_NAME + '_' + reader.table + '.json');
     
-      File.write(
+    File.write(
         dir + '/' + cfg.DB_NAME + '_' + reader.table + '.json',
             
        
