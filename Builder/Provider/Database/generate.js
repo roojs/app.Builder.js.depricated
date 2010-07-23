@@ -282,7 +282,7 @@ tables.forEach(function(table) {
         pageSize : 20,
         qtip: 'Select ' + table,
         selectOnFocus: true,
-        tirggerAction : all,
+        tirggerAction : 'all',
         typeAhead: true,
         valueField : id,
         width: 300,
