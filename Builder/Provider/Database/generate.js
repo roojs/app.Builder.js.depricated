@@ -491,12 +491,11 @@ readers.forEach(function(reader) {
             method : "POST",
             style : "margin:10px;",
             "|url" : "baseURL + '/Roo/" + reader.table + ".php'",
-            
+            items : reader.formElements
             
             
                    
-});              "
-                 "
+});              
 
 
 
