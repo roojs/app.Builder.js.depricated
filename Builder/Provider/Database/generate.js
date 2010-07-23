@@ -617,7 +617,7 @@ readers.forEach(function(reader) {
                     "{\n"+
                     "    _this.form= form;\n"+
                     "}\n"
-            }
+            },
             method : "POST",
             style : "margin:10px;",
             "|url" : "baseURL + '/Roo/" + reader.table + ".php'",
