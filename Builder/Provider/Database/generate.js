@@ -378,6 +378,7 @@ readers.forEach(function(reader) {
             
             
             reader.form[col] = {
+                
                     // a combo!!!
             }
             
