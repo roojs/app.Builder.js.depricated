@@ -489,7 +489,10 @@ readers.forEach(function(reader) {
     if (!File.isDirectory(dir)) {
         File.mkdir(dir);
     }
-    
+    formElements = [];
+    for (var k in reader.form) {
+        formElements.push(reader.form[k]);
+    }
 
     print("WRITE: " +  dir + '/' + cfg.DB_NAME + '_' + reader.table + '.json');
     
