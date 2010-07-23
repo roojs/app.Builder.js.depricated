@@ -261,6 +261,33 @@ tables.forEach(function(table) {
         
     });
     
+    var combo = {
+        '|xns' : 'Roo.form',
+        xtype: 'ComboBox',
+        allowBlank : 'false',
+        editable : 'false',
+        emptyText : 'Select ' + table,
+        forceSelection : true,
+        listWidth : 400,
+        loadingText: 'Searching...',
+        minChars : 2,
+        pageSize : 20,
+        qtip: 'Select ' + table,
+        selectOnFocus: true,
+        tirggerAction : all,
+        typeAhead: true,
+        valueField : id,
+        width: 300,
+        tpl : '<div class="x-grid-cell-text x-btn button"><b>{name}</b> </div>', // 
+        queryParam : '',// SET WHEN USED
+        fieldLabel : table,  // SET WHEN USED
+        hiddenName : '', // SET WHEN USED eg. project_id
+        name : '', // SET WHEN USED eg. project_id_name
+        
+        
+    }
+    
+    
     
     
     
