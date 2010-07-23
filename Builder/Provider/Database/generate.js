@@ -28,7 +28,7 @@ var prov = Gda.Config.list_providers ();
 //print(prov.dump_as_string());
 var args = Array.prototype.slice.call(Seed.argv);
 args.shift();args.shift();// remove first 2
-print args.length 
+print(args.length );
 if (args.length < 1) {
     var sample = {
         DB_NAME : "XXX",
