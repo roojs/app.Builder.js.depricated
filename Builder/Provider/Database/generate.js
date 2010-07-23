@@ -595,7 +595,7 @@ readers.forEach(function(reader) {
                     "       //_this.dialog.el.mask(\"Loading\");\n"+
                     "       //this.load({ method: 'GET', params: { '_id' : _this.data.id }});\n"+
                     "       return;\n"+
-                    "    }
+                    "    }\n"+
                     "    if (action.type == 'load') {\n"+
                     "        _this.dialog.el.unmask();\n"+
                     "        return;\n"+
