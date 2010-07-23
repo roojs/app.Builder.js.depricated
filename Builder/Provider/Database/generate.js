@@ -171,13 +171,7 @@ print(JSON.stringify(ini, null,4));
 
 
 
-
-
-
-
-
-
-
+ 
 
 var tables = Gda.execute_select_command(cnc, "SHOW TABLES").fetchAll();
 var readers = [];
@@ -447,7 +441,7 @@ readers.forEach(function(reader) {
         }, null, 4)
     )
     
-    
+    /// FORMS..
     
     
     
