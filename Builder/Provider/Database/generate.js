@@ -239,6 +239,7 @@ tables.forEach(function(table) {
         if (e.Type == 'text') {
             xtype = 'TextArea';
         }
+        
         // what about booleans.. -> checkboxes..
         
         
@@ -248,8 +249,10 @@ tables.forEach(function(table) {
             name : row.name,
             width : row.type == 'string' ? 200 : 75,
             '|xns' : 'Roo.form',
-            
-            
+            xtype : xtype
+        }
+        if (xtype == 'TextArea') {
+            form[row.name].height = 100;
         }
         
         
