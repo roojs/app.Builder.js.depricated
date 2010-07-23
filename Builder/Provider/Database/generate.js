@@ -183,6 +183,9 @@ tables.forEach(function(table) {
     var form = {}
        
     var firstTxtCol = '';
+    
+    
+    
     schema.forEach(function(e)  {
         var type = e.Type.match(/([^(]+)\(([^\)]+)\)/);
         var row  = { }; 
@@ -506,6 +509,9 @@ readers.forEach(function(reader) {
     }
     formElements = [];
     for (var k in reader.form) {
+        if (k == 'id') { // should really do primary key testing..
+            continue;
+           }
         formElements.push(reader.form[k]);
     }
 
