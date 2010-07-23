@@ -250,7 +250,9 @@ tables.forEach(function(table) {
         if (e.Type == 'text') {
             xtype = 'TextArea';
         }
-        
+        if (e.name == 'id') {
+            xtype = 'Hidden';
+        }
         // what about booleans.. -> checkboxes..
         
         
