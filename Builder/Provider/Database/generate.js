@@ -286,12 +286,13 @@ tables.forEach(function(table) {
         typeAhead: true,
         
         width: 300,
-        valueField : 'id',
+        
         
         
         tpl : '<div class="x-grid-cell-text x-btn button"><b>{name}</b> </div>', // SET WHEN USED
         queryParam : '',// SET WHEN USED
         fieldLabel : table,  // SET WHEN USED
+        valueField : 'id',
         displayField : '', // SET WHEN USED eg. project_id_name
         hiddenName : '', // SET WHEN USED eg. project_id
         name : '', // SET WHEN USED eg. project_id_name
@@ -386,6 +387,7 @@ readers.forEach(function(reader) {
         reader.form[col].queryParam  = 'query[' + combofields_name + ']';// SET WHEN USED
         reader.form[col].fieldLabel = old.fieldLabel;  // SET WHEN USED
         reader.form[col].hiddenName = old.name; // SET WHEN USED eg. project_id
+        reader.form[col].displayField = combofields_name; // SET WHEN USED eg. project_id
         reader.form[col].name  = old.name + '_' + combofields_name; // SET WHEN USED eg. project_id_name
         reader.form[col].tpl = '<div class="x-grid-cell-text x-btn button"><b>{' + combofields_name +'}</b> </div>'; // SET WHEN USED
         
