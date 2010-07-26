@@ -2585,7 +2585,18 @@ Window=new XObject({
                                             items : [
                                                 {
                                                     xtype: Gtk.ListStore,
+                                                    id : "model",
                                                     pack : "set_model",
+                                                    getValue : function(treepath, col)
+                                                    {
+                                                        var tp = new Gtk.TreePath.from_string (treepath);
+                                                        var iter = new Gtk.TreeIter();
+                                                        this.el.get_iter (iter, tp);
+                                                        var value = new GObject.Value('');
+                                                        this.el.get_value(iter, col, value);
+                                                        return value.value;
+                                                        
+                                                    },
                                                     init : function() {
                                                         XObject.prototype.init.call(this);
                                                        this.el.set_column_types ( 6, [
@@ -2597,16 +2608,6 @@ Window=new XObject({
                                                              GObject.TYPE_STRING // element type (event|prop)
                                                             
                                                         ] );
-                                                    },
-                                                    getValue : function(treepath, col)
-                                                    {
-                                                        var tp = new Gtk.TreePath.from_string (treepath);
-                                                        var iter = new Gtk.TreeIter();
-                                                        this.el.get_iter (iter, tp);
-                                                        var value = new GObject.Value('');
-                                                        this.el.get_value(iter, col, value);
-                                                        return value.value;
-                                                        
                                                     },
                                                     showData : function(type) {
                                                         this.el.clear();
@@ -2627,7 +2628,9 @@ Window=new XObject({
                                                                     this.get('/MidPropTree').shown = true;
                                                                 }
                                                                 
-                                                                var elementList = palete.getPropertiesFor(fullpath, type);
+                                                                var elementList = palete.getPropertiesFor(fullpath, type).sort(function(a,b) { 
+                                                                    return a.name >  b.name;
+                                                                });
                                                                 print ("GOT " + elementList.length + " items for " + fullpath + "|" + type);
                                                                // console.dump(elementList);
                                                                
@@ -2652,8 +2655,7 @@ Window=new XObject({
                                                                     
                                                                 }
                                                                                  
-                                                    },
-                                                    id : "model"
+                                                    }
                                                 },
                                                 {
                                                     xtype: Gtk.TreeViewColumn,
