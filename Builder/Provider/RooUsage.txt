@@ -242,6 +242,5 @@ right:
   Roo.data.JsonReader
   Roo.data.ArrayReader
   Roo.data.XmlReader
- 
-  
+
   
