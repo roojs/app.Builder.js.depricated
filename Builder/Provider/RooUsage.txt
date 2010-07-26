@@ -55,6 +55,7 @@ left:
 right: 
   Roo.form.Form         
   Roo.form.JsonView  
+  Roo.form.View
            
            
            
