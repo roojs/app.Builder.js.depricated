@@ -2629,7 +2629,7 @@ Window=new XObject({
                                                                 }
                                                                 
                                                                 var elementList = palete.getPropertiesFor(fullpath, type).sort(function(a,b) { 
-                                                                    return a.name >  b.name;
+                                                                    return a.name >  b.name ? -1 : 1;
                                                                 });
                                                                 print ("GOT " + elementList.length + " items for " + fullpath + "|" + type);
                                                                // console.dump(elementList);
