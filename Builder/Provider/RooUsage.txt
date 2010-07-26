@@ -224,6 +224,8 @@ left:
   Roo.grid.EditorGrid:ds
   Roo.grid.Grid:ds
   Roo.form.ComboBox:store
+  Roo.View:store
+  Roo.JsonView:store
 right: 
   Roo.data.Store
 
