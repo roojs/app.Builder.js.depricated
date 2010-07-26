@@ -54,8 +54,8 @@ left:
   Roo.ContentPanel 
 right: 
   Roo.form.Form         
-  Roo.form.JsonView  
-  Roo.form.View
+  Roo.JsonView  
+  Roo.View
            
            
            
