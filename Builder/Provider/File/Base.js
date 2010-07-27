@@ -329,20 +329,22 @@ Base = XObject.define(
                     return;
                 }
                 // standard. .
-                
-                if (this.doubleStringProps) {
-                    if (this.doubleStringProps.indexOf(i)) {
-                        els.push(left + JSON.stringify(obj[i]));
-                        continue;
-                    }
-                    
-                    
-                    
+                if (typeof(obj[i]) != 'string') {
+                    els.push(left + JSON.stringify(obj[i]));
                     continue;
                 }
+                // strings..
+                if (!this.doubleStringProps) {
+                    els.push(left + JSON.stringify(obj[i]));
+                }
+                if (this.doubleStringProps.indexOf(i)) {
+                    els.push(left + JSON.stringify(obj[i]));
+                    continue;
+                }
+                // single quote..
+                els.push(left + this.singleStringify(obj[i]));
                 
-                
-                els.push(left + JSON.stringify(obj[i]));
+
             });
             
             if (!isArray && !els.length) {
