@@ -65,7 +65,17 @@ Roo = XObject.define(
     },
     Base,
     {
+        doubleStringProps : [ 
+            'title',
+            'legend',
+            'displayField',
+            'loadingText',
+            'emptyText',
+            'qtip',
+            'value',
+            'text'
         
+        ],
         modOrder : '001', /// sequence id that this uses.
         region : 'center',
         parent : '',
