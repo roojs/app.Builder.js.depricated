@@ -17,6 +17,9 @@ Base = XObject.define(
     },
     Object,
     {
+        /**
+         * @cfg {Array} doubleStringProps list of properties that can be double quoted.
+         */
         doubleStringProps : false,
         id : false,
         name : false,   // is the JS name of the file.
