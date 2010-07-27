@@ -13,6 +13,7 @@ Base = XObject.define(
     function(cfg) {
     
         XObject.extend(this, cfg);
+        this.doubleStringProps = false;
     },
     Object,
     {
@@ -342,7 +343,7 @@ Base = XObject.define(
                     continue;
                 }
                 // single quote..
-                els.push(left + this.singleStringify(obj[i]));
+                els.push(left + "'" + v.replace(/'/, "\\'") + "'");
                 
 
             });
@@ -362,7 +363,10 @@ Base = XObject.define(
         
          
         
-    }
+    },
+    
+     
+    
 );
 
 
