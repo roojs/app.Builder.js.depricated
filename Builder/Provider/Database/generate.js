@@ -428,7 +428,7 @@ readers.forEach(function(reader) {
         root : "data",
         '*prop' : "reader",
         id : 'id', // maybe no..
-        '|fields' :  JSON.stringify(reader.reader, null,4)
+        '|fields' :  JSON.stringify(reader.reader, null,4).replace(/"/g,"'")
     };
     
     File.write(
