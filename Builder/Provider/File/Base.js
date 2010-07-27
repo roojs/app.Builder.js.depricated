@@ -347,7 +347,7 @@ Base = XObject.define(
                     return;
                 }
                 // single quote..
-                els.push(left + "'" + v.replace(/'/g, "\\'") + "'");
+                els.push(left + "'" + obj[i].replace(/'/g, "\\'") + "'");
                 
 
             });
