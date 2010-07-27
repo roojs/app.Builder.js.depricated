@@ -11,13 +11,13 @@ File = imports.File.File;
 Base = XObject.define(
     
     function(cfg) {
-    
+        
         XObject.extend(this, cfg);
-        this.doubleStringProps = false;
+        
     },
     Object,
     {
-        
+        doubleStringProps : false,
         id : false,
         name : false,   // is the JS name of the file.
         path : '',      // is the full path to the file.
