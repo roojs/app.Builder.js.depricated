@@ -336,7 +336,7 @@ Base = XObject.define(
                 // standard. .
                 if (typeof(obj[i]) != 'string') {
                     els.push(left + JSON.stringify(obj[i]));
-                    continue;
+                    return;
                 }
                 // strings..
                 if (!this.doubleStringProps) {
@@ -344,7 +344,7 @@ Base = XObject.define(
                 }
                 if (this.doubleStringProps.indexOf(i) > -1) {
                     els.push(left + JSON.stringify(obj[i]));
-                    continue;
+                    return;
                 }
                 // single quote..
                 els.push(left + "'" + v.replace(/'/g, "\\'") + "'");
