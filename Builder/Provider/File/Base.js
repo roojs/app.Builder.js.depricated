@@ -330,6 +330,18 @@ Base = XObject.define(
                 }
                 // standard. .
                 
+                if (this.doubleStringProps) {
+                    if (this.doubleStringProps.indexOf(i)) {
+                        els.push(left + JSON.stringify(obj[i]));
+                        continue;
+                    }
+                    
+                    
+                    
+                    continue;
+                }
+                
+                
                 els.push(left + JSON.stringify(obj[i]));
             });
             
