@@ -68,7 +68,6 @@ Roo = XObject.define(
         doubleStringProps : [ 
             'title',
             'legend',
-            'displayField',
             'loadingText',
             'emptyText',
             'qtip',
