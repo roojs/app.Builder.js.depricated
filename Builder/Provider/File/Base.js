@@ -367,7 +367,7 @@ Base = XObject.define(
         
          
         
-    },
+    }
     
      
     
