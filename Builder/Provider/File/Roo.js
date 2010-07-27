@@ -74,7 +74,6 @@ Roo = XObject.define(
             'qtip',
             'value',
             'text'
-        
         ],
         modOrder : '001', /// sequence id that this uses.
         region : 'center',
