@@ -144,6 +144,7 @@ if (File.isDirectory(cfg.INI)) {
         if (!File.isDirectory(path)) {
             path = GLib.get_home_dir() + '/gitlive/' + d + '/Pman/DataObjects';
         }
+        
         if (!File.isDirectory(path)) {
             return; //skip
         }
@@ -158,10 +159,19 @@ if (File.isDirectory(cfg.INI)) {
             readIni(path + '/' + i); 
             
         })
-
-        
-        
+ 
     });
+    // look at web.XXXX/Pman/XXX/DataObjects/*.ini
+    var inis = File.list(cfg.INI).filter(
+        function(e) { return e.match(/\.links\.ini$/); }
+    )
+    
+     inis.forEach(function(i) {
+        readIni(path + '/' + i); 
+        
+    })
+    
+    
 }
 print(JSON.stringify(ini, null,4));
  //console.dump(ini);
