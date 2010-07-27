@@ -339,10 +339,10 @@ Base = XObject.define(
                     return;
                 }
                 // strings..
-                if (!this.doubleStringProps) {
+                if (!_this.doubleStringProps) {
                     els.push(left + JSON.stringify(obj[i]));
                 }
-                if (this.doubleStringProps.indexOf(i) > -1) {
+                if (_this.doubleStringProps.indexOf(i) > -1) {
                     els.push(left + JSON.stringify(obj[i]));
                     return;
                 }
