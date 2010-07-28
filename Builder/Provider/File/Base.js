@@ -341,6 +341,7 @@ Base = XObject.define(
                 // strings..
                 if (!_this.doubleStringProps) {
                     els.push(left + JSON.stringify(obj[i]));
+                    return;
                 }
                 if (_this.doubleStringProps.indexOf(i) > -1) {
                     els.push(left + JSON.stringify(obj[i]));
