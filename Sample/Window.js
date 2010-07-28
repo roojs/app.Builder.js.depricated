@@ -2124,7 +2124,7 @@ Window=new XObject({
                                                                             showEditor = true;
                                                                         }
                                                                         if (val[0] == '|') {
-                                                                            if (rval.match(/function/g) || rval.match(/\n/g)) {
+                                                                            if (rval.match(/function/g) || rval.match(/\n/g) || rval.length > 20) {
                                                                                 showEditor = true;
                                                                             }
                                                                         }
