@@ -1671,12 +1671,6 @@
   "Roo.JsonView": {
    "props": [
     {
-     "name": "The",
-     "type": "String",
-     "desc": "root property in the loaded JSON object that contains the data",
-     "memberOf": ""
-    },
-    {
      "name": "store",
      "type": "Roo.data.Store",
      "desc": "Data store to load data from.",
@@ -2594,7 +2588,14 @@
    ]
   },
   "Roo.MasterTemplate": {
-   "props": [],
+   "props": [
+    {
+     "name": "html",
+     "type": "String",
+     "desc": "The HTML fragment or an array of fragments to join(\"\") or multiple arguments to join(\"\")",
+     "memberOf": "Roo.Template"
+    }
+   ],
    "events": []
   },
   "Roo.MessageBox": {
@@ -3530,7 +3531,14 @@
    ]
   },
   "Roo.Template": {
-   "props": [],
+   "props": [
+    {
+     "name": "html",
+     "type": "String",
+     "desc": "The HTML fragment or an array of fragments to join(\"\") or multiple arguments to join(\"\")",
+     "memberOf": ""
+    }
+   ],
    "events": []
   },
   "Roo.Toolbar": {
