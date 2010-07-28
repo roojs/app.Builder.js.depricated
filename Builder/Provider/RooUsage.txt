@@ -57,6 +57,9 @@ right:
   Roo.JsonView  
   Roo.View
            
+
+
+  
            
            
 // Parent items         
@@ -188,6 +191,7 @@ right:
 left: 
 	Roo.EditorGrid:toolbar
 	Roo.Grid:toolbar
+	Roo.ContentPanel:toolbar
 right:
 	Roo.Toolbar
 		
