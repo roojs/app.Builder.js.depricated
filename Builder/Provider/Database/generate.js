@@ -294,7 +294,7 @@ tables.forEach(function(table) {
         pageSize : 20,
         qtip: 'Select ' + table,
         selectOnFocus: true,
-        tirggerAction : 'all',
+        triggerAction : 'all',
         typeAhead: true,
         
         width: 300,
