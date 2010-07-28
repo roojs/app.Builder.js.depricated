@@ -244,7 +244,7 @@ right:
   Roo.data.XmlReader
 
 left:
-  Roo.View:store
-  Roo.JsonView:store
+  Roo.View:tpl
+  Roo.JsonView:tpl
 right: 
-  Roo.Template:tpl
+  Roo.Template
