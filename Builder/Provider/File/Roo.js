@@ -397,8 +397,8 @@ Roo = XObject.define(
                 "    disabled : " + (this.disabled || 'false') +", ",
                 "    tree : function()",
                 "    {",
-                "        _this = this;", // bc
-                "        MODULE = this;", /// this looks like a better name.
+                "        var _this = this;", // bc
+                "        var MODULE = this;", /// this looks like a better name.
                 "        return " + o + ';',
                 "    }",
                 "});",
