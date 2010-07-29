@@ -56,10 +56,15 @@ right:
   Roo.form.Form         
   Roo.JsonView  
   Roo.View
-           
-
-
-  
+     
+// some popup menus..     
+left:
+  Roo.ContentPanel:menu
+  Roo.NestedLayoutPanel:menu
+  Roo.GridPanel:menu
+  Roo.TreePanel:menu
+right:
+  Roo.menu.Menu
            
            
 // Parent items         
