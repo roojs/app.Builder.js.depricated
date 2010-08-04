@@ -382,9 +382,6 @@ readers.forEach(function(reader) {
         // merge in data (eg. project_id => project_id_*****
      
         add.oreader.forEach(function(or) {
-           
-            
-            
             reader.reader.push({
                 name : col + '_' + or.name,
                 type : or.type
@@ -393,6 +390,9 @@ readers.forEach(function(reader) {
         
         // col is mapped to something..
         var combofields = add.combofields;
+        if (!combofields) {
+            continue;
+           }
         var combofields_name = add.combofields[1].name;
         var old =   reader.form[col];
         reader.form[col] = JSON.parse(JSON.stringify(add.combo)); // clone
