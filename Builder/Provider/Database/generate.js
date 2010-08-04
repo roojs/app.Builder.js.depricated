@@ -390,7 +390,7 @@ readers.forEach(function(reader) {
         
         // col is mapped to something..
         var combofields = add.combofields;
-        if (!combofields) {
+        if (!combofields.length) {
             continue;
            }
         var combofields_name = add.combofields[1].name;
