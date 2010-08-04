@@ -392,7 +392,9 @@ readers.forEach(function(reader) {
         var combofields = add.combofields;
         if (!combofields.length) {
             continue;
-           }
+        }
+        print(JSON.stringify(add.combofields, null,4));
+        
         var combofields_name = add.combofields[1].name;
         var old =   reader.form[col];
         reader.form[col] = JSON.parse(JSON.stringify(add.combo)); // clone
