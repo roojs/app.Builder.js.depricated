@@ -390,10 +390,10 @@ readers.forEach(function(reader) {
         
         // col is mapped to something..
         var combofields = add.combofields;
-        if (!combofields.length) {
+        if (!typeof(add.combofields[1].name) == 'string') {
             continue;
         }
-        print(JSON.stringify(add.combofields, null,4));
+        
         
         var combofields_name = add.combofields[1].name;
         var old =   reader.form[col];
