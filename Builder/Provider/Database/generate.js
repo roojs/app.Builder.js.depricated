@@ -73,7 +73,7 @@ Gda.DataSelect.prototype.fetchAll = function()
            var val = iter.get_value_at(i);
            var type = GObject.type_name(val.g_type) ;
            var vs = type == 'GdaBlob' ? val.value.to_string(1024) : val.value;
-         p  rint(n + " : TYPE: " + GObject.type_name(val.g_type) + " : " + vs);
+           print(n + " : TYPE: " + GObject.type_name(val.g_type) + " : " + vs);
             print (n + '=' + iter.get_value_at(i).value);
             add[n] = vs;
         });
