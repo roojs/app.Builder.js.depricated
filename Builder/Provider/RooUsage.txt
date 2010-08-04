@@ -91,7 +91,7 @@ right:
   Roo.Button         
 
 left: 
-  Roo.grid.GridEditor
+  Roo.grid.GridEditor:field
 right:
   Roo.form.TextField         
   Roo.form.DateField         
