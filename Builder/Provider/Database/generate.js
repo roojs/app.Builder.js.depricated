@@ -61,6 +61,7 @@ Gda.DataSelect.prototype.fetchAll = function()
     var iter = this.create_iter();
     var res = [];
     while (iter.move_next()) {
+        // single clo..
         if (cols.length == 1) {
             res.push(iter.get_value_at(0).get_string());
             continue;
@@ -71,7 +72,7 @@ Gda.DataSelect.prototype.fetchAll = function()
            var val = iter.get_value_at(i);
            var type = GObject.type_name(val.g_type) ;
            var vs = type == 'GdaBlob' ? val.value.to_string(1024) : val.value;
-         print(n + " : TYPE: " + GObject.type_name(val.g_type) + " : " + vs);
+         p  rint(n + " : TYPE: " + GObject.type_name(val.g_type) + " : " + vs);
             print (n + '=' + iter.get_value_at(i).value);
             add[n] = vs;
         });
