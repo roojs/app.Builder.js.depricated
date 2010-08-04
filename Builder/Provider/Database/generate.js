@@ -589,7 +589,7 @@ readers.forEach(function(reader) {
     if (!File.isDirectory(dir)) {
         File.mkdir(dir);
     }
-    formElements = [];
+    var formElements = [];
     for (var k in reader.form) {
         if (k == 'id') { // should really do primary key testing..
             continue;
@@ -645,7 +645,34 @@ readers.forEach(function(reader) {
     );
             
             
-                   
+   
+   
+   
+     /// COMBO..
+    
+    dir = GLib.get_home_dir() + '/.Builder/Roo.form.ComboBox'; 
+    if (!File.isDirectory(dir)) {
+        File.mkdir(dir);
+    }
+   
+    print("WRITE: " +  dir + '/' + cfg.DB_NAME + '_' + reader.table + '.json');
+    
+    File.write(
+        dir + '/' + cfg.DB_NAME + '_' + reader.table + '.json',
+            
+       
+        JSON.stringify(reader.combo, null, 4)
+    );
+            
+   
+   
+   
+   
+   
+   
+   
+   
+   
 });              
 
 
