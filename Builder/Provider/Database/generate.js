@@ -62,6 +62,7 @@ Gda.DataSelect.prototype.fetchAll = function()
     var res = [];
     while (iter.move_next()) {
         // single clo..
+        print("GOT ROW");
         if (cols.length == 1) {
             res.push(iter.get_value_at(0).get_string());
             continue;
