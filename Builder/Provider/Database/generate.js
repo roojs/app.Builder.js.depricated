@@ -390,12 +390,12 @@ readers.forEach(function(reader) {
         
         // col is mapped to something..
         var combofields = add.combofields;
-        if (typeof(add.combofields[0].name) != 'string') {
+        if (add.combofields.length < 2) {
             continue;
         }
         
         
-        var combofields_name = add.combofields[0].name;
+        var combofields_name = add.combofields[1].name;
         var old =   reader.form[col];
         reader.form[col] = JSON.parse(JSON.stringify(add.combo)); // clone
         reader.form[col].queryParam  = 'query[' + combofields_name + ']';// SET WHEN USED
