@@ -390,7 +390,7 @@ readers.forEach(function(reader) {
         
         // col is mapped to something..
         var combofields = add.combofields;
-        if (!typeof(add.combofields[1].name) == 'string') {
+        if (typeof(add.combofields[1].name) != 'string') {
             continue;
         }
         
