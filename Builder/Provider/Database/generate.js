@@ -60,6 +60,7 @@ Gda.DataSelect.prototype.fetchAll = function()
     print(JSON.stringify(cols, null,4));
     var iter = this.create_iter();
     var res = [];
+    print(this.get_n_rows());
     while (iter.move_next()) {
         // single clo..
         print("GOT ROW");
