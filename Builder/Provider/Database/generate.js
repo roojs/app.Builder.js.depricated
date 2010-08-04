@@ -61,17 +61,19 @@ Gda.DataSelect.prototype.fetchAll = function()
     var iter = this.create_iter();
     var res = [];
     print(this.get_n_rows());
-    while (iter.move_next()) {
+    var _this = this;
+    for (var r = 0; r < this.get_n_rows(); r++) {
+        
         // single clo..
         print("GOT ROW");
         if (cols.length == 1) {
-            res.push(iter.get_value_at(0).get_string());
+            res.push(this.get_value_at(0,r).get_string());
             continue;
         }
         var add = { };
         
         cols.forEach(function(n,i) {
-           var val = iter.get_value_at(i);
+           var val = _this.get_value_at(i,r);
            var type = GObject.type_name(val.g_type) ;
            var vs = type == 'GdaBlob' ? val.value.to_string(1024) : val.value;
            print(n + " : TYPE: " + GObject.type_name(val.g_type) + " : " + vs);
