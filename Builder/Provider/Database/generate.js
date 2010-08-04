@@ -60,7 +60,7 @@ Gda.DataSelect.prototype.fetchAll = function()
     print(JSON.stringify(cols, null,4));
     var iter = this.create_iter();
     var res = [];
-    print(this.get_n_rows());
+    //print(this.get_n_rows());
     var _this = this;
     for (var r = 0; r < this.get_n_rows(); r++) {
         
@@ -76,8 +76,8 @@ Gda.DataSelect.prototype.fetchAll = function()
             var val = _this.get_value_at(i,r);
             var type = GObject.type_name(val.g_type) ;
             var vs = type == 'GdaBlob' ? val.value.to_string(1024) : val.value;
-            print(n + " : TYPE: " + GObject.type_name(val.g_type) + " : " + vs);
-            print (n + '=' + iter.get_value_at(i).value);
+            //print(n + " : TYPE: " + GObject.type_name(val.g_type) + " : " + vs);
+            //print (n + '=' + iter.get_value_at(i).value);
             add[n] = vs;
         });
         
