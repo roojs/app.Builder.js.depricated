@@ -398,7 +398,10 @@ readers.forEach(function(reader) {
         if (add.combofields.length < 2) {
             continue;
         }
-        
+        if (typeof(reader.form[col]) == 'undefined') {
+            print("missing linked column " + col);
+            continue;
+        }
         
         var combofields_name = add.combofields[1].name;
         var old =   reader.form[col];
