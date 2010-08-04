@@ -57,7 +57,7 @@ Gda.DataSelect.prototype.fetchAll = function()
     for (var i =0;i < this.get_n_columns(); i++) {
         cols.push(this.get_column_name(i));
     }
-    print(JSON.stringify(cols, null,4));
+    //print(JSON.stringify(cols, null,4));
     var iter = this.create_iter();
     var res = [];
     //print(this.get_n_rows());
