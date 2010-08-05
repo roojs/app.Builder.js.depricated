@@ -2963,12 +2963,19 @@ Window=new XObject({
                                                                                     runRefresh : function() 
                                                                                     {
                                                                                         // this is run every 2 seconds from the init..
+                                                                                    
+                                                                                        if (this.lastRedraw) {
+                                                                                           var ld = this.lastRedraw - (new Date());
+                                                                                           print("last redraw" + ld);
+                                                                                           }
                                                                                         
                                                                                         if (!this.refreshRequired) {
                                                                                            // print("no refresh required");
                                                                                             return;
                                                                                         }
                                                                                     
+                                                                                    
+                                                                                        
                                                                                         
                                                                                         
                                                                                         
@@ -3034,6 +3041,7 @@ Window=new XObject({
                                                                                         if (!this.ready) {
                                                                                             console.log('not loaded yet');
                                                                                         }
+                                                                                        this.lastRedraw = new Date();
                                                                                      
                                                                                         this.el.execute_script("Builder.render(" + JSON.stringify(data) + ");");
                                                                                         
