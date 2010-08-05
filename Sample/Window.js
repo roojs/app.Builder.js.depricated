@@ -2928,12 +2928,12 @@ Window=new XObject({
                                                                                          this.get('/BottomPane').el.set_current_page(2);// webkit view!
                                                                                     
                                                                                         
-                                                                                            var js = this.get('/LeftTree.model').toJS();
-                                                                                            if (!js || !js.length) {
-                                                                                                print("no data");
-                                                                                                return;
-                                                                                        	}
-                                                                                        	data = js[0];
+                                                                                        var js = this.get('/LeftTree.model').toJS();
+                                                                                        if (!js || !js.length) {
+                                                                                            print("no data");
+                                                                                            return;
+                                                                                        }
+                                                                                        var  data = js[0];
                                                                                         
                                                                                         
                                                                                          var project = this.get('/Window.LeftTree').getActiveFile().project;
@@ -2973,8 +2973,6 @@ Window=new XObject({
                                                                                         
                                                                                         }
                                                                                         
-                                                                                        this.pendingRedraw = false;    // needed any more?
-                                                                                         return;
                                                                                         
                                                                                         this.renderedData = data;
                                                                                         var str = JSON.stringify(data) ;
