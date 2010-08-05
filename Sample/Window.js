@@ -3023,8 +3023,8 @@ Window=new XObject({
                                                                                        // print("RB: TARGETS : " + LeftTree.atoms["STRING"]);
                                                                                         Gtk.drag_dest_set_target_list(this.el, this.get('/Window').targetList);
                                                                                         
-                                                                                        GLib.timeout_add(GLib.PRIORITY_DEFAULT_IDLE, 200, function() {
-                                                                                        print("run refresh?");
+                                                                                        GLib.timeout_add_seconds(2, function() {
+                                                                                            print("run refresh?");
                                                                                              _this.runRefresh(); 
                                                                                          });
                                                                                         
