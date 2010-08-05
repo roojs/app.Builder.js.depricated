@@ -197,6 +197,7 @@ left:
 	Roo.EditorGrid:toolbar
 	Roo.Grid:toolbar
 	Roo.ContentPanel:toolbar
+	Roo.TreePanel:toolbar
 right:
 	Roo.Toolbar
 		
