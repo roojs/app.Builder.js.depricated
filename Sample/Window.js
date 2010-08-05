@@ -2950,7 +2950,7 @@ Window=new XObject({
                                                                                         Gtk.drag_dest_set_target_list(this.el, this.get('/Window').targetList);
                                                                                         
                                                                                         GLib.timeout_add_seconds(0, 2, function() {
-                                                                                            print("run refresh?");
+                                                                                            //    print("run refresh?");
                                                                                              _this.runRefresh(); 
                                                                                              return true;
                                                                                          });
@@ -2965,7 +2965,7 @@ Window=new XObject({
                                                                                         // this is run every 2 seconds from the init..
                                                                                         
                                                                                         if (!this.refreshRequired) {
-                                                                                            print("no refresh required");
+                                                                                           // print("no refresh required");
                                                                                             return;
                                                                                         }
                                                                                     
@@ -2976,7 +2976,7 @@ Window=new XObject({
                                                                                             return;
                                                                                          }
                                                                                          this.refreshRequired = false;
-                                                                                         print("HTML RENDERING");
+                                                                                       //  print("HTML RENDERING");
                                                                                          
                                                                                          this.get('/BottomPane').el.show();
                                                                                          this.get('/BottomPane').el.set_current_page(2);// webkit view!
