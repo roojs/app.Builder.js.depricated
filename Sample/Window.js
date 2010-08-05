@@ -2725,11 +2725,11 @@ Window=new XObject({
                                                                         {
                                                                             xtype: Gtk.ScrolledWindow,
                                                                             pack : "add",
-                                                                            shadow_type : Gtk.ShadowType.IN,
                                                                             init : function() {
                                                                                 XObject.prototype.init.call(this);
-                                                                              this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
+                                                                                this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
                                                                             },
+                                                                            shadow_type : Gtk.ShadowType.IN,
                                                                             items : [
                                                                                 {
                                                                                     xtype: WebKit.WebView,
@@ -2746,6 +2746,8 @@ Window=new XObject({
                                                                                         
                                                                                         	this.ready = true;
                                                                                                 this.pendingRedraw = false;
+                                                                                                
+                                                                                                this.refreshRequired  = true;
                                                                                                 //var js = this.get('/LeftTree.model').toJS();
                                                                                                 //if (js && js[0]) {
                                                                                             	//    this.renderJS(js[0]);
@@ -2903,65 +2905,43 @@ Window=new XObject({
                                                                                     },
                                                                                     id : "view",
                                                                                     pack : "add",
-                                                                                    init : function() {
-                                                                                        XObject.prototype.init.call(this);
-                                                                                        // this may not work!?
-                                                                                        var settings =  this.el.get_settings();
-                                                                                        settings.enable_developer_extras = true;
-                                                                                       // settings.enable_file_access_from_file_uris = true;
-                                                                                       // settings.enable_offline_web_application_cache - true;
-                                                                                       // settings.enable_universal_access_from_file_uris = true;
-                                                                                        var _this = this;
-                                                                                         
-                                                                                        this.el.get_inspector().signal.inspect_web_view.connect(function(wi, pg) {
-                                                                                         _this.get('/BottomPane.inspector').el.show();
-                                                                                            return _this.get('/BottomPane.inspector').el;
-                                                                                         //create_inspector_cb
-                                                                                        });
-                                                                                         
-                                                                                        this.el.load_html_string( "Render not ready" , 
-                                                                                                //fixme - should be a config option!
-                                                                                                'http://www.akbkhome.com/e/'
-                                                                                            );
-                                                                                       //this.el.open('file:///' + __script_path__ + '/../builder.html');
-                                                                                                              
-                                                                                        Gtk.drag_dest_set
-                                                                                        (
-                                                                                                this.el,              /* widget that will accept a drop */
-                                                                                                Gtk.DestDefaults.MOTION  | Gtk.DestDefaults.HIGHLIGHT,
-                                                                                                null,            /* lists of target to support */
-                                                                                                0,              /* size of list */
-                                                                                                Gdk.DragAction.COPY         /* what to do with data after dropped */
-                                                                                        );
-                                                                                                                
-                                                                                       // print("RB: TARGETS : " + LeftTree.atoms["STRING"]);
-                                                                                        Gtk.drag_dest_set_target_list(this.el, this.get('/Window').targetList);
-                                                                                    },
-                                                                                    renderJS : function(data) {
-                                                                                        print("HTML RENDERING");
-                                                                                         this.get('/BottomPane').el.show();
-                                                                                        this.get('/BottomPane').el.set_current_page(2);// webkit view!
-                                                                                        /// prevent looping..
-                                                                                        //if (this.pendingRedraw) {
-                                                                                        //   print("pending redraw active?!");
-                                                                                         //   return;
-                                                                                        //}
+                                                                                    runRefresh : function() 
+                                                                                    {
+                                                                                        // this is run every 2 seconds from the init..
                                                                                         
-                                                                                        
-                                                                                        if (!this.get('/Window.LeftTree').getActiveFile()) {
+                                                                                        if (!this.refreshRequired) {
                                                                                             return;
                                                                                         }
+                                                                                        this.refreshRequired = false;
                                                                                         
-                                                                                        var project = this.get('/Window.LeftTree').getActiveFile().project;
-                                                                                        //print (project.fn);
-                                                                                        // set it to non-empty.
-                                                                                            project.runhtml  =     project.runhtml  || '';
-                                                                                        project.runhtml  = project.runhtml.length ?  project.runhtml : '<script type="text/javascript"></script>'; 
+                                                                                        
+                                                                                        
+                                                                                         if (!this.get('/Window.LeftTree').getActiveFile()) {
+                                                                                            return;
+                                                                                         }
+                                                                                         print("HTML RENDERING");
+                                                                                         
+                                                                                         this.get('/BottomPane').el.show();
+                                                                                         this.get('/BottomPane').el.set_current_page(2);// webkit view!
+                                                                                    
+                                                                                        
+                                                                                            var js = this.get('/LeftTree.model').toJS();
+                                                                                            if (!js || !js.length) {
+                                                                                                return;
+                                                                                        	}
+                                                                                        	data = js[0];
+                                                                                        
+                                                                                        
+                                                                                         var project = this.get('/Window.LeftTree').getActiveFile().project;
+                                                                                         //print (project.fn);
+                                                                                         // set it to non-empty.
+                                                                                         project.runhtml  =     project.runhtml  || '';
+                                                                                         project.runhtml  = project.runhtml.length ?  project.runhtml : '<script type="text/javascript"></script>'; 
                                                                                         
                                                                                     
-                                                                                        this.runhtml  = this.runhtml || '';
+                                                                                         this.runhtml  = this.runhtml || '';
                                                                                         
-                                                                                        if (project.runhtml != this.runhtml) {
+                                                                                         if (project.runhtml != this.runhtml) {
                                                                                             // then we need to reload the browser using
                                                                                             // load_html_string..
                                                                                             
@@ -2970,13 +2950,6 @@ Window=new XObject({
                                                                                              var runhtml = '<script type="text/javascript">' + "\n" ;
                                                                                              runhtml +=imports.File.File.read(__script_path__ + '/../builder.html.js') + "\n";
                                                                                              runhtml += '</script>'+ "\n" ;
-                                                                                    //        this.runhtml = '<link rel="stylesheet" type="text/css" href="file://' + __script_path__ + '/../roojs1/cssX/roojs-all.css" />'+ "\n" ;
-                                                                                     //       this.runhtml += '<script type="text/javascript" src="file://' + __script_path__ + '/../roojs1/roojs-debug.js"></script>'+ "\n" ;
-                                                                                      //      this.runhtml += '<script type="text/javascript">' + "\n" ;
-                                                                                       //     this.runhtml += 'Ext=Roo; // bc' + "\n" ;
-                                                                                        //    this.runhtml += 'Roo.BLANK_IMAGE_URL =  "file://' + __script_path__ + '/../roojs1/images/gray/s.gif";'+ "\n" ;
-                                                                                         //   this.runhtml += 'Roo.rootURL = "file://' + __script_path__ + '/../roojs1/";'+ "\n" ;
-                                                                                          //  this.runhtml += '</script>'+ "\n" ;
                                                                                             
                                                                                             this.runhtml = project.runhtml;
                                                                                             // need to modify paths
@@ -2990,13 +2963,14 @@ Window=new XObject({
                                                                                                 //fixme - should be a config option!
                                                                                                 'http://www.akbkhome.com/e/'
                                                                                             );
-                                                                                            // should trigger load_finished!
+                                                                                            
+                                                                                            // should trigger load_finished! - which in truns shoudl set refresh Required;
                                                                                             return;
                                                                                         
                                                                                         }
                                                                                         
-                                                                                        this.pendingRedraw = false;    
-                                                                                         
+                                                                                        this.pendingRedraw = false;    // needed any more?
+                                                                                         return;
                                                                                         
                                                                                         this.renderedData = data;
                                                                                         var str = JSON.stringify(data) ;
@@ -3004,11 +2978,57 @@ Window=new XObject({
                                                                                         if (!this.ready) {
                                                                                             console.log('not loaded yet');
                                                                                         }
-                                                                                        //Seed.print("RENDER:" + str);
-                                                                                        //imports.File.File.write('/tmp/builder.debug.js', "Builder.render(" + JSON.stringify(data) + ");");
                                                                                      
                                                                                         this.el.execute_script("Builder.render(" + JSON.stringify(data) + ");");
+                                                                                        
+                                                                                    },
+                                                                                    init : function() {
+                                                                                        XObject.prototype.init.call(this);
+                                                                                        // this may not work!?
+                                                                                        var settings =  this.el.get_settings();
+                                                                                        settings.enable_developer_extras = true;
+                                                                                        
+                                                                                        // this was an attempt to change the url perms.. did not work..
+                                                                                        // settings.enable_file_access_from_file_uris = true;
+                                                                                        // settings.enable_offline_web_application_cache - true;
+                                                                                        // settings.enable_universal_access_from_file_uris = true;
+                                                                                        var _this = this;
                                                                                          
+                                                                                         // init inspector..
+                                                                                        this.el.get_inspector().signal.inspect_web_view.connect(function(wi, pg) {
+                                                                                             _this.get('/BottomPane.inspector').el.show();
+                                                                                             return _this.get('/BottomPane.inspector').el;
+                                                                                        
+                                                                                        });
+                                                                                         
+                                                                                         // FIXME - base url of script..
+                                                                                         // we need it so some of the database features work.
+                                                                                        this.el.load_html_string( "Render not ready" , 
+                                                                                                //fixme - should be a config option!
+                                                                                                'http://www.akbkhome.com/e/'
+                                                                                        );
+                                                                                            
+                                                                                            
+                                                                                       //this.el.open('file:///' + __script_path__ + '/../builder.html');
+                                                                                                              
+                                                                                        Gtk.drag_dest_set
+                                                                                        (
+                                                                                                this.el,              /* widget that will accept a drop */
+                                                                                                Gtk.DestDefaults.MOTION  | Gtk.DestDefaults.HIGHLIGHT,
+                                                                                                null,            /* lists of target to support */
+                                                                                                0,              /* size of list */
+                                                                                                Gdk.DragAction.COPY         /* what to do with data after dropped */
+                                                                                        );
+                                                                                                                
+                                                                                       // print("RB: TARGETS : " + LeftTree.atoms["STRING"]);
+                                                                                        Gtk.drag_dest_set_target_list(this.el, this.get('/Window').targetList);
+                                                                                        
+                                                                                        GLib.timeout_add_seconds(GLib.PRIORITY_DEFAULT_IDLE, 2, function() { _this.runRefresh(); });
+                                                                                        
+                                                                                        
+                                                                                    },
+                                                                                    renderJS : function(data) {
+                                                                                        this.refreshRequired  = true;
                                                                                     }
                                                                                 }
                                                                             ]
