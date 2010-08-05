@@ -2965,16 +2965,20 @@ Window=new XObject({
                                                                                         // this is run every 2 seconds from the init..
                                                                                     
                                                                                         if (this.lastRedraw) {
-                                                                                           var ld = this.lastRedraw - (new Date());
-                                                                                           print("last redraw" + ld);
-                                                                                           }
+                                                                                           var ld =(new Date()) -  this.lastRedraw;
+                                                                                        }
                                                                                         
                                                                                         if (!this.refreshRequired) {
                                                                                            // print("no refresh required");
                                                                                             return;
                                                                                         }
                                                                                     
-                                                                                    
+                                                                                        if (this.lastRedraw) {
+                                                                                           // do not redraw if last redraw was less that 20 seconds ago.
+                                                                                           if (((new Date()) -  this.lastRedraw) < 20000) {
+                                                                                                return;
+                                                                                            }
+                                                                                        }
                                                                                         
                                                                                         
                                                                                         
