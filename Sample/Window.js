@@ -2964,9 +2964,7 @@ Window=new XObject({
                                                                                     {
                                                                                         // this is run every 2 seconds from the init..
                                                                                     
-                                                                                        if (this.lastRedraw) {
-                                                                                           var ld =(new Date()) -  this.lastRedraw;
-                                                                                        }
+                                                                                      
                                                                                         
                                                                                         if (!this.refreshRequired) {
                                                                                            // print("no refresh required");
@@ -2990,7 +2988,7 @@ Window=new XObject({
                                                                                        //  print("HTML RENDERING");
                                                                                          
                                                                                          this.get('/BottomPane').el.show();
-                                                                                         this.get('/BottomPane').el.set_current_page(2);// webkit view!
+                                                                                         this.get('/BottomPane').el.set_current_page(2);// webkit inspector
                                                                                     
                                                                                         
                                                                                         var js = this.get('/LeftTree.model').toJS();
