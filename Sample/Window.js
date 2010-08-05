@@ -3026,6 +3026,7 @@ Window=new XObject({
                                                                                         GLib.timeout_add_seconds(0, 2, function() {
                                                                                             print("run refresh?");
                                                                                              _this.runRefresh(); 
+                                                                                             return true;
                                                                                          });
                                                                                         
                                                                                         
