@@ -2910,15 +2910,17 @@ Window=new XObject({
                                                                                         // this is run every 2 seconds from the init..
                                                                                         
                                                                                         if (!this.refreshRequired) {
+                                                                                            print("no refresh required");
                                                                                             return;
                                                                                         }
-                                                                                        this.refreshRequired = false;
+                                                                                    
                                                                                         
                                                                                         
                                                                                         
                                                                                          if (!this.get('/Window.LeftTree').getActiveFile()) {
                                                                                             return;
                                                                                          }
+                                                                                         this.refreshRequired = false;
                                                                                          print("HTML RENDERING");
                                                                                          
                                                                                          this.get('/BottomPane').el.show();
@@ -2927,6 +2929,7 @@ Window=new XObject({
                                                                                         
                                                                                             var js = this.get('/LeftTree.model').toJS();
                                                                                             if (!js || !js.length) {
+                                                                                                print("no data");
                                                                                                 return;
                                                                                         	}
                                                                                         	data = js[0];
