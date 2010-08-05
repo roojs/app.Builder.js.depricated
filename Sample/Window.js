@@ -2746,9 +2746,11 @@ Window=new XObject({
                                                                                         	}
                                                                                         
                                                                                         	this.ready = true;
-                                                                                                this.pendingRedraw = false;
-                                                                                                
-                                                                                                this.refreshRequired  = true;
+                                                                                        	
+                                                                                                if (this.pendingRedraw) {
+                                                                                                    this.pendingRedraw = false;
+                                                                                                    this.refreshRequired  = true;
+                                                                                                }
                                                                                                 //var js = this.get('/LeftTree.model').toJS();
                                                                                                 //if (js && js[0]) {
                                                                                             	//    this.renderJS(js[0]);
@@ -2906,6 +2908,58 @@ Window=new XObject({
                                                                                     },
                                                                                     id : "view",
                                                                                     pack : "add",
+                                                                                    init : function() {
+                                                                                        XObject.prototype.init.call(this);
+                                                                                        // this may not work!?
+                                                                                        var settings =  this.el.get_settings();
+                                                                                        settings.enable_developer_extras = true;
+                                                                                        
+                                                                                        // this was an attempt to change the url perms.. did not work..
+                                                                                        // settings.enable_file_access_from_file_uris = true;
+                                                                                        // settings.enable_offline_web_application_cache - true;
+                                                                                        // settings.enable_universal_access_from_file_uris = true;
+                                                                                        var _this = this;
+                                                                                         
+                                                                                         // init inspector..
+                                                                                        this.el.get_inspector().signal.inspect_web_view.connect(function(wi, pg) {
+                                                                                             _this.get('/BottomPane.inspector').el.show();
+                                                                                             return _this.get('/BottomPane.inspector').el;
+                                                                                        
+                                                                                        });
+                                                                                         
+                                                                                         // FIXME - base url of script..
+                                                                                         // we need it so some of the database features work.
+                                                                                        this.el.load_html_string( "Render not ready" , 
+                                                                                                //fixme - should be a config option!
+                                                                                                'http://www.akbkhome.com/e/'
+                                                                                        );
+                                                                                            
+                                                                                            
+                                                                                       //this.el.open('file:///' + __script_path__ + '/../builder.html');
+                                                                                                              
+                                                                                        Gtk.drag_dest_set
+                                                                                        (
+                                                                                                this.el,              /* widget that will accept a drop */
+                                                                                                Gtk.DestDefaults.MOTION  | Gtk.DestDefaults.HIGHLIGHT,
+                                                                                                null,            /* lists of target to support */
+                                                                                                0,              /* size of list */
+                                                                                                Gdk.DragAction.COPY         /* what to do with data after dropped */
+                                                                                        );
+                                                                                                                
+                                                                                       // print("RB: TARGETS : " + LeftTree.atoms["STRING"]);
+                                                                                        Gtk.drag_dest_set_target_list(this.el, this.get('/Window').targetList);
+                                                                                        
+                                                                                        GLib.timeout_add_seconds(0, 2, function() {
+                                                                                            print("run refresh?");
+                                                                                             _this.runRefresh(); 
+                                                                                             return true;
+                                                                                         });
+                                                                                        
+                                                                                        
+                                                                                    },
+                                                                                    renderJS : function(data) {
+                                                                                        this.refreshRequired  = true;
+                                                                                    },
                                                                                     runRefresh : function() 
                                                                                     {
                                                                                         // this is run every 2 seconds from the init..
@@ -2983,58 +3037,6 @@ Window=new XObject({
                                                                                      
                                                                                         this.el.execute_script("Builder.render(" + JSON.stringify(data) + ");");
                                                                                         
-                                                                                    },
-                                                                                    init : function() {
-                                                                                        XObject.prototype.init.call(this);
-                                                                                        // this may not work!?
-                                                                                        var settings =  this.el.get_settings();
-                                                                                        settings.enable_developer_extras = true;
-                                                                                        
-                                                                                        // this was an attempt to change the url perms.. did not work..
-                                                                                        // settings.enable_file_access_from_file_uris = true;
-                                                                                        // settings.enable_offline_web_application_cache - true;
-                                                                                        // settings.enable_universal_access_from_file_uris = true;
-                                                                                        var _this = this;
-                                                                                         
-                                                                                         // init inspector..
-                                                                                        this.el.get_inspector().signal.inspect_web_view.connect(function(wi, pg) {
-                                                                                             _this.get('/BottomPane.inspector').el.show();
-                                                                                             return _this.get('/BottomPane.inspector').el;
-                                                                                        
-                                                                                        });
-                                                                                         
-                                                                                         // FIXME - base url of script..
-                                                                                         // we need it so some of the database features work.
-                                                                                        this.el.load_html_string( "Render not ready" , 
-                                                                                                //fixme - should be a config option!
-                                                                                                'http://www.akbkhome.com/e/'
-                                                                                        );
-                                                                                            
-                                                                                            
-                                                                                       //this.el.open('file:///' + __script_path__ + '/../builder.html');
-                                                                                                              
-                                                                                        Gtk.drag_dest_set
-                                                                                        (
-                                                                                                this.el,              /* widget that will accept a drop */
-                                                                                                Gtk.DestDefaults.MOTION  | Gtk.DestDefaults.HIGHLIGHT,
-                                                                                                null,            /* lists of target to support */
-                                                                                                0,              /* size of list */
-                                                                                                Gdk.DragAction.COPY         /* what to do with data after dropped */
-                                                                                        );
-                                                                                                                
-                                                                                       // print("RB: TARGETS : " + LeftTree.atoms["STRING"]);
-                                                                                        Gtk.drag_dest_set_target_list(this.el, this.get('/Window').targetList);
-                                                                                        
-                                                                                        GLib.timeout_add_seconds(0, 2, function() {
-                                                                                            print("run refresh?");
-                                                                                             _this.runRefresh(); 
-                                                                                             return true;
-                                                                                         });
-                                                                                        
-                                                                                        
-                                                                                    },
-                                                                                    renderJS : function(data) {
-                                                                                        this.refreshRequired  = true;
                                                                                     }
                                                                                 }
                                                                             ]
