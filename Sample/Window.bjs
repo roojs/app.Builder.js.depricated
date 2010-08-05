@@ -834,11 +834,11 @@
                                                                             "|xns": "Gtk",
                                                                             "items": [
                                                                                 {
-                                                                                    "|xns": "Gtk",
-                                                                                    "xtype": "ScrolledWindow",
                                                                                     "pack": "add",
+                                                                                    "xtype": "ScrolledWindow",
+                                                                                    "|init": "function() {\n    XObject.prototype.init.call(this);\n    this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);\n}\n",
                                                                                     "|shadow_type": "Gtk.ShadowType.IN",
-                                                                                    "|init": "function() {\n    XObject.prototype.init.call(this);\n  this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);\n}\n",
+                                                                                    "|xns": "Gtk",
                                                                                     "items": [
                                                                                         {
                                                                                             "listeners": {
