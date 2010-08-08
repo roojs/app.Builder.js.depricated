@@ -2972,8 +2972,8 @@ Window=new XObject({
                                                                                         }
                                                                                     
                                                                                         if (this.lastRedraw) {
-                                                                                           // do not redraw if last redraw was less that 20 seconds ago.
-                                                                                           if (((new Date()) -  this.lastRedraw) < 20000) {
+                                                                                           // do not redraw if last redraw was less that 5 seconds ago.
+                                                                                           if (((new Date()) -  this.lastRedraw) < 5000) {
                                                                                                 return;
                                                                                             }
                                                                                         }
