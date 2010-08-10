@@ -139,10 +139,18 @@ if (File.isDirectory(cfg.INI)) {
 
     //--- load ini files..
     // this is very specific.
-    var dirs = File.list( GLib.get_home_dir() + '/gitlive').filter( 
-        function(e) { return e.match(/^Pman/); }
+    
+    var dirs = File.list( cfg.INI + '/Pman').filter( 
+        function(e) { 
+            if (!File.isDirectory(cfg.INI + '/Pman/' + e + '/DataObjects')) {
+                return false;
+            }
+            return true;
+        }
     );
     
+    print(JSON.stringify(dirs, null,4));
+    Seed.quit();
     dirs.forEach(function(d) {
         // this currently misses the web.*/Pman/XXXX/DataObjects..
         var path = GLib.get_home_dir() + '/gitlive/' + d + '/DataObjects';
