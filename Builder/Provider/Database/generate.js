@@ -76,7 +76,7 @@ Gda.DataSelect.prototype.fetchAll = function()
             var val = _this.get_value_at(i,r);
             var type = GObject.type_name(val.g_type) ;
             var vs = type == 'GdaBinary' ? val.value.to_string(1024) : val.value;
-            //print(n + " : TYPE: " + GObject.type_name(val.g_type) + " : " + vs);
+            print(n + " : TYPE: " + GObject.type_name(val.g_type) + " : " + vs);
             //print (n + '=' + iter.get_value_at(i).value);
             add[n] = vs;
         });
