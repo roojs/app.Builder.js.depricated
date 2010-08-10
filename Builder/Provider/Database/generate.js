@@ -152,7 +152,7 @@ if (File.isDirectory(cfg.INI)) {
      
     dirs.forEach(function(d) {
         // this currently misses the web.*/Pman/XXXX/DataObjects..
-        var path = (cfg.INI + '/Pman/' + d + '/DataObjects'
+        var path = cfg.INI + '/Pman/' + d + '/DataObjects';
          
         if (!File.isDirectory(path)) {
             return; //skip
