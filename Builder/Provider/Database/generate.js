@@ -554,7 +554,7 @@ readers.forEach(function(reader) {
                                             "   //}); \n"+
                                             "}\n"
                                     },
-                                    "|xns": "Roo"
+                                    "|xns": "Roo.Toolbar"
                                 },
                                 {
                                     "text": "Edit",
@@ -577,7 +577,7 @@ readers.forEach(function(reader) {
                                             "}\n" 
                                         
                                     },
-                                    "|xns": "Roo"
+                                    "|xns": "Roo.Toolbar"
                                 },
                                 {
                                     "text": "Delete",
@@ -591,7 +591,7 @@ readers.forEach(function(reader) {
                                             "}\n"+
                                             "        "
                                     },
-                                    "|xns": "Roo"
+                                    "|xns": "Roo.Toolbar"
                                 }
                             ]
                         }, // end toolbar
