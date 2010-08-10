@@ -102,6 +102,7 @@ var map = {
     'longtext' : 'string',
     'mediumtext' : 'string',
     'enum' : 'string',
+    'timestamp' : 'number',
     
     
 }
