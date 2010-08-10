@@ -388,8 +388,12 @@ readers.forEach(function(reader) {
     // we have a map..
     for (var col in ini[reader.table]) {
         var kv = ini[reader.table][col].split(':');
-        var add = readers.filter(function(r) { return r.table == kv[0] })[0];
         
+        
+        var add = readers.filter(function(r) { return r.table == kv[0] })[0];
+        if (!add) {
+            continue;
+        }
         // merge in data (eg. project_id => project_id_*****
      
         add.oreader.forEach(function(or) {
