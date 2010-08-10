@@ -178,7 +178,7 @@ if (File.isDirectory(cfg.INI)) {
     
     
 }
-//print(JSON.stringify(ini, null,4));
+print(JSON.stringify(ini, null,4));
  //console.dump(ini);
 
 
