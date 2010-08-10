@@ -149,15 +149,11 @@ if (File.isDirectory(cfg.INI)) {
         }
     );
     
-    print(JSON.stringify(dirs, null,4));
-    Seed.quit();
+     
     dirs.forEach(function(d) {
         // this currently misses the web.*/Pman/XXXX/DataObjects..
-        var path = GLib.get_home_dir() + '/gitlive/' + d + '/DataObjects';
-        if (!File.isDirectory(path)) {
-            path = GLib.get_home_dir() + '/gitlive/' + d + '/Pman/DataObjects';
-        }
-        
+        var path = (cfg.INI + '/Pman/' + d + '/DataObjects'
+         
         if (!File.isDirectory(path)) {
             return; //skip
         }
