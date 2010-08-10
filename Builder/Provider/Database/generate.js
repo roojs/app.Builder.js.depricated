@@ -325,6 +325,8 @@ tables.forEach(function(table) {
                 '*prop' : 'store',
                 'xtype' : 'Store',
                 '|xns' : 'Roo.data',
+                'remoteSort' : true,
+                '|sortInfo' : '{ direction : \'ASC\', field: \'id\' }',
                 listeners : {
                     '|beforeload' : 'function (_self, o)' +
                     "{\n" +
