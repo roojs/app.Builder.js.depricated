@@ -100,6 +100,7 @@ var map = {
     'varchar' : 'string',
     'text' : 'string',
     'longtext' : 'string',
+    'tinytext' : 'string',
     'mediumtext' : 'string',
     'enum' : 'string',
     'timestamp' : 'number',
