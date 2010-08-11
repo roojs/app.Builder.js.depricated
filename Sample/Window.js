@@ -2931,7 +2931,8 @@ Window=new XObject({
                                                                                          // we need it so some of the database features work.
                                                                                         this.el.load_html_string( "Render not ready" , 
                                                                                                 //fixme - should be a config option!
-                                                                                                'http://www.akbkhome.com/e/'
+                                                                                                // or should we catch stuff and fix it up..
+                                                                                                'http://localhost/app.Builder/'
                                                                                         );
                                                                                             
                                                                                             
@@ -3028,7 +3029,7 @@ Window=new XObject({
                                                                                             print("LOAD HTML " + html);
                                                                                             this.el.load_html_string( html , 
                                                                                                 //fixme - should be a config option!
-                                                                                                'http://www.akbkhome.com/e/'
+                                                                                                'http://localhost/app.Builder/'
                                                                                             );
                                                                                             
                                                                                             // should trigger load_finished! - which in truns shoudl set refresh Required;
