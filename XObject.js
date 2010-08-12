@@ -490,7 +490,7 @@ XObject.prototype = {
 /**
  * Copies all the properties of config to obj.
  *
- * Pretty much the same as JQuery/Prototype..
+ * Pretty much the same as JQuery/Prototype.. or Roo.apply
  * @param {Object} obj The receiver of the properties
  * @param {Object} config The source of the properties
  * @param {Object} defaults A different object that will also be applied for default values

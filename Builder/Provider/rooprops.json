@@ -6281,6 +6281,12 @@
      "desc": "Fires after the component is disabled."
     },
     {
+     "name": "edit",
+     "sig": "function (combo, record)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires when the 'edit' icon is pressed (add a listener to enable add button)"
+    },
+    {
      "name": "enable",
      "sig": "function (_self)\n{\n\n}",
      "type": "function",

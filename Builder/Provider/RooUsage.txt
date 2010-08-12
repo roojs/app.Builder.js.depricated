@@ -239,6 +239,7 @@ left:
   Roo.JsonView:store
 right: 
   Roo.data.Store
+  Roo.data.SimpleStore
 
 left:
   Roo.data.Store:proxy
