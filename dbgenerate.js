@@ -456,7 +456,7 @@ readers.forEach(function(reader) {
     }
     
     // READERS
-    print("WRITE: " +  dir + '/' + cfg.DB_NAME + '_' + reader.table + '.json');
+    print("WRITE: " +  dir + '/' + cfg.DBNAME + '_' + reader.table + '.json');
     
                 
     var jreader = {
@@ -470,7 +470,7 @@ readers.forEach(function(reader) {
     };
     
     File.write(
-        dir + '/' + cfg.DB_NAME + '_' + reader.table + '.json',
+        dir + '/' + cfg.DBNAME + '_' + reader.table + '.json',
         JSON.stringify(jreader, null, 4)
     )
     
@@ -482,10 +482,10 @@ readers.forEach(function(reader) {
     }
     
 
-    print("WRITE: " +  dir + '/' + cfg.DB_NAME + '_' + reader.table + '.json');
+    print("WRITE: " +  dir + '/' + cfg.DBNAME + '_' + reader.table + '.json');
     
     File.write(
-        dir + '/' + cfg.DB_NAME + '_' + reader.table + '.json',
+        dir + '/' + cfg.DBNAME + '_' + reader.table + '.json',
             
        
         JSON.stringify({
@@ -626,10 +626,10 @@ readers.forEach(function(reader) {
     }
     formElements.push(reader.form['id']);
 
-    print("WRITE: " +  dir + '/' + cfg.DB_NAME + '_' + reader.table + '.json');
+    print("WRITE: " +  dir + '/' + cfg.DBNAME + '_' + reader.table + '.json');
     
     File.write(
-        dir + '/' + cfg.DB_NAME + '_' + reader.table + '.json',
+        dir + '/' + cfg.DBNAME + '_' + reader.table + '.json',
             
        
         JSON.stringify({
@@ -683,10 +683,10 @@ readers.forEach(function(reader) {
         File.mkdir(dir);
     }
    
-    print("WRITE: " +  dir + '/' + cfg.DB_NAME + '_' + reader.table + '.json');
+    print("WRITE: " +  dir + '/' + cfg.DBNAME + '_' + reader.table + '.json');
     
     File.write(
-        dir + '/' + cfg.DB_NAME + '_' + reader.table + '.json',
+        dir + '/' + cfg.DBNAME + '_' + reader.table + '.json',
             
        
         JSON.stringify(reader.combo, null, 4)
