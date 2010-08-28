@@ -30,6 +30,9 @@ GObject = imports.gi.GObject;
  * 
  * use XObject.debug = 1 to turn on debugging
  * 
+ * If XObject/[xns]/[xtype].js exists, it will use this to override properties..
+ * 
+ * 
  * He's some questions.
  * - should we have a special property to use as the constructor / gobject.properties rather
  *   than sending all basic types to this?
