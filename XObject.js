@@ -558,7 +558,8 @@ XObject.extend(XObject,
      */
 
 
-    extendIf : function(o, c){
+    extendIf : function(o, c)
+    {
 
         if(!o || !c || typeof c != 'object'){
             return o;
@@ -595,7 +596,8 @@ XObject.extend(XObject,
      * @return {Function} constructor (eg. class
      * @method define
      */
-    define : function(){
+    define : function()
+    {
         // inline overrides
         var io = function(o){
             for(var m in o){
