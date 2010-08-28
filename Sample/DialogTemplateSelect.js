@@ -54,9 +54,6 @@ DialogTemplateSelect=new XObject({
                 {
                     xtype: Gtk.HBox,
                     pack : "pack_start,false,false,0",
-                    listeners : {
-                        
-                    },
                     items : [
                         {
                             xtype: Gtk.Label,

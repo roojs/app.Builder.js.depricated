@@ -60,10 +60,7 @@ DialogSaveTemplate=new XObject({
                 {
                     xtype: Gtk.Label,
                     label : "Name",
-                    pack : "add",
-                    listeners : {
-                        
-                    }
+                    pack : "add"
                 },
                 {
                     xtype: Gtk.Entry,
