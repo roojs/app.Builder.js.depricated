@@ -64,7 +64,7 @@ function apt_get_source($data)
     }
   
     chdir('/tmp');
-    
+    echo `sudo apt-get --yes build-dep $dpkg`;
     $cmd = 'apt-get source ' . $dpkg . '=' . $state[$pkg]['deb.avail'];
     echo $cmd."\n";
     echo `$cmd`;
