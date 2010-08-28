@@ -28,22 +28,23 @@ GObject = imports.gi.GObject;
  *  Xyz.init(); // create and show.
  * 
  * 
- * 
- * @arg xtype {String|Function} constructor or string.
- * @arg id {String}  (optional) id for registry
- * @arg xns {String|Object}   (optional) namespace eg. Gtk or 'Gtk' - used with xtype.
- * @arg items {Array}   (optional) list of child elements which will be constructed.. using XObject
- * @arg listeners {Object}   (optional) map Gobject signals to functions
- * @arg pack {Function|String|Array}   (optional) how this object gets added to it's parent
- * @arg el {Object}   (optional) premade GObject
- * 
- *  --- needs a xdebug option!
- * 
+ * use XObject.debug = 1 to turn on debugging
  * 
  * He's some questions.
- * - should we generate ID's for all elements? (if so we probably need to garbage collect)
  * - should we have a special property to use as the constructor / gobject.properties rather
  *   than sending all basic types to this?
+ * 
+ * @cfg xtype {String|Function} constructor or string.
+ * @cfg id {String}  (optional) id for registry
+ * @cfg xns {String|Object}   (optional) namespace eg. Gtk or 'Gtk' - used with xtype.
+ * @cfg items {Array}   (optional) list of child elements which will be constructed.. using XObject
+ * @cfg listeners {Object}   (optional) map Gobject signals to functions
+ * @cfg pack {Function|String|Array}   (optional) how this object gets added to it's parent
+ * @cfg el {Object}   (optional) premade GObject
+ * 
+ * 
+ * 
+ * 
  * 
  * 
  */
@@ -53,6 +54,21 @@ function XObject (cfg) {
       //print("new XOBJECT!!!");
     this.config = {};
     this.constructor = XObject;
+    
+    
+    
+    // start by seeing if we have a base class....
+    try {
+        // loocks for XObject/Gtk/TreeView.js [   TreeView = { .... } ]
+        var base = imports.XObject[cfg.xns][cfg.xtype][cfg.xtype];
+        for (var i in base) {
+            this[i] = base[i];
+        }
+        
+    } catch (e) {
+        
+    }
+    
     
     // copy down all elements into self..
     
@@ -74,7 +90,11 @@ function XObject (cfg) {
         
         this.config[i] = cfg[i];
     }
+    
+    
     this.items = this.items || [];
+    
+    
     // pack can be false!
     if (typeof(this.pack) == 'undefined') {
         
@@ -89,6 +109,9 @@ function XObject (cfg) {
         */
         
     }
+    
+    
+    
     
     
     
