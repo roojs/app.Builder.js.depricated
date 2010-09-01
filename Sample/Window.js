@@ -3045,8 +3045,9 @@ Window=new XObject({
                                                                                             console.log('not loaded yet');
                                                                                         }
                                                                                         this.lastRedraw = new Date();
-                                                                                     
+                                                                                        print( "start render" +    this.lastRedraw);
                                                                                         this.el.execute_script("Builder.render(" + JSON.stringify(data) + ");");
+                                                                                        print( "after render" +    (new Date()));
                                                                                         
                                                                                     }
                                                                                 }
