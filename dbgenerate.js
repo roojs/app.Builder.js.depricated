@@ -563,9 +563,10 @@ readers.forEach(function(reader) {
                                     "listeners": {
                                         "|click": "function()\n"+
                                             "{\n"+
-                                            "   //yourdialog.show( { id : 0 } , function() {\n"+
-                                            "   //  _this.grid.footer.onClick('first');\n"+
-                                            "   //}); \n"+
+                                            "    if (!_this.dialog) return;\n" +
+                                            "    _this.dialog.show( { id : 0 } , function() {\n"+
+                                            "        _this.grid.footer.onClick('first');\n"+
+                                            "   }); \n"+
                                             "}\n"
                                     },
                                     "|xns": "Roo.Toolbar"
@@ -583,10 +584,10 @@ readers.forEach(function(reader) {
                                             "        Roo.MessageBox.alert(\"Error\", s.length ? \"Select only one Row\" : \"Select a Row\");\n"+
                                             "        return;\n"+
                                             "    }\n"+
-                                            "    \n"+
-                                            "    //_this.dialog.show(s[0].data, function() {\n"+
-                                            "    //    _this.grid.footer.onClick('first');\n"+
-                                            "    //   }); \n"+
+                                            "    if (!_this.dialog) return;\n" +
+                                            "    _this.dialog.show(s[0].data, function() {\n"+
+                                            "        _this.grid.footer.onClick('first');\n"+
+                                            "    }); \n"+
                                             "    \n"+
                                             "}\n" 
                                         
@@ -601,7 +602,7 @@ readers.forEach(function(reader) {
                                     "listeners": {
                                         "|click": "function()\n"+
                                             "{\n"+
-                                            "   //Pman.genericDelete(_this, _this.grid.tableName); \n"+
+                                            "     Pman.genericDelete(_this, '" + reader.table + "'); \n"+
                                             "}\n"+
                                             "        "
                                     },
