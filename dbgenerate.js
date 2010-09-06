@@ -514,7 +514,7 @@ readers.forEach(function(reader) {
                     "listeners": {
                         "|render": "function() \n" +
                             "{\n" +
-                            "   _this.grid = this; \n" +
+                            "    _this.grid = this; \n" +
                             "    //_this.dialog = Pman.Dialog.FILL_IN\n" +
                             "    if (_this.panel.active) {\n" +
                             "       this.footer.onClick('first');\n" +
