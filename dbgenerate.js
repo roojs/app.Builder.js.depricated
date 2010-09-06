@@ -279,9 +279,9 @@ tables.forEach(function(table) {
         if (e.Type == 'text') {
             xtype = 'TextArea';
         }
-        if (e.name == 'id') {
+        if (row.name == 'id') {
             xtype = 'Hidden';
-        }
+        } 
         // what about booleans.. -> checkboxes..
         
         
@@ -296,7 +296,10 @@ tables.forEach(function(table) {
         if (xtype == 'TextArea') {
             form[row.name].height = 100;
         }
-        
+        if (xtype == 'Hidden') {
+            delete form[row.name].fieldLabel;
+            delete form[row.name].width;
+        }
         
     });
     
@@ -630,49 +633,52 @@ readers.forEach(function(reader) {
     formElements.push(reader.form['id']);
 
     print("WRITE: " +  dir + '/' + cfg.DBNAME + '_' + reader.table + '.json');
+    var frmCfg = 
+    {
+        '|xns' : 'Roo.form',
+        xtype : "Form",
+        listeners : {
+            "|actioncomplete" : "function(_self,action)\n"+
+                "{\n"+
+                "    if (action.type == 'setdata') {\n"+
+                "       //_this.dialog.el.mask(\"Loading\");\n"+
+                "       //this.load({ method: 'GET', params: { '_id' : _this.data.id }});\n"+
+                "       return;\n"+
+                "    }\n"+
+                "    if (action.type == 'load') {\n"+
+                "        _this.dialog.el.unmask();\n"+
+                "        return;\n"+
+                "    }\n"+
+                "    if (action.type =='submit') {\n"+
+                "    \n"+
+                "        _this.dialog.el.unmask();\n"+
+                "        _this.dialog.hide();\n"+
+                "    \n"+
+                "         if (_this.callback) {\n"+
+                "            _this.callback.call(_this, _this.form.getValues());\n"+
+                "         }\n"+
+                "         _this.form.reset();\n"+
+                "         return;\n"+
+                "    }\n"+
+                "}\n",
+            
+            "|rendered" : "function (form)\n"+
+                "{\n"+
+                "    _this.form= form;\n"+
+                "}\n"
+        },
+        method : "POST",
+        style : "margin:10px;",
+        "|url" : "baseURL + '/Roo/" + reader.table + ".php'",
+        items : formElements
+    };
+    
     
     File.write(
         dir + '/' + cfg.DBNAME + '_' + reader.table + '.json',
             
        
-        JSON.stringify({
-            '|xns' : 'Roo.form',
-            xtype : "Form",
-            listeners : {
-                "|actioncomplete" : "function(_self,action)\n"+
-                    "{\n"+
-                    "    if (action.type == 'setdata') {\n"+
-                    "       //_this.dialog.el.mask(\"Loading\");\n"+
-                    "       //this.load({ method: 'GET', params: { '_id' : _this.data.id }});\n"+
-                    "       return;\n"+
-                    "    }\n"+
-                    "    if (action.type == 'load') {\n"+
-                    "        _this.dialog.el.unmask();\n"+
-                    "        return;\n"+
-                    "    }\n"+
-                    "    if (action.type =='submit') {\n"+
-                    "    \n"+
-                    "        _this.dialog.el.unmask();\n"+
-                    "        _this.dialog.hide();\n"+
-                    "    \n"+
-                    "         if (_this.callback) {\n"+
-                    "            _this.callback.call(_this, _this.form.getValues());\n"+
-                    "         }\n"+
-                    "         _this.form.reset();\n"+
-                    "         return;\n"+
-                    "    }\n"+
-                    "}\n",
-                
-                "|rendered" : "function (form)\n"+
-                    "{\n"+
-                    "    _this.form= form;\n"+
-                    "}\n"
-            },
-            method : "POST",
-            style : "margin:10px;",
-            "|url" : "baseURL + '/Roo/" + reader.table + ".php'",
-            items : formElements
-        }, null, 4)
+        JSON.stringify( frmCfg, null, 4)
     );
             
             
@@ -700,12 +706,85 @@ readers.forEach(function(reader) {
    
    
    
+    // DIALOG.
    
    
-   
-   
-});              
+    dir = GLib.get_home_dir() + '/.Builder/Roo.LayoutDialog'; 
+    if (!File.isDirectory(dir)) {
+        File.mkdir(dir);
+    }
+    var formElements = [];
+    for (var k in reader.form) {
+        if (k == 'id') { // should really do primary key testing..
+            continue;
+        }
+        formElements.push(reader.form[k]);
+    }
+    formElements.push(reader.form['id']);
 
-
-
+    print("WRITE: " +  dir + '/' + cfg.DBNAME + '_' + reader.table + '.json');
+    
+    File.write(
+        dir + '/' + cfg.DBNAME + '_' + reader.table + '.json',
+            
+       
+        JSON.stringify({
+       
+            "closable": false,
+            "collapsible": false,
+            "height": 120,
+            "resizable": false,
+            "title": "Edit / Create Port",
+            "width": 400,
+            "xtype": "LayoutDialog",
+            "|xns": "Roo",
+            "items": [
+                {
+                    "|xns": "Roo",
+                    "xtype": "LayoutRegion",
+                    "*prop": "center"
+                },
+                {
+                    "region": "center",
+                    "xtype": "ContentPanel",
+                    "|xns": "Roo",
+                    "items": [
+                        frmCfg
+                    ]
+                }
+            ]
+        }, null,4);
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+    
+                {
+                    "listeners": {
+                        "click": "function (_self, e)\n{\n    _this.dialog.hide();\n}"
+                    },
+                    "*prop": "buttons[]",
+                    "text": "Cancel",
+                    "xtype": "Button",
+                    "|xns": "Roo"
+                },
+                {
+                    "listeners": {
+                        "click": "function (_self, e)\n{\n    // do some checks?\n     \n    \n    _this.dialog.el.mask(\"Saving\");\n    _this.form.doAction(\"submit\");\n\n}"
+                    },
+                    "*prop": "buttons[]",
+                    "text": "Save",
+                    "xtype": "Button",
+                    "|xns": "Roo"
+                }
+            ]
+        }
+    ]
+}
 
