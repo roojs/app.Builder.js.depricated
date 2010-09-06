@@ -472,8 +472,7 @@ readers.forEach(function(reader) {
         root : "data",
         '*prop' : "reader",
         id : 'id', // maybe no..
-        remoteSort : true,
-        '|sortInfo' : "{ field : '" + reader.firstTxtCol  +  "', direction: 'ASC' }", 
+       
         '|fields' :  JSON.stringify(reader.reader, null,4).replace(/"/g,"'")
     };
     
@@ -530,7 +529,8 @@ readers.forEach(function(reader) {
                         {
                             "*prop": "dataSource",
                             "xtype": "Store",
-                            
+                             remoteSort : true,
+                            '|sortInfo' : "{ field : '" + reader.firstTxtCol  +  "', direction: 'ASC' }", 
                             "|xns": "Roo.data",
                             "items": [
                                 
