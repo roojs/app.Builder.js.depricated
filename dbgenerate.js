@@ -217,7 +217,7 @@ tables.forEach(function(table) {
        
     var firstTxtCol = '';
     
-    print(JSON.stringify(schema, null,4));
+    //print(JSON.stringify(schema, null,4));
     
     schema.forEach(function(e)  {
         var type = e.Type.match(/([^(]+)\(([^\)]+)\)/);
