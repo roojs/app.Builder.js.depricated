@@ -624,10 +624,12 @@ readers.forEach(function(reader) {
         File.mkdir(dir);
     }
     var formElements = [];
+    var formHeight = 50;
     for (var k in reader.form) {
         if (k == 'id') { // should really do primary key testing..
             continue;
         }
+        formHeight += reader.form[k].xtype == 'TextArea' ? 100 : 30;
         formElements.push(reader.form[k]);
     }
     formElements.push(reader.form['id']);
@@ -732,9 +734,9 @@ readers.forEach(function(reader) {
        
             "closable": false,
             "collapsible": false,
-            "height": 120,
+            "height": formHeight,
             "resizable": false,
-            "title": "Edit / Create Port",
+            "title": "Edit / Create " + reader.table,
             "width": 400,
             "xtype": "LayoutDialog",
             "|xns": "Roo",
