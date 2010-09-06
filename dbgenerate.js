@@ -751,20 +751,8 @@ readers.forEach(function(reader) {
                     "items": [
                         frmCfg
                     ]
-                }
-            ]
-        }, null,4);
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-    
+                },
+                
                 {
                     "listeners": {
                         "click": "function (_self, e)\n{\n    _this.dialog.hide();\n}"
@@ -784,7 +772,11 @@ readers.forEach(function(reader) {
                     "|xns": "Roo"
                 }
             ]
-        }
-    ]
-}
+        }, null,4)
+    );
+   
+   
+   
+});
+
 
