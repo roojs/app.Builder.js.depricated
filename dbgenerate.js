@@ -505,7 +505,15 @@ readers.forEach(function(reader) {
             "background": true,
             "region" : 'center',
             "listeners": {
-                "|activate": "function() {\n    _this.panel = this;\n    if (_this.grid) {\n        _this.grid.footer.onClick('first');\n    }\n}"
+                "|activate": "function() {\n    _this.panel = this;\n    if (_this.grid) {\n        _this.grid.footer.onClick('first');\n    }\n}",
+                "|rowdblclick": "function (_self, rowIndex, e)\n" + 
+                    "{\n" + 
+                    "    if (!_this.dialog) return;\n" + 
+                    "    _this.dialog.show( this.getDataSource().getAt(rowIndex), function() {\n" + 
+                    "        _this.grid.footer.onClick('first');\n" + 
+                    "    }); \n" + 
+                    "}\n"
+                
             },
             "items": [
                 {
