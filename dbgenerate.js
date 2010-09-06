@@ -419,6 +419,7 @@ readers.forEach(function(reader) {
             continue;
         }
         if (typeof(reader.form[col]) == 'undefined') {
+            print (JSON.stringify(reader.form, null,4));
             print("missing linked column " + col);
             continue;
         }
