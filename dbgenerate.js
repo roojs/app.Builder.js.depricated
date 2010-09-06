@@ -504,6 +504,7 @@ readers.forEach(function(reader) {
             "fitContainer": true,
             "tableName": reader.table,
             "background": true,
+            "region" : 'center',
             "listeners": {
                 "|activate": "function() {\n    _this.panel = this;\n    if (_this.grid) {\n        _this.grid.footer.onClick('first');\n    }\n}"
             },
