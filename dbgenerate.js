@@ -99,10 +99,11 @@ var map = {
     'datetime' : 'string',
     'int' : 'int',
     'bigint' : 'int',
-    'char' : 'int',
+    
     'tinyint' : 'int',
     'decimal' : 'float',
     'float' : 'float',
+    'char' : 'string',
     'varchar' : 'string',
     'text' : 'string',
     'longtext' : 'string',
@@ -118,6 +119,7 @@ var ini = { }
 
 function readIni(fn)
 {
+    print('Read INI : ' + fn);
     var key_file = new GLib.KeyFile.c_new();
     if (!key_file.load_from_file (fn , GLib.KeyFileFlags.NONE )) {
         return;
@@ -190,7 +192,7 @@ if (File.isDirectory(cfg.INI)) {
     
     
 }
-print(JSON.stringify(ini, null,4));
+//print(JSON.stringify(ini, null,4));
  //console.dump(ini);
 
 
