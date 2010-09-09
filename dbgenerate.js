@@ -96,7 +96,8 @@ Gda.DataSelect.prototype.fetchAll = function()
 
 var map = {
     'date' : 'date',
-    'datetime' : 'string',
+    'datetime' : 'date',
+    'time' : 'string', //bogus
     'int' : 'int',
     'bigint' : 'int',
     
