@@ -18,7 +18,7 @@
             "xtype": "Dialog",
             "|deletable": false,
             "|modal": true,
-            "|show": "function (c) \n{\n    this.project = c.project;\n    if (!this.el) {\n        this.init();\n    }\n    this.def =  { \n        name : '' , \n        title : '' ,\n        region : '' ,\n        parent: '',\n        disable: '',\n        modOrder : '0',\n        permname : ''\n    };\n    for (var i in this.def) {\n        c[i] = c[i] || this.def[i];\n        this.get(i).el.set_text(c[i]);\n    }\n    if (c.name) {\n        this.el.set_title(\"Edit File Details - \" + c.name);\n    } else {\n        this.el.set_title(\"Create New File\");\n    }\n     \n    this.file = c;\n    console.log('show all');\n    this.el.show_all();\n    this.success = c.success;\n    \n    \n}",
+            "|show": "function (c) \n{\n    this.project = c.project;\n    if (!this.el) {\n        this.init();\n    }\n    this.def =  { \n        name : '' , \n        title : '' ,\n        region : '' ,\n        parent: '',\n      //  disable: '',\n        modOrder : '0',\n        permname : ''\n    };\n    for (var i in this.def) {\n        c[i] = c[i] || this.def[i];\n        this.get(i).el.set_text(c[i]);\n    }\n    if (c.name) {\n        this.el.set_title(\"Edit File Details - \" + c.name);\n    } else {\n        this.el.set_title(\"Create New File\");\n    }\n     \n    this.file = c;\n    console.log('show all');\n    this.el.show_all();\n    this.success = c.success;\n    \n    \n}",
             "|xns": "Gtk",
             "items": [
                 {
