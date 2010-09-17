@@ -103,7 +103,7 @@
                                     "|xns": "Gtk"
                                 },
                                 {
-                                    "label": "Permission",
+                                    "label": "Permission Name",
                                     "pack": "add",
                                     "x_options": 4,
                                     "xalign": 0.9,
