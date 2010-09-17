@@ -100,7 +100,7 @@ DialogNewComponent=new XObject({
             title : '' ,
             region : '' ,
             parent: '',
-            disable: '',
+          //  disable: '',
             modOrder : '0',
             permname : ''
         };
