@@ -113,7 +113,7 @@
                                     "|xns": "Gtk"
                                 },
                                 {
-                                    "id": "disable",
+                                    "id": "permname",
                                     "pack": "add",
                                     "xtype": "Entry",
                                     "|visible": true,
