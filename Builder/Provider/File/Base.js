@@ -60,8 +60,8 @@ Base = XObject.define(
         {
             var ret = { }; 
             var _this = this;
-            ['id', 'name', 'parent', 'title', 'path', 'items' ].forEach( function(k) {
-                ret[k] = _this[k];
+            ['id', 'name', 'parent', 'title', 'path', 'items' , 'permname' ].forEach( function(k) {
+                ret[k] = typeof(_this[k]) == 'undefined' ? '' _this[k];
             });
             return ret;
         },
