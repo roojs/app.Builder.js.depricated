@@ -113,7 +113,7 @@ Roo = XObject.define(
                 var cfg = JSON.parse(src);
                 print("loaded data");
                 console.dump(cfg);
-                
+                _this.modOrder = cfg.modOrder || '001';
                 _this.name = cfg.name.replace(/\.bjs/, ''); // BC!
                 _this.parent =  cfg.parent;
                 _this.permname =  cfg.permname || '';
