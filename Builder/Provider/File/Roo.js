@@ -116,6 +116,7 @@ Roo = XObject.define(
                 
                 _this.name = cfg.name.replace(/\.bjs/, ''); // BC!
                 _this.parent =  cfg.parent;
+                _this.permname =  cfg.permname;
                 _this.title =  cfg.title;
                 _this.items = cfg.items || []; 
                 
