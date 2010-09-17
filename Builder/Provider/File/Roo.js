@@ -79,6 +79,7 @@ Roo = XObject.define(
         parent : '',
         title : '', // the title on displayed when loading.
         disable : '', // use a function to that returns false to disable this..
+        permname: '',
         
         setNSID : function(id)
         {
