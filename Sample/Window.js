@@ -779,7 +779,7 @@ Window=new XObject({
                                                                             id : "model",
                                                                             pack : "set_model",
                                                                             changed : function(n, refresh) {
-                                                                                     print("MODEL CHANGED CALLED" + this.activePath);
+                                                                                //     print("MODEL CHANGED CALLED" + this.activePath);
                                                                                      if (this.activePath) {
                                                                                         var iter = new Gtk.TreeIter();
                                                                                         this.el.get_iter(iter, new Gtk.TreePath.from_string(this.activePath))
@@ -790,7 +790,7 @@ Window=new XObject({
                                                                                     }
                                                                                         //this.currentTree = this.toJS(false, true)[0];
                                                                                     this.file.items = this.toJS(false, false);
-                                                                                    print("AFTER CHANGED");
+                                                                                  //  print("AFTER CHANGED");
                                                                                     //console.dump(this.file.items);
                                                                                     this.file.save();
                                                                                     this.currentTree = this.file.items[0];
@@ -2173,7 +2173,7 @@ Window=new XObject({
                                                                             return val;
                                                                         }
                                                                         var type = this.getType(this.el.get_path(iter).to_string());
-                                                                        print("TYPE: " +type + " -  val:" + val);
+                                                                        //print("TYPE: " +type + " -  val:" + val);
                                                                         switch(type.toLowerCase()) {
                                                                             case 'number':
                                                                             case 'uint':
@@ -3709,7 +3709,6 @@ Window=new XObject({
                                                             items : [
                                                                 {
                                                                     xtype: GtkSource.Buffer,
-                                                                    pack : "set_buffer",
                                                                     listeners : {
                                                                         changed : function (self) {
                                                                             var s = new Gtk.TextIter();
@@ -3723,9 +3722,9 @@ Window=new XObject({
                                                                                 this.get('/RightEditor.view').el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({
                                                                                     red: 0xFFFF, green: 0xCCCC , blue : 0xCCCC
                                                                                    }));
-                                                                                print("SYNTAX ERROR IN EDITOR");   
-                                                                                print(e);
-                                                                                console.dump(e);
+                                                                                //print("SYNTAX ERROR IN EDITOR");   
+                                                                                //print(e);
+                                                                                //console.dump(e);
                                                                                 return;
                                                                             }
                                                                             this.get('/RightEditor.view').el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({
@@ -3734,7 +3733,8 @@ Window=new XObject({
                                                                             
                                                                              this.get('/LeftPanel.model').changed(  str , false);
                                                                         }
-                                                                    }
+                                                                    },
+                                                                    pack : "set_buffer"
                                                                 }
                                                             ]
                                                         }
