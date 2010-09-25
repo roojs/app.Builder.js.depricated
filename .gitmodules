@@ -1,3 +1,6 @@
 [submodule "roojs1"]
 	path = roojs1
 	url = http://public.akbkhome.com/roojs1
+[submodule "gir-1.1"]
+	path = gir-1.1
+	url = http://private.akbkhome.com/gir-1.1
