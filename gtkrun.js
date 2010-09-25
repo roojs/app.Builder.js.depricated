@@ -25,6 +25,9 @@
  * 
  */
 // autogen?
+
+// sort out import path!!!
+ 
  
 Gtk = imports.gi.Gtk;
 Gdk = imports.gi.Gdk;
