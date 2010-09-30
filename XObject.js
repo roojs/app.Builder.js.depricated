@@ -55,6 +55,9 @@ GObject = imports.gi.GObject;
 function XObject (cfg) {
     // first apply cfg if set.
       //print("new XOBJECT!!!");
+      
+    //print ("XObject ctr");
+      
     this.config = {};
     this.constructor = XObject;
     
@@ -63,13 +66,22 @@ function XObject (cfg) {
     // start by seeing if we have a base class....
     try {
         // loocks for XObject/Gtk/TreeView.js [   TreeView = { .... } ]
-        var base = imports.XObject[cfg.xns][cfg.xtype][cfg.xtype];
-        for (var i in base) {
-            this[i] = base[i];
+        // xns is not a string!!!?
+        var gname = false;
+        if (typeof(cfg.xtype) == 'object') {
+            gname = GObject.type_name(cfg.xtype.type);
+           // print("GNAME:" +gname + " GTYPE:"+cfg.xtype.type);
+        }
+        
+        var base = gname  ? imports.XObjectBase[gname][gname] : false;
+        if (base) {
+          //  print("Overlaying XOBJBECT-BASE."  + cfg.xtype);
+            XObject.extend(this,base);
         }
         
     } catch (e) {
-        
+        // if debug?
+        print("error finding " + gname + " - " + e.toString());
     }
     
     
@@ -113,10 +125,38 @@ function XObject (cfg) {
         
     }
     
+    // interesting question should we call constructor on items here...
+    // as the real work is done in init anyway..
+    var _this= this;
     
-    
-    
-    
+    var items = [];
+    this.items.forEach(function(i) {
+        items.push(i);
+    });
+    this.items = [];
+    items.forEach(function(i,n) {
+        /*
+        
+        if (type == 'GtkTable' && i.pack == 'add') {
+            var c = n % _this.config.n_columns;
+            var r = Math.floor(n/_this.config.n_columns);
+            i.pack = [ 'attach', c, c+1, r, r+1, 
+                    typeof(i.x_options) == 'undefined' ?  5 : i.x_options,
+                    typeof(i.y_options) == 'undefined' ?  5 : i.y_options,
+                    typeof(i.x_padding) == 'undefined' ?  0 : i.x_padding,
+                    typeof(i.x_padding) == 'undefined' ?  0 : i.x_padding
+                   
+            ]
+        }
+        */
+        var item = (i.constructor == XObject) ? o : new XObject(i);
+        item.parent = _this;
+        _this.items.push(item);
+        //_this.addItem(i);
+    });
+    if (this.onConstruct) {
+        this.onConstruct.call(this);
+    }
     
 }
 
@@ -150,13 +190,13 @@ XObject.prototype = {
     init : function()
     {
          
-        var items = [];
-        this.items.forEach(function(i) {
-            items.push(i);
-        });
+       // var items = [];
+        //this.items.forEach(function(i) {
+        //    items.push(i);
+        //});
         // remove items.
         this.listeners = this.listeners || {}; 
-        this.items = [];
+        //this.items = [];
          
         // do we need to call 'beforeInit here?'
          
@@ -236,25 +276,11 @@ XObject.prototype = {
         //}
         
         var type = this.xtype.type ? GObject.type_name(this.xtype.type) : '';
-        print("MAKE " + type);
-        
+        print("add children to " + type);
         
         var _this=this;
-        items.forEach(function(i,n) {
-            
-            if (type == 'GtkTable' && i.pack == 'add') {
-                var c = n % _this.config.n_columns;
-                var r = Math.floor(n/_this.config.n_columns);
-                i.pack = [ 'attach', c, c+1, r, r+1, 
-                        typeof(i.x_options) == 'undefined' ?  5 : i.x_options,
-                        typeof(i.y_options) == 'undefined' ?  5 : i.y_options,
-                        typeof(i.x_padding) == 'undefined' ?  0 : i.x_padding,
-                        typeof(i.x_padding) == 'undefined' ?  0 : i.x_padding
-                       
-                ]
-            }
-            
-            _this.addItem(i);
+        this.items.forEach(function(i,n) {
+            _this.addItem(i,n);
         })
             
         
@@ -262,6 +288,8 @@ XObject.prototype = {
             this.addListener(i, this.listeners[i]);
         }
         
+        this.init = XObject.emptyFn;
+           
         // delete this.listeners ?
         // do again so child props work!
        
@@ -275,16 +303,16 @@ XObject.prototype = {
       * uses pack property to determine how to add it.
       * @arg cfg {Object} same as XObject constructor.
       */
-    addItem : function(o) {
-        if (typeof(o) == 'undefined') {
+    addItem : function(item, pos) 
+    {
+        
+        if (typeof(item) == 'undefined') {
             print("Invalid Item added to this!");
             imports.console.dump(this);
             Seed.quit();
         }
         // what about extended items!?!?!?
-        var item = (o.constructor == XObject) ? o : new XObject(o);
-        item.parent = this;
-        this.items.push(item);
+       
         item.init();
         //print("CTR:PROTO:" + ( item.id ? item.id : '??'));
        // print("addItem - call init [" + item.pack.join(',') + ']');
@@ -295,15 +323,18 @@ XObject.prototype = {
         }
          
         
-        if (item.pack===false) {  // no 
+        if (item.pack===false) {  // no packing.. various items have this ..
             return;
         }
-        if (typeof(item.pack) == 'function') {
+        
+        if (typeof(item.pack) == 'function') { // pack is a function..
             // parent, child
             item.pack.apply(item, [ this , item  ]);
             item.parent = this;
             return;
         }
+        
+        // pack =  'add,x,y'
         var args = [];
         var pack_m  = false;
         if (typeof(item.pack) == 'string') {
@@ -332,16 +363,32 @@ XObject.prototype = {
                     
             }
            
-            
-            
-            
             return;
         }
         
         
+        // finally call the pack method 
         //Seed.print('Pack ' + this.el + '.'+ pack_m + '(' + item.el + ')');
-
+        
         args.unshift(item.el);
+        
+        
+        
+        if (this.parent && this.parent.xtype == 'GtkTable' && item.pack == 'add') {
+            var c = n % this.parent.config.n_columns;
+            var r = Math.floor(pos/_this.parent.config.n_columns);
+            item.pack = [ 'attach', c, c+1, r, r+1, 
+                    typeof(item.x_options) == 'undefined' ?  5 : item.x_options,
+                    typeof(item.y_options) == 'undefined' ?  5 : item.y_options,
+                    typeof(item.x_padding) == 'undefined' ?  0 : item.x_padding,
+                    typeof(item.x_padding) == 'undefined' ?  0 : item.x_padding
+            
+            ];
+        }
+        
+        
+        
+        
         if (XObject.debug) print(pack_m + '[' + args.join(',') +']');
         //Seed.print('args: ' + args.length);
         if (pack_m) {
@@ -551,7 +598,12 @@ XObject.extend(XObject,
      * 
      */
     cache: { },
-    
+    /**
+     * Empty function
+     * 
+     */
+    emptyFn : function () { },
+        
     /**
      * Copies all the properties of config to obj, if the do not exist.
      * @param {Object} obj The receiver of the properties

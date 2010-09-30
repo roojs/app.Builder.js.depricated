@@ -1,5 +1,5 @@
 {
-    "id": "file-gtk-12",
+    "id": "file-gtk-13",
     "name": "Window",
     "parent": "",
     "title": false,
@@ -13,24 +13,22 @@
             "|xns": "Gtk",
             "items": [
                 {
-                    "listeners": {
-                        "show": "function() { \n   var stage = this.el.get_stage(); \n   print(this.items.length);\n   this.items.forEach( \n      function(e) { \n          print(e.xtype);\n          stage.add_actor(e.el);\n        }\n     );\n}"
-                    },
                     "pack": "add",
                     "xtype": "Embed",
                     "|xns": "GtkClutter",
+                    "listeners": {},
                     "items": [
                         {
                             "pack": false,
                             "x": 10,
                             "xtype": "Actor",
                             "y": 10,
-                            "|init": "function() {\n\n    var child = new XObject(this.items[0]);\n    child.init();\n    child.parent = this;\n    //var contents = new Gtk.Button({ label: 'test' }); \n    var contents = child.el;\n   \n    print(JSON.stringify(this.items));\n    \n    \n    this.el = new GtkClutter.Actor.with_contents (  contents) ;\n    XObject.prototype.init.call(this);\n}\n",
                             "|xns": "GtkClutter",
+                            "listeners": {},
                             "items": [
                                 {
                                     "listeners": {
-                                        "clicked": "function (self) {\n   Clutter = imports.gi.Clutter;\n        var animate = this.parent.el.animate(\n\t\tClutter.AnimationMode.EASE_OUT_ELASTIC, 2000,\n\t\t{\n\t\t\t   scale_x : 5,\n\t\t\t  scale_y: 5,\n\n\t\t}\n\t\t);\n\t\tanimate.timeline.start();\n\n}"
+                                        "clicked": "function (self) {\n    Clutter = imports.gi.Clutter;\n    var animate = this.parent.el.animate(\n        Clutter.AnimationMode.EASE_OUT_ELASTIC, 2000,\n        {\n\t       scale_x : 5,\n\t      scale_y: 5,\n\n        }\n    );\n    animate.timeline.start();\n\n}"
                                     },
                                     "height_request": 100,
                                     "label": "project list",
@@ -46,8 +44,8 @@
                             "x": 10,
                             "xtype": "Actor",
                             "y": 150,
-                            "|init": "function() {\n\n    var child = new XObject(this.items[0]);\n    child.init();\n    child.parent = this;\n    //var contents = new Gtk.Button({ label: 'test' }); \n    var contents = child.el;\n    print (\"actor.items\");\n    print(JSON.stringify(this.items));\n    \n    \n    this.el = new GtkClutter.Actor.with_contents (  contents) ;\n    XObject.prototype.init.call(this);\n}\n",
                             "|xns": "GtkClutter",
+                            "listeners": {},
                             "items": [
                                 {
                                     "listeners": {
@@ -67,8 +65,8 @@
                             "x": 10,
                             "xtype": "Actor",
                             "y": 300,
-                            "|init": "function() {\n\n    var child = new XObject(this.items[0]);\n    child.init();\n    child.parent = this;\n    //var contents = new Gtk.Button({ label: 'test' }); \n    var contents = child.el;\n   \n    print(JSON.stringify(this.items));\n    \n    \n    this.el = new GtkClutter.Actor.with_contents (  contents) ;\n    XObject.prototype.init.call(this);\n}\n",
                             "|xns": "GtkClutter",
+                            "listeners": {},
                             "items": [
                                 {
                                     "listeners": {
@@ -88,8 +86,8 @@
                             "x": 10,
                             "xtype": "Actor",
                             "y": 450,
-                            "|init": "function() {\n\n    var child = new XObject(this.items[0]);\n    child.init();\n    child.parent = this;\n    //var contents = new Gtk.Button({ label: 'test' }); \n    var contents = child.el;\n   \n    print(JSON.stringify(this.items));\n    \n    \n    this.el = new GtkClutter.Actor.with_contents (  contents) ;\n    XObject.prototype.init.call(this);\n}\n",
                             "|xns": "GtkClutter",
+                            "listeners": {},
                             "items": [
                                 {
                                     "listeners": {
@@ -109,8 +107,8 @@
                             "x": 150,
                             "xtype": "Actor",
                             "y": 450,
-                            "|init": "function() {\n\n    var child = new XObject(this.items[0]);\n    child.init();\n    child.parent = this;\n    //var contents = new Gtk.Button({ label: 'test' }); \n    var contents = child.el;\n   \n    print(JSON.stringify(this.items));\n    \n    \n    this.el = new GtkClutter.Actor.with_contents (  contents) ;\n    XObject.prototype.init.call(this);\n}\n",
                             "|xns": "GtkClutter",
+                            "listeners": {},
                             "items": [
                                 {
                                     "listeners": {
@@ -130,8 +128,8 @@
                             "x": 150,
                             "xtype": "Actor",
                             "y": 10,
-                            "|init": "function() {\n\n    var child = new XObject(this.items[0]);\n    child.init();\n    child.parent = this;\n    //var contents = new Gtk.Button({ label: 'test' }); \n    var contents = child.el;\n   \n    print(JSON.stringify(this.items));\n    \n    \n    this.el = new GtkClutter.Actor.with_contents (  contents) ;\n    XObject.prototype.init.call(this);\n}\n",
                             "|xns": "GtkClutter",
+                            "listeners": {},
                             "items": [
                                 {
                                     "listeners": {
@@ -151,8 +149,8 @@
                             "x": 100,
                             "xtype": "Actor",
                             "y": 300,
-                            "|init": "function() {\n\n    var child = new XObject(this.items[0]);\n    child.init();\n    child.parent = this;\n    //var contents = new Gtk.Button({ label: 'test' }); \n    var contents = child.el;\n   \n    print(JSON.stringify(this.items));\n    \n    \n    this.el = new GtkClutter.Actor.with_contents (  contents) ;\n    XObject.prototype.init.call(this);\n}\n",
                             "|xns": "GtkClutter",
+                            "listeners": {},
                             "items": [
                                 {
                                     "listeners": {
@@ -171,5 +169,6 @@
                 }
             ]
         }
-    ]
+    ],
+    "permname": ""
 }

@@ -21,18 +21,6 @@ Window=new XObject({
     items : [
         {
             xtype: GtkClutter.Embed,
-            listeners : {
-                show : function() { 
-                   var stage = this.el.get_stage(); 
-                   print(this.items.length);
-                   this.items.forEach( 
-                      function(e) { 
-                          print(e.xtype);
-                          stage.add_actor(e.el);
-                        }
-                     );
-                }
-            },
             pack : "add",
             items : [
                 {
@@ -40,20 +28,6 @@ Window=new XObject({
                     pack : false,
                     x : 10,
                     y : 10,
-                    init : function() {
-                    
-                        var child = new XObject(this.items[0]);
-                        child.init();
-                        child.parent = this;
-                        //var contents = new Gtk.Button({ label: 'test' }); 
-                        var contents = child.el;
-                       
-                        print(JSON.stringify(this.items));
-                        
-                        
-                        this.el = new GtkClutter.Actor.with_contents (  contents) ;
-                        XObject.prototype.init.call(this);
-                    },
                     items : [
                         {
                             xtype: Gtk.Button,
@@ -84,20 +58,6 @@ Window=new XObject({
                     pack : false,
                     x : 10,
                     y : 150,
-                    init : function() {
-                    
-                        var child = new XObject(this.items[0]);
-                        child.init();
-                        child.parent = this;
-                        //var contents = new Gtk.Button({ label: 'test' }); 
-                        var contents = child.el;
-                        print ("actor.items");
-                        print(JSON.stringify(this.items));
-                        
-                        
-                        this.el = new GtkClutter.Actor.with_contents (  contents) ;
-                        XObject.prototype.init.call(this);
-                    },
                     items : [
                         {
                             xtype: Gtk.Button,
@@ -128,20 +88,6 @@ Window=new XObject({
                     pack : false,
                     x : 10,
                     y : 300,
-                    init : function() {
-                    
-                        var child = new XObject(this.items[0]);
-                        child.init();
-                        child.parent = this;
-                        //var contents = new Gtk.Button({ label: 'test' }); 
-                        var contents = child.el;
-                       
-                        print(JSON.stringify(this.items));
-                        
-                        
-                        this.el = new GtkClutter.Actor.with_contents (  contents) ;
-                        XObject.prototype.init.call(this);
-                    },
                     items : [
                         {
                             xtype: Gtk.Button,
@@ -172,20 +118,6 @@ Window=new XObject({
                     pack : false,
                     x : 10,
                     y : 450,
-                    init : function() {
-                    
-                        var child = new XObject(this.items[0]);
-                        child.init();
-                        child.parent = this;
-                        //var contents = new Gtk.Button({ label: 'test' }); 
-                        var contents = child.el;
-                       
-                        print(JSON.stringify(this.items));
-                        
-                        
-                        this.el = new GtkClutter.Actor.with_contents (  contents) ;
-                        XObject.prototype.init.call(this);
-                    },
                     items : [
                         {
                             xtype: Gtk.Button,
@@ -216,20 +148,6 @@ Window=new XObject({
                     pack : false,
                     x : 150,
                     y : 450,
-                    init : function() {
-                    
-                        var child = new XObject(this.items[0]);
-                        child.init();
-                        child.parent = this;
-                        //var contents = new Gtk.Button({ label: 'test' }); 
-                        var contents = child.el;
-                       
-                        print(JSON.stringify(this.items));
-                        
-                        
-                        this.el = new GtkClutter.Actor.with_contents (  contents) ;
-                        XObject.prototype.init.call(this);
-                    },
                     items : [
                         {
                             xtype: Gtk.Button,
@@ -260,20 +178,6 @@ Window=new XObject({
                     pack : false,
                     x : 150,
                     y : 10,
-                    init : function() {
-                    
-                        var child = new XObject(this.items[0]);
-                        child.init();
-                        child.parent = this;
-                        //var contents = new Gtk.Button({ label: 'test' }); 
-                        var contents = child.el;
-                       
-                        print(JSON.stringify(this.items));
-                        
-                        
-                        this.el = new GtkClutter.Actor.with_contents (  contents) ;
-                        XObject.prototype.init.call(this);
-                    },
                     items : [
                         {
                             xtype: Gtk.Button,
@@ -304,20 +208,6 @@ Window=new XObject({
                     pack : false,
                     x : 100,
                     y : 300,
-                    init : function() {
-                    
-                        var child = new XObject(this.items[0]);
-                        child.init();
-                        child.parent = this;
-                        //var contents = new Gtk.Button({ label: 'test' }); 
-                        var contents = child.el;
-                       
-                        print(JSON.stringify(this.items));
-                        
-                        
-                        this.el = new GtkClutter.Actor.with_contents (  contents) ;
-                        XObject.prototype.init.call(this);
-                    },
                     items : [
                         {
                             xtype: Gtk.Button,

@@ -7,6 +7,7 @@ GObject = imports.gi.GObject;
 GtkSource = imports.gi.GtkSource;
 WebKit = imports.gi.WebKit;
 Vte = imports.gi.Vte;
+GtkClutter = imports.gi.GtkClutter;
 console = imports.console;
 XObject = imports.XObject.XObject;
 Window=new XObject({
@@ -452,68 +453,6 @@ Window=new XObject({
                                                             items : [
                                                                 {
                                                                     xtype: Gtk.TreeView,
-                                                                    pack : "add",
-                                                                    id : "view",
-                                                                    headers_visible : false,
-                                                                    enable_tree_lines : true,
-                                                                    tooltip_column : 1,
-                                                                    init : function() {
-                                                                        	XObject.prototype.init.call(this);
-                                                                    	var description = new Pango.FontDescription.c_new();
-                                                                    	description.set_size(8000);
-                                                                    	this.el.modify_font(description);
-                                                                    
-                                                                    	this.selection = this.el.get_selection();
-                                                                    	this.selection.set_mode( Gtk.SelectionMode.SINGLE);
-                                                                    	var _this = this;
-                                                                    
-                                                                    	// is this really needed??
-                                                                    	this.selection.signal['changed'].connect(function() {
-                                                                    		_this.get('/LeftTree.view').listeners.cursor_changed.apply(
-                                                                    		    _this.get('/LeftTree.view'), [ _this.get('/LeftTree.view'), '']
-                                                                    		);
-                                                                    	});
-                                                                    
-                                                                    	Gtk.drag_source_set (
-                                                                    		this.el,            /* widget will be drag-able */
-                                                                    		Gdk.ModifierType.BUTTON1_MASK,       /* modifier that will start a drag */
-                                                                    		null,            /* lists of target to support */
-                                                                    		0,              /* size of list */
-                                                                    		Gdk.DragAction.COPY   | Gdk.DragAction.MOVE           /* what to do with data after dropped */
-                                                                    	);
-                                                                    
-                                                                    	Gtk.drag_source_set_target_list(this.el, this.get('/Window').targetList);
-                                                                    
-                                                                    	Gtk.drag_source_add_text_targets(this.el); 
-                                                                    	Gtk.drag_dest_set
-                                                                    	(
-                                                                    	    this.el,              /* widget that will accept a drop */
-                                                                    	    Gtk.DestDefaults.MOTION  | Gtk.DestDefaults.HIGHLIGHT,
-                                                                    	    null,            /* lists of target to support */
-                                                                    	    0,              /* size of list */
-                                                                    	    Gdk.DragAction.COPY   | Gdk.DragAction.MOVE       /* what to do with data after dropped */
-                                                                    	);
-                                                                    
-                                                                    	Gtk.drag_dest_set_target_list(this.el, this.get('/Window').targetList);
-                                                                    	Gtk.drag_dest_add_text_targets(this.el);
-                                                                    },
-                                                                    highlight : function(treepath_ar) {
-                                                                    
-                                                                            // highlighting for drag/drop
-                                                                            if (treepath_ar.length && treepath_ar[0].length ) {
-                                                                                this.el.set_drag_dest_row( 
-                                                                                        new  Gtk.TreePath.from_string( treepath_ar[0] ),  treepath_ar[1]);
-                                                                                } else {
-                                                                                    this.el.set_drag_dest_row(null, Gtk.TreeViewDropPosition.INTO_OR_AFTER);
-                                                                                }
-                                                                                 
-                                                                            },
-                                                                    selectNode : function(treepath_str) {
-                                                                        //this.selection.select_path(new  Gtk.TreePath.from_string( treepath_str));
-                                                                     var tp = new Gtk.TreePath.from_string(treepath_str);
-                                                                              this.el.set_cursor(tp, null, false);  
-                                                                          this.el.scroll_to_cell(tp, null, false, 0,0);
-                                                                    },
                                                                     listeners : {
                                                                         button_press_event : function (self, ev) {
                                                                          	console.log("button press?");
@@ -757,7 +696,7 @@ Window=new XObject({
                                                                                // _g.button.set_label(''+value.get_string());
                                                                         
                                                                                 var pm =this.get('/RightPalete.model');
-                                                                                pm.load( this.get('/RightPalete').provider.gatherList(
+                                                                                pm.load(  this.get('/LeftTree').getPaleteProvider().gatherList(
                                                                                      this.get('/LeftTree.model').listAllTypes()));
                                                                                
                                                                                 
@@ -770,6 +709,68 @@ Window=new XObject({
                                                                                         
                                                                         }
                                                                     },
+                                                                    id : "view",
+                                                                    pack : "add",
+                                                                    tooltip_column : 1,
+                                                                    enable_tree_lines : true,
+                                                                    headers_visible : false,
+                                                                    highlight : function(treepath_ar) {
+                                                                    
+                                                                            // highlighting for drag/drop
+                                                                            if (treepath_ar.length && treepath_ar[0].length ) {
+                                                                                this.el.set_drag_dest_row( 
+                                                                                        new  Gtk.TreePath.from_string( treepath_ar[0] ),  treepath_ar[1]);
+                                                                                } else {
+                                                                                    this.el.set_drag_dest_row(null, Gtk.TreeViewDropPosition.INTO_OR_AFTER);
+                                                                                }
+                                                                                 
+                                                                            },
+                                                                    init : function() {
+                                                                        	XObject.prototype.init.call(this);
+                                                                    	var description = new Pango.FontDescription.c_new();
+                                                                    	description.set_size(8000);
+                                                                    	this.el.modify_font(description);
+                                                                    
+                                                                    	this.selection = this.el.get_selection();
+                                                                    	this.selection.set_mode( Gtk.SelectionMode.SINGLE);
+                                                                    	var _this = this;
+                                                                    
+                                                                    	// is this really needed??
+                                                                    	this.selection.signal['changed'].connect(function() {
+                                                                    		_this.get('/LeftTree.view').listeners.cursor_changed.apply(
+                                                                    		    _this.get('/LeftTree.view'), [ _this.get('/LeftTree.view'), '']
+                                                                    		);
+                                                                    	});
+                                                                    
+                                                                    	Gtk.drag_source_set (
+                                                                    		this.el,            /* widget will be drag-able */
+                                                                    		Gdk.ModifierType.BUTTON1_MASK,       /* modifier that will start a drag */
+                                                                    		null,            /* lists of target to support */
+                                                                    		0,              /* size of list */
+                                                                    		Gdk.DragAction.COPY   | Gdk.DragAction.MOVE           /* what to do with data after dropped */
+                                                                    	);
+                                                                    
+                                                                    	Gtk.drag_source_set_target_list(this.el, this.get('/Window').targetList);
+                                                                    
+                                                                    	Gtk.drag_source_add_text_targets(this.el); 
+                                                                    	Gtk.drag_dest_set
+                                                                    	(
+                                                                    	    this.el,              /* widget that will accept a drop */
+                                                                    	    Gtk.DestDefaults.MOTION  | Gtk.DestDefaults.HIGHLIGHT,
+                                                                    	    null,            /* lists of target to support */
+                                                                    	    0,              /* size of list */
+                                                                    	    Gdk.DragAction.COPY   | Gdk.DragAction.MOVE       /* what to do with data after dropped */
+                                                                    	);
+                                                                    
+                                                                    	Gtk.drag_dest_set_target_list(this.el, this.get('/Window').targetList);
+                                                                    	Gtk.drag_dest_add_text_targets(this.el);
+                                                                    },
+                                                                    selectNode : function(treepath_str) {
+                                                                        //this.selection.select_path(new  Gtk.TreePath.from_string( treepath_str));
+                                                                     var tp = new Gtk.TreePath.from_string(treepath_str);
+                                                                              this.el.set_cursor(tp, null, false);  
+                                                                          this.el.scroll_to_cell(tp, null, false, 0,0);
+                                                                    },
                                                                     items : [
                                                                         {
                                                                             xtype: Gtk.TreeStore,
@@ -778,7 +779,7 @@ Window=new XObject({
                                                                             id : "model",
                                                                             pack : "set_model",
                                                                             changed : function(n, refresh) {
-                                                                                     print("MODEL CHANGED CALLED" + this.activePath);
+                                                                                //     print("MODEL CHANGED CALLED" + this.activePath);
                                                                                      if (this.activePath) {
                                                                                         var iter = new Gtk.TreeIter();
                                                                                         this.el.get_iter(iter, new Gtk.TreePath.from_string(this.activePath))
@@ -789,7 +790,7 @@ Window=new XObject({
                                                                                     }
                                                                                         //this.currentTree = this.toJS(false, true)[0];
                                                                                     this.file.items = this.toJS(false, false);
-                                                                                    print("AFTER CHANGED");
+                                                                                  //  print("AFTER CHANGED");
                                                                                     //console.dump(this.file.items);
                                                                                     this.file.save();
                                                                                     this.currentTree = this.file.items[0];
@@ -2123,7 +2124,7 @@ Window=new XObject({
                                                                             showEditor = true;
                                                                         }
                                                                         if (val[0] == '|') {
-                                                                            if (rval.match(/function/g) || rval.match(/\n/g)) {
+                                                                            if (rval.match(/function/g) || rval.match(/\n/g) || rval.length > 20) {
                                                                                 showEditor = true;
                                                                             }
                                                                         }
@@ -2172,7 +2173,7 @@ Window=new XObject({
                                                                             return val;
                                                                         }
                                                                         var type = this.getType(this.el.get_path(iter).to_string());
-                                                                        print("TYPE: " +type + " -  val:" + val);
+                                                                        //print("TYPE: " +type + " -  val:" + val);
                                                                         switch(type.toLowerCase()) {
                                                                             case 'number':
                                                                             case 'uint':
@@ -2584,7 +2585,18 @@ Window=new XObject({
                                             items : [
                                                 {
                                                     xtype: Gtk.ListStore,
+                                                    id : "model",
                                                     pack : "set_model",
+                                                    getValue : function(treepath, col)
+                                                    {
+                                                        var tp = new Gtk.TreePath.from_string (treepath);
+                                                        var iter = new Gtk.TreeIter();
+                                                        this.el.get_iter (iter, tp);
+                                                        var value = new GObject.Value('');
+                                                        this.el.get_value(iter, col, value);
+                                                        return value.value;
+                                                        
+                                                    },
                                                     init : function() {
                                                         XObject.prototype.init.call(this);
                                                        this.el.set_column_types ( 6, [
@@ -2596,16 +2608,6 @@ Window=new XObject({
                                                              GObject.TYPE_STRING // element type (event|prop)
                                                             
                                                         ] );
-                                                    },
-                                                    getValue : function(treepath, col)
-                                                    {
-                                                        var tp = new Gtk.TreePath.from_string (treepath);
-                                                        var iter = new Gtk.TreeIter();
-                                                        this.el.get_iter (iter, tp);
-                                                        var value = new GObject.Value('');
-                                                        this.el.get_value(iter, col, value);
-                                                        return value.value;
-                                                        
                                                     },
                                                     showData : function(type) {
                                                         this.el.clear();
@@ -2626,7 +2628,9 @@ Window=new XObject({
                                                                     this.get('/MidPropTree').shown = true;
                                                                 }
                                                                 
-                                                                var elementList = palete.getPropertiesFor(fullpath, type);
+                                                                var elementList = palete.getPropertiesFor(fullpath, type).sort(function(a,b) { 
+                                                                    return a.name >  b.name ? 1 : -1;
+                                                                });
                                                                 print ("GOT " + elementList.length + " items for " + fullpath + "|" + type);
                                                                // console.dump(elementList);
                                                                
@@ -2651,8 +2655,7 @@ Window=new XObject({
                                                                     
                                                                 }
                                                                                  
-                                                    },
-                                                    id : "model"
+                                                    }
                                                 },
                                                 {
                                                     xtype: Gtk.TreeViewColumn,
@@ -2722,27 +2725,36 @@ Window=new XObject({
                                                                         {
                                                                             xtype: Gtk.ScrolledWindow,
                                                                             pack : "add",
-                                                                            shadow_type : Gtk.ShadowType.IN,
                                                                             init : function() {
                                                                                 XObject.prototype.init.call(this);
-                                                                              this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
+                                                                                this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
                                                                             },
+                                                                            shadow_type : Gtk.ShadowType.IN,
                                                                             items : [
                                                                                 {
                                                                                     xtype: WebKit.WebView,
                                                                                     listeners : {
                                                                                         load_finished : function (self, object) {
+                                                                                            print("load finished");
+                                                                                        //    print("load_finished"); return;
                                                                                         	// if (this.ready) { // dont do it twice!
                                                                                         	 //   return; 
                                                                                         	//}
-                                                                                            
-                                                                                        	 this.el.get_inspector().show();
+                                                                                        	if (!this.inspectorShown) {
+                                                                                                   this.el.get_inspector().show();
+                                                                                                   this.inspectorShown = true;
+                                                                                        	}
+                                                                                        
                                                                                         	this.ready = true;
-                                                                                                this.pendingRedraw = false;
-                                                                                                var js = this.get('/LeftTree.model').toJS();
-                                                                                                if (js && js[0]) {
-                                                                                            	    this.renderJS(js[0]);
-                                                                                            	}
+                                                                                        	
+                                                                                                if (this.pendingRedraw) {
+                                                                                                    this.pendingRedraw = false;
+                                                                                                    this.refreshRequired  = true;
+                                                                                                }
+                                                                                                //var js = this.get('/LeftTree.model').toJS();
+                                                                                                //if (js && js[0]) {
+                                                                                            	//    this.renderJS(js[0]);
+                                                                                            	//}
                                                                                         
                                                                                         },
                                                                                         script_alert : function (self, object, p0) {
@@ -2751,6 +2763,7 @@ Window=new XObject({
                                                                                                 return true; // do not display anything...
                                                                                         },
                                                                                         console_message : function (self, object, p0, p1) {
+                                                                                            print(object);
                                                                                            //  console.log(object);
                                                                                                 if (!object.match(/^\{/)) {
                                                                                                 
@@ -2888,8 +2901,9 @@ Window=new XObject({
                                                                                                 Gtk.drag_finish (ctx, dnd_success, delete_selection_data, time);
                                                                                                 return true;
                                                                                             },
-                                                                                        resource_request_starting : function (self, object, p0, p1, p2) {
-                                                                                          //   this.get('/Terminal').feed( p1.get_uri() );
+                                                                                        create_web_view : function (self, object) {
+                                                                                          print("CREATE WEB VIEW");
+                                                                                           return null; //new WebKit.WebView();
                                                                                         }
                                                                                     },
                                                                                     id : "view",
@@ -2899,19 +2913,30 @@ Window=new XObject({
                                                                                         // this may not work!?
                                                                                         var settings =  this.el.get_settings();
                                                                                         settings.enable_developer_extras = true;
-                                                                                       // settings.enable_file_access_from_file_uris = true;
-                                                                                       // settings.enable_offline_web_application_cache - true;
-                                                                                       // settings.enable_universal_access_from_file_uris = true;
+                                                                                        
+                                                                                        // this was an attempt to change the url perms.. did not work..
+                                                                                        // settings.enable_file_access_from_file_uris = true;
+                                                                                        // settings.enable_offline_web_application_cache - true;
+                                                                                        // settings.enable_universal_access_from_file_uris = true;
                                                                                         var _this = this;
                                                                                          
+                                                                                         // init inspector..
                                                                                         this.el.get_inspector().signal.inspect_web_view.connect(function(wi, pg) {
-                                                                                         _this.get('/BottomPane.inspector').el.show();
-                                                                                            return _this.get('/BottomPane.inspector').el;
-                                                                                         //create_inspector_cb
+                                                                                             _this.get('/BottomPane.inspector').el.show();
+                                                                                             return _this.get('/BottomPane.inspector').el;
+                                                                                        
                                                                                         });
                                                                                          
-                                                                                        
-                                                                                        this.el.open('file:///' + __script_path__ + '/../builder.html');
+                                                                                         // FIXME - base url of script..
+                                                                                         // we need it so some of the database features work.
+                                                                                        this.el.load_html_string( "Render not ready" , 
+                                                                                                //fixme - should be a config option!
+                                                                                                // or should we catch stuff and fix it up..
+                                                                                                'http://localhost/app.Builder/'
+                                                                                        );
+                                                                                            
+                                                                                            
+                                                                                       //this.el.open('file:///' + __script_path__ + '/../builder.html');
                                                                                                               
                                                                                         Gtk.drag_dest_set
                                                                                         (
@@ -2924,31 +2949,67 @@ Window=new XObject({
                                                                                                                 
                                                                                        // print("RB: TARGETS : " + LeftTree.atoms["STRING"]);
                                                                                         Gtk.drag_dest_set_target_list(this.el, this.get('/Window').targetList);
+                                                                                        
+                                                                                        GLib.timeout_add_seconds(0, 1, function() {
+                                                                                            //    print("run refresh?");
+                                                                                             _this.runRefresh(); 
+                                                                                             return true;
+                                                                                         });
+                                                                                        
+                                                                                        
                                                                                     },
                                                                                     renderJS : function(data) {
-                                                                                        print("HTML RENDERING");
-                                                                                         this.get('/BottomPane').el.show();
-                                                                                        this.get('/BottomPane').el.set_current_page(2);// webkit view!
-                                                                                        /// prevent looping..
-                                                                                        //if (this.pendingRedraw) {
-                                                                                        //   print("pending redraw active?!");
-                                                                                         //   return;
-                                                                                        //}
+                                                                                        this.refreshRequired  = true;
+                                                                                    },
+                                                                                    runRefresh : function() 
+                                                                                    {
+                                                                                        // this is run every 2 seconds from the init..
+                                                                                    
+                                                                                      
                                                                                         
-                                                                                        
-                                                                                        if (!this.get('/Window.LeftTree').getActiveFile()) {
+                                                                                        if (!this.refreshRequired) {
+                                                                                           // print("no refresh required");
                                                                                             return;
                                                                                         }
+                                                                                    
+                                                                                        if (this.lastRedraw) {
+                                                                                           // do not redraw if last redraw was less that 5 seconds ago.
+                                                                                           if (((new Date()) -  this.lastRedraw) < 5000) {
+                                                                                                return;
+                                                                                            }
+                                                                                        }
                                                                                         
-                                                                                        var project = this.get('/Window.LeftTree').getActiveFile().project;
-                                                                                        //print (project.fn);
                                                                                         
-                                                                                        project.runhtml  = project.runhtml || '';
+                                                                                        
+                                                                                        
+                                                                                         if (!this.get('/Window.LeftTree').getActiveFile()) {
+                                                                                            return;
+                                                                                         }
+                                                                                         this.refreshRequired = false;
+                                                                                       //  print("HTML RENDERING");
+                                                                                         
+                                                                                         this.get('/BottomPane').el.show();
+                                                                                         this.get('/BottomPane').el.set_current_page(2);// webkit inspector
+                                                                                    
+                                                                                        
+                                                                                        var js = this.get('/LeftTree.model').toJS();
+                                                                                        if (!js || !js.length) {
+                                                                                            print("no data");
+                                                                                            return;
+                                                                                        }
+                                                                                        var  data = js[0];
+                                                                                        
+                                                                                        
+                                                                                         var project = this.get('/Window.LeftTree').getActiveFile().project;
+                                                                                         //print (project.fn);
+                                                                                         // set it to non-empty.
+                                                                                         project.runhtml  =     project.runhtml  || '';
+                                                                                         project.runhtml  = project.runhtml.length ?  project.runhtml : '<script type="text/javascript"></script>'; 
                                                                                         
                                                                                     
-                                                                                        this.runhtml  = this.runhtml || '';
+                                                                                         this.runhtml  = this.runhtml || '';
                                                                                         
-                                                                                        if (project.runhtml != this.runhtml) {
+                                                                                         if (project.runhtml != this.runhtml) {
                                                                                             // then we need to reload the browser using
                                                                                             // load_html_string..
                                                                                             
@@ -2957,13 +3018,6 @@ Window=new XObject({
                                                                                              var runhtml = '<script type="text/javascript">' + "\n" ;
                                                                                              runhtml +=imports.File.File.read(__script_path__ + '/../builder.html.js') + "\n";
                                                                                              runhtml += '</script>'+ "\n" ;
-                                                                                    //        this.runhtml = '<link rel="stylesheet" type="text/css" href="file://' + __script_path__ + '/../roojs1/cssX/roojs-all.css" />'+ "\n" ;
-                                                                                     //       this.runhtml += '<script type="text/javascript" src="file://' + __script_path__ + '/../roojs1/roojs-debug.js"></script>'+ "\n" ;
-                                                                                      //      this.runhtml += '<script type="text/javascript">' + "\n" ;
-                                                                                       //     this.runhtml += 'Ext=Roo; // bc' + "\n" ;
-                                                                                        //    this.runhtml += 'Roo.BLANK_IMAGE_URL =  "file://' + __script_path__ + '/../roojs1/images/gray/s.gif";'+ "\n" ;
-                                                                                         //   this.runhtml += 'Roo.rootURL = "file://' + __script_path__ + '/../roojs1/";'+ "\n" ;
-                                                                                          //  this.runhtml += '</script>'+ "\n" ;
                                                                                             
                                                                                             this.runhtml = project.runhtml;
                                                                                             // need to modify paths
@@ -2975,15 +3029,14 @@ Window=new XObject({
                                                                                             print("LOAD HTML " + html);
                                                                                             this.el.load_html_string( html , 
                                                                                                 //fixme - should be a config option!
-                                                                                                'http://www.akbkhome.com/e/'
+                                                                                                'http://localhost/app.Builder/'
                                                                                             );
-                                                                                            // should trigger load_finished!
+                                                                                            
+                                                                                            // should trigger load_finished! - which in truns shoudl set refresh Required;
                                                                                             return;
                                                                                         
                                                                                         }
                                                                                         
-                                                                                        this.pendingRedraw = false;    
-                                                                                         
                                                                                         
                                                                                         this.renderedData = data;
                                                                                         var str = JSON.stringify(data) ;
@@ -2991,11 +3044,12 @@ Window=new XObject({
                                                                                         if (!this.ready) {
                                                                                             console.log('not loaded yet');
                                                                                         }
-                                                                                        //Seed.print("RENDER:" + str);
-                                                                                        //imports.File.File.write('/tmp/builder.debug.js', "Builder.render(" + JSON.stringify(data) + ");");
-                                                                                     
+                                                                                        this.lastRedraw = new Date();
+                                                                                    
                                                                                         this.el.execute_script("Builder.render(" + JSON.stringify(data) + ");");
-                                                                                         
+                                                                                         print( "before render" +    this.lastRedraw);
+                                                                                        print( "after render" +    (new Date()));
+                                                                                        
                                                                                     }
                                                                                 }
                                                                             ]
@@ -3020,19 +3074,21 @@ Window=new XObject({
                                                                           this.highlightWidget = false;
                                                                        
                                                                         this.withDebug = false;
+                                                                        while (this.get('view').el.get_children().length) {
+                                                                            var c = this.get('view').el.get_children()[0];
+                                                                            this.get('view').el.remove(c);        
+                                                                            c.destroy();
+                                                                        }
+                                                                         if (!data) {
+                                                                             return; 
+                                                                        }
                                                                         
-                                                                        if (this.renderedEl) {
-                                                                            this.get('view').el.remove(this.renderedEl);
-                                                                            this.renderedEl.destroy();
-                                                                            this.renderedEl = false;
-                                                                        }
-                                                                          if (!data) {
-                                                                                     return; 
-                                                                        }
                                                                         var tree =  this.get('/LeftTree.model').toJS(false,true)[0];
                                                                         // in theory tree is actually window..  
                                                                        try {
-                                                                        this.renderedEl = this.viewAdd(tree.items[0], this.get('view').el);
+                                                                      
+                                                                            this.renderedEl = this.viewAdd(tree.items[0], this.get('view').el);
+                                                                          
                                                                       } catch (e) {
                                                                          print(e.message);
                                                                         return;
@@ -3040,11 +3096,12 @@ Window=new XObject({
                                                                         this.get('view').el.set_size_request(
                                                                             tree.default_width * 1 || 400, tree.default_height * 1 || 400
                                                                         ) ;
-                                                                        
-                                                                        this.renderedEl.set_size_request(
-                                                                            tree.default_width || 600,
-                                                                            tree.default_height || 400
-                                                                        );
+                                                                        if (this.renderedEl) {
+                                                                            this.renderedEl.set_size_request(
+                                                                                tree.default_width || 600,
+                                                                                tree.default_height || 400
+                                                                            );
+                                                                        }
                                                                         this.get('view').el.show_all();
                                                                         
                                                                         
@@ -3112,6 +3169,10 @@ Window=new XObject({
                                                                         }
                                                                         print("CREATE: " + item['|xns'] + '.' + item['xtype']);
                                                                         var type = item['|xns'] + '.' + item['xtype'];
+                                                                        
+                                                                        if (item['|xns'] == 'GtkClutter') { // we can not add this yet!
+                                                                            return false;
+                                                                        }
                                                                         var ns = imports.gi[item['|xns']];
                                                                         var ctr = ns[item['xtype']];
                                                                         var ctr_args = { };
@@ -3648,7 +3709,6 @@ Window=new XObject({
                                                             items : [
                                                                 {
                                                                     xtype: GtkSource.Buffer,
-                                                                    pack : "set_buffer",
                                                                     listeners : {
                                                                         changed : function (self) {
                                                                             var s = new Gtk.TextIter();
@@ -3662,9 +3722,9 @@ Window=new XObject({
                                                                                 this.get('/RightEditor.view').el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({
                                                                                     red: 0xFFFF, green: 0xCCCC , blue : 0xCCCC
                                                                                    }));
-                                                                                print("SYNTAX ERROR IN EDITOR");   
-                                                                                print(e);
-                                                                                console.dump(e);
+                                                                                //print("SYNTAX ERROR IN EDITOR");   
+                                                                                //print(e);
+                                                                                //console.dump(e);
                                                                                 return;
                                                                             }
                                                                             this.get('/RightEditor.view').el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({
@@ -3673,7 +3733,8 @@ Window=new XObject({
                                                                             
                                                                              this.get('/LeftPanel.model').changed(  str , false);
                                                                         }
-                                                                    }
+                                                                    },
+                                                                    pack : "set_buffer"
                                                                 }
                                                             ]
                                                         }

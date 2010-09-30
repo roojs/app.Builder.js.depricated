@@ -7,6 +7,7 @@ GObject = imports.gi.GObject;
 GtkSource = imports.gi.GtkSource;
 WebKit = imports.gi.WebKit;
 Vte = imports.gi.Vte;
+GtkClutter = imports.gi.GtkClutter;
 console = imports.console;
 XObject = imports.XObject.XObject;
 DialogNewComponent=new XObject({
@@ -99,8 +100,9 @@ DialogNewComponent=new XObject({
             title : '' ,
             region : '' ,
             parent: '',
-            disable: '',
-            modOrder : '0'
+          //  disable: '',
+            modOrder : '0',
+            permname : ''
         };
         for (var i in this.def) {
             c[i] = c[i] || this.def[i];
@@ -195,7 +197,7 @@ DialogNewComponent=new XObject({
                         },
                         {
                             xtype: Gtk.Label,
-                            label : "Disable method",
+                            label : "Permission Name",
                             pack : "add",
                             x_options : 4,
                             xalign : 0.9,
@@ -204,7 +206,7 @@ DialogNewComponent=new XObject({
                         },
                         {
                             xtype: Gtk.Entry,
-                            id : "disable",
+                            id : "permname",
                             pack : "add",
                             visible : true
                         },
