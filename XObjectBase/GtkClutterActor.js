@@ -1,0 +1,36 @@
+
+//<Script type="Text/javascript">
+
+XObject = imports.XObject.XObject
+GtkClutter = imports.gi.GtkClutter;
+
+//GtkClutter.Embed..
+// children are not added at init / but at show stage..
+// listener is added on show..
+// we should really add a hock to destroy it..
+
+GtkClutterActor = {
+    
+    onConstruct : function() {
+        this.items[0].pack = false;
+        
+    },
+    
+    init : function() {
+        print ("Actor init");
+        var child = this.items[0];
+        child.init();
+        
+        child.parent = this;
+        //var contents = new Gtk.Button({ label: 'test' }); 
+        
+       // print(JSON.stringify(this.items));
+        child.el.show();
+        
+        this.el = new GtkClutter.Actor.with_contents (  child.el) ;
+        
+        XObject.prototype.init.call(this);
+        this.el.show_all();
+    }
+
+}; 
