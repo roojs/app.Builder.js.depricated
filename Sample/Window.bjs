@@ -1,5 +1,5 @@
 {
-    "id": "file-gtk-1",
+    "id": "file-gtk-7",
     "name": "Window",
     "parent": "",
     "title": false,
@@ -221,14 +221,16 @@
                                                     "items": [
                                                         {
                                                             "listeners": {
-                                                                "activate": "function (self) {\n\tvar nb = this.get('/LeftTopPanel.notebook');\n\tif (this.el.expanded) {\n\t    // now expanded..\n            \n\t    var pm  = imports.Builder.Provider.ProjectManager.ProjectManager;\n\t    \n\t   \n\t    var model = this.get('/LeftProjectTree.combomodel');\n\t  //  print (\"loading Projects?\")\n\t//console.dump(pm.projects);\n\t    model.loadData(pm.projects);\n\t     \n\t    \n\t    nb.el.set_current_page(1);\n\t    //pm.on('changed', function() {\n\t\t//console.log(\"CAUGHT project manager change\");\n\t    //    _combo.model.loadData(pm.projects);\n\t    //}\n\t    return;\n\t}\n\tnb.el.set_current_page(0);\n}",
-                                                                "enter_notify_event": "function (self, event) {\n     this.el.expanded = !this.el.expanded;\n//if (this.el.expanded ) {\n    this.listeners.activate.call(this);\n//   }\n\nreturn true;\n}"
+                                                                "activate": "function (self) {\n    // this does not actually expand it..\n    // that is done by GTK..\n    \n    \n\n    if (!this.el.expanded) {\n        this.onExpand();\n    } else {\n        this.onCollapse();\n    }\n\t  \n}",
+                                                                "enter_notify_event": "function (self, event) {\nreturn;\n     this.el.expanded = !this.el.expanded;\n//if (this.el.expanded ) {\n    this.listeners.activate.call(this);\n//   }\n\nreturn true;\n}"
                                                             },
                                                             "id": "expander",
                                                             "label": "Select Project or File",
                                                             "pack": "pack_start,false,true",
                                                             "xtype": "Expander",
+                                                            "|onCollapse": "function() {\n    \n    var nb = this.get('/LeftTopPanel.notebook');\n    nb.el.set_current_page(0);\n}\n",
                                                             "|init": "function() {\n    XObject.prototype.init.call(this);\n   this.el.add_events (Gdk.EventMask.BUTTON_MOTION_MASK );\n}\n",
+                                                            "|onExpand": "function() {\n    var nb = this.get('/LeftTopPanel.notebook');            \n    var pm  = imports.Builder.Provider.ProjectManager.ProjectManager;\n    \n   \n    var model = this.get('/LeftProjectTree.combomodel');\n    //  print (\"loading Projects?\")\n    //console.dump(pm.projects);\n    model.loadData(pm.projects);\n     \n    \n    nb.el.set_current_page(1);\n    //pm.on('changed', function() {\n\t//console.log(\"CAUGHT project manager change\");\n    //    _combo.model.loadData(pm.projects);\n    //}\n    return;\n}\n",
                                                             "|xns": "Gtk"
                                                         },
                                                         {
@@ -397,7 +399,7 @@
                                                                             "items": [
                                                                                 {
                                                                                     "listeners": {
-                                                                                        "cursor_changed": "function (self) {\n \tvar iter = new Gtk.TreeIter();\n                                \n        if (this.selection.count_selected_rows() < 1) {\n            //XN.get('Builder.LeftTree.model').\n            this.get('/LeftTree.model').load( false);\n            \n            return;\n        }\n        var model = this.get('/LeftProjectTree.model');\n        //console.log('changed');\n        var s = this.selection;\n        s.get_selected(model, iter);\n        value = new GObject.Value('');\n        model.el.get_value(iter, 2, value);\n        \n        console.log(value.value);// id..\n        \n        var file = this.get('/LeftProjectTree').project.getById(value.value);\n        \n        file.items = false;\n        console.log(file);\n        \n\n\n        var nb = this.get('/LeftTopPanel.expander');\n        nb.el.expanded = false;\n        nb.listeners.activate.call(nb);\n        //_expander.el.set_expanded(false);\n\n        var ltm = this.get('/LeftTree.model');\n        ltm.loadFile(file);\n        \n        return true;\n}"
+                                                                                        "cursor_changed": "function (self) {\n \tvar iter = new Gtk.TreeIter();\n                                \n        if (this.selection.count_selected_rows() < 1) {\n            //XN.get('Builder.LeftTree.model').\n            this.get('/LeftTree.model').load( false);\n            \n            return;\n        }\n        var model = this.get('/LeftProjectTree.model');\n        //console.log('changed');\n        var s = this.selection;\n        s.get_selected(model, iter);\n        value = new GObject.Value('');\n        model.el.get_value(iter, 2, value);\n        \n        console.log(value.value);// id..\n        \n        var file = this.get('/LeftProjectTree').project.getById(value.value);\n        \n        file.items = false;\n        console.log(file);\n        \n\n\n        var nb = this.get('/LeftTopPanel.expander');\n        nb.el.expanded = false;\n        nb.onCollapse();\n        //nb.listeners.activate.call(nb);\n        //_expander.el.set_expanded(false);\n\n        var ltm = this.get('/LeftTree.model');\n        ltm.loadFile(file);\n        \n        return true;\n}"
                                                                                     },
                                                                                     "id": "view",
                                                                                     "tooltip_column": 1,

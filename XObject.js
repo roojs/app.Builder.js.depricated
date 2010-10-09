@@ -81,7 +81,7 @@ function XObject (cfg) {
         
     } catch (e) {
         // if debug?
-        print("error finding " + gname + " - " + e.toString());
+        XObject.log("error finding " + gname + " - " + e.toString());
     }
     
     
@@ -207,14 +207,14 @@ XObject.prototype = {
         var isSeed = typeof(Seed) != 'undefined';
          
         // xtype= Gtk.Menu ?? what about c_new stuff?
-        if (XObject.debug) print("init: ID:"+ this.id +" typeof(xtype): "  + typeof(this.xtype));
+        XObject.log("init: ID:"+ this.id +" typeof(xtype): "  + typeof(this.xtype));
         if (!this.el && typeof(this.xtype) == 'function') {
-            if (XObject.debug) print("func?"  + XObject.keys(this.config).join(','));
+            XObject.log("func?"  + XObject.keys(this.config).join(','));
             this.el = this.xtype(this.config);
            
         }
         if (!this.el && typeof(this.xtype) == 'object') {
-            if (XObject.debug) print("obj?"  + XObject.keys(this.config).join(','));
+            XObject.log("obj?"  + XObject.keys(this.config).join(','));
             this.el = new (this.xtype)(this.config);
       
         }
@@ -223,16 +223,16 @@ XObject.prototype = {
             
             var NS = imports.gi[this.xns];
             if (!NS) {
-                Seed.print('Invalid xns: ' + this.xns);
+                XObject.error('Invalid xns: ' + this.xns, true);
             }
             constructor = NS[this.xtype];
             if (!constructor) {
-                Seed.print('Invalid xtype: ' + this.xns + '.' + this.xtype);
+                XObject.error('Invalid xtype: ' + this.xns + '.' + this.xtype);
             }
             this.el  =   isSeed ? new constructor(this.config) : new constructor();
             
         }
-        if (XObject.debug) print("init: ID:"+ this.id +" typeof(el):" + this.el);
+        XObject.log("init: ID:"+ this.id +" typeof(el):" + this.el);
         
         // always overlay props..
         // check for 'write' on object..
@@ -276,7 +276,7 @@ XObject.prototype = {
         //}
         
         var type = this.xtype.type ? GObject.type_name(this.xtype.type) : '';
-        print("add children to " + type);
+        XObject.log("add children to " + type);
         
         var _this=this;
         this.items.forEach(function(i,n) {
@@ -307,7 +307,7 @@ XObject.prototype = {
     {
         
         if (typeof(item) == 'undefined') {
-            print("Invalid Item added to this!");
+            XObject.error("Invalid Item added to this!");
             imports.console.dump(this);
             Seed.quit();
         }
@@ -317,7 +317,7 @@ XObject.prototype = {
         //print("CTR:PROTO:" + ( item.id ? item.id : '??'));
        // print("addItem - call init [" + item.pack.join(',') + ']');
         if (!item.el) {
-            print("NO EL!");
+            XObject.err("NO EL!");
             imports.console.dump(item);
             Seed.quit();
         }
@@ -389,7 +389,7 @@ XObject.prototype = {
         
         
         
-        if (XObject.debug) print(pack_m + '[' + args.join(',') +']');
+        XObject.log(pack_m + '[' + args.join(',') +']');
         //Seed.print('args: ' + args.length);
         if (pack_m) {
             this.el[pack_m].apply(this.el, args);
@@ -408,7 +408,7 @@ XObject.prototype = {
     addListener  : function(sig, fn) 
     {
  
-        if (XObject.debug) Seed.print("Add signal " + sig);
+        XObject.log("Add signal " + sig);
         fn.id= sig;
         var _li = XObject.createDelegate(fn,this);
         // private listeners that are not copied to GTk.
@@ -434,7 +434,7 @@ XObject.prototype = {
       */
     get : function(xid)
     {
-        if (XObject.debug) print("SEARCH FOR " + xid + " in " + this.id);
+        XObject.log("SEARCH FOR " + xid + " in " + this.id);
         var ret=  false;
         var oid = '' + xid;
         if (!xid.length) {
@@ -530,7 +530,7 @@ XObject.prototype = {
                 return;
             }
             if (!ch.get) {
-                print("invalid item...");
+                XObject.error("invalid item...");
                 imports.console.dump(_this);
                 Seed.quit();
             }
@@ -592,7 +592,7 @@ XObject.extend(XObject,
      * @property {Boolean} debug XObject  debugging.  - set to true to debug.
      * 
      */
-    debug : true,
+    debug : false,
     /**
      * @property {Object} cache - cache of object ids
      * 
@@ -603,7 +603,31 @@ XObject.extend(XObject,
      * 
      */
     emptyFn : function () { },
-        
+      
+      
+      
+    /**
+     * Debug Logging
+     * @param {String|Object} output String to print.
+     */
+    log : function(output)
+    {
+        if (!this.debug) {
+            return;
+        }
+        print("LOG:" + output);  
+    },
+     
+    /**
+     * Error Logging
+     * @param {String|Object} output String to print.
+     */
+    error : function(output)
+    {
+        print("ERROR: " + output);  
+    },
+     
+   
     /**
      * Copies all the properties of config to obj, if the do not exist.
      * @param {Object} obj The receiver of the properties
@@ -661,14 +685,14 @@ XObject.extend(XObject,
         };
         return function(constructor, parentClass, overrides) {
             if (typeof(parentClass) == 'undefined') {
-                print("XObject.define: Missing parentClass: when applying: " );
-                print(new String(constructor));
+                XObject.error("XObject.define: Missing parentClass: when applying: " );
+                XObject.error(new String(constructor));
                 Seed.quit(); 
             }
             if (typeof(parentClass.prototype) == 'undefined') {
-                print("Missing protype: when applying: " );
-                print(new String(constructor));
-                print(new String(parentClass));
+                XObject.error("Missing protype: when applying: " );
+                XObject.error(new String(constructor));
+                XObject.error(new String(parentClass));
                 Seed.quit(); 
             }
             var F = function(){};
@@ -723,7 +747,7 @@ XObject.extend(XObject,
     createDelegate : function(method, obj, args, appendArgs){
         
         return function() {
-            if (XObject.debug) print("CALL: " + obj.id + ':'+ method.id);
+            XObject.log("CALL: " + obj.id + ':'+ method.id);
             
             var callArgs = args || arguments;
             if(appendArgs === true){

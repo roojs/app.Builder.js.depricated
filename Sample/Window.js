@@ -338,29 +338,20 @@ Window=new XObject({
                                                     xtype: Gtk.Expander,
                                                     listeners : {
                                                         activate : function (self) {
-                                                        	var nb = this.get('/LeftTopPanel.notebook');
-                                                        	if (this.el.expanded) {
-                                                        	    // now expanded..
-                                                                    
-                                                        	    var pm  = imports.Builder.Provider.ProjectManager.ProjectManager;
-                                                        	    
-                                                        	   
-                                                        	    var model = this.get('/LeftProjectTree.combomodel');
-                                                        	  //  print ("loading Projects?")
-                                                        	//console.dump(pm.projects);
-                                                        	    model.loadData(pm.projects);
-                                                        	     
-                                                        	    
-                                                        	    nb.el.set_current_page(1);
-                                                        	    //pm.on('changed', function() {
-                                                        		//console.log("CAUGHT project manager change");
-                                                        	    //    _combo.model.loadData(pm.projects);
-                                                        	    //}
-                                                        	    return;
-                                                        	}
-                                                        	nb.el.set_current_page(0);
+                                                            // this does not actually expand it..
+                                                            // that is done by GTK..
+                                                            
+                                                            
+                                                        
+                                                            if (!this.el.expanded) {
+                                                                this.onExpand();
+                                                            } else {
+                                                                this.onCollapse();
+                                                            }
+                                                        	  
                                                         },
                                                         enter_notify_event : function (self, event) {
+                                                        return;
                                                              this.el.expanded = !this.el.expanded;
                                                         //if (this.el.expanded ) {
                                                             this.listeners.activate.call(this);
@@ -372,9 +363,32 @@ Window=new XObject({
                                                     id : "expander",
                                                     label : "Select Project or File",
                                                     pack : "pack_start,false,true",
+                                                    onCollapse : function() {
+                                                        
+                                                        var nb = this.get('/LeftTopPanel.notebook');
+                                                        nb.el.set_current_page(0);
+                                                    },
                                                     init : function() {
                                                         XObject.prototype.init.call(this);
                                                        this.el.add_events (Gdk.EventMask.BUTTON_MOTION_MASK );
+                                                    },
+                                                    onExpand : function() {
+                                                        var nb = this.get('/LeftTopPanel.notebook');            
+                                                        var pm  = imports.Builder.Provider.ProjectManager.ProjectManager;
+                                                        
+                                                       
+                                                        var model = this.get('/LeftProjectTree.combomodel');
+                                                        //  print ("loading Projects?")
+                                                        //console.dump(pm.projects);
+                                                        model.loadData(pm.projects);
+                                                         
+                                                        
+                                                        nb.el.set_current_page(1);
+                                                        //pm.on('changed', function() {
+                                                    	//console.log("CAUGHT project manager change");
+                                                        //    _combo.model.loadData(pm.projects);
+                                                        //}
+                                                        return;
                                                     }
                                                 },
                                                 {
@@ -1561,7 +1575,8 @@ Window=new XObject({
                                                                                 
                                                                                         var nb = this.get('/LeftTopPanel.expander');
                                                                                         nb.el.expanded = false;
-                                                                                        nb.listeners.activate.call(nb);
+                                                                                        nb.onCollapse();
+                                                                                        //nb.listeners.activate.call(nb);
                                                                                         //_expander.el.set_expanded(false);
                                                                                 
                                                                                         var ltm = this.get('/LeftTree.model');

@@ -29,26 +29,29 @@
 // sort out import path!!!
  
  
-Gtk = imports.gi.Gtk;
-Gdk = imports.gi.Gdk;
-Pango = imports.gi.Pango;
-GLib = imports.gi.GLib;
-Gio = imports.gi.Gio;
-GObject = imports.gi.GObject;
-GtkSource = imports.gi.GtkSource;
-WebKit = imports.gi.WebKit;
-Vte = imports.gi.Vte;
+Gtk         = imports.gi.Gtk;
+Gdk         = imports.gi.Gdk;
+Pango       = imports.gi.Pango;
+GLib        = imports.gi.GLib;
+Gio         = imports.gi.Gio;
+GObject     = imports.gi.GObject;
+GtkSource   = imports.gi.GtkSource;
+WebKit      = imports.gi.WebKit;
+Vte         = imports.gi.Vte;
 
-GtkClutter = imports.gi.GtkClutter;
+GtkClutter  = imports.gi.GtkClutter;
+
 if (GtkClutter) {    
     GtkClutter.init(Seed.argv);
 }
 
-File = imports.File.File;
+File    = imports.File.File;
 
 XObject = imports.XObject.XObject;
 //XObject.debug = true;
 Gtk.init(Seed.argv);
+
+
 imports.searchPath.push('/'); // allow global paths..
 // error checking todo..
 var files = File.list(Seed.argv[2]);
@@ -64,7 +67,7 @@ files.forEach(function(f) {
     if (File.isFile(js)) {
         // check file time.. = bjs is less than compiled file..
         if (File.mtime(fp) < File.mtime(js)) {
-            print ("LOADING" + js);
+            XObject.log("LOADING" + js);
             olist.push(imports[js]);
             return;
         }
@@ -73,7 +76,7 @@ files.forEach(function(f) {
     }
     var gtkbuilder =  new imports.Builder.Provider.File.Gtk.Gtk({ path : fp });
     gtkbuilder.loadItems(function() { });
-    print ("COMPILING" + js);
+    XObject.log("COMPILING" + js);
     var fn = gtkbuilder.saveJS();
     if (fn === false) { // skip files that do not contain anythng!
         return;
