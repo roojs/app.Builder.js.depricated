@@ -86,6 +86,7 @@ function XObject (cfg) {
     
     
     // copy down all elements into self..
+    // make an extra copy in this.config?? - which is the one used in the constructor later
     
     for (var i in cfg) {
         this[i] = cfg[i];
