@@ -135,20 +135,7 @@ function XObject (cfg) {
     });
     this.items = [];
     items.forEach(function(i,n) {
-        /*
-        
-        if (type == 'GtkTable' && i.pack == 'add') {
-            var c = n % _this.config.n_columns;
-            var r = Math.floor(n/_this.config.n_columns);
-            i.pack = [ 'attach', c, c+1, r, r+1, 
-                    typeof(i.x_options) == 'undefined' ?  5 : i.x_options,
-                    typeof(i.y_options) == 'undefined' ?  5 : i.y_options,
-                    typeof(i.x_padding) == 'undefined' ?  0 : i.x_padding,
-                    typeof(i.x_padding) == 'undefined' ?  0 : i.x_padding
-                   
-            ]
-        }
-        */
+         
         var item = (i.constructor == XObject) ? o : new XObject(i);
         item.parent = _this;
         _this.items.push(item);
@@ -372,21 +359,7 @@ XObject.prototype = {
         
         args.unshift(item.el);
         
-        
-        /*
-        THIS IS IN THE GtkTable wrapper now.
-        if (this.parent && this.parent.xtype == 'GtkTable' && item.pack == 'add') {
-            var c = n % this.parent.config.n_columns;
-            var r = Math.floor(pos/_this.parent.config.n_columns);
-            item.pack = [ 'attach', c, c+1, r, r+1, 
-                    typeof(item.x_options) == 'undefined' ?  5 : item.x_options,
-                    typeof(item.y_options) == 'undefined' ?  5 : item.y_options,
-                    typeof(item.x_padding) == 'undefined' ?  0 : item.x_padding,
-                    typeof(item.x_padding) == 'undefined' ?  0 : item.x_padding
-            
-            ];
-        }
-        */
+         
         
         
         
