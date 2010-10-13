@@ -26,10 +26,10 @@ GtkTable = {
                    
             ]
         });
-    },
+    }/*,
     
     init : function() {
         
     }
-
+*/
 }; 
