@@ -2295,7 +2295,7 @@ Window=new XObject({
                                                                             if ((keyname[0] == '|') || 
                                                                                 (   
                                                                                     (typeof(data_value) == 'string' ) && 
-                                                                                    ( data_value.match(/function/g) || data_value.match(/\n/g) || (data_value.length > 20))
+                                                                                    ( data_value.match(/function/g) || data_value.match(/\n/g)) // || (data_value.length > 20))
                                                                                 )) {
                                                                                 showEditor = true;
                                                                             }
