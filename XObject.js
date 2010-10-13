@@ -134,6 +134,7 @@ function XObject (cfg) {
         items.push(i);
     });
     this.items = [];
+    // create XObject for all the children.
     items.forEach(function(i,n) {
          
         var item = (i.constructor == XObject) ? o : new XObject(i);
