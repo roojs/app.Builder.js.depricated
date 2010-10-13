@@ -373,7 +373,8 @@ XObject.prototype = {
         args.unshift(item.el);
         
         
-        
+        /*
+        THIS IS IN THE GtkTable wrapper now.
         if (this.parent && this.parent.xtype == 'GtkTable' && item.pack == 'add') {
             var c = n % this.parent.config.n_columns;
             var r = Math.floor(pos/_this.parent.config.n_columns);
@@ -385,7 +386,7 @@ XObject.prototype = {
             
             ];
         }
-        
+        */
         
         
         
