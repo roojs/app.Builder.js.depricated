@@ -3018,7 +3018,7 @@ Window=new XObject({
                                                                                     
                                                                                         // this is the public redraw call..
                                                                                         // we refresh in a loop privately..
-                                                                                        var autodraw = this.get('/RightBrowser/AutoRedraw').el.active;
+                                                                                        var autodraw = this.get('/RightBrowser.AutoRedraw').el.active;
                                                                                         if (!autodraw && !force) {
                                                                                             return;
                                                                                         }
