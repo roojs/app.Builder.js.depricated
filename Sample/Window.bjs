@@ -836,6 +836,11 @@
                                                                             "|xns": "Gtk",
                                                                             "items": [
                                                                                 {
+                                                                                    "|xns": "Gtk",
+                                                                                    "xtype": "Toolbar",
+                                                                                    "pack": false
+                                                                                },
+                                                                                {
                                                                                     "pack": "add",
                                                                                     "xtype": "ScrolledWindow",
                                                                                     "|init": "function() {\n    XObject.prototype.init.call(this);\n    this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);\n}\n",
@@ -861,11 +866,6 @@
                                                                                             "|xns": "WebKit"
                                                                                         }
                                                                                     ]
-                                                                                },
-                                                                                {
-                                                                                    "|xns": "Gtk",
-                                                                                    "xtype": "Toolbar",
-                                                                                    "pack": false
                                                                                 }
                                                                             ]
                                                                         },
