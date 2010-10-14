@@ -850,6 +850,7 @@
                                                                                             "listeners": {
                                                                                                 "state_changed": "function (self, state) {\n    this.setText(state ? \"Auto Redraw OFF\" : \"Auto Redraw On\");\n}"
                                                                                             },
+                                                                                            "active": true,
                                                                                             "label": "Auto Redraw On",
                                                                                             "pack": "pack_start,false,false,0",
                                                                                             "xtype": "CheckButton",
