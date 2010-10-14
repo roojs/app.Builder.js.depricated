@@ -838,7 +838,14 @@
                                                                                 {
                                                                                     "|xns": "Gtk",
                                                                                     "xtype": "Toolbar",
-                                                                                    "pack": false
+                                                                                    "pack": false,
+                                                                                    "items": [
+                                                                                        {
+                                                                                            "|xns": "Gtk",
+                                                                                            "xtype": "ToolButton",
+                                                                                            "pack": false
+                                                                                        }
+                                                                                    ]
                                                                                 },
                                                                                 {
                                                                                     "pack": "add",
