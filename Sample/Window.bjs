@@ -842,7 +842,6 @@
                                                                                     "items": [
                                                                                         {
                                                                                             "listeners": {
-                                                                                                "activate": "function (self) {\n \n}",
                                                                                                 "clicked": "function (self) {\n  this.get('/RightBrowser.view').renderJS(null,true);\n}"
                                                                                             },
                                                                                             "label": "Redraw",
