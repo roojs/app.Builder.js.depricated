@@ -841,11 +841,10 @@
                                                                                     "pack": false,
                                                                                     "items": [
                                                                                         {
+                                                                                            "label": "Redraw",
                                                                                             "pack": false,
                                                                                             "xtype": "ToolButton",
-                                                                                            "|xns": "Gtk",
-                                                                                            "label": "",
-                                                                                            "listeners": {}
+                                                                                            "|xns": "Gtk"
                                                                                         }
                                                                                     ]
                                                                                 },
