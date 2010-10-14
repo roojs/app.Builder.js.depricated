@@ -213,7 +213,7 @@ Window=new XObject({
                                                 activate : function (self, event) {
                                                       var js = this.get('/LeftTree.model').toJS();
                                                     if (js && js[0]) {
-                                                        this.get('/RightBrowser.view').renderJS(js[0]);
+                                                        this.get('/RightBrowser.view').renderJS(js[0], true);
                                                     } 
                                                     return false;
                                                 }
@@ -2756,6 +2756,11 @@ Window=new XObject({
                                                                             items : [
                                                                                 {
                                                                                     xtype: Gtk.Button,
+                                                                                    listeners : {
+                                                                                        activate : function (self) {
+                                                                                           this.get('/RightBrowser.view').renderJS(null,true);
+                                                                                        }
+                                                                                    },
                                                                                     label : "Redraw",
                                                                                     pack : "pack_start,false,false,0"
                                                                                 },
@@ -2763,10 +2768,11 @@ Window=new XObject({
                                                                                     xtype: Gtk.CheckButton,
                                                                                     listeners : {
                                                                                         toggled : function (self, state) {
-                                                                                            this.el.set_label(this.el.active  ? "Auto Redraw OFF" : "Auto Redraw On");
+                                                                                            this.el.set_label(this.el.active  ? "Auto Redraw On" : "Auto Redraw Off");
                                                                                         }
                                                                                     },
                                                                                     active : true,
+                                                                                    id : "AutoRedraw",
                                                                                     label : "Auto Redraw On",
                                                                                     pack : "pack_start,false,false,0"
                                                                                 }
@@ -3008,7 +3014,14 @@ Window=new XObject({
                                                                                         
                                                                                         
                                                                                     },
-                                                                                    renderJS : function(data) {
+                                                                                    renderJS : function(data, force) {
+                                                                                    
+                                                                                        // this is the public redraw call..
+                                                                                        // we refresh in a loop privately..
+                                                                                        var autodraw = this.get('/RightBrowser/AutoRedraw').el.active;
+                                                                                        if (!autodraw && !force) {
+                                                                                            return;
+                                                                                        }
                                                                                         this.refreshRequired  = true;
                                                                                     },
                                                                                     runRefresh : function() 
