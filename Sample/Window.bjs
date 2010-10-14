@@ -842,8 +842,8 @@
                                                                                     "items": [
                                                                                         {
                                                                                             "listeners": {
-                                                                                                "activate": "function (self) {\n   this.get('/RightBrowser.view').renderJS(null,true);\n}",
-                                                                                                "clicked": "function (self) {\n\n}"
+                                                                                                "activate": "function (self) {\n \n}",
+                                                                                                "clicked": "function (self) {\n  this.get('/RightBrowser.view').renderJS(null,true);\n}"
                                                                                             },
                                                                                             "label": "Redraw",
                                                                                             "pack": "pack_start,false,false,0",
