@@ -836,9 +836,9 @@
                                                                             "|xns": "Gtk",
                                                                             "items": [
                                                                                 {
-                                                                                    "pack": false,
                                                                                     "xtype": "HBox",
                                                                                     "|xns": "Gtk",
+                                                                                    "listeners": {},
                                                                                     "items": [
                                                                                         {
                                                                                             "label": "Redraw",
