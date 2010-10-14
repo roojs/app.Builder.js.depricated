@@ -146,7 +146,7 @@
                                             "items": [
                                                 {
                                                     "listeners": {
-                                                        "activate": "function (self, event) {\n      var js = this.get('/LeftTree.model').toJS();\n    if (js && js[0]) {\n        this.get('/RightBrowser.view').renderJS(js[0]);\n    } \n    return false;\n}"
+                                                        "activate": "function (self, event) {\n      var js = this.get('/LeftTree.model').toJS();\n    if (js && js[0]) {\n        this.get('/RightBrowser.view').renderJS(js[0], true);\n    } \n    return false;\n}"
                                                     },
                                                     "label": "_Redraw (Roo)",
                                                     "pack": "add",
