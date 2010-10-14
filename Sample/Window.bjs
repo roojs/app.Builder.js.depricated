@@ -844,6 +844,7 @@
                                                                                             "label": "Redraw",
                                                                                             "xtype": "Button",
                                                                                             "|xns": "Gtk",
+                                                                                            "pack": "add",
                                                                                             "listeners": {}
                                                                                         }
                                                                                     ]
