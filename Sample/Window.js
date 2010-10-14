@@ -2762,10 +2762,11 @@ Window=new XObject({
                                                                                 {
                                                                                     xtype: Gtk.CheckButton,
                                                                                     listeners : {
-                                                                                        state_changed : function (self, state) {
-                                                                                            this.setText(state ? "Auto Redraw OFF" : "Auto Redraw On");
+                                                                                        toggled : function (self, state) {
+                                                                                            this.el.setText(this.el.active  ? "Auto Redraw OFF" : "Auto Redraw On");
                                                                                         }
                                                                                     },
+                                                                                    active : true,
                                                                                     label : "Auto Redraw On",
                                                                                     pack : "pack_start,false,false,0"
                                                                                 }
