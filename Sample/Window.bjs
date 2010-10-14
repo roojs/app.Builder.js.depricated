@@ -843,7 +843,7 @@
                                                                                         {
                                                                                             "label": "Redraw",
                                                                                             "pack": false,
-                                                                                            "xtype": "ToolButton",
+                                                                                            "xtype": "Button",
                                                                                             "|xns": "Gtk"
                                                                                         }
                                                                                     ]
