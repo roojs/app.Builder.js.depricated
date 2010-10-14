@@ -842,9 +842,9 @@
                                                                                     "items": [
                                                                                         {
                                                                                             "label": "Redraw",
-                                                                                            "pack": false,
                                                                                             "xtype": "Button",
-                                                                                            "|xns": "Gtk"
+                                                                                            "|xns": "Gtk",
+                                                                                            "listeners": {}
                                                                                         }
                                                                                     ]
                                                                                 },
