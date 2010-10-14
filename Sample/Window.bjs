@@ -845,9 +845,7 @@
                                                                                             "pack": "pack_start,false,false,0",
                                                                                             "xtype": "Button",
                                                                                             "|xns": "Gtk",
-                                                                                            "listeners": {
-                                                                                                "accel_closures_changed": "function (self) {\n\n}"
-                                                                                            }
+                                                                                            "listeners": {}
                                                                                         },
                                                                                         {
                                                                                             "listeners": {
