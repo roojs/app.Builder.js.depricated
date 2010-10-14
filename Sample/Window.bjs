@@ -854,7 +854,8 @@
                                                                                             "label": "Auto Redraw On",
                                                                                             "pack": "pack_start,false,false,0",
                                                                                             "xtype": "CheckButton",
-                                                                                            "|xns": "Gtk"
+                                                                                            "|xns": "Gtk",
+                                                                                            "id": ""
                                                                                         }
                                                                                     ]
                                                                                 },
