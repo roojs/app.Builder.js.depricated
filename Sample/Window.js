@@ -2751,6 +2751,22 @@ Window=new XObject({
                                                                     pack : "add",
                                                                     items : [
                                                                         {
+                                                                            xtype: Gtk.HBox,
+                                                                            pack : "pack_start,false,true,0",
+                                                                            items : [
+                                                                                {
+                                                                                    xtype: Gtk.Button,
+                                                                                    label : "Redraw",
+                                                                                    pack : "pack_start,false,false,0"
+                                                                                },
+                                                                                {
+                                                                                    xtype: Gtk.Button,
+                                                                                    label : "Redraw",
+                                                                                    pack : "pack_start,false,false,0"
+                                                                                }
+                                                                            ]
+                                                                        },
+                                                                        {
                                                                             xtype: Gtk.ScrolledWindow,
                                                                             pack : "add",
                                                                             init : function() {
