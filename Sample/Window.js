@@ -2757,8 +2757,8 @@ Window=new XObject({
                                                                                 {
                                                                                     xtype: Gtk.Button,
                                                                                     listeners : {
-                                                                                        activate : function (self) {
-                                                                                           this.get('/RightBrowser.view').renderJS(null,true);
+                                                                                        clicked : function (self) {
+                                                                                          this.get('/RightBrowser.view').renderJS(null,true);
                                                                                         }
                                                                                     },
                                                                                     label : "Redraw",
