@@ -841,9 +841,11 @@
                                                                                     "pack": false,
                                                                                     "items": [
                                                                                         {
-                                                                                            "|xns": "Gtk",
+                                                                                            "pack": false,
                                                                                             "xtype": "ToolButton",
-                                                                                            "pack": false
+                                                                                            "|xns": "Gtk",
+                                                                                            "label": "",
+                                                                                            "listeners": {}
                                                                                         }
                                                                                     ]
                                                                                 },
