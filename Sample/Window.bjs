@@ -842,10 +842,9 @@
                                                                                     "items": [
                                                                                         {
                                                                                             "label": "Redraw",
+                                                                                            "pack": "pack_start,false,false,0",
                                                                                             "xtype": "Button",
-                                                                                            "|xns": "Gtk",
-                                                                                            "pack": "add",
-                                                                                            "listeners": {}
+                                                                                            "|xns": "Gtk"
                                                                                         }
                                                                                     ]
                                                                                 },
