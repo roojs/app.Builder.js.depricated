@@ -861,6 +861,11 @@
                                                                                             "|xns": "WebKit"
                                                                                         }
                                                                                     ]
+                                                                                },
+                                                                                {
+                                                                                    "|xns": "Gtk",
+                                                                                    "xtype": "Toolbar",
+                                                                                    "pack": false
                                                                                 }
                                                                             ]
                                                                         },
