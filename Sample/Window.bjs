@@ -848,7 +848,7 @@
                                                                                         },
                                                                                         {
                                                                                             "listeners": {
-                                                                                                "toggled": "function (self, state) {\n    this.el.setText(this.el.active  ? \"Auto Redraw OFF\" : \"Auto Redraw On\");\n}"
+                                                                                                "toggled": "function (self, state) {\n    this.el.set_Text(this.el.active  ? \"Auto Redraw OFF\" : \"Auto Redraw On\");\n}"
                                                                                             },
                                                                                             "active": true,
                                                                                             "label": "Auto Redraw On",
