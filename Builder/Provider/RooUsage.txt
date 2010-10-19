@@ -80,6 +80,7 @@ right:
   Roo.form.Row         
   Roo.form.Hidden         
   Roo.form.TextField         
+  Roo.form.GridField
   Roo.form.DateField         
   Roo.form.NumberField         
   Roo.form.Checkbox         
