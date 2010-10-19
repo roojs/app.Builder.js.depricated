@@ -2962,6 +2962,7 @@ Window=new XObject({
                                                                                            return null; //new WebKit.WebView();
                                                                                         }
                                                                                     },
+                                                                                    redraws : 0,
                                                                                     id : "view",
                                                                                     pack : "add",
                                                                                     init : function() {
@@ -3062,7 +3063,7 @@ Window=new XObject({
                                                                                             return;
                                                                                         }
                                                                                         var  data = js[0];
-                                                                                        
+                                                                                        this.redraws++;
                                                                                         
                                                                                          var project = this.get('/Window.LeftTree').getActiveFile().project;
                                                                                          //print (project.fn);
@@ -3073,7 +3074,7 @@ Window=new XObject({
                                                                                     
                                                                                          this.runhtml  = this.runhtml || '';
                                                                                         
-                                                                                         if (project.runhtml != this.runhtml) {
+                                                                                         if ((project.runhtml != this.runhtml) || (this.redraws > 10)) {
                                                                                             // then we need to reload the browser using
                                                                                             // load_html_string..
                                                                                             
@@ -3095,7 +3096,7 @@ Window=new XObject({
                                                                                                 //fixme - should be a config option!
                                                                                                 'http://localhost/app.Builder/'
                                                                                             );
-                                                                                            
+                                                                                            this.redraws = 0;
                                                                                             // should trigger load_finished! - which in truns shoudl set refresh Required;
                                                                                             return;
                                                                                         
