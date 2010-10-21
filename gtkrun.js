@@ -28,13 +28,14 @@
 
 // sort out import path!!!
 GIRepository = imports.gi.GIRepository;
-GIRepository.IRepository.prepend_search_path('~/.Builder/girepository-1.1');
+GLib        = imports.gi.GLib;
+GIRepository.IRepository.prepend_search_path(GLib.get_home_dir() + '/.Builder/girepository-1.1');
 
 
 Gtk         = imports.gi.Gtk;
 Gdk         = imports.gi.Gdk;
 Pango       = imports.gi.Pango;
-GLib        = imports.gi.GLib;
+
 Gio         = imports.gi.Gio;
 GObject     = imports.gi.GObject;
 GtkSource   = imports.gi.GtkSource;
