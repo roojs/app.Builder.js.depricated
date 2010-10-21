@@ -30,7 +30,7 @@
 GIRepository = imports.gi.GIRepository;
 GIRepository.IRepository.prepend_search_path('~/.Builder/gir-1.1');
 
-
+print(JSON.stringify(GIRepository.IRepository.get_search_path());
 
 Gtk         = imports.gi.Gtk;
 Gdk         = imports.gi.Gdk;
