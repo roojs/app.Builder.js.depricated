@@ -10,8 +10,8 @@
  * Might be the way to go for full runtime 
  * 
  * 
- * Usage
- *    seed gtkrun.js /path/to/myproject
+ * Usage:
+ *    sh builder.sh
  * 
  * Concepts.. 
  * a) load dependancies.. (eg. gi's..) - derived later?
@@ -29,8 +29,9 @@
 // sort out import path - this is  a bit of a mess..
 GIRepository = imports.gi.GIRepository;
 GLib        = imports.gi.GLib;
+/* use builder.sh
 GIRepository.IRepository.prepend_search_path(GLib.get_home_dir() + '/.Builder/girepository-1.1');
-
+*/
 
 Gtk         = imports.gi.Gtk;
 Gdk         = imports.gi.Gdk;
