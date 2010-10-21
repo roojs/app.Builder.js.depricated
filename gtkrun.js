@@ -10,7 +10,7 @@
  * Might be the way to go for full runtime 
  * 
  * 
- * Usage:
+ * Usage: (call with wrapper to set up directories..)
  *    sh builder.sh
  * 
  * Concepts.. 
