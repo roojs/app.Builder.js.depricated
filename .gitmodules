@@ -3,4 +3,4 @@
 	url = http://public.akbkhome.com/roojs1
 [submodule "gir-1.1"]
 	path = gir-1.1
-	url = http://private.akbkhome.com/gir-1.1
+	url = git://github.com/roojs/gir-1.1.git 
