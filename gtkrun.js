@@ -26,7 +26,7 @@
  */
 // autogen?
 
-// sort out import path!!!
+// sort out import path - this is  a bit of a mess..
 GIRepository = imports.gi.GIRepository;
 GLib        = imports.gi.GLib;
 GIRepository.IRepository.prepend_search_path(GLib.get_home_dir() + '/.Builder/girepository-1.1');
