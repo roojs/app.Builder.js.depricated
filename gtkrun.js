@@ -1,4 +1,4 @@
-#!/usr/bin/seed
+#!/usr/bin/seed 
 //<Script type="text/javascript">
 /**
  * runtime file
