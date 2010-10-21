@@ -27,8 +27,11 @@
 // autogen?
 
 // sort out import path!!!
- 
- 
+GIRepository = imports.gi.GIRepository;
+GIRepository.IRepository.prepend_search_path('~/.Builder/girepository-1.1/');
+
+
+
 Gtk         = imports.gi.Gtk;
 Gdk         = imports.gi.Gdk;
 Pango       = imports.gi.Pango;
