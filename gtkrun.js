@@ -28,7 +28,7 @@
 
 // sort out import path!!!
 GIRepository = imports.gi.GIRepository;
-GIRepository.IRepository.prepend_search_path('/home/alan/.Builder/gir-1.1/girepository-1.0');
+GIRepository.IRepository.prepend_search_path('/home/alan/.Builder/girepository-1.1');
 
 print(JSON.stringify(GIRepository.IRepository.get_search_path()));
 
