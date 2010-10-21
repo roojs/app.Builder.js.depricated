@@ -642,9 +642,13 @@ readers.forEach(function(reader) {
             continue;
         }
         formHeight += reader.form[k].xtype == 'TextArea' ? 100 : 30;
+        
         formElements.push(reader.form[k]);
     }
-    formElements.push(reader.form['id']);
+    if (reader.form['id']) {
+        formElements.push(reader.form['id']);
+    }
+    
 
     print("WRITE: " +  dir + '/' + cfg.DBNAME + '_' + reader.table + '.json');
     var frmCfg = 
