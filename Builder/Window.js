@@ -213,7 +213,7 @@ Window=new XObject({
                                                 activate : function (self, event) {
                                                       var js = this.get('/LeftTree.model').toJS();
                                                     if (js && js[0]) {
-                                                        this.get('/RightBrowser.view').renderJS(js[0]);
+                                                        this.get('/RightBrowser.view').renderJS(js[0], true);
                                                     } 
                                                     return false;
                                                 }
@@ -338,29 +338,20 @@ Window=new XObject({
                                                     xtype: Gtk.Expander,
                                                     listeners : {
                                                         activate : function (self) {
-                                                        	var nb = this.get('/LeftTopPanel.notebook');
-                                                        	if (this.el.expanded) {
-                                                        	    // now expanded..
-                                                                    
-                                                        	    var pm  = imports.Builder.Provider.ProjectManager.ProjectManager;
-                                                        	    
-                                                        	   
-                                                        	    var model = this.get('/LeftProjectTree.combomodel');
-                                                        	  //  print ("loading Projects?")
-                                                        	//console.dump(pm.projects);
-                                                        	    model.loadData(pm.projects);
-                                                        	     
-                                                        	    
-                                                        	    nb.el.set_current_page(1);
-                                                        	    //pm.on('changed', function() {
-                                                        		//console.log("CAUGHT project manager change");
-                                                        	    //    _combo.model.loadData(pm.projects);
-                                                        	    //}
-                                                        	    return;
-                                                        	}
-                                                        	nb.el.set_current_page(0);
+                                                            // this does not actually expand it..
+                                                            // that is done by GTK..
+                                                            
+                                                            
+                                                        
+                                                            if (!this.el.expanded) {
+                                                                this.onExpand();
+                                                            } else {
+                                                                this.onCollapse();
+                                                            }
+                                                        	  
                                                         },
                                                         enter_notify_event : function (self, event) {
+                                                        return;
                                                              this.el.expanded = !this.el.expanded;
                                                         //if (this.el.expanded ) {
                                                             this.listeners.activate.call(this);
@@ -372,22 +363,45 @@ Window=new XObject({
                                                     id : "expander",
                                                     label : "Select Project or File",
                                                     pack : "pack_start,false,true",
+                                                    onCollapse : function() {
+                                                        
+                                                        var nb = this.get('/LeftTopPanel.notebook');
+                                                        nb.el.set_current_page(0);
+                                                    },
                                                     init : function() {
                                                         XObject.prototype.init.call(this);
                                                        this.el.add_events (Gdk.EventMask.BUTTON_MOTION_MASK );
+                                                    },
+                                                    onExpand : function() {
+                                                        var nb = this.get('/LeftTopPanel.notebook');            
+                                                        var pm  = imports.Builder.Provider.ProjectManager.ProjectManager;
+                                                        
+                                                       
+                                                        var model = this.get('/LeftProjectTree.combomodel');
+                                                        //  print ("loading Projects?")
+                                                        //console.dump(pm.projects);
+                                                        model.loadData(pm.projects);
+                                                         
+                                                        
+                                                        nb.el.set_current_page(1);
+                                                        //pm.on('changed', function() {
+                                                    	//console.log("CAUGHT project manager change");
+                                                        //    _combo.model.loadData(pm.projects);
+                                                        //}
+                                                        return;
                                                     }
                                                 },
                                                 {
                                                     xtype: Gtk.Notebook,
                                                     id : "notebook",
-                                                    show_border : false,
-                                                    show_tabs : false,
                                                     pack : "pack_start,true,true",
                                                     init : function() {
                                                         XObject.prototype.init.call(this);
                                                     	this.el.set_current_page(0);
                                                     
                                                     },
+                                                    show_border : false,
+                                                    show_tabs : false,
                                                     items : [
                                                         {
                                                             xtype: Gtk.ScrolledWindow,
@@ -1561,7 +1575,8 @@ Window=new XObject({
                                                                                 
                                                                                         var nb = this.get('/LeftTopPanel.expander');
                                                                                         nb.el.expanded = false;
-                                                                                        nb.listeners.activate.call(nb);
+                                                                                        nb.onCollapse();
+                                                                                        //nb.listeners.activate.call(nb);
                                                                                         //_expander.el.set_expanded(false);
                                                                                 
                                                                                         var ltm = this.get('/LeftTree.model');
@@ -1900,21 +1915,96 @@ Window=new XObject({
                                                 },
                                                 {
                                                     xtype: Gtk.ScrolledWindow,
+                                                    editing : false,
                                                     id : "LeftPanel",
                                                     pack : "add",
-                                                    shadow_type : Gtk.ShadowType.IN,
-                                                    editing : false,
                                                     init : function() {
                                                         XObject.prototype.init.call(this);
                                                        this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
                                                     },
+                                                    shadow_type : Gtk.ShadowType.IN,
                                                     items : [
                                                         {
                                                             xtype: Gtk.TreeView,
+                                                            listeners : {
+                                                                button_press_event : function (self, ev) {
+                                                                
+                                                                    
+                                                                    var res = { }; 
+                                                                    
+                                                                    if (!this.el.get_path_at_pos(ev.button.x,ev.button.y, res)) {
+                                                                        return false; //not on a element.
+                                                                    }
+                                                                    
+                                                                     // right click.
+                                                                     if (ev.type == Gdk.EventType.BUTTON_PRESS  && ev.button.button == 3) {    
+                                                                        // show popup!.   
+                                                                        if (res.column.title == 'value' && this.get('/LeftPanel').editing) {
+                                                                            return false;
+                                                                        }
+                                                                        //if (! this.get('/LeftPanelPopup')LeftPanelPopup.el) LeftPanelPopup.init();
+                                                                        var p = this.get('/LeftPanelPopup');
+                                                                        if (!p.el) {
+                                                                            p.init();
+                                                                        }
+                                                                
+                                                                        p.el.set_screen(Gdk.Screen.get_default());
+                                                                        p.el.show_all();
+                                                                        p.el.popup(null, null, null, null, 3, ev.button.time);
+                                                                        //Seed.print("click:" + res.column.title);
+                                                                        
+                                                                        
+                                                                        return false;
+                                                                    }
+                                                                    
+                                                                     
+                                                                    if (res.column.title != 'value') {
+                                                                          //  XObject.error("column is not value?");
+                                                                        return false; // ignore.. - key click.. ??? should we do this??
+                                                                    }
+                                                                    
+                                                                    // currently editing???
+                                                                //    if (  this.activePath) {
+                                                                        
+                                                                     //   this.activePath = false;
+                                                                       // stop editing!!!!
+                                                                        this.get('/LeftPanel').editableColumn.items[0].el.stop_editing();
+                                                                        this.get('/LeftPanel').editing = false;
+                                                                    
+                                                                    //    XObject.error("Currently editing?");
+                                                                     //   return false;
+                                                                   // }
+                                                                    
+                                                                    var renderer = this.get('/LeftPanel').editableColumn.items[0].el; // set has_entry..
+                                                                    
+                                                                    var type = this.get('/LeftPanel.model').getType(res.path.to_string());
+                                                                        
+                                                                    // get options for this type -- this is to support option lists etc..
+                                                                    var provider = this.get('/LeftTree').getPaleteProvider();
+                                                                    var opts = provider.findOptions(type);
+                                                                    
+                                                                    if (opts === false) {
+                                                                        // it's text etnry
+                                                                         this.get('/LeftPanel').editableColumn.setOptions([]);
+                                                                        renderer.has_entry = true;
+                                                                    } else {
+                                                                         this.get('/LeftPanel').editableColumn.setOptions(opts);
+                                                                        renderer.has_entry = false;
+                                                                    }
+                                                                    this.get('/LeftPanel.model').startEditing(res.path.to_string(), 1);
+                                                                        
+                                                                   //Seed.print("click" + ev.type);
+                                                                    //console.dump(res);
+                                                                    return false;
+                                                                
+                                                                              
+                                                                   
+                                                                }
+                                                            },
                                                             id : "view",
                                                             tooltip_column : 5,
-                                                            headers_visible : false,
                                                             enable_tree_lines : true,
+                                                            headers_visible : false,
                                                             init : function() {
                                                                  XObject.prototype.init.call(this); 
                                                                                    
@@ -1925,68 +2015,6 @@ Window=new XObject({
                                                                                 var description = new Pango.FontDescription.c_new();
                                                                                 description.set_size(8000);
                                                                                 this.el.modify_font(description);
-                                                            },
-                                                            listeners : {
-                                                                button_press_event : function (self, ev) {
-                                                                    
-                                                                                
-                                                                                var res = { }; 
-                                                                                if (!this.el.get_path_at_pos(ev.button.x,ev.button.y, res)) {
-                                                                                    return false; //not on a element.
-                                                                                }
-                                                                                
-                                                                                
-                                                                                if (ev.type != Gdk.EventType.BUTTON_PRESS  || ev.button.button != 3) {
-                                                                                    
-                                                                                    if (res.column.title != 'value') {
-                                                                                        return false; // ignore..
-                                                                                    }
-                                                                                    if (  this.get('/LeftPanel').editing) {
-                                                                                        return false;
-                                                                                    }
-                                                                                    var renderer = this.get('/LeftPanel').editableColumn.items[0].el; // set has_entry..
-                                                                                    this.get('/LeftPanel').editableColumn.items[0].el.stop_editing();
-                                                                                    var type = this.get('/LeftPanel.model').getType(res.path.to_string());
-                                                                                    
-                                                                                     
-                                                                
-                                                                                    var provider = this.get('/LeftTree').getPaleteProvider();
-                                                                                    
-                                                                                    var opts = provider.findOptions(type);
-                                                                                    
-                                                                                    if (opts === false) {
-                                                                                         this.get('/LeftPanel').editableColumn.setOptions([]);
-                                                                                        renderer.has_entry = true;
-                                                                                    } else {
-                                                                                        LeftPanel.editableColumn.setOptions(opts);
-                                                                                        renderer.has_entry = false;
-                                                                                    }
-                                                                                    
-                                                                                    
-                                                                                   //Seed.print("click" + ev.type);
-                                                                                    //console.dump(res);
-                                                                                    return false;
-                                                                                }
-                                                                              
-                                                                            
-                                                                               
-                                                                                if (res.column.title == 'value') {
-                                                                                    return false;
-                                                                                }
-                                                                                //if (! this.get('/LeftPanelPopup')LeftPanelPopup.el) LeftPanelPopup.init();
-                                                                		var p = this.get('/LeftPanelPopup');
-                                                                		if (!p.el) {
-                                                                			p.init();
-                                                                		}
-                                                                
-                                                                                p.el.set_screen(Gdk.Screen.get_default());
-                                                                                p.el.show_all();
-                                                                                p.el.popup(null, null, null, null, 3, ev.button.time);
-                                                                                //Seed.print("click:" + res.column.title);
-                                                                                
-                                                                                
-                                                                                return false;
-                                                                }
                                                             },
                                                             items : [
                                                                 {
@@ -2099,61 +2127,6 @@ Window=new XObject({
                                                                         this.get('/LeftTree.model').changed(data, true);
                                                                         
                                                                     },
-                                                                    editSelected : function(e) {
-                                                                        print("EDIT SELECTED?");
-                                                                        var iter = new Gtk.TreeIter();
-                                                                        var s = this.get('/LeftPanel.view').selection;
-                                                                        s.get_selected(this.get('/LeftPanel.model').el, iter);
-                                                                        var m = this.get('/LeftPanel.model')
-                                                                       
-                                                                        var gval = new GObject.Value('');
-                                                                        this.el.get_value(iter, 0 ,gval);
-                                                                        var val = '' + gval.value;
-                                                                        
-                                                                        gval = new GObject.Value('');
-                                                                        this.el.get_value(iter, 1 ,gval);
-                                                                        var rval = gval.value;
-                                                                        var activePath = this.el.get_path(iter).to_string(); 
-                                                                        this.activePath = activePath ;
-                                                                        // was activeIter...
-                                                                        //  not listener...
-                                                                    
-                                                                        var showEditor = false;
-                                                                        
-                                                                        if (val[0] == '!') {
-                                                                            showEditor = true;
-                                                                        }
-                                                                        if (val[0] == '|') {
-                                                                            if (rval.match(/function/g) || rval.match(/\n/g) || rval.length > 20) {
-                                                                                showEditor = true;
-                                                                            }
-                                                                        }
-                                                                        
-                                                                        if (showEditor) {
-                                                                            var _this = this;
-                                                                            this.activePath = false;
-                                                                            GLib.timeout_add(0, 1, function() {
-                                                                                //   Gdk.threads_enter();
-                                                                                _this.get('/BottomPane').el.show();
-                                                                                _this.get('/RightEditor').el.show();
-                                                                                _this.get('/RightEditor.view').load( rval );
-                                                                                
-                                                                                e.editing_done();
-                                                                                e.remove_widget();
-                                                                                _this.activePath = activePath ;
-                                                                                
-                                                                         //       Gdk.threads_leave();
-                                                                                return false;
-                                                                            });
-                                                                            return;
-                                                                        }
-                                                                          this.get('/BottomPane').el.hide();
-                                                                        this.get('/RightEditor').el.hide();
-                                                                    
-                                                                            //var type = this.getValue(this.el.get_path(iter).to_string(),4);
-                                                                            
-                                                                            
-                                                                    },
                                                                     getIterValue : function(iter, col) {
                                                                          var gval = new GObject.Value('');
                                                                         this.get('/LeftPanel.model').el.get_value(iter, col ,gval);
@@ -2162,13 +2135,17 @@ Window=new XObject({
                                                                     getType : function(treepath) {
                                                                          return this.getValue(treepath, 4);
                                                                     },
-                                                                    getValue : function(treepath_str, col) {
-                                                                          var iter = new Gtk.TreeIter();
+                                                                    getValue : function(treepath_str, col) 
+                                                                    {
+                                                                       // get's the  value in a row.. - keys - returns string, values - formats it..
+                                                                    
+                                                                        var iter = new Gtk.TreeIter();
                                                                         this.el.get_iter(iter, new Gtk.TreePath.from_string(treepath_str));
                                                                         
                                                                         var gval = new GObject.Value('');
                                                                         this.get('/LeftPanel.model').el.get_value(iter, col ,gval);
                                                                         var val = '' + gval.value;
+                                                                       
                                                                         if (col != 1) {
                                                                             return val;
                                                                         }
@@ -2260,13 +2237,15 @@ Window=new XObject({
                                                                         return ret;
                                                                     },
                                                                     startEditing : function(path,col) {
+                                                                    // alled by menu 'edit' currently..
                                                                         /**
                                                                         * start editing path (or selected if not set..)
                                                                         * @param {String|false} path  (optional) treepath to edit - selected tree gets
                                                                         *     edited by default.
                                                                         * @param {Number} 0 or 1 (optional)- column to edit. 
                                                                         */
-                                                                         var tp;
+                                                                        // fix tp to be the 'treepath' string (eg. 0/1/2...)
+                                                                        var tp;
                                                                         if (typeof(path) == 'string') {
                                                                             tp = new Gtk.TreePath.from_string(path);
                                                                         } else {
@@ -2280,8 +2259,12 @@ Window=new XObject({
                                                                        
                                                                         // which colum is to be edited..
                                                                         var colObj = false;
+                                                                        
+                                                                        // not sure what this does..
+                                                                        
                                                                         if (typeof(col) == 'undefined') {
                                                                             var k = this.getValue(path, 0);
+                                                                            col = 1;
                                                                             colObj = (!k.length || k == '|') ? 
                                                                                 this.get('/LeftPanel').propertyColumn : this.get('/LeftPanel').editableColumn;
                                                                         } else {
@@ -2290,25 +2273,65 @@ Window=new XObject({
                                                                         
                                                                         // make sure the pulldown is set correctly..
                                                                         // not really needed for second col...
-                                                                    
-                                                                        var provider = this.get('/LeftTree').getPaleteProvider();
-                                                                       
-                                                                        var type = this.get('/LeftPanel.model').getType(path);
-                                                                        var opts = provider.findOptions(type);
-                                                                        var renderer = this.get('/LeftPanel').editableColumn.items[0].el;
+                                                                        var showEditor = false;
                                                                         
-                                                                        if (opts === false) {
-                                                                            this.get('/LeftPanel').editableColumn.setOptions([]);
-                                                                            renderer.has_entry = true; /// probably does not have any effect.
-                                                                        } else {
-                                                                            this.get('/LeftPanel').editableColumn.setOptions(opts);
-                                                                            renderer.has_entry = false;
+                                                                        if (col) {
+                                                                            var provider = this.get('/LeftTree').getPaleteProvider();
+                                                                            var type = this.get('/LeftPanel.model').getType(path);
+                                                                            var opts = provider.findOptions(type);
+                                                                            var renderer = this.get('/LeftPanel').editableColumn.items[0].el;
+                                                                            
+                                                                            if (opts === false) {
+                                                                                this.get('/LeftPanel').editableColumn.setOptions([]);
+                                                                                renderer.has_entry = true; 
+                                                                            } else {
+                                                                                this.get('/LeftPanel').editableColumn.setOptions(opts);
+                                                                                renderer.has_entry = false;/// - pulldowns do not have entries
+                                                                            }
+                                                                            // determine if we should use the Text editor...
+                                                                            var keyname = this.getValue(path, 0);
+                                                                            var data_value = this.getValue(path, 1);
+                                                                        
+                                                                            if ((keyname[0] == '|') || 
+                                                                                (   
+                                                                                    (typeof(data_value) == 'string' ) && 
+                                                                                    ( data_value.match(/function/g) || data_value.match(/\n/g)) // || (data_value.length > 20))
+                                                                                )) {
+                                                                                showEditor = true;
+                                                                            }
+                                                                            print("SHOW EDITOR" + showEditor ? 'YES' :'no');
+                                                                            
+                                                                        }
+                                                                        var _this = this;    
+                                                                        // end editing..
+                                                                        this.get('/BottomPane').el.hide();
+                                                                        this.get('/RightEditor').el.hide();
+                                                                        
+                                                                        
+                                                                        if (showEditor) {
+                                                                    
+                                                                            this.activePath = false;
+                                                                            GLib.timeout_add(0, 1, function() {
+                                                                    
+                                                                                _this.get('/BottomPane').el.show();
+                                                                                _this.get('/RightEditor').el.show();
+                                                                                _this.get('/RightEditor.view').load( _this.getValue(path, 1) );
+                                                                                
+                                                                                //e.editing_done();
+                                                                                //e.remove_widget();
+                                                                                _this.activePath = path ;
+                                                                                
+                                                                                return false;
+                                                                            });
+                                                                            return;
                                                                         }
                                                                         
-                                                                        var _this=this;
+                                                                        
+                                                                        
+                                                                    
                                                                         // iter now has row...
                                                                         GLib.timeout_add(0, 100, function() {
-                                                                            
+                                                                            _this.activePath = path;
                                                                             colObj.items[0].el.editable = true; // esp. need for col 0..
                                                                             _this.get('/LeftPanel.view').el.set_cursor_on_cell(
                                                                                 tp,
@@ -2391,11 +2414,12 @@ Window=new XObject({
                                                                 {
                                                                     xtype: Gtk.TreeViewColumn,
                                                                     pack : "append_column",
+                                                                    title : "value",
                                                                     init : function() {
                                                                         XObject.prototype.init.call(this);
                                                                     	this.el.add_attribute(this.items[0].el , 'text', 3 );
                                                                     	this.el.add_attribute(this.items[0].el , 'sensitive', 3 );
-                                                                    	this.el.add_attribute(this.items[0].el , 'editable', 3 );
+                                                                    	//this.el.add_attribute(this.items[0].el , 'editable', 3 );
                                                                               // this.el.set_cell_data_func(cell, age_cell_data_func, NULL, NULL);
                                                                     
                                                                      	this.get('/LeftPanel').editableColumn= this;
@@ -2414,30 +2438,34 @@ Window=new XObject({
                                                                     items : [
                                                                         {
                                                                             xtype: Gtk.CellRendererCombo,
+                                                                            listeners : {
+                                                                                edited : function (self, object, p0) {
+                                                                                 	this.get('/LeftPanel').editing = false;
+                                                                                 	var ap = this.get('/LeftPanel.model').activePath
+                                                                                	print("EDITED? "  + ap + " - p:" + p0 + " t:" + p0);
+                                                                                        this.get('/LeftPanel.model').changed(p0, true);
+                                                                                        this.get('/LeftPanel.model').activePath = false;
+                                                                                        this.el.editable = false;
+                                                                                },
+                                                                                editing_started : function (self, editable, path) {
+                                                                                   this.get('/LeftPanel').editing  = true;
+                                                                                	//  console.log('editing started');
+                                                                                       // r.has_entry = false;
+                                                                                
+                                                                                    this.el.editable = false; // make sure it's not editor...
+                                                                                   
+                                                                                }
+                                                                            },
                                                                             pack : "pack_start",
+                                                                            text_column : 0,
                                                                             editable : true,
                                                                             has_entry : true,
-                                                                            text_column : 0,
                                                                             init : function() {
                                                                                 XObject.prototype.init.call(this);
                                                                                this.el.model = new Gtk.ListStore();
                                                                                 this.el.model.set_column_types ( 1, [
                                                                                     GObject.TYPE_STRING  // 0 real key
                                                                                   ]);
-                                                                            },
-                                                                            listeners : {
-                                                                                edited : function (self, object, p0) {
-                                                                                 	this.get('/LeftPanel').editing = false;
-                                                                                	print("EDITED? p:" + p0 + " t:" + p0);
-                                                                                        this.get('/LeftPanel.model').changed(p0, true);
-                                                                                        this.get('/LeftPanel.model').activePath = false;
-                                                                                },
-                                                                                editing_started : function (self, editable, path) {
-                                                                                   this.get('/LeftPanel').editing  = true;
-                                                                                	//  console.log('editing started');
-                                                                                       // r.has_entry = false;
-                                                                                   this.get('/LeftPanel.model').editSelected(editable);
-                                                                                }
                                                                             }
                                                                         }
                                                                     ]
@@ -2723,6 +2751,34 @@ Window=new XObject({
                                                                     pack : "add",
                                                                     items : [
                                                                         {
+                                                                            xtype: Gtk.HBox,
+                                                                            pack : "pack_start,false,true,0",
+                                                                            items : [
+                                                                                {
+                                                                                    xtype: Gtk.Button,
+                                                                                    listeners : {
+                                                                                        clicked : function (self) {
+                                                                                          this.get('/RightBrowser.view').renderJS(null,true);
+                                                                                        }
+                                                                                    },
+                                                                                    label : "Redraw",
+                                                                                    pack : "pack_start,false,false,0"
+                                                                                },
+                                                                                {
+                                                                                    xtype: Gtk.CheckButton,
+                                                                                    listeners : {
+                                                                                        toggled : function (self, state) {
+                                                                                            this.el.set_label(this.el.active  ? "Auto Redraw On" : "Auto Redraw Off");
+                                                                                        }
+                                                                                    },
+                                                                                    active : true,
+                                                                                    id : "AutoRedraw",
+                                                                                    label : "Auto Redraw On",
+                                                                                    pack : "pack_start,false,false,0"
+                                                                                }
+                                                                            ]
+                                                                        },
+                                                                        {
                                                                             xtype: Gtk.ScrolledWindow,
                                                                             pack : "add",
                                                                             init : function() {
@@ -2906,6 +2962,7 @@ Window=new XObject({
                                                                                            return null; //new WebKit.WebView();
                                                                                         }
                                                                                     },
+                                                                                    redraws : 0,
                                                                                     id : "view",
                                                                                     pack : "add",
                                                                                     init : function() {
@@ -2958,7 +3015,15 @@ Window=new XObject({
                                                                                         
                                                                                         
                                                                                     },
-                                                                                    renderJS : function(data) {
+                                                                                    renderJS : function(data, force) {
+                                                                                    
+                                                                                        // this is the public redraw call..
+                                                                                        // we refresh in a loop privately..
+                                                                                        var autodraw = this.get('/RightBrowser.AutoRedraw').el.active;
+                                                                                        if (!autodraw && !force) {
+                                                                                            print("Skipping redraw - no force, and autodraw off");
+                                                                                            return;
+                                                                                        }
                                                                                         this.refreshRequired  = true;
                                                                                     },
                                                                                     runRefresh : function() 
@@ -2998,7 +3063,7 @@ Window=new XObject({
                                                                                             return;
                                                                                         }
                                                                                         var  data = js[0];
-                                                                                        
+                                                                                        this.redraws++;
                                                                                         
                                                                                          var project = this.get('/Window.LeftTree').getActiveFile().project;
                                                                                          //print (project.fn);
@@ -3009,7 +3074,7 @@ Window=new XObject({
                                                                                     
                                                                                          this.runhtml  = this.runhtml || '';
                                                                                         
-                                                                                         if (project.runhtml != this.runhtml) {
+                                                                                         if ((project.runhtml != this.runhtml) || (this.redraws > 10)) {
                                                                                             // then we need to reload the browser using
                                                                                             // load_html_string..
                                                                                             
@@ -3031,7 +3096,7 @@ Window=new XObject({
                                                                                                 //fixme - should be a config option!
                                                                                                 'http://localhost/app.Builder/'
                                                                                             );
-                                                                                            
+                                                                                            this.redraws = 0;
                                                                                             // should trigger load_finished! - which in truns shoudl set refresh Required;
                                                                                             return;
                                                                                         
