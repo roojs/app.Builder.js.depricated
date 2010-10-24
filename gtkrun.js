@@ -29,9 +29,10 @@
 // sort out import path - this is  a bit of a mess..
 GIRepository = imports.gi.GIRepository;
 GLib        = imports.gi.GLib;
-/* use builder.sh
+
+// we add this in, as it appears to get lost sometimes if we set it using the ENV. variable in builder.sh
 GIRepository.IRepository.prepend_search_path(GLib.get_home_dir() + '/.Builder/girepository-1.1');
-*/
+//print(JSON.stringify(GIRepository.IRepository.get_search_path()));
 
 Gtk         = imports.gi.Gtk;
 Gdk         = imports.gi.Gdk;
