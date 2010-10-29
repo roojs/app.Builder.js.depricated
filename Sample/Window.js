@@ -25,7 +25,7 @@ Window=new XObject({
          	this.get('/MidPropTree').hideWin();
             this.get('/RightPalete').hide();
             this.get('/BottomPane').el.hide();
-            this.get('/EditorWindow').show_all();
+           // this.get('/EditorWindow').show_all();
         
         }
     },
