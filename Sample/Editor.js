@@ -23,7 +23,7 @@ Editor=new XObject({
     items : [
         {
             xtype: Gtk.VBox,
-            pack : "pack_start",
+            pack : "pack_start,true,true",
             items : [
                 {
                     xtype: Gtk.Toolbar,
