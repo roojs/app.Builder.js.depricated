@@ -12,6 +12,7 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 Editor=new XObject({
     xtype: Gtk.Window,
+    id : "EditorWindow",
     items : [
         {
             xtype: Gtk.ScrolledWindow,
