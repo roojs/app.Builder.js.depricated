@@ -1000,36 +1000,6 @@
                                                             "|xns": "Gtk",
                                                             "xtype": "ScrolledWindow",
                                                             "pack": "add",
-                                                            "id": "RightEditor",
-                                                            "items": [
-                                                                {
-                                                                    "|xns": "GtkSource",
-                                                                    "xtype": "View",
-                                                                    "pack": "add",
-                                                                    "id": "view",
-                                                                    "|init": "function() {\n    XObject.prototype.init.call(this);\n     var description = Pango.Font.description_from_string(\"monospace\")\n    description.set_size(8000);\n    this.el.modify_font(description);\n\n}\n",
-                                                                    "|load": "function(str) {\n\n// show the help page for the active node..\n   this.get('/Help').show();\n\n\n   this.get('/BottomPane').el.set_current_page(0);\n    this.el.get_buffer().set_text(str, str.length);\n    var lm = GtkSource.LanguageManager.get_default();\n    \n    this.el.get_buffer().set_language(lm.get_language('js'));\n    var buf = this.el.get_buffer();\n    var cursor = buf.get_mark(\"insert\");\n    var iter= new Gtk.TextIter;\n    buf.get_iter_at_mark(iter, cursor);\n    iter.set_line(1);\n    iter.set_line_offset(4);\n    buf.move_mark(cursor, iter);\n    \n    \n    cursor = buf.get_mark(\"selection_bound\");\n    iter= new Gtk.TextIter;\n    buf.get_iter_at_mark(iter, cursor);\n    iter.set_line(1);\n    iter.set_line_offset(4);\n    buf.move_mark(cursor, iter);\n     \n    this.el.grab_focus();\n}",
-                                                                    "|insert_spaces_instead_of_tabs": true,
-                                                                    "indent_width": 4,
-                                                                    "|auto_indent": true,
-                                                                    "|show_line_numbers": true,
-                                                                    "items": [
-                                                                        {
-                                                                            "listeners": {
-                                                                                "changed": "function (self) {\n    var s = new Gtk.TextIter();\n    var e = new Gtk.TextIter();\n    this.el.get_start_iter(s);\n    this.el.get_end_iter(e);\n    var str = this.el.get_text(s,e,true);\n    try {\n        Seed.check_syntax('var e = ' + str);\n    } catch (e) {\n        this.get('/RightEditor.view').el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({\n            red: 0xFFFF, green: 0xCCCC , blue : 0xCCCC\n           }));\n        //print(\"SYNTAX ERROR IN EDITOR\");   \n        //print(e);\n        //console.dump(e);\n        return;\n    }\n    this.get('/RightEditor.view').el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({\n            red: 0xFFFF, green: 0xFFFF , blue : 0xFFFF\n           }));\n    \n     this.get('/LeftPanel.model').changed(  str , false);\n}"
-                                                                            },
-                                                                            "pack": "set_buffer",
-                                                                            "xtype": "Buffer",
-                                                                            "|xns": "GtkSource"
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ]
-                                                        },
-                                                        {
-                                                            "|xns": "Gtk",
-                                                            "xtype": "ScrolledWindow",
-                                                            "pack": "add",
                                                             "items": [
                                                                 {
                                                                     "|xns": "Vte",
