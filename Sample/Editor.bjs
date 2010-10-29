@@ -4,6 +4,11 @@
     "parent": "",
     "title": false,
     "path": "/home/alan/gitlive/app.Builder.js/Sample/Editor.bjs",
-    "items": false,
+    "items": [
+        {
+            "|xns": "Gtk",
+            "xtype": "Window"
+        }
+    ],
     "permname": ""
 }
