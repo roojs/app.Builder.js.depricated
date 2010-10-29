@@ -706,7 +706,6 @@
                                                                                     "pack": "pack_start",
                                                                                     "text_column": 0,
                                                                                     "xtype": "CellRendererCombo",
-                                                                                    "|editable": true,
                                                                                     "|has_entry": true,
                                                                                     "|init": "function() {\n    XObject.prototype.init.call(this);\n   this.el.model = new Gtk.ListStore();\n    this.el.model.set_column_types ( 1, [\n        GObject.TYPE_STRING  // 0 real key\n      ]);\n}\n",
                                                                                     "|xns": "Gtk"
