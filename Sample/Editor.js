@@ -144,11 +144,12 @@ Editor=new XObject({
                                             Seed.check_syntax('var e = ' + str);
                                             return true;
                                         } catch (e) {
+                                            
                                             this.get('/RightEditor.view').el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({
                                                 red: 0xFFFF, green: 0xCCCC , blue : 0xCCCC
                                                }));
-                                            //print("SYNTAX ERROR IN EDITOR");   
-                                            //print(e);
+                                            print("SYNTAX ERROR IN EDITOR");   
+                                            print(e);
                                             //console.dump(e);
                                             return false;
                                         }
