@@ -31,8 +31,7 @@ Editor=new XObject({
                     items : [
                         {
                             xtype: Gtk.ToolButton,
-                            label : "Save",
-                            pack : "append"
+                            label : "Save"
                         }
                     ]
                 },
