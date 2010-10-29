@@ -7,7 +7,7 @@
     "items": [
         {
             "listeners": {
-                "delete_event": "function (self, event) {\n    return true;\n}",
+                "delete_event": "function (self, event) {\n    _this.el.hide();\n    return true;\n}",
                 "destroy_event": "function (self, event) {\n    return true;\n}"
             },
             "height_request": 300,
