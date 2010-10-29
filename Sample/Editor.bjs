@@ -62,7 +62,7 @@
                                     "items": [
                                         {
                                             "listeners": {
-                                                "changed": "function (self) {\n\n    this.checkSyntax();\n    print(\"EDITOR CHANGED\");\n    _this.dirty = true;\n    // this.get('/LeftPanel.model').changed(  str , false);\n\n}"
+                                                "changed": "function (self) {\n\n    this.checkSyntax();\n    print(\"EDITOR CHANGED\");\n    this.getdirty = true;\n    // this.get('/LeftPanel.model').changed(  str , false);\n\n}"
                                             },
                                             "id": "buffer",
                                             "pack": "set_buffer",
