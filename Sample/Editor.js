@@ -13,6 +13,7 @@ XObject = imports.XObject.XObject;
 Editor=new XObject({
     xtype: Gtk.Window,
     id : "EditorWindow",
+    title : "Application Builder - Editor",
     init : function() {
         XObject.prototype.init.call(this);
        // this.show_all();
