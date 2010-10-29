@@ -14,14 +14,10 @@ Editor=new XObject({
     xtype: Gtk.Window,
     listeners : {
         delete_event : function (self, event) {
-            return false;
+            return true;
         },
         destroy_event : function (self, event) {
-            return false;
-        },
-        destroy : function (self) {
-            this.el.hide();
-            return false;
+            return true;
         }
     },
     height_request : 300,
