@@ -10,7 +10,7 @@
                 "destroy_event": "function (self, event) {\n    this.el.hide();\n    return true;\n}",
                 "delete_event": "function (self, event) {\n      this.el.hide();\n    return true;\n}",
                 "configure_event": "function (self, object) {\n    this.pos = this.el.get_position();\n\n\n    return false;\n}",
-                "show": "function (self) {\n    if (this.pos) {\n        this.el.set_upositi\n    }\n}"
+                "show": "function (self) {\n    if (this.pos) {\n        this.el.set_uposition(this.pos.root_x,this.pos.root_y);\n    }\n}"
             },
             "height_request": 300,
             "id": "EditorWindow",
