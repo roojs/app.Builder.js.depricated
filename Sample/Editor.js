@@ -13,11 +13,8 @@ XObject = imports.XObject.XObject;
 Editor=new XObject({
     xtype: Gtk.Window,
     listeners : {
-        delete_event : function (self, event) {
-            _this.el.hide();
-            return true;
-        },
         destroy_event : function (self, event) {
+            _this.el.hide();
             return true;
         }
     },
