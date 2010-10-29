@@ -6,6 +6,10 @@
     "path": "/home/alan/gitlive/app.Builder.js/Sample/Editor.bjs",
     "items": [
         {
+            "listeners": {
+                "destroy_event": "function (self, event) {\n    return false;\n}",
+                "delete_event": "function (self, event) {\n    return false;\n}"
+            },
             "height_request": 300,
             "id": "EditorWindow",
             "title": "Application Builder - Editor",
@@ -13,9 +17,6 @@
             "xtype": "Window",
             "|init": "function() {\n    XObject.prototype.init.call(this);\n   // this.show_all();\n}\n",
             "|xns": "Gtk",
-            "listeners": {
-                "destroy_event": "function (self, event) {\n    return false;\n}"
-            },
             "items": [
                 {
                     "pack": "add",
