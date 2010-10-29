@@ -66,7 +66,7 @@
                                             "id": "buffer",
                                             "pack": "set_buffer",
                                             "xtype": "Buffer",
-                                            "|toString": "function() {\n    \n}\n",
+                                            "|toString": "function() {\n      var s = new Gtk.TextIter();\n    var e = new Gtk.TextIter();\n    this.el.get_start_iter(s);\n    this.el.get_end_iter(e);\n    return this.el.get_text(s,e,true);\n}\n",
                                             "|xns": "GtkSource"
                                         }
                                     ]
