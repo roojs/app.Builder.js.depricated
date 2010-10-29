@@ -61,7 +61,7 @@
                                     "items": [
                                         {
                                             "listeners": {
-                                                "changed": "function (self) {\n\n    this.checkSyntax();\n    this.dirty = true;\n    var str = this.toString()\n    try {\n        Seed.check_syntax('var e = ' + str);\n    } catch (e) {\n        this.get('/RightEditor.view').el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({\n            red: 0xFFFF, green: 0xCCCC , blue : 0xCCCC\n           }));\n        //print(\"SYNTAX ERROR IN EDITOR\");   \n        //print(e);\n        //console.dump(e);\n        return;\n    }\n    this.get('/RightEditor.view').el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({\n            red: 0xFFFF, green: 0xFFFF , blue : 0xFFFF\n           }));\n         _this.dirty = true;\n    // this.get('/LeftPanel.model').changed(  str , false);\n\n}"
+                                                "changed": "function (self) {\n\n    this.checkSyntax();\n    Roo.log\n    _this.dirty = true;\n    // this.get('/LeftPanel.model').changed(  str , false);\n\n}"
                                             },
                                             "id": "buffer",
                                             "pack": "set_buffer",
