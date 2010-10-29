@@ -27,7 +27,9 @@
                                 {
                                     "pack": false,
                                     "xtype": "ToolButton",
-                                    "|xns": "Gtk"
+                                    "|xns": "Gtk",
+                                    "label": "",
+                                    "listeners": {}
                                 }
                             ]
                         },
