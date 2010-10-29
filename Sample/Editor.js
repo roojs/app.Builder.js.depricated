@@ -23,16 +23,16 @@ Editor=new XObject({
     items : [
         {
             xtype: Gtk.VBox,
-            pack : "pack_start,true,true",
+            pack : "add",
             items : [
                 {
                     xtype: Gtk.Toolbar,
-                    pack : "add",
+                    pack : "pack_start,false,true",
                     items : [
                         {
                             xtype: Gtk.ToolButton,
                             label : "Save",
-                            pack : false
+                            pack : "append"
                         }
                     ]
                 },
