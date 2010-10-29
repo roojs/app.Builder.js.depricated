@@ -48,6 +48,11 @@
                                     ]
                                 }
                             ]
+                        },
+                        {
+                            "|xns": "Gtk",
+                            "xtype": "Toolbar",
+                            "pack": false
                         }
                     ]
                 }
