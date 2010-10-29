@@ -15,7 +15,7 @@
             "|xns": "Gtk",
             "items": [
                 {
-                    "pack": "pack_start,false,false,false",
+                    "pack": "pack_start",
                     "xtype": "VBox",
                     "|xns": "Gtk",
                     "items": [
