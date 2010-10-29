@@ -63,10 +63,10 @@
                                             "listeners": {
                                                 "changed": "function (self) {\n    var s = new Gtk.TextIter();\n    var e = new Gtk.TextIter();\n    this.el.get_start_iter(s);\n    this.el.get_end_iter(e);\n    var str = this.el.get_text(s,e,true);\n    try {\n        Seed.check_syntax('var e = ' + str);\n    } catch (e) {\n        this.get('/RightEditor.view').el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({\n            red: 0xFFFF, green: 0xCCCC , blue : 0xCCCC\n           }));\n        //print(\"SYNTAX ERROR IN EDITOR\");   \n        //print(e);\n        //console.dump(e);\n        return;\n    }\n    this.get('/RightEditor.view').el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({\n            red: 0xFFFF, green: 0xFFFF , blue : 0xFFFF\n           }));\n         _this.dirty = true;\n    // this.get('/LeftPanel.model').changed(  str , false);\n\n}"
                                             },
+                                            "id": "buffer",
                                             "pack": "set_buffer",
                                             "xtype": "Buffer",
-                                            "|xns": "GtkSource",
-                                            "id": ""
+                                            "|xns": "GtkSource"
                                         }
                                     ]
                                 }
