@@ -114,7 +114,7 @@ Editor=new XObject({
                                 iter.set_line(1);
                                 iter.set_line_offset(4);
                                 buf.move_mark(cursor, iter);
-                                _this.dirty = false;
+                                this.get('/Editor').dirty = false;
                                 this.el.grab_focus();
                             },
                             save : function() {
@@ -131,7 +131,7 @@ Editor=new XObject({
                                         
                                             this.checkSyntax();
                                             print("EDITOR CHANGED");
-                                            _this.dirty = true;
+                                            this.get('/Editor').dirty = true;
                                             // this.get('/LeftPanel.model').changed(  str , false);
                                         
                                         }
