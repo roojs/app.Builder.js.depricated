@@ -22,7 +22,14 @@
                         {
                             "|xns": "Gtk",
                             "xtype": "Toolbar",
-                            "pack": false
+                            "pack": false,
+                            "items": [
+                                {
+                                    "pack": false,
+                                    "xtype": "ToolButton",
+                                    "|xns": "Gtk"
+                                }
+                            ]
                         },
                         {
                             "id": "RightEditor",
