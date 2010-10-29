@@ -20,6 +20,11 @@ Editor=new XObject({
         XObject.prototype.init.call(this);
        // this.show_all();
     },
+    listeners : {
+        destroy_event : function (self, event) {
+            return false;
+        }
+    },
     items : [
         {
             xtype: Gtk.VBox,
