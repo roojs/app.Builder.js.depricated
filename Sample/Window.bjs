@@ -9,7 +9,7 @@
             "listeners": {
                 "delete_event": "function (self, event) {\n    return false;\n}",
                 "destroy": "function (self) {\n   Gtk.main_quit();\n}",
-                "show": "function (self) {\n  print(\"WINDOW SHOWING - trying to hide\");\nimports.Builder.Provider.ProjectManager.ProjectManager.loadConfig();\n \tthis.get('/MidPropTree').hideWin();\n    this.get('/RightPalete').hide();\n    this.get('/BottomPane').el.hide();\n    this.get('/EditorWindow').show_all();\n\n}"
+                "show": "function (self) {\n  print(\"WINDOW SHOWING - trying to hide\");\nimports.Builder.Provider.ProjectManager.ProjectManager.loadConfig();\n \tthis.get('/MidPropTree').hideWin();\n    this.get('/RightPalete').hide();\n    this.get('/BottomPane').el.hide();\n   // this.get('/EditorWindow').show_all();\n\n}"
             },
             "border_width": 0,
             "default_height": 500,
