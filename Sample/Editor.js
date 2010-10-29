@@ -11,7 +11,7 @@ GtkClutter = imports.gi.GtkClutter;
 console = imports.console;
 XObject = imports.XObject.XObject;
 Editor=new XObject({
-    xtype: Gtk.Window,
+    xtype: Gtk.Dialog,
     id : "EditorWindow",
     init : function() {
         XObject.prototype.init.call(this);
@@ -20,8 +20,10 @@ Editor=new XObject({
     items : [
         {
             xtype: Gtk.ScrolledWindow,
-            pack : "add",
             id : "RightEditor",
+            pack : function(p,e) {
+                        p.el.get_content_area().add(e.el)
+                    },
             items : [
                 {
                     xtype: GtkSource.View,
