@@ -2316,9 +2316,9 @@ Window=new XObject({
                                                                             this.activePath = false;
                                                                             GLib.timeout_add(0, 1, function() {
                                                                     
-                                                                                _this.get('/BottomPane').el.show();
-                                                                                _this.get('/RightEditor').el.show();
-                                                                                _this.get('/RightEditor.view').load( _this.getValue(path, 1) );
+                                                                                //_this.get('/BottomPane').el.show();
+                                                                                 //_this.get('/RightEditor').el.show();
+                                                                                _this.get('/Editor.RightEditor.view').load( _this.getValue(path, 1) );
                                                                                 
                                                                                 //e.editing_done();
                                                                                 //e.remove_widget();
