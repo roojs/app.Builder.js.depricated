@@ -2319,12 +2319,13 @@ Window=new XObject({
                                                                     
                                                                                 //_this.get('/BottomPane').el.show();
                                                                                  //_this.get('/RightEditor').el.show();
+                                                                                    _this.get('/Editor').el.show_all();
                                                                                 _this.get('/Editor.RightEditor.view').load( _this.getValue(path, 1) );
                                                                                 
                                                                                 //e.editing_done();
                                                                                 //e.remove_widget();
                                                                                 _this.activePath = path ;
-                                                                                 this.get('/Editor').el.show_all();
+                                                                              
                                                                                 return false;
                                                                             });
                                                                             return;
