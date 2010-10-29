@@ -108,9 +108,13 @@ var File = {
      */
     write : function (path, string) {
         var f = Gio.file_new_for_path(String(path));
-        var data_out = new Gio.DataOutputStream({base_stream:f.replace(null, false, Gio.FileCreateFlags.NONE, null)});
+        var data_out = new Gio.DataOutputStream({
+                //base_stream: f.replace(null, false, Gio.FileCreateFlags.NONE, null)
+                base_stream: f.replace_async(null, false, Gio.FileCreateFlags.NONE, 0, null)
+            });
         data_out.put_string(string, null);
         data_out.close(null);
+        
     },
     /**
      * append
