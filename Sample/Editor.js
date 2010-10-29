@@ -20,6 +20,17 @@ Editor=new XObject({
         delete_event : function (self, event) {
               this.el.hide();
             return true;
+        },
+        configure_event : function (self, object) {
+            this.pos = this.el.get_position();
+        
+        
+            return false;
+        },
+        show : function (self) {
+            if (this.pos) {
+                this.el.set_uposition(this.pos.root_x,this.pos.root_y);
+            }
         }
     },
     height_request : 300,
