@@ -7,11 +7,10 @@
     "items": [
         {
             "id": "EditorWindow",
+            "type": "Gtk.WindowType.TOPLEVEL",
             "xtype": "Window",
             "|init": "function() {\n    XObject.prototype.init.call(this);\n    this.show_all();\n}\n",
             "|xns": "Gtk",
-            "type": "",
-            "listeners": {},
             "items": [
                 {
                     "|xns": "Gtk",
