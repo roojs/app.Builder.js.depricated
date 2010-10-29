@@ -42,6 +42,8 @@
                             "pack": "add",
                             "xtype": "ScrolledWindow",
                             "|xns": "Gtk",
+                            "|": "function() {\n    \n}\n",
+                            "listeners": {},
                             "items": [
                                 {
                                     "listeners": {
