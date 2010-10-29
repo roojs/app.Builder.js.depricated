@@ -160,7 +160,9 @@ Editor=new XObject({
                                         var e = new Gtk.TextIter();
                                         this.el.get_start_iter(s);
                                         this.el.get_end_iter(e);
-                                        return this.el.get_text(s,e,true);
+                                        var ret = this.el.get_text(s,e,true);
+                                        print("TO STRING? " + ret);
+                                        return ret;
                                     }
                                 }
                             ]
