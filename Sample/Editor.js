@@ -150,6 +150,7 @@ Editor=new XObject({
                                                }));
                                             print("SYNTAX ERROR IN EDITOR");   
                                             print(e);
+                                             print(str);
                                             //console.dump(e);
                                             return false;
                                         }
