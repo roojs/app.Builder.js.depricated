@@ -22,83 +22,100 @@ Editor=new XObject({
     },
     items : [
         {
-            xtype: Gtk.ScrolledWindow,
-            id : "RightEditor",
-            pack : "add",
+            xtype: Gtk.VBox,
+            pack : false,
             items : [
                 {
-                    xtype: GtkSource.View,
-                    id : "view",
-                    indent_width : 4,
-                    pack : "add",
-                    auto_indent : true,
-                    init : function() {
-                        XObject.prototype.init.call(this);
-                         var description = Pango.Font.description_from_string("monospace")
-                        description.set_size(8000);
-                        this.el.modify_font(description);
-                    
-                    },
-                    insert_spaces_instead_of_tabs : true,
-                    load : function(str) {
-                    
-                    // show the help page for the active node..
-                       //this.get('/Help').show();
-                    
-                    
-                      // this.get('/BottomPane').el.set_current_page(0);
-                        this.el.get_buffer().set_text(str, str.length);
-                        var lm = GtkSource.LanguageManager.get_default();
-                        
-                        this.el.get_buffer().set_language(lm.get_language('js'));
-                        var buf = this.el.get_buffer();
-                        var cursor = buf.get_mark("insert");
-                        var iter= new Gtk.TextIter;
-                        buf.get_iter_at_mark(iter, cursor);
-                        iter.set_line(1);
-                        iter.set_line_offset(4);
-                        buf.move_mark(cursor, iter);
-                        
-                        
-                        cursor = buf.get_mark("selection_bound");
-                        iter= new Gtk.TextIter;
-                        buf.get_iter_at_mark(iter, cursor);
-                        iter.set_line(1);
-                        iter.set_line_offset(4);
-                        buf.move_mark(cursor, iter);
-                         
-                        this.el.grab_focus();
-                    },
-                    show_line_numbers : true,
+                    xtype: Gtk.Toolbar,
+                    pack : false,
                     items : [
                         {
-                            xtype: GtkSource.Buffer,
-                            listeners : {
-                                changed : function (self) {
-                                    var s = new Gtk.TextIter();
-                                    var e = new Gtk.TextIter();
-                                    this.el.get_start_iter(s);
-                                    this.el.get_end_iter(e);
-                                    var str = this.el.get_text(s,e,true);
-                                    try {
-                                        Seed.check_syntax('var e = ' + str);
-                                    } catch (e) {
-                                        this.get('/RightEditor.view').el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({
-                                            red: 0xFFFF, green: 0xCCCC , blue : 0xCCCC
-                                           }));
-                                        //print("SYNTAX ERROR IN EDITOR");   
-                                        //print(e);
-                                        //console.dump(e);
-                                        return;
-                                    }
-                                    this.get('/RightEditor.view').el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({
-                                            red: 0xFFFF, green: 0xFFFF , blue : 0xFFFF
-                                           }));
-                                    
-                                     this.get('/LeftPanel.model').changed(  str , false);
-                                }
+                            xtype: Gtk.ToolButton,
+                            label : "Save",
+                            pack : false
+                        }
+                    ]
+                },
+                {
+                    xtype: Gtk.ScrolledWindow,
+                    id : "RightEditor",
+                    pack : "add",
+                    items : [
+                        {
+                            xtype: GtkSource.View,
+                            id : "view",
+                            indent_width : 4,
+                            pack : "add",
+                            auto_indent : true,
+                            init : function() {
+                                XObject.prototype.init.call(this);
+                                 var description = Pango.Font.description_from_string("monospace")
+                                description.set_size(8000);
+                                this.el.modify_font(description);
+                            
                             },
-                            pack : "set_buffer"
+                            insert_spaces_instead_of_tabs : true,
+                            load : function(str) {
+                            
+                            // show the help page for the active node..
+                               //this.get('/Help').show();
+                            
+                            
+                              // this.get('/BottomPane').el.set_current_page(0);
+                                this.el.get_buffer().set_text(str, str.length);
+                                var lm = GtkSource.LanguageManager.get_default();
+                                
+                                this.el.get_buffer().set_language(lm.get_language('js'));
+                                var buf = this.el.get_buffer();
+                                var cursor = buf.get_mark("insert");
+                                var iter= new Gtk.TextIter;
+                                buf.get_iter_at_mark(iter, cursor);
+                                iter.set_line(1);
+                                iter.set_line_offset(4);
+                                buf.move_mark(cursor, iter);
+                                
+                                
+                                cursor = buf.get_mark("selection_bound");
+                                iter= new Gtk.TextIter;
+                                buf.get_iter_at_mark(iter, cursor);
+                                iter.set_line(1);
+                                iter.set_line_offset(4);
+                                buf.move_mark(cursor, iter);
+                                 
+                                this.el.grab_focus();
+                            },
+                            show_line_numbers : true,
+                            items : [
+                                {
+                                    xtype: GtkSource.Buffer,
+                                    listeners : {
+                                        changed : function (self) {
+                                            var s = new Gtk.TextIter();
+                                            var e = new Gtk.TextIter();
+                                            this.el.get_start_iter(s);
+                                            this.el.get_end_iter(e);
+                                            var str = this.el.get_text(s,e,true);
+                                            try {
+                                                Seed.check_syntax('var e = ' + str);
+                                            } catch (e) {
+                                                this.get('/RightEditor.view').el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({
+                                                    red: 0xFFFF, green: 0xCCCC , blue : 0xCCCC
+                                                   }));
+                                                //print("SYNTAX ERROR IN EDITOR");   
+                                                //print(e);
+                                                //console.dump(e);
+                                                return;
+                                            }
+                                            this.get('/RightEditor.view').el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({
+                                                    red: 0xFFFF, green: 0xFFFF , blue : 0xFFFF
+                                                   }));
+                                            
+                                             this.get('/LeftPanel.model').changed(  str , false);
+                                        }
+                                    },
+                                    pack : "set_buffer"
+                                }
+                            ]
                         }
                     ]
                 }
