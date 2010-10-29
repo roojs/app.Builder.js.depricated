@@ -20,9 +20,9 @@
                     "|xns": "Gtk",
                     "items": [
                         {
-                            "|xns": "Gtk",
+                            "pack": "add",
                             "xtype": "Toolbar",
-                            "pack": false,
+                            "|xns": "Gtk",
                             "items": [
                                 {
                                     "label": "Save",
