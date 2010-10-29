@@ -1136,8 +1136,8 @@ Window=new XObject({
                                                                                         
                                                                                         if (f.items.length && typeof(f.items[0]) == 'string') {
                                                                                         
-                                                                                            this.get('/RightEditor').el.show();
-                                                                                            this.get('/RightEditor.view').load( f.items[0]);
+                                                                                            //this.get('/RightEditor').el.show();
+                                                                                            //this.get('/RightEditor.view').load( f.items[0]);
                                                                                             return;
                                                                                         }
                                                                                         print("LOAD");
@@ -1161,7 +1161,8 @@ Window=new XObject({
                                                                                         
                                                                                         
                                                                                         //print("hide right editior");
-                                                                                        this.get('/RightEditor').el.hide();
+                                                                                        //this.get('/RightEditor').el.hide();
+                                                                                        this.get('/Editor').el.hide();
                                                                                         //print("set current tree");
                                                                                         this.currentTree = this.toJS(false, false)[0];
                                                                                         //console.dump(this.currentTree);
@@ -2188,7 +2189,7 @@ Window=new XObject({
                                                                     load : function(ar) {
                                                                       this.el.clear();
                                                                                             
-                                                                        this.get('/RightEditor').el.hide();
+                                                                        //this.get('/RightEditor').el.hide();
                                                                         if (ar === false) {
                                                                             return ;
                                                                         }
