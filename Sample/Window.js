@@ -2315,11 +2315,12 @@ Window=new XObject({
                                                                         if (showEditor) {
                                                                     
                                                                             this.activePath = false;
+                                                                            _this.get('/Editor').el.show_all();
                                                                             GLib.timeout_add(0, 1, function() {
                                                                     
                                                                                 //_this.get('/BottomPane').el.show();
                                                                                  //_this.get('/RightEditor').el.show();
-                                                                                _this.get('/Editor').el.show_all();
+                                                                                
                                                                                 _this.get('/Editor.RightEditor.view').load( _this.getValue(path, 1) );
                                                                                 
                                                                                 //e.editing_done();
