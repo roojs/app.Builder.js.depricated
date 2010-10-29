@@ -6,8 +6,9 @@
     "path": "/home/alan/gitlive/app.Builder.js/Sample/Editor.bjs",
     "items": [
         {
-            "|xns": "Gtk",
+            "id": "EditorWindow",
             "xtype": "Window",
+            "|xns": "Gtk",
             "items": [
                 {
                     "|xns": "Gtk",
