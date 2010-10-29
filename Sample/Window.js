@@ -12,9 +12,28 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 Window=new XObject({
     xtype: Gtk.Window,
-    type : Gtk.WindowType.TOPLEVEL,
-    title : "Application Builder",
+    listeners : {
+        delete_event : function (self, event) {
+            return false;
+        },
+        destroy : function (self) {
+           Gtk.main_quit();
+        },
+        show : function (self) {
+          print("WINDOW SHOWING - trying to hide");
+        imports.Builder.Provider.ProjectManager.ProjectManager.loadConfig();
+         	this.get('/MidPropTree').hideWin();
+            this.get('/RightPalete').hide();
+            this.get('/BottomPane').el.hide();
+            this.get('/EditorWindow').show_all();
+        
+        }
+    },
     border_width : 0,
+    default_height : 500,
+    default_width : 800,
+    id : "Window",
+    title : "Application Builder",
     init : function() {
          this.atoms = {
                "STRING" : Gdk.atom_intern("STRING")
@@ -33,28 +52,10 @@ Window=new XObject({
        
                   
     },
-    default_width : 800,
-    default_height : 500,
-    id : "Window",
     setTitle : function(str) {
         this.el.set_title(this.title + ' - ' + str);
     },
-    listeners : {
-        delete_event : function (self, event) {
-            return false;
-        },
-        destroy : function (self) {
-           Gtk.main_quit();
-        },
-        show : function (self) {
-          print("WINDOW SHOWING - trying to hide");
-        imports.Builder.Provider.ProjectManager.ProjectManager.loadConfig();
-         	this.get('/MidPropTree').hideWin();
-            this.get('/RightPalete').hide();
-            this.get('/BottomPane').el.hide();
-        
-        }
-    },
+    type : Gtk.WindowType.TOPLEVEL,
     items : [
         {
             xtype: Gtk.VBox,
