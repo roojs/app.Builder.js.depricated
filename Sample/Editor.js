@@ -18,6 +18,10 @@ Editor=new XObject({
         },
         destroy_event : function (self, event) {
             return false;
+        },
+        destroy : function (self) {
+            this.el.hide();
+            return false;
         }
     },
     height_request : 300,
