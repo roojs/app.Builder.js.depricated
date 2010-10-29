@@ -28,8 +28,10 @@ Editor=new XObject({
             items : [
                 {
                     xtype: GtkSource.View,
-                    pack : "add",
                     id : "view",
+                    indent_width : 4,
+                    pack : "add",
+                    auto_indent : true,
                     init : function() {
                         XObject.prototype.init.call(this);
                          var description = Pango.Font.description_from_string("monospace")
@@ -37,13 +39,14 @@ Editor=new XObject({
                         this.el.modify_font(description);
                     
                     },
+                    insert_spaces_instead_of_tabs : true,
                     load : function(str) {
                     
                     // show the help page for the active node..
-                       this.get('/Help').show();
+                       //this.get('/Help').show();
                     
                     
-                       this.get('/BottomPane').el.set_current_page(0);
+                      // this.get('/BottomPane').el.set_current_page(0);
                         this.el.get_buffer().set_text(str, str.length);
                         var lm = GtkSource.LanguageManager.get_default();
                         
@@ -66,9 +69,6 @@ Editor=new XObject({
                          
                         this.el.grab_focus();
                     },
-                    insert_spaces_instead_of_tabs : true,
-                    indent_width : 4,
-                    auto_indent : true,
                     show_line_numbers : true,
                     items : [
                         {
