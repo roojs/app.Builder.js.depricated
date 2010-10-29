@@ -133,15 +133,16 @@ Editor=new XObject({
                                             print("EDITOR CHANGED");
                                             this.get('/Editor').dirty = true;
                                             // this.get('/LeftPanel.model').changed(  str , false);
-                                        
+                                            return false;
                                         }
                                     },
                                     id : "buffer",
                                     pack : "set_buffer",
                                     checkSyntax : function() {
                                         var str = this.toString();
+                                        var res = '';
                                         try {
-                                            Seed.check_syntax('var e = ' + str);
+                                            Seed.check_syntax('var res = ' + str);
                                             return true;
                                         } catch (e) {
                                             
