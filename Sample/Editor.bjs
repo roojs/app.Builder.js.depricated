@@ -8,7 +8,8 @@
         {
             "listeners": {
                 "destroy_event": "function (self, event) {\n    this.el.hide();\n    return true;\n}",
-                "delete_event": "function (self, event) {\n      this.el.hide();\n    return true;\n}"
+                "delete_event": "function (self, event) {\n      this.el.hide();\n    return true;\n}",
+                "configure_event": "function (self, object) {\n    this.pos\n\n\n    return false;\n}"
             },
             "height_request": 300,
             "id": "EditorWindow",
