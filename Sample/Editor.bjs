@@ -13,10 +13,9 @@
             "items": [
                 {
                     "id": "RightEditor",
+                    "pack": "add",
                     "xtype": "ScrolledWindow",
                     "|xns": "Gtk",
-                    "pack": "add",
-                    "listeners": {},
                     "items": [
                         {
                             "|xns": "GtkSource",
