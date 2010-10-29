@@ -6,6 +6,7 @@
     "path": "/home/alan/gitlive/app.Builder.js/Sample/Editor.bjs",
     "items": [
         {
+            "height_request": 300,
             "id": "EditorWindow",
             "title": "Application Builder - Editor",
             "width_request": 500,
