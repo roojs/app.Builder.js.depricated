@@ -66,8 +66,8 @@
                                             "id": "buffer",
                                             "pack": "set_buffer",
                                             "xtype": "Buffer",
-                                            "|xns": "GtkSource",
-                                            "|": "function() {\n    \n}\n"
+                                            "|toString": "function() {\n    \n}\n",
+                                            "|xns": "GtkSource"
                                         }
                                     ]
                                 }
