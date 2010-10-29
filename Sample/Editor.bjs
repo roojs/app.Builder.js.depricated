@@ -12,10 +12,10 @@
             "|xns": "Gtk",
             "items": [
                 {
-                    "|xns": "Gtk",
-                    "xtype": "ScrolledWindow",
-                    "pack": "add",
                     "id": "RightEditor",
+                    "|pack": " function(p,e) {\n            p.el.get_content_area().add(e.el)\n        }\n",
+                    "xtype": "ScrolledWindow",
+                    "|xns": "Gtk",
                     "items": [
                         {
                             "|xns": "GtkSource",
