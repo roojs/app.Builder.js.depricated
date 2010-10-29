@@ -25,6 +25,11 @@
                             "|xns": "Gtk",
                             "items": [
                                 {
+                                    "|xns": "Gtk",
+                                    "xtype": "ToolItem",
+                                    "pack": false
+                                },
+                                {
                                     "label": "Save",
                                     "xtype": "ToolButton",
                                     "|xns": "Gtk",
