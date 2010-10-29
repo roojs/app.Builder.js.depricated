@@ -26,9 +26,9 @@
                             "items": [
                                 {
                                     "label": "Save",
-                                    "pack": "append",
                                     "xtype": "ToolButton",
-                                    "|xns": "Gtk"
+                                    "|xns": "Gtk",
+                                    "listeners": {}
                                 }
                             ]
                         },
