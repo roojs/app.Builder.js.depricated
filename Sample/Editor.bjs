@@ -52,6 +52,7 @@
                                     "indent_width": 4,
                                     "pack": "add",
                                     "xtype": "View",
+                                    "|save": "function() {\n    \n}\n",
                                     "|auto_indent": true,
                                     "|init": "function() {\n    XObject.prototype.init.call(this);\n     var description = Pango.Font.description_from_string(\"monospace\")\n    description.set_size(8000);\n    this.el.modify_font(description);\n\n}\n",
                                     "|insert_spaces_instead_of_tabs": true,
