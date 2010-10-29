@@ -60,6 +60,9 @@ Editor=new XObject({
                     xtype: Gtk.ScrolledWindow,
                     id : "RightEditor",
                     pack : "add",
+                    save : function() {
+                         this.get('/LeftPanel.model').changed(  str , false);
+                    },
                     items : [
                         {
                             xtype: GtkSource.View,
@@ -69,7 +72,7 @@ Editor=new XObject({
                                         return;
                                     }
                                     print(event.key.keyval)
-                                    //Gdk.ModifierType.CONTROL_MASK
+                                    this.save();
                                     return false;
                                 }
                             },
@@ -111,8 +114,13 @@ Editor=new XObject({
                                 iter.set_line(1);
                                 iter.set_line_offset(4);
                                 buf.move_mark(cursor, iter);
-                                 
+                                _this.dirty = false;
                                 this.el.grab_focus();
+                            },
+                            save : function() {
+                                var str = this.get('buffer').toString();
+                                print("SAVE" + str);
+                                 this.get('/LeftPanel.model').changed(  str , false);
                             },
                             show_line_numbers : true,
                             items : [
@@ -120,30 +128,38 @@ Editor=new XObject({
                                     xtype: GtkSource.Buffer,
                                     listeners : {
                                         changed : function (self) {
-                                            var s = new Gtk.TextIter();
-                                            var e = new Gtk.TextIter();
-                                            this.el.get_start_iter(s);
-                                            this.el.get_end_iter(e);
-                                            var str = this.el.get_text(s,e,true);
-                                            try {
-                                                Seed.check_syntax('var e = ' + str);
-                                            } catch (e) {
-                                                this.get('/RightEditor.view').el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({
-                                                    red: 0xFFFF, green: 0xCCCC , blue : 0xCCCC
-                                                   }));
-                                                //print("SYNTAX ERROR IN EDITOR");   
-                                                //print(e);
-                                                //console.dump(e);
-                                                return;
-                                            }
-                                            this.get('/RightEditor.view').el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({
-                                                    red: 0xFFFF, green: 0xFFFF , blue : 0xFFFF
-                                                   }));
-                                            
-                                             this.get('/LeftPanel.model').changed(  str , false);
+                                        
+                                            this.checkSyntax();
+                                            print("EDITOR CHANGED");
+                                            _this.dirty = true;
+                                            // this.get('/LeftPanel.model').changed(  str , false);
+                                        
                                         }
                                     },
-                                    pack : "set_buffer"
+                                    id : "buffer",
+                                    pack : "set_buffer",
+                                    checkSyntax : function() {
+                                        var str = this.toString();
+                                        try {
+                                            Seed.check_syntax('var e = ' + str);
+                                            return true;
+                                        } catch (e) {
+                                            this.get('/RightEditor.view').el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({
+                                                red: 0xFFFF, green: 0xCCCC , blue : 0xCCCC
+                                               }));
+                                            //print("SYNTAX ERROR IN EDITOR");   
+                                            //print(e);
+                                            //console.dump(e);
+                                            return false;
+                                        }
+                                    },
+                                    toString : function() {
+                                          var s = new Gtk.TextIter();
+                                        var e = new Gtk.TextIter();
+                                        this.el.get_start_iter(s);
+                                        this.el.get_end_iter(e);
+                                        return this.el.get_text(s,e,true);
+                                    }
                                 }
                             ]
                         }
