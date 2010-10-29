@@ -41,9 +41,8 @@
                             "id": "RightEditor",
                             "pack": "add",
                             "xtype": "ScrolledWindow",
+                            "|": "function() {\n     this.get('/LeftPanel.model').changed(  str , false);\n}\n",
                             "|xns": "Gtk",
-                            "|": "function() {\n    \n}\n",
-                            "listeners": {},
                             "items": [
                                 {
                                     "listeners": {
