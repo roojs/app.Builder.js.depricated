@@ -14,7 +14,7 @@ Editor=new XObject({
     xtype: Gtk.Window,
     listeners : {
         destroy_event : function (self, event) {
-            _this.el.hide();
+            this.el.hide();
             return true;
         }
     },
