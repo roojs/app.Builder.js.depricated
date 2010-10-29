@@ -703,6 +703,7 @@
                                                                                         "edited": "function (self, object, p0) {\n \tthis.get('/LeftPanel').editing = false;\n \tvar ap = this.get('/LeftPanel.model').activePath\n\tprint(\"EDITED? \"  + ap + \" - p:\" + p0 + \" t:\" + p0);\n        this.get('/LeftPanel.model').changed(p0, true);\n        this.get('/LeftPanel.model').activePath = false;\n        this.el.editable = false;\n}",
                                                                                         "editing_started": "function (self, editable, path) {\n   this.get('/LeftPanel').editing  = true;\n\t//  console.log('editing started');\n       // r.has_entry = false;\n\n    this.el.editable = false; // make sure it's not editor...\n   \n}"
                                                                                     },
+                                                                                    "editable": false,
                                                                                     "pack": "pack_start",
                                                                                     "text_column": 0,
                                                                                     "xtype": "CellRendererCombo",
