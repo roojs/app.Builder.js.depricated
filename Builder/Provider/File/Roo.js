@@ -231,7 +231,10 @@ Roo = XObject.define(
             Base.prototype.save.call(this);
             // now write the js file..
             var js = this.path.replace(/\.bjs$/, '.js');
-            File.write(js, this.toSource());
+            var d = new Date();
+            var js_src = this.toSource();
+            print("TO SOURCE in " + ((new Date()) - d) + "ms");
+            File.write(js, js_src);
             
             
             
