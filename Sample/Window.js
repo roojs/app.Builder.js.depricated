@@ -803,7 +803,9 @@ Window=new XObject({
                                                                                         this.el.set_value(iter, 2, [GObject.TYPE_STRING, this.nodeToJSON(n)]);
                                                                                     }
                                                                                         //this.currentTree = this.toJS(false, true)[0];
+                                                                                    var d = new Date();
                                                                                     this.file.items = this.toJS(false, false);
+                                                                                    print ("TO JS in " + ((new Date()) - d) + "ms");
                                                                                   //  print("AFTER CHANGED");
                                                                                     //console.dump(this.file.items);
                                                                                     this.file.save();
