@@ -12,8 +12,10 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 Editor=new XObject({
     xtype: Gtk.Window,
+    height_request : 300,
     id : "EditorWindow",
     title : "Application Builder - Editor",
+    width_request : 500,
     init : function() {
         XObject.prototype.init.call(this);
        // this.show_all();
