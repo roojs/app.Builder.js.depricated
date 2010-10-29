@@ -6,21 +6,21 @@
     "path": "/home/alan/gitlive/app.Builder.js/Sample/Window.bjs",
     "items": [
         {
-            "|xns": "Gtk",
-            "xtype": "Window",
-            "|type": "Gtk.WindowType.TOPLEVEL",
-            "title": "Application Builder",
-            "border_width": 0,
-            "|init": "function() {\n     this.atoms = {\n           \"STRING\" : Gdk.atom_intern(\"STRING\")\n\t};\n\tthis.targetList = new Gtk.TargetList();\n\tthis.targetList.add( this.atoms[\"STRING\"], 0, 0);\n\t//imports.Builder.Provider.ProjectManager.ProjectManager.loadConfig();\nGtk.rc_parse_string(\n            \"style \\\"gtkcombobox-style\\\" {\\n\" + \n            \"    GtkComboBox::appears-as-list = 1\\n\" +\n            \"}\\n\"+\n            \"class \\\"GtkComboBox\\\" style \\\"gtkcombobox-style\\\"\\n\");\n    XObject.prototype.init.call(this);\n    this.el.show_all();\n    \n   \n              \n}\n",
-            "default_width": 800,
-            "default_height": 500,
-            "id": "Window",
-            "|setTitle": "function(str) {\n    this.el.set_title(this.title + ' - ' + str);\n}\n",
             "listeners": {
                 "delete_event": "function (self, event) {\n    return false;\n}",
                 "destroy": "function (self) {\n   Gtk.main_quit();\n}",
-                "show": "function (self) {\n  print(\"WINDOW SHOWING - trying to hide\");\nimports.Builder.Provider.ProjectManager.ProjectManager.loadConfig();\n \tthis.get('/MidPropTree').hideWin();\n    this.get('/RightPalete').hide();\n    this.get('/BottomPane').el.hide();\n\n}"
+                "show": "function (self) {\n  print(\"WINDOW SHOWING - trying to hide\");\nimports.Builder.Provider.ProjectManager.ProjectManager.loadConfig();\n \tthis.get('/MidPropTree').hideWin();\n    this.get('/RightPalete').hide();\n    this.get('/BottomPane').el.hide();\n    this.get\n\n}"
             },
+            "border_width": 0,
+            "default_height": 500,
+            "default_width": 800,
+            "id": "Window",
+            "title": "Application Builder",
+            "xtype": "Window",
+            "|init": "function() {\n     this.atoms = {\n           \"STRING\" : Gdk.atom_intern(\"STRING\")\n\t};\n\tthis.targetList = new Gtk.TargetList();\n\tthis.targetList.add( this.atoms[\"STRING\"], 0, 0);\n\t//imports.Builder.Provider.ProjectManager.ProjectManager.loadConfig();\nGtk.rc_parse_string(\n            \"style \\\"gtkcombobox-style\\\" {\\n\" + \n            \"    GtkComboBox::appears-as-list = 1\\n\" +\n            \"}\\n\"+\n            \"class \\\"GtkComboBox\\\" style \\\"gtkcombobox-style\\\"\\n\");\n    XObject.prototype.init.call(this);\n    this.el.show_all();\n    \n   \n              \n}\n",
+            "|setTitle": "function(str) {\n    this.el.set_title(this.title + ' - ' + str);\n}\n",
+            "|type": "Gtk.WindowType.TOPLEVEL",
+            "|xns": "Gtk",
             "items": [
                 {
                     "|xns": "Gtk",
