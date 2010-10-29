@@ -15,12 +15,12 @@
             "|xns": "Gtk",
             "items": [
                 {
-                    "pack": "pack_start,true,true",
+                    "pack": "add",
                     "xtype": "VBox",
                     "|xns": "Gtk",
                     "items": [
                         {
-                            "pack": "add",
+                            "pack": "pack_start,false,true",
                             "xtype": "Toolbar",
                             "|xns": "Gtk",
                             "items": [
