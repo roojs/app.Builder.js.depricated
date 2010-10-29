@@ -65,7 +65,7 @@ Editor=new XObject({
                             xtype: GtkSource.View,
                             listeners : {
                                 key_release_event : function (self, event) {
-                                    Roo.log(event.key.keyval)
+                                    print(event.key.keyval)
                                     //Gdk.Control_L
                                     return false;
                                 }
