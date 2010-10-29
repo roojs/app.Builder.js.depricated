@@ -8,7 +8,7 @@
         {
             "id": "EditorWindow",
             "xtype": "Window",
-            "|init": "    this.atoms = {\n           \"STRING\" : Gdk.atom_intern(\"STRING\")\n\t};\n\tthis.targetList = new Gtk.TargetList();\n\tthis.targetList.add( this.atoms[\"STRING\"], 0, 0);\n\t//imports.Builder.Provider.ProjectManager.ProjectManager.loadConfig();\nGtk.rc_parse_string(\n            \"style \\\"gtkcombobox-style\\\" {\\n\" + \n            \"    GtkComboBox::appears-as-list = 1\\n\" +\n            \"}\\n\"+\n            \"class \\\"GtkComboBox\\\" style \\\"gtkcombobox-style\\\"\\n\");\n    XObject.prototype.init.call(this);\n    this.el.show_all();\n    ",
+            "|init": "function() {\n    XObject.prototype.init.call(this);\n    \n}\n",
             "|xns": "Gtk",
             "items": [
                 {
