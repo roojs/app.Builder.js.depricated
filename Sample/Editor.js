@@ -13,7 +13,7 @@ XObject = imports.XObject.XObject;
 Editor=new XObject({
     xtype: Gtk.Window,
     id : "EditorWindow",
-    type : "Gtk.WindowType.TOPLEVEL",
+    type : "Gtk.WindowType.POPUP",
     init : function() {
         XObject.prototype.init.call(this);
         this.show_all();
