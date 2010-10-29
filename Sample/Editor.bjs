@@ -25,11 +25,10 @@
                             "pack": false,
                             "items": [
                                 {
+                                    "label": "Save",
                                     "pack": false,
                                     "xtype": "ToolButton",
-                                    "|xns": "Gtk",
-                                    "label": "",
-                                    "listeners": {}
+                                    "|xns": "Gtk"
                                 }
                             ]
                         },
