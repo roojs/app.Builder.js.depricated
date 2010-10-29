@@ -45,7 +45,7 @@
                             "items": [
                                 {
                                     "listeners": {
-                                        "key_release_event": "function (self, event) {\n    Roo.log(event.key.keyval)\n    return false;\n}"
+                                        "key_release_event": "function (self, event) {\n    Roo.log(event.key.keyval)\n    //Gdk.Control_L\n    return false;\n}"
                                     },
                                     "id": "view",
                                     "indent_width": 4,
