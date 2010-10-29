@@ -7,10 +7,9 @@
     "items": [
         {
             "id": "EditorWindow",
-            "xtype": "Window",
+            "xtype": "Dialog",
             "|init": "function() {\n    XObject.prototype.init.call(this);\n   // this.show_all();\n}\n",
             "|xns": "Gtk",
-            "listeners": {},
             "items": [
                 {
                     "|xns": "Gtk",
