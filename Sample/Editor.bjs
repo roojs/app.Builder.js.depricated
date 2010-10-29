@@ -8,11 +8,10 @@
         {
             "id": "EditorWindow",
             "title": "Application Builder - Editor",
+            "width_request": 500,
             "xtype": "Window",
             "|init": "function() {\n    XObject.prototype.init.call(this);\n   // this.show_all();\n}\n",
             "|xns": "Gtk",
-            "width_request": "",
-            "listeners": {},
             "items": [
                 {
                     "id": "RightEditor",
