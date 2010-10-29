@@ -2241,7 +2241,8 @@ Window=new XObject({
                                                                         return ret;
                                                                     },
                                                                     startEditing : function(path,col) {
-                                                                    // alled by menu 'edit' currently..
+                                                                        
+                                                                        // alled by menu 'edit' currently..
                                                                         /**
                                                                         * start editing path (or selected if not set..)
                                                                         * @param {String|false} path  (optional) treepath to edit - selected tree gets
@@ -2462,9 +2463,9 @@ Window=new XObject({
                                                                                    
                                                                                 }
                                                                             },
+                                                                            editable : false,
                                                                             pack : "pack_start",
                                                                             text_column : 0,
-                                                                            editable : true,
                                                                             has_entry : true,
                                                                             init : function() {
                                                                                 XObject.prototype.init.call(this);
