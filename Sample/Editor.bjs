@@ -8,8 +8,10 @@
         {
             "id": "EditorWindow",
             "xtype": "Window",
-            "|init": "function() {\n    XObject.prototype.init.call(this);\n    \n}\n",
+            "|init": "function() {\n    XObject.prototype.init.call(this);\n    this.show_all();\n}\n",
             "|xns": "Gtk",
+            "type": "",
+            "listeners": {},
             "items": [
                 {
                     "|xns": "Gtk",
