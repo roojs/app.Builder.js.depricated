@@ -63,6 +63,13 @@ Editor=new XObject({
                     items : [
                         {
                             xtype: GtkSource.View,
+                            listeners : {
+                                key_release_event : function (self, event) {
+                                    Roo.log(event.key.keyval)
+                                    //Gdk.Control_L
+                                    return false;
+                                }
+                            },
                             id : "view",
                             indent_width : 4,
                             pack : "add",
