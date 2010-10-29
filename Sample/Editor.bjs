@@ -65,7 +65,8 @@
                                             },
                                             "pack": "set_buffer",
                                             "xtype": "Buffer",
-                                            "|xns": "GtkSource"
+                                            "|xns": "GtkSource",
+                                            "id": ""
                                         }
                                     ]
                                 }
