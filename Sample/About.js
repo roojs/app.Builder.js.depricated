@@ -12,12 +12,6 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 About=new XObject({
     xtype: Gtk.AboutDialog,
-    authors : "Alan Knowles",
-    copyright : "LGPL",
-    license : "LGPL",
-    program_name : "app.Builder.js",
-    modal : true,
-    website : "http://www.akbkhome.com/blog.php",
     listeners : {
         response : function (self, response_id) {
             this.el.hide();
@@ -26,7 +20,13 @@ About=new XObject({
             this.el.hide();
             return true;
         }
-    }
+    },
+    authors : "Alan Knowles",
+    copyright : "LGPL",
+    license : "LGPL",
+    program_name : "app.Builder.js",
+    website : "http://www.akbkhome.com/blog.php",
+    modal : true
 });
 About.init();
 XObject.cache['/About'] = About;
