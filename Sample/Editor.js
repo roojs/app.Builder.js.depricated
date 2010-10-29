@@ -12,6 +12,14 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 Editor=new XObject({
     xtype: Gtk.Window,
+    listeners : {
+        delete_event : function (self, event) {
+            return false;
+        },
+        destroy_event : function (self, event) {
+            return false;
+        }
+    },
     height_request : 300,
     id : "EditorWindow",
     title : "Application Builder - Editor",
@@ -19,11 +27,6 @@ Editor=new XObject({
     init : function() {
         XObject.prototype.init.call(this);
        // this.show_all();
-    },
-    listeners : {
-        destroy_event : function (self, event) {
-            return false;
-        }
     },
     items : [
         {
