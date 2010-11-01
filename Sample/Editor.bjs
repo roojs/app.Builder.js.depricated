@@ -45,7 +45,7 @@
                             "id": "RightEditor",
                             "pack": "add",
                             "xtype": "ScrolledWindow",
-                            "|save": "function() {\n     var str = this.get('/Editor.buffer').toString();\n     if (!this.get('/Editor.buffer').checkSyntax()) {\n         this.get('/StandardErrorDialog').show(\"Fix errors in code and save..\"); \n     }\n     \n     this.get('/LeftPanel.model').changed(  str , false);\n     this.get('/Editor').dirty = false;\n     this.get('/Editor.save_button').el.sensitive = false;\n     return true;\n}\n",
+                            "|save": "function() {\n     var str = this.get('/Editor.buffer').toString();\n     if (!this.get('/Editor.buffer').checkSyntax()) {\n         this.get('/StandardErrorDialog').show(\"Fix errors in code and save..\"); \n         return false;\n     }\n     \n     this.get('/LeftPanel.model').changed(  str , false);\n     this.get('/Editor').dirty = false;\n     this.get('/Editor.save_button').el.sensitive = false;\n     return true;\n}\n",
                             "|xns": "Gtk",
                             "items": [
                                 {
