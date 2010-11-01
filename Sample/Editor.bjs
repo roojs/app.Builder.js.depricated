@@ -50,7 +50,7 @@
                             "items": [
                                 {
                                     "listeners": {
-                                        "key_release_event": "function (self, event) {\n    if (event.key.keyval == 115 || !(Gdk.ModifierType.CONTROL_MASK & 4) ) {\n        return;\n    }\n   // print(event.key.keyval)\n    this.save();\n    return false;\n}"
+                                        "key_release_event": "function (self, event) {\n    if (event.key.keyval == 115 && (Gdk.ModifierType.CONTROL_MASK & 4) ) {\n        return;\n    }\n   // print(event.key.keyval)\n\n    return false;\n}"
                                     },
                                     "id": "view",
                                     "indent_width": 4,
