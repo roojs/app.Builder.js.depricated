@@ -45,7 +45,7 @@
                             "id": "RightEditor",
                             "pack": "add",
                             "xtype": "ScrolledWindow",
-                            "|save": "function() {\n     this.get('/LeftPanel.model').changed(  str , false);\n     this.get('/Editor').dirty = false;\n     this.get\n}\n",
+                            "|save": "function() {\n     this.get('/LeftPanel.model').changed(  str , false);\n     this.get('/Editor').dirty = false;\n     this.get('/Editor.save_button').el.sensitive = false;\n}\n",
                             "|xns": "Gtk",
                             "items": [
                                 {
