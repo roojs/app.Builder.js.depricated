@@ -1,1 +1,24 @@
-{"id":"file-gtk-9","name":"About","parent":"","title":false,"path":"/home/alan/gitlive/app.Builder.js/Sample/About.bjs","items":[{"|xns":"Gtk","xtype":"AboutDialog","authors":"Alan Knowles","copyright":"LGPL","license":"LGPL","program_name":"app.Builder.js","|modal":true,"website":"http://www.akbkhome.com/blog.php","listeners":{"response":"function (self, response_id) {\n    this.el.hide();\n}","delete_event":"function (self, event) {\n    this.el.hide();\n    return true;\n}"}}],"project":"{\"name\":\"Sample\",\"xtype\":\"Gtk\",\"paths\":{\"/home/alan/gitlive/app.Builder.js/Sample\":\"dir\"},\"id\":\"project-gtk-1\",\"fn\":\"329624934046af6e88a65a3f36971958\",\"file\":false,\"runhtml\":\"\"}"}
+{
+    "id": "file-gtk-8",
+    "name": "About",
+    "parent": "",
+    "title": false,
+    "path": "/home/alan/gitlive/app.Builder.js/Sample/About.bjs",
+    "items": [
+        {
+            "listeners": {
+                "response": "function (self, response_id) {\n    this.el.hide();\n}",
+                "delete_event": "function (self, event) {\n    this.el.hide();\n    return true;\n}"
+            },
+            "authors": "Alan Knowles",
+            "copyright": "LGPL",
+            "license": "LGPL",
+            "program_name": "app.Builder.js",
+            "website": "http://www.akbkhome.com/blog.php",
+            "xtype": "AboutDialog",
+            "|modal": true,
+            "|xns": "Gtk"
+        }
+    ],
+    "permname": ""
+}
