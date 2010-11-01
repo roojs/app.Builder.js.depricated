@@ -1973,7 +1973,7 @@ Window=new XObject({
                                                                      //   this.activePath = false;
                                                                        // stop editing!!!!
                                                                         if (this.get('/Editor').dirty) {
-                                                                            if (!this.get('/Editor.view').checkSyntax()) {
+                                                                            if (!this.get('/Editor.buffer').checkSyntax()) {
                                                                                this.get('/StandardErrorDialog').show("Fix errors in code and save.."); 
                                                                                return;
                                                                                 // error Dialog
