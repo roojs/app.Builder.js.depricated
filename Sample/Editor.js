@@ -62,6 +62,7 @@ Editor=new XObject({
                     pack : "add",
                     save : function() {
                          this.get('/LeftPanel.model').changed(  str , false);
+                         this.get('/Editor').dirty = false;
                     },
                     items : [
                         {
@@ -130,7 +131,7 @@ Editor=new XObject({
                                         changed : function (self) {
                                         
                                             this.checkSyntax();
-                                            print("EDITOR CHANGED");
+                                           // print("EDITOR CHANGED");
                                             this.get('/Editor').dirty = true;
                                             // this.get('/LeftPanel.model').changed(  str , false);
                                             return false;
@@ -142,7 +143,7 @@ Editor=new XObject({
                                         var str = this.toString();
                                         var res = '';
                                         try {
-                                            print('var res = ' + str);
+                                          //  print('var res = ' + str);
                                             Seed.check_syntax('var res = ' + str);
                                             
                                             this.get('/RightEditor.view').el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({
@@ -157,7 +158,7 @@ Editor=new XObject({
                                                }));
                                             print("SYNTAX ERROR IN EDITOR");   
                                             print(e);
-                                             print(str);
+                                            // print(str);
                                             //console.dump(e);
                                             return false;
                                         }
@@ -169,7 +170,7 @@ Editor=new XObject({
                                         this.el.get_start_iter(s);
                                         this.el.get_end_iter(e);
                                         var ret = this.el.get_text(s,e,true);
-                                        print("TO STRING? " + ret);
+                                        //print("TO STRING? " + ret);
                                         return ret;
                                     }
                                 }
