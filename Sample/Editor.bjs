@@ -31,6 +31,9 @@
                             "|xns": "Gtk",
                             "items": [
                                 {
+                                    "listeners": {
+                                        "activate": "function (self) {\n  this.get\n}"
+                                    },
                                     "label": "Save",
                                     "xtype": "Button",
                                     "|xns": "Gtk"
