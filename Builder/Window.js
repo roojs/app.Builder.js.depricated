@@ -12,9 +12,28 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 Window=new XObject({
     xtype: Gtk.Window,
-    type : Gtk.WindowType.TOPLEVEL,
-    title : "Application Builder",
+    listeners : {
+        delete_event : function (self, event) {
+            return false;
+        },
+        destroy : function (self) {
+           Gtk.main_quit();
+        },
+        show : function (self) {
+          print("WINDOW SHOWING - trying to hide");
+        imports.Builder.Provider.ProjectManager.ProjectManager.loadConfig();
+         	this.get('/MidPropTree').hideWin();
+            this.get('/RightPalete').hide();
+            this.get('/BottomPane').el.hide();
+            //this.get('/Editor').el.show_all();
+        
+        }
+    },
     border_width : 0,
+    default_height : 500,
+    default_width : 800,
+    id : "Window",
+    title : "Application Builder",
     init : function() {
          this.atoms = {
                "STRING" : Gdk.atom_intern("STRING")
@@ -33,28 +52,10 @@ Window=new XObject({
        
                   
     },
-    default_width : 800,
-    default_height : 500,
-    id : "Window",
     setTitle : function(str) {
         this.el.set_title(this.title + ' - ' + str);
     },
-    listeners : {
-        delete_event : function (self, event) {
-            return false;
-        },
-        destroy : function (self) {
-           Gtk.main_quit();
-        },
-        show : function (self) {
-          print("WINDOW SHOWING - trying to hide");
-        imports.Builder.Provider.ProjectManager.ProjectManager.loadConfig();
-         	this.get('/MidPropTree').hideWin();
-            this.get('/RightPalete').hide();
-            this.get('/BottomPane').el.hide();
-        
-        }
-    },
+    type : Gtk.WindowType.TOPLEVEL,
     items : [
         {
             xtype: Gtk.VBox,
@@ -803,7 +804,9 @@ Window=new XObject({
                                                                                         this.el.set_value(iter, 2, [GObject.TYPE_STRING, this.nodeToJSON(n)]);
                                                                                     }
                                                                                         //this.currentTree = this.toJS(false, true)[0];
+                                                                                    var d = new Date();
                                                                                     this.file.items = this.toJS(false, false);
+                                                                                    print ("TO JS in " + ((new Date()) - d) + "ms");
                                                                                   //  print("AFTER CHANGED");
                                                                                     //console.dump(this.file.items);
                                                                                     this.file.save();
@@ -1133,8 +1136,8 @@ Window=new XObject({
                                                                                         
                                                                                         if (f.items.length && typeof(f.items[0]) == 'string') {
                                                                                         
-                                                                                            this.get('/RightEditor').el.show();
-                                                                                            this.get('/RightEditor.view').load( f.items[0]);
+                                                                                            //this.get('/RightEditor').el.show();
+                                                                                            //this.get('/RightEditor.view').load( f.items[0]);
                                                                                             return;
                                                                                         }
                                                                                         print("LOAD");
@@ -1158,7 +1161,8 @@ Window=new XObject({
                                                                                         
                                                                                         
                                                                                         //print("hide right editior");
-                                                                                        this.get('/RightEditor').el.hide();
+                                                                                        //this.get('/RightEditor').el.hide();
+                                                                                        this.get('/Editor').el.hide();
                                                                                         //print("set current tree");
                                                                                         this.currentTree = this.toJS(false, false)[0];
                                                                                         //console.dump(this.currentTree);
@@ -1968,6 +1972,16 @@ Window=new XObject({
                                                                         
                                                                      //   this.activePath = false;
                                                                        // stop editing!!!!
+                                                                        if (this.get('/Editor').dirty) {
+                                                                            //if (!this.get('/Editor.buffer').checkSyntax()) {
+                                                                            //   this.get('/StandardErrorDialog').show("Fix errors in code and save.."); 
+                                                                            //   return true;
+                                                                            //    // error Dialog
+                                                                            //}
+                                                                            if (!this.get('/Editor.view').save()) {
+                                                                                return true;
+                                                                            }
+                                                                        }   
                                                                         this.get('/LeftPanel').editableColumn.items[0].el.stop_editing();
                                                                         this.get('/LeftPanel').editing = false;
                                                                     
@@ -2185,7 +2199,7 @@ Window=new XObject({
                                                                     load : function(ar) {
                                                                       this.el.clear();
                                                                                             
-                                                                        this.get('/RightEditor').el.hide();
+                                                                        //this.get('/RightEditor').el.hide();
                                                                         if (ar === false) {
                                                                             return ;
                                                                         }
@@ -2237,7 +2251,8 @@ Window=new XObject({
                                                                         return ret;
                                                                     },
                                                                     startEditing : function(path,col) {
-                                                                    // alled by menu 'edit' currently..
+                                                                        
+                                                                        // alled by menu 'edit' currently..
                                                                         /**
                                                                         * start editing path (or selected if not set..)
                                                                         * @param {String|false} path  (optional) treepath to edit - selected tree gets
@@ -2305,27 +2320,29 @@ Window=new XObject({
                                                                         var _this = this;    
                                                                         // end editing..
                                                                         this.get('/BottomPane').el.hide();
-                                                                        this.get('/RightEditor').el.hide();
-                                                                        
+                                                                        //this.get('/RightEditor').el.hide();
+                                                                         this.get('/Editor').el.hide();
                                                                         
                                                                         if (showEditor) {
                                                                     
                                                                             this.activePath = false;
+                                                                            _this.get('/Editor').el.show_all();
                                                                             GLib.timeout_add(0, 1, function() {
                                                                     
-                                                                                _this.get('/BottomPane').el.show();
-                                                                                _this.get('/RightEditor').el.show();
-                                                                                _this.get('/RightEditor.view').load( _this.getValue(path, 1) );
+                                                                                //_this.get('/BottomPane').el.show();
+                                                                                 //_this.get('/RightEditor').el.show();
+                                                                                
+                                                                                _this.get('/Editor.RightEditor.view').load( _this.getValue(path, 1) );
                                                                                 
                                                                                 //e.editing_done();
                                                                                 //e.remove_widget();
                                                                                 _this.activePath = path ;
-                                                                                
+                                                                              
                                                                                 return false;
                                                                             });
                                                                             return;
                                                                         }
-                                                                        
+                                                                          
                                                                         
                                                                         
                                                                     
@@ -2456,9 +2473,9 @@ Window=new XObject({
                                                                                    
                                                                                 }
                                                                             },
+                                                                            editable : false,
                                                                             pack : "pack_start",
                                                                             text_column : 0,
-                                                                            editable : true,
                                                                             has_entry : true,
                                                                             init : function() {
                                                                                 XObject.prototype.init.call(this);
@@ -3717,94 +3734,11 @@ Window=new XObject({
                                             pack : "add",
                                             init : function() {
                                                 XObject.prototype.init.call(this);
-                                            	this.el.set_tab_label(this.items[0].el, new Gtk.Label({ label : "Code Editor" }));
-                                                	this.el.set_tab_label(this.items[1].el, new Gtk.Label({ label : "Console" }));
-                                                	this.el.set_tab_label(this.items[2].el, new Gtk.Label({ label : "Inspector" }));
+                                            	//this.el.set_tab_label(this.items[0].el, new Gtk.Label({ label : "Code Editor" }));
+                                                	this.el.set_tab_label(this.items[0].el, new Gtk.Label({ label : "Console" }));
+                                                	this.el.set_tab_label(this.items[1].el, new Gtk.Label({ label : "Inspector" }));
                                             },
                                             items : [
-                                                {
-                                                    xtype: Gtk.ScrolledWindow,
-                                                    pack : "add",
-                                                    id : "RightEditor",
-                                                    items : [
-                                                        {
-                                                            xtype: GtkSource.View,
-                                                            pack : "add",
-                                                            id : "view",
-                                                            init : function() {
-                                                                XObject.prototype.init.call(this);
-                                                                 var description = Pango.Font.description_from_string("monospace")
-                                                                description.set_size(8000);
-                                                                this.el.modify_font(description);
-                                                            
-                                                            },
-                                                            load : function(str) {
-                                                            
-                                                            // show the help page for the active node..
-                                                               this.get('/Help').show();
-                                                            
-                                                            
-                                                               this.get('/BottomPane').el.set_current_page(0);
-                                                                this.el.get_buffer().set_text(str, str.length);
-                                                                var lm = GtkSource.LanguageManager.get_default();
-                                                                
-                                                                this.el.get_buffer().set_language(lm.get_language('js'));
-                                                                var buf = this.el.get_buffer();
-                                                                var cursor = buf.get_mark("insert");
-                                                                var iter= new Gtk.TextIter;
-                                                                buf.get_iter_at_mark(iter, cursor);
-                                                                iter.set_line(1);
-                                                                iter.set_line_offset(4);
-                                                                buf.move_mark(cursor, iter);
-                                                                
-                                                                
-                                                                cursor = buf.get_mark("selection_bound");
-                                                                iter= new Gtk.TextIter;
-                                                                buf.get_iter_at_mark(iter, cursor);
-                                                                iter.set_line(1);
-                                                                iter.set_line_offset(4);
-                                                                buf.move_mark(cursor, iter);
-                                                                 
-                                                                this.el.grab_focus();
-                                                            },
-                                                            insert_spaces_instead_of_tabs : true,
-                                                            indent_width : 4,
-                                                            auto_indent : true,
-                                                            show_line_numbers : true,
-                                                            items : [
-                                                                {
-                                                                    xtype: GtkSource.Buffer,
-                                                                    listeners : {
-                                                                        changed : function (self) {
-                                                                            var s = new Gtk.TextIter();
-                                                                            var e = new Gtk.TextIter();
-                                                                            this.el.get_start_iter(s);
-                                                                            this.el.get_end_iter(e);
-                                                                            var str = this.el.get_text(s,e,true);
-                                                                            try {
-                                                                                Seed.check_syntax('var e = ' + str);
-                                                                            } catch (e) {
-                                                                                this.get('/RightEditor.view').el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({
-                                                                                    red: 0xFFFF, green: 0xCCCC , blue : 0xCCCC
-                                                                                   }));
-                                                                                //print("SYNTAX ERROR IN EDITOR");   
-                                                                                //print(e);
-                                                                                //console.dump(e);
-                                                                                return;
-                                                                            }
-                                                                            this.get('/RightEditor.view').el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({
-                                                                                    red: 0xFFFF, green: 0xFFFF , blue : 0xFFFF
-                                                                                   }));
-                                                                            
-                                                                             this.get('/LeftPanel.model').changed(  str , false);
-                                                                        }
-                                                                    },
-                                                                    pack : "set_buffer"
-                                                                }
-                                                            ]
-                                                        }
-                                                    ]
-                                                },
                                                 {
                                                     xtype: Gtk.ScrolledWindow,
                                                     pack : "add",
