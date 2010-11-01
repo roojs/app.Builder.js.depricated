@@ -2289,7 +2289,9 @@ Window=new XObject({
                                                                         // make sure the pulldown is set correctly..
                                                                         // not really needed for second col...
                                                                         var showEditor = false;
-                                                                        
+                                                                        this.get('/Editor').activePath = false;
+                                                                        this.get('/Editor').el.hide();
+                                                                         
                                                                         if (col) {
                                                                             var provider = this.get('/LeftTree').getPaleteProvider();
                                                                             var type = this.get('/LeftPanel.model').getType(path);
@@ -2319,13 +2321,14 @@ Window=new XObject({
                                                                         }
                                                                         var _this = this;    
                                                                         // end editing..
-                                                                        this.get('/BottomPane').el.hide();
+                                                                       // this.get('/BottomPane').el.hide();
                                                                         //this.get('/RightEditor').el.hide();
-                                                                         this.get('/Editor').el.hide();
+                                                                         
                                                                         
                                                                         if (showEditor) {
                                                                     
                                                                             this.activePath = false;
+                                                                            
                                                                             _this.get('/Editor').el.show_all();
                                                                             GLib.timeout_add(0, 1, function() {
                                                                     
@@ -2334,8 +2337,7 @@ Window=new XObject({
                                                                                 
                                                                                 _this.get('/Editor.RightEditor.view').load( _this.getValue(path, 1) );
                                                                                 
-                                                                                //e.editing_done();
-                                                                                //e.remove_widget();
+                                                                                _this.get('/Editor').activePath = path;
                                                                                 _this.activePath = path ;
                                                                               
                                                                                 return false;
