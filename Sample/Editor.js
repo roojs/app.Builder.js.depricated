@@ -144,6 +144,11 @@ Editor=new XObject({
                                         try {
                                             print('var res = ' + str);
                                             Seed.check_syntax('var res = ' + str);
+                                            
+                                            this.get('/RightEditor.view').el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({
+                                                red: 0xFFFF, green: 0xFFFF , blue : 0xFFFF
+                                               }));
+                                            
                                             return true;
                                         } catch (e) {
                                             
@@ -158,7 +163,8 @@ Editor=new XObject({
                                         }
                                     },
                                     toString : function() {
-                                          var s = new Gtk.TextIter();
+                                        
+                                        var s = new Gtk.TextIter();
                                         var e = new Gtk.TextIter();
                                         this.el.get_start_iter(s);
                                         this.el.get_end_iter(e);
