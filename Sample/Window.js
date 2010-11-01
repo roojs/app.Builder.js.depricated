@@ -2847,11 +2847,24 @@ Window=new XObject({
                                                                                         console_message : function (self, object, p0, p1) {
                                                                                             print(object);
                                                                                            //  console.log(object);
+                                                                                           
+                                                                                        
+                                                                                            if (object.match(/^\{/)) {
+                                                                                                this.refreshRequired = true;
+                                                                                                this.lastRedraw = 0;
+                                                                                                this.runRefresh();
+                                                                                            }
+                                                                                            
+                                                                                           
                                                                                                 if (!object.match(/^\{/)) {
                                                                                                 
                                                                                                     //this.get('/Terminal').feed(object);
                                                                                                     return true; // do not handle!!! -> later maybe in console..
                                                                                                 }
+                                                                                                
+                                                                                                
+                                                                                                
+                                                                                                
                                                                                                // console.log(object);
                                                                                                 var val =  JSON.parse(object);
                                                                                         
@@ -2988,9 +3001,9 @@ Window=new XObject({
                                                                                            return null; //new WebKit.WebView();
                                                                                         }
                                                                                     },
-                                                                                    redraws : 0,
                                                                                     id : "view",
                                                                                     pack : "add",
+                                                                                    redraws : 0,
                                                                                     init : function() {
                                                                                         XObject.prototype.init.call(this);
                                                                                         // this may not work!?
