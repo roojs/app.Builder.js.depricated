@@ -14,7 +14,7 @@ Editor=new XObject({
     xtype: Gtk.Window,
     listeners : {
         destroy_event : function (self, event) {
-            if (!this.save()) {
+            if (!this.get('/Editor.RightEditor').save()) {
                 // no hiding with errors.
                 return true;
             }
@@ -22,7 +22,7 @@ Editor=new XObject({
             return true;
         },
         delete_event : function (self, event) {
-            if (!this.save()) {
+            if (!this.get('/Editor.RightEditor').save()) {
                 // no hiding with errors.
                 return true;
             }
