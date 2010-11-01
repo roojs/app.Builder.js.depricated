@@ -32,7 +32,7 @@
                             "items": [
                                 {
                                     "listeners": {
-                                        "clicked": "function (self) {\n  this.get('/Editor.RightEditor').save();\n}"
+                                        "clicked": "function (self) {\n\n  this.get('/Editor.RightEditor').save();\n}"
                                     },
                                     "id": "save_button",
                                     "label": "Save",
@@ -45,7 +45,7 @@
                             "id": "RightEditor",
                             "pack": "add",
                             "xtype": "ScrolledWindow",
-                            "|save": "function() {\n    var str = this.get('/Editor.buffer').toString();\n     this.get('/LeftPanel.model').changed(  str , false);\n     this.get('/Editor').dirty = false;\n     this.get('/Editor.save_button').el.sensitive = false;\n}\n",
+                            "|save": "function() {\n     var str = this.get('/Editor.buffer').toString();\n     this.get('/LeftPanel.model').changed(  str , false);\n     this.get('/Editor').dirty = false;\n     this.get('/Editor.save_button').el.sensitive = false;\n}\n",
                             "|xns": "Gtk",
                             "items": [
                                 {
