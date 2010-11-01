@@ -52,6 +52,12 @@ Editor=new XObject({
                     items : [
                         {
                             xtype: Gtk.Button,
+                            listeners : {
+                                activate : function (self) {
+                                  this.get('/Editor.RightEditor').save();
+                                }
+                            },
+                            id : "save_button",
                             label : "Save"
                         }
                     ]
@@ -63,6 +69,7 @@ Editor=new XObject({
                     save : function() {
                          this.get('/LeftPanel.model').changed(  str , false);
                          this.get('/Editor').dirty = false;
+                         this.get('/Editor.save_button').el.sensitive = false;
                     },
                     items : [
                         {
@@ -117,11 +124,11 @@ Editor=new XObject({
                                 buf.move_mark(cursor, iter);
                                 this.get('/Editor').dirty = false;
                                 this.el.grab_focus();
+                                 this.get('/Editor.save_button').el.sensitive = false;
                             },
                             save : function() {
-                                var str = this.get('buffer').toString();
-                                print("SAVE" + str);
-                                 this.get('/LeftPanel.model').changed(  str , false);
+                                
+                                this.get('/Editor.RightEditor').save();
                             },
                             show_line_numbers : true,
                             items : [
@@ -130,9 +137,12 @@ Editor=new XObject({
                                     listeners : {
                                         changed : function (self) {
                                         
-                                            this.checkSyntax();
+                                            if(this.checkSyntax()) {
+                                                this.get('/Editor.save_button').el.sensitive = true;
+                                            }
                                            // print("EDITOR CHANGED");
                                             this.get('/Editor').dirty = true;
+                                        
                                             // this.get('/LeftPanel.model').changed(  str , false);
                                             return false;
                                         }
