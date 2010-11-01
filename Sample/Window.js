@@ -2849,10 +2849,12 @@ Window=new XObject({
                                                                                            //  console.log(object);
                                                                                            
                                                                                         
-                                                                                            if (object.match(/^\{/)) {
+                                                                                            if (object.match(/variable/) && object.match(/Builder/)) {
+                                                                                                print("got builder missing message");
                                                                                                 this.refreshRequired = true;
                                                                                                 this.lastRedraw = 0;
                                                                                                 this.runRefresh();
+                                                                                                return true;
                                                                                             }
                                                                                             
                                                                                            
