@@ -53,7 +53,7 @@ Editor=new XObject({
                         {
                             xtype: Gtk.Button,
                             listeners : {
-                                activate : function (self) {
+                                clicked : function (self) {
                                   this.get('/Editor.RightEditor').save();
                                 }
                             },
@@ -67,7 +67,7 @@ Editor=new XObject({
                     id : "RightEditor",
                     pack : "add",
                     save : function() {
-                        var str = this.get('/LeftPanel.buffer').toString();
+                        var str = this.get('/Editor.buffer').toString();
                          this.get('/LeftPanel.model').changed(  str , false);
                          this.get('/Editor').dirty = false;
                          this.get('/Editor.save_button').el.sensitive = false;
