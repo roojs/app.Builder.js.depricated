@@ -171,11 +171,7 @@ Editor=new XObject({
                                           //  print('var res = ' + str);
                                             Seed.check_syntax('var res = ' + str);
                                             
-                                            this.get('/RightEditor.view').el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({
-                                                red: 0xFFFF, green: 0xFFFF , blue : 0xFFFF
-                                               }));
-                                            
-                                            return true;
+                                           
                                         } catch (e) {
                                             
                                             this.get('/RightEditor.view').el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({
@@ -187,6 +183,11 @@ Editor=new XObject({
                                             //console.dump(e);
                                             return false;
                                         }
+                                         this.get('/RightEditor.view').el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({
+                                            red: 0xFFFF, green: 0xFFFF , blue : 0xFFFF
+                                           }));
+                                        
+                                        return true;
                                     },
                                     toString : function() {
                                         
