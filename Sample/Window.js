@@ -2198,7 +2198,8 @@ Window=new XObject({
                                                                     },
                                                                     load : function(ar) {
                                                                     // might casue problesm..
-                                                                         this.get('/Editor.RightEditor').save();
+                                                                        // this.get('/Editor.RightEditor').save();
+                                                                    
                                                                            this.get('/Editor').el.hide();
                                                                          this.get('/Editor').activePath = false;
                                                                     
