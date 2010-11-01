@@ -78,7 +78,7 @@ Editor=new XObject({
                             listeners : {
                                 key_release_event : function (self, event) {
                                     
-                                    if (event.key.keyval == 115 && (Gdk.ModifierType.CONTROL_MASK & 4) ) {
+                                    if (event.key.keyval == 115 && (event.key.state & Gdk.ModifierType.CONTROL_MASK ) ) {
                                         print("SAVE: ctrl-S  pressed");
                                         this.save();
                                         return false;
