@@ -1975,7 +1975,7 @@ Window=new XObject({
                                                                         if (this.get('/Editor').dirty) {
                                                                             if (!this.get('/Editor.buffer').checkSyntax()) {
                                                                                this.get('/StandardErrorDialog').show("Fix errors in code and save.."); 
-                                                                               return;
+                                                                               return true;
                                                                                 // error Dialog
                                                                             }
                                                                             this.get('/Editor.view').save();
