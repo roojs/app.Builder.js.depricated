@@ -142,6 +142,7 @@ Editor=new XObject({
                                         var str = this.toString();
                                         var res = '';
                                         try {
+                                            print('var res = ' + str);
                                             Seed.check_syntax('var res = ' + str);
                                             return true;
                                         } catch (e) {
