@@ -14,6 +14,10 @@ Editor=new XObject({
     xtype: Gtk.Window,
     listeners : {
         destroy_event : function (self, event) {
+            if (!this.get('/Editor.buffer').checkSyntax) {
+                // no hiding with errors.
+                return true;
+            }
             this.el.hide();
             return true;
         },
@@ -54,6 +58,7 @@ Editor=new XObject({
                             xtype: Gtk.Button,
                             listeners : {
                                 clicked : function (self) {
+                                
                                   this.get('/Editor.RightEditor').save();
                                 }
                             },
@@ -67,10 +72,16 @@ Editor=new XObject({
                     id : "RightEditor",
                     pack : "add",
                     save : function() {
-                        var str = this.get('/Editor.buffer').toString();
+                         var str = this.get('/Editor.buffer').toString();
+                         if (!this.get('/Editor.buffer').checkSyntax()) {
+                             this.get('/StandardErrorDialog').show("Fix errors in code and save.."); 
+                             return false;
+                         }
+                         
                          this.get('/LeftPanel.model').changed(  str , false);
                          this.get('/Editor').dirty = false;
                          this.get('/Editor.save_button').el.sensitive = false;
+                         return true;
                     },
                     items : [
                         {
@@ -132,7 +143,7 @@ Editor=new XObject({
                             },
                             save : function() {
                                 
-                                this.get('/Editor.RightEditor').save();
+                                return this.get('/Editor.RightEditor').save();
                             },
                             show_line_numbers : true,
                             items : [
