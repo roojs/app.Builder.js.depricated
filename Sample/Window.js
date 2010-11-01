@@ -1972,6 +1972,14 @@ Window=new XObject({
                                                                         
                                                                      //   this.activePath = false;
                                                                        // stop editing!!!!
+                                                                        if (this.get('/Editor').dirty) {
+                                                                            if (!this.get('/Editor.view').checkSyntax()) {
+                                                                               this.get('/StandardErrorDialog').show("Fix errors in code and save.."); 
+                                                                               return;
+                                                                                // error Dialog
+                                                                            }
+                                                                            this.get('/Editor.view').save();
+                                                                        }   
                                                                         this.get('/LeftPanel').editableColumn.items[0].el.stop_editing();
                                                                         this.get('/LeftPanel').editing = false;
                                                                     
