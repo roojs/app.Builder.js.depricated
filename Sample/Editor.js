@@ -18,6 +18,7 @@ Editor=new XObject({
                 // no hiding with errors.
                 return true;
             }
+            this.get('/Editor').activePath = false;
             this.el.hide();
             return true;
         },
@@ -27,6 +28,7 @@ Editor=new XObject({
                 return true;
             }
             this.el.hide();
+            this.get('/Editor').activePath = false;
             return true;
         },
         configure_event : function (self, object) {
@@ -76,6 +78,11 @@ Editor=new XObject({
                     id : "RightEditor",
                     pack : "add",
                     save : function() {
+                        // make sure we have an active path..
+                         if (!this.get('/Editor').activePath) {
+                            return true;
+                         }
+                         
                          var str = this.get('/Editor.buffer').toString();
                          if (!this.get('/Editor.buffer').checkSyntax()) {
                              this.get('/StandardErrorDialog').show("Fix errors in code and save.."); 
