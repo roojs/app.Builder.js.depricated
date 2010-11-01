@@ -7,7 +7,7 @@
     "items": [
         {
             "listeners": {
-                "destroy_event": "function (self, event) {\n    if (!this.get('/Editor.RightEditor').save()) {\n        // no hiding with errors.\n        return true;\n    }\n    this.el.hide();\n    return true;\n}",
+                "destroy_event": "function (self, event) {\n    if (!this.get('/Editor.RightEditor').save()) {\n        // no hiding with errors.\n        return true;\n    }\n    this.get('/Editor').activePath = false;\n    this.el.hide();\n    return true;\n}",
                 "delete_event": "function (self, event) {\n    if (!this.get('/Editor.RightEditor').save()) {\n        // no hiding with errors.\n        return true;\n    }\n    this.el.hide();\n    this.get('/Editor').activePath = false;\n    return true;\n}",
                 "configure_event": "function (self, object) {\n    this.pos = this.el.get_position();\n\n\n    return false;\n}",
                 "show": "function (self) {\n    if (this.pos) {\n        this.el.set_uposition(this.pos.root_x,this.pos.root_y);\n    }\n}"
