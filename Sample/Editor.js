@@ -77,11 +77,12 @@ Editor=new XObject({
                             xtype: GtkSource.View,
                             listeners : {
                                 key_release_event : function (self, event) {
-                                    if (event.key.keyval != 115 || !(Gdk.ModifierType.CONTROL_MASK & 4) ) {
-                                        return;
+                                    if (event.key.keyval == 115 && (Gdk.ModifierType.CONTROL_MASK & 4) ) {
+                                        this.save();
+                                        return false;
                                     }
-                                    print(event.key.keyval)
-                                    this.save();
+                                   // print(event.key.keyval)
+                                
                                     return false;
                                 }
                             },
