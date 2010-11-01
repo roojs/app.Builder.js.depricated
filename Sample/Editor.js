@@ -67,6 +67,7 @@ Editor=new XObject({
                     id : "RightEditor",
                     pack : "add",
                     save : function() {
+                        var str = this.get('/LeftPanel.buffer').toString();
                          this.get('/LeftPanel.model').changed(  str , false);
                          this.get('/Editor').dirty = false;
                          this.get('/Editor.save_button').el.sensitive = false;
