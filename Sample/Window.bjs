@@ -221,15 +221,15 @@
                                                     "items": [
                                                         {
                                                             "listeners": {
-                                                                "activate": "function (self) {\n    // this does not actually expand it..\n    // that is done by GTK..\n    \n    \n\n    if (!this.el.expanded) {\n        this.onExpand();\n    } else {\n        this.onCollapse();\n    }\n\t  \n}",
+                                                                "activate": "function (self) {\n    // this does not actually expand it..\n    // that is done by GTK..\n    \n    \n \tif (!this.get('/Editor').save()) {\n \t    // popup!! - click handled.. \n \t    return true;\n        }\n\n    if (!this.el.expanded) {\n        this.onExpand();\n    } else {\n        this.onCollapse();\n    }\n\t  \n}",
                                                                 "enter_notify_event": "function (self, event) {\nreturn;\n     this.el.expanded = !this.el.expanded;\n//if (this.el.expanded ) {\n    this.listeners.activate.call(this);\n//   }\n\nreturn true;\n}"
                                                             },
                                                             "id": "expander",
                                                             "label": "Select Project or File",
                                                             "pack": "pack_start,false,true",
                                                             "xtype": "Expander",
-                                                            "|onCollapse": "function() {\n    \n    var nb = this.get('/LeftTopPanel.notebook');\n    nb.el.set_current_page(0);\n}\n",
                                                             "|init": "function() {\n    XObject.prototype.init.call(this);\n   this.el.add_events (Gdk.EventMask.BUTTON_MOTION_MASK );\n}\n",
+                                                            "|onCollapse": "function() {\n    \n    var nb = this.get('/LeftTopPanel.notebook');\n    nb.el.set_current_page(0);\n}\n",
                                                             "|onExpand": "function() {\n    var nb = this.get('/LeftTopPanel.notebook');            \n    var pm  = imports.Builder.Provider.ProjectManager.ProjectManager;\n    \n   \n    var model = this.get('/LeftProjectTree.combomodel');\n    //  print (\"loading Projects?\")\n    //console.dump(pm.projects);\n    model.loadData(pm.projects);\n     \n    \n    nb.el.set_current_page(1);\n    //pm.on('changed', function() {\n\t//console.log(\"CAUGHT project manager change\");\n    //    _combo.model.loadData(pm.projects);\n    //}\n    return;\n}\n",
                                                             "|xns": "Gtk"
                                                         },
