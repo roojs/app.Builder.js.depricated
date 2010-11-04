@@ -6,7 +6,6 @@
     "path": "/home/alan/gitlive/app.Builder.js/Sample/Editor.bjs",
     "items": [
         {
-            "|save": "function (self, event) {\n    if (!this.get('/Editor.RightEditor').save()) {\n        // no hiding with errors.\n        return true;\n    }\n    this.get('/Editor').activePath = false;\n    this.el.hide();\n    return true;\n}",
             "listeners": {
                 "delete_event": "function (self, event) {\n    if (!this.get('/Editor.RightEditor').save()) {\n        // no hiding with errors.\n        return true;\n    }\n    this.el.hide();\n    this.get('/Editor').activePath = false;\n    return true;\n}",
                 "configure_event": "function (self, object) {\n    this.pos = this.el.get_position();\n\n\n    return false;\n}",
@@ -17,7 +16,7 @@
             "title": "Application Builder - Editor",
             "width_request": 500,
             "xtype": "Window",
-            "|": "function() {\n    return this.get('/Editor.RightEditor').save();\n}\n",
+            "|save": "function (self, event) {\n    if (!this.get('/Editor.RightEditor').save()) {\n        // no hiding with errors.\n        return true;\n    }\n    this.get('/Editor').activePath = false;\n    this.el.hide();\n    return true;\n}",
             "|init": "function() {\n    XObject.prototype.init.call(this);\n   // this.show_all();\n}\n",
             "|xns": "Gtk",
             "items": [
