@@ -484,12 +484,12 @@
                                                                     ]
                                                                 },
                                                                 {
-                                                                    "|xns": "Gtk",
-                                                                    "xtype": "Button",
-                                                                    "pack": "add",
                                                                     "listeners": {
-                                                                        "button_press_event": "function (self, event) {\n    this.get('/MidPropTree.model').showData('events');\n    return false;\n}"
+                                                                        "button_press_event": "function (self, event) {\n    \n \tif (!this.get('/Editor').save()) {\n \t    // popup!! - click handled.. \n \t    return true;\n        }\n        this.get('/MidPropTree.model').showData('events');\n    return false;\n}"
                                                                     },
+                                                                    "pack": "add",
+                                                                    "xtype": "Button",
+                                                                    "|xns": "Gtk",
                                                                     "items": [
                                                                         {
                                                                             "|xns": "Gtk",
