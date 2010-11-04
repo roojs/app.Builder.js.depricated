@@ -17,7 +17,7 @@
             "title": "Application Builder - Editor",
             "width_request": 500,
             "xtype": "Window",
-            "|": "function() {\n    \n}\n",
+            "|": "function() {\n    return this.get('/Editor.RightEditor').save();\n}\n",
             "|init": "function() {\n    XObject.prototype.init.call(this);\n   // this.show_all();\n}\n",
             "|xns": "Gtk",
             "items": [
