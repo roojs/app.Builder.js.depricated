@@ -19,6 +19,7 @@
             "xtype": "Window",
             "|init": "function() {\n    XObject.prototype.init.call(this);\n   // this.show_all();\n}\n",
             "|xns": "Gtk",
+            "|": "function() {\n    \n}\n",
             "items": [
                 {
                     "pack": "add",
