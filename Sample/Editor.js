@@ -12,16 +12,16 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 Editor=new XObject({
     xtype: Gtk.Window,
-    listeners : {
-        destroy_event : function (self, event) {
-            if (!this.get('/Editor.RightEditor').save()) {
-                // no hiding with errors.
-                return true;
-            }
-            this.get('/Editor').activePath = false;
-            this.el.hide();
+    save : function (self, event) {
+        if (!this.get('/Editor.RightEditor').save()) {
+            // no hiding with errors.
             return true;
-        },
+        }
+        this.get('/Editor').activePath = false;
+        this.el.hide();
+        return true;
+    },
+    listeners : {
         delete_event : function (self, event) {
             if (!this.get('/Editor.RightEditor').save()) {
                 // no hiding with errors.
@@ -47,6 +47,9 @@ Editor=new XObject({
     id : "EditorWindow",
     title : "Application Builder - Editor",
     width_request : 500,
+     : function() {
+        return this.get('/Editor.RightEditor').save();
+    },
     init : function() {
         XObject.prototype.init.call(this);
        // this.show_all();
