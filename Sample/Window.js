@@ -343,6 +343,10 @@ Window=new XObject({
                                                             // that is done by GTK..
                                                             
                                                             
+                                                         	if (!this.get('/Editor').save()) {
+                                                         	    // popup!! - click handled.. 
+                                                         	    return true;
+                                                                }
                                                         
                                                             if (!this.el.expanded) {
                                                                 this.onExpand();
@@ -364,14 +368,14 @@ Window=new XObject({
                                                     id : "expander",
                                                     label : "Select Project or File",
                                                     pack : "pack_start,false,true",
+                                                    init : function() {
+                                                        XObject.prototype.init.call(this);
+                                                       this.el.add_events (Gdk.EventMask.BUTTON_MOTION_MASK );
+                                                    },
                                                     onCollapse : function() {
                                                         
                                                         var nb = this.get('/LeftTopPanel.notebook');
                                                         nb.el.set_current_page(0);
-                                                    },
-                                                    init : function() {
-                                                        XObject.prototype.init.call(this);
-                                                       this.el.add_events (Gdk.EventMask.BUTTON_MOTION_MASK );
                                                     },
                                                     onExpand : function() {
                                                         var nb = this.get('/LeftTopPanel.notebook');            
@@ -471,6 +475,12 @@ Window=new XObject({
                                                                     listeners : {
                                                                         button_press_event : function (self, ev) {
                                                                          	console.log("button press?");
+                                                                         	
+                                                                         	if (!this.get('/Editor').save()) {
+                                                                         	    // popup!! - click handled.. 
+                                                                         	    return true;
+                                                                                }
+                                                                         	
                                                                                 if (ev.type != Gdk.EventType.BUTTON_PRESS  || ev.button.button != 3) {
                                                                                     print("click" + ev.type);
                                                                                     return false;
@@ -1718,13 +1728,18 @@ Window=new XObject({
                                                         },
                                                         {
                                                             xtype: Gtk.Button,
-                                                            pack : "add",
                                                             listeners : {
                                                                 button_press_event : function (self, event) {
-                                                                    this.get('/MidPropTree.model').showData('events');
+                                                                    
+                                                                 	if (!this.get('/Editor').save()) {
+                                                                 	    // popup!! - click handled.. 
+                                                                 	    return true;
+                                                                        }
+                                                                        this.get('/MidPropTree.model').showData('events');
                                                                     return false;
                                                                 }
                                                             },
+                                                            pack : "add",
                                                             items : [
                                                                 {
                                                                     xtype: Gtk.HBox,
@@ -1747,9 +1762,14 @@ Window=new XObject({
                                                         },
                                                         {
                                                             xtype: Gtk.Button,
-                                                            pack : "add",
                                                             listeners : {
                                                                 button_press_event : function (self, ev) {
+                                                                
+                                                                 	if (!this.get('/Editor').save()) {
+                                                                 	    // popup!! - click handled.. 
+                                                                 	    return true;
+                                                                        }
+                                                                        
                                                                 	var p = this.get('/AddPropertyPopup');
                                                                 	if (!p.el) {
                                                                 		p.init();
@@ -1760,6 +1780,7 @@ Window=new XObject({
                                                                     return true;
                                                                 }
                                                             },
+                                                            pack : "add",
                                                             items : [
                                                                 {
                                                                     xtype: Gtk.HBox,
@@ -1934,6 +1955,10 @@ Window=new XObject({
                                                                 button_press_event : function (self, ev) {
                                                                 
                                                                     
+                                                                    if (!this.get('/Editor').save()) {
+                                                                        // popup!! - click handled.. 
+                                                                        return true;
+                                                                    }
                                                                     var res = { }; 
                                                                     
                                                                     if (!this.el.get_path_at_pos(ev.button.x,ev.button.y, res)) {
@@ -3906,48 +3931,6 @@ Window=new XObject({
                                                     items : [
                                                         {
                                                             xtype: Gtk.TreeView,
-                                                            pack : "add",
-                                                            init : function() {
-                                                                XObject.prototype.init.call(this);
-                                                              this.el.set_size_request(150,-1);
-                                                                                      //  set_reorderable: [1]
-                                                                                              
-                                                                        var description = new Pango.FontDescription.c_new();
-                                                                description.set_size(8000);
-                                                                this.el.modify_font(description);
-                                                                
-                                                                this.selection = this.el.get_selection();
-                                                                this.selection.set_mode( Gtk.SelectionMode.SINGLE);
-                                                               // this.selection.signal['changed'].connect(function() {
-                                                                //    _view.listeners['cursor-changed'].apply(_view, [ _view, '']);
-                                                                //});
-                                                                // see: http://live.gnome.org/GnomeLove/DragNDropTutorial
-                                                                 
-                                                                Gtk.drag_source_set (
-                                                                        this.el,            /* widget will be drag-able */
-                                                                        Gdk.ModifierType.BUTTON1_MASK,       /* modifier that will start a drag */
-                                                                        null,            /* lists of target to support */
-                                                                        0,              /* size of list */
-                                                                        Gdk.DragAction.COPY         /* what to do with data after dropped */
-                                                                );
-                                                                //Gtk.drag_source_set_target_list(this.el, LeftTree.targetList);
-                                                               
-                                                                Gtk.drag_source_set_target_list(this.el, this.get('/Window').targetList);
-                                                                Gtk.drag_source_add_text_targets(this.el); 
-                                                                /*
-                                                                print("RP: TARGET:" + LeftTree.atoms["STRING"]);
-                                                                targets = new Gtk.TargetList();
-                                                                targets.add( LeftTree.atoms["STRING"], 0, 0);
-                                                                targets.add_text_targets( 1 );
-                                                                Gtk.drag_dest_set_target_list(this.el, LeftTree.targetList);
-                                                                
-                                                                //if you want to allow text to be output elsewhere..
-                                                                //Gtk.drag_source_add_text_targets(this.el);
-                                                                */
-                                                                return true; 
-                                                            },
-                                                            headers_visible : false,
-                                                            enable_tree_lines : true,
                                                             listeners : {
                                                                 drag_begin : function (self, ctx) {
                                                                     // we could fill this in now...
@@ -4000,7 +3983,57 @@ Window=new XObject({
                                                                 	this.el.dropList = false;
                                                                 	this.get('/LeftTree.view').highlight(false);
                                                                 	return true;
+                                                                },
+                                                                button_press_event : function (self, event) {
+                                                                
+                                                                 	if (!this.get('/Editor').save()) {
+                                                                 	    // popup!! - click handled.. 
+                                                                 	    return true;
+                                                                        }
+                                                                    return false;
                                                                 }
+                                                            },
+                                                            pack : "add",
+                                                            enable_tree_lines : true,
+                                                            headers_visible : false,
+                                                            init : function() {
+                                                                XObject.prototype.init.call(this);
+                                                              this.el.set_size_request(150,-1);
+                                                                                      //  set_reorderable: [1]
+                                                                                              
+                                                                        var description = new Pango.FontDescription.c_new();
+                                                                description.set_size(8000);
+                                                                this.el.modify_font(description);
+                                                                
+                                                                this.selection = this.el.get_selection();
+                                                                this.selection.set_mode( Gtk.SelectionMode.SINGLE);
+                                                               // this.selection.signal['changed'].connect(function() {
+                                                                //    _view.listeners['cursor-changed'].apply(_view, [ _view, '']);
+                                                                //});
+                                                                // see: http://live.gnome.org/GnomeLove/DragNDropTutorial
+                                                                 
+                                                                Gtk.drag_source_set (
+                                                                        this.el,            /* widget will be drag-able */
+                                                                        Gdk.ModifierType.BUTTON1_MASK,       /* modifier that will start a drag */
+                                                                        null,            /* lists of target to support */
+                                                                        0,              /* size of list */
+                                                                        Gdk.DragAction.COPY         /* what to do with data after dropped */
+                                                                );
+                                                                //Gtk.drag_source_set_target_list(this.el, LeftTree.targetList);
+                                                               
+                                                                Gtk.drag_source_set_target_list(this.el, this.get('/Window').targetList);
+                                                                Gtk.drag_source_add_text_targets(this.el); 
+                                                                /*
+                                                                print("RP: TARGET:" + LeftTree.atoms["STRING"]);
+                                                                targets = new Gtk.TargetList();
+                                                                targets.add( LeftTree.atoms["STRING"], 0, 0);
+                                                                targets.add_text_targets( 1 );
+                                                                Gtk.drag_dest_set_target_list(this.el, LeftTree.targetList);
+                                                                
+                                                                //if you want to allow text to be output elsewhere..
+                                                                //Gtk.drag_source_add_text_targets(this.el);
+                                                                */
+                                                                return true; 
                                                             },
                                                             items : [
                                                                 {
