@@ -514,12 +514,12 @@
                                                                     ]
                                                                 },
                                                                 {
-                                                                    "|xns": "Gtk",
-                                                                    "xtype": "Button",
-                                                                    "pack": "add",
                                                                     "listeners": {
-                                                                        "button_press_event": "function (self, ev) {\n\tvar p = this.get('/AddPropertyPopup');\n\tif (!p.el) {\n\t\tp.init();\n\t}\n \tp.el.set_screen(Gdk.Screen.get_default());\n        p.el.show_all();\n         p.el.popup(null, null, null, null, 3, ev.button.time);\n    return true;\n}"
+                                                                        "button_press_event": "function (self, ev) {\n\n \tif (!this.get('/Editor').save()) {\n \t    // popup!! - click handled.. \n \t    return true;\n        }\n        \n\tvar p = this.get('/AddPropertyPopup');\n\tif (!p.el) {\n\t\tp.init();\n\t}\n \tp.el.set_screen(Gdk.Screen.get_default());\n        p.el.show_all();\n         p.el.popup(null, null, null, null, 3, ev.button.time);\n    return true;\n}"
                                                                     },
+                                                                    "pack": "add",
+                                                                    "xtype": "Button",
+                                                                    "|xns": "Gtk",
                                                                     "items": [
                                                                         {
                                                                             "|xns": "Gtk",
