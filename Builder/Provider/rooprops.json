@@ -2360,7 +2360,7 @@
      "name": "removeMask",
      "type": "Boolean",
      "desc": "True to create a single-use mask that is automatically destroyed after loading (useful for page loads),\nFalse to persist the mask element reference for multiple uses (e.g., for paged data widgets).  Defaults to false.",
-     "memberOf": ""
+     "memberOf": "Roo"
     },
     {
      "name": "msg",
@@ -2782,7 +2782,7 @@
      "name": "items",
      "type": "Roo.data.Store",
      "desc": "array of button configs or elements to add",
-     "memberOf": "Roo.Toolbar"
+     "memberOf": "Roo"
     }
    ],
    "events": []
@@ -3019,7 +3019,7 @@
      "name": "mode",
      "type": "String",
      "desc": "The shadow display mode.  Supports the following options:<br />\nsides: Shadow displays on both sides and bottom only<br />\nframe: Shadow displays equally on all four sides<br />\ndrop: Traditional bottom-right drop shadow (default)",
-     "memberOf": ""
+     "memberOf": "Roo"
     },
     {
      "name": "offset",
@@ -3577,7 +3577,7 @@
      "name": "items",
      "type": "Roo.data.Store",
      "desc": "array of button configs or elements to add",
-     "memberOf": ""
+     "memberOf": "Roo"
     },
     {
      "name": "container",
@@ -3992,7 +3992,7 @@
      "name": "tree",
      "type": "Roo.tree.TreePanel",
      "desc": "The tree TreePanel, with config etc.",
-     "memberOf": ""
+     "memberOf": "Roo"
     },
     {
      "name": "fitToFrame",
@@ -5549,6 +5549,12 @@
      "desc": "Fires after the field has been marked as invalid."
     },
     {
+     "name": "keyup",
+     "sig": "function (_self, e)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires after the key up"
+    },
+    {
      "name": "move",
      "sig": "function (_self, x, y)\n{\n\n}",
      "type": "function",
@@ -6317,6 +6323,12 @@
      "desc": "Fires after the field has been marked as invalid."
     },
     {
+     "name": "keyup",
+     "sig": "function (_self, e)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires after the key up"
+    },
+    {
      "name": "move",
      "sig": "function (_self, x, y)\n{\n\n}",
      "type": "function",
@@ -6767,6 +6779,12 @@
      "desc": "Fires after the field has been marked as invalid."
     },
     {
+     "name": "keyup",
+     "sig": "function (_self, e)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires after the key up"
+    },
+    {
      "name": "move",
      "sig": "function (_self, x, y)\n{\n\n}",
      "type": "function",
@@ -7047,6 +7065,12 @@
      "sig": "function (_self, msg)\n{\n\n}",
      "type": "function",
      "desc": "Fires after the field has been marked as invalid."
+    },
+    {
+     "name": "keyup",
+     "sig": "function (_self, e)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires after the key up"
     },
     {
      "name": "move",
@@ -7451,6 +7475,12 @@
      "desc": "Fires after the field has been marked as invalid."
     },
     {
+     "name": "keyup",
+     "sig": "function (_self, e)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires after the key up"
+    },
+    {
      "name": "move",
      "sig": "function (_self, x, y)\n{\n\n}",
      "type": "function",
@@ -7719,6 +7749,12 @@
      "sig": "function (_self, msg)\n{\n\n}",
      "type": "function",
      "desc": "Fires after the field has been marked as invalid."
+    },
+    {
+     "name": "keyup",
+     "sig": "function (_self, e)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires after the key up"
     },
     {
      "name": "move",
@@ -8051,7 +8087,7 @@
     {
      "name": "xgrid",
      "type": "Object",
-     "desc": "(xtype'd description of grid) Grid or EditorGrid",
+     "desc": "(xtype'd description of grid) { xtype : 'Grid', dataSource: .... }\n\n}",
      "memberOf": ""
     },
     {
@@ -8277,6 +8313,12 @@
      "sig": "function (_self, msg)\n{\n\n}",
      "type": "function",
      "desc": "Fires after the field has been marked as invalid."
+    },
+    {
+     "name": "keyup",
+     "sig": "function (_self, e)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires after the key up"
     },
     {
      "name": "move",
@@ -8661,6 +8703,12 @@
      "sig": "function (_self, msg)\n{\n\n}",
      "type": "function",
      "desc": "Fires after the field has been marked as invalid."
+    },
+    {
+     "name": "keyup",
+     "sig": "function (_self, e)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires after the key up"
     },
     {
      "name": "move",
@@ -9351,6 +9399,12 @@
      "desc": "Fires after the field has been marked as invalid."
     },
     {
+     "name": "keyup",
+     "sig": "function (_self, e)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires after the key up"
+    },
+    {
      "name": "move",
      "sig": "function (_self, x, y)\n{\n\n}",
      "type": "function",
@@ -9649,6 +9703,12 @@
      "sig": "function (_self, msg)\n{\n\n}",
      "type": "function",
      "desc": "Fires after the field has been marked as invalid."
+    },
+    {
+     "name": "keyup",
+     "sig": "function (_self, e)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires after the key up"
     },
     {
      "name": "move",
@@ -10191,6 +10251,12 @@
      "desc": "Fires after the field has been marked as invalid."
     },
     {
+     "name": "keyup",
+     "sig": "function (_self, e)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires after the key up"
+    },
+    {
      "name": "move",
      "sig": "function (_self, x, y)\n{\n\n}",
      "type": "function",
@@ -10575,6 +10641,12 @@
      "desc": "Fires after the field has been marked as invalid."
     },
     {
+     "name": "keyup",
+     "sig": "function (_self, e)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires after the key up"
+    },
+    {
      "name": "move",
      "sig": "function (_self, x, y)\n{\n\n}",
      "type": "function",
@@ -10951,6 +11023,12 @@
      "sig": "function (_self, msg)\n{\n\n}",
      "type": "function",
      "desc": "Fires after the field has been marked as invalid."
+    },
+    {
+     "name": "keyup",
+     "sig": "function (_self, e)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires after the key up"
     },
     {
      "name": "move",
@@ -12723,6 +12801,12 @@
      "memberOf": "Roo.menu.Item"
     },
     {
+     "name": "HTML",
+     "type": "String",
+     "desc": "to render in menu\nThe text to show on the menu item (HTML version).",
+     "memberOf": "Roo.menu.Item"
+    },
+    {
      "name": "icon",
      "type": "String",
      "desc": "The path to an icon to display in this menu item (defaults to Roo.BLANK_IMAGE_URL)",
@@ -13386,6 +13470,12 @@
      "name": "text",
      "type": "String",
      "desc": "The text to show on the menu item.",
+     "memberOf": ""
+    },
+    {
+     "name": "HTML",
+     "type": "String",
+     "desc": "to render in menu\nThe text to show on the menu item (HTML version).",
      "memberOf": ""
     },
     {
