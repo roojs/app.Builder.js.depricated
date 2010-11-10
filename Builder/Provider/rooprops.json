@@ -5956,19 +5956,19 @@
     },
     {
      "name": "blockFocus",
-     "type": "bool",
+     "type": "Boolean",
      "desc": "Prevents all focus calls, so it can work with things like HTML edtor bar",
      "memberOf": ""
     },
     {
      "name": "disableClear",
-     "type": "bool",
+     "type": "Boolean",
      "desc": "Disable showing of clear button.",
      "memberOf": ""
     },
     {
      "name": "alwaysQuery",
-     "type": "bool",
+     "type": "Boolean",
      "desc": "Disable caching of results, and always send query",
      "memberOf": ""
     },
