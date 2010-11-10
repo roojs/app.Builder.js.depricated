@@ -7989,6 +7989,12 @@
      "memberOf": ""
     },
     {
+     "name": "progressUrl",
+     "type": "String",
+     "desc": "- Url to return progress data",
+     "memberOf": ""
+    },
+    {
      "name": "method",
      "type": "String",
      "desc": "The request method to use (GET or POST) for form actions if one isn't supplied in the action options.",
