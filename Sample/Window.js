@@ -2826,6 +2826,17 @@ Window=new XObject({
                                                                                     id : "AutoRedraw",
                                                                                     label : "Auto Redraw On",
                                                                                     pack : "pack_start,false,false,0"
+                                                                                },
+                                                                                {
+                                                                                    xtype: Gtk.Button,
+                                                                                    listeners : {
+                                                                                        clicked : function (self) {
+                                                                                          this.get('/RightBrowser.view').redraws = 99;
+                                                                                          this.get('/RightBrowser.view').renderJS(null,true);
+                                                                                        }
+                                                                                    },
+                                                                                    label : "Full Redraw",
+                                                                                    pack : "pack_start,false,false,0"
                                                                                 }
                                                                             ]
                                                                         },
