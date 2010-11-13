@@ -25,12 +25,25 @@ var File = {
     // fixme - this needs a bitter location.. 
     // they where in a string class before, but  overriding String methods is not a good normally a good idea..
        
-    rtrim : function (toTrim) {
-        if (this.substr(this.length - toTrim.length) == toTrim) {
-            return this.slice(0, this.length - toTrim.length);
+    rtrim : function (s,toTrim) {
+        if (s.substr(s.length - toTrim.length) == toTrim) {
+            return s.slice(0, s.length - toTrim.length);
         }
    
-        return this;
+        return s;
+    },
+   trim : function (s,toTrim) {
+        var out = s.ltrim(toTrim);
+        out = out.rtrim(toTrim);
+        return out;
+    },
+    
+    ltrim : function (s, toTrim) {
+        if (s.substr(0, toTrim.length) == toTrim) {
+            return s.slice(toTrim.length);
+        }
+        
+        return s;
     },
     
     join : function () {
