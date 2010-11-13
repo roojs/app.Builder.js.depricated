@@ -47,20 +47,16 @@ var File = {
     },
     
     join : function () {
-        
-       
-       
-        
         var out = "";
         for (var i = 0; i < arguments.length; i++) {
             if (i == 0) {
-              out += arguments[i].rtrim(File.SEPARATOR);
+              out += this.rtrim(arguments[i], File.SEPARATOR);
             }
             else if (i == arguments.length - 1) {
-              out += File.SEPARATOR + arguments[i].ltrim(File.SEPARATOR);
+              out += File.SEPARATOR + this.ltrim(arguments[i], File.SEPARATOR);
             }
             else {
-              out += File.SEPARATOR + arguments[i].trim(File.SEPARATOR);
+              out += File.SEPARATOR + this.trim(arguments[i], File.SEPARATOR);
             }
         }
         return out;
