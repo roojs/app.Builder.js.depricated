@@ -22,9 +22,21 @@ var File = {
 
     SEPARATOR : '/',
 
+    // fixme - this needs a bitter location.. 
+    // they where in a string class before, but  overriding String methods is not a good normally a good idea..
+       
+    rtrim : function (toTrim) {
+        if (this.substr(this.length - toTrim.length) == toTrim) {
+            return this.slice(0, this.length - toTrim.length);
+        }
+   
+        return this;
+    },
+    
     join : function () {
-        // fixme!
-        imports['String.js'].load(String);
+        
+       
+       
         
         var out = "";
         for (var i = 0; i < arguments.length; i++) {
