@@ -306,7 +306,7 @@ XObject.prototype = {
         //print("CTR:PROTO:" + ( item.id ? item.id : '??'));
        // print("addItem - call init [" + item.pack.join(',') + ']');
         if (!item.el) {
-            XObject.err("NO EL!");
+            XObject.error("NO EL!");
             imports.console.dump(item);
             Seed.quit();
         }
