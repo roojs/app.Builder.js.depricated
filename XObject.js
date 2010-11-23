@@ -719,8 +719,8 @@ XObject.extend(XObject,
      */
     type : function(o)
     {
-        if (typeof(cfg.xtype) == 'object') {
-            return GObject.type_name(cfg.xtype.type);
+        if (typeof(o.xtype) == 'object') {
+            return GObject.type_name(o.xtype.type);
            // print("GNAME:" +gname + " GTYPE:"+cfg.xtype.type);
         }
         return 'unknown';
