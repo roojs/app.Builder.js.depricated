@@ -12,6 +12,10 @@ GtkClutter = imports.gi.GtkClutter;
 GtkClutterActor = {
     
     onConstruct : function() {
+        if (!child.items.length) {
+            print ("Actor does not have any children");
+            return;
+        }
         this.items[0].pack = false;
         
     },
