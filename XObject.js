@@ -310,7 +310,7 @@ XObject.prototype = {
             imports.console.dump(item);
             Seed.quit();
         }
-         
+        print(item.xtype + ":pack=" + item.pack);
         
         if (item.pack===false) {  // no packing.. various items have this ..
             return;
