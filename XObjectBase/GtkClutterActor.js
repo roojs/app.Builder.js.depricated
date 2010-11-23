@@ -13,7 +13,7 @@ GtkClutterActor = {
     
     onConstruct : function() {
         if (!this.items.length) {
-            print ("Actor does not have any children");
+            XObject.fatal("Actor does not have any children");
             return;
         }
         this.items[0].pack = false;
