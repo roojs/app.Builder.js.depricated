@@ -59,6 +59,8 @@ function XObject (cfg) {
     //print ("XObject ctr");
       
     this.config = {};
+    this.cfg = XObject.extend({}, cfg);
+    
     this.constructor = XObject;
     
     
