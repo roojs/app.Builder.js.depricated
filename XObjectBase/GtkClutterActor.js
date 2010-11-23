@@ -28,7 +28,7 @@ GtkClutterActor = {
         }
         var child = this.items[0];
         child.init();
-        
+        child.cfg.pack = false;
         child.parent = this;
         //var contents = new Gtk.Button({ label: 'test' }); 
         
