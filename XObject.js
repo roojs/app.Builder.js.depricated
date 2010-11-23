@@ -711,7 +711,20 @@ XObject.extend(XObject,
         }
         return ret;
     },
-      
+    /**
+     * return the Gobject name of a constructor
+     * @param {Object} gobject ctr
+     * @return {String} returns name
+     * @member XObject keys
+     */
+    name : function(o)
+    {
+        if (typeof(cfg.xtype) == 'object') {
+            return GObject.type_name(cfg.xtype.type);
+           // print("GNAME:" +gname + " GTYPE:"+cfg.xtype.type);
+        }
+        return 'unknown';
+    },
     /**
      * @member XObject createDelegate
      * creates a delage metdhod
