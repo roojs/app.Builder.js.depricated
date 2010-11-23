@@ -22,7 +22,7 @@ GtkClutterActor = {
     
     init : function() {
         print ("Actor init");
-        if (!child.items.length) {
+        if (!this.items.length) {
             print ("Actor does not have any children");
             return;
         }
