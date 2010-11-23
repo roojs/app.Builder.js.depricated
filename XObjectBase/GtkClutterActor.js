@@ -18,6 +18,10 @@ GtkClutterActor = {
     
     init : function() {
         print ("Actor init");
+        if (!child.items.length) {
+            print ("Actor does not have any children");
+            return;
+        }
         var child = this.items[0];
         child.init();
         
