@@ -297,7 +297,7 @@ XObject.prototype = {
         
         if (typeof(item) == 'undefined') {
             XObject.error("Invalid Item added to this!");
-            imports.console.dump(this);
+            imports.console.dump(this.cfg);
             Seed.quit();
         }
         // what about extended items!?!?!?
