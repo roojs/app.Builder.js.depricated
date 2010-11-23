@@ -12,7 +12,7 @@ GtkClutter = imports.gi.GtkClutter;
 GtkClutterActor = {
     
     onConstruct : function() {
-        if (!child.items.length) {
+        if (!this.items.length) {
             print ("Actor does not have any children");
             return;
         }
