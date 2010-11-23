@@ -717,7 +717,7 @@ XObject.extend(XObject,
      * @return {String} returns name
      * @member XObject keys
      */
-    name : function(o)
+    type : function(o)
     {
         if (typeof(cfg.xtype) == 'object') {
             return GObject.type_name(cfg.xtype.type);
