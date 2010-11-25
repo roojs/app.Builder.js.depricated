@@ -11,8 +11,10 @@ GtkClutter = imports.gi.GtkClutter;
 
 GtkClutterActor = {
     
-    pack : function()
+    pack : function(parent, item)
     {
+        print(Xobject.type(parent.config.xtype));
+        
         
     },
     
