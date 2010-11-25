@@ -10,7 +10,13 @@ GtkScrolledWindow  = {
     // should we always add??
     pack : 'add',
     
-    
+    init : function() 
+    {
+        // aways set policy like this?
+        XObject.prototype.init.call(this);
+        this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
+    }
+
      
 
 };
