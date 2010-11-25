@@ -47,7 +47,7 @@ left:
 	Gtk.Viewport
 	Gtk.Button
 	GtkClutter.Actor
-	Gdl.Dock
+	
 	
 right:	 
 	Gtk.Alignment 
@@ -102,6 +102,7 @@ right:
 	WebKit.WebView
 	Vte.Terminal
 	GtkClutter.Embed
+	Gdl.Dock
 	
 left:
 	Gtk.MenuBar
