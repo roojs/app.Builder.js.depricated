@@ -604,7 +604,19 @@ XObject.extend(XObject,
     {
         print("ERROR: " + output);  
     },
-     
+    /**
+     * fatal error
+     * @param {String|Object} output String to print.
+     */
+    fatal : function(output)
+    {
+        
+        throw {
+                name: "ArgumentError", 
+                message : output
+                    
+            }
+    },
    
     /**
      * Copies all the properties of config to obj, if the do not exist.
