@@ -12,7 +12,7 @@ WebKitWebView  = {
     pack : function(parent, item)
     {
         
-        if (XObject.type(parent.xtype) == 'GtkScrolledWinow') {
+        if (XObject.type(parent.xtype) == 'GtkScrolledWindow') {
             parent.el.add(this.el);
             return;
         }
