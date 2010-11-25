@@ -11,11 +11,17 @@ GtkClutter = imports.gi.GtkClutter;
 
 GtkClutterActor = {
     
+    pack : function()
+    {
+        
+    },
+    
     onConstruct : function() {
         if (!this.items.length) {
             XObject.fatal("Actor does not have any children");
             return;
         }
+        
         this.items[0].pack = false;
         
     },
