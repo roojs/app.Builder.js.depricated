@@ -47,7 +47,7 @@ left:
 	Gtk.Viewport
 	Gtk.Button
 	GtkClutter.Actor
-	
+	Gdl.DockItem
 	
 right:	 
 	Gtk.Alignment 
@@ -103,6 +103,7 @@ right:
 	Vte.Terminal
 	GtkClutter.Embed
 	Gdl.Dock
+	Gdl.DockBar
 	
 left:
 	Gtk.MenuBar
@@ -177,3 +178,7 @@ left:
 right:
 	GtkClutter.Actor
 	
+left:
+	Gdl.Dock
+right:
+	Gdl.DockItem
