@@ -25,6 +25,7 @@ left:
 	Gtk.MessageDialog
 	Gtk.AboutDialog
 	Gtk.Dialog
+	Gtk.OffScreenWindow
 	
 	Gtk.Alignment 
 	Gtk.AspectFrame 
