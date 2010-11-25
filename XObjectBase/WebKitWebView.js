@@ -1,7 +1,6 @@
 //<Script type="Text/javascript">
 
-XObject = imports.XObject.XObject
-GtkClutter = imports.gi.GtkClutter;
+XObject = imports.XObject.XObject 
 
 //GtkClutter.Embed..
 // children are not added at init / but at show stage..
