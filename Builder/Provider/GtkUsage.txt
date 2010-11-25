@@ -47,7 +47,7 @@ left:
 	Gtk.Viewport
 	Gtk.Button
 	GtkClutter.Actor
-	
+	Gdl.Dock
 	
 right:	 
 	Gtk.Alignment 
