@@ -15,7 +15,7 @@ right:
 	Gtk.FileChooserDialog
 	Gtk.Menu
 	GtkClutter.Window
-	
+	Gtk.OffScreenWindow
 	
 // these should really be based on heirachy..
  
