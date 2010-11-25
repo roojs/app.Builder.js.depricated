@@ -15,7 +15,7 @@ GtkClutterActor = {
     {
         
         if (XObject.type(parent.xtype) == 'GtkClutterWindow') {
-            var st = parent.el.getStage();
+            var st = parent.el.get_stage();
             st.add_actor(this.el);
         }
         XObject.fatal("do not know how to pack actor into " +  XObject.type(parent.xtype));
