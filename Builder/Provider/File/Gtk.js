@@ -171,7 +171,7 @@ Gtk = XObject.define(
                 return false;
             }
             var data = JSON.parse(JSON.stringify(this.items[0]));
-            var i = [ 'Gtk', 'Gdk', 'Pango', 'GLib', 'Gio', 'GObject', 'GtkSource', 'WebKit', 'Vte' , 'GtkClutter' ];
+            var i = [ 'Gtk', 'Gdk', 'Pango', 'GLib', 'Gio', 'GObject', 'GtkSource', 'WebKit', 'Vte' , 'GtkClutter' , 'Gdl'];
             var src = "";
             i.forEach(function(e) {
                 src += e+" = imports.gi." + e +";\n";
