@@ -1,7 +1,8 @@
 //<Script type="Text/javascript">
 
 XObject = imports.XObject.XObject
- 
+
+Gtk = imports.gi.Gtk;
 //GtkClutter.Embed..
 // children are not added at init / but at show stage..
 // listener is added on show..
