@@ -14,7 +14,10 @@ GtkClutterActor = {
     pack : function(parent, item)
     {
         print('actor pack: ' +  XObject.type(parent.xtype));
-        
+        if (XObject.type(parent.xtype) == 'GtkClutterWindow') {
+            var st = parent.el.getStage();
+            st.add_actor(this.el);
+        }
         
     },
     
