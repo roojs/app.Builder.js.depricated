@@ -13,7 +13,7 @@ GtkClutterActor = {
     
     pack : function(parent, item)
     {
-        print('actor pack: ' +  XObject.type(parent.config.xtype));
+        print('actor pack: ' +  XObject.type(parent.xtype));
         
         
     },
