@@ -18,25 +18,7 @@ WebKitWebView  = {
         }
         XObject.fatal("do not know how to pack webview to" +  XObject.type(parent.xtype));
         
-    },
-    
-    init : function() {
-        // add the event listener..
-        
-        XObject.prototype.init.call(this);
-        
-        print("----------Embed init");
-        this.addListener('show', function () {
-            print("-------EMBED - show");
-            var stage = this.el.get_stage(); 
-            //print(this.items.length);
-            this.items.forEach( function(e) { 
-                  //print(e.xtype);
-                stage.add_actor(e.el);
-            });
-        });
-       
-       
-    }
+    } 
+     
 
 };
