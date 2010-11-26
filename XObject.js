@@ -129,7 +129,7 @@ function XObject (cfg) {
     // create XObject for all the children.
     items.forEach(function(i,n) {
          
-        var item = (i.constructor == XObject) ? o : new XObject(i);
+        var item = (i.constructor == XObject) ? i : new XObject(i);
         item.parent = _this;
         _this.items.push(item);
         //_this.addItem(i);
