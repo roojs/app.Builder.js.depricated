@@ -65,31 +65,35 @@ function XObject (cfg) {
     // we could use this to determine if 
     // we are actually inside a inherited class...
     // as define() should actually set this up..
-    this.constructor = XObject;
     
-    
-    
-    // start by seeing if we have a base class....
-    try {
-        // loocks for XObject/Gtk/TreeView.js [   TreeView = { .... } ]
-        // xns is not a string!!!?
-        var gname = false;
-        if (typeof(cfg.xtype) == 'object') {
-            gname = GObject.type_name(cfg.xtype.type);
-           // print("GNAME:" +gname + " GTYPE:"+cfg.xtype.type);
-        }
+    if (!this.constructor) {
         
-        var base = gname  ? imports.XObjectBase[gname][gname] : false;
-        if (base) {
-          //  print("Overlaying XOBJBECT-BASE."  + cfg.xtype);
-            XObject.extend(this,base);
-        }
+           
+        this.constructor = XObject;
         
-    } catch (e) {
-        // if debug?
-        XObject.log("error finding " + gname + " - " + e.toString());
+        
+        
+        // start by seeing if we have a base class....
+        try {
+            // loocks for XObject/Gtk/TreeView.js [   TreeView = { .... } ]
+            // xns is not a string!!!?
+            var gname = false;
+            if (typeof(cfg.xtype) == 'object') {
+                gname = GObject.type_name(cfg.xtype.type);
+               // print("GNAME:" +gname + " GTYPE:"+cfg.xtype.type);
+            }
+            
+            var base = gname  ? imports.XObjectBase[gname][gname] : false;
+            if (base) {
+              //  print("Overlaying XOBJBECT-BASE."  + cfg.xtype);
+                XObject.extend(this,base);
+            }
+            
+        } catch (e) {
+            // if debug?
+            XObject.log("error finding " + gname + " - " + e.toString());
+        }
     }
-    
     
     // copy down all elements into self..
     // make an extra copy in this.config?? - which is the one used in the constructor later
