@@ -58,9 +58,13 @@ function XObject (cfg) {
       
     //print ("XObject ctr");
       
-    this.config = {};
-    this.cfg = XObject.extend({}, cfg);
+    this.config = {}; // used to initialize GObject
     
+    this.cfg = XObject.extend({}, cfg); // used to store original configuration.. for referencing..
+    
+    // we could use this to determine if 
+    // we are actually inside a inherited class...
+    // as define() should actually set this up..
     this.constructor = XObject;
     
     
