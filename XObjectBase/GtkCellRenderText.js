@@ -5,6 +5,12 @@ XObject = imports.XObject.XObject
  
 // Cell render text..
 
-GtkCellRenderText = {
-    pack : 'pack_start'
+GtkCellRenderText = XObject.define(
+    function(cfg) {
+        XObject.prototype.call(this, cfg);
+    }, 
+    XObject,
+    {
+        pack : 'pack_start'
+    }
 }; 
