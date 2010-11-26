@@ -7,7 +7,7 @@ XObject = imports.XObject.XObject
 
 GtkCellRenderText = XObject.define(
     function(cfg) {
-        XObject.prototype.call(this, cfg);
+        XObject.call(this, cfg);
     }, 
     XObject,
     {
