@@ -753,7 +753,26 @@ XObject.extend(XObject,
      */
     baseXObject : function(cfg)
     {
-        
+          try {
+            // loocks for XObject/Gtk/TreeView.js [   TreeView = { .... } ]
+            // xns is not a string!!!?
+            var gname = false;
+            if (typeof(cfg.xtype) == 'object') {
+                gname = XObject.type(cfg.xtype);
+            
+            }
+            
+            // in the situation where we have been called and there is a base object
+            // defining the behavior..
+            // then we should copy the prototypes from the base object into this..
+            var base = gname  ? imports.XObjectBase[gname][gname] : false;
+            return base;
+            
+        } catch (e) {
+            // if debug?
+            XObject.log("error finding " + gname + " - " + e.toString());
+            return false;
+        }
         
         
     },
