@@ -741,7 +741,7 @@ XObject.extend(XObject,
                 gname = XObject.type(cfg.xtype);
             
             }
-            
+            print("TRYING BASE OBJECT : " + gname);
             // in the situation where we have been called and there is a base object
             // defining the behavior..
             // then we should copy the prototypes from the base object into this..
