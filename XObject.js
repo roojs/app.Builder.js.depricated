@@ -68,10 +68,7 @@ function XObject (cfg) {
     
     if (!this.constructor) {
         
-           
         this.constructor = XObject;
-        
-        
         
         // start by seeing if we have a base class....
         try {
