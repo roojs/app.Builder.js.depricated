@@ -9,6 +9,23 @@ GtkClutter = imports.gi.GtkClutter;
 // listener is added on show..
 // we should really add a hock to destroy it..
 
+
+GtkCellRenderText = XObject.define(
+    function(cfg) {
+        XObject.call(this, cfg);
+        if (!this.items.length) {
+            XObject.fatal("Actor does not have any children");
+            return;
+        }
+        
+        this.items[0].pack = false;
+    }, 
+    XObject,
+    {
+        pack : 'pack_start'
+    }
+}; 
+
 GtkClutterActor = {
     
     pack : function(parent, item)
@@ -23,15 +40,7 @@ GtkClutterActor = {
         
     },
     
-    onConstruct : function() {
-        if (!this.items.length) {
-            XObject.fatal("Actor does not have any children");
-            return;
-        }
-        
-        this.items[0].pack = false;
-        
-    },
+   
     
     init : function() {
         print ("Actor init");
