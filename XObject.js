@@ -735,7 +735,7 @@ XObject.extend(XObject,
      * return the Gobject name of a constructor
      * @param {Object} gobject ctr
      * @return {String} returns name
-     * @member XObject keys
+     * @member XObject type
      */
     type : function(o)
     {
@@ -745,6 +745,19 @@ XObject.extend(XObject,
         }
         return 'unknown';
     },
+    /**
+     * return the XObjectBase class for a cfg (which includes an xtype)
+     * @param {Object} configuration.
+     * @return {function} constructor
+     * @member XObject baseXObject
+     */
+    baseXObject : function(cfg)
+    {
+        
+        
+        
+    },
+    
     /**
      * @member XObject createDelegate
      * creates a delage metdhod
