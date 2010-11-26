@@ -8,11 +8,9 @@ XObject = imports.XObject.XObject
 // listener is added on show..
 // we should really add a hock to destroy it..
 
-GtkTable = {
-    
-    onConstruct : function() 
-    {
-        // set's the packing defaults on child objects..
+GtkTable = XObject.define(
+    function(cfg) {
+        XObject.call(this, cfg);
         var _this = this;
         
         this.items.forEach(function(i,n) {
@@ -26,10 +24,9 @@ GtkTable = {
                    
             ]
         });
-    }/*,
-    
-    init : function() {
-        
+    }, 
+    XObject,
+    {
     }
-*/
-}; 
+ 
+); 
