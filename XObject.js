@@ -69,30 +69,11 @@ function XObject (cfg) {
     if (!this.constructor) {
         
         this.constructor = XObject;
-        
-        // start by seeing if we have a base class....
-        try {
-            // loocks for XObject/Gtk/TreeView.js [   TreeView = { .... } ]
-            // xns is not a string!!!?
-            var gname = false;
-            if (typeof(cfg.xtype) == 'object') {
-                gname = GObject.type_name(cfg.xtype.type);
-               // print("GNAME:" +gname + " GTYPE:"+cfg.xtype.type);
-            }
-            
-            // in the situation where we have been called and there is a base object
-            // defining the behavior..
-            // then we should copy the prototypes from the base object into this..
-            var base = gname  ? imports.XObjectBase[gname][gname] : false;
-            if (base) {
-              //  print("Overlaying XOBJBECT-BASE."  + cfg.xtype);
-                XObject.extend(this,base.prototype);
-            }
-            
-        } catch (e) {
-            // if debug?
-            XObject.log("error finding " + gname + " - " + e.toString());
+        var base = XObject.baseXObject(cfg);
+        if (base) {
+            XObject.extend(this,base.prototype);
         }
+        
     }
     
     // copy down all elements into self..
