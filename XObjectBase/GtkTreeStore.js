@@ -18,8 +18,4 @@ GtkTreeStore = XObject.define(
     }
  
 ); 
-GtkTreeStore= {
-    
-    pack : 'set_model'
-    
-}; 
+ 
