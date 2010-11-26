@@ -18,7 +18,4 @@ GtkTreeViewColumn = XObject.define(
     }
  
 ); 
-GtkTreeViewColumn = {
-    
-}; 
-
+ 
