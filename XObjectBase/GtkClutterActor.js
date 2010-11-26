@@ -57,5 +57,5 @@ GtkClutterActor = XObject.define(
             XObject.prototype.init.call(this);
             this.el.show_all();
         }
-
-}); 
+    }
+); 
