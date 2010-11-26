@@ -14,33 +14,28 @@ GtkClutterEmbed = XObject.define(
             i.pack = false;
         });
     }, 
-GtkClutterEmbed = {
-    onConstruct :  function (x)
+    XObject,
     {
-        // make sure all the child elements are packed as false.
-        this.items.forEach( function(i) {
-            i.pack = false;
-        });
-               
-    },
-    
-    init : function() {
-        // add the event listener..
         
-        XObject.prototype.init.call(this);
         
-        print("----------Embed init");
-        this.addListener('show', function () {
-            print("-------EMBED - show");
-            var stage = this.el.get_stage(); 
-            //print(this.items.length);
-            this.items.forEach( function(e) { 
-                  //print(e.xtype);
-                stage.add_actor(e.el);
+        init : function() {
+            // add the event listener..
+            
+            XObject.prototype.init.call(this);
+            
+            print("----------Embed init");
+            this.addListener('show', function () {
+                print("-------EMBED - show");
+                var stage = this.el.get_stage(); 
+                //print(this.items.length);
+                this.items.forEach( function(e) { 
+                      //print(e.xtype);
+                    stage.add_actor(e.el);
+                });
             });
-        });
-       
-       
+           
+           
+        }
     }
 
 };
