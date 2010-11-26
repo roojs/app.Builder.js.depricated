@@ -86,7 +86,7 @@ function XObject (cfg) {
             var base = gname  ? imports.XObjectBase[gname][gname] : false;
             if (base) {
               //  print("Overlaying XOBJBECT-BASE."  + cfg.xtype);
-                XObject.extend(this,base);
+                XObject.extend(this,base.prototype);
             }
             
         } catch (e) {
