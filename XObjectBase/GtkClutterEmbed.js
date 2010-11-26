@@ -7,7 +7,13 @@ GtkClutter = imports.gi.GtkClutter;
 // children are not added at init / but at show stage..
 // listener is added on show..
 // we should really add a hock to destroy it..
-
+GtkClutterEmbed = XObject.define(
+    function(cfg) {
+        XObject.call(this, cfg);
+        this.items.forEach( function(i) {
+            i.pack = false;
+        });
+    }, 
 GtkClutterEmbed = {
     onConstruct :  function (x)
     {
