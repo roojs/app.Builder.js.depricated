@@ -27,4 +27,4 @@ GtkScrolledWindow = XObject.define(
 
          
 
-};
+});
