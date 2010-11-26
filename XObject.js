@@ -135,9 +135,7 @@ function XObject (cfg) {
         _this.items.push(item);
         //_this.addItem(i);
     });
-    if (this.onConstruct) {
-        this.onConstruct.call(this);
-    }
+     
     
 }
 
