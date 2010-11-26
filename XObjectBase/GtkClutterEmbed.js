@@ -38,4 +38,4 @@ GtkClutterEmbed = XObject.define(
         }
     }
 
-};
+);
