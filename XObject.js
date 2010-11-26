@@ -128,8 +128,9 @@ function XObject (cfg) {
     this.items = [];
     // create XObject for all the children.
     items.forEach(function(i,n) {
-         
-        var item = (i.constructor == XObject) ? i : new XObject(i);
+        var base = XObject.baseXObject(i);
+        base = base || XObject;
+        var item = (i.constructor == XObject) ? i : new base(i);
         item.parent = _this;
         _this.items.push(item);
         //_this.addItem(i);
