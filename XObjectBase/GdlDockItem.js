@@ -22,7 +22,7 @@ GdlDockItem = XObject.define(
             this.el = new Gdl.GdlDockItem.c_new (
                 this.name || 'Dock'+GdlDockItem.id, 
                 this.long_name || 'Dock'+GdlDockItem.id, 
-                this.behaviour //Gdl.DockItemBehavior.LOCKED
+                this.behaviour || 0 //Gdl.DockItemBehavior.LOCKED
             );
             
             this.layout = new Gdl.DockLayout.c_new (dock);
