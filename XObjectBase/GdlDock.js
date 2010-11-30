@@ -15,7 +15,8 @@ GdlDock = XObject.define(
         init : function()
         {
             this.el = new Gdl.Dock ();
-            
+            XObject.prototype.init.call(this);
+
         }
     }
 }; 
