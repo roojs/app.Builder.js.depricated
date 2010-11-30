@@ -11,6 +11,11 @@ GdlDockItem = XObject.define(
     }, 
     XObject,
     {
+        
+        placement :  Gdl.DockPlacement.TOP,
+        behaviour : 0,
+        // name / long name...
+        
         pack : function(parent, item) 
         {
             if (XObject.type(parent.el) == 'GdlDock') {
