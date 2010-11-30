@@ -20,9 +20,9 @@ GdlDockItem = XObject.define(
             GdlDockItem.id = GdlDockItem.id ? GdlDockItem.id + 1 : 1;
             
             this.el = new Gdl.GdlDockItem.c_new (
-                this.name || 'Dock'+GdlDockItem.id, 
-                this.long_name || 'Dock'+GdlDockItem.id, 
-                this.behaviour || 0 //Gdl.DockItemBehavior.LOCKED
+                this.name       || 'Dock'+GdlDockItem.id, 
+                this.long_name  || 'Dock'+GdlDockItem.id, 
+                this.behaviour  || 0 //Gdl.DockItemBehavior.LOCKED
             );
             
             this.layout = new Gdl.DockLayout.c_new (dock);
