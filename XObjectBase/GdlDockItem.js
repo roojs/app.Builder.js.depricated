@@ -14,11 +14,11 @@ GdlDockItem = XObject.define(
         pack : function(parent, item) 
         {
             if (XObject.type(parent.el) == 'GdlDock') {
-                parent.el.add_item (this.el, Gdl.DockPlacement.TOP);
+                parent.el.add_item (this.el, this.placement || Gdl.DockPlacement.TOP);
                 return;
             }
             // otherwise 
-            parent.el.dock_to (this.el, Gdl.DockPlacement.TOP, -1);
+            parent.el.dock_to (this.el, this.placement || Gdl.DockPlacement.TOP, -1);
             //     dock.add_item (item2, Gdl.DockPlacement.RIGHT);
             
             
