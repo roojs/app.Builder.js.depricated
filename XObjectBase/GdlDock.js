@@ -11,6 +11,11 @@ GdlDock = XObject.define(
     }, 
     XObject,
     {
-        pack : 'pack_start'
+        pack : 'pack_start',
+        init : function()
+        {
+            this.el = new Gdl.Dock ();
+            
+        }
     }
 }; 
