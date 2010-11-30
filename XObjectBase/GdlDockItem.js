@@ -19,6 +19,12 @@ GdlDockItem = XObject.define(
         {
             GdlDockItem.id = GdlDockItem.id ? GdlDockItem.id + 1 : 1;
             
+            //new Gdl.DockItem.with_stock  ("item3",
+            //             "Item #3 has accented characters ( )",
+            //             Gtk.STOCK_CONVERT,
+            //             Gdl.DockItemBehavior.NORMAL | Gdl.DockItemBehavior.CANT_CLOSE);
+            
+            
             this.el = new Gdl.GdlDockItem.c_new (
                 this.name       || 'Dock' + GdlDockItem.id, 
                 this.long_name  || 'Dock' + GdlDockItem.id, 
