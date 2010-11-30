@@ -11,7 +11,8 @@ GdlDockItem = XObject.define(
     }, 
     XObject,
     {
-        pack : function(parent, item) {
+        pack : function(parent, item) 
+        {
             parent.el.add_item (item, Gdl.DockPlacement.TOP);
         },
         init : function()
