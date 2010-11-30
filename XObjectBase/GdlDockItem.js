@@ -24,6 +24,7 @@ GdlDockItem = XObject.define(
                 this.long_name || 'Dock'+GdlDockItem.id, 
                 this.behaviour //Gdl.DockItemBehavior.LOCKED
             );
+            
             this.layout = new Gdl.DockLayout.c_new (dock);
             XObject.prototype.init.call(this);
         }
