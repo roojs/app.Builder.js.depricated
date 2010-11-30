@@ -11,7 +11,7 @@ GdlDock = XObject.define(
     }, 
     XObject,
     {
-        pack : 'add',
+        pack : 'add', // default.. can be pack_start...
         init : function()
         {
             this.el = new Gdl.Dock ();
