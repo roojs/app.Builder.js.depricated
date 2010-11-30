@@ -14,7 +14,7 @@ GdlDockItem = XObject.define(
         pack : 'pack_start',
         init : function()
         {
-            this.el = new Gdl.GdlDockItem.c_new ("item1", "Item #1", Gdl.DockItemBehavior.LOCKED);
+            this.el = new Gdl.GdlDockItem.c_new (this.name, this.title, Gdl.DockItemBehavior.LOCKED);
             this.layout = new Gdl.DockLayout.c_new (dock);
             XObject.prototype.init.call(this);
         }
