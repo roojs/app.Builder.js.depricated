@@ -80,5 +80,5 @@ for (cls in classes) {
     
     
 }
- 
+ print(JSON.stringify(methods,null,4));
 print(JSON.stringify(implementations,null,4));
