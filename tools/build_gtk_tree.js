@@ -33,8 +33,12 @@ print("loading library to make sure it works.");
 ns_list.forEach(function(ns_name) {   
     var  core = imports.gi[ns_name];
     var ns = NameSpace.ns(ns_name); // fetch all the elements in namespace...
-    NameSpace.factory('Class', ns_name, n);
-    NameSpace.factory('Interface', ns_name, n);
+    ns['objects'].forEach( function(n) {
+        NameSpace.factory('Class', ns_name, n);
+    }
+    ns['interfaces'].forEach( function(n) {
+        NameSpace.factory('Interface', ns_name, n);
+    }
 });
 
 
