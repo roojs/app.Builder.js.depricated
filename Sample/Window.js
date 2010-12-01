@@ -3306,7 +3306,7 @@ Window=new XObject({
                                                                     {
                                                                     
                                                                         // does something similar to xobject..
-                                                                        item.pack = (typeof(item.pack) == 'undefined') ?  'add' : item.pack;
+                                                                        //item.pack = (typeof(item.pack) == 'undefined') ?  'add' : item.pack;
                                                                         
                                                                         // pack is forced to 'false'
                                                                         if (item.pack===false || item.pack === 'false') {  // no ;
@@ -3372,7 +3372,7 @@ Window=new XObject({
                                                                         } 
                                                                         var altctr =  XObject.baseXObject({ xtype:  ctr} );
                                                                         var pack_m  = false;
-                                                                        if (!item.pack && altctr !== false) {
+                                                                        if (!item.pack && altctr) {
                                                                             // try XObject.
                                                                             print("SETTING PACK TO XObjectBase method");
                                                                             pack_m = altctr.prototype.pack;
@@ -3390,6 +3390,7 @@ Window=new XObject({
                                                                         
                                                                         var args = [];
                                                                         if (!pack_m) {
+                                                                            item.pack = (typeof(item.pack) == 'undefined') ?  'add' : item.pack;
                                                                             if (typeof(item.pack) == 'string') {
                                                                                  
                                                                                 item.pack.split(',').forEach(function(e, i) {
