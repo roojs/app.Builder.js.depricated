@@ -11,14 +11,7 @@
             "items": [
                 {
                     "xtype": "HBox",
-                    "|xns": "Gtk",
-                    "items": [
-                        {
-                            "xtype": "TreeView",
-                            "|xns": "Gtk",
-                            "listeners": {}
-                        }
-                    ]
+                    "|xns": "Gtk"
                 }
             ]
         }
