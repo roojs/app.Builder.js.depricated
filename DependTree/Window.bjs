@@ -11,7 +11,14 @@
             "items": [
                 {
                     "xtype": "HBox",
-                    "|xns": "Gtk"
+                    "|xns": "Gtk",
+                    "items": [
+                        {
+                            "|xns": "Gtk",
+                            "xtype": "TreeView",
+                            "pack": false
+                        }
+                    ]
                 }
             ]
         }
