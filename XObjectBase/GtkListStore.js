@@ -24,5 +24,4 @@ GtkListStore = XObject.define(
     {
         pack : 'set_model'
     }
- 
 ); 
