@@ -51,12 +51,29 @@ ns_list.forEach(function(ns_name) {
 print("Looping throught namespaces");
 var ns_idx = [];
 var implementations = {};
-
+var methods = {}
+   
 for (cls in classes) {
     var odata = classes[cls];
+    methods[cls] = {}
+       
     implementations[odata.alias] = odata.titleType == 'Class' ? odata.childClasses :  odata.implementedBy;  
     print(JSON.stringify(odata.methods,null,4));
-    
+    odata.methods.forEach(function(m) {
+       
+        m.params.forEach(function(p) {
+             
+            if (!p.type || typeof(classes[p.type]) == 'undefined') {
+                return;
+            }
+            if (typeof(methods[cls][p.type]) == 'undefined') {
+                methods[cls][p.type] = [];
+            }
+            methods[cls][p.type].push(
+            
+        }
+        
+    }
     //for(method in odata.methods) {
     //    print(method.name);
     //}
