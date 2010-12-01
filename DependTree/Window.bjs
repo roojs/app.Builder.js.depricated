@@ -27,9 +27,9 @@
                                     "listeners": {},
                                     "items": [
                                         {
-                                            "|xns": "Gtk",
                                             "xtype": "ListStore",
-                                            "pack": false
+                                            "|xns": "Gtk",
+                                            "listeners": {}
                                         }
                                     ]
                                 }
