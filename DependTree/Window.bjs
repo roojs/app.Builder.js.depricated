@@ -1,5 +1,5 @@
 {
-    "id": "file-gtk-14",
+    "id": "file-gtk-12",
     "name": "Window",
     "parent": "",
     "title": false,
@@ -9,6 +9,8 @@
             "xtype": "Window",
             "|init": "function() {\n    XObject.prototype.init.call(this);\n    this.el.show_all();\n}\n",
             "|xns": "Gtk",
+            "default_width": "",
+            "listeners": {},
             "items": [
                 {
                     "xtype": "HBox",
@@ -63,5 +65,5 @@
         }
     ],
     "permname": "",
-    "modOrder": "0"
+    "modOrder": ""
 }
