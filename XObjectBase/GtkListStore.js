@@ -12,12 +12,12 @@ GtkListStore = XObject.define(
         XObject.call(this, cfg);
         // this is an example...
         this.el.set_column_types ( 6, [
-            GObject.TYPE_STRING,  // real key
-            GObject.TYPE_STRING, // real type
-            GObject.TYPE_STRING, // docs ?
-            GObject.TYPE_STRING, // visable desc
-            GObject.TYPE_STRING, // function desc
-            GObject.TYPE_STRING // element type (event|prop)
+            GObject.TYPE_STRING, 
+            GObject.TYPE_STRING, 
+            GObject.TYPE_STRING, 
+            GObject.TYPE_STRING, 
+            GObject.TYPE_STRING, 
+            GObject.TYPE_STRING 
             
         ] );
     }, 
