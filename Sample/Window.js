@@ -3303,7 +3303,8 @@ Window=new XObject({
                                                                     */
                                                                     },
                                                                     viewAdd : function(item, par)
-                                                                            {
+                                                                    {
+                                                                    
                                                                         // does something similar to xobject..
                                                                         item.pack = (typeof(item.pack) == 'undefined') ?  'add' : item.pack;
                                                                         
@@ -3311,13 +3312,19 @@ Window=new XObject({
                                                                             return;
                                                                         }
                                                                         print("CREATE: " + item['|xns'] + '.' + item['xtype']);
+                                                                        
+                                                                        
                                                                         var type = item['|xns'] + '.' + item['xtype'];
                                                                         
                                                                         if (item['|xns'] == 'GtkClutter') { // we can not add this yet!
                                                                             return false;
                                                                         }
+                                                                        
                                                                         var ns = imports.gi[item['|xns']];
-                                                                        var ctr = ns[item['xtype']];
+                                                                        var ctr = ns[item['xtype']]; // why are we using array here..?
+                                                                        
+                                                                    
+                                                                        
                                                                         var ctr_args = { };
                                                                         for(var k in item) {
                                                                             var kv = item[k];
@@ -3341,7 +3348,7 @@ Window=new XObject({
                                                                     		if (kv.match(new RegExp('function'))) {
                                                                     			continue;
                                                                                     }
-                                                                    		 print("WASL " + k + '=' + kv);
+                                                                    		print("WASL " + k + '=' + kv);
                                                                     		try {
                                                                     			eval( 'kv = ' + kv);
                                                                     		} catch(e) {    continue; }
@@ -3361,7 +3368,15 @@ Window=new XObject({
                                                                             ctr_args[k] = kv;
                                                                             
                                                                         } 
+                                                                        var altctr =  XObject.baseXObject({ xtype:  ctr} );
+                                                                        if (!item.pack && altctr) {
+                                                                            // try XObject.
+                                                                            item.pack = altctr.prototype.pack;
+                                                                            
+                                                                            
+                                                                            
                                                                         
+                                                                        }
                                                                         
                                                                         var el = new ctr(ctr_args);
                                                                         
