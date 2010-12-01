@@ -83,5 +83,8 @@ for (cls in classes) {
     
     
 }
- print(JSON.stringify(methods,null,4));
+print(JSON.stringify(methods,null,4));
 print(JSON.stringify(implementations,null,4));
+
+// we now have a list of classes / methods that can be used..
+
