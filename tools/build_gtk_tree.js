@@ -42,7 +42,7 @@ ns_list.forEach(function(ns_name) {
         
     });
     ns['interfaces'].forEach( function(n) {
-        NameSpace.factory('Interface', ns_name, n);
+         var odata =NameSpace.factory('Interface', ns_name, n);
         classes[odata.alias] = odata;
     });
 });
