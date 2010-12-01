@@ -28,3 +28,40 @@ ns_list.forEach(function(ns_name) {
     var  core = imports.gi[ns_name];
 });
 
+
+print("Looping throught namespaces");
+var ns_idx = [];
+ns_list.forEach(function(ns_name) 
+{
+    
+    //if (ns_idx.length) {         return ;/* do one - for testing */ } 
+    
+    var  core = imports.gi[ns_name];
+    var idx = { name: ns_name}; 
+    console.log("START:" + ns_name);
+   
+    var ns = NameSpace.ns(ns_name);
+    
+    
+    var actions = {
+        'objects' : 'Class',
+        'interfaces' : 'Interface',
+        //'structs' : 'Struct',
+        //'unions' : 'Union',
+        //'enums' : 'Enum'
+        
+    };
+    
+    for (var i in actions) {
+        // we flag GLib as a GObject lib...
+       
+        ns[i].forEach( function(n) {
+            
+            print('NameSpace.factory(' + actions[i] +','+ns_name+','+n);
+            var odata =   NameSpace.factory(actions[i], ns_name, n);
+            print(odata);
+        }); 
+    }
+    
+    
+});
