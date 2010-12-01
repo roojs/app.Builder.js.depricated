@@ -14,6 +14,11 @@ GdlDock = XObject.define(
         pack : 'add', // default.. can be pack_start...
         init : function()
         {
+            
+            // dock for the current window exists. - use it..
+            if (this.get('^').dock) {
+                
+            }
             this.el = new Gdl.Dock ();
             this.layout = new Gdl.DockLayout.c_new (this.el);
             XObject.prototype.init.call(this);
