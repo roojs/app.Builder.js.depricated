@@ -16,20 +16,18 @@ GtkListStore = XObject.define(
     }, 
     XObject,
     {
-        pack : false,
+        pack : 'set_model',
         init : function() 
         {
-            // this is done before pack?
-            this.el = new Gtk.TreeViewColumn();
-            this.parent.el.append_column(this.el);
-            
             XObject.prototype.init.call(this);
-            
-            if (this.items.length) {
-                this.el.add_attribute(this.items[0].el , 'markup', 4  );
-            }
-            
-
+            this.el.set_column_types ( 6, [
+                GObject.TYPE_STRING, 
+                GObject.TYPE_STRING, 
+                GObject.TYPE_STRING, 
+                GObject.TYPE_STRING, 
+                GObject.TYPE_STRING, 
+                GObject.TYPE_STRING 
+            ] );
             
         }
     }
