@@ -66,7 +66,7 @@ ns_list.forEach(function(ns_name)
        
     ns['objects'].forEach( function(n) {
         
-        print('NameSpace.factory(Class,'+ns_name+'.'+n+')');
+           print('NameSpace.factory(Class,'+ns_name+'.'+n+')');
         var odata =   NameSpace.factory('Class', ns_name, n);
         print(JSON.stringify(odata.childClasses,null,4));
     });
@@ -74,9 +74,14 @@ ns_list.forEach(function(ns_name)
         
         print('NameSpace.factory(Interface,'+ns_name+'.'+n+')');
         var odata =   NameSpace.factory('Interface', ns_name, n);
-        print(JSON.stringify(odata.childClasses,null,4));
+        print(JSON.stringify(odata.implementedBy,null,4));
     });
-       
+         // what we are interested in..
+        
+         
+        
+    }); 
+    }
     
     
 });
