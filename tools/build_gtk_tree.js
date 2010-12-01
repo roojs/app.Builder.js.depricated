@@ -30,14 +30,20 @@ var ns_list = [ 'Gtk' ] ; //NameSpace.namespaces();
 ns_list = ns_list.sort();
 // let's try and load them, so we find out early what will fail.
 print("loading library to make sure it works.");
+
+var classes = {};
+
 ns_list.forEach(function(ns_name) {   
     var  core = imports.gi[ns_name];
     var ns = NameSpace.ns(ns_name); // fetch all the elements in namespace...
     ns['objects'].forEach( function(n) {
-        NameSpace.factory('Class', ns_name, n);
+        var odata = NameSpace.factory('Class', ns_name, n);
+        classes[odata.alias] = odata;
+        
     });
     ns['interfaces'].forEach( function(n) {
         NameSpace.factory('Interface', ns_name, n);
+        classes[odata.alias] = odata;
     });
 });
 
@@ -67,19 +73,19 @@ ns_list.forEach(function(ns_name)
     ns['objects'].forEach( function(n) {
         
        print('NameSpace.factory(Class,'+ns_name+'.'+n+')');
-        var odata =   NameSpace.factory('Class', ns_name, n);
+        var odata =   classes[ns_name+'.'+n];
         implementations[odata.alias] = odata.childClasses;
         //print(JSON.stringify(odata.childClasses,null,4));
     });
     ns['interfaces'].forEach( function(n) {
         
         print('NameSpace.factory(Interface,'+ns_name+'.'+n+')');
-        var odata =   NameSpace.factory('Interface', ns_name, n);
+        var odata =   classes[ns_name+'.'+n];
         implementations[odata.alias] = odata.implementedBy;
         //print(JSON.stringify(odata.implementedBy,null,4));
     });
          // what we are interested in..
-        
+       
          
     
     
