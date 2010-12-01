@@ -37,6 +37,7 @@ ns_list.forEach(function(ns_name) {
 
 print("Looping throught namespaces");
 var ns_idx = [];
+var implementations = {};
 ns_list.forEach(function(ns_name) 
 {
     
@@ -60,13 +61,15 @@ ns_list.forEach(function(ns_name)
         
        print('NameSpace.factory(Class,'+ns_name+'.'+n+')');
         var odata =   NameSpace.factory('Class', ns_name, n);
-        print(JSON.stringify(odata.childClasses,null,4));
+        implementations[odata.alias] = odata.childClasses;
+        //print(JSON.stringify(odata.childClasses,null,4));
     });
     ns['interfaces'].forEach( function(n) {
         
         print('NameSpace.factory(Interface,'+ns_name+'.'+n+')');
         var odata =   NameSpace.factory('Interface', ns_name, n);
-        print(JSON.stringify(odata.implementedBy,null,4));
+        implementations[odata.alias] = odata.implementedBy;
+        //print(JSON.stringify(odata.implementedBy,null,4));
     });
          // what we are interested in..
         
@@ -74,3 +77,4 @@ ns_list.forEach(function(ns_name)
     
     
 });
+print(JSON.stringify(implementations,null,4));
