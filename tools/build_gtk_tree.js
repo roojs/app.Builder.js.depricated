@@ -44,7 +44,7 @@ ns_list.forEach(function(ns_name)
     
     var  core = imports.gi[ns_name];
     var idx = { name: ns_name}; 
-    console.log("START:" + ns_name);
+    print("START:" + ns_name);
    
     var ns = NameSpace.ns(ns_name);
     
