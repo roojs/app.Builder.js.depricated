@@ -76,15 +76,7 @@ ns_list.forEach(function(ns_name)
         var odata =   NameSpace.factory('Interface', ns_name, n);
         print(JSON.stringify(odata.childClasses,null,4));
     });
-         // what we are interested in..
-        /// odata.methods.. (where method.memberOf == ns_name.n
-        //  oldata.childClasses
-        print(JSON.stringify(odata.implementedBy,null,4)); //  oldata.implementedBy //??? for interfaces??
-        
-         
-        
-    }); 
-    }
+       
     
     
 });
