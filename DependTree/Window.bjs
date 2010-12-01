@@ -24,14 +24,7 @@
                                 {
                                     "xtype": "TreeView",
                                     "|xns": "Gtk",
-                                    "listeners": {},
-                                    "items": [
-                                        {
-                                            "xtype": "ListStore",
-                                            "|xns": "Gtk",
-                                            "listeners": {}
-                                        }
-                                    ]
+                                    "listeners": {}
                                 }
                             ]
                         },
