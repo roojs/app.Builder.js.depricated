@@ -8,6 +8,7 @@ GtkSource = imports.gi.GtkSource;
 WebKit = imports.gi.WebKit;
 Vte = imports.gi.Vte;
 GtkClutter = imports.gi.GtkClutter;
+Gdl = imports.gi.Gdl;
 console = imports.console;
 XObject = imports.XObject.XObject;
 Window=new XObject({
