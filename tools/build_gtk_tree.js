@@ -54,15 +54,7 @@ ns_list.forEach(function(ns_name)
     
     
     
-    var actions = {
-        'objects' : 'Class',
-        'interfaces' : 'Interface',
-        //'structs' : 'Struct',
-        //'unions' : 'Union',
-        //'enums' : 'Enum'
-        
-    };
-    
+      
        
     ns['objects'].forEach( function(n) {
         
