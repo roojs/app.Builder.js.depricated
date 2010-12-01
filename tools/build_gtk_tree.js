@@ -47,6 +47,8 @@ ns_list.forEach(function(ns_name)
     print("START:" + ns_name);
    
     var ns = NameSpace.ns(ns_name); // fetch all the elements in namespace...
+    // as a type => array list..
+    
     
     
     var actions = {
