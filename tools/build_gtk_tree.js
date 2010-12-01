@@ -63,25 +63,27 @@ ns_list.forEach(function(ns_name)
         
     };
     
-    for (var i in actions) {
-        // we flag GLib as a GObject lib...
        
-        ns[i].forEach( function(n) {
-            
-            print('NameSpace.factory(' + actions[i] +','+ns_name+','+n);
-            var odata =   NameSpace.factory(actions[i], ns_name, n);
-            
-             // what we are interested in..
-            /// odata.methods.. (where method.memberOf == ns_name.n
-            //  oldata.childClasses
-            print(JSON.stringify(odata.implementedBy,null,4)); //  oldata.implementedBy //??? for interfaces??
-            print(JSON.stringify(odata.childClasses,null,4));
-            
-            
-            
-            
-            
-        }); 
+    ns['objects'].forEach( function(n) {
+        
+        print('NameSpace.factory(Class,'+ns_name+'.'+n+')');
+        var odata =   NameSpace.factory('Class', ns_name, n);
+        print(JSON.stringify(odata.childClasses,null,4));
+    });
+    ns['interfaces'].forEach( function(n) {
+        
+        print('NameSpace.factory(Interface,'+ns_name+'.'+n+')');
+        var odata =   NameSpace.factory('Interface', ns_name, n);
+        print(JSON.stringify(odata.childClasses,null,4));
+    });
+         // what we are interested in..
+        /// odata.methods.. (where method.memberOf == ns_name.n
+        //  oldata.childClasses
+        print(JSON.stringify(odata.implementedBy,null,4)); //  oldata.implementedBy //??? for interfaces??
+        
+         
+        
+    }); 
     }
     
     
