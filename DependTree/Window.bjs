@@ -19,9 +19,9 @@
                             "listeners": {},
                             "items": [
                                 {
-                                    "|xns": "Gtk",
                                     "xtype": "TreeView",
-                                    "pack": false
+                                    "|xns": "Gtk",
+                                    "listeners": {}
                                 }
                             ]
                         }
