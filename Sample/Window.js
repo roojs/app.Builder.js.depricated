@@ -3372,7 +3372,7 @@ Window=new XObject({
                                                                         } 
                                                                         var altctr =  XObject.baseXObject({ xtype:  ctr} );
                                                                         var pack_m  = false;
-                                                                        if (!item.pack && altctr) {
+                                                                        if (!item.pack && altctr !== false) {
                                                                             // try XObject.
                                                                             print("SETTING PACK TO XObjectBase method");
                                                                             pack_m = altctr.prototype.pack;
