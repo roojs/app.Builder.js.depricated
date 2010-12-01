@@ -72,14 +72,14 @@ ns_list.forEach(function(ns_name)
        
     ns['objects'].forEach( function(n) {
         
-       print('NameSpace.factory(Class,'+ns_name+'.'+n+')');
+        
         var odata =   classes[ns_name+'.'+n];
         implementations[odata.alias] = odata.childClasses;
         //print(JSON.stringify(odata.childClasses,null,4));
     });
     ns['interfaces'].forEach( function(n) {
         
-        print('NameSpace.factory(Interface,'+ns_name+'.'+n+')');
+        
         var odata =   classes[ns_name+'.'+n];
         implementations[odata.alias] = odata.implementedBy;
         //print(JSON.stringify(odata.implementedBy,null,4));
