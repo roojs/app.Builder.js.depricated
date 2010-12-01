@@ -27,16 +27,6 @@ GtkListStore = XObject.define(
             this.el.add_attribute(this.items[0].el , 'markup', 4  );
 
             
-            XObject.prototype.init.call(this);
-            this.el.set_column_types ( 6, [
-                GObject.TYPE_STRING, 
-                GObject.TYPE_STRING, 
-                GObject.TYPE_STRING, 
-                GObject.TYPE_STRING, 
-                GObject.TYPE_STRING, 
-                GObject.TYPE_STRING 
-            ] );
-            
         }
     }
 ); 
