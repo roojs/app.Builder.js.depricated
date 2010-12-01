@@ -36,6 +36,19 @@
                                     "listeners": {}
                                 }
                             ]
+                        },
+                        {
+                            "xtype": "ScrolledWindow",
+                            "|xns": "Gtk",
+                            "listeners": {},
+                            "pack": false,
+                            "items": [
+                                {
+                                    "xtype": "TreeView",
+                                    "|xns": "Gtk",
+                                    "listeners": {}
+                                }
+                            ]
                         }
                     ]
                 }
