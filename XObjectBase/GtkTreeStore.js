@@ -8,7 +8,7 @@ GObject = imports.gi.GObject;
 // children are not added at init / but at show stage..
 // listener is added on show..
 // we should really add a hock to destroy it..
-GtkListStore = XObject.define(
+GtkTreeStore = XObject.define(
     function(cfg) {
         XObject.call(this, cfg);
         // this is an example...
