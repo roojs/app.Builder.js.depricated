@@ -6,12 +6,11 @@
     "path": "/home/alan/gitlive/app.Builder.js/DependTree/Window.bjs",
     "items": [
         {
+            "default_height": 500,
             "default_width": 600,
             "xtype": "Window",
             "|init": "function() {\n    XObject.prototype.init.call(this);\n    this.el.show_all();\n}\n",
             "|xns": "Gtk",
-            "default_height": "",
-            "listeners": {},
             "items": [
                 {
                     "xtype": "HBox",
