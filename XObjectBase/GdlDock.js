@@ -16,11 +16,9 @@ GdlDock = XObject.define(
         {
             
             // dock for the current window exists. - use it..
-            if (this.get('^').dock) {
-                
-            }
-            this.el = new Gdl.Dock ();
-            this.layout = new Gdl.DockLayout.c_new (this.el);
+            this.el = this.get('^').dock || new Gdl.Dock ();
+            this.get('^').dock =  this.el ;
+            this.get('^').layout = new Gdl.DockLayout.c_new (this.el);
             XObject.prototype.init.call(this);
         }
     }
