@@ -3308,9 +3308,11 @@ Window=new XObject({
                                                                         // does something similar to xobject..
                                                                         item.pack = (typeof(item.pack) == 'undefined') ?  'add' : item.pack;
                                                                         
+                                                                        // pack is forced to 'false'
                                                                         if (item.pack===false || item.pack === 'false') {  // no ;
                                                                             return;
                                                                         }
+                                                                        
                                                                         print("CREATE: " + item['|xns'] + '.' + item['xtype']);
                                                                         
                                                                         
@@ -3372,6 +3374,7 @@ Window=new XObject({
                                                                         var pack_m  = false;
                                                                         if (!item.pack && altctr) {
                                                                             // try XObject.
+                                                                            print("SETTING PACK TO XObjectBase method");
                                                                             pack_m = altctr.prototype.pack;
                                                                             
                                                                             
