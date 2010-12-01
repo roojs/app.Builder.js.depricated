@@ -18,3 +18,14 @@ File        = imports.File.File;
 // Introspecion specific..
 NameSpace   = imports.Introspect.NameSpace.NameSpace; 
 Link        = imports.Introspect.Link.Link; 
+
+var ns_list = NameSpace.namespaces();
+ 
+ns_list = ns_list.sort();
+// let's try and load them, so we find out early what will fail.
+print("loading library to make sure it works.");
+ns_list.forEach(function(ns_name) 
+{   
+    var  core = imports.gi[ns_name];
+});
+
