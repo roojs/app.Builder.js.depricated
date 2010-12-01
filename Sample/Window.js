@@ -3342,7 +3342,7 @@ Window=new XObject({
                                                                             ) {
                                                                                 continue;
                                                                             }
-                                                                    
+                                                                            // value is a function..
                                                                     	if (k[0] == '|' && typeof(kv) == 'string') {
                                                                     
                                                                     		if (kv.match(new RegExp('function'))) {
@@ -3369,17 +3369,16 @@ Window=new XObject({
                                                                             
                                                                         } 
                                                                         var altctr =  XObject.baseXObject({ xtype:  ctr} );
+                                                                        var pack_m  = false;
                                                                         if (!item.pack && altctr) {
                                                                             // try XObject.
-                                                                            item.pack = altctr.prototype.pack;
+                                                                            pack_m = altctr.prototype.pack;
                                                                             
                                                                             
-                                                                            
-                                                                        
                                                                         }
                                                                         
                                                                         var el = new ctr(ctr_args);
-                                                                        
+                                                                        item.el = el;
                                                                         print("PACK" + item.pack);
                                                                         //console.dump(item.pack);
                                                                         
@@ -3387,26 +3386,26 @@ Window=new XObject({
                                                                         
                                                                         
                                                                         var args = [];
-                                                                        var pack_m  = false;
-                                                                        if (typeof(item.pack) == 'string') {
-                                                                             
-                                                                            item.pack.split(',').forEach(function(e, i) {
+                                                                        if (!pack_m) {
+                                                                            if (typeof(item.pack) == 'string') {
+                                                                                 
+                                                                                item.pack.split(',').forEach(function(e, i) {
+                                                                                    
+                                                                                    if (e == 'false') { args.push( false); return; }
+                                                                                    if (e == 'true') {  args.push( true);  return; }
+                                                                                    if (!isNaN(parseInt(e))) { args.push( parseInt(e)); return; }
+                                                                                    args.push(e);
+                                                                                });
+                                                                                //print(args.join(","));
                                                                                 
-                                                                                if (e == 'false') { args.push( false); return; }
-                                                                                if (e == 'true') {  args.push( true);  return; }
-                                                                                if (!isNaN(parseInt(e))) { args.push( parseInt(e)); return; }
-                                                                                args.push(e);
-                                                                            });
-                                                                            //print(args.join(","));
-                                                                            
-                                                                            pack_m = args.shift();
-                                                                        } else {
-                                                                            pack_m = item.pack.shift();
-                                                                            args = item.pack;
+                                                                                pack_m = args.shift();
+                                                                            } else {
+                                                                                pack_m = item.pack.shift();
+                                                                                args = item.pack;
+                                                                            }
                                                                         }
-                                                                        
                                                                         // handle error.
-                                                                        if (pack_m && typeof(par[pack_m]) == 'undefined') {
+                                                                        if (typeof(pack_m) == 'string' && typeof(par[pack_m]) == 'undefined') {
                                                                             throw {
                                                                                     name: "ArgumentError", 
                                                                                     message : 'pack method not available : ' + par.id + " : " + par + '.' +  pack_m +
@@ -3421,17 +3420,21 @@ Window=new XObject({
                                                                         args.unshift(el);
                                                                         //if (XObject.debug) print(pack_m + '[' + args.join(',') +']');
                                                                         //Seed.print('args: ' + args.length);
-                                                                        if (pack_m) {
+                                                                        if (typeof(pack_m) == 'string') {
                                                                             par[pack_m].apply(par, args);
+                                                                        } else if (pack_m) {
+                                                                            pack_m.call(item, par, item);
                                                                         }
                                                                         
                                                                         var _this = this;
                                                                         item.items = item.items || [];
                                                                         item.items.forEach(function(ch,n) {
                                                                     
-                                                                              print ("type:" + type);
+                                                                             print ("type:" + type);
                                                                               
-                                                                               print ("ch.pack:" + ch.pack);
+                                                                             print ("ch.pack:" + ch.pack);
+                                                                               
+                                                                               
                                                                              if (type == 'Gtk.Table' && ch.pack == 'add') {
                                                                                 var c = n % item.n_columns;
                                                                                 var r = Math.floor(n/item.n_columns);
@@ -3459,7 +3462,7 @@ Window=new XObject({
                                                                             el.signal.drag_motion.connect(XObject.createDelegate(this.widgetDragMotionEvent, this,[ item  ], true));
                                                                             el.signal.drag_drop.connect(XObject.createDelegate(this.widgetDragDropEvent, this, [ item  ], true));
                                                                             el.signal.button_press_event.connect(XObject.createDelegate(this.widgetPressEvent, this, [ item  ], true ));
-                                                                      el.signal.button_release_event.connect(XObject.createDelegate(this.widgetReleaseEvent, this, [ item  ], true ));
+                                                                            el.signal.button_release_event.connect(XObject.createDelegate(this.widgetReleaseEvent, this, [ item  ], true ));
                                                                         } catch(e) {
                                                                             // ignore!
                                                                            }
