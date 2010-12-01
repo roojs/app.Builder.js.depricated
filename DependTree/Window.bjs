@@ -4,7 +4,12 @@
     "parent": "",
     "title": false,
     "path": "/home/alan/gitlive/app.Builder.js/DependTree/Window.bjs",
-    "items": false,
+    "items": [
+        {
+            "|xns": "Gtk",
+            "xtype": "Window"
+        }
+    ],
     "permname": "",
-    "modOrder": ""
+    "modOrder": "0"
 }
