@@ -16,7 +16,14 @@
                         {
                             "|xns": "Gtk",
                             "xtype": "ScrolledWindow",
-                            "pack": false
+                            "pack": false,
+                            "items": [
+                                {
+                                    "|xns": "Gtk",
+                                    "xtype": "TreeView",
+                                    "pack": false
+                                }
+                            ]
                         }
                     ]
                 }
