@@ -3,6 +3,7 @@
 
 XObject = imports.XObject.XObject
  
+GObject = imports.gi.GObject;
 //GtkClutter.Embed..
 // children are not added at init / but at show stage..
 // listener is added on show..
