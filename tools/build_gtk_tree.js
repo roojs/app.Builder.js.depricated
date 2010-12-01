@@ -69,6 +69,9 @@ for (cls in classes) {
             if (typeof(methods[cls][p.type]) == 'undefined') {
                 methods[cls][p.type] = [];
             }
+            if (methods[cls][p.type].indexOf(m.name) > -1) {
+                return;
+            }
             methods[cls][p.type].push(m.name);
             
         });
