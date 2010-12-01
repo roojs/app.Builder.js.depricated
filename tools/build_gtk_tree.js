@@ -49,6 +49,9 @@ ns_list.forEach(function(ns_name)
     var ns = NameSpace.ns(ns_name); // fetch all the elements in namespace...
     // as a type => list of them..
     
+   
+    
+    
     
     
     var actions = {
@@ -67,7 +70,17 @@ ns_list.forEach(function(ns_name)
             
             print('NameSpace.factory(' + actions[i] +','+ns_name+','+n);
             var odata =   NameSpace.factory(actions[i], ns_name, n);
+            
+             // what we are interested in..
+            /// odata.methods.. (where method.memberOf == ns_name.n
+            //  oldata.childClasses
+             //  oldata.implementedBy //??? for interfaces??
             print(JSON.stringify(odata,null,4));
+            
+            
+            
+            
+            
             seed.quit();
         }); 
     }
