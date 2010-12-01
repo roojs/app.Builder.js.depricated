@@ -7,7 +7,14 @@
     "items": [
         {
             "|xns": "Gtk",
-            "xtype": "Window"
+            "xtype": "Window",
+            "items": [
+                {
+                    "|xns": "Gtk",
+                    "xtype": "HBox",
+                    "pack": false
+                }
+            ]
         }
     ],
     "permname": "",
