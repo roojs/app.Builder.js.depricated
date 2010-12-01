@@ -79,9 +79,6 @@ ns_list.forEach(function(ns_name)
          // what we are interested in..
         
          
-        
-    }); 
-    }
     
     
 });
