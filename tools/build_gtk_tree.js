@@ -8,3 +8,4 @@
 // a) what the inherited types are
 // b) what methods are available for each type, that include a reference to another type..
 
+// let's start with types..
