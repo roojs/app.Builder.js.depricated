@@ -25,7 +25,7 @@ File        = imports.File.File;
 NameSpace   = imports.Introspect.NameSpace.NameSpace; 
 Link        = imports.Introspect.Link.Link; 
 
-var ns_list = NameSpace.namespaces();
+var ns_list = [ 'Gtk' ] ; //NameSpace.namespaces();
  
 ns_list = ns_list.sort();
 // let's try and load them, so we find out early what will fail.
