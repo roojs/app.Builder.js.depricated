@@ -6,8 +6,10 @@
     "path": "/home/alan/gitlive/app.Builder.js/DependTree/Window.bjs",
     "items": [
         {
-            "|xns": "Gtk",
             "xtype": "Window",
+            "|xns": "Gtk",
+            "|init": "function() {\n    XObject.prototype.init.call(this);\n}\n",
+            "listeners": {},
             "items": [
                 {
                     "xtype": "HBox",
