@@ -57,7 +57,7 @@ for (cls in classes) {
     implementations[odata.alias] = odata.titleType == 'Class' ? odata.childClasses :  odata.implementedBy;  
     
     for(method in odata.methods) {
-        print(method);
+        print(method.name);
     }
     
     
