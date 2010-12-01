@@ -75,13 +75,12 @@ ns_list.forEach(function(ns_name)
             /// odata.methods.. (where method.memberOf == ns_name.n
             //  oldata.childClasses
              //  oldata.implementedBy //??? for interfaces??
-            print(JSON.stringify(odata,null,4));
+            print(JSON.stringify(odata.childClasses,null,4));
             
             
             
             
             
-            seed.quit();
         }); 
     }
     
