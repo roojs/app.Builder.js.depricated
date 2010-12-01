@@ -14,9 +14,9 @@
                     "|xns": "Gtk",
                     "items": [
                         {
-                            "|xns": "Gtk",
                             "xtype": "ScrolledWindow",
-                            "pack": false,
+                            "|xns": "Gtk",
+                            "listeners": {},
                             "items": [
                                 {
                                     "|xns": "Gtk",
