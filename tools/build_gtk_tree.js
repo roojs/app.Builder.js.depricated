@@ -71,9 +71,9 @@ for (cls in classes) {
             }
             methods[cls][p.type].push(m.name);
             
-        }
+        });
         
-    }
+    });
     //for(method in odata.methods) {
     //    print(method.name);
     //}
