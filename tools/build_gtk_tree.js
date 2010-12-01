@@ -58,7 +58,7 @@ for (cls in classes) {
     methods[cls] = {}
        
     implementations[odata.alias] = odata.titleType == 'Class' ? odata.childClasses :  odata.implementedBy;  
-    print(JSON.stringify(odata.methods,null,4));
+    //print(JSON.stringify(odata.methods,null,4));
     odata.methods.forEach(function(m) {
        
         m.params.forEach(function(p) {
