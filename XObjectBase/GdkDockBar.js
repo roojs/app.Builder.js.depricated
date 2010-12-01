@@ -5,7 +5,7 @@ XObject = imports.XObject.XObject
 Gdl     = imports.gi.Gdl;
 // Cell render text..
 
-GdlDock = XObject.define(
+GdlDockBar = XObject.define(
     function(cfg) {
         XObject.call(this, cfg);
     }, 
@@ -16,9 +16,9 @@ GdlDock = XObject.define(
         {
             
             // dock for the current window exists. - use it..
-            this.el = this.get('^').dock || new Gdl.Dock ();
-            this.get('^').dock =  this.el ;
-            this.get('^').layout = new Gdl.DockLayout.c_new (this.el);
+            var dock = this.get('^').dock || new Gdl.Dock ();
+            this.get('^').dock =  docl
+            this.el  = new Gdl.DockBar.c_new (dock);
             XObject.prototype.init.call(this);
         }
     }
