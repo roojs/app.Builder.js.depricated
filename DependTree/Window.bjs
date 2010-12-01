@@ -10,9 +10,9 @@
             "xtype": "Window",
             "items": [
                 {
-                    "|xns": "Gtk",
                     "xtype": "HBox",
-                    "pack": false
+                    "|xns": "Gtk",
+                    "listeners": {}
                 }
             ]
         }
