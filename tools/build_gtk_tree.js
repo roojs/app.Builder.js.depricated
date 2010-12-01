@@ -51,43 +51,11 @@ ns_list.forEach(function(ns_name) {
 print("Looping throught namespaces");
 var ns_idx = [];
 var implementations = {};
-ns_list.forEach(function(ns_name) 
-{
-    
-    //if (ns_idx.length) {         return ;/* do one - for testing */ } 
-    
-    var  core = imports.gi[ns_name];
-    var idx = { name: ns_name}; 
-    print("START:" + ns_name);
-   
-    var ns = NameSpace.ns(ns_name); // fetch all the elements in namespace...
-    // as a type => list of them..
-    
-   
-    
-    
-    
-    
-      
-       
-    ns['objects'].forEach( function(n) {
-        
-        
-        var odata =   classes[ns_name+'.'+n];
-        implementations[odata.alias] = odata.childClasses;
-        //print(JSON.stringify(odata.childClasses,null,4));
-    });
-    ns['interfaces'].forEach( function(n) {
-        
-        
-        var odata =   classes[ns_name+'.'+n];
-        implementations[odata.alias] = odata.implementedBy;
-        //print(JSON.stringify(odata.implementedBy,null,4));
-    });
-         // what we are interested in..
-       
-         
-    
-    
-});
+
+for (cls in classes) {
+    var odata = classes[cls];
+    implementations[odata.alias] = odata.titleType == 'Class' ? odata.childClasses :  odata.implementedBy;  
+     
+}
+ 
 print(JSON.stringify(implementations,null,4));
