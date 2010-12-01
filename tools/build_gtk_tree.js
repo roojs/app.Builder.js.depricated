@@ -14,8 +14,7 @@ imports.searchPath.push('../../gnome.introspection-doc-generator');
 
 XObject     = imports.XObject.XObject;
 File        = imports.File.File; 
-Template    = imports.JsTemplate.Template.Template; 
-
+ 
 // Introspecion specific..
 NameSpace   = imports.Introspect.NameSpace.NameSpace; 
 Link        = imports.Introspect.Link.Link; 
