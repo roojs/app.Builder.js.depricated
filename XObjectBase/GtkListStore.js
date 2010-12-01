@@ -17,7 +17,8 @@ GtkListStore = XObject.define(
     XObject,
     {
         pack : 'set_model',
-        init : function() {
+        init : function() 
+        {
             this.el.set_column_types ( 6, [
                 GObject.TYPE_STRING, 
                 GObject.TYPE_STRING, 
