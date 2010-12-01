@@ -24,7 +24,11 @@ GtkListStore = XObject.define(
             this.parent.el.append_column(this.el);
             
             XObject.prototype.init.call(this);
-            this.el.add_attribute(this.items[0].el , 'markup', 4  );
+            
+            if (this.items.length) {
+                this.el.add_attribute(this.items[0].el , 'markup', 4  );
+            }
+            
 
             
         }
