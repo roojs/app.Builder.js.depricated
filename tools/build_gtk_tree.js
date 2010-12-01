@@ -66,7 +66,7 @@ ns_list.forEach(function(ns_name)
        
     ns['objects'].forEach( function(n) {
         
-           print('NameSpace.factory(Class,'+ns_name+'.'+n+')');
+       print('NameSpace.factory(Class,'+ns_name+'.'+n+')');
         var odata =   NameSpace.factory('Class', ns_name, n);
         print(JSON.stringify(odata.childClasses,null,4));
     });
