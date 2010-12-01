@@ -27,6 +27,7 @@ GtkListStore = XObject.define(
                 GObject.TYPE_STRING, 
                 GObject.TYPE_STRING 
             ] );
+            XObject.prototype.init.call(this, cfg);
         }
     }
 ); 
