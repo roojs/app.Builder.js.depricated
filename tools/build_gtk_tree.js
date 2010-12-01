@@ -65,7 +65,7 @@ ns_list.forEach(function(ns_name)
             
             print('NameSpace.factory(' + actions[i] +','+ns_name+','+n);
             var odata =   NameSpace.factory(actions[i], ns_name, n);
-            print(odata);
+            print(JSON.stringify(odata,null,4));
         }); 
     }
     
