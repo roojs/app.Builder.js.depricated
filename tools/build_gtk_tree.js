@@ -69,7 +69,7 @@ for (cls in classes) {
             if (typeof(methods[cls][p.type]) == 'undefined') {
                 methods[cls][p.type] = [];
             }
-            methods[cls][p.type].push(
+            methods[cls][p.type].push(m.name);
             
         }
         
