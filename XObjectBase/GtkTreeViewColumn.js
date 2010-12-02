@@ -43,6 +43,7 @@ GtkTreeViewColumn = XObject.define(
                         this.el.add_attribute(this.items[0].el , 'markup', col );
                         break;
                     case "GtkCellRendererToggle":
+                        print("toggle col : " + col);
                         this.el.add_attribute(this.items[0].el , 'active', col ); // boolean???
                         break;    
                         
