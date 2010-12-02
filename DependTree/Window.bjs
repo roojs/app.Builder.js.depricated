@@ -72,7 +72,7 @@
                                                     "items": [
                                                         {
                                                             "listeners": {
-                                                                "toggled": "function (self, path) {\n    print(\"TOGGLE\");\n    this.get('class-list-store').getRow(path);\n}"
+                                                                "toggled": "function (self, path) {\n    print(\"TOGGLE\");\n    // this.list\n    return;\n    var list = this.get('class-list-store');\n    var iter = list.el.getIter(path);\n    var old = list.getValue(iter, 1);\n    list.setValue(iter, 1, !old)\n    \n    \n    \n    \n}"
                                                             },
                                                             "activatable": true,
                                                             "xtype": "CellRendererToggle",
