@@ -61,10 +61,9 @@
                                     "listeners": {},
                                     "items": [
                                         {
+                                            "id": "child-list-store",
                                             "xtype": "ListStore",
-                                            "|xns": "Gtk",
-                                            "id": "",
-                                            "listeners": {}
+                                            "|xns": "Gtk"
                                         },
                                         {
                                             "title": "Child Classes",
