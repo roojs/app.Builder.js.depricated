@@ -32,10 +32,9 @@
                                             "listeners": {}
                                         },
                                         {
+                                            "title": "Class",
                                             "xtype": "TreeViewColumn",
                                             "|xns": "Gtk",
-                                            "title": "",
-                                            "listeners": {},
                                             "items": [
                                                 {
                                                     "xtype": "CellRendererText",
