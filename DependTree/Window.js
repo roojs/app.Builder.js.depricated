@@ -97,7 +97,8 @@ Window=new XObject({
                                             title : "Active",
                                             items : [
                                                 {
-                                                    xtype: Gtk.CellRendererToggle
+                                                    xtype: Gtk.CellRendererToggle,
+                                                    activatable : true
                                                 }
                                             ]
                                         }
