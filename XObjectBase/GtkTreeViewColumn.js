@@ -37,7 +37,7 @@ GtkTreeViewColumn = XObject.define(
             
             
             if (this.items.length) {
-                
+                print("child : " + XObject.type(this.items[0].xtype));
                 switch (XObject.type(this.items[0].xtype)) {
                     case "GtkCellRendererText":
                         this.el.add_attribute(this.items[0].el , 'markup', col );
