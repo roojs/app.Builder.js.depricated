@@ -6,14 +6,14 @@
     "path": "/home/alan/gitlive/app.Builder.js/DependTree/Window.bjs",
     "items": [
         {
+            "listeners": {
+                "show": "function (self) {\n    var BuildLists = imports.BuildLists.BuildLists;\n    this.data = new BuildLists();\n    print(JSON.stringify(data.allmethods, null,4));\n\n}"
+            },
             "default_height": 500,
             "default_width": 600,
             "xtype": "Window",
             "|init": "function() {\n    XObject.prototype.init.call(this);\n    this.el.show_all();\n}\n",
             "|xns": "Gtk",
-            "listeners": {
-                "show": "function (self) {\n\n}"
-            },
             "items": [
                 {
                     "xtype": "HBox",
