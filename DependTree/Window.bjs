@@ -68,7 +68,7 @@
                                                     "title": "Class",
                                                     "xtype": "TreeViewColumn",
                                                     "|xns": "Gtk",
-                                                    "pack": false,
+                                                    "listeners": {},
                                                     "items": [
                                                         {
                                                             "xtype": "CellRendererText",
