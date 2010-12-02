@@ -50,7 +50,6 @@ Window=new XObject({
                     items : [
                         {
                             xtype: Gtk.TreeView,
-                            pack : false,
                             items : [
                                 {
                                     xtype: Gtk.ListStore
@@ -73,7 +72,6 @@ Window=new XObject({
                     items : [
                         {
                             xtype: Gtk.TreeView,
-                            pack : false,
                             items : [
                                 {
                                     xtype: Gtk.ListStore
