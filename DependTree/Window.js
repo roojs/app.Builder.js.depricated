@@ -144,7 +144,6 @@ Window=new XObject({
                                         {
                                             xtype: Gtk.TreeViewColumn,
                                             title : "Active",
-                                            pack : false,
                                             items : [
                                                 {
                                                     xtype: Gtk.CellRendererToggle,
@@ -194,7 +193,6 @@ Window=new XObject({
                                         {
                                             xtype: Gtk.TreeViewColumn,
                                             title : "Active",
-                                            pack : false,
                                             items : [
                                                 {
                                                     xtype: Gtk.CellRendererToggle,
