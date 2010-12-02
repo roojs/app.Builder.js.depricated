@@ -65,10 +65,9 @@
                                                     ]
                                                 },
                                                 {
-                                                    "title": "Class",
+                                                    "title": "Active",
                                                     "xtype": "TreeViewColumn",
                                                     "|xns": "Gtk",
-                                                    "listeners": {},
                                                     "items": [
                                                         {
                                                             "xtype": "CellRendererText",
