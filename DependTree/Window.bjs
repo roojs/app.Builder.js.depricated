@@ -104,6 +104,8 @@
                                                     "title": "Methods",
                                                     "xtype": "TreeViewColumn",
                                                     "|xns": "Gtk",
+                                                    "expand": true,
+                                                    "listeners": {},
                                                     "items": [
                                                         {
                                                             "xtype": "CellRendererText",
