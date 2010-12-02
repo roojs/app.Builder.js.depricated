@@ -70,9 +70,8 @@
                                                     "|xns": "Gtk",
                                                     "items": [
                                                         {
-                                                            "xtype": "CellRendererText",
-                                                            "|xns": "Gtk",
-                                                            "listeners": {}
+                                                            "xtype": "CellRendererToggle",
+                                                            "|xns": "Gtk"
                                                         }
                                                     ]
                                                 }
