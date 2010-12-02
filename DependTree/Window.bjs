@@ -71,12 +71,12 @@
                                                     "|xns": "Gtk",
                                                     "items": [
                                                         {
+                                                            "listeners": {
+                                                                "toggled": "function (self, path) {\n    print(\"TOGGLE\");\n}"
+                                                            },
                                                             "activatable": true,
                                                             "xtype": "CellRendererToggle",
-                                                            "|xns": "Gtk",
-                                                            "listeners": {
-                                                                "toggled": "function (self, path) {\n\n}"
-                                                            }
+                                                            "|xns": "Gtk"
                                                         }
                                                     ]
                                                 }
