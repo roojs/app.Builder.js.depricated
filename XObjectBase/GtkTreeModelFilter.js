@@ -23,6 +23,7 @@ GtkTreeModelFilter = XObject.define(
         {
             // 
             this.items[0].pack = false;
+            this.list = this.items[0];
             this.el = new Gtk.TreeModelFilter.c_new(this.items[0].el, null);
             XObject.prototype.init.call(this);
           
