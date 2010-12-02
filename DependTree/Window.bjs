@@ -144,7 +144,9 @@
                                                 {
                                                     "id": "children-list-store",
                                                     "xtype": "ListStore",
-                                                    "|xns": "Gtk"
+                                                    "|xns": "Gtk",
+                                                    "|init": "function() {\n    XObject.prototype.init.call(this);\n}\n",
+                                                    "listeners": {}
                                                 },
                                                 {
                                                     "title": "Child classes",
