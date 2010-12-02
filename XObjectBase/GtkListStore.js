@@ -39,6 +39,16 @@ GtkListStore = XObject.define(
                 this.el.set_value(iter,i,values[i]);
             }
             
+        },
+        getValue  : function ( path, col)
+        {
+            
+        },
+        setValue  : function ( path, col, val)
+        {
+            //this.el.set_value(iter,i,values[i]);
         }
+                
+        
     }
 ); 
