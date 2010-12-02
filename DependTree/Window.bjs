@@ -28,7 +28,7 @@
                         {
                             "xtype": "HBox",
                             "|xns": "Gtk",
-                            "pack": false,
+                            "listeners": {},
                             "items": [
                                 {
                                     "xtype": "ScrolledWindow",
