@@ -32,7 +32,7 @@ Window=new XObject({
             var i =0;
             for (var c in this.data.methods) {
                 i++;
-                ls.append( [ c , true , i > 10]);
+                ls.append( [ c , true , i > 10 ? true : false]);
             };
             
             
