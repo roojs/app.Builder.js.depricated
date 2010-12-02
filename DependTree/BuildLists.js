@@ -119,7 +119,7 @@ function BuildLists () {
     }
     this.methods = methods;
     this.allmethods = allmethods;
-    this.allchildren= allmethods;
+    this.allchildren = allchildren;
 
     this.implementations = implementations;
     
