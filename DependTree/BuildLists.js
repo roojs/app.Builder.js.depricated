@@ -68,6 +68,8 @@ function BuildLists () {
     var implementations = {};
     var methods = {};
     var allmethods = [];  
+    var allchildren = [];  
+    
     
     for (cls in classes) {
         var odata = classes[cls];
@@ -87,6 +89,10 @@ function BuildLists () {
                 if (!p.type || typeof(classes[p.type]) == 'undefined') {
                     return;
                 }
+                if (allchildren.indexOf(p.type) < 0) {
+                    allchildren.push(p.type);
+                }
+                
                 if (typeof(methods[cls][p.type]) == 'undefined') {
                     methods[cls][p.type] = [];
                 }
