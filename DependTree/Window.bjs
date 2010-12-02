@@ -16,9 +16,9 @@
             "|xns": "Gtk",
             "items": [
                 {
-                    "|xns": "Gtk",
                     "xtype": "VBox",
-                    "pack": false,
+                    "|xns": "Gtk",
+                    "listeners": {},
                     "items": [
                         {
                             "|xns": "Gtk",
