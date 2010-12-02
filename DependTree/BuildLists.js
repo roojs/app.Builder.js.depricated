@@ -100,15 +100,7 @@ function BuildLists () {
                 }
                 methods[cls][p.type].push(fullname);
                  
-               
                 
-                if (typeof(methods[cls][full_method_name]) == 'undefined') {
-                    methods[cls][full_method_name] = [];
-                }
-                if (methods[cls][full_method_name].indexOf(m.name) > -1) {
-                    return;
-                }
-                methods[cls][full_method_name].push(m.name);
                 
             });
             
