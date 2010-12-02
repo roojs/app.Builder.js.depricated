@@ -28,6 +28,7 @@
                                 {
                                     "xtype": "Button",
                                     "|xns": "Gtk",
+                                    "label": "",
                                     "listeners": {}
                                 }
                             ]
