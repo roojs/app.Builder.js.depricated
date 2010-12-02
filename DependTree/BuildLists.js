@@ -34,8 +34,7 @@ File        = imports.File.File;
  
 // Introspecion specific..
 NameSpace   = imports.Introspect.NameSpace.NameSpace; 
-Link        = imports.Introspect.Link.Link; 
-
+ 
 
 
 function BuildLists () {
