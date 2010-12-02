@@ -101,6 +101,17 @@ Window=new XObject({
                                                     listeners : {
                                                         toggled : function (self, path) {
                                                             print("TOGGLE");
+                                                            // this.list
+                                                        
+                                                            var list = this.get('class-list-store');
+                                                             
+                                                            var old = list.getValue(path, 1);
+                                                            print(JSON.stringify(old));
+                                                        //    list.setValue(path, 1, !old)
+                                                            
+                                                            
+                                                            
+                                                            
                                                         }
                                                     },
                                                     activatable : true
