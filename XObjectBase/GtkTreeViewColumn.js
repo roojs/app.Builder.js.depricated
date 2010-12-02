@@ -30,6 +30,7 @@ GtkTreeViewColumn = XObject.define(
             parent.items.forEach(function(e){
                 if ([ 'Gtk.ListStore', 'Gtk.TreeStore', 'GtkTreeModelFilter' ].indexOf( XObject.type(e.xtype) ) > -1 ) {
                     _t.list = e;
+                    return;
                 }
                 
                 
