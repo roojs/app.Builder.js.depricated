@@ -72,7 +72,9 @@
                                                     "items": [
                                                         {
                                                             "xtype": "CellRendererToggle",
-                                                            "|xns": "Gtk"
+                                                            "|xns": "Gtk",
+                                                            "activatable": true,
+                                                            "listeners": {}
                                                         }
                                                     ]
                                                 }
