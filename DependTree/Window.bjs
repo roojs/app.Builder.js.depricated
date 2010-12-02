@@ -81,6 +81,11 @@
                                                             "|xns": "Gtk"
                                                         }
                                                     ]
+                                                },
+                                                {
+                                                    "|xns": "Gtk",
+                                                    "xtype": "TreeModelFilter",
+                                                    "pack": false
                                                 }
                                             ]
                                         }
