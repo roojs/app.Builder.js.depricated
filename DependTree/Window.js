@@ -98,6 +98,11 @@ Window=new XObject({
                                             items : [
                                                 {
                                                     xtype: Gtk.CellRendererToggle,
+                                                    listeners : {
+                                                        toggled : function (self, path) {
+                                                            print("TOGGLE");
+                                                        }
+                                                    },
                                                     activatable : true
                                                 }
                                             ]
