@@ -7,7 +7,7 @@
     "items": [
         {
             "listeners": {
-                "show": "function (self) {\n    print(\"SHOW\");\n    var BuildLists = imports['BuildLists.js'].BuildLists;\n    this.data = new BuildLists();\n    print(JSON.stringify(this.data.allmethods, null,4));\n    \n    var ls = this.get('method-list-store');\n    this.data.allmethods.forEach(function(v) {\n        ls.append( [ v ]);\n    });\n    var ls = this.get('children-list-store');\n    this.data.allchildren.forEach(function(v) {\n        ls.append( [ v ]);\n    });\n    var ls = this.get('class-list-store');\n    for (var c in this.data.methods) {\n        ls.append( [ c , true ]);\n    };\n    \n    \n    \n}"
+                "show": "function (self) {\n    print(\"SHOW\");\n    var BuildLists = imports['BuildLists.js'].BuildLists;\n    this.data = new BuildLists();\n    print(JSON.stringify(this.data.allmethods, null,4));\n    \n    var ls = this.get('method-list-store');\n    this.data.allmethods.forEach(function(v) {\n        ls.append( [ v ]);\n    });\n    var ls = this.get('children-list-store');\n    this.data.allchildren.forEach(function(v) {\n        ls.append( [ v ]);\n    });\n    var ls = this.get('class-list-store');\n    var i =0;\n    for (var c in this.data.methods) {\n        i++;\n        ls.append( [ c , true , i > 10]);\n    };\n    \n    \n    \n}"
             },
             "default_height": 500,
             "default_width": 600,
