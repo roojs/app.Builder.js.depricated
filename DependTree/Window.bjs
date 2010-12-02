@@ -34,6 +34,7 @@
                                         {
                                             "xtype": "TreeViewColumn",
                                             "|xns": "Gtk",
+                                            "title": "",
                                             "listeners": {},
                                             "items": [
                                                 {
