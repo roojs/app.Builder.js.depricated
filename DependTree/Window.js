@@ -24,6 +24,17 @@ Window=new XObject({
             this.data.allmethods.forEach(function(v) {
                 ls.append( [ v ]);
             });
+            var ls = this.get('children-list-store');
+            this.data.allchildren.forEach(function(v) {
+                ls.append( [ v ]);
+            });
+            var ls = this.get('class-list-store');
+            for (var c in this.data.methods) {
+                ls.append( [ c ]);
+            };
+            
+            
+            
         }
     },
     default_height : 500,
@@ -43,7 +54,8 @@ Window=new XObject({
                             xtype: Gtk.TreeView,
                             items : [
                                 {
-                                    xtype: Gtk.ListStore
+                                    xtype: Gtk.ListStore,
+                                    id : "class-list-store"
                                 },
                                 {
                                     xtype: Gtk.TreeViewColumn,
@@ -65,7 +77,8 @@ Window=new XObject({
                             xtype: Gtk.TreeView,
                             items : [
                                 {
-                                    xtype: Gtk.ListStore
+                                    xtype: Gtk.ListStore,
+                                    id : "child-list-store"
                                 },
                                 {
                                     xtype: Gtk.TreeViewColumn,
