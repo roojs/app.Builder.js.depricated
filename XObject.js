@@ -712,7 +712,7 @@ XObject.extend(XObject,
         return ret;
     },
     /**
-     * return the Gobject name of a constructor
+     * return the Gobject name of a constructor - does not appear to work on structs..
      * @param {Object} gobject ctr
      * @return {String} returns name
      * @member XObject type
