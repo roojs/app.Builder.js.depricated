@@ -30,7 +30,7 @@ Window=new XObject({
             });
             var ls = this.get('class-list-store');
             for (var c in this.data.methods) {
-                ls.append( [ c ]);
+                ls.append( [ c , true ]);
             };
             
             
