@@ -1,5 +1,5 @@
 {
-    "id": "file-gtk-12",
+    "id": "file-gtk-18",
     "name": "Window",
     "parent": "",
     "title": false,
@@ -30,6 +30,11 @@
                                             "xtype": "ListStore",
                                             "|xns": "Gtk",
                                             "listeners": {}
+                                        },
+                                        {
+                                            "|xns": "Gtk",
+                                            "xtype": "TreeViewColumn",
+                                            "pack": false
                                         }
                                     ]
                                 }
