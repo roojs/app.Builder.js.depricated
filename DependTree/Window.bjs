@@ -88,7 +88,6 @@
                                     "xtype": "TreeView",
                                     "|xns": "Gtk",
                                     "listeners": {},
-                                    "pack": false,
                                     "items": [
                                         {
                                             "xtype": "ListStore",
