@@ -130,7 +130,20 @@ Window=new XObject({
                                     items : [
                                         {
                                             xtype: Gtk.ListStore,
-                                            id : "method-list-store"
+                                            id : "method-list-store",
+                                            init : function() 
+                                                    {
+                                                        XObject.prototype.init.call(this);
+                                                        this.el.set_column_types ( 6, [
+                                                            GObject.TYPE_STRING, 
+                                                            GObject.TYPE_BOOLEAN, 
+                                                            GObject.TYPE_STRING, 
+                                                            GObject.TYPE_STRING, 
+                                                            GObject.TYPE_STRING, 
+                                                            GObject.TYPE_STRING 
+                                                        ] );
+                                                        
+                                                    }
                                         },
                                         {
                                             xtype: Gtk.TreeViewColumn,
@@ -179,7 +192,20 @@ Window=new XObject({
                                     items : [
                                         {
                                             xtype: Gtk.ListStore,
-                                            id : "children-list-store"
+                                            id : "children-list-store",
+                                            init : function() 
+                                                    {
+                                                        XObject.prototype.init.call(this);
+                                                        this.el.set_column_types ( 6, [
+                                                            GObject.TYPE_STRING, 
+                                                            GObject.TYPE_BOOLEAN, 
+                                                            GObject.TYPE_STRING, 
+                                                            GObject.TYPE_STRING, 
+                                                            GObject.TYPE_STRING, 
+                                                            GObject.TYPE_STRING 
+                                                        ] );
+                                                        
+                                                    }
                                         },
                                         {
                                             xtype: Gtk.TreeViewColumn,
