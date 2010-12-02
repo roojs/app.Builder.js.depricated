@@ -50,10 +50,7 @@ GtkListStore = XObject.define(
             
             var iter = new Gtk.TreeIter();
             this.el.get_iter (iter, tpath) ;
-            var gval = new GObject.Value( {
-                 type :  this.el.get_column_type(col),
-                 length : 0
-             });
+            var gval = new GObject.Value(  [this.el.get_column_type(col), null ]);
             this.el.get_value( iter, col, gval);
             print("GET VALUE RETURNED: " + gval.value);
             return gval.value;
