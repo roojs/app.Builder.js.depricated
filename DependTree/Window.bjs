@@ -21,9 +21,9 @@
                     "listeners": {},
                     "items": [
                         {
-                            "|xns": "Gtk",
                             "xtype": "HBox",
-                            "pack": false
+                            "|xns": "Gtk",
+                            "listeners": {}
                         },
                         {
                             "xtype": "HBox",
