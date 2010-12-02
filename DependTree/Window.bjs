@@ -57,6 +57,8 @@
                                                     "title": "Class",
                                                     "xtype": "TreeViewColumn",
                                                     "|xns": "Gtk",
+                                                    "expand": true,
+                                                    "listeners": {},
                                                     "items": [
                                                         {
                                                             "xtype": "CellRendererText",
