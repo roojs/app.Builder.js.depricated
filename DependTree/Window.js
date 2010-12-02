@@ -49,6 +49,7 @@ Window=new XObject({
             items : [
                 {
                     xtype: Gtk.HBox,
+                    pack : "pack_start,false,false",
                     items : [
                         {
                             xtype: Gtk.Button,
