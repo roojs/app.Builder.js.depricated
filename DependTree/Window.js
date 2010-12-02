@@ -34,6 +34,7 @@ Window=new XObject({
                                 },
                                 {
                                     xtype: Gtk.TreeViewColumn,
+                                    title : "Class",
                                     items : [
                                         {
                                             xtype: Gtk.CellRendererText
