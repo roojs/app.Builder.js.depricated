@@ -210,10 +210,10 @@ right:
 
 left: 
 	Gtk.TreeModelFilter
-	
 right:
 	Gtk.TreeStore
 	Gtk.ListStore
+	
 left: 	
 	Gtk.TreeViewColumn	
 right:
