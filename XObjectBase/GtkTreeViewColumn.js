@@ -19,7 +19,7 @@ GtkTreeViewColumn = XObject.define(
     {
         list : false, // list goes here, 
         pack : function(parent, item) {
-            this.list = parent;
+             
             
             parent.el.append_column(this.el);
             var n = 0;
@@ -28,7 +28,10 @@ GtkTreeViewColumn = XObject.define(
             var found = false; 
              
             parent.items.forEach(function(e){
-                 
+                if (XObject.type(e.xtype) == 'GtkListStore') {
+                    _t.list = e;
+                }
+                
                 if (found) {
                     return true;
                 }
