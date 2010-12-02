@@ -4,10 +4,9 @@
 XObject = imports.XObject.XObject
  
 GObject = imports.gi.GObject;
-//GtkClutter.Embed..
-// children are not added at init / but at show stage..
-// listener is added on show..
-// we should really add a hock to destroy it..
+
+// tree view column.. should really have a better way to determin stuff..
+
 GtkTreeViewColumn = XObject.define(
     function(cfg) {
         XObject.call(this, cfg);
