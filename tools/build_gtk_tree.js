@@ -82,13 +82,16 @@ function BuildLists () {
                 if (!p.type || typeof(classes[p.type]) == 'undefined') {
                     return;
                 }
-                if (typeof(methods[cls][p.type]) == 'undefined') {
-                    methods[cls][p.type] = [];
+                // now add it..
+                
+                var full_method_name = p.memberOf + '.' + p.type;
+                if (typeof(methods[cls][p.memberOf]) == 'undefined') {
+                    methods[cls][p.memberOf] = [];
                 }
-                if (methods[cls][p.type].indexOf(m.name) > -1) {
+                if (methods[cls][p.memberOf].indexOf(m.name) > -1) {
                     return;
                 }
-                methods[cls][p.type].push(m.name);
+                methods[cls][p.memberOf].push(m.name);
                 
             });
             
