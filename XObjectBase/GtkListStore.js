@@ -42,7 +42,12 @@ GtkListStore = XObject.define(
         },
         getValue  : function ( path, col)
         {
-            
+            var iter = new Gtk.TreeIter();
+            this.el.get_iter (iter, path) ;
+            var gval = new GObject.Value('');
+            this.el.get_value( iter, col, gval)
+            return gval.value;
+
         },
         setValue  : function ( path, col, val)
         {
