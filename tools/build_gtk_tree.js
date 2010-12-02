@@ -1,5 +1,16 @@
 //<script type="text/javascript">
 
+
+/**
+ * usage:
+ * 
+ * this.data = new BuildLists();
+ * 
+ * 
+ * 
+ * 
+ * 
+ */
 // see if we can build the insertion tree for gtk - using introspection
 
 // it should build the tree of feasible insertions, then we will have to manually prune it..
