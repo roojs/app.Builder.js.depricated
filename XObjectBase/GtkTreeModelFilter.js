@@ -44,9 +44,11 @@ GtkTreeModelFilter = XObject.define(
             var iter = new Gtk.TreeIter();
             
             this.el.get_iter (iter, tpath) ;
+            var citer = new Gtk.TreeIter();
+            this.el.convert_iter_to_child_iter(citer, iter);
              
             var gval = new GObject.Value(  [this.list.el.get_column_type(col), null ]);
-            this.list.el.get_value( iter, col, gval);
+            this.list.el.get_value( citer, col, gval);
             print("GET VALUE RETURNED: " + gval.value);
             return gval.value;
         },
@@ -57,8 +59,11 @@ GtkTreeModelFilter = XObject.define(
                 tpath = new Gtk.TreePath.from_string(path);
             }
             var iter = new Gtk.TreeIter();
-            this.el.get_iter (iter, tpath) ;
-            this.list.el.set_value(iter,col,val);
+             var citer = new Gtk.TreeIter();
+             this.el.get_iter (iter, tpath) ;
+            this.el.convert_iter_to_child_iter(citer, iter);
+            
+            this.list.el.set_value(citer,col,val);
         }
                 
         
