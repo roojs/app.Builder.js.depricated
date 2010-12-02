@@ -23,7 +23,14 @@
                         {
                             "xtype": "HBox",
                             "|xns": "Gtk",
-                            "listeners": {}
+                            "listeners": {},
+                            "items": [
+                                {
+                                    "|xns": "Gtk",
+                                    "xtype": "Button",
+                                    "pack": false
+                                }
+                            ]
                         },
                         {
                             "xtype": "HBox",
