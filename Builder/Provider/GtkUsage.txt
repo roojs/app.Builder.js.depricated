@@ -212,6 +212,7 @@ right:
 	Gtk.CellRendererText
 	Gtk.CellRendererCombo
 	Gtk.CellRendererToggle
+	
 left: 
 	Gtk.CellRendererCombo:model
 	Gtk.ComboBox
