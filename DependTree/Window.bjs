@@ -26,10 +26,9 @@
                             "listeners": {},
                             "items": [
                                 {
+                                    "label": "Rest",
                                     "xtype": "Button",
-                                    "|xns": "Gtk",
-                                    "label": "",
-                                    "listeners": {}
+                                    "|xns": "Gtk"
                                 }
                             ]
                         },
