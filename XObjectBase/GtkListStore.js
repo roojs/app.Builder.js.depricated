@@ -63,7 +63,7 @@ GtkListStore = XObject.define(
             }
             var iter = new Gtk.TreeIter();
             this.el.get_iter (iter, tpath) ;
-            this.el.set_value(iter,i,values[i]);
+            this.el.set_value(iter,col,val);
         }
                 
         
