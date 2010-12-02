@@ -82,14 +82,7 @@
                         {
                             "xtype": "ScrolledWindow",
                             "|xns": "Gtk",
-                            "listeners": {},
-                            "items": [
-                                {
-                                    "xtype": "TreeView",
-                                    "|xns": "Gtk",
-                                    "listeners": {}
-                                }
-                            ]
+                            "listeners": {}
                         }
                     ]
                 }
