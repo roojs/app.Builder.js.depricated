@@ -29,8 +29,10 @@ Window=new XObject({
                 ls.append( [ v ]);
             });
             var ls = this.get('class-list-store');
+            var i =0;
             for (var c in this.data.methods) {
-                ls.append( [ c , true ]);
+                i++;
+                ls.append( [ c , true , i > 10]);
             };
             
             
@@ -68,24 +70,32 @@ Window=new XObject({
                                     items : [
                                         {
                                             xtype: Gtk.TreeModelFilter,
+                                            init : function() {
+                                                this.items[0].pack = false;
+                                                this.items[0].init();
+                                                this.list = this.items[0];
+                                                this.el = new Gtk.TreeModelFilter.c_new(this.items[0].el, null);
+                                                XObject.prototype.init.call(this);
+                                                this.el.set_visible_column(2);
+                                            },
                                             items : [
                                                 {
                                                     xtype: Gtk.ListStore,
                                                     id : "class-list-store",
+                                                    pack : false,
                                                     init : function() 
                                                             {
                                                                 XObject.prototype.init.call(this);
                                                                 this.el.set_column_types ( 6, [
                                                                     GObject.TYPE_STRING, 
                                                                     GObject.TYPE_BOOLEAN, 
-                                                                    GObject.TYPE_STRING, 
+                                                                    GObject.TYPE_BOOLEAN, 
                                                                     GObject.TYPE_STRING, 
                                                                     GObject.TYPE_STRING, 
                                                                     GObject.TYPE_STRING 
                                                                 ] );
                                                                 
-                                                            },
-                                                    pack : false
+                                                            }
                                                 }
                                             ]
                                         },
