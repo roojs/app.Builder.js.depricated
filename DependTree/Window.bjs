@@ -37,9 +37,9 @@
                                             "listeners": {},
                                             "items": [
                                                 {
-                                                    "|xns": "Gtk",
                                                     "xtype": "CellRendererText",
-                                                    "pack": false
+                                                    "|xns": "Gtk",
+                                                    "listeners": {}
                                                 }
                                             ]
                                         }
