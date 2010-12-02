@@ -29,6 +29,14 @@ GtkListStore = XObject.define(
                 GObject.TYPE_STRING 
             ] );
             
+        },
+        append : function( values ) {
+            var iter = new Gtk.TreeIter();
+            this.el.append(iter);
+            for (var i = 0; i < values.length; i++) {
+                this.el.set_value(iter,i,v[i]);
+            }
+            
         }
     }
 ); 
