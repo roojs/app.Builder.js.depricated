@@ -63,7 +63,7 @@
                                             "listeners": {}
                                         },
                                         {
-                                            "title": "Class",
+                                            "title": "Method",
                                             "xtype": "TreeViewColumn",
                                             "|xns": "Gtk",
                                             "items": [
