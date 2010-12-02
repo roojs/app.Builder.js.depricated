@@ -2722,7 +2722,7 @@ Window=new XObject({
                                                                   //  console.log( '<b>' + p.name +'</b> ['+p.type+']');
                                                                         //GObject.TYPE_STRING,  // real key
                                                                         // GObject.TYPE_STRING, // real type
-                                                                        // GObject.TYPE_STRING, // docs ?
+                                                                        // GObject.TYPE_STRING, // docs ?this.el.set_value(iter, 0, p.name);et_value(iter, 0, p.name);
                                                                         // GObject.TYPE_STRING // func def?
                                                                         
                                                                     
