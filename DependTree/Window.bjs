@@ -94,6 +94,7 @@
                                         {
                                             "xtype": "ListStore",
                                             "|xns": "Gtk",
+                                            "id": "",
                                             "listeners": {}
                                         },
                                         {
