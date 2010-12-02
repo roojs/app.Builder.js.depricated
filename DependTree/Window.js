@@ -67,21 +67,26 @@ Window=new XObject({
                                     xtype: Gtk.TreeView,
                                     items : [
                                         {
-                                            xtype: Gtk.ListStore,
-                                            id : "class-list-store",
-                                            init : function() 
-                                                    {
-                                                        XObject.prototype.init.call(this);
-                                                        this.el.set_column_types ( 6, [
-                                                            GObject.TYPE_STRING, 
-                                                            GObject.TYPE_BOOLEAN, 
-                                                            GObject.TYPE_STRING, 
-                                                            GObject.TYPE_STRING, 
-                                                            GObject.TYPE_STRING, 
-                                                            GObject.TYPE_STRING 
-                                                        ] );
-                                                        
-                                                    }
+                                            xtype: Gtk.TreeModelFilter,
+                                            items : [
+                                                {
+                                                    xtype: Gtk.ListStore,
+                                                    id : "class-list-store",
+                                                    init : function() 
+                                                            {
+                                                                XObject.prototype.init.call(this);
+                                                                this.el.set_column_types ( 6, [
+                                                                    GObject.TYPE_STRING, 
+                                                                    GObject.TYPE_BOOLEAN, 
+                                                                    GObject.TYPE_STRING, 
+                                                                    GObject.TYPE_STRING, 
+                                                                    GObject.TYPE_STRING, 
+                                                                    GObject.TYPE_STRING 
+                                                                ] );
+                                                                
+                                                            }
+                                                }
+                                            ]
                                         },
                                         {
                                             xtype: Gtk.TreeViewColumn,
