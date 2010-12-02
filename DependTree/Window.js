@@ -78,7 +78,7 @@ Window=new XObject({
                             items : [
                                 {
                                     xtype: Gtk.ListStore,
-                                    id : "children-list-store"
+                                    id : "method-list-store"
                                 },
                                 {
                                     xtype: Gtk.TreeViewColumn,
@@ -101,7 +101,7 @@ Window=new XObject({
                             items : [
                                 {
                                     xtype: Gtk.ListStore,
-                                    id : "method-list-store"
+                                    id : "children-list-store"
                                 },
                                 {
                                     xtype: Gtk.TreeViewColumn,
