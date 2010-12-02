@@ -18,7 +18,7 @@ Window=new XObject({
             print("SHOW");
             var BuildLists = imports['BuildLists.js'].BuildLists;
             this.data = new BuildLists();
-            print(JSON.stringify(data.allmethods, null,4));
+            print(JSON.stringify(this.data.allmethods, null,4));
         }
     },
     default_height : 500,
