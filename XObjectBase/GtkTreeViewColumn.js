@@ -59,3 +59,4 @@ GtkTreeViewColumn = XObject.define(
          
     }
 ); 
+GtkTreeViewColumn.ids = 0;
