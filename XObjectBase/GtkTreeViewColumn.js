@@ -22,11 +22,14 @@ GtkTreeViewColumn = XObject.define(
             var _t = this;
             var col = 0;
             var found = true; 
-            this.
+            
             parent.items.forEach(function(e){
+                print ("parent child : " + XObject.type(e.xtype));
+                
                 if (found) {
                     return true;
                 }
+                
                 if (e.col_id == _t.col_id) {
                     col = n;
                     found = true;
