@@ -21,10 +21,9 @@
                     "listeners": {},
                     "items": [
                         {
+                            "pack": "pack_start,false,false",
                             "xtype": "HBox",
                             "|xns": "Gtk",
-                            "pack": "add",
-                            "listeners": {},
                             "items": [
                                 {
                                     "label": "Reset",
