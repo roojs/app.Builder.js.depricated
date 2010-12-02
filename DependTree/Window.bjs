@@ -30,10 +30,9 @@
                                     "listeners": {},
                                     "items": [
                                         {
+                                            "id": "class-list-store",
                                             "xtype": "ListStore",
-                                            "|xns": "Gtk",
-                                            "id": "",
-                                            "listeners": {}
+                                            "|xns": "Gtk"
                                         },
                                         {
                                             "title": "Class",
