@@ -19,6 +19,11 @@ Window=new XObject({
             var BuildLists = imports['BuildLists.js'].BuildLists;
             this.data = new BuildLists();
             print(JSON.stringify(this.data.allmethods, null,4));
+            
+            var ls = this.get('method-list-store');
+            this.data.allmethods.forEach(function(v) {
+                ls.append( [ v ]);
+            });
         }
     },
     default_height : 500,
@@ -82,7 +87,8 @@ Window=new XObject({
                             xtype: Gtk.TreeView,
                             items : [
                                 {
-                                    xtype: Gtk.ListStore
+                                    xtype: Gtk.ListStore,
+                                    id : "method-list-store"
                                 },
                                 {
                                     xtype: Gtk.TreeViewColumn,
