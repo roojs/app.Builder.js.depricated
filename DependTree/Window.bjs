@@ -59,9 +59,9 @@
                                                     "|xns": "Gtk",
                                                     "items": [
                                                         {
+                                                            "editable": true,
                                                             "xtype": "CellRendererText",
-                                                            "|xns": "Gtk",
-                                                            "listeners": {}
+                                                            "|xns": "Gtk"
                                                         }
                                                     ]
                                                 },
