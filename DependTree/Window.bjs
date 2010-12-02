@@ -162,7 +162,7 @@
                                                     "title": "Active",
                                                     "xtype": "TreeViewColumn",
                                                     "|xns": "Gtk",
-                                                    "pack": false,
+                                                    "listeners": {},
                                                     "items": [
                                                         {
                                                             "listeners": {
