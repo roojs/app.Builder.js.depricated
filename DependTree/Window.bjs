@@ -50,6 +50,7 @@
                                                 {
                                                     "xtype": "TreeModelFilter",
                                                     "|xns": "Gtk",
+                                                    "|init": "function() {\n    XObject.prototype.init.call(this);\n}\n",
                                                     "listeners": {},
                                                     "items": [
                                                         {
