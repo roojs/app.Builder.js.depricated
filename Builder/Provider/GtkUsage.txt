@@ -205,7 +205,14 @@ left:
 right:
 	Gtk.TreeStore
 	Gtk.ListStore
+	Gtk.TreeModelFilter
 	Gtk.TreeViewColumn
+left: 
+	Gtk.TreeModelFilter
+	Gtk.TreeStore
+	Gtk.ListStore
+right:
+	
 left: 	
 	Gtk.TreeViewColumn	
 right:
