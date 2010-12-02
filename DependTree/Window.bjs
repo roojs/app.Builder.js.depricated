@@ -113,6 +113,11 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "|xns": "Gtk",
+                    "xtype": "VBox",
+                    "pack": false
                 }
             ]
         }
