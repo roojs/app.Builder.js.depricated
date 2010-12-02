@@ -7,7 +7,7 @@
     "items": [
         {
             "listeners": {
-                "show": "function (self) {\n    print(\"SHOW\");\n    var BuildLists = imports['BuildLists.js'].BuildLists;\n    this.data = new BuildLists();\n    print(JSON.stringify(this.data.allmethods, null,4));\n}"
+                "show": "function (self) {\n    print(\"SHOW\");\n    var BuildLists = imports['BuildLists.js'].BuildLists;\n    this.data = new BuildLists();\n    print(JSON.stringify(this.data.allmethods, null,4));\n    \n    var ls = this.get('method-list-store');\n    this.data.allmethods.forEach(function(v) {\n        ls.append( [ v ]);\n    });\n}"
             },
             "default_height": 500,
             "default_width": 600,
