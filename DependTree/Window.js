@@ -19,6 +19,11 @@ Window=new XObject({
         XObject.prototype.init.call(this);
         this.el.show_all();
     },
+    listeners : {
+        show : function (self) {
+        
+        }
+    },
     items : [
         {
             xtype: Gtk.HBox,
