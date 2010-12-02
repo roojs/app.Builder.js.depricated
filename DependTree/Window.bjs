@@ -119,6 +119,11 @@
                                     ]
                                 }
                             ]
+                        },
+                        {
+                            "|xns": "Gtk",
+                            "xtype": "HBox",
+                            "pack": false
                         }
                     ]
                 }
