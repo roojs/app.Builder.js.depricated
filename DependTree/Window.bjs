@@ -48,9 +48,9 @@
                                             "listeners": {},
                                             "items": [
                                                 {
-                                                    "|xns": "Gtk",
                                                     "xtype": "TreeModelFilter",
-                                                    "pack": false,
+                                                    "|xns": "Gtk",
+                                                    "listeners": {},
                                                     "items": [
                                                         {
                                                             "id": "class-list-store",
