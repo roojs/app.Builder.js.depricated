@@ -92,10 +92,9 @@
                                     "listeners": {},
                                     "items": [
                                         {
+                                            "id": "method-list-store",
                                             "xtype": "ListStore",
-                                            "|xns": "Gtk",
-                                            "id": "",
-                                            "listeners": {}
+                                            "|xns": "Gtk"
                                         },
                                         {
                                             "title": "Methods",
