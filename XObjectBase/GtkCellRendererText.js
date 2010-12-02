@@ -13,4 +13,4 @@ GtkCellRendererText = XObject.define(
     {
         pack : 'pack_start'
     }
-}; 
+); 
