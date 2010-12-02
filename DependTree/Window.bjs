@@ -48,11 +48,19 @@
                                             "listeners": {},
                                             "items": [
                                                 {
-                                                    "id": "class-list-store",
-                                                    "xtype": "ListStore",
-                                                    "|init": " function() \n        {\n            XObject.prototype.init.call(this);\n            this.el.set_column_types ( 6, [\n                GObject.TYPE_STRING, \n                GObject.TYPE_BOOLEAN, \n                GObject.TYPE_STRING, \n                GObject.TYPE_STRING, \n                GObject.TYPE_STRING, \n                GObject.TYPE_STRING \n            ] );\n            \n        }",
                                                     "|xns": "Gtk",
-                                                    "listeners": {}
+                                                    "xtype": "TreeModelFilter",
+                                                    "pack": false,
+                                                    "items": [
+                                                        {
+                                                            "id": "class-list-store",
+                                                            "xtype": "ListStore",
+                                                            "|init": " function() \n        {\n            XObject.prototype.init.call(this);\n            this.el.set_column_types ( 6, [\n                GObject.TYPE_STRING, \n                GObject.TYPE_BOOLEAN, \n                GObject.TYPE_STRING, \n                GObject.TYPE_STRING, \n                GObject.TYPE_STRING, \n                GObject.TYPE_STRING \n            ] );\n            \n        }",
+                                                            "|xns": "Gtk",
+                                                            "listeners": {},
+                                                            "pack": false
+                                                        }
+                                                    ]
                                                 },
                                                 {
                                                     "title": "Class",
