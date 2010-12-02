@@ -154,6 +154,8 @@
                                                     "title": "Child classes",
                                                     "xtype": "TreeViewColumn",
                                                     "|xns": "Gtk",
+                                                    "expand": true,
+                                                    "listeners": {},
                                                     "items": [
                                                         {
                                                             "xtype": "CellRendererText",
