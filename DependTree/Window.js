@@ -107,7 +107,7 @@ Window=new XObject({
                                                              
                                                             var old = this.list.getValue(path, 1);
                                                            // print(JSON.stringify(old));
-                                                            this.list.setValue(path, 1, !old)
+                                                            this.list.setValue(path, 1, old ? false : true)
                                                             
                                                             
                                                             
@@ -140,6 +140,33 @@ Window=new XObject({
                                                     xtype: Gtk.CellRendererText
                                                 }
                                             ]
+                                        },
+                                        {
+                                            xtype: Gtk.TreeViewColumn,
+                                            title : "Active",
+                                            pack : false,
+                                            items : [
+                                                {
+                                                    xtype: Gtk.CellRendererToggle,
+                                                    listeners : {
+                                                        toggled : function (self, path) {
+                                                            print("TOGGLE");
+                                                            // this.list
+                                                        
+                                                        
+                                                             
+                                                            var old = this.list.getValue(path, 1);
+                                                           // print(JSON.stringify(old));
+                                                            this.list.setValue(path, 1, old ? false : true)
+                                                            
+                                                            
+                                                            
+                                                            
+                                                        }
+                                                    },
+                                                    activatable : true
+                                                }
+                                            ]
                                         }
                                     ]
                                 }
@@ -161,6 +188,33 @@ Window=new XObject({
                                             items : [
                                                 {
                                                     xtype: Gtk.CellRendererText
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            xtype: Gtk.TreeViewColumn,
+                                            title : "Active",
+                                            pack : false,
+                                            items : [
+                                                {
+                                                    xtype: Gtk.CellRendererToggle,
+                                                    listeners : {
+                                                        toggled : function (self, path) {
+                                                            print("TOGGLE");
+                                                            // this.list
+                                                        
+                                                        
+                                                             
+                                                            var old = this.list.getValue(path, 1);
+                                                           // print(JSON.stringify(old));
+                                                            this.list.setValue(path, 1, old ? false : true)
+                                                            
+                                                            
+                                                            
+                                                            
+                                                        }
+                                                    },
+                                                    activatable : true
                                                 }
                                             ]
                                         }
