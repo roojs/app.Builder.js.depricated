@@ -61,7 +61,7 @@
                                     "listeners": {},
                                     "items": [
                                         {
-                                            "id": "children-list-store",
+                                            "id": "method-list-store",
                                             "xtype": "ListStore",
                                             "|xns": "Gtk"
                                         },
