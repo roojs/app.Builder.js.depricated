@@ -73,7 +73,10 @@
                                                         {
                                                             "activatable": true,
                                                             "xtype": "CellRendererToggle",
-                                                            "|xns": "Gtk"
+                                                            "|xns": "Gtk",
+                                                            "listeners": {
+                                                                "toggled": "function (self, path) {\n\n}"
+                                                            }
                                                         }
                                                     ]
                                                 }
