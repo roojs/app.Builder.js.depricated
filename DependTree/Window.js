@@ -78,6 +78,15 @@ Window=new XObject({
                                                     xtype: Gtk.CellRendererText
                                                 }
                                             ]
+                                        },
+                                        {
+                                            xtype: Gtk.TreeViewColumn,
+                                            title : "Active",
+                                            items : [
+                                                {
+                                                    xtype: Gtk.CellRendererToggle
+                                                }
+                                            ]
                                         }
                                     ]
                                 }
