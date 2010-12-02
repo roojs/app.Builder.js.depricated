@@ -32,15 +32,33 @@ GtkTreeModelFilter = XObject.define(
         append : function( values ) {
             this.list.append(values);
         },
-        getValue  : function ( path, col)
+          getValue  : function ( path, col)
         {
+            // not very type safe...
+            var tpath = path;
+            if (typeof(path) == 'string' ) {
+                tpath = new Gtk.TreePath.from_string(path);
+                 
+            }
             
-            return this.list.getValue(path, col);
+            var iter = new Gtk.TreeIter();
             
+            this.el.get_iter (iter, tpath) ;
+             
+            var gval = new GObject.Value(  [this.el.get_column_type(col), null ]);
+            this.list.el.get_value( iter, col, gval);
+            print("GET VALUE RETURNED: " + gval.value);
+            return gval.value;
         },
         setValue  : function ( path, col, val)
         {
-            this.list.setValue(path,col,val);
+            var tpath = path;
+            if (typeof(path) == 'string' ) {
+                tpath = new Gtk.TreePath.from_string(path);
+            }
+            var iter = new Gtk.TreeIter();
+            this.el.get_iter (iter, tpath) ;
+            this.list.el.set_value(iter,col,val);
         }
                 
         
