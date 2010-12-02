@@ -82,7 +82,7 @@ Window=new XObject({
                                 },
                                 {
                                     xtype: Gtk.TreeViewColumn,
-                                    title : "Child Classes",
+                                    title : "Methods",
                                     items : [
                                         {
                                             xtype: Gtk.CellRendererText
@@ -105,7 +105,7 @@ Window=new XObject({
                                 },
                                 {
                                     xtype: Gtk.TreeViewColumn,
-                                    title : "Methods",
+                                    title : "Child classes",
                                     items : [
                                         {
                                             xtype: Gtk.CellRendererText
