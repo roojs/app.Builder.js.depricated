@@ -97,7 +97,7 @@
                                             "|xns": "Gtk"
                                         },
                                         {
-                                            "title": "Methods",
+                                            "title": "Child classes",
                                             "xtype": "TreeViewColumn",
                                             "|xns": "Gtk",
                                             "items": [
