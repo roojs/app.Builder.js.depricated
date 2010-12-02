@@ -46,7 +46,7 @@ GtkListStore = XObject.define(
             var tpath = path;
             if (typeof(path) == 'string' ) {
                 tpath = new Gtk.TreePath.from_string(path);
-                tpath.consturctor = 
+                tpath.consturctor = Gtk.TreePath;
             }
             
             var iter = new Gtk.TreeIter();
