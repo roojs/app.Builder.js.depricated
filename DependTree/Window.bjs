@@ -21,6 +21,11 @@
                     "pack": false,
                     "items": [
                         {
+                            "|xns": "Gtk",
+                            "xtype": "HBox",
+                            "pack": false
+                        },
+                        {
                             "xtype": "HBox",
                             "|xns": "Gtk",
                             "pack": false,
@@ -119,11 +124,6 @@
                                     ]
                                 }
                             ]
-                        },
-                        {
-                            "|xns": "Gtk",
-                            "xtype": "HBox",
-                            "pack": false
                         }
                     ]
                 }
