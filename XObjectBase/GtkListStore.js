@@ -5,6 +5,8 @@ XObject = imports.XObject.XObject
  
 GObject = imports.gi.GObject;
 //GtkClutter.Embed..
+Gtk= imports.gi.Gtk;
+
 // children are not added at init / but at show stage..
 // listener is added on show..
 // we should really add a hock to destroy it..
