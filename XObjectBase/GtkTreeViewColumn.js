@@ -27,7 +27,7 @@ GtkTreeViewColumn = XObject.define(
                 if (found) {
                     return true;
                 }
-                if (e == _t) {
+                if (e.col_id == _t.col_id) {
                     col = n;
                     found = true;
                     return;
