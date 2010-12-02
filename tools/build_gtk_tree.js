@@ -68,7 +68,7 @@ function BuildLists () {
     var ns_idx = [];
     var implementations = {};
     var methods = {};
-    var allmethods = {};  
+    var allmethods = [];  
     
     for (cls in classes) {
         var odata = classes[cls];
@@ -86,13 +86,17 @@ function BuildLists () {
                 // now add it..
                 
                 var full_method_name = p.memberOf + '.' + p.type;
-                if (typeof(methods[cls][p.memberOf]) == 'undefined') {
-                    methods[cls][p.memberOf] = [];
+                if (allmethods.indexOf(full_method_name) < 0) {
+                    allmethods.push(full_method_name);
                 }
-                if (methods[cls][p.memberOf].indexOf(m.name) > -1) {
+                
+                if (typeof(methods[cls][full_method_name]) == 'undefined') {
+                    methods[cls][full_method_name] = [];
+                }
+                if (methods[cls][full_method_name].indexOf(m.name) > -1) {
                     return;
                 }
-                methods[cls][p.memberOf].push(m.name);
+                methods[cls][full_method_name].push(m.name);
                 
             });
             
