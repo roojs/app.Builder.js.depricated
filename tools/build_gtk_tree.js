@@ -108,6 +108,7 @@ function BuildLists () {
         
     }
     this.methods = methods;
+    this.allmethods = methods;
     this.implementations = implementations;
     //print(JSON.stringify(methods,null,4));
     //print(JSON.stringify(implementations,null,4));
