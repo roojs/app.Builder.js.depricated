@@ -45,7 +45,7 @@ GtkTreeModelFilter = XObject.define(
             
             this.el.get_iter (iter, tpath) ;
              
-            var gval = new GObject.Value(  [this.el.get_column_type(col), null ]);
+            var gval = new GObject.Value(  [this.list.el.get_column_type(col), null ]);
             this.list.el.get_value( iter, col, gval);
             print("GET VALUE RETURNED: " + gval.value);
             return gval.value;
