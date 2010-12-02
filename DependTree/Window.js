@@ -106,8 +106,8 @@ Window=new XObject({
                                                         
                                                              
                                                             var old = this.list.getValue(path, 1);
-                                                            print(JSON.stringify(old));
-                                                        //    this.list.setValue(path, 1, !old)
+                                                           // print(JSON.stringify(old));
+                                                            this.list.setValue(path, 1, !old)
                                                             
                                                             
                                                             
