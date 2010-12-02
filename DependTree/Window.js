@@ -81,8 +81,7 @@ Window=new XObject({
                                                             GObject.TYPE_STRING 
                                                         ] );
                                                         
-                                                    },
-                                            pack : false
+                                                    }
                                         },
                                         {
                                             xtype: Gtk.TreeViewColumn,
