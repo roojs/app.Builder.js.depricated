@@ -13,16 +13,19 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 Window=new XObject({
     xtype: Gtk.Window,
+    listeners : {
+        show : function (self) {
+            print("SHOW");
+            var BuildLists = imports.BuildLists.BuildLists;
+            this.data = new BuildLists();
+            print(JSON.stringify(data.allmethods, null,4));
+        }
+    },
     default_height : 500,
     default_width : 600,
     init : function() {
         XObject.prototype.init.call(this);
         this.el.show_all();
-    },
-    listeners : {
-        show : function (self) {
-        
-        }
     },
     items : [
         {
