@@ -40,23 +40,7 @@ GtkTreeViewColumn = XObject.define(
             }
             
             
-        },
-        init : function() 
-        {
-            // this is done before pack?
-        //    this.el = new Gtk.TreeViewColumn();
-          //  this.parent.el.append_column(this.el);
-            
-            XObject.prototype.init.call(this);
-            
-            
-            
-            if (this.items.length) {
-                this.el.add_attribute(this.items[0].el , 'markup', 4  );
-            }
-            
-
-            
         }
+         
     }
 ); 
