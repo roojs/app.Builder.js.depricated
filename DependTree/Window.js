@@ -45,70 +45,84 @@ Window=new XObject({
     },
     items : [
         {
-            xtype: Gtk.HBox,
+            xtype: Gtk.VBox,
             items : [
                 {
-                    xtype: Gtk.ScrolledWindow,
+                    xtype: Gtk.HBox,
                     items : [
                         {
-                            xtype: Gtk.TreeView,
-                            items : [
-                                {
-                                    xtype: Gtk.ListStore,
-                                    id : "class-list-store"
-                                },
-                                {
-                                    xtype: Gtk.TreeViewColumn,
-                                    title : "Class",
-                                    items : [
-                                        {
-                                            xtype: Gtk.CellRendererText
-                                        }
-                                    ]
-                                }
-                            ]
+                            xtype: Gtk.Button,
+                            label : "Reset"
                         }
                     ]
                 },
                 {
-                    xtype: Gtk.ScrolledWindow,
+                    xtype: Gtk.HBox,
                     items : [
                         {
-                            xtype: Gtk.TreeView,
+                            xtype: Gtk.ScrolledWindow,
                             items : [
                                 {
-                                    xtype: Gtk.ListStore,
-                                    id : "method-list-store"
-                                },
-                                {
-                                    xtype: Gtk.TreeViewColumn,
-                                    title : "Methods",
+                                    xtype: Gtk.TreeView,
                                     items : [
                                         {
-                                            xtype: Gtk.CellRendererText
+                                            xtype: Gtk.ListStore,
+                                            id : "class-list-store"
+                                        },
+                                        {
+                                            xtype: Gtk.TreeViewColumn,
+                                            title : "Class",
+                                            items : [
+                                                {
+                                                    xtype: Gtk.CellRendererText
+                                                }
+                                            ]
                                         }
                                     ]
                                 }
                             ]
-                        }
-                    ]
-                },
-                {
-                    xtype: Gtk.ScrolledWindow,
-                    items : [
+                        },
                         {
-                            xtype: Gtk.TreeView,
+                            xtype: Gtk.ScrolledWindow,
                             items : [
                                 {
-                                    xtype: Gtk.ListStore,
-                                    id : "children-list-store"
-                                },
-                                {
-                                    xtype: Gtk.TreeViewColumn,
-                                    title : "Child classes",
+                                    xtype: Gtk.TreeView,
                                     items : [
                                         {
-                                            xtype: Gtk.CellRendererText
+                                            xtype: Gtk.ListStore,
+                                            id : "method-list-store"
+                                        },
+                                        {
+                                            xtype: Gtk.TreeViewColumn,
+                                            title : "Methods",
+                                            items : [
+                                                {
+                                                    xtype: Gtk.CellRendererText
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            xtype: Gtk.ScrolledWindow,
+                            items : [
+                                {
+                                    xtype: Gtk.TreeView,
+                                    items : [
+                                        {
+                                            xtype: Gtk.ListStore,
+                                            id : "children-list-store"
+                                        },
+                                        {
+                                            xtype: Gtk.TreeViewColumn,
+                                            title : "Child classes",
+                                            items : [
+                                                {
+                                                    xtype: Gtk.CellRendererText
+                                                }
+                                            ]
                                         }
                                     ]
                                 }
