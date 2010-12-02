@@ -49,9 +49,8 @@
                                             "items": [
                                                 {
                                                     "xtype": "TreeModelFilter",
+                                                    "|init": "function() {\n    this.items[0].pack = false;\n    this.items[0].init();\n    this.list = this.items[0];\n    this.el = new Gtk.TreeModelFilter.c_new(this.items[0].el, null);\n    XObject.prototype.init.call(this);\n    this.el.set_visible_column(2);\n}\n",
                                                     "|xns": "Gtk",
-                                                    "|init": "function() {\n    XObject.prototype.init.call(this);\n}\n",
-                                                    "listeners": {},
                                                     "items": [
                                                         {
                                                             "id": "class-list-store",
