@@ -13,6 +13,8 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 Window=new XObject({
     xtype: Gtk.Window,
+    default_height : 500,
+    default_width : 600,
     init : function() {
         XObject.prototype.init.call(this);
         this.el.show_all();
@@ -29,6 +31,14 @@ Window=new XObject({
                             items : [
                                 {
                                     xtype: Gtk.ListStore
+                                },
+                                {
+                                    xtype: Gtk.TreeViewColumn,
+                                    items : [
+                                        {
+                                            xtype: Gtk.CellRendererText
+                                        }
+                                    ]
                                 }
                             ]
                         }
