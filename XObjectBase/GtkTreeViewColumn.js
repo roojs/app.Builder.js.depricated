@@ -34,8 +34,21 @@ GtkTreeViewColumn = XObject.define(
                     n++;
                 }
             });
+            
+            
             if (this.items.length) {
-                this.el.add_attribute(this.items[0].el , 'markup', col );
+                
+                switch (XObject.type(this.items[0].xtype)) {
+                    case "GtkCellRendererText":
+                        this.el.add_attribute(this.items[0].el , 'markup', col );
+                        break;
+                    case "GtkCellRendererText":
+                        this.el.add_attribute(this.items[0].el , 'active', col ); // boolean???
+                        break;    
+                        
+                }
+                
+                
             }
             
             
