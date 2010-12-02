@@ -17,8 +17,9 @@ GtkTreeViewColumn = XObject.define(
     }, 
     XObject,
     {
+        list : false, // list goes here, 
         pack : function(parent, item) {
-            this.list = this.parent;
+            this.list = parent;
             
             parent.el.append_column(this.el);
             var n = 0;
