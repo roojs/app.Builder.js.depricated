@@ -13,10 +13,13 @@ GtkTreeViewColumn = XObject.define(
         // this is an example...
         GtkTreeViewColumn.ids++;
         this.col_id = GtkTreeViewColumn.ids;
+        
     }, 
     XObject,
     {
         pack : function(parent, item) {
+            this.list = this.parent;
+            
             parent.el.append_column(this.el);
             var n = 0;
             var _t = this;
@@ -42,6 +45,7 @@ GtkTreeViewColumn = XObject.define(
             
             if (this.items.length) {
                 print("child : " + XObject.type(this.items[0].xtype));
+                this.items[0].list = this.list;
                 switch (XObject.type(this.items[0].xtype)) {
                     case "GtkCellRendererText":
                         this.el.add_attribute(this.items[0].el , 'markup', col );
