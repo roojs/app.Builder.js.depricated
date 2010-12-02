@@ -49,7 +49,22 @@ Window=new XObject({
                     xtype: Gtk.ScrolledWindow,
                     items : [
                         {
-                            xtype: Gtk.TreeView
+                            xtype: Gtk.TreeView,
+                            pack : false,
+                            items : [
+                                {
+                                    xtype: Gtk.ListStore
+                                },
+                                {
+                                    xtype: Gtk.TreeViewColumn,
+                                    title : "Class",
+                                    items : [
+                                        {
+                                            xtype: Gtk.CellRendererText
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 },
@@ -57,7 +72,22 @@ Window=new XObject({
                     xtype: Gtk.ScrolledWindow,
                     items : [
                         {
-                            xtype: Gtk.TreeView
+                            xtype: Gtk.TreeView,
+                            pack : false,
+                            items : [
+                                {
+                                    xtype: Gtk.ListStore
+                                },
+                                {
+                                    xtype: Gtk.TreeViewColumn,
+                                    title : "Class",
+                                    items : [
+                                        {
+                                            xtype: Gtk.CellRendererText
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 }
