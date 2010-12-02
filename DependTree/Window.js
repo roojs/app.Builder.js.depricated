@@ -16,7 +16,7 @@ Window=new XObject({
     listeners : {
         show : function (self) {
             print("SHOW");
-            var BuildLists = imports.BuildLists.BuildLists;
+            var BuildLists = imports['BuildLists.js'].BuildLists;
             this.data = new BuildLists();
             print(JSON.stringify(data.allmethods, null,4));
         }
