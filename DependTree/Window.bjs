@@ -50,7 +50,34 @@
                         {
                             "xtype": "ScrolledWindow",
                             "|xns": "Gtk",
-                            "listeners": {}
+                            "listeners": {},
+                            "items": [
+                                {
+                                    "xtype": "TreeView",
+                                    "|xns": "Gtk",
+                                    "listeners": {},
+                                    "pack": false,
+                                    "items": [
+                                        {
+                                            "xtype": "ListStore",
+                                            "|xns": "Gtk",
+                                            "listeners": {}
+                                        },
+                                        {
+                                            "title": "Class",
+                                            "xtype": "TreeViewColumn",
+                                            "|xns": "Gtk",
+                                            "items": [
+                                                {
+                                                    "xtype": "CellRendererText",
+                                                    "|xns": "Gtk",
+                                                    "listeners": {}
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
                         },
                         {
                             "xtype": "ScrolledWindow",
