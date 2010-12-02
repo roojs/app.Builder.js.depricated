@@ -47,7 +47,6 @@ GtkListStore = XObject.define(
             var gval = new GObject.Value('');
             this.el.get_value( iter, col, gval)
             return gval.value;
-
         },
         setValue  : function ( path, col, val)
         {
