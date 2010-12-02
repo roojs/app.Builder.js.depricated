@@ -43,16 +43,25 @@ GtkListStore = XObject.define(
         getValue  : function ( path, col)
         {
             // not very type safe...
+            var tpath = path;
+            if (typeof(path) == 'string' ) {
+                tpath = new Gtk.TreePath.c_new(string);
+            }
+            
             var iter = new Gtk.TreeIter();
-            this.el.get_iter (iter, path) ;
+            this.el.get_iter (iter, tpath) ;
             var gval = new GObject.Value('');
             this.el.get_value( iter, col, gval)
             return gval.value;
         },
         setValue  : function ( path, col, val)
         {
+            var tpath = path;
+            if (typeof(path) == 'string' ) {
+                tpath = new Gtk.TreePath.c_new(string);
+            }
             var iter = new Gtk.TreeIter();
-            this.el.get_iter (iter, path) ;
+            this.el.get_iter (iter, tpath) ;
             this.el.set_value(iter,i,values[i]);
         }
                 
