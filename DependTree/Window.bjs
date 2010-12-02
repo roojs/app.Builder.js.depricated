@@ -11,6 +11,9 @@
             "xtype": "Window",
             "|init": "function() {\n    XObject.prototype.init.call(this);\n    this.el.show_all();\n}\n",
             "|xns": "Gtk",
+            "listeners": {
+                "show": "function (self) {\n\n}"
+            },
             "items": [
                 {
                     "xtype": "HBox",
