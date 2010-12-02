@@ -26,7 +26,7 @@
                             "listeners": {},
                             "items": [
                                 {
-                                    "label": "Rest",
+                                    "label": "Reset",
                                     "xtype": "Button",
                                     "|xns": "Gtk"
                                 }
