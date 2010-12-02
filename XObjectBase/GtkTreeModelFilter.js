@@ -34,12 +34,12 @@ GtkTreeModelFilter = XObject.define(
         },
         getValue  : function ( path, col)
         {
-            return this.list.getValue(path, col);
+            return this.list.getValue.call(this, path, col);
             
         },
         setValue  : function ( path, col, val)
         {
-            this.list.setValue(path,col,val);
+            this.list.setValue.call(this,(path,col,val);
         }
                 
         
