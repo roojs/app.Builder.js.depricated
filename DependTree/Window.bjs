@@ -49,7 +49,7 @@
                                             "items": [
                                                 {
                                                     "xtype": "TreeModelFilter",
-                                                    "|init": "function() {\n    this.items[0].pack = false;\n    this.items[0].init();\n    this.list = this.items[0];\n    this.el = new Gtk.TreeModelFilter.c_new(this.items[0].el, null);\n    XObject.prototype.init.call(this);\n    this.el.set_visible_column(1);\n}\n",
+                                                    "|init": "function() {\n    this.items[0].pack = false;\n    this.items[0].init();\n    this.list = this.items[0];\n    this.el = new Gtk.TreeModelFilter.c_new(this.items[0].el, null);\n     this.el.set_visible_column(1);\n    XObject.prototype.init.call(this);\n   \n}\n",
                                                     "|xns": "Gtk",
                                                     "items": [
                                                         {
