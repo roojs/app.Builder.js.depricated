@@ -27,7 +27,7 @@ GLib        = imports.gi.GLib;
 GIRepository.IRepository.prepend_search_path(GLib.get_home_dir() + '/.Builder/girepository-1.1');
 
 
-imports.searchPath.push('../../gnome.introspection-doc-generator');
+imports.searchPath.push('../gnome.introspection-doc-generator');
 
 XObject     = imports.XObject.XObject;
 File        = imports.File.File; 
