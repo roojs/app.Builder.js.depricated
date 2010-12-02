@@ -39,7 +39,7 @@ GtkTreeModelFilter = XObject.define(
         },
         setValue  : function ( path, col, val)
         {
-            this.list.setValue.call(this,(path,col,val);
+            this.list.setValue.call(this, path,col,val);
         }
                 
         
