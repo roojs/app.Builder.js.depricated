@@ -72,7 +72,7 @@
                                                     "items": [
                                                         {
                                                             "listeners": {
-                                                                "toggled": "function (self, path) {\n    print(\"TOGGLE\");\n    // this.list\n\n    var list = this.get('class-list-store');\n     \n    var old = list.getValue(path, 1);\n    print(JSON.stringify(old));\n//    list.setValue(path, 1, !old)\n    \n    \n    \n    \n}"
+                                                                "toggled": "function (self, path) {\n    print(\"TOGGLE\");\n    // this.list\n\n\n     \n    var old = this.list.getValue(path, 1);\n    print(JSON.stringify(old));\n//    this.list.setValue(path, 1, !old)\n    \n    \n    \n    \n}"
                                                             },
                                                             "activatable": true,
                                                             "xtype": "CellRendererToggle",
