@@ -5,7 +5,7 @@ XObject = imports.XObject.XObject
  
 // Cell render text..
 
-GtkCellRendererText = XObject.define(
+GtkCellRendererToggle = XObject.define(
     function(cfg) {
         XObject.call(this, cfg);
     }, 
