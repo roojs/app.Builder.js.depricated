@@ -11,7 +11,8 @@ GtkTreeViewColumn = XObject.define(
     function(cfg) {
         XObject.call(this, cfg);
         // this is an example...
-       
+        GtkTreeViewColumn.ids++;
+        this.col_id = GtkTreeViewColumn.ids;
     }, 
     XObject,
     {
@@ -21,6 +22,7 @@ GtkTreeViewColumn = XObject.define(
             var _t = this;
             var col = 0;
             var found = true; 
+            this.
             parent.items.forEach(function(e){
                 if (found) {
                     return true;
