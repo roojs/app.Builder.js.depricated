@@ -67,8 +67,9 @@ function BuildLists () {
     print("Looping throught namespaces");
     var ns_idx = [];
     var implementations = {};
-    var methods = {}
-       
+    var methods = {};
+    var allmethods = {};  
+    
     for (cls in classes) {
         var odata = classes[cls];
         methods[cls] = {}
