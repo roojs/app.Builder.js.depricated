@@ -22,17 +22,17 @@ Window=new XObject({
             
             var ls = this.get('method-list-store');
             this.data.allmethods.forEach(function(v) {
-                ls.append( [ v ]);
+                ls.append( [ v , 0, 1 ]);
             });
             var ls = this.get('children-list-store');
             this.data.allchildren.forEach(function(v) {
-                ls.append( [ v ]);
+                ls.append( [ v , 0, 1]);
             });
             var ls = this.get('class-list-store');
             var i =0;
             for (var c in this.data.methods) {
                 i++;
-                ls.append( [ c , true , i > 10 ? true : false]);
+                ls.append( [ c , true , i > 10 ? 1 : 0]);
             };
             
             
