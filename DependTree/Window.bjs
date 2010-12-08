@@ -105,6 +105,21 @@
                                             "listeners": {},
                                             "items": [
                                                 {
+                                                    "xtype": "TreeModelFilter",
+                                                    "|init": "function() {\n    this.items[0].pack = false;\n    this.items[0].init();\n    this.list = this.items[0];\n    this.el = new Gtk.TreeModelFilter.c_new(this.items[0].el, null);\n     this.el.set_visible_column(2);\n    XObject.prototype.init.call(this);\n   \n}\n",
+                                                    "|xns": "Gtk",
+                                                    "pack": false,
+                                                    "items": [
+                                                        {
+                                                            "id": "class-list-store",
+                                                            "pack": false,
+                                                            "xtype": "ListStore",
+                                                            "|init": " function() \n        {\n            XObject.prototype.init.call(this);\n            this.el.set_column_types ( 6, [\n                GObject.TYPE_STRING, \n                GObject.TYPE_BOOLEAN, \n                GObject.TYPE_BOOLEAN, \n                GObject.TYPE_STRING, \n                GObject.TYPE_STRING, \n                GObject.TYPE_STRING \n            ] );\n            \n        }",
+                                                            "|xns": "Gtk"
+                                                        }
+                                                    ]
+                                                },
+                                                {
                                                     "id": "method-list-store",
                                                     "xtype": "ListStore",
                                                     "|init": " function() \n        {\n            XObject.prototype.init.call(this);\n            this.el.set_column_types ( 6, [\n                GObject.TYPE_STRING, \n                GObject.TYPE_BOOLEAN, \n                GObject.TYPE_STRING, \n                GObject.TYPE_STRING, \n                GObject.TYPE_STRING, \n                GObject.TYPE_STRING \n            ] );\n            \n        }",
