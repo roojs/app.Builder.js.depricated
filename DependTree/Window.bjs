@@ -44,7 +44,7 @@
                                     "items": [
                                         {
                                             "listeners": {
-                                                "cursor_changed": "function (self) {\n    var sel = this.el.get_selection();\n    var iter = new Gtk.TreeIter();\n    sel.get_selected(this.model.el, iter);\n    \n    var tp = this.model.el.get_path(iter).to_string();\n    print(tp);\n    // \n    var cls = this.model.getValue(tp, 0);\n    print(cls);\n    \n}"
+                                                "cursor_changed": "function (self) {\n    var sel = this.el.get_selection();\n    \n    var iter = new Gtk.TreeIter();\n    sel.get_selected(this.model.el, iter);\n    \n    var tp = this.model.el.get_path(iter).to_string();\n    print(tp);\n    // \n    var cls = this.model.getValue(tp, 0);\n    print(cls);\n    \n}"
                                             },
                                             "xtype": "TreeView",
                                             "|xns": "Gtk",
