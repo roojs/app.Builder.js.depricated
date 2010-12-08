@@ -75,7 +75,7 @@ Window=new XObject({
                                                 this.items[0].init();
                                                 this.list = this.items[0];
                                                 this.el = new Gtk.TreeModelFilter.c_new(this.items[0].el, null);
-                                                 this.el.set_visible_column(1);
+                                                 this.el.set_visible_column(2);
                                                 XObject.prototype.init.call(this);
                                                
                                             },
