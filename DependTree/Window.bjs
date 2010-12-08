@@ -45,7 +45,9 @@
                                         {
                                             "xtype": "TreeView",
                                             "|xns": "Gtk",
-                                            "listeners": {},
+                                            "listeners": {
+                                                "cursor_changed": "function (self) {\n\n}"
+                                            },
                                             "items": [
                                                 {
                                                     "xtype": "TreeModelFilter",
