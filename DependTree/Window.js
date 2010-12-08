@@ -161,7 +161,6 @@ Window=new XObject({
                                                 {
                                                     xtype: Gtk.ListStore,
                                                     id : "method-list-store",
-                                                    pack : false,
                                                     init : function() 
                                                             {
                                                                 XObject.prototype.init.call(this);
