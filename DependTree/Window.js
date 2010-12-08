@@ -22,17 +22,17 @@ Window=new XObject({
             
             var ls = this.get('method-list-store');
             this.data.allmethods.forEach(function(v) {
-                ls.append( [ v , 0, 1 ]);
+                ls.append( [ v , false, true ]);
             });
             var ls = this.get('children-list-store');
             this.data.allchildren.forEach(function(v) {
-                ls.append( [ v , 0, 1]);
+                ls.append( [ v , false, true ]);
             });
             var ls = this.get('class-list-store');
             var i =0;
             for (var c in this.data.methods) {
                 i++;
-                ls.append( [ c , true , i > 10 ? 1 : 0]);
+                ls.append( [ c , true , i > 10 ? false : true]);
             };
             
             
@@ -224,21 +224,36 @@ Window=new XObject({
                                     xtype: Gtk.TreeView,
                                     items : [
                                         {
-                                            xtype: Gtk.ListStore,
-                                            id : "children-list-store",
-                                            init : function() 
-                                                    {
-                                                        XObject.prototype.init.call(this);
-                                                        this.el.set_column_types ( 6, [
-                                                            GObject.TYPE_STRING, 
-                                                            GObject.TYPE_BOOLEAN, 
-                                                            GObject.TYPE_STRING, 
-                                                            GObject.TYPE_STRING, 
-                                                            GObject.TYPE_STRING, 
-                                                            GObject.TYPE_STRING 
-                                                        ] );
-                                                        
-                                                    }
+                                            xtype: Gtk.TreeModelFilter,
+                                            init : function() {
+                                                this.items[0].pack = false;
+                                                this.items[0].init();
+                                                this.list = this.items[0];
+                                                this.el = new Gtk.TreeModelFilter.c_new(this.items[0].el, null);
+                                                 this.el.set_visible_column(2);
+                                                XObject.prototype.init.call(this);
+                                               
+                                            },
+                                            items : [
+                                                {
+                                                    xtype: Gtk.ListStore,
+                                                    id : "children-list-store",
+                                                    pack : false,
+                                                    init : function() 
+                                                            {
+                                                                XObject.prototype.init.call(this);
+                                                                this.el.set_column_types ( 6, [
+                                                                    GObject.TYPE_STRING, 
+                                                                    GObject.TYPE_BOOLEAN, 
+                                                                    GObject.TYPE_BOOLEAN, 
+                                                                    GObject.TYPE_STRING, 
+                                                                    GObject.TYPE_STRING, 
+                                                                    GObject.TYPE_STRING 
+                                                                ] );
+                                                                
+                                                            }
+                                                }
+                                            ]
                                         },
                                         {
                                             xtype: Gtk.TreeViewColumn,
