@@ -43,11 +43,11 @@
                                     "listeners": {},
                                     "items": [
                                         {
+                                            "listeners": {
+                                                "cursor_changed": "function (self) {\n    var sel = this.el.get_selection();\n    var iter = new Gtk.TreeIter();\n    \n    \n}"
+                                            },
                                             "xtype": "TreeView",
                                             "|xns": "Gtk",
-                                            "listeners": {
-                                                "cursor_changed": "function (self) {\n\n}"
-                                            },
                                             "items": [
                                                 {
                                                     "xtype": "TreeModelFilter",
