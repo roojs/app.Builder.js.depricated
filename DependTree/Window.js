@@ -71,9 +71,9 @@ Window=new XObject({
                                         cursor_changed : function (self) {
                                             var sel = this.el.get_selection();
                                             var iter = new Gtk.TreeIter();
-                                            sel.get_selected(this.el.model, iter);
-                                        
-                                            var tp = this.el.model.get_path(iter).to_string();
+                                            sel.get_selected(this.model.el, iter);
+                                            
+                                            var tp = this.model.el.get_path(iter).to_string();
                                             print(tp);
                                             // 
                                             var cls = this.model.getValue(tp, 0);
