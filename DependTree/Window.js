@@ -32,7 +32,7 @@ Window=new XObject({
             var i =0;
             for (var c in this.data.methods) {
                 i++;
-                ls.append( [ c , true , i > 10 ? false : true]);
+                ls.append( [ c , true ,   true]);
             };
             
             
@@ -67,6 +67,19 @@ Window=new XObject({
                             items : [
                                 {
                                     xtype: Gtk.TreeView,
+                                    listeners : {
+                                        cursor_changed : function (self) {
+                                            var sel = this.el.get_selection();
+                                            var iter = new Gtk.TreeIter();
+                                            sel.get_selected(this.el.model, iter);
+                                        
+                                            var tp = this.el.model.get_path(iter);
+                                            // 
+                                            var cls = this.model.getValue(tp, 0);
+                                            print(cls);
+                                            
+                                        }
+                                    },
                                     items : [
                                         {
                                             xtype: Gtk.TreeModelFilter,
@@ -77,6 +90,7 @@ Window=new XObject({
                                                 this.el = new Gtk.TreeModelFilter.c_new(this.items[0].el, null);
                                                  this.el.set_visible_column(2);
                                                 XObject.prototype.init.call(this);
+                                                this.parent.model = this;
                                                
                                             },
                                             items : [
