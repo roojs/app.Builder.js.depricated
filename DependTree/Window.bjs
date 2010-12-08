@@ -111,10 +111,10 @@
                                                     "items": [
                                                         {
                                                             "id": "method-list-store",
-                                                            "pack": false,
                                                             "xtype": "ListStore",
                                                             "|init": " function() \n        {\n            XObject.prototype.init.call(this);\n            this.el.set_column_types ( 6, [\n                GObject.TYPE_STRING, \n                GObject.TYPE_BOOLEAN, \n                GObject.TYPE_BOOLEAN, \n                GObject.TYPE_STRING, \n                GObject.TYPE_STRING, \n                GObject.TYPE_STRING \n            ] );\n            \n        }",
-                                                            "|xns": "Gtk"
+                                                            "|xns": "Gtk",
+                                                            "listeners": {}
                                                         }
                                                     ]
                                                 },
