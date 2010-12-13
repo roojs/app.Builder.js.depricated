@@ -22,11 +22,12 @@ Window=new XObject({
             
             var ls = this.get('method-list-store');
             this.data.allmethods.forEach(function(v) {
-                ls.append( [ v , false, true ]);
+                ls.append( [ v , true, true ]);
             });
+            
             var ls = this.get('children-list-store');
             this.data.allchildren.forEach(function(v) {
-                ls.append( [ v , false, true ]);
+                ls.append( [ v , true, true ]);
             });
             var ls = this.get('class-list-store');
             var i =0;
@@ -34,6 +35,7 @@ Window=new XObject({
                 i++;
                 ls.append( [ c , true ,   true]);
             };
+            print(JSON.stringify(this.data.methods['Gtk.AccelGroup']));
             
             
             
@@ -41,6 +43,7 @@ Window=new XObject({
     },
     default_height : 500,
     default_width : 600,
+    id : "window",
     init : function() {
         XObject.prototype.init.call(this);
         this.el.show_all();
@@ -69,18 +72,47 @@ Window=new XObject({
                                     xtype: Gtk.TreeView,
                                     listeners : {
                                         cursor_changed : function (self) {
-                                            if (!this.selection) {
-                                                this.selection  = this.el.get_selection();
-                                            }
+                                        
+                                            var sel  = this.el.get_selection();
+                                        
                                             
                                             var iter = new Gtk.TreeIter();
-                                            this.selection.get_selected(this.model.el, iter);
+                                            sel.get_selected(this.model.el, iter);
                                             
                                             var tp = this.model.el.get_path(iter).to_string();
                                             print(tp);
                                             // 
                                             var cls = this.model.getValue(tp, 0);
                                             print(cls);
+                                            var data = this.get('/window').data;
+                                            
+                                        
+                                            // hide all the rows in the methods list.
+                                            var tp = false; 
+                                            var cstore = this.get('/window.children-list-store');
+                                            var meths = [];
+                                            while (false !== (tp = cstore.nextPath(tp))) {
+                                                var mname = cstore.getValue(tp, 0);
+                                                var show = typeof(data.methods[cls][mname]) == 'undefined' ? false :true;
+                                                if (show) {
+                                                    meths.push.apply(meths, data.methods[cls][mname]);
+                                                }
+                                                cstore.setValue(tp, 2, show); // hide..  
+                                        
+                                                
+                                            }    
+                                            print(JSON.stringify(meths));
+                                        
+                                            tp = false; 
+                                            var mstore = this.get('/window.method-list-store');
+                                            while (false !== (tp = mstore.nextPath(tp))) {
+                                                var mname = mstore.getValue(tp, 0);
+                                                var show = meths.indexOf(mname) > -1  ? true :false;
+                                            
+                                                mstore.setValue(tp, 2, show); // hide..  
+                                            }
+                                            
+                                            
                                             
                                         }
                                     },

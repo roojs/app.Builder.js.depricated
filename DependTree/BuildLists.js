@@ -73,7 +73,7 @@ function BuildLists () {
     
     for (cls in classes) {
         var odata = classes[cls];
-        methods[cls] = {}
+        //methods[cls] = {}
            
         implementations[odata.alias] = odata.titleType == 'Class' ? odata.childClasses :  odata.implementedBy;  
         //print(JSON.stringify(odata.methods,null,4));
@@ -91,6 +91,10 @@ function BuildLists () {
                 }
                 if (allchildren.indexOf(p.type) < 0) {
                     allchildren.push(p.type);
+                }
+                
+                if (typeof(methods[cls]) == 'undefined') {
+                    methods[cls] = {}
                 }
                 
                 if (typeof(methods[cls][p.type]) == 'undefined') {
@@ -127,6 +131,12 @@ function BuildLists () {
     //print(JSON.stringify(implementations,null,4));
     
 }
+
+
+
+
+
+
 
 
 // we now have a list of classes / methods that can be used..

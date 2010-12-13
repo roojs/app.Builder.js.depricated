@@ -40,6 +40,27 @@ GtkListStore = XObject.define(
             }
             
         },
+        nextPath : function(path)
+        {
+            if (path === false) {
+                var iter = new Gtk.TreeIter();
+                this.el.get_iter_first(iter);
+                return this.el.get_path(iter);    
+            }
+            var tpath = path;
+            if (typeof(path) == 'string' ) {
+                tpath = new Gtk.TreePath.from_string(path);     
+            }
+            var iter = new Gtk.TreeIter();
+            
+            this.el.get_iter (iter, tpath) ;
+            
+            if (!this.el.iter_next(iter)) {
+                return false;
+            };
+            return this.el.get_path(iter);
+        },
+        
         getValue  : function ( path, col)
         {
             // not very type safe...

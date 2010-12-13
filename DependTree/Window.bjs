@@ -7,10 +7,11 @@
     "items": [
         {
             "listeners": {
-                "show": "function (self) {\n    print(\"SHOW\");\n    var BuildLists = imports['BuildLists.js'].BuildLists;\n    this.data = new BuildLists();\n    print(JSON.stringify(this.data.allmethods, null,4));\n    \n    var ls = this.get('method-list-store');\n    this.data.allmethods.forEach(function(v) {\n        ls.append( [ v , false, true ]);\n    });\n    var ls = this.get('children-list-store');\n    this.data.allchildren.forEach(function(v) {\n        ls.append( [ v , false, true ]);\n    });\n    var ls = this.get('class-list-store');\n    var i =0;\n    for (var c in this.data.methods) {\n        i++;\n        ls.append( [ c , true ,   true]);\n    };\n    \n    \n    \n}"
+                "show": "function (self) {\n    print(\"SHOW\");\n    var BuildLists = imports['BuildLists.js'].BuildLists;\n    this.data = new BuildLists();\n    print(JSON.stringify(this.data.allmethods, null,4));\n    \n    var ls = this.get('method-list-store');\n    this.data.allmethods.forEach(function(v) {\n        ls.append( [ v , true, true ]);\n    });\n    \n    var ls = this.get('children-list-store');\n    this.data.allchildren.forEach(function(v) {\n        ls.append( [ v , true, true ]);\n    });\n    var ls = this.get('class-list-store');\n    var i =0;\n    for (var c in this.data.methods) {\n        i++;\n        ls.append( [ c , true ,   true]);\n    };\n    print(JSON.stringify(this.data.methods['Gtk.AccelGroup']));\n    \n    \n    \n}"
             },
             "default_height": 500,
             "default_width": 600,
+            "id": "window",
             "xtype": "Window",
             "|init": "function() {\n    XObject.prototype.init.call(this);\n    this.el.show_all();\n}\n",
             "|xns": "Gtk",
@@ -44,7 +45,7 @@
                                     "items": [
                                         {
                                             "listeners": {
-                                                "cursor_changed": "function (self) {\n    if (!this.selection) {\n        this.selection  = this.el.get_selection();\n    }\n    \n    var iter = new Gtk.TreeIter();\n    this.selection.get_selected(this.model.el, iter);\n    \n    var tp = this.model.el.get_path(iter).to_string();\n    print(tp);\n    // \n    var cls = this.model.getValue(tp, 0);\n    print(cls);\n    \n}"
+                                                "cursor_changed": "function (self) {\n\n    var sel  = this.el.get_selection();\n\n    \n    var iter = new Gtk.TreeIter();\n    sel.get_selected(this.model.el, iter);\n    \n    var tp = this.model.el.get_path(iter).to_string();\n    print(tp);\n    // \n    var cls = this.model.getValue(tp, 0);\n    print(cls);\n    var data = this.get('/window').data;\n    \n\n    // hide all the rows in the methods list.\n    var tp = false; \n    var cstore = this.get('/window.children-list-store');\n    var meths = [];\n    while (false !== (tp = cstore.nextPath(tp))) {\n        var mname = cstore.getValue(tp, 0);\n        var show = typeof(data.methods[cls][mname]) == 'undefined' ? false :true;\n        if (show) {\n            meths.push.apply(meths, data.methods[cls][mname]);\n        }\n        cstore.setValue(tp, 2, show); // hide..  \n\n        \n    }    \n    print(JSON.stringify(meths));\n\n    tp = false; \n    var mstore = this.get('/window.method-list-store');\n    while (false !== (tp = mstore.nextPath(tp))) {\n        var mname = mstore.getValue(tp, 0);\n        var show = meths.indexOf(mname) > -1  ? true :false;\n    \n        mstore.setValue(tp, 2, show); // hide..  \n    }\n    \n    \n    \n}"
                                             },
                                             "xtype": "TreeView",
                                             "|xns": "Gtk",
