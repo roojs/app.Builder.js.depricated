@@ -43,9 +43,7 @@ ProjectManager =  new Observable({
             dir.make_directory();
             return;
         }
-        
-        
-        
+      
         this.projects = [];
         var gdir = GLib.dir_open(this.dirname,0);
         while (true) {
@@ -53,7 +51,7 @@ ProjectManager =  new Observable({
             var fn = gdir.read_name();
             if (!fn) {
                 gdir.close();
-                return;
+                break;
             }
             if (!fn.match(/.json$/)) {
                 continue;
@@ -78,7 +76,17 @@ ProjectManager =  new Observable({
              
         }
    
+        this.projects.sort(function(a,b) {
+            if (a.getName() == b.getName()) {
+                return 0;
+            }
+            return a.getName() > b.getName() ? 1 : -1;
+            
+            
+        });
+   
         
+       
         
         
         

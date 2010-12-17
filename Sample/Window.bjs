@@ -362,15 +362,15 @@
                                                                             "pack": "pack_start,false,false",
                                                                             "items": [
                                                                                 {
-                                                                                    "|xns": "Gtk",
-                                                                                    "xtype": "ComboBox",
-                                                                                    "id": "combo",
-                                                                                    "|init": "function() {\n    XObject.prototype.init.call(this);\n    this.el.add_attribute(this.get('render').el , 'markup', 1 );  \n}\n",
-                                                                                    "|getValue": "function() {\n    var ix = this.el.get_active();\n    if (ix < 0 ) {\n        return false;\n    }\n    var data = imports.Builder.Provider.ProjectManager.ProjectManager.projects;\n    if (typeof(data[ix]) == 'undefined') {\n \treturn false; \n    }\n    return data[ix].fn;\n}",
-                                                                                    "|setValue": "function(fn)\n{\n    var el = this.el;\n    el.set_active(-1);\n    var data = imports.Builder.Provider.ProjectManager.ProjectManager.projects;\n    data.forEach(function(n, ix) {\n        if (fn == n.fn) {\n            el.set_active(ix);\n            return false;\n        }\n    });\n}\n",
                                                                                     "listeners": {
                                                                                         "changed": "function (self) {\n\tvar fn = this.getValue();\n\tvar pm  = imports.Builder.Provider.ProjectManager.ProjectManager;\n\tthis.get('/LeftProjectTree.model').loadProject(pm.getByFn(fn))\n}"
                                                                                     },
+                                                                                    "id": "combo",
+                                                                                    "xtype": "ComboBox",
+                                                                                    "|getValue": "function() {\n    var ix = this.el.get_active();\n    if (ix < 0 ) {\n        return false;\n    }\n    var data = imports.Builder.Provider.ProjectManager.ProjectManager.projects;\n    if (typeof(data[ix]) == 'undefined') {\n \treturn false; \n    }\n    return data[ix].fn;\n}",
+                                                                                    "|init": "function() {\n    XObject.prototype.init.call(this);\n    this.el.add_attribute(this.get('render').el , 'markup', 1 );  \n}\n",
+                                                                                    "|setValue": "function(fn)\n{\n    var el = this.el;\n    el.set_active(-1);\n    var data = imports.Builder.Provider.ProjectManager.ProjectManager.projects;\n    data.forEach(function(n, ix) {\n        if (fn == n.fn) {\n            el.set_active(ix);\n            return false;\n        }\n    });\n}\n",
+                                                                                    "|xns": "Gtk",
                                                                                     "items": [
                                                                                         {
                                                                                             "|xns": "Gtk",
@@ -379,12 +379,12 @@
                                                                                             "id": "render"
                                                                                         },
                                                                                         {
-                                                                                            "|xns": "Gtk",
-                                                                                            "xtype": "ListStore",
+                                                                                            "id": "combomodel",
                                                                                             "pack": "set_model",
-                                                                                            "|init": "function() {\n    XObject.prototype.init.call(this);\n  this.el.set_column_types ( 2, [\n        GObject.TYPE_STRING,  // real key\n        GObject.TYPE_STRING // real type\n        \n        \n    ] );\n   var pm = imports.Builder.Provider.ProjectManager.ProjectManager;\n   var _this = this;\n   pm.on('changed', function() {\n       print(\"caught changed hook on project manager - reloading data\");\n\t_this.loadData(pm.projects);\n\n   });\n}\n",
+                                                                                            "xtype": "ListStore",
+                                                                                            "|init": "function() {\n    XObject.prototype.init.call(this);\n  this.el.set_column_types ( 2, [\n        GObject.TYPE_STRING,  // real key\n        GObject.TYPE_STRING // real type\n        \n        \n    ] );\n   // this.el.set_sort_column_id(1,Gtk.SortType.ASCENDING);\n   var pm = imports.Builder.Provider.ProjectManager.ProjectManager;\n   var _this = this;\n   pm.on('changed', function() {\n       print(\"caught changed hook on project manager - reloading data\");\n\t_this.loadData(pm.projects);\n\n   });\n}\n",
                                                                                             "|loadData": "function(data) {\n     var ov = this.get('/LeftProjectTree.combo').getValue();\n    this.el.clear();\n    var iter = new Gtk.TreeIter();\n    var el = this.el;\n    data.forEach(function(p) {\n        \n        el.append(iter);\n        \n         \n        el.set_value(iter, 0, p.fn);\n        el.set_value(iter, 1, p.name);\n        \n    });\n    \n    this.get('/LeftProjectTree.combo').setValue(ov);\n}\n",
-                                                                                            "id": "combomodel"
+                                                                                            "|xns": "Gtk"
                                                                                         }
                                                                                     ]
                                                                                 }
@@ -779,10 +779,10 @@
                                                             "|xns": "Gtk"
                                                         },
                                                         {
-                                                            "|xns": "Gtk",
+                                                            "pack": false,
                                                             "xtype": "TreeViewColumn",
                                                             "|init": "function() {\n    this.el = new Gtk.TreeViewColumn();\n    this.parent.el.append_column(this.el);\n    \n    XObject.prototype.init.call(this);\n    this.el.add_attribute(this.items[0].el , 'markup', 4  );\n}\n",
-                                                            "pack": false,
+                                                            "|xns": "Gtk",
                                                             "items": [
                                                                 {
                                                                     "|xns": "Gtk",

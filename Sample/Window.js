@@ -1468,11 +1468,14 @@ Window=new XObject({
                                                                     items : [
                                                                         {
                                                                             xtype: Gtk.ComboBox,
-                                                                            id : "combo",
-                                                                            init : function() {
-                                                                                XObject.prototype.init.call(this);
-                                                                                this.el.add_attribute(this.get('render').el , 'markup', 1 );  
+                                                                            listeners : {
+                                                                                changed : function (self) {
+                                                                                	var fn = this.getValue();
+                                                                                	var pm  = imports.Builder.Provider.ProjectManager.ProjectManager;
+                                                                                	this.get('/LeftProjectTree.model').loadProject(pm.getByFn(fn))
+                                                                                }
                                                                             },
+                                                                            id : "combo",
                                                                             getValue : function() {
                                                                                 var ix = this.el.get_active();
                                                                                 if (ix < 0 ) {
@@ -1483,6 +1486,10 @@ Window=new XObject({
                                                                              	return false; 
                                                                                 }
                                                                                 return data[ix].fn;
+                                                                            },
+                                                                            init : function() {
+                                                                                XObject.prototype.init.call(this);
+                                                                                this.el.add_attribute(this.get('render').el , 'markup', 1 );  
                                                                             },
                                                                             setValue : function(fn)
                                                                             {
@@ -1496,13 +1503,6 @@ Window=new XObject({
                                                                                     }
                                                                                 });
                                                                             },
-                                                                            listeners : {
-                                                                                changed : function (self) {
-                                                                                	var fn = this.getValue();
-                                                                                	var pm  = imports.Builder.Provider.ProjectManager.ProjectManager;
-                                                                                	this.get('/LeftProjectTree.model').loadProject(pm.getByFn(fn))
-                                                                                }
-                                                                            },
                                                                             items : [
                                                                                 {
                                                                                     xtype: Gtk.CellRendererText,
@@ -1511,6 +1511,7 @@ Window=new XObject({
                                                                                 },
                                                                                 {
                                                                                     xtype: Gtk.ListStore,
+                                                                                    id : "combomodel",
                                                                                     pack : "set_model",
                                                                                     init : function() {
                                                                                         XObject.prototype.init.call(this);
@@ -1520,6 +1521,7 @@ Window=new XObject({
                                                                                             
                                                                                             
                                                                                         ] );
+                                                                                       // this.el.set_sort_column_id(1,Gtk.SortType.ASCENDING);
                                                                                        var pm = imports.Builder.Provider.ProjectManager.ProjectManager;
                                                                                        var _this = this;
                                                                                        pm.on('changed', function() {
@@ -1544,8 +1546,7 @@ Window=new XObject({
                                                                                         });
                                                                                         
                                                                                         this.get('/LeftProjectTree.combo').setValue(ov);
-                                                                                    },
-                                                                                    id : "combomodel"
+                                                                                    }
                                                                                 }
                                                                             ]
                                                                         }
@@ -2739,6 +2740,7 @@ Window=new XObject({
                                                 },
                                                 {
                                                     xtype: Gtk.TreeViewColumn,
+                                                    pack : false,
                                                     init : function() {
                                                         this.el = new Gtk.TreeViewColumn();
                                                         this.parent.el.append_column(this.el);
@@ -2746,7 +2748,6 @@ Window=new XObject({
                                                         XObject.prototype.init.call(this);
                                                         this.el.add_attribute(this.items[0].el , 'markup', 4  );
                                                     },
-                                                    pack : false,
                                                     items : [
                                                         {
                                                             xtype: Gtk.CellRendererText,
