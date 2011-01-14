@@ -264,3 +264,11 @@ left:
   Roo.JsonView:tpl
 right: 
   Roo.Template
+
+  
+  //drag drop..
+left: 
+   Roo.grid.Grid
+right:
+   Roo.dd.DropTarget
+  
