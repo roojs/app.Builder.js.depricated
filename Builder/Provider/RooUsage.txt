@@ -89,6 +89,7 @@ right:
   Roo.form.TextArea         
   Roo.form.HtmlEditor         
   Roo.form.FCKeditor         
+  Roo.form.DisplayField
   Roo.Button         
 
 left: 
