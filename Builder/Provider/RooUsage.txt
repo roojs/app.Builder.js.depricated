@@ -240,6 +240,7 @@ left:
   Roo.grid.EditorGrid:ds
   Roo.grid.Grid:ds
   Roo.form.ComboBox:store
+  Roo.form.GridField:store
   Roo.View:store
   Roo.JsonView:store
 right: 
