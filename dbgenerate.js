@@ -100,7 +100,7 @@ var map = {
     'time' : 'string', //bogus
     'int' : 'int',
     'bigint' : 'int',
-    'double' : 'int',
+    'double' : 'float',
     'tinyint' : 'int',
     'decimal' : 'float',
     'float' : 'float',
