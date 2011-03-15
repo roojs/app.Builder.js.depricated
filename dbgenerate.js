@@ -100,7 +100,7 @@ var map = {
     'time' : 'string', //bogus
     'int' : 'int',
     'bigint' : 'int',
-    
+    'double' : 'int',
     'tinyint' : 'int',
     'decimal' : 'float',
     'float' : 'float',
@@ -459,6 +459,7 @@ readers.forEach(function(reader) {
 
     var dir = GLib.get_home_dir() + '/.Builder/Roo.data.JsonReader'; 
     if (!File.isDirectory(dir)) {
+        print("mkdir " + dir);
         File.mkdir(dir);
     }
     
@@ -486,6 +487,7 @@ readers.forEach(function(reader) {
     // GRIDS
     dir = GLib.get_home_dir() + '/.Builder/Roo.GridPanel'; 
     if (!File.isDirectory(dir)) {
+        print("mkdir " + dir);
         File.mkdir(dir);
     }
     
@@ -633,6 +635,7 @@ readers.forEach(function(reader) {
     
     dir = GLib.get_home_dir() + '/.Builder/Roo.form.Form'; 
     if (!File.isDirectory(dir)) {
+        print("mkdir " + dir);
         File.mkdir(dir);
     }
     var formElements = [];
@@ -707,6 +710,7 @@ readers.forEach(function(reader) {
     
     dir = GLib.get_home_dir() + '/.Builder/Roo.form.ComboBox'; 
     if (!File.isDirectory(dir)) {
+        print("mkdir " + dir);
         File.mkdir(dir);
     }
    
@@ -729,6 +733,7 @@ readers.forEach(function(reader) {
    
     dir = GLib.get_home_dir() + '/.Builder/Roo.LayoutDialog'; 
     if (!File.isDirectory(dir)) {
+        print("mkdir " + dir);
         File.mkdir(dir);
     }
     var formElements = [];
