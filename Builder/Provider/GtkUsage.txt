@@ -85,6 +85,7 @@ right:
 	Gtk.VScale 
 	Gtk.SpinButton 
 	Gtk.TreeView
+        Gtk.TextView
         Gtk.ComboBox 
 	Gtk.ComboBoxEntry 
 	Gtk.Menu 
