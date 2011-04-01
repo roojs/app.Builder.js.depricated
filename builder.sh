@@ -4,7 +4,7 @@ export GI_TYPELIB_PATH=~/.Builder/girepository-1.1
 
 TEST=.
 echo ${TEST}
-
+exit;
 cd $(dirname $0)
 
 # run theapplication.
