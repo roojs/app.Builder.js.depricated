@@ -90,6 +90,7 @@ right:
   Roo.form.HtmlEditor         
   Roo.form.FCKeditor         
   Roo.form.DisplayField
+  Roo.form.DayPicker
   Roo.Button         
 
 left: 
