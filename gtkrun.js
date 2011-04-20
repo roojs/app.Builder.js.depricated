@@ -46,11 +46,11 @@ Vte         = imports.gi.Vte;
 
 Gdl         = imports.gi.Gdl;
 
-GtkClutter  = imports.gi.GtkClutter;
+//GtkClutter  = imports.gi.GtkClutter;
 
-if (GtkClutter) {    
-    GtkClutter.init(Seed.argv);
-}
+//if (GtkClutter) {    
+//    GtkClutter.init(Seed.argv);
+//}
 
 File    = imports.File.File;
 
