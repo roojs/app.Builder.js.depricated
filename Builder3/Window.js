@@ -2476,6 +2476,9 @@ Window=new XObject({
                                                                                 
                                                                                 },
                                                                                 edited : function (self, object, p0) {
+                                                                                    
+                                                                                        print("CHANGED VALUE:" + JSON.stringify(p0, null,4));
+                                                                                        return;
                                                                                 	var model = this.get('/LeftPanel.model');
                                                                                         var path = model.activePath;
                                                                                         var iret = {};
@@ -2522,11 +2525,11 @@ Window=new XObject({
                                                                             xtype: Gtk.CellRendererCombo,
                                                                             listeners : {
                                                                                 edited : function (self, object, p0) {
+                                                                                    
                                                                                  	this.get('/LeftPanel').editing = false;
                                                                                  	var ap = this.get('/LeftPanel.model').activePath
                                                                                 	print("EDITED? "  + ap + " - p:" + p0 + " t:" + p0);
-                                                                                        this.get('/LeftTree.model').setFromNode(false,p0);
-                                                                                        this.get('/LeftTree.model').changed(true); 
+                                                                                        this.get('/LeftPanel.model').changed(p0, true);
                                                                                         this.get('/LeftPanel.model').activePath = false;
                                                                                         this.el.editable = false;
                                                                                 },
