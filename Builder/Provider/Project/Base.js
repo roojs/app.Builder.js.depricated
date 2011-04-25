@@ -17,6 +17,7 @@ GLib = imports.gi.GLib;
 
 console = imports.console;
 XObject = imports.XObject.XObject;
+File = imports.File.File;
 
 ProjectManager = imports.Builder.Provider.ProjectManager.ProjectManager;
 Observable = imports.Observable.Observable;
@@ -275,30 +276,29 @@ Base = XObject.define(
                 return;
             }
             // this should be done async -- but since we are getting the proto up ...
-            var gdir = GLib.dir_open(dir,0);
+            var dirs = File.list(dir);
             var subs = [];
             var _this = this;
-            while (true) {
-                var fn = gdir.read_name();
+            dirs.forEach(function( fn ){ 
+                 
                 console.log('trying ' + dir + '/' + fn);
                 if (!fn) {
-                    gdir.close();
                     subs.forEach( function(s) {
                         _this.scanDir(s, dp+1);
                     });
                     return;
                 }
                 if (fn[0] == '.') { // skip hidden
-                    continue;
+                    return;
                 }
                 
                 if (GLib.file_test(dir  + '/' + fn, GLib.FileTest.IS_DIR)) {
                     subs.push(dir  + '/' + fn);
-                    continue;
+                    return;
                 }
                 
                 if (!fn.match(/\.bjs$/)) {
-                    continue;
+                    return;
                 }
                 var parent = '';
                 //if (dp > 0 ) {
@@ -307,19 +307,19 @@ Base = XObject.define(
                 parent = sp.join('.');
                 
                 
-                if (typeof(this.files[dir  + '/' + fn]) != 'undefined') {
+                if (typeof(_this.files[dir  + '/' + fn]) != 'undefined') {
                     // we already have it..
-                    this.files[dir  + '/' + fn].parent = parent;
-                    continue;
+                    _this.files[dir  + '/' + fn].parent = parent;
+                    return;
                 }
-                var xt = this.xtype;
+                var xt = _this.xtype;
                 var cls = imports.Builder.Provider.File[xt][xt];
                 
                 Seed.print("Adding file " + dir  + '/' + fn);
-                this.files[dir  + '/' + fn] = new cls({
+                _this.files[dir  + '/' + fn] = new cls({
                     path : dir  + '/' + fn,
                     parent : parent,
-                    project : this
+                    project : _this
                 });
                 //console.log(this.files[dir  + '/' + fn] );
                 /*
@@ -332,7 +332,7 @@ Base = XObject.define(
                 // fixme... time data is busted..
                 this.files[dir  + '/' + fn] = '' + tv.tv_sec + '.' + tv.tv_usec;
                 */
-            }
+            });
              
             
         }
