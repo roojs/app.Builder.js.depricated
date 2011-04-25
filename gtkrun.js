@@ -31,7 +31,10 @@ GIRepository = imports.gi.GIRepository;
 GLib        = imports.gi.GLib;
 
 // we add this in, as it appears to get lost sometimes if we set it using the ENV. variable in builder.sh
-GIRepository.IRepository.prepend_search_path(GLib.get_home_dir() + '/.Builder/girepository-1.1');
+if (GIRepository.IRepository) { 
+    GIRepository.IRepository.prepend_search_path(
+        GLib.get_home_dir() + '/.Builder/girepository-1.1');
+}
 //print(JSON.stringify(GIRepository.IRepository.get_search_path()));
 
 Gtk         = imports.gi.Gtk;
@@ -44,8 +47,8 @@ GtkSource   = imports.gi.GtkSource;
 WebKit      = imports.gi.WebKit;
 Vte         = imports.gi.Vte;
 
-Gdl         = imports.gi.Gdl;
-
+// we do not use these yet..
+//Gdl         = imports.gi.Gdl;
 GtkClutter  = imports.gi.GtkClutter;
 
 if (GtkClutter) {    
