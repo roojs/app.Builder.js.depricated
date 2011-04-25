@@ -2801,7 +2801,7 @@ Window=new XObject({
                             ]
                         },
                         {
-                            xtype: Gtk.HBox,
+                            xtype: Gtk.HPaned,
                             pack : "add",
                             items : [
                                 {
