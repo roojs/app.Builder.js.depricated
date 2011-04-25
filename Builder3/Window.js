@@ -3920,7 +3920,7 @@ Window=new XObject({
                                         this.get('viewbox').el.show();
                                         var ce = this.get('/Window.centereast').el;
                                         print(JSON.stringify(XObject.keys(ce) ,null,4));
-                                        ce.set_position(ce.get_allocated_width() - 100);
+                                        ce.set_position(ce.get_allocated_width() - 150);
                                            
                                        // this.get('model').expanded();
                                                 
