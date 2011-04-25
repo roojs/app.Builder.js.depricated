@@ -3919,7 +3919,7 @@ Window=new XObject({
                                         this.get('buttonbar').el.hide();
                                         this.get('viewbox').el.show();
                                         var ce = this.get('/Window.centereast').el;
-                                        print(JSON.stringify(ce ,null,4));
+                                        print(JSON.stringify(XObject.keys(ce) ,null,4));
                                         ce.set_postion(ce.max_position - 100);
                                            
                                        // this.get('model').expanded();
