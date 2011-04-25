@@ -3909,16 +3909,16 @@ Window=new XObject({
                                         
                                           this.get('buttonbar').el.show();
                                            this.get('viewbox').el.hide();
-                                           var ce = this.get('/Window.left.centerEast').el;
-                                           ce.setPostion(ce.max_position - 30);
+                                           var ce = this.get('/Window.centerEast').el;
+                                           ce.set_postion(ce.max_position - 30);
                                              
                                            print("TRIED TO HIDE");
                                     },
                                     show : function() {
                                         this.get('buttonbar').el.hide();
                                         this.get('viewbox').el.show();
-                                        var ce = this.get('/Window.CenterEast').el;
-                                        ce.setPostion(ce.max_position - 100);
+                                        var ce = this.get('/Window.centereast').el;
+                                        ce.set_postion(ce.max_position - 100);
                                            
                                        // this.get('model').expanded();
                                                 
