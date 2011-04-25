@@ -2803,6 +2803,8 @@ Window=new XObject({
                         {
                             xtype: Gtk.HPaned,
                             pack : "add",
+                            position : 500,
+
                             items : [
                                 {
                                     xtype: Gtk.VPaned,
