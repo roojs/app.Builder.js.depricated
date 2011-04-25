@@ -8,7 +8,6 @@ GtkSource = imports.gi.GtkSource;
 WebKit = imports.gi.WebKit;
 Vte = imports.gi.Vte;
 GtkClutter = imports.gi.GtkClutter;
-Gdl = imports.gi.Gdl;
 console = imports.console;
 XObject = imports.XObject.XObject;
 Window=new XObject({
@@ -21,8 +20,10 @@ Window=new XObject({
            Gtk.main_quit();
         },
         show : function (self) {
-          print("WINDOW SHOWING - trying to hide");
+          
         imports.Builder.Provider.ProjectManager.ProjectManager.loadConfig();
+          
+        print("HIDEWIN - calling MidPropTree hidewin")
          	this.get('/MidPropTree').hideWin();
             this.get('/RightPalete').hide();
             this.get('/BottomPane').el.hide();
@@ -354,10 +355,11 @@ Window=new XObject({
                                                             } else {
                                                                 this.onCollapse();
                                                             }
+                                                            return true;
                                                         	  
                                                         },
                                                         enter_notify_event : function (self, event) {
-                                                        return;
+                                                            return true;
                                                              this.el.expanded = !this.el.expanded;
                                                         //if (this.el.expanded ) {
                                                             this.listeners.activate.call(this);
@@ -419,13 +421,12 @@ Window=new XObject({
                                                                  if (!path) {
                                                                     return false;
                                                                  }
-                                                                 var iter = new Gtk.TreeIter();
-                                                                 this.get('model').el.get_iter_from_string(iter, path);
+                                                                 var ret ={} ;
+                                                                 this.get('model').el.get_iter_from_string(ret, path);
                                                                  
-                                                                 var value = new GObject.Value('');
-                                                                 this.get('model').el.get_value(iter, 2, value);
+                                                                 var value =  ''+ this.get('model').el.get_value(ret.iter, 2).value.get_string();
                                                                     
-                                                                 return JSON.parse(value.value);
+                                                                 return JSON.parse(value);
                                                             },
                                                             getActiveFile : function() {
                                                                 return this.get('model').file;
@@ -436,10 +437,9 @@ Window=new XObject({
                                                                 if (view.selection.count_selected_rows() < 1) {
                                                                     return false;
                                                                 }
-                                                                var iter = new Gtk.TreeIter();
-                                                            
-                                                                view.selection.get_selected(model.el, iter);
-                                                                return model.el.get_path(iter).to_string();
+                                                                var ret = {};
+                                                                view.selection.get_selected(ret);
+                                                                return ret.model.get_path(ret.iter).to_string();
                                                             },
                                                             getPaleteProvider : function() {
                                                                 var model = this.get('model');
@@ -499,18 +499,16 @@ Window=new XObject({
                                                                                 print("click:" + res.path.to_string());
                                                                                 return false;
                                                                         },
-                                                                        drag_begin : function (self, drag_context) {
+                                                                        drag_begin : function (self, ctx) {
                                                                         	print('SOURCE: drag-begin');
                                                                                  this.targetData = false;
                                                                                 // find what is selected in our tree...
-                                                                                var iter = new Gtk.TreeIter();
-                                                                                var s = this.selection;
-                                                                                s.get_selected(this.get('/LeftTree.model').el, iter);
+                                                                                var ret ={};
+                                                                                this.selection.get_selected(ret);
                                                                         
                                                                                 // set some properties of the tree for use by the dropped element.
-                                                                                var value = new GObject.Value('');
-                                                                                this.get('/LeftTree.model').el.get_value(iter, 2, value);
-                                                                                var data = JSON.parse(value.value);
+                                                                                var value = ''+ ret.model.get_value(ret.iter, 2).value.get_string();
+                                                                                var data = JSON.parse(value);
                                                                                 var xname = this.get('/LeftTree.model').file.guessName(data);
                                                                                 
                                                                                 this.el.dragData = xname;
@@ -518,17 +516,13 @@ Window=new XObject({
                                                                                 
                                                                         
                                                                                 // make the drag icon a picture of the node that was selected
-                                                                                var path = this.get('/LeftTree.model').el.get_path(iter);
+                                                                                var path = ret.model.get_path(ret.iter);
                                                                                 this.el.treepath = path.to_string();
                                                                                 
+                                                                                // returns a cairo surface
                                                                                 var pix = this.el.create_row_drag_icon ( path);
                                                                                 
-                                                                                Gtk.drag_set_icon_pixmap (ctx,
-                                                                                    pix.get_colormap(),
-                                                                                    pix,
-                                                                                    null,
-                                                                                    -10,
-                                                                                    -10);
+                                                                                Gtk.drag_set_icon_surface (ctx, pix);
                                                                                 
                                                                                 return true;
                                                                         },
@@ -540,103 +534,118 @@ Window=new XObject({
                                                                                 this.get('/LeftTree.view').highlight(false);
                                                                                 return true;
                                                                         },
+                                                                        drag_data_get : function(self, ctx, sel_data, info, time)
+                                                                        {
+                                                                            
+                                                                            sel_data.set_text( 
+                                                                                      "HELOLW" 
+                                                                                    
+                                                                            );
+                                                                            
+                                                                        },
+                                                                        
                                                                         drag_motion : function (self, ctx, x, y, time) {
                                                                             console.log("LEFT-TREE: drag-motion");
-                                                                                        var src = Gtk.drag_get_source_widget(ctx);
-                                                                        
-                                                                                        // a drag from  elsewhere...- prevent drop..
-                                                                                        if (!src.dragData) {
-                                                                                            print("no drag data!");
-                                                                                            Gdk.drag_status(ctx, 0, time);
-                                                                                            this.targetData = false;
-                                                                                            return true;
-                                                                                        }
-                                                                                        var action = Gdk.DragAction.COPY;
-                                                                                        if (src == this.el) {
-                                                                                            // unless we are copying!!! ctl button..
-                                                                                            action = ctx.actions & Gdk.DragAction.MOVE ? Gdk.DragAction.MOVE : Gdk.DragAction.COPY ;
-                                                                                        }
-                                                                                        var data = {};
-                                                                        
-                                                                        		if (!this.get('/LeftTree.model').el.iter_n_children(null)) {
-                                                                        			// no children.. -- asume it's ok..
-                                                                        			this.targetData =  [ '' , Gtk.TreeViewDropPosition.INTO_OR_AFTER , ''];
-                                                                        			Gdk.drag_status(ctx, action ,time);
-                                                                        			return true;
-                                                                        		}
-                                                                        
-                                                                                        print("GETTING POS");
-                                                                                        var isOver = this.get('/LeftTree.view').el.get_dest_row_at_pos(x,y, data);
-                                                                                        print("ISOVER? " + isOver);
-                                                                                        if (!isOver) {
-                                                                                            Gdk.drag_status(ctx, 0 ,time);
-                                                                                            return false; // not over apoint!?!
-                                                                                        }
-                                                                                        // drag node is parent of child..
-                                                                                        console.log("SRC TREEPATH: " + src.treepath);
-                                                                                        console.log("TARGET TREEPATH: " + data.path.to_string());
-                                                                                        
-                                                                                        // nned to check a  few here..
-                                                                                        //Gtk.TreeViewDropPosition.INTO_OR_AFTER
-                                                                                        //Gtk.TreeViewDropPosition.INTO_OR_BEFORE
-                                                                                        //Gtk.TreeViewDropPosition.AFTER
-                                                                                        //Gtk.TreeViewDropPosition.BEFORE
-                                                                                        
-                                                                                        if (typeof(src.treepath) != 'undefined'  && 
-                                                                                            src.treepath == data.path.to_string().substring(0,src.treepath.length)) {
-                                                                                            print("subpath drag");
-                                                                                             Gdk.drag_status(ctx, 0 ,time);
-                                                                                            return false;
-                                                                                        }
-                                                                                        
-                                                                                        // check that 
-                                                                                        //print("DUMPING DATA");
-                                                                                        //console.dump(data);
-                                                                                        // path, pos
-                                                                                        
-                                                                                        print(data.path.to_string() +' => '+  data.pos);
-                                                                                        var tg = this.get('/LeftTree.model').findDropNodeByPath(
-                                                                                            data.path.to_string(), src.dropList, data.pos);
-                                                                                            
-                                                                                        this.get('/LeftTree.view').highlight(tg);
-                                                                                        if (!tg.length) {
-                                                                                            print("Can not find drop node path");
-                                                                                            this.targetData = false;
-                                                                                            Gdk.drag_status(ctx, 0, time);
-                                                                                            return true;
-                                                                                        }
-                                                                                        //console.dump(tg);
-                                                                                        this.targetData = tg;    
-                                                                                        
-                                                                                        
-                                                                                        Gdk.drag_status(ctx, action ,time);
-                                                                                         
-                                                                                        return true;
+                                                                            var src = Gtk.drag_get_source_widget( ctx);
+                                                            
+                                                                            // a drag from  elsewhere...- prevent drop..
+                                                                            if (!src.dragData) {
+                                                                                print("no drag data!");
+                                                                                Gdk.drag_status(ctx, 0, time);
+                                                                                this.targetData = false;
+                                                                                return true;
+                                                                            }
+                                                                            var action = Gdk.DragAction.COPY;
+                                                                            if (src == this.el) {
+                                                                                // unless we are copying!!! ctl button..
+                                                                                action = ctx.get_actions() & Gdk.DragAction.MOVE ? Gdk.DragAction.MOVE : Gdk.DragAction.COPY ;
+                                                                            }
+                                                                            var data = {};
+                                                            
+                                                                            if (!this.get('/LeftTree.model').el.iter_n_children(null)) {
+                                                                                    // no children.. -- asume it's ok..
+                                                                                    this.targetData =  [ '' , Gtk.TreeViewDropPosition.INTO_OR_AFTER , ''];
+                                                                                    Gdk.drag_status(ctx, action ,time);
+                                                                                    return true;
+                                                                            }
+                                                            
+                                                                            print("GETTING POS");
+                                                                            var isOver = this.get('/LeftTree.view').el.get_dest_row_at_pos(x,y, data);
+                                                                            print("ISOVER? " + isOver);
+                                                                            if (!isOver) {
+                                                                                Gdk.drag_status(ctx, 0 ,time);
+                                                                                return false; // not over apoint!?!
+                                                                            }
+                                                                            // drag node is parent of child..
+                                                                            console.log("SRC TREEPATH: " + src.treepath);
+                                                                            console.log("TARGET TREEPATH: " + data.path.to_string());
+                                                                            
+                                                                            // nned to check a  few here..
+                                                                            //Gtk.TreeViewDropPosition.INTO_OR_AFTER
+                                                                            //Gtk.TreeViewDropPosition.INTO_OR_BEFORE
+                                                                            //Gtk.TreeViewDropPosition.AFTER
+                                                                            //Gtk.TreeViewDropPosition.BEFORE
+                                                                            
+                                                                            if (typeof(src.treepath) != 'undefined'  && 
+                                                                                src.treepath == data.path.to_string().substring(0,src.treepath.length)) {
+                                                                                print("subpath drag");
+                                                                                Gdk.drag_status( ctx, 0 ,time);
+                                                                                return false;
+                                                                            }
+                                                                            
+                                                                            // check that 
+                                                                            //print("DUMPING DATA");
+                                                                            //console.dump(data);
+                                                                            // path, pos
+                                                                            
+                                                                            print(data.path.to_string() +' => '+  data.pos);
+                                                                            var tg = this.get('/LeftTree.model').findDropNodeByPath(
+                                                                                data.path.to_string(), src.dropList, data.pos);
+                                                                                
+                                                                            this.get('/LeftTree.view').highlight(tg);
+                                                                            if (!tg.length) {
+                                                                                print("Can not find drop node path");
+                                                                                this.targetData = false;
+                                                                                Gdk.drag_status(ctx, 0, time);
+                                                                                return true;
+                                                                            }
+                                                                              print(JSON.stringify(tg,null,4));
+                                                                            //console.dump(tg);
+                                                                            this.targetData = tg;    
+                                                                            
+                                                                            
+                                                                            Gdk.drag_status(ctx, action ,time);
+                                                                             
+                                                                            return true;
                                                                         },
                                                                         drag_drop : function (w, ctx, x, y, time) {
                                                                               Seed.print("TARGET: drag-drop");
-                                                                                               
-                                                                                                Gtk.drag_get_data
-                                                                                                (
-                                                                                                        w,         /* will receive 'drag-data-received' signal */
-                                                                                                        ctx,        /* represents the current state of the DnD */
-                                                                                                        this.get('/Window').atoms["STRING"],    /* the target type we want */
-                                                                                                        time            /* time stamp */
-                                                                                                );
-                                                                                                
-                                                                                                 
-                                                                                                /* No target offered by source => error */
-                                                                                               
-                                                                        
-                                                                                                return  true;
+                                                                                //print(JSON.stringify(w.drag_dest_get_target_list(),null,4));
+                                                                                w.drag_get_data
+                                                                                (          /* will receive 'drag-data-received' signal */
+                                                                                        ctx,        /* represents the current state of the DnD */
+                                                                                        this.get('/Window').atoms["STRING"],    /* the target type we want */
+                                                                                        time            /* time stamp */
+                                                                                );
+                                                                                
+                                                                                 
+                                                                                /* No target offered by source => error */
+                                                                               
+                                                        
+                                                                                return  true;
                                                                         },
                                                                         drag_data_received : function (self, ctx, x, y, sel_data, info, time) {
                                                                         	 print("Tree: drag-data-received");
                                                                         
                                                                                       var   delete_selection_data = false;
                                                                                        var  dnd_success = false;
+                                                                                       print(JSON.stringify(sel_data, null,4));
                                                                                         /* Deal with what we are given from source */
-                                                                                        if( sel_data && sel_data.length ) {
+                                                                                        
+                                                                                        // simce I can not be bothered to sort out
+                                                                                        // drag drop = let's assume it worked...
+                                                                                        
+                                                                                        if( true || (sel_data && sel_data.length )) {
                                                                                             
                                                                                             if (ctx.action == Gdk.DragAction.ASK)  {
                                                                                                 /* Ask the user to move or copy, then set the ctx action. */
@@ -646,13 +655,15 @@ Window=new XObject({
                                                                                                 //delete_selection_data = true;
                                                                                             }
                                                                                             
-                                                                                            var source = Gtk.drag_get_source_widget(ctx);
+                                                                                            var source = Gtk.drag_get_source_widget( ctx );
                                                                         
                                                                                             if (this.targetData) {
                                                                                                 if (source != this.el) {
+                                                                                                    print("DRAG FROM ANOTHER WIDGET");
                                                                                                     this.get('/LeftTree.model').dropNode(this.targetData,  source.dragData);
                                                                                                 } else {
                                                                                                     // drag around.. - reorder..
+                                                                                                     print("DRAG FROM SELF");
                                                                                                      this.get('/LeftTree.model').moveNode(this.targetData, ctx.action);
                                                                                                     
                                                                                                     
@@ -674,7 +685,7 @@ Window=new XObject({
                                                                                                 Seed.print ("DnD data transfer failed!\n");
                                                                                         }
                                                                         
-                                                                                        Gtk.drag_finish (ctx, dnd_success, delete_selection_data, time);
+                                                                                        Gtk.drag_finish (  ctx, dnd_success, delete_selection_data, time);
                                                                                         return true;
                                                                         },
                                                                         cursor_changed : function (self) {
@@ -702,36 +713,37 @@ Window=new XObject({
                                                                                 return true;
                                                                             }
                                                                                     
-                                                                                    //console.log('changed');
-                                                                                var s = this.selection;
-                                                                                  var iter = new Gtk.TreeIter();
-                                                                                s.get_selected(this.get('/LeftTree.model').el, iter);
-                                                                                
-                                                                                
-                                                                                // var val = "";
-                                                                                var value = new GObject.Value('');
-                                                                                this.get('/LeftTree.model').el.get_value(iter, 2, value);
-                                                                                this.get('/LeftTree.model').activePath = this.get('/LeftTree.model').el.get_path(iter).to_string();
-                                                                                
-                                                                                var data = JSON.parse(value.value);
-                                                                                this.get('/MidPropTree').activeElement =  data;
-                                                                                this.get('/MidPropTree').hideWin();
-                                                                                this.get('/LeftPanel.model').load( data);
-                                                                                
-                                                                                console.log(value.value);
-                                                                               // _g.button.set_label(''+value.get_string());
-                                                                        
-                                                                                var pm =this.get('/RightPalete.model');
-                                                                                pm.load(  this.get('/LeftTree').getPaleteProvider().gatherList(
-                                                                                     this.get('/LeftTree.model').listAllTypes()));
+                                                                                //console.log('changed');
+                                                                            var s = this.selection;
+                                                                            var ret = {};
+                                                                            s.get_selected(ret);
+                                                                            
+                                                                             // var val = "";
+                                                                            var value = ''+ret.model.get_value(ret.iter, 2).value.get_string();
+                                                                            this.get('/LeftPanel.model').activePath = ret.model.get_path(ret.iter).to_string();
+                                                                            
+                                                                            print("----------START EDITING: " + this.get('/LeftTree').getActivePath() );
+                                                                            
+                                                                            
+                                                                            var data = JSON.parse(value);
+                                                                            this.get('/MidPropTree').activeElement =  data;
+                                                                            this.get('/MidPropTree').hideWin();
+                                                                            this.get('/LeftPanel.model').load( data);
+                                                                            
+                                                                            console.log(value);
+                                                                           // _g.button.set_label(''+value.get_string());
+                                                                    
+                                                                            var pm =this.get('/RightPalete.model');
+                                                                            pm.load(  this.get('/LeftTree').getPaleteProvider().gatherList(
+                                                                                 this.get('/LeftTree.model').listAllTypes()));
+                                                                           
+                                                                            
+                                                                            if (render && render.redraw) {
+                                                                                render.redraw();
+                                                                            }
                                                                                
-                                                                                
-                                                                                   if (render && render.redraw) {
-                                                                                    render.redraw();
-                                                                                }
-                                                                                   
-                                                                                    //Seed.print( value.get_string());
-                                                                                    return true;
+                                                                                //Seed.print( value.get_string());
+                                                                            return true;
                                                                                         
                                                                         }
                                                                     },
@@ -751,6 +763,7 @@ Window=new XObject({
                                                                                 }
                                                                                  
                                                                             },
+                                                                            
                                                                     init : function() {
                                                                         	XObject.prototype.init.call(this);
                                                                     	var description = new Pango.FontDescription.c_new();
@@ -767,29 +780,27 @@ Window=new XObject({
                                                                     		    _this.get('/LeftTree.view'), [ _this.get('/LeftTree.view'), '']
                                                                     		);
                                                                     	});
-                                                                    
-                                                                    	Gtk.drag_source_set (
-                                                                    		this.el,            /* widget will be drag-able */
+                                                                        
+                                                                    	this.el.drag_source_set(             /* widget will be drag-able */
                                                                     		Gdk.ModifierType.BUTTON1_MASK,       /* modifier that will start a drag */
                                                                     		null,            /* lists of target to support */
                                                                     		0,              /* size of list */
                                                                     		Gdk.DragAction.COPY   | Gdk.DragAction.MOVE           /* what to do with data after dropped */
                                                                     	);
+                                                                     
+                                                                    	this.el.drag_source_set_target_list(this.get('/Window').targetList);
                                                                     
-                                                                    	Gtk.drag_source_set_target_list(this.el, this.get('/Window').targetList);
-                                                                    
-                                                                    	Gtk.drag_source_add_text_targets(this.el); 
-                                                                    	Gtk.drag_dest_set
-                                                                    	(
-                                                                    	    this.el,              /* widget that will accept a drop */
+                                                                    	this.el.drag_source_add_text_targets(); 
+                                                                    	this.el.drag_dest_set
+                                                                    	( 
                                                                     	    Gtk.DestDefaults.MOTION  | Gtk.DestDefaults.HIGHLIGHT,
                                                                     	    null,            /* lists of target to support */
                                                                     	    0,              /* size of list */
                                                                     	    Gdk.DragAction.COPY   | Gdk.DragAction.MOVE       /* what to do with data after dropped */
                                                                     	);
                                                                     
-                                                                    	Gtk.drag_dest_set_target_list(this.el, this.get('/Window').targetList);
-                                                                    	Gtk.drag_dest_add_text_targets(this.el);
+                                                                    	this.el.drag_dest_set_target_list(  this.get('/Window').targetList);
+                                                                    	this.el.drag_dest_add_text_targets( );
                                                                     },
                                                                     selectNode : function(treepath_str) {
                                                                         //this.selection.select_path(new  Gtk.TreePath.from_string( treepath_str));
@@ -804,16 +815,26 @@ Window=new XObject({
                                                                             currentTree : false,
                                                                             id : "model",
                                                                             pack : "set_model",
-                                                                            changed : function(n, refresh) {
-                                                                                //     print("MODEL CHANGED CALLED" + this.activePath);
-                                                                                     if (this.activePath) {
-                                                                                        var iter = new Gtk.TreeIter();
-                                                                                        this.el.get_iter(iter, new Gtk.TreePath.from_string(this.activePath))
-                                                                                        this.el.set_value(iter, 0, [GObject.TYPE_STRING, this.nodeTitle(n)]);
-                                                                                        this.el.set_value(iter, 1, [GObject.TYPE_STRING, this.nodeTitle(n)]);
-                                                                                        
-                                                                                        this.el.set_value(iter, 2, [GObject.TYPE_STRING, this.nodeToJSON(n)]);
-                                                                                    }
+                                                                            
+                                                                            setFromNode : function(tp, n)
+                                                                            {
+                                                                                if (tp === false) {
+                                                                                    tp = this.get('/LeftTree').getActivePath();
+                                                                                }
+                                                                                var ret= {}
+                                                                                this.el.get_iter(ret, new  Gtk.TreePath.from_string( tp ) );
+                                                                                this.el.set_value(ret.iter, 0, '' +  this.nodeTitle(n));
+                                                                                this.el.set_value(ret.iter, 1, '' + this.nodeTitle(n));
+                                                                                this.el.set_value(ret.iter, 2, '' + this.nodeToJSON(n));
+                                                                                
+                                                                            },
+                                                                            
+                                                                            changed : function(  refresh) {
+                                                                                
+                                                                                    
+                                                                                
+                                                                                   print("-------MODEL CHANGED CALLED"  );
+                                                                                    
                                                                                         //this.currentTree = this.toJS(false, true)[0];
                                                                                     var d = new Date();
                                                                                     this.file.items = this.toJS(false, false);
@@ -842,31 +863,31 @@ Window=new XObject({
                                                                             },
                                                                             deleteSelected : function() {
                                                                                 this.get('/LeftTree.view').blockChanges = true;
-                                                                                var old_iter = new Gtk.TreeIter();
+                                                                                var oret = {};
                                                                                 var s = this.get('/LeftTree.view').selection;
-                                                                                s.get_selected(this.el, old_iter);
-                                                                                var path = this.el.get_path(old_iter).to_string();
-                                                                            
+                                                                                s.get_selected(oret);
+                                                                                var path = this.el.get_path(oret.iter).to_string();
+                                                                                
                                                                                 this.activePath= false;      
                                                                                 s.unselect_all();
                                                                             
                                                                                 this.activePath= false;      
-                                                                                 var iter = new Gtk.TreeIter();
-                                                                                this.el.get_iter_from_string(iter, path);
-                                                                                this.el.remove(iter);
+                                                                                 var ret = {};
+                                                                                this.el.get_iter_from_string(ret, path);
+                                                                                this.el.remove(ret.iter);
                                                                                 
                                                                                 // rebuild treemap. -- depreciated.!!
                                                                                 this.map = {};
                                                                                 this.treemap = { };
                                                                                 //this.toJS(null, true) // does not do anything?
                                                                                 this.activePath= false;      
-                                                                                this.changed(false,true);
+                                                                                this.changed(true);
                                                                                 this.get('/LeftTree.view').blockChanges = false;
                                                                             },
                                                                             dropNode : function(target_data, node) {
                                                                                      print("drop Node");
                                                                                  // console.dump(node);
-                                                                              //    console.dump(target_data);
+                                                                                    //print(JSON.Stringify(target_data, null, 4));
                                                                                     var tp = target_data[0].length ? new  Gtk.TreePath.from_string( target_data[0] ) : false;
                                                                                     
                                                                                     print("add " + tp + "@" + target_data[1]  );
@@ -878,30 +899,31 @@ Window=new XObject({
                                                                                         parent  = new  Gtk.TreePath.from_string( ar.join(':') );
                                                                                         after = tp;
                                                                                     }
-                                                                                    var n_iter = new Gtk.TreeIter();
-                                                                                    var iter_par = new Gtk.TreeIter();
-                                                                                    var iter_after = after ? new Gtk.TreeIter() : false;
+                                                                                    var nret = {};
+                                                                                    var pret = {}
+                                                                                    var aret = after ? {} : false;
                                                                                     
                                                                                     
                                                                                     
                                                                                     if (parent !== false) {
-                                                                                        this.el.get_iter(iter_par, parent);
+                                                                                        this.el.get_iter(pret, parent);
                                                                                     } else {
-                                                                                        iter_par = null;
+                                                                                        pret.iter = null;
                                                                                     }
                                                                                     
                                                                                     
                                                                                     if (tp && after) {
                                                                                         print(target_data[1]  > 0 ? 'insert_after' : 'insert_before');
-                                                                                        this.el.get_iter(iter_after, after);
+                                                                                        this.el.get_iter(aret, after);
                                                                                         this.el[ target_data[1]  > 0 ? 'insert_after' : 'insert_before'](
-                                                                                                n_iter, iter_par, iter_after);
+                                                                                                nret, pret.iter, aret.iter);
                                                                                         
                                                                                     } else {
-                                                                                        this.el.append(n_iter, iter_par);
+                                                                                        this.el.append(nret, pret.iter);
                                                                                         
                                                                                     }
-                                                                                    
+                                                                                    var new_path = this.el.get_path(nret.iter).to_string();
+                                                                                    print("new path = " + new_path)
                                                                                     if (typeof(node) == 'string') {
                                                                                         var ar = node.split('.');
                                                                                         var xtype = ar.pop();
@@ -933,26 +955,27 @@ Window=new XObject({
                                                                                         xitems = node.items;
                                                                                         delete node.items;
                                                                                     }
-                                                                            // load children - if it has any..
+                                                                                    // load children - if it has any..
                                                                             
                                                                                     if (xitems) {
-                                                                                        this.load(xitems, n_iter);
-                                                                                        this.get('/LeftTree.view').el.expand_row(this.el.get_path(n_iter), true);
+                                                                                        this.load(xitems, nret.iter);
+                                                                                        this.get('/LeftTree.view').el.expand_row(this.el.get_path(nret.iter), true);
                                                                                     }
                                                                                     if (tp && (xitems || after)) {
-                                                                                        this.get('/LeftTree.view').el.expand_row(this.el.get_path(iter_par), true);
+                                                                                        this.get('/LeftTree.view').el.expand_row(this.el.get_path(pret.iter), true);
                                                                                     }
                                                                                     // wee need to get the empty proptypes from somewhere..
                                                                                     
                                                                                     //var olditer = this.activeIter;
-                                                                                    this.activePath = this.el.get_path(n_iter).to_string();
-                                                                            
+                                                                                    //this.activePath = new_path;
+                                                                                    print("calling changed with node data")
                                                                               // changed actually set's the node data..
-                                                                                    this.changed(node, true);
+                                                                                    this.setFromNode(new_path,node);
+                                                                                    this.changed(true);
                                                                                     
                                                                                     
                                                                                     
-                                                                                    this.get('/LeftTree.view').el.set_cursor(this.el.get_path(n_iter), null, false);
+                                                                                    this.get('/LeftTree.view').el.set_cursor(this.el.get_path(nret.iter), null, false);
                                                                                     
                                                                                     //Builder.MidPropTree._model.load(node);
                                                                                     //Builder.MidPropTree._win.hideWin();
@@ -1032,9 +1055,9 @@ Window=new XObject({
                                                                                         
                                                                             },
                                                                             getIterValue : function (iter, col) {
-                                                                                var gval = new GObject.Value('');
-                                                                                this.el.get_value(iter, col ,gval);
-                                                                                return  gval.value;
+                                                                                
+                                                                                var gval = ''+this.el.get_value(iter, col).value.get_string();
+                                                                                return  gval;
                                                                                 
                                                                                 
                                                                             },
@@ -1051,13 +1074,12 @@ Window=new XObject({
                                                                                 print ("LIST ALL TYPES: " + s.count_selected_rows() );
                                                                                 
                                                                                 if (s.count_selected_rows() > 0) {
-                                                                                    var iter = new Gtk.TreeIter();    
-                                                                                    s.get_selected(this.el, iter);
+                                                                                    var ret = {}
+                                                                                    s.get_selected(ret);
                                                                             
                                                                                     // set some properties of the tree for use by the dropped element.
-                                                                                    var value = new GObject.Value('');
-                                                                                    this.el.get_value(iter, 2, value);
-                                                                                    var data = JSON.parse(value.value);
+                                                                                    var value = ''+ this.el.get_value(ret.iter, 2).value.get_string();
+                                                                                    var data = JSON.parse(value);
                                                                                     
                                                                                     
                                                                                     var xname = this.get('/LeftTree.model').file.guessName(data);
@@ -1107,20 +1129,27 @@ Window=new XObject({
                                                                             },
                                                                             load : function(tr,iter)
                                                                                     {
-                                                                                        var citer = new Gtk.TreeIter();
-                                                                                        //this.insert(citer,iter,0);
+                                                                                         //this.insert(citer,iter,0);
+                                                                                         
                                                                                         for(var i =0 ; i < tr.length; i++) {
+                                                                                            var ret = {  };
                                                                                             if (iter) {
-                                                                                                this.el.insert(citer,iter,-1);
+                                                                                                this.el.insert(ret ,iter,-1);
                                                                                             } else {
-                                                                                                this.el.append(citer);
+                                                                                                this.el.append(ret);
                                                                                             }
-                                                                                            
-                                                                                            this.el.set_value(citer, 0, [GObject.TYPE_STRING, this.nodeTitle(tr[i]) ]);
-                                                                                            this.el.set_value(citer, 1, [GObject.TYPE_STRING, this.nodeTip(tr[i]) ]);
-                                                                                            this.el.set_value(citer, 2, [GObject.TYPE_STRING, this.nodeToJSON(tr[i])]);
+                                                                                            print(JSON.stringify(ret,null,4));
+                                                                                            print('call nodeToJSON: ' + tr[i]);
+                                                                                            var body = this.nodeToJSON(tr[i]);
+                                                                                            print(body);
+                                                                                            //this.el.set_value(ret.iter, 0, '' _ [GObject.TYPE_STRING, this.nodeTitle(tr[i]) ]);
+                                                                                            //this.el.set_value(ret.iter, 1, [GObject.TYPE_STRING, this.nodeTip(tr[i]) ]);
+                                                                                            //this.el.set_value(ret.iter, 2, [GObject.TYPE_STRING, body ]);
+                                                                                            this.el.set_value(ret.iter, 0, ''  +  this.nodeTitle(tr[i]) );
+                                                                                            this.el.set_value(ret.iter, 1, '' + this.nodeTip(tr[i]) );
+                                                                                            this.el.set_value(ret.iter, 2, '' +  body );
                                                                                             if (tr[i].items && tr[i].items.length) {
-                                                                                                this.load(tr[i].items, citer);
+                                                                                                this.load(tr[i].items, ret.iter);
                                                                                             }
                                                                                         }     
                                                                                     },
@@ -1170,16 +1199,16 @@ Window=new XObject({
                                                                                               this.get('/Window.leftvpaned').el.set_position(200);
                                                                                         }
                                                                                         
-                                                                                        
+                        //return; -- debuggin
                                                                                         //print("hide right editior");
                                                                                         //this.get('/RightEditor').el.hide();
                                                                                         this.get('/Editor').el.hide();
-                                                                                        //print("set current tree");
+                                                                                        print("set current tree");
                                                                                         this.currentTree = this.toJS(false, false)[0];
-                                                                                        //console.dump(this.currentTree);
+                                                                                        console.dump(this.currentTree);
                                                                                         this.currentTree = this.currentTree || { items: [] };
                                                                                         this.get('/LeftTree').renderView();
-                                                                                        //console.dump(this.map);
+                                                                                        console.dump(this.map);
                                                                                         //var RightPalete     = imports.Builder.RightPalete.RightPalete;
                                                                                         var pm = this.get('/RightPalete.model');
                                                                                         // set up provider..
@@ -1202,25 +1231,25 @@ Window=new XObject({
                                                                             moveNode : function(target_data, action) {
                                                                                  //print("MOVE NODE");
                                                                                        // console.dump(target_data);
-                                                                                        var old_iter = new Gtk.TreeIter();
-                                                                                        var s = this.get('/LeftTree.view').selection;
-                                                                                        s.get_selected(this.el, old_iter);
-                                                                                        var node = this.nodeToJS(old_iter,false);
-                                                                                        //console.dump(node);
-                                                                                        
-                                                                                        
-                                                                                        // needs to drop first, otherwise the target_data 
+                                                                                var oret = {};
+                                                                                var s = this.get('/LeftTree.view').selection;
+                                                                                s.get_selected( oret);
+                                                                                var node = this.nodeToJS(oret.iter,false);
+                                                                                    //console.dump(node);
+                                                                                print(JSON.stringify(node, null,4)); 
+                                                                                    
+                                                                                    // needs to drop first, otherwise the target_data 
                                                                                         // treepath will be invalid.
                                                                                         
-                                                                                        this.dropNode(target_data, node);
-                                                                            	  if (action & Gdk.DragAction.MOVE) {
+                                                                                this.dropNode(target_data, node);
+                                                                                if (action & Gdk.DragAction.MOVE) {
                                                                                                   //          print("REMOVING OLD NODE");
-                                                                                                            this.el.remove(old_iter);
-                                                                                                            
-                                                                                        }
+                                                                                    this.el.remove(oret.iter);
+                                                                                                    
+                                                                                }
                                                                                         
-                                                                                        this.activePath= false;
-                                                                                        this.changed(false,true);
+                                                                                this.activePath= false;
+                                                                                this.changed(true);
                                                                             },
                                                                             nodeTip : function(c) {
                                                                                 var ret = this.nodeTitle(c,true);
@@ -1288,19 +1317,21 @@ Window=new XObject({
                                                                             },
                                                                             nodeToJS : function (treepath, with_id) 
                                                                             {
-                                                                                
+                                                                                print("nodeToJS : WITHID: "+ with_id);
                                                                                 var iter = treepath;  // API used to be iter here..
                                                                                 if (typeof(iter) == 'string') {
-                                                                                    iter = new Gtk.TreeIter(); 
-                                                                                    if (!this.el.get_iter(iter, new Gtk.TreePath.from_string(treepath))) {
+                                                                                    var ret = {};
+                                                                                    if (!this.el.get_iter(ret,
+                                                                                                new Gtk.TreePath.from_string(treepath))) {
                                                                                         return false;
                                                                                     }
+                                                                                    iter = ret.iter;
                                                                                 } 
-                                                                                var par = new Gtk.TreeIter(); 
+                                                                                var pret = {};
                                                                                 var iv = this.getIterValue(iter, 2);
                                                                                // print("IV" + iv);
                                                                                 var k = JSON.parse(iv);
-                                                                                if (k.json && !this.el.iter_parent( par, iter  )) {
+                                                                                if (k.json && !this.el.iter_parent( pret, iter  )) {
                                                                                     delete k.json;
                                                                                 }
                                                                                 
@@ -1317,9 +1348,9 @@ Window=new XObject({
                                                                                     
                                                                                 }
                                                                                 if (this.el.iter_has_child(iter)) {
-                                                                                    citer = new Gtk.TreeIter();
-                                                                                    this.el.iter_children(citer, iter);
-                                                                                    k.items = this.toJS(citer,with_id);
+                                                                                    var cret = {};
+                                                                                    this.el.iter_children(cret, iter);
+                                                                                    k.items = this.toJS(cret.iter,with_id);
                                                                                 }
                                                                                 return k;
                                                                             },
@@ -1335,35 +1366,36 @@ Window=new XObject({
                                                                             },
                                                                             singleNodeToJS : function (treepath) 
                                                                                     {
-                                                                                        var iter = new Gtk.TreeIter(); 
-                                                                                        if (!this.el.get_iter(iter, new Gtk.TreePath.from_string(treepath))) {
+                                                                                        var ret = {};
+                                                                                        if (!this.el.get_iter(ret, new Gtk.TreePath.from_string(treepath))) {
                                                                                             return false;
                                                                                         }
                                                                                         
-                                                                                        var iv = this.getIterValue(iter, 2);
+                                                                                        var iv = this.getIterValue(ret.iter, 2);
                                                                                        
                                                                                         return JSON.parse(iv);
                                                                                         
                                                                                     },
                                                                             toJS : function(treepath, with_id)
                                                                             {
-                                                                                //Seed.print("WITHID: "+ with_id);
+                                                                                print("toJS : WITHID: "+ with_id);
                                                                                 var iter = treepath;  // API used to be iter here..
                                                                                 if (typeof(iter) == 'string') {
-                                                                                    iter = new Gtk.TreeIter(); 
-                                                                                    if (!this.el.get_iter(iter, new Gtk.TreePath.from_string(treepath))) {
+                                                                                    var ret = {};
+                                                                                     if (!this.el.get_iter(ret, new Gtk.TreePath.from_string(treepath))) {
                                                                                         return false;
                                                                                     }
+                                                                                    iter = ret.iter;
                                                                                 } 
                                                                                 var first = false;
                                                                                 if (!iter) {
                                                                                     
                                                                                     this.treemap = { }; 
-                                                                                    
-                                                                                    iter = new Gtk.TreeIter();
-                                                                                    if (!this.el.get_iter_first(iter)) {
+                                                                                     var ret = {};
+                                                                                     if (!this.el.get_iter_first(ret)) {
                                                                                         return [];
                                                                                     }
+                                                                                    iter = ret.iter;
                                                                                     first = true;
                                                                                 } 
                                                                                 
@@ -1533,15 +1565,16 @@ Window=new XObject({
                                                                                     loadData : function(data) {
                                                                                          var ov = this.get('/LeftProjectTree.combo').getValue();
                                                                                         this.el.clear();
-                                                                                        var iter = new Gtk.TreeIter();
                                                                                         var el = this.el;
+                                                                                        var na = {};
                                                                                         data.forEach(function(p) {
                                                                                             
-                                                                                            el.append(iter);
-                                                                                            
-                                                                                             
-                                                                                            el.set_value(iter, 0, p.fn);
-                                                                                            el.set_value(iter, 1, p.name);
+                                                                                            el.append(na);
+                                                                                            print(JSON.stringify(XObject.keys(na)));
+                                                                                            print(typeof(na.iter));
+                                                                                            //print(JSON.stringify(iter))
+                                                                                            el.set_value(na.iter, 0, p.fn);
+                                                                                            el.set_value(na.iter, 1, p.name);
                                                                                             
                                                                                         });
                                                                                         
@@ -1565,8 +1598,7 @@ Window=new XObject({
                                                                             xtype: Gtk.TreeView,
                                                                             listeners : {
                                                                                 cursor_changed : function (self) {
-                                                                                 	var iter = new Gtk.TreeIter();
-                                                                                                                
+                                                                                        var ret = {};        
                                                                                         if (this.selection.count_selected_rows() < 1) {
                                                                                             //XN.get('Builder.LeftTree.model').
                                                                                             this.get('/LeftTree.model').load( false);
@@ -1576,13 +1608,11 @@ Window=new XObject({
                                                                                         var model = this.get('/LeftProjectTree.model');
                                                                                         //console.log('changed');
                                                                                         var s = this.selection;
-                                                                                        s.get_selected(model, iter);
-                                                                                        value = new GObject.Value('');
-                                                                                        model.el.get_value(iter, 2, value);
-                                                                                        
-                                                                                        console.log(value.value);// id..
-                                                                                        
-                                                                                        var file = this.get('/LeftProjectTree').project.getById(value.value);
+                                                                                        s.get_selected(ret);
+                                                                                        var value = ''+ ret.model.get_value(ret.iter, 2).value.get_string();
+                                                                                        //console.log(JSON.stringify(value,null,4));// id..
+                                                                                        console.log("OUT?" + value);// id..
+                                                                                        var file = this.get('/LeftProjectTree').project.getById(value);
                                                                                         
                                                                                         file.items = false;
                                                                                         console.log(file);
@@ -1629,7 +1659,7 @@ Window=new XObject({
                                                                                        
                                                                                     },
                                                                                     loadProject : function(pr) {
-                                                                                    print("LOAD PROJECT");
+                                                                                         print("LOAD PROJECT");
                                                                                                this.el.clear();
                                                                                                 if (!pr) {
                                                                                                     return;
@@ -1642,29 +1672,28 @@ Window=new XObject({
                                                                                     load : function(tr,iter) {
                                                                                       //  console.dump(tr);
                                                                                                 console.log('Project tree load: ' + tr.length);
-                                                                                                var citer = new Gtk.TreeIter();
+                                                                                                var cret = {};
                                                                                                 //this.insert(citer,iter,0);
                                                                                                 
                                                                                                 var _this = this;
                                                                                                 tr.forEach(function (r) {
                                                                                                     if (!iter) {
-                                                                                                        _this.el.append(citer);   
+                                                                                                        _this.el.append(cret);   
                                                                                                     } else {
-                                                                                                        _this.el.insert(citer,iter,-1);
+                                                                                                        _this.el.insert(cret,iter,-1);
                                                                                                     }
-                                                                                                    _this.el.set_value(citer, 0,  '' + r.getTitle() ); // title 
-                                                                                                    _this.el.set_value(citer, 1, '' + r.getTitleTip()); // tip
-                                                                                                    _this.el.set_value(citer, 2, '' + r.id ); //id
+                                                                                                    _this.el.set_value(cret.iter, 0,  '' + r.getTitle() ); // title 
+                                                                                                    _this.el.set_value(cret.iter, 1, '' + r.getTitleTip()); // tip
+                                                                                                    _this.el.set_value(cret.iter, 2, '' + r.id ); //id
                                                                                                     if (r.cn && r.cn.length) {
-                                                                                                        _this.load(r.cn, citer);
+                                                                                                        _this.load(r.cn, cret.iter);
                                                                                                     }
                                                                                                     
                                                                                                 });
                                                                                     },
                                                                                     getValue : function(iter, col) {
-                                                                                        var gval = new GObject.Value('');
-                                                                                        this.el.get_value(iter, col ,gval);
-                                                                                        return  '' + gval.value;
+                                                                                        var gval = ''+ this.el.get_value(iter, col).value.get_string();
+                                                                                        return  gval;
                                                                                     }
                                                                                 },
                                                                                 {
@@ -2106,8 +2135,8 @@ Window=new XObject({
                                                                                 var map = this.load(data);
                                                                                 
                                                                                 // flag it as changed to the interface..
-                                                                    
-                                                                                this.get('/LeftTree.model').changed(data, true); 
+                                                                                this.get('/LeftTree.model').setFromNode(false,node);
+                                                                                this.get('/LeftTree.model').changed(true); 
                                                                                 
                                                                                 
                                                                                 this.startEditing(map[k]);
@@ -2121,31 +2150,32 @@ Window=new XObject({
                                                                     },
                                                                     changed : function(str, doRefresh) {
                                                                         if (!this.activePath) {
+                                                                            print("NO active path when changed")
                                                                             return;
                                                                         }
-                                                                        var iter = new Gtk.TreeIter();
-                                                                        this.el.get_iter(iter, new Gtk.TreePath.from_string(this.activePath));
+                                                                        var ret = {};
+                                                                        this.el.get_iter(ret, new Gtk.TreePath.from_string(this.activePath));
                                                                         
-                                                                        this.el.set_value(iter, 1, '' +str);
-                                                                        this.el.set_value(iter, 3, '' + this.toShort(str));
-                                                                        var type = this.getIterValue(iter, 4);
+                                                                        this.el.set_value(ret.iter, 1, '' +str);
+                                                                        this.el.set_value(ret.iter, 3, '' + this.toShort(str));
+                                                                        var type = this.getIterValue(ret.iter, 4);
                                                                     
-                                                                        this.el.set_value(iter, 5, type + ' : ' + str);
+                                                                        this.el.set_value(ret.iter, 5, type + ' : ' + str);
                                                                         // update the tree...  
-                                                                    
-                                                                        this.get('/LeftTree.model').changed(this.toJS(), doRefresh); 
+                                                                        print("new data: "  + JSON.stringify(this.toJS() , null,4));
+                                                                        this.get('/LeftTree.model').setFromNode(false,this.toJS());
+                                                                        this.get('/LeftTree.model').changed(doRefresh); 
+                                                                                 
                                                                     },
                                                                     deleteSelected : function() {
                                                                          var data = this.toJS();
-                                                                        var iter = new Gtk.TreeIter();
+                                                                        var ret ={};
                                                                         var s = this.get('/LeftPanel.view').selection;
-                                                                        s.get_selected(this.el, iter);
+                                                                        s.get_selected( ret);
                                                                              
                                                                            
-                                                                        var gval = new GObject.Value('');
-                                                                       this.get('/LeftPanel.model').el.get_value(iter, 0 ,gval);
+                                                                        var val = this.get('/LeftPanel.model').el.get_value(ret.iter, 0).value.get_string();
                                                                         
-                                                                        var val = gval.value;
                                                                         if (val[0] == '!') {
                                                                             // listener..
                                                                             if (!data.listeners || typeof(data.listeners[  val.substring(1)]) == 'undefined') {
@@ -2169,9 +2199,8 @@ Window=new XObject({
                                                                         
                                                                     },
                                                                     getIterValue : function(iter, col) {
-                                                                         var gval = new GObject.Value('');
-                                                                        this.get('/LeftPanel.model').el.get_value(iter, col ,gval);
-                                                                        return '' + gval.value;
+                                                                        var gval = '' + this.get('/LeftPanel.model').el.get_value(iter, col).value.get_string();
+                                                                        return gval;
                                                                     },
                                                                     getType : function(treepath) {
                                                                          return this.getValue(treepath, 4);
@@ -2179,18 +2208,15 @@ Window=new XObject({
                                                                     getValue : function(treepath_str, col) 
                                                                     {
                                                                        // get's the  value in a row.. - keys - returns string, values - formats it..
-                                                                    
-                                                                        var iter = new Gtk.TreeIter();
-                                                                        this.el.get_iter(iter, new Gtk.TreePath.from_string(treepath_str));
+                                                                        var ret = {};
+                                                                        this.el.get_iter(ret, new Gtk.TreePath.from_string(treepath_str));
                                                                         
-                                                                        var gval = new GObject.Value('');
-                                                                        this.get('/LeftPanel.model').el.get_value(iter, col ,gval);
-                                                                        var val = '' + gval.value;
-                                                                       
+                                                                        var val = '' + this.get('/LeftPanel.model').el.get_value(ret.iter, col).value.get_string();
+                                                                        
                                                                         if (col != 1) {
                                                                             return val;
                                                                         }
-                                                                        var type = this.getType(this.el.get_path(iter).to_string());
+                                                                        var type = this.getType(this.el.get_path(ret.iter).to_string());
                                                                         //print("TYPE: " +type + " -  val:" + val);
                                                                         switch(type.toLowerCase()) {
                                                                             case 'number':
@@ -2235,13 +2261,13 @@ Window=new XObject({
                                                                                   
                                                                         //this.get('/RightEditor').el.hide();
                                                                         if (ar === false) {
-                                                                            return ;
+                                                                            return false;
                                                                         }
                                                                         var ret = {}; 
                                                                         
                                                                     
                                                                         var provider = this.get('/LeftTree').getPaleteProvider();
-                                                                         var iter = new Gtk.TreeIter();
+                                                                        
                                                                          
                                                                         // sort!!!?
                                                                         var keys  = XObject.keys(ar);
@@ -2249,17 +2275,18 @@ Window=new XObject({
                                                                         ar.listeners = ar.listeners || {};
                                                                         
                                                                         for (var i in ar.listeners ) {
-                                                                            this.el.append(iter);
-                                                                            var p = this.el.get_path(iter).to_string();
+                                                                             var iret ={};
+                                                                            this.el.append(iret);
+                                                                            var p = this.el.get_path(iret.iter).to_string();
                                                                             ret['!' + i] = p;
                                                                             
-                                                                            this.el.set_value(iter, 0, '!'+  i  );
-                                                                            this.el.set_value(iter, 1, '' + ar.listeners[i]);
-                                                                            this.el.set_value(iter, 2, '<b>'+ i + '</b>');
+                                                                            this.el.set_value(iret.iter, 0, '!'+  i  );
+                                                                            this.el.set_value(iret.iter, 1, '' + ar.listeners[i]);
+                                                                            this.el.set_value(iret.iter, 2, '<b>'+ i + '</b>');
                                                                             
-                                                                            this.el.set_value(iter, 3, '' + this.toShort(ar.listeners[i]));
-                                                                            this.el.set_value(iter, 4, 'function');
-                                                                            this.el.set_value(iter, 5, i + ' : ' + ar.listeners[i]);
+                                                                            this.el.set_value(iret.iter, 3, '' + this.toShort(ar.listeners[i]));
+                                                                            this.el.set_value(iret.iter, 4, 'function');
+                                                                            this.el.set_value(iret.iter, 5, i + ' : ' + ar.listeners[i]);
                                                                         }
                                                                         
                                                                         
@@ -2271,17 +2298,17 @@ Window=new XObject({
                                                                             }
                                                                             
                                                                             var type = provider.findType(ar, i, ar[i]);
-                                                                            
-                                                                            _this.el.append(iter);
-                                                                            var p = _this.el.get_path(iter).to_string();
+                                                                            var iret = {};
+                                                                            _this.el.append(iret);
+                                                                            var p = _this.el.get_path(iret.iter).to_string();
                                                                             ret[i] = p;
-                                                                            _this.el.set_value(iter, 0, ''+i);
-                                                                            _this.el.set_value(iter, 1, '' + ar[i]);  
-                                                                            _this.el.set_value(iter, 2, ''+i);
-                                                                            _this.el.set_value(iter, 3, ''+ _this.toShort(ar[i]));
-                                                                            _this.el.set_value(iter, 4, ''+type);
-                                                                            _this.el.set_value(iter, 5, type + ' : ' + ar[i]);
-                                                                        })
+                                                                            _this.el.set_value(iret.iter, 0, ''+i);
+                                                                            _this.el.set_value(iret.iter, 1, '' + ar[i]);  
+                                                                            _this.el.set_value(iret.iter, 2, ''+i);
+                                                                            _this.el.set_value(iret.iter, 3, ''+ _this.toShort(ar[i]));
+                                                                            _this.el.set_value(iret.iter, 4, ''+type);
+                                                                            _this.el.set_value(iret.iter, 5, type + ' : ' + ar[i]);
+                                                                        });
                                                                         return ret;
                                                                     },
                                                                     startEditing : function(path,col) {
@@ -2298,10 +2325,10 @@ Window=new XObject({
                                                                         if (typeof(path) == 'string') {
                                                                             tp = new Gtk.TreePath.from_string(path);
                                                                         } else {
-                                                                            var iter = new Gtk.TreeIter();
+                                                                            var itr = {};
                                                                             var s = this.get('/LeftPanel.view').selection;
-                                                                            s.get_selected(this.el, iter);
-                                                                            tp = this.el.get_path(iter);
+                                                                            s.get_selected( itr);
+                                                                            tp = this.el.get_path(itr.iter);
                                                                             path = tp.to_string();
                                                                         }
                                                                         
@@ -2396,23 +2423,24 @@ Window=new XObject({
                                                                         
                                                                     },
                                                                     toJS : function() {
-                                                                         var iter = new Gtk.TreeIter();
-                                                                        this.get('/LeftPanel.model').el.get_iter_first(iter);
+                                                                        var iret = {};
+                                                                         this.get('/LeftPanel.model').el.get_iter_first(iret);
+                                                                         
                                                                         var ar = {};
                                                                            
                                                                         while (true) {
                                                                             
-                                                                            var k = this.getValue(this.el.get_path(iter).to_string(), 0);
+                                                                            var k = this.getValue(this.el.get_path(iret.iter).to_string(), 0);
                                                                            // Seed.print(k);
                                                                             if (k[0] == '!') {
                                                                                 ar.listeners = ar.listeners || {};
-                                                                                ar.listeners[  k.substring(1)] = this.getValue(this.el.get_path(iter).to_string(), 1);
+                                                                                ar.listeners[  k.substring(1)] = this.getValue(this.el.get_path(iret.iter).to_string(), 1);
                                                                                 
                                                                             } else {
-                                                                                ar[ k ] = this.getValue(this.el.get_path(iter).to_string(), 1);
+                                                                                ar[ k ] = this.getValue(this.el.get_path(iret.iter).to_string(), 1);
                                                                             }
                                                                             
-                                                                            if (! this.get('/LeftPanel.model').el.iter_next(iter)) {
+                                                                            if (! this.get('/LeftPanel.model').el.iter_next(iret.iter)) {
                                                                                 break;
                                                                             }
                                                                         }
@@ -2450,10 +2478,10 @@ Window=new XObject({
                                                                                 edited : function (self, object, p0) {
                                                                                 	var model = this.get('/LeftPanel.model');
                                                                                         var path = model.activePath;
-                                                                                        var iter = new Gtk.TreeIter();
-                                                                                        model.el.get_iter(iter, new Gtk.TreePath.from_string(path));
-                                                                                        model.el.set_value(iter, 0, p0);
-                                                                                        model.el.set_value(iter, 2, p0);
+                                                                                        var iret = {};
+                                                                                        model.el.get_iter(iret, new Gtk.TreePath.from_string(path));
+                                                                                        model.el.set_value(iret.iter, 0, p0);
+                                                                                        model.el.set_value(iret.iter, 2, p0);
                                                                                         
                                                                                 	model.activePath = false;
                                                                                 
@@ -2480,11 +2508,12 @@ Window=new XObject({
                                                                     setOptions : function(ar) {
                                                                            var m = this.items[0].el.model;
                                                                                 m.clear();
-                                                                                var iter = new Gtk.TreeIter();
+                                                                                
                                                                                 ar.forEach(function(i) {
                                                                                        // sort!!!?
-                                                                                    m.append(iter);
-                                                                                    m.set_value(iter, 0, i);
+                                                                                    var iret  = {};
+                                                                                    m.append(iret);
+                                                                                    m.set_value(iret.iter, 0, i);
                                                                                 });
                                                                                 
                                                                     },
@@ -2496,7 +2525,8 @@ Window=new XObject({
                                                                                  	this.get('/LeftPanel').editing = false;
                                                                                  	var ap = this.get('/LeftPanel.model').activePath
                                                                                 	print("EDITED? "  + ap + " - p:" + p0 + " t:" + p0);
-                                                                                        this.get('/LeftPanel.model').changed(p0, true);
+                                                                                        this.get('/LeftTree.model').setFromNode(false,p0);
+                                                                                        this.get('/LeftTree.model').changed(true); 
                                                                                         this.get('/LeftPanel.model').activePath = false;
                                                                                         this.el.editable = false;
                                                                                 },
@@ -2562,6 +2592,7 @@ Window=new XObject({
                                     xtype: Gtk.ScrolledWindow,
                                     pack : "pack_end,false,true,0",
                                     id : "MidPropTree",
+                                    shown : true,
                                     shadow_type : Gtk.ShadowType.IN,
                                     init : function() {
                                         XObject.prototype.init.call(this);
@@ -2574,15 +2605,19 @@ Window=new XObject({
                                     hideWin : function() {
                                          
                                         if (!this.shown) {
+                                            print("HIDEWIN - currently not shown")
                                             return;
                                         }
                                         
                                         
                                         if (this.get('/Window.left').el.position < 160) {
+                                            print("HIDEWIN - small already.")
+                                            
                                             return;
                                         }
                                         this.get('/Window.left').el.position = this.get('/Window.left').el.position  - 150;
-                                            
+                                        print("HIDEWIN attempting to hide.")
+
                                         this.el.hide();
                                         this.shown = false;
                                     },
@@ -2591,7 +2626,7 @@ Window=new XObject({
                                             xtype: Gtk.TreeView,
                                             listeners : {
                                                 cursor_changed : function (self) {
-                                                       var iter = new Gtk.TreeIter();
+                                                       var iret = {};
                                                                         
                                                                         //console.log('changed');
                                                         var m = this.get('model');
@@ -2600,10 +2635,10 @@ Window=new XObject({
                                                 	}
                                                 
                                                         var s = this.selection;
-                                                        if (!s.get_selected(m.el, iter)) {
+                                                        if (!s.get_selected(iret)) {
                                                 		return; 
                                                 	}
-                                                        var tp = m.el.get_path(iter).to_string();
+                                                        var tp = m.el.get_path(iret.iter).to_string();
                                                         
                                                         
                                                         // var val = "";
@@ -2671,11 +2706,10 @@ Window=new XObject({
                                                     getValue : function(treepath, col)
                                                     {
                                                         var tp = new Gtk.TreePath.from_string (treepath);
-                                                        var iter = new Gtk.TreeIter();
-                                                        this.el.get_iter (iter, tp);
-                                                        var value = new GObject.Value('');
-                                                        this.el.get_value(iter, col, value);
-                                                        return value.value;
+                                                        var iret = {};
+                                                        this.el.get_iter (iret, tp);
+                                                        var value = this.el.get_value(iret.iter, col);
+                                                        return ''+ value.value.get_string();
                                                         
                                                     },
                                                     init : function() {
@@ -2696,7 +2730,8 @@ Window=new XObject({
                                                                     return; // no active element
                                                                 }
                                                     
-                                                                var fullpath = this.get('/LeftTree.model').file.guessName(this.get('/MidPropTree').activeElement);
+                                                                var fullpath = this.get('/LeftTree.model').file.guessName(
+                                                                        this.get('/MidPropTree').activeElement);
                                                                 var palete = this.get('/LeftTree').getPaleteProvider();
                                                                 
                                                                  
@@ -2716,10 +2751,11 @@ Window=new XObject({
                                                                // console.dump(elementList);
                                                                
                                                                 
-                                                                var iter = new Gtk.TreeIter();
+                                                                
                                                                 for(var i =0 ; i < elementList.length; i++) {
+                                                                    var iret = {};
                                                                     var p=elementList[i];
-                                                                    this.el.append(iter);
+                                                                    this.el.append(iret);
                                                                   //  console.log( '<b>' + p.name +'</b> ['+p.type+']');
                                                                         //GObject.TYPE_STRING,  // real key
                                                                         // GObject.TYPE_STRING, // real type
@@ -2727,12 +2763,12 @@ Window=new XObject({
                                                                         // GObject.TYPE_STRING // func def?
                                                                         
                                                                     
-                                                                    this.el.set_value(iter, 0, p.name);
-                                                                    this.el.set_value(iter, 1, p.type);
-                                                                    this.el.set_value(iter, 2, '<span size="small"><b>' + p.name +'</b> ['+p.type+']</span>' + "\n" + p.desc);
-                                                                    this.el.set_value(iter, 3, p.sig ? p.sig  : '');
-                                                                    this.el.set_value(iter, 4, '<span size="small"><b>' + p.name +'</b> ['+p.type+']</span>');
-                                                                    this.el.set_value(iter, 5, type);
+                                                                    this.el.set_value(iret.iter, 0, p.name);
+                                                                    this.el.set_value(iret.iter, 1, p.type);
+                                                                    this.el.set_value(iret.iter, 2, '<span size="small"><b>' + p.name +'</b> ['+p.type+']</span>' + "\n" + p.desc);
+                                                                    this.el.set_value(iret.iter, 3, p.sig ? p.sig  : '');
+                                                                    this.el.set_value(iret.iter, 4, '<span size="small"><b>' + p.name +'</b> ['+p.type+']</span>');
+                                                                    this.el.set_value(iret.iter, 5, type);
                                                                     
                                                                 }
                                                                                  
@@ -2948,9 +2984,9 @@ Window=new XObject({
                                                                                                 this.el.execute_script("Builder.overPos(" + x +','+ y + ");");
                                                                                                 
                                                                                                 // A) find out from drag all the places that node could be dropped.
-                                                                                                var src = Gtk.drag_get_source_widget(ctx);
+                                                                                                var src = Gtk.drag_get_source_widge(ctx);
                                                                                                 if (!src.dropList) {
-                                                                                                    Gdk.drag_status(ctx, 0, time);
+                                                                                                    ctx.drag_status(0, time);
                                                                                                     return true;
                                                                                                 }
                                                                                                 // b) get what we are over.. (from activeNode)
@@ -2985,9 +3021,8 @@ Window=new XObject({
                                                                                                 var is_valid_drop_site = true;
                                                                                                 
                                                                                                  
-                                                                                                Gtk.drag_get_data
-                                                                                                (
-                                                                                                        w,         /* will receive 'drag-data-received' signal */
+                                                                                                w.drag_get_data
+                                                                                                (          /* will receive 'drag-data-received' signal */
                                                                                                         ctx,        /* represents the current state of the DnD */
                                                                                                         this.get('/Window').atoms["STRING"],    /* the target type we want */
                                                                                                         time            /* time stamp */
@@ -3074,9 +3109,8 @@ Window=new XObject({
                                                                                             
                                                                                        //this.el.open('file:///' + __script_path__ + '/../builder.html');
                                                                                                               
-                                                                                        Gtk.drag_dest_set
-                                                                                        (
-                                                                                                this.el,              /* widget that will accept a drop */
+                                                                                        this.el.drag_dest_set
+                                                                                        (          /* widget that will accept a drop */
                                                                                                 Gtk.DestDefaults.MOTION  | Gtk.DestDefaults.HIGHLIGHT,
                                                                                                 null,            /* lists of target to support */
                                                                                                 0,              /* size of list */
@@ -3084,7 +3118,7 @@ Window=new XObject({
                                                                                         );
                                                                                                                 
                                                                                        // print("RB: TARGETS : " + LeftTree.atoms["STRING"]);
-                                                                                        Gtk.drag_dest_set_target_list(this.el, this.get('/Window').targetList);
+                                                                                        this.el.drag_dest_set_target_list(  this.get('/Window').targetList);
                                                                                         
                                                                                         GLib.timeout_add_seconds(0, 1, function() {
                                                                                             //    print("run refresh?");
@@ -3640,9 +3674,8 @@ Window=new XObject({
                                                                                                     	//this.el =     new Gtk.Image.from_stock (Gtk.STOCK_HOME,  Gtk.IconSize.MENU);
                                                                                                     	XObject.prototype.init.call(this);
                                                                                                     
-                                                                                                                Gtk.drag_dest_set
-                                                                                                                (
-                                                                                                                        this.el,              /* widget that will accept a drop */
+                                                                                                                 this.el.drag_dest_set
+                                                                                                                (               /* widget that will accept a drop */
                                                                                                                         Gtk.DestDefaults.MOTION  | Gtk.DestDefaults.HIGHLIGHT,
                                                                                                                         null,            /* lists of target to support */
                                                                                                                         0,              /* size of list */
@@ -3650,7 +3683,7 @@ Window=new XObject({
                                                                                                                 );
                                                                                                                 
                                                                                                                // print("RB: TARGETS : " + LeftTree.atoms["STRING"]);
-                                                                                                                Gtk.drag_dest_set_target_list(this.el, this.get('/Window').targetList);
+                                                                                                                this.el.drag_dest_set_target_list( this.get('/Window').targetList);
                                                                                                     },
                                                                                                     ready : false,
                                                                                                     getActiveNode : function(x,y)
@@ -3702,9 +3735,8 @@ Window=new XObject({
                                                                                                                 var is_valid_drop_site = true;
                                                                                                                 
                                                                                                                  
-                                                                                                                Gtk.drag_get_data
-                                                                                                                (
-                                                                                                                        self,         /* will receive 'drag-data-received' signal */
+                                                                                                                self.drag_get_data
+                                                                                                                (  /* will receive 'drag-data-received' signal */
                                                                                                                         ctx,        /* represents the current state of the this.gDnD */
                                                                                                                         this.get('/Window').atoms["STRING"],    /* the target type we want */
                                                                                                                         time            /* time stamp */
@@ -3732,7 +3764,7 @@ Window=new XObject({
                                                                                                                     if (ctx.action == Gdk.DragAction.MOVE) {
                                                                                                                         delete_selection_data = true;
                                                                                                                     }
-                                                                                                                    var source = Gtk.drag_get_source_widget(ctx);
+                                                                                                                    var source = Gtk.drag_get_source_widget( ctx );
                                                                                                         
                                                                                                                     Seed.print("Browser: source.DRAGDATA? " + source.dragData);
                                                                                                                     if (this.targetData) {
@@ -3751,7 +3783,7 @@ Window=new XObject({
                                                                                                                         Seed.print ("DnD data transfer failed!\n");
                                                                                                                 }
                                                                                                                 
-                                                                                                                Gtk.drag_finish (ctx, dnd_success, delete_selection_data, time);
+                                                                                                                Gtk.drag_finish (  ctx, dnd_success, delete_selection_data, time);
                                                                                                                 return true;
                                                                                                             },
                                                                                                         button_press_event : function (self, event) {
@@ -3972,29 +4004,24 @@ Window=new XObject({
                                                                         Seed.print('SOURCE: drag-begin');
                                                                         
                                                                         
-                                                                        
-                                                                        var iter = new Gtk.TreeIter();
+                                                                       
+                                                                       var  iret = {};
                                                                         var s = this.selection;
-                                                                        s.get_selected(this.get('/RightPalete.model').el, iter);
-                                                                        var path = this.get('/RightPalete.model').el.get_path(iter);
+                                                                        s.get_selected(iret);
+                                                                        var path = this.get('/RightPalete.model').el.get_path(iter.iter);
                                                                         
                                                                         var pix = this.el.create_row_drag_icon ( path);
                                                                             
                                                                                 
-                                                                        Gtk.drag_set_icon_pixmap (ctx,
-                                                                            pix.get_colormap(),
-                                                                            pix,
-                                                                            null,
-                                                                            -10,
-                                                                            -10);
+                                                                        Gtk.drag_set_icon_surface ( ctx,   pix  );
                                                                         
-                                                                        var value = new GObject.Value('');
-                                                                        this.get('/RightPalete.model').el.get_value(iter, 0, value);
+                                                                        
+                                                                        var value = ''+ this.get('/RightPalete.model').el.get_value(iret.iter, 0).value.get_string();
                                                                         if (!this.get('/RightPalete').provider) {
                                                                             return false;
                                                                         }
-                                                                        this.el.dropList = this.get('/RightPalete').provider.getDropList(value.value);
-                                                                        this.el.dragData = value.value;
+                                                                        this.el.dropList = this.get('/RightPalete').provider.getDropList(value);
+                                                                        this.el.dragData = value;
                                                                         
                                                                         
                                                                         
@@ -4047,8 +4074,7 @@ Window=new XObject({
                                                                 //});
                                                                 // see: http://live.gnome.org/GnomeLove/DragNDropTutorial
                                                                  
-                                                                Gtk.drag_source_set (
-                                                                        this.el,            /* widget will be drag-able */
+                                                                this.el.drag_source_set (            /* widget will be drag-able */
                                                                         Gdk.ModifierType.BUTTON1_MASK,       /* modifier that will start a drag */
                                                                         null,            /* lists of target to support */
                                                                         0,              /* size of list */
@@ -4056,8 +4082,8 @@ Window=new XObject({
                                                                 );
                                                                 //Gtk.drag_source_set_target_list(this.el, LeftTree.targetList);
                                                                
-                                                                Gtk.drag_source_set_target_list(this.el, this.get('/Window').targetList);
-                                                                Gtk.drag_source_add_text_targets(this.el); 
+                                                                this.el.drag_source_set_target_list(  this.get('/Window').targetList);
+                                                                this.el.drag_source_add_text_targets( ); 
                                                                 /*
                                                                 print("RP: TARGET:" + LeftTree.atoms["STRING"]);
                                                                 targets = new Gtk.TargetList();
@@ -4089,19 +4115,19 @@ Window=new XObject({
                                                                             this.el.clear();
                                                                         }
                                                                         //console.log('Project tree load: ' + tr.length);
-                                                                        var citer = new Gtk.TreeIter();
+                                                                        var cret ={};
                                                                         //this.insert(citer,iter,0);
                                                                         for(var i =0 ; i < tr.length; i++) {
                                                                             if (!iter) {
                                                                                 
-                                                                                this.el.append(citer);   
+                                                                                this.el.append(cret);   
                                                                             } else {
-                                                                                this.el.insert(citer,iter,-1);
+                                                                                this.el.insert(cret,iter,-1);
                                                                             }
                                                                             
                                                                             var r = tr[i];
                                                                             //Seed.print(r);
-                                                                            this.el.set_value(citer, 0,  '' +  r ); // title 
+                                                                            this.el.set_value(cret.iter, 0,  '' +  r ); // title 
                                                                             
                                                                             //this.el.set_value(citer, 1,  new GObject.Value( r)); //id
                                                                             //if (r.cn && r.cn.length) {
@@ -4112,9 +4138,8 @@ Window=new XObject({
                                                                         
                                                                     },
                                                                     getValue : function (iter, col) {
-                                                                        var gval = new GObject.Value('');
-                                                                         this.el.get_value(iter, col ,gval);
-                                                                        return  gval.value;
+                                                                        return  this.el.get_value(iter, col).value.get_string();
+                                                                        
                                                                         
                                                                         
                                                                     }

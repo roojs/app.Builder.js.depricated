@@ -40,10 +40,9 @@ RooProjectProperties=new XObject({
               return;
            }
            var buf =    this.get('view').el.get_buffer()
-           var s = new Gtk.TextIter();
-            var e = new Gtk.TextIter();
-            buf.get_start_iter(s);
-            buf.get_end_iter(e);
+            
+            var s = buf.get_start_iter().value;
+            var e = buf.get_end_iter().value;
             var str = buf.get_text(s,e,true);
             // ideally we should syntax check it.. but it's html!?
             
