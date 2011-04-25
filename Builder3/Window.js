@@ -3909,7 +3909,7 @@ Window=new XObject({
                                         
                                           this.get('buttonbar').el.show();
                                            this.get('viewbox').el.hide();
-                                           var ce = this.get('/CenterEast').el;
+                                           var ce = this.get('/Window.CenterEast').el;
                                            ce.setPostion(ce.max_position - 30);
                                              
                                            print("TRIED TO HIDE");
@@ -3917,7 +3917,7 @@ Window=new XObject({
                                     show : function() {
                                         this.get('buttonbar').el.hide();
                                         this.get('viewbox').el.show();
-                                        var ce = this.get('/CenterEast').el;
+                                        var ce = this.get('/Window.CenterEast').el;
                                         ce.setPostion(ce.max_position - 100);
                                            
                                        // this.get('model').expanded();
