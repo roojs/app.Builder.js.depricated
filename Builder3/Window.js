@@ -3902,7 +3902,7 @@ Window=new XObject({
                                 },
                                 {
                                     xtype: Gtk.VBox,
-                                    pack : "pack_start,false,false",
+                                    pack : "add",
                                     id : "RightPalete",
                                     hide : function() {
                                         
