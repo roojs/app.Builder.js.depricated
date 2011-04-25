@@ -2803,7 +2803,7 @@ Window=new XObject({
                         {
                             xtype: Gtk.HPaned,
                             pack : "add",
-                            id : 'CenterEast'
+                            id : 'CenterEast',
                             position : 500,
 
                             items : [
