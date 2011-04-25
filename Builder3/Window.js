@@ -3909,7 +3909,7 @@ Window=new XObject({
                                         
                                           this.get('buttonbar').el.show();
                                            this.get('viewbox').el.hide();
-                                           var ce = this.get('centerEast').el;
+                                           var ce = this.get('/Window.centerEast').el;
                                            ce.setPostion(ce.max_position - 30);
                                              
                                            print("TRIED TO HIDE");
