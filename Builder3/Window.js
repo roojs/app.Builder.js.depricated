@@ -2803,6 +2803,7 @@ Window=new XObject({
                         {
                             xtype: Gtk.HPaned,
                             pack : "add",
+                            id : 'CenterEast'
                             position : 500,
 
                             items : [
@@ -3908,11 +3909,17 @@ Window=new XObject({
                                         
                                           this.get('buttonbar').el.show();
                                            this.get('viewbox').el.hide();
-                                        print("TRIED TO HIDE");
+                                           var ce = this.get('/CenterEast').el;
+                                           ce.setPostion(ce.max_position - 30);
+                                             
+                                           print("TRIED TO HIDE");
                                     },
                                     show : function() {
                                         this.get('buttonbar').el.hide();
                                         this.get('viewbox').el.show();
+                                        var ce = this.get('/CenterEast').el;
+                                        ce.setPostion(ce.max_position - 100);
+                                           
                                        // this.get('model').expanded();
                                                 
                                     },
