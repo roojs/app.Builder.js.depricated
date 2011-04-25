@@ -3909,7 +3909,7 @@ Window=new XObject({
                                         
                                           this.get('buttonbar').el.show();
                                            this.get('viewbox').el.hide();
-                                           var ce = this.get('/Window.centerEast').el;
+                                           var ce = this.get('/Window.v').el;
                                            
                                            ce.set_position(ce.get_allocated_width() - 30);
                                              
