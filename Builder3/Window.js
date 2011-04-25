@@ -4022,7 +4022,7 @@ Window=new XObject({
                                                                        var  iret = {};
                                                                         var s = this.selection;
                                                                         s.get_selected(iret);
-                                                                        var path = this.get('/RightPalete.model').el.get_path(iter.iter);
+                                                                        var path = this.get('/RightPalete.model').el.get_path(iret.iter);
                                                                         
                                                                         var pix = this.el.create_row_drag_icon ( path);
                                                                             
