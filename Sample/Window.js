@@ -483,7 +483,8 @@ Window=new XObject({
                                                                                 }
                                                                          	
                                                                                 if (ev.type != Gdk.EventType.BUTTON_PRESS  || ev.button.button != 3) {
-                                                                                    print("click" + ev.type);
+                                                                                    print("click" + ev.type + ' != ' + Gdk.EventType.BUTTON_PRESS);
+										    print("click button " + ev.button.button);
                                                                                     return false;
                                                                                 }
                                                                               
