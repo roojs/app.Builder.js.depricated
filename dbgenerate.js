@@ -121,8 +121,7 @@ var ini = { }
 function readIni(fn)
 {
     print('Read INI : ' + fn);
-    //var key_file = new GLib.KeyFile.c_new();
-    var key_file = new GLib.KeyFile();
+    var key_file = new GLib.KeyFile.c_new();
     if (!key_file.load_from_file (fn , GLib.KeyFileFlags.NONE )) {
         return;
     }
