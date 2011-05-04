@@ -29,9 +29,9 @@
  *
  *
  * remove introspectable =0 from g_key_file_get_groups
- *
- *
- * 
+ *   and add transfer-owneership = none to return value
+ * remove introspectable =0 from g_key_file_get_keys
+ *   and add transfer-owneership = none to return value* 
  * 
  */
 Gda  = imports.gi.Gda;
