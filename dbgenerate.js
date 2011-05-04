@@ -149,8 +149,8 @@ function readIni(fn)
         ini[g] = {}
            print("KEY:"+g);
         var keys = key_file.get_keys(g);
-print("KEYS:"+keys);
-        keys.forEach(function(k) {
+        if (!keys) { return; }
+         keys.forEach(function(k) {
             ini[g][k] = key_file.get_value(g,k);
         })
     })
