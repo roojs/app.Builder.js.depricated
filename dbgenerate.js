@@ -25,7 +25,7 @@ console = imports.console;
 File = imports.File.File;
 Options = imports.Options.Options;
 
-Gda.init();
+//Gda.init();
 
 var prov = Gda.Config.list_providers ();
 //print(prov.dump_as_string());
