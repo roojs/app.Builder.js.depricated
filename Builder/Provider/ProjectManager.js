@@ -45,14 +45,10 @@ ProjectManager =  new Observable({
         }
       
         this.projects = [];
-        var gdir = GLib.dir_open(this.dirname,0);
-        while (true) {
-        
-            var fn = gdir.read_name();
-            if (!fn) {
-                gdir.close();
-                break;
-            }
+        var files = File.list(this.dirname);
+        for (var i =0 ; i < files.length;i++) {
+            var fn = files[i];
+             
             if (!fn.match(/.json$/)) {
                 continue;
             }
