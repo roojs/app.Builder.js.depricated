@@ -13,7 +13,25 @@
  * 
  * write readers..
  * 
- * usage: seed generate.js  
+ * usage: seed generate.js
+ *
+ *
+ *
+ *
+ *Hack needed to latest GLib-2.0.gir 
+ *
+ * <record name="KeyFile" c:type="GKeyFile" disguised="1">
+	<constructor name="new" c:identifier="g_key_file_new">
+        <return-value transfer-ownership="full">
+          <type name="KeyFile" c:type="GKeyFile*"/>
+        </return-value>
+      </constructor>
+ *
+ *
+ *
+ *
+ *
+ * 
  * 
  */
 Gda  = imports.gi.Gda;
