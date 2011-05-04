@@ -120,6 +120,7 @@ var map = {
     'bigint' : 'int',
     'double' : 'float',
     'tinyint' : 'int',
+    'smallint' : 'int',
     'decimal' : 'float',
     'float' : 'float',
     'char' : 'string',
