@@ -4027,8 +4027,11 @@ Window=new XObject({
                                                                         var pix = this.el.create_row_drag_icon ( path);
                                                                             
                                                                                 
-                                                                        Gtk.drag_set_icon_surface ( ctx,   pix  );
-                                                                        
+                                                                        if (Gtk.drag_set_icon_surface) {
+                                                                                Gtk.drag_set_icon_surface( ctx,   pix  );
+                                                                        } else {
+                                                                            Gtk.drag_set_icon_pixmap (ctx, pix.get_colormap(),   pix,  null, ..... )
+                                                                        }
                                                                         
                                                                         var value = ''+ this.get('/RightPalete.model').el.get_value(iret.iter, 0).value.get_string();
                                                                         if (!this.get('/RightPalete').provider) {
