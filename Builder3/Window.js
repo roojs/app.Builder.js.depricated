@@ -2002,7 +2002,7 @@ Window=new XObject({
                                                                     }
                                                                     
                                                                      // right click.
-                                                                     if (ev.type == Gdk.EventType.BUTTON_PRESS  && ev.button.button == 3) {    
+                                                                     if (ev.button.button == 3) {    
                                                                         // show popup!.   
                                                                         if (res.column.title == 'value' && this.get('/LeftPanel').editing) {
                                                                             return false;
