@@ -4031,7 +4031,7 @@ Window=new XObject({
                                                                         
                                                                         var pix = this.el.create_row_drag_icon ( path);
                                                                             
-                                                                                
+                                                                        print(pix);       
                                                                         if (Gtk.drag_set_icon_surface) {
                                                                                 Gtk.drag_set_icon_surface( ctx,   pix  );
                                                                         } else {
