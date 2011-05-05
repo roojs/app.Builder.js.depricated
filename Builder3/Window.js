@@ -522,7 +522,12 @@ Window=new XObject({
                                                                                 // returns a cairo surface
                                                                                 var pix = this.el.create_row_drag_icon ( path);
                                                                                 
-                                                                                Gtk.drag_set_icon_surface (ctx, pix);
+                                                                                if (Gtk.drag_set_icon_surface) {
+                                                                                   Gtk.drag_set_icon_surface( ctx,   pix  );
+                                                                                } else {
+                                                                                    Gtk.drag_set_icon_pixmap (ctx,
+                                                                                        pix.get_colormap(),   pix,   null, -10, -10);
+                                                                                }
                                                                                 
                                                                                 return true;
                                                                         },
@@ -4030,7 +4035,8 @@ Window=new XObject({
                                                                         if (Gtk.drag_set_icon_surface) {
                                                                                 Gtk.drag_set_icon_surface( ctx,   pix  );
                                                                         } else {
-                                                                            Gtk.drag_set_icon_pixmap (ctx, pix.get_colormap(),   pix,  null, ..... )
+                                                                            Gtk.drag_set_icon_pixmap (ctx,
+                                                                                pix.get_colormap(),   pix,   null, -10, -10);
                                                                         }
                                                                         
                                                                         var value = ''+ this.get('/RightPalete.model').el.get_value(iret.iter, 0).value.get_string();
