@@ -2990,7 +2990,7 @@ Window=new XObject({
                                                                                                 this.el.execute_script("Builder.overPos(" + x +','+ y + ");");
                                                                                                 
                                                                                                 // A) find out from drag all the places that node could be dropped.
-                                                                                                var src = Gtk.drag_get_source_widge(ctx);
+                                                                                                var src = Gtk.drag_get_source_widget(ctx);
                                                                                                 if (!src.dropList) {
                                                                                                     ctx.drag_status(0, time);
                                                                                                     return true;
