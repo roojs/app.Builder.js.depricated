@@ -2992,7 +2992,7 @@ Window=new XObject({
                                                                                                 // A) find out from drag all the places that node could be dropped.
                                                                                                 var src = Gtk.drag_get_source_widget(ctx);
                                                                                                 if (!src.dropList) {
-                                                                                                    ctx.drag_status(0, time);
+                                                                                                    Gdk.drag_status(ctx,0, time);
                                                                                                     return true;
                                                                                                 }
                                                                                                 // b) get what we are over.. (from activeNode)
