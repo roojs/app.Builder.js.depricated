@@ -7,7 +7,7 @@ GObject = imports.gi.GObject;
 GtkSource = imports.gi.GtkSource;
 WebKit = imports.gi.WebKit;
 Vte = imports.gi.Vte;
-GtkClutter = imports.gi.GtkClutter;
+//GtkClutter = imports.gi.GtkClutter;
 console = imports.console;
 XObject = imports.XObject.XObject;
 Window=new XObject({
@@ -635,11 +635,11 @@ Window=new XObject({
                                                                                 return  true;
                                                                         },
                                                                         drag_data_received : function (self, ctx, x, y, sel_data, info, time) {
-                                                                        	 print("Tree: drag-data-received");
+                                                                                 print("Tree: drag-data-received");
                                                                         
                                                                                       var   delete_selection_data = false;
                                                                                        var  dnd_success = false;
-                                                                                       print(JSON.stringify(sel_data, null,4));
+                                                                                       //print(JSON.stringify(sel_data, null,4));
                                                                                         /* Deal with what we are given from source */
                                                                                         
                                                                                         // simce I can not be bothered to sort out
