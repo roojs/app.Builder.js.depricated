@@ -1465,13 +1465,13 @@ Window=new XObject({
                                                                             listeners : {
                                                                                 activate : function (self) {
                                                                                 
-                                                                                     var tree = this.get('/LeftTree');
-                                                                                      var model = this.get('/LeftTree.model');
-                                                                                     var el = tree.getActivePath();
-                                                                                     print(el);
-                                                                                     var js = model.toJS(el, false);
+                                                                                    var tree = this.get('/LeftTree');
+                                                                                    var model = this.get('/LeftTree.model');
+                                                                                    var el = tree.getActivePath();
+                                                                                    print(el);
+                                                                                    var js = model.toJS(el, false);
                                                                                     // print(JSON.stringify(js[0], null,4));
-                                                                                     this.get('/DialogSaveTemplate').show(JSON.stringify(js[0], null,4));
+                                                                                    this.get('/DialogSaveTemplate').show(JSON.stringify(js[0], null,4));
                                                                                      
                                                                                     
                                                                                 }
