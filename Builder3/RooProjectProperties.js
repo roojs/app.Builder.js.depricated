@@ -49,7 +49,7 @@ RooProjectProperties=new XObject({
             buf.get_end_iter(e);
             
             var str = buf.get_text(s.iter,e.iter,false);
-           
+            print(str);
             // ideally we should syntax check it.. but it's html!?
             
            var project = this.get('/Window.LeftTree').getActiveFile().project;
