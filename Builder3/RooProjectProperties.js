@@ -7,6 +7,8 @@ GObject = imports.gi.GObject;
 GtkSource = imports.gi.GtkSource;
 WebKit = imports.gi.WebKit;
 Vte = imports.gi.Vte;
+GtkClutter = imports.gi.GtkClutter;
+//Gdl = imports.gi.Gdl;
 console = imports.console;
 XObject = imports.XObject.XObject;
 RooProjectProperties=new XObject({
@@ -40,10 +42,14 @@ RooProjectProperties=new XObject({
               return;
            }
            var buf =    this.get('view').el.get_buffer()
+           
+            var e = {};
+            var s = {};                             
+            buf.get_start_iter(s);
+            buf.get_end_iter(e);
             
-            var s = buf.get_start_iter().value;
-            var e = buf.get_end_iter().value;
-            var str = buf.get_text(s,e,true);
+            var str = this.el.get_text(s.iter,e.iter,true);
+           
             // ideally we should syntax check it.. but it's html!?
             
            var project = this.get('/Window.LeftTree').getActiveFile().project;
