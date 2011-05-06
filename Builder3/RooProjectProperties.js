@@ -48,7 +48,7 @@ RooProjectProperties=new XObject({
             buf.get_start_iter(s);
             buf.get_end_iter(e);
             
-            var str = this.el.get_text(s.iter,e.iter,true);
+            var str = buf.get_text(s.iter,e.iter,true);
            
             // ideally we should syntax check it.. but it's html!?
             
