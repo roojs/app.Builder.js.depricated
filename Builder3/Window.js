@@ -2200,7 +2200,11 @@ Window=new XObject({
                                                                         
                                                                         
                                                                         this.load(data);
-                                                                        this.get('/LeftTree.model').changed(data, true);
+                                                                        
+                                                                        
+                                                                        this.get('/LeftTree.model').setFromNode(false,this.toJS());
+                                                                        this.get('/LeftTree.model').changed(true); 
+                                                                        
                                                                         
                                                                     },
                                                                     getIterValue : function(iter, col) {
