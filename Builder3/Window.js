@@ -2496,8 +2496,9 @@ Window=new XObject({
                                                                                         model.el.set_value(iret.iter, 2, p0);
                                                                                         
                                                                                 	model.activePath = false;
-                                                                                
-                                                                                	this.get('/LeftTree.model').changed(model.toJS(), true); 
+                                                                                    this.get('/LeftTree.model').setFromNode(false,model.toJS());
+                                                                                    this.get('/LeftTree.model').changed(true); 
+                                                                        
                                                                                         this.el.editable = false;
                                                                                 }
                                                                             }
