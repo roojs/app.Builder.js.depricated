@@ -2499,7 +2499,7 @@ Window=new XObject({
                                                                                     this.get('/LeftTree.model').setFromNode(false,model.toJS());
                                                                                     this.get('/LeftTree.model').changed(true); 
                                                                         
-                                                                                        this.el.editable = false;
+                                                                                    this.el.editable = false;
                                                                                 }
                                                                             }
                                                                         }
