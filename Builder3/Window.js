@@ -2486,14 +2486,14 @@ Window=new XObject({
                                                                                 },
                                                                                 edited : function (self, object, p0) {
                                                                                     
-                                                                                        print("CHANGED VALUE:" + JSON.stringify(p0, null,4));
-                                                                                        return;
+                                                                                    //print("CHANGED VALUE:" + JSON.stringify(p0, null,4));
+                                                                                    //    return;
                                                                                 	var model = this.get('/LeftPanel.model');
-                                                                                        var path = model.activePath;
-                                                                                        var iret = {};
-                                                                                        model.el.get_iter(iret, new Gtk.TreePath.from_string(path));
-                                                                                        model.el.set_value(iret.iter, 0, p0);
-                                                                                        model.el.set_value(iret.iter, 2, p0);
+                                                                                    var path = model.activePath;
+                                                                                    var iret = {};
+                                                                                    model.el.get_iter(iret, new Gtk.TreePath.from_string(path));
+                                                                                    model.el.set_value(iret.iter, 0, p0);
+                                                                                    model.el.set_value(iret.iter, 2, p0);
                                                                                         
                                                                                 	model.activePath = false;
                                                                                     this.get('/LeftTree.model').setFromNode(false,model.toJS());
