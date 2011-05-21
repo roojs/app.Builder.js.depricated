@@ -1,5 +1,6 @@
 #!/bin/sh
- 
+#git clone git://github.com/roojs/gir-1.2-gtk-3.0.git gir-1.2
+
 #// compile GIR's
 mkdir -p ~/.Builder/girepository-1.2 || false
  
