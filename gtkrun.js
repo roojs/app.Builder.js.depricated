@@ -31,7 +31,7 @@ GIRepository = imports.gi.GIRepository;
 GLib        = imports.gi.GLib;
 
 // we add this in, as it appears to get lost sometimes if we set it using the ENV. variable in builder.sh
-GIRepository.IRepository.prepend_search_path(GLib.get_home_dir() + '/.Builder/girepository-1.2');
+GIRepository.Repository.prepend_search_path(GLib.get_home_dir() + '/.Builder/girepository-1.2');
 //print(JSON.stringify(GIRepository.IRepository.get_search_path()));
 
 Gtk         = imports.gi.Gtk;
@@ -46,11 +46,11 @@ Vte         = imports.gi.Vte;
 
 Gdl         = imports.gi.Gdl;
 
-GtkClutter  = imports.gi.GtkClutter;
+//GtkClutter  = imports.gi.GtkClutter;
 
-if (GtkClutter) {    
-    GtkClutter.init(Seed.argv);
-}
+//if (GtkClutter) {    
+ //   GtkClutter.init(Seed.argv);
+//}
 
 File    = imports.File.File;
 
