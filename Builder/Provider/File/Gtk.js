@@ -173,7 +173,7 @@ Gtk = XObject.define(
             var data = JSON.parse(JSON.stringify(this.items[0]));
             // we should base this on the objects in the tree really..
             var i = [ 'Gtk', 'Gdk', 'Pango', 'GLib', 'Gio', 'GObject', 
-                'GtkSource', 'WebKit', 'Vte' , 'GtkClutter' , 'Gdl'];
+                'GtkSource', 'WebKit', 'Vte' ]; //, 'GtkClutter' , 'Gdl'];
             var src = "";
             i.forEach(function(e) {
                 src += e+" = imports.gi." + e +";\n";
