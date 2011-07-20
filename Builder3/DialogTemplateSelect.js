@@ -7,7 +7,6 @@ GObject = imports.gi.GObject;
 GtkSource = imports.gi.GtkSource;
 WebKit = imports.gi.WebKit;
 Vte = imports.gi.Vte;
-//GtkClutter = imports.gi.GtkClutter;
 console = imports.console;
 XObject = imports.XObject.XObject;
 DialogTemplateSelect=new XObject({
@@ -89,15 +88,15 @@ DialogTemplateSelect=new XObject({
                                     },
                                     loadData : function (data) {
                                         this.el.clear();                                    
-                                         
+                                        var iter = new Gtk.TreeIter();
                                         var el = this.el;
                                         data.forEach(function(p) {
-                                            var iret = {};
-                                            el.append(iret);
+                                    
+                                            el.append(iter);
                                             
                                              
-                                            el.set_value(iret.iter, 0, ''+ p.path);
-                                            el.set_value(iret.iter, 1, ''+ p.name);
+                                            el.set_value(iter, 0, ''+ p.path);
+                                            el.set_value(iter, 1, ''+ p.name);
                                             
                                         });
                                                   
