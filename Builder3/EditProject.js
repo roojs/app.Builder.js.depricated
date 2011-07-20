@@ -138,15 +138,14 @@ EditProject=new XObject({
                                     },
                                     loadData : function (data) {
                                                                                 
-                                                var iter = new Gtk.TreeIter();
-                                                var el = this.el;
+                                                 var el = this.el;
                                                 data.forEach(function(p) {
-                                                    
-                                                    el.append(iter);
+                                                    var ret = {};
+                                                    el.append(ret);
                                                     
                                                      
-                                                    el.set_value(iter, 0, p.xtype);
-                                                    el.set_value(iter, 1, p.desc);
+                                                    el.set_value(ret.iter, 0, p.xtype);
+                                                    el.set_value(ret.iter, 1, p.desc);
                                                     
                                                 });
                                                   
