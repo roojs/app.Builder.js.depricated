@@ -7,7 +7,7 @@ GObject = imports.gi.GObject;
 GtkSource = imports.gi.GtkSource;
 WebKit = imports.gi.WebKit;
 Vte = imports.gi.Vte;
- console = imports.console;
+console = imports.console;
 XObject = imports.XObject.XObject;
 Editor=new XObject({
     xtype: Gtk.Window,
@@ -56,14 +56,13 @@ Editor=new XObject({
             pack : "add",
             items : [
                 {
-                    xtype: Gtk.MenuBar,
+                    xtype: Gtk.Toolbar,
                     pack : "pack_start,false,true",
                     items : [
                         {
-                            xtype: Gtk.MenuItem,
-                             
+                            xtype: Gtk.Button,
                             listeners : {
-                                activate : function (self) {
+                                clicked : function (self) {
                                 
                                   this.get('/Editor.RightEditor').save();
                                 }
@@ -116,7 +115,7 @@ Editor=new XObject({
                             auto_indent : true,
                             init : function() {
                                 XObject.prototype.init.call(this);
-                                 var description = Pango.font_description_from_string("monospace")
+                                 var description = Pango.Font.description_from_string("monospace")
                                 description.set_size(8000);
                                 this.el.modify_font(description);
                             
@@ -135,19 +134,19 @@ Editor=new XObject({
                                 this.el.get_buffer().set_language(lm.get_language('js'));
                                 var buf = this.el.get_buffer();
                                 var cursor = buf.get_mark("insert");
-                                var ret = {};
-                                buf.get_iter_at_mark(ret, cursor);
-                                ret.iter.set_line(1);
-                                ret.iter.set_line_offset(4);
-                                buf.move_mark(cursor, ret.iter);
+                                var iter= new Gtk.TextIter;
+                                buf.get_iter_at_mark(iter, cursor);
+                                iter.set_line(1);
+                                iter.set_line_offset(4);
+                                buf.move_mark(cursor, iter);
                                 
                                 
                                 cursor = buf.get_mark("selection_bound");
-                                ret = {}; 
-                                buf.get_iter_at_mark(ret, cursor);
-                                ret.iter.set_line(1);
-                                ret.iter.set_line_offset(4);
-                                buf.move_mark(cursor, ret.iter);
+                                iter= new Gtk.TextIter;
+                                buf.get_iter_at_mark(iter, cursor);
+                                iter.set_line(1);
+                                iter.set_line_offset(4);
+                                buf.move_mark(cursor, iter);
                                 this.get('/Editor').dirty = false;
                                 this.el.grab_focus();
                                  this.get('/Editor.save_button').el.sensitive = false;
@@ -201,13 +200,12 @@ Editor=new XObject({
                                         return true;
                                     },
                                     toString : function() {
-                                        var s = {};
-                                        var e = {};
-                                         
-                                        this.el.get_start_iter(s).value;
-                                        this.el.get_end_iter(e).value;
                                         
-                                        var ret = this.el.get_text(s.iter,e.iter,true);
+                                        var s = new Gtk.TextIter();
+                                        var e = new Gtk.TextIter();
+                                        this.el.get_start_iter(s);
+                                        this.el.get_end_iter(e);
+                                        var ret = this.el.get_text(s,e,true);
                                         //print("TO STRING? " + ret);
                                         return ret;
                                     }
