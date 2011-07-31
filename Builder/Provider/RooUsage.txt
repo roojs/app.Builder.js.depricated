@@ -30,9 +30,9 @@ right:
 // toolbar at the right of the tabs.
 
 left:
- Roo.LayoutRegion
+ Roo.LayoutRegion:toolbar
 right:
- Roo.Toolbar:toolbar
+ Roo.Toolbar
 
 
 // add with region? region= 
