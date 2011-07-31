@@ -128,7 +128,7 @@ Base = XObject.define(
             //if (this.tree) {
              //   return this.tree;
             //}
-            console.dump(this.files);
+            //console.dump(this.files);
             this.tree = [];
             /*
             for (var f in this.files) {
