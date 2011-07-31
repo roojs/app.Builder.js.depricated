@@ -28,6 +28,7 @@ right:
  Roo.LayoutRegion
 
 // toolbar at the right of the tabs.
+
 left:
  Roo.LayoutRegion
 right:
