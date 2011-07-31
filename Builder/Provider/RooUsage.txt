@@ -27,6 +27,11 @@ left:
 right:
  Roo.LayoutRegion
 
+left:
+ Roo.LayoutRegion
+right:
+ Roo.Toolbar:toolbar
+
 // add with region? region= 
  
 left:
