@@ -991,6 +991,12 @@
      "memberOf": ""
     },
     {
+     "name": "content",
+     "type": "String",
+     "desc": "Raw content to fill content panel with (uses setContent on construction.)",
+     "memberOf": ""
+    },
+    {
      "name": "listeners",
      "type": "Object",
      "desc": "list of events and functions to call for this object, \nFor example :\n<pre><code>\n    listeners :  { \n       'click' : function(e) {\n           ..... \n        } ,\n        .... \n    } \n  </code></pre>",
@@ -1649,6 +1655,12 @@
      "memberOf": "Roo.ContentPanel"
     },
     {
+     "name": "content",
+     "type": "String",
+     "desc": "Raw content to fill content panel with (uses setContent on construction.)",
+     "memberOf": "Roo.ContentPanel"
+    },
+    {
      "name": "listeners",
      "type": "Object",
      "desc": "list of events and functions to call for this object, \nFor example :\n<pre><code>\n    listeners :  { \n       'click' : function(e) {\n           ..... \n        } ,\n        .... \n    } \n  </code></pre>",
@@ -1775,6 +1787,12 @@
      "sig": "function (_self, response)\n{\n\n}",
      "type": "function",
      "desc": "Fires when loading fails."
+    },
+    {
+     "name": "preparedata",
+     "sig": "function (_self, data, row, record)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires on every row to render, to allow you to change the data."
     },
     {
      "name": "selectionchange",
@@ -2217,7 +2235,7 @@
     {
      "name": "resizeTabs",
      "type": "Boolean",
-     "desc": "True to enable automatic tab resizing. This will resize the tabs so they are all the same size and fit within\nthe space available, similar to FireFox 1.5 tabs (defaults to false)",
+     "desc": "True to enable automatic tab resizing. This will resize the tabs so they are all the same size and fit within\n                     the space available, similar to FireFox 1.5 tabs (defaults to false)",
      "memberOf": ""
     },
     {
@@ -2272,6 +2290,12 @@
      "name": "split",
      "type": "Boolean",
      "desc": "To show the splitter",
+     "memberOf": ""
+    },
+    {
+     "name": "toolbar",
+     "type": "Boolean",
+     "desc": "xtype configuration for a toolbar - shows on right of tabbar",
      "memberOf": ""
     },
     {
@@ -2356,7 +2380,7 @@
      "name": "removeMask",
      "type": "Boolean",
      "desc": "True to create a single-use mask that is automatically destroyed after loading (useful for page loads),\nFalse to persist the mask element reference for multiple uses (e.g., for paged data widgets).  Defaults to false.",
-     "memberOf": "Roo"
+     "memberOf": ""
     },
     {
      "name": "msg",
@@ -2709,6 +2733,12 @@
      "memberOf": "Roo.ContentPanel"
     },
     {
+     "name": "content",
+     "type": "String",
+     "desc": "Raw content to fill content panel with (uses setContent on construction.)",
+     "memberOf": "Roo.ContentPanel"
+    },
+    {
      "name": "listeners",
      "type": "Object",
      "desc": "list of events and functions to call for this object, \nFor example :\n<pre><code>\n    listeners :  { \n       'click' : function(e) {\n           ..... \n        } ,\n        .... \n    } \n  </code></pre>",
@@ -2778,7 +2808,7 @@
      "name": "items",
      "type": "Roo.data.Store",
      "desc": "array of button configs or elements to add",
-     "memberOf": "Roo"
+     "memberOf": "Roo.Toolbar"
     }
    ],
    "events": []
@@ -3015,7 +3045,7 @@
      "name": "mode",
      "type": "String",
      "desc": "The shadow display mode.  Supports the following options:<br />\nsides: Shadow displays on both sides and bottom only<br />\nframe: Shadow displays equally on all four sides<br />\ndrop: Traditional bottom-right drop shadow (default)",
-     "memberOf": "Roo"
+     "memberOf": ""
     },
     {
      "name": "offset",
@@ -3363,7 +3393,7 @@
     {
      "name": "resizeTabs",
      "type": "Boolean",
-     "desc": "True to enable automatic tab resizing. This will resize the tabs so they are all the same size and fit within\nthe space available, similar to FireFox 1.5 tabs (defaults to false)",
+     "desc": "True to enable automatic tab resizing. This will resize the tabs so they are all the same size and fit within\n                     the space available, similar to FireFox 1.5 tabs (defaults to false)",
      "memberOf": "Roo.LayoutRegion"
     },
     {
@@ -3418,6 +3448,12 @@
      "name": "split",
      "type": "Boolean",
      "desc": "To show the splitter",
+     "memberOf": "Roo.LayoutRegion"
+    },
+    {
+     "name": "toolbar",
+     "type": "Boolean",
+     "desc": "xtype configuration for a toolbar - shows on right of tabbar",
      "memberOf": "Roo.LayoutRegion"
     },
     {
@@ -3573,7 +3609,7 @@
      "name": "items",
      "type": "Roo.data.Store",
      "desc": "array of button configs or elements to add",
-     "memberOf": "Roo"
+     "memberOf": ""
     },
     {
      "name": "container",
@@ -3988,7 +4024,7 @@
      "name": "tree",
      "type": "Roo.tree.TreePanel",
      "desc": "The tree TreePanel, with config etc.",
-     "memberOf": "Roo"
+     "memberOf": ""
     },
     {
      "name": "fitToFrame",
@@ -4072,6 +4108,12 @@
      "name": "loadOnce",
      "type": "Boolean",
      "desc": "When used with {@link #url}, calls {@link #setUrl} with this value",
+     "memberOf": "Roo.ContentPanel"
+    },
+    {
+     "name": "content",
+     "type": "String",
+     "desc": "Raw content to fill content panel with (uses setContent on construction.)",
      "memberOf": "Roo.ContentPanel"
     },
     {
@@ -4223,6 +4265,12 @@
      "desc": "Fires when a template node is double clicked."
     },
     {
+     "name": "preparedata",
+     "sig": "function (_self, data, row, record)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires on every row to render, to allow you to change the data."
+    },
+    {
      "name": "selectionchange",
      "sig": "function (_self, selections)\n{\n\n}",
      "type": "function",
@@ -4254,6 +4302,12 @@
      "name": "name",
      "type": "String",
      "desc": "String to display while loading.",
+     "memberOf": ""
+    },
+    {
+     "name": "region",
+     "type": "String",
+     "desc": "Region to render component to (defaults to center)",
      "memberOf": ""
     },
     {
@@ -4538,6 +4592,12 @@
      "memberOf": "Roo.data.Store"
     },
     {
+     "name": "multiSort",
+     "type": "Boolean",
+     "desc": "enable multi column sorting (sort is based on the order of columns, remote only at present)",
+     "memberOf": "Roo.data.Store"
+    },
+    {
      "name": "remoteSort",
      "type": "boolean",
      "desc": "True if sorting is to be handled by requesting the Proxy to provide a refreshed\nversion of the data object in sorted order, as opposed to sorting the Record cache in place (defaults to false).",
@@ -4773,6 +4833,12 @@
      "memberOf": "Roo.data.Store"
     },
     {
+     "name": "multiSort",
+     "type": "Boolean",
+     "desc": "enable multi column sorting (sort is based on the order of columns, remote only at present)",
+     "memberOf": "Roo.data.Store"
+    },
+    {
      "name": "remoteSort",
      "type": "boolean",
      "desc": "True if sorting is to be handled by requesting the Proxy to provide a refreshed\nversion of the data object in sorted order, as opposed to sorting the Record cache in place (defaults to false).",
@@ -4888,6 +4954,12 @@
      "name": "sortInfo",
      "type": "Object",
      "desc": "A config object in the format: {field: \"fieldName\", direction: \"ASC|DESC\"}",
+     "memberOf": ""
+    },
+    {
+     "name": "multiSort",
+     "type": "Boolean",
+     "desc": "enable multi column sorting (sort is based on the order of columns, remote only at present)",
      "memberOf": ""
     },
     {
