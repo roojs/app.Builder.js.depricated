@@ -4024,7 +4024,7 @@
      "name": "tree",
      "type": "Roo.tree.TreePanel",
      "desc": "The tree TreePanel, with config etc.",
-     "memberOf": ""
+     "memberOf": "Roo"
     },
     {
      "name": "fitToFrame",
@@ -9260,6 +9260,24 @@
      "name": "defaultLinkValue",
      "type": "String",
      "desc": "The default value for the create link prompt (defaults to http:/ /)",
+     "memberOf": ""
+    },
+    {
+     "name": "resizable",
+     "type": "String",
+     "desc": "'s' or 'se' or 'e' - wrapps the element in a\n                       Roo.resizable.",
+     "memberOf": ""
+    },
+    {
+     "name": "height",
+     "type": "Number",
+     "desc": "(in pixels)",
+     "memberOf": ""
+    },
+    {
+     "name": "width",
+     "type": "Number",
+     "desc": "(in pixels)",
      "memberOf": ""
     }
    ],
