@@ -53,7 +53,7 @@ var rf = new JsParser(toks);
 rf.parse();
 
 print("------------ in ------------------");
-print(str);
+//print(str);
 print("------------ out ------------------");
 
 // now try and render it back to javascript.
