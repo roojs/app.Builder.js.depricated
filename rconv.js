@@ -30,7 +30,7 @@ args.shift();
 //Seed.quit();
 
 
-if (File.isFile(arg[0])) {
+if (File.isFile(args[0])) {
     createTest(args[0]);    
 } else { 
     
