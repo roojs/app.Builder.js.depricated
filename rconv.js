@@ -57,7 +57,7 @@ print(str);
 print("------------ out ------------------");
 
 // now try and render it back to javascript.
-var rclass = imports.JsRender[rf.cfg.type][cfg.type];
+var rclass = imports.JsRender[rf.cfg.type][rf.cfg.type];
 var render = new 
 
 print(JSON.stringify(rf.cfg, null,4));
