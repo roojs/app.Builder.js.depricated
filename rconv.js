@@ -29,40 +29,46 @@ args.shift();
 //print(JSON.stringify(args, null,4));
 //Seed.quit();
 
+createTest(arg[0]);
 
 
-var tr = new  TokenReader(  { 
-    keepDocs :true, 
-    keepWhite : true,  
-    keepComments : true, 
-    sepIdents : false,
-    collapseWhite : false,
-    filename : args[0],
-    ignoreBadGrammer: true
-});
-
-var str = File.read(args[0])
-
-var toks = tr.tokenize(new TextStream(str));  
-
-
-var rf = new JsParser(toks);
-//print(JSON.stringify(rf.tokens, null,4));Seed.quit();
-
-
-rf.parse();
-
-print("------------ in ------------------");
-//print(str);
-print("------------ out ------------------");
-
-// now try and render it back to javascript.
-var rclass = imports.JsRender[rf.cfg.type][rf.cfg.type];
-rf.cfg.path = args[0];
-var render = new rclass(rf.cfg);
-
-print(render.toSource());
-
+function createTest(fn) { 
+    
+    // outputs to two directories..
+    File.mkdir('/tmp/rconv_orig');
+    File.mkdir('/tmp/rconv_gen');
+    
+    
+    var tr = new  TokenReader(  { 
+        keepDocs :true, 
+        keepWhite : true,  
+        keepComments : true, 
+        sepIdents : false,
+        collapseWhite : false,
+        filename : args[0],
+        ignoreBadGrammer: true
+    });
+    
+    var str = File.read(fn)
+    File.write('/tmp/rconv_org/' + File.basename(fn) , str);
+    var toks = tr.tokenize(new TextStream(str));  
+    
+    
+    var rf = new JsParser(toks);
+    //print(JSON.stringify(rf.tokens, null,4));Seed.quit();
+    
+    
+    rf.parse();
+     
+    // now try and render it back to javascript.
+    var rclass = imports.JsRender[rf.cfg.type][rf.cfg.type];
+    rf.cfg.path = args[0];
+    var render = new rclass(rf.cfg);
+    var res = render.toSource()
+    //print();
+    
+    File.write('/tmp/rconv_gen/' + File.basename(fn) , res);
+}
 //print(JSON.stringify(rf.cfg, null,4));
  
  
