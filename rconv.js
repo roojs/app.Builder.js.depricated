@@ -43,7 +43,7 @@ var str = File.read(args[0])
 var toks = tr.tokenize(new TextStream(str));  
 
 
-var rf = new RooFile(toks);
+var rf = new JsParser(toks);
 //print(JSON.stringify(rf.tokens, null,4));Seed.quit();
 
 
