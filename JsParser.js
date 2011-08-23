@@ -268,7 +268,7 @@ JsParser  =  XObject.define(
                 throw "Can not find XObject";
             }
             this.cfg.name = this.tokens[pos-3].data;
-            his.cfg.type = 'Gtk';
+            this.cfg.type = 'Gtk';
             var cfg = this.tokens[pos+1].items[0][0].props;
             this.cfg.items = [ this.parseProps(cfg) ];
             
