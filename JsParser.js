@@ -230,7 +230,7 @@ JsParser  =  XObject.define(
             
             this.cfg = this.parseProps(topp);
             this.cfg.name = this.tokens[3].data;
-            
+            this.cfg.type = 'Roo';
             
             //                  (            {          add    { this.panel (  {
             var cfg = this.tokens[7].items[0][0].props.add.val[2].items[2][3].items[0][0].props;
@@ -247,6 +247,7 @@ JsParser  =  XObject.define(
             
             
             var cfg = this.tokens[2].props.create.val[2].items[1][3].items[0][0].props;
+            his.cfg.type = 'Roo';
             //console.dump(this.tokens);
             //print(JSON.stringify(cfg,null,4)); Seed.quit();
             
