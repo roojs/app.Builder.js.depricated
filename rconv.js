@@ -31,6 +31,9 @@ args.shift();
 
 createTest(args[0]);
 
+print( " diff -w -u /tmp/rconv_orig /tmp/rconv_gen/");
+
+
 
 function createTest(fn) { 
     
