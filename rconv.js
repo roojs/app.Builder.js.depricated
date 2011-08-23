@@ -36,8 +36,8 @@ File.list(args[0]).forEach(function(a) {
     if (!a.match(/\.js$/)) {
         return;
     }
-    print(args[0] + '/' + a);
-    //createTest(args[0] + '/' + a);    
+    //print(args[0] + '/' + a);
+    createTest(args[0] + '/' + a);    
     
 })
 
