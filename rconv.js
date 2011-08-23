@@ -87,7 +87,10 @@ function createTest(fn) {
     var render = new rclass(rf.cfg);
     var res = render.toSource()
     //print();
-    File.remove('/tmp/rconv_gen/' + GLib.basename(fn) );
+    if (File.exists('/tmp/rconv_gen/' + GLib.basename(fn) )) {
+        File.remove('/tmp/rconv_gen/' + GLib.basename(fn) );
+    }
+    
     File.write('/tmp/rconv_gen/' + GLib.basename(fn) , res);
 }
 //print(JSON.stringify(rf.cfg, null,4));
