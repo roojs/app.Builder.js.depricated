@@ -23,7 +23,7 @@ Collapse = imports.JSDOC.Collapse.Collapse;
  * 
  */
 
-RooFile  =  XObject.define(
+JsParser  =  XObject.define(
     function (ar)
     {
         RooFile.superclass.constructor.call(this, ar);
