@@ -26,7 +26,7 @@ Collapse = imports.JSDOC.Collapse.Collapse;
 JsParser  =  XObject.define(
     function (ar)
     {
-        RooFile.superclass.constructor.call(this, ar);
+        JsParser.superclass.constructor.call(this, ar);
        // console.log("STARTING OUTPUT");
         
          
