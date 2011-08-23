@@ -6,6 +6,9 @@
  *
  * Needs to test a while directory convert to-><-from and compare..
  *
+ * 
+ *
+ * 
  *
  */
 
@@ -47,17 +50,16 @@ var rf = new JsParser(toks);
 //print(JSON.stringify(rf.tokens, null,4));Seed.quit();
 
 
-
-
 rf.parse();
 
 print("------------ in ------------------");
 print(str);
 print("------------ out ------------------");
 
+// now try and render it back to javascript.
+
+
+
 print(JSON.stringify(rf.cfg, null,4));
-
-print("------------ was ------------------");
-
-print(File.read(args[0].replace(/\.js$/,'.bjs')));
-
+ 
+ 
