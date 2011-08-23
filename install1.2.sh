@@ -1,8 +1,10 @@
 #!/bin/sh
  
+#git clone git://github.com/roojs/gir-1.2-gtk-2.0.git gir-1.2
+
 #// compile GIR's
 mkdir -p ~/.Builder/girepository-1.2 || false
  
-ls gir-1.1 | sed s/.gir// | awk \
+ls gir-1.2 | sed s/.gir// | awk \
     '{ print "g-ir-compiler  gir-1.2/" $1 ".gir --includedir=gir-1.2 -o  ~/.Builder/girepository-1.2/" $1 ".typelib" }' \
     | sh -x
