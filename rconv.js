@@ -58,7 +58,8 @@ print("------------ out ------------------");
 
 // now try and render it back to javascript.
 var rclass = imports.JsRender[rf.cfg.type][rf.cfg.type];
-var render = new 
+var render = new rclass(rf.cfg);
+
 
 print(JSON.stringify(rf.cfg, null,4));
  
