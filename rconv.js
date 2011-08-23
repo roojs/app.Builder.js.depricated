@@ -29,7 +29,7 @@ args.shift();
 //print(JSON.stringify(args, null,4));
 //Seed.quit();
 
-createTest(arg[0]);
+createTest(args[0]);
 
 
 function createTest(fn) { 
