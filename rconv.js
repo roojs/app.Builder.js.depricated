@@ -30,17 +30,19 @@ args.shift();
 //Seed.quit();
 
 
-
-
-File.list(args[0]).forEach(function(a) {
-    if (!a.match(/\.js$/)) {
-        return;
-    }
-    //print(args[0] + '/' + a);
-    createTest(args[0] + '/' + a);    
+if (File.isFile(arg[0])) {
+    createTest(args[0]);    
+} else { 
     
-})
-
+    File.list(args[0]).forEach(function(a) {
+        if (!a.match(/\.js$/)) {
+            return;
+        }
+        //print(args[0] + '/' + a);
+        createTest(args[0] + '/' + a);    
+        
+    })
+}
 
 
 print( " diff -w -u /tmp/rconv_orig /tmp/rconv_gen/");
