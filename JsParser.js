@@ -549,8 +549,8 @@ JsParser  =  XObject.define(
                 }
                 ar.push(l.substring(mindent));
             });
-            print(str);
-            print(JSON.stringify(ar,null,4));
+            //print(str);
+            //print(JSON.stringify(ar,null,4));
             
             
             return ar.join("\n");
