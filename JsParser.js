@@ -549,6 +549,9 @@ JsParser  =  XObject.define(
                 }
                 ar.push(l.substring(mindent));
             });
+            print(str);
+            print(JSON.stringify(ar,null,4));
+            
             return ar.join("\n");
         },
         clean_prefix: function(str) {
