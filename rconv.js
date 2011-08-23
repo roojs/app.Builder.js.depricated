@@ -35,8 +35,12 @@ createTest(args[0]);
 function createTest(fn) { 
     
     // outputs to two directories..
-    File.mkdir('/tmp/rconv_orig');
-    File.mkdir('/tmp/rconv_gen');
+    if (!File.exists('/tmp/rconv_orig')) {
+        File.mkdir('/tmp/rconv_orig');
+    }
+    if (!File.exists('/tmp/rconv_gen')) {
+        File.mkdir('/tmp/rconv_gen');
+    }
     
     
     var tr = new  TokenReader(  { 
