@@ -61,6 +61,6 @@ var rclass = imports.JsRender[rf.cfg.type][rf.cfg.type];
 var render = new rclass(rf.cfg);
 print(render.toSource());
 
-print(JSON.stringify(rf.cfg, null,4));
+//print(JSON.stringify(rf.cfg, null,4));
  
  
