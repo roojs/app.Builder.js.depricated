@@ -48,7 +48,7 @@ print( " diff -w -u /tmp/rconv_orig /tmp/rconv_gen/");
 
 
 function createTest(fn) { 
-    
+    print("converting : " + fn);
     // outputs to two directories..
     if (!File.exists('/tmp/rconv_orig')) {
         File.mkdir('/tmp/rconv_orig');
