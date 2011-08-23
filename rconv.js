@@ -50,7 +50,7 @@ function createTest(fn) {
     });
     
     var str = File.read(fn)
-    File.write('/tmp/rconv_org/' + File.basename(fn) , str);
+    File.write('/tmp/rconv_orig/' + File.basename(fn) , str);
     var toks = tr.tokenize(new TextStream(str));  
     
     
