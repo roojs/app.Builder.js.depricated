@@ -18,7 +18,7 @@ var TextStream = imports.JSDOC.TextStream.TextStream;
 
 var File = imports.File.File;
 
-
+var GLib = imports.gi.GLib;
 
 
 
@@ -50,7 +50,7 @@ function createTest(fn) {
     });
     
     var str = File.read(fn)
-    File.write('/tmp/rconv_orig/' + File.basename(fn) , str);
+    File.write('/tmp/rconv_orig/' + GLib.basename(fn) , str);
     var toks = tr.tokenize(new TextStream(str));  
     
     
@@ -67,7 +67,7 @@ function createTest(fn) {
     var res = render.toSource()
     //print();
     
-    File.write('/tmp/rconv_gen/' + File.basename(fn) , res);
+    File.write('/tmp/rconv_gen/' + GLib.basename(fn) , res);
 }
 //print(JSON.stringify(rf.cfg, null,4));
  
