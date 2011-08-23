@@ -27,6 +27,14 @@ left:
 right:
  Roo.LayoutRegion
 
+// toolbar at the right of the tabs.
+
+left:
+ Roo.LayoutRegion:toolbar
+right:
+ Roo.Toolbar
+
+
 // add with region? region= 
  
 left:

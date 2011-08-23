@@ -113,6 +113,7 @@ Base = XObject.define(
             for (var i in this.paths) {
                 return GLib.basename(i);
             }
+            return '';
         },
         
         toTree : function()
@@ -127,7 +128,7 @@ Base = XObject.define(
             //if (this.tree) {
              //   return this.tree;
             //}
-            
+            //console.dump(this.files);
             this.tree = [];
             /*
             for (var f in this.files) {

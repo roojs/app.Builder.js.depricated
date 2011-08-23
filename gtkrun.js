@@ -48,9 +48,15 @@ Vte         = imports.gi.Vte;
 
 //GtkClutter  = imports.gi.GtkClutter;
 
+<<<<<<< HEAD
 //if (GtkClutter) {    
 //    GtkClutter.init(Seed.argv);
 //}
+=======
+if (typeof(GtkClutter) != 'undefined') {    
+    GtkClutter.init(Seed.argv);
+}
+>>>>>>> 3b915ee311c6c2f49cc4f64e158b8f1c6fc7de4b
 
 File    = imports.File.File;
 
