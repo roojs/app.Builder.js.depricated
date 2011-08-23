@@ -7,10 +7,6 @@ GObject = imports.gi.GObject;
 GtkSource = imports.gi.GtkSource;
 WebKit = imports.gi.WebKit;
 Vte = imports.gi.Vte;
-<<<<<<< HEAD
-//GtkClutter = imports.gi.GtkClutter;
-=======
->>>>>>> 3b915ee311c6c2f49cc4f64e158b8f1c6fc7de4b
 //Gdl = imports.gi.Gdl;
 console = imports.console;
 XObject = imports.XObject.XObject;
