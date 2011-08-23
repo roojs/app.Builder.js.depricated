@@ -29,7 +29,19 @@ args.shift();
 //print(JSON.stringify(args, null,4));
 //Seed.quit();
 
-createTest(args[0]);
+
+
+
+File.list(args[0]).forEach(function(a) {
+    if (!a.match(/\.js$/)) {
+        return;
+    }
+    print(args[0] + '/' + a);
+    //createTest(args[0] + '/' + a);    
+    
+})
+
+
 
 print( " diff -w -u /tmp/rconv_orig /tmp/rconv_gen/");
 
