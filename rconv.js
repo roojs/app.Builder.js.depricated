@@ -36,7 +36,7 @@ var tr = new  TokenReader(  {
     keepWhite : true,  
     keepComments : true, 
     sepIdents : false,
-    collapseWhite : true,
+    collapseWhite : false,
     filename : args[0],
     ignoreBadGrammer: true
 });
