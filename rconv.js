@@ -83,7 +83,7 @@ function createTest(fn) {
      
     // now try and render it back to javascript.
     var rclass = imports.JsRender[rf.cfg.type][rf.cfg.type];
-    rf.cfg.path = args[0];
+    rf.cfg.path = fn;
     var render = new rclass(rf.cfg);
     var res = render.toSource()
     //print();
