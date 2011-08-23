@@ -506,7 +506,7 @@ JsParser  =  XObject.define(
         expand: function(ar)
         {
             var ret = '';
-            //print(JSON.stringify(ar,null,4));
+            print(JSON.stringify(ar,null,4));
             
             for(var i =0 ; i < ar.length -1; i++) {
                 ret += ar[i].toRaw();
