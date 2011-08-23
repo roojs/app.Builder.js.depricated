@@ -9,7 +9,7 @@
  *
  */
 
-var RooFile = imports.JsParser.JsParser;
+var JsParser = imports.JsParser.JsParser;
 var TokenReader = imports.JSDOC.TokenReader.TokenReader;
 var TextStream = imports.JSDOC.TextStream.TextStream;
 
