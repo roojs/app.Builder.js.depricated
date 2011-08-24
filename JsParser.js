@@ -247,7 +247,7 @@ JsParser  =  XObject.define(
             
             
             var cfg = this.tokens[2].props.create.val[2].items[1][3].items[0][0].props;
-            his.cfg.type = 'Roo';
+            this.cfg.type = 'Roo';
             //console.dump(this.tokens);
             //print(JSON.stringify(cfg,null,4)); Seed.quit();
             
