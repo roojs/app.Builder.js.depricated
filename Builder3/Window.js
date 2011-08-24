@@ -3119,7 +3119,7 @@ Window=new XObject({
                                                                                         this.el.load_html_string( "Render not ready" , 
                                                                                                 //fixme - should be a config option!
                                                                                                 // or should we catch stuff and fix it up..
-                                                                                                'http://localhost/app.Builder.js/'
+                                                                                                'http://localhost/app.Builder/'
                                                                                         );
                                                                                             
                                                                                             
@@ -3223,7 +3223,7 @@ Window=new XObject({
                                                                                             print("LOAD HTML " + html);
                                                                                             this.el.load_html_string( html , 
                                                                                                 //fixme - should be a config option!
-                                                                                                'http://localhost/app.Builder.js/'
+                                                                                                'http://localhost/app.Builder/'
                                                                                             );
                                                                                             this.redraws = 0;
                                                                                             // should trigger load_finished! - which in truns shoudl set refresh Required;
