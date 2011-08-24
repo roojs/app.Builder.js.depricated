@@ -80,9 +80,14 @@ files.forEach(function(f) {
             olist.push(imports[js]);
             return;
         }
-        
+        // Compiling BJS is depreciated..
+        olist.push(imports[js]);
+        return;
         
     }
+    
+    return;
+    
     var gtkbuilder =  new imports.Builder.Provider.File.Gtk.Gtk({ path : fp });
     gtkbuilder.loadItems(function() { });
     XObject.log("COMPILING" + js);
