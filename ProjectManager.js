@@ -1,13 +1,13 @@
 //<Script type="text/javascript">
-Gio = imports.gi.Gio;
-GLib = imports.gi.GLib;
+Gio         = imports.gi.Gio;
+GLib        = imports.gi.GLib;
 
 
-console = imports.console;
-XObject = imports.XObject.XObject;
+console     = imports.console;
+XObject     = imports.XObject.XObject;
  
-Observable = imports.Observable.Observable;
-File = imports.File.File;
+Observable  = imports.Observable.Observable;
+File        = imports.File.File;
 /**
  * 
  * /home/alan/.BuilderConfig/*
