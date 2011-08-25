@@ -1,10 +1,10 @@
 //<Script type="text/javascript">
 
 
-var XObject = imports.XObject.XObject;
+var XObject     = imports.XObject.XObject;
 
 
-var Lang = imports.JsRender.Lang.Lang;
+var Lang        = imports.JsRender.Lang.Lang;
 
 
 var JsParser    = imports.JsParser.JsParser;
