@@ -20,7 +20,7 @@ Window=new XObject({
         },
         show : function (self) {
           
-        imports.Builder.Provider.ProjectManager.ProjectManager.loadConfig();
+        imports.ProjectManager.ProjectManager.loadConfig();
           
         print("HIDEWIN - calling MidPropTree hidewin")
          	this.get('/MidPropTree').hideWin();
@@ -41,7 +41,7 @@ Window=new XObject({
     	};
     	this.targetList = new Gtk.TargetList();
     	this.targetList.add( this.atoms["STRING"], 0, 0);
-    	//imports.Builder.Provider.ProjectManager.ProjectManager.loadConfig();
+    	//imports.ProjectManager.ProjectManager.loadConfig();
     Gtk.rc_parse_string(
                 "style \"gtkcombobox-style\" {\n" + 
                 "    GtkComboBox::appears-as-list = 1\n" +
@@ -101,7 +101,7 @@ Window=new XObject({
                                                             this.get('/LeftProjectTree').showNoProjectSelected();
                                                             return true;
                                                         }
-                                                        var pm = imports.Builder.Provider.ProjectManager.ProjectManager;
+                                                        var pm = imports.ProjectManager.ProjectManager;
                                                         this.get('/DialogNewComponent').show({
                                                             project : pm.getByFn(fn)
                                                         });
@@ -125,7 +125,7 @@ Window=new XObject({
                                                 		this.get('/StandardErrorDialog').show("Select a project")
                                                 		return;
                                                         }
-                                                	var pm = imports.Builder.Provider.ProjectManager.ProjectManager;
+                                                	var pm = imports.ProjectManager.ProjectManager;
                                                 	var pr  = pm.getByFn(fn);
                                                 
                                                 	// confirm..
@@ -381,7 +381,7 @@ Window=new XObject({
                                                     },
                                                     onExpand : function() {
                                                         var nb = this.get('/LeftTopPanel.notebook');            
-                                                        var pm  = imports.Builder.Provider.ProjectManager.ProjectManager;
+                                                        var pm  = imports.ProjectManager.ProjectManager;
                                                         
                                                        
                                                         var model = this.get('/LeftProjectTree.combomodel');
@@ -442,7 +442,7 @@ Window=new XObject({
                                                             },
                                                             getPaleteProvider : function() {
                                                                 var model = this.get('model');
-                                                                var pm = imports.Builder.Provider.ProjectManager.ProjectManager;
+                                                                var pm = imports.ProjectManager.ProjectManager;
                                                                 return pm.getPalete(model.file.getType());
                                                             },
                                                             getRenderer : function() {
@@ -1514,7 +1514,7 @@ Window=new XObject({
                                                                             listeners : {
                                                                                 changed : function (self) {
                                                                                 	var fn = this.getValue();
-                                                                                	var pm  = imports.Builder.Provider.ProjectManager.ProjectManager;
+                                                                                	var pm  = imports.ProjectManager.ProjectManager;
                                                                                 	this.get('/LeftProjectTree.model').loadProject(pm.getByFn(fn))
                                                                                 }
                                                                             },
@@ -1524,7 +1524,7 @@ Window=new XObject({
                                                                                 if (ix < 0 ) {
                                                                                     return false;
                                                                                 }
-                                                                                var data = imports.Builder.Provider.ProjectManager.ProjectManager.projects;
+                                                                                var data = imports.ProjectManager.ProjectManager.projects;
                                                                                 if (typeof(data[ix]) == 'undefined') {
                                                                              	return false; 
                                                                                 }
@@ -1538,7 +1538,7 @@ Window=new XObject({
                                                                             {
                                                                                 var el = this.el;
                                                                                 el.set_active(-1);
-                                                                                var data = imports.Builder.Provider.ProjectManager.ProjectManager.projects;
+                                                                                var data = imports.ProjectManager.ProjectManager.projects;
                                                                                 data.forEach(function(n, ix) {
                                                                                     if (fn == n.fn) {
                                                                                         el.set_active(ix);
@@ -1565,7 +1565,7 @@ Window=new XObject({
                                                                                             
                                                                                         ] );
                                                                                        // this.el.set_sort_column_id(1,Gtk.SortType.ASCENDING);
-                                                                                       var pm = imports.Builder.Provider.ProjectManager.ProjectManager;
+                                                                                       var pm = imports.ProjectManager.ProjectManager;
                                                                                        var _this = this;
                                                                                        pm.on('changed', function() {
                                                                                            print("caught changed hook on project manager - reloading data");
