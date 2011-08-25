@@ -1,12 +1,17 @@
 //<Script type="text/javascript">
 
 
-XObject = imports.XObject.XObject;
+var XObject = imports.XObject.XObject;
 
 
-Lang = imports.JsRender.Lang.Lang;
+var Lang = imports.JsRender.Lang.Lang;
 
-File = imports.File.File;
+
+var JsParser = imports.JsParser.JsParser;
+var TokenReader = imports.JSDOC.TokenReader.TokenReader;
+var TextStream = imports.JSDOC.TextStream.TextStream;
+
+var File = imports.File.File;
 // File Provider..
 
 Base = XObject.define(
@@ -44,6 +49,50 @@ Base = XObject.define(
             var write = this.toJsonArray()
             print("WRITE: " + this.path);// + "\n" + JSON.stringify(write));
             File.write(this.path, JSON.stringify(write, null, 4));
+        },
+        /**
+         *
+         * load from a javascript file..
+         * 
+         *
+         */
+         
+        _loadItems : function(cb)
+        {
+            // already loaded..
+            if (this.items !== false) {
+                return false;
+            }
+              
+            
+            
+            var tr = new  TokenReader(  { 
+                keepDocs :true, 
+                keepWhite : true,  
+                keepComments : true, 
+                sepIdents : false,
+                collapseWhite : false,
+                filename : args[0],
+                ignoreBadGrammer: true
+            });
+            
+            var str = File.read(this.path);
+            var toks = tr.tokenize(new TextStream(str));  
+            var rf = new JsParser(toks);
+            rf.parse();
+            var cfg = rf.cfg;
+            
+            this.modOrder = cfg.modOrder || '001';
+            this.name = cfg.name.replace(/\.bjs/, ''); // BC!
+            this.parent =  cfg.parent;
+            this.permname =  cfg.permname || '';
+            this.title =  cfg.title || cfg.name;;
+            this.items = cfg.items || []; 
+            //???
+            //this.fixItems(_this, false);
+            cb();
+            return true;    
+                
         },
         
         /**

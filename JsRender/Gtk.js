@@ -7,7 +7,7 @@ XObject = imports.XObject.XObject;
 File = imports.File.File;
   
 //----------------------- our roo verison
-Base = imports.Builder.Provider.File.Base.Base;
+Base = imports.JsRender.Base.Base;
 
 var gid = 1;
 

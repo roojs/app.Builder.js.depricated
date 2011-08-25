@@ -49,11 +49,23 @@ print( " diff -w -u /tmp/rconv_orig /tmp/rconv_gen/");
 
 
 
-function createTest(fn) { 
+function createTest(fn) {
+    
+    // does it have a .bjs file..
+    var bjs = fn.replace(/\.js$/, '.bjs');
+    if (!File.exists(bjs)) {
+        return true;
+        
+    } 
+    
+    
     print("converting : " + fn);
     // outputs to two directories..
     if (!File.exists('/tmp/rconv_orig')) {
         File.mkdir('/tmp/rconv_orig');
+    }
+      if (!File.exists('/tmp/rconv_genbjs')) {
+        File.mkdir('/tmp/rconv_genbjs');
     }
     if (!File.exists('/tmp/rconv_gen')) {
         File.mkdir('/tmp/rconv_gen');
@@ -77,9 +89,16 @@ function createTest(fn) {
     
     var rf = new JsParser(toks);
     //print(JSON.stringify(rf.tokens, null,4));Seed.quit();
-    
-    
     rf.parse();
+    
+    
+    if (File.exists('/tmp/rconv_genbjs/' + GLib.basename(fn).replace(/\.js$/,'.bjs') )) {
+        File.remove('/tmp/rconv_genbjs/' + GLib.basename(fn).replace(/\.js$/,'.bjs') );
+    }
+    File.write('/tmp/rconv_genbjs/' + GLib.basename(fn).replace(/\.js$/,'.bjs'),
+               JSON.stringify(rf.cfg,null,4));
+
+    
      
     // now try and render it back to javascript.
     var rclass = imports.JsRender[rf.cfg.type][rf.cfg.type];

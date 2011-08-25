@@ -19,8 +19,9 @@ Collapse = imports.JSDOC.Collapse.Collapse;
  * Current issues:
  *  - xtype is combined on generated files. (not xns + xtype)
  *  - listeners are prefixed with '|' ... 
- *
- * 
+ *  - modkey is not getting picked up..
+ *  - suspect some of the elements are not getting flattened
+ *  - parent on 
  */
 
 JsParser  =  XObject.define(
@@ -227,10 +228,27 @@ JsParser  =  XObject.define(
                 throw "could not find top props...";
                 
             }
+            //print(JSON.stringify(topp,null,4));
             
             this.cfg = this.parseProps(topp);
-            this.cfg.name = this.tokens[3].data;
+            for(var k in this.cfg) {
+                this.cfg[k.replace(/^\|/, '')] = this.cfg[k];
+            }
+            if (this.cfg.name) {
+                this.cfg.title = this.cfg.name;
+                delete this.cfg.name;
+            }
+           // this.cfg.fullname = this.cfg.name;
             this.cfg.type = 'Roo';
+            
+            
+            
+            // looking for parent / name..
+            
+            
+            this.cfg.modOrder = this.cfg.modKey.split('-').shift(); 
+            print(JSON.stringify(this.cfg,null,4));
+            
             
             //                  (            {          add    { this.panel (  {
             var cfg = this.tokens[7].items[0][0].props.add.val[2].items[2][3].items[0][0].props;
@@ -404,12 +422,11 @@ JsParser  =  XObject.define(
                             ret[kv] = add;
                             continue;
                         }
-                        var fake_array = {
-                            xtype : 'Array.' + kv,
-                            '*prop' : kv,
-                            items : add
-                        }
-                        fakeItems.push(fake_array);
+                        add.forEach(function(a) {
+                            a['*prop'] = kv + '[]';
+                            fakeItems.push(a);
+                        });
+                        
                         continue;
                     } 
                     // raw array 
@@ -466,8 +483,8 @@ JsParser  =  XObject.define(
                         
                     }
                 }
-               
-                ret[ '|' + kv ] =  this.expand(o[k].val);
+                // finally give up..
+                ret[ '|' + kv ] =  this.clean_body(this.expand(o[k].val));
                 
             }
             if (!ret.items && fakeItems.length) {

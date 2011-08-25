@@ -26,7 +26,7 @@ Roo = XObject.define(
         //console.dump(cfg);
         
         if (!cfg.name || !cfg.fullname ) {
-            cfg.name = cfg.path.split('/').pop().replace(/\.bjs$/, '');
+            cfg.name = cfg.path.split('/').pop().replace(/\.bjs$/, '').replace(/\.js$/, '');
             //cfg.fullname = (cfg.parent && cfg.parent.length ? (cfg.parent + '.') : '' ) + cfg.name;
             cfg.fullname = cfg.name;
         }
@@ -70,7 +70,9 @@ Roo = XObject.define(
             'emptyText',
             'qtip',
             'value',
-            'text'
+            'text',
+            'emptyMsg',
+            'displayMsg'
         ],
         modOrder : '001', /// sequence id that this uses.
         region : 'center',
@@ -91,7 +93,7 @@ Roo = XObject.define(
         getType: function() {
             return 'Roo';
         },
-        
+       
       
         loadItems : function(cb)
         {
