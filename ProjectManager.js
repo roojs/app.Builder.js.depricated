@@ -62,7 +62,7 @@ ProjectManager =  new Observable({
             Seed.print(ar.xtype);
             
             // construct...
-            var cls = imports.Builder.Provider.Project[ar.xtype][ar.xtype];
+            var cls = imports.Project[ar.xtype][ar.xtype];
             this.projects.push( new cls(ar));
             
             
