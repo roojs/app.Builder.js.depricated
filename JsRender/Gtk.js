@@ -12,6 +12,8 @@ Base = imports.JsRender.Base.Base;
 var gid = 1;
 
 Gtk = XObject.define( 
+    
+    
     function(cfg) {
         
         // id ,
