@@ -212,7 +212,7 @@ Base = XObject.define(
         {
             
             var xt = this.xtype;
-            var cls = imports.Builder.Provider.File[xt][xt];
+            var cls = imports.JsRender[xt][xt];
             return  new cls({
                 path : path,
                 parent : '',
@@ -313,7 +313,7 @@ Base = XObject.define(
                     return;
                 }
                 var xt = _this.xtype;
-                var cls = imports.Builder.Provider.File[xt][xt];
+                var cls = imports.JsRender[xt][xt];
                 
                 Seed.print("Adding file " + dir  + '/' + fn);
                 _this.files[dir  + '/' + fn] = new cls({
