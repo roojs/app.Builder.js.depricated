@@ -1209,7 +1209,10 @@ Window=new XObject({
                                                                                         //this.get('/RightEditor').el.hide();
                                                                                         this.get('/Editor').el.hide();
                                                                                         print("set current tree");
+                                                                                        
                                                                                         this.currentTree = this.toJS(false, false)[0];
+                                                                                        
+                                                                                        
                                                                                         console.dump(this.currentTree);
                                                                                         this.currentTree = this.currentTree || { items: [] };
                                                                                         this.get('/LeftTree').renderView();
@@ -1384,15 +1387,19 @@ Window=new XObject({
                                                                             toJS : function(treepath, with_id)
                                                                             {
                                                                                 print("toJS : WITHID: "+ with_id);
+                                                                                
                                                                                 var iter = treepath;  // API used to be iter here..
+                                                                                
                                                                                 if (typeof(iter) == 'string') {
                                                                                     var ret = {};
                                                                                      if (!this.el.get_iter(ret, new Gtk.TreePath.from_string(treepath))) {
                                                                                         return false;
                                                                                     }
                                                                                     iter = ret.iter;
-                                                                                } 
+                                                                                }
+                                                                                
                                                                                 var first = false;
+                                                                                
                                                                                 if (!iter) {
                                                                                     
                                                                                     this.treemap = { }; 
