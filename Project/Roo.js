@@ -4,7 +4,7 @@ console = imports.console;
 XObject = imports.XObject.XObject;
  
 
-Base = imports.Builder.Provider.Project.Base.Base;
+Base = imports.Project.Base.Base;
 
 id = 1;
 

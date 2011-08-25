@@ -19,7 +19,7 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 File = imports.File.File;
 
-ProjectManager = imports.Builder.Provider.ProjectManager.ProjectManager;
+ProjectManager = imports.ProjectManager.ProjectManager;
 Observable = imports.Observable.Observable;
 
 Base = XObject.define( 
