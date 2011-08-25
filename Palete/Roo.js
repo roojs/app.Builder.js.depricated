@@ -1,12 +1,12 @@
 //<Script type="text/javascript">
  
-Gio = imports.gi.Gio;
+Gio       = imports.gi.Gio;
 
-console = imports.console;
-XObject = imports.XObject.XObject;
+console   = imports.console;
+XObject   = imports.XObject.XObject;
 
-Base = imports.Builder.Provider.Palete.Base.Base;
-File = imports.File.File;
+Base      = imports.Palete.Base.Base;
+File      = imports.File.File;
 //----------------------- our roo verison
 
 

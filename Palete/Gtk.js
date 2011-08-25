@@ -6,7 +6,7 @@ xml     = imports.libxml;
 console = imports.console;
 XObject = imports.XObject.XObject;
 
-Base = imports.Builder.Provider.Palete.Base.Base;
+Base = imports.Palete.Base.Base;
 File = imports.File.File;
 //----------------------- our roo verison
 
