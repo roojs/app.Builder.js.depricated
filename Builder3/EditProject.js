@@ -61,7 +61,7 @@ EditProject=new XObject({
                 this.project.paths = {};
                 this.project.paths[fn] =  'dir' ;
                 
-                var pr = imports.Builder.Provider.ProjectManager.ProjectManager.update(this.project);
+                var pr = imports.ProjectManager.ProjectManager.update(this.project);
                 
                 this.success(pr);
                 Seed.print(id);
