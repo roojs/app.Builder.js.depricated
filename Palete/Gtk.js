@@ -34,7 +34,7 @@ Gtk = XObject.define(
                 
          
         
-            var data = File.read(__script_path__ +'/../GtkUsage.txt');
+            var data = File.read(__script_path__ +'/GtkUsage.txt');
           // print(data);
             data  = data.split(/\n/g);
             var state = 0;

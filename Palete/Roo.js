@@ -32,7 +32,7 @@ Roo = XObject.define(
         load: function ( o ) {
             
              
-            var data = File.read(__script_path__ +'/../RooUsage.txt');
+            var data = File.read(__script_path__ +'/RooUsage.txt');
             //print(data);
             data  = data.split(/\n/g);
             var state = 0;
@@ -87,10 +87,9 @@ Roo = XObject.define(
                 return;
             }
             
-            var file = Gio.file_new_for_path(__script_path__ +'/../rooprops.json');
-            var _this = this;
+           
             
-            var data =  File.read(__script_path__ +'/../rooprops.json');
+            var data =  File.read(__script_path__ +'/rooprops.json');
             this.proplist = JSON.parse(data).data;
         },
         getPropertiesFor: function(ename, type)
