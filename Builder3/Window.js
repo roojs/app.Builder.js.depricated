@@ -1339,7 +1339,7 @@ Window=new XObject({
                                                                                 var iv = this.getIterValue(iter, 2);
                                                                                // print("IV" + iv);
                                                                                 var k = JSON.parse(iv);
-                                                                                if (k.json && !this.el.iter_parent( pret, iter  )) {
+                                                                                if (k && k.json && !this.el.iter_parent( pret, iter  )) {
                                                                                     delete k.json;
                                                                                 }
                                                                                 
