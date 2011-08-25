@@ -55,7 +55,7 @@ RooProjectProperties=new XObject({
            
            project.runhtml = str;
            
-           imports.Builder.Provider.ProjectManager.ProjectManager.saveConfig();
+           imports.ProjectManager.ProjectManager.saveConfig();
         //   print (str);
            //    this.get('view').el.get_buffer().get_text(project.runjs, project.runjs.length);
            // ok pressed..
