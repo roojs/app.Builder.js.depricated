@@ -132,7 +132,7 @@ ProjectManager =  new Observable({
             return proj;
             return;
         }
-        var cls = imports.Builder.Provider.Project[proj.xtype][proj.xtype];
+        var cls = imports.Project[proj.xtype][proj.xtype];
         var pr = new cls(proj);
         this.projects.push(pr );
         this.fireEvent('changed', this);
@@ -177,7 +177,7 @@ ProjectManager =  new Observable({
             print ("ALREADY GOT " + type);
             return ProjectManager.palete[type];
         }
-        var cls = imports.Builder.Provider.Palete[type][type];
+        var cls = imports.Palete[type][type];
         
         ProjectManager.palete[type] =  new cls();
         print (typeof(ProjectManager.palete[type]));
