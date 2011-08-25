@@ -18,7 +18,7 @@ File = imports.File.File;
 ProjectManager =  new Observable({
     
     events : {
-        'changed' : true,
+        'changed' : true
     },
     
     
