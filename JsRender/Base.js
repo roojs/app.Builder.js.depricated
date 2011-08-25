@@ -7,9 +7,9 @@ var XObject = imports.XObject.XObject;
 var Lang = imports.JsRender.Lang.Lang;
 
 
-var JsParser = imports.JsParser.JsParser;
+var JsParser    = imports.JsParser.JsParser;
 var TokenReader = imports.JSDOC.TokenReader.TokenReader;
-var TextStream = imports.JSDOC.TextStream.TextStream;
+var TextStream  = imports.JSDOC.TextStream.TextStream;
 
 var File = imports.File.File;
 // File Provider..
