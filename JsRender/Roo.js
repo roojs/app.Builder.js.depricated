@@ -80,7 +80,7 @@ Roo = XObject.define(
         title : '', // the title on displayed when loading.
         disable : '', // use a function to that returns false to disable this..
         permname: '', /// permission name
-        
+        items: false ;
         setNSID : function(id)
         {
             
@@ -95,12 +95,16 @@ Roo = XObject.define(
         },
        
       
-        loadItems : function(cb)
+        loadItems : function(cb, async)
         {
+            
+            
+            
             print("load Items!");
             if (this.items !== false) {
                 return false;
             }
+            
             var file = Gio.file_new_for_path(this.path);
             
             var _this = this;                        
