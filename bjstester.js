@@ -33,7 +33,7 @@ args.shift();
 if (File.isFile(args[0])) {
     bjstest(args[0]);    
 } else { 
-  trhow "argument is not file";
+  throw "argument is not file";
 }
 
 
