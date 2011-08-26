@@ -45,7 +45,7 @@ function bjstest(fn) {
     
     // does it have a .bjs file..
     var bjs = fn.replace(/\.js$/, '.bjs');
-    if (!bjs.match(/\.bjs$/) {
+    if (!bjs.match(/\.bjs$/)) {
         throw "not a bjs file"
     } 
     // let's assume roo..
