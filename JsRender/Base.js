@@ -254,7 +254,9 @@ Base = XObject.define(
                 
             }
             
-            
+            if (isArray) {
+                .stringify(keys, null,4));
+            }
             // keys is just the real keys of the object.
             var _this = this;
             
