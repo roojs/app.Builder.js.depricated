@@ -359,7 +359,7 @@ Base = XObject.define(
             });
             
             if (!isArray && !els.length) {
-                return;
+                return '';
             }
             //output the thing.
             var spad = pad.substring(0, pad.length-4);
