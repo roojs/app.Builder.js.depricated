@@ -246,7 +246,7 @@ Base = XObject.define(
             }
             
             
-            
+            // it's an array...
             
             
             var _this = this;
