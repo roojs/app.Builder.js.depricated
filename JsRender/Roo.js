@@ -112,7 +112,7 @@ Roo = XObject.define(
             function loaded(src) {
                 var cfg = JSON.parse(src);
                 print("loaded data");
-                print(JSON.stringify(cfg));
+                print(JSON.stringify(cfg, null,4));
                 _this.modOrder = cfg.modOrder || '001';
                 _this.name = cfg.name.replace(/\.bjs/, ''); // BC!
                 _this.parent =  cfg.parent;
