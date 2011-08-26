@@ -217,6 +217,8 @@ Base = XObject.define(
                         newitems.push(pl);
                         return;
                     }
+                    
+                    print(JSON.stringify(pl,null,4));
                     // we have a prop...
                     var prop = pl['*prop'] + '';
                     delete pl['*prop'];
