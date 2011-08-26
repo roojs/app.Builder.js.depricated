@@ -39,7 +39,7 @@ if (File.isFile(args[0])) {
  
 
 function bjstest(fn) {
-    
+    print("BJSTEST");
     // does it have a .bjs file..
     var bjs = fn.replace(/\.js$/, '.bjs');
     if (!bjs.match(/\.bjs$/)) {
