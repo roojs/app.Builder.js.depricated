@@ -52,7 +52,7 @@ Base = XObject.define(
         },
         /**
          *
-         * load from a javascript file..
+         * load from a javascript file.. rather than bjs..
          * 
          *
          */
