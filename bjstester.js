@@ -36,10 +36,7 @@ if (File.isFile(args[0])) {
   throw "argument is not file";
 }
 
-
-print( " diff -w -u /tmp/rconv_orig /tmp/rconv_gen/");
-
-
+ 
 
 function bjstest(fn) {
     
