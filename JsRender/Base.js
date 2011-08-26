@@ -179,6 +179,11 @@ Base = XObject.define(
         
         mungeToString:  function(obj, isListener, pad)
         {
+            
+            if (obj['|xns']== 'Roo.Toolbar') {
+                print(JSON.stringify(keys, null,4));
+            }
+            
             pad = pad || '    ';
             var keys = [];
             var isArray = false;
@@ -224,7 +229,11 @@ Base = XObject.define(
                     delete pl['*prop'];
                     if (!prop.match(/\[\]$/)) {
                         // it's a standard prop..
+                        
+                        // munge property..??
+                        
                         obj[prop] = pl;
+                        
                         keys.push(prop);
                         return;
                     }
@@ -278,6 +287,8 @@ Base = XObject.define(
                     left += ' : ';
                     
                 }
+                
+                
                 if (isListener) {
                     // change the lines...
                     var str= ('' + obj[i]).replace(/^\s+|\s+$/g,"");
