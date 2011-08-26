@@ -56,7 +56,7 @@ function bjstest(fn) {
     });
     render.loadItems(function() {
         print(render.toSource());
-    });
+    }, true);
     
 }
 //print(JSON.stringify(rf.cfg, null,4));
