@@ -128,7 +128,7 @@ Roo = XObject.define(
             }
             if (sync) {
                 loaded(File.read(this.path));
-                return;
+                return true;
             }
             
             
@@ -146,7 +146,7 @@ Roo = XObject.define(
                 
             });
             
-            
+            return true;
             
         },
         /**
