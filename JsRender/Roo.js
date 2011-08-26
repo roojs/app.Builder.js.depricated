@@ -97,7 +97,7 @@ Roo = XObject.define(
         },
        
       
-        loadItems : function(cb, async)
+        loadItems : function(cb, sync)
         {
             
             
@@ -107,15 +107,7 @@ Roo = XObject.define(
                 return false;
             }
             
-            var file = Gio.file_new_for_path(this.path);
-            
-            var _this = this;                        
-            file.read_async(0, null, function(source,result) {
-                var stream = source.read_finish(result)
-                var dstream = new Gio.DataInputStream.c_new(stream);
-                
-                var src = dstream.read_until("")
-                
+            function loaded(src) {
                 var cfg = JSON.parse(src);
                 print("loaded data");
                 print(JSON.stringify(cfg));
@@ -131,6 +123,23 @@ Roo = XObject.define(
                 
                 
                 cb();
+            }
+            if (sync) {
+                loaded(File.read(this.path));
+                return;
+            }
+            
+            
+            var file = Gio.file_new_for_path(this.path);
+            
+            var _this = this;                        
+            file.read_async(0, null, function(source,result) {
+                var stream = source.read_finish(result)
+                var dstream = new Gio.DataInputStream.c_new(stream);
+                
+                loaded (dstream.read_until(""));
+                
+                
                  
                 
             });
