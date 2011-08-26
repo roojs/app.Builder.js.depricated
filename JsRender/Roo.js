@@ -107,6 +107,8 @@ Roo = XObject.define(
                 return false;
             }
             
+            var _this = this;
+             
             function loaded(src) {
                 var cfg = JSON.parse(src);
                 print("loaded data");
@@ -132,7 +134,7 @@ Roo = XObject.define(
             
             var file = Gio.file_new_for_path(this.path);
             
-            var _this = this;                        
+                             
             file.read_async(0, null, function(source,result) {
                 var stream = source.read_finish(result)
                 var dstream = new Gio.DataInputStream.c_new(stream);
