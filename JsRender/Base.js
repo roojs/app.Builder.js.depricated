@@ -330,7 +330,7 @@ Base = XObject.define(
                    // 
                     var right = _this.mungeToString(el, i == 'listeners', pad + '    ');
                     
-                    if (!left.length && isArray) print(left);
+                    if (!left.length && isArray) print(right);
                     
                     if (typeof(right) != 'undefined') {
                         els.push(left + right);
