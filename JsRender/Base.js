@@ -181,7 +181,7 @@ Base = XObject.define(
         {
             
             if (obj['|xns']== 'Roo.Toolbar') {
-                print(JSON.stringify(keys, null,4));
+                print(JSON.stringify(obj, null,4));
             }
             
             pad = pad || '    ';
