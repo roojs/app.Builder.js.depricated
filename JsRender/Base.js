@@ -180,10 +180,7 @@ Base = XObject.define(
         mungeToString:  function(obj, isListener, pad)
         {
             
-            if (obj['|xns']== 'Roo.Toolbar') {
-                print(JSON.stringify(obj, null,4));
-            }
-            
+             
             pad = pad || '    ';
             var keys = [];
             var isArray = false;
@@ -223,7 +220,7 @@ Base = XObject.define(
                         return;
                     }
                     
-                    print(JSON.stringify(pl,null,4));
+                    //print(JSON.stringify(pl,null,4));
                     // we have a prop...
                     var prop = pl['*prop'] + '';
                     delete pl['*prop'];
@@ -241,7 +238,7 @@ Base = XObject.define(
                     // it's an array type..
                     obj[prop] = obj[prop]  || [];
                     obj[prop].push(pl);
-                    print("ADDNG PROP:" + prop + ' ' + keys.indexOf(prop) );
+                  //  print("ADDNG PROP:" + prop + ' ' + keys.indexOf(prop) );
                     if (keys.indexOf(prop) < 0) {
                         keys.push(prop);
                     }
