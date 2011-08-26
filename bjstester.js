@@ -41,68 +41,26 @@ print( " diff -w -u /tmp/rconv_orig /tmp/rconv_gen/");
 
 
 
-function createTest(fn) {
+function bjstest(fn) {
     
     // does it have a .bjs file..
     var bjs = fn.replace(/\.js$/, '.bjs');
-    if (!File.exists(bjs)) {
-        return true;
-        
+    if (!bjs.match(/\.bjs$/) {
+        throw "not a bjs file"
     } 
-    
-    
-    print("converting : " + fn);
-    // outputs to two directories..
-    if (!File.exists('/tmp/rconv_orig')) {
-        File.mkdir('/tmp/rconv_orig');
-    }
-      if (!File.exists('/tmp/rconv_genbjs')) {
-        File.mkdir('/tmp/rconv_genbjs');
-    }
-    if (!File.exists('/tmp/rconv_gen')) {
-        File.mkdir('/tmp/rconv_gen');
-    }
-    
-    
-    var tr = new  TokenReader(  { 
-        keepDocs :true, 
-        keepWhite : true,  
-        keepComments : true, 
-        sepIdents : false,
-        collapseWhite : false,
-        filename : args[0],
-        ignoreBadGrammer: true
-    });
-    
-    var str = File.read(fn)
-    File.write('/tmp/rconv_orig/' + GLib.basename(fn) , str);
-    var toks = tr.tokenize(new TextStream(str));  
-    
-    
-    var rf = new JsParser(toks);
-    //print(JSON.stringify(rf.tokens, null,4));Seed.quit();
-    rf.parse();
-    
-    
-    if (File.exists('/tmp/rconv_genbjs/' + GLib.basename(fn).replace(/\.js$/,'.bjs') )) {
-        File.remove('/tmp/rconv_genbjs/' + GLib.basename(fn).replace(/\.js$/,'.bjs') );
-    }
-    File.write('/tmp/rconv_genbjs/' + GLib.basename(fn).replace(/\.js$/,'.bjs'),
-               JSON.stringify(rf.cfg,null,4));
-
-    
+    // let's assume roo..
+      
      
     // now try and render it back to javascript.
-    var rclass = imports.JsRender[rf.cfg.type][rf.cfg.type];
-    rf.cfg.path = fn;
-    var render = new rclass(rf.cfg);
-    var res = render.toSource()
-    //print();
-    if (File.exists('/tmp/rconv_gen/' + GLib.basename(fn) )) {
-        File.remove('/tmp/rconv_gen/' + GLib.basename(fn) );
-    }
+    var rclass = imports.JsRender.Roo.Roo;
     
-    File.write('/tmp/rconv_gen/' + GLib.basename(fn) , res);
+    var render = new rclass({
+        path: fn
+    });
+    render.loadItems(function() {
+        print(render.toSource());
+    });
+    
 }
 //print(JSON.stringify(rf.cfg, null,4));
  
