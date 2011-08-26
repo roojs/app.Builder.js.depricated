@@ -247,6 +247,11 @@ Base = XObject.define(
             
             
             // it's an array...
+            if (obj.xtype == 'NestedLayoutPanel') {
+                print(JSON.stringify(keys, null,4));
+                
+                
+            }
             
             
             var _this = this;
