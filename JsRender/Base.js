@@ -293,6 +293,7 @@ Base = XObject.define(
                     if (lines.length > 1) {
                         str = lines.join("\n" + pad);
                     }
+                    
                     els.push(left  + str);
                     return;
                 }
@@ -335,7 +336,7 @@ Base = XObject.define(
                     
                     //if (!left.length && isArray) print(right);
                     
-                    if (typeof(right) != 'undefined') {
+                    if ((typeof(right) != 'undefined') && right.length){
                         els.push(left + right);
                     }
                 
