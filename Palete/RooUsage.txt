@@ -119,9 +119,12 @@ left:
  Roo.form.Form:buttons[] 
 right:
  Roo.Button         
-           
-           
-           
+
+left:           
+ Roo.form.HtmlEditor:toolbars[]
+right:
+ Roo.form.HtmlEditor.ToolbarStandard
+ Roo.form.HtmlEditor.ToolbarContext          
            
            
 //Toolbar           
