@@ -288,7 +288,7 @@ Base = XObject.define(
                 
                 if (isListener) {
                     // change the lines...
-                    var str= ('' + obj[i]).replace(/^\s+|\s+$/g,"");
+                    var str= ('' + obj[i]).replace(/^\s+|\s+$/g,""); // remove bar.
                     var lines = str.split("\n");
                     if (lines.length > 1) {
                         str = lines.join("\n" + pad);
