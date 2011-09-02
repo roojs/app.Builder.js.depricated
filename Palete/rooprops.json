@@ -1268,6 +1268,12 @@
      "desc": "Fires after the component is hidden."
     },
     {
+     "name": "monthchange",
+     "sig": "function (_self, date)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires when the displayed month changes"
+    },
+    {
      "name": "render",
      "sig": "function (_self)\n{\n\n}",
      "type": "function",
