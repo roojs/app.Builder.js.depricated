@@ -93,7 +93,8 @@ right:
   Roo.form.NumberField         
   Roo.form.Checkbox         
   Roo.form.Radio         
-  Roo.form.ComboBox         
+  Roo.form.ComboBox
+  Roo.form.ComboCheck
   Roo.form.TextArea         
   Roo.form.HtmlEditor         
   Roo.form.FCKeditor         
@@ -109,7 +110,8 @@ right:
   Roo.form.NumberField         
   Roo.form.Checkbox         
   Roo.form.Radio         
-  Roo.form.ComboBox         
+  Roo.form.ComboBox
+  Roo.form.ComboCheck
   Roo.form.TextArea         
            
  
@@ -139,6 +141,7 @@ right:
   Roo.Toolbar.SplitButton         
   Roo.Toolbar.TextItem        
   Roo.form.ComboBox
+  Roo.form.ComboCheck
   Roo.form.DateField
   Roo.form.TextField
 
@@ -252,6 +255,7 @@ left:
   Roo.grid.EditorGrid:ds
   Roo.grid.Grid:ds
   Roo.form.ComboBox:store
+  Roo.form.ComboCheck:store
   Roo.View:store
   Roo.JsonView:store
 right: 
