@@ -204,19 +204,19 @@ Gtk = XObject.define(
             var etype = GIRepository.base_info_get_type(.bi);
             var meth = etype == GIRepository.InfoType.INTERFACE ?
                 [ 
-                    'get_n_properties',
-                    'get_property',
-                    'get_n_signals',
-                    'get_signal',
-                    'get_n_methods',
-                    'get_method'
+                    'interface_info_get_n_properties',
+                    'interface_info_get_property',
+                    'interface_info_get_n_signals',
+                    'interface_info_get_signal',
+                    'interface_info_get_n_methods',
+                    'interface_info_get_method'
                 ] : [ 
-                    'get_n_properties',
-                    'get_property',
-                    'get_n_signals',
-                    'get_signal',
-                    'get_n_methods',
-                    'get_method'
+                    'object_info_get_n_properties',
+                    'object_info_get_property',
+                    'object_info_get_n_signals',
+                    'object_info_get_signal',
+                    'object_info_get_n_methods',
+                    'object_info_get_method'
                 ]; 
             
             
@@ -238,8 +238,8 @@ Gtk = XObject.define(
             p.sig */
             
             // properties.. -- and parent ones...!!!
-            for (var i =0;i <  bi[meth[0]](); i++) {
-                var prop = bi[meth[1]](i);  
+            for (var i =0;i <  GIRepository[meth[0]](bi); i++) {
+                var prop = GIRepository[meth[1]](bi,i);  
                 var n_original =  prop.get_name();
                 
                 var flags =  prop.get_flags(); // check for readonly..
@@ -265,8 +265,8 @@ Gtk = XObject.define(
            
             // signals..
             
-            for (var i =0;i <  bi[meth[2]](); i++) {
-                var prop = bi[meth[3]](i);  
+            for (var i =0;i <  GIRepository[meth[2]](bi); i++) {
+                var prop =GIRepository[meth[3]](bi,i);  
                 var n_original =  prop.get_name();
                 // print ('signal: ' + n_original); 
                 var add = {
@@ -279,8 +279,8 @@ Gtk = XObject.define(
             }
             // methods
             
-            for (var i =0;i <  bi[meth[4]](); i++) {
-                var prop = bi[meth[5]](i);  
+            for (var i =0;i <  GIRepository[meth[4]](bi); i++) {
+                var prop = GIRepository[meth[5]](bi,i);  
                 var n_original =  prop.get_name();
                 print(ename +": ADD : " + n_original );
                 var flags = prop.get_flags();
@@ -334,9 +334,9 @@ Gtk = XObject.define(
             
             // implements needs to be more carefull as it could add dupes..
             // use the parent implements list to ensure no dupes..
-            for(var i =0; i < bi.get_n_interfaces(); i++) {
+            for(var i =0; i < GIRepository.object_info_get_n_interfaces(bi); i++) {
                  
-                var prop = bi.get_interface(i);
+                var prop = GIRepository.object_info_get_interfaces(bi);
                 var iface = prop.get_namespace() +'.'+ prop.get_name();
                 if ( ilist.indexOf(iface) > -1) {
                     continue;
