@@ -400,7 +400,7 @@ Gtk = XObject.define(
         },
         typeToName  : function (type_info, allow_iface) // find type for properties or arguments.
         {
-           var ty = GIRepository.type_tag_to_string( type_info.get_tag());
+           var ty = GIRepository.type_tag_to_string( GIRepository.type_info_get_tag(type_info));
            
             if ((ty == 'void') && type_info.is_pointer()) {
                 return false;
