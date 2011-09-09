@@ -3654,9 +3654,17 @@ Window=new XObject({
                                                                                             }
                                                                                             var runner = GLib.path_get_dirname (__script_path__) + '/gtkrun.js'; 
                                                                                             this.get('/Terminal').feed("RUN DIR:" + dir);
-                                                                                            
-                                                                                            this.get('/Terminal').el.fork_command( null , [], [], GLib.path_get_dirname (__script_path__) 
-                                                                                        	, false,false,false); 
+                                                                                            fork_command_full(
+                                                                                                Vte.PtyFlags.DEFAULT,
+                                                                                                GLib.path_get_dirname (__script_path__) ,
+                                                                                                [], //argv
+                                                                                                [], // env
+                                                                                                0, //spawn flags
+                                                                                                null, // user func
+                                                                                                null, // child setupdata
+                                                                                                out
+                                                                                        ); 
+                                                                                             
                                                                                             var cmd = "/usr/bin/seed " + runner + " " + dir + "\n";
                                                                                             this.get('/Terminal').el.feed_child(cmd, cmd.length);
                                                                                             return false;
