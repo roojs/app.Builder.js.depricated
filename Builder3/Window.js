@@ -3654,6 +3654,7 @@ Window=new XObject({
                                                                                             }
                                                                                             var runner = GLib.path_get_dirname (__script_path__) + '/gtkrun.js'; 
                                                                                             this.get('/Terminal').feed("RUN DIR:" + dir);
+                                                                                            var out = {};
                                                                                             fork_command_full(
                                                                                                 Vte.PtyFlags.DEFAULT,
                                                                                                 GLib.path_get_dirname (__script_path__) ,
