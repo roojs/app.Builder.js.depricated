@@ -366,8 +366,8 @@ Gtk = XObject.define(
             meth.ret_type = this.typeToName(GIRepository.callable_info_get_return_type(sig));
             // might be a numbeR??
             meth.params = [];
-            for(var a_i  =0; a_i   < sig.get_n_args(); a_i++) {
-                var arg = sig.get_arg( a_i);
+            for(var a_i  =0; a_i   < GIRepository.callable_info_get_n_args(sig); a_i++) {
+                var arg = GIRepository.callable_info_get_arg(sig, a_i);
                  
                 meth.params.push({
                     name  : arg.get_name(),
@@ -388,8 +388,8 @@ Gtk = XObject.define(
             if (ret_type == 'boolean') {
                 ret = "    return false;\n";
             }
-            for(var a_i  =0; a_i   < sig.get_n_args(); a_i++) {
-                var arg = sig.get_arg(a_i);
+            for(var a_i  =0; a_i   < GIRepository.callable_info_get_n_args(sig); a_i++) {
+                var arg = GIRepository.callable_info_get_arg(sig, a_i);
                 
                 args.push(arg.get_name());
             }
