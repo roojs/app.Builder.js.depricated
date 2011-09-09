@@ -276,9 +276,17 @@ Window=new XObject({
                                                 	File.write( target+ '/builder.html', html);
                                                 	
                                                         this.get('/Terminal').feed("RUN DIR:" + target);
-                                                    
-                                                    this.get('/Terminal').el.fork_command( null , [], [], target
-                                                	, false,false,false); 
+                                                    var out = {};
+                                                    this.get('/Terminal').el.fork_command_full(
+                                                                Vte.PtyFlags.DEFAULT
+                                                                target ,
+                                                                [], //argv
+                                                                [], // env
+                                                                0, //spawn flags
+                                                                null, // user func
+                                                                null, // child setupdata
+                                                                out
+                                                        ); 
                                                     var cmd = "firefox file://" + target + "/builder.html  \n";
                                                     this.get('/Terminal').el.feed_child(cmd, cmd.length);
                                                      return false;
