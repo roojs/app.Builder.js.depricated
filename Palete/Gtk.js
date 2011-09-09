@@ -201,7 +201,7 @@ Gtk = XObject.define(
                 print("COULND NOT FIND BY NAME");
                 return [];
             }
-            var etype = bi.get_type();;
+            var etype = GIRepository.base_info_get_type(.bi);
             var meth = etype == GIRepository.InfoType.INTERFACE ?
                 [ 
                     'get_n_properties',
