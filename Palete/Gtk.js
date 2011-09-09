@@ -311,7 +311,7 @@ Gtk = XObject.define(
             }
             
             // parent!!?!!?
-            var pi = bi.get_parent();
+            var pi = GIRepository.object_info_get_parent(bi);
             
             if (pi) {
                 
