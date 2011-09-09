@@ -204,19 +204,19 @@ Gtk = XObject.define(
             var etype = bi.get_type();;
             var meth = etype == GIRepository.InfoType.INTERFACE ?
                 [ 
-                    'interface_info_get_n_properties',
-                    'interface_info_get_property',
-                    'interface_info_get_n_signals',
-                    'interface_info_get_signal',
-                    'interface_info_get_n_methods',
-                    'interface_info_get_method'
+                    'get_n_properties',
+                    'get_property',
+                    'get_n_signals',
+                    'get_signal',
+                    'get_n_methods',
+                    'get_method'
                 ] : [ 
-                    'object_info_get_n_properties',
-                    'object_info_get_property',
-                    'object_info_get_n_signals',
-                    'object_info_get_signal',
-                    'object_info_get_n_methods',
-                    'object_info_get_method'
+                    'get_n_properties',
+                    'get_property',
+                    'get_n_signals',
+                    'get_signal',
+                    'get_n_methods',
+                    'get_method'
                 ]; 
             
             
@@ -238,8 +238,8 @@ Gtk = XObject.define(
             p.sig */
             
             // properties.. -- and parent ones...!!!
-            for (var i =0;i <  GIRepository[meth[0]](bi); i++) {
-                var prop = GIRepository[meth[1]](bi, i);  
+            for (var i =0;i <  bi[meth[0]](); i++) {
+                var prop = bi[meth[1]](i);  
                 var n_original =  prop.get_name();
                 
                 var flags =  prop.get_flags(); // check for readonly..
@@ -265,8 +265,8 @@ Gtk = XObject.define(
            
             // signals..
             
-            for (var i =0;i <  GIRepository[meth[2]](bi); i++) {
-                var prop = GIRepository[meth[3]](bi, i);  
+            for (var i =0;i <  bi[meth[2]](); i++) {
+                var prop = bi[meth[3]](i);  
                 var n_original =  prop.get_name();
                 // print ('signal: ' + n_original); 
                 var add = {
@@ -279,8 +279,8 @@ Gtk = XObject.define(
             }
             // methods
             
-            for (var i =0;i <  GIRepository[meth[4]](bi); i++) {
-                var prop = GIRepository[meth[5]](bi, i);  
+            for (var i =0;i <  bi[meth[4]](); i++) {
+                var prop = bi[meth[5]](i);  
                 var n_original =  prop.get_name();
                 print(ename +": ADD : " + n_original );
                 var flags = prop.get_flags();
@@ -295,7 +295,7 @@ Gtk = XObject.define(
                     name :  n_original.replace(/\-/g, '_'),
                     type : 'function', //???
                     desc : this.doc(ename + '.signal.' + n_original),
-                }
+                };
                 this.genParams(prop,add);
                 mlist.push(add);
             }
@@ -400,9 +400,9 @@ Gtk = XObject.define(
         },
         typeToName  : function (type_info, allow_iface) // find type for properties or arguments.
         {
-           var ty = GIRepository.type_tag_to_string( GIRepository.type_info_get_tag(type_info));
+           var ty = GIRepository.type_tag_to_string( type_info.get_tag());
            
-            if ((ty == 'void') && GIRepository.type_info_is_pointer(type_info)) {
+            if ((ty == 'void') && type_info.is_pointer()) {
                 return false;
             }
             if (ty == 'array') {
@@ -412,14 +412,13 @@ Gtk = XObject.define(
                 return ty;
             }
             // we can accept enum types here..
-            var interface_info = GIRepository.type_info_get_interface (type_info);        
-            var interface_type = GIRepository.base_info_get_type (interface_info);
+            var interface_info = type_info_.get_interface ();        
+            var interface_type = interface_info.get_type ();
             
-            if (!allow_iface && interface_type != GIRepository.IInfoType.ENUM) {
+            if (!allow_iface && interface_type != GIRepository.InfoType.ENUM) {
                 return false;
             }
-            return GIRepository.base_info_get_namespace(interface_info) + '.' +
-                    GIRepository.base_info_get_name(interface_info);
+            return interface_info.get_namespace() + '.' + interface_info.get_name();
             
         },
         /**
@@ -491,19 +490,19 @@ Gtk = XObject.define(
             }
             var gi = GIRepository.Repository.get_default();
             var bi = gi.find_by_name(es[0], es[1]);
-            var etype = GIRepository.base_info_get_type(bi);
+            var etype = bi.get_type();
             if (etype != GIRepository.InfoType.ENUM) {
                 console.log("Options not handled yet!!!");
                 return false;
             }
             var ret = [];
             // got an enum.. let's return the values..
-            for(var i =0; i < GIRepository.enum_info_get_n_values(bi); i++) {
+            for(var i =0; i < bi.get_n_values(); i++) {
                  
-                  var prop = GIRepository.enum_info_get_value(bi,i);
+                  var prop = bi.get_value(i);
                    
                 
-                  ret.push( ename + '.' + GIRepository.base_info_get_name(prop).toUpperCase() ) 
+                  ret.push( ename + '.' + prop.get_name().toUpperCase() ) 
             }
             return ret;
         },
