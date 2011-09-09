@@ -3659,7 +3659,7 @@ Window=new XObject({
                                                                                            this.get('/Terminal').el.fork_command_full(
                                                                                                 Vte.PtyFlags.DEFAULT,
                                                                                                 GLib.path_get_dirname (__script_path__) ,
-                                                                                                [], //argv
+                                                                                                [ 'echo' , "hello"], //argv
                                                                                                 [], // env
                                                                                                 0, //spawn flags
                                                                                                 null, // user func
