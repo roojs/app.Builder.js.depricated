@@ -278,7 +278,7 @@ Window=new XObject({
                                                         this.get('/Terminal').feed("RUN DIR:" + target);
                                                     var out = {};
                                                     this.get('/Terminal').el.fork_command_full(
-                                                                Vte.PtyFlags.DEFAULT
+                                                                Vte.PtyFlags.DEFAULT,
                                                                 target ,
                                                                 [], //argv
                                                                 [], // env
