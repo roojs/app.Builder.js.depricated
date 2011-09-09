@@ -153,7 +153,9 @@ Gtk = XObject.define(
             
             
         },
-        
+        save : function() {
+            Base.prototype.save.call(this);
+        }
         
         /** 
          *  saveJS
