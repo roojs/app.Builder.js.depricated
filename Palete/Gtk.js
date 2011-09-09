@@ -363,7 +363,7 @@ Gtk = XObject.define(
         {
             var args = ['self'];
             var ret = "\n";
-            meth.ret_type = this.typeToName(GIRepository.signal_info_get_return_type(sig));
+            meth.ret_type = this.typeToName(GIRepository.callable_info_get_return_type(sig));
             // might be a numbeR??
             meth.params = [];
             for(var a_i  =0; a_i   < sig.get_n_args(); a_i++) {
@@ -383,7 +383,7 @@ Gtk = XObject.define(
         {
             var args = ['self'];
             var ret = "\n";
-            var ret_type = this.typeToName(GIRepository.signal_info_get_return_type(sig));
+            var ret_type = this.typeToName(GIRepository.callable_info_get_return_type(sig));
             // might be a numbeR??
             if (ret_type == 'boolean') {
                 ret = "    return false;\n";
