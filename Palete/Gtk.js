@@ -91,7 +91,7 @@ Gtk = XObject.define(
             }
 
             console.log("LOAD DOCS: " + ns);
-            var gi = GIRepository.IRepository.get_default();
+            var gi = GIRepository.Repository.get_default();
             var ver = gi.get_version(ns);
             if (!ver) {
                 this.comments[ns] = {};
@@ -150,7 +150,7 @@ Gtk = XObject.define(
                 }
             }
             
-            var pth = GIRepository.IRepository.get_search_path ();
+            var pth = GIRepository.Repository.get_search_path ();
             
             
             var gir_path = pth[0].replace(/lib\/girepository-1.0/, 'share\/gir-1.0');
@@ -191,7 +191,7 @@ Gtk = XObject.define(
                 return this.proplist[ename][type];
             }
             // use introspection to get lists..
-            var gi = GIRepository.IRepository.get_default();
+            var gi = GIRepository.Repository.get_default();
             var es = ename.split('.');
             
             imports.gi[es[0]];
@@ -201,8 +201,8 @@ Gtk = XObject.define(
                 print("COULND NOT FIND BY NAME");
                 return [];
             }
-            var etype = GIRepository.base_info_get_type(bi);
-            var meth = etype == GIRepository.IInfoType.INTERFACE ?
+            var etype = bi.get_type();;
+            var meth = etype == GIRepository.InfoType.INTERFACE ?
                 [ 
                     'interface_info_get_n_properties',
                     'interface_info_get_property',
@@ -240,12 +240,12 @@ Gtk = XObject.define(
             // properties.. -- and parent ones...!!!
             for (var i =0;i <  GIRepository[meth[0]](bi); i++) {
                 var prop = GIRepository[meth[1]](bi, i);  
-                var n_original =  GIRepository.base_info_get_name(prop);
+                var n_original =  prop.get_name();
                 
-                var flags =  GIRepository.property_info_get_flags(prop); // check for readonly..
+                var flags =  prop.get_flags(); // check for readonly..
                 
                 
-                var ty = this.typeToName(GIRepository.property_info_get_type(prop));
+                var ty = this.typeToName(prop.get_type());
                 print (n_original +":"+ ty);
                 if (ty === false) {
                     continue;
@@ -267,7 +267,7 @@ Gtk = XObject.define(
             
             for (var i =0;i <  GIRepository[meth[2]](bi); i++) {
                 var prop = GIRepository[meth[3]](bi, i);  
-                var n_original =  GIRepository.base_info_get_name(prop);
+                var n_original =  prop.get_name();
                 // print ('signal: ' + n_original); 
                 var add = {
                     name :  n_original.replace(/\-/g, '_'),
@@ -281,13 +281,13 @@ Gtk = XObject.define(
             
             for (var i =0;i <  GIRepository[meth[4]](bi); i++) {
                 var prop = GIRepository[meth[5]](bi, i);  
-                var n_original =  GIRepository.base_info_get_name(prop);
+                var n_original =  prop.get_name();
                 print(ename +": ADD : " + n_original );
-                var flags = GIRepository.function_info_get_flags (prop);
-                if (flags & GIRepository.IFunctionInfoFlags.IS_CONSTRUCTOR) {
+                var flags = prop.get_flags();
+                if (flags & GIRepository.FunctionInfoFlags.IS_CONSTRUCTOR) {
                     continue;
                 }
-                if (!(flags & GIRepository.IFunctionInfoFlags.IS_METHOD)) {
+                if (!(flags & GIRepository.FunctionInfoFlags.IS_METHOD)) {
                     continue;
                 }
                 // print ('signal: ' + n_original); 
@@ -305,19 +305,18 @@ Gtk = XObject.define(
             
             
             
-            if (etype == GIRepository.IInfoType.INTERFACE ) {
+            if (etype == GIRepository.InfoType.INTERFACE ) {
                // print("SKIPPING PARENT - it's an interface?!?!");
                   return;
             }
             
             // parent!!?!!?
-            var pi = GIRepository.object_info_get_parent(bi);
+            var pi = bi.get_parent();
             
             if (pi) {
                 
                    
-                var pname = GIRepository.base_info_get_namespace(pi) + '.' +
-                    GIRepository.base_info_get_name(pi);
+                var pname = pi.get_namespace() + '.' + pi.get_name();
                 this.getPropertiesFor(pname, 'props');
                 
                 
@@ -338,8 +337,7 @@ Gtk = XObject.define(
             for(var i =0; i < GIRepository.object_info_get_n_interfaces(bi); i++) {
                  
                 var prop = GIRepository.object_info_get_interface(bi,i);
-                var iface = GIRepository.base_info_get_namespace(prop) +'.'+ 
-                    GIRepository.base_info_get_name(prop);
+                var iface = prop.get_namespace() +'.'+ prop.get_name();
                 if ( ilist.indexOf(iface) > -1) {
                     continue;
                 }
@@ -365,15 +363,15 @@ Gtk = XObject.define(
         {
             var args = ['self'];
             var ret = "\n";
-            meth.ret_type = this.typeToName(GIRepository.callable_info_get_return_type(sig));
+            meth.ret_type = this.typeToName(sig.get_return_type());
             // might be a numbeR??
             meth.params = [];
-            for(var a_i  =0; a_i   < GIRepository.callable_info_get_n_args(sig); a_i++) {
-                var arg = GIRepository.callable_info_get_arg(sig, a_i);
+            for(var a_i  =0; a_i   < sig.get_n_args(); a_i++) {
+                var arg = sig.get_arg( a_i);
                  
                 meth.params.push({
-                    name : GIRepository.base_info_get_name(arg),
-                    type : this.typeToName(GIRepository.property_info_get_type(arg), true)
+                    name  : arg.get_name(),
+                    type : this.typeToName(arg.get_type(), true)
                 });
             }
             
@@ -385,15 +383,15 @@ Gtk = XObject.define(
         {
             var args = ['self'];
             var ret = "\n";
-            var ret_type = this.typeToName(GIRepository.callable_info_get_return_type(sig));
+            var ret_type = this.typeToName(sig.get_return_type());
             // might be a numbeR??
             if (ret_type == 'boolean') {
                 ret = "    return false;\n";
             }
-            for(var a_i  =0; a_i   < GIRepository.callable_info_get_n_args(sig); a_i++) {
-                var arg = GIRepository.callable_info_get_arg(sig, a_i);
+            for(var a_i  =0; a_i   < sig.get_n_args(); a_i++) {
+                var arg = sig.get_arg(a_i);
                 
-                args.push(GIRepository.base_info_get_name(arg));
+                args.push(arg.get_name());
             }
             return 'function (' + args.join(', ') + ") {\n" + ret + "}"; 
                 
@@ -491,10 +489,10 @@ Gtk = XObject.define(
             if (es.length !=2) {
                 return Base.prototype.findOptions(ename);
             }
-            var gi = GIRepository.IRepository.get_default();
+            var gi = GIRepository.Repository.get_default();
             var bi = gi.find_by_name(es[0], es[1]);
             var etype = GIRepository.base_info_get_type(bi);
-            if (etype != GIRepository.IInfoType.ENUM) {
+            if (etype != GIRepository.InfoType.ENUM) {
                 console.log("Options not handled yet!!!");
                 return false;
             }
