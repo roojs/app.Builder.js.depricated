@@ -294,7 +294,7 @@ Gtk = XObject.define(
                 var add = {
                     name :  n_original.replace(/\-/g, '_'),
                     type : 'function', //???
-                    desc : this.doc(ename + '.signal.' + n_original),
+                    desc : this.doc(ename + '.signal.' + n_original)
                 };
                 this.genParams(prop,add);
                 mlist.push(add);
@@ -334,9 +334,9 @@ Gtk = XObject.define(
             
             // implements needs to be more carefull as it could add dupes..
             // use the parent implements list to ensure no dupes..
-            for(var i =0; i < GIRepository.object_info_get_n_interfaces(bi); i++) {
+            for(var i =0; i < bi.get_n_interfaces(); i++) {
                  
-                var prop = GIRepository.object_info_get_interface(bi,i);
+                var prop = bi.get_interface(i);
                 var iface = prop.get_namespace() +'.'+ prop.get_name();
                 if ( ilist.indexOf(iface) > -1) {
                     continue;
