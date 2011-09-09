@@ -402,7 +402,7 @@ Gtk = XObject.define(
         {
            var ty = GIRepository.type_tag_to_string( GIRepository.type_info_get_tag(type_info));
            
-            if ((ty == 'void') && type_info.is_pointer()) {
+            if ((ty == 'void') && GIRepository.type_info_is_pointer(type_info)) {
                 return false;
             }
             if (ty == 'array') {
@@ -412,8 +412,8 @@ Gtk = XObject.define(
                 return ty;
             }
             // we can accept enum types here..
-            var interface_info = type_info_.get_interface ();        
-            var interface_type = interface_info.get_type ();
+            var interface_info = GIRepository.type_info_get_interface(type_info);
+            var interface_type = GIRepository.base_info_get_type (interface_info);
             
             if (!allow_iface && interface_type != GIRepository.InfoType.ENUM) {
                 return false;
