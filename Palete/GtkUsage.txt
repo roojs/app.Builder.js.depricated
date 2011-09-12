@@ -86,8 +86,9 @@ right:
 	Gtk.SpinButton 
 	Gtk.TreeView
         Gtk.TextView
-        Gtk.ComboBox 
-	Gtk.ComboBoxEntry 
+    
+	Gtk.ComboBoxEntry
+    Gtk.ComboBoxText
 	Gtk.Menu 
 	Gtk.MenuBar 
 	Gtk.Toolbar 
@@ -154,7 +155,7 @@ right:
 	Gtk.VScale 
 	Gtk.SpinButton 
 	Gtk.TreeView
-        Gtk.ComboBox 
+        Gtk.ComboBoxText 
 	Gtk.ComboBoxEntry 
 	Gtk.Menu 
 	Gtk.MenuBar 
@@ -224,7 +225,7 @@ right:
 	
 left: 
 	Gtk.CellRendererCombo:model
-	Gtk.ComboBox
+	Gtk.ComboBoxEntry:model
 right:
 	Gtk.ListStore
 
