@@ -228,6 +228,7 @@ left:
 	Gtk.ComboBoxEntry:model
 right:
 	Gtk.ListStore
+    Gtk.TreeStore
 
 	
 left: 
