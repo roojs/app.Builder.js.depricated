@@ -232,7 +232,7 @@ right:
 
 	
 left: 
-	Gtk.ComboBox
+	Gtk.ComboBoxEntry
 right:	
 	Gtk.CellRendererText
 
