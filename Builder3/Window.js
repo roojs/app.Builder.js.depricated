@@ -2250,7 +2250,6 @@ Window=new XObject({
                                                                             case 'gfloat':
                                                                                 return 1.0 * parseFloat(val); // Nan ?? invalid!!?
                                                                             case 'boolean':
-									    case 'gboolean':
                                                                                 return val == 'true' ? true : false;
                                                                             default: 
                                                                                 var nv = parseFloat(val);
