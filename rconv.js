@@ -31,7 +31,7 @@ args.shift();
 
 
 if (File.isFile(args[0])) {
-    createTest(args[0]);    
+    createTest(args[0], true);    
 } else { 
     
     File.list(args[0]).forEach(function(a) {
@@ -49,11 +49,11 @@ print( " diff -w -u /tmp/rconv_orig /tmp/rconv_gen/");
 
 
 
-function createTest(fn) {
+function createTest(fn, force) {
     
     // does it have a .bjs file..
     var bjs = fn.replace(/\.js$/, '.bjs');
-    if (!File.exists(bjs)) {
+    if (!force && !File.exists(bjs)) {
         return true;
         
     } 
