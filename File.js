@@ -61,7 +61,19 @@ var File = {
         }
         return out;
     },
-
+    
+    dirname : function(s)
+    {
+        var ar = s.split(File.SEPARATOR);
+        ar.pop();
+        return ar.join(File.SEPARATOR);
+    },
+    basename : function(s)
+    {
+        var ar = s.split(File.SEPARATOR);
+        return ar.pop();
+    },
+    
     read : function (path) {
         var out = {};
         GLib.file_get_contents(path, out, null, null);
