@@ -349,8 +349,7 @@ Roo = XObject.define(
             
             if (this.name.match(/^Pman/)) {
                 
-                var  
-                
+                 
                 // old BC way we did things..
                 return [
                     this.outputHeader(),
@@ -362,7 +361,7 @@ Roo = XObject.define(
                     "    Pman.register({",
                     "        modKey : '" +modkey+"',",
                     "        module : " + this.name + ",",
-                    "        part : [ "+ JSON.stringify(this.module) +',' + JSON.stringify(this.]
+                    "        part :  "+ JSON.stringify(this.pathToPart) + ",",
                     "        region : '" + this.region   +"',",
                     "        parent : " + (this.parent ||  'false') + ",",
                     "        name : " + JSON.stringify(this.title  || "unnamed module") + ",",
