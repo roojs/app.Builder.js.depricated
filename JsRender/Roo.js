@@ -61,6 +61,7 @@ Roo = XObject.define(
             'emptyMsg',
             'displayMsg'
         ],
+        path : '', // the file path..
         modOrder : '001', /// sequence id that this uses.
         region : 'center',
         parent : '',
