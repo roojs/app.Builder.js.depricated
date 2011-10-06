@@ -352,6 +352,7 @@ Roo = XObject.define(
                     "    Pman.register({",
                     "        modKey : '" +modkey+"',",
                     "        module : " + this.name + ",",
+                    "        moduleName : " + JSON.stringify(this.name) + ",",
                     "        region : '" + this.region   +"',",
                     "        parent : " + (this.parent ||  'false') + ",",
                     "        name : " + JSON.stringify(this.title  || "unnamed module") + ",",
