@@ -359,7 +359,7 @@ Roo = XObject.define(
                     "Pman.on('beforeload', function()",
                     "{",
                     "    Pman.register({",
-                    "        part :  "+ JSON.stringify(this.pathToPart) + ",", /// critical used by builder to associate modules/parts/persm
+                    "        part :  "+ JSON.stringify(this.pathToPart()) + ",", /// critical used by builder to associate modules/parts/persm
                     "        modKey : '" +modkey+"',",
                     "        module : " + this.name + ",",
                     "        region : '" + this.region   +"',",
