@@ -317,6 +317,17 @@ Roo = XObject.define(
              
              
         },
+        
+        
+        pathToPart : function()
+        {
+            
+            
+            
+            
+            
+        },
+        
         // a layout compoent 
         toSourceLayout : function() 
         {
