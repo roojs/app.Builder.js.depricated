@@ -32,7 +32,7 @@ var File = {
    
         return s;
     },
-   trim : function (s,toTrim) {
+    trim : function (s,toTrim) {
         var out = s.ltrim(toTrim);
         out = out.rtrim(toTrim);
         return out;
