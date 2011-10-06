@@ -40,20 +40,7 @@ Roo = XObject.define(
             delete cfg.json; // not needed!
         }
         this.cn = [];
-         /*
-        var p = cfg.items && cfg.items.length && cfg.items[0].parent ? cfg.items[0].parent : false;
         
-        // ensure real data is set...
-        Roo.apply(this, {
-            name : cfg.module,
-            parent : p,
-            title : cfg.name,
-            project : cfg.app
-            
-        });
-        
-        this.cn = [];
-        */
         Roo.superclass.constructor.call(this, cfg);
 
         
@@ -339,7 +326,8 @@ Roo = XObject.define(
             
             
             if (this.name.match(/^Pman/)) {
-                    
+                
+                var  
                 
                 // old BC way we did things..
                 return [
@@ -352,6 +340,7 @@ Roo = XObject.define(
                     "    Pman.register({",
                     "        modKey : '" +modkey+"',",
                     "        module : " + this.name + ",",
+                    "        part : [ "+ JSON.stringify(this.module) +',' + JSON.stringify(this.]
                     "        region : '" + this.region   +"',",
                     "        parent : " + (this.parent ||  'false') + ",",
                     "        name : " + JSON.stringify(this.title  || "unnamed module") + ",",
