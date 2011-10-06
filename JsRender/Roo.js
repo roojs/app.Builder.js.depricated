@@ -321,7 +321,17 @@ Roo = XObject.define(
         
         pathToPart : function()
         {
+            var dir = File.basename(File.dirname(this.path));
+            var modname = dir.split('.').pop();
             
+            // now we have the 'module name'..
+            var fbits = File.basename(this.path).split('.');
+            fbits.pop(); // remove extension..
+            var npart = fbits.pop(); // this should be 'AdminProjectManager' for example...
+            if (npart.substring(0, modname.length) == modname) {
+                npart = npart.substring(modname.length);
+            }
+            return [ modname , npart];
             
             
             
