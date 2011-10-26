@@ -2560,6 +2560,7 @@ Window=new XObject({
                                                                                         this.get('/LeftPanel.model').changed(p0, true);
                                                                                         this.get('/LeftPanel.model').activePath = false;
                                                                                         this.el.editable = false;
+                                                                                        this.el.has-entry = true;
                                                                                 },
                                                                                 editing_started : function (self, editable, path) {
                                                                                    this.get('/LeftPanel').editing  = true;
