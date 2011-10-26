@@ -2437,7 +2437,7 @@ Window=new XObject({
                                                                             _this.activePath = path;
                                                                             
                                                                             print("Attempting to start editor");
-                                                                            
+                                                                            colObj.items[0].el.mode = Gtk.CellRendererMode.EDITABLE;
                                                                             colObj.items[0].el.editable = true; // esp. need for col 0..
                                                                             _this.get('/LeftPanel.view').el.set_cursor_on_cell(
                                                                                 tp,
