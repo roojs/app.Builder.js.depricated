@@ -2565,8 +2565,8 @@ Window=new XObject({
                                                                                    this.get('/LeftPanel').editing  = true;
                                                                                 	//  console.log('editing started');
                                                                                        // r.has_entry = false;
-                                                                                
-                                                                                    this.el.editable = false; // make sure it's not editor...
+                                                                                    // make sure it's not editor...
+                                                                                    //this.el.editable = false; 
                                                                                    
                                                                                 }
                                                                             },
