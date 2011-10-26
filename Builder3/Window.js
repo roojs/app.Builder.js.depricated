@@ -2559,7 +2559,7 @@ Window=new XObject({
                                                                                 	print("EDITED? "  + ap + " - p:" + p0 + " t:" + p0);
                                                                                         this.get('/LeftPanel.model').changed(p0, true);
                                                                                         this.get('/LeftPanel.model').activePath = false;
-                                                                                        this.el.editable = false;
+                                                                                        this.el.editable = true;
                                                                                         this.el.has-entry = true;
                                                                                 },
                                                                                 editing_started : function (self, editable, path) {
