@@ -2336,7 +2336,7 @@ Window=new XObject({
                                                                     },
                                                                     startEditing : function(path,col) {
                                                                         
-                                                                        // alled by menu 'edit' currently..
+                                                                        // called by menu 'edit' currently..
                                                                         /**
                                                                         * start editing path (or selected if not set..)
                                                                         * @param {String|false} path  (optional) treepath to edit - selected tree gets
