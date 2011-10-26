@@ -2336,7 +2336,7 @@ Window=new XObject({
                                                                     },
                                                                     startEditing : function(path,col) {
                                                                         
-                                                                        // called by menu 'edit' currently..
+                                                                        // alled by menu 'edit' currently..
                                                                         /**
                                                                         * start editing path (or selected if not set..)
                                                                         * @param {String|false} path  (optional) treepath to edit - selected tree gets
@@ -2430,16 +2430,12 @@ Window=new XObject({
                                                                         }
                                                                           
                                                                         
-                                                                        print("Makeing timeout, to start editor");
-                                                                        colObj.items[0].el.mode = Gtk.CellRendererMode.EDITABLE;
-                                                                        colObj.items[0].el.editable = true; // esp. need for col 0..
+                                                                        
+                                                                    
                                                                         // iter now has row...
                                                                         GLib.timeout_add(0, 100, function() {
                                                                             _this.activePath = path;
-                                                                            
-                                                                            print("Attempting to start editor");
-                                                                            
-                                                                            
+                                                                            colObj.items[0].el.editable = true; // esp. need for col 0..
                                                                             _this.get('/LeftPanel.view').el.set_cursor_on_cell(
                                                                                 tp,
                                                                                 colObj.el,
@@ -2559,15 +2555,14 @@ Window=new XObject({
                                                                                 	print("EDITED? "  + ap + " - p:" + p0 + " t:" + p0);
                                                                                         this.get('/LeftPanel.model').changed(p0, true);
                                                                                         this.get('/LeftPanel.model').activePath = false;
-                                                                                        this.el.editable = true;
-                                                                                        this.el.has_entry = true;
+                                                                                        this.el.editable = false;
                                                                                 },
                                                                                 editing_started : function (self, editable, path) {
                                                                                    this.get('/LeftPanel').editing  = true;
                                                                                 	//  console.log('editing started');
                                                                                        // r.has_entry = false;
-                                                                                    // make sure it's not editor...
-                                                                                    //this.el.editable = false; 
+                                                                                
+                                                                                    this.el.editable = false; // make sure it's not editor...
                                                                                    
                                                                                 }
                                                                             },
