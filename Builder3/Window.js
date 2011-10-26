@@ -2431,13 +2431,13 @@ Window=new XObject({
                                                                           
                                                                         
                                                                         print("Makeing timeout, to start editor");
-                                                                    
+                                                                        colObj.items[0].el.mode = Gtk.CellRendererMode.EDITABLE;
                                                                         // iter now has row...
                                                                         GLib.timeout_add(0, 100, function() {
                                                                             _this.activePath = path;
                                                                             
                                                                             print("Attempting to start editor");
-                                                                            colObj.items[0].el.mode = Gtk.CellRendererMode.EDITABLE;
+                                                                            
                                                                             colObj.items[0].el.editable = true; // esp. need for col 0..
                                                                             _this.get('/LeftPanel.view').el.set_cursor_on_cell(
                                                                                 tp,
