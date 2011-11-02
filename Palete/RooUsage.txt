@@ -238,7 +238,7 @@ right:
   Roo.tree.TreeNode         
 
 left:     
- Roo.tree.TreePanel:editor
+  Roo.tree.TreePanel:editor
 right:
   Roo.tree.TreeEditor
        
