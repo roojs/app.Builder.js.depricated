@@ -13720,6 +13720,14 @@
     }
    ]
   },
+  "Roo.lib": {
+   "props": [],
+   "events": []
+  },
+  "Roo.lib.Ajax": {
+   "props": [],
+   "events": []
+  },
   "Roo.menu": {
    "props": [],
    "events": []
@@ -15668,6 +15676,12 @@
   "Roo.tree.TreeEditor": {
    "props": [
     {
+     "name": "tree",
+     "type": "Roo.tree.TreePanel",
+     "desc": "The tree to bind to.",
+     "memberOf": ""
+    },
+    {
      "name": "alignment",
      "type": "String",
      "desc": "The position to align to (see {@link Roo.Element#alignTo} for more details, defaults to \"l-l\").",
@@ -15802,6 +15816,12 @@
      "desc": "Fires before the component is hidden. Return false to stop the hide."
     },
     {
+     "name": "beforenodeedit",
+     "sig": "function (_self, node)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires when editing is initiated, but before the value changes.  Editing can be canceled by returning\nfalse from the handler of this event."
+    },
+    {
      "name": "beforerender",
      "sig": "function (_self)\n{\n\n}",
      "type": "function",
@@ -15902,7 +15922,7 @@
     {
      "name": "uiProviders",
      "type": "Object",
-     "desc": "(optional) An object containing properties which\n\nDEPRECIATED - use 'create' event handler to modify attributes - which affect creation.\nspecify custom {@link Roo.tree.TreeNodeUI} implementations. If the optional\n<i>uiProvider</i> attribute of a returned child node is a string rather\nthan a reference to a TreeNodeUI implementation, this that string value\nis used as a property name in the uiProviders object. You can define the provider named\n'default' , and this will be used for all nodes (if no uiProvider is delivered by the node data)",
+     "desc": "(optional) An object containing properties which\n\nDEPRECATED - use 'create' event handler to modify attributes - which affect creation.\nspecify custom {@link Roo.tree.TreeNodeUI} implementations. If the optional\n<i>uiProvider</i> attribute of a returned child node is a string rather\nthan a reference to a TreeNodeUI implementation, this that string value\nis used as a property name in the uiProviders object. You can define the provider named\n'default' , and this will be used for all nodes (if no uiProvider is delivered by the node data)",
      "memberOf": ""
     },
     {
@@ -16300,6 +16320,12 @@
      "memberOf": ""
     },
     {
+     "name": "editor",
+     "type": "Object|Roo.tree.TreeEditor",
+     "desc": "The TreeEditor or xtype data to display when clicked.",
+     "memberOf": ""
+    },
+    {
      "name": "pathSeparator",
      "type": "String",
      "desc": "The token used to separate sub-paths in path strings (defaults to '/')",
@@ -16308,13 +16334,13 @@
     {
      "name": "renderer",
      "type": "Function",
-     "desc": "Sets the rendering (formatting) function for the nodes. to return HTML markup for the tree view. The render function is called with  the following parameters:<ul><li>The {Object} The data for the node.</li></ul>",
+     "desc": "DEPRECATED - use TreeLoader:create event / Sets the rendering (formatting) function for the nodes. to return HTML markup for the tree view. The render function is called with  the following parameters:<ul><li>The {Object} The data for the node.</li></ul>",
      "memberOf": ""
     },
     {
      "name": "rendererTip",
      "type": "Function",
-     "desc": "Sets the rendering (formatting) function for the nodes hovertip to return HTML markup for the tree view. The render function is called with  the following parameters:<ul><li>The {Object} The data for the node.</li></ul>",
+     "desc": "DEPRECATED - use TreeLoader:create event / Sets the rendering (formatting) function for the nodes hovertip to return HTML markup for the tree view. The render function is called with  the following parameters:<ul><li>The {Object} The data for the node.</li></ul>",
      "memberOf": ""
     },
     {
