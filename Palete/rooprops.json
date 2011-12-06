@@ -2404,7 +2404,7 @@
      "name": "removeMask",
      "type": "Boolean",
      "desc": "True to create a single-use mask that is automatically destroyed after loading (useful for page loads),\nFalse to persist the mask element reference for multiple uses (e.g., for paged data widgets).  Defaults to false.",
-     "memberOf": ""
+     "memberOf": "Roo"
     },
     {
      "name": "msg",
@@ -2838,7 +2838,7 @@
      "name": "items",
      "type": "Array",
      "desc": "array of button configs or elements to add (will be converted to a MixedCollection)",
-     "memberOf": "Roo.Toolbar"
+     "memberOf": "Roo"
     }
    ],
    "events": []
@@ -3075,7 +3075,7 @@
      "name": "mode",
      "type": "String",
      "desc": "The shadow display mode.  Supports the following options:<br />\nsides: Shadow displays on both sides and bottom only<br />\nframe: Shadow displays equally on all four sides<br />\ndrop: Traditional bottom-right drop shadow (default)",
-     "memberOf": ""
+     "memberOf": "Roo"
     },
     {
      "name": "offset",
@@ -3639,7 +3639,7 @@
      "name": "items",
      "type": "Array",
      "desc": "array of button configs or elements to add (will be converted to a MixedCollection)",
-     "memberOf": ""
+     "memberOf": "Roo"
     },
     {
      "name": "container",
@@ -4054,7 +4054,7 @@
      "name": "tree",
      "type": "Roo.tree.TreePanel",
      "desc": "The tree TreePanel, with config etc.",
-     "memberOf": ""
+     "memberOf": "Roo"
     },
     {
      "name": "fitToFrame",
@@ -12302,6 +12302,12 @@
   "Roo.grid.CellSelectionModel": {
    "props": [
     {
+     "name": "enter_is_tab",
+     "type": "Boolean",
+     "desc": "Enter behaves the same as tab. (eg. goes to next cell) default: false",
+     "memberOf": ""
+    },
+    {
      "name": "listeners",
      "type": "Object",
      "desc": "list of events and functions to call for this object, \nFor example :\n<pre><code>\n    listeners :  { \n       'click' : function(e) {\n           ..... \n        } ,\n        .... \n    } \n  </code></pre>",
@@ -12326,6 +12332,12 @@
      "sig": "function (_self, selection)\n{\n\n}",
      "type": "function",
      "desc": "Fires when the active selection changes."
+    },
+    {
+     "name": "tabend",
+     "sig": "function (_self)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires when the tab (or enter) was pressed on the last editable cell\nYou can use this to trigger add new row."
     }
    ]
   },
@@ -15679,6 +15691,12 @@
      "name": "tree",
      "type": "Roo.tree.TreePanel",
      "desc": "The tree to bind to.",
+     "memberOf": ""
+    },
+    {
+     "name": "field",
+     "type": "Roo.form.TextField|Object",
+     "desc": "The field configuration",
      "memberOf": ""
     },
     {
