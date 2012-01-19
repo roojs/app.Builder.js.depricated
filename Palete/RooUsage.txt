@@ -237,6 +237,12 @@ right:
   Roo.tree.AsyncTreeNode         
   Roo.tree.TreeNode         
 
+
+left:
+  Roo.tree.TreeNode
+right:
+  Roo.tree.TreeNode
+
 left:     
   Roo.tree.TreePanel:editor
 right:
@@ -253,7 +259,7 @@ right:
  Roo.tree.TreeLoader         
  
 left:
-	Roo.tree.TreePanel:sm
+	Roo.tree.TreePanel:selModel
 right:
 	Roo.tree.DefaultSelectionModel         
 	Roo.tree.MultiSelectionModel         
