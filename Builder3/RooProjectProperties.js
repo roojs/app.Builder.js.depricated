@@ -24,6 +24,7 @@ RooProjectProperties=new XObject({
         project.runhtml = project.runhtml || '';
         this.get('view').el.get_buffer().set_text(project.runhtml, project.runhtml.length);
         this.get('dbcon').el.set_text(project.dbcon || '');
+        print("project db: " + project.dbcon);
         this.el.show_all();
     },
     default_width : 500,
