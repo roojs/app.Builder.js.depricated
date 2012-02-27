@@ -28,8 +28,33 @@ DialogTemplateSelect=new XObject({
             return node;
         }
       
-        opts.unshift({ path: '' , name :'Just add Element' });
-        this.get('combo.model').loadData(opts);
+      
+        var dopts = [];
+      
+      
+        dopts.push({ path: '' , name :'Just add Element' });
+        
+        
+        
+         
+        var project = this.get('/Window.LeftTree').getActiveFile().project;
+        var m = project.dbcon ? project.dbcon + '_' : false;
+        
+      
+                        //print (project.fn);
+        
+        opts.forEach(function(p) {
+            // if we have a dbname - ignore _ named.
+            if (m  && p.name.match(/_/) && 
+                p.name.substring(0, m.length) != m) {
+                return;
+                
+            }
+            dopts.push(p);
+        });
+            
+        
+        this.get('combo.model').loadData(dopts);
          this.get('combo').el.set_active(0);
          
         this.el.show_all();
@@ -41,7 +66,7 @@ DialogTemplateSelect=new XObject({
         }
         
     
-        return pal.loadTemplate(opts[ix].path)
+        return pal.loadTemplate(dopts[ix].path)
     
     },
     items : [
