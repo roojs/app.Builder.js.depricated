@@ -300,7 +300,7 @@ tables.forEach(function(table) {
     //print(JSON.stringify(schema, null,4));    Seed.quit();
     
     schema.forEach(function(e)  {
-        e.type = e.Type;
+        e.Type = e.type;
         if (!e.Type) {
             print(JSON.stringify(e, null,4));    Seed.quit();
         }
