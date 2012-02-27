@@ -128,6 +128,7 @@ var map = {
     'smallint' : 'int',
     'decimal' : 'float',
     'float' : 'float',
+    'numeric' : 'float',
     'char' : 'string',
     'varchar' : 'string',
     'text' : 'string',
