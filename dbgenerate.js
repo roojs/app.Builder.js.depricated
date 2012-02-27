@@ -226,7 +226,7 @@ if (File.isDirectory(cfg.INI)) {
 //GLib.key_file_load_from_file (key_file, String file, KeyFileFlags flags) : Boolean
 
 
-switch(opts.DBTYPE) {
+switch(cfg.DBTYPE) {
     case "MySQL":
         query_tables = "SHOW TABLES";
         query_describe_table = "DESCRIBE '%s'";
