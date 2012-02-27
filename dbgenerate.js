@@ -120,6 +120,7 @@ var map = {
     'datetime' : 'date',
     'time' : 'string', //bogus
     'int' : 'int',
+    'integer' : 'int',
     'bigint' : 'int',
     'double' : 'float',
     'tinyint' : 'int',
@@ -348,6 +349,8 @@ tables.forEach(function(table) {
             "*prop": "colModel[]"
         });
         var xtype = 'TextField';
+        
+        
         if (row.type == 'number') {
             xtype = 'NumberField';
         }
