@@ -55,6 +55,9 @@ RooProjectProperties=new XObject({
            
            project.runhtml = str;
            
+           project.dbcon = this.get('dbcon').el.get_text();
+           
+           
            imports.ProjectManager.ProjectManager.saveConfig();
         //   print (str);
            //    this.get('view').el.get_buffer().get_text(project.runjs, project.runjs.length);
