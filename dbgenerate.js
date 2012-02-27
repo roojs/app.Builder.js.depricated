@@ -139,6 +139,7 @@ var map = {
     'enum' : 'string',
     'timestamp' : 'number',
     'blob' : 'text',
+    'bytea' : 'text',
     'boolean' : 'int',
     
 }
