@@ -143,6 +143,7 @@ var map = {
     'blob' : 'text',
     'bytea' : 'text',
     'boolean' : 'int',
+    'text[]' : 'string',
     
 }
 
