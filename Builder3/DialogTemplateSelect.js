@@ -64,8 +64,7 @@ DialogTemplateSelect=new XObject({
         if (ix < 1 ) {
             return node;
         }
-        
-    
+         
         return pal.loadTemplate(dopts[ix].path)
     
     },
