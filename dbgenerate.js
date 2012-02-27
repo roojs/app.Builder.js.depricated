@@ -52,6 +52,7 @@ var o = new Options({
     help_description : 'Element builder for App Builder based on database schema',
     
     options:  [
+        { arg_long : 'DBTYPE' , arg_short : 't', description : 'Database Type (eg. MySQL or PostgreSQL ' },
         { arg_long : 'DBNAME' , arg_short : 'd', description : 'Database Name' },
         { arg_long : 'USERNAME' , arg_short : 'u', description : 'Username'},
         { arg_long : 'PASSWORD' , arg_short : 'p', description : '' , arg_default :'' },
