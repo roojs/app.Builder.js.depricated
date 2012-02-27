@@ -81,17 +81,12 @@ RooProjectProperties=new XObject({
                            pack : "pack_start,false,false,0",
                            label : "Database Connection"
                        },
-                       {
-                           xtype: Gtk.ScrolledWindow,
-                           pack : "pack_end,true,true,0",
-                           items : [
-                               {
-                                   xtype: GtkSource.View,
-                                   pack : "add",
-                                   id : "view"
-                               }
-                           ]
-                       }
+                        {
+                            xtype: Gtk.Entry,
+                            id : "dbcon",
+                            pack : "add",
+                            visible : true
+                        },
                     ]
                 },
         
