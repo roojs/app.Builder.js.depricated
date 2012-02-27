@@ -102,7 +102,7 @@ DialogTemplateSelect=new XObject({
                                         data.forEach(function(p) {
                                             
                                             if (m  && p.name.match(/_/) && 
-                                                p.name.substring(0, m.length+1) != m)
+                                                p.name.substring(0, m.length+1) != m) {
                                                 return;
                                                 
                                             }
