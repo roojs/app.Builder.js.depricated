@@ -96,6 +96,7 @@ EditProject=new XObject({
                                                         el.set_active(ix);
                                                         return false;
                                                     }
+                                                    return true;
                                                 });
                                             },
                             getValue : function() {
