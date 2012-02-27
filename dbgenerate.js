@@ -226,10 +226,28 @@ if (File.isDirectory(cfg.INI)) {
 //GLib.key_file_load_from_file (key_file, String file, KeyFileFlags flags) : Boolean
 
 
+switch(opts.DBTYPE) {
+    case "MySQL":
+        query_tables = "SHOW TABLES";
+        query_describe_table = "DESCRIBE '%s'";
+        break;
+    
+    case 'PostgreSQL':
+        query_tables = "select c.relname FROM pg_catalog.pg_class c " + 
+            "LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace " + 
+            "WHERE c.relkind IN ('r','') AND n.nspname NOT IN ('pg_catalog', 'pg_toast')" +
+            "AND pg_catalog.pg_table_is_visible(c.oid) " + 
+
+    
+    
+}
+
 
  
 
-var tables = Gda.execute_select_command(cnc, "SHOW TABLES").fetchAll();
+var tables = Gda.execute_select_command(cnc, query_tables).fetchAll();
+print(JSON.stringify(tables);)
+
 var readers = [];
 tables.forEach(function(table) {
     //print(table);
