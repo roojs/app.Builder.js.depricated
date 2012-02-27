@@ -92,11 +92,7 @@ DialogTemplateSelect=new XObject({
                                         var project = this.get('/Window.LeftTree').getActiveFile().project;
                                         var m = project.dbcon ? project_dbcon + '_' : false;
                                         
-                                        if (project.dbcom) {
-                                            
-                                            
-                                        }
-                                        
+                                      
                                                         //print (project.fn);
                                         var el = this.el;
                                         data.forEach(function(p) {
