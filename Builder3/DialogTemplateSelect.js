@@ -106,6 +106,62 @@ DialogTemplateSelect=new XObject({
                             ]
                         }
                     ]
+                },
+                 {
+                    xtype: Gtk.HBox,
+                    pack : "pack_start,false,false,0",
+                    items : [
+                        {
+                            xtype: Gtk.Label,
+                            label : "Select From Database : ",
+                            pack : "pack_start,false,false"
+                        },
+                        {
+                            xtype: Gtk.ComboBox,
+                            id : "combo",
+                            pack : "add",
+                            init : function() {
+                                XObject.prototype.init.call(this);
+                                 this.el.add_attribute(this.items[0].el , 'markup', 1 );
+                            },
+                            items : [
+                                {
+                                    xtype: Gtk.CellRendererText,
+                                    pack : "pack_start"
+                                },
+                                {
+                                    xtype: Gtk.ListStore,
+                                    id : "dbmodel",
+                                    pack : "set_model",
+                                    init : function() {
+                                        XObject.prototype.init.call(this);
+                                                this.el.set_column_types ( 2, [
+                                                GObject.TYPE_STRING,  // real key
+                                                GObject.TYPE_STRING // real type
+                                                
+                                                
+                                            ] );
+                                    },
+                                    loadData : function (data) {
+                                        this.el.clear();                                    
+                                         /*
+                                        var el = this.el;
+                                        data.forEach(function(p) {
+                                            var iret = {};
+                                            el.append(iret);
+                                            
+                                             
+                                            el.set_value(iret.iter, 0, ''+ p.path);
+                                            el.set_value(iret.iter, 1, ''+ p.name);
+                                            
+                                        });
+                                         */         
+                                                                         
+                                    }
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         },
