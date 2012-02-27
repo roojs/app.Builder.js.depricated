@@ -238,8 +238,11 @@ switch(cfg.DBTYPE) {
             "WHERE c.relkind IN ('r','') AND n.nspname NOT IN ('pg_catalog', 'pg_toast')" +
             "AND pg_catalog.pg_table_is_visible(c.oid) ";
          query_describe_table =  
-                "SELECT f.attnum AS number, f.attname AS name, f.attnum, " +
-                "f.attnotnull AS notnull, pg_catalog.format_type(f.atttypid,f.atttypmod) AS type, " +
+                "SELECT " +
+                "f.attnum AS number, " +
+                "f.attname AS Field, " +
+                "f.attnum, " +
+                "f.attnotnull AS notnull, pg_catalog.format_type(f.atttypid,f.atttypmod) AS Type, " +
                 "CASE WHEN p.contype = 'p' THEN 't' ELSE 'f' END AS primarykey, " +
                 "CASE WHEN p.contype = 'u' THEN 't' ELSE 'f' END AS uniquekey, " +
                 "CASE WHEN p.contype = 'f' THEN g.relname END AS foreignkey, " +
