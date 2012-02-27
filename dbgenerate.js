@@ -385,6 +385,10 @@ tables.forEach(function(table) {
             '|xns' : 'Roo.form',
             xtype : xtype
         }
+         if (xtype == 'DateField') {
+            form[row.name].format = 'Y-m-d';
+        }
+        
         if (xtype == 'TextArea') {
             form[row.name].height = 100;
         }
