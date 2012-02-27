@@ -246,7 +246,7 @@ switch(opts.DBTYPE) {
  
 
 var tables = Gda.execute_select_command(cnc, query_tables).fetchAll();
-print(JSON.stringify(tables);)
+print(JSON.stringify(tables));
 
 var readers = [];
 tables.forEach(function(table) {
