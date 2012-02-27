@@ -130,6 +130,7 @@ var map = {
     'float' : 'float',
     'numeric' : 'float',
     'char' : 'string',
+    'character' : 'string',
     'varchar' : 'string',
     'text' : 'string',
     'longtext' : 'string',
