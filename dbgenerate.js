@@ -242,7 +242,7 @@ switch(cfg.DBTYPE) {
                 "f.attnum AS number, " +
                 "f.attname AS Field, " +
                 "f.attnum, " +
-                "CASE WHEN f.attnotnull = 't' THEN 'NO' ELSE 'YES' END AS Null, " + 
+                "CASE WHEN f.attnotnull = 't' THEN 'NO' ELSE 'YES' END AS isNull, " + 
                 "pg_catalog.format_type(f.atttypid,f.atttypmod) AS Type, " +
                 "CASE WHEN p.contype = 'p' THEN 't' ELSE 'f' END AS primarykey, " +
                 "CASE WHEN p.contype = 'u' THEN 't' ELSE 'f' END AS uniquekey, " +
