@@ -229,7 +229,7 @@ if (File.isDirectory(cfg.INI)) {
 switch(cfg.DBTYPE) {
     case "MySQL":
         query_tables = "SHOW TABLES";
-        query_describe_table = "DESCRIBE '%s'";
+        query_describe_table = "DESCRIBE `%s`";
         break;
     
     case 'PostgreSQL':
@@ -237,7 +237,9 @@ switch(cfg.DBTYPE) {
             "LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace " + 
             "WHERE c.relkind IN ('r','') AND n.nspname NOT IN ('pg_catalog', 'pg_toast')" +
             "AND pg_catalog.pg_table_is_visible(c.oid) ";
-            
+         query_describe_table =  "SELECT " + 
+                "attname , typname FROM pg_attribute , pg_type WHERE   " +
+                "typrelid=attrelid AND typname = '%s' ";
         break;
 
     
@@ -253,7 +255,10 @@ print(JSON.stringify(tables));
 var readers = [];
 tables.forEach(function(table) {
     //print(table);
-    var schema = Gda.execute_select_command(cnc, "DESCRIBE `" + table+'`').fetchAll();
+    var schema = Gda.execute_select_command(cnc,
+            query_describe_table.replace(/%s/, table) ).fetchAll();
+    
+    
     var reader = []; 
     var colmodel = []; 
     var combofields= [ { name : 'id', type: 'int' } ]; // technically the primary key..
@@ -262,7 +267,7 @@ tables.forEach(function(table) {
        
     var firstTxtCol = '';
     
-    //print(JSON.stringify(schema, null,4));
+    print(JSON.stringify(schema, null,4));
     
     schema.forEach(function(e)  {
         var type = e.Type.match(/([^(]+)\(([^\)]+)\)/);
