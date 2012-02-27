@@ -119,6 +119,7 @@ var map = {
     'date' : 'date',
     'datetime' : 'date',
     'timestamp with time zone' : 'date',
+    'timestamp without time zone' : 'date',
     'time' : 'string', //bogus
     'int' : 'int',
     'integer' : 'int',
