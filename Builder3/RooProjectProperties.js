@@ -71,23 +71,57 @@ RooProjectProperties=new XObject({
                     },
             items : [
                 {
-                    xtype: Gtk.Label,
-                    pack : "pack_start,false,false,0",
-                    label : "HTML To insert at end of <HEAD>"
-                },
-                {
-                    xtype: Gtk.ScrolledWindow,
-                    pack : "pack_end,true,true,0",
+                    xtype: Gtk.HBox,
+                    pack : "pack_start,false,true,3",
                     items : [
-                        {
-                            xtype: GtkSource.View,
-                            pack : "add",
-                            id : "view"
-                        }
+                                
+                        
+                       {
+                           xtype: Gtk.Label,
+                           pack : "pack_start,false,false,0",
+                           label : "Database Connection"
+                       },
+                       {
+                           xtype: Gtk.ScrolledWindow,
+                           pack : "pack_end,true,true,0",
+                           items : [
+                               {
+                                   xtype: GtkSource.View,
+                                   pack : "add",
+                                   id : "view"
+                               }
+                           ]
+                       }
                     ]
-                }
+                },
+        
+               {
+                   xtype: Gtk.Label,
+                   pack : "pack_start,false,false,0",
+                   label : "HTML To insert at end of <HEAD>"
+               },
+               {
+                   xtype: Gtk.ScrolledWindow,
+                   pack : "pack_end,true,true,0",
+                   items : [
+                       {
+                           xtype: GtkSource.View,
+                           pack : "add",
+                           id : "view"
+                       }
+                   ]
+               }
+                 
+                
+                
+                
+                
             ]
         },
+        
+        
+       
+        
         {
             xtype: Gtk.Button,
             pack : "add_action_widget,1",
