@@ -66,9 +66,10 @@ var o = new Options({
 var cfg = o.parse(Seed.argv);
 print(JSON.stringify(cfg, null,4));
 
-var   cnc = Gda.Connection.open_from_string ("MySQL", "DB_NAME=" + cfg.DBNAME, 
-                                              "USERNAME=" + cfg.USERNAME + ';PASSWORD=' + cfg.PASSWORD,
-                                              Gda.ConnectionOptions.NONE, null);
+var   cnc = Gda.Connection.open_from_string (cfg.DBTYPE,
+         "DB_NAME=" + cfg.DBNAME, 
+        "USERNAME=" + cfg.USERNAME + ';PASSWORD=' + cfg.PASSWORD,
+        Gda.ConnectionOptions.NONE, null);
 
 
 
