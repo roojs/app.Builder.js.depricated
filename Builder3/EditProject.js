@@ -157,25 +157,7 @@ EditProject=new XObject({
                             ]
                         }
                     ]
-                },
-                
-                {
-                    xtype: Gtk.HBox,
-                    pack : "pack_start,false,true,3",
-                    items : [
-                        {
-                            xtype: Gtk.Label,
-                            pack : "pack_start,false,true,3",
-                            label : "Database connection:"
-                        },
-                        {
-                            xtype: Gtk.Entry,
-                            id : "dbcon",
-                            pack : "add",
-                            visible : true
-                        }
-                    ]
-                },
+                }
                 
                 {
                     xtype: Gtk.FileChooserWidget,
