@@ -850,6 +850,7 @@ readers.forEach(function(reader) {
             "resizable": false,
             "title": "Edit / Create " + reader.table,
             "width": 400,
+            "modal" : true,
             "xtype": "LayoutDialog",
             "|xns": "Roo",
             "items": [
