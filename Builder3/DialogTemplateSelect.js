@@ -98,7 +98,7 @@ DialogTemplateSelect=new XObject({
                                         data.forEach(function(p) {
                                             // if we have a dbname - ignore _ named.
                                             if (m  && p.name.match(/_/) && 
-                                                p.name.substring(0, m.length+1) != m) {
+                                                p.name.substring(0, m.length) != m) {
                                                 return;
                                                 
                                             }
