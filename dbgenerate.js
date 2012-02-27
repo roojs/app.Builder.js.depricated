@@ -56,7 +56,8 @@ var o = new Options({
         { arg_long : 'DBNAME' , arg_short : 'd', description : 'Database Name' },
         { arg_long : 'USERNAME' , arg_short : 'u', description : 'Username'},
         { arg_long : 'PASSWORD' , arg_short : 'p', description : '' , arg_default :'' },
-        { arg_long : 'INI' , arg_short : 'I', description : 'Either base directory which has Pman/***/DataObjects/***.ini or location of ini file.' },
+        { arg_long : 'INI' , arg_short : 'I', description :
+                    'Either base directory which has Pman/***/DataObjects/***.links.ini or location of ini file.' },
     ]
            
 })
