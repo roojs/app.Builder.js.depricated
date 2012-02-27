@@ -131,7 +131,7 @@ var map = {
     'numeric' : 'float',
     'char' : 'string',
     'character' : 'string',
-    'character varying',
+    'character varying' : 'string',
     'varchar' : 'string',
     'text' : 'string',
     'longtext' : 'string',
