@@ -136,7 +136,8 @@ var map = {
     'mediumtext' : 'string',
     'enum' : 'string',
     'timestamp' : 'number',
-    'blob' : 'text'
+    'blob' : 'text',
+    'boolean' : 'int',
     
 }
 
