@@ -118,6 +118,7 @@ Gda.DataSelect.prototype.fetchAll = function()
 var map = {
     'date' : 'date',
     'datetime' : 'date',
+    'datetime' : 'timestamp with time zone',
     'time' : 'string', //bogus
     'int' : 'int',
     'integer' : 'int',
