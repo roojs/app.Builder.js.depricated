@@ -300,6 +300,11 @@ tables.forEach(function(table) {
     //print(JSON.stringify(schema, null,4));    Seed.quit();
     
     schema.forEach(function(e)  {
+        
+        if (!e.Type) {
+            print(JSON.stringify(e, null,4));    Seed.quit();
+        }
+        
         var type = e.Type.match(/([^(]+)\(([^\)]+)\)/);
         var row  = { }; 
         if (type) {
