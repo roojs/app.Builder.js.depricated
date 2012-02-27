@@ -387,6 +387,7 @@ tables.forEach(function(table) {
         }
          if (xtype == 'DateField') {
             form[row.name].format = 'Y-m-d';
+            form[row.name].width = 100;
         }
         
         if (xtype == 'TextArea') {
