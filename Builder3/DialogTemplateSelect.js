@@ -89,8 +89,24 @@ DialogTemplateSelect=new XObject({
                                     loadData : function (data) {
                                         this.el.clear();                                    
                                          
+                                        var project = this.get('/Window.LeftTree').getActiveFile().project;
+                                        var m = project_dbcon ? project_dbcon + '_' : false;
+                                        
+                                        if (project.dbcom) {
+                                            
+                                            
+                                        }
+                                        
+                                                        //print (project.fn);
                                         var el = this.el;
                                         data.forEach(function(p) {
+                                            
+                                            if (m  && p.name.match(/_/) && 
+                                                p.name.substring(0, m.length+1) != m)
+                                                return;
+                                                
+                                            }
+                                            
                                             var iret = {};
                                             el.append(iret);
                                             
