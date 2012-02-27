@@ -83,7 +83,7 @@ RooProjectProperties=new XObject({
                        {
                            xtype: Gtk.Label,
                            pack : "pack_start,false,false,0",
-                           label : "Database Connection"
+                           label : "Database Name"
                        },
                        {
                             xtype: Gtk.Entry,
