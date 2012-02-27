@@ -238,12 +238,19 @@ switch(cfg.DBTYPE) {
             "WHERE c.relkind IN ('r','') AND n.nspname NOT IN ('pg_catalog', 'pg_toast')" +
             "AND pg_catalog.pg_table_is_visible(c.oid) ";
          query_describe_table =  "SELECT " + 
-                "attname , typname FROM pg_attribute , pg_type WHERE   " +
+                "attname as Field, " +
+                "typname  " +
+                "FROM pg_attribute , pg_type WHERE   " +
                 "typrelid=attrelid AND typname = '%s' ";
         break;
-
-    
-    
+/*
+           "Field": "province",
+        "Type": "varchar(255)",
+        "Null": "NO",
+        "Key": null,
+        "Default": null,
+        "Extra": 
+*/  
 }
 
 
