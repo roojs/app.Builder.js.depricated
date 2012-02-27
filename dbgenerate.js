@@ -398,8 +398,8 @@ tables.forEach(function(table) {
     var combo = {
         '|xns' : 'Roo.form',
         xtype: 'ComboBox',
-        allowBlank : 'false',
-        editable : 'false',
+        allowBlank : false,
+        editable : false,
         emptyText : 'Select ' + table,
         forceSelection : true,
         listWidth : 400,
