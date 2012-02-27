@@ -157,7 +157,7 @@ EditProject=new XObject({
                             ]
                         }
                     ]
-                }
+                },
                 
                 {
                     xtype: Gtk.FileChooserWidget,
