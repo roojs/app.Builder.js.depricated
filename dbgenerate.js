@@ -239,9 +239,9 @@ switch(cfg.DBTYPE) {
             "AND pg_catalog.pg_table_is_visible(c.oid) ";
          query_describe_table =  "SELECT " + 
                 "attname as Field, " +
-                "typname  " +
-                "FROM pg_attribute , pg_type WHERE   " +
-                "typrelid=attrelid AND typname = '%s' ";
+                ", opcname , atttypmod  " +
+                "FROM pg_attribute,pg_type,    pg_opclass " + 
+                " WHERE attrelid=typrelid AND atttypid=opcdeftype AND typname= '%s' ";
         break;
 /*
            "Field": "province",
