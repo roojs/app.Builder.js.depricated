@@ -301,7 +301,7 @@ tables.forEach(function(table) {
     
     schema.forEach(function(e)  {
         e.Type = e.type;
-        e.field = e.field;
+        e.Field = e.field;
          
         var type = e.Type.match(/([^(]+)\(([^\)]+)\)/);
         var row  = { }; 
