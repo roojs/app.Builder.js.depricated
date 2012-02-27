@@ -266,7 +266,7 @@ switch(cfg.DBTYPE) {
 /*
            "Field": "province",
         "Type": "varchar(255)",
-        "Null": "NO",
+        "Null": "NO", << or is null
         "Key": null,
         "Default": null,
         "Extra": 
