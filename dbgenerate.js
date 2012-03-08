@@ -309,8 +309,8 @@ tables.forEach(function(table) {
     //print(JSON.stringify(schema, null,4));    Seed.quit();
     
     schema.forEach(function(e)  {
-        e.Type = e.type;
-        e.Field = e.field;
+        e.Type = e.Type || e.type;
+        e.Field = e.Field || e.field;
          
         var type = e.Type.match(/([^(]+)\(([^\)]+)\)/);
         var row  = { }; 
