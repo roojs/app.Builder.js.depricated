@@ -380,12 +380,6 @@ Roo = XObject.define(
                     "            permname: '" + (this.permname|| '') +"' ",
                     "         }",
                     "    }",
-                    
-                    
-                    
-                    
-                    
-                    
                     "    add : function(parentLayout, region)",
                     "    {",
                     "",
