@@ -358,16 +358,7 @@ Roo = XObject.define(
                     "// register the module first",
                     "Pman.on('beforeload', function()",
                     "{",
-                    "    Pman.register({",
-                    "        part :  "+ JSON.stringify(this.pathToPart()) + ",", /// critical used by builder to associate modules/parts/persm
-                    "        modKey : '" +modkey+"',",
-                    "        module : " + this.name + ",",
-                    "        region : '" + this.region   +"',",
-                    "        parent : " + (this.parent ||  'false') + ",",
-                    "        name : " + JSON.stringify(this.title  || "unnamed module") + ",",
-                    "        disabled : " + (this.disabled || 'false') +", ",
-                    "        permname: '" + (this.permname|| '') +"' ",
-                    "    });",
+                    "    Pman.register(" + this.name + ".prototype._registerOptions() );",
                     "});",
                     "",
                     
@@ -377,6 +368,24 @@ Roo = XObject.define(
                     "    disabled : false,",
                     "    parentLayout:  false,",
                     "",
+                    "    _registerOptions : function() {",
+                    "        return {",
+                    "            part :  "+ JSON.stringify(this.pathToPart()) + ",", /// critical used by builder to associate modules/parts/persm
+                    "            modKey : '" +modkey+"',",
+                    "            module : " + this.name + ",",
+                    "            region : '" + this.region   +"',",
+                    "            parent : " + (this.parent ||  'false') + ",",
+                    "            name : " + JSON.stringify(this.title  || "unnamed module") + ",",
+                    "            disabled : " + (this.disabled || 'false') +", ",
+                    "            permname: '" + (this.permname|| '') +"' ",
+                    "         }",
+                    "    }",
+                    
+                    
+                    
+                    
+                    
+                    
                     "    add : function(parentLayout, region)",
                     "    {",
                     "",
