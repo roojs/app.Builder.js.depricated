@@ -380,13 +380,18 @@ Roo = XObject.define(
                     "    add : function(parentLayout, region)",
                     "    {",
                     "",
-                    "        var _this = this;", // standard avaialbe..
                     "        this.parentLayout = parentLayout;",
                     "",
-                    "        this.panel = parentLayout.addxtype(" + o +  ");",
+                    "        this.panel = parentLayout.addxtype(this._tree());",
                     "        this.layout = this.panel.layout;",
                     "",
+                    "    },",
+                    "    _tree : function () {",
+                    "        var _this = this;", 
+                    "        var MODULE = this;", /// this looks like a better name.
+                    "        return " + o + ';',
                     "    }",
+                      
                     "});",
                     ""
                      
