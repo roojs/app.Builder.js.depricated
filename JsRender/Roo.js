@@ -380,7 +380,7 @@ Roo = XObject.define(
                     "            disabled : " + (this.disabled || 'false') +", ",
                     "            permname: '" + (this.permname|| '') +"' ",
                     "         }",
-                    "    }",
+                    "    },",
                     "    add : function(parentLayout, region)",
                     "    {",
                     "",
