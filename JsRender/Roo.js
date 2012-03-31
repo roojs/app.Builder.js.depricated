@@ -372,6 +372,7 @@ Roo = XObject.define(
                     "        return {",
                     "            part :  "+ JSON.stringify(this.pathToPart()) + ",", /// critical used by builder to associate modules/parts/persm
                     "            modKey : '" +modkey+"',",
+                    "            modKey : '" +modkey+"',",
                     "            module : " + this.name + ",",
                     "            region : '" + this.region   +"',",
                     "            parent : " + (this.parent ||  'false') + ",",
