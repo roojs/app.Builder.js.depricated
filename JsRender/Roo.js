@@ -346,76 +346,19 @@ Roo = XObject.define(
              
             var modkey = this.modOrder + '-' + this.name.replace(/[^A-Z.]+/ig, '-');
             
-            
-            if (this.name.match(/^Pman/)) {
-                
-                 
-                // old BC way we did things..
-                return [
-                    this.outputHeader(),
-                    "",
-                    "",
-                    "// register the module first",
-                    "Pman.on('beforeload', function()",
-                    "{",
-                    "    Pman.register(" + this.name + ".prototype._registerOptions() );",
-                    "});",
-                    "",
-                    
-                    this.name  +  " = new Roo.util.Observable({",
-                    "",
-                    "    panel : false,",
-                    "    disabled : false,",
-                    "    parentLayout:  false,",
-                    "",
-                    "    _registerOptions : function() {",
-                    "        return {",
-                    "            part :  "+ JSON.stringify(this.pathToPart()) + ",", /// critical used by builder to associate modules/parts/persm
-                    "            modKey : '" +modkey+"',",
-                    "            order : '" +modkey+"',",
-                    "            module : " + this.name + ",",
-                    "            region : '" + this.region   +"',",
-                    "            parent : " + (this.parent ||  'false') + ",",
-                    "            name : " + JSON.stringify(this.title  || "unnamed module") + ",",
-                    "            disabled : " + (this.disabled || 'false') +", ",
-                    "            permname: '" + (this.permname|| '') +"' ",
-                    "         }",
-                    "    },",
-                    "    add : function(parentLayout, region)",
-                    "    {",
-                    "",
-                    "        this.parentLayout = parentLayout;",
-                    "",
-                    "        this.panel = parentLayout.addxtype(this._tree());",
-                    "        this.layout = this.panel.layout;",
-                    "",
-                    "    },",
-                    "    _tree : function () {",
-                    "        var _this = this;", 
-                    "        var MODULE = this;", /// this looks like a better name.
-                    "        return " + o + ';',
-                    "    }",
-                      
-                    "});",
-                    ""
-                     
-                    
-                 ].join("\n");
-            }
-            
-        
+          
             return [
                 this.outputHeader(),
                 
                 this.name  +  " = new Roo.XComponent({",
-                "    part :  "+ JSON.stringify(this.pathToPart()) + ",", /// critical used by builder to associate modules/parts/persm
-                   
+                "    part     :  "+ JSON.stringify(this.pathToPart()) + ",",
+                        /// critical used by builder to associate modules/parts/persm
                 "    order    : '" +modkey+"',",
                 "    region   : '" + this.region   +"',",
                 "    parent   : "+ (this.parent ?  "'" + this.parent + "'" :  'false') + ",",
                 "    name     : " + JSON.stringify(this.title  || "unnamed module") + ",",
                 "    disabled : " + (this.disabled || 'false') +", ",
-                "    permname: '" + (this.permname|| '') +"' ",
+                "    permname : '" + (this.permname|| '') +"' ",
                     
                // "    tree : function() { return this._tree(); },",   //BC
                 "    _tree : function()",
