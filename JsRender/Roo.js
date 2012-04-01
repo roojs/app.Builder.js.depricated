@@ -408,6 +408,8 @@ Roo = XObject.define(
                 this.outputHeader(),
                 
                 this.name  +  " = new Roo.XComponent({",
+                "    part :  "+ JSON.stringify(this.pathToPart()) + ",", /// critical used by builder to associate modules/parts/persm
+                   
                 "    order    : '" +modkey+"',",
                 "    region   : '" + this.region   +"',",
                 "    parent   : "+ (this.parent ?  "'" + this.parent + "'" :  'false') + ",",
