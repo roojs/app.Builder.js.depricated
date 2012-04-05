@@ -4367,18 +4367,20 @@
    ],
    "events": [
     {
-     "name": "buildcomplete",
-     "sig": "function (c)\n{\n\n}",
-     "type": "function",
-     "desc": "Fires on the top level element when all elements have been built"
-    },
-    {
      "name": "built",
      "sig": "function (c)\n{\n\n}",
      "type": "function",
      "desc": "Fires when this the componnt is built"
     }
    ]
+  },
+  "Roo.XComponent#_tree": {
+   "props": [],
+   "events": []
+  },
+  "Roo.XComponent.event.events": {
+   "props": [],
+   "events": []
   },
   "Roo.data": {
    "props": [],
@@ -12315,6 +12317,12 @@
     }
    ],
    "events": [
+    {
+     "name": "beforeeditnext",
+     "sig": "function (eventdata)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires before the next editable sell is made active\nYou can use this to skip to another cell or fire the tabend\n   if you set cell to false"
+    },
     {
      "name": "beforerowselect",
      "sig": "function (_self, rowIndex, colIndex)\n{\n\n}",
