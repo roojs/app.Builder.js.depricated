@@ -303,6 +303,8 @@ left:
   Roo.JsonView:tpl
 right: 
   Roo.Template
+  Roo.XTemplate
+  Roo.MasterTemplate
 
   
   //drag drop..
