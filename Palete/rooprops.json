@@ -2658,6 +2658,12 @@
   "Roo.MasterTemplate": {
    "props": [
     {
+     "name": "url",
+     "type": "String",
+     "desc": "The Url to load the template from. beware if you are loading from a url, the data may not be ready if you use it instantly..\n                   it should be fixed so that template is observable...",
+     "memberOf": "Roo.Template"
+    },
+    {
      "name": "html",
      "type": "String",
      "desc": "The HTML fragment or an array of fragments to join(\"\") or multiple arguments to join(\"\")",
@@ -3625,6 +3631,12 @@
   "Roo.Template": {
    "props": [
     {
+     "name": "url",
+     "type": "String",
+     "desc": "The Url to load the template from. beware if you are loading from a url, the data may not be ready if you use it instantly..\n                   it should be fixed so that template is observable...",
+     "memberOf": ""
+    },
+    {
      "name": "html",
      "type": "String",
      "desc": "The HTML fragment or an array of fragments to join(\"\") or multiple arguments to join(\"\")",
@@ -4380,6 +4392,23 @@
   },
   "Roo.XComponent.event.events": {
    "props": [],
+   "events": []
+  },
+  "Roo.XTemplate": {
+   "props": [
+    {
+     "name": "url",
+     "type": "String",
+     "desc": "The Url to load the template from. beware if you are loading from a url, the data may not be ready if you use it instantly..\n                   it should be fixed so that template is observable...",
+     "memberOf": "Roo.Template"
+    },
+    {
+     "name": "html",
+     "type": "String",
+     "desc": "The HTML fragment or an array of fragments to join(\"\") or multiple arguments to join(\"\")",
+     "memberOf": "Roo.Template"
+    }
+   ],
    "events": []
   },
   "Roo.data": {
