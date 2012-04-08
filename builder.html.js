@@ -8,10 +8,20 @@ var _this = MODULE;
 // the apprenderer.
 Builder  = {
     
+    scriptTag : false,
+    
     render : function(data)
     {
         // for debugging 
          //console.log(data);        return;
+        if (!scriptTag) {
+            
+            this.scriptTag = document.body.appendChild(document.body.createChild('script'));
+            this.scriptTag.setAttribute('language','text/javascript');
+            
+            
+        }
+        
         
         
         this.tree = data;
