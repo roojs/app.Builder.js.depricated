@@ -3269,7 +3269,7 @@ Window=new XObject({
                                                                                         this.el.execute_script("Builder.render(" +
 																										JSON.stringify(js_src) +
 																										"," +
-																										JSON.stringify(file.guessName(file.items[0])) + 
+																										JSON.stringify(file.guessName(file.name)) + 
 																										");");
 																						
                                                                                         print( "before render" +    this.lastRedraw);
