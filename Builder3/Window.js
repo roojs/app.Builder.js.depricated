@@ -3243,6 +3243,10 @@ Window=new XObject({
 																						file.items = items;
 																						print("send source as " + js_src);
 																						
+																						js_src += "\nif (" + file.name +".show) " file.name +".show({});\n" +
+																								"Roo.XComponent.build();";
+																						
+																						
 																						
 																						
                                                                                          //if ((project.runhtml != this.runhtml) || (this.redraws > 10)) {
