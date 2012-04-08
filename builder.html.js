@@ -137,18 +137,18 @@ Builder  = {
                 }
             });
         }
-        try {
+        //try {
             console.log("ADDING CFG");    
             console.log(cfg)
             this.layoutbase.addxtype(  cfg ); 
-        } catch (e) {
-            console.log("GOT ERROR?");    
-            console.log(e);
-            console.log(typeof(e));
-            
-            console.log(this.dump(e));
-            throw e;
-        }
+        //} catch (e) {
+        //    console.log("GOT ERROR?");    
+        //    console.log(e);
+        //    console.log(typeof(e));
+        //    
+        //    console.log(this.dump(e));
+        //    throw e;
+        //}
         
         
     },
