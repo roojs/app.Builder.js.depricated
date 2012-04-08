@@ -52,7 +52,7 @@ Builder  = {
         if (!Builder.click) {
             Builder.click= Roo.get(document.body).on('click', this.onclick, this);
         }
-        Roo.log(ix);
+        Roo.log('Builder.'+ ix);
         
         return;
         
