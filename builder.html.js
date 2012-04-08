@@ -15,7 +15,7 @@ Builder  = {
     render : function(data)
     {
         // for debugging 
-         //console.log(data);        return; 
+        //console.log(data);        return; 
          
         // This would be alot simpler if we just use the XComponent code...
         // data should now be dialog or xcomponent..
