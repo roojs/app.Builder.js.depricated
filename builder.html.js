@@ -38,7 +38,7 @@ Builder  = {
             Builder.click= Roo.get(document.body).on('click', this.onclick, this);
         }
         
-        var  ix = '_src' + this.id;
+        var  ix = '_src_' + this.id;
         var  wait_for_tree = function() {
             
             Builder.tree = Builder[ix];
