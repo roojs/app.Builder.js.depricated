@@ -10,21 +10,26 @@ Builder  = {
     
     scriptTag : false,
     
+    id : 1,
+    
     render : function(data)
     {
         // for debugging 
          //console.log(data);        return;
-        if (!scriptTag) {
-            
-            this.scriptTag = document.body.appendChild(document.body.createChild('script'));
-            this.scriptTag.setAttribute('language','text/javascript');
-            
-            
+        if (scriptTag) { 
+            document.body.removeChild(scriptTag);
+            scriptTag = false;
         }
         
+        this.scriptTag = document.body.appendChild(document.body.createElement('script'));
+        this.scriptTag.setAttribute('language','text/javascript');
+        
+        this.id++;
+        document.body.createCDATA('Builder._src_' + this.id  = JSON.stringify(data));
+        this.scriptTag.innerHTML = "_Builder."
         
         
-        this.tree = data;
+        this.tree = Builder['_src' + this.id];
         MODULE = { isBuilder : true }; 
         _this = MODULE;
         if (!Builder.click) {
