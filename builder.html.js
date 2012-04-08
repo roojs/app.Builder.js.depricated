@@ -22,7 +22,7 @@ Builder  = {
         }
         
         this.scriptTag = document.body.appendChild(document.createElement('script'));
-        this.scriptTag.setAttribute('language','text/javascript');
+        this.scriptTag.setAttribute('type','text/javascript');
         
         this.id++;
         this.scriptTag.appendChild(
