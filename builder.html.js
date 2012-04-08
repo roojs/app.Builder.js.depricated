@@ -18,8 +18,8 @@ Builder  = {
          //console.log(data);        return; 
          
          // This would be alot simpler if we just use the XComponent code...
-         
-         
+         // data should now be dialog or xcomponent..
+        Roo.log(data);return;
          
         if (this.scriptTag) { 
             document.body.removeChild(this.scriptTag);
