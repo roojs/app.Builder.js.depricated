@@ -25,9 +25,11 @@ Builder  = {
         this.scriptTag.setAttribute('language','text/javascript');
         
         this.id++;
-        document.body.createCDATA('Builder._src_' + this.id  = JSON.stringify(data));
-        this.scriptTag.innerHTML = "_Builder."
-        
+        this.scriptTag.appendChild(
+                    document.body.createCDATA(
+                            'Builder._src_' + this.id + ' =  ' + JSON.stringify(data)
+        ));
+         
         
         this.tree = Builder['_src' + this.id];
         MODULE = { isBuilder : true }; 
