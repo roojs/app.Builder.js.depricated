@@ -3253,7 +3253,7 @@ Window=new XObject({
 																						var file = this.get('/LeftTree.model').file;
                                                                                         file.items = this.get('/LeftTree.model').toJS(false, false);
 																						var p = file.parent;
-																						file.parent = '#builderel';
+																						file.parent = false;
                                                                                         var js_src = file.toSource();
 																						file.parent = p;
 																						print("send source as " + js_src);
