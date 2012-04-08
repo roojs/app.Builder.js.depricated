@@ -26,6 +26,7 @@ Builder  = {
         // should replace module name with Builder._src_{id}
         data =  data.replace(clsname, 'Builder.' + ix);
         // next.. we need to ensure that parent is set correctly..
+        // done by sender...
         //data  += "\n" + 'Builder.' + ix + ".parent = '#renderel';\n";
         
         //Roo.log(data);return;
