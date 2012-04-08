@@ -3250,7 +3250,7 @@ Window=new XObject({
                                                                                             return;
                                                                                         
                                                                                         }
-																						
+																						var file = this.get('/LeftTree.model').file;
                                                                                         file.items = this.get('/LeftTree.model').toJS(false, false);
                                                                                         var js_src = file.toSource();
 																						
