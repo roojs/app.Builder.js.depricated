@@ -38,7 +38,7 @@ Builder  = {
             Builder.click= Roo.get(document.body).on('click', this.onclick, this);
         }
         
-        this.redraw(false);
+        this.redraw.defer(100, this, false);
     },
     
     
