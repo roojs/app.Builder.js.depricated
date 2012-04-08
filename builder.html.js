@@ -39,6 +39,7 @@ Builder  = {
         }
          (function() {
            Builder.tree = Builder['_src' + this.id];
+           Roo.log("Tree is :" +  Builder.tree);
             Builder.redraw(false);
         }).defer(100);
     },
