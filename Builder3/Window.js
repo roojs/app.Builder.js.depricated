@@ -3223,7 +3223,22 @@ Window=new XObject({
                                                                                     
                                                                                          this.runhtml  = this.runhtml || '';
                                                                                         
-                                                                                         if ((project.runhtml != this.runhtml) || (this.redraws > 10)) {
+																						var file = this.get('/LeftTree.model').file;
+																						var items = file.items;
+                                                                                        file.items = this.get('/LeftTree.model').toJS(false, false);
+																						file.items[0].background = false;
+																						var p = file.parent;
+																						file.parent = false;
+																						 
+                                                                                        var js_src = file.toSource();
+																						// restore stuff..
+																						file.parent = p;
+																						file.items = items;
+																						print("send source as " + js_src);
+																						
+																						
+																						
+                                                                                         //if ((project.runhtml != this.runhtml) || (this.redraws > 10)) {
                                                                                             // then we need to reload the browser using
                                                                                             // load_html_string..
                                                                                             
@@ -3239,7 +3254,14 @@ Window=new XObject({
                                                                                             
                                                                                             
                                                                                             var html = imports.File.File.read(__script_path__ + '/../builder.html');
-                                                                                            html = html.replace('</head>', runhtml + this.runhtml + '</head>');
+                                                                                            html = html.replace('</head>',
+																										runhtml +
+																										this.runhtml +
+																										'<script type="text/javascript">' + "\n" +
+																										js_src + "\n" + 
+																										'</script>' + 
+																										
+																										'</head>');
                                                                                             print("LOAD HTML " + html);
                                                                                             this.el.load_html_string( html , 
                                                                                                 //fixme - should be a config option!
@@ -3250,18 +3272,7 @@ Window=new XObject({
                                                                                             return;
                                                                                         
                                                                                         }
-																						var file = this.get('/LeftTree.model').file;
-																						var items = file.items;
-                                                                                        file.items = this.get('/LeftTree.model').toJS(false, false);
-																						file.items[0].background = false;
-																						var p = file.parent;
-																						file.parent = false;
-																						 
-                                                                                        var js_src = file.toSource();
-																						// restore stuff..
-																						file.parent = p;
-																						file.items = items;
-																						print("send source as " + js_src);
+																						
 																						// not used.
                                                                                         //this.renderedData = data;
                                                                                         //var str = JSON.stringify(data) ;
