@@ -21,7 +21,7 @@ Builder  = {
         // This would be alot simpler if we just use the XComponent code...
         // data should now be dialog or xcomponent..
         // only snag here is that we do not know the name currently..
-         Roo.log(clsname);
+        //Roo.log(clsname);
         var  ix = '_src_' + this.id++;
         // should replace module name with Builder._src_{id}
         data =  data.replace(clsname, 'Builder.' + ix);
@@ -30,7 +30,7 @@ Builder  = {
         //data  += "\n" + 'Builder.' + ix + ".parent = '#renderel';\n";
         
         //Roo.log(data);return;
-         Roo.log(data);
+        //Roo.log(data);
         if (this.scriptTag) { 
             document.body.removeChild(this.scriptTag);
             this.scriptTag = false;
@@ -52,6 +52,7 @@ Builder  = {
         if (!Builder.click) {
             Builder.click= Roo.get(document.body).on('click', this.onclick, this);
         }
+        Roo.log(ix);
         
         return;
         
