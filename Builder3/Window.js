@@ -3176,7 +3176,7 @@ Window=new XObject({
                                                                                       
                                                                                         
                                                                                         if (!this.refreshRequired) {
-                                                                                             print("no refresh required");
+                                                                                            // print("no refresh required");
                                                                                             return;
                                                                                         }
                                                                                     
