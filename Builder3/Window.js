@@ -355,7 +355,7 @@ Window=new XObject({
                                                          	if (!this.get('/Editor').save()) {
                                                          	    // popup!! - click handled.. 
                                                          	    return true;
-                                                                }
+                                                            }
                                                         
                                                             if (!this.el.expanded) {
                                                                 this.onExpand();
@@ -3199,13 +3199,19 @@ Window=new XObject({
                                                                                          this.get('/BottomPane').el.show();
                                                                                          this.get('/BottomPane').el.set_current_page(2);// webkit inspector
                                                                                     
+																						// before
                                                                                         
+																						
+																						
+																						
                                                                                         var js = this.get('/LeftTree.model').toJS();
                                                                                         if (!js || !js.length) {
                                                                                             print("no data");
                                                                                             return;
                                                                                         }
                                                                                         var  data = js[0];
+																						            
+																						
                                                                                         this.redraws++;
                                                                                         
                                                                                          var project = this.get('/Window.LeftTree').getActiveFile().project;
@@ -3244,8 +3250,10 @@ Window=new XObject({
                                                                                             return;
                                                                                         
                                                                                         }
-                                                                                        
-                                                                                        
+																						
+                                                                                        file.items = this.get('/LeftTree.model').toJS(false, false);
+                                                                                        var js_src = file.toSource();
+
                                                                                         this.renderedData = data;
                                                                                         var str = JSON.stringify(data) ;
                                                                                         
@@ -3255,7 +3263,8 @@ Window=new XObject({
                                                                                         this.lastRedraw = new Date();
                                                                                     
                                                                                         this.el.execute_script("Builder.render(" + JSON.stringify(data) + ");");
-                                                                                         print( "before render" +    this.lastRedraw);
+																						
+                                                                                        print( "before render" +    this.lastRedraw);
                                                                                         print( "after render" +    (new Date()));
                                                                                         
                                                                                     }
