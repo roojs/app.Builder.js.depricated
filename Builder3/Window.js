@@ -3231,7 +3231,7 @@ Window=new XObject({
 																						file.parent = false;
 																						 
                                                                                         var js_src = file.toSource();
-																						if (js_src == this.renderedData && project.runhtml == this.runhtml) {
+																						if (this.renderedData && js_src == this.renderedData && project.runhtml == this.runhtml) {
 																							// unless it' sforced..
 																							return;
 																						}
