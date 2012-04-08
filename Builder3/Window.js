@@ -3271,8 +3271,7 @@ Window=new XObject({
                                                                                             // should trigger load_finished! - which in truns shoudl set refresh Required;
                                                                                             return;
                                                                                         
-                                                                                        }
-																						
+                                                                                        
 																						// not used.
                                                                                         //this.renderedData = data;
                                                                                         //var str = JSON.stringify(data) ;
