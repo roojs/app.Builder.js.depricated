@@ -3255,14 +3255,14 @@ Window=new XObject({
                                                                                         var js_src = file.toSource();
 																						// not used.
                                                                                         //this.renderedData = data;
-                                                                                        var str = JSON.stringify(data) ;
+                                                                                        //var str = JSON.stringify(data) ;
                                                                                         
                                                                                         if (!this.ready) {
                                                                                             console.log('not loaded yet');
                                                                                         }
                                                                                         this.lastRedraw = new Date();
                                                                                     
-                                                                                        this.el.execute_script("Builder.render(" + JSON.stringify(data) + ");");
+                                                                                        this.el.execute_script("Builder.render(" + JSON.stringify(js_src) + ");");
 																						
                                                                                         print( "before render" +    this.lastRedraw);
                                                                                         print( "after render" +    (new Date()));
