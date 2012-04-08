@@ -53,7 +53,7 @@ Builder  = {
             Builder.click= Roo.get(document.body).on('click', this.onclick, this);
         }
         Roo.log('Builder.'+ ix);
-        
+        Roo.XComponent.build();
         return;
         
         return;
