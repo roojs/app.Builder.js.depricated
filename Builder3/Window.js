@@ -3244,7 +3244,7 @@ Window=new XObject({
 																						print("send source as " + js_src);
 																						
 																						js_src += "\n" +
-																								"Roo.onReady(function( {" +
+																								"Roo.onReady(function() {" +
 																								"if (" + file.name +".show) " +  file.name +".show({});\n" +
 																								"Roo.XComponent.build();\n" +
 																								"});\n";
