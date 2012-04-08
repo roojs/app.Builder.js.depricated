@@ -16,8 +16,8 @@ Builder  = {
     {
         // for debugging 
         // console.log(data);        return; 
-        Roo.log(data);
-        Roo.log(data);
+        //Roo.log(data);
+        //Roo.log(data);
         // This would be alot simpler if we just use the XComponent code...
         // data should now be dialog or xcomponent..
         // only snag here is that we do not know the name currently..
@@ -29,7 +29,7 @@ Builder  = {
         data  += "\n" + 'Builder.' + ix + ".parent = '#renderel';\n";
         
         //Roo.log(data);return;
-         
+         Roo.log(data);
         if (this.scriptTag) { 
             document.body.removeChild(this.scriptTag);
             this.scriptTag = false;
@@ -45,7 +45,7 @@ Builder  = {
         ));
          
         
-        Roo.log(this.tree);
+        //Roo.log(this.tree);
         MODULE = { isBuilder : true }; 
         _this = MODULE;
         if (!Builder.click) {
