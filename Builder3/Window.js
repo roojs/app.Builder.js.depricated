@@ -3259,7 +3259,7 @@ Window=new XObject({
                                                                                             // need to modify paths
                                                                                             
                                                                                             
-                                                                                            
+                                                                                            this.lastRedraw= new Date();
                                                                                             var html = imports.File.File.read(__script_path__ + '/../builder.html');
                                                                                             html = html.replace('</head>',
 																										runhtml +
