@@ -21,7 +21,7 @@ Builder  = {
         // This would be alot simpler if we just use the XComponent code...
         // data should now be dialog or xcomponent..
         // only snag here is that we do not know the name currently..
-         
+         Roo.log(clsname);
         var  ix = '_src_' + this.id++;
         // should replace module name with Builder._src_{id}
         data =  data.replace(clsname, 'Builder.' + ix);
