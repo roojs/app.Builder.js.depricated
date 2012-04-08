@@ -27,7 +27,7 @@ Builder  = {
         // next.. we need to ensure that parent is set correctly..
         data  += "\n" + 'Builder.' + ix + ".parent = '#renderel';\n";
         
-        Roo.log(data);return;
+        //Roo.log(data);return;
          
         if (this.scriptTag) { 
             document.body.removeChild(this.scriptTag);
@@ -40,7 +40,7 @@ Builder  = {
         this.id++;
         this.scriptTag.appendChild(
                     document.createTextNode(
-                            'Builder._src_' + this.id + ' =  ' + JSON.stringify(data, null,4)
+                            data 
         ));
          
         
