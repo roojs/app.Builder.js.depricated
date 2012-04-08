@@ -38,13 +38,17 @@ Builder  = {
             Builder.click= Roo.get(document.body).on('click', this.onclick, this);
         }
         
-        
-        
-        (function() {
-           Builder.tree = Builder['_src' + this.id];
-           Roo.log("Tree is :" +  Builder.tree);
-            Builder.redraw(false);
-        }).defer(100);
+        var  ix = '_src' + this.id;
+        var  wait_for_tree() = function() {
+            Builder.tree = Builder[ix];
+            if (!Builder.tree) {
+                Roo.log("Wating for tree");
+                wait_for_tree.defer(100);
+                return;
+            }
+             Builder.redraw(false);
+        }
+        wait_for_tree.defer(100);
     },
     
     
