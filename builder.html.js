@@ -142,7 +142,7 @@ Builder  = {
             console.log(cfg)
             this.layoutbase.addxtype(  cfg ); 
         } catch (e) {
-            console.log("GOT ERROR?");
+            console.log("GOT ERROR? - saved in Builder.lastError");
             Builder.lastError = e;
             console.log(e);
             console.log(typeof(e));
