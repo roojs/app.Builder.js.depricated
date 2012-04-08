@@ -147,6 +147,7 @@ Builder  = {
             console.log(typeof(e));
             
             console.log(this.dump(e));
+            console.trace();
         }
         
         
