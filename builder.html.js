@@ -40,9 +40,10 @@ Builder  = {
         
         var  ix = '_src' + this.id;
         var  wait_for_tree = function() {
+            
             Builder.tree = Builder[ix];
             if (!Builder.tree) {
-                Roo.log("Wating for tree");
+                Roo.log("Wating for tree : " + ix);
                 wait_for_tree.defer(100);
                 return;
             }
