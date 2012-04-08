@@ -26,7 +26,7 @@ Builder  = {
         
         this.id++;
         this.scriptTag.appendChild(
-                    document.createCDATASection(
+                    document.createTextNode(
                             'Builder._src_' + this.id + ' =  ' + JSON.stringify(data)
         ));
          
