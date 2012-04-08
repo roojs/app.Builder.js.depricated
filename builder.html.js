@@ -16,9 +16,9 @@ Builder  = {
     {
         // for debugging 
          //console.log(data);        return;
-        if (scriptTag) { 
-            document.body.removeChild(scriptTag);
-            scriptTag = false;
+        if (this.scriptTag) { 
+            document.body.removeChild(this.scriptTag);
+            this.scriptTag = false;
         }
         
         this.scriptTag = document.body.appendChild(document.body.createElement('script'));
