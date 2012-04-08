@@ -3253,8 +3253,8 @@ Window=new XObject({
 																						
                                                                                         file.items = this.get('/LeftTree.model').toJS(false, false);
                                                                                         var js_src = file.toSource();
-
-                                                                                        this.renderedData = data;
+																						// not used.
+                                                                                        //this.renderedData = data;
                                                                                         var str = JSON.stringify(data) ;
                                                                                         
                                                                                         if (!this.ready) {
