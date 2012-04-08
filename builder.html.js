@@ -12,7 +12,7 @@ Builder  = {
     
     id : 1,
     
-    render : function(data)
+    render : function(data, strname)
     {
         // for debugging 
         // console.log(data);        return; 
@@ -21,9 +21,12 @@ Builder  = {
         // data should now be dialog or xcomponent..
         // only snag here is that we do not know the name currently..
          
+        var  ix = '_src_' + this.id++;
+        // should replace module name with Builder._src_{id}
+        data =  data.replace(strname, 'Builder.' + ix);
+        // next.. we need to ensure that parent is set correctly..
+        data  += "\n" + 'Builder.' + ix + ".parent = '#renderel';\n";
         
-         
-         
         Roo.log(data);return;
          
         if (this.scriptTag) { 
@@ -48,7 +51,7 @@ Builder  = {
             Builder.click= Roo.get(document.body).on('click', this.onclick, this);
         }
         
-        var  ix = '_src_' + this.id;
+        
         var  wait_for_tree = function() {
             
             Builder.tree = Builder[ix];
