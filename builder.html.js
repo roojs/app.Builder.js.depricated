@@ -12,10 +12,11 @@ Builder  = {
     
     id : 1,
     
-    render : function(data, strname)
+    render : function(data, clsname)
     {
         // for debugging 
         // console.log(data);        return; 
+        Roo.log(data);
         Roo.log(data);
         // This would be alot simpler if we just use the XComponent code...
         // data should now be dialog or xcomponent..
@@ -23,7 +24,7 @@ Builder  = {
          
         var  ix = '_src_' + this.id++;
         // should replace module name with Builder._src_{id}
-        data =  data.replace(strname, 'Builder.' + ix);
+        data =  data.replace(clsname, 'Builder.' + ix);
         // next.. we need to ensure that parent is set correctly..
         data  += "\n" + 'Builder.' + ix + ".parent = '#renderel';\n";
         
