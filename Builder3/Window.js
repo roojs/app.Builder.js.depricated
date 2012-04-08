@@ -3253,6 +3253,8 @@ Window=new XObject({
 																						
                                                                                         file.items = this.get('/LeftTree.model').toJS(false, false);
                                                                                         var js_src = file.toSource();
+																						
+																						print("send source as " + js_src);
 																						// not used.
                                                                                         //this.renderedData = data;
                                                                                         //var str = JSON.stringify(data) ;
@@ -3261,7 +3263,7 @@ Window=new XObject({
                                                                                             console.log('not loaded yet');
                                                                                         }
                                                                                         this.lastRedraw = new Date();
-                                                                                    
+                                                                                        
                                                                                         this.el.execute_script("Builder.render(" + JSON.stringify(js_src) + ");");
 																						
                                                                                         print( "before render" +    this.lastRedraw);
