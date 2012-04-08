@@ -2899,9 +2899,15 @@ Window=new XObject({
                                                                                     xtype: Gtk.Button,
                                                                                     listeners : {
                                                                                         clicked : function (self) {
-                                                                                          this.get('/RightBrowser.view').redraws = 99;
-                                                                                          this.get('/RightBrowser.view').renderJS(null,true);
-                                                                                        }
+                                                                                          
+																						    var view = this.get('/RightBrowser.view');
+																						  //this.get('/RightBrowser.view').redraws = 99;
+																							view.refreshRequired = true;
+																							view.lastRedraw = false;
+																							view.
+																							view.renderJS(null,true);
+																						  
+																						}
                                                                                     },
                                                                                     label : "Full Redraw",
                                                                                     pack : "pack_start,false,false,0"
