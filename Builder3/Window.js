@@ -2904,7 +2904,7 @@ Window=new XObject({
 																						  //this.get('/RightBrowser.view').redraws = 99;
 																							view.refreshRequired = true;
 																							view.lastRedraw = false;
-																							view.
+																							view.renderedData = false;
 																							view.renderJS(null,true);
 																						  
 																						}
