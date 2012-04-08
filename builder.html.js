@@ -23,7 +23,7 @@ Builder  = {
         
         this.scriptTag = document.body.appendChild(document.createElement('script'));
         this.scriptTag.setAttribute('type','text/javascript');
-        
+         
         this.id++;
         this.scriptTag.appendChild(
                     document.createTextNode(
@@ -37,12 +37,16 @@ Builder  = {
         if (!Builder.click) {
             Builder.click= Roo.get(document.body).on('click', this.onclick, this);
         }
-         (function() {
+        
+        
+        
+        (function() {
            Builder.tree = Builder['_src' + this.id];
            Roo.log("Tree is :" +  Builder.tree);
             Builder.redraw(false);
         }).defer(100);
     },
+    
     
     
     tree : {}, 
