@@ -27,7 +27,7 @@ Builder  = {
         this.id++;
         this.scriptTag.appendChild(
                     document.createTextNode(
-                            'Builder._src_' + this.id + ' =  ' + JSON.stringify(data)
+                            'Builder._src_' + this.id + ' =  ' + JSON.stringify(data, null,4)
         ));
          
         
