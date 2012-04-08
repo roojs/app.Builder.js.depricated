@@ -16,7 +16,7 @@ Builder  = {
     {
         // for debugging 
         // console.log(data);        return; 
-         
+        Roo.log(data);
         // This would be alot simpler if we just use the XComponent code...
         // data should now be dialog or xcomponent..
         // only snag here is that we do not know the name currently..
