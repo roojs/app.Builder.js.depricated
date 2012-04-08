@@ -3231,6 +3231,12 @@ Window=new XObject({
 																						file.parent = false;
 																						 
                                                                                         var js_src = file.toSource();
+																						if (js_src == this.renderedData) {
+																							// unless it' sforced..
+																							return;
+																						}
+																						
+																						this.renderedData = js_src;
 																						// restore stuff..
 																						file.parent = p;
 																						file.items = items;
@@ -3244,9 +3250,9 @@ Window=new XObject({
                                                                                             
                                                                                             // then trigger a redraw once it's loaded..
                                                                                             this.pendingRedraw = true;
-                                                                                             var runhtml = '<script type="text/javascript">' + "\n" ;
-                                                                                             runhtml +=imports.File.File.read(__script_path__ + '/../builder.html.js') + "\n";
-                                                                                             runhtml += '</script>'+ "\n" ;
+                                                                                            var runhtml = '<script type="text/javascript">' + "\n" ;
+                                                                                            runhtml +=imports.File.File.read(__script_path__ + '/../builder.html.js') + "\n";
+                                                                                            runhtml += '</script>'+ "\n" ;
                                                                                             
                                                                                             this.runhtml = project.runhtml;
                                                                                             // need to modify paths
