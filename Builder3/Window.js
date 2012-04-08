@@ -2933,10 +2933,10 @@ Window=new XObject({
                                                                                         
                                                                                         	this.ready = true;
                                                                                         	
-                                                                                                if (this.pendingRedraw) {
-                                                                                                    this.pendingRedraw = false;
-                                                                                                    this.refreshRequired  = true;
-                                                                                                }
+                                                                                                //if (this.pendingRedraw) {
+                                                                                                //    this.pendingRedraw = false;
+                                                                                                //    this.refreshRequired  = true;
+                                                                                                //}
                                                                                                 //var js = this.get('/LeftTree.model').toJS();
                                                                                                 //if (js && js[0]) {
                                                                                             	//    this.renderJS(js[0]);
@@ -3176,7 +3176,7 @@ Window=new XObject({
                                                                                       
                                                                                         
                                                                                         if (!this.refreshRequired) {
-                                                                                           // print("no refresh required");
+                                                                                             print("no refresh required");
                                                                                             return;
                                                                                         }
                                                                                     
@@ -3233,6 +3233,7 @@ Window=new XObject({
                                                                                         var js_src = file.toSource();
 																						if (this.renderedData && js_src == this.renderedData && project.runhtml == this.runhtml) {
 																							// unless it' sforced..
+																							
 																							return;
 																						}
 																						
