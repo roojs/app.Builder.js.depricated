@@ -17,9 +17,12 @@ Builder  = {
         // for debugging 
          //console.log(data);        return; 
          
-         // This would be alot simpler if we just use the XComponent code...
-         // data should now be dialog or xcomponent..
-         // only snag here is that we do not know the name currently..
+        // This would be alot simpler if we just use the XComponent code...
+        // data should now be dialog or xcomponent..
+        // only snag here is that we do not know the name currently..
+         
+        
+         
          
         Roo.log(data);return;
          
