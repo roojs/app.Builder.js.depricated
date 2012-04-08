@@ -31,14 +31,16 @@ Builder  = {
         ));
          
         
-        this.tree = Builder['_src' + this.id];
+        Roo.log(this.tree);
         MODULE = { isBuilder : true }; 
         _this = MODULE;
         if (!Builder.click) {
             Builder.click= Roo.get(document.body).on('click', this.onclick, this);
         }
-        
-        this.redraw.defer(100, this, false);
+         (function() {
+           Builder.tree = Builder['_src' + this.id];
+            Builder.redraw(false);
+        }).defer(100);
     },
     
     
