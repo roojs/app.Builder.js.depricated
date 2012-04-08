@@ -3253,10 +3253,10 @@ Window=new XObject({
 																						var file = this.get('/LeftTree.model').file;
 																						var items = file.items;
                                                                                         file.items = this.get('/LeftTree.model').toJS(false, false);
+																						file.items[0].background = false;
 																						var p = file.parent;
 																						file.parent = false;
-																						var bg = file.items[0].
-																						
+																						 
                                                                                         var js_src = file.toSource();
 																						// restore stuff..
 																						file.parent = p;
