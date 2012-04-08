@@ -21,12 +21,12 @@ Builder  = {
             this.scriptTag = false;
         }
         
-        this.scriptTag = document.body.appendChild(document.body.createElement('script'));
+        this.scriptTag = document.body.appendChild(document.createElement('script'));
         this.scriptTag.setAttribute('language','text/javascript');
         
         this.id++;
         this.scriptTag.appendChild(
-                    document.body.createCDATA(
+                    document.createCDATASection(
                             'Builder._src_' + this.id + ' =  ' + JSON.stringify(data)
         ));
          
