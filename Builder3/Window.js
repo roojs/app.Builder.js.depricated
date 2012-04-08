@@ -3266,7 +3266,11 @@ Window=new XObject({
                                                                                         }
                                                                                         this.lastRedraw = new Date();
                                                                                         
-                                                                                        this.el.execute_script("Builder.render(" + JSON.stringify(js_src) + ");");
+                                                                                        this.el.execute_script("Builder.render(" +
+																										JSON.stringify(js_src) +
+																										"," +
+																										JSON.stringify(file.guessName(file.items[0])) + 
+																										");");
 																						
                                                                                         print( "before render" +    this.lastRedraw);
                                                                                         print( "after render" +    (new Date()));
