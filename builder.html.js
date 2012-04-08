@@ -15,7 +15,12 @@ Builder  = {
     render : function(data)
     {
         // for debugging 
-         //console.log(data);        return;
+         //console.log(data);        return; 
+         
+         // This would be alot simpler if we just use the XComponent code...
+         
+         
+         
         if (this.scriptTag) { 
             document.body.removeChild(this.scriptTag);
             this.scriptTag = false;
