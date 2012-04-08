@@ -3243,8 +3243,12 @@ Window=new XObject({
 																						file.items = items;
 																						print("send source as " + js_src);
 																						
-																						js_src += "\nif (" + file.name +".show) " +  file.name +".show({});\n" +
-																								"Roo.XComponent.build();";
+																						js_src += "\n" +
+																								"Roo.onReady(function( {" +
+																								"if (" + file.name +".show) " +  file.name +".show({});\n" +
+																								"Roo.XComponent.build();\n" +
+																								"});\n";
+																								
 																						
 																						
 																						
