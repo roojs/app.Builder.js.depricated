@@ -1150,10 +1150,10 @@ Window=new XObject({
                                                                                             } else {
                                                                                                 this.el.append(ret);
                                                                                             }
-                                                                                            print(JSON.stringify(ret,null,4));
-                                                                                            print('call nodeToJSON: ' + tr[i]);
+                                                                                            //print(JSON.stringify(ret,null,4));
+                                                                                            //print('call nodeToJSON: ' + tr[i]);
                                                                                             var body = this.nodeToJSON(tr[i]);
-                                                                                            print(body);
+                                                                                            //print(body);
                                                                                             //this.el.set_value(ret.iter, 0, '' _ [GObject.TYPE_STRING, this.nodeTitle(tr[i]) ]);
                                                                                             //this.el.set_value(ret.iter, 1, [GObject.TYPE_STRING, this.nodeTip(tr[i]) ]);
                                                                                             //this.el.set_value(ret.iter, 2, [GObject.TYPE_STRING, body ]);
