@@ -3247,7 +3247,7 @@ Window=new XObject({
 																						// restore stuff..
 																						file.parent = p;
 																						file.items = items;
-																						print("send source as " + js_src);
+																						//print("send source as " + js_src);
 																						
 																						js_src += "\n" +
 																								"Roo.onReady(function() {\n" +
@@ -3283,7 +3283,7 @@ Window=new XObject({
 																										'</script>' + 
 																										
 																										'</head>');
-                                                                                            print("LOAD HTML " + html);
+                                                                                            //print("LOAD HTML " + html);
                                                                                             this.el.load_html_string( html , 
                                                                                                 //fixme - should be a config option!
                                                                                                 'http://localhost/app.Builder/'
