@@ -101,7 +101,12 @@ right:
   Roo.form.FCKeditor         
   Roo.form.DisplayField
   Roo.form.DayPicker
-  Roo.Button         
+  Roo.Button
+
+left:
+  Roo.form.ComboBoxArray:combo
+right:
+  Roo.form.ComboBox
 
 left: 
   Roo.grid.GridEditor:field
@@ -274,7 +279,6 @@ left:
   Roo.grid.Grid:ds
   Roo.form.ComboBox:store
   Roo.form.ComboCheck:store
-  Roo.form.ComboBoxArray:store
   Roo.View:store
   Roo.JsonView:store
 right: 
