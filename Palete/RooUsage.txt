@@ -94,6 +94,7 @@ right:
   Roo.form.Checkbox         
   Roo.form.Radio         
   Roo.form.ComboBox
+  Roo.form.ComboBoxArray
   Roo.form.ComboCheck
   Roo.form.TextArea         
   Roo.form.HtmlEditor         
@@ -111,6 +112,7 @@ right:
   Roo.form.Checkbox         
   Roo.form.Radio         
   Roo.form.ComboBox
+  Roo.form.ComboBoxArray
   Roo.form.ComboCheck
   Roo.form.TextArea         
            
@@ -272,6 +274,7 @@ left:
   Roo.grid.Grid:ds
   Roo.form.ComboBox:store
   Roo.form.ComboCheck:store
+  Roo.form.ComboBoxArray:store
   Roo.View:store
   Roo.JsonView:store
 right: 
