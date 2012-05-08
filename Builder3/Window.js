@@ -3232,9 +3232,9 @@ Window=new XObject({
 																						var file = this.get('/LeftTree.model').file;
 																						var items = file.items;
                                                                                         file.items = this.get('/LeftTree.model').toJS(false, false);
-																						file.items[0].background = false;
-																						var p = file.parent;
-																						file.parent = false;
+																						//file.items[0].background = false;
+																						//var p = file.parent;
+																						//file.parent = false;
 																						 
                                                                                         var js_src = file.toSourcePreview();
 																						if (this.renderedData && js_src == this.renderedData && project.runhtml == this.runhtml) {
