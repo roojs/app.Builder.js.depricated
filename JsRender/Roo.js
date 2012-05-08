@@ -364,6 +364,7 @@ Roo = XObject.define(
             var items = JSON.parse(JSON.stringify(this.items[0]));
             if (isPreview) {
                 items.region = 'center';
+                items.background = false;
             }
             
             var o = this.mungeToString(items, false, '            ');   
