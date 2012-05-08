@@ -3245,8 +3245,8 @@ Window=new XObject({
 																						
 																						this.renderedData = js_src;
 																						// restore stuff..
-																						file.parent = p;
-																						file.items = items;
+																						//file.parent = p;
+																						//file.items = items;
 																						//print("send source as " + js_src);
 																						
 																						js_src += "\n" +
