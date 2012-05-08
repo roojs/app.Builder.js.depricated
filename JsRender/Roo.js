@@ -361,13 +361,13 @@ Roo = XObject.define(
         toSourceLayout : function(isPreview) 
         {
             isPreview = isPreview || false;
-            var items = JSON.parse(JSON.stringify(this.items[0]));
+            var topItem = JSON.parse(JSON.stringify(this.items[0]));
             if (isPreview) {
-                items.region = 'center';
-                items.background = false;
+                topItem.region = 'center';
+                topItem.background = false;
             }
             
-            var o = this.mungeToString(items, false, '            ');   
+            var o = this.mungeToString(topItem, false, '            ');   
              
             var modkey = this.modOrder + '-' + this.name.replace(/[^A-Z.]+/ig, '-');
             
