@@ -293,8 +293,10 @@ Roo = XObject.define(
         },
         // a standard dialog module.
         // fixme - this could be alot neater..
-        toSourceDialog : function() 
+        toSourceDialog : function(isPreview) 
         {
+            
+            isPreview = isPreview || false;
             var items = JSON.parse(JSON.stringify(this.items[0]));
             var o = this.mungeToString(items, false, '            ');   
             return [
@@ -356,8 +358,9 @@ Roo = XObject.define(
         },
         
         // a layout compoent 
-        toSourceLayout : function() 
+        toSourceLayout : function(isPreview) 
         {
+            isPreview = isPreview || false;
             var items = JSON.parse(JSON.stringify(this.items[0]));
             var o = this.mungeToString(items, false, '            ');   
              
