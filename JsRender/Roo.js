@@ -364,6 +364,7 @@ Roo = XObject.define(
             var items = JSON.parse(JSON.stringify(this.items[0]));
             
             items.region = 'center';
+            
             var o = this.mungeToString(items, false, '            ');   
              
             var modkey = this.modOrder + '-' + this.name.replace(/[^A-Z.]+/ig, '-');
