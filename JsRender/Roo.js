@@ -233,6 +233,23 @@ Roo = XObject.define(
             els.push('xns: '+ bits.join('.'));
         },
         
+        
+        toSourcePreview: function()
+        {
+            
+            var top = this.guessName(this.items[0]);
+            if (!top) {
+                return false;
+            }
+            if (top.match(/Dialog/)) {
+                return this.toSourceDialog(true);
+            }
+            return this.toSourceLayout(true);
+            
+            
+            
+        }
+        
         /**
          * This needs to use some options on the project
          * to determine how the file is output..
