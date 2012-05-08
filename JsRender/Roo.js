@@ -248,7 +248,7 @@ Roo = XObject.define(
             
             
             
-        }
+        },
         
         /**
          * This needs to use some options on the project
