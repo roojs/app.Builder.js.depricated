@@ -366,6 +366,10 @@ Roo = XObject.define(
              
             var modkey = this.modOrder + '-' + this.name.replace(/[^A-Z.]+/ig, '-');
             
+            var parent =   (this.parent ?  "'" + this.parent + "'" :  'false');
+            if (isPreview) {
+                parent = 'false'
+            }
           
             return [
                 this.outputHeader(),
@@ -375,7 +379,7 @@ Roo = XObject.define(
                         /// critical used by builder to associate modules/parts/persm
                 "    order    : '" +modkey+"',",
                 "    region   : '" + this.region   +"',",
-                "    parent   : "+ (this.parent ?  "'" + this.parent + "'" :  'false') + ",",
+                "    parent   : "+ parent + ",",
                 "    name     : " + JSON.stringify(this.title  || "unnamed module") + ",",
                 "    disabled : " + (this.disabled || 'false') +", ",
                 "    permname : '" + (this.permname|| '') +"', ",
