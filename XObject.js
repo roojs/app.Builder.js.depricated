@@ -257,9 +257,9 @@ XObject.prototype = {
         XObject.log("add children to " + type);
         
         var _this=this;
-        this.items.forEach(function(i,n) {
-            _this.addItem(i,n);
-        })
+        for (var i = 0; i < this.items.length;i++) { 
+            _this.addItem(this.items[i],i);
+        }
             
         
         for (var i in this.listeners) {
