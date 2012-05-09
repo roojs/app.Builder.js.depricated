@@ -127,7 +127,7 @@ print("len:" + this.items.length);
 
 	this.items = [];
     // create XObject for all the children.
-    items.forEach(function(i,n) {
+    if(items.length) items.forEach(function(i,n) {
         var base = XObject.baseXObject(i);
         base = base || XObject;
         var item = (i.constructor == XObject) ? i : new base(i);
