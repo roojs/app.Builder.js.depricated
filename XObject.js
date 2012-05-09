@@ -116,12 +116,15 @@ function XObject (cfg) {
     // as the real work is done in init anyway..
     var _this= this;
    var n=0; 
-    var items = [];
+    var items = []
+print(this.items.length);
     this.items.forEach(function(i) {
 	  print(n++); 
-    items.push(i);
+    	items.push(i);
     });
-    this.items = [];
+    
+
+	this.items = [];
     // create XObject for all the children.
     items.forEach(function(i,n) {
         var base = XObject.baseXObject(i);
