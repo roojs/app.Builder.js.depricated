@@ -115,26 +115,25 @@ function XObject (cfg) {
     // interesting question should we call constructor on items here...
     // as the real work is done in init anyway..
     var _this= this;
-   var n=0; 
+ 
     var items = []
-print("len:" + this.items.length);
-    if(this.items.length) { this.items.forEach(function(i) {
-	  print(n++); 
-    	items.push(i);
-    });
+    for(var i = 0; i < this.items.length;i++) {
+   	items.push(this.items[i]);
+    }
 
-}   print("done copy"); 
+
 
 	this.items = [];
     // create XObject for all the children.
-    if(items.length) items.forEach(function(i,n) {
-        var base = XObject.baseXObject(i);
+    for(var i = 0; i < items.length;i++) {
+    
+        var base = XObject.baseXObject(items[i]);
         base = base || XObject;
-        var item = (i.constructor == XObject) ? i : new base(i);
+        var item = (items[i].constructor == XObject) ? items[i] : new base(items[i]);
         item.parent = _this;
         _this.items.push(item);
         //_this.addItem(i);
-    });
+    };
      
     
 }
