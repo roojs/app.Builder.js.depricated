@@ -117,12 +117,12 @@ function XObject (cfg) {
     var _this= this;
    var n=0; 
     var items = []
-print(this.items.length);
+print("len:" + this.items.length);
     this.items.forEach(function(i) {
 	  print(n++); 
     	items.push(i);
     });
-    
+   print("done copy"); 
 
 	this.items = [];
     // create XObject for all the children.
