@@ -44,12 +44,7 @@ GObject = imports.gi.GObject;
  * @cfg listeners {Object}   (optional) map Gobject signals to functions
  * @cfg pack {Function|String|Array}   (optional) how this object gets added to it's parent
  * @cfg el {Object}   (optional) premade GObject
- * 
- * 
- * 
- * 
- * 
- * 
+ *  
  */
 
 function XObject (cfg) {
@@ -120,10 +115,11 @@ function XObject (cfg) {
     // interesting question should we call constructor on items here...
     // as the real work is done in init anyway..
     var _this= this;
-    
+   var n=0; 
     var items = [];
     this.items.forEach(function(i) {
-        items.push(i);
+	  print(n++); 
+    items.push(i);
     });
     this.items = [];
     // create XObject for all the children.
@@ -277,7 +273,6 @@ XObject.prototype = {
       
      
      /**
-      * @method addItem
       * Adds an item to the object using a new XObject
       * uses pack property to determine how to add it.
       * @arg cfg {Object} same as XObject constructor.
@@ -365,12 +360,11 @@ XObject.prototype = {
         
     },
     /**
-      * @method addListener
-      * Connects a method to a signal. (gjs/Seed aware)
-      * 
-      * @arg sig  {String} name of signal
-      * @arg fn  {Function} handler.
-      */
+    * Connects a method to a signal. (gjs/Seed aware)
+    * 
+    * @param {String} sig  name of signal
+    * @param {Function} fn  handler.
+    */
     addListener  : function(sig, fn) 
     {
  
@@ -395,8 +389,8 @@ XObject.prototype = {
       * prefix with multiple '..' to look further up..
       * prefix with '/' to look from the top, eg. '^LeftTree.model'
       * 
-      * @arg name  {String} name of signal
-      * @return   {XObject|false} the object if found.
+      * @param {String} name name of signal
+      * @return  {XObject|false} the object if found.
       */
     get : function(xid)
     {
