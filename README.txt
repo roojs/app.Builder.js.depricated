@@ -31,6 +31,24 @@ Where it is..
 * Help view - load docs..
 * highlight in gtk preview - works but is klunky..
 * Support for extra code in Roo HTML is done by "Set extra HTML in rendere"
+
+
+-----------------------------------------------------
+INSTALL
+GTK3
+
+git clone git://github.com/roojs/app.Builder.js.git
+cd app.Builder.js
+git clone git://github.com/roojs/gir-1.2-gtk-3.4.git gir-1.2
+cd gir-1.2
+sh install-girs.sh
+** This file may need running as root if sudo fails..
+cd ..
+
+seed gtkrun.js Builder3 
+
+ 
+
 -----------------------------------------------------
 
 TODO (Gtk)
