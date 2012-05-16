@@ -266,11 +266,11 @@ Base = XObject.define(
                 var i = keys[i];
               
                 if (typeof(obj[i]) == 'undefined') { // empty or removed.
-                    return;
+                    continue;
                 }
                 var el = obj[i];
                 if (!isArray && skip.indexOf(i) > -1) { // things we do not write..
-                    return;
+                    continue;
                 }
                 if (!isArray) {
                     // set the key to be quoted with singel quotes..
@@ -297,7 +297,7 @@ Base = XObject.define(
                     }
                     
                     els.push(left  + str);
-                    return;
+                    continue;
                 }
                  
                 
@@ -311,7 +311,7 @@ Base = XObject.define(
                     }
                     // this needs to go...
                     //if (typeof(el) == 'string'  && obj[i].match(new RegExp("Gtk.main" + "_quit"))) { // we can not handle this very well..
-                    //    return;
+                    //    continue;;
                     //}
                     
                     var str= ('' + obj[i]).replace(/^\s+|\s+$/g,"");;
