@@ -261,7 +261,9 @@ Base = XObject.define(
             
             var left =  '';
             
-            keys.forEach(function(i) {
+            for (var ii in keys) {
+            
+                var i = keys[i];
               
                 if (typeof(obj[i]) == 'undefined') { // empty or removed.
                     return;
@@ -305,7 +307,7 @@ Base = XObject.define(
                 if (i[0] == '|') {
                     // does not hapepnd with arrays..
                     if (typeof(el) == 'string' && !obj[i].length) { //skip empty.
-                        return;
+                        continue;
                     }
                     // this needs to go...
                     //if (typeof(el) == 'string'  && obj[i].match(new RegExp("Gtk.main" + "_quit"))) { // we can not handle this very well..
@@ -319,7 +321,7 @@ Base = XObject.define(
                     }
                     
                     els.push(left + str);
-                    return;
+                    continue;
                 }
                 
                 
@@ -340,27 +342,27 @@ Base = XObject.define(
                         els.push(left + right);
                     }
                 
-                    return;
+                    continue;
                 }
                 // standard. .
                 if (typeof(obj[i]) != 'string') {
                     els.push(left + JSON.stringify(obj[i]));
-                    return;
+                    continue;
                 }
                 // strings..
                 if (!_this.doubleStringProps) {
                     els.push(left + JSON.stringify(obj[i]));
-                    return;
+                    continue;
                 }
                 if (_this.doubleStringProps.indexOf(i) > -1) {
                     els.push(left + JSON.stringify(obj[i]));
-                    return;
+                    continue;
                 }
                 // single quote..
                 els.push(left + "'" + obj[i].replace(/'/g, "\\'") + "'");
                 
 
-            });
+            }
             
             if (!isArray && !els.length) {
                 return '';
