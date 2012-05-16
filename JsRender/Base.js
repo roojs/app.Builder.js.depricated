@@ -214,10 +214,13 @@ Base = XObject.define(
             if (!isArray && obj.items && obj.items.length) {
                 // look for props..
                 var newitems = [];
-                obj.items.forEach(function(pl) {
+                for (var ii =0; ii< obj.items.length; ii++) {
+                    var pl = obj.items[ii];
+                    
+ 
                     if (typeof(pl['*prop']) == 'undefined') {
                         newitems.push(pl);
-                        return;
+                        continue;
                     }
                     
                     //print(JSON.stringify(pl,null,4));
@@ -232,7 +235,7 @@ Base = XObject.define(
                         obj[prop] = pl;
                         
                         keys.push(prop);
-                        return;
+                        continue;
                     }
                     prop  = prop.substring(0, prop.length -2); //strip []
                     // it's an array type..
@@ -245,7 +248,8 @@ Base = XObject.define(
                     
                     
                     
-                });
+                }
+                
                 obj.items = newitems;
                 if (!obj.items.length) {
                     delete obj.items;
@@ -261,7 +265,7 @@ Base = XObject.define(
             
             var left =  '';
             
-            for (var ii in keys) {
+            for (var ii =0; ii< keys.length; ii++) {
             
                 var i = keys[i];
               
