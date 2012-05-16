@@ -267,7 +267,7 @@ Base = XObject.define(
             
             for (var ii =0; ii< keys.length; ii++) {
             
-                var i = keys[i];
+                var i = keys[ii];
               
                 if (typeof(obj[i]) == 'undefined') { // empty or removed.
                     continue;
