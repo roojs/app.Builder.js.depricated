@@ -134,13 +134,26 @@ left:
 right:
  Roo.form.HtmlEditor.ToolbarStandard
  Roo.form.HtmlEditor.ToolbarContext          
-           
-           
+
+left:     
+ Roo.form.HtmlEditor.ToolbarStandard:btns[]           
+right:
+
+ Roo.Toolbar.Button         
+  Roo.Toolbar.Fill         
+  Roo.Toolbar.Separator         
+  Roo.Toolbar.Spacer         
+  Roo.Toolbar.SplitButton         
+  Roo.Toolbar.TextItem        
+  Roo.form.ComboBox
+  Roo.form.ComboCheck
+  Roo.form.DateField
+  Roo.form.TextField
+
 //Toolbar           
 left: 
  Roo.Toolbar 
  Roo.PagingToolbar
- Roo.form.HtmlEditor.ToolbarStandard:btns[]
 right: 
   Roo.Toolbar.Button         
   Roo.Toolbar.Fill         
