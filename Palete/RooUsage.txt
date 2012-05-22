@@ -139,7 +139,8 @@ right:
 //Toolbar           
 left: 
  Roo.Toolbar 
- Roo.PagingToolbar 
+ Roo.PagingToolbar
+ Roo.form.HtmlEditor.ToolbarStandard:btns[]
 right: 
   Roo.Toolbar.Button         
   Roo.Toolbar.Fill         
