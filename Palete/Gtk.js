@@ -201,7 +201,7 @@ Gtk = XObject.define(
                 print("COULND NOT FIND BY NAME");
                 return [];
             }
-            var etype = GIRepository.base_info_get_type(bi);
+            var etype = bi.get_type();
             var meth = etype == GIRepository.InfoType.INTERFACE ?
                 [ 
                     'interface_info_get_n_properties',
@@ -245,7 +245,7 @@ Gtk = XObject.define(
                 var flags =  GIRepository.property_info_get_flags(prop); // check for readonly..
                 
                 
-                var ty = this.typeToName(GIRepository.property_info_get_type(prop));
+                var ty = this.typeToName(bi.get_type());
                 print (n_original +":"+ ty);
                 if (ty === false) {
                     continue;
