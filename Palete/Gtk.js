@@ -201,7 +201,7 @@ Gtk = XObject.define(
                 print("COULND NOT FIND BY NAME");
                 return [];
             }
-            var etype = bi.get_type();
+            var etype = bi.get_type();;
             var meth = etype == GIRepository.InfoType.INTERFACE ?
                 [ 
                     'interface_info_get_n_properties',
@@ -245,7 +245,7 @@ Gtk = XObject.define(
                 var flags =  GIRepository.property_info_get_flags(prop); // check for readonly..
                 
                 
-                var ty = this.typeToName(bi.get_type());
+                var ty = this.typeToName(GIRepository.property_info_get_type(prop));
                 print (n_original +":"+ ty);
                 if (ty === false) {
                     continue;
@@ -413,7 +413,7 @@ Gtk = XObject.define(
             }
             // we can accept enum types here..
             var interface_info = GIRepository.type_info_get_interface(type_info);
-            var interface_type = interface_info.get_type ();
+            var interface_type = interface_info.get_type();
             
             if (!allow_iface && interface_type != GIRepository.InfoType.ENUM) {
                 return false;
