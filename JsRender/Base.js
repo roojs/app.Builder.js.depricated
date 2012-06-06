@@ -279,6 +279,10 @@ Base = XObject.define(
                 if (!isArray) {
                     // set the key to be quoted with singel quotes..
                     var leftv = i[0] == '|' ? i.substring(1) : i;
+                    // skip builder stuff. prefixed with  '.' .. just like unix fs..
+                    if (leftv[0] == '.') {
+                        continue;
+                    }
                     if (Lang.isKeyword(leftv) || Lang.isBuiltin(leftv)) {
                         left = "'" + leftv + "'";
                     } else if (leftv.match(/[^A-Z_]+/i)) { // not plain a-z... - quoted.
