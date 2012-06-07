@@ -717,8 +717,11 @@ Window=new XObject({
                                                                                     // it may not be loaded yet..
                                                                                     return  true;
                                                                                 }
-                                                                                pm.load( this.get('/LeftTree').getPaleteProvider().gatherList(
-                                                                                    this.get('/LeftTree.model').listAllTypes()));
+                                                                                pm.load(
+                                                                                        this.get('/LeftTree').getPaleteProvider().gatherList(
+                                                                                            this.get('/LeftTree.model').listAllTypes()
+                                                                                        )
+                                                                                    );
                                                                                 if (render && render.redraw) {
                                                                                     render.redraw();
                                                                                 }
@@ -2684,7 +2687,7 @@ Window=new XObject({
                                                             if (etype != 'events') {
                                                                 key = '|' + key;
                                                             }
-                                                            
+                                                            print("cursor_changed: ADDding to left panel model");
                                                             this.get('/LeftPanel.model').add({
                                                                 key :  key, 
                                                                 type : type,
@@ -2697,7 +2700,7 @@ Window=new XObject({
                                                         //if (type.indexOf('.') > -1 ||  type.toLowerCase() == 'boolean') {
                                                         //     key = '|' + key;
                                                        // }
-                                                        
+                                                        print("cursor_changed: ADDding to left panel model");
                                                         this.get('/LeftPanel.model').add( {
                                                             key : key, 
                                                             type : type,
@@ -2777,6 +2780,7 @@ Window=new XObject({
                                                                 print ("GOT " + elementList.length + " items for " + fullpath + "|" + type);
                                                                // console.dump(elementList);
                                                                
+                                                                // scope of this is off..??
                                                                 
                                                                 
                                                                 for(var i =0 ; i < elementList.length; i++) {
@@ -2955,17 +2959,17 @@ Window=new XObject({
                                                                                                 return true; // do not display anything...
                                                                                         },
                                                                                         console_message : function (self, object, p0, p1) {
-                                                                                            print(object);
-                                                                                           //  console.log(object);
+                                                                                                print(object);
+                                                                                             //  console.log(object);
                                                                                            
-                                                                                        
-                                                                                            if (object.match(/variable/) && object.match(/Builder/)) {
-                                                                                                print("got builder missing message");
-                                                                                                this.refreshRequired = true;
-                                                                                                this.lastRedraw = 0;
-                                                                                                this.runRefresh();
-                                                                                                return true;
-                                                                                            }
+                                                                                            
+                                                                                                if (object.match(/variable/) && object.match(/Builder/)) {
+                                                                                                    print("got builder missing message");
+                                                                                                    this.refreshRequired = true;
+                                                                                                    this.lastRedraw = 0;
+                                                                                                    this.runRefresh();
+                                                                                                    return true;
+                                                                                                }
                                                                                             
                                                                                            
                                                                                                 if (!object.match(/^\{/)) {
@@ -2998,12 +3002,15 @@ Window=new XObject({
                                                                                                     this.get('/LeftTree.view').selectNode(tg[0]);
                                                                                                     ret  = true;
                                                                                                     
-                                                                                                } 
+                                                                                                }
+                                                                                                
                                                                                                 if (ret && typeof(val['set']) != 'undefined') {
-                                                                                                   this.get('/LeftPanel.model').add({
-                                                                                                        key : val['set'],
-                                                                                                        val : val['value']
-                                                                                                    });
+                                                                                                    print("console messages: ADDding to left panel model");
+                                                                                                    //
+                                                                                                   //this.get('/LeftPanel.model').add({
+                                                                                                   //     key : val['set'],
+                                                                                                   //     val : val['value']
+                                                                                                   // });
                                                                                                     //console.log('active node: ' + this.activeNode);
                                                                                                     
                                                                                                 }
