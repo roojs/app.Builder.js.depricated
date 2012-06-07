@@ -2657,7 +2657,9 @@ Window=new XObject({
                                             listeners : {
                                                 cursor_changed : function (self) {
                                                         // this is getting fired when we are loading elements..
-                                                        
+                                                        if (this.get('/MidPropTree.model').loading) {
+                                                            return;
+                                                        }
                                                         
                                                        var iret = {};
                                                                         
