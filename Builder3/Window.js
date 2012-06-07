@@ -2656,18 +2656,21 @@ Window=new XObject({
                                             xtype: Gtk.TreeView,
                                             listeners : {
                                                 cursor_changed : function (self) {
+                                                        // this is getting fired when we are loading elements..
+                                                        
+                                                        
                                                        var iret = {};
                                                                         
-                                                                        //console.log('changed');
+                                                        //console.log('changed');
                                                         var m = this.get('model');
-                                                	if (!this.selection){
-                                                		this.selection = this.el.get_selection();
-                                                	}
-                                                
+                                                        if (!this.selection){
+                                                           this.selection = this.el.get_selection();
+                                                        }
+                                                   
                                                         var s = this.selection;
                                                         if (!s.get_selected(iret)) {
-                                                		return; 
-                                                	}
+                                                            return; 
+                                                        }
                                                         var tp = m.el.get_path(iret.iter).to_string();
                                                         
                                                         
@@ -2733,6 +2736,7 @@ Window=new XObject({
                                                     xtype: Gtk.ListStore,
                                                     id : "model",
                                                     pack : "set_model",
+                                                    loading : false,
                                                     getValue : function(treepath, col)
                                                     {
                                                         var tp = new Gtk.TreePath.from_string (treepath);
@@ -2755,8 +2759,12 @@ Window=new XObject({
                                                         ] );
                                                     },
                                                     showData : function(type) {
-                                                        this.el.clear();
+                                                                
+                                                                
+                                                                this.loading = true;
+                                                                this.el.clear();
                                                                 if (!this.get('/MidPropTree').activeElement || !type) {
+                                                                    this.loading = false;
                                                                     return; // no active element
                                                                 }
                                                     
@@ -2802,7 +2810,7 @@ Window=new XObject({
                                                                     this.el.set_value(iret.iter, 5, type);
                                                                     
                                                                 }
-                                                                                 
+                                                                this.loading = false;              
                                                     }
                                                 },
                                                 {
