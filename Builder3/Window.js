@@ -1864,7 +1864,7 @@ Window=new XObject({
                                                                             label : "ID",
                                                                             listeners : {
                                                                                 activate : function (self) {
-                                                                                
+                                                                                    
                                                                                     this.get('/LeftPanel.model').add( {
                                                                                         key : 'id', 
                                                                                         type : 'string',
