@@ -1173,7 +1173,7 @@ Window=new XObject({
                                                                                     },
                                                                             loadFile : function(f) {
                                                                                 //console.dump(f);
-                                                                               // print("LOADFILE");
+                                                                                  print("LOADFILE");
                                                                                         this.el.clear();
                                                                                         this.file = f;
                                                                                         
