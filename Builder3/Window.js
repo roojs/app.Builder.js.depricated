@@ -1703,13 +1703,13 @@ Window=new XObject({
                                                                                       
                                                                                          this.get('/LeftProjectTree').project = pr;
                                                                                         var model = this.get('/LeftProjectTree.model');
-                                                                                         model.loading = true;
-                                                                                         print("SET LOADING TO TRUE");
+                                                                                         model.loading = 1;
+                                                                                         print("SET LOADING TO 1");
                                                                                          this.load(pr.toTree());
                                                                                     
                                                                                          this.get('/LeftProjectTree.view').el.expand_all();
-                                                                                        model.loading = false;
-                                                                                         print("SET LOADING TO FALSE");
+                                                                                         model.loading = 2;
+                                                                                         print("SET LOADING TO 2");
                                                                                     },
                                                                                     load : function(tr,iter) {
                                                                                       //  console.dump(tr);
