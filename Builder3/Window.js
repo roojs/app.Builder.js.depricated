@@ -1622,10 +1622,15 @@ Window=new XObject({
                                                                     items : [
                                                                         {
                                                                             xtype: Gtk.TreeView,
-                                                                            loading : false,
+                                                                           
                                                                             listeners : {
                                                                                 cursor_changed : function (self) {
-                                                                                    if (this.loading) {
+                                                                                    
+                                                                                    var model = this.get('/LeftProjectTree.model ');
+                                                                                    
+
+                                                                                    
+                                                                                    if (model.loading) {
                                                                                         return;
                                                                                     }
                                                                                     var ret = {};        
@@ -1635,8 +1640,7 @@ Window=new XObject({
                                                                                         
                                                                                         return;
                                                                                     }
-                                                                                    var model = this.get('/LeftProjectTree.model');
-                                                                                    //console.log('changed');
+                                                                                     //console.log('changed');
                                                                                     var s = this.selection;
                                                                                     s.get_selected(ret);
                                                                                     var value = ''+ ret.model.get_value(ret.iter, 2).value.get_string();
@@ -1679,6 +1683,7 @@ Window=new XObject({
                                                                                     xtype: Gtk.TreeStore,
                                                                                     pack : "set_model",
                                                                                     id : "model",
+                                                                                     loading : false,
                                                                                     init : function() {
                                                                                         XObject.prototype.init.call(this);
                                                                                       this.el.set_column_types ( 3, [
@@ -1694,12 +1699,11 @@ Window=new XObject({
                                                                                          if (!pr) {
                                                                                              return;
                                                                                          }
-                                                                                         var view = this.get('/LeftProjectTree.view')
                                                                                       
                                                                                          this.get('/LeftProjectTree').project = pr;
-                                                                                          view.loading = true;
+                                                                                         this.loading = true;
                                                                                          this.load(pr.toTree());
-                                                                                          view.loading = false;
+                                                                                         this.loading = false;
                                                                                          this.get('/LeftProjectTree.view').el.expand_all();
                                                                                     },
                                                                                     load : function(tr,iter) {
