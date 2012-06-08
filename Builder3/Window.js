@@ -1701,9 +1701,10 @@ Window=new XObject({
                                                                                          }
                                                                                       
                                                                                          this.get('/LeftProjectTree').project = pr;
-                                                                                         this.loading = true;
+                                                                                        var model = this.get('/LeftProjectTree.model');
+                                                                                         model.loading = true;
                                                                                          this.load(pr.toTree());
-                                                                                         this.loading = false;
+                                                                                         model.loading = false;
                                                                                          this.get('/LeftProjectTree.view').el.expand_all();
                                                                                     },
                                                                                     load : function(tr,iter) {
