@@ -1110,7 +1110,10 @@ Window=new XObject({
                                                                                var _this = this;
                                                                                 function addall(li)
                                                                                 {
-                                                                                    li.forEach(function(el) {
+                                                                                    var el;
+                                                                                    for (var i =0 ; i < li.length; i++ ) { 
+                                                                                        el = li[i];
+                                                                                    
                                                                                         // this is specific to roo!!!?
                                                                                         if (!el) { // skip empty?
                                                                                             return;
@@ -1125,7 +1128,7 @@ Window=new XObject({
                                                                                             addall(el.items);
                                                                                         }
                                                                                         
-                                                                                    });
+                                                                                    };
                                                                                     
                                                                                     
                                                                                 }
@@ -1569,7 +1572,7 @@ Window=new XObject({
                                                                                     pack : "set_model",
                                                                                     init : function() {
                                                                                         XObject.prototype.init.call(this);
-                                                                                      this.el.set_column_types ( 2, [
+                                                                                        this.el.set_column_types ( 2, [
                                                                                             GObject.TYPE_STRING,  // real key
                                                                                             GObject.TYPE_STRING // real type
                                                                                             
@@ -1579,8 +1582,8 @@ Window=new XObject({
                                                                                        var pm = imports.ProjectManager.ProjectManager;
                                                                                        var _this = this;
                                                                                        pm.on('changed', function() {
-                                                                                           print("caught changed hook on project manager - reloading data");
-                                                                                    	_this.loadData(pm.projects);
+                                                                                             print("caught changed hook on project manager - reloading data");
+                                                                                            _this.loadData(pm.projects);
                                                                                     
                                                                                        });
                                                                                     },
