@@ -1631,6 +1631,8 @@ Window=new XObject({
 
                                                                                     
                                                                                     if (model.loading) {
+                                                                                        
+                                                                                        model.loading = model.loading == 2 ? 0 : 1;
                                                                                         return;
                                                                                     }
                                                                                     print("LOADING IS FALSE");
