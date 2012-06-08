@@ -1173,7 +1173,7 @@ Window=new XObject({
                                                                                     },
                                                                             loadFile : function(f) {
                                                                                 //console.dump(f);
-                                                                                print("LOADFILE");
+                                                                               // print("LOADFILE");
                                                                                         this.el.clear();
                                                                                         this.file = f;
                                                                                         
@@ -1697,25 +1697,29 @@ Window=new XObject({
                                                                                     },
                                                                                     load : function(tr,iter) {
                                                                                       //  console.dump(tr);
-                                                                                                console.log('Project tree load: ' + tr.length);
-                                                                                                var cret = {};
-                                                                                                //this.insert(citer,iter,0);
-                                                                                                
-                                                                                                var _this = this;
-                                                                                                tr.forEach(function (r) {
-                                                                                                    if (!iter) {
-                                                                                                        _this.el.append(cret);   
-                                                                                                    } else {
-                                                                                                        _this.el.insert(cret,iter,-1);
-                                                                                                    }
-                                                                                                    _this.el.set_value(cret.iter, 0,  '' + r.getTitle() ); // title 
-                                                                                                    _this.el.set_value(cret.iter, 1, '' + r.getTitleTip()); // tip
-                                                                                                    _this.el.set_value(cret.iter, 2, '' + r.id ); //id
-                                                                                                    if (r.cn && r.cn.length) {
-                                                                                                        _this.load(r.cn, cret.iter);
-                                                                                                    }
-                                                                                                    
-                                                                                                });
+                                                                                        var view = this.get('/LeftProjectTree.view')
+                                                                                      
+                                                                                        view.loading = true;
+                                                                                        console.log('Project tree load: ' + tr.length);
+                                                                                        var cret = {};
+                                                                                        //this.insert(citer,iter,0);
+                                                                                        
+                                                                                        var _this = this;
+                                                                                        // recursive...
+                                                                                        tr.forEach(function (r) {
+                                                                                            if (!iter) {
+                                                                                                _this.el.append(cret);   
+                                                                                            } else {
+                                                                                                _this.el.insert(cret,iter,-1);
+                                                                                            }
+                                                                                            _this.el.set_value(cret.iter, 0,  '' + r.getTitle() ); // title 
+                                                                                            _this.el.set_value(cret.iter, 1, '' + r.getTitleTip()); // tip
+                                                                                            _this.el.set_value(cret.iter, 2, '' + r.id ); //id
+                                                                                            if (r.cn && r.cn.length) {
+                                                                                                _this.load(r.cn, cret.iter);
+                                                                                            }
+                                                                                            
+                                                                                        });
                                                                                     },
                                                                                     getValue : function(iter, col) {
                                                                                         var gval = ''+ this.el.get_value(iter, col).value.get_string();
