@@ -1633,6 +1633,7 @@ Window=new XObject({
                                                                                     if (model.loading) {
                                                                                         return;
                                                                                     }
+                                                                                    print("LOADING IS FALSE");
                                                                                     var ret = {};        
                                                                                     if (this.selection.count_selected_rows() < 1) {
                                                                                         //XN.get('Builder.LeftTree.model').
@@ -1703,8 +1704,10 @@ Window=new XObject({
                                                                                          this.get('/LeftProjectTree').project = pr;
                                                                                         var model = this.get('/LeftProjectTree.model');
                                                                                          model.loading = true;
+                                                                                         print("SET LOADING TO TRUE");
                                                                                          this.load(pr.toTree());
                                                                                          model.loading = false;
+                                                                                         print("SET LOADING TO FALSE");
                                                                                          this.get('/LeftProjectTree.view').el.expand_all();
                                                                                     },
                                                                                     load : function(tr,iter) {
