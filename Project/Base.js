@@ -29,7 +29,7 @@ Base = XObject.define(
         this.addEvents({ 'changed'  : true });
         var _this = this;
         this.on('changed' , function() {
-            Seed.print("Calling PM - changed");
+            Seed.print("Project.Base: Calling PM - changed");
             
             ProjectManager.fireEvent('changed');
         });
@@ -73,7 +73,7 @@ Base = XObject.define(
         },
         getPalete : function()
         {
-            print("GET PROVIDER FOR " + this.xtype);
+            print("Project.Base: GET PROVIDER FOR " + this.xtype);
             return  ProjectManager.getPalete(this.xtype);
         },
         toJSON : function()
@@ -90,7 +90,7 @@ Base = XObject.define(
                         continue;
                     }
                 }
-                print("Storing " + k);
+                print("Project.Base: Storing " + k);
                 ret[k] = _this[k];
                 
             }
@@ -271,7 +271,7 @@ Base = XObject.define(
         scanDir : function(dir, dp) 
         {
             dp = dp || 0;
-            Seed.print("Running scandir on " + dir);
+            Seed.print("Project.Base: Running scandir on " + dir);
             if (dp > 5) { // no more than 5 deep?
                 return;
             }
