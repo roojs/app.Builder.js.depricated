@@ -1720,6 +1720,7 @@ Window=new XObject({
                                                                                             }
                                                                                             
                                                                                         });
+                                                                                        view.loading = false;
                                                                                     },
                                                                                     getValue : function(iter, col) {
                                                                                         var gval = ''+ this.el.get_value(iter, col).value.get_string();
