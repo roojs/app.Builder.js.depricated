@@ -281,7 +281,7 @@ Base = XObject.define(
             var _this = this;
             dirs.forEach(function( fn ){ 
                  
-                console.log('trying ' + dir + '/' + fn);
+                //console.log('trying ' + dir + '/' + fn);
                 if (!fn) {
                     subs.forEach( function(s) {
                         _this.scanDir(s, dp+1);
