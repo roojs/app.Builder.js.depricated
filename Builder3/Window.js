@@ -1694,16 +1694,18 @@ Window=new XObject({
                                                                                          if (!pr) {
                                                                                              return;
                                                                                          }
-                                                                                         
+                                                                                         var view = this.get('/LeftProjectTree.view')
+                                                                                      
                                                                                          this.get('/LeftProjectTree').project = pr;
+                                                                                          view.loading = true;
                                                                                          this.load(pr.toTree());
+                                                                                          view.loading = false;
                                                                                          this.get('/LeftProjectTree.view').el.expand_all();
                                                                                     },
                                                                                     load : function(tr,iter) {
                                                                                       //  console.dump(tr);
-                                                                                        var view = this.get('/LeftProjectTree.view')
-                                                                                      
-                                                                                        view.loading = true;
+                                                                                        
+                                                                                       
                                                                                         console.log('Project tree load: ' + tr.length);
                                                                                         var cret = {};
                                                                                         //this.insert(citer,iter,0);
@@ -1724,7 +1726,7 @@ Window=new XObject({
                                                                                             }
                                                                                             
                                                                                         });
-                                                                                        view.loading = false;
+                                                                                         
                                                                                     },
                                                                                     getValue : function(iter, col) {
                                                                                         var gval = ''+ this.el.get_value(iter, col).value.get_string();
