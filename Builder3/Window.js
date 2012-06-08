@@ -1622,8 +1622,12 @@ Window=new XObject({
                                                                     items : [
                                                                         {
                                                                             xtype: Gtk.TreeView,
+                                                                            loading : false,
                                                                             listeners : {
                                                                                 cursor_changed : function (self) {
+                                                                                    if (this.loading) {
+                                                                                        return;
+                                                                                    }
                                                                                     var ret = {};        
                                                                                     if (this.selection.count_selected_rows() < 1) {
                                                                                         //XN.get('Builder.LeftTree.model').
