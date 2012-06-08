@@ -1338,7 +1338,7 @@ Window=new XObject({
                                                                             },
                                                                             nodeToJS : function (treepath, with_id) 
                                                                             {
-                                                                                print("nodeToJS : WITHID: "+ with_id);
+                                                                                //print("nodeToJS : WITHID: "+ with_id);
                                                                                 var iter = treepath;  // API used to be iter here..
                                                                                 if (typeof(iter) == 'string') {
                                                                                     var ret = {};
@@ -1399,7 +1399,7 @@ Window=new XObject({
                                                                                     },
                                                                             toJS : function(treepath, with_id)
                                                                             {
-                                                                                print("toJS : WITHID: "+ with_id);
+                                                                                //print("toJS : WITHID: "+ with_id);
                                                                                 
                                                                                 var iter = treepath;  // API used to be iter here..
                                                                                 
