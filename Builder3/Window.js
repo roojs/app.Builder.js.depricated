@@ -1592,8 +1592,8 @@ Window=new XObject({
                                                                                         data.forEach(function(p) {
                                                                                             
                                                                                             el.append(na);
-                                                                                            print(JSON.stringify(XObject.keys(na)));
-                                                                                            print(typeof(na.iter));
+                                                                                            //print(JSON.stringify(XObject.keys(na)));
+                                                                                            //print(typeof(na.iter));
                                                                                             //print(JSON.stringify(iter))
                                                                                             el.set_value(na.iter, 0, p.fn);
                                                                                             el.set_value(na.iter, 1, p.name);
@@ -3555,7 +3555,7 @@ Window=new XObject({
                                                                             return;
                                                                         }
                                                                         
-                                                                        console.dump(args);
+                                                                        //console.dump(args);
                                                                         args.unshift(el);
                                                                         //if (XObject.debug) print(pack_m + '[' + args.join(',') +']');
                                                                         //Seed.print('args: ' + args.length);
