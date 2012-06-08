@@ -1223,10 +1223,10 @@ Window=new XObject({
                                                                                         this.currentTree = this.toJS(false, false)[0];
                                                                                         
                                                                                         
-                                                                                        console.dump(this.currentTree);
+                                                                                        //console.dump(this.currentTree);
                                                                                         this.currentTree = this.currentTree || { items: [] };
                                                                                         this.get('/LeftTree').renderView();
-                                                                                        console.dump(this.map);
+                                                                                       // console.dump(this.map);
                                                                                         //var RightPalete     = imports.Builder.RightPalete.RightPalete;
                                                                                         var pm = this.get('/RightPalete.model');
                                                                                         // set up provider..
@@ -1620,37 +1620,37 @@ Window=new XObject({
                                                                             xtype: Gtk.TreeView,
                                                                             listeners : {
                                                                                 cursor_changed : function (self) {
-                                                                                        var ret = {};        
-                                                                                        if (this.selection.count_selected_rows() < 1) {
-                                                                                            //XN.get('Builder.LeftTree.model').
-                                                                                            this.get('/LeftTree.model').load( false);
-                                                                                            
-                                                                                            return;
-                                                                                        }
-                                                                                        var model = this.get('/LeftProjectTree.model');
-                                                                                        //console.log('changed');
-                                                                                        var s = this.selection;
-                                                                                        s.get_selected(ret);
-                                                                                        var value = ''+ ret.model.get_value(ret.iter, 2).value.get_string();
-                                                                                        //console.log(JSON.stringify(value,null,4));// id..
-                                                                                        console.log("OUT?" + value);// id..
-                                                                                        var file = this.get('/LeftProjectTree').project.getById(value);
+                                                                                    var ret = {};        
+                                                                                    if (this.selection.count_selected_rows() < 1) {
+                                                                                        //XN.get('Builder.LeftTree.model').
+                                                                                        this.get('/LeftTree.model').load( false);
                                                                                         
-                                                                                        file.items = false;
-                                                                                        console.log(file);
-                                                                                        
-                                                                                
-                                                                                
-                                                                                        var nb = this.get('/LeftTopPanel.expander');
-                                                                                        nb.el.expanded = false;
-                                                                                        nb.onCollapse();
-                                                                                        //nb.listeners.activate.call(nb);
-                                                                                        //_expander.el.set_expanded(false);
-                                                                                
-                                                                                        var ltm = this.get('/LeftTree.model');
-                                                                                        ltm.loadFile(file);
-                                                                                        
-                                                                                        return true;
+                                                                                        return;
+                                                                                    }
+                                                                                    var model = this.get('/LeftProjectTree.model');
+                                                                                    //console.log('changed');
+                                                                                    var s = this.selection;
+                                                                                    s.get_selected(ret);
+                                                                                    var value = ''+ ret.model.get_value(ret.iter, 2).value.get_string();
+                                                                                    //console.log(JSON.stringify(value,null,4));// id..
+                                                                                    console.log("OUT?" + value);// id..
+                                                                                    var file = this.get('/LeftProjectTree').project.getById(value);
+                                                                                    
+                                                                                    file.items = false;
+                                                                                    console.log(file);
+                                                                                    
+                                                                            
+                                                                            
+                                                                                    var nb = this.get('/LeftTopPanel.expander');
+                                                                                    nb.el.expanded = false;
+                                                                                    nb.onCollapse();
+                                                                                    //nb.listeners.activate.call(nb);
+                                                                                    //_expander.el.set_expanded(false);
+                                                                            
+                                                                                    var ltm = this.get('/LeftTree.model');
+                                                                                    ltm.loadFile(file);
+                                                                                    
+                                                                                    return true;
                                                                                 }
                                                                             },
                                                                             id : "view",
@@ -1682,14 +1682,14 @@ Window=new XObject({
                                                                                     },
                                                                                     loadProject : function(pr) {
                                                                                          print("LOAD PROJECT");
-                                                                                               this.el.clear();
-                                                                                                if (!pr) {
-                                                                                                    return;
-                                                                                                }
-                                                                                                
-                                                                                                this.get('/LeftProjectTree').project = pr;
-                                                                                                this.load(pr.toTree());
-                                                                                                this.get('/LeftProjectTree.view').el.expand_all();
+                                                                                        this.el.clear();
+                                                                                         if (!pr) {
+                                                                                             return;
+                                                                                         }
+                                                                                         
+                                                                                         this.get('/LeftProjectTree').project = pr;
+                                                                                         this.load(pr.toTree());
+                                                                                         this.get('/LeftProjectTree.view').el.expand_all();
                                                                                     },
                                                                                     load : function(tr,iter) {
                                                                                       //  console.dump(tr);
