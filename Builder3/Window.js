@@ -1626,7 +1626,7 @@ Window=new XObject({
                                                                             listeners : {
                                                                                 cursor_changed : function (self) {
                                                                                     
-                                                                                    var model = this.get('/LeftProjectTree.model ');
+                                                                                    var model = this.get('/LeftProjectTree.model');
                                                                                     
 
                                                                                     
