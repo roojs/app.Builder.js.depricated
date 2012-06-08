@@ -1698,20 +1698,21 @@ Window=new XObject({
                                                                                     },
                                                                                     loadProject : function(pr) {
                                                                                          print("LOAD PROJECT");
+                                                                                          var model = this.get('/LeftProjectTree.model');
+                                                                                         model.loading = true;
+                                                                                          
                                                                                         this.el.clear();
                                                                                          if (!pr) {
                                                                                              return;
                                                                                          }
                                                                                       
                                                                                          this.get('/LeftProjectTree').project = pr;
-                                                                                        var model = this.get('/LeftProjectTree.model');
-                                                                                         model.loading = 1;
-                                                                                         print("SET LOADING TO 1");
+                                                                                       
                                                                                          this.load(pr.toTree());
                                                                                     
                                                                                          this.get('/LeftProjectTree.view').el.expand_all();
-                                                                                         model.loading = 2;
-                                                                                         print("SET LOADING TO 2");
+                                                                                         model.loading = false;
+                                                                                         
                                                                                     },
                                                                                     load : function(tr,iter) {
                                                                                       //  console.dump(tr);
