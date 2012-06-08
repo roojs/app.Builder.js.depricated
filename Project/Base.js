@@ -315,7 +315,7 @@ Base = XObject.define(
                 var xt = _this.xtype;
                 var cls = imports.JsRender[xt][xt];
                 
-                Seed.print("Adding file " + dir  + '/' + fn);
+                //Seed.print("Adding file " + dir  + '/' + fn);
                 _this.files[dir  + '/' + fn] = new cls({
                     path : dir  + '/' + fn,
                     parent : parent,
