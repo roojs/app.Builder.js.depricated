@@ -174,7 +174,7 @@ ProjectManager =  new Observable({
     },
     getPalete: function(type) {
         if (typeof(ProjectManager.palete[type]) != 'undefined') {
-            print ("ALREADY GOT " + type);
+            //print ("ALREADY GOT " + type);
             return ProjectManager.palete[type];
         }
         var cls = imports.Palete[type][type];
