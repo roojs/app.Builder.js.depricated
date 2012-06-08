@@ -298,7 +298,7 @@ XObject.prototype = {
             imports.console.dump(item);
             Seed.quit();
         }
-        print(XObject.type(this.xtype) + ":pack=" + item.pack);
+        XObject.log(XObject.type(this.xtype) + ":pack=" + item.pack);
         
         if (item.pack===false) {  // no packing.. various items have this ..
             return;
@@ -738,7 +738,7 @@ XObject.extend(XObject,
                 gname = XObject.type(cfg.xtype);
             
             }
-            print("TRYING BASE OBJECT : " + gname);
+            XObject.log("TRYING BASE OBJECT : " + gname);
             // in the situation where we have been called and there is a base object
             // defining the behavior..
             // then we should copy the prototypes from the base object into this..
