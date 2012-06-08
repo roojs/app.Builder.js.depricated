@@ -1706,9 +1706,10 @@ Window=new XObject({
                                                                                          model.loading = true;
                                                                                          print("SET LOADING TO TRUE");
                                                                                          this.load(pr.toTree());
-                                                                                         model.loading = false;
-                                                                                         print("SET LOADING TO FALSE");
+                                                                                    
                                                                                          this.get('/LeftProjectTree.view').el.expand_all();
+                                                                                        model.loading = false;
+                                                                                         print("SET LOADING TO FALSE");
                                                                                     },
                                                                                     load : function(tr,iter) {
                                                                                       //  console.dump(tr);
