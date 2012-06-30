@@ -738,6 +738,10 @@ XObject.extend(XObject,
                 gname = XObject.type(cfg.xtype);
             
             }
+            if (typeof(cfg.xtype) == 'string') {
+                gname  = cfg.xtype;
+            }
+            
             XObject.log("TRYING BASE OBJECT : " + gname);
             // in the situation where we have been called and there is a base object
             // defining the behavior..
