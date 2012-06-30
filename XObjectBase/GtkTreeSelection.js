@@ -33,54 +33,9 @@ GtkTreeSelection = XObject.define(
             this.el = parent.el.get_selection();
              
             if (typeof(this.config.mode) == 'undefined') {
-                this.el.set_mode( xsel.mode );
+                this.el.set_mode(this.config.mode );
             }
-            if (xsel.listeners) {
-                for (var signal in xsel.listeners) {
-                    
-                    selection.signal[signal].connect(xsel.listeners[signal]);
-                }
-            }
-                
-            }
-            if (this.xconfig.drag_source) {
-                var ds = this.xconfig.drag_source;
-                
-                this.el.drag_source_set(             /* widget will be drag-able */
-                    ds.modifier, //Gdk.ModifierType.BUTTON1_MASK,       /* modifier that will start a drag */
-                    null,            /* lists of target to support */
-                    0,              /* size of list */
-                    ds.action   ////Gdk.DragAction.COPY   | Gdk.DragAction.MOVE
-                                /* what to do with data after dropped */
-                );
-                
-                this.el.drag_source_set_target_list(
-                        ds.targetList // probably imports.Window.targetList;
-                        //this.get('/Window').targetList
-                );
-                this.el.drag_source_add_text_targets();
-            }
-            
-            if (this.xconfig.drag_dest) {
-                
-                var ds = this.xconfig.drag_dest;
-                
-                this.el.drag_dest_set
-                (
-                    ds.modifier, // Gtk.DestDefaults.MOTION  | Gtk.DestDefaults.HIGHLIGHT,
-                    null,            /* lists of target to support */
-                    0,              /* size of list */
-                    ds.action //Gdk.DragAction.COPY   | Gdk.DragAction.MOVE       /* what to do with data after dropped */
-                );
-                
-                this.el.drag_source_add_text_targets();
-                this.el.drag_dest_set_target_list(
-                    ds.targetList
-                            //this.get('/Window').targetList
-                );
-                this.el.drag_dest_add_text_targets();
-            }
-        }
+        }       
              
  
          
