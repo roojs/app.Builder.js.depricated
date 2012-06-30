@@ -295,7 +295,7 @@ XObject.prototype = {
         }
         // what about extended items!?!?!?
        
-        item.init();
+        item.init(this);
         //print("CTR:PROTO:" + ( item.id ? item.id : '??'));
        // print("addItem - call init [" + item.pack.join(',') + ']');
         if (!item.el) {
