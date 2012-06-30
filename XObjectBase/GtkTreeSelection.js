@@ -11,6 +11,7 @@ GtkTreeSelection = XObject.define(
     function(cfg)
     {
         this.xconfig = cfg;
+        // child only get's a listener...
         XObject.call(this, { listeners : cfg.listeners || {} });
         
         
