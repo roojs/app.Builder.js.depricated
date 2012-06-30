@@ -41,6 +41,8 @@ GtkTreeSelection = XObject.define(
          
     }
 ); 
+/// make available configuration so builder know how to handle it..
+
 
 GtkTreeView.xconfig = {
     selection   : {
