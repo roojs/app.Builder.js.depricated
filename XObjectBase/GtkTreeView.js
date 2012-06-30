@@ -91,10 +91,9 @@ GtkTreeView = XObject.define(
     }
 ); 
 
-GtkTreeView.xconfig = {
+GtkTreeView.config = {
     selection   : {
         type : 'Gtk.TreeSelection'
-        
     }
     font         : cfg.font || false,
     drag_source : cfg.drag_source || false,
