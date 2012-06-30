@@ -38,7 +38,7 @@ GtkTreeView = XObject.define(
             
             XObject.prototype.init.call(this);
             
-            
+            /*
             if (this.xconfig.font) {
                 var description = new Pango.FontDescription.c_new();
                 description.set_size(this.xconfig.font.size);
@@ -50,12 +50,12 @@ GtkTreeView = XObject.define(
             if (this.xconfig.drag_source) {
                 var ds = this.xconfig.drag_source;
                 
-                this.el.drag_source_set(             /* widget will be drag-able */
-                    ds.modifier, //Gdk.ModifierType.BUTTON1_MASK,       /* modifier that will start a drag */
-                    null,            /* lists of target to support */
-                    0,              /* size of list */
+                this.el.drag_source_set(             // widget will be drag-able 
+                    ds.modifier, //Gdk.ModifierType.BUTTON1_MASK,       // modifier that will start a drag 
+                    null,            // lists of target to support 
+                    0,              // size of list 
                     ds.action   ////Gdk.DragAction.COPY   | Gdk.DragAction.MOVE
-                                /* what to do with data after dropped */
+                                // what to do with data after dropped 
                 );
                 
                 this.el.drag_source_set_target_list(
@@ -72,9 +72,9 @@ GtkTreeView = XObject.define(
                 this.el.drag_dest_set
                 (
                     ds.modifier, // Gtk.DestDefaults.MOTION  | Gtk.DestDefaults.HIGHLIGHT,
-                    null,            /* lists of target to support */
-                    0,              /* size of list */
-                    ds.action //Gdk.DragAction.COPY   | Gdk.DragAction.MOVE       /* what to do with data after dropped */
+                    null,            // lists of target to support 
+                    0,              // size of list 
+                    ds.action //Gdk.DragAction.COPY   | Gdk.DragAction.MOVE       // what to do with data after dropped 
                 );
                 
                 this.el.drag_source_add_text_targets();
@@ -85,6 +85,7 @@ GtkTreeView = XObject.define(
                 this.el.drag_dest_add_text_targets();
             }
         }
+                                                                                  */
              
  
          
