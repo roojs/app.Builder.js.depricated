@@ -80,6 +80,7 @@ GtkTreeView = XObject.define(
             }
             
             if (this.xconfig.drag_dest) {
+                var ds = this.xconfig.drag_dest;
                 this.el.drag_dest_set
                 (
                     Gtk.DestDefaults.MOTION  | Gtk.DestDefaults.HIGHLIGHT,
