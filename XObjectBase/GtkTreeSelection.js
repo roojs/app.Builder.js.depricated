@@ -10,12 +10,8 @@ GObject = imports.gi.GObject;
 GtkTreeSelection = XObject.define(
     function(cfg)
     {
-        this.xconfig = cfg;
         // child only get's a listener...
-        XObject.call(this, {
-            listeners : cfg.listeners || {},
-            mode : cfg.mode || undefined
-        });
+        XObject.call(this, cfg);
         
         
         // you can not actually ctor this..
