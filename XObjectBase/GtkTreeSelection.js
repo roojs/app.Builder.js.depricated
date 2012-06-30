@@ -47,8 +47,10 @@ GtkTreeSelection = XObject.define(
 GtkTreeSelection.config = {
     mode   : {
         type : 'Gtk.SelectionMode'
-    }
-    
+    },
+    parents : [
+        'Gtk.TreeView'
+    ]
 };
 
 
