@@ -96,10 +96,16 @@ GtkTreeView = XObject.define(
 GtkTreeView.config = {
     selection   : {
         type : 'Gtk.TreeSelection'
-    }
-    font         : cfg.font || false,
-    drag_source : cfg.drag_source || false,
-    drag_dest   : cfg.drag_dest || false
+    },
+    font         : {
+        type : 'Pango.FontDescription',
+    },
+    drag_source : {
+        type : 'Gtk.TreeDragSource' // these are realy interfaces...
+    },
+    
+    drag_dest   : {
+        type : 'Gtk.TreeDragDest'
     
     
     
