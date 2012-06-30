@@ -47,9 +47,9 @@ GtkTreeView = XObject.define(
             }
             var gtks = XObject.baseXObject({ xtype : 'GtkTreeSelection']);
             
-            if (this.xconfig.selection) {
+            this.xconfig.selection.el = this.el.get_selection();
             
-            this.selection = new gtks( { el : this.el.get_selection() })
+            this.selection = new gtks( this.xconfig.selection );
             
             
             if (this.xconfig.selection) {
