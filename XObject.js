@@ -57,6 +57,10 @@ function XObject (cfg) {
     
     this.cfg = XObject.extend({}, cfg); // used to store original configuration.. for referencing..
     
+    if (cfg.el) {
+        this.el = cfg.el;
+    }
+    
     // we could use this to determine if 
     // we are actually inside a inherited class...
     // as define() should actually set this up..
