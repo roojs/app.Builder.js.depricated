@@ -106,7 +106,7 @@ GtkTreeView.config = {
     
     drag_dest   : {
         type : 'Gtk.TreeDragDest'
-    
+    }
     
     
 }
