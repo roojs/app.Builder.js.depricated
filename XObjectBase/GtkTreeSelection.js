@@ -22,7 +22,7 @@ GtkTreeSelection = XObject.define(
     {
         pack: function(parent, item)
         {
-            
+            // do nothing... init has already made 'el'
             
         },
         
