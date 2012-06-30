@@ -49,6 +49,6 @@ GtkTreeSelection.config = {
         type : 'Gtk.SelectionMode'
     }
     
-}
+};
 
 
