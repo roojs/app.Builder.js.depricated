@@ -68,16 +68,20 @@ GtkTreeView = XObject.define(
                     ds.modifier, //Gdk.ModifierType.BUTTON1_MASK,       /* modifier that will start a drag */
                     null,            /* lists of target to support */
                     0,              /* size of list */
-                    ds.action ////Gdk.DragAction.COPY   | Gdk.DragAction.MOVE
-                    /* what to do with data after dropped */
+                    ds.action   ////Gdk.DragAction.COPY   | Gdk.DragAction.MOVE
+                                /* what to do with data after dropped */
                 );
-
+                
+                this.el.drag_source_set_target_list(
+                        ds.targetList // probably imports.Window.targetList;
+                        //this.get('/Window').targetList
+                );
                 
             
              
 
 
-this.el.drag_source_set_target_list(this.get('/Window').targetList);
+
 
 this.el.drag_source_add_text_targets();
 this.el.drag_dest_set
