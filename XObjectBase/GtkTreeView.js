@@ -46,29 +46,8 @@ GtkTreeView = XObject.define(
                 this.el.modify_font(description);
             }
             
-            var gtks = XObject.baseXObject({ xtype : 'GtkTreeSelection' });
-            this.xconfig.selection.el = this.el.get_selection();
-            this.selection = new gtks( this.xconfig.selection );
-            
-            
-            if (this.xconfig.selection) {
-                
-                
-                // posibly move to it's own ctor?
-                var xsel = this.xconfig.selection;
-                var selection = this.el.get_selection();
-                this.selection = selection;
-                if (xsel.mode) {
-                    selection.set_mode( xsel.mode );
-                }
-                if (xsel.listeners) {
-                    for (var signal in xsel.listeners) {
-                        
-                        selection.signal[signal].connect(xsel.listeners[signal]);
-                    }
-                }
-                
-            }
+          
+             
             if (this.xconfig.drag_source) {
                 var ds = this.xconfig.drag_source;
                 
