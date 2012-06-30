@@ -22,6 +22,13 @@ GtkTreeSelection = XObject.define(
     }, 
     XObject,
     {
+        pack: function(parent, item)
+        {
+            this.el = parent.el.get_selection();
+            
+        }
+        
+        
         init : function() 
         {
             
