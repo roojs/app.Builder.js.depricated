@@ -11,7 +11,6 @@ GtkTreeView = XObject.define(
     function(cfg)
     {
         this.xconfig = {
-            selection   : cfg.selection || {},
             font         : cfg.font || false,
             drag_source : cfg.drag_source || false,
             drag_dest   : cfg.drag_dest || false
