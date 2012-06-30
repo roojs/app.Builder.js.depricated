@@ -98,7 +98,7 @@ GtkTreeView.config = {
         type : 'Gtk.TreeSelection'
     },
     font         : {
-        type : 'Pango.FontDescription',
+        type : 'Pango.FontDescription'
     },
     drag_source : {
         type : 'Gtk.TreeDragSource' // these are realy interfaces...
@@ -109,6 +109,6 @@ GtkTreeView.config = {
     }
     
     
-}
+};
 
 
