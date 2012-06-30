@@ -1,0 +1,40 @@
+While the editor is not to bad at present there are a few fundimental
+issues with the design, that could do with some thought
+
+- Gtk 'big' tree
+The application builder itself core window is a huge tree that describes the UI
+This makes working on the thing slower as it's often more difficult to find the related code.
+
+- Big handlers and methods on objects
+Kind of related to the big tree issue, the was it's possible to add methods to objects
+results in quite a bit of the code getting added to a variety of objects in the code
+
+- Breaking code into 'groups'
+The cleaner idea here would be to break the code into groups, in such a way that all the 'special'
+methods for a group of elements would be always at the 'top' level.
+
+ Currently all generated code looks like
+ 
+ Window = new XObject({
+    ...... (the tree goes in here..)
+ });
+
+
+
+
+
+
+
+
+
+-- GTK code needs simplifing so it works better 'out the box'
+** get rid of the 'init' methods
+  - basically the XObject base code should handle stuff that is in there.
+  ** this has a knock on effect that we will provide additional 'children' to the tree structure though..
+  
+  eg. to fake a table - we would do something like this..
+    -> Table
+        -> row[] = TableRow
+            -> cel[] = TableCell
+            
+
