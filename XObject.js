@@ -170,7 +170,7 @@ XObject.prototype = {
       * XObject.prototype.init.call(this); 
       * 
       */ 
-    init : function()
+    init : function(parent)
     {
          
        // var items = [];
