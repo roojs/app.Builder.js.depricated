@@ -87,7 +87,7 @@ files.forEach(function(f) {
     }
     
     return;
-    
+    /*
     var gtkbuilder =  new imports.Builder.Provider.File.Gtk.Gtk({ path : fp });
     gtkbuilder.loadItems(function() { });
     XObject.log("COMPILING" + js);
@@ -96,7 +96,7 @@ files.forEach(function(f) {
         return;
     }
     olist.push(imports[fn]);
-    
+    */
     
 });
 
