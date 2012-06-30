@@ -11,6 +11,7 @@ GtkTreeSelection = XObject.define(
     function(cfg)
     {
         this.xconfig = cfg;
+        this.config.listeners = cfg.listeners || {};
         // you can not actually ctor this..
         this.el = false;
         
