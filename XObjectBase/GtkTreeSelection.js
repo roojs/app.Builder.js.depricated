@@ -22,15 +22,15 @@ GtkTreeSelection = XObject.define(
     {
         pack: function(parent, item)
         {
-            this.el = parent.el.get_selection();
+            
             
         },
         
         
-        init : function() 
+        init : function(parent) 
         {
             
-             
+            this.el = parent.el.get_selection();
              
             if (typeof(this.config.mode) == 'undefined') {
                 this.el.set_mode( xsel.mode );
