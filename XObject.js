@@ -742,6 +742,9 @@ XObject.extend(XObject,
             // in the situation where we have been called and there is a base object
             // defining the behavior..
             // then we should copy the prototypes from the base object into this..
+            
+            // see if file exists???
+            
             var base = gname  ? imports.XObjectBase[gname][gname] : false;
             return base;
             
