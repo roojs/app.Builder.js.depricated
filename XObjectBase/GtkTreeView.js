@@ -45,7 +45,14 @@ GtkTreeView = XObject.define(
                 description.set_size(this.xconfig.font.size);
                 this.el.modify_font(description);
             }
+            var gtks = XObject.baseXObject({ xtype : 'GtkTreeSelection']);
+            
+            this.selection = new gtks( { el : this.el.get_selection() })
+            this.selection = new imports.XObjectBase.GtkTreeSelection.GtkTreeSelection()
+            
             if (this.xconfig.selection) {
+                
+                
                 // posibly move to it's own ctor?
                 var xsel = this.xconfig.selection;
                 var selection = this.el.get_selection();
