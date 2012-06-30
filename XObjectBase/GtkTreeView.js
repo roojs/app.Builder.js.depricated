@@ -40,6 +40,7 @@ GtkTreeView = XObject.define(
                 this.el.modify_font(description);
             }
             if (this.xconfig.selection) {
+                // posibly move to it's own ctor?
                 var xsel = this.xconfig.selection;
                 var selection = this.el.get_selection();
                 this.selection = selection;
@@ -49,11 +50,10 @@ GtkTreeView = XObject.define(
                 if (xsel.listeners) {
                     for (var signal in xsel.listeners) {
                         
-                        selection.signal['changed'].connect(function() {
-                            _this.get('/LeftTree.view').listeners.cursor_changed.apply(
-                            _this.get('/LeftTree.view'), [ _this.get('/LeftTree.view'), '']
-                        );
-                });
+                        selection.signal[signal].connect(xsel.listeners[signal]);
+                    }
+                }
+                
                 
                 
             }
