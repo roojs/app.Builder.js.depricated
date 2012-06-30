@@ -19,6 +19,11 @@ methods for a group of elements would be always at the 'top' level.
     ...... (the tree goes in here..)
  });
 
+... Window.init() <<< This actually causes a build..
+<< It could probably be done outside...
+XObject.cache['/Windows'] = 'Window'
+
+
 
 
 
