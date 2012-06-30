@@ -11,7 +11,7 @@ GtkTreeView = XObject.define(
     function(cfg)
     {
         this.xconfig = {
-            selection   : cfg.selection || false,
+            selection   : cfg.selection || {},
             font         : cfg.font || false,
             drag_source : cfg.drag_source || false,
             drag_dest   : cfg.drag_dest || false
@@ -47,8 +47,10 @@ GtkTreeView = XObject.define(
             }
             var gtks = XObject.baseXObject({ xtype : 'GtkTreeSelection']);
             
+            if (this.xconfig.selection) {
+            
             this.selection = new gtks( { el : this.el.get_selection() })
-            this.selection = new imports.XObjectBase.GtkTreeSelection.GtkTreeSelection()
+            
             
             if (this.xconfig.selection) {
                 
