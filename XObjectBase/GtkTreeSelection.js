@@ -25,6 +25,8 @@ GtkTreeSelection = XObject.define(
         init : function() 
         {
             
+            this.el.get_selection();
+            
                 var xsel = this.xconfig.selection;
                 if (xsel.mode) {
                     this.el.set_mode( xsel.mode );
