@@ -84,8 +84,9 @@ GtkTreeView = XObject.define(
                 );
                 this.el.drag_dest_add_text_targets();
             }
+            */
         }
-                                                                                  */
+                                                                                  
              
  
          
