@@ -44,16 +44,10 @@ GtkTreeSelection = XObject.define(
 /// make available configuration so builder know how to handle it..
 
 
-GtkTreeView.xconfig = {
-    selection   : {
-        type : 'Gtk.TreeSelection'
-        
+GtkTreeSelection.config = {
+    mode   : {
+        type : 'Gtk.SelectionMode'
     }
-    font         : cfg.font || false,
-    drag_source : cfg.drag_source || false,
-    drag_dest   : cfg.drag_dest || false
-    
-    
     
 }
 
