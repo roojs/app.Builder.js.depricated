@@ -26,7 +26,7 @@ GtkTreeSelection = XObject.define(
         {
             this.el = parent.el.get_selection();
             
-        }
+        },
         
         
         init : function() 
