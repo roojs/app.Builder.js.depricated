@@ -13,7 +13,7 @@ GtkTreeView = XObject.define(
         this.xconfig = {
             selection   : cfg.selection || false,
             font         : cfg.font || false,
-            drag_source : cfg.drag_source || false,
+            drag_source : cfg.drag_source || false
             
         };
         for (var i in this.xconfig) {
