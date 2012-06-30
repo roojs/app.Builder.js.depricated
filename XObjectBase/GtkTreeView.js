@@ -45,10 +45,9 @@ GtkTreeView = XObject.define(
                 description.set_size(this.xconfig.font.size);
                 this.el.modify_font(description);
             }
-            var gtks = XObject.baseXObject({ xtype : 'GtkTreeSelection']);
             
+            var gtks = XObject.baseXObject({ xtype : 'GtkTreeSelection' });
             this.xconfig.selection.el = this.el.get_selection();
-            
             this.selection = new gtks( this.xconfig.selection );
             
             
