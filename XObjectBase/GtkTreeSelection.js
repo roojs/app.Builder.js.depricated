@@ -13,7 +13,6 @@ GtkTreeSelection = XObject.define(
         // child only get's a listener...
         XObject.call(this, cfg);
         
-        
         // you can not actually ctor this..
          
         
