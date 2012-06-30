@@ -80,25 +80,34 @@ GtkTreeView = XObject.define(
             }
             
             if (this.xconfig.drag_dest) {
+                
                 var ds = this.xconfig.drag_dest;
+                
                 this.el.drag_dest_set
                 (
-                    Gtk.DestDefaults.MOTION  | Gtk.DestDefaults.HIGHLIGHT,
+                    ds.modifier, // Gtk.DestDefaults.MOTION  | Gtk.DestDefaults.HIGHLIGHT,
                     null,            /* lists of target to support */
                     0,              /* size of list */
-                    Gdk.DragAction.COPY   | Gdk.DragAction.MOVE       /* what to do with data after dropped */
+                    ds.action //Gdk.DragAction.COPY   | Gdk.DragAction.MOVE       /* what to do with data after dropped */
                 );
-
+                
+                this.el.drag_source_add_text_targets();
+                this.el.drag_dest_set_target_list(
+                    ds.targetList
+                            //this.get('/Window').targetList
+                );
+                this.el.drag_dest_add_text_targets( );
+            }
             
              
 
 
 
 
-this.el.drag_source_add_text_targets();
 
-this.el.drag_dest_set_target_list(  this.get('/Window').targetList);
-this.el.drag_dest_add_text_targets( );
+
+
+
 },
 
 
