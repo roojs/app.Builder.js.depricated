@@ -13,8 +13,8 @@ GtkTreeView = XObject.define(
         this.xconfig = {
             selection   : cfg.selection || false,
             font         : cfg.font || false,
-            drag_source : cfg.drag_source || false
-            
+            drag_source : cfg.drag_source || false,
+            drag_dest   : cfg.drag_dest || false
         };
         for (var i in this.xconfig) {
             if (typeof(cfg[i]) != 'undefined') {
@@ -76,7 +76,18 @@ GtkTreeView = XObject.define(
                         ds.targetList // probably imports.Window.targetList;
                         //this.get('/Window').targetList
                 );
-                
+                this.el.drag_source_add_text_targets();
+            }
+            
+            if (this.xconfig.drag_dest) {
+                this.el.drag_dest_set
+                (
+                    Gtk.DestDefaults.MOTION  | Gtk.DestDefaults.HIGHLIGHT,
+                    null,            /* lists of target to support */
+                    0,              /* size of list */
+                    Gdk.DragAction.COPY   | Gdk.DragAction.MOVE       /* what to do with data after dropped */
+                );
+
             
              
 
@@ -84,13 +95,6 @@ GtkTreeView = XObject.define(
 
 
 this.el.drag_source_add_text_targets();
-this.el.drag_dest_set
-(
-    Gtk.DestDefaults.MOTION  | Gtk.DestDefaults.HIGHLIGHT,
-    null,            /* lists of target to support */
-    0,              /* size of list */
-    Gdk.DragAction.COPY   | Gdk.DragAction.MOVE       /* what to do with data after dropped */
-);
 
 this.el.drag_dest_set_target_list(  this.get('/Window').targetList);
 this.el.drag_dest_add_text_targets( );
