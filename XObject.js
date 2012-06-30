@@ -57,6 +57,7 @@ function XObject (cfg) {
     
     this.cfg = XObject.extend({}, cfg); // used to store original configuration.. for referencing..
     
+    // used by baseobject to create fake child elements on init..
     if (cfg.el) {
         this.el = cfg.el;
     }
