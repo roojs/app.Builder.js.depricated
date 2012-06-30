@@ -11,9 +11,15 @@ GtkTreeView = XObject.define(
     function(cfg)
     {
         this.xconfig = {
-            selection : cfg.selection || false,
-            font : cfg.fong || false,
+            selection   : cfg.selection || false,
+            font         : cfg.font || false,
+            drag_source : cfg.drag_source || false,
             
+        };
+        for (var i in this.xconfig) {
+            if (typeof(cfg[i]) != 'undefined') {
+                delete cfg[i];
+            }
         }
         
         
@@ -54,22 +60,9 @@ GtkTreeView = XObject.define(
                     }
                 }
                 
-                
-                
             }
             
-            var sel = this.selection;
-            
-            this.el.set_column_types ( 6, [
-                GObject.TYPE_STRING, 
-                GObject.TYPE_STRING, 
-                GObject.TYPE_STRING, 
-                GObject.TYPE_STRING, 
-                GObject.TYPE_STRING, 
-                GObject.TYPE_STRING 
-            ] );
-            
-               
+             
 
 this.el.drag_source_set(             /* widget will be drag-able */
     Gdk.ModifierType.BUTTON1_MASK,       /* modifier that will start a drag */
