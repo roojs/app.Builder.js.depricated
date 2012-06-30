@@ -96,7 +96,7 @@ GtkTreeView = XObject.define(
                     ds.targetList
                             //this.get('/Window').targetList
                 );
-                this.el.drag_dest_add_text_targets( );
+                this.el.drag_dest_add_text_targets();
             }
             
              
