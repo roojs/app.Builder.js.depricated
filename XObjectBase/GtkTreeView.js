@@ -98,32 +98,10 @@ GtkTreeView = XObject.define(
                 );
                 this.el.drag_dest_add_text_targets();
             }
-            
-             
-
-
-
-
-
-
-
-
-},
-
-
-
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
         }
+             
+ 
          
     }
 ); 
-GtkTreeViewColumn.ids = 0;
+ 
