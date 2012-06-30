@@ -66,7 +66,7 @@ function XObject (cfg) {
         this.constructor = XObject;
         var base = XObject.baseXObject(cfg);
         if (base) {
-            XObject.extend(this,base.prototype);
+            XObject.extend(this,  base.prototype);
         }
         
     }
@@ -123,7 +123,7 @@ function XObject (cfg) {
 
 
 
-	this.items = [];
+    this.items = [];
     // create XObject for all the children.
     for(var i = 0; i < items.length;i++) {
     
