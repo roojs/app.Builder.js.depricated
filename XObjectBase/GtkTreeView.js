@@ -61,15 +61,21 @@ GtkTreeView = XObject.define(
                 }
                 
             }
+            if (this.xconfig.drag_source) {
+                var ds = this.xconfig.drag_source;
+                
+                this.el.drag_source_set(             /* widget will be drag-able */
+                    ds.modifier, //Gdk.ModifierType.BUTTON1_MASK,       /* modifier that will start a drag */
+                    null,            /* lists of target to support */
+                    0,              /* size of list */
+                    ds.action ////Gdk.DragAction.COPY   | Gdk.DragAction.MOVE
+                    /* what to do with data after dropped */
+                );
+
+                
             
              
 
-this.el.drag_source_set(             /* widget will be drag-able */
-    Gdk.ModifierType.BUTTON1_MASK,       /* modifier that will start a drag */
-    null,            /* lists of target to support */
-    0,              /* size of list */
-    Gdk.DragAction.COPY   | Gdk.DragAction.MOVE           /* what to do with data after dropped */
-);
 
 this.el.drag_source_set_target_list(this.get('/Window').targetList);
 
