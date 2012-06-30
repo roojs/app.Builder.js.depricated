@@ -12,7 +12,10 @@ GtkTreeSelection = XObject.define(
     {
         this.xconfig = cfg;
         // child only get's a listener...
-        XObject.call(this, { listeners : cfg.listeners || {} });
+        XObject.call(this, {
+            listeners : cfg.listeners || {},
+            mode : cfg.mode || undefined
+        });
         
         
         // you can not actually ctor this..
@@ -32,18 +35,17 @@ GtkTreeSelection = XObject.define(
         init : function() 
         {
             
-            this.el.get_selection();
-            
-                var xsel = this.xconfig.selection;
-                if (xsel.mode) {
-                    this.el.set_mode( xsel.mode );
+             
+            var xsel = this.xconfig.selection;
+            if (xsel.mode) {
+                this.el.set_mode( xsel.mode );
+            }
+            if (xsel.listeners) {
+                for (var signal in xsel.listeners) {
+                    
+                    selection.signal[signal].connect(xsel.listeners[signal]);
                 }
-                if (xsel.listeners) {
-                    for (var signal in xsel.listeners) {
-                        
-                        selection.signal[signal].connect(xsel.listeners[signal]);
-                    }
-                }
+            }
                 
             }
             if (this.xconfig.drag_source) {
