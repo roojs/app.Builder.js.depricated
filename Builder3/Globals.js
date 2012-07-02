@@ -1,4 +1,5 @@
-
+Gtk = imports.gi.Gtk;
+Gdk = imports.gi.Gdk;
 
 
 atoms = {
