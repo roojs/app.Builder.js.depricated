@@ -17,4 +17,4 @@ Gtk.rc_parse_string(
             "class \"GtkComboBox\" style \"gtkcombobox-style\"\n");
 
 
-imports.Window.Window.el.show_all();
+//imports.Window.Window.el.show_all();
