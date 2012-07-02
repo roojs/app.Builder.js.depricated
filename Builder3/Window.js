@@ -42,11 +42,11 @@ Window=new XObject({
     init : function() {
         
     	//imports.ProjectManager.ProjectManager.loadConfig();
-    Gtk.rc_parse_string(
-                "style \"gtkcombobox-style\" {\n" + 
-                "    GtkComboBox::appears-as-list = 1\n" +
-                "}\n"+
-                "class \"GtkComboBox\" style \"gtkcombobox-style\"\n");
+		Gtk.rc_parse_string(
+					"style \"gtkcombobox-style\" {\n" + 
+					"    GtkComboBox::appears-as-list = 1\n" +
+					"}\n"+
+					"class \"GtkComboBox\" style \"gtkcombobox-style\"\n");
         XObject.prototype.init.call(this);
         this.el.show_all();
         
