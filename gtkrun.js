@@ -86,8 +86,8 @@ files.forEach(function(f) {
             return;
         //}
         // Compiling BJS is depreciated..
-        olist.push(imports[js]);
-        return;
+        //olist.push(imports[js]);
+        //return;
         
     }
     
