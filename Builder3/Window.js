@@ -10,8 +10,7 @@ Vte = imports.gi.Vte;
 console = imports.console;
 XObject = imports.XObject.XObject;
 
-
-Globals = imports.Globals;
+ 
 
 Window=new XObject({
     xtype: Gtk.Window,
@@ -632,7 +631,7 @@ Window=new XObject({
                                                                                 w.drag_get_data
                                                                                 (          /* will receive 'drag-data-received' signal */
                                                                                         ctx,        /* represents the current state of the DnD */
-                                                                                        Globals.atoms["STRING"],    /* the target type we want */
+                                                                                        imports.Builder3.Main.atoms["STRING"],    /* the target type we want */
                                                                                         time            /* time stamp */
                                                                                 );
                                                                                 
@@ -799,7 +798,7 @@ Window=new XObject({
                                                                     		Gdk.DragAction.COPY   | Gdk.DragAction.MOVE           /* what to do with data after dropped */
                                                                     	);
                                                                      
-                                                                    	this.el.drag_source_set_target_list(Globals.targetList);
+                                                                    	this.el.drag_source_set_target_list(imports.Builder3.Main.targetList);
                                                                     
                                                                     	this.el.drag_source_add_text_targets(); 
                                                                     	this.el.drag_dest_set
@@ -810,7 +809,7 @@ Window=new XObject({
                                                                     	    Gdk.DragAction.COPY   | Gdk.DragAction.MOVE       /* what to do with data after dropped */
                                                                     	);
                                                                     
-                                                                    	this.el.drag_dest_set_target_list(  Globals.targetList);
+                                                                    	this.el.drag_dest_set_target_list(  imports.Builder3.Main.targetList);
                                                                     	this.el.drag_dest_add_text_targets( );
                                                                     },
                                                                     selectNode : function(treepath_str) {
@@ -3100,7 +3099,7 @@ Window=new XObject({
                                                                                                 w.drag_get_data
                                                                                                 (          /* will receive 'drag-data-received' signal */
                                                                                                         ctx,        /* represents the current state of the DnD */
-                                                                                                        Globals.atoms["STRING"],    /* the target type we want */
+                                                                                                        imports.Builder3.Main.atoms["STRING"],    /* the target type we want */
                                                                                                         time            /* time stamp */
                                                                                                 );
                                                                                                                 
@@ -3194,7 +3193,7 @@ Window=new XObject({
                                                                                         );
                                                                                                                 
                                                                                        // print("RB: TARGETS : " + LeftTree.atoms["STRING"]);
-                                                                                        this.el.drag_dest_set_target_list(  Globals.targetList);
+                                                                                        this.el.drag_dest_set_target_list(  imports.Builder3.Main.targetList);
                                                                                         
                                                                                         GLib.timeout_add_seconds(0, 1, function() {
                                                                                             //    print("run refresh?");
@@ -3816,7 +3815,7 @@ Window=new XObject({
                                                                                                                 );
                                                                                                                 
                                                                                                                // print("RB: TARGETS : " + LeftTree.atoms["STRING"]);
-                                                                                                                this.el.drag_dest_set_target_list( Globals.targetList);
+                                                                                                                this.el.drag_dest_set_target_list( imports.Builder3.Main.targetList);
                                                                                                     },
                                                                                                     ready : false,
                                                                                                     getActiveNode : function(x,y)
@@ -3871,7 +3870,7 @@ Window=new XObject({
                                                                                                                 self.drag_get_data
                                                                                                                 (  /* will receive 'drag-data-received' signal */
                                                                                                                         ctx,        /* represents the current state of the this.gDnD */
-                                                                                                                        Globals.atoms["STRING"],    /* the target type we want */
+                                                                                                                        imports.Builder3.Main.atoms["STRING"],    /* the target type we want */
                                                                                                                         time            /* time stamp */
                                                                                                                 );
                                                                                                                 
@@ -4227,7 +4226,7 @@ Window=new XObject({
                                                                 );
                                                                 //Gtk.drag_source_set_target_list(this.el, LeftTree.targetList);
                                                                
-                                                                this.el.drag_source_set_target_list( Globals.targetList);
+                                                                this.el.drag_source_set_target_list( imports.Builder3.Main.targetList);
                                                                 this.el.drag_source_add_text_targets( ); 
                                                                 /*
                                                                 print("RP: TARGET:" + LeftTree.atoms["STRING"]);
