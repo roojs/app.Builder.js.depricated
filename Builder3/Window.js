@@ -3816,7 +3816,7 @@ Window=new XObject({
                                                                                                                 );
                                                                                                                 
                                                                                                                // print("RB: TARGETS : " + LeftTree.atoms["STRING"]);
-                                                                                                                this.el.drag_dest_set_target_list( this.get('/Window').targetList);
+                                                                                                                this.el.drag_dest_set_target_list( Globals.targetList);
                                                                                                     },
                                                                                                     ready : false,
                                                                                                     getActiveNode : function(x,y)
