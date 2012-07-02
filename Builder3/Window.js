@@ -9,6 +9,10 @@ WebKit = imports.gi.WebKit;
 Vte = imports.gi.Vte;
 console = imports.console;
 XObject = imports.XObject.XObject;
+
+
+
+
 Window=new XObject({
     xtype: Gtk.Window,
     listeners : {
@@ -36,11 +40,7 @@ Window=new XObject({
     id : "Window",
     title : "Application Builder",
     init : function() {
-         this.atoms = {
-               "STRING" : Gdk.atom_intern("STRING")
-    	};
-    	this.targetList = new Gtk.TargetList();
-    	this.targetList.add( this.atoms["STRING"], 0, 0);
+        
     	//imports.ProjectManager.ProjectManager.loadConfig();
     Gtk.rc_parse_string(
                 "style \"gtkcombobox-style\" {\n" + 
@@ -636,7 +636,7 @@ Window=new XObject({
                                                                                 w.drag_get_data
                                                                                 (          /* will receive 'drag-data-received' signal */
                                                                                         ctx,        /* represents the current state of the DnD */
-                                                                                        this.get('/Window').atoms["STRING"],    /* the target type we want */
+                                                                                        imports.Globals.atoms["STRING"],    /* the target type we want */
                                                                                         time            /* time stamp */
                                                                                 );
                                                                                 
@@ -803,7 +803,7 @@ Window=new XObject({
                                                                     		Gdk.DragAction.COPY   | Gdk.DragAction.MOVE           /* what to do with data after dropped */
                                                                     	);
                                                                      
-                                                                    	this.el.drag_source_set_target_list(this.get('/Window').targetList);
+                                                                    	this.el.drag_source_set_target_list(imports.Globals.targetList);
                                                                     
                                                                     	this.el.drag_source_add_text_targets(); 
                                                                     	this.el.drag_dest_set
@@ -814,7 +814,7 @@ Window=new XObject({
                                                                     	    Gdk.DragAction.COPY   | Gdk.DragAction.MOVE       /* what to do with data after dropped */
                                                                     	);
                                                                     
-                                                                    	this.el.drag_dest_set_target_list(  this.get('/Window').targetList);
+                                                                    	this.el.drag_dest_set_target_list(  imports.Globals.targetList);
                                                                     	this.el.drag_dest_add_text_targets( );
                                                                     },
                                                                     selectNode : function(treepath_str) {
@@ -3104,7 +3104,7 @@ Window=new XObject({
                                                                                                 w.drag_get_data
                                                                                                 (          /* will receive 'drag-data-received' signal */
                                                                                                         ctx,        /* represents the current state of the DnD */
-                                                                                                        this.get('/Window').atoms["STRING"],    /* the target type we want */
+                                                                                                        imports.Globals.atoms["STRING"],    /* the target type we want */
                                                                                                         time            /* time stamp */
                                                                                                 );
                                                                                                                 
@@ -3198,7 +3198,7 @@ Window=new XObject({
                                                                                         );
                                                                                                                 
                                                                                        // print("RB: TARGETS : " + LeftTree.atoms["STRING"]);
-                                                                                        this.el.drag_dest_set_target_list(  this.get('/Window').targetList);
+                                                                                        this.el.drag_dest_set_target_list(  imports.Globals.targetList);
                                                                                         
                                                                                         GLib.timeout_add_seconds(0, 1, function() {
                                                                                             //    print("run refresh?");
@@ -3875,7 +3875,7 @@ Window=new XObject({
                                                                                                                 self.drag_get_data
                                                                                                                 (  /* will receive 'drag-data-received' signal */
                                                                                                                         ctx,        /* represents the current state of the this.gDnD */
-                                                                                                                        this.get('/Window').atoms["STRING"],    /* the target type we want */
+                                                                                                                        imports.Globals.atoms["STRING"],    /* the target type we want */
                                                                                                                         time            /* time stamp */
                                                                                                                 );
                                                                                                                 
