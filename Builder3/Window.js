@@ -44,7 +44,7 @@ Window=new XObject({
     	//imports.ProjectManager.ProjectManager.loadConfig();
 		 
         XObject.prototype.init.call(this);
-        this.el.show_all();
+        //this.el.show_all();
         
        
                   
