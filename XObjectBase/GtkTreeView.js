@@ -10,27 +10,31 @@ GObject = imports.gi.GObject;
 GtkTreeView = XObject.define(
     function(cfg)
     {
-        this.xconfig = {
-            font         : cfg.font || false,
-            drag_source : cfg.drag_source || false,
-            drag_dest   : cfg.drag_dest || false
-        };
-        for (var i in this.xconfig) {
-            if (typeof(cfg[i]) != 'undefined') {
-                delete cfg[i];
-            }
-        }
         
         
+        var clean_cfg = XObject.extend({
+            font         :  false,
+            drag_source : false,
+            drag_dest   : false //,
+       //     selection : false,
+        }, cfg);
         
-        XObject.call(this, cfg);
+        delete clean_cfg.font;
+        delete clean_cfg.selection;
+        delete clean_cfg.drag_source;
+        delete clean_cfg.drag_dest;
+         
+        
+        XObject.call(this, clean_cfg);
+        
+        this.config = cfg;
+        
         // this is an example...
         
         
     }, 
     XObject,
     {
-        xconfig : false,
         selection : false,
         
         init : function() 
@@ -38,17 +42,20 @@ GtkTreeView = XObject.define(
             
             XObject.prototype.init.call(this);
             
-            /*
-            if (this.xconfig.font) {
+            
+            
+            
+             
+            if (this.config.font) {
                 var description = new Pango.FontDescription.c_new();
-                description.set_size(this.xconfig.font.size);
+                description.set_size(this.config.font.size);
                 this.el.modify_font(description);
             }
             
           
              
-            if (this.xconfig.drag_source) {
-                var ds = this.xconfig.drag_source;
+            if (this.config.drag_source) {
+                var ds = this.config.drag_source;
                 
                 this.el.drag_source_set(             // widget will be drag-able 
                     ds.modifier, //Gdk.ModifierType.BUTTON1_MASK,       // modifier that will start a drag 
@@ -65,9 +72,9 @@ GtkTreeView = XObject.define(
                 this.el.drag_source_add_text_targets();
             }
             
-            if (this.xconfig.drag_dest) {
+            if (this.config.drag_dest) {
                 
-                var ds = this.xconfig.drag_dest;
+                var ds = this.config.drag_dest;
                 
                 this.el.drag_dest_set
                 (
@@ -84,7 +91,7 @@ GtkTreeView = XObject.define(
                 );
                 this.el.drag_dest_add_text_targets();
             }
-            */
+             
         }
                                                                                   
              
@@ -94,9 +101,9 @@ GtkTreeView = XObject.define(
 ); 
 
 GtkTreeView.config = {
-    selection   : {
-        type : 'Gtk.TreeSelection'
-    },
+    //selection   : { << just need to add a treeselection..
+    //    type : 'Gtk.TreeSelection'
+    //},
     font         : {
         type : 'Pango.FontDescription'
     },
