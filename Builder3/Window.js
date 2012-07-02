@@ -38,16 +38,7 @@ Window=new XObject({
     default_width : 800,
     id : "Window",
     title : "Application Builder",
-    init : function() {
-        
-    	//imports.ProjectManager.ProjectManager.loadConfig();
-		 
-        XObject.prototype.init.call(this);
-        //this.el.show_all();
-        
-       
-                  
-    },
+ 
     setTitle : function(str) {
         this.el.set_title(this.title + ' - ' + str);
     },
@@ -341,6 +332,10 @@ Window=new XObject({
                                             items : [
                                                 {
                                                     xtype: Gtk.Expander,
+													init : function() {
+                                                        XObject.prototype.init.call(this);
+                                                       this.el.add_events (Gdk.EventMask.BUTTON_MOTION_MASK );
+                                                    },
                                                     listeners : {
                                                         activate : function (self) {
                                                             // this does not actually expand it..
@@ -373,10 +368,7 @@ Window=new XObject({
                                                     id : "expander",
                                                     label : "Select Project or File",
                                                     pack : "pack_start,false,true",
-                                                    init : function() {
-                                                        XObject.prototype.init.call(this);
-                                                       this.el.add_events (Gdk.EventMask.BUTTON_MOTION_MASK );
-                                                    },
+                                                  
                                                     onCollapse : function() {
                                                         
                                                         var nb = this.get('/LeftTopPanel.notebook');
