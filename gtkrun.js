@@ -71,10 +71,13 @@ var olist = [];
 var gtkbuilder = false;
 files.forEach(function(f) {
     var fp = Seed.argv[2] + '/' + f;
-    if (!fp.match(/\.bjs$/)) {
+    
+    
+    
+    if (!fp.match(/\.js$/)) {
         return;
     }
-    var js = fp.replace(/\.bjs$/, '.js');
+    var js = fp; //.replace(/\.js$/, '.js');
     if (File.isFile(js)) {
         // check file time.. = bjs is less than compiled file..
         if (File.mtime(fp) < File.mtime(js)) {
