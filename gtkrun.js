@@ -60,6 +60,8 @@ XObject = imports.XObject.XObject;
 //XObject.debug = true;
 Gtk.init(Seed.argv);
 
+Globals = imports.Globals;
+
 
 imports.searchPath.push('/'); // allow global paths..
 // error checking todo..
