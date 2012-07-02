@@ -80,11 +80,11 @@ files.forEach(function(f) {
     var js = fp; //.replace(/\.js$/, '.js');
     if (File.isFile(js)) {
         // check file time.. = bjs is less than compiled file..
-        if (File.mtime(fp) < File.mtime(js)) {
+        //if (File.mtime(fp) < File.mtime(js)) {
             XObject.log("LOADING" + js);
             olist.push(imports[js]);
             return;
-        }
+        //}
         // Compiling BJS is depreciated..
         olist.push(imports[js]);
         return;
