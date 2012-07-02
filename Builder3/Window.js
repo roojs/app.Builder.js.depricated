@@ -11,7 +11,7 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 
 
-
+Globals = imports.Globals;
 
 Window=new XObject({
     xtype: Gtk.Window,
