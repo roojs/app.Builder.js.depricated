@@ -4227,7 +4227,7 @@ Window=new XObject({
                                                                 );
                                                                 //Gtk.drag_source_set_target_list(this.el, LeftTree.targetList);
                                                                
-                                                                this.el.drag_source_set_target_list(  this.get('/Window').targetList);
+                                                                this.el.drag_source_set_target_list( Globals.targetList);
                                                                 this.el.drag_source_add_text_targets( ); 
                                                                 /*
                                                                 print("RP: TARGET:" + LeftTree.atoms["STRING"]);
