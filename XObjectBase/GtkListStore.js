@@ -12,6 +12,9 @@ Gtk= imports.gi.Gtk;
 // we should really add a hock to destroy it..
 GtkListStore = XObject.define(
     function(cfg) {
+        
+        this.columns = cfg.columns = cfg.columns || false;
+        delete cfg.columns;
         XObject.call(this, cfg);
         // this is an example...
        
