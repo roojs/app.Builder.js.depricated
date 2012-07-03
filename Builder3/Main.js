@@ -26,7 +26,7 @@ Window.el.show_all();
 // it used to hapen in the init() code for the element, it should be moved to a 'global init for a whole module'
 var pm = imports.ProjectManager.ProjectManager;
 
-var combomodel =  this.get('/LeftProjectTree.combomodel');
+var combomodel =  Window.get('/LeftProjectTree.combomodel');
 pm.on('changed', function() {
       print("caught changed hook on project manager - reloading data");
      combomodel.loadData(pm.projects);
