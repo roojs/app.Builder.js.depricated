@@ -398,11 +398,7 @@ Window=new XObject({
                                                     id : "notebook",
                                                     pack : "pack_start,true,true",
 													current_page : 0,
-                                                    init : function() {
-                                                        XObject.prototype.init.call(this);
-                                                    	this.el.set_current_page(0);
-                                                    
-                                                    },
+                                                     
                                                     show_border : false,
                                                     show_tabs : false,
                                                     items : [
