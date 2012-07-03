@@ -1060,6 +1060,9 @@ Window=new XObject({
                                                                                 
                                                                                 
                                                                             },
+																			
+																			
+																			
                                                                             init : function() {
                                                                                 XObject.prototype.init.call(this);
                                                                              this.el.set_column_types ( 3, [
@@ -1555,6 +1558,13 @@ Window=new XObject({
                                                                                     xtype: Gtk.ListStore,
                                                                                     id : "combomodel",
                                                                                     pack : "set_model",
+																					
+																					columns : [
+																						GObject.TYPE_STRING,   
+                                                                                        GObject.TYPE_STRING
+																					],
+																					
+																					
                                                                                     init : function() {
                                                                                         XObject.prototype.init.call(this);
                                                                                         this.el.set_column_types ( 2, [
