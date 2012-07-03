@@ -4,14 +4,13 @@
 XObject = imports.XObject.XObject
  
 GObject = imports.gi.GObject;
-//GtkClutter.Embed..
-// children are not added at init / but at show stage..
-// listener is added on show..
-// we should really add a hock to destroy it..
+ 
 GtkTreeStore = XObject.define(
     function(cfg) {
+        this.columns = cfg.columns = cfg.columns || false;
+        delete cfg.columns;
         XObject.call(this, cfg);
-        // this is an example...
+       
        
     }, 
     XObject,
