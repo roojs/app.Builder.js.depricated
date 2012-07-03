@@ -2257,9 +2257,7 @@ Window=new XObject({
                                                                         }
                                                                                                 
                                                                     },
-                                                                    init : function() {
-                                                                        XObject.prototype.init.call(this);
-                                                                    this.el.set_column_types ( 6, [
+																	columns :  [
                                                                                                     GObject.TYPE_STRING,  // 0 real key
                                                                                                     GObject.TYPE_STRING, // 1 real value 
                                                                                                      GObject.TYPE_STRING,  // 2 visable key
@@ -2267,9 +2265,9 @@ Window=new XObject({
                                                                                                      GObject.TYPE_STRING, // 4 need to store type of!!!
                                                                                                       GObject.TYPE_STRING // 5 tooltip
                                                                                                   
-                                                                                                ]);
-                                                                    },
-                                                                    load : function(ar) {
+                                                                                                ].
+																	
+                                                                     load : function(ar) {
                                                                     // might casue problesm..
                                                                         // this.get('/Editor.RightEditor').save();
                                                                     
