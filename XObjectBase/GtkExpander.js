@@ -32,4 +32,11 @@ GtkExpander = XObject.define(
         }
     }
  
-); 
+);
+GtkExpander.config = {
+   
+    events         : {
+        type : 'Array',
+        array_of : 'Gdk.EventMask'
+    },
+    drag_source : {
