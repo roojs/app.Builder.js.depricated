@@ -22,15 +22,15 @@ Window=new XObject({
            Gtk.main_quit();
         },
         show : function (self) {
-          
-        imports.ProjectManager.ProjectManager.loadConfig();
-          
-        print("HIDEWIN - calling MidPropTree hidewin")
-         	this.get('/MidPropTree').hideWin();
-            this.get('/RightPalete').hide();
-            this.get('/BottomPane').el.hide();
-            //this.get('/Editor').el.show_all();
-        
+			
+		  imports.ProjectManager.ProjectManager.loadConfig();
+			
+		  print("HIDEWIN - calling MidPropTree hidewin")
+			  this.get('/MidPropTree').hideWin();
+			  this.get('/RightPalete').hide();
+			  this.get('/BottomPane').el.hide();
+			  //this.get('/Editor').el.show_all();
+		  
         }
     },
     border_width : 0,
