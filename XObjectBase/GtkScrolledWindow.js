@@ -10,11 +10,12 @@ Gtk = imports.gi.Gtk;
 
 GtkScrolledWindow = XObject.define(
     function(cfg) {
+        
         XObject.call(this, cfg);
     }, 
     XObject,
     {
-     
+        
         // should we always add??
         pack : 'add',
         
