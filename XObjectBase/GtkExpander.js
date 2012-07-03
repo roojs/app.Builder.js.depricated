@@ -24,7 +24,7 @@ GtkExpander = XObject.define(
         init : function()
         {
             // is this a common feature??? of widgets ...?
-     
+              XObject.prototype.init.call(this);
             for (var i = 0 ; i < this.events.length ; i++ ) { 
                 this.el.add_events (this.events[i] );
             }
