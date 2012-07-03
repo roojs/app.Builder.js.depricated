@@ -1565,23 +1565,7 @@ Window=new XObject({
 																					],
 																					
 																					
-                                                                                    init : function() {
-                                                                                        XObject.prototype.init.call(this);
-                                                                                        this.el.set_column_types ( 2, [
-                                                                                            GObject.TYPE_STRING,  // real key
-                                                                                            GObject.TYPE_STRING // real type
-                                                                                            
-                                                                                            
-                                                                                        ] );
-                                                                                       // this.el.set_sort_column_id(1,Gtk.SortType.ASCENDING);
-                                                                                       var pm = imports.ProjectManager.ProjectManager;
-                                                                                       var _this = this;
-                                                                                       pm.on('changed', function() {
-                                                                                             print("caught changed hook on project manager - reloading data");
-                                                                                            _this.loadData(pm.projects);
                                                                                     
-                                                                                       });
-                                                                                    },
                                                                                     loadData : function(data) {
                                                                                          var ov = this.get('/LeftProjectTree.combo').getValue();
                                                                                         this.el.clear();
