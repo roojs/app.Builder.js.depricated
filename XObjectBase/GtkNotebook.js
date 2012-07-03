@@ -6,7 +6,7 @@ GtkNotebook= XObject.define(
     function(cfg) {
         
         
-        this.current_page = cfg.current_page = cfg.current_page || [];
+        this.current_page = cfg.current_page = cfg.current_page || false;
         delete cfg.current_page;
         XObject.call(this, cfg);
         
