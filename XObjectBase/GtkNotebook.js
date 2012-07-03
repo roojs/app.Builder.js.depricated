@@ -30,10 +30,9 @@ GtkNotebook= XObject.define(
     }
  
 );
-GtkExpander.config = {
+GtkNotebook.config = {
    
-    events         : {
-        type : 'Array',
-        array_of : 'Gdk.EventMask'
-    }
+    current_page         : {
+        type : 'Integer',
+        }
 }
