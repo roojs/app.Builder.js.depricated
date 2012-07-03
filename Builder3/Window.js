@@ -397,6 +397,7 @@ Window=new XObject({
                                                     xtype: Gtk.Notebook,
                                                     id : "notebook",
                                                     pack : "pack_start,true,true",
+													current_page : 0,
                                                     init : function() {
                                                         XObject.prototype.init.call(this);
                                                     	this.el.set_current_page(0);
