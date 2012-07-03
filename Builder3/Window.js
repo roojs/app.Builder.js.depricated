@@ -1064,7 +1064,7 @@ Window=new XObject({
                                                                                         GObject.TYPE_STRING, // title 
                                                                                         GObject.TYPE_STRING, // tip
                                                                                         GObject.TYPE_STRING // source..
-                                                                                        ] ,
+                                                                             ] ,
 																			
 																			
                                                                            
@@ -1590,10 +1590,7 @@ Window=new XObject({
                                                                     xtype: Gtk.ScrolledWindow,
                                                                     pack : "add",
                                                                     shadow_type : Gtk.ShadowType.IN,
-                                                                    init : function() {
-                                                                        XObject.prototype.init.call(this);
-                                                                        this.el.set_policy  (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC );
-                                                                    },
+                                                                  
                                                                     items : [
                                                                         {
                                                                             xtype: Gtk.TreeView,
@@ -1661,16 +1658,14 @@ Window=new XObject({
                                                                                     xtype: Gtk.TreeStore,
                                                                                     pack : "set_model",
                                                                                     id : "model",
-                                                                                     loading : false,
-                                                                                    init : function() {
-                                                                                        XObject.prototype.init.call(this);
-                                                                                      this.el.set_column_types ( 3, [
+                                                                                    loading : false,
+																					columns :  [
                                                                                                         GObject.TYPE_STRING, // title 
                                                                                                         GObject.TYPE_STRING, // tip
                                                                                                         GObject.TYPE_STRING // id..
-                                                                                                        ] );
-                                                                                       
-                                                                                    },
+                                                                                                        ] ,
+																					 
+                                                                                    
                                                                                     loadProject : function(pr) {
                                                                                          print("LOAD PROJECT");
                                                                                           var model = this.get('/LeftProjectTree.model');
@@ -1998,10 +1993,7 @@ Window=new XObject({
                                                     editing : false,
                                                     id : "LeftPanel",
                                                     pack : "add",
-                                                    init : function() {
-                                                        XObject.prototype.init.call(this);
-                                                       this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
-                                                    },
+                                                    
                                                     shadow_type : Gtk.ShadowType.IN,
                                                     items : [
                                                         {
