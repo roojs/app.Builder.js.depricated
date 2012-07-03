@@ -29,7 +29,7 @@ var pm = imports.ProjectManager.ProjectManager;
 var combomodel =  this.get('/LeftProjectTree.combomodel');
 pm.on('changed', function() {
       print("caught changed hook on project manager - reloading data");
-     _this.loadData(pm.projects);
+     combomodel.loadData(pm.projects);
 
 });
  
