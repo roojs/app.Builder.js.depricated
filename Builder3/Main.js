@@ -3,7 +3,7 @@ Gdk = imports.gi.Gdk;
 
 Window = imports.Builder3.Window.Window;
 
-
+/*
 atoms = {
                "STRING" : Gdk.atom_intern("STRING")
     	};
@@ -18,6 +18,6 @@ Gtk.rc_parse_string(
             "}\n"+
             "class \"GtkComboBox\" style \"gtkcombobox-style\"\n");
 
-
-//Window.el.show_all();
+*/
+Window.el.show_all();
  
