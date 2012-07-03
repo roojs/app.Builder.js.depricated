@@ -13,7 +13,7 @@ GtkExpander = XObject.define(
         
         
         this.events = cfg.events = cfg.events || false;
-        delete cfg
+        delete cfg.events;
         XObject.call(this, cfg);
         
    
