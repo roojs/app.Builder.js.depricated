@@ -21,7 +21,13 @@ GtkExpander = XObject.define(
     XObject,
     {
         events : false,
-        
+        init : function()
+        {
+            // is this a common featuer???
+            this.el.add_events (Gdk.EventMask.BUTTON_MOTION_MASK );
+
+            
+        }
     }
  
 ); 
