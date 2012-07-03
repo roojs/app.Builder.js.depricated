@@ -20,4 +20,16 @@ Gtk.rc_parse_string(
 
 */
 Window.el.show_all();
+
+
+// this ties two elements together...
+// it used to hapen in the init() code for the element, it should be moved to a 'global init for a whole module'
+var pm = imports.ProjectManager.ProjectManager;
+
+var combomodel =  this.get('/LeftProjectTree.combomodel');
+pm.on('changed', function() {
+      print("caught changed hook on project manager - reloading data");
+     _this.loadData(pm.projects);
+
+});
  
