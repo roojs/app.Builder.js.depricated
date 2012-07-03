@@ -335,10 +335,7 @@ Window=new XObject({
 													events : [
 														Gdk.EventMask.BUTTON_MOTION_MASK 
 													],
-													init : function() {
-                                                        XObject.prototype.init.call(this);
-                                                       this.el.add_events (Gdk.EventMask.BUTTON_MOTION_MASK );
-                                                    },
+													 
                                                     listeners : {
                                                         activate : function (self) {
                                                             // this does not actually expand it..
