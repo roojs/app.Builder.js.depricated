@@ -445,6 +445,7 @@ Window=new XObject({
                                                             		case 'Gtk':
                                                             		    return this.get('/RightGtkView');
                                                             	}
+																return false;
                                                             
                                                             },
                                                             init : function() {
