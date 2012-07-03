@@ -480,7 +480,9 @@ Window=new XObject({
                                                                                 var res = {}; 
                                                                                 this.get('/LeftTree.view').el.get_path_at_pos(ev.button.x,ev.button.y, res);
                                                                                 
-                                                                                if (!this.get('/LeftTreeMenu').el)  { this.get('/LeftTreeMenu').init(); }
+                                                                                if (!this.get('/LeftTreeMenu').el)  {
+																					this.get('/LeftTreeMenu').init();
+																				}
                                                                                 
                                                                                 this.get('/LeftTreeMenu').el.set_screen(Gdk.Screen.get_default());
                                                                                 this.get('/LeftTreeMenu').el.show_all();
