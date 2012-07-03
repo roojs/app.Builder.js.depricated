@@ -2265,7 +2265,7 @@ Window=new XObject({
                                                                                                      GObject.TYPE_STRING, // 4 need to store type of!!!
                                                                                                       GObject.TYPE_STRING // 5 tooltip
                                                                                                   
-                                                                                                ].
+                                                                                                ],
 																	
                                                                      load : function(ar) {
                                                                     // might casue problesm..
