@@ -25,15 +25,22 @@ GtkListStore = XObject.define(
         init : function() 
         {
             XObject.prototype.init.call(this);
-            this.el.set_column_types ( 6, [
-                GObject.TYPE_STRING, 
-                GObject.TYPE_STRING, 
-                GObject.TYPE_STRING, 
-                GObject.TYPE_STRING, 
-                GObject.TYPE_STRING, 
-                GObject.TYPE_STRING 
-            ] );
             
+            if (!this.columns) { 
+                
+                this.el.set_column_types ( 6, [
+                    GObject.TYPE_STRING, 
+                    GObject.TYPE_STRING, 
+                    GObject.TYPE_STRING, 
+                    GObject.TYPE_STRING, 
+                    GObject.TYPE_STRING, 
+                    GObject.TYPE_STRING 
+                ] );
+            } else {
+                 this.el.set_column_types ( this.columns.length, this.columns);
+                  
+                
+            }
         },
         append : function( values ) {
             var iter = new Gtk.TreeIter();
