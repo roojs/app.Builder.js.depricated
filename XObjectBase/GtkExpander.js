@@ -23,9 +23,9 @@ GtkExpander = XObject.define(
         events : false,
         init : function()
         {
-            // is this a common featuer???
+            // is this a common feature??? of widgets ...?
             this.el.add_events (Gdk.EventMask.BUTTON_MOTION_MASK );
-
+ 
             
         }
     }
