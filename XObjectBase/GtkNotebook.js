@@ -14,22 +14,17 @@ GtkNotebook= XObject.define(
     }, 
     XObject,
     {
-        events : false,
+        current_page : false,
         init : function()
         {
             // is this a common feature??? of widgets ...?
             XObject.prototype.init.call(this);
             
-            current_page : 0,
-                                                    init : function() {
-                                                        XObject.prototype.init.call(this);
-                                                    	this.el.set_current_page(0);
-                                                    
-                                                    },
-            
-            for (var i = 0 ; i < this.events.length ; i++ ) { 
-                this.el.add_events (this.events[i] );
+            if (this.current_page !== false)
+            {
+                this.el.set_current_page(this.current_page);
             }
+                                                    
             
         }
     }
