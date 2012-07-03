@@ -24,10 +24,10 @@ GtkExpander = XObject.define(
         init : function()
         {
             // is this a common feature??? of widgets ...?
-            if (this.events) {
-                for (var i = 0 ; i < this.events.length ; i++ ) { 
-                    this.el.add_events (Gdk.EventMask.BUTTON_MOTION_MASK );
- 
+     
+            for (var i = 0 ; i < this.events.length ; i++ ) { 
+                this.el.add_events (Gdk.EventMask.BUTTON_MOTION_MASK );
+            }
             
         }
     }
