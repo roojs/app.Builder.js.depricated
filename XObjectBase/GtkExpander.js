@@ -12,7 +12,7 @@ GtkExpander = XObject.define(
     function(cfg) {
         
         
-        this.events = cfg.events = cfg.events || false;
+        this.events = cfg.events = cfg.events || [];
         delete cfg.events;
         XObject.call(this, cfg);
         
@@ -24,7 +24,9 @@ GtkExpander = XObject.define(
         init : function()
         {
             // is this a common feature??? of widgets ...?
-            this.el.add_events (Gdk.EventMask.BUTTON_MOTION_MASK );
+            if (this.events) {
+                for (var i = 0 ; i < this.events.length ; i++ ) { 
+                    this.el.add_events (Gdk.EventMask.BUTTON_MOTION_MASK );
  
             
         }
