@@ -33,6 +33,6 @@ GtkNotebook= XObject.define(
 GtkNotebook.config = {
    
     current_page         : {
-        type : 'Integer',
-        }
+        type : 'Integer'
+    }
 }
