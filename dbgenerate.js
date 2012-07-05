@@ -287,13 +287,13 @@ switch(cfg.DBTYPE) {
 
  
 
-var tables = Gda.execute_select_command(cnc, query_tables).fetchAll();
+var tables = cnc.execute_select_command( query_tables).fetchAll();
 print(JSON.stringify(tables));
 
 var readers = [];
 tables.forEach(function(table) {
     //print(table);
-    var schema = Gda.execute_select_command(cnc,
+    var schema = cnc.execute_select_command(
             query_describe_table.replace(/%s/, table).replace(/%n/,'public')
             ).fetchAll();
     
