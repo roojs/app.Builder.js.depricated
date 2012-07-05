@@ -122,7 +122,7 @@ Options  = XObject.define(
                     continue;
                 }
             
-                if (typeof(this.result[a.arg_long]) != 'undefined') {
+                if (typeof(this.result[a.arg_long]) != 'undefined' && this.result[a.arg_long] != a.arg_default) {
                     throw {
                         name: "ArgumentError", 
                         message: "Invalid argument duplicate: " + args[i] + ' ' + next
