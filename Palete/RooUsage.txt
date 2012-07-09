@@ -31,8 +31,7 @@ right:
 
 left:
  Roo.LayoutRegion:toolbar
- Roo.NestedLayoutPanel:toolbar
- 
+
 right:
  Roo.Toolbar
 
@@ -242,6 +241,7 @@ left:
 	Roo.Grid:toolbar
 	Roo.ContentPanel:toolbar
 	Roo.TreePanel:toolbar
+    Roo.NestedLayoutPanel:toolbar
 right:
 	Roo.Toolbar
 		
