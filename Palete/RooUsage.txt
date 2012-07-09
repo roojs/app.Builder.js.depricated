@@ -31,6 +31,8 @@ right:
 
 left:
  Roo.LayoutRegion:toolbar
+ Roo.NestedLayoutPanel:toolbar
+ 
 right:
  Roo.Toolbar
 
