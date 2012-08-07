@@ -279,7 +279,11 @@ switch(cfg.DBTYPE) {
                 
         break;
     default:
-        throw "Invalid data base type " + cfg.DBTYPE + " should be MySQL or PostgreSQL";
+        throw {
+             name: "ArgumentError", 
+             message: "Invalid data base type " + cfg.DBTYPE + " should be MySQL or PostgreSQL";
+         };
+            
 /*
            "Field": "province",
         "Type": "varchar(255)",
