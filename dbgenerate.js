@@ -159,8 +159,9 @@ function readIni(fn)
    
     var groups = key_file.get_groups();
     groups.forEach(function(g) {
-        ini[g] = {}
         print("KEY:"+g);
+        ini[g] = {}
+        
         var keys = key_file.get_keys(g);
         if (!keys) { return; }
         
