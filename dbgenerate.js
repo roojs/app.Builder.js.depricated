@@ -163,9 +163,11 @@ function readIni(fn)
         print("KEY:"+g);
         var keys = key_file.get_keys(g);
         if (!keys) { return; }
-        print(typeof(keys));
+        
         keys.forEach(function(k) {
+                print("GET val: " + k);
                 ini[g][k] = key_file.get_value(g,k);
+                print(ini[g][k] );
         })
     })
     
