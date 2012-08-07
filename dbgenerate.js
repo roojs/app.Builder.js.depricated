@@ -169,11 +169,12 @@ function readIni(fn)
                 print("GET val: " + k);
                 ini[g][k] = key_file.get_value(g,k);
                 print(ini[g][k] );
-        })
-    })
-    
+        });
+        print("DONE KEY:"+g);
+    });
+    print("DONE KEYS");
 }
- print("DONE KEYS");
+ 
 if (File.isFile(cfg.INI)) {
     if (cfg.INI.match(/links\.ini$/)) {
         readIni(cfg.INI);
