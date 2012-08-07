@@ -281,7 +281,7 @@ switch(cfg.DBTYPE) {
     default:
         throw {
              name: "ArgumentError", 
-             message: "Invalid data base type " + cfg.DBTYPE + " should be MySQL or PostgreSQL";
+             message: "Invalid data base type " + cfg.DBTYPE + " should be MySQL or PostgreSQL"
          };
             
 /*
