@@ -163,13 +163,14 @@ function readIni(fn)
         print("KEY:"+g);
         var keys = key_file.get_keys(g);
         if (!keys) { return; }
-        print(keys);
+       
         keys.forEach(function(k) {
                 ini[g][k] = key_file.get_value(g,k);
         })
     })
     
 }
+ print("DONE KEYS");
 if (File.isFile(cfg.INI)) {
     if (cfg.INI.match(/links\.ini$/)) {
         readIni(cfg.INI);
