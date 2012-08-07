@@ -159,7 +159,7 @@ function readIni(fn)
    
     var groups = key_file.get_groups();
     groups.forEach(function(g) {
-        print("KEY:"+g);
+        //print("KEY:"+g);
         ini[g] = {}
         
         var keys = key_file.get_keys(g);
@@ -170,9 +170,9 @@ function readIni(fn)
                 ini[g][k] = key_file.get_value(g,k);
                 print(ini[g][k] );
         });
-        print("DONE KEY:"+g);
+        //print("DONE KEY:"+g);
     });
-    print("DONE KEYS");
+    //print("DONE KEYS");
 }
  
 if (File.isFile(cfg.INI)) {
