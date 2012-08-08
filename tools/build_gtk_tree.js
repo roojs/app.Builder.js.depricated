@@ -89,9 +89,9 @@ function BuildLists () {
                 }
                 // now add it..
                 //print(JSON.stringify(p));Seed.exit();
-                var full_method_name = p.type;
-                if (full_method_name.indexOf('.') < 0) {
-                    full_method_name = p.memberOf + '.' + p.type;
+                var addable_type = p.type;
+                if (addable_type.indexOf('.') < 0) {
+                    addable_type = p.memberOf + '.' + p.type;
                 }
                 
                 
@@ -101,9 +101,19 @@ function BuildLists () {
                 
                 //print(full_method_name );
                 
-                if (allmethods.indexOf(full_method_name) < 0) {
-                    allmethods.push(full_method_name);
+                //if (allmethods.indexOf(full_method_name) < 0) {
+                //    allmethods.push(full_method_name);
+                //}
+                if (methods[cls].can_contain.indexOf(addable_type) < 0) {
+                    methods[cls].can_contain.push(addable_type);
                 }
+                methods[cls].using_methods[m.name] = m.params;
+                
+                return;
+            /*
+                    methods[cls].using_methods[m.name] = {};
+                }
+                
                 
                 if (typeof(methods[cls][full_method_name]) == 'undefined') {
                     methods[cls][full_method_name] = [];
@@ -112,7 +122,7 @@ function BuildLists () {
                     return;
                 }
                 methods[cls][full_method_name].push(m.name);
-                
+            */  
             });
             
         });
