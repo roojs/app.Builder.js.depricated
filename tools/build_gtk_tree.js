@@ -90,7 +90,7 @@ function BuildLists () {
                     full_method_name = p.memberOf + '.' + p.type;
                 }
                 
-                print(full_method_name );
+                //print(full_method_name );
                 
                 if (allmethods.indexOf(full_method_name) < 0) {
                     allmethods.push(full_method_name);
