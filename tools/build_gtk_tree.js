@@ -73,7 +73,7 @@ function BuildLists () {
     for (cls in classes) {
         var odata = classes[cls];
         methods[cls] = {
-            can_contain : []
+            can_contain : [],
             using_methods : { }
             
         };
