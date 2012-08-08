@@ -121,12 +121,19 @@ function BuildLists () {
     this.methods = methods;
     this.allmethods = methods;
     this.implementations = implementations;
-    print(JSON.stringify(methods,null,4));
+    //print(JSON.stringify(methods,null,4));
+    print(JSON.stringify(implementations ,null,4));
     /*
       methods is
         [a class]
             [has methods that use this object]
                 [list of methods of the top class..]
+     
+     
+      So let's pick one..
+        TOP        ARRAY  2ND
+        Gtk.Button.add(Gtk.Widget) <<
+     
      
     */
     
