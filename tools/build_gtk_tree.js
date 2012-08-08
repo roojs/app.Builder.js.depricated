@@ -24,7 +24,7 @@ GIRepository = imports.gi.GIRepository;
 GLib        = imports.gi.GLib;
 
 // we add this in, as it appears to get lost sometimes if we set it using the ENV. variable in builder.sh
-GIRepository.Repository.prepend_search_path(GLib.get_home_dir() + '/.Builder/girepository-1.1');
+//GIRepository.Repository.prepend_search_path(GLib.get_home_dir() + '/.Builder/girepository-1.1');
 
 
 imports.searchPath.push('../../gnome.introspection-doc-generator');
@@ -114,7 +114,7 @@ function BuildLists () {
     //print(JSON.stringify(implementations,null,4));
     
 }
-
+BuildLists();
 
 // we now have a list of classes / methods that can be used..
 // we now need a ui to flag stuff as "don't bother with"
