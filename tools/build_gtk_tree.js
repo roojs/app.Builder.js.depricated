@@ -86,7 +86,7 @@ function BuildLists () {
                 // now add it..
                 //print(JSON.stringify(p));Seed.exit();
                 var full_method_name = p.type;
-                if (p.type.indexOf('.') < 0) {
+                if (full_method_name.indexOf('.') < 0) {
                     full_method_name = p.memberOf + '.' + p.type;
                 }
                 
