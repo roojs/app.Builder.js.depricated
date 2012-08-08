@@ -84,7 +84,7 @@ function BuildLists () {
                     return;
                 }
                 // now add it..
-                 var full_method_name = p.ns + '.' + p.type;
+                var full_method_name = p.ns + '.' + p.type;
                 print(full_method_name );
                 
                 if (allmethods.indexOf(full_method_name) < 0) {
