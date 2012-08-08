@@ -91,7 +91,7 @@ function BuildLists () {
                 }
                 
                 
-                if (!m.name.match(/^(add|set|pack)/)) {
+                if (!m.name.match(/^(add|pack)/)) {
                     return;
                 }
                 
