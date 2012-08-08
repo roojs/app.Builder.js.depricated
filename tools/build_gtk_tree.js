@@ -90,6 +90,11 @@ function BuildLists () {
                     full_method_name = p.memberOf + '.' + p.type;
                 }
                 
+                
+                if (!m.name.match(/^(add|set|pack)/)) {
+                    return;
+                }
+                
                 //print(full_method_name );
                 
                 if (allmethods.indexOf(full_method_name) < 0) {
@@ -117,6 +122,15 @@ function BuildLists () {
     this.allmethods = methods;
     this.implementations = implementations;
     print(JSON.stringify(methods,null,4));
+    /*
+      methods is
+        [a class]
+            [has methods that use this object]
+                [list of methods of the top class..]
+     
+    */
+    
+    
     //print(JSON.stringify(implementations,null,4));
     
 }
