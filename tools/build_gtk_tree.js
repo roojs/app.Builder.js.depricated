@@ -24,7 +24,7 @@ GIRepository = imports.gi.GIRepository;
 GLib        = imports.gi.GLib;
 
 // we add this in, as it appears to get lost sometimes if we set it using the ENV. variable in builder.sh
-GIRepository.Repository.prepend_search_path(GLib.get_home_dir() + '/.Builder/girepository-1.3');
+//GIRepository.Repository.prepend_search_path(GLib.get_home_dir() + '/.Builder/girepository-1.1');
 
 
 imports.searchPath.push('../../gnome.introspection-doc-generator');
