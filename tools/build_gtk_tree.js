@@ -286,7 +286,7 @@ right:
             if (typeof(usage[par]) == 'undefined') {
                 usage[par] = [];
             }
-            usage.pushUnique(cls);
+            usage[par].pushUnique(cls);
         }
     }
     
