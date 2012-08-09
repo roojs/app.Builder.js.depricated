@@ -337,7 +337,8 @@ right:
     
     print(JSON.stringify(nusage,null,4));
     
-    
+    print(JSON.stringify(methods['Gtk.Switch'],null,4));
+
     
     
     //print(JSON.stringify(implementations ,null,4));
