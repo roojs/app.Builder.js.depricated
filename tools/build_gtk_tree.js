@@ -298,6 +298,9 @@ right:
         }
     }
     function canTop(cls) {
+        if (typeof(tops[cls]) == 'undefined') {
+            return false;
+        }
         for (var i =0; i < tops[cls].length; i++) {
             if (tops[cls][i] == '*top') {
                 return true;
