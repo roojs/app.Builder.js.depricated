@@ -342,6 +342,7 @@ right:
 		for(var dupe in usage) {
 			if (usage[par].join(',') == usage[dupe].join(',')) {
 				usage_left[par] = dupe;
+				break;
 			}
 		}
 		if (typeof(usage_left[par]) != 'undefined') {
