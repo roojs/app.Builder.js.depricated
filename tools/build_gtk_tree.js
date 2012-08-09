@@ -160,6 +160,9 @@ function BuildLists () {
                 
                 
                 implementations[addable_type].forEach(function(addable_child) {
+                    if (typeof(methods[addable_child].can_be_added_to_as[cls]) == 'undefined') {
+                        methods[addable_child].can_be_added_to_as[cls]=[];
+                    }
                     methods[addable_child].can_be_added_to_as[cls].pushUnique( add );
                     implementations[cls].forEach(function(imp) {
                         if (typeof(methods[addable_child ].can_be_added_to_as[imp]) == 'undefined') {
