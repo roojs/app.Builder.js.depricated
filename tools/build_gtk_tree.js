@@ -104,7 +104,7 @@ function BuildLists () {
              if (!m.name.match(/^(add|pack)/)) {
                 return;
             }
-            print(JSON.stringify(m,null,4));
+            //print(JSON.stringify(m,null,4));
             m.params.forEach(function(p) {
                  
                 if (!p.type || typeof(classes[p.type]) == 'undefined') {
