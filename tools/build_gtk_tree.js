@@ -133,9 +133,13 @@ function BuildLists () {
                 if (m.memberOf == 'Gtk.Buildable') {
                     return;
                 }
-                if (m.name =='add_mnemonic_label') {
+				//"Gtk.Widget:add_accelerator",
+				//"Gtk.Widget:add_device_events"
+
+                if (m.name.match(/^(add_mnemonic_label|add_accelerator|add_device_events)$/)) {
                     return;
                 }
+        
                 // in theory you can not add a window to anything.. ???
                 //if ('Gtk.Window' == addable_type || methods[addable_type].extendsClasses.indexOf('Gtk.Window') > -1) {
                 //    return;
