@@ -75,7 +75,7 @@ function BuildLists () {
         methods[cls] = {
             can_contain : [],
             can_be_added_to : [],
-            using_methods : { }.
+            using_methods : { }
             
         };
         var odata = classes[cls];
