@@ -153,7 +153,8 @@ function BuildLists () {
         var odata = methods[p];
         
         methods[p].can_be_added_to.forEach(function(c) {
-            implementations[c].forEach(function(imp) {}
+            methods[p].can_be_added_to_as[c]=c;
+            implementations[c].forEach(function(imp) {
                 methods[p].can_be_added_to_as[c]=imp;
             });
         });
