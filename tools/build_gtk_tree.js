@@ -332,11 +332,21 @@ right:
         
     }
     var nusage = {};
+	
     for(var par in usage) {
         // see if the parent can be added to something.
         if (!canTop(par)) {
             continue;
         }
+		
+		for(var dupe in usage) {
+			if (usage[par].join(',') == usage[dupe].join(',')) {
+				usage_left[par] = dupe;
+			}
+		}
+		if (typeof(usage_left[par])) {
+			continue;
+		}
         nusage[par] = usage[par];
         
     }
