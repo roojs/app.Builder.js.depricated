@@ -361,7 +361,7 @@ right:
     
     //print(JSON.stringify(methods['Gtk.Switch'],null,4));
 
-    var str = '';
+    var str = [];
 	for(var par in usage) {
 		str.push('left');
 		str.push('   ' + par);
