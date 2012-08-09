@@ -147,7 +147,7 @@ function BuildLists () {
                 }
                 methods[addable_type].can_be_added_to_as[cls].pushUnique( add );
                 implementations[cls].forEach(function(imp) {
-                    if (typeof(methods[addable_type].can_be_added_to_as[imp]) == 'undefined') {
+                    if (typeof(methods[addable_type ].can_be_added_to_as[imp]) == 'undefined') {
                         methods[addable_type].can_be_added_to_as[imp] = [];
                     }
                     
