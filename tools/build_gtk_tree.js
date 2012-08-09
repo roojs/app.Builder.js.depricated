@@ -356,8 +356,8 @@ right:
         
     }
     usage = nusage;
-    //r//int(JSON.stringify(nusage,null,4));
-    
+    print(JSON.stringify(nusage,null,4));
+    Seed.exit();
     //print(JSON.stringify(methods['Gtk.Switch'],null,4));
 
     var str = [];
