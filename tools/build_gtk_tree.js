@@ -338,7 +338,7 @@ right:
         if (!canTop(par)) {
             continue;
         }
-		
+		var duped = true;
 		for(var dupe in usage) {
 			if (usage[par].join(',') == usage[dupe].join(',') &&
 				typeof(nusage[par]) != 'undefined') {
