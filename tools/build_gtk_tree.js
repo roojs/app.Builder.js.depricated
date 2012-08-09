@@ -127,7 +127,7 @@ function BuildLists () {
                 //    methods[addable_type].can_be_added_to.push(cls);
                 //}
                 var add = {}
-                add[cls] = m.name;
+                add[m.memberOf] = m.name;
                 
                 if (typeof(methods[addable_type].can_be_added_to_as[cls]) == 'undefined') {
                     methods[addable_type].can_be_added_to_as[cls]=[];
