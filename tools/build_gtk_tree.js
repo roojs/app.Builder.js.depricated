@@ -130,8 +130,9 @@ function BuildLists () {
                     addable_type = p.memberOf + '.' + p.type;
                 }
                 
-                
-               
+                if (m.memberOf == 'Gtk.Buildable') {
+                    return;
+                }
                 // in theory you can not add a window to anything.. ???
                 //if ('Gtk.Window' == addable_type || methods[addable_type].extendsClasses.indexOf('Gtk.Window') > -1) {
                 //    return;
