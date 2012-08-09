@@ -156,7 +156,15 @@ function BuildLists () {
                     
                 });
                 
-                
+                 implementations[cls].forEach(function(imp) {
+                    if (typeof(methods[imp ].can_be_added_to_as[imp]) == 'undefined') {
+                        methods[imp].can_be_added_to_as[imp] = [];
+                    }
+                    
+                    methods[imp].can_be_added_to_as[imp].pushUnique(add);
+                     
+                    
+                });
                 
                 
                 
