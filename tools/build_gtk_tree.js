@@ -125,9 +125,9 @@ function BuildLists () {
                 //if (allmethods.indexOf(full_method_name) < 0) {
                 //    allmethods.push(full_method_name);
                 //}
-                if (methods[cls].can_contain.indexOf(addable_type) < 0) {
-                    methods[cls].can_contain.push(addable_type);
-                }
+                
+                methods[cls].can_contain.pushUnique(addable_type);
+                
                 methods[cls].using_methods[m.name] = m.params;
                 
                 //if (methods[addable_type].can_be_added_to.indexOf(cls) < 0) { 
