@@ -90,7 +90,8 @@ function BuildLists () {
         
         //print(JSON.stringify(odata.methods,null,4));
         odata.methods.forEach(function(m) {
-           
+            
+            print(JSON.stringif(m));
             m.params.forEach(function(p) {
                  
                 if (!p.type || typeof(classes[p.type]) == 'undefined') {
