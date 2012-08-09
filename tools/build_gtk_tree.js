@@ -84,7 +84,8 @@ function BuildLists () {
     var allmethods = [];  
     
     for (cls in classes) {
-        
+            var odata = classes[cls];
+    
         methods[cls] = {
             titleType : odata.titleType,
             can_contain : [],
@@ -92,7 +93,6 @@ function BuildLists () {
             //using_methods : { },
             can_be_added_to_as : {}
         };
-        var odata = classes[cls];
         
         implementations[odata.alias] = odata.titleType == 'Class' ? odata.childClasses :  odata.implementedBy;
         
