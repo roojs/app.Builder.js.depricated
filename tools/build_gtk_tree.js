@@ -90,7 +90,7 @@ function BuildLists () {
             //titleType : odata.titleType,
             extendsClasses : [],
             can_contain : [],
-            
+            can_contain_using: [],
           //  can_be_added_to : [],
             //using_methods : { },
             can_be_added_to_as : {}
