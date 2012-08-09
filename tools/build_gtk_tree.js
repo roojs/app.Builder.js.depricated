@@ -314,7 +314,7 @@ right:
             if (cls == tops[cls][i]) {
                 continue;
             }
-            if (canTop(cls, rec+1)) {
+            if (canTop(tops[cls][i], rec+1)) {
                 return true;
             }
         }
