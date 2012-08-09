@@ -127,7 +127,7 @@ function BuildLists () {
                 }
                 methods[addable_type].can_be_added_to_as[cls].push( {cls : m.name} );
                 implementations[cls].forEach(function(imp) {
-                    methods[addable_type].can_be_added_to_as[imp]=.push({ cls : m.name });
+                    methods[addable_type].can_be_added_to_as[imp].push({ cls : m.name });
                 });
                 
                 return;
