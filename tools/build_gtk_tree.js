@@ -332,7 +332,7 @@ right:
         
     }
     var nusage = {};
-	
+	var usage_left = {};
     for(var par in usage) {
         // see if the parent can be added to something.
         if (!canTop(par)) {
