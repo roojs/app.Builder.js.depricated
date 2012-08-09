@@ -84,7 +84,7 @@ function BuildLists () {
     var allmethods = [];  
     
     for (cls in classes) {
-            var odata = classes[cls];
+        var odata = classes[cls];
     
         methods[cls] = {
             //titleType : odata.titleType,
@@ -94,7 +94,7 @@ function BuildLists () {
             //using_methods : { },
             can_be_added_to_as : {}
         };
-        cls.extendsClasses.forEach(function(child) {
+        odata.extendsClasses.forEach(function(child) {
             methods[cls].push(child.alias);
         });
         
