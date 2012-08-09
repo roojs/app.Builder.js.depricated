@@ -282,7 +282,7 @@ right:
     usage = {};
     tops = {}
     usage['*top'] = implementations['Gtk.Container'];
-    usage['*top'].forEach(function(ch)) {
+    usage['*top'].forEach(function(ch) {
         tops[ch] = [ '*top' ];
     });
     for(var cls in methods) {
