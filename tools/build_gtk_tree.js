@@ -37,8 +37,15 @@ NameSpace   = imports.Introspect.NameSpace.NameSpace;
 Link        = imports.Introspect.Link.Link; 
 
 
+Array.prototype.pushUnique(v) {
+    if (this.indexOf(v) < 0) {
+        this.push(v);
+    }
+}
 
 function BuildLists () {
+ 
+    
  
 
     var ns_list = [ 'Gtk' ] ; //NameSpace.namespaces();
@@ -126,6 +133,7 @@ function BuildLists () {
                 //if (methods[addable_type].can_be_added_to.indexOf(cls) < 0) { 
                 //    methods[addable_type].can_be_added_to.push(cls);
                 //}
+                
                 
                 var add = m.memberOf '+:'+ m.name;
                 
