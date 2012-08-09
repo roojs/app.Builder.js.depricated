@@ -117,6 +117,13 @@ function BuildLists () {
                 }
                 methods[cls].using_methods[m.name] = m.params;
                 
+                if (methods[addable_type].can_be_added_to.indexOf(cls) < 0) { 
+                    methods[addable_type].can_be_added_to.push(cls);
+                }
+                
+                
+                
+                
                 return;
             /*
                     methods[cls].using_methods[m.name] = {};
