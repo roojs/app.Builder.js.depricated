@@ -361,7 +361,7 @@ right:
     }
     usage = nusage;
     //print(JSON.stringify(nusage,null,4));  Seed.exit();
-    //print(JSON.stringify(methods['Gtk.Switch'],null,4));
+    print(JSON.stringify(methods['Gtk.TextView'],null,4));
 
     var str = [];
 	for(var par in usage) {
