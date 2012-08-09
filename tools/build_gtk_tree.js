@@ -169,9 +169,11 @@ function BuildLists () {
                      
                     
                 });
-                // also needs to add 
+                // also needs to add
+                print(addable_type);
+                print(JSON.stringify(implementations[addable_type], null,4);
                 /*
-                 
+                
                 implementations[addable_type].forEach(function(addable_child) {
                     
                     if (addable_child == 'Gtk.Window') {
