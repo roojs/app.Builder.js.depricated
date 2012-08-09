@@ -67,6 +67,7 @@ function BuildLists () {
     print("Looping throught namespaces");
     var ns_idx = [];
     var implementations = {};
+    
     var methods = {};
     var allmethods = [];  
     
@@ -75,8 +76,8 @@ function BuildLists () {
         methods[cls] = {
             can_contain : [],
             can_be_added_to : [],
-            using_methods : { }
-            
+            using_methods : { },
+            can_be_added_to_as : {}
         };
         var odata = classes[cls];
         
@@ -147,7 +148,18 @@ function BuildLists () {
         
         
     }
-    
+    // fill in the added to list..
+    for(var p in methods ) {
+        var odata = methods[p];
+        
+        methods[p].can_be_added_to.forEach(function(c) {
+            implementations[c].forEach(function(imp) {}
+                methods[p].can_be_added_to_as[c]=imp;
+            });
+        });
+        
+        
+    }
     
     // now do the reverese 'can be added to'
     
