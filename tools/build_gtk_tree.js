@@ -48,7 +48,7 @@ function BuildLists () {
     
  
 
-    var ns_list = [ 'Gtk' , 'Gdk', 'Pango', 'GtkSource', 'Webkit', 'Vte'] ; //NameSpace.namespaces();
+    var ns_list = [ 'Gtk' , 'Gdk', 'Pango', 'GtkSource', 'WebKit', 'Vte'] ; //NameSpace.namespaces();
      
     ns_list = ns_list.sort();
     // let's try and load them, so we find out early what will fail.
