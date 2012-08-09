@@ -123,7 +123,10 @@ function BuildLists () {
                 }
                 
                 
-                
+                methods[addable_type].can_be_added_to_as[cls]=cls;
+                implementations[cls].forEach(function(imp) {
+                    methods[addable_type].can_be_added_to_as[imp]=c;
+                });
                 
                 return;
             /*
