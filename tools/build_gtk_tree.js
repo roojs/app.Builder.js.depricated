@@ -300,7 +300,7 @@ right:
     function canTop(cls, rec) {
         rec = rec || 0;
         if (rec > 5) {
-            print("SKIP : ' + cls);
+            print('SKIP : ' + cls);
         }
         if (typeof(tops[cls]) == 'undefined') {
             return false;
