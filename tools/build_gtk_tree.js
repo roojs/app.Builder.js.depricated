@@ -156,17 +156,25 @@ function BuildLists () {
                      
                     
                 });
-                /* 
-                implementations[addable_type].forEach(function(imp) {
-                    if (typeof(methods[addable_type ].can_be_added_to_as[imp]) == 'undefined') {
-                        methods[addable_type].can_be_added_to_as[imp] = [];
-                    }
-                    
-                    methods[addable_type].can_be_added_to_as[imp].pushUnique(add);
-                     
+                // also needs to add 
+                
+                
+                implementations[addable_type].forEach(function(addable_child) {
+                    methods[addable_child].can_be_added_to_as[cls].pushUnique( add );
+                    implementations[cls].forEach(function(imp) {
+                        if (typeof(methods[addable_child ].can_be_added_to_as[imp]) == 'undefined') {
+                            methods[addable_child].can_be_added_to_as[imp] = [];
+                        }
+                        
+                        methods[addable_child].can_be_added_to_as[imp].pushUnique(add);
+                         
+                        
+                    });
+                
+                  
                     
                 });
-                */
+                
                 
                 
                 
