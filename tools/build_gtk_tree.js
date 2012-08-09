@@ -257,7 +257,40 @@ function BuildLists () {
     this.methods = methods;
     this.allmethods = methods;
     this.implementations = implementations;
-    print(JSON.stringify(methods,null,4));
+    //print(JSON.stringify(methods,null,4));
+    // dump out a usage file..
+    
+    // basically anything that is a Gtk.Container, should be available at the top.
+    /*
+left:
+ *top
+right:
+	Gtk.Window 
+	Gtk.Dialog
+	Gtk.MessageDialog
+	Gtk.AboutDialog
+	Gtk.Dialog
+	Gtk.FontSelectionDialog 
+	Gtk.InputDialog 
+	Gtk.ColorSelectionDialog 
+	Gtk.FileChooserDialog
+	Gtk.Menu
+	GtkClutter.Window
+	Gtk.OffScreenWindow
+    */
+// these should really be based on heirachy..
+    usage = {};
+    usage['*top'] = implementations['Gtk.Container'];
+    for(var cls in methods) {
+        for (var par in methods[cls].can_be_added_to_as) {
+            if (typeof(usage[par]) == 'undefined') {
+                usage[par] = [];
+            }
+            usage.pushUnique(cls);
+        }
+    }
+    
+    print(JSON.stringify(usage,null,4));
     
     //print(JSON.stringify(implementations ,null,4));
     /*
