@@ -132,7 +132,7 @@ function BuildLists () {
                 
                
                 // in theory you can not add a window to anything.. ???
-                if (methods[addable_type].extendsClasses.indexOf('Gtk.Window') > -1) {
+                if (Gtk.Window == addable_type || methods[addable_type].extendsClasses.indexOf('Gtk.Window') > -1) {
                     return;
                 }
         // 
