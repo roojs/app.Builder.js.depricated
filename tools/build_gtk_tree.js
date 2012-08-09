@@ -70,6 +70,9 @@ function BuildLists () {
         });
     });
 
+    print(JSON.stringify(classes['Gtk.CellRenderer'], null, 4));
+          
+    
 
     print("Looping throught namespaces");
     var ns_idx = [];
@@ -147,6 +150,8 @@ function BuildLists () {
                     }
                     
                     methods[addable_type].can_be_added_to_as[imp].pushUnique(add);
+                     
+                    
                 });
                 
                 
