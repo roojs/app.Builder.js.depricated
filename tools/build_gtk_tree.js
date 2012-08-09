@@ -350,7 +350,7 @@ right:
 				break;
 			}
 		}
-		if (typeof(usage_left[par]) != 'undefined') {
+		if (duped) {
 			continue;
 		}
         nusage[par] = usage[par];
