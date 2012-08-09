@@ -340,8 +340,7 @@ right:
         }
 		var duped = false;
 		for(var dupe in usage) {
-			if (usage[par].join(',') == usage[dupe].join(',') &&
-				typeof(nusage[par]) != 'undefined') {
+			if (usage[par].join(',') == usage[dupe].join(',') ) {
 				duped = true;
 				if (usage_left[dupe] == 'undefined') {
 					usage_left[dupe] = []; 
