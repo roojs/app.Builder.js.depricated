@@ -140,13 +140,13 @@ function BuildLists () {
                 if (typeof(methods[addable_type].can_be_added_to_as[cls]) == 'undefined') {
                     methods[addable_type].can_be_added_to_as[cls]=[];
                 }
-                methods[addable_type].can_be_added_to_as[cls].push( add );
+                methods[addable_type].can_be_added_to_as[cls].pushUnique( add );
                 implementations[cls].forEach(function(imp) {
                     if (typeof(methods[addable_type].can_be_added_to_as[imp]) == 'undefined') {
                         methods[addable_type].can_be_added_to_as[imp] = [];
                     }
                     
-                    methods[addable_type].can_be_added_to_as[imp].push(add);
+                    methods[addable_type].can_be_added_to_as[imp].pushUnique(add);
                 });
                 
                 return;
