@@ -297,13 +297,32 @@ right:
             tops[cls].pushUnique(par);
         }
     }
+    function canTop(cls) {
+        for (var i =0; i < tops[cls].length; i++) {
+            if (tops[cls][i] == '*top') {
+                return true;
+            }
+            if (cls == tops[cls][i]) {
+                continue;
+            }
+            if (canTop(cls)) {
+                return true;
+            }
+        }
+        return false;
+        
+    }
+    var nusage = {};
     for(var par in usage) {
         // see if the parent can be added to something.
-        
+        if (!canTop(par)) {
+            continue;
+        }
+        nusage[par] = usage[par];
         
     }
     
-    print(JSON.stringify(usage,null,4));
+    print(JSON.stringify(nusage,null,4));
     
     
     
