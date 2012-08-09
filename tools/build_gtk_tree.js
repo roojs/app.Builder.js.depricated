@@ -71,15 +71,22 @@ function BuildLists () {
     var allmethods = [];  
     
     for (cls in classes) {
-        var odata = classes[cls];
+        
         methods[cls] = {
             can_contain : [],
             can_be_added_to : [],
             using_methods : { }.
             
         };
-           
-        implementations[odata.alias] = odata.titleType == 'Class' ? odata.childClasses :  odata.implementedBy;  
+        var odata = classes[cls];
+        
+        implementations[odata.alias] = odata.titleType == 'Class' ? odata.childClasses :  odata.implementedBy;
+        
+    }
+    for (cls in classes) {
+        var odata = classes[cls];
+        
+        
         //print(JSON.stringify(odata.methods,null,4));
         odata.methods.forEach(function(m) {
            
@@ -133,7 +140,12 @@ function BuildLists () {
         
         
     }
-    
+    for (var p in methods) {
+        for
+        
+        
+        
+    }
     
     // now do the reverese 'can be added to'
     
