@@ -280,14 +280,24 @@ right:
     */
 // these should really be based on heirachy..
     usage = {};
+    tops = {}
     usage['*top'] = implementations['Gtk.Container'];
+    usage['*top'].forEach(function(ch)) {
+        tops[ch] = [ '*top' ];
+    });
     for(var cls in methods) {
         for (var par in methods[cls].can_be_added_to_as) {
             if (typeof(usage[par]) == 'undefined') {
                 usage[par] = [];
             }
             usage[par].pushUnique(cls);
+            
         }
+    }
+    for(var par in usage) {
+        // see if the parent can be added to something.
+        
+        
     }
     
     print(JSON.stringify(usage,null,4));
