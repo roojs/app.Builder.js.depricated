@@ -286,7 +286,11 @@ right:
         tops[ch] = [ '*top' ];
     });
     for(var cls in methods) {
+        if (cls =='Gtk.Builder') {
+            continue;
+        }
         for (var par in methods[cls].can_be_added_to_as) {
+            
             if (typeof(usage[par]) == 'undefined') {
                 usage[par] = [];
             }
