@@ -156,7 +156,7 @@ function BuildLists () {
                      
                     
                 });
-                
+                /* 
                 implementations[addable_type].forEach(function(imp) {
                     if (typeof(methods[addable_type ].can_be_added_to_as[imp]) == 'undefined') {
                         methods[addable_type].can_be_added_to_as[imp] = [];
@@ -166,7 +166,7 @@ function BuildLists () {
                      
                     
                 });
-                
+                */
                 
                 
                 
