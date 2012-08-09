@@ -147,7 +147,7 @@ function BuildLists () {
                 methods[cls].can_contain.pushUnique(addable_type);
                 var add = m.memberOf +':'+ m.name;
  
-                methods[cls].can_contain_methods.pushUnique(add);
+                methods[cls].can_contain_using.pushUnique(add);
                 //methods[cls].using_methods[m.name] = m.params;
                 
                 //if (methods[addable_type].can_be_added_to.indexOf(cls) < 0) { 
