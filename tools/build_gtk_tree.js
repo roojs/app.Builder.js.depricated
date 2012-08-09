@@ -135,7 +135,7 @@ function BuildLists () {
                 //}
                 
                 
-                var add = m.memberOf '+:'+ m.name;
+                var add = m.memberOf +':'+ m.name;
                 
                 if (typeof(methods[addable_type].can_be_added_to_as[cls]) == 'undefined') {
                     methods[addable_type].can_be_added_to_as[cls]=[];
