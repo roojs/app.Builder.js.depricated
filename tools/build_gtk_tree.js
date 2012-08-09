@@ -291,7 +291,10 @@ right:
                 usage[par] = [];
             }
             usage[par].pushUnique(cls);
-            
+            if (typeof(tops[cls]) == 'undefined') {
+                tops[cls] = [];
+            }
+            tops[cls].pushUnique(par);
         }
     }
     for(var par in usage) {
