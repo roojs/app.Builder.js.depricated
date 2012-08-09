@@ -297,7 +297,11 @@ right:
             tops[cls].pushUnique(par);
         }
     }
-    function canTop(cls) {
+    function canTop(cls, rec) {
+        rec = rec || 0;
+        if (rec > 5) {
+            print("SKIP : ' + cls);
+        }
         if (typeof(tops[cls]) == 'undefined') {
             return false;
         }
@@ -308,7 +312,7 @@ right:
             if (cls == tops[cls][i]) {
                 continue;
             }
-            if (canTop(cls)) {
+            if (canTop(cls, rec+1)) {
                 return true;
             }
         }
