@@ -90,6 +90,7 @@ function BuildLists () {
             //titleType : odata.titleType,
             extendsClasses : [],
             can_contain : [],
+            
           //  can_be_added_to : [],
             //using_methods : { },
             can_be_added_to_as : {}
@@ -144,7 +145,9 @@ function BuildLists () {
                 //}
                 
                 methods[cls].can_contain.pushUnique(addable_type);
-                
+                var add = m.memberOf +':'+ m.name;
+ 
+                methods[cls].can_contain_methods.pushUnique(add);
                 //methods[cls].using_methods[m.name] = m.params;
                 
                 //if (methods[addable_type].can_be_added_to.indexOf(cls) < 0) { 
@@ -152,7 +155,6 @@ function BuildLists () {
                 //}
                 
                 
-                var add = m.memberOf +':'+ m.name;
                 
                 if (typeof(methods[addable_type].can_be_added_to_as[cls]) == 'undefined') {
                     methods[addable_type].can_be_added_to_as[cls]=[];
