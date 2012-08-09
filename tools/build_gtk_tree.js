@@ -86,6 +86,7 @@ function BuildLists () {
     for (cls in classes) {
         
         methods[cls] = {
+            titleType : odata.titleType,
             can_contain : [],
           //  can_be_added_to : [],
             //using_methods : { },
