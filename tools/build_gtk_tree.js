@@ -155,7 +155,7 @@ function BuildLists () {
         methods[p].can_be_added_to.forEach(function(c) {
             methods[p].can_be_added_to_as[c]=c;
             implementations[c].forEach(function(imp) {
-                methods[p].can_be_added_to_as[c]=imp;
+                methods[p].can_be_added_to_as[imp]=c;
             });
         });
         
