@@ -75,7 +75,7 @@ function BuildLists () {
         
         methods[cls] = {
             can_contain : [],
-            can_be_added_to : [],
+          //  can_be_added_to : [],
             using_methods : { },
             can_be_added_to_as : {}
         };
@@ -118,9 +118,9 @@ function BuildLists () {
                 }
                 methods[cls].using_methods[m.name] = m.params;
                 
-                if (methods[addable_type].can_be_added_to.indexOf(cls) < 0) { 
-                    methods[addable_type].can_be_added_to.push(cls);
-                }
+                //if (methods[addable_type].can_be_added_to.indexOf(cls) < 0) { 
+                //    methods[addable_type].can_be_added_to.push(cls);
+                //}
                 
                 
                 methods[addable_type].can_be_added_to_as[cls]=cls;
