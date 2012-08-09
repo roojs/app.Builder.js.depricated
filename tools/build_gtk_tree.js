@@ -343,6 +343,7 @@ right:
 			if (usage[par].join(',') == usage[dupe].join(',') &&
 				typeof(nusage[par]) != 'undefined') {
 				usage_left[par] = dupe;
+				usage_left[dupe].pushUnique(par);
 				break;
 			}
 		}
@@ -357,7 +358,13 @@ right:
     
     print(JSON.stringify(methods['Gtk.Switch'],null,4));
 
-    
+    var str = '';
+	for(var par in usage) {
+		str.push('left');
+		str.push('   ' + par);
+		if (typeof(usage_left[par]) != 'undefined') {
+			
+		}
     
     //print(JSON.stringify(implementations ,null,4));
     /*
