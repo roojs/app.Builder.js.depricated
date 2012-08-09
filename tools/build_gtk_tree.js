@@ -74,7 +74,8 @@ function BuildLists () {
         var odata = classes[cls];
         methods[cls] = {
             can_contain : [],
-            using_methods : { }
+            can_be_added_to : [],
+            using_methods : { }.
             
         };
            
@@ -132,6 +133,12 @@ function BuildLists () {
         
         
     }
+    
+    
+    // now do the reverese 'can be added to'
+    
+    
+    
     this.methods = methods;
     this.allmethods = methods;
     this.implementations = implementations;
@@ -148,6 +155,20 @@ function BuildLists () {
       So let's pick one..
         TOP        ARRAY  2ND
         Gtk.Button.add(Gtk.Widget) <<
+        
+        
+        What we need:
+        
+        A) what can this dragged element be dropped onto.
+        eg. list of parents.
+        
+        
+        
+        
+        B) what method is available when this object is dropped onto this one.
+        
+        
+        
      
      
     */
