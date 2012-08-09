@@ -357,18 +357,22 @@ right:
         
     }
     
-    print(JSON.stringify(nusage,null,4));
+    p//rint(JSON.stringify(nusage,null,4));
     
-    print(JSON.stringify(methods['Gtk.Switch'],null,4));
+    //print(JSON.stringify(methods['Gtk.Switch'],null,4));
 
     var str = '';
 	for(var par in usage) {
 		str.push('left');
 		str.push('   ' + par);
 		if (typeof(usage_left[par]) != 'undefined') {
-			
+			usage_left[par].forEach(function(d) { str.push('    ' + d);});
 		}
-    
+		str.push('right');
+		usage[par].forEach(function(d) { str.push('    ' + d);});
+		str.push('');
+	}
+	print(str.join("\n"));
     //print(JSON.stringify(implementations ,null,4));
     /*
       methods is
