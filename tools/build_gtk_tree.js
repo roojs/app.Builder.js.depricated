@@ -349,9 +349,9 @@ right:
 				break;
 			}
 		}
-		if (duped) {
-			continue;
-		}
+		//if (duped) {
+		//	continue;
+		//}
         nusage[par] = usage[par];
         
     }
