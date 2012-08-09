@@ -94,7 +94,7 @@ function BuildLists () {
     for (cls in classes) {
         var odata = classes[cls];
         
-        print(cls);
+        //print(cls);
         //print(JSON.stringify(odata.methods,null,4));
         odata.methods.forEach(function(m) {
             
