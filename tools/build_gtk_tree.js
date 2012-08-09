@@ -355,7 +355,7 @@ right:
         nusage[par] = usage[par];
         
     }
-    
+    usage = nusage;
     //r//int(JSON.stringify(nusage,null,4));
     
     //print(JSON.stringify(methods['Gtk.Switch'],null,4));
