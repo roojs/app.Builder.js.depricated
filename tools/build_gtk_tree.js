@@ -121,17 +121,19 @@ function BuildLists () {
                 //if (methods[addable_type].can_be_added_to.indexOf(cls) < 0) { 
                 //    methods[addable_type].can_be_added_to.push(cls);
                 //}
+                var add = {}
+                add[cls] = name;
                 
                 if (typeof(methods[addable_type].can_be_added_to_as[cls]) == 'undefined') {
                     methods[addable_type].can_be_added_to_as[cls]=[];
                 }
-                methods[addable_type].can_be_added_to_as[cls].push( {cls : m.name} );
+                methods[addable_type].can_be_added_to_as[cls].push( add );
                 implementations[cls].forEach(function(imp) {
                     if (typeof(methods[addable_type].can_be_added_to_as[imp]) == 'undefined') {
                         methods[addable_type].can_be_added_to_as[imp] = [];
                     }
                     
-                    methods[addable_type].can_be_added_to_as[imp].push({ cls : m.name });
+                    methods[addable_type].can_be_added_to_as[imp].push(add);
                 });
                 
                 return;
