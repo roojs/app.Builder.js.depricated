@@ -122,10 +122,12 @@ function BuildLists () {
                 //    methods[addable_type].can_be_added_to.push(cls);
                 //}
                 
-                
-                methods[addable_type].can_be_added_to_as[cls]=cls;
+                if (typeof(methods[addable_type].can_be_added_to_as[cls]) == 'undefined') {
+                    methods[addable_type].can_be_added_to_as[cls]=[];
+                }
+                methods[addable_type].can_be_added_to_as[cls].push( {cls : m.name} );
                 implementations[cls].forEach(function(imp) {
-                    methods[addable_type].can_be_added_to_as[imp]=cls;
+                    methods[addable_type].can_be_added_to_as[imp]=.push({ cls : m.name });
                 });
                 
                 return;
@@ -192,12 +194,13 @@ function BuildLists () {
         
         A) what can this dragged element be dropped onto.
         eg. list of parents.
-        
+        - can_be_added_to_as (left)
         
         
         
         B) what method is available when this object is dropped onto this one.
-        b
+        
+        - get the right hand side?
         
         
      
