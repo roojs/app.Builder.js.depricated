@@ -70,7 +70,9 @@ function BuildLists () {
         });
     });
 
+    print(JSON.stringify(classes['Gtk.CellRenderer'].titleType, null, 4));
     print(JSON.stringify(classes['Gtk.CellRenderer'].childClasses, null, 4));
+    print(JSON.stringify(classes['Gtk.CellRenderer'].implementedBy, null, 4));
           
     
 
