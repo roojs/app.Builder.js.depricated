@@ -130,8 +130,7 @@ function BuildLists () {
                 }
                 
                 
-               print(addable_type);
-               print(JSON.stringify(methods[addable_type].extendsClasses,null,4));
+               
                 // in theory you can not add a window to anything.. ???
                 if (methods[addable_type].extendsClasses.indexOf('Gtk.Window') > -1) {
                     return;
@@ -160,6 +159,8 @@ function BuildLists () {
                 }
                 methods[addable_type].can_be_added_to_as[cls].pushUnique( add );
                 implementations[cls].forEach(function(imp) {
+                    
+                    
                     if (typeof(methods[addable_type ].can_be_added_to_as[imp]) == 'undefined') {
                         methods[addable_type].can_be_added_to_as[imp] = [];
                     }
@@ -172,6 +173,10 @@ function BuildLists () {
                 
                 
                 implementations[addable_type].forEach(function(addable_child) {
+                    if (addable_child == 'Gtk.Window') {
+                        return;
+                    }
+                    
                     if (typeof(methods[addable_child].can_be_added_to_as[cls]) == 'undefined') {
                         methods[addable_child].can_be_added_to_as[cls]=[];
                     }
