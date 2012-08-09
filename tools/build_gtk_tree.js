@@ -104,6 +104,8 @@ function BuildLists () {
     for (cls in classes) {
         var odata = classes[cls];
         
+       
+        
         //print(cls);
         //print(JSON.stringify(odata.methods,null,4));
         odata.methods.forEach(function(m) {
@@ -129,7 +131,12 @@ function BuildLists () {
                 
                 
                
-                
+                // in theory you can not add a window to anything.. ???
+                if (methods[addable_type].extendsClasses.indexOf('Gtk.Window') > -1) {
+                    return;
+                }
+        // 
+        
                 //print(full_method_name );
                 
                 //if (allmethods.indexOf(full_method_name) < 0) {
