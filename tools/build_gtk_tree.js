@@ -69,7 +69,7 @@ function BuildLists () {
             classes[odata.alias] = odata;
         });
     });
-
+    print(JSON.stringify(classes['Gtk.CellRenderer'] , null, 4));
     //print(JSON.stringify(classes['Gtk.CellRenderer'].titleType, null, 4));
     //print(JSON.stringify(classes['Gtk.CellRenderer'].childClasses, null, 4));
     //print(JSON.stringify(classes['Gtk.CellRenderer'].implementedBy, null, 4));
