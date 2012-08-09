@@ -346,7 +346,7 @@ right:
 				if (typeof(usage_left[dupe]) == 'undefined') {
 					usage_left[dupe] = []; 
 				}
-				print(par+ ' is a dupe of ' + dupe);
+				//print(par+ ' is a dupe of ' + dupe);
 				usage_left[dupe].pushUnique(par);
 				break;
 			}
