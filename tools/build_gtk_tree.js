@@ -173,6 +173,7 @@ function BuildLists () {
                 
                 
                 implementations[addable_type].forEach(function(addable_child) {
+                    print(addable_child);
                     if (addable_child == 'Gtk.Window') {
                         return;
                     }
