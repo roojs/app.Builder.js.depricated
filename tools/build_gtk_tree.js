@@ -298,7 +298,9 @@ right:
         }
     }
     function canTop(cls, rec) {
+        
         rec = rec || 0;
+        print('CANTOP: ' + cls + ' =' + rec);
         if (rec > 5) {
             print('SKIP : ' + cls);
         }
