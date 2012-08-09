@@ -95,7 +95,7 @@ function BuildLists () {
             can_be_added_to_as : {}
         };
         odata.extendsClasses.forEach(function(child) {
-            methods[cls].push(child.alias);
+            methods[cls].extendsClasses.push(child.alias);
         });
         
         implementations[odata.alias] = odata.titleType == 'Class' ? odata.childClasses :  odata.implementedBy;
