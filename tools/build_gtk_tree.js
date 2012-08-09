@@ -91,6 +91,12 @@ function BuildLists () {
         //print(JSON.stringify(odata.methods,null,4));
         odata.methods.forEach(function(m) {
             
+            
+            
+            
+             if (!m.name.match(/^(add|pack)/)) {
+                return;
+            }
             print(JSON.stringify(m,null,4));
             m.params.forEach(function(p) {
                  
@@ -105,9 +111,7 @@ function BuildLists () {
                 }
                 
                 
-                if (!m.name.match(/^(add|pack)/)) {
-                    return;
-                }
+               
                 
                 //print(full_method_name );
                 
