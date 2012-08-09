@@ -37,7 +37,7 @@ NameSpace   = imports.Introspect.NameSpace.NameSpace;
 Link        = imports.Introspect.Link.Link; 
 
 
-Array.prototype.pushUnique(v) {
+Array.prototype.pushUnique = function(v) {
     if (this.indexOf(v) < 0) {
         this.push(v);
     }
