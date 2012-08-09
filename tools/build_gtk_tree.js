@@ -344,7 +344,7 @@ right:
 				usage_left[par] = dupe;
 			}
 		}
-		if (typeof(usage_left[par])) {
+		if (typeof(usage_left[par]) != 'undefined') {
 			continue;
 		}
         nusage[par] = usage[par];
