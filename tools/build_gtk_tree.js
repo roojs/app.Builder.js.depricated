@@ -176,12 +176,13 @@ function BuildLists () {
                 
                 implementations[addable_type].forEach(function(addable_child) {
                     
-                    if (addable_child == 'Gtk.AboutDialog') {
-                        print(JSON.stringify(methods[addable_child].extendsClasses,null,4));Seed.exit();
+                    //if (addable_child == 'Gtk.AboutDialog') {
+                    //    print(JSON.stringify(methods[addable_child].extendsClasses,null,4));Seed.exit();
                         
-                    }
+                    //}
                     
-                    if (methods[addable_child].extendsClasses.indexOf('Gtk.Window') > -1) {
+                    if (addable_child == 'Gtk.Window' ||
+                            methods[addable_child].extendsClasses.indexOf('Gtk.Window') > -1) {
                         return;
                     }
                     
