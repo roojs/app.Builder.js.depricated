@@ -297,7 +297,7 @@ function BuildLists () {
         var x = new imports.gi.Gtk[cls]();
         //print("TRY child type:  " + parent);
         
-        //print(parent + " : says children are of type : " + x.child_type());
+        print(parent + " : says children are of type : " + x.child_type());
         return true;
         
     }
