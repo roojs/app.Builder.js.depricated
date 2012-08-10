@@ -283,7 +283,7 @@ function BuildLists () {
         if (parent == 'Gtk.Bin' || methods['Gtk.Bin'].extendsClasses.indexOf(parent) > -1) {
             return false;
         }
-        if (['GtkSource.CompletionInfo', 'Gtk.MenuShell'].indexOf(parent) > -1) {
+        if (['GtkSource.CompletionInfo', 'Gtk.MenuShell', 'GtkClutter.Embed'].indexOf(parent) > -1) {
              return false;
         }
         
