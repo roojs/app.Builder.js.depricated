@@ -309,8 +309,8 @@ function BuildLists () {
         // get the Gtype for the child?
         var GObject = imports.gi.GObject;
         var match = GObject.type_from_name(ar.join(''));
-        print([ar, ct]);
-        print ("matching?" + (GObject.type_is_a(ar,  ct ) ? "YES" : "NO"));
+        print([match, ct]);
+        print ("matching?" + (GObject.type_is_a(match,  ct ) ? "YES" : "NO"));
         
         
         return true;
