@@ -276,8 +276,9 @@ function BuildLists () {
         if (method !='Gtk.Container:add') {
             return true;
         }
-        
-        var cls = parent.split('.').pop();
+        var ar =  parent.split('.')
+        var cls =ar[1];
+        var ns =ar[0];
          
         /*
         if (parent == 'Gtk.Bin' || methods['Gtk.Bin'].extendsClasses.indexOf(parent) > -1) {
@@ -293,9 +294,15 @@ function BuildLists () {
         }
         */
         
-        //print("TRY ctor:  " + parent );
-
-        var x = new imports.gi.Gtk[cls]();
+        
+        try {
+            var x = new imports.gi[ns][cls]();
+        } catch(e) {
+            print("TRY ctor:  " + parent );
+            print(e.toString());
+            return false;
+        }
+        
         //print("TRY child type:  " + parent);
         
         print(parent + " : says children are of type : " + x.child_type());
