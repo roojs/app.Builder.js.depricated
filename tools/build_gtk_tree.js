@@ -420,7 +420,7 @@ right:
     }
     var lefts = {};
     for(var par in usage) {
-        var left = usange[par].join(',');
+        var left = usage[par].join(',');
         if (typeof(lefts[left]) == 'undefined') {
             lefts[left] = [];
         }
