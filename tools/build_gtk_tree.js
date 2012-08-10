@@ -313,7 +313,7 @@ function BuildLists () {
         //print ("matching?" + (GObject.type_is_a(match,  ct ) ? "YES" : "NO"));
         
         
-        return (GObject.type_is_a(match,  ct )  ? true : false;
+        return GObject.type_is_a(match,  ct )  ? true : false;
         
     }
     
