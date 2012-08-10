@@ -427,6 +427,7 @@ right:
         lefts.push(par);
     }
     print (JSON.stringify(lefts,null,4));
+    Seed.exit();
         
         
         
