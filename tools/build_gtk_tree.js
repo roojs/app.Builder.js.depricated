@@ -270,7 +270,13 @@ function BuildLists () {
     //print(JSON.stringify(methods,null,4)); Seed.exit();
     // dump out a usage file..
     
-    function verifyUsageMethod(parent,child,method) {
+    function verifyUsageMethod(parent,child,method)
+    {
+        // currently only verifies add on container.
+        if (method !='add') {
+            
+        }
+        
         
     }
     
