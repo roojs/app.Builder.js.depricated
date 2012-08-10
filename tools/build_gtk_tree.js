@@ -285,7 +285,7 @@ function BuildLists () {
         }
         if (['GtkSource.CompletionInfo',
              'Gtk.MenuShell',
-             'Gtk.SourceView', // ??? nothing can be added to it?
+             'GtkSource.View', // ??? nothing can be added to it?
              'GtkClutter.Embed'
              ].indexOf(parent) > -1) {
              return false;
