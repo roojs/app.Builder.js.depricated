@@ -299,7 +299,7 @@ function BuildLists () {
             var x = new imports.gi[ns][cls]();
         } catch(e) {
             print("TRY ctor:  " + parent );
-            print(e.toString());
+            print(JSON.stringify(e));
             return false;
         }
         
