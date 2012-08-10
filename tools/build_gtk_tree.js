@@ -279,7 +279,7 @@ function BuildLists () {
         
         var cls = parent.split('.').pop();
          
-        
+        /*
         if (parent == 'Gtk.Bin' || methods['Gtk.Bin'].extendsClasses.indexOf(parent) > -1) {
             return false;
         }
@@ -291,6 +291,7 @@ function BuildLists () {
              ].indexOf(parent) > -1) {
              return false;
         }
+        */
         
         //print("TRY ctor:  " + parent );
 
