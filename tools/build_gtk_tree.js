@@ -273,10 +273,12 @@ function BuildLists () {
     function verifyUsageMethod(parent,child,method)
     {
         // currently only verifies add on container.
-        if (method !='add') {
-            
+        if (method !='Gtk.Container:add') {
+            return true;
         }
-        
+        var cls = parent.split('.').pop();
+        var x = new Gtk[cls]();
+        print(parent + " : says children are of type : " + x.child_type());
         
     }
     
@@ -294,7 +296,7 @@ function BuildLists () {
                 continue;
                 
             }
-            if (verifyUsageMethod(parent,child,m[1])) {
+            if (verifyUsageMethod(parent,child,methods[i])) {
                 return true;
             }
         }
