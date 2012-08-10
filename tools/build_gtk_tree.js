@@ -282,7 +282,9 @@ function BuildLists () {
         if (parent == 'Gtk.Bin' || methods['Gtk.Bin'].extendsClasses.indexOf(parent) > -1) {
             return false;
         }
-        
+        if (parent == 'GtkSource.CompletionInfo') {
+             return false;
+        }
         print("TRY ctor:  " + parent );
 
         var x = new imports.gi.Gtk[cls]();
