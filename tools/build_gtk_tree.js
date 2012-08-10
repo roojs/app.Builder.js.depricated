@@ -400,6 +400,10 @@ right:
         return false;
         
     }
+    
+    
+    
+    print (JSON.stringify(usage,null,4));
     var nusage = {};
 	var usage_left = {};
     for(var par in usage) {
