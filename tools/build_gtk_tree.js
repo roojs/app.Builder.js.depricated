@@ -393,6 +393,8 @@ right:
             tops[cls].pushUnique(par);
         }
     }
+    
+    
     function canTop(cls, rec) {
         
         rec = rec || 0;
@@ -415,11 +417,20 @@ right:
             }
         }
         return false;
-        
     }
-    
-    
-    
+    var lefts = {};
+    for(var par in usage) {
+        var left = usange[par].join(',');
+        if (typeof(lefts[left]) == 'undefined') {
+            lefts[left] = [];
+        }
+        lefts.push(par);
+    }
+    print (JSON.stringify(lefts,null,4));
+        
+        
+        
+        
     print (JSON.stringify(usage,null,4));
     var nusage = {};
 	var usage_left = {};
