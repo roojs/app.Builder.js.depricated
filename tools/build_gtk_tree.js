@@ -267,8 +267,25 @@ function BuildLists () {
     this.methods = methods;
     this.allmethods = methods;
     this.implementations = implementations;
-    //print(JSON.stringify(methods,null,4));
+    print(JSON.stringify(methods,null,4)); Seed.exit();
     // dump out a usage file..
+    
+    
+    
+    
+    
+    function verifyUsage(parent,child)
+    {
+        
+        
+        
+        
+    }
+    
+    
+    
+    
+    
     
     // basically anything that is a Gtk.Container, should be available at the top.
     /*
