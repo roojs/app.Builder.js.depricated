@@ -304,11 +304,11 @@ function BuildLists () {
         }
         
         //print("TRY child type:  " + parent);
-        
-        print(parent + " : says children are of type : " + x.child_type());
+        var ct = x.child_type();
+        print(parent + " : says children are of type : " + ct);
         // get the Gtype for the child?
-        
-        print ("matching?" + imports.gi.GObject.type_from_name(ar.join('')));
+        var match = imports.gi.GObject.type_from_name(ar.join(''))
+        print ("matching?" + ( match & ct ) ? "YES" : "NO");
         
         
         return true;
