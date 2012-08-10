@@ -267,10 +267,12 @@ function BuildLists () {
     this.methods = methods;
     this.allmethods = methods;
     this.implementations = implementations;
-    print(JSON.stringify(methods,null,4)); Seed.exit();
+    //print(JSON.stringify(methods,null,4)); Seed.exit();
     // dump out a usage file..
     
-    
+    function verifyUsageMethod(parent,child,method) {
+        
+    }
     
     function is_a(cls, instance_of) {
         return methods[cls].extendsClasses.indexOf(instance_of) > -1; 
