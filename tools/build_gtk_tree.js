@@ -290,14 +290,14 @@ function BuildLists () {
     function verifyUsage(parent,child)
     {
         // find all the methods that child can be added to parent.
-        var methods = methods[parent].can_contain_using;
-        for(var i =0;i<methods.length;i++) {
-            var m = methods[i].split(':');
+        var mts = methods[parent].can_contain_using;
+        for(var i =0;i<mts.length;i++) {
+            var m = mts[i].split(':');
             if (!is_a(child,m[0])) {
                 continue;
                 
             }
-            if (verifyUsageMethod(parent,child,methods[i])) {
+            if (verifyUsageMethod(parent,child,mts[i])) {
                 return true;
             }
         }
