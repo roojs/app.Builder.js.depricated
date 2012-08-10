@@ -269,7 +269,7 @@ function BuildLists () {
     this.implementations = implementations;
     //print(JSON.stringify(methods,null,4)); Seed.exit();
     // dump out a usage file..
-    
+    var failed = [];
     function verifyUsageMethod(parent,child,method)
     {
         // currently only verifies add on container.
