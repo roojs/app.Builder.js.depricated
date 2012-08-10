@@ -279,6 +279,7 @@ function BuildLists () {
         var cls = parent.split('.').pop();
         var x = new Gtk[cls]();
         print(parent + " : says children are of type : " + x.child_type());
+        return true;
         
     }
     
