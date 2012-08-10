@@ -305,7 +305,7 @@ function BuildLists () {
         
         //print("TRY child type:  " + parent);
         var ct = x.child_type();
-        print(parent + " : says children are of type : " + ct);
+        //print(parent + " : says children are of type : " + ct);
         // get the Gtype for the child?
         var GObject = imports.gi.GObject;
         var match = GObject.type_from_name(ar.join(''));
