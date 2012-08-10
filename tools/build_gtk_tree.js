@@ -276,6 +276,10 @@ function BuildLists () {
         if (method !='Gtk.Container:add') {
             return true;
         }
+        if (failed.indexOf(parent) > -1) {
+            return false;
+        }
+        
         var ar =  parent.split('.')
         var cls =ar[1];
         var ns =ar[0];
@@ -298,6 +302,7 @@ function BuildLists () {
         try {
             var x = new imports.gi[ns][cls]();
         } catch(e) {
+            failed.push(parent);
             print("TRY ctor:  " + parent );
             print(JSON.stringify(e));
             return false;
