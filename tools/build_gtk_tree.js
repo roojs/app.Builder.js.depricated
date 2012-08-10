@@ -286,6 +286,7 @@ function BuildLists () {
         if (['GtkSource.CompletionInfo',
              'Gtk.MenuShell',
              'GtkSource.View', // ??? nothing can be added to it?
+             'WebKit.WebView', // ??? nothing can be added to it?
              'GtkClutter.Embed'
              ].indexOf(parent) > -1) {
              return false;
