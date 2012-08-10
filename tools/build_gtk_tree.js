@@ -335,7 +335,9 @@ right:
                 usage[par] = [];
             }
             
-            verifyUsage(par,cls);
+            if (!verifyUsage(par,cls)) {
+                continue;
+            }
             
             usage[par].pushUnique(cls);
             if (typeof(tops[cls]) == 'undefined') {
