@@ -308,6 +308,8 @@ function BuildLists () {
         print(parent + " : says children are of type : " + x.child_type());
         // get the Gtype for the child?
         
+        GObject.type_From_name(ar.join(''));
+        
         
         return true;
         
@@ -465,7 +467,7 @@ right:
     /*
       methods is
         [a class]
-            [has methods that use this object]
+            [has  methods that use this object]
                 [list of methods of the top class..]
      
      
