@@ -304,6 +304,9 @@ right:
             if (typeof(usage[par]) == 'undefined') {
                 usage[par] = [];
             }
+            
+            verifyUsage(par,cls);
+            
             usage[par].pushUnique(cls);
             if (typeof(tops[cls]) == 'undefined') {
                 tops[cls] = [];
