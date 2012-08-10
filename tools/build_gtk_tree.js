@@ -360,9 +360,11 @@ right:
             continue;
         }
         for (var par in methods[cls].can_be_added_to_as) {
-             if (!verifyUsage(par,cls)) {
+            
+            if (!verifyUsage(par,cls)) {
                 continue;
             }
+            
             if (typeof(usage[par]) == 'undefined') {
                 usage[par] = [];
             }
