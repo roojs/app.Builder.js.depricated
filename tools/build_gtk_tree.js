@@ -496,6 +496,8 @@ right:
     
 }
 imports.gi.Gtk.init(Seed.argv);
+
+imports.gi.GtkClutter.init(Seed.argv);
 BuildLists();
 
 // we now have a list of classes / methods that can be used..
