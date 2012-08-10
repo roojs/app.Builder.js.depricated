@@ -424,7 +424,7 @@ right:
         if (typeof(lefts[left]) == 'undefined') {
             lefts[left] = [];
         }
-        lefts.push(par);
+        lefts[left].push(par);
     }
     print (JSON.stringify(lefts,null,4));
     Seed.exit();
