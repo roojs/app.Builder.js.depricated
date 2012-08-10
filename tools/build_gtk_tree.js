@@ -310,7 +310,7 @@ function BuildLists () {
         var GObject = imports.gi.GObject;
         var match = GObject.type_from_name(ar.join(''));
         
-        print ("matching?" + ( GObject.match(ar,  ct )) ? "YES" : "NO");
+        print ("matching?" + (GObject.match(ar,  ct ) ? "YES" : "NO"));
         
         
         return true;
