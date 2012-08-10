@@ -272,7 +272,12 @@ function BuildLists () {
     
     
     
-    
+    function is_a(cls, instance_of) {
+        if (methods[cls].extendsClasses.indexOf(instance_of) > -1) {
+            return true;
+        }
+        return false;
+    }
     
     function verifyUsage(parent,child)
     {
