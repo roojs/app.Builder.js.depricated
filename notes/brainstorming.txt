@@ -43,3 +43,29 @@ XObject.cache['/Windows'] = 'Window'
             -> cel[] = TableCell
             
 
+
+
+Building a reference for adding one element to another..
+
+a widget being added to a box...:
+a property with 'parent:' describes how it get's added to the parent..
+   parent: = add 
+   parent:add_mnemonic_label = this
+   
+   parent: =  pack_start
+   parent:expand = true
+   parent:fill = true
+   parent:padding = true
+   
+   parent: =  pack_end
+   parent:expand = true
+   parent:fill = true
+   parent:padding = true
+   
+Widget Information:
+ - parents
+ - interfaces
+ - what it can be added to, and args that need/can  to be used..
+ 
+   
+   
