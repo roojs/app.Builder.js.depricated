@@ -269,7 +269,8 @@ function BuildLists () {
     this.implementations = implementations;
     //print(JSON.stringify(methods,null,4)); Seed.exit();
     // dump out a usage file..
-    var failed = [];
+	this.failed = [];
+    var failed = this.failed;
     function verifyUsageMethod(parent,child,method)
     {
         // currently only verifies add on container.
@@ -432,7 +433,7 @@ right:
         lefts[left].push(par);
     }
     print (JSON.stringify(lefts,null,4));
-    Seed.exit();
+    Seed.quit();
         
         
         
