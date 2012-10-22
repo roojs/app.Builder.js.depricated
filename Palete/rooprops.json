@@ -2427,7 +2427,7 @@
      "name": "removeMask",
      "type": "Boolean",
      "desc": "True to create a single-use mask that is automatically destroyed after loading (useful for page loads),\nFalse to persist the mask element reference for multiple uses (e.g., for paged data widgets).  Defaults to false.",
-     "memberOf": ""
+     "memberOf": "Roo"
     },
     {
      "name": "msg",
@@ -2867,7 +2867,7 @@
      "name": "items",
      "type": "Array",
      "desc": "array of button configs or elements to add (will be converted to a MixedCollection)",
-     "memberOf": "Roo.Toolbar"
+     "memberOf": "Roo"
     }
    ],
    "events": []
@@ -3104,7 +3104,7 @@
      "name": "mode",
      "type": "String",
      "desc": "The shadow display mode.  Supports the following options:<br />\nsides: Shadow displays on both sides and bottom only<br />\nframe: Shadow displays equally on all four sides<br />\ndrop: Traditional bottom-right drop shadow (default)",
-     "memberOf": ""
+     "memberOf": "Roo"
     },
     {
      "name": "offset",
@@ -3674,7 +3674,7 @@
      "name": "items",
      "type": "Array",
      "desc": "array of button configs or elements to add (will be converted to a MixedCollection)",
-     "memberOf": ""
+     "memberOf": "Roo"
     },
     {
      "name": "container",
@@ -4089,7 +4089,7 @@
      "name": "tree",
      "type": "Roo.tree.TreePanel",
      "desc": "The tree TreePanel, with config etc.",
-     "memberOf": ""
+     "memberOf": "Roo"
     },
     {
      "name": "fitToFrame",
@@ -6707,6 +6707,12 @@
      "memberOf": ""
     },
     {
+     "name": "hiddenName",
+     "type": "String",
+     "desc": "The hidden name of the field, often contains an comma seperated list of names",
+     "memberOf": ""
+    },
+    {
      "name": "grow",
      "type": "Boolean",
      "desc": "True if this field should automatically grow and shrink to its content",
@@ -7920,7 +7926,7 @@
     },
     {
      "name": "useIso",
-     "type": "bool",
+     "type": "Boolean",
      "desc": "if enabled, then the date field will use a hidden field to store the \nreal value as iso formated date. default (false)",
      "memberOf": ""
     },
@@ -10779,6 +10785,462 @@
      "sig": "function (_self)\n{\n\n}",
      "type": "function",
      "desc": "Fires after the component is shown."
+    }
+   ]
+  },
+  "Roo.form.MonthField": {
+   "props": [
+    {
+     "name": "format",
+     "type": "String",
+     "desc": "The default date format string which can be overriden for localization support.  The format must be\nvalid according to {@link Date#parseDate} (defaults to 'm/d/y').",
+     "memberOf": ""
+    },
+    {
+     "name": "altFormats",
+     "type": "String",
+     "desc": "Multiple date formats separated by \"|\" to try when parsing a user input value and it doesn't match the defined\nformat (defaults to 'm/d/Y|m-d-y|m-d-Y|m/d|m-d|d').",
+     "memberOf": ""
+    },
+    {
+     "name": "disabledDays",
+     "type": "Array",
+     "desc": "An array of days to disable, 0 based. For example, [0, 6] disables Sunday and Saturday (defaults to null).",
+     "memberOf": ""
+    },
+    {
+     "name": "disabledDaysText",
+     "type": "String",
+     "desc": "The tooltip to display when the date falls on a disabled day (defaults to 'Disabled')",
+     "memberOf": ""
+    },
+    {
+     "name": "disabledDates",
+     "type": "Array",
+     "desc": "An array of \"dates\" to disable, as strings. These strings will be used to build a dynamic regular\nexpression so they are very powerful. Some examples:\n<ul>\n<li>[\"03/08/2003\", \"09/16/2003\"] would disable those exact dates</li>\n<li>[\"03/08\", \"09/16\"] would disable those days for every year</li>\n<li>[\"^03/08\"] would only match the beginning (useful if you are using short years)</li>\n<li>[\"03/../2006\"] would disable every day in March 2006</li>\n<li>[\"^03\"] would disable every day in every March</li>\n</ul>\nIn order to support regular expressions, if you are using a date format that has \".\" in it, you will have to\nescape the dot when restricting dates. For example: [\"03\\\\.08\\\\.03\"].",
+     "memberOf": ""
+    },
+    {
+     "name": "disabledDatesText",
+     "type": "String",
+     "desc": "The tooltip text to display when the date falls on a disabled date (defaults to 'Disabled')",
+     "memberOf": ""
+    },
+    {
+     "name": "minValue",
+     "type": "Date/String",
+     "desc": "The minimum allowed date. Can be either a Javascript date object or a string date in a\nvalid format (defaults to null).",
+     "memberOf": ""
+    },
+    {
+     "name": "maxValue",
+     "type": "Date/String",
+     "desc": "The maximum allowed date. Can be either a Javascript date object or a string date in a\nvalid format (defaults to null).",
+     "memberOf": ""
+    },
+    {
+     "name": "minText",
+     "type": "String",
+     "desc": "The error text to display when the date in the cell is before minValue (defaults to\n'The date in this field must be after {minValue}').",
+     "memberOf": ""
+    },
+    {
+     "name": "maxText",
+     "type": "String",
+     "desc": "The error text to display when the date in the cell is after maxValue (defaults to\n'The date in this field must be before {maxValue}').",
+     "memberOf": ""
+    },
+    {
+     "name": "invalidText",
+     "type": "String",
+     "desc": "The error text to display when the date in the field is invalid (defaults to\n'{value} is not a valid date - it must be in the format {format}').",
+     "memberOf": ""
+    },
+    {
+     "name": "triggerClass",
+     "type": "String",
+     "desc": "An additional CSS class used to style the trigger button.  The trigger will always get the\nclass 'x-form-trigger' and triggerClass will be <b>appended</b> if specified (defaults to 'x-form-date-trigger'\nwhich displays a calendar icon).",
+     "memberOf": ""
+    },
+    {
+     "name": "useIso",
+     "type": "Boolean",
+     "desc": "if enabled, then the date field will use a hidden field to store the \nreal value as iso formated date. default (true)",
+     "memberOf": ""
+    },
+    {
+     "name": "autoCreate",
+     "type": "String/Object",
+     "desc": "A DomHelper element spec, or true for a default element spec (defaults to\n{tag: \"input\", type: \"text\", size: \"10\", autocomplete: \"off\"})",
+     "memberOf": ""
+    },
+    {
+     "name": "hideTrigger",
+     "type": "Boolean",
+     "desc": "True to hide the trigger element and display only the base text field (defaults to false)",
+     "memberOf": "Roo.form.TriggerField"
+    },
+    {
+     "name": "vtype",
+     "type": "String",
+     "desc": "A validation type name as defined in {@link Roo.form.VTypes} (defaults to null)",
+     "memberOf": "Roo.form.TextField"
+    },
+    {
+     "name": "maskRe",
+     "type": "String",
+     "desc": "An input mask regular expression that will be used to filter keystrokes that don't match (defaults to null)",
+     "memberOf": "Roo.form.TextField"
+    },
+    {
+     "name": "disableKeyFilter",
+     "type": "Boolean",
+     "desc": "True to disable input keystroke filtering (defaults to false)",
+     "memberOf": "Roo.form.TextField"
+    },
+    {
+     "name": "allowBlank",
+     "type": "Boolean",
+     "desc": "False to validate that the value length > 0 (defaults to true)",
+     "memberOf": "Roo.form.TextField"
+    },
+    {
+     "name": "minLength",
+     "type": "Number",
+     "desc": "Minimum input field length required (defaults to 0)",
+     "memberOf": "Roo.form.TextField"
+    },
+    {
+     "name": "maxLength",
+     "type": "Number",
+     "desc": "Maximum input field length allowed (defaults to Number.MAX_VALUE)",
+     "memberOf": "Roo.form.TextField"
+    },
+    {
+     "name": "minLengthText",
+     "type": "String",
+     "desc": "Error text to display if the minimum length validation fails (defaults to \"The minimum length for this field is {minLength}\")",
+     "memberOf": "Roo.form.TextField"
+    },
+    {
+     "name": "maxLengthText",
+     "type": "String",
+     "desc": "Error text to display if the maximum length validation fails (defaults to \"The maximum length for this field is {maxLength}\")",
+     "memberOf": "Roo.form.TextField"
+    },
+    {
+     "name": "selectOnFocus",
+     "type": "Boolean",
+     "desc": "True to automatically select any existing field text when the field receives input focus (defaults to false)",
+     "memberOf": "Roo.form.TextField"
+    },
+    {
+     "name": "blankText",
+     "type": "String",
+     "desc": "Error text to display if the allow blank validation fails (defaults to \"This field is required\")",
+     "memberOf": "Roo.form.TextField"
+    },
+    {
+     "name": "validator",
+     "type": "Function",
+     "desc": "A custom validation function to be called during field validation (defaults to null).\nIf available, this function will be called only after the basic validators all return true, and will be passed the\ncurrent field value and expected to return boolean true if the value is valid or a string error message if invalid.",
+     "memberOf": "Roo.form.TextField"
+    },
+    {
+     "name": "regex",
+     "type": "RegExp",
+     "desc": "A JavaScript RegExp object to be tested against the field value during validation (defaults to null).\nIf available, this regex will be evaluated only after the basic validators all return true, and will be passed the\ncurrent field value.  If the test fails, the field will be marked invalid using {@link #regexText}.",
+     "memberOf": "Roo.form.TextField"
+    },
+    {
+     "name": "regexText",
+     "type": "String",
+     "desc": "The error text to display if {@link #regex} is used and the test fails during validation (defaults to \"\")",
+     "memberOf": "Roo.form.TextField"
+    },
+    {
+     "name": "emptyText",
+     "type": "String",
+     "desc": "The default text to display in an empty field (defaults to null).",
+     "memberOf": "Roo.form.TextField"
+    },
+    {
+     "name": "emptyClass",
+     "type": "String",
+     "desc": "The CSS class to apply to an empty field to style the {@link #emptyText} (defaults to\n'x-form-empty-field').  This class is automatically added and removed as needed depending on the current field value.",
+     "memberOf": "Roo.form.TextField"
+    },
+    {
+     "name": "fieldLabel",
+     "type": "String",
+     "desc": "Label to use when rendering a form.",
+     "memberOf": "Roo.form.Field"
+    },
+    {
+     "name": "qtip",
+     "type": "String",
+     "desc": "Mouse over tip",
+     "memberOf": "Roo.form.Field"
+    },
+    {
+     "name": "name",
+     "type": "String",
+     "desc": "The field's HTML name attribute.",
+     "memberOf": "Roo.form.Field"
+    },
+    {
+     "name": "invalidClass",
+     "type": "String",
+     "desc": "The CSS class to use when marking a field invalid (defaults to \"x-form-invalid\")",
+     "memberOf": "Roo.form.Field"
+    },
+    {
+     "name": "focusClass",
+     "type": "String",
+     "desc": "The CSS class to use when the field receives focus (defaults to \"x-form-focus\")",
+     "memberOf": "Roo.form.Field"
+    },
+    {
+     "name": "validationEvent",
+     "type": "String/Boolean",
+     "desc": "The event that should initiate field validation. Set to false to disable\n      automatic validation (defaults to \"keyup\").",
+     "memberOf": "Roo.form.Field"
+    },
+    {
+     "name": "validateOnBlur",
+     "type": "Boolean",
+     "desc": "Whether the field should validate when it loses focus (defaults to true).",
+     "memberOf": "Roo.form.Field"
+    },
+    {
+     "name": "validationDelay",
+     "type": "Number",
+     "desc": "The length of time in milliseconds after user input begins until validation is initiated (defaults to 250)",
+     "memberOf": "Roo.form.Field"
+    },
+    {
+     "name": "fieldClass",
+     "type": "String",
+     "desc": "The default CSS class for the field (defaults to \"x-form-field\")",
+     "memberOf": "Roo.form.Field"
+    },
+    {
+     "name": "msgTarget",
+     "type": "String",
+     "desc": "The location where error text should display.  Should be one of the following values (defaults to 'qtip'):\n<pre>\nValue         Description\n-----------   ----------------------------------------------------------------------\nqtip          Display a quick tip when the user hovers over the field\ntitle         Display a default browser title attribute popup\nunder         Add a block div beneath the field containing the error text\nside          Add an error icon to the right of the field with a popup on hover\n[element id]  Add the error text directly to the innerHTML of the specified element\n</pre>",
+     "memberOf": "Roo.form.Field"
+    },
+    {
+     "name": "msgFx",
+     "type": "String",
+     "desc": "<b>Experimental</b> The effect used when displaying a validation message under the field (defaults to 'normal').",
+     "memberOf": "Roo.form.Field"
+    },
+    {
+     "name": "readOnly",
+     "type": "Boolean",
+     "desc": "True to mark the field as readOnly in HTML (defaults to false) -- Note: this only sets the element's readOnly DOM attribute.",
+     "memberOf": "Roo.form.Field"
+    },
+    {
+     "name": "disabled",
+     "type": "Boolean",
+     "desc": "True to disable the field (defaults to false).",
+     "memberOf": "Roo.form.Field"
+    },
+    {
+     "name": "inputType",
+     "type": "String",
+     "desc": "The type attribute for input fields -- e.g. radio, text, password (defaults to \"text\").",
+     "memberOf": "Roo.form.Field"
+    },
+    {
+     "name": "tabIndex",
+     "type": "Number",
+     "desc": "The tabIndex for this field. Note this only applies to fields that are rendered, not those which are built via applyTo (defaults to undefined).",
+     "memberOf": "Roo.form.Field"
+    },
+    {
+     "name": "value",
+     "type": "Mixed",
+     "desc": "A value to initialize this field with.",
+     "memberOf": "Roo.form.Field"
+    },
+    {
+     "name": "cls",
+     "type": "String",
+     "desc": "A CSS class to apply to the field's underlying element.",
+     "memberOf": "Roo.form.Field"
+    },
+    {
+     "name": "width",
+     "type": "Number",
+     "desc": "width (optional) size of component",
+     "memberOf": "Roo.BoxComponent"
+    },
+    {
+     "name": "height",
+     "type": "Number",
+     "desc": "height (optional) size of component",
+     "memberOf": "Roo.BoxComponent"
+    },
+    {
+     "name": "disableClass",
+     "type": "String",
+     "desc": "CSS class added to the component when it is disabled (defaults to \"x-item-disabled\").",
+     "memberOf": "Roo.Component"
+    },
+    {
+     "name": "allowDomMove",
+     "type": "Boolean",
+     "desc": "Whether the component can move the Dom node when rendering (defaults to true).",
+     "memberOf": "Roo.Component"
+    },
+    {
+     "name": "hideMode",
+     "type": "String",
+     "desc": "How this component should hidden. Supported values are\n\"visibility\" (css visibility), \"offsets\" (negative offset position) and\n\"display\" (css display) - defaults to \"display\".",
+     "memberOf": "Roo.Component"
+    },
+    {
+     "name": "actionMode",
+     "type": "String",
+     "desc": "which property holds the element that used for  hide() / show() / disable() / enable()\ndefault is 'el'",
+     "memberOf": "Roo.Component"
+    },
+    {
+     "name": "listeners",
+     "type": "Object",
+     "desc": "list of events and functions to call for this object, \nFor example :\n<pre><code>\n    listeners :  { \n       'click' : function(e) {\n           ..... \n        } ,\n        .... \n    } \n  </code></pre>",
+     "memberOf": "Roo.util.Observable"
+    }
+   ],
+   "events": [
+    {
+     "name": "autosize",
+     "sig": "function (_self, width)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires when the autosize function is triggered.  The field may or may not have actually changed size\naccording to the default logic, but this event provides a hook for the developer to apply additional\nlogic at runtime to resize the field if needed."
+    },
+    {
+     "name": "beforedestroy",
+     "sig": "function (_self)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires before the component is destroyed. Return false to stop the destroy."
+    },
+    {
+     "name": "beforehide",
+     "sig": "function (_self)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires before the component is hidden. Return false to stop the hide."
+    },
+    {
+     "name": "beforerender",
+     "sig": "function (_self)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires before the component is rendered. Return false to stop the render."
+    },
+    {
+     "name": "beforeshow",
+     "sig": "function (_self)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires before the component is shown.  Return false to stop the show."
+    },
+    {
+     "name": "blur",
+     "sig": "function (_self)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires when this field loses input focus."
+    },
+    {
+     "name": "change",
+     "sig": "function (_self, newValue, oldValue)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires just before the field blurs if the field value has changed."
+    },
+    {
+     "name": "destroy",
+     "sig": "function (_self)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires after the component is destroyed."
+    },
+    {
+     "name": "disable",
+     "sig": "function (_self)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires after the component is disabled."
+    },
+    {
+     "name": "enable",
+     "sig": "function (_self)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires after the component is enabled."
+    },
+    {
+     "name": "focus",
+     "sig": "function (_self)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires when this field receives input focus."
+    },
+    {
+     "name": "hide",
+     "sig": "function (_self)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires after the component is hidden."
+    },
+    {
+     "name": "invalid",
+     "sig": "function (_self, msg)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires after the field has been marked as invalid."
+    },
+    {
+     "name": "keyup",
+     "sig": "function (_self, e)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires after the key up"
+    },
+    {
+     "name": "move",
+     "sig": "function (_self, x, y)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires after the component is moved."
+    },
+    {
+     "name": "render",
+     "sig": "function (_self)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires after the component is rendered."
+    },
+    {
+     "name": "resize",
+     "sig": "function (_self, adjWidth, adjHeight, rawWidth, rawHeight)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires after the component is resized."
+    },
+    {
+     "name": "select",
+     "sig": "function (combo, date)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires when a date is selected"
+    },
+    {
+     "name": "show",
+     "sig": "function (_self)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires after the component is shown."
+    },
+    {
+     "name": "specialkey",
+     "sig": "function (_self, e)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires when any key related to navigation (arrows, tab, enter, esc, etc.) is pressed.  You can check\n{@link Roo.EventObject#getKey} to determine which key was pressed."
+    },
+    {
+     "name": "valid",
+     "sig": "function (_self)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires after the field has been validated with no errors."
     }
    ]
   },
@@ -16509,6 +16971,12 @@
      "name": "dataUrl",
      "type": "String",
      "desc": "The URL from which to request a Json string which\nspecifies an array of node definition object representing the child nodes\nto be loaded.",
+     "memberOf": ""
+    },
+    {
+     "name": "requestMethod",
+     "type": "String",
+     "desc": "either GET or POST\ndefaults to POST (due to BC)\nto be loaded.",
      "memberOf": ""
     },
     {
