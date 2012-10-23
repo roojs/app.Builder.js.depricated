@@ -90,7 +90,8 @@ right:
   Roo.form.Hidden         
   Roo.form.TextField         
   Roo.form.GridField
-  Roo.form.DateField         
+  Roo.form.DateField
+  Roo.form.MonthField           
   Roo.form.NumberField         
   Roo.form.Checkbox         
   Roo.form.Radio         
@@ -113,7 +114,8 @@ left:
   Roo.grid.GridEditor:field
 right:
   Roo.form.TextField         
-  Roo.form.DateField         
+  Roo.form.DateField
+  Roo.form.MonthField             
   Roo.form.NumberField         
   Roo.form.Checkbox         
   Roo.form.Radio         
@@ -149,6 +151,7 @@ right:
   Roo.form.ComboBox
   Roo.form.ComboCheck
   Roo.form.DateField
+  Roo.form.MonthField             
   Roo.form.TextField
 
 //Toolbar           
@@ -165,6 +168,7 @@ right:
   Roo.form.ComboBox
   Roo.form.ComboCheck
   Roo.form.DateField
+  Roo.form.MonthField             
   Roo.form.TextField
 
            
