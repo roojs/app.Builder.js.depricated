@@ -30,7 +30,7 @@ right:
 // toolbar at the right of the tabs.
 
 left:
- Roo.LayoutRegion:toolbar
+ Roo.LayoutRe`ion:toolbar
 
 right:
  Roo.Toolbar
@@ -338,6 +338,7 @@ right:
 
 left: 
    Roo.grid.Grid:dragTarget
+   Roo.grid.EditorGrid:dragTarget 
 right:
    Roo.dd.DropTarget
   
