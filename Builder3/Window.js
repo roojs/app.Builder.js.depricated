@@ -764,7 +764,7 @@ Window=new XObject({
                                                                             },
                                                                             
                                                                     init : function() {
-                                                                        	XObject.prototype.init.call(this);
+                                                                        XObject.prototype.init.call(this);
                                                                     	var description = new Pango.FontDescription.c_new();
                                                                     	description.set_size(8000);
                                                                     	this.el.modify_font(description);
@@ -1060,7 +1060,7 @@ Window=new XObject({
                                                                                 
                                                                                 
                                                                             },
-																			columns : [
+									    columns : [
                                                                                         GObject.TYPE_STRING, // title 
                                                                                         GObject.TYPE_STRING, // tip
                                                                                         GObject.TYPE_STRING // source..
