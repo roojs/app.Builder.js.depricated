@@ -71,7 +71,7 @@ EditProject=new XObject({
         {
             xtype: Gtk.VBox,
             pack : function(p,e) {
-                    p.el.get_content_area().pack_start(e.el,true,true);
+                    p.el.get_content_area().pack_start(e.el,true,true,3);
                 },
             items : [
                 {
