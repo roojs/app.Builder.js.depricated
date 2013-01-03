@@ -375,9 +375,7 @@ Roo = XObject.define(
             if (isPreview) {
                 parent = 'false'
             }
-            if (this.parent && this.parent[0] == '(') {
-                parent  = this.parent;
-            }
+            
           
             return [
                 this.outputHeader(),
