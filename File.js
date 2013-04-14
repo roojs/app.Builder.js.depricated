@@ -92,7 +92,7 @@ var File = {
 
     list : function (path) {
         var listing = [];
-
+	print(path);
         var f = Gio.file_new_for_path(String(path));
         var file_enum = f.enumerate_children(Gio.FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME, Gio.FileQueryInfoFlags.NONE, null);
 
