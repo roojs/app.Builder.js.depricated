@@ -1565,12 +1565,15 @@ Window=new XObject({
                                                                                     
                                                                                     loadData : function(data) {
 																						//print("load data called");Seed.quit();
+																						print(data);Seed.quit();
 																						
-                                                                                         var ov = this.get('/LeftProjectTree.combo').getValue();
+                                                                                        var ov = this.get('/LeftProjectTree.combo').getValue();
                                                                                         this.el.clear();
                                                                                         var el = this.el;
                                                                                         var na = {};
-                                                                                        data.forEach(function(p) {
+                                                                                        
+																						
+																						data.forEach(function(p) {
                                                                                             
                                                                                             el.append(na);
                                                                                             //print(JSON.stringify(XObject.keys(na)));
