@@ -52,7 +52,7 @@ ProjectManager =  new Observable({
         for (var i =0 ; i < files.length;i++) {
             var fn = files[i];
              print(fn);
-            if (!fn.match(/.json$/)) {
+            if (!fn.match(/\.json$/)) {
                 continue;
             }
             var str = File.read(this.dirname + '/' + fn);
