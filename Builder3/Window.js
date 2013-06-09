@@ -381,6 +381,7 @@ Window=new XObject({
                                                        
                                                         var model = this.get('/LeftProjectTree.combomodel');
                                                         //  print ("loading Projects?")
+														print(JSON.Stringify(pm, null,4));Seed.exit();
                                                         //console.dump(pm.projects);
                                                         model.loadData(pm.projects);
                                                          
