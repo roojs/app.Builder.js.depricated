@@ -1,4 +1,4 @@
-Gtk = imports.gi.Gtk;
+	Gtk = imports.gi.Gtk;
 Gdk = imports.gi.Gdk;
 Pango = imports.gi.Pango;
 GLib = imports.gi.GLib;
@@ -1564,6 +1564,8 @@ Window=new XObject({
 																					
                                                                                     
                                                                                     loadData : function(data) {
+																						print("load data called");Seed.quit();
+																						
                                                                                          var ov = this.get('/LeftProjectTree.combo').getValue();
                                                                                         this.el.clear();
                                                                                         var el = this.el;
