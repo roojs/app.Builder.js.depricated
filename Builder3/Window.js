@@ -1564,7 +1564,7 @@ Window=new XObject({
 																					
                                                                                     
                                                                                     loadData : function(data) {
-																						print("load data called");Seed.quit();
+																						//print("load data called");Seed.quit();
 																						
                                                                                          var ov = this.get('/LeftProjectTree.combo').getValue();
                                                                                         this.el.clear();
