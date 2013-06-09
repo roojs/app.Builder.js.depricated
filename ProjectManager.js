@@ -46,6 +46,9 @@ ProjectManager =  new Observable({
       
         this.projects = [];
         var files = File.list(this.dirname);
+        
+        
+        print(files);Seed.quit();
         for (var i =0 ; i < files.length;i++) {
             var fn = files[i];
              
