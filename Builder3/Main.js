@@ -7,7 +7,7 @@ Json.xstringify = function (o) {
 	  var seen = [];
 	  return JSON.stringify(o, function(_, value) {
 		  if (typeof value === 'object' && value !== null) {
-			  if (seen.indexOf(value) !== -1) return;
+			  if (seen.indexOf(value) !== -1) return null;
 			  else seen.push(value);
 		  }
 		  return value;
