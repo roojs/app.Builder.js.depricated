@@ -272,7 +272,7 @@ Base = XObject.define(
         scanDir : function(dir, dp) 
         {
             dp = dp || 0;
-            Seed.print("Project.Base: Running scandir on " + dir);Seeed.quit();
+            Seed.print("Project.Base: Running scandir on " + dir);
             if (dp > 5) { // no more than 5 deep?
                 return;
             }
