@@ -3,6 +3,17 @@ Gdk = imports.gi.Gdk;
 
 Window = imports.Builder3.Window.Window;
 
+Json.xstringify = function (o) {}
+	  var seen = [];
+	  return JSON.stringify(o, function(_, value) {
+		  if (typeof value === 'object' && value !== null) {
+			  if (seen.indexOf(value) !== -1) return;
+			  else seen.push(value);
+		  }
+		  return value;
+	  }, 4);
+}
+
 /*
 atoms = {
                "STRING" : Gdk.atom_intern("STRING")
