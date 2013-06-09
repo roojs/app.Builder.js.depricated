@@ -51,7 +51,7 @@ ProjectManager =  new Observable({
         //print(files);Seed.quit();
         for (var i =0 ; i < files.length;i++) {
             var fn = files[i];
-             
+             print(fn);
             if (!fn.match(/.json$/)) {
                 continue;
             }
