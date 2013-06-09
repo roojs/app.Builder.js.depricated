@@ -57,6 +57,7 @@ ProjectManager =  new Observable({
             }
             var str = File.read(this.dirname + '/' + fn);
             if (!str || !str.length) {
+                print("EMPTY");
                 continue; // empty file.
             }
              
