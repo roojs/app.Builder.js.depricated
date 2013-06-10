@@ -75,7 +75,7 @@ ProjectManager =  new Observable({
             
              
         }
-        print(JSON.stringify(this.projects.length));Seed.quit();
+//        print(JSON.stringify(this.projects.length));Seed.quit();
    
         this.projects.sort(function(a,b) {
             if (a.getName() == b.getName()) {
