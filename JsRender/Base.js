@@ -186,7 +186,10 @@ Base = XObject.define(
             var isArray = false;
             isListener = isListener || false;
 
-		            
+		if (!obj) {
+			print("missing obj?");
+			return;
+}            
 
             // am I munging a object or array...
             if (obj.constructor && obj.constructor.toString() === Array.toString()) {
