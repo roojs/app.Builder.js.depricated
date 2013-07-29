@@ -185,9 +185,11 @@ Base = XObject.define(
             var keys = [];
             var isArray = false;
             isListener = isListener || false;
-             
+
+		            
+
             // am I munging a object or array...
-            if (obj.constructor.toString() === Array.toString()) {
+            if (obj.constructor && obj.constructor.toString() === Array.toString()) {
                 for (var i= 0; i < obj.length; i++) {
                     keys.push(i);
                 }
