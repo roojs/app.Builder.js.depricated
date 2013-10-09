@@ -18,7 +18,56 @@
    "events": []
   },
   "Roo.Ajax": {
-   "props": [],
+   "props": [
+    {
+     "name": "url",
+     "type": "String",
+     "desc": "The default URL to be used for requests to the server. (defaults to undefined)",
+     "memberOf": ""
+    },
+    {
+     "name": "extraParams",
+     "type": "Object",
+     "desc": "An object containing properties which are used as extra parameters to each request made by this object. (defaults to undefined)",
+     "memberOf": ""
+    },
+    {
+     "name": "defaultHeaders",
+     "type": "Object",
+     "desc": "An object containing request headers which are added to each request made by this object. (defaults to undefined)",
+     "memberOf": ""
+    },
+    {
+     "name": "method",
+     "type": "String",
+     "desc": "(Optional)  The default HTTP method to be used for requests. (defaults to undefined; if not set but parms are present will use POST, otherwise GET)",
+     "memberOf": ""
+    },
+    {
+     "name": "timeout",
+     "type": "Number",
+     "desc": "(Optional) The timeout in milliseconds to be used for requests. (defaults to 30000)",
+     "memberOf": ""
+    },
+    {
+     "name": "autoAbort",
+     "type": "Boolean",
+     "desc": "(Optional) Whether a new request should abort any pending requests. (defaults to false)",
+     "memberOf": ""
+    },
+    {
+     "name": "disableCaching",
+     "type": "Boolean",
+     "desc": "(Optional)   True to add a unique cache-buster param to GET requests. (defaults to true)",
+     "memberOf": ""
+    },
+    {
+     "name": "listeners",
+     "type": "Object",
+     "desc": "list of events and functions to call for this object, \nFor example :\n<pre><code>\n    listeners :  { \n       'click' : function(e) {\n           ..... \n        } ,\n        .... \n    } \n  </code></pre>",
+     "memberOf": "Roo.util.Observable"
+    }
+   ],
    "events": [
     {
      "name": "beforerequest",
@@ -1759,6 +1808,12 @@
      "name": "emptyText",
      "type": "String",
      "desc": "The empty text to show when nothing is loaded.",
+     "memberOf": "Roo.View"
+    },
+    {
+     "name": "text",
+     "type": "String",
+     "desc": "to display on mask (default Loading)",
      "memberOf": "Roo.View"
     },
     {
@@ -4292,6 +4347,12 @@
      "memberOf": ""
     },
     {
+     "name": "text",
+     "type": "String",
+     "desc": "to display on mask (default Loading)",
+     "memberOf": ""
+    },
+    {
      "name": "multiSelect",
      "type": "Boolean",
      "desc": "Allow multiple selection",
@@ -4732,6 +4793,12 @@
      "desc": "Fires before a request is made for a new data object.  If the beforeload handler returns false\nthe load action will be canceled."
     },
     {
+     "name": "beforeloadadd",
+     "sig": "function (_self, records, options)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires after a new set of Records has been loaded."
+    },
+    {
      "name": "clear",
      "sig": "function (_self)\n{\n\n}",
      "type": "function",
@@ -4747,7 +4814,7 @@
      "name": "load",
      "sig": "function (_self, records, options)\n{\n\n}",
      "type": "function",
-     "desc": "Fires after a new set of Records has been loaded."
+     "desc": "Fires after a new set of Records has been loaded, before they are added to the store."
     },
     {
      "name": "loadexception",
@@ -4973,6 +5040,12 @@
      "desc": "Fires before a request is made for a new data object.  If the beforeload handler returns false\nthe load action will be canceled."
     },
     {
+     "name": "beforeloadadd",
+     "sig": "function (_self, records, options)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires after a new set of Records has been loaded."
+    },
+    {
      "name": "clear",
      "sig": "function (_self)\n{\n\n}",
      "type": "function",
@@ -4988,7 +5061,7 @@
      "name": "load",
      "sig": "function (_self, records, options)\n{\n\n}",
      "type": "function",
-     "desc": "Fires after a new set of Records has been loaded."
+     "desc": "Fires after a new set of Records has been loaded, before they are added to the store."
     },
     {
      "name": "loadexception",
@@ -5097,6 +5170,12 @@
      "desc": "Fires before a request is made for a new data object.  If the beforeload handler returns false\nthe load action will be canceled."
     },
     {
+     "name": "beforeloadadd",
+     "sig": "function (_self, records, options)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires after a new set of Records has been loaded."
+    },
+    {
      "name": "clear",
      "sig": "function (_self)\n{\n\n}",
      "type": "function",
@@ -5112,7 +5191,7 @@
      "name": "load",
      "sig": "function (_self, records, options)\n{\n\n}",
      "type": "function",
-     "desc": "Fires after a new set of Records has been loaded."
+     "desc": "Fires after a new set of Records has been loaded, before they are added to the store."
     },
     {
      "name": "loadexception",
@@ -6361,13 +6440,7 @@
     {
      "name": "emptyText",
      "type": "String",
-     "desc": "The default text to display in an empty field (defaults to null).",
-     "memberOf": "Roo.form.TextField"
-    },
-    {
-     "name": "emptyClass",
-     "type": "String",
-     "desc": "The CSS class to apply to an empty field to style the {@link #emptyText} (defaults to\n'x-form-empty-field').  This class is automatically added and removed as needed depending on the current field value.",
+     "desc": "The default text to display in an empty field - placeholder... (defaults to null).",
      "memberOf": "Roo.form.TextField"
     },
     {
@@ -6811,13 +6884,7 @@
     {
      "name": "emptyText",
      "type": "String",
-     "desc": "The default text to display in an empty field (defaults to null).",
-     "memberOf": "Roo.form.TextField"
-    },
-    {
-     "name": "emptyClass",
-     "type": "String",
-     "desc": "The CSS class to apply to an empty field to style the {@link #emptyText} (defaults to\n'x-form-empty-field').  This class is automatically added and removed as needed depending on the current field value.",
+     "desc": "The default text to display in an empty field - placeholder... (defaults to null).",
      "memberOf": "Roo.form.TextField"
     },
     {
@@ -7525,13 +7592,7 @@
     {
      "name": "emptyText",
      "type": "String",
-     "desc": "The default text to display in an empty field (defaults to null).",
-     "memberOf": "Roo.form.TextField"
-    },
-    {
-     "name": "emptyClass",
-     "type": "String",
-     "desc": "The CSS class to apply to an empty field to style the {@link #emptyText} (defaults to\n'x-form-empty-field').  This class is automatically added and removed as needed depending on the current field value.",
+     "desc": "The default text to display in an empty field - placeholder... (defaults to null).",
      "memberOf": "Roo.form.TextField"
     },
     {
@@ -8023,13 +8084,7 @@
     {
      "name": "emptyText",
      "type": "String",
-     "desc": "The default text to display in an empty field (defaults to null).",
-     "memberOf": "Roo.form.TextField"
-    },
-    {
-     "name": "emptyClass",
-     "type": "String",
-     "desc": "The CSS class to apply to an empty field to style the {@link #emptyText} (defaults to\n'x-form-empty-field').  This class is automatically added and removed as needed depending on the current field value.",
+     "desc": "The default text to display in an empty field - placeholder... (defaults to null).",
      "memberOf": "Roo.form.TextField"
     },
     {
@@ -8983,13 +9038,7 @@
     {
      "name": "emptyText",
      "type": "String",
-     "desc": "The default text to display in an empty field (defaults to null).",
-     "memberOf": "Roo.form.TextField"
-    },
-    {
-     "name": "emptyClass",
-     "type": "String",
-     "desc": "The CSS class to apply to an empty field to style the {@link #emptyText} (defaults to\n'x-form-empty-field').  This class is automatically added and removed as needed depending on the current field value.",
+     "desc": "The default text to display in an empty field - placeholder... (defaults to null).",
      "memberOf": "Roo.form.TextField"
     },
     {
@@ -10219,13 +10268,7 @@
     {
      "name": "emptyText",
      "type": "String",
-     "desc": "The default text to display in an empty field (defaults to null).",
-     "memberOf": "Roo.form.TextField"
-    },
-    {
-     "name": "emptyClass",
-     "type": "String",
-     "desc": "The CSS class to apply to an empty field to style the {@link #emptyText} (defaults to\n'x-form-empty-field').  This class is automatically added and removed as needed depending on the current field value.",
+     "desc": "The default text to display in an empty field - placeholder... (defaults to null).",
      "memberOf": "Roo.form.TextField"
     },
     {
@@ -10845,7 +10888,7 @@
      "memberOf": ""
     },
     {
-     "name": "maxText",
+     "name": "maxTextf",
      "type": "String",
      "desc": "The error text to display when the date in the cell is after maxValue (defaults to\n'The date in this field must be before {maxValue}').",
      "memberOf": ""
@@ -10961,13 +11004,7 @@
     {
      "name": "emptyText",
      "type": "String",
-     "desc": "The default text to display in an empty field (defaults to null).",
-     "memberOf": "Roo.form.TextField"
-    },
-    {
-     "name": "emptyClass",
-     "type": "String",
-     "desc": "The CSS class to apply to an empty field to style the {@link #emptyText} (defaults to\n'x-form-empty-field').  This class is automatically added and removed as needed depending on the current field value.",
+     "desc": "The default text to display in an empty field - placeholder... (defaults to null).",
      "memberOf": "Roo.form.TextField"
     },
     {
@@ -11405,13 +11442,7 @@
     {
      "name": "emptyText",
      "type": "String",
-     "desc": "The default text to display in an empty field (defaults to null).",
-     "memberOf": "Roo.form.TextField"
-    },
-    {
-     "name": "emptyClass",
-     "type": "String",
-     "desc": "The CSS class to apply to an empty field to style the {@link #emptyText} (defaults to\n'x-form-empty-field').  This class is automatically added and removed as needed depending on the current field value.",
+     "desc": "The default text to display in an empty field - placeholder... (defaults to null).",
      "memberOf": "Roo.form.TextField"
     },
     {
@@ -12144,6 +12175,324 @@
     }
    ]
   },
+  "Roo.form.Signature": {
+   "props": [
+    {
+     "name": "fieldLabel",
+     "type": "Object",
+     "desc": "Label to use when rendering a form.\ndefaults to \nlabels : { \n     clear : \"Clear\",\n     confirm : \"Confirm\"\n }",
+     "memberOf": ""
+    },
+    {
+     "name": "width",
+     "type": "Number",
+     "desc": "The signature panel width (defaults to 300)",
+     "memberOf": ""
+    },
+    {
+     "name": "height",
+     "type": "Number",
+     "desc": "The signature panel height (defaults to 100)",
+     "memberOf": ""
+    },
+    {
+     "name": "signPanel",
+     "type": "Object",
+     "desc": "The signature SVG panel element (defaults to {})",
+     "memberOf": ""
+    },
+    {
+     "name": "allowBlank",
+     "type": "Boolean",
+     "desc": "False to validate that the value length > 0 (defaults to false)",
+     "memberOf": ""
+    },
+    {
+     "name": "isMouseDown",
+     "type": "Boolean",
+     "desc": "False to validate that the mouse down event (defaults to false)",
+     "memberOf": ""
+    },
+    {
+     "name": "isConfirmed",
+     "type": "Boolean",
+     "desc": "validate the signature is confirmed or not for submitting form (defaults to false)",
+     "memberOf": ""
+    },
+    {
+     "name": "signatureTmp",
+     "type": "String",
+     "desc": "SVG mapping string (defaults to empty string)",
+     "memberOf": ""
+    },
+    {
+     "name": "qtip",
+     "type": "String",
+     "desc": "Mouse over tip",
+     "memberOf": "Roo.form.Field"
+    },
+    {
+     "name": "name",
+     "type": "String",
+     "desc": "The field's HTML name attribute.",
+     "memberOf": "Roo.form.Field"
+    },
+    {
+     "name": "invalidClass",
+     "type": "String",
+     "desc": "The CSS class to use when marking a field invalid (defaults to \"x-form-invalid\")",
+     "memberOf": "Roo.form.Field"
+    },
+    {
+     "name": "invalidText",
+     "type": "String",
+     "desc": "The error text to use when marking a field invalid and no message is provided (defaults to \"The value in this field is invalid\")",
+     "memberOf": "Roo.form.Field"
+    },
+    {
+     "name": "focusClass",
+     "type": "String",
+     "desc": "The CSS class to use when the field receives focus (defaults to \"x-form-focus\")",
+     "memberOf": "Roo.form.Field"
+    },
+    {
+     "name": "validationEvent",
+     "type": "String/Boolean",
+     "desc": "The event that should initiate field validation. Set to false to disable\n      automatic validation (defaults to \"keyup\").",
+     "memberOf": "Roo.form.Field"
+    },
+    {
+     "name": "validateOnBlur",
+     "type": "Boolean",
+     "desc": "Whether the field should validate when it loses focus (defaults to true).",
+     "memberOf": "Roo.form.Field"
+    },
+    {
+     "name": "validationDelay",
+     "type": "Number",
+     "desc": "The length of time in milliseconds after user input begins until validation is initiated (defaults to 250)",
+     "memberOf": "Roo.form.Field"
+    },
+    {
+     "name": "autoCreate",
+     "type": "String/Object",
+     "desc": "A DomHelper element spec, or true for a default element spec (defaults to\n{tag: \"input\", type: \"text\", size: \"20\", autocomplete: \"off\"})",
+     "memberOf": "Roo.form.Field"
+    },
+    {
+     "name": "fieldClass",
+     "type": "String",
+     "desc": "The default CSS class for the field (defaults to \"x-form-field\")",
+     "memberOf": "Roo.form.Field"
+    },
+    {
+     "name": "msgTarget",
+     "type": "String",
+     "desc": "The location where error text should display.  Should be one of the following values (defaults to 'qtip'):\n<pre>\nValue         Description\n-----------   ----------------------------------------------------------------------\nqtip          Display a quick tip when the user hovers over the field\ntitle         Display a default browser title attribute popup\nunder         Add a block div beneath the field containing the error text\nside          Add an error icon to the right of the field with a popup on hover\n[element id]  Add the error text directly to the innerHTML of the specified element\n</pre>",
+     "memberOf": "Roo.form.Field"
+    },
+    {
+     "name": "msgFx",
+     "type": "String",
+     "desc": "<b>Experimental</b> The effect used when displaying a validation message under the field (defaults to 'normal').",
+     "memberOf": "Roo.form.Field"
+    },
+    {
+     "name": "readOnly",
+     "type": "Boolean",
+     "desc": "True to mark the field as readOnly in HTML (defaults to false) -- Note: this only sets the element's readOnly DOM attribute.",
+     "memberOf": "Roo.form.Field"
+    },
+    {
+     "name": "disabled",
+     "type": "Boolean",
+     "desc": "True to disable the field (defaults to false).",
+     "memberOf": "Roo.form.Field"
+    },
+    {
+     "name": "inputType",
+     "type": "String",
+     "desc": "The type attribute for input fields -- e.g. radio, text, password (defaults to \"text\").",
+     "memberOf": "Roo.form.Field"
+    },
+    {
+     "name": "tabIndex",
+     "type": "Number",
+     "desc": "The tabIndex for this field. Note this only applies to fields that are rendered, not those which are built via applyTo (defaults to undefined).",
+     "memberOf": "Roo.form.Field"
+    },
+    {
+     "name": "value",
+     "type": "Mixed",
+     "desc": "A value to initialize this field with.",
+     "memberOf": "Roo.form.Field"
+    },
+    {
+     "name": "cls",
+     "type": "String",
+     "desc": "A CSS class to apply to the field's underlying element.",
+     "memberOf": "Roo.form.Field"
+    },
+    {
+     "name": "disableClass",
+     "type": "String",
+     "desc": "CSS class added to the component when it is disabled (defaults to \"x-item-disabled\").",
+     "memberOf": "Roo.Component"
+    },
+    {
+     "name": "allowDomMove",
+     "type": "Boolean",
+     "desc": "Whether the component can move the Dom node when rendering (defaults to true).",
+     "memberOf": "Roo.Component"
+    },
+    {
+     "name": "hideMode",
+     "type": "String",
+     "desc": "How this component should hidden. Supported values are\n\"visibility\" (css visibility), \"offsets\" (negative offset position) and\n\"display\" (css display) - defaults to \"display\".",
+     "memberOf": "Roo.Component"
+    },
+    {
+     "name": "actionMode",
+     "type": "String",
+     "desc": "which property holds the element that used for  hide() / show() / disable() / enable()\ndefault is 'el'",
+     "memberOf": "Roo.Component"
+    },
+    {
+     "name": "listeners",
+     "type": "Object",
+     "desc": "list of events and functions to call for this object, \nFor example :\n<pre><code>\n    listeners :  { \n       'click' : function(e) {\n           ..... \n        } ,\n        .... \n    } \n  </code></pre>",
+     "memberOf": "Roo.util.Observable"
+    }
+   ],
+   "events": [
+    {
+     "name": "beforedestroy",
+     "sig": "function (_self)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires before the component is destroyed. Return false to stop the destroy."
+    },
+    {
+     "name": "beforehide",
+     "sig": "function (_self)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires before the component is hidden. Return false to stop the hide."
+    },
+    {
+     "name": "beforerender",
+     "sig": "function (_self)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires before the component is rendered. Return false to stop the render."
+    },
+    {
+     "name": "beforeshow",
+     "sig": "function (_self)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires before the component is shown.  Return false to stop the show."
+    },
+    {
+     "name": "blur",
+     "sig": "function (_self)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires when this field loses input focus."
+    },
+    {
+     "name": "change",
+     "sig": "function (_self, newValue, oldValue)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires just before the field blurs if the field value has changed."
+    },
+    {
+     "name": "confirm",
+     "sig": "function (combo)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires when the 'confirm' icon is pressed (add a listener to enable add button)"
+    },
+    {
+     "name": "destroy",
+     "sig": "function (_self)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires after the component is destroyed."
+    },
+    {
+     "name": "disable",
+     "sig": "function (_self)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires after the component is disabled."
+    },
+    {
+     "name": "enable",
+     "sig": "function (_self)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires after the component is enabled."
+    },
+    {
+     "name": "focus",
+     "sig": "function (_self)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires when this field receives input focus."
+    },
+    {
+     "name": "hide",
+     "sig": "function (_self)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires after the component is hidden."
+    },
+    {
+     "name": "invalid",
+     "sig": "function (_self, msg)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires after the field has been marked as invalid."
+    },
+    {
+     "name": "keyup",
+     "sig": "function (_self, e)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires after the key up"
+    },
+    {
+     "name": "move",
+     "sig": "function (_self, x, y)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires after the component is moved."
+    },
+    {
+     "name": "render",
+     "sig": "function (_self)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires after the component is rendered."
+    },
+    {
+     "name": "reset",
+     "sig": "function (combo, record)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires when the 'edit' icon is pressed (add a listener to enable add button)"
+    },
+    {
+     "name": "resize",
+     "sig": "function (_self, adjWidth, adjHeight, rawWidth, rawHeight)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires after the component is resized."
+    },
+    {
+     "name": "show",
+     "sig": "function (_self)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires after the component is shown."
+    },
+    {
+     "name": "specialkey",
+     "sig": "function (_self, e)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires when any key related to navigation (arrows, tab, enter, esc, etc.) is pressed.  You can check\n{@link Roo.EventObject#getKey} to determine which key was pressed."
+    },
+    {
+     "name": "valid",
+     "sig": "function (_self)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires after the field has been validated with no errors."
+    }
+   ]
+  },
   "Roo.form.TextArea": {
    "props": [
     {
@@ -12257,13 +12606,7 @@
     {
      "name": "emptyText",
      "type": "String",
-     "desc": "The default text to display in an empty field (defaults to null).",
-     "memberOf": "Roo.form.TextField"
-    },
-    {
-     "name": "emptyClass",
-     "type": "String",
-     "desc": "The CSS class to apply to an empty field to style the {@link #emptyText} (defaults to\n'x-form-empty-field').  This class is automatically added and removed as needed depending on the current field value.",
+     "desc": "The default text to display in an empty field - placeholder... (defaults to null).",
      "memberOf": "Roo.form.TextField"
     },
     {
@@ -12641,13 +12984,7 @@
     {
      "name": "emptyText",
      "type": "String",
-     "desc": "The default text to display in an empty field (defaults to null).",
-     "memberOf": ""
-    },
-    {
-     "name": "emptyClass",
-     "type": "String",
-     "desc": "The CSS class to apply to an empty field to style the {@link #emptyText} (defaults to\n'x-form-empty-field').  This class is automatically added and removed as needed depending on the current field value.",
+     "desc": "The default text to display in an empty field - placeholder... (defaults to null).",
      "memberOf": ""
     },
     {
@@ -13031,13 +13368,7 @@
     {
      "name": "emptyText",
      "type": "String",
-     "desc": "The default text to display in an empty field (defaults to null).",
-     "memberOf": "Roo.form.TextField"
-    },
-    {
-     "name": "emptyClass",
-     "type": "String",
-     "desc": "The CSS class to apply to an empty field to style the {@link #emptyText} (defaults to\n'x-form-empty-field').  This class is automatically added and removed as needed depending on the current field value.",
+     "desc": "The default text to display in an empty field - placeholder... (defaults to null).",
      "memberOf": "Roo.form.TextField"
     },
     {
@@ -13628,9 +13959,9 @@
      "memberOf": "Roo.grid.Grid"
     },
     {
-     "name": "dragTarget",
+     "name": "dropTarget",
      "type": "Roo.dd.DropTarget",
-     "desc": "An {@link Roo.dd.DragTarget} config",
+     "desc": "An {@link Roo.dd.DropTarget} config",
      "memberOf": "Roo.grid.Grid"
     },
     {
@@ -13964,9 +14295,9 @@
      "memberOf": ""
     },
     {
-     "name": "dragTarget",
+     "name": "dropTarget",
      "type": "Roo.dd.DropTarget",
-     "desc": "An {@link Roo.dd.DragTarget} config",
+     "desc": "An {@link Roo.dd.DropTarget} config",
      "memberOf": ""
     },
     {
@@ -14509,9 +14840,9 @@
      "memberOf": "Roo.grid.Grid"
     },
     {
-     "name": "dragTarget",
+     "name": "dropTarget",
      "type": "Roo.dd.DropTarget",
-     "desc": "An {@link Roo.dd.DragTarget} config",
+     "desc": "An {@link Roo.dd.DropTarget} config",
      "memberOf": "Roo.grid.Grid"
     },
     {
@@ -14807,6 +15138,12 @@
      "memberOf": "Roo.menu.BaseItem"
     },
     {
+     "name": "hidden",
+     "type": "Boolean",
+     "desc": "True to prevent creation of this menu item (defaults to false)",
+     "memberOf": "Roo.menu.BaseItem"
+    },
+    {
      "name": "activeClass",
      "type": "String",
      "desc": "The CSS class to use when the item becomes activated (defaults to \"x-menu-item-active\")",
@@ -14948,6 +15285,12 @@
      "name": "canActivate",
      "type": "Boolean",
      "desc": "True if this item can be visually activated (defaults to false)",
+     "memberOf": ""
+    },
+    {
+     "name": "hidden",
+     "type": "Boolean",
+     "desc": "True to prevent creation of this menu item (defaults to false)",
      "memberOf": ""
     },
     {
@@ -15143,6 +15486,12 @@
      "memberOf": "Roo.menu.BaseItem"
     },
     {
+     "name": "hidden",
+     "type": "Boolean",
+     "desc": "True to prevent creation of this menu item (defaults to false)",
+     "memberOf": "Roo.menu.BaseItem"
+    },
+    {
      "name": "activeClass",
      "type": "String",
      "desc": "The CSS class to use when the item becomes activated (defaults to \"x-menu-item-active\")",
@@ -15296,6 +15645,12 @@
      "name": "canActivate",
      "type": "Boolean",
      "desc": "True if this item can be visually activated (defaults to false)",
+     "memberOf": "Roo.menu.BaseItem"
+    },
+    {
+     "name": "hidden",
+     "type": "Boolean",
+     "desc": "True to prevent creation of this menu item (defaults to false)",
      "memberOf": "Roo.menu.BaseItem"
     },
     {
@@ -15542,6 +15897,12 @@
      "name": "canActivate",
      "type": "Boolean",
      "desc": "True if this item can be visually activated (defaults to false)",
+     "memberOf": "Roo.menu.BaseItem"
+    },
+    {
+     "name": "hidden",
+     "type": "Boolean",
+     "desc": "True to prevent creation of this menu item (defaults to false)",
      "memberOf": "Roo.menu.BaseItem"
     },
     {
@@ -15821,6 +16182,12 @@
      "memberOf": "Roo.menu.BaseItem"
     },
     {
+     "name": "hidden",
+     "type": "Boolean",
+     "desc": "True to prevent creation of this menu item (defaults to false)",
+     "memberOf": "Roo.menu.BaseItem"
+    },
+    {
      "name": "activeClass",
      "type": "String",
      "desc": "The CSS class to use when the item becomes activated (defaults to \"x-menu-item-active\")",
@@ -16077,6 +16444,12 @@
      "memberOf": "Roo.menu.BaseItem"
     },
     {
+     "name": "hidden",
+     "type": "Boolean",
+     "desc": "True to prevent creation of this menu item (defaults to false)",
+     "memberOf": "Roo.menu.BaseItem"
+    },
+    {
      "name": "activeClass",
      "type": "String",
      "desc": "The CSS class to use when the item becomes activated (defaults to \"x-menu-item-active\")",
@@ -16230,6 +16603,12 @@
      "name": "canActivate",
      "type": "Boolean",
      "desc": "True if this item can be visually activated (defaults to false)",
+     "memberOf": "Roo.menu.BaseItem"
+    },
+    {
+     "name": "hidden",
+     "type": "Boolean",
+     "desc": "True to prevent creation of this menu item (defaults to false)",
      "memberOf": "Roo.menu.BaseItem"
     },
     {
