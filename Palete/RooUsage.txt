@@ -104,6 +104,7 @@ right:
   Roo.form.DisplayField
   Roo.form.DayPicker
   Roo.Button
+  Roo.form.Signature
 
 left:
   Roo.form.ComboBoxArray:combo
