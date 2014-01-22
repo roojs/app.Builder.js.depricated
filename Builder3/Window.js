@@ -360,8 +360,12 @@ Window=new XObject({
                                                             print("Click");
                                                             
                                                         },
+                                                        pressed : function(self) {
+                                                            print("Pressed");
+                                                            
+                                                        },
                                                         enter_notify_event : function (self, event) {
-                                                            return true;
+                                                            return false;
                                                              this.el.expanded = !this.el.expanded;
                                                         //if (this.el.expanded ) {
                                                             this.listeners.activate.call(this);
