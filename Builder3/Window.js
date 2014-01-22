@@ -331,7 +331,7 @@ Window=new XObject({
                                             id : "LeftTopPanel",
                                             items : [
                                                 {
-                                                    xtype: Gtk.Expander,
+                                                    //xtype: Gtk.Button,
 													//events : [
 													//	Gdk.EventMask.BUTTON_MOTION_MASK 
 													//],
