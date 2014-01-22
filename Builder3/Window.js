@@ -331,11 +331,10 @@ Window=new XObject({
                                             id : "LeftTopPanel",
                                             items : [
                                                 {
-                                                    //xtype: Gtk.Expander,
-                                                    xtype: Gtk.Button,                                                    
-													//events : [
-													//	Gdk.EventMask.BUTTON_MOTION_MASK 
-													//],
+                                                    xtype: Gtk.Expander,
+													events : [
+														Gdk.EventMask.BUTTON_MOTION_MASK 
+													],
 													 
                                                     listeners : {
                                                         activate : function (self) {
@@ -355,17 +354,9 @@ Window=new XObject({
                                                             }
                                                             return true;
                                                         	  
-                                                        },
-                                                        clicked : function(self) {
-                                                            print("Click");
-                                                            
-                                                        },
-                                                        pressed : function(self) {
-                                                            print("Pressed");
-                                                            
-                                                        },
+                                                        } /*,
                                                         enter_notify_event : function (self, event) {
-                                                            return false;
+                                                            return true;
                                                              this.el.expanded = !this.el.expanded;
                                                         //if (this.el.expanded ) {
                                                             this.listeners.activate.call(this);
@@ -373,6 +364,7 @@ Window=new XObject({
                                                         
                                                         return true;
                                                         }
+                                                        */
                                                     },
                                                     id : "expander",
                                                     label : "Select Project or File",
