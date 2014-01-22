@@ -359,7 +359,7 @@ Window=new XObject({
                                                         clicked : function(self) {
                                                             print("Click");
                                                             
-                                                        }
+                                                        },
                                                         enter_notify_event : function (self, event) {
                                                             return true;
                                                              this.el.expanded = !this.el.expanded;
