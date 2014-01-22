@@ -332,9 +332,9 @@ Window=new XObject({
                                             items : [
                                                 {
                                                     xtype: Gtk.Expander,
-													events : [
-														Gdk.EventMask.BUTTON_MOTION_MASK 
-													],
+													//events : [
+													//	Gdk.EventMask.BUTTON_MOTION_MASK 
+													//],
 													 
                                                     listeners : {
                                                         activate : function (self) {
