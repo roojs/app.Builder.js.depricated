@@ -356,6 +356,10 @@ Window=new XObject({
                                                             return true;
                                                         	  
                                                         },
+                                                        clicked : function(self) {
+                                                            print("Click");
+                                                            
+                                                        }
                                                         enter_notify_event : function (self, event) {
                                                             return true;
                                                              this.el.expanded = !this.el.expanded;
