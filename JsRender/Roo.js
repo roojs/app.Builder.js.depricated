@@ -308,7 +308,6 @@ Roo = XObject.define(
                 "",   
                 "    show : function(data, cb)",
                 "    {",
-                "        Roo.log('in');",
                 "        if (!this.dialog) {",
                 "            this.create();",
                 "        }",
