@@ -303,6 +303,7 @@ left:
   Roo.form.ComboCheck:store
   Roo.View:store
   Roo.JsonView:store
+  Roo.CalendarPanel:store
 right: 
   Roo.data.Store
   Roo.data.SimpleStore
