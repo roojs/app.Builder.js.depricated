@@ -9,7 +9,7 @@ right:
  Roo.ContentPanel         
  Roo.GridPanel         
  Roo.TreePanel         
- 
+ Roo.CalendarPanel 
 
 // added with a property..  (*prop)
  
