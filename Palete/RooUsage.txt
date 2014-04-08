@@ -46,6 +46,7 @@ right:
   Roo.NestedLayoutPanel
   Roo.GridPanel
   Roo.TreePanel
+  Roo.CalendarPanel
   
 // should probably look like this
 //  Roo.ContentPanel:region=center         
