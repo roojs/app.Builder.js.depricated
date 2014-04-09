@@ -839,7 +839,7 @@
     },
     {
      "name": "rendered",
-     "sig": "function (_self, )\n{\n\n}",
+     "sig": "function (_self)\n{\n\n}",
      "type": "function",
      "desc": "Fires when the grid is rendered"
     },
@@ -20361,6 +20361,222 @@
     }
    ],
    "events": []
+  },
+  "Roo.grid.Calendar": {
+   "props": [
+    {
+     "name": "eventStore",
+     "type": "Store",
+     "desc": "The store that loads events.",
+     "memberOf": ""
+    }
+   ],
+   "events": [
+    {
+     "name": "bodyscroll",
+     "sig": "function (scrollLeft, scrollTop)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires when the body element is scrolled"
+    },
+    {
+     "name": "cellclick",
+     "sig": "function (_self, rowIndex, columnIndex, e)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires when a cell is clicked"
+    },
+    {
+     "name": "cellcontextmenu",
+     "sig": "function (_self, rowIndex, cellIndex, e)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires when a cell is right clicked"
+    },
+    {
+     "name": "celldblclick",
+     "sig": "function (_self, rowIndex, columnIndex, e)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires when a cell is double clicked"
+    },
+    {
+     "name": "click",
+     "sig": "function (e)\n{\n\n}",
+     "type": "function",
+     "desc": "The raw click event for the entire grid."
+    },
+    {
+     "name": "columnmove",
+     "sig": "function (oldIndex, newIndex)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires when the user moves a column"
+    },
+    {
+     "name": "columnresize",
+     "sig": "function (columnIndex, newSize)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires when the user resizes a column"
+    },
+    {
+     "name": "contextmenu",
+     "sig": "function (e)\n{\n\n}",
+     "type": "function",
+     "desc": "The raw contextmenu event for the entire grid."
+    },
+    {
+     "name": "dblclick",
+     "sig": "function (e)\n{\n\n}",
+     "type": "function",
+     "desc": "The raw dblclick event for the entire grid."
+    },
+    {
+     "name": "dragdrop",
+     "sig": "function (_self, dd, targetId, e)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires when dragged row(s) are dropped on a valid DD target"
+    },
+    {
+     "name": "dragenter\n Fires when the dragged row(s) first cross another DD target while being dragged",
+     "sig": "function (_self, dd, targetId, e)\n{\n\n}",
+     "type": "function",
+     "desc": ""
+    },
+    {
+     "name": "dragout",
+     "sig": "function (_self, dd, targetId, e)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires when the dragged row(s) leave another DD target while being dragged"
+    },
+    {
+     "name": "dragover",
+     "sig": "function (_self, dd, targetId, e)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires while row(s) are being dragged. \"targetId\" is the id of the Yahoo.util.DD object the selected rows are being dragged over."
+    },
+    {
+     "name": "enddrag",
+     "sig": "function (_self, dd, e)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires when a drag operation is complete"
+    },
+    {
+     "name": "eventclick",
+     "sig": "function (_self, )\n{\n\n}",
+     "type": "function",
+     "desc": "Fires when the mouse click an"
+    },
+    {
+     "name": "evententer",
+     "sig": "function (_self, Event)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires when mouse over an event"
+    },
+    {
+     "name": "eventleave",
+     "sig": "function (_self, )\n{\n\n}",
+     "type": "function",
+     "desc": "Fires when the mouse leaves an"
+    },
+    {
+     "name": "headerclick",
+     "sig": "function (_self, columnIndex, e)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires when a header is clicked"
+    },
+    {
+     "name": "headercontextmenu",
+     "sig": "function (_self, columnIndex, e)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires when a header is right clicked"
+    },
+    {
+     "name": "headerdblclick",
+     "sig": "function (_self, columnIndex, e)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires when a header cell is double clicked"
+    },
+    {
+     "name": "keydown",
+     "sig": "function (e)\n{\n\n}",
+     "type": "function",
+     "desc": "The raw keydown event for the entire grid."
+    },
+    {
+     "name": "keypress",
+     "sig": "function (e)\n{\n\n}",
+     "type": "function",
+     "desc": "The raw keypress event for the entire grid."
+    },
+    {
+     "name": "monthchange",
+     "sig": "function (_self, date)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires when the displayed month changes"
+    },
+    {
+     "name": "mousedown",
+     "sig": "function (e)\n{\n\n}",
+     "type": "function",
+     "desc": "The raw mousedown event for the entire grid."
+    },
+    {
+     "name": "mouseout",
+     "sig": "function (e)\n{\n\n}",
+     "type": "function",
+     "desc": "The raw mouseout event for the entire grid."
+    },
+    {
+     "name": "mouseover",
+     "sig": "function (e)\n{\n\n}",
+     "type": "function",
+     "desc": "The raw mouseover event for the entire grid."
+    },
+    {
+     "name": "mouseup",
+     "sig": "function (e)\n{\n\n}",
+     "type": "function",
+     "desc": "The raw mouseup event for the entire grid."
+    },
+    {
+     "name": "render",
+     "sig": "function (grid)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires when the grid is rendered"
+    },
+    {
+     "name": "rowclass",
+     "sig": "function (gridview, rowcfg)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires when a row is rendered, so you can change add a style to it."
+    },
+    {
+     "name": "rowclick",
+     "sig": "function (_self, rowIndex, e)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires when a row is clicked"
+    },
+    {
+     "name": "rowcontextmenu",
+     "sig": "function (_self, rowIndex, e)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires when a row is right clicked"
+    },
+    {
+     "name": "rowdblclick",
+     "sig": "function (_self, rowIndex, e)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires when a row is double clicked"
+    },
+    {
+     "name": "select",
+     "sig": "function (_self, date)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires when a date is selected"
+    },
+    {
+     "name": "startdrag",
+     "sig": "function (_self, dd, e)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires when row(s) start being dragged"
+    }
+   ]
   },
   "Roo.grid.CellSelectionModel": {
    "props": [
