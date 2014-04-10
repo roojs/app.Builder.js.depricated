@@ -20475,6 +20475,12 @@
      "desc": "Fires when the mouse leaves an"
     },
     {
+     "name": "eventrender",
+     "sig": "function (_self, data)\n{\n\n}",
+     "type": "function",
+     "desc": "Fires before each cell is rendered, so you can modify the contents, like cls / title / qtip"
+    },
+    {
      "name": "headerclick",
      "sig": "function (_self, columnIndex, e)\n{\n\n}",
      "type": "function",
