@@ -465,7 +465,7 @@ XObject.prototype = {
         }
         if (xid == this.id) {
             try {
-                return child === false ? this : this.get(child);
+                return child === false ? this : this.getBySearch(child);
             } catch (ex) {
                 throw {
                     name: "ArgumentError", 
@@ -486,7 +486,7 @@ XObject.prototype = {
         })
         if (ret) {
             try {
-                return child === false ? ret : ret.get(child);
+                return child === false ? ret : ret.getBySearch(child);
             } catch (ex) {
                 throw {
                     name: "ArgumentError", 
@@ -507,7 +507,7 @@ XObject.prototype = {
                 Seed.quit();
             }
             try {
-                ret = ch.get(xid);
+                ret = ch.getBySearch(xid);
             } catch (ex) { }
             
             
@@ -519,7 +519,7 @@ XObject.prototype = {
             }
         }
         try {
-            return child === false ? ret : ret.get(child);
+            return child === false ? ret : ret.getBySearch(child);
         } catch (ex) {
             throw {
                 name: "ArgumentError", 
