@@ -431,7 +431,7 @@ XObject.prototype = {
                     
                 child = child.join('.');
                 if (typeof(XObject.cache[nxid]) != 'undefined') {
-                    return XObject.cache[nxid].get(child);
+                    return XObject.cache[nxid].getBySearch(child);
                 }
                 
                 
