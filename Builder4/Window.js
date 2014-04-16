@@ -3355,7 +3355,10 @@ Window=new XObject({
                                                                     },
                                                                     renderJS : function(data, withDebug)
                                                                     {
-                                                                          this.highlightWidget = false;
+                                                                        
+                                                                        print("---GtkView - renderJS");
+                                                                        
+                                                                        this.highlightWidget = false;
                                                                        
                                                                         this.withDebug = false;
                                                                         while (this.get('view').el.get_children().length) {
