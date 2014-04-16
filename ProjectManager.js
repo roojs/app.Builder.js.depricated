@@ -124,7 +124,7 @@ ProjectManager =  new Observable({
     },
     update : function(proj) {
         
-        Seed.print(JSON.stringify(proj));
+        //Seed.print(JSON.stringify(proj));
         var found = false;
         this.projects.forEach( function(p) {
             if (proj == p) {
