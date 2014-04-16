@@ -607,7 +607,7 @@ Window=new XObject({
                                                                                 Gdk.drag_status(ctx, 0, time);
                                                                                 return true;
                                                                             }
-                                                                              print(JSON.stringify(tg,null,4));
+                                                                            //  print(JSON.stringify(tg,null,4));
                                                                             //console.dump(tg);
                                                                             this.targetData = tg;    
                                                                             
@@ -1244,7 +1244,7 @@ Window=new XObject({
                                                                                 s.get_selected( oret);
                                                                                 var node = this.nodeToJS(oret.iter,false);
                                                                                     //console.dump(node);
-                                                                                print(JSON.stringify(node, null,4)); 
+                                                                                //print(JSON.stringify(node, null,4)); 
                                                                                     
                                                                                     // needs to drop first, otherwise the target_data 
                                                                                         // treepath will be invalid.
@@ -2185,7 +2185,7 @@ Window=new XObject({
                                                                     
                                                                         this.el.set_value(ret.iter, 5, type + ' : ' + str);
                                                                         // update the tree...  
-                                                                        print("new data: "  + JSON.stringify(this.toJS() , null,4));
+                                                                        //print("new data: "  + JSON.stringify(this.toJS() , null,4));
                                                                         this.get('/LeftTree.model').setFromNode(false,this.toJS());
                                                                         this.get('/LeftTree.model').changed(doRefresh); 
                                                                                  
@@ -4022,7 +4022,7 @@ Window=new XObject({
                                         this.get('buttonbar').el.hide();
                                         this.get('viewbox').el.show();
                                         var ce = this.get('/Window.centereast').el;
-                                        print(JSON.stringify(XObject.keys(ce) ,null,4));
+                                        //print(JSON.stringify(XObject.keys(ce) ,null,4));
                                         ce.set_position(ce.get_allocated_width() - 150);
                                            
                                        // this.get('model').expanded();
