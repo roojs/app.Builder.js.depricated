@@ -78,7 +78,7 @@ var File = {
         var out = {};
         GLib.file_get_contents(path, out, null, null);
 		
-		print(JSON.stringify(out));
+		//print(JSON.(out));
 		
         return out['value'];
     },

@@ -76,7 +76,7 @@ function BuildLists () {
         //methods[cls] = {}
            
         implementations[odata.alias] = odata.titleType == 'Class' ? odata.childClasses :  odata.implementedBy;  
-        //print(JSON.stringify(odata.methods,null,4));
+        //print(JSON.(odata.methods,null,4));
         odata.methods.forEach(function(m) {
            
             m.params.forEach(function(p) {
@@ -127,8 +127,8 @@ function BuildLists () {
 
     this.implementations = implementations;
     
-    //print(JSON.stringify(methods,null,4));
-    //print(JSON.stringify(implementations,null,4));
+    //print(JSON.(methods,null,4));
+    //print(JSON.(implementations,null,4));
     
 }
 

@@ -65,7 +65,7 @@ var o = new Options({
 
 
 var cfg = o.parse(Seed.argv);
-print(JSON.stringify(cfg, null,4));
+print(JSON.(cfg, null,4));
 
 var   cnc = Gda.Connection.open_from_string (cfg.DBTYPE,
          "DB_NAME=" + cfg.DBNAME, 
@@ -84,7 +84,7 @@ Gda.DataSelect.prototype.fetchAll = function()
     for (var i =0;i < this.get_n_columns(); i++) {
         cols.push(this.get_column_name(i));
     }
-    //print(JSON.stringify(cols, null,4));
+    //print(JSON.(cols, null,4));
     var iter = this.create_iter();
     var res = [];
     //print(this.get_n_rows());
@@ -232,7 +232,7 @@ if (File.isDirectory(cfg.INI)) {
     
     
 }
-//print(JSON.stringify(ini, null,4));
+//print(JSON.(ini, null,4));
  //console.dump(ini);
 print("DONE INI");
 
@@ -298,7 +298,7 @@ switch(cfg.DBTYPE) {
  
 
 var tables = cnc.execute_select_command( query_tables).fetchAll();
-print(JSON.stringify(tables));
+print(JSON.(tables));
 
 var readers = [];
 tables.forEach(function(table) {
@@ -316,7 +316,7 @@ tables.forEach(function(table) {
        
     var firstTxtCol = '';
     
-    //print(JSON.stringify(schema, null,4));    Seed.quit();
+    //print(JSON.(schema, null,4));    Seed.quit();
     
     schema.forEach(function(e)  {
         e.Type = e.Type || e.type;
@@ -470,7 +470,7 @@ tables.forEach(function(table) {
                         'id' : 'id',
                         'root' : 'data',
                         'totalProperty' : 'total',
-                        '|fields' : JSON.stringify(combofields)
+                        '|fields' : JSON.(combofields)
                         
                     }
                 ]
@@ -481,13 +481,13 @@ tables.forEach(function(table) {
     
     
     
-    //print(JSON.stringify(reader,null,4));
+    //print(JSON.(reader,null,4));
     readers.push({
         table : table ,
         combo : combo,
         combofields : combofields,
         reader :  reader,
-        oreader : JSON.parse(JSON.stringify(reader)), // dupe it..
+        oreader : JSON.parse(JSON.(reader)), // dupe it..
         colmodel : colmodel,
         firstTxtCol : firstTxtCol,
         form : form
@@ -531,14 +531,14 @@ readers.forEach(function(reader) {
             continue;
         }
         if (typeof(reader.form[col]) == 'undefined') {
-            print (JSON.stringify(reader.form, null,4));
+            print (JSON.(reader.form, null,4));
             print("missing linked column " + col);
             continue;
         }
         
         var combofields_name = add.combofields[1].name;
         var old =   reader.form[col];
-        reader.form[col] = JSON.parse(JSON.stringify(add.combo)); // clone
+        reader.form[col] = JSON.parse(JSON.(add.combo)); // clone
         reader.form[col].queryParam  = 'query[' + combofields_name + ']';// SET WHEN USED
         reader.form[col].fieldLabel = old.fieldLabel;  // SET WHEN USED
         reader.form[col].hiddenName = old.name; // SET WHEN USED eg. project_id
@@ -560,7 +560,7 @@ readers.forEach(function(reader) {
 
 
 
-//print(JSON.stringify(readers, null, 4));
+//print(JSON.(readers, null, 4));
 
 readers.forEach(function(reader) {
     
@@ -583,12 +583,12 @@ readers.forEach(function(reader) {
         '*prop' : "reader",
         id : 'id', // maybe no..
        
-        '|fields' :  JSON.stringify(reader.reader, null,4).replace(/"/g,"'")
+        '|fields' :  JSON.(reader.reader, null,4).replace(/"/g,"'")
     };
     
     File.write(
         dir + '/' + cfg.DBNAME + '_' + reader.table + '.json',
-        JSON.stringify(jreader, null, 4)
+        JSON.(jreader, null, 4)
     )
     
     
@@ -606,7 +606,7 @@ readers.forEach(function(reader) {
         dir + '/' + cfg.DBNAME + '_' + reader.table + '.json',
             
        
-        JSON.stringify({
+        JSON.({
             '|xns' : 'Roo',
             xtype : "GridPanel",
             "title": reader.table,
@@ -807,7 +807,7 @@ readers.forEach(function(reader) {
         dir + '/' + cfg.DBNAME + '_' + reader.table + '.json',
             
        
-        JSON.stringify( frmCfg, null, 4)
+        JSON.( frmCfg, null, 4)
     );
             
             
@@ -828,7 +828,7 @@ readers.forEach(function(reader) {
         dir + '/' + cfg.DBNAME + '_' + reader.table + '.json',
             
        
-        JSON.stringify(reader.combo, null, 4)
+        JSON.(reader.combo, null, 4)
     );
             
    
@@ -859,7 +859,7 @@ readers.forEach(function(reader) {
         dir + '/' + cfg.DBNAME + '_' + reader.table + '.json',
             
        
-        JSON.stringify({
+        JSON.({
        
             "closable": false,
             "collapsible": false,

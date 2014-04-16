@@ -109,7 +109,7 @@ Builder  = {
                 
             } catch( e) {
                 console.log(e);
-                console.log(JSON.stringify(e));
+                console.log(JSON.(e));
                 // reload!!?
             }
             
@@ -260,7 +260,7 @@ Builder  = {
                    // }
                    
                 } catch(e) {  
-                    console.log('Error evaluating: '  + cfg[p] + "\r\n" + JSON.stringify(e)); 
+                    console.log('Error evaluating: '  + cfg[p] + "\r\n" + JSON.(e)); 
                 };
                 if (pp != p) {
                     delete cfg[p];

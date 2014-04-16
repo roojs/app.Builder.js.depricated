@@ -69,10 +69,10 @@ function BuildLists () {
             classes[odata.alias] = odata;
         });
     });
-    //print(JSON.stringify(classes['Gtk.CellRenderer'] , null, 4));
-    //print(JSON.stringify(classes['Gtk.CellRenderer'].titleType, null, 4));
-    //print(JSON.stringify(classes['Gtk.CellRenderer'].childClasses, null, 4));
-    //print(JSON.stringify(classes['Gtk.CellRenderer'].implementedBy, null, 4));
+    //print(JSON.(classes['Gtk.CellRenderer'] , null, 4));
+    //print(JSON.(classes['Gtk.CellRenderer'].titleType, null, 4));
+    //print(JSON.(classes['Gtk.CellRenderer'].childClasses, null, 4));
+    //print(JSON.(classes['Gtk.CellRenderer'].implementedBy, null, 4));
           
     
 
@@ -108,7 +108,7 @@ function BuildLists () {
        
         
         //print(cls);
-        //print(JSON.stringify(odata.methods,null,4));
+        //print(JSON.(odata.methods,null,4));
         odata.methods.forEach(function(m) {
             
             
@@ -117,14 +117,14 @@ function BuildLists () {
              if (!m.name.match(/^(add|pack)/)) {
                 return;
             }
-            //print(JSON.stringify(m,null,4));
+            //print(JSON.(m,null,4));
             m.params.forEach(function(p) {
                  
                 if (!p.type || typeof(classes[p.type]) == 'undefined') {
                     return;
                 }
                 // now add it..
-                //print(JSON.stringify(p));Seed.exit();
+                //print(JSON.(p));Seed.exit();
                 var addable_type = p.type;
                 if (addable_type.indexOf('.') < 0) {
                     addable_type = p.memberOf + '.' + p.type;
@@ -181,13 +181,13 @@ function BuildLists () {
                 });
                 // also needs to add
                 //print(addable_type);
-                //print(JSON.stringify(implementations[addable_type], null,4));
+                //print(JSON.(implementations[addable_type], null,4));
                  
                 
                 implementations[addable_type].forEach(function(addable_child) {
                     
                     //if (addable_child == 'Gtk.AboutDialog') {
-                    //    print(JSON.stringify(methods[addable_child].extendsClasses,null,4));Seed.exit();
+                    //    print(JSON.(methods[addable_child].extendsClasses,null,4));Seed.exit();
                         
                     //}
                     
@@ -267,7 +267,7 @@ function BuildLists () {
     this.methods = methods;
     this.allmethods = methods;
     this.implementations = implementations;
-    //print(JSON.stringify(methods,null,4)); Seed.exit();
+    //print(JSON.(methods,null,4)); Seed.exit();
     // dump out a usage file..
 	this.failed = [];
     var failed = this.failed;
@@ -305,7 +305,7 @@ function BuildLists () {
         } catch(e) {
             failed.push(parent);
             print("TRY ctor:  " + parent );
-            print(JSON.stringify(e));
+            print(JSON.(e));
             return false;
         }
         
@@ -432,13 +432,13 @@ right:
         }
         lefts[left].push(par);
     }
-    print (JSON.stringify(lefts,null,4));
+    print (JSON.(lefts,null,4));
     Seed.quit();
         
         
         
         
-    print (JSON.stringify(usage,null,4));
+    print (JSON.(usage,null,4));
     var nusage = {};
 	var usage_left = {};
     for(var par in usage) {
@@ -468,8 +468,8 @@ right:
         
     }
     usage = nusage;
-    //print(JSON.stringify(nusage,null,4));  Seed.exit();
-    print(JSON.stringify(methods['Gtk.TextView'],null,4));
+    //print(JSON.(nusage,null,4));  Seed.exit();
+    print(JSON.(methods['Gtk.TextView'],null,4));
 
     var str = [];
 	for(var par in usage) {
@@ -483,7 +483,7 @@ right:
 		str.push('');
 	}
 	print(str.join("\n"));
-    //print(JSON.stringify(implementations ,null,4));
+    //print(JSON.(implementations ,null,4));
     /*
       methods is
         [a class]
@@ -514,7 +514,7 @@ right:
     */
     
     
-    //print(JSON.stringify(implementations,null,4));
+    //print(JSON.(implementations,null,4));
     
 }
 imports.gi.Gtk.init(Seed.argv);
