@@ -61,7 +61,7 @@ JsParser  =  XObject.define(
             }
             
             Seed.print("Unknown format");
-            Seed.print(JSON.(this.tokens,null,4));
+            Seed.print(JSON.stringify(this.tokens,null,4));
             Seed.quit();
             
             
@@ -228,7 +228,7 @@ JsParser  =  XObject.define(
                 throw "could not find top props...";
                 
             }
-            //print(JSON.(topp,null,4));
+            //print(JSON.stringify(topp,null,4));
             
             this.cfg = this.parseProps(topp);
             for(var k in this.cfg) {
@@ -247,7 +247,7 @@ JsParser  =  XObject.define(
             
             
             this.cfg.modOrder = this.cfg.modKey.split('-').shift(); 
-            print(JSON.(this.cfg,null,4));
+            print(JSON.stringify(this.cfg,null,4));
             
             
             //                  (            {          add    { this.panel (  {
@@ -267,7 +267,7 @@ JsParser  =  XObject.define(
             var cfg = this.tokens[2].props.create.val[2].items[1][3].items[0][0].props;
             this.cfg.type = 'Roo';
             //console.dump(this.tokens);
-            //print(JSON.(cfg,null,4)); Seed.quit();
+            //print(JSON.stringify(cfg,null,4)); Seed.quit();
             
            // print("Trying standard dialog");Seed.quit();;
             
@@ -290,9 +290,9 @@ JsParser  =  XObject.define(
             var cfg = this.tokens[pos+1].items[0][0].props;
             this.cfg.items = [ this.parseProps(cfg) ];
             
-            //print(JSON.(this.tokens[pos]));
+            //print(JSON.stringify(this.tokens[pos]));
             
-            //print(JSON.(this.tokens,null,4)); Seed.quit();
+            //print(JSON.stringify(this.tokens,null,4)); Seed.quit();
             //Seed.quit();
             
         },
@@ -370,7 +370,7 @@ JsParser  =  XObject.define(
         
         parseProps:  function(o)
         {
-            //print(JSON.(o,null,4));
+            //print(JSON.stringify(o,null,4));
             
             var ret = { };
             var fakeItems =  [];
@@ -523,7 +523,7 @@ JsParser  =  XObject.define(
         expand: function(ar)
         {
             var ret = '';
-            //print(JSON.(ar,null,4));
+            //print(JSON.stringify(ar,null,4));
              
             for(var i =0 ; i < ar.length -1; i++) {
                 ret += ar[i].toRaw();
@@ -567,7 +567,7 @@ JsParser  =  XObject.define(
                 ar.push(l.substring(mindent));
             });
             //print(str);
-            //print(JSON.(ar,null,4));
+            //print(JSON.stringify(ar,null,4));
             
             
             return ar.join("\n");

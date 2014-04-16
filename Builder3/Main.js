@@ -3,9 +3,9 @@ Gdk = imports.gi.Gdk;
 
 Window = imports.Builder3.Window.Window;
 
-JSON.x = function (o) {
+JSON.xstringify = function (o) {
 	  var seen = [];
-	  return JSON.(o, function(_, value) {
+	  return JSON.stringify(o, function(_, value) {
 		  if (typeof value === 'object' && value !== null) {
 			  if (seen.indexOf(value) !== -1) return null;
 			  else seen.push(value);

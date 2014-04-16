@@ -122,7 +122,7 @@ Collapse = XObject.define(
                                     add.shift();
                                 }
                                 //Seed.print("ADD");
-                                //Seed.print(JSON.(add, null,4));
+                                //Seed.print(JSON.stringify(add, null,4));
                                 
                                 
                                 

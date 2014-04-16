@@ -26,7 +26,7 @@ var args = Array.prototype.slice.call(Seed.argv);
 
 args.shift();
 args.shift();
-//print(JSON.(args, null,4));
+//print(JSON.stringify(args, null,4));
 //Seed.quit();
 
 
@@ -88,7 +88,7 @@ function createTest(fn, force) {
     
     
     var rf = new JsParser(toks);
-    //print(JSON.(rf.tokens, null,4));Seed.quit();
+    //print(JSON.stringify(rf.tokens, null,4));Seed.quit();
     rf.parse();
     
     
@@ -96,7 +96,7 @@ function createTest(fn, force) {
         File.remove('/tmp/rconv_genbjs/' + GLib.basename(fn).replace(/\.js$/,'.bjs') );
     }
     File.write('/tmp/rconv_genbjs/' + GLib.basename(fn).replace(/\.js$/,'.bjs'),
-               JSON.(rf.cfg,null,4));
+               JSON.stringify(rf.cfg,null,4));
 
     
      
@@ -112,6 +112,6 @@ function createTest(fn, force) {
     
     File.write('/tmp/rconv_gen/' + GLib.basename(fn) , res);
 }
-//print(JSON.(rf.cfg, null,4));
+//print(JSON.stringify(rf.cfg, null,4));
  
  

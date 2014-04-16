@@ -103,7 +103,7 @@ Base = XObject.define(
            // }
             
             
-            return JSON.(ret);
+            return JSON.stringify(ret);
           
           
         },

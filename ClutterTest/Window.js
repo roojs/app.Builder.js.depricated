@@ -988,7 +988,7 @@ Window=new XObject({
                                                             return;
                                                         }
                                                         print("LOAD");
-                                                        print(JSON.(f.items, null,4));
+                                                        print(JSON.stringify(f.items, null,4));
                                                         //console.dump(f.items);
                                                         this.load(f.items);
                                                         this.get('/LeftTree.view').el.expand_all();
@@ -1166,7 +1166,7 @@ Window=new XObject({
                                                     }
                                                     o[i] = c[i];
                                                 }
-                                                return JSON.(o);
+                                                return JSON.stringify(o);
                                             },
                                             singleNodeToJS : function (treepath) 
                                                     {
@@ -1217,7 +1217,7 @@ Window=new XObject({
                                                 
                                                 if (treepath === false) {
                                                     //dupe!!!
-                                                    return JSON.parse(JSON.(ar));
+                                                    return JSON.parse(JSON.stringify(ar));
                                                 }
                                                 
                                                 return ar;
@@ -1268,8 +1268,8 @@ Window=new XObject({
                                                      var el = tree.getActivePath();
                                                      print(el);
                                                      var js = model.toJS(el, false);
-                                                    // print(JSON.(js[0], null,4));
-                                                     this.get('/DialogSaveTemplate').show(JSON.(js[0], null,4));
+                                                    // print(JSON.stringify(js[0], null,4));
+                                                     this.get('/DialogSaveTemplate').show(JSON.stringify(js[0], null,4));
                                                      
                                                     
                                                 }

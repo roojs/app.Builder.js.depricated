@@ -149,7 +149,7 @@ TokenReader = XObject.define(
                     //Seed.print('(@' + n);
                     
                     var lt = this.lastSym(tokens, n);
-                   Seed.print(JSON.(lt));
+                   Seed.print(JSON.stringify(lt));
                     if (lt.type != 'KEYW' || ['IF', 'WHILE'].indexOf(lt.name) < -1) {
                         if (!this.ignoreBadGrammer) {
                             throw {
@@ -202,7 +202,7 @@ TokenReader = XObject.define(
             
             if ((found == '}' || found == ']') && tokens.lastSym().data == ',') {
                 //print("Error - comma found before " + found);
-                //print(JSON.(tokens.lastSym(), null,4));
+                //print(JSON.stringify(tokens.lastSym(), null,4));
                 if (this.ignoreBadGrammer) {
                     print("\n" + this.filename + ':' + this.line + " Error - comma found before " + found);
                 } else {
@@ -232,7 +232,7 @@ TokenReader = XObject.define(
             if (found === "") {
                 return false;
             }
-            //print("WHITE = " + JSON.(found)); 
+            //print("WHITE = " + JSON.stringify(found)); 
             if (this.collapseWhite) found = " ";
             if (this.keepWhite) tokens.push(new Token(found, "WHIT", "SPACE", this.line));
             return true;

@@ -251,7 +251,7 @@ Window=new XObject({
                                                         html = html.replace('</head>', project.runhtml + '</head>');
                                                         
                                                        
-                                                        var     jsstr = JSON.(js[0], null, 4);
+                                                        var     jsstr = JSON.stringify(js[0], null, 4);
                                                        
                                                         var runbuilder = '<script type="text/javascript">' + "\n" + 
                                                             " Builder.render(" + jsstr + ");\n" +
@@ -382,7 +382,7 @@ Window=new XObject({
                                                        
                                                         var model = this.get('/LeftProjectTree.combomodel');
                                                         //  print ("loading Projects?")
-														//print(JSON.(pm.projects, null,4));Seed.quit();
+														//print(JSON.stringify(pm.projects, null,4));Seed.quit();
                                                         //console.dump(pm.projects);
                                                         model.loadData(pm.projects);
                                                          
@@ -607,7 +607,7 @@ Window=new XObject({
                                                                                 Gdk.drag_status(ctx, 0, time);
                                                                                 return true;
                                                                             }
-                                                                              print(JSON.(tg,null,4));
+                                                                              print(JSON.stringify(tg,null,4));
                                                                             //console.dump(tg);
                                                                             this.targetData = tg;    
                                                                             
@@ -618,11 +618,11 @@ Window=new XObject({
                                                                         },
                                                                         drag_drop : function (w, ctx, x, y, time) {
                                                                               Seed.print("TARGET: drag-drop");
-                                                                                //print(JSON.(w.drag_dest_get_target_list(),null,4));
+                                                                                //print(JSON.stringify(w.drag_dest_get_target_list(),null,4));
                                                                                 w.drag_get_data
                                                                                 (          /* will receive 'drag-data-received' signal */
                                                                                         ctx,        /* represents the current state of the DnD */
-                                                                                        imports.Builder4.Globals.atoms["STRING"],    /* the target type we want */
+                                                                                        imports.Builder3.Globals.atoms["STRING"],    /* the target type we want */
                                                                                         time            /* time stamp */
                                                                                 );
                                                                                 
@@ -637,7 +637,7 @@ Window=new XObject({
                                                                         
                                                                                       var   delete_selection_data = false;
                                                                                        var  dnd_success = false;
-                                                                                       //print(JSON.(sel_data, null,4));
+                                                                                       //print(JSON.stringify(sel_data, null,4));
                                                                                         /* Deal with what we are given from source */
                                                                                         
                                                                                         // simce I can not be bothered to sort out
@@ -789,7 +789,7 @@ Window=new XObject({
                                                                     		Gdk.DragAction.COPY   | Gdk.DragAction.MOVE           /* what to do with data after dropped */
                                                                     	);
                                                                      
-                                                                    	this.el.drag_source_set_target_list(imports.Builder4.Globals.targetList);
+                                                                    	this.el.drag_source_set_target_list(imports.Builder3.Globals.targetList);
                                                                     
                                                                     	this.el.drag_source_add_text_targets(); 
                                                                     	this.el.drag_dest_set
@@ -800,7 +800,7 @@ Window=new XObject({
                                                                     	    Gdk.DragAction.COPY   | Gdk.DragAction.MOVE       /* what to do with data after dropped */
                                                                     	);
                                                                     
-                                                                    	this.el.drag_dest_set_target_list(  imports.Builder4.Globals.targetList);
+                                                                    	this.el.drag_dest_set_target_list(  imports.Builder3.Globals.targetList);
                                                                     	this.el.drag_dest_add_text_targets( );
                                                                     },
                                                                     selectNode : function(treepath_str) {
@@ -1142,7 +1142,7 @@ Window=new XObject({
                                                                                             } else {
                                                                                                 this.el.append(ret);
                                                                                             }
-                                                                                            //print(JSON.(ret,null,4));
+                                                                                            //print(JSON.stringify(ret,null,4));
                                                                                             //print('call nodeToJSON: ' + tr[i]);
                                                                                             var body = this.nodeToJSON(tr[i]);
                                                                                             //print(body);
@@ -1186,7 +1186,7 @@ Window=new XObject({
                                                                                             return;
                                                                                         }
                                                                                         print("LOAD");
-                                                                                        //print(JSON.(f.items, null,4));
+                                                                                        //print(JSON.stringify(f.items, null,4));
                                                                                         //console.dump(f.items);
                                                                                         this.load(f.items);
                                                                                         this.get('/LeftTree.view').el.expand_all();
@@ -1244,7 +1244,7 @@ Window=new XObject({
                                                                                 s.get_selected( oret);
                                                                                 var node = this.nodeToJS(oret.iter,false);
                                                                                     //console.dump(node);
-                                                                                print(JSON.(node, null,4)); 
+                                                                                print(JSON.stringify(node, null,4)); 
                                                                                     
                                                                                     // needs to drop first, otherwise the target_data 
                                                                                         // treepath will be invalid.
@@ -1370,7 +1370,7 @@ Window=new XObject({
                                                                                     }
                                                                                     o[i] = c[i];
                                                                                 }
-                                                                                return JSON.(o);
+                                                                                return JSON.stringify(o);
                                                                             },
                                                                             singleNodeToJS : function (treepath) 
                                                                                     {
@@ -1426,7 +1426,7 @@ Window=new XObject({
                                                                                 
                                                                                 if (treepath === false) {
                                                                                     //dupe!!!
-                                                                                    return JSON.parse(JSON.(ar));
+                                                                                    return JSON.parse(JSON.stringify(ar));
                                                                                 }
                                                                                 
                                                                                 return ar;
@@ -1477,8 +1477,8 @@ Window=new XObject({
                                                                                     var el = tree.getActivePath();
                                                                                     print(el);
                                                                                     var js = model.toJS(el, false);
-                                                                                    // print(JSON.(js[0], null,4));
-                                                                                    this.get('/DialogSaveTemplate').show(JSON.(js[0], null,4));
+                                                                                    // print(JSON.stringify(js[0], null,4));
+                                                                                    this.get('/DialogSaveTemplate').show(JSON.stringify(js[0], null,4));
                                                                                      
                                                                                     
                                                                                 }
@@ -1578,9 +1578,9 @@ Window=new XObject({
 																						data.forEach(function(p) {
                                                                                             
                                                                                             el.append(na);
-                                                                                            //print(JSON.(XObject.keys(na)));
+                                                                                            //print(JSON.stringify(XObject.keys(na)));
                                                                                             //print(typeof(na.iter));
-                                                                                            //print(JSON.(iter))
+                                                                                            //print(JSON.stringify(iter))
                                                                                             el.set_value(na.iter, 0, p.fn);
                                                                                             el.set_value(na.iter, 1, p.name);
                                                                                             
@@ -1626,7 +1626,7 @@ Window=new XObject({
                                                                                     var s = this.selection;
                                                                                     s.get_selected(ret);
                                                                                     var value = ''+ ret.model.get_value(ret.iter, 2).value.get_string();
-                                                                                    //console.log(JSON.(value,null,4));// id..
+                                                                                    //console.log(JSON.stringify(value,null,4));// id..
                                                                                     console.log("OUT?" + value);// id..
                                                                                     var file = this.get('/LeftProjectTree').project.getById(value);
                                                                                     
@@ -2185,7 +2185,7 @@ Window=new XObject({
                                                                     
                                                                         this.el.set_value(ret.iter, 5, type + ' : ' + str);
                                                                         // update the tree...  
-                                                                        print("new data: "  + JSON.(this.toJS() , null,4));
+                                                                        print("new data: "  + JSON.stringify(this.toJS() , null,4));
                                                                         this.get('/LeftTree.model').setFromNode(false,this.toJS());
                                                                         this.get('/LeftTree.model').changed(doRefresh); 
                                                                                  
@@ -2471,7 +2471,7 @@ Window=new XObject({
                                                                         }
                                                                         
                                                                         
-                                                                        //print(JSON.(ar));
+                                                                        //print(JSON.stringify(ar));
                                                                         return ar;
                                                                         // convert the l
                                                                     },
@@ -2502,7 +2502,7 @@ Window=new XObject({
                                                                                 },
                                                                                 edited : function (self, object, p0) {
                                                                                     
-                                                                                    //print("CHANGED VALUE:" + JSON.(p0, null,4));
+                                                                                    //print("CHANGED VALUE:" + JSON.stringify(p0, null,4));
                                                                                     //    return;
                                                                                 	var model = this.get('/LeftPanel.model');
                                                                                     var path = model.activePath;
@@ -3076,7 +3076,7 @@ Window=new XObject({
                                                                                                 w.drag_get_data
                                                                                                 (          /* will receive 'drag-data-received' signal */
                                                                                                         ctx,        /* represents the current state of the DnD */
-                                                                                                        imports.Builder4.Globals.atoms["STRING"],    /* the target type we want */
+                                                                                                        imports.Builder3.Globals.atoms["STRING"],    /* the target type we want */
                                                                                                         time            /* time stamp */
                                                                                                 );
                                                                                                                 
@@ -3170,7 +3170,7 @@ Window=new XObject({
                                                                                         );
                                                                                                                 
                                                                                        // print("RB: TARGETS : " + LeftTree.atoms["STRING"]);
-                                                                                        this.el.drag_dest_set_target_list(  imports.Builder4.Globals.targetList);
+                                                                                        this.el.drag_dest_set_target_list(  imports.Builder3.Globals.targetList);
                                                                                         
                                                                                         GLib.timeout_add_seconds(0, 1, function() {
                                                                                             //    print("run refresh?");
@@ -3311,7 +3311,7 @@ Window=new XObject({
                                                                                         
 																						// not used.
                                                                                         //this.renderedData = data;
-                                                                                        //var str = JSON.(data) ;
+                                                                                        //var str = JSON.stringify(data) ;
                                                                                         
                                                                                         if (!this.ready) {
                                                                                             console.log('not loaded yet');
@@ -3319,9 +3319,9 @@ Window=new XObject({
                                                                                         this.lastRedraw = new Date();
                                                                                         
                                                                                         this.el.execute_script("Builder.render(" +
-																										JSON.(js_src) +
+																										JSON.stringify(js_src) +
 																										"," +
-																										JSON.(file.name) + 
+																										JSON.stringify(file.name) + 
 																										");");
 																						
                                                                                         print( "before render" +    this.lastRedraw);
@@ -3792,7 +3792,7 @@ Window=new XObject({
                                                                                                                 );
                                                                                                                 
                                                                                                                // print("RB: TARGETS : " + LeftTree.atoms["STRING"]);
-                                                                                                                this.el.drag_dest_set_target_list( imports.Builder4.Globals.targetList);
+                                                                                                                this.el.drag_dest_set_target_list( imports.Builder3.Globals.targetList);
                                                                                                     },
                                                                                                     ready : false,
                                                                                                     getActiveNode : function(x,y)
@@ -3847,7 +3847,7 @@ Window=new XObject({
                                                                                                                 self.drag_get_data
                                                                                                                 (  /* will receive 'drag-data-received' signal */
                                                                                                                         ctx,        /* represents the current state of the this.gDnD */
-                                                                                                                        imports.Builder4.Globals.atoms["STRING"],    /* the target type we want */
+                                                                                                                        imports.Builder3.Globals.atoms["STRING"],    /* the target type we want */
                                                                                                                         time            /* time stamp */
                                                                                                                 );
                                                                                                                 
@@ -4022,7 +4022,7 @@ Window=new XObject({
                                         this.get('buttonbar').el.hide();
                                         this.get('viewbox').el.show();
                                         var ce = this.get('/Window.centereast').el;
-                                        print(JSON.(XObject.keys(ce) ,null,4));
+                                        print(JSON.stringify(XObject.keys(ce) ,null,4));
                                         ce.set_position(ce.get_allocated_width() - 150);
                                            
                                        // this.get('model').expanded();
@@ -4203,7 +4203,7 @@ Window=new XObject({
                                                                 );
                                                                 //Gtk.drag_source_set_target_list(this.el, LeftTree.targetList);
                                                                
-                                                                this.el.drag_source_set_target_list( imports.Builder4.Globals.targetList);
+                                                                this.el.drag_source_set_target_list( imports.Builder3.Globals.targetList);
                                                                 this.el.drag_source_add_text_targets( ); 
                                                                 /*
                                                                 print("RP: TARGET:" + LeftTree.atoms["STRING"]);

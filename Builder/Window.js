@@ -264,7 +264,7 @@ Window=new XObject({
                                                         html = html.replace('</head>', project.runhtml + '</head>');
                                                         
                                                        
-                                                        var     jsstr = JSON.(js[0], null, 4);
+                                                        var     jsstr = JSON.stringify(js[0], null, 4);
                                                        
                                                         var runbuilder = '<script type="text/javascript">' + "\n" + 
                                                             " Builder.render(" + jsstr + ");\n" +
@@ -1141,7 +1141,7 @@ Window=new XObject({
                                                                                             return;
                                                                                         }
                                                                                         print("LOAD");
-                                                                                        print(JSON.(f.items, null,4));
+                                                                                        print(JSON.stringify(f.items, null,4));
                                                                                         //console.dump(f.items);
                                                                                         this.load(f.items);
                                                                                         this.get('/LeftTree.view').el.expand_all();
@@ -1320,7 +1320,7 @@ Window=new XObject({
                                                                                     }
                                                                                     o[i] = c[i];
                                                                                 }
-                                                                                return JSON.(o);
+                                                                                return JSON.stringify(o);
                                                                             },
                                                                             singleNodeToJS : function (treepath) 
                                                                                     {
@@ -1371,7 +1371,7 @@ Window=new XObject({
                                                                                 
                                                                                 if (treepath === false) {
                                                                                     //dupe!!!
-                                                                                    return JSON.parse(JSON.(ar));
+                                                                                    return JSON.parse(JSON.stringify(ar));
                                                                                 }
                                                                                 
                                                                                 return ar;
@@ -1422,8 +1422,8 @@ Window=new XObject({
                                                                                      var el = tree.getActivePath();
                                                                                      print(el);
                                                                                      var js = model.toJS(el, false);
-                                                                                    // print(JSON.(js[0], null,4));
-                                                                                     this.get('/DialogSaveTemplate').show(JSON.(js[0], null,4));
+                                                                                    // print(JSON.stringify(js[0], null,4));
+                                                                                     this.get('/DialogSaveTemplate').show(JSON.stringify(js[0], null,4));
                                                                                      
                                                                                     
                                                                                 }
@@ -2382,7 +2382,7 @@ Window=new XObject({
                                                                         }
                                                                         
                                                                         
-                                                                        //print(JSON.(ar));
+                                                                        //print(JSON.stringify(ar));
                                                                         return ar;
                                                                         // convert the l
                                                                     },
@@ -3121,14 +3121,14 @@ Window=new XObject({
                                                                                         
                                                                                         
                                                                                         this.renderedData = data;
-                                                                                        var str = JSON.(data) ;
+                                                                                        var str = JSON.stringify(data) ;
                                                                                         
                                                                                         if (!this.ready) {
                                                                                             console.log('not loaded yet');
                                                                                         }
                                                                                         this.lastRedraw = new Date();
                                                                                     
-                                                                                        this.el.execute_script("Builder.render(" + JSON.(data) + ");");
+                                                                                        this.el.execute_script("Builder.render(" + JSON.stringify(data) + ");");
                                                                                          print( "before render" +    this.lastRedraw);
                                                                                         print( "after render" +    (new Date()));
                                                                                         

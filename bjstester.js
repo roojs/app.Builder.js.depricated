@@ -26,7 +26,7 @@ var args = Array.prototype.slice.call(Seed.argv);
 
 args.shift();
 args.shift();
-//print(JSON.(args, null,4));
+//print(JSON.stringify(args, null,4));
 //Seed.quit();
 
 
@@ -59,6 +59,6 @@ function bjstest(fn) {
     }, true);
     
 }
-//print(JSON.(rf.cfg, null,4));
+//print(JSON.stringify(rf.cfg, null,4));
  
  

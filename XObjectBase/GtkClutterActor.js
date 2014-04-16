@@ -49,7 +49,7 @@ GtkClutterActor = XObject.define(
             child.parent = this;
             //var contents = new Gtk.Button({ label: 'test' }); 
             
-           // print(JSON.(this.items));
+           // print(JSON.stringify(this.items));
             child.el.show();
             
             this.el = new GtkClutter.Actor.with_contents (  child.el) ;

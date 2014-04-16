@@ -18,7 +18,7 @@ Window=new XObject({
             print("SHOW");
             var BuildLists = imports['BuildLists.js'].BuildLists;
             this.data = new BuildLists();
-            print(JSON.(this.data.allmethods, null,4));
+            print(JSON.stringify(this.data.allmethods, null,4));
             
             var ls = this.get('method-list-store');
             this.data.allmethods.forEach(function(v) {
@@ -35,7 +35,7 @@ Window=new XObject({
                 i++;
                 ls.append( [ c , true ,   true]);
             };
-            print(JSON.(this.data.methods['Gtk.AccelGroup']));
+            print(JSON.stringify(this.data.methods['Gtk.AccelGroup']));
             
             
             
@@ -101,7 +101,7 @@ Window=new XObject({
                                         
                                                 
                                             }    
-                                            print(JSON.(meths));
+                                            print(JSON.stringify(meths));
                                         
                                             tp = false; 
                                             var mstore = this.get('/window.method-list-store');
@@ -174,7 +174,7 @@ Window=new XObject({
                                                         
                                                              
                                                             var old = this.list.getValue(path, 1);
-                                                           // print(JSON.(old));
+                                                           // print(JSON.stringify(old));
                                                             this.list.setValue(path, 1, old ? false : true)
                                                             
                                                             
@@ -251,7 +251,7 @@ Window=new XObject({
                                                         
                                                              
                                                             var old = this.list.getValue(path, 1);
-                                                           // print(JSON.(old));
+                                                           // print(JSON.stringify(old));
                                                             this.list.setValue(path, 1, old ? false : true)
                                                             
                                                             
@@ -329,7 +329,7 @@ Window=new XObject({
                                                         
                                                              
                                                             var old = this.list.getValue(path, 1);
-                                                           // print(JSON.(old));
+                                                           // print(JSON.stringify(old));
                                                             this.list.setValue(path, 1, old ? false : true)
                                                             
                                                             
