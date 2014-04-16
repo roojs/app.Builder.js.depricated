@@ -3186,9 +3186,10 @@ Window=new XObject({
                                                                                         // we refresh in a loop privately..
                                                                                         var autodraw = this.get('/RightBrowser.AutoRedraw').el.active;
                                                                                         if (!autodraw && !force) {
-                                                                                            print("Skipping redraw - no force, and autodraw off");
+                                                                                            print("---Skipping redraw - no force, and autodraw off");
                                                                                             return;
                                                                                         }
+                                                                                        print("---renderJS - setting refresh required");
                                                                                         this.refreshRequired  = true;
                                                                                     },
                                                                                     runRefresh : function() 
