@@ -3195,7 +3195,7 @@ Window=new XObject({
                                                                                     {
                                                                                         // this is run every 2 seconds from the init..
                                                                                     
-                                                                                      
+                                                                                        print("---- run refresh");
                                                                                         
                                                                                         if (!this.refreshRequired) {
                                                                                             // print("no refresh required");
@@ -3215,6 +3215,8 @@ Window=new XObject({
                                                                                          if (!this.get('/Window.LeftTree').getActiveFile()) {
                                                                                             return;
                                                                                          }
+                                                                                         
+                                                                                         
                                                                                          this.refreshRequired = false;
                                                                                        //  print("HTML RENDERING");
                                                                                          
@@ -3224,9 +3226,11 @@ Window=new XObject({
 																						// before
                                                                                         
 																						
-																						
+																						print("---- run refresh - getting js");
 																						
                                                                                         var js = this.get('/LeftTree.model').toJS();
+                                                                                        
+                                                                                        
                                                                                         if (!js || !js.length) {
                                                                                             print("no data");
                                                                                             return;
@@ -3251,7 +3255,7 @@ Window=new XObject({
 																						//file.items[0].background = false;
 																						//var p = file.parent;
 																						//file.parent = false;
-																						 
+																						 print("---- run refresh - to source preview");
                                                                                         var js_src = file.toSourcePreview();
 																						if (this.renderedData && js_src == this.renderedData && project.runhtml == this.runhtml) {
 																							// unless it' sforced..
