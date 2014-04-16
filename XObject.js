@@ -403,6 +403,10 @@ XObject.prototype = {
     get : function(xid)
     {
         XObject.log("SEARCH FOR " + xid + " in " + this.id);
+        return this.getBySearch(xid);
+    },
+    getBySearch : function(id) {
+        
         var ret=  false;
         var oid = '' + xid;
         if (!xid.length) {
@@ -413,7 +417,7 @@ XObject.prototype = {
         }
         
         if (xid[0] == '.') {
-            return this.parent.get(xid.substring(1));
+            return this.parent.getBySearch(xid.substring(1));
         }
         if (xid[0] == '/') {
             
@@ -438,7 +442,7 @@ XObject.prototype = {
             }
             
             try {
-                ret = e.get(xid.substring(1));
+                ret = e.getBySearch(xid.substring(1));
             } catch (ex) { }
             
             if (!ret) {
