@@ -1,7 +1,7 @@
 Gtk = imports.gi.Gtk;
 Gdk = imports.gi.Gdk;
 
-Window = imports.Builder3.Window.Window;
+Window = imports.Builder4.Window.Window;
 
 JSON.xstringify = function (o) {
 	  var seen = [];
