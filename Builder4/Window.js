@@ -3198,13 +3198,14 @@ Window=new XObject({
                                                                                         print("---- run refresh");
                                                                                         
                                                                                         if (!this.refreshRequired) {
-                                                                                            // print("no refresh required");
+                                                                                            print("---- run refresh - no refresh required");
                                                                                             return;
                                                                                         }
                                                                                     
                                                                                         if (this.lastRedraw) {
                                                                                            // do not redraw if last redraw was less that 5 seconds ago.
                                                                                            if (((new Date()) -  this.lastRedraw) < 5000) {
+                                                                                                print("---- run refresh - too soon");
                                                                                                 return;
                                                                                             }
                                                                                         }
