@@ -3214,6 +3214,7 @@ Window=new XObject({
                                                                                         
                                                                                         
                                                                                          if (!this.get('/Window.LeftTree').getActiveFile()) {
+                                                                                            print("---- run refresh - no active file name");
                                                                                             return;
                                                                                          }
                                                                                          
@@ -3233,7 +3234,7 @@ Window=new XObject({
                                                                                         
                                                                                         
                                                                                         if (!js || !js.length) {
-                                                                                            print("no data");
+                                                                                            print("---- run refresh - no data");
                                                                                             return;
                                                                                         }
                                                                                         var  data = js[0];
