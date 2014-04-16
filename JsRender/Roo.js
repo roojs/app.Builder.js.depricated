@@ -238,9 +238,13 @@ Roo = XObject.define(
         {
             
             var top = this.guessName(this.items[0]);
+            print(JSON.stringify(this.items, null,4));
+                       
             if (!top) {
                 return false;
             }
+            
+            
             if (top.match(/Dialog/)) {
                 return this.toSourceDialog(true);
             }
