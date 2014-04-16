@@ -2890,6 +2890,7 @@ Window=new XObject({
                                                                                     xtype: Gtk.Button,
                                                                                     listeners : {
                                                                                         clicked : function (self) {
+                                                                                        print("---Calling renderJS on /RightBrowser.view");
                                                                                           this.get('/RightBrowser.view').renderJS(null,true);
                                                                                         }
                                                                                     },
