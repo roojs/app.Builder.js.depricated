@@ -2913,7 +2913,7 @@ Window=new XObject({
                                                                                     xtype: Gtk.Button,
                                                                                     listeners : {
                                                                                         clicked : function (self) {
-                                                                                          
+                                                                                            print("--- Full Redraw - clicked");
 																						    var view = this.get('/RightBrowser.view');
 																						  //this.get('/RightBrowser.view').redraws = 99;
 																							view.refreshRequired = true;
