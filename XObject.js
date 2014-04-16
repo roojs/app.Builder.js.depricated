@@ -405,7 +405,7 @@ XObject.prototype = {
         XObject.log("SEARCH FOR " + xid + " in " + this.id);
         return this.getBySearch(xid);
     },
-    getBySearch : function(id) {
+    getBySearch : function(xid) {
         
         var ret=  false;
         var oid = '' + xid;
