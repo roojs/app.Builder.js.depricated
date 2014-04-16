@@ -2918,6 +2918,8 @@ Window=new XObject({
 																							view.refreshRequired = true;
 																							view.lastRedraw = false;
 																							view.renderedData = false;
+                                                                                            
+                                                                                            print("--- CALLing view.renderJS?");
 																							view.renderJS(null,true);
 																						  
 																						}
