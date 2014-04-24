@@ -386,6 +386,7 @@ right:
     Roo.bootstrap.Button
     Roo.bootstrap.ComboBox
     Roo.bootstrap.Container
+    Roo.bootstrap.Row
 //    Roo.bootstrap.Fieldset
         
 left:
