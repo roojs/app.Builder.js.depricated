@@ -314,7 +314,6 @@ right:
     Roo.bootstrap.Popover
     Roo.bootstrap.Input
     Roo.bootstrap.TextArea
-    Roo.bootstrap.CheckBox
     Roo.bootstrap.Table
     Roo.bootstrap.Pagination
     Roo.bootstrap.Progress
