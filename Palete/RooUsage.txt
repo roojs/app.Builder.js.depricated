@@ -314,12 +314,12 @@ right:
     Roo.bootstrap.Popover
     Roo.bootstrap.Input
     Roo.bootstrap.TextArea
+    Roo.bootstrap.CheckBox
     Roo.bootstrap.Table
     Roo.bootstrap.Pagination
     Roo.bootstrap.Progress
     Roo.bootstrap.TabPanel
     Roo.bootstrap.DateField
-     Roo.bootstrap.ComboBox
 
 left:
     Roo.bootstrap.Progress
@@ -381,8 +381,6 @@ right:
 left:
     Roo.bootstrap.Form
     Roo.bootstrap.Container
-    Roo.bootstrap.Column
-    Roo.bootstrap.Row
 right:
     Roo.bootstrap.Input
     Roo.bootstrap.TextArea
@@ -411,3 +409,7 @@ left:
 right:
     Roo.bootstrap.Container
 
+left:    
+    Roo.bootstrap.Pagination
+right:
+    Roo.bootstrap.PaginationItem
