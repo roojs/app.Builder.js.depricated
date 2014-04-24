@@ -319,7 +319,7 @@ right:
     Roo.bootstrap.Progress
     Roo.bootstrap.TabPanel
     Roo.bootstrap.DateField
-    Roo.bootstrap.ComboBox
+     Roo.bootstrap.ComboBox
 
 left:
     Roo.bootstrap.Progress
@@ -381,6 +381,8 @@ right:
 left:
     Roo.bootstrap.Form
     Roo.bootstrap.Container
+    Roo.bootstrap.Column
+    Roo.bootstrap.Row
 right:
     Roo.bootstrap.Input
     Roo.bootstrap.TextArea
