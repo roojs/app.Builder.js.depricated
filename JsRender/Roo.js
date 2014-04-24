@@ -209,6 +209,8 @@ Roo = XObject.define(
         
         save : function()
         {
+            
+            print("--- JsRender.Roo.save");
             Base.prototype.save.call(this);
             // now write the js file..
             var js = this.path.replace(/\.bjs$/, '.js');
