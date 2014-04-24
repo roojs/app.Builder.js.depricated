@@ -387,6 +387,7 @@ right:
     Roo.bootstrap.ComboBox
     Roo.bootstrap.Container
     Roo.bootstrap.Row
+    Roo.bootstrap.TabPanel
 //    Roo.bootstrap.Fieldset
         
 left:
