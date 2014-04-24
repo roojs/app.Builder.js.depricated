@@ -136,6 +136,7 @@ Base = XObject.define(
             }
             return this.tree;
             */
+            print(JSON.stringify(this.files,null,4));
             
             // have parents -> add them to parent...
             var files = {};
