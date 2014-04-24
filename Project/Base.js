@@ -190,6 +190,10 @@ Base = XObject.define(
             ret.sort(function(a,b) {
                 return a.path > b.path ? 1 : -1;
             });
+            
+            print(JSON.stringify(ret,null,4));
+            
+            
             this.tree = ret;
             return this.tree;
              
