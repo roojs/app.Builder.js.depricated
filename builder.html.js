@@ -556,8 +556,22 @@ Builder  = {
        var bid = id.length ? 'builder-' + id : '';
        console.log('{ "hover-node" :  "' + bid + '"}');
        this.lastID = id;
+    },
+    clearBootstrap : function()
+    {
+        // if the page is not bootstrap
+        
+        if ( Roo.XComponent.modules &&
+            Roo.XComponent.modules[0]._tree().xns &&
+            typeof(Roo.bootstrap) !='undefined' &&
+            Roo.XComponent.modules[0]._tree().xns == Roo.bootstrap
+            ) {
+            // it's bootstrap - probably remove roo's css..
+            return;
+        }
+        
+           
     }
-            
     
 };
     
