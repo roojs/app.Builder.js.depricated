@@ -562,6 +562,7 @@ Builder  = {
         // if the page is not bootstrap
         
         if ( Roo.XComponent.modules &&
+            Roo.XComponent.modules.length &&
             Roo.XComponent.modules[0]._tree().xns &&
             typeof(Roo.bootstrap) !='undefined' &&
             Roo.XComponent.modules[0]._tree().xns == Roo.bootstrap
