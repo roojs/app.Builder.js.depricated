@@ -572,17 +572,19 @@ Builder  = {
             return;
         }
         Roo.log("remove css");
+        var rem = [];
         var ar = document.getElementsByTagName('link');
         for (var i = 0; i < ar.length;i++) {
             var l = ar[i];
             Roo.log(l.getAttribute('href'));
             if (l.getAttribute('href').match(/bootstrap/)) {
-                l.parentNode.removeChild(l);
+                rem.push(l);
+                
                 
             }
             //code
         }
-           
+        Roo.each(rem, function(l) { l.parentNode.removeChild(l);});
     }
     
 };
