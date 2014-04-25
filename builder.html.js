@@ -585,5 +585,5 @@ Builder  = {
     }
     
 };
-Roo.onReady(Builder.clearBootstrap);
+Roo.onReady(function() { Builder.clearBootstrap(); });
     
