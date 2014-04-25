@@ -569,9 +569,10 @@ Builder  = {
             // it's bootstrap - probably remove roo's css..
             return;
         }
-        
+        document.getElementsByTagName('link');
            
     }
     
 };
+Roo.onReady(Builder.clearBootstrap);
     
