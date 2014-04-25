@@ -570,6 +570,7 @@ Builder  = {
             // it's bootstrap - probably remove roo's css..
             return;
         }
+        Roo.log("remove css");
         var ar = document.getElementsByTagName('link');
         for (var i = 0; i < ar.length;i++) {
             var l = ar[i];
