@@ -572,7 +572,7 @@ Builder  = {
         var ar = document.getElementsByTagName('link');
         for (var i = 0; i < ar.length;i++) {
             var l = ar[i];
-            if (l.getAttribute('href').match(/bootstrap/) {
+            if (l.getAttribute('href').match(/bootstrap/)) {
                 l.parentNode.removeChild(l);
                 
             }
