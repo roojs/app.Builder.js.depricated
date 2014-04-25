@@ -415,3 +415,8 @@ left:
     Roo.bootstrap.Pagination
 right:
     Roo.bootstrap.PaginationItem
+
+left:
+    Roo.bootstrap.Input
+right:
+    Roo.bootstrap.Label
