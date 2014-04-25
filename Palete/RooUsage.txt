@@ -320,6 +320,7 @@ right:
     Roo.bootstrap.TabPanel
     Roo.bootstrap.DateField
     Roo.bootstrap.Label
+    Roo.bootstrap.ComboBox
 
 left:
     Roo.bootstrap.Progress
