@@ -569,7 +569,15 @@ Builder  = {
             // it's bootstrap - probably remove roo's css..
             return;
         }
-        document.getElementsByTagName('link');
+        var ar = document.getElementsByTagName('link');
+        for (var i = 0; i < ar.length;i++) {
+            var l = ar[i];
+            if (l.getAttribute('href').match(/bootstrap/) {
+                l.parentNode.removeChild(l);
+                
+            }
+            //code
+        }
            
     }
     
