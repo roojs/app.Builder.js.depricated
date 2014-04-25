@@ -567,6 +567,7 @@ Builder  = {
             typeof(Roo.bootstrap) !='undefined' &&
             Roo.XComponent.modules[0]._tree().xns == Roo.bootstrap
             ) {
+            Roo.log("it's boostrap");
             // it's bootstrap - probably remove roo's css..
             return;
         }
