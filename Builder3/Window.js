@@ -843,6 +843,8 @@ Window=new XObject({
                                                                                   //  print("AFTER CHANGED");
                                                                                     //console.dump(this.file.items);
                                                                                     this.file.save();
+                                                                                    
+                                                                                    
                                                                                     this.currentTree = this.file.items[0];
                                                                                     //console.log(this.file.toSource());
                                                                                     
@@ -2941,6 +2943,8 @@ Window=new XObject({
                                                                                     listeners : {
                                                                                         load_finished : function (self, object) {
                                                                                             print("load finished");
+                                                                                            var file = this.get('/LeftTree.model').file;
+                                                                                            file.saveHTML(object);
                                                                                         //    print("load_finished"); return;
                                                                                         	// if (this.ready) { // dont do it twice!
                                                                                         	 //   return; 
@@ -3269,6 +3273,7 @@ Window=new XObject({
 																								"Roo.onReady(function() {\n" +
 																								"if (" + file.name +".show) " +  file.name +".show({});\n" +
 																								"Roo.XComponent.build();\n" +
+                                                                                                
 																								"});\n";
 																								
 																						

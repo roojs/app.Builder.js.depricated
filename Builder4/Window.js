@@ -843,6 +843,8 @@ Window=new XObject({
                                                                                   //  print("AFTER CHANGED");
                                                                                     //console.dump(this.file.items);
                                                                                     this.file.save();
+                                                                                    
+                                                                                    
                                                                                     this.currentTree = this.file.items[0];
                                                                                     //console.log(this.file.toSource());
                                                                                     

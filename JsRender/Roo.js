@@ -2,6 +2,7 @@
 
  
 Gio = imports.gi.Gio;
+GLib= imports.gi.GLib;
 XObject = imports.XObject.XObject;
 
   
@@ -215,13 +216,153 @@ Roo = XObject.define(
             // now write the js file..
             var js = this.path.replace(/\.bjs$/, '.js');
             var d = new Date();
-            var js_src = this.toSource();
+            var js_src = this.toSource();            
             print("TO SOURCE in " + ((new Date()) - d) + "ms");
             File.write(js, js_src);
+            // for bootstrap - we can write the HTML to the templates directory..
+            
+            var top = this.guessName(this.items[0]);
+            print ("TOP = " + top)
+             
+            
+            
             
             
             
         },
+        saveHTML : function(frame) {
+            var top = this.guessName(this.items[0]);
+            print ("TOP = " + top)
+            if (top != 'Roo.bootstrap.Body') {
+                return;
+            }
+            print("SAVE HTML -- ");
+            print(frame);
+            var _this = this;
+            // wait a second.
+            
+            GLib.timeout_add_seconds(0, 1, function() {
+                //    print("run refresh?");
+                 var html = _this.traversedom(frame);
+                 print(html);
+                 
+                 return false; // only once..
+            });
+            
+            
+            
+            
+        },
+        
+        
+        traversedom :  function(web_frame) {
+            print("TRAVERSE DOM?");
+            
+            var dom = web_frame.get_dom_document().body;
+            print(dom);
+            var ret = '';
+            //Roo.select('body > div',true).each(function(el) {
+            this.traverseDOMTree(function(s) { ret+=s; }, dom, 1);
+            return ret;
+        },
+        
+        
+        traverseDOMTree : function(cb, currentElement, depth) {
+            if (!currentElement) {
+                
+                return;
+            }
+            if (currentElement.class_name.match(/roo-dynamic/)) {
+                return;
+            }
+            
+            //Roo.log(currentElement);
+            var j;
+            var nodeName = currentElement.node_name;
+            var tagName = currentElement.tag_name;
+            
+            if  (nodeName == '#text') {
+                cb(currentElement.node_value);
+                return;
+            
+            }
+             
+            
+            
+            if(nodeName == 'BR'){
+                cb("<BR/>");
+                return;
+            }
+            if (nodeName != 'BODY') {
+                
+            
+            
+                var i = 0;
+              // Prints the node tagName, such as <A>, <IMG>, etc
+                if (tagName) {
+                    var attr = [];
+                    for(i = 0; i < currentElement.attributes.length;i++) {
+                        var aname = currentElement.attributes.item(i).name;
+                        if (aname=='id') {
+                            aname= 'xbuilderid';
+                        }
+                        // skip
+                        if (currentElement.attributes.item(i).value == 'builderel') {
+                            return;
+                        }
+                        attr.push(aname + '="' + currentElement.attributes.item(i).value + '"' );
+                    }
+                    
+                    
+                    cb("<"+currentElement.tag_name+ ( attr.length ? (' ' + attr.join(' ') ) : '') + ">");
+                } 
+                else {
+                  cb("[unknown tag]");
+                }
+            } else {
+                tagName = false;
+            }
+            // Traverse the tree
+            i = 0;
+            var currentElementChild = currentElement.child_nodes.item(i);
+            var allText = true;
+            while (currentElementChild) {
+                // Formatting code (indent the tree so it looks nice on the screen)
+                
+                if  (currentElementChild.node_name == '#text') {
+                    cb(currentElementChild.node_value);
+                    i++;
+                    currentElementChild=currentElement.child_nodes.item(i);
+                    continue;
+                }   
+                allText = false;
+                cb("\n");
+                for (j = 0; j < depth; j++) {
+                  // &#166 is just a vertical line
+                  cb("  ");
+                }               
+                
+                    
+                // Recursively traverse the tree structure of the child node
+                this.traverseDOMTree(cb, currentElementChild, depth+1);
+                i++;
+                currentElementChild=currentElement.child_nodes.item(i);
+            }
+            if (!allText) {
+                    // The remaining code is mostly for formatting the tree
+                cb("\n");
+                for (j = 0; j < depth - 1; j++) {
+                  cb("  ");
+                }     
+            }
+            if (tagName) {
+                cb("</"+tagName+">");
+            }
+            
+        },
+        
+        
+        
          /**
          * convert xtype for munged output..
          * 
@@ -233,6 +374,13 @@ Roo = XObject.define(
             
             els.push("xtype: '"+ bits.pop()+"'");
             els.push('xns: '+ bits.join('.'));
+            if (xtype.match(/bootstrap/)) {
+                els.push("'xtype-bootstrap' : '"+ xtype +"'");
+            }
+                //code
+            
+            
+            
         },
         
         
