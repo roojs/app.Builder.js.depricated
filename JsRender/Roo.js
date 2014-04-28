@@ -247,7 +247,7 @@ Roo = XObject.define(
                 print(html);
                 
                 print(this.path);
-                var dir = File.dirname(this.path) +  File.SEPARATOR + 'templates';
+                var dir = File.dirname(_this.path) +  File.SEPARATOR + 'templates';
                 print(dir);
                 if (!File.isDir(dir)) {
                     print("Skip no template sub-directory");
