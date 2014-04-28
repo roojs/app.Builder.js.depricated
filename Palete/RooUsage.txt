@@ -319,7 +319,8 @@ right:
     Roo.bootstrap.Progress
     Roo.bootstrap.TabPanel
     Roo.bootstrap.DateField
-    Roo.bootstrap.Label
+    Roo.bootstrap.CheckBox
+    Roo.bootstrap.ComboBox
 
 left:
     Roo.bootstrap.Progress
@@ -415,8 +416,3 @@ left:
     Roo.bootstrap.Pagination
 right:
     Roo.bootstrap.PaginationItem
-
-left:
-    Roo.bootstrap.Input
-right:
-    Roo.bootstrap.Label
