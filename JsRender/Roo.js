@@ -246,7 +246,7 @@ Roo = XObject.define(
                 var html = _this.traversedom(frame);
                 print(html);
                 
-                print(this.path);
+                print(_this.path);
                 var dir = File.dirname(_this.path) +  File.SEPARATOR + 'templates';
                 print(dir);
                 if (!File.isDir(dir)) {
