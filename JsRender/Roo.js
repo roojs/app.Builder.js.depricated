@@ -243,10 +243,24 @@ Roo = XObject.define(
             
             GLib.timeout_add_seconds(0, 1, function() {
                 //    print("run refresh?");
-                 var html = _this.traversedom(frame);
-                 print(html);
-                 
+                var html = _this.traversedom(frame);
+                print(html);
+                
+                
+                var dir = File.dirname(this.path) +  File.SEPARATOR + 'templates';
+                if (!File.exists(dir)) {
+                    print("Skip no template sub-directory");
+                    return false;
+                }
+                var fn = dir + File.SEPARATOR + File.basename(this.path).replace(/\.bjs$/, '.html');
+                print(fn);
+                
+                
+                
                  return false; // only once..
+                
+                
+                
             });
             
             
