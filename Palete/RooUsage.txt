@@ -420,18 +420,3 @@ left:
     Roo.bootstrap.Pagination
 right:
     Roo.bootstrap.PaginationItem
-
-left:    
-    Roo.bootstrap.HtmlEditor
-right:
-    Roo.bootstrap.HtmlEditor.ToolbarStandard
-
-left: 
- Roo.bootstrap.Toolbar
-right: 
-  Roo.bootstrap.Toolbar.Button         
-  Roo.bootstrap.Toolbar.Fill         
-  Roo.bootstrap.Toolbar.Separator         
-  Roo.bootstrap.Toolbar.Spacer         
-  Roo.bootstrap.Toolbar.SplitButton         
-  Roo.bootstrap.Toolbar.TextItem  
