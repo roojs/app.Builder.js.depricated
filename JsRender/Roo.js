@@ -253,7 +253,7 @@ Roo = XObject.define(
                     print("Skip no template sub-directory");
                     return false;
                 }
-                var fn = dir + File.SEPARATOR + File.basename(this.path).replace(/\.bjs$/, '.html');
+                var fn = dir + File.SEPARATOR + File.basename(_this.path).replace(/\.bjs$/, '.html');
                 print(fn);
                 
                 
