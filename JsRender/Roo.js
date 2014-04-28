@@ -255,7 +255,7 @@ Roo = XObject.define(
                 }
                 var fn = dir + File.SEPARATOR + File.basename(_this.path).replace(/\.bjs$/, '.html');
                 print(fn);
-                
+                File.write(fn, html);
                 
                 
                  return false; // only once..
