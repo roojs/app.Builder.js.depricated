@@ -420,3 +420,8 @@ left:
     Roo.bootstrap.Pagination
 right:
     Roo.bootstrap.PaginationItem
+
+left:    
+    Roo.bootstrap.HtmlEditor
+right:
+    Roo.bootstrap.HtmlEditor.ToolbarStandard
