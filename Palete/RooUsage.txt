@@ -324,6 +324,7 @@ right:
     Roo.bootstrap.Radio
     Roo.bootstrap.ComboBox
     Roo.bootstrap.Element
+    Roo.bootstrap.HtmlEditor
 
 left:
     Roo.bootstrap.Progress
