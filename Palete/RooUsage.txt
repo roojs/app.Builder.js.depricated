@@ -320,6 +320,7 @@ right:
     Roo.bootstrap.TabPanel
     Roo.bootstrap.DateField
     Roo.bootstrap.CheckBox
+    Roo.bootstrap.Radio
     Roo.bootstrap.ComboBox
 
 left:
