@@ -300,6 +300,7 @@ left:
     Roo.bootstrap.Column
     Roo.bootstrap.Row
     Roo.bootstrap.TabPanel
+    Roo.bootstrap.Element
 right:
     Roo.bootstrap.Container
     Roo.bootstrap.Button
@@ -322,6 +323,7 @@ right:
     Roo.bootstrap.CheckBox
     Roo.bootstrap.Radio
     Roo.bootstrap.ComboBox
+    Roo.bootstrap.Element
 
 left:
     Roo.bootstrap.Progress
