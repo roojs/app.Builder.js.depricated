@@ -511,6 +511,50 @@ Roo = XObject.define(
              
         },
         
+        toSourceModal : function(isPreview) 
+        {
+            
+            isPreview = isPreview || false;
+            var items = JSON.parse(JSON.stringify(this.items[0]));
+            var o = this.mungeToString(items, false, '            ');   
+            return [
+                this.outputHeader(),
+                this.name + " = {",
+                "",
+                "    dialog : false,",
+                "    callback:  false,",
+                "",   
+                "    show : function(data, cb)",
+                "    {",
+                "        if (!this.dialog) {",
+                "            this.create();",
+                "        }",
+                "",
+                "        this.callback = cb;",
+                "        this.data = data;",
+                "        this.dialog.show(this.data._el);",
+                "        if (this.form) {",
+                "           this.form.reset();",
+                "           this.form.setValues(data);",
+                "           this.form.fireEvent('actioncomplete', this.form,  { type: 'setdata', data: data });",
+                "        }",
+                "",   
+                "    },",
+                "",
+                "    create : function()",
+                "    {",
+                "        var _this = this;",
+                "        this.dialog = Roo.factory(" + o +  ");",
+                "    }",
+                "};",
+                ""
+                
+             ].join("\n");
+             
+             
+             
+        },
+        
         
         pathToPart : function()
         {
