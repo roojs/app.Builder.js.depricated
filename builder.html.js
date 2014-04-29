@@ -561,17 +561,12 @@ Builder  = {
     {
         // if the page is not bootstrap
         
-        if ( Roo.XComponent.modules &&
-            Roo.XComponent.modules.length &&
-            Roo.XComponent.modules[0]._tree().xns &&
-            typeof(Roo.bootstrap) !='undefined' &&
-            Roo.XComponent.modules[0]._tree().xns == Roo.bootstrap
-            ) {
-            Roo.log("it's boostrap");
+        if ( typeof(BuilderUseBootstrap) != 'undefined' ) {
+            Roo.log("it's boostrap - BuilderUseBootstrap is defined ");
             // it's bootstrap - probably remove roo's css..
             return;
         }
-        Roo.log("remove css");
+        Roo.log("remove css = BuilderUseBootstrap is not defined");
         var rem = [];
         var ar = document.getElementsByTagName('link');
         for (var i = 0; i < ar.length;i++) {
