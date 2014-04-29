@@ -415,7 +415,7 @@ Roo = XObject.define(
             }
             
             if (top.match(/Modal/)) {
-                return this.toSourceDialog(true);
+                return this.toSourceModal(true);
             }
             
             return this.toSourceLayout(true);
