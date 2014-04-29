@@ -408,7 +408,7 @@ Roo = XObject.define(
             if (!top) {
                 return false;
             }
-            
+            print_r(top);
             
             if (top.match(/Dialog/)) {
                 return this.toSourceDialog(true);
