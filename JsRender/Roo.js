@@ -409,11 +409,15 @@ Roo = XObject.define(
                 return false;
             }
             
-            print('here is the top!!!!!!!!!!!!!!!!!!!!11');
-            print(top);
+            
             if (top.match(/Dialog/)) {
                 return this.toSourceDialog(true);
             }
+            
+            if (top.match(/Modal/)) {
+                return this.toSourceDialog(true);
+            }
+            
             return this.toSourceLayout(true);
             
             
