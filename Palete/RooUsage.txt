@@ -349,6 +349,7 @@ left:
 right:  
     Roo.bootstrap.Table.RowSelectionModel    
 
+
 left:
     Roo.bootstrap.TableBody
 right:
