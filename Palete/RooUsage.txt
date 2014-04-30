@@ -257,7 +257,7 @@ left:
   Roo.JsonView:store
   Roo.bootstrap.ComboBox:store
   Roo.bootstrap.Calendar:store
-  Roo.bootstrap.TableBody:store
+  Roo.bootstrap.Table:store
 right: 
   Roo.data.Store
   Roo.data.SimpleStore
@@ -338,6 +338,16 @@ right:
     Roo.bootstrap.TableRow
     Roo.bootstrap.TableCell
     Roo.bootstrap.TableBody
+
+left:   
+    Roo.bootstrap.Table:cm[]          
+right:
+    Roo.bootstrap.Table.ColumnModel
+
+left:
+    Roo.bootstrap.Table:sm
+right:  
+    Roo.bootstrap.Table.RowSelectionModel    
 
 left:
     Roo.bootstrap.TableBody
