@@ -342,12 +342,12 @@ right:
 left:   
     Roo.bootstrap.Table:cm[]          
 right:
-    Roo.bootstrap.TableGrid.ColumnModel
+    Roo.bootstrap.Table.ColumnModel
 
 left:
     Roo.bootstrap.Table:sm
 right:  
-    Roo.bootstrap.TableGrid.RowSelectionModel    
+    Roo.bootstrap.Table.RowSelectionModel    
 
 left:
     Roo.bootstrap.TableBody
