@@ -185,10 +185,7 @@ left:
 right:
  Roo.grid.ColumnModel
 
-left:           
- Roo.grid.ColumnModel:editor
-right:
- Roo.grid.GridEditor         
+     
         
 	
 left: 
