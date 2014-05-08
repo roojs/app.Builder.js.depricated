@@ -110,7 +110,12 @@ right:
   Roo.form.Radio         
   Roo.form.ComboBox         
   Roo.form.TextArea
-  Roo.Button 
+  Roo.Toolbar.Button         
+  Roo.Toolbar.Fill         
+  Roo.Toolbar.Separator         
+  Roo.Toolbar.Spacer         
+  Roo.Toolbar.SplitButton         
+  Roo.Toolbar.TextItem
 
 left: 
   Roo.grid.GridEditor:field
