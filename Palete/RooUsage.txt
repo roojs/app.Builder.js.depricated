@@ -109,7 +109,8 @@ right:
   Roo.form.Checkbox         
   Roo.form.Radio         
   Roo.form.ComboBox         
-  Roo.form.TextArea   
+  Roo.form.TextArea
+  Roo.Button 
 
 left: 
   Roo.grid.GridEditor:field
