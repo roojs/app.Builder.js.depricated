@@ -94,6 +94,17 @@ right:
   Roo.Button         
 
 left: 
+  Roo.form.HtmlEditor:toolbars[]
+right:
+  Roo.form.TextField         
+  Roo.form.DateField         
+  Roo.form.NumberField         
+  Roo.form.Checkbox         
+  Roo.form.Radio         
+  Roo.form.ComboBox         
+  Roo.form.TextArea 
+
+left: 
   Roo.grid.GridEditor:field
 right:
   Roo.form.TextField         
