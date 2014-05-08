@@ -100,8 +100,8 @@ right:
   Roo.form.HtmlEditor.ToolbarContext
 
 left: 
-  Roo.form.HtmlEditor.ToolbarStandard
-  Roo.form.HtmlEditor.ToolbarContext
+  Roo.form.HtmlEditor.ToolbarStandard:btns[]
+  Roo.form.HtmlEditor.ToolbarContext:btns[]
 right:
   Roo.form.TextField         
   Roo.form.DateField         
