@@ -374,12 +374,6 @@ right:
     Roo.bootstrap.Table.RowSelectionModel    
 
 left:
-    Roo.bootstrap.Table.ColumnModel
-right:  
-    Roo.bootstrap.ButtonGroup
-    Roo.bootstrap.Button
-
-left:
     Roo.bootstrap.TableBody
 right:
     Roo.bootstrap.TableRow
