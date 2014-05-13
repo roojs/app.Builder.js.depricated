@@ -318,13 +318,13 @@ Base = XObject.define(
                 }
                 var xt = _this.xtype;
                 var cls = imports.JsRender[xt][xt];
-                print(cls);
-                //Seed.print("Adding file " + dir  + '/' + fn);
+                 //Seed.print("Adding file " + dir  + '/' + fn);
                 _this.files[dir  + '/' + fn] = new cls({
                     path : dir  + '/' + fn,
                     parent : parent,
                     project : _this
                 });
+                
                 //console.log(this.files[dir  + '/' + fn] );
                 /*
                 var f = Gio.file_new_for_path(dir + '/' + fn);
@@ -337,7 +337,7 @@ Base = XObject.define(
                 this.files[dir  + '/' + fn] = '' + tv.tv_sec + '.' + tv.tv_usec;
                 */
             });
-             
+            print(this); 
             
         }
         
