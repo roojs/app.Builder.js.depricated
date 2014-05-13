@@ -300,7 +300,7 @@ Base = XObject.define(
                     subs.push(dir  + '/' + fn);
                     return;
                 }
-                
+                print(fn);
                 if (!fn.match(/\.bjs$/)) {
                     return;
                 }
