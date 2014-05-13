@@ -16,4 +16,11 @@ var proj = new imports.Project.Gtk.Gtk({
     
 });
 
-print(JSON.stringify(proj.files['/home/alan/gitlive/app.Builder/Builder4/About.bjs'], null,4));
+
+
+var tf = proj.files['/home/alan/gitlive/app.Builder/Builder4/About.bjs'];
+tf.loadItemds(function() {
+    print(JSON.stringify(tf,null,4));
+    
+    
+}, true); 
