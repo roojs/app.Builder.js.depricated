@@ -337,7 +337,7 @@ Base = XObject.define(
                 this.files[dir  + '/' + fn] = '' + tv.tv_sec + '.' + tv.tv_usec;
                 */
             });
-            print(this); 
+            print(this.files); 
             
         }
         
