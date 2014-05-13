@@ -44,7 +44,7 @@ Base = XObject.define(
             }
         }
         */
-        
+        print("Run scandirs");
         
         this.scanDirs();
         
