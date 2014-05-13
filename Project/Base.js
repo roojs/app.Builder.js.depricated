@@ -279,7 +279,7 @@ Base = XObject.define(
             // this should be done async -- but since we are getting the proto up ...
             var dirs = File.list(dir);
             
-            ///print(dirs); Seed.exit();
+            print(dirs); Seed.exit();
             
             var subs = [];
             var _this = this;
