@@ -259,6 +259,7 @@ Base = XObject.define(
             this.files = this.files  || { };
             for (var d in this.paths) {
                 if (this.paths[d] == 'dir') {
+                    print("SCAN " + d);
                     this.scanDir(d);
                 }
                 // otherwise add a file..
