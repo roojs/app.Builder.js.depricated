@@ -300,7 +300,7 @@ Base = XObject.define(
                     subs.push(dir  + '/' + fn);
                     return;
                 }
-                print(fn);
+                //print(fn);
                 if (!fn.match(/\.bjs$/)) {
                     return;
                 }
@@ -318,7 +318,7 @@ Base = XObject.define(
                 }
                 var xt = _this.xtype;
                 var cls = imports.JsRender[xt][xt];
-                
+                print(fn);
                 //Seed.print("Adding file " + dir  + '/' + fn);
                 _this.files[dir  + '/' + fn] = new cls({
                     path : dir  + '/' + fn,
