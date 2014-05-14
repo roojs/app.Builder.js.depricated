@@ -39,20 +39,22 @@ public class Xcls_EditorWindow : Gtk.Window
         {
              this.pack_start (  new Xcls_Toolbar3(), false,true );
         }
-        public class Xcls_Toolbar3 : Gtk.Toolbar
+    }
+    public class Xcls_Toolbar3 : Gtk.Toolbar
+    {
+        public Xcls_Toolbar3()
         {
-            public Xcls_Toolbar3()
-            {
-                 this.add (  new Xcls_save_button() );
-            }
-            public class Xcls_save_button : Gtk.Button
-            {
-                public Xcls_save_button()
-                {
-                     _this.save_button = this;
-                     this.label = "Save";
-                }
-            }
+             this.add (  new Xcls_save_button() );
+        }
+    }
+    public class Xcls_save_button : Gtk.Button
+    {
+        public Xcls_save_button()
+        {
+             _this.save_button = this;
+             this.label = "Save";
         }
     }
 }
+
+
