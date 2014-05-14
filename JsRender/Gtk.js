@@ -223,7 +223,7 @@ Gtk = XObject.define(
             item.xvala_id = item.id ? item.id : false;
             this.vitems.push(item);  
             // loop children..
-            if (typeof(item.items == 'undefined')) {
+            if (typeof(item.items) == 'undefined') {
                 return;
             }
             for(var i =0;i<item.items.length;i++) {
