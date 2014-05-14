@@ -636,7 +636,19 @@ XObject.extend(XObject,
         return o;
     },
 
- 
+    xclone : function(o)
+    {
+        var r = {};
+        for(var p in o){
+            if (typeof(o[p]) == 'object') {
+                r[p] = XObject.xclone(o[p]);
+                continue;
+            }
+            r[p] = o[p];
+        }
+        return r;
+    },
+
 
     /**
      * Extends one class with another class and optionally overrides members with the passed literal. This class
