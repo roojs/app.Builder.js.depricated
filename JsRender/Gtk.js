@@ -197,7 +197,7 @@ Gtk = XObject.define(
             var item=  XObject.xclone(this.items[0]);
             
            
-            Seed.quit();
+            
             this.palete  = new imports.Palete.Gtk.Gtk({});
             
             this.vitems = [];
