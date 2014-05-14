@@ -234,8 +234,19 @@ Gtk = XObject.define(
             // what are the properties of this class???
             
             var props = this.palete.getPropertiesFor(cls, 'props');
-            print(JSON.stringify(props, null,4));
-            Seed.quit();
+            props.forEach(function(p) {
+               if (typeof(item[p.name]) == 'undefined' || typeof(item[p.name]) == 'object' ) {
+                    return;
+               }
+               // got a property..
+               strbuilder(ipad + " this." + p.name + " = " + JSON.stringify(item[p.name]) + ";\n");
+               
+            });
+                //code
+            
+            
+            //print(JSON.stringify(props, null,4));
+            //Seed.quit();
             /*
             
            
