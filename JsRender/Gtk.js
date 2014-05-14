@@ -268,7 +268,7 @@ Gtk = XObject.define(
            
             // what are the properties of this class???
             
-            
+             var props = this.palete.getPropertiesFor(cls, 'props');
             props.forEach(function(p) {
                if (typeof(item[p.name]) == 'undefined' || typeof(item[p.name]) == 'object' ) {
                     return;
