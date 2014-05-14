@@ -5,10 +5,11 @@
 
 
 
-static int main (string[] args) {
+*/
 
+static int main (string[] args) {
     Gtk.init (ref args);
-   // new Xcls_EditorWindow();
+    new Xcls_EditorWindow();
     EditorWindow.show_all();
      Gtk.main ();
 
@@ -16,15 +17,18 @@ static int main (string[] args) {
 }
  
 
-*/
- 
-static   class EditorWindow : Gtk.Window
+
+public static Xcls_EditorWindow  EditorWindow;
+
+
+public class Xcls_EditorWindow : Gtk.Window
 {
-    public static EditorWindow  _this;
+    public static Xcls_EditorWindow  _this;
     public Xcls_save_button  save_button;
-    public  EditorWindow()
+    public Xcls_EditorWindow()
     {
          _this = this;
+         EditorWindow = this;
          this.height_request = 300;
          this.title = "Application Builder - Editor";
          this.width_request = 500;
