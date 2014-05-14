@@ -185,6 +185,16 @@ Gtk = XObject.define(
         getHelpUrl : function(cls)
         {
             return 'http://devel.akbkhome.com/seed/' + cls + '.html';
+        },
+        
+        
+        function toVala()
+        {
+            
+            
+            
         }
+        
+        
         
     });
