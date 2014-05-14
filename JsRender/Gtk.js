@@ -298,7 +298,6 @@ Gtk = XObject.define(
             // end ctor..
             strbuilder(pad + "}\n");
             
-            print(item.items.length);
             // next loop throug children..
             if (typeof(item.items) != 'undefined') {
                 for(var i =0;i<item.items.length;i++) {
