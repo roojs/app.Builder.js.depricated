@@ -235,7 +235,7 @@ Gtk = XObject.define(
         
         toValaItem : function(item, depth, strbuilder)
         {
-             print(JSON.stringify(item,null,4));
+        // print(JSON.stringify(item,null,4));
             
             var inpad = new Array( depth +1 ).join("    ");
             
