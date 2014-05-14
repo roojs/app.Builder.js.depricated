@@ -17,7 +17,8 @@ static int main (string[] args) {
 }
  
 
-public static Xcls_EditorWindow  EditorWindow;
+
+public static Xcls_EditorWindow  EditorWindow = new Xcls_EditorWindow ();
 
 
 public class Xcls_EditorWindow : Gtk.Window
@@ -27,7 +28,6 @@ public class Xcls_EditorWindow : Gtk.Window
     public Xcls_EditorWindow()
     {
          _this = this;
-         EditorWindow = this;
          this.height_request = 300;
          this.title = "Application Builder - Editor";
          this.width_request = 500;
