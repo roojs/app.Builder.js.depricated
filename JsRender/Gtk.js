@@ -202,17 +202,29 @@ Gtk = XObject.define(
         {
             
             vcnt++;
+            var inpad = new Array( depth  ).join("    ");
+            
+            var pad = new Array( depth +1 ).join("    ");
+            var ipad = new Array( depth +2 ).join("    ");
             
             var cls = item['|xns'] + '.' + item.xtype;
             
             var id = item.id ? item.id : (item.xtype + vcnt);
             // class header..
-            strbuilder("public class " + id + " : " + cls + "\n{");
+            strbuilder(inpad + "public class " + id + " : " + cls + "\n" + pad + "{\n");
             
             // properties??
                 
                 //public bool paused = false;
                 //public static StatusIconA statusicon;
+            if (!depth) {
+                strbuilder(pad + "public static " + id + " : _this_" + id+ ";\n");
+            }
+             
+            // ctor..
+            
+            strbuilder(pad + "public " + id + "()\n" + ipad + "{\n");
+
              
             public StatusIconA() {
                 
