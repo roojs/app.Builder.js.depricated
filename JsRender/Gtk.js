@@ -230,7 +230,9 @@ Gtk = XObject.define(
                 strbuilder(ipad + " _this_" + id+ "= this;\n");
             }
            
-                
+            // what are the properties of this class???
+           
+            //    
                 
                  //title : 'gitlive',
                 this.stock = Gtk.Stock.REFRESH;
