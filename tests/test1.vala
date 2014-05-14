@@ -7,9 +7,8 @@
 
 */
 
-static int main (string[] args) {
     Gtk.init (ref args);
-    new Xcls_EditorWindow();
+   // new Xcls_EditorWindow();
     EditorWindow.show_all();
      Gtk.main ();
 
@@ -18,12 +17,12 @@ static int main (string[] args) {
  
 
 
-public static Xcls_EditorWindow  EditorWindow = new Xcls_EditorWindow ();
+//public static Xcls_EditorWindow  EditorWindow = new Xcls_EditorWindow ();
 
 
-public class Xcls_EditorWindow : Gtk.Window
+static public class EditorWindow : Gtk.Window
 {
-    public static Xcls_EditorWindow  _this;
+    public static EditorWindow  _this;
     public Xcls_save_button  save_button;
     public Xcls_EditorWindow()
     {
