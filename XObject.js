@@ -651,7 +651,7 @@ XObject.extend(XObject,
                 return e;
             }
             
-            if (typeof(e) == 'object' && e.toString() == '[object Array]') {
+            if (typeof(e) == 'object' && Array.isArray(e)) {
                 var ar  = [];
                 for (var i =0; i < e.length;e++) {
                     ar.push(cp(e[i])); 
