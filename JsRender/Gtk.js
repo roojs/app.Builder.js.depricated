@@ -203,14 +203,25 @@ Gtk = XObject.define(
         },
         
         toValaName : function(item) {
+            this.vcnt++;
+            var cls = item['|xns'] + '.' + item.xtype;
+            var id = item.id ? item.id : (item.xtype + this.vcnt);
             
-        }
+            
+            item.xvala_cls = cls;
+            item.xvala_id = id;
+            
+            for(var i =0;i<item.items.length;i++) {
+                this.toValaName(item.items[i]);
+            }
+            this.vitems.push({item});
+        },
         
         
         toValaItem : function(item, depth, strbuilder)
         {
             
-            this.vcnt++;
+            
             var inpad = new Array( depth  ).join("    ");
             
             var pad = new Array( depth +1 ).join("    ");
