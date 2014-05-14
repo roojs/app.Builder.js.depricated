@@ -241,10 +241,10 @@ Gtk = XObject.define(
                 //public bool paused = false;
                 //public static StatusIconA statusicon;
             if (!depth) {
-                strbuilder(pad + "public static " + id + "  _this;\n");
+                strbuilder(pad + "public static " + xcls + "  _this;\n");
                 for(var i=1;i < this.vitems.length; i++) {
                     if (this.vitems.xvala_id  !== false) {
-                        strbuilder(pad + "public static " + this.vitems.xvala_id + "  _" + this.vitems.xvala_id + ";\n");
+                        strbuilder(pad + "public static " + this.vitems.xvala_xcls + "  _" + this.vitems.xvala_id + ";\n");
                     }
                 }
                 
