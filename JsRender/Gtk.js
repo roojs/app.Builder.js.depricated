@@ -231,6 +231,12 @@ Gtk = XObject.define(
             }
            
             // what are the properties of this class???
+            
+            var props = imports.Palate.Gtk.Gtk.getPropertiesFor(cls, 'props');
+            print(JSON.stringify(props, null,4));
+            Seed.quit();
+            /*
+            
            
             //    
                 
@@ -243,7 +249,7 @@ Gtk = XObject.define(
                 this.set_visible(true);      
                 
                 var menu = new MenuA();
-
+            */
             
         }
         
