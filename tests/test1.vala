@@ -25,7 +25,7 @@ static public class EditorWindow : Gtk.Window
 {
     public static EditorWindow  _this;
     public Xcls_save_button  save_button;
-    public Xcls_EditorWindow()
+    public  EditorWindow()
     {
          _this = this;
          this.height_request = 300;
