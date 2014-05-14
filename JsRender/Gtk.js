@@ -224,11 +224,13 @@ Gtk = XObject.define(
             // ctor..
             
             strbuilder(pad + "public " + id + "()\n" + ipad + "{\n");
-
-             
-            public StatusIconA() {
+            
+            // public static?
+            if (!depth) {
+                strbuilder(ipad + " _this_" + id+ "= this;\n");
+            }
+           
                 
-                statusicon = this;
                 
                  //title : 'gitlive',
                 this.stock = Gtk.Stock.REFRESH;
