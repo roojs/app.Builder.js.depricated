@@ -290,7 +290,7 @@ Gtk = XObject.define(
             
             // next loop throug children..
             for(var i =0;i<item.items.length;i++) {
-                this.toValaName(item.items[i]);
+                this.toValaItem(item.items[i], depth+1, strbuilder);
             }
             strbuilder(inpad + "}\n");
         }
