@@ -232,9 +232,9 @@ Gtk = XObject.define(
             
             var cls = item.xvala_cls;
             
-            var id = item.xvala_xcls;
+            var xcls = item.xvala_xcls;
             // class header..
-            strbuilder(inpad + "public class " + id + " : " + cls + "\n" + pad + "{\n");
+            strbuilder(inpad + "public class " + xcls + " : " + cls + "\n" + pad + "{\n");
             
             // properties??
                 
