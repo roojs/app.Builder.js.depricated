@@ -202,7 +202,7 @@ Gtk = XObject.define(
             
             this.vitems = [];
             this.toValaName(item);
-            print(JSON.stringify(item,null,4));Seed.quit();
+           // print(JSON.stringify(item,null,4));Seed.quit();
             
             
             // print(JSON.stringify(item,null,4));
