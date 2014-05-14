@@ -258,6 +258,12 @@ Gtk = XObject.define(
             // public static?
             if (!depth) {
                 strbuilder(ipad + " _this = this;\n");
+            } else {
+                if (item.xvala_id !== false) {
+                    strbuilder(ipad + " _this." + item.xvala_id  + " = this;\n");
+                }
+                
+                
             }
            
             // what are the properties of this class???
