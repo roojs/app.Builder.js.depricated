@@ -232,7 +232,7 @@ Gtk = XObject.define(
            
             // what are the properties of this class???
             
-            var props = imports.Palate.Gtk.Gtk.getPropertiesFor(cls, 'props');
+            var props = imports.Palete.Gtk.Gtk.getPropertiesFor(cls, 'props');
             print(JSON.stringify(props, null,4));
             Seed.quit();
             /*
