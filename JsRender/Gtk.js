@@ -196,7 +196,7 @@ Gtk = XObject.define(
             this.palete  = new imports.Palete.Gtk.Gtk({});
             
             this.vitems = [];
-            this.toValaNames(item);
+            this.toValaName(item);
             
             this.toValaItem(item,0, strbuilder);
             
