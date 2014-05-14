@@ -189,8 +189,10 @@ Gtk = XObject.define(
         
         vcnt : false,
         
-        toVala: function(strbuilder)
+        toVala: function()
         {
+            var ret = '';
+            
             this.vcnt = 0;
             //print(JSON.stringify(this.items[0],null,4));
             
@@ -206,9 +208,11 @@ Gtk = XObject.define(
             
             
             // print(JSON.stringify(item,null,4));
-            this.toValaItem(item,0, strbuilder);
+            this.toValaItem(item,0, function(s) {
+                ret+= s;
+            });
             
-            
+            return ret;
             
         },
         
