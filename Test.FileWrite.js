@@ -15,5 +15,8 @@ print(JSON.stringify(f,null,4));
 function loaded()
 {
     print(JSON.stringify(f,null,4));
+    
+    
+    
 }
 f.loadItems(loaded);
