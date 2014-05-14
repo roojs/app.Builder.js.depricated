@@ -279,24 +279,16 @@ Gtk = XObject.define(
             });
                 //code
             
+            // add all the child items..
             
-            //print(JSON.stringify(props, null,4));
-            //Seed.quit();
-            /*
             
-           
-            //    
-                
-                 //title : 'gitlive',
-                this.stock = Gtk.Stock.REFRESH;
-                this.tooltip_text = "GitLive";
-                this.title = "vgitlive";
-                
-                this.set_name("vgitlive");
-                this.set_visible(true);      
-                
-                var menu = new MenuA();
-            */
+            // add all the signal handlers..
+            
+            // end ctor..
+            strbuilder(pad + "}\n");
+            
+            
+            // next loop throug children..
             
         }
         
