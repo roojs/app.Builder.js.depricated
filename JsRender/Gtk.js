@@ -189,24 +189,30 @@ Gtk = XObject.define(
         
         vcnt : false,
         
-        toVala: function()
+        toVala: function(strbuilder)
         {
             this.vcnt = 0;
-            this.toValaItem(this.items[0]);
+            this.toValaItem(this.items[0],0, strbuilder);
             
             
             
         },
         
-        toValaItem : function(item)
+        toValaItem : function(item, depth, strbuilder)
         {
             
+            vcnt++;
             
+            var cls = item['|xns'] + '.' + item.xtype;
             
-            public class StatusIconA : StatusIcon {
-
-            public bool paused = false;
-            public static StatusIconA statusicon;
+            var id = item.id ? item.id : (item.xtype + vcnt);
+            // class header..
+            strbuilder("public class " + id + " : " + cls + "\n{");
+            
+            // properties??
+                
+                //public bool paused = false;
+                //public static StatusIconA statusicon;
              
             public StatusIconA() {
                 
