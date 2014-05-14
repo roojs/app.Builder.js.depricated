@@ -255,8 +255,8 @@ Gtk = XObject.define(
             if (!depth) {
                 strbuilder(pad + "public static " + xcls + "  _this;\n");
                 for(var i=1;i < this.vitems.length; i++) {
-                    if (this.vitems.xvala_id  !== false) {
-                        strbuilder(pad + "public static " + this.vitems.xvala_xcls + "  _" + this.vitems.xvala_id + ";\n");
+                    if (this.vitems[i].xvala_id  !== false) {
+                        strbuilder(pad + "public static " + this.vitems[i].xvala_xcls + "  _" + this.vitems[i].xvala_id + ";\n");
                     }
                 }
                 
