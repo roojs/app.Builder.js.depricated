@@ -10,7 +10,7 @@
 static int main (string[] args) {
     Gtk.init (ref args);
     new Xcls_EditorWindow();
-    EditorWindow.showAll();
+    EditorWindow.show_all();
      Gtk.main ();
 
     return 0;
@@ -47,7 +47,7 @@ public class Xcls_EditorWindow : Gtk.Window
              this.add (  new Xcls_save_button() );
         }
     }
-    public class Xcls_save_button : Gtk.Button
+    public class Xcls_save_button : Gtk.ToolButton
     {
         public Xcls_save_button()
         {
