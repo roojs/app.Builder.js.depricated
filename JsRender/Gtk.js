@@ -188,9 +188,15 @@ Gtk = XObject.define(
         },
         
         
-        function toVala()
+        toVala: function()
         {
             
+            this.toValaItem(this.items[0]);
+            
+        },
+        
+        toValaItem : function(item)
+        {
             
             
         }
