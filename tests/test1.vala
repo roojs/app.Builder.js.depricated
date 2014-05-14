@@ -6,6 +6,7 @@
 
 
 */
+static int main (string[] args) {
 
     Gtk.init (ref args);
    // new Xcls_EditorWindow();
