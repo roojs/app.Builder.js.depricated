@@ -196,13 +196,13 @@ Gtk = XObject.define(
             
             var item=  XObject.xclone(this.items[0]);
             
-            print(JSON.stringify(item,null,4));
+           
             Seed.quit();
             this.palete  = new imports.Palete.Gtk.Gtk({});
             
             this.vitems = [];
             this.toValaName(item);
-            
+             print(JSON.stringify(item,null,4));
             this.toValaItem(item,0, strbuilder);
             
             
