@@ -21,7 +21,7 @@ static int main (string[] args) {
 //public static Xcls_EditorWindow  EditorWindow = new Xcls_EditorWindow ();
 
 
- public static class EditorWindow : Gtk.Window
+static public class EditorWindow : Gtk.Window
 {
     public static EditorWindow  _this;
     public Xcls_save_button  save_button;
