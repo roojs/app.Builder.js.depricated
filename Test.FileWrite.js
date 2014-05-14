@@ -6,6 +6,6 @@ var pr = new imports.Project.Gtk.Gtk({
     paths : { "/home/alan/gitlive/app.Builder.js/Builder4" : "dir" }
     
 });
-
-var f = pr.files['/home/alan/gitlive/app.Builder.js/Builder4'];
-print(JSON.stringify(f));
+print(JSON.stringify(pr.files,null,4));
+var f = pr.files['/home/alan/gitlive/app.Builder.js/Builder4/About.bjs'];
+print(JSON.stringify(f,null,4));
