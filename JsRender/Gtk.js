@@ -238,7 +238,7 @@ Gtk = XObject.define(
                 //public bool paused = false;
                 //public static StatusIconA statusicon;
             if (!depth) {
-                strbuilder(pad + "public static " + id + " : _this;\n");
+                strbuilder(pad + "public static " + id + "  _this;\n");
             }
              
             // ctor..
