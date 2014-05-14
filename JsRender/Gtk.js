@@ -257,7 +257,7 @@ Gtk = XObject.define(
             
             // public static?
             if (!depth) {
-                strbuilder(ipad + " _this_" + id+ "= this;\n");
+                strbuilder(ipad + " _this = this;\n");
             }
            
             // what are the properties of this class???
