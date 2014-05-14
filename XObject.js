@@ -645,9 +645,12 @@ XObject.extend(XObject,
     xclone : function(o)
     {
         var cp = function(e) {
+            print(typeof(e));
+            print(typeof(e.toString()));
             if (typeof(e) != 'object') {
                 return e;
             }
+            
             if (typeof(e) == 'object' && e.toString() == '[object Array]') {
                 var ar  = [];
                 for (var i =0; i < e.length;e++) {
