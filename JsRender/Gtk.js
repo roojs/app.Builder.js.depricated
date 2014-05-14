@@ -235,7 +235,7 @@ Gtk = XObject.define(
             
             var xcls = item.xvala_xcls;
             // class header..
-            strbuilder(inpad + "public class " + xcls + " : " + cls + "\n" + pad + "{\n");
+            strbuilder(inpad + "public class " + xcls + " : " + cls + "\n" + inpad + "{\n");
             
             // properties??
                 
@@ -253,7 +253,7 @@ Gtk = XObject.define(
              
             // ctor..
             
-            strbuilder(pad + "public " + xcls + "()\n" + ipad + "{\n");
+            strbuilder(pad + "public " + xcls + "()\n" + pad + "{\n");
             
             // public static?
             if (!depth) {
