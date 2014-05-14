@@ -1,6 +1,6 @@
 
 print(typeof([]));
-print(""+ []);Seed.quit();
+print("" == Array.prototype);Seed.quit();
 
 
 var pr = new imports.Project.Gtk.Gtk({
