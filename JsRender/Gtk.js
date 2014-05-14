@@ -294,7 +294,7 @@ Gtk = XObject.define(
             if (typeof(item.items) != 'undefined') {
                 for(var i =0;i<item.items.length;i++) {
                     var ci = item.items[i];
-                    var packing = ci.pack.split(',');
+                    var packing = ci.pack ? ci.pack.split(',') : [ 'add' ];
                     var pack = packing.unshift();
                     strbuilder(ipad + " this." + pack + " (  new " + ci.xvala_cls + "()" +
                                (packing.length ? ", " + packing.join(",") : "") + ");"
