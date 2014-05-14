@@ -16,6 +16,9 @@ function loaded()
 {
     print(JSON.stringify(f,null,4));
     
+    print(f.toVala(function(str) {
+        print(str);
+    }))
     
     
 }
