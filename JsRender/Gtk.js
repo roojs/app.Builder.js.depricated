@@ -192,12 +192,20 @@ Gtk = XObject.define(
         toVala: function(strbuilder)
         {
             this.vcnt = 0;
+            var item= XObject.xclone(items[0]);
             this.palete  = new imports.Palete.Gtk.Gtk({});
-            this.toValaItem(this.items[0],0, strbuilder);
+            this.toValaNames(item);
+            
+            this.toValaItem(item,0, strbuilder);
             
             
             
         },
+        
+        toValaName : function(item) {
+            
+        }
+        
         
         toValaItem : function(item, depth, strbuilder)
         {
