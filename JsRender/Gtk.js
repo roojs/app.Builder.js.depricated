@@ -201,7 +201,7 @@ Gtk = XObject.define(
         toValaItem : function(item, depth, strbuilder)
         {
             
-            vcnt++;
+            this.vcnt++;
             var inpad = new Array( depth  ).join("    ");
             
             var pad = new Array( depth +1 ).join("    ");
@@ -209,7 +209,7 @@ Gtk = XObject.define(
             
             var cls = item['|xns'] + '.' + item.xtype;
             
-            var id = item.id ? item.id : (item.xtype + vcnt);
+            var id = item.id ? item.id : (item.xtype + this.vcnt);
             // class header..
             strbuilder(inpad + "public class " + id + " : " + cls + "\n" + pad + "{\n");
             
