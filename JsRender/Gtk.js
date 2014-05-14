@@ -213,7 +213,8 @@ Gtk = XObject.define(
             item.xvala_cls = cls;
             item.xvala_xcls = 'Xcls_' + id;
             item.xvala_id = item.id ? item.id : false;
-            this.vitems.push({item});  
+            this.vitems.push(item);  
+            // loop children..
             for(var i =0;i<item.items.length;i++) {
                 this.toValaName(item.items[i]);
             }
