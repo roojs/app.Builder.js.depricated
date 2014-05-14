@@ -241,8 +241,9 @@ Gtk = XObject.define(
                 //public static StatusIconA statusicon;
             if (!depth) {
                 strbuilder(pad + "public static " + id + "  _this;\n");
-                for(var i=1;i < this.vitems.)
-                
+                for(var i=1;i < this.vitems.length; i++) {
+                    strbuilder(pad + "public static " + this.vitems.xvala_id + "  _" + this.vitems.xvala_id + ";\n");
+                }
                 
             }
              
