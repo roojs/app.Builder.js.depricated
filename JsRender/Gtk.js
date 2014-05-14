@@ -226,10 +226,10 @@ Gtk = XObject.define(
         {
             
             
-            var inpad = new Array( depth  ).join("    ");
+            var inpad = new Array( depth +1 ).join("    ");
             
-            var pad = new Array( depth +1 ).join("    ");
-            var ipad = new Array( depth +2 ).join("    ");
+            var pad = new Array( depth +2 ).join("    ");
+            var ipad = new Array( depth +3 ).join("    ");
             
             var cls = item.xvala_cls;
             
