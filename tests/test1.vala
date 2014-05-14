@@ -18,7 +18,7 @@ static int main (string[] args) {
  
 
 
-//public static Xcls_EditorWindow  EditorWindow = new Xcls_EditorWindow ();
+// public static Xcls_EditorWindow  EditorWindow = new Xcls_EditorWindow ();
 
 
 static   class EditorWindow : Gtk.Window
