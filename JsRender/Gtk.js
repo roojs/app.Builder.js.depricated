@@ -192,6 +192,7 @@ Gtk = XObject.define(
         toVala: function(strbuilder)
         {
             this.vcnt = 0;
+            this.palete  = new imports.Palete.Gtk.Gtk({});
             this.toValaItem(this.items[0],0, strbuilder);
             
             
@@ -232,7 +233,7 @@ Gtk = XObject.define(
            
             // what are the properties of this class???
             
-            var props = imports.Palete.Gtk.Gtk.getPropertiesFor(cls, 'props');
+            var props = this.palete.getPropertiesFor(cls, 'props');
             print(JSON.stringify(props, null,4));
             Seed.quit();
             /*
