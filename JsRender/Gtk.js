@@ -192,7 +192,7 @@ Gtk = XObject.define(
         toVala: function(strbuilder)
         {
             this.vcnt = 0;
-            print(JSON.stringify(this.items[0],null,4));
+            //print(JSON.stringify(this.items[0],null,4));
             
             var item=  XObject.xclone(this.items[0]);
             
@@ -202,7 +202,7 @@ Gtk = XObject.define(
             
             this.vitems = [];
             this.toValaName(item);
-             print(JSON.stringify(item,null,4));
+             //print(JSON.stringify(item,null,4));
             this.toValaItem(item,0, strbuilder);
             
             
