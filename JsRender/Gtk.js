@@ -253,7 +253,7 @@ Gtk = XObject.define(
              
             // ctor..
             
-            strbuilder(pad + "public " + id + "()\n" + ipad + "{\n");
+            strbuilder(pad + "public " + xcls + "()\n" + ipad + "{\n");
             
             // public static?
             if (!depth) {
