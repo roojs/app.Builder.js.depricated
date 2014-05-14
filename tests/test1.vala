@@ -52,7 +52,7 @@ public class Xcls_save_button : Gtk.Button
 {
     public Xcls_save_button()
     {
-         _this.save_button = this;
+         EditorWindow.save_button = this;
          this.label = "Save";
     }
 }
