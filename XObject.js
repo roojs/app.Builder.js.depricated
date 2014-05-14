@@ -645,8 +645,7 @@ XObject.extend(XObject,
     xclone : function(o)
     {
         var cp = function(e) {
-            print(typeof(e));
-            print(typeof(e.toString()));
+             
             if (typeof(e) != 'object') {
                 return e;
             }
