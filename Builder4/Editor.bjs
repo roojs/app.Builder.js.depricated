@@ -36,7 +36,7 @@
                                     },
                                     "id": "save_button",
                                     "label": "Save",
-                                    "xtype": "Button",
+                                    "xtype": "ToolButton",
                                     "|xns": "Gtk"
                                 }
                             ]
