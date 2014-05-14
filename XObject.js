@@ -644,14 +644,26 @@ XObject.extend(XObject,
      */
     xclone : function(o)
     {
+        var cp = function(e) {
+            if (typeof(e) != 'object') {
+                return e;
+            }
+            if (typeof(e) == 'object' && e.toString == '[object Array]') {
+                var ar  = [];
+                for (var i =0; i < e.length;e++) {
+                    ar.push(cp(e[i])); 
+                }
+                return ar;
+            }
+            
+            return XObject.xclone(e);
+            
+        };
+        
         var r = {};
         for(var p in o){
-            print (p + ': ' + typeof(o[p]));
-            if (typeof(o[p]) == 'object') {
-                r[p] = XObject.xclone(o[p]);
-                continue;
-            }
-            r[p] = o[p];
+            //print (p + ': ' + typeof(o[p]));
+            r[p] = cp(o[p])
         }
         return r;
     },
