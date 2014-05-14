@@ -194,6 +194,8 @@ Gtk = XObject.define(
             this.vcnt = 0;
             var item= XObject.xclone(items[0]);
             this.palete  = new imports.Palete.Gtk.Gtk({});
+            
+            this.vitems = [];
             this.toValaNames(item);
             
             this.toValaItem(item,0, strbuilder);
@@ -210,11 +212,11 @@ Gtk = XObject.define(
             
             item.xvala_cls = cls;
             item.xvala_id = id;
-            
+            this.vitems.push({item});  
             for(var i =0;i<item.items.length;i++) {
                 this.toValaName(item.items[i]);
             }
-            this.vitems.push({item});
+          
         },
         
         
@@ -239,6 +241,9 @@ Gtk = XObject.define(
                 //public static StatusIconA statusicon;
             if (!depth) {
                 strbuilder(pad + "public static " + id + "  _this;\n");
+                for(var i=1;i < this.vitems.)
+                
+                
             }
              
             // ctor..
