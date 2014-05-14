@@ -1,6 +1,6 @@
 
 print(typeof([]));
-print([].toString());Seed.quit();
+print(""+ []);Seed.quit();
 
 
 var pr = new imports.Project.Gtk.Gtk({
