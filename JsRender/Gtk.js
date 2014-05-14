@@ -227,9 +227,9 @@ Gtk = XObject.define(
             var pad = new Array( depth +1 ).join("    ");
             var ipad = new Array( depth +2 ).join("    ");
             
-            var cls = item['|xns'] + '.' + item.xtype;
+            var cls = item.xvala_cls;
             
-            var id = item.id ? item.id : (item.xtype + this.vcnt);
+            var id = item.xvala_id;
             // class header..
             strbuilder(inpad + "public class " + id + " : " + cls + "\n" + pad + "{\n");
             
@@ -238,7 +238,7 @@ Gtk = XObject.define(
                 //public bool paused = false;
                 //public static StatusIconA statusicon;
             if (!depth) {
-                strbuilder(pad + "public static " + id + " : _this_" + id+ ";\n");
+                strbuilder(pad + "public static " + id + " : _this;\n");
             }
              
             // ctor..
