@@ -232,7 +232,7 @@ Gtk = XObject.define(
             
             var cls = item.xvala_cls;
             
-            var id = item.xvala_id;
+            var id = item.xvala_xcls;
             // class header..
             strbuilder(inpad + "public class " + id + " : " + cls + "\n" + pad + "{\n");
             
@@ -243,7 +243,9 @@ Gtk = XObject.define(
             if (!depth) {
                 strbuilder(pad + "public static " + id + "  _this;\n");
                 for(var i=1;i < this.vitems.length; i++) {
-                    strbuilder(pad + "public static " + this.vitems.xvala_id + "  _" + this.vitems.xvala_id + ";\n");
+                    if (this.vitems.xvala_id  !== false) {
+                        strbuilder(pad + "public static " + this.vitems.xvala_id + "  _" + this.vitems.xvala_id + ";\n");
+                    }
                 }
                 
             }
