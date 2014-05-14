@@ -646,7 +646,7 @@ XObject.extend(XObject,
     {
         var r = {};
         for(var p in o){
-            print (typeof(o[p]));
+            print (p + ': ' + typeof(o[p]));
             if (typeof(o[p]) == 'object') {
                 r[p] = XObject.xclone(o[p]);
                 continue;
