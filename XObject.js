@@ -636,6 +636,12 @@ XObject.extend(XObject,
         return o;
     },
 
+    /**
+     * Deep clone..
+     * @param {Object} o the object to clone..
+     * @return {Object} returns clone of object
+     * @member Object xclone
+     */
     xclone : function(o)
     {
         var r = {};
