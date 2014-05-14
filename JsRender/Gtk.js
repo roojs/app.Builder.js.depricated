@@ -187,17 +187,41 @@ Gtk = XObject.define(
             return 'http://devel.akbkhome.com/seed/' + cls + '.html';
         },
         
+        vcnt : false,
         
         toVala: function()
         {
-            
+            this.vcnt = 0;
             this.toValaItem(this.items[0]);
+            
+            
             
         },
         
         toValaItem : function(item)
         {
             
+            
+            
+            public class StatusIconA : StatusIcon {
+
+            public bool paused = false;
+            public static StatusIconA statusicon;
+             
+            public StatusIconA() {
+                
+                statusicon = this;
+                
+                 //title : 'gitlive',
+                this.stock = Gtk.Stock.REFRESH;
+                this.tooltip_text = "GitLive";
+                this.title = "vgitlive";
+                
+                this.set_name("vgitlive");
+                this.set_visible(true);      
+                
+                var menu = new MenuA();
+
             
         }
         
