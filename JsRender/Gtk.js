@@ -245,6 +245,18 @@ Gtk = XObject.define(
             var cls = item.xvala_cls;
             
             var xcls = item.xvala_xcls;
+            
+            
+            if (!depth) {
+                strbuilder(pad + "public static " + xcls + "  " + item.id + ";\n");
+                for(var i=1;i < this.vitems.length; i++) {
+                    if (this.vitems[i].xvala_id  !== false) {
+                        strbuilder(pad + "public static " + this.vitems[i].xvala_xcls + "  " + this.vitems[i].xvala_id + ";\n");
+                    }
+                }
+                
+            }
+            
             // class header..
             strbuilder(inpad + "public class " + xcls + " : " + cls + "\n" + inpad + "{\n");
             
