@@ -5,7 +5,6 @@
 
 
 
-*/
 static int main (string[] args) {
 
     Gtk.init (ref args);
@@ -17,6 +16,7 @@ static int main (string[] args) {
 }
  
 
+*/
  
 static   class EditorWindow : Gtk.Window
 {
