@@ -1,6 +1,6 @@
 /*
  valac  --pkg gio-2.0  --pkg posix  --pkg gtk+-3.0 --pkg libnotify --pkg  libwnck-3.0 \
-      test1.vala 
+      test1.vala \
     -o /tmp/test1
 
 
@@ -23,7 +23,7 @@ public static Xcls_EditorWindow  EditorWindow;
 public class Xcls_EditorWindow : Gtk.Window
 {
     public static Xcls_EditorWindow  _this;
-    public   Xcls_save_button  save_button;
+    public Xcls_save_button  save_button;
     public Xcls_EditorWindow()
     {
          _this = this;
