@@ -311,7 +311,7 @@ Gtk = XObject.define(
                     var packing = ci.pack ? ci.pack.split(',') : [ 'add' ];
                     var pack = packing.shift();
                     strbuilder(ipad + " this." + pack + " (  new " + ci.xvala_xcls + "()" +
-                               (packing.length ? ", " + packing.join(",") : "") + " );"
+                               (packing.length ? ", " + packing.join(",") : "") + " );\n"
                             );
                                
                     
