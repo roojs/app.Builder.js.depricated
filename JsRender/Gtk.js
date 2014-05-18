@@ -208,11 +208,18 @@ Gtk = XObject.define(
             
             ret += "/* -- to compile\n";
             ret += "valac  --pkg gio-2.0  --pkg posix  --pkg gtk+-3.0 --pkg libnotify --pkg  libwnck-3.0 \\\n";
-            ret += "    " + item.id + ".vala  -o /tmp/" + item.id +"\n";
+            ret += "    " + item.xvala_id + ".vala  -o /tmp/" + item.xvala_id +"\n";
             ret += "*/\n";
             ret += "\n\n";
  
 
+ret += "static int main (string[] args) {
+ret += "    Gtk.init (ref args);\n";
+ret += "    new " + item.xval_xcls +"();\n";
+ret += "    EditorWindow.show_all();\n";
+ret += "     Gtk.main ();\n";
+ret += "    return 0;\n";
+ret += "}\n";
             
             // print(JSON.stringify(item,null,4));
             this.toValaItem(item,0, function(s) {
