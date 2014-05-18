@@ -348,7 +348,7 @@ Gtk = XObject.define(
             // next loop throug children..
             if (typeof(item.items) != 'undefined') {
                 for(var i =0;i<item.items.length;i++) {
-                    this.toValaItem(item.items[i], Math.max(2,depth+1), strbuilder);
+                    this.toValaItem(item.items[i], Math.max(1,depth+1), strbuilder);
                 }
             }
             if (depth < 1) {
