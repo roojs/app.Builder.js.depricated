@@ -206,6 +206,13 @@ Gtk = XObject.define(
             this.toValaName(item);
            // print(JSON.stringify(item,null,4));Seed.quit();
             
+            ret += "/* -- to compile\n";
+            ret += "valac  --pkg gio-2.0  --pkg posix  --pkg gtk+-3.0 --pkg libnotify --pkg  libwnck-3.0 \\\n";
+            ret += "    " + item.id + ".vala  -o /tmp/" + item.id +"\n";
+            ret += "*/\n";
+            ret += "\n\n";
+ 
+
             
             // print(JSON.stringify(item,null,4));
             this.toValaItem(item,0, function(s) {
