@@ -295,8 +295,8 @@ Gtk = XObject.define(
             
             // public static?
             if (!depth) {
-                strbuilder(ipad + " _this = this;\n");
-                strbuilder(ipad + " " + item.id  + " = this;\n");
+                strbuilder(ipad + "_this = this;\n");
+                strbuilder(ipad +  item.id  + " = this;\n");
             } else {
                 if (item.xvala_id !== false) {
                     strbuilder(ipad + " _this." + item.xvala_id  + " = this;\n");
