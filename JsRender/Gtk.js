@@ -340,7 +340,7 @@ Gtk = XObject.define(
             // end ctor..
             strbuilder(pad + "}\n");
             
-            if (depth > 1) {
+            if (depth > 0) {
                 strbuilder(inpad + "}\n");
             }
             
@@ -351,7 +351,7 @@ Gtk = XObject.define(
                     this.toValaItem(item.items[i], depth+1, strbuilder);
                 }
             }
-            if (depth < 2) {
+            if (depth < 1) {
                 strbuilder(inpad + "}\n");
             }
             
