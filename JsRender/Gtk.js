@@ -314,7 +314,7 @@ Gtk = XObject.define(
                     return;
                }
                // got a property..
-               strbuilder(ipad + " this." + p.name + " = " + JSON.stringify(item[p.name]) + ";\n");
+               strbuilder(ipad + "this." + p.name + " = " + JSON.stringify(item[p.name]) + ";\n");
                
             });
                 //code
