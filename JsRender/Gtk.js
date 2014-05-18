@@ -326,14 +326,21 @@ Gtk = XObject.define(
             // end ctor..
             strbuilder(pad + "}\n");
             
+            if (depth > 1) {
+                strbuilder(inpad + "}\n");
+            }
+            
+            
             // next loop throug children..
             if (typeof(item.items) != 'undefined') {
                 for(var i =0;i<item.items.length;i++) {
                     this.toValaItem(item.items[i], depth+1, strbuilder);
                 }
             }
+            if (depth < 2) {
+                strbuilder(inpad + "}\n");
+            }
             
-            strbuilder(inpad + "}\n");
         }
         
         
