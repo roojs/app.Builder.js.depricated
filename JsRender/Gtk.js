@@ -213,13 +213,13 @@ Gtk = XObject.define(
             ret += "\n\n";
  
 
-ret += "static int main (string[] args) {\n";
-ret += "    Gtk.init (ref args);\n";
-ret += "    new " + item.xvala_xcls +"();\n";
-ret += "    " + item.xvala_id +".show_all();\n";
-ret += "     Gtk.main ();\n";
-ret += "    return 0;\n";
-ret += "}\n";
+            ret += "static int main (string[] args) {\n";
+            ret += "    Gtk.init (ref args);\n";
+            ret += "    new " + item.xvala_xcls +"();\n";
+            ret += "    " + item.xvala_id +".show_all();\n";
+            ret += "     Gtk.main ();\n";
+            ret += "    return 0;\n";
+            ret += "}\n";
             
             // print(JSON.stringify(item,null,4));
             this.toValaItem(item,0, function(s) {
