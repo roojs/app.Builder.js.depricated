@@ -1,0 +1,158 @@
+{
+    "id": "file-gtk-2",
+    "name": "DialogNewComponent",
+    "parent": "",
+    "title": false,
+    "path": "/home/alan/gitlive/app.Builder.js/Sample/DialogNewComponent.bjs",
+    "items": [
+        {
+            "listeners": {
+                "delete_event": "function (self, event) {\n    this.el.hide();\n    return true;\n}",
+                "response": "function (self, response_id) {\n\tif (response_id < 1) { // cancel!\n            this.el.hide();\n            return;\n        }\n\n        if (!this.get('name').el.get_text().length ) {\n            this.get('/StandardErrorDialog').show(\n                \"You have to set Project name \"\n            );\n             \n            return;\n        }\n        var isNew = this.file.name.length ? false : true;\n        \n        if (this.file.name.length && this.file.name != this.get('name').el.get_text()) {\n            this.get('/StandardErrorDialog').show(\n                \"Sorry changing names does not work yet. \"\n            );\n             \n            return;\n        }\n        for (var i in this.def) {\n            this.file[i] =  this.get(i).el.get_text();\n        }\n       \n        if (!isNew) {\n            this.file.save();\n            this.el.hide();\n            return;\n        }\n       \n    \n\tvar dir ='';\n        for (var i in this.project.paths) {\n \t\tdir = i;\n\t\tbreak;\n\t}\n\n \n        \n        // what about .js ?\n         if (GLib.file_test (GLib.dir + '/' + this.file.name + '.bjs', GLib.FileTest.EXISTS)) {\n            StandardErrorDialog.show(\n                \"That file already exists\"\n            ); \n            return;\n        }\n        this.el.hide();\n        \n        \n        //var tmpl = this.project.loadFileOnly(DialogNewComponent.get('template').getValue());\n        \n        var _this = this;\n        var nf = _this.project.create(dir + '/' + this.file.name + '.bjs');\n        for (var i in this.file) {\n            nf[i] = this.file[i];\n        }\n        if (this.get('/DialogNewComponent').success) {\n            this.get('/DialogNewComponent').success(_this.project, nf);\n        }\n}",
+                "show": "function (self) {\n  this.el.show_all();\n}"
+            },
+            "default_height": 200,
+            "default_width": 500,
+            "id": "DialogNewComponent",
+            "title": "New Component",
+            "xtype": "Dialog",
+            "|deletable": false,
+            "|modal": true,
+            "|show": "function (c) \n{\n    this.project = c.project;\n    if (!this.el) {\n        this.init();\n    }\n    this.def =  { \n        name : '' , \n        title : '' ,\n        region : '' ,\n        parent: '',\n      //  disable: '',\n        modOrder : '0',\n        permname : ''\n    };\n    for (var i in this.def) {\n        c[i] = c[i] || this.def[i];\n        this.get(i).el.set_text(c[i]);\n    }\n    if (c.name) {\n        this.el.set_title(\"Edit File Details - \" + c.name);\n    } else {\n        this.el.set_title(\"Create New File\");\n    }\n     \n    this.file = c;\n    console.log('show all');\n    this.el.show_all();\n    this.success = c.success;\n    \n    \n}",
+            "|xns": "Gtk",
+            "items": [
+                {
+                    "|xns": "Gtk",
+                    "xtype": "VBox",
+                    "|pack": "function(p,e) {\n                    p.el.get_content_area().add(e.el)\n                }\n",
+                    "items": [
+                        {
+                            "n_columns": 2,
+                            "n_rows": 3,
+                            "pack": "pack_start,false,false,0",
+                            "xtype": "Table",
+                            "|homogeneous": false,
+                            "|xns": "Gtk",
+                            "items": [
+                                {
+                                    "label": "Component Name",
+                                    "pack": "add",
+                                    "x_options": 4,
+                                    "xalign": 0.9,
+                                    "xtype": "Label",
+                                    "|justify": "Gtk.Justification.RIGHT",
+                                    "|xns": "Gtk"
+                                },
+                                {
+                                    "id": "name",
+                                    "pack": "add",
+                                    "xtype": "Entry",
+                                    "|visible": true,
+                                    "|xns": "Gtk"
+                                },
+                                {
+                                    "label": "Title",
+                                    "pack": "add",
+                                    "x_options": 4,
+                                    "xalign": 0.9,
+                                    "xtype": "Label",
+                                    "|justify": "Gtk.Justification.RIGHT",
+                                    "|visible": true,
+                                    "|xns": "Gtk"
+                                },
+                                {
+                                    "id": "title",
+                                    "pack": "add",
+                                    "xtype": "Entry",
+                                    "|visible": true,
+                                    "|xns": "Gtk"
+                                },
+                                {
+                                    "label": "Region",
+                                    "pack": "add",
+                                    "tooltip_text": "center, north, south, east, west",
+                                    "x_options": 4,
+                                    "xalign": 0.9,
+                                    "xtype": "Label",
+                                    "|justify": "Gtk.Justification.RIGHT",
+                                    "|visible": true,
+                                    "|xns": "Gtk"
+                                },
+                                {
+                                    "id": "region",
+                                    "pack": "add",
+                                    "xtype": "Entry",
+                                    "|visible": true,
+                                    "|xns": "Gtk"
+                                },
+                                {
+                                    "label": "Parent Name",
+                                    "pack": "add",
+                                    "x_options": 4,
+                                    "xalign": 0.9,
+                                    "xtype": "Label",
+                                    "|justify": "Gtk.Justification.RIGHT",
+                                    "|visible": true,
+                                    "|xns": "Gtk"
+                                },
+                                {
+                                    "id": "parent",
+                                    "pack": "add",
+                                    "xtype": "Entry",
+                                    "|visible": true,
+                                    "|xns": "Gtk"
+                                },
+                                {
+                                    "label": "Permission Name",
+                                    "pack": "add",
+                                    "x_options": 4,
+                                    "xalign": 0.9,
+                                    "xtype": "Label",
+                                    "|justify": "Gtk.Justification.RIGHT",
+                                    "|visible": true,
+                                    "|xns": "Gtk"
+                                },
+                                {
+                                    "id": "permname",
+                                    "pack": "add",
+                                    "xtype": "Entry",
+                                    "|visible": true,
+                                    "|xns": "Gtk"
+                                },
+                                {
+                                    "label": "Order (for tabs)",
+                                    "pack": "add",
+                                    "x_options": 4,
+                                    "xalign": 0.9,
+                                    "xtype": "Label",
+                                    "|justify": "Gtk.Justification.RIGHT",
+                                    "|visible": true,
+                                    "|xns": "Gtk"
+                                },
+                                {
+                                    "id": "modOrder",
+                                    "pack": "add",
+                                    "xtype": "Entry",
+                                    "|visible": true,
+                                    "|xns": "Gtk"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "|xns": "Gtk",
+                    "xtype": "Button",
+                    "pack": "add_action_widget,0",
+                    "label": "Cancel"
+                },
+                {
+                    "|xns": "Gtk",
+                    "xtype": "Button",
+                    "pack": "add_action_widget,1",
+                    "label": "OK"
+                }
+            ]
+        }
+    ]
+}

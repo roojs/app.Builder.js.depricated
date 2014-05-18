@@ -403,6 +403,10 @@ XObject.prototype = {
     get : function(xid)
     {
         XObject.log("SEARCH FOR " + xid + " in " + this.id);
+        return this.getBySearch(xid);
+    },
+    getBySearch : function(xid) {
+        
         var ret=  false;
         var oid = '' + xid;
         if (!xid.length) {
@@ -413,7 +417,7 @@ XObject.prototype = {
         }
         
         if (xid[0] == '.') {
-            return this.parent.get(xid.substring(1));
+            return this.parent.getBySearch(xid.substring(1));
         }
         if (xid[0] == '/') {
             
@@ -427,7 +431,7 @@ XObject.prototype = {
                     
                 child = child.join('.');
                 if (typeof(XObject.cache[nxid]) != 'undefined') {
-                    return XObject.cache[nxid].get(child);
+                    return XObject.cache[nxid].getBySearch(child);
                 }
                 
                 
@@ -438,7 +442,7 @@ XObject.prototype = {
             }
             
             try {
-                ret = e.get(xid.substring(1));
+                ret = e.getBySearch(xid.substring(1));
             } catch (ex) { }
             
             if (!ret) {
@@ -461,7 +465,7 @@ XObject.prototype = {
         }
         if (xid == this.id) {
             try {
-                return child === false ? this : this.get(child);
+                return child === false ? this : this.getBySearch(child);
             } catch (ex) {
                 throw {
                     name: "ArgumentError", 
@@ -482,7 +486,7 @@ XObject.prototype = {
         })
         if (ret) {
             try {
-                return child === false ? ret : ret.get(child);
+                return child === false ? ret : ret.getBySearch(child);
             } catch (ex) {
                 throw {
                     name: "ArgumentError", 
@@ -503,7 +507,7 @@ XObject.prototype = {
                 Seed.quit();
             }
             try {
-                ret = ch.get(xid);
+                ret = ch.getBySearch(xid);
             } catch (ex) { }
             
             
@@ -515,7 +519,7 @@ XObject.prototype = {
             }
         }
         try {
-            return child === false ? ret : ret.get(child);
+            return child === false ? ret : ret.getBySearch(child);
         } catch (ex) {
             throw {
                 name: "ArgumentError", 
@@ -632,7 +636,40 @@ XObject.extend(XObject,
         return o;
     },
 
- 
+    /**
+     * Deep clone..
+     * @param {Object} o the object to clone..
+     * @return {Object} returns clone of object
+     * @member Object xclone
+     */
+    xclone : function(o)
+    {
+        var cp = function(e) {
+             
+            if (typeof(e) != 'object') {
+                return e;
+            }
+            
+            if (typeof(e) == 'object' && Array.isArray(e)) {
+                var ar  = [];
+                for (var i =0; i < e.length;e++) {
+                    ar.push(cp(e[i])); 
+                }
+                return ar;
+            }
+            
+            return XObject.xclone(e);
+            
+        };
+        
+        var r = {};
+        for(var p in o){
+            //print (p + ': ' + typeof(o[p]));
+            r[p] = cp(o[p])
+        }
+        return r;
+    },
+
 
     /**
      * Extends one class with another class and optionally overrides members with the passed literal. This class

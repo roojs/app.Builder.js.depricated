@@ -184,10 +184,10 @@ Gtk = XObject.define(
   
         getPropertiesFor: function(ename, type)
         {
-            print("Loading for " + ename);
+            //print("Loading for " + ename);
             
             if (typeof(this.proplist[ename]) != 'undefined') {
-                print("using cache");
+                //print("using cache");
                 return this.proplist[ename][type];
             }
             // use introspection to get lists..

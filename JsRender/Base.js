@@ -50,6 +50,12 @@ Base = XObject.define(
             print("WRITE: " + this.path);// + "\n" + JSON.stringify(write));
             File.write(this.path, JSON.stringify(write, null, 4));
         },
+        
+        saveHTML : function()
+        {
+            // NOOP
+        },
+        
         /**
          *
          * load from a javascript file.. rather than bjs..
@@ -186,10 +192,10 @@ Base = XObject.define(
             var isArray = false;
             isListener = isListener || false;
 
-		if (!obj) {
-			print("missing obj?");
-			return;
-}            
+            if (!obj) {
+                print("missing obj?");
+                return;
+            }            
 
             // am I munging a object or array...
             if (obj.constructor && obj.constructor.toString() === Array.toString()) {
@@ -212,7 +218,9 @@ Base = XObject.define(
                 ) {
                     this.mungeXtype(obj['|xns'] + '.' + obj['xtype'], els);
                     //els.push('xtype: '+ obj['|xns'] + '.' + obj['xtype']);
+                     
                     skip.push('|xns','xtype');
+                    
                 }
             
             

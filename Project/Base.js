@@ -136,6 +136,7 @@ Base = XObject.define(
             }
             return this.tree;
             */
+            print(JSON.stringify(this.files,null,4));
             
             // have parents -> add them to parent...
             var files = {};
@@ -190,6 +191,10 @@ Base = XObject.define(
             ret.sort(function(a,b) {
                 return a.path > b.path ? 1 : -1;
             });
+            
+            print(JSON.stringify(ret,null,4));
+            
+            
             this.tree = ret;
             return this.tree;
              

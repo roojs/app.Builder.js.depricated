@@ -556,8 +556,61 @@ Builder  = {
        var bid = id.length ? 'builder-' + id : '';
        console.log('{ "hover-node" :  "' + bid + '"}');
        this.lastID = id;
+    },
+    clearBootstrap : function()
+    {
+        // if the page is not bootstrap
+        
+        if ( typeof(BuilderUseBootstrap) != 'undefined' ) {
+            Roo.log("it's boostrap - BuilderUseBootstrap is defined ");
+            // it's bootstrap - probably remove roo's css..
+            return;
+        }
+        Roo.log("remove css = BuilderUseBootstrap is not defined");
+        var rem = [];
+        var ar = document.getElementsByTagName('link');
+        for (var i = 0; i < ar.length;i++) {
+            var l = ar[i];
+            Roo.log(l.getAttribute('href'));
+            if (l.getAttribute('href').match(/bootstrap/)) {
+                rem.push(l);
+                
+                
+            }
+            //code
+        }
+        Roo.each(rem, function(l) { l.parentNode.removeChild(l);});
+    },
+    
+    applyFlexy: function(tree)
+    {
+        if (typeof(tree['flexy:foreach']) != 'undefined') {
+            //Roo.log("add flexy:foreach");
+            tree.el.attr('flexy:foreach', tree['flexy:foreach']);
+        }
+        if (typeof(tree['flexy:if']) != 'undefined') {
+            //Roo.log("add flexy:if");
+            tree.el.attr('flexy:if', tree['flexy:if']);
+        }
+        if (typeof(tree['xtype-bootstrap']) != 'undefined') {
+            //Roo.log("add flexy:if");
+            tree.el.attr('xtype', tree['xtype-bootstrap']);
+        }
+        
+        
+        if (!tree.items || !tree.items.length) { return; }
+        
+        for (var i = 0; i < tree.items.length; i++){
+            this.applyFlexy(tree.items[i]);
+        }
     }
-            
+    
+     
     
 };
+Roo.onReady(function() { Builder.clearBootstrap(); });
+Roo.XComponent.on('buildcomplete', function() {
+    Roo.log("xcomponent built!");
     
+    Builder.applyFlexy(Roo.XComponent.modules[0].el);
+});

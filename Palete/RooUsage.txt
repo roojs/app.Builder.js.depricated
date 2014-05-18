@@ -8,7 +8,9 @@ right:
  Roo.NestedLayoutPanel
  Roo.ContentPanel         
  Roo.GridPanel         
- Roo.TreePanel         
+ Roo.TreePanel
+ Roo.bootstrap.Body
+ Roo.bootstrap.Modal
  
 
 // added with a property..  (*prop)
@@ -26,15 +28,6 @@ left:
  Roo.BorderLayout:north          
 right:
  Roo.LayoutRegion
-
-// toolbar at the right of the tabs.
-
-left:
- Roo.LayoutRe`ion:toolbar
-
-right:
- Roo.Toolbar
-
 
 // add with region? region= 
  
@@ -90,39 +83,49 @@ right:
   Roo.form.Hidden         
   Roo.form.TextField         
   Roo.form.GridField
-  Roo.form.DateField
-  Roo.form.MonthField           
+  Roo.form.DateField         
   Roo.form.NumberField         
   Roo.form.Checkbox         
   Roo.form.Radio         
-  Roo.form.ComboBox
-  Roo.form.ComboBoxArray
-  Roo.form.ComboCheck
+  Roo.form.ComboBox         
   Roo.form.TextArea         
   Roo.form.HtmlEditor         
   Roo.form.FCKeditor         
-  Roo.form.DisplayField
-  Roo.form.DayPicker
-  Roo.Button
-  Roo.form.Signature
+  Roo.Button         
 
-left:
-  Roo.form.ComboBoxArray:combo
+left: 
+  Roo.form.HtmlEditor:toolbars[]
 right:
-  Roo.form.ComboBox
+  Roo.form.HtmlEditor.ToolbarStandard
+  Roo.form.HtmlEditor.ToolbarContext
+
+left: 
+  Roo.form.HtmlEditor.ToolbarStandard:btns[]
+  Roo.form.HtmlEditor.ToolbarContext:btns[]
+right:
+  Roo.form.TextField         
+  Roo.form.DateField         
+  Roo.form.NumberField         
+  Roo.form.Checkbox         
+  Roo.form.Radio         
+  Roo.form.ComboBox         
+  Roo.form.TextArea
+  Roo.Toolbar.Button         
+  Roo.Toolbar.Fill         
+  Roo.Toolbar.Separator         
+  Roo.Toolbar.Spacer         
+  Roo.Toolbar.SplitButton         
+  Roo.Toolbar.TextItem
 
 left: 
   Roo.grid.GridEditor:field
 right:
   Roo.form.TextField         
-  Roo.form.DateField
-  Roo.form.MonthField             
+  Roo.form.DateField         
   Roo.form.NumberField         
   Roo.form.Checkbox         
   Roo.form.Radio         
-  Roo.form.ComboBox
-  Roo.form.ComboBoxArray
-  Roo.form.ComboCheck
+  Roo.form.ComboBox         
   Roo.form.TextArea         
            
  
@@ -132,33 +135,15 @@ left:
  Roo.form.Form:buttons[] 
 right:
  Roo.Button         
-
-left:           
- Roo.form.HtmlEditor:toolbars[]
-right:
- Roo.form.HtmlEditor.ToolbarStandard
- Roo.form.HtmlEditor.ToolbarContext          
-
-left:     
- Roo.form.HtmlEditor.ToolbarStandard:btns[]           
-right:
-
- Roo.Toolbar.Button         
-  Roo.Toolbar.Fill         
-  Roo.Toolbar.Separator         
-  Roo.Toolbar.Spacer         
-  Roo.Toolbar.SplitButton         
-  Roo.Toolbar.TextItem        
-  Roo.form.ComboBox
-  Roo.form.ComboCheck
-  Roo.form.DateField
-  Roo.form.MonthField             
-  Roo.form.TextField
-
+           
+           
+           
+           
+           
 //Toolbar           
 left: 
  Roo.Toolbar 
- Roo.PagingToolbar
+ Roo.PagingToolbar 
 right: 
   Roo.Toolbar.Button         
   Roo.Toolbar.Fill         
@@ -167,9 +152,7 @@ right:
   Roo.Toolbar.SplitButton         
   Roo.Toolbar.TextItem        
   Roo.form.ComboBox
-  Roo.form.ComboCheck
   Roo.form.DateField
-  Roo.form.MonthField             
   Roo.form.TextField
 
            
@@ -227,9 +210,9 @@ right:
  Roo.grid.ColumnModel
 
 left:           
- Roo.grid.ColumnModel:editor
+    Roo.grid.ColumnModel:editor
 right:
- Roo.grid.GridEditor         
+    Roo.grid.GridEditor         
         
 	
 left: 
@@ -246,7 +229,6 @@ left:
 	Roo.Grid:toolbar
 	Roo.ContentPanel:toolbar
 	Roo.TreePanel:toolbar
-    Roo.NestedLayoutPanel:toolbar
 right:
 	Roo.Toolbar
 		
@@ -262,24 +244,20 @@ right:
 left:     
  Roo.tree.TreePanel:root
 right:
-  Roo.tree.AsyncTreeNode         
+ Roo.tree.AsyncTreeNode         
   Roo.tree.TreeNode         
-
-
-left:
-  Roo.tree.TreeNode
-right:
-  Roo.tree.TreeNode
 
 left:     
   Roo.tree.TreePanel:editor
 right:
   Roo.tree.TreeEditor
-       
+
 left:     
   Roo.tree.TreeEditor:field
 right:
   Roo.form.TextField
+  
+
 
 left:           
  Roo.tree.TreePanel:loader 
@@ -287,7 +265,7 @@ right:
  Roo.tree.TreeLoader         
  
 left:
-	Roo.tree.TreePanel:selModel
+	Roo.tree.TreePanel:sm
 right:
 	Roo.tree.DefaultSelectionModel         
 	Roo.tree.MultiSelectionModel         
@@ -299,9 +277,11 @@ left:
   Roo.grid.EditorGrid:ds
   Roo.grid.Grid:ds
   Roo.form.ComboBox:store
-  Roo.form.ComboCheck:store
   Roo.View:store
   Roo.JsonView:store
+  Roo.bootstrap.ComboBox:store
+  Roo.bootstrap.Calendar:store
+  Roo.bootstrap.Table:store
 right: 
   Roo.data.Store
   Roo.data.SimpleStore
@@ -312,13 +292,7 @@ right:
   Roo.data.HttpProxy
   Roo.data.MemoryProxy
  
-left:
-  Roo.form.GridField:xgrid
-right:
-  Roo.grid.Grid 
-  Roo.grid.EditorGrid 
 
- 
 left:
   Roo.data.Store:reader
 right:
@@ -331,15 +305,153 @@ left:
   Roo.JsonView:tpl
 right: 
   Roo.Template
-  Roo.XTemplate
-  Roo.MasterTemplate
 
   
-//drag drop..
-
+  //drag drop..
 left: 
-   Roo.grid.Grid:dropTarget
-   Roo.grid.EditorGrid:dropTarget 
+   Roo.grid.Grid:dragTarget
 right:
    Roo.dd.DropTarget
   
+  
+  
+  
+// bootstrap?
+
+left:
+    Roo.bootstrap.Body
+    Roo.bootstrap.Container
+    Roo.bootstrap.Modal
+    Roo.bootstrap.Column
+    Roo.bootstrap.Row
+    Roo.bootstrap.TabPanel
+    Roo.bootstrap.Element
+right:
+    Roo.bootstrap.Container
+    Roo.bootstrap.Button
+    Roo.bootstrap.ButtonGroup
+    Roo.bootstrap.Column
+    Roo.bootstrap.Form
+    Roo.bootstrap.Navbar
+    Roo.bootstrap.Row
+    Roo.bootstrap.Header
+    Roo.bootstrap.Img
+    Roo.bootstrap.Calendar  
+    Roo.bootstrap.Popover
+    Roo.bootstrap.Input
+    Roo.bootstrap.TextArea
+    Roo.bootstrap.Table
+    Roo.bootstrap.Pagination
+    Roo.bootstrap.Progress
+    Roo.bootstrap.TabPanel
+    Roo.bootstrap.DateField
+    Roo.bootstrap.CheckBox
+    Roo.bootstrap.Radio
+    Roo.bootstrap.ComboBox
+    Roo.bootstrap.Element
+    Roo.bootstrap.HtmlEditor
+
+left:
+    Roo.bootstrap.Progress
+right:
+    Roo.bootstrap.ProgressBar
+
+left:
+    Roo.bootstrap.Table
+right:
+    Roo.bootstrap.TableRow
+    Roo.bootstrap.TableCell
+    Roo.bootstrap.TableBody
+
+left:   
+    Roo.bootstrap.Table:cm[]          
+right:
+    Roo.bootstrap.Table.ColumnModel
+
+left:
+    Roo.bootstrap.Table:sm
+right:  
+    Roo.bootstrap.Table.RowSelectionModel    
+
+left:
+    Roo.bootstrap.TableBody
+right:
+    Roo.bootstrap.TableRow
+    Roo.bootstrap.TableCell
+
+left:
+    Roo.bootstrap.TableRow
+right:
+    Roo.bootstrap.TableCell
+
+left:
+    Roo.bootstrap.TableCell
+right:
+    Roo.bootstrap.Button
+
+left:
+    Roo.bootstrap.ButtonGroup
+right:
+    Roo.bootstrap.Button
+    Roo.bootstrap.Form
+
+left:
+    Roo.bootstrap.Button:menu
+    Roo.bootstrap.Navbar.Item:menu
+right:
+    Roo.bootstrap.Menu
+
+left:
+    Roo.bootstrap.Menu
+right:
+    Roo.bootstrap.MenuItem
+    
+left:
+    Roo.bootstrap.Navbar
+right:    
+    Roo.bootstrap.NavGroup
+    Roo.bootstrap.Form
+
+left:
+    Roo.bootstrap.NavGroup
+right:
+    Roo.bootstrap.Navbar.Item
+    Roo.bootstrap.Navbar.Button
+        
+left:
+    Roo.bootstrap.Form
+    Roo.bootstrap.Container
+right:
+    Roo.bootstrap.Input
+    Roo.bootstrap.TextArea
+    Roo.bootstrap.Button
+    Roo.bootstrap.ComboBox
+    Roo.bootstrap.Container
+    Roo.bootstrap.Row
+    Roo.bootstrap.TabPanel
+//    Roo.bootstrap.Fieldset
+        
+left:
+    Roo.bootstrap.Body
+right:
+    Roo.bootstrap.Modal
+
+left:    
+    Roo.bootstrap.Modal:buttons[]
+right:
+    Roo.bootstrap.Button
+
+left:    
+    Roo.bootstrap.Header
+right:
+    Roo.bootstrap.Container
+
+left:    
+    Roo.bootstrap.Navbar.Item
+right:
+    Roo.bootstrap.Container
+
+left:    
+    Roo.bootstrap.Pagination
+right:
+    Roo.bootstrap.PaginationItem

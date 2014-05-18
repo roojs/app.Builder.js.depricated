@@ -185,6 +185,157 @@ Gtk = XObject.define(
         getHelpUrl : function(cls)
         {
             return 'http://devel.akbkhome.com/seed/' + cls + '.html';
+        },
+        
+        vcnt : false,
+        
+        toVala: function()
+        {
+            var ret = '';
+            
+            this.vcnt = 0;
+            //print(JSON.stringify(this.items[0],null,4));
+            
+            var item=  XObject.xclone(this.items[0]);
+            
+           
+            
+            this.palete  = new imports.Palete.Gtk.Gtk({});
+            
+            this.vitems = [];
+            this.toValaName(item);
+           // print(JSON.stringify(item,null,4));Seed.quit();
+            
+            
+            // print(JSON.stringify(item,null,4));
+            this.toValaItem(item,0, function(s) {
+                ret+= s;
+            });
+            
+            return ret;
+            
+        },
+        
+        toValaName : function(item) {
+            this.vcnt++;
+            var cls = item['|xns'] + '.' + item.xtype;
+            var id = item.id ? item.id : (item.xtype + this.vcnt);
+            var props = this.palete.getPropertiesFor(cls, 'props');
+            
+            item.xvala_cls = cls;
+            item.xvala_xcls = 'Xcls_' + id;
+            item.xvala_id = item.id ? item.id : false;
+            this.vitems.push(item);  
+            // loop children..
+            if (typeof(item.items) == 'undefined') {
+                return;
+            }
+            for(var i =0;i<item.items.length;i++) {
+                this.toValaName(item.items[i]);
+            }
+          
+        },
+        
+        
+        toValaItem : function(item, depth, strbuilder)
+        {
+        // print(JSON.stringify(item,null,4));
+            
+            var inpad = new Array( depth +1 ).join("    ");
+            
+            var pad = new Array( depth +2 ).join("    ");
+            var ipad = new Array( depth +3 ).join("    ");
+            
+            var cls = item.xvala_cls;
+            
+            var xcls = item.xvala_xcls;
+            
+            
+            if (!depth) {
+                strbuilder(inpad + "public static " + xcls + "  " + item.id + ";\n");
+                 
+                
+            }
+            
+            // class header..
+            strbuilder(inpad + "public class " + xcls + " : " + cls + "\n" + inpad + "{\n");
+            
+            // properties??
+                
+                //public bool paused = false;
+                //public static StatusIconA statusicon;
+            if (!depth) {
+                strbuilder(pad + "public static " + xcls + "  _this;\n");
+                for(var i=1;i < this.vitems.length; i++) {
+                    if (this.vitems[i].xvala_id  !== false) {
+                        strbuilder(pad + "public   " + this.vitems[i].xvala_xcls + "  " + this.vitems[i].xvala_id + ";\n");
+                    }
+                }
+                
+            }
+             
+            // ctor..
+            
+            strbuilder(pad + "public " + xcls + "()\n" + pad + "{\n");
+            
+            // public static?
+            if (!depth) {
+                strbuilder(ipad + " _this = this;\n");
+                strbuilder(ipad + " " + item.id  + " = this;\n");
+            } else {
+                if (item.xvala_id !== false) {
+                    strbuilder(ipad + " _this." + item.xvala_id  + " = this;\n");
+                   
+                }
+                
+                
+            }
+           
+            // what are the properties of this class???
+            
+             var props = this.palete.getPropertiesFor(cls, 'props');
+            props.forEach(function(p) {
+               if (typeof(item[p.name]) == 'undefined' || typeof(item[p.name]) == 'object' ) {
+                    return;
+               }
+               // got a property..
+               strbuilder(ipad + " this." + p.name + " = " + JSON.stringify(item[p.name]) + ";\n");
+               
+            });
+                //code
+            
+            // add all the child items..
+            if (typeof(item.items) != 'undefined') {
+                for(var i =0;i<item.items.length;i++) {
+                    var ci = item.items[i];
+                    var packing = ci.pack ? ci.pack.split(',') : [ 'add' ];
+                    var pack = packing.shift();
+                    strbuilder(ipad + " this." + pack + " (  new " + ci.xvala_xcls + "()" +
+                               (packing.length ? ", " + packing.join(",") : "") + " );\n"
+                            );
+                               
+                    
+                }
+            }
+            
+            
+            
+            
+            // add all the signal handlers..
+            
+            // end ctor..
+            strbuilder(pad + "}\n");
+            
+            // next loop throug children..
+            if (typeof(item.items) != 'undefined') {
+                for(var i =0;i<item.items.length;i++) {
+                    this.toValaItem(item.items[i], depth+1, strbuilder);
+                }
+            }
+            
+            strbuilder(inpad + "}\n");
         }
+        
+        
         
     });

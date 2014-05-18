@@ -607,7 +607,7 @@ Window=new XObject({
                                                                                 Gdk.drag_status(ctx, 0, time);
                                                                                 return true;
                                                                             }
-                                                                            //  print(JSON.stringify(tg,null,4));
+                                                                              print(JSON.stringify(tg,null,4));
                                                                             //console.dump(tg);
                                                                             this.targetData = tg;    
                                                                             
@@ -622,7 +622,7 @@ Window=new XObject({
                                                                                 w.drag_get_data
                                                                                 (          /* will receive 'drag-data-received' signal */
                                                                                         ctx,        /* represents the current state of the DnD */
-                                                                                        imports.Builder3.Globals.atoms["STRING"],    /* the target type we want */
+                                                                                        imports.Builder4.Globals.atoms["STRING"],    /* the target type we want */
                                                                                         time            /* time stamp */
                                                                                 );
                                                                                 
@@ -789,7 +789,7 @@ Window=new XObject({
                                                                     		Gdk.DragAction.COPY   | Gdk.DragAction.MOVE           /* what to do with data after dropped */
                                                                     	);
                                                                      
-                                                                    	this.el.drag_source_set_target_list(imports.Builder3.Globals.targetList);
+                                                                    	this.el.drag_source_set_target_list(imports.Builder4.Globals.targetList);
                                                                     
                                                                     	this.el.drag_source_add_text_targets(); 
                                                                     	this.el.drag_dest_set
@@ -800,7 +800,7 @@ Window=new XObject({
                                                                     	    Gdk.DragAction.COPY   | Gdk.DragAction.MOVE       /* what to do with data after dropped */
                                                                     	);
                                                                     
-                                                                    	this.el.drag_dest_set_target_list(  imports.Builder3.Globals.targetList);
+                                                                    	this.el.drag_dest_set_target_list(  imports.Builder4.Globals.targetList);
                                                                     	this.el.drag_dest_add_text_targets( );
                                                                     },
                                                                     selectNode : function(treepath_str) {
@@ -1246,7 +1246,7 @@ Window=new XObject({
                                                                                 s.get_selected( oret);
                                                                                 var node = this.nodeToJS(oret.iter,false);
                                                                                     //console.dump(node);
-                                                                                //print(JSON.stringify(node, null,4)); 
+                                                                                print(JSON.stringify(node, null,4)); 
                                                                                     
                                                                                     // needs to drop first, otherwise the target_data 
                                                                                         // treepath will be invalid.
@@ -2187,7 +2187,7 @@ Window=new XObject({
                                                                     
                                                                         this.el.set_value(ret.iter, 5, type + ' : ' + str);
                                                                         // update the tree...  
-                                                                        //print("new data: "  + JSON.stringify(this.toJS() , null,4));
+                                                                        print("new data: "  + JSON.stringify(this.toJS() , null,4));
                                                                         this.get('/LeftTree.model').setFromNode(false,this.toJS());
                                                                         this.get('/LeftTree.model').changed(doRefresh); 
                                                                                  
@@ -2892,6 +2892,7 @@ Window=new XObject({
                                                                                     xtype: Gtk.Button,
                                                                                     listeners : {
                                                                                         clicked : function (self) {
+                                                                                        print("---Calling renderJS on /RightBrowser.view");
                                                                                           this.get('/RightBrowser.view').renderJS(null,true);
                                                                                         }
                                                                                     },
@@ -2914,12 +2915,14 @@ Window=new XObject({
                                                                                     xtype: Gtk.Button,
                                                                                     listeners : {
                                                                                         clicked : function (self) {
-                                                                                          
+                                                                                            print("--- Full Redraw - clicked");
 																						    var view = this.get('/RightBrowser.view');
 																						  //this.get('/RightBrowser.view').redraws = 99;
 																							view.refreshRequired = true;
 																							view.lastRedraw = false;
 																							view.renderedData = false;
+                                                                                            
+                                                                                            print("--- CALLing view.renderJS?");
 																							view.renderJS(null,true);
 																						  
 																						}
@@ -2943,8 +2946,6 @@ Window=new XObject({
                                                                                     listeners : {
                                                                                         load_finished : function (self, object) {
                                                                                             print("load finished");
-                                                                                            var file = this.get('/LeftTree.model').file;
-                                                                                            file.saveHTML(object);
                                                                                         //    print("load_finished"); return;
                                                                                         	// if (this.ready) { // dont do it twice!
                                                                                         	 //   return; 
@@ -3080,7 +3081,7 @@ Window=new XObject({
                                                                                                 w.drag_get_data
                                                                                                 (          /* will receive 'drag-data-received' signal */
                                                                                                         ctx,        /* represents the current state of the DnD */
-                                                                                                        imports.Builder3.Globals.atoms["STRING"],    /* the target type we want */
+                                                                                                        imports.Builder4.Globals.atoms["STRING"],    /* the target type we want */
                                                                                                         time            /* time stamp */
                                                                                                 );
                                                                                                                 
@@ -3174,7 +3175,7 @@ Window=new XObject({
                                                                                         );
                                                                                                                 
                                                                                        // print("RB: TARGETS : " + LeftTree.atoms["STRING"]);
-                                                                                        this.el.drag_dest_set_target_list(  imports.Builder3.Globals.targetList);
+                                                                                        this.el.drag_dest_set_target_list(  imports.Builder4.Globals.targetList);
                                                                                         
                                                                                         GLib.timeout_add_seconds(0, 1, function() {
                                                                                             //    print("run refresh?");
@@ -3190,25 +3191,27 @@ Window=new XObject({
                                                                                         // we refresh in a loop privately..
                                                                                         var autodraw = this.get('/RightBrowser.AutoRedraw').el.active;
                                                                                         if (!autodraw && !force) {
-                                                                                            print("Skipping redraw - no force, and autodraw off");
+                                                                                            print("---Skipping redraw - no force, and autodraw off");
                                                                                             return;
                                                                                         }
+                                                                                        print("---renderJS - setting refresh required");
                                                                                         this.refreshRequired  = true;
                                                                                     },
                                                                                     runRefresh : function() 
                                                                                     {
                                                                                         // this is run every 2 seconds from the init..
                                                                                     
-                                                                                      
+                                                                                        print("---- run refresh");
                                                                                         
                                                                                         if (!this.refreshRequired) {
-                                                                                            // print("no refresh required");
+                                                                                            print("---- run refresh - no refresh required");
                                                                                             return;
                                                                                         }
                                                                                     
                                                                                         if (this.lastRedraw) {
                                                                                            // do not redraw if last redraw was less that 5 seconds ago.
                                                                                            if (((new Date()) -  this.lastRedraw) < 5000) {
+                                                                                                print("---- run refresh - too soon");
                                                                                                 return;
                                                                                             }
                                                                                         }
@@ -3217,8 +3220,11 @@ Window=new XObject({
                                                                                         
                                                                                         
                                                                                          if (!this.get('/Window.LeftTree').getActiveFile()) {
+                                                                                            print("---- run refresh - no active file name");
                                                                                             return;
                                                                                          }
+                                                                                         
+                                                                                         
                                                                                          this.refreshRequired = false;
                                                                                        //  print("HTML RENDERING");
                                                                                          
@@ -3228,11 +3234,13 @@ Window=new XObject({
 																						// before
                                                                                         
 																						
-																						
+																						print("---- run refresh - getting js");
 																						
                                                                                         var js = this.get('/LeftTree.model').toJS();
+                                                                                        
+                                                                                        
                                                                                         if (!js || !js.length) {
-                                                                                            print("no data");
+                                                                                            print("---- run refresh - no data");
                                                                                             return;
                                                                                         }
                                                                                         var  data = js[0];
@@ -3255,7 +3263,7 @@ Window=new XObject({
 																						//file.items[0].background = false;
 																						//var p = file.parent;
 																						//file.parent = false;
-																						 
+																						 print("---- run refresh - to source preview");
                                                                                         var js_src = file.toSourcePreview();
 																						if (this.renderedData && js_src == this.renderedData && project.runhtml == this.runhtml) {
 																							// unless it' sforced..
@@ -3273,7 +3281,6 @@ Window=new XObject({
 																								"Roo.onReady(function() {\n" +
 																								"if (" + file.name +".show) " +  file.name +".show({});\n" +
 																								"Roo.XComponent.build();\n" +
-                                                                                                
 																								"});\n";
 																								
 																						
@@ -3353,7 +3360,10 @@ Window=new XObject({
                                                                     },
                                                                     renderJS : function(data, withDebug)
                                                                     {
-                                                                          this.highlightWidget = false;
+                                                                        
+                                                                        print("---GtkView - renderJS");
+                                                                        
+                                                                        this.highlightWidget = false;
                                                                        
                                                                         this.withDebug = false;
                                                                         while (this.get('view').el.get_children().length) {
@@ -3797,7 +3807,7 @@ Window=new XObject({
                                                                                                                 );
                                                                                                                 
                                                                                                                // print("RB: TARGETS : " + LeftTree.atoms["STRING"]);
-                                                                                                                this.el.drag_dest_set_target_list( imports.Builder3.Globals.targetList);
+                                                                                                                this.el.drag_dest_set_target_list( imports.Builder4.Globals.targetList);
                                                                                                     },
                                                                                                     ready : false,
                                                                                                     getActiveNode : function(x,y)
@@ -3852,7 +3862,7 @@ Window=new XObject({
                                                                                                                 self.drag_get_data
                                                                                                                 (  /* will receive 'drag-data-received' signal */
                                                                                                                         ctx,        /* represents the current state of the this.gDnD */
-                                                                                                                        imports.Builder3.Globals.atoms["STRING"],    /* the target type we want */
+                                                                                                                        imports.Builder4.Globals.atoms["STRING"],    /* the target type we want */
                                                                                                                         time            /* time stamp */
                                                                                                                 );
                                                                                                                 
@@ -4027,7 +4037,7 @@ Window=new XObject({
                                         this.get('buttonbar').el.hide();
                                         this.get('viewbox').el.show();
                                         var ce = this.get('/Window.centereast').el;
-                                        //print(JSON.stringify(XObject.keys(ce) ,null,4));
+                                        print(JSON.stringify(XObject.keys(ce) ,null,4));
                                         ce.set_position(ce.get_allocated_width() - 150);
                                            
                                        // this.get('model').expanded();
@@ -4208,7 +4218,7 @@ Window=new XObject({
                                                                 );
                                                                 //Gtk.drag_source_set_target_list(this.el, LeftTree.targetList);
                                                                
-                                                                this.el.drag_source_set_target_list( imports.Builder3.Globals.targetList);
+                                                                this.el.drag_source_set_target_list( imports.Builder4.Globals.targetList);
                                                                 this.el.drag_source_add_text_targets( ); 
                                                                 /*
                                                                 print("RP: TARGET:" + LeftTree.atoms["STRING"]);
