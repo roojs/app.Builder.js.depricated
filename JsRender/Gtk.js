@@ -267,7 +267,7 @@ Gtk = XObject.define(
             
             
             if (!depth) {
-                strbuilder(inpad + "public static " + xcls + "  " + item.id + ";\n");
+                strbuilder(inpad + "public static " + xcls + "  " + item.id + ";\n\n");
                  
                 
             }
