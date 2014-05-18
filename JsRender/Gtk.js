@@ -213,10 +213,10 @@ Gtk = XObject.define(
             ret += "\n\n";
  
 
-ret += "static int main (string[] args) {
+ret += "static int main (string[] args) {\n";
 ret += "    Gtk.init (ref args);\n";
-ret += "    new " + item.xval_xcls +"();\n";
-ret += "    EditorWindow.show_all();\n";
+ret += "    new " + item.xvala_xcls +"();\n";
+ret += "    " + item.xvala_id +".show_all();\n";
 ret += "     Gtk.main ();\n";
 ret += "    return 0;\n";
 ret += "}\n";
