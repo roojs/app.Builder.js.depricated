@@ -195,7 +195,7 @@ Gtk = XObject.define(
             
             this.vcnt = 0;
             //print(JSON.stringify(this.items[0],null,4));
-            print(JSON.stringify(this.items[0],null,4));Seed.quit();
+            //print(JSON.stringify(this.items[0],null,4));Seed.quit();
 
             var item=  XObject.xclone(this.items[0]);
             
