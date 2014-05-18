@@ -212,7 +212,7 @@ Gtk = XObject.define(
             ret += "*/\n";
             ret += "\n\n";
  
-
+            ret += "/* -- to test class\n";
             ret += "static int main (string[] args) {\n";
             ret += "    Gtk.init (ref args);\n";
             ret += "    new " + item.xvala_xcls +"();\n";
