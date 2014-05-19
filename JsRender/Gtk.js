@@ -463,7 +463,7 @@ Gtk = XObject.define(
                 vv = vv.replace(/\n/g,"\n" + ipad);
                 
                 vva = vv.split(' ');
-                var rtype = vva.unshift();
+                var rtype = vva.shift();
                 var body = vva.join(' ');
                 
                 
