@@ -23,7 +23,7 @@
             "width_request": 500,
             "xtype": "Window",
             "|init": "function() {\n    XObject.prototype.init.call(this);\n   // this.show_all();\n}\n",
-           "|save": "function (self, event) {\n    if (!this.get('/Editor.RightEditor').save()) {\n        // no hiding with errors.\n        return true;\n    }\n    this.get('/Editor').activePath = false;\n    this.el.hide();\n    return true;\n}\n/*--\n\nbool ()  {\n\n    if (!Editor.RightEditor/save()) {\n        // no hiding with errors.\n        return true;\n    }\n    _this.active_path = \"\";\n    _this.hide();\n    return true;\n\n}\n*/",
+           "|save": "function (self, event) {\n    if (!this.get('/Editor.RightEditor').save()) {\n        // no hiding with errors.\n        return true;\n    }\n    this.get('/Editor').activePath = false;\n    this.el.hide();\n    return true;\n}\n/*--\n\nbool ()  {\n\n    if (!Editor.RightEditor.save()) {\n        // no hiding with errors.\n        return true;\n    }\n    _this.active_path = \"\";\n    _this.hide();\n    return true;\n\n}\n*/",
 
             "|xns": "Gtk",
             "items": [
