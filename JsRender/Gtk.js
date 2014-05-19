@@ -303,6 +303,8 @@ Gtk = XObject.define(
                 
             }
              
+            // .vala props.. 
+             
             // ctor..
             
             strbuilder(pad + "public " + xcls + "()\n" + pad + "{\n");
