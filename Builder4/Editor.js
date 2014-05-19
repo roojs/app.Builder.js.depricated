@@ -29,7 +29,7 @@ Editor=new XObject({
                 return true;
             }
             _this.hide();
-            _this.activePath = false;
+            _this.activePath = '';
             return true;
         }
         
