@@ -296,7 +296,7 @@ Gtk = XObject.define(
                 //public bool paused = false;
                 //public static StatusIconA statusicon;
             if (!depth) {
-                strbuilder(pad + "public static " + xcls + "  _this;\n");
+                //strbuilder(pad + "public static " + xcls + "  _this;\n");
                 for(var i=1;i < this.vitems.length; i++) {
                     if (this.vitems[i].xvala_id  !== false) {
                         strbuilder(pad + "public " + this.vitems[i].xvala_xcls + " " + this.vitems[i].xvala_id + ";\n");
