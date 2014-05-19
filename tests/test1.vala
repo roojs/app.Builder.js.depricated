@@ -9,7 +9,12 @@
 
 static int main (string[] args) {
     Gtk.init (ref args);
+    
+    // must init modules...
     new Xcls_EditorWindow();
+    
+    
+    
     EditorWindow.show_all();
      Gtk.main ();
 
