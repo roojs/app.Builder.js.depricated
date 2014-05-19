@@ -422,7 +422,15 @@ Gtk = XObject.define(
             
             
             
-            
+            for (var k in item) {
+                if (typeof(citems[k]) != 'undefined') {
+                    continue;
+                }
+                
+                
+                
+                
+            }
             
             
             
