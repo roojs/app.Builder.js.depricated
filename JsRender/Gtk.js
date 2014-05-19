@@ -436,12 +436,13 @@ Gtk = XObject.define(
             strbuilder(pad + "}\n");
             
             
-                strbuilder("\n" + pad + "// userdefined functions \n");  
+            strbuilder("\n" + pad + "// userdefined functions \n");  
             
             // user defined functions...
             
             for (var k in item) {
                 if (typeof(citems[k]) != 'undefined') {
+                    strbuilder("\n" + pad + "// skip " + k + " - already used \n"); 
                     continue;
                 }
                 if (k[0] != '|') {
