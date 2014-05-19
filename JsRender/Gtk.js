@@ -398,12 +398,9 @@ Gtk = XObject.define(
                         continue;
                     }
                     var vv = v[1].replace(new RegExp('\\*/\s*$'), "");
-                    print(JSON.stringify(vv));Seed.quit();
-                    var vv = v.split(':');
-                    if (vv.length < 2) {
-                        continue;
-                    }
-                    strbuilder(ipad + "this" + k + " = " +   vv[1] +";\n");
+                    //print(JSON.stringify(vv));Seed.quit();
+                    
+                    strbuilder(ipad + "this" + k + ".connect( " + vv  + " );\n");
                     
                 }
             }    
