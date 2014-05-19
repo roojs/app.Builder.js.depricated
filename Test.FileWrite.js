@@ -21,7 +21,9 @@ function loaded()
     
     print(f.toVala(function(str) {
         print(str);
-    }))
+        
+    }));
+    File.write("/tmp/test.vala", str);
     
     
 }
