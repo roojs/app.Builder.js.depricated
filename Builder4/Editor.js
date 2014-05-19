@@ -78,7 +78,21 @@ Editor=new XObject({
         this.get('/Editor').activePath = false;
         this.el.hide();
         return true;
-    },
+    }
+    /*--
+    
+    (event) => {
+    
+        if (!Editor.RightEditor/save()) {
+            // no hiding with errors.
+            return true;
+        }
+        _this.activePath = false;
+        _this.hide();
+        return true;
+    
+    }
+    */,
     items : [
         {
             xtype: Gtk.VBox,
