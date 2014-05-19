@@ -389,7 +389,7 @@ Gtk = XObject.define(
                 }
             }
             if (typeof(item['|init']) != 'undefined') {
-                    var v = item.item['|init'].split(/\/*--/);
+                    var v = item['|init'].split(/\/*--/);
                     if (v.length > 1) {
                             
                          var vv = v[1].replace('*/', "");
