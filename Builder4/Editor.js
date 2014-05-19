@@ -179,6 +179,20 @@ Editor=new XObject({
                                     
                                     return false;
                                 }
+                                /*--
+                                (event) => {
+                                    
+                                    if (event.key.keyval == 115 && (event.key.state & Gdk.ModifierType.CONTROL_MASK ) ) {
+                                        print("SAVE: ctrl-S  pressed");
+                                        this.save();
+                                        return false;
+                                    }
+                                   // print(event.key.keyval)
+                                    
+                                    return false;
+                                
+                                }
+                                */
                             },
                             id : "view",
                             indent_width : 4,
