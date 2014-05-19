@@ -1,9 +1,9 @@
 {
-    "id": "file-gtk-10",
+    "id": "file-gtk-14",
     "name": "Editor",
     "parent": "",
     "title": false,
-    "path": "/home/alan/gitlive/app.Builder.js/Sample/Editor.bjs",
+    "path": "/home/alan/gitlive/app.Builder.js/Builder4/Editor.bjs",
     "items": [
         {
             "listeners": {
@@ -16,8 +16,8 @@
             "title": "Application Builder - Editor",
             "width_request": 500,
             "xtype": "Window",
-            "|save": "function (self, event) {\n    if (!this.get('/Editor.RightEditor').save()) {\n        // no hiding with errors.\n        return true;\n    }\n    this.get('/Editor').activePath = false;\n    this.el.hide();\n    return true;\n}",
             "|init": "function() {\n    XObject.prototype.init.call(this);\n   // this.show_all();\n}\n",
+            "|save": "function (self, event) {\n    if (!this.get('/Editor.RightEditor').save()) {\n        // no hiding with errors.\n        return true;\n    }\n    this.get('/Editor').activePath = false;\n    this.el.hide();\n    return true;\n}",
             "|xns": "Gtk",
             "items": [
                 {
