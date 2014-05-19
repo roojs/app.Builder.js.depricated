@@ -279,6 +279,7 @@ Gtk = XObject.define(
             
             var xcls = item.xvala_xcls;
             
+            var citems = {};
             
             if (!depth) {
                 strbuilder(inpad + "public static " + xcls + "  " + item.id + ";\n\n");
@@ -304,8 +305,11 @@ Gtk = XObject.define(
             }
             
             strbuilder("\n" + ipad + "// my vars\n");
+            
+            
             for (var k in item) {
                 if (k[0] != '.') {
+                    citems[k] = true; 
                     continue;
                 }
                 var kk = k.substring(1);
@@ -357,10 +361,12 @@ Gtk = XObject.define(
             
             props.forEach(function(p) {
                 if (typeof(item[p.name]) != 'undefined' && typeof(item[p.name]) != 'object' ) {
+                    citems[p.name] = true; 
                     strbuilder(ipad + "this." + p.name + " = " + JSON.stringify(item[p.name]) + ";\n");
                     return;
                 }
                 if (typeof(item['|' + p.name]) != 'undefined' && typeof(item['|' + p.name]) != 'object' ) {
+                    citems['|' + p.name] = true;
                     strbuilder(ipad + "this." + p.name + " = " +  item['|' + p.name] + ";\n");
                     return;
                 }
@@ -369,7 +375,7 @@ Gtk = XObject.define(
                
             });
                 //code
-            
+            citems['pack'] = true;
             // add all the child items..
             if (typeof(item.items) != 'undefined') {
                 for(var i =0;i<item.items.length;i++) {
@@ -412,6 +418,12 @@ Gtk = XObject.define(
             
             // end ctor..
             strbuilder(pad + "}\n");
+            
+            
+            
+            
+            
+            
             
             if (depth > 0) {
                 strbuilder(inpad + "}\n");
