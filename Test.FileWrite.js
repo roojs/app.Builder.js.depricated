@@ -18,12 +18,15 @@ print(JSON.stringify(f,null,4));
 function loaded()
 {
     print(JSON.stringify(f,null,4));
-    
+    var out  ='';
     print(f.toVala(function(str) {
-        print(str);
+        //print(str);
+        out+=str;
         
     }));
-    File.write("/tmp/test.vala", str);
+    print(out);
+    File.write("/tmp/test.vala", out);
+    print('/tmp/test.vala');
     
     
 }
