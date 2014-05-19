@@ -247,7 +247,14 @@ Editor=new XObject({
                             save : function() {
                                 
                                 return this.get('/Editor.RightEditor').save();
-                            },
+                            
+                            }
+                            /*--
+                            void () {
+                            
+                                Edit.RightEditor.save();
+                            }
+                            */,
                             show_line_numbers : true,
                             items : [
                                 {
