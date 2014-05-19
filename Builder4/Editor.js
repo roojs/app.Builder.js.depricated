@@ -143,7 +143,25 @@ Editor=new XObject({
                          return true;
                     }
                     /*--
+                    () {
                     
+                         if (_this.activePath.length  < 1 ) {
+                            return true;
+                         }
+                         
+                         var str = Editor.buffer.toString();
+                         
+                         if (!Editor.buffer.checkSyntax()) {
+                            print("check syntax failed");
+                             //this.get('/StandardErrorDialog').show("Fix errors in code and save.."); 
+                             return false;
+                         }
+                         
+                         this.get('/LeftPanel.model').changed(  str , false);
+                         this.get('/Editor').dirty = false;
+                         this.get('/Editor.save_button').el.sensitive = false;
+                         return true;
+                    }
                     
                     */,
                     items : [
