@@ -410,7 +410,7 @@ Gtk = XObject.define(
             if (item.listeners) {
             //    print(JSON.stringify(item.listeners));Seed.quit();
             
-                
+                strbuilder("\n" + ipad + "// listeners \n");  
                 // add all the signal handlers..
                 for (var k in item.listeners) {
                     
