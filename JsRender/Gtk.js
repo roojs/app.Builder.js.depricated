@@ -400,7 +400,7 @@ Gtk = XObject.define(
                     var vv = v[1].replace(new RegExp('\\*/\s*$'), "");
                     //print(JSON.stringify(vv));Seed.quit();
                     
-                    strbuilder(ipad + "this" + k + ".connect( " + vv  + " );\n");
+                    strbuilder(ipad + "this." + k + ".connect( " + vv  + " );\n");
                     
                 }
             }    
