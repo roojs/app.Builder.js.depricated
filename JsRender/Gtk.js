@@ -439,7 +439,21 @@ Gtk = XObject.define(
                 if (typeof(citems[k]) != 'undefined') {
                     continue;
                 }
+                if (k[0] != '|') {
+                    continue;
+                }
                 
+                
+                var v = item[k].split(/\/*--/);
+                if (v.length < 2) {
+                    continue;
+                }
+                var vv = v[1].replace('*/', "");
+                //print(JSON.stringify(vv));Seed.quit();
+                vv = vv.replace(/^\n+/,'');
+                vv = vv.replace(/\n+$/,'');
+                vv = vv.replace(/\n/g,"\n" + ipad);
+                strbuilder(ipad + "this." + k + ".connect( " + vv  + " );\n");
                 
                 
                 
