@@ -309,13 +309,14 @@ Gtk = XObject.define(
             
             for (var k in item) {
                 if (k[0] != '.') {
-                    citems[k] = true; 
+                   
                     continue;
                 }
                 var kk = k.substring(1);
                 var v = item[k];
                 var vv = v.split(':');
                 strbuilder(pad + "public " + vv[0] + " " + kk + ";\n");
+                 citems[k] = true; 
                 
             }
             // .vala props.. 
