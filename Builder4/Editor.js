@@ -109,6 +109,12 @@ Editor=new XObject({
                                 
                                   this.get('/Editor.RightEditor').save();
                                 }
+                                /*--
+                                () => { 
+                                    Editor.RightEdit.save();
+                                }
+                                
+                                */
                             },
                             id : "save_button",
                             label : "Save"

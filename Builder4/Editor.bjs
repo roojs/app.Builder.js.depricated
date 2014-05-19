@@ -36,7 +36,7 @@
                             "items": [
                                 {
                                     "listeners": {
-                                        "clicked": "function (self) {\n\n  this.get('/Editor.RightEditor').save();\n}"
+                                        "clicked": "function (self) {\n\n  this.get('/Editor.RightEditor').save();\n}\n/*--\n() => { \n    Editor.RightEdit.save();\n}\n\n*/\n"
                                     },
                                     "id": "save_button",
                                     "label": "Save",
