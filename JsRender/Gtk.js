@@ -302,6 +302,8 @@ Gtk = XObject.define(
                 }
                 
             }
+            
+            strbuilder("\n" + ipad + "// my vars\n");
             for (var k in item) {
                 if (k[0] != '.') {
                     continue;
@@ -315,7 +317,7 @@ Gtk = XObject.define(
             // .vala props.. 
              
             // ctor..
-            
+            strbuilder("\n" + ipad + "// ctor \n");
             strbuilder(pad + "public " + xcls + "()\n" + pad + "{\n");
             
             // public static?
