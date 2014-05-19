@@ -404,10 +404,9 @@ Gtk = XObject.define(
                     }
             }
             
-            citems['|init'] = true;  
             citems['|pack'] = true;
-            citems['items'] = true;
-            
+            citems['|items'] = true;
+             citems['|init'] = true;
             
             if (item.listeners) {
             //    print(JSON.stringify(item.listeners));Seed.quit();
@@ -428,7 +427,21 @@ Gtk = XObject.define(
                     vv = vv.replace(/\n/g,"\n" + ipad);
                     strbuilder(ipad + "this." + k + ".connect( " + vv  + " );\n");
                     
-                }1var k in item) {
+                }
+            }    
+                
+            
+            
+            
+            // end ctor..
+            strbuilder(pad + "}\n");
+            
+            
+            strbuilder("\n" + pad + "// userdefined functions \n");  
+            
+            // user defined functions...
+            
+            for (var k in item) {
                 if (typeof(citems[k]) != 'undefined') {
                     //strbuilder("\n" + pad + "// skip " + k + " - already used \n"); 
                     continue;
