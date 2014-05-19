@@ -204,7 +204,15 @@ Editor=new XObject({
                                 description.set_size(8000);
                                 this.el.modify_font(description);
                             
-                            },
+                            }
+                            /*--
+                            
+                                var description = Pango.Font.description_from_string("monospace");
+                                description.set_size(8000);
+                                this.modify_font(description);
+                            
+                            
+                            */,
                             insert_spaces_instead_of_tabs : true,
                             load : function(str) {
                             
