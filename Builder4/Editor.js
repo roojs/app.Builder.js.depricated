@@ -52,6 +52,14 @@ Editor=new XObject({
                 this.el.set_uposition(this.pos.root_x,this.pos.root_y);
             }
         }
+        /*--
+         () => {
+            if (this.pos) {
+                this.set_uposition(this.pos.root_x,this.pos.root_y);
+            }
+        }
+        
+        */
     },
     height_request : 300,
     id : "EditorWindow",
