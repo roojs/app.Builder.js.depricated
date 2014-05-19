@@ -385,9 +385,30 @@ Gtk = XObject.define(
             }
             
             
-            
+            if (item.listeners) {
+                print(JSON.stringify(item.listeners));Seed.quit();
+            }
             
             // add all the signal handlers..
+            for (var k in item.listeners) {
+                
+                
+                var v = item[k].split(/\/*--/);
+                if (v.length < 2) {
+                    continue;
+                }
+                var vv = v.replace(/split('')
+                var vv = v.split(':');
+                if (vv.length < 2) {
+                    continue;
+                }
+                strbuilder(ipad + "this" + k + " = " +   vv[1] +";\n");
+                
+            }
+            
+            
+            
+            
             
             // end ctor..
             strbuilder(pad + "}\n");
