@@ -12,7 +12,7 @@ var f = pr.files['/home/alan/gitlive/app.Builder.js/Builder4/Editor.bjs'];
 print(JSON.stringify(f,null,4));
 
 
-
+File = imports.File.File;
 
 
 function loaded()
