@@ -404,7 +404,7 @@ Gtk = XObject.define(
                     }
             }
             
-            citems['pack'] = true;
+            citems['|pack'] = true;
             citems['items'] = true;
             
             
@@ -427,21 +427,7 @@ Gtk = XObject.define(
                     vv = vv.replace(/\n/g,"\n" + ipad);
                     strbuilder(ipad + "this." + k + ".connect( " + vv  + " );\n");
                     
-                }
-            }    
-                
-            
-            
-            
-            // end ctor..
-            strbuilder(pad + "}\n");
-            
-            
-            strbuilder("\n" + pad + "// userdefined functions \n");  
-            
-            // user defined functions...
-            
-            for (var k in item) {
+                }1var k in item) {
                 if (typeof(citems[k]) != 'undefined') {
                     //strbuilder("\n" + pad + "// skip " + k + " - already used \n"); 
                     continue;
