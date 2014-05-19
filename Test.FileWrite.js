@@ -19,11 +19,7 @@ function loaded()
 {
     print(JSON.stringify(f,null,4));
     var out  ='';
-    print(f.toVala(function(str) {
-        //print(str);
-        out+=str;
-        
-    }));
+    var out = f.toVala();
     print(out.length);;
     File.write("/tmp/test.vala", out);
     print('/tmp/test.vala');
