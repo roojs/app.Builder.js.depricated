@@ -327,11 +327,11 @@ Gtk = XObject.define(
             
             
             props.forEach(function(p) {
-                if (typeof(item[p.name]) != 'undefined' && typeof(item[p.name]) == 'object' ) {
+                if (typeof(item[p.name]) != 'undefined' && typeof(item[p.name]) != 'object' ) {
                     strbuilder(ipad + "this." + p.name + " = " + JSON.stringify(item[p.name]) + ";\n");
                     return;
                 }
-                if (typeof(item['|' + p.name]) != 'undefined' && typeof(item['|' + p.name]) == 'object' ) {
+                if (typeof(item['|' + p.name]) != 'undefined' && typeof(item['|' + p.name]) != 'object' ) {
                     strbuilder(ipad + "this." + p.name + " = " + JSON.stringify(item['|' + p.name]) + ";\n");
                     return;
                 }
