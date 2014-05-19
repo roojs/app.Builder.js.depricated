@@ -436,6 +436,8 @@ Gtk = XObject.define(
             strbuilder(pad + "}\n");
             
             
+                strbuilder("\n" + pad + "// userdefined functions \n");  
+            
             // user defined functions...
             
             for (var k in item) {
