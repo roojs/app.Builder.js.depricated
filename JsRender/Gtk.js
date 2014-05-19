@@ -324,17 +324,19 @@ Gtk = XObject.define(
             
             var props = this.palete.getPropertiesFor(item['|xns'] + '.' + item.xtype, 'props');
             
-            if (cls == 'Gtk.SourceView') {
-                print("LOOKING FOR indent_width");
-                print(JSON.stringify(props, null,4));Seed.quit;
-            }
+            
             
             props.forEach(function(p) {
-               if (typeof(item[p.name]) == 'undefined' || typeof(item[p.name]) == 'object' ) {
+                if (typeof(item[p.name]) != 'undefined' && typeof(item[p.name]) == 'object' ) {
+                    strbuilder(ipad + "this." + p.name + " = " + JSON.stringify(item[p.name]) + ";\n");
                     return;
-               }
+                }
+                if (typeof(item['|' + p.name]) != 'undefined' && typeof(item['|' + p.name]) == 'object' ) {
+                    strbuilder(ipad + "this." + p.name + " = " + JSON.stringify(item['|' + p.name]) + ";\n");
+                    return;
+                }
                // got a property..
-               strbuilder(ipad + "this." + p.name + " = " + JSON.stringify(item[p.name]) + ";\n");
+               
                
             });
                 //code
