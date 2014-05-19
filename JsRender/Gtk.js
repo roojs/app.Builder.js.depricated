@@ -375,8 +375,6 @@ Gtk = XObject.define(
                
             });
                 //code
-            citems['pack'] = true;
-            citems['items'] = true;
             // add all the child items..
             if (typeof(item.items) != 'undefined') {
                 for(var i =0;i<item.items.length;i++) {
@@ -390,6 +388,12 @@ Gtk = XObject.define(
                     
                 }
             }
+            if (typeof(item['|init']) != 'undefined') {
+            
+            }
+            
+            citems['pack'] = true;
+            citems['items'] = true;
             
             
             if (item.listeners) {
