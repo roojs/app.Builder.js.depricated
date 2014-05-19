@@ -63,7 +63,7 @@ Editor=new XObject({
         */
     },
     height_request : 300,
-    id : "EditorWindow",
+    id : "Editor",
     title : "Application Builder - Editor",
     width_request : 500,
     init : function() {
