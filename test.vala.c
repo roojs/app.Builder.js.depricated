@@ -2,8 +2,8 @@
  * generated from test.vala, do not modify */
 
 /* -- to compile
-valac  --pkg gio-2.0  --pkg posix  --pkg gtk+-3.0 --pkg libnotify --pkg  libwnck-3.0 \
-    /tmp/test.vala  -o /tmp/EditorWindow
+valac  --pkg gio-2.0  --pkg posix  --pkg gtk+-3.0 --pkg libnotify --pkg gtksourceview-3.0  --pkg  libwnck-3.0 \
+    /tmp/test.vala  -o /tmp/Editor
 */
 
 #include <glib.h>
@@ -14,221 +14,227 @@ valac  --pkg gio-2.0  --pkg posix  --pkg gtk+-3.0 --pkg libnotify --pkg  libwnck
 #include <gtksourceview/gtksource.h>
 
 
-#define TYPE_XCLS_EDITORWINDOW (xcls_editorwindow_get_type ())
-#define XCLS_EDITORWINDOW(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), TYPE_XCLS_EDITORWINDOW, Xcls_EditorWindow))
-#define XCLS_EDITORWINDOW_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), TYPE_XCLS_EDITORWINDOW, Xcls_EditorWindowClass))
-#define IS_XCLS_EDITORWINDOW(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), TYPE_XCLS_EDITORWINDOW))
-#define IS_XCLS_EDITORWINDOW_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), TYPE_XCLS_EDITORWINDOW))
-#define XCLS_EDITORWINDOW_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), TYPE_XCLS_EDITORWINDOW, Xcls_EditorWindowClass))
+#define TYPE_XCLS_EDITOR (xcls_editor_get_type ())
+#define XCLS_EDITOR(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), TYPE_XCLS_EDITOR, Xcls_Editor))
+#define XCLS_EDITOR_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), TYPE_XCLS_EDITOR, Xcls_EditorClass))
+#define IS_XCLS_EDITOR(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), TYPE_XCLS_EDITOR))
+#define IS_XCLS_EDITOR_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), TYPE_XCLS_EDITOR))
+#define XCLS_EDITOR_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), TYPE_XCLS_EDITOR, Xcls_EditorClass))
 
-typedef struct _Xcls_EditorWindow Xcls_EditorWindow;
-typedef struct _Xcls_EditorWindowClass Xcls_EditorWindowClass;
+typedef struct _Xcls_Editor Xcls_Editor;
+typedef struct _Xcls_EditorClass Xcls_EditorClass;
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
-typedef struct _Xcls_EditorWindowPrivate Xcls_EditorWindowPrivate;
+typedef struct _Xcls_EditorPrivate Xcls_EditorPrivate;
 
-#define XCLS_EDITORWINDOW_TYPE_XCLS_SAVE_BUTTON (xcls_editorwindow_xcls_save_button_get_type ())
-#define XCLS_EDITORWINDOW_XCLS_SAVE_BUTTON(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), XCLS_EDITORWINDOW_TYPE_XCLS_SAVE_BUTTON, Xcls_EditorWindowXcls_save_button))
-#define XCLS_EDITORWINDOW_XCLS_SAVE_BUTTON_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), XCLS_EDITORWINDOW_TYPE_XCLS_SAVE_BUTTON, Xcls_EditorWindowXcls_save_buttonClass))
-#define XCLS_EDITORWINDOW_IS_XCLS_SAVE_BUTTON(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), XCLS_EDITORWINDOW_TYPE_XCLS_SAVE_BUTTON))
-#define XCLS_EDITORWINDOW_IS_XCLS_SAVE_BUTTON_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), XCLS_EDITORWINDOW_TYPE_XCLS_SAVE_BUTTON))
-#define XCLS_EDITORWINDOW_XCLS_SAVE_BUTTON_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), XCLS_EDITORWINDOW_TYPE_XCLS_SAVE_BUTTON, Xcls_EditorWindowXcls_save_buttonClass))
+#define XCLS_EDITOR_TYPE_XCLS_SAVE_BUTTON (xcls_editor_xcls_save_button_get_type ())
+#define XCLS_EDITOR_XCLS_SAVE_BUTTON(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), XCLS_EDITOR_TYPE_XCLS_SAVE_BUTTON, Xcls_EditorXcls_save_button))
+#define XCLS_EDITOR_XCLS_SAVE_BUTTON_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), XCLS_EDITOR_TYPE_XCLS_SAVE_BUTTON, Xcls_EditorXcls_save_buttonClass))
+#define XCLS_EDITOR_IS_XCLS_SAVE_BUTTON(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), XCLS_EDITOR_TYPE_XCLS_SAVE_BUTTON))
+#define XCLS_EDITOR_IS_XCLS_SAVE_BUTTON_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), XCLS_EDITOR_TYPE_XCLS_SAVE_BUTTON))
+#define XCLS_EDITOR_XCLS_SAVE_BUTTON_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), XCLS_EDITOR_TYPE_XCLS_SAVE_BUTTON, Xcls_EditorXcls_save_buttonClass))
 
-typedef struct _Xcls_EditorWindowXcls_save_button Xcls_EditorWindowXcls_save_button;
-typedef struct _Xcls_EditorWindowXcls_save_buttonClass Xcls_EditorWindowXcls_save_buttonClass;
+typedef struct _Xcls_EditorXcls_save_button Xcls_EditorXcls_save_button;
+typedef struct _Xcls_EditorXcls_save_buttonClass Xcls_EditorXcls_save_buttonClass;
 
-#define XCLS_EDITORWINDOW_TYPE_XCLS_RIGHTEDITOR (xcls_editorwindow_xcls_righteditor_get_type ())
-#define XCLS_EDITORWINDOW_XCLS_RIGHTEDITOR(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), XCLS_EDITORWINDOW_TYPE_XCLS_RIGHTEDITOR, Xcls_EditorWindowXcls_RightEditor))
-#define XCLS_EDITORWINDOW_XCLS_RIGHTEDITOR_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), XCLS_EDITORWINDOW_TYPE_XCLS_RIGHTEDITOR, Xcls_EditorWindowXcls_RightEditorClass))
-#define XCLS_EDITORWINDOW_IS_XCLS_RIGHTEDITOR(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), XCLS_EDITORWINDOW_TYPE_XCLS_RIGHTEDITOR))
-#define XCLS_EDITORWINDOW_IS_XCLS_RIGHTEDITOR_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), XCLS_EDITORWINDOW_TYPE_XCLS_RIGHTEDITOR))
-#define XCLS_EDITORWINDOW_XCLS_RIGHTEDITOR_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), XCLS_EDITORWINDOW_TYPE_XCLS_RIGHTEDITOR, Xcls_EditorWindowXcls_RightEditorClass))
+#define XCLS_EDITOR_TYPE_XCLS_RIGHTEDITOR (xcls_editor_xcls_righteditor_get_type ())
+#define XCLS_EDITOR_XCLS_RIGHTEDITOR(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), XCLS_EDITOR_TYPE_XCLS_RIGHTEDITOR, Xcls_EditorXcls_RightEditor))
+#define XCLS_EDITOR_XCLS_RIGHTEDITOR_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), XCLS_EDITOR_TYPE_XCLS_RIGHTEDITOR, Xcls_EditorXcls_RightEditorClass))
+#define XCLS_EDITOR_IS_XCLS_RIGHTEDITOR(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), XCLS_EDITOR_TYPE_XCLS_RIGHTEDITOR))
+#define XCLS_EDITOR_IS_XCLS_RIGHTEDITOR_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), XCLS_EDITOR_TYPE_XCLS_RIGHTEDITOR))
+#define XCLS_EDITOR_XCLS_RIGHTEDITOR_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), XCLS_EDITOR_TYPE_XCLS_RIGHTEDITOR, Xcls_EditorXcls_RightEditorClass))
 
-typedef struct _Xcls_EditorWindowXcls_RightEditor Xcls_EditorWindowXcls_RightEditor;
-typedef struct _Xcls_EditorWindowXcls_RightEditorClass Xcls_EditorWindowXcls_RightEditorClass;
+typedef struct _Xcls_EditorXcls_RightEditor Xcls_EditorXcls_RightEditor;
+typedef struct _Xcls_EditorXcls_RightEditorClass Xcls_EditorXcls_RightEditorClass;
 
-#define XCLS_EDITORWINDOW_TYPE_XCLS_VIEW (xcls_editorwindow_xcls_view_get_type ())
-#define XCLS_EDITORWINDOW_XCLS_VIEW(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), XCLS_EDITORWINDOW_TYPE_XCLS_VIEW, Xcls_EditorWindowXcls_view))
-#define XCLS_EDITORWINDOW_XCLS_VIEW_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), XCLS_EDITORWINDOW_TYPE_XCLS_VIEW, Xcls_EditorWindowXcls_viewClass))
-#define XCLS_EDITORWINDOW_IS_XCLS_VIEW(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), XCLS_EDITORWINDOW_TYPE_XCLS_VIEW))
-#define XCLS_EDITORWINDOW_IS_XCLS_VIEW_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), XCLS_EDITORWINDOW_TYPE_XCLS_VIEW))
-#define XCLS_EDITORWINDOW_XCLS_VIEW_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), XCLS_EDITORWINDOW_TYPE_XCLS_VIEW, Xcls_EditorWindowXcls_viewClass))
+#define XCLS_EDITOR_TYPE_XCLS_VIEW (xcls_editor_xcls_view_get_type ())
+#define XCLS_EDITOR_XCLS_VIEW(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), XCLS_EDITOR_TYPE_XCLS_VIEW, Xcls_EditorXcls_view))
+#define XCLS_EDITOR_XCLS_VIEW_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), XCLS_EDITOR_TYPE_XCLS_VIEW, Xcls_EditorXcls_viewClass))
+#define XCLS_EDITOR_IS_XCLS_VIEW(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), XCLS_EDITOR_TYPE_XCLS_VIEW))
+#define XCLS_EDITOR_IS_XCLS_VIEW_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), XCLS_EDITOR_TYPE_XCLS_VIEW))
+#define XCLS_EDITOR_XCLS_VIEW_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), XCLS_EDITOR_TYPE_XCLS_VIEW, Xcls_EditorXcls_viewClass))
 
-typedef struct _Xcls_EditorWindowXcls_view Xcls_EditorWindowXcls_view;
-typedef struct _Xcls_EditorWindowXcls_viewClass Xcls_EditorWindowXcls_viewClass;
+typedef struct _Xcls_EditorXcls_view Xcls_EditorXcls_view;
+typedef struct _Xcls_EditorXcls_viewClass Xcls_EditorXcls_viewClass;
 
-#define XCLS_EDITORWINDOW_TYPE_XCLS_BUFFER (xcls_editorwindow_xcls_buffer_get_type ())
-#define XCLS_EDITORWINDOW_XCLS_BUFFER(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), XCLS_EDITORWINDOW_TYPE_XCLS_BUFFER, Xcls_EditorWindowXcls_buffer))
-#define XCLS_EDITORWINDOW_XCLS_BUFFER_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), XCLS_EDITORWINDOW_TYPE_XCLS_BUFFER, Xcls_EditorWindowXcls_bufferClass))
-#define XCLS_EDITORWINDOW_IS_XCLS_BUFFER(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), XCLS_EDITORWINDOW_TYPE_XCLS_BUFFER))
-#define XCLS_EDITORWINDOW_IS_XCLS_BUFFER_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), XCLS_EDITORWINDOW_TYPE_XCLS_BUFFER))
-#define XCLS_EDITORWINDOW_XCLS_BUFFER_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), XCLS_EDITORWINDOW_TYPE_XCLS_BUFFER, Xcls_EditorWindowXcls_bufferClass))
+#define XCLS_EDITOR_TYPE_XCLS_BUFFER (xcls_editor_xcls_buffer_get_type ())
+#define XCLS_EDITOR_XCLS_BUFFER(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), XCLS_EDITOR_TYPE_XCLS_BUFFER, Xcls_EditorXcls_buffer))
+#define XCLS_EDITOR_XCLS_BUFFER_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), XCLS_EDITOR_TYPE_XCLS_BUFFER, Xcls_EditorXcls_bufferClass))
+#define XCLS_EDITOR_IS_XCLS_BUFFER(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), XCLS_EDITOR_TYPE_XCLS_BUFFER))
+#define XCLS_EDITOR_IS_XCLS_BUFFER_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), XCLS_EDITOR_TYPE_XCLS_BUFFER))
+#define XCLS_EDITOR_XCLS_BUFFER_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), XCLS_EDITOR_TYPE_XCLS_BUFFER, Xcls_EditorXcls_bufferClass))
 
-typedef struct _Xcls_EditorWindowXcls_buffer Xcls_EditorWindowXcls_buffer;
-typedef struct _Xcls_EditorWindowXcls_bufferClass Xcls_EditorWindowXcls_bufferClass;
+typedef struct _Xcls_EditorXcls_buffer Xcls_EditorXcls_buffer;
+typedef struct _Xcls_EditorXcls_bufferClass Xcls_EditorXcls_bufferClass;
+#define _g_free0(var) (var = (g_free (var), NULL))
 
-#define XCLS_EDITORWINDOW_TYPE_XCLS_VBOX2 (xcls_editorwindow_xcls_vbox2_get_type ())
-#define XCLS_EDITORWINDOW_XCLS_VBOX2(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), XCLS_EDITORWINDOW_TYPE_XCLS_VBOX2, Xcls_EditorWindowXcls_VBox2))
-#define XCLS_EDITORWINDOW_XCLS_VBOX2_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), XCLS_EDITORWINDOW_TYPE_XCLS_VBOX2, Xcls_EditorWindowXcls_VBox2Class))
-#define XCLS_EDITORWINDOW_IS_XCLS_VBOX2(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), XCLS_EDITORWINDOW_TYPE_XCLS_VBOX2))
-#define XCLS_EDITORWINDOW_IS_XCLS_VBOX2_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), XCLS_EDITORWINDOW_TYPE_XCLS_VBOX2))
-#define XCLS_EDITORWINDOW_XCLS_VBOX2_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), XCLS_EDITORWINDOW_TYPE_XCLS_VBOX2, Xcls_EditorWindowXcls_VBox2Class))
+#define XCLS_EDITOR_TYPE_XCLS_VBOX2 (xcls_editor_xcls_vbox2_get_type ())
+#define XCLS_EDITOR_XCLS_VBOX2(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), XCLS_EDITOR_TYPE_XCLS_VBOX2, Xcls_EditorXcls_VBox2))
+#define XCLS_EDITOR_XCLS_VBOX2_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), XCLS_EDITOR_TYPE_XCLS_VBOX2, Xcls_EditorXcls_VBox2Class))
+#define XCLS_EDITOR_IS_XCLS_VBOX2(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), XCLS_EDITOR_TYPE_XCLS_VBOX2))
+#define XCLS_EDITOR_IS_XCLS_VBOX2_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), XCLS_EDITOR_TYPE_XCLS_VBOX2))
+#define XCLS_EDITOR_XCLS_VBOX2_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), XCLS_EDITOR_TYPE_XCLS_VBOX2, Xcls_EditorXcls_VBox2Class))
 
-typedef struct _Xcls_EditorWindowXcls_VBox2 Xcls_EditorWindowXcls_VBox2;
-typedef struct _Xcls_EditorWindowXcls_VBox2Class Xcls_EditorWindowXcls_VBox2Class;
-typedef struct _Xcls_EditorWindowXcls_VBox2Private Xcls_EditorWindowXcls_VBox2Private;
+typedef struct _Xcls_EditorXcls_VBox2 Xcls_EditorXcls_VBox2;
+typedef struct _Xcls_EditorXcls_VBox2Class Xcls_EditorXcls_VBox2Class;
+typedef struct _Xcls_EditorXcls_VBox2Private Xcls_EditorXcls_VBox2Private;
 
-#define XCLS_EDITORWINDOW_TYPE_XCLS_TOOLBAR3 (xcls_editorwindow_xcls_toolbar3_get_type ())
-#define XCLS_EDITORWINDOW_XCLS_TOOLBAR3(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), XCLS_EDITORWINDOW_TYPE_XCLS_TOOLBAR3, Xcls_EditorWindowXcls_Toolbar3))
-#define XCLS_EDITORWINDOW_XCLS_TOOLBAR3_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), XCLS_EDITORWINDOW_TYPE_XCLS_TOOLBAR3, Xcls_EditorWindowXcls_Toolbar3Class))
-#define XCLS_EDITORWINDOW_IS_XCLS_TOOLBAR3(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), XCLS_EDITORWINDOW_TYPE_XCLS_TOOLBAR3))
-#define XCLS_EDITORWINDOW_IS_XCLS_TOOLBAR3_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), XCLS_EDITORWINDOW_TYPE_XCLS_TOOLBAR3))
-#define XCLS_EDITORWINDOW_XCLS_TOOLBAR3_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), XCLS_EDITORWINDOW_TYPE_XCLS_TOOLBAR3, Xcls_EditorWindowXcls_Toolbar3Class))
+#define XCLS_EDITOR_TYPE_XCLS_TOOLBAR3 (xcls_editor_xcls_toolbar3_get_type ())
+#define XCLS_EDITOR_XCLS_TOOLBAR3(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), XCLS_EDITOR_TYPE_XCLS_TOOLBAR3, Xcls_EditorXcls_Toolbar3))
+#define XCLS_EDITOR_XCLS_TOOLBAR3_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), XCLS_EDITOR_TYPE_XCLS_TOOLBAR3, Xcls_EditorXcls_Toolbar3Class))
+#define XCLS_EDITOR_IS_XCLS_TOOLBAR3(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), XCLS_EDITOR_TYPE_XCLS_TOOLBAR3))
+#define XCLS_EDITOR_IS_XCLS_TOOLBAR3_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), XCLS_EDITOR_TYPE_XCLS_TOOLBAR3))
+#define XCLS_EDITOR_XCLS_TOOLBAR3_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), XCLS_EDITOR_TYPE_XCLS_TOOLBAR3, Xcls_EditorXcls_Toolbar3Class))
 
-typedef struct _Xcls_EditorWindowXcls_Toolbar3 Xcls_EditorWindowXcls_Toolbar3;
-typedef struct _Xcls_EditorWindowXcls_Toolbar3Class Xcls_EditorWindowXcls_Toolbar3Class;
-typedef struct _Xcls_EditorWindowXcls_Toolbar3Private Xcls_EditorWindowXcls_Toolbar3Private;
-typedef struct _Xcls_EditorWindowXcls_save_buttonPrivate Xcls_EditorWindowXcls_save_buttonPrivate;
-typedef struct _Xcls_EditorWindowXcls_RightEditorPrivate Xcls_EditorWindowXcls_RightEditorPrivate;
-typedef struct _Xcls_EditorWindowXcls_viewPrivate Xcls_EditorWindowXcls_viewPrivate;
-typedef struct _Xcls_EditorWindowXcls_bufferPrivate Xcls_EditorWindowXcls_bufferPrivate;
+typedef struct _Xcls_EditorXcls_Toolbar3 Xcls_EditorXcls_Toolbar3;
+typedef struct _Xcls_EditorXcls_Toolbar3Class Xcls_EditorXcls_Toolbar3Class;
+typedef struct _Xcls_EditorXcls_Toolbar3Private Xcls_EditorXcls_Toolbar3Private;
+typedef struct _Xcls_EditorXcls_save_buttonPrivate Xcls_EditorXcls_save_buttonPrivate;
+typedef struct _Xcls_EditorXcls_RightEditorPrivate Xcls_EditorXcls_RightEditorPrivate;
+typedef struct _Xcls_EditorXcls_viewPrivate Xcls_EditorXcls_viewPrivate;
+typedef struct _Xcls_EditorXcls_bufferPrivate Xcls_EditorXcls_bufferPrivate;
 
-struct _Xcls_EditorWindow {
+struct _Xcls_Editor {
 	GtkWindow parent_instance;
-	Xcls_EditorWindowPrivate * priv;
-	Xcls_EditorWindowXcls_save_button* save_button;
-	Xcls_EditorWindowXcls_RightEditor* RightEditor;
-	Xcls_EditorWindowXcls_view* view;
-	Xcls_EditorWindowXcls_buffer* buffer;
+	Xcls_EditorPrivate * priv;
+	Xcls_EditorXcls_save_button* save_button;
+	Xcls_EditorXcls_RightEditor* RightEditor;
+	Xcls_EditorXcls_view* view;
+	Xcls_EditorXcls_buffer* buffer;
+	gchar* active_path;
+	gboolean dirty;
+	gboolean pos;
+	gint pos_root_x;
+	gint pos_root_y;
 };
 
-struct _Xcls_EditorWindowClass {
+struct _Xcls_EditorClass {
 	GtkWindowClass parent_class;
 };
 
-struct _Xcls_EditorWindowXcls_VBox2 {
+struct _Xcls_EditorXcls_VBox2 {
 	GtkVBox parent_instance;
-	Xcls_EditorWindowXcls_VBox2Private * priv;
+	Xcls_EditorXcls_VBox2Private * priv;
 };
 
-struct _Xcls_EditorWindowXcls_VBox2Class {
+struct _Xcls_EditorXcls_VBox2Class {
 	GtkVBoxClass parent_class;
 };
 
-struct _Xcls_EditorWindowXcls_Toolbar3 {
+struct _Xcls_EditorXcls_Toolbar3 {
 	GtkToolbar parent_instance;
-	Xcls_EditorWindowXcls_Toolbar3Private * priv;
+	Xcls_EditorXcls_Toolbar3Private * priv;
 };
 
-struct _Xcls_EditorWindowXcls_Toolbar3Class {
+struct _Xcls_EditorXcls_Toolbar3Class {
 	GtkToolbarClass parent_class;
 };
 
-struct _Xcls_EditorWindowXcls_save_button {
+struct _Xcls_EditorXcls_save_button {
 	GtkToolButton parent_instance;
-	Xcls_EditorWindowXcls_save_buttonPrivate * priv;
+	Xcls_EditorXcls_save_buttonPrivate * priv;
 };
 
-struct _Xcls_EditorWindowXcls_save_buttonClass {
+struct _Xcls_EditorXcls_save_buttonClass {
 	GtkToolButtonClass parent_class;
 };
 
-struct _Xcls_EditorWindowXcls_RightEditor {
+struct _Xcls_EditorXcls_RightEditor {
 	GtkScrolledWindow parent_instance;
-	Xcls_EditorWindowXcls_RightEditorPrivate * priv;
+	Xcls_EditorXcls_RightEditorPrivate * priv;
 };
 
-struct _Xcls_EditorWindowXcls_RightEditorClass {
+struct _Xcls_EditorXcls_RightEditorClass {
 	GtkScrolledWindowClass parent_class;
 };
 
-struct _Xcls_EditorWindowXcls_view {
+struct _Xcls_EditorXcls_view {
 	GtkSourceView parent_instance;
-	Xcls_EditorWindowXcls_viewPrivate * priv;
+	Xcls_EditorXcls_viewPrivate * priv;
 };
 
-struct _Xcls_EditorWindowXcls_viewClass {
+struct _Xcls_EditorXcls_viewClass {
 	GtkSourceViewClass parent_class;
 };
 
-struct _Xcls_EditorWindowXcls_buffer {
+struct _Xcls_EditorXcls_buffer {
 	GtkSourceBuffer parent_instance;
-	Xcls_EditorWindowXcls_bufferPrivate * priv;
+	Xcls_EditorXcls_bufferPrivate * priv;
 };
 
-struct _Xcls_EditorWindowXcls_bufferClass {
+struct _Xcls_EditorXcls_bufferClass {
 	GtkSourceBufferClass parent_class;
 };
 
 
-extern Xcls_EditorWindow* EditorWindow;
-Xcls_EditorWindow* EditorWindow = NULL;
-static gpointer xcls_editorwindow_parent_class = NULL;
-extern Xcls_EditorWindow* xcls_editorwindow__this;
-Xcls_EditorWindow* xcls_editorwindow__this = NULL;
-static gpointer xcls_editorwindow_xcls_vbox2_parent_class = NULL;
-static gpointer xcls_editorwindow_xcls_toolbar3_parent_class = NULL;
-static gpointer xcls_editorwindow_xcls_save_button_parent_class = NULL;
-static gpointer xcls_editorwindow_xcls_righteditor_parent_class = NULL;
-static gpointer xcls_editorwindow_xcls_view_parent_class = NULL;
-static gpointer xcls_editorwindow_xcls_buffer_parent_class = NULL;
+extern Xcls_Editor* Editor;
+Xcls_Editor* Editor = NULL;
+static gpointer xcls_editor_parent_class = NULL;
+extern Xcls_Editor* xcls_editor__this;
+Xcls_Editor* xcls_editor__this = NULL;
+static gpointer xcls_editor_xcls_vbox2_parent_class = NULL;
+static gpointer xcls_editor_xcls_toolbar3_parent_class = NULL;
+static gpointer xcls_editor_xcls_save_button_parent_class = NULL;
+static gpointer xcls_editor_xcls_righteditor_parent_class = NULL;
+static gpointer xcls_editor_xcls_view_parent_class = NULL;
+static gpointer xcls_editor_xcls_buffer_parent_class = NULL;
 
 gint _vala_main (gchar** args, int args_length1);
-Xcls_EditorWindow* xcls_editorwindow_new (void);
-Xcls_EditorWindow* xcls_editorwindow_construct (GType object_type);
-GType xcls_editorwindow_get_type (void) G_GNUC_CONST;
-GType xcls_editorwindow_xcls_save_button_get_type (void) G_GNUC_CONST;
-GType xcls_editorwindow_xcls_righteditor_get_type (void) G_GNUC_CONST;
-GType xcls_editorwindow_xcls_view_get_type (void) G_GNUC_CONST;
-GType xcls_editorwindow_xcls_buffer_get_type (void) G_GNUC_CONST;
+Xcls_Editor* xcls_editor_new (void);
+Xcls_Editor* xcls_editor_construct (GType object_type);
+GType xcls_editor_get_type (void) G_GNUC_CONST;
+GType xcls_editor_xcls_save_button_get_type (void) G_GNUC_CONST;
+GType xcls_editor_xcls_righteditor_get_type (void) G_GNUC_CONST;
+GType xcls_editor_xcls_view_get_type (void) G_GNUC_CONST;
+GType xcls_editor_xcls_buffer_get_type (void) G_GNUC_CONST;
 enum  {
-	XCLS_EDITORWINDOW_DUMMY_PROPERTY
+	XCLS_EDITOR_DUMMY_PROPERTY
 };
-Xcls_EditorWindowXcls_VBox2* xcls_editorwindow_xcls_vbox2_new (void);
-Xcls_EditorWindowXcls_VBox2* xcls_editorwindow_xcls_vbox2_construct (GType object_type);
-GType xcls_editorwindow_xcls_vbox2_get_type (void) G_GNUC_CONST;
+Xcls_EditorXcls_VBox2* xcls_editor_xcls_vbox2_new (void);
+Xcls_EditorXcls_VBox2* xcls_editor_xcls_vbox2_construct (GType object_type);
+GType xcls_editor_xcls_vbox2_get_type (void) G_GNUC_CONST;
 enum  {
-	XCLS_EDITORWINDOW_XCLS_VBOX2_DUMMY_PROPERTY
+	XCLS_EDITOR_XCLS_VBOX2_DUMMY_PROPERTY
 };
-Xcls_EditorWindowXcls_Toolbar3* xcls_editorwindow_xcls_toolbar3_new (void);
-Xcls_EditorWindowXcls_Toolbar3* xcls_editorwindow_xcls_toolbar3_construct (GType object_type);
-GType xcls_editorwindow_xcls_toolbar3_get_type (void) G_GNUC_CONST;
-Xcls_EditorWindowXcls_RightEditor* xcls_editorwindow_xcls_righteditor_new (void);
-Xcls_EditorWindowXcls_RightEditor* xcls_editorwindow_xcls_righteditor_construct (GType object_type);
+Xcls_EditorXcls_Toolbar3* xcls_editor_xcls_toolbar3_new (void);
+Xcls_EditorXcls_Toolbar3* xcls_editor_xcls_toolbar3_construct (GType object_type);
+GType xcls_editor_xcls_toolbar3_get_type (void) G_GNUC_CONST;
+Xcls_EditorXcls_RightEditor* xcls_editor_xcls_righteditor_new (void);
+Xcls_EditorXcls_RightEditor* xcls_editor_xcls_righteditor_construct (GType object_type);
 enum  {
-	XCLS_EDITORWINDOW_XCLS_TOOLBAR3_DUMMY_PROPERTY
+	XCLS_EDITOR_XCLS_TOOLBAR3_DUMMY_PROPERTY
 };
-Xcls_EditorWindowXcls_save_button* xcls_editorwindow_xcls_save_button_new (void);
-Xcls_EditorWindowXcls_save_button* xcls_editorwindow_xcls_save_button_construct (GType object_type);
+Xcls_EditorXcls_save_button* xcls_editor_xcls_save_button_new (void);
+Xcls_EditorXcls_save_button* xcls_editor_xcls_save_button_construct (GType object_type);
 enum  {
-	XCLS_EDITORWINDOW_XCLS_SAVE_BUTTON_DUMMY_PROPERTY
+	XCLS_EDITOR_XCLS_SAVE_BUTTON_DUMMY_PROPERTY
 };
 enum  {
-	XCLS_EDITORWINDOW_XCLS_RIGHTEDITOR_DUMMY_PROPERTY
+	XCLS_EDITOR_XCLS_RIGHTEDITOR_DUMMY_PROPERTY
 };
-Xcls_EditorWindowXcls_view* xcls_editorwindow_xcls_view_new (void);
-Xcls_EditorWindowXcls_view* xcls_editorwindow_xcls_view_construct (GType object_type);
+Xcls_EditorXcls_view* xcls_editor_xcls_view_new (void);
+Xcls_EditorXcls_view* xcls_editor_xcls_view_construct (GType object_type);
 enum  {
-	XCLS_EDITORWINDOW_XCLS_VIEW_DUMMY_PROPERTY
+	XCLS_EDITOR_XCLS_VIEW_DUMMY_PROPERTY
 };
-Xcls_EditorWindowXcls_buffer* xcls_editorwindow_xcls_buffer_new (void);
-Xcls_EditorWindowXcls_buffer* xcls_editorwindow_xcls_buffer_construct (GType object_type);
+Xcls_EditorXcls_buffer* xcls_editor_xcls_buffer_new (void);
+Xcls_EditorXcls_buffer* xcls_editor_xcls_buffer_construct (GType object_type);
 enum  {
-	XCLS_EDITORWINDOW_XCLS_BUFFER_DUMMY_PROPERTY
+	XCLS_EDITOR_XCLS_BUFFER_DUMMY_PROPERTY
 };
-static void xcls_editorwindow_finalize (GObject* obj);
+static void xcls_editor_finalize (GObject* obj);
 
 
 gint _vala_main (gchar** args, int args_length1) {
 	gint result = 0;
-	Xcls_EditorWindow* _tmp0_ = NULL;
-	Xcls_EditorWindow* _tmp1_ = NULL;
-	Xcls_EditorWindow* _tmp2_ = NULL;
+	Xcls_Editor* _tmp0_ = NULL;
+	Xcls_Editor* _tmp1_ = NULL;
+	Xcls_Editor* _tmp2_ = NULL;
 	gtk_init (&args_length1, &args);
-	_tmp0_ = xcls_editorwindow_new ();
+	_tmp0_ = xcls_editor_new ();
 	g_object_ref_sink (_tmp0_);
 	_tmp1_ = _tmp0_;
 	_g_object_unref0 (_tmp1_);
-	_tmp2_ = EditorWindow;
+	_tmp2_ = Editor;
 	gtk_widget_show_all ((GtkWidget*) _tmp2_);
 	gtk_main ();
 	result = 0;
@@ -249,49 +255,55 @@ static gpointer _g_object_ref0 (gpointer self) {
 }
 
 
-Xcls_EditorWindow* xcls_editorwindow_construct (GType object_type) {
-	Xcls_EditorWindow * self = NULL;
-	Xcls_EditorWindow* _tmp0_ = NULL;
-	Xcls_EditorWindow* _tmp1_ = NULL;
-	Xcls_EditorWindowXcls_VBox2* _tmp2_ = NULL;
-	Xcls_EditorWindowXcls_VBox2* _tmp3_ = NULL;
-	self = (Xcls_EditorWindow*) g_object_new (object_type, NULL);
+Xcls_Editor* xcls_editor_construct (GType object_type) {
+	Xcls_Editor * self = NULL;
+	Xcls_Editor* _tmp0_ = NULL;
+	Xcls_Editor* _tmp1_ = NULL;
+	gchar* _tmp2_ = NULL;
+	Xcls_EditorXcls_VBox2* _tmp3_ = NULL;
+	Xcls_EditorXcls_VBox2* _tmp4_ = NULL;
+	self = (Xcls_Editor*) g_object_new (object_type, NULL);
 	_tmp0_ = _g_object_ref0 (self);
-	_g_object_unref0 (xcls_editorwindow__this);
-	xcls_editorwindow__this = _tmp0_;
+	_g_object_unref0 (xcls_editor__this);
+	xcls_editor__this = _tmp0_;
 	_tmp1_ = _g_object_ref0 (self);
-	_g_object_unref0 (EditorWindow);
-	EditorWindow = _tmp1_;
+	_g_object_unref0 (Editor);
+	Editor = _tmp1_;
+	_tmp2_ = g_strdup ("");
+	_g_free0 (self->active_path);
+	self->active_path = _tmp2_;
+	self->dirty = FALSE;
+	self->pos = FALSE;
 	g_object_set ((GtkWidget*) self, "height-request", 300, NULL);
 	gtk_window_set_title ((GtkWindow*) self, "Application Builder - Editor");
 	g_object_set ((GtkWidget*) self, "width-request", 500, NULL);
-	_tmp2_ = xcls_editorwindow_xcls_vbox2_new ();
-	g_object_ref_sink (_tmp2_);
-	_tmp3_ = _tmp2_;
-	gtk_container_add ((GtkContainer*) self, (GtkWidget*) _tmp3_);
-	_g_object_unref0 (_tmp3_);
+	_tmp3_ = xcls_editor_xcls_vbox2_new ();
+	g_object_ref_sink (_tmp3_);
+	_tmp4_ = _tmp3_;
+	gtk_container_add ((GtkContainer*) self, (GtkWidget*) _tmp4_);
+	_g_object_unref0 (_tmp4_);
 	return self;
 }
 
 
-Xcls_EditorWindow* xcls_editorwindow_new (void) {
-	return xcls_editorwindow_construct (TYPE_XCLS_EDITORWINDOW);
+Xcls_Editor* xcls_editor_new (void) {
+	return xcls_editor_construct (TYPE_XCLS_EDITOR);
 }
 
 
-Xcls_EditorWindowXcls_VBox2* xcls_editorwindow_xcls_vbox2_construct (GType object_type) {
-	Xcls_EditorWindowXcls_VBox2 * self = NULL;
-	Xcls_EditorWindowXcls_Toolbar3* _tmp0_ = NULL;
-	Xcls_EditorWindowXcls_Toolbar3* _tmp1_ = NULL;
-	Xcls_EditorWindowXcls_RightEditor* _tmp2_ = NULL;
-	Xcls_EditorWindowXcls_RightEditor* _tmp3_ = NULL;
-	self = (Xcls_EditorWindowXcls_VBox2*) g_object_new (object_type, NULL);
-	_tmp0_ = xcls_editorwindow_xcls_toolbar3_new ();
+Xcls_EditorXcls_VBox2* xcls_editor_xcls_vbox2_construct (GType object_type) {
+	Xcls_EditorXcls_VBox2 * self = NULL;
+	Xcls_EditorXcls_Toolbar3* _tmp0_ = NULL;
+	Xcls_EditorXcls_Toolbar3* _tmp1_ = NULL;
+	Xcls_EditorXcls_RightEditor* _tmp2_ = NULL;
+	Xcls_EditorXcls_RightEditor* _tmp3_ = NULL;
+	self = (Xcls_EditorXcls_VBox2*) g_object_new (object_type, NULL);
+	_tmp0_ = xcls_editor_xcls_toolbar3_new ();
 	g_object_ref_sink (_tmp0_);
 	_tmp1_ = _tmp0_;
 	gtk_box_pack_start ((GtkBox*) self, (GtkWidget*) _tmp1_, FALSE, TRUE, (guint) 0);
 	_g_object_unref0 (_tmp1_);
-	_tmp2_ = xcls_editorwindow_xcls_righteditor_new ();
+	_tmp2_ = xcls_editor_xcls_righteditor_new ();
 	g_object_ref_sink (_tmp2_);
 	_tmp3_ = _tmp2_;
 	gtk_container_add ((GtkContainer*) self, (GtkWidget*) _tmp3_);
@@ -300,38 +312,38 @@ Xcls_EditorWindowXcls_VBox2* xcls_editorwindow_xcls_vbox2_construct (GType objec
 }
 
 
-Xcls_EditorWindowXcls_VBox2* xcls_editorwindow_xcls_vbox2_new (void) {
-	return xcls_editorwindow_xcls_vbox2_construct (XCLS_EDITORWINDOW_TYPE_XCLS_VBOX2);
+Xcls_EditorXcls_VBox2* xcls_editor_xcls_vbox2_new (void) {
+	return xcls_editor_xcls_vbox2_construct (XCLS_EDITOR_TYPE_XCLS_VBOX2);
 }
 
 
-static void xcls_editorwindow_xcls_vbox2_class_init (Xcls_EditorWindowXcls_VBox2Class * klass) {
-	xcls_editorwindow_xcls_vbox2_parent_class = g_type_class_peek_parent (klass);
+static void xcls_editor_xcls_vbox2_class_init (Xcls_EditorXcls_VBox2Class * klass) {
+	xcls_editor_xcls_vbox2_parent_class = g_type_class_peek_parent (klass);
 }
 
 
-static void xcls_editorwindow_xcls_vbox2_instance_init (Xcls_EditorWindowXcls_VBox2 * self) {
+static void xcls_editor_xcls_vbox2_instance_init (Xcls_EditorXcls_VBox2 * self) {
 }
 
 
-GType xcls_editorwindow_xcls_vbox2_get_type (void) {
-	static volatile gsize xcls_editorwindow_xcls_vbox2_type_id__volatile = 0;
-	if (g_once_init_enter (&xcls_editorwindow_xcls_vbox2_type_id__volatile)) {
-		static const GTypeInfo g_define_type_info = { sizeof (Xcls_EditorWindowXcls_VBox2Class), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) xcls_editorwindow_xcls_vbox2_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (Xcls_EditorWindowXcls_VBox2), 0, (GInstanceInitFunc) xcls_editorwindow_xcls_vbox2_instance_init, NULL };
-		GType xcls_editorwindow_xcls_vbox2_type_id;
-		xcls_editorwindow_xcls_vbox2_type_id = g_type_register_static (GTK_TYPE_VBOX, "Xcls_EditorWindowXcls_VBox2", &g_define_type_info, 0);
-		g_once_init_leave (&xcls_editorwindow_xcls_vbox2_type_id__volatile, xcls_editorwindow_xcls_vbox2_type_id);
+GType xcls_editor_xcls_vbox2_get_type (void) {
+	static volatile gsize xcls_editor_xcls_vbox2_type_id__volatile = 0;
+	if (g_once_init_enter (&xcls_editor_xcls_vbox2_type_id__volatile)) {
+		static const GTypeInfo g_define_type_info = { sizeof (Xcls_EditorXcls_VBox2Class), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) xcls_editor_xcls_vbox2_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (Xcls_EditorXcls_VBox2), 0, (GInstanceInitFunc) xcls_editor_xcls_vbox2_instance_init, NULL };
+		GType xcls_editor_xcls_vbox2_type_id;
+		xcls_editor_xcls_vbox2_type_id = g_type_register_static (GTK_TYPE_VBOX, "Xcls_EditorXcls_VBox2", &g_define_type_info, 0);
+		g_once_init_leave (&xcls_editor_xcls_vbox2_type_id__volatile, xcls_editor_xcls_vbox2_type_id);
 	}
-	return xcls_editorwindow_xcls_vbox2_type_id__volatile;
+	return xcls_editor_xcls_vbox2_type_id__volatile;
 }
 
 
-Xcls_EditorWindowXcls_Toolbar3* xcls_editorwindow_xcls_toolbar3_construct (GType object_type) {
-	Xcls_EditorWindowXcls_Toolbar3 * self = NULL;
-	Xcls_EditorWindowXcls_save_button* _tmp0_ = NULL;
-	Xcls_EditorWindowXcls_save_button* _tmp1_ = NULL;
-	self = (Xcls_EditorWindowXcls_Toolbar3*) g_object_new (object_type, NULL);
-	_tmp0_ = xcls_editorwindow_xcls_save_button_new ();
+Xcls_EditorXcls_Toolbar3* xcls_editor_xcls_toolbar3_construct (GType object_type) {
+	Xcls_EditorXcls_Toolbar3 * self = NULL;
+	Xcls_EditorXcls_save_button* _tmp0_ = NULL;
+	Xcls_EditorXcls_save_button* _tmp1_ = NULL;
+	self = (Xcls_EditorXcls_Toolbar3*) g_object_new (object_type, NULL);
+	_tmp0_ = xcls_editor_xcls_save_button_new ();
 	g_object_ref_sink (_tmp0_);
 	_tmp1_ = _tmp0_;
 	gtk_container_add ((GtkContainer*) self, (GtkWidget*) _tmp1_);
@@ -340,38 +352,38 @@ Xcls_EditorWindowXcls_Toolbar3* xcls_editorwindow_xcls_toolbar3_construct (GType
 }
 
 
-Xcls_EditorWindowXcls_Toolbar3* xcls_editorwindow_xcls_toolbar3_new (void) {
-	return xcls_editorwindow_xcls_toolbar3_construct (XCLS_EDITORWINDOW_TYPE_XCLS_TOOLBAR3);
+Xcls_EditorXcls_Toolbar3* xcls_editor_xcls_toolbar3_new (void) {
+	return xcls_editor_xcls_toolbar3_construct (XCLS_EDITOR_TYPE_XCLS_TOOLBAR3);
 }
 
 
-static void xcls_editorwindow_xcls_toolbar3_class_init (Xcls_EditorWindowXcls_Toolbar3Class * klass) {
-	xcls_editorwindow_xcls_toolbar3_parent_class = g_type_class_peek_parent (klass);
+static void xcls_editor_xcls_toolbar3_class_init (Xcls_EditorXcls_Toolbar3Class * klass) {
+	xcls_editor_xcls_toolbar3_parent_class = g_type_class_peek_parent (klass);
 }
 
 
-static void xcls_editorwindow_xcls_toolbar3_instance_init (Xcls_EditorWindowXcls_Toolbar3 * self) {
+static void xcls_editor_xcls_toolbar3_instance_init (Xcls_EditorXcls_Toolbar3 * self) {
 }
 
 
-GType xcls_editorwindow_xcls_toolbar3_get_type (void) {
-	static volatile gsize xcls_editorwindow_xcls_toolbar3_type_id__volatile = 0;
-	if (g_once_init_enter (&xcls_editorwindow_xcls_toolbar3_type_id__volatile)) {
-		static const GTypeInfo g_define_type_info = { sizeof (Xcls_EditorWindowXcls_Toolbar3Class), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) xcls_editorwindow_xcls_toolbar3_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (Xcls_EditorWindowXcls_Toolbar3), 0, (GInstanceInitFunc) xcls_editorwindow_xcls_toolbar3_instance_init, NULL };
-		GType xcls_editorwindow_xcls_toolbar3_type_id;
-		xcls_editorwindow_xcls_toolbar3_type_id = g_type_register_static (GTK_TYPE_TOOLBAR, "Xcls_EditorWindowXcls_Toolbar3", &g_define_type_info, 0);
-		g_once_init_leave (&xcls_editorwindow_xcls_toolbar3_type_id__volatile, xcls_editorwindow_xcls_toolbar3_type_id);
+GType xcls_editor_xcls_toolbar3_get_type (void) {
+	static volatile gsize xcls_editor_xcls_toolbar3_type_id__volatile = 0;
+	if (g_once_init_enter (&xcls_editor_xcls_toolbar3_type_id__volatile)) {
+		static const GTypeInfo g_define_type_info = { sizeof (Xcls_EditorXcls_Toolbar3Class), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) xcls_editor_xcls_toolbar3_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (Xcls_EditorXcls_Toolbar3), 0, (GInstanceInitFunc) xcls_editor_xcls_toolbar3_instance_init, NULL };
+		GType xcls_editor_xcls_toolbar3_type_id;
+		xcls_editor_xcls_toolbar3_type_id = g_type_register_static (GTK_TYPE_TOOLBAR, "Xcls_EditorXcls_Toolbar3", &g_define_type_info, 0);
+		g_once_init_leave (&xcls_editor_xcls_toolbar3_type_id__volatile, xcls_editor_xcls_toolbar3_type_id);
 	}
-	return xcls_editorwindow_xcls_toolbar3_type_id__volatile;
+	return xcls_editor_xcls_toolbar3_type_id__volatile;
 }
 
 
-Xcls_EditorWindowXcls_save_button* xcls_editorwindow_xcls_save_button_construct (GType object_type) {
-	Xcls_EditorWindowXcls_save_button * self = NULL;
-	Xcls_EditorWindow* _tmp0_ = NULL;
-	Xcls_EditorWindowXcls_save_button* _tmp1_ = NULL;
-	self = (Xcls_EditorWindowXcls_save_button*) g_object_new (object_type, NULL);
-	_tmp0_ = xcls_editorwindow__this;
+Xcls_EditorXcls_save_button* xcls_editor_xcls_save_button_construct (GType object_type) {
+	Xcls_EditorXcls_save_button * self = NULL;
+	Xcls_Editor* _tmp0_ = NULL;
+	Xcls_EditorXcls_save_button* _tmp1_ = NULL;
+	self = (Xcls_EditorXcls_save_button*) g_object_new (object_type, NULL);
+	_tmp0_ = xcls_editor__this;
 	_tmp1_ = _g_object_ref0 (self);
 	_g_object_unref0 (_tmp0_->save_button);
 	_tmp0_->save_button = _tmp1_;
@@ -380,44 +392,44 @@ Xcls_EditorWindowXcls_save_button* xcls_editorwindow_xcls_save_button_construct 
 }
 
 
-Xcls_EditorWindowXcls_save_button* xcls_editorwindow_xcls_save_button_new (void) {
-	return xcls_editorwindow_xcls_save_button_construct (XCLS_EDITORWINDOW_TYPE_XCLS_SAVE_BUTTON);
+Xcls_EditorXcls_save_button* xcls_editor_xcls_save_button_new (void) {
+	return xcls_editor_xcls_save_button_construct (XCLS_EDITOR_TYPE_XCLS_SAVE_BUTTON);
 }
 
 
-static void xcls_editorwindow_xcls_save_button_class_init (Xcls_EditorWindowXcls_save_buttonClass * klass) {
-	xcls_editorwindow_xcls_save_button_parent_class = g_type_class_peek_parent (klass);
+static void xcls_editor_xcls_save_button_class_init (Xcls_EditorXcls_save_buttonClass * klass) {
+	xcls_editor_xcls_save_button_parent_class = g_type_class_peek_parent (klass);
 }
 
 
-static void xcls_editorwindow_xcls_save_button_instance_init (Xcls_EditorWindowXcls_save_button * self) {
+static void xcls_editor_xcls_save_button_instance_init (Xcls_EditorXcls_save_button * self) {
 }
 
 
-GType xcls_editorwindow_xcls_save_button_get_type (void) {
-	static volatile gsize xcls_editorwindow_xcls_save_button_type_id__volatile = 0;
-	if (g_once_init_enter (&xcls_editorwindow_xcls_save_button_type_id__volatile)) {
-		static const GTypeInfo g_define_type_info = { sizeof (Xcls_EditorWindowXcls_save_buttonClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) xcls_editorwindow_xcls_save_button_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (Xcls_EditorWindowXcls_save_button), 0, (GInstanceInitFunc) xcls_editorwindow_xcls_save_button_instance_init, NULL };
-		GType xcls_editorwindow_xcls_save_button_type_id;
-		xcls_editorwindow_xcls_save_button_type_id = g_type_register_static (GTK_TYPE_TOOL_BUTTON, "Xcls_EditorWindowXcls_save_button", &g_define_type_info, 0);
-		g_once_init_leave (&xcls_editorwindow_xcls_save_button_type_id__volatile, xcls_editorwindow_xcls_save_button_type_id);
+GType xcls_editor_xcls_save_button_get_type (void) {
+	static volatile gsize xcls_editor_xcls_save_button_type_id__volatile = 0;
+	if (g_once_init_enter (&xcls_editor_xcls_save_button_type_id__volatile)) {
+		static const GTypeInfo g_define_type_info = { sizeof (Xcls_EditorXcls_save_buttonClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) xcls_editor_xcls_save_button_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (Xcls_EditorXcls_save_button), 0, (GInstanceInitFunc) xcls_editor_xcls_save_button_instance_init, NULL };
+		GType xcls_editor_xcls_save_button_type_id;
+		xcls_editor_xcls_save_button_type_id = g_type_register_static (GTK_TYPE_TOOL_BUTTON, "Xcls_EditorXcls_save_button", &g_define_type_info, 0);
+		g_once_init_leave (&xcls_editor_xcls_save_button_type_id__volatile, xcls_editor_xcls_save_button_type_id);
 	}
-	return xcls_editorwindow_xcls_save_button_type_id__volatile;
+	return xcls_editor_xcls_save_button_type_id__volatile;
 }
 
 
-Xcls_EditorWindowXcls_RightEditor* xcls_editorwindow_xcls_righteditor_construct (GType object_type) {
-	Xcls_EditorWindowXcls_RightEditor * self = NULL;
-	Xcls_EditorWindow* _tmp0_ = NULL;
-	Xcls_EditorWindowXcls_RightEditor* _tmp1_ = NULL;
-	Xcls_EditorWindowXcls_view* _tmp2_ = NULL;
-	Xcls_EditorWindowXcls_view* _tmp3_ = NULL;
-	self = (Xcls_EditorWindowXcls_RightEditor*) g_object_new (object_type, NULL);
-	_tmp0_ = xcls_editorwindow__this;
+Xcls_EditorXcls_RightEditor* xcls_editor_xcls_righteditor_construct (GType object_type) {
+	Xcls_EditorXcls_RightEditor * self = NULL;
+	Xcls_Editor* _tmp0_ = NULL;
+	Xcls_EditorXcls_RightEditor* _tmp1_ = NULL;
+	Xcls_EditorXcls_view* _tmp2_ = NULL;
+	Xcls_EditorXcls_view* _tmp3_ = NULL;
+	self = (Xcls_EditorXcls_RightEditor*) g_object_new (object_type, NULL);
+	_tmp0_ = xcls_editor__this;
 	_tmp1_ = _g_object_ref0 (self);
 	_g_object_unref0 (_tmp0_->RightEditor);
 	_tmp0_->RightEditor = _tmp1_;
-	_tmp2_ = xcls_editorwindow_xcls_view_new ();
+	_tmp2_ = xcls_editor_xcls_view_new ();
 	g_object_ref_sink (_tmp2_);
 	_tmp3_ = _tmp2_;
 	gtk_container_add ((GtkContainer*) self, (GtkWidget*) _tmp3_);
@@ -426,44 +438,48 @@ Xcls_EditorWindowXcls_RightEditor* xcls_editorwindow_xcls_righteditor_construct 
 }
 
 
-Xcls_EditorWindowXcls_RightEditor* xcls_editorwindow_xcls_righteditor_new (void) {
-	return xcls_editorwindow_xcls_righteditor_construct (XCLS_EDITORWINDOW_TYPE_XCLS_RIGHTEDITOR);
+Xcls_EditorXcls_RightEditor* xcls_editor_xcls_righteditor_new (void) {
+	return xcls_editor_xcls_righteditor_construct (XCLS_EDITOR_TYPE_XCLS_RIGHTEDITOR);
 }
 
 
-static void xcls_editorwindow_xcls_righteditor_class_init (Xcls_EditorWindowXcls_RightEditorClass * klass) {
-	xcls_editorwindow_xcls_righteditor_parent_class = g_type_class_peek_parent (klass);
+static void xcls_editor_xcls_righteditor_class_init (Xcls_EditorXcls_RightEditorClass * klass) {
+	xcls_editor_xcls_righteditor_parent_class = g_type_class_peek_parent (klass);
 }
 
 
-static void xcls_editorwindow_xcls_righteditor_instance_init (Xcls_EditorWindowXcls_RightEditor * self) {
+static void xcls_editor_xcls_righteditor_instance_init (Xcls_EditorXcls_RightEditor * self) {
 }
 
 
-GType xcls_editorwindow_xcls_righteditor_get_type (void) {
-	static volatile gsize xcls_editorwindow_xcls_righteditor_type_id__volatile = 0;
-	if (g_once_init_enter (&xcls_editorwindow_xcls_righteditor_type_id__volatile)) {
-		static const GTypeInfo g_define_type_info = { sizeof (Xcls_EditorWindowXcls_RightEditorClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) xcls_editorwindow_xcls_righteditor_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (Xcls_EditorWindowXcls_RightEditor), 0, (GInstanceInitFunc) xcls_editorwindow_xcls_righteditor_instance_init, NULL };
-		GType xcls_editorwindow_xcls_righteditor_type_id;
-		xcls_editorwindow_xcls_righteditor_type_id = g_type_register_static (GTK_TYPE_SCROLLED_WINDOW, "Xcls_EditorWindowXcls_RightEditor", &g_define_type_info, 0);
-		g_once_init_leave (&xcls_editorwindow_xcls_righteditor_type_id__volatile, xcls_editorwindow_xcls_righteditor_type_id);
+GType xcls_editor_xcls_righteditor_get_type (void) {
+	static volatile gsize xcls_editor_xcls_righteditor_type_id__volatile = 0;
+	if (g_once_init_enter (&xcls_editor_xcls_righteditor_type_id__volatile)) {
+		static const GTypeInfo g_define_type_info = { sizeof (Xcls_EditorXcls_RightEditorClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) xcls_editor_xcls_righteditor_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (Xcls_EditorXcls_RightEditor), 0, (GInstanceInitFunc) xcls_editor_xcls_righteditor_instance_init, NULL };
+		GType xcls_editor_xcls_righteditor_type_id;
+		xcls_editor_xcls_righteditor_type_id = g_type_register_static (GTK_TYPE_SCROLLED_WINDOW, "Xcls_EditorXcls_RightEditor", &g_define_type_info, 0);
+		g_once_init_leave (&xcls_editor_xcls_righteditor_type_id__volatile, xcls_editor_xcls_righteditor_type_id);
 	}
-	return xcls_editorwindow_xcls_righteditor_type_id__volatile;
+	return xcls_editor_xcls_righteditor_type_id__volatile;
 }
 
 
-Xcls_EditorWindowXcls_view* xcls_editorwindow_xcls_view_construct (GType object_type) {
-	Xcls_EditorWindowXcls_view * self = NULL;
-	Xcls_EditorWindow* _tmp0_ = NULL;
-	Xcls_EditorWindowXcls_view* _tmp1_ = NULL;
-	Xcls_EditorWindowXcls_buffer* _tmp2_ = NULL;
-	Xcls_EditorWindowXcls_buffer* _tmp3_ = NULL;
-	self = (Xcls_EditorWindowXcls_view*) g_object_new (object_type, NULL);
-	_tmp0_ = xcls_editorwindow__this;
+Xcls_EditorXcls_view* xcls_editor_xcls_view_construct (GType object_type) {
+	Xcls_EditorXcls_view * self = NULL;
+	Xcls_Editor* _tmp0_ = NULL;
+	Xcls_EditorXcls_view* _tmp1_ = NULL;
+	Xcls_EditorXcls_buffer* _tmp2_ = NULL;
+	Xcls_EditorXcls_buffer* _tmp3_ = NULL;
+	self = (Xcls_EditorXcls_view*) g_object_new (object_type, NULL);
+	_tmp0_ = xcls_editor__this;
 	_tmp1_ = _g_object_ref0 (self);
 	_g_object_unref0 (_tmp0_->view);
 	_tmp0_->view = _tmp1_;
-	_tmp2_ = xcls_editorwindow_xcls_buffer_new ();
+	gtk_source_view_set_auto_indent ((GtkSourceView*) self, TRUE);
+	gtk_source_view_set_indent_width ((GtkSourceView*) self, 4);
+	gtk_source_view_set_insert_spaces_instead_of_tabs ((GtkSourceView*) self, TRUE);
+	gtk_source_view_set_show_line_numbers ((GtkSourceView*) self, TRUE);
+	_tmp2_ = xcls_editor_xcls_buffer_new ();
 	_tmp3_ = _tmp2_;
 	gtk_text_view_set_buffer ((GtkTextView*) self, (GtkTextBuffer*) _tmp3_);
 	_g_object_unref0 (_tmp3_);
@@ -471,38 +487,38 @@ Xcls_EditorWindowXcls_view* xcls_editorwindow_xcls_view_construct (GType object_
 }
 
 
-Xcls_EditorWindowXcls_view* xcls_editorwindow_xcls_view_new (void) {
-	return xcls_editorwindow_xcls_view_construct (XCLS_EDITORWINDOW_TYPE_XCLS_VIEW);
+Xcls_EditorXcls_view* xcls_editor_xcls_view_new (void) {
+	return xcls_editor_xcls_view_construct (XCLS_EDITOR_TYPE_XCLS_VIEW);
 }
 
 
-static void xcls_editorwindow_xcls_view_class_init (Xcls_EditorWindowXcls_viewClass * klass) {
-	xcls_editorwindow_xcls_view_parent_class = g_type_class_peek_parent (klass);
+static void xcls_editor_xcls_view_class_init (Xcls_EditorXcls_viewClass * klass) {
+	xcls_editor_xcls_view_parent_class = g_type_class_peek_parent (klass);
 }
 
 
-static void xcls_editorwindow_xcls_view_instance_init (Xcls_EditorWindowXcls_view * self) {
+static void xcls_editor_xcls_view_instance_init (Xcls_EditorXcls_view * self) {
 }
 
 
-GType xcls_editorwindow_xcls_view_get_type (void) {
-	static volatile gsize xcls_editorwindow_xcls_view_type_id__volatile = 0;
-	if (g_once_init_enter (&xcls_editorwindow_xcls_view_type_id__volatile)) {
-		static const GTypeInfo g_define_type_info = { sizeof (Xcls_EditorWindowXcls_viewClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) xcls_editorwindow_xcls_view_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (Xcls_EditorWindowXcls_view), 0, (GInstanceInitFunc) xcls_editorwindow_xcls_view_instance_init, NULL };
-		GType xcls_editorwindow_xcls_view_type_id;
-		xcls_editorwindow_xcls_view_type_id = g_type_register_static (gtk_source_view_get_type (), "Xcls_EditorWindowXcls_view", &g_define_type_info, 0);
-		g_once_init_leave (&xcls_editorwindow_xcls_view_type_id__volatile, xcls_editorwindow_xcls_view_type_id);
+GType xcls_editor_xcls_view_get_type (void) {
+	static volatile gsize xcls_editor_xcls_view_type_id__volatile = 0;
+	if (g_once_init_enter (&xcls_editor_xcls_view_type_id__volatile)) {
+		static const GTypeInfo g_define_type_info = { sizeof (Xcls_EditorXcls_viewClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) xcls_editor_xcls_view_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (Xcls_EditorXcls_view), 0, (GInstanceInitFunc) xcls_editor_xcls_view_instance_init, NULL };
+		GType xcls_editor_xcls_view_type_id;
+		xcls_editor_xcls_view_type_id = g_type_register_static (gtk_source_view_get_type (), "Xcls_EditorXcls_view", &g_define_type_info, 0);
+		g_once_init_leave (&xcls_editor_xcls_view_type_id__volatile, xcls_editor_xcls_view_type_id);
 	}
-	return xcls_editorwindow_xcls_view_type_id__volatile;
+	return xcls_editor_xcls_view_type_id__volatile;
 }
 
 
-Xcls_EditorWindowXcls_buffer* xcls_editorwindow_xcls_buffer_construct (GType object_type) {
-	Xcls_EditorWindowXcls_buffer * self = NULL;
-	Xcls_EditorWindow* _tmp0_ = NULL;
-	Xcls_EditorWindowXcls_buffer* _tmp1_ = NULL;
-	self = (Xcls_EditorWindowXcls_buffer*) g_object_new (object_type, NULL);
-	_tmp0_ = xcls_editorwindow__this;
+Xcls_EditorXcls_buffer* xcls_editor_xcls_buffer_construct (GType object_type) {
+	Xcls_EditorXcls_buffer * self = NULL;
+	Xcls_Editor* _tmp0_ = NULL;
+	Xcls_EditorXcls_buffer* _tmp1_ = NULL;
+	self = (Xcls_EditorXcls_buffer*) g_object_new (object_type, NULL);
+	_tmp0_ = xcls_editor__this;
 	_tmp1_ = _g_object_ref0 (self);
 	_g_object_unref0 (_tmp0_->buffer);
 	_tmp0_->buffer = _tmp1_;
@@ -510,62 +526,63 @@ Xcls_EditorWindowXcls_buffer* xcls_editorwindow_xcls_buffer_construct (GType obj
 }
 
 
-Xcls_EditorWindowXcls_buffer* xcls_editorwindow_xcls_buffer_new (void) {
-	return xcls_editorwindow_xcls_buffer_construct (XCLS_EDITORWINDOW_TYPE_XCLS_BUFFER);
+Xcls_EditorXcls_buffer* xcls_editor_xcls_buffer_new (void) {
+	return xcls_editor_xcls_buffer_construct (XCLS_EDITOR_TYPE_XCLS_BUFFER);
 }
 
 
-static void xcls_editorwindow_xcls_buffer_class_init (Xcls_EditorWindowXcls_bufferClass * klass) {
-	xcls_editorwindow_xcls_buffer_parent_class = g_type_class_peek_parent (klass);
+static void xcls_editor_xcls_buffer_class_init (Xcls_EditorXcls_bufferClass * klass) {
+	xcls_editor_xcls_buffer_parent_class = g_type_class_peek_parent (klass);
 }
 
 
-static void xcls_editorwindow_xcls_buffer_instance_init (Xcls_EditorWindowXcls_buffer * self) {
+static void xcls_editor_xcls_buffer_instance_init (Xcls_EditorXcls_buffer * self) {
 }
 
 
-GType xcls_editorwindow_xcls_buffer_get_type (void) {
-	static volatile gsize xcls_editorwindow_xcls_buffer_type_id__volatile = 0;
-	if (g_once_init_enter (&xcls_editorwindow_xcls_buffer_type_id__volatile)) {
-		static const GTypeInfo g_define_type_info = { sizeof (Xcls_EditorWindowXcls_bufferClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) xcls_editorwindow_xcls_buffer_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (Xcls_EditorWindowXcls_buffer), 0, (GInstanceInitFunc) xcls_editorwindow_xcls_buffer_instance_init, NULL };
-		GType xcls_editorwindow_xcls_buffer_type_id;
-		xcls_editorwindow_xcls_buffer_type_id = g_type_register_static (gtk_source_buffer_get_type (), "Xcls_EditorWindowXcls_buffer", &g_define_type_info, 0);
-		g_once_init_leave (&xcls_editorwindow_xcls_buffer_type_id__volatile, xcls_editorwindow_xcls_buffer_type_id);
+GType xcls_editor_xcls_buffer_get_type (void) {
+	static volatile gsize xcls_editor_xcls_buffer_type_id__volatile = 0;
+	if (g_once_init_enter (&xcls_editor_xcls_buffer_type_id__volatile)) {
+		static const GTypeInfo g_define_type_info = { sizeof (Xcls_EditorXcls_bufferClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) xcls_editor_xcls_buffer_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (Xcls_EditorXcls_buffer), 0, (GInstanceInitFunc) xcls_editor_xcls_buffer_instance_init, NULL };
+		GType xcls_editor_xcls_buffer_type_id;
+		xcls_editor_xcls_buffer_type_id = g_type_register_static (gtk_source_buffer_get_type (), "Xcls_EditorXcls_buffer", &g_define_type_info, 0);
+		g_once_init_leave (&xcls_editor_xcls_buffer_type_id__volatile, xcls_editor_xcls_buffer_type_id);
 	}
-	return xcls_editorwindow_xcls_buffer_type_id__volatile;
+	return xcls_editor_xcls_buffer_type_id__volatile;
 }
 
 
-static void xcls_editorwindow_class_init (Xcls_EditorWindowClass * klass) {
-	xcls_editorwindow_parent_class = g_type_class_peek_parent (klass);
-	G_OBJECT_CLASS (klass)->finalize = xcls_editorwindow_finalize;
+static void xcls_editor_class_init (Xcls_EditorClass * klass) {
+	xcls_editor_parent_class = g_type_class_peek_parent (klass);
+	G_OBJECT_CLASS (klass)->finalize = xcls_editor_finalize;
 }
 
 
-static void xcls_editorwindow_instance_init (Xcls_EditorWindow * self) {
+static void xcls_editor_instance_init (Xcls_Editor * self) {
 }
 
 
-static void xcls_editorwindow_finalize (GObject* obj) {
-	Xcls_EditorWindow * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, TYPE_XCLS_EDITORWINDOW, Xcls_EditorWindow);
+static void xcls_editor_finalize (GObject* obj) {
+	Xcls_Editor * self;
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, TYPE_XCLS_EDITOR, Xcls_Editor);
 	_g_object_unref0 (self->save_button);
 	_g_object_unref0 (self->RightEditor);
 	_g_object_unref0 (self->view);
 	_g_object_unref0 (self->buffer);
-	G_OBJECT_CLASS (xcls_editorwindow_parent_class)->finalize (obj);
+	_g_free0 (self->active_path);
+	G_OBJECT_CLASS (xcls_editor_parent_class)->finalize (obj);
 }
 
 
-GType xcls_editorwindow_get_type (void) {
-	static volatile gsize xcls_editorwindow_type_id__volatile = 0;
-	if (g_once_init_enter (&xcls_editorwindow_type_id__volatile)) {
-		static const GTypeInfo g_define_type_info = { sizeof (Xcls_EditorWindowClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) xcls_editorwindow_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (Xcls_EditorWindow), 0, (GInstanceInitFunc) xcls_editorwindow_instance_init, NULL };
-		GType xcls_editorwindow_type_id;
-		xcls_editorwindow_type_id = g_type_register_static (GTK_TYPE_WINDOW, "Xcls_EditorWindow", &g_define_type_info, 0);
-		g_once_init_leave (&xcls_editorwindow_type_id__volatile, xcls_editorwindow_type_id);
+GType xcls_editor_get_type (void) {
+	static volatile gsize xcls_editor_type_id__volatile = 0;
+	if (g_once_init_enter (&xcls_editor_type_id__volatile)) {
+		static const GTypeInfo g_define_type_info = { sizeof (Xcls_EditorClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) xcls_editor_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (Xcls_Editor), 0, (GInstanceInitFunc) xcls_editor_instance_init, NULL };
+		GType xcls_editor_type_id;
+		xcls_editor_type_id = g_type_register_static (GTK_TYPE_WINDOW, "Xcls_Editor", &g_define_type_info, 0);
+		g_once_init_leave (&xcls_editor_type_id__volatile, xcls_editor_type_id);
 	}
-	return xcls_editorwindow_type_id__volatile;
+	return xcls_editor_type_id__volatile;
 }
 
 
