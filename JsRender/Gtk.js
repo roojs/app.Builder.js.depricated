@@ -361,7 +361,7 @@ Gtk = XObject.define(
                     return;
                 }
                 if (typeof(item['|' + p.name]) != 'undefined' && typeof(item['|' + p.name]) != 'object' ) {
-                    strbuilder(ipad + "this." + p.name + " = " + JSON.stringify(item['|' + p.name]) + ";\n");
+                    strbuilder(ipad + "this." + p.name + " = " +  item['|' + p.name] + ";\n");
                     return;
                 }
                // got a property..
