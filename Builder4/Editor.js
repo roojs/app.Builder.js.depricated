@@ -22,15 +22,17 @@ Editor=new XObject({
             return true;
         }
         /*--
+        
         (event) => {
-            if (!Editor.save()) {
+            if (!Editor.RightEditor.save()) {
                 // no hiding with errors.
                 return true;
             }
-            this.el.hide();
-            this.get('/Editor').activePath = false;
+            _this.hide();
+            _this.activePath = false;
             return true;
         }
+        
         */,
         configure_event : function (self, object) {
             this.pos = this.el.get_position();
