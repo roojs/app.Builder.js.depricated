@@ -459,7 +459,7 @@ Gtk = XObject.define(
                 var body = vva.join(' ');
                 
                 
-                strbuilder(ipad + "this." + k + ".connect( " + vv  + " );\n");
+                strbuilder(pad + rtype + " " + k.substring(1) +body + "\n");
                 
                 
                 
