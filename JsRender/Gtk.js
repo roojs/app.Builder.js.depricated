@@ -330,6 +330,22 @@ Gtk = XObject.define(
                 
                 
             }
+            // initialize.. my vars..
+            
+            for (var k in item) {
+                if (k[0] != '.') {
+                    continue;
+                }
+                var kk = k.substring(1);
+                var v = item[k];
+                var vv = v.split(':');
+                if (vv.length < 2) {
+                    continue;
+                }
+                strbuilder(ipad + "this." + k + " = " +  vv[1] +";\n");
+                
+            }
+           
            
             // what are the properties of this class???
             
