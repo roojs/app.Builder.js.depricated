@@ -393,7 +393,7 @@ Gtk = XObject.define(
                 for (var k in item.listeners) {
                     
                     
-                    var v = item[k].split(/\/*--/);
+                    var v = item.listeners[k].split(/\/*--/);
                     if (v.length < 2) {
                         continue;
                     }
