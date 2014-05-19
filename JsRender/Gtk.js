@@ -320,7 +320,13 @@ Gtk = XObject.define(
            
             // what are the properties of this class???
             
-             var props = this.palete.getPropertiesFor(cls, 'props');
+            var props = this.palete.getPropertiesFor(cls, 'props');
+            
+            if (cls == 'Gtk.SourceView') {
+                print("LOOKING FOR indent_width");
+                print(JSON.stringify(props, null,4));Seed.quit;
+            }
+            
             props.forEach(function(p) {
                if (typeof(item[p.name]) == 'undefined' || typeof(item[p.name]) == 'object' ) {
                     return;
