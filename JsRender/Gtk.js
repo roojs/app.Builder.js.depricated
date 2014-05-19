@@ -434,6 +434,7 @@ Gtk = XObject.define(
             strbuilder(pad + "}\n");
             
             
+            // user defined functions...
             
             for (var k in item) {
                 if (typeof(citems[k]) != 'undefined') {
