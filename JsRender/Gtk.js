@@ -302,7 +302,16 @@ Gtk = XObject.define(
                 }
                 
             }
-             
+            for (var k in item) {
+                if (k[0] != '.') {
+                    continue;
+                }
+                var kk = k.substring(1);
+                var v = item[k];
+                var vv = v.split(':');
+                strbuilder(pad + "public " + vv[0] + " " + k + "\n");
+                
+            }
             // .vala props.. 
              
             // ctor..
