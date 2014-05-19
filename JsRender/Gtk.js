@@ -232,9 +232,18 @@ Gtk = XObject.define(
             
         },
         
+        toValaNS : function(item)
+        {
+            var ns = item['|xns'] ;
+            if (ns == 'GtkSource') {
+                ns = 'Gtk.Source';
+            }
+            return ns;
+        },
+        
         toValaName : function(item) {
             this.vcnt++;
-            var cls = item['|xns'] + '.' + item.xtype;
+            var cls = this.toValaNS(item) + '.' + item.xtype;
             var id = item.id ? item.id : (item.xtype + this.vcnt);
             var props = this.palete.getPropertiesFor(cls, 'props');
             
