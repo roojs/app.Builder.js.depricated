@@ -249,6 +249,8 @@ Gtk = XObject.define(
             var id = item.id ? item.id : (item.xtype + this.vcnt);
             var props = this.palete.getPropertiesFor(cls, 'props');
             
+            
+            
             item.xvala_cls = cls;
             item.xvala_xcls = 'Xcls_' + id;
             item.xvala_id = item.id ? item.id : false;
@@ -320,7 +322,7 @@ Gtk = XObject.define(
            
             // what are the properties of this class???
             
-            var props = this.palete.getPropertiesFor(cls, 'props');
+            var props = this.palete.getPropertiesFor(item['|xns'] + '.' + item.xtype, 'props');
             
             if (cls == 'Gtk.SourceView') {
                 print("LOOKING FOR indent_width");
