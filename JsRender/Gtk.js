@@ -397,7 +397,8 @@ Gtk = XObject.define(
                 if (v.length < 2) {
                     continue;
                 }
-                var vv = v.replace(/split('')
+                var vv = v[0].replace(new RegExp("/*\s*$"), "");
+                                    
                 var vv = v.split(':');
                 if (vv.length < 2) {
                     continue;
