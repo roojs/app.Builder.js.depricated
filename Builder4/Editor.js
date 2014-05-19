@@ -55,7 +55,7 @@ Editor=new XObject({
         /*--
          () => {
             if (this.pos) {
-                this.set_uposition(this.pos.root_x,this.pos.root_y);
+                this.set_uposition(this.pos_root_x,this.pos_root_y);
             }
         }
         
