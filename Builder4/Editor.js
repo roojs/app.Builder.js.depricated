@@ -37,7 +37,6 @@ Editor=new XObject({
         configure_event : function (self, object) {
             this.pos = this.el.get_position();
         
-        
             return false;
         }
         /*--
