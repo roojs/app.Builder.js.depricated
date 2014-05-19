@@ -35,11 +35,19 @@ Editor=new XObject({
         
         */,
         configure_event : function (self, object) {
+            this.pos = this.el.get_position();
+        
+        
+            return false;
+        }
+        /*--
+         (self, object) {
             _this.pos = this.get_position();
         
         
             return false;
-        },
+        }
+        */,
         show : function (self) {
             if (this.pos) {
                 this.el.set_uposition(this.pos.root_x,this.pos.root_y);
