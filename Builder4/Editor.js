@@ -141,7 +141,11 @@ Editor=new XObject({
                          this.get('/Editor').dirty = false;
                          this.get('/Editor.save_button').el.sensitive = false;
                          return true;
-                    },
+                    }
+                    /*--
+                    
+                    
+                    */,
                     items : [
                         {
                             xtype: GtkSource.View,
