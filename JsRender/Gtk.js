@@ -397,7 +397,7 @@ Gtk = XObject.define(
                     if (v.length < 2) {
                         continue;
                     }
-                    var vv = v[1].replace(new RegExp("/\*\s*$"), "");
+                    var vv = v[1].replace(new RegExp("*/\s*$"), "");
                     print(JSON.stringify(vv));Seed.quit();
                     var vv = v.split(':');
                     if (vv.length < 2) {
