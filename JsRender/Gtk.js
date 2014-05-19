@@ -348,7 +348,7 @@ Gtk = XObject.define(
            
            
             // what are the properties of this class???
-            
+            strbuilder("\n" + ipad + "// set gobject values\n");
             var props = this.palete.getPropertiesFor(item['|xns'] + '.' + item.xtype, 'props');
             
             
