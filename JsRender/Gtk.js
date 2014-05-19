@@ -398,7 +398,7 @@ Gtk = XObject.define(
                          //print(JSON.stringify(vv));Seed.quit();
                          vv = vv.replace(/^\n+/,'');
                          vv = vv.replace(/\n+$/,'');
-                         vv = vv.replace(/\n/g,"\n" + pad);
+                         vv = vv.replace(/\n/g,"\n" + ipad);
                          strbuilder(ipad + vv  + "\n");
                     }
             }
