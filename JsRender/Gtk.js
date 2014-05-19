@@ -446,6 +446,7 @@ Gtk = XObject.define(
                     continue;
                 }
                 if (k[0] != '|') {
+                     strbuilder("\n" + pad + "// skip " + k + " - not pipe \n"); 
                     continue;
                 }
                 // function in the format of {type} (args) { .... }
