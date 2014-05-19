@@ -386,28 +386,28 @@ Gtk = XObject.define(
             
             
             if (item.listeners) {
-                print(JSON.stringify(item.listeners));Seed.quit();
-            }
+            //    print(JSON.stringify(item.listeners));Seed.quit();
             
-            // add all the signal handlers..
-            for (var k in item.listeners) {
                 
-                
-                var v = item[k].split(/\/*--/);
-                if (v.length < 2) {
-                    continue;
+                // add all the signal handlers..
+                for (var k in item.listeners) {
+                    
+                    
+                    var v = item[k].split(/\/*--/);
+                    if (v.length < 2) {
+                        continue;
+                    }
+                    var vv = v[0].replace(new RegExp("/*\s*$"), "");
+                    print(JSON.stringify(vv));Seed.quit();
+                    var vv = v.split(':');
+                    if (vv.length < 2) {
+                        continue;
+                    }
+                    strbuilder(ipad + "this" + k + " = " +   vv[1] +";\n");
+                    
                 }
-                var vv = v[0].replace(new RegExp("/*\s*$"), "");
-                                    
-                var vv = v.split(':');
-                if (vv.length < 2) {
-                    continue;
-                }
-                strbuilder(ipad + "this" + k + " = " +   vv[1] +";\n");
+            }    
                 
-            }
-            
-            
             
             
             
