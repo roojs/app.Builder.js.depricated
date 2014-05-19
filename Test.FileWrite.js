@@ -24,7 +24,7 @@ function loaded()
         out+=str;
         
     }));
-    print(out);
+    print(out.length);;
     File.write("/tmp/test.vala", out);
     print('/tmp/test.vala');
     
