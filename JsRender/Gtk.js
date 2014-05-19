@@ -331,7 +331,7 @@ Gtk = XObject.define(
                 
             }
             // initialize.. my vars..
-            
+            strbuilder("\n" + ipad + "// my vars\n");
             for (var k in item) {
                 if (k[0] != '.') {
                     continue;
