@@ -404,6 +404,7 @@ Gtk = XObject.define(
                     }
             }
             
+            citems['|init'] = true;  
             citems['|pack'] = true;
             citems['items'] = true;
             
