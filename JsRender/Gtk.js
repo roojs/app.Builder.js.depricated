@@ -442,7 +442,7 @@ Gtk = XObject.define(
                 if (k[0] != '|') {
                     continue;
                 }
-                
+                // function in the format of {type} (args) { .... }
                 
                 var v = item[k].split(/\/*--/);
                 if (v.length < 2) {
@@ -453,6 +453,12 @@ Gtk = XObject.define(
                 vv = vv.replace(/^\n+/,'');
                 vv = vv.replace(/\n+$/,'');
                 vv = vv.replace(/\n/g,"\n" + ipad);
+                
+                vva = vv.split(' ');
+                var rtype = vva.unshift();
+                var body = vva.join(' ');
+                
+                
                 strbuilder(ipad + "this." + k + ".connect( " + vv  + " );\n");
                 
                 
