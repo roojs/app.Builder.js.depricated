@@ -111,7 +111,7 @@ Editor=new XObject({
                                 }
                                 /*--
                                 () => { 
-                                    Editor.RightEdit.save();
+                                    Editor.RightEditor.save();
                                 }
                                 
                                 */
