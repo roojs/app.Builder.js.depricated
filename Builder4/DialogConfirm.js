@@ -38,6 +38,7 @@ DialogConfirm=new XObject({
         /*--
         (event) => {
             this.hide();
+            return true;
         }
         */
     },
