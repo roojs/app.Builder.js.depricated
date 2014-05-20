@@ -196,7 +196,7 @@ Gtk = XObject.define(
                    "--pkg",  "libnotify",
                    "--pkg",  "gtksourceview-3.0",
                    "--pkg", "libwnck-3.0",
-                   fn + ".vala",   "-o", "/tmp/" + this.name];
+                   fn ,   "-o", "/tmp/" + this.name];
             
            
              
