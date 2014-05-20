@@ -254,7 +254,9 @@ Gtk = XObject.define(
             ret += "     Gtk.main ();\n";
             ret += "    return 0;\n";
             ret += "}\n";
-            //ret += "*/\n";
+            if (!testcompile) {
+                ret += "*/\n";
+            }
             ret += "\n\n";
             // print(JSON.stringify(item,null,4));
             this.toValaItem(item,0, function(s) {
