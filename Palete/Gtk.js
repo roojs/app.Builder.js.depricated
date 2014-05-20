@@ -2,6 +2,7 @@
  
 Gio = imports.gi.Gio;
 GIRepository  = imports.gi.GIRepository;
+GObject= imports.gi.GObject;
 xml     = imports.libxml;
 console = imports.console;
 XObject = imports.XObject.XObject;
