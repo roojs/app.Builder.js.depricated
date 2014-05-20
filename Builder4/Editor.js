@@ -207,9 +207,9 @@ Editor=new XObject({
                             }
                             /*--
                             
-                                var description = Pango.Font.description_from_string("monospace");
+                                var description = new  Pango.FontDescription.from_string("monospace");
                                 description.set_size(8000);
-                                this.modify_font(description);
+                                this.override_font(description);
                             
                             
                             */,

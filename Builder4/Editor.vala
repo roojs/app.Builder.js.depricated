@@ -203,9 +203,9 @@ public class Xcls_Editor : Gtk.Window
             this.set_buffer (  new Xcls_buffer() );
 
             // init method 
-                var description = Pango.Font.description_from_string("monospace");
+                var description = new  Pango.FontDescription.from_string("monospace");
                 description.set_size(8000);
-                this.modify_font(description);
+                this.override_font(description);
 
             // listeners 
             this.key_release_event.connect( (event) => {
