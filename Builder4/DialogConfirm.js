@@ -17,7 +17,7 @@ DialogConfirm=new XObject({
         print("RESPOSE: " + response_id);
             if (response_id == -8) { //yes!
            print("CALL SUCCES?")
-              this.success();
+           //   this.success(); -- fixme a delegate
             }
         }
         /*--
