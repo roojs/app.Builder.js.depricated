@@ -162,8 +162,9 @@ public class Xcls_Editor : Gtk.Window
 
         // userdefined functions 
         public bool save() {
-            
+                 print("editor.rightbutton.save");
                  if (_this.active_path.length  < 1 ) {
+                      print("skip - no active path");
                     return true;
                  }
                  

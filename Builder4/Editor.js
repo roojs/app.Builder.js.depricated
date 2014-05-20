@@ -144,8 +144,9 @@ Editor=new XObject({
                     }
                     /*--
                     bool () {
-                    
+                         print("editor.rightbutton.save");
                          if (_this.active_path.length  < 1 ) {
+                              print("skip - no active path");
                             return true;
                          }
                          
