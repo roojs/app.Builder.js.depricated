@@ -227,7 +227,7 @@ Gtk = XObject.define(
             ret += "*/\n";
             ret += "\n\n";
  
-            //ret += "/* -- to test class\n";
+            ret += "/* -- to test class\n";
             ret += "static int main (string[] args) {\n";
             ret += "    Gtk.init (ref args);\n";
             ret += "    new " + item.xvala_xcls +"();\n";
@@ -235,7 +235,7 @@ Gtk = XObject.define(
             ret += "     Gtk.main ();\n";
             ret += "    return 0;\n";
             ret += "}\n";
-            //ret += "*/\n";
+            ret += "*/\n";
             ret += "\n\n";
             // print(JSON.stringify(item,null,4));
             this.toValaItem(item,0, function(s) {
