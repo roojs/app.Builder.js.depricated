@@ -298,7 +298,16 @@ Editor=new XObject({
                                            }));
                                         
                                         return true;
-                                    },
+                                    }
+                                    /*--
+                                    bool () { 
+                                        // we could try running valac... ?? but it's a bit confusing..
+                                        return true;
+                                    
+                                    }
+                                    
+                                    
+                                    */,
                                     toString : function() {
                                         
                                         var s = new Gtk.TextIter();

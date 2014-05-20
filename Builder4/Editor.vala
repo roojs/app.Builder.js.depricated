@@ -246,6 +246,11 @@ public class Xcls_Editor : Gtk.Window
         }
 
         // userdefined functions 
+        public bool checkSyntax() { 
+                // we could try running valac... ?? but it's a bit confusing..
+                return true;
+            
+            }
         public string toString() {
                 
                 Gtk.TextIter s;
