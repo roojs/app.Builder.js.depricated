@@ -29,7 +29,7 @@ Editor=new XObject({
                 return true;
             }
             _this.hide();
-            _this.activePath = '';
+            _this.active_path = "";
             return true;
         }
         
@@ -56,7 +56,7 @@ Editor=new XObject({
         /*--
          () => {
             if (this.pos) {
-                this.set_uposition(this.pos_root_x,this.pos_root_y);
+                _this.set_uposition(this.pos_root_x,this.pos_root_y);
             }
         }
         
@@ -81,13 +81,13 @@ Editor=new XObject({
     }
     /*--
     
-    (event) => {
+    bool ()  {
     
-        if (!Editor.RightEditor/save()) {
+        if (!Editor.RightEditor.save()) {
             // no hiding with errors.
             return true;
         }
-        _this.activePath = false;
+        _this.active_path = "";
         _this.hide();
         return true;
     
@@ -145,7 +145,7 @@ Editor=new XObject({
                     /*--
                     bool () {
                     
-                         if (_this.activePath.length  < 1 ) {
+                         if (_this.active_path.length  < 1 ) {
                             return true;
                          }
                          
@@ -159,7 +159,7 @@ Editor=new XObject({
                          
                          // LeftPanel.model.changed(  str , false);
                          _this.dirty = false;
-                         this.save_button.sensitive = false;
+                         _this.save_button.sensitive = false;
                          return true;
                     }
                     
@@ -252,7 +252,7 @@ Editor=new XObject({
                             /*--
                             void () {
                             
-                                Edit.RightEditor.save();
+                                Editor.RightEditor.save();
                             }
                             */,
                             show_line_numbers : true,
