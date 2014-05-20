@@ -504,6 +504,7 @@ Gtk = XObject.define(
                 
                 var v = item[k].split(/\/*--/);
                 if (v.length < 2) {
+                      strbuilder("\n" + pad + "// skip " + k + " - could not find seperator\n"); 
                     continue;
                 }
                 var vv = v[1].replace('*/', "");
