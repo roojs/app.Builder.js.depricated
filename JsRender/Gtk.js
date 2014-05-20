@@ -194,7 +194,7 @@ Gtk = XObject.define(
             File.write(fn, this.toVala());
             
             
-            var fn = GLib.path_get_dirname(this.path) + '/' + this.name + '.vala';
+            
             return ["valac",
                    "--pkg",  "gio-2.0",
                    "--pkg" , "posix" ,
