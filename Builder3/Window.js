@@ -856,7 +856,7 @@ Window=new XObject({
                                                                                                 });
                                                                                                 print(output);
                                                                                              } catch(e) {
-                                                                                                print(e);
+                                                                                                print(e.message);
                                                                                             }
                                                                                             /*
                                                                                             print(cmd.join(' '));
