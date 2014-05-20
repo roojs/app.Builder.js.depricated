@@ -852,7 +852,7 @@ Window=new XObject({
                                                                                                  env : [] // optional
                                                                                                
                                                                                                 });
-                                                                                               
+                                                                                             print(output);  
                                                                                             /*
                                                                                             print(cmd.join(' '));
                                                                                             var out = {};
