@@ -246,6 +246,7 @@ Gtk = XObject.define(
                 
                 
                 var ty = this.typeToName(GIRepository.property_info_get_type(prop));
+                var flags = GIRepository.property_info_get_flags(prop);
                 print (n_original +":"+ ty);
                 if (ty === false) {
                     continue;
