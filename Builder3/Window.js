@@ -847,7 +847,7 @@ Window=new XObject({
                                                                                             var cmd = this.file.valaCompileCmd()
                                                                                            this.get('/Terminal').el.fork_command_full(
                                                                                                 Vte.PtyFlags.DEFAULT,
-                                                                                                
+                                                                                                '/tmp',
                                                                                                 cmd, //argv
                                                                                                 [], // env
                                                                                                 0, //spawn flags
