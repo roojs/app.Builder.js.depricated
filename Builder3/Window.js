@@ -845,6 +845,15 @@ Window=new XObject({
                                                                                     this.file.save();
                                                                                     if (typeof(this.file.valaCompileCmd) !== 'undefined') {
                                                                                             var cmd = this.file.valaCompileCmd();
+                                                                                            
+                                                                                             var output = Spawn.run({
+                                                                                                 cwd : '/tmp',
+                                                                                                 args : cmd,
+                                                                                                 env : [] // optional
+                                                                                               
+                                                                                                });
+                                                                                               
+                                                                                            /*
                                                                                             print(cmd.join(' '));
                                                                                             var out = {};
                                                                                             this.get('/Terminal').el.fork_command_full(
@@ -857,7 +866,7 @@ Window=new XObject({
                                                                                                 null, // child setupdata
                                                                                                 out
                                                                                            ); 
-                                                                                           
+                                                                                           */
                                                                                             //var cmd = "/usr/bin/seed " + runner + " " + dir + "\n";
                                                                                             //this.get('/Terminal').el.feed_child(cmd, cmd.length);
                                                                                             
