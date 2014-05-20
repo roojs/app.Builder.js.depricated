@@ -189,8 +189,14 @@ Gtk = XObject.define(
         valaCompileCmd : function()
         {
             var fn = GLib.path_get_dirname(this.path) + '/' + this.name + '.vala';
-            ret = "valac  --pkg gio-2.0  --pkg posix  --pkg gtk+-3.0 --pkg libnotify --pkg gtksourceview-3.0  --pkg  libwnck-3.0 ";
-            ret += "    " + fn + ".vala  -o /tmp/" + this.name +"\n";
+            ret = ["valac",
+                   "--pkg",  "gio-2.0",
+                   "--pkg" , "posix" ,
+                   "--pkg" , "gtk+-3.0",
+                   "--pkg",  "libnotify",
+                   "--pkg",  "gtksourceview-3.0",
+                   "--pkg", "libwnck-3.0",
+                   fn + ".vala",   "-o", "/tmp/" + this.name];
             return ret;
            
              
