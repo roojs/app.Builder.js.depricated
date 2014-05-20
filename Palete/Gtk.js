@@ -256,7 +256,7 @@ Gtk = XObject.define(
                      type :  ty,
                      desc : this.doc(ename + '.' + n_original),
                      sig : '',
-                     ctor_only : flags == 8 //GObject.ParamFlags.CONSTRUCT_ONLY
+                     ctor_only : flags   //GObject.ParamFlags.CONSTRUCT_ONLY
                 }
                 plist.push(add)
             }
