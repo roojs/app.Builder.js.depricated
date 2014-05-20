@@ -255,7 +255,8 @@ Gtk = XObject.define(
                      name :  n_original.replace(/\-/g, '_'),
                      type :  ty,
                      desc : this.doc(ename + '.' + n_original),
-                     sig : ''
+                     sig : '',
+                     ctor_only : flags && GObject.ParamFlags.CONSTRUCT_ONLY
                 }
                 plist.push(add)
             }
