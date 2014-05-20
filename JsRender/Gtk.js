@@ -156,6 +156,7 @@ Gtk = XObject.define(
         save : function() {
             Base.prototype.save.call(this);
             this.saveJS();
+            this.saveVala();
         },
         
         /** 
@@ -175,6 +176,18 @@ Gtk = XObject.define(
             
             return fn;
         },
+        
+        saveJS: function()
+        {
+             
+            var fn = GLib.path_get_dirname(this.path) + '/' + this.name + '.vala';
+            print("WRITE : " + fn);
+            File.write(fn, this.toVala());
+            
+            return fn;
+        },
+        
+        
         /*
         getTree : function( o ) {
             
