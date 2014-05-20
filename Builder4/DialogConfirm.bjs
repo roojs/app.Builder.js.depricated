@@ -16,7 +16,7 @@
             "|buttons": "Gtk.ButtonsType.YES_NO",
             "|message_type": "Gtk.MessageType.QUESTION",
             "|modal": "true",
-            "|show": "function(msg, success) {\n     if (!this.el) {\n            this.init();\n        }\n     this.success = success;\n        this.el.text =  msg;\n        this.el.show_all();\n\n}\n/*\nvoid (string msg) {\n     //if (!this.el) { this.init(); } \n     //this.success = success;\n    this.text =  msg;\n    this.show_all();\n\n}\n\n*/\n\n\n",
+            "|show": "function(msg, success) {\n     if (!this.el) {\n            this.init();\n        }\n     this.success = success;\n        this.el.text =  msg;\n        this.el.show_all();\n\n}\n/*\nvoid (string msg) {\n     //if (!this.el) { this.init(); } \n     //this.success = success;\n    this.text =  msg;\n    this.show_all();\n\n}\n\n*/\n\n\n\n",
             "|use_markup": "true",
             "|xns": "Gtk"
         }
