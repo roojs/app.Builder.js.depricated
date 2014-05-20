@@ -41,10 +41,15 @@ public class Xcls_MessageDialog1 : Gtk.MessageDialog
         this.use_markup = true;
 
         // listeners 
-        this.response.connect(  fixme a delegate
+        this.response.connect(  ( response_id) =>  {
+           this.hide();
+            //print("RESPOSE: " + response_id);
+            if (response_id == -8) { //yes!
+                   print("CALL SUCCES?")
+              this.success();
             }
-        }
-        /* );
+        
+        } );
     }
 
     // userdefined functions 
