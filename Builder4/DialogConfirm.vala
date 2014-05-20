@@ -1,6 +1,6 @@
 /* -- to compile
 valac  --pkg gio-2.0  --pkg posix  --pkg gtk+-3.0 --pkg libnotify --pkg gtksourceview-3.0  --pkg  libwnck-3.0 \
-    /tmp/test.vala  -o /tmp/false
+    /tmp/test.vala  -o /tmp/DialogConfirm
 */
 
 
@@ -8,14 +8,14 @@ valac  --pkg gio-2.0  --pkg posix  --pkg gtk+-3.0 --pkg libnotify --pkg gtksourc
 static int main (string[] args) {
     Gtk.init (ref args);
     new Xcls_MessageDialog1();
-    false.show_all();
+    DialogConfirm.show_all();
      Gtk.main ();
     return 0;
 }
 */
 
 
-public static Xcls_MessageDialog1  undefined;
+public static Xcls_MessageDialog1  DialogConfirm;
 
 private static Xcls_MessageDialog1  _this;
 
@@ -28,7 +28,7 @@ public class Xcls_MessageDialog1 : Gtk.MessageDialog
     public Xcls_MessageDialog1()
     {
         _this = this;
-        undefined = this;
+        DialogConfirm = this;
 
         // my vars
 
