@@ -57,4 +57,11 @@ public class Xcls_MessageDialog1 : Gtk.MessageDialog
     }
 
     // userdefined functions 
+    public void show(string msg) {
+             //if (!this.el) { this.init(); } 
+             //this.success = success;
+            this.text =  msg;
+            this.show_all();
+        
+        }
 }
