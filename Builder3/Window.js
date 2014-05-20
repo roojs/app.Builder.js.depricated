@@ -845,6 +845,8 @@ Window=new XObject({
                                                                                     this.file.save();
                                                                                     if (typeof(this.file.valaCompileCmd) !== 'undefined') {
                                                                                             var cmd = this.file.valaCompileCmd();
+                                                                                            try {
+                                                                                            
                                                                                             var Spawn = imports.Spawn;
                                                                                              var output = Spawn.run({
                                                                                                  cwd : '/tmp',
@@ -852,7 +854,10 @@ Window=new XObject({
                                                                                                  env : [] // optional
                                                                                                
                                                                                                 });
-                                                                                             print(output);  
+                                                                                                print(output);
+                                                                                             } catch(e) {
+                                                                                                alert(e);
+                                                                                            }
                                                                                             /*
                                                                                             print(cmd.join(' '));
                                                                                             var out = {};
