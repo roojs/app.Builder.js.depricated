@@ -402,6 +402,10 @@ Gtk = XObject.define(
             
             
             props.forEach(function(p) {
+                if (p.name == 'buttons') {
+                    print(JSON.stringify(p));Seed.quit()
+                    //code
+                }
                 if (typeof(item[p.name]) != 'undefined' && typeof(item[p.name]) != 'object' ) {
                     citems[p.name] = true; 
                     strbuilder(ipad + "this." + p.name + " = " + JSON.stringify(item[p.name]) + ";\n");
