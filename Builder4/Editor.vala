@@ -4,7 +4,6 @@ valac  --pkg gio-2.0  --pkg posix  --pkg gtk+-3.0 --pkg libnotify --pkg gtksourc
 */
 
 
-/* -- to test class
 static int main (string[] args) {
     Gtk.init (ref args);
     new Xcls_Editor();
@@ -12,7 +11,6 @@ static int main (string[] args) {
      Gtk.main ();
     return 0;
 }
-*/
 
 
 public static Xcls_Editor  Editor;
@@ -243,6 +241,17 @@ public class Xcls_Editor : Gtk.Window
             // set gobject values
 
             // listeners 
+            this.changed.connect( () => {
+                // check syntax??
+                    if(this.checkSyntax()) {
+                    Editor.save_button.sensitive = true;
+                }
+               // print("EDITOR CHANGED");
+                Editor.dirty = true;
+            
+                // this.get('/LeftPanel.model').changed(  str , false);
+                return false;
+            } );
         }
 
         // userdefined functions 

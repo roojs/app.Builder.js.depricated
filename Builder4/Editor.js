@@ -271,6 +271,23 @@ Editor=new XObject({
                                             // this.get('/LeftPanel.model').changed(  str , false);
                                             return false;
                                         }
+                                        
+                                        /*--
+                                        
+                                        () => {
+                                            // check syntax??
+                                                if(this.checkSyntax()) {
+                                                Editor.save_button.sensitive = true;
+                                            }
+                                           // print("EDITOR CHANGED");
+                                            Editor.dirty = true;
+                                        
+                                            // this.get('/LeftPanel.model').changed(  str , false);
+                                            return false;
+                                        }
+                                        
+                                        
+                                        */
                                     },
                                     id : "buffer",
                                     pack : "set_buffer",
