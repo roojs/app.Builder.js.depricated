@@ -858,7 +858,7 @@ Window=new XObject({
                                                                                            
                                                                                             //var cmd = "/usr/bin/seed " + runner + " " + dir + "\n";
                                                                                             //this.get('/Terminal').el.feed_child(cmd, cmd.length);
-                                                                                            return false;
+                                                                                            
                                                                                         
                                                                                         
                                                                                     }
