@@ -843,7 +843,25 @@ Window=new XObject({
                                                                                   //  print("AFTER CHANGED");
                                                                                     //console.dump(this.file.items);
                                                                                     this.file.save();
-                                                                                    
+                                                                                    if (typeof(this.file.valaCompileCmd) !== 'undefined') {
+                                                                                            var cmd = this.file.valaCompileCmd()
+                                                                                           this.get('/Terminal').el.fork_command_full(
+                                                                                                Vte.PtyFlags.DEFAULT,
+                                                                                                cmd.unshift(),
+                                                                                                cmd, //argv
+                                                                                                [], // env
+                                                                                                0, //spawn flags
+                                                                                                null, // user func
+                                                                                                null, // child setupdata
+                                                                                                out
+                                                                                           ); 
+                                                                                           
+                                                                                            //var cmd = "/usr/bin/seed " + runner + " " + dir + "\n";
+                                                                                            //this.get('/Terminal').el.feed_child(cmd, cmd.length);
+                                                                                            return false;
+                                                                                        
+                                                                                        
+                                                                                    }
                                                                                     
                                                                                     this.currentTree = this.file.items[0];
                                                                                     //console.log(this.file.toSource());
