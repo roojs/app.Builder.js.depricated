@@ -23,7 +23,7 @@ public class Xcls_MessageDialog1 : Gtk.MessageDialog
 {
 
         // my vars
-    buttons = Gtk.ButtonsType.YES_NO;
+
         // ctor 
     public Xcls_MessageDialog1()
     {
@@ -33,7 +33,7 @@ public class Xcls_MessageDialog1 : Gtk.MessageDialog
         // my vars
 
         // set gobject values
-        //this.buttons = Gtk.ButtonsType.YES_NO;
+        Object(buttons : Gtk.ButtonsType.YES_NO);
         this.message_type = Gtk.MessageType.QUESTION;
         this.modal = true;
         this.text = "-";
