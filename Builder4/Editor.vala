@@ -27,8 +27,8 @@ public class Xcls_Editor : Gtk.Window
     public Xcls_buffer buffer;
 
         // my vars
-    public string active_path;
     public string activeEditor;
+    public string active_path;
     public bool dirty;
     public bool pos;
     public int pos_root_x;
@@ -41,8 +41,8 @@ public class Xcls_Editor : Gtk.Window
         Editor = this;
 
         // my vars
-        this.active_path = "";
         this.activeEditor = "";
+        this.active_path = "";
         this.dirty = false;
         this.pos = false;
 
@@ -71,7 +71,7 @@ public class Xcls_Editor : Gtk.Window
         } );
         this.show.connect(  () => {
             if (this.pos) {
-                _this.set_uposition(this.pos_root_x,this.pos_root_y);
+                _this.move(this.pos_root_x,this.pos_root_y);
             }
         } );
     }
