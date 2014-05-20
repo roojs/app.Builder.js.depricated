@@ -305,6 +305,8 @@ Spawn.prototype = {
         }
         
         if (this.exceptions && this.result != 0) {
+            print(this.stderr);
+            print(this.output);
             this.toString = function() { return this.stderr; };
             throw this; // we throw self...
         }
@@ -324,14 +326,14 @@ Spawn.prototype = {
         if (!this.in_ch) {
             return 0; // input is closed
         }
-	//print("write: " + str);
-	// NEEDS GIR FIX! for return value.. let's ignore for the time being..
-	//var ret = {};
-        //var res = this.in_ch.write_chars(str, str.length, ret);
-	var res = this.in_ch.write_chars(str, str.length);
-	
-	//print("write_char retunred:" + JSON.stringify(res) +  ' ' +JSON.stringify(ret)  );
-	
+        //print("write: " + str);
+        // NEEDS GIR FIX! for return value.. let's ignore for the time being..
+        //var ret = {};
+            //var res = this.in_ch.write_chars(str, str.length, ret);
+        var res = this.in_ch.write_chars(str, str.length);
+        
+        //print("write_char retunred:" + JSON.stringify(res) +  ' ' +JSON.stringify(ret)  );
+        
         if (res != GLib.IOStatus.NORMAL) {
             throw "Write failed";
         }
