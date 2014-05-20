@@ -50,6 +50,9 @@ public class Xcls_MessageDialog1 : Gtk.MessageDialog
             }
         
         } );
+        this.delete_event.connect( (event) => {
+            this.hide();
+        } );
     }
 
     // userdefined functions 

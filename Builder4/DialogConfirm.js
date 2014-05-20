@@ -35,6 +35,11 @@ DialogConfirm=new XObject({
             this.el.hide();
             return true;
         }
+        /*--
+        (event) => {
+            this.hide();
+        }
+        */
     },
     text : "-",
     title : "Please Confirm",
