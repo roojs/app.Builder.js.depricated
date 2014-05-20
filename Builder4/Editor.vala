@@ -210,7 +210,7 @@ public class Xcls_Editor : Gtk.Window
             // listeners 
             this.key_release_event.connect( (event) => {
                 
-                if (event.key.keyval == 115 && (event.key.state & Gdk.ModifierType.CONTROL_MASK ) ) {
+                if (event.key.keyval == 115 && (event.key.state & Gdk.ModifierType.CONTROL_MASK ) > 0 ) {
                     print("SAVE: ctrl-S  pressed");
                     this.save();
                     return false;
