@@ -72,7 +72,7 @@
                                     "items": [
                                         {
                                             "listeners": {
-                                                "changed": "function (self) {\n\n    if(this.checkSyntax()) {\n        this.get('/Editor.save_button').el.sensitive = true;\n    }\n   // print(\"EDITOR CHANGED\");\n    this.get('/Editor').dirty = true;\n\n    // this.get('/LeftPanel.model').changed(  str , false);\n    return false;\n}\n\n"
+                                                "changed": "function (self) {\n\n    if(this.checkSyntax()) {\n        this.get('/Editor.save_button').el.sensitive = true;\n    }\n   // print(\"EDITOR CHANGED\");\n    this.get('/Editor').dirty = true;\n\n    // this.get('/LeftPanel.model').changed(  str , false);\n    return false;\n}\n"
                                             },
                                             "id": "buffer",
                                             "pack": "set_buffer",
