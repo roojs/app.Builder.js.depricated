@@ -22,8 +22,8 @@ function loaded()
     var out  ='';
     var out = f.toVala();
     print(out);;
-    File.write("/tmp/test.vala", out);
-    print('/tmp/test.vala');
+    File.write("/tmp/"+ f.name + ".vala", out);
+    print("/tmp/"+ f.name + ".vala");
     
     
 }
