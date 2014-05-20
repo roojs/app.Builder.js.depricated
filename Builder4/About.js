@@ -13,8 +13,13 @@ About=new XObject({
     xtype: Gtk.AboutDialog,
     listeners : {
         response : function (self, response_id) {
+            this.el.hide();
+        }
+        /*--
+        (rid) => {
             this.hide();
-        },
+        }
+        */,
         delete_event : function (self, event) {
             this.el.hide();
             return true;

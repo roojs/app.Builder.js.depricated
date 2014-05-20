@@ -40,6 +40,9 @@ public class Xcls_AboutDialog1 : Gtk.AboutDialog
         this.website = "http://www.akbkhome.com/blog.php";
 
         // listeners 
+        this.response.connect( (rid) => {
+            this.hide();
+        } );
     }
 
     // userdefined functions 
