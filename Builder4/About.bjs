@@ -1,13 +1,13 @@
 {
-    "id": "file-gtk-8",
+    "id": "file-gtk-1",
     "name": "About",
     "parent": "",
     "title": false,
-    "path": "/home/alan/gitlive/app.Builder.js/Sample/About.bjs",
+    "path": "/home/alan/gitlive/app.Builder.js/Builder4/About.bjs",
     "items": [
         {
             "listeners": {
-                "response": "function (self, response_id) {\n    this.el.hide();\n}",
+                "response": "function (self, response_id) {\n    this.hide();\n}",
                 "delete_event": "function (self, event) {\n    this.el.hide();\n    return true;\n}"
             },
             "authors": "Alan Knowles",
@@ -16,9 +16,10 @@
             "program_name": "app.Builder.js",
             "website": "http://www.akbkhome.com/blog.php",
             "xtype": "AboutDialog",
-            "|modal": true,
+            "|modal": "true",
             "|xns": "Gtk"
         }
     ],
-    "permname": ""
+    "permname": "",
+    "modOrder": ""
 }
