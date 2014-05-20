@@ -493,11 +493,11 @@ Gtk = XObject.define(
             
             for (var k in item) {
                 if (typeof(citems[k]) != 'undefined') {
-                    //strbuilder("\n" + pad + "// skip " + k + " - already used \n"); 
+                    strbuilder("\n" + pad + "// skip " + k + " - already used \n"); 
                     continue;
                 }
                 if (k[0] != '|') {
-                    // strbuilder("\n" + pad + "// skip " + k + " - not pipe \n"); 
+                      strbuilder("\n" + pad + "// skip " + k + " - not pipe \n"); 
                     continue;
                 }
                 // function in the format of {type} (args) { .... }
