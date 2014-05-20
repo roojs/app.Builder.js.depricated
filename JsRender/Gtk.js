@@ -189,9 +189,9 @@ Gtk = XObject.define(
         valaCompileCmd : function()
         {
             
-            var fn = '/tmp/' + this.name + '.js';
+            var fn = '/tmp/' + this.name + '.vala';
             print("WRITE : " + fn);
-            File.write(fn, this.toSource());
+            File.write(fn, this.toVala());
             
             
             var fn = GLib.path_get_dirname(this.path) + '/' + this.name + '.vala';
