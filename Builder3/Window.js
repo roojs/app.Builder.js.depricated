@@ -845,6 +845,7 @@ Window=new XObject({
                                                                                     this.file.save();
                                                                                     if (typeof(this.file.valaCompileCmd) !== 'undefined') {
                                                                                             var cmd = this.file.valaCompileCmd();
+                                                                                            print(cmd.join(" "));
                                                                                             try {
                                                                                             
                                                                                             var Spawn = imports.Spawn;
