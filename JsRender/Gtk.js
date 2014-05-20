@@ -188,6 +188,12 @@ Gtk = XObject.define(
         },
         valaCompileCmd : function()
         {
+            
+            var fn = '/tmp/' + this.name + '.js';
+            print("WRITE : " + fn);
+            File.write(fn, this.toSource());
+            
+            
             var fn = GLib.path_get_dirname(this.path) + '/' + this.name + '.vala';
             return ["valac",
                    "--pkg",  "gio-2.0",
