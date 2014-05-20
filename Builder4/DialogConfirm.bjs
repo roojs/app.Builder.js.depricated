@@ -8,7 +8,7 @@
         {
             "listeners": {
                 "response": "function (self, response_id) {\n   this.el.hide();\nprint(\"RESPOSE: \" + response_id);\n    if (response_id == -8) { //yes!\n   print(\"CALL SUCCES?\")\n    this.success(); //  fixme a delegate\n    }\n}\n/*--\n ( response_id) =>  {\n   this.hide();\n    //print(\"RESPOSE: \" + response_id);\n    if (response_id == -8) { //yes!\n           print(\"CALL SUCCES?\");\n      // this.success();\n    }\n\n}\n*/",
-                "delete_event": "function (self, event) {\n    this.el.hide();\n    return true;\n}"
+                "delete_event": "function (self, event) {\n    this.el.hide();\n    return true;\n}\n"
             },
             "text": "-",
             "title": "Please Confirm",
