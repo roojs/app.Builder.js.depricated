@@ -221,7 +221,7 @@ Gtk = XObject.define(
         toVala: function(testcompile)
         {
             var ret = '';
-            var testcompile = testcompile || false;
+            testcompile = testcompile || false;
             
             this.vcnt = 0;
             //print(JSON.stringify(this.items[0],null,4));
@@ -243,8 +243,10 @@ Gtk = XObject.define(
             ret += "    /tmp/test.vala  -o /tmp/" + item.xvala_id +"\n";
             ret += "*/\n";
             ret += "\n\n";
- 
-            //ret += "/* -- to test class\n";
+            if (!testcompile) {
+                ret += "/* -- to test class\n";  
+            }
+            //
             ret += "static int main (string[] args) {\n";
             ret += "    Gtk.init (ref args);\n";
             ret += "    new " + item.xvala_xcls +"();\n";
