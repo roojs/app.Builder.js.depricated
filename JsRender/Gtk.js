@@ -191,7 +191,7 @@ Gtk = XObject.define(
             
             var fn = '/tmp/' + this.name + '.vala';
             print("WRITE : " + fn);
-            File.write(fn, this.toVala());
+            File.write(fn, this.toVala(true));
             
             
             
