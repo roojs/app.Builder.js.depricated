@@ -218,9 +218,10 @@ Gtk = XObject.define(
         
         vcnt : false,
         
-        toVala: function()
+        toVala: function(testcompile)
         {
             var ret = '';
+            var testcompile = testcompile || false;
             
             this.vcnt = 0;
             //print(JSON.stringify(this.items[0],null,4));
