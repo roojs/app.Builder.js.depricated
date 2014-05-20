@@ -250,7 +250,7 @@ public class Xcls_Editor : Gtk.Window
                 Editor.dirty = true;
             
                 // this.get('/LeftPanel.model').changed(  str , false);
-                return false;
+                return ;
             } );
         }
 
