@@ -248,10 +248,10 @@ public class Xcls_Editor : Gtk.Window
         // userdefined functions 
         public string toString() {
                 
-                var s = new Gtk.TextIter();
-                var e = new Gtk.TextIter();
-                this.el.get_start_iter(s);
-                this.el.get_end_iter(e);
+                Gtk.TextIter s;
+                Gtk.TextIter e;
+                this.el.get_start_iter(out s);
+                this.el.get_end_iter(out e);
                 var ret = this.el.get_text(s,e,true);
                 //print("TO STRING? " + ret);
                 return ret;
