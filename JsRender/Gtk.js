@@ -322,7 +322,7 @@ Gtk = XObject.define(
             var citems = {};
             
             if (!depth) {
-                strbuilder(inpad + "public static " + xcls + "  " + item.id + ";\n\n");
+                strbuilder(inpad + "public static " + xcls + "  " + this.name + ";\n\n");
                  strbuilder(inpad + "private static " + xcls + "  _this;\n\n");
                  
                 
