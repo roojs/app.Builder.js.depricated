@@ -28,6 +28,7 @@ DialogConfirm=new XObject({
                    print("CALL SUCCES?")
               this.success();
             }
+        
         }
         */,
         delete_event : function (self, event) {
