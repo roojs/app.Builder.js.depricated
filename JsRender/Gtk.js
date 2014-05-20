@@ -402,18 +402,23 @@ Gtk = XObject.define(
             
             
             props.forEach(function(p) {
-                if (p.name == 'buttons') {
-                    print(JSON.stringify(p));Seed.quit()
-                    //code
-                }
+               
+                    
+                     
                 if (typeof(item[p.name]) != 'undefined' && typeof(item[p.name]) != 'object' ) {
-                    citems[p.name] = true; 
+                    citems[p.name] = true;
+                    
+                    
                     strbuilder(ipad + "this." + p.name + " = " + JSON.stringify(item[p.name]) + ";\n");
                     return;
                 }
                 if (typeof(item['|' + p.name]) != 'undefined' && typeof(item['|' + p.name]) != 'object' ) {
                     citems['|' + p.name] = true;
-                    strbuilder(ipad + "this." + p.name + " = " +  item['|' + p.name] + ";\n");
+                    if (p.ctor_only && ) {
+                        strbuilder(ipad + "Object(" + p.name + " : " +  item['|' + p.name] + ");\n");
+                    } else {
+                        strbuilder(ipad + "this." + p.name + " = " +  item['|' + p.name] + ";\n");
+                    }
                     return;
                 }
                // got a property..
