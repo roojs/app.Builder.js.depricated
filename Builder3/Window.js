@@ -845,6 +845,7 @@ Window=new XObject({
                                                                                     this.file.save();
                                                                                     if (typeof(this.file.valaCompileCmd) !== 'undefined') {
                                                                                             var cmd = this.file.valaCompileCmd();
+                                                                                            print(cmd.join(' ');
                                                                                             var out = {};
                                                                                             this.get('/Terminal').el.fork_command_full(
                                                                                                 Vte.PtyFlags.DEFAULT,
