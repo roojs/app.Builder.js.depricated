@@ -178,6 +178,7 @@ public class Xcls_Editor : Gtk.Window
                  // LeftPanel.model.changed(  str , false);
                  _this.dirty = false;
                  _this.save_button.sensitive = false;
+                 print("set save button grey");
                  return true;
             }
     }
