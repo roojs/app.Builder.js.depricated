@@ -388,6 +388,27 @@ Gtk = XObject.define(
                 var args = [];
                 for(var i =0;i< ctors[cls].length;i++) {
                     
+                    var n = ctors[cls][i];
+                    if (typeof(item[n]) != 'undefined' && typeof(item[n]) != 'object' ) {
+                        args.push(item[n]);
+                        continue;
+                    }
+                    if (typeof(item['|' + p.name]) != 'undefined' && typeof(item['|' + p.name]) != 'object' ) {
+                        citems['|' + p.name] = true;
+                        //if (p.ctor_only ) {
+                        //    strbuilder(ipad + "Object(" + p.name + " : " +  item['|' + p.name] + ");\n");
+                        //} else {
+                            strbuilder(ipad + "this.el." + p.name + " = " +  item['|' + p.name] + ";\n");
+                        //}
+                        return;
+                    }
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                     
                     
                 }
