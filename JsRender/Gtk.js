@@ -17,6 +17,8 @@ var ctors = {
 
     "Gtk.ScrolledWindow": [ "hadjustment:null", "vadjustment:null" ],
     "Gtk.SourceBuffer": [ "table:null" ],
+    "Gtk.VBox": [ "homogeneous:true", "spacing:0" ],
+    
  
 };
 
