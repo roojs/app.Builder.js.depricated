@@ -50,7 +50,7 @@ public class Xcls_Editor
 
         // set gobject values
         this.el.height_request = 300;
-        this.el.title = "Application Builder  - Code  Editor";
+        this.el.title = "Application Builder  Code  Editor";
         this.el.width_request = 500;
         var child_0 = new Xcls_VBox2();
         this.el.add (  child_0.el  );
@@ -136,12 +136,11 @@ public class Xcls_Editor
             // ctor 
         public Xcls_VBox2()
         {
-            this.el = new Gtk.VBox();
+            this.el = new Gtk.VBox( true, 0 );
 
             // my vars
 
             // set gobject values
-            this.el.homogeneous = true;
             var child_0 = new Xcls_Toolbar3();
             this.el.pack_start (  child_0.el , false,true );
             var child_1 = new Xcls_RightEditor();
