@@ -371,8 +371,8 @@ Gtk = XObject.define(
             
             // wrapped ctor..
             // this may need to look up properties to fill in the arguments..
-            
-            
+            var meths = this.palete.getPropertiesFor(item['|xns'] + '.' + item.xtype, 'methods');
+            print(JSON.stringify(meths,null,4));Seed.quit();
             
             strbuilder(ipad + "this.el = new " + cls + "()\n" );
             
