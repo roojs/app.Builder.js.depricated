@@ -439,7 +439,7 @@ Gtk = XObject.define(
                 if (vv.length < 2) {
                     continue;
                 }
-                strbuilder(ipad + "this." + k + " = " +   vv[1] +";\n");
+                strbuilder(ipad + "this" + k + " = " +   vv[1] +";\n");
                 
             }
            
