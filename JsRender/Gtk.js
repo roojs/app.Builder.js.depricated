@@ -12,7 +12,7 @@ Base = imports.JsRender.Base.Base;
 var gid = 1;
 
 var ctors = {
-    "Gtk.MessageDialog" : [ "parent", "flags:Gtk.DialogFlags.MODAL", "message_type",  "buttons", "message_format" ]
+    "Gtk.MessageDialog" : [ "parent:null", "flags:Gtk.DialogFlags.MODAL", "message_type",  "buttons", "message_format" ]
 };
 
 
