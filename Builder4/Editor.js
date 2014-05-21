@@ -28,7 +28,7 @@ Editor=new XObject({
                 // no hiding with errors.
                 return true;
             }
-            _this.hide();
+            _this.el.hide();
             _this.active_path = "";
             return true;
         }

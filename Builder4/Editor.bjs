@@ -3,11 +3,11 @@
     "name": "Editor",
     "parent": "",
     "title": false,
-    "path": "/home/alan/gitlive/app.Builder.js/Builder4/Editor.bjs",
+    "path": "/home/alan/gitlive/app.Builder/Builder4/Editor.bjs",
     "items": [
         {
             "listeners": {
-                "delete_event": "function (self, event) {\n    if (!this.get('/Editor.RightEditor').save()) {\n        // no hiding with errors.\n        return true;\n    }\n    this.el.hide();\n    this.get('/Editor').activePath = false;\n    return true;\n}\n/*--\n\n(event) => {\n    if (!Editor.RightEditor.save()) {\n        // no hiding with errors.\n        return true;\n    }\n    _this.hide();\n    _this.active_path = \"\";\n    return true;\n}\n\n*/",
+                "delete_event": "function (self, event) {\n    if (!this.get('/Editor.RightEditor').save()) {\n        // no hiding with errors.\n        return true;\n    }\n    this.el.hide();\n    this.get('/Editor').activePath = false;\n    return true;\n}\n/*--\n\n(event) => {\n    if (!Editor.RightEditor.save()) {\n        // no hiding with errors.\n        return true;\n    }\n    _this.el.hide();\n    _this.active_path = \"\";\n    return true;\n}\n\n*/",
                 "configure_event": "function (self, object) {\n    this.pos = this.el.get_position();\n\n    return false;\n}\n/*--\n (object) => {\n    _this.pos = true;\n    this.get_position(out _this.pos_root_x, out _this.pos_root_y);\n\n\n    return false;\n}\n*/\n",
                 "show": "function (self) {\n    if (this.pos) {\n        this.el.set_uposition(this.pos.root_x,this.pos.root_y);\n    }\n}\n/*--\n () => {\n    if (this.pos) {\n        _this.move(this.pos_root_x,this.pos_root_y);\n    }\n}\n\n*/"
             },

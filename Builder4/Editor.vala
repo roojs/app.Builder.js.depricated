@@ -1,9 +1,10 @@
 /* -- to compile
 valac  --pkg gio-2.0  --pkg posix  --pkg gtk+-3.0 --pkg libnotify --pkg gtksourceview-3.0  --pkg  libwnck-3.0 \
-    /tmp/test.vala  -o /tmp/Editor
+    /tmp/Editor.vala  -o /tmp/Editor
 */
 
 
+/* -- to test class
 static int main (string[] args) {
     Gtk.init (ref args);
     new Xcls_Editor();
@@ -11,14 +12,16 @@ static int main (string[] args) {
      Gtk.main ();
     return 0;
 }
+*/
 
 
 public static Xcls_Editor  Editor;
 
 private static Xcls_Editor  _this;
 
-public class Xcls_Editor : Gtk.Window
+public class Xcls_Editor
 {
+    public Gtk.Window el;
     public Xcls_save_button save_button;
     public Xcls_RightEditor RightEditor;
     public Xcls_view view;
@@ -35,39 +38,41 @@ public class Xcls_Editor : Gtk.Window
         // ctor 
     public Xcls_Editor()
     {
+        this.el = new Gtk.Window();
         _this = this;
         Editor = this;
 
         // my vars
-        this.activeEditor = "";
-        this.active_path = "";
-        this.dirty = false;
-        this.pos = false;
+        this..activeEditor = "";
+        this..active_path = "";
+        this..dirty = false;
+        this..pos = false;
 
         // set gobject values
-        this.height_request = 300;
-        this.title = "Application Builder - Editor";
-        this.width_request = 500;
-        this.add (  new Xcls_VBox2() );
+        this.el.height_request = 300;
+        this.el.title = "Application Builder - Editor";
+        this.el.width_request = 500;
+        var child_0 = new Xcls_VBox2();
+        this.el.add (  child_0.el  );
 
         // listeners 
-        this.delete_event.connect( (event) => {
+        this.el.delete_event.connect( (event) => {
             if (!Editor.RightEditor.save()) {
                 // no hiding with errors.
                 return true;
             }
-            _this.hide();
+            _this.el.hide();
             _this.active_path = "";
             return true;
         } );
-        this.configure_event.connect(  (object) => {
+        this.el.configure_event.connect(  (object) => {
             _this.pos = true;
             this.get_position(out _this.pos_root_x, out _this.pos_root_y);
         
         
             return false;
         } );
-        this.show.connect(  () => {
+        this.el.show.connect(  () => {
             if (this.pos) {
                 _this.move(this.pos_root_x,this.pos_root_y);
             }
@@ -75,6 +80,32 @@ public class Xcls_Editor : Gtk.Window
     }
 
     // userdefined functions 
+
+    // skip listeners - not pipe 
+
+    // skip .activeEditor - already used 
+
+    // skip .active_path - already used 
+
+    // skip .dirty - already used 
+
+    // skip .pos - already used 
+
+    // skip .pos_root_x - already used 
+
+    // skip .pos_root_y - already used 
+
+    // skip height_request - already used 
+
+    // skip id - not pipe 
+
+    // skip title - already used 
+
+    // skip width_request - already used 
+
+    // skip xtype - not pipe 
+
+    // skip |init - already used 
     public bool save()  {
         
             if (!Editor.RightEditor.save()) {
@@ -86,81 +117,153 @@ public class Xcls_Editor : Gtk.Window
             return true;
         
         }
-    public class Xcls_VBox2 : Gtk.VBox
+
+    // skip |xns - could not find seperator
+
+    // skip items - not pipe 
+
+    // skip xvala_cls - not pipe 
+
+    // skip xvala_xcls - not pipe 
+
+    // skip xvala_id - not pipe 
+    public class Xcls_VBox2
     {
+        public Gtk.VBox el;
 
             // my vars
 
             // ctor 
         public Xcls_VBox2()
         {
+            this.el = new Gtk.VBox();
 
             // my vars
 
             // set gobject values
-            this.pack_start (  new Xcls_Toolbar3(), false,true );
-            this.add (  new Xcls_RightEditor() );
+            var child_0 = new Xcls_Toolbar3();
+            this.el.pack_start (  child_0.el , false,true );
+            var child_1 = new Xcls_RightEditor();
+            this.el.add (  child_1.el  );
         }
 
         // userdefined functions 
+
+        // skip pack - not pipe 
+
+        // skip xtype - not pipe 
+
+        // skip |xns - could not find seperator
+
+        // skip items - not pipe 
+
+        // skip xvala_cls - not pipe 
+
+        // skip xvala_xcls - not pipe 
+
+        // skip xvala_id - not pipe 
     }
-    public class Xcls_Toolbar3 : Gtk.Toolbar
+    public class Xcls_Toolbar3
     {
+        public Gtk.Toolbar el;
 
             // my vars
 
             // ctor 
         public Xcls_Toolbar3()
         {
+            this.el = new Gtk.Toolbar();
 
             // my vars
 
             // set gobject values
-            this.add (  new Xcls_save_button() );
+            var child_0 = new Xcls_save_button();
+            this.el.add (  child_0.el  );
         }
 
         // userdefined functions 
+
+        // skip pack - not pipe 
+
+        // skip xtype - not pipe 
+
+        // skip |xns - could not find seperator
+
+        // skip items - not pipe 
+
+        // skip xvala_cls - not pipe 
+
+        // skip xvala_xcls - not pipe 
+
+        // skip xvala_id - not pipe 
     }
-    public class Xcls_save_button : Gtk.ToolButton
+    public class Xcls_save_button
     {
+        public Gtk.ToolButton el;
 
             // my vars
 
             // ctor 
         public Xcls_save_button()
         {
+            this.el = new Gtk.ToolButton();
             _this.save_button = this;
 
             // my vars
 
             // set gobject values
-            this.label = "Save";
+            this.el.label = "Save";
 
             // listeners 
-            this.clicked.connect( () => { 
+            this.el.clicked.connect( () => { 
                 Editor.RightEditor.save();
             } );
         }
 
         // userdefined functions 
+
+        // skip listeners - not pipe 
+
+        // skip id - not pipe 
+
+        // skip label - already used 
+
+        // skip xtype - not pipe 
+
+        // skip |xns - could not find seperator
+
+        // skip xvala_cls - not pipe 
+
+        // skip xvala_xcls - not pipe 
+
+        // skip xvala_id - not pipe 
     }
-    public class Xcls_RightEditor : Gtk.ScrolledWindow
+    public class Xcls_RightEditor
     {
+        public Gtk.ScrolledWindow el;
 
             // my vars
 
             // ctor 
         public Xcls_RightEditor()
         {
+            this.el = new Gtk.ScrolledWindow();
             _this.RightEditor = this;
 
             // my vars
 
             // set gobject values
-            this.add (  new Xcls_view() );
+            var child_0 = new Xcls_view();
+            this.el.add (  child_0.el  );
         }
 
         // userdefined functions 
+
+        // skip id - not pipe 
+
+        // skip pack - not pipe 
+
+        // skip xtype - not pipe 
         public bool save() {
                  print("editor.rightbutton.save");
                  if (_this.active_path.length  < 1 ) {
@@ -182,25 +285,38 @@ public class Xcls_Editor : Gtk.Window
                  print("set save button grey");
                  return true;
             }
+
+        // skip |xns - could not find seperator
+
+        // skip items - not pipe 
+
+        // skip xvala_cls - not pipe 
+
+        // skip xvala_xcls - not pipe 
+
+        // skip xvala_id - not pipe 
     }
-    public class Xcls_view : Gtk.SourceView
+    public class Xcls_view
     {
+        public Gtk.SourceView el;
 
             // my vars
 
             // ctor 
         public Xcls_view()
         {
+            this.el = new Gtk.SourceView();
             _this.view = this;
 
             // my vars
 
             // set gobject values
-            this.auto_indent = true;
-            this.indent_width = 4;
-            this.insert_spaces_instead_of_tabs = true;
-            this.show_line_numbers = true;
-            this.set_buffer (  new Xcls_buffer() );
+            this.el.auto_indent = true;
+            this.el.indent_width = 4;
+            this.el.insert_spaces_instead_of_tabs = true;
+            this.el.show_line_numbers = true;
+            var child_0 = new Xcls_buffer();
+            this.el.set_buffer (  child_0.el  );
 
             // init method 
                 var description =   Pango.FontDescription.from_string("monospace");
@@ -208,7 +324,7 @@ public class Xcls_Editor : Gtk.Window
                 this.override_font(description);
 
             // listeners 
-            this.key_release_event.connect( (event) => {
+            this.el.key_release_event.connect( (event) => {
                 
                 if (event.key.keyval == 115 && (event.key.state & Gdk.ModifierType.CONTROL_MASK ) > 0 ) {
                     print("SAVE: ctrl-S  pressed");
@@ -223,19 +339,51 @@ public class Xcls_Editor : Gtk.Window
         }
 
         // userdefined functions 
+
+        // skip listeners - not pipe 
+
+        // skip id - not pipe 
+
+        // skip indent_width - already used 
+
+        // skip pack - not pipe 
+
+        // skip xtype - not pipe 
+
+        // skip |auto_indent - already used 
+
+        // skip |init - already used 
+
+        // skip |insert_spaces_instead_of_tabs - already used 
+
+        // skip |load - could not find seperator
         public void save() {
             
                 Editor.RightEditor.save();
             }
+
+        // skip |show_line_numbers - already used 
+
+        // skip |xns - could not find seperator
+
+        // skip items - not pipe 
+
+        // skip xvala_cls - not pipe 
+
+        // skip xvala_xcls - not pipe 
+
+        // skip xvala_id - not pipe 
     }
-    public class Xcls_buffer : Gtk.SourceBuffer
+    public class Xcls_buffer
     {
+        public Gtk.SourceBuffer el;
 
             // my vars
 
             // ctor 
         public Xcls_buffer()
         {
+            this.el = new Gtk.SourceBuffer();
             _this.buffer = this;
 
             // my vars
@@ -243,7 +391,7 @@ public class Xcls_Editor : Gtk.Window
             // set gobject values
 
             // listeners 
-            this.changed.connect( () => {
+            this.el.changed.connect( () => {
                 // check syntax??
                     if(this.checkSyntax()) {
                     Editor.save_button.sensitive = true;
@@ -257,6 +405,14 @@ public class Xcls_Editor : Gtk.Window
         }
 
         // userdefined functions 
+
+        // skip listeners - not pipe 
+
+        // skip id - not pipe 
+
+        // skip pack - not pipe 
+
+        // skip xtype - not pipe 
         public bool checkSyntax() { 
                 // we could try running valac... ?? but it's a bit confusing..
                 return true;
@@ -272,5 +428,13 @@ public class Xcls_Editor : Gtk.Window
                 //print("TO STRING? " + ret);
                 return ret;
             }
+
+        // skip |xns - could not find seperator
+
+        // skip xvala_cls - not pipe 
+
+        // skip xvala_xcls - not pipe 
+
+        // skip xvala_id - not pipe 
     }
 }
