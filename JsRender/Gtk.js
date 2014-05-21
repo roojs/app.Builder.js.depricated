@@ -397,6 +397,7 @@ Gtk = XObject.define(
                     }
                     if (typeof(item['|' + nv[0]]) != 'undefined' && typeof(item['|' + nv[0]]) != 'object' ) {
                         citems[nv[0]] = true;
+                        citems['|' + nv[0]] = true;
                         args.push(item['|' + nv[0]]);
                         continue;
                     }
