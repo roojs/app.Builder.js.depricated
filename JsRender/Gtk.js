@@ -357,7 +357,7 @@ Gtk = XObject.define(
                     continue;
                 }
                 if (k == '.ctor') {
-                    conintue'
+                    continue; 
                 }
                 
                 var kk = k.substring(1);
