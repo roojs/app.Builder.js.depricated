@@ -11,7 +11,7 @@
                 "delete_event": "function (self, event) {\n    this.el.hide();\n    return true;\n}\n/*--\n(event) => {\n    this.hide();\n    return true;\n}\n*/\n\n\n"
             },
             ".ctor": "null, Gtk.DialogFlags.MODAL, Gtk.MessageType.WARNING, Gtk.ButtonsType.OK_CANCEL, \"\"",
-            "text": "-",
+            "text": "Test",
             "title": "Please Confirm",
             "xtype": "MessageDialog",
             "|buttons": "Gtk.ButtonsType.YES_NO",

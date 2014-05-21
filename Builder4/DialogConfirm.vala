@@ -39,7 +39,7 @@ public class Xcls_MessageDialog1
         this.el.buttons = Gtk.ButtonsType.YES_NO;
         this.el.message_type = Gtk.MessageType.QUESTION;
         this.el.modal = true;
-        this.el.text = "-";
+        this.el.text = "Test";
         this.el.title = "Please Confirm";
         this.el.use_markup = true;
 
