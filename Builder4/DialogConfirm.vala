@@ -28,7 +28,7 @@ public class Xcls_MessageDialog1
         // ctor 
     public Xcls_MessageDialog1()
     {
-        this.el = new Gtk.MessageDialog( null, Gtk.DialogFlags.MODAL, Gtk.MessageType.QUESTION, Gtk.ButtonsType.YES_NO, null );
+        this.el = new Gtk.MessageDialog( null, Gtk.DialogFlags.MODAL, Gtk.MessageType.QUESTION, Gtk.ButtonsType.YES_NO, "Tests" );
         _this = this;
         DialogConfirm = this;
 
