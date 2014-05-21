@@ -27,6 +27,7 @@
             "|xns": "Gtk",
             "items": [
                 {
+                    "homogeneous": "true",
                     "pack": "add",
                     "xtype": "VBox",
                     "|xns": "Gtk",
