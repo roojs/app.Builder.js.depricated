@@ -411,6 +411,8 @@ left:
 right:    
     Roo.bootstrap.NavGroup
     Roo.bootstrap.Form
+    Roo.bootstrap.Row
+    Roo.bootstrap.Column
     Roo.bootstrap.Container
 
 left:
