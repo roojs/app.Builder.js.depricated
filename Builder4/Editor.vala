@@ -74,7 +74,7 @@ public class Xcls_Editor
         } );
         this.el.show.connect(  () => {
             if (this.pos) {
-                _this.move(this.pos_root_x,this.pos_root_y);
+                _this.el.move(this.pos_root_x,this.pos_root_y);
             }
         } );
     }
