@@ -452,7 +452,9 @@ Gtk = XObject.define(
             
             props.forEach(function(p) {
                
-                    
+                if (typeof(citems[p.name]) != 'undefined') {
+                    return;
+                }
                      
                 if (typeof(item[p.name]) != 'undefined' && typeof(item[p.name]) != 'object' ) {
                     citems[p.name] = true;
