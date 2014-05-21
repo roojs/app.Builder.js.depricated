@@ -42,7 +42,7 @@ Editor=new XObject({
         /*--
          (object) => {
             _this.pos = true;
-            this.get_position(out _this.pos_root_x, out _this.pos_root_y);
+            this.el.get_position(out _this.pos_root_x, out _this.pos_root_y);
         
         
             return false;
