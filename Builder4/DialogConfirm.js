@@ -49,7 +49,7 @@ DialogConfirm=new XObject({
     }
     /*--
     void () {
-        this.show("test","test");
+        this.show("test");
     }
     */,
     buttons : Gtk.ButtonsType.YES_NO,

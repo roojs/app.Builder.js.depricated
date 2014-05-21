@@ -65,7 +65,7 @@ public class Xcls_MessageDialog1
 
     // skip xtype - not pipe 
     public void show_all() {
-            this.show("test","test");
+            this.show("test");
         }
 
     // skip |buttons - already used 
