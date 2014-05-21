@@ -113,7 +113,7 @@ public class Xcls_Editor
                 return true;
             }
             _this.active_path = "";
-            _this.hide();
+            _this.el.hide();
             return true;
         
         }
