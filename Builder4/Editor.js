@@ -342,9 +342,9 @@ Editor=new XObject({
                                         
                                         Gtk.TextIter s;
                                         Gtk.TextIter e;
-                                        this.get_start_iter(out s);
-                                        this.get_end_iter(out e);
-                                        var ret = this.get_text(s,e,true);
+                                        this.el.get_start_iter(out s);
+                                        this.el.get_end_iter(out e);
+                                        var ret = this.el.get_text(s,e,true);
                                         //print("TO STRING? " + ret);
                                         return ret;
                                     }
