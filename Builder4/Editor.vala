@@ -43,14 +43,14 @@ public class Xcls_Editor
         Editor = this;
 
         // my vars
-        this..activeEditor = "";
-        this..active_path = "";
-        this..dirty = false;
-        this..pos = false;
+        this.activeEditor = "";
+        this.active_path = "";
+        this.dirty = false;
+        this.pos = false;
 
         // set gobject values
         this.el.height_request = 300;
-        this.el.title = "Application Builder - Editor";
+        this.el.title = "Application Builder -Code  Editor";
         this.el.width_request = 500;
         var child_0 = new Xcls_VBox2();
         this.el.add (  child_0.el  );

@@ -1,5 +1,5 @@
 {
-    "id": "file-gtk-7",
+    "id": "file-gtk-17",
     "name": "Editor",
     "parent": "",
     "title": false,
@@ -19,7 +19,7 @@
             ".pos_root_y": "int",
             "height_request": 300,
             "id": "Editor",
-            "title": "Application Builder - Editor",
+            "title": "Application Builder -Code  Editor",
             "width_request": 500,
             "xtype": "Window",
             "|init": "function() {\n    XObject.prototype.init.call(this);\n   // this.show_all();\n}\n",
