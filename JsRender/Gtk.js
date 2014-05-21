@@ -378,8 +378,12 @@ Gtk = XObject.define(
             // introspection does not workk..... - as things like gtkmessagedialog
             
             
-            if (test) {
-                //code
+            if (typeof(item['.ctor']) !== 'undefined' {
+                 strbuilder(ipad + "this.el = new " + cls + "("+ item['.ctor'] + ")\n" );
+
+            } else {
+                strbuilder(ipad + "this.el = new " + cls + "()\n" );
+
             }
             //var meths = this.palete.getPropertiesFor(item['|xns'] + '.' + item.xtype, 'methods');
             //print(JSON.stringify(meths,null,4));Seed.quit();
