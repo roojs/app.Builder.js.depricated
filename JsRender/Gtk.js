@@ -420,7 +420,7 @@ Gtk = XObject.define(
                     citems[p.name] = true;
                     
                     
-                    strbuilder(ipad + "this." + p.name + " = " + JSON.stringify(item[p.name]) + ";\n");
+                    strbuilder(ipad + "this.el." + p.name + " = " + JSON.stringify(item[p.name]) + ";\n");
                     return;
                 }
                 if (typeof(item['|' + p.name]) != 'undefined' && typeof(item['|' + p.name]) != 'object' ) {
