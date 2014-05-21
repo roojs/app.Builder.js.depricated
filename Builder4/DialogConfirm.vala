@@ -45,7 +45,7 @@ public class Xcls_MessageDialog1
 
         // listeners 
         this.el.response.connect(  ( response_id) =>  {
-           this.hide();
+           this.el.hide();
             //print("RESPOSE: " + response_id);
             if (response_id == -8) { //yes!
                    print("CALL SUCCES?");

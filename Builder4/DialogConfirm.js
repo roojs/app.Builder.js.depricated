@@ -22,7 +22,7 @@ DialogConfirm=new XObject({
         }
         /*--
          ( response_id) =>  {
-           this.hide();
+           this.el.hide();
             //print("RESPOSE: " + response_id);
             if (response_id == -8) { //yes!
                    print("CALL SUCCES?");
