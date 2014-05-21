@@ -425,11 +425,11 @@ Gtk = XObject.define(
                 }
                 if (typeof(item['|' + p.name]) != 'undefined' && typeof(item['|' + p.name]) != 'object' ) {
                     citems['|' + p.name] = true;
-                    if (p.ctor_only ) {
-                        strbuilder(ipad + "Object(" + p.name + " : " +  item['|' + p.name] + ");\n");
-                    } else {
+                    //if (p.ctor_only ) {
+                    //    strbuilder(ipad + "Object(" + p.name + " : " +  item['|' + p.name] + ");\n");
+                    //} else {
                         strbuilder(ipad + "this." + p.name + " = " +  item['|' + p.name] + ";\n");
-                    }
+                    //}
                     return;
                 }
                // got a property..
