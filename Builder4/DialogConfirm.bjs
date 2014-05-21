@@ -1,5 +1,5 @@
 {
-    "id": "file-gtk-12",
+    "id": "file-gtk-2",
     "name": "DialogConfirm",
     "parent": "",
     "title": false,
@@ -7,7 +7,7 @@
     "items": [
         {
             "listeners": {
-                "response": "function (self, response_id) {\n   this.el.hide();\nprint(\"RESPOSE: \" + response_id);\n    if (response_id == -8) { //yes!\n   print(\"CALL SUCCES?\")\n    this.success(); //  fixme a delegate\n    }\n}\n/*--\n ( response_id) =>  {\n   this.el.hide();\n    //print(\"RESPOSE: \" + response_id);\n    if (response_id == -8) { //yes!\n           print(\"CALL SUCCES?\");\n      // this.success();\n    }\n\n}\n*/",
+                "response": "function (self, response_id) {\n   this.el.hide();\n     print(\"RESPOSE: \" + response_id);\n    if (response_id == -8) { //yes!\n   print(\"CALL SUCCES?\")\n    this.success(); //  fixme a delegate\n    }\n}\n/*--\n ( response_id) =>  {\n   this.el.hide();\n    //print(\"RESPOSE: \" + response_id);\n    if (response_id == -8) { //yes!\n           print(\"CALL SUCCES?\");\n      // this.success();\n    }\n\n}\n*/",
                 "delete_event": "function (self, event) {\n    this.el.hide();\n    return true;\n}\n/*--\n(event) => {\n    this.el.hide();\n    return true;\n}\n*/\n\n\n"
             },
             ".ctor": "null, Gtk.DialogFlags.MODAL, Gtk.MessageType.WARNING, Gtk.ButtonsType.OK_CANCEL, \"\"",
