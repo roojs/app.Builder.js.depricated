@@ -488,7 +488,7 @@ Gtk = XObject.define(
                     vv = vv.replace(/^\n+/,'');
                     vv = vv.replace(/\n+$/,'');
                     vv = vv.replace(/\n/g,"\n" + ipad);
-                    strbuilder(ipad + "this." + k + ".connect( " + vv  + " );\n");
+                    strbuilder(ipad + "this.el." + k + ".connect( " + vv  + " );\n");
                     
                 }
             }    
