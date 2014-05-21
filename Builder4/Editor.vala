@@ -393,7 +393,7 @@ public class Xcls_Editor
             this.el.changed.connect( () => {
                 // check syntax??
                     if(this.checkSyntax()) {
-                    Editor.save_button.sensitive = true;
+                    Editor.save_button.el.sensitive = true;
                 }
                // print("EDITOR CHANGED");
                 Editor.dirty = true;
