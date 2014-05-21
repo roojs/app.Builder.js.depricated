@@ -64,17 +64,8 @@ Editor=new XObject({
     },
     height_request : 300,
     id : "Editor",
-    title : "Application Builder  Code  Editor",
+    title : "Application Builder -  Code  Editor",
     width_request : 500,
-    show_all : function() {
-        
-    }
-    /*--
-    void () {
-        this.el.show_all();
-    
-    }
-    */,
     init : function() {
         XObject.prototype.init.call(this);
        // this.show_all();
@@ -99,6 +90,15 @@ Editor=new XObject({
         _this.active_path = "";
         _this.el.hide();
         return true;
+    
+    }
+    */,
+    show_all : function() {
+        
+    }
+    /*--
+    void () {
+        this.el.show_all();
     
     }
     */,

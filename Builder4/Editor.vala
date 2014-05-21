@@ -50,7 +50,7 @@ public class Xcls_Editor
 
         // set gobject values
         this.el.height_request = 300;
-        this.el.title = "Application Builder  Code  Editor";
+        this.el.title = "Application Builder -  Code  Editor";
         this.el.width_request = 500;
         var child_0 = new Xcls_VBox2();
         this.el.add (  child_0.el  );
@@ -104,10 +104,6 @@ public class Xcls_Editor
     // skip width_request - already used 
 
     // skip xtype - not pipe 
-    public void show_all() {
-            this.el.show_all();
-        
-        }
 
     // skip |init - already used 
     public bool save()  {
@@ -119,6 +115,10 @@ public class Xcls_Editor
             _this.active_path = "";
             _this.el.hide();
             return true;
+        
+        }
+    public void show_all() {
+            this.el.show_all();
         
         }
 
