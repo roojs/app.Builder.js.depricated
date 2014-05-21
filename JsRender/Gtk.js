@@ -390,19 +390,14 @@ Gtk = XObject.define(
                     
                     var n = ctors[cls][i];
                     if (typeof(item[n]) != 'undefined' && typeof(item[n]) != 'object' ) {
-                        args.push(item[n]);
+                        args.push(JSON.stringify(item[n]));
                         continue;
                     }
-                    if (typeof(item['|' + p.name]) != 'undefined' && typeof(item['|' + p.name]) != 'object' ) {
-                        citems['|' + p.name] = true;
-                        //if (p.ctor_only ) {
-                        //    strbuilder(ipad + "Object(" + p.name + " : " +  item['|' + p.name] + ");\n");
-                        //} else {
-                            strbuilder(ipad + "this.el." + p.name + " = " +  item['|' + p.name] + ";\n");
-                        //}
-                        return;
+                    if (typeof(item['|' + n]) != 'undefined' && typeof(item['|' + n]) != 'object' ) {
+                        args.push(item['|' + n]);
+                        continue;
                     }
-                    
+                    args.push('null'); 
                     
                     
                     
