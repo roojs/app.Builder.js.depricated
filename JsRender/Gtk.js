@@ -379,17 +379,16 @@ Gtk = XObject.define(
             
             
             if (typeof(item['.ctor']) !== 'undefined') {
-                 strbuilder(ipad + "this.el = new " + cls + "("+ item['.ctor'] + ")\n" );
+                 strbuilder(ipad + "this.el = new " + cls + "("+ item['.ctor'] + ");\n" );
 
             } else {
-                strbuilder(ipad + "this.el = new " + cls + "()\n" );
+                strbuilder(ipad + "this.el = new " + cls + "();\n" );
 
             }
             //var meths = this.palete.getPropertiesFor(item['|xns'] + '.' + item.xtype, 'methods');
             //print(JSON.stringify(meths,null,4));Seed.quit();
             
-            strbuilder(ipad + "this.el = new " + cls + "()\n" );
-            
+             
             
             // public static?
             if (!depth) {
