@@ -320,7 +320,7 @@ public class Xcls_Editor
             // init method 
                 var description =   Pango.FontDescription.from_string("monospace");
                 description.set_size(8000);
-                this.override_font(description);
+                this.el.override_font(description);
 
             // listeners 
             this.el.key_release_event.connect( (event) => {
