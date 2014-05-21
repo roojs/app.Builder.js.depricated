@@ -428,7 +428,7 @@ Gtk = XObject.define(
                     //if (p.ctor_only ) {
                     //    strbuilder(ipad + "Object(" + p.name + " : " +  item['|' + p.name] + ");\n");
                     //} else {
-                        strbuilder(ipad + "this." + p.name + " = " +  item['|' + p.name] + ";\n");
+                        strbuilder(ipad + "this.el." + p.name + " = " +  item['|' + p.name] + ";\n");
                     //}
                     return;
                 }
