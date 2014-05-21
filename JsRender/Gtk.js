@@ -445,7 +445,7 @@ Gtk = XObject.define(
                     var pack = packing.shift();
                     strbuilder(ipad + "var child_" + i + " = new " + ci.xvala_xcls + "();\n" )
                     
-                    strbuilder(ipad + "this." + pack + " (  new " + ci.xvala_xcls + "()" +
+                    strbuilder(ipad + "this.el." + pack + " (  child_" + i + ".el " +
                                (packing.length ? ", " + packing.join(",") : "") + " );\n"
                             );
                                
