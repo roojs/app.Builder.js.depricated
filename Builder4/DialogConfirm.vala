@@ -54,7 +54,7 @@ public class Xcls_MessageDialog1
         
         } );
         this.el.delete_event.connect( (event) => {
-            this.hide();
+            this.el.hide();
             return true;
         } );
     }
