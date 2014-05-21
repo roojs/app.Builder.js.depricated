@@ -45,7 +45,7 @@ DialogConfirm=new XObject({
     text : "Tests",
     title : "Please Confirm d",
     show_all : function() {
-        this.show("test","test");
+        this.show("test");
     }
     /*--
     void () {
