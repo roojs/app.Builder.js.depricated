@@ -371,6 +371,9 @@ Gtk = XObject.define(
             
             // wrapped ctor..
             // this may need to look up properties to fill in the arguments..
+            
+            
+            
             strbuilder(ipad + "this.el = new " + cls + "()\n" );
             
             
@@ -398,7 +401,7 @@ Gtk = XObject.define(
                 if (vv.length < 2) {
                     continue;
                 }
-                strbuilder(ipad + "this" + k + " = " +   vv[1] +";\n");
+                strbuilder(ipad + "this.el." + k + " = " +   vv[1] +";\n");
                 
             }
            
