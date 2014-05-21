@@ -28,7 +28,7 @@ public class Xcls_MessageDialog1
         // ctor 
     public Xcls_MessageDialog1()
     {
-        this.el = new Gtk.MessageDialog(null, Gtk.DialogFlags.MODAL, Gtk.MessageType.WARNING, Gtk.ButtonsType.OK_CANCEL, "");
+        this.el = new Gtk.MessageDialog( null, null, null, Gtk.ButtonsType.YES_NO, null );
         _this = this;
         DialogConfirm = this;
 
@@ -61,8 +61,6 @@ public class Xcls_MessageDialog1
     // userdefined functions 
 
     // skip listeners - not pipe 
-
-    // skip .ctor - not pipe 
 
     // skip text - already used 
 
