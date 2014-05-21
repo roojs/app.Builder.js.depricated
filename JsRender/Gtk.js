@@ -370,6 +370,7 @@ Gtk = XObject.define(
             strbuilder(pad + "public " + xcls + "()\n" + pad + "{\n");
             
             // wrapped ctor..
+            // this may need to look up properties to fill in the arguments..
             strbuilder(ipad + "this.el = new " + cls + "()\n" );
             
             
