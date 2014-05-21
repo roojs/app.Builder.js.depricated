@@ -61,7 +61,7 @@ DialogConfirm=new XObject({
     void (string msg) {
          //if (!this.el) { this.init(); } 
          //this.success = success;
-        this.text =  msg;
+        this.el.text =  msg;
         this.el.show_all();
     
     }

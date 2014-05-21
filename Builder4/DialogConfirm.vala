@@ -73,7 +73,7 @@ public class Xcls_MessageDialog1
     public void show(string msg) {
              //if (!this.el) { this.init(); } 
              //this.success = success;
-            this.text =  msg;
+            this.el.text =  msg;
             this.el.show_all();
         
         }
