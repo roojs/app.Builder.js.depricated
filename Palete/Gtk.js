@@ -288,6 +288,13 @@ Gtk = XObject.define(
                 print(ename +": ADD : " + n_original );
                 var flags = GIRepository.property_info_get_flags(prop);
                 if (flags & GIRepository.FunctionInfoFlags.IS_CONSTRUCTOR) {
+                    var add = {
+                        name :  n_original.replace(/\-/g, '_'),
+                        type : 'ctor', //???
+                        desc : this.doc(ename + '.signal.' + n_original)
+                    };
+                    this.genParams(prop,add);
+                    mlist.push(add);
                     continue;
                 }
                 if (!(flags & GIRepository.FunctionInfoFlags.IS_METHOD)) {
