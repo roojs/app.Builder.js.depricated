@@ -96,7 +96,7 @@ Editor=new XObject({
     items : [
         {
             xtype: Gtk.VBox,
-            homogeneous : "true",
+            homogeneous : true,
             pack : "add",
             items : [
                 {

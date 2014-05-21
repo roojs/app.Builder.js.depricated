@@ -141,7 +141,7 @@ public class Xcls_Editor
             // my vars
 
             // set gobject values
-            this.el.homogeneous = "true";
+            this.el.homogeneous = true;
             var child_0 = new Xcls_Toolbar3();
             this.el.pack_start (  child_0.el , false,true );
             var child_1 = new Xcls_RightEditor();
@@ -150,7 +150,7 @@ public class Xcls_Editor
 
         // userdefined functions 
 
-        // skip homogeneous - already used 
+        // skip |homogeneous - already used 
 
         // skip pack - not pipe 
 
