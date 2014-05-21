@@ -356,6 +356,10 @@ Gtk = XObject.define(
                    
                     continue;
                 }
+                if (k == '.ctor') {
+                    conintue'
+                }
+                
                 var kk = k.substring(1);
                 var v = item[k];
                 var vv = v.split(':');
@@ -371,7 +375,12 @@ Gtk = XObject.define(
             
             // wrapped ctor..
             // this may need to look up properties to fill in the arguments..
-            // introspection does not workk.....
+            // introspection does not workk..... - as things like gtkmessagedialog
+            
+            
+            if (test) {
+                //code
+            }
             //var meths = this.palete.getPropertiesFor(item['|xns'] + '.' + item.xtype, 'methods');
             //print(JSON.stringify(meths,null,4));Seed.quit();
             
