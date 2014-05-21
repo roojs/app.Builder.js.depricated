@@ -12,7 +12,12 @@ Base = imports.JsRender.Base.Base;
 var gid = 1;
 
 var ctors = {
-    "Gtk.MessageDialog" : [ "parent:null", "flags:Gtk.DialogFlags.MODAL", "message_type",  "buttons", "text" ]
+    "Gtk.MessageDialog" : [ "parent:null", "flags:Gtk.DialogFlags.MODAL", "message_type",  "buttons", "text" ],
+    "Gtk.ToolButton": [ "icon_widget:null", "label:null" ],
+
+    "Gtk.ScrolledWindow": [ "hadjustment:null", "vadjustment:null" ],
+    "Gtk.SourceBuffer": [ "table:null" ],
+ 
 };
 
 
