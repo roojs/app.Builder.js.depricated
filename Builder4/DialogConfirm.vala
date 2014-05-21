@@ -35,11 +35,8 @@ public class Xcls_MessageDialog1
         // my vars
 
         // set gobject values
-        this.el.buttons = Gtk.ButtonsType.YES_NO;
-        this.el.message_type = Gtk.MessageType.QUESTION;
         this.el.modal = true;
-        this.el.text = "Tests";
-        this.el.title = "Please Confirm";
+        this.el.title = "Please Confirm d";
         this.el.use_markup = true;
 
         // listeners 

@@ -11,7 +11,7 @@
                 "delete_event": "function (self, event) {\n    this.el.hide();\n    return true;\n}\n/*--\n(event) => {\n    this.el.hide();\n    return true;\n}\n*/\n\n\n"
             },
             "text": "Tests",
-            "title": "Please Confirm",
+            "title": "Please Confirm d",
             "xtype": "MessageDialog",
             "|buttons": "Gtk.ButtonsType.YES_NO",
             "|message_type": "Gtk.MessageType.QUESTION",
