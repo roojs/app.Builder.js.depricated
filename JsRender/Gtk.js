@@ -378,7 +378,7 @@ Gtk = XObject.define(
             // introspection does not workk..... - as things like gtkmessagedialog
             
             
-            if (typeof(item['.ctor']) !== 'undefined' {
+            if (typeof(item['.ctor']) !== 'undefined') {
                  strbuilder(ipad + "this.el = new " + cls + "("+ item['.ctor'] + ")\n" );
 
             } else {
