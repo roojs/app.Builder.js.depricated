@@ -13,7 +13,7 @@
             "text": "Tests",
             "title": "Please Confirm d",
             "xtype": "MessageDialog",
-            "|show_all": "function() {\n    \n}\n",
+            "|show_all": "function() {\n    this.show(\"test\",\"test\");\n}\n/*--\nvoid () {\n    this.show(\"test\",\"test\");\n}\n*/",
             "|buttons": "Gtk.ButtonsType.YES_NO",
             "|message_type": "Gtk.MessageType.QUESTION",
             "|modal": "true",

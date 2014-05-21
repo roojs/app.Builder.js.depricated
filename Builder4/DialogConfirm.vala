@@ -64,8 +64,9 @@ public class Xcls_MessageDialog1
     // skip title - already used 
 
     // skip xtype - not pipe 
-
-    // skip |show_all - could not find seperator
+    public void show_all() {
+            this.show("test","test");
+        }
 
     // skip |buttons - already used 
 
