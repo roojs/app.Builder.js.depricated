@@ -322,14 +322,17 @@ Gtk = XObject.define(
             var citems = {};
             
             if (!depth) {
+                // Global Vars..
                 strbuilder(inpad + "public static " + xcls + "  " + this.name + ";\n\n");
-                 strbuilder(inpad + "private static " + xcls + "  _this;\n\n");
+                strbuilder(inpad + "private static " + xcls + "  _this;\n\n");
                  
                 
             }
             
             // class header..
-            strbuilder(inpad + "public class " + xcls + " : " + cls + "\n" + inpad + "{\n");
+            //strbuilder(inpad + "public class " + xcls + " : " + cls + "\n" + inpad + "{\n");
+            strbuilder(inpad + "public class " + xcls + "\n" + inpad + "{\n");
+            strbuilder(pad + "public " + xcls + " el;\n");
             
             // properties??
                 
