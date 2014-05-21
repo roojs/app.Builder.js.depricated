@@ -385,7 +385,15 @@ Gtk = XObject.define(
             
             
             if (typeof(ctors[cls]) !== 'undefined') {
-                 strbuilder(ipad + "this.el = new " + cls + "("+ item['.ctor'] + ");\n" );
+                var args = [];
+                for(var i =0;i< ctors[cls].length;i++) {
+                    
+                    
+                    
+                }
+                
+                
+                 strbuilder(ipad + "this.el = new " + cls + "( "+ args.join(", ") + " );\n" );
 
             } else {
                 strbuilder(ipad + "this.el = new " + cls + "();\n" );
