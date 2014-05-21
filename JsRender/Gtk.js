@@ -399,17 +399,8 @@ Gtk = XObject.define(
                     }
                     args.push('null'); 
                     
-                    
-                    
-                    
-                    
-                    
-                    
-                    
                 }
-                
-                
-                 strbuilder(ipad + "this.el = new " + cls + "( "+ args.join(", ") + " );\n" );
+                strbuilder(ipad + "this.el = new " + cls + "( "+ args.join(", ") + " );\n" );
 
             } else {
                 strbuilder(ipad + "this.el = new " + cls + "();\n" );
