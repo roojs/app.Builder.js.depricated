@@ -281,7 +281,7 @@ public class Xcls_Editor
                  
                  // LeftPanel.model.changed(  str , false);
                  _this.dirty = false;
-                 _this.save_button.sensitive = false;
+                 _this.save_button.el.sensitive = false;
                  print("set save button grey");
                  return true;
             }
