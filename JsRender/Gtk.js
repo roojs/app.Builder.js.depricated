@@ -388,7 +388,8 @@ Gtk = XObject.define(
                 var args = [];
                 for(var i =0;i< ctors[cls].length;i++) {
                     
-                    var n = ctors[cls][i];
+                    var nv = ctors[cls][i].split(':');
+                    
                     if (typeof(item[n]) != 'undefined' && typeof(item[n]) != 'object' ) {
                         args.push(JSON.stringify(item[n]));
                         continue;
