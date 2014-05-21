@@ -50,7 +50,7 @@ public class Xcls_Editor
 
         // set gobject values
         this.el.height_request = 300;
-        this.el.title = "Application Builder -Code  Editor";
+        this.el.title = "Application Builder  -Code  Editor";
         this.el.width_request = 500;
         var child_0 = new Xcls_VBox2();
         this.el.add (  child_0.el  );

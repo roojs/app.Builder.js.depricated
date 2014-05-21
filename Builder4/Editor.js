@@ -64,7 +64,7 @@ Editor=new XObject({
     },
     height_request : 300,
     id : "Editor",
-    title : "Application Builder -Code  Editor",
+    title : "Application Builder  -Code  Editor",
     width_request : 500,
     init : function() {
         XObject.prototype.init.call(this);
