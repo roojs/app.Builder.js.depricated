@@ -443,6 +443,8 @@ Gtk = XObject.define(
                     var ci = item.items[i];
                     var packing = ci.pack ? ci.pack.split(',') : [ 'add' ];
                     var pack = packing.shift();
+                    strbuilder(ipad + "var child_" + i + " = new " + ci.xvala_xcls + "();\n" )
+                    
                     strbuilder(ipad + "this." + pack + " (  new " + ci.xvala_xcls + "()" +
                                (packing.length ? ", " + packing.join(",") : "") + " );\n"
                             );
