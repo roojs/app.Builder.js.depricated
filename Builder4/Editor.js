@@ -68,7 +68,13 @@ Editor=new XObject({
     width_request : 500,
     show_all : function() {
         
-    },
+    }
+    /*--
+    void () {
+        this.el.show_all();
+    
+    }
+    */,
     init : function() {
         XObject.prototype.init.call(this);
        // this.show_all();

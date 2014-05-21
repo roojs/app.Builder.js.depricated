@@ -104,8 +104,10 @@ public class Xcls_Editor
     // skip width_request - already used 
 
     // skip xtype - not pipe 
-
-    // skip |show_all - could not find seperator
+    public void show_all() {
+            this.el.show_all();
+        
+        }
 
     // skip |init - already used 
     public bool save()  {
