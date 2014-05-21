@@ -391,10 +391,12 @@ Gtk = XObject.define(
                     var nv = ctors[cls][i].split(':');
                     
                     if (typeof(item[nv[0]]) != 'undefined' && typeof(item[nv[0]]) != 'object' ) {
+                        citems[nv[0]] = true;
                         args.push(JSON.stringify(item[nv[0]]));
                         continue;
                     }
                     if (typeof(item['|' + nv[0]]) != 'undefined' && typeof(item['|' + nv[0]]) != 'object' ) {
+                        citems[nv[0]] = true;
                         args.push(item['|' + nv[0]]);
                         continue;
                     }
