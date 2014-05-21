@@ -390,15 +390,15 @@ Gtk = XObject.define(
                     
                     var nv = ctors[cls][i].split(':');
                     
-                    if (typeof(item[n]) != 'undefined' && typeof(item[n]) != 'object' ) {
-                        args.push(JSON.stringify(item[n]));
+                    if (typeof(item[nv[0]]) != 'undefined' && typeof(item[v[0]]) != 'object' ) {
+                        args.push(JSON.stringify(item[v[0]]));
                         continue;
                     }
-                    if (typeof(item['|' + n]) != 'undefined' && typeof(item['|' + n]) != 'object' ) {
-                        args.push(item['|' + n]);
+                    if (typeof(item['|' + v[0]]) != 'undefined' && typeof(item['|' + v[0]]) != 'object' ) {
+                        args.push(item['|' + v[0]]);
                         continue;
                     }
-                    args.push('null'); 
+                    args.push(nv.length > 1 ? nv[1] : 'null'); 
                     
                 }
                 strbuilder(ipad + "this.el = new " + cls + "( "+ args.join(", ") + " );\n" );
