@@ -65,6 +65,8 @@ public class Xcls_MessageDialog1
 
     // skip xtype - not pipe 
 
+    // skip |show_all - could not find seperator
+
     // skip |buttons - already used 
 
     // skip |message_type - already used 

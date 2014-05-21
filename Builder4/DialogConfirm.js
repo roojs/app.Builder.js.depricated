@@ -44,6 +44,9 @@ DialogConfirm=new XObject({
     },
     text : "Tests",
     title : "Please Confirm d",
+    show_all : function() {
+        
+    },
     buttons : Gtk.ButtonsType.YES_NO,
     message_type : Gtk.MessageType.QUESTION,
     modal : true,
