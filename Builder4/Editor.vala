@@ -105,6 +105,8 @@ public class Xcls_Editor
 
     // skip xtype - not pipe 
 
+    // skip |show_all - could not find seperator
+
     // skip |init - already used 
     public bool save()  {
         

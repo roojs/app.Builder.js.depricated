@@ -66,6 +66,9 @@ Editor=new XObject({
     id : "Editor",
     title : "Application Builder  Code  Editor",
     width_request : 500,
+    show_all : function() {
+        
+    },
     init : function() {
         XObject.prototype.init.call(this);
        // this.show_all();
