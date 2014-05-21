@@ -11,6 +11,12 @@ Base = imports.JsRender.Base.Base;
 
 var gid = 1;
 
+var ctors = {
+    'Gtk.MessageDialog' : [ "parent", "flags", "type",  "buttons", "message_format" ]
+}
+
+
+
 Gtk = XObject.define( 
     
     
