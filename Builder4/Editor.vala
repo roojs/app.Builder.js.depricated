@@ -331,7 +331,7 @@ public class Xcls_Editor
             // listeners 
             this.el.key_release_event.connect( (event) => {
                 
-                if (event.key.keyval == 115 && (event.key.state & Gdk.ModifierType.CONTROL_MASK ) > 0 ) {
+                if (event.keyval == 115 && (event.state & Gdk.ModifierType.CONTROL_MASK ) > 0 ) {
                     print("SAVE: ctrl-S  pressed");
                     this.save();
                     return false;
