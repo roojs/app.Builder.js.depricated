@@ -330,9 +330,9 @@ Gtk = XObject.define(
             }
             
             // class header..
-            //strbuilder(inpad + "public class " + xcls + " : " + cls + "\n" + inpad + "{\n");
+            // class xxx {   WrappedGtk  el; }
             strbuilder(inpad + "public class " + xcls + "\n" + inpad + "{\n");
-            strbuilder(pad + "public " + xcls + " el;\n");
+            strbuilder(pad + "public " + cls + " el;\n");
             
             // properties??
                 
@@ -368,6 +368,10 @@ Gtk = XObject.define(
             // ctor..
             strbuilder("\n" + ipad + "// ctor \n");
             strbuilder(pad + "public " + xcls + "()\n" + pad + "{\n");
+            
+            // wrapped ctor..
+            strbuilder(ipad + "this.el = new " + cls + "()\n" );
+            
             
             // public static?
             if (!depth) {
