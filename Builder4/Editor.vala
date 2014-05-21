@@ -50,7 +50,7 @@ public class Xcls_Editor
 
         // set gobject values
         this.el.height_request = 300;
-        this.el.title = "Application Builder  -Code  Editor";
+        this.el.title = "Application Builder  - Code  Editor";
         this.el.width_request = 500;
         var child_0 = new Xcls_VBox2();
         this.el.add (  child_0.el  );
@@ -206,13 +206,12 @@ public class Xcls_Editor
             // ctor 
         public Xcls_save_button()
         {
-            this.el = new Gtk.ToolButton();
+            this.el = new Gtk.ToolButton( null, "Save" );
             _this.save_button = this;
 
             // my vars
 
             // set gobject values
-            this.el.label = "Save";
 
             // listeners 
             this.el.clicked.connect( () => { 
@@ -247,7 +246,7 @@ public class Xcls_Editor
             // ctor 
         public Xcls_RightEditor()
         {
-            this.el = new Gtk.ScrolledWindow();
+            this.el = new Gtk.ScrolledWindow( null, null );
             _this.RightEditor = this;
 
             // my vars
@@ -383,7 +382,7 @@ public class Xcls_Editor
             // ctor 
         public Xcls_buffer()
         {
-            this.el = new Gtk.SourceBuffer();
+            this.el = new Gtk.SourceBuffer( null );
             _this.buffer = this;
 
             // my vars
