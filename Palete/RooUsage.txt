@@ -288,9 +288,9 @@ right:
   Roo.data.SimpleStore
 
 left:
-    Roo.bootstrap.ComboBoxArray:combo
+    Roo.form.ComboBoxArray:combo
 right:
-    Roo.bootstrap.ComboBox
+    Roo.form.ComboBox
 
 left:
   Roo.data.Store:proxy
