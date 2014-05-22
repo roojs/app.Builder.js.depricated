@@ -288,6 +288,11 @@ right:
   Roo.data.SimpleStore
 
 left:
+    Roo.bootstrap.ComboArray:combo
+right:
+    Roo.bootstrap.Combo
+
+left:
   Roo.data.Store:proxy
 right:
   Roo.data.HttpProxy
