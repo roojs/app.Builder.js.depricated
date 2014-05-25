@@ -48,6 +48,7 @@ public class Xcls_MessageDialog1
               // this.success();
             }
         
+        
         } );
         this.el.delete_event.connect( (event) => {
             this.el.hide();
@@ -64,9 +65,6 @@ public class Xcls_MessageDialog1
     // skip title - already used 
 
     // skip xtype - not pipe 
-    public void show_all() {
-            this.show("test");
-        }
 
     // skip |buttons - already used 
 
@@ -79,6 +77,9 @@ public class Xcls_MessageDialog1
             this.el.text =  msg;
             this.el.show_all();
         
+        }
+    public void show_all() {
+            this.show("test");
         }
 
     // skip |use_markup - already used 

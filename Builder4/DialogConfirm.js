@@ -29,6 +29,7 @@ DialogConfirm=new XObject({
               // this.success();
             }
         
+        
         }
         */,
         delete_event : function (self, event) {
@@ -44,14 +45,6 @@ DialogConfirm=new XObject({
     },
     text : "Tests",
     title : "Please Confirm d",
-    show_all : function() {
-        this.show("test");
-    }
-    /*--
-    void () {
-        this.show("test");
-    }
-    */,
     buttons : Gtk.ButtonsType.YES_NO,
     message_type : Gtk.MessageType.QUESTION,
     modal : true,
@@ -74,6 +67,14 @@ DialogConfirm=new XObject({
     
     }
     
+    */,
+    show_all : function() {
+        this.show("test");
+    }
+    /*--
+    void () {
+        this.show("test");
+    }
     */,
     use_markup : true
 });
