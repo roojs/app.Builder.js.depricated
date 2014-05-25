@@ -38,10 +38,10 @@ DialogNewComponent=new XObject({
                      
                     return;
                 }
-                // this may be more complicated...
-                for (var i in this.def) {
-                    this.file[i] =  this.get(i).el.get_text();
-                }
+                // FIXME - this may be more complicated...
+                //for (var i in this.def) {
+                //    this.file[i] =  this.get(i).el.get_text();
+                //}
                
                 if (!isNew) {
                     this.file.save();
