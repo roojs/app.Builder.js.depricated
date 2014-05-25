@@ -1,13 +1,13 @@
 {
-    "id": "file-gtk-2",
+    "id": "file-gtk-3",
     "name": "DialogNewComponent",
     "parent": "",
     "title": false,
-    "path": "/home/alan/gitlive/app.Builder.js/Sample/DialogNewComponent.bjs",
+    "path": "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.bjs",
     "items": [
         {
             "listeners": {
-                "delete_event": "function (self, event) {\n    this.el.hide();\n    return true;\n}",
+                "delete_event": "function (self, event) {\n    this.el.hide();\n    return true;\n}\n",
                 "response": "function (self, response_id) {\n\tif (response_id < 1) { // cancel!\n            this.el.hide();\n            return;\n        }\n\n        if (!this.get('name').el.get_text().length ) {\n            this.get('/StandardErrorDialog').show(\n                \"You have to set Project name \"\n            );\n             \n            return;\n        }\n        var isNew = this.file.name.length ? false : true;\n        \n        if (this.file.name.length && this.file.name != this.get('name').el.get_text()) {\n            this.get('/StandardErrorDialog').show(\n                \"Sorry changing names does not work yet. \"\n            );\n             \n            return;\n        }\n        for (var i in this.def) {\n            this.file[i] =  this.get(i).el.get_text();\n        }\n       \n        if (!isNew) {\n            this.file.save();\n            this.el.hide();\n            return;\n        }\n       \n    \n\tvar dir ='';\n        for (var i in this.project.paths) {\n \t\tdir = i;\n\t\tbreak;\n\t}\n\n \n        \n        // what about .js ?\n         if (GLib.file_test (GLib.dir + '/' + this.file.name + '.bjs', GLib.FileTest.EXISTS)) {\n            StandardErrorDialog.show(\n                \"That file already exists\"\n            ); \n            return;\n        }\n        this.el.hide();\n        \n        \n        //var tmpl = this.project.loadFileOnly(DialogNewComponent.get('template').getValue());\n        \n        var _this = this;\n        var nf = _this.project.create(dir + '/' + this.file.name + '.bjs');\n        for (var i in this.file) {\n            nf[i] = this.file[i];\n        }\n        if (this.get('/DialogNewComponent').success) {\n            this.get('/DialogNewComponent').success(_this.project, nf);\n        }\n}",
                 "show": "function (self) {\n  this.el.show_all();\n}"
             },
@@ -16,8 +16,8 @@
             "id": "DialogNewComponent",
             "title": "New Component",
             "xtype": "Dialog",
-            "|deletable": false,
-            "|modal": true,
+            "|deletable": "false",
+            "|modal": "true",
             "|show": "function (c) \n{\n    this.project = c.project;\n    if (!this.el) {\n        this.init();\n    }\n    this.def =  { \n        name : '' , \n        title : '' ,\n        region : '' ,\n        parent: '',\n      //  disable: '',\n        modOrder : '0',\n        permname : ''\n    };\n    for (var i in this.def) {\n        c[i] = c[i] || this.def[i];\n        this.get(i).el.set_text(c[i]);\n    }\n    if (c.name) {\n        this.el.set_title(\"Edit File Details - \" + c.name);\n    } else {\n        this.el.set_title(\"Create New File\");\n    }\n     \n    this.file = c;\n    console.log('show all');\n    this.el.show_all();\n    this.success = c.success;\n    \n    \n}",
             "|xns": "Gtk",
             "items": [
@@ -154,5 +154,7 @@
                 }
             ]
         }
-    ]
+    ],
+    "permname": "",
+    "modOrder": ""
 }
