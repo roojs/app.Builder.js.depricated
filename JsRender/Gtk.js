@@ -528,13 +528,21 @@ Gtk = XObject.define(
                     
                     var v = item.listeners[k].split(/\/*--/);
                     if (v.length < 2) {
+                        
+                        
+                        
+                        
+                        
+                        
+                        
                         continue;
+                    } else { 
+                        var vv = v[1].replace('*/', "");
+                        //print(JSON.stringify(vv));Seed.quit();
+                        vv = vv.replace(/^\n+/,'');
+                        vv = vv.replace(/\n+$/,'');
+                        vv = vv.replace(/\n/g,"\n" + ipad);
                     }
-                    var vv = v[1].replace('*/', "");
-                    //print(JSON.stringify(vv));Seed.quit();
-                    vv = vv.replace(/^\n+/,'');
-                    vv = vv.replace(/\n+$/,'');
-                    vv = vv.replace(/\n/g,"\n" + ipad);
                     strbuilder(ipad + "this.el." + k + ".connect( " + vv  + " );\n");
                     
                 }
