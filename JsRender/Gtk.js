@@ -530,13 +530,15 @@ Gtk = XObject.define(
                     if (v.length < 2) {
                         var vv = v[0].replace(/^function/, '');
                         vv = v[0].replace(/\) \{/, ') => {');
-                       
+                        vv = vv.replace(/^\n+/,'');
+                        vv = vv.replace(/\n+$/,'');
+                        vv = vv.replace(/\n/g,"\n" + ipad);
                         
                         
                         
                         
                         
-                        continue;
+                        //continue;
                     } else { 
                         var vv = v[1].replace('*/', "");
                         //print(JSON.stringify(vv));Seed.quit();
