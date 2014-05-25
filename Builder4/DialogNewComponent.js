@@ -22,9 +22,9 @@ DialogNewComponent=new XObject({
                     return;
                 }
         
-                if (!this.get('name').el.get_text().length ) {
-                    this.get('/StandardErrorDialog').show(
-                        "You have to set Project name "
+                if (DialogNewComponent.name.el.get_text().length  < 1) {
+                    StandardErrorDialog.show(
+                        "You haDe to set Project name "
                     );
                      
                     return;
