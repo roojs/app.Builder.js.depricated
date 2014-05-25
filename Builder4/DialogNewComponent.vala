@@ -80,6 +80,7 @@ public class Xcls_DialogNewComponent
                      
                     return;
                 }
+                // this may be more complicated...
                 for (var i in this.def) {
                     this.file[i] =  this.get(i).el.get_text();
                 }
