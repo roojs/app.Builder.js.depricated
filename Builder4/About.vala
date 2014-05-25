@@ -67,6 +67,8 @@ public class Xcls_AboutDialog1
 
     // skip xtype - not pipe 
 
+    // skip |show_all - could not find seperator
+
     // skip |modal - already used 
 
     // skip |xns - could not find seperator

@@ -36,6 +36,9 @@ About=new XObject({
     license : "LGPL",
     program_name : "app.Builder.js",
     website : "http://www.akbkhome.com/blog.php",
+    show_all : function() {
+        
+    },
     modal : true
 });
 About.init();
