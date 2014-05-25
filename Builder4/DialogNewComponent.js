@@ -60,7 +60,7 @@ DialogNewComponent=new XObject({
          
                 
                 // what about .js ?
-                 if (GLib.file_test (GLib.dir + '/' + this.file.name + '.bjs', GLib.FileTest.EXISTS)) {
+                if (GLib.file_test (GLib.dir + '/' + this.file.name + '.bjs', GLib.FileTest.EXISTS)) {
                     StandardErrorDialog.show(
                         "That file already exists"
                     ); 
@@ -70,14 +70,14 @@ DialogNewComponent=new XObject({
                 
                 
                 //var tmpl = this.project.loadFileOnly(DialogNewComponent.get('template').getValue());
-                
-                var _this = this;
+                 
                 var nf = _this.project.create(dir + '/' + this.file.name + '.bjs');
-                for (var i in this.file) {
-                    nf[i] = this.file[i];
-                }
-                if (this.get('/DialogNewComponent').success) {
-                    this.get('/DialogNewComponent').success(_this.project, nf);
+                //for (var i in this.file) {
+                //    nf[i] = this.file[i];
+                //}
+                
+                if (DialogNewComponent.success != null) {
+                    DialogNewComponent.success(_this.project, nf);
                 }
         },
         show : function (self) {
