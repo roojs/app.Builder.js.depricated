@@ -93,10 +93,11 @@ public class Xcls_DialogNewComponent
                
             
         	var dir ='';
-                for (var i in this.project.paths) {
-         		dir = i;
-        		break;
-        	}
+        	//FIXME...
+                //for (var i in this.project.paths) {
+         	//	dir = i;
+        	//	break;
+        	//}
         
          
                 
