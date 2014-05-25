@@ -17,7 +17,7 @@ About=new XObject({
         }
         /*--
         (rid) => {
-            this.hide();
+            this.el.hide();
         }
         */,
         delete_event : function (self, event) {
