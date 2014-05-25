@@ -73,7 +73,7 @@ public class Xcls_DialogNewComponent
                 }
                 var isNew = this.file.name.length  > 0 ? false : true;
                 
-                if (this.file.name.length > 0 && this.file.name != this.get('name').el.get_text()) {
+                if (this.file.name.length > 0 && this.file.name != _this.name.el.get_text()) {
                     StandardErrorDialog.show(
                         "Sorry changing names does not work yet. "
                     );
