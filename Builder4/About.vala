@@ -66,8 +66,9 @@ public class Xcls_AboutDialog1
     // skip website - already used 
 
     // skip xtype - not pipe 
-
-    // skip |show_all - could not find seperator
+    public void show_all() {
+            this.el.show_all();
+        }
 
     // skip |modal - already used 
 

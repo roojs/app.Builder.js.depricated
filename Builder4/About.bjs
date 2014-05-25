@@ -16,7 +16,7 @@
             "program_name": "app.Builder.js",
             "website": "http://www.akbkhome.com/blog.php",
             "xtype": "AboutDialog",
-            "|show_all": "function() {\n    \n}\n",
+            "|show_all": "function() {\n    \n}\n/*--\nvoid () {\n    this.el.show_all();\n}\n*/",
             "|modal": "true",
             "|xns": "Gtk"
         }

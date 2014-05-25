@@ -38,7 +38,12 @@ About=new XObject({
     website : "http://www.akbkhome.com/blog.php",
     show_all : function() {
         
-    },
+    }
+    /*--
+    void () {
+        this.el.show_all();
+    }
+    */,
     modal : true
 });
 About.init();
