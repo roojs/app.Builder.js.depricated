@@ -45,6 +45,10 @@ public class Xcls_AboutDialog1
         this.el.response.connect( (rid) => {
             this.el.hide();
         } );
+        this.el.delete_event.connect(  (self, event) => {
+            this.el.hide();
+            return true;
+        } );
     }
 
     // userdefined functions 

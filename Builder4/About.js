@@ -24,6 +24,12 @@ About=new XObject({
             this.el.hide();
             return true;
         }
+        /*--
+         (self, event) => {
+            this.el.hide();
+            return true;
+        }
+        */
     },
     authors : "Alan Knowles",
     copyright : "LGPL",

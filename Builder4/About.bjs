@@ -8,7 +8,7 @@
         {
             "listeners": {
                 "response": "function (self, response_id) {\n    this.el.hide();\n}\n/*--\n(rid) => {\n    this.el.hide();\n}\n*/\n",
-                "delete_event": "function (self, event) {\n    this.el.hide();\n    return true;\n}"
+                "delete_event": "function (self, event) {\n    this.el.hide();\n    return true;\n}\n/*--\n (self, event) => {\n    this.el.hide();\n    return true;\n}\n*/"
             },
             "authors": "Alan Knowles",
             "copyright": "LGPL",
