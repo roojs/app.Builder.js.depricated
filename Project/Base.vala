@@ -25,7 +25,9 @@ public class Base {
     string xtype = "";
     
     
-    void Base (cfg) {
+    void Base (string name  ) {
+        
+        this.name = name;
         
         
         this.paths = new Array<string>;
