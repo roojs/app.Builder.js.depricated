@@ -25,7 +25,7 @@ public class Base {
     string xtype = "";
     
     
-    void Base (string name  ) {
+    void Base (string path) {
         
         this.name = name;
         
@@ -74,51 +74,43 @@ public class Base {
         Json.Builder builder = new Json.Builder ();
         
         builder.begin_object ();
+        
+        builder.set_member_name ("name");
+        builder.add_string_value (this.name);
+
+        
         builder.set_member_name ("fn");
         builder.add_string_value (this.fn);
 
-        builder.begin_object ();
         builder.set_member_name ("xtype");
         builder.add_string_value (this.xtype);
         
+        // file ??? try/false?
+        builder.set_member_name ("paths");
+        builder.begin_array ();
+        for(var i =0 ;i < this.paths.length;i++) {
+            builder.add_string_value (this.paths.item(i));
+        }
+        builder.end_array ();
         
         
-            for (var k in _this) {
-                
-                if (['files', 'tree'].indexOf(k) > -1) {
-                    continue;
-                }
-                if (k != 'paths') {
-                    if ((typeof(_this[k]) == 'object') ||(typeof(_this[k]) == 'function')) {
-                        continue;
-                    }
-                }
-                print("Project.Base: Storing " + k);
-                ret[k] = _this[k];
-                
-            }
-            
-            
-            // deal with files..
-            //for (var f in this.files) {
-            //    print(f);
-            //    ret.files[f] = this.files[f].toJsonArray();
-           // }
-            
-            
-            return JSON.stringify(ret);
+        Json.Generator generator = new Json.Generator ();
+        Json.Node root = builder.get_root ();
+        generator.set_root (root);
+
+        return = generator.to_data (null);
+	      
           
-          
-        },
-        getName :function()
-        {
-            //returns the basename of the first path..
-            for (var i in this.paths) {
-                return GLib.basename(i);
-            }
-            return false;
-        },
+    }
+    public string getName()
+    {
         
+        for(var i =0 ;i < this.paths.length;i++) {
+            return GLib.basename(this.paths.item(i));
+        }
+        return "";
+    }
+ 
         toTree : function()
         {
             
