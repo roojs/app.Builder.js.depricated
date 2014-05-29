@@ -250,79 +250,81 @@ public class Base {
     },
         // list files.
     public void scanDir(string dir, int dp =0 ) 
-        {
-            //dp = dp || 0;
-            //Seed.print("Project.Base: Running scandir on " + dir);
-            if (dp > 5) { // no more than 5 deep?
+    {
+        //dp = dp || 0;
+        //Seed.print("Project.Base: Running scandir on " + dir);
+        if (dp > 5) { // no more than 5 deep?
+            return;
+        }
+        // this should be done async -- but since we are getting the proto up ...
+        
+            
+        var f = File.new_for_path(dir);
+        var file_enum = f.enumerate_children(Gio.FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME, Gio.FileQueryInfoFlags.NONE, null);
+        
+        string[] subs;
+        
+        while ((next_file = file_enum.next_file(null)) != null) {
+            var fn = next_file.get_display_name()
+    
+             
+            //console.log('trying ' + dir + '/' + fn);
+            
+            if (fn[0] == '.') { // skip hidden
+                continue;
+            }
+            
+            if (FileUtils.test(dir  + '/' + fn, GLib.FileTest.IS_DIR)) {
+                subs += (dir  + '/' + fn);
+                continue;
+            }
+            
+            if (!Regex.match_simple("\.bjs$", fn)) {
+                continue;
+            }
+            /*
+            var parent = "";
+            //if (dp > 0 ) {
+            
+            var sp = dir.split("/");
+            var parent = "";
+            for (var i = 0; i < sp.length; i++) {
+                
+            }
+            
+            /*
+            sp = sp.splice(sp.length - (dp +1), (dp +1));
+            parent = sp.join('.');
+            
+            
+            if (typeof(_this.files[dir  + '/' + fn]) != 'undefined') {
+                // we already have it..
+                _this.files[dir  + '/' + fn].parent = parent;
                 return;
             }
-            // this should be done async -- but since we are getting the proto up ...
+            */
+            var xt = this.xtype;
+            JsRender.Base.factory(xt,this, dir + "/" + fn);
+            // parent ?? 
             
-                
-            var f = File.new_for_path(dir);
-            var file_enum = f.enumerate_children(Gio.FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME, Gio.FileQueryInfoFlags.NONE, null);
-            
-            string[] subs;
-            
-            while ((next_file = file_enum.next_file(null)) != null) {
-                var fn = next_file.get_display_name()
-        
-                 
-                //console.log('trying ' + dir + '/' + fn);
-                
-                if (fn[0] == '.') { // skip hidden
-                    continue;
-                }
-                
-                if (FileUtils.test(dir  + '/' + fn, GLib.FileTest.IS_DIR)) {
-                    subs += (dir  + '/' + fn);
-                    continue;
-                }
-                
-                if (!Regex.match_simple("\.bjs$", fn)) {
-                    continue;
-                }
-                var parent = "";
-                //if (dp > 0 ) {
-                var sp = dir.split("/");
-                var parent = "";
-                for (var i = 0; i < sp.length; i++) {
-                    
-                }
-                
-                /*
-                sp = sp.splice(sp.length - (dp +1), (dp +1));
-                parent = sp.join('.');
-                
-                
-                if (typeof(_this.files[dir  + '/' + fn]) != 'undefined') {
-                    // we already have it..
-                    _this.files[dir  + '/' + fn].parent = parent;
-                    return;
-                }
-                */
-                var xt = this.xtype;
-                JsRender.Base.factory(xt,this, dir + "/" + fn);
-                // parent ?? 
-                
-                */
-            });
-            
-                    subs.forEach( function(s) {
-                        _this.scanDir(s, dp+1);
-                    });
-                    return;
-                }
-            
+            */
+        }
+        for (var i = 0; i < subs.length; i++) {
+             this.scanDir(subs[i], dp+1);
         }
         
+    }
+      
+}
+
+} // end namespace..
         
         
         
         
 
-    }
-); 
+
+
 
 
      
