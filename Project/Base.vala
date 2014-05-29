@@ -258,37 +258,39 @@ public class Base {
             }
             // this should be done async -- but since we are getting the proto up ...
             
+                
+            var f = File.new_for_path(dir);
+            var file_enum = f.enumerate_children(Gio.FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME, Gio.FileQueryInfoFlags.NONE, null);
             
-            var dirs = File.list(dir);
+            string[] subs;
             
-            ///print(dirs); Seed.exit();
-            
-            var subs = [];
-            var _this = this;
-            dirs.forEach(function( fn ){ 
+            while ((next_file = file_enum.next_file(null)) != null) {
+                var fn = next_file.get_display_name()
+        
                  
                 //console.log('trying ' + dir + '/' + fn);
-                if (!fn) {
-                    subs.forEach( function(s) {
-                        _this.scanDir(s, dp+1);
-                    });
-                    return;
-                }
+                
                 if (fn[0] == '.') { // skip hidden
-                    return;
+                    continue;
                 }
                 
-                if (GLib.file_test(dir  + '/' + fn, GLib.FileTest.IS_DIR)) {
-                    subs.push(dir  + '/' + fn);
-                    return;
+                if (FileUtils.test(dir  + '/' + fn, GLib.FileTest.IS_DIR)) {
+                    subs += (dir  + '/' + fn);
+                    continue;
                 }
                 
-                if (!fn.match(/\.bjs$/)) {
-                    return;
+                if (!Regex.match_simple("\.bjs$", fn)) {
+                    continue;
                 }
-                var parent = '';
+                var parent = "";
                 //if (dp > 0 ) {
-                var sp = dir.split('/');
+                var sp = dir.split("/");
+                var parent = "";
+                for (var i = 0; i < sp.length; i++) {
+                    
+                }
+                
+                /*
                 sp = sp.splice(sp.length - (dp +1), (dp +1));
                 parent = sp.join('.');
                 
@@ -298,28 +300,19 @@ public class Base {
                     _this.files[dir  + '/' + fn].parent = parent;
                     return;
                 }
-                var xt = _this.xtype;
-                var cls = imports.JsRender[xt][xt];
+                */
+                var xt = this.xtype;
+                JsRender.Base.factory(xt,this, dir + "/" + fn);
+                // parent ?? 
                 
-                //Seed.print("Adding file " + dir  + '/' + fn);
-                _this.files[dir  + '/' + fn] = new cls({
-                    path : dir  + '/' + fn,
-                    parent : parent,
-                    project : _this
-                });
-                //console.log(this.files[dir  + '/' + fn] );
-                /*
-                var f = Gio.file_new_for_path(dir + '/' + fn);
-                var inf = f.query_info('standard::*');
-                var tv = new GLib.TimeVal();
-                inf.get_modification_time(tv);
-                
-                // should it do something about this information..
-                // fixme... time data is busted..
-                this.files[dir  + '/' + fn] = '' + tv.tv_sec + '.' + tv.tv_usec;
                 */
             });
-             
+            
+                    subs.forEach( function(s) {
+                        _this.scanDir(s, dp+1);
+                    });
+                    return;
+                }
             
         }
         
