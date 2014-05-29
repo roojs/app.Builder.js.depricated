@@ -193,32 +193,28 @@ public class Base {
         return null;
     },
         
-        loadFileOnly : function(path)
-        {
-            
-            var xt = this.xtype;
-            var cls = imports.JsRender[xt][xt];
-            return  new cls({
-                path : path,
-                parent : '',
-                project : this
-            });
-        },
-        create : function(filename)
-        {
-            var ret = this.loadFileOnly(filename);
-            ret.save();
-            this.addFile(ret);
-            return ret;
-            
-        },
+    public JsRender.Base loadFileOnly (string path)
+    {
+        var xt = this.xtype;
+        return JsRender.Base.factory(xt, this, path);
+        
+    },
+    
+    public JsRender.Base create(string filename)
+    {
+        var ret = this.loadFileOnly(filename);
+        ret.save();
+        this.addFile(ret);
+        return ret;
+        
+    },
         
          
-        addFile: function(pfile) { // add a single file, and trigger changed.
-            this.files[pfile.path] = pfile
-            this.fireEvent('changed', this);
-        },
-        
+    addFile: function(JsRender.Base pfile) { // add a single file, and trigger changed.
+        this.files.add(pfile); // duplicate check?
+        this.fireEvent('changed', this);
+    },
+    
         add: function(path, type)
         {
             this.paths = this.paths || { };
