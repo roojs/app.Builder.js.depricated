@@ -164,7 +164,9 @@ public class Base {
                 ret.add(f);
             }
         }
-              
+        ret.sort( (a,b) => {
+            return a.get_string_member("path") > b.get_string_member("path") ? 1 : -1;
+        });
             ret.sort(function(a,b) {
                 return a.path > b.path ? 1 : -1;
             });
