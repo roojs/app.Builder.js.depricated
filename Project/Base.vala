@@ -31,7 +31,7 @@ public class Base {
         
         
         this.paths = new Array<string>;
-        this.files = new Array<string>;
+        this.files = new Array<JsRender.Base>;
         //XObject.extend(this, cfg);
         //this.files = { }; 
         
