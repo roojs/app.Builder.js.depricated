@@ -218,7 +218,7 @@ public class Base {
         
          
     addFile: function(JsRender.Base pfile) { // add a single file, and trigger changed.
-        this.files.add(pfile); // duplicate check?
+        this.files.append_val(pfile); // duplicate check?
         this.onChanged();
     }
     
