@@ -19,7 +19,7 @@ public class Base {
     int id = 0;
     string fn = "";
     string name = "";
-    Array<string> paths;
+    Gee.Map<string,string> paths;
     Array<JsRender.Base> files ;
     //tree : false,
     string xtype = "";
@@ -30,8 +30,8 @@ public class Base {
         this.name = name;
         
         
-        this.paths = new Array<string>;
-        this.files = new Array<JsRender.Base>;
+        this.paths = new Gee.Map<string,string> <string>();
+        this.files = new Array<JsRender.Base>();
         //XObject.extend(this, cfg);
         //this.files = { }; 
         
@@ -87,9 +87,14 @@ public class Base {
         
         // file ??? try/false?
         builder.set_member_name ("paths");
+        
+        
         builder.begin_array ();
-        for(var i =0 ;i < this.paths.length;i++) {
-            builder.add_string_value (this.paths.index(i));
+        
+        
+        var iter = this.paths.map_iterator();
+        while (null != iter.next()) {
+            builder.add_string_value (iter.get_key());
         }
         builder.end_array ();
         
@@ -102,12 +107,14 @@ public class Base {
 	      
           
     }
+    // returns the first path
     public string getName()
     {
-        
-        for(var i =0 ;i < this.paths.length;i++) {
-            return GLib.basename(this.paths.index(i));
+        var iter = this.paths.map_iterator();
+        while (null != iter.next()) {
+            return GLib.basename(iter.get_key());
         }
+      
         return "";
     }
     /**
@@ -207,32 +214,32 @@ public class Base {
         this.addFile(ret);
         return ret;
         
-    },
+    }
         
          
     addFile: function(JsRender.Base pfile) { // add a single file, and trigger changed.
         this.files.add(pfile); // duplicate check?
         this.onChanged();
-    },
+    }
     
-        add: function(path, type)
-        {
-            this.paths = this.paths || { };
-            this.paths[path] = type;
-            //Seed.print(" type is '" + type + "'");
-            if (type == 'dir') {
-                this.scanDir(path);
-            //    console.dump(this.files);
-            }
-            if (type == 'file' ) {
-                
-                this.files[path] = this.loadFileOnly( path );
-            }
+    add: function(string path, string type)
+    {
+         
+        this.paths[path] = type;
+        //Seed.print(" type is '" + type + "'");
+        if (type == 'dir') {
+            this.scanDir(path);
+        //    console.dump(this.files);
+        }
+        if (type == 'file' ) {
             
-            // console.dump(this.files);
-            this.fireEvent('changed', this);
-            
-        },
+            this.files[path] = this.loadFileOnly( path );
+        }
+        
+        // console.dump(this.files);
+        this.fireEvent('changed', this);
+        
+    },
         
         scanDirs: function()
         {
