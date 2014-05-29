@@ -4,15 +4,15 @@
 
 static int id = 1;
 
-class Project.Gtk : Project.Base {
+class Project.Roo : Project.Base {
 
-    void Gtk(string path) {
+    void Roo(string path) {
         
         Base(path);
        
         // various loader methods..
         this.id = "project-gtk-%s".sprintf(id++);
-        this.xtype = "Gtk";
+        this.xtype = "Roo";
     }
 )
  
