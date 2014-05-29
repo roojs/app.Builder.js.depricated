@@ -142,28 +142,27 @@ public class Base {
             if (par.length < 1) {
                 return;
             }
-            var parent = files.get_object_member(par);
-            if (parent == null) {
+            if (!files.has_key(par)) {
                 return;
             }
-            parent.get_array_member("cn").add_object_element(f);
+            files.get(par).get_array_member("cn").add_object_element(f);
             f.set_boolean_member("hasParent", true);
              
         };
             
-              
-            
-            var ret = [];
-            for (var k in this.files) {
-                var f = this.files[k];
+        var ret = new Json.Array();
+        iter = files.map_iterator();
+        while (null != iter.next()) {
+            var f = iter.get_value();
                 
-                f.sortCn();
-                if (f.hasParent) {
-                    continue;
-                }
-                if (typeof(files[f.fullname]) != 'undefined') {
-                    ret.push(f);
-                }
+            //   f.sortCn();
+            if (f.get_boolean_member("hasParent")) {
+                continue;
+            }
+            
+            if (typeof(files[f.fullname]) != 'undefined') {
+                ret.push(f);
+            }
                 
             };
             
