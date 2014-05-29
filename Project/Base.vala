@@ -20,7 +20,7 @@ public class Base {
     string fn = "";
     string name = "";
     Array<string> paths;
-    Array<string> files ;
+    Array<JsRender.Base> files ;
     //tree : false,
     string xtype = "";
     
@@ -125,7 +125,7 @@ public class Base {
         builder.begin_object ();
            
         for(var i = 0; i < this.files.length; i++) {
-            var f = this.files.item(i);   
+            var f = this.files.item(i);
         }
               
             // have parents -> add them to parent...
