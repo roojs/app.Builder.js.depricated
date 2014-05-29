@@ -150,7 +150,7 @@ public class Base {
              
         };
             
-        var ret = new Json.Array();
+        var ret = new Array<Json.Object>();
         iter = files.map_iterator();
         while (null != iter.next()) {
             var f = iter.get_value();
@@ -161,10 +161,10 @@ public class Base {
             }
             if (files.has_key(f.get_string_member("fullname"))) {
             
-                ret.add_member(f);
+                ret.add(f);
             }
         }
-            
+              
             ret.sort(function(a,b) {
                 return a.path > b.path ? 1 : -1;
             });
