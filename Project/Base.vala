@@ -148,8 +148,7 @@ public class Base {
             }
             parent.get_array_member("cn").add_object_element(f);
             f.set_boolean_member("hasParent", true);
-            
-            
+             
         };
             
               
