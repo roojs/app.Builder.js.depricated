@@ -127,19 +127,20 @@ public class Base {
         var files = new Json.Object.
         
         for(var i = 0; i < this.files.length; i++) {
-            var f = this.files.item(i).toJsonNode();
+            var fo = this.files.item(i);
+            var f = fo.toJsonNode();
             f.set_boolean_member("hasParent", false);
             f.set_array_member('cn', new Json.Array());
             
+            if (this.files.item(i).fullname.length > 0) {
+                files.set_object_member(fo.fullname, f);
+            }
         }
-              
-            // have parents -> add them to parent...
+        
+        files.foreach((obj, key, val) => {
             
-                //console.log(f.name);
-                if (f.fullname) {
-                    files[f.fullname] = f;
-                }
-            };
+            
+        });
             
             // add Parent pointer..
             for (var k in this.files) {
