@@ -125,9 +125,9 @@ public class Base {
         
         for(var i = 0; i < this.files.length; i++) {
             var fo = this.files.item(i);
-            var f = fo.toJsonNode();
-            f.set_boolean_member("hasParent", false);
-            f.set_array_member("cn", new Json.Array());
+            
+            fo.hasParent = false;
+            fo.cn = new Array<JsRender.Base>();
             
             if (this.files.item(i).fullname.length > 0) {
                 files.set(fo.fullname, f);
@@ -138,39 +138,36 @@ public class Base {
         while (null != iter.next()) {
             var f = iter.get_value();
             
-            var par = f.get_string_value("parent");
+            var par = f.parent;
             if (par.length < 1) {
                 return;
             }
             if (!files.has_key(par)) {
                 return;
             }
-            files.get(par).get_array_member("cn").add_object_element(f);
-            f.set_boolean_member("hasParent", true);
+            files.get(par).cn.add(f);
+            f.hasParent = true;
              
         };
             
-        var ret = new Array<Json.Object>();
+        var ret = new Array<JsRender.Base>();
         iter = files.map_iterator();
         while (null != iter.next()) {
             var f = iter.get_value();
                 
             //   f.sortCn();
-            if (f.get_boolean_member("hasParent")) {
+            if (f.hasParent) {
                 continue;
             }
-            if (files.has_key(f.get_string_member("fullname"))) {
+            if (files.has_key(f.fullname"))) {
             
                 ret.add(f);
             }
         }
         ret.sort( (a,b) => {
-            return a.get_string_member("path") > b.get_string_member("path") ? 1 : -1;
+            return a.path > b.path ? 1 : -1;
         });
-        jret = new Json.Array();
-        ret.foreach_element((ar, ix, obj) => {
-            jret.add_object_element();
-        });
+        
         
         //print(JSON.stringify(ret,null,4));
             
