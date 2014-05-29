@@ -252,11 +252,13 @@ public class Base {
     public void scanDir(string dir, int dp =0 ) 
         {
             //dp = dp || 0;
-            Seed.print("Project.Base: Running scandir on " + dir);
+            //Seed.print("Project.Base: Running scandir on " + dir);
             if (dp > 5) { // no more than 5 deep?
                 return;
             }
             // this should be done async -- but since we are getting the proto up ...
+            
+            
             var dirs = File.list(dir);
             
             ///print(dirs); Seed.exit();
