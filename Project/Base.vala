@@ -166,7 +166,7 @@ public class Base {
             if (f.hasParent) {
                 continue;
             }
-            if (files.has_key(f.fullname"))) {
+            if (files.has_key(f.fullname))) {
             
                 ret.add(f);
             }
@@ -224,16 +224,14 @@ public class Base {
     
     add: function(string path, string type)
     {
-         
-        this.paths[path] = type;
+        this.paths.set(path,type);
         //Seed.print(" type is '" + type + "'");
         if (type == 'dir') {
             this.scanDir(path);
         //    console.dump(this.files);
         }
         if (type == 'file' ) {
-            
-            this.files[path] = this.loadFileOnly( path );
+            this.files.set(path, this.loadFileOnly( path ));
         }
         
         // console.dump(this.files);
