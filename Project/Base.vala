@@ -123,9 +123,13 @@ public class Base {
         var builder = new Json.Builder ();
         builder.begin_array ();
         builder.begin_object ();
-           
+        
+        
+        
         for(var i = 0; i < this.files.length; i++) {
-            var f = this.files.item(i);
+            var f = this.files.item(i).toJsonNode();
+                f.set_boolean_member("hasParent", false);
+            
         }
               
             // have parents -> add them to parent...
