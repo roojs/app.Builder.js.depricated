@@ -12,7 +12,7 @@ class Project.Gtk : Project.Base {
        
         // various loader methods..
         this.id = "project-gtk-%s".sprintf(id++);
-      
+        this.xtype = "gtk";
     }
 )
  
