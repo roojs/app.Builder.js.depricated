@@ -212,7 +212,7 @@ public class Base {
          
     addFile: function(JsRender.Base pfile) { // add a single file, and trigger changed.
         this.files.add(pfile); // duplicate check?
-        this.fireEvent('changed', this);
+        this.onChanged();
     },
     
         add: function(path, type)
