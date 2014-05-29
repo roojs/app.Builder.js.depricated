@@ -14,6 +14,6 @@ class Project.Gtk : Project.Base {
         this.id = "project-gtk-%s".sprintf(id++);
       
     }
-);
+)
  
  
