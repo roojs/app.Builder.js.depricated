@@ -119,43 +119,38 @@ public class Base {
     {
             
          
+         
+        var files = new Gee.Map<string,Json.Object>();
         
-        var builder = new Json.Builder ();
-        builder.begin_array ();
-        builder.begin_object ();
-        
-        var files = new Json.Object.
         
         for(var i = 0; i < this.files.length; i++) {
             var fo = this.files.item(i);
             var f = fo.toJsonNode();
             f.set_boolean_member("hasParent", false);
-            f.set_array_member('cn', new Json.Array());
+            f.set_array_member("cn", new Json.Array());
             
             if (this.files.item(i).fullname.length > 0) {
-                files.set_object_member(fo.fullname, f);
+                files.set(fo.fullname, f);
             }
         }
         
-        files.foreach((obj, key, val) => {
+        var iter = files.map_iterator();
+        while (null != iter.next()) {
+            var f = iter.get_value();
+            
+            var par = f.get_string_value("parent");
+            if (par.length < 1) {
+                return;
+            }
+            var parent = files.get_object_member(par);
+            if (parent == null) {
+                return;
+            }
+            parent.get_array_member("cn").add_object_element(f);
+            f.set_boolean_member("hasParent", true);
             
             
-        });
-            
-            // add Parent pointer..
-            for (var k in this.files) {
-                var f = this.files[k];
-                console.log(f.parent + ":" + f.name);
-                if (f.parent && typeof(files[f.parent]) != 'undefined') {
-                    // add it to parent;
-                    
-                    files[f.parent].cn.push(f);
-                    f.hasParent = true;
-                    
-                }
-                
-                
-            };
+        };
             
               
             
