@@ -159,13 +159,11 @@ public class Base {
             if (f.get_boolean_member("hasParent")) {
                 continue;
             }
+            if (files.has_key(f.get_string_member("fullname"))) {
             
-            if (typeof(files[f.fullname]) != 'undefined') {
-                ret.push(f);
+                ret.add_member(f);
             }
-                
-            };
-            
+        }
             
             ret.sort(function(a,b) {
                 return a.path > b.path ? 1 : -1;
