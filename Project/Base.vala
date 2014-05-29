@@ -217,12 +217,12 @@ public class Base {
     }
         
          
-    addFile: function(JsRender.Base pfile) { // add a single file, and trigger changed.
+    public void addFile(JsRender.Base pfile) { // add a single file, and trigger changed.
         this.files.append_val(pfile); // duplicate check?
         this.onChanged();
     }
     
-    add: function(string path, string type)
+    public void add(string path, string type)
     {
         this.paths.set(path,type);
         //Seed.print(" type is '" + type + "'");
@@ -231,26 +231,23 @@ public class Base {
         //    console.dump(this.files);
         }
         if (type == 'file' ) {
-            this.files.set(path, this.loadFileOnly( path ));
+            this.files.append_val(this.loadFileOnly( path ));
         }
-        
-        // console.dump(this.files);
-        this.fireEvent('changed', this);
+        this.onChanged();
         
     },
-        
-        scanDirs: function()
-        {
-            this.files = this.files  || { };
-            for (var d in this.paths) {
-                if (this.paths[d] == 'dir') {
-                    this.scanDir(d);
-                }
-                // otherwise add a file..
+    public void  scanDirs()
+    {
+        var iter = files.map_iterator();
+        while (null != iter.next()) {
+            if (iter.get_value() != "dir") {
+                continue;
             }
-            //console.dump(this.files);
-            
-        },
+            this.scanDir(iter.get_key());
+        }
+        //console.dump(this.files);
+        
+    },
         
         
         // list files.
