@@ -178,19 +178,19 @@ public class Base {
     
     
     
-    public JsRender.Base getById(string id)
+    public ?JsRender.Base getById(string id)
     {
         
-        var ret = false;
-        for (var k in this.files) {
-            var f = this.files[k];
+       for(var i = 0; i < this.files.length; i++) {
+            var fo = this.files.index(i);
             
-            console.log(f.id + '?=' + id);
+            
+            //console.log(f.id + '?=' + id);
             if (f.id == id) {
                 return f;
             }
         };
-        return ret;
+        return null;
     },
         
         loadFileOnly : function(path)
