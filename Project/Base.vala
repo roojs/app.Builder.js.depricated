@@ -89,7 +89,7 @@ public class Base {
         builder.set_member_name ("paths");
         builder.begin_array ();
         for(var i =0 ;i < this.paths.length;i++) {
-            builder.add_string_value (this.paths.item(i));
+            builder.add_string_value (this.paths.index(i));
         }
         builder.end_array ();
         
@@ -106,7 +106,7 @@ public class Base {
     {
         
         for(var i =0 ;i < this.paths.length;i++) {
-            return GLib.basename(this.paths.item(i));
+            return GLib.basename(this.paths.index(i));
         }
         return "";
     }
@@ -124,12 +124,12 @@ public class Base {
         
         
         for(var i = 0; i < this.files.length; i++) {
-            var fo = this.files.item(i);
+            var fo = this.files.index(i);
             
             fo.hasParent = false;
             fo.cn = new Array<JsRender.Base>();
             
-            if (this.files.item(i).fullname.length > 0) {
+            if (this.files.index(i).fullname.length > 0) {
                 files.set(fo.fullname, f);
             }
         }
@@ -178,19 +178,20 @@ public class Base {
     
     
     
-        getById : function(id)
-        {
-            var ret = false;
-            for (var k in this.files) {
-                var f = this.files[k];
-                
-                console.log(f.id + '?=' + id);
-                if (f.id == id) {
-                    return f;
-                }
-            };
-            return ret;
-        },
+    public JsRender.Base getById(string id)
+    {
+        
+        var ret = false;
+        for (var k in this.files) {
+            var f = this.files[k];
+            
+            console.log(f.id + '?=' + id);
+            if (f.id == id) {
+                return f;
+            }
+        };
+        return ret;
+    },
         
         loadFileOnly : function(path)
         {
