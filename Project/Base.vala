@@ -10,10 +10,9 @@
  * 
  * 
  */
-namespace Project {
 
 
-public class Base {
+public class Project.Base {
     
     
     int id = 0;
@@ -317,15 +316,4 @@ public class Base {
       
 }
 
-} // end namespace..
-        
-        
-        
-        
-
-
-
-
-
-     
  
