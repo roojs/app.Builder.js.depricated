@@ -71,7 +71,7 @@ public class Base {
     public string toJSON()
     {
         
-        Json.Builder builder = new Json.Builder ();
+        var builder = new Json.Builder ();
         
         builder.begin_object ();
         
@@ -94,11 +94,11 @@ public class Base {
         builder.end_array ();
         
         
-        Json.Generator generator = new Json.Generator ();
-        Json.Node root = builder.get_root ();
+        var  generator = new Json.Generator ();
+        var  root = builder.get_root ();
         generator.set_root (root);
 
-        return = generator.to_data (null);
+        return  generator.to_data (null);
 	      
           
     }
@@ -110,29 +110,24 @@ public class Base {
         }
         return "";
     }
+    /**
+     *
+     * to tree - > should
+     */
  
-        toTree : function()
-        {
+    public Json.Node toTree ()
+    {
             
-            
-            // normally this will build tree's based on info in the file stuff..
-            // but for the time being, we just return an array of all the files.
-            
-            
-            
-            //if (this.tree) {
-             //   return this.tree;
-            //}
-            
-            this.tree = [];
-            /*
-            for (var f in this.files) {
-                this.tree.push(this.files[f]);
-            }
-            return this.tree;
-            */
-            print(JSON.stringify(this.files,null,4));
-            
+         
+        
+        var builder = new Json.Builder ();
+        builder.begin_array ();
+        builder.begin_object ();
+           
+        for(var i = 0; i < this.files.length; i++) {
+            var f = this.files.item(i);   
+        }
+              
             // have parents -> add them to parent...
             var files = {};
             var parents = {};
