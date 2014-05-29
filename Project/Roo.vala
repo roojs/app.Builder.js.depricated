@@ -1,5 +1,3 @@
-//<Script type="text/javascript">
-
  
 
 static int id = 1;
