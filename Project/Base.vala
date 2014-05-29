@@ -167,18 +167,20 @@ public class Base {
         ret.sort( (a,b) => {
             return a.get_string_member("path") > b.get_string_member("path") ? 1 : -1;
         });
-            ret.sort(function(a,b) {
-                return a.path > b.path ? 1 : -1;
-            });
+        jret = new Json.Array();
+        ret.foreach_element((ar, ix, obj) => {
+            jret.add_object_element();
+        });
+        
+        //print(JSON.stringify(ret,null,4));
             
-            print(JSON.stringify(ret,null,4));
-            
-            
-            this.tree = ret;
-            return this.tree;
+        return ret;  
              
             
-        },
+    }
+    
+    
+    
         getById : function(id)
         {
             var ret = false;
