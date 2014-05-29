@@ -15,7 +15,7 @@
 public class Project.Base {
     
     
-    int id = 0;
+    string id = "";
     string fn = "";
     string name = "";
     Gee.Map<string,string> paths;
@@ -184,7 +184,7 @@ public class Project.Base {
     
     
     
-    public ?JsRender.Base getById(int id)
+    public ?JsRender.Base getById(string id)
     {
         
        for(var i = 0; i < this.files.length; i++) {
