@@ -10,6 +10,9 @@ class JsRender.Lang_Class : Object {
     
     GLib.List<string> coreObjects;
     Gee.Map<string,string> whitespaceNames;
+    Gee.Map<string,string> newlineNames;
+    Gee.Map<string,string> keywordNames;
+    Gee.Map<string,string> puncNames;
     
     void Lang_Class ()
     {
@@ -27,22 +30,23 @@ class JsRender.Lang_Class : Object {
         return (this.coreObjects.index(name) > -1);
     },
     
+    whitespace : function(ch) {
+        return this.whitespaceNames.get(ch);
+    },
+    
     
     void initCoreObjects() {
         
         this.coreObjects = new Glib.List<string>();
         string[] co = { '_global_', 'Array', 'Boolean', 'Date', 'Error', 
-        'Function', 'Math', 'Number', 'Object', 'RegExp', 'String' };
+            'Function', 'Math', 'Number', 'Object', 'RegExp', 'String' };
         for(var i =0; i< co.length;i++ ) {
             this.coreObjects.append(co[i]);
         }
     }
         
 
-    whitespace : function(ch) {
-        return this.whitespaceNames[ch];
-    },
-    
+   
     whitespaceNames : {
         " ":      "SPACE",
         "\f":     "FORMFEED",
