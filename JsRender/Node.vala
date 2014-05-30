@@ -1,6 +1,6 @@
 
 // test..
-// valac gitlive/app.Builder.js/JsRender/Lang.vala --pkg gee-1.0 -o /tmp/Lang ;/tmp/Lang
+// valac gitlive/app.Builder.js/JsRender/Lang.vala gitlive/app.Builder.js/JsRender/Node.vala --pkg gee-1.0 -o /tmp/Lang ;/tmp/Lang
 
 class JsRender.Node : Object {
     
@@ -258,7 +258,7 @@ class JsRender.Node : Object {
             
             //if (!left.length && isArray) print(right);
             
-            if ((typeof(right) != 'undefined') && right.length){
+            if (right.length > 0){
                 els.push(left + right);
             }
         
