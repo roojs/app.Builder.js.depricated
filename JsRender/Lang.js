@@ -3,7 +3,20 @@
 /**
 	@namespace
 */
-Lang = {
+
+public JsRender.Lang_Class Lang = null;
+
+class JsRender.Lang_Class : Object {
+    
+    
+    void Lang_Class ()
+    {
+        if (Lang == null) {
+            Lang = this;
+        }
+        
+        
+    }
     
     
     isBuiltin : function(name) {
