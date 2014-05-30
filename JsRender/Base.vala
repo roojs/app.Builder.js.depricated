@@ -249,29 +249,7 @@ class JsRender.Node : Object {
              
              
             
-            
-            //var left = isArray ? '' : (JSON.stringify(i) + " : " )
-             
-            
-            
-            
-            if (typeof(el) == 'object') {
-                
-                // we can skip empty items lists and empty listeners..
-                //if (!isArray && i == 'items' && !el.length) {
-                //    return; 
-                //}
-               // 
-                var right = _this.mungeToString(el, i == 'listeners', pad + '    ');
-                
-                //if (!left.length && isArray) print(right);
-                
-                if ((typeof(right) != 'undefined') && right.length){
-                    els.push(left + right);
-                }
-            
-                continue;
-            }
+        
             // standard. .
             if (typeof(obj[i]) != 'string') {
                 els.push(left + JSON.stringify(obj[i]));
