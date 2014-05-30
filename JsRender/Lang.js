@@ -39,6 +39,11 @@ class JsRender.Lang_Class : Object {
     string keyword(string word) {
         return this.keywordNames.get("="+word);
     }
+    
+    string matching(name) {
+        return this.matchingNames[name];
+    }
+    
     bool isKeyword(word) {
         return typeof(this.keywordNames["="+word]) == 'undefined' ? false : true;
     }
@@ -46,6 +51,25 @@ class JsRender.Lang_Class : Object {
         return this.puncNames[ch];
     }
     
+    bool isNumber : function(str) {
+        return /^(\.[0-9]|[0-9]+\.|[0-9])[0-9]*([eE][+-][0-9]+)?$/i.test(str);
+    },
+
+    bool  isHexDec : function(str) {
+        return /^0x[0-9A-F]+$/i.test(str);
+    },
+
+    bool isWordChar : function(str) {
+        return /^[a-zA-Z0-9$_.]+$/.test(str);
+    },
+
+    bool isSpace : function(str) {
+        return (typeof this.whitespace(str) != "undefined");
+    },
+
+    bool isNewline : function(str) {
+        return (typeof this.newline(str) != "undefined");
+    }
     
     void init() {
         
@@ -104,49 +128,47 @@ class JsRender.Lang_Class : Object {
          },
     
   
-    puncNames : {
-        ";":   "SEMICOLON",
-        ",":   "COMMA",
-        "?":   "HOOK",
-        ":":   "COLON",
-        "||":  "OR", 
-        "&&":  "AND",
-        "|":   "BITWISE_OR",
-        "^":   "BITWISE_XOR",
-        "&":   "BITWISE_AND",
-        "===": "STRICT_EQ", 
-        "==":  "EQ",
-        "=":   "ASSIGN",
-        "!==": "STRICT_NE",
-        "!=":  "NE",
-        "<<":  "LSH",
-        "<=":  "LE", 
-        "<":   "LT",
-        ">>>": "URSH",
-        ">>":  "RSH",
-        ">=":  "GE",
-        ">":   "GT", 
-        "++":  "INCREMENT",
-        "--":  "DECREMENT",
-        "+":   "PLUS",
-        "-":   "MINUS",
-        "*":   "MUL",
-        "/":   "DIV", 
-        "%":   "MOD",
-        "!":   "NOT",
-        "~":   "BITWISE_NOT",
-        ".":   "DOT",
-        "[":   "LEFT_BRACE",
-        "]":   "RIGHT_BRACE",
-        "{":   "LEFT_CURLY",
-        "}":   "RIGHT_CURLY",
-        "(":   "LEFT_PAREN",
-        ")":   "RIGHT_PAREN"
-    },
+        puncNames : {
+            ";":   "SEMICOLON",
+            ",":   "COMMA",
+            "?":   "HOOK",
+            ":":   "COLON",
+            "||":  "OR", 
+            "&&":  "AND",
+            "|":   "BITWISE_OR",
+            "^":   "BITWISE_XOR",
+            "&":   "BITWISE_AND",
+            "===": "STRICT_EQ", 
+            "==":  "EQ",
+            "=":   "ASSIGN",
+            "!==": "STRICT_NE",
+            "!=":  "NE",
+            "<<":  "LSH",
+            "<=":  "LE", 
+            "<":   "LT",
+            ">>>": "URSH",
+            ">>":  "RSH",
+            ">=":  "GE",
+            ">":   "GT", 
+            "++":  "INCREMENT",
+            "--":  "DECREMENT",
+            "+":   "PLUS",
+            "-":   "MINUS",
+            "*":   "MUL",
+            "/":   "DIV", 
+            "%":   "MOD",
+            "!":   "NOT",
+            "~":   "BITWISE_NOT",
+            ".":   "DOT",
+            "[":   "LEFT_BRACE",
+            "]":   "RIGHT_BRACE",
+            "{":   "LEFT_CURLY",
+            "}":   "RIGHT_CURLY",
+            "(":   "LEFT_PAREN",
+            ")":   "RIGHT_PAREN"
+        },
 
-    matching : function(name) {
-        return this.matchingNames[name];
-    },
+ 
     matchingNames : {
         "LEFT_PAREN": "RIGHT_PAREN",
         "RIGHT_PAREN": "LEFT_PAREN",
@@ -156,24 +178,6 @@ class JsRender.Lang_Class : Object {
         "RIGHT_BRACE": "LEFT_BRACE"
     },
 
-    isNumber : function(str) {
-        return /^(\.[0-9]|[0-9]+\.|[0-9])[0-9]*([eE][+-][0-9]+)?$/i.test(str);
-    },
-
-    isHexDec : function(str) {
-        return /^0x[0-9A-F]+$/i.test(str);
-    },
-
-    isWordChar : function(str) {
-        return /^[a-zA-Z0-9$_.]+$/.test(str);
-    },
-
-    isSpace : function(str) {
-        return (typeof this.whitespace(str) != "undefined");
-    },
-
-    isNewline : function(str) {
-        return (typeof this.newline(str) != "undefined");
-    }
+ 
     
 };
