@@ -218,8 +218,8 @@ class JsRender.Node  {
             // standard..
             
             
-            if (!this.isString(v)) { // boolean or number...?
-                els.append(left + this.quoteString(v));
+            if (JsRender.Lang.isNumber(v) || JsRender.Lang.isBoolean(v)) { // boolean or number...?
+                els.append(left + v );
                 continue;
             }
             // strings..
