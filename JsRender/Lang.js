@@ -57,19 +57,19 @@ class JsRender.Lang_Class : Object {
     },
 
     bool  isHexDec : function(str) {
-        return /^0x[0-9A-F]+$/i.test(str);
+        return Regex.match_simple("^0x[0-9A-F]+$",str);
     },
 
     bool isWordChar : function(str) {
-        return /^[a-zA-Z0-9$_.]+$/.test(str);
+        return Regex.match_simple("^[a-zA-Z0-9$_.]+$", str);
     },
 
     bool isSpace : function(str) {
-        return (typeof this.whitespace(str) != "undefined");
+        return this.whitespace.get(str) != null;
     },
 
     bool isNewline : function(str) {
-        return (typeof this.newline(str) != "undefined");
+        return this.newline.get(str) != null;
     }
     
     void init() {
