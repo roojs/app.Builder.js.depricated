@@ -143,6 +143,7 @@ class JsRender.Node : Object {
             
           
         } else {
+            string left;
             
             this.props.map_iterator().foreach((k,v) => {
                 if (skip.find(k) != null) {
@@ -156,13 +157,15 @@ class JsRender.Node : Object {
                     continue;
                 }
                 
-                if (Lang.isKeyword(leftv) || Lang.isBuiltin(leftv)) {
+                
+                if (JsRender.Lang.isKeyword(leftv) || JsRender.Lang.isBuiltin(leftv)) {
                     left = "'" + leftv + "'";
-                } else if (leftv.match(/[^A-Z_]+/i)) { // not plain a-z... - quoted.
-                    var val = JSON.stringify(leftv);
-                    left = "'" + val.substring(1, val.length-1).replace(/'/g, "\\'") + "'";
+                } else if (Regex.match_simple("[^A-Za-z_]+",leftv) { // not plain a-z... - quoted.
+                    var val = this.quoteString(leftv);
+                    
+                    left = "'" + val.substring(1, val.length-1).replace("'", "\\'") + "'";
                 } else {
-                    left = '' + leftv;
+                    left = leftv;
                 }
                 left += ' : ';
                 
