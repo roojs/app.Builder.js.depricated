@@ -207,7 +207,7 @@ class JsRender.Node : Object {
                
             });
             oprops.map_iterator().foreach((k,vo) => {
-                
+                var leftv = k[0] == '|' ? k.substring(1) : k;
                 if (JsRender.Lang.isKeyword(leftv) || JsRender.Lang.isBuiltin(leftv)) {
                     left = "'" + leftv + "'";
                 } else if (Regex.match_simple("[^A-Za-z_]+",leftv) { // not plain a-z... - quoted.
@@ -219,7 +219,7 @@ class JsRender.Node : Object {
                 }
                 left += ' : ';
                 
-                var right = _this.mungeToString(el, i == 'listeners', pad + '    ');
+                var right = vo.mungeToString(k == 'listeners', pad + '    ');
                 
                 //if (!left.length && isArray) print(right);
                 
