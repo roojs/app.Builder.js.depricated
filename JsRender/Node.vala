@@ -242,7 +242,7 @@ class JsRender.Node  {
             }
             
             // strings..
-            if (doubleStringProps.length < 1) {
+            if (doubleStringProps.length() < 1) {
                 els.append(left + this.quoteString(v));
                 continue;
             }
