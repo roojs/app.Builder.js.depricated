@@ -3,6 +3,15 @@
 
 class JsRender.Node : Object {
     
+    GLib.List<JsRender.Node> items;
+    
+    Node()
+    {
+        this.items = new GLib.List<JsRender.Node>();
+    }
+    
+    
+    
     GLib.List keys() {
         
         
