@@ -269,7 +269,7 @@ class JsRender.Node  {
         
             
         }
-        if (els.length < 1) {
+        if (els.length() < 1) {
             return "";
         }
         // oprops...    
