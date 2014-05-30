@@ -3,6 +3,10 @@
 
 class JsRender.Node : Object {
     
+    GLib.List keys() {
+        
+        
+    }
     
     
     
@@ -229,7 +233,7 @@ class JsRender.JsRender  : Object {
             return;
         }            
         keys = obj.keys();
-        isArray = obj.isArray;
+        isArray = obj.isArray();
         
         
         var els = []; 
