@@ -26,23 +26,25 @@ class JsRender.Lang_Class : Object {
     }
     
     
-    isBuiltin : function(string  name) {
+    bool isBuiltin(string  name) {
         return (this.coreObjects.index(name) > -1);
     },
     
-    whitespace : function(string ch) {
+    string whitespace (string ch) {
         return this.whitespaceNames.get(ch);
     },
-    newline : function(string ch) {
+    string  newline (string ch) {
         return this.newlineNames.get(ch);
     },
-    keyword : function(string word) {
+    string keyword(string word) {
         return this.keywordNames.get("="+word);
     },
-    isKeyword: function(word) {
+    bool isKeyword(word) {
         return typeof(this.keywordNames["="+word]) == 'undefined' ? false : true;
     },
-    
+    punc : function(ch) {
+        return this.puncNames[ch];
+    },
     
     
     void init() {
@@ -70,40 +72,38 @@ class JsRender.Lang_Class : Object {
             "\u2028": "UNICODE_LS"
         },
         string[]  keywordNames = {
-        "=break":      "BREAK",
-        "=case":       "CASE",
-        "=catch":      "CATCH",
-        "=const":      "VAR",
-        "=continue":   "CONTINUE",
-        "=default":    "DEFAULT",
-        "=delete":     "DELETE",
-        "=do":         "DO",
-        "=else":       "ELSE",
-        "=false":      "FALSE",
-        "=finally":    "FINALLY",
-        "=for":        "FOR",
-        "=function":   "FUNCTION",
-        "=if":         "IF",
-        "=in":         "IN",
-        "=instanceof": "INSTANCEOF",
-        "=new":        "NEW",
-        "=null":       "NULL",
-        "=return":     "RETURN",
-        "=switch":     "SWITCH",
-        "=this":       "THIS",
-        "=throw":      "THROW",
-        "=true":       "TRUE",
-        "=try":        "TRY",
-        "=typeof":     "TYPEOF",
-        "=void":       "VOID",
-        "=while":      "WHILE",
-        "=with":       "WITH",
-        "=var":        "VAR"
-    },
-
-    punc : function(ch) {
-        return this.puncNames[ch];
-    },
+            "=break":      "BREAK",
+            "=case":       "CASE",
+            "=catch":      "CATCH",
+            "=const":      "VAR",
+            "=continue":   "CONTINUE",
+            "=default":    "DEFAULT",
+            "=delete":     "DELETE",
+            "=do":         "DO",
+            "=else":       "ELSE",
+            "=false":      "FALSE",
+            "=finally":    "FINALLY",
+            "=for":        "FOR",
+            "=function":   "FUNCTION",
+            "=if":         "IF",
+            "=in":         "IN",
+            "=instanceof": "INSTANCEOF",
+            "=new":        "NEW",
+            "=null":       "NULL",
+            "=return":     "RETURN",
+            "=switch":     "SWITCH",
+            "=this":       "THIS",
+            "=throw":      "THROW",
+            "=true":       "TRUE",
+            "=try":        "TRY",
+            "=typeof":     "TYPEOF",
+            "=void":       "VOID",
+            "=while":      "WHILE",
+            "=with":       "WITH",
+            "=var":        "VAR"
+         },
+    
+  
     puncNames : {
         ";":   "SEMICOLON",
         ",":   "COMMA",
