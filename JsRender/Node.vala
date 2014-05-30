@@ -156,7 +156,7 @@ class JsRender.Node  {
         string left;
         var func_regex = new Regex("^\\s+|\\s+$");
         var piter = this.props.map_iterator();
-        while (null != piter.next() )
+        while (null != piter.next() ) {
             var k = piter.get_key();
             var v = piter.get_value();
             
