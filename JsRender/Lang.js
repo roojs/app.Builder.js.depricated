@@ -101,7 +101,7 @@ class JsRender.Lang_Class : Object {
             this.whitespaceNames.set(x[0],x[1]);
         }
         
-         ws = {
+        ws = {
             "\n:NEWLINE",
             "\r:RETURN",
             "\u000A:UNICODE_LF",
@@ -113,7 +113,7 @@ class JsRender.Lang_Class : Object {
             var x = ws[i].split(":");
             this.newlineNames.set(x[0],x[1]);
         }
-        string[]  keywordNames = {
+        string[]  ws = {
             "=break:BREAK",
             "=case:CASE",
             "=catch:CATCH",
@@ -144,8 +144,8 @@ class JsRender.Lang_Class : Object {
             "=with:WITH",
             "=var:VAR"
          };
-           for(var i =0; i< ws.length;i++ ) {
-            var x = ws.split(":");
+        for(var i =0; i< ws.length;i++ ) {
+            var x = ws[i].split(":");
             this.keywordNames.set(x[0],x[1]);
         }
     
@@ -189,7 +189,10 @@ string[]           puncNames : {
             "( LEFT_PAREN",
             ") RIGHT_PAREN"
         },
-
+        for(var i =0; i< ws.length;i++ ) {
+            var x = ws[i].split(" ");
+            this.puncNames.set(x[0],x[1]);
+        }
  
     string[]  matchingNames : {
         "LEFT_PAREN:RIGHT_PAREN",
