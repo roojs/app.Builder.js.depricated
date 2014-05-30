@@ -181,7 +181,7 @@ class JsRender.Node : Object {
                     return;
                 }
                  
-                
+                // next.. is it a function..
               
             });
             
@@ -197,18 +197,7 @@ class JsRender.Node : Object {
             }
             var el = obj[i];
             
-            
-            if (isListener) {
-                // change the lines...
-                var str= ('' + obj[i]).replace(/^\s+|\s+$/g,""); // remove bar.
-                var lines = str.split("\n");
-                if (lines.length > 1) {
-                    str = lines.join("\n" + pad);
-                }
-                
-                els.push(left  + str);
-                continue;
-            }
+             
              
             
             
