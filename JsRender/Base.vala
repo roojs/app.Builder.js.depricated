@@ -225,21 +225,18 @@ class JsRender.JsRender  : Object {
         
         
         var els = []; 
-        var skip = [];
-        if (!isArray && obj.hasXnsType()
-                typeof(obj['|xns']) != 'undefined' &&
-                typeof(obj['xtype']) != 'undefined'
-            ) {
+        var skip = new Array<string>();
+        if (!isArray && obj.hasXnsType() ) {
                 // this.mungeXtype(obj['|xns'] + '.' + obj['xtype'], els); ??????
                 
-                 
-                skip.append_Val("|xns");
-                skip.append_Val("xtype");
                 
-            }
+               skip.append_Val("|xns");
+               skip.append_Val("xtype");
+               
+        }
         
         
-        if (!isArray && obj.items != null && obj.items.length) {
+        if (!isArray && obj.hasChildren()) {
             // look for props..
             var newitems = [];
             for (var ii =0; ii< obj.items.length; ii++) {
