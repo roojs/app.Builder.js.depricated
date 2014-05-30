@@ -156,7 +156,7 @@ class JsRender.Node  {
         string left;
         var func_regex = new Regex("^\\s+|\\s+$");
         var piter = this.props.map_iterator();
-        while (null != piter.next() ) {
+        while (piter.next() ) {
             var k = piter.get_key();
             var v = piter.get_value();
             
@@ -242,7 +242,7 @@ class JsRender.Node  {
            
         }
         var iter = oprops.map_iterator();
-        while (null != iter.next()) {
+        while (iter.next()) {
             k = iter.get_key();
             var vo = iter.get_value();
             var leftv = k[0] == '|' ? k.substring(1) : k;
