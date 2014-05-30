@@ -32,19 +32,19 @@ class JsRender.Lang_Class : Object {
     
     string whitespace (string ch) {
         return this.whitespaceNames.get(ch);
-    },
+    }
     string  newline (string ch) {
         return this.newlineNames.get(ch);
-    },
+    }
     string keyword(string word) {
         return this.keywordNames.get("="+word);
-    },
+    }
     bool isKeyword(word) {
         return typeof(this.keywordNames["="+word]) == 'undefined' ? false : true;
-    },
+    }
     punc : function(ch) {
         return this.puncNames[ch];
-    },
+    }
     
     
     void init() {
