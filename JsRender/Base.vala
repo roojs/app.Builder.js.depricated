@@ -1,14 +1,14 @@
 //<Script type="text/javascript">
  
 
-class JsRender.Base  : Object {
+class JsRender.JsRender  : Object {
     /**
      * @cfg {Array} doubleStringProps list of properties that can be double quoted.
      */
-    doubleStringProps : false,
+    Array<string> doubleStringProps;
     
-    id : false,
-    name : false,   // is the JS name of the file.
+    string id;
+    string name : false,   // is the JS name of the file.
     path : '',      // is the full path to the file.
     parent : false, // JS parent.
     
@@ -18,11 +18,13 @@ class JsRender.Base  : Object {
     
     items : false, // the tree of nodes.
     
-    cn : false, // array used by project tree.
+    Array<JsRender.Base>() cn;
     
     
     void Base() {
         
+        this.cn = new Array<JsRender.Base>();
+        this.
         
         
     },
