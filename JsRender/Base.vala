@@ -147,7 +147,7 @@ class JsRender.Node : Object {
             var func_regex = new Regex("^\s+|\s+$");
             this.props.map_iterator().foreach((k,v) => {
                 if (skip.find(k) != null) {
-                    continue;
+                    return; 
                 }
                 
                 
@@ -206,6 +206,33 @@ class JsRender.Node : Object {
                
                
             });
+            oprops.map_iterator().foreach((k,vo) => {
+                
+                if (JsRender.Lang.isKeyword(leftv) || JsRender.Lang.isBuiltin(leftv)) {
+                    left = "'" + leftv + "'";
+                } else if (Regex.match_simple("[^A-Za-z_]+",leftv) { // not plain a-z... - quoted.
+                    var val = this.quoteString(leftv);
+                    
+                    left = "'" + val.substring(1, val.length-1).replace("'", "\\'") + "'";
+                } else {
+                    left = leftv;
+                }
+                left += ' : ';
+                
+                var right = _this.mungeToString(el, i == 'listeners', pad + '    ');
+                
+                //if (!left.length && isArray) print(right);
+                
+                if ((typeof(right) != 'undefined') && right.length){
+                    els.push(left + right);
+                }
+            
+                
+            });
+            // oprops...    
+                
+                
+                
             
         }
         var left =  '';
