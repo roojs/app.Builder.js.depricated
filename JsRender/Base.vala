@@ -201,7 +201,7 @@ class JsRender.JsRender  : Object {
      */
     
     
-    mungeToString:  function(JsRender.Node obj, bool isListener, string pad)
+    string mungeToString (JsRender.Node obj, bool isListener, string pad)
     {
         
          
@@ -217,18 +217,8 @@ class JsRender.JsRender  : Object {
             print("missing obj?");
             return;
         }            
-
-        // am I munging a object or array...
-        if (obj.constructor && obj.constructor.toString() === Array.toString()) {
-            for (var i= 0; i < obj.length; i++) {
-                keys.push(i);
-            }
-            isArray = true;
-        } else {
-            for (var i in obj) {
-                keys.push(i);
-            }
-        }
+        keys = obj.keys();
+        isArray = obj.isArray;
         
         
         var els = []; 
@@ -240,7 +230,8 @@ class JsRender.JsRender  : Object {
                 this.mungeXtype(obj['|xns'] + '.' + obj['xtype'], els);
                 //els.push('xtype: '+ obj['|xns'] + '.' + obj['xtype']);
                  
-                skip.push('|xns','xtype');
+                skip.append_Val("|xns");
+                skip.append_Val("xtype");
                 
             }
         
