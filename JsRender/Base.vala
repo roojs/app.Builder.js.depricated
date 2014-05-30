@@ -236,7 +236,7 @@ class JsRender.JsRender  : Object {
             }
         
         
-        if (!isArray && obj.items && obj.items.length) {
+        if (!isArray && obj.items != null && obj.items.length) {
             // look for props..
             var newitems = [];
             for (var ii =0; ii< obj.items.length; ii++) {
