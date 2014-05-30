@@ -69,7 +69,7 @@ class JsRender.Lang_Class : Object {
     }
 
     bool isNewline (string str) {
-        return this.newline.get(str) != null;
+        return this.newlineNames.get(str) != null;
     }
     
     void init() {
