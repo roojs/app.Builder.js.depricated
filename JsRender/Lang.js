@@ -8,13 +8,17 @@ public JsRender.Lang_Class Lang = null;
 
 class JsRender.Lang_Class : Object {
     
+    GLib.List<string> coreObjects;
+    GLib.List<string> whitespaceNames;
     
     void Lang_Class ()
     {
-        if (Lang == null) {
+        if (Lang != null) {
+            return;
             Lang = this;
         }
-        
+        this.initCoreObjects();
+        this.initShitespaceNames();
         
     }
     
@@ -22,8 +26,15 @@ class JsRender.Lang_Class : Object {
     isBuiltin : function(name) {
         return (this.coreObjects.indexOf(name) > -1);
     }, 
-    coreObjects : ['_global_', 'Array', 'Boolean', 'Date', 'Error', 
-        'Function', 'Math', 'Number', 'Object', 'RegExp', 'String'],
+    void initCoreObjects() {
+        
+        this.coreObjects = new Glib.List<string>();
+        string[] co = { '_global_', 'Array', 'Boolean', 'Date', 'Error', 
+        'Function', 'Math', 'Number', 'Object', 'RegExp', 'String' };
+        for(var i =0; i< co.length;i++ ) {
+            this.coreObjects.append(co[i]);
+        }
+    }
         
 
     whitespace : function(ch) {
