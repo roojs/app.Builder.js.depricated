@@ -110,7 +110,7 @@ class JsRender.Node  {
                 prop  = prop.substring(0,  -2); //strip []
                 // it's an array type..
                 if (!oprops.has_key(prop)) {
-                    var cn = new JsRender.Node();
+                    //var cn = new JsRender.Node();
                     oprops.set(prop, pl);
                     
                 }
@@ -190,7 +190,15 @@ class JsRender.Node  {
             
             if (isListener) {
             // change the lines...
-                var str= func_regex.replace(v, v.length, 0, "");  // remove bar. ???
+                            
+                string str;
+                try {
+                    str = func_regex.replace(v,v.length, 0, "");
+                } catch(Error e) {
+                    print("regex failed");
+                    return "";
+                }
+                
                 var lines = str.split("\n");
                 if (lines.length > 1) {
                     str = string.join("\n" + pad, lines);
