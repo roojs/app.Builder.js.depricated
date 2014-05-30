@@ -160,7 +160,7 @@ class JsRender.Node  {
             }
             
             
-            var leftv = k[0] == '|' ? k.substring(1) : k;
+            string leftv = k[0] == '|' ? k.substring(1) : k;
             // skip builder stuff. prefixed with  '.' .. just like unix fs..
             if (leftv[0] == '.') { // |. or . -- do not output..
                 continue;
