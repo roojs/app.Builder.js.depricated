@@ -7,7 +7,7 @@ class JsRender.Node : Object {
     
     Gee.Map<string,string> props; // the properties..
     
-    Gee.Map<string,JsRender.Node> oprops;  // object properties.. that are nodes..
+  
     
     bool is_array;
     
@@ -79,7 +79,7 @@ class JsRender.Node : Object {
                
         }
         var newitems = new Array<JsRender.Node>();
-        this.oprops = new Gee.Map<string,JsRender.Node>();
+        var oprops = new Gee.Map<string,JsRender.Node>();
         
         if (!isArray && this.hasChildren()) {
             // look for '*props'
@@ -101,7 +101,7 @@ class JsRender.Node : Object {
                     // it's a standard prop..
                     
                     // munge property..??
-                    this.oprops.set(prop, pl);
+                    oprops.set(prop, pl);
                     
                     
                     //keys.push(prop);
@@ -110,7 +110,7 @@ class JsRender.Node : Object {
                 
                 prop  = prop.substring(0,  -2); //strip []
                 // it's an array type..
-                if (!this.oprops.has_key(prop)) {
+                if (!oprops.has_key(prop)) {
                     var cn = new JsRender.Node();
                     this.oprops.set(prop, pl);
                     
@@ -154,9 +154,13 @@ class JsRender.Node : Object {
                 var leftv = k[0] == '|' ? k.substring(1) : k;
                 // skip builder stuff. prefixed with  '.' .. just like unix fs..
                 if (leftv[0] == '.') { // |. or . -- do not output..
-                    continue;
+                    return;
                 }
-                
+                 if (k[0] == '*') {
+                    // ignore '*prop';
+                    return;
+                 }
+                    
                 
                 if (JsRender.Lang.isKeyword(leftv) || JsRender.Lang.isBuiltin(leftv)) {
                     left = "'" + leftv + "'";
@@ -195,8 +199,12 @@ class JsRender.Node : Object {
                     }
                     
                     els.push(left + str);
-                    continue;
-              }
+                    return;
+               }
+               
+               
+               
+               
             });
             
         }
@@ -216,27 +224,7 @@ class JsRender.Node : Object {
             
             
             //var left = isArray ? '' : (JSON.stringify(i) + " : " )
-            
-            if (i[0] == '|') {
-                // does not hapepnd with arrays..
-                if (typeof(el) == 'string' && !obj[i].length) { //skip empty.
-                    continue;
-                }
-                // this needs to go...
-                //if (typeof(el) == 'string'  && obj[i].match(new RegExp("Gtk.main" + "_quit"))) { // we can not handle this very well..
-                //    continue;;
-                //}
-                
-                var str= ('' + obj[i]).replace(/^\s+|\s+$/g,"");;
-                var lines = str.split("\n");
-                if (lines.length > 1) {
-                    str = lines.join("\n" + pad);
-                }
-                
-                els.push(left + str);
-                continue;
-            }
-            
+             
             
             
             
