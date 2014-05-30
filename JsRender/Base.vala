@@ -101,20 +101,24 @@ class JsRender.Node : Object {
                     // it's a standard prop..
                     
                     // munge property..??
-                    this.oprops.set(prop, pd);
+                    this.oprops.set(prop, pl);
                     
                     
                     //keys.push(prop);
                     continue;
                 }
-                prop  = prop.substring(0, prop.length -2); //strip []
+                
+                prop  = prop.substring(0,  -2); //strip []
                 // it's an array type..
-                obj[prop] = obj[prop]  || [];
-                obj[prop].push(pl);
-              //  print("ADDNG PROP:" + prop + ' ' + keys.indexOf(prop) );
-                if (keys.indexOf(prop) < 0) {
-                    keys.push(prop);
+                if (!this.oprops.has_key(prop)) {
+                    var cn = new JsRender.Node();
+                    this.oprops.set(prop, pl);
+                    
                 }
+                // ignores the fact it might be duplciated...
+                this.oprops.get(prop).isArray = true;
+                this.oprops.get(prop).items.append(pl);
+              
                 
                 
                 
