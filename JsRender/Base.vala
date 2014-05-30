@@ -79,9 +79,9 @@ class JsRender.Node : Object {
         
         
         if (!isArray && this.hasChildren()) {
-            // look for props..
+            // look for '*props'
             var newitems = [];
-            for (var ii =0; ii< obj.items.length(); ii++) {
+            for (var ii =0; ii< this.items.length(); ii++) {
                 var pl = obj.items[ii];
                 
 
