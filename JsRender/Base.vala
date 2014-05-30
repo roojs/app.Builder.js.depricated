@@ -91,7 +91,7 @@ class JsRender.Node : Object {
             // look for '*props'
            
             for (var ii =0; ii< this.items.length(); ii++) {
-                var pl = this.items.index(ii);
+                var pl = this.items.nth_data(ii);
                 if (!pl.props.has_key("*prop")) {
                     newitems.append(pl);
                     continue;
@@ -138,7 +138,7 @@ class JsRender.Node : Object {
         }
         if (this.isArray()) {
             for (var i=0;i< this.items.length();i++) {
-                var el = this.items.index(i);
+                var el = this.items.nth_data(i);
                 
                 
                 
@@ -210,17 +210,18 @@ class JsRender.Node : Object {
                 // standard..
                 
                 
-                if (this.isString(v)) {
+                if (!this.isString(v)) { // boolean or number...?
                     els.append(left + this.quoteString(v));
                     return;
                 }
                 // strings..
                 if (!_this.doubleStringProps.length) {
-                    els.append(left + JSON.stringify(obj[i]));
+                    els.append(left + this.quoteString(v));
                     continue;
                 }
-                if (_this.doubleStringProps.indexOf(i) > -1) {
-                    els.push(left + JSON.stringify(obj[i]));
+                if ()
+                if (_this.doubleStringProps.index(k) > -1) {
+                    els.push(left + this.quoteString(v));
                     continue;
                 }
                 // single quote..
