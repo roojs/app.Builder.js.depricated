@@ -28,7 +28,7 @@ class JsRender.Lang_Class : Object {
     
     bool isBuiltin(string  name) {
         return (this.coreObjects.index(name) > -1);
-    },
+    }
     
     string whitespace (string ch) {
         return this.whitespaceNames.get(ch);
@@ -54,19 +54,19 @@ class JsRender.Lang_Class : Object {
     
     bool isNumber : function(string str) {
         return Regex.match_simple("^(\.[0-9]|[0-9]+\.|[0-9])[0-9]*([eE][+-][0-9]+)?$",str);
-    },
+    }
 
     bool  isHexDec : function(str) {
         return Regex.match_simple("^0x[0-9A-F]+$",str);
-    },
+    }
 
     bool isWordChar : function(str) {
         return Regex.match_simple("^[a-zA-Z0-9$_.]+$", str);
-    },
+    }
 
     bool isSpace : function(str) {
         return this.whitespace.get(str) != null;
-    },
+    }
 
     bool isNewline : function(str) {
         return this.newline.get(str) != null;
