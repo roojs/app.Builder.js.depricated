@@ -174,7 +174,7 @@ class JsRender.Node : Object {
                     var str= func_regex.replace(v, "");  // remove bar. ???
                     var lines = str.split("\n");
                     if (lines.length > 1) {
-                        str = lines.join("\n" + pad);
+                        str = string.join("\n" + pad, lines);
                     }
                     
                     els.append(left  + str);
@@ -191,7 +191,7 @@ class JsRender.Node : Object {
                     var str= func_regex.replace(v, "");
                     var lines = str.split("\n");
                     if (lines.length > 1) {
-                        str = lines.join("\n" + pad);
+                        str =  string.join("\n" + pad, lines);
                     }
                     
                     els.push(left + str);
