@@ -79,6 +79,7 @@ class JsRender.Node : Object {
                
         }
         var newitems = new Array<JsRender.Node>();
+        this.oprops = new Gee.Map<string,JsRender.Node>();
         
         if (!isArray && this.hasChildren()) {
             // look for '*props'
