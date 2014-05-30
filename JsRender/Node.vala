@@ -155,20 +155,24 @@ class JsRender.Node  {
         } 
         string left;
         var func_regex = new Regex("^\\s+|\\s+$");
-        this.props.map_iterator().foreach((k,v) => {
-            if (skip.find(k) != null) {
-                return; 
+        var piter = this.props.map_iterator();
+        while (null != piter.next() )
+            var k = piter.get_key();
+            var v = piter.get_value();
+            
+            if (skip.index(k) > -1) {
+                continue;
             }
             
             
             var leftv = k[0] == '|' ? k.substring(1) : k;
             // skip builder stuff. prefixed with  '.' .. just like unix fs..
             if (leftv[0] == '.') { // |. or . -- do not output..
-                return;
+                continue;
             }
              if (k[0] == '*') {
                 // ignore '*prop';
-                return;
+                continue;
              }
                 
             
@@ -192,14 +196,14 @@ class JsRender.Node  {
                 }
                 
                 els.append(left  + str);
-                return;
+                continue;
             }
              
             // next.. is it a function..
             if (k[0] == '|') {
                 // does not hapepnd with arrays.. 
                 if (v.length < 1) {  //if (typeof(el) == 'string' && !obj[i].length) { //skip empty.
-                    return;
+                    continue;
                 }
                 
                 var str= func_regex.replace(v, "");
@@ -216,7 +220,7 @@ class JsRender.Node  {
             
             if (!this.isString(v)) { // boolean or number...?
                 els.append(left + this.quoteString(v));
-                return;
+                continue;
             }
             // strings..
             if (!_this.doubleStringProps.length) {
@@ -236,7 +240,7 @@ class JsRender.Node  {
            
            
            
-        });
+        }
         var iter = oprops.map_iterator();
         while (null != iter.next()) {
             var k = iter.get_key();
