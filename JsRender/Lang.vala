@@ -6,11 +6,11 @@
 
 
 void main () {
-    var x = new JsRender.Lang_Class();
-    print(JsRender.Lang.keyword("void"));
+    new JsRender.Lang_Class();
+    print(Lang.keyword("void"));
 }
 
-public JsRender.Lang_Class JsRender.Lang = null;
+public JsRender.Lang_Class Lang = null;
 
 public class JsRender.Lang_Class : Object {
     
@@ -23,8 +23,9 @@ public class JsRender.Lang_Class : Object {
     public void Lang_Class ()
     {
         if (Lang != null) {
-            return;
+            
             Lang = this;
+            return;
         }
         this.init();
         
@@ -98,10 +99,10 @@ public class JsRender.Lang_Class : Object {
         string[] ws =  {
             " :SPACE",
             "\f:FORMFEED",
-            "\t:TAB",
-            "\u0009:UNICODE_TAB",
-            "\u000A:UNICODE_NBR",
-            "\u0008:VERTICAL_TAB"
+            "\t:TAB" //,
+          //  "\u0009:UNICODE_TAB",
+          //  "\u000A:UNICODE_NBR",
+          //  "\u0008:VERTICAL_TAB"
         };
         for(var i =0; i< ws.length;i++ ) {
             var x = ws[i].split(":");
@@ -110,11 +111,11 @@ public class JsRender.Lang_Class : Object {
         
         ws = {
             "\n:NEWLINE",
-            "\r:RETURN",
-            "\u000A:UNICODE_LF",
-            "\u000D:UNICODE_CR",
-            "\u2029:UNICODE_PS",
-            "\u2028:UNICODE_LS"
+            "\r:RETURN" //,
+//            "\u000A:UNICODE_LF",
+  //          "\u000D:UNICODE_CR",
+    //        "\u2029:UNICODE_PS",
+      //      "\u2028:UNICODE_LS"
         };
         for(var i =0; i< ws.length;i++ ) {
             var x = ws[i].split(":");
