@@ -7,7 +7,7 @@ class JsRender.Node : Object {
     
     Gee.Map<string,string> props; // the properties..
     
-    Gee.Map<string,JsRender.Node> oprops;  // object properties..
+    Gee.Map<string,JsRender.Node> oprops;  // object properties.. that are nodes..
     
     bool is_array;
     
