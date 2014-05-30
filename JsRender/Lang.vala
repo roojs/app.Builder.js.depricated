@@ -52,23 +52,23 @@ class JsRender.Lang_Class : Object {
         return this.puncNames[ch];
     }
     
-    bool isNumber : function(string str) {
+    bool isNumber (string str) {
         return Regex.match_simple("^(\.[0-9]|[0-9]+\.|[0-9])[0-9]*([eE][+-][0-9]+)?$",str);
     }
 
-    bool  isHexDec : function(str) {
+    bool  isHexDec (str) {
         return Regex.match_simple("^0x[0-9A-F]+$",str);
     }
 
-    bool isWordChar : function(str) {
+    bool isWordChar (str) {
         return Regex.match_simple("^[a-zA-Z0-9$_.]+$", str);
     }
 
-    bool isSpace : function(str) {
+    bool isSpace (str) {
         return this.whitespace.get(str) != null;
     }
 
-    bool isNewline : function(str) {
+    bool isNewline (str) {
         return this.newline.get(str) != null;
     }
     
