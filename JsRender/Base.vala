@@ -8,12 +8,12 @@ class JsRender.JsRender  : Object {
     Array<string> doubleStringProps;
     
     string id;
-    string name : false,   // is the JS name of the file.
-    path : '',      // is the full path to the file.
-    parent : false, // JS parent.
+    string name;   // is the JS name of the file.
+    string path;  // is the full path to the file.
+    string parent;  // JS parent.
     
-    title : false,  // a title.. ?? nickname.. ??? - 
-    project: false, // name...
+    string title;  // a title.. ?? nickname.. ??? - 
+    Project.Project project;
     //Project : false, // link to container project!
     
     items : false, // the tree of nodes.
