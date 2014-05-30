@@ -64,7 +64,7 @@ class JsRender.Lang_Class : Object {
         return Regex.match_simple("^[a-zA-Z0-9$_.]+$", str);
     }
 
-    bool isSpace (stringstr) {
+    bool isSpace (string str) {
         return this.whitespace.get(str) != null;
     }
 
