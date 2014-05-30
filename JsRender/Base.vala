@@ -154,156 +154,126 @@ class JsRender.Node : Object {
             
             
           
-        } else {
-            string left;
-            var func_regex = new Regex("^\s+|\s+$");
-            this.props.map_iterator().foreach((k,v) => {
-                if (skip.find(k) != null) {
-                    return; 
-                }
-                
-                
-                var leftv = k[0] == '|' ? k.substring(1) : k;
-                // skip builder stuff. prefixed with  '.' .. just like unix fs..
-                if (leftv[0] == '.') { // |. or . -- do not output..
-                    return;
-                }
-                 if (k[0] == '*') {
-                    // ignore '*prop';
-                    return;
-                 }
-                    
-                
-                if (JsRender.Lang.isKeyword(leftv) || JsRender.Lang.isBuiltin(leftv)) {
-                    left = "'" + leftv + "'";
-                } else if (Regex.match_simple("[^A-Za-z_]+",leftv) { // not plain a-z... - quoted.
-                    var val = this.quoteString(leftv);
-                    
-                    left = "'" + val.substring(1, val.length-1).replace("'", "\\'") + "'";
-                } else {
-                    left = leftv;
-                }
-                left += ' : ';
-                
-                if (isListener) {
-                // change the lines...
-                    var str= func_regex.replace(v, "");  // remove bar. ???
-                    var lines = str.split("\n");
-                    if (lines.length > 1) {
-                        str = string.join("\n" + pad, lines);
-                    }
-                    
-                    els.append(left  + str);
-                    return;
-                }
-                 
-                // next.. is it a function..
-                if (k[0] == '|') {
-                    // does not hapepnd with arrays.. 
-                    if (v.length < 1) {  //if (typeof(el) == 'string' && !obj[i].length) { //skip empty.
-                        return;
-                    }
-                    
-                    var str= func_regex.replace(v, "");
-                    var lines = str.split("\n");
-                    if (lines.length > 1) {
-                        str =  string.join("\n" + pad, lines);
-                    }
-                    
-                    els.append(left + str);
-                    return;
-                }
-                // standard..
-                
-                
-                if (!this.isString(v)) { // boolean or number...?
-                    els.append(left + this.quoteString(v));
-                    return;
-                }
-                // strings..
-                if (!_this.doubleStringProps.length) {
-                    els.append(left + this.quoteString(v));
-                    continue;
-                }
-                if ()
-                if (_this.doubleStringProps.index(k) > -1) {
-                    els.push(left + this.quoteString(v));
-                    continue;
-                }
-                
-                // single quote.. v.substring(1, v.length-1).replace("'", "\\'") + "'";
-                els.push(left + "'" + v.substring(1, v.length-1).replace("'", "\\'") + "'";
-                
-
-               
-               
-               
-            });
-            oprops.map_iterator().foreach((k,vo) => {
-                var leftv = k[0] == '|' ? k.substring(1) : k;
-                if (JsRender.Lang.isKeyword(leftv) || JsRender.Lang.isBuiltin(leftv)) {
-                    left = "'" + leftv + "'";
-                } else if (Regex.match_simple("[^A-Za-z_]+",leftv) { // not plain a-z... - quoted.
-                    var val = this.quoteString(leftv);
-                    
-                    left = "'" + val.substring(1, val.length-1).replace("'", "\\'") + "'";
-                } else {
-                    left = leftv;
-                }
-                left += ' : ';
-                
-                var right = vo.mungeToString(k == 'listeners', pad + '    ');
-                
-                //if (!left.length && isArray) print(right);
-                
-                if ((typeof(right) != 'undefined') && right.length){
-                    els.push(left + right);
-                }
+        } 
+        string left;
+        var func_regex = new Regex("^\s+|\s+$");
+        this.props.map_iterator().foreach((k,v) => {
+            if (skip.find(k) != null) {
+                return; 
+            }
             
-                
-            });
-            // oprops...    
-                
-            var spad = pad.substring(0, pad.length-4);
-            return   "{\n" +
-                pad  + string.join(",\n" + pad , els) + 
-                "\n" + spad +  "}");
-               
-               
+            
+            var leftv = k[0] == '|' ? k.substring(1) : k;
+            // skip builder stuff. prefixed with  '.' .. just like unix fs..
+            if (leftv[0] == '.') { // |. or . -- do not output..
+                return;
+            }
+             if (k[0] == '*') {
+                // ignore '*prop';
+                return;
+             }
                 
             
-        }
-        
-        
-        
-        
-        var left =  '';
-        
-        for (var ii =0; ii< keys.length; ii++) {
-        
-            var i = keys[ii];
-          
-            if (typeof(obj[i]) == 'undefined') { // empty or removed.
+            if (JsRender.Lang.isKeyword(leftv) || JsRender.Lang.isBuiltin(leftv)) {
+                left = "'" + leftv + "'";
+            } else if (Regex.match_simple("[^A-Za-z_]+",leftv) { // not plain a-z... - quoted.
+                var val = this.quoteString(leftv);
+                
+                left = "'" + val.substring(1, val.length-1).replace("'", "\\'") + "'";
+            } else {
+                left = leftv;
+            }
+            left += ' : ';
+            
+            if (isListener) {
+            // change the lines...
+                var str= func_regex.replace(v, "");  // remove bar. ???
+                var lines = str.split("\n");
+                if (lines.length > 1) {
+                    str = string.join("\n" + pad, lines);
+                }
+                
+                els.append(left  + str);
+                return;
+            }
+             
+            // next.. is it a function..
+            if (k[0] == '|') {
+                // does not hapepnd with arrays.. 
+                if (v.length < 1) {  //if (typeof(el) == 'string' && !obj[i].length) { //skip empty.
+                    return;
+                }
+                
+                var str= func_regex.replace(v, "");
+                var lines = str.split("\n");
+                if (lines.length > 1) {
+                    str =  string.join("\n" + pad, lines);
+                }
+                
+                els.append(left + str);
+                return;
+            }
+            // standard..
+            
+            
+            if (!this.isString(v)) { // boolean or number...?
+                els.append(left + this.quoteString(v));
+                return;
+            }
+            // strings..
+            if (!_this.doubleStringProps.length) {
+                els.append(left + this.quoteString(v));
                 continue;
             }
-            var el = obj[i];
+            if ()
+            if (_this.doubleStringProps.index(k) > -1) {
+                els.push(left + this.quoteString(v));
+                continue;
+            }
             
-             
-             
+            // single quote.. v.substring(1, v.length-1).replace("'", "\\'") + "'";
+            els.push(left + "'" + v.substring(1, v.length-1).replace("'", "\\'") + "'";
             
-        
+
            
-        }
+           
+           
+        });
+        oprops.map_iterator().foreach((k,vo) => {
+            var leftv = k[0] == '|' ? k.substring(1) : k;
+            if (JsRender.Lang.isKeyword(leftv) || JsRender.Lang.isBuiltin(leftv)) {
+                left = "'" + leftv + "'";
+            } else if (Regex.match_simple("[^A-Za-z_]+",leftv) { // not plain a-z... - quoted.
+                var val = this.quoteString(leftv);
+                
+                left = "'" + val.substring(1, val.length-1).replace("'", "\\'") + "'";
+            } else {
+                left = leftv;
+            }
+            left += ' : ';
+            
+            var right = vo.mungeToString(k == 'listeners', pad + '    ');
+            
+            //if (!left.length && isArray) print(right);
+            
+            if ((typeof(right) != 'undefined') && right.length){
+                els.push(left + right);
+            }
         
-        if (!isArray && !els.length) {
-            return '';
+            
+        });
+        if (!els.length()) {
+            return "";
         }
-        //output the thing.
+        // oprops...    
+            
         var spad = pad.substring(0, pad.length-4);
-        return (isArray ? '[' : '{') + "\n" +
-            pad  + els.join(",\n" + pad ) + 
-            "\n" + spad + (isArray ? ']' : '}');
+        return   "{\n" +
+            pad  + string.join(",\n" + pad , els) + 
+            "\n" + spad +  "}");
            
+           
+               
         
         
     } 
