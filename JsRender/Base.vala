@@ -7,9 +7,18 @@ class JsRender.Node : Object {
         
         
     }
-    
-    
-    
+    boolean isArray()
+    {
+        
+    }
+    boolean hasChildren()
+    {
+        
+    }
+    bool hasXnsType()
+    {
+        
+    }
 }
 
 
