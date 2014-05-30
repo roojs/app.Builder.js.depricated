@@ -10,7 +10,7 @@ class JsRender.Node  {
     
   
     
-    bool is_array;
+    public bool is_array;
     
     Node()
     {
@@ -120,7 +120,7 @@ class JsRender.Node  {
                     
                 }
                 // ignores the fact it might be duplciated...
-                oprops.get(prop).isArray = true;
+                oprops.get(prop).is_array = true;
                 oprops.get(prop).items.append(pl);
               
                 
