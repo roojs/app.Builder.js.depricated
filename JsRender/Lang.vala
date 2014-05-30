@@ -3,10 +3,12 @@
 /**
 	@namespace
 */
+#test
+# valac gitlive/app.Builder.js/JsRender/Lang.vala --pkg gee-1.0 -o /tmp/Lang ;/tmp/Lang
 
 
 void main () {
-    var x = new JsRender.Lang_Class();
+     new JsRender.Lang_Class();
     print(Lang.keyword("delete") + "\n");
 }
 
@@ -20,7 +22,7 @@ public class JsRender.Lang_Class : Object {
     Gee.HashMap<string,string> keywordNames;
     Gee.HashMap<string,string> puncNames;
     Gee.HashMap<string,string> matchingNames;
-    public void JsRender.Lang_Class ()
+    public Lang_Class ()
     {
         if (Lang != null) {
             print("lang not null\n");
