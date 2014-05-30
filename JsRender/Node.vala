@@ -102,7 +102,7 @@ class JsRender.Node : Object {
                 //delete pl['*prop'];
                 var prop = pl.get("*prop");
                 // name ends in [];
-                if (! Regex.match_simple("\\[\\]$", prop) {
+                if (! Regex.match_simple("\\[\\]$", prop)) {
                     // it's a standard prop..
                     
                     // munge property..??
