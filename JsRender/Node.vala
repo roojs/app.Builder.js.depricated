@@ -54,7 +54,7 @@ class JsRender.Node  {
     
   
     
-    string mungeToString (bool isListener, string pad,  Array<string> doubleStringProps)
+    string mungeToString (bool isListener, string pad,  Gee.ArrayList<string> doubleStringProps)
     {
         
          
