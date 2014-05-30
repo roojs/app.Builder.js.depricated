@@ -296,7 +296,7 @@ class JsRender.JsRender  : Object {
     Project.Project project;
     //Project : false, // link to container project!
     
-    items : false, // the tree of nodes.
+    JsRender.Node tree; // the tree of nodes.
     
     Array<JsRender.Base>() cn;
     
@@ -483,7 +483,12 @@ class JsRender.JsRender  : Object {
      * @arg {string} pad - the padding to indent with. 
      */
     
-    
+    function mungeToString()
+    {
+        return this.
+        
+        
+    }
     
      
     
