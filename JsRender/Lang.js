@@ -113,7 +113,7 @@ class JsRender.Lang_Class : Object {
             var x = ws[i].split(":");
             this.newlineNames.set(x[0],x[1]);
         }
-        string[]  ws = {
+        ws = {
             "=break:BREAK",
             "=case:CASE",
             "=catch:CATCH",
@@ -188,22 +188,22 @@ class JsRender.Lang_Class : Object {
             "} RIGHT_CURLY",
             "( LEFT_PAREN",
             ") RIGHT_PAREN"
-        },
+        };
         for(var i =0; i< ws.length;i++ ) {
             var x = ws[i].split(" ");
             this.puncNames.set(x[0],x[1]);
         }
     
-       string[]  ws = {
+       ws = {
            "LEFT_PAREN:RIGHT_PAREN",
            "RIGHT_PAREN:LEFT_PAREN",
            "LEFT_CURLY:RIGHT_CURLY",
            "RIGHT_CURLY:LEFT_CURLY",
            "LEFT_BRACE:RIGHT_BRACE",
            "RIGHT_BRACE:LEFT_BRACE"
-       },
+       };
        for(var i =0; i< ws.length;i++ ) {
-           var x = ws[i].split(" ");
+           var x = ws[i].split(":");
            this.matchingNames.set(x[0],x[1]);
        }
     }
