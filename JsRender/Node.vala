@@ -64,8 +64,7 @@ class JsRender.Node  {
         pad = pad.length < 1 ? "    " : pad;
         
         
-        
-        var isArray = false;
+         
         
         //isListener = isListener || false;
 
