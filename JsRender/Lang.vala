@@ -9,7 +9,7 @@
 
 void main () {
      new JsRender.Lang_Class();
-    print(Lang.keyword("delete") + "\n");
+    print(JsRender.Lang.keyword("delete") + "\n");
 }
 namespace JsRender { 
     public Lang_Class Lang = null;
