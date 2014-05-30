@@ -52,7 +52,9 @@ class JsRender.Node  {
      
     /* creates javascript based on the rules */
     
-    string mungeToString (bool isListener, string pad)
+  
+    
+    string mungeToString (bool isListener, string pad,  Array<string> doubleStringProps;)
     {
         
          
