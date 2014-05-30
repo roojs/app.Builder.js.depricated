@@ -116,7 +116,7 @@ class JsRender.JsRender  : Object {
          
     getTree ( o ) {
         print("File.getTree tree called on base object?!?!");
-    },
+    }
     Json.Object toJsonArray ()
     {
         
@@ -132,25 +132,25 @@ class JsRender.JsRender  : Object {
         ret.set_string_member("modOrder", this.modOrder);
         
         return ret;
-    },
+    }
     
     
-    
-        getTitle : function()
-        {
-            if (this.title) {
-                return this.title;
-            }
-            return this.path.split('/').pop();
-            
-        },
-        getTitleTip: function()
-        {
-            if (this.title) {
-                return '<b>' + this.title + '</b> ' + this.path;
-            }
-            return this.path;
-        },
+
+    string getTitle ()
+    {
+        if (this.title.length > 0) {
+            return this.title;
+        }
+        var a = this.path.split('/');
+        return a[a.length-1];
+    }
+    string getTitleTip()
+    {
+        if (this.title.length > 0) {
+            return '<b>' + this.title + '</b> ' + this.path;
+        }
+        return this.path;
+    }
         sortCn: function()
         {
             this.cn.sort(function(a,b) {
