@@ -45,7 +45,8 @@ class JsRender.Lang_Class : Object {
     }
     
     bool isKeyword(string word) {
-        return typeof(this.keywordNames["="+word]) == 'undefined' ? false : true;
+        return this.keywordNames.get("=" + word) != null;
+        }
     }
     punc : function(string ch) {
         return this.puncNames[ch];
