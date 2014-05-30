@@ -56,19 +56,19 @@ class JsRender.Lang_Class : Object {
         return Regex.match_simple("^(\.[0-9]|[0-9]+\.|[0-9])[0-9]*([eE][+-][0-9]+)?$",str);
     }
 
-    bool  isHexDec (str) {
+    bool  isHexDec (string str) {
         return Regex.match_simple("^0x[0-9A-F]+$",str);
     }
 
-    bool isWordChar (str) {
+    bool isWordChar (string str) {
         return Regex.match_simple("^[a-zA-Z0-9$_.]+$", str);
     }
 
-    bool isSpace (str) {
+    bool isSpace (stringstr) {
         return this.whitespace.get(str) != null;
     }
 
-    bool isNewline (str) {
+    bool isNewline (string str) {
         return this.newline.get(str) != null;
     }
     
