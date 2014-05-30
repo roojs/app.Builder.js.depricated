@@ -124,10 +124,10 @@ class JsRender.Node : Object {
                 
             }
             
-            obj.items = newitems;
-            if (!obj.items.length) {
-                delete obj.items;
-            }
+            //obj.items = newitems;
+            //if (!obj.items.length) {
+            //    delete obj.items;
+            //}
             
         }
         
