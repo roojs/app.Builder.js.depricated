@@ -251,7 +251,7 @@ class JsRender.Node  {
                 els.append(left + this.quoteString(v));
                 continue;
             }
-            */
+             
             // single quote.. v.substring(1, v.length-1).replace("'", "\\'") + "'";
             els.append(left + "'" + v.substring(1, v.length-1).replace("'", "\\'") + "'");
             
