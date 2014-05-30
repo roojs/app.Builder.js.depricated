@@ -6,7 +6,7 @@ class JsRender.Node : Object {
     
     GLib.List<JsRender.Node> items; // child items..
     
-    Gee.Map<string,string> props; // the properties..
+    Gee.HashMap<string,string> props; // the properties..
     
   
     
@@ -15,7 +15,7 @@ class JsRender.Node : Object {
     Node()
     {
         this.items = new GLib.List<JsRender.Node>();
-        this.props = new GLib.Map<string,string>();
+        this.props = new GLib.HashMap<string,string>();
         this.is_array = false;
         
     }
@@ -84,7 +84,7 @@ class JsRender.Node : Object {
                
         }
         var newitems = new Array<JsRender.Node>();
-        var oprops = new Gee.Map<string,JsRender.Node>();
+        var oprops = new Gee.HashMap<string,JsRender.Node>();
         
         if (!isArray && this.hasChildren()) {
             // look for '*props'
