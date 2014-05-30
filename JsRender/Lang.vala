@@ -48,7 +48,7 @@ class JsRender.Lang_Class : Object {
         return this.keywordNames.get("=" + word) != null;
         
     }
-    punc : function(string ch) {
+    string punc (string ch) {
         return this.puncNames[ch];
     }
     
