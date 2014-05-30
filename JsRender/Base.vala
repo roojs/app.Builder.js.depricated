@@ -182,7 +182,25 @@ class JsRender.Node : Object {
                 }
                  
                 // next.. is it a function..
-              
+                if (k[0] == '|') {
+                    // does not hapepnd with arrays..
+                    if (typeof(el) == 'string' && !obj[i].length) { //skip empty.
+                        continue;
+                    }
+                    // this needs to go...
+                    //if (typeof(el) == 'string'  && obj[i].match(new RegExp("Gtk.main" + "_quit"))) { // we can not handle this very well..
+                    //    continue;;
+                    //}
+                    
+                    var str= ('' + obj[i]).replace(/^\s+|\s+$/g,"");;
+                    var lines = str.split("\n");
+                    if (lines.length > 1) {
+                        str = lines.join("\n" + pad);
+                    }
+                    
+                    els.push(left + str);
+                    continue;
+              }
             });
             
         }
