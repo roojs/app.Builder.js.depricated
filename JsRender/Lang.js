@@ -33,7 +33,9 @@ class JsRender.Lang_Class : Object {
     whitespace : function(ch) {
         return this.whitespaceNames.get(ch);
     },
-    
+    newline : function(ch) {
+        return this.newlineNames.get(ch);
+    },
     
     void initCoreObjects() {
         
@@ -56,9 +58,7 @@ class JsRender.Lang_Class : Object {
         "\u0008": "VERTICAL_TAB"
     },
 
-    newline : function(ch) {
-        return this.newlineNames[ch];
-    },
+    
     newlineNames : {
         "\n":     "NEWLINE",
         "\r":     "RETURN",
