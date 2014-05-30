@@ -1,5 +1,13 @@
 //<Script type="text/javascript">
- 
+
+
+class JsRender.Node : Object {
+    
+    
+    
+    
+}
+
 
 class JsRender.JsRender  : Object {
     /**
