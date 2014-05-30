@@ -4,6 +4,9 @@
 class JsRender.Node : Object {
     
     GLib.List<JsRender.Node> items; // child items..
+    
+    Gee.Map<string,string> props; // the properties..
+    
     bool is_array;
     
     Node()
@@ -21,14 +24,17 @@ class JsRender.Node : Object {
     }
     boolean isArray()
     {
-        
+        return this.is_array;
     }
     boolean hasChildren()
     {
-        
+        return this.items.length() > 0;
     }
     bool hasXnsType()
     {
+        if this.get('|xns')) {
+            
+        }
         if (this.obj['|xns']) != 'undefined' &&
                     typeof(obj['xtype']) != 'undefined'
     }
