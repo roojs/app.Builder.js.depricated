@@ -42,7 +42,10 @@ class JsRender.Lang_Class : Object {
     isKeyword: function(word) {
         return typeof(this.keywordNames["="+word]) == 'undefined' ? false : true;
     },
-    void initCoreObjects() {
+    
+    
+    
+    void init() {
         
         this.coreObjects = new Glib.List<string>();
         string[] co = { '_global_', 'Array', 'Boolean', 'Date', 'Error', 
@@ -50,32 +53,23 @@ class JsRender.Lang_Class : Object {
         for(var i =0; i< co.length;i++ ) {
             this.coreObjects.append(co[i]);
         }
-    }
-        
-
-   
-    whitespaceNames : {
-        " ":      "SPACE",
-        "\f":     "FORMFEED",
-        "\t":     "TAB",
-        "\u0009": "UNICODE_TAB",
-        "\u000A": "UNICODE_NBR",
-        "\u0008": "VERTICAL_TAB"
-    },
-
-    
-    newlineNames : {
-        "\n":     "NEWLINE",
-        "\r":     "RETURN",
-        "\u000A": "UNICODE_LF",
-        "\u000D": "UNICODE_CR",
-        "\u2029": "UNICODE_PS",
-        "\u2028": "UNICODE_LS"
-    },
-
-   
-
-    keywordNames : {
+        string[] ws =  {
+            " ":      "SPACE",
+            "\f":     "FORMFEED",
+            "\t":     "TAB",
+            "\u0009": "UNICODE_TAB",
+            "\u000A": "UNICODE_NBR",
+            "\u0008": "VERTICAL_TAB"
+        },
+        string[]  newlineNames = {
+            "\n":     "NEWLINE",
+            "\r":     "RETURN",
+            "\u000A": "UNICODE_LF",
+            "\u000D": "UNICODE_CR",
+            "\u2029": "UNICODE_PS",
+            "\u2028": "UNICODE_LS"
+        },
+        string[]  keywordNames = {
         "=break":      "BREAK",
         "=case":       "CASE",
         "=catch":      "CATCH",
