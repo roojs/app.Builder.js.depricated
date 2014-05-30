@@ -26,17 +26,22 @@ class JsRender.Lang_Class : Object {
     }
     
     
-    isBuiltin : function(name) {
+    isBuiltin : function(string  name) {
         return (this.coreObjects.index(name) > -1);
     },
     
-    whitespace : function(ch) {
+    whitespace : function(string ch) {
         return this.whitespaceNames.get(ch);
     },
-    newline : function(ch) {
+    newline : function(string ch) {
         return this.newlineNames.get(ch);
     },
-    
+    keyword : function(string word) {
+        return this.keywordNames.get("="+word);
+    },
+    isKeyword: function(word) {
+        return typeof(this.keywordNames["="+word]) == 'undefined' ? false : true;
+    },
     void initCoreObjects() {
         
         this.coreObjects = new Glib.List<string>();
@@ -68,12 +73,7 @@ class JsRender.Lang_Class : Object {
         "\u2028": "UNICODE_LS"
     },
 
-    keyword : function(word) {
-        return this.keywordNames["="+word];
-    },
-    isKeyword: function(word) {
-        return typeof(this.keywordNames["="+word]) == 'undefined' ? false : true;
-    },
+   
 
     keywordNames : {
         "=break":      "BREAK",
