@@ -57,6 +57,7 @@ class JsRender.Node : Object {
         // except for numbers...
         
     }
+    /* creates javascript based on the rules */
     
     string mungeToString (bool isListener, string pad)
     {
