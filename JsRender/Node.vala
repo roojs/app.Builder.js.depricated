@@ -260,7 +260,7 @@ class JsRender.Node  {
         
             
         });
-        if (!els.length) {
+        if (els.length < 1) {
             return "";
         }
         // oprops...    
