@@ -49,12 +49,7 @@ class JsRender.Node  {
         return k;
         
     }
-    string quoteString(string s)
-    {
-        /// do json..
-        // except for numbers...
-        
-    }
+     
     /* creates javascript based on the rules */
     
     string mungeToString (bool isListener, string pad)
