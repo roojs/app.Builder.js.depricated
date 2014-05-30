@@ -82,7 +82,7 @@ class JsRender.Node  {
                skip.append_val("xtype");
                
         }
-        var newitems = new Gee.ArrayList<JsRender.Node>();
+        //var newitems = new Gee.ArrayList<JsRender.Node>();
         var oprops = new Gee.HashMap<string,JsRender.Node>();
         
         if (!isArray && this.hasChildren()) {
@@ -91,7 +91,7 @@ class JsRender.Node  {
             for (var ii =0; ii< this.items.length(); ii++) {
                 var pl = this.items.nth_data(ii);
                 if (!pl.props.has_key("*prop")) {
-                    newitems.append(pl);
+                    //newitems.add(pl);
                     continue;
                 }
                 
