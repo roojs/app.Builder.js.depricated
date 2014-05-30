@@ -6,8 +6,8 @@
 
 
 void main () {
-    new JsRender.Lang_Class();
-    print(Lang.keyword("void"));
+    var x = new JsRender.Lang_Class();
+    print(Lang.keyword("delete"));
 }
 
 public JsRender.Lang_Class Lang = null;
@@ -23,12 +23,12 @@ public class JsRender.Lang_Class : Object {
     public void Lang_Class ()
     {
         if (Lang != null) {
-            
-            Lang = this;
             return;
         }
+        print("init");
         this.init();
-        
+        print("init Lang");
+        Lang = this;
         
     }
     
