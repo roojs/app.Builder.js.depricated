@@ -83,8 +83,8 @@ class JsRender.Lang_Class : Object {
 
         
         
-        string[] co = { '_global_', 'Array', 'Boolean', 'Date', 'Error', 
-            'Function', 'Math', 'Number', 'Object', 'RegExp', 'String' };
+        string[] co = { "_global_", "Array", "Boolean", "Date", "Error", 
+            "Function", "Math", "Number", "Object", "RegExp", "String" };
         for(var i =0; i< co.length;i++ ) {
             this.coreObjects.append(co[i]);
         }
