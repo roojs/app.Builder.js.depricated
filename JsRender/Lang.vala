@@ -14,7 +14,7 @@ public class JsRender.Lang_Class : Object {
     Gee.HashMap<string,string> keywordNames;
     Gee.HashMap<string,string> puncNames;
     Gee.HashMap<string,string> matchingNames;
-    void Lang_Class ()
+    public void Lang_Class ()
     {
         if (Lang != null) {
             return;
@@ -26,49 +26,49 @@ public class JsRender.Lang_Class : Object {
     }
     
     
-    bool isBuiltin(string  name) {
+    public bool isBuiltin(string  name) {
         return (this.coreObjects.index(name) > -1);
     }
     
-    string whitespace (string ch) {
+    public string whitespace (string ch) {
         return this.whitespaceNames.get(ch);
     }
-    string  newline (string ch) {
+    public string  newline (string ch) {
         return this.newlineNames.get(ch);
     }
-    string keyword(string word) {
+    public string keyword(string word) {
         return this.keywordNames.get("="+word);
     }
     
-    string matching(string name) {
+    public string matching(string name) {
         return this.matchingNames.get(name);
     }
     
-    bool isKeyword(string word) {
+    public bool isKeyword(string word) {
         return this.keywordNames.get("=" + word) != null;
         
     }
-    string punc (string ch) {
+    public string punc (string ch) {
         return this.puncNames[ch];
     }
     
-    bool isNumber (string str) {
+    public bool isNumber (string str) {
         return Regex.match_simple("^(.[0-9]|[0-9]+.|[0-9])[0-9]*([eE][+-][0-9]+)?$",str);
     }
 
-    bool  isHexDec (string str) {
+    public bool  isHexDec (string str) {
         return Regex.match_simple("^0x[0-9A-F]+$",str);
     }
 
-    bool isWordChar (string str) {
+    public bool isWordChar (string str) {
         return Regex.match_simple("^[a-zA-Z0-9$_.]+$", str);
     }
 
-    bool isSpace (string str) {
+    public bool isSpace (string str) {
         return this.whitespaceNames.get(str) != null;
     }
 
-    bool isNewline (string str) {
+    public bool isNewline (string str) {
         return this.newlineNames.get(str) != null;
     }
     
