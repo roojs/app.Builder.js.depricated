@@ -13,7 +13,7 @@ class JsRender.Lang_Class : Object {
     Gee.HashMap<string,string> newlineNames;
     Gee.HashMap<string,string> keywordNames;
     Gee.HashMap<string,string> puncNames;
-    
+    Gee.HashMap<string,string> matchingNames;
     void Lang_Class ()
     {
         if (Lang != null) {
@@ -80,7 +80,7 @@ class JsRender.Lang_Class : Object {
         this.newlineNames = new Gee.HashMap<string,string>();
         this.keywordNames = new Gee.HashMap<string,string>();
         this.puncNames = new Gee.HashMap<string,string>();
-
+        this.matchingNames = new Gee.HashMap<string,string>();
         
         
         string[] co = { "_global_", "Array", "Boolean", "Date", "Error", 
