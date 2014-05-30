@@ -40,19 +40,19 @@ class JsRender.Lang_Class : Object {
         return this.keywordNames.get("="+word);
     }
     
-    string matching(name) {
-        return this.matchingNames[name];
+    string matching(string name) {
+        return this.matchingNames.get(name);
     }
     
-    bool isKeyword(word) {
+    bool isKeyword(string word) {
         return typeof(this.keywordNames["="+word]) == 'undefined' ? false : true;
     }
-    punc : function(ch) {
+    punc : function(string ch) {
         return this.puncNames[ch];
     }
     
-    bool isNumber : function(str) {
-        return /^(\.[0-9]|[0-9]+\.|[0-9])[0-9]*([eE][+-][0-9]+)?$/i.test(str);
+    bool isNumber : function(string str) {
+        return Regex.match_simple("^(\.[0-9]|[0-9]+\.|[0-9])[0-9]*([eE][+-][0-9]+)?$/,str);
     },
 
     bool  isHexDec : function(str) {
