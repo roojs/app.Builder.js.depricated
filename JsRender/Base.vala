@@ -244,7 +244,7 @@ class JsRender.JsRender  : Object {
      */
     
     
-    void mungeToString (JsRender.Node obj, bool isListener, string pad)
+    string mungeToString (JsRender.Node obj, bool isListener, string pad)
     {
         
          
