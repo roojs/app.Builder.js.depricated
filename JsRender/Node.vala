@@ -239,7 +239,7 @@ class JsRender.Node  {
         }
         var iter = oprops.map_iterator();
         while (iter.next()) {
-            k = iter.get_key();
+            var k = iter.get_key();
             var vo = iter.get_value();
             var leftv = k[0] == '|' ? k.substring(1) : k;
             if (JsRender.Lang.isKeyword(leftv) || JsRender.Lang.isBuiltin(leftv)) {
