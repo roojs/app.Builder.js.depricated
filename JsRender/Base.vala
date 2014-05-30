@@ -144,7 +144,7 @@ class JsRender.Node : Object {
           
         } else {
             string left;
-            var listener_regex = new Regex("^\s+|\s+$");
+            var func_regex = new Regex("^\s+|\s+$");
             this.props.map_iterator().foreach((k,v) => {
                 if (skip.find(k) != null) {
                     continue;
@@ -171,7 +171,7 @@ class JsRender.Node : Object {
                 
                 if (isListener) {
                 // change the lines...
-                    var str= listener_regex.replace(v, "");  // remove bar. ???
+                    var str= func_regex.replace(v, "");  // remove bar. ???
                     var lines = str.split("\n");
                     if (lines.length > 1) {
                         str = lines.join("\n" + pad);
@@ -188,7 +188,7 @@ class JsRender.Node : Object {
                         return;
                     }
                     
-                    var str= listener_regex.replace(v, "");
+                    var str= func_regex.replace(v, "");
                     var lines = str.split("\n");
                     if (lines.length > 1) {
                         str = lines.join("\n" + pad);
