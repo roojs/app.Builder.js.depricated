@@ -75,108 +75,119 @@ class JsRender.Lang_Class : Object {
     void init() {
         
         this.coreObjects = new Glib.List<string>();
+        
+        this.whitespaceNames = new Gee.Map<string,string>;
+        this.newlineNames = new Gee.Map<string,string>();
+        this.keywordNames = new Gee.Map<string,string>();
+        this.puncNames = new Gee.Map<string,string>();
+
+        
+        
         string[] co = { '_global_', 'Array', 'Boolean', 'Date', 'Error', 
             'Function', 'Math', 'Number', 'Object', 'RegExp', 'String' };
         for(var i =0; i< co.length;i++ ) {
             this.coreObjects.append(co[i]);
         }
         string[] ws =  {
-            " ":      "SPACE",
-            "\f":     "FORMFEED",
-            "\t":     "TAB",
-            "\u0009": "UNICODE_TAB",
-            "\u000A": "UNICODE_NBR",
-            "\u0008": "VERTICAL_TAB"
+            " :SPACE",
+            "\f:FORMFEED",
+            "\t:TAB",
+            "\u0009:UNICODE_TAB",
+            "\u000A:UNICODE_NBR",
+            "\u0008:VERTICAL_TAB"
         },
+        for(var i =0; i< ws.length;i++ ) {
+            
+        
         string[]  newlineNames = {
-            "\n":     "NEWLINE",
-            "\r":     "RETURN",
-            "\u000A": "UNICODE_LF",
-            "\u000D": "UNICODE_CR",
-            "\u2029": "UNICODE_PS",
-            "\u2028": "UNICODE_LS"
+            "\n:NEWLINE",
+            "\r:RETURN",
+            "\u000A:UNICODE_LF",
+            "\u000D:UNICODE_CR",
+            "\u2029:UNICODE_PS",
+            "\u2028:UNICODE_LS"
         },
         string[]  keywordNames = {
-            "=break":      "BREAK",
-            "=case":       "CASE",
-            "=catch":      "CATCH",
-            "=const":      "VAR",
-            "=continue":   "CONTINUE",
-            "=default":    "DEFAULT",
-            "=delete":     "DELETE",
-            "=do":         "DO",
-            "=else":       "ELSE",
-            "=false":      "FALSE",
-            "=finally":    "FINALLY",
-            "=for":        "FOR",
-            "=function":   "FUNCTION",
-            "=if":         "IF",
-            "=in":         "IN",
-            "=instanceof": "INSTANCEOF",
-            "=new":        "NEW",
-            "=null":       "NULL",
-            "=return":     "RETURN",
-            "=switch":     "SWITCH",
-            "=this":       "THIS",
-            "=throw":      "THROW",
-            "=true":       "TRUE",
-            "=try":        "TRY",
-            "=typeof":     "TYPEOF",
-            "=void":       "VOID",
-            "=while":      "WHILE",
-            "=with":       "WITH",
-            "=var":        "VAR"
+            "=break:BREAK",
+            "=case:CASE",
+            "=catch:CATCH",
+            "=const:VAR",
+            "=continue:CONTINUE",
+            "=default:DEFAULT",
+            "=delete:DELETE",
+            "=do:DO",
+            "=else:ELSE",
+            "=false:FALSE",
+            "=finally:FINALLY",
+            "=for:FOR",
+            "=function:FUNCTION",
+            "=if:IF",
+            "=in:IN",
+            "=instanceof:INSTANCEOF",
+            "=new:NEW",
+            "=null:NULL",
+            "=return:RETURN",
+            "=switch:SWITCH",
+            "=this:THIS",
+            "=throw:THROW",
+            "=true:TRUE",
+            "=try:TRY",
+            "=typeof:TYPEOF",
+            "=void:VOID",
+            "=while:WHILE",
+            "=with:WITH",
+            "=var:VAR"
          },
     
   
-        puncNames : {
-            ";":   "SEMICOLON",
-            ",":   "COMMA",
-            "?":   "HOOK",
-            ":":   "COLON",
-            "||":  "OR", 
-            "&&":  "AND",
-            "|":   "BITWISE_OR",
-            "^":   "BITWISE_XOR",
-            "&":   "BITWISE_AND",
-            "===": "STRICT_EQ", 
-            "==":  "EQ",
-            "=":   "ASSIGN",
-            "!==": "STRICT_NE",
-            "!=":  "NE",
-            "<<":  "LSH",
-            "<=":  "LE", 
-            "<":   "LT",
-            ">>>": "URSH",
-            ">>":  "RSH",
-            ">=":  "GE",
-            ">":   "GT", 
-            "++":  "INCREMENT",
-            "--":  "DECREMENT",
-            "+":   "PLUS",
-            "-":   "MINUS",
-            "*":   "MUL",
-            "/":   "DIV", 
-            "%":   "MOD",
-            "!":   "NOT",
-            "~":   "BITWISE_NOT",
-            ".":   "DOT",
-            "[":   "LEFT_BRACE",
-            "]":   "RIGHT_BRACE",
-            "{":   "LEFT_CURLY",
-            "}":   "RIGHT_CURLY",
-            "(":   "LEFT_PAREN",
-            ")":   "RIGHT_PAREN"
+string[]           puncNames : {
+            "; SEMICOLON",
+            ", COMMA",
+            "? HOOK",
+             :   "COLON",
+            "|| OR", 
+            "&& AND",
+            "| BITWISE_OR",
+            "^ BITWISE_XOR",
+            "& BITWISE_AND",
+            "=== STRICT_EQ", 
+            "== EQ",
+            "= ASSIGN",
+            "!== STRICT_NE",
+            "!= NE",
+            "<< LSH",
+            "<= LE", 
+            "< LT",
+            ">>> URSH",
+            ">> RSH",
+            ">= GE",
+            "> GT", 
+            "++ INCREMENT",
+            "-- DECREMENT",
+            "+ PLUS",
+            "- MINUS",
+            "* MUL",
+            "/ DIV", 
+            "% MOD",
+            "! NOT",
+            "~ BITWISE_NOT",
+            ". DOT",
+            "[ LEFT_BRACE",
+            "] RIGHT_BRACE",
+            "{ LEFT_CURLY",
+            "} RIGHT_CURLY",
+            "( LEFT_PAREN",
+            ") RIGHT_PAREN"
         },
 
  
-    matchingNames : {
-        "LEFT_PAREN": "RIGHT_PAREN",
-        "RIGHT_PAREN": "LEFT_PAREN",
-        "LEFT_CURLY": "RIGHT_CURLY",
-        "RIGHT_CURLY": "LEFT_CURLY",
-        "LEFT_BRACE": "RIGHT_BRACE",
-        "RIGHT_BRACE": "LEFT_BRACE"
+    string[]  matchingNames : {
+        "LEFT_PAREN:RIGHT_PAREN",
+        "RIGHT_PAREN:LEFT_PAREN",
+        "LEFT_CURLY:RIGHT_CURLY",
+        "RIGHT_CURLY:LEFT_CURLY",
+        "LEFT_BRACE:RIGHT_BRACE",
+        "RIGHT_BRACE:LEFT_BRACE"
     },
 
  
