@@ -9,7 +9,7 @@ public JsRender.Lang_Class Lang = null;
 class JsRender.Lang_Class : Object {
     
     GLib.List<string> coreObjects;
-    GLib.List<string> whitespaceNames;
+    Gee.Map<string,string> whitespaceNames;
     
     void Lang_Class ()
     {
@@ -24,8 +24,10 @@ class JsRender.Lang_Class : Object {
     
     
     isBuiltin : function(name) {
-        return (this.coreObjects.indexOf(name) > -1);
-    }, 
+        return (this.coreObjects.index(name) > -1);
+    },
+    
+    
     void initCoreObjects() {
         
         this.coreObjects = new Glib.List<string>();
