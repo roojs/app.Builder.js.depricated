@@ -484,10 +484,9 @@ class JsRender.JsRender  : Object {
      * @arg {string} pad - the padding to indent with. 
      */
     
-    function mungeToString()
+    function mungeToString(string pad)
     {
-        return this.tree.mungeToString(false, "    ");
-        
+        return this.tree.mungeToString(false, pad);
         
     }
     
