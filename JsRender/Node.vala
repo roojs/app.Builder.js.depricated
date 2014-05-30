@@ -15,7 +15,7 @@ class JsRender.Node : Object {
     Node()
     {
         this.items = new GLib.List<JsRender.Node>();
-        this.props = new GLib.HashMap<string,string>();
+        this.props = new Gee.HashMap<string,string>();
         this.is_array = false;
         
     }
