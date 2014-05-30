@@ -121,11 +121,16 @@ class JsRender.JsRender  : Object {
     {
         
         
-        var ret = { }; 
-        var _this = this;
-        ['id', 'name', 'parent', 'title', 'path', 'items' , 'permname', 'modOrder' ].forEach( function(k) {
-            ret[k] = typeof(_this[k]) == 'undefined' ? '' : _this[k];
-        });
+        var ret = new Json.Object();
+        ret.set_string_member("id", this.id);
+        ret.set_string_member("name", this.name);
+        ret.set_string_member("parent", this.parent);
+        ret.set_string_member("title", this.title);
+        ret.set_string_member("path", this.path);
+        //ret.set_string_member("items", this.items);
+        ret.set_string_member("permname", this.permname);
+        ret.set_string_member("modOrder", this.modOrder);
+        
         return ret;
     },
     
