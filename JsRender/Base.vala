@@ -164,7 +164,7 @@ class JsRender.JsRender  : Object {
     string guessName function(JsRender.Node ar) // turns the object into full name.
     {
          // eg. xns: Roo, xtype: XXX -> Roo.xxx
-        if (typeof( ar.get("|xns").length < 1 ) || ar.get("|xtype").length < 1) {
+        if (!ar.hasXnsType()) {
            return '';
         }
         
@@ -223,7 +223,7 @@ class JsRender.JsRender  : Object {
         
         var els = []; 
         var skip = [];
-        if (!isArray && 
+        if (!isArray && obj.hasXnsType()
                 typeof(obj['|xns']) != 'undefined' &&
                 typeof(obj['xtype']) != 'undefined'
             ) {
