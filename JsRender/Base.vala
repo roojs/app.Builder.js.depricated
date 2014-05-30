@@ -260,7 +260,7 @@ class JsRender.JsRender  : Object {
         if (!isArray && obj.hasChildren()) {
             // look for props..
             var newitems = [];
-            for (var ii =0; ii< obj.items.length; ii++) {
+            for (var ii =0; ii< obj.items.length(); ii++) {
                 var pl = obj.items[ii];
                 
 
