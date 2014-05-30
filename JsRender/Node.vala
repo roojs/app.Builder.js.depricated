@@ -251,7 +251,7 @@ class JsRender.Node : Object {
             }
             left += " : ";
             
-            var right = vo.mungeToString(k == "listeners", pad + '    ');
+            var right = vo.mungeToString(k == "listeners", pad + "    ");
             
             //if (!left.length && isArray) print(right);
             
