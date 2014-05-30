@@ -282,12 +282,12 @@ class JsRender.Node  {
     string quoteString(string str)
     {
         if (Node.gen == null) {
-            gen = new Json.Generator();
+            Node.gen = new Json.Generator();
         }
         var builder = new Json.Builder();
         builder.add_string_value(str);
-        generator.set_root (builder.get_root ());
-        return  generator.to_data (null);   
+        Node.gen.set_root (builder.get_root ());
+        return  Node.gen.to_data (null);   
     }
     
 }
