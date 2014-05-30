@@ -237,7 +237,10 @@ class JsRender.Node  {
            
            
         });
-        oprops.map_iterator().foreach((k,vo) => {
+        var iter = oprops.map_iterator();
+        while (null != iter.next()) {
+            var k = iter.get_key();
+            var vo = iterm.get_value();
             var leftv = k[0] == '|' ? k.substring(1) : k;
             if (JsRender.Lang.isKeyword(leftv) || JsRender.Lang.isBuiltin(leftv)) {
                 left = "'" + leftv + "'";
@@ -259,7 +262,7 @@ class JsRender.Node  {
             }
         
             
-        });
+        }
         if (els.length < 1) {
             return "";
         }
