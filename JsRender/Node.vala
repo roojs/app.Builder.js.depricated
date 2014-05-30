@@ -258,7 +258,7 @@ class JsRender.Node  {
             //if (!left.length && isArray) print(right);
             
             if (right.length > 0){
-                els.push(left + right);
+                els.append(left + right);
             }
         
             
