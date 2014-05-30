@@ -283,11 +283,16 @@ class JsRender.Node  {
         
     }
     static Json.Generator gen = null;
-    string quoteString(string string)
+    
+    string quoteString(string str)
     {
         if (Node.gen == null) {
             gen = new Json.Generator();
         }
+        var builder = new Json.Builder();
+        build.add_string_value(str);
+        generator.set_root (builder.get_root ());
+        return  generator.to_data (null);   
     }
     
 }
