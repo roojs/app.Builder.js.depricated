@@ -137,13 +137,19 @@ class JsRender.Node : Object {
             
         }
         if (this.isArray()) {
+            
+            
             for (var i=0;i< this.items.length();i++) {
                 var el = this.items.nth_data(i);
                 
-                
+                "%d".format(i) + " : " + el.mungeToString(false, pad)
                 
             }
-            
+            var spad = pad.substring(0, pad.length-4);
+            return   "{\n" +
+                pad  + string.join(",\n" + pad , els) + 
+                "\n" + spad +  "}");
+               
             
             
             
@@ -224,8 +230,9 @@ class JsRender.Node : Object {
                     els.push(left + this.quoteString(v));
                     continue;
                 }
-                // single quote..
-                els.push(left + "'" + obj[i].replace(/'/g, "\\'") + "'");
+                
+                // single quote.. v.substring(1, v.length-1).replace("'", "\\'") + "'";
+                els.push(left + "'" + v.substring(1, v.length-1).replace("'", "\\'") + "'";
                 
 
                
@@ -257,10 +264,19 @@ class JsRender.Node : Object {
             });
             // oprops...    
                 
-                
+            var spad = pad.substring(0, pad.length-4);
+            return   "{\n" +
+                pad  + string.join(",\n" + pad , els) + 
+                "\n" + spad +  "}");
+               
+               
                 
             
         }
+        
+        
+        
+        
         var left =  '';
         
         for (var ii =0; ii< keys.length; ii++) {
