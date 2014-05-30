@@ -213,7 +213,7 @@ class JsRender.Node  {
                 }
                 
                 els.append(left + str);
-                return;
+                continue;
             }
             // standard..
             
