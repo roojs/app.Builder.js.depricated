@@ -149,7 +149,12 @@ class JsRender.Node  {
           
         } 
         string left;
-        var func_regex = new Regex("^\\s+|\\s+$");
+        try {
+            var func_regex = new Regex("^\\s+|\\s+$");
+        } catch (Error e) {
+            print("failed to build regex");
+            return "";
+        }
         var piter = this.props.map_iterator();
         while (piter.next() ) {
             var k = piter.get_key();
