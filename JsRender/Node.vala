@@ -22,10 +22,7 @@ class JsRender.Node : Object {
     
     
     
-    GLib.List keys() {
-        
-        
-    }
+    
     boolean isArray()
     {
         return this.is_array;
@@ -66,7 +63,7 @@ class JsRender.Node : Object {
          
         pad = pad.length < 1 ? "    " : pad;
         
-        var keys = [];
+        
         
         var isArray = false;
         
