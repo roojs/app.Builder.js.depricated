@@ -7,7 +7,7 @@
 
 void main () {
     var x = new JsRender.Lang_Class();
-    print(Lang.keyword("delete"));
+    print(Lang.keyword("delete") + "\n");
 }
 
 public JsRender.Lang_Class Lang = null;
@@ -20,12 +20,13 @@ public class JsRender.Lang_Class : Object {
     Gee.HashMap<string,string> keywordNames;
     Gee.HashMap<string,string> puncNames;
     Gee.HashMap<string,string> matchingNames;
-    public void Lang_Class ()
+    public void JsRender.Lang_Class ()
     {
         if (Lang != null) {
+            print("lang not null\n");
             return;
         }
-        print("init");
+        print("init\n");
         this.init();
         print("init Lang");
         Lang = this;
