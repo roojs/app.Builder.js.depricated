@@ -142,7 +142,7 @@ class JsRender.Node : Object {
             for (var i=0;i< this.items.length();i++) {
                 var el = this.items.nth_data(i);
                 
-                "%d".format(i) + " : " + el.mungeToString(false, pad)
+                els.append("%d".format(i) + " : " + el.mungeToString(false, pad));
                 
             }
             var spad = pad.substring(0, pad.length-4);
