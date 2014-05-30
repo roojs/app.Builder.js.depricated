@@ -3,11 +3,14 @@
 
 class JsRender.Node : Object {
     
-    GLib.List<JsRender.Node> items;
+    GLib.List<JsRender.Node> items; // child items..
+    bool is_array;
     
     Node()
     {
         this.items = new GLib.List<JsRender.Node>();
+        this.is_array = false;
+        
     }
     
     
@@ -26,7 +29,8 @@ class JsRender.Node : Object {
     }
     bool hasXnsType()
     {
-        
+        if (this.obj['|xns']) != 'undefined' &&
+                    typeof(obj['xtype']) != 'undefined'
     }
 }
 
