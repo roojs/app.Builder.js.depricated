@@ -53,7 +53,7 @@ class JsRender.Lang_Class : Object {
     }
     
     bool isNumber : function(string str) {
-        return Regex.match_simple("^(\.[0-9]|[0-9]+\.|[0-9])[0-9]*([eE][+-][0-9]+)?$/,str);
+        return Regex.match_simple("^(\.[0-9]|[0-9]+\.|[0-9])[0-9]*([eE][+-][0-9]+)?$",str);
     },
 
     bool  isHexDec : function(str) {
