@@ -285,7 +285,7 @@ class JsRender.Node  {
             gen = new Json.Generator();
         }
         var builder = new Json.Builder();
-        build.add_string_value(str);
+        builder.add_string_value(str);
         generator.set_root (builder.get_root ());
         return  generator.to_data (null);   
     }
