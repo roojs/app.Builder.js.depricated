@@ -80,13 +80,11 @@ class JsRender.Node : Object {
         
         if (!isArray && this.hasChildren()) {
             // look for '*props'
-            var newitems = [];
+            var newitems = new Array<JsRender.Node>();
             for (var ii =0; ii< this.items.length(); ii++) {
-                var pl = obj.items[ii];
-                
-
-                if (typeof(pl['*prop']) == 'undefined') {
-                    newitems.push(pl);
+                var pl = this.items.index(ii);
+                if (pl.props.has_key("*prop")) {
+                    newitems.append(pl);
                     continue;
                 }
                 
