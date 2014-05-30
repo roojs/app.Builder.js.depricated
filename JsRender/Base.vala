@@ -161,30 +161,31 @@ class JsRender.JsRender  : Object {
     */
         // should be in palete provider really..
         
-        guessName : function(ar) // turns the object into full name.
-        {
-             // eg. xns: Roo, xtype: XXX -> Roo.xxx
-            if (typeof( ar['|xns'] ) == 'undefined' || typeof( ar['xtype'] ) == 'undefined') {
-                return '';
-               }
-             
-            return ar['|xns'] +'.' + ar['xtype'];
+    string guessName function(JsRender.Node ar) // turns the object into full name.
+    {
+         // eg. xns: Roo, xtype: XXX -> Roo.xxx
+        if (typeof( ar.get("|xns").length < 1 ) || ar.get("|xtype").length < 1) {
+           return '';
+        }
+        
+        return ar.get("|xns") +'.' + ar.get("|xtype");
+                          
                             
-                                 
-        },
+    }
+         
         
-        
-        
-        copyTo: function(path, cb)
-        {
-            var _this = this;
-            this.loadItems(function() {
-                
-                _this.path = path;
-                cb();
-            });
+    /*
+    copyTo: function(path, cb)
+    {
+        var _this = this;
+        this.loadItems(function() {
             
-        },
+            _this.path = path;
+            cb();
+        });
+        
+    },
+    */
         
         /**
          * 
