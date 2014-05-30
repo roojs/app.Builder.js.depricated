@@ -97,7 +97,7 @@ class JsRender.Lang_Class : Object {
             "\u0008:VERTICAL_TAB"
         },
         for(var i =0; i< ws.length;i++ ) {
-            var x = ws.split(":");
+            var x = ws[i].split(":");
             this.whitespaceNames.set(x[0],x[1]);
         }
         
@@ -109,8 +109,8 @@ class JsRender.Lang_Class : Object {
             "\u2029:UNICODE_PS",
             "\u2028:UNICODE_LS"
         },
-         for(var i =0; i< ws.length;i++ ) {
-            var x = ws.split(":");
+        for(var i =0; i< ws.length;i++ ) {
+            var x = ws[i].split(":");
             this.newlineNames.set(x[0],x[1]);
         }
         string[]  keywordNames = {
@@ -143,7 +143,11 @@ class JsRender.Lang_Class : Object {
             "=while:WHILE",
             "=with:WITH",
             "=var:VAR"
-         },
+         };
+           for(var i =0; i< ws.length;i++ ) {
+            var x = ws.split(":");
+            this.keywordNames.set(x[0],x[1]);
+        }
     
   
 string[]           puncNames : {
