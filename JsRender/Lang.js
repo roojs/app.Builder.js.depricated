@@ -97,9 +97,11 @@ class JsRender.Lang_Class : Object {
             "\u0008:VERTICAL_TAB"
         },
         for(var i =0; i< ws.length;i++ ) {
-            
+            var x = ws.split(":");
+            this.whitespaceNames.set(x[0],x[1]);
+        }
         
-        string[]  newlineNames = {
+         ws = {
             "\n:NEWLINE",
             "\r:RETURN",
             "\u000A:UNICODE_LF",
@@ -107,6 +109,10 @@ class JsRender.Lang_Class : Object {
             "\u2029:UNICODE_PS",
             "\u2028:UNICODE_LS"
         },
+         for(var i =0; i< ws.length;i++ ) {
+            var x = ws.split(":");
+            this.newlineNames.set(x[0],x[1]);
+        }
         string[]  keywordNames = {
             "=break:BREAK",
             "=case:CASE",
