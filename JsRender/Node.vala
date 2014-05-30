@@ -175,7 +175,7 @@ class JsRender.Node : Object {
             
             if (JsRender.Lang.isKeyword(leftv) || JsRender.Lang.isBuiltin(leftv)) {
                 left = "'" + leftv + "'";
-            } else if (Regex.match_simple("[^A-Za-z_]+",leftv) { // not plain a-z... - quoted.
+            } else if (Regex.match_simple("[^A-Za-z_]+",leftv)) { // not plain a-z... - quoted.
                 var val = this.quoteString(leftv);
                 
                 left = "'" + val.substring(1, val.length-1).replace("'", "\\'") + "'";
