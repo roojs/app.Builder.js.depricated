@@ -209,4 +209,4 @@ class JsRender.Lang_Class : Object {
     }
     
     
-};
+}
