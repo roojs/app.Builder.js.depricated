@@ -144,7 +144,7 @@ class JsRender.Node : Object {
           
         } else {
             string left;
-            
+            var listener_regex = new Regex("^\s+|\s+$");
             this.props.map_iterator().foreach((k,v) => {
                 if (skip.find(k) != null) {
                     continue;
@@ -169,6 +169,21 @@ class JsRender.Node : Object {
                 }
                 left += ' : ';
                 
+                if (isListener) {
+                // change the lines...
+                    var str= listener_regex.replace(v, "");  // remove bar. ???
+                    var lines = str.split("\n");
+                    if (lines.length > 1) {
+                        str = lines.join("\n" + pad);
+                    }
+                    
+                    els.append(left  + str);
+                    continue;
+                }
+                 
+                
+                
+                
             }
              
             });
@@ -184,25 +199,6 @@ class JsRender.Node : Object {
                 continue;
             }
             var el = obj[i];
-           
-            if (!isArray) {
-                // set the key to be quoted with singel quotes..
-                var leftv = i[0] == '|' ? i.substring(1) : i;
-                // skip builder stuff. prefixed with  '.' .. just like unix fs..
-                if (leftv[0] == '.') {
-                    continue;
-                }
-                if (Lang.isKeyword(leftv) || Lang.isBuiltin(leftv)) {
-                    left = "'" + leftv + "'";
-                } else if (leftv.match(/[^A-Z_]+/i)) { // not plain a-z... - quoted.
-                    var val = JSON.stringify(leftv);
-                    left = "'" + val.substring(1, val.length-1).replace(/'/g, "\\'") + "'";
-                } else {
-                    left = '' + leftv;
-                }
-                left += ' : ';
-                
-            }
             
             
             if (isListener) {
