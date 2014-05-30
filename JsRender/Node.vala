@@ -2,7 +2,7 @@
 // test..
 // valac gitlive/app.Builder.js/JsRender/Lang.vala gitlive/app.Builder.js/JsRender/Node.vala --pkg gee-1.0 -o /tmp/Lang ;/tmp/Lang
 
-class JsRender.Node : Object {
+class JsRender.Node  {
     
     GLib.List<JsRender.Node> items; // child items..
     
