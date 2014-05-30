@@ -65,7 +65,7 @@ class JsRender.Lang_Class : Object {
     }
 
     bool isSpace (string str) {
-        return this.whitespace.get(str) != null;
+        return this.whitespaceNames.get(str) != null;
     }
 
     bool isNewline (string str) {
@@ -81,6 +81,7 @@ class JsRender.Lang_Class : Object {
         this.keywordNames = new Gee.HashMap<string,string>();
         this.puncNames = new Gee.HashMap<string,string>();
         this.matchingNames = new Gee.HashMap<string,string>();
+        
         
         
         string[] co = { "_global_", "Array", "Boolean", "Date", "Error", 
