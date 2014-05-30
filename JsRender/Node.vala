@@ -182,7 +182,7 @@ class JsRender.Node : Object {
             } else {
                 left = leftv;
             }
-            left += ' : ';
+            left += " : ";
             
             if (isListener) {
             // change the lines...
@@ -249,9 +249,9 @@ class JsRender.Node : Object {
             } else {
                 left = leftv;
             }
-            left += ' : ';
+            left += " : ";
             
-            var right = vo.mungeToString(k == 'listeners', pad + '    ');
+            var right = vo.mungeToString(k == "listeners", pad + '    ');
             
             //if (!left.length && isArray) print(right);
             
