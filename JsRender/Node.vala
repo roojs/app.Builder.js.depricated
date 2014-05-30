@@ -160,7 +160,7 @@ class JsRender.Node  {
             var k = piter.get_key();
             var v = piter.get_value();
             
-            if (skip.index(k) > -1) {
+            if (skip.index(k) != null) {
                 continue;
             }
             
