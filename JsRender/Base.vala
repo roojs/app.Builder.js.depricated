@@ -28,8 +28,8 @@ class JsRender.JsRender  : Object {
         this.project = project;
         
         
-    },
-    ?JsRender.JsRender factory(string xt, Project.Project project, string path)
+    }
+    JsRender.JsRender? factory(string xt, Project.Project project, string path)
     {
         JsRender.JsRender ret;
         switch (xt) {
@@ -41,16 +41,18 @@ class JsRender.JsRender  : Object {
         return null;    
     }
     
-    
-
-        save : function()
-        {
-            var write = { }; 
-            var _this = this;
-            var write = this.toJsonArray()
-            print("WRITE: " + this.path);// + "\n" + JSON.stringify(write));
-            File.write(this.path, JSON.stringify(write, null, 4));
-        },
+    void save ()
+    {
+            
+        var write = this.toJsonArray();
+        var generator = new Json.Generator ();
+        generator.indent = 4;
+        generator.pretty = true;
+        generator.set_root(this.toJsonArray());
+        
+        print("WRITE: " + this.path);// + "\n" + JSON.stringify(write));
+        generator.to_file(this.path);
+    }
         
         saveHTML : function()
         {
