@@ -76,7 +76,7 @@ class JsRender.Lang_Class : Object {
         
         this.coreObjects = new Glib.List<string>();
         
-        this.whitespaceNames = new Gee.Map<string,string>;
+        this.whitespaceNames = new Gee.Map<string,string>();
         this.newlineNames = new Gee.Map<string,string>();
         this.keywordNames = new Gee.Map<string,string>();
         this.puncNames = new Gee.Map<string,string>();
