@@ -190,6 +190,9 @@ class JsRender.JsRender  : Object {
     /**
      * 
      * munge JSON tree into Javascript code.
+     *
+     * NOTE - needs a deep copy of original tree, before starting..
+     *     - so that it does not modify current..
      * 
      * FIXME: + or / prefixes to properties hide it from renderer.
      * FIXME: '*props' - not supported by this.. ?? - upto rendering code..
