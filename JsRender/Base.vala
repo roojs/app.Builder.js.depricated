@@ -68,7 +68,7 @@ class JsRender.Node : Object {
         var isArray = this.isArray();
         
         
-        var els = []; 
+        var els = new GLib.List<string>(); 
         var skip = new Array<string>();
         if (!isArray && obj.hasXnsType() ) {
                 // this.mungeXtype(obj['|xns'] + '.' + obj['xtype'], els); ??????
@@ -130,8 +130,27 @@ class JsRender.Node : Object {
             //}
             
         }
-        
+        if (this.isArray()) {
+            for (var i=0;i< this.items.length();i++) {
+                var el = this.items.index(i);
+                
+                
+                
+            }
+            
+            
+            
+            
           
+        } else {
+            
+            this.props.map_iterator().foreach((k,v) => {
+                
+                
+             
+            });
+            
+        }
         var left =  '';
         
         for (var ii =0; ii< keys.length; ii++) {
