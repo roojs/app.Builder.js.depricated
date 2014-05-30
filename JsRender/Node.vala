@@ -189,7 +189,7 @@ class JsRender.Node  {
             
             if (isListener) {
             // change the lines...
-                var str= func_regex.replace(v, "");  // remove bar. ???
+                var str= func_regex.replace(v, v.length, 0, "");  // remove bar. ???
                 var lines = str.split("\n");
                 if (lines.length > 1) {
                     str = string.join("\n" + pad, lines);
@@ -206,7 +206,7 @@ class JsRender.Node  {
                     continue;
                 }
                 
-                var str= func_regex.replace(v, "");
+                var str= func_regex.replace(v,v.length, 0, "");
                 var lines = str.split("\n");
                 if (lines.length > 1) {
                     str =  string.join("\n" + pad, lines);
