@@ -12,6 +12,7 @@ class JsRender.Node : Object {
     Node()
     {
         this.items = new GLib.List<JsRender.Node>();
+        this.props = new GLib.Map<string,string>();
         this.is_array = false;
         
     }
