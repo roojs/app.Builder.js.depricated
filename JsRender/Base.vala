@@ -227,8 +227,8 @@ class JsRender.JsRender  : Object {
                 typeof(obj['|xns']) != 'undefined' &&
                 typeof(obj['xtype']) != 'undefined'
             ) {
-                this.mungeXtype(obj['|xns'] + '.' + obj['xtype'], els);
-                //els.push('xtype: '+ obj['|xns'] + '.' + obj['xtype']);
+                // this.mungeXtype(obj['|xns'] + '.' + obj['xtype'], els); ??????
+                
                  
                 skip.append_Val("|xns");
                 skip.append_Val("xtype");
