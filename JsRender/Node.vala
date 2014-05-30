@@ -155,7 +155,7 @@ class JsRender.Node : Object {
           
         } 
         string left;
-        var func_regex = new Regex("^\s+|\s+$");
+        var func_regex = new Regex("^\\s+|\\s+$");
         this.props.map_iterator().foreach((k,v) => {
             if (skip.find(k) != null) {
                 return; 
