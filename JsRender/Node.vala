@@ -242,7 +242,7 @@ class JsRender.Node : Object {
             var leftv = k[0] == '|' ? k.substring(1) : k;
             if (JsRender.Lang.isKeyword(leftv) || JsRender.Lang.isBuiltin(leftv)) {
                 left = "'" + leftv + "'";
-            } else if (Regex.match_simple("[^A-Za-z_]+",leftv) { // not plain a-z... - quoted.
+            } else if (Regex.match_simple("[^A-Za-z_]+",leftv)) { // not plain a-z... - quoted.
                 var val = this.quoteString(leftv);
                 
                 left = "'" + val.substring(1, val.length-1).replace("'", "\\'") + "'";
