@@ -154,7 +154,7 @@ class JsRender.Lang_Class : Object {
             "; SEMICOLON",
             ", COMMA",
             "? HOOK",
-             :   "COLON",
+            ": COLON",
             "|| OR", 
             "&& AND",
             "| BITWISE_OR",
