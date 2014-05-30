@@ -137,7 +137,7 @@ class JsRender.Node  {
             for (var i=0;i< this.items.length();i++) {
                 var el = this.items.nth_data(i);
                 
-                els.append("%d".printf(i) + " : " + el.mungeToString(false, pad));
+                els.append("%d".printf(i) + " : " + el.mungeToString(false, pad,doubleStringProps));
                 
             }
             var spad = pad.substring(0, pad.length-4);
@@ -276,7 +276,7 @@ class JsRender.Node  {
             }
             left += " : ";
             
-            var right = vo.mungeToString(k == "listeners", pad + "    ");
+            var right = vo.mungeToString(k == "listeners", pad + "    ",doubleStringProps);
             
             //if (!left.length && isArray) print(right);
             
