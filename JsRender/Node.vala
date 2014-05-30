@@ -226,12 +226,12 @@ class JsRender.Node : Object {
             }
            
             if (_this.doubleStringProps.index(k) > -1) {
-                els.push(left + this.quoteString(v));
+                els.append(left + this.quoteString(v));
                 continue;
             }
             
             // single quote.. v.substring(1, v.length-1).replace("'", "\\'") + "'";
-            els.push(left + "'" + v.substring(1, v.length-1).replace("'", "\\'") + "'";
+            els.append(left + "'" + v.substring(1, v.length-1).replace("'", "\\'") + "'";
             
 
            
