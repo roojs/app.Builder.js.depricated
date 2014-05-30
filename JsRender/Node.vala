@@ -207,7 +207,14 @@ class JsRender.Node  {
                     continue;
                 }
                 
-                var str= func_regex.replace(v,v.length, 0, "");
+                string str;
+                try {
+                    str = func_regex.replace(v,v.length, 0, "");
+                } catch(Error e) {
+                    print("regex failed");
+                    return "";
+                }
+                
                 var lines = str.split("\n");
                 if (lines.length > 1) {
                     str =  string.join("\n" + pad, lines);
