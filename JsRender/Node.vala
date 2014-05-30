@@ -78,8 +78,8 @@ class JsRender.Node  {
                 // this.mungeXtype(obj['|xns'] + '.' + obj['xtype'], els); ??????
                 
                 
-               skip.append_Val("|xns");
-               skip.append_Val("xtype");
+               skip.append_val("|xns");
+               skip.append_val("xtype");
                
         }
         var newitems = new Array<JsRender.Node>();
