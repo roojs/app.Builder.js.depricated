@@ -149,8 +149,9 @@ class JsRender.Node  {
           
         } 
         string left;
+        Regex func_regex ;
         try {
-            var func_regex = new Regex("^\\s+|\\s+$");
+            func_regex = new Regex("^\\s+|\\s+$");
         } catch (Error e) {
             print("failed to build regex");
             return "";
