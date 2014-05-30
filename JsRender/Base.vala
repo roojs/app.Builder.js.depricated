@@ -38,8 +38,8 @@ class JsRender.Node : Object {
         }
         return false;
     }
-    
-    funtion get(string key)
+    // wrapper around get props that returns empty string if not found.
+    string get(string key)
     {
         var k = this.props.get(key);
         if (k == null) {
