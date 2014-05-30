@@ -147,7 +147,7 @@ class JsRender.Node : Object {
             var spad = pad.substring(0, pad.length-4);
             return   "{\n" +
                 pad  + string.join(",\n" + pad , els) + 
-                "\n" + spad +  "}");
+                "\n" + spad +  "}";
                
             
             
