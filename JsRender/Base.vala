@@ -51,6 +51,12 @@ class JsRender.Node : Object {
         return k;
         
     }
+    string quoteString(string s)
+    {
+        /// do json..
+        // except for numbers...
+        
+    }
     
     string mungeToString (bool isListener, string pad)
     {
@@ -64,7 +70,7 @@ class JsRender.Node : Object {
         
         //isListener = isListener || false;
 
-        var keys = this.keys();
+       //var keys = this.keys();
         var isArray = this.isArray();
         
         
@@ -112,12 +118,12 @@ class JsRender.Node : Object {
                 // it's an array type..
                 if (!oprops.has_key(prop)) {
                     var cn = new JsRender.Node();
-                    this.oprops.set(prop, pl);
+                    oprops.set(prop, pl);
                     
                 }
                 // ignores the fact it might be duplciated...
-                this.oprops.get(prop).isArray = true;
-                this.oprops.get(prop).items.append(pl);
+                oprops.get(prop).isArray = true;
+                oprops.get(prop).items.append(pl);
               
                 
                 
@@ -198,10 +204,29 @@ class JsRender.Node : Object {
                         str =  string.join("\n" + pad, lines);
                     }
                     
-                    els.push(left + str);
+                    els.append(left + str);
                     return;
-               }
-               
+                }
+                // standard..
+                
+                
+                if (this.isString(v)) {
+                    els.append(left + this.quoteString(v));
+                    return;
+                }
+                // strings..
+                if (!_this.doubleStringProps.length) {
+                    els.append(left + JSON.stringify(obj[i]));
+                    continue;
+                }
+                if (_this.doubleStringProps.indexOf(i) > -1) {
+                    els.push(left + JSON.stringify(obj[i]));
+                    continue;
+                }
+                // single quote..
+                els.push(left + "'" + obj[i].replace(/'/g, "\\'") + "'");
+                
+
                
                
                
@@ -250,24 +275,7 @@ class JsRender.Node : Object {
              
             
         
-            // standard. .
-            if (typeof(obj[i]) != 'string') {
-                els.push(left + JSON.stringify(obj[i]));
-                continue;
-            }
-            // strings..
-            if (!_this.doubleStringProps) {
-                els.push(left + JSON.stringify(obj[i]));
-                continue;
-            }
-            if (_this.doubleStringProps.indexOf(i) > -1) {
-                els.push(left + JSON.stringify(obj[i]));
-                continue;
-            }
-            // single quote..
-            els.push(left + "'" + obj[i].replace(/'/g, "\\'") + "'");
-            
-
+           
         }
         
         if (!isArray && !els.length) {
