@@ -21,13 +21,27 @@ class JsRender.JsRender  : Object {
     Array<JsRender.Base>() cn;
     
     
-    void Base() {
+    void JsRender(Project.Project project, string path) {
         
         this.cn = new Array<JsRender.Base>();
-        this.
+        this.path = path;
+        this.project = project;
         
         
     },
+    ?JsRender.JsRender factory(string xt, Project.Project project, string path)
+    {
+        JsRender.JsRender ret;
+        switch (xt) {
+            case "Gtk":
+                return new JsRender.Gtk(project, path)
+            case "Roo":
+                return new JsRender.Roo(project, path)
+        }
+        return null;    
+    }
+    
+    
 
         save : function()
         {
