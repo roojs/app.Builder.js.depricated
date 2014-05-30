@@ -32,12 +32,24 @@ class JsRender.Node : Object {
     }
     bool hasXnsType()
     {
-        if this.get('|xns')) {
+        if (this.props.get("|xns") != null && this.props.get("xtype") != null) {
+            return true;
             
         }
-        if (this.obj['|xns']) != 'undefined' &&
-                    typeof(obj['xtype']) != 'undefined'
+        return false;
     }
+    
+    funtion get(string key)
+    {
+        var k = this.props.get(key);
+        if (k == null) {
+            return "";
+        }
+        return k;
+        
+    }
+    
+    
 }
 
 
