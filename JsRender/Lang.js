@@ -20,8 +20,8 @@ class JsRender.Lang_Class : Object {
             return;
             Lang = this;
         }
-        this.initCoreObjects();
-        this.initShitespaceNames();
+        this.init();
+        
         
     }
     
@@ -46,7 +46,7 @@ class JsRender.Lang_Class : Object {
     
     bool isKeyword(string word) {
         return this.keywordNames.get("=" + word) != null;
-        }
+        
     }
     punc : function(string ch) {
         return this.puncNames[ch];
