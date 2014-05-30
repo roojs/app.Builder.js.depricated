@@ -298,7 +298,7 @@ class JsRender.JsRender  : Object {
     
     JsRender.Node tree; // the tree of nodes.
     
-    Array<JsRender.Base>() cn; // child files..
+    Array<JsRender.Base>() cn; // child files.. (used by project ... should move code here..)
     
     
     void JsRender(Project.Project project, string path) {
