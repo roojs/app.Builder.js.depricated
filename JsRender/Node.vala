@@ -224,7 +224,7 @@ class JsRender.Node : Object {
                 els.append(left + this.quoteString(v));
                 continue;
             }
-            if ()
+           
             if (_this.doubleStringProps.index(k) > -1) {
                 els.push(left + this.quoteString(v));
                 continue;
