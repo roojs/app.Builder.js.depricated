@@ -93,16 +93,18 @@ class JsRender.Node : Object {
                 
                 //print(JSON.stringify(pl,null,4));
                 // we have a prop...
-                var prop = pl['*prop'] + '';
-                delete pl['*prop'];
-                if (!prop.match(/\[\]$/)) {
+                //var prop = pl['*prop'] + '';
+                //delete pl['*prop'];
+                var prop = pl.get("*prop");
+                // name ends in [];
+                if (! Regex.match_simple("\[\]$", prop) {
                     // it's a standard prop..
                     
                     // munge property..??
+                    this.oprops.set(prop, pd);
                     
-                    obj[prop] = pl;
                     
-                    keys.push(prop);
+                    //keys.push(prop);
                     continue;
                 }
                 prop  = prop.substring(0, prop.length -2); //strip []
