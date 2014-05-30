@@ -78,8 +78,8 @@ class JsRender.Node  {
                 // this.mungeXtype(obj['|xns'] + '.' + obj['xtype'], els); ??????
                 
                 
-               skip.append_val("|xns");
-               skip.append_val("xtype");
+               skip.add("|xns");
+               skip.add("xtype");
                
         }
         //var newitems = new Gee.ArrayList<JsRender.Node>();
@@ -160,7 +160,7 @@ class JsRender.Node  {
             var k = piter.get_key();
             var v = piter.get_value();
             
-            if (skip.index(k) != null) {
+            if (skip.contains(k) ) {
                 continue;
             }
             
