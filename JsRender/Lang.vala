@@ -4,6 +4,12 @@
 	@namespace
 */
 
+
+void main () {
+    var x = new Lang_Class();
+    print(Lang.keyword("void"));
+}
+
 public JsRender.Lang_Class Lang = null;
 
 public class JsRender.Lang_Class : Object {
