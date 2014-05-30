@@ -48,62 +48,64 @@ class JsRender.JsRender  : Object {
         var generator = new Json.Generator ();
         generator.indent = 4;
         generator.pretty = true;
-        generator.set_root(this.toJsonArray());
+        var node = new Json.Node();
+        node.init_object(this.toJsonArray())
+        generator.set_root(node);
         
         print("WRITE: " + this.path);// + "\n" + JSON.stringify(write));
         generator.to_file(this.path);
     }
         
-        saveHTML : function()
-        {
-            // NOOP
-        },
+    void   saveHTML ()
+    {
+        // NOOP
+    },
+    
+    /**
+     *
+     * load from a javascript file.. rather than bjs..
+     * 
+     *
+     */
+     /*
+    _loadItems : function(cb)
+    {
+        // already loaded..
+        if (this.items !== false) {
+            return false;
+        }
+          
         
-        /**
-         *
-         * load from a javascript file.. rather than bjs..
-         * 
-         *
-         */
-         
-        _loadItems : function(cb)
-        {
-            // already loaded..
-            if (this.items !== false) {
-                return false;
-            }
-              
-            
-            
-            var tr = new  TokenReader(  { 
-                keepDocs :true, 
-                keepWhite : true,  
-                keepComments : true, 
-                sepIdents : false,
-                collapseWhite : false,
-                filename : args[0],
-                ignoreBadGrammer: true
-            });
-            
-            var str = File.read(this.path);
-            var toks = tr.tokenize(new TextStream(str));  
-            var rf = new JsParser(toks);
-            rf.parse();
-            var cfg = rf.cfg;
-            
-            this.modOrder = cfg.modOrder || '001';
-            this.name = cfg.name.replace(/\.bjs/, ''); // BC!
-            this.parent =  cfg.parent;
-            this.permname =  cfg.permname || '';
-            this.title =  cfg.title || cfg.name;;
-            this.items = cfg.items || []; 
-            //???
-            //this.fixItems(_this, false);
-            cb();
-            return true;    
-                
-        },
         
+        var tr = new  TokenReader(  { 
+            keepDocs :true, 
+            keepWhite : true,  
+            keepComments : true, 
+            sepIdents : false,
+            collapseWhite : false,
+            filename : args[0],
+            ignoreBadGrammer: true
+        });
+        
+        var str = File.read(this.path);
+        var toks = tr.tokenize(new TextStream(str));  
+        var rf = new JsParser(toks);
+        rf.parse();
+        var cfg = rf.cfg;
+        
+        this.modOrder = cfg.modOrder || '001';
+        this.name = cfg.name.replace(/\.bjs/, ''); // BC!
+        this.parent =  cfg.parent;
+        this.permname =  cfg.permname || '';
+        this.title =  cfg.title || cfg.name;;
+        this.items = cfg.items || []; 
+        //???
+        //this.fixItems(_this, false);
+        cb();
+        return true;    
+            
+    },
+    */
         /**
          * accepts:
          * { success : , failure : , scope : }
@@ -112,18 +114,23 @@ class JsRender.JsRender  : Object {
          * 
          */
          
-        getTree : function( o ) {
-            print("File.getTree tree called on base object?!?!");
-        },
-        toJsonArray : function()
-        {
-            var ret = { }; 
-            var _this = this;
-            ['id', 'name', 'parent', 'title', 'path', 'items' , 'permname', 'modOrder' ].forEach( function(k) {
-                ret[k] = typeof(_this[k]) == 'undefined' ? '' : _this[k];
-            });
-            return ret;
-        },
+    getTree ( o ) {
+        print("File.getTree tree called on base object?!?!");
+    },
+    Json.Object toJsonArray ()
+    {
+        
+        
+        var ret = { }; 
+        var _this = this;
+        ['id', 'name', 'parent', 'title', 'path', 'items' , 'permname', 'modOrder' ].forEach( function(k) {
+            ret[k] = typeof(_this[k]) == 'undefined' ? '' : _this[k];
+        });
+        return ret;
+    },
+    
+    
+    
         getTitle : function()
         {
             if (this.title) {
