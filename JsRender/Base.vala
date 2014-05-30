@@ -486,7 +486,7 @@ class JsRender.JsRender  : Object {
     
     function mungeToString()
     {
-        return this.
+        return this.tree.mungeToString(false, "    ");
         
         
     }
