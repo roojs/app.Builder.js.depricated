@@ -9,10 +9,10 @@ public JsRender.Lang_Class Lang = null;
 class JsRender.Lang_Class : Object {
     
     GLib.List<string> coreObjects;
-    Gee.Map<string,string> whitespaceNames;
-    Gee.Map<string,string> newlineNames;
-    Gee.Map<string,string> keywordNames;
-    Gee.Map<string,string> puncNames;
+    Gee.HashMap<string,string> whitespaceNames;
+    Gee.HashMap<string,string> newlineNames;
+    Gee.HashMap<string,string> keywordNames;
+    Gee.HashMap<string,string> puncNames;
     
     void Lang_Class ()
     {
@@ -76,10 +76,10 @@ class JsRender.Lang_Class : Object {
         
         this.coreObjects = new GLib.List<string>();
         
-        this.whitespaceNames = new Gee.Map<string,string>();
-        this.newlineNames = new Gee.Map<string,string>();
-        this.keywordNames = new Gee.Map<string,string>();
-        this.puncNames = new Gee.Map<string,string>();
+        this.whitespaceNames = new Gee.HashMap<string,string>();
+        this.newlineNames = new Gee.HashMap<string,string>();
+        this.keywordNames = new Gee.HashMap<string,string>();
+        this.puncNames = new Gee.HashMap<string,string>();
 
         
         
