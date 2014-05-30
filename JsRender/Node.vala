@@ -74,7 +74,7 @@ class JsRender.Node  {
         
         var els = new GLib.List<string>(); 
         var skip = new Array<string>();
-        if (!isArray && obj.hasXnsType() ) {
+        if (!isArray && this.hasXnsType() ) {
                 // this.mungeXtype(obj['|xns'] + '.' + obj['xtype'], els); ??????
                 
                 
