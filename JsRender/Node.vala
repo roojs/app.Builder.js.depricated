@@ -23,11 +23,11 @@ class JsRender.Node : Object {
     
     
     
-    boolean isArray()
+    bool isArray()
     {
         return this.is_array;
     }
-    boolean hasChildren()
+    bool hasChildren()
     {
         return this.items.length() > 0;
     }
