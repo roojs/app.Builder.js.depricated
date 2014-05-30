@@ -95,7 +95,7 @@ class JsRender.Lang_Class : Object {
             "\u0009:UNICODE_TAB",
             "\u000A:UNICODE_NBR",
             "\u0008:VERTICAL_TAB"
-        },
+        };
         for(var i =0; i< ws.length;i++ ) {
             var x = ws[i].split(":");
             this.whitespaceNames.set(x[0],x[1]);
@@ -108,7 +108,7 @@ class JsRender.Lang_Class : Object {
             "\u000D:UNICODE_CR",
             "\u2029:UNICODE_PS",
             "\u2028:UNICODE_LS"
-        },
+        };
         for(var i =0; i< ws.length;i++ ) {
             var x = ws[i].split(":");
             this.newlineNames.set(x[0],x[1]);
@@ -150,7 +150,7 @@ class JsRender.Lang_Class : Object {
         }
     
   
-string[]           puncNames : {
+        ws={
             "; SEMICOLON",
             ", COMMA",
             "? HOOK",
