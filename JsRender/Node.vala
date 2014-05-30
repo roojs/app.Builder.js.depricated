@@ -217,17 +217,18 @@ class JsRender.Node  {
                 els.append(left + v );
                 continue;
             }
+            /* -- fix me - we need a wrapper that starts this..
             // strings..
-            if (!_this.doubleStringProps.length) {
+            if (!this.doubleStringProps.length) {
                 els.append(left + this.quoteString(v));
                 continue;
             }
            
-            if (_this.doubleStringProps.index(k) > -1) {
+            if (this.doubleStringProps.index(k) > -1) {
                 els.append(left + this.quoteString(v));
                 continue;
             }
-            
+            */
             // single quote.. v.substring(1, v.length-1).replace("'", "\\'") + "'";
             els.append(left + "'" + v.substring(1, v.length-1).replace("'", "\\'") + "'");
             
