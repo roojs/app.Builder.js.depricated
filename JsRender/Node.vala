@@ -54,7 +54,7 @@ class JsRender.Node  {
     
   
     
-    string mungeToString (bool isListener, string pad,  Gee.ArrayList<string> doubleStringProps)
+    string mungeToString (bool isListener, string pad,  GLib.List<string> doubleStringProps)
     {
         
          
@@ -247,7 +247,7 @@ class JsRender.Node  {
                 continue;
             }
            
-            if (doubleStringProps.contains(k)) {
+            if (doubleStringProps.index(k) > -1) {
                 els.append(left + this.quoteString(v));
                 continue;
             }
