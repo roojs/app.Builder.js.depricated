@@ -76,7 +76,7 @@ class JsRender.Node : Object {
                skip.append_Val("xtype");
                
         }
-         var newitems = new Array<JsRender.Node>();
+        var newitems = new Array<JsRender.Node>();
         
         if (!isArray && this.hasChildren()) {
             // look for '*props'
