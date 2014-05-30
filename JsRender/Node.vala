@@ -247,7 +247,7 @@ class JsRender.Node  {
                 continue;
             }
            
-            if (doubleStringProps.index(k) > -1) {
+            if (doubleStringProps.contains(k)) {
                 els.append(left + this.quoteString(v));
                 continue;
             }
