@@ -6,7 +6,7 @@
 
 public JsRender.Lang_Class Lang = null;
 
-class JsRender.Lang_Class : Object {
+public class JsRender.Lang_Class : Object {
     
     GLib.List<string> coreObjects;
     Gee.HashMap<string,string> whitespaceNames;
