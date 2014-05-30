@@ -7,7 +7,7 @@
 
 void main () {
     var x = new Lang_Class();
-    print(Lang.keyword("void"));
+    print(JsRender.Lang.keyword("void"));
 }
 
 public JsRender.Lang_Class Lang = null;
