@@ -281,6 +281,10 @@ class JsRender.Node  {
                
         
         
-    } 
+    }
+    string quoteString(string string)
+    {
+        
+    }
     
 }
