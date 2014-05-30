@@ -54,7 +54,7 @@ class JsRender.Node  {
     
   
     
-    string mungeToString (bool isListener, string pad,  Array<string> doubleStringProps;)
+    string mungeToString (bool isListener, string pad,  Array<string> doubleStringProps)
     {
         
          
@@ -240,14 +240,14 @@ class JsRender.Node  {
                 els.append(left + v );
                 continue;
             }
-            /* -- fix me - we need a wrapper that starts this..
+            
             // strings..
-            if (!this.doubleStringProps.length) {
+            if (doubleStringProps.length < 1) {
                 els.append(left + this.quoteString(v));
                 continue;
             }
            
-            if (this.doubleStringProps.index(k) > -1) {
+            if (doubleStringProps.index(k) > -1) {
                 els.append(left + this.quoteString(v));
                 continue;
             }
