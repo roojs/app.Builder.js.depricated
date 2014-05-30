@@ -151,12 +151,14 @@ class JsRender.JsRender  : Object {
         }
         return this.path;
     }
+    /*
         sortCn: function()
         {
             this.cn.sort(function(a,b) {
                 return a.path > b.path;// ? 1 : -1;
             });
         },
+    */
         // should be in palete provider really..
         
         guessName : function(ar) // turns the object into full name.
