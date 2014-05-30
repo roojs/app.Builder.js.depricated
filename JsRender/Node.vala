@@ -1,6 +1,6 @@
 
-
-
+// test..
+// valac gitlive/app.Builder.js/JsRender/Lang.vala --pkg gee-1.0 -o /tmp/Lang ;/tmp/Lang
 
 class JsRender.Node : Object {
     
