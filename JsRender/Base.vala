@@ -178,14 +178,11 @@ class JsRender.Node : Object {
                     }
                     
                     els.append(left  + str);
-                    continue;
+                    return;
                 }
                  
                 
-                
-                
-            }
-             
+              
             });
             
         }
