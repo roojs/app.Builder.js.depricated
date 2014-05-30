@@ -201,7 +201,7 @@ class JsRender.JsRender  : Object {
      */
     
     
-    string mungeToString (JsRender.Node obj, bool isListener, string pad)
+    void mungeToString (JsRender.Node obj, bool isListener, string pad)
     {
         
          
