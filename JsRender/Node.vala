@@ -282,9 +282,12 @@ class JsRender.Node  {
         
         
     }
+    static Json.Generator gen = null;
     string quoteString(string string)
     {
-        
+        if (Node.gen == null) {
+            gen = new Json.Generator();
+        }
     }
     
 }
