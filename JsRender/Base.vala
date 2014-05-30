@@ -145,8 +145,28 @@ class JsRender.Node : Object {
         } else {
             
             this.props.map_iterator().foreach((k,v) => {
+                if (skip.find(k) != null) {
+                    continue;
+                }
                 
                 
+                var leftv = k[0] == '|' ? k.substring(1) : k;
+                // skip builder stuff. prefixed with  '.' .. just like unix fs..
+                if (leftv[0] == '.') { // |. or . -- do not output..
+                    continue;
+                }
+                
+                if (Lang.isKeyword(leftv) || Lang.isBuiltin(leftv)) {
+                    left = "'" + leftv + "'";
+                } else if (leftv.match(/[^A-Z_]+/i)) { // not plain a-z... - quoted.
+                    var val = JSON.stringify(leftv);
+                    left = "'" + val.substring(1, val.length-1).replace(/'/g, "\\'") + "'";
+                } else {
+                    left = '' + leftv;
+                }
+                left += ' : ';
+                
+            }
              
             });
             
@@ -161,9 +181,7 @@ class JsRender.Node : Object {
                 continue;
             }
             var el = obj[i];
-            if (!isArray && skip.indexOf(i) > -1) { // things we do not write..
-                continue;
-            }
+           
             if (!isArray) {
                 // set the key to be quoted with singel quotes..
                 var leftv = i[0] == '|' ? i.substring(1) : i;
