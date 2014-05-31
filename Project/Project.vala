@@ -201,7 +201,7 @@ public class Project.Project {
     public JsRender.JsRender loadFileOnly (string path)
     {
         var xt = this.xtype;
-        return JsRender.Base.factory(xt, this, path);
+        return JsRender.JsRender.factory(xt, this, path);
         
     }
     
