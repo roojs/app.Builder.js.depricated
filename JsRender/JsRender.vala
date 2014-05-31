@@ -13,7 +13,12 @@ public class JsRender.JsRender  : Object {
     public string path;  // is the full path to the file.
     public string parent;  // JS parent.
     
-    public string title;  // a title.. ?? nickname.. ??? - 
+    public string title;  // a title.. ?? nickname.. ??? -
+
+    public string permname;
+    public string modOrder;
+
+        
     public Project.Project project;
     //Project : false, // link to container project!
     
@@ -61,7 +66,7 @@ public class JsRender.JsRender  : Object {
         var generator = new Json.Generator ();
         generator.indent = 4;
         generator.pretty = true;
-        var node = new Json.Node(NodeType.OBJECT);
+        var node = new Json.Node(Json.NodeType.OBJECT);
         node.init_object(this.toJsonArray());
         generator.set_root(node);
         
