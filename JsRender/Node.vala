@@ -318,7 +318,13 @@ public class JsRender.Node  {
         obj.foreach_member(o , key, value) {
             if (key == "items") {
 
+                return;
             }
+            if (key == "listeners") {
+
+                return;
+            }
+            this.props.set(key, value.get_string());
         }
         
 
