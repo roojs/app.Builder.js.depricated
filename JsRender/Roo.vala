@@ -580,41 +580,7 @@ namespace JsRender {
             string  parent =   (this.parent.length > 0 ?  "'" + this.parent + "'" :  "false");
 
             if (isPreview) {
-                parent = "false";omponent({",
-                "    part     :  "+ JSON.stringify(this.pathToPaomponent({",
-                "    part     :  "+ this.pathToPart()) + ",",
-                        /// critical used by builder to associate modules/parts/persm
-                "    order    : '" +modkey+"',",
-                "    region   : '" + this.region   +"',",
-                "    parent   : "+ parent + ",",
-                "    name     : " + JSON.stringify(this.title  || "unnamed module") + ",",
-                "    disabled : " + (this.disabled || 'false') +", ",
-                "    permname : '" + (this.permname|| '') +"', ",
-                    
-               // "    tree : function() { return this._tree(); },",   //BC
-                "    _tree : function()",
-                "    {",
-                "        var _this = this;", // bc
-                "        var MODULE = this;", /// this looks like a better name.
-                "        return " + o + ';',
-                "    }",
-                "});",rt()) + ",",
-                        /// critical used by builder to associate modules/parts/persm
-                "    order    : '" +modkey+"',",
-                "    region   : '" + this.region   +"',",
-                "    parent   : "+ parent + ",",
-                "    name     : " + JSON.stringify(this.title  || "unnamed module") + ",",
-                "    disabled : " + (this.disabled || 'false') +", ",
-                "    permname : '" + (this.permname|| '') +"', ",
-                    
-               // "    tree : function() { return this._tree(); },",   //BC
-                "    _tree : function()",
-                "    {",
-                "        var _this = this;", // bc
-                "        var MODULE = this;", /// this looks like a better name.
-                "        return " + o + ';',
-                "    }",
-                "});",
+                parent = "false"; 
             }
             
           
