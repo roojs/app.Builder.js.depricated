@@ -9,7 +9,7 @@ class Project.Roo : Project {
         base(path);
        
         // various loader methods..
-        this.id = "project-gtk-%s".printf(rid++);
+        this.id = "project-roo-%d".printf(rid++);
         this.xtype = "Roo";
     }
 }
