@@ -334,7 +334,7 @@ public class JsRender.Node  {
                 return;
             }
             this.props.set(key, value.get_string());
-        }
+        });
         
 
 
