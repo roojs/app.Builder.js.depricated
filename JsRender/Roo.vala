@@ -494,9 +494,8 @@ namespace JsRender {
             isPreview = isPreview || false;
             //var items = JSON.parse(JSON.stringify(this.items[0]));
             var o = this.mungeToString('            ');   
-            return [
-                this.outputHeader(),
-                this.name + " = {",
+            
+            var add = { " = {",
                 "",
                 "    dialog : false,",
                 "    callback:  false,",
@@ -525,8 +524,9 @@ namespace JsRender {
                 "    }",
                 "};",
                 ""
-                
-             ].join("\n");
+            };
+            return this.outputHeader() + "\n" + 
+                this.name + string.join("\n", add);
              
              
              
