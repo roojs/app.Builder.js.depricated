@@ -28,12 +28,15 @@ public class JsRender.JsRender  : Object {
         this.path = path;
         this.project = project;
         this.hasParent = false;
+        this.parent = "";
         
         var ar = this.path.split("/");
             // name is in theory filename without .bjs (or .js eventually...)
-        this.name = this.path.split('/').pop().replace(/\.(bjs|js)$/, '');
+        Regex regex = new Regex ("\\.(bjs|js)$");
+
+        this.name = regex.replace(ar[ar.length-1],ar[ar.length-1].length, 0 , ""); 
             
-            cfg.fullname = (cfg.parent.length ? (cfg.parent + '.') : '' ) + cfg.name;
+        cfg.fullname = (cfg.parent.length ? (cfg.parent + '.') : '' ) + cfg.name;
 
 
         
