@@ -574,11 +574,12 @@ namespace JsRender {
             //    topItem.background = false;
             }
             
-            var o = this.mungeToString('            ");   
-             
-            var modkey = this.modOrder + '-' + this.name.replace(/[^A-Z.]+/ig, '-');
+            var o = this.mungeToString("            ");   
+            var reg = new Regex("[^A-Za-z.]+");
             
-            var parent =   (this.parent ?  "'" + this.parent + "'" :  'false');
+            var modkey = this.modOrder + '-' + reg.replace(this.name, this.name.length, 0 , "-");
+            
+            string  parent =   (this.parent.length > 0 ?  "'" + this.parent + "'" :  'false');
             if (isPreview) {
                 parent = 'false'
             }
