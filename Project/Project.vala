@@ -18,8 +18,8 @@ public class Project.Project {
     string id = "";
     string fn = "";
     string name = "";
-    Gee.Map<string,string> paths;
-    Array<JsRender.Base> files ;
+    Gee.HashMap<string,string> paths;
+    Glib.List<JsRender.Base> files ;
     //tree : false,
     string xtype = "";
     
@@ -30,7 +30,7 @@ public class Project.Project {
         
         
         this.paths = new Gee.HashMap<string,string> <string>();
-        this.files = new Array<JsRender.Base>();
+        this.files = new GLib.List<JsRender.Base>();
         //XObject.extend(this, cfg);
         //this.files = { }; 
         
