@@ -47,7 +47,7 @@ public class JsRender.JsRender  : Object {
 
         
     }
-    public JsRender? factory(string xt, Project.Project project, string path)
+    public static JsRender? factory(string xt, Project.Project project, string path)
     {
         JsRender ret;
         switch (xt) {
