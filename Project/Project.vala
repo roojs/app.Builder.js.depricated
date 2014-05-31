@@ -92,7 +92,7 @@ public class Project.Project {
         
         
         var iter = this.paths.map_iterator();
-        while (null != iter.next()) {
+        while (iter.next()) {
             builder.add_string_value (iter.get_key());
         }
         builder.end_array ();
@@ -110,8 +110,8 @@ public class Project.Project {
     public string getName()
     {
         var iter = this.paths.map_iterator();
-        while (null != iter.next()) {
-            return GLib.basename(iter.get_key());
+        while (iter.next()) {
+            return Path.basename(iter.get_key());
         }
       
         return "";
