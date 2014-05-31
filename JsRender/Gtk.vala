@@ -26,13 +26,6 @@ var ctors = {
         base( project, path);
         this.xtype = "Gtk";
          
-        if (!cfg.name || !cfg.fullname ) {
-            
-            // name is in theory filename without .bjs (or .js eventually...)
-            cfg.name = cfg.path.split('/').pop().replace(/\.(bjs|js)$/, '');
-            
-            cfg.fullname = (cfg.parent.length ? (cfg.parent + '.') : '' ) + cfg.name;
-        }
         
         
         this.items = false;
