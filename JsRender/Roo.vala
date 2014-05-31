@@ -67,7 +67,7 @@ namespace JsRender {
             
              
             print("load Items!");
-            if (this.items !== false) {
+            if (this.items != null) {
                 return false;
             }
             
