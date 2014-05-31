@@ -265,7 +265,7 @@ public class JsRender.Node  {
             var k = iter.get_key();
             var vo = iter.get_value();
             string leftv = k[0] == '|' ? k.substring(1) : k;
-            if (JsRender.Lang.isKeyword(leftv) || JsRender.Lang.isBuiltin(leftv)) {
+            if (Lang.isKeyword(leftv) || Lang.isBuiltin(leftv)) {
                 left = "'" + leftv + "'";
             } else if (Regex.match_simple("[^A-Za-z_]+",leftv)) { // not plain a-z... - quoted.
                 var val = this.quoteString(leftv);
