@@ -87,8 +87,7 @@ right:
   Roo.form.NumberField         
   Roo.form.Checkbox         
   Roo.form.Radio         
-  Roo.form.ComboBox
-  Roo.form.ComboBoxArray         
+  Roo.form.ComboBox         
   Roo.form.TextArea         
   Roo.form.HtmlEditor         
   Roo.form.FCKeditor         
@@ -288,11 +287,6 @@ right:
   Roo.data.SimpleStore
 
 left:
-    Roo.form.ComboBoxArray:combo
-right:
-    Roo.form.ComboBox
-
-left:
   Roo.data.Store:proxy
 right:
   Roo.data.HttpProxy
@@ -351,6 +345,7 @@ right:
     Roo.bootstrap.Progress
     Roo.bootstrap.TabPanel
     Roo.bootstrap.DateField
+    Roo.bootstrap.TimeField
     Roo.bootstrap.CheckBox
     Roo.bootstrap.Radio
     Roo.bootstrap.ComboBox

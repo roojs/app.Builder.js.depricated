@@ -666,7 +666,7 @@ Roo = XObject.define(
             
         }
         */
-         getHelpUrl : function(cls)
+        getHelpUrl : function(cls)
         {
             return 'http://www.akbkhome.com/roojs1/docs/symbols/' + cls + '.html';
         }

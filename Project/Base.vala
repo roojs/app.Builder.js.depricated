@@ -12,7 +12,7 @@
  */
 
 
-public class Project.Base {
+public class Project.Project {
     
     
     string id = "";
@@ -24,7 +24,7 @@ public class Project.Base {
     string xtype = "";
     
     
-    void Base (string path) {
+    void Project (string path) {
         
         this.name = name;
         
