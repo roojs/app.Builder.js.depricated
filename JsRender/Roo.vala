@@ -80,47 +80,16 @@ namespace JsRender {
 		        throw new MyError.INVALID_FORMAT ("Unexpected element type %s", node.type_name ());
 	        }
             var obj = node.get_object ();
-            this.modeOrdr
+            this.modOrder = obj.get_string_member("modOrder");
+            this.name = obj.get_string_member("name");
+            this.parent = obj.get_string_member("parent");
+            this.permname = obj.get_string_member("permname");
+            this.title = obj.get_string_member("title");
+            this.modOrder = obj.get_string_member("modOrder");
              
-             
-            function loaded(src) {
-                var cfg = JSON.parse(src);
-                print("loaded data");
-                //print(JSON.stringify(cfg, null,4));
-                _this.modOrder = cfg.modOrder || '001';
-                _this.name = cfg.name.replace(/\.bjs/, ''); // BC!
-                _this.parent =  cfg.parent;
-                _this.permname =  cfg.permname || '';
-                _this.title =  cfg.title;
-                _this.items = cfg.items || []; 
-                
-                _this.fixItems(_this, false);
-                
-                
-                
-                cb();
-            }
-            if (sync) {
-                loaded(File.read(this.path));
-                return true;
-            }
+            // load items[0] ??? into tree...
+
             
-            
-            var file = Gio.file_new_for_path(this.path);
-            
-                             
-            file.read_async(0, null, function(source,result) {
-                var stream = source.read_finish(result)
-                var dstream = new Gio.DataInputStream.c_new(stream);
-                
-                loaded (dstream.read_until(""));
-                
-                
-                 
-                
-            });
-            
-            return true;
             
         },
         /**
