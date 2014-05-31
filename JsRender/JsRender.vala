@@ -1,7 +1,8 @@
 //<Script type="text/javascript">
 
+namespace JsRender {
 
-public class JsRender.JsRender  : Object {
+public class JsRender  : Object {
     /**
      * @cfg {Array} doubleStringProps list of properties that can be double quoted.
      */
@@ -17,6 +18,7 @@ public class JsRender.JsRender  : Object {
 
     public string permname;
     public string modOrder;
+    public string xtype;
 
         
     public Project.Project project;
@@ -28,7 +30,7 @@ public class JsRender.JsRender  : Object {
 
     public bool hasParent; 
     
-    JsRender(Project.Project project, string path) {
+    public JsRender(Project.Project project, string path) {
         
         this.cn = new GLib.List<JsRender>();
         this.path = path;
@@ -38,10 +40,13 @@ public class JsRender.JsRender  : Object {
         
         var ar = this.path.split("/");
             // name is in theory filename without .bjs (or .js eventually...)
-        Regex regex = new Regex ("\\.(bjs|js)$");
+        try {
+            Regex regex = new Regex ("\\.(bjs|js)$");
 
-        this.name = regex.replace(ar[ar.length-1],ar[ar.length-1].length, 0 , ""); 
-            
+            this.name = regex.replace(ar[ar.length-1],ar[ar.length-1].length, 0 , "");
+        } catch (Error e) {
+            this.name = "???";
+        }
         this.fullname = (this.parent.length > 0 ? (this.parent + ".") : "" ) + this.name;
 
 
@@ -49,7 +54,7 @@ public class JsRender.JsRender  : Object {
     }
     public static JsRender? factory(string xt, Project.Project project, string path)
     {
-        JsRender ret;
+ 
         switch (xt) {
             case "Gtk":
                 return new Gtk(project, path);
@@ -234,8 +239,8 @@ public class JsRender.JsRender  : Object {
       
 }
     
-     
- 
+
+} 
 
 
 
