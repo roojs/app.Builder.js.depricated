@@ -15,13 +15,13 @@
 public class Project.Project {
     
     
-    string id = "";
-    string fn = "";
-    string name = "";
-    Gee.HashMap<string,string> paths;
-    GLib.List<JsRender.JsRender> files ;
+    public string id = "";
+    public string fn = "";
+    public string name = "";
+    public Gee.HashMap<string,string> paths;
+    public GLib.List<JsRender.JsRender> files ;
     //tree : false,
-    string xtype = "";
+    public string xtype = "";
     
     
     Project (string path) {
