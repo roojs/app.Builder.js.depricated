@@ -61,11 +61,11 @@ public class Project.Project {
             
         },
     */
-    public Palete  getPalete ()
-    {
+   // public Palete  getPalete ()
+    //{
             //print("Project.Base: GET PROVIDER FOR " + this.xtype);
-            return  ProjectManager.getPalete(this.xtype);
-    }
+   //         return  ProjectManager.getPalete(this.xtype);
+   // }
     
     public string toJSON()
     {
