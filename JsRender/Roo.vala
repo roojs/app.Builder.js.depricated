@@ -431,7 +431,7 @@ namespace JsRender {
        
         string outputHeader()
         {
-            var s = {
+            string[] s = {
                 "//<script type=\"text/javascript\">",
                 "",
                 "// Auto generated file - created by app.Builder.js- do not edit directly (at present!)",
@@ -499,7 +499,7 @@ namespace JsRender {
             //var items = JSON.parse(JSON.stringify(this.items[0]));
             var o = this.mungeToString('            ');   
             
-            string[] add = { " = {",
+            string[] adda = { " = {",
                 "",
                 "    dialog : false,",
                 "    callback:  false,",
@@ -524,13 +524,16 @@ namespace JsRender {
                 "    create : function()",
                 "    {",
                 "        var _this = this;",
-                "        this.dialog = Roo.factory(" + o +  ");",
+                "        this.dialog = Roo.factory("
+            }
+            string[] addb {
+                ");",
                 "    }",
                 "};",
                 ""
             };
             return this.outputHeader() + "\n" + 
-                this.name + string.join("\n", add);
+                this.name + string.join("\n", adda) + o + string.join("\n", addb) 
              
              
              
