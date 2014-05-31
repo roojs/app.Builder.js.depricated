@@ -43,15 +43,6 @@ namespace JsRender {
         
     }
     
-        path : '', // the file path..
-        modOrder : '001', /// sequence id that this uses.
-        region : 'center',
-        parent : '',
-        title : '', // the title on displayed when loading.
-        disable : '', // use a function to that returns false to disable this..
-        permname: '', /// permission name
-        
-        items: false,
         
         setNSID : function(id)
         {
