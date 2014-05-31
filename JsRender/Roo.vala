@@ -63,11 +63,10 @@ namespace JsRender {
 
     */
       
-         public  void loadItems : function(cb, sync)
+        public  void loadItems : function(cb, sync)
         {
             
-            
-            
+             
             print("load Items!");
             if (this.items !== false) {
                 return false;
