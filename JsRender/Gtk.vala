@@ -39,7 +39,7 @@ var ctors = {
         
         
         // super?!?!
-        this.id = 'file-gtk-' + gid++;
+        this.id = "file-gtk-%d".printf(gid++);
         //console.dump(this);
         // various loader methods..
        
