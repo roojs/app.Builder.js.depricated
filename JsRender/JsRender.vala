@@ -86,6 +86,13 @@ public class JsRender  : Object {
     {
         // NOOP
     }
+
+    public void loadItems()
+    {
+        print("load items not handled..");
+
+        
+    }
     
     /**
      *
