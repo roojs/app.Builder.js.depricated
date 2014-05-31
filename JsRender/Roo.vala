@@ -68,10 +68,20 @@ namespace JsRender {
              
             print("load Items!");
             if (this.items != null) {
-                return false;
+                return;
             }
+
+
+            var pa = new Json.Parser();
+            pa.load_from_file(this.path);
+            var node = pa.get_root();
             
-            var _this = this;
+            if (node.get_node_type () != Json.NodeType.OBJECT) {
+		        throw new MyError.INVALID_FORMAT ("Unexpected element type %s", node.type_name ());
+	        }
+            var obj = node.get_object ();
+            this.modeOrdr
+             
              
             function loaded(src) {
                 var cfg = JSON.parse(src);
