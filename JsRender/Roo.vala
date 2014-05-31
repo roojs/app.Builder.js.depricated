@@ -582,7 +582,7 @@ namespace JsRender {
             if (isPreview) {
                 parent = "false";omponent({",
                 "    part     :  "+ JSON.stringify(this.pathToPaomponent({",
-                "    part     :  "+ JSON.stringify(this.pathToPart()) + ",",
+                "    part     :  "+ this.pathToPart()) + ",",
                         /// critical used by builder to associate modules/parts/persm
                 "    order    : '" +modkey+"',",
                 "    region   : '" + this.region   +"',",
