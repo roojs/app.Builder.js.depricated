@@ -3,6 +3,7 @@
 namespace JsRender {
 
     static int rid = 0; 
+    string region;
 
     class Roo : JsRender 
     {
