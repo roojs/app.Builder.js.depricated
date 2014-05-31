@@ -44,7 +44,7 @@ namespace JsRender {
         };
 
         this.ctors = new Gee.HashMap<string,string[]>();
-        for var(i = 0;i<cc.length;i++) {
+        for (var i = 0;i<cc.length;i++) {
             var ar = cc[i].split("=");
             this.ctors.set(ar[0], ar[1].split("|"));
         }
