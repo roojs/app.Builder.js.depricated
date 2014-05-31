@@ -29,7 +29,7 @@ public class Project.Project {
         this.name = name;
         
         
-        this.paths = new Gee.HashMap<string,string> <string>();
+        this.paths = new Gee.HashMap<string,string>();
         this.files = new GLib.List<JsRender.Base>();
         //XObject.extend(this, cfg);
         //this.files = { }; 
