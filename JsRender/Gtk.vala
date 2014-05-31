@@ -4,7 +4,7 @@ namespace JsRender {
 
 
  
-  var gid = 1;
+  int gid = 1;
 
   
 /*
