@@ -381,11 +381,11 @@ namespace JsRender {
             }
             
             
-            if (top.match(/Dialog/)) {
+            if (top.contains("Dialog")) {
                 return this.toSourceDialog(true);
             }
             
-            if (top.match(/Modal/)) {
+            if (top.containers("Modal")) {
                 return this.toSourceModal(true);
             }
             
@@ -393,7 +393,7 @@ namespace JsRender {
             
             
             
-        },
+        }
         
         /**
          * This needs to use some options on the project
