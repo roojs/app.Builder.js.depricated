@@ -7,21 +7,8 @@ namespace JsRender {
   int gid = 1;
 
   Gee.HashMap<string,string[]> ctors ;
-/*
-var ctors = {
 
-    // Class = list of arguments ... and which property to use as a value.
-    "Gtk.MessageDialog=parent:null|flags:Gtk.DialogFlags.MODAL|message_type|buttons|text" ],
-    "Gtk.ToolButton=icon_widget:null|label:null" ],
-
-    "Gtk.ScrolledWindow=hadjustment:null|vadjustment:null" ],
-    "Gtk.SourceBuffer=table:null" ],
-    "Gtk.VBox=homogeneous:true|spacing:0" ],
-    
- 
-};
-*/
- public  class Gtk : JsRender
+  public  class Gtk : JsRender
   {
  
     public Gtk(Project.Project project, string path) {
@@ -45,9 +32,21 @@ var ctors = {
         //console.dump(this);
         // various loader methods..
 
+        // Class = list of arguments ... and which property to use as a value.
+        var cc = {
+            "Gtk.MessageDialog=parent:null|flags:Gtk.DialogFlags.MODAL|message_type|buttons|text" ,
+            "Gtk.ToolButton=icon_widget:null|label:null" ,
+
+            "Gtk.ScrolledWindow=hadjustment:null|vadjustment:null" ,
+            "Gtk.SourceBuffer=table:null" ,
+            "Gtk.VBox=homogeneous:true|spacing:0" 
+        }
 
         this.ctors = new Gee.HashMap<string,string[]>();
-
+        for var(i = 0;i<cc.length;i++) {
+            var ar = cc[i].split("=");
+            this.ctors.set(ar[0], ar[1].split("|"));
+        }
 
         
         
