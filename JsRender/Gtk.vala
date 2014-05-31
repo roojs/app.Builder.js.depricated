@@ -22,7 +22,7 @@ var ctors = {
  public  class Gtk
   {
  
-    Gtk(Project.Project project, string path) {
+    public Gtk(Project.Project project, string path) {
         base( project, path);
         this.xtype = "Gtk";
          
