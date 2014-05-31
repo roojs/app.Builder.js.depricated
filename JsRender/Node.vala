@@ -236,7 +236,7 @@ public class JsRender.Node  {
             // standard..
             
             
-            if (JsRender.Lang.isNumber(v) || JsRender.Lang.isBoolean(v)) { // boolean or number...?
+            if (Lang.isNumber(v) || Lang.isBoolean(v)) { // boolean or number...?
                 els.append(left + v );
                 continue;
             }
