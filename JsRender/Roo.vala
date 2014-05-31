@@ -402,25 +402,25 @@ namespace JsRender {
          * At present we are hard coding it..
          * 
          * 
-         * /
+         */
         toSource: function()
         {
             // dump the file tree back out to a string.
             
             // we have 2 types = dialogs and components
             // 
-            var top = this.guessName(this.items[0]);
-            if (!top) {
+            var top = this.guessName(this.tree);
+            if (top != null) {
                 return false;
             }
-            if (top.match(/Dialog/)) {
-                return this.toSourceDialog();
+            if (top.contains("Dialog")) {
+                return this.toSourceDialog(false);
             }
             
-            if (top.match(/Modal/)) {
+            if (top.contains("Modal")) {
                 return this.toSourceModal(true);
             }
-            return this.toSourceLayout();
+            return this.toSourceLayout(false);
             
             /*
             eventually support 'classes??'
