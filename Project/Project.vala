@@ -135,7 +135,7 @@ public class Project.Project {
             fo.cn = new GLib.List<JsRender.JsRender>();
             
             if (this.files.nth_data(i).fullname.length > 0) {
-                files.set(fo.fullname, f);
+                files.set(fo.fullname, fo);
             }
         }
         
