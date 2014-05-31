@@ -237,7 +237,7 @@ public class Project.Project {
     }
     public void  scanDirs()
     {
-        var iter = files.map_iterator();
+        var iter = this.paths.map_iterator();
         while (null != iter.next()) {
             if (iter.get_value() != "dir") {
                 continue;
