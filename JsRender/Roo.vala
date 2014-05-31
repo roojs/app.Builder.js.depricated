@@ -3,11 +3,12 @@
 namespace JsRender {
 
     static int rid = 0; 
-    string region;
+
 
     class Roo : JsRender 
     {
-       
+       string region;
+        
         public Roo(Project.Project project, string path) {
             base( project, path);
             //this.xtype = "Gtk";
@@ -39,7 +40,7 @@ namespace JsRender {
                 "text",
                 "emptyMsg",
                 "displayMsg" };
-            for (var i=0i<dsp.length;dsp++) {
+            for (var i=0;i<dsp.length;dsp++) {
                 this.doubleStringProps.append(dsp[i]);
             }
 
