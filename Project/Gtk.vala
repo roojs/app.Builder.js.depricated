@@ -3,7 +3,7 @@
  
 
 namespace Project {
-  static int id = 1;
+  static int gtk_id = 1;
 
 
   public class Gtk : Project
@@ -15,7 +15,7 @@ namespace Project {
           base(path);
          
           // various loader methods..
-          this.id = "project-gtk-%s".printf(id++);
+          this.id = "project-gtk-%s".printf(gtk_id++);
           this.xtype = "Gtk";
       }
   }
