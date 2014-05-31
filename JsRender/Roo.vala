@@ -171,9 +171,18 @@ namespace JsRender {
         {
             
             print("--- JsRender.Roo.save");
-            base
-            Base.prototype.save.call(this);
+            JsRender.save();
+            
             // now write the js file..
+            string js;
+            try {
+                Regex regex = new Regex ("\\.(bjs|js)$");
+
+                js = regex.replace(this.path,this.path.length.length, 0 , "");
+            } catch (Error e) {
+                this.name = "???";
+            }
+            
             var js = this.path.replace(/\.bjs$/, '.js');
             var d = new Date();
             var js_src = this.toSource();            
