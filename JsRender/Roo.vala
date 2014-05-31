@@ -580,8 +580,9 @@ namespace JsRender {
             var modkey = this.modOrder + '-' + reg.replace(this.name, this.name.length, 0 , "-");
             
             string  parent =   (this.parent.length > 0 ?  "'" + this.parent + "'" :  "false");
+
             if (isPreview) {
-                parent = 'false'
+                parent = "false";
             }
             
           
