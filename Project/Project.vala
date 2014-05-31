@@ -129,10 +129,10 @@ public class Project.Project {
         var files = new Gee.HashMap<string,Json.Object>();
          
         for(var i = 0; i < this.files.length(); i++) {
-            var fo = this.files.nth(i);
+            var fo = this.files.nth_data(i);
             
             fo.hasParent = false;
-            fo.cn = new GLib.List<JsRender.JsRender>();
+            fo.cn = new GLib.List<JsRbooender.JsRender>();
             
             if (this.files.index(i).fullname.length > 0) {
                 files.set(fo.fullname, f);
