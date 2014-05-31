@@ -61,8 +61,7 @@ public class JsRender.JsRender  : Object {
     
     public void save ()
     {
-            
-        var write = this.toJsonArray();
+         
         var generator = new Json.Generator ();
         generator.indent = 4;
         generator.pretty = true;
@@ -71,7 +70,11 @@ public class JsRender.JsRender  : Object {
         generator.set_root(node);
         
         print("WRITE: " + this.path);// + "\n" + JSON.stringify(write));
-        generator.to_file(this.path);
+        try {
+            generator.to_file(this.path);
+        } catch(Error e) {
+            print("Save failed");
+        }
     }
         
     public void   saveHTML ()
