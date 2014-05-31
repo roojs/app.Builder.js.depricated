@@ -429,7 +429,7 @@ namespace JsRender {
               
         }
        
-        string outputHeader()
+        public string outputHeader()
         {
             string[] s = {
                 "//<script type=\"text/javascript\">",
@@ -443,7 +443,7 @@ namespace JsRender {
         }
         // a standard dialog module.
         // fixme - this could be alot neater..
-        string toSourceDialog(bool isPreview) 
+        public string toSourceDialog(bool isPreview) 
         {
             
             //var items = JSON.parse(JSON.stringify(this.items[0]));
@@ -492,7 +492,7 @@ namespace JsRender {
              
         },
         
-        toSourceModal(bool isPreview) 
+        public string toSourceModal(bool isPreview) 
         {
             
             
@@ -540,7 +540,7 @@ namespace JsRender {
         },
         
         
-        string [] pathToPart()
+        public string [] pathToPart()
         {
             var dir = Path.get_basename(Path.get_dirname(this.path));
             var ar = dir.split(".")
@@ -567,14 +567,14 @@ namespace JsRender {
         // a layout compoent 
         public string toSourceLayout(bool isPreview) 
         {
-            isPreview = isPreview || false;
-            var topItem = JSON.parse(JSON.stringify(this.items[0]));
+          
+            
             if (isPreview) {
-                topItem.region = 'center';
-                topItem.background = false;
+            //       topItem.region = 'center';
+            //    topItem.background = false;
             }
             
-            var o = this.mungeToString(topItem, false, '            ');   
+            var o = this.mungeToString('            ');   
              
             var modkey = this.modOrder + '-' + this.name.replace(/[^A-Z.]+/ig, '-');
             
