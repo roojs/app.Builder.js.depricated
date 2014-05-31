@@ -9,6 +9,7 @@ public class JsRender.JsRender  : Object {
     
     public string id;
     public string name;   // is the JS name of the file.
+    public string fullname;
     public string path;  // is the full path to the file.
     public string parent;  // JS parent.
     
