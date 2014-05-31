@@ -582,14 +582,8 @@ namespace JsRender {
             string  parent =   (this.parent.length > 0 ?  "'" + this.parent + "'" :  "false");
 
             if (isPreview) {
-                parent = "false";
-            }
-            
-          
-            return [
-                this.outputHeader(),
-                
-                this.name  +  " = new Roo.XComponent({",
+                parent = "false";omponent({",
+                "    part     :  "+ JSON.stringify(this.pathToPaomponent({",
                 "    part     :  "+ JSON.stringify(this.pathToPart()) + ",",
                         /// critical used by builder to associate modules/parts/persm
                 "    order    : '" +modkey+"',",
@@ -606,7 +600,47 @@ namespace JsRender {
                 "        var MODULE = this;", /// this looks like a better name.
                 "        return " + o + ';',
                 "    }",
+                "});",rt()) + ",",
+                        /// critical used by builder to associate modules/parts/persm
+                "    order    : '" +modkey+"',",
+                "    region   : '" + this.region   +"',",
+                "    parent   : "+ parent + ",",
+                "    name     : " + JSON.stringify(this.title  || "unnamed module") + ",",
+                "    disabled : " + (this.disabled || 'false') +", ",
+                "    permname : '" + (this.permname|| '') +"', ",
+                    
+               // "    tree : function() { return this._tree(); },",   //BC
+                "    _tree : function()",
+                "    {",
+                "        var _this = this;", // bc
+                "        var MODULE = this;", /// this looks like a better name.
+                "        return " + o + ';',
+                "    }",
                 "});",
+            }
+            
+          
+            return 
+                this.outputHeader() + "\n" +
+                
+                this.name  +  " = new Roo.XComponent({\n" 
+                "    part     :  "+ JSON.stringify(this.pathToPart()) + ",\n" +
+                        /// critical used by builder to associate modules/parts/persm
+                "    order    : '" +modkey+"',\n" +
+                "    region   : '" + this.region   +"',\n" +
+                "    parent   : "+ parent + ",\n" +
+                "    name     : " + this.tree.quoteString(this.title.length > 0 ? this.title : "unnamed module") + ",\n" +
+                "    disabled : " + (this.disabled || 'false') +", \n" +
+                "    permname : '" + (this.permname|| '') +"', \n" +
+                    
+               // "    tree : function() { return this._tree(); },\n" +   //BC
+                "    _tree : function()\n" +
+                "    {\n" +
+                "        var _this = this;\n" + // bc
+                "        var MODULE = this;\n" + /// this looks like a better name.
+                "        return " + o + ';',
+                "    }\n" +
+                "});\n" +
                 ""
                  
              ].join("\n");
