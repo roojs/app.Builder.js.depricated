@@ -540,7 +540,7 @@ namespace JsRender {
         },
         
         
-        public string [] pathToPart()
+        public string   pathToPart()
         {
             var dir = Path.get_basename(Path.get_dirname(this.path));
             var ar = dir.split(".")
@@ -549,14 +549,12 @@ namespace JsRender {
             // now we have the 'module name'..
             var fbits = Path.get_basename(this.path).split(".");
             
-            
-            fbits.pop(); // remove extension..
-            
+             
             var npart = fbits[fbits.length - 2]; // this should be 'AdminProjectManager' for example...
             if (npart.substring(0, modname.length) == modname) {
                 npart = npart.substring(modname.length);
             }
-            string[] ret = { modname, npart };
+            return "[" + this.tree.quoteString(modname) + ", " + this.tree.quoteString(npart) + " ]";
             return ret;
             
             
@@ -624,7 +622,7 @@ namespace JsRender {
                 this.outputHeader() + "\n" +
                 
                 this.name  +  " = new Roo.XComponent({\n" 
-                "    part     :  "+ JSON.stringify(this.pathToPart()) + ",\n" +
+                "    part     :  "+ this.tree.quoteString(this.pathToPart()) + ",\n" +
                         /// critical used by builder to associate modules/parts/persm
                 "    order    : '" +modkey+"',\n" +
                 "    region   : '" + this.region   +"',\n" +
