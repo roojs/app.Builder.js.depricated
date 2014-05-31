@@ -35,10 +35,8 @@ var ctors = {
         //    //console.log(cfg.items.length);
         //    delete cfg.json; // not needed!
         // }
-        this.cn = [];
+         
         
-        Gtk.superclass.constructor.call(this, cfg);
-
         
         // super?!?!
         this.id = 'file-gtk-' + gid++;
