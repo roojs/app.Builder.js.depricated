@@ -229,7 +229,7 @@ public class Project.Project {
         //    console.dump(this.files);
         }
         if (type == "file" ) {
-            this.files.append_val(this.loadFileOnly( path ));
+            this.files.append(this.loadFileOnly( path ));
         }
         this.onChanged();
         
