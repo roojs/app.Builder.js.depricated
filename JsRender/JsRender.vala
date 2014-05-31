@@ -18,12 +18,12 @@ class JsRender.JsRender  : Object {
     
     JsRender.Node tree; // the tree of nodes.
     
-    Array<JsRender.Base>() cn; // child files.. (used by project ... should move code here..)
+    GLib.List<JsRender.JsRender>() cn; // child files.. (used by project ... should move code here..)
     
     
     void JsRender(Project.Project project, string path) {
         
-        this.cn = new Array<JsRender.Base>();
+        this.cn = new GLib.List<JsRender.JsRender>();
         this.path = path;
         this.project = project;
         
