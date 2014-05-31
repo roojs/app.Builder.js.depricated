@@ -606,9 +606,9 @@ namespace JsRender {
                 "        return " + o + ';',
                 "    }\n" +
                 "});\n" +
-                ""
+                "";
                  
-             ].join("\n");
+             
             
         },
             
