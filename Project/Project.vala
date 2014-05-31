@@ -128,7 +128,7 @@ public class Project.Project {
          
         var files = new Gee.HashMap<string,Json.Object>();
          
-        for(var i = 0; i < this.files.length; i++) {
+        for(var i = 0; i < this.files.length(); i++) {
             var fo = this.files.index(i);
             
             fo.hasParent = false;
