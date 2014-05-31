@@ -140,7 +140,7 @@ public class Project.Project {
         }
         
         var iter = files.map_iterator();
-        while (null != iter.next()) {
+        while (iter.next()) {
             var f = iter.get_value();
             
             var par = f.parent;
@@ -157,7 +157,7 @@ public class Project.Project {
             
         var ret = new GLib.List<JsRender.JsRender>();
         iter = files.map_iterator();
-        while (null != iter.next()) {
+        while (iter.next()) {
             var f = iter.get_value();
                 
             //   f.sortCn();
