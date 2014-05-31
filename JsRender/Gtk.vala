@@ -26,16 +26,6 @@ var ctors = {
         base( project, path);
         this.xtype = "Gtk";
          
-        
-    }
-        // id ,
-        //"name":"Edit Module Details",
-        // items : 
-        //"btype":"FORM", // was to be components...
-        //"app":"Builder",
-        //"module":"Pman.Tab.BuilderTop2"
-        //console.dump(cfg);
-        cfg.parent = cfg.parent || '';
         if (!cfg.name || !cfg.fullname ) {
             
             // name is in theory filename without .bjs (or .js eventually...)
