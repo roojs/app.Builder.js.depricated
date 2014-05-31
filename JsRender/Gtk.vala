@@ -28,7 +28,7 @@ var ctors = {
          
         
         
-        this.items = false;
+        //this.items = false;
         //if (cfg.json) {
         //    var jstr =  JSON.parse(cfg.json);
         //    this.items = [ jstr ];
