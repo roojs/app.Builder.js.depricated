@@ -19,7 +19,7 @@ var ctors = {
  
 };
 */
- public  class Gtk
+ public  class Gtk : JsRender
   {
  
     public Gtk(Project.Project project, string path) {
