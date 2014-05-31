@@ -23,7 +23,7 @@ class JsRender.JsRender  : Object {
     
     void JsRender(Project.Project project, string path) {
         
-        this.cn = new GLib.List<.JsRender>();
+        this.cn = new GLib.List<JsRender>();
         this.path = path;
         this.project = project;
         
