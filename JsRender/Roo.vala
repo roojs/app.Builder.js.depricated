@@ -196,7 +196,9 @@ namespace JsRender {
             
             
             
-        },
+        }
+
+        /*
         saveHTML : function(frame) {
             var top = this.guessName(this.items[0]);
             print ("TOP = " + top)
@@ -341,14 +343,16 @@ namespace JsRender {
                 cb("</"+tagName+">");
             }
             
-        },
+        }
+        */
         
         
         
          /**
          * convert xtype for munged output..
          * 
-         * /
+         */
+        /*
         mungeXtype : function(xtype, els)
         {
             var bits = xtype.split('.');
@@ -364,12 +368,12 @@ namespace JsRender {
             
             
         },
+        */
         
-        
-        toSourcePreview: function()
+        string toSourcePreview()
         {
             
-            var top = this.guessName(this.items[0]);
+            var top = this.guessName(this.tree);
             print(JSON.stringify(this.items, null,4));
                        
             if (!top) {
