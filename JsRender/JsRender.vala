@@ -36,7 +36,7 @@ public class JsRender.JsRender  : Object {
 
         this.name = regex.replace(ar[ar.length-1],ar[ar.length-1].length, 0 , ""); 
             
-        this.fullname = (this.parent.length ? (this.parent + '.') : '' ) + cfg.name;
+        this.fullname = (this.parent.length ? (this.parent + ".") : "" ) + this.name;
 
 
         
