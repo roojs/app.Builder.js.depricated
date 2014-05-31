@@ -26,7 +26,7 @@ public class Project.Project {
     
     Project (string path) {
         
-        this.name = name;
+        //this.name = name;
         
         
         this.paths = new Gee.HashMap<string,string>();
