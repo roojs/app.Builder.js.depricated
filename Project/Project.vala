@@ -197,14 +197,14 @@ public class Project.Project {
             }
         };
         return null;
-    },
+    }
         
     public JsRender.Base loadFileOnly (string path)
     {
         var xt = this.xtype;
         return JsRender.Base.factory(xt, this, path);
         
-    },
+    }
     
     public JsRender.Base create(string filename)
     {
@@ -225,16 +225,16 @@ public class Project.Project {
     {
         this.paths.set(path,type);
         //Seed.print(" type is '" + type + "'");
-        if (type == 'dir') {
+        if (type == "dir") {
             this.scanDir(path);
         //    console.dump(this.files);
         }
-        if (type == 'file' ) {
+        if (type == "file" ) {
             this.files.append_val(this.loadFileOnly( path ));
         }
         this.onChanged();
         
-    },
+    }
     public void  scanDirs()
     {
         var iter = files.map_iterator();
@@ -246,7 +246,7 @@ public class Project.Project {
         }
         //console.dump(this.files);
         
-    },
+    }
         // list files.
     public void scanDir(string dir, int dp =0 ) 
     {
@@ -264,7 +264,7 @@ public class Project.Project {
         string[] subs;
         
         while ((next_file = file_enum.next_file(null)) != null) {
-            var fn = next_file.get_display_name()
+            var fn = next_file.get_display_name();
     
              
             //console.log('trying ' + dir + '/' + fn);
@@ -278,7 +278,7 @@ public class Project.Project {
                 continue;
             }
             
-            if (!Regex.match_simple("\.bjs$", fn)) {
+            if (!Regex.match_simple("\\.bjs$", fn)) {
                 continue;
             }
             /*
@@ -306,7 +306,7 @@ public class Project.Project {
             JsRender.Base.factory(xt,this, dir + "/" + fn);
             // parent ?? 
             
-            */
+             
         }
         for (var i = 0; i < subs.length; i++) {
              this.scanDir(subs[i], dp+1);
