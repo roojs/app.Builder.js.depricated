@@ -59,7 +59,7 @@ public class JsRender.JsRender  : Object {
         return null;    
     }
     
-    void save ()
+    public void save ()
     {
             
         var write = this.toJsonArray();
@@ -74,7 +74,7 @@ public class JsRender.JsRender  : Object {
         generator.to_file(this.path);
     }
         
-    void   saveHTML ()
+    public void   saveHTML ()
     {
         // NOOP
     }
@@ -136,7 +136,7 @@ public class JsRender.JsRender  : Object {
         print("File.getTree tree called on base object?!?!");
     }
 */
-    Json.Object toJsonArray ()
+    public Json.Object toJsonArray ()
     {
         
         
@@ -155,7 +155,7 @@ public class JsRender.JsRender  : Object {
     
     
 
-    string getTitle ()
+    public string getTitle ()
     {
         if (this.title.length > 0) {
             return this.title;
@@ -163,7 +163,7 @@ public class JsRender.JsRender  : Object {
         var a = this.path.split("/");
         return a[a.length-1];
     }
-    string getTitleTip()
+    public string getTitleTip()
     {
         if (this.title.length > 0) {
             return "<b>" + this.title + "</b> " + this.path;
@@ -180,7 +180,7 @@ public class JsRender.JsRender  : Object {
     */
         // should be in palete provider really..
         
-    string guessName(Node ar) // turns the object into full name.
+    public string guessName(Node ar) // turns the object into full name.
     {
          // eg. xns: Roo, xtype: XXX -> Roo.xxx
         if (!ar.hasXnsType()) {
