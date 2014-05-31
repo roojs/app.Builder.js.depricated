@@ -273,7 +273,7 @@ public class Project.Project {
             }
             
             if (FileUtils.test(dir  + "/" + fn, GLib.FileTest.IS_DIR)) {
-                subs += (dir  + "/" + fn);
+                subs.append(dir  + "/" + fn);
                 continue;
             }
             
@@ -307,8 +307,8 @@ public class Project.Project {
             
              
         }
-        for (var i = 0; i < subs.length; i++) {
-             this.scanDir(subs[i], dp+1);
+        for (var i = 0; i < subs.length(); i++) {
+             this.scanDir(subs.nth_data(i), dp+1);
         }
         
     }
