@@ -431,15 +431,16 @@ namespace JsRender {
        
         string outputHeader()
         {
-            return [
+            var s = {
                 "//<script type=\"text/javascript\">",
                 "",
                 "// Auto generated file - created by app.Builder.js- do not edit directly (at present!)",
                 ""
-            ].join("\n");
+            }
+            return string.join("\n",s);
             
        
-        },
+        }
         // a standard dialog module.
         // fixme - this could be alot neater..
         toSourceDialog : function(isPreview) 
