@@ -37,10 +37,10 @@ public class Project.Project {
         
         this.scanDirs();
         
-    },
+    }
     
     public void onChanged() {
-        ProjectManager.fireEvent('changed');
+       // ProjectManager.fireEvent('changed');
         
     }
     /*
@@ -65,7 +65,7 @@ public class Project.Project {
     {
             //print("Project.Base: GET PROVIDER FOR " + this.xtype);
             return  ProjectManager.getPalete(this.xtype);
-    },
+    }
     
     public string toJSON()
     {
@@ -165,7 +165,7 @@ public class Project.Project {
             if (f.hasParent) {
                 continue;
             }
-            if (files.has_key(f.fullname))) {
+            if (files.has_key(f.fullname)) {
             
                 ret.add(f);
             }
