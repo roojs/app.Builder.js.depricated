@@ -2,7 +2,7 @@
 
 static int id = 1;
 
-class Project.Roo : Project.Base {
+class Project.Roo : Project {
 
     void Roo(string path) {
         
