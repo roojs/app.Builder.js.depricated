@@ -258,7 +258,7 @@ public class Project.Project {
         
             
         var f = File.new_for_path(dir);
-        var file_enum = f.enumerate_children(Gio.FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME, Gio.FileQueryInfoFlags.NONE, null);
+        var file_enum = f.enumerate_children(GLib.FileAttribute.STANDARD_DISPLAY_NAME, GLib.FileQueryInfoFlags.NONE, null);
         
         string[] subs;
         
