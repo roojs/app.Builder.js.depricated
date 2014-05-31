@@ -5,6 +5,8 @@ namespace JsRender {
 
  
   var gid = 1;
+
+  
 /*
 var ctors = {
     "Gtk.MessageDialog" : [ "parent:null", "flags:Gtk.DialogFlags.MODAL", "message_type",  "buttons", "text" ],
@@ -16,13 +18,11 @@ var ctors = {
     
  
 };
-
-
-
-Gtk = XObject.define( 
-    
-    
-    function(cfg) {
+*/
+  class Gtk
+  {
+ 
+    Gtk(cfg) {
         
         // id ,
         //"name":"Edit Module Details",
@@ -49,20 +49,7 @@ Gtk = XObject.define(
             delete cfg.json; // not needed!
         }
         this.cn = [];
-         /*
-        var p = cfg.items && cfg.items.length && cfg.items[0].parent ? cfg.items[0].parent : false;
         
-        // ensure real data is set...
-        Roo.apply(this, {
-            name : cfg.module,
-            parent : p,
-            title : cfg.name,
-            project : cfg.app
-            
-        });
-        
-        this.cn = [];
-        */
         Gtk.superclass.constructor.call(this, cfg);
 
         
@@ -123,10 +110,10 @@ Gtk = XObject.define(
             
             
         },
-        /**
-         * convert xtype for munged output..
-         * 
-         */
+         
+         // convert xtype for munged output..
+         
+         
         mungeXtype : function(xtype, els)
         {
             els.push('xtype: '+ xtype);
@@ -174,7 +161,7 @@ Gtk = XObject.define(
          * why is this not save...???
          * 
          * 
-         */
+          
         saveJS: function()
         {
              
@@ -218,13 +205,7 @@ Gtk = XObject.define(
         },
         
         
-        /*
-        getTree : function( o ) {
-            
-            
-            
-        }
-        */
+   
         getHelpUrl : function(cls)
         {
             return 'http://devel.akbkhome.com/seed/' + cls + '.html';
@@ -258,6 +239,7 @@ Gtk = XObject.define(
             ret += "*/\n";
             ret += "\n\n";
             if (!testcompile) {
+           
                 ret += "/* -- to test class\n";  
             }
             //
@@ -269,7 +251,7 @@ Gtk = XObject.define(
             ret += "    return 0;\n";
             ret += "}\n";
             if (!testcompile) {
-                ret += "*/\n";
+                ret += "*" + "/\n";
             }
             ret += "\n\n";
             // print(JSON.stringify(item,null,4));
@@ -500,7 +482,7 @@ Gtk = XObject.define(
                     var v = item['|init'].split(/\/*--/);
                     if (v.length > 1) {
                         strbuilder("\n" + ipad + "// init method \n");            
-                         var vv = v[1].replace('*/', "");
+                         var vv = v[1].replace('*' +'/', "");
                          //print(JSON.stringify(vv));Seed.quit();
                          vv = vv.replace(/^\n+/,'');
                          vv = vv.replace(/\n+$/,'');
@@ -535,7 +517,7 @@ Gtk = XObject.define(
                         
                         //continue;
                     } else { 
-                        var vv = v[1].replace('*/', "");
+                        var vv = v[1].replace('*' + '/', "");
                         //print(JSON.stringify(vv));Seed.quit();
                         vv = vv.replace(/^\n+/,'');
                         vv = vv.replace(/\n+$/,'');
@@ -573,7 +555,7 @@ Gtk = XObject.define(
                       strbuilder("\n" + pad + "// skip " + k + " - could not find seperator\n"); 
                     continue;
                 }
-                var vv = v[1].replace('*/', "");
+                var vv = v[1].replace('*' + '/', "");
                 //print(JSON.stringify(vv));Seed.quit();
                 vv = vv.replace(/^\n+/,'');
                 vv = vv.replace(/\n+$/,'');
