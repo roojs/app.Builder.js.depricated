@@ -43,7 +43,8 @@ var ctors = {
         //console.dump(this);
         // various loader methods..
        
-    },
+    }
+      /*
     Base,   
     {
         xtype : 'Gtk',
