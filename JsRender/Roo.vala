@@ -18,28 +18,31 @@ namespace JsRender {
         //    //console.log(cfg.items.length);
         //    delete cfg.json; // not needed!
         // }
-         
+        this.modOrder = "001", /// sequence id that this uses.
+        this.region = "center",
         
         
         // super?!?!
         this.id = "file-roo-%d".printf(rid++);
         //console.dump(this);
         // various loader methods..
-       
+
+        var  dsp = { "title",
+            "legend",
+            "loadingText",
+            "emptyText",
+            "qtip",
+            "value",
+            "text",
+            "emptyMsg",
+            "displayMsg" };
+        for (var i=0i<dsp.length;dsp++) {
+            this.doubleStringProps.append(dsp[i]);
+        }
+
+        
     }
-    Base,
-    {
-        doubleStringProps : [ 
-            'title',
-            'legend',
-            'loadingText',
-            'emptyText',
-            'qtip',
-            'value',
-            'text',
-            'emptyMsg',
-            'displayMsg'
-        ],
+    
         path : '', // the file path..
         modOrder : '001', /// sequence id that this uses.
         region : 'center',
