@@ -162,7 +162,7 @@ class JsRender.JsRender  : Object {
     */
         // should be in palete provider really..
         
-    string guessName function(JsRender.Node ar) // turns the object into full name.
+    string guessName(JsRender.Node ar) // turns the object into full name.
     {
          // eg. xns: Roo, xtype: XXX -> Roo.xxx
         if (!ar.hasXnsType()) {
