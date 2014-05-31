@@ -113,10 +113,11 @@ class JsRender.JsRender  : Object {
          * 
          * 
          */
-         
-    getTree ( o ) {
+    /*     
+    void getTree ( o ) {
         print("File.getTree tree called on base object?!?!");
     }
+*/
     Json.Object toJsonArray ()
     {
         
