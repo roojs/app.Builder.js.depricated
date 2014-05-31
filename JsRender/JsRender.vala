@@ -61,7 +61,7 @@ public class JsRender.JsRender  : Object {
         var generator = new Json.Generator ();
         generator.indent = 4;
         generator.pretty = true;
-        var node = new Json.Node();
+        var node = new Json.Node(NodeType.Object);
         node.init_object(this.toJsonArray());
         generator.set_root(node);
         
