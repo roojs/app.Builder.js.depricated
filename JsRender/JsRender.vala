@@ -22,7 +22,7 @@ public class JsRender.JsRender  : Object {
 
     public bool hasParent; 
     
-    void JsRender(Project.Project project, string path) {
+    JsRender(Project.Project project, string path) {
         
         this.cn = new GLib.List<JsRender>();
         this.path = path;
@@ -31,7 +31,7 @@ public class JsRender.JsRender  : Object {
         
         
     }
-    JsRender? factory(string xt, Project.Project project, string path)
+    public JsRender? factory(string xt, Project.Project project, string path)
     {
         JsRender ret;
         switch (xt) {
