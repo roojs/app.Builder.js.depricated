@@ -43,7 +43,7 @@ namespace JsRender {
         
     }
     
-        
+    /*    
         setNSID : function(id)
         {
             
@@ -115,7 +115,7 @@ namespace JsRender {
          * this code should try and clean it up..
          * 
          * 
-         */
+         * /
         fixItems : function(node, fixthis)
         {
             if (fixthis) {
@@ -353,7 +353,7 @@ namespace JsRender {
          /**
          * convert xtype for munged output..
          * 
-         */
+         * /
         mungeXtype : function(xtype, els)
         {
             var bits = xtype.split('.');
@@ -403,7 +403,7 @@ namespace JsRender {
          * At present we are hard coding it..
          * 
          * 
-         */
+         * /
         toSource: function()
         {
             // dump the file tree back out to a string.
@@ -426,7 +426,7 @@ namespace JsRender {
             /*
             eventually support 'classes??'
              return this.toSourceStdClass();
-            */
+            * /
               
         },
        
@@ -631,16 +631,11 @@ namespace JsRender {
                             
                                  
         },
-        /*
-        getTree : function( o ) {
-            
-            
-            
-        }
-        */
+        
         getHelpUrl : function(cls)
         {
             return 'http://www.akbkhome.com/roojs1/docs/symbols/' + cls + '.html';
         }
         
 });
+            
