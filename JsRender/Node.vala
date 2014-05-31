@@ -179,7 +179,7 @@ public class JsRender.Node  {
              }
                 
             
-            if (JsRender.Lang.isKeyword(leftv) || JsRender.Lang.isBuiltin(leftv)) {
+            if (Lang.isKeyword(leftv) || Lang.isBuiltin(leftv)) {
                 left = "'" + leftv + "'";
             } else if (Regex.match_simple("[^A-Za-z_]+",leftv)) { // not plain a-z... - quoted.
                 var val = this.quoteString(leftv);
