@@ -29,12 +29,12 @@ var ctors = {
         
         
         this.items = false;
-        if (cfg.json) {
-            var jstr =  JSON.parse(cfg.json);
-            this.items = [ jstr ];
-            //console.log(cfg.items.length);
-            delete cfg.json; // not needed!
-        }
+        //if (cfg.json) {
+        //    var jstr =  JSON.parse(cfg.json);
+        //    this.items = [ jstr ];
+        //    //console.log(cfg.items.length);
+        //    delete cfg.json; // not needed!
+        // }
         this.cn = [];
         
         Gtk.superclass.constructor.call(this, cfg);
