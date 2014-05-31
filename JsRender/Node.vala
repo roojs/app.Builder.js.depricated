@@ -80,7 +80,7 @@ class JsRender.Node  {
                
         }
         //var newitems = new Gee.ArrayList<JsRender.Node>();
-        var oprops = new Gee.HashMap<string,JsRender.Node>();
+        var oprops = new Gee.HashMap<string,Node>();
         
         if (!isArray && this.hasChildren()) {
             // look for '*props'
