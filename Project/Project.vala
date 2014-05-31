@@ -187,7 +187,7 @@ public class Project.Project {
     {
         
        for(var i = 0; i < this.files.length(); i++) {
-            var fo = this.files.nth_data(i);
+            var f = this.files.nth_data(i);
             
             
             //console.log(f.id + '?=' + id);
