@@ -3,45 +3,47 @@
 namespace JsRender {
 
     static int rid = 0; 
-    
-   
-    public Roo(Project.Project project, string path) {
-        base( project, path);
-        //this.xtype = "Gtk";
-         
-        
-        
-        //this.items = false;
-        //if (cfg.json) {
-        //    var jstr =  JSON.parse(cfg.json);
-        //    this.items = [ jstr ];
-        //    //console.log(cfg.items.length);
-        //    delete cfg.json; // not needed!
-        // }
-        this.modOrder = "001", /// sequence id that this uses.
-        this.region = "center",
-        
-        
-        // super?!?!
-        this.id = "file-roo-%d".printf(rid++);
-        //console.dump(this);
-        // various loader methods..
 
-        var  dsp = { "title",
-            "legend",
-            "loadingText",
-            "emptyText",
-            "qtip",
-            "value",
-            "text",
-            "emptyMsg",
-            "displayMsg" };
-        for (var i=0i<dsp.length;dsp++) {
-            this.doubleStringProps.append(dsp[i]);
+    class Roo : JsRender 
+    {
+       
+        public Roo(Project.Project project, string path) {
+            base( project, path);
+            //this.xtype = "Gtk";
+             
+            
+            
+            //this.items = false;
+            //if (cfg.json) {
+            //    var jstr =  JSON.parse(cfg.json);
+            //    this.items = [ jstr ];
+            //    //console.log(cfg.items.length);
+            //    delete cfg.json; // not needed!
+            // }
+            this.modOrder = "001", /// sequence id that this uses.
+            this.region = "center",
+            
+            
+            // super?!?!
+            this.id = "file-roo-%d".printf(rid++);
+            //console.dump(this);
+            // various loader methods..
+
+            var  dsp = { "title",
+                "legend",
+                "loadingText",
+                "emptyText",
+                "qtip",
+                "value",
+                "text",
+                "emptyMsg",
+                "displayMsg" };
+            for (var i=0i<dsp.length;dsp++) {
+                this.doubleStringProps.append(dsp[i]);
+            }
+
+            
         }
-
-        
-    }
     
     /*    
         setNSID : function(id)
