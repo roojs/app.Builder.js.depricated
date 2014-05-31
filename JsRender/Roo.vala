@@ -60,7 +60,8 @@ namespace JsRender {
         getType: function() {
             return 'Roo';
         },
-       
+
+    */
       
         loadItems : function(cb, sync)
         {
