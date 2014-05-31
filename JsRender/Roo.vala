@@ -370,14 +370,14 @@ namespace JsRender {
         },
         */
         
-        string toSourcePreview()
+        string? toSourcePreview()
         {
             
             var top = this.guessName(this.tree);
-            print(JSON.stringify(this.items, null,4));
+            //print(JSON.stringify(this.items, null,4));
                        
-            if (!top) {
-                return false;
+            if (top == null) {
+                return null;
             }
             
             
