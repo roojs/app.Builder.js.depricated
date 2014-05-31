@@ -184,7 +184,7 @@ public class Project.Project {
     
     
     
-    public ?JsRender.Base getById(string id)
+    public JsRender.Base? getById(string id)
     {
         
        for(var i = 0; i < this.files.length; i++) {
