@@ -596,7 +596,7 @@ namespace JsRender {
                 "    parent   : "+ parent + ",\n" +
                 "    name     : " + this.tree.quoteString(this.title.length > 0 ? this.title : "unnamed module") + ",\n" +
                 "    disabled : " + (this.disabled ? "true" : "false") +", \n" +
-                "    permname : '" + (this.permname|| '') +"', \n" +
+                "    permname : '" + (this.permname.length > 0 ? this.permname : "") +"', \n" +
                     
                // "    tree : function() { return this._tree(); },\n" +   //BC
                 "    _tree : function()\n" +
