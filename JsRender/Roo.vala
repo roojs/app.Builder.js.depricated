@@ -562,10 +562,10 @@ namespace JsRender {
             
             
             
-        },
+        }
         
         // a layout compoent 
-        toSourceLayout : function(isPreview) 
+        public string toSourceLayout(bool isPreview) 
         {
             isPreview = isPreview || false;
             var topItem = JSON.parse(JSON.stringify(this.items[0]));
