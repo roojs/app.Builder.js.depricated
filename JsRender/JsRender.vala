@@ -5,7 +5,7 @@ public class JsRender.JsRender  : Object {
     /**
      * @cfg {Array} doubleStringProps list of properties that can be double quoted.
      */
-    public Array<string> doubleStringProps;
+    public GLib.List<string> doubleStringProps;
     
     public string id;
     public string name;   // is the JS name of the file.
