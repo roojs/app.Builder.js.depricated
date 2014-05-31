@@ -317,6 +317,7 @@ public class JsRender.Node  {
     void loadFromJson(Json.Object obj) {
         obj.foreach_member(o , key, value) {
             if (key == "items") {
+                
 
                 return;
             }
