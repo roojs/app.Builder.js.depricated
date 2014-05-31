@@ -148,7 +148,7 @@ class JsRender.JsRender  : Object {
     string getTitleTip()
     {
         if (this.title.length > 0) {
-            return '<b>' + this.title + '</b> ' + this.path;
+            return "<b>" + this.title + "</b> " + this.path;
         }
         return this.path;
     }
