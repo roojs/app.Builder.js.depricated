@@ -129,7 +129,7 @@ public class Project.Project {
         var files = new Gee.HashMap<string,Json.Object>();
          
         for(var i = 0; i < this.files.length(); i++) {
-            var fo = this.files.index(i);
+            var fo = this.files.nth(i);
             
             fo.hasParent = false;
             fo.cn = new Array<JsRender.JsRender>();
