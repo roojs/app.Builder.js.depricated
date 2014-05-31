@@ -10,7 +10,7 @@ namespace Project {
   {
 
      
-    public Gtk(string path) {
+     Gtk(string path) {
           
           base(path);
          

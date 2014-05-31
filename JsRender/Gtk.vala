@@ -19,7 +19,7 @@ var ctors = {
  
 };
 */
-  class Gtk
+ public  class Gtk
   {
  
     Gtk(Project.Project project, string path) {
