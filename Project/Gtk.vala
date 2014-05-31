@@ -15,9 +15,8 @@ namespace Project {
           base(path);
          
           // various loader methods..
-          this.id = "project-gtk-%s".printf(gtk_id++);
+          this.id = "project-gtk-%d".printf(gtk_id++);
           this.xtype = "Gtk";
       }
   }
-
 }
