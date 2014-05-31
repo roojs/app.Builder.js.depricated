@@ -14,7 +14,7 @@ public class Project.Gtk : Project
         base(path);
        
         // various loader methods..
-        this.id = "project-gtk-%s".sprintf(Project.Gtk.id++);
+        this.id = "project-gtk-%s".printf(Project.Gtk.id++);
         this.xtype = "Gtk";
     }
 }
