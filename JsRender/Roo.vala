@@ -63,7 +63,7 @@ namespace JsRender {
 
     */
       
-        loadItems : function(cb, sync)
+         public  void loadItems : function(cb, sync)
         {
             
             
