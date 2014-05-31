@@ -540,19 +540,24 @@ namespace JsRender {
         },
         
         
-        pathToPart : function()
+        string [] pathToPart()
         {
-            var dir = File.basename(File.dirname(this.path));
-            var modname = dir.split('.').pop();
+            var dir = Path.get_basename(Path.get_dirname(this.path));
+            var ar = dir.split(".")
+            var modname = ar[ar.length-1];
             
             // now we have the 'module name'..
-            var fbits = File.basename(this.path).split('.');
+            var fbits = Path.get_basename(this.path).split(".");
+            
+            
             fbits.pop(); // remove extension..
-            var npart = fbits.pop(); // this should be 'AdminProjectManager' for example...
+            
+            var npart = fbits[fbits.length - 2]; // this should be 'AdminProjectManager' for example...
             if (npart.substring(0, modname.length) == modname) {
                 npart = npart.substring(modname.length);
             }
-            return [ modname , npart];
+            string[] ret = { modname, npart };
+            return ret;
             
             
             
