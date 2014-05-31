@@ -166,7 +166,7 @@ public class Project.Project {
             }
             if (files.has_key(f.fullname)) {
             
-                ret.add(f);
+                ret.append(f);
             }
         }
         ret.sort( (a,b) => {
