@@ -446,13 +446,12 @@ namespace JsRender {
         string toSourceDialog(bool isPreview) 
         {
             
-            var items = JSON.parse(JSON.stringify(this.items[0]));
+            //var items = JSON.parse(JSON.stringify(this.items[0]));
             
             
             var o = this.mungeToString(items, false, '            ');   
-            return [
-                this.outputHeader(),
-                this.name + " = {",
+            
+            string[] adda = { " = {",
                 "",
                 "    dialog : false,",
                 "    callback:  false,",
@@ -477,12 +476,17 @@ namespace JsRender {
                 "    create : function()",
                 "    {",
                 "        var _this = this;",
-                "        this.dialog = Roo.factory(" + o +  ");",
+                "        this.dialog = Roo.factory(" 
+            };
+            string[] addb = {  
+                        ");",
                 "    }",
                 "};",
                 ""
-                
-             ].join("\n");
+            };
+            return  this.outputHeader() + "\n" +
+                this.name + string.join("\n", adda) + o + string.join("\n", addb);
+            
              
              
              
@@ -491,11 +495,11 @@ namespace JsRender {
         toSourceModal(bool isPreview) 
         {
             
-            isPreview = isPreview || false;
+            
             //var items = JSON.parse(JSON.stringify(this.items[0]));
             var o = this.mungeToString('            ');   
             
-            var add = { " = {",
+            string[] add = { " = {",
                 "",
                 "    dialog : false,",
                 "    callback:  false,",
