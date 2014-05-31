@@ -31,7 +31,7 @@ namespace JsRender {
             //console.dump(this);
             // various loader methods..
 
-            var  dsp = { "title",
+            string[]  dsp = { "title",
                 "legend",
                 "loadingText",
                 "emptyText",
