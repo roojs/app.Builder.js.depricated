@@ -22,8 +22,12 @@ var ctors = {
   class Gtk
   {
  
-    Gtk(cfg) {
+    Gtk(Project.Project project, string path) {
+        base( project, path);
+        this.xtype = "Gtk";
+         
         
+    }
         // id ,
         //"name":"Edit Module Details",
         // items : 
