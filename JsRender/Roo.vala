@@ -443,11 +443,12 @@ namespace JsRender {
         }
         // a standard dialog module.
         // fixme - this could be alot neater..
-        toSourceDialog : function(isPreview) 
+        string toSourceDialog(bool isPreview) 
         {
             
-            isPreview = isPreview || false;
             var items = JSON.parse(JSON.stringify(this.items[0]));
+            
+            
             var o = this.mungeToString(items, false, '            ');   
             return [
                 this.outputHeader(),
@@ -491,8 +492,8 @@ namespace JsRender {
         {
             
             isPreview = isPreview || false;
-            var items = JSON.parse(JSON.stringify(this.items[0]));
-            var o = this.mungeToString(items, false, '            ');   
+            //var items = JSON.parse(JSON.stringify(this.items[0]));
+            var o = this.mungeToString('            ');   
             return [
                 this.outputHeader(),
                 this.name + " = {",
