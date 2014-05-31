@@ -636,6 +636,6 @@ namespace JsRender {
         {
             return 'http://www.akbkhome.com/roojs1/docs/symbols/' + cls + '.html';
         }
-        
-});
-            
+     */
+    }
+}
