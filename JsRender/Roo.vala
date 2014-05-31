@@ -7,6 +7,7 @@ namespace JsRender {
     class Roo : JsRender 
     {
        string region;
+        boolean disabled;
         
         public Roo(Project.Project project, string path) {
             base( project, path);
@@ -23,7 +24,7 @@ namespace JsRender {
             // }
             this.modOrder = "001"; /// sequence id that this uses.
             this.region = "center";
-            
+            this.disabled = false;
             
             // super?!?!
             this.id = "file-roo-%d".printf(rid++);
