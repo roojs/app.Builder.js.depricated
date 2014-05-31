@@ -11,7 +11,7 @@ public class Project.Gtk : Project
 
   Gtk(string path) {
         
-        Base(path);
+        base(path);
        
         // various loader methods..
         this.id = "project-gtk-%s".sprintf(Project.Gtk.id++);
