@@ -574,7 +574,7 @@ namespace JsRender {
             //    topItem.background = false;
             }
             
-            var o = this.mungeToString('            ');   
+            var o = this.mungeToString('            ");   
              
             var modkey = this.modOrder + '-' + this.name.replace(/[^A-Z.]+/ig, '-');
             
