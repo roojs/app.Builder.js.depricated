@@ -187,7 +187,7 @@ public class JsRender.JsRender  : Object {
            return "";
         }
         
-        return ar.get("|xns") +'.' + ar.get("|xtype");
+        return ar.get("|xns") + "." + ar.get("|xtype");
                           
                             
     }
