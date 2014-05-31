@@ -20,8 +20,8 @@ namespace JsRender {
             //    //console.log(cfg.items.length);
             //    delete cfg.json; // not needed!
             // }
-            this.modOrder = "001", /// sequence id that this uses.
-            this.region = "center",
+            this.modOrder = "001"; /// sequence id that this uses.
+            this.region = "center";
             
             
             // super?!?!
