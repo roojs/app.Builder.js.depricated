@@ -272,8 +272,8 @@ public class Project.Project {
                 continue;
             }
             
-            if (FileUtils.test(dir  + '/' + fn, GLib.FileTest.IS_DIR)) {
-                subs += (dir  + '/' + fn);
+            if (FileUtils.test(dir  + "/" + fn, GLib.FileTest.IS_DIR)) {
+                subs += (dir  + "/" + fn);
                 continue;
             }
             
@@ -302,7 +302,7 @@ public class Project.Project {
             }
             */
             var xt = this.xtype;
-            JsRender.Base.factory(xt,this, dir + "/" + fn);
+            JsRender.JsRender.factory(xt,this, dir + "/" + fn);
             // parent ?? 
             
              
