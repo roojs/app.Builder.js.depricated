@@ -11,7 +11,7 @@ namespace JsRender {
         
         public Roo(Project.Project project, string path) {
             base( project, path);
-            //this.xtype = "Gtk";
+            this.xtype = "Roo";
              
             
             
