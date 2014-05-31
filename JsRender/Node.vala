@@ -4,7 +4,7 @@
 
 class JsRender.Node  {
     
-    GLib.List<JsRender.Node> items; // child items..
+    GLib.List<Node> items; // child items..
     
     Gee.HashMap<string,string> props; // the properties..
     
@@ -14,7 +14,7 @@ class JsRender.Node  {
     
     Node()
     {
-        this.items = new GLib.List<JsRender.Node>();
+        this.items = new GLib.List<Node>();
         this.props = new Gee.HashMap<string,string>();
         this.is_array = false;
         
