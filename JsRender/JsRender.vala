@@ -1,7 +1,7 @@
 //<Script type="text/javascript">
 
 
-class JsRender.JsRender  : Object {
+public class JsRender.JsRender  : Object {
     /**
      * @cfg {Array} doubleStringProps list of properties that can be double quoted.
      */
