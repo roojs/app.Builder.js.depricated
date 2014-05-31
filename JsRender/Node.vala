@@ -7,6 +7,7 @@ public class JsRender.Node  {
     GLib.List<Node> items; // child items..
     
     Gee.HashMap<string,string> props; // the properties..
+    Gee.HashMap<string,string> listeners; // the listeners..
     
   
     
