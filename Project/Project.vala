@@ -132,7 +132,7 @@ public class Project.Project {
             var fo = this.files.nth_data(i);
             
             fo.hasParent = false;
-            fo.cn = new GLib.List<JsRbooender.JsRender>();
+            fo.cn = new GLib.List<JsRender.JsRender>();
             
             if (this.files.index(i).fullname.length > 0) {
                 files.set(fo.fullname, f);
