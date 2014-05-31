@@ -34,9 +34,9 @@ class JsRender.JsRender  : Object {
         JsRender.JsRender ret;
         switch (xt) {
             case "Gtk":
-                return new JsRender.Gtk(project, path)
+                return new JsRender.Gtk(project, path);
             case "Roo":
-                return new JsRender.Roo(project, path)
+                return new JsRender.Roo(project, path);
         }
         return null;    
     }
