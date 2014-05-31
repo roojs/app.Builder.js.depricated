@@ -488,7 +488,7 @@ namespace JsRender {
              
         },
         
-        toSourceModal : function(isPreview) 
+        toSourceModal(bool isPreview) 
         {
             
             isPreview = isPreview || false;
