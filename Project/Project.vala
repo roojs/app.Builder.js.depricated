@@ -133,7 +133,7 @@ public class Project.Project {
             var fo = this.files.index(i);
             
             fo.hasParent = false;
-            fo.cn = new Array<JsRender.Base>();
+            fo.cn = new Array<JsRender.JsRender>();
             
             if (this.files.index(i).fullname.length > 0) {
                 files.set(fo.fullname, f);
@@ -156,7 +156,7 @@ public class Project.Project {
              
         };
             
-        var ret = new Array<JsRender.Base>();
+        var ret = new Array<JsRender.JsRender>();
         iter = files.map_iterator();
         while (null != iter.next()) {
             var f = iter.get_value();
@@ -184,7 +184,7 @@ public class Project.Project {
     
     
     
-    public JsRender.Base? getById(string id)
+    public JsRender.JsRender? getById(string id)
     {
         
        for(var i = 0; i < this.files.length; i++) {
@@ -199,14 +199,14 @@ public class Project.Project {
         return null;
     }
         
-    public JsRender.Base loadFileOnly (string path)
+    public JsRender.JsRender loadFileOnly (string path)
     {
         var xt = this.xtype;
         return JsRender.Base.factory(xt, this, path);
         
     }
     
-    public JsRender.Base create(string filename)
+    public JsRender.JsRender create(string filename)
     {
         var ret = this.loadFileOnly(filename);
         ret.save();
@@ -216,7 +216,7 @@ public class Project.Project {
     }
         
          
-    public void addFile(JsRender.Base pfile) { // add a single file, and trigger changed.
+    public void addFile(JsRender.JsRender pfile) { // add a single file, and trigger changed.
         this.files.append_val(pfile); // duplicate check?
         this.onChanged();
     }
