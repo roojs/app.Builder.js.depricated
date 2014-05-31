@@ -222,7 +222,7 @@ var ctors = {
             ret += "valac  --pkg gio-2.0  --pkg posix  --pkg gtk+-3.0 --pkg libnotify --pkg gtksourceview-3.0  --pkg  libwnck-3.0 \\\n";
             //ret += "    " + item.xvala_id + ".vala  -o /tmp/" + item.xvala_id +"\n";
             ret += "    /tmp/" + this.name + ".vala  -o /tmp/" + this.name +"\n";
-            ret += "*/\n";
+            ret += "*" + "/\n";
             ret += "\n\n";
             if (!testcompile) {
            
