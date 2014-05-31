@@ -323,11 +323,11 @@ public class JsRender.Node  {
                     node.loadFromJson();
                     this.items.append(node);
                 });
-
                 return;
             }
             if (key == "listeners") {
-
+                var li = value.get_object();
+                
                 return;
             }
             this.props.set(key, value.get_string());
