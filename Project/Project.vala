@@ -156,7 +156,7 @@ public class Project.Project {
              
         };
             
-        var ret = new Array<JsRender.JsRender>();
+        var ret = new GLib.List<JsRender.JsRender>();
         iter = files.map_iterator();
         while (null != iter.next()) {
             var f = iter.get_value();
