@@ -605,12 +605,11 @@ namespace JsRender {
                 "        var MODULE = this;\n" + /// this looks like a better name.
                 "        return " + o + ';',
                 "    }\n" +
-                "});\n" +
-                "";
+                "});\n";
                  
              
             
-        },
+        }
             
         guessName : function(ar) // turns the object into full name.
         {
