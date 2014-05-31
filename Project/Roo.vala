@@ -12,6 +12,6 @@ class Project.Roo : Project.Base {
         this.id = "project-gtk-%s".sprintf(id++);
         this.xtype = "Roo";
     }
-)
+}
  
  
