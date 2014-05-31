@@ -183,18 +183,16 @@ namespace JsRender {
                 this.name = "???";
             }
             
-            var js = this.path.replace(/\.bjs$/, '.js');
-            var d = new Date();
+            //var d = new Date();
             var js_src = this.toSource();            
-            print("TO SOURCE in " + ((new Date()) - d) + "ms");
-            File.write(js, js_src);
+            //print("TO SOURCE in " + ((new Date()) - d) + "ms");
+            FileUtils.set_data(js, js_src);            
+            
             // for bootstrap - we can write the HTML to the templates directory..
             
-            var top = this.guessName(this.items[0]);
-            print ("TOP = " + top)
+            //var top = this.guessName(this.items[0]);
+            //print ("TOP = " + top)
              
-            
-            
             
             
             
