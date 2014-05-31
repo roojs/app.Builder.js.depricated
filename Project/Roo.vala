@@ -1,6 +1,6 @@
  
 
-static int id = 1;
+static int rid = 1;
 
 class Project.Roo : Project {
 
@@ -9,7 +9,7 @@ class Project.Roo : Project {
         base(path);
        
         // various loader methods..
-        this.id = "project-gtk-%s".sprintf(id++);
+        this.id = "project-gtk-%s".printf(rid++);
         this.xtype = "Roo";
     }
 }
