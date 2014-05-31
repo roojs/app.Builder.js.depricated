@@ -261,7 +261,7 @@ public class Project.Project {
         var file_enum = f.enumerate_children(GLib.FileAttribute.STANDARD_DISPLAY_NAME, GLib.FileQueryInfoFlags.NONE, null);
         
         string[] subs;
-        
+        FileInfo next_file; 
         while ((next_file = file_enum.next_file(null)) != null) {
             var fn = next_file.get_display_name();
     
