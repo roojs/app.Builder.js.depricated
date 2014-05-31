@@ -29,9 +29,9 @@ class JsRender.JsRender  : Object {
         
         
     }
-    .JsRender? factory(string xt, Project.Project project, string path)
+    JsRender? factory(string xt, Project.Project project, string path)
     {
-        .JsRender ret;
+        JsRender ret;
         switch (xt) {
             case "Gtk":
                 return new JsRender.Gtk(project, path);
