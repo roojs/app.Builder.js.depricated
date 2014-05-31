@@ -4,7 +4,7 @@
 
 
 
-class Project.Gtk : Project.Base {
+class Project.Gtk : Project.Projects
 
 
    static int id = 1;
