@@ -6,15 +6,17 @@ namespace JsRender {
  
   int gid = 1;
 
-  
+  Gee.HashMap<string,string[]> ctors ;
 /*
 var ctors = {
-    "Gtk.MessageDialog" : [ "parent:null", "flags:Gtk.DialogFlags.MODAL", "message_type",  "buttons", "text" ],
-    "Gtk.ToolButton": [ "icon_widget:null", "label:null" ],
 
-    "Gtk.ScrolledWindow": [ "hadjustment:null", "vadjustment:null" ],
-    "Gtk.SourceBuffer": [ "table:null" ],
-    "Gtk.VBox": [ "homogeneous:true", "spacing:0" ],
+    // Class = list of arguments ... and which property to use as a value.
+    "Gtk.MessageDialog=parent:null|flags:Gtk.DialogFlags.MODAL|message_type|buttons|text" ],
+    "Gtk.ToolButton=icon_widget:null|label:null" ],
+
+    "Gtk.ScrolledWindow=hadjustment:null|vadjustment:null" ],
+    "Gtk.SourceBuffer=table:null" ],
+    "Gtk.VBox=homogeneous:true|spacing:0" ],
     
  
 };
@@ -42,7 +44,13 @@ var ctors = {
         this.id = "file-gtk-%d".printf(gid++);
         //console.dump(this);
         // various loader methods..
-       
+
+
+        this.ctors = new Gee.HashMap<string,string[]>();
+
+
+        
+        
     }
       /*
     Base,   
