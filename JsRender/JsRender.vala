@@ -184,7 +184,7 @@ public class JsRender.JsRender  : Object {
     {
          // eg. xns: Roo, xtype: XXX -> Roo.xxx
         if (!ar.hasXnsType()) {
-           return '';
+           return "";
         }
         
         return ar.get("|xns") +'.' + ar.get("|xtype");
