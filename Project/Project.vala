@@ -111,7 +111,7 @@ public class Project.Project {
     {
         var iter = this.paths.map_iterator();
         while (iter.next()) {
-            return Path.basename(iter.get_key());
+            return GLib.Path.basename(iter.get_key());
         }
       
         return "";
