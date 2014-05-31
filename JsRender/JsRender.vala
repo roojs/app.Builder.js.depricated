@@ -29,6 +29,13 @@ public class JsRender.JsRender  : Object {
         this.project = project;
         this.hasParent = false;
         
+        var ar = this.path.split("/");
+            // name is in theory filename without .bjs (or .js eventually...)
+        this.name = this.path.split('/').pop().replace(/\.(bjs|js)$/, '');
+            
+            cfg.fullname = (cfg.parent.length ? (cfg.parent + '.') : '' ) + cfg.name;
+
+
         
     }
     public JsRender? factory(string xt, Project.Project project, string path)
