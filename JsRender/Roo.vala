@@ -40,7 +40,7 @@ namespace JsRender {
                 "text",
                 "emptyMsg",
                 "displayMsg" };
-            for (var i=0;i<dsp.length;dsp++) {
+            for (var i=0;i<dsp.length;i++) {
                 this.doubleStringProps.append(dsp[i]);
             }
 
