@@ -121,7 +121,7 @@ public class Project.Project {
      * to tree - > should
      */
  
-    public Array<JsRender.JsRender> toTree ()
+    public GLib.List<JsRender.JsRender> toTree ()
     {
             
          
