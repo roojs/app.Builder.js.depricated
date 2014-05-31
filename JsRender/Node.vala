@@ -327,7 +327,10 @@ public class JsRender.Node  {
             }
             if (key == "listeners") {
                 var li = value.get_object();
-                
+                obj.foreach_member((lio , li_key, li_value) => {
+
+
+                });
                 return;
             }
             this.props.set(key, value.get_string());
