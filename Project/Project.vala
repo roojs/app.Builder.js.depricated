@@ -19,7 +19,7 @@ public class Project.Project {
     string fn = "";
     string name = "";
     Gee.HashMap<string,string> paths;
-    Glib.List<JsRender.Base> files ;
+    GLib.List<JsRender.Base> files ;
     //tree : false,
     string xtype = "";
     
