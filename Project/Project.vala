@@ -19,7 +19,7 @@ public class Project.Project {
     string fn = "";
     string name = "";
     Gee.HashMap<string,string> paths;
-    GLib.List<JsRender.Base> files ;
+    GLib.List<JsRender.JsRender> files ;
     //tree : false,
     string xtype = "";
     
@@ -30,7 +30,7 @@ public class Project.Project {
         
         
         this.paths = new Gee.HashMap<string,string>();
-        this.files = new GLib.List<JsRender.Base>();
+        this.files = new GLib.List<JsRender.JsRender>();
         //XObject.extend(this, cfg);
         //this.files = { }; 
         
