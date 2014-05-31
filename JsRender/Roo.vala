@@ -165,11 +165,13 @@ namespace JsRender {
             
             
         },
+    */
         
-        save : function()
+        void save()
         {
             
             print("--- JsRender.Roo.save");
+            base
             Base.prototype.save.call(this);
             // now write the js file..
             var js = this.path.replace(/\.bjs$/, '.js');
