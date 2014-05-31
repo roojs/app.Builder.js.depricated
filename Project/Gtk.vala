@@ -17,6 +17,6 @@ class Project.Gtk : Project.Projects
         this.id = "project-gtk-%s".sprintf(Project.Gtk.id++);
         this.xtype = "Gtk";
     }
-)
+}
  
  
