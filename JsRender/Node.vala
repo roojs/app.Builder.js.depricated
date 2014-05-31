@@ -23,15 +23,15 @@ public class JsRender.Node  {
     
     
     
-    bool isArray()
+    public bool isArray()
     {
         return this.is_array;
     }
-    bool hasChildren()
+    public bool hasChildren()
     {
         return this.items.length() > 0;
     }
-    bool hasXnsType()
+    public bool hasXnsType()
     {
         if (this.props.get("|xns") != null && this.props.get("xtype") != null) {
             return true;
@@ -40,7 +40,7 @@ public class JsRender.Node  {
         return false;
     }
     // wrapper around get props that returns empty string if not found.
-    string get(string key)
+    public string get(string key)
     {
         var k = this.props.get(key);
         if (k == null) {
@@ -54,7 +54,7 @@ public class JsRender.Node  {
     
   
     
-    string mungeToString (bool isListener, string pad,  GLib.List<string> doubleStringProps)
+    public string mungeToString (bool isListener, string pad,  GLib.List<string> doubleStringProps)
     {
         
          
@@ -303,7 +303,7 @@ public class JsRender.Node  {
     }
     static Json.Generator gen = null;
     
-    string quoteString(string str)
+    public string quoteString(string str)
     {
         if (Node.gen == null) {
             Node.gen = new Json.Generator();
