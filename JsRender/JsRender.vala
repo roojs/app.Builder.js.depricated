@@ -16,7 +16,7 @@ class JsRender.JsRender  : Object {
     Project.Project project;
     //Project : false, // link to container project!
     
-    JsRender.Node tree; // the tree of nodes.
+    Node tree; // the tree of nodes.
     
     GLib.List<JsRender.JsRender> cn; // child files.. (used by project ... should move code here..)
     
