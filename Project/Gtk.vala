@@ -5,11 +5,11 @@
 
 
 class Project.Gtk : Project.Projects
-
+{
 
    static int id = 1;
 
-   void Gtk(string path) {
+  Gtk(string path) {
         
         Base(path);
        
