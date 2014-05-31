@@ -126,7 +126,7 @@ public class Project.Project {
             
          
          
-        var files = new Gee.Map<string,Json.Object>();
+        var files = new Gee.HashMap<string,Json.Object>();
         
         
         for(var i = 0; i < this.files.length; i++) {
