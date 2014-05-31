@@ -62,7 +62,7 @@ namespace JsRender {
 
     */
       
-        public  void loadItems : function(cb, sync)
+        public  void loadItems() // : function(cb, sync) == original was async.
         {
             
              
