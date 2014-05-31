@@ -6,7 +6,7 @@ class Project.Roo : Project {
 
     void Roo(string path) {
         
-        Base(path);
+        base(path);
        
         // various loader methods..
         this.id = "project-gtk-%s".sprintf(id++);
