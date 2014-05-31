@@ -145,12 +145,12 @@ public class Project.Project {
             
             var par = f.parent;
             if (par.length < 1) {
-                return;
+                continue;
             }
             if (!files.has_key(par)) {
-                return;
+                continue;
             }
-            files.get(par).cn.add(f);
+            files.get(par).cn.append(f);
             f.hasParent = true;
              
         };
