@@ -134,7 +134,7 @@ public class Project.Project {
             fo.hasParent = false;
             fo.cn = new GLib.List<JsRender.JsRender>();
             
-            if (this.files.index(i).fullname.length > 0) {
+            if (this.files.nth_data(i).fullname.length > 0) {
                 files.set(fo.fullname, f);
             }
         }
