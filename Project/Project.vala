@@ -216,7 +216,7 @@ public class Project.Project {
         
          
     public void addFile(JsRender.JsRender pfile) { // add a single file, and trigger changed.
-        this.files.append_val(pfile); // duplicate check?
+        this.files.append(pfile); // duplicate check?
         this.onChanged();
     }
     
