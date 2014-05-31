@@ -89,7 +89,11 @@ namespace JsRender {
              
             // load items[0] ??? into tree...
 
-            
+            var ar = obj.get_array_member("items");
+            var tree_base = ar.get_object_element(1);
+            this.tree = new Node();
+            this.tree.loadFromJson(tree_base);
+
             
         },
         /**
