@@ -319,7 +319,9 @@ public class JsRender.Node  {
             if (key == "items") {
                 var ar = value.get_array();
                 ar.foreach_element( (are, ix, el) {
-
+                    var node = new Node();
+                    node.loadFromJson();
+                    this.items.append(node);
                 });
 
                 return;
