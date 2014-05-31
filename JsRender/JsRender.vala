@@ -224,7 +224,7 @@ public class JsRender.JsRender  : Object {
     
     public string mungeToString(string pad)
     {
-        return this.tree.mungeToString(false, pad);
+        return this.tree.mungeToString(false, pad, this.doubleStringProps);
         
     }
     
