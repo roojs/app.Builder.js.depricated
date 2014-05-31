@@ -112,7 +112,7 @@ public class JsRender.Node  {
                 prop  = prop.substring(0,  -2); //strip []
                 // it's an array type..
                 if (!oprops.has_key(prop)) {
-                    var cn = new JsRender.Node();
+                    var cn = new Node();
                     oprops.set(prop, cn);
                     
                 }
