@@ -49,7 +49,7 @@ class JsRender.JsRender  : Object {
         generator.indent = 4;
         generator.pretty = true;
         var node = new Json.Node();
-        node.init_object(this.toJsonArray())
+        node.init_object(this.toJsonArray());
         generator.set_root(node);
         
         print("WRITE: " + this.path);// + "\n" + JSON.stringify(write));
@@ -59,7 +59,7 @@ class JsRender.JsRender  : Object {
     void   saveHTML ()
     {
         // NOOP
-    },
+    }
     
     /**
      *
