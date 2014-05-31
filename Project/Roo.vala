@@ -4,7 +4,7 @@ static int id = 1;
 
 class Project.Roo : Project {
 
-    void Roo(string path) {
+    Roo(string path) {
         
         base(path);
        
