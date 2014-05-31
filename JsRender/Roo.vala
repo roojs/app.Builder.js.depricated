@@ -425,11 +425,11 @@ namespace JsRender {
             /*
             eventually support 'classes??'
              return this.toSourceStdClass();
-            * /
+            */
               
         }
        
-        outputHeader : function()
+        string outputHeader()
         {
             return [
                 "//<script type=\"text/javascript\">",
