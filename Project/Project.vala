@@ -186,7 +186,7 @@ public class Project.Project {
     public JsRender.JsRender? getById(string id)
     {
         
-       for(var i = 0; i < this.files.length; i++) {
+       for(var i = 0; i < this.files.length(); i++) {
             var fo = this.files.nth_data(i);
             
             
