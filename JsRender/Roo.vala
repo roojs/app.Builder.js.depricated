@@ -588,7 +588,7 @@ namespace JsRender {
                 this.outputHeader() + "\n" +
                 
                 this.name  +  " = new Roo.XComponent({\n" 
-                "    part     :  "+ this.tree.quoteString(this.pathToPart()) + ",\n" +
+                "    part     :  "+ this.pathToPart() + ",\n" +
                         /// critical used by builder to associate modules/parts/persm
                 "    order    : '" +modkey+"',\n" +
                 "    region   : '" + this.region   +"',\n" +
