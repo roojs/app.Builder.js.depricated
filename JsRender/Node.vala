@@ -313,5 +313,13 @@ public class JsRender.Node  {
         Node.gen.set_root (builder.get_root ());
         return  Node.gen.to_data (null);   
     }
+
+    void loadFromJson(Json.Object obj) {
+
+
+
+
+    }
+    
     
 }
