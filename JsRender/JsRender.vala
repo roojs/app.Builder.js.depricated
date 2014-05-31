@@ -5,27 +5,29 @@ public class JsRender.JsRender  : Object {
     /**
      * @cfg {Array} doubleStringProps list of properties that can be double quoted.
      */
-    Array<string> doubleStringProps;
+    public Array<string> doubleStringProps;
     
-    string id;
-    string name;   // is the JS name of the file.
-    string path;  // is the full path to the file.
-    string parent;  // JS parent.
+    public string id;
+    public string name;   // is the JS name of the file.
+    public string path;  // is the full path to the file.
+    public string parent;  // JS parent.
     
-    string title;  // a title.. ?? nickname.. ??? - 
-    Project.Project project;
+    public string title;  // a title.. ?? nickname.. ??? - 
+    public Project.Project project;
     //Project : false, // link to container project!
     
-    Node tree; // the tree of nodes.
+    public Node tree; // the tree of nodes.
     
-    GLib.List<JsRender> cn; // child files.. (used by project ... should move code here..)
-    
+    public GLib.List<JsRender> cn; // child files.. (used by project ... should move code here..)
+
+    public bool hasParent; 
     
     void JsRender(Project.Project project, string path) {
         
         this.cn = new GLib.List<JsRender>();
         this.path = path;
         this.project = project;
+        this.hasParent = false;
         
         
     }
