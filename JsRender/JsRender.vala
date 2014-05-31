@@ -160,7 +160,7 @@ public class JsRender.JsRender  : Object {
         if (this.title.length > 0) {
             return this.title;
         }
-        var a = this.path.split('/');
+        var a = this.path.split("/");
         return a[a.length-1];
     }
     string getTitleTip()
