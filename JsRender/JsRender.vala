@@ -18,20 +18,20 @@ class JsRender.JsRender  : Object {
     
     Node tree; // the tree of nodes.
     
-    GLib.List<JsRender.JsRender> cn; // child files.. (used by project ... should move code here..)
+    GLib.List<JsRender> cn; // child files.. (used by project ... should move code here..)
     
     
     void JsRender(Project.Project project, string path) {
         
-        this.cn = new GLib.List<JsRender.JsRender>();
+        this.cn = new GLib.List<.JsRender>();
         this.path = path;
         this.project = project;
         
         
     }
-    JsRender.JsRender? factory(string xt, Project.Project project, string path)
+    .JsRender? factory(string xt, Project.Project project, string path)
     {
-        JsRender.JsRender ret;
+        .JsRender ret;
         switch (xt) {
             case "Gtk":
                 return new JsRender.Gtk(project, path);
