@@ -427,7 +427,7 @@ namespace JsRender {
              return this.toSourceStdClass();
             * /
               
-        },
+        }
        
         outputHeader : function()
         {
