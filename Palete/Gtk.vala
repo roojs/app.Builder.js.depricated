@@ -224,7 +224,7 @@ namespace Palete {
              p.name
             p.type
             p.desc
-            p.sig * /
+            p.sig */
             
             // properties.. -- and parent ones...!!!
             for (var i =0;i <  GIRepository[meth[0]](bi); i++) {
@@ -357,7 +357,9 @@ namespace Palete {
             
             return this.proplist[ename][type];
             
-        },
+        }
+
+        /*
         genParams: function(sig, meth)
         {
             var args = ['self'];
