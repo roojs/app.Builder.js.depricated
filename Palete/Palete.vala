@@ -49,9 +49,10 @@ namespace Palete
         
 
 
-       string  guessName(JsRender.Node ar) // turns the object into full name.
+        string  guessName(JsRender.Node ar) throws Error // turns the object into full name.
         {
-
+            throw Error.NEED_IMPLEMENTING("xxx. guessName needs implimenting");
+        }
             
 
             // eg. xns: Roo, xtype: XXX -> Roo.xxx
