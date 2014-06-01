@@ -18,6 +18,8 @@ namespace Palete
             case "Roo":
                 this.cache.set(xtype, new Roo());
                 break;
+            default:
+                throw Error.INVALID_TYPE("invalid argument to Palete factory");
         }
         return this.cache.get(xtype);
     }
