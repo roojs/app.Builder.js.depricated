@@ -7,6 +7,8 @@ namespace Palete {
 
         public Gtk()
         {
+            this.name = "Gtk";
+
             //this.load();
             base();
         // various loader methods..
@@ -17,10 +19,7 @@ namespace Palete {
         // no parent...
         }
         
-       
-    },
-    Base,
-    {
+      
         name : 'Gtk',
         
         load: function () {
