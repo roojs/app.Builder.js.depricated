@@ -11,8 +11,8 @@ namespace Palete
     
     public static   Palete factory(string xtype)
     {
-        if (this.cache == null) {
-            this.cache = new Gee.HashMap<string,Palete>();
+        if (cache == null) {
+            cache = new Gee.HashMap<string,Palete>();
         }
         if (this.cache.get(xtype) != null) {
             return this.cache.get(xtype);
