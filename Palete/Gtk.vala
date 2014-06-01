@@ -11,17 +11,14 @@ namespace Palete {
 
             //this.load();
             base();
-        // various loader methods..
-          //this.map = [];
-        //this.load();
-        //this.proplist = {};
-        //this.comments = { }; 
-        // no parent...
+            // various loader methods..
+              //this.map = [];
+            //this.load();
+            //this.proplist = {};
+            //this.comments = { }; 
+            // no parent...
         }
-        
-      
-        name : 'Gtk',
-        
+        /*
         load: function () {
                 
          
@@ -227,7 +224,7 @@ namespace Palete {
              p.name
             p.type
             p.desc
-            p.sig */
+            p.sig * /
             
             // properties.. -- and parent ones...!!!
             for (var i =0;i <  GIRepository[meth[0]](bi); i++) {
@@ -426,7 +423,7 @@ namespace Palete {
         /**
          * merge two proprety arrays' ignoring what's overrriden.
          * 
-         */
+         * /
         
         
         overrides : function (top, bottom)
@@ -451,7 +448,7 @@ namespace Palete {
         /**
          * guess type..
          * 
-         */
+         * /
         findType : function (data, prop, value)
         {
             // specials??
@@ -510,7 +507,7 @@ namespace Palete {
         },
         /**
          * determine the packing types..
-         */
+         * /
         getDefaultPack: function(pname, cname) {
             var list = this.getPackingList(pname,cname);
            // console.dump(list);
@@ -556,7 +553,7 @@ namespace Palete {
         },
         /**
          * get packing list..
-         */
+         * /
         getPackingList :function (pname, cname)
         {
             var funcs = this.getPropertiesFor(pname,'methods');
