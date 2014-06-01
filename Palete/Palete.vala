@@ -56,10 +56,7 @@ namespace Palete
         }
             
 
-           
-                            
-                                 
-        },
+            
         /**
          * gather a  list of potentional objects that can be added..
          * 
