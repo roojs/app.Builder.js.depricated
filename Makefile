@@ -6,7 +6,7 @@ all:
 		JsRender/*.vala \
 		Project/*.vala \
 		Palate/*.vala \
-		 -o /tmp/test
+		-o /tmp/test
 
 clean:
 	rm -rf /tmp/test
