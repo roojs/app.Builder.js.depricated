@@ -170,7 +170,7 @@ namespace Palete {
             this.commentLoad(ns);
             return typeof(this.comments[ns][what]) == 'undefined' ?  '' : this.comments[ns][what];
         },
-  
+   */
         getPropertiesFor: function(ename, type)
         {
             //print("Loading for " + ename);
