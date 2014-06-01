@@ -18,7 +18,7 @@ namespace Palete
 
         }
         
-        public Palate()
+        public Palete()
         {
             // nothing?
         }

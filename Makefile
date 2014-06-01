@@ -5,7 +5,7 @@ all:
 		--pkg gee-1.0 \
 		JsRender/*.vala \
 		Project/*.vala \
-		Palate/*.vala \
+		Palete/*.vala \
 		-o /tmp/test
 
 clean:
