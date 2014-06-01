@@ -2,6 +2,11 @@
 
 namespace JsRender {
 
+
+public errordomain Error {
+    INVALID_FORMAT
+}
+    
 public class JsRender  : Object {
     /**
      * @cfg {Array} doubleStringProps list of properties that can be double quoted.
@@ -37,7 +42,7 @@ public class JsRender  : Object {
         this.project = project;
         this.hasParent = false;
         this.parent = "";
-        this.tree = null
+        this.tree = null;
         
         var ar = this.path.split("/");
             // name is in theory filename without .bjs (or .js eventually...)
@@ -88,7 +93,7 @@ public class JsRender  : Object {
         // NOOP
     }
 
-    public void loadItems()
+ public void loadItems()
     {
         print("load items not handled..");
 

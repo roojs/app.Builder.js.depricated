@@ -13,7 +13,7 @@ public class JsRender.Node  {
     
     public bool is_array;
     
-    Node()
+    public Node()
     {
         this.items = new GLib.List<Node>();
         this.props = new Gee.HashMap<string,string>();
@@ -315,13 +315,13 @@ public class JsRender.Node  {
         return  Node.gen.to_data (null);   
     }
 
-    void loadFromJson(Json.Object obj) {
+    public void loadFromJson(Json.Object obj) {
         obj.foreach_member((o , key, value) => {
             if (key == "items") {
                 var ar = value.get_array();
-                ar.foreach_element( (are, ix, el) {
+                ar.foreach_element( (are, ix, el) => {
                     var node = new Node();
-                    node.loadFromJson();
+                    node.loadFromJson(el.get_object());
                     this.items.append(node);
                 });
                 return;

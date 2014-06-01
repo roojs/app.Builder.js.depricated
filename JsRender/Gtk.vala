@@ -4,58 +4,57 @@ namespace JsRender {
 
 
  
-  int gid = 1;
+    int gid = 1;
 
-  Gee.HashMap<string,string[]> ctors ;
-
-  public  class Gtk : JsRender
-  {
- 
-    public Gtk(Project.Project project, string path) {
-        this.xtype = "Gtk";
-        base( project, path);
-        
-         
-        
-        
-        //this.items = false;
-        //if (cfg.json) {
-        //    var jstr =  JSON.parse(cfg.json);
-        //    this.items = [ jstr ];
-        //    //console.log(cfg.items.length);
-        //    delete cfg.json; // not needed!
-        // }
-         
-        
-        
-        // super?!?!
-        this.id = "file-gtk-%d".printf(gid++);
-        //console.dump(this);
-        // various loader methods..
-
-        // Class = list of arguments ... and which property to use as a value.
-        var cc = {
-            "Gtk.MessageDialog=parent:null|flags:Gtk.DialogFlags.MODAL|message_type|buttons|text" ,
-            "Gtk.ToolButton=icon_widget:null|label:null" ,
-
-            "Gtk.ScrolledWindow=hadjustment:null|vadjustment:null" ,
-            "Gtk.SourceBuffer=table:null" ,
-            "Gtk.VBox=homogeneous:true|spacing:0" 
-        };
-
-        this.ctors = new Gee.HashMap<string,string[]>();
-        for (var i = 0;i<cc.length;i++) {
-            var ar = cc[i].split("=");
-            this.ctors.set(ar[0], ar[1].split("|"));
-        }
-
-        
-        
-    }
-      /*
-    Base,   
+  
+    public  class Gtk : JsRender
     {
-        xtype : 'Gtk',
+        Gee.HashMap<string,string> ctors ;
+
+        public Gtk(Project.Project project, string path) {
+            this.xtype = "Gtk";
+            base( project, path);
+            
+             
+            
+            
+            //this.items = false;
+            //if (cfg.json) {
+            //    var jstr =  JSON.parse(cfg.json);
+            //    this.items = [ jstr ];
+            //    //console.log(cfg.items.length);
+            //    delete cfg.json; // not needed!
+            // }
+             
+            
+            
+            // super?!?!
+            this.id = "file-gtk-%d".printf(gid++);
+            //console.dump(this);
+            // various loader methods..
+
+            // Class = list of arguments ... and which property to use as a value.
+            string[] cc = {
+                "Gtk.MessageDialog=parent:null|flags:Gtk.DialogFlags.MODAL|message_type|buttons|text" ,
+                "Gtk.ToolButton=icon_widget:null|label:null" ,
+
+                "Gtk.ScrolledWindow=hadjustment:null|vadjustment:null" ,
+                "Gtk.SourceBuffer=table:null" ,
+                "Gtk.VBox=homogeneous:true|spacing:0" 
+            };
+
+            this.ctors = new Gee.HashMap<string,string>();
+            for (var i = 0;i<cc.length;i++) {
+                var ar = cc[i].split("=");
+                this.ctors.set(ar[0], ar[1]);
+            }
+
+            
+            
+        }
+          
+
+        /*
         setNSID : function(id)
         {
             
@@ -66,59 +65,65 @@ namespace JsRender {
         getType: function() {
             return 'Gtk';
         },
+        */
+
         
-        loadItems : function(cb)
+         public  new void  loadItems() throws Error // : function(cb, sync) == original was async.
+      
         {
           
             print("load Items!");
-            if (this.items !== false) {
-                return false;
+            if (this.tree != null) {
+                return;
             }
-            if (!cb) {  
-                throw {
-                    name: "ArgumentError", 
-                    message : "no callback for loadItems"
-                };
-            }
-            Seed.print("load: " + this.path);
             
-            
+            print("load: " + this.path);
 
+
+            var pa = new Json.Parser();
+            pa.load_from_file(this.path);
+            var node = pa.get_root();
             
-            var _this = this;     
-            var src = File.read(this.path);
-            
-            var cfg = JSON.parse(src);
-            print("loaded data");
-            //console.dump(cfg);
-            
-            //_this.name = cfg.name; -- this should not happen - name should always match filename!!
-            _this.parent =  cfg.parent;
-            _this.title =  cfg.title;
-            _this.items = cfg.items || []; 
-           
-             cb();
+            if (node.get_node_type () != Json.NodeType.OBJECT) {
+		        throw new Error.INVALID_FORMAT ("Unexpected element type %s", node.type_name ());
+	        }
+            var obj = node.get_object ();
+            //this.modOrder = obj.get_string_member("modOrder");
+            this.name = obj.get_string_member("name");
+            this.parent = obj.get_string_member("parent");
+            //this.permname = obj.get_string_member("permname");
+            this.title = obj.get_string_member("title");
+            //this.modOrder = obj.get_string_member("modOrder");
              
-             
+            // load items[0] ??? into tree...
+
+            var ar = obj.get_array_member("items");
+            var tree_base = ar.get_object_element(1);
+            this.tree = new Node();
+            this.tree.loadFromJson(tree_base);
             
             
             
-        },
+            
+        }
          
          // convert xtype for munged output..
          
-         
+         /*
         mungeXtype : function(xtype, els)
         {
             els.push('xtype: '+ xtype);
         },
-        
-        toSource : function()
+        */
+        /*
+        public string toSource()
         {
+        
             
-            if (!this.items[0]) {
+            if (this.tree == null) {
                 return false;
             }
+            
             var data = JSON.parse(JSON.stringify(this.items[0]));
             // we should base this on the objects in the tree really..
             var i = [ 'Gtk', 'Gdk', 'Pango', 'GLib', 'Gio', 'GObject', 

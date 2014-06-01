@@ -24,7 +24,7 @@ public class Project.Project {
     public string xtype = "";
     
     
-    Project (string path) {
+    public Project (string path) {
         
         //this.name = name;
         
@@ -256,58 +256,63 @@ public class Project.Project {
         }
         // this should be done async -- but since we are getting the proto up ...
         
-            
+        var subs = new GLib.List<string>();;            
         var f = File.new_for_path(dir);
-        var file_enum = f.enumerate_children(GLib.FileAttribute.STANDARD_DISPLAY_NAME, GLib.FileQueryInfoFlags.NONE, null);
+        try {
+            var file_enum = f.enumerate_children(GLib.FileAttribute.STANDARD_DISPLAY_NAME, GLib.FileQueryInfoFlags.NONE, null);
+            
+             
+            FileInfo next_file; 
+            while ((next_file = file_enum.next_file(null)) != null) {
+                var fn = next_file.get_display_name();
         
-        var subs = new GLib.List<string>();; 
-        FileInfo next_file; 
-        while ((next_file = file_enum.next_file(null)) != null) {
-            var fn = next_file.get_display_name();
-    
-             
-            //console.log('trying ' + dir + '/' + fn);
-            
-            if (fn[0] == '.') { // skip hidden
-                continue;
-            }
-            
-            if (FileUtils.test(dir  + "/" + fn, GLib.FileTest.IS_DIR)) {
-                subs.append(dir  + "/" + fn);
-                continue;
-            }
-            
-            if (!Regex.match_simple("\\.bjs$", fn)) {
-                continue;
-            }
-            /*
-            var parent = "";
-            //if (dp > 0 ) {
-            
-            var sp = dir.split("/");
-            var parent = "";
-            for (var i = 0; i < sp.length; i++) {
+                 
+                //console.log('trying ' + dir + '/' + fn);
                 
+                if (fn[0] == '.') { // skip hidden
+                    continue;
+                }
+                
+                if (FileUtils.test(dir  + "/" + fn, GLib.FileTest.IS_DIR)) {
+                    subs.append(dir  + "/" + fn);
+                    continue;
+                }
+                
+                if (!Regex.match_simple("\\.bjs$", fn)) {
+                    continue;
+                }
+                /*
+                var parent = "";
+                //if (dp > 0 ) {
+                
+                var sp = dir.split("/");
+                var parent = "";
+                for (var i = 0; i < sp.length; i++) {
+                    
+                }
+                
+                /*
+                sp = sp.splice(sp.length - (dp +1), (dp +1));
+                parent = sp.join('.');
+                
+                
+                if (typeof(_this.files[dir  + '/' + fn]) != 'undefined') {
+                    // we already have it..
+                    _this.files[dir  + '/' + fn].parent = parent;
+                    return;
+                }
+                */
+                var xt = this.xtype;
+                JsRender.JsRender.factory(xt,this, dir + "/" + fn);
+                // parent ?? 
+                
+                 
             }
-            
-            /*
-            sp = sp.splice(sp.length - (dp +1), (dp +1));
-            parent = sp.join('.');
-            
-            
-            if (typeof(_this.files[dir  + '/' + fn]) != 'undefined') {
-                // we already have it..
-                _this.files[dir  + '/' + fn].parent = parent;
-                return;
-            }
-            */
-            var xt = this.xtype;
-            JsRender.JsRender.factory(xt,this, dir + "/" + fn);
-            // parent ?? 
-            
-             
+        } catch (Error e) {
+            print("Project::scanDirs failed");
         }
         for (var i = 0; i < subs.length(); i++) {
+            
              this.scanDir(subs.nth_data(i), dp+1);
         }
         

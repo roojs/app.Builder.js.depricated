@@ -7,7 +7,7 @@ namespace JsRender {
     class Roo : JsRender 
     {
        string region;
-        boolean disabled;
+        bool disabled;
         
         public Roo(Project.Project project, string path) {
             base( project, path);
@@ -63,12 +63,12 @@ namespace JsRender {
 
     */
       
-        public  void loadItems() // : function(cb, sync) == original was async.
+         public  new void  loadItems() throws Error // : function(cb, sync) == original was async.
         {
             
              
             print("load Items!");
-            if (this.items != null) {
+            if (this.tree != null) {
                 return;
             }
 
@@ -78,7 +78,7 @@ namespace JsRender {
             var node = pa.get_root();
             
             if (node.get_node_type () != Json.NodeType.OBJECT) {
-		        throw new MyError.INVALID_FORMAT ("Unexpected element type %s", node.type_name ());
+		        throw new Error.INVALID_FORMAT ("Unexpected element type %s", node.type_name ());
 	        }
             var obj = node.get_object ();
             this.modOrder = obj.get_string_member("modOrder");
@@ -96,7 +96,7 @@ namespace JsRender {
             this.tree.loadFromJson(tree_base);
 
             
-        },
+        }
         /**
          * old code had broken xtypes and used arrays differently,
          * this code should try and clean it up..
@@ -168,27 +168,32 @@ namespace JsRender {
         },
     */
         
-        void save()
+       public  new  void save()
         {
             
             print("--- JsRender.Roo.save");
-            JsRender.save();
+            base.save();
             
             // now write the js file..
             string js;
             try {
-                Regex regex = new Regex ("\\.(bjs|js)$");
+                Regex regex = new Regex("\\.(bjs|js)$");
 
-                js = regex.replace(this.path,this.path.length.length, 0 , "");
-            } catch (Error e) {
+                js = regex.replace(this.path,this.path.length , 0 , "");
+            } catch (RegexError e) {
                 this.name = "???";
+                print("count not make filename from path");
+                return;
             }
             
             //var d = new Date();
             var js_src = this.toSource();            
             //print("TO SOURCE in " + ((new Date()) - d) + "ms");
-            FileUtils.set_data(js, js_src);            
-            
+            try {
+                FileUtils.set_contents(js, js_src, js_src.length);            
+            } catch (FileError e ) {
+                print("Save failed\n");
+            }
             // for bootstrap - we can write the HTML to the templates directory..
             
             //var top = this.guessName(this.items[0]);
@@ -386,7 +391,7 @@ namespace JsRender {
                 return this.toSourceDialog(true);
             }
             
-            if (top.containers("Modal")) {
+            if (top.contains("Modal")) {
                 return this.toSourceModal(true);
             }
             
@@ -404,7 +409,7 @@ namespace JsRender {
          * 
          * 
          */
-        toSource: function()
+        public string toSource()
         {
             // dump the file tree back out to a string.
             
@@ -412,7 +417,7 @@ namespace JsRender {
             // 
             var top = this.guessName(this.tree);
             if (top != null) {
-                return false;
+                return "";
             }
             if (top.contains("Dialog")) {
                 return this.toSourceDialog(false);
@@ -437,7 +442,7 @@ namespace JsRender {
                 "",
                 "// Auto generated file - created by app.Builder.js- do not edit directly (at present!)",
                 ""
-            }
+            };
             return string.join("\n",s);
             
        
@@ -450,7 +455,7 @@ namespace JsRender {
             //var items = JSON.parse(JSON.stringify(this.items[0]));
             
             
-            var o = this.mungeToString(items, false, '            ');   
+            var o = this.mungeToString("            ");   
             
             string[] adda = { " = {",
                 "",
@@ -491,14 +496,14 @@ namespace JsRender {
              
              
              
-        },
+        }
         
         public string toSourceModal(bool isPreview) 
         {
             
             
             //var items = JSON.parse(JSON.stringify(this.items[0]));
-            var o = this.mungeToString('            ');   
+            var o = this.mungeToString("            ");   
             
             string[] adda = { " = {",
                 "",
@@ -526,25 +531,25 @@ namespace JsRender {
                 "    {",
                 "        var _this = this;",
                 "        this.dialog = Roo.factory("
-            }
-            string[] addb {
+            };
+            string[] addb =  {
                 ");",
                 "    }",
                 "};",
                 ""
             };
             return this.outputHeader() + "\n" + 
-                this.name + string.join("\n", adda) + o + string.join("\n", addb) 
+                this.name + string.join("\n", adda) + o + string.join("\n", addb);
              
              
              
-        },
+        }
         
         
         public string   pathToPart()
         {
             var dir = Path.get_basename(Path.get_dirname(this.path));
-            var ar = dir.split(".")
+            var ar = dir.split(".");
             var modname = ar[ar.length-1];
             
             // now we have the 'module name'..
@@ -556,7 +561,7 @@ namespace JsRender {
                 npart = npart.substring(modname.length);
             }
             return "[" + this.tree.quoteString(modname) + ", " + this.tree.quoteString(npart) + " ]";
-            return ret;
+            //return ret;
             
             
             
@@ -576,7 +581,7 @@ namespace JsRender {
             var o = this.mungeToString("            ");   
             var reg = new Regex("[^A-Za-z.]+");
             
-            var modkey = this.modOrder + '-' + reg.replace(this.name, this.name.length, 0 , "-");
+            string modkey = this.modOrder + "-" + reg.replace(this.name, this.name.length, 0 , "-");
             
             string  parent =   (this.parent.length > 0 ?  "'" + this.parent + "'" :  "false");
 
@@ -588,7 +593,7 @@ namespace JsRender {
             return 
                 this.outputHeader() + "\n" +
                 
-                this.name  +  " = new Roo.XComponent({\n" 
+                this.name  +  " = new Roo.XComponent({\n" +
                 "    part     :  "+ this.pathToPart() + ",\n" +
                         /// critical used by builder to associate modules/parts/persm
                 "    order    : '" +modkey+"',\n" +
@@ -603,7 +608,7 @@ namespace JsRender {
                 "    {\n" +
                 "        var _this = this;\n" + // bc
                 "        var MODULE = this;\n" + /// this looks like a better name.
-                "        return " + o + ';',
+                "        return " + o + ";" +
                 "    }\n" +
                 "});\n";
                  
@@ -611,44 +616,46 @@ namespace JsRender {
             
         }
             
-        guessName : function(ar) // turns the object into full name.
+        public new string? guessName (Node? ar) // turns the object into full name.
         {
              // eg. xns: Roo, xtype: XXX -> Roo.xxx
-            if (!ar) {
-                return false;
+            if (ar == null) {
+                return null;
             }
-            var ret = [];
-            ret.push(typeof( ar['|xns'] ) == 'undefined' ? 'Roo' : ar['|xns'] );
             
+            string[] ret = {} ;
+            ret += (ar.get("|xns").length < 1 ? "Roo": ar.get("|xns"));
+             
             
-            
-            if (typeof( ar['xtype'] ) == 'undefined' || !ar['xtype'].length) {
-                return false;
+            if ( ar.get("xtype").length < 1) {
+                return null;
             }
-            var xtype = ar['xtype'] + '';
+                    
+            var xtype = ar.get("xtype");
+
             if (xtype[0] == '*') { // prefixes????
                 xtype  = xtype.substring(1);
             }
-            if (xtype.match(/^Roo/)) {
+            if (! Regex.match_simple("^Roo", xtype)) {
+                
                 // already starts with roo...
-                ret = [];
+                ret = {};
             }
-            ret.push(xtype);
-            var str =  ret.join('.');
+            ret += xtype;
+            var str =  string.join(".", ret);
             
-            
-            
-            var pm = imports.ProjectManager.ProjectManager;
-            return pm.getPalete('Roo').guessName(ret.join('.'));
+            return str;
+           // 
+            //Palete.Palete.factory("Roo").guessName(str);
             
                             
                                  
-        },
-        
-        getHelpUrl : function(cls)
-        {
-            return 'http://www.akbkhome.com/roojs1/docs/symbols/' + cls + '.html';
         }
-     */
+        
+        string getHelpUrl(string cls)
+        {
+            return "http://www.roojs.com/roojs1/docs/symbols/" + cls + ".html";
+        }
+     
     }
 }
