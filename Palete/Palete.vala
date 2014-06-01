@@ -1,7 +1,9 @@
 
 namespace Palete 
 {
-     public static   Palete factory(xtype)
+    static Gee.HashMap<string,Palate>? cache = null;
+    
+    public static   Palete factory(xtype)
     {
         if (this.cache == null) {
             this.cache = new Gee.HashMap<string,Palate>();
@@ -14,7 +16,7 @@ namespace Palete
     public class Palete : Object 
     {
         
-        static Gee.HashMap<string,Palate>? cache = null;
+       
 
        
         
