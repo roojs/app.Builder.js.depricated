@@ -2,7 +2,7 @@
 namespace Palete 
 {
     public errordomain Error {
-        INVALID_FORMAT
+        INVALID_TYPE
     }
     
 
