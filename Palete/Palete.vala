@@ -7,8 +7,12 @@ namespace Palete
     {
         if (this.cache == null) {
             this.cache = new Gee.HashMap<string,Palate>();
-
         }
+        if (this.cache.get(xtype) != null) {
+            return this.cache.get(xtype);
+        }
+        switch(xtype) {
+            
 
     }
        
