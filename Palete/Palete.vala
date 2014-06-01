@@ -1,6 +1,11 @@
 
 namespace Palete 
 {
+    public errordomain Error {
+        INVALID_FORMAT
+    }
+    
+
     static Gee.HashMap<string,Palate>? cache = null;
     
     public static   Palete factory(string xtype)
