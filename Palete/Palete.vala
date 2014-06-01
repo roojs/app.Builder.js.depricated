@@ -51,6 +51,7 @@ namespace Palete
          * gather a  list of potentional objects that can be added..
          * 
          */
+        /*
         gatherList: function (existing) {
             existing = existing || [];
            // existing.push('*top'); // always have top
@@ -114,7 +115,7 @@ namespace Palete
         /**
          * basic guess type.. 
          * 
-         */
+         * /
         findType : function (data, prop, value)
         {
             if (prop[0] == '|') {
@@ -166,7 +167,7 @@ namespace Palete
          * list templates - in home directory (and app dir in future...)
          * @param {String} name  - eg. Gtk.Window..
          * @return {Array} list of templates available..
-         */
+         * /
         listTemplates : function(name)
         {
             
@@ -198,10 +199,11 @@ namespace Palete
         {
             return JSON.parse(File.read(path));
         }
-        
+    */        
         
     }
-);
+
+}
 
 
 
