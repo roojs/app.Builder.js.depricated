@@ -12,8 +12,14 @@ namespace Palete
             return this.cache.get(xtype);
         }
         switch(xtype) {
-            
-
+            case "Gtk":
+                this.cache.set(xtype, new Gtk());
+                break;
+            case "Roo":
+                this.cache.set(xtype, new Roo());
+                break;
+        }
+        return this.cache.get(xtype);
     }
        
 
