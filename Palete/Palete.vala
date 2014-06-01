@@ -35,7 +35,7 @@ namespace Palete
     {
         
        
-  
+        string name;
         
         public Palete()
         {
