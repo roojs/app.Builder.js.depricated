@@ -2,7 +2,8 @@
 namespace Palete 
 {
     public errordomain Error {
-        INVALID_TYPE
+        INVALID_TYPE,
+        NEED_IMPLEMENTING
     }
     
 
@@ -55,12 +56,7 @@ namespace Palete
         }
             
 
-            // eg. xns: Roo, xtype: XXX -> Roo.xxx
-            if (typeof( ar['|xns'] ) == 'undefined' || typeof( ar['xtype'] ) == 'undefined') {
-                return '';
-               }
-             
-            return ar['|xns'] +'.' + ar['xtype'];
+           
                             
                                  
         },
