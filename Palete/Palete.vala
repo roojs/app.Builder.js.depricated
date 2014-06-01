@@ -4,7 +4,7 @@ namespace Palete
 
        
 
-    class Palete : Object 
+    public class Palete : Object 
     {
         
         static Gee.HashMap<string,Palate>? cache = null;
