@@ -14,20 +14,20 @@ namespace Palete
         if (cache == null) {
             cache = new Gee.HashMap<string,Palete>();
         }
-        if (this.cache.get(xtype) != null) {
-            return this.cache.get(xtype);
+        if (cache.get(xtype) != null) {
+            return cache.get(xtype);
         }
         switch(xtype) {
             case "Gtk":
-                this.cache.set(xtype, new Gtk());
+                cache.set(xtype, new Gtk());
                 break;
             case "Roo":
-                this.cache.set(xtype, new Roo());
+                cache.set(xtype, new Roo());
                 break;
             default:
                 throw Error.INVALID_TYPE("invalid argument to Palete factory");
         }
-        return this.cache.get(xtype);
+        return cache.get(xtype);
     }
        
 
