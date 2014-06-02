@@ -11,7 +11,8 @@ namespace Palete {
         };
                 
             
-        type:
+        public eltype type;
+    }
 
 
     public class Gtk : Palete {
