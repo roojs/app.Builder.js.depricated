@@ -1,6 +1,18 @@
 namespace Palete {
 
 
+    public class Introspect.El : Object
+    {
+        public enum eltype { 
+            NS,
+            CLASS,
+            METHOD,
+            PROP
+        };
+                
+            
+        type:
+
 
     public class Gtk : Palete {
 
