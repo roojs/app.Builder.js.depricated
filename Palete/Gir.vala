@@ -133,7 +133,7 @@ namespace Palete {
                     break;
                 case "return_value":
                     var c = new Value("return-value");
-                    parent.return_value = c;
+                    ((Method)parent).return_value = c;
                     parent =c;
                     break;
                 
