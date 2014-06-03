@@ -11,17 +11,16 @@ namespace Palate {
             this.walk( root, "" );
         
         }
-        public void walk(Xml.Node* node, string path)
+        public void walk(Xml.Node* element, string path)
         {
-            var n = node->get_attribute("name");
+            var n = element->get_prop("name");
         
-            var n =  getAttribute(element, 'name') ;
-            //console.log("WALK" + n);
-            if (element.name == 'signal') {
+           
+            if (element.name == "signal") {
                 path += '.signal';
             }
             
-            if (n) {
+            if (n != null) {
                 path += path.length ? '.' : '';
                 path += n;
             }
