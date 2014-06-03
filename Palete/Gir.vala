@@ -12,6 +12,7 @@ namespace Palate {
             var doc = Xml.Parser.parse_file (file);
             var root = doc->get_root_element();
             this.walk( root, "" );
+            delete doc;
         
         }
         public void walk(Xml.Node* element, string in_path)
