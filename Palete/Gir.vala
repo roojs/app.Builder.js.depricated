@@ -103,6 +103,14 @@ namespace Palete {
                     parent =  c;
                     break;
                 
+                case "interface":
+                    var c = new GirObject("Interface", parent.name + "." + n);
+                    parent.classes.set(parent.name + "." + n, c);
+                    c.parent = element->get_prop("parent");
+                    parent =  c;
+                    break;
+                
+                
                 case "doc":
                     parent.doc = element->get_content();
                     return;
@@ -173,7 +181,7 @@ namespace Palete {
                     parent.is_array = true;  
                     break;
                 
-                case "doc-depricated":
+                case "doc-deprecated":
                     return;
                 
                 case "record": // struct?
