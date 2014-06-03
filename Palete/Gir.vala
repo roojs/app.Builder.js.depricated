@@ -60,16 +60,16 @@ namespace Palete {
                     
                     break;
                 case "include":
-                    this.includes.set(n, element->get_prop("version"));
+                    ((Gir)parent).includes.set(n, element->get_prop("version"));
                     break
                 case "package":
-                    this.package = n;
+                    ((Gir)parent).package = n;
                     break;
                 case "c:include":
                     break;
                 
                 case "namespace":
-                    path = n;
+                    ((Gir)parent).name = n;
                     break;
                 
                 case "alias":
