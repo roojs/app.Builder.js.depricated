@@ -1,5 +1,5 @@
 
-// valac --pkg libxml-2.0 --pkg gee-1.0  Gir.vala -o /tmp/Gir
+// valac --pkg libxml-2.0 --pkg gee-1.0   --pkg json-glib-1.0  Gir.vala -o /tmp/Gir
 public static int main (string[] args) {
     
     var g = new Palete.Gir("/usr/share/gir-1.0/Gtk-3.0.gir");
@@ -89,7 +89,7 @@ namespace Palete {
             }
             return r;
         }
-        public JSONObject(Gee.HashMap<string,GirObject> map)
+        public JSON.Object JSONObject(Gee.HashMap<string,GirObject> map)
         {
             var r = new JSON.Object();
             var iter = map.map_iterator();
@@ -98,7 +98,7 @@ namespace Palete {
             }
             return r;
         }
-        public JSONObjectString(Gee.HashMap<string,string> map)
+        public JSON.Object  JSONObjectString(Gee.HashMap<string,string> map)
         {
             var r = new JSON.Object();
             var iter = map.map_iterator();
@@ -107,7 +107,7 @@ namespace Palete {
             }
             return r;
         }
-        public toJSONArrayString(GLib.List<string> map)
+        public JSON.Array toJSONArrayString(GLib.List<string> map)
         {
             var r = new JSON.Array();
             for(var i =0;i< map.length();i++) {}
