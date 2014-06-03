@@ -89,7 +89,7 @@ namespace Palete {
             }
             return r;
         }
-        public Json.Object JSONObject(Gee.HashMap<string,GirObject> map)
+        public Json.Object toJSONObject(Gee.HashMap<string,GirObject> map)
         {
             var r = new Json.Object();
             var iter = map.map_iterator();
@@ -98,7 +98,7 @@ namespace Palete {
             }
             return r;
         }
-        public Json.Object  JSONObjectString(Gee.HashMap<string,string> map)
+        public Json.Object  toJSONObjectString(Gee.HashMap<string,string> map)
         {
             var r = new Json.Object();
             var iter = map.map_iterator();
