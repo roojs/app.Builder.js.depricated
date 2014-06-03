@@ -57,6 +57,7 @@ namespace Palete {
             this.name = n;
             this.implements = new GLib.List<string>();
             this.ctors = new GLib.List<Ctor>();
+            this.methods =new ee.HashMap<string,Method>();
         }
     
     }
