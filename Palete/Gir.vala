@@ -211,6 +211,14 @@ namespace Palete {
                     parent = c;
                     break;
                 
+                case "const":
+                    var c = new GirObject("Enum",n);
+                    parent.consts.set(n,c);
+                    parent = c;
+                    break;
+                
+                
+                
                 case "doc-deprecated":
                     return;
                 
