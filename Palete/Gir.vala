@@ -57,7 +57,7 @@ namespace Palete {
             
             var doc = Xml.Parser.parse_file (file);
             var root = doc->get_root_element();
-            this.walk( root, this );
+            this.walk( root, (GirObject) this );
             delete doc;
         
         }
@@ -90,7 +90,7 @@ namespace Palete {
                     //break; // not handled..
                 
                 case "class":
-                    var c = new Cls(parent.name + "." + n);
+                    var c = new GirObject("Class", parent.name + "." + n);
                     ((Gir)parent).classes.set(parent.name + "." + n, c);
                     c.parent = element->get_prop("parent");
                     parent = (GirObject)c;
