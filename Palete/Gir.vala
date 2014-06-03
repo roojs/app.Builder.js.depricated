@@ -18,9 +18,17 @@ namespace Palete {
     
     }
     
+    public class Method: Object {
+        
+        
+        public Ctor(string n) {
+            base(n);
+        }
     
-    public class Ctor: Object {
-        string name;
+    }
+    
+    
+    public class Ctor: Method {
         
         public Ctor(string n) {
             base(n);
