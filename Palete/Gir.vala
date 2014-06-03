@@ -18,8 +18,8 @@ namespace Palete {
     
     }
     
-    public class Method: Object {
-         public Params params;
+    public class Method: GirObject {
+        public Params params;
         public Value return_value = null;
         
         public Method(string n) {
@@ -46,7 +46,7 @@ namespace Palete {
     }
     
     
-    public class Value: Object {
+    public class Value: GirObject {
         public string type;
         public Value(string n) {
             this.type= "";
@@ -109,7 +109,7 @@ namespace Palete {
         {
             var n = element->get_prop("name");
             
-            print(parent.name + "==>" + n +"\n");
+            print(element->name + " (parent.name + "==>" + n +")\n");
             switch (element->name) {
                 case "repository":
                     break;
@@ -131,7 +131,7 @@ namespace Palete {
                 
                 case "alias":
                     return;
-                    break; // not handled..
+                    //break; // not handled..
                 
                 case "class":
                     var c = new Cls(parent.name + "." + n);
@@ -152,16 +152,19 @@ namespace Palete {
                     ((Cls)parent).ctors.append(c);
                     parent  = (GirObject)c;
                     break;
-                case "return_value":
+                case "return-value":
                     var c = new Value("return-value");
                     ((Method)parent).return_value = c;
                     parent = (GirObject)c;
                     break;
                 
+                case "virtual-method":
+                    return;
+                
                 case "type":
                     ((Value)parent).type = n;
                     return; // no children?
-                    break;
+                    //break;
                 
                 case "method":
                     var c = new Method(n);
