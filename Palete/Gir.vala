@@ -20,7 +20,7 @@ namespace Palete {
     
     public class Method: Object {
         
-        
+        Value return_value;
         public Ctor(string n) {
             base(n);
         }
@@ -35,7 +35,13 @@ namespace Palete {
         }
     
     }
+    public class Value: Object {
+        
+        public Ctor(string n) {
+            base(n);
+        }
     
+    }
     
     
     public class Cls: GirObject {
