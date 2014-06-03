@@ -102,12 +102,12 @@ namespace Palete {
                     return;
                 
                 case "implements":
-                    ((Cls)parent).implements.append(n);
+                   parent.implements.append(n);
                     break;
                 
                 case "constructor":
-                    var c = new Ctor(n);
-                    ((Cls)parent).ctors.append(c);
+                    var c = new GirObject("Ctor",n);
+                    parent.ctors.append(c);
                     parent  = (GirObject)c;
                     break;
                 
