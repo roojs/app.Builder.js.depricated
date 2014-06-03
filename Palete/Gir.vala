@@ -52,9 +52,9 @@ namespace Palete {
             this.consts     = new Gee.HashMap<string,GirObject>();
             this.signals    = new Gee.HashMap<string,GirObject>();
         }
-        public JSON.Object toJSON()
+        public Json.Object toJSON()
         {
-            var r = new JSON.Object();
+            var r = new Json.Object();
             r.set_string_member("nodetype", this.nodetype);
             r.set_string_member("name", this.name);
             // is_arary / is_instance / is_varargs..
@@ -89,27 +89,27 @@ namespace Palete {
             }
             return r;
         }
-        public JSON.Object JSONObject(Gee.HashMap<string,GirObject> map)
+        public Json.Object JSONObject(Gee.HashMap<string,GirObject> map)
         {
-            var r = new JSON.Object();
+            var r = new Json.Object();
             var iter = map.map_iterator();
             while(iter.next()) {
                 r.set_object_member(iter.get_key(), iter.get_value().toJSON());
             }
             return r;
         }
-        public JSON.Object  JSONObjectString(Gee.HashMap<string,string> map)
+        public Json.Object  JSONObjectString(Gee.HashMap<string,string> map)
         {
-            var r = new JSON.Object();
+            var r = new Json.Object();
             var iter = map.map_iterator();
             while(iter.next()) {
                 r.set_string_member(iter.get_key(), iter.get_value()());
             }
             return r;
         }
-        public JSON.Array toJSONArrayString(GLib.List<string> map)
+        public Json.Array toJSONArrayString(GLib.List<string> map)
         {
-            var r = new JSON.Array();
+            var r = new Json.Array();
             for(var i =0;i< map.length();i++) {
             
                 r.add_string_element(map.nth_data(i));
