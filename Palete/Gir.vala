@@ -18,37 +18,24 @@ namespace Palete {
         public bool is_instance;
         public  string parent;
          public Gee.HashMap<string,Param> params;
+             public GLib.List<string> implements;
+        public GLib.List<Ctor> ctors;
+        public Gee.HashMap<string,Method> methods;
+        
         public GirObject(string nodetype, string n) {
             this.nodetype = nodetype;
             this.name = n;
              this.params = new Gee.HashMap<string,Param>();
             this.type = "";
             this.is_instance = false;
-        }
-    
-    }
-    
-    
-      
-   
-    
-    
-    public class Cls: GirObject {
-        
-        public  string parent;
-        public GLib.List<string> implements;
-        public GLib.List<Ctor> ctors;
-        public Gee.HashMap<string,Method> methods;
-        
-        public Cls(string n) {
-            base(n);
-            this.name = n;
-            this.implements = new GLib.List<string>();
+             this.implements = new GLib.List<string>();
             this.ctors = new GLib.List<Ctor>();
             this.methods =new Gee.HashMap<string,Method>();
         }
     
     }
+    
+     
     
     
     
