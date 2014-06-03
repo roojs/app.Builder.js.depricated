@@ -164,8 +164,8 @@ namespace Palete {
                 
                 case "constructor":
                     var c = new GirObject("Ctor",n);
-                    parent.ctors.append(c);
-                    parent  = (GirObject)c;
+                    parent.ctors.set(n,c);
+                    parent  = c;
                     break;
                 
                 case "return-value":
