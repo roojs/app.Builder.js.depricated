@@ -11,66 +11,30 @@ namespace Palete {
 
     public class GirObject: Object {
         public string name;
+        public string type;
         public string nodetype;
         public Params params;
         public Value return_value = null;
-        
+        public bool is_instance;
+        public  string parent;
+         public Gee.HashMap<string,Param> params;
         public GirObject(string nodetype, string n) {
             this.nodetype = nodetype;
             this.name = n;
-        }
-    
-    }
-    
-    public class Method: GirObject {
-        public Params params;
-        public Value return_value = null;
-        
-        public Method(string n) {
-            base(n);
-        }
-    
-    }
-    
-    
-    public class Ctor: Method {
-       
-        public Ctor(string n) {
-            base(n);
-        }
-    
-    }
-    public class Params: Value {
-        public Gee.HashMap<string,Param> params;
-        public Params(string n) {
-            base(n);
-            this.params = new Gee.HashMap<string,Param>();
-        }
-    
-    }
-    
-    
-    public class Value: GirObject {
-        public string type;
-        public Value(string n) {
+             this.params = new Gee.HashMap<string,Param>();
             this.type = "";
-            base(n);
+            this.is_instance = false;
         }
     
     }
     
-    public class Param: Value {
-        public bool is_instance;
-        public Param(string n) {
-            is_instance = false;
-            base(n);
-        }
     
-    }
+      
+   
     
     
     public class Cls: GirObject {
-        public bool is_instance;
+        
         public  string parent;
         public GLib.List<string> implements;
         public GLib.List<Ctor> ctors;
