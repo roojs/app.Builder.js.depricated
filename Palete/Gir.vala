@@ -11,11 +11,11 @@ namespace Palate {
 
     class Gir : Object {
     
-        Gee.Hashmap<string,what> nodes;
+        //Gee.Hashmap<string,what> nodes;
     
         public Gir (string file)
         {
-            this.nodes = new Gee.Hashmap<string,what>();
+            //this.nodes = new Gee.Hashmap<string,what>();
             
             var doc = Xml.Parser.parse_file (file);
             var root = doc->get_root_element();
