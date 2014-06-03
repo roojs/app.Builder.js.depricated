@@ -10,7 +10,7 @@ public static int main (string[] args) {
 namespace Palete {
 
     public class GirObject: Object {
-        string name;
+        public string name;
         
         public GirObject(string n) {
             this.name = n;
@@ -20,7 +20,7 @@ namespace Palete {
     
     public class Method: Object {
         
-        Value return_value = null;
+        public Value return_value = null;
         
         public Ctor(string n) {
             base(n);
@@ -37,7 +37,7 @@ namespace Palete {
     
     }
     public class Params: Object {
-        Gee.HashMap<string,Param> params;
+        public Gee.HashMap<string,Param> params;
         public Ctor(string n) {
             base(n);
             this.params = new Gee.HashMap<string,Param>();
@@ -47,7 +47,7 @@ namespace Palete {
     
     
     public class Value: Object {
-        string type;
+        public string type;
         public Ctor(string n) {
             this.type= "";
             base(n);
@@ -57,10 +57,10 @@ namespace Palete {
     
     
     public class Cls: GirObject {
-        string parent;
-        GLib.List<string> implements;
-        GLib.List<Ctor> ctors;
-        Gee.HashMap<string,Method> methods;
+        public  string parent;
+        public GLib.List<string> implements;
+        public Lib.List<Ctor> ctors;
+        public Gee.HashMap<string,Method> methods;
         
         public Cls(string n) {
             base(n);
