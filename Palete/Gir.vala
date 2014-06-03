@@ -88,6 +88,12 @@ namespace Palete {
                 r.set_object_member("cosignalsnsts", this.toJSONObject(this.signals));
             }
         }
+        public JSONObject(Gee.HashMap<string,GirObject> map)
+        {
+            
+        }
+        
+        
     }
     
      
