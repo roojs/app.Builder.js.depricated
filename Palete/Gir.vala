@@ -157,6 +157,7 @@ namespace Palete {
                     parent.methods.set(n,c);
                     parent = c;
                     break;
+                
                 case "array":
                     var c = new GirObject("Function",n);
                     parent.methods.set(n,c);
