@@ -128,7 +128,7 @@ namespace Palete {
                 
                 case "constructor":
                     var c = new Ctor(n);
-                    parent.ctors.add(c);
+                    ((Cls)parent).ctors.add(c);
                     parent  = c;
                     break;
                 case "return_value":
