@@ -96,6 +96,12 @@ namespace Palete {
             if (this.signals.size > 0) {
                 r.set_object_member("cosignalsnsts", this.toJSONObject(this.signals));
             }
+            if (this.paramset != null) {
+                r.set_object_member("params", this.toJSONObject(this.paramset));
+            }
+            if (this.return_value != null) {
+                r.set_object_member("return_value", this.toJSONObject(this.return_value));
+            }
             return r;
         }
         public Json.Object toJSONObject(Gee.HashMap<string,GirObject> map)
