@@ -141,13 +141,13 @@ namespace Palete {
                     var c = new GirObject("Param",n);
                     c.is_instance = true;
                     parent.params.set(n,c);
-                    parent = (GirObject)c;
+                    parent = c;
                     break;
                 
                 case "parameter":
-                    var c = new Param(n);
-                    ((Params)parent).params.set(n,c);
-                    parent = (GirObject)c;
+                    var c = new GirObject("Param",n);
+                    parent.params.set(n,c);
+                    parent = c;
                     break;
                 
                 default:
