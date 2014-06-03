@@ -41,15 +41,8 @@ namespace Palate {
                     continue;
                 }
                 this.walk(element, path)
-
-            while (child){
-                //console.log(child.tag);
-                if (child.type == "element"){
-                    walk (child, path);
-                }
-                child = child.next;
             }
-        
+            
         }
         
     
