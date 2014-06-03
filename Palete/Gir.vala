@@ -112,12 +112,11 @@ namespace Palete {
                     break; // not handled..
                 
                 case "class":
-                    
-                    
                     var c = new Cls(parent.name + "." + n);
                     ((Gir)parent).classes.set(parent.name + "." + n, c);
                     c.parent = element->get_prop("parent");
                     parent = c;
+                    break;
                 
                 case "doc":
                     break;
