@@ -126,9 +126,9 @@ namespace Palete {
                     //break;
                 
                 case "method":
-                    var c = new Method(n);
-                    ((Cls)parent).methods.set(n,c);
-                    parent = (GirObject)c;
+                    var c = new GirObject("Method",n);
+                    parent.methods.set(n,c);
+                    parent = c;
                     break;
                 
                 case "parameters":
