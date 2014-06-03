@@ -47,9 +47,9 @@ namespace Palete {
     
     
     public class Value: GirObject {
-        public string type;
+        public string typ;
         public Value(string n) {
-            this.type= "";
+            this.typ= "";
             base(n);
         }
     
@@ -109,7 +109,7 @@ namespace Palete {
         {
             var n = element->get_prop("name");
             
-            print(element->name + " (parent.name + "==>" + n +")\n");
+            print(element->name + " ("  + parent.name + "==>" + n +")\n");
             switch (element->name) {
                 case "repository":
                     break;
@@ -141,7 +141,7 @@ namespace Palete {
                     break;
                 
                 case "doc":
-                    break;
+                    return;
                 
                 case "implements":
                     ((Cls)parent).implements.append(n);
@@ -152,6 +152,7 @@ namespace Palete {
                     ((Cls)parent).ctors.append(c);
                     parent  = (GirObject)c;
                     break;
+                
                 case "return-value":
                     var c = new Value("return-value");
                     ((Method)parent).return_value = c;
@@ -162,7 +163,7 @@ namespace Palete {
                     return;
                 
                 case "type":
-                    ((Value)parent).type = n;
+                    ((Value)parent).typ = n;
                     return; // no children?
                     //break;
                 
