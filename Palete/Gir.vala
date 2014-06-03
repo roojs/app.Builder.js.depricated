@@ -20,12 +20,14 @@ namespace Palete {
         public string name;
         public string type;
         public string nodetype;
-        public GirObject paramset;
         public string  package;
+        
+        public GirObject paramset = null;
         public GirObject return_value = null;
+            
         public bool is_instance;
         public bool is_array;
-        public bool     is_varargs;
+        public bool  is_varargs;
         public  string parent;
         public  string value;
             
@@ -153,7 +155,7 @@ namespace Palete {
             if (n == null) {
                 n = "";
             }
-            print(element->name + " ("  + parent.name + "==>" + n +")\n");
+            //print(element->name + " ("  + parent.name + "==>" + n +")\n");
             switch (element->name) {
                 case "repository":
                     break;
