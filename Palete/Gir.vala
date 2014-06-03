@@ -4,8 +4,8 @@ public static int main (string[] args) {
     
     var g = new Palete.Gir("/usr/share/gir-1.0/Gtk-3.0.gir");
     var generator = new Json.Generator ();
-    var n = new Json.Node();
-    n.init_object(g.toJSON(NodeType.Null));
+    var n = new Json.Node(Json.NodeType.NULL);
+    n.init_object(g.toJSON());
     generator.set_root(n);
     generator.indent = 4;
     generator.pretty = true;
