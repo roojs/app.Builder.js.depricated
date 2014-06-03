@@ -21,7 +21,9 @@ namespace Palete {
              public GLib.List<string> implements;
         public GLib.List<Ctor> ctors;
         public Gee.HashMap<string,Method> methods;
-        
+         public Gee.HashMap<string,string> includes;
+        public Gee.HashMap<string,Cls> classes;
+       
         public GirObject(string nodetype, string n) {
             this.nodetype = nodetype;
             this.name = n;
@@ -31,6 +33,9 @@ namespace Palete {
              this.implements = new GLib.List<string>();
             this.ctors = new GLib.List<Ctor>();
             this.methods =new Gee.HashMap<string,Method>();
+             this.includes = new Gee.HashMap<string,string>();
+            this.classes= new Gee.HashMap<string,Cls>();
+            
         }
     
     }
@@ -43,8 +48,6 @@ namespace Palete {
     
          public string  package;
         
-        public Gee.HashMap<string,string> includes;
-        public Gee.HashMap<string,Cls> classes;
         
         //Gee.Hashmap<string,what> nodes;
     
@@ -71,7 +74,7 @@ namespace Palete {
                     break;
                 
                 case "include":
-                    ((Gir)parent).includes.set(n, element->get_prop("version"));
+                    parent.includes.set(n, element->get_prop("version"));
                     break;
                 
                 case "package":
