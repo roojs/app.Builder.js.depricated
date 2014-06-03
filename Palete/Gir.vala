@@ -14,6 +14,7 @@ namespace Palete {
         public string type;
         public string nodetype;
         public Params params;
+        public string  package;
         public Value return_value = null;
         public bool is_instance;
         public  string parent;
@@ -55,9 +56,7 @@ namespace Palete {
         {
             base(file);
             //this.nodes = new Gee.Hashmap<string,what>();
-            this.includes = new Gee.HashMap<string,string>();
-            this.classes= new Gee.HashMap<string,Cls>();
-            
+             
             var doc = Xml.Parser.parse_file (file);
             var root = doc->get_root_element();
             this.walk( root, (GirObject) this );
