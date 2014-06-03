@@ -171,7 +171,7 @@ namespace Palete {
                 case "return-value":
                     var c = new GirObject("Return", "return-value");
                     parent.return_value = c;
-                    parent = (GirObject)c;
+                    parent =  c;
                     break;
                 
                 case "virtual-method": // not sure...
