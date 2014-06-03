@@ -77,7 +77,7 @@ namespace Palete {
                     break;
                 
                 case "package":
-                    ((Gir)parent).package = n;
+                    parent.package = n;
                     break;
                 
                 case "c:include":
