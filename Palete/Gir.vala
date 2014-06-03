@@ -30,6 +30,7 @@ namespace Palete {
     }
     public class Gir : GirObject {
     
+        string name;
         string  package;
         
         Gee.Hashmap<string,string> includes;
@@ -39,6 +40,7 @@ namespace Palete {
     
         public Gir (string file)
         {
+            base(file);
             //this.nodes = new Gee.Hashmap<string,what>();
             this.includes = new Gee.Hashmap<string,string>();
             
