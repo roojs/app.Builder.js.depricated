@@ -204,7 +204,11 @@ namespace Palete {
                     parent.is_array = true;  
                     break;
                 
-                case "const":
+                case "varargs":
+                    parent.is_varargs= true;  
+                    break;
+                
+                case "constant":
                     var c = new GirObject("Const",n);
                     c.value = element->get_prop("value");
                     parent.consts.set(n,c);
