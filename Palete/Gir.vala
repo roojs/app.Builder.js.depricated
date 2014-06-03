@@ -33,7 +33,7 @@ namespace Palate {
             }
             
             if (n != null) {
-                path += path.length ? ".": "";
+                path += path.length > 0 ? ".": "";
                 path += n;
             }
             if (element.name == "return-value") {
