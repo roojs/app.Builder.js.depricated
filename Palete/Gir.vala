@@ -28,7 +28,7 @@ namespace Palate {
             var n = element->get_prop("name");
             var path = "" + in_path;
            
-            if (element.name == "signal") {
+            if (element->name == "signal") {
                 path += ".signal";
             }
             
