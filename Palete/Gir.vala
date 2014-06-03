@@ -209,14 +209,21 @@ namespace Palete {
                     c.value = element->get_prop("value");
                     parent.consts.set(n,c);
                     parent = c;
-                    break;
+                    return;
+                    //break;
                 
-                case "const":
+                case "enumeration":
                     var c = new GirObject("Enum",n);
                     parent.consts.set(n,c);
                     parent = c;
                     break;
                 
+                case "member":
+                    var c = new GirObject("EnumMember",n);
+                    c.value = element->get_prop("value");
+                    parent.consts.set(n,c);
+                    return;
+                    break;
                 
                 
                 case "doc-deprecated":
