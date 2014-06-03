@@ -19,13 +19,14 @@ namespace Palete {
         public bool is_instance;
         public bool is_array;
         public  string parent;
-         public Gee.HashMap<string,GirObject> params;
+        public Gee.HashMap<string,GirObject> params;
         public GLib.List<string> implements;
         public GLib.List<GirObject> ctors;
         public Gee.HashMap<string,GirObject> methods;
-         public Gee.HashMap<string,string> includes;
+        public Gee.HashMap<string,string> includes;
         public Gee.HashMap<string,GirObject> classes;
         public Gee.HashMap<string,GirObject> props;
+        public Gee.HashMap<string,GirObject> consts;
         public string doc;
         public GirObject(string nodetype, string n) {
             this.nodetype = nodetype;
@@ -40,6 +41,7 @@ namespace Palete {
             this.includes = new Gee.HashMap<string,string>();
             this.classes= new Gee.HashMap<string,GirObject>();
             this.props= new Gee.HashMap<string,GirObject>();
+            this.consts = new Gee.HashMap<string,GirObject>();
         }
     
     }
