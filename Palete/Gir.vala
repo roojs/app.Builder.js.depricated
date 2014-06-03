@@ -50,6 +50,8 @@ namespace Palete {
         string parent;
         GLib.List<string> implements;
         GLib.List<Ctor> ctors;
+        Gee.HashMap<string,Method> methods;
+        
         public Cls(string n) {
             base(n);
             this.name = n;
@@ -140,6 +142,8 @@ namespace Palete {
                     return; // no children?
                     break;
                 
+                case "method":
+                    
                 
                 
             }
