@@ -104,6 +104,7 @@ namespace Palete {
                     break;
                 
                 case "doc":
+                    parent.doc = element->get_content();
                     return;
                 
                 case "implements":
@@ -171,6 +172,9 @@ namespace Palete {
                 case "array":
                     parent.is_array = true;  
                     break;
+                
+                case "record": // struct?
+                    return;
                 
                 default:
                     print("UNHANDLED" + element->name +"\n");
