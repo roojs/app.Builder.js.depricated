@@ -84,7 +84,7 @@ namespace Palete {
                     break;
                 
                 case "namespace":
-                    ((Gir)parent).name = n;
+                    parent.name = n;
                     break;
                 
                 case "alias":
@@ -93,9 +93,9 @@ namespace Palete {
                 
                 case "class":
                     var c = new GirObject("Class", parent.name + "." + n);
-                    ((Gir)parent).classes.set(parent.name + "." + n, c);
+                    parent.classes.set(parent.name + "." + n, c);
                     c.parent = element->get_prop("parent");
-                    parent = (GirObject)c;
+                    parent =  c;
                     break;
                 
                 case "doc":
