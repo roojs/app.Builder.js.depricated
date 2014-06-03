@@ -1,4 +1,12 @@
 
+// valac --pkg libxml-2.0 Gir.vala /tmp/Gir
+public static int main (string[] args) {
+    
+    var g = new Gir("/usr/share/gir-1.0/Gtk-3.0.gir");
+    
+    return 0;
+}
+
 namespace Palate {
 
     class Gir : Object {
