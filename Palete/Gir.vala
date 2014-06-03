@@ -21,7 +21,7 @@ namespace Palete {
     public class Cls: GirObject {
         string parent;
         GLib.List<string> implements;
-        GLib.List<string> ctors;
+        GLib.List<Ctor> ctors;
         public Cls(string n) {
             base(n);
             this.name = n;
