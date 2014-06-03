@@ -183,6 +183,13 @@ namespace Palete {
                     parent.is_array = true;  
                     break;
                 
+                case "const":
+                    var c = new GirObject("Const",n);
+                    c.value = element->get_prop("value");
+                    parent.consts.set(n,c);
+                    parent = c;
+                    break;
+                
                 case "doc-deprecated":
                     return;
                 
