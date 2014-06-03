@@ -56,7 +56,9 @@ namespace Palete {
     }
     
     public class Param: Value {
+        public bool is_instance;
         public Ctor(string n) {
+            is_instance = false;
             base(n);
         }
     
@@ -173,10 +175,16 @@ namespace Palete {
                 
                 case "instance-parameter":
                     var c = new Param(n);
+                    c.is_instance = true;
                     ((Params)parent).params.set(n,c);
                     parent = c;
                     break;
                 
+                case "parameter":
+                    var c = new Param(n);
+                    ((Params)parent).params.set(n,c);
+                    parent = c;
+                    break;
                 
             }
             /*
