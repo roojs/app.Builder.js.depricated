@@ -159,9 +159,8 @@ namespace Palete {
                     break;
                 
                 case "array":
-                    var c = new GirObject("Function",n);
-                    parent.methods.set(n,c);
-                    parent = c;
+                    parent.is_array = true;
+                     
                     break;
                 
                 default:
