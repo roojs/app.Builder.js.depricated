@@ -155,6 +155,7 @@ namespace Palete {
                     parent = c;
                     break;
                 
+                case "property":
                 case "field":
                     var c = new GirObject("Prop",n);
                     parent.props.set(n,c);
