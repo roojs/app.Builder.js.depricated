@@ -66,6 +66,9 @@ namespace Palete {
             var r = new Json.Object();
             r.set_string_member("nodetype", this.nodetype);
             r.set_string_member("name", this.name);
+            if (this.type.length) {
+                r.set_string_member("type", this.type);
+            }
             // is_arary / is_instance / is_varargs..
             
             if (this.implements.length() > 0) {
@@ -97,10 +100,10 @@ namespace Palete {
                 r.set_object_member("cosignalsnsts", this.toJSONObject(this.signals));
             }
             if (this.paramset != null) {
-                r.set_object_member("params", this.toJSONObject(this.paramset));
+                r.set_object_member("params", this.paramset.toJSON());
             }
             if (this.return_value != null) {
-                r.set_object_member("return_value", this.toJSONObject(this.return_value));
+                r.set_object_member("return_value", this.return_value.toJSON());
             }
             return r;
         }
