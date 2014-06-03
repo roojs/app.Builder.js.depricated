@@ -237,7 +237,10 @@ namespace Palete {
                 
                 case "record": // struct?
                     return;
-                
+                case "bitfield": // ignore?
+                    return;
+                case "prerequesite": // ignore?
+                    return;
                 default:
                     print("UNHANDLED" + element->name +"\n");
                     return;
