@@ -30,7 +30,7 @@ namespace Palete {
     }
     public class Gir : GirObject {
     
-        string name;
+        string name; // filename..
         string  package;
         
         Gee.Hashmap<string,string> includes;
