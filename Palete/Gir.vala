@@ -48,7 +48,7 @@ namespace Palete {
     
     public class Value: Object {
         public string type;
-        public Ctor(string n) {
+        public Value(string n) {
             this.type= "";
             base(n);
         }
@@ -57,7 +57,7 @@ namespace Palete {
     
     public class Param: Value {
         public bool is_instance;
-        public Ctor(string n) {
+        public Param(string n) {
             is_instance = false;
             base(n);
         }
@@ -68,7 +68,7 @@ namespace Palete {
     public class Cls: GirObject {
         public  string parent;
         public GLib.List<string> implements;
-        public Lib.List<Ctor> ctors;
+        public GLib.List<Ctor> ctors;
         public Gee.HashMap<string,Method> methods;
         
         public Cls(string n) {
@@ -76,7 +76,7 @@ namespace Palete {
             this.name = n;
             this.implements = new GLib.List<string>();
             this.ctors = new GLib.List<Ctor>();
-            this.methods =new ee.HashMap<string,Method>();
+            this.methods =new Gee.HashMap<string,Method>();
         }
     
     }
@@ -85,11 +85,10 @@ namespace Palete {
     
     public class Gir : GirObject {
     
-        public string name; // filename..
-        public string  package;
+         public string  package;
         
-        public Gee.Hashmap<string,string> includes;
-        public Gee.Hashmap<string,Cls> classes;
+        public Gee.HashMap<string,string> includes;
+        public Gee.HashMap<string,Cls> classes;
         
         //Gee.Hashmap<string,what> nodes;
     
@@ -97,7 +96,8 @@ namespace Palete {
         {
             base(file);
             //this.nodes = new Gee.Hashmap<string,what>();
-            this.includes = new Gee.Hashmap<string,string>();
+            this.includes = new Gee.HashMap<string,string>();
+            this.classes= new Gee.HashMap<string,Cls>();
             
             var doc = Xml.Parser.parse_file (file);
             var root = doc->get_root_element();
@@ -112,14 +112,16 @@ namespace Palete {
             print(parent.name + "==>" + n +"\n");
             switch (element->name) {
                 case "repository":
-                    
                     break;
+                
                 case "include":
                     ((Gir)parent).includes.set(n, element->get_prop("version"));
-                    break
+                    break;
+                
                 case "package":
                     ((Gir)parent).package = n;
                     break;
+                
                 case "c:include":
                     break;
                 
