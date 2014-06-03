@@ -18,6 +18,18 @@ namespace Palete {
     
     }
     
+    
+    public class Ctor: Object {
+        string name;
+        
+        public Ctor(string n) {
+            base(n);
+        }
+    
+    }
+    
+    
+    
     public class Cls: GirObject {
         string parent;
         GLib.List<string> implements;
