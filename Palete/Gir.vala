@@ -128,7 +128,13 @@ namespace Palete {
                     parent.ctors.add(c);
                     parent  = c;
                     break;
-                
+                case "return_value":
+                    var c = new Value("return-value");
+                    parent.return_value = c;
+                    parent =c;
+                    break;
+                case "type":
+                    parent.type = n;
                 
                 
             }
