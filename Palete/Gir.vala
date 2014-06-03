@@ -143,6 +143,8 @@ namespace Palete {
                     parent = c;
                     break;
                 
+                case "callback": // not sure...
+                    return;
                 
                 
                 case "type":
