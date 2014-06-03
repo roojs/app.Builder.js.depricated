@@ -155,6 +155,12 @@ namespace Palete {
                     parent = c;
                     break;
                 
+                case "field":
+                    var c = new GirObject("Prop",n);
+                    parent.props.set(n,c);
+                    parent = c;
+                    break;
+                
                 case "function":
                     var c = new GirObject("Function",n);
                     parent.methods.set(n,c);
@@ -162,8 +168,7 @@ namespace Palete {
                     break;
                 
                 case "array":
-                    parent.is_array = true;
-                     
+                    parent.is_array = true;  
                     break;
                 
                 default:
