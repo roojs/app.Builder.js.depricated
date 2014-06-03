@@ -20,7 +20,8 @@ namespace Palete {
     
     public class Method: Object {
         
-        Value return_value;
+        Value return_value = null;
+        
         public Ctor(string n) {
             base(n);
         }
