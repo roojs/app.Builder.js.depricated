@@ -50,7 +50,7 @@ namespace Palate {
              	if (iter->type == Xml.ElementType.TEXT_NODE) {
                     continue;
                 }
-                this.walk(element, path)
+                this.walk(element, path);
             }
             
         }
