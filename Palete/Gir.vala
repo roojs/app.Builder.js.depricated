@@ -24,7 +24,7 @@ namespace Palete {
             
         public Gee.HashMap<string,GirObject> params;
         public GLib.List<string> implements;
-        public GLib.List<GirObject> ctors;
+        public Gee.HashMap<string,GirObject> ctors;
         public Gee.HashMap<string,GirObject> methods;
         public Gee.HashMap<string,string> includes;
         public Gee.HashMap<string,GirObject> classes;
