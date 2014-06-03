@@ -25,6 +25,7 @@ namespace Palete {
         public Gee.HashMap<string,GirObject> methods;
          public Gee.HashMap<string,string> includes;
         public Gee.HashMap<string,GirObject> classes;
+        public Gee.HashMap<props,GirObject> classes;
        
         public GirObject(string nodetype, string n) {
             this.nodetype = nodetype;
@@ -38,7 +39,7 @@ namespace Palete {
             this.methods =new Gee.HashMap<string,GirObject>();
             this.includes = new Gee.HashMap<string,string>();
             this.classes= new Gee.HashMap<string,GirObject>();
-            
+            this.props= new Gee.HashMap<string,GirObject>();
         }
     
     }
