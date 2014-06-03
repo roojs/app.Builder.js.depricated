@@ -49,7 +49,42 @@ namespace Palete {
             this.consts = new Gee.HashMap<string,GirObject>();
             this.signals = new Gee.HashMap<string,GirObject>();
         }
-    
+        public JSON.Object toJSON()
+        {
+            var r = new JSON.Object();
+            r.set_string_member("nodetype", this.nodetype);
+            r.set_string_member("name", this.name);
+            // is_arary / is_instance / is_varargs..
+            
+            if (this.implements.length() > 0) {
+                r.set_object_member("length", this.toJSONArray(this.implements));
+            }
+            
+            if (this.params.size > 0) {
+                r.set_object_member("params", this.toJSONObject(this.params));
+            }
+            if (this.ctors.size > 0) {
+                r.set_object_member("ctors", this.toJSONObject(this.ctors));
+            }
+            if (this.methods.size > 0) {
+                r.set_object_member("methods", this.toJSONObject(this.methods));
+            }
+            if (this.includes.size > 0) {
+                r.set_object_member("includes", this.toJSONObject(this.includes));
+            }
+            if (this.classes.size > 0) {
+                r.set_object_member("classes", this.toJSONObject(this.classes));
+            }
+            if (this.props.size > 0) {
+                r.set_object_member("props", this.toJSONObject(this.props));
+            }
+            if (this.consts.size > 0) {
+                r.set_object_member("consts", this.toJSONObject(this.consts));
+            }
+            if (this.signals.size > 0) {
+                r.set_object_member("cosignalsnsts", this.toJSONObject(this.signals));
+            }
+        }
     }
     
      
