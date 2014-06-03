@@ -133,8 +133,8 @@ namespace Palete {
                 
                 case "parameters":
                     var c = new GirObject("Params",n);
-                    parent.params = c;
-                    parent = (GirObject)c;
+                    parent.paramset = c;
+                    parent =  c;
                     break;
                 
                 case "instance-parameter":
