@@ -41,10 +41,12 @@ namespace Palete {
             this.is_instance = false;
             this.is_varargs = false;
             this.implements = new GLib.List<string>();
+            this.includes   = new Gee.HashMap<string,string>();
+            
             this.params = new Gee.HashMap<string,GirObject>();
             this.ctors      = new Gee.HashMap<string,GirObject>();
             this.methods    =new Gee.HashMap<string,GirObject>();
-            this.includes   = new Gee.HashMap<string,string>();
+           
             this.classes    = new Gee.HashMap<string,GirObject>();
             this.props      = new Gee.HashMap<string,GirObject>();
             this.consts     = new Gee.HashMap<string,GirObject>();
