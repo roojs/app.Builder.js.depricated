@@ -14,10 +14,10 @@ namespace Palate {
             this.walk( root, "" );
         
         }
-        public void walk(Xml.Node* element, string path)
+        public void walk(Xml.Node* element, string in_path)
         {
             var n = element->get_prop("name");
-        
+            var path = "" + in_path;
            
             if (element.name == "signal") {
                 path += '.signal';
@@ -36,8 +36,11 @@ namespace Palate {
              //   Seed.print(path + ':' + d);
             //    ret[path] = d;
             //}
-            
-            var child = element.children;
+            for (Xml.Node* iter = node->children; iter != null; iter = iter->next) {
+             	if (iter->type == Xml.ElementType.TEXT_NODE) {
+                    continue;
+                }
+                this.walk(element, path)
 
             while (child){
                 //console.log(child.tag);
