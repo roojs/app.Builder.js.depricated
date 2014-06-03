@@ -64,7 +64,7 @@ namespace Palete {
                 r.set_object_member("params", this.toJSONObject(this.params));
             }
             if (this.ctors.size > 0) {
-                r.set_object_member("ctors", this.toJSONObject(this.ctors));
+                r.set_object_member("ctors", this.toJSONObjectArray(this.ctors));
             }
             if (this.methods.size > 0) {
                 r.set_object_member("methods", this.toJSONObject(this.methods));
