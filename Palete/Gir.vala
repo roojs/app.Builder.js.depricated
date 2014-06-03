@@ -11,8 +11,12 @@ namespace Palete {
 
     public class GirObject: Object {
         public string name;
+        public string nodetype;
+        public Params params;
+        public Value return_value = null;
         
-        public GirObject(string n) {
+        public GirObject(string nodetype, string n) {
+            this.nodetype = nodetype;
             this.name = n;
         }
     
@@ -66,6 +70,7 @@ namespace Palete {
     
     
     public class Cls: GirObject {
+        public bool is_instance;
         public  string parent;
         public GLib.List<string> implements;
         public GLib.List<Ctor> ctors;
