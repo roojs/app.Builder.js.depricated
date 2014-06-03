@@ -36,7 +36,7 @@ namespace Palate {
                 path += path.length > 0 ? ".": "";
                 path += n;
             }
-            if (element.name == "return-value") {
+            if (element->name == "return-value") {
                 path += ".return-value";
             }
             print(path + "\n");
