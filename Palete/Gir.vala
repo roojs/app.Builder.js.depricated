@@ -37,8 +37,9 @@ namespace Palete {
     
     }
     public class Value: Object {
-        var string type;
+        string type;
         public Ctor(string n) {
+            this.type= "";
             base(n);
         }
     
@@ -133,6 +134,7 @@ namespace Palete {
                     parent.return_value = c;
                     parent =c;
                     break;
+                
                 case "type":
                     parent.type = n;
                 
