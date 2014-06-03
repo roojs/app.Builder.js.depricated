@@ -28,7 +28,7 @@ namespace Palete {
         }
     
     }
-    public class Gir : Object {
+    public class Gir : GirObject {
     
         string  package;
         
