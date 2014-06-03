@@ -36,6 +36,16 @@ namespace Palete {
         }
     
     }
+    public class Params: Object {
+        Gee.HashMap<string,Param> params;
+        public Ctor(string n) {
+            base(n);
+            this.params = new Gee.HashMap<string,Param>();
+        }
+    
+    }
+    
+    
     public class Value: Object {
         string type;
         public Ctor(string n) {
@@ -145,6 +155,12 @@ namespace Palete {
                 case "method":
                     var c = new Method(n);
                     ((Cls)parent).methods.set(n,c);
+                    parent = c;
+                    break;
+                
+                case "parameters":
+                    
+                
                 
                 
             }
