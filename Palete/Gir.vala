@@ -29,15 +29,15 @@ namespace Palate {
             var path = "" + in_path;
            
             if (element.name == "signal") {
-                path += '.signal';
+                path += ".signal";
             }
             
             if (n != null) {
-                path += path.length ? '.' : '';
+                path += path.length ? ".": "";
                 path += n;
             }
-            if (element.name == 'return-value') {
-                path += '.return-value';
+            if (element.name == "return-value") {
+                path += ".return-value";
             }
             print(path + "\n");
             
