@@ -138,12 +138,12 @@ namespace Palete {
                     break;
                 
                 case "type":
-                    parent.type = n;
+                    ((Value)parent).type = n;
                     return; // no children?
                     break;
                 
                 case "method":
-                    
+                    parent.methods
                 
                 
             }
