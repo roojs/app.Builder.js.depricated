@@ -48,7 +48,7 @@ namespace Palete {
             delete doc;
         
         }
-        public void walk(Xml.Node* element, string in_path)
+        public void walk(Xml.Node* element, GirObject? parent)
         {
             var n = element->get_prop("name");
             var path = "" + in_path;
