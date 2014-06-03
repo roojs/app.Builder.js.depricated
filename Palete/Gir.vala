@@ -92,6 +92,9 @@ namespace Palete {
                     break;
                 
                 case "constructor":
+                    var c = new Ctor(n);
+                    parent.ctors.add()
+                    
                     
                 
                 
