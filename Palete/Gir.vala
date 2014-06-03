@@ -19,7 +19,7 @@ namespace Palete {
     }
     
     public class Method: Object {
-        
+         public Params params;
         public Value return_value = null;
         
         public Method(string n) {
@@ -30,7 +30,7 @@ namespace Palete {
     
     
     public class Ctor: Method {
-        public Params params;
+       
         public Ctor(string n) {
             base(n);
         }
@@ -137,25 +137,25 @@ namespace Palete {
                     var c = new Cls(parent.name + "." + n);
                     ((Gir)parent).classes.set(parent.name + "." + n, c);
                     c.parent = element->get_prop("parent");
-                    parent = c;
+                    parent = (GirObject)c;
                     break;
                 
                 case "doc":
                     break;
                 
                 case "implements":
-                    ((Cls)parent).implements.add(n);
+                    ((Cls)parent).implements.append(n);
                     break;
                 
                 case "constructor":
                     var c = new Ctor(n);
-                    ((Cls)parent).ctors.add(c);
-                    parent  = c;
+                    ((Cls)parent).ctors.append(c);
+                    parent  = (GirObject)c;
                     break;
                 case "return_value":
                     var c = new Value("return-value");
                     ((Method)parent).return_value = c;
-                    parent =c;
+                    parent = (GirObject)c;
                     break;
                 
                 case "type":
@@ -166,26 +166,26 @@ namespace Palete {
                 case "method":
                     var c = new Method(n);
                     ((Cls)parent).methods.set(n,c);
-                    parent = c;
+                    parent = (GirObject)c;
                     break;
                 
                 case "parameters":
                     var c = new Params(n);
                     ((Method)parent).params = c;
-                    parent = c;
+                    parent = (GirObject)c;
                     break;
                 
                 case "instance-parameter":
                     var c = new Param(n);
                     c.is_instance = true;
                     ((Params)parent).params.set(n,c);
-                    parent = c;
+                    parent = (GirObject)c;
                     break;
                 
                 case "parameter":
                     var c = new Param(n);
                     ((Params)parent).params.set(n,c);
-                    parent = c;
+                    parent = (GirObject)c;
                     break;
                 
                 default:
