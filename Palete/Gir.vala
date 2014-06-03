@@ -47,9 +47,9 @@ namespace Palete {
     
     
     public class Value: GirObject {
-        public string typ;
+        public string type;
         public Value(string n) {
-            this.typ= "";
+            this.type = "";
             base(n);
         }
     
@@ -163,7 +163,7 @@ namespace Palete {
                     return;
                 
                 case "type":
-                    ((Value)parent).typ = n;
+                    ((Value)parent).type = n;
                     return; // no children?
                     //break;
                 
