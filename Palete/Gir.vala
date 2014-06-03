@@ -10,7 +10,11 @@ public static int main (string[] args) {
 namespace Palete {
 
     public class Cls: Object {
-
+        string n;
+        string parent;
+        public Cls(string n) {
+            this.name = n;
+        }
     
     }
     public class Gir : Object {
@@ -62,8 +66,9 @@ namespace Palete {
                 case "class":
                     
                     path += n;
+                    var c = new Cls(path);
                     this.classes.set(n, new Cls(path));
-                    
+                    c.parent = 
                 
             }
             
