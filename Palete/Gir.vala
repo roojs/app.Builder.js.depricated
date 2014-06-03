@@ -22,7 +22,7 @@ namespace Palete {
         
         public Value return_value = null;
         
-        public Ctor(string n) {
+        public Method(string n) {
             base(n);
         }
     
@@ -38,7 +38,7 @@ namespace Palete {
     }
     public class Params: Value {
         public Gee.HashMap<string,Param> params;
-        public Ctor(string n) {
+        public Params(string n) {
             base(n);
             this.params = new Gee.HashMap<string,Param>();
         }
@@ -186,6 +186,9 @@ namespace Palete {
                     parent = c;
                     break;
                 
+                default:
+                    print("UNHANDLED" + element->name +"\n");
+                    return;
             }
             /*
             if (element->name == "signal") {
