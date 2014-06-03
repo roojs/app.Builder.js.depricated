@@ -72,7 +72,9 @@ namespace Palete {
                 
                 case "doc":
                     break;
-                    
+                
+                case "implements":
+                    this.classes.get(path).implements.add(n);
                 
             }
             
