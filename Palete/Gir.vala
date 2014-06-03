@@ -53,7 +53,7 @@ namespace Palete {
         public void walk(Xml.Node* element, GirObject? parent)
         {
             var n = element->get_prop("name");
-            var path = "" + in_path;
+            
             
             switch (element->name) {
                 case "repository":
@@ -78,10 +78,11 @@ namespace Palete {
                 
                 case "class":
                     
-                    path += n;
-                    var c = new Cls(path);
+                    
+                    var c = new Cls(parent.name + "." + n);
                     this.classes.set(n, new Cls(path));
                     c.parent = element->get_prop("parent");
+                    parent = c;
                 
                 case "doc":
                     break;
@@ -99,10 +100,7 @@ namespace Palete {
                 path += ".signal";
             }
             
-            if (n != null) {
-                path += path.length > 0 ? ".": "";
-                path += n;
-            }
+            
             if (element->name == "return-value") {
                 path += ".return-value";
             }
