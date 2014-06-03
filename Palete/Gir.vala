@@ -66,7 +66,9 @@ namespace Palete {
         public void walk(Xml.Node* element, GirObject? parent)
         {
             var n = element->get_prop("name");
-            
+            if (n == null) {
+                n = "";
+            }
             print(element->name + " ("  + parent.name + "==>" + n +")\n");
             switch (element->name) {
                 case "repository":
@@ -147,6 +149,17 @@ namespace Palete {
                 case "parameter":
                     var c = new GirObject("Param",n);
                     parent.params.set(n,c);
+                    parent = c;
+                    break;
+                
+                case "function":
+                    var c = new GirObject("Function",n);
+                    parent.methods.set(n,c);
+                    parent = c;
+                    break;
+                case "array":
+                    var c = new GirObject("Function",n);
+                    parent.methods.set(n,c);
                     parent = c;
                     break;
                 
