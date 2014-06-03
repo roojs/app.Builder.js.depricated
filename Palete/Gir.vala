@@ -137,7 +137,10 @@ namespace Palete {
                     break;
                 
                 case "virtual-method":
-                    return;
+                    var c = new GirObject("Signal",n);
+                    parent.signals.set(n,c);
+                    parent = c;
+                    break;
                 
                 case "type":
                     parent.type = n;
