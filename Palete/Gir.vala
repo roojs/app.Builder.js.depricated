@@ -9,11 +9,16 @@ public static int main (string[] args) {
 
 namespace Palete {
 
+    public class Cls: Object {
+
+    
+    }
     public class Gir : Object {
     
         string  package;
         
         Gee.Hashmap<string,string> includes;
+        Gee.Hashmap<string,Cls> classes;
         
         //Gee.Hashmap<string,what> nodes;
     
@@ -41,7 +46,21 @@ namespace Palete {
                     this.includes.set(n, element->get_prop("version"));
                     break
                 case "package":
+                    this.package = n;
+                    break;
+                case "c:include":
+                    break;
                 
+                case "namespace":
+                    path = n;
+                    break;
+                
+                case "alias":
+                    return;
+                    break; // not handled..
+                
+                case "class":
+                    path += n;
                     
                 
             }
