@@ -86,7 +86,7 @@ namespace Palete {
         {
             var n = element->get_prop("name");
             
-            
+            print(parent.name + "==>" + n +"\n");
             switch (element->name) {
                 case "repository":
                     
@@ -127,7 +127,7 @@ namespace Palete {
                     var c = new Ctor(n);
                     parent.ctors.add()
                     
-                    
+                
                 
                 
             }
