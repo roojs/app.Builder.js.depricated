@@ -18,6 +18,7 @@ namespace Palete {
         public GirObject return_value = null;
         public bool is_instance;
         public bool is_array;
+        public bool     is_varargs;
         public  string parent;
         public  string value;
             
