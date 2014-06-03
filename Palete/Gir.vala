@@ -15,11 +15,11 @@ namespace Palete {
         public string nodetype;
         public GirObject paramset;
         public string  package;
-        public Value return_value = null;
+        public GirObject return_value = null;
         public bool is_instance;
         public  string parent;
          public Gee.HashMap<string,GirObject> params;
-             public GLib.List<string> implements;
+        public GLib.List<string> implements;
         public GLib.List<GirObject> ctors;
         public Gee.HashMap<string,GirObject> methods;
          public Gee.HashMap<string,string> includes;
