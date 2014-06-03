@@ -29,6 +29,7 @@ namespace Palete {
         public Gee.HashMap<string,GirObject> classes;
         public Gee.HashMap<string,GirObject> props;
         public Gee.HashMap<string,GirObject> consts;
+        public Gee.HashMap<string,GirObject> signals;
         public string doc;
         public GirObject(string nodetype, string n) {
             this.nodetype = nodetype;
@@ -136,11 +137,13 @@ namespace Palete {
                     parent = (GirObject)c;
                     break;
                 
-                case "virtual-method":
+                case "virtual-method": // not sure...
                     var c = new GirObject("Signal",n);
                     parent.signals.set(n,c);
                     parent = c;
                     break;
+                
+                
                 
                 case "type":
                     parent.type = n;
