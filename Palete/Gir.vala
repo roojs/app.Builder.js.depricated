@@ -46,7 +46,7 @@ namespace Palete {
             
             var doc = Xml.Parser.parse_file (file);
             var root = doc->get_root_element();
-            this.walk( root, "" );
+            this.walk( root, this );
             delete doc;
         
         }
