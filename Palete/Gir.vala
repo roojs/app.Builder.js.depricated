@@ -76,11 +76,11 @@ namespace Palete {
     
     public class Gir : GirObject {
     
-        string name; // filename..
-        string  package;
+        public string name; // filename..
+        public string  package;
         
-        Gee.Hashmap<string,string> includes;
-        Gee.Hashmap<string,Cls> classes;
+        public Gee.Hashmap<string,string> includes;
+        public Gee.Hashmap<string,Cls> classes;
         
         //Gee.Hashmap<string,what> nodes;
     
