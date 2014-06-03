@@ -112,7 +112,7 @@ namespace Palete {
             var r = new JSON.Array();
             for(var i =0;i< map.length();i++) {}
             
-                r.set_string_member(i, map.nth_data(i));
+                r.add_string_element(map.nth_data(i));
             }
             return r;
         }
