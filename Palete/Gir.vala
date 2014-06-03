@@ -13,7 +13,7 @@ namespace Palete {
         public string name;
         public string type;
         public string nodetype;
-        public Params params;
+        public Params paramset;
         public string  package;
         public Value return_value = null;
         public bool is_instance;
