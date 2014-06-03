@@ -8,8 +8,16 @@ namespace Palate {
         
             var doc = Xml.Parser.parse_file (file);
             var root = doc->get_root_element();
+            this.walk( root, "" );
         
         }
+        public void walk(Xml.Node* node, string path)
+        {
+        
+        
+        
+        }
+        
     
     
     }
