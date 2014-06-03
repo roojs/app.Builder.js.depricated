@@ -26,7 +26,7 @@ namespace Palete {
             base(n);
             this.name = n;
             this.implements = new GLib.List<string>();
-            this.ctors = new GLib.List<string>();
+            this.ctors = new GLib.List<Ctor>();
         }
     
     }
