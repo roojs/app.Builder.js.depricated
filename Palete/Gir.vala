@@ -110,7 +110,7 @@ namespace Palete {
         public JSON.Array toJSONArrayString(GLib.List<string> map)
         {
             var r = new JSON.Array();
-            for(var i =0;i< map.length();i++) {}
+            for(var i =0;i< map.length();i++) {
             
                 r.add_string_element(map.nth_data(i));
             }
