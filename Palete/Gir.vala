@@ -204,11 +204,11 @@ namespace Palete {
                 
                 case "array":
                     parent.is_array = true;  
-                    break;
+                    break; // type is added soon..
                 
                 case "varargs":
                     parent.is_varargs= true;  
-                    break;
+                    return;
                 
                 case "constant":
                     var c = new GirObject("Const",n);
