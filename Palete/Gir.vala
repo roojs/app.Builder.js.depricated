@@ -143,7 +143,8 @@ namespace Palete {
                     break;
                 
                 case "method":
-                    parent.methods
+                    var c = new Method(n);
+                    ((Cls)parent).methods.set(n,c);
                 
                 
             }
