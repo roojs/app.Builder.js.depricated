@@ -11,12 +11,16 @@ namespace Palete {
 
     public class Gir : Object {
     
-        string package;
+        string  package;
+        
+        Gee.Hashmap<string,string> includes;
+        
         //Gee.Hashmap<string,what> nodes;
     
         public Gir (string file)
         {
             //this.nodes = new Gee.Hashmap<string,what>();
+            this.includes = new Gee.Hashmap<string,string>();
             
             var doc = Xml.Parser.parse_file (file);
             var root = doc->get_root_element();
