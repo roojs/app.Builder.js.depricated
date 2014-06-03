@@ -1,5 +1,5 @@
 
-// valac --pkg libxml-2.0 Gir.vala /tmp/Gir
+// valac --pkg libxml-2.0 --pkg gee-1.0  Gir.vala -o /tmp/Gir
 public static int main (string[] args) {
     
     var g = new Gir("/usr/share/gir-1.0/Gtk-3.0.gir");
