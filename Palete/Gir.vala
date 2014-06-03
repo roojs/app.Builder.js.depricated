@@ -2,15 +2,16 @@
 // valac --pkg libxml-2.0 --pkg gee-1.0  Gir.vala -o /tmp/Gir
 public static int main (string[] args) {
     
-    var g = new Palate.Gir("/usr/share/gir-1.0/Gtk-3.0.gir");
+    var g = new Palete.Gir("/usr/share/gir-1.0/Gtk-3.0.gir");
     
     return 0;
 }
 
-namespace Palate {
+namespace Palete {
 
-    class Gir : Object {
+    public class Gir : Object {
     
+        string package;
         //Gee.Hashmap<string,what> nodes;
     
         public Gir (string file)
@@ -27,7 +28,20 @@ namespace Palate {
         {
             var n = element->get_prop("name");
             var path = "" + in_path;
-           
+            
+            switch (element->name) {
+                case "repository":
+                    
+                    break;
+                case "include":
+                    this.includes.set(n, element->get_prop("version"));
+                    break
+                case "package":
+                
+                    
+                
+            }
+            
             if (element->name == "signal") {
                 path += ".signal";
             }
@@ -39,7 +53,7 @@ namespace Palate {
             if (element->name == "return-value") {
                 path += ".return-value";
             }
-            print(path + "\n");
+            print(path + ":"  + element->name + "\n");
             
             //var d =   getAttribute(element,'doc');
             //if (d) {
