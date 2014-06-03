@@ -12,8 +12,10 @@ namespace Palete {
     public class Cls: Object {
         string n;
         string parent;
+        GLib.List<string> implements;
         public Cls(string n) {
             this.name = n;
+            this.implements = new GLib.List<string>();
         }
     
     }
@@ -75,6 +77,7 @@ namespace Palete {
                 
                 case "implements":
                     this.classes.get(path).implements.add(n);
+                    
                 
             }
             
