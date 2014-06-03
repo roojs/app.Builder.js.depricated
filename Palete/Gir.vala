@@ -132,8 +132,8 @@ namespace Palete {
                     break;
                 
                 case "parameters":
-                    var c = new Params(n);
-                    ((Method)parent).params = c;
+                    var c = new GirObject("Params",n);
+                    parent.params = c;
                     parent = (GirObject)c;
                     break;
                 
