@@ -68,7 +68,11 @@ namespace Palete {
                     path += n;
                     var c = new Cls(path);
                     this.classes.set(n, new Cls(path));
-                    c.parent = 
+                    c.parent = element->get_prop("parent");
+                
+                case "doc":
+                    break;
+                    
                 
             }
             
