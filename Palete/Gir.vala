@@ -46,11 +46,11 @@ namespace Palate {
              //   Seed.print(path + ':' + d);
             //    ret[path] = d;
             //}
-            for (Xml.Node* iter = node->children; iter != null; iter = iter->next) {
+            for (Xml.Node* iter = element->children; iter != null; iter = iter->next) {
              	if (iter->type == Xml.ElementType.TEXT_NODE) {
                     continue;
                 }
-                this.walk(element, path);
+                this.walk(iter, path);
             }
             
         }
