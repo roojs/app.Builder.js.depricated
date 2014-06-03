@@ -80,7 +80,7 @@ namespace Palete {
                     
                     
                     var c = new Cls(parent.name + "." + n);
-                    this.classes.set(parent.name + "." + n, new Cls(path));
+                    this.classes.set(parent.name + "." + n, c);
                     c.parent = element->get_prop("parent");
                     parent = c;
                 
@@ -90,6 +90,7 @@ namespace Palete {
                 case "implements":
                     this.classes.get(path).implements.add(n);
                     break;
+                
                 case "constructor":
                     
                 
