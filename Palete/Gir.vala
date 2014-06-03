@@ -98,7 +98,15 @@ namespace Palete {
             }
             return r;
         }
-        
+        public JSONObjectString(Gee.HashMap<string,string> map)
+        {
+            var r = new JSON.Object();
+            var iter = map.map_iterator();
+            while(iter.next()) {
+                r.set_string_member(iter.get_key(), iter.get_value()());
+            }
+            return r;
+        }
         
     }
     
