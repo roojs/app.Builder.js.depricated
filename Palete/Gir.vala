@@ -112,7 +112,7 @@ namespace Palete {
                     break;
                 
                 case "return-value":
-                    var c = new Value("return-value");
+                    var c = new GirObject("Return", "return-value");
                     ((Method)parent).return_value = c;
                     parent = (GirObject)c;
                     break;
