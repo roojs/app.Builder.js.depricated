@@ -30,7 +30,7 @@ namespace Palete {
     
     
     public class Ctor: Method {
-        
+        public Params params;
         public Ctor(string n) {
             base(n);
         }
@@ -159,8 +159,16 @@ namespace Palete {
                     break;
                 
                 case "parameters":
-                    
+                    var c = new Params(n);
+                    ((Method)parent).params = c;
+                    parent = c;
+                    break;
                 
+                case "instance-parameter":
+                    var c = new Param(n);
+                    ((Parms)parent).params.set(n,c);
+                    parent = c;
+                    break;
                 
                 
             }
