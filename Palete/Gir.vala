@@ -239,7 +239,7 @@ namespace Palete {
                     return;
                 case "bitfield": // ignore?
                     return;
-                case "prerequesite": // ignore?
+                case "prerequisite": // ignore?
                     return;
                 default:
                     print("UNHANDLED" + element->name +"\n");
