@@ -137,6 +137,9 @@ namespace Palete {
                 
                 case "type":
                     parent.type = n;
+                    return; // no children?
+                    break;
+                
                 
                 
             }
