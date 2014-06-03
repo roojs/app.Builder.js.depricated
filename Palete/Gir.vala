@@ -173,6 +173,9 @@ namespace Palete {
                     parent.is_array = true;  
                     break;
                 
+                case "doc-depricated":
+                    return;
+                
                 case "record": // struct?
                     return;
                 
