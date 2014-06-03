@@ -107,7 +107,15 @@ namespace Palete {
             }
             return r;
         }
-        
+        public toJSONArrayString(GLib.List<string> map)
+        {
+            var r = new JSON.Array();
+            for(var i =0;i< map.length();i++) {}
+            
+                r.set_string_member(i, map.nth_data(i));
+            }
+            return r;
+        }
     }
     
      
