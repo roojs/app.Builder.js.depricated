@@ -123,7 +123,7 @@ namespace Palete {
                     break;
                 
                 case "implements":
-                    this.classes.get(path).implements.add(n);
+                    ((Cls)parent).implements.add(n);
                     break;
                 
                 case "constructor":
