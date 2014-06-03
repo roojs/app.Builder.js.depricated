@@ -9,7 +9,10 @@ public static int main (string[] args) {
 
 namespace Palete {
 
-    public class Cls: Object {
+    public class GirObject: Object {
+    
+    
+    public class Cls: GirObject {
         string n;
         string parent;
         GLib.List<string> implements;
@@ -77,7 +80,10 @@ namespace Palete {
                 
                 case "implements":
                     this.classes.get(path).implements.add(n);
+                    break;
+                case "constructor":
                     
+                
                 
             }
             
