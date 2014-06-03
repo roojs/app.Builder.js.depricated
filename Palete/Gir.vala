@@ -21,13 +21,18 @@ namespace Palete {
     public class Cls: GirObject {
         string parent;
         GLib.List<string> implements;
+        GLib.List<string> ctors;
         public Cls(string n) {
             base(n);
             this.name = n;
             this.implements = new GLib.List<string>();
+            this.ctors = new GLib.List<string>();
         }
     
     }
+    
+    
+    
     public class Gir : GirObject {
     
         string name; // filename..
