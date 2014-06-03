@@ -10,13 +10,19 @@ public static int main (string[] args) {
 namespace Palete {
 
     public class GirObject: Object {
+        string name;
+        
+        public GirObject(string n) {
+            this.name = n;
+        }
     
+    }
     
     public class Cls: GirObject {
-        string n;
         string parent;
         GLib.List<string> implements;
         public Cls(string n) {
+            base(n);
             this.name = n;
             this.implements = new GLib.List<string>();
         }
