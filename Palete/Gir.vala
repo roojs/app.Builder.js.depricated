@@ -145,8 +145,12 @@ namespace Palete {
                     parent = c;
                     break;
                 */
-                case "signal": // not sure...
-                    return;
+                case "signal": // Glib:signal
+                    var c = new GirObject("Signal",n);
+                    parent.signals.set(n,c);
+                    parent = c;
+                    break;
+                    
                 
               
                 case "callback": // not sure...
