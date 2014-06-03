@@ -31,11 +31,12 @@ namespace Palete {
             this.name = n;
              this.params = new Gee.HashMap<string,GirObject>();
             this.type = "";
+            this.is_array = false;
             this.is_instance = false;
-             this.implements = new GLib.List<string>();
+            this.implements = new GLib.List<string>();
             this.ctors = new GLib.List<GirObject>();
             this.methods =new Gee.HashMap<string,GirObject>();
-             this.includes = new Gee.HashMap<string,string>();
+            this.includes = new Gee.HashMap<string,string>();
             this.classes= new Gee.HashMap<string,GirObject>();
             
         }
