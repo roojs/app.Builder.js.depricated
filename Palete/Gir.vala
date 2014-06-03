@@ -37,7 +37,7 @@ namespace Palete {
     
     }
     public class Value: Object {
-        
+        var string type;
         public Ctor(string n) {
             base(n);
         }
