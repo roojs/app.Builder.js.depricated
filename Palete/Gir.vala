@@ -54,7 +54,7 @@ namespace Palete {
     
         public Gir (string file)
         {
-            base(file);
+            base("Package",file);
             //this.nodes = new Gee.Hashmap<string,what>();
              
             var doc = Xml.Parser.parse_file (file);
@@ -102,7 +102,7 @@ namespace Palete {
                     return;
                 
                 case "implements":
-                   parent.implements.append(n);
+                    parent.implements.append(n);
                     break;
                 
                 case "constructor":
@@ -132,7 +132,7 @@ namespace Palete {
                     break;
                 
                 case "parameters":
-                    var c = new GirObject("Params",n);
+                    var c = new GirObject("Paramset",n);
                     parent.paramset = c;
                     parent =  c;
                     break;
