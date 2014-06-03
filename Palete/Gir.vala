@@ -13,30 +13,44 @@ namespace Palate {
         }
         public void walk(Xml.Node* node, string path)
         {
+            var n = node->get_attribute("name");
         
-        
+            var n =  getAttribute(element, 'name') ;
+            //console.log("WALK" + n);
+            if (element.name == 'signal') {
+                path += '.signal';
+            }
+            
+            if (n) {
+                path += path.length ? '.' : '';
+                path += n;
+            }
+            if (element.name == 'return-value') {
+                path += '.return-value';
+            }
+            
+            var d =   getAttribute(element,'doc');
+            if (d) {
+             //   Seed.print(path + ':' + d);
+                ret[path] = d;
+            }
+            
+            var child = element.children;
+
+            while (child){
+                //console.log(child.tag);
+                if (child.type == "element"){
+                    walk (child, path);
+                }
+                child = child.next;
+            }
         
         }
         
     
     
     }
-
- commentLoad : function(ns)
-    {
-        
-        if (typeof(this.comments[ns]) != 'undefined') {
-            return;
-        }
-        
-        console.log("LOAD DOCS: " + ns);
-        var gi = GI.Repository.get_default();
-        var ver = gi.get_version(ns);
-        if (!ver) {
-            this.comments[ns] = {};
-            return;
-        }
-        var ret = { };
+ 
         
         // no idea why this is broken on my build system.
         var  getAttribute = function(n, name){
