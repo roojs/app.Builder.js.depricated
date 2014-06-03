@@ -3,7 +3,12 @@
 public static int main (string[] args) {
     
     var g = new Palete.Gir("/usr/share/gir-1.0/Gtk-3.0.gir");
+    var generator = new Json.Generator ();
+    generator.set_root(g.toJSON());
+    generator.indent = 4;
+    generator.pretty = true;
     
+    print(generator.to_data(null));
     return 0;
 }
 
@@ -103,7 +108,7 @@ namespace Palete {
             var r = new Json.Object();
             var iter = map.map_iterator();
             while(iter.next()) {
-                r.set_string_member(iter.get_key(), iter.get_value()());
+                r.set_string_member(iter.get_key(), iter.get_value());
             }
             return r;
         }
