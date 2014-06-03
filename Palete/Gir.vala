@@ -19,6 +19,8 @@ namespace Palete {
         public bool is_instance;
         public bool is_array;
         public  string parent;
+        public  string value;
+            
         public Gee.HashMap<string,GirObject> params;
         public GLib.List<string> implements;
         public GLib.List<GirObject> ctors;
@@ -42,6 +44,7 @@ namespace Palete {
             this.classes= new Gee.HashMap<string,GirObject>();
             this.props= new Gee.HashMap<string,GirObject>();
             this.consts = new Gee.HashMap<string,GirObject>();
+            this.signals = new Gee.HashMap<string,GirObject>();
         }
     
     }
