@@ -60,7 +60,9 @@ namespace Palete {
                     break; // not handled..
                 
                 case "class":
+                    
                     path += n;
+                    this.classes.set(n, new Cls(path));
                     
                 
             }
