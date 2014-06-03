@@ -17,6 +17,7 @@ namespace Palete {
         public string  package;
         public GirObject return_value = null;
         public bool is_instance;
+        public bool is_array;
         public  string parent;
          public Gee.HashMap<string,GirObject> params;
         public GLib.List<string> implements;
