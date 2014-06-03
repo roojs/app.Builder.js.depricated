@@ -126,12 +126,12 @@ namespace Palete {
                 case "constructor":
                     var c = new Ctor(n);
                     parent.ctors.add()
-                    
+                    break;
                 
                 
                 
             }
-            
+            /*
             if (element->name == "signal") {
                 path += ".signal";
             }
@@ -141,7 +141,7 @@ namespace Palete {
                 path += ".return-value";
             }
             print(path + ":"  + element->name + "\n");
-            
+            */
             //var d =   getAttribute(element,'doc');
             //if (d) {
              //   Seed.print(path + ':' + d);
@@ -151,7 +151,7 @@ namespace Palete {
              	if (iter->type == Xml.ElementType.TEXT_NODE) {
                     continue;
                 }
-                this.walk(iter, path);
+                this.walk(iter, parent);
             }
             
         }
