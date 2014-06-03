@@ -3,9 +3,12 @@ namespace Palate {
 
     class Gir : Object {
     
+        Gee.Hashmap<string,what> nodes;
+    
         public Gir (string file)
         {
-        
+            this.nodes = new Gee.Hashmap<string,what>();
+            
             var doc = Xml.Parser.parse_file (file);
             var root = doc->get_root_element();
             this.walk( root, "" );
@@ -28,11 +31,11 @@ namespace Palate {
                 path += '.return-value';
             }
             
-            var d =   getAttribute(element,'doc');
-            if (d) {
+            //var d =   getAttribute(element,'doc');
+            //if (d) {
              //   Seed.print(path + ':' + d);
-                ret[path] = d;
-            }
+            //    ret[path] = d;
+            //}
             
             var child = element.children;
 
