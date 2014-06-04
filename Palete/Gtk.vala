@@ -201,10 +201,10 @@ namespace Palete {
 			
 			var cls = gir.classes.get(ename);
 
-			cls.parseProps();
-			cls.parseSignals(); // ?? needed for add handler..
-			cls.parseMethods(); // ?? needed for ??..
-			cls.parseConstructors(); // ?? needed for ??..
+			//cls.parseProps();
+			//cls.parseSignals(); // ?? needed for add handler..
+			//cls.parseMethods(); // ?? needed for ??..
+			//cls.parseConstructors(); // ?? needed for ??..
 
 			cls.overlayParent(gir);
 			cls.overlayInterfaces(gir);
