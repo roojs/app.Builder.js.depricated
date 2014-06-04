@@ -79,8 +79,8 @@ namespace Palete {
             if (this.type.length > 0) {
                 r.set_string_member("type", this.type);
             }
-			if (this.parent.length > 0) {
-                r.set_string_member("type", this.type);
+			if (this.parent != null && this.parent.length > 0) {
+                r.set_string_member("parent", this.parent);
             }
             // is_arary / is_instance / is_varargs..
             
@@ -217,6 +217,9 @@ namespace Palete {
                     var c = new GirObject("Class", parent.name + "." + n);
                     parent.classes.set(parent.name + "." + n, c);
                     c.parent = element->get_prop("parent");
+					if (c.parent == null) {
+						c.parent = "";
+					}
                     parent =  c;
                     break;
                 
