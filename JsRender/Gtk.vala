@@ -208,9 +208,9 @@ namespace JsRender {
         */
         
    
-        getHelpUrl : function(cls)
+        string getHelpUrl(string cls)
         {
-            return 'http://devel.akbkhome.com/seed/' + cls + '.html';
+            return "http://devel.akbkhome.com/seed/" + cls + ".html";
         },
         
         vcnt : false,
