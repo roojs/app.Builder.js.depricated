@@ -72,8 +72,9 @@ namespace Palete {
 			if (this.parent.length < 1) {
 				return;
 			}
-			print(this.parent);
-			
+			//print(this.parent);
+
+			var pcls = this.parentClass(gir);
 			pcls.overlayParent(gir);
 			this.copyFrom(pcls,false);
 			for(var i=0; i < this.implements.length(); i++) {
