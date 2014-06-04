@@ -73,9 +73,9 @@ namespace Palete {
 				return;
 			}
 			print(this.parent);
-			Gir pns = gir;
+			
 			if (parent.contains(".")) {
-				var Gir.factory(parent.split(".")[0]);
+				gir =  Gir.factory(parent.split(".")[0]);
 
 			}
 			
