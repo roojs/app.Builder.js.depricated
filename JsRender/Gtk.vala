@@ -347,7 +347,7 @@ namespace JsRender {
                 
             }
             
-            strbuilder("\n" + ipad + "// my vars\n");
+            ret +="\n" + ipad + "// my vars\n";
             
             
             for (var k in item) {
