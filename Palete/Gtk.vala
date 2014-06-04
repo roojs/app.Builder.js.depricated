@@ -195,11 +195,11 @@ namespace Palete {
              //   return this.proplist[ename][type];
             //}
             // use introspection to get lists..
-            var gi = GIRepository.Repository.get_default();
+            var gi = GI.Repository.get_default();
             var es = ename.split('.');
 
  
-            var pth = GI.Repository.Repository.get_search_path ();
+            var pth = GI.Repository.get_search_path ();
             
             var gir_path = pth[0].replace(/lib\/girepository-1.0/, 'share\/gir-1.0');
            
