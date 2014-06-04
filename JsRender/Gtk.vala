@@ -111,7 +111,7 @@ namespace JsRender {
                 return "";
             }
             
-            //var data = JSON.parse(JSON.stringify(this.items[0]));
+            // var data = JSON.parse(JSON.stringify(this.items[0]));
             // we should base this on the objects in the tree really..
             string[]  inc = { "Gtk", "Gdk", "Pango", "GLib", "Gio", "GObject", 
                 "GtkSource", "WebKit", "Vte" }; //, "GtkClutter" , "Gdl"];
@@ -126,7 +126,7 @@ namespace JsRender {
             src += "XObject = imports.XObject.XObject;\n"; // path?!!?
             
             
-            src += this.name + "=new XObject("+ this.mungeToString(data) + ");\n";
+            src += this.name + "=new XObject("+ this.mungeToString() + ");\n";
             src += this.name + ".init();\n";
             // register it in the cache
             src += "XObject.cache['/" + this.name + "'] = " + this.name + ";\n";
