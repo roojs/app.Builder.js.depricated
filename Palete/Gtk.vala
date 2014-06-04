@@ -82,7 +82,7 @@ namespace Palete {
                     continue;
                 }
                 if (state == 1) {
-                    left.append(d.replace(/\s+/g, ''));
+                    left.append(d.strip());
                     return;
                 }
                 right.push(d.replace(/\s+/g, ''));
