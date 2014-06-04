@@ -84,12 +84,15 @@ namespace Palete {
 			var pcls = gir.classes.get(pn);
 			pcls.overlayParent();
 			//overlay...
-			var iter = map.map_iterator();
+			var iter = this.methods.map_iterator();
 			while(iter.next()) {
-                r.set_object_member(iter.get_key(), iter.get_value().toJSON());
+                if (null == this.methods.get(iter.get_key())) {
+					continue;
+				}
+				
+				this.methods.set(iter.get_key(), iter.get_value());
             }
-            return r
-
+            
 			
 
 		}
