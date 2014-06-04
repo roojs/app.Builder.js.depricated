@@ -256,12 +256,12 @@ namespace JsRender {
         {
             var ns = item.get("|xns") ;
             if (ns == "GtkSource") {
-                return "Gtk.Source."
+                return "Gtk.Source.";
             }
             return ns + ".";
         }
         
-        void  toValaName : function(Node.item) {
+        void  toValaName(Node.item) {
             this.vcnt++;
 
 			var cls = this.toValaNS(item) + item.get("xtype");
