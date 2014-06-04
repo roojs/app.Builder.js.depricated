@@ -497,7 +497,7 @@ namespace JsRender {
             
             if (item.listeners.size > 0) {
             //    print(JSON.stringify(item.listeners));Seed.quit();
-            
+            /*
                 strbuilder("\n" + ipad + "// listeners \n");  
                 // add all the signal handlers..
                 for (var k in item.listeners) {
@@ -517,7 +517,7 @@ namespace JsRender {
                         
                         //continue;
                     } else { 
-                        var vv = v[1].replace('*/', "");
+                        
                         //print(JSON.stringify(vv));Seed.quit();
                         vv = vv.replace(/^\n+/,'');
                         vv = vv.replace(/\n+$/,'');
@@ -526,16 +526,17 @@ namespace JsRender {
                     strbuilder(ipad + "this.el." + k + ".connect( " + vv  + " );\n");
                     
                 }
+			*/
             }    
                 
             
             
             
             // end ctor..
-            strbuilder(pad + "}\n");
+            str+=pad + "}\n";
             
             
-            strbuilder("\n" + pad + "// userdefined functions \n");  
+            str+= "\n" + pad + "// userdefined functions \n";  
             
             // user defined functions...
             
