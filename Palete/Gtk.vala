@@ -8,7 +8,7 @@ namespace Palete {
             CLASS,
             METHOD,
             PROP
-        };
+        }
                 
             
         public eltype type;
