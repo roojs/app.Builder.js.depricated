@@ -388,7 +388,7 @@ namespace JsRender {
 							args.append("null"); // hopefully...
 							continue;
 						}
-						var var_id = "xxx%d" + argid++;
+						var var_id = "xxx%d".printf( argid++ );
 						ret+= pad + "var "+ var_id + " = new "  + pvi.toNew() +"\n";
 						args.append(var_id);
 						continue;
