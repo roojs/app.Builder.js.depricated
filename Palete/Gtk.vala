@@ -90,7 +90,7 @@ namespace Palete {
                 //Seed.quit();
                
             }
-            if (left.length > 0 ){
+            if (left.length() > 0 ){
                   cfg.append(new GtkUsage( left, right));
             }
             this.map = cfg;
