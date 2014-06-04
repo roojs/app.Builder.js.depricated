@@ -421,18 +421,22 @@ namespace JsRender {
                 
             }
             // initialize.. my vars..
-            strbuilder("\n" + ipad + "// my vars\n");
-            for (var k in item) {
-                if (k[0] != '.') {
+            ret += "\n" + ipad + "// my vars\n";
+
+			// look for ".****"
+			iter = item.props.map_iterator();
+    		while (iter.next()) {
+				var k = iter.get_key();
+        	    if (k[0] != '.') {
                     continue;
                 }
                 var kk = k.substring(1);
-                var v = item[k];
-                var vv = v.split(':');
+                var v = item.get(k);
+                var vv = v.split(:);
                 if (vv.length < 2) {
                     continue;
                 }
-                strbuilder(ipad + "this" + k + " = " +   vv[1] +";\n");
+                ret+= ipad + "this" + k + " = " +   vv[1] +";\n";
                 
             }
            
