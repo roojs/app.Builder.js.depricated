@@ -351,6 +351,7 @@ right:
     Roo.bootstrap.ComboBox
     Roo.bootstrap.Element
     Roo.bootstrap.HtmlEditor
+    Roo.bootstrap.MessageBar
 
 left:
     Roo.bootstrap.Progress
