@@ -249,7 +249,7 @@ namespace JsRender {
             //
             ret += "static int main (string[] args) {\n";
             ret += "    Gtk.init (ref args);\n";
-            ret += "    new " + item.xvala_xcls +"();\n";
+            ret += "    new " + this.tree.xvala_xcls +"();\n";
             ret += "    " + this.name +".show_all();\n";
             ret += "     Gtk.main ();\n";
             ret += "    return 0;\n";
