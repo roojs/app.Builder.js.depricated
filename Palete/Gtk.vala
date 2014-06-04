@@ -129,7 +129,11 @@ namespace Palete {
 
 			cls.overlayParent(gir);
 
-			switch case
+			switch  (type) {
+				case "props":
+					return cls.props;
+					
+				
 			//cls.overlayInterfaces(gir);
             
             
