@@ -84,6 +84,12 @@ namespace Palete {
 			var pcls = gir.classes.get(pn);
 			pcls.overlayParent(gir);
 			this.copyFrom(pcls,false);
+			for(var i=0; i < this.implements.length(); i++) {
+
+
+			}
+
+			
 			
 			
 		}
