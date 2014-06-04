@@ -475,7 +475,14 @@ namespace Palete {
         }
         string doc(string what)
 		{
-
+			var ar = what.split(".");
+			var cls = this.classes.get(ar[1]);
+			if (ar.length == 2) {
+				return cls.doc != null ? cls.doc : "";
+			}
+			// return the property.. by default..
+			var pr = cls.props.get(ar[2]);
+			return pr.doc != null ? pr.doc : "";
 
 		}
     
