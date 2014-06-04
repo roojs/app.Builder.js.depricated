@@ -73,15 +73,7 @@ namespace Palete {
 				return;
 			}
 			print(this.parent);
-			var pn = this.parent;
 			
-			if (parent.contains(".")) {
-				gir =  Gir.factory(parent.split(".")[0]);
-				pn = parent.split(".")[1];
-
-			}
-			
-			var pcls = gir.classes.get(pn);
 			pcls.overlayParent(gir);
 			this.copyFrom(pcls,false);
 			for(var i=0; i < this.implements.length(); i++) {
@@ -93,7 +85,15 @@ namespace Palete {
 		}
 		public GirObject parentClass(Gir gir)
 		{
+			var pn = this.parent;
 			
+			if (this.parent.contains(".")) {
+				gir =  Gir.factory(parent.split(".")[0]);
+				pn = parent.split(".")[1];
+
+			}
+			
+			return = gir.classes.get(pn);
 
 			
 		}
