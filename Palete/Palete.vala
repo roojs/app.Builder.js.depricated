@@ -9,7 +9,7 @@ namespace Palete
 
     static Gee.HashMap<string,Palete>? cache = null;
     
-    public static   Palete factory(string xtype)
+	public static Palete factory(string xtype)
     {
         if (cache == null) {
             cache = new Gee.HashMap<string,Palete>();
@@ -25,7 +25,7 @@ namespace Palete
             //    cache.set(xtype, new Roo());
                 break;
             default:
-                throw Error.INVALID_TYPE("invalid argument to Palete factory");
+                throw new Error.INVALID_TYPE("invalid argument to Palete factory");
         }
         return cache.get(xtype);
     }
