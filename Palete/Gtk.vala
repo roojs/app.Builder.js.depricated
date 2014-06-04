@@ -4,10 +4,10 @@ namespace Palete {
 	{
 		GLib.List<string> left;
 		GLib.List<string> right;
-		public GtkUsage(GLib.List<string> ileft, GLib.List<string> oright)
+		public GtkUsage(GLib.List<string> ileft, GLib.List<string> iright)
 		{
-			this.left = ileft;
-			this.right=  iright;
+			this.left = ileft.copy();
+			this.right=  iright.copy();
 		}
 	}
 
@@ -93,11 +93,11 @@ namespace Palete {
             if (left.length() > 0 ){
                   cfg.append(new GtkUsage( left, right));
             }
-            this.map = cfg;
+            this.map = cfg.copy();
              
         }
         
-        string doc(string what) {
+        public string doc(string what) {
             var ns = what.split(".")[0];
             var gir =  Gir.factory(ns);
 			return   gir.doc(what);
@@ -107,7 +107,7 @@ namespace Palete {
 
 		// does not handle implements...
 		
-        Gee.HashMap<string,GirObject>? getPropertiesFor(string ename, string type)
+        public Gee.HashMap<string,GirObject>? getPropertiesFor(string ename, string type)
         {
             //print("Loading for " + ename);
             
