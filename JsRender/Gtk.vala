@@ -472,7 +472,12 @@ namespace JsRender {
 
             for(var i =0;i<item.items.length();i++) {
         		var ci = item.items.nth_data(i);
-                string[] packing = (ci.get("pack").length > 0 ? ci.get("pack").split(",") : { "add" });
+				var pk = ci.get("pack");
+				string[] packing = { "add" };
+				if (ci.get("pack").length > 0) {
+					packing = ci.get("pack").split(",");
+				}
+                
                 
                 ret += ipad + "var child_" + i + " = new " + ci.xvala_xcls + "();\n";
                     
