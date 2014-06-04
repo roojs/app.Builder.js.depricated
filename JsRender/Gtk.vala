@@ -314,7 +314,7 @@ namespace JsRender {
             
             var xcls = item.xvala_xcls;
             
-            var citems = {};
+            var citems = new Gee.HashMap<string,bool>();
             
             if (depth < 1) {
                 // Global Vars..
@@ -351,7 +351,7 @@ namespace JsRender {
             var iter = item.props.map_iterator();
     		while (iter.next()) {
         		var k = iter.get_key();
-        		var vo = iter.get_value();
+        		var v = iter.get_value();
             
                 if (k[0] != '.') {
                     continue;
@@ -361,10 +361,10 @@ namespace JsRender {
                 }
                 
                 var kk = k.substring(1);
-                var v = item[k];
-                var vv = v.split(':');
-                strbuilder(pad + "public " + vv[0] + " " + kk + ";\n");
-                 citems[k] = true; 
+                
+                var vv = v.split(":");
+                ret+ = pad + "public " + vv[0] + " " + kk + ";\n";
+                citems[k] = true; 
                 
             }
             // .vala props.. 
