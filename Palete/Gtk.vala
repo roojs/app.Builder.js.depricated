@@ -428,8 +428,8 @@ namespace Palete {
             });
             return ret; 
         }
-        
+      */
         
     }
-);
+}
  
