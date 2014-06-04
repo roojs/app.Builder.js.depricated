@@ -484,24 +484,16 @@ namespace JsRender {
 				str+=  ");\n";
                         
             }
-            if (typeof(item['|init']) != 'undefined') {
-                
-                
-                    var v = item['|init'].split(/\/*--/);
-                    if (v.length > 1) {
-                        strbuilder("\n" + ipad + "// init method \n");            
-                         var vv = v[1].replace('*/', "");
-                         //print(JSON.stringify(vv));Seed.quit();
-                         vv = vv.replace(/^\n+/,'');
-                         vv = vv.replace(/\n+$/,'');
-                         vv = vv.replace(/\n/g,"\n" + ipad);
-                         strbuilder(ipad + vv  + "\n");
-                    }
+
+            if (item.get("init").length > 0) {
+                var vv = item.get("init").split("\n");
+				ret+= ipad + string.join("\n" + ipad, vv);
+				
             }
             
-            citems['|pack'] = true;
-            citems['|items'] = true;
-             citems['|init'] = true;
+            //citems['|pack'] = true;
+            //citems['|items'] = true;
+            //citems['|init'] = true;
             
             if (item.listeners) {
             //    print(JSON.stringify(item.listeners));Seed.quit();
