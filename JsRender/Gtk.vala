@@ -127,7 +127,7 @@ namespace JsRender {
             
             
             src += this.name + "=new XObject("+ this.mungeToString(data) + ");\n";
-            src += this.name + '.init();\n';
+            src += this.name + ".init();\n";
             // register it in the cache
             src += "XObject.cache['/" + this.name + "'] = " + this.name + ";\n";
             
@@ -198,7 +198,7 @@ namespace JsRender {
         string getHelpUrl(string cls)
         {
             return "http://devel.akbkhome.com/seed/" + cls + ".html";
-        },
+        }
         
         int vcnt = 0;
 
