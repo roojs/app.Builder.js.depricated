@@ -4,10 +4,10 @@
 
 public class JsRender.Node  {
     
-    GLib.List<Node> items; // child items..
+    public GLib.List<Node> items; // child items..
     
-    Gee.HashMap<string,string> props; // the properties..
-    Gee.HashMap<string,string> listeners; // the listeners..
+    public Gee.HashMap<string,string> props; // the properties..
+    public Gee.HashMap<string,string> listeners; // the listeners..
     public string  xvala_cls;
 	public string xvala_xcls; // 'Xcls_' + id;
     public string xvala_id; // item id or ""
