@@ -358,7 +358,7 @@ namespace JsRender {
              
             // ctor..
             ret+="\n" + ipad + "// ctor \n";
-            ret+= pad + "public " + xcls + "()\n" + pad + "{\n");
+            ret+= pad + "public " + xcls + "()\n" + pad + "{\n";
             
             // wrapped ctor..
             // this may need to look up properties to fill in the arguments..
