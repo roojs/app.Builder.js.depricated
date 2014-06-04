@@ -31,7 +31,7 @@ namespace Palete {
             //this.comments = { }; 
             // no parent...
         }
-        /*
+      
         load: function () {
                 
          
