@@ -9,7 +9,7 @@ public class JsRender.Node  {
     Gee.HashMap<string,string> props; // the properties..
     Gee.HashMap<string,string> listeners; // the listeners..
     
-  
+	string xvala_xcls;
     
     public bool is_array;
     
