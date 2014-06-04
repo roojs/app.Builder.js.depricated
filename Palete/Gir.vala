@@ -1,5 +1,5 @@
 
-// valac --pkg libxml-2.0 --pkg gee-1.0   --pkg json-glib-1.0  Gir.vala -o /tmp/Gir
+// valac @ --pkg gee-1.0   --pkg json-glib-1.0  Gir.vala -o /tmp/Gir
 public static int main (string[] args) {
     
     var g = new Palete.Gir("/usr/share/gir-1.0/Gtk-3.0.gir");
@@ -66,7 +66,7 @@ namespace Palete {
             var r = new Json.Object();
             r.set_string_member("nodetype", this.nodetype);
             r.set_string_member("name", this.name);
-            if (this.type.length) {
+            if (this.type.length > 0) {
                 r.set_string_member("type", this.type);
             }
             // is_arary / is_instance / is_varargs..
