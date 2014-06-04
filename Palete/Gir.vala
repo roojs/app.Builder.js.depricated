@@ -222,6 +222,7 @@ namespace Palete {
                 case "class":
                     var c = new GirObject("Class", parent.name + "." + n);
                     parent.classes.set(n, c);
+					parent.ns = parent.name;
                     c.parent = element->get_prop("parent");
 					if (c.parent == null) {
 						c.parent = "";
@@ -231,7 +232,8 @@ namespace Palete {
                 
                 case "interface":
                     var c = new GirObject("Interface", parent.name + "." + n);
-                    parent.classes.set(parent.name + "." + n, c);
+                    parent.classes.set(n, c);
+					parent.ns = parent.name;
                     c.parent = element->get_prop("parent");
 					if (c.parent == null) {
 						c.parent = "";
