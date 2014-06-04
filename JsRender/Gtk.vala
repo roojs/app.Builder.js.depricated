@@ -384,26 +384,18 @@ namespace JsRender {
 					if (pv.length < 1) {
 						// try and find the 'item'....
 						Node pvi = item.findProp(piter.get_key());
+						if (pvi == null) {
+							args.append("null"); // hopefully...
+							continue;
+						}
 						var var_id = "xxx%d" + argid++;
 						ret+= pad + "var "+ var_id + " = new "  + pvi.toNew() +"\n";
 						args.append(var_id);
-					}
+						continue;
+					} 
+					// got a string value..
+					args.append(this.valueTypeToString(pv, piter.getValue().type);
 					
-                    var nv = ctors[cls][i].split(':');
-                    
-                    if (typeof(item[nv[0]]) != 'undefined' && typeof(item[nv[0]]) != 'object' ) {
-                        citems[nv[0]] = true;
-                        args.push(JSON.stringify(item[nv[0]]));
-                        continue;
-                    }
-                    if (typeof(item['|' + nv[0]]) != 'undefined' && typeof(item['|' + nv[0]]) != 'object' ) {
-                        citems[nv[0]] = true;
-                        citems['|' + nv[0]] = true;
-                        args.push(item['|' + nv[0]]);
-                        continue;
-                    }
-                    args.push(nv.length > 1 ? nv[1] : 'null'); 
-                    
                 }
                 strbuilder(ipad + "this.el = new " + cls + "( "+ args.join(", ") + " );\n" );
 
