@@ -474,7 +474,7 @@ namespace JsRender {
         		var ci = item.items.nth_data(i);
                 string[] packing = ci.get("pack").length > 0 ? ci.get("pack").split(",") : { "add" };
                 
-                str + =ipad + "var child_" + i + " = new " + ci.xvala_xcls + "();\n";
+                str += ipad + "var child_" + i + " = new " + ci.xvala_xcls + "();\n";
                     
                 str+= ipad + "this.el." + packing[0] + " (  child_" + i + ".el " +
 				for (var ii=1;ii<packing.length; ii++) {
