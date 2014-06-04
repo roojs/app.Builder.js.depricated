@@ -539,7 +539,7 @@ namespace JsRender {
             str+= "\n" + pad + "// userdefined functions \n";  
             
             // user defined functions...
-            
+            /*
             for (var k in item) {
                 if (typeof(citems[k]) != 'undefined') {
                     strbuilder("\n" + pad + "// skip " + k + " - already used \n"); 
@@ -556,7 +556,7 @@ namespace JsRender {
                       strbuilder("\n" + pad + "// skip " + k + " - could not find seperator\n"); 
                     continue;
                 }
-                var vv = v[1].replace('*/', "");
+                var vv = v[1].replace('* /', "");
                 //print(JSON.stringify(vv));Seed.quit();
                 vv = vv.replace(/^\n+/,'');
                 vv = vv.replace(/\n+$/,'');
@@ -572,24 +572,20 @@ namespace JsRender {
                 
                 
             }
-            
+            */
             
             
             if (depth > 0) {
-                strbuilder(inpad + "}\n");
+                ret+=inpad + "}\n";
             }
+            for (var i = 0;i < item.items.length();i++) {
+				ret+= this.toValaItem(item.items.nth_data(i), 1); 
+			}
             
-            
-            // next loop throug children..
-            if (typeof(item.items) != 'undefined') {
-                for(var i =0;i<item.items.length;i++) {
-                    this.toValaItem(item.items[i], 1, strbuilder);
-                }
-            }
             if (depth < 1) {
-                strbuilder(inpad + "}\n");
+                ret+=inpad + "}\n";
             }
-            
+            return ret;
         }
         
         
