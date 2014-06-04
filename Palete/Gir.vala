@@ -46,7 +46,7 @@ namespace Palete {
 		{
             this.nodetype = nodetype;
             this.name = n;
-             
+            this.parent = "";
             this.type = "";
             this.is_array = false;
             this.is_instance = false;
@@ -77,6 +77,9 @@ namespace Palete {
             r.set_string_member("nodetype", this.nodetype);
             r.set_string_member("name", this.name);
             if (this.type.length > 0) {
+                r.set_string_member("type", this.type);
+            }
+			if (this.parent.length > 0) {
                 r.set_string_member("type", this.type);
             }
             // is_arary / is_instance / is_varargs..
