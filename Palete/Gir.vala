@@ -74,7 +74,7 @@ namespace Palete {
 		{
 			var gir = in_gir;
 			if (this.parent.length < 1 || this.is_overlaid) {
-				this.overlaid = true;
+				this.is_overlaid = true;
 				return;
 			}
 			//print(this.parent);
@@ -86,7 +86,7 @@ namespace Palete {
 				var picls = this.clsToObject(gir,this.implements.nth_data(i));
 				this.copyFrom(picls,true);
 			}
-			this.overlaid = true;
+			this.is_overlaid = true;
 			
 		}
 		public GirObject clsToObject(Gir in_gir, string in_pn)
