@@ -197,58 +197,10 @@ namespace Palete {
             // use introspection to get lists..
  
             var es = ename.split('.');
-			var gir
+			var gir = new Gir(es[0]);
 			
-		    
-            var pth = GI.Repository.get_search_path ();
-            
-            var gir_path = pth[0].replace(/lib\/girepository-1.0/, 'share\/gir-1.0');
-           
 
 			
-            imports.gi[es[0]];
-            var bi = gi.find_by_name(es[0], es[1]);
-            
-            if (!bi) {
-                print("COULND NOT FIND BY NAME");
-                return [];
-            }
-            var etype = bi.get_type();;
-            var meth = etype == GIRepository.InfoType.INTERFACE ?
-                [ 
-                    'interface_info_get_n_properties',
-                    'interface_info_get_property',
-                    'interface_info_get_n_signals',
-                    'interface_info_get_signal',
-                    'interface_info_get_n_methods',
-                    'interface_info_get_method'
-                ] : [ 
-                    'object_info_get_n_properties',
-                    'object_info_get_property',
-                    'object_info_get_n_signals',
-                    'object_info_get_signal',
-                    'object_info_get_n_methods',
-                    'object_info_get_method'
-                ]; 
-            
-            
-            this.proplist[ename] = {}
-            this.proplist[ename]['props'] = [];
-            this.proplist[ename]['events'] = [];
-            this.proplist[ename]['methods'] = [];
-            this.proplist[ename]['inherits']= [];
-            
-            var plist = this.proplist[ename]['props'] ;
-            var elist = this.proplist[ename]['events'];
-            var mlist = this.proplist[ename]['methods'];
-            var ilist = this.proplist[ename]['inherits'];
-             /*
-             we need...
-             p.name
-            p.type
-            p.desc
-            p.sig */
-            
             // properties.. -- and parent ones...!!!
             for (var i =0;i <  GIRepository[meth[0]](bi); i++) {
                 var prop = GIRepository[meth[1]](bi,i);  
