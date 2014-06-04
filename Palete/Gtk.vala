@@ -44,7 +44,7 @@ namespace Palete {
             // no parent...
         }
       
-        load: function () {
+        void load () {
                 
          
     		string data;
