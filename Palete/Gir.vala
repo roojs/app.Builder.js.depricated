@@ -92,10 +92,10 @@ namespace Palete {
 				
 				this.methods.set(iter.get_key(), iter.get_value());
             }
-            
-			
-
+          
 		}
+		
+		
 		
         public Json.Object toJSON()
         {
@@ -283,12 +283,14 @@ namespace Palete {
                 
                 case "constructor":
                     var c = new GirObject("Ctor",n);
+					c.ns = parent.ns;
                     parent.ctors.set(n,c);
                     parent  = c;
                     break;
                 
                 case "return-value":
                     var c = new GirObject("Return", "return-value");
+					c.ns = parent.ns;
                     parent.return_value = c;
                     parent =  c;
                     break;
