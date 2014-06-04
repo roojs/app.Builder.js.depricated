@@ -461,7 +461,7 @@ namespace JsRender {
 
 				
 				    
-                ret +=  ipad + "this.el." + p.get_key() + " = " + 
+                ret +=  ipad + "this.el." + pviter.get_key() + " = " + 
 							this.valueTypeToString(item.get(pviter.get_key()), type) + ";\n";
                     
                
