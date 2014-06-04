@@ -19,6 +19,7 @@ namespace Palete {
 
     public class GirObject: Object {
         public string name;
+		public string ns;
         public string type;
         public string nodetype;
         public string  package;
@@ -46,6 +47,7 @@ namespace Palete {
 		{
             this.nodetype = nodetype;
             this.name = n;
+			this.ns = "";
             this.parent = "";
             this.type = "";
             this.is_array = false;
@@ -67,7 +69,11 @@ namespace Palete {
 		public void  overlayParent(Gir gir)
 		{
 
-			//gir.classes.get(
+			if (this.parent.length < 1) {
+				return;
+			}
+			
+			gir.classes.get(
 
 		}
 		
@@ -227,7 +233,10 @@ namespace Palete {
                     var c = new GirObject("Interface", parent.name + "." + n);
                     parent.classes.set(parent.name + "." + n, c);
                     c.parent = element->get_prop("parent");
-                    parent =  c;
+					if (c.parent == null) {
+						c.parent = "";
+					}
+					parent =  c;
                     break;
                 
                 
