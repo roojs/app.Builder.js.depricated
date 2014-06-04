@@ -345,7 +345,7 @@ Gtk = XObject.define(
             // class xxx {   WrappedGtk  el; }
             strbuilder(inpad + "public class " + xcls + "\n" + inpad + "{\n");
             strbuilder(pad + "public " + cls + " el;\n");
-            if (depth == 1) {
+             if (!depth) {
                 
                 strbuilder(pad + "private static " + xcls + "  _this;\n\n");
             }
