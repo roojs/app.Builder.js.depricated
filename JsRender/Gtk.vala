@@ -316,7 +316,7 @@ namespace JsRender {
             
             var citems = {};
             
-            if (!depth) {
+            if (depth < 1) {
                 // Global Vars..
                 ret+= inpad + "public static " + xcls + "  " + this.name + ";\n\n";
                  
@@ -327,7 +327,7 @@ namespace JsRender {
             ret += inpad + "public class " + xcls + "\n" + inpad + "{\n";
             ret += pad + "public " + cls + " el;\n";
 
-			if (!depth) {
+			if (depth < 1) {
                 
                 ret += pad + "private static " + xcls + "  _this;\n\n";
             }
@@ -337,7 +337,7 @@ namespace JsRender {
                 
                 //public bool paused = false;
                 //public static StatusIconA statusicon;
-            if (!depth) {
+            if (depth < 1) {
                 //strbuilder(pad + "public static " + xcls + "  _this;\n");
                 for(var i=1;i < this.vitems.length; i++) {
                     if (this.vitems[i].xvala_id  !== false) {
