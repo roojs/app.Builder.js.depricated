@@ -281,7 +281,7 @@ namespace JsRender {
 
 			var id = item.get("id").length > 0 ? item.get("id") : ("%s%d".printg(item.get("xtype"), this.vcnt);
 
-			var props = this.palete.getPropertiesFor(cls, :"props");
+			var props = this.palete.getPropertiesFor(cls,  "props");
             
             
             
@@ -377,7 +377,9 @@ namespace JsRender {
             // this may need to look up properties to fill in the arguments..
             // introspection does not workk..... - as things like gtkmessagedialog
             
-            
+            var ctors =  this.palete.getPropertiesFor(cls, "ctors");
+
+			
             if (typeof(ctors[cls]) !== 'undefined') {
                 var args = [];
                 for(var i =0;i< ctors[cls].length;i++) {
