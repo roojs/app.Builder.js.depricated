@@ -276,9 +276,12 @@ namespace JsRender {
         
         toValaName : function(Node.item) {
             this.vcnt++;
-            var cls = this.toValaNS(item) + item.xtype;
-            var id = item.id ? item.id : (item.xtype + this.vcnt);
-            var props = this.palete.getPropertiesFor(cls, 'props');
+
+			var cls = this.toValaNS(item) + item.get("xtype");
+
+			var id = item.id ? item.id : (item.xtype + this.vcnt);
+
+			var props = this.palete.getPropertiesFor(cls, 'props');
             
             
             
