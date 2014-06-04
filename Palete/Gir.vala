@@ -392,6 +392,7 @@ namespace Palete {
                 
                 case "member":
                     var c = new GirObject("EnumMember",n);
+					c.ns = parent.ns;
                     c.value = element->get_prop("value");
                     parent.consts.set(n,c);
                     return;
