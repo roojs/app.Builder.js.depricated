@@ -292,10 +292,10 @@ namespace JsRender {
         {
         // print(JSON.stringify(item,null,4));
             var ret = "";
-            var inpad = string.nfill(depth+1, "    ");
+            var inpad = string.nfill((depth+1) *4 , ' ');
             
-            var pad = string.nfill(depth+2, "    ");
-            var ipad = string.nfill(depth+3, "    ");
+            var pad = string.nfill((depth+2)_ * 4, ' ');
+            var ipad = string.nfill((depth+3) *4, ' ');
             
             var cls = item.xvala_cls;
             
