@@ -63,6 +63,13 @@ namespace Palete {
             this.consts     = new Gee.HashMap<string,GirObject>();
             this.signals    = new Gee.HashMap<string,GirObject>();
         }
+
+		public void  overlayParent(Gir gir)
+		{
+			
+
+		}
+		
         public Json.Object toJSON()
         {
             var r = new Json.Object();
