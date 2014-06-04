@@ -345,6 +345,7 @@ namespace Palete {
                 
                 case "parameter":
                     var c = new GirObject("Param",n);
+					c.ns = parent.ns;
                     parent.params.set(n,c);
                     parent = c;
                     break;
@@ -352,12 +353,14 @@ namespace Palete {
                 case "property":
                 case "field":
                     var c = new GirObject("Prop",n);
+					c.ns = parent.ns;
                     parent.props.set(n,c);
                     parent = c;
                     break;
                 
                 case "function":
                     var c = new GirObject("Function",n);
+					c.ns = parent.ns;
                     parent.methods.set(n,c);
                     parent = c;
                     break;
