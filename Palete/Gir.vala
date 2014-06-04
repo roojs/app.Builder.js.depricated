@@ -110,7 +110,7 @@ namespace Palete {
 			this.inherits.append(pcls.
 			var iter = pcls.methods.map_iterator();
 			while(iter.next()) {
-                if (null == pcls.methods.get(iter.get_key())) {
+                if (null == this.methods.get(iter.get_key())) {
 					continue;
 				}
 				
@@ -118,13 +118,13 @@ namespace Palete {
             }	
 			iter = pcls.props.map_iterator();
 			while(iter.next()) {
-                if (null == pcls.props.get(iter.get_key())) {
+                if (null == this.props.get(iter.get_key())) {
 					continue;
 				}
 				
 				this.props.set(iter.get_key(), iter.get_value());
             }	
-			iter = this.signals.map_iterator();
+			iter = pcls.signals.map_iterator();
 			while(iter.next()) {
                 if (null == this.signals.get(iter.get_key())) {
 					continue;
