@@ -217,7 +217,7 @@ namespace JsRender {
         
         string toVala(bool testcompile)
         {
-            var ret = '';
+            var ret = "";
             testcompile = testcompile || false;
             
             this.vcnt = 0;
