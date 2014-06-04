@@ -305,10 +305,10 @@ namespace JsRender {
         {
         // print(JSON.stringify(item,null,4));
             
-            var inpad = string.nfill(deptnew Array( depth +1 ).join("    ");
+            var inpad = string.nfill(depth+1, "    ");
             
-            var pad = new Array( depth +2 ).join("    ");
-            var ipad = new Array( depth +3 ).join("    ");
+            var pad = string.nfill(depth+2, "    ");
+            var ipad = string.nfill(depth+3, "    ");
             
             var cls = item.xvala_cls;
             
