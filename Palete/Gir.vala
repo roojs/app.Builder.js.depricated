@@ -160,7 +160,7 @@ namespace Palete {
 
 			var gi = GI.Repository.get_default();
 		    var ver = gi.get_version(ns);
-		    var pth = GI.Repository.get_search_path ();
+		    var unowned pth = GI.Repository.get_search_path ();
 		    var gir_path = pth.nth_data(0).replace("/lib/girepository-1.0/", "/share/gir-1.0/");
 		   //console.log(fn);
 		    var file  = gir_path + "/" + ns + "-" + ver + ".gir";
