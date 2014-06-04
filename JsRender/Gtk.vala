@@ -348,14 +348,15 @@ namespace JsRender {
             }
             
             ret +="\n" + ipad + "// my vars\n";
+            var iter = item.props.map_iterator();
+    		while (iter.next()) {
+        		var k = iter.get_key();
+        		var vo = iter.get_value();
             
-            // iterate through props..
-            for (var k in item) {
                 if (k[0] != '.') {
-                   
                     continue;
                 }
-                if (k == '.ctor') {
+                if (k == ".ctor") {
                     continue; 
                 }
                 
