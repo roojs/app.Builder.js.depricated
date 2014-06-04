@@ -199,7 +199,7 @@ namespace Palete {
             var es = ename.split('.');
 			var gir = new Gir(es[0]);
 			
-
+			var cls = gir.classes.get(ename);
 			
             // properties.. -- and parent ones...!!!
             for (var i =0;i <  GIRepository[meth[0]](bi); i++) {
