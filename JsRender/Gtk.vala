@@ -476,7 +476,7 @@ namespace JsRender {
                 
                 str += ipad + "var child_" + i + " = new " + ci.xvala_xcls + "();\n";
                     
-                str+= ipad + "this.el." + packing[0] + " (  child_" + i + ".el " +
+                str+= ipad + "this.el." + packing[0] + " (  child_" + i + ".el ";
 				for (var ii=1;ii<packing.length; ii++) {
 					str+= ii > 1 ? ", " : "";
 					str+= packing[i];
