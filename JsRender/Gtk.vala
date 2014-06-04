@@ -397,7 +397,7 @@ namespace JsRender {
 					args.append(this.valueTypeToString(pv, piter.getValue().type);
 					
                 }
-                ret += ipad + "this.el = new " + cls + "( "+ sting.join(", ", args) + " );\n" ;
+                ret += ipad + "this.el = new " + cls + "( "+ string.join(", ", args) + " );\n" ;
 
             } else {
                 ret += ipad + "this.el = new " + cls + "();\n" ;
@@ -451,27 +451,19 @@ namespace JsRender {
 			while (pviter.next()) {
         		// skip items we have already handled..
         		if  (citems.get(pviter.get_key()) != null) {
-                    return;
+                    continue;
                 }
-                     
-                if (typeof(item[p.name]) != 'undefined' && typeof(item[p.name]) != 'object' ) {
-                    citems[p.name] = true;
+				if (item.get(pviter.get_key()).length < 1) {
+					continue;
+				}
+				
+                var type =  pviter.get_value().type;
+
+				
+				    
+                str +=  ipad + "this.el." + p.get_key() + " = " + 
+							this.valueTypeToString(item.get(pviter.get_key()), type) + ";\n");
                     
-                    
-                    strbuilder(ipad + "this.el." + p.name + " = " + JSON.stringify(item[p.name]) + ";\n");
-                    return;
-                }
-                if (typeof(item['|' + p.name]) != 'undefined' && typeof(item['|' + p.name]) != 'object' ) {
-                    citems['|' + p.name] = true;
-                    //if (p.ctor_only ) {
-                    //    strbuilder(ipad + "Object(" + p.name + " : " +  item['|' + p.name] + ");\n");
-                    //} else {
-                        strbuilder(ipad + "this.el." + p.name + " = " +  item['|' + p.name] + ";\n");
-                    //}
-                    return;
-                }
-               // got a property..
-               
                
             });
                 //code
