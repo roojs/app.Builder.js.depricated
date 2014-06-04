@@ -216,7 +216,7 @@ namespace JsRender {
         int vcnt = 0;
 
 		Palete palete;
-		GLib.List<string> vitems;
+		GLib.List<Node> vitems;
 		string xvala_xcls;
 		
         string toVala(bool testcompile)
@@ -231,7 +231,7 @@ namespace JsRender {
             
             this.palete  = new Palete.Palete.factory("Gtk");
             
-            this.vitems = new GLib.List<string>();
+            this.vitems = new GLib.List<Node>();
 
 			this.toValaName(this.tree);
            // print(JSON.stringify(item,null,4));Seed.quit();
@@ -286,9 +286,10 @@ namespace JsRender {
             
             
             item.xvala_cls = cls;
-            item.xvala_xcls = 'Xcls_' + id;
-            item.xvala_id = item.id ? item.id : false;
-            this.vitems.push(item);  
+            item.xvala_xcls = "Xcls_" + id;
+            item.xvala_id = item.get("id").length > 0  ? item.get("id") : "";
+			                                                       
+            this.vitems.append(item);  
             // loop children..
             if (typeof(item.items) == 'undefined') {
                 return;
