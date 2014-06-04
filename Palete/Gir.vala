@@ -42,7 +42,8 @@ namespace Palete {
         public Gee.HashMap<string,GirObject> consts;
         public Gee.HashMap<string,GirObject> signals;
         public string doc;
-        public GirObject(string nodetype, string n) {
+        public GirObject(string nodetype, string n)
+		{
             this.nodetype = nodetype;
             this.name = n;
              
