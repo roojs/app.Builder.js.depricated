@@ -376,7 +376,7 @@ namespace JsRender {
 
 				
                 var args = new GLib.List<string>();
-				var piter = item.paramset.params.map_iterator();
+				var piter = ctor_def.paramset.params.map_iterator();
     			while (piter.next()) {
 
 					// need piter.get_key(); -- string..
