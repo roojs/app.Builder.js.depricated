@@ -96,7 +96,7 @@ namespace Palete {
 
 			}
 			
-			return = gir.classes.get(pn);
+			return gir.classes.get(pn);
 
 			
 		}
