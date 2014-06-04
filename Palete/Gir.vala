@@ -81,7 +81,15 @@ namespace Palete {
 
 			}
 			
-			gir.classes.get(
+			gir.classes.get(pn);
+			//overlay...
+			var iter = map.map_iterator();
+			while(iter.next()) {
+                r.set_object_member(iter.get_key(), iter.get_value().toJSON());
+            }
+            return r
+
+			
 
 		}
 		
