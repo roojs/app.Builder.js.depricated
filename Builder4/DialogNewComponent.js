@@ -71,7 +71,7 @@ DialogNewComponent=new XObject({
                 
                 //var tmpl = this.project.loadFileOnly(DialogNewComponent.get('template').getValue());
                  
-                var nf = _this.project.create(dir + '/' + this.file.name + '.bjs');
+                var nf = _this.project.create(dir + "/" + this.file.name + ".bjs");
                 //for (var i in this.file) {
                 //    nf[i] = this.file[i];
                 //}
