@@ -400,7 +400,7 @@ namespace JsRender {
                 ret += ipad + "this.el = new " + cls + "( "+ sting.join(", ", args) + " );\n" ;
 
             } else {
-                strbuilder(ipad + "this.el = new " + cls + "();\n" );
+                ret += ipad + "this.el = new " + cls + "();\n" ;
 
             }
             //var meths = this.palete.getPropertiesFor(item['|xns'] + '.' + item.xtype, 'methods');
