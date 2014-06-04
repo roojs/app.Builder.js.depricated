@@ -86,10 +86,10 @@ namespace Palete {
  
 			
 		}
-		public GirObject parentClass(Gir gir)
+		public GirObject parentClass(Gir in_gir)
 		{
 			var pn = this.parent;
-			
+			var gir = in_gir;
 			if (this.parent.contains(".")) {
 				gir =  Gir.factory(parent.split(".")[0]);
 				pn = parent.split(".")[1];
