@@ -10,7 +10,10 @@ public class JsRender.Node  {
     Gee.HashMap<string,string> listeners; // the listeners..
     
 	string xvala_xcls;
-    
+         
+	string xvala_xcls; // 'Xcls_' + id;
+    string xvala_id; // item id or ""
+            
     public bool is_array;
     
     public Node()
