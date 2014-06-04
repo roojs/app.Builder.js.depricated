@@ -366,6 +366,8 @@ namespace JsRender {
             
             var ctors =  this.palete.getPropertiesFor(cls, "ctors");
 			
+			// ctors is going to return 'new' or ... ??
+
 			
             if (typeof(ctors[cls]) !== 'undefined') {
                 var args = [];
