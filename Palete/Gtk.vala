@@ -4,10 +4,10 @@ namespace Palete {
 	{
 		GLib.List<string> left;
 		GLib.List<string> right;
-		public GtkUsage(GLib.List<string> left, GLib.List<string> right)
+		public GtkUsage(GLib.List<string> ileft, GLib.List<string> oright)
 		{
-			this.left = left;
-			this.right=  right;
+			this.left = ileft;
+			this.right=  iright;
 		}
 	}
 
