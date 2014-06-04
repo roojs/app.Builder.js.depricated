@@ -20,6 +20,8 @@ public static Xcls_AboutDialog1  About;
 public class Xcls_AboutDialog1
 {
     public Gtk.AboutDialog el;
+    private static Xcls_AboutDialog1  _this;
+
 
         // my vars
 
