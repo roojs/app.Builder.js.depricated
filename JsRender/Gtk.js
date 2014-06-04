@@ -337,7 +337,6 @@ Gtk = XObject.define(
             if (!depth) {
                 // Global Vars..
                 strbuilder(inpad + "public static " + xcls + "  " + this.name + ";\n\n");
-                strbuilder(inpad + "private static " + xcls + "  _this;\n\n");
                  
                 
             }
@@ -346,6 +345,11 @@ Gtk = XObject.define(
             // class xxx {   WrappedGtk  el; }
             strbuilder(inpad + "public class " + xcls + "\n" + inpad + "{\n");
             strbuilder(pad + "public " + cls + " el;\n");
+            if (depth == 1) {
+                
+                strbuilder(pad + "private static " + xcls + "  _this;\n\n");
+            }
+            
             
             // properties??
                 
