@@ -85,16 +85,12 @@ namespace Palete {
                     left.append(d.strip());
                     return;
                 }
-                right.push(d.replace(/\s+/g, ''));
+                right.append(d.strip());
                 //Seed.quit();
                
             }); 
-            if (left.length ){
-                        
-                cfg.push({
-                    left : left,
-                    right: right
-                });
+            if (left.length > 0 ){
+                  cfg.append(new GtkUsage( left, right));
             }
             this.map = cfg;
              
