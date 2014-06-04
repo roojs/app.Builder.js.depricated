@@ -80,15 +80,15 @@ namespace Palete {
 			pcls.overlayParent(gir);
 			this.copyFrom(pcls,false);
 			for(var i=0; i < this.implements.length(); i++) {
-				var picls = this.parentClass(gir);
+				var picls = this.parentClass(gir,this.implements.nth_data(i));
 				this.copyFrom(picls,true);
 			}
  
 			
 		}
-		public GirObject parentClass(Gir in_gir)
+		public GirObject parentClass(Gir in_gir, string in_pn)
 		{
-			var pn = this.parent;
+			var pn = in_pn;
 			var gir = in_gir;
 			if (this.parent.contains(".")) {
 				gir =  Gir.factory(parent.split(".")[0]);
