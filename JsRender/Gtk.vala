@@ -376,8 +376,15 @@ namespace JsRender {
 
 				
                 var args = new GLib.List<string>();
-                for(var i =0;i< ctors[cls].length;i++) {
-                    
+				var piter = item.paramset.params.map_iterator();
+    			while (piter.next()) {
+
+					// need piter.get_key(); -- string..
+					var pv = item.get(piter.get_key());
+					if (pv.length < 1) {
+						// try and find the 'item'....
+					}
+					
                     var nv = ctors[cls][i].split(':');
                     
                     if (typeof(item[nv[0]]) != 'undefined' && typeof(item[nv[0]]) != 'object' ) {
