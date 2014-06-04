@@ -115,7 +115,7 @@ namespace JsRender {
             els.push('xtype: '+ xtype);
         },
         */
-        /*
+      
         public string toSource()
         {
         
