@@ -171,18 +171,18 @@ namespace JsRender {
             print("WRITE : " + fn);
             FileUtils.put_contents(fn, this.toSource());
             
-            return fn;
         }
         
-        saveVala: function()
+       void  saveVala()
         {
              
-            var fn = GLib.path_get_dirname(this.path) + '/' + this.name + '.vala';
+            var fn = GLib.Path.get_dirname(this.path) + "/" + this.name + ".vala";
             print("WRITE : " + fn);
+			FileUtils.put_contents(fn, this.toVala());
             File.write(fn, this.toVala());
             
-            return fn;
-        },
+        }
+		/*
         valaCompileCmd : function()
         {
             
@@ -205,7 +205,7 @@ namespace JsRender {
              
             
         },
-        
+        */
         
    
         getHelpUrl : function(cls)
