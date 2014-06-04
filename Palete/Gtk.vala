@@ -1,9 +1,14 @@
 namespace Palete {
 
-	class GtkUsage : Object 
+	public class GtkUsage : Object 
 	{
 		GLib.List<string> left;
-		GLib.List<string> right;
+		GLib.List<string> right;\
+		public GtkUsage(GLib.List<string> left, GLib.List<string> right)
+		{
+			this.left = left;
+			this.right=  right;
+		}
 	}
 
 	
@@ -42,27 +47,31 @@ namespace Palete {
                 
          
     		string data;
-            var data = FileUtils.get_contents("/usr/share/appBuilder/GtkUsage.txt", data);
+            var raw  = FileUtils.get_contents("/usr/share/appBuilder/GtkUsage.txt", data);
           // print(data);
-            data  = data.split("\n");
+            var data  = data.split("\n");
             var state = 0;
-            var cfg = [];
-            var left = [];
-            var right = [];
-            
-            data.forEach( function(d) {
-                if (!d.length || d.match(/^\s+$/) || d.match(/^\s*\//)) { //empty
-                    return;
+            var cfg = new GLib.List<GtkUsage>();
+            var left = new GLib.List<string>();
+            var right = new GLib.List<string>();
+
+			for (var i = 0; i < data.length; i++) {
+				var d = data[0];
+				if (
+					d.length < 1
+				    ||
+				     Regex.match_simple ("^\\s+$", d)
+				    ||
+					Regex.match_simple ("^\\s*/", d)
+			     ){
+                    continue;
                 }
-                if (d.match(/^left:/)) { 
+				
+                if (Regex.match_simple ("^left:", d)) { 
                     state = 1;
-                    if (left.length ){
+                    if (left.length() > 0 ){
                         
-                        cfg.push({
-                            left : left,
-                            right: right
-                        });
-                        }
+                        cfg.append(new GtkUsage( left, right));
                     left = [];
                     right = [];
                     return;
