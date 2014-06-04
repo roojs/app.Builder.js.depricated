@@ -450,7 +450,7 @@ namespace JsRender {
 			var pviter = props.map_iterator();
 			while (pviter.next()) {
         		// skip items we have already handled..
-        		if  (citems.get(pviter.get_key()) != null) {
+        		if  (!(citems.get(pviter.get_key()) == null)) {
                     continue;
                 }
 				if (item.get(pviter.get_key()).length < 1) {
