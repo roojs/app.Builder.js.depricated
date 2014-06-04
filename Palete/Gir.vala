@@ -32,7 +32,8 @@ namespace Palete {
         public bool  is_varargs;
         public  string parent;
         public  string value;
-            
+
+		bool is_overlaid;
         public Gee.HashMap<string,GirObject> params;
         public GLib.List<string> implements;
 		public GLib.List<string> inherits; // full list of all classes and interfaces...
@@ -66,12 +67,14 @@ namespace Palete {
             this.props      = new Gee.HashMap<string,GirObject>();
             this.consts     = new Gee.HashMap<string,GirObject>();
             this.signals    = new Gee.HashMap<string,GirObject>();
+			this.is_overlaid = false;
         }
 
 		public void  overlayParent(Gir in_gir)
 		{
 			var gir = in_gir;
 			if (this.parent.length < 1) {
+				this.overlaid = true;
 				return;
 			}
 			//print(this.parent);
@@ -83,7 +86,7 @@ namespace Palete {
 				var picls = this.clsToObject(gir,this.implements.nth_data(i));
 				this.copyFrom(picls,true);
 			}
- 
+			this.overlaid = true;
 			
 		}
 		public GirObject clsToObject(Gir in_gir, string in_pn)
