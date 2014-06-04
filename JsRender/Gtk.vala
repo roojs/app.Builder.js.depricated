@@ -265,18 +265,18 @@ namespace JsRender {
             
         }
         
-        toValaNS : function(Node item)
+        string toValaNS : function(Node item)
         {
             var ns = item.get("|xns") ;
             if (ns == "GtkSource") {
                 return "Gtk.Source."
             }
-            return ns + '.';
+            return ns + ".";
         }
         
-        toValaName : function(Node.item) {
+        string  toValaName : function(Node.item) {
             this.vcnt++;
-
+			var ret = "";
 			var cls = this.toValaNS(item) + item.get("xtype");
 
 			var id = item.get("id").length > 0 ? item.get("id") : ("%s%d".printg(item.get("xtype"), this.vcnt);
@@ -291,10 +291,11 @@ namespace JsRender {
 			                                                       
             this.vitems.append(item);  
             // loop children..
-            if (typeof(item.items) == 'undefined') {
+			                                                       
+            if (item.items.length() < 1) {
                 return;
             }
-            for(var i =0;i<item.items.length;i++) {
+            for(var i =0;i<item.items.length();i++) {
                 this.toValaName(item.items[i]);
             }
           
