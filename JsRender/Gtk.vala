@@ -495,7 +495,7 @@ namespace JsRender {
             //citems['|items'] = true;
             //citems['|init'] = true;
             
-            if (item.listeners) {
+            if (item.listeners.size > 0) {
             //    print(JSON.stringify(item.listeners));Seed.quit();
             
                 strbuilder("\n" + ipad + "// listeners \n");  
