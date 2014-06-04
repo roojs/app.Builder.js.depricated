@@ -110,7 +110,15 @@ namespace Palete {
 				
 				this.methods.set(iter.get_key(), iter.get_value());
             }	
-
+			iter = this.props.map_iterator();
+			while(iter.next()) {
+                if (null == this.props.get(iter.get_key())) {
+					continue;
+				}
+				
+				this.props.set(iter.get_key(), iter.get_value());
+            }	
+			 
 		}
 		
         public Json.Object toJSON()
