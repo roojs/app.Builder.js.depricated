@@ -72,16 +72,17 @@ namespace Palete {
                     if (left.length() > 0 ){
                         
                         cfg.append(new GtkUsage( left, right));
-                    left = [];
-                    right = [];
-                    return;
+					}
+                    left = new GLib.List<string>();
+        			right = new GLib.List<string>();
+                    continue;
                 }
-                if (d.match(/^right:/)) { 
+                 if (Regex.match_simple ("^right:", d)) { 
                     state = 2;
-                    return;
+                    continue;
                 }
                 if (state == 1) {
-                    left.push(d.replace(/\s+/g, ''));
+                    left.append(d.replace(/\s+/g, ''));
                     return;
                 }
                 right.push(d.replace(/\s+/g, ''));
