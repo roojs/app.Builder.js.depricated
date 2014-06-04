@@ -320,16 +320,16 @@ namespace JsRender {
                 // Global Vars..
                 ret+= inpad + "public static " + xcls + "  " + this.name + ";\n\n";
                  
-                
             }
             
             // class header..
             // class xxx {   WrappedGtk  el; }
-            strbuilder(inpad + "public class " + xcls + "\n" + inpad + "{\n");
-            strbuilder(pad + "public " + cls + " el;\n");
-             if (!depth) {
+            ret += inpad + "public class " + xcls + "\n" + inpad + "{\n";
+            ret += pad + "public " + cls + " el;\n";
+
+			if (!depth) {
                 
-                strbuilder(pad + "private static " + xcls + "  _this;\n\n");
+                ret += pad + "private static " + xcls + "  _this;\n\n";
             }
             
             
