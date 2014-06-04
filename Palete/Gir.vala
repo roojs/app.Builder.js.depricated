@@ -91,6 +91,14 @@ namespace Palete {
  
 			
 		}
+		public GirObject parentClass(Gir gir)
+		{
+			
+
+			
+		}
+
+		
 		pubic void copyFrom(GirObject pcls, bool is_interface) 
 		{
 			var iter = this.methods.map_iterator();
