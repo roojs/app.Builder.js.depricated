@@ -200,31 +200,12 @@ namespace Palete {
 			var gir = new Gir(es[0]);
 			
 			var cls = gir.classes.get(ename);
+
+			cls.parseProps();
+			cls.parseSignals(); // ?? needed for add handler..
+
 			
-            // properties.. -- and parent ones...!!!
-            for (var i =0;i <  GIRepository[meth[0]](bi); i++) {
-                var prop = GIRepository[meth[1]](bi,i);  
-                var n_original =  prop.get_name();
-                
-                var flags =  GIRepository.property_info_get_flags(prop); // check for readonly..
-                
-                
-                var ty = this.typeToName(GIRepository.property_info_get_type(prop));
-                var flags = GIRepository.property_info_get_flags(prop);
-                print (n_original +":"+ ty);
-                if (ty === false) {
-                    continue;
-                }
-                var add = {
-                     name :  n_original.replace(/\-/g, '_'),
-                     type :  ty,
-                     desc : this.doc(ename + '.' + n_original),
-                     sig : '',
-                     ctor_only : (flags  & GObject.ParamFlags.CONSTRUCT_ONLY) > 0
-                }
-                plist.push(add)
-            }
-           
+            // 
            
            
            
