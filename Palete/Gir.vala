@@ -305,6 +305,7 @@ namespace Palete {
                 */
                 case "signal": // Glib:signal
                     var c = new GirObject("Signal",n);
+					c.ns = parent.ns;
                     parent.signals.set(n,c);
                     parent = c;
                     break;
