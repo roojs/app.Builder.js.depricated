@@ -468,10 +468,11 @@ namespace JsRender {
             });
                 //code
             // add all the child items..
-            if (typeof(item.items) != 'undefined') {
-                for(var i =0;i<item.items.length;i++) {
-                    var ci = item.items[i];
-                    var packing = ci.pack ? ci.pack.split(',') : [ 'add' ];
+
+
+            for(var i =0;i<item.items.length();i++) {
+        		var ci = item.items.nth_data(i);
+                var packing = ci.pack ? ci.pack.split(',') : [ 'add' ];
                     var pack = packing.shift();
                     strbuilder(ipad + "var child_" + i + " = new " + ci.xvala_xcls + "();\n" )
                     
