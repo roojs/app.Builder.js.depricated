@@ -100,7 +100,7 @@ namespace Palete {
         string doc(string what) {
             var ns = what.split(".")[0];
             var gir =  Gir.factory(ns);
-			return = gir.doc(what);
+			return   gir.doc(what);
 			
             //return typeof(this.comments[ns][what]) == 'undefined' ?  '' : this.comments[ns][what];
         }
@@ -138,7 +138,7 @@ namespace Palete {
 					return cls.signals;
 				case "methods":
 					return cls.methods;
-				case "ctors"
+				case "ctors":
 					return cls.ctors;
 				default:
 					return null;
