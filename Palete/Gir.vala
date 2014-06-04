@@ -337,6 +337,7 @@ namespace Palete {
                 
                 case "instance-parameter":
                     var c = new GirObject("Param",n);
+					c.ns = parent.ns;
                     c.is_instance = true;
                     parent.params.set(n,c);
                     parent = c;
