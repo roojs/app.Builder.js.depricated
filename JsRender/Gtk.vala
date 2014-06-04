@@ -461,7 +461,7 @@ namespace JsRender {
 
 				
 				    
-                str +=  ipad + "this.el." + p.get_key() + " = " + 
+                ret +=  ipad + "this.el." + p.get_key() + " = " + 
 							this.valueTypeToString(item.get(pviter.get_key()), type) + ";\n";
                     
                
@@ -474,14 +474,14 @@ namespace JsRender {
         		var ci = item.items.nth_data(i);
                 string[] packing = ci.get("pack").length > 0 ? ci.get("pack").split(",") : { "add" };
                 
-                str += ipad + "var child_" + i + " = new " + ci.xvala_xcls + "();\n";
+                ret += ipad + "var child_" + i + " = new " + ci.xvala_xcls + "();\n";
                     
-                str+= ipad + "this.el." + packing[0] + " (  child_" + i + ".el ";
+                ret+= ipad + "this.el." + packing[0] + " (  child_" + i + ".el ";
 				for (var ii=1;ii<packing.length; ii++) {
-					str+= ii > 1 ? ", " : "";
-					str+= packing[i];
+					ret+= ii > 1 ? ", " : "";
+					ret+= packing[i];
 				}	   
-				str+=  ");\n";
+				ret+=  ");\n";
                         
             }
 
@@ -533,10 +533,10 @@ namespace JsRender {
             
             
             // end ctor..
-            str+=pad + "}\n";
+            ret+=pad + "}\n";
             
             
-            str+= "\n" + pad + "// userdefined functions \n";  
+            ret+= "\n" + pad + "// userdefined functions \n";  
             
             // user defined functions...
             /*
