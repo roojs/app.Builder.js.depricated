@@ -17,11 +17,11 @@ static int main (string[] args) {
 
 public static Xcls_DialogNewComponent  DialogNewComponent;
 
-private static Xcls_DialogNewComponent  _this;
-
 public class Xcls_DialogNewComponent
 {
     public Gtk.Dialog el;
+    private static Xcls_DialogNewComponent  _this;
+
     public Xcls_name name;
     public Xcls_title title;
     public Xcls_region region;
@@ -54,11 +54,11 @@ public class Xcls_DialogNewComponent
         this.el.add_action_widget (  child_2.el , 1 );
 
         // listeners 
-        this.el.delete_event.connect( function (self, event) => {
+        this.el.delete_event.connect(  (self, event) => {
             this.el.hide();
             return true;
         } );
-        this.el.response.connect( function (self, response_id) => {
+        this.el.response.connect(  (self, response_id) => {
         	if (response_id < 1) { // cancel!
                     this.el.hide();
                     return;
@@ -122,7 +122,7 @@ public class Xcls_DialogNewComponent
                     DialogNewComponent.success(_this.project, nf);
                 }
         } );
-        this.el.show.connect( function (self) => {
+        this.el.show.connect(  (self) => {
           this.el.show_all();
         } );
     }
