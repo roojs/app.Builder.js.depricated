@@ -296,10 +296,10 @@ namespace JsRender {
                 return;
             }
             for(var i =0;i<item.items.length();i++) {
-                this.toValaName(item.items[i]);
+                ret += this.toValaName(item.items[i]);
             }
-          
-        },
+			return ret;          
+        }
         
         toValaItem : function(item, depth, strbuilder)
         {
