@@ -261,7 +261,7 @@ namespace JsRender {
             return ns + ".";
         }
         
-        void  toValaName(Node.item) {
+        void  toValaName(Node item) {
             this.vcnt++;
 
 			var cls = this.toValaNS(item) + item.get("xtype");
