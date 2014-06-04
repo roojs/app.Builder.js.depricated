@@ -349,7 +349,7 @@ namespace JsRender {
             
             ret +="\n" + ipad + "// my vars\n";
             
-            
+            // iterate through props..
             for (var k in item) {
                 if (k[0] != '.') {
                    
