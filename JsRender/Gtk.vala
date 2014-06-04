@@ -178,8 +178,8 @@ namespace JsRender {
              
             var fn = GLib.Path.get_dirname(this.path) + "/" + this.name + ".vala";
             print("WRITE : " + fn);
-			FileUtils.put_contents(fn, this.toVala());
-            File.write(fn, this.toVala(false));
+			FileUtils.put_contents(fn, this.toVala(false));
+            
             
         }
 		/*
