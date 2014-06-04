@@ -197,7 +197,7 @@ namespace Palete {
             // use introspection to get lists..
  
             var es = ename.split('.');
-			var gir = new Gir(es[0]);
+			var gir = Gir.factory(es[0]);
 			
 			var cls = gir.classes.get(ename);
 
