@@ -383,6 +383,8 @@ namespace JsRender {
 					var pv = item.get(piter.get_key());
 					if (pv.length < 1) {
 						// try and find the 'item'....
+						var pvi = item.findProp(piter.get_key());
+						
 					}
 					
                     var nv = ctors[cls][i].split(':');
