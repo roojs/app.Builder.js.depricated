@@ -384,7 +384,7 @@ namespace JsRender {
 					if (pv.length < 1) {
 						// try and find the 'item'....
 						Node pvi = item.findProp(piter.get_key());
-						
+						ret+= pad + "var xxxx = new "  + pvi.toNew() +"\n"; 
 					}
 					
                     var nv = ctors[cls][i].split(':');
@@ -421,7 +421,7 @@ namespace JsRender {
             } else {
                 if (item.xvala_id !== false) {
                     strbuilder(ipad + "_this." + item.xvala_id  + " = this;\n");
-                   
+                    
                 }
                 
                 
