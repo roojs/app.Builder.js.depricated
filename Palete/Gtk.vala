@@ -3,7 +3,7 @@ namespace Palete {
 	public class GtkUsage : Object 
 	{
 		GLib.List<string> left;
-		GLib.List<string> right;\
+		GLib.List<string> right;
 		public GtkUsage(GLib.List<string> left, GLib.List<string> right)
 		{
 			this.left = left;
