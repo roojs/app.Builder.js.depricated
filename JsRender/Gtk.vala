@@ -372,7 +372,7 @@ namespace JsRender {
 			var ctor_def = ctors.get(ctor);
 			
 
-			if (ctor_def.paramset.params.size > 0) {
+			if (ctor_def.paramset != null)  {
 
 				
                 var args = new GLib.List<string>();
