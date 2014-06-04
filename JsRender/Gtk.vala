@@ -154,7 +154,7 @@ namespace JsRender {
             base.save();
             this.saveJS();
             this.saveVala();
-        },
+        }
         
         /** 
          *  saveJS
@@ -162,17 +162,17 @@ namespace JsRender {
          * save as a javascript file.
          * why is this not save...???
          * 
-         * 
+         */ 
           
-        saveJS: function()
+        void saveJS()
         {
              
-            var fn = GLib.path_get_dirname(this.path) + '/' + this.name + '.js';
+            var fn = GLib.Path.get_dirname(this.path) + "/" + this.name + ".js";
             print("WRITE : " + fn);
-            File.write(fn, this.toSource());
+            FileUtils.put_contents(fn, this.toSource());
             
             return fn;
-        },
+        }
         
         saveVala: function()
         {
