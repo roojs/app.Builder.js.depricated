@@ -188,10 +188,12 @@ namespace Palete {
         {
             //print("Loading for " + ename);
             
-            if (typeof(this.proplist[ename]) != 'undefined') {
+
+
+			// if (typeof(this.proplist[ename]) != 'undefined') {
                 //print("using cache");
-                return this.proplist[ename][type];
-            }
+             //   return this.proplist[ename][type];
+            //}
             // use introspection to get lists..
             var gi = GIRepository.Repository.get_default();
             var es = ename.split('.');
