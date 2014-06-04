@@ -27,14 +27,15 @@ namespace Palete {
 
 
     public class Gtk : Palete {
-
-
+		
+		GLib.List<GtkUsage> map;
         public Gtk()
         {
             this.name = "Gtk";
 
-            //this.load();
+            
             base();
+			this.load();
             // various loader methods..
               //this.map = [];
             //this.load();
@@ -94,7 +95,7 @@ namespace Palete {
             }
             this.map = cfg;
              
-        },
+        }
         
         
         commentLoad : function(ns)
