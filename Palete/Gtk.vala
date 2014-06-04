@@ -207,66 +207,10 @@ namespace Palete {
 			//cls.parseConstructors(); // ?? needed for ??..
 
 			cls.overlayParent(gir);
-			cls.overlayInterfaces(gir);
+			//cls.overlayInterfaces(gir);
             
             
-            
-            
-            
-            
-            if (etype == GIRepository.InfoType.INTERFACE ) {
-               // print("SKIPPING PARENT - it's an interface?!?!");
-                  return;
-            }
-            
-            // parent!!?!!?
-            var pi = GIRepository.object_info_get_parent(bi);
-            
-            if (pi) {
-                
-                   
-                var pname = pi.get_namespace() + '.' + pi.get_name();
-                this.getPropertiesFor(pname, 'props');
-                
-                
-                elist.push.apply(elist,this.proplist[pname]['events']);
-                plist.push.apply(plist,this.proplist[pname]['props']);
-                ilist.push(pname);
-                ilist.push.apply(ilist,this.proplist[pname]['inherits']);
-                
-                this.overrides(mlist, this.proplist[pname]['methods']);
-                
-                
-            } else {
-                print("NO PARENT FOUND?");
-            }
-            
-            // implements needs to be more carefull as it could add dupes..
-            // use the parent implements list to ensure no dupes..
-            for(var i =0; i < GIRepository.object_info_get_n_interfaces(bi); i++) {
-                 
-                var prop = GIRepository.object_info_get_interface(bi,i);
-                var iface = prop.get_namespace() +'.'+ prop.get_name();
-                if ( ilist.indexOf(iface) > -1) {
-                    continue;
-                }
-                this.getPropertiesFor(iface, 'props'); // just load one of them..
-                ilist.push(iface);
-                
-                elist.push.apply(elist,this.proplist[iface]['events']);
-                plist.push.apply(plist,this.proplist[iface]['props']);
-                this.overrides(mlist, this.proplist[pname]['methods']);
-            }
-            function sfunc(a,b) {
-                if (a.name == b.name) return 0;
-                return a.name > b.name ? 1 : -1
-            }
-            plist.sort(sfunc);
-            elist.sort(sfunc);
-            mlist.sort(sfunc);
-            
-            return this.proplist[ename][type];
-            
+             
         }
 
         /*
