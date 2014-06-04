@@ -304,7 +304,7 @@ namespace JsRender {
         string toValaItem(Node item, int depth)
         {
         // print(JSON.stringify(item,null,4));
-            
+            var ret = "";
             var inpad = string.nfill(depth+1, "    ");
             
             var pad = string.nfill(depth+2, "    ");
@@ -318,7 +318,7 @@ namespace JsRender {
             
             if (!depth) {
                 // Global Vars..
-                strbuilder(inpad + "public static " + xcls + "  " + this.name + ";\n\n");
+                ret+= inpad + "public static " + xcls + "  " + this.name + ";\n\n";
                  
                 
             }
