@@ -76,8 +76,8 @@ namespace Palete {
 			}
 			//print(this.parent);
 
-			var pcls = this.parentClass(gir);
-			pcls.overlayParent(gir);
+			var pcls = this.clsToObject(gir, this.parent);
+			pcls.overlayParent(gir, );
 			this.copyFrom(pcls,false);
 			for(var i=0; i < this.implements.length(); i++) {
 				var picls = this.parentClass(gir,this.implements.nth_data(i));
@@ -86,7 +86,7 @@ namespace Palete {
  
 			
 		}
-		public GirObject parentClass(Gir in_gir, string in_pn)
+		public GirObject clsToObject(Gir in_gir, string in_pn)
 		{
 			var pn = in_pn;
 			var gir = in_gir;
