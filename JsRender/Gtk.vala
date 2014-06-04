@@ -394,7 +394,7 @@ namespace JsRender {
 						continue;
 					} 
 					// got a string value..
-					args.append(this.valueTypeToString(pv, piter.getValue().type);
+					args.append(this.valueTypeToString(pv, piter.getValue().type));
 					
                 }
                 ret += ipad + "this.el = new " + cls + "( "+ string.join(", ", args) + " );\n" ;
@@ -432,7 +432,7 @@ namespace JsRender {
                 }
                 var kk = k.substring(1);
                 var v = item.get(k);
-                var vv = v.split(:);
+                var vv = v.split(":");
                 if (vv.length < 2) {
                     continue;
                 }
