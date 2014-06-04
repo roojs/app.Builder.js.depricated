@@ -447,10 +447,10 @@ namespace JsRender {
             
             
 
-					
-            props.forEach(function(p) {
-               
-                if (typeof(citems[p.name]) != 'undefined') {
+			var pviter = props.map_iterator();
+			while (pviter.next()) {
+        		// skip items we have already handled..
+        		if  (citems.get(pviter.get_key()) != null) {
                     return;
                 }
                      
