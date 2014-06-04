@@ -263,7 +263,7 @@ namespace JsRender {
             
             return ret;
             
-        },
+        }
         
         toValaNS : function(Node item)
         {
@@ -272,9 +272,9 @@ namespace JsRender {
                 return "Gtk.Source."
             }
             return ns + '.';
-        },
+        }
         
-        toValaName : function(item) {
+        toValaName : function(Node.item) {
             this.vcnt++;
             var cls = this.toValaNS(item) + item.xtype;
             var id = item.id ? item.id : (item.xtype + this.vcnt);
@@ -296,7 +296,6 @@ namespace JsRender {
           
         },
         
-        
         toValaItem : function(item, depth, strbuilder)
         {
         // print(JSON.stringify(item,null,4));
@@ -315,7 +314,6 @@ namespace JsRender {
             if (!depth) {
                 // Global Vars..
                 strbuilder(inpad + "public static " + xcls + "  " + this.name + ";\n\n");
-                strbuilder(inpad + "private static " + xcls + "  _this;\n\n");
                  
                 
             }
@@ -324,6 +322,11 @@ namespace JsRender {
             // class xxx {   WrappedGtk  el; }
             strbuilder(inpad + "public class " + xcls + "\n" + inpad + "{\n");
             strbuilder(pad + "public " + cls + " el;\n");
+             if (!depth) {
+                
+                strbuilder(pad + "private static " + xcls + "  _this;\n\n");
+            }
+            
             
             // properties??
                 
@@ -483,7 +486,7 @@ namespace JsRender {
                     var v = item['|init'].split(/\/*--/);
                     if (v.length > 1) {
                         strbuilder("\n" + ipad + "// init method \n");            
-                         var vv = v[1].replace('*' +'/', "");
+                         var vv = v[1].replace('*/', "");
                          //print(JSON.stringify(vv));Seed.quit();
                          vv = vv.replace(/^\n+/,'');
                          vv = vv.replace(/\n+$/,'');
@@ -507,7 +510,7 @@ namespace JsRender {
                     var v = item.listeners[k].split(/\/*--/);
                     if (v.length < 2) {
                         var vv = v[0].replace(/^function/, '');
-                        vv = v[0].replace(/\) \{/, ') => {');
+                        vv = vv.replace(/\) \{/, ') => {');
                         vv = vv.replace(/^\n+/,'');
                         vv = vv.replace(/\n+$/,'');
                         vv = vv.replace(/\n/g,"\n" + ipad);
@@ -518,7 +521,7 @@ namespace JsRender {
                         
                         //continue;
                     } else { 
-                        var vv = v[1].replace('*' + '/', "");
+                        var vv = v[1].replace('*/', "");
                         //print(JSON.stringify(vv));Seed.quit();
                         vv = vv.replace(/^\n+/,'');
                         vv = vv.replace(/\n+$/,'');
@@ -556,7 +559,7 @@ namespace JsRender {
                       strbuilder("\n" + pad + "// skip " + k + " - could not find seperator\n"); 
                     continue;
                 }
-                var vv = v[1].replace('*' + '/', "");
+                var vv = v[1].replace('*/', "");
                 //print(JSON.stringify(vv));Seed.quit();
                 vv = vv.replace(/^\n+/,'');
                 vv = vv.replace(/\n+$/,'');
