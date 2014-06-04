@@ -83,11 +83,11 @@ namespace Palete {
 			
 			var pcls = gir.classes.get(pn);
 			pcls.overlayParent(gir);
-			this.copyFrom(pcls);
+			this.copyFrom(pcls,false);
 			
 			
 		}
-		pubic void copyFrom(GirObject pcls) 
+		pubic void copyFrom(GirObject pcls, bool is_interface) 
 		{
 			var iter = this.methods.map_iterator();
 			while(iter.next()) {
