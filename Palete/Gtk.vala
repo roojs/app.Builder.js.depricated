@@ -105,7 +105,7 @@ namespace Palete {
             //return typeof(this.comments[ns][what]) == 'undefined' ?  '' : this.comments[ns][what];
         }
   
-        Gee.HashMap<string,GirObject> getPropertiesFor(string ename, string type)
+        Gee.HashMap<string,GirObject>? getPropertiesFor(string ename, string type)
         {
             //print("Loading for " + ename);
             
@@ -132,6 +132,15 @@ namespace Palete {
 			switch  (type) {
 				case "props":
 					return cls.props;
+				case "signals":
+					return cls.signals;
+				case "methods":
+					return cls.methods;
+				case "ctors"
+					return cls.ctors;
+				default:
+					return null;
+			}
 					
 				
 			//cls.overlayInterfaces(gir);
