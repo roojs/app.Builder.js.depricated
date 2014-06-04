@@ -47,8 +47,8 @@ namespace Palete {
         void load () {
                 
          
-    		string data;
-            var raw  = FileUtils.get_contents("/usr/share/appBuilder/GtkUsage.txt", data);
+    		string raw;
+            FileUtils.get_contents("/usr/share/appBuilder/GtkUsage.txt", raw);
           // print(data);
             var data  = data.split("\n");
             var state = 0;
