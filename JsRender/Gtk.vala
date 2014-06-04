@@ -202,7 +202,7 @@ namespace JsRender {
         
         int vcnt = 0;
 
-		Palete palete;
+		Palete.Palete palete;
 		GLib.List<Node> vitems;
 		string xvala_xcls;
 		
