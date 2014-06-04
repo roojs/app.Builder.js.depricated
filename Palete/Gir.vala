@@ -92,7 +92,8 @@ namespace Palete {
 				
 				this.methods.set(iter.get_key(), iter.get_value());
             }
-          
+			
+			
 		}
 		
 		
