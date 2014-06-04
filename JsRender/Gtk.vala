@@ -283,7 +283,7 @@ namespace JsRender {
                 return;
             }
             for(var i =0;i<item.items.length();i++) {
-                this.toValaName(item.items[i]);
+                this.toValaName(item.items.nth_data(i));
             }
 			          
         }
