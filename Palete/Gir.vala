@@ -104,7 +104,7 @@ namespace Palete {
 			return this.ns + this.name;
 		}
 		
-		pubic void copyFrom(GirObject pcls, bool is_interface) 
+		public void copyFrom(GirObject pcls, bool is_interface) 
 		{
 
 			this.inherits.append(pcls.fqn());
