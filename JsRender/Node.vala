@@ -18,7 +18,7 @@ public class JsRender.Node  {
         this.items = new GLib.List<Node>();
         this.props = new Gee.HashMap<string,string>();
         this.is_array = false;
-        
+        this.xvala_xcls = "";
     }
     
     
