@@ -197,7 +197,14 @@ namespace Palete {
             // use introspection to get lists..
             var gi = GIRepository.Repository.get_default();
             var es = ename.split('.');
+
+ 
+            var pth = GI.Repository.Repository.get_search_path ();
             
+            var gir_path = pth[0].replace(/lib\/girepository-1.0/, 'share\/gir-1.0');
+           
+
+			
             imports.gi[es[0]];
             var bi = gi.find_by_name(es[0], es[1]);
             
