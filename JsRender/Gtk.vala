@@ -397,7 +397,7 @@ namespace JsRender {
 					args.append(this.valueTypeToString(pv, piter.getValue().type);
 					
                 }
-                strbuilder(ipad + "this.el = new " + cls + "( "+ args.join(", ") + " );\n" );
+                ret += ipad + "this.el = new " + cls + "( "+ sting.join(", ", args) + " );\n" ;
 
             } else {
                 strbuilder(ipad + "this.el = new " + cls + "();\n" );
