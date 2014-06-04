@@ -442,7 +442,7 @@ namespace JsRender {
            
            
             // what are the properties of this class???
-            ret += "\n" + ipad + "// set gobject values\n");
+            ret += "\n" + ipad + "// set gobject values\n";
             var props = this.palete.getPropertiesFor(cls, "props");
             
             
