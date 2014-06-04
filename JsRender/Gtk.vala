@@ -213,7 +213,7 @@ namespace JsRender {
             return "http://devel.akbkhome.com/seed/" + cls + ".html";
         },
         
-        vcnt : false,
+        int vcnt = 0;
         
         toVala: function(testcompile)
         {
