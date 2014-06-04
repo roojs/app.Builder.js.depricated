@@ -195,7 +195,7 @@ namespace Palete {
 			return cache.get(ns);
 			
 		}
-        public Gir (string ns) Gee.HashMap<string,Gir> = null;
+        public Gir (string ns)  
         {
 
 			var gi = GI.Repository.get_default();
