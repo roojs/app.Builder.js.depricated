@@ -217,6 +217,7 @@ namespace JsRender {
 
 		Palete palete;
 		GLib.List<string> vitems;
+		string xvala_xcls;
 		
         string toVala(bool testcompile)
         {
