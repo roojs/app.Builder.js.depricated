@@ -269,7 +269,7 @@ namespace JsRender {
 			string id = item.get("id").length > 0 ? item.get("id") :  "%s%d".printf(item.get("xtype"), this.vcnt);
 
 			var props = this.palete.getPropertiesFor(cls,  "props");
-            
+             
             
             
             item.xvala_cls = cls;
