@@ -265,9 +265,9 @@ namespace JsRender {
             
         },
         
-        toValaNS : function(item)
+        toValaNS : function(Node item)
         {
-            var ns = item['|xns'] ;
+            var ns = item.get("|xns") ;
             if (ns == 'GtkSource') {
                 return 'Gtk.Source'
                 ns = 'Gtk.Source';
