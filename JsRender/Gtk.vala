@@ -9,7 +9,7 @@ namespace JsRender {
   
     public  class Gtk : JsRender
     {
-        Gee.HashMap<string,string> ctors ;
+       
 
         public Gtk(Project.Project project, string path) {
             this.xtype = "Gtk";
@@ -34,20 +34,7 @@ namespace JsRender {
             // various loader methods..
 
             // Class = list of arguments ... and which property to use as a value.
-            string[] cc = {
-                "Gtk.MessageDialog=parent:null|flags:Gtk.DialogFlags.MODAL|message_type|buttons|text" ,
-                "Gtk.ToolButton=icon_widget:null|label:null" ,
-
-                "Gtk.ScrolledWindow=hadjustment:null|vadjustment:null" ,
-                "Gtk.SourceBuffer=table:null" ,
-                "Gtk.VBox=homogeneous:true|spacing:0" 
-            };
-
-            this.ctors = new Gee.HashMap<string,string>();
-            for (var i = 0;i<cc.length;i++) {
-                var ar = cc[i].split("=");
-                this.ctors.set(ar[0], ar[1]);
-            }
+       
 
             
             
@@ -378,7 +365,7 @@ namespace JsRender {
             // introspection does not workk..... - as things like gtkmessagedialog
             
             var ctors =  this.palete.getPropertiesFor(cls, "ctors");
-
+		
 			
             if (typeof(ctors[cls]) !== 'undefined') {
                 var args = [];
