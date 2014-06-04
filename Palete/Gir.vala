@@ -152,8 +152,6 @@ namespace Palete {
     
     public class Gir : GirObject {
     
-         public string  package;
-        
         
         //Gee.Hashmap<string,what> nodes;
     
