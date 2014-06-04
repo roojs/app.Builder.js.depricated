@@ -476,7 +476,7 @@ namespace Palete {
             }
             
         }
-        string doc(string what)
+        public string doc(string what)
 		{
 			var ar = what.split(".");
 			var cls = this.classes.get(ar[1]);
