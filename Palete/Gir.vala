@@ -68,6 +68,7 @@ namespace Palete {
             this.consts     = new Gee.HashMap<string,GirObject>();
             this.signals    = new Gee.HashMap<string,GirObject>();
 			this.is_overlaid = false;
+			this.paramset = null;
         }
 
 		public void  overlayParent(Gir in_gir)
