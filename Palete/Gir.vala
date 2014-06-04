@@ -85,12 +85,10 @@ namespace Palete {
 			pcls.overlayParent(gir);
 			this.copyFrom(pcls,false);
 			for(var i=0; i < this.implements.length(); i++) {
-
+				
 
 			}
-
-			
-			
+ 
 			
 		}
 		pubic void copyFrom(GirObject pcls, bool is_interface) 
