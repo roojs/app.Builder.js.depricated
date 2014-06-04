@@ -83,7 +83,12 @@ namespace Palete {
 			
 			var pcls = gir.classes.get(pn);
 			pcls.overlayParent(gir);
-			//overlay...
+			this.copyFrom(pcls);
+			
+			
+		}
+		pubic void copyFrom(GirObject pcls) 
+		{
 			var iter = this.methods.map_iterator();
 			while(iter.next()) {
                 if (null == this.methods.get(iter.get_key())) {
@@ -91,12 +96,7 @@ namespace Palete {
 				}
 				
 				this.methods.set(iter.get_key(), iter.get_value());
-            }
-			
-		}
-		pubic void copyFrom(GirObject pcls) 
-		{
-		
+            }	
 
 		}
 		
