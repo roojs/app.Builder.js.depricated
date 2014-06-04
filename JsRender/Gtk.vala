@@ -274,9 +274,9 @@ namespace JsRender {
             return ns + ".";
         }
         
-        string  toValaName : function(Node.item) {
+        void  toValaName : function(Node.item) {
             this.vcnt++;
-			var ret = "";
+
 			var cls = this.toValaNS(item) + item.get("xtype");
 
 			var id = item.get("id").length > 0 ? item.get("id") : ("%s%d".printg(item.get("xtype"), this.vcnt);
@@ -296,12 +296,12 @@ namespace JsRender {
                 return;
             }
             for(var i =0;i<item.items.length();i++) {
-                ret += this.toValaName(item.items[i]);
+                this.toValaName(item.items[i]);
             }
-			return ret;          
+			          
         }
         
-        toValaItem : function(item, depth, strbuilder)
+        string toValaItem(Node item, int depth)
         {
         // print(JSON.stringify(item,null,4));
             
