@@ -48,9 +48,9 @@ namespace Palete {
                 
          
     		string raw;
-            FileUtils.get_contents("/usr/share/appBuilder/GtkUsage.txt", raw);
+            FileUtils.get_contents("/usr/share/appBuilder/GtkUsage.txt", out raw);
           // print(data);
-            var data  = data.split("\n");
+            var data  = raw.split("\n");
             var state = 0;
             var cfg = new GLib.List<GtkUsage>();
             var left = new GLib.List<string>();
