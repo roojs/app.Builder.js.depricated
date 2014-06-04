@@ -60,7 +60,7 @@ DialogNewComponent=new XObject({
          
                 
                 // what about .js ?
-                if (GLib.file_test (GLib.dir + '/' + this.file.name + '.bjs', GLib.FileTest.EXISTS)) {
+                if (GLib.file_test (GLib.dir + "/" + this.file.name + ".bjs", GLib.FileTest.EXISTS)) {
                     StandardErrorDialog.show(
                         "That file already exists"
                     ); 
