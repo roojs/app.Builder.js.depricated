@@ -350,7 +350,7 @@ namespace JsRender {
                 var kk = k.substring(1);
                 
                 var vv = v.split(":");
-                ret+ = pad + "public " + vv[0] + " " + kk + ";\n";
+                ret += pad + "public " + vv[0] + " " + kk + ";\n";
                 citems.set(k, true); 
                 
             }
