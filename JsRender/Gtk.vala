@@ -462,10 +462,10 @@ namespace JsRender {
 				
 				    
                 str +=  ipad + "this.el." + p.get_key() + " = " + 
-							this.valueTypeToString(item.get(pviter.get_key()), type) + ";\n");
+							this.valueTypeToString(item.get(pviter.get_key()), type) + ";\n";
                     
                
-            });
+            }
                 //code
             // add all the child items..
 
