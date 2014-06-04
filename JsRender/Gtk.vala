@@ -156,7 +156,7 @@ namespace JsRender {
              
             var fn = GLib.Path.get_dirname(this.path) + "/" + this.name + ".js";
             print("WRITE : " + fn);
-            FileUtils.put_contents(fn, this.toSource());
+            FileUtils.set_contents(fn, this.toSource());
             
         }
         
@@ -165,7 +165,7 @@ namespace JsRender {
              
             var fn = GLib.Path.get_dirname(this.path) + "/" + this.name + ".vala";
             print("WRITE : " + fn);
-			FileUtils.put_contents(fn, this.toVala(false));
+			FileUtils.set_contents(fn, this.toVala(false));
             
             
         }
