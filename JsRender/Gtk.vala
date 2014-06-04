@@ -364,7 +364,7 @@ namespace JsRender {
                 
                 var vv = v.split(":");
                 ret+ = pad + "public " + vv[0] + " " + kk + ";\n";
-                citems[k] = true; 
+                citems.set(k, true); 
                 
             }
             // .vala props.. 
