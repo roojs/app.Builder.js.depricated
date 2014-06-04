@@ -207,7 +207,7 @@ namespace Palete {
 			cls.parseConstructors(); // ?? needed for ??..
 
 			cls.overlayParent(gir);
-			
+			cls.overlayInterfaces(gir);
             
             
             
