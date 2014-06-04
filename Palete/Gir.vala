@@ -100,10 +100,14 @@ namespace Palete {
 
 			
 		}
-
+		public string fqn() {
+			return this.ns + this.name;
+		}
 		
 		pubic void copyFrom(GirObject pcls, bool is_interface) 
 		{
+
+			
 			var iter = this.methods.map_iterator();
 			while(iter.next()) {
                 if (null == this.methods.get(iter.get_key())) {
