@@ -35,10 +35,10 @@ namespace Palete {
         load: function () {
                 
          
-        
-            var data = File.read(__script_path__ +'/GtkUsage.txt');
+    		string data;
+            var data = FileUtils.get_contents("/usr/share/appBuilder/GtkUsage.txt", data);
           // print(data);
-            data  = data.split(/\n/g);
+            data  = data.split("\n");
             var state = 0;
             var cfg = [];
             var left = [];
