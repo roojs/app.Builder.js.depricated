@@ -533,7 +533,7 @@ Gtk = XObject.define(
                     var v = item.listeners[k].split(/\/*--/);
                     if (v.length < 2) {
                         var vv = v[0].replace(/^function/, '');
-                        vv = v[0].replace(/\) \{/, ') => {');
+                        vv = vv.replace(/\) \{/, ') => {');
                         vv = vv.replace(/^\n+/,'');
                         vv = vv.replace(/\n+$/,'');
                         vv = vv.replace(/\n/g,"\n" + ipad);
