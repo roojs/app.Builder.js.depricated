@@ -72,6 +72,8 @@ namespace Palete {
 			if (this.parent.length < 1) {
 				return;
 			}
+			print(this.parent);
+			if (parent.get(
 			
 			gir.classes.get(
 
@@ -161,10 +163,21 @@ namespace Palete {
     
     public class Gir : GirObject {
     
-        
+        static  Gee.HashMap<string,Gir> cache = null;
         //Gee.Hashmap<string,what> nodes;
-    
-        public Gir (string ns)
+		public static Gir factory(string ns) {
+			if (cache == null) {
+				cache = new Gee.HashMap<string,Gir>();
+			}
+			var ret = cache.get(ns);
+			if (ret != null) {
+				return ret;
+			}
+			cache.set(ns, new Gir(ns));
+			return cache.get(ns);
+			
+		}
+        public Gir (string ns) Gee.HashMap<string,Gir> = null;
         {
 
 			var gi = GI.Repository.get_default();
