@@ -1,9 +1,9 @@
 
-// valac @ --pkg gee-1.0   --pkg json-glib-1.0  Gir.vala -o /tmp/Gir
+// valac -g  --pkg gee-1.0   --pkg json-glib-1.0  Gir.vala -o /tmp/Gir
  
 public static int main (string[] args) {
     
-    var g = new Palete.Gir("/usr/share/gir-1.0/Gtk-3.0.gir");
+    var g = new Palete.Gir("Gtk.gir");
     var generator = new Json.Generator ();
     var n = new Json.Node(Json.NodeType.OBJECT);
     n.set_object(g.toJSON());
