@@ -1,6 +1,12 @@
 namespace Palete {
 
+	class GtkUsage : Object 
+	{
+		GLib.List<string> left;
+		GLib.List<string> right;
+	}
 
+	
     public class Introspect.El : Object
     {
         public enum eltype { 
