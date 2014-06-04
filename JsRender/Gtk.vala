@@ -370,8 +370,9 @@ namespace JsRender {
 			string ctor = item.get("ctor").length > 0 : item.get("ctor") : "new";
 
 			var ctor_def = ctors.get(ctor);
+			
 
-
+			if (ctor_def.params.size > 0) {
 			
             if (typeof(ctors[cls]) !== 'undefined') {
                 var args = [];
