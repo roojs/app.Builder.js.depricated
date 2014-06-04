@@ -588,9 +588,6 @@ namespace JsRender {
             return ret;
         }
         
-        
-        
-    });
-*/
+         
     }
 }
