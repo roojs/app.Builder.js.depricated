@@ -203,57 +203,11 @@ namespace Palete {
 
 			cls.parseProps();
 			cls.parseSignals(); // ?? needed for add handler..
+			cls.parseMethods(); // ?? needed for ??..
+			cls.parseConstructors(); // ?? needed for ??..
 
+			cls.overlayParent(gir);
 			
-            // 
-           
-           
-           
-           
-            // signals..
-            
-            for (var i =0;i <  GIRepository[meth[2]](bi); i++) {
-                var prop =GIRepository[meth[3]](bi,i);  
-                var n_original =  prop.get_name();
-                // print ('signal: ' + n_original); 
-                var add = {
-                    name :  n_original.replace(/\-/g, '_'),
-                    type : 'function', //???
-                    desc : this.doc(ename + '.signal.' + n_original),
-                    sig  : this.genSkel(prop) // fixme..
-                }
-                elist.push(add);
-            }
-            // methods
-            
-            for (var i =0;i <  GIRepository[meth[4]](bi); i++) {
-                var prop = GIRepository[meth[5]](bi,i);  
-                var n_original =  prop.get_name();
-                print(ename +": ADD method: " + n_original );
-                var flags = GIRepository.property_info_get_flags(prop);
-                
-                if (flags & GIRepository.FunctionInfoFlags.IS_CONSTRUCTOR) {
-                    var add = {
-                        name :  n_original.replace(/\-/g, '_'),
-                        type : 'ctor', //???
-                        desc : this.doc(ename + '.signal.' + n_original)
-                    };
-                    this.genParams(prop,add);
-                    mlist.push(add);
-                    continue;
-                }
-                if (!(flags & GIRepository.FunctionInfoFlags.IS_METHOD)) {
-                    continue;
-                }
-                // print ('signal: ' + n_original); 
-                var add = {
-                    name :  n_original.replace(/\-/g, '_'),
-                    type : 'function', //???
-                    desc : this.doc(ename + '.signal.' + n_original)
-                };
-                this.genParams(prop,add);
-                mlist.push(add);
-            }
             
             
             
