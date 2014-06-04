@@ -442,11 +442,12 @@ namespace JsRender {
            
            
             // what are the properties of this class???
-            strbuilder("\n" + ipad + "// set gobject values\n");
-            var props = this.palete.getPropertiesFor(item['|xns'] + '.' + item.xtype, 'props');
+            ret += "\n" + ipad + "// set gobject values\n");
+            var props = this.palete.getPropertiesFor(cls, "props");
             
             
-            
+
+					
             props.forEach(function(p) {
                
                 if (typeof(citems[p.name]) != 'undefined') {
