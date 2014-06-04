@@ -107,18 +107,18 @@ namespace Palete {
 		pubic void copyFrom(GirObject pcls, bool is_interface) 
 		{
 
-			
-			var iter = this.methods.map_iterator();
+			this.inherits.append(pcls.
+			var iter = pcls.methods.map_iterator();
 			while(iter.next()) {
-                if (null == this.methods.get(iter.get_key())) {
+                if (null == pcls.methods.get(iter.get_key())) {
 					continue;
 				}
 				
 				this.methods.set(iter.get_key(), iter.get_value());
             }	
-			iter = this.props.map_iterator();
+			iter = pcls.props.map_iterator();
 			while(iter.next()) {
-                if (null == this.props.get(iter.get_key())) {
+                if (null == pcls.props.get(iter.get_key())) {
 					continue;
 				}
 				
