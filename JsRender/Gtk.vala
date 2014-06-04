@@ -409,12 +409,12 @@ namespace JsRender {
              
             
             // public static?
-            if (!depth) {
-                strbuilder(ipad + "_this = this;\n");
-                strbuilder(ipad + this.name  + " = this;\n");
+            if ( depth < 1) {
+                ret += ipad + "_this = this;\n";
+                ret += ipad + this.name  + " = this;\n";
             } else {
-                if (item.xvala_id !== false) {
-                    strbuilder(ipad + "_this." + item.xvala_id  + " = this;\n");
+                if (item.xvala_id.length > 0) {
+                    ret += ipad + "_this." + item.xvala_id  + " = this;\n";
                     
                 }
                 
