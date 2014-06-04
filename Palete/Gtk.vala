@@ -89,7 +89,7 @@ namespace Palete {
                 right.append(d.strip());
                 //Seed.quit();
                
-            }); 
+            }
             if (left.length > 0 ){
                   cfg.append(new GtkUsage( left, right));
             }
