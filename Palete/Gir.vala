@@ -164,6 +164,8 @@ namespace Palete {
 		    var gir_path = pth.nth_data(0).replace("/lib/girepository-1.0/", "/share/gir-1.0/");
 		   //console.log(fn);
 		    var file  = gir_path + "/" + ns + "-" + ver + ".gir";
+			print("ns: " + ns + "\n");
+			print("ver: " + ver + "\n");
 		    print(file);
 
 
