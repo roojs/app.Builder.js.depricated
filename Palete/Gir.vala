@@ -1,5 +1,5 @@
 
-// valac -g  --pkg gee-1.0   --pkg json-glib-1.0  Gir.vala -o /tmp/Gir
+// valac -g  --pkg gee-1.0  --pkg gobject-introspection-1.0 --pkg json-glib-1.0  Gir.vala -o /tmp/Gir
  
 public static int main (string[] args) {
     
