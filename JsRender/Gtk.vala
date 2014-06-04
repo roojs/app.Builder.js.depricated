@@ -108,7 +108,7 @@ namespace JsRender {
         
             
             if (this.tree == null) {
-                return false;
+                return "";
             }
             
             var data = JSON.parse(JSON.stringify(this.items[0]));
