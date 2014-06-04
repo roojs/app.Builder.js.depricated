@@ -156,11 +156,11 @@ namespace Palete {
 		    var pth = GI.Repository.get_search_path ();
 		    var gir_path = pth[0].replace("/lib/girepository-1.0/", "/share/gir-1.0/");
 		   //console.log(fn);
-		    ret.gir_file = gir_path + '/'+ ns + '-' + ver + '.gir';
-		    ret.gir_filename = ns + '-' + ver + '.gir';
+		    var file  = gir_path + '/'+ ns + '-' + ver + '.gir';
+		    
 
 
-			base("Package",file);
+			base("Package",ns);
             //this.nodes = new Gee.Hashmap<string,what>();
              
             var doc = Xml.Parser.parse_file (file);
