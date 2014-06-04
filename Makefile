@@ -10,6 +10,7 @@ all:
 		JsRender/*.vala \
 		Project/*.vala \
 		Palete/*.vala \
+		Builder4/*.vala \
 		-o /tmp/test
 
 clean:
