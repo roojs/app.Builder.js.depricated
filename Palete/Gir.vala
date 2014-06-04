@@ -1,5 +1,6 @@
 
 // valac @ --pkg gee-1.0   --pkg json-glib-1.0  Gir.vala -o /tmp/Gir
+/*
 public static int main (string[] args) {
     
     var g = new Palete.Gir("/usr/share/gir-1.0/Gtk-3.0.gir");
@@ -13,7 +14,7 @@ public static int main (string[] args) {
     print(generator.to_data(null));
     return 0;
 }
-
+*/
 namespace Palete {
 
     public class GirObject: Object {
