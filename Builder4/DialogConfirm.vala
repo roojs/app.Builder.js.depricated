@@ -20,6 +20,8 @@ public static Xcls_MessageDialog1  DialogConfirm;
 public class Xcls_MessageDialog1
 {
     public Gtk.MessageDialog el;
+    private static Xcls_MessageDialog1  _this;
+
 
         // my vars
 

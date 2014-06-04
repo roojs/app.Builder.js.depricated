@@ -20,7 +20,6 @@ DialogConfirm=new XObject({
             this.success(); //  fixme a delegate
             }
         }
-        
         /*--
          ( response_id) =>  {
            this.el.hide();
