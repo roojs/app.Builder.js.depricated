@@ -384,7 +384,9 @@ namespace JsRender {
 					if (pv.length < 1) {
 						// try and find the 'item'....
 						Node pvi = item.findProp(piter.get_key());
-						ret+= pad + "var xxxx = new "  + pvi.toNew() +"\n"; 
+						var var_id = "xxx%d" + argid++;
+						ret+= pad + "var "+ var_id + " = new "  + pvi.toNew() +"\n";
+						args.append(var_id);
 					}
 					
                     var nv = ctors[cls][i].split(':');
