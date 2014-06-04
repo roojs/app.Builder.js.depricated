@@ -214,7 +214,10 @@ namespace JsRender {
         },
         
         int vcnt = 0;
-        
+
+		Palete palete;
+		GLib.List<string> vitems;
+		
         string toVala(bool testcompile)
         {
             var ret = "";
@@ -225,10 +228,11 @@ namespace JsRender {
             //print(JSON.stringify(this.items[0],null,4));Seed.quit();
 
             
-            var palete  = new Palete.Palete.factory("Gtk");
+            this.palete  = new Palete.Palete.factory("Gtk");
             
-            this.vitems = [];
-            this.toValaName(item);
+            this.vitems = new GLib.List<string>();
+
+			this.toValaName(this.tree);
            // print(JSON.stringify(item,null,4));Seed.quit();
             
             ret += "/* -- to compile\n";
