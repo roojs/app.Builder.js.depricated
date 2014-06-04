@@ -3,11 +3,11 @@
     "name": "DialogConfirm",
     "parent": "",
     "title": false,
-    "path": "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.bjs",
+    "path": "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.bjs",
     "items": [
         {
             "listeners": {
-                "response": "function (self, response_id) {\n   this.el.hide();\n     print(\"RESPOSE: \" + response_id);\n    if (response_id == -8) { //yes!\n   print(\"CALL SUCCES?\")\n    this.success(); //  fixme a delegate\n    }\n}\n/*--\n ( response_id) =>  {\n   this.el.hide();\n    //print(\"RESPOSE: \" + response_id);\n    if (response_id == -8) { //yes!\n           print(\"CALL SUCCES?\");\n      // this.success();\n    }\n\n\n}\n*/",
+                "response": "function (self, response_id) {\n   this.el.hide();\n     print(\"RESPOSE: \" + response_id);\n    if (response_id == -8) { //yes!\n   print(\"CALL SUCCES?\")\n    this.success(); //  fixme a delegate\n    }\n}\n\n/*--\n ( response_id) =>  {\n   this.el.hide();\n    //print(\"RESPOSE: \" + response_id);\n    if (response_id == -8) { //yes!\n           print(\"CALL SUCCES?\");\n      // this.success();\n    }\n\n\n}\n*/",
                 "delete_event": "function (self, event) {\n    this.el.hide();\n    return true;\n}\n/*--\n(event) => {\n    this.el.hide();\n    return true;\n}\n*/\n\n\n"
             },
             "text": "Tests",

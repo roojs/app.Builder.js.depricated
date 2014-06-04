@@ -17,8 +17,6 @@ static int main (string[] args) {
 
 public static Xcls_MessageDialog1  DialogConfirm;
 
-private static Xcls_MessageDialog1  _this;
-
 public class Xcls_MessageDialog1
 {
     public Gtk.MessageDialog el;
