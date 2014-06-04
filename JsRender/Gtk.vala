@@ -113,12 +113,12 @@ namespace JsRender {
             
             var data = JSON.parse(JSON.stringify(this.items[0]));
             // we should base this on the objects in the tree really..
-            string[]  inc = { 'Gtk', 'Gdk', 'Pango', 'GLib', 'Gio', 'GObject', 
-                'GtkSource', 'WebKit', 'Vte' ]; //, 'GtkClutter' , 'Gdl'];
+            string[]  inc = { "Gtk", "Gdk", "Pango", "GLib", "Gio", "GObject", 
+                "GtkSource", "WebKit", "Vte" ]; //, "GtkClutter" , "Gdl"];
             var src = "";
 			 
             for (var i=0; i< inc.length; i++) {
-				var e = inc[i]
+				var e = inc[i];
                 src += e+" = imports.gi." + e +";\n";
             }
             
