@@ -9,32 +9,32 @@ namespace Palete
 
     static Gee.HashMap<string,Palete>? cache = null;
     
+	public static Palete factory(string xtype)
+    {
+        if (cache == null) {
+            cache = new Gee.HashMap<string,Palete>();
+        }
+        if (cache.get(xtype) != null) {
+            return cache.get(xtype);
+        }
+        switch(xtype) {
+            case "Gtk":
+                cache.set(xtype, new Gtk());
+                break;
+            //case "Roo":
+            //    cache.set(xtype, new Roo());
+                break;
+            default:
+                throw new Error.INVALID_TYPE("invalid argument to Palete factory");
+        }
+        return cache.get(xtype);
+    }
        
 
     public class Palete : Object 
     {
         
        
-		public static Palete factory(string xtype)
-		{
-		    if (cache == null) {
-		        cache = new Gee.HashMap<string,Palete>();
-		    }
-		    if (cache.get(xtype) != null) {
-		        return cache.get(xtype);
-		    }
-		    switch(xtype) {
-		        case "Gtk":
-		            cache.set(xtype, new Gtk());
-		            break;
-		        //case "Roo":
-		        //    cache.set(xtype, new Roo());
-		            break;
-		        default:
-		            throw new Error.INVALID_TYPE("invalid argument to Palete factory");
-		    }
-		    return cache.get(xtype);
-		}
         public string name;
         
         public Palete()

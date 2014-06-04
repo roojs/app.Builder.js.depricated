@@ -216,7 +216,7 @@ namespace JsRender {
             //print(JSON.stringify(this.items[0],null,4));Seed.quit();
 
             
-            this.palete  = new  Palete.factory("Gtk");
+            this.palete  =  Palete.factory("Gtk");
             
             this.vitems = new GLib.List<Node>();
 
