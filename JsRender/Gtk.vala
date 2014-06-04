@@ -365,7 +365,7 @@ namespace JsRender {
             // introspection does not workk..... - as things like gtkmessagedialog
             
             var ctors =  this.palete.getPropertiesFor(cls, "ctors");
-		
+			
 			
             if (typeof(ctors[cls]) !== 'undefined') {
                 var args = [];
