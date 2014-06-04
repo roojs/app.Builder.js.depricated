@@ -479,7 +479,7 @@ namespace JsRender {
 				}
                 
                 
-                ret += ipad + "var child_" + i + " = new " + ci.xvala_xcls + "();\n";
+                ret += ipad + "var child_" + "%d".printf(i) + " = new " + ci.xvala_xcls + "();\n";
                     
                 ret+= ipad + "this.el." + packing[0] + " (  child_" + i + ".el ";
 				for (var ii=1;ii<packing.length; ii++) {
