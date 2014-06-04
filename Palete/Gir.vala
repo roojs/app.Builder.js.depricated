@@ -118,7 +118,14 @@ namespace Palete {
 				
 				this.props.set(iter.get_key(), iter.get_value());
             }	
-			 
+			 iter = this.props.map_iterator();
+			while(iter.next()) {
+                if (null == this.props.get(iter.get_key())) {
+					continue;
+				}
+				
+				this.props.set(iter.get_key(), iter.get_value());
+            }	
 		}
 		
         public Json.Object toJSON()
@@ -160,7 +167,7 @@ namespace Palete {
                 r.set_object_member("consts", this.toJSONObject(this.consts));
             }
             if (this.signals.size > 0) {
-                r.set_object_member("cosignalsnsts", this.toJSONObject(this.signals));
+                r.set_object_member("signals", this.toJSONObject(this.signals));
             }
             if (this.paramset != null) {
                 r.set_object_member("params", this.paramset.toJSON());
