@@ -126,18 +126,20 @@ namespace JsRender {
             
             var data = JSON.parse(JSON.stringify(this.items[0]));
             // we should base this on the objects in the tree really..
-            var i = [ 'Gtk', 'Gdk', 'Pango', 'GLib', 'Gio', 'GObject', 
+            string[]  inc = { 'Gtk', 'Gdk', 'Pango', 'GLib', 'Gio', 'GObject', 
                 'GtkSource', 'WebKit', 'Vte' ]; //, 'GtkClutter' , 'Gdl'];
             var src = "";
-            i.forEach(function(e) {
+			 
+            for (var i=0; i< inc.length; i++) {
+				var e = inc[i]
                 src += e+" = imports.gi." + e +";\n";
-            });
+            }
             
             src += "console = imports.console;\n"; // path?!!?
             src += "XObject = imports.XObject.XObject;\n"; // path?!!?
             
             
-            src += this.name + '=new XObject('+ this.mungeToString(data) + ");\n";
+            src += this.name + "=new XObject("+ this.mungeToString(data) + ");\n";
             src += this.name + '.init();\n';
             // register it in the cache
             src += "XObject.cache['/" + this.name + "'] = " + this.name + ";\n";
@@ -146,9 +148,10 @@ namespace JsRender {
             return src;
             
             
-        },
-        save : function() {
-            Base.prototype.save.call(this);
+        }
+		
+        public void save() {
+            base.save();
             this.saveJS();
             this.saveVala();
         },
