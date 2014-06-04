@@ -472,16 +472,17 @@ namespace JsRender {
 
             for(var i =0;i<item.items.length();i++) {
         		var ci = item.items.nth_data(i);
-                var packing = ci.pack ? ci.pack.split(',') : [ 'add' ];
-                    var pack = packing.shift();
-                    strbuilder(ipad + "var child_" + i + " = new " + ci.xvala_xcls + "();\n" )
+                string[] packing = ci.get("pack").length > 0 ? ci.get("pack").split(",") : { 'add' };
+                
+                str + =ipad + "var child_" + i + " = new " + ci.xvala_xcls + "();\n";
                     
-                    strbuilder(ipad + "this.el." + pack + " (  child_" + i + ".el " +
-                               (packing.length ? ", " + packing.join(",") : "") + " );\n"
-                            );
-                               
-                    
-                }
+                str+= ipad + "this.el." + packing[0] + " (  child_" + i + ".el " +
+				for (var ii=1;ii<packing.length; ii++) {
+					str+= ii > 1 ? ", " : "";
+					str+= packing[i];
+				}	   
+				str+=  ");\n";
+                        
             }
             if (typeof(item['|init']) != 'undefined') {
                 
