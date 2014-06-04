@@ -17,8 +17,6 @@ static int main (string[] args) {
 
 public static Xcls_AboutDialog1  About;
 
-private static Xcls_AboutDialog1  _this;
-
 public class Xcls_AboutDialog1
 {
     public Gtk.AboutDialog el;
@@ -66,11 +64,11 @@ public class Xcls_AboutDialog1
     // skip website - already used 
 
     // skip xtype - not pipe 
+
+    // skip |modal - already used 
     public void show_all() {
             this.el.show_all();
         }
-
-    // skip |modal - already used 
 
     // skip |xns - could not find seperator
 

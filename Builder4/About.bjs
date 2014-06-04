@@ -3,12 +3,12 @@
     "name": "About",
     "parent": "",
     "title": false,
-    "path": "/home/alan/gitlive/app.Builder/Builder4/About.bjs",
+    "path": "/home/alan/gitlive/app.Builder.js/Builder4/About.bjs",
     "items": [
         {
             "listeners": {
                 "response": "function (self, response_id) {\n    this.el.hide();\n}\n/*--\n(rid) => {\n    this.el.hide();\n}\n*/\n",
-                "delete_event": "function (self, event) {\n    this.el.hide();\n    return true;\n}\n/*--\n (self, event) => {\n    this.el.hide();\n    return true;\n}\n*/"
+                "delete_event": "function (self, event) {\n    this.el.hide();\n    return true;\n}\n\n/*--\n (self, event) => {\n    this.el.hide();\n    return true;\n}\n*/"
             },
             "authors": "Alan Knowles",
             "copyright": "LGPL",
@@ -16,8 +16,8 @@
             "program_name": "app.Builder.js",
             "website": "http://www.akbkhome.com/blog.php",
             "xtype": "AboutDialog",
-            "|show_all": "function() {\n    \n}\n/*--\nvoid () {\n    this.el.show_all();\n}\n*/",
             "|modal": "true",
+            "|show_all": "function() {\n    \n}\n/*--\nvoid () {\n    this.el.show_all();\n}\n*/",
             "|xns": "Gtk"
         }
     ],

@@ -24,6 +24,7 @@ About=new XObject({
             this.el.hide();
             return true;
         }
+        
         /*--
          (self, event) => {
             this.el.hide();
@@ -36,6 +37,7 @@ About=new XObject({
     license : "LGPL",
     program_name : "app.Builder.js",
     website : "http://www.akbkhome.com/blog.php",
+    modal : true,
     show_all : function() {
         
     }
@@ -43,8 +45,7 @@ About=new XObject({
     void () {
         this.el.show_all();
     }
-    */,
-    modal : true
+    */
 });
 About.init();
 XObject.cache['/About'] = About;
