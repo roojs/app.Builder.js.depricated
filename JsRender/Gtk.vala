@@ -367,7 +367,7 @@ namespace JsRender {
             var ctors =  this.palete.getPropertiesFor(cls, "ctors");
 			
 			// ctors is going to return 'new' or ... ??
-			string ctor = item.get("ctor").length > 0 : item.get("ctor") : "new";
+			string ctor = item.get("ctor").length > 0 ? item.get("ctor") : "new";
 
 			var ctor_def = ctors.get(ctor);
 			
