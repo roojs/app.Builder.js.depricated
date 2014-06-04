@@ -266,7 +266,7 @@ namespace JsRender {
 
 			var cls = this.toValaNS(item) + item.get("xtype");
 
-			var id = item.get("id").length > 0 ? item.get("id") : ("%s%d".printg(item.get("xtype"), this.vcnt);
+			string id = item.get("id").length > 0 ? item.get("id") : ("%s%d".printg(item.get("xtype"), this.vcnt);
 
 			var props = this.palete.getPropertiesFor(cls,  "props");
             
