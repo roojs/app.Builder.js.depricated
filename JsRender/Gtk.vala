@@ -259,7 +259,7 @@ namespace JsRender {
             }
             ret += "\n\n";
             // print(JSON.stringify(item,null,4));
-            this.toValaItem(item,0, function(s) {
+            this.toValaItem(this.tree,0, function(s) {
                 ret+= s;
             });
             
