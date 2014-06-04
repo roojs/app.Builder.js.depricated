@@ -373,9 +373,9 @@ namespace JsRender {
 			
 
 			if (ctor_def.params.size > 0) {
-			
-            if (typeof(ctors[cls]) !== 'undefined') {
-                var args = [];
+
+				
+                var args = new GLib.List<string>();
                 for(var i =0;i< ctors[cls].length;i++) {
                     
                     var nv = ctors[cls][i].split(':');
