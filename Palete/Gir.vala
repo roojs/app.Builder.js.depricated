@@ -376,6 +376,7 @@ namespace Palete {
                 case "constant":
                     var c = new GirObject("Const",n);
                     c.value = element->get_prop("value");
+					c.ns = parent.ns;
                     parent.consts.set(n,c);
                     parent = c;
                     return;
@@ -383,7 +384,9 @@ namespace Palete {
                 
                 case "enumeration":
                     var c = new GirObject("Enum",n);
+					c.ns = parent.ns;
                     parent.consts.set(n,c);
+					
                     parent = c;
                     break;
                 
