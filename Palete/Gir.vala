@@ -73,7 +73,7 @@ namespace Palete {
 		public void  overlayParent(Gir in_gir)
 		{
 			var gir = in_gir;
-			if (this.parent.length < 1) {
+			if (this.parent.length < 1 || this.is_overlaid) {
 				this.overlaid = true;
 				return;
 			}
