@@ -268,9 +268,8 @@ namespace JsRender {
         toValaNS : function(Node item)
         {
             var ns = item.get("|xns") ;
-            if (ns == 'GtkSource') {
-                return 'Gtk.Source'
-                ns = 'Gtk.Source';
+            if (ns == "GtkSource") {
+                return "Gtk.Source."
             }
             return ns + '.';
         },
