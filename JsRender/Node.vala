@@ -242,7 +242,8 @@ public class JsRender.Node  {
                     return "";
                 }
                 */
-                var lines = v.strip().split("\n");
+				var str = v.strip();
+                var lines = str.split("\n");
                 if (lines.length > 0) {
                     str = string.join("\n" + pad, lines);
                 }
@@ -267,11 +268,19 @@ public class JsRender.Node  {
                     return "";
                 }
                 */
-                var lines = v.strip().split("\n");
+                var str = v.strip();
+				print("--IN--");
+				print(str);
+				print("--SPLIT--");
+                var lines = str.split("\n");
+				print("--SPLIT--");
+				print(string.join("\n", lines);
+				print("--SPLIT--");
+				
                 if (lines.length > 0) {
                     str =  string.join("\n" + pad, lines);
                 }
-                //print("==> " +  str + "\n");
+                print("==> " +  str + "\n");
                 els.append(left + str);
                 continue;
             }
