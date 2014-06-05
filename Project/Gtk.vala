@@ -5,13 +5,13 @@
 namespace Project {
   static int gtk_id = 1;
 
-  public string xtype {
-	  get { return "Gtk"; }
-  }
+ 
 
   public class Gtk : Project
   {
-
+	  public overide string xtype {
+		  get { return "Gtk"; }
+	  }
      
      public Gtk(string path) {
 		  
