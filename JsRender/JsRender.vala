@@ -258,7 +258,7 @@ public abstract class JsRender  : Object {
         return this.tree.mungeToString(false, pad, this.doubleStringProps);
         
     }
-     abstract  public string toSource() ;
+       public abstract string toSource() ;
       
 }
     
