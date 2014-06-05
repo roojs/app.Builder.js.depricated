@@ -245,7 +245,7 @@ public class JsRender.Node  {
 				var str = v.strip();
                 var lines = str.split("\n");
                 if (lines.length > 0) {
-                    str = string.join("\n" + pad, lines);
+                    str = string.joinv("\n" + pad, lines);
                 }
                 
                 els.append(left  + str);
@@ -269,16 +269,11 @@ public class JsRender.Node  {
                 }
                 */
                 var str = v.strip();
-				print("--IN--");
-				print(str);
-				print("--SPLIT--");
+				  
                 var lines = str.split("\n");
-				print("--SPLIT--");
-				print(string.join("\n", lines);
-				print("--SPLIT--");
-				
+				  
                 if (lines.length > 0) {
-                    str =  string.join("\n" + pad, lines);
+                    str =  string.joinv("\n" + pad, lines);
                 }
                 print("==> " +  str + "\n");
                 els.append(left + str);
