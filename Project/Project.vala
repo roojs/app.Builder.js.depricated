@@ -16,13 +16,15 @@ public class Project.Project {
     
     public signal void on_changed (); 
 	
-    public string id = "";
+    public string id;
     public string fn = "";
     public string name = "";
     public Gee.HashMap<string,string> paths;
     public GLib.List<JsRender.JsRender> files ;
     //tree : false,
-    public string xtype = "";
+    public string xtype {
+	   get { return "??"; }
+  }
     
     
     public Project (string path) {
@@ -320,7 +322,7 @@ public class Project.Project {
                 }
                 */
                 var xt = this.xtype;
-                JsRender.JsRender.factory(xt,this, dir + "/" + fn);
+                this.files.append(JsRender.JsRender.factory(xt,this, dir + "/" + fn));
                 // parent ?? 
                 
                  
