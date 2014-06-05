@@ -594,10 +594,10 @@ namespace JsRender {
         }
         
 		      
-		string nodeToValaNew(Node node, ref pre_str, ref id, string pad)
+		string nodeToValaNew(Node node, ref string pre_str, ref int  id, string pad)
 		{
 			var ret = "new ";
-			ret += node.fqn() "(";
+			ret += node.fqn()+ "(";
 			// what are the args required for this type of ctor...
 			var ctors = this.palete.getPropertiesFor(node.fqn(),  "ctor");
 			string ctor = item.get("*ctor").length > 0 ? item.get("(ctor") : "new";
