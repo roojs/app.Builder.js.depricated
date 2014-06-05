@@ -339,7 +339,7 @@ public class JsRender.Node  {
         if (Node.gen == null) {
             Node.gen = new Json.Generator();
         }
-       var n = new Json.Node(NodeType.STRING);
+       var n = new Json.Node(NodeType.NULL);
 		n.set_string(str);
  
         Node.gen.set_root (n);
