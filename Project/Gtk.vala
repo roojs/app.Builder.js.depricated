@@ -4,17 +4,18 @@
 
 namespace Project {
   static int gtk_id = 1;
-
+  public string xtype = "Gtk";
 
   public class Gtk : Project
   {
 
      
      public Gtk(string path) {
-          this.id = "project-gtk-%d".printf(gtk_id++);
+		  
           this.xtype = "Gtk";
           base(path);
-         
+          var gid = "project-gtk-%d".printf(gtk_id++);
+          this.id = gid;
           // various loader methods..
         
       }
