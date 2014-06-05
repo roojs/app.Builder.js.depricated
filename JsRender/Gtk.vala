@@ -592,7 +592,7 @@ namespace JsRender {
         
          
     }
-	string nodeToValaNew(Node node)
+	string nodeToValaNew(Node node, out pre_data)
 	{
 		var ret = "new ";
 		ret += node.fqn() "(";
@@ -612,7 +612,7 @@ namespace JsRender {
 			while (piter.next()) {
 
 				// need piter.get_key(); -- string..
-				string pv = item.get(piter.get_key());
+				string pv = node.get(piter.get_key());
 				if (pv.length < 1) {
 					// try and find the 'item'....
 					Node pvi = item.findProp(piter.get_key());
