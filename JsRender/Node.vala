@@ -183,7 +183,7 @@ public class JsRender.Node  {
             }
             var spad = pad.substring(0, pad.length-4);
             return   "{\n" +
-                pad  + gLibStringListJoin(",\n" + pad , els) + 
+                pad  + this.gLibStringListJoin(",\n" + pad , els) + 
                 "\n" + spad +  "}";
                
             
