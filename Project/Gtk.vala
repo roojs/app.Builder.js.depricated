@@ -9,7 +9,7 @@ namespace Project {
 
   public class Gtk : Project
   {
-	   public override string xtype {
+	       string xtype {
 		  get { return "Gtk"; }
 	  }
      
