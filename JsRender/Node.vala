@@ -84,7 +84,7 @@ public class JsRender.Node  {
 
 	}
 
-	string gLibStringListJoin( string sep, GLib.List<string> a,) 
+	string gLibStringListJoin( string sep, GLib.List<string> ar) 
 	{
 		var ret = "";
 		for (var i = 0; i < ar.length(); i++) {
