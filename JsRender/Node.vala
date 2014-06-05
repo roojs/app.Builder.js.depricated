@@ -234,7 +234,7 @@ public class JsRender.Node  {
             if (isListener) {
             // change the lines...
                             
-                string str;
+                string str = "";
                 try {
                     str = func_regex.replace(v,v.length, 0, "");
                 } catch(Error e) {
