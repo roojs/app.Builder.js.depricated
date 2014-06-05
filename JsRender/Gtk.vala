@@ -12,9 +12,9 @@ namespace JsRender {
        
 
         public Gtk(Project.Project project, string path) {
-            this.xtype = "Gtk";
+        
             base( project, path);
-            
+            this.xtype = "Gtk";
              
             
             
