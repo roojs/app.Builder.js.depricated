@@ -84,7 +84,7 @@ public class JsRender.Node  {
 
 	}
 
-	string GLibStringListJoin(GLib.List<string> ar, string sep) 
+	string gLibStringListJoin(GLib.List<string> ar, string sep) 
 	{
 		var ret = "";
 		for (var i = 0; i < ar.length(); i++) {
@@ -183,7 +183,7 @@ public class JsRender.Node  {
             }
             var spad = pad.substring(0, pad.length-4);
             return   "{\n" +
-                pad  + string.join(",\n" + pad , els) + 
+                pad  + gLibStringListJoin(",\n" + pad , els) + 
                 "\n" + spad +  "}";
                
             
@@ -334,7 +334,7 @@ public class JsRender.Node  {
             
         var spad = pad.substring(0, pad.length-4);
         return   "{\n" +
-            pad  + string.join(",\n" + pad , els) + 
+            pad  + gLibStringListJoin(",\n" + pad , els) + 
             "\n" + spad +  "}";
            
            
