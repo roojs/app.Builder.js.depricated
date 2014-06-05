@@ -105,7 +105,7 @@ public abstract class JsRender  : Object {
         // NOOP
     }
 
-    public void loadItems()
+    public abstract void loadItems()
     {
        print("load items not handled..");
 
