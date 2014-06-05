@@ -339,7 +339,7 @@ public class JsRender.Node  {
         if (Node.gen == null) {
             Node.gen = new Json.Generator();
         }
-       var n = new Json.Node(NodeType.NULL);
+       var n = new Json.Node(Json.NodeType.VALUE);
 		n.set_string(str);
  
         Node.gen.set_root (n);
@@ -366,6 +366,11 @@ public class JsRender.Node  {
                 });
                 return;
             }
+			var v = value.get_value();
+			
+			switch(value.get_node_type()) {
+				case Json.NodeType.STRING
+			
             this.props.set(key, value.get_string());
         });
         
