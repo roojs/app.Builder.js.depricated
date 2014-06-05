@@ -6,11 +6,12 @@
 // test
 // valac gitlive/app.Builder.js/JsRender/Lang.vala --pkg gee-1.0 -o /tmp/Lang ;/tmp/Lang
 
-
+/*
 void main () {
      new JsRender.Lang_Class();
     print(JsRender.Lang.keyword("delete") + "\n");
 }
+*/
 namespace JsRender { 
     public Lang_Class Lang = null;
     
