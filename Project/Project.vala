@@ -23,8 +23,7 @@ public class Project.Project {
     public GLib.List<JsRender.JsRender> files ;
     //tree : false,
     public  string xtype {
-	   get { return "??"; }
-   }
+	  
     
     
     public Project (string path) {
