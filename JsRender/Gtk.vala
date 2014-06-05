@@ -102,7 +102,7 @@ namespace JsRender {
         },
         */
       
-        public string toSource()
+        public override string toSource()
         {
         
             
