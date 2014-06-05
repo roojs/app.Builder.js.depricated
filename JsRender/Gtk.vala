@@ -597,6 +597,13 @@ namespace JsRender {
     }
 	string nodeToValaNew(Node n)
 	{
+		var ret = "new ";
+		ret += node.fqn() "(";
+		// what are the args required for this type of ctor...
+		
+
+
+
 		
 
 	}
