@@ -70,7 +70,12 @@ public class JsRender  : Object {
 		throw new Error.INVALID_FORMAT("JsRender Factory called with xtype=%s", xt);
         return null;    
     }
-    
+
+	public string toJsonString()
+	{
+
+	}
+	
     public void save ()
     {
          
