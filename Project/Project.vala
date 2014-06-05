@@ -34,7 +34,7 @@ public class Project.Project {
         this.files = new GLib.List<JsRender.JsRender>();
         //XObject.extend(this, cfg);
         //this.files = { }; 
-        
+        this.paths.set(path, "dir");
         
         this.scanDirs();
         
@@ -65,7 +65,7 @@ public class Project.Project {
    //         return  ProjectManager.getPalete(this.xtype);
    // }
     
-    public string toJSON()
+    public string toJSON(bool show_all)
     {
         
         var builder = new Json.Builder ();
