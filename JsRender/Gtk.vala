@@ -386,7 +386,10 @@ namespace JsRender {
 							continue;
 						}
 						var var_id = "xxx%d".printf( argid++ );
-						ret+= pad + "var "+ var_id + " = new "  + this.nodeToValaNew(pvi) +"\n";
+	
+						var new_str = this.nodeToValaNew(pvi, ref ret, ref argid , pad )
+						
+						ret+= pad + "var "+ var_id + " = new "  + new_str +"\n";
 						args.append(var_id);
 						continue;
 					} 
