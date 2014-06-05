@@ -13,10 +13,12 @@ public static int main () {
 	print("\ndone\n");
 	var tf = proj.files.get("/home/alan/gitlive/app.Builder.js/Builder4/Editor.bjs");
 	tf.loadItems();
-	var test_out =tf.toJsonString();
+
+	/*var test_out =tf.toJsonString();
 	print(test_out);
 	FileUtils.set_contents("/tmp/out.bjs",test_out);
 	//string[] spawn_args = {"diff", "-u", "/home/alan/gitlive/app.Builder.js/Builder4/Editor.bjs", "/tmp/out.bjs" };
+	*/
 	return 0;
 	string[] spawn_env = Environ.get ();
 	int ls_status;
