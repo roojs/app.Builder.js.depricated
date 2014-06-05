@@ -22,7 +22,7 @@ public class Project.Project {
     public Gee.HashMap<string,string> paths;
     public GLib.List<JsRender.JsRender> files ;
     //tree : false,
-    public string xtype {
+    public abstract string xtype {
 	   get { return "??"; }
    }
     
@@ -323,7 +323,7 @@ public class Project.Project {
                 }
                 */
                 var xt = this.xtype;
-				var el = JsRender.JsRender.factory(xt,this, dir + "/" + fn)
+				var el = JsRender.JsRender.factory(xt,this, dir + "/" + fn);
                 this.files.append(el);
                 // parent ?? 
                 
