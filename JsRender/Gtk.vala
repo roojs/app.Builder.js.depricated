@@ -609,7 +609,7 @@ namespace JsRender {
 			if (ctor_def.paramset != null)  {
 				var args = new GLib.List<string>();
 				var argid = 1;
-		        var args = new GLib.List<string>();
+ 
 				var piter = ctor_def.paramset.params.map_iterator();
 				while (piter.next()) {
 
