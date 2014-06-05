@@ -67,6 +67,7 @@ public class JsRender  : Object {
             case "Roo":
                 return new Roo(project, path);
         }
+		throw new Error.INVALID_FORMAT("JsRender Factory called with xtype=%s", xt);
         return null;    
     }
     
@@ -248,7 +249,9 @@ public class JsRender  : Object {
         return this.tree.mungeToString(false, pad, this.doubleStringProps);
         
     }
-    
+     public string toSource() {
+		 return "??";
+	 }
       
 }
     
