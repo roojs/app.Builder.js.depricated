@@ -592,7 +592,7 @@ namespace JsRender {
         
          
     }
-	string nodeToValaNew(Node node, out pre_data, int id)
+	string nodeToValaNew(Node node, out pre_data, ref id)
 	{
 		var ret = "new ";
 		ret += node.fqn() "(";
@@ -620,7 +620,7 @@ namespace JsRender {
 						args.append("null"); // hopefully...
 						continue;
 					}
-					var var_id = "xxx%d".printf( argid++ );
+					var var_id = "xxx%d".printf( id++ );
 					ret+= pad + "var "+ var_id + " = new "  + this.nodeToValaNew(pvi) +"\n";
 					args.append(var_id);
 					continue;
