@@ -83,7 +83,17 @@ public class JsRender.Node  {
 		return null;
 
 	}
-  
+
+	string GLibStringListJoin(GLib.List<string> ar, string sep) 
+	{
+		var ret = "";
+		for (var i = 0; i < ar.length(); i++) {
+			ret += i>0 ? sep : "";
+			ret += ar.nth_data(i);
+		}
+		return ret;
+
+	}
     
     public string mungeToString (bool isListener, string pad,  GLib.List<string> doubleStringProps)
     {
@@ -369,11 +379,8 @@ public class JsRender.Node  {
 			var v = value.get_value();
 			var sv =  Value (typeof (string));
 			v.transform(ref sv);
-			
-			switch(value.get_node_type()) {
-				case Json.NodeType.STRING
-			
-            this.props.set(key, value.get_string());
+			 
+            this.props.set(key,  (string)sv);
         });
         
 
