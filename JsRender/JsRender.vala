@@ -164,7 +164,7 @@ public abstract class JsRender  : Object {
         print("File.getTree tree called on base object?!?!");
     }
 */
-    public Json.Object toJsonArray ()
+    public Json.Object toJsonObject ()
     {
         
         
