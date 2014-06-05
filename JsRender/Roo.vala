@@ -409,7 +409,7 @@ namespace JsRender {
          * 
          * 
          */
-        public string toSource()
+        public override string toSource()
         {
             // dump the file tree back out to a string.
             
@@ -443,7 +443,7 @@ namespace JsRender {
                 "// Auto generated file - created by app.Builder.js- do not edit directly (at present!)",
                 ""
             };
-            return string.join("\n",s);
+            return string.joinv("\n",s);
             
        
         }
@@ -491,7 +491,7 @@ namespace JsRender {
                 ""
             };
             return  this.outputHeader() + "\n" +
-                this.name + string.join("\n", adda) + o + string.join("\n", addb);
+                this.name + string.joinv("\n", adda) + o + string.joinv("\n", addb);
             
              
              
@@ -539,7 +539,7 @@ namespace JsRender {
                 ""
             };
             return this.outputHeader() + "\n" + 
-                this.name + string.join("\n", adda) + o + string.join("\n", addb);
+                this.name + string.joinv("\n", adda) + o + string.joinv("\n", addb);
              
              
              
@@ -642,7 +642,7 @@ namespace JsRender {
                 ret = {};
             }
             ret += xtype;
-            var str =  string.join(".", ret);
+            var str =  string.joinv(".", ret);
             
             return str;
            // 
