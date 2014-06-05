@@ -95,7 +95,8 @@ public class Project.Project {
         }
         builder.end_array ();
         
-        
+        builder.end_object ();
+		
         var  generator = new Json.Generator ();
         var  root = builder.get_root ();
         generator.set_root (root);
