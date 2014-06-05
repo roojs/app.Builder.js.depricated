@@ -343,9 +343,6 @@ namespace JsRender {
                 if (k[0] != '.') {
                     continue;
                 }
-                if (k == "ctor") {
-                    continue; 
-                }
                 
                 var kk = k.substring(1);
                 
