@@ -323,7 +323,8 @@ public class Project.Project {
                 }
                 */
                 var xt = this.xtype;
-                this.files.append(JsRender.JsRender.factory(xt,this, dir + "/" + fn));
+				var el = JsRender.JsRender.factory(xt,this, dir + "/" + fn)
+                this.files.append(el);
                 // parent ?? 
                 
                  
