@@ -283,7 +283,7 @@ public class Project.Project {
                 var fn = next_file.get_display_name();
         
                  
-                //console.log('trying ' + dir + '/' + fn);
+                print('trying ' + dir + '/' + fn);
                 
                 if (fn[0] == '.') { // skip hidden
                     continue;
@@ -325,7 +325,7 @@ public class Project.Project {
                  
             }
         } catch (Error e) {
-            print("Project::scanDirs failed");
+            print("Project::scanDirs failed : " + e.message + "\n");
         }
         for (var i = 0; i < subs.length(); i++) {
             
