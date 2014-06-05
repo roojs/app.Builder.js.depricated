@@ -623,7 +623,7 @@ namespace JsRender {
 							continue;
 						}
 						var var_id = "tmp_var_%d".printf( id++ );
-						var new_str = this.nodeToValaNew(pvi, ref pre_string, ref id , pad )
+						var new_str = this.nodeToValaNew(pvi, ref pre_string, ref id , pad );
 						pre_str += pad + "var "+ var_id + " = new "  + new_str +"\n";
 						args.append(var_id);
 						continue;
