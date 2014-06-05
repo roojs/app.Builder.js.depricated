@@ -3,7 +3,7 @@
 static int rid = 1;
 
 class Project.Roo : Project {
-	public string xtype {
+	public override string xtype {
 		  get { return "Gtk"; }
 	  }
 
