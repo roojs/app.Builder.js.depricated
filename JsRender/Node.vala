@@ -386,7 +386,15 @@ public class JsRender.Node  {
         while (liter.next()) {
 			li.set_string_member(liter.get_key(), liter.get_value());
 		}
-
+		var ar = new Json.Array();
+		ret.set_array_member("items", ar);
+		
+		// children..
+		for(var i =0;i < this.items.length();i++) {
+			ar.set_object_element(i, this.item.nth_data(i).toJsonObject());
+       }
+		return ret;
+		
 
 		
 
