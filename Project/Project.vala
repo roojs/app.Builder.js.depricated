@@ -253,7 +253,7 @@ public class Project.Project {
     {
         var iter = this.paths.map_iterator();
         while (iter.next()) {
-			print("path: " + iter.get_key() + " : " + iter.get_value());
+			print("path: " + iter.get_key() + " : " + iter.get_value() +"\n");
             if (iter.get_value() != "dir") {
                 continue;
             }
@@ -266,7 +266,7 @@ public class Project.Project {
     public void scanDir(string dir, int dp =0 ) 
     {
         //dp = dp || 0;
-        print("Project.Base: Running scandir on " + dir);
+        print("Project.Base: Running scandir on " + dir +"\n");
         if (dp > 5) { // no more than 5 deep?
             return;
         }
