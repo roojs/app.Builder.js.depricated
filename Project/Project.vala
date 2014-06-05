@@ -94,7 +94,19 @@ public class Project.Project {
             builder.add_string_value (iter.get_key());
         }
         builder.end_array ();
-        
+		if (show_all) {
+			builder.set_member_name ("files");
+			builder.begin_array ();
+		    
+		    
+		    
+		    for(var i=0;i<this.files.length;i++) {
+				builder.add_string_value (this.files.nth_data(i).);
+		    }
+		    builder.end_array ();
+		}
+
+		
         builder.end_object ();
 		
         var  generator = new Json.Generator ();
