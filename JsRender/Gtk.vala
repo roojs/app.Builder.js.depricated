@@ -643,7 +643,7 @@ namespace JsRender {
 		string valueTypeToString(string val, string type) {
 			switch(type) {
 				case "utf8":
-					return "\"" +  val.escape() + "\"";
+					return "\"" +  val.escape("") + "\"";
 				default:
 					return val;
 
