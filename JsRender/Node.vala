@@ -374,7 +374,11 @@ public class JsRender.Node  {
     }
     Json.Object toJsonObject()
 	{
-		
+		var ret = new Json.Object();
+	    var iter = this.props.map_iterator();
+        while (iter.next()) {
+			ret.set_string_member(iter.get_key(), iter.get_value());
+		}
 
 	}
     
