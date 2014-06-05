@@ -4,12 +4,11 @@ static int rid = 1;
 
 class Project.Roo : Project {
 
-	public  string  getXtype {
-		  return "Gtk";
-	}
+	 
 
     Roo(string path) {
-        
+
+		this.xtype = "Roo";
         base(path);
        
         // various loader methods..
