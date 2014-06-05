@@ -590,54 +590,53 @@ namespace JsRender {
             return ret;
         }
         
-         
-    }
-	string nodeToValaNew(Node node, ref pre_str, ref id, pad)
-	{
-		var ret = "new ";
-		ret += node.fqn() "(";
-		// what are the args required for this type of ctor...
-		var ctors = this.palete.getPropertiesFor(node.fqn(),  "ctor");
-		string ctor = item.get("*ctor").length > 0 ? item.get("(ctor") : "new";
- 
+		      
+		string nodeToValaNew(Node node, ref pre_str, ref id, pad)
+		{
+			var ret = "new ";
+			ret += node.fqn() "(";
+			// what are the args required for this type of ctor...
+			var ctors = this.palete.getPropertiesFor(node.fqn(),  "ctor");
+			string ctor = item.get("*ctor").length > 0 ? item.get("(ctor") : "new";
+	 
 		
-		var ctor_def = ctors.get(ctor);
+			var ctor_def = ctors.get(ctor);
 			
 
-		if (ctor_def.paramset != null)  {
+			if (ctor_def.paramset != null)  {
 
-			var argid = 1;
-            var args = new GLib.List<string>();
-			var piter = ctor_def.paramset.params.map_iterator();
-			while (piter.next()) {
+				var argid = 1;
+		        var args = new GLib.List<string>();
+				var piter = ctor_def.paramset.params.map_iterator();
+				while (piter.next()) {
 
-				// need piter.get_key(); -- string..
-				string pv = node.get(piter.get_key());
-				if (pv.length < 1) {
-					// try and find the 'item'....
-					Node pvi = node.findProp(piter.get_key());
-					if (pvi == null) {
-						args.append("null"); // hopefully...
+					// need piter.get_key(); -- string..
+					string pv = node.get(piter.get_key());
+					if (pv.length < 1) {
+						// try and find the 'item'....
+						Node pvi = node.findProp(piter.get_key());
+						if (pvi == null) {
+							args.append("null"); // hopefully...
+							continue;
+						}
+						var var_id = "tmp_var_%d".printf( id++ );
+						var new_str = this.nodeToValaNew(pvi, pre_string, id , pad )
+						pre_str += pad + "var "+ var_id + " = new "  + new_str +"\n";
+						args.append(var_id);
 						continue;
-					}
-					var var_id = "tmp_var_%d".printf( id++ );
-					var new_str = this.nodeToValaNew(pvi, pre_string, id , pad )
-					pre_str += pad + "var "+ var_id + " = new "  + new_str +"\n";
-					args.append(var_id);
-					continue;
-				} 
-				// got a string value..
-				args.append(this.valueTypeToString(pv, piter.getValue().type));
+					} 
+					// got a string value..
+					args.append(this.valueTypeToString(pv, piter.getValue().type));
 				
-            }
-            return ret + string.join(", ", args) + " );\n" ;
+		        }
+		        return ret + string.join(", ", args) + " );\n" ;
 
-        } 
-        return ret +  ");\n" ;
+		    } 
+		    return ret +  ");\n" ;
 
-            
+		        
 
-
+		}
 
 		
 
