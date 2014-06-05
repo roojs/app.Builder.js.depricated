@@ -60,6 +60,10 @@ typedef struct _JsRenderRooPrivate JsRenderRooPrivate;
 #define _g_regex_unref0(var) ((var == NULL) ? NULL : (var = (g_regex_unref (var), NULL)))
 #define _g_error_free0(var) ((var == NULL) ? NULL : (var = (g_error_free (var), NULL)))
 
+typedef enum  {
+	JS_RENDER_ERROR_INVALID_FORMAT
+} JsRenderError;
+#define JS_RENDER_ERROR js_render_error_quark ()
 struct _JsRenderJsRender {
 	GObject parent_instance;
 	JsRenderJsRenderPrivate * priv;
@@ -81,6 +85,8 @@ struct _JsRenderJsRender {
 
 struct _JsRenderJsRenderClass {
 	GObjectClass parent_class;
+	void (*loadItems) (JsRenderJsRender* self, GError** error);
+	gchar* (*toSource) (JsRenderJsRender* self);
 };
 
 struct _JsRenderRoo {
@@ -97,22 +103,13 @@ struct _JsRenderRooPrivate {
 	gboolean disabled;
 };
 
-typedef enum  {
-	JS_RENDER_ERROR_INVALID_FORMAT
-} JsRenderError;
-#define JS_RENDER_ERROR js_render_error_quark ()
 
 extern gint js_render_rid;
 gint js_render_rid = 0;
 static gpointer js_render_roo_parent_class = NULL;
 
 GType js_render_js_render_get_type (void) G_GNUC_CONST;
-gpointer project_project_ref (gpointer instance);
-void project_project_unref (gpointer instance);
-GParamSpec* project_param_spec_project (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags);
-void project_value_set_project (GValue* value, gpointer v_object);
-void project_value_take_project (GValue* value, gpointer v_object);
-gpointer project_value_get_project (const GValue* value);
+GQuark js_render_error_quark (void);
 GType project_project_get_type (void) G_GNUC_CONST;
 gpointer js_render_node_ref (gpointer instance);
 void js_render_node_unref (gpointer instance);
@@ -128,10 +125,8 @@ enum  {
 };
 JsRenderRoo* js_render_roo_new (ProjectProject* project, const gchar* path);
 JsRenderRoo* js_render_roo_construct (GType object_type, ProjectProject* project, const gchar* path);
-JsRenderJsRender* js_render_js_render_new (ProjectProject* project, const gchar* path);
 JsRenderJsRender* js_render_js_render_construct (GType object_type, ProjectProject* project, const gchar* path);
-GQuark js_render_error_quark (void);
-void js_render_roo_loadItems (JsRenderRoo* self, GError** error);
+static void js_render_roo_real_loadItems (JsRenderJsRender* base, GError** error);
 static JsonNode* _vala_JsonNode_copy (JsonNode* self);
 static void _vala_JsonNode_free (JsonNode* self);
 JsRenderNode* js_render_node_new (void);
@@ -139,12 +134,13 @@ JsRenderNode* js_render_node_construct (GType object_type);
 void js_render_node_loadFromJson (JsRenderNode* self, JsonObject* obj);
 void js_render_roo_save (JsRenderRoo* self);
 void js_render_js_render_save (JsRenderJsRender* self);
-gchar* js_render_roo_toSource (JsRenderRoo* self);
+gchar* js_render_js_render_toSource (JsRenderJsRender* self);
 static gchar* js_render_roo_toSourcePreview (JsRenderRoo* self);
 gchar* js_render_roo_guessName (JsRenderRoo* self, JsRenderNode* ar);
 gchar* js_render_roo_toSourceDialog (JsRenderRoo* self, gboolean isPreview);
 gchar* js_render_roo_toSourceModal (JsRenderRoo* self, gboolean isPreview);
 gchar* js_render_roo_toSourceLayout (JsRenderRoo* self, gboolean isPreview);
+static gchar* js_render_roo_real_toSource (JsRenderJsRender* base);
 gchar* js_render_roo_outputHeader (JsRenderRoo* self);
 gchar* js_render_js_render_mungeToString (JsRenderJsRender* self, const gchar* pad);
 gchar* js_render_roo_pathToPart (JsRenderRoo* self);
@@ -265,19 +261,19 @@ JsRenderRoo* js_render_roo_construct (GType object_type, ProjectProject* project
 	dsp_length1 = 9;
 #line 34 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	_dsp_size_ = dsp_length1;
-#line 269 "Roo.vala.c"
+#line 265 "Roo.vala.c"
 	{
 		gint i = 0;
 #line 43 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		i = 0;
-#line 274 "Roo.vala.c"
+#line 270 "Roo.vala.c"
 		{
 			gboolean _tmp17_ = FALSE;
 #line 43 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 			_tmp17_ = TRUE;
 #line 43 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 			while (TRUE) {
-#line 281 "Roo.vala.c"
+#line 277 "Roo.vala.c"
 				gint _tmp19_ = 0;
 				gchar** _tmp20_ = NULL;
 				gint _tmp20__length1 = 0;
@@ -288,13 +284,13 @@ JsRenderRoo* js_render_roo_construct (GType object_type, ProjectProject* project
 				gchar* _tmp24_ = NULL;
 #line 43 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 				if (!_tmp17_) {
-#line 292 "Roo.vala.c"
+#line 288 "Roo.vala.c"
 					gint _tmp18_ = 0;
 #line 43 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 					_tmp18_ = i;
 #line 43 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 					i = _tmp18_ + 1;
-#line 298 "Roo.vala.c"
+#line 294 "Roo.vala.c"
 				}
 #line 43 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 				_tmp17_ = FALSE;
@@ -308,7 +304,7 @@ JsRenderRoo* js_render_roo_construct (GType object_type, ProjectProject* project
 				if (!(_tmp19_ < _tmp20__length1)) {
 #line 43 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 					break;
-#line 312 "Roo.vala.c"
+#line 308 "Roo.vala.c"
 				}
 #line 44 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 				_tmp21_ = dsp;
@@ -322,7 +318,7 @@ JsRenderRoo* js_render_roo_construct (GType object_type, ProjectProject* project
 				_tmp24_ = g_strdup (_tmp23_);
 #line 44 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 				((JsRenderJsRender*) self)->doubleStringProps = g_list_append (((JsRenderJsRender*) self)->doubleStringProps, _tmp24_);
-#line 326 "Roo.vala.c"
+#line 322 "Roo.vala.c"
 			}
 		}
 	}
@@ -330,53 +326,54 @@ JsRenderRoo* js_render_roo_construct (GType object_type, ProjectProject* project
 	dsp = (_vala_array_free (dsp, dsp_length1, (GDestroyNotify) g_free), NULL);
 #line 12 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	return self;
-#line 334 "Roo.vala.c"
+#line 330 "Roo.vala.c"
 }
 
 
 JsRenderRoo* js_render_roo_new (ProjectProject* project, const gchar* path) {
 #line 12 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	return js_render_roo_construct (JS_RENDER_TYPE_ROO, project, path);
-#line 341 "Roo.vala.c"
+#line 337 "Roo.vala.c"
 }
 
 
 static JsonNode* _vala_JsonNode_copy (JsonNode* self) {
 #line 78 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	return g_boxed_copy (json_node_get_type (), self);
-#line 348 "Roo.vala.c"
+#line 344 "Roo.vala.c"
 }
 
 
 static gpointer __vala_JsonNode_copy0 (gpointer self) {
 #line 78 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	return self ? _vala_JsonNode_copy (self) : NULL;
-#line 355 "Roo.vala.c"
+#line 351 "Roo.vala.c"
 }
 
 
 static void _vala_JsonNode_free (JsonNode* self) {
 #line 81 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	g_boxed_free (json_node_get_type (), self);
-#line 362 "Roo.vala.c"
+#line 358 "Roo.vala.c"
 }
 
 
 static gpointer _json_object_ref0 (gpointer self) {
 #line 83 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	return self ? json_object_ref (self) : NULL;
-#line 369 "Roo.vala.c"
+#line 365 "Roo.vala.c"
 }
 
 
 static gpointer _json_array_ref0 (gpointer self) {
 #line 93 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	return self ? json_array_ref (self) : NULL;
-#line 376 "Roo.vala.c"
+#line 372 "Roo.vala.c"
 }
 
 
-void js_render_roo_loadItems (JsRenderRoo* self, GError** error) {
+static void js_render_roo_real_loadItems (JsRenderJsRender* base, GError** error) {
+	JsRenderRoo * self;
 	JsRenderNode* _tmp0_ = NULL;
 	JsonParser* pa = NULL;
 	JsonParser* _tmp1_ = NULL;
@@ -423,7 +420,7 @@ void js_render_roo_loadItems (JsRenderRoo* self, GError** error) {
 	JsonObject* _tmp41_ = NULL;
 	GError * _inner_error_ = NULL;
 #line 66 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
-	g_return_if_fail (self != NULL);
+	self = (JsRenderRoo*) base;
 #line 70 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	g_print ("load Items!");
 #line 71 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
@@ -432,7 +429,7 @@ void js_render_roo_loadItems (JsRenderRoo* self, GError** error) {
 	if (_tmp0_ != NULL) {
 #line 72 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		return;
-#line 436 "Roo.vala.c"
+#line 433 "Roo.vala.c"
 	}
 #line 76 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	_tmp1_ = json_parser_new ();
@@ -454,7 +451,7 @@ void js_render_roo_loadItems (JsRenderRoo* self, GError** error) {
 			_g_object_unref0 (pa);
 #line 77 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 			return;
-#line 458 "Roo.vala.c"
+#line 455 "Roo.vala.c"
 		} else {
 #line 77 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 			_g_object_unref0 (pa);
@@ -464,7 +461,7 @@ void js_render_roo_loadItems (JsRenderRoo* self, GError** error) {
 			g_clear_error (&_inner_error_);
 #line 77 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 			return;
-#line 468 "Roo.vala.c"
+#line 465 "Roo.vala.c"
 		}
 	}
 #line 78 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
@@ -481,7 +478,7 @@ void js_render_roo_loadItems (JsRenderRoo* self, GError** error) {
 	_tmp8_ = json_node_get_node_type (_tmp7_);
 #line 80 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	if (_tmp8_ != JSON_NODE_OBJECT) {
-#line 485 "Roo.vala.c"
+#line 482 "Roo.vala.c"
 		JsonNode* _tmp9_ = NULL;
 		const gchar* _tmp10_ = NULL;
 		GError* _tmp11_ = NULL;
@@ -503,7 +500,7 @@ void js_render_roo_loadItems (JsRenderRoo* self, GError** error) {
 			_g_object_unref0 (pa);
 #line 81 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 			return;
-#line 507 "Roo.vala.c"
+#line 504 "Roo.vala.c"
 		} else {
 #line 81 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 			__vala_JsonNode_free0 (node);
@@ -515,7 +512,7 @@ void js_render_roo_loadItems (JsRenderRoo* self, GError** error) {
 			g_clear_error (&_inner_error_);
 #line 81 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 			return;
-#line 519 "Roo.vala.c"
+#line 516 "Roo.vala.c"
 		}
 	}
 #line 83 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
@@ -624,7 +621,7 @@ void js_render_roo_loadItems (JsRenderRoo* self, GError** error) {
 	__vala_JsonNode_free0 (node);
 #line 66 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	_g_object_unref0 (pa);
-#line 628 "Roo.vala.c"
+#line 625 "Roo.vala.c"
 }
 
 
@@ -709,7 +706,7 @@ void js_render_roo_save (JsRenderRoo* self) {
 	g_print ("--- JsRender.Roo.save");
 #line 175 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	js_render_js_render_save (G_TYPE_CHECK_INSTANCE_CAST (self, JS_RENDER_TYPE_JS_RENDER, JsRenderJsRender));
-#line 713 "Roo.vala.c"
+#line 710 "Roo.vala.c"
 	{
 		GRegex* regex = NULL;
 		GRegex* _tmp0_ = NULL;
@@ -729,7 +726,7 @@ void js_render_roo_save (JsRenderRoo* self) {
 		if (_inner_error_ != NULL) {
 #line 180 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 			if (_inner_error_->domain == G_REGEX_ERROR) {
-#line 733 "Roo.vala.c"
+#line 730 "Roo.vala.c"
 				goto __catch6_g_regex_error;
 			}
 #line 180 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
@@ -740,7 +737,7 @@ void js_render_roo_save (JsRenderRoo* self) {
 			g_clear_error (&_inner_error_);
 #line 180 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 			return;
-#line 744 "Roo.vala.c"
+#line 741 "Roo.vala.c"
 		}
 #line 182 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		_tmp2_ = regex;
@@ -762,7 +759,7 @@ void js_render_roo_save (JsRenderRoo* self) {
 			_g_regex_unref0 (regex);
 #line 182 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 			if (_inner_error_->domain == G_REGEX_ERROR) {
-#line 766 "Roo.vala.c"
+#line 763 "Roo.vala.c"
 				goto __catch6_g_regex_error;
 			}
 #line 182 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
@@ -775,7 +772,7 @@ void js_render_roo_save (JsRenderRoo* self) {
 			g_clear_error (&_inner_error_);
 #line 182 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 			return;
-#line 779 "Roo.vala.c"
+#line 776 "Roo.vala.c"
 		}
 #line 182 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		_tmp8_ = _tmp1_;
@@ -789,7 +786,7 @@ void js_render_roo_save (JsRenderRoo* self) {
 		_g_free0 (_tmp1_);
 #line 179 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		_g_regex_unref0 (regex);
-#line 793 "Roo.vala.c"
+#line 790 "Roo.vala.c"
 	}
 	goto __finally6;
 	__catch6_g_regex_error:
@@ -814,7 +811,7 @@ void js_render_roo_save (JsRenderRoo* self) {
 		_g_free0 (js);
 #line 186 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		return;
-#line 818 "Roo.vala.c"
+#line 815 "Roo.vala.c"
 	}
 	__finally6:
 #line 179 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
@@ -827,13 +824,13 @@ void js_render_roo_save (JsRenderRoo* self) {
 		g_clear_error (&_inner_error_);
 #line 179 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		return;
-#line 831 "Roo.vala.c"
+#line 828 "Roo.vala.c"
 	}
 #line 190 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
-	_tmp10_ = js_render_roo_toSource (self);
+	_tmp10_ = js_render_js_render_toSource ((JsRenderJsRender*) self);
 #line 190 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	js_src = _tmp10_;
-#line 837 "Roo.vala.c"
+#line 834 "Roo.vala.c"
 	{
 		const gchar* _tmp11_ = NULL;
 		const gchar* _tmp12_ = NULL;
@@ -856,7 +853,7 @@ void js_render_roo_save (JsRenderRoo* self) {
 		if (_inner_error_ != NULL) {
 #line 193 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 			if (_inner_error_->domain == G_FILE_ERROR) {
-#line 860 "Roo.vala.c"
+#line 857 "Roo.vala.c"
 				goto __catch7_g_file_error;
 			}
 #line 193 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
@@ -869,7 +866,7 @@ void js_render_roo_save (JsRenderRoo* self) {
 			g_clear_error (&_inner_error_);
 #line 193 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 			return;
-#line 873 "Roo.vala.c"
+#line 870 "Roo.vala.c"
 		}
 	}
 	goto __finally7;
@@ -884,7 +881,7 @@ void js_render_roo_save (JsRenderRoo* self) {
 		g_print ("Save failed\n");
 #line 192 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		_g_error_free0 (e);
-#line 888 "Roo.vala.c"
+#line 885 "Roo.vala.c"
 	}
 	__finally7:
 #line 192 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
@@ -899,13 +896,13 @@ void js_render_roo_save (JsRenderRoo* self) {
 		g_clear_error (&_inner_error_);
 #line 192 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		return;
-#line 903 "Roo.vala.c"
+#line 900 "Roo.vala.c"
 	}
 #line 171 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	_g_free0 (js_src);
 #line 171 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	_g_free0 (js);
-#line 909 "Roo.vala.c"
+#line 906 "Roo.vala.c"
 }
 
 
@@ -929,7 +926,7 @@ static gboolean string_contains (const gchar* self, const gchar* needle) {
 	result = _tmp1_ != NULL;
 #line 1275 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 	return result;
-#line 933 "Roo.vala.c"
+#line 930 "Roo.vala.c"
 }
 
 
@@ -962,7 +959,7 @@ static gchar* js_render_roo_toSourcePreview (JsRenderRoo* self) {
 		_g_free0 (top);
 #line 386 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		return result;
-#line 966 "Roo.vala.c"
+#line 963 "Roo.vala.c"
 	}
 #line 390 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	_tmp3_ = top;
@@ -970,7 +967,7 @@ static gchar* js_render_roo_toSourcePreview (JsRenderRoo* self) {
 	_tmp4_ = string_contains (_tmp3_, "Dialog");
 #line 390 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	if (_tmp4_) {
-#line 974 "Roo.vala.c"
+#line 971 "Roo.vala.c"
 		gchar* _tmp5_ = NULL;
 #line 391 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		_tmp5_ = js_render_roo_toSourceDialog (self, TRUE);
@@ -980,7 +977,7 @@ static gchar* js_render_roo_toSourcePreview (JsRenderRoo* self) {
 		_g_free0 (top);
 #line 391 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		return result;
-#line 984 "Roo.vala.c"
+#line 981 "Roo.vala.c"
 	}
 #line 394 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	_tmp6_ = top;
@@ -988,7 +985,7 @@ static gchar* js_render_roo_toSourcePreview (JsRenderRoo* self) {
 	_tmp7_ = string_contains (_tmp6_, "Modal");
 #line 394 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	if (_tmp7_) {
-#line 992 "Roo.vala.c"
+#line 989 "Roo.vala.c"
 		gchar* _tmp8_ = NULL;
 #line 395 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		_tmp8_ = js_render_roo_toSourceModal (self, TRUE);
@@ -998,7 +995,7 @@ static gchar* js_render_roo_toSourcePreview (JsRenderRoo* self) {
 		_g_free0 (top);
 #line 395 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		return result;
-#line 1002 "Roo.vala.c"
+#line 999 "Roo.vala.c"
 	}
 #line 398 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	_tmp9_ = js_render_roo_toSourceLayout (self, TRUE);
@@ -1008,7 +1005,7 @@ static gchar* js_render_roo_toSourcePreview (JsRenderRoo* self) {
 	_g_free0 (top);
 #line 398 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	return result;
-#line 1012 "Roo.vala.c"
+#line 1009 "Roo.vala.c"
 }
 
 
@@ -1020,7 +1017,8 @@ static gchar* js_render_roo_toSourcePreview (JsRenderRoo* self) {
          * 
          * 
          */
-gchar* js_render_roo_toSource (JsRenderRoo* self) {
+static gchar* js_render_roo_real_toSource (JsRenderJsRender* base) {
+	JsRenderRoo * self;
 	gchar* result = NULL;
 	gchar* top = NULL;
 	JsRenderNode* _tmp0_ = NULL;
@@ -1032,7 +1030,7 @@ gchar* js_render_roo_toSource (JsRenderRoo* self) {
 	gboolean _tmp8_ = FALSE;
 	gchar* _tmp10_ = NULL;
 #line 412 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
-	g_return_val_if_fail (self != NULL, NULL);
+	self = (JsRenderRoo*) base;
 #line 418 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	_tmp0_ = ((JsRenderJsRender*) self)->tree;
 #line 418 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
@@ -1043,7 +1041,7 @@ gchar* js_render_roo_toSource (JsRenderRoo* self) {
 	_tmp2_ = top;
 #line 419 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	if (_tmp2_ != NULL) {
-#line 1047 "Roo.vala.c"
+#line 1045 "Roo.vala.c"
 		gchar* _tmp3_ = NULL;
 #line 420 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		_tmp3_ = g_strdup ("");
@@ -1053,7 +1051,7 @@ gchar* js_render_roo_toSource (JsRenderRoo* self) {
 		_g_free0 (top);
 #line 420 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		return result;
-#line 1057 "Roo.vala.c"
+#line 1055 "Roo.vala.c"
 	}
 #line 422 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	_tmp4_ = top;
@@ -1061,7 +1059,7 @@ gchar* js_render_roo_toSource (JsRenderRoo* self) {
 	_tmp5_ = string_contains (_tmp4_, "Dialog");
 #line 422 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	if (_tmp5_) {
-#line 1065 "Roo.vala.c"
+#line 1063 "Roo.vala.c"
 		gchar* _tmp6_ = NULL;
 #line 423 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		_tmp6_ = js_render_roo_toSourceDialog (self, FALSE);
@@ -1071,7 +1069,7 @@ gchar* js_render_roo_toSource (JsRenderRoo* self) {
 		_g_free0 (top);
 #line 423 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		return result;
-#line 1075 "Roo.vala.c"
+#line 1073 "Roo.vala.c"
 	}
 #line 426 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	_tmp7_ = top;
@@ -1079,7 +1077,7 @@ gchar* js_render_roo_toSource (JsRenderRoo* self) {
 	_tmp8_ = string_contains (_tmp7_, "Modal");
 #line 426 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	if (_tmp8_) {
-#line 1083 "Roo.vala.c"
+#line 1081 "Roo.vala.c"
 		gchar* _tmp9_ = NULL;
 #line 427 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		_tmp9_ = js_render_roo_toSourceModal (self, TRUE);
@@ -1089,7 +1087,7 @@ gchar* js_render_roo_toSource (JsRenderRoo* self) {
 		_g_free0 (top);
 #line 427 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		return result;
-#line 1093 "Roo.vala.c"
+#line 1091 "Roo.vala.c"
 	}
 #line 429 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	_tmp10_ = js_render_roo_toSourceLayout (self, FALSE);
@@ -1099,7 +1097,7 @@ gchar* js_render_roo_toSource (JsRenderRoo* self) {
 	_g_free0 (top);
 #line 429 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	return result;
-#line 1103 "Roo.vala.c"
+#line 1101 "Roo.vala.c"
 }
 
 
@@ -1149,7 +1147,7 @@ gchar* js_render_roo_outputHeader (JsRenderRoo* self) {
 	s = (_vala_array_free (s, s_length1, (GDestroyNotify) g_free), NULL);
 #line 446 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	return result;
-#line 1152 "Roo.vala.c"
+#line 1150 "Roo.vala.c"
 }
 
 
@@ -1413,7 +1411,7 @@ gchar* js_render_roo_toSourceDialog (JsRenderRoo* self, gboolean isPreview) {
 	_g_free0 (o);
 #line 493 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	return result;
-#line 1415 "Roo.vala.c"
+#line 1413 "Roo.vala.c"
 }
 
 
@@ -1677,7 +1675,7 @@ gchar* js_render_roo_toSourceModal (JsRenderRoo* self, gboolean isPreview) {
 	_g_free0 (o);
 #line 541 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	return result;
-#line 1678 "Roo.vala.c"
+#line 1676 "Roo.vala.c"
 }
 
 
@@ -1700,7 +1698,7 @@ static glong string_strnlen (gchar* str, glong maxlen) {
 	_tmp3_ = end;
 #line 1194 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 	if (_tmp3_ == NULL) {
-#line 1701 "Roo.vala.c"
+#line 1699 "Roo.vala.c"
 		glong _tmp4_ = 0L;
 #line 1195 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 		_tmp4_ = maxlen;
@@ -1708,7 +1706,7 @@ static glong string_strnlen (gchar* str, glong maxlen) {
 		result = _tmp4_;
 #line 1195 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 		return result;
-#line 1709 "Roo.vala.c"
+#line 1707 "Roo.vala.c"
 	} else {
 		gchar* _tmp5_ = NULL;
 		gchar* _tmp6_ = NULL;
@@ -1720,7 +1718,7 @@ static glong string_strnlen (gchar* str, glong maxlen) {
 		result = (glong) (_tmp5_ - _tmp6_);
 #line 1197 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 		return result;
-#line 1721 "Roo.vala.c"
+#line 1719 "Roo.vala.c"
 	}
 }
 
@@ -1744,21 +1742,21 @@ static gchar* string_substring (const gchar* self, glong offset, glong len) {
 	_tmp1_ = offset;
 #line 1206 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 	if (_tmp1_ >= ((glong) 0)) {
-#line 1745 "Roo.vala.c"
+#line 1743 "Roo.vala.c"
 		glong _tmp2_ = 0L;
 #line 1206 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 		_tmp2_ = len;
 #line 1206 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 		_tmp0_ = _tmp2_ >= ((glong) 0);
-#line 1751 "Roo.vala.c"
+#line 1749 "Roo.vala.c"
 	} else {
 #line 1206 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 		_tmp0_ = FALSE;
-#line 1755 "Roo.vala.c"
+#line 1753 "Roo.vala.c"
 	}
 #line 1206 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 	if (_tmp0_) {
-#line 1759 "Roo.vala.c"
+#line 1757 "Roo.vala.c"
 		glong _tmp3_ = 0L;
 		glong _tmp4_ = 0L;
 		glong _tmp5_ = 0L;
@@ -1770,7 +1768,7 @@ static gchar* string_substring (const gchar* self, glong offset, glong len) {
 		_tmp5_ = string_strnlen ((gchar*) self, _tmp3_ + _tmp4_);
 #line 1208 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 		string_length = _tmp5_;
-#line 1771 "Roo.vala.c"
+#line 1769 "Roo.vala.c"
 	} else {
 		gint _tmp6_ = 0;
 		gint _tmp7_ = 0;
@@ -1780,13 +1778,13 @@ static gchar* string_substring (const gchar* self, glong offset, glong len) {
 		_tmp7_ = _tmp6_;
 #line 1210 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 		string_length = (glong) _tmp7_;
-#line 1781 "Roo.vala.c"
+#line 1779 "Roo.vala.c"
 	}
 #line 1213 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 	_tmp8_ = offset;
 #line 1213 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 	if (_tmp8_ < ((glong) 0)) {
-#line 1787 "Roo.vala.c"
+#line 1785 "Roo.vala.c"
 		glong _tmp9_ = 0L;
 		glong _tmp10_ = 0L;
 		glong _tmp11_ = 0L;
@@ -1800,7 +1798,7 @@ static gchar* string_substring (const gchar* self, glong offset, glong len) {
 		_tmp11_ = offset;
 #line 1215 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 		g_return_val_if_fail (_tmp11_ >= ((glong) 0), NULL);
-#line 1801 "Roo.vala.c"
+#line 1799 "Roo.vala.c"
 	} else {
 		glong _tmp12_ = 0L;
 		glong _tmp13_ = 0L;
@@ -1810,13 +1808,13 @@ static gchar* string_substring (const gchar* self, glong offset, glong len) {
 		_tmp13_ = string_length;
 #line 1217 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 		g_return_val_if_fail (_tmp12_ <= _tmp13_, NULL);
-#line 1811 "Roo.vala.c"
+#line 1809 "Roo.vala.c"
 	}
 #line 1219 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 	_tmp14_ = len;
 #line 1219 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 	if (_tmp14_ < ((glong) 0)) {
-#line 1817 "Roo.vala.c"
+#line 1815 "Roo.vala.c"
 		glong _tmp15_ = 0L;
 		glong _tmp16_ = 0L;
 #line 1220 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
@@ -1825,7 +1823,7 @@ static gchar* string_substring (const gchar* self, glong offset, glong len) {
 		_tmp16_ = offset;
 #line 1220 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 		len = _tmp15_ - _tmp16_;
-#line 1826 "Roo.vala.c"
+#line 1824 "Roo.vala.c"
 	}
 #line 1222 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 	_tmp17_ = offset;
@@ -1845,7 +1843,7 @@ static gchar* string_substring (const gchar* self, glong offset, glong len) {
 	result = _tmp22_;
 #line 1223 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 	return result;
-#line 1846 "Roo.vala.c"
+#line 1844 "Roo.vala.c"
 }
 
 
@@ -2005,7 +2003,7 @@ gchar* js_render_roo_pathToPart (JsRenderRoo* self) {
 	_g_free0 (_tmp27_);
 #line 560 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	if (_tmp29_) {
-#line 2006 "Roo.vala.c"
+#line 2004 "Roo.vala.c"
 		const gchar* _tmp30_ = NULL;
 		const gchar* _tmp31_ = NULL;
 		gint _tmp32_ = 0;
@@ -2025,7 +2023,7 @@ gchar* js_render_roo_pathToPart (JsRenderRoo* self) {
 		_g_free0 (npart);
 #line 561 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		npart = _tmp34_;
-#line 2026 "Roo.vala.c"
+#line 2024 "Roo.vala.c"
 	}
 #line 563 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	_tmp35_ = ((JsRenderJsRender*) self)->tree;
@@ -2083,7 +2081,7 @@ gchar* js_render_roo_pathToPart (JsRenderRoo* self) {
 	_g_free0 (dir);
 #line 563 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	return result;
-#line 2084 "Roo.vala.c"
+#line 2082 "Roo.vala.c"
 }
 
 
@@ -2211,7 +2209,7 @@ gchar* js_render_roo_toSourceLayout (JsRenderRoo* self, gboolean isPreview) {
 	_tmp0_ = isPreview;
 #line 576 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	if (_tmp0_) {
-#line 2212 "Roo.vala.c"
+#line 2210 "Roo.vala.c"
 	}
 #line 581 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	_tmp1_ = js_render_js_render_mungeToString ((JsRenderJsRender*) self, "            ");
@@ -2231,7 +2229,7 @@ gchar* js_render_roo_toSourceLayout (JsRenderRoo* self, gboolean isPreview) {
 		g_clear_error (&_inner_error_);
 #line 582 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		return NULL;
-#line 2232 "Roo.vala.c"
+#line 2230 "Roo.vala.c"
 	}
 #line 584 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	_tmp4_ = reg;
@@ -2259,7 +2257,7 @@ gchar* js_render_roo_toSourceLayout (JsRenderRoo* self, gboolean isPreview) {
 		g_clear_error (&_inner_error_);
 #line 584 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		return NULL;
-#line 2260 "Roo.vala.c"
+#line 2258 "Roo.vala.c"
 	}
 #line 584 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	_tmp10_ = ((JsRenderJsRender*) self)->modOrder;
@@ -2291,7 +2289,7 @@ gchar* js_render_roo_toSourceLayout (JsRenderRoo* self, gboolean isPreview) {
 	_tmp20_ = _tmp19_;
 #line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	if (_tmp20_ > 0) {
-#line 2292 "Roo.vala.c"
+#line 2290 "Roo.vala.c"
 		const gchar* _tmp21_ = NULL;
 		gchar* _tmp22_ = NULL;
 		gchar* _tmp23_ = NULL;
@@ -2310,7 +2308,7 @@ gchar* js_render_roo_toSourceLayout (JsRenderRoo* self, gboolean isPreview) {
 		_tmp17_ = _tmp24_;
 #line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		_g_free0 (_tmp23_);
-#line 2311 "Roo.vala.c"
+#line 2309 "Roo.vala.c"
 	} else {
 		gchar* _tmp25_ = NULL;
 #line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
@@ -2319,7 +2317,7 @@ gchar* js_render_roo_toSourceLayout (JsRenderRoo* self, gboolean isPreview) {
 		_g_free0 (_tmp17_);
 #line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		_tmp17_ = _tmp25_;
-#line 2320 "Roo.vala.c"
+#line 2318 "Roo.vala.c"
 	}
 #line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	_tmp26_ = g_strdup (_tmp17_);
@@ -2329,7 +2327,7 @@ gchar* js_render_roo_toSourceLayout (JsRenderRoo* self, gboolean isPreview) {
 	_tmp27_ = isPreview;
 #line 588 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	if (_tmp27_) {
-#line 2330 "Roo.vala.c"
+#line 2328 "Roo.vala.c"
 		gchar* _tmp28_ = NULL;
 #line 589 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		_tmp28_ = g_strdup ("false");
@@ -2337,7 +2335,7 @@ gchar* js_render_roo_toSourceLayout (JsRenderRoo* self, gboolean isPreview) {
 		_g_free0 (parent);
 #line 589 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		parent = _tmp28_;
-#line 2338 "Roo.vala.c"
+#line 2336 "Roo.vala.c"
 	}
 #line 602 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	_tmp30_ = ((JsRenderJsRender*) self)->title;
@@ -2347,17 +2345,17 @@ gchar* js_render_roo_toSourceLayout (JsRenderRoo* self, gboolean isPreview) {
 	_tmp32_ = _tmp31_;
 #line 602 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	if (_tmp32_ > 0) {
-#line 2348 "Roo.vala.c"
+#line 2346 "Roo.vala.c"
 		const gchar* _tmp33_ = NULL;
 #line 602 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		_tmp33_ = ((JsRenderJsRender*) self)->title;
 #line 602 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		_tmp29_ = _tmp33_;
-#line 2354 "Roo.vala.c"
+#line 2352 "Roo.vala.c"
 	} else {
 #line 602 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		_tmp29_ = "unnamed module";
-#line 2358 "Roo.vala.c"
+#line 2356 "Roo.vala.c"
 	}
 #line 603 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	_tmp35_ = self->priv->disabled;
@@ -2365,11 +2363,11 @@ gchar* js_render_roo_toSourceLayout (JsRenderRoo* self, gboolean isPreview) {
 	if (_tmp35_) {
 #line 603 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		_tmp34_ = "true";
-#line 2366 "Roo.vala.c"
+#line 2364 "Roo.vala.c"
 	} else {
 #line 603 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		_tmp34_ = "false";
-#line 2370 "Roo.vala.c"
+#line 2368 "Roo.vala.c"
 	}
 #line 604 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	_tmp37_ = ((JsRenderJsRender*) self)->permname;
@@ -2379,17 +2377,17 @@ gchar* js_render_roo_toSourceLayout (JsRenderRoo* self, gboolean isPreview) {
 	_tmp39_ = _tmp38_;
 #line 604 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	if (_tmp39_ > 0) {
-#line 2380 "Roo.vala.c"
+#line 2378 "Roo.vala.c"
 		const gchar* _tmp40_ = NULL;
 #line 604 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		_tmp40_ = ((JsRenderJsRender*) self)->permname;
 #line 604 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		_tmp36_ = _tmp40_;
-#line 2386 "Roo.vala.c"
+#line 2384 "Roo.vala.c"
 	} else {
 #line 604 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		_tmp36_ = "";
-#line 2390 "Roo.vala.c"
+#line 2388 "Roo.vala.c"
 	}
 #line 593 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	_tmp41_ = js_render_roo_outputHeader (self);
@@ -2633,7 +2631,7 @@ gchar* js_render_roo_toSourceLayout (JsRenderRoo* self, gboolean isPreview) {
 	_g_free0 (o);
 #line 593 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	return result;
-#line 2634 "Roo.vala.c"
+#line 2632 "Roo.vala.c"
 }
 
 
@@ -2644,13 +2642,13 @@ static void _vala_array_add1 (gchar*** array, int* length, int* size, gchar* val
 		*size = (*size) ? (2 * (*size)) : 4;
 #line 627 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		*array = g_renew (gchar*, *array, (*size) + 1);
-#line 2645 "Roo.vala.c"
+#line 2643 "Roo.vala.c"
 	}
 #line 627 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	(*array)[(*length)++] = value;
 #line 627 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	(*array)[*length] = NULL;
-#line 2651 "Roo.vala.c"
+#line 2649 "Roo.vala.c"
 }
 
 
@@ -2668,7 +2666,7 @@ static gchar string_get (const gchar* self, glong index) {
 	result = _tmp1_;
 #line 997 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 	return result;
-#line 2669 "Roo.vala.c"
+#line 2667 "Roo.vala.c"
 }
 
 
@@ -2679,13 +2677,13 @@ static void _vala_array_add2 (gchar*** array, int* length, int* size, gchar* val
 		*size = (*size) ? (2 * (*size)) : 4;
 #line 644 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		*array = g_renew (gchar*, *array, (*size) + 1);
-#line 2680 "Roo.vala.c"
+#line 2678 "Roo.vala.c"
 	}
 #line 644 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	(*array)[(*length)++] = value;
 #line 644 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	(*array)[*length] = NULL;
-#line 2686 "Roo.vala.c"
+#line 2684 "Roo.vala.c"
 }
 
 
@@ -2737,7 +2735,7 @@ gchar* js_render_roo_guessName (JsRenderRoo* self, JsRenderNode* ar) {
 		result = NULL;
 #line 623 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		return result;
-#line 2738 "Roo.vala.c"
+#line 2736 "Roo.vala.c"
 	}
 #line 626 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	_tmp1_ = g_new0 (gchar*, 0 + 1);
@@ -2763,7 +2761,7 @@ gchar* js_render_roo_guessName (JsRenderRoo* self, JsRenderNode* ar) {
 	_g_free0 (_tmp5_);
 #line 627 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	if (_tmp8_) {
-#line 2764 "Roo.vala.c"
+#line 2762 "Roo.vala.c"
 		gchar* _tmp9_ = NULL;
 #line 627 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		_tmp9_ = g_strdup ("Roo");
@@ -2771,7 +2769,7 @@ gchar* js_render_roo_guessName (JsRenderRoo* self, JsRenderNode* ar) {
 		_g_free0 (_tmp2_);
 #line 627 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		_tmp2_ = _tmp9_;
-#line 2772 "Roo.vala.c"
+#line 2770 "Roo.vala.c"
 	} else {
 		JsRenderNode* _tmp10_ = NULL;
 		gchar* _tmp11_ = NULL;
@@ -2783,7 +2781,7 @@ gchar* js_render_roo_guessName (JsRenderRoo* self, JsRenderNode* ar) {
 		_g_free0 (_tmp2_);
 #line 627 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		_tmp2_ = _tmp11_;
-#line 2784 "Roo.vala.c"
+#line 2782 "Roo.vala.c"
 	}
 #line 627 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	_tmp12_ = ret;
@@ -2817,7 +2815,7 @@ gchar* js_render_roo_guessName (JsRenderRoo* self, JsRenderNode* ar) {
 		ret = (_vala_array_free (ret, ret_length1, (GDestroyNotify) g_free), NULL);
 #line 631 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		return result;
-#line 2818 "Roo.vala.c"
+#line 2816 "Roo.vala.c"
 	}
 #line 634 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	_tmp20_ = ar;
@@ -2831,7 +2829,7 @@ gchar* js_render_roo_guessName (JsRenderRoo* self, JsRenderNode* ar) {
 	_tmp23_ = string_get (_tmp22_, (glong) 0);
 #line 636 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	if (_tmp23_ == '*') {
-#line 2832 "Roo.vala.c"
+#line 2830 "Roo.vala.c"
 		const gchar* _tmp24_ = NULL;
 		gchar* _tmp25_ = NULL;
 #line 637 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
@@ -2842,7 +2840,7 @@ gchar* js_render_roo_guessName (JsRenderRoo* self, JsRenderNode* ar) {
 		_g_free0 (xtype);
 #line 637 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		xtype = _tmp25_;
-#line 2843 "Roo.vala.c"
+#line 2841 "Roo.vala.c"
 	}
 #line 639 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	_tmp26_ = xtype;
@@ -2850,7 +2848,7 @@ gchar* js_render_roo_guessName (JsRenderRoo* self, JsRenderNode* ar) {
 	_tmp27_ = g_regex_match_simple ("^Roo", _tmp26_, 0, 0);
 #line 639 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	if (!_tmp27_) {
-#line 2851 "Roo.vala.c"
+#line 2849 "Roo.vala.c"
 		gchar** _tmp28_ = NULL;
 #line 642 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		_tmp28_ = g_new0 (gchar*, 0 + 1);
@@ -2862,7 +2860,7 @@ gchar* js_render_roo_guessName (JsRenderRoo* self, JsRenderNode* ar) {
 		ret_length1 = 0;
 #line 642 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 		_ret_size_ = ret_length1;
-#line 2863 "Roo.vala.c"
+#line 2861 "Roo.vala.c"
 	}
 #line 644 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	_tmp29_ = ret;
@@ -2892,7 +2890,7 @@ gchar* js_render_roo_guessName (JsRenderRoo* self, JsRenderNode* ar) {
 	ret = (_vala_array_free (ret, ret_length1, (GDestroyNotify) g_free), NULL);
 #line 647 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	return result;
-#line 2893 "Roo.vala.c"
+#line 2891 "Roo.vala.c"
 }
 
 
@@ -2923,7 +2921,7 @@ static gchar* js_render_roo_getHelpUrl (JsRenderRoo* self, const gchar* cls) {
 	result = _tmp4_;
 #line 657 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	return result;
-#line 2924 "Roo.vala.c"
+#line 2922 "Roo.vala.c"
 }
 
 
@@ -2933,15 +2931,19 @@ static void js_render_roo_class_init (JsRenderRooClass * klass) {
 #line 7 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	g_type_class_add_private (klass, sizeof (JsRenderRooPrivate));
 #line 7 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+	JS_RENDER_JS_RENDER_CLASS (klass)->loadItems = js_render_roo_real_loadItems;
+#line 7 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+	JS_RENDER_JS_RENDER_CLASS (klass)->toSource = js_render_roo_real_toSource;
+#line 7 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	G_OBJECT_CLASS (klass)->finalize = js_render_roo_finalize;
-#line 2935 "Roo.vala.c"
+#line 2937 "Roo.vala.c"
 }
 
 
 static void js_render_roo_instance_init (JsRenderRoo * self) {
 #line 7 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	self->priv = JS_RENDER_ROO_GET_PRIVATE (self);
-#line 2942 "Roo.vala.c"
+#line 2944 "Roo.vala.c"
 }
 
 
@@ -2953,7 +2955,7 @@ static void js_render_roo_finalize (GObject* obj) {
 	_g_free0 (self->priv->region);
 #line 7 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
 	G_OBJECT_CLASS (js_render_roo_parent_class)->finalize (obj);
-#line 2954 "Roo.vala.c"
+#line 2956 "Roo.vala.c"
 }
 
 

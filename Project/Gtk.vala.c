@@ -44,20 +44,18 @@ typedef struct _ProjectGtkPrivate ProjectGtkPrivate;
 #define _g_free0(var) (var = (g_free (var), NULL))
 
 struct _ProjectProject {
-	GTypeInstance parent_instance;
-	volatile int ref_count;
+	GObject parent_instance;
 	ProjectProjectPrivate * priv;
 	gchar* id;
 	gchar* fn;
 	gchar* name;
 	GeeHashMap* paths;
-	GList* files;
+	GeeHashMap* files;
 	gchar* xtype;
 };
 
 struct _ProjectProjectClass {
-	GTypeClass parent_class;
-	void (*finalize) (ProjectProject *self);
+	GObjectClass parent_class;
 };
 
 struct _ProjectGtk {
@@ -74,12 +72,6 @@ extern gint project_gtk_id;
 gint project_gtk_id = 1;
 static gpointer project_gtk_parent_class = NULL;
 
-gpointer project_project_ref (gpointer instance);
-void project_project_unref (gpointer instance);
-GParamSpec* project_param_spec_project (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags);
-void project_value_set_project (GValue* value, gpointer v_object);
-void project_value_take_project (GValue* value, gpointer v_object);
-gpointer project_value_get_project (const GValue* value);
 GType project_project_get_type (void) G_GNUC_CONST;
 GType js_render_js_render_get_type (void) G_GNUC_CONST;
 GType project_gtk_get_type (void) G_GNUC_CONST;
@@ -93,7 +85,7 @@ ProjectProject* project_project_construct (GType object_type, const gchar* path)
 
 
 ProjectGtk* project_gtk_construct (GType object_type, const gchar* path) {
-	ProjectGtk* self = NULL;
+	ProjectGtk * self = NULL;
 	const gchar* _tmp0_ = NULL;
 	gchar* _tmp1_ = NULL;
 	gchar* gid = NULL;
@@ -130,21 +122,21 @@ ProjectGtk* project_gtk_construct (GType object_type, const gchar* path) {
 	_g_free0 (gid);
 #line 13 "/home/alan/gitlive/app.Builder.js/Project/Gtk.vala"
 	return self;
-#line 134 "Gtk.vala.c"
+#line 126 "Gtk.vala.c"
 }
 
 
 ProjectGtk* project_gtk_new (const gchar* path) {
 #line 13 "/home/alan/gitlive/app.Builder.js/Project/Gtk.vala"
 	return project_gtk_construct (PROJECT_TYPE_GTK, path);
-#line 141 "Gtk.vala.c"
+#line 133 "Gtk.vala.c"
 }
 
 
 static void project_gtk_class_init (ProjectGtkClass * klass) {
 #line 10 "/home/alan/gitlive/app.Builder.js/Project/Gtk.vala"
 	project_gtk_parent_class = g_type_class_peek_parent (klass);
-#line 148 "Gtk.vala.c"
+#line 140 "Gtk.vala.c"
 }
 
 

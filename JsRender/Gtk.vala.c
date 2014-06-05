@@ -93,6 +93,10 @@ typedef struct _PaleteGirObjectClass PaleteGirObjectClass;
 typedef struct _PaleteGirObjectPrivate PaleteGirObjectPrivate;
 #define __g_list_free__g_free0_0(var) ((var == NULL) ? NULL : (var = (_g_list_free__g_free0_ (var), NULL)))
 
+typedef enum  {
+	JS_RENDER_ERROR_INVALID_FORMAT
+} JsRenderError;
+#define JS_RENDER_ERROR js_render_error_quark ()
 struct _JsRenderJsRender {
 	GObject parent_instance;
 	JsRenderJsRenderPrivate * priv;
@@ -114,6 +118,8 @@ struct _JsRenderJsRender {
 
 struct _JsRenderJsRenderClass {
 	GObjectClass parent_class;
+	void (*loadItems) (JsRenderJsRender* self, GError** error);
+	gchar* (*toSource) (JsRenderJsRender* self);
 };
 
 struct _JsRenderGtk {
@@ -132,10 +138,6 @@ struct _JsRenderGtkPrivate {
 	gchar* xvala_xcls;
 };
 
-typedef enum  {
-	JS_RENDER_ERROR_INVALID_FORMAT
-} JsRenderError;
-#define JS_RENDER_ERROR js_render_error_quark ()
 struct _JsRenderNode {
 	GTypeInstance parent_instance;
 	volatile int ref_count;
@@ -192,12 +194,7 @@ gint js_render_gid = 1;
 static gpointer js_render_gtk_parent_class = NULL;
 
 GType js_render_js_render_get_type (void) G_GNUC_CONST;
-gpointer project_project_ref (gpointer instance);
-void project_project_unref (gpointer instance);
-GParamSpec* project_param_spec_project (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags);
-void project_value_set_project (GValue* value, gpointer v_object);
-void project_value_take_project (GValue* value, gpointer v_object);
-gpointer project_value_get_project (const GValue* value);
+GQuark js_render_error_quark (void);
 GType project_project_get_type (void) G_GNUC_CONST;
 gpointer js_render_node_ref (gpointer instance);
 void js_render_node_unref (gpointer instance);
@@ -217,21 +214,20 @@ static void _js_render_node_unref0_ (gpointer var);
 static void _g_list_free__js_render_node_unref0_ (GList* self);
 JsRenderGtk* js_render_gtk_new (ProjectProject* project, const gchar* path);
 JsRenderGtk* js_render_gtk_construct (GType object_type, ProjectProject* project, const gchar* path);
-JsRenderJsRender* js_render_js_render_new (ProjectProject* project, const gchar* path);
 JsRenderJsRender* js_render_js_render_construct (GType object_type, ProjectProject* project, const gchar* path);
-GQuark js_render_error_quark (void);
-void js_render_gtk_loadItems (JsRenderGtk* self, GError** error);
+static void js_render_gtk_real_loadItems (JsRenderJsRender* base, GError** error);
 static JsonNode* _vala_JsonNode_copy (JsonNode* self);
 static void _vala_JsonNode_free (JsonNode* self);
 JsRenderNode* js_render_node_new (void);
 JsRenderNode* js_render_node_construct (GType object_type);
 void js_render_node_loadFromJson (JsRenderNode* self, JsonObject* obj);
-gchar* js_render_gtk_toSource (JsRenderGtk* self);
+static gchar* js_render_gtk_real_toSource (JsRenderJsRender* base);
 gchar* js_render_js_render_mungeToString (JsRenderJsRender* self, const gchar* pad);
 void js_render_gtk_save (JsRenderGtk* self);
 void js_render_js_render_save (JsRenderJsRender* self);
 static void js_render_gtk_saveJS (JsRenderGtk* self);
 static void js_render_gtk_saveVala (JsRenderGtk* self);
+gchar* js_render_js_render_toSource (JsRenderJsRender* self);
 static gchar* js_render_gtk_toVala (JsRenderGtk* self, gboolean testcompile);
 static gchar* js_render_gtk_getHelpUrl (JsRenderGtk* self, const gchar* cls);
 PaletePalete* palete_factory (const gchar* xtype);
@@ -254,44 +250,44 @@ static gint _vala_array_length (gpointer array);
 
 
 static void _js_render_node_unref0_ (gpointer var) {
-#line 206 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 205 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	(var == NULL) ? NULL : (var = (js_render_node_unref (var), NULL));
-#line 260 "Gtk.vala.c"
+#line 256 "Gtk.vala.c"
 }
 
 
 static void _g_list_free__js_render_node_unref0_ (GList* self) {
-#line 206 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 205 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	g_list_foreach (self, (GFunc) _js_render_node_unref0_, NULL);
-#line 206 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 205 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	g_list_free (self);
-#line 269 "Gtk.vala.c"
+#line 265 "Gtk.vala.c"
 }
 
 
 JsRenderGtk* js_render_gtk_construct (GType object_type, ProjectProject* project, const gchar* path) {
 	JsRenderGtk * self = NULL;
-	gchar* _tmp0_ = NULL;
-	ProjectProject* _tmp1_ = NULL;
-	const gchar* _tmp2_ = NULL;
+	ProjectProject* _tmp0_ = NULL;
+	const gchar* _tmp1_ = NULL;
+	gchar* _tmp2_ = NULL;
 	gint _tmp3_ = 0;
 	gchar* _tmp4_ = NULL;
 #line 14 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	g_return_val_if_fail (project != NULL, NULL);
 #line 14 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	g_return_val_if_fail (path != NULL, NULL);
-#line 15 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-	_tmp0_ = g_strdup ("Gtk");
-#line 15 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 16 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+	_tmp0_ = project;
+#line 16 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+	_tmp1_ = path;
+#line 16 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+	self = (JsRenderGtk*) js_render_js_render_construct (object_type, _tmp0_, _tmp1_);
+#line 17 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+	_tmp2_ = g_strdup ("Gtk");
+#line 17 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (((JsRenderJsRender*) self)->xtype);
-#line 15 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-	((JsRenderJsRender*) self)->xtype = _tmp0_;
-#line 16 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-	_tmp1_ = project;
-#line 16 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-	_tmp2_ = path;
-#line 16 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-	self = (JsRenderGtk*) js_render_js_render_construct (object_type, _tmp1_, _tmp2_);
+#line 17 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+	((JsRenderJsRender*) self)->xtype = _tmp2_;
 #line 32 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp3_ = js_render_gid;
 #line 32 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
@@ -304,53 +300,54 @@ JsRenderGtk* js_render_gtk_construct (GType object_type, ProjectProject* project
 	((JsRenderJsRender*) self)->id = _tmp4_;
 #line 14 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	return self;
-#line 308 "Gtk.vala.c"
+#line 304 "Gtk.vala.c"
 }
 
 
 JsRenderGtk* js_render_gtk_new (ProjectProject* project, const gchar* path) {
 #line 14 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	return js_render_gtk_construct (JS_RENDER_TYPE_GTK, project, path);
-#line 315 "Gtk.vala.c"
+#line 311 "Gtk.vala.c"
 }
 
 
 static JsonNode* _vala_JsonNode_copy (JsonNode* self) {
-#line 72 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 71 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	return g_boxed_copy (json_node_get_type (), self);
-#line 322 "Gtk.vala.c"
+#line 318 "Gtk.vala.c"
 }
 
 
 static gpointer __vala_JsonNode_copy0 (gpointer self) {
-#line 72 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 71 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	return self ? _vala_JsonNode_copy (self) : NULL;
-#line 329 "Gtk.vala.c"
+#line 325 "Gtk.vala.c"
 }
 
 
 static void _vala_JsonNode_free (JsonNode* self) {
-#line 75 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 74 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	g_boxed_free (json_node_get_type (), self);
-#line 336 "Gtk.vala.c"
+#line 332 "Gtk.vala.c"
 }
 
 
 static gpointer _json_object_ref0 (gpointer self) {
-#line 77 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 76 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	return self ? json_object_ref (self) : NULL;
-#line 343 "Gtk.vala.c"
+#line 339 "Gtk.vala.c"
 }
 
 
 static gpointer _json_array_ref0 (gpointer self) {
-#line 87 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 86 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	return self ? json_array_ref (self) : NULL;
-#line 350 "Gtk.vala.c"
+#line 346 "Gtk.vala.c"
 }
 
 
-void js_render_gtk_loadItems (JsRenderGtk* self, GError** error) {
+static void js_render_gtk_real_loadItems (JsRenderJsRender* base, GError** error) {
+	JsRenderGtk * self;
 	JsRenderNode* _tmp0_ = NULL;
 	const gchar* _tmp1_ = NULL;
 	gchar* _tmp2_ = NULL;
@@ -391,176 +388,176 @@ void js_render_gtk_loadItems (JsRenderGtk* self, GError** error) {
 	JsonObject* _tmp35_ = NULL;
 	GError * _inner_error_ = NULL;
 #line 58 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-	g_return_if_fail (self != NULL);
-#line 62 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+	self = (JsRenderGtk*) base;
+#line 61 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	g_print ("load Items!");
-#line 63 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 62 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp0_ = ((JsRenderJsRender*) self)->tree;
-#line 63 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 62 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	if (_tmp0_ != NULL) {
-#line 64 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 63 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		return;
-#line 404 "Gtk.vala.c"
+#line 401 "Gtk.vala.c"
 	}
-#line 67 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 66 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp1_ = ((JsRenderJsRender*) self)->path;
-#line 67 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 66 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp2_ = g_strconcat ("load: ", _tmp1_, NULL);
-#line 67 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 66 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp3_ = _tmp2_;
-#line 67 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 66 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	g_print ("%s", _tmp3_);
-#line 67 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 66 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp3_);
-#line 70 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 69 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp4_ = json_parser_new ();
-#line 70 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 69 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	pa = _tmp4_;
-#line 71 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 70 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp5_ = pa;
-#line 71 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 70 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp6_ = ((JsRenderJsRender*) self)->path;
-#line 71 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 70 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	json_parser_load_from_file (_tmp5_, _tmp6_, &_inner_error_);
-#line 71 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 70 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	if (_inner_error_ != NULL) {
-#line 71 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 70 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		if (_inner_error_->domain == JS_RENDER_ERROR) {
-#line 71 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 70 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			g_propagate_error (error, _inner_error_);
-#line 71 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 70 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_g_object_unref0 (pa);
-#line 71 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 70 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			return;
-#line 436 "Gtk.vala.c"
+#line 433 "Gtk.vala.c"
 		} else {
-#line 71 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 70 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_g_object_unref0 (pa);
-#line 71 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 70 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			g_critical ("file %s: line %d: uncaught error: %s (%s, %d)", __FILE__, __LINE__, _inner_error_->message, g_quark_to_string (_inner_error_->domain), _inner_error_->code);
-#line 71 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 70 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			g_clear_error (&_inner_error_);
-#line 71 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 70 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			return;
-#line 446 "Gtk.vala.c"
+#line 443 "Gtk.vala.c"
 		}
 	}
-#line 72 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 71 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp7_ = pa;
-#line 72 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 71 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp8_ = json_parser_get_root (_tmp7_);
-#line 72 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 71 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp9_ = __vala_JsonNode_copy0 (_tmp8_);
-#line 72 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 71 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	node = _tmp9_;
-#line 74 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 73 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp10_ = node;
-#line 74 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 73 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp11_ = json_node_get_node_type (_tmp10_);
-#line 74 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 73 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	if (_tmp11_ != JSON_NODE_OBJECT) {
-#line 463 "Gtk.vala.c"
+#line 460 "Gtk.vala.c"
 		JsonNode* _tmp12_ = NULL;
 		const gchar* _tmp13_ = NULL;
 		GError* _tmp14_ = NULL;
-#line 75 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 74 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp12_ = node;
-#line 75 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 74 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp13_ = json_node_type_name (_tmp12_);
-#line 75 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 74 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp14_ = g_error_new (JS_RENDER_ERROR, JS_RENDER_ERROR_INVALID_FORMAT, "Unexpected element type %s", _tmp13_);
-#line 75 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 74 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_inner_error_ = _tmp14_;
-#line 75 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 74 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		if (_inner_error_->domain == JS_RENDER_ERROR) {
-#line 75 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 74 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			g_propagate_error (error, _inner_error_);
-#line 75 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 74 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			__vala_JsonNode_free0 (node);
-#line 75 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 74 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_g_object_unref0 (pa);
-#line 75 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 74 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			return;
-#line 485 "Gtk.vala.c"
+#line 482 "Gtk.vala.c"
 		} else {
-#line 75 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 74 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			__vala_JsonNode_free0 (node);
-#line 75 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 74 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_g_object_unref0 (pa);
-#line 75 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 74 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			g_critical ("file %s: line %d: uncaught error: %s (%s, %d)", __FILE__, __LINE__, _inner_error_->message, g_quark_to_string (_inner_error_->domain), _inner_error_->code);
-#line 75 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 74 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			g_clear_error (&_inner_error_);
-#line 75 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 74 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			return;
-#line 497 "Gtk.vala.c"
+#line 494 "Gtk.vala.c"
 		}
 	}
-#line 77 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 76 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp15_ = node;
-#line 77 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 76 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp16_ = json_node_get_object (_tmp15_);
-#line 77 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 76 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp17_ = _json_object_ref0 (_tmp16_);
-#line 77 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 76 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	obj = _tmp17_;
-#line 79 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 78 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp18_ = obj;
-#line 79 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 78 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp19_ = json_object_get_string_member (_tmp18_, "name");
-#line 79 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 78 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp20_ = g_strdup (_tmp19_);
-#line 79 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 78 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (((JsRenderJsRender*) self)->name);
-#line 79 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 78 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	((JsRenderJsRender*) self)->name = _tmp20_;
-#line 80 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 79 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp21_ = obj;
-#line 80 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 79 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp22_ = json_object_get_string_member (_tmp21_, "parent");
-#line 80 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 79 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp23_ = g_strdup (_tmp22_);
-#line 80 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 79 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (((JsRenderJsRender*) self)->parent);
-#line 80 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 79 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	((JsRenderJsRender*) self)->parent = _tmp23_;
-#line 82 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 81 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp24_ = obj;
-#line 82 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 81 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp25_ = json_object_get_string_member (_tmp24_, "title");
-#line 82 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 81 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp26_ = g_strdup (_tmp25_);
-#line 82 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 81 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (((JsRenderJsRender*) self)->title);
-#line 82 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 81 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	((JsRenderJsRender*) self)->title = _tmp26_;
-#line 87 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 86 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp27_ = obj;
-#line 87 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 86 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp28_ = json_object_get_array_member (_tmp27_, "items");
-#line 87 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 86 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp29_ = _json_array_ref0 (_tmp28_);
-#line 87 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 86 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	ar = _tmp29_;
-#line 88 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 87 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp30_ = ar;
-#line 88 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-	_tmp31_ = json_array_get_object_element (_tmp30_, (guint) 1);
-#line 88 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 87 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+	_tmp31_ = json_array_get_object_element (_tmp30_, (guint) 0);
+#line 87 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp32_ = _json_object_ref0 (_tmp31_);
-#line 88 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 87 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	tree_base = _tmp32_;
-#line 89 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 88 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp33_ = js_render_node_new ();
-#line 89 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 88 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_js_render_node_unref0 (((JsRenderJsRender*) self)->tree);
-#line 89 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 88 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	((JsRenderJsRender*) self)->tree = _tmp33_;
-#line 90 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 89 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp34_ = ((JsRenderJsRender*) self)->tree;
-#line 90 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 89 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp35_ = tree_base;
-#line 90 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 89 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	js_render_node_loadFromJson (_tmp34_, _tmp35_);
 #line 58 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_json_object_unref0 (tree_base);
@@ -572,11 +569,12 @@ void js_render_gtk_loadItems (JsRenderGtk* self, GError** error) {
 	__vala_JsonNode_free0 (node);
 #line 58 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_object_unref0 (pa);
-#line 576 "Gtk.vala.c"
+#line 573 "Gtk.vala.c"
 }
 
 
-gchar* js_render_gtk_toSource (JsRenderGtk* self) {
+static gchar* js_render_gtk_real_toSource (JsRenderJsRender* base) {
+	JsRenderGtk * self;
 	gchar* result = NULL;
 	JsRenderNode* _tmp0_ = NULL;
 	gchar** inc = NULL;
@@ -626,83 +624,83 @@ gchar* js_render_gtk_toSource (JsRenderGtk* self) {
 	gchar* _tmp60_ = NULL;
 	gchar* _tmp61_ = NULL;
 	gchar* _tmp62_ = NULL;
-#line 106 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-	g_return_val_if_fail (self != NULL, NULL);
-#line 110 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 105 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+	self = (JsRenderGtk*) base;
+#line 109 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp0_ = ((JsRenderJsRender*) self)->tree;
-#line 110 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 109 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	if (_tmp0_ == NULL) {
-#line 636 "Gtk.vala.c"
+#line 634 "Gtk.vala.c"
 		gchar* _tmp1_ = NULL;
-#line 111 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 110 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp1_ = g_strdup ("");
-#line 111 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 110 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		result = _tmp1_;
-#line 111 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 110 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		return result;
-#line 644 "Gtk.vala.c"
+#line 642 "Gtk.vala.c"
 	}
-#line 116 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 115 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp2_ = g_strdup ("Gtk");
-#line 116 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 115 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp3_ = g_strdup ("Gdk");
-#line 116 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 115 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp4_ = g_strdup ("Pango");
-#line 116 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 115 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp5_ = g_strdup ("GLib");
-#line 116 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 115 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp6_ = g_strdup ("Gio");
-#line 116 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 115 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp7_ = g_strdup ("GObject");
-#line 116 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 115 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp8_ = g_strdup ("GtkSource");
-#line 116 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 115 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp9_ = g_strdup ("WebKit");
-#line 116 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 115 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp10_ = g_strdup ("Vte");
-#line 116 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 115 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp11_ = g_new0 (gchar*, 9 + 1);
-#line 116 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 115 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp11_[0] = _tmp2_;
-#line 116 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 115 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp11_[1] = _tmp3_;
-#line 116 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 115 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp11_[2] = _tmp4_;
-#line 116 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 115 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp11_[3] = _tmp5_;
-#line 116 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 115 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp11_[4] = _tmp6_;
-#line 116 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 115 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp11_[5] = _tmp7_;
-#line 116 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 115 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp11_[6] = _tmp8_;
-#line 116 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 115 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp11_[7] = _tmp9_;
-#line 116 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 115 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp11_[8] = _tmp10_;
-#line 116 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 115 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	inc = _tmp11_;
-#line 116 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 115 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	inc_length1 = 9;
-#line 116 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 115 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_inc_size_ = inc_length1;
-#line 118 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 117 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp12_ = g_strdup ("");
-#line 118 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 117 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	src = _tmp12_;
-#line 694 "Gtk.vala.c"
+#line 692 "Gtk.vala.c"
 	{
 		gint i = 0;
-#line 120 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 119 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		i = 0;
-#line 699 "Gtk.vala.c"
+#line 697 "Gtk.vala.c"
 		{
 			gboolean _tmp13_ = FALSE;
-#line 120 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 119 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp13_ = TRUE;
-#line 120 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 119 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			while (TRUE) {
-#line 706 "Gtk.vala.c"
+#line 704 "Gtk.vala.c"
 				gint _tmp15_ = 0;
 				gchar** _tmp16_ = NULL;
 				gint _tmp16__length1 = 0;
@@ -722,200 +720,200 @@ gchar* js_render_gtk_toSource (JsRenderGtk* self) {
 				gchar* _tmp28_ = NULL;
 				gchar* _tmp29_ = NULL;
 				gchar* _tmp30_ = NULL;
-#line 120 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 119 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				if (!_tmp13_) {
-#line 728 "Gtk.vala.c"
+#line 726 "Gtk.vala.c"
 					gint _tmp14_ = 0;
-#line 120 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 119 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					_tmp14_ = i;
-#line 120 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 119 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					i = _tmp14_ + 1;
-#line 734 "Gtk.vala.c"
+#line 732 "Gtk.vala.c"
 				}
-#line 120 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 119 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp13_ = FALSE;
-#line 120 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 119 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp15_ = i;
-#line 120 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 119 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp16_ = inc;
-#line 120 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 119 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp16__length1 = inc_length1;
-#line 120 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 119 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				if (!(_tmp15_ < _tmp16__length1)) {
-#line 120 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 119 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					break;
-#line 748 "Gtk.vala.c"
+#line 746 "Gtk.vala.c"
 				}
-#line 121 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-				_tmp17_ = inc;
-#line 121 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-				_tmp17__length1 = inc_length1;
-#line 121 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-				_tmp18_ = i;
-#line 121 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-				_tmp19_ = _tmp17_[_tmp18_];
-#line 121 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-				_tmp20_ = g_strdup (_tmp19_);
-#line 121 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-				e = _tmp20_;
-#line 122 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-				_tmp21_ = src;
-#line 122 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-				_tmp22_ = e;
-#line 122 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-				_tmp23_ = g_strconcat (_tmp22_, " = imports.gi.", NULL);
-#line 122 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-				_tmp24_ = _tmp23_;
-#line 122 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-				_tmp25_ = e;
-#line 122 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-				_tmp26_ = g_strconcat (_tmp24_, _tmp25_, NULL);
-#line 122 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-				_tmp27_ = _tmp26_;
-#line 122 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-				_tmp28_ = g_strconcat (_tmp27_, ";\n", NULL);
-#line 122 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-				_tmp29_ = _tmp28_;
-#line 122 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-				_tmp30_ = g_strconcat (_tmp21_, _tmp29_, NULL);
-#line 122 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-				_g_free0 (src);
-#line 122 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-				src = _tmp30_;
-#line 122 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-				_g_free0 (_tmp29_);
-#line 122 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-				_g_free0 (_tmp27_);
-#line 122 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-				_g_free0 (_tmp24_);
 #line 120 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+				_tmp17_ = inc;
+#line 120 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+				_tmp17__length1 = inc_length1;
+#line 120 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+				_tmp18_ = i;
+#line 120 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+				_tmp19_ = _tmp17_[_tmp18_];
+#line 120 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+				_tmp20_ = g_strdup (_tmp19_);
+#line 120 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+				e = _tmp20_;
+#line 121 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+				_tmp21_ = src;
+#line 121 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+				_tmp22_ = e;
+#line 121 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+				_tmp23_ = g_strconcat (_tmp22_, " = imports.gi.", NULL);
+#line 121 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+				_tmp24_ = _tmp23_;
+#line 121 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+				_tmp25_ = e;
+#line 121 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+				_tmp26_ = g_strconcat (_tmp24_, _tmp25_, NULL);
+#line 121 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+				_tmp27_ = _tmp26_;
+#line 121 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+				_tmp28_ = g_strconcat (_tmp27_, ";\n", NULL);
+#line 121 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+				_tmp29_ = _tmp28_;
+#line 121 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+				_tmp30_ = g_strconcat (_tmp21_, _tmp29_, NULL);
+#line 121 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+				_g_free0 (src);
+#line 121 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+				src = _tmp30_;
+#line 121 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+				_g_free0 (_tmp29_);
+#line 121 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+				_g_free0 (_tmp27_);
+#line 121 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+				_g_free0 (_tmp24_);
+#line 119 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_g_free0 (e);
-#line 794 "Gtk.vala.c"
+#line 792 "Gtk.vala.c"
 			}
 		}
 	}
-#line 125 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 124 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp31_ = src;
-#line 125 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 124 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp32_ = g_strconcat (_tmp31_, "console = imports.console;\n", NULL);
-#line 125 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 124 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (src);
-#line 125 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 124 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	src = _tmp32_;
-#line 126 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 125 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp33_ = src;
-#line 126 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 125 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp34_ = g_strconcat (_tmp33_, "XObject = imports.XObject.XObject;\n", NULL);
-#line 126 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 125 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (src);
-#line 126 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 125 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	src = _tmp34_;
-#line 129 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 128 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp35_ = src;
-#line 129 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 128 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp36_ = ((JsRenderJsRender*) self)->name;
-#line 129 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 128 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp37_ = g_strconcat (_tmp36_, "=new XObject(", NULL);
-#line 129 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 128 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp38_ = _tmp37_;
-#line 129 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 128 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp39_ = js_render_js_render_mungeToString ((JsRenderJsRender*) self, "    ");
-#line 129 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 128 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp40_ = _tmp39_;
-#line 129 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 128 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp41_ = g_strconcat (_tmp38_, _tmp40_, NULL);
-#line 129 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 128 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp42_ = _tmp41_;
-#line 129 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 128 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp43_ = g_strconcat (_tmp42_, ");\n", NULL);
-#line 129 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 128 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp44_ = _tmp43_;
-#line 129 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 128 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp45_ = g_strconcat (_tmp35_, _tmp44_, NULL);
-#line 129 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 128 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (src);
-#line 129 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 128 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	src = _tmp45_;
-#line 129 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 128 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp44_);
-#line 129 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 128 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp42_);
-#line 129 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 128 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp40_);
-#line 129 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 128 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp38_);
-#line 130 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 129 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp46_ = src;
-#line 130 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 129 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp47_ = ((JsRenderJsRender*) self)->name;
-#line 130 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 129 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp48_ = g_strconcat (_tmp47_, ".init();\n", NULL);
-#line 130 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 129 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp49_ = _tmp48_;
-#line 130 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 129 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp50_ = g_strconcat (_tmp46_, _tmp49_, NULL);
-#line 130 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 129 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (src);
-#line 130 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 129 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	src = _tmp50_;
-#line 130 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 129 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp49_);
-#line 132 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 131 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp51_ = src;
-#line 132 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 131 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp52_ = ((JsRenderJsRender*) self)->name;
-#line 132 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 131 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp53_ = g_strconcat ("XObject.cache['/", _tmp52_, NULL);
-#line 132 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 131 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp54_ = _tmp53_;
-#line 132 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 131 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp55_ = g_strconcat (_tmp54_, "'] = ", NULL);
-#line 132 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 131 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp56_ = _tmp55_;
-#line 132 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 131 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp57_ = ((JsRenderJsRender*) self)->name;
-#line 132 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 131 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp58_ = g_strconcat (_tmp56_, _tmp57_, NULL);
-#line 132 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 131 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp59_ = _tmp58_;
-#line 132 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 131 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp60_ = g_strconcat (_tmp59_, ";\n", NULL);
-#line 132 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 131 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp61_ = _tmp60_;
-#line 132 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 131 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp62_ = g_strconcat (_tmp51_, _tmp61_, NULL);
-#line 132 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 131 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (src);
-#line 132 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 131 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	src = _tmp62_;
-#line 132 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 131 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp61_);
-#line 132 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 131 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp59_);
-#line 132 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 131 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp56_);
-#line 132 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 131 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp54_);
-#line 135 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 134 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	result = src;
-#line 135 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 134 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	inc = (_vala_array_free (inc, inc_length1, (GDestroyNotify) g_free), NULL);
-#line 135 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 134 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	return result;
-#line 906 "Gtk.vala.c"
+#line 904 "Gtk.vala.c"
 }
 
 
 void js_render_gtk_save (JsRenderGtk* self) {
-#line 140 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 139 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	g_return_if_fail (self != NULL);
-#line 141 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 140 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	js_render_js_render_save (G_TYPE_CHECK_INSTANCE_CAST (self, JS_RENDER_TYPE_JS_RENDER, JsRenderJsRender));
-#line 142 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 141 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	js_render_gtk_saveJS (self);
-#line 143 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 142 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	js_render_gtk_saveVala (self);
-#line 919 "Gtk.vala.c"
+#line 917 "Gtk.vala.c"
 }
 
 
@@ -943,67 +941,67 @@ static void js_render_gtk_saveJS (JsRenderGtk* self) {
 	gchar* _tmp12_ = NULL;
 	gchar* _tmp13_ = NULL;
 	GError * _inner_error_ = NULL;
-#line 154 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 153 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	g_return_if_fail (self != NULL);
-#line 157 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 156 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp0_ = ((JsRenderJsRender*) self)->path;
-#line 157 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 156 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp1_ = g_path_get_dirname (_tmp0_);
-#line 157 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 156 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp2_ = _tmp1_;
-#line 157 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 156 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp3_ = g_strconcat (_tmp2_, "/", NULL);
-#line 157 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 156 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp4_ = _tmp3_;
-#line 157 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 156 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp5_ = ((JsRenderJsRender*) self)->name;
-#line 157 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 156 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp6_ = g_strconcat (_tmp4_, _tmp5_, NULL);
-#line 157 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 156 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp7_ = _tmp6_;
-#line 157 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 156 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp8_ = g_strconcat (_tmp7_, ".js", NULL);
-#line 157 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 156 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp9_ = _tmp8_;
-#line 157 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 156 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp7_);
-#line 157 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 156 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp4_);
-#line 157 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 156 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp2_);
-#line 157 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 156 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	fn = _tmp9_;
-#line 158 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 157 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp10_ = g_strconcat ("WRITE : ", fn, NULL);
-#line 158 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 157 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp11_ = _tmp10_;
-#line 158 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 157 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	g_print ("%s", _tmp11_);
-#line 158 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 157 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp11_);
-#line 159 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-	_tmp12_ = js_render_gtk_toSource (self);
-#line 159 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 158 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+	_tmp12_ = js_render_js_render_toSource ((JsRenderJsRender*) self);
+#line 158 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp13_ = _tmp12_;
-#line 159 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 158 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	g_file_set_contents (fn, _tmp13_, (gssize) (-1), &_inner_error_);
-#line 159 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 158 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp13_);
-#line 159 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 158 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	if (_inner_error_ != NULL) {
-#line 159 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 158 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (fn);
-#line 159 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 158 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		g_critical ("file %s: line %d: uncaught error: %s (%s, %d)", __FILE__, __LINE__, _inner_error_->message, g_quark_to_string (_inner_error_->domain), _inner_error_->code);
-#line 159 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 158 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		g_clear_error (&_inner_error_);
-#line 159 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 158 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		return;
-#line 1003 "Gtk.vala.c"
+#line 1001 "Gtk.vala.c"
 	}
-#line 154 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 153 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (fn);
-#line 1007 "Gtk.vala.c"
+#line 1005 "Gtk.vala.c"
 }
 
 
@@ -1024,67 +1022,67 @@ static void js_render_gtk_saveVala (JsRenderGtk* self) {
 	gchar* _tmp12_ = NULL;
 	gchar* _tmp13_ = NULL;
 	GError * _inner_error_ = NULL;
-#line 163 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 162 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	g_return_if_fail (self != NULL);
-#line 166 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 165 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp0_ = ((JsRenderJsRender*) self)->path;
-#line 166 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 165 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp1_ = g_path_get_dirname (_tmp0_);
-#line 166 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 165 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp2_ = _tmp1_;
-#line 166 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 165 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp3_ = g_strconcat (_tmp2_, "/", NULL);
-#line 166 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 165 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp4_ = _tmp3_;
-#line 166 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 165 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp5_ = ((JsRenderJsRender*) self)->name;
-#line 166 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 165 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp6_ = g_strconcat (_tmp4_, _tmp5_, NULL);
-#line 166 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 165 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp7_ = _tmp6_;
-#line 166 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 165 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp8_ = g_strconcat (_tmp7_, ".vala", NULL);
-#line 166 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 165 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp9_ = _tmp8_;
-#line 166 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 165 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp7_);
-#line 166 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 165 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp4_);
-#line 166 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 165 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp2_);
-#line 166 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 165 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	fn = _tmp9_;
-#line 167 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 166 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp10_ = g_strconcat ("WRITE : ", fn, NULL);
-#line 167 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 166 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp11_ = _tmp10_;
-#line 167 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 166 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	g_print ("%s", _tmp11_);
-#line 167 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 166 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp11_);
-#line 168 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 167 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp12_ = js_render_gtk_toVala (self, FALSE);
-#line 168 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 167 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp13_ = _tmp12_;
-#line 168 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 167 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	g_file_set_contents (fn, _tmp13_, (gssize) (-1), &_inner_error_);
-#line 168 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 167 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp13_);
-#line 168 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 167 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	if (_inner_error_ != NULL) {
-#line 168 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 167 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (fn);
-#line 168 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 167 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		g_critical ("file %s: line %d: uncaught error: %s (%s, %d)", __FILE__, __LINE__, _inner_error_->message, g_quark_to_string (_inner_error_->domain), _inner_error_->code);
-#line 168 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 167 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		g_clear_error (&_inner_error_);
-#line 168 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 167 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		return;
-#line 1084 "Gtk.vala.c"
+#line 1082 "Gtk.vala.c"
 	}
-#line 163 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 162 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (fn);
-#line 1088 "Gtk.vala.c"
+#line 1086 "Gtk.vala.c"
 }
 
 
@@ -1095,27 +1093,27 @@ static gchar* js_render_gtk_getHelpUrl (JsRenderGtk* self, const gchar* cls) {
 	gchar* _tmp2_ = NULL;
 	gchar* _tmp3_ = NULL;
 	gchar* _tmp4_ = NULL;
-#line 198 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 197 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 198 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 197 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	g_return_val_if_fail (cls != NULL, NULL);
-#line 200 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 199 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp0_ = cls;
-#line 200 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 199 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp1_ = g_strconcat ("http://devel.akbkhome.com/seed/", _tmp0_, NULL);
-#line 200 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 199 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp2_ = _tmp1_;
-#line 200 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 199 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp3_ = g_strconcat (_tmp2_, ".html", NULL);
-#line 200 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 199 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp4_ = _tmp3_;
-#line 200 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 199 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp2_);
-#line 200 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 199 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	result = _tmp4_;
-#line 200 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 199 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	return result;
-#line 1119 "Gtk.vala.c"
+#line 1117 "Gtk.vala.c"
 }
 
 
@@ -1179,246 +1177,246 @@ static gchar* js_render_gtk_toVala (JsRenderGtk* self, gboolean testcompile) {
 	gchar* _tmp58_ = NULL;
 	gchar* _tmp59_ = NULL;
 	gchar* _tmp60_ = NULL;
-#line 209 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 208 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 211 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 210 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp0_ = g_strdup ("");
-#line 211 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 210 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	ret = _tmp0_;
-#line 214 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 213 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	self->priv->vcnt = 0;
-#line 219 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 218 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp1_ = palete_factory ("Gtk");
-#line 219 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 218 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_object_unref0 (self->priv->palete);
-#line 219 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 218 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	self->priv->palete = G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, PALETE_TYPE_GTK, PaleteGtk);
-#line 221 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 220 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	__g_list_free__js_render_node_unref0_0 (self->priv->vitems);
-#line 221 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 220 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	self->priv->vitems = NULL;
-#line 223 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 222 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp2_ = ((JsRenderJsRender*) self)->tree;
-#line 223 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 222 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	js_render_gtk_toValaName (self, _tmp2_);
-#line 226 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 225 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp3_ = ret;
-#line 226 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 225 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp4_ = g_strconcat (_tmp3_, "/* -- to compile\n", NULL);
-#line 226 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 225 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (ret);
-#line 226 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 225 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	ret = _tmp4_;
-#line 227 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 226 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp5_ = ret;
-#line 227 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 226 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp6_ = g_strconcat (_tmp5_, "valac  --pkg gio-2.0  --pkg posix  --pkg gtk+-3.0 --pkg libnotify --pk" \
 "g gtksourceview-3.0  --pkg  libwnck-3.0 \\\n", NULL);
-#line 227 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 226 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (ret);
-#line 227 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 226 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	ret = _tmp6_;
-#line 229 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 228 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp7_ = ret;
-#line 229 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 228 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp8_ = ((JsRenderJsRender*) self)->name;
-#line 229 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 228 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp9_ = g_strconcat ("    /tmp/", _tmp8_, NULL);
-#line 229 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 228 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp10_ = _tmp9_;
-#line 229 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 228 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp11_ = g_strconcat (_tmp10_, ".vala  -o /tmp/", NULL);
-#line 229 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 228 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp12_ = _tmp11_;
-#line 229 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 228 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp13_ = ((JsRenderJsRender*) self)->name;
-#line 229 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 228 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp14_ = g_strconcat (_tmp12_, _tmp13_, NULL);
-#line 229 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 228 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp15_ = _tmp14_;
-#line 229 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 228 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp16_ = g_strconcat (_tmp15_, "\n", NULL);
-#line 229 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 228 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp17_ = _tmp16_;
-#line 229 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 228 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp18_ = g_strconcat (_tmp7_, _tmp17_, NULL);
-#line 229 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 228 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (ret);
-#line 229 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 228 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	ret = _tmp18_;
-#line 229 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 228 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp17_);
-#line 229 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 228 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp15_);
-#line 229 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 228 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp12_);
-#line 229 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 228 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp10_);
-#line 230 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 229 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp19_ = ret;
-#line 230 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 229 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp20_ = g_strconcat (_tmp19_, "*" "/\n", NULL);
-#line 230 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 229 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (ret);
-#line 230 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 229 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	ret = _tmp20_;
-#line 231 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 230 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp21_ = ret;
-#line 231 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 230 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp22_ = g_strconcat (_tmp21_, "\n\n", NULL);
-#line 231 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 230 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (ret);
-#line 231 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 230 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	ret = _tmp22_;
-#line 232 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 231 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp23_ = testcompile;
-#line 232 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 231 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	if (!_tmp23_) {
-#line 1277 "Gtk.vala.c"
+#line 1275 "Gtk.vala.c"
 		const gchar* _tmp24_ = NULL;
 		gchar* _tmp25_ = NULL;
-#line 234 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 233 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp24_ = ret;
-#line 234 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 233 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp25_ = g_strconcat (_tmp24_, "/* -- to test class\n", NULL);
-#line 234 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 233 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (ret);
-#line 234 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 233 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		ret = _tmp25_;
-#line 1288 "Gtk.vala.c"
+#line 1286 "Gtk.vala.c"
 	}
-#line 237 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 236 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp26_ = ret;
-#line 237 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 236 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp27_ = g_strconcat (_tmp26_, "static int main (string[] args) {\n", NULL);
-#line 237 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 236 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (ret);
-#line 237 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 236 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	ret = _tmp27_;
-#line 238 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 237 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp28_ = ret;
-#line 238 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 237 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp29_ = g_strconcat (_tmp28_, "    Gtk.init (ref args);\n", NULL);
-#line 238 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 237 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (ret);
-#line 238 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 237 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	ret = _tmp29_;
-#line 239 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 238 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp30_ = ret;
-#line 239 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 238 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp31_ = ((JsRenderJsRender*) self)->tree;
-#line 239 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 238 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp32_ = _tmp31_->xvala_xcls;
-#line 239 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 238 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp33_ = g_strconcat ("    new ", _tmp32_, NULL);
-#line 239 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 238 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp34_ = _tmp33_;
-#line 239 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 238 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp35_ = g_strconcat (_tmp34_, "();\n", NULL);
-#line 239 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 238 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp36_ = _tmp35_;
-#line 239 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 238 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp37_ = g_strconcat (_tmp30_, _tmp36_, NULL);
-#line 239 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 238 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (ret);
-#line 239 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 238 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	ret = _tmp37_;
-#line 239 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 238 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp36_);
-#line 239 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 238 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp34_);
-#line 240 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 239 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp38_ = ret;
-#line 240 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 239 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp39_ = ((JsRenderJsRender*) self)->name;
-#line 240 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 239 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp40_ = g_strconcat ("    ", _tmp39_, NULL);
-#line 240 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 239 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp41_ = _tmp40_;
-#line 240 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 239 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp42_ = g_strconcat (_tmp41_, ".show_all();\n", NULL);
-#line 240 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 239 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp43_ = _tmp42_;
-#line 240 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 239 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp44_ = g_strconcat (_tmp38_, _tmp43_, NULL);
-#line 240 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 239 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (ret);
-#line 240 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 239 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	ret = _tmp44_;
-#line 240 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 239 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp43_);
-#line 240 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 239 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp41_);
-#line 241 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 240 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp45_ = ret;
-#line 241 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 240 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp46_ = g_strconcat (_tmp45_, "     Gtk.main ();\n", NULL);
-#line 241 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 240 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (ret);
-#line 241 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 240 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	ret = _tmp46_;
-#line 242 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 241 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp47_ = ret;
-#line 242 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 241 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp48_ = g_strconcat (_tmp47_, "    return 0;\n", NULL);
-#line 242 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 241 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (ret);
-#line 242 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 241 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	ret = _tmp48_;
-#line 243 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 242 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp49_ = ret;
-#line 243 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 242 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp50_ = g_strconcat (_tmp49_, "}\n", NULL);
-#line 243 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 242 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (ret);
-#line 243 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 242 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	ret = _tmp50_;
-#line 244 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 243 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp51_ = testcompile;
-#line 244 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 243 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	if (!_tmp51_) {
-#line 1380 "Gtk.vala.c"
+#line 1378 "Gtk.vala.c"
 		const gchar* _tmp52_ = NULL;
 		gchar* _tmp53_ = NULL;
-#line 245 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 244 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp52_ = ret;
-#line 245 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 244 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp53_ = g_strconcat (_tmp52_, "*" "/\n", NULL);
-#line 245 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 244 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (ret);
-#line 245 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 244 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		ret = _tmp53_;
-#line 1391 "Gtk.vala.c"
+#line 1389 "Gtk.vala.c"
 	}
-#line 247 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 246 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp54_ = ret;
-#line 247 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 246 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp55_ = g_strconcat (_tmp54_, "\n\n", NULL);
-#line 247 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 246 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (ret);
-#line 247 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 246 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	ret = _tmp55_;
-#line 249 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 248 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp56_ = ret;
-#line 249 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 248 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp57_ = ((JsRenderJsRender*) self)->tree;
-#line 249 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 248 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp58_ = js_render_gtk_toValaItem (self, _tmp57_, 0);
-#line 249 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 248 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp59_ = _tmp58_;
-#line 249 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 248 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp60_ = g_strconcat (_tmp56_, _tmp59_, NULL);
-#line 249 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 248 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (ret);
-#line 249 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 248 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	ret = _tmp60_;
-#line 249 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 248 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp59_);
-#line 251 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 250 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	result = ret;
-#line 251 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 250 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	return result;
-#line 1421 "Gtk.vala.c"
+#line 1419 "Gtk.vala.c"
 }
 
 
@@ -1430,50 +1428,50 @@ static gchar* js_render_gtk_toValaNS (JsRenderGtk* self, JsRenderNode* item) {
 	const gchar* _tmp2_ = NULL;
 	const gchar* _tmp4_ = NULL;
 	gchar* _tmp5_ = NULL;
-#line 255 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 254 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 255 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 254 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	g_return_val_if_fail (item != NULL, NULL);
-#line 257 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 256 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp0_ = item;
-#line 257 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 256 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp1_ = js_render_node_get (_tmp0_, "|xns");
-#line 257 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 256 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	ns = _tmp1_;
-#line 258 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 257 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp2_ = ns;
-#line 258 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 257 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	if (g_strcmp0 (_tmp2_, "GtkSource") == 0) {
-#line 1447 "Gtk.vala.c"
+#line 1445 "Gtk.vala.c"
 		gchar* _tmp3_ = NULL;
-#line 259 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 258 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp3_ = g_strdup ("Gtk.Source.");
-#line 259 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 258 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		result = _tmp3_;
-#line 259 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 258 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (ns);
-#line 259 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 258 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		return result;
-#line 1457 "Gtk.vala.c"
+#line 1455 "Gtk.vala.c"
 	}
-#line 261 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 260 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp4_ = ns;
-#line 261 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 260 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp5_ = g_strconcat (_tmp4_, ".", NULL);
-#line 261 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 260 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	result = _tmp5_;
-#line 261 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 260 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (ns);
-#line 261 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 260 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	return result;
-#line 1469 "Gtk.vala.c"
+#line 1467 "Gtk.vala.c"
 }
 
 
 static gpointer _js_render_node_ref0 (gpointer self) {
-#line 279 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 278 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	return self ? js_render_node_ref (self) : NULL;
-#line 1476 "Gtk.vala.c"
+#line 1474 "Gtk.vala.c"
 }
 
 
@@ -1521,206 +1519,206 @@ static void js_render_gtk_toValaName (JsRenderGtk* self, JsRenderNode* item) {
 	JsRenderNode* _tmp47_ = NULL;
 	GList* _tmp48_ = NULL;
 	guint _tmp49_ = 0U;
-#line 264 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 263 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	g_return_if_fail (self != NULL);
-#line 264 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 263 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	g_return_if_fail (item != NULL);
-#line 265 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 264 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp0_ = self->priv->vcnt;
-#line 265 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 264 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	self->priv->vcnt = _tmp0_ + 1;
-#line 267 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 266 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp1_ = item;
-#line 267 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 266 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp2_ = js_render_gtk_toValaNS (self, _tmp1_);
-#line 267 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 266 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp3_ = _tmp2_;
-#line 267 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 266 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp4_ = item;
-#line 267 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 266 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp5_ = js_render_node_get (_tmp4_, "xtype");
-#line 267 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 266 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp6_ = _tmp5_;
-#line 267 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 266 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp7_ = g_strconcat (_tmp3_, _tmp6_, NULL);
-#line 267 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 266 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp8_ = _tmp7_;
-#line 267 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 266 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp6_);
-#line 267 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 266 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp3_);
-#line 267 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 266 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	cls = _tmp8_;
-#line 269 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 268 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp10_ = item;
-#line 269 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 268 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp11_ = js_render_node_get (_tmp10_, "id");
-#line 269 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 268 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp12_ = _tmp11_;
-#line 269 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 268 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp13_ = strlen (_tmp12_);
-#line 269 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 268 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp14_ = _tmp13_;
-#line 269 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 268 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp15_ = _tmp14_ > 0;
-#line 269 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 268 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp12_);
-#line 269 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 268 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	if (_tmp15_) {
-#line 1570 "Gtk.vala.c"
+#line 1568 "Gtk.vala.c"
 		JsRenderNode* _tmp16_ = NULL;
 		gchar* _tmp17_ = NULL;
-#line 269 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 268 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp16_ = item;
-#line 269 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 268 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp17_ = js_render_node_get (_tmp16_, "id");
-#line 269 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 268 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp9_);
-#line 269 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 268 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp9_ = _tmp17_;
-#line 1581 "Gtk.vala.c"
+#line 1579 "Gtk.vala.c"
 	} else {
 		JsRenderNode* _tmp18_ = NULL;
 		gchar* _tmp19_ = NULL;
 		gchar* _tmp20_ = NULL;
 		gint _tmp21_ = 0;
 		gchar* _tmp22_ = NULL;
-#line 269 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 268 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp18_ = item;
-#line 269 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 268 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp19_ = js_render_node_get (_tmp18_, "xtype");
-#line 269 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 268 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp20_ = _tmp19_;
-#line 269 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 268 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp21_ = self->priv->vcnt;
-#line 269 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 268 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp22_ = g_strdup_printf ("%s%d", _tmp20_, _tmp21_);
-#line 269 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 268 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp9_);
-#line 269 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 268 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp9_ = _tmp22_;
-#line 269 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 268 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp20_);
-#line 1604 "Gtk.vala.c"
+#line 1602 "Gtk.vala.c"
 	}
-#line 269 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 268 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp23_ = g_strdup (_tmp9_);
-#line 269 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 268 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	id = _tmp23_;
-#line 271 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 270 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp24_ = self->priv->palete;
-#line 271 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 270 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp25_ = cls;
-#line 271 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 270 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp26_ = palete_gtk_getPropertiesFor (_tmp24_, _tmp25_, "props");
-#line 271 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 270 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	props = _tmp26_;
-#line 275 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 274 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp27_ = item;
-#line 275 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 274 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp28_ = cls;
-#line 275 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 274 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp29_ = g_strdup (_tmp28_);
-#line 275 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 274 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp27_->xvala_cls);
-#line 275 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 274 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp27_->xvala_cls = _tmp29_;
-#line 276 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 275 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp30_ = item;
-#line 276 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 275 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp31_ = id;
-#line 276 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 275 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp32_ = g_strconcat ("Xcls_", _tmp31_, NULL);
-#line 276 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 275 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp30_->xvala_xcls);
-#line 276 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 275 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp30_->xvala_xcls = _tmp32_;
-#line 277 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 276 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp34_ = item;
-#line 277 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 276 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp35_ = js_render_node_get (_tmp34_, "id");
-#line 277 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 276 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp36_ = _tmp35_;
-#line 277 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 276 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp37_ = strlen (_tmp36_);
-#line 277 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 276 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp38_ = _tmp37_;
-#line 277 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 276 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp39_ = _tmp38_ > 0;
-#line 277 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 276 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp36_);
-#line 277 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 276 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	if (_tmp39_) {
-#line 1654 "Gtk.vala.c"
+#line 1652 "Gtk.vala.c"
 		JsRenderNode* _tmp40_ = NULL;
 		gchar* _tmp41_ = NULL;
-#line 277 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 276 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp40_ = item;
-#line 277 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 276 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp41_ = js_render_node_get (_tmp40_, "id");
-#line 277 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 276 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp33_);
-#line 277 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 276 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp33_ = _tmp41_;
-#line 1665 "Gtk.vala.c"
+#line 1663 "Gtk.vala.c"
 	} else {
 		gchar* _tmp42_ = NULL;
-#line 277 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 276 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp42_ = g_strdup ("");
-#line 277 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 276 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp33_);
-#line 277 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 276 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp33_ = _tmp42_;
-#line 1674 "Gtk.vala.c"
+#line 1672 "Gtk.vala.c"
 	}
-#line 277 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 276 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp43_ = item;
-#line 277 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 276 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp44_ = g_strdup (_tmp33_);
-#line 277 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 276 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp43_->xvala_id);
-#line 277 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 276 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp43_->xvala_id = _tmp44_;
-#line 279 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 278 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp45_ = item;
-#line 279 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 278 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp46_ = _js_render_node_ref0 (_tmp45_);
-#line 279 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 278 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	self->priv->vitems = g_list_append (self->priv->vitems, _tmp46_);
-#line 282 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 281 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp47_ = item;
-#line 282 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 281 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp48_ = _tmp47_->items;
-#line 282 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 281 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp49_ = g_list_length (_tmp48_);
-#line 282 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 281 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	if (_tmp49_ < ((guint) 1)) {
-#line 283 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 282 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp33_);
-#line 283 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 282 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_object_unref0 (props);
-#line 283 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 282 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (id);
-#line 283 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 282 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp9_);
-#line 283 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 282 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (cls);
-#line 283 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 282 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		return;
-#line 1710 "Gtk.vala.c"
+#line 1708 "Gtk.vala.c"
 	}
 	{
 		gint i = 0;
-#line 285 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 284 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		i = 0;
-#line 1716 "Gtk.vala.c"
+#line 1714 "Gtk.vala.c"
 		{
 			gboolean _tmp50_ = FALSE;
-#line 285 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 284 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp50_ = TRUE;
-#line 285 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 284 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			while (TRUE) {
-#line 1723 "Gtk.vala.c"
+#line 1721 "Gtk.vala.c"
 				gint _tmp52_ = 0;
 				JsRenderNode* _tmp53_ = NULL;
 				GList* _tmp54_ = NULL;
@@ -1729,57 +1727,57 @@ static void js_render_gtk_toValaName (JsRenderGtk* self, JsRenderNode* item) {
 				GList* _tmp57_ = NULL;
 				gint _tmp58_ = 0;
 				gconstpointer _tmp59_ = NULL;
-#line 285 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 284 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				if (!_tmp50_) {
-#line 1734 "Gtk.vala.c"
+#line 1732 "Gtk.vala.c"
 					gint _tmp51_ = 0;
-#line 285 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 284 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					_tmp51_ = i;
-#line 285 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 284 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					i = _tmp51_ + 1;
-#line 1740 "Gtk.vala.c"
+#line 1738 "Gtk.vala.c"
 				}
-#line 285 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 284 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp50_ = FALSE;
-#line 285 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 284 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp52_ = i;
-#line 285 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 284 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp53_ = item;
-#line 285 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 284 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp54_ = _tmp53_->items;
-#line 285 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 284 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp55_ = g_list_length (_tmp54_);
-#line 285 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 284 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				if (!(((guint) _tmp52_) < _tmp55_)) {
-#line 285 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 284 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					break;
-#line 1756 "Gtk.vala.c"
+#line 1754 "Gtk.vala.c"
 				}
-#line 286 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 285 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp56_ = item;
-#line 286 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 285 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp57_ = _tmp56_->items;
-#line 286 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 285 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp58_ = i;
-#line 286 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 285 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp59_ = g_list_nth_data (_tmp57_, (guint) _tmp58_);
-#line 286 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 285 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				js_render_gtk_toValaName (self, (JsRenderNode*) _tmp59_);
-#line 1768 "Gtk.vala.c"
+#line 1766 "Gtk.vala.c"
 			}
 		}
 	}
-#line 264 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 263 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp33_);
-#line 264 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 263 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_object_unref0 (props);
-#line 264 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 263 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (id);
-#line 264 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 263 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp9_);
-#line 264 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 263 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (cls);
-#line 1782 "Gtk.vala.c"
+#line 1780 "Gtk.vala.c"
 }
 
 
@@ -1797,7 +1795,7 @@ static gchar string_get (const gchar* self, glong index) {
 	result = _tmp1_;
 #line 997 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 	return result;
-#line 1800 "Gtk.vala.c"
+#line 1798 "Gtk.vala.c"
 }
 
 
@@ -1820,7 +1818,7 @@ static glong string_strnlen (gchar* str, glong maxlen) {
 	_tmp3_ = end;
 #line 1194 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 	if (_tmp3_ == NULL) {
-#line 1823 "Gtk.vala.c"
+#line 1821 "Gtk.vala.c"
 		glong _tmp4_ = 0L;
 #line 1195 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 		_tmp4_ = maxlen;
@@ -1828,7 +1826,7 @@ static glong string_strnlen (gchar* str, glong maxlen) {
 		result = _tmp4_;
 #line 1195 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 		return result;
-#line 1831 "Gtk.vala.c"
+#line 1829 "Gtk.vala.c"
 	} else {
 		gchar* _tmp5_ = NULL;
 		gchar* _tmp6_ = NULL;
@@ -1840,7 +1838,7 @@ static glong string_strnlen (gchar* str, glong maxlen) {
 		result = (glong) (_tmp5_ - _tmp6_);
 #line 1197 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 		return result;
-#line 1843 "Gtk.vala.c"
+#line 1841 "Gtk.vala.c"
 	}
 }
 
@@ -1864,21 +1862,21 @@ static gchar* string_substring (const gchar* self, glong offset, glong len) {
 	_tmp1_ = offset;
 #line 1206 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 	if (_tmp1_ >= ((glong) 0)) {
-#line 1867 "Gtk.vala.c"
+#line 1865 "Gtk.vala.c"
 		glong _tmp2_ = 0L;
 #line 1206 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 		_tmp2_ = len;
 #line 1206 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 		_tmp0_ = _tmp2_ >= ((glong) 0);
-#line 1873 "Gtk.vala.c"
+#line 1871 "Gtk.vala.c"
 	} else {
 #line 1206 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 		_tmp0_ = FALSE;
-#line 1877 "Gtk.vala.c"
+#line 1875 "Gtk.vala.c"
 	}
 #line 1206 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 	if (_tmp0_) {
-#line 1881 "Gtk.vala.c"
+#line 1879 "Gtk.vala.c"
 		glong _tmp3_ = 0L;
 		glong _tmp4_ = 0L;
 		glong _tmp5_ = 0L;
@@ -1890,7 +1888,7 @@ static gchar* string_substring (const gchar* self, glong offset, glong len) {
 		_tmp5_ = string_strnlen ((gchar*) self, _tmp3_ + _tmp4_);
 #line 1208 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 		string_length = _tmp5_;
-#line 1893 "Gtk.vala.c"
+#line 1891 "Gtk.vala.c"
 	} else {
 		gint _tmp6_ = 0;
 		gint _tmp7_ = 0;
@@ -1900,13 +1898,13 @@ static gchar* string_substring (const gchar* self, glong offset, glong len) {
 		_tmp7_ = _tmp6_;
 #line 1210 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 		string_length = (glong) _tmp7_;
-#line 1903 "Gtk.vala.c"
+#line 1901 "Gtk.vala.c"
 	}
 #line 1213 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 	_tmp8_ = offset;
 #line 1213 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 	if (_tmp8_ < ((glong) 0)) {
-#line 1909 "Gtk.vala.c"
+#line 1907 "Gtk.vala.c"
 		glong _tmp9_ = 0L;
 		glong _tmp10_ = 0L;
 		glong _tmp11_ = 0L;
@@ -1920,7 +1918,7 @@ static gchar* string_substring (const gchar* self, glong offset, glong len) {
 		_tmp11_ = offset;
 #line 1215 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 		g_return_val_if_fail (_tmp11_ >= ((glong) 0), NULL);
-#line 1923 "Gtk.vala.c"
+#line 1921 "Gtk.vala.c"
 	} else {
 		glong _tmp12_ = 0L;
 		glong _tmp13_ = 0L;
@@ -1930,13 +1928,13 @@ static gchar* string_substring (const gchar* self, glong offset, glong len) {
 		_tmp13_ = string_length;
 #line 1217 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 		g_return_val_if_fail (_tmp12_ <= _tmp13_, NULL);
-#line 1933 "Gtk.vala.c"
+#line 1931 "Gtk.vala.c"
 	}
 #line 1219 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 	_tmp14_ = len;
 #line 1219 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 	if (_tmp14_ < ((glong) 0)) {
-#line 1939 "Gtk.vala.c"
+#line 1937 "Gtk.vala.c"
 		glong _tmp15_ = 0L;
 		glong _tmp16_ = 0L;
 #line 1220 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
@@ -1945,7 +1943,7 @@ static gchar* string_substring (const gchar* self, glong offset, glong len) {
 		_tmp16_ = offset;
 #line 1220 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 		len = _tmp15_ - _tmp16_;
-#line 1948 "Gtk.vala.c"
+#line 1946 "Gtk.vala.c"
 	}
 #line 1222 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 	_tmp17_ = offset;
@@ -1965,23 +1963,23 @@ static gchar* string_substring (const gchar* self, glong offset, glong len) {
 	result = _tmp22_;
 #line 1223 "/usr/share/vala-0.24/vapi/glib-2.0.vapi"
 	return result;
-#line 1968 "Gtk.vala.c"
+#line 1966 "Gtk.vala.c"
 }
 
 
 static void _g_free0_ (gpointer var) {
-#line 372 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 371 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	var = (g_free (var), NULL);
-#line 1975 "Gtk.vala.c"
+#line 1973 "Gtk.vala.c"
 }
 
 
 static void _g_list_free__g_free0_ (GList* self) {
-#line 372 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 371 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	g_list_foreach (self, (GFunc) _g_free0_, NULL);
-#line 372 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 371 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	g_list_free (self);
-#line 1984 "Gtk.vala.c"
+#line 1982 "Gtk.vala.c"
 }
 
 
@@ -2137,57 +2135,57 @@ static gchar* js_render_gtk_toValaItem (JsRenderGtk* self, JsRenderNode* item, g
 	gchar* _tmp504_ = NULL;
 	gint _tmp505_ = 0;
 	gint _tmp525_ = 0;
-#line 291 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 290 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 291 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 290 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	g_return_val_if_fail (item != NULL, NULL);
-#line 294 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 293 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp0_ = g_strdup ("");
-#line 294 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 293 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	ret = _tmp0_;
-#line 295 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 294 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp1_ = depth;
-#line 295 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 294 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp2_ = g_strnfill ((gsize) ((_tmp1_ + 1) * 4), ' ');
-#line 295 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 294 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	inpad = _tmp2_;
-#line 297 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 296 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp3_ = depth;
-#line 297 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 296 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp4_ = g_strnfill ((gsize) ((_tmp3_ + 2) * 4), ' ');
-#line 297 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 296 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	pad = _tmp4_;
-#line 298 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 297 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp5_ = depth;
-#line 298 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 297 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp6_ = g_strnfill ((gsize) ((_tmp5_ + 3) * 4), ' ');
-#line 298 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 297 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	ipad = _tmp6_;
-#line 300 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 299 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp7_ = item;
-#line 300 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 299 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp8_ = _tmp7_->xvala_cls;
-#line 300 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 299 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp9_ = g_strdup (_tmp8_);
-#line 300 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 299 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	cls = _tmp9_;
-#line 302 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 301 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp10_ = item;
-#line 302 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 301 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp11_ = _tmp10_->xvala_xcls;
-#line 302 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 301 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp12_ = g_strdup (_tmp11_);
-#line 302 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 301 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	xcls = _tmp12_;
-#line 304 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 303 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp13_ = gee_hash_map_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, g_free, G_TYPE_BOOLEAN, NULL, NULL, NULL, NULL, NULL);
-#line 304 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 303 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	citems = _tmp13_;
-#line 306 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 305 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp14_ = depth;
-#line 306 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 305 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	if (_tmp14_ < 1) {
-#line 2190 "Gtk.vala.c"
+#line 2188 "Gtk.vala.c"
 		const gchar* _tmp15_ = NULL;
 		const gchar* _tmp16_ = NULL;
 		gchar* _tmp17_ = NULL;
@@ -2203,131 +2201,131 @@ static gchar* js_render_gtk_toValaItem (JsRenderGtk* self, JsRenderNode* item, g
 		gchar* _tmp27_ = NULL;
 		gchar* _tmp28_ = NULL;
 		gchar* _tmp29_ = NULL;
-#line 308 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 307 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp15_ = ret;
-#line 308 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 307 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp16_ = inpad;
-#line 308 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 307 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp17_ = g_strconcat (_tmp16_, "public static ", NULL);
-#line 308 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 307 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp18_ = _tmp17_;
-#line 308 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 307 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp19_ = xcls;
-#line 308 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 307 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp20_ = g_strconcat (_tmp18_, _tmp19_, NULL);
-#line 308 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 307 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp21_ = _tmp20_;
-#line 308 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 307 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp22_ = g_strconcat (_tmp21_, "  ", NULL);
-#line 308 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 307 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp23_ = _tmp22_;
-#line 308 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 307 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp24_ = ((JsRenderJsRender*) self)->name;
-#line 308 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 307 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp25_ = g_strconcat (_tmp23_, _tmp24_, NULL);
-#line 308 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 307 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp26_ = _tmp25_;
-#line 308 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 307 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp27_ = g_strconcat (_tmp26_, ";\n\n", NULL);
-#line 308 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 307 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp28_ = _tmp27_;
-#line 308 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 307 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp29_ = g_strconcat (_tmp15_, _tmp28_, NULL);
-#line 308 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 307 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (ret);
-#line 308 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 307 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		ret = _tmp29_;
-#line 308 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 307 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp28_);
-#line 308 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 307 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp26_);
-#line 308 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 307 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp23_);
-#line 308 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 307 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp21_);
-#line 308 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 307 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp18_);
-#line 2250 "Gtk.vala.c"
+#line 2248 "Gtk.vala.c"
 	}
-#line 314 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 313 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp30_ = ret;
-#line 314 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 313 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp31_ = inpad;
-#line 314 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 313 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp32_ = g_strconcat (_tmp31_, "public class ", NULL);
-#line 314 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 313 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp33_ = _tmp32_;
-#line 314 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 313 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp34_ = xcls;
-#line 314 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 313 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp35_ = g_strconcat (_tmp33_, _tmp34_, NULL);
-#line 314 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 313 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp36_ = _tmp35_;
-#line 314 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 313 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp37_ = g_strconcat (_tmp36_, "\n", NULL);
-#line 314 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 313 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp38_ = _tmp37_;
-#line 314 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 313 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp39_ = inpad;
-#line 314 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 313 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp40_ = g_strconcat (_tmp38_, _tmp39_, NULL);
-#line 314 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 313 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp41_ = _tmp40_;
-#line 314 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 313 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp42_ = g_strconcat (_tmp41_, "{\n", NULL);
-#line 314 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 313 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp43_ = _tmp42_;
-#line 314 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 313 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp44_ = g_strconcat (_tmp30_, _tmp43_, NULL);
-#line 314 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 313 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (ret);
-#line 314 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 313 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	ret = _tmp44_;
-#line 314 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 313 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp43_);
-#line 314 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 313 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp41_);
-#line 314 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 313 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp38_);
-#line 314 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 313 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp36_);
-#line 314 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 313 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp33_);
-#line 315 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 314 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp45_ = ret;
-#line 315 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 314 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp46_ = pad;
-#line 315 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 314 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp47_ = g_strconcat (_tmp46_, "public ", NULL);
-#line 315 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 314 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp48_ = _tmp47_;
-#line 315 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 314 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp49_ = cls;
-#line 315 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 314 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp50_ = g_strconcat (_tmp48_, _tmp49_, NULL);
-#line 315 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 314 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp51_ = _tmp50_;
-#line 315 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 314 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp52_ = g_strconcat (_tmp51_, " el;\n", NULL);
-#line 315 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 314 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp53_ = _tmp52_;
-#line 315 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 314 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp54_ = g_strconcat (_tmp45_, _tmp53_, NULL);
-#line 315 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 314 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (ret);
-#line 315 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 314 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	ret = _tmp54_;
-#line 315 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 314 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp53_);
-#line 315 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 314 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp51_);
-#line 315 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 314 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp48_);
-#line 317 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 316 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp55_ = depth;
-#line 317 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 316 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	if (_tmp55_ < 1) {
-#line 2330 "Gtk.vala.c"
+#line 2328 "Gtk.vala.c"
 		const gchar* _tmp56_ = NULL;
 		const gchar* _tmp57_ = NULL;
 		gchar* _tmp58_ = NULL;
@@ -2338,55 +2336,55 @@ static gchar* js_render_gtk_toValaItem (JsRenderGtk* self, JsRenderNode* item, g
 		gchar* _tmp63_ = NULL;
 		gchar* _tmp64_ = NULL;
 		gchar* _tmp65_ = NULL;
-#line 319 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 318 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp56_ = ret;
-#line 319 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 318 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp57_ = pad;
-#line 319 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 318 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp58_ = g_strconcat (_tmp57_, "private static ", NULL);
-#line 319 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 318 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp59_ = _tmp58_;
-#line 319 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 318 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp60_ = xcls;
-#line 319 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 318 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp61_ = g_strconcat (_tmp59_, _tmp60_, NULL);
-#line 319 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 318 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp62_ = _tmp61_;
-#line 319 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 318 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp63_ = g_strconcat (_tmp62_, "  _this;\n\n", NULL);
-#line 319 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 318 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp64_ = _tmp63_;
-#line 319 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 318 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp65_ = g_strconcat (_tmp56_, _tmp64_, NULL);
-#line 319 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 318 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (ret);
-#line 319 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 318 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		ret = _tmp65_;
-#line 319 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 318 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp64_);
-#line 319 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 318 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp62_);
-#line 319 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 318 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp59_);
-#line 2371 "Gtk.vala.c"
+#line 2369 "Gtk.vala.c"
 	}
-#line 327 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 326 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp66_ = depth;
-#line 327 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 326 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	if (_tmp66_ < 1) {
-#line 2377 "Gtk.vala.c"
+#line 2375 "Gtk.vala.c"
 		{
 			gint i = 0;
-#line 329 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 328 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			i = 1;
-#line 2382 "Gtk.vala.c"
+#line 2380 "Gtk.vala.c"
 			{
 				gboolean _tmp67_ = FALSE;
-#line 329 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 328 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp67_ = TRUE;
-#line 329 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 328 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				while (TRUE) {
-#line 2389 "Gtk.vala.c"
+#line 2387 "Gtk.vala.c"
 					gint _tmp69_ = 0;
 					GList* _tmp70_ = NULL;
 					guint _tmp71_ = 0U;
@@ -2396,45 +2394,45 @@ static gchar* js_render_gtk_toValaItem (JsRenderGtk* self, JsRenderNode* item, g
 					const gchar* _tmp75_ = NULL;
 					gint _tmp76_ = 0;
 					gint _tmp77_ = 0;
-#line 329 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 328 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					if (!_tmp67_) {
-#line 2401 "Gtk.vala.c"
+#line 2399 "Gtk.vala.c"
 						gint _tmp68_ = 0;
-#line 329 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 328 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 						_tmp68_ = i;
-#line 329 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 328 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 						i = _tmp68_ + 1;
-#line 2407 "Gtk.vala.c"
+#line 2405 "Gtk.vala.c"
 					}
-#line 329 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 328 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					_tmp67_ = FALSE;
-#line 329 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 328 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					_tmp69_ = i;
-#line 329 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 328 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					_tmp70_ = self->priv->vitems;
-#line 329 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 328 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					_tmp71_ = g_list_length (_tmp70_);
-#line 329 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 328 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					if (!(((guint) _tmp69_) < _tmp71_)) {
-#line 329 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 328 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 						break;
-#line 2421 "Gtk.vala.c"
+#line 2419 "Gtk.vala.c"
 					}
-#line 330 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 329 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					_tmp72_ = self->priv->vitems;
-#line 330 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 329 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					_tmp73_ = i;
-#line 330 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 329 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					_tmp74_ = g_list_nth_data (_tmp72_, (guint) _tmp73_);
-#line 330 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 329 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					_tmp75_ = ((JsRenderNode*) _tmp74_)->xvala_id;
-#line 330 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 329 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					_tmp76_ = strlen (_tmp75_);
-#line 330 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 329 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					_tmp77_ = _tmp76_;
-#line 330 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 329 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					if (_tmp77_ > 0) {
-#line 2437 "Gtk.vala.c"
+#line 2435 "Gtk.vala.c"
 						const gchar* _tmp78_ = NULL;
 						const gchar* _tmp79_ = NULL;
 						gchar* _tmp80_ = NULL;
@@ -2456,101 +2454,101 @@ static gchar* js_render_gtk_toValaItem (JsRenderGtk* self, JsRenderNode* item, g
 						gchar* _tmp96_ = NULL;
 						gchar* _tmp97_ = NULL;
 						gchar* _tmp98_ = NULL;
-#line 331 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 330 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 						_tmp78_ = ret;
-#line 331 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 330 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 						_tmp79_ = pad;
-#line 331 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 330 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 						_tmp80_ = g_strconcat (_tmp79_, "public ", NULL);
-#line 331 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 330 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 						_tmp81_ = _tmp80_;
-#line 331 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 330 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 						_tmp82_ = self->priv->vitems;
-#line 331 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 330 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 						_tmp83_ = i;
-#line 331 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 330 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 						_tmp84_ = g_list_nth_data (_tmp82_, (guint) _tmp83_);
-#line 331 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 330 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 						_tmp85_ = ((JsRenderNode*) _tmp84_)->xvala_xcls;
-#line 331 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 330 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 						_tmp86_ = g_strconcat (_tmp81_, _tmp85_, NULL);
-#line 331 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 330 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 						_tmp87_ = _tmp86_;
-#line 331 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 330 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 						_tmp88_ = g_strconcat (_tmp87_, " ", NULL);
-#line 331 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 330 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 						_tmp89_ = _tmp88_;
-#line 331 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 330 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 						_tmp90_ = self->priv->vitems;
-#line 331 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 330 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 						_tmp91_ = i;
-#line 331 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 330 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 						_tmp92_ = g_list_nth_data (_tmp90_, (guint) _tmp91_);
-#line 331 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 330 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 						_tmp93_ = ((JsRenderNode*) _tmp92_)->xvala_id;
-#line 331 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 330 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 						_tmp94_ = g_strconcat (_tmp89_, _tmp93_, NULL);
-#line 331 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 330 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 						_tmp95_ = _tmp94_;
-#line 331 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 330 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 						_tmp96_ = g_strconcat (_tmp95_, ";\n", NULL);
-#line 331 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 330 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 						_tmp97_ = _tmp96_;
-#line 331 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 330 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 						_tmp98_ = g_strconcat (_tmp78_, _tmp97_, NULL);
-#line 331 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 330 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 						_g_free0 (ret);
-#line 331 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 330 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 						ret = _tmp98_;
-#line 331 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 330 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 						_g_free0 (_tmp97_);
-#line 331 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 330 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 						_g_free0 (_tmp95_);
-#line 331 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 330 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 						_g_free0 (_tmp89_);
-#line 331 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 330 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 						_g_free0 (_tmp87_);
-#line 331 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 330 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 						_g_free0 (_tmp81_);
-#line 2515 "Gtk.vala.c"
+#line 2513 "Gtk.vala.c"
 					}
 				}
 			}
 		}
 	}
-#line 337 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 336 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp99_ = ret;
-#line 337 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 336 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp100_ = ipad;
-#line 337 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 336 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp101_ = g_strconcat ("\n", _tmp100_, NULL);
-#line 337 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 336 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp102_ = _tmp101_;
-#line 337 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 336 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp103_ = g_strconcat (_tmp102_, "// my vars\n", NULL);
-#line 337 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 336 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp104_ = _tmp103_;
-#line 337 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 336 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp105_ = g_strconcat (_tmp99_, _tmp104_, NULL);
-#line 337 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 336 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (ret);
-#line 337 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 336 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	ret = _tmp105_;
-#line 337 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 336 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp104_);
-#line 337 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 336 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp102_);
-#line 338 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 337 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp106_ = item;
-#line 338 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 337 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp107_ = _tmp106_->props;
-#line 338 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 337 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp108_ = gee_abstract_map_map_iterator ((GeeAbstractMap*) _tmp107_);
-#line 338 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 337 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	iter = _tmp108_;
-#line 339 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 338 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	while (TRUE) {
-#line 2553 "Gtk.vala.c"
+#line 2551 "Gtk.vala.c"
 		GeeMapIterator* _tmp109_ = NULL;
 		gboolean _tmp110_ = FALSE;
 		gchar* k = NULL;
@@ -2589,253 +2587,253 @@ static gchar* js_render_gtk_toValaItem (JsRenderGtk* self, JsRenderNode* item, g
 		gchar* _tmp137_ = NULL;
 		GeeHashMap* _tmp138_ = NULL;
 		const gchar* _tmp139_ = NULL;
-#line 339 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 338 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp109_ = iter;
-#line 339 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 338 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp110_ = gee_map_iterator_next (_tmp109_);
-#line 339 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 338 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		if (!_tmp110_) {
-#line 339 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 338 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			break;
-#line 2600 "Gtk.vala.c"
+#line 2598 "Gtk.vala.c"
 		}
-#line 340 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 339 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp111_ = iter;
-#line 340 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 339 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp112_ = gee_map_iterator_get_key (_tmp111_);
-#line 340 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 339 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		k = (gchar*) _tmp112_;
-#line 341 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 340 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp113_ = iter;
-#line 341 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 340 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp114_ = gee_map_iterator_get_value (_tmp113_);
-#line 341 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 340 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		v = (gchar*) _tmp114_;
-#line 343 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 342 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp115_ = k;
-#line 343 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 342 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp116_ = string_get (_tmp115_, (glong) 0);
-#line 343 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 342 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		if (_tmp116_ != '.') {
-#line 344 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 343 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_g_free0 (v);
-#line 344 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 343 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_g_free0 (k);
-#line 344 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 343 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			continue;
-#line 2626 "Gtk.vala.c"
+#line 2624 "Gtk.vala.c"
 		}
-#line 347 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 346 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp117_ = k;
-#line 347 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 346 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp118_ = string_substring (_tmp117_, (glong) 1, (glong) (-1));
-#line 347 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 346 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		kk = _tmp118_;
-#line 349 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 348 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp119_ = v;
-#line 349 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 348 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp121_ = _tmp120_ = g_strsplit (_tmp119_, ":", 0);
-#line 349 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 348 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		vv = _tmp121_;
-#line 349 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 348 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		vv_length1 = _vala_array_length (_tmp120_);
-#line 349 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 348 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_vv_size_ = vv_length1;
-#line 350 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 349 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp122_ = ret;
-#line 350 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 349 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp123_ = pad;
-#line 350 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 349 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp124_ = g_strconcat (_tmp123_, "public ", NULL);
-#line 350 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 349 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp125_ = _tmp124_;
-#line 350 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 349 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp126_ = vv;
-#line 350 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 349 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp126__length1 = vv_length1;
-#line 350 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 349 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp127_ = _tmp126_[0];
-#line 350 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 349 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp128_ = g_strconcat (_tmp125_, _tmp127_, NULL);
-#line 350 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 349 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp129_ = _tmp128_;
-#line 350 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 349 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp130_ = g_strconcat (_tmp129_, " ", NULL);
-#line 350 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 349 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp131_ = _tmp130_;
-#line 350 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 349 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp132_ = kk;
-#line 350 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 349 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp133_ = g_strconcat (_tmp131_, _tmp132_, NULL);
-#line 350 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 349 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp134_ = _tmp133_;
-#line 350 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 349 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp135_ = g_strconcat (_tmp134_, ";\n", NULL);
-#line 350 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 349 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp136_ = _tmp135_;
-#line 350 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 349 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp137_ = g_strconcat (_tmp122_, _tmp136_, NULL);
-#line 350 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 349 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (ret);
-#line 350 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 349 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		ret = _tmp137_;
-#line 350 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 349 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp136_);
-#line 350 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 349 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp134_);
-#line 350 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 349 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp131_);
-#line 350 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 349 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp129_);
-#line 350 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 349 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp125_);
-#line 351 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 350 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp138_ = citems;
-#line 351 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 350 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp139_ = k;
-#line 351 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 350 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		gee_abstract_map_set ((GeeAbstractMap*) _tmp138_, _tmp139_, (gpointer) ((gintptr) TRUE));
-#line 339 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 338 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		vv = (_vala_array_free (vv, vv_length1, (GDestroyNotify) g_free), NULL);
-#line 339 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 338 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (kk);
-#line 339 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 338 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (v);
-#line 339 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 338 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (k);
-#line 2706 "Gtk.vala.c"
+#line 2704 "Gtk.vala.c"
 	}
-#line 357 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 356 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp140_ = ret;
-#line 357 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 356 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp141_ = ipad;
-#line 357 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 356 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp142_ = g_strconcat ("\n", _tmp141_, NULL);
-#line 357 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 356 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp143_ = _tmp142_;
-#line 357 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 356 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp144_ = g_strconcat (_tmp143_, "// ctor \n", NULL);
-#line 357 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 356 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp145_ = _tmp144_;
-#line 357 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 356 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp146_ = g_strconcat (_tmp140_, _tmp145_, NULL);
-#line 357 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 356 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (ret);
-#line 357 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 356 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	ret = _tmp146_;
-#line 357 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 356 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp145_);
-#line 357 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 356 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp143_);
-#line 358 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 357 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp147_ = ret;
-#line 358 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 357 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp148_ = pad;
-#line 358 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 357 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp149_ = g_strconcat (_tmp148_, "public ", NULL);
-#line 358 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 357 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp150_ = _tmp149_;
-#line 358 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 357 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp151_ = xcls;
-#line 358 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 357 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp152_ = g_strconcat (_tmp150_, _tmp151_, NULL);
-#line 358 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 357 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp153_ = _tmp152_;
-#line 358 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 357 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp154_ = g_strconcat (_tmp153_, "()\n", NULL);
-#line 358 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 357 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp155_ = _tmp154_;
-#line 358 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 357 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp156_ = pad;
-#line 358 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 357 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp157_ = g_strconcat (_tmp155_, _tmp156_, NULL);
-#line 358 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 357 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp158_ = _tmp157_;
-#line 358 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 357 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp159_ = g_strconcat (_tmp158_, "{\n", NULL);
-#line 358 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 357 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp160_ = _tmp159_;
-#line 358 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 357 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp161_ = g_strconcat (_tmp147_, _tmp160_, NULL);
-#line 358 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 357 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (ret);
-#line 358 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 357 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	ret = _tmp161_;
-#line 358 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 357 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp160_);
-#line 358 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 357 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp158_);
-#line 358 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 357 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp155_);
-#line 358 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 357 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp153_);
-#line 358 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 357 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp150_);
-#line 364 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 363 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp162_ = self->priv->palete;
-#line 364 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 363 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp163_ = cls;
-#line 364 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 363 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp164_ = palete_gtk_getPropertiesFor (_tmp162_, _tmp163_, "ctors");
-#line 364 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 363 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	ctors = _tmp164_;
-#line 367 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 366 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp166_ = item;
-#line 367 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 366 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp167_ = js_render_node_get (_tmp166_, "*ctor");
-#line 367 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 366 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp168_ = _tmp167_;
-#line 367 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 366 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp169_ = strlen (_tmp168_);
-#line 367 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 366 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp170_ = _tmp169_;
-#line 367 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 366 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp171_ = _tmp170_ > 0;
-#line 367 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 366 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp168_);
-#line 367 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 366 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	if (_tmp171_) {
-#line 2798 "Gtk.vala.c"
+#line 2796 "Gtk.vala.c"
 		JsRenderNode* _tmp172_ = NULL;
 		gchar* _tmp173_ = NULL;
-#line 367 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 366 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp172_ = item;
-#line 367 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 366 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp173_ = js_render_node_get (_tmp172_, "(ctor");
-#line 367 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 366 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp165_);
-#line 367 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 366 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp165_ = _tmp173_;
-#line 2809 "Gtk.vala.c"
+#line 2807 "Gtk.vala.c"
 	} else {
 		gchar* _tmp174_ = NULL;
-#line 367 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 366 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp174_ = g_strdup ("new");
-#line 367 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 366 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp165_);
-#line 367 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 366 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp165_ = _tmp174_;
-#line 2818 "Gtk.vala.c"
+#line 2816 "Gtk.vala.c"
 	}
-#line 367 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 366 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp175_ = g_strdup (_tmp165_);
-#line 367 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 366 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	ctor = _tmp175_;
-#line 369 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 368 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp176_ = ctors;
-#line 369 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 368 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp177_ = ctor;
-#line 369 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 368 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp178_ = gee_abstract_map_get ((GeeAbstractMap*) _tmp176_, _tmp177_);
-#line 369 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 368 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	ctor_def = (PaleteGirObject*) _tmp178_;
-#line 372 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 371 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp179_ = ctor_def;
-#line 372 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 371 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp180_ = _tmp179_->paramset;
-#line 372 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 371 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	if (_tmp180_ != NULL) {
-#line 2838 "Gtk.vala.c"
+#line 2836 "Gtk.vala.c"
 		gint argid = 0;
 		GList* args = NULL;
 		GeeMapIterator* piter = NULL;
@@ -2860,23 +2858,23 @@ static gchar* js_render_gtk_toValaItem (JsRenderGtk* self, JsRenderNode* item, g
 		gchar* _tmp246_ = NULL;
 		gchar* _tmp247_ = NULL;
 		gchar* _tmp248_ = NULL;
-#line 374 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 373 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		argid = 1;
-#line 375 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 374 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		args = NULL;
-#line 376 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 375 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp181_ = ctor_def;
-#line 376 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 375 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp182_ = _tmp181_->paramset;
-#line 376 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 375 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp183_ = _tmp182_->params;
-#line 376 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 375 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp184_ = gee_abstract_map_map_iterator ((GeeAbstractMap*) _tmp183_);
-#line 376 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 375 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		piter = _tmp184_;
-#line 377 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 376 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		while (TRUE) {
-#line 2879 "Gtk.vala.c"
+#line 2877 "Gtk.vala.c"
 			GeeMapIterator* _tmp185_ = NULL;
 			gboolean _tmp186_ = FALSE;
 			gchar* pv = NULL;
@@ -2895,41 +2893,41 @@ static gchar* js_render_gtk_toValaItem (JsRenderGtk* self, JsRenderNode* item, g
 			PaleteGirObject* _tmp229_ = NULL;
 			const gchar* _tmp230_ = NULL;
 			gchar* _tmp231_ = NULL;
-#line 377 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 376 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp185_ = piter;
-#line 377 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 376 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp186_ = gee_map_iterator_next (_tmp185_);
-#line 377 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 376 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			if (!_tmp186_) {
-#line 377 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 376 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				break;
-#line 2906 "Gtk.vala.c"
+#line 2904 "Gtk.vala.c"
 			}
-#line 380 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 379 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp187_ = item;
-#line 380 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 379 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp188_ = piter;
-#line 380 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 379 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp189_ = gee_map_iterator_get_key (_tmp188_);
-#line 380 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 379 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp190_ = (gchar*) _tmp189_;
-#line 380 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 379 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp191_ = js_render_node_get (_tmp187_, _tmp190_);
-#line 380 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 379 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp192_ = _tmp191_;
-#line 380 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 379 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_g_free0 (_tmp190_);
-#line 380 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 379 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			pv = _tmp192_;
-#line 381 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 380 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp193_ = pv;
-#line 381 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 380 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp194_ = strlen (_tmp193_);
-#line 381 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 380 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp195_ = _tmp194_;
-#line 381 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 380 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			if (_tmp195_ < 1) {
-#line 2932 "Gtk.vala.c"
+#line 2930 "Gtk.vala.c"
 				JsRenderNode* pvi = NULL;
 				JsRenderNode* _tmp196_ = NULL;
 				GeeMapIterator* _tmp197_ = NULL;
@@ -2962,193 +2960,193 @@ static gchar* js_render_gtk_toValaItem (JsRenderGtk* self, JsRenderNode* item, g
 				gchar* _tmp223_ = NULL;
 				const gchar* _tmp224_ = NULL;
 				gchar* _tmp225_ = NULL;
-#line 383 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 382 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp196_ = item;
-#line 383 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 382 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp197_ = piter;
-#line 383 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 382 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp198_ = gee_map_iterator_get_key (_tmp197_);
-#line 383 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 382 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp199_ = (gchar*) _tmp198_;
-#line 383 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 382 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp200_ = js_render_node_findProp (_tmp196_, _tmp199_);
-#line 383 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 382 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp201_ = _tmp200_;
-#line 383 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 382 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_g_free0 (_tmp199_);
-#line 383 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 382 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				pvi = _tmp201_;
-#line 384 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 383 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp202_ = pvi;
-#line 384 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 383 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				if (_tmp202_ == NULL) {
-#line 2985 "Gtk.vala.c"
+#line 2983 "Gtk.vala.c"
 					gchar* _tmp203_ = NULL;
-#line 385 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 384 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					_tmp203_ = g_strdup ("null");
-#line 385 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 384 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					args = g_list_append (args, _tmp203_);
-#line 386 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 385 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					_js_render_node_unref0 (pvi);
-#line 386 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 385 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					_g_free0 (pv);
-#line 386 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 385 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					continue;
-#line 2997 "Gtk.vala.c"
+#line 2995 "Gtk.vala.c"
 				}
-#line 388 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 387 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp204_ = argid;
-#line 388 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 387 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				argid = _tmp204_ + 1;
-#line 388 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 387 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp205_ = g_strdup_printf ("xxx%d", _tmp204_);
-#line 388 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 387 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				var_id = _tmp205_;
-#line 390 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 389 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp206_ = pvi;
-#line 390 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 389 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp207_ = pad;
-#line 390 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 389 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp208_ = js_render_gtk_nodeToValaNew (self, _tmp206_, &ret, &argid, _tmp207_);
-#line 390 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 389 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				new_str = _tmp208_;
-#line 392 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 391 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp209_ = ret;
-#line 392 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 391 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp210_ = pad;
-#line 392 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 391 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp211_ = g_strconcat (_tmp210_, "var ", NULL);
-#line 392 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 391 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp212_ = _tmp211_;
-#line 392 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 391 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp213_ = var_id;
-#line 392 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 391 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp214_ = g_strconcat (_tmp212_, _tmp213_, NULL);
-#line 392 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 391 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp215_ = _tmp214_;
-#line 392 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 391 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp216_ = g_strconcat (_tmp215_, " = new ", NULL);
-#line 392 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 391 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp217_ = _tmp216_;
-#line 392 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 391 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp218_ = new_str;
-#line 392 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 391 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp219_ = g_strconcat (_tmp217_, _tmp218_, NULL);
-#line 392 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 391 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp220_ = _tmp219_;
-#line 392 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 391 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp221_ = g_strconcat (_tmp220_, "\n", NULL);
-#line 392 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 391 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp222_ = _tmp221_;
-#line 392 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 391 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp223_ = g_strconcat (_tmp209_, _tmp222_, NULL);
-#line 392 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 391 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_g_free0 (ret);
-#line 392 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 391 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				ret = _tmp223_;
-#line 392 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 391 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_g_free0 (_tmp222_);
-#line 392 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 391 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_g_free0 (_tmp220_);
-#line 392 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 391 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_g_free0 (_tmp217_);
-#line 392 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 391 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_g_free0 (_tmp215_);
-#line 392 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 391 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_g_free0 (_tmp212_);
-#line 393 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 392 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp224_ = var_id;
-#line 393 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 392 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp225_ = g_strdup (_tmp224_);
-#line 393 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 392 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				args = g_list_append (args, _tmp225_);
-#line 394 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 393 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_g_free0 (new_str);
-#line 394 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 393 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_g_free0 (var_id);
-#line 394 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 393 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_js_render_node_unref0 (pvi);
-#line 394 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 393 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_g_free0 (pv);
-#line 394 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 393 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				continue;
-#line 3075 "Gtk.vala.c"
+#line 3073 "Gtk.vala.c"
 			}
-#line 397 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 396 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp226_ = pv;
-#line 397 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 396 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp227_ = piter;
-#line 397 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 396 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp228_ = gee_map_iterator_get_value (_tmp227_);
-#line 397 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 396 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp229_ = (PaleteGirObject*) _tmp228_;
-#line 397 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 396 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp230_ = _tmp229_->type;
-#line 397 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 396 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp231_ = js_render_gtk_valueTypeToString (self, _tmp226_, _tmp230_);
-#line 397 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 396 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			args = g_list_append (args, _tmp231_);
-#line 397 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 396 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_g_object_unref0 (_tmp229_);
-#line 377 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 376 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_g_free0 (pv);
-#line 3095 "Gtk.vala.c"
+#line 3093 "Gtk.vala.c"
 		}
-#line 400 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 399 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp232_ = ret;
-#line 400 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 399 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp233_ = ipad;
-#line 400 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 399 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp234_ = g_strconcat (_tmp233_, "this.el = new ", NULL);
-#line 400 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 399 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp235_ = _tmp234_;
-#line 400 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 399 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp236_ = cls;
-#line 400 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 399 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp237_ = g_strconcat (_tmp235_, _tmp236_, NULL);
-#line 400 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 399 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp238_ = _tmp237_;
-#line 400 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 399 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp239_ = g_strconcat (_tmp238_, "( ", NULL);
-#line 400 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 399 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp240_ = _tmp239_;
-#line 400 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 399 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp241_ = args;
-#line 400 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 399 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp242_ = g_strjoin (", ", _tmp241_, NULL);
-#line 400 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 399 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp243_ = _tmp242_;
-#line 400 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 399 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp244_ = g_strconcat (_tmp240_, _tmp243_, NULL);
-#line 400 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 399 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp245_ = _tmp244_;
-#line 400 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 399 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp246_ = g_strconcat (_tmp245_, " );\n", NULL);
-#line 400 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 399 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp247_ = _tmp246_;
-#line 400 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 399 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp248_ = g_strconcat (_tmp232_, _tmp247_, NULL);
-#line 400 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 399 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (ret);
-#line 400 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 399 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		ret = _tmp248_;
-#line 400 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 399 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp247_);
-#line 400 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 399 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp245_);
-#line 400 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 399 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp243_);
-#line 400 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 399 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp240_);
-#line 400 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 399 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp238_);
-#line 400 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 399 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp235_);
-#line 372 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 371 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_object_unref0 (piter);
-#line 372 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 371 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		__g_list_free__g_free0_0 (args);
-#line 3151 "Gtk.vala.c"
+#line 3149 "Gtk.vala.c"
 	} else {
 		const gchar* _tmp249_ = NULL;
 		const gchar* _tmp250_ = NULL;
@@ -3160,43 +3158,43 @@ static gchar* js_render_gtk_toValaItem (JsRenderGtk* self, JsRenderNode* item, g
 		gchar* _tmp256_ = NULL;
 		gchar* _tmp257_ = NULL;
 		gchar* _tmp258_ = NULL;
-#line 403 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 402 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp249_ = ret;
-#line 403 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 402 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp250_ = ipad;
-#line 403 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 402 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp251_ = g_strconcat (_tmp250_, "this.el = new ", NULL);
-#line 403 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 402 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp252_ = _tmp251_;
-#line 403 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 402 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp253_ = cls;
-#line 403 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 402 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp254_ = g_strconcat (_tmp252_, _tmp253_, NULL);
-#line 403 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 402 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp255_ = _tmp254_;
-#line 403 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 402 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp256_ = g_strconcat (_tmp255_, "();\n", NULL);
-#line 403 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 402 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp257_ = _tmp256_;
-#line 403 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 402 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp258_ = g_strconcat (_tmp249_, _tmp257_, NULL);
-#line 403 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 402 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (ret);
-#line 403 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 402 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		ret = _tmp258_;
-#line 403 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 402 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp257_);
-#line 403 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 402 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp255_);
-#line 403 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 402 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp252_);
-#line 3193 "Gtk.vala.c"
+#line 3191 "Gtk.vala.c"
 	}
-#line 412 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 411 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp259_ = depth;
-#line 412 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 411 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	if (_tmp259_ < 1) {
-#line 3199 "Gtk.vala.c"
+#line 3197 "Gtk.vala.c"
 		const gchar* _tmp260_ = NULL;
 		const gchar* _tmp261_ = NULL;
 		gchar* _tmp262_ = NULL;
@@ -3210,63 +3208,63 @@ static gchar* js_render_gtk_toValaItem (JsRenderGtk* self, JsRenderNode* item, g
 		gchar* _tmp270_ = NULL;
 		gchar* _tmp271_ = NULL;
 		gchar* _tmp272_ = NULL;
-#line 413 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 412 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp260_ = ret;
-#line 413 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 412 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp261_ = ipad;
-#line 413 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 412 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp262_ = g_strconcat (_tmp261_, "_this = this;\n", NULL);
-#line 413 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 412 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp263_ = _tmp262_;
-#line 413 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 412 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp264_ = g_strconcat (_tmp260_, _tmp263_, NULL);
-#line 413 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 412 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (ret);
-#line 413 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 412 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		ret = _tmp264_;
-#line 413 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 412 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp263_);
-#line 414 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 413 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp265_ = ret;
-#line 414 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 413 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp266_ = ipad;
-#line 414 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 413 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp267_ = ((JsRenderJsRender*) self)->name;
-#line 414 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 413 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp268_ = g_strconcat (_tmp266_, _tmp267_, NULL);
-#line 414 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 413 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp269_ = _tmp268_;
-#line 414 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 413 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp270_ = g_strconcat (_tmp269_, " = this;\n", NULL);
-#line 414 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 413 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp271_ = _tmp270_;
-#line 414 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 413 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp272_ = g_strconcat (_tmp265_, _tmp271_, NULL);
-#line 414 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 413 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (ret);
-#line 414 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 413 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		ret = _tmp272_;
-#line 414 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 413 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp271_);
-#line 414 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 413 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp269_);
-#line 3253 "Gtk.vala.c"
+#line 3251 "Gtk.vala.c"
 	} else {
 		JsRenderNode* _tmp273_ = NULL;
 		const gchar* _tmp274_ = NULL;
 		gint _tmp275_ = 0;
 		gint _tmp276_ = 0;
-#line 416 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 415 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp273_ = item;
-#line 416 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 415 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp274_ = _tmp273_->xvala_id;
-#line 416 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 415 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp275_ = strlen (_tmp274_);
-#line 416 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 415 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp276_ = _tmp275_;
-#line 416 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 415 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		if (_tmp276_ > 0) {
-#line 3269 "Gtk.vala.c"
+#line 3267 "Gtk.vala.c"
 			const gchar* _tmp277_ = NULL;
 			const gchar* _tmp278_ = NULL;
 			gchar* _tmp279_ = NULL;
@@ -3278,76 +3276,76 @@ static gchar* js_render_gtk_toValaItem (JsRenderGtk* self, JsRenderNode* item, g
 			gchar* _tmp285_ = NULL;
 			gchar* _tmp286_ = NULL;
 			gchar* _tmp287_ = NULL;
-#line 417 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 416 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp277_ = ret;
-#line 417 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 416 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp278_ = ipad;
-#line 417 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 416 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp279_ = g_strconcat (_tmp278_, "_this.", NULL);
-#line 417 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 416 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp280_ = _tmp279_;
-#line 417 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 416 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp281_ = item;
-#line 417 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 416 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp282_ = _tmp281_->xvala_id;
-#line 417 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 416 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp283_ = g_strconcat (_tmp280_, _tmp282_, NULL);
-#line 417 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 416 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp284_ = _tmp283_;
-#line 417 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 416 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp285_ = g_strconcat (_tmp284_, " = this;\n", NULL);
-#line 417 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 416 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp286_ = _tmp285_;
-#line 417 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 416 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp287_ = g_strconcat (_tmp277_, _tmp286_, NULL);
-#line 417 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 416 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_g_free0 (ret);
-#line 417 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 416 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			ret = _tmp287_;
-#line 417 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 416 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_g_free0 (_tmp286_);
-#line 417 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 416 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_g_free0 (_tmp284_);
-#line 417 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 416 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_g_free0 (_tmp280_);
-#line 3313 "Gtk.vala.c"
+#line 3311 "Gtk.vala.c"
 		}
 	}
-#line 424 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 423 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp288_ = ret;
-#line 424 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 423 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp289_ = ipad;
-#line 424 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 423 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp290_ = g_strconcat ("\n", _tmp289_, NULL);
-#line 424 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 423 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp291_ = _tmp290_;
-#line 424 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 423 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp292_ = g_strconcat (_tmp291_, "// my vars\n", NULL);
-#line 424 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 423 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp293_ = _tmp292_;
-#line 424 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 423 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp294_ = g_strconcat (_tmp288_, _tmp293_, NULL);
-#line 424 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 423 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (ret);
-#line 424 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 423 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	ret = _tmp294_;
-#line 424 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 423 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp293_);
-#line 424 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 423 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp291_);
-#line 427 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 426 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp295_ = item;
-#line 427 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 426 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp296_ = _tmp295_->props;
-#line 427 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 426 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp297_ = gee_abstract_map_map_iterator ((GeeAbstractMap*) _tmp296_);
-#line 427 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 426 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_object_unref0 (iter);
-#line 427 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 426 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	iter = _tmp297_;
-#line 428 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 427 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	while (TRUE) {
-#line 3350 "Gtk.vala.c"
+#line 3348 "Gtk.vala.c"
 		GeeMapIterator* _tmp298_ = NULL;
 		gboolean _tmp299_ = FALSE;
 		gchar* k = NULL;
@@ -3387,173 +3385,173 @@ static gchar* js_render_gtk_toValaItem (JsRenderGtk* self, JsRenderNode* item, g
 		gchar* _tmp326_ = NULL;
 		gchar* _tmp327_ = NULL;
 		gchar* _tmp328_ = NULL;
-#line 428 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 427 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp298_ = iter;
-#line 428 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 427 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp299_ = gee_map_iterator_next (_tmp298_);
-#line 428 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 427 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		if (!_tmp299_) {
-#line 428 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 427 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			break;
-#line 3398 "Gtk.vala.c"
+#line 3396 "Gtk.vala.c"
 		}
-#line 429 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 428 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp300_ = iter;
-#line 429 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 428 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp301_ = gee_map_iterator_get_key (_tmp300_);
-#line 429 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 428 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		k = (gchar*) _tmp301_;
-#line 430 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 429 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp302_ = k;
-#line 430 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 429 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp303_ = string_get (_tmp302_, (glong) 0);
-#line 430 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 429 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		if (_tmp303_ != '.') {
-#line 431 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 430 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_g_free0 (k);
-#line 431 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 430 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			continue;
-#line 3416 "Gtk.vala.c"
+#line 3414 "Gtk.vala.c"
 		}
-#line 433 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 432 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp304_ = k;
-#line 433 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 432 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp305_ = string_substring (_tmp304_, (glong) 1, (glong) (-1));
-#line 433 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 432 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		kk = _tmp305_;
-#line 434 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 433 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp306_ = item;
-#line 434 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 433 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp307_ = k;
-#line 434 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 433 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp308_ = js_render_node_get (_tmp306_, _tmp307_);
-#line 434 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 433 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		v = _tmp308_;
-#line 435 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 434 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp309_ = v;
-#line 435 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 434 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp311_ = _tmp310_ = g_strsplit (_tmp309_, ":", 0);
-#line 435 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 434 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		vv = _tmp311_;
-#line 435 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 434 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		vv_length1 = _vala_array_length (_tmp310_);
-#line 435 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 434 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_vv_size_ = vv_length1;
-#line 436 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 435 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp312_ = vv;
-#line 436 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 435 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp312__length1 = vv_length1;
-#line 436 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 435 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		if (_tmp312__length1 < 2) {
-#line 437 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 436 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			vv = (_vala_array_free (vv, vv_length1, (GDestroyNotify) g_free), NULL);
-#line 437 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 436 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_g_free0 (v);
-#line 437 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 436 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_g_free0 (kk);
-#line 437 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 436 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_g_free0 (k);
-#line 437 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 436 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			continue;
-#line 3458 "Gtk.vala.c"
+#line 3456 "Gtk.vala.c"
 		}
-#line 439 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 438 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp313_ = ret;
-#line 439 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 438 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp314_ = ipad;
-#line 439 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 438 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp315_ = g_strconcat (_tmp314_, "this", NULL);
-#line 439 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 438 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp316_ = _tmp315_;
-#line 439 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 438 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp317_ = k;
-#line 439 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 438 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp318_ = g_strconcat (_tmp316_, _tmp317_, NULL);
-#line 439 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 438 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp319_ = _tmp318_;
-#line 439 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 438 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp320_ = g_strconcat (_tmp319_, " = ", NULL);
-#line 439 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 438 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp321_ = _tmp320_;
-#line 439 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 438 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp322_ = vv;
-#line 439 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 438 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp322__length1 = vv_length1;
-#line 439 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 438 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp323_ = _tmp322_[1];
-#line 439 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 438 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp324_ = g_strconcat (_tmp321_, _tmp323_, NULL);
-#line 439 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 438 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp325_ = _tmp324_;
-#line 439 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 438 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp326_ = g_strconcat (_tmp325_, ";\n", NULL);
-#line 439 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 438 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp327_ = _tmp326_;
-#line 439 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 438 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp328_ = g_strconcat (_tmp313_, _tmp327_, NULL);
-#line 439 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 438 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (ret);
-#line 439 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 438 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		ret = _tmp328_;
-#line 439 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 438 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp327_);
-#line 439 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 438 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp325_);
-#line 439 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 438 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp321_);
-#line 439 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 438 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp319_);
-#line 439 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 438 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp316_);
-#line 428 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 427 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		vv = (_vala_array_free (vv, vv_length1, (GDestroyNotify) g_free), NULL);
-#line 428 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 427 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (v);
-#line 428 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 427 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (kk);
-#line 428 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 427 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (k);
-#line 3516 "Gtk.vala.c"
+#line 3514 "Gtk.vala.c"
 	}
-#line 445 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 444 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp329_ = ret;
-#line 445 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 444 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp330_ = ipad;
-#line 445 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 444 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp331_ = g_strconcat ("\n", _tmp330_, NULL);
-#line 445 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 444 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp332_ = _tmp331_;
-#line 445 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 444 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp333_ = g_strconcat (_tmp332_, "// set gobject values\n", NULL);
-#line 445 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 444 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp334_ = _tmp333_;
-#line 445 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 444 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp335_ = g_strconcat (_tmp329_, _tmp334_, NULL);
-#line 445 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 444 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (ret);
-#line 445 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 444 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	ret = _tmp335_;
-#line 445 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 444 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp334_);
-#line 445 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 444 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp332_);
-#line 446 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 445 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp336_ = self->priv->palete;
-#line 446 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 445 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp337_ = cls;
-#line 446 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 445 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp338_ = palete_gtk_getPropertiesFor (_tmp336_, _tmp337_, "props");
-#line 446 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 445 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	props = _tmp338_;
-#line 450 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 449 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp339_ = props;
-#line 450 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 449 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp340_ = gee_abstract_map_map_iterator ((GeeAbstractMap*) _tmp339_);
-#line 450 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 449 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	pviter = _tmp340_;
-#line 451 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 450 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	while (TRUE) {
-#line 3556 "Gtk.vala.c"
+#line 3554 "Gtk.vala.c"
 		GeeMapIterator* _tmp341_ = NULL;
 		gboolean _tmp342_ = FALSE;
 		GeeHashMap* _tmp343_ = NULL;
@@ -3603,168 +3601,168 @@ static gchar* js_render_gtk_toValaItem (JsRenderGtk* self, JsRenderNode* item, g
 		gchar* _tmp386_ = NULL;
 		gchar* _tmp387_ = NULL;
 		gchar* _tmp388_ = NULL;
-#line 451 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 450 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp341_ = pviter;
-#line 451 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 450 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp342_ = gee_map_iterator_next (_tmp341_);
-#line 451 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 450 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		if (!_tmp342_) {
-#line 451 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 450 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			break;
-#line 3614 "Gtk.vala.c"
+#line 3612 "Gtk.vala.c"
 		}
-#line 453 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 452 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp343_ = citems;
-#line 453 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 452 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp344_ = pviter;
-#line 453 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 452 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp345_ = gee_map_iterator_get_key (_tmp344_);
-#line 453 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 452 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp346_ = (gchar*) _tmp345_;
-#line 453 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 452 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp347_ = gee_abstract_map_get ((GeeAbstractMap*) _tmp343_, _tmp346_);
-#line 453 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 452 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp348_ = !(((gboolean) ((gintptr) _tmp347_)) == FALSE);
-#line 453 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 452 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp346_);
-#line 453 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 452 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		if (_tmp348_) {
-#line 454 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 453 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			continue;
-#line 3634 "Gtk.vala.c"
+#line 3632 "Gtk.vala.c"
 		}
-#line 456 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 455 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp349_ = item;
-#line 456 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 455 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp350_ = pviter;
-#line 456 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 455 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp351_ = gee_map_iterator_get_key (_tmp350_);
-#line 456 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 455 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp352_ = (gchar*) _tmp351_;
-#line 456 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 455 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp353_ = js_render_node_get (_tmp349_, _tmp352_);
-#line 456 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 455 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp354_ = _tmp353_;
-#line 456 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 455 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp355_ = strlen (_tmp354_);
-#line 456 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 455 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp356_ = _tmp355_;
-#line 456 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 455 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp357_ = _tmp356_ < 1;
-#line 456 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 455 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp354_);
-#line 456 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 455 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp352_);
-#line 456 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 455 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		if (_tmp357_) {
-#line 457 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 456 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			continue;
-#line 3662 "Gtk.vala.c"
+#line 3660 "Gtk.vala.c"
 		}
-#line 460 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 459 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp358_ = pviter;
-#line 460 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 459 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp359_ = gee_map_iterator_get_value (_tmp358_);
-#line 460 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 459 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp360_ = (PaleteGirObject*) _tmp359_;
-#line 460 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 459 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp361_ = _tmp360_->type;
-#line 460 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 459 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp362_ = g_strdup (_tmp361_);
-#line 460 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 459 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp363_ = _tmp362_;
-#line 460 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 459 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_object_unref0 (_tmp360_);
-#line 460 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 459 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		type = _tmp363_;
-#line 464 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 463 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp364_ = ret;
-#line 464 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 463 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp365_ = ipad;
-#line 464 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 463 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp366_ = g_strconcat (_tmp365_, "this.el.", NULL);
-#line 464 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 463 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp367_ = _tmp366_;
-#line 464 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 463 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp368_ = pviter;
-#line 464 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 463 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp369_ = gee_map_iterator_get_key (_tmp368_);
-#line 464 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 463 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp370_ = (gchar*) _tmp369_;
-#line 464 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 463 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp371_ = g_strconcat (_tmp367_, _tmp370_, NULL);
-#line 464 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 463 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp372_ = _tmp371_;
-#line 464 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 463 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp373_ = g_strconcat (_tmp372_, " = ", NULL);
-#line 464 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 463 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp374_ = _tmp373_;
-#line 464 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 463 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp375_ = item;
-#line 464 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 463 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp376_ = pviter;
-#line 464 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 463 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp377_ = gee_map_iterator_get_key (_tmp376_);
-#line 464 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 463 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp378_ = (gchar*) _tmp377_;
-#line 464 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 463 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp379_ = js_render_node_get (_tmp375_, _tmp378_);
-#line 464 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 463 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp380_ = _tmp379_;
-#line 464 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 463 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp381_ = type;
-#line 464 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 463 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp382_ = js_render_gtk_valueTypeToString (self, _tmp380_, _tmp381_);
-#line 464 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 463 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp383_ = _tmp382_;
-#line 464 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 463 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp384_ = g_strconcat (_tmp374_, _tmp383_, NULL);
-#line 464 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 463 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp385_ = _tmp384_;
-#line 464 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 463 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp386_ = g_strconcat (_tmp385_, ";\n", NULL);
-#line 464 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 463 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp387_ = _tmp386_;
-#line 464 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 463 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp388_ = g_strconcat (_tmp364_, _tmp387_, NULL);
-#line 464 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 463 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (ret);
-#line 464 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 463 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		ret = _tmp388_;
-#line 464 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 463 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp387_);
-#line 464 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 463 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp385_);
-#line 464 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 463 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp383_);
-#line 464 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 463 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp380_);
-#line 464 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 463 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp378_);
-#line 464 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 463 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp374_);
-#line 464 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 463 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp372_);
-#line 464 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 463 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp370_);
-#line 464 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 463 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp367_);
-#line 451 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 450 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (type);
-#line 3754 "Gtk.vala.c"
+#line 3752 "Gtk.vala.c"
 	}
 	{
 		gint i = 0;
-#line 473 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 472 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		i = 0;
-#line 3760 "Gtk.vala.c"
+#line 3758 "Gtk.vala.c"
 		{
 			gboolean _tmp389_ = FALSE;
-#line 473 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 472 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp389_ = TRUE;
-#line 473 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 472 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			while (TRUE) {
-#line 3767 "Gtk.vala.c"
+#line 3765 "Gtk.vala.c"
 				gint _tmp391_ = 0;
 				JsRenderNode* _tmp392_ = NULL;
 				GList* _tmp393_ = NULL;
@@ -3828,223 +3826,223 @@ static gchar* js_render_gtk_toValaItem (JsRenderGtk* self, JsRenderNode* item, g
 				gchar* _tmp450_ = NULL;
 				const gchar* _tmp464_ = NULL;
 				gchar* _tmp465_ = NULL;
-#line 473 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 472 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				if (!_tmp389_) {
-#line 3833 "Gtk.vala.c"
+#line 3831 "Gtk.vala.c"
 					gint _tmp390_ = 0;
-#line 473 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 472 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					_tmp390_ = i;
-#line 473 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 472 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					i = _tmp390_ + 1;
-#line 3839 "Gtk.vala.c"
+#line 3837 "Gtk.vala.c"
 				}
-#line 473 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 472 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp389_ = FALSE;
-#line 473 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 472 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp391_ = i;
-#line 473 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 472 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp392_ = item;
-#line 473 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 472 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp393_ = _tmp392_->items;
-#line 473 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 472 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp394_ = g_list_length (_tmp393_);
-#line 473 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 472 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				if (!(((guint) _tmp391_) < _tmp394_)) {
-#line 473 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 472 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					break;
-#line 3855 "Gtk.vala.c"
+#line 3853 "Gtk.vala.c"
 				}
-#line 474 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 473 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp395_ = item;
-#line 474 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 473 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp396_ = _tmp395_->items;
-#line 474 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 473 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp397_ = i;
-#line 474 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 473 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp398_ = g_list_nth_data (_tmp396_, (guint) _tmp397_);
-#line 474 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 473 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp399_ = _js_render_node_ref0 ((JsRenderNode*) _tmp398_);
-#line 474 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 473 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				ci = _tmp399_;
-#line 475 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 474 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp400_ = ci;
-#line 475 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 474 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp401_ = js_render_node_get (_tmp400_, "pack");
-#line 475 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 474 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				pk = _tmp401_;
-#line 476 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 475 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp402_ = g_strdup ("add");
-#line 476 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 475 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp403_ = g_new0 (gchar*, 1 + 1);
-#line 476 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 475 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp403_[0] = _tmp402_;
-#line 476 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 475 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				packing = _tmp403_;
-#line 476 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 475 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				packing_length1 = 1;
-#line 476 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 475 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_packing_size_ = packing_length1;
-#line 477 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 476 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp404_ = ci;
-#line 477 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 476 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp405_ = js_render_node_get (_tmp404_, "pack");
-#line 477 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 476 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp406_ = _tmp405_;
-#line 477 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 476 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp407_ = strlen (_tmp406_);
-#line 477 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 476 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp408_ = _tmp407_;
-#line 477 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 476 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp409_ = _tmp408_ > 0;
-#line 477 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 476 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_g_free0 (_tmp406_);
-#line 477 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 476 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				if (_tmp409_) {
-#line 3903 "Gtk.vala.c"
+#line 3901 "Gtk.vala.c"
 					JsRenderNode* _tmp410_ = NULL;
 					gchar* _tmp411_ = NULL;
 					gchar* _tmp412_ = NULL;
 					gchar** _tmp413_ = NULL;
 					gchar** _tmp414_ = NULL;
-#line 478 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 477 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					_tmp410_ = ci;
-#line 478 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 477 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					_tmp411_ = js_render_node_get (_tmp410_, "pack");
-#line 478 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 477 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					_tmp412_ = _tmp411_;
-#line 478 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 477 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					_tmp414_ = _tmp413_ = g_strsplit (_tmp412_, ",", 0);
-#line 478 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 477 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					packing = (_vala_array_free (packing, packing_length1, (GDestroyNotify) g_free), NULL);
-#line 478 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 477 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					packing = _tmp414_;
-#line 478 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 477 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					packing_length1 = _vala_array_length (_tmp413_);
-#line 478 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 477 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					_packing_size_ = packing_length1;
-#line 478 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 477 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					_g_free0 (_tmp412_);
-#line 3927 "Gtk.vala.c"
+#line 3925 "Gtk.vala.c"
 				}
-#line 482 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 481 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp415_ = ret;
-#line 482 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 481 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp416_ = ipad;
-#line 482 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 481 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp417_ = g_strconcat (_tmp416_, "var child_", NULL);
-#line 482 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 481 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp418_ = _tmp417_;
-#line 482 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 481 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp419_ = i;
-#line 482 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 481 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp420_ = g_strdup_printf ("%d", _tmp419_);
-#line 482 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 481 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp421_ = _tmp420_;
-#line 482 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 481 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp422_ = g_strconcat (_tmp418_, _tmp421_, NULL);
-#line 482 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 481 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp423_ = _tmp422_;
-#line 482 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 481 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp424_ = g_strconcat (_tmp423_, " = new ", NULL);
-#line 482 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 481 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp425_ = _tmp424_;
-#line 482 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 481 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp426_ = ci;
-#line 482 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 481 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp427_ = _tmp426_->xvala_xcls;
-#line 482 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 481 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp428_ = g_strconcat (_tmp425_, _tmp427_, NULL);
-#line 482 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 481 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp429_ = _tmp428_;
-#line 482 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 481 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp430_ = g_strconcat (_tmp429_, "();\n", NULL);
-#line 482 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 481 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp431_ = _tmp430_;
-#line 482 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 481 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp432_ = g_strconcat (_tmp415_, _tmp431_, NULL);
-#line 482 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 481 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_g_free0 (ret);
-#line 482 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 481 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				ret = _tmp432_;
-#line 482 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 481 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_g_free0 (_tmp431_);
-#line 482 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 481 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_g_free0 (_tmp429_);
-#line 482 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 481 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_g_free0 (_tmp425_);
-#line 482 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 481 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_g_free0 (_tmp423_);
-#line 482 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 481 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_g_free0 (_tmp421_);
-#line 482 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 481 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_g_free0 (_tmp418_);
-#line 484 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 483 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp433_ = ret;
-#line 484 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 483 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp434_ = ipad;
-#line 484 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 483 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp435_ = g_strconcat (_tmp434_, "this.el.", NULL);
-#line 484 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 483 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp436_ = _tmp435_;
-#line 484 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 483 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp437_ = packing;
-#line 484 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 483 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp437__length1 = packing_length1;
-#line 484 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 483 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp438_ = _tmp437_[0];
-#line 484 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 483 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp439_ = g_strconcat (_tmp436_, _tmp438_, NULL);
-#line 484 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 483 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp440_ = _tmp439_;
-#line 484 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 483 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp441_ = g_strconcat (_tmp440_, " (  child_", NULL);
-#line 484 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 483 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp442_ = _tmp441_;
-#line 484 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 483 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp443_ = i;
-#line 484 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 483 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp444_ = g_strdup_printf ("%d", _tmp443_);
-#line 484 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 483 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp445_ = _tmp444_;
-#line 484 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 483 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp446_ = g_strconcat (_tmp442_, _tmp445_, NULL);
-#line 484 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 483 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp447_ = _tmp446_;
-#line 484 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 483 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp448_ = g_strconcat (_tmp447_, ".el ", NULL);
-#line 484 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 483 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp449_ = _tmp448_;
-#line 484 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 483 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp450_ = g_strconcat (_tmp433_, _tmp449_, NULL);
-#line 484 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 483 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_g_free0 (ret);
-#line 484 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 483 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				ret = _tmp450_;
-#line 484 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 483 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_g_free0 (_tmp449_);
-#line 484 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 483 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_g_free0 (_tmp447_);
-#line 484 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 483 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_g_free0 (_tmp445_);
-#line 484 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 483 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_g_free0 (_tmp442_);
-#line 484 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 483 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_g_free0 (_tmp440_);
-#line 484 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 483 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_g_free0 (_tmp436_);
-#line 4035 "Gtk.vala.c"
+#line 4033 "Gtk.vala.c"
 				{
 					gint ii = 0;
-#line 485 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 484 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					ii = 1;
-#line 4040 "Gtk.vala.c"
+#line 4038 "Gtk.vala.c"
 					{
 						gboolean _tmp451_ = FALSE;
-#line 485 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 484 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 						_tmp451_ = TRUE;
-#line 485 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 484 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 						while (TRUE) {
-#line 4047 "Gtk.vala.c"
+#line 4045 "Gtk.vala.c"
 							gint _tmp453_ = 0;
 							gchar** _tmp454_ = NULL;
 							gint _tmp454__length1 = 0;
@@ -4058,105 +4056,105 @@ static gchar* js_render_gtk_toValaItem (JsRenderGtk* self, JsRenderNode* item, g
 							gint _tmp461_ = 0;
 							const gchar* _tmp462_ = NULL;
 							gchar* _tmp463_ = NULL;
-#line 485 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 484 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 							if (!_tmp451_) {
-#line 4063 "Gtk.vala.c"
+#line 4061 "Gtk.vala.c"
 								gint _tmp452_ = 0;
-#line 485 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 484 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 								_tmp452_ = ii;
-#line 485 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 484 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 								ii = _tmp452_ + 1;
-#line 4069 "Gtk.vala.c"
+#line 4067 "Gtk.vala.c"
 							}
-#line 485 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 484 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 							_tmp451_ = FALSE;
-#line 485 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 484 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 							_tmp453_ = ii;
-#line 485 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 484 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 							_tmp454_ = packing;
-#line 485 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 484 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 							_tmp454__length1 = packing_length1;
-#line 485 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 484 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 							if (!(_tmp453_ < _tmp454__length1)) {
-#line 485 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 484 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 								break;
-#line 4083 "Gtk.vala.c"
+#line 4081 "Gtk.vala.c"
 							}
-#line 486 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 485 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 							_tmp456_ = ii;
-#line 486 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 485 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 							if (_tmp456_ > 1) {
-#line 486 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 485 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 								_tmp455_ = ", ";
-#line 4091 "Gtk.vala.c"
+#line 4089 "Gtk.vala.c"
 							} else {
-#line 486 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 485 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 								_tmp455_ = "";
-#line 4095 "Gtk.vala.c"
+#line 4093 "Gtk.vala.c"
 							}
-#line 486 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 485 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 							_tmp457_ = ret;
-#line 486 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 485 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 							_tmp458_ = g_strconcat (_tmp457_, _tmp455_, NULL);
-#line 486 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 485 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 							_g_free0 (ret);
-#line 486 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 485 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 							ret = _tmp458_;
-#line 487 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 486 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 							_tmp459_ = ret;
-#line 487 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 486 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 							_tmp460_ = packing;
-#line 487 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 486 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 							_tmp460__length1 = packing_length1;
-#line 487 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 486 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 							_tmp461_ = i;
-#line 487 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 486 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 							_tmp462_ = _tmp460_[_tmp461_];
-#line 487 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 486 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 							_tmp463_ = g_strconcat (_tmp459_, _tmp462_, NULL);
-#line 487 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 486 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 							_g_free0 (ret);
-#line 487 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 486 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 							ret = _tmp463_;
-#line 4121 "Gtk.vala.c"
+#line 4119 "Gtk.vala.c"
 						}
 					}
 				}
-#line 489 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 488 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp464_ = ret;
-#line 489 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 488 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp465_ = g_strconcat (_tmp464_, ");\n", NULL);
-#line 489 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 488 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_g_free0 (ret);
-#line 489 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 488 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				ret = _tmp465_;
-#line 473 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 472 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				packing = (_vala_array_free (packing, packing_length1, (GDestroyNotify) g_free), NULL);
-#line 473 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 472 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_g_free0 (pk);
-#line 473 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 472 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_js_render_node_unref0 (ci);
-#line 4139 "Gtk.vala.c"
+#line 4137 "Gtk.vala.c"
 			}
 		}
 	}
-#line 493 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 492 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp466_ = item;
-#line 493 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 492 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp467_ = js_render_node_get (_tmp466_, "init");
-#line 493 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 492 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp468_ = _tmp467_;
-#line 493 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 492 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp469_ = strlen (_tmp468_);
-#line 493 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 492 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp470_ = _tmp469_;
-#line 493 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 492 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp471_ = _tmp470_ > 0;
-#line 493 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 492 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp468_);
-#line 493 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 492 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	if (_tmp471_) {
-#line 4159 "Gtk.vala.c"
+#line 4157 "Gtk.vala.c"
 		gchar** vv = NULL;
 		JsRenderNode* _tmp472_ = NULL;
 		gchar* _tmp473_ = NULL;
@@ -4179,154 +4177,154 @@ static gchar* js_render_gtk_toValaItem (JsRenderGtk* self, JsRenderNode* item, g
 		gchar* _tmp486_ = NULL;
 		gchar* _tmp487_ = NULL;
 		gchar* _tmp488_ = NULL;
-#line 494 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-		_tmp472_ = item;
-#line 494 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-		_tmp473_ = js_render_node_get (_tmp472_, "init");
-#line 494 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-		_tmp474_ = _tmp473_;
-#line 494 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-		_tmp476_ = _tmp475_ = g_strsplit (_tmp474_, "\n", 0);
-#line 494 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-		_tmp477_ = _tmp476_;
-#line 494 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-		_tmp477__length1 = _vala_array_length (_tmp475_);
-#line 494 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-		_g_free0 (_tmp474_);
-#line 494 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-		vv = _tmp477_;
-#line 494 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-		vv_length1 = _tmp477__length1;
-#line 494 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-		_vv_size_ = vv_length1;
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-		_tmp478_ = ret;
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-		_tmp479_ = ipad;
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-		_tmp480_ = ipad;
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-		_tmp481_ = g_strconcat ("\n", _tmp480_, NULL);
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-		_tmp482_ = _tmp481_;
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-		_tmp483_ = vv;
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-		_tmp483__length1 = vv_length1;
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-		_tmp484_ = g_strjoin (_tmp482_, _tmp483_, NULL);
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-		_tmp485_ = _tmp484_;
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-		_tmp486_ = g_strconcat (_tmp479_, _tmp485_, NULL);
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-		_tmp487_ = _tmp486_;
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-		_tmp488_ = g_strconcat (_tmp478_, _tmp487_, NULL);
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-		_g_free0 (ret);
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-		ret = _tmp488_;
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-		_g_free0 (_tmp487_);
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-		_g_free0 (_tmp485_);
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
-		_g_free0 (_tmp482_);
 #line 493 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+		_tmp472_ = item;
+#line 493 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+		_tmp473_ = js_render_node_get (_tmp472_, "init");
+#line 493 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+		_tmp474_ = _tmp473_;
+#line 493 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+		_tmp476_ = _tmp475_ = g_strsplit (_tmp474_, "\n", 0);
+#line 493 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+		_tmp477_ = _tmp476_;
+#line 493 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+		_tmp477__length1 = _vala_array_length (_tmp475_);
+#line 493 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+		_g_free0 (_tmp474_);
+#line 493 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+		vv = _tmp477_;
+#line 493 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+		vv_length1 = _tmp477__length1;
+#line 493 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+		_vv_size_ = vv_length1;
+#line 494 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+		_tmp478_ = ret;
+#line 494 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+		_tmp479_ = ipad;
+#line 494 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+		_tmp480_ = ipad;
+#line 494 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+		_tmp481_ = g_strconcat ("\n", _tmp480_, NULL);
+#line 494 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+		_tmp482_ = _tmp481_;
+#line 494 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+		_tmp483_ = vv;
+#line 494 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+		_tmp483__length1 = vv_length1;
+#line 494 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+		_tmp484_ = g_strjoin (_tmp482_, _tmp483_, NULL);
+#line 494 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+		_tmp485_ = _tmp484_;
+#line 494 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+		_tmp486_ = g_strconcat (_tmp479_, _tmp485_, NULL);
+#line 494 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+		_tmp487_ = _tmp486_;
+#line 494 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+		_tmp488_ = g_strconcat (_tmp478_, _tmp487_, NULL);
+#line 494 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+		_g_free0 (ret);
+#line 494 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+		ret = _tmp488_;
+#line 494 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+		_g_free0 (_tmp487_);
+#line 494 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+		_g_free0 (_tmp485_);
+#line 494 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+		_g_free0 (_tmp482_);
+#line 492 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		vv = (_vala_array_free (vv, vv_length1, (GDestroyNotify) g_free), NULL);
-#line 4238 "Gtk.vala.c"
+#line 4236 "Gtk.vala.c"
 	}
-#line 503 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 502 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp489_ = item;
-#line 503 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 502 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp490_ = _tmp489_->listeners;
-#line 503 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 502 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp491_ = gee_abstract_map_get_size ((GeeMap*) _tmp490_);
-#line 503 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 502 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp492_ = _tmp491_;
-#line 503 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 502 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	if (_tmp492_ > 0) {
-#line 4250 "Gtk.vala.c"
+#line 4248 "Gtk.vala.c"
 	}
-#line 541 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 540 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp493_ = ret;
-#line 541 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 540 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp494_ = pad;
-#line 541 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 540 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp495_ = g_strconcat (_tmp494_, "}\n", NULL);
-#line 541 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 540 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp496_ = _tmp495_;
-#line 541 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 540 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp497_ = g_strconcat (_tmp493_, _tmp496_, NULL);
-#line 541 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 540 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (ret);
-#line 541 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 540 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	ret = _tmp497_;
-#line 541 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 540 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp496_);
-#line 544 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 543 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp498_ = ret;
-#line 544 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 543 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp499_ = pad;
-#line 544 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 543 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp500_ = g_strconcat ("\n", _tmp499_, NULL);
-#line 544 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 543 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp501_ = _tmp500_;
-#line 544 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 543 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp502_ = g_strconcat (_tmp501_, "// userdefined functions \n", NULL);
-#line 544 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 543 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp503_ = _tmp502_;
-#line 544 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 543 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp504_ = g_strconcat (_tmp498_, _tmp503_, NULL);
-#line 544 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 543 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (ret);
-#line 544 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 543 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	ret = _tmp504_;
-#line 544 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 543 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp503_);
-#line 544 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 543 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp501_);
-#line 583 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 582 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp505_ = depth;
-#line 583 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 582 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	if (_tmp505_ > 0) {
-#line 4294 "Gtk.vala.c"
+#line 4292 "Gtk.vala.c"
 		const gchar* _tmp506_ = NULL;
 		const gchar* _tmp507_ = NULL;
 		gchar* _tmp508_ = NULL;
 		gchar* _tmp509_ = NULL;
 		gchar* _tmp510_ = NULL;
-#line 584 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 583 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp506_ = ret;
-#line 584 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 583 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp507_ = inpad;
-#line 584 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 583 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp508_ = g_strconcat (_tmp507_, "}\n", NULL);
-#line 584 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 583 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp509_ = _tmp508_;
-#line 584 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 583 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp510_ = g_strconcat (_tmp506_, _tmp509_, NULL);
-#line 584 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 583 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (ret);
-#line 584 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 583 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		ret = _tmp510_;
-#line 584 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 583 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp509_);
-#line 4316 "Gtk.vala.c"
+#line 4314 "Gtk.vala.c"
 	}
 	{
 		gint i = 0;
-#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 585 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		i = 0;
-#line 4322 "Gtk.vala.c"
+#line 4320 "Gtk.vala.c"
 		{
 			gboolean _tmp511_ = FALSE;
-#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 585 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp511_ = TRUE;
-#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 585 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			while (TRUE) {
-#line 4329 "Gtk.vala.c"
+#line 4327 "Gtk.vala.c"
 				gint _tmp513_ = 0;
 				JsRenderNode* _tmp514_ = NULL;
 				GList* _tmp515_ = NULL;
@@ -4339,117 +4337,117 @@ static gchar* js_render_gtk_toValaItem (JsRenderGtk* self, JsRenderNode* item, g
 				gchar* _tmp522_ = NULL;
 				gchar* _tmp523_ = NULL;
 				gchar* _tmp524_ = NULL;
-#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 585 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				if (!_tmp511_) {
-#line 4344 "Gtk.vala.c"
+#line 4342 "Gtk.vala.c"
 					gint _tmp512_ = 0;
-#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 585 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					_tmp512_ = i;
-#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 585 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					i = _tmp512_ + 1;
-#line 4350 "Gtk.vala.c"
+#line 4348 "Gtk.vala.c"
 				}
-#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 585 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp511_ = FALSE;
-#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 585 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp513_ = i;
-#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 585 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp514_ = item;
-#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 585 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp515_ = _tmp514_->items;
-#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 585 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp516_ = g_list_length (_tmp515_);
-#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 585 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				if (!(((guint) _tmp513_) < _tmp516_)) {
-#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 585 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					break;
-#line 4366 "Gtk.vala.c"
+#line 4364 "Gtk.vala.c"
 				}
-#line 587 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp517_ = ret;
-#line 587 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp518_ = item;
-#line 587 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp519_ = _tmp518_->items;
-#line 587 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp520_ = i;
-#line 587 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp521_ = g_list_nth_data (_tmp519_, (guint) _tmp520_);
-#line 587 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp522_ = js_render_gtk_toValaItem (self, (JsRenderNode*) _tmp521_, 1);
-#line 587 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp523_ = _tmp522_;
-#line 587 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp524_ = g_strconcat (_tmp517_, _tmp523_, NULL);
-#line 587 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_g_free0 (ret);
-#line 587 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				ret = _tmp524_;
-#line 587 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_g_free0 (_tmp523_);
-#line 4390 "Gtk.vala.c"
+#line 4388 "Gtk.vala.c"
 			}
 		}
 	}
-#line 590 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 589 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp525_ = depth;
-#line 590 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 589 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	if (_tmp525_ < 1) {
-#line 4398 "Gtk.vala.c"
+#line 4396 "Gtk.vala.c"
 		const gchar* _tmp526_ = NULL;
 		const gchar* _tmp527_ = NULL;
 		gchar* _tmp528_ = NULL;
 		gchar* _tmp529_ = NULL;
 		gchar* _tmp530_ = NULL;
-#line 591 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 590 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp526_ = ret;
-#line 591 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 590 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp527_ = inpad;
-#line 591 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 590 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp528_ = g_strconcat (_tmp527_, "}\n", NULL);
-#line 591 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 590 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp529_ = _tmp528_;
-#line 591 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 590 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp530_ = g_strconcat (_tmp526_, _tmp529_, NULL);
-#line 591 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 590 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (ret);
-#line 591 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 590 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		ret = _tmp530_;
-#line 591 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 590 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp529_);
-#line 4420 "Gtk.vala.c"
+#line 4418 "Gtk.vala.c"
 	}
-#line 593 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 592 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	result = ret;
-#line 593 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 592 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_object_unref0 (pviter);
-#line 593 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 592 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_object_unref0 (props);
-#line 593 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 592 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_object_unref0 (ctor_def);
-#line 593 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 592 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (ctor);
-#line 593 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 592 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp165_);
-#line 593 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 592 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_object_unref0 (ctors);
-#line 593 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 592 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_object_unref0 (iter);
-#line 593 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 592 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_object_unref0 (citems);
-#line 593 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 592 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (xcls);
-#line 593 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 592 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (cls);
-#line 593 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 592 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (ipad);
-#line 593 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 592 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (pad);
-#line 593 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 592 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (inpad);
-#line 593 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 592 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	return result;
-#line 4452 "Gtk.vala.c"
+#line 4450 "Gtk.vala.c"
 }
 
 
@@ -4488,113 +4486,113 @@ static gchar* js_render_gtk_nodeToValaNew (JsRenderGtk* self, JsRenderNode* node
 	PaleteGirObject* _tmp29_ = NULL;
 	const gchar* _tmp89_ = NULL;
 	gchar* _tmp90_ = NULL;
-#line 597 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 596 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 597 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 596 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	g_return_val_if_fail (node != NULL, NULL);
-#line 597 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 596 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	g_return_val_if_fail (*pre_str != NULL, NULL);
-#line 597 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 596 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	g_return_val_if_fail (pad != NULL, NULL);
-#line 599 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 598 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp0_ = g_strdup ("new ");
-#line 599 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 598 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	ret = _tmp0_;
-#line 600 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 599 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp1_ = ret;
-#line 600 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 599 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp2_ = node;
-#line 600 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 599 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp3_ = js_render_node_fqn (_tmp2_);
-#line 600 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 599 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp4_ = _tmp3_;
-#line 600 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 599 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp5_ = g_strconcat (_tmp4_, "(", NULL);
-#line 600 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 599 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp6_ = _tmp5_;
-#line 600 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 599 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp7_ = g_strconcat (_tmp1_, _tmp6_, NULL);
-#line 600 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 599 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (ret);
-#line 600 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 599 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	ret = _tmp7_;
-#line 600 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 599 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp6_);
-#line 600 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 599 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp4_);
-#line 602 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 601 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp8_ = self->priv->palete;
-#line 602 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 601 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp9_ = node;
-#line 602 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 601 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp10_ = js_render_node_fqn (_tmp9_);
-#line 602 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 601 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp11_ = _tmp10_;
-#line 602 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 601 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp12_ = palete_gtk_getPropertiesFor (_tmp8_, _tmp11_, "ctor");
-#line 602 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 601 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp13_ = _tmp12_;
-#line 602 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 601 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp11_);
-#line 602 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 601 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	ctors = _tmp13_;
-#line 603 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 602 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp15_ = node;
-#line 603 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 602 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp16_ = js_render_node_get (_tmp15_, "*ctor");
-#line 603 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 602 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp17_ = _tmp16_;
-#line 603 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 602 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp18_ = strlen (_tmp17_);
-#line 603 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 602 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp19_ = _tmp18_;
-#line 603 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 602 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp20_ = _tmp19_ > 0;
-#line 603 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 602 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp17_);
-#line 603 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 602 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	if (_tmp20_) {
-#line 4557 "Gtk.vala.c"
+#line 4555 "Gtk.vala.c"
 		JsRenderNode* _tmp21_ = NULL;
 		gchar* _tmp22_ = NULL;
-#line 603 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 602 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp21_ = node;
-#line 603 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 602 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp22_ = js_render_node_get (_tmp21_, "(ctor");
-#line 603 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 602 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp14_);
-#line 603 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 602 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp14_ = _tmp22_;
-#line 4568 "Gtk.vala.c"
+#line 4566 "Gtk.vala.c"
 	} else {
 		gchar* _tmp23_ = NULL;
-#line 603 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 602 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp23_ = g_strdup ("new");
-#line 603 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 602 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp14_);
-#line 603 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 602 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp14_ = _tmp23_;
-#line 4577 "Gtk.vala.c"
+#line 4575 "Gtk.vala.c"
 	}
-#line 603 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 602 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp24_ = g_strdup (_tmp14_);
-#line 603 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 602 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	ctor = _tmp24_;
-#line 606 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 605 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp25_ = ctors;
-#line 606 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 605 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp26_ = ctor;
-#line 606 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 605 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp27_ = gee_abstract_map_get ((GeeAbstractMap*) _tmp25_, _tmp26_);
-#line 606 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 605 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	ctor_def = (PaleteGirObject*) _tmp27_;
-#line 609 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 608 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp28_ = ctor_def;
-#line 609 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 608 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp29_ = _tmp28_->paramset;
-#line 609 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 608 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	if (_tmp29_ != NULL) {
-#line 4597 "Gtk.vala.c"
+#line 4595 "Gtk.vala.c"
 		GList* args = NULL;
 		gint argid = 0;
 		GeeMapIterator* piter = NULL;
@@ -4610,23 +4608,23 @@ static gchar* js_render_gtk_nodeToValaNew (JsRenderGtk* self, JsRenderNode* node
 		gchar* _tmp86_ = NULL;
 		gchar* _tmp87_ = NULL;
 		gchar* _tmp88_ = NULL;
-#line 610 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 609 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		args = NULL;
-#line 611 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 610 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		argid = 1;
-#line 613 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 612 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp30_ = ctor_def;
-#line 613 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 612 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp31_ = _tmp30_->paramset;
-#line 613 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 612 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp32_ = _tmp31_->params;
-#line 613 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 612 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp33_ = gee_abstract_map_map_iterator ((GeeAbstractMap*) _tmp32_);
-#line 613 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 612 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		piter = _tmp33_;
-#line 614 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 613 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		while (TRUE) {
-#line 4629 "Gtk.vala.c"
+#line 4627 "Gtk.vala.c"
 			GeeMapIterator* _tmp34_ = NULL;
 			gboolean _tmp35_ = FALSE;
 			gchar* pv = NULL;
@@ -4645,41 +4643,41 @@ static gchar* js_render_gtk_nodeToValaNew (JsRenderGtk* self, JsRenderNode* node
 			PaleteGirObject* _tmp78_ = NULL;
 			const gchar* _tmp79_ = NULL;
 			gchar* _tmp80_ = NULL;
-#line 614 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 613 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp34_ = piter;
-#line 614 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 613 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp35_ = gee_map_iterator_next (_tmp34_);
-#line 614 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 613 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			if (!_tmp35_) {
-#line 614 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 613 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				break;
-#line 4656 "Gtk.vala.c"
+#line 4654 "Gtk.vala.c"
 			}
-#line 617 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 616 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp36_ = node;
-#line 617 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 616 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp37_ = piter;
-#line 617 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 616 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp38_ = gee_map_iterator_get_key (_tmp37_);
-#line 617 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 616 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp39_ = (gchar*) _tmp38_;
-#line 617 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 616 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp40_ = js_render_node_get (_tmp36_, _tmp39_);
-#line 617 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 616 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp41_ = _tmp40_;
-#line 617 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 616 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_g_free0 (_tmp39_);
-#line 617 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 616 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			pv = _tmp41_;
-#line 618 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 617 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp42_ = pv;
-#line 618 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 617 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp43_ = strlen (_tmp42_);
-#line 618 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 617 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp44_ = _tmp43_;
-#line 618 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 617 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			if (_tmp44_ < 1) {
-#line 4682 "Gtk.vala.c"
+#line 4680 "Gtk.vala.c"
 				JsRenderNode* pvi = NULL;
 				JsRenderNode* _tmp45_ = NULL;
 				GeeMapIterator* _tmp46_ = NULL;
@@ -4712,197 +4710,197 @@ static gchar* js_render_gtk_nodeToValaNew (JsRenderGtk* self, JsRenderNode* node
 				gchar* _tmp72_ = NULL;
 				const gchar* _tmp73_ = NULL;
 				gchar* _tmp74_ = NULL;
-#line 620 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 619 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp45_ = node;
-#line 620 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 619 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp46_ = piter;
-#line 620 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 619 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp47_ = gee_map_iterator_get_key (_tmp46_);
-#line 620 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 619 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp48_ = (gchar*) _tmp47_;
-#line 620 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 619 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp49_ = js_render_node_findProp (_tmp45_, _tmp48_);
-#line 620 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 619 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp50_ = _tmp49_;
-#line 620 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 619 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_g_free0 (_tmp48_);
-#line 620 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 619 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				pvi = _tmp50_;
-#line 621 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 620 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp51_ = pvi;
-#line 621 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 620 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				if (_tmp51_ == NULL) {
-#line 4735 "Gtk.vala.c"
+#line 4733 "Gtk.vala.c"
 					gchar* _tmp52_ = NULL;
-#line 622 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 621 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					_tmp52_ = g_strdup ("null");
-#line 622 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 621 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					args = g_list_append (args, _tmp52_);
-#line 623 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 622 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					_js_render_node_unref0 (pvi);
-#line 623 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 622 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					_g_free0 (pv);
-#line 623 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 622 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 					continue;
-#line 4747 "Gtk.vala.c"
+#line 4745 "Gtk.vala.c"
 				}
-#line 625 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 624 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp53_ = *id;
-#line 625 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 624 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				*id = _tmp53_ + 1;
-#line 625 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 624 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp54_ = g_strdup_printf ("tmp_var_%d", _tmp53_);
-#line 625 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 624 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				var_id = _tmp54_;
-#line 626 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 625 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp55_ = pvi;
-#line 626 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 625 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp56_ = pad;
-#line 626 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 625 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp57_ = js_render_gtk_nodeToValaNew (self, _tmp55_, pre_str, id, _tmp56_);
-#line 626 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 625 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				new_str = _tmp57_;
-#line 627 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 626 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp58_ = *pre_str;
-#line 627 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 626 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp59_ = pad;
-#line 627 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 626 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp60_ = g_strconcat (_tmp59_, "var ", NULL);
-#line 627 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 626 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp61_ = _tmp60_;
-#line 627 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 626 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp62_ = var_id;
-#line 627 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 626 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp63_ = g_strconcat (_tmp61_, _tmp62_, NULL);
-#line 627 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 626 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp64_ = _tmp63_;
-#line 627 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 626 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp65_ = g_strconcat (_tmp64_, " = new ", NULL);
-#line 627 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 626 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp66_ = _tmp65_;
-#line 627 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 626 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp67_ = new_str;
-#line 627 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 626 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp68_ = g_strconcat (_tmp66_, _tmp67_, NULL);
-#line 627 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 626 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp69_ = _tmp68_;
-#line 627 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 626 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp70_ = g_strconcat (_tmp69_, "\n", NULL);
-#line 627 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 626 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp71_ = _tmp70_;
-#line 627 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 626 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp72_ = g_strconcat (_tmp58_, _tmp71_, NULL);
-#line 627 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 626 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_g_free0 (*pre_str);
-#line 627 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 626 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				*pre_str = _tmp72_;
-#line 627 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 626 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_g_free0 (_tmp71_);
-#line 627 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 626 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_g_free0 (_tmp69_);
-#line 627 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 626 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_g_free0 (_tmp66_);
-#line 627 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 626 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_g_free0 (_tmp64_);
-#line 627 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 626 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_g_free0 (_tmp61_);
-#line 628 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 627 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp73_ = var_id;
-#line 628 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 627 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp74_ = g_strdup (_tmp73_);
-#line 628 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 627 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				args = g_list_append (args, _tmp74_);
-#line 629 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 628 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_g_free0 (new_str);
-#line 629 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 628 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_g_free0 (var_id);
-#line 629 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 628 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_js_render_node_unref0 (pvi);
-#line 629 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 628 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_g_free0 (pv);
-#line 629 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 628 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				continue;
-#line 4825 "Gtk.vala.c"
+#line 4823 "Gtk.vala.c"
 			}
-#line 632 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 631 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp75_ = pv;
-#line 632 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 631 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp76_ = piter;
-#line 632 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 631 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp77_ = gee_map_iterator_get_value (_tmp76_);
-#line 632 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 631 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp78_ = (PaleteGirObject*) _tmp77_;
-#line 632 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 631 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp79_ = _tmp78_->type;
-#line 632 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 631 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_tmp80_ = js_render_gtk_valueTypeToString (self, _tmp75_, _tmp79_);
-#line 632 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 631 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			args = g_list_append (args, _tmp80_);
-#line 632 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 631 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_g_object_unref0 (_tmp78_);
-#line 614 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 613 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 			_g_free0 (pv);
-#line 4845 "Gtk.vala.c"
+#line 4843 "Gtk.vala.c"
 		}
-#line 635 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 634 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp81_ = ret;
-#line 635 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 634 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp82_ = args;
-#line 635 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 634 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp83_ = g_strjoin (", ", _tmp82_, NULL);
-#line 635 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 634 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp84_ = _tmp83_;
-#line 635 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 634 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp85_ = g_strconcat (_tmp81_, _tmp84_, NULL);
-#line 635 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 634 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp86_ = _tmp85_;
-#line 635 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 634 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp87_ = g_strconcat (_tmp86_, " );\n", NULL);
-#line 635 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 634 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_tmp88_ = _tmp87_;
-#line 635 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 634 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp86_);
-#line 635 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 634 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp84_);
-#line 635 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 634 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		result = _tmp88_;
-#line 635 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 634 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_object_unref0 (piter);
-#line 635 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 634 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		__g_list_free__g_free0_0 (args);
-#line 635 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 634 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_object_unref0 (ctor_def);
-#line 635 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 634 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (ctor);
-#line 635 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 634 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (_tmp14_);
-#line 635 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 634 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_object_unref0 (ctors);
-#line 635 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 634 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		_g_free0 (ret);
-#line 635 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 634 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		return result;
-#line 4885 "Gtk.vala.c"
+#line 4883 "Gtk.vala.c"
 	}
-#line 638 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 637 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp89_ = ret;
-#line 638 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 637 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp90_ = g_strconcat (_tmp89_, ");\n", NULL);
-#line 638 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 637 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	result = _tmp90_;
-#line 638 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 637 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_object_unref0 (ctor_def);
-#line 638 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 637 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (ctor);
-#line 638 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 637 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (_tmp14_);
-#line 638 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 637 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_object_unref0 (ctors);
-#line 638 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 637 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (ret);
-#line 638 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 637 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	return result;
-#line 4905 "Gtk.vala.c"
+#line 4903 "Gtk.vala.c"
 }
 
 
@@ -4911,25 +4909,25 @@ static gchar* js_render_gtk_valueTypeToString (JsRenderGtk* self, const gchar* v
 	const gchar* _tmp0_ = NULL;
 	const gchar* _tmp1_ = NULL;
 	GQuark _tmp3_ = 0U;
-#line 644 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 643 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	static GQuark _tmp2_label0 = 0;
-#line 643 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 642 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 643 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 642 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	g_return_val_if_fail (val != NULL, NULL);
-#line 643 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 642 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	g_return_val_if_fail (type != NULL, NULL);
-#line 644 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 643 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp0_ = type;
-#line 644 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 643 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp1_ = _tmp0_;
-#line 644 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 643 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_tmp3_ = (NULL == _tmp1_) ? 0 : g_quark_from_string (_tmp1_);
-#line 644 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 643 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	if (_tmp3_ == ((0 != _tmp2_label0) ? _tmp2_label0 : (_tmp2_label0 = g_quark_from_static_string ("utf8")))) {
-#line 644 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 643 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		switch (0) {
-#line 4932 "Gtk.vala.c"
+#line 4930 "Gtk.vala.c"
 			default:
 			{
 				const gchar* _tmp4_ = NULL;
@@ -4939,48 +4937,48 @@ static gchar* js_render_gtk_valueTypeToString (JsRenderGtk* self, const gchar* v
 				gchar* _tmp8_ = NULL;
 				gchar* _tmp9_ = NULL;
 				gchar* _tmp10_ = NULL;
-#line 646 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 645 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp4_ = val;
-#line 646 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 645 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp5_ = g_strescape (_tmp4_, "");
-#line 646 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 645 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp6_ = _tmp5_;
-#line 646 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 645 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp7_ = g_strconcat ("\"", _tmp6_, NULL);
-#line 646 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 645 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp8_ = _tmp7_;
-#line 646 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 645 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp9_ = g_strconcat (_tmp8_, "\"", NULL);
-#line 646 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 645 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp10_ = _tmp9_;
-#line 646 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 645 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_g_free0 (_tmp8_);
-#line 646 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 645 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_g_free0 (_tmp6_);
-#line 646 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 645 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				result = _tmp10_;
-#line 646 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 645 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				return result;
-#line 4964 "Gtk.vala.c"
+#line 4962 "Gtk.vala.c"
 			}
 		}
 	} else {
-#line 644 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 643 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 		switch (0) {
-#line 4970 "Gtk.vala.c"
+#line 4968 "Gtk.vala.c"
 			default:
 			{
 				const gchar* _tmp11_ = NULL;
 				gchar* _tmp12_ = NULL;
-#line 648 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 647 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp11_ = val;
-#line 648 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 647 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				_tmp12_ = g_strdup (_tmp11_);
-#line 648 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 647 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				result = _tmp12_;
-#line 648 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 647 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 				return result;
-#line 4983 "Gtk.vala.c"
+#line 4981 "Gtk.vala.c"
 			}
 		}
 	}
@@ -4993,17 +4991,21 @@ static void js_render_gtk_class_init (JsRenderGtkClass * klass) {
 #line 10 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	g_type_class_add_private (klass, sizeof (JsRenderGtkPrivate));
 #line 10 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+	JS_RENDER_JS_RENDER_CLASS (klass)->loadItems = js_render_gtk_real_loadItems;
+#line 10 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+	JS_RENDER_JS_RENDER_CLASS (klass)->toSource = js_render_gtk_real_toSource;
+#line 10 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	G_OBJECT_CLASS (klass)->finalize = js_render_gtk_finalize;
-#line 4997 "Gtk.vala.c"
+#line 4999 "Gtk.vala.c"
 }
 
 
 static void js_render_gtk_instance_init (JsRenderGtk * self) {
 #line 10 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	self->priv = JS_RENDER_GTK_GET_PRIVATE (self);
-#line 203 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 202 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	self->priv->vcnt = 0;
-#line 5006 "Gtk.vala.c"
+#line 5008 "Gtk.vala.c"
 }
 
 
@@ -5011,15 +5013,15 @@ static void js_render_gtk_finalize (GObject* obj) {
 	JsRenderGtk * self;
 #line 10 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, JS_RENDER_TYPE_GTK, JsRenderGtk);
-#line 205 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 204 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_object_unref0 (self->priv->palete);
-#line 206 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 205 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	__g_list_free__js_render_node_unref0_0 (self->priv->vitems);
-#line 207 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
+#line 206 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	_g_free0 (self->priv->xvala_xcls);
 #line 10 "/home/alan/gitlive/app.Builder.js/JsRender/Gtk.vala"
 	G_OBJECT_CLASS (js_render_gtk_parent_class)->finalize (obj);
-#line 5022 "Gtk.vala.c"
+#line 5024 "Gtk.vala.c"
 }
 
 

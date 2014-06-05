@@ -5,7 +5,7 @@
 */
 
 public static int main () {
-
+   new JsRender.Lang_Class();
 	GLib.Log.set_always_fatal(LogLevelFlags.LEVEL_ERROR | LogLevelFlags.LEVEL_CRITICAL); 
 	var proj = new Project.Gtk( "/home/alan/gitlive/app.Builder.js/Builder4");
 	proj.scanDirs();
@@ -13,6 +13,9 @@ public static int main () {
 	print("\ndone\n");
 	var tf = proj.files.get("/home/alan/gitlive/app.Builder.js/Builder4/Editor.bjs");
 	tf.loadItems();
+
+
+	string[] spawn_args;
 	print(tf.toSource());
 	/*var test_out =tf.toJsonString();
 	print(test_out);
