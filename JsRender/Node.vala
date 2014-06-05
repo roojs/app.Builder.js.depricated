@@ -242,7 +242,7 @@ public class JsRender.Node  {
                     return "";
                 }
                 */
-                var lines = v.split("\n");
+                var lines = v.strip().split("\n");
                 if (lines.length > 0) {
                     str = string.join("\n" + pad, lines);
                 }
@@ -257,6 +257,7 @@ public class JsRender.Node  {
                 if (v.length < 1) {  //if (typeof(el) == 'string' && !obj[i].length) { //skip empty.
                     continue;
                 }
+				/*
     			print(v);
                 string str = "";
                 try {
@@ -265,12 +266,12 @@ public class JsRender.Node  {
                     print("regex failed");
                     return "";
                 }
-                
-                var lines = str.split("\n");
+                */
+                var lines = v.strip().split("\n");
                 if (lines.length > 0) {
                     str =  string.join("\n" + pad, lines);
                 }
-                print("==> " +  str + "\n");
+                //print("==> " +  str + "\n");
                 els.append(left + str);
                 continue;
             }
