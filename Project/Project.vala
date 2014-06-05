@@ -144,7 +144,7 @@ public class Project.Project : Object {
 
 		var fiter = files.map_iterator();
         while(fiter.next()) {
-            var fo = this.files.get_key();
+            var fo = this.files.get_value();
             
             fo.hasParent = false;
             fo.cn = new GLib.List<JsRender.JsRender>();
