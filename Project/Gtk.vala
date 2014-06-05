@@ -11,12 +11,12 @@ namespace Project {
 
      
      public Gtk(string path) {
-          
+          this.id = "project-gtk-%d".printf(gtk_id++);
+          this.xtype = "Gtk";
           base(path);
          
           // various loader methods..
-          this.id = "project-gtk-%d".printf(gtk_id++);
-          this.xtype = "Gtk";
+        
       }
   }
 }
