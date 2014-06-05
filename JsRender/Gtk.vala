@@ -396,7 +396,7 @@ namespace JsRender {
 					args.append(this.valueTypeToString(pv, piter.get_value().type));
 					
                 }
-                ret += ipad + "this.el = new " + cls + "( "+ string.join(", ", args) + " );\n" ;
+                ret += ipad + "this.el = new " + cls + "( "+ string.joinv(", ", args) + " );\n" ;
 
             } else {
                 ret += ipad + "this.el = new " + cls + "();\n" ;
@@ -491,7 +491,7 @@ namespace JsRender {
 
             if (item.get("init").length > 0) {
                 var vv = item.get("init").split("\n");
-				ret+= ipad + string.join("\n" + ipad, vv);
+				ret+= ipad + string.joinv("\n" + ipad, vv);
 				
             }
             
@@ -631,7 +631,7 @@ namespace JsRender {
 					args.append(this.valueTypeToString(pv, piter.get_value().type));
 				
 		        }
-		        return ret + string.join(", ", args) + " );\n" ;
+		        return ret + string.joinv(", ", args) + " );\n" ;
 
 		    } 
 		    return ret +  ");\n" ;
