@@ -46,7 +46,7 @@ public class JsRender.Node  {
 		if (!this.hasXnsType ()) {
 			return "";
 		}
-		this.props.get("|xns") + "." this.props.get("xtype"); 
+		this.props.get("|xns") + "." + this.props.get("xtype"); 
 
 	}
 	
