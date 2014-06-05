@@ -600,7 +600,7 @@ namespace JsRender {
 			ret += node.fqn()+ "(";
 			// what are the args required for this type of ctor...
 			var ctors = this.palete.getPropertiesFor(node.fqn(),  "ctor");
-			string ctor = item.get("*ctor").length > 0 ? item.get("(ctor") : "new";
+			string ctor = node.get("*ctor").length > 0 ? node.get("(ctor") : "new";
 	 
 		
 			var ctor_def = ctors.get(ctor);
