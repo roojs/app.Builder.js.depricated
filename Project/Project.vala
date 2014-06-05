@@ -144,7 +144,7 @@ public class Project.Project : Object {
 
 		var fiter = files.map_iterator();
         while(fiter.next()) {
-            var fo = this.files.get_value();
+            var fo = fiter.get_value();
             
             fo.hasParent = false;
             fo.cn = new GLib.List<JsRender.JsRender>();
@@ -201,8 +201,10 @@ public class Project.Project : Object {
     public JsRender.JsRender? getById(string id)
     {
         
-       for(var i = 0; i < this.files.length(); i++) {
-            var f = this.files.nth_data(i);
+		var fiter = files.map_iterator();
+        while(fiter.next()) {
+         
+            var f = fiter.getValue();
             
             
             //console.log(f.id + '?=' + id);
@@ -231,7 +233,9 @@ public class Project.Project : Object {
         
          
     public void addFile(JsRender.JsRender pfile) { // add a single file, and trigger changed.
-        this.files.append(pfile); // duplicate check?
+		
+		
+        this.files.set(pfile.path, pfile); // duplicate check?
         this.on_changed();
     }
     
@@ -244,7 +248,8 @@ public class Project.Project : Object {
         //    console.dump(this.files);
         }
         if (type == "file" ) {
-            this.files.append(this.loadFileOnly( path ));
+			
+            this.files.set(path,this.loadFileOnly( path ));
         }
         this.on_changed();
         
@@ -321,7 +326,7 @@ public class Project.Project : Object {
                 */
                 var xt = this.xtype;
 				var el = JsRender.JsRender.factory(xt,this, dir + "/" + fn);
-                this.files.append(el);
+                this.files.set( dir + "/" + fn, el);
                 // parent ?? 
                 
                  
