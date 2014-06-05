@@ -22,7 +22,7 @@ public class Project.Project {
     public Gee.HashMap<string,string> paths;
     public GLib.List<JsRender.JsRender> files ;
     //tree : false,
-    public abstract string xtype {
+    public  string xtype {
 	   get { return "??"; }
    }
     
