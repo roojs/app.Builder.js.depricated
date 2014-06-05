@@ -379,6 +379,10 @@ public class JsRender.Node  {
         while (iter.next()) {
 			ret.set_string_member(iter.get_key(), iter.get_value());
 		}
+		// listeners...
+
+
+		
 
 	}
     
