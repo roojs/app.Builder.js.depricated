@@ -334,6 +334,13 @@ public class JsRender.Node  {
         }
 		// finally munge the children...
 
+		for(var i = 0; i < this.items.length;i++) {
+			//....
+
+
+		}
+		
+
 
 
 			
