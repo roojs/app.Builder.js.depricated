@@ -53,7 +53,10 @@ public class JsRender.Node  {
     }
      
     /* creates javascript based on the rules */
-    
+    public Node? findProp(string n) {
+
+
+	}
   
     
     public string mungeToString (bool isListener, string pad,  GLib.List<string> doubleStringProps)
