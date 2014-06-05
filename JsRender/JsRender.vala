@@ -82,7 +82,8 @@ namespace JsRender {
 		    return generator.to_data(null);
 		}
 	
-		public void save ()
+		 public abstract void save();
+		/*
 		{
 		     
 		    var generator = new Json.Generator ();
@@ -99,7 +100,7 @@ namespace JsRender {
 		        print("Save failed");
 		    }
 		}
-		    
+		 */  
 		public void   saveHTML ()
 		{
 		    // NOOP

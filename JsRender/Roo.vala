@@ -168,7 +168,7 @@ namespace JsRender {
         },
     */
         
-       public  new  void save()
+       public  override  void save()
         {
             
             print("--- JsRender.Roo.save");

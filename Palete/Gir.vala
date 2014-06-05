@@ -44,7 +44,7 @@ namespace Palete {
         public Gee.HashMap<string,GirObject> props;
         public Gee.HashMap<string,GirObject> consts;
         public Gee.HashMap<string,GirObject> signals;
-        public string doc;
+        public string doctxt;
         public GirObject(string nodetype, string n)
 		{
             this.nodetype = nodetype;
@@ -322,7 +322,7 @@ namespace Palete {
                 
                 
                 case "doc":
-                    parent.doc = element->get_content();
+                    parent.doctxt = element->get_content();
                     return;
                 
                 case "implements":
@@ -490,11 +490,11 @@ namespace Palete {
 			var ar = what.split(".");
 			var cls = this.classes.get(ar[1]);
 			if (ar.length == 2) {
-				return cls.doc != null ? cls.doc : "";
+				return cls.doctxt != null ? cls.doctxt : "";
 			}
 			// return the property.. by default..
 			var pr = cls.props.get(ar[2]);
-			return pr.doc != null ? pr.doc : "";
+			return pr.doctxt != null ? pr.doctxt : "";
 
 		}
     
