@@ -639,6 +639,18 @@ namespace JsRender {
 		        
 
 		}
+
+	string gLibStringListJoin( string sep, GLib.List<string> ar) 
+	{
+		var ret = "";
+		for (var i = 0; i < ar.length(); i++) {
+			ret += i>0 ? sep : "";
+			ret += ar.nth_data(i);
+		}
+		return ret;
+
+	}
+		
 		string valueTypeToString(string val, string type) {
 			switch(type) {
 				case "utf8":
