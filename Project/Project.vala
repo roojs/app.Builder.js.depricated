@@ -40,7 +40,9 @@ public class Project.Project {
         this.scanDirs();
         
     }
-    
+    function getXtype() {
+		return "??";
+	}
     
     /*
     public load
