@@ -103,7 +103,8 @@ public class Project.Project {
 		    
 		    
 		    for(var i=0;i<this.files.length();i++) {
-				builder.add_string_value (this.files.nth_data(i).path);
+				var f = this.files.nth_data(i);
+				builder.add_string_value (f.path);
 		    }
 		    builder.end_array ();
 		}
