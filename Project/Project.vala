@@ -253,7 +253,7 @@ public class Project.Project {
     {
         var iter = this.paths.map_iterator();
         while (iter.next()) {
-			print("path: " + iter.get_key() + " : " + iter_get_value());
+			print("path: " + iter.get_key() + " : " + iter.get_value());
             if (iter.get_value() != "dir") {
                 continue;
             }
