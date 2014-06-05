@@ -3,9 +3,10 @@
 static int rid = 1;
 
 class Project.Roo : Project {
-	public override string xtype {
-		  get { return "Gtk"; }
-	  }
+
+	public  string  getXtype {
+		  return "Gtk";
+	}
 
     Roo(string path) {
         
