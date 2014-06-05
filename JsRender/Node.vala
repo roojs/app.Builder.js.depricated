@@ -41,6 +41,15 @@ public class JsRender.Node  {
         }
         return false;
     }
+	public string fqn()
+	{
+		if (!this.hasXnsType ()) {
+			return "";
+		}
+		this.props.get("|xns") + "." this.props.get("xtype"); 
+
+	}
+	
     // wrapper around get props that returns empty string if not found.
     public string get(string key)
     {
