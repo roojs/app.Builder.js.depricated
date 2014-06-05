@@ -143,8 +143,8 @@ public class Project.Project : Object {
         var files = new Gee.HashMap<string,JsRender.JsRender>();
 
 		var fiter = files.map_iterator();
-        while(
-            var fo = this.files.get_key
+        while(fiter.next()) {
+            var fo = this.files.get_key();
             
             fo.hasParent = false;
             fo.cn = new GLib.List<JsRender.JsRender>();
