@@ -50,18 +50,18 @@ struct _JsRenderNode {
 	GTypeInstance parent_instance;
 	volatile int ref_count;
 	JsRenderNodePrivate * priv;
+	GList* items;
+	GeeHashMap* props;
+	GeeHashMap* listeners;
+	gchar* xvala_cls;
+	gchar* xvala_xcls;
+	gchar* xvala_id;
 	gboolean is_array;
 };
 
 struct _JsRenderNodeClass {
 	GTypeClass parent_class;
 	void (*finalize) (JsRenderNode *self);
-};
-
-struct _JsRenderNodePrivate {
-	GList* items;
-	GeeHashMap* props;
-	GeeHashMap* listeners;
 };
 
 typedef enum  {
@@ -91,7 +91,6 @@ void js_render_value_set_node (GValue* value, gpointer v_object);
 void js_render_value_take_node (GValue* value, gpointer v_object);
 gpointer js_render_value_get_node (const GValue* value);
 GType js_render_node_get_type (void) G_GNUC_CONST;
-#define JS_RENDER_NODE_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), JS_RENDER_TYPE_NODE, JsRenderNodePrivate))
 enum  {
 	JS_RENDER_NODE_DUMMY_PROPERTY
 };
@@ -102,7 +101,9 @@ JsRenderNode* js_render_node_construct (GType object_type);
 gboolean js_render_node_isArray (JsRenderNode* self);
 gboolean js_render_node_hasChildren (JsRenderNode* self);
 gboolean js_render_node_hasXnsType (JsRenderNode* self);
+gchar* js_render_node_fqn (JsRenderNode* self);
 gchar* js_render_node_get (JsRenderNode* self, const gchar* key);
+JsRenderNode* js_render_node_findProp (JsRenderNode* self, const gchar* n);
 gchar* js_render_node_mungeToString (JsRenderNode* self, gboolean isListener, const gchar* pad, GList* doubleStringProps);
 static void _g_free0_ (gpointer var);
 static void _g_list_free__g_free0_ (GList* self);
@@ -143,13 +144,17 @@ static void _g_list_free__js_render_node_unref0_ (GList* self) {
 JsRenderNode* js_render_node_construct (GType object_type) {
 	JsRenderNode* self = NULL;
 	GeeHashMap* _tmp0_ = NULL;
+	gchar* _tmp1_ = NULL;
 	self = (JsRenderNode*) g_type_create_instance (object_type);
-	__g_list_free__js_render_node_unref0_0 (self->priv->items);
-	self->priv->items = NULL;
+	__g_list_free__js_render_node_unref0_0 (self->items);
+	self->items = NULL;
 	_tmp0_ = gee_hash_map_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, g_free, G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, g_free, NULL, NULL, NULL);
-	_g_object_unref0 (self->priv->props);
-	self->priv->props = _tmp0_;
+	_g_object_unref0 (self->props);
+	self->props = _tmp0_;
 	self->is_array = FALSE;
+	_tmp1_ = g_strdup ("");
+	_g_free0 (self->xvala_xcls);
+	self->xvala_xcls = _tmp1_;
 	return self;
 }
 
@@ -174,7 +179,7 @@ gboolean js_render_node_hasChildren (JsRenderNode* self) {
 	GList* _tmp0_ = NULL;
 	guint _tmp1_ = 0U;
 	g_return_val_if_fail (self != NULL, FALSE);
-	_tmp0_ = self->priv->items;
+	_tmp0_ = self->items;
 	_tmp1_ = g_list_length (_tmp0_);
 	result = _tmp1_ > ((guint) 0);
 	return result;
@@ -189,7 +194,7 @@ gboolean js_render_node_hasXnsType (JsRenderNode* self) {
 	gchar* _tmp3_ = NULL;
 	gboolean _tmp4_ = FALSE;
 	g_return_val_if_fail (self != NULL, FALSE);
-	_tmp1_ = self->priv->props;
+	_tmp1_ = self->props;
 	_tmp2_ = gee_abstract_map_get ((GeeAbstractMap*) _tmp1_, "|xns");
 	_tmp3_ = (gchar*) _tmp2_;
 	_tmp4_ = _tmp3_ != NULL;
@@ -198,7 +203,7 @@ gboolean js_render_node_hasXnsType (JsRenderNode* self) {
 		GeeHashMap* _tmp5_ = NULL;
 		gpointer _tmp6_ = NULL;
 		gchar* _tmp7_ = NULL;
-		_tmp5_ = self->priv->props;
+		_tmp5_ = self->props;
 		_tmp6_ = gee_abstract_map_get ((GeeAbstractMap*) _tmp5_, "xtype");
 		_tmp7_ = (gchar*) _tmp6_;
 		_tmp0_ = _tmp7_ != NULL;
@@ -215,6 +220,45 @@ gboolean js_render_node_hasXnsType (JsRenderNode* self) {
 }
 
 
+gchar* js_render_node_fqn (JsRenderNode* self) {
+	gchar* result = NULL;
+	gboolean _tmp0_ = FALSE;
+	GeeHashMap* _tmp2_ = NULL;
+	gpointer _tmp3_ = NULL;
+	gchar* _tmp4_ = NULL;
+	gchar* _tmp5_ = NULL;
+	gchar* _tmp6_ = NULL;
+	GeeHashMap* _tmp7_ = NULL;
+	gpointer _tmp8_ = NULL;
+	gchar* _tmp9_ = NULL;
+	gchar* _tmp10_ = NULL;
+	gchar* _tmp11_ = NULL;
+	g_return_val_if_fail (self != NULL, NULL);
+	_tmp0_ = js_render_node_hasXnsType (self);
+	if (!_tmp0_) {
+		gchar* _tmp1_ = NULL;
+		_tmp1_ = g_strdup ("");
+		result = _tmp1_;
+		return result;
+	}
+	_tmp2_ = self->props;
+	_tmp3_ = gee_abstract_map_get ((GeeAbstractMap*) _tmp2_, "|xns");
+	_tmp4_ = (gchar*) _tmp3_;
+	_tmp5_ = g_strconcat (_tmp4_, ".", NULL);
+	_tmp6_ = _tmp5_;
+	_tmp7_ = self->props;
+	_tmp8_ = gee_abstract_map_get ((GeeAbstractMap*) _tmp7_, "xtype");
+	_tmp9_ = (gchar*) _tmp8_;
+	_tmp10_ = g_strconcat (_tmp6_, _tmp9_, NULL);
+	_tmp11_ = _tmp10_;
+	_g_free0 (_tmp9_);
+	_g_free0 (_tmp6_);
+	_g_free0 (_tmp4_);
+	result = _tmp11_;
+	return result;
+}
+
+
 gchar* js_render_node_get (JsRenderNode* self, const gchar* key) {
 	gchar* result = NULL;
 	gchar* k = NULL;
@@ -222,27 +266,129 @@ gchar* js_render_node_get (JsRenderNode* self, const gchar* key) {
 	const gchar* _tmp1_ = NULL;
 	gpointer _tmp2_ = NULL;
 	const gchar* _tmp3_ = NULL;
+	GeeHashMap* _tmp4_ = NULL;
+	const gchar* _tmp5_ = NULL;
+	gchar* _tmp6_ = NULL;
+	gchar* _tmp7_ = NULL;
+	gpointer _tmp8_ = NULL;
+	const gchar* _tmp9_ = NULL;
+	gchar* _tmp10_ = NULL;
 	g_return_val_if_fail (self != NULL, NULL);
 	g_return_val_if_fail (key != NULL, NULL);
-	_tmp0_ = self->priv->props;
+	_tmp0_ = self->props;
 	_tmp1_ = key;
 	_tmp2_ = gee_abstract_map_get ((GeeAbstractMap*) _tmp0_, _tmp1_);
 	k = (gchar*) _tmp2_;
 	_tmp3_ = k;
-	if (_tmp3_ == NULL) {
-		gchar* _tmp4_ = NULL;
-		_tmp4_ = g_strdup ("");
-		result = _tmp4_;
-		_g_free0 (k);
+	if (_tmp3_ != NULL) {
+		result = k;
 		return result;
 	}
-	result = k;
+	_tmp4_ = self->props;
+	_tmp5_ = key;
+	_tmp6_ = g_strconcat ("|", _tmp5_, NULL);
+	_tmp7_ = _tmp6_;
+	_tmp8_ = gee_abstract_map_get ((GeeAbstractMap*) _tmp4_, _tmp7_);
+	_g_free0 (k);
+	k = (gchar*) _tmp8_;
+	_g_free0 (_tmp7_);
+	_tmp9_ = k;
+	if (_tmp9_ != NULL) {
+		result = k;
+		return result;
+	}
+	_tmp10_ = g_strdup ("");
+	result = _tmp10_;
+	_g_free0 (k);
 	return result;
 }
 
 
 static gpointer _js_render_node_ref0 (gpointer self) {
 	return self ? js_render_node_ref (self) : NULL;
+}
+
+
+JsRenderNode* js_render_node_findProp (JsRenderNode* self, const gchar* n) {
+	JsRenderNode* result = NULL;
+	g_return_val_if_fail (self != NULL, NULL);
+	g_return_val_if_fail (n != NULL, NULL);
+	{
+		gint i = 0;
+		i = 0;
+		{
+			gboolean _tmp0_ = FALSE;
+			_tmp0_ = TRUE;
+			while (TRUE) {
+				gint _tmp2_ = 0;
+				GList* _tmp3_ = NULL;
+				guint _tmp4_ = 0U;
+				gchar* p = NULL;
+				GList* _tmp5_ = NULL;
+				gint _tmp6_ = 0;
+				gconstpointer _tmp7_ = NULL;
+				gchar* _tmp8_ = NULL;
+				GList* _tmp9_ = NULL;
+				gint _tmp10_ = 0;
+				gconstpointer _tmp11_ = NULL;
+				gchar* _tmp12_ = NULL;
+				gchar* _tmp13_ = NULL;
+				gint _tmp14_ = 0;
+				gint _tmp15_ = 0;
+				gboolean _tmp16_ = FALSE;
+				const gchar* _tmp17_ = NULL;
+				const gchar* _tmp18_ = NULL;
+				if (!_tmp0_) {
+					gint _tmp1_ = 0;
+					_tmp1_ = i;
+					i = _tmp1_ + 1;
+				}
+				_tmp0_ = FALSE;
+				_tmp2_ = i;
+				_tmp3_ = self->items;
+				_tmp4_ = g_list_length (_tmp3_);
+				if (!(((guint) _tmp2_) < _tmp4_)) {
+					break;
+				}
+				_tmp5_ = self->items;
+				_tmp6_ = i;
+				_tmp7_ = g_list_nth_data (_tmp5_, (guint) _tmp6_);
+				_tmp8_ = js_render_node_get ((JsRenderNode*) _tmp7_, "*prop");
+				p = _tmp8_;
+				_tmp9_ = self->items;
+				_tmp10_ = i;
+				_tmp11_ = g_list_nth_data (_tmp9_, (guint) _tmp10_);
+				_tmp12_ = js_render_node_get ((JsRenderNode*) _tmp11_, "*prop");
+				_tmp13_ = _tmp12_;
+				_tmp14_ = strlen (_tmp13_);
+				_tmp15_ = _tmp14_;
+				_tmp16_ = _tmp15_ < 1;
+				_g_free0 (_tmp13_);
+				if (_tmp16_) {
+					_g_free0 (p);
+					continue;
+				}
+				_tmp17_ = p;
+				_tmp18_ = n;
+				if (g_strcmp0 (_tmp17_, _tmp18_) == 0) {
+					GList* _tmp19_ = NULL;
+					gint _tmp20_ = 0;
+					gconstpointer _tmp21_ = NULL;
+					JsRenderNode* _tmp22_ = NULL;
+					_tmp19_ = self->items;
+					_tmp20_ = i;
+					_tmp21_ = g_list_nth_data (_tmp19_, (guint) _tmp20_);
+					_tmp22_ = _js_render_node_ref0 ((JsRenderNode*) _tmp21_);
+					result = _tmp22_;
+					_g_free0 (p);
+					return result;
+				}
+				_g_free0 (p);
+			}
+		}
+	}
+	result = NULL;
+	return result;
 }
 
 
@@ -586,18 +732,18 @@ gchar* js_render_node_mungeToString (JsRenderNode* self, gboolean isListener, co
 					}
 					_tmp16_ = FALSE;
 					_tmp18_ = ii;
-					_tmp19_ = self->priv->items;
+					_tmp19_ = self->items;
 					_tmp20_ = g_list_length (_tmp19_);
 					if (!(((guint) _tmp18_) < _tmp20_)) {
 						break;
 					}
-					_tmp21_ = self->priv->items;
+					_tmp21_ = self->items;
 					_tmp22_ = ii;
 					_tmp23_ = g_list_nth_data (_tmp21_, (guint) _tmp22_);
 					_tmp24_ = _js_render_node_ref0 ((JsRenderNode*) _tmp23_);
 					pl = _tmp24_;
 					_tmp25_ = pl;
-					_tmp26_ = _tmp25_->priv->props;
+					_tmp26_ = _tmp25_->props;
 					_tmp27_ = gee_abstract_map_has_key ((GeeAbstractMap*) _tmp26_, "*prop");
 					if (!_tmp27_) {
 						_js_render_node_unref0 (pl);
@@ -653,7 +799,7 @@ gchar* js_render_node_mungeToString (JsRenderNode* self, gboolean isListener, co
 					_tmp51_ = (JsRenderNode*) _tmp50_;
 					_tmp52_ = pl;
 					_tmp53_ = _js_render_node_ref0 (_tmp52_);
-					_tmp51_->priv->items = g_list_append (_tmp51_->priv->items, _tmp53_);
+					_tmp51_->items = g_list_append (_tmp51_->items, _tmp53_);
 					_js_render_node_unref0 (_tmp51_);
 					_g_free0 (prop);
 					_js_render_node_unref0 (pl);
@@ -720,12 +866,12 @@ gchar* js_render_node_mungeToString (JsRenderNode* self, gboolean isListener, co
 					}
 					_tmp55_ = FALSE;
 					_tmp57_ = i;
-					_tmp58_ = self->priv->items;
+					_tmp58_ = self->items;
 					_tmp59_ = g_list_length (_tmp58_);
 					if (!(((guint) _tmp57_) < _tmp59_)) {
 						break;
 					}
-					_tmp60_ = self->priv->items;
+					_tmp60_ = self->items;
 					_tmp61_ = i;
 					_tmp62_ = g_list_nth_data (_tmp60_, (guint) _tmp61_);
 					_tmp63_ = _js_render_node_ref0 ((JsRenderNode*) _tmp62_);
@@ -833,7 +979,7 @@ gchar* js_render_node_mungeToString (JsRenderNode* self, gboolean isListener, co
 		g_clear_error (&_inner_error_);
 		return NULL;
 	}
-	_tmp102_ = self->priv->props;
+	_tmp102_ = self->props;
 	_tmp103_ = gee_abstract_map_map_iterator ((GeeAbstractMap*) _tmp102_);
 	piter = _tmp103_;
 	while (TRUE) {
@@ -1686,7 +1832,7 @@ static void ___lambda4_ (JsRenderNode* self, JsonArray* are, guint ix, JsonNode*
 	_tmp2_ = json_node_get_object (_tmp1_);
 	js_render_node_loadFromJson (node, _tmp2_);
 	_tmp3_ = _js_render_node_ref0 (node);
-	self->priv->items = g_list_append (self->priv->items, _tmp3_);
+	self->items = g_list_append (self->items, _tmp3_);
 	_js_render_node_unref0 (node);
 }
 
@@ -1704,7 +1850,7 @@ static void ___lambda5_ (JsRenderNode* self, JsonObject* lio, const gchar* li_ke
 	g_return_if_fail (lio != NULL);
 	g_return_if_fail (li_key != NULL);
 	g_return_if_fail (li_value != NULL);
-	_tmp0_ = self->priv->listeners;
+	_tmp0_ = self->listeners;
 	_tmp1_ = li_key;
 	_tmp2_ = li_value;
 	_tmp3_ = json_node_get_string (_tmp2_);
@@ -1761,7 +1907,7 @@ static void __lambda3_ (Block1Data* _data1_, JsonObject* o, const gchar* key, Js
 		_json_object_unref0 (li);
 		return;
 	}
-	_tmp10_ = self->priv->props;
+	_tmp10_ = self->props;
 	_tmp11_ = key;
 	_tmp12_ = value;
 	_tmp13_ = json_node_get_string (_tmp12_);
@@ -1908,12 +2054,10 @@ void js_render_value_take_node (GValue* value, gpointer v_object) {
 static void js_render_node_class_init (JsRenderNodeClass * klass) {
 	js_render_node_parent_class = g_type_class_peek_parent (klass);
 	JS_RENDER_NODE_CLASS (klass)->finalize = js_render_node_finalize;
-	g_type_class_add_private (klass, sizeof (JsRenderNodePrivate));
 }
 
 
 static void js_render_node_instance_init (JsRenderNode * self) {
-	self->priv = JS_RENDER_NODE_GET_PRIVATE (self);
 	self->ref_count = 1;
 }
 
@@ -1921,9 +2065,12 @@ static void js_render_node_instance_init (JsRenderNode * self) {
 static void js_render_node_finalize (JsRenderNode* obj) {
 	JsRenderNode * self;
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, JS_RENDER_TYPE_NODE, JsRenderNode);
-	__g_list_free__js_render_node_unref0_0 (self->priv->items);
-	_g_object_unref0 (self->priv->props);
-	_g_object_unref0 (self->priv->listeners);
+	__g_list_free__js_render_node_unref0_0 (self->items);
+	_g_object_unref0 (self->props);
+	_g_object_unref0 (self->listeners);
+	_g_free0 (self->xvala_cls);
+	_g_free0 (self->xvala_xcls);
+	_g_free0 (self->xvala_id);
 }
 
 

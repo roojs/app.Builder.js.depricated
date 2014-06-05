@@ -222,6 +222,8 @@ PaleteGirObject* palete_gir_object_construct (GType object_type, const gchar* no
 	_g_object_unref0 (self->signals);
 	self->signals = _tmp14_;
 	self->priv->is_overlaid = FALSE;
+	_g_object_unref0 (self->paramset);
+	self->paramset = NULL;
 	return self;
 }
 
