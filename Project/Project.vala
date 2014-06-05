@@ -20,7 +20,7 @@ public class Project.Project : Object {
     public string fn = "";
     public string name = "";
     public Gee.HashMap<string,string> paths;
-    public GLib.List<JsRender.JsRender> files ;
+    public Gee.HashMap<string,JsRender.JsRender> files ;
     //tree : false,
     public  string xtype;
 	  
@@ -32,7 +32,7 @@ public class Project.Project : Object {
         
         
         this.paths = new Gee.HashMap<string,string>();
-        this.files = new GLib.List<JsRender.JsRender>();
+        this.files = new GLib.HashMap<string,JsRender.JsRender>();
         //XObject.extend(this, cfg);
         //this.files = { }; 
         this.paths.set(path, "dir");
