@@ -347,6 +347,7 @@ public class JsRender.Node  {
 
     public void loadFromJson(Json.Object obj) {
         obj.foreach_member((o , key, value) => {
+			print(ke+"\n");
             if (key == "items") {
                 var ar = value.get_array();
                 ar.foreach_element( (are, ix, el) => {
