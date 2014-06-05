@@ -77,7 +77,7 @@ public class JsRender  : Object {
         generator.indent = 4;
         generator.pretty = true;
         var node = new Json.Node(Json.NodeType.OBJECT);
-        node.init_object(this.toJsonArray());
+        node.set_object(this.toJsonArray());
         generator.set_root(node);
         
         print("WRITE: " + this.path);// + "\n" + JSON.stringify(write));
