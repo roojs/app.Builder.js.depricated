@@ -283,7 +283,7 @@ public class Project.Project {
                 var fn = next_file.get_display_name();
         
                  
-                print('trying ' + dir + '/' + fn);
+                print("trying"  + dir + "/" + fn +"\n");
                 
                 if (fn[0] == '.') { // skip hidden
                     continue;
