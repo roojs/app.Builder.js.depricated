@@ -46,7 +46,11 @@ public class JsRender.Node  {
     {
         var k = this.props.get(key);
         if (k == null) {
-            return "";
+			k = this.props.get("|" + key);
+			if (k == null) {
+				
+        		return "";
+			}
         }
         return k;
         
@@ -54,7 +58,9 @@ public class JsRender.Node  {
      
     /* creates javascript based on the rules */
     public Node? findProp(string n) {
-
+		for(var i=0;i< this.items.length;i++) {
+			
+		}
 
 	}
   
