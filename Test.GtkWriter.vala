@@ -8,6 +8,7 @@ public static int main () {
 
 
 	var proj = new Project.Gtk( "/home/alan/gitlive/app.Builder.js/Builder4");
+	proj.scanDirs();
 	print(proj.toJSON(true));
 	print("\ndone\n");
 	
