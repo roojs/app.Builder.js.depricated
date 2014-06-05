@@ -6,7 +6,7 @@
 
 public static int main () {
 
-
+	GLib.Log.set_always_fatal(LogLevelFlags.LEVEL_ERROR ,LogLevelFlags.LEVEL_CRITICAL); 
 	var proj = new Project.Gtk( "/home/alan/gitlive/app.Builder.js/Builder4");
 	proj.scanDirs();
 	print(proj.toJSON(true));
