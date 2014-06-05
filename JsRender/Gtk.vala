@@ -364,7 +364,7 @@ namespace JsRender {
             var ctors =  this.palete.getPropertiesFor(cls, "ctors");
 			
 			// ctors is going to return 'new' or ... ??
-			string ctor = item.get("ctor").length > 0 ? item.get("ctor") : "new";
+			string ctor = item.get("*ctor").length > 0 ? item.get("(ctor") : "new";
 
 			var ctor_def = ctors.get(ctor);
 			
@@ -598,7 +598,9 @@ namespace JsRender {
 		ret += node.fqn() "(";
 		// what are the args required for this type of ctor...
 		var ctors = this.palete.getPropertiesFor(node.fqn(),  "ctor");
-		var m = node.get("*ctor")
+		string ctor = item.get("*ctor").length > 0 ? item.get("(ctor") : "new";
+		var def = ctors.get(ctor);
+		
 		
 		
             
