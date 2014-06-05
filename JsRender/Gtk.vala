@@ -631,7 +631,7 @@ namespace JsRender {
 					args.append(this.valueTypeToString(pv, piter.get_value().type));
 				
 		        }
-		        return ret + string.joinv(", ", args) + " );\n" ;
+		        return ret + this.gLibStringListJoin(", ", args) + " );\n" ;
 
 		    } 
 		    return ret +  ");\n" ;
