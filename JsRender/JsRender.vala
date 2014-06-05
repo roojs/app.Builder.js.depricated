@@ -177,7 +177,10 @@ public abstract class JsRender  : Object {
         //ret.set_string_member("items", this.items);
         ret.set_string_member("permname", this.permname);
         ret.set_string_member("modOrder", this.modOrder);
-        
+		var ar = new Json.Array();
+		ar.set_object_element(0, this.tree.toJsonObject());
+		ret.set_array_member("items", ar);
+		
         return ret;
     }
     
