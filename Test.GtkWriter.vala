@@ -11,7 +11,7 @@ public static int main () {
 	proj.scanDirs();
 	print(proj.toJSON(true));
 	print("\ndone\n");
-	
+	var tf = proj.files.get('/home/alan/gitlive/app.Builder.js/Builder4/Editor.bjs");
 
 
 	//var tf = proj.files['/home/alan/gitlive/app.Builder/Builder4/Editor.bjs'];
