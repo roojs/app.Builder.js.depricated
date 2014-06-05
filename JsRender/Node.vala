@@ -367,6 +367,8 @@ public class JsRender.Node  {
                 return;
             }
 			var v = value.get_value();
+			var sv =  Value (typeof (string));
+			v.transform(ref sv);
 			
 			switch(value.get_node_type()) {
 				case Json.NodeType.STRING
