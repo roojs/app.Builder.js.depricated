@@ -204,7 +204,7 @@ public class Project.Project : Object {
 		var fiter = files.map_iterator();
         while(fiter.next()) {
          
-            var f = fiter.getValue();
+            var f = fiter.get_value();
             
             
             //console.log(f.id + '?=' + id);

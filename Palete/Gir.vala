@@ -71,33 +71,37 @@ namespace Palete {
 			this.paramset = null;
         }
 
-		public void  overlayParent(Gir in_gir)
+		public void  overlayParent()
 		{
-			var gir = in_gir;
+
 			if (this.parent.length < 1 || this.is_overlaid) {
 				this.is_overlaid = true;
 				return;
 			}
 			//print(this.parent);
 
-			var pcls = this.clsToObject(gir, this.parent);
-			pcls.overlayParent(gir );
+			var pcls = this.clsToObject( this.parent);
+			if (pcls == null) {
+				throw new Error.INVALID_VALUE("Could not find class : " + 
+					this.parent + " of " + this.name  + " in " + this.ns);
+			}
+			
+			pcls.overlayParent( );
 			this.copyFrom(pcls,false);
 			for(var i=0; i < this.implements.length(); i++) {
-				var picls = this.clsToObject(gir,this.implements.nth_data(i));
+				var picls = this.clsToObject(this.implements.nth_data(i));
 				this.copyFrom(picls,true);
 			}
 			this.is_overlaid = true;
 			
 		}
-		public GirObject clsToObject(Gir in_gir, string in_pn)
+		public GirObject clsToObject(string in_pn)
 		{
 			var pn = in_pn;
-			var gir = in_gir;
+			var gir = Gir.factory (this.ns);
 			if (this.parent.contains(".")) {
 				gir =  Gir.factory(parent.split(".")[0]);
 				pn = parent.split(".")[1];
-
 			}
 			
 			return gir.classes.get(pn);
@@ -253,11 +257,13 @@ namespace Palete {
 
 
 			base("Package",ns);
+			
             //this.nodes = new Gee.Hashmap<string,what>();
              
             var doc = Xml.Parser.parse_file (file);
             var root = doc->get_root_element();
             this.walk( root, (GirObject) this );
+			this.ns = ns;
             delete doc;
         
         }
@@ -294,7 +300,7 @@ namespace Palete {
                 case "class":
                     var c = new GirObject("Class", parent.name + "." + n);
                     parent.classes.set(n, c);
-					c.ns = parent.name;
+					c.ns = this.ns;
                     c.parent = element->get_prop("parent");
 					if (c.parent == null) {
 						c.parent = "";
@@ -305,6 +311,7 @@ namespace Palete {
                 case "interface":
                     var c = new GirObject("Interface", parent.name + "." + n);
                     parent.classes.set(n, c);
+					c.ns = this.ns;
 					c.ns = parent.name;
                     c.parent = element->get_prop("parent");
 					if (c.parent == null) {
@@ -324,14 +331,14 @@ namespace Palete {
                 
                 case "constructor":
                     var c = new GirObject("Ctor",n);
-					c.ns = parent.ns;
+					c.ns = this.ns;
                     parent.ctors.set(n,c);
                     parent  = c;
                     break;
                 
                 case "return-value":
                     var c = new GirObject("Return", "return-value");
-					c.ns = parent.ns;
+					c.ns = this.ns;
                     parent.return_value = c;
                     parent =  c;
                     break;
@@ -346,7 +353,7 @@ namespace Palete {
                 */
                 case "signal": // Glib:signal
                     var c = new GirObject("Signal",n);
-					c.ns = parent.ns;
+					c.ns = this.ns;
                     parent.signals.set(n,c);
                     parent = c;
                     break;
@@ -359,26 +366,27 @@ namespace Palete {
                 
                 case "type":
                     parent.type = n;
+					
 					return; // no children?
                     //break;
                 
                 case "method":
                     var c = new GirObject("Method",n);
-					c.ns = parent.ns;
+					c.ns = this.ns;
                     parent.methods.set(n,c);
                     parent = c;
                     break;
                 
                 case "parameters":
                     var c = new GirObject("Paramset",n);
-					c.ns = parent.ns;
+					c.ns = this.ns;
                     parent.paramset = c;
                     parent =  c;
                     break;
                 
                 case "instance-parameter":
                     var c = new GirObject("Param",n);
-					c.ns = parent.ns;
+					c.ns = this.ns;
                     c.is_instance = true;
                     parent.params.set(n,c);
                     parent = c;
@@ -386,7 +394,7 @@ namespace Palete {
                 
                 case "parameter":
                     var c = new GirObject("Param",n);
-					c.ns = parent.ns;
+					c.ns = this.ns;
                     parent.params.set(n,c);
                     parent = c;
                     break;
@@ -394,14 +402,14 @@ namespace Palete {
                 case "property":
                 case "field":
                     var c = new GirObject("Prop",n);
-					c.ns = parent.ns;
+					c.ns = this.ns;
                     parent.props.set(n,c);
                     parent = c;
                     break;
                 
                 case "function":
                     var c = new GirObject("Function",n);
-					c.ns = parent.ns;
+					c.ns = this.ns;
                     parent.methods.set(n,c);
                     parent = c;
                     break;
@@ -417,7 +425,7 @@ namespace Palete {
                 case "constant":
                     var c = new GirObject("Const",n);
                     c.value = element->get_prop("value");
-					c.ns = parent.ns;
+					c.ns = this.ns;
                     parent.consts.set(n,c);
                     parent = c;
                     return;
@@ -425,7 +433,7 @@ namespace Palete {
                 
                 case "enumeration":
                     var c = new GirObject("Enum",n);
-					c.ns = parent.ns;
+					c.ns = this.ns;
                     parent.consts.set(n,c);
 					
                     parent = c;
@@ -433,7 +441,7 @@ namespace Palete {
                 
                 case "member":
                     var c = new GirObject("EnumMember",n);
-					c.ns = parent.ns;
+					c.ns = this.ns;
                     c.value = element->get_prop("value");
                     parent.consts.set(n,c);
                     return;

@@ -333,11 +333,16 @@ public class JsRender.Node  {
             
         }
 		// finally munge the children...
+		if (this.items.length()> 0) {
+			var itms = "items : [\n";
+			for(var i = 0; i < this.items.length();i++) {
+				// 
+				itms +=    pad + "    "  +
+					this.items.nth_data(i).mungeToString(false, pad + "        ",  doubleStringProps) + "\n";
 
-		for(var i = 0; i < this.items.length;i++) {
-			//....
 
-
+			}
+			els.append(itms);
 		}
 		
 

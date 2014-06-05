@@ -3,7 +3,9 @@ namespace Palete
 {
     public errordomain Error {
         INVALID_TYPE,
-        NEED_IMPLEMENTING
+        NEED_IMPLEMENTING,
+		MISSING_FILE,
+		INVALID_VALUE
     }
     
 

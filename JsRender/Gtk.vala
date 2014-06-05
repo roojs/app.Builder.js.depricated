@@ -164,7 +164,7 @@ namespace JsRender {
              
             var fn = GLib.Path.get_dirname(this.path) + "/" + this.name + ".vala";
             print("WRITE : " + fn);
-			FileUtils.set_contents(fn, this.toVala(false));
+			FileUtils.set_contents(fn, this.toValaSource(false));
             
             
         }
@@ -205,7 +205,7 @@ namespace JsRender {
 		GLib.List<Node> vitems;
 		string xvala_xcls;
 		
-        string toVala(bool testcompile)
+        public override string toValaSource(bool testcompile)
         {
             var ret = "";
             

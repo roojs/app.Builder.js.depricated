@@ -1,5 +1,7 @@
 namespace Palete {
 
+	
+	
 	public class GtkUsage : Object 
 	{
 		GLib.List<string> left;
@@ -31,10 +33,11 @@ namespace Palete {
 		GLib.List<GtkUsage> map;
         public Gtk()
         {
-            this.name = "Gtk";
+
 
             
             base();
+            this.name = "Gtk";
 			this.load();
             // various loader methods..
               //this.map = [];
@@ -48,6 +51,11 @@ namespace Palete {
                 
          
     		string raw;
+			if (!FileUtils.test ("/usr/share/appBuilder/GtkUsage.txt", FileTest.EXISTS)) {
+				throw new Error.MISSING_FILE("/usr/share/appBuilder/GtkUsage.txt not found");
+				
+			}
+			
             FileUtils.get_contents("/usr/share/appBuilder/GtkUsage.txt", out raw);
           // print(data);
             var data  = raw.split("\n");
@@ -122,14 +130,18 @@ namespace Palete {
             var es = ename.split(".");
 			var gir = Gir.factory(es[0]);
 			
-			var cls = gir.classes.get(ename);
+			var cls = gir.classes.get(es[1]);
+			if (cls == null) {
+				throw new Error.INVALID_VALUE( "Could not find class: " + ename);
+				
+			}
 
 			//cls.parseProps();
 			//cls.parseSignals(); // ?? needed for add handler..
 			//cls.parseMethods(); // ?? needed for ??..
 			//cls.parseConstructors(); // ?? needed for ??..
 
-			cls.overlayParent(gir);
+			cls.overlayParent();
 
 			switch  (type) {
 				case "props":

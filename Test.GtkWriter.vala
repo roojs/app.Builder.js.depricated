@@ -14,11 +14,12 @@ public static int main () {
 	var tf = proj.files.get("/home/alan/gitlive/app.Builder.js/Builder4/Editor.bjs");
 	tf.loadItems();
 
-	/*
 	string[] spawn_args;
-	print(tf.toSource());
+	//print(tf.toSource());
+	print(tf.toValaSource(true));
 	return 0;
-	*/
+	/*
+	
 	var test_out =tf.toJsonString();
 	print(test_out);
 	FileUtils.set_contents("/tmp/out.bjs",test_out);
@@ -39,7 +40,7 @@ public static int main () {
 	//tf.loadItems(function() {
 	//	print(JSON.stringify(tf,null,4));
 	//	
-		
+	*/	
 	//}, true); 
 
 	return 0;

@@ -9,13 +9,12 @@ namespace Project {
 
   public class Gtk : Project
   {
-	 public string xtype = "Gtk";
 	  
      public Gtk(string path) {
 		  
-		 
+		  
           base(path);
-		 
+		  this.xtype = "Gtk";
           var gid = "project-gtk-%d".printf(gtk_id++);
           this.id = gid;
           // various loader methods..
