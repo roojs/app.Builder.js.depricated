@@ -592,7 +592,7 @@ namespace JsRender {
         
          
     }
-	string nodeToValaNew(Node node, out pre_data, ref id)
+	string nodeToValaNew(Node node, out pre_str, ref id)
 	{
 		var ret = "new ";
 		ret += node.fqn() "(";
@@ -621,7 +621,7 @@ namespace JsRender {
 						continue;
 					}
 					var var_id = "tmp_var_%d".printf( id++ );
-					ret+= pad + "var "+ var_id + " = new "  + this.nodeToValaNew(pvi) +"\n";
+					pre_str += pad + "var "+ var_id + " = new "  + this.nodeToValaNew(pvi) +"\n";
 					args.append(var_id);
 					continue;
 				} 
