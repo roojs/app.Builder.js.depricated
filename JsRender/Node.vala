@@ -339,15 +339,16 @@ public class JsRender.Node  {
         if (Node.gen == null) {
             Node.gen = new Json.Generator();
         }
-        var builder = new Json.Builder();
-        builder.add_string_value(str);
-        Node.gen.set_root (builder.get_root ());
+       var n = new Json.Node(NodeType.STRING);
+		n.set_string(str);
+ 
+        Node.gen.set_root (n);
         return  Node.gen.to_data (null);   
     }
 
     public void loadFromJson(Json.Object obj) {
         obj.foreach_member((o , key, value) => {
-			print(key+"\n");
+			//print(key+"\n");
             if (key == "items") {
                 var ar = value.get_array();
                 ar.foreach_element( (are, ix, el) => {
@@ -372,7 +373,7 @@ public class JsRender.Node  {
 
 
     }
-    Json.Object toJsonObject()
+    public Json.Object toJsonObject()
 	{
 		var ret = new Json.Object();
 	    var iter = this.props.map_iterator();
