@@ -14,7 +14,8 @@
 
 public class Project.Project {
     
-    
+    public signal void on_changed (); 
+	
     public string id = "";
     public string fn = "";
     public string name = "";
@@ -39,10 +40,7 @@ public class Project.Project {
         
     }
     
-    public void onChanged() {
-       // ProjectManager.fireEvent('changed');
-        
-    }
+    
     /*
     public load
      
@@ -217,7 +215,7 @@ public class Project.Project {
          
     public void addFile(JsRender.JsRender pfile) { // add a single file, and trigger changed.
         this.files.append(pfile); // duplicate check?
-        this.onChanged();
+        this.on_changed();
     }
     
     public void add(string path, string type)
@@ -231,7 +229,7 @@ public class Project.Project {
         if (type == "file" ) {
             this.files.append(this.loadFileOnly( path ));
         }
-        this.onChanged();
+        this.on_changed();
         
     }
     public void  scanDirs()
