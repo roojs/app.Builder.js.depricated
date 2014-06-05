@@ -644,8 +644,10 @@ namespace JsRender {
 			switch(type) {
 				case "utf8":
 					return "\"" +  val.escape() + "\"";
-				
+				default:
+					return val;
 
+			}
 
 		}
 
