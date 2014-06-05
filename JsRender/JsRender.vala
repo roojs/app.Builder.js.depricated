@@ -175,7 +175,7 @@ public abstract class JsRender  : Object {
         ret.set_string_member("title", this.title == null ? "" : this.title);
         ret.set_string_member("path", this.path);
         //ret.set_string_member("items", this.items);
-        ret.set_string_member("permname", this.permname  == null ? "" : this.pername);
+        ret.set_string_member("permname", this.permname  == null ? "" : this.permname);
         ret.set_string_member("modOrder", this.modOrder  == null ? "" : this.modOrder);
 		var ar = new Json.Array();
 		ar.add_object_element(this.tree.toJsonObject());
@@ -258,9 +258,7 @@ public abstract class JsRender  : Object {
         return this.tree.mungeToString(false, pad, this.doubleStringProps);
         
     }
-     public string toSource() {
-		 return "??";
-	 }
+     abstract  public string toSource() ;
       
 }
     
