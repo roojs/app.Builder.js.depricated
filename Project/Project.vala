@@ -141,9 +141,10 @@ public class Project.Project : Object {
          
          
         var files = new Gee.HashMap<string,JsRender.JsRender>();
-         
-        for(var i = 0; i < this.files.length(); i++) {
-            var fo = this.files.nth_data(i);
+
+		var fiter = files.map_iterator();
+        while(
+            var fo = this.files.get_key
             
             fo.hasParent = false;
             fo.cn = new GLib.List<JsRender.JsRender>();
