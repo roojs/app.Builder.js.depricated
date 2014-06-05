@@ -36,10 +36,11 @@ public class Project.Project : Object {
         //XObject.extend(this, cfg);
         //this.files = { }; 
         this.paths.set(path, "dir");
+        this.scanDirs();
         
 	}
 	construct {
-        this.scanDirs();
+
         
     }
     
