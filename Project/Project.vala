@@ -32,7 +32,7 @@ public class Project.Project : Object {
         
         
         this.paths = new Gee.HashMap<string,string>();
-        this.files = new GLib.HashMap<string,JsRender.JsRender>();
+        this.files = new Gee.HashMap<string,JsRender.JsRender>();
         //XObject.extend(this, cfg);
         //this.files = { }; 
         this.paths.set(path, "dir");
