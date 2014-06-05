@@ -592,7 +592,7 @@ namespace JsRender {
         
          
     }
-	string nodeToValaNew(Node node, out pre_str, ref id)
+	string nodeToValaNew(Node node, out pre_str, ref id, pad)
 	{
 		var ret = "new ";
 		ret += node.fqn() "(";
