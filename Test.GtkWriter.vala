@@ -9,6 +9,7 @@ public static int main () {
 
 	var proj = new Project.Gtk( "/home/alan/gitlive/app.Builder/Builder4");
 	print(proj.toJSON());
+	print("\ndone\n");
 	
 
 
