@@ -7,7 +7,7 @@ public errordomain Error {
     INVALID_FORMAT
 }
     
-public class JsRender  : Object {
+public abstract class JsRender  : Object {
     /**
      * @cfg {Array} doubleStringProps list of properties that can be double quoted.
      */
