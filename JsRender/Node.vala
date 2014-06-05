@@ -391,7 +391,7 @@ public class JsRender.Node  {
 		
 		// children..
 		for(var i =0;i < this.items.length();i++) {
-			ar.add_object_element(this.item.nth_data(i).toJsonObject());
+			ar.add_object_element(this.items.nth_data(i).toJsonObject());
         }
 		return ret;
 		
