@@ -9,10 +9,10 @@ all:
 		--pkg json-glib-1.0 \
 		--pkg gee-1.0 \
 		--pkg gobject-introspection-1.0 \
+		Test.GtkWriter.vala \
 		JsRender/*.vala \
 		Project/*.vala \
 		Palete/*.vala \
-		Test.GtkWriter.vala
 		-o /tmp/test
 #		Builder4/*.vala \
 
