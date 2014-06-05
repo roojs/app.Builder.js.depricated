@@ -105,7 +105,7 @@ public abstract class JsRender  : Object {
         // NOOP
     }
 
-    public abstract void loadItems();
+    public abstract void loadItems() throws Error;
     
     /**
      *
