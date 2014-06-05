@@ -13,7 +13,7 @@ public static int main () {
 	print("\ndone\n");
 	var tf = proj.files.get("/home/alan/gitlive/app.Builder.js/Builder4/Editor.bjs");
 	tf.loadItems();
-	print(tf.
+	print(tf.toJsonString());
 	
 	//var tf = proj.files['/home/alan/gitlive/app.Builder/Builder4/Editor.bjs'];
 	//tf.loadItems(function() {
