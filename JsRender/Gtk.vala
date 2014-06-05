@@ -633,7 +633,7 @@ namespace JsRender {
             return ret + string.join(", ", args) + " );\n" ;
 
         } else {
-            ret += ipad + "this.el = new " + cls + "();\n" ;
+            return ret +  ");\n" ;
 
         }
 		
