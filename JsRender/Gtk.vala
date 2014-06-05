@@ -394,7 +394,7 @@ namespace JsRender {
 						continue;
 					} 
 					// got a string value..
-					args.append(this.valueTypeToString(pv, piter.getValue().type));
+					args.append(this.valueTypeToString(pv, piter.get_value().type));
 					
                 }
                 ret += ipad + "this.el = new " + cls + "( "+ string.join(", ", args) + " );\n" ;
@@ -629,7 +629,7 @@ namespace JsRender {
 						continue;
 					} 
 					// got a string value..
-					args.append(this.valueTypeToString(pv, piter.getValue().type));
+					args.append(this.valueTypeToString(pv, piter.get_value().type));
 				
 		        }
 		        return ret + string.join(", ", args) + " );\n" ;
