@@ -453,6 +453,10 @@ JsRenderJsRender* js_render_js_render_factory (const gchar* xt, ProjectProject* 
 	static GQuark _tmp2_label0 = 0;
 #line 64 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	static GQuark _tmp2_label1 = 0;
+#line 457 "JsRender.vala.c"
+	const gchar* _tmp10_ = NULL;
+	GError* _tmp11_ = NULL;
+	GError * _inner_error_ = NULL;
 #line 61 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	g_return_val_if_fail (xt != NULL, NULL);
 #line 61 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
@@ -469,7 +473,7 @@ JsRenderJsRender* js_render_js_render_factory (const gchar* xt, ProjectProject* 
 	if (_tmp3_ == ((0 != _tmp2_label0) ? _tmp2_label0 : (_tmp2_label0 = g_quark_from_static_string ("Gtk")))) {
 #line 64 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 		switch (0) {
-#line 473 "JsRender.vala.c"
+#line 477 "JsRender.vala.c"
 			default:
 			{
 				ProjectProject* _tmp4_ = NULL;
@@ -485,13 +489,13 @@ JsRenderJsRender* js_render_js_render_factory (const gchar* xt, ProjectProject* 
 				result = (JsRenderJsRender*) _tmp6_;
 #line 66 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 				return result;
-#line 489 "JsRender.vala.c"
+#line 493 "JsRender.vala.c"
 			}
 		}
 	} else if (_tmp3_ == ((0 != _tmp2_label1) ? _tmp2_label1 : (_tmp2_label1 = g_quark_from_static_string ("Roo")))) {
 #line 64 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 		switch (0) {
-#line 495 "JsRender.vala.c"
+#line 499 "JsRender.vala.c"
 			default:
 			{
 				ProjectProject* _tmp7_ = NULL;
@@ -507,22 +511,34 @@ JsRenderJsRender* js_render_js_render_factory (const gchar* xt, ProjectProject* 
 				result = (JsRenderJsRender*) _tmp9_;
 #line 68 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 				return result;
-#line 511 "JsRender.vala.c"
+#line 515 "JsRender.vala.c"
 			}
 		}
 	}
 #line 70 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
-	result = NULL;
+	_tmp10_ = xt;
 #line 70 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+	_tmp11_ = g_error_new (JS_RENDER_ERROR, JS_RENDER_ERROR_INVALID_FORMAT, "JsRender Factory called with xtype=%s", _tmp10_);
+#line 70 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+	_inner_error_ = _tmp11_;
+#line 70 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+	g_critical ("file %s: line %d: uncaught error: %s (%s, %d)", __FILE__, __LINE__, _inner_error_->message, g_quark_to_string (_inner_error_->domain), _inner_error_->code);
+#line 70 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+	g_clear_error (&_inner_error_);
+#line 70 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+	return NULL;
+#line 71 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+	result = NULL;
+#line 71 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	return result;
-#line 519 "JsRender.vala.c"
+#line 535 "JsRender.vala.c"
 }
 
 
 static void _vala_JsonNode_free (JsonNode* self) {
-#line 84 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 85 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	g_boxed_free (json_node_get_type (), self);
-#line 526 "JsRender.vala.c"
+#line 542 "JsRender.vala.c"
 }
 
 
@@ -537,52 +553,52 @@ void js_render_js_render_save (JsRenderJsRender* self) {
 	gchar* _tmp5_ = NULL;
 	gchar* _tmp6_ = NULL;
 	GError * _inner_error_ = NULL;
-#line 73 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 74 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	g_return_if_fail (self != NULL);
-#line 76 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
-	_tmp0_ = json_generator_new ();
-#line 76 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
-	generator = _tmp0_;
 #line 77 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
-	json_generator_set_indent (generator, (guint) 4);
+	_tmp0_ = json_generator_new ();
+#line 77 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+	generator = _tmp0_;
 #line 78 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+	json_generator_set_indent (generator, (guint) 4);
+#line 79 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	json_generator_set_pretty (generator, TRUE);
-#line 79 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 80 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp1_ = json_node_new (JSON_NODE_OBJECT);
-#line 79 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 80 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	node = _tmp1_;
-#line 80 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
-	_tmp2_ = js_render_js_render_toJsonArray (self);
-#line 80 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
-	_tmp3_ = _tmp2_;
-#line 80 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
-	json_node_set_object (node, _tmp3_);
-#line 80 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
-	_json_object_unref0 (_tmp3_);
 #line 81 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+	_tmp2_ = js_render_js_render_toJsonArray (self);
+#line 81 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+	_tmp3_ = _tmp2_;
+#line 81 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+	json_node_set_object (node, _tmp3_);
+#line 81 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+	_json_object_unref0 (_tmp3_);
+#line 82 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	json_generator_set_root (generator, node);
-#line 83 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 84 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp4_ = self->path;
-#line 83 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 84 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp5_ = g_strconcat ("WRITE: ", _tmp4_, NULL);
-#line 83 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 84 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp6_ = _tmp5_;
-#line 83 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 84 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	g_print ("%s", _tmp6_);
-#line 83 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 84 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_g_free0 (_tmp6_);
-#line 575 "JsRender.vala.c"
+#line 591 "JsRender.vala.c"
 	{
 		const gchar* _tmp7_ = NULL;
-#line 85 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 86 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 		_tmp7_ = self->path;
-#line 85 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 86 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 		json_generator_to_file (generator, _tmp7_, &_inner_error_);
-#line 85 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 86 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 		if (_inner_error_ != NULL) {
-#line 85 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 86 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 			if (_inner_error_->domain == JS_RENDER_ERROR) {
-#line 586 "JsRender.vala.c"
+#line 602 "JsRender.vala.c"
 				goto __catch1_js_render_error;
 			}
 			goto __finally1;
@@ -592,52 +608,52 @@ void js_render_js_render_save (JsRenderJsRender* self) {
 	__catch1_js_render_error:
 	{
 		GError* e = NULL;
-#line 84 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 85 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 		e = _inner_error_;
-#line 84 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 85 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 		_inner_error_ = NULL;
-#line 87 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 88 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 		g_print ("Save failed");
-#line 84 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 85 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 		_g_error_free0 (e);
-#line 604 "JsRender.vala.c"
+#line 620 "JsRender.vala.c"
 	}
 	__finally1:
-#line 84 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 85 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	if (_inner_error_ != NULL) {
-#line 84 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 85 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 		__vala_JsonNode_free0 (node);
-#line 84 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 85 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 		_g_object_unref0 (generator);
-#line 84 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 85 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 		g_critical ("file %s: line %d: uncaught error: %s (%s, %d)", __FILE__, __LINE__, _inner_error_->message, g_quark_to_string (_inner_error_->domain), _inner_error_->code);
-#line 84 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 85 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 		g_clear_error (&_inner_error_);
-#line 84 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 85 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 		return;
-#line 619 "JsRender.vala.c"
+#line 635 "JsRender.vala.c"
 	}
-#line 73 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 74 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	__vala_JsonNode_free0 (node);
-#line 73 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 74 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_g_object_unref0 (generator);
-#line 625 "JsRender.vala.c"
+#line 641 "JsRender.vala.c"
 }
 
 
 void js_render_js_render_saveHTML (JsRenderJsRender* self) {
-#line 91 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 92 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	g_return_if_fail (self != NULL);
-#line 632 "JsRender.vala.c"
+#line 648 "JsRender.vala.c"
 }
 
 
 void js_render_js_render_loadItems (JsRenderJsRender* self) {
-#line 96 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 97 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	g_return_if_fail (self != NULL);
-#line 98 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 99 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	g_print ("load items not handled..");
-#line 641 "JsRender.vala.c"
+#line 657 "JsRender.vala.c"
 }
 
 
@@ -659,45 +675,45 @@ JsonObject* js_render_js_render_toJsonArray (JsRenderJsRender* self) {
 	const gchar* _tmp5_ = NULL;
 	const gchar* _tmp6_ = NULL;
 	const gchar* _tmp7_ = NULL;
-#line 160 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 161 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 164 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 165 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp0_ = json_object_new ();
-#line 164 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 165 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	ret = _tmp0_;
-#line 165 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 166 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp1_ = self->id;
-#line 165 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 166 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	json_object_set_string_member (ret, "id", _tmp1_);
-#line 166 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 167 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp2_ = self->name;
-#line 166 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 167 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	json_object_set_string_member (ret, "name", _tmp2_);
-#line 167 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 168 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp3_ = self->parent;
-#line 167 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 168 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	json_object_set_string_member (ret, "parent", _tmp3_);
-#line 168 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 169 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp4_ = self->title;
-#line 168 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 169 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	json_object_set_string_member (ret, "title", _tmp4_);
-#line 169 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 170 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp5_ = self->path;
-#line 169 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 170 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	json_object_set_string_member (ret, "path", _tmp5_);
-#line 171 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 172 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp6_ = self->permname;
-#line 171 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 172 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	json_object_set_string_member (ret, "permname", _tmp6_);
-#line 172 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 173 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp7_ = self->modOrder;
-#line 172 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 173 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	json_object_set_string_member (ret, "modOrder", _tmp7_);
-#line 174 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 175 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	result = ret;
-#line 174 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 175 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	return result;
-#line 701 "JsRender.vala.c"
+#line 717 "JsRender.vala.c"
 }
 
 
@@ -718,58 +734,58 @@ gchar* js_render_js_render_getTitle (JsRenderJsRender* self) {
 	gint _tmp9__length1 = 0;
 	const gchar* _tmp10_ = NULL;
 	gchar* _tmp11_ = NULL;
-#line 179 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 180 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 181 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 182 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp0_ = self->title;
-#line 181 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 182 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp1_ = strlen (_tmp0_);
-#line 181 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 182 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp2_ = _tmp1_;
-#line 181 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 182 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	if (_tmp2_ > 0) {
-#line 732 "JsRender.vala.c"
+#line 748 "JsRender.vala.c"
 		const gchar* _tmp3_ = NULL;
 		gchar* _tmp4_ = NULL;
-#line 182 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 183 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 		_tmp3_ = self->title;
-#line 182 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 183 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 		_tmp4_ = g_strdup (_tmp3_);
-#line 182 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 183 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 		result = _tmp4_;
-#line 182 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 183 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 		return result;
-#line 743 "JsRender.vala.c"
+#line 759 "JsRender.vala.c"
 	}
-#line 184 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 185 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp5_ = self->path;
-#line 184 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 185 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp7_ = _tmp6_ = g_strsplit (_tmp5_, "/", 0);
-#line 184 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 185 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	a = _tmp7_;
-#line 184 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 185 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	a_length1 = _vala_array_length (_tmp6_);
-#line 184 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 185 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_a_size_ = a_length1;
-#line 185 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 186 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp8_ = a;
-#line 185 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 186 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp8__length1 = a_length1;
-#line 185 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 186 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp9_ = a;
-#line 185 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 186 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp9__length1 = a_length1;
-#line 185 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 186 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp10_ = _tmp8_[_tmp9__length1 - 1];
-#line 185 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 186 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp11_ = g_strdup (_tmp10_);
-#line 185 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 186 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	result = _tmp11_;
-#line 185 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 186 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	a = (_vala_array_free (a, a_length1, (GDestroyNotify) g_free), NULL);
-#line 185 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 186 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	return result;
-#line 773 "JsRender.vala.c"
+#line 789 "JsRender.vala.c"
 }
 
 
@@ -780,17 +796,17 @@ gchar* js_render_js_render_getTitleTip (JsRenderJsRender* self) {
 	gint _tmp2_ = 0;
 	const gchar* _tmp11_ = NULL;
 	gchar* _tmp12_ = NULL;
-#line 187 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 188 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 189 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 190 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp0_ = self->title;
-#line 189 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 190 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp1_ = strlen (_tmp0_);
-#line 189 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 190 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp2_ = _tmp1_;
-#line 189 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 190 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	if (_tmp2_ > 0) {
-#line 794 "JsRender.vala.c"
+#line 810 "JsRender.vala.c"
 		const gchar* _tmp3_ = NULL;
 		gchar* _tmp4_ = NULL;
 		gchar* _tmp5_ = NULL;
@@ -799,41 +815,41 @@ gchar* js_render_js_render_getTitleTip (JsRenderJsRender* self) {
 		const gchar* _tmp8_ = NULL;
 		gchar* _tmp9_ = NULL;
 		gchar* _tmp10_ = NULL;
-#line 190 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 191 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 		_tmp3_ = self->title;
-#line 190 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 191 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 		_tmp4_ = g_strconcat ("<b>", _tmp3_, NULL);
-#line 190 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 191 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 		_tmp5_ = _tmp4_;
-#line 190 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 191 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 		_tmp6_ = g_strconcat (_tmp5_, "</b> ", NULL);
-#line 190 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 191 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 		_tmp7_ = _tmp6_;
-#line 190 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 191 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 		_tmp8_ = self->path;
-#line 190 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 191 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 		_tmp9_ = g_strconcat (_tmp7_, _tmp8_, NULL);
-#line 190 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 191 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 		_tmp10_ = _tmp9_;
-#line 190 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 191 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 		_g_free0 (_tmp7_);
-#line 190 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 191 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 		_g_free0 (_tmp5_);
-#line 190 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 191 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 		result = _tmp10_;
-#line 190 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 191 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 		return result;
-#line 827 "JsRender.vala.c"
+#line 843 "JsRender.vala.c"
 	}
-#line 192 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 193 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp11_ = self->path;
-#line 192 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 193 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp12_ = g_strdup (_tmp11_);
-#line 192 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 193 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	result = _tmp12_;
-#line 192 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 193 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	return result;
-#line 837 "JsRender.vala.c"
+#line 853 "JsRender.vala.c"
 }
 
 
@@ -851,57 +867,57 @@ gchar* js_render_js_render_guessName (JsRenderJsRender* self, JsRenderNode* ar) 
 	gchar* _tmp10_ = NULL;
 	gchar* _tmp11_ = NULL;
 	gchar* _tmp12_ = NULL;
-#line 204 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 205 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 204 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 205 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	g_return_val_if_fail (ar != NULL, NULL);
-#line 207 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 208 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp0_ = ar;
-#line 207 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 208 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp1_ = js_render_node_hasXnsType (_tmp0_);
-#line 207 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 208 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	if (!_tmp1_) {
-#line 865 "JsRender.vala.c"
+#line 881 "JsRender.vala.c"
 		gchar* _tmp2_ = NULL;
-#line 208 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 209 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 		_tmp2_ = g_strdup ("");
-#line 208 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 209 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 		result = _tmp2_;
-#line 208 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 209 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 		return result;
-#line 873 "JsRender.vala.c"
+#line 889 "JsRender.vala.c"
 	}
-#line 211 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 212 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp3_ = ar;
-#line 211 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 212 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp4_ = js_render_node_get (_tmp3_, "|xns");
-#line 211 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 212 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp5_ = _tmp4_;
-#line 211 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 212 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp6_ = g_strconcat (_tmp5_, ".", NULL);
-#line 211 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 212 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp7_ = _tmp6_;
-#line 211 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 212 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp8_ = ar;
-#line 211 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 212 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp9_ = js_render_node_get (_tmp8_, "|xtype");
-#line 211 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 212 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp10_ = _tmp9_;
-#line 211 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 212 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp11_ = g_strconcat (_tmp7_, _tmp10_, NULL);
-#line 211 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 212 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp12_ = _tmp11_;
-#line 211 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 212 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_g_free0 (_tmp10_);
-#line 211 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 212 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_g_free0 (_tmp7_);
-#line 211 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 212 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_g_free0 (_tmp5_);
-#line 211 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 212 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	result = _tmp12_;
-#line 211 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 212 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	return result;
-#line 905 "JsRender.vala.c"
+#line 921 "JsRender.vala.c"
 }
 
 
@@ -926,23 +942,23 @@ gchar* js_render_js_render_mungeToString (JsRenderJsRender* self, const gchar* p
 	const gchar* _tmp1_ = NULL;
 	GList* _tmp2_ = NULL;
 	gchar* _tmp3_ = NULL;
-#line 246 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 247 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 246 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 247 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	g_return_val_if_fail (pad != NULL, NULL);
-#line 248 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 249 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp0_ = self->tree;
-#line 248 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 249 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp1_ = pad;
-#line 248 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 249 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp2_ = self->doubleStringProps;
-#line 248 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 249 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	_tmp3_ = js_render_node_mungeToString (_tmp0_, FALSE, _tmp1_, _tmp2_);
-#line 248 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 249 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	result = _tmp3_;
-#line 248 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
+#line 249 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	return result;
-#line 946 "JsRender.vala.c"
+#line 962 "JsRender.vala.c"
 }
 
 
@@ -951,7 +967,7 @@ static void js_render_js_render_class_init (JsRenderJsRenderClass * klass) {
 	js_render_js_render_parent_class = g_type_class_peek_parent (klass);
 #line 10 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	G_OBJECT_CLASS (klass)->finalize = js_render_js_render_finalize;
-#line 955 "JsRender.vala.c"
+#line 971 "JsRender.vala.c"
 }
 
 
@@ -991,7 +1007,7 @@ static void js_render_js_render_finalize (GObject* obj) {
 	__g_list_free__g_object_unref0_0 (self->cn);
 #line 10 "/home/alan/gitlive/app.Builder.js/JsRender/JsRender.vala"
 	G_OBJECT_CLASS (js_render_js_render_parent_class)->finalize (obj);
-#line 995 "JsRender.vala.c"
+#line 1011 "JsRender.vala.c"
 }
 
 

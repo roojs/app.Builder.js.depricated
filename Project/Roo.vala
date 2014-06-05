@@ -8,9 +8,9 @@ class Project.Roo : Project {
 
     Roo(string path) {
 
-		this.xtype = "Roo";
+		
         base(path);
-       
+        this.xtype = "Roo";
         // various loader methods..
         this.id = "project-roo-%d".printf(rid++);
         
