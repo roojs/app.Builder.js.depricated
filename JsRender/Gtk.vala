@@ -620,7 +620,7 @@ namespace JsRender {
 						args.append("null"); // hopefully...
 						continue;
 					}
-					var var_id = "xxx%d".printf( id++ );
+					var var_id = "tmp_var_%d".printf( id++ );
 					ret+= pad + "var "+ var_id + " = new "  + this.nodeToValaNew(pvi) +"\n";
 					args.append(var_id);
 					continue;
