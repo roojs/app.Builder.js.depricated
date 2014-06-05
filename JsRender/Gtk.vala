@@ -595,4 +595,12 @@ namespace JsRender {
         
          
     }
+	string nodeToValaNew(Node n)
+	{
+		
+
+	}
 }
+
+
+
