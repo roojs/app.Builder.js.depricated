@@ -100,7 +100,7 @@ public class Project.Project {
 		    
 		    
 		    
-		    for(var i=0;i<this.files.length;i++) {
+		    for(var i=0;i<this.files.length();i++) {
 				builder.add_string_value (this.files.nth_data(i).path);
 		    }
 		    builder.end_array ();
@@ -253,6 +253,7 @@ public class Project.Project {
     {
         var iter = this.paths.map_iterator();
         while (iter.next()) {
+			print("path: " + iter.get_key() + " : " + iter_get_value());
             if (iter.get_value() != "dir") {
                 continue;
             }
@@ -265,7 +266,7 @@ public class Project.Project {
     public void scanDir(string dir, int dp =0 ) 
     {
         //dp = dp || 0;
-        //Seed.print("Project.Base: Running scandir on " + dir);
+        print("Project.Base: Running scandir on " + dir);
         if (dp > 5) { // no more than 5 deep?
             return;
         }
