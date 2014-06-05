@@ -169,14 +169,14 @@ public abstract class JsRender  : Object {
         
         
         var ret = new Json.Object();
-        ret.set_string_member("id", this.id);
+        //ret.set_string_member("id", this.id); // not relivant..
         ret.set_string_member("name", this.name);
-        ret.set_string_member("parent", this.parent);
-        ret.set_string_member("title", this.title);
+        ret.set_string_member("parent", this.parent == null ? "" : this.parent);
+        ret.set_string_member("title", this.title == null ? "" : this.title);
         ret.set_string_member("path", this.path);
         //ret.set_string_member("items", this.items);
-        ret.set_string_member("permname", this.permname);
-        ret.set_string_member("modOrder", this.modOrder);
+        ret.set_string_member("permname", this.permname  == null ? "" : this.pername);
+        ret.set_string_member("modOrder", this.modOrder  == null ? "" : this.modOrder);
 		var ar = new Json.Array();
 		ar.add_object_element(this.tree.toJsonObject());
 		ret.set_array_member("items", ar);
