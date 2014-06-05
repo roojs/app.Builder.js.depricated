@@ -15,7 +15,7 @@ namespace Project {
      
      public Gtk(string path) {
 		  
-          this.xtype = "Gtk";
+ 
           base(path);
           var gid = "project-gtk-%d".printf(gtk_id++);
           this.id = gid;
