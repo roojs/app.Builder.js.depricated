@@ -55,7 +55,7 @@ namespace JsRender {
         */
 
         
-         overide public   void  loadItems() throws Error // : function(cb, sync) == original was async.
+          public   overide void  loadItems() throws Error // : function(cb, sync) == original was async.
       
         {
           
