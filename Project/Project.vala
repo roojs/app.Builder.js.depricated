@@ -37,6 +37,8 @@ public class Project.Project {
         //this.files = { }; 
         this.paths.set(path, "dir");
         this.xtype = this.getXtype();
+	}
+	construct {
         this.scanDirs();
         
     }
