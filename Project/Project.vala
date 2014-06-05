@@ -22,7 +22,7 @@ public class Project.Project {
     public Gee.HashMap<string,string> paths;
     public GLib.List<JsRender.JsRender> files ;
     //tree : false,
-    public  string xtype {
+    public  string xtype;
 	  
     
     
@@ -36,7 +36,7 @@ public class Project.Project {
         //XObject.extend(this, cfg);
         //this.files = { }; 
         this.paths.set(path, "dir");
-        
+        this.xtype = this.getXtype();
         this.scanDirs();
         
     }
