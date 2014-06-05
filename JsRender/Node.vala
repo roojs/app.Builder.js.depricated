@@ -347,7 +347,7 @@ public class JsRender.Node  {
 
     public void loadFromJson(Json.Object obj) {
         obj.foreach_member((o , key, value) => {
-			print(ke+"\n");
+			print(key+"\n");
             if (key == "items") {
                 var ar = value.get_array();
                 ar.foreach_element( (are, ix, el) => {
@@ -359,7 +359,7 @@ public class JsRender.Node  {
             }
             if (key == "listeners") {
                 var li = value.get_object();
-                obj.foreach_member((lio , li_key, li_value) => {
+                li.foreach_member((lio , li_key, li_value) => {
                     this.listeners.set(li_key, li_value.get_string());
 
                 });
@@ -372,6 +372,10 @@ public class JsRender.Node  {
 
 
     }
-    
+    Json.Object toJsonObject()
+	{
+		
+
+	}
     
 }
