@@ -233,7 +233,7 @@ public class JsRender.Node  {
             
             if (isListener) {
             // change the lines...
-                            
+                /*           
                 string str = "";
                 try {
                     str = func_regex.replace(v,v.length, 0, "");
@@ -241,9 +241,9 @@ public class JsRender.Node  {
                     print("regex failed");
                     return "";
                 }
-                
-                var lines = str.split("\n");
-                if (lines.length > 1) {
+                */
+                var lines = v.split("\n");
+                if (lines.length > 0) {
                     str = string.join("\n" + pad, lines);
                 }
                 
@@ -257,7 +257,7 @@ public class JsRender.Node  {
                 if (v.length < 1) {  //if (typeof(el) == 'string' && !obj[i].length) { //skip empty.
                     continue;
                 }
-                
+    			print(v);
                 string str = "";
                 try {
                     str = func_regex.replace(v,v.length, 0, "");
@@ -270,7 +270,7 @@ public class JsRender.Node  {
                 if (lines.length > 0) {
                     str =  string.join("\n" + pad, lines);
                 }
-                
+                print("==> " +  str + "\n");
                 els.append(left + str);
                 continue;
             }
