@@ -630,7 +630,7 @@ namespace JsRender {
 				args.append(this.valueTypeToString(pv, piter.getValue().type));
 				
             }
-            ret += ipad + "this.el = new " + cls + "( "+ string.join(", ", args) + " );\n" ;
+            return ret + string.join(", ", args) + " );\n" ;
 
         } else {
             ret += ipad + "this.el = new " + cls + "();\n" ;
