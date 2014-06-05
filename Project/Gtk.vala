@@ -4,7 +4,7 @@
 
 namespace Project {
   static int gtk_id = 1;
-  public string xtype = "Gtk";
+  public const xtype = "Gtk";
 
   public class Gtk : Project
   {
