@@ -295,6 +295,7 @@ public class Project.Project {
                 }
                 
                 if (!Regex.match_simple("\\.bjs$", fn)) {
+					print("no a bjs\n");
                     continue;
                 }
                 /*
