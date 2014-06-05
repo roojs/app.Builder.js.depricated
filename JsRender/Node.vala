@@ -45,22 +45,32 @@ public class JsRender.Node  {
     public string get(string key)
     {
         var k = this.props.get(key);
-        if (k == null) {
-			k = this.props.get("|" + key);
-			if (k == null) {
-				
-        		return "";
-			}
-        }
-        return k;
+        if (k != null) {
+			return k;
+		}
+		
+		k = this.props.get("|" + key);
+		if (k != null) {
+			
+    		return k;
+		}
+        
+        return "";
         
     }
      
     /* creates javascript based on the rules */
     public Node? findProp(string n) {
-		for(var i=0;i< this.items.length;i++) {
-			
+		for(var i=0;i< this.items.length();i++) {
+			var p = this.items.nth_data(i).get("*prop");
+			if (this.items.nth_data(i).get("*prop").length < 1) {
+				continue;
+			}
+			if (p == n) {
+				return this.items.nth_data(i);
+			}
 		}
+		return null;
 
 	}
   
