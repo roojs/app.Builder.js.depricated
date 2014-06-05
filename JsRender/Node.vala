@@ -275,7 +275,7 @@ public class JsRender.Node  {
                 if (lines.length > 0) {
                     str =  string.joinv("\n" + pad, lines);
                 }
-                print("==> " +  str + "\n");
+                //print("==> " +  str + "\n");
                 els.append(left + str);
                 continue;
             }
@@ -332,6 +332,11 @@ public class JsRender.Node  {
         
             
         }
+		// finally munge the children...
+
+
+
+			
         if (els.length() < 1) {
             return "";
         }
