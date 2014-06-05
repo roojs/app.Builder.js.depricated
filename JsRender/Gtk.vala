@@ -343,7 +343,7 @@ namespace JsRender {
                 if (k[0] != '.') {
                     continue;
                 }
-                if (k == ".ctor") {
+                if (k == "ctor") {
                     continue; 
                 }
                 
@@ -595,12 +595,16 @@ namespace JsRender {
         
          
     }
-	string nodeToValaNew(Node n)
+	string nodeToValaNew(Node node)
 	{
 		var ret = "new ";
 		ret += node.fqn() "(";
 		// what are the args required for this type of ctor...
+		var ctors = this.palete.getPropertiesFor(node.fqn(),  "ctor");
+		var m = node.get("ctor")
 		
+		
+            
 
 
 
