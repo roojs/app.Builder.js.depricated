@@ -267,7 +267,7 @@ public class JsRender.Node  {
                 }
                 
                 var lines = str.split("\n");
-                if (lines.length > 1) {
+                if (lines.length > 0) {
                     str =  string.join("\n" + pad, lines);
                 }
                 
