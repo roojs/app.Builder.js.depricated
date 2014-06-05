@@ -632,11 +632,9 @@ namespace JsRender {
             }
             return ret + string.join(", ", args) + " );\n" ;
 
-        } else {
-            return ret +  ");\n" ;
+        } 
+        return ret +  ");\n" ;
 
-        }
-		
             
 
 
