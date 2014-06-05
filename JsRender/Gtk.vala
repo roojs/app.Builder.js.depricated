@@ -615,7 +615,7 @@ namespace JsRender {
 				string pv = node.get(piter.get_key());
 				if (pv.length < 1) {
 					// try and find the 'item'....
-					Node pvi = item.findProp(piter.get_key());
+					Node pvi = node.findProp(piter.get_key());
 					if (pvi == null) {
 						args.append("null"); // hopefully...
 						continue;
