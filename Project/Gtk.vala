@@ -9,7 +9,7 @@ namespace Project {
 
   public class Gtk : Project
   {
-	 public string gtk = "xtype";
+	 public string xtype = "Gtk";
 	  
      public Gtk(string path) {
 		  
@@ -21,8 +21,6 @@ namespace Project {
           // various loader methods..
         
      }
-	 construct {
-		   this.xtype = "Gtk";
-	 }
+	 
   }
 }
