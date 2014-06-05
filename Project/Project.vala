@@ -100,6 +100,10 @@ public class Project.Project {
         var  generator = new Json.Generator ();
         var  root = builder.get_root ();
         generator.set_root (root);
+		if (show_all) {
+			generator.pretty = true;
+			generator.indent = 4;
+		}
 
         return  generator.to_data (null);
 	      
