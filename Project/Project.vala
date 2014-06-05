@@ -12,7 +12,7 @@
  */
 
 
-public class Project.Project {
+public class Project.Project : Object {
     
     public signal void on_changed (); 
 	
@@ -36,15 +36,13 @@ public class Project.Project {
         //XObject.extend(this, cfg);
         //this.files = { }; 
         this.paths.set(path, "dir");
-        this.xtype = this.getXtype();
+        
 	}
 	construct {
         this.scanDirs();
         
     }
-    string getXtype() {
-		return "??";
-	}
+    
     
     /*
     public load
