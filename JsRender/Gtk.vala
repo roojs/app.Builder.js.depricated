@@ -599,9 +599,42 @@ namespace JsRender {
 		// what are the args required for this type of ctor...
 		var ctors = this.palete.getPropertiesFor(node.fqn(),  "ctor");
 		string ctor = item.get("*ctor").length > 0 ? item.get("(ctor") : "new";
-		var def = ctors.get(ctor);
+ 
 		
-		
+		var ctor_def = ctors.get(ctor);
+			
+
+		if (ctor_def.paramset != null)  {
+
+			var argid = 1;
+            var args = new GLib.List<string>();
+			var piter = ctor_def.paramset.params.map_iterator();
+			while (piter.next()) {
+
+				// need piter.get_key(); -- string..
+				string pv = item.get(piter.get_key());
+				if (pv.length < 1) {
+					// try and find the 'item'....
+					Node pvi = item.findProp(piter.get_key());
+					if (pvi == null) {
+						args.append("null"); // hopefully...
+						continue;
+					}
+					var var_id = "xxx%d".printf( argid++ );
+					ret+= pad + "var "+ var_id + " = new "  + this.nodeToValaNew(pvi) +"\n";
+					args.append(var_id);
+					continue;
+				} 
+				// got a string value..
+				args.append(this.valueTypeToString(pv, piter.getValue().type));
+				
+            }
+            ret += ipad + "this.el = new " + cls + "( "+ string.join(", ", args) + " );\n" ;
+
+        } else {
+            ret += ipad + "this.el = new " + cls + "();\n" ;
+
+        }
 		
             
 
