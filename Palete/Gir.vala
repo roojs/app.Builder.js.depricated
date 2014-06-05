@@ -89,7 +89,8 @@ namespace Palete {
 			pcls.overlayParent( );
 			this.copyFrom(pcls,false);
 			for(var i=0; i < this.implements.length(); i++) {
-				var picls = this.clsToObject(this.implements.nth_data(i));
+				var clsname = this.implements.nth_data(i);
+				var picls = this.clsToObject(clsname);
 				this.copyFrom(picls,true);
 			}
 			this.is_overlaid = true;
@@ -99,9 +100,9 @@ namespace Palete {
 		{
 			var pn = in_pn;
 			var gir = Gir.factory (this.ns);
-			if (this.parent.contains(".")) {
-				gir =  Gir.factory(parent.split(".")[0]);
-				pn = parent.split(".")[1];
+			if (in_pn.contains(".")) {
+				gir =  Gir.factory(in_pn.split(".")[0]);
+				pn = in_pn.split(".")[1];
 			}
 			
 			return gir.classes.get(pn);
@@ -257,13 +258,13 @@ namespace Palete {
 
 
 			base("Package",ns);
-			
+				this.ns = ns;
             //this.nodes = new Gee.Hashmap<string,what>();
              
             var doc = Xml.Parser.parse_file (file);
             var root = doc->get_root_element();
             this.walk( root, (GirObject) this );
-			this.ns = ns;
+		
             delete doc;
         
         }
