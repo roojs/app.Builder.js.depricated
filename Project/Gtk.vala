@@ -5,7 +5,7 @@
 namespace Project {
   static int gtk_id = 1;
 
-  public xtype {
+  public string xtype {
 	  get { return "Gtk"; }
   }
 

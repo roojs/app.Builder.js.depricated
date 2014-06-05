@@ -24,7 +24,7 @@ public class Project.Project {
     //tree : false,
     public string xtype {
 	   get { return "??"; }
-  }
+   }
     
     
     public Project (string path) {
