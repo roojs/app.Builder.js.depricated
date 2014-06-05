@@ -12,6 +12,7 @@ all:
 		JsRender/*.vala \
 		Project/*.vala \
 		Palete/*.vala \
+		Test.GtkWriter.vala
 		-o /tmp/test
 #		Builder4/*.vala \
 
