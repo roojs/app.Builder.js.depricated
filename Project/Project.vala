@@ -96,13 +96,12 @@ public class Project.Project : Object {
 		if (show_all) {
 			builder.set_member_name ("files");
 			builder.begin_array ();
-		    
-		    
-		    
-		    for(var i=0;i<this.files.length();i++) {
-				var f = this.files.nth_data(i);
-				builder.add_string_value (f.path);
+		    var fiter = this.files.map_iterator();
+		    while (fiter.next()) {
+		        builder.add_string_value (fiter.get_key());
 		    }
+		    
+		    
 		    builder.end_array ();
 		}
 
