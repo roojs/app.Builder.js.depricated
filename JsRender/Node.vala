@@ -438,6 +438,7 @@ public class JsRender.Node  {
 		
  
 	}
+	// note generator seems not always generate quoted strings even if we add double/bool memebers..
 	public void jsonObjectsetMember(Json.Object o, string key, string val) {
 		if (Lang.isBoolean(val)) {
 			o.set_boolean_member(key, val == "false" ? false : true);
@@ -456,7 +457,7 @@ public class JsRender.Node  {
 			o.set_int_member(key,long.parse(val));
 			return;
 		}
-		print( "ADD " + key + "=" + val + " as a string?\n");
+		///print( "ADD " + key + "=" + val + " as a string?\n");
 		o.set_string_member(key,val);
 		
 	}
