@@ -336,6 +336,8 @@ public class JsRender.Node  {
 
 		if (this.listeners.size > 0) {
 			// munge the listeners.
+			print("ADDING listeners?");
+			
 			var liter = this.listeners.map_iterator();
 		
 		    var itms = "listeners : {\n";
@@ -344,7 +346,7 @@ public class JsRender.Node  {
 				
 				itms += i >0 ? ",\n" : "";    
 				// 
-				itms += pad + "    "  + liter.get_key(); + " : " + liter.get_value();
+				itms +=  pad + "    "  + liter.get_key()  + " : " + liter.get_value();
 
 				i++;
 			
