@@ -334,23 +334,24 @@ public class JsRender.Node  {
         }
 
 
-		if (this.listeners.size()>
-		// munge the listeners.
-		var liter = this.listeners.map_iterator();
+		if (this.listeners.size()> 0) {
+			// munge the listeners.
+			var liter = this.listeners.map_iterator();
 		
-		
-        while (iter.next()) {
-			var itms = "listeners : {\n";
-			
-				// 
-				itms +=    pad + "    "  +
-					this.items.nth_data(i).mungeToString(false, pad + "        ",  doubleStringProps) + "\n";
+		    var itms = "listeners : {\n";
+			var i =0;
+		    while (iter.next()) {
+				
+					itms += i >0 ? ",\n" : "";    
+					// 
+					itms +=    pad + "    "  +
+						iter.get_key() + " : " + iter.get_value();
 
-
+					i++;
+				}
+				
 			}
 			els.append(itms);
-		}
-
 
 
 
