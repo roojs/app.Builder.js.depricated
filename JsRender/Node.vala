@@ -351,7 +351,7 @@ public class JsRender.Node  {
 			
 				
 			}
-			items = "\n" + pad + "}";
+			itms = "\n" + pad + "}";
 			els.append(itms);
 
 		}
