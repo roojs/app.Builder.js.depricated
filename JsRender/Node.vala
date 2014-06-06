@@ -342,19 +342,19 @@ public class JsRender.Node  {
 			var i =0;
 		    while (iter.next()) {
 				
-					itms += i >0 ? ",\n" : "";    
-					// 
-					itms +=    pad + "    "  +
-						iter.get_key() + " : " + iter.get_value();
+				itms += i >0 ? ",\n" : "";    
+				// 
+				itms +=    pad + "    "  +
+					iter.get_key() + " : " + iter.get_value();
 
-					i++;
-				}
+				i++;
+			
 				
 			}
 			items = "\n" + pad + "}";
 			els.append(itms);
 
-
+		}
 
 
 		
