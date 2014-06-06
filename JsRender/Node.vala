@@ -412,10 +412,7 @@ public class JsRender.Node  {
     public Json.Object toJsonObject()
 	{
 		var ret = new Json.Object();
-	    var iter = this.props.map_iterator();
-        while (iter.next()) {
-			ret.set_string_member(iter.get_key(), iter.get_value());
-		}
+
 		// listeners...
 		var li = new Json.Object();
 		ret.set_object_member("listeners", li);
@@ -423,6 +420,13 @@ public class JsRender.Node  {
         while (liter.next()) {
 			li.set_string_member(liter.get_key(), liter.get_value());
 		}
+
+		//props
+	    var iter = this.props.map_iterator();
+        while (iter.next()) {
+			this.jsonObjectsetMember(ret, iter.get_key(), iter.get_value());
+		}
+		
 		var ar = new Json.Array();
 		ret.set_array_member("items", ar);
 		
@@ -432,9 +436,29 @@ public class JsRender.Node  {
         }
 		return ret;
 		
-
+ 
+	}
+	public void jsonObjectsetMember(Json.Object o, string key, string val) {
+		if (Lang.isBoolean(val)) {
+			o.set_boolean_member(key, val == "false" ? false : true);
+			return;
+		}
 		
+		
+		if (Lang.isNumber(val)) {
+			if (val.contains(".")) {
+				//print( "ADD " + key + "=" + val + " as a double?\n");
+				o.set_double_member(key, double.parse (val));
+				return;
 
+			}
+			//print( "ADD " + key + "=" + val + " as a int?\n")  ;
+			o.set_int_member(key,long.parse(val));
+			return;
+		}
+		print( "ADD " + key + "=" + val + " as a string?\n");
+		o.set_string_member(key,val);
+		
 	}
     
 }

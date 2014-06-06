@@ -26,12 +26,12 @@ namespace JsRender {
         public Lang_Class ()
         {
             if (Lang != null) {
-                print("lang not null\n");
+                //print("lang not null\n");
                 return;
             }
-            print("init\n");
+            //print("init\n");
             this.init();
-            print("init Lang");
+            //print("init Lang");
             Lang = this;
             
         }
@@ -64,7 +64,7 @@ namespace JsRender {
         }
         
         public bool isNumber (string str) {
-            return Regex.match_simple("^(.[0-9]|[0-9]+.|[0-9])[0-9]*([eE][+-][0-9]+)?$",str);
+            return Regex.match_simple("^(\\.[0-9]|[0-9]+\\.|[0-9])[0-9]*([eE][+-][0-9]+)?$",str);
         }
     
         public bool  isHexDec (string str) {

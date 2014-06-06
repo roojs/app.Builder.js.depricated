@@ -258,7 +258,7 @@ public class Project.Project : Object {
     {
         var iter = this.paths.map_iterator();
         while (iter.next()) {
-			print("path: " + iter.get_key() + " : " + iter.get_value() +"\n");
+			//print("path: " + iter.get_key() + " : " + iter.get_value() +"\n");
             if (iter.get_value() != "dir") {
                 continue;
             }
@@ -271,7 +271,7 @@ public class Project.Project : Object {
     public void scanDir(string dir, int dp =0 ) 
     {
         //dp = dp || 0;
-        print("Project.Base: Running scandir on " + dir +"\n");
+        //print("Project.Base: Running scandir on " + dir +"\n");
         if (dp > 5) { // no more than 5 deep?
             return;
         }
@@ -288,7 +288,7 @@ public class Project.Project : Object {
                 var fn = next_file.get_display_name();
         
                  
-                print("trying"  + dir + "/" + fn +"\n");
+                //print("trying"  + dir + "/" + fn +"\n");
                 
                 if (fn[0] == '.') { // skip hidden
                     continue;
@@ -300,7 +300,7 @@ public class Project.Project : Object {
                 }
                 
                 if (!Regex.match_simple("\\.bjs$", fn)) {
-					print("no a bjs\n");
+					//print("no a bjs\n");
                     continue;
                 }
                 /*
