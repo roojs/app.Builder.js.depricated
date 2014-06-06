@@ -9,7 +9,7 @@ void diff(string original, string data)
 {
 	
 	FileUtils.set_contents("/tmp/test.out",data);
-	string[] spawn_args = {"diff", "-w" , "-u", original, "/tmp/out.bjs" };
+	string[] spawn_args = {"diff", "-w" , "-u", original, "/tmp/test.out" };
 	
 	
 	string[] spawn_env = Environ.get ();
@@ -53,8 +53,8 @@ public static int main () {
     new JsRender.Lang_Class();
 	GLib.Log.set_always_fatal(LogLevelFlags.LEVEL_ERROR | LogLevelFlags.LEVEL_CRITICAL); 
 
-	testBuilderFile("Editor", "JSON");
-	//testBuilderFile("Editor", "JS");
+	//testBuilderFile("Editor", "JSON");
+	testBuilderFile("Editor", "JS");
 	//testBuilderFile("Editor", "VALA");
 
     
