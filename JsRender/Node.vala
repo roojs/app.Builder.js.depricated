@@ -334,7 +334,7 @@ public class JsRender.Node  {
         }
 
 
-		if (this.listeners.size()> 0) {
+		if (this.listeners.size() > 0) {
 			// munge the listeners.
 			var liter = this.listeners.map_iterator();
 		
