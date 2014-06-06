@@ -336,7 +336,7 @@ public class JsRender.Node  {
 
 		if (this.listeners.size > 0) {
 			// munge the listeners.
-			print("ADDING listeners?");
+			//print("ADDING listeners?");
 			
 			var liter = this.listeners.map_iterator();
 		
@@ -346,13 +346,22 @@ public class JsRender.Node  {
 				
 				itms += i >0 ? ",\n" : "";    
 				// 
-				itms +=  pad + "    "  + liter.get_key()  + " : " + liter.get_value();
+				var str = liter.get_value().strip();
+                var lines = str.split("\n");
+                if (lines.length > 0) {
+                    str = string.joinv("\n" + pad + "       ", lines);
+                }
+                
+
+				
+				itms +=  pad + "    "  + liter.get_key()  + " : " + str;
 
 				i++;
 			
 				
 			}
-			itms = "\n" + pad + "}";
+			itms += "\n" + pad + "}";
+			//print ( "ADD " + itms); 
 			els.append(itms);
 
 		}
@@ -369,6 +378,7 @@ public class JsRender.Node  {
 
 
 			}
+			
 			els.append(itms);
 		}
 
