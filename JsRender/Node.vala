@@ -332,6 +332,30 @@ public class JsRender.Node  {
         
             
         }
+
+
+		if (this.listeners.size()>
+		// munge the listeners.
+		var liter = this.listeners.map_iterator();
+		
+		
+        while (iter.next()) {
+			var itms = "listeners : {\n";
+			
+				// 
+				itms +=    pad + "    "  +
+					this.items.nth_data(i).mungeToString(false, pad + "        ",  doubleStringProps) + "\n";
+
+
+			}
+			els.append(itms);
+		}
+
+
+
+
+
+		
 		// finally munge the children...
 		if (this.items.length()> 0) {
 			var itms = "items : [\n";
