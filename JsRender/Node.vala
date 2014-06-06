@@ -340,11 +340,11 @@ public class JsRender.Node  {
 		
 		    var itms = "listeners : {\n";
 			var i =0;
-		    while (iter.next()) {
+		    while (liter.next()) {
 				
 				itms += i >0 ? ",\n" : "";    
 				// 
-				itms += pad + "    "  + iter.get_key() + " : " + iter.get_value();
+				itms += pad + "    "  + liter.get_key(); + " : " + liter.get_value();
 
 				i++;
 			
