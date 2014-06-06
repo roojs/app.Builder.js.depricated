@@ -344,8 +344,7 @@ public class JsRender.Node  {
 				
 				itms += i >0 ? ",\n" : "";    
 				// 
-				itms +=    pad + "    "  +
-					iter.get_key() + " : " + iter.get_value();
+				itms += pad + "    "  + .get_key() + " : " + iter.get_value();
 
 				i++;
 			
