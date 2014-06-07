@@ -515,7 +515,7 @@ namespace JsRender {
             
                 ret+= "\n" + ipad + "// listeners \n";  
                 // add all the signal handlers..
-				var ltier = item.listeners.map_iterator();
+				var liter = item.listeners.map_iterator();
 				while (liter.next()) {
 					var vv = string.joinv("\n" + pad, liter.get_value().split("\n"));
 				    ret+= ipad + "this.el." + k + ".connect( " + vv  + " );\n";
