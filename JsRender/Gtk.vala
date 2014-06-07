@@ -394,6 +394,9 @@ namespace JsRender {
 						continue;
 					} 
 					// got a string value..
+					ret += "// for " +piter.get_key() + " we have a value of " + 
+							pv + " converting to " + piter.get_value().type;
+					
 					args.append(this.valueTypeToString(pv, piter.get_value().type));
 					
                 }
@@ -652,16 +655,16 @@ namespace JsRender {
 
 	}
 		
-		string valueTypeToString(string val, string type) {
-			switch(type) {
-				case "utf8":
-					return "\"" +  val.escape("") + "\"";
-				default:
-					return val;
-
-			}
+	string valueTypeToString(string val, string type) {
+		switch(type) {
+			case "utf8":
+				return "\"" +  val.escape("") + "\"";
+			default:
+				return val;
 
 		}
+
+	}
 
 		
 
