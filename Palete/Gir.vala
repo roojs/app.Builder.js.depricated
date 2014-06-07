@@ -43,7 +43,7 @@ namespace Palete {
         public  string value;
 
 		bool is_overlaid;
-        public Gee.HashMap<string,GirObject> params;
+        public GLib.List<GirObject> params;
         public GLib.List<string> implements;
 		public GLib.List<string> inherits; // full list of all classes and interfaces...
         public Gee.HashMap<string,GirObject> ctors;
