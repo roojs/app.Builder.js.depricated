@@ -234,6 +234,15 @@ namespace Palete {
             }
             return r;
         }
+		public Json.Array toJSONArrayObjectGLib.List<GirObject> map)
+        {
+            var r = new Json.Array();
+            for(var i =0;i< map.length();i++) {
+            
+                r.add_object_element(this.map.nth_data().toJSON());
+            }
+            return r;
+        }
     }
     
      
