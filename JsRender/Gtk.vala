@@ -380,6 +380,7 @@ namespace JsRender {
 					if (pv.length < 1) {
 						// try and find the 'item'....
 						Node pvi = item.findProp(piter.get_key());
+						ret += "// could not find " + piter.get_key();
 						if (pvi == null) {
 							args.append("null"); // hopefully...
 							continue;
