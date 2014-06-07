@@ -1,6 +1,6 @@
 
 // valac -g  --pkg gee-1.0 --pkg libxml-2.0 --pkg gobject-introspection-1.0 --pkg json-glib-1.0  Palete/Gir.vala -o /tmp/Gir
- 
+/* 
 public static int main (string[] args) {
     
     var g = Palete.Gir.factory("Gtk");
@@ -17,7 +17,7 @@ public static int main (string[] args) {
     print(generator.to_data(null));
     return 0;
 }
- 
+ */
 namespace Palete {
 	public errordomain GirError {
         INVALID_TYPE,
