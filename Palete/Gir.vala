@@ -1,6 +1,6 @@
 
 // valac -g  --pkg gee-1.0 --pkg libxml-2.0 --pkg gobject-introspection-1.0 --pkg json-glib-1.0  Palete/Gir.vala -o /tmp/Gir
-
+/*
 public static int main (string[] args) {
     
     var g = Palete.Gir.factory("Gtk");
@@ -17,7 +17,7 @@ public static int main (string[] args) {
     print(generator.to_data(null));
     return 0;
 }
-
+*/
 namespace Palete {
 	public errordomain GirError {
         INVALID_TYPE,
@@ -88,7 +88,7 @@ namespace Palete {
 				this.is_overlaid = true;
 				return;
 			}
-			print("Overlaying " +this.name + " with " + this.parent + "\n");
+			// print("Overlaying " +this.name + " with " + this.parent + "\n");
 
 			var pcls = this.clsToObject( this.parent);
 			if (pcls == null) {
@@ -129,7 +129,7 @@ namespace Palete {
 			this.inherits.append(pcls.fqn());
 			var iter = pcls.methods.map_iterator();
 			while(iter.next()) {
-                if (null == this.methods.get(iter.get_key())) {
+                if (null != this.methods.get(iter.get_key())) {
 					continue;
 				}
 				
@@ -138,7 +138,7 @@ namespace Palete {
 			
 			iter = pcls.props.map_iterator();
 			while(iter.next()) {
-                if (null == this.props.get(iter.get_key())) {
+                if (null != this.props.get(iter.get_key())) {
 					continue;
 				}
 				
@@ -147,7 +147,7 @@ namespace Palete {
 			
 			iter = pcls.signals.map_iterator();
 			while(iter.next()) {
-                if (null == this.signals.get(iter.get_key())) {
+                if (null != this.signals.get(iter.get_key())) {
 					continue;
 				}
 				
@@ -275,9 +275,9 @@ namespace Palete {
 		    var gir_path = pth.nth_data(0).replace("/lib/girepository-1.0", "/share/gir-1.0");
 		   //console.log(fn);
 		    var file  = gir_path + "/" + ns + "-" + ver + ".gir";
-			print("ns: " + ns + "\n");
-			print("ver: " + ver + "\n");
-		    print(file);
+			// print("ns: " + ns + "\n");
+			// print("ver: " + ver + "\n");
+		    // print(file);
 
 
 			base("Package",ns);
@@ -484,7 +484,7 @@ namespace Palete {
                 case "prerequisite": // ignore?
                     return;
                 default:
-                    print("UNHANDLED" + element->name +"\n");
+                    print("UNHANDLED Gir file element: " + element->name +"\n");
                     return;
             }
             /*
