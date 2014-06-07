@@ -87,7 +87,7 @@ namespace Palete {
 
 			var pcls = this.clsToObject( this.parent);
 			if (pcls == null) {
-				throw new Error.INVALID_VALUE("Could not find class : " + 
+				throw new GirError.INVALID_VALUE("Could not find class : " + 
 					this.parent + " of " + this.name  + " in " + this.ns);
 			}
 			
