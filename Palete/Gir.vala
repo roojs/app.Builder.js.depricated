@@ -69,7 +69,7 @@ namespace Palete {
 			this.inherits  = new GLib.List<string>();
             this.includes   = new Gee.HashMap<string,string>();
             
-            this.params = new GLib.List<string,GirObject>();
+            this.params = new GLib.List<GirObject>();
             this.ctors      = new Gee.HashMap<string,GirObject>();
             this.methods    =new Gee.HashMap<string,GirObject>();
            
