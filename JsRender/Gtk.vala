@@ -455,15 +455,15 @@ namespace JsRender {
 			var pviter = props.map_iterator();
 			while (pviter.next()) {
 
-				print("Check: " cls + "::" +pviter.get_key() + " " );
+				// print("Check: " +cls + "::(" + pviter.get_value().propertyof + ")" + pviter.get_key() + " " );
 				
         		// skip items we have already handled..
         		if  (!(citems.get(pviter.get_key()) == false)) {
-					print("- skip already handled\n " );
+					//print("- skip already handled\n " );
                     continue;
                 }
 				if (item.get(pviter.get_key()).length < 1) {
-					print("- skip not found\n " );
+					//print("- skip not found\n " );
 					continue;
 				}
 				
