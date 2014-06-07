@@ -418,6 +418,7 @@ namespace Palete {
                 case "field":
                     var c = new GirObject("Prop",n.replace("-", "_"));
 					c.ns = this.ns;
+					c.propertyof = parent.name;
                     parent.props.set(n.replace("-", "_"),c);
                     parent = c;
                     break;
