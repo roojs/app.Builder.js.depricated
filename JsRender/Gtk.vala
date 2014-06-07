@@ -512,36 +512,15 @@ namespace JsRender {
             
             if (item.listeners.size > 0) {
             //    print(JSON.stringify(item.listeners));Seed.quit();
-            /*
-                strbuilder("\n" + ipad + "// listeners \n");  
+            
+                ret+= "\n" + ipad + "// listeners \n";  
                 // add all the signal handlers..
-                for (var k in item.listeners) {
-                    
-                    
-                    var v = item.listeners[k].split(/\/*--/);
-                    if (v.length < 2) {
-                        var vv = v[0].replace(/^function/, '');
-                        vv = vv.replace(/\) \{/, ') => {');
-                        vv = vv.replace(/^\n+/,'');
-                        vv = vv.replace(/\n+$/,'');
-                        vv = vv.replace(/\n/g,"\n" + ipad);
-                        
-                        
-                        
-                        
-                        
-                        //continue;
-                    } else { 
-                        
-                        //print(JSON.stringify(vv));Seed.quit();
-                        vv = vv.replace(/^\n+/,'');
-                        vv = vv.replace(/\n+$/,'');
-                        vv = vv.replace(/\n/g,"\n" + ipad);
-                    }
-                    strbuilder(ipad + "this.el." + k + ".connect( " + vv  + " );\n");
-                    
+				var ltier = item.listeners.map_iterator();
+				while (liter.next()) {
+					var vv = string.joinv("\n" + pad, liter.get_value().split("\n"));
+				    ret+= ipad + "this.el." + k + ".connect( " + vv  + " );\n";
                 }
-			*/
+			 
             }    
                 
             
