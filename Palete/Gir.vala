@@ -4,7 +4,7 @@
 public static int main (string[] args) {
     
     var g = Palete.Gir.factory("Gtk");
-	var test = g.classes.get("Gtk.Window");
+	var test = g.classes.get("Window");
 	
 	
     var generator = new Json.Generator ();
@@ -19,7 +19,12 @@ public static int main (string[] args) {
 }
 
 namespace Palete {
-
+	public errordomain GirError {
+        INVALID_TYPE,
+        NEED_IMPLEMENTING,
+		MISSING_FILE,
+		INVALID_VALUE
+    }
     public class GirObject: Object {
         public string name;
 		public string ns;
