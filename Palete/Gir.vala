@@ -83,12 +83,12 @@ namespace Palete {
 
 		public void  overlayParent()
 		{
-
+			
 			if (this.parent.length < 1 || this.is_overlaid) {
 				this.is_overlaid = true;
 				return;
 			}
-			//print(this.parent);
+			print("Overlaying " +this.name + " with " + this.parent);
 
 			var pcls = this.clsToObject( this.parent);
 			if (pcls == null) {
