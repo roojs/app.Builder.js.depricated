@@ -603,7 +603,7 @@ namespace JsRender {
 				for (var i = 0; i < ctor_def.paramset.params.length(); i++)  
 					// need piter.get_key(); -- string..
 					var val = ctor_def.paramset.params.nth_data(i);
-					var kn = ctor_def.paramset.params.nth_data(i).name;
+					var kn = val.name;
 					string pv = node.get(kn);
 					if (pv.length < 1) {
 						// try and find the 'item'....
