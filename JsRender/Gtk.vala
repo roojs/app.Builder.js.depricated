@@ -372,14 +372,15 @@ namespace JsRender {
 
 				var argid = 1;
                 var args = new GLib.List<string>();
-				var piter = ctor_def.paramset.params.map_iterator();
-    			while (piter.next()) {
 
+				for (var i = 0;i< ctor_def.paramset.params.length(); i++) {
+					
+					var nm = ctor_def.paramset.params.nth_data().name
 					// need piter.get_key(); -- string..
-					string pv = item.get(piter.get_key());
+					string pv = item.get(nm);
 					if (pv.length < 1) {
 						// try and find the 'item'....
-						Node pvi = item.findProp(piter.get_key());
+						Node pvi = item.findProp(nm);
 						
 						if (pvi == null) {
 							ret += "// could not find value for   " + piter.get_key() +"\n";
