@@ -383,7 +383,7 @@ namespace JsRender {
 						Node pvi = item.findProp(nm);
 						
 						if (pvi == null) {
-							ret += "// could not find value for   " + piter.get_key() +"\n";
+							ret += "// could not find value for   " + nm +"\n";
 							
 							args.append("null"); // hopefully...
 							continue;
@@ -397,7 +397,7 @@ namespace JsRender {
 						continue;
 					} 
 					// got a string value..
-					ret += "// for " +piter.get_key() + " we have a value of " + 
+					ret += "// for " nm + " we have a value of " + 
 							pv + " converting to " + piter.get_value().type +"\n";
 					
 					args.append(this.valueTypeToString(pv, piter.get_value().type));
