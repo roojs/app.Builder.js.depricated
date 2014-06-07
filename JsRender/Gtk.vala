@@ -455,7 +455,7 @@ namespace JsRender {
 			var pviter = props.map_iterator();
 			while (pviter.next()) {
 
-				print("Check: " +pviter.get_key() + " " );
+				print("Check: " cls + "::" +pviter.get_key() + " " );
 				
         		// skip items we have already handled..
         		if  (!(citems.get(pviter.get_key()) == false)) {
