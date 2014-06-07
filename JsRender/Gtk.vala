@@ -375,7 +375,7 @@ namespace JsRender {
 
 				for (var i = 0;i< ctor_def.paramset.params.length(); i++) {
 					var val = ctor_def.paramset.params.nth_data(); 
-					var nm = val.name
+					var nm = val.name;
 					// need piter.get_key(); -- string..
 					string pv = item.get(nm);
 					if (pv.length < 1) {
