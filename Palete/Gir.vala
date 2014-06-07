@@ -3,7 +3,10 @@
 /* 
 public static int main (string[] args) {
     
-    var g = new Palete.Gir("Gtk");
+    var g = Palete.Gir.factory("Gtk");
+	var test = g.classes.get("Gtk.Window");
+	
+	
     var generator = new Json.Generator ();
     var n = new Json.Node(Json.NodeType.OBJECT);
     n.set_object(g.toJSON());
@@ -361,9 +364,9 @@ namespace Palete {
                     break;
                 */
                 case "signal": // Glib:signal
-                    var c = new GirObject("Signal",n);
+                    var c = new GirObject("Signal",n.replace("-", "_"));
 					c.ns = this.ns;
-                    parent.signals.set(n,c);
+                    parent.signals.set(n.replace("-", "_"),c);
                     parent = c;
                     break;
                     
