@@ -374,8 +374,8 @@ namespace JsRender {
                 var args = new GLib.List<string>();
 
 				for (var i = 0;i< ctor_def.paramset.params.length(); i++) {
-					
-					var nm = ctor_def.paramset.params.nth_data().name
+					var val = ctor_def.paramset.params.nth_data(); 
+					var nm = val.name
 					// need piter.get_key(); -- string..
 					string pv = item.get(nm);
 					if (pv.length < 1) {
@@ -398,9 +398,9 @@ namespace JsRender {
 					} 
 					// got a string value..
 					ret += "// for " nm + " we have a value of " + 
-							pv + " converting to " + piter.get_value().type +"\n";
+							pv + " converting to " + val.type +"\n";
 					
-					args.append(this.valueTypeToString(pv, piter.get_value().type));
+					args.append(this.valueTypeToString(pv, val.type));
 					
                 }
                 ret += ipad + "this.el = new " + cls + "( "+ this.gLibStringListJoin(", ", args) + " );\n" ;
