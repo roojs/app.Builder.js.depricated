@@ -23,6 +23,7 @@ namespace Palete {
     public class GirObject: Object {
         public string name;
 		public string ns;
+		public string propertyof;
         public string type;
         public string nodetype;
         public string  package;
