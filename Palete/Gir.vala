@@ -88,7 +88,7 @@ namespace Palete {
 				this.is_overlaid = true;
 				return;
 			}
-			print("Overlaying " +this.name + " with " + this.parent);
+			print("Overlaying " +this.name + " with " + this.parent + "\n");
 
 			var pcls = this.clsToObject( this.parent);
 			if (pcls == null) {
@@ -134,7 +134,8 @@ namespace Palete {
 				}
 				
 				this.methods.set(iter.get_key(), iter.get_value());
-            }	
+            }
+			
 			iter = pcls.props.map_iterator();
 			while(iter.next()) {
                 if (null == this.props.get(iter.get_key())) {
@@ -142,7 +143,8 @@ namespace Palete {
 				}
 				
 				this.props.set(iter.get_key(), iter.get_value());
-            }	
+            }
+			
 			iter = pcls.signals.map_iterator();
 			while(iter.next()) {
                 if (null == this.signals.get(iter.get_key())) {
