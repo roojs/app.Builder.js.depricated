@@ -158,6 +158,9 @@ namespace Palete {
             var r = new Json.Object();
             r.set_string_member("nodetype", this.nodetype);
             r.set_string_member("name", this.name);
+			if (this.propertyof.length > 0) {
+                r.set_string_member("of", this.propertyof);
+            }
             if (this.type.length > 0) {
                 r.set_string_member("type", this.type);
             }
