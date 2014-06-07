@@ -9,7 +9,7 @@ public static int main (string[] args) {
 	
     var generator = new Json.Generator ();
     var n = new Json.Node(Json.NodeType.OBJECT);
-    n.set_object(g.toJSON());
+    n.set_object(test.toJSON());
     generator.set_root(n);
     generator.indent = 4;
     generator.pretty = true;
