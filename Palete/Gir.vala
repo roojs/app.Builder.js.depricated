@@ -69,7 +69,7 @@ namespace Palete {
 			this.inherits  = new GLib.List<string>();
             this.includes   = new Gee.HashMap<string,string>();
             
-            this.params = new GLib.List<GirObject>();
+            this.params = new GLib.List<string,GirObject>();
             this.ctors      = new Gee.HashMap<string,GirObject>();
             this.methods    =new Gee.HashMap<string,GirObject>();
            
@@ -239,7 +239,7 @@ namespace Palete {
             var r = new Json.Array();
             for(var i =0;i< map.length();i++) {
             
-                r.add_object_element(this.map.nth_data().toJSON());
+                r.add_object_element(map.nth_data().toJSON());
             }
             return r;
         }
