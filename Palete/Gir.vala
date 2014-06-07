@@ -387,6 +387,7 @@ namespace Palete {
                 case "method":
                     var c = new GirObject("Method",n);
 					c.ns = this.ns;
+					c.propertyof = parent.name;
                     parent.methods.set(n,c);
                     parent = c;
                     break;
