@@ -56,6 +56,7 @@ namespace Palete {
 			this.ns = "";
             this.parent = "";
             this.type = "";
+			this.propertyof = "";
             this.is_array = false;
             this.is_instance = false;
             this.is_varargs = false;
