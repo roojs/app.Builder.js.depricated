@@ -397,7 +397,7 @@ namespace JsRender {
 						continue;
 					} 
 					// got a string value..
-					ret += "// for " nm + " we have a value of " + 
+					ret += "// for " + nm + " we have a value of " + 
 							pv + " converting to " + val.type +"\n";
 					
 					args.append(this.valueTypeToString(pv, val.type));
