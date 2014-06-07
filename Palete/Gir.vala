@@ -422,14 +422,14 @@ namespace Palete {
                     var c = new GirObject("Param",n);
 					c.ns = this.ns;
                     c.is_instance = true;
-                    parent.params.set(n,c);
+                    parent.params.append(c);
                     parent = c;
                     break;
                 
                 case "parameter":
                     var c = new GirObject("Param",n);
 					c.ns = this.ns;
-                    parent.params.set(n,c);
+                    parent.params.append(c);
                     parent = c;
                     break;
                 
