@@ -237,7 +237,15 @@ namespace Palete {
 			if (ret != null) {
 				return ret;
 			}
-			cache.set(ns, new Gir(ns));
+			var add = new Gir(ns);
+			cache.set(ns, add);
+			
+			var iter = add.classes.map_iterator();
+			while(iter.next()) {
+            	
+				iter.get_value().overlayParent();
+            }	
+
 			return cache.get(ns);
 			
 		}
@@ -402,9 +410,9 @@ namespace Palete {
                 
                 case "property":
                 case "field":
-                    var c = new GirObject("Prop",n);
+                    var c = new GirObject("Prop",n.replace("-", "_"));
 					c.ns = this.ns;
-                    parent.props.set(n,c);
+                    parent.props.set(n.replace("-", "_"),c);
                     parent = c;
                     break;
                 
