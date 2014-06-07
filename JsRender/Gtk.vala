@@ -380,8 +380,10 @@ namespace JsRender {
 					if (pv.length < 1) {
 						// try and find the 'item'....
 						Node pvi = item.findProp(piter.get_key());
-						ret += "// could not find " + piter.get_key();
+						
 						if (pvi == null) {
+							ret += "// could not find value for   " + piter.get_key() +"\n";
+							
 							args.append("null"); // hopefully...
 							continue;
 						}
@@ -395,7 +397,7 @@ namespace JsRender {
 					} 
 					// got a string value..
 					ret += "// for " +piter.get_key() + " we have a value of " + 
-							pv + " converting to " + piter.get_value().type;
+							pv + " converting to " + piter.get_value().type +"\n";
 					
 					args.append(this.valueTypeToString(pv, piter.get_value().type));
 					
