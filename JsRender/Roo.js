@@ -167,7 +167,7 @@ Roo = XObject.define(
             var aitems = [];
             var nitems = [];
             for (var ii = 0; ii < node.items.length;ii++) { 
-                var i = node.items[i]; 
+                var i = node.items[ii]; 
                 
                 _this.fixItems(i, true);
                 if (i.xtype == 'Array') {
