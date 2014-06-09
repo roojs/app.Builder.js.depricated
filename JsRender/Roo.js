@@ -166,7 +166,7 @@ Roo = XObject.define(
             var _this = this;
             var aitems = [];
             var nitems = [];
-            for (var ii = 0; ii < node.items.length;ii++)
+            for (var ii = 0; ii < node.items.length;ii++) { 
                 var i = node.items[i]; 
                 
                 _this.fixItems(i, true);
