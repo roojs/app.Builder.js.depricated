@@ -584,11 +584,11 @@ Gtk = XObject.define(
                 vv = vv.replace(/\n/g,"\n" + ipad);
                 
                 var vva = k.split(':');
-                var rtype = vva.shift();
+                var rtype = vva.shift().substring(1);
                 var body = vv;
                 var fname = vva.shift() || '???';
                 
-                strbuilder(pad + "public " + rtype + " " + fname.substring(1) + body + "\n");
+                strbuilder(pad + "public " + rtype + " " + fname + body + "\n");
                 
                 
                 
