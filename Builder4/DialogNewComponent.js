@@ -25,7 +25,7 @@ DialogNewComponent=new XObject({
         
                 if (DialogNewComponent.name.el.get_text().length  < 1) {
                     StandardErrorDialog.show(
-                        "You haDe to set Project name "
+                        "You have to set Project name "
                     );
                      
                     return;
