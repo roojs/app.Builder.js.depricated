@@ -120,6 +120,16 @@ public class Project.Project : Object {
 	      
           
     }
+    public string firstPath()
+    {
+        var iter = this.paths.map_iterator();
+        while (iter.next()) {
+            return iter.get_key();
+        }
+      
+        return "";
+    }
+    
     // returns the first path
     public string getName()
     {
