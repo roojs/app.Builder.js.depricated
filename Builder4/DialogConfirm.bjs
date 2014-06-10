@@ -6,7 +6,7 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.bjs",
     "items": [
         {
-            "|void:show_all": "function() {\n    this.show(\"test\");\n}\n/*--\nvoid () {\n    this.show(\"test\");\n}\n*/",
+            "|void:show_all": "void () {\n    this.show(\"test\");\n}\n ",
             "listeners": {
                 "delete_event": " (event) => {\n    this.el.hide();\n    return true;\n}\n \n\n\n"
             },

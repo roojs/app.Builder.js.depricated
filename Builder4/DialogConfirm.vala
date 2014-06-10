@@ -40,17 +40,6 @@ public class Xcls_MessageDialog1
         this.el.use_markup = true;
 
         // listeners 
-        this.el.response.connect(  ( response_id) =>  {
-           this.el.hide();
-            //print("RESPOSE: " + response_id);
-            if (response_id == -8) => { //yes!
-                   print("CALL SUCCES?");
-              // this.success();
-            }
-        
-        
-        }
-          );
         this.el.delete_event.connect(  (event) => {
             this.el.hide();
             return true;
@@ -59,6 +48,10 @@ public class Xcls_MessageDialog1
     }
 
     // userdefined functions 
+    public void show_allvoid () {
+            this.show("test");
+        }
+         
 
     // skip listeners - not pipe 
 
@@ -81,14 +74,6 @@ public class Xcls_MessageDialog1
         
         }
          
-    public void show_allfunction() {
-            this.show("test");
-        }
-        /*--
-        void () {
-            this.show("test");
-        }
-        */
 
     // skip |use_markup - already used 
 

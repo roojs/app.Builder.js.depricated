@@ -11,14 +11,9 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 DialogConfirm=new XObject({
     xtype: Gtk.MessageDialog,
-    'void:show_all' : function() {
+    'void:show_all' : void () {
         this.show("test");
-    }
-    /*--
-    void () {
-        this.show("test");
-    }
-    */,
+    },
     listeners : {
         delete_event : (event) => {
             this.el.hide();
