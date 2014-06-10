@@ -79,10 +79,12 @@ DialogNewComponent=new XObject({
                 //for (var i in this.file) {
                 //    nf[i] = this.file[i];
                 //}
-                
+                /*
+                -- fixme -- needs to be a signal..
                 if (DialogNewComponent.success != null) {
                     DialogNewComponent.success(_this.project, nf);
                 }
+                */
         },
         show : (self)  => {
           this.el.show_all();
