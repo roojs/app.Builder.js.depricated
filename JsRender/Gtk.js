@@ -576,24 +576,20 @@ Gtk = XObject.define(
                     continue;
                 }
                 // function in the format of {type} (args) { .... }
-                
-                var v = item[k].split(/\/*--/);
-                if (v.length < 2) {
-                      strbuilder("\n" + pad + "// skip " + k + " - could not find seperator\n"); 
-                    continue;
-                }
-                var vv = v[1].replace('*/', "");
+                 
+                var vv = item[k];
                 //print(JSON.stringify(vv));Seed.quit();
                 vv = vv.replace(/^\n+/,'');
                 vv = vv.replace(/\n+$/,'');
                 vv = vv.replace(/\n/g,"\n" + ipad);
                 
-                vva = vv.split(' ');
+                vva = k.split(':');
                 var rtype = vva.shift();
-                var body = vva.join(' ');
+                var body = vv;
+                var fname = vva.shift();
                 
                 
-                strbuilder(pad + "public " + rtype + " " + k.substring(1) +body + "\n");
+                strbuilder(pad + "public " + rtype + " " + fnamek.substring(1) + body + "\n");
                 
                 
                 
