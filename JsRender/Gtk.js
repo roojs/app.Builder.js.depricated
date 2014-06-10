@@ -399,6 +399,11 @@ Gtk = XObject.define(
             // wrapped ctor..
             // this may need to look up properties to fill in the arguments..
             // introspection does not workk..... - as things like gtkmessagedialog
+            if (cls == 'Gtk.Table') {
+                
+                var methods = this.palete.getPropertiesFor(cls, 'methods');
+            }
+            
             
             
             if (typeof(ctors[cls]) !== 'undefined') {
