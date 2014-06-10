@@ -6,8 +6,8 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.bjs",
     "items": [
         {
+            "|void:show_all": "function() {\n    this.show(\"test\");\n}\n/*--\nvoid () {\n    this.show(\"test\");\n}\n*/",
             "listeners": {
-                "response": " ( response_id) =>  {\n   this.el.hide();\n    //print(\"RESPOSE: \" + response_id);\n    if (response_id == -8) { //yes!\n           print(\"CALL SUCCES?\");\n      // this.success();\n    }\n\n\n}\n ",
                 "delete_event": " (event) => {\n    this.el.hide();\n    return true;\n}\n \n\n\n"
             },
             "text": "Tests",
@@ -17,7 +17,6 @@
             "|message_type": "Gtk.MessageType.QUESTION",
             "|modal": "true",
             "|void:show": "  (string msg) {\n     //if (!this.el) { this.init(); } \n     //this.success = success;\n    this.el.text =  msg;\n    this.el.show_all();\n\n}\n \n\n\n\n",
-            "|show_all": "function() {\n    this.show(\"test\");\n}\n/*--\nvoid () {\n    this.show(\"test\");\n}\n*/",
             "|use_markup": "true",
             "|xns": "Gtk"
         }

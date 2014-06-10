@@ -11,17 +11,15 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 DialogConfirm=new XObject({
     xtype: Gtk.MessageDialog,
+    'void:show_all' : function() {
+        this.show("test");
+    }
+    /*--
+    void () {
+        this.show("test");
+    }
+    */,
     listeners : {
-        response : ( response_id) =>  {
-           this.el.hide();
-            //print("RESPOSE: " + response_id);
-            if (response_id == -8) { //yes!
-                   print("CALL SUCCES?");
-              // this.success();
-            }
-        
-        
-        },
         delete_event : (event) => {
             this.el.hide();
             return true;
@@ -39,14 +37,6 @@ DialogConfirm=new XObject({
         this.el.show_all();
     
     },
-    show_all : function() {
-        this.show("test");
-    }
-    /*--
-    void () {
-        this.show("test");
-    }
-    */,
     use_markup : true
 });
 DialogConfirm.init();

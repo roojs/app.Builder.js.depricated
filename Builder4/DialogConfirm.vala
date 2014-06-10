@@ -81,8 +81,14 @@ public class Xcls_MessageDialog1
         
         }
          
-
-    // skip |show_all - no return type
+    public void show_allfunction() {
+            this.show("test");
+        }
+        /*--
+        void () {
+            this.show("test");
+        }
+        */
 
     // skip |use_markup - already used 
 
