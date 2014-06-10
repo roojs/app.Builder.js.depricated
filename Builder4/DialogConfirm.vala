@@ -48,7 +48,7 @@ public class Xcls_MessageDialog1
     }
 
     // userdefined functions 
-    public void show_allvoid () {
+    public void show_all () {
             this.show("test");
         }
          
