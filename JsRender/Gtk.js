@@ -584,6 +584,9 @@ Gtk = XObject.define(
                 vv = vv.replace(/\n/g,"\n" + ipad);
                 
                 var vva = k.split(':');
+                if (vva.length  < 2 {
+                    continue;
+                }
                 var rtype = vva.shift().substring(1);
                 var body = vv;
                 var fname = vva.shift() || '???';
