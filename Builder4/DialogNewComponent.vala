@@ -161,9 +161,11 @@ public class Xcls_DialogNewComponent
     public void show(JsRender.JsRender c) 
         {
             this.project = c.project;
+            
             if (!this.el) {
                 //this.init();
             }
+            
             this.def =  { 
                 name : '' , 
                 title : '' ,
@@ -173,11 +175,14 @@ public class Xcls_DialogNewComponent
                 modOrder : '0',
                 permname : ''
             };
+            
+            
             for (var i in this.def) {
                 c[i] = c[i] || this.def[i];
                 this.get(i).el.set_text(c[i]);
             }
-            if (c.name) {
+            
+            if (c.name.length > 0) {
                 this.el.set_title("Edit File Details - " + c.name);
             } else {
                 this.el.set_title("Create New File");
