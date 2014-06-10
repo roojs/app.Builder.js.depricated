@@ -368,6 +368,7 @@ Gtk = XObject.define(
             strbuilder("\n" + ipad + "// my vars\n");
             
             
+            // Key = TYPE:name
             for (var k in item) {
                 if (k[0] != '.') {
                    
@@ -378,10 +379,10 @@ Gtk = XObject.define(
                 }
                 
                 var kk = k.substring(1);
-                var v = item[k];
-                var vv = v.split(':');
-                strbuilder(pad + "public " + vv[0] + " " + kk + ";\n");
-                 citems[k] = true; 
+                
+                var vv = kk.split(':');
+                strbuilder(pad + "public " + vv[0] + " " + vv[1] + ";\n");
+                citems[k] = true; 
                 
             }
             // .vala props.. 
