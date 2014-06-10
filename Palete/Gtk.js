@@ -288,6 +288,8 @@ Gtk = XObject.define(
                 print(ename +": ADD method: " + n_original );
                 var flags = GIRepository.property_info_get_flags(prop);
                 
+                print( flags);
+                print( GIRepository.FunctionInfoFlags.IS_CONSTRUCTOR );
                 if (flags & GIRepository.FunctionInfoFlags.IS_CONSTRUCTOR) {
                     var add = {
                         name :  n_original.replace(/\-/g, '_'),
