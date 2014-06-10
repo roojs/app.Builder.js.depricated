@@ -127,7 +127,9 @@ public class Xcls_DialogNewComponent
                 //for (var i in this.file) {
                 //    nf[i] = this.file[i];
                 //}
+                _this.success(_this.project, nf);
                 /*
+        
                 -- fixme -- needs to be a signal..
                 if (DialogNewComponent.success != null) {
                     DialogNewComponent.success(_this.project, nf);
