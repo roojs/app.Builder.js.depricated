@@ -290,7 +290,7 @@ Gtk = XObject.define(
                 
                 if (n_original.match(/^new/)) {
                     var add = {
-                        name :  n_original.replace(/\-/g, '_'),
+                        name :   .replace(/\-/g, '_'),
                         type : 'ctor', //???
                         desc : '',
                         //desc : this.doc(ename + "."+ n_original)
@@ -299,6 +299,7 @@ Gtk = XObject.define(
                     mlist.push(add);
                     continue;
                 }
+                continue;
                 // not sure why we need all the other ones...
                 //if (!(flags & GIRepository.FunctionInfoFlags.IS_METHOD)) {
                 //    continue;
