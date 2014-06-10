@@ -584,7 +584,7 @@ Gtk = XObject.define(
                 vv = vv.replace(/\n/g,"\n" + ipad);
                 
                 var vva = k.split(':');
-                if (vva.length  < 2 {
+                if (vva.length  < 2) {
                     strbuilder("\n" + pad + "// skip " + k + " - no return type\n"); 
                     continue;
                 }
