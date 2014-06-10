@@ -30,6 +30,7 @@ public class Xcls_DialogNewComponent
     public Xcls_modOrder modOrder;
 
         // my vars
+    public  Project.Project:project;
 
         // ctor 
     public Xcls_DialogNewComponent()
@@ -134,6 +135,8 @@ public class Xcls_DialogNewComponent
     // userdefined functions 
 
     // skip listeners - not pipe 
+
+    // skip .Project.Project:project - already used 
 
     // skip default_height - already used 
 
