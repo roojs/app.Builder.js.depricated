@@ -32,7 +32,7 @@ public class Xcls_DialogNewComponent
         // my vars
     public JsRender.JsRender file;
     public Project.Project project;
-    public signal void;
+    public signal voidsuccess(Project.Project pr, JsRender.JsRender file);
 
         // ctor 
     public Xcls_DialogNewComponent()
