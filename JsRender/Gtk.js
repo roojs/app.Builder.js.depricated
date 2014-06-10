@@ -586,7 +586,7 @@ Gtk = XObject.define(
                 var vva = k.split(':');
                 var rtype = vva.shift();
                 var body = vv;
-                var fname = vva.shift();
+                var fname = vva.shift() || '???';
                 
                 
                 strbuilder(pad + "public " + rtype + " " + fname.substring(1) + body + "\n");
