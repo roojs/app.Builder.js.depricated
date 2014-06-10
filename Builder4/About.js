@@ -29,7 +29,6 @@ About=new XObject({
     'void:show_all' : () {
         this.el.show_all();
     }
-    */
 });
 About.init();
 XObject.cache['/About'] = About;
