@@ -75,7 +75,8 @@ public class Xcls_DialogNewComponent
                      
                     return;
                 }
-                
+                // what does this do?
+                /*
                 var isNew = _this.file.name.length  > 0 ? false : true;
                 
                 if (this.file.name.length > 0 && this.file.name != _this.name.el.get_text()) {
@@ -85,19 +86,20 @@ public class Xcls_DialogNewComponent
                      
                     return;
                 }
+                */
                 // FIXME - this may be more complicated...
                 //for (var i in this.def) {
                 //    this.file[i] =  this.get(i).el.get_text();
                 //}
-               
+               /*
                 if (!isNew) {
                     this.file.save();
                     this.el.hide();
                     return;
                 }
-               
+               */
             
-        	var dir ='';
+        	//var dir ='';
         	//FIXME...
                 //for (var i in this.project.paths) {
          	//	dir = i;
