@@ -585,6 +585,7 @@ Gtk = XObject.define(
                 
                 var vva = k.split(':');
                 if (vva.length  < 2 {
+                    strbuilder("\n" + pad + "// skip " + k + " - no return type\n"); 
                     continue;
                 }
                 var rtype = vva.shift().substring(1);
