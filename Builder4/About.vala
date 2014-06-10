@@ -44,8 +44,10 @@ public class Xcls_AboutDialog1
         // listeners 
         this.el.response.connect( (rid) => {
             this.el.hide();
-        } );
-        this.el.delete_event.connect(  (self, event) => {
+        }
+        
+          );
+        this.el.delete_event.connect( (self, event) => {
             this.el.hide();
             return true;
         }
@@ -69,10 +71,11 @@ public class Xcls_AboutDialog1
     // skip xtype - not pipe 
 
     // skip |modal - already used 
-
-    // skip |void:show_all - could not find seperator
-
-    // skip |xns - could not find seperator
+    public |void how_all() {
+            this.el.show_all();
+        }
+         
+    public |xns ??Gtk
 
     // skip xvala_cls - not pipe 
 
