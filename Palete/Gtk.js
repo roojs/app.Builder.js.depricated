@@ -415,6 +415,8 @@ Gtk = XObject.define(
         },
         typeToName  : function (type_info, allow_iface) // find type for properties or arguments.
         {
+            var x = GIRepository.type_info_get_tag(type_info);
+            print(x);
             var ty = GIRepository.type_tag_to_string( GIRepository.type_info_get_tag(type_info));
             print(ty);
            
