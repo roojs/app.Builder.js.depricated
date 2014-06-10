@@ -182,7 +182,7 @@ public class Xcls_DialogNewComponent
                 this.get(i).el.set_text(c[i]);
             }
             
-            if (c.name.length > 0) {
+            if (c.path.length > 0) {
                 this.el.set_title("Edit File Details - " + c.name);
             } else {
                 this.el.set_title("Create New File");
