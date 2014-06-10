@@ -306,7 +306,7 @@ Gtk = XObject.define(
                 var add = {
                     name :  n_original.replace(/\-/g, '_'),
                     type : 'function', //???
-                    desc : this.doc(ename + '.signal.' + n_original)
+                    desc : this.doc(ename + '.' + n_original)
                 };
                 this.genParams(prop,add);
                 mlist.push(add);
