@@ -15,17 +15,10 @@ About=new XObject({
         response : (rid) => {
             this.el.hide();
         },
-        delete_event : function (self, event) {
+        delete_event : (self, event) => {
             this.el.hide();
             return true;
         }
-        
-        /*--
-         (self, event) => {
-            this.el.hide();
-            return true;
-        }
-        */
     },
     authors : "Alan Knowles",
     copyright : "LGPL",

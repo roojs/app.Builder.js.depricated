@@ -48,7 +48,8 @@ public class Xcls_AboutDialog1
         this.el.delete_event.connect(  (self, event) => {
             this.el.hide();
             return true;
-        } );
+        }
+          );
     }
 
     // userdefined functions 
