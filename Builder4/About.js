@@ -26,7 +26,7 @@ About=new XObject({
     program_name : "app.Builder.js",
     website : "http://www.akbkhome.com/blog.php",
     modal : true,
-    'void:show_all' : void () {
+    'void:show_all' : () {
         this.el.show_all();
     }
     */

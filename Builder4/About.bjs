@@ -17,7 +17,7 @@
             "website": "http://www.akbkhome.com/blog.php",
             "xtype": "AboutDialog",
             "|modal": "true",
-            "|void:show_all": " \nvoid () {\n    this.el.show_all();\n}\n*/",
+            "|void:show_all": "() {\n    this.el.show_all();\n}\n*/",
             "|xns": "Gtk"
         }
     ],
