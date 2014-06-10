@@ -148,11 +148,11 @@ public class Xcls_DialogNewComponent
     // skip |deletable - already used 
 
     // skip |modal - already used 
-    public void showfunction (c) 
+    public void show(Project c) 
         {
-            this.project = c.project;
+            this.project = c;
             if (!this.el) {
-                this.init();
+                //this.init();
             }
             this.def =  { 
                 name : '' , 

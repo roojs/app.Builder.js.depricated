@@ -92,11 +92,11 @@ DialogNewComponent=new XObject({
     title : "New Component",
     deletable : false,
     modal : true,
-    'void:show' : function (c) 
+    'void:show' : (Project c) 
     {
-        this.project = c.project;
+        this.project = c;
         if (!this.el) {
-            this.init();
+            //this.init();
         }
         this.def =  { 
             name : '' , 
