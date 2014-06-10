@@ -122,7 +122,7 @@ Editor=new XObject({
                             
                             },
                             insert_spaces_instead_of_tabs : true,
-                            load : function(str) {
+                            load : function(str, providertype) {
                             
                             // show the help page for the active node..
                                //this.get('/Help').show();
@@ -176,6 +176,9 @@ Editor=new XObject({
                                     id : "buffer",
                                     pack : "set_buffer",
                                     checkSyntax : function() {
+                                        
+                                        
+                                        
                                         var str = this.toString();
                                         var res = '';
                                         try {
