@@ -453,7 +453,7 @@ Gtk = XObject.define(
                 var kk = k.substring(1);
                 var v = item[k];
                 var vv = kk.split(':');
-                if (v.length < 1) {
+                if (v.length < 1 || vv[0] == ".signal") {
                     continue;
                 }
                 strbuilder(ipad + "this" + vv[1] + " = " +   v +";\n");
