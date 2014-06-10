@@ -82,7 +82,7 @@ DialogNewComponent=new XObject({
                     DialogNewComponent.success(_this.project, nf);
                 }
         },
-        show : function (self) {
+        show : (self)  => {
           this.el.show_all();
         }
     },

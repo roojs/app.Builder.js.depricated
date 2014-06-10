@@ -126,7 +126,7 @@ public class Xcls_DialogNewComponent
                     DialogNewComponent.success(_this.project, nf);
                 }
         } );
-        this.el.show.connect( function (self) {
+        this.el.show.connect( (self)  => {
           this.el.show_all();
         } );
     }
