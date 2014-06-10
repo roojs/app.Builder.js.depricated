@@ -61,6 +61,7 @@ public class Xcls_DialogNewComponent
         this.el.delete_event.connect( (self, event) => {
             this.el.hide();
             return true;
+            
         }
         
          );
