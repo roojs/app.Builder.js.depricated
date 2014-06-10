@@ -148,9 +148,9 @@ public class Xcls_DialogNewComponent
     // skip |deletable - already used 
 
     // skip |modal - already used 
-    public void show(Project c) 
+    public void show(JsRender.JsRender c) 
         {
-            this.project = c;
+            this.project = c.project;
             if (!this.el) {
                 //this.init();
             }
