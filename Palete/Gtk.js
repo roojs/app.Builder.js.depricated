@@ -298,6 +298,7 @@ Gtk = XObject.define(
                     mlist.push(add);
                     continue;
                 }
+                // not sure why we need all the other ones...
                 //if (!(flags & GIRepository.FunctionInfoFlags.IS_METHOD)) {
                 //    continue;
                 //}
