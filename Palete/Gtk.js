@@ -417,7 +417,7 @@ Gtk = XObject.define(
         {
             print(type_info);
             if (type_info == 17) {
-                return '???';
+                return 'integer';
             }
             var x = GIRepository.type_info_get_tag(type_info);
             print(x);
