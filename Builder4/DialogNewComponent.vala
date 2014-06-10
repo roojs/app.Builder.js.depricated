@@ -148,8 +148,38 @@ public class Xcls_DialogNewComponent
     // skip |deletable - already used 
 
     // skip |modal - already used 
-
-    // skip |show - no return type
+    public void showfunction (c) 
+        {
+            this.project = c.project;
+            if (!this.el) {
+                this.init();
+            }
+            this.def =  { 
+                name : '' , 
+                title : '' ,
+                region : '' ,
+                parent: '',
+              //  disable: '',
+                modOrder : '0',
+                permname : ''
+            };
+            for (var i in this.def) {
+                c[i] = c[i] || this.def[i];
+                this.get(i).el.set_text(c[i]);
+            }
+            if (c.name) {
+                this.el.set_title("Edit File Details - " + c.name);
+            } else {
+                this.el.set_title("Create New File");
+            }
+             
+            this.file = c;
+            console.log('show all');
+            this.el.show_all();
+            this.success = c.success;
+            
+            
+        }
 
     // skip |xns - no return type
 
