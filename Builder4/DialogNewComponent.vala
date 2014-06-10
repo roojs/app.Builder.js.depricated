@@ -42,7 +42,7 @@ public class Xcls_DialogNewComponent
         DialogNewComponent = this;
 
         // my vars
-        thisvoid = ();
+        thisvoid = (Project.Project pr, JsRender.JsRender file);
 
         // set gobject values
         this.el.default_height = 200;
