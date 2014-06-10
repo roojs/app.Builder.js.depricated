@@ -77,30 +77,30 @@ public class Xcls_DialogNewComponent
                     return;
                 }
                 // what does this do?
-                /*
+                
                 var isNew = _this.file.name.length  > 0 ? false : true;
                 
-                if (this.file.name.length > 0 && this.file.name != _this.name.el.get_text()) {
+                if (_this.file.name.length > 0 && this.file.name != _this.name.el.get_text()) {
                     StandardErrorDialog.show(
                         "Sorry changing names does not work yet. "
                     );
                      
                     return;
                 }
-                */
+        
                 // FIXME - this may be more complicated...
                 //for (var i in this.def) {
                 //    this.file[i] =  this.get(i).el.get_text();
                 //}
-               /*
+        
                 if (!isNew) {
-                    this.file.save();
+                    _this.file.save();
                     this.el.hide();
                     return;
                 }
-               */
+        
             
-        	//var dir ='';
+        	var dir = _this.project.firstPath();
         	//FIXME...
                 //for (var i in this.project.paths) {
          	//	dir = i;
@@ -110,7 +110,7 @@ public class Xcls_DialogNewComponent
          
                 
                 // what about .js ?
-                if (GLib.FileUtil.test(dir + "/" + _this.file.name + ".bjs", GLib.FileTest.EXISTS)) {
+                if (GLib.FileUtil.test(_this.file.name + ".bjs", GLib.FileTest.EXISTS)) {
                     StandardErrorDialog.show(
                         "That file already exists"
                     ); 
@@ -121,7 +121,7 @@ public class Xcls_DialogNewComponent
                 
                 //var tmpl = this.project.loadFileOnly(DialogNewComponent.get('template').getValue());
                  
-                var nf = _this.project.create(dir + "/" + this.file.name + ".bjs");
+                var nf = _this.project.create(dir + "/" + _this.file.name + ".bjs");
                 //for (var i in this.file) {
                 //    nf[i] = this.file[i];
                 //}
