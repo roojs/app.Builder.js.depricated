@@ -402,7 +402,7 @@ Gtk = XObject.define(
             if (cls == 'Gtk.Table') {
                 
                 var methods = this.palete.getPropertiesFor(cls, 'methods');
-                print(JSON.stringify(method, null,4));
+                print(JSON.stringify(methods, null,4));
                 Seed.quit();
             }
             
