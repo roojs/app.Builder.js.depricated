@@ -286,7 +286,7 @@ Gtk = XObject.define(
                 var prop = GIRepository[meth[5]](bi,i);  
                 var n_original =  prop.get_name();
                 print(ename +": ADD method: " + n_original );
-                var flags = GIRepository.property_info_get_flags(prop);
+                //var flags = GIRepository.property_info_get_flags(prop);
                 
                 if (n_original.match(/^new/)) {
                     var add = {
