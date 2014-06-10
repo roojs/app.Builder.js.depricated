@@ -30,9 +30,9 @@ public class Xcls_DialogNewComponent
     public Xcls_modOrder modOrder;
 
         // my vars
-    public signal void;
     public JsRender.JsRender file;
     public Project.Project project;
+    public signal void;
 
         // ctor 
     public Xcls_DialogNewComponent()
@@ -138,6 +138,7 @@ public class Xcls_DialogNewComponent
         } );
         this.el.show.connect( (self)  => {
           this.el.show_all();
+          
         } );
     }
 
@@ -145,11 +146,11 @@ public class Xcls_DialogNewComponent
 
     // skip listeners - not pipe 
 
-    // skip .signal:void:success - already used 
-
     // skip .JsRender.JsRender:file - already used 
 
     // skip .Project.Project:project - already used 
+
+    // skip .signal:void:success - already used 
 
     // skip default_height - already used 
 

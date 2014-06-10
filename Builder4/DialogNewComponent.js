@@ -90,6 +90,7 @@ DialogNewComponent=new XObject({
         },
         show : (self)  => {
           this.el.show_all();
+          
         }
     },
     default_height : 200,
