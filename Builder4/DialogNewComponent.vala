@@ -57,10 +57,12 @@ public class Xcls_DialogNewComponent
         this.el.delete_event.connect( (self, event) => {
             this.el.hide();
             return true;
-        } );
+        }
+        
+         );
         this.el.response.connect(   (self, response_id) =>  {
           
-        	if (response_id < 1) => { // cancel!
+        	if (response_id < 1) { // cancel!
                     this.el.hide();
                     return;
                 }
@@ -124,7 +126,7 @@ public class Xcls_DialogNewComponent
                     DialogNewComponent.success(_this.project, nf);
                 }
         } );
-        this.el.show.connect(  (self) => {
+        this.el.show.connect( function (self) {
           this.el.show_all();
         } );
     }
