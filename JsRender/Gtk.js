@@ -381,7 +381,7 @@ Gtk = XObject.define(
                 var kk = k.substring(1);
                 
                 var vv = kk.split(':');
-                if (kk[0] == 'signal') {
+                if (vv[0] == 'signal') {
                     strbuilder(pad + "public " + vv[0] + " " + vv[1] + vv[2] + item[k] + ";\n");
                 } else {
                 
