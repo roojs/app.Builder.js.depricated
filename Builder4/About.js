@@ -12,14 +12,9 @@ XObject = imports.XObject.XObject;
 About=new XObject({
     xtype: Gtk.AboutDialog,
     listeners : {
-        response : function (self, response_id) {
+        response : (rid) => {
             this.el.hide();
-        }
-        /*--
-        (rid) => {
-            this.el.hide();
-        }
-        */,
+        },
         delete_event : function (self, event) {
             this.el.hide();
             return true;
