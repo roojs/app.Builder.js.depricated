@@ -10,6 +10,7 @@ Vte = imports.gi.Vte;
  console = imports.console;
 XObject = imports.XObject.XObject;
 Editor=new XObject({
+    
     xtype: Gtk.Window,
     listeners : {
         delete_event : function (self, event) {
@@ -126,7 +127,7 @@ Editor=new XObject({
                             
                             // show the help page for the active node..
                                //this.get('/Help').show();
-                            
+                                Editor.providertype = providertype;
                             
                               // this.get('/BottomPane').el.set_current_page(0);
                                 this.el.get_buffer().set_text(str, str.length);
@@ -177,7 +178,9 @@ Editor=new XObject({
                                     pack : "set_buffer",
                                     checkSyntax : function() {
                                         
-                                        
+                                        if (Editor.providertype == 'Gtk') {
+                                            return true;
+                                        }
                                         
                                         var str = this.toString();
                                         var res = '';
