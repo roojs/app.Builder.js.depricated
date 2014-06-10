@@ -30,7 +30,7 @@ public class Xcls_DialogNewComponent
     public Xcls_modOrder modOrder;
 
         // my vars
-    public  Project.Project:project;
+    public Project.Project project;
 
         // ctor 
     public Xcls_DialogNewComponent()
