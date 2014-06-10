@@ -69,9 +69,8 @@ public class Xcls_AboutDialog1
     // skip xtype - not pipe 
 
     // skip |modal - already used 
-    public void show_all() {
-            this.el.show_all();
-        }
+
+    // skip |void:show_all - could not find seperator
 
     // skip |xns - could not find seperator
 
