@@ -58,8 +58,8 @@ public class Xcls_DialogNewComponent
             this.el.hide();
             return true;
         } );
-        this.el.response.connect(  (self, response_id) => {
-        	if (response_id < 1) { // cancel!
+        this.el.response.connect(   (self, response_id) =>  {
+        	if (response_id < 1) => { // cancel!
                     this.el.hide();
                     return;
                 }
@@ -71,6 +71,7 @@ public class Xcls_DialogNewComponent
                      
                     return;
                 }
+                
                 var isNew = this.file.name.length  > 0 ? false : true;
                 
                 if (this.file.name.length > 0 && this.file.name != _this.name.el.get_text()) {

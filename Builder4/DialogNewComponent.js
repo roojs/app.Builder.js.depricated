@@ -16,7 +16,7 @@ DialogNewComponent=new XObject({
             this.el.hide();
             return true;
         },
-        response : function (self, response_id) {
+        response : (self, response_id) =>  {
         	if (response_id < 1) { // cancel!
                     this.el.hide();
                     return;
@@ -29,6 +29,7 @@ DialogNewComponent=new XObject({
                      
                     return;
                 }
+                
                 var isNew = this.file.name.length  > 0 ? false : true;
                 
                 if (this.file.name.length > 0 && this.file.name != _this.name.el.get_text()) {
