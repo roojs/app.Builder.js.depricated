@@ -13,6 +13,9 @@ all:
 		JsRender/*.vala \
 		Project/*.vala \
 		Palete/*.vala \
+		Builder4/About.vala \
+		Builder4/DialogConfirm.vala \
+		Builder4/DialogNewComponent.vala \
 		-o /tmp/test
 #		Builder4/*.vala \
 
