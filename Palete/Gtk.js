@@ -290,7 +290,7 @@ Gtk = XObject.define(
                 
                 if (n_original.match(/^new/)) {
                     var add = {
-                        name :   .replace(/\-/g, '_'),
+                        name :  n_original.replace(/\-/g, '_'),
                         type : 'ctor', //???
                         desc : '',
                         //desc : this.doc(ename + "."+ n_original)
