@@ -30,6 +30,7 @@ public class Xcls_DialogNewComponent
     public Xcls_modOrder modOrder;
 
         // my vars
+    public JsRender.JsRender file;
     public Project.Project project;
 
         // ctor 
@@ -137,6 +138,8 @@ public class Xcls_DialogNewComponent
     // userdefined functions 
 
     // skip listeners - not pipe 
+
+    // skip .JsRender.JsRender:file - already used 
 
     // skip .Project.Project:project - already used 
 
