@@ -298,9 +298,9 @@ Gtk = XObject.define(
                     mlist.push(add);
                     continue;
                 }
-                if (!(flags & GIRepository.FunctionInfoFlags.IS_METHOD)) {
-                    continue;
-                }
+                //if (!(flags & GIRepository.FunctionInfoFlags.IS_METHOD)) {
+                //    continue;
+                //}
                 // print ('signal: ' + n_original); 
                 var add = {
                     name :  n_original.replace(/\-/g, '_'),
