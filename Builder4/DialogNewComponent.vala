@@ -30,6 +30,7 @@ public class Xcls_DialogNewComponent
     public Xcls_modOrder modOrder;
 
         // my vars
+    public signal void;
     public JsRender.JsRender file;
     public Project.Project project;
 
@@ -41,6 +42,7 @@ public class Xcls_DialogNewComponent
         DialogNewComponent = this;
 
         // my vars
+        thisvoid = ();
 
         // set gobject values
         this.el.default_height = 200;
@@ -140,6 +142,8 @@ public class Xcls_DialogNewComponent
     // userdefined functions 
 
     // skip listeners - not pipe 
+
+    // skip .signal:void:success - already used 
 
     // skip .JsRender.JsRender:file - already used 
 
