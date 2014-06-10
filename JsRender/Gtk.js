@@ -381,7 +381,12 @@ Gtk = XObject.define(
                 var kk = k.substring(1);
                 
                 var vv = kk.split(':');
-                strbuilder(pad + "public " + vv[0] + " " + vv[1] + ";\n");
+                if (kk[0] == 'signal') {
+                    strbuilder(pad + "public " + vv[0] + " " + vv[1] + vv[2] + item[k] + ";\n");
+                } else {
+                
+                    strbuilder(pad + "public " + vv[0] + " " + vv[1] + ";\n");
+                }
                 citems[k] = true; 
                 
             }
