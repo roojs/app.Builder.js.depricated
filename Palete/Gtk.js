@@ -292,7 +292,8 @@ Gtk = XObject.define(
                     var add = {
                         name :  n_original.replace(/\-/g, '_'),
                         type : 'ctor', //???
-                        desc : this.doc(ename + "."+ n_original)
+                        desc : '',
+                        //desc : this.doc(ename + "."+ n_original)
                     };
                     this.genParams(prop,add);
                     mlist.push(add);
