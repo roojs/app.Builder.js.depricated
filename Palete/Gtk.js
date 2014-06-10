@@ -383,7 +383,7 @@ Gtk = XObject.define(
             for(var a_i  =0; a_i   < GIRepository.callable_info_get_n_args(sig); a_i++) {
                 var arg = GIRepository.callable_info_get_arg(sig, a_i);
                 print(arg.get_name());
-                
+                print(arg.get_type());
                 meth.params.push({
                     name  : arg.get_name(),
                     type : this.typeToName(arg.get_type(), true)
