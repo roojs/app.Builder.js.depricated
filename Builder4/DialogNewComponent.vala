@@ -68,7 +68,7 @@ public class Xcls_DialogNewComponent
                     return;
                 }
         
-                if (DialogNewComponent.name.el.get_text().length  < 1) {
+                if (_this.name.el.get_text().length  < 1) {
                     StandardErrorDialog.show(
                         "You have to set Project name "
                     );
