@@ -17,6 +17,7 @@ DialogNewComponent=new XObject({
             return true;
         },
         response : (self, response_id) =>  {
+          
         	if (response_id < 1) { // cancel!
                     this.el.hide();
                     return;

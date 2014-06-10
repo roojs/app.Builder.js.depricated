@@ -59,6 +59,7 @@ public class Xcls_DialogNewComponent
             return true;
         } );
         this.el.response.connect(   (self, response_id) =>  {
+          
         	if (response_id < 1) => { // cancel!
                     this.el.hide();
                     return;
