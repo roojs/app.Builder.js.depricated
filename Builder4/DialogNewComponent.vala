@@ -32,7 +32,7 @@ public class Xcls_DialogNewComponent
         // my vars
     public JsRender.JsRender file;
     public Project.Project project;
-    public signal voidsuccess(Project.Project pr, JsRender.JsRender file);
+    public signal void success(Project.Project pr, JsRender.JsRender file);
 
         // ctor 
     public Xcls_DialogNewComponent()
@@ -42,7 +42,6 @@ public class Xcls_DialogNewComponent
         DialogNewComponent = this;
 
         // my vars
-        thisvoid = (Project.Project pr, JsRender.JsRender file);
 
         // set gobject values
         this.el.default_height = 200;
@@ -60,9 +59,9 @@ public class Xcls_DialogNewComponent
         // listeners 
         this.el.delete_event.connect( (self, event) => {
             this.el.hide();
-            return true;
-            
+            return true;   
         }
+        
         
          );
         this.el.response.connect(   (self, response_id) =>  {

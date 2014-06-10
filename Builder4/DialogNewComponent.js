@@ -14,8 +14,7 @@ DialogNewComponent=new XObject({
     listeners : {
         delete_event : (self, event) => {
             this.el.hide();
-            return true;
-            
+            return true;   
         },
         response : (self, response_id) =>  {
           
