@@ -447,11 +447,11 @@ Gtk = XObject.define(
                 }
                 var kk = k.substring(1);
                 var v = item[k];
-                var vv = v.split(':');
-                if (vv.length < 2) {
+                var vv = kk.split(':');
+                if (v.length < 1) {
                     continue;
                 }
-                strbuilder(ipad + "this" + k + " = " +   vv[1] +";\n");
+                strbuilder(ipad + "this" + vv[1] + " = " +   v +";\n");
                 
             }
            
