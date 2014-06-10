@@ -75,7 +75,7 @@ public class Xcls_DialogNewComponent
                     return;
                 }
                 
-                var isNew = this.file.name.length  > 0 ? false : true;
+                var isNew = _this.file.name.length  > 0 ? false : true;
                 
                 if (this.file.name.length > 0 && this.file.name != _this.name.el.get_text()) {
                     StandardErrorDialog.show(
