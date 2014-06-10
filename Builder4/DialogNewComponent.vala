@@ -54,7 +54,7 @@ public class Xcls_DialogNewComponent
         this.el.add_action_widget (  child_2.el , 1 );
 
         // listeners 
-        this.el.delete_event.connect(  (self, event) => {
+        this.el.delete_event.connect( (self, event) => {
             this.el.hide();
             return true;
         } );
@@ -145,9 +145,9 @@ public class Xcls_DialogNewComponent
 
     // skip |modal - already used 
 
-    // skip |show - could not find seperator
+    // skip |show - no return type
 
-    // skip |xns - could not find seperator
+    // skip |xns - no return type
 
     // skip items - not pipe 
 
@@ -176,7 +176,7 @@ public class Xcls_DialogNewComponent
 
         // userdefined functions 
 
-        // skip |xns - could not find seperator
+        // skip |xns - no return type
 
         // skip xtype - not pipe 
 
@@ -245,7 +245,7 @@ public class Xcls_DialogNewComponent
 
         // skip |homogeneous - already used 
 
-        // skip |xns - could not find seperator
+        // skip |xns - no return type
 
         // skip items - not pipe 
 
@@ -288,7 +288,7 @@ public class Xcls_DialogNewComponent
 
         // skip |justify - already used 
 
-        // skip |xns - could not find seperator
+        // skip |xns - no return type
 
         // skip xvala_cls - not pipe 
 
@@ -324,7 +324,7 @@ public class Xcls_DialogNewComponent
 
         // skip |visible - already used 
 
-        // skip |xns - could not find seperator
+        // skip |xns - no return type
 
         // skip xvala_cls - not pipe 
 
@@ -368,7 +368,7 @@ public class Xcls_DialogNewComponent
 
         // skip |visible - already used 
 
-        // skip |xns - could not find seperator
+        // skip |xns - no return type
 
         // skip xvala_cls - not pipe 
 
@@ -404,7 +404,7 @@ public class Xcls_DialogNewComponent
 
         // skip |visible - already used 
 
-        // skip |xns - could not find seperator
+        // skip |xns - no return type
 
         // skip xvala_cls - not pipe 
 
@@ -451,7 +451,7 @@ public class Xcls_DialogNewComponent
 
         // skip |visible - already used 
 
-        // skip |xns - could not find seperator
+        // skip |xns - no return type
 
         // skip xvala_cls - not pipe 
 
@@ -487,7 +487,7 @@ public class Xcls_DialogNewComponent
 
         // skip |visible - already used 
 
-        // skip |xns - could not find seperator
+        // skip |xns - no return type
 
         // skip xvala_cls - not pipe 
 
@@ -531,7 +531,7 @@ public class Xcls_DialogNewComponent
 
         // skip |visible - already used 
 
-        // skip |xns - could not find seperator
+        // skip |xns - no return type
 
         // skip xvala_cls - not pipe 
 
@@ -567,7 +567,7 @@ public class Xcls_DialogNewComponent
 
         // skip |visible - already used 
 
-        // skip |xns - could not find seperator
+        // skip |xns - no return type
 
         // skip xvala_cls - not pipe 
 
@@ -611,7 +611,7 @@ public class Xcls_DialogNewComponent
 
         // skip |visible - already used 
 
-        // skip |xns - could not find seperator
+        // skip |xns - no return type
 
         // skip xvala_cls - not pipe 
 
@@ -647,7 +647,7 @@ public class Xcls_DialogNewComponent
 
         // skip |visible - already used 
 
-        // skip |xns - could not find seperator
+        // skip |xns - no return type
 
         // skip xvala_cls - not pipe 
 
@@ -691,7 +691,7 @@ public class Xcls_DialogNewComponent
 
         // skip |visible - already used 
 
-        // skip |xns - could not find seperator
+        // skip |xns - no return type
 
         // skip xvala_cls - not pipe 
 
@@ -727,7 +727,7 @@ public class Xcls_DialogNewComponent
 
         // skip |visible - already used 
 
-        // skip |xns - could not find seperator
+        // skip |xns - no return type
 
         // skip xvala_cls - not pipe 
 
@@ -754,7 +754,7 @@ public class Xcls_DialogNewComponent
 
         // userdefined functions 
 
-        // skip |xns - could not find seperator
+        // skip |xns - no return type
 
         // skip xtype - not pipe 
 
@@ -787,7 +787,7 @@ public class Xcls_DialogNewComponent
 
         // userdefined functions 
 
-        // skip |xns - could not find seperator
+        // skip |xns - no return type
 
         // skip xtype - not pipe 
 

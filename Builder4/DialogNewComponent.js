@@ -12,7 +12,7 @@ XObject = imports.XObject.XObject;
 DialogNewComponent=new XObject({
     xtype: Gtk.Dialog,
     listeners : {
-        delete_event : function (self, event) {
+        delete_event : (self, event) => {
             this.el.hide();
             return true;
         },
