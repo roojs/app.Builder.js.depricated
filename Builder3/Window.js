@@ -2415,7 +2415,7 @@ Window=new XObject({
                                                                         var showEditor = false;
                                                                         this.get('/Editor').activePath = false;
                                                                         this.get('/Editor').el.hide();
-                                                                         
+                                                                        var provider = this.get('/LeftTree').getPaleteProvider();
                                                                         if (col) {
                                                                             var provider = this.get('/LeftTree').getPaleteProvider();
                                                                             var type = this.get('/LeftPanel.model').getType(path);
@@ -2459,7 +2459,7 @@ Window=new XObject({
                                                                                 //_this.get('/BottomPane').el.show();
                                                                                  //_this.get('/RightEditor').el.show();
                                                                                 
-                                                                                _this.get('/Editor.RightEditor.view').load( _this.getValue(path, 1) );
+                                                                                _this.get('/Editor.RightEditor.view').load( _this.getValue(path, 1), provider.name );
                                                                                 
                                                                                 _this.get('/Editor').activePath = path;
                                                                                 _this.activePath = path ;
