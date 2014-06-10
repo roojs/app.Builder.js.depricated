@@ -43,17 +43,19 @@ public class Xcls_MessageDialog1
         this.el.response.connect(  ( response_id) =>  {
            this.el.hide();
             //print("RESPOSE: " + response_id);
-            if (response_id == -8) { //yes!
+            if (response_id == -8) => { //yes!
                    print("CALL SUCCES?");
               // this.success();
             }
         
         
-        } );
-        this.el.delete_event.connect( (event) => {
+        }
+          );
+        this.el.delete_event.connect(  (event) => {
             this.el.hide();
             return true;
-        } );
+        }
+          );
     }
 
     // userdefined functions 
@@ -71,20 +73,14 @@ public class Xcls_MessageDialog1
     // skip |message_type - already used 
 
     // skip |modal - already used 
-    public void show(string msg) {
-             //if (!this.el) { this.init(); } 
-             //this.success = success;
-            this.el.text =  msg;
-            this.el.show_all();
-        
-        }
-    public void show_all() {
-            this.show("test");
-        }
+
+    // skip |show - no return type
+
+    // skip |show_all - no return type
 
     // skip |use_markup - already used 
 
-    // skip |xns - could not find seperator
+    // skip |xns - no return type
 
     // skip xvala_cls - not pipe 
 
