@@ -113,12 +113,12 @@ DialogNewComponent=new XObject({
             modOrder : '0',
             permname : ''
         };
-        
-        
-        for (var i in this.def) {
-            c[i] = c[i] || this.def[i];
-            this.get(i).el.set_text(c[i]);
-        }
+        _this.name.el.set_text(c.name);
+        _this.title.el.set_text(c.title);
+        _this.parent.el.set_text(c.parent);    
+        _this.region.el.set_text(c.region);
+        _this.modOrder.el.set_text(c.modOrder);
+         _this.permname.el.set_text(c.permname);
         
         if (c.path.length > 0) {
             this.el.set_title("Edit File Details - " + c.name);
@@ -126,10 +126,11 @@ DialogNewComponent=new XObject({
             this.el.set_title("Create New File");
         }
          
-        this.file = c;
-        console.log('show all');
+        _this.file = c;
+        //console.log('show all');
         this.el.show_all();
-        this.success = c.success;
+        
+        //this.success = c.success;
         
         
     },
