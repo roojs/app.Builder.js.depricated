@@ -73,8 +73,14 @@ public class Xcls_MessageDialog1
     // skip |message_type - already used 
 
     // skip |modal - already used 
-
-    // skip |show - no return type
+    public void show  (string msg) {
+             //if (!this.el) { this.init(); } 
+             //this.success = success;
+            this.el.text =  msg;
+            this.el.show_all();
+        
+        }
+         
 
     // skip |show_all - no return type
 

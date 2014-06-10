@@ -32,26 +32,13 @@ DialogConfirm=new XObject({
     buttons : Gtk.ButtonsType.YES_NO,
     message_type : Gtk.MessageType.QUESTION,
     modal : true,
-    show : function(msg, success) {
-         if (!this.el) {
-                this.init();
-            }
-         this.success = success;
-            this.el.text =  msg;
-            this.el.show_all();
-    
-    }
-    
-    /*--
-    void (string msg) {
+    'void:show' : (string msg) {
          //if (!this.el) { this.init(); } 
          //this.success = success;
         this.el.text =  msg;
         this.el.show_all();
     
-    }
-    
-    */,
+    },
     show_all : function() {
         this.show("test");
     }
