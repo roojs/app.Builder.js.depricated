@@ -21,8 +21,8 @@ var proj = new imports.Project.Gtk.Gtk({
 var tf = proj.files['/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.bjs'];
 tf.loadItems(function() {
     
-    
-    print(JSON.stringify(tf,null,4));
+    print(tf.toVala());
+    //print(JSON.stringify(tf,null,4));
     
     
 }, true); 
