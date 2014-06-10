@@ -45,7 +45,6 @@ public class Xcls_AboutDialog1
         this.el.response.connect( (rid) => {
             this.el.hide();
         }
-        
           );
         this.el.delete_event.connect( (self, event) => {
             this.el.hide();
@@ -71,11 +70,11 @@ public class Xcls_AboutDialog1
     // skip xtype - not pipe 
 
     // skip |modal - already used 
-    public |void how_all() {
+    public void show_all() {
             this.el.show_all();
         }
          
-    public |xns ??Gtk
+    public xns ???Gtk
 
     // skip xvala_cls - not pipe 
 
