@@ -1116,9 +1116,9 @@ public class Xcls_WindowLeftTree
             // listeners 
             this.el.activate.connect(   () => {
             
-                 var tree = _this
+            
                  var model = _this.model;
-                 var el = tree.getActivePath();
+                 var el = _this.getActivePath();
                  
                  //print(el);
                  //var js = model.toJS(el, false);
