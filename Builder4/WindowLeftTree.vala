@@ -509,8 +509,30 @@ public class Xcls_WindowLeftTree
         // skip xtype - not pipe 
 
         // skip |listAllTypes - no return type
-
-        // skip |load - no return type
+        public void load(GLib.List<JsRender.Node> tr, Gtk.TreeIter iter) 
+            {
+                Gtk.TreeIter citer;
+                //this.insert(citer,iter,0);
+                for(var i =0 ; i < tr.length(); i++) {
+                    if (iter) {
+                        this.el.insert(out citer,iter,-1);
+                    } else {
+                        this.el.append(out citer);
+                    }
+                    
+                    this.el.set(citer, 0, tr.nth_data(i).nodeTitle(),
+                            1, tr.nth_data(i).nodeTip(), -1
+                    );
+                    var o = new GLib.Value(typeof(Object));
+                    o.set_object(tr.nth_data(i));
+                    
+                    this.el.set_value(citer, 2, o);
+                    
+                    if (tr.nth_data(i).items.length() > 0) {
+                        this.load(tr.nth_data(i).items, citer);
+                    }
+                 
+                }
 
         // skip |loadFile - no return type
 

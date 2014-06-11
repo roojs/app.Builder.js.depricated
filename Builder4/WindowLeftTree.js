@@ -473,25 +473,30 @@ WindowLeftTree=new XObject({
                         return ret;
                                                 
                     },
-                    load : function(tr,iter)
-                            {
-                                var citer = new Gtk.TreeIter();
-                                //this.insert(citer,iter,0);
-                                for(var i =0 ; i < tr.length; i++) {
-                                    if (iter) {
-                                        this.el.insert(citer,iter,-1);
-                                    } else {
-                                        this.el.append(citer);
-                                    }
-                                    
-                                    this.el.set_value(citer, 0, [GObject.TYPE_STRING, this.nodeTitle(tr[i]) ]);
-                                    this.el.set_value(citer, 1, [GObject.TYPE_STRING, this.nodeTip(tr[i]) ]);
-                                    this.el.set_value(citer, 2, [GObject.TYPE_STRING, this.nodeToJSON(tr[i])]);
-                                    if (tr[i].items && tr[i].items.length) {
-                                        this.load(tr[i].items, citer);
-                                    }
-                                }     
-                            },
+                    'void:load' : (GLib.List<JsRender.Node> tr, Gtk.TreeIter iter) 
+                    {
+                        Gtk.TreeIter citer;
+                        //this.insert(citer,iter,0);
+                        for(var i =0 ; i < tr.length(); i++) {
+                            if (iter) {
+                                this.el.insert(out citer,iter,-1);
+                            } else {
+                                this.el.append(out citer);
+                            }
+                            
+                            this.el.set(citer, 0, tr.nth_data(i).nodeTitle(),
+                                    1, tr.nth_data(i).nodeTip(), -1
+                            );
+                            var o = new GLib.Value(typeof(Object));
+                            o.set_object(tr.nth_data(i));
+                            
+                            this.el.set_value(citer, 2, o);
+                            
+                            if (tr.nth_data(i).items.length() > 0) {
+                                this.load(tr.nth_data(i).items, citer);
+                            }
+                         
+                        },
                     loadFile : function(f) {
                         //console.dump(f);
                                 this.el.clear();
