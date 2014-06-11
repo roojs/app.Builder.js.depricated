@@ -578,34 +578,14 @@ WindowLeftTree=new XObject({
                     },
                     'void:updateNode' : (JsRender.Node? n, bool refresh) {
                         //     print("MODEL CHANGED CALLED" + this.activePath);
-                         if (n !== null && this.activePath.length > 0) {
+                         if (n != null && this.activePath.length > 0) {
                             Gtk.TreeIter iter;
-                            this.el.get_iter(iter, new Gtk.TreePath.from_string(this.activePath))
+                            this.el.get_iter(iter, new Gtk.TreePath.from_string(this.activePath));
                             this.el.set(iter, 0, n.displayTitle(), 1, n.displayTitle(), -1);
                             var v = new Value(typeof(Object));
                             v.set_object(n);
-                    
                         }
-                                //this.currentTree = this.toJS(false, true)[0];
-                        //    var d = new Date();
-                        //this.file.items = this.toJS(false, false);
-                        //    print ("TO JS in " + ((new Date()) - d) + "ms");
-                          //  print("AFTER CHANGED");
-                            //console.dump(this.file.items);
-                            _this.file.save();
-                            //this.currentTree = this.file.items[0];
-                            //console.log(this.file.toSource());
-                            
-                            if (refresh) {
-                                //print("REDNER BROWSER?!");
-                                _this.renderView();
-                                _this.file.avail_child_tree.loadAll(n);
-                                
-                                
-                    
-                                //imports['Builder/RightBrowser.js'].renderJS(this.toJS());
-                            }
-                    	          
+                                  
                     },
                     'void:deleteSelected' : () {
                         
