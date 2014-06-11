@@ -613,7 +613,7 @@ public class JsRender.Node  {
 		
 		
 		//if (sr) txt.push('</s>');
-		return (txt.length == 0 ? "Element" : string.joinv(" ", txt);
-}
+		return (txt.length == 0) ? "Element" : string.joinv(" ", txt);
+    }
 
 }
