@@ -670,7 +670,7 @@ public class Xcls_WindowLeftTree
                 this.activePath= ""; // again!?!?      
                 //this.changed(null,true);
                 
-                this.file.changed("tree");
+                this.file.changed(null, "tree");
                 
                 _this.view.blockChanges = false;
             }
