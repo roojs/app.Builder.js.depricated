@@ -359,7 +359,7 @@ Gtk = XObject.define(
             strbuilder(pad + "public " + cls + " el;\n");
              if (!depth) {
                 
-                strbuilder(pad + "private " + xcls + "  _this;\n\n");
+                strbuilder(pad + "public " + xcls + "  _this;\n\n");
             }
             
             
