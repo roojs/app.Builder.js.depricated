@@ -11,26 +11,27 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 StandardErrorDialog=new XObject({
     xtype: Gtk.MessageDialog,
-    buttons : Gtk.ButtonsType.OK,
-    modal : true,
-    message_type : Gtk.MessageType.ERROR,
-    text : "fixme",
-    use_markup : true,
-    show : function(msg) {
-         if (!this.el) {
-                this.init();
-            }
-            this.el.text =  msg;
-            this.el.show_all();
-    },
     listeners : {
-        delete_event : function (self, event) {
+        delete_event : (self, event)  => {
             this.el.hide();
             return true;
         },
-        response : function (self, response_id) {
+        response : (self, response_id) => {
            this.el.hide();
         }
+    },
+    text : "fixme",
+    buttons : Gtk.ButtonsType.OK,
+    message_type : Gtk.MessageType.ERROR,
+    modal : true,
+    use_markup : true,
+    'void:show' : (string msg) {
+    
+        this.el.text =  msg;
+        this.el.show_all();
+    },
+    'void:show_all' : () {
+        this.show("TEST");
     }
 });
 StandardErrorDialog.init();

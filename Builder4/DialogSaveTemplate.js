@@ -12,42 +12,44 @@ XObject = imports.XObject.XObject;
 DialogSaveTemplate=new XObject({
     xtype: Gtk.Dialog,
     listeners : {
-        delete_event : function (self, event) {
+        delete_event : (self, event) => {
             this.el.hide();
             return true;
         },
-        response : function (self, response_id) {
+        response : (self, response_id) => {
         
-            if (!response_id) {
+            if (response_id < 1) {
                 this.el.hide();
                  return;
             }
-            var name = this.get('name').el.get_text();
-            if (!name.length) {
-                this.get('/StandardErrorDialog').show(
+            var name = _this.name.el.get_text();
+            if (name.length < 1) {
+                StandardErrorDialog.show(
                     "You must give the template a name. "
                 );
                 return;
             }
-            
-           if (!name.match(/^[A-Z ]+$/i) || !name.match(/[A-Z]/i)) {
-                this.get('/StandardErrorDialog').show(
+            if (!Regex.match_simple ("^[A-Za-z]+$", name) || 
+                !Regex.match_simple ("^[A-Za-z ]+$", name) )
+            {
+                StandardErrorDialog.show(
                     "Template Nane must contain only letters and spaces. "
                 );
                  return;
             }
-            this.get('/Window.LeftTree').getPaleteProvider().saveTemplate(name, this.data);
+            _this.palete.saveTemplate(name, _this.data);
             // now we save it..
-                this.el.hide();
+            this.el.hide();
             
         }
     },
     default_height : 200,
     default_width : 400,
     modal : true,
-    show : function(data) {
-        this.data = data;
-        this.get('name').el.set_text('');
+    'void:show' : (Palete.Palete palete, JsRender.Node data) {
+        _this.data = data;
+        _this.palete = palete;
+        _this.name.el.set_text("");
         this.el.show_all();
     },
     items : [

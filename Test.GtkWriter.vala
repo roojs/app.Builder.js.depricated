@@ -53,9 +53,10 @@ public static int main () {
     new JsRender.Lang_Class();
 	GLib.Log.set_always_fatal(LogLevelFlags.LEVEL_ERROR | LogLevelFlags.LEVEL_CRITICAL); 
 
-	// testBuilderFile("Editor", "JSON");
-	testBuilderFile("Editor", "JS");
-	//testBuilderFile("Editor", "VALA");
+
+	//testBuilderFile("Editor", "JSON");
+	//testBuilderFile("Editor", "JS");
+	testBuilderFile("Editor", "VALA");
 
     
 	

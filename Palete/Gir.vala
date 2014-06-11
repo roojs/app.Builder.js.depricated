@@ -3,10 +3,13 @@
 /* 
 public static int main (string[] args) {
     
-    var g = new Palete.Gir("Gtk");
+    var g = Palete.Gir.factory("Gtk");
+	var test = g.classes.get("ToolButton");
+	
+	
     var generator = new Json.Generator ();
     var n = new Json.Node(Json.NodeType.OBJECT);
-    n.set_object(g.toJSON());
+    n.set_object(test.toJSON());
     generator.set_root(n);
     generator.indent = 4;
     generator.pretty = true;
@@ -14,12 +17,18 @@ public static int main (string[] args) {
     print(generator.to_data(null));
     return 0;
 }
-*/
+ */
 namespace Palete {
-
+	public errordomain GirError {
+        INVALID_TYPE,
+        NEED_IMPLEMENTING,
+		MISSING_FILE,
+		INVALID_VALUE
+    }
     public class GirObject: Object {
         public string name;
 		public string ns;
+		public string propertyof;
         public string type;
         public string nodetype;
         public string  package;
@@ -34,7 +43,7 @@ namespace Palete {
         public  string value;
 
 		bool is_overlaid;
-        public Gee.HashMap<string,GirObject> params;
+        public GLib.List<GirObject> params;
         public GLib.List<string> implements;
 		public GLib.List<string> inherits; // full list of all classes and interfaces...
         public Gee.HashMap<string,GirObject> ctors;
@@ -52,6 +61,7 @@ namespace Palete {
 			this.ns = "";
             this.parent = "";
             this.type = "";
+			this.propertyof = "";
             this.is_array = false;
             this.is_instance = false;
             this.is_varargs = false;
@@ -59,7 +69,7 @@ namespace Palete {
 			this.inherits  = new GLib.List<string>();
             this.includes   = new Gee.HashMap<string,string>();
             
-            this.params = new Gee.HashMap<string,GirObject>();
+            this.params = new GLib.List<GirObject>();
             this.ctors      = new Gee.HashMap<string,GirObject>();
             this.methods    =new Gee.HashMap<string,GirObject>();
            
@@ -73,16 +83,16 @@ namespace Palete {
 
 		public void  overlayParent()
 		{
-
+			
 			if (this.parent.length < 1 || this.is_overlaid) {
 				this.is_overlaid = true;
 				return;
 			}
-			//print(this.parent);
+			// print("Overlaying " +this.name + " with " + this.parent + "\n");
 
 			var pcls = this.clsToObject( this.parent);
 			if (pcls == null) {
-				throw new Error.INVALID_VALUE("Could not find class : " + 
+				throw new GirError.INVALID_VALUE("Could not find class : " + 
 					this.parent + " of " + this.name  + " in " + this.ns);
 			}
 			
@@ -119,23 +129,25 @@ namespace Palete {
 			this.inherits.append(pcls.fqn());
 			var iter = pcls.methods.map_iterator();
 			while(iter.next()) {
-                if (null == this.methods.get(iter.get_key())) {
+                if (null != this.methods.get(iter.get_key())) {
 					continue;
 				}
 				
 				this.methods.set(iter.get_key(), iter.get_value());
-            }	
+            }
+			
 			iter = pcls.props.map_iterator();
 			while(iter.next()) {
-                if (null == this.props.get(iter.get_key())) {
+                if (null != this.props.get(iter.get_key())) {
 					continue;
 				}
 				
 				this.props.set(iter.get_key(), iter.get_value());
-            }	
+            }
+			
 			iter = pcls.signals.map_iterator();
 			while(iter.next()) {
-                if (null == this.signals.get(iter.get_key())) {
+                if (null != this.signals.get(iter.get_key())) {
 					continue;
 				}
 				
@@ -148,6 +160,9 @@ namespace Palete {
             var r = new Json.Object();
             r.set_string_member("nodetype", this.nodetype);
             r.set_string_member("name", this.name);
+			if (this.propertyof.length > 0) {
+                r.set_string_member("of", this.propertyof);
+            }
             if (this.type.length > 0) {
                 r.set_string_member("type", this.type);
             }
@@ -160,8 +175,8 @@ namespace Palete {
                 r.set_array_member("length", this.toJSONArrayString(this.implements));
             }
             
-            if (this.params.size > 0) {
-                r.set_object_member("params", this.toJSONObject(this.params));
+            if (this.params.length() > 0) {
+                r.set_array_member("params", this.toJSONArrayObject(this.params));
             }
             if (this.ctors.size > 0) {
                 r.set_object_member("ctors", this.toJSONObject(this.ctors));
@@ -219,6 +234,15 @@ namespace Palete {
             }
             return r;
         }
+		public Json.Array toJSONArrayObject(GLib.List<GirObject> map)
+        {
+            var r = new Json.Array();
+            for(var i =0;i< map.length();i++) {
+            
+                r.add_object_element(map.nth_data(i).toJSON());
+            }
+            return r;
+        }
     }
     
      
@@ -237,7 +261,15 @@ namespace Palete {
 			if (ret != null) {
 				return ret;
 			}
-			cache.set(ns, new Gir(ns));
+			var add = new Gir(ns);
+			cache.set(ns, add);
+			
+			var iter = add.classes.map_iterator();
+			while(iter.next()) {
+            	
+				iter.get_value().overlayParent();
+            }	
+
 			return cache.get(ns);
 			
 		}
@@ -252,9 +284,9 @@ namespace Palete {
 		    var gir_path = pth.nth_data(0).replace("/lib/girepository-1.0", "/share/gir-1.0");
 		   //console.log(fn);
 		    var file  = gir_path + "/" + ns + "-" + ver + ".gir";
-			print("ns: " + ns + "\n");
-			print("ver: " + ver + "\n");
-		    print(file);
+			// print("ns: " + ns + "\n");
+			// print("ver: " + ver + "\n");
+		    // print(file);
 
 
 			base("Package",ns);
@@ -353,9 +385,9 @@ namespace Palete {
                     break;
                 */
                 case "signal": // Glib:signal
-                    var c = new GirObject("Signal",n);
+                    var c = new GirObject("Signal",n.replace("-", "_"));
 					c.ns = this.ns;
-                    parent.signals.set(n,c);
+                    parent.signals.set(n.replace("-", "_"),c);
                     parent = c;
                     break;
                     
@@ -374,6 +406,7 @@ namespace Palete {
                 case "method":
                     var c = new GirObject("Method",n);
 					c.ns = this.ns;
+					c.propertyof = parent.name;
                     parent.methods.set(n,c);
                     parent = c;
                     break;
@@ -389,22 +422,23 @@ namespace Palete {
                     var c = new GirObject("Param",n);
 					c.ns = this.ns;
                     c.is_instance = true;
-                    parent.params.set(n,c);
+                    parent.params.append(c);
                     parent = c;
                     break;
                 
                 case "parameter":
                     var c = new GirObject("Param",n);
 					c.ns = this.ns;
-                    parent.params.set(n,c);
+                    parent.params.append(c);
                     parent = c;
                     break;
                 
                 case "property":
                 case "field":
-                    var c = new GirObject("Prop",n);
+                    var c = new GirObject("Prop",n.replace("-", "_"));
 					c.ns = this.ns;
-                    parent.props.set(n,c);
+					c.propertyof = parent.name;
+                    parent.props.set(n.replace("-", "_"),c);
                     parent = c;
                     break;
                 
@@ -459,7 +493,7 @@ namespace Palete {
                 case "prerequisite": // ignore?
                     return;
                 default:
-                    print("UNHANDLED" + element->name +"\n");
+                    print("UNHANDLED Gir file element: " + element->name +"\n");
                     return;
             }
             /*

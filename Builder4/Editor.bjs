@@ -3,28 +3,28 @@
     "name": "Editor",
     "parent": "",
     "title": false,
-    "path": "/home/alan/gitlive/app.Builder/Builder4/Editor.bjs",
+    "path": "/home/alan/gitlive/app.Builder.js/Builder4/Editor.bjs",
     "items": [
         {
             "listeners": {
-                "delete_event": "function (self, event) {\n    if (!this.get('/Editor.RightEditor').save()) {\n        // no hiding with errors.\n        return true;\n    }\n    this.el.hide();\n    this.get('/Editor').activePath = false;\n    return true;\n}\n/*--\n\n(event) => {\n    if (!Editor.RightEditor.save()) {\n        // no hiding with errors.\n        return true;\n    }\n    _this.el.hide();\n    _this.active_path = \"\";\n    return true;\n}\n\n*/",
-                "configure_event": "function (self, object) {\n    this.pos = this.el.get_position();\n\n    return false;\n}\n/*--\n (object) => {\n    _this.pos = true;\n    this.el.get_position(out _this.pos_root_x, out _this.pos_root_y);\n\n\n    return false;\n}\n*/\n",
-                "show": "function (self) {\n    if (this.pos) {\n        this.el.set_uposition(this.pos.root_x,this.pos.root_y);\n    }\n}\n/*--\n () => {\n    if (this.pos) {\n        _this.el.move(this.pos_root_x,this.pos_root_y);\n    }\n}\n\n*/"
+                "configure_event": " (object) => {\n    _this.pos = true;\n    this.el.get_position(out _this.pos_root_x, out _this.pos_root_y);\n\n\n    return false;\n}\n \n",
+                "show": "  () => {\n    if (this.pos) {\n        _this.el.move(this.pos_root_x,this.pos_root_y);\n    }\n}\n "
             },
-            ".activeEditor": "string:\"\"",
-            ".active_path": "string:\"\"",
-            ".dirty": "bool:false",
-            ".pos": "bool:false",
-            ".pos_root_x": "int",
-            ".pos_root_y": "int",
+            ".bool:dirty": "false",
+            ".bool:pos": "false",
+            ".int:pos_root_x": "",
+            ".int:pos_root_y": "",
+            ".string:activeEditor": "\"\"",
+            ".string:active_path": "\"\"",
             "height_request": 300,
             "id": "Editor",
             "title": "Application Builder -  Code  Editor",
             "width_request": 500,
             "xtype": "Window",
+            "|bool:save": "  ()  {\n\n    if (!Editor.RightEditor.save()) {\n        // no hiding with errors.\n        return true;\n    }\n    _this.active_path = \"\";\n    _this.el.hide();\n    return true;\n\n} ",
             "|init": "function() {\n    XObject.prototype.init.call(this);\n   // this.show_all();\n}\n",
-            "|save": "function (self, event) {\n    if (!this.get('/Editor.RightEditor').save()) {\n        // no hiding with errors.\n        return true;\n    }\n    this.get('/Editor').activePath = false;\n    this.el.hide();\n    return true;\n}\n/*--\n\nbool ()  {\n\n    if (!Editor.RightEditor.save()) {\n        // no hiding with errors.\n        return true;\n    }\n    _this.active_path = \"\";\n    _this.el.hide();\n    return true;\n\n}\n*/",
-            "|show_all": "function() {\n    \n}\n/*--\nvoid () {\n    this.el.show_all();\n\n}\n*/",
+            "|show_all": " (event) => {\n    if (!Editor.RightEditor.save()) {\n        // no hiding with errors.\n        return true;\n    }\n    _this.el.hide();\n    _this.active_path = \"\";\n    return true;\n}\n ",
+            "|void:show_all": "  () {\n    this.el.show_all();\n\n}\n ",
             "|xns": "Gtk",
             "items": [
                 {
@@ -40,7 +40,7 @@
                             "items": [
                                 {
                                     "listeners": {
-                                        "clicked": "function (self) {\n\n  this.get('/Editor.RightEditor').save();\n}\n/*--\n() => { \n    Editor.RightEditor.save();\n}\n\n*/\n"
+                                        "clicked": " () => { \n    Editor.RightEditor.save();\n}\n \n"
                                     },
                                     "id": "save_button",
                                     "label": "Save",
@@ -53,34 +53,34 @@
                             "id": "RightEditor",
                             "pack": "add",
                             "xtype": "ScrolledWindow",
-                            "|save": "function() {\n    // make sure we have an active path..\n     if (!this.get('/Editor').activePath) {\n        return true;\n     }\n     \n     var str = this.get('/Editor.buffer').toString();\n     if (!this.get('/Editor.buffer').checkSyntax()) {\n         this.get('/StandardErrorDialog').show(\"Fix errors in code and save..\"); \n         return false;\n     }\n     \n     this.get('/LeftPanel.model').changed(  str , false);\n     this.get('/Editor').dirty = false;\n     this.get('/Editor.save_button').el.sensitive = false;\n     return true;\n}\n/*--\nbool () {\n     print(\"editor.rightbutton.save\");\n     if (_this.active_path.length  < 1 ) {\n          print(\"skip - no active path\");\n        return true;\n     }\n     \n     var str = Editor.buffer.toString();\n     \n     if (!Editor.buffer.checkSyntax()) {\n         print(\"check syntax failed\");\n         //this.get('/StandardErrorDialog').show(\"Fix errors in code and save..\"); \n         return false;\n     }\n     \n     // LeftPanel.model.changed(  str , false);\n     _this.dirty = false;\n     _this.save_button.el.sensitive = false;\n     print(\"set save button grey\");\n     return true;\n}\n\n*/",
+                            "|bool:save": "  () {\n     print(\"editor.rightbutton.save\");\n     if (_this.active_path.length  < 1 ) {\n          print(\"skip - no active path\");\n        return true;\n     }\n     \n     var str = Editor.buffer.toString();\n     \n     if (!Editor.buffer.checkSyntax()) {\n         print(\"check syntax failed\");\n         //this.get('/StandardErrorDialog').show(\"Fix errors in code and save..\"); \n         return false;\n     }\n     \n     // LeftPanel.model.changed(  str , false);\n     _this.dirty = false;\n     _this.save_button.el.sensitive = false;\n     print(\"set save button grey\");\n     return true;\n}\n ",
                             "|xns": "Gtk",
                             "items": [
                                 {
                                     "listeners": {
-                                        "key_release_event": "function (self, event) {\n    \n    if (event.key.keyval == 115 && (event.key.state & Gdk.ModifierType.CONTROL_MASK ) ) {\n        print(\"SAVE: ctrl-S  pressed\");\n        this.save();\n        return false;\n    }\n   // print(event.key.keyval)\n    \n    return false;\n}\n/*--\n(event) => {\n    \n    if (event.keyval == 115 && (event.state & Gdk.ModifierType.CONTROL_MASK ) > 0 ) {\n        print(\"SAVE: ctrl-S  pressed\");\n        this.save();\n        return false;\n    }\n   // print(event.key.keyval)\n    \n    return false;\n\n}\n*/\n\n"
+                                        "key_release_event": " (event) => {\n    \n    if (event.keyval == 115 && (event.state & Gdk.ModifierType.CONTROL_MASK ) > 0 ) {\n        print(\"SAVE: ctrl-S  pressed\");\n        this.save();\n        return false;\n    }\n   // print(event.key.keyval)\n    \n    return false;\n\n} \n\n"
                                     },
                                     "id": "view",
                                     "indent_width": 4,
                                     "pack": "add",
                                     "xtype": "View",
                                     "|auto_indent": "true",
-                                    "|init": "function() {\n    XObject.prototype.init.call(this);\n     var description = Pango.Font.description_from_string(\"monospace\")\n    description.set_size(8000);\n    this.el.modify_font(description);\n\n}\n/*--\n\n    var description =   Pango.FontDescription.from_string(\"monospace\");\n    description.set_size(8000);\n    this.el.override_font(description);\n\n\n*/\n",
+                                    "|init": " \n    var description =   Pango.FontDescription.from_string(\"monospace\");\n    description.set_size(8000);\n    this.el.override_font(description);\n\n ",
                                     "|insert_spaces_instead_of_tabs": "true",
-                                    "|load": "function(str) {\n\n// show the help page for the active node..\n   //this.get('/Help').show();\n\n\n  // this.get('/BottomPane').el.set_current_page(0);\n    this.el.get_buffer().set_text(str, str.length);\n    var lm = GtkSource.LanguageManager.get_default();\n    \n    this.el.get_buffer().set_language(lm.get_language('js'));\n    var buf = this.el.get_buffer();\n    var cursor = buf.get_mark(\"insert\");\n    var iter= new Gtk.TextIter;\n    buf.get_iter_at_mark(iter, cursor);\n    iter.set_line(1);\n    iter.set_line_offset(4);\n    buf.move_mark(cursor, iter);\n    \n    \n    cursor = buf.get_mark(\"selection_bound\");\n    iter= new Gtk.TextIter;\n    buf.get_iter_at_mark(iter, cursor);\n    iter.set_line(1);\n    iter.set_line_offset(4);\n    buf.move_mark(cursor, iter);\n    this.get('/Editor').dirty = false;\n    this.el.grab_focus();\n     this.get('/Editor.save_button').el.sensitive = false;\n}",
-                                    "|save": "function() {\n    \n    return this.get('/Editor.RightEditor').save();\n\n}\n/*--\nvoid () {\n\n    Editor.RightEditor.save();\n}\n*/",
                                     "|show_line_numbers": "true",
+                                    "|void:load": " (string str) {\n\n// show the help page for the active node..\n   //this.get('/Help').show();\n\n\n  // this.get('/BottomPane').el.set_current_page(0);\n    this.el.get_buffer().set_text(str, str.length);\n    var lm = Gtk.SourceLanguageManager.get_default();\n    \n    ((Gtk.SourceBuffer)(this.el.get_buffer())) .set_language(lm.get_language(\"js\"));\n    var buf = this.el.get_buffer();\n    var cursor = buf.get_mark(\"insert\");\n    Gtk.TextIter iter;\n    buf.get_iter_at_mark(out iter, cursor);\n    iter.set_line(1);\n    iter.set_line_offset(4);\n    buf.move_mark(cursor, iter);\n    \n    \n    cursor = buf.get_mark(\"selection_bound\");\n    //iter= new Gtk.TextIter;\n    buf.get_iter_at_mark(out iter, cursor);\n    iter.set_line(1);\n    iter.set_line_offset(4);\n    buf.move_mark(cursor, iter);\n    Editor.dirty = false;\n    this.el.grab_focus();\n    _this.save_button.el.sensitive = false;\n}",
+                                    "|void:save": " () {\n\n    Editor.RightEditor.save();\n}\n ",
                                     "|xns": "GtkSource",
                                     "items": [
                                         {
                                             "listeners": {
-                                                "changed": "function (self) {\n\n    if(this.checkSyntax()) {\n        this.get('/Editor.save_button').el.sensitive = true;\n    }\n   // print(\"EDITOR CHANGED\");\n    this.get('/Editor').dirty = true;\n\n    // this.get('/LeftPanel.model').changed(  str , false);\n    return false;\n}\n\n/*--\n\n() => {\n    // check syntax??\n        if(this.checkSyntax()) {\n        Editor.save_button.el.sensitive = true;\n    }\n   // print(\"EDITOR CHANGED\");\n    Editor.dirty = true;\n\n    // this.get('/LeftPanel.model').changed(  str , false);\n    return ;\n}\n\n\n*/\n\n\n"
+                                                "changed": " () => {\n    // check syntax??\n        if(this.checkSyntax()) {\n        Editor.save_button.el.sensitive = true;\n    }\n   // print(\"EDITOR CHANGED\");\n    Editor.dirty = true;\n\n    // this.get('/LeftPanel.model').changed(  str , false);\n    return ;\n}\n\n \n"
                                             },
                                             "id": "buffer",
                                             "pack": "set_buffer",
                                             "xtype": "Buffer",
-                                            "|checkSyntax": "function() {\n    var str = this.toString();\n    var res = '';\n    try {\n      //  print('var res = ' + str);\n        Seed.check_syntax('var res = ' + str);\n        \n       \n    } catch (e) {\n        \n        this.get('/RightEditor.view').el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({\n            red: 0xFFFF, green: 0xCCCC , blue : 0xCCCC\n           }));\n        print(\"SYNTAX ERROR IN EDITOR\");   \n        print(e);\n        // print(str);\n        //console.dump(e);\n        return false;\n    }\n     this.get('/RightEditor.view').el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({\n        red: 0xFFFF, green: 0xFFFF , blue : 0xFFFF\n       }));\n    \n    return true;\n}\n/*--\nbool () { \n    // we could try running valac... ?? but it's a bit confusing..\n    return true;\n\n}\n\n\n*/",
-                                            "|toString": "function() {\n    \n    var s = new Gtk.TextIter();\n    var e = new Gtk.TextIter();\n    this.el.get_start_iter(s);\n    this.el.get_end_iter(e);\n    var ret = this.el.get_text(s,e,true);\n    //print(\"TO STRING? \" + ret);\n    return ret;\n}\n/*--\nstring () {\n    \n    Gtk.TextIter s;\n    Gtk.TextIter e;\n    this.el.get_start_iter(out s);\n    this.el.get_end_iter(out e);\n    var ret = this.el.get_text(s,e,true);\n    //print(\"TO STRING? \" + ret);\n    return ret;\n}\n\n*/",
+                                            "|bool:checkSyntax": " () {\n /*\n    var str = this.toString();\n    var res = \"\";\n    /*\n    try {\n      //  print('var res = ' + str);\n        Seed.check_syntax('var res = ' + str);\n        \n       \n    } catch (e) {\n        \n        this.get('/RightEditor.view').el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({\n            red: 0xFFFF, green: 0xCCCC , blue : 0xCCCC\n           }));\n        print(\"SYNTAX ERROR IN EDITOR\");   \n        print(e);\n        // print(str);\n        //console.dump(e);\n        return false;\n    }\n     this.get('/RightEditor.view').el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({\n        red: 0xFFFF, green: 0xFFFF , blue : 0xFFFF\n       }));\n    */\n    return true;\n}\n",
+                                            "|string:toString": "  () {\n    \n    Gtk.TextIter s;\n    Gtk.TextIter e;\n    this.el.get_start_iter(out s);\n    this.el.get_end_iter(out e);\n    var ret = this.el.get_text(s,e,true);\n    //print(\"TO STRING? \" + ret);\n    return ret;\n}\n ",
                                             "|xns": "GtkSource"
                                         }
                                     ]

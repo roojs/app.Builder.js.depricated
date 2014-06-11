@@ -17,23 +17,23 @@ static int main (string[] args) {
 
 public static Xcls_Editor  Editor;
 
-private static Xcls_Editor  _this;
-
 public class Xcls_Editor
 {
     public Gtk.Window el;
+    private static Xcls_Editor  _this;
+
     public Xcls_save_button save_button;
     public Xcls_RightEditor RightEditor;
     public Xcls_view view;
     public Xcls_buffer buffer;
 
         // my vars
-    public string activeEditor;
-    public string active_path;
     public bool dirty;
     public bool pos;
     public int pos_root_x;
     public int pos_root_y;
+    public string activeEditor;
+    public string active_path;
 
         // ctor 
     public Xcls_Editor()
@@ -43,10 +43,10 @@ public class Xcls_Editor
         Editor = this;
 
         // my vars
-        this.activeEditor = "";
-        this.active_path = "";
         this.dirty = false;
         this.pos = false;
+        this.activeEditor = "";
+        this.active_path = "";
 
         // set gobject values
         this.el.height_request = 300;
@@ -56,44 +56,38 @@ public class Xcls_Editor
         this.el.add (  child_0.el  );
 
         // listeners 
-        this.el.delete_event.connect( (event) => {
-            if (!Editor.RightEditor.save()) {
-                // no hiding with errors.
-                return true;
-            }
-            _this.el.hide();
-            _this.active_path = "";
-            return true;
-        } );
         this.el.configure_event.connect(  (object) => {
             _this.pos = true;
             this.el.get_position(out _this.pos_root_x, out _this.pos_root_y);
         
         
             return false;
-        } );
-        this.el.show.connect(  () => {
+        }
+         
+         );
+        this.el.show.connect(   () => {
             if (this.pos) {
                 _this.el.move(this.pos_root_x,this.pos_root_y);
             }
-        } );
+        }
+          );
     }
 
     // userdefined functions 
 
     // skip listeners - not pipe 
 
-    // skip .activeEditor - already used 
+    // skip .bool:dirty - already used 
 
-    // skip .active_path - already used 
+    // skip .bool:pos - already used 
 
-    // skip .dirty - already used 
+    // skip .int:pos_root_x - already used 
 
-    // skip .pos - already used 
+    // skip .int:pos_root_y - already used 
 
-    // skip .pos_root_x - already used 
+    // skip .string:activeEditor - already used 
 
-    // skip .pos_root_y - already used 
+    // skip .string:active_path - already used 
 
     // skip height_request - already used 
 
@@ -104,9 +98,7 @@ public class Xcls_Editor
     // skip width_request - already used 
 
     // skip xtype - not pipe 
-
-    // skip |init - already used 
-    public bool save()  {
+    public bool save  ()  {
         
             if (!Editor.RightEditor.save()) {
                 // no hiding with errors.
@@ -116,13 +108,18 @@ public class Xcls_Editor
             _this.el.hide();
             return true;
         
-        }
-    public void show_all() {
+        } 
+
+    // skip |init - already used 
+
+    // skip |show_all - no return type
+    public void show_all  () {
             this.el.show_all();
         
         }
+         
 
-    // skip |xns - could not find seperator
+    // skip |xns - no return type
 
     // skip items - not pipe 
 
@@ -159,7 +156,7 @@ public class Xcls_Editor
 
         // skip xtype - not pipe 
 
-        // skip |xns - could not find seperator
+        // skip |xns - no return type
 
         // skip items - not pipe 
 
@@ -193,7 +190,7 @@ public class Xcls_Editor
 
         // skip xtype - not pipe 
 
-        // skip |xns - could not find seperator
+        // skip |xns - no return type
 
         // skip items - not pipe 
 
@@ -220,9 +217,11 @@ public class Xcls_Editor
             // set gobject values
 
             // listeners 
-            this.el.clicked.connect( () => { 
+            this.el.clicked.connect(  () => { 
                 Editor.RightEditor.save();
-            } );
+            }
+             
+             );
         }
 
         // userdefined functions 
@@ -235,7 +234,7 @@ public class Xcls_Editor
 
         // skip xtype - not pipe 
 
-        // skip |xns - could not find seperator
+        // skip |xns - no return type
 
         // skip xvala_cls - not pipe 
 
@@ -269,7 +268,7 @@ public class Xcls_Editor
         // skip pack - not pipe 
 
         // skip xtype - not pipe 
-        public bool save() {
+        public bool save  () {
                  print("editor.rightbutton.save");
                  if (_this.active_path.length  < 1 ) {
                       print("skip - no active path");
@@ -290,8 +289,9 @@ public class Xcls_Editor
                  print("set save button grey");
                  return true;
             }
+             
 
-        // skip |xns - could not find seperator
+        // skip |xns - no return type
 
         // skip items - not pipe 
 
@@ -323,13 +323,8 @@ public class Xcls_Editor
             var child_0 = new Xcls_buffer();
             this.el.set_buffer (  child_0.el  );
 
-            // init method 
-                var description =   Pango.FontDescription.from_string("monospace");
-                description.set_size(8000);
-                this.el.override_font(description);
-
             // listeners 
-            this.el.key_release_event.connect( (event) => {
+            this.el.key_release_event.connect(  (event) => {
                 
                 if (event.keyval == 115 && (event.state & Gdk.ModifierType.CONTROL_MASK ) > 0 ) {
                     print("SAVE: ctrl-S  pressed");
@@ -340,7 +335,9 @@ public class Xcls_Editor
                 
                 return false;
             
-            } );
+            } 
+            
+             );
         }
 
         // userdefined functions 
@@ -361,15 +358,44 @@ public class Xcls_Editor
 
         // skip |insert_spaces_instead_of_tabs - already used 
 
-        // skip |load - could not find seperator
-        public void save() {
+        // skip |show_line_numbers - already used 
+        public void load (string str) {
+            
+            // show the help page for the active node..
+               //this.get('/Help').show();
+            
+            
+              // this.get('/BottomPane').el.set_current_page(0);
+                this.el.get_buffer().set_text(str, str.length);
+                var lm = Gtk.SourceLanguageManager.get_default();
+                
+                ((Gtk.SourceBuffer)(this.el.get_buffer())) .set_language(lm.get_language("js"));
+                var buf = this.el.get_buffer();
+                var cursor = buf.get_mark("insert");
+                Gtk.TextIter iter;
+                buf.get_iter_at_mark(out iter, cursor);
+                iter.set_line(1);
+                iter.set_line_offset(4);
+                buf.move_mark(cursor, iter);
+                
+                
+                cursor = buf.get_mark("selection_bound");
+                //iter= new Gtk.TextIter;
+                buf.get_iter_at_mark(out iter, cursor);
+                iter.set_line(1);
+                iter.set_line_offset(4);
+                buf.move_mark(cursor, iter);
+                Editor.dirty = false;
+                this.el.grab_focus();
+                _this.save_button.el.sensitive = false;
+            }
+        public void save () {
             
                 Editor.RightEditor.save();
             }
+             
 
-        // skip |show_line_numbers - already used 
-
-        // skip |xns - could not find seperator
+        // skip |xns - no return type
 
         // skip items - not pipe 
 
@@ -396,7 +422,7 @@ public class Xcls_Editor
             // set gobject values
 
             // listeners 
-            this.el.changed.connect( () => {
+            this.el.changed.connect(  () => {
                 // check syntax??
                     if(this.checkSyntax()) {
                     Editor.save_button.el.sensitive = true;
@@ -406,7 +432,10 @@ public class Xcls_Editor
             
                 // this.get('/LeftPanel.model').changed(  str , false);
                 return ;
-            } );
+            }
+            
+             
+             );
         }
 
         // userdefined functions 
@@ -418,12 +447,34 @@ public class Xcls_Editor
         // skip pack - not pipe 
 
         // skip xtype - not pipe 
-        public bool checkSyntax() { 
-                // we could try running valac... ?? but it's a bit confusing..
+        public bool checkSyntax () {
+             /*
+                var str = this.toString();
+                var res = "";
+                /*
+                try {
+                  //  print('var res = ' + str);
+                    Seed.check_syntax('var res = ' + str);
+                    
+                   
+                } catch (e) {
+                    
+                    this.get('/RightEditor.view').el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({
+                        red: 0xFFFF, green: 0xCCCC , blue : 0xCCCC
+                       }));
+                    print("SYNTAX ERROR IN EDITOR");   
+                    print(e);
+                    // print(str);
+                    //console.dump(e);
+                    return false;
+                }
+                 this.get('/RightEditor.view').el.modify_base(Gtk.StateType.NORMAL, new Gdk.Color({
+                    red: 0xFFFF, green: 0xFFFF , blue : 0xFFFF
+                   }));
+                */
                 return true;
-            
             }
-        public string toString() {
+        public string toString  () {
                 
                 Gtk.TextIter s;
                 Gtk.TextIter e;
@@ -433,8 +484,9 @@ public class Xcls_Editor
                 //print("TO STRING? " + ret);
                 return ret;
             }
+             
 
-        // skip |xns - could not find seperator
+        // skip |xns - no return type
 
         // skip xvala_cls - not pipe 
 

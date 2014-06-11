@@ -163,55 +163,76 @@ namespace Palete
         getDefaultPack: function(pname, cname) {
             return 'add';
         },
-        saveTemplate: function(name, data)
+	*/
+        public void saveTemplate (string name, JsRender.Node data)
         {
-            var gn = this.guessName(JSON.parse(data));
+
+			var gn = data.fqn();
             // store it in user's directory..
-            var appdir = GLib.get_home_dir() + '/.Builder'; 
-            
-            if (!File.isDirectory(appdir+ '/' + gn)) {
-                File.mkdir(appdir+ '/' + gn);
+            var appdir =  GLib.Environment.get_home_dir() + "/.Builder"; 
+
+			
+            if (!GLib.FileUtils.test(appdir+ "/" + gn, GLib.FileTest.IS_DIR)) {
+				GLib.File.new_for_path (appdir+ "/" + gn).make_directory ();
+				
             }
-            File.write(appdir+ '/' + gn + '/' +  name + '.json', data);
+            GLib.FileUtils.set_contents(appdir+ "/" + gn + "/" +  name + ".json", data.toJsonString());
             
-        },
+        }
+	
         /**
          * list templates - in home directory (and app dir in future...)
          * @param {String} name  - eg. Gtk.Window..
          * @return {Array} list of templates available..
-         * /
-        listTemplates : function(name)
+         */
+	  
+        public  GLib.List<string> listTemplates (JsRender.Node node)
         {
             
-            var gn = name;
-            if (typeof(gn) != 'string') {
-                gn = this.guessName(gn);
-            }
+            var gn = node.fqn();
             
-            
-            var dir= GLib.get_home_dir() + '/.Builder/' + gn; 
-            if (!File.isDirectory(dir)) {
-                return [];
+            var ret = new GLib.List<string>();
+            var dir= GLib.Environment.get_home_dir() + "/.Builder/" + gn;
+			if (!GLib.FileUtils.test(dir, GLib.FileTest.IS_DIR)) {
+        		return ret;
+			}
+			
+
+
+			            
+			var f = File.new_for_path(dir);
+        
+            var file_enum = f.enumerate_children(GLib.FileAttribute.STANDARD_DISPLAY_NAME, GLib.FileQueryInfoFlags.NONE, null);
+             
+            FileInfo next_file; 
+            while ((next_file = file_enum.next_file(null)) != null) {
+                var n = next_file.get_display_name();
+    			if (!Regex.match_simple ("\\.json$", n)) {
+					continue;
+				}
+				ret.append( dir + "/" + n);
             }
-            var ret =  [];
-            File.list(dir).forEach(function(n) {
-                if (!n.match(/\.json$/)) {
-                    return;
-                }
-                
-                ret.push({
-                    path : dir + '/' + n,
-                    name:  n.replace(/\.json$/,'')
-                });
-            });
             return ret;
             
-        },
-        loadTemplate : function(path)
-        {
-            return JSON.parse(File.read(path));
         }
-    */        
+ 
+        public JsRender.Node? loadTemplate(string path)
+        {
+
+		    var pa = new Json.Parser();
+            pa.load_from_file(path);
+            var node = pa.get_root();
+            
+            if (node.get_node_type () != Json.NodeType.OBJECT) {
+		        return null;
+	        }
+            var obj = node.get_object ();
+             
+            var ret = new JsRender.Node();
+            ret.loadFromJson(obj);
+            return ret;
+        }
+            
         
     }
 

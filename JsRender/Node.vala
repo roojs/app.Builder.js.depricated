@@ -450,6 +450,17 @@ public class JsRender.Node  {
 
 
     }
+	public string toJsonString()
+    {
+        if (Node.gen == null) {
+            Node.gen = new Json.Generator();
+        }
+        var n = new Json.Node(Json.NodeType.OBJECT);
+		n.set_object(this.toJsonObject () );
+        Node.gen.set_root (n);
+        return  Node.gen.to_data (null);   
+    }
+	
     public Json.Object toJsonObject()
 	{
 		var ret = new Json.Object();

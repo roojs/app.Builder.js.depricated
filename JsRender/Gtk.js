@@ -11,15 +11,21 @@ Base = imports.JsRender.Base.Base;
 
 var gid = 1;
 
-var ctors = {
-    "Gtk.MessageDialog" : [ "parent:null", "flags:Gtk.DialogFlags.MODAL", "message_type",  "buttons", "text" ],
-    "Gtk.ToolButton": [ "icon_widget:null", "label:null" ],
+// ctors needed for Constructing vala?? - 
 
+var ctors = {
+    "Gtk.Label": [ "label" ],
+    "Gtk.Box": [ "orientation", "spacing:0" ],
+    "Gtk.MessageDialog" : [ "parent:null", "flags:Gtk.DialogFlags.MODAL", "message_type",  "buttons", "text" ],
     "Gtk.ScrolledWindow": [ "hadjustment:null", "vadjustment:null" ],
     "Gtk.SourceBuffer": [ "table:null" ],
+    "Gtk.Table": [ "n_rows", "n_columns" , "homogeneous" ],
+    "Gtk.ToolButton": [ "icon_widget:null", "label:null" ],
+    "Gtk.HBox": [ "homogeneous:true", "spacing:0" ],
     "Gtk.VBox": [ "homogeneous:true", "spacing:0" ],
-    
- 
+    "Gtk.ListStore": [ "n_columns", "columns" ],
+    "Gtk.FileChooserWidget" : [ "action"],
+    //"Gtk.Entry": [  ],
 };
 
 
@@ -247,6 +253,10 @@ Gtk = XObject.define(
             //print(JSON.stringify(this.items[0],null,4));Seed.quit();
 
             var item=  XObject.xclone(this.items[0]);
+            if (!item.id) {
+                item.id = this.name;
+                
+            }
             
             print(JSON.stringify(item,null,4));
             
@@ -277,6 +287,8 @@ Gtk = XObject.define(
                 ret += "*/\n";
             }
             ret += "\n\n";
+            
+            
             // print(JSON.stringify(item,null,4));
             this.toValaItem(item,0, function(s) {
                 ret+= s;
@@ -291,14 +303,14 @@ Gtk = XObject.define(
             var ns = item['|xns'] ;
             if (ns == 'GtkSource') {
                 return 'Gtk.Source'
-                ns = 'Gtk.Source';
+               
             }
             return ns + '.';
         },
         
         toValaName : function(item) {
             this.vcnt++;
-            var cls = this.toValaNS(item) + item.xtype;
+            var cls = this.toValaNS(item) + item.xtype;  // eg. Gtk.Window
             var id = item.id ? item.id : (item.xtype + this.vcnt);
             var props = this.palete.getPropertiesFor(cls, 'props');
             
@@ -399,6 +411,7 @@ Gtk = XObject.define(
             // wrapped ctor..
             // this may need to look up properties to fill in the arguments..
             // introspection does not workk..... - as things like gtkmessagedialog
+            /*
             if (cls == 'Gtk.Table') {
                 
                 var methods = this.palete.getPropertiesFor(cls, 'methods');
@@ -406,7 +419,7 @@ Gtk = XObject.define(
                 print(JSON.stringify(this.palete.proplist[cls], null,4));
                 Seed.quit();
             }
-            
+            */
             
             
             if (typeof(ctors[cls]) !== 'undefined') {
@@ -464,7 +477,7 @@ Gtk = XObject.define(
                 if (v.length < 1 || vv[0] == "signal") {
                     continue;
                 }
-                strbuilder(ipad + "this" + vv[1] + " = " +   v +";\n");
+                strbuilder(ipad + "this." + vv[1] + " = " +   v +";\n");
                 
             }
            
@@ -484,8 +497,11 @@ Gtk = XObject.define(
                 if (typeof(item[p.name]) != 'undefined' && typeof(item[p.name]) != 'object' ) {
                     citems[p.name] = true;
                     
-                    
-                    strbuilder(ipad + "this.el." + p.name + " = " + JSON.stringify(item[p.name]) + ";\n");
+                    var val = JSON.stringify(item[p.name]);
+                    if (['xalign','yalign'].indexOf(p.name) > -1) {
+                        val +='f';
+                    }
+                    strbuilder(ipad + "this.el." + p.name + " = " + val + ";\n");
                     return;
                 }
                 if (typeof(item['|' + p.name]) != 'undefined' && typeof(item['|' + p.name]) != 'object' ) {
@@ -506,7 +522,11 @@ Gtk = XObject.define(
             if (typeof(item.items) != 'undefined') {
                 for(var i =0;i<item.items.length;i++) {
                     var ci = item.items[i];
+                    
                     var packing = ci.pack ? ci.pack.split(',') : [ 'add' ];
+                    if (typeof(ci['|pack']) != 'undefined') {
+                        packing =ci['|pack'].split(',');
+                    }
                     var pack = packing.shift();
                     strbuilder(ipad + "var child_" + i + " = new " + ci.xvala_xcls + "();\n" )
                     

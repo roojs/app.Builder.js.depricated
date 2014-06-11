@@ -18,7 +18,8 @@ namespace JsRender {
 		public string fullname;
 		public string path;  // is the full path to the file.
 		public string parent;  // JS parent.
-		
+		public string region;  // RooJS - insert region.
+        
 		public string title;  // a title.. ?? nickname.. ??? -
 
 		public string permname;

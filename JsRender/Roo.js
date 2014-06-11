@@ -166,9 +166,8 @@ Roo = XObject.define(
             var _this = this;
             var aitems = [];
             var nitems = [];
-            node.items.forEach(function(i) {
-                
-                
+            for (var ii = 0; ii < node.items.length;ii++) { 
+                var i = node.items[ii]; 
                 
                 _this.fixItems(i, true);
                 if (i.xtype == 'Array') {
@@ -176,7 +175,7 @@ Roo = XObject.define(
                     return;
                 }    
                 nitems.push(i);
-            });
+            } 
             node.items = nitems; 
             
             if (!aitems.length) {

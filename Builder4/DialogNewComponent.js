@@ -16,7 +16,7 @@ DialogNewComponent=new XObject({
             this.el.hide();
             return true;   
         },
-        response : (self, response_id) =>  {
+        response : (self, response_id) =>  { 
           
         	if (response_id < 1) { // cancel!
                     this.el.hide();
@@ -64,7 +64,7 @@ DialogNewComponent=new XObject({
          
                 
                 // what about .js ?
-                if (GLib.FileUtil.test(_this.file.name + ".bjs", GLib.FileTest.EXISTS)) {
+                if (GLib.FileUtils.test(_this.file.name + ".bjs", GLib.FileTest.EXISTS)) {
                     StandardErrorDialog.show(
                         "That file already exists"
                     ); 
@@ -103,19 +103,10 @@ DialogNewComponent=new XObject({
     {
         this.project = c.project;
         
-        if (!this.el) {
+        //if (!this.el) {
             //this.init();
-        }
+         //}
         
-        this.def =  { 
-            name : '' , 
-            title : '' ,
-            region : '' ,
-            parent: '',
-          //  disable: '',
-            modOrder : '0',
-            permname : ''
-        };
         _this.name.el.set_text(c.name);
         _this.title.el.set_text(c.title);
         _this.parent.el.set_text(c.parent);    

@@ -12,68 +12,42 @@ XObject = imports.XObject.XObject;
 DialogTemplateSelect=new XObject({
     xtype: Gtk.Dialog,
     listeners : {
-        delete_event : function (self, event) {
+        delete_event : (self, event)  =>{
             this.el.hide();
             return true;
         }
     },
     default_height : 200,
     default_width : 400,
-    modal : true,
-    show : function(node) {
+    'JsRender.Node?:show' : (Palete.Palete pal, JsRender.Node node) {
         
-        var pal = this.get('/Window.LeftTree').getPaleteProvider();
+    
         var opts = pal.listTemplates(node);
-        if (!opts.length) {
+        if (opts.length() < 1) {
             return node;
         }
-      
-      
-        var dopts = [];
-      
-      
-        dopts.push({ path: '' , name :'Just add Element' });
         
-        
-        
-         
-        var project = this.get('/Window.LeftTree').getActiveFile().project;
-        var m = project.dbcon ? project.dbcon + '_' : false;
-        
-      
-                        //print (project.fn);
-        
-        opts.forEach(function(p) {
-            // if we have a dbname - ignore _ named.
-            if (m  && p.name.match(/_/) && 
-                p.name.substring(0, m.length) != m) {
-                return;
-                
-            }
-            dopts.push(p);
-        });
-            
-        
-        this.get('combo.model').loadData(dopts);
-         this.get('combo').el.set_active(0);
+        //opts.unshift({ path: '' , name :'Just add Element' });
+         _this.model.loadData(opts);
+         _this.combo.el.set_active(0);
          
         this.el.show_all();
         this.el.run();
         this.el.hide();
-        var ix = this.get('combo').el.get_active();
+        var ix = _this.combo.el.get_active();
         if (ix < 1 ) {
-            return node;
+            return null;
         }
-         
-        return pal.loadTemplate(dopts[ix].path)
+        
+    
+        return pal.loadTemplate(opts.nth_data(ix));
     
     },
+    modal : true,
     items : [
         {
             xtype: Gtk.VBox,
-            pack : function(p,e) {
-                                p.el.get_content_area().add(e.el)
-                            },
+            pack : get_content_area().add,
             items : [
                 {
                     xtype: Gtk.HBox,
@@ -88,53 +62,42 @@ DialogTemplateSelect=new XObject({
                             xtype: Gtk.ComboBox,
                             id : "combo",
                             pack : "add",
-                            init : function() {
-                                XObject.prototype.init.call(this);
-                                 this.el.add_attribute(this.items[0].el , 'markup', 1 );
-                            },
+                            init : this.el.add_attribute(_this.cellrenderer , "markup", 1 );,
                             items : [
                                 {
                                     xtype: Gtk.CellRendererText,
-                                    pack : "pack_start"
+                                    id : "cellrenderer",
+                                    pack : "pack_start,true"
                                 },
                                 {
                                     xtype: Gtk.ListStore,
                                     id : "model",
+                                    n_columns : 2,
                                     pack : "set_model",
-                                    init : function() {
-                                        XObject.prototype.init.call(this);
-                                                this.el.set_column_types ( 2, [
-                                                GObject.TYPE_STRING,  // real key
-                                                GObject.TYPE_STRING // real type
-                                                
-                                                
-                                            ] );
-                                    },
-                                    loadData : function (data) {
+                                    columns : typeof(string),typeof(string),
+                                    'void:loadData' : (GLib.List<string> data) {
                                         this.el.clear();                                    
-                                         
-                                        var project = this.get('/Window.LeftTree').getActiveFile().project;
-                                        var m = project.dbcon ? project.dbcon + '_' : false;
-                                        
-                                      
-                                                        //print (project.fn);
+                                        Gtk.TreeIter iter;
                                         var el = this.el;
-                                        data.forEach(function(p) {
-                                            // if we have a dbname - ignore _ named.
-                                            if (m  && p.name.match(/_/) && 
-                                                p.name.substring(0, m.length) != m) {
-                                                return;
-                                                
-                                            }
+                                        
+                                        el.append(out iter);
+                                        
+                                         
+                                        el.set_value(iter, 0, "");
+                                        el.set_value(iter, 1, "Just add Element");
+                                        
+                                        for (var i = 0; i < data.length();i++) {
+                                        
+                                    
+                                            el.append(out iter);
+                                            var str = data.nth_data(i);
+                                            var fn = Path.get_basename (str);
+                                            fn.replace(".json", "");
                                             
-                                            var iret = {};
-                                            el.append(iret);
+                                            el.set_value(iter, 0, fn);
+                                            el.set_value(iter, 1, str);
                                             
-                                             
-                                            el.set_value(iret.iter, 0, ''+ p.path);
-                                            el.set_value(iret.iter, 1, ''+ p.name);
-                                            
-                                        });
+                                        }
                                                   
                                                                          
                                     }
@@ -142,7 +105,7 @@ DialogTemplateSelect=new XObject({
                             ]
                         }
                     ]
-                }  
+                }
             ]
         },
         {

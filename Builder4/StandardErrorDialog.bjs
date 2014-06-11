@@ -1,1 +1,26 @@
-{"id":"file-gtk-17","name":"StandardErrorDialog","parent":"","title":false,"path":"/home/alan/gitlive/app.Builder.js/Sample/StandardErrorDialog.bjs","items":[{"|xns":"Gtk","xtype":"MessageDialog","|buttons":"Gtk.ButtonsType.OK","|modal":true,"|message_type":"Gtk.MessageType.ERROR","text":"fixme","|use_markup":true,"|show":"function(msg) {\n     if (!this.el) {\n            this.init();\n        }\n        this.el.text =  msg;\n        this.el.show_all();\n}\n","listeners":{"delete_event":"function (self, event) {\n    this.el.hide();\n    return true;\n}","response":"function (self, response_id) {\n   this.el.hide();\n}"}}]}
+{
+    "id": "file-gtk-9",
+    "name": "StandardErrorDialog",
+    "parent": "",
+    "title": false,
+    "path": "/home/alan/gitlive/app.Builder.js/Builder4/StandardErrorDialog.bjs",
+    "items": [
+        {
+            "listeners": {
+                "delete_event": "  (self, event)  => {\n    this.el.hide();\n    return true;\n} \n",
+                "response": "  (self, response_id) => {\n   this.el.hide();\n}"
+            },
+            "text": "fixme",
+            "xtype": "MessageDialog",
+            "|buttons": "Gtk.ButtonsType.OK",
+            "|message_type": "Gtk.MessageType.ERROR",
+            "|modal": "true",
+            "|use_markup": "true",
+            "|void:show": " (string msg) {\n\n    this.el.text =  msg;\n    this.el.show_all();\n}\n",
+            "|void:show_all": " () {\n    this.show(\"TEST\");\n}\n",
+            "|xns": "Gtk"
+        }
+    ],
+    "permname": "",
+    "modOrder": ""
+}

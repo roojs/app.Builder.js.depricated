@@ -372,15 +372,19 @@ namespace JsRender {
 
 				var argid = 1;
                 var args = new GLib.List<string>();
-				var piter = ctor_def.paramset.params.map_iterator();
-    			while (piter.next()) {
 
+				for (var i = 0;i< ctor_def.paramset.params.length(); i++) {
+					var val = ctor_def.paramset.params.nth_data(i); 
+					var nm = val.name;
 					// need piter.get_key(); -- string..
-					string pv = item.get(piter.get_key());
+					string pv = item.get(nm);
 					if (pv.length < 1) {
 						// try and find the 'item'....
-						Node pvi = item.findProp(piter.get_key());
+						Node pvi = item.findProp(nm);
+						
 						if (pvi == null) {
+							ret += "// could not find value for   " + nm +"\n";
+							
 							args.append("null"); // hopefully...
 							continue;
 						}
@@ -393,7 +397,10 @@ namespace JsRender {
 						continue;
 					} 
 					// got a string value..
-					args.append(this.valueTypeToString(pv, piter.get_value().type));
+					ret += "// for " + nm + " we have a value of " + 
+							pv + " converting to " + val.type +"\n";
+					
+					args.append(this.valueTypeToString(pv, val.type));
 					
                 }
                 ret += ipad + "this.el = new " + cls + "( "+ this.gLibStringListJoin(", ", args) + " );\n" ;
@@ -448,11 +455,16 @@ namespace JsRender {
 
 			var pviter = props.map_iterator();
 			while (pviter.next()) {
+
+				// print("Check: " +cls + "::(" + pviter.get_value().propertyof + ")" + pviter.get_key() + " " );
+				
         		// skip items we have already handled..
         		if  (!(citems.get(pviter.get_key()) == false)) {
+					//print("- skip already handled\n " );
                     continue;
                 }
 				if (item.get(pviter.get_key()).length < 1) {
+					//print("- skip not found\n " );
 					continue;
 				}
 				
@@ -501,36 +513,15 @@ namespace JsRender {
             
             if (item.listeners.size > 0) {
             //    print(JSON.stringify(item.listeners));Seed.quit();
-            /*
-                strbuilder("\n" + ipad + "// listeners \n");  
+            
+                ret+= "\n" + ipad + "// listeners \n";  
                 // add all the signal handlers..
-                for (var k in item.listeners) {
-                    
-                    
-                    var v = item.listeners[k].split(/\/*--/);
-                    if (v.length < 2) {
-                        var vv = v[0].replace(/^function/, '');
-                        vv = vv.replace(/\) \{/, ') => {');
-                        vv = vv.replace(/^\n+/,'');
-                        vv = vv.replace(/\n+$/,'');
-                        vv = vv.replace(/\n/g,"\n" + ipad);
-                        
-                        
-                        
-                        
-                        
-                        //continue;
-                    } else { 
-                        
-                        //print(JSON.stringify(vv));Seed.quit();
-                        vv = vv.replace(/^\n+/,'');
-                        vv = vv.replace(/\n+$/,'');
-                        vv = vv.replace(/\n/g,"\n" + ipad);
-                    }
-                    strbuilder(ipad + "this.el." + k + ".connect( " + vv  + " );\n");
-                    
+				var liter = item.listeners.map_iterator();
+				while (liter.next()) {
+					var vv = string.joinv("\n" + pad, liter.get_value().split("\n"));
+				    ret+= ipad + "this.el." + liter.get_key() + ".connect( " + vv  + " );\n";
                 }
-			*/
+			 
             }    
                 
             
@@ -608,15 +599,15 @@ namespace JsRender {
 			if (ctor_def.paramset != null)  {
 				var args = new GLib.List<string>();
 				var argid = 1;
- 
-				var piter = ctor_def.paramset.params.map_iterator();
-				while (piter.next()) {
-
+  
+				for (var i = 0; i < ctor_def.paramset.params.length(); i++)  {
 					// need piter.get_key(); -- string..
-					string pv = node.get(piter.get_key());
+					var val = ctor_def.paramset.params.nth_data(i);
+					var kn = val.name;
+					string pv = node.get(kn);
 					if (pv.length < 1) {
 						// try and find the 'item'....
-						Node pvi = node.findProp(piter.get_key());
+						Node pvi = node.findProp(kn);
 						if (pvi == null) {
 							args.append("null"); // hopefully...
 							continue;
@@ -628,7 +619,7 @@ namespace JsRender {
 						continue;
 					} 
 					// got a string value..
-					args.append(this.valueTypeToString(pv, piter.get_value().type));
+					args.append(this.valueTypeToString(pv, val.type));
 				
 		        }
 		        return ret + this.gLibStringListJoin(", ", args) + " );\n" ;
@@ -651,16 +642,16 @@ namespace JsRender {
 
 	}
 		
-		string valueTypeToString(string val, string type) {
-			switch(type) {
-				case "utf8":
-					return "\"" +  val.escape("") + "\"";
-				default:
-					return val;
-
-			}
+	string valueTypeToString(string val, string type) {
+		switch(type) {
+			case "utf8":
+				return "\"" +  val.escape("") + "\"";
+			default:
+				return val;
 
 		}
+
+	}
 
 		
 

@@ -2,11 +2,11 @@
 
 static int rid = 1;
 
-class Project.Roo : Project {
+public class Project.Roo : Project {
 
 	 
 
-    Roo(string path) {
+    public Roo(string path) {
 
 		
         base(path);

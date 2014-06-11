@@ -61,10 +61,8 @@ public class Xcls_DialogNewComponent
             this.el.hide();
             return true;   
         }
-        
-        
-         );
-        this.el.response.connect(   (self, response_id) =>  {
+          );
+        this.el.response.connect(  (self, response_id) =>  { 
           
         	if (response_id < 1) { // cancel!
                     this.el.hide();
@@ -112,7 +110,7 @@ public class Xcls_DialogNewComponent
          
                 
                 // what about .js ?
-                if (GLib.FileUtil.test(_this.file.name + ".bjs", GLib.FileTest.EXISTS)) {
+                if (GLib.FileUtils.test(_this.file.name + ".bjs", GLib.FileTest.EXISTS)) {
                     StandardErrorDialog.show(
                         "That file already exists"
                     ); 
@@ -169,19 +167,10 @@ public class Xcls_DialogNewComponent
         {
             this.project = c.project;
             
-            if (!this.el) {
+            //if (!this.el) {
                 //this.init();
-            }
+             //}
             
-            this.def =  { 
-                name : '' , 
-                title : '' ,
-                region : '' ,
-                parent: '',
-              //  disable: '',
-                modOrder : '0',
-                permname : ''
-            };
             _this.name.el.set_text(c.name);
             _this.title.el.set_text(c.title);
             _this.parent.el.set_text(c.parent);    
@@ -256,14 +245,11 @@ public class Xcls_DialogNewComponent
             // ctor 
         public Xcls_Table3()
         {
-            this.el = new Gtk.Table();
+            this.el = new Gtk.Table( 3, 2, false );
 
             // my vars
 
             // set gobject values
-            this.el.homogeneous = false;
-            this.el.n_columns = 2;
-            this.el.n_rows = 3;
             var child_0 = new Xcls_Label4();
             this.el.add (  child_0.el  );
             var child_1 = new Xcls_name();
@@ -321,14 +307,13 @@ public class Xcls_DialogNewComponent
             // ctor 
         public Xcls_Label4()
         {
-            this.el = new Gtk.Label();
+            this.el = new Gtk.Label( "Component Name" );
 
             // my vars
 
             // set gobject values
             this.el.justify = Gtk.Justification.RIGHT;
-            this.el.label = "Component Name";
-            this.el.xalign = 0.9;
+            this.el.xalign = 0.9f;
         }
 
         // userdefined functions 
@@ -398,15 +383,14 @@ public class Xcls_DialogNewComponent
             // ctor 
         public Xcls_Label6()
         {
-            this.el = new Gtk.Label();
+            this.el = new Gtk.Label( "Title" );
 
             // my vars
 
             // set gobject values
             this.el.justify = Gtk.Justification.RIGHT;
-            this.el.label = "Title";
             this.el.visible = true;
-            this.el.xalign = 0.9;
+            this.el.xalign = 0.9f;
         }
 
         // userdefined functions 
@@ -478,16 +462,15 @@ public class Xcls_DialogNewComponent
             // ctor 
         public Xcls_Label8()
         {
-            this.el = new Gtk.Label();
+            this.el = new Gtk.Label( "Region" );
 
             // my vars
 
             // set gobject values
             this.el.justify = Gtk.Justification.RIGHT;
-            this.el.label = "Region";
             this.el.tooltip_text = "center, north, south, east, west";
             this.el.visible = true;
-            this.el.xalign = 0.9;
+            this.el.xalign = 0.9f;
         }
 
         // userdefined functions 
@@ -561,15 +544,14 @@ public class Xcls_DialogNewComponent
             // ctor 
         public Xcls_Label10()
         {
-            this.el = new Gtk.Label();
+            this.el = new Gtk.Label( "Parent Name" );
 
             // my vars
 
             // set gobject values
             this.el.justify = Gtk.Justification.RIGHT;
-            this.el.label = "Parent Name";
             this.el.visible = true;
-            this.el.xalign = 0.9;
+            this.el.xalign = 0.9f;
         }
 
         // userdefined functions 
@@ -641,15 +623,14 @@ public class Xcls_DialogNewComponent
             // ctor 
         public Xcls_Label12()
         {
-            this.el = new Gtk.Label();
+            this.el = new Gtk.Label( "Permission Name" );
 
             // my vars
 
             // set gobject values
             this.el.justify = Gtk.Justification.RIGHT;
-            this.el.label = "Permission Name";
             this.el.visible = true;
-            this.el.xalign = 0.9;
+            this.el.xalign = 0.9f;
         }
 
         // userdefined functions 
@@ -721,15 +702,14 @@ public class Xcls_DialogNewComponent
             // ctor 
         public Xcls_Label14()
         {
-            this.el = new Gtk.Label();
+            this.el = new Gtk.Label( "Order (for tabs)" );
 
             // my vars
 
             // set gobject values
             this.el.justify = Gtk.Justification.RIGHT;
-            this.el.label = "Order (for tabs)";
             this.el.visible = true;
-            this.el.xalign = 0.9;
+            this.el.xalign = 0.9f;
         }
 
         // userdefined functions 

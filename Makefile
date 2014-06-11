@@ -16,6 +16,12 @@ all:
 		Builder4/About.vala \
 		Builder4/DialogConfirm.vala \
 		Builder4/DialogNewComponent.vala \
+		Builder4/StandardErrorDialog.vala \
+		Builder4/DialogSaveTemplate.vala \
+		Builder4/DialogTemplateSelect.vala \
+		Builder4/EditProject.vala \
+		Builder4/Editor.vala \
+		Builder4/RooProjectProperties.vala \
 		-o /tmp/test
 #		Builder4/*.vala \
 

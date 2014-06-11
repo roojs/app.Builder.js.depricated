@@ -11,68 +11,60 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 EditProject=new XObject({
     xtype: Gtk.Dialog,
-    default_height : 500,
-    default_width : 600,
-    deletable : true,
-    modal : true,
-    border_width : 3,
-    title : "Project Properties",
-    show : function(c) {
-           c = c || { name : '' , xtype : '' };
-        this.project  = c;
-        if (!this.el) {
-            this.init();
-        }
-        var _this = this;
-        [ 'xtype'  ].forEach(function(k) {
-            _this.get(k).setValue(typeof(c[k]) == 'undefined' ? '' : c[k]);
-        });
-    	// shouild set path..
-        
-        this.el.show_all();
-        this.success = c.success;
-    },
     listeners : {
-        destroy_event : function (self, event) {
+        destroy_event : (self, event) => {
              this.el.hide();
                         return false;
         },
-        response : function (self, id) {
-         if (id < 1) {
+        response : (self, id) => {
+             if (id < 1) {
                     this.el.hide();
                     return;
-                }
-                if (!this.get('xtype').getValue().length) {
-                    this.get('/StandardErrorDialog').show("You have to set Project type");             
-                    return;
-                }
-                if (!this.get('dir').el.get_filename().length) {
-                    this.get('/StandardErrorDialog').show("You have to select a folder");             
-                    return;
-                }
+            }
+            if (_this.xtype.getValue().length < 1) {
+                StandardErrorDialog.show("You have to set Project type");             
+                return;
+            }
+            if (_this.dir.el.get_filename().length < 1) {
+                StandardErrorDialog.show("You have to select a folder");             
+                return;
+            }
         
-                this.el.hide();
-                
-                
-                var fn = this.get('dir').el.get_filename();
-                
-                this.project.name  = GLib.basename(fn);
-                this.project.xtype  = this.get('xtype').getValue();
-                this.project.paths = {};
-                this.project.paths[fn] =  'dir' ;
-                
-                var pr = imports.ProjectManager.ProjectManager.update(this.project);
-                
-                this.success(pr);
-                Seed.print(id);
+            this.el.hide();
+            
+            
+            var fn = _this.dir.el.get_filename();
+            
+            var project = Project.Project.factory(_this.xtype.getValue(), fn);
+            
+            
+            //var pr = imports.Builder.Provider.ProjectManager.ProjectManager.update(this.project);
+            
+            this.success(project);
+        
         }
+    },
+    border_width : 3,
+    default_height : 500,
+    default_width : 600,
+    title : "Project Properties",
+    deletable : true,
+    modal : true,
+    'void:show' : () {
+          
+    
+        //[ 'xtype'  ].forEach(function(k) {
+        //    _this.get(k).setValue(typeof(c[k]) == 'undefined' ? '' : c[k]);
+        //});
+    	// shouild set path..
+        _this.model.loadData();
+        this.el.show_all();
+        //this.success = c.success;
     },
     items : [
         {
             xtype: Gtk.VBox,
-            pack : function(p,e) {
-                    p.el.get_content_area().pack_start(e.el,true,true,3);
-                },
+            pack : get_content_area().add,
             items : [
                 {
                     xtype: Gtk.HBox,
@@ -85,80 +77,67 @@ EditProject=new XObject({
                         },
                         {
                             xtype: Gtk.ComboBox,
-                            pack : "pack_end,true,true,3",
                             id : "xtype",
-                            setValue : function(v)
-                                            {
-                                                var el = this.el;
-                                                el.set_active(-1);
-                                                this.get('model').data.forEach(function(n, ix) {
-                                                    if (v == n.xtype) {
-                                                        el.set_active(ix);
-                                                        return false;
-                                                    }
-                                                    return true;
-                                                });
-                                            },
-                            getValue : function() {
-                                 var ix = this.el.get_active();
-                                        if (ix < 0 ) {
-                                            return '';
+                            pack : "pack_end,true,true,3",
+                            init : this.el.add_attribute(cellrender , "markup", 1 );,
+                            setValue : (v)    {
+                                    var el = this.el;
+                                    el.set_active(-1);
+                                    
+                                    for (var i =0;i < this.data.length; i++ ) {
+                                        if (v == this.data.nth_datA(i)) {
+                                            el.set_active(ix);
+                                            return false;
                                         }
-                                        return this.get('model').data[ix].xtype;
-                            },
-                            init : function() {
-                                XObject.prototype.init.call(this);
-                              this.el.add_attribute(this.items[0].el , 'markup', 1 );  
+                                    }
+                                },
+                            'string:getValue' : () {
+                                 var ix = this.el.get_active();
+                                    if (ix < 0 ) {
+                                        return "";
+                                    }
+                                    switch(ix) {
+                                        case 0:
+                                            return "Roo";
+                                        case 1:
+                                            return "Gtk";
+                                    }
+                                    return "";
                             },
                             items : [
                                 {
                                     xtype: Gtk.CellRendererText,
-                                    pack : "pack_start"
+                                    id : "cellrender",
+                                    pack : "pack_start,true"
                                 },
                                 {
                                     xtype: Gtk.ListStore,
+                                    columns : "typeof(string),typeof(string)",
+                                    id : "model",
+                                    n_columns : 3,
                                     pack : "set_model",
-                                    init : function() {
-                                        XObject.prototype.init.call(this);
-                                    
-                                                                this.el.set_column_types ( 2, [
-                                                                    GObject.TYPE_STRING,  // real key
-                                                                    GObject.TYPE_STRING // real type
-                                                                    
-                                                                    
-                                                                ] );
-                                                                
-                                                                this.data = [
-                                                                    { xtype: 'Roo', desc : "Roo Project" },
-                                                                    { xtype: 'Gtk', desc : "Gtk Project" },    
-                                                                    //{ xtype: 'JS', desc : "Javascript Class" }
-                                                                ]
-                                                                
-                                                                this.loadData(this.data);
-                                                                    
-                                    },
-                                    loadData : function (data) {
-                                                                                
-                                                 var el = this.el;
-                                                data.forEach(function(p) {
-                                                    var ret = {};
-                                                    el.append(ret);
+                                    'void:loadData' : ( ) {
+                                            this.el.clear();
+                                                          
+                                            Gtk.TreeIter iter;
                                                     
-                                                     
-                                                    el.set_value(ret.iter, 0, p.xtype);
-                                                    el.set_value(ret.iter, 1, p.desc);
-                                                    
-                                                });
+                                            el.append(out iter);
+                                            
+                                            el.set_value(iter, 0, "Roo");
+                                            el.set_value(iter, 1, "Roo Project");
+                                             el.append(out iter);
+                                            
+                                            el.set_value(iter, 0, "Gtk");
+                                            el.set_value(iter, 1, "Gtk Project");
+                                             
                                                   
                                                                          
-                                    },
-                                    id : "model"
+                                    }
                                 }
                             ]
                         }
                     ]
                 },
-                
                 {
                     xtype: Gtk.FileChooserWidget,
                     pack : "pack_end,true,true,5",

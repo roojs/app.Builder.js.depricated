@@ -1,0 +1,15 @@
+
+
+Ctor / init handling?
+
+new Gtk.ListStore (2, typeof (string), typeof (int));
+syntax is no_cols, ..... -- list of colum types..
+?? this might need a Helper?
+
+Better handling of Packing
+..
+normal pack is done by
+pack:   add,a,b,c -> results in parent.el.pack(child,a,b,c)
+?? might need a Helper to offer standards on this?
+pack.type = add
+pack.{arg} = ...
