@@ -707,11 +707,7 @@ WindowLeftTree=new XObject({
                             }
                             
                             
-                            var xitems = [];
-                            if (node.items) {
-                                xitems = node.items;
-                                delete node.items;
-                            }
+                            
                     // load children - if it has any..
                     
                             if (node.items.length() > 0) {
