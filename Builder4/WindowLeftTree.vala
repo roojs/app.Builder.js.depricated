@@ -613,7 +613,7 @@ public class Xcls_WindowLeftTree
             
                             
                         }
-                        return path + "|%d".printf( (int) Gtk.TreeViewDropPosition.INTO_OR_AFTER) + "|" prop;
+                        return path + "|%d".printf( (int) Gtk.TreeViewDropPosition.INTO_OR_AFTER) + "|" + prop;
                     }
                     
                     var par = path.split(":");
