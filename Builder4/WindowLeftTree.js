@@ -96,26 +96,30 @@ WindowLeftTree=new XObject({
                      //   print("click:" + res.path.to_string());
                      //   return false;
                 },
-                drag_begin : function (self, drag_context) {
-                	print('SOURCE: drag-begin');
-                         this.targetData = false;
+                drag_begin : ( drag_context)  => {
+                	//print('SOURCE: drag-begin');
+                        
+                        
+                        this.targetData = "";
+                        
                         // find what is selected in our tree...
-                        var iter = new Gtk.TreeIter();
-                        var s = this.selection;
-                        s.get_selected(this.get('/LeftTree.model').el, iter);
+                        Gtk.TreeIter iter;
+                        var s = this.model.get_selection();
+                        Gtk.TreeStore mod;
+                        s.get_selected(out mod, out iter);
                 
                         // set some properties of the tree for use by the dropped element.
-                        var value = new GObject.Value('');
-                        this.get('/LeftTree.model').el.get_value(iter, 2, value);
-                        var data = JSON.parse(value.value);
-                        var xname = this.get('/LeftTree.model').file.guessName(data);
+                        GLib.Value value;
+                        _this.model.el.get_value(iter, 2, out value);
+                        var data = (JsRender.Node)(value.value);
+                        var xname = data.fqn();
                         
-                        this.el.dragData = xname;
-                        this.el.dropList = this.get('/LeftTree').getPaleteProvider().getDropList(xname);
+                        this.dragData = xname;
+                        this.dropList = this.file.getPalete().getDropList(xname);
                         
                 
                         // make the drag icon a picture of the node that was selected
-                        var path = this.get('/LeftTree.model').el.get_path(iter);
+                        var path = _this.model.el.get_path(iter);
                         this.el.treepath = path.to_string();
                         
                         var pix = this.el.create_row_drag_icon ( path);
