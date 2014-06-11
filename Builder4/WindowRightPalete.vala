@@ -524,7 +524,7 @@ public class Xcls_RightPalete
             } );
             this.el.drag_data_get.connect(   (drag_context, selection_data, info, time) => {
              	//Seed.print('Palete: drag-data-get: ' + target_type);
-                    if (this.el.dragData.length > 0 ) {
+                    if (this.dragData.length > 0 ) {
                         selection_data.set_text(this.dragData ,this.dragData.length);
                     }
                     
