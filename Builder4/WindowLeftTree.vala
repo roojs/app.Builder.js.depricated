@@ -478,7 +478,7 @@ public class Xcls_WindowLeftTree
 
 
             // my vars
-        public string activePathx;
+        public string activePath;
 
             // ctor 
         public Xcls_model(Xcls_WindowLeftTree _owner)
@@ -488,14 +488,13 @@ public class Xcls_WindowLeftTree
             _this.model = this;
 
             // my vars
-            this.activePathx = true;
 
             // set gobject values
         }
 
         // userdefined functions 
 
-        // skip .string:activePathx - already used 
+        // skip .string:activePath - already used 
 
         // skip currentTree - not pipe 
 

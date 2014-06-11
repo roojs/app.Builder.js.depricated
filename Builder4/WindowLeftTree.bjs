@@ -43,7 +43,7 @@
                     "|xns": "Gtk",
                     "items": [
                         {
-                            ".string:activePathx": true,
+                            ".string:activePath": "",
                             "currentTree": false,
                             "id": "model",
                             "pack": "set_model",
