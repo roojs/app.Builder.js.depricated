@@ -120,6 +120,7 @@ public class Xcls_WindowLeftTree
 
 
             // my vars
+        public bool blockChanges;
         public GLib.List dragList;
         public bool drag_in_motion;
         public int drag_x;
@@ -134,6 +135,7 @@ public class Xcls_WindowLeftTree
             _this.view = this;
 
             // my vars
+            this.blockChanges = false;
 
             // set gobject values
             this.el.enable_tree_lines = true;
@@ -440,6 +442,8 @@ public class Xcls_WindowLeftTree
         // userdefined functions 
 
         // skip listeners - not pipe 
+
+        // skip .bool:blockChanges - already used 
 
         // skip .GLib.List:dragList - already used 
 
