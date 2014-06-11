@@ -264,6 +264,7 @@ WindowLeftTree=new XObject({
                 
                             if (this.targetData) {
                                 if (source != this.el) {
+                                    
                                     _this.model.dropNode(this.targetData,  source.dragData);
                                 } else {
                                     // drag around.. - reorder..
