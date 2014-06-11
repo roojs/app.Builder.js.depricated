@@ -503,10 +503,74 @@ public class Xcls_WindowLeftTree
         // skip pack - not pipe 
 
         // skip xtype - not pipe 
-
-        // skip |changed - no return type
-
-        // skip |deleteSelected - no return type
+        public void changed(JsRender.Node? n, bool refresh) {
+                //     print("MODEL CHANGED CALLED" + this.activePath);
+                 if (n !== null && this.activePath.length > 0) {
+                    Gtk.TreeIter iter;
+                    this.el.get_iter(iter, new Gtk.TreePath.from_string(this.activePath))
+                    this.el.set(iter, 0, n.displayTitle(), 1, n.displayTitle(), -1);
+                    var v = new Value(typeof(Object));
+                    v.set_object(n);
+            
+                }
+                        //this.currentTree = this.toJS(false, true)[0];
+                //    var d = new Date();
+                //this.file.items = this.toJS(false, false);
+                //    print ("TO JS in " + ((new Date()) - d) + "ms");
+                  //  print("AFTER CHANGED");
+                    //console.dump(this.file.items);
+                    _this.file.save();
+                    //this.currentTree = this.file.items[0];
+                    //console.log(this.file.toSource());
+                    
+                    if (refresh) {
+                        //print("REDNER BROWSER?!");
+                        _this.renderView();
+                        _this.file.avail_child_tree.loadAll(n);
+                        
+                        
+            
+                        //imports['Builder/RightBrowser.js'].renderJS(this.toJS());
+                    }
+            	          
+            }
+        public void deleteSelected() {
+                
+                
+                _this.view.blockChanges = true;
+                
+                Gtk.TreeIter old_iter = new Gtk.TreeIter();
+                var s = _this.view.get_selection();
+                Gtk.TreeStore mod;
+                
+                s.get_selected(out mod, out old_iter);
+                
+                var path = mod.get_path(old_iter).to_string();
+            
+                this.activePath= "";      
+                s.unselect_all();
+            
+                this.activePath= "";      
+                
+                Gtk.TreeIter iter;
+                this.el.get_iter_from_string(out iter, path);
+            
+                GLib.Value value;
+                this.el.get_value(iter, 2, out value);
+                var data = (JsRender.Node)(value.value);
+                data.remove();
+                this.el.remove(iter);
+                
+                
+                // 
+                
+                
+            
+            
+                this.activePath= ""; // again!?!?      
+                this.changed(null,true);
+                _this.view.blockChanges = false;
+            }
 
         // skip |dropNode - no return type
 

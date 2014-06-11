@@ -412,7 +412,7 @@ WindowLeftTree=new XObject({
                     currentTree : false,
                     id : "model",
                     pack : "set_model",
-                    changed : (JsRender.Node? n, bool refresh) {
+                    'void:changed' : (JsRender.Node? n, bool refresh) {
                         //     print("MODEL CHANGED CALLED" + this.activePath);
                          if (n !== null && this.activePath.length > 0) {
                             Gtk.TreeIter iter;
@@ -443,7 +443,7 @@ WindowLeftTree=new XObject({
                             }
                     	          
                     },
-                    deleteSelected : () {
+                    'void:deleteSelected' : () {
                         
                         
                         _this.view.blockChanges = true;
