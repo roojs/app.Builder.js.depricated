@@ -82,8 +82,18 @@ public class Xcls_WindowLeftTree
         }
 
     // skip |getPaleteProvider - no return type
-
-    // skip |getRenderer - no return type
+    public void getRenderer() {
+        
+            /*
+            switch( this.getActiveFile().getType()) {
+                case 'Roo':
+                    return this.get('/RightBrowser.view');
+                case 'Gtk':
+                    return this.get('/RightGtkView');
+            }
+            */
+        
+        }
 
     // skip |init - already used 
 

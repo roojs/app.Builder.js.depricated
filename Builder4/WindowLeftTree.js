@@ -47,14 +47,16 @@ WindowLeftTree=new XObject({
         return _this.model.file.getPalete();
     
     },
-    getRenderer : function() {
+    'void:getRenderer' : () {
     
+        /*
         switch( this.getActiveFile().getType()) {
             case 'Roo':
                 return this.get('/RightBrowser.view');
             case 'Gtk':
                 return this.get('/RightGtkView');
         }
+        */
     
     },
     init : function() {
