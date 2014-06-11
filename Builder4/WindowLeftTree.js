@@ -332,7 +332,6 @@ WindowLeftTree=new XObject({
                                 
                 }
             },
-             : "",
             id : "view",
             pack : "add",
             tooltip_column : 1,

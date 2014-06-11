@@ -126,6 +126,7 @@ public class Xcls_WindowLeftTree
 
 
             // my vars
+        public string dragData;
 
             // ctor 
         public Xcls_view(Xcls_WindowLeftTree _owner)
@@ -413,7 +414,7 @@ public class Xcls_WindowLeftTree
 
         // skip listeners - not pipe 
 
-        // skip  - not pipe 
+        // skip .string:dragData - already used 
 
         // skip id - not pipe 
 
