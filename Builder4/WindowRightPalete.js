@@ -51,8 +51,8 @@ WindowRightPalete=new XObject({
                 {
                     xtype: Gtk.Label,
                     listeners : {
-                        enter_notify_event : (self, event) => {
-                            RightPalete.show();
+                        enter_notify_event : ( event) => {
+                            _this.show();
                             return false;
                         }
                     },

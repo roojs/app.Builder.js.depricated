@@ -40,7 +40,7 @@
                         },
                         {
                             "listeners": {
-                                "enter_notify_event": " (self, event) => {\n    RightPalete.show();\n    return false;\n}"
+                                "enter_notify_event": " ( event) => {\n    _this.show();\n    return false;\n}"
                             },
                             "angle": 270,
                             "label": "Palete",

@@ -213,8 +213,8 @@ public class Xcls_RightPalete
             this.el.angle = 270;
 
             // listeners 
-            this.el.enter_notify_event.connect(  (self, event) => {
-                RightPalete.show();
+            this.el.enter_notify_event.connect(  ( event) => {
+                _this.show();
                 return false;
             } );
         }
