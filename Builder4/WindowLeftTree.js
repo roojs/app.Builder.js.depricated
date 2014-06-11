@@ -30,16 +30,16 @@ WindowLeftTree=new XObject({
     'JsRender.JsRender:getActiveFile' : () {
         return this.model.file;
     },
-    getActivePath : function() {
-        var model = this.get('model');
-        var view = this.get('view');
-        if (view.selection.count_selected_rows() < 1) {
-            return false;
+    'string:getActivePath' : () {
+        var model = this.model;
+        var view = this.view;
+        if (view.el.get_selection().count_selected_rows() < 1) {
+            return "";
         }
-        var iter = new Gtk.TreeIter();
-    
-        view.selection.get_selected(model.el, iter);
-        return model.el.get_path(iter).to_string();
+        Gtk.TreeIter iter;
+        GtkStore mod;
+        view.selection.get_selected(out mod, out iter);
+        return mod.get_path(iter).to_string();
     },
     getPaleteProvider : function() {
         var model = this.get('model');
