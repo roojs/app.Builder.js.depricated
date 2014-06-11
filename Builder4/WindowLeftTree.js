@@ -60,14 +60,10 @@ WindowLeftTree=new XObject({
     
     },
     init : this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC),
-    renderView : function() {
-        var render = this.getRenderer();
-        var model = this.get('model');
-        if (render) {
-            render.renderJS(model.toJS(false,true)[0]);
-        } else {
-            print("NO RENDER JS METHOD?");
-        }
+    renderView : () {
+        
+        _this.model.file.renderJS();
+    
     },
     shadow_type : Gtk.ShadowType.IN,
     items : [
