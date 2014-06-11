@@ -930,6 +930,7 @@ WindowLeftTree=new XObject({
                     items : [
                         {
                             xtype: Gtk.CellRendererText,
+                            id : "",
                             pack : "pack_start"
                         }
                     ]

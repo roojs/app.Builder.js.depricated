@@ -70,9 +70,10 @@
                             "|xns": "Gtk",
                             "items": [
                                 {
-                                    "|xns": "Gtk",
+                                    "id": "",
+                                    "pack": "pack_start",
                                     "xtype": "CellRendererText",
-                                    "pack": "pack_start"
+                                    "|xns": "Gtk"
                                 }
                             ]
                         }

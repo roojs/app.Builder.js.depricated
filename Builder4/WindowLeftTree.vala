@@ -987,11 +987,13 @@ public class Xcls_WindowLeftTree
 
         // userdefined functions 
 
-        // skip |xns - no return type
+        // skip id - not pipe 
+
+        // skip pack - not pipe 
 
         // skip xtype - not pipe 
 
-        // skip pack - not pipe 
+        // skip |xns - no return type
 
         // skip xvala_cls - not pipe 
 
