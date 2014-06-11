@@ -100,8 +100,11 @@ public class Xcls_WindowLeftTree
         }
 
     // skip |init - already used 
-
-    // skip |renderView - no return type
+    public void renderView() {
+            
+            _this.model.file.renderJS();
+        
+        }
 
     // skip |shadow_type - already used 
 

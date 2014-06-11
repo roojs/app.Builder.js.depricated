@@ -60,7 +60,7 @@ WindowLeftTree=new XObject({
     
     },
     init : this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC),
-    renderView : () {
+    'void:renderView' : () {
         
         _this.model.file.renderJS();
     
