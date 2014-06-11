@@ -14,7 +14,6 @@ WindowRightPalete=new XObject({
     id : "RightPalete",
     pack : "pack_start,false,false",
     'void:hide' : () {
-        
           _this.buttonbar.el.show();
           _this.viewbox.el.hide();
       //    print("TRIED TO HIDE");

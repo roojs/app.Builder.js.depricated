@@ -20,7 +20,7 @@ public static Xcls_RightPalete  WindowRightPalete;
 public class Xcls_RightPalete
 {
     public Gtk.VBox el;
-    private Xcls_RightPalete  _this;
+    public Xcls_RightPalete  _this;
 
     public Xcls_buttonbar buttonbar;
     public Xcls_viewbox viewbox;
@@ -59,7 +59,6 @@ public class Xcls_RightPalete
 
     // skip xtype - not pipe 
     public void hide () {
-            
               _this.buttonbar.el.show();
               _this.viewbox.el.hide();
           //    print("TRIED TO HIDE");

@@ -11,7 +11,7 @@
             "id": "RightPalete",
             "pack": "pack_start,false,false",
             "xtype": "VBox",
-            "|void:hide": " () {\n    \n      _this.buttonbar.el.show();\n      _this.viewbox.el.hide();\n  //    print(\"TRIED TO HIDE\");\n}\n",
+            "|void:hide": " () {\n      _this.buttonbar.el.show();\n      _this.viewbox.el.hide();\n  //    print(\"TRIED TO HIDE\");\n}\n",
             "|void:show": " () {\n    _this.buttonbar.el.hide();\n    _this.viewbox.el.show();\n   // this.get('model').expanded();\n            \n}\n",
             "|xns": "Gtk",
             "items": [
