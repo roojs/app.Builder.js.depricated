@@ -538,7 +538,30 @@ public class JsRender.Node  {
 	public string nodeTip()
 	{
 		var ret = this.nodeTitle();
-		 
+		
+		var iter = this.props.map_iterator();
+        while (iter.next()) {
+			var i =  iter.get_key();
+			//, iter.get_value());
+			if ( i[0] != '|') {
+				continue;
+			}
+		
+		    if (i == '|init') { 
+		        continue;
+		    }
+			if (
+		    
+        //print("prop : " + i + ':' + c[i]);
+		    if (!c[i].match(new RegExp('function'))) {
+		        continue;
+		    }
+        funcs += "\n<b>" + i.substring(1) + '</b> : ' + c[i].split(/\n/).shift();
+            
+    }
+    if (funcs.length) {
+        ret+="\n\nMethods:" + funcs;
+    } 
 		return ret;
 
 	}
