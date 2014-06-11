@@ -555,51 +555,6 @@ WindowLeftTree=new XObject({
                         return "";
                                 
                     },
-                    toJS : function(treepath, with_id)
-                    {
-                        //Seed.print("WITHID: "+ with_id);
-                        var iter = treepath;  // API used to be iter here..
-                        if (typeof(iter) == 'string') {
-                            iter = new Gtk.TreeIter(); 
-                            if (!this.el.get_iter(iter, new Gtk.TreePath.from_string(treepath))) {
-                                return false;
-                            }
-                        } 
-                        var first = false;
-                        if (!iter) {
-                            
-                            this.treemap = { }; 
-                            
-                            iter = new Gtk.TreeIter();
-                            if (!this.el.get_iter_first(iter)) {
-                                return [];
-                            }
-                            first = true;
-                        } 
-                        
-                        var ar = [];
-                           
-                        while (true) {
-                            
-                            var k = this.nodeToJS(iter, with_id); 
-                            ar.push(k);
-                            
-                            
-                            if (!this.el.iter_next(iter)) {
-                                break;
-                            }
-                        }
-                        
-                        if (treepath === false) {
-                            //dupe!!!
-                            return JSON.parse(JSON.stringify(ar));
-                        }
-                        
-                        return ar;
-                        // convert the list into a json string..
-                    
-                        
-                    },
                     'void:changed' : (JsRender.Node? n, bool refresh) {
                         //     print("MODEL CHANGED CALLED" + this.activePath);
                          if (n !== null && this.activePath.length > 0) {
