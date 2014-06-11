@@ -35,7 +35,6 @@ WindowLeftTree=new XObject({
         return _this.model.file.getPalete();
     
     },
-    getActiveFile : LeftTree,
     init : this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC),
     shadow_type : Gtk.ShadowType.IN,
     'string:getActivePath' : () {

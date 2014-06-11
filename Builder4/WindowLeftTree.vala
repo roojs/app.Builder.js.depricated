@@ -75,8 +75,6 @@ public class Xcls_WindowLeftTree
         
         }
 
-    // skip |getActiveFile - no return type
-
     // skip |init - already used 
 
     // skip |shadow_type - already used 
