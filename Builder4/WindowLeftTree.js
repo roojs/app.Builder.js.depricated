@@ -430,22 +430,17 @@ WindowLeftTree=new XObject({
                         //    print ("TO JS in " + ((new Date()) - d) + "ms");
                           //  print("AFTER CHANGED");
                             //console.dump(this.file.items);
-                            this.file.save();
-                            this.currentTree = this.file.items[0];
+                            _this.file.save();
+                            //this.currentTree = this.file.items[0];
                             //console.log(this.file.toSource());
                             
                             if (refresh) {
-                                print("REDNER BROWSER?!");
-                                this.get('/LeftTree').renderView();
+                                //print("REDNER BROWSER?!");
+                                _this.renderView();
+                                _this.file.avail_child_tree.loadAll(n);
+                                
+                                
                     
-                                var pm = this.get('/RightPalete.model');
-                                if (!this.get('/RightPalete').provider) {
-                                    pm.load([]);
-                                    return;
-                                }
-                                
-                                
-                                pm.load( this.get('/RightPalete').provider.gatherList(this.listAllTypes()));
                                 //imports['Builder/RightBrowser.js'].renderJS(this.toJS());
                             }
                     	          
