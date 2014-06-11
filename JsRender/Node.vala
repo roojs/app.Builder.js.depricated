@@ -562,11 +562,11 @@ public class JsRender.Node  {
 		    }
 			var val = iter.get_value();
 			if (Regex.match_simple("^\s*function", val)) { 
-				funcs += "\n<b>" + i.substring(1) +"'</b>" : ' + val.split("\n")[0];
+				funcs += "\n<b>" + i.substring(1) +"</b> : " + val.split("\n")[0];
 				continue;
 			}
 		    if (Regex.match_simple("^\s*\\(", val)) {
-    			funcs += "\n<b>" + i.substring(1) +"'</b>" : ' + val.split("\n")[0];
+    			funcs += "\n<b>" + i.substring(1) +"</b> : " + val.split("\n")[0];
 				continue;
 			}
             
