@@ -9,7 +9,7 @@
             "pack": "add",
             "xtype": "ScrolledWindow",
             "|JsRender.JsRender:getActiveFile": "() {\n    return this.model.file;\n}\n",
-            "|JsRender.Node?:getActiveElement": " () { // return path to actie node.\n\n     var path = this.getActivePath();\n     if (path.length < 1) {\n        return null;\n     }\n     Gtk.TreeIter   iter;\n     _this.model.el.get_iter_from_string(out iter, path);\n     \n     GLib.Value value;\n     _this.model.el.get_value(iter, 2, out value);\n     \n     return (JsRender.Node)value;\n}\n",
+            "|JsRender.Node?:getActiveElement": " () { // return path to actie node.\n\n     var path = this.getActivePath();\n     if (path.length < 1) {\n        return null;\n     }\n     Gtk.TreeIter   iter;\n     _this.model.el.get_iter_from_string(out iter, path);\n     \n     GLib.Value value;\n     _this.model.el.get_value(iter, 2, out value);\n     \n     return (JsRender.Node)value.dup_object();\n}\n",
             "|Palete.Palete:getPaleteProvider": "function() {\n\n    //var pm = imports.Builder.Provider.ProjectManager.ProjectManager;\n    return _this.model.file.getPalete();\n\n}\n",
             "|getActiveFile": "LeftTree",
             "|init": " this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)\n \n",

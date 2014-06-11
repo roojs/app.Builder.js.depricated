@@ -27,7 +27,7 @@ WindowLeftTree=new XObject({
          GLib.Value value;
          _this.model.el.get_value(iter, 2, out value);
          
-         return (JsRender.Node)value;
+         return (JsRender.Node)value.dup_object();
     },
     'Palete.Palete:getPaleteProvider' : function() {
     

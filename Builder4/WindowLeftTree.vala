@@ -66,7 +66,7 @@ public class Xcls_WindowLeftTree
              GLib.Value value;
              _this.model.el.get_value(iter, 2, out value);
              
-             return (JsRender.Node)value;
+             return (JsRender.Node)value.dup_object();
         }
     public Palete.Palete getPaleteProviderfunction() {
         
