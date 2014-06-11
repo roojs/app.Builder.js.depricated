@@ -221,12 +221,13 @@ WindowLeftTree=new XObject({
                          
                         return true;
                 },
-                drag_drop : (w, ctx, x, y, time)  => {
+                drag_drop : (  ctx, x, y, time)  => {
                       //Seed.print("TARGET: drag-drop");
-                        /*               
+                        
+                        // request data that will be recieved by the recieve...              
                     Gtk.drag_get_data
                     (
-                            w,         // will receive 'drag-data-received' signal 
+                            this.el,         // will receive 'drag-data-received' signal 
                             ctx,        // represents the current state of the DnD 
                             this.get('/Window').atoms["STRING"],    // the target type we want 
                             time            // time stamp 

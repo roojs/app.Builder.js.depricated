@@ -299,12 +299,13 @@ public class Xcls_WindowLeftTree
                      
                     return true;
             } );
-            this.el.drag_drop.connect(  (w, ctx, x, y, time)  => {
+            this.el.drag_drop.connect(  (  ctx, x, y, time)  => {
                   //Seed.print("TARGET: drag-drop");
-                    /*               
+                    
+                    // request data that will be recieved by the recieve...              
                 Gtk.drag_get_data
                 (
-                        w,         // will receive 'drag-data-received' signal 
+                        this.el,         // will receive 'drag-data-received' signal 
                         ctx,        // represents the current state of the DnD 
                         this.get('/Window').atoms["STRING"],    // the target type we want 
                         time            // time stamp 
