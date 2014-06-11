@@ -514,7 +514,7 @@ public class Xcls_WindowLeftTree
             // ctor 
         public Xcls_model(Xcls_WindowLeftTree _owner)
         {
-            this.el = new Gtk.TreeStore( 3, "typeof(string),typeof(string),typeof(Object)" );
+            this.el = new Gtk.TreeStore( 3, typeof(string),typeof(string),typeof(Object) );
             _this = _owner;
             _this.model = this;
 
@@ -529,7 +529,7 @@ public class Xcls_WindowLeftTree
 
         // skip .string:activePath - already used 
 
-        // skip columns - already used 
+        // skip |columns - already used 
 
         // skip currentTree - not pipe 
 
@@ -623,17 +623,6 @@ public class Xcls_WindowLeftTree
                 
                 return "";
                         
-            }
-        public void updateNode(JsRender.Node? n, bool refresh) {
-                //     print("MODEL CHANGED CALLED" + this.activePath);
-                 if (n != null && this.activePath.length > 0) {
-                    Gtk.TreeIter iter;
-                    this.el.get_iter(iter, new Gtk.TreePath.from_string(this.activePath));
-                    this.el.set(iter, 0, n.displayTitle(), 1, n.displayTitle(), -1);
-                    var v = new Value(typeof(Object));
-                    v.set_object(n);
-                }
-                          
             }
         public void deleteSelected() {
                 
@@ -922,6 +911,17 @@ public class Xcls_WindowLeftTree
             
                 this.activePath= "";
                 this.changed(false,true);
+            }
+        public void updateNode(JsRender.Node? n, bool refresh) {
+                //     print("MODEL CHANGED CALLED" + this.activePath);
+                 if (n != null && this.activePath.length > 0) {
+                    Gtk.TreeIter iter;
+                    this.el.get_iter(iter, new Gtk.TreePath.from_string(this.activePath));
+                    this.el.set(iter, 0, n.displayTitle(), 1, n.displayTitle(), -1);
+                    var v = new Value(typeof(Object));
+                    v.set_object(n);
+                }
+                          
             }
 
         // skip |xns - no return type
