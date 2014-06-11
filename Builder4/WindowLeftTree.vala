@@ -503,8 +503,28 @@ public class Xcls_WindowLeftTree
         // skip pack - not pipe 
 
         // skip xtype - not pipe 
-
-        // skip |findDropNode - no return type
+        public string findDropNode (string treepath_str, string[] targets) {
+            
+                // this is used by the dragdrop code in the roo version AFAIR..
+            
+                //var path = treepath_str.replace(/^builder-/, '');
+                // treemap is depreciated... - should really check if model has any entries..
+            
+                if (this.el.iter_n_children(null) < 1) {
+                    //print("NO KEYS");
+                    return "|%d".printf((int)Gtk.TreeViewDropPosition.INTO_OR_AFTER);
+                }
+                //print("FIND treepath: " + path);
+                //console.dump(this.treemap);
+                
+                //if (!treepath_str.match(/^builder-/)) {
+                //    return []; // nothing!
+                //}
+                if (targets.length > 0 && targets[0] == "*") {
+                    return  path;
+                }
+                return this.findDropNodeByPath(path,targets) 
+            }
 
         // skip |init - already used 
 

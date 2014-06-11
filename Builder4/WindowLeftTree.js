@@ -412,7 +412,7 @@ WindowLeftTree=new XObject({
                     currentTree : false,
                     id : "model",
                     pack : "set_model",
-                    findDropNode : (treepath_str, targets) {
+                    'string:findDropNode' : (string treepath_str, string[] targets) {
                     
                         // this is used by the dragdrop code in the roo version AFAIR..
                     
@@ -427,10 +427,10 @@ WindowLeftTree=new XObject({
                         //console.dump(this.treemap);
                         
                         //if (!treepath_str.match(/^builder-/)) {
-                            return []; // nothing!
-                        }
-                        if (targets === true) {
-                            return [ path ];
+                        //    return []; // nothing!
+                        //}
+                        if (targets.length > 0 && targets[0] == "*") {
+                            return  path;
                         }
                         return this.findDropNodeByPath(path,targets) 
                     },
