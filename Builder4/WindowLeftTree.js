@@ -191,7 +191,7 @@ WindowLeftTree=new XObject({
                                 Gdk.drag_status(ctx, 0, time);
                                 return;
                             }
-                            Gtk.drag_finish (ctx, false, true, time);        // drop failed..
+                            Gtk.drag_finish (ctx, false, false, time);        // drop failed..
                             // no drop action...
                             return;
                         }
@@ -226,7 +226,7 @@ WindowLeftTree=new XObject({
                                 if (this.drag_in_motion) {
                                     Gdk.drag_status(ctx, 0 ,time);
                                 }
-                                Gtk.drag_finish (ctx, false, true, time);        // drop failed..
+                                Gtk.drag_finish (ctx, false, false, time);        // drop failed..
                                 return; // not over apoint!?! - no action on drop or motion..
                             }
                             
@@ -251,7 +251,7 @@ WindowLeftTree=new XObject({
                                 if (this.drag_in_motion) {
                                      Gdk.drag_status(ctx, 0 ,time);
                                  }
-                                 Gtk.drag_finish (ctx, false, true, time);        // drop failed..
+                                 Gtk.drag_finish (ctx, false, false, time);        // drop failed..
                                  return; /// -- fixme -- this is not really correct..
                 
                             }
@@ -276,7 +276,7 @@ WindowLeftTree=new XObject({
                                 if (this.drag_in_motion) {
                                     Gdk.drag_status(ctx, 0, time);
                                 }
-                                Gtk.drag_finish (ctx, false, true, time);        // drop failed..
+                                Gtk.drag_finish (ctx, false, false, time);        // drop failed..
                                 return;
                             }
                             
@@ -294,31 +294,21 @@ WindowLeftTree=new XObject({
                         // at this point, drag is not in motion... -- as checked above... - so it's a real drop event..
                 
                 
-                 
-                
-                       var   delete_selection_data = false;
-                       var  dnd_success = false;
-                       
-                        /* Deal with what we are given from source */
-                        if( sel_data && sel_data.length ) {
+                  
                             
-                            if (ctx.action == Gdk.DragAction.ASK)  {
-                                /* Ask the user to move or copy, then set the ctx action. */
-                            }
+                        if (ctx.action == Gdk.DragAction.ASK)  {
+                            /* Ask the user to move or copy, then set the ctx action. */
+                        }
                 
-                            if (ctx.action == Gdk.DragAction.MOVE) {
-                                //delete_selection_data = true;
-                            }
-                            
+                        if (ctx.action == Gdk.DragAction.MOVE) {
+                            delete_selection_data = true;
+                        }
+                        
                             
                                     // drag around.. - reorder..
-                            _this.model.moveNode(targetData, ctx.action);
+                        _this.model.moveNode(targetData, ctx.action);
                             
-                                    
-                                }
-                                //Seed.print(this.targetData);
-                              
-                            }
+                           
                             
                             
                             
