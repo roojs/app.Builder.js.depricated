@@ -124,7 +124,7 @@ WindowRightPalete=new XObject({
                                             
                                                 
                                         Gtk.drag_set_icon_surface (ctx, pix);
-                                        GLib.Value val;
+                                        GLib.Value value;
                                         
                                 
                                         _this.model.el.get_value(iter, 0, out value);
