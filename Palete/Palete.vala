@@ -50,7 +50,9 @@ namespace Palete
         
        
         public string name;
-        
+
+		GLib.List<Usage> map;
+		
         public Palete()
         {
             // nothing?
