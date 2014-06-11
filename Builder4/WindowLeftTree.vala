@@ -574,7 +574,7 @@ public class Xcls_WindowLeftTree
                 
                 //console.dump(this.treemap);
                 
-                while (path.length) {
+                while (path.length > 0) {
                     //print("LOOKING FOR PATH: " + path);
                     var node_data = this.singleNodeToJS(path);
                     
