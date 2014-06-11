@@ -896,7 +896,7 @@ public class Xcls_WindowLeftTree
                 // console.dump(target_data);
                 Gtk.TreeIter old_iter;
                 var s = this.model.get_selection();
-                Gtk ListStore mod 
+                Gtk ListStore mod;
                 s.get_selected(out mod , out old_iter);
                 
                 
