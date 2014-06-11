@@ -35,6 +35,8 @@ namespace JsRender {
 		public GLib.List<JsRender> cn; // child files.. (used by project ... should move code here..)
 
 		public bool hasParent; 
+
+		public signal changed (JsRender.Node? node, string source); 
 		
 		public JsRender(Project.Project project, string path) {
 		    
