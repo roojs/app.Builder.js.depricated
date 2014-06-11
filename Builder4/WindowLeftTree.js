@@ -630,12 +630,13 @@ WindowLeftTree=new XObject({
                         while (path.length) {
                             //print("LOOKING FOR PATH: " + path);
                             var node_data = this.singleNodeToJS(path);
+                            
                             if (node_data == null) {
                                 print("node not found");
-                                return [];
+                                return null;
                             }
                             
-                            var xname = this.get('/LeftTree.model').file.guessName(node_data);
+                            var xname = node_data.fqn();
                             var match = false;
                             var prop = '';
                             targets.forEach(function(tg) {
