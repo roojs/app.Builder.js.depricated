@@ -129,7 +129,7 @@ WindowRightPalete=new XObject({
                                 
                                         _this.model.el.get_value(iter, 0, out value);
                                         if (_this.provider == null) {
-                                            return false;
+                                            return;
                                         }
                                         //if (!this.get('/RightPalete').provider) {
                                         //    return false;
@@ -138,7 +138,7 @@ WindowRightPalete=new XObject({
                                         this.dragData = (string) value;
                                          
                                         
-                                        return true;
+                                        return;
                                 },
                                 drag_data_get : (drag_context, selection_data, info, time) => {
                                  	//Seed.print('Palete: drag-data-get: ' + target_type);
