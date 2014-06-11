@@ -113,7 +113,7 @@ WindowRightPalete=new XObject({
                                         
                                         
                                         Gtk.TreeIter iter;
-                                        var s = _this.selection;
+                                        var s = this.el.get_selection();
                                         
                                         s.get_selected(_this.model.el, out iter);
                                         var path = _this.model.el.get_path(iter);
