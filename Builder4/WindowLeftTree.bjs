@@ -98,7 +98,7 @@
                         },
                         {
                             "listeners": {
-                                "activate": "function (self) {\n\n     var tree = _this\n     var model = _this.model;\n     var el = tree.getActivePath();\n     \n     //print(el);\n     //var js = model.toJS(el, false);\n    // print(JSON.stringify(js[0], null,4));\n     this.get('/DialogSaveTemplate').show(JSON.stringify(js[0], null,4));\n     \n    \n}"
+                                "activate": "function (self) {\n\n     var tree = _this\n     var model = _this.model;\n     var el = tree.getActivePath();\n     \n     //print(el);\n     //var js = model.toJS(el, false);\n    // print(JSON.stringify(js[0], null,4));\n    this.getActiveElement();\n     DialogSaveTemplate.show( this.getActiveElement());\n     \n    \n}"
                             },
                             "label": "Save as Template",
                             "pack": "add",

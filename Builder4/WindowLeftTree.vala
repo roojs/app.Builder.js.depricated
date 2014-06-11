@@ -1123,7 +1123,8 @@ public class Xcls_WindowLeftTree
                  //print(el);
                  //var js = model.toJS(el, false);
                 // print(JSON.stringify(js[0], null,4));
-                 this.get('/DialogSaveTemplate').show(JSON.stringify(js[0], null,4));
+                this.getActiveElement();
+                 DialogSaveTemplate.show( this.getActiveElement());
                  
                 
             } );
