@@ -690,7 +690,7 @@ WindowLeftTree=new XObject({
                             if (node.parent == null) {
                             
                                 if (target_data.length == 3 && target_data[2].length) {
-                                    node.props.set('*prop', target_data[2]);
+                                    node.props.set("*prop", target_data[2]);
                                 }
                                 
                                 node = DialogTemplateSelect.show(node);
