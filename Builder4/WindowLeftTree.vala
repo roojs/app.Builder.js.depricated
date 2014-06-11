@@ -682,6 +682,7 @@ public class Xcls_WindowLeftTree
               
                     Gtk.TreePath tp = target_data[0].length > 0 ? new  Gtk.TreePath.from_string( target_data[0] ) : null;
                     
+                     Gtk.TreePath parent = null;
                     //print("add " + tp + "@" + target_data[1]  );
                     
                     JsRender.Node parentNode = null;
