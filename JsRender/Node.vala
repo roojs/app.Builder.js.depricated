@@ -577,41 +577,43 @@ public class JsRender.Node  {
 		return ret;
 
 	}
-    function(c, renderfull) {
+    string nodeTitle() {
   	    string[] txt = {};
 
 		//var sr = (typeof(c['+buildershow']) != 'undefined') &&  !c['+buildershow'] ? true : false;
 		//if (sr) txt.push('<s>');
 
-		if (typeof(this.get(*prop']) != 'undefined')   { txt.push(c['*prop']+ ':'); }
+		if (typeof(this.has("*prop"))   { txt += (this.get("*prop") + ":"); }
 		
-		if (renderfull && c['|xns']) {
-		    txt.push(c['|xns']);
-		}
+		//if (renderfull && c['|xns']) {
+		    txt += this.fqn();
+		    
+		//}
 		
-		if (c.xtype)      { txt.push(c.xtype); }
-		if (c.id)      { txt.push('<b>[id=' + c.id + ']</b>'); }
-		if (c.fieldLabel) { txt.push('[' + c.fieldLabel + ']'); }
-		if (c.boxLabel)   { txt.push('[' + c.boxLabel + ']'); }
+		//if (c.xtype)      { txt.push(c.xtype); }
+		    
+		if (this.has("id"))     { txt += ("<b>[id=" + this.get("id") + "]</b>"); }
+		if (this.has("fieldLabel")){ txt += ("[" + this.get("fieldLabel") + "]"); }
+		if (this.has("boxLabel"))  { txt += ("[" + this.get("boxLabel") + "]"); }
 		
 		
-		if (c.layout)     { txt.push('<i>' + c.layout + '</i>'); }
-		if (c.title)      { txt.push('<b>' + c.title + '</b>'); }
-		if (c.label)      { txt.push('<b>' + c.label+ '</b>'); }
-		if (c.header)    { txt.push('<b>' + c.header + '</b>'); }
-		if (c.legend)      { txt.push('<b>' + c.legend + '</b>'); }
-		if (c.text)       { txt.push('<b>' + c.text + '</b>'); }
-		if (c.name)       { txt.push('<b>' + c.name+ '</b>'); }
-		if (c.region)     { txt.push('<i>(' + c.region + ')</i>'); }
-		if (c.dataIndex) { txt.push('[' + c.dataIndex+ ']'); }
+		if (this.has("layout"))    { txt += ("<i>" + this.get("layout") + "</i>"); }
+		if (this.has("title"))     { txt += ("<b>" + this.get("title") + "</b>"); }
+		if (this.has("label"))     { txt += ("<b>" + this.get("label")+ "</b>"); }
+		if (this.has("header"))   { txt += ("<b>" + this.get("header") + "</b>"); }
+		if (this.has("legend"))     { txt += ("<b>" + this.get("legend") + "</b>"); }
+		if (this.has("text"))      { txt += ("<b>" + this.get("text") + "</b>"); }
+		if (this.has("name"))      { txt += ("<b>" + this.get("name")+ "</b>"); }
+		if (this.has("region"))    { txt += ("<i>(" + this.get("region") + ")</i>"); }
+		if (this.has("dataIndex")){ txt += ("[" + this.get("dataIndex") + "]"); }
 		
 		// for flat classes...
-		if (typeof(c['*class']) != 'undefined')  { txt.push('<b>' +  c['*class']+  '</b>'); }
-		if (typeof(c['*extends']) != 'undefined')  { txt.push(': <i>' +  c['*extends']+  '</i>'); }
+		//if (typeof(c["*class"]"))!= "undefined")  { txt += ("<b>" +  c["*class"]+  "</b>"); }
+		//if (typeof(c["*extends"]"))!= "undefined")  { txt += (": <i>" +  c["*extends"]+  "</i>"); }
 		
 		
-		if (sr) txt.push('</s>');
-		return (txt.length == 0 ? "Element" : txt.join(" "));
+		//if (sr) txt.push('</s>');
+		return (txt.length == 0 ? "Element" : string.joinv(" ", txt);
 }
 
 }
