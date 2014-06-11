@@ -71,7 +71,17 @@ public class JsRender.Node  {
         return "";
         
     }
-
+	 public bool has(string key)
+    {
+        var k = this.props.get(key);
+        if (k != null) {
+			return false;
+		}
+		
+		
+        return true;
+        
+    }
 
 	public void  remove()
 	{
@@ -567,5 +577,41 @@ public class JsRender.Node  {
 		return ret;
 
 	}
-    
+    function(c, renderfull) {
+  	    string[] txt = {};
+
+		//var sr = (typeof(c['+buildershow']) != 'undefined') &&  !c['+buildershow'] ? true : false;
+		//if (sr) txt.push('<s>');
+
+		if (typeof(this.get(*prop']) != 'undefined')   { txt.push(c['*prop']+ ':'); }
+		
+		if (renderfull && c['|xns']) {
+		    txt.push(c['|xns']);
+		}
+		
+		if (c.xtype)      { txt.push(c.xtype); }
+		if (c.id)      { txt.push('<b>[id=' + c.id + ']</b>'); }
+		if (c.fieldLabel) { txt.push('[' + c.fieldLabel + ']'); }
+		if (c.boxLabel)   { txt.push('[' + c.boxLabel + ']'); }
+		
+		
+		if (c.layout)     { txt.push('<i>' + c.layout + '</i>'); }
+		if (c.title)      { txt.push('<b>' + c.title + '</b>'); }
+		if (c.label)      { txt.push('<b>' + c.label+ '</b>'); }
+		if (c.header)    { txt.push('<b>' + c.header + '</b>'); }
+		if (c.legend)      { txt.push('<b>' + c.legend + '</b>'); }
+		if (c.text)       { txt.push('<b>' + c.text + '</b>'); }
+		if (c.name)       { txt.push('<b>' + c.name+ '</b>'); }
+		if (c.region)     { txt.push('<i>(' + c.region + ')</i>'); }
+		if (c.dataIndex) { txt.push('[' + c.dataIndex+ ']'); }
+		
+		// for flat classes...
+		if (typeof(c['*class']) != 'undefined')  { txt.push('<b>' +  c['*class']+  '</b>'); }
+		if (typeof(c['*extends']) != 'undefined')  { txt.push(': <i>' +  c['*extends']+  '</i>'); }
+		
+		
+		if (sr) txt.push('</s>');
+		return (txt.length == 0 ? "Element" : txt.join(" "));
+}
+
 }
