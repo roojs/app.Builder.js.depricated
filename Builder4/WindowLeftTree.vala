@@ -370,14 +370,18 @@ public class Xcls_WindowLeftTree
                     Gtk.drag_finish (ctx, dnd_success, delete_selection_data, time);
                     return true;
             } );
-            this.el.cursor_changed.connect( function (self) {
+            this.el.cursor_changed.connect(  (self) => {
+            
+            
                  if (this.blockChanges) { // probably not needed.. 
                    return true;
                  }
+                 
+                 
                  var render = this.get('/LeftTree').getRenderer();                
                
                 
-                if (this.selection.count_selected_rows() < 1) {
+                if (_this.model.get_selection().count_selected_rows() < 1) {
                     this.get('/LeftPanel.model').load( false);
                     this.get('/MidPropTree').activeElement =  false;
                     this.get('/MidPropTree').hideWin();
