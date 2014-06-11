@@ -473,150 +473,6 @@ WindowLeftTree=new XObject({
                         return ret;
                                                 
                     },
-                    'void:loadFile' : function(JsRender.JsRender f) {
-                        //console.dump(f);
-                        this.el.clear();
-                        this.file = f;
-                        
-                    //    if (!f) {
-                    //        console.log('missing file');
-                    //        return;
-                    //    }
-                        
-                        // load the file if not loaded..
-                        if (f.tree == null) {
-                            f.loadItems( );
-                        }
-                        
-                        
-                        
-                        /// this.get('/Window').setTitle(f.project.getName() + ' - ' + f.name);
-                        
-                        //if (f.items.length && typeof(f.items[0]) == 'string') {
-                        
-                            //this.get('/RightEditor').el.show();
-                            //this.get('/RightEditor.view').load( f.items[0]);
-                        //    return;
-                        //}
-                        //print("LOAD");
-                        //print(JSON.stringify(f.items, null,4));
-                        //console.dump(f.items);
-                        var o = new GLib.List<JsRender.Node>();
-                        o.append(f.tree);
-                        this.load(o);
-                        
-                        this.view.el.expand_all();
-                    
-                        if (f.tree.items.length() < 1) {
-                            // single item..
-                            
-                            //this.get('/Window.leftvpaned').el.set_position(80);
-                            // select first...
-                            this.view.el.set_cursor( 
-                                new  Gtk.TreePath.from_string('0'), null, false);
-                            
-                            
-                        } else {
-                              //this.get('/Window.leftvpaned').el.set_position(200);
-                        }
-                        
-                        return;
-                        /*    
-                        
-                        //print("hide right editior");
-                        //this.get('/RightEditor').el.hide();
-                        //this.get('/Editor').el.hide();
-                        //print("set current tree");
-                        //this.currentTree = this.toJS(false, false)[0];
-                        //console.dump(this.currentTree);
-                        //this.currentTree = this.currentTree || { items: [] };
-                        //_this.renderView();
-                        //console.dump(this.map);
-                        //var RightPalete     = imports.Builder.RightPalete.RightPalete;
-                        
-                        
-                        var pm = this.get('/RightPalete.model');
-                        // set up provider..
-                        
-                        this.get('/RightPalete').provider = this.get('/LeftTree').getPaleteProvider();
-                        
-                        if (!this.get('/RightPalete').provider) {
-                            print ("********* PALETE PROVIDER MISSING?!!");
-                        }
-                        this.get('/LeftTree').renderView();
-                        
-                        pm.load( this.get('/LeftTree').getPaleteProvider().gatherList(this.listAllTypes()));
-                        
-                        
-                                
-                        this.get('/Window.view-notebook').el.set_current_page(
-                            this.get('/LeftTree.model').file.getType()== 'Roo' ? 0 : -1);
-                            */
-                                
-                    },
-                    'void:moveNode' : (string target_data, Gdk.DragAction action) 
-                    {
-                        //print("MOVE NODE");
-                        // console.dump(target_data);
-                        Gtk.TreeIter old_iter;
-                        var s = this.model.get_selection();
-                        Gtk ListStore mod 
-                        s.get_selected(out mod , out old_iter);
-                        
-                        
-                        var node = this.nodefFromIter(old_iter,false);
-                        //console.dump(node);
-                    
-                    
-                        // needs to drop first, otherwise the target_data 
-                        // treepath will be invalid.
-                    
-                        
-                        
-                        if (action & Gdk.DragAction.MOVE) {
-                                  //          print("REMOVING OLD NODE");
-                                node.remove();
-                                this.dropNode(target_data, node);
-                                this.el.remove(old_iter);
-                                
-                                             
-                        } else {
-                            node = node.deepClone();
-                            this.dropNode(target_data, node);
-                        }
-                    
-                        this.activePath= "";
-                        this.changed(false,true);
-                    },
-                    nodeTip : function(c) {
-                        var ret = this.nodeTitle(c,true);
-                        var funcs = '';
-                    
-                        
-                        for( var i in c) {
-                    
-                            if (!i.length || i[0] != '|') {
-                                continue;
-                            }
-                            if (i == '|init') { 
-                                continue;
-                            }
-                            if (typeof(c[i]) != 'string') {
-                               continue;
-                            }
-                            //print("prop : " + i + ':' + c[i]);
-                            if (!c[i].match(new RegExp('function'))) {
-                                continue;
-                            }
-                            funcs += "\n<b>" + i.substring(1) + '</b> : ' + c[i].split(/\n/).shift();
-                                
-                        }
-                        if (funcs.length) {
-                            ret+="\n\nMethods:" + funcs;
-                        }
-                        return ret;
-                        
-                    },
                     nodeTitle : function(c, renderfull) {
                           var txt = [];
                         c = c || {};
@@ -1044,7 +900,122 @@ WindowLeftTree=new XObject({
                                 this.load(tr.nth_data(i).items, citer);
                             }
                          
+                        },
+                    'void:loadFile' : function(JsRender.JsRender f) {
+                        //console.dump(f);
+                        this.el.clear();
+                        this.file = f;
+                        
+                    //    if (!f) {
+                    //        console.log('missing file');
+                    //        return;
+                    //    }
+                        
+                        // load the file if not loaded..
+                        if (f.tree == null) {
+                            f.loadItems( );
                         }
+                        
+                        
+                        
+                        /// this.get('/Window').setTitle(f.project.getName() + ' - ' + f.name);
+                        
+                        //if (f.items.length && typeof(f.items[0]) == 'string') {
+                        
+                            //this.get('/RightEditor').el.show();
+                            //this.get('/RightEditor.view').load( f.items[0]);
+                        //    return;
+                        //}
+                        //print("LOAD");
+                        //print(JSON.stringify(f.items, null,4));
+                        //console.dump(f.items);
+                        var o = new GLib.List<JsRender.Node>();
+                        o.append(f.tree);
+                        this.load(o);
+                        
+                        this.view.el.expand_all();
+                    
+                        if (f.tree.items.length() < 1) {
+                            // single item..
+                            
+                            //this.get('/Window.leftvpaned').el.set_position(80);
+                            // select first...
+                            this.view.el.set_cursor( 
+                                new  Gtk.TreePath.from_string('0'), null, false);
+                            
+                            
+                        } else {
+                              //this.get('/Window.leftvpaned').el.set_position(200);
+                        }
+                        
+                        return;
+                        /*    
+                        
+                        //print("hide right editior");
+                        //this.get('/RightEditor').el.hide();
+                        //this.get('/Editor').el.hide();
+                        //print("set current tree");
+                        //this.currentTree = this.toJS(false, false)[0];
+                        //console.dump(this.currentTree);
+                        //this.currentTree = this.currentTree || { items: [] };
+                        //_this.renderView();
+                        //console.dump(this.map);
+                        //var RightPalete     = imports.Builder.RightPalete.RightPalete;
+                        
+                        
+                        var pm = this.get('/RightPalete.model');
+                        // set up provider..
+                        
+                        this.get('/RightPalete').provider = this.get('/LeftTree').getPaleteProvider();
+                        
+                        if (!this.get('/RightPalete').provider) {
+                            print ("********* PALETE PROVIDER MISSING?!!");
+                        }
+                        this.get('/LeftTree').renderView();
+                        
+                        pm.load( this.get('/LeftTree').getPaleteProvider().gatherList(this.listAllTypes()));
+                        
+                        
+                                
+                        this.get('/Window.view-notebook').el.set_current_page(
+                            this.get('/LeftTree.model').file.getType()== 'Roo' ? 0 : -1);
+                            */
+                                
+                    },
+                    'void:moveNode' : (string target_data, Gdk.DragAction action) 
+                    {
+                        //print("MOVE NODE");
+                        // console.dump(target_data);
+                        Gtk.TreeIter old_iter;
+                        var s = this.model.get_selection();
+                        Gtk ListStore mod 
+                        s.get_selected(out mod , out old_iter);
+                        
+                        
+                        var node = this.nodefFromIter(old_iter,false);
+                        //console.dump(node);
+                    
+                    
+                        // needs to drop first, otherwise the target_data 
+                        // treepath will be invalid.
+                    
+                        
+                        
+                        if (action & Gdk.DragAction.MOVE) {
+                                  //          print("REMOVING OLD NODE");
+                                node.remove();
+                                this.dropNode(target_data, node);
+                                this.el.remove(old_iter);
+                                
+                                             
+                        } else {
+                            node = node.deepClone();
+                            this.dropNode(target_data, node);
+                        }
+                    
+                        this.activePath= "";
+                        this.changed(false,true);
+                    }
                 },
                 {
                     xtype: Gtk.TreeViewColumn,

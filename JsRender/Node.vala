@@ -538,7 +538,7 @@ public class JsRender.Node  {
 	public string nodeTip()
 	{
 		var ret = this.nodeTitle();
-		
+		var funcs = "";
 		var iter = this.props.map_iterator();
         while (iter.next()) {
 			var i =  iter.get_key();
@@ -550,18 +550,20 @@ public class JsRender.Node  {
 		    if (i == '|init') { 
 		        continue;
 		    }
-			if (
-		    
-        //print("prop : " + i + ':' + c[i]);
-		    if (!c[i].match(new RegExp('function'))) {
-		        continue;
-		    }
-        funcs += "\n<b>" + i.substring(1) + '</b> : ' + c[i].split(/\n/).shift();
+			var val = iter.get_value();
+			if (Regex.match_simple("^\s*function", val) { 
+				funcs += "\n<b>" + i.substring(1) +"'</b>" : ' + val.split("\n")[0];
+				continue;
+			}
+		    if (Regex.match_simple("^\s*\\(", val) {
+    			funcs += "\n<b>" + i.substring(1) +"'</b>" : ' + val.split("\n")[0];
+				continue;
+			}
             
-    }
-    if (funcs.length) {
-        ret+="\n\nMethods:" + funcs;
-    } 
+		}
+		if (funcs.length > 0) {
+		    ret+="\n\nMethods:" + funcs;
+		} 
 		return ret;
 
 	}
