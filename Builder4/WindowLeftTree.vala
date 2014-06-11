@@ -354,22 +354,21 @@ public class Xcls_WindowLeftTree
                             if (this.drag_in_motion) {
                                 Gdk.drag_status(ctx, 0, time);
                             }
-                            return true;
+                            return;
                         }
                         
                         this.view.highlight(tg);
                         //console.dump(tg);
-                        this.targetData = tg;    
+                        targetData = tg;    
                         
-                        
-                        Gdk.drag_status(ctx, action ,time);
+                        if (this.drag_in_motion) { 
+                            Gdk.drag_status(ctx, action ,time);
+                            return;
+                        }
                          
-                        return true;
+                    }
             
-            
-            
-            
-            
+                    // at this point, drag is not in motion... -- as checked above... - so it's a real drop event..
             
             
             
