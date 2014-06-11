@@ -524,12 +524,11 @@ public class Xcls_WindowLeftTree
         }
 
         // userdefined functions 
+        public JsRender.Node pathToNode
 
         // skip .JsRender.JsRender:file - already used 
 
         // skip .string:activePath - already used 
-
-        // skip |columns - already used 
 
         // skip currentTree - not pipe 
 
@@ -540,6 +539,8 @@ public class Xcls_WindowLeftTree
         // skip pack - not pipe 
 
         // skip xtype - not pipe 
+
+        // skip |columns - already used 
 
         // skip |listAllTypes - no return type
         public string findDropNode (string treepath_str, string[] targets) {

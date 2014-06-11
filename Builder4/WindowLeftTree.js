@@ -430,11 +430,11 @@ WindowLeftTree=new XObject({
             items : [
                 {
                     xtype: Gtk.TreeStore,
-                    columns : typeof(string),typeof(string),typeof(Object),
                     currentTree : false,
                     id : "model",
                     n_columns : 3,
                     pack : "set_model",
+                    columns : typeof(string),typeof(string),typeof(Object),
                     listAllTypes : function() {
                         var s = this.get('/LeftTree.view').selection;
                         print ("LIST ALL TYPES: " + s.count_selected_rows() );
