@@ -485,36 +485,39 @@ WindowLeftTree=new XObject({
                         
                         // load the file if not loaded..
                         if (f.tree == null) {
-                            
                             f.loadItems( );
-                            
-                            
                         }
-                        this.get('/Window').setTitle(f.project.getName() + ' - ' + f.name);
                         
-                        if (f.items.length && typeof(f.items[0]) == 'string') {
+                        
+                        
+                        /// this.get('/Window').setTitle(f.project.getName() + ' - ' + f.name);
+                        
+                        //if (f.items.length && typeof(f.items[0]) == 'string') {
                         
                             //this.get('/RightEditor').el.show();
                             //this.get('/RightEditor.view').load( f.items[0]);
-                            return;
-                        }
-                        print("LOAD");
-                        print(JSON.stringify(f.items, null,4));
+                        //    return;
+                        //}
+                        //print("LOAD");
+                        //print(JSON.stringify(f.items, null,4));
                         //console.dump(f.items);
-                        this.load(f.items);
-                        this.get('/LeftTree.view').el.expand_all();
+                        var o = new GLib.List<JsRender.Node>();
+                        o.append(f.tree);
+                        this.load(o);
+                        
+                        this.view.el.expand_all();
                     
-                        if (!f.items.length) {
+                        if (f.tree != null) {
                             // single item..
                             
-                            this.get('/Window.leftvpaned').el.set_position(80);
+                            //this.get('/Window.leftvpaned').el.set_position(80);
                             // select first...
-                            this.get('/LeftTree.view').el.set_cursor( 
+                            this.view.el.set_cursor( 
                                 new  Gtk.TreePath.from_string('0'), null, false);
                             
                             
                         } else {
-                              this.get('/Window.leftvpaned').el.set_position(200);
+                              //this.get('/Window.leftvpaned').el.set_position(200);
                         }
                         
                         
