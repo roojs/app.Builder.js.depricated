@@ -317,7 +317,7 @@ WindowLeftTree=new XObject({
                 
                 
                         Gtk.drag_finish (ctx, true, delete_selection_data, time);
-                        return;
+                       
                 },
                 cursor_changed : (self) => {
                 

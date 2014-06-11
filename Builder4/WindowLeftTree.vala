@@ -399,7 +399,7 @@ public class Xcls_WindowLeftTree
             
             
                     Gtk.drag_finish (ctx, true, delete_selection_data, time);
-                    return;
+                   
             } );
             this.el.cursor_changed.connect(  (self) => {
             
