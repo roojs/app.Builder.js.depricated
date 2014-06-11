@@ -533,7 +533,7 @@ Gtk = XObject.define(
                         packing =ci['|pack'].split(',');
                     }
                     var pack = packing.shift();
-                    strbuilder(ipad + "var child_" + i + " = new " + ci.xvala_xcls + "();\n" )
+                    strbuilder(ipad + "var child_" + i + " = new " + ci.xvala_xcls + "(_this);\n" );
                     
                     strbuilder(ipad + "this.el." + pack + " (  child_" + i + ".el " +
                                (packing.length ? ", " + packing.join(",") : "") + " );\n"
