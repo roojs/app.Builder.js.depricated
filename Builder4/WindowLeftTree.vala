@@ -307,10 +307,10 @@ public class Xcls_WindowLeftTree
                 (
                         this.el,         // will receive 'drag-data-received' signal 
                         ctx,        // represents the current state of the DnD 
-                        Atom.intern_static_string("STRING"),    // the target type we want 
+                        Atom.intern("STRING",true),    // the target type we want 
                         time            // time stamp 
                 );
-                */
+            
                  
                 // No target offered by source => error
                
