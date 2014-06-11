@@ -345,15 +345,17 @@ WindowLeftTree=new XObject({
             tooltip_column : 1,
             enable_tree_lines : true,
             headers_visible : false,
-            highlight : function(treepath_ar) {
+            highlight : ( treepath_ar) {
             
                     // highlighting for drag/drop
-                    if (treepath_ar.length && treepath_ar[0].length ) {
-                        this.el.set_drag_dest_row( 
-                                new  Gtk.TreePath.from_string( treepath_ar[0] ),  treepath_ar[1]);
-                        } else {
+            //        if (treepath_ar.length && treepath_ar[0].length ) {
+              //          this.el.set_drag_dest_row( 
+              //                  new  Gtk.TreePath.from_string( treepath_ar[0] ),  
+              //                    treepath_ar[1]
+            //            );
+              //          } else {
                             this.el.set_drag_dest_row(null, Gtk.TreeViewDropPosition.INTO_OR_AFTER);
-                        }
+               //         }
                          
                     },
             init : function() {
