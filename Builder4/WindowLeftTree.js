@@ -557,7 +557,7 @@ WindowLeftTree=new XObject({
                             if (typeof(node.pack) == 'undefined'  && parent !== false) {
                             
                             
-                                var pal = this.file.getPalete().fillPack(parentNode, node);
+                                this.file.getPalete().fillPack(node,parentNode);
                                 
                     
                                 if (pal.name == 'Gtk') {
