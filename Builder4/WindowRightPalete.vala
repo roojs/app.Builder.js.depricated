@@ -138,7 +138,7 @@ public class Xcls_RightPalete
 
             // listeners 
             this.el.clicked.connect(   (self) => {
-            	_this..show();
+            	_this.show();
             } );
         }
 

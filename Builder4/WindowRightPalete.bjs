@@ -23,7 +23,7 @@
                     "items": [
                         {
                             "listeners": {
-                                "clicked": "  (self) => {\n\t_this..show();\n}"
+                                "clicked": "  (self) => {\n\t_this.show();\n}"
                             },
                             "pack": "pack_start,false,true",
                             "xtype": "Button",

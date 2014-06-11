@@ -35,7 +35,7 @@ WindowRightPalete=new XObject({
                     xtype: Gtk.Button,
                     listeners : {
                         clicked : (self) => {
-                        	_this..show();
+                        	_this.show();
                         }
                     },
                     pack : "pack_start,false,true",
