@@ -28,8 +28,8 @@ public class Xcls_RightPalete
     public Xcls_txtrender txtrender;
 
         // my vars
-    public signal void drag_end();
     public Project.Project provider;
+    public signal void drag_end();
 
         // ctor 
     public Xcls_RightPalete()
@@ -49,9 +49,9 @@ public class Xcls_RightPalete
 
     // userdefined functions 
 
-    // skip .signal:void:drag_end() - already used 
-
     // skip .Project.Project:provider - already used 
+
+    // skip .signal:void:drag_end() - already used 
 
     // skip id - not pipe 
 
@@ -64,7 +64,7 @@ public class Xcls_RightPalete
               _this.viewbox.el.hide();
           //    print("TRIED TO HIDE");
         }
-    public void showfunction() {
+    public void show () {
             _this.buttonbar.el.hide();
             _this.viewbox.el.show();
            // this.get('model').expanded();

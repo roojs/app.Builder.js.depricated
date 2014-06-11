@@ -19,7 +19,7 @@ WindowRightPalete=new XObject({
           _this.viewbox.el.hide();
       //    print("TRIED TO HIDE");
     },
-    'void:show' : function() {
+    'void:show' : () {
         _this.buttonbar.el.hide();
         _this.viewbox.el.show();
        // this.get('model').expanded();
