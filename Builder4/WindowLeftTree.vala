@@ -698,10 +698,10 @@ public class Xcls_WindowLeftTree
                         
                         after = tp;
                     }
-                    Gtk.TreeIter n_iter;
-                    Gtk.TreeIter iter_par;
+                    Gtk.TreeIter? n_iter;
+                    Gtk.TreeIter? iter_par;
             
-                    Gtk.TreeIter iter_after;
+                    Gtk.TreeIter? iter_after;
                     
                     
                     
