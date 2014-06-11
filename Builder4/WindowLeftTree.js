@@ -420,12 +420,14 @@ WindowLeftTree=new XObject({
                             this.el.get_iter(iter, new Gtk.TreePath.from_string(this.activePath))
                             
                             this.el.set(iter, 0, n.displayTitle(), 1, n.displayTitle(), -1);
-                            this.el.set_value(iter, 2, [GObject.TYPE_STRING, this.nodeToJSON(n)]);
+                            var v = new Value(typeof(Object));
+                            v.set_object(n);
+                    
                         }
                                 //this.currentTree = this.toJS(false, true)[0];
-                            var d = new Date();
-                            this.file.items = this.toJS(false, false);
-                            print ("TO JS in " + ((new Date()) - d) + "ms");
+                        //    var d = new Date();
+                        //this.file.items = this.toJS(false, false);
+                        //    print ("TO JS in " + ((new Date()) - d) + "ms");
                           //  print("AFTER CHANGED");
                             //console.dump(this.file.items);
                             this.file.save();
