@@ -358,45 +358,46 @@ WindowLeftTree=new XObject({
                //         }
                          
                     },
-            init : function() {
-                	XObject.prototype.init.call(this);
-            	var description = new Pango.FontDescription.c_new();
-            	description.set_size(8000);
-            	this.el.modify_font(description);
+            init : {
+                var description = new Pango.FontDescription();
+                description.set_size(8000);
+                this.el.modify_font(description);
             
-            	this.selection = this.el.get_selection();
-            	this.selection.set_mode( Gtk.SelectionMode.SINGLE);
-            	var _this = this;
+                var selection = this.el.get_selection();
+                selection.set_mode( Gtk.SelectionMode.SINGLE);
             
-            	// is this really needed??
-            	this.selection.signal['changed'].connect(function() {
-            		_this.get('/LeftTree.view').listeners.cursor_changed.apply(
-            		    _this.get('/LeftTree.view'), [ _this.get('/LeftTree.view'), '']
-            		);
-            	});
             
-            	Gtk.drag_source_set (
-            		this.el,            /* widget will be drag-able */
-            		Gdk.ModifierType.BUTTON1_MASK,       /* modifier that will start a drag */
-            		null,            /* lists of target to support */
-            		0,              /* size of list */
-            		Gdk.DragAction.COPY   | Gdk.DragAction.MOVE           /* what to do with data after dropped */
-            	);
-            
-            	Gtk.drag_source_set_target_list(this.el, this.get('/Window').targetList);
-            
-            	Gtk.drag_source_add_text_targets(this.el); 
-            	Gtk.drag_dest_set
-            	(
-            	    this.el,              /* widget that will accept a drop */
-            	    Gtk.DestDefaults.MOTION  | Gtk.DestDefaults.HIGHLIGHT,
+                // is this really needed??
+                /*
+                this.selection.signal['changed'].connect(function() {
+            	    _this.get('/LeftTree.view').listeners.cursor_changed.apply(
+            	        _this.get('/LeftTree.view'), [ _this.get('/LeftTree.view'), '']
+            	    );
+                });
+                */
+                Gtk.drag_source_set (
+            	    this.el,            /* widget will be drag-able */
+            	    Gdk.ModifierType.BUTTON1_MASK,       /* modifier that will start a drag */
             	    null,            /* lists of target to support */
             	    0,              /* size of list */
-            	    Gdk.DragAction.COPY   | Gdk.DragAction.MOVE       /* what to do with data after dropped */
-            	);
+            	    Gdk.DragAction.COPY   | Gdk.DragAction.MOVE           /* what to do with data after dropped */
+                );
             
-            	Gtk.drag_dest_set_target_list(this.el, this.get('/Window').targetList);
-            	Gtk.drag_dest_add_text_targets(this.el);
+                Gtk.drag_source_set_target_list(this.el, Builder.Application.targetList);
+            
+                Gtk.drag_source_add_text_targets(this.el); 
+            
+                Gtk.drag_dest_set
+                (
+                    this.el,              /* widget that will accept a drop */
+                    Gtk.DestDefaults.MOTION  | Gtk.DestDefaults.HIGHLIGHT,
+                    null,            /* lists of target to support */
+                    0,              /* size of list */
+                    Gdk.DragAction.COPY   | Gdk.DragAction.MOVE       /* what to do with data after dropped */
+                );
+            
+                Gtk.drag_dest_set_target_list(this.el, Builder.Application.targetList);
+                Gtk.drag_dest_add_text_targets(this.el);
             },
             selectNode : function(treepath_str) {
                 //this.selection.select_path(new  Gtk.TreePath.from_string( treepath_str));
