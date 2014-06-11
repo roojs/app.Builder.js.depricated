@@ -524,10 +524,6 @@ public class Xcls_WindowLeftTree
         }
 
         // userdefined functions 
-        public JsRender.Node pathToNode(string path) {
-            
-            
-            }
 
         // skip .JsRender.JsRender:file - already used 
 
@@ -542,6 +538,18 @@ public class Xcls_WindowLeftTree
         // skip pack - not pipe 
 
         // skip xtype - not pipe 
+        public JsRender.Node pathToNode(string path) {
+             
+                 
+                 Gtk.TreeIter   iter;
+                 _this.model.el.get_iter_from_string(out iter, path);
+                 
+                 GLib.Value value;
+                 _this.model.el.get_value(iter, 2, out value);
+                 
+                 return (JsRender.Node)value.dup_object();
+            
+            }
 
         // skip |columns - already used 
 

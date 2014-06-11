@@ -430,14 +430,22 @@ WindowLeftTree=new XObject({
             items : [
                 {
                     xtype: Gtk.TreeStore,
-                    'JsRender.Node:pathToNode' : (string path) {
-                    
-                    
-                    },
                     currentTree : false,
                     id : "model",
                     n_columns : 3,
                     pack : "set_model",
+                    'JsRender.Node:pathToNode' : (string path) {
+                     
+                         
+                         Gtk.TreeIter   iter;
+                         _this.model.el.get_iter_from_string(out iter, path);
+                         
+                         GLib.Value value;
+                         _this.model.el.get_value(iter, 2, out value);
+                         
+                         return (JsRender.Node)value.dup_object();
+                    
+                    },
                     columns : typeof(string),typeof(string),typeof(Object),
                     listAllTypes : function() {
                         var s = this.get('/LeftTree.view').selection;
