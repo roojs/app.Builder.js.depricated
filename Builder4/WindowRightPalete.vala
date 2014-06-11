@@ -505,7 +505,7 @@ public class Xcls_RightPalete
                         
                             
                     Gtk.drag_set_icon_surface (ctx, pix);
-                    Glib.Value val;
+                    GLib.Value val;
                     
             
                     _this.model.el.get_value(iter, 0, out value);
