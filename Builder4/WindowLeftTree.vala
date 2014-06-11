@@ -1070,7 +1070,7 @@ public class Xcls_WindowLeftTree
             this.el.label = "Delete Element";
 
             // listeners 
-            this.el.activate.connect( function (self) {
+            this.el.activate.connect(   ( ) => {
             
                  _this.model.deleteSelected();
             } );
@@ -1114,7 +1114,7 @@ public class Xcls_WindowLeftTree
             this.el.label = "Save as Template";
 
             // listeners 
-            this.el.activate.connect( function (self) {
+            this.el.activate.connect(   () => {
             
                  var tree = _this
                  var model = _this.model;
