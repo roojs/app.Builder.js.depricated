@@ -617,7 +617,7 @@ WindowLeftTree=new XObject({
                         }
                         return this.findDropNodeByPath(path,targets) 
                     },
-                    findDropNodeByPath : (string treepath_str, string[] targets, int in_pref = -1) {
+                    'string:findDropNodeByPath' : (string treepath_str, string[] targets, int in_pref = -1) {
                     
                         var path = treepath_str; // dupe it..
                         
