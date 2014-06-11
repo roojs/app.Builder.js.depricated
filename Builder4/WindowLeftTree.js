@@ -645,7 +645,7 @@ WindowLeftTree=new XObject({
                             if (tp != null && int.parse(target_data[1])  < 2) { // before or after..
                                 var ar = target_data[0].split(':');
                                 ar[ar.length-1] = "";
-                                var npath = string.joinv(":", ar)
+                                var npath = string.joinv(":", ar);
                                 
                                 
                                 parent  = new  Gtk.TreePath.from_string( npath.substring( 0, -2 ));
