@@ -127,6 +127,7 @@ public class Xcls_WindowLeftTree
 
 
             // my vars
+        public bool drag_in_motion;
         public GLib.List dragList;
         public string dragData;
 
@@ -427,6 +428,8 @@ public class Xcls_WindowLeftTree
         // userdefined functions 
 
         // skip listeners - not pipe 
+
+        // skip .bool:drag_in_motion - already used 
 
         // skip .GLib.List:dragList - already used 
 
