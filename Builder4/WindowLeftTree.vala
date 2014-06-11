@@ -576,7 +576,7 @@ public class Xcls_WindowLeftTree
                 
                 while (path.length > 0) {
                     //print("LOOKING FOR PATH: " + path);
-                    var node_data = this.singleNodeToJS(path);
+                    var node_data = this.pathToNode(path);
                     
                     if (node_data == null) {
                         print("node not found");
