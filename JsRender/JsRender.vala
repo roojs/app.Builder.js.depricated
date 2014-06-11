@@ -218,7 +218,7 @@ namespace JsRender {
 
 		public Palete.Palete palete()
 		{
-			return Palete.Palete.factory(this.xtype);
+			return Palete.factory(this.xtype);
 
 		}
 		
