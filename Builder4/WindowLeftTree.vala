@@ -274,10 +274,10 @@ public class Xcls_WindowLeftTree
                             // fix-me - this.. needs to handle comming from the palete...
                             if (this.drag_in_motion) {
                                 Gdk.drag_status(ctx, 0, time);
-                                return true;
+                                return;
                             }
-            
-                            return true;
+                            // no drop action...
+                            return;
                         }
                         
                         
