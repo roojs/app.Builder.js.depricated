@@ -480,7 +480,7 @@ WindowLeftTree=new XObject({
                         this.changed(null,true);
                         _this.view.blockChanges = false;
                     },
-                    dropNode : (string target_data_str, JsRender.Node node) {
+                    'void:dropNode' : (string target_data_str, JsRender.Node node) {
                     //         print("drop Node");
                          // console.dump(node);
                       //    console.dump(target_data);
@@ -595,7 +595,7 @@ WindowLeftTree=new XObject({
                             
                                 
                     },
-                    findDropNode : function(treepath_str, targets) {
+                    findDropNode : (treepath_str, targets) {
                     
                     // this is used by the dragdrop code in the roo version AFAIR..
                     

@@ -571,8 +571,121 @@ public class Xcls_WindowLeftTree
                 this.changed(null,true);
                 _this.view.blockChanges = false;
             }
-
-        // skip |dropNode - no return type
+        public void dropNode(string target_data_str, JsRender.Node node) {
+            //         print("drop Node");
+                 // console.dump(node);
+              //    console.dump(target_data);
+              
+                    var target_data= target_data_str.split("|");
+              
+                    Gtk.TreePath tp = target_data[0].length > 0 ? new  Gtk.TreePath.from_string( target_data[0] ) : null;
+                    
+                    //print("add " + tp + "@" + target_data[1]  );
+                    
+                    JsRender.Node parentNode = null;
+                    
+                    var parent = tp;
+                    
+                    Gtk.TreePath after = null;
+                    
+                    if (tp != null && int.parse(target_data[1])  < 2) { // before or after..
+                        var ar = target_data[0].split(':');
+                        ar[ar.length-1] = "";
+                        var npath = string.joinv(":", ar)
+                        
+                        
+                        parent  = new  Gtk.TreePath.from_string( npath.substring( 0, -2 ));
+                        
+                        
+                        
+                        
+                        after = tp;
+                    }
+                    Gtk.TreeIter n_iter;
+                    Gtk.TreeIter iter_par;
+            
+                    Gtk.TreeIter iter_after;
+                    
+                    
+                    
+                    if (parent !== null) {
+                        this.el.get_iter(out iter_par, parent);
+                        GLib.Value value;
+                        this.el.get_value( iter_par, 2, out value);
+                        var parentNode =  (JsRender.Node)value.dup_object();
+                    } else {
+                        iter_par = null;
+                    }
+                    
+                    
+                    if (tp != null && after != null) {
+                        //print(target_data[1]  > 0 ? 'insert_after' : 'insert_before');
+                        
+                        this.el.get_iter(out iter_after, after);
+                        if ( int.parse(target_data[1] >0 ) {
+                            this.el.insert_after(n_iter, iter_par, iter_after);
+                        } else {
+                            this.el.insert_before(n_iter, iter_par, iter_after);
+                        }
+                        
+                    } else {
+                        this.el.append(n_iter, iter_par);
+                        
+                    }
+                    
+                    if (node.parent == null) {
+                    
+                        if (target_data.length == 3 && target_data[2].length) {
+                            node.set('*prop', target_data[2]);
+                        }
+                        
+                        node = DialogTemplateSelect.show(node);
+                        
+                    }
+                    
+                    
+                    // work out what kind of packing to use.. -- should be in 
+                    if (typeof(node.pack) == 'undefined'  && parent !== false) {
+                    
+                    
+                        this.file.getPalete().fillPack(node,parentNode);
+                        
+                        
+                    }
+                    
+                    
+                    var xitems = [];
+                    if (node.items) {
+                        xitems = node.items;
+                        delete node.items;
+                    }
+            // load children - if it has any..
+            
+                    if (node.items.length() > 0) {
+                        this.load(node.items, n_iter);
+                        _this.view.el.expand_row(this.el.get_path(n_iter), true);
+                    }
+                    
+                    if (tp != null && (node.items.length() > 0 || after)) {
+                        _this.view.el.expand_row(this.el.get_path(iter_par), true);
+                    }
+                    // wee need to get the empty proptypes from somewhere..
+                    
+                    //var olditer = this.activeIter;
+                    this.activePath = this.el.get_path(n_iter).to_string();
+            
+              // changed actually set's the node data..
+                    this.changed(node, true);
+                    
+                    
+                    _this.view.el.set_cursor(this.el.get_path(n_iter), null, false);
+                    
+                    //Builder.MidPropTree._model.load(node);
+                    //Builder.MidPropTree._win.hideWin();
+                    //Builder.LeftPanel._model.load( node);
+                    
+                        
+            }
 
         // skip |findDropNode - no return type
 
