@@ -80,7 +80,7 @@ WindowRightPalete=new XObject({
                         {
                             xtype: Gtk.Button,
                             listeners : {
-                                clicked : function (self) {
+                                clicked : () => {
                                 	_this.hide();
                                 }
                             },

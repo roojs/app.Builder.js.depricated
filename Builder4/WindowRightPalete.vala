@@ -366,7 +366,7 @@ public class Xcls_RightPalete
             this.el.add (  child_0.el  );
 
             // listeners 
-            this.el.clicked.connect( function (self) {
+            this.el.clicked.connect(   () => {
             	_this.hide();
             } );
         }
