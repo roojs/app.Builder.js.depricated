@@ -10,8 +10,8 @@ namespace Palete
 
 	public class Usage : Object 
 	{
-		GLib.List<string> left;
-		GLib.List<string> right;
+		public GLib.List<string> left;
+		public GLib.List<string> right;
 		public Usage(GLib.List<string> ileft, GLib.List<string> iright)
 		{
 			this.left = ileft.copy();
