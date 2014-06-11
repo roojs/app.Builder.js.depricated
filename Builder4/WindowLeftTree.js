@@ -662,7 +662,7 @@ WindowLeftTree=new XObject({
                             
                             
                             
-                            if (parent !== null) {
+                            if (parent != null) {
                                 this.el.get_iter(out iter_par, parent);
                                 GLib.Value value;
                                 this.el.get_value( iter_par, 2, out value);
