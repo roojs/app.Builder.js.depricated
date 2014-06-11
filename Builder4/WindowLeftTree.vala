@@ -512,14 +512,6 @@ public class Xcls_WindowLeftTree
         // skip xtype - not pipe 
 
         // skip |listAllTypes - no return type
-
-        // skip |nodeTitle - no return type
-
-        // skip |nodeToJS - no return type
-
-        // skip |nodeToJSON - no return type
-
-        // skip |singleNodeToJS - no return type
         public string findDropNode (string treepath_str, string[] targets) {
             
                 // this is used by the dragdrop code in the roo version AFAIR..
