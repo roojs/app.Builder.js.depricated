@@ -617,15 +617,20 @@ WindowLeftTree=new XObject({
                         }
                         return this.findDropNodeByPath(path,targets) 
                     },
-                    findDropNodeByPath : function(treepath_str, targets, pref) {
-                        var path = treepath_str + ''; // dupe it..
-                        pref = typeof(pref) == 'undefined' ?  Gtk.TreeViewDropPosition.INTO_OR_AFTER : pref;
+                    findDropNodeByPath : (string treepath_str, string targets, int in_pref = -1) {
+                    
+                        var path = treepath_str; // dupe it..
+                        
+                        int pref = in_pref < 0  ?  Gtk.TreeViewDropPosition.INTO_OR_AFTER : pref;
+                        
                         var last = false;
+                        
                         //console.dump(this.treemap);
+                        
                         while (path.length) {
                             print("LOOKING FOR PATH: " + path);
                             var node_data = this.singleNodeToJS(path);
-                            if (node_data === false) {
+                            if (node_data == null) {
                                 print("node not found");
                                 return [];
                             }
