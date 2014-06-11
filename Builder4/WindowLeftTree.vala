@@ -392,16 +392,10 @@ public class Xcls_WindowLeftTree
                             //delete_selection_data = true;
                         }
                         
-                        var source = Gtk.drag_get_source_widget(ctx);
-            
-                        if (this.targetData) {
-                            if (source != this.el) {
-                                
-                                _this.model.dropNode(this.targetData,  source.dragData);
-                            } else {
+                        
                                 // drag around.. - reorder..
-                                 _this.model.moveNode(this.targetData, ctx.action);
-                                
+                         _this.model.moveNode(targetData, ctx.action);
+                        
                                 
                             }
                             //Seed.print(this.targetData);
