@@ -263,16 +263,19 @@ WindowLeftTree=new XObject({
                             // it is set up when we start to drag..
                             
                             
-                            var tg = this.model.findDropNodeByPath( path.to_string(), this.dropList, pos);
+                            targetData = this.model.findDropNodeByPath( path.to_string(), this.dropList, pos);
                                 
-                            this.view.highlight(tg);
+                
                             
-                            if (tg.length < 0) {
+                            if (tg.length < 1) {
                                 //print("Can not find drop node path");
-                                this.targetData = false;
-                                Gdk.drag_status(ctx, 0, time);
+                                if (this.drag_in_motion) {
+                                    Gdk.drag_status(ctx, 0, time);
+                                }
                                 return true;
                             }
+                            
+                            this.view.highlight(tg);
                             //console.dump(tg);
                             this.targetData = tg;    
                             
