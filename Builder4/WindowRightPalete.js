@@ -251,7 +251,7 @@ WindowRightPalete=new XObject({
                                         {
                                             xtype: Gtk.CellRendererText,
                                             id : "txtrender",
-                                            pack : "pack_start"
+                                            pack : "pack_start,true"
                                         }
                                     ]
                                 }

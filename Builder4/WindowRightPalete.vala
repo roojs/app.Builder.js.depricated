@@ -667,7 +667,7 @@ public class Xcls_RightPalete
 
             // set gobject values
             var child_0 = new Xcls_txtrender();
-            this.el.pack_start (  child_0.el  );
+            this.el.pack_start (  child_0.el , true );
         }
 
         // userdefined functions 
