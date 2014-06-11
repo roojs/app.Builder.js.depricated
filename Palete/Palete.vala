@@ -126,7 +126,7 @@ namespace Palete
 				var m = this.map.nth_data(i);
 				
                 if (m.right.index(rval) > -1) {
-					for(var ii =0; ii < m.left.legnth(); ii++) {
+					for(var ii =0; ii < m.left.length(); ii++) {
                 		var l = m.left.nth_data(ii);
 						
                         if (ret.index(l) > -1) {
