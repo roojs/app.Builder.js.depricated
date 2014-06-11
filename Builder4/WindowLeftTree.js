@@ -430,6 +430,10 @@ WindowLeftTree=new XObject({
             items : [
                 {
                     xtype: Gtk.TreeStore,
+                    'JsRender.Node:pathToNode' : (string path) {
+                    
+                    
+                    },
                     currentTree : false,
                     id : "model",
                     n_columns : 3,

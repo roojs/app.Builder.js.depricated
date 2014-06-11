@@ -45,7 +45,7 @@
                     "|xns": "Gtk",
                     "items": [
                         {
-                            "|JsRender.Node:pathToNode": "",
+                            "|JsRender.Node:pathToNode": "(string path) {\n\n\n}",
                             ".JsRender.JsRender:file": "",
                             ".string:activePath": "",
                             "currentTree": false,

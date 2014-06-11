@@ -524,7 +524,10 @@ public class Xcls_WindowLeftTree
         }
 
         // userdefined functions 
-        public JsRender.Node pathToNode
+        public JsRender.Node pathToNode(string path) {
+            
+            
+            }
 
         // skip .JsRender.JsRender:file - already used 
 
