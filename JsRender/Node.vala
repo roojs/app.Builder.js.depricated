@@ -23,6 +23,7 @@ public class JsRender.Node  {
 		this.listeners = new Gee.HashMap<string,string>();
         this.is_array = false;
         this.xvala_xcls = "";
+		this.parent = null;
     }
     
     
