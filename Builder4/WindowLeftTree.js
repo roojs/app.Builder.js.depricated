@@ -467,8 +467,8 @@ WindowLeftTree=new XObject({
                         this.el.get_iter_from_string(out iter, path);
                     
                         GLib.Value value;
-                         this.el.get_value(iter, 2, out value);
-                         var data = (JsRender.Node)(value.value);
+                        this.el.get_value(iter, 2, out value);
+                        var data = (JsRender.Node)(value.value);
                         data.remove();
                         this.el.remove(iter);
                         
@@ -479,7 +479,7 @@ WindowLeftTree=new XObject({
                     
                     
                         this.activePath= ""; // again!?!?      
-                        this.changed(false,true);
+                        this.changed(null,true);
                         _this.view.blockChanges = false;
                     },
                     dropNode : function(target_data, node) {
