@@ -493,9 +493,9 @@ WindowLeftTree=new XObject({
                             
                             var parent = tp;
                             
-                            var after = false;
+                            var after = null;
                             
-                            if (tp && int.parse(target_data[1])  < 2) { // before or after..
+                            if (tp != null && int.parse(target_data[1])  < 2) { // before or after..
                                 var ar = target_data[0].split(':');
                                 ar[ar.length-1] = "";
                                 var npath = string.joinv(":", ar)
@@ -504,14 +504,15 @@ WindowLeftTree=new XObject({
                                 parent  = new  Gtk.TreePath.from_string( npath.substring( 0, -2 ));
                                 after = tp;
                             }
-                            var n_iter = new Gtk.TreeIter();
-                            var iter_par = new Gtk.TreeIter();
-                            var iter_after = after ? new Gtk.TreeIter() : false;
+                            Gtk.TreeIter n_iter;
+                            Gtk.TreeIter iter_par;
+                    
+                            Gtk.TreeIter iter_after;
                             
                             
                             
-                            if (parent !== false) {
-                                this.el.get_iter(iter_par, parent);
+                            if (parent !== null) {
+                                this.el.get_iter(out iter_par, parent);
                             } else {
                                 iter_par = null;
                             }
