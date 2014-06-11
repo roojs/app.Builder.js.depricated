@@ -190,9 +190,11 @@ WindowLeftTree=new XObject({
                             if (src != this.el) {
                                 //print("no drag data!");
                                 // fix-me - this.. needs to handle comming from the palete...
-                                
-                                Gdk.drag_status(ctx, 0, time);
-                                this.targetData = "";
+                                if (this.drag_in_motion) {
+                                    Gdk.drag_status(ctx, 0, time);
+                                    return true;
+                                }
+                
                                 return true;
                             }
                             
@@ -200,9 +202,8 @@ WindowLeftTree=new XObject({
                             //var action = Gdk.DragAction.COPY;
                                 // unless we are copying!!! ctl button..
                             var action = ctx.actions & Gdk.DragAction.MOVE ? Gdk.DragAction.MOVE : Gdk.DragAction.COPY ;
-                            }
-                            var data = {};
-                
+                            
+                            
                             if (this.model.el.iter_n_children(null) < 1) {
                 	            // no children.. -- asume it's ok..
                 	            
