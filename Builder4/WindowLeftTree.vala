@@ -494,6 +494,8 @@ public class Xcls_WindowLeftTree
 
         // userdefined functions 
 
+        // skip n_columns - not pipe 
+
         // skip .string:activePath - already used 
 
         // skip currentTree - not pipe 
@@ -503,6 +505,26 @@ public class Xcls_WindowLeftTree
         // skip pack - not pipe 
 
         // skip xtype - not pipe 
+
+        // skip |init - already used 
+
+        // skip |listAllTypes - no return type
+
+        // skip |load - no return type
+
+        // skip |loadFile - no return type
+
+        // skip |moveNode - no return type
+
+        // skip |nodeTip - no return type
+
+        // skip |nodeTitle - no return type
+
+        // skip |nodeToJS - no return type
+
+        // skip |nodeToJSON - no return type
+
+        // skip |singleNodeToJS - no return type
         public string findDropNode (string treepath_str, string[] targets) {
             
                 // this is used by the dragdrop code in the roo version AFAIR..
@@ -525,26 +547,6 @@ public class Xcls_WindowLeftTree
                 }
                 return this.findDropNodeByPath(path,targets) 
             }
-
-        // skip |init - already used 
-
-        // skip |listAllTypes - no return type
-
-        // skip |load - no return type
-
-        // skip |loadFile - no return type
-
-        // skip |moveNode - no return type
-
-        // skip |nodeTip - no return type
-
-        // skip |nodeTitle - no return type
-
-        // skip |nodeToJS - no return type
-
-        // skip |nodeToJSON - no return type
-
-        // skip |singleNodeToJS - no return type
         public string findDropNodeByPath (string treepath_str, string[] targets, int in_pref = -1) {
             
                 var path = treepath_str; // dupe it..
