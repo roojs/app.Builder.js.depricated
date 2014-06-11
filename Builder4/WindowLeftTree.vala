@@ -149,7 +149,7 @@ public class Xcls_WindowLeftTree
             this.el.append_column (  child_1.el  );
 
             // listeners 
-            this.el.button_press_event.connect(   ( ev) {
+            this.el.button_press_event.connect(   ( ev) => {
                 //console.log("button press?");
             
                 if (!_this.model.file.editorSave()) {
