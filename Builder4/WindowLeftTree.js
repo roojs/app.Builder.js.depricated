@@ -142,7 +142,18 @@ WindowLeftTree=new XObject({
                     // the point of this is to detect where an item could be dropped..
                     
                        this.drag_in_motion = true;
+                       this.drag_x = x;
+                       this.drag_y = y;
                        
+                            // request data that will be recieved by the recieve...              
+                        Gtk.drag_get_data
+                        (
+                                this.el,         // will receive 'drag-data-received' signal 
+                                ctx,        // represents the current state of the DnD 
+                                Atom.intern("STRING",true),    // the target type we want 
+                                time            // time stamp 
+                        );
+                
                        
                  
                  
