@@ -640,7 +640,7 @@ public class Xcls_WindowLeftTree
                 _this.view.blockChanges = true;
                 
                 Gtk.TreeIter old_iter = new Gtk.TreeIter();
-                var s = _this.view.get_selection();
+                var s = _this.view.el.get_selection();
                 Gtk.TreeStore mod;
                 
                 s.get_selected(out mod, out old_iter);
