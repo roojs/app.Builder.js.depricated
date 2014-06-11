@@ -6,7 +6,7 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.bjs",
     "items": [
         {
-            "|getActiveFile": "function() {\n    return this.get('model').file;\n}\n",
+            "|getActiveFile": "() {\n    return this.model.file;\n}\n",
             "pack": "add",
             "xtype": "ScrolledWindow",
             "|JsRender.Node?:getActiveElement": " () { // return path to actie node.\n\n     var path = this.getActivePath();\n     if (path.length < 1) {\n        return null;\n     }\n     Gtk.TreeIter   iter = new ();\n     _this.model.el.get_iter_from_string(out iter, path);\n     \n     GLib.Value value;\n     _this.model.el.get_value(iter, 2, out value);\n     \n     return (JsRender.Node)value;\n}\n",
