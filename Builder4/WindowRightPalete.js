@@ -206,6 +206,13 @@ WindowRightPalete=new XObject({
                                     id : "model",
                                     n_columns : 2,
                                     pack : "set_model",
+                                    'string:getValue' : (Gtk.TreeIter iter, int col)  {
+                                        GLib.Value gval;
+                                         this.el.get_value(iter, col , out gval);
+                                        return  (string)gval;
+                                        
+                                        
+                                    },
                                     'void:load' : (GLib.List<string> tr, Gtk.TreeIter? iter)
                                     {
                                         if (iter == null) {
@@ -220,7 +227,7 @@ WindowRightPalete=new XObject({
                                                 
                                                 this.el.append(out citer);   
                                             } else {
-                                                this.el.insert(out citer,iter,-1);
+                                                this.el.insert_before(out citer,iter);
                                             }
                                             
                                             var r = tr.nth_data(i);
@@ -232,13 +239,6 @@ WindowRightPalete=new XObject({
                                             //    this.load(r.cn, citer);
                                             //}
                                         }
-                                        
-                                        
-                                    },
-                                    'string:getValue' : (Gtk.TreeIter iter, int col)  {
-                                        GLib.Value gval;
-                                         this.el.get_value(iter, col , out gval);
-                                        return  (string)gval;
                                         
                                         
                                     }

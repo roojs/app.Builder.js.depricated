@@ -607,6 +607,13 @@ public class Xcls_RightPalete
         // skip pack - not pipe 
 
         // skip xtype - not pipe 
+        public string getValue (Gtk.TreeIter iter, int col)  {
+                GLib.Value gval;
+                 this.el.get_value(iter, col , out gval);
+                return  (string)gval;
+                
+                
+            }
         public void load (GLib.List<string> tr, Gtk.TreeIter? iter)
             {
                 if (iter == null) {
@@ -621,7 +628,7 @@ public class Xcls_RightPalete
                         
                         this.el.append(out citer);   
                     } else {
-                        this.el.insert(out citer,iter,-1);
+                        this.el.insert_before(out citer,iter);
                     }
                     
                     var r = tr.nth_data(i);
@@ -633,13 +640,6 @@ public class Xcls_RightPalete
                     //    this.load(r.cn, citer);
                     //}
                 }
-                
-                
-            }
-        public string getValue (Gtk.TreeIter iter, int col)  {
-                GLib.Value gval;
-                 this.el.get_value(iter, col , out gval);
-                return  (string)gval;
                 
                 
             }
