@@ -748,8 +748,7 @@ public class Xcls_WindowLeftTree
                     
                     
                     // work out what kind of packing to use.. -- should be in 
-                    if (typeof(node.pack) == 'undefined'  && parent !== false) {
-                    
+                    if (!node.has("pack")   && parent != null) {
                     
                         this.file.getPalete().fillPack(node,parentNode);
                         
