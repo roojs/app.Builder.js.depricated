@@ -70,20 +70,22 @@ WindowLeftTree=new XObject({
         {
             xtype: Gtk.TreeView,
             listeners : {
-                button_press_event : function (self, ev) {
-                 	console.log("button press?");
-                 	
-                 	if (!this.get('/Editor').save()) {
-                 	    // popup!! - click handled.. 
-                 	    return true;
-                        }
-                 	
+                button_press_event : ( ev) {
+                    //console.log("button press?");
+                
+                    _this.model.file.editorSave();
+                    
+                    if (!this.get('/Editor').save()) {
+                        // popup!! - click handled.. 
+                        return true;
+                    }
+                
                         if (ev.type != Gdk.EventType.BUTTON_PRESS  || ev.button.button != 3) {
                             print("click" + ev.type);
                             return false;
                         }
                       
-                    
+                
                         var res = {}; 
                         this.get('/LeftTree.view').el.get_path_at_pos(ev.button.x,ev.button.y, res);
                         
