@@ -409,9 +409,10 @@ WindowLeftTree=new XObject({
             items : [
                 {
                     xtype: Gtk.TreeStore,
-                    n_columns : 3,
+                    columns : "",
                     currentTree : false,
                     id : "model",
+                    n_columns : 3,
                     pack : "set_model",
                     init : function() {
                         XObject.prototype.init.call(this);

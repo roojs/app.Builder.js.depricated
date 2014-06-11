@@ -494,13 +494,15 @@ public class Xcls_WindowLeftTree
 
         // userdefined functions 
 
-        // skip n_columns - not pipe 
+        // skip columns - not pipe 
 
         // skip .string:activePath - already used 
 
         // skip currentTree - not pipe 
 
         // skip id - not pipe 
+
+        // skip n_columns - not pipe 
 
         // skip pack - not pipe 
 
