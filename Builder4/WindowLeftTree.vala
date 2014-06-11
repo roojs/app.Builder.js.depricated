@@ -172,7 +172,7 @@ public class Xcls_WindowLeftTree
                  //   print("click:" + res.path.to_string());
                  //   return false;
             } );
-            this.el.drag_begin.connect( ( drag_context)  => {
+            this.el.drag_begin.connect( ( ctx)  => {
             	//print('SOURCE: drag-begin');
                     
                     
@@ -196,16 +196,12 @@ public class Xcls_WindowLeftTree
             
                     // make the drag icon a picture of the node that was selected
                     var path = _this.model.el.get_path(iter);
-                    this.el.treepath = path.to_string();
+            
+                    this.treepath = path.to_string();
                     
                     var pix = this.el.create_row_drag_icon ( path);
                     
-                    Gtk.drag_set_icon_pixmap (ctx,
-                        pix.get_colormap(),
-                        pix,
-                        null,
-                        -10,
-                        -10);
+                    Gtk.drag_set_icon_surface (ctx, pix) 
                     
                     return true;
             } );
