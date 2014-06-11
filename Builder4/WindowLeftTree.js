@@ -23,13 +23,6 @@ WindowLeftTree=new XObject({
          }
          return _this.model.pathToNode(path);
     },
-    'Palete.Palete:getPaleteProvider' : function() {
-    
-        //var pm = imports.Builder.Provider.ProjectManager.ProjectManager;
-        return _this.model.file.getPalete();
-        
-    
-    },
     init : this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC),
     shadow_type : Gtk.ShadowType.IN,
     'string:getActivePath' : () {
@@ -664,7 +657,7 @@ WindowLeftTree=new XObject({
                                 this.el.get_iter(out iter_par, parent);
                                 GLib.Value value;
                                 this.el.get_value( iter_par, 2, out value);
-                                var parentNode =  (JsRender.Node)value.dup_object();
+                                  parentNode =  (JsRender.Node)value.dup_object();
                             } else {
                                 iter_par = null;
                             }

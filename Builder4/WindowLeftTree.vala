@@ -62,13 +62,6 @@ public class Xcls_WindowLeftTree
              }
              return _this.model.pathToNode(path);
         }
-    public Palete.Palete getPaleteProviderfunction() {
-        
-            //var pm = imports.Builder.Provider.ProjectManager.ProjectManager;
-            return _this.model.file.getPalete();
-            
-        
-        }
 
     // skip |init - already used 
 
@@ -716,7 +709,7 @@ public class Xcls_WindowLeftTree
                         this.el.get_iter(out iter_par, parent);
                         GLib.Value value;
                         this.el.get_value( iter_par, 2, out value);
-                        var parentNode =  (JsRender.Node)value.dup_object();
+                          parentNode =  (JsRender.Node)value.dup_object();
                     } else {
                         iter_par = null;
                     }
