@@ -81,7 +81,7 @@ WindowRightPalete=new XObject({
                             xtype: Gtk.Button,
                             listeners : {
                                 clicked : function (self) {
-                                	_this.RightPalete.hide();
+                                	_this.hide();
                                 }
                             },
                             pack : "pack_start,false,true",

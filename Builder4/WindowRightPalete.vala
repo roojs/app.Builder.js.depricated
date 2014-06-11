@@ -367,7 +367,7 @@ public class Xcls_RightPalete
 
             // listeners 
             this.el.clicked.connect( function (self) {
-            	_this.RightPalete.hide();
+            	_this.hide();
             } );
         }
 

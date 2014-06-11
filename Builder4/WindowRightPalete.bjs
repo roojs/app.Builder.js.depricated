@@ -70,7 +70,7 @@
                                 },
                                 {
                                     "listeners": {
-                                        "clicked": "function (self) {\n\t_this.RightPalete.hide();\n}"
+                                        "clicked": "function (self) {\n\t_this.hide();\n}"
                                     },
                                     "pack": "pack_start,false,true",
                                     "xtype": "Button",
