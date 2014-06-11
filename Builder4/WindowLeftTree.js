@@ -465,7 +465,11 @@ WindowLeftTree=new XObject({
                         
                         Gtk.TreeIter iter;
                         this.el.get_iter_from_string(out iter, path);
+                        
+                        
+                        
                         this.el.remove(iter);
+                        
                         
                         // 
                         
