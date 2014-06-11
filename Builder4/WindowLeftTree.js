@@ -129,7 +129,7 @@ WindowLeftTree=new XObject({
                         
                         return true;
                 },
-                drag_end : function (drag_context) {
+                drag_end : (drag_context) => {
                 	//Seed.print('LEFT-TREE: drag-end');
                         this.dragData = "";
                         this.dropList = null;

@@ -207,7 +207,7 @@ public class Xcls_WindowLeftTree
                     
                     return true;
             } );
-            this.el.drag_end.connect( function (drag_context) {
+            this.el.drag_end.connect(   (drag_context) => {
             	//Seed.print('LEFT-TREE: drag-end');
                     this.dragData = "";
                     this.dropList = null;
