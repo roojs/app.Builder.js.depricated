@@ -49,12 +49,12 @@ WindowLeftTree=new XObject({
     },
     getRenderer : function() {
     
-    	switch( this.getActiveFile().getType()) {
-    		case 'Roo':
-    		    return this.get('/RightBrowser.view');
-    		case 'Gtk':
-    		    return this.get('/RightGtkView');
-    	}
+        switch( this.getActiveFile().getType()) {
+            case 'Roo':
+                return this.get('/RightBrowser.view');
+            case 'Gtk':
+                return this.get('/RightGtkView');
+        }
     
     },
     init : function() {
