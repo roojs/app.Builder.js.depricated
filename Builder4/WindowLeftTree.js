@@ -514,7 +514,7 @@ WindowLeftTree=new XObject({
                         if (targets.length > 0 && targets[0] == "*") {
                             return  path;
                         }
-                        return this.findDropNodeByPath(path,targets)'
+                        return this.findDropNodeByPath(path,targets);
                     },
                     'string:findDropNodeByPath' : (string treepath_str, string[] targets, int in_pref = -1) {
                     

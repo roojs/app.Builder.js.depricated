@@ -563,7 +563,7 @@ public class Xcls_WindowLeftTree
                 if (targets.length > 0 && targets[0] == "*") {
                     return  path;
                 }
-                return this.findDropNodeByPath(path,targets)'
+                return this.findDropNodeByPath(path,targets);
             }
         public string findDropNodeByPath (string treepath_str, string[] targets, int in_pref = -1) {
             
