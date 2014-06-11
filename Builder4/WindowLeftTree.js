@@ -597,25 +597,25 @@ WindowLeftTree=new XObject({
                     },
                     findDropNode : (treepath_str, targets) {
                     
-                    // this is used by the dragdrop code in the roo version AFAIR..
+                        // this is used by the dragdrop code in the roo version AFAIR..
                     
-                        		var path = treepath_str.replace(/^builder-/, '');
-                                // treemap is depreciated... - should really check if model has any entries..
+                    	var path = treepath_str.replace(/^builder-/, '');
+                        // treemap is depreciated... - should really check if model has any entries..
                     
-                                if (!this.el.iter_n_children(null)) {
-                                    print("NO KEYS");
-                                    return [ '',  Gtk.TreeViewDropPosition.INTO_OR_AFTER];
-                                }
-                                print("FIND treepath: " + path);
-                                //console.dump(this.treemap);
-                                
-                                if (!treepath_str.match(/^builder-/)) {
-                                    return []; // nothing!
-                                }
-                                if (targets === true) {
-                                    return [ path ];
-                                }
-                                return this.findDropNodeByPath(path,targets) 
+                        if (!this.el.iter_n_children(null)) {
+                            //print("NO KEYS");
+                            return "|%d".printf((int)Gtk.TreeViewDropPosition.INTO_OR_AFTER);
+                        }
+                        print("FIND treepath: " + path);
+                        //console.dump(this.treemap);
+                        
+                        if (!treepath_str.match(/^builder-/)) {
+                            return []; // nothing!
+                        }
+                        if (targets === true) {
+                            return [ path ];
+                        }
+                        return this.findDropNodeByPath(path,targets) 
                     },
                     findDropNodeByPath : function(treepath_str, targets, pref) {
                         var path = treepath_str + ''; // dupe it..
