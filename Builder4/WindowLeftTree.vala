@@ -126,6 +126,7 @@ public class Xcls_WindowLeftTree
 
 
             // my vars
+        public GLib.List dragList;
         public string dragData;
 
             // ctor 
@@ -413,6 +414,8 @@ public class Xcls_WindowLeftTree
         // userdefined functions 
 
         // skip listeners - not pipe 
+
+        // skip .GLib.List:dragList - already used 
 
         // skip .string:dragData - already used 
 
