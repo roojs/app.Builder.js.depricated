@@ -480,19 +480,28 @@ WindowLeftTree=new XObject({
                         this.changed(null,true);
                         _this.view.blockChanges = false;
                     },
-                    dropNode : function(target_data, node) {
-                             print("drop Node");
+                    dropNode : (string target_data_str, JsRender.Node node) {
+                    //         print("drop Node");
                          // console.dump(node);
                       //    console.dump(target_data);
-                            var tp = target_data[0].length ? new  Gtk.TreePath.from_string( target_data[0] ) : false;
+                      
+                            var target_data= target_data_str.split("|");
+                      
+                            var tp = target_data[0].length > 0 ? new  Gtk.TreePath.from_string( target_data[0] ) : null;
                             
-                            print("add " + tp + "@" + target_data[1]  );
+                            //print("add " + tp + "@" + target_data[1]  );
+                            
                             var parent = tp;
+                            
                             var after = false;
-                            if (tp && target_data[1]  < 2) { // before or after..
+                            
+                            if (tp && int.parse(target_data[1])  < 2) { // before or after..
                                 var ar = target_data[0].split(':');
-                                ar.pop();
-                                parent  = new  Gtk.TreePath.from_string( ar.join(':') );
+                                ar[ar.length-1] = "";
+                                var npath = string.joinv(":", ar)
+                                
+                                
+                                parent  = new  Gtk.TreePath.from_string( npath.substring( 0, -2 ));
                                 after = tp;
                             }
                             var n_iter = new Gtk.TreeIter();
