@@ -554,7 +554,7 @@ WindowLeftTree=new XObject({
                             */
                                 
                     },
-                    moveNode : (string target_data, Gdk.DragAction action) 
+                    'void:moveNode' : (string target_data, Gdk.DragAction action) 
                     {
                         //print("MOVE NODE");
                         // console.dump(target_data);

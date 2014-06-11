@@ -593,8 +593,40 @@ public class Xcls_WindowLeftTree
                     */
                         
             }
-
-        // skip |moveNode - no return type
+        public void moveNode(string target_data, Gdk.DragAction action) 
+            {
+                //print("MOVE NODE");
+                // console.dump(target_data);
+                Gtk.TreeIter old_iter;
+                var s = this.model.get_selection();
+                Gtk ListStore mod 
+                s.get_selected(out mod , out old_iter);
+                
+                
+                var node = this.nodefFromIter(old_iter,false);
+                //console.dump(node);
+            
+            
+                // needs to drop first, otherwise the target_data 
+                // treepath will be invalid.
+            
+                
+                
+                if (action & Gdk.DragAction.MOVE) {
+                          //          print("REMOVING OLD NODE");
+                        node.remove();
+                        this.dropNode(target_data, node);
+                        this.el.remove(old_iter);
+                        
+                                     
+                } else {
+                    node = node.deepClone();
+                    this.dropNode(target_data, node);
+                }
+            
+                this.activePath= "";
+                this.changed(false,true);
+            }
 
         // skip |nodeTip - no return type
 
