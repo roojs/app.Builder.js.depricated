@@ -497,7 +497,7 @@ WindowLeftTree=new XObject({
                             }
                          
                         },
-                    loadFile : function(f) {
+                    loadFile : function(JsRender.JsRender f) {
                         //console.dump(f);
                                 this.el.clear();
                                 this.file = f;
