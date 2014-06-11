@@ -44,7 +44,7 @@ WindowLeftTree=new XObject({
     getPaleteProvider : function() {
     
         //var pm = imports.Builder.Provider.ProjectManager.ProjectManager;
-        return _this.file.getPalete();
+        return _this.model.file.getPalete();
     
     },
     getRenderer : function() {
