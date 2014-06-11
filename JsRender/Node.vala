@@ -85,7 +85,7 @@ public class JsRender.Node  {
 			}
 			nlist.append(this.parent.items.nth_data(i));
 		}
-		this.items = nlist;
+		this.items = nlist.copy();
 		
 
 	}
