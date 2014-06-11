@@ -535,5 +535,12 @@ public class JsRender.Node  {
 		o.set_string_member(key,val);
 		
 	}
+	public string nodeTip()
+	{
+		var ret = this.nodeTitle();
+		 
+		return ret;
+
+	}
     
 }
