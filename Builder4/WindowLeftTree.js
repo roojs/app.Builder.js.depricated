@@ -609,7 +609,7 @@ WindowLeftTree=new XObject({
                         //print("FIND treepath: " + path);
                         //console.dump(this.treemap);
                         
-                        if (!treepath_str.match(/^builder-/)) {
+                        //if (!treepath_str.match(/^builder-/)) {
                             return []; // nothing!
                         }
                         if (targets === true) {
