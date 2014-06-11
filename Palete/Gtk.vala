@@ -2,17 +2,7 @@ namespace Palete {
 
 	
 	
-	public class GtkUsage : Object 
-	{
-		GLib.List<string> left;
-		GLib.List<string> right;
-		public GtkUsage(GLib.List<string> ileft, GLib.List<string> iright)
-		{
-			this.left = ileft.copy();
-			this.right=  iright.copy();
-		}
-	}
-
+	
 	
     public class Introspect.El : Object
     {
@@ -30,7 +20,7 @@ namespace Palete {
 
     public class Gtk : Palete {
 		
-		GLib.List<GtkUsage> map;
+		
         public Gtk()
         {
 
@@ -60,7 +50,7 @@ namespace Palete {
           // print(data);
             var data  = raw.split("\n");
             var state = 0;
-            var cfg = new GLib.List<GtkUsage>();
+            var cfg = new GLib.List<Usage>();
             var left = new GLib.List<string>();
             var right = new GLib.List<string>();
 
@@ -80,7 +70,7 @@ namespace Palete {
                     state = 1;
                     if (left.length() > 0 ){
                         
-                        cfg.append(new GtkUsage( left, right));
+                        cfg.append(new Usage( left, right));
 					}
                     left = new GLib.List<string>();
         			right = new GLib.List<string>();
@@ -99,7 +89,7 @@ namespace Palete {
                
             }
             if (left.length() > 0 ){
-                  cfg.append(new GtkUsage( left, right));
+                  cfg.append(new Usage( left, right));
             }
             this.map = cfg.copy();
              
