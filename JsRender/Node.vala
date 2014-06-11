@@ -71,6 +71,24 @@ public class JsRender.Node  {
         return "";
         
     }
+
+
+	public void  remove()
+	{
+		if (this.parent = null) {
+			return;
+		}
+		var nlist = new GLib.List<Node>;
+		for (var i =0;i < this.parent.items.length(); i++) {
+			if (this.parent.items.nth_data(i) == this) {
+				continue;
+			}
+			nlist.append(this.parent.items.nth_data(i));
+		}
+		this.items = nlist;
+		
+
+	}
      
     /* creates javascript based on the rules */
     public Node? findProp(string n) {
