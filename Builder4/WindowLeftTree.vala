@@ -299,22 +299,22 @@ public class Xcls_WindowLeftTree
                      
                     return true;
             } );
-            this.el.drag_drop.connect( function (w, ctx, x, y, time) {
-                  Seed.print("TARGET: drag-drop");
-                                   
-                                    Gtk.drag_get_data
-                                    (
-                                            w,         /* will receive 'drag-data-received' signal */
-                                            ctx,        /* represents the current state of the DnD */
-                                            this.get('/Window').atoms["STRING"],    /* the target type we want */
-                                            time            /* time stamp */
-                                    );
-                                    
-                                     
-                                    /* No target offered by source => error */
-                                   
+            this.el.drag_drop.connect(  (w, ctx, x, y, time)  => {
+                  //Seed.print("TARGET: drag-drop");
+                    /*               
+                Gtk.drag_get_data
+                (
+                        w,         // will receive 'drag-data-received' signal 
+                        ctx,        // represents the current state of the DnD 
+                        this.get('/Window').atoms["STRING"],    // the target type we want 
+                        time            // time stamp 
+                );
+                */
+                 
+                // No target offered by source => error
+               
             
-                                    return  true;
+                return  true;
             } );
             this.el.drag_data_received.connect( function (self, ctx, x, y, sel_data, info, time) {
             	 print("Tree: drag-data-received");
