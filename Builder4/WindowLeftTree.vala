@@ -1117,14 +1117,8 @@ public class Xcls_WindowLeftTree
             this.el.activate.connect(   () => {
             
             
-                 var model = _this.model;
-                 var el = _this.getActivePath();
-                 
-                 //print(el);
-                 //var js = model.toJS(el, false);
-                // print(JSON.stringify(js[0], null,4));
-                this.getActiveElement();
-                 DialogSaveTemplate.show( this.getActiveElement());
+                  
+                 DialogSaveTemplate.show( _this.getActiveElement());
                  
                 
             } );
