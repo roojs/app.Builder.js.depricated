@@ -21,13 +21,7 @@ WindowLeftTree=new XObject({
          if (path.length < 1) {
             return null;
          }
-         Gtk.TreeIter   iter;
-         _this.model.el.get_iter_from_string(out iter, path);
-         
-         GLib.Value value;
-         _this.model.el.get_value(iter, 2, out value);
-         
-         return (JsRender.Node)value.dup_object();
+         return _this.model.pathToNode(path);
     },
     'Palete.Palete:getPaleteProvider' : function() {
     
