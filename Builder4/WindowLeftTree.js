@@ -319,7 +319,7 @@ WindowLeftTree=new XObject({
                         Gtk.drag_finish (ctx, true, delete_selection_data, time);
                        
                 },
-                cursor_changed : (self) => {
+                cursor_changed : ( ) => {
                 
                 
                      if (this.blockChanges) { // probably not needed.. 
@@ -327,19 +327,16 @@ WindowLeftTree=new XObject({
                      }
                      
                      
-                     var render = this.get('/LeftTree').getRenderer();                
+                     //var render = this.get('/LeftTree').getRenderer();                
                    
                     
                     if (_this.model.get_selection().count_selected_rows() < 1) {
                 
                 
-                        this.model.load( false);
-                        this.file.avail_prop_tree.activeElement =  null;
-                        this.file.avail_prop_tree.hideWin();
-                
-                 
-                        this.file.avail_child_tree.loadAll(null);
-                        this.file.renderRedraw();
+                        //??this.model.load( false);
+                        
+                        this.file.setActiveNode(null);
+                        
                         return true;
                     }
                             

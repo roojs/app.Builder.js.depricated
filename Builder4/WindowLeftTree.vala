@@ -401,7 +401,7 @@ public class Xcls_WindowLeftTree
                     Gtk.drag_finish (ctx, true, delete_selection_data, time);
                    
             } );
-            this.el.cursor_changed.connect(  (self) => {
+            this.el.cursor_changed.connect(  ( ) => {
             
             
                  if (this.blockChanges) { // probably not needed.. 
@@ -409,19 +409,16 @@ public class Xcls_WindowLeftTree
                  }
                  
                  
-                 var render = this.get('/LeftTree').getRenderer();                
+                 //var render = this.get('/LeftTree').getRenderer();                
                
                 
                 if (_this.model.get_selection().count_selected_rows() < 1) {
             
             
-                    this.model.load( false);
-                    this.file.avail_prop_tree.activeElement =  null;
-                    this.file.avail_prop_tree.hideWin();
-            
-             
-                    this.file.avail_child_tree.loadAll(null);
-                    this.file.renderRedraw();
+                    //??this.model.load( false);
+                    
+                    this.file.setActiveNode(null);
+                    
                     return true;
                 }
                         
