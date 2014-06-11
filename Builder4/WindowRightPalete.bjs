@@ -6,7 +6,7 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/WindowRightPalete.bjs",
     "items": [
         {
-            ".Project.Project:provider": "",
+            ".Palete.Palete:provider": "",
             ".signal:void:drag_end()": "",
             "id": "RightPalete",
             "pack": "pack_start,false,false",

@@ -28,7 +28,7 @@ public class Xcls_RightPalete
     public Xcls_txtrender txtrender;
 
         // my vars
-    public Project.Project provider;
+    public Palete.Palete provider;
     public signal void drag_end();
 
         // ctor 
@@ -49,7 +49,7 @@ public class Xcls_RightPalete
 
     // userdefined functions 
 
-    // skip .Project.Project:provider - already used 
+    // skip .Palete.Palete:provider - already used 
 
     // skip .signal:void:drag_end() - already used 
 
