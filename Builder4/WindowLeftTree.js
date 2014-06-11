@@ -445,28 +445,36 @@ WindowLeftTree=new XObject({
                             }
                     	          
                     },
-                    deleteSelected : function() {
-                        this.get('/LeftTree.view').blockChanges = true;
-                        var old_iter = new Gtk.TreeIter();
-                        var s = this.get('/LeftTree.view').selection;
-                        s.get_selected(this.el, old_iter);
-                        var path = this.el.get_path(old_iter).to_string();
+                    deleteSelected : () {
+                        
+                        
+                        _this.view.blockChanges = true;
+                        
+                        Gtk.TreeIter old_iter = new Gtk.TreeIter();
+                        var s = _this.view.get_selection();
+                        Gtk.TreeStore mod;
+                        
+                        s.get_selected(out mod, out old_iter);
+                        
+                        var path = mod.get_path(old_iter).to_string();
                     
-                        this.activePath= false;      
+                        this.activePath= "";      
                         s.unselect_all();
                     
-                        this.activePath= false;      
-                         var iter = new Gtk.TreeIter();
-                        this.el.get_iter_from_string(iter, path);
+                        this.activePath= "";      
+                        
+                        Gtk.TreeIter iter;
+                        this.el.get_iter_from_string(out iter, path);
                         this.el.remove(iter);
                         
-                        // rebuild treemap. -- depreciated.!!
-                        this.map = {};
-                        this.treemap = { };
-                        //this.toJS(null, true) // does not do anything?
-                        this.activePath= false;      
+                        // 
+                        
+                        
+                    
+                    
+                        this.activePath= ""; // again!?!?      
                         this.changed(false,true);
-                        this.get('/LeftTree.view').blockChanges = false;
+                        _this.view.blockChanges = false;
                     },
                     dropNode : function(target_data, node) {
                              print("drop Node");
