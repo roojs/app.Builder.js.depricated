@@ -292,7 +292,7 @@ public class Xcls_WindowLeftTree
                             Gdk.drag_status(ctx, action ,time);
                             return;
                         }
-                        Gtk.drag_finish (ctx, false, true, time);        // drop failed..
+                        // continue through to allow drop...
             
                     } else {
                         
