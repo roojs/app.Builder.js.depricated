@@ -576,7 +576,7 @@ WindowLeftTree=new XObject({
                         return "";
                                 
                     },
-                    'void:changed' : (JsRender.Node? n, bool refresh) {
+                    'void:updateNode' : (JsRender.Node? n, bool refresh) {
                         //     print("MODEL CHANGED CALLED" + this.activePath);
                          if (n !== null && this.activePath.length > 0) {
                             Gtk.TreeIter iter;

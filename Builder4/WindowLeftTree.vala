@@ -625,7 +625,7 @@ public class Xcls_WindowLeftTree
                 return "";
                         
             }
-        public void changed(JsRender.Node? n, bool refresh) {
+        public void updateNode(JsRender.Node? n, bool refresh) {
                 //     print("MODEL CHANGED CALLED" + this.activePath);
                  if (n !== null && this.activePath.length > 0) {
                     Gtk.TreeIter iter;
