@@ -6,17 +6,17 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.bjs",
     "items": [
         {
-            "|getActiveFile": "LeftTree",
             "pack": "add",
             "xtype": "ScrolledWindow",
-            "|JsRender.Node?:getActiveElement": " () { // return path to actie node.\n\n     var path = this.getActivePath();\n     if (path.length < 1) {\n        return null;\n     }\n     Gtk.TreeIter   iter = new ();\n     _this.model.el.get_iter_from_string(out iter, path);\n     \n     GLib.Value value;\n     _this.model.el.get_value(iter, 2, out value);\n     \n     return (JsRender.Node)value;\n}\n",
             "|JsRender.JsRender:getActiveFile": "() {\n    return this.model.file;\n}\n",
-            "|string:getActivePath": " () {\n    var model = this.model;\n    var view = this.view;\n    if (view.el.get_selection().count_selected_rows() < 1) {\n        return \"\";\n    }\n    Gtk.TreeIter iter;\n    GtkStore mod;\n    view.selection.get_selected(out mod, out iter);\n    return mod.get_path(iter).to_string();\n}\n",
+            "|JsRender.Node?:getActiveElement": " () { // return path to actie node.\n\n     var path = this.getActivePath();\n     if (path.length < 1) {\n        return null;\n     }\n     Gtk.TreeIter   iter;\n     _this.model.el.get_iter_from_string(out iter, path);\n     \n     GLib.Value value;\n     _this.model.el.get_value(iter, 2, out value);\n     \n     return (JsRender.Node)value;\n}\n",
             "|Palete.Palete:getPaleteProvider": "function() {\n\n    //var pm = imports.Builder.Provider.ProjectManager.ProjectManager;\n    return _this.model.file.getPalete();\n\n}\n",
-            "|void:getRenderer": "() {\n\n    /*\n    switch( this.getActiveFile().getType()) {\n        case 'Roo':\n            return this.get('/RightBrowser.view');\n        case 'Gtk':\n            return this.get('/RightGtkView');\n    }\n    */\n\n}\n",
+            "|getActiveFile": "LeftTree",
             "|init": " this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)\n \n",
-            "|void:renderView": "() {\n    \n    _this.model.file.renderJS();\n\n}\n",
             "|shadow_type": "Gtk.ShadowType.IN",
+            "|string:getActivePath": " () {\n    var model = this.model;\n    var view = this.view;\n    if (view.el.get_selection().count_selected_rows() < 1) {\n        return \"\";\n    }\n    Gtk.TreeIter iter;\n    GtkStore mod;\n    view.selection.get_selected(out mod, out iter);\n    return mod.get_path(iter).to_string();\n}\n",
+            "|void:getRenderer": "() {\n\n    /*\n    switch( this.getActiveFile().getType()) {\n        case 'Roo':\n            return this.get('/RightBrowser.view');\n        case 'Gtk':\n            return this.get('/RightGtkView');\n    }\n    */\n\n}\n",
+            "|void:renderView": "() {\n    \n    _this.model.file.renderJS();\n\n}\n",
             "|xns": "Gtk",
             "items": [
                 {

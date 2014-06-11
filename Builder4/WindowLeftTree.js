@@ -11,15 +11,17 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 WindowLeftTree=new XObject({
     xtype: Gtk.ScrolledWindow,
-    getActiveFile : LeftTree,
     pack : "add",
+    'JsRender.JsRender:getActiveFile' : () {
+        return this.model.file;
+    },
     'JsRender.Node?:getActiveElement' : () { // return path to actie node.
     
          var path = this.getActivePath();
          if (path.length < 1) {
             return null;
          }
-         Gtk.TreeIter   iter = new ();
+         Gtk.TreeIter   iter;
          _this.model.el.get_iter_from_string(out iter, path);
          
          GLib.Value value;
@@ -27,9 +29,15 @@ WindowLeftTree=new XObject({
          
          return (JsRender.Node)value;
     },
-    'JsRender.JsRender:getActiveFile' : () {
-        return this.model.file;
+    'Palete.Palete:getPaleteProvider' : function() {
+    
+        //var pm = imports.Builder.Provider.ProjectManager.ProjectManager;
+        return _this.model.file.getPalete();
+    
     },
+    getActiveFile : LeftTree,
+    init : this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC),
+    shadow_type : Gtk.ShadowType.IN,
     'string:getActivePath' : () {
         var model = this.model;
         var view = this.view;
@@ -40,12 +48,6 @@ WindowLeftTree=new XObject({
         GtkStore mod;
         view.selection.get_selected(out mod, out iter);
         return mod.get_path(iter).to_string();
-    },
-    'Palete.Palete:getPaleteProvider' : function() {
-    
-        //var pm = imports.Builder.Provider.ProjectManager.ProjectManager;
-        return _this.model.file.getPalete();
-    
     },
     'void:getRenderer' : () {
     
@@ -59,13 +61,11 @@ WindowLeftTree=new XObject({
         */
     
     },
-    init : this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC),
     'void:renderView' : () {
         
         _this.model.file.renderJS();
     
     },
-    shadow_type : Gtk.ShadowType.IN,
     items : [
         {
             xtype: Gtk.TreeView,

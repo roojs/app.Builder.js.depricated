@@ -48,18 +48,19 @@ public class Xcls_WindowLeftTree
 
     // userdefined functions 
 
-    // skip |getActiveFile - no return type
-
     // skip pack - not pipe 
 
     // skip xtype - not pipe 
+    public JsRender.JsRender getActiveFile() {
+            return this.model.file;
+        }
     public JsRender.Node? getActiveElement () { // return path to actie node.
         
              var path = this.getActivePath();
              if (path.length < 1) {
                 return null;
              }
-             Gtk.TreeIter   iter = new ();
+             Gtk.TreeIter   iter;
              _this.model.el.get_iter_from_string(out iter, path);
              
              GLib.Value value;
@@ -67,9 +68,18 @@ public class Xcls_WindowLeftTree
              
              return (JsRender.Node)value;
         }
-    public JsRender.JsRender getActiveFile() {
-            return this.model.file;
+    public Palete.Palete getPaleteProviderfunction() {
+        
+            //var pm = imports.Builder.Provider.ProjectManager.ProjectManager;
+            return _this.model.file.getPalete();
+        
         }
+
+    // skip |getActiveFile - no return type
+
+    // skip |init - already used 
+
+    // skip |shadow_type - already used 
     public string getActivePath () {
             var model = this.model;
             var view = this.view;
@@ -80,12 +90,6 @@ public class Xcls_WindowLeftTree
             GtkStore mod;
             view.selection.get_selected(out mod, out iter);
             return mod.get_path(iter).to_string();
-        }
-    public Palete.Palete getPaleteProviderfunction() {
-        
-            //var pm = imports.Builder.Provider.ProjectManager.ProjectManager;
-            return _this.model.file.getPalete();
-        
         }
     public void getRenderer() {
         
@@ -99,15 +103,11 @@ public class Xcls_WindowLeftTree
             */
         
         }
-
-    // skip |init - already used 
     public void renderView() {
             
             _this.model.file.renderJS();
         
         }
-
-    // skip |shadow_type - already used 
 
     // skip |xns - no return type
 
