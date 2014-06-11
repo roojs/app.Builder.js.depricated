@@ -22,6 +22,7 @@ all:
 		Builder4/EditProject.vala \
 		Builder4/Editor.vala \
 		Builder4/RooProjectProperties.vala \
+		Builder4/WindowRightPalete.vala \
 		-o /tmp/test
 #		Builder4/*.vala \
 
