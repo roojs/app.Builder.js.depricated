@@ -497,7 +497,7 @@ public class Xcls_RightPalete
                     Gtk.TreeIter iter;
                     var s = this.el.get_selection();
                     
-                    s.get_selected(_this.model.el, out iter);
+                    s.get_selected(out tm, out iter);
                     var path = _this.model.el.get_path(iter);
                     
                     /// pix is a surface..
