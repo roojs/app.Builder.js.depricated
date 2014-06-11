@@ -494,9 +494,9 @@ public class Xcls_WindowLeftTree
 
         // userdefined functions 
 
-        // skip columns - not pipe 
-
         // skip .string:activePath - already used 
+
+        // skip columns - not pipe 
 
         // skip currentTree - not pipe 
 
@@ -507,8 +507,6 @@ public class Xcls_WindowLeftTree
         // skip pack - not pipe 
 
         // skip xtype - not pipe 
-
-        // skip |init - already used 
 
         // skip |listAllTypes - no return type
 
