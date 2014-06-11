@@ -20,7 +20,7 @@ public static Xcls_RightPalete  WindowRightPalete;
 public class Xcls_RightPalete
 {
     public Gtk.VBox el;
-    private static Xcls_RightPalete  _this;
+    private Xcls_RightPalete  _this;
 
     public Xcls_buttonbar buttonbar;
     public Xcls_viewbox viewbox;
@@ -137,7 +137,7 @@ public class Xcls_RightPalete
             this.el.add (  child_0.el  );
 
             // listeners 
-            this.el.clicked.connect(   (self) => {
+            this.el.clicked.connect( () => {
             	_this.show();
             } );
         }
