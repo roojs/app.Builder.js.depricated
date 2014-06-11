@@ -226,6 +226,7 @@ WindowLeftTree=new XObject({
                                 if (this.drag_in_motion) {
                                     Gdk.drag_status(ctx, 0 ,time);
                                 }
+                                Gtk.drag_finish (ctx, false, true, time);        // drop failed..
                                 return; // not over apoint!?! - no action on drop or motion..
                             }
                             
@@ -250,6 +251,7 @@ WindowLeftTree=new XObject({
                                 if (this.drag_in_motion) {
                                      Gdk.drag_status(ctx, 0 ,time);
                                  }
+                                 Gtk.drag_finish (ctx, false, true, time);        // drop failed..
                                  return; /// -- fixme -- this is not really correct..
                 
                             }
@@ -274,6 +276,7 @@ WindowLeftTree=new XObject({
                                 if (this.drag_in_motion) {
                                     Gdk.drag_status(ctx, 0, time);
                                 }
+                                Gtk.drag_finish (ctx, false, true, time);        // drop failed..
                                 return;
                             }
                             

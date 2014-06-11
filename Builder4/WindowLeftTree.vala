@@ -308,6 +308,7 @@ public class Xcls_WindowLeftTree
                             if (this.drag_in_motion) {
                                 Gdk.drag_status(ctx, 0 ,time);
                             }
+                            Gtk.drag_finish (ctx, false, true, time);        // drop failed..
                             return; // not over apoint!?! - no action on drop or motion..
                         }
                         
@@ -332,6 +333,7 @@ public class Xcls_WindowLeftTree
                             if (this.drag_in_motion) {
                                  Gdk.drag_status(ctx, 0 ,time);
                              }
+                             Gtk.drag_finish (ctx, false, true, time);        // drop failed..
                              return; /// -- fixme -- this is not really correct..
             
                         }
@@ -356,6 +358,7 @@ public class Xcls_WindowLeftTree
                             if (this.drag_in_motion) {
                                 Gdk.drag_status(ctx, 0, time);
                             }
+                            Gtk.drag_finish (ctx, false, true, time);        // drop failed..
                             return;
                         }
                         
