@@ -345,7 +345,7 @@ WindowLeftTree=new XObject({
             tooltip_column : 1,
             enable_tree_lines : true,
             headers_visible : false,
-            highlight : ( treepath_ar) {
+            highlight : ( bool treepath_ar) {
             
                     // highlighting for drag/drop
             //        if (treepath_ar.length && treepath_ar[0].length ) {
