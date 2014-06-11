@@ -75,7 +75,7 @@ public class JsRender.Node  {
 
 	public void  remove()
 	{
-		if (this.parent = null) {
+		if (this.parent == null) {
 			return;
 		}
 		var nlist = new GLib.List<Node>();
