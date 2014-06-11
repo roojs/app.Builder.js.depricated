@@ -22,8 +22,8 @@ WindowLeftTree=new XObject({
          Gtk.TreeIter   iter = new ();
          _this.model.el.get_iter_from_string(out iter, path);
          
-         var value = new GObject.Value('');
-         this.get('model').el.get_value(iter, 2, value);
+         GLib.Value value;
+         _this.model.el.get_value(iter, 2, out value);
             
          return JSON.parse(value.value);
     },
