@@ -520,7 +520,7 @@ WindowLeftTree=new XObject({
                     
                         var path = treepath_str; // dupe it..
                         
-                        int pref = in_pref < 0  ?  Gtk.TreeViewDropPosition.INTO_OR_AFTER : pref;
+                        int pref = in_pref < 0  ?  Gtk.TreeViewDropPosition.INTO_OR_AFTER : in_pref;
                         
                         var last = false;
                         
