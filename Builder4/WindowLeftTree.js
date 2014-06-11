@@ -574,7 +574,7 @@ WindowLeftTree=new XObject({
                             }
                             
                             var par = path.split(":");
-                            last = path;
+                            last = "" + path;
                             par[par.length] = "";
                             path = string.joinv(":", par).substring(0,-2);
                         }
