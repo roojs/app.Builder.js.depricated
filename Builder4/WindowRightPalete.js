@@ -22,7 +22,7 @@ WindowRightPalete=new XObject({
         _this.buttonbar.el.hide();
         _this.viewbox.el.show();
        // this.get('model').expanded();
-                
+         
     },
     items : [
         {

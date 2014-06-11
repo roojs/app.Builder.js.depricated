@@ -41,9 +41,9 @@ public class Xcls_RightPalete
         // my vars
 
         // set gobject values
-        var child_0 = new Xcls_buttonbar();
+        var child_0 = new Xcls_buttonbar(_this);
         this.el.add (  child_0.el  );
-        var child_1 = new Xcls_viewbox();
+        var child_1 = new Xcls_viewbox(_this);
         this.el.add (  child_1.el  );
     }
 
@@ -67,7 +67,7 @@ public class Xcls_RightPalete
             _this.buttonbar.el.hide();
             _this.viewbox.el.show();
            // this.get('model').expanded();
-                    
+             
         }
 
     // skip |xns - no return type
@@ -97,9 +97,9 @@ public class Xcls_RightPalete
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_Button3();
+            var child_0 = new Xcls_Button3(_this);
             this.el.pack_start (  child_0.el , false,true );
-            var child_1 = new Xcls_Label5();
+            var child_1 = new Xcls_Label5(_this);
             this.el.add (  child_1.el  );
         }
 
@@ -138,7 +138,7 @@ public class Xcls_RightPalete
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_Image4();
+            var child_0 = new Xcls_Image4(_this);
             this.el.add (  child_0.el  );
 
             // listeners 
@@ -270,9 +270,9 @@ public class Xcls_RightPalete
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_HBox7();
+            var child_0 = new Xcls_HBox7(_this);
             this.el.pack_start (  child_0.el , false,true );
-            var child_1 = new Xcls_ScrolledWindow11();
+            var child_1 = new Xcls_ScrolledWindow11(_this);
             this.el.add (  child_1.el  );
         }
 
@@ -311,9 +311,9 @@ public class Xcls_RightPalete
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_Label8();
+            var child_0 = new Xcls_Label8(_this);
             this.el.add (  child_0.el  );
-            var child_1 = new Xcls_Button9();
+            var child_1 = new Xcls_Button9(_this);
             this.el.pack_start (  child_1.el , false,true );
         }
 
@@ -385,7 +385,7 @@ public class Xcls_RightPalete
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_Image10();
+            var child_0 = new Xcls_Image10(_this);
             this.el.add (  child_0.el  );
 
             // listeners 
@@ -469,7 +469,7 @@ public class Xcls_RightPalete
 
             // set gobject values
             this.el.shadow_type = Gtk.ShadowType.IN;
-            var child_0 = new Xcls_TreeView12();
+            var child_0 = new Xcls_TreeView12(_this);
             this.el.add (  child_0.el  );
         }
 
@@ -514,9 +514,9 @@ public class Xcls_RightPalete
             // set gobject values
             this.el.enable_tree_lines = true;
             this.el.headers_visible = false;
-            var child_0 = new Xcls_model();
+            var child_0 = new Xcls_model(_this);
             this.el.set_model (  child_0.el  );
-            var child_1 = new Xcls_TreeViewColumn14();
+            var child_1 = new Xcls_TreeViewColumn14(_this);
             this.el.append_column (  child_1.el  );
 
             // listeners 
@@ -705,7 +705,7 @@ public class Xcls_RightPalete
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_txtrender();
+            var child_0 = new Xcls_txtrender(_this);
             this.el.pack_start (  child_0.el , true );
         }
 
