@@ -24,6 +24,7 @@ var ctors = {
     "Gtk.HBox": [ "homogeneous:true", "spacing:0" ],
     "Gtk.VBox": [ "homogeneous:true", "spacing:0" ],
     "Gtk.ListStore": [ "n_columns", "columns" ],
+    "Gtk.TreeStore": [ "n_columns", "columns" ],
     "Gtk.FileChooserWidget" : [ "action"],
     //"Gtk.Entry": [  ],
 };
