@@ -352,12 +352,9 @@ WindowLeftTree=new XObject({
                         this.model.el.get_value(iter, 2, out value);
                         this.model.activePath = mod.get_path(iter).to_string();
                         
-                        var data = (JsRender.Node)value;
-                        this.file.avail_prop_tree.activeElement = data;
-                        this.file.avail_prop_tree.hideWin();
-                        this.file.property_editor.load(data);
-                        this.file.avail_child_tree.loadAll(data);
-                    
+                        var node = (JsRender.Node)value.dup_object();
+                
+                        this.file.setActiveNode(node);
                        
                         //Seed.print( value.get_string());
                         return true;
