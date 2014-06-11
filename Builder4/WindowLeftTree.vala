@@ -736,7 +736,7 @@ public class Xcls_WindowLeftTree
                             node.props.set("*prop", target_data[2]);
                         }
                         
-                        node = DialogTemplateSelect.show(node);
+                        node = DialogTemplateSelect.show(this.file.palete(), node);
                         
                     }
                     
