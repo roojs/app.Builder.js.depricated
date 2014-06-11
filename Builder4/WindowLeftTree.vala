@@ -382,8 +382,11 @@ public class Xcls_WindowLeftTree
                
                 
                 if (_this.model.get_selection().count_selected_rows() < 1) {
-                    this.get('/LeftPanel.model').load( false);
-                    this.get('/MidPropTree').activeElement =  false;
+            
+            
+                    this.model.load( false);
+                    this.file.avail_prop_tree.activeElement =  null;
+                    this.file.avail_prop_tree.hideWin();
                     this.get('/MidPropTree').hideWin();
             
                     var pm = this.get('/RightPalete.model');
