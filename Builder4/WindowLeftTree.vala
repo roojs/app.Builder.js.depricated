@@ -384,54 +384,37 @@ public class Xcls_WindowLeftTree
                 if (_this.model.get_selection().count_selected_rows() < 1) {
             
             
-                    this.load( false);
+                    this.model.load( false);
                     this.file.avail_prop_tree.activeElement =  null;
                     this.file.avail_prop_tree.hideWin();
             
-            
-                    var pm = this.model');
-                    if (!this.get('/LeftTree').getPaleteProvider()) {
-                        // it may not be loaded yet..
-                        return  true;
-                    }
-                    pm.load( this.get('/LeftTree').getPaleteProvider().gatherList(
-                        this.get('/LeftTree.model').listAllTypes()));
-                    if (render && render.redraw) {
-                        render.redraw();
-                    }
+             
+                    this.file.avail_child_tree.loadAll(null);
+                    this.file.renderRedraw();
                     return true;
                 }
                         
                         //console.log('changed');
-                    var s = this.selection;
-                      var iter = new Gtk.TreeIter();
-                    s.get_selected(this.get('/LeftTree.model').el, iter);
+                    var s = this.get_selection();
+                     Gtk.TreeIter iter;
+                     Gtk.TreeStore mod;
+                    s.get_selected(out mod, out iter);
                     
                     
                     // var val = "";
-                    var value = new GObject.Value('');
-                    this.get('/LeftTree.model').el.get_value(iter, 2, value);
-                    this.get('/LeftTree.model').activePath = this.get('/LeftTree.model').el.get_path(iter).to_string();
+                    GLib.Value value;
+                    this.model.el.get_value(iter, 2, out value);
+                    this.model.activePath = mod.get_path(iter).to_string();
                     
-                    var data = JSON.parse(value.value);
-                    this.get('/MidPropTree').activeElement =  data;
-                    this.get('/MidPropTree').hideWin();
-                    this.get('/LeftPanel.model').load( data);
-                    
-                    console.log(value.value);
-                   // _g.button.set_label(''+value.get_string());
-            
-                    var pm =this.get('/RightPalete.model');
-                    pm.load(  this.get('/LeftTree').getPaleteProvider().gatherList(
-                         this.get('/LeftTree.model').listAllTypes()));
+                    var data = (JsRender.Node)value;
+                    this.file.avail_prop_tree.activeElement = data;
+                    this.file.avail_prop_tree.hideWin();
+                    this.file.property_editor.load(data);
+                    this.file.avail_child_tree.loadAll(data);
+                
                    
-                    
-                       if (render && render.redraw) {
-                        render.redraw();
-                    }
-                       
-                        //Seed.print( value.get_string());
-                        return true;
+                    //Seed.print( value.get_string());
+                    return true;
                             
             } );
         }
