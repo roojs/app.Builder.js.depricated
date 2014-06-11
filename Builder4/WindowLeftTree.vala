@@ -273,6 +273,7 @@ public class Xcls_WindowLeftTree
                             Gdk.drag_status(ctx, 0, time);
                             return;
                         }
+                        Gtk.drag_finish (ctx, false, true, time);        // drop failed..
                         // no drop action...
                         return;
                     }
@@ -371,19 +372,10 @@ public class Xcls_WindowLeftTree
                     // at this point, drag is not in motion... -- as checked above... - so it's a real drop event..
             
             
-            
-            
-            
-            
-            
-            
+             
             
                    var   delete_selection_data = false;
                    var  dnd_success = false;
-                   
-                   var seltype = sel.get_data_type().name();
-                   var seldata = sel.get_data();
-                   
                    
                     /* Deal with what we are given from source */
                     if( sel_data && sel_data.length ) {
@@ -424,6 +416,8 @@ public class Xcls_WindowLeftTree
                     {
                             //Seed.print ("DnD data transfer failed!\n");
                     }
+            
+            
             
                     Gtk.drag_finish (ctx, dnd_success, delete_selection_data, time);
                     return true;
