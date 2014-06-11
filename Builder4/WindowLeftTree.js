@@ -487,13 +487,13 @@ WindowLeftTree=new XObject({
                       
                             var target_data= target_data_str.split("|");
                       
-                            var tp = target_data[0].length > 0 ? new  Gtk.TreePath.from_string( target_data[0] ) : null;
+                            Gtk.TreePath tp = target_data[0].length > 0 ? new  Gtk.TreePath.from_string( target_data[0] ) : null;
                             
                             //print("add " + tp + "@" + target_data[1]  );
                             
                             var parent = tp;
                             
-                            var after = null;
+                            Gtk.TreePath after = null;
                             
                             if (tp != null && int.parse(target_data[1])  < 2) { // before or after..
                                 var ar = target_data[0].split(':');
@@ -518,31 +518,32 @@ WindowLeftTree=new XObject({
                             }
                             
                             
-                            if (tp && after) {
-                                print(target_data[1]  > 0 ? 'insert_after' : 'insert_before');
-                                this.el.get_iter(iter_after, after);
-                                this.el[ target_data[1]  > 0 ? 'insert_after' : 'insert_before'](
-                                        n_iter, iter_par, iter_after);
+                            if (tp != null && after != null) {
+                                //print(target_data[1]  > 0 ? 'insert_after' : 'insert_before');
+                                
+                                this.el.get_iter(out iter_after, after);
+                                if ( int.parse(target_data[1] >0 ) {
+                                    this.el.insert_after(n_iter, iter_par, iter_after);
+                                } else {
+                                    this.el.insert_before(n_iter, iter_par, iter_after);
+                                }
                                 
                             } else {
                                 this.el.append(n_iter, iter_par);
                                 
                             }
                             
-                            if (typeof(node) == 'string') {
-                                var ar = node.split('.');
-                                var xtype = ar.pop();
-                                
-                                node = {
-                                    '|xns' : ar.join('.'),
-                                    'xtype' : xtype
-                                };
+                            if (node.parent == null) {
+                            
                                 if (target_data.length == 3 && target_data[2].length) {
-                                    node['*prop'] = target_data[2];
+                                    node.set('*prop', target_data[2]);
                                 }
+                                
                                 node = this.get('/DialogTemplateSelect').show(node);
                                 
                             }
+                            */
+                            
                             // work out what kind of packing to use..
                             if (typeof(node.pack) == 'undefined'  && parent !== false) {
                                 var pal = this.get('/LeftTree').getPaleteProvider();
