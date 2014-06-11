@@ -557,7 +557,7 @@ public class JsRender.Node  {
 				continue;
 			}
 		
-		    if (i == '|init') { 
+		    if (i == "|init") { 
 		        continue;
 		    }
 			var val = iter.get_value();
