@@ -103,8 +103,8 @@ namespace Palete
             
             
         },
-        
-        getDropList : function(rval)
+        */
+        GLib.List<string> getDropList : function(rval)
         {
             
             var ret = [];
