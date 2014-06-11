@@ -346,12 +346,12 @@ Gtk = XObject.define(
             
             var citems = {};
             
-            if (!depth) {
+            //if (!depth) {
                 // Global Vars..
                 strbuilder(inpad + "public static " + xcls + "  " + this.name + ";\n\n");
                  
                 
-            }
+            //}
             
             // class header..
             // class xxx {   WrappedGtk  el; }
