@@ -376,7 +376,7 @@ public class Xcls_WindowLeftTree
                     // at this point, drag is not in motion... -- as checked above... - so it's a real drop event..
             
             
-              
+                     var delete_selection_data = false;
                         
                     if (ctx.action == Gdk.DragAction.ASK)  {
                         /* Ask the user to move or copy, then set the ctx action. */
@@ -396,19 +396,10 @@ public class Xcls_WindowLeftTree
                         
                         // we can send stuff to souce here...
             
-                        dnd_success = true;
-            
-                    }
-            
-                    if (dnd_success == false)
-                    {
-                            //Seed.print ("DnD data transfer failed!\n");
-                    }
             
             
-            
-                    Gtk.drag_finish (ctx, dnd_success, delete_selection_data, time);
-                    return true;
+                    Gtk.drag_finish (ctx, true, delete_selection_data, time);
+                    return;
             } );
             this.el.cursor_changed.connect(  (self) => {
             
