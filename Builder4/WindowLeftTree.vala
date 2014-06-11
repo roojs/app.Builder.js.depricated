@@ -317,11 +317,16 @@ public class Xcls_WindowLeftTree
             
                 return  true;
             } );
-            this.el.drag_data_received.connect(   (ctx, x, y, sel_data, info, time)  => {
+            this.el.drag_data_received.connect(   (ctx, x, y, sel, info, time)  => {
                   //print("Tree: drag-data-received");
             
-                  var   delete_selection_data = false;
+                   var   delete_selection_data = false;
                    var  dnd_success = false;
+                   
+                   var seltype = sel.get_data_type().name();
+                   var seldata = sel.get_data();
+                   
+                   
                     /* Deal with what we are given from source */
                     if( sel_data && sel_data.length ) {
                         
