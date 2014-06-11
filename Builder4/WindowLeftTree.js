@@ -473,7 +473,7 @@ WindowLeftTree=new XObject({
                         return ret;
                                                 
                     },
-                    loadFile : function(JsRender.JsRender f) {
+                    'void:loadFile' : function(JsRender.JsRender f) {
                         //console.dump(f);
                         this.el.clear();
                         this.file = f;
@@ -520,17 +520,21 @@ WindowLeftTree=new XObject({
                               //this.get('/Window.leftvpaned').el.set_position(200);
                         }
                         
+                        return;
+                        /*    
                         
                         //print("hide right editior");
                         //this.get('/RightEditor').el.hide();
                         //this.get('/Editor').el.hide();
                         //print("set current tree");
-                        this.currentTree = this.toJS(false, false)[0];
+                        //this.currentTree = this.toJS(false, false)[0];
                         //console.dump(this.currentTree);
-                        this.currentTree = this.currentTree || { items: [] };
-                        this.get('/LeftTree').renderView();
+                        //this.currentTree = this.currentTree || { items: [] };
+                        //_this.renderView();
                         //console.dump(this.map);
                         //var RightPalete     = imports.Builder.RightPalete.RightPalete;
+                        
+                        
                         var pm = this.get('/RightPalete.model');
                         // set up provider..
                         
@@ -547,6 +551,7 @@ WindowLeftTree=new XObject({
                                 
                         this.get('/Window.view-notebook').el.set_current_page(
                             this.get('/LeftTree.model').file.getType()== 'Roo' ? 0 : -1);
+                            */
                                 
                     },
                     moveNode : function(target_data, action) {
