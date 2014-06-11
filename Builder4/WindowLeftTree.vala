@@ -725,7 +725,7 @@ public class Xcls_WindowLeftTree
                         //print(target_data[1]  > 0 ? 'insert_after' : 'insert_before');
                         
                         this.el.get_iter(out iter_after, after);
-                        if ( int.parse(target_data[1] >0 ) {
+                        if ( int.parse(target_data[1]) >0 ) {
                             this.el.insert_after(n_iter, iter_par, iter_after);
                         } else {
                             this.el.insert_before(n_iter, iter_par, iter_after);
