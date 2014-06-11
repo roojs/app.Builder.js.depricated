@@ -36,7 +36,7 @@ namespace JsRender {
 
 		public bool hasParent; 
 
-		public signal changed (JsRender.Node? node, string source); 
+		public signal void changed (Node? node, string source); 
 		
 		public JsRender(Project.Project project, string path) {
 		    
