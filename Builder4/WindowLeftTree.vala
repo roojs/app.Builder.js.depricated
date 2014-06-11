@@ -284,9 +284,9 @@ public class Xcls_WindowLeftTree
                     var tg = this.model.findDropNodeByPath(
                         path.path.to_string(), src.dropList, path.pos);
                         
-                    this.get('/LeftTree.view').highlight(tg);
-                    if (!tg.length) {
-                        print("Can not find drop node path");
+                    this.view.highlight(tg);
+                    if (tg.length < 0) {
+                        //print("Can not find drop node path");
                         this.targetData = false;
                         Gdk.drag_status(ctx, 0, time);
                         return true;
