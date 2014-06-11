@@ -117,7 +117,7 @@ WindowRightPalete=new XObject({
                                         
                                         Gtk.TreeModel mod;
                                         s.get_selected(out mod, out iter);
-                                        var path = mod.el.get_path(iter);
+                                        var path = mod.get_path(iter);
                                         
                                         /// pix is a surface..
                                         var pix = this.el.create_row_drag_icon ( path);
