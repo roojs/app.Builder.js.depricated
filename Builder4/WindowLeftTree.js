@@ -306,12 +306,12 @@ WindowLeftTree=new XObject({
                     if (_this.model.get_selection().count_selected_rows() < 1) {
                 
                 
-                        this.model.load( false);
+                        this.load( false);
                         this.file.avail_prop_tree.activeElement =  null;
                         this.file.avail_prop_tree.hideWin();
-                        this.get('/MidPropTree').hideWin();
                 
-                        var pm = this.get('/RightPalete.model');
+                
+                        var pm = this.model');
                         if (!this.get('/LeftTree').getPaleteProvider()) {
                             // it may not be loaded yet..
                             return  true;
