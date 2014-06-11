@@ -414,12 +414,12 @@ WindowLeftTree=new XObject({
                     pack : "set_model",
                     changed : (JsRender.Node n, bool refresh) {
                         //     print("MODEL CHANGED CALLED" + this.activePath);
-                         if (this.activePath) {
-                            var iter = new Gtk.TreeIter();
-                            this.el.get_iter(iter, new Gtk.TreePath.from_string(this.activePath))
-                            this.el.set_value(iter, 0, [GObject.TYPE_STRING, this.nodeTitle(n)]);
-                            this.el.set_value(iter, 1, [GObject.TYPE_STRING, this.nodeTitle(n)]);
+                         if (this.activePath.length > 0) {
+                            Gtk.TreeIter iter;
                             
+                            this.el.get_iter(iter, new Gtk.TreePath.from_string(this.activePath))
+                            
+                            this.el.set(iter, 0, n.displayTitle(), 1, n.displayTitle(), -1);
                             this.el.set_value(iter, 2, [GObject.TYPE_STRING, this.nodeToJSON(n)]);
                         }
                                 //this.currentTree = this.toJS(false, true)[0];
