@@ -42,9 +42,10 @@ WindowLeftTree=new XObject({
         return mod.get_path(iter).to_string();
     },
     getPaleteProvider : function() {
-        var model = this.get('model');
-        var pm = imports.Builder.Provider.ProjectManager.ProjectManager;
-        return pm.getPalete(model.file.getType());
+    
+        //var pm = imports.Builder.Provider.ProjectManager.ProjectManager;
+        return _this.file.getPalete();
+    
     },
     getRenderer : function() {
     
