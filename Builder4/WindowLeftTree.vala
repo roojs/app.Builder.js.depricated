@@ -72,6 +72,7 @@ public class Xcls_WindowLeftTree
         
             //var pm = imports.Builder.Provider.ProjectManager.ProjectManager;
             return _this.model.file.getPalete();
+            
         
         }
 
@@ -513,7 +514,7 @@ public class Xcls_WindowLeftTree
             // ctor 
         public Xcls_model(Xcls_WindowLeftTree _owner)
         {
-            this.el = new Gtk.TreeStore();
+            this.el = new Gtk.TreeStore( 3, "typeof(string),typeof(string),typeof(Object)" );
             _this = _owner;
             _this.model = this;
 
@@ -528,13 +529,13 @@ public class Xcls_WindowLeftTree
 
         // skip .string:activePath - already used 
 
-        // skip columns - not pipe 
+        // skip columns - already used 
 
         // skip currentTree - not pipe 
 
         // skip id - not pipe 
 
-        // skip n_columns - not pipe 
+        // skip n_columns - already used 
 
         // skip pack - not pipe 
 

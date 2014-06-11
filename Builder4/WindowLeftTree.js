@@ -33,6 +33,7 @@ WindowLeftTree=new XObject({
     
         //var pm = imports.Builder.Provider.ProjectManager.ProjectManager;
         return _this.model.file.getPalete();
+        
     
     },
     init : this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC),
