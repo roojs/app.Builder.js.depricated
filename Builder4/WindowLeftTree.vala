@@ -318,7 +318,7 @@ public class Xcls_WindowLeftTree
                 return  true;
             } );
             this.el.drag_data_received.connect(   (ctx, x, y, sel_data, info, time)  => {
-                print("Tree: drag-data-received");
+                  //print("Tree: drag-data-received");
             
                   var   delete_selection_data = false;
                    var  dnd_success = false;
@@ -337,10 +337,10 @@ public class Xcls_WindowLeftTree
             
                         if (this.targetData) {
                             if (source != this.el) {
-                                this.get('/LeftTree.model').dropNode(this.targetData,  source.dragData);
+                                _this.model.dropNode(this.targetData,  source.dragData);
                             } else {
                                 // drag around.. - reorder..
-                                 this.get('/LeftTree.model').moveNode(this.targetData, ctx.action);
+                                 _this.model.moveNode(this.targetData, ctx.action);
                                 
                                 
                             }
@@ -358,7 +358,7 @@ public class Xcls_WindowLeftTree
             
                     if (dnd_success == false)
                     {
-                            Seed.print ("DnD data transfer failed!\n");
+                            //Seed.print ("DnD data transfer failed!\n");
                     }
             
                     Gtk.drag_finish (ctx, dnd_success, delete_selection_data, time);
