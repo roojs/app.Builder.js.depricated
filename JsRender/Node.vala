@@ -426,6 +426,7 @@ public class JsRender.Node  {
                 var ar = value.get_array();
                 ar.foreach_element( (are, ix, el) => {
                     var node = new Node();
+					node.parent = this;
                     node.loadFromJson(el.get_object());
                     this.items.append(node);
                 });
