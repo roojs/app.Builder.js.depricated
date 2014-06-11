@@ -950,13 +950,13 @@ public class Xcls_WindowLeftTree
 
         // userdefined functions 
 
-        // skip |xns - no return type
+        // skip pack - not pipe 
 
         // skip xtype - not pipe 
 
-        // skip pack - not pipe 
-
         // skip |init - already used 
+
+        // skip |xns - no return type
 
         // skip items - not pipe 
 
