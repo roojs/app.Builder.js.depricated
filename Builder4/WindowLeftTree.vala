@@ -438,6 +438,8 @@ public class Xcls_WindowLeftTree
         // skip |enable_tree_lines - already used 
 
         // skip |headers_visible - already used 
+
+        // skip |init - already used 
         public void highlight ( bool treepath_ar) {
             
                     // highlighting for drag/drop
@@ -451,8 +453,6 @@ public class Xcls_WindowLeftTree
                //         }
                          
                     }
-
-        // skip |init - already used 
         public void selectNode(string treepath_str) {
                 //this.selection.select_path(new  Gtk.TreePath.from_string( treepath_str));
                  var tp = new Gtk.TreePath.from_string(treepath_str);

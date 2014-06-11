@@ -345,19 +345,6 @@ WindowLeftTree=new XObject({
             tooltip_column : 1,
             enable_tree_lines : true,
             headers_visible : false,
-            'void:highlight' : ( bool treepath_ar) {
-            
-                    // highlighting for drag/drop
-            //        if (treepath_ar.length && treepath_ar[0].length ) {
-              //          this.el.set_drag_dest_row( 
-              //                  new  Gtk.TreePath.from_string( treepath_ar[0] ),  
-              //                    treepath_ar[1]
-            //            );
-              //          } else {
-                            this.el.set_drag_dest_row(null, Gtk.TreeViewDropPosition.INTO_OR_AFTER);
-               //         }
-                         
-                    },
             init : {
                 var description = new Pango.FontDescription();
                 description.set_size(8000);
@@ -399,6 +386,19 @@ WindowLeftTree=new XObject({
                 Gtk.drag_dest_set_target_list(this.el, Builder.Application.targetList);
                 Gtk.drag_dest_add_text_targets(this.el);
             },
+            'void:highlight' : ( bool treepath_ar) {
+            
+                    // highlighting for drag/drop
+            //        if (treepath_ar.length && treepath_ar[0].length ) {
+              //          this.el.set_drag_dest_row( 
+              //                  new  Gtk.TreePath.from_string( treepath_ar[0] ),  
+              //                    treepath_ar[1]
+            //            );
+              //          } else {
+                            this.el.set_drag_dest_row(null, Gtk.TreeViewDropPosition.INTO_OR_AFTER);
+               //         }
+                         
+                    },
             'void:selectNode' : (string treepath_str) {
                 //this.selection.select_path(new  Gtk.TreePath.from_string( treepath_str));
                  var tp = new Gtk.TreePath.from_string(treepath_str);
