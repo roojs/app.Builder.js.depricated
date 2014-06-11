@@ -617,7 +617,7 @@ WindowLeftTree=new XObject({
                         }
                         return this.findDropNodeByPath(path,targets) 
                     },
-                    findDropNodeByPath : (string treepath_str, string targets, int in_pref = -1) {
+                    findDropNodeByPath : (string treepath_str, string[] targets, int in_pref = -1) {
                     
                         var path = treepath_str; // dupe it..
                         
@@ -637,39 +637,44 @@ WindowLeftTree=new XObject({
                             }
                             
                             var xname = node_data.fqn();
-                            var match = false;
-                            var prop = '';
-                            targets.forEach(function(tg) {
-                                if (match) {
-                                    return;;
-                                }
+                            var match = "";
+                            var prop = "";
+                            
+                            for var i =0; i < targets.length; i++)  {
+                                var tg = targets[i];
                                 if ((tg == xname)  ) {
                                     match = tg;
+                                    break;
                                 }
-                                if (tg.indexOf(xname +':') === 0) {
+                                // if target is "xxxx:name"
+                                if (tg.contains(xname +":")) {
                                     match = tg;
-                                    prop = tg.split(':').pop();
+                                    var ar = tg.split(":");
+                                    prop = ar[1];
+                                    break;
                                 }
-                            });
+                            }
                             
-                            if (match) {
+                            if (match.length > 0) {
                                 if (last) { // pref is after/before..
                                     // then it's after last
                                     if (pref > 1) {
-                                        return []; // do not allow..
+                                        return "";
                                     }
-                                    return [ last, pref , prop];
+                                    return (last ? "1" : "0") + "|%d".printf((int)pref) + "|" + prop;
+                    
                                     
                                 }
-                                return [ path , Gtk.TreeViewDropPosition.INTO_OR_AFTER , prop];
+                                return path + "|%d".printf( (int) Gtk.TreeViewDropPosition.INTO_OR_AFTER) + "|" prop;
                             }
-                            var par = path.split(':');
+                            
+                            var par = path.split(":");
                             last = path;
-                            par.pop();
-                            path = par.join(':');
+                            par[par.length] = "";
+                            path = string.joinv(":", par).substring(0,-2);
                         }
                         
-                        return [];
+                        return "";
                                 
                     },
                     getIterValue : function (iter, col) {
