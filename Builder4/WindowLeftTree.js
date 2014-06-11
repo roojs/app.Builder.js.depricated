@@ -911,11 +911,12 @@ WindowLeftTree=new XObject({
                     listeners : {
                         activate : function (self) {
                         
-                             var tree = this.get('/LeftTree');
-                              var model = this.get('/LeftTree.model');
+                             var tree = _this
+                             var model = _this.model;
                              var el = tree.getActivePath();
-                             print(el);
-                             var js = model.toJS(el, false);
+                             
+                             //print(el);
+                             //var js = model.toJS(el, false);
                             // print(JSON.stringify(js[0], null,4));
                              this.get('/DialogSaveTemplate').show(JSON.stringify(js[0], null,4));
                              
