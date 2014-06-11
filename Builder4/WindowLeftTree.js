@@ -628,7 +628,7 @@ WindowLeftTree=new XObject({
                         //console.dump(this.treemap);
                         
                         while (path.length) {
-                            print("LOOKING FOR PATH: " + path);
+                            //print("LOOKING FOR PATH: " + path);
                             var node_data = this.singleNodeToJS(path);
                             if (node_data == null) {
                                 print("node not found");
