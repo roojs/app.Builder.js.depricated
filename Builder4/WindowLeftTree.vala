@@ -503,6 +503,90 @@ public class Xcls_WindowLeftTree
         // skip pack - not pipe 
 
         // skip xtype - not pipe 
+
+        // skip |findDropNode - no return type
+
+        // skip |init - already used 
+
+        // skip |listAllTypes - no return type
+
+        // skip |load - no return type
+
+        // skip |loadFile - no return type
+
+        // skip |moveNode - no return type
+
+        // skip |nodeTip - no return type
+
+        // skip |nodeTitle - no return type
+
+        // skip |nodeToJS - no return type
+
+        // skip |nodeToJSON - no return type
+
+        // skip |singleNodeToJS - no return type
+        public string findDropNodeByPath (string treepath_str, string[] targets, int in_pref = -1) {
+            
+                var path = treepath_str; // dupe it..
+                
+                int pref = in_pref < 0  ?  Gtk.TreeViewDropPosition.INTO_OR_AFTER : pref;
+                
+                var last = false;
+                
+                //console.dump(this.treemap);
+                
+                while (path.length) {
+                    //print("LOOKING FOR PATH: " + path);
+                    var node_data = this.singleNodeToJS(path);
+                    
+                    if (node_data == null) {
+                        print("node not found");
+                        return null;
+                    }
+                    
+                    var xname = node_data.fqn();
+                    var match = "";
+                    var prop = "";
+                    
+                    for var i =0; i < targets.length; i++)  {
+                        var tg = targets[i];
+                        if ((tg == xname)  ) {
+                            match = tg;
+                            break;
+                        }
+                        // if target is "xxxx:name"
+                        if (tg.contains(xname +":")) {
+                            match = tg;
+                            var ar = tg.split(":");
+                            prop = ar[1];
+                            break;
+                        }
+                    }
+                    
+                    if (match.length > 0) {
+                        if (last) { // pref is after/before..
+                            // then it's after last
+                            if (pref > 1) {
+                                return "";
+                            }
+                            return (last ? "1" : "0") + "|%d".printf((int)pref) + "|" + prop;
+            
+                            
+                        }
+                        return path + "|%d".printf( (int) Gtk.TreeViewDropPosition.INTO_OR_AFTER) + "|" prop;
+                    }
+                    
+                    var par = path.split(":");
+                    last = path;
+                    par[par.length] = "";
+                    path = string.joinv(":", par).substring(0,-2);
+                }
+                
+                return "";
+                        
+            }
+
+        // skip |toJS - no return type
         public void changed(JsRender.Node? n, bool refresh) {
                 //     print("MODEL CHANGED CALLED" + this.activePath);
                  if (n !== null && this.activePath.length > 0) {
@@ -686,92 +770,6 @@ public class Xcls_WindowLeftTree
                     
                         
             }
-
-        // skip |findDropNode - no return type
-        public string findDropNodeByPath (string treepath_str, string[] targets, int in_pref = -1) {
-            
-                var path = treepath_str; // dupe it..
-                
-                int pref = in_pref < 0  ?  Gtk.TreeViewDropPosition.INTO_OR_AFTER : pref;
-                
-                var last = false;
-                
-                //console.dump(this.treemap);
-                
-                while (path.length) {
-                    //print("LOOKING FOR PATH: " + path);
-                    var node_data = this.singleNodeToJS(path);
-                    
-                    if (node_data == null) {
-                        print("node not found");
-                        return null;
-                    }
-                    
-                    var xname = node_data.fqn();
-                    var match = "";
-                    var prop = "";
-                    
-                    for var i =0; i < targets.length; i++)  {
-                        var tg = targets[i];
-                        if ((tg == xname)  ) {
-                            match = tg;
-                            break;
-                        }
-                        // if target is "xxxx:name"
-                        if (tg.contains(xname +":")) {
-                            match = tg;
-                            var ar = tg.split(":");
-                            prop = ar[1];
-                            break;
-                        }
-                    }
-                    
-                    if (match.length > 0) {
-                        if (last) { // pref is after/before..
-                            // then it's after last
-                            if (pref > 1) {
-                                return "";
-                            }
-                            return (last ? "1" : "0") + "|%d".printf((int)pref) + "|" + prop;
-            
-                            
-                        }
-                        return path + "|%d".printf( (int) Gtk.TreeViewDropPosition.INTO_OR_AFTER) + "|" prop;
-                    }
-                    
-                    var par = path.split(":");
-                    last = path;
-                    par[par.length] = "";
-                    path = string.joinv(":", par).substring(0,-2);
-                }
-                
-                return "";
-                        
-            }
-
-        // skip |getIterValue - no return type
-
-        // skip |init - already used 
-
-        // skip |listAllTypes - no return type
-
-        // skip |load - no return type
-
-        // skip |loadFile - no return type
-
-        // skip |moveNode - no return type
-
-        // skip |nodeTip - no return type
-
-        // skip |nodeTitle - no return type
-
-        // skip |nodeToJS - no return type
-
-        // skip |nodeToJSON - no return type
-
-        // skip |singleNodeToJS - no return type
-
-        // skip |toJS - no return type
 
         // skip |xns - no return type
 
