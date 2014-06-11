@@ -758,7 +758,8 @@ WindowLeftTree=new XObject({
                                 this.load(tr.nth_data(i).items, citer);
                             }
                          
-                        },
+                        }
+                    },
                     'void:loadFile' : function(JsRender.JsRender f) {
                         //console.dump(f);
                         this.el.clear();
