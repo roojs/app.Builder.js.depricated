@@ -70,7 +70,7 @@ WindowLeftTree=new XObject({
         {
             xtype: Gtk.TreeView,
             listeners : {
-                button_press_event : ( ev) {
+                button_press_event : ( ev) => {
                     //console.log("button press?");
                 
                     if (!_this.model.file.editorSave()) {
