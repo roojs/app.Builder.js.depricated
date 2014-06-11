@@ -554,28 +554,28 @@ WindowLeftTree=new XObject({
                             */
                                 
                     },
-                    moveNode : function(target_data, action) {
-                         //print("MOVE NODE");
-                               // console.dump(target_data);
-                                var old_iter = new Gtk.TreeIter();
-                                var s = this.get('/LeftTree.view').selection;
-                                s.get_selected(this.el, old_iter);
-                                var node = this.nodeToJS(old_iter,false);
-                                //console.dump(node);
-                                
-                                
-                                // needs to drop first, otherwise the target_data 
-                                // treepath will be invalid.
-                                
-                                this.dropNode(target_data, node);
-                    	  if (action & Gdk.DragAction.MOVE) {
-                                          //          print("REMOVING OLD NODE");
-                                                    this.el.remove(old_iter);
-                                                    
-                                }
-                                
-                                this.activePath= false;
-                                this.changed(false,true);
+                    moveNode : (string target_data, Gdk.DragAction action) {
+                        //print("MOVE NODE");
+                        // console.dump(target_data);
+                        var old_iter = new Gtk.TreeIter();
+                        var s = this.get('/LeftTree.view').selection;
+                        s.get_selected(this.el, old_iter);
+                        var node = this.nodeToJS(old_iter,false);
+                        //console.dump(node);
+                    
+                    
+                        // needs to drop first, otherwise the target_data 
+                        // treepath will be invalid.
+                    
+                        this.dropNode(target_data, node);
+                        if (action & Gdk.DragAction.MOVE) {
+                                  //          print("REMOVING OLD NODE");
+                                            this.el.remove(old_iter);
+                                            
+                        }
+                    
+                        this.activePath= false;
+                        this.changed(false,true);
                     },
                     nodeTip : function(c) {
                         var ret = this.nodeTitle(c,true);
