@@ -78,7 +78,7 @@ public class JsRender.Node  {
 		if (this.parent = null) {
 			return;
 		}
-		var nlist = new GLib.List<Node>;
+		var nlist = new GLib.List<Node>();
 		for (var i =0;i < this.parent.items.length(); i++) {
 			if (this.parent.items.nth_data(i) == this) {
 				continue;
