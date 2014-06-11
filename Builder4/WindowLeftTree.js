@@ -548,7 +548,7 @@ WindowLeftTree=new XObject({
                                     node.set('*prop', target_data[2]);
                                 }
                                 
-                                node = this.get('/DialogTemplateSelect').show(node);
+                                node = DialogTemplateSelect.show(node);
                                 
                             }
                             
