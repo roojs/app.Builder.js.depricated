@@ -512,7 +512,7 @@ WindowLeftTree=new XObject({
                         //    return []; // nothing!
                         //}
                         if (targets.length > 0 && targets[0] == "*") {
-                            return  path;
+                            return  treepath_str;
                         }
                         return this.findDropNodeByPath(path,targets);
                     },
