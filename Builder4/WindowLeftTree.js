@@ -585,7 +585,7 @@ WindowLeftTree=new XObject({
                             this.dropNode(target_data, node);
                         }
                     
-                        this.activePath= false;
+                        this.activePath= "";
                         this.changed(false,true);
                     },
                     nodeTip : function(c) {
