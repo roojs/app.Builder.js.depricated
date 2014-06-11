@@ -41,7 +41,7 @@ WindowLeftTree=new XObject({
         view.selection.get_selected(out mod, out iter);
         return mod.get_path(iter).to_string();
     },
-    getPaleteProvider : function() {
+    'Palete.Palete:getPaleteProvider' : function() {
     
         //var pm = imports.Builder.Provider.ProjectManager.ProjectManager;
         return _this.model.file.getPalete();
