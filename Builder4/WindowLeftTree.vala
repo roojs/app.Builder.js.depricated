@@ -588,7 +588,7 @@ public class Xcls_WindowLeftTree
                     var match = "";
                     var prop = "";
                     
-                    for var i =0; i < targets.length; i++)  {
+                    for (var i =0; i < targets.length; i++)  {
                         var tg = targets[i];
                         if ((tg == xname)  ) {
                             match = tg;
