@@ -73,29 +73,28 @@ WindowLeftTree=new XObject({
                 button_press_event : ( ev) {
                     //console.log("button press?");
                 
-                    _this.model.file.editorSave();
+                    if (!_this.model.file.editorSave()) {
                     
-                    if (!this.get('/Editor').save()) {
                         // popup!! - click handled.. 
-                        return true;
+                        return;
                     }
                 
-                        if (ev.type != Gdk.EventType.BUTTON_PRESS  || ev.button.button != 3) {
-                            print("click" + ev.type);
-                            return false;
-                        }
-                      
-                
-                        var res = {}; 
-                        this.get('/LeftTree.view').el.get_path_at_pos(ev.button.x,ev.button.y, res);
+                    if (ev.type != Gdk.EventType.BUTTON_PRESS  || ev.button.button != 3) {
+                        //print("click" + ev.type);
+                        return;
+                    }
+                    Gtk.TreePath res;
+                    _this.view.el.get_path_at_pos(ev.button.x,ev.button.y, out res);
                         
-                        if (!this.get('/LeftTreeMenu').el)  { this.get('/LeftTreeMenu').init(); }
+                      //if (!this.get('/LeftTreeMenu').el)  { 
+                      //      this.get('/LeftTreeMenu').init(); 
+                      //  }
                         
-                        this.get('/LeftTreeMenu').el.set_screen(Gdk.Screen.get_default());
-                        this.get('/LeftTreeMenu').el.show_all();
-                        this.get('/LeftTreeMenu').el.popup(null, null, null, null, 3, ev.button.time);
-                        print("click:" + res.path.to_string());
-                        return false;
+                     _this.LeftTreeMenu.el.set_screen(Gdk.Screen.get_default());
+                     _this.LeftTreeMenu.el.show_all();
+                      _this.LeftTreeMenu.el.popup(null, null, null, null, 3, ev.button.time);
+                     //   print("click:" + res.path.to_string());
+                     //   return false;
                 },
                 drag_begin : function (self, drag_context) {
                 	print('SOURCE: drag-begin');
