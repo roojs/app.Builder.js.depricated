@@ -909,7 +909,7 @@ WindowLeftTree=new XObject({
                 {
                     xtype: Gtk.MenuItem,
                     listeners : {
-                        activate : function (self) {
+                        activate : () => {
                         
                              var tree = _this
                              var model = _this.model;
