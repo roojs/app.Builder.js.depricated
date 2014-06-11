@@ -504,6 +504,10 @@ WindowLeftTree=new XObject({
                                 
                                 
                                 parent  = new  Gtk.TreePath.from_string( npath.substring( 0, -2 ));
+                                
+                                
+                                
+                                
                                 after = tp;
                             }
                             Gtk.TreeIter n_iter;
