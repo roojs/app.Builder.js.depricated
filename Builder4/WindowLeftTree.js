@@ -607,7 +607,7 @@ WindowLeftTree=new XObject({
                         this.el.get_value(iter, 2, out value);
                         var data = (JsRender.Node)value.dup_object();
                         data.remove();
-                        this.el.remove(iter);
+                        this.el.remove(ref iter);
                         
                         
                         // 
