@@ -566,7 +566,7 @@ WindowLeftTree=new XObject({
                                     if (pref > 1) {
                                         return "";
                                     }
-                                    return (last ? "1" : "0") + "|%d".printf((int)pref) + "|" + prop;
+                                    return last + "|%d".printf((int)pref) + "|" + prop;
                     
                                     
                                 }
