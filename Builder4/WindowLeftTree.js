@@ -636,7 +636,7 @@ WindowLeftTree=new XObject({
                             
                             JsRender.Node parentNode = null;
                             
-                            var parent = tp;
+                              parent = tp;
                             
                             Gtk.TreePath after = null;
                             

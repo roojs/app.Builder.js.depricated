@@ -688,7 +688,7 @@ public class Xcls_WindowLeftTree
                     
                     JsRender.Node parentNode = null;
                     
-                    var parent = tp;
+                      parent = tp;
                     
                     Gtk.TreePath after = null;
                     
