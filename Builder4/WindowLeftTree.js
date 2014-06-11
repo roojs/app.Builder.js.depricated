@@ -129,13 +129,13 @@ WindowLeftTree=new XObject({
                         
                         return true;
                 },
-                drag_end : function (self, drag_context) {
-                	Seed.print('LEFT-TREE: drag-end');
-                        this.el.dragData = false;
-                        this.el.dropList = false;
-                        this.targetData = false;
-                        this.get('/LeftTree.view').highlight(false);
-                        return true;
+                drag_end : function (drag_context) {
+                	//Seed.print('LEFT-TREE: drag-end');
+                        this.dragData = "";
+                        this.dropList = null;
+                        this.targetData = "";
+                        this.view.highlight(false);
+                //        return true;
                 },
                 drag_motion : function (self, ctx, x, y, time) {
                     console.log("LEFT-TREE: drag-motion");
