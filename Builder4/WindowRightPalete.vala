@@ -621,7 +621,7 @@ public class Xcls_RightPalete
                         
                         this.el.append(out citer);   
                     } else {
-                        this.el.insert_before(out citer,iter);
+                        this.el.insert(out citer,iter,-1);
                     }
                     
                     var r = tr.nth_data(i);
