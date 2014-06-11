@@ -693,7 +693,7 @@ public class Xcls_WindowLeftTree
                     Gtk.TreePath after = null;
                     
                     if (tp != null && int.parse(target_data[1])  < 2) { // before or after..
-                        var ar = target_data[0].split(':');
+                        var ar = target_data[0].split(":");
                         ar[ar.length-1] = "";
                         var npath = string.joinv(":", ar);
                         
