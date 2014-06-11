@@ -542,7 +542,7 @@ WindowLeftTree=new XObject({
                                 node = this.get('/DialogTemplateSelect').show(node);
                                 
                             }
-                            */
+                            
                             
                             // work out what kind of packing to use..
                             if (typeof(node.pack) == 'undefined'  && parent !== false) {
