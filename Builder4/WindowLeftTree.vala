@@ -438,12 +438,28 @@ public class Xcls_WindowLeftTree
         // skip |enable_tree_lines - already used 
 
         // skip |headers_visible - already used 
-
-        // skip |highlight - no return type
+        public void highlight ( bool treepath_ar) {
+            
+                    // highlighting for drag/drop
+            //        if (treepath_ar.length && treepath_ar[0].length ) {
+              //          this.el.set_drag_dest_row( 
+              //                  new  Gtk.TreePath.from_string( treepath_ar[0] ),  
+              //                    treepath_ar[1]
+            //            );
+              //          } else {
+                            this.el.set_drag_dest_row(null, Gtk.TreeViewDropPosition.INTO_OR_AFTER);
+               //         }
+                         
+                    }
 
         // skip |init - already used 
-
-        // skip |selectNode - no return type
+        public void selectNode(string treepath_str) {
+                //this.selection.select_path(new  Gtk.TreePath.from_string( treepath_str));
+                 var tp = new Gtk.TreePath.from_string(treepath_str);
+                 
+                 this.el.set_cursor(tp, null, false);  
+                 this.el.scroll_to_cell(tp, null, false, 0,0);
+            }
 
         // skip |xns - no return type
 

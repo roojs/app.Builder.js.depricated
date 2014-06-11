@@ -345,7 +345,7 @@ WindowLeftTree=new XObject({
             tooltip_column : 1,
             enable_tree_lines : true,
             headers_visible : false,
-            highlight : ( bool treepath_ar) {
+            'void:highlight' : ( bool treepath_ar) {
             
                     // highlighting for drag/drop
             //        if (treepath_ar.length && treepath_ar[0].length ) {
@@ -399,11 +399,12 @@ WindowLeftTree=new XObject({
                 Gtk.drag_dest_set_target_list(this.el, Builder.Application.targetList);
                 Gtk.drag_dest_add_text_targets(this.el);
             },
-            selectNode : function(treepath_str) {
+            'void:selectNode' : (string treepath_str) {
                 //this.selection.select_path(new  Gtk.TreePath.from_string( treepath_str));
-             var tp = new Gtk.TreePath.from_string(treepath_str);
-                      this.el.set_cursor(tp, null, false);  
-                  this.el.scroll_to_cell(tp, null, false, 0,0);
+                 var tp = new Gtk.TreePath.from_string(treepath_str);
+                 
+                 this.el.set_cursor(tp, null, false);  
+                 this.el.scroll_to_cell(tp, null, false, 0,0);
             },
             items : [
                 {
