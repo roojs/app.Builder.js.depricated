@@ -11,9 +11,11 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 WindowLeftTree=new XObject({
     xtype: Gtk.ScrolledWindow,
-    id : "LeftTree",
+    getActiveFile : function() {
+        return this.get('model').file;
+    },
     pack : "add",
-    getActiveElement : function() { // return path to actie node.
+    'JsRender.Node?:getActiveElement' : () { // return path to actie node.
     
          var path = this.getActivePath();
          if (path.length < 1) {
@@ -26,9 +28,6 @@ WindowLeftTree=new XObject({
          _this.model.el.get_value(iter, 2, out value);
          
          return (JsRender.Node)value;
-    },
-    getActiveFile : function() {
-        return this.get('model').file;
     },
     getActivePath : function() {
         var model = this.get('model');

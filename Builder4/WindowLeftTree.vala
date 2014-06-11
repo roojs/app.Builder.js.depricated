@@ -7,7 +7,7 @@ valac  --pkg gio-2.0  --pkg posix  --pkg gtk+-3.0 --pkg libnotify --pkg gtksourc
 /* -- to test class
 static int main (string[] args) {
     Gtk.init (ref args);
-    new Xcls_LeftTree();
+    new Xcls_WindowLeftTree();
     WindowLeftTree.show_all();
      Gtk.main ();
     return 0;
@@ -15,12 +15,12 @@ static int main (string[] args) {
 */
 
 
-public static Xcls_LeftTree  WindowLeftTree;
+public static Xcls_WindowLeftTree  WindowLeftTree;
 
-public class Xcls_LeftTree
+public class Xcls_WindowLeftTree
 {
     public Gtk.ScrolledWindow el;
-    private Xcls_LeftTree  _this;
+    private Xcls_WindowLeftTree  _this;
 
     public Xcls_view view;
     public Xcls_model model;
@@ -29,7 +29,7 @@ public class Xcls_LeftTree
         // my vars
 
         // ctor 
-    public Xcls_LeftTree()
+    public Xcls_WindowLeftTree()
     {
         this.el = new Gtk.ScrolledWindow( null, null );
         _this = this;
@@ -47,15 +47,25 @@ public class Xcls_LeftTree
 
     // userdefined functions 
 
-    // skip id - not pipe 
+    // skip |getActiveFile - no return type
 
     // skip pack - not pipe 
 
     // skip xtype - not pipe 
-
-    // skip |getActiveElement - no return type
-
-    // skip |getActiveFile - no return type
+    public JsRender.Node? getActiveElement () { // return path to actie node.
+        
+             var path = this.getActivePath();
+             if (path.length < 1) {
+                return null;
+             }
+             Gtk.TreeIter   iter = new ();
+             _this.model.el.get_iter_from_string(out iter, path);
+             
+             GLib.Value value;
+             _this.model.el.get_value(iter, 2, out value);
+             
+             return (JsRender.Node)value;
+        }
 
     // skip |getActivePath - no return type
 
@@ -73,6 +83,8 @@ public class Xcls_LeftTree
 
     // skip items - not pipe 
 
+    // skip id - not pipe 
+
     // skip xvala_cls - not pipe 
 
     // skip xvala_xcls - not pipe 
@@ -81,13 +93,13 @@ public class Xcls_LeftTree
     public class Xcls_view
     {
         public Gtk.TreeView el;
-        private Xcls_LeftTree  _this;
+        private Xcls_WindowLeftTree  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_view(Xcls_LeftTree _owner)
+        public Xcls_view(Xcls_WindowLeftTree _owner)
         {
             this.el = new Gtk.TreeView();
             _this = _owner;
@@ -402,13 +414,13 @@ public class Xcls_LeftTree
     public class Xcls_model
     {
         public Gtk.TreeStore el;
-        private Xcls_LeftTree  _this;
+        private Xcls_WindowLeftTree  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_model(Xcls_LeftTree _owner)
+        public Xcls_model(Xcls_WindowLeftTree _owner)
         {
             this.el = new Gtk.TreeStore();
             _this = _owner;
@@ -476,13 +488,13 @@ public class Xcls_LeftTree
     public class Xcls_TreeViewColumn4
     {
         public Gtk.TreeViewColumn el;
-        private Xcls_LeftTree  _this;
+        private Xcls_WindowLeftTree  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_TreeViewColumn4(Xcls_LeftTree _owner)
+        public Xcls_TreeViewColumn4(Xcls_WindowLeftTree _owner)
         {
             this.el = new Gtk.TreeViewColumn();
             _this = _owner;
@@ -515,13 +527,13 @@ public class Xcls_LeftTree
     public class Xcls_CellRendererText5
     {
         public Gtk.CellRendererText el;
-        private Xcls_LeftTree  _this;
+        private Xcls_WindowLeftTree  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_CellRendererText5(Xcls_LeftTree _owner)
+        public Xcls_CellRendererText5(Xcls_WindowLeftTree _owner)
         {
             this.el = new Gtk.CellRendererText();
             _this = _owner;
@@ -548,13 +560,13 @@ public class Xcls_LeftTree
     public class Xcls_LeftTreeMenu
     {
         public Gtk.Menu el;
-        private Xcls_LeftTree  _this;
+        private Xcls_WindowLeftTree  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_LeftTreeMenu(Xcls_LeftTree _owner)
+        public Xcls_LeftTreeMenu(Xcls_WindowLeftTree _owner)
         {
             this.el = new Gtk.Menu();
             _this = _owner;
@@ -590,13 +602,13 @@ public class Xcls_LeftTree
     public class Xcls_MenuItem7
     {
         public Gtk.MenuItem el;
-        private Xcls_LeftTree  _this;
+        private Xcls_WindowLeftTree  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_MenuItem7(Xcls_LeftTree _owner)
+        public Xcls_MenuItem7(Xcls_WindowLeftTree _owner)
         {
             this.el = new Gtk.MenuItem();
             _this = _owner;
@@ -634,13 +646,13 @@ public class Xcls_LeftTree
     public class Xcls_MenuItem8
     {
         public Gtk.MenuItem el;
-        private Xcls_LeftTree  _this;
+        private Xcls_WindowLeftTree  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_MenuItem8(Xcls_LeftTree _owner)
+        public Xcls_MenuItem8(Xcls_WindowLeftTree _owner)
         {
             this.el = new Gtk.MenuItem();
             _this = _owner;
