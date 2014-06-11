@@ -616,7 +616,10 @@ WindowLeftTree=new XObject({
                     
                     
                         this.activePath= ""; // again!?!?      
-                        this.changed(null,true);
+                        //this.changed(null,true);
+                        
+                        this.file.changed("tree");
+                        
                         _this.view.blockChanges = false;
                     },
                     'void:dropNode' : (string target_data_str, JsRender.Node node) {

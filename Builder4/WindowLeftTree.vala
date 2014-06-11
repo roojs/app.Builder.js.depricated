@@ -668,7 +668,10 @@ public class Xcls_WindowLeftTree
             
             
                 this.activePath= ""; // again!?!?      
-                this.changed(null,true);
+                //this.changed(null,true);
+                
+                this.file.changed("tree");
+                
                 _this.view.blockChanges = false;
             }
         public void dropNode(string target_data_str, JsRender.Node node) {
