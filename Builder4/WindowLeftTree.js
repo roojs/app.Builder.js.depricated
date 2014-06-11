@@ -572,10 +572,11 @@ WindowLeftTree=new XObject({
                     
                             if (node.items.length() > 0) {
                                 this.load(node.items, n_iter);
-                                this.view.el.expand_row(this.el.get_path(n_iter), true);
+                                _this.view.el.expand_row(this.el.get_path(n_iter), true);
                             }
-                            if (tp && (xitems || after)) {
-                                this.get('/LeftTree.view').el.expand_row(this.el.get_path(iter_par), true);
+                            
+                            if (tp != null && (node.items.length() > 0 || after)) {
+                                _this.view.el.expand_row(this.el.get_path(iter_par), true);
                             }
                             // wee need to get the empty proptypes from somewhere..
                             
@@ -586,8 +587,7 @@ WindowLeftTree=new XObject({
                             this.changed(node, true);
                             
                             
-                            
-                            this.get('/LeftTree.view').el.set_cursor(this.el.get_path(n_iter), null, false);
+                            _this.view.el.set_cursor(this.el.get_path(n_iter), null, false);
                             
                             //Builder.MidPropTree._model.load(node);
                             //Builder.MidPropTree._win.hideWin();
