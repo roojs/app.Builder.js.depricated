@@ -118,7 +118,7 @@ namespace Palete
             
         },
         */
-        GLib.List<string> getDropList(rval)
+        public GLib.List<string> getDropList(string rval)
         {
             
             var ret = new GLib.List<string>();
@@ -130,9 +130,9 @@ namespace Palete
                 		var l = m.left.nth_data(ii);
 						
                         if (ret.index(l) > -1) {
-                            continue
+                            continue;
                         }
-                        ret.append(l)
+                        ret.append(l);
                     }
                 }
                 
@@ -141,7 +141,7 @@ namespace Palete
             //console.dump(ret);
             return ret;
             
-        },
+        }
         /**
          * basic guess type.. 
          * 
