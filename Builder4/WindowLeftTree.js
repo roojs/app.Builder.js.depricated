@@ -475,78 +475,76 @@ WindowLeftTree=new XObject({
                     },
                     loadFile : function(JsRender.JsRender f) {
                         //console.dump(f);
-                                this.el.clear();
-                                this.file = f;
-                                
-                                if (!f) {
-                                    console.log('missing file');
-                                    return;
-                                }
-                                
-                                // load the file if not loaded..
-                                if (f.items === false) {
-                                    var _this = this;
-                                    f.loadItems(function() {
-                                        _this.loadFile(f);
-                                    });
-                                    return;
-                                    
-                                }
-                                this.get('/Window').setTitle(f.project.getName() + ' - ' + f.name);
-                                
-                                if (f.items.length && typeof(f.items[0]) == 'string') {
-                                
-                                    //this.get('/RightEditor').el.show();
-                                    //this.get('/RightEditor.view').load( f.items[0]);
-                                    return;
-                                }
-                                print("LOAD");
-                                print(JSON.stringify(f.items, null,4));
-                                //console.dump(f.items);
-                                this.load(f.items);
-                                this.get('/LeftTree.view').el.expand_all();
+                        this.el.clear();
+                        this.file = f;
+                        
+                    //    if (!f) {
+                    //        console.log('missing file');
+                    //        return;
+                    //    }
+                        
+                        // load the file if not loaded..
+                        if (f.tree == null) {
+                            
+                            f.loadItems( );
+                            
+                            
+                        }
+                        this.get('/Window').setTitle(f.project.getName() + ' - ' + f.name);
+                        
+                        if (f.items.length && typeof(f.items[0]) == 'string') {
+                        
+                            //this.get('/RightEditor').el.show();
+                            //this.get('/RightEditor.view').load( f.items[0]);
+                            return;
+                        }
+                        print("LOAD");
+                        print(JSON.stringify(f.items, null,4));
+                        //console.dump(f.items);
+                        this.load(f.items);
+                        this.get('/LeftTree.view').el.expand_all();
                     
-                                if (!f.items.length) {
-                                    // single item..
-                                    
-                                    this.get('/Window.leftvpaned').el.set_position(80);
-                                    // select first...
-                                    this.get('/LeftTree.view').el.set_cursor( 
-                                        new  Gtk.TreePath.from_string('0'), null, false);
-                                    
-                                    
-                                } else {
-                                      this.get('/Window.leftvpaned').el.set_position(200);
-                                }
+                        if (!f.items.length) {
+                            // single item..
+                            
+                            this.get('/Window.leftvpaned').el.set_position(80);
+                            // select first...
+                            this.get('/LeftTree.view').el.set_cursor( 
+                                new  Gtk.TreePath.from_string('0'), null, false);
+                            
+                            
+                        } else {
+                              this.get('/Window.leftvpaned').el.set_position(200);
+                        }
+                        
+                        
+                        //print("hide right editior");
+                        //this.get('/RightEditor').el.hide();
+                        this.get('/Editor').el.hide();
+                        //print("set current tree");
+                        this.currentTree = this.toJS(false, false)[0];
+                        //console.dump(this.currentTree);
+                        this.currentTree = this.currentTree || { items: [] };
+                        this.get('/LeftTree').renderView();
+                        //console.dump(this.map);
+                        //var RightPalete     = imports.Builder.RightPalete.RightPalete;
+                        var pm = this.get('/RightPalete.model');
+                        // set up provider..
+                        
+                        this.get('/RightPalete').provider = this.get('/LeftTree').getPaleteProvider();
+                        
+                        if (!this.get('/RightPalete').provider) {
+                            print ("********* PALETE PROVIDER MISSING?!!");
+                        }
+                        this.get('/LeftTree').renderView();
+                        
+                        pm.load( this.get('/LeftTree').getPaleteProvider().gatherList(this.listAllTypes()));
+                        
+                        
                                 
+                        this.get('/Window.view-notebook').el.set_current_page(
+                            this.get('/LeftTree.model').file.getType()== 'Roo' ? 0 : -1);
                                 
-                                //print("hide right editior");
-                                //this.get('/RightEditor').el.hide();
-                                this.get('/Editor').el.hide();
-                                //print("set current tree");
-                                this.currentTree = this.toJS(false, false)[0];
-                                //console.dump(this.currentTree);
-                                this.currentTree = this.currentTree || { items: [] };
-                                this.get('/LeftTree').renderView();
-                                //console.dump(this.map);
-                                //var RightPalete     = imports.Builder.RightPalete.RightPalete;
-                                var pm = this.get('/RightPalete.model');
-                                // set up provider..
-                                
-                                this.get('/RightPalete').provider = this.get('/LeftTree').getPaleteProvider();
-                                
-                                if (!this.get('/RightPalete').provider) {
-                                    print ("********* PALETE PROVIDER MISSING?!!");
-                                }
-                                this.get('/LeftTree').renderView();
-                                
-                                pm.load( this.get('/LeftTree').getPaleteProvider().gatherList(this.listAllTypes()));
-                                
-                                
-                                        
-                                this.get('/Window.view-notebook').el.set_current_page(
-                                    this.get('/LeftTree.model').file.getType()== 'Roo' ? 0 : -1);
-                                        
                     },
                     moveNode : function(target_data, action) {
                          //print("MOVE NODE");
