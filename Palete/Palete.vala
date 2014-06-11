@@ -122,20 +122,23 @@ namespace Palete
         {
             
             var ret = new GLib.List<string>();
-
-			this.map.forEach( function(m) {
-                if (m.right.indexOf(rval) > -1) {
-                    m.left.forEach(function(l) {
-                        if (ret.indexOf(l) > -1) {
-                            return;
+			for (var i = 0; i < this.map.length(); i++) {
+				var m = this.map.nth_data(i);
+				
+                if (m.right.index(rval) > -1) {
+					for(var ii =0; ii < m.left.legnth(); ii++) {
+                		var l = m.left.nth_data(ii);
+						
+                        if (ret.index(l) > -1) {
+                            continue
                         }
-                        ret.push(l)
-                    });
+                        ret.append(l)
+                    }
                 }
                 
-            });
-            console.log("DROP LIST:");
-            console.dump(ret);
+            }
+            //console.log("DROP LIST:");
+            //console.dump(ret);
             return ret;
             
         },
