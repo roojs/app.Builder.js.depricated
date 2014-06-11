@@ -66,11 +66,11 @@
                         {
                             "pack": "append_column",
                             "xtype": "TreeViewColumn",
-                            "|init": " \n   this.el.add_attribute(_this.renderer , \"markup\", 0 );\n ",
+                            "|init": "  this.el.add_attribute(_this.renderer , \"markup\", 0 );\n ",
                             "|xns": "Gtk",
                             "items": [
                                 {
-                                    "id": "",
+                                    "id": "renderer",
                                     "pack": "pack_start",
                                     "xtype": "CellRendererText",
                                     "|xns": "Gtk"
