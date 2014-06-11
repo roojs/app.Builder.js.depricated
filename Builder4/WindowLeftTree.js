@@ -409,20 +409,19 @@ WindowLeftTree=new XObject({
             items : [
                 {
                     xtype: Gtk.TreeStore,
-                    activePath : false,
                     currentTree : false,
                     id : "model",
                     pack : "set_model",
-                    changed : function(n, refresh) {
+                    changed : (JsRender.Node n, bool refresh) {
                         //     print("MODEL CHANGED CALLED" + this.activePath);
-                             if (this.activePath) {
-                                var iter = new Gtk.TreeIter();
-                                this.el.get_iter(iter, new Gtk.TreePath.from_string(this.activePath))
-                                this.el.set_value(iter, 0, [GObject.TYPE_STRING, this.nodeTitle(n)]);
-                                this.el.set_value(iter, 1, [GObject.TYPE_STRING, this.nodeTitle(n)]);
-                                
-                                this.el.set_value(iter, 2, [GObject.TYPE_STRING, this.nodeToJSON(n)]);
-                            }
+                         if (this.activePath) {
+                            var iter = new Gtk.TreeIter();
+                            this.el.get_iter(iter, new Gtk.TreePath.from_string(this.activePath))
+                            this.el.set_value(iter, 0, [GObject.TYPE_STRING, this.nodeTitle(n)]);
+                            this.el.set_value(iter, 1, [GObject.TYPE_STRING, this.nodeTitle(n)]);
+                            
+                            this.el.set_value(iter, 2, [GObject.TYPE_STRING, this.nodeToJSON(n)]);
+                        }
                                 //this.currentTree = this.toJS(false, true)[0];
                             var d = new Date();
                             this.file.items = this.toJS(false, false);
