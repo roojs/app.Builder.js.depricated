@@ -523,7 +523,7 @@ WindowLeftTree=new XObject({
                         
                         //print("hide right editior");
                         //this.get('/RightEditor').el.hide();
-                        this.get('/Editor').el.hide();
+                        //this.get('/Editor').el.hide();
                         //print("set current tree");
                         this.currentTree = this.toJS(false, false)[0];
                         //console.dump(this.currentTree);
