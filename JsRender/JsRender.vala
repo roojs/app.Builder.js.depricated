@@ -214,7 +214,14 @@ namespace JsRender {
 		    },
 		*/
 		    // should be in palete provider really..
-		    
+
+
+		public Palete.Palete palete()
+		{
+			return Palete.Palete.factory(this.xtype);
+
+		}
+		
 		public string guessName(Node ar) // turns the object into full name.
 		{
 		     // eg. xns: Roo, xtype: XXX -> Roo.xxx
