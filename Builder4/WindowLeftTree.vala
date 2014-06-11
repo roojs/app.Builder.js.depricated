@@ -316,52 +316,52 @@ public class Xcls_WindowLeftTree
             
                 return  true;
             } );
-            this.el.drag_data_received.connect( function (self, ctx, x, y, sel_data, info, time) {
-            	 print("Tree: drag-data-received");
+            this.el.drag_data_received.connect(   (ctx, x, y, sel_data, info, time)  => {
+                print("Tree: drag-data-received");
             
-                          var   delete_selection_data = false;
-                           var  dnd_success = false;
-                            /* Deal with what we are given from source */
-                            if( sel_data && sel_data.length ) {
-                                
-                                if (ctx.action == Gdk.DragAction.ASK)  {
-                                    /* Ask the user to move or copy, then set the ctx action. */
-                                }
+                  var   delete_selection_data = false;
+                   var  dnd_success = false;
+                    /* Deal with what we are given from source */
+                    if( sel_data && sel_data.length ) {
+                        
+                        if (ctx.action == Gdk.DragAction.ASK)  {
+                            /* Ask the user to move or copy, then set the ctx action. */
+                        }
             
-                                if (ctx.action == Gdk.DragAction.MOVE) {
-                                    //delete_selection_data = true;
-                                }
-                                
-                                var source = Gtk.drag_get_source_widget(ctx);
+                        if (ctx.action == Gdk.DragAction.MOVE) {
+                            //delete_selection_data = true;
+                        }
+                        
+                        var source = Gtk.drag_get_source_widget(ctx);
             
-                                if (this.targetData) {
-                                    if (source != this.el) {
-                                        this.get('/LeftTree.model').dropNode(this.targetData,  source.dragData);
-                                    } else {
-                                        // drag around.. - reorder..
-                                         this.get('/LeftTree.model').moveNode(this.targetData, ctx.action);
-                                        
-                                        
-                                    }
-                                    //Seed.print(this.targetData);
-                                  
-                                }
+                        if (this.targetData) {
+                            if (source != this.el) {
+                                this.get('/LeftTree.model').dropNode(this.targetData,  source.dragData);
+                            } else {
+                                // drag around.. - reorder..
+                                 this.get('/LeftTree.model').moveNode(this.targetData, ctx.action);
                                 
                                 
-                                
-                                // we can send stuff to souce here...
-            
-                                dnd_success = true;
-            
                             }
+                            //Seed.print(this.targetData);
+                          
+                        }
+                        
+                        
+                        
+                        // we can send stuff to souce here...
             
-                            if (dnd_success == false)
-                            {
-                                    Seed.print ("DnD data transfer failed!\n");
-                            }
+                        dnd_success = true;
             
-                            Gtk.drag_finish (ctx, dnd_success, delete_selection_data, time);
-                            return true;
+                    }
+            
+                    if (dnd_success == false)
+                    {
+                            Seed.print ("DnD data transfer failed!\n");
+                    }
+            
+                    Gtk.drag_finish (ctx, dnd_success, delete_selection_data, time);
+                    return true;
             } );
             this.el.cursor_changed.connect( function (self) {
                  if (this.blockChanges) { // probably not needed.. 
