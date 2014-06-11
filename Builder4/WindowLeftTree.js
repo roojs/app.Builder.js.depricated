@@ -24,8 +24,8 @@ WindowLeftTree=new XObject({
          
          GLib.Value value;
          _this.model.el.get_value(iter, 2, out value);
-            
-         return JSON.parse(value.value);
+         
+         return (JsRender.Node)value;
     },
     getActiveFile : function() {
         return this.get('model').file;
