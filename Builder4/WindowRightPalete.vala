@@ -540,7 +540,7 @@ public class Xcls_RightPalete
             	this.dropList = null;
             	_this.drag_end(); // call signal..
             	//this.get('/LeftTree.view').highlight(false);
-            	return true;
+            	 
             } );
             this.el.button_press_event.connect(  ( event) => {
             

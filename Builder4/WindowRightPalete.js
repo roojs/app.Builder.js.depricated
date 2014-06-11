@@ -158,7 +158,7 @@ WindowRightPalete=new XObject({
                                 	this.dropList = null;
                                 	_this.drag_end(); // call signal..
                                 	//this.get('/LeftTree.view').highlight(false);
-                                	return true;
+                                	 
                                 },
                                 button_press_event : ( event) => {
                                 
