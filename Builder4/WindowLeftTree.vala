@@ -66,6 +66,9 @@ public class Xcls_WindowLeftTree
              
              return (JsRender.Node)value;
         }
+    public JsRender.JsRender getActiveFile() {
+            return this.model.file;
+        }
 
     // skip |getActivePath - no return type
 

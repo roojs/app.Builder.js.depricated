@@ -6,10 +6,11 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.bjs",
     "items": [
         {
-            "|getActiveFile": "() {\n    return this.model.file;\n}\n",
+            "|getActiveFile": "LeftTree",
             "pack": "add",
             "xtype": "ScrolledWindow",
             "|JsRender.Node?:getActiveElement": " () { // return path to actie node.\n\n     var path = this.getActivePath();\n     if (path.length < 1) {\n        return null;\n     }\n     Gtk.TreeIter   iter = new ();\n     _this.model.el.get_iter_from_string(out iter, path);\n     \n     GLib.Value value;\n     _this.model.el.get_value(iter, 2, out value);\n     \n     return (JsRender.Node)value;\n}\n",
+            "|JsRender.JsRender:getActiveFile": "() {\n    return this.model.file;\n}\n",
             "|getActivePath": "function() {\n    var model = this.get('model');\n    var view = this.get('view');\n    if (view.selection.count_selected_rows() < 1) {\n        return false;\n    }\n    var iter = new Gtk.TreeIter();\n\n    view.selection.get_selected(model.el, iter);\n    return model.el.get_path(iter).to_string();\n}\n",
             "|getPaleteProvider": "function() {\n    var model = this.get('model');\n    var pm = imports.Builder.Provider.ProjectManager.ProjectManager;\n    return pm.getPalete(model.file.getType());\n}\n",
             "|getRenderer": "function() {\n\n\tswitch( this.getActiveFile().getType()) {\n\t\tcase 'Roo':\n\t\t    return this.get('/RightBrowser.view');\n\t\tcase 'Gtk':\n\t\t    return this.get('/RightGtkView');\n\t}\n\n}\n",
