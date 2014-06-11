@@ -266,6 +266,7 @@ WindowLeftTree=new XObject({
                             var tg = this.model.findDropNodeByPath( path.to_string(), this.dropList, pos);
                                 
                             this.view.highlight(tg);
+                            
                             if (tg.length < 0) {
                                 //print("Can not find drop node path");
                                 this.targetData = false;
