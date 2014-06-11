@@ -137,78 +137,87 @@ WindowLeftTree=new XObject({
                         this.view.highlight(false);
                 //        return true;
                 },
-                drag_motion : function (self, ctx, x, y, time) {
-                    console.log("LEFT-TREE: drag-motion");
-                                var src = Gtk.drag_get_source_widget(ctx);
+                drag_motion : ( ctx, x, y, time)  => {
+                     //console.log("LEFT-TREE: drag-motion");
+                        var src = Gtk.drag_get_source_widget(ctx);
+                        
+                        // a drag from  elsewhere...- prevent drop..
+                        if (src != this.el) {
+                            //print("no drag data!");
+                            Gdk.drag_status(ctx, 0, time);
+                            this.targetData = "";
+                            return true;
+                        }
+                        
+                        
+                        var action = Gdk.DragAction.COPY;
+                        if (src == this.el) {
+                            // unless we are copying!!! ctl button..
+                            action = ctx.actions & Gdk.DragAction.MOVE ? Gdk.DragAction.MOVE : Gdk.DragAction.COPY ;
+                        }
+                        var data = {};
                 
-                                // a drag from  elsewhere...- prevent drop..
-                                if (!src.dragData) {
-                                    print("no drag data!");
-                                    Gdk.drag_status(ctx, 0, time);
-                                    this.targetData = false;
-                                    return true;
-                                }
-                                var action = Gdk.DragAction.COPY;
-                                if (src == this.el) {
-                                    // unless we are copying!!! ctl button..
-                                    action = ctx.actions & Gdk.DragAction.MOVE ? Gdk.DragAction.MOVE : Gdk.DragAction.COPY ;
-                                }
-                                var data = {};
+                        if (this.model.el.iter_n_children(null) < 1) {
+                	        // no children.. -- asume it's ok..
+                	        
+                	        this.targetData =  [ '' , Gtk.TreeViewDropPosition.INTO_OR_AFTER , ''];
+                	        
+                	        Gdk.drag_status(ctx, action ,time);
+                	        return true;
+                        }
+                        
+                        
                 
-                		if (!this.get('/LeftTree.model').el.iter_n_children(null)) {
-                			// no children.. -- asume it's ok..
-                			this.targetData =  [ '' , Gtk.TreeViewDropPosition.INTO_OR_AFTER , ''];
-                			Gdk.drag_status(ctx, action ,time);
-                			return true;
-                		}
-                
-                                print("GETTING POS");
-                                var isOver = this.get('/LeftTree.view').el.get_dest_row_at_pos(x,y, data);
-                                print("ISOVER? " + isOver);
-                                if (!isOver) {
-                                    Gdk.drag_status(ctx, 0 ,time);
-                                    return false; // not over apoint!?!
-                                }
-                                // drag node is parent of child..
-                                console.log("SRC TREEPATH: " + src.treepath);
-                                console.log("TARGET TREEPATH: " + data.path.to_string());
-                                
-                                // nned to check a  few here..
-                                //Gtk.TreeViewDropPosition.INTO_OR_AFTER
-                                //Gtk.TreeViewDropPosition.INTO_OR_BEFORE
-                                //Gtk.TreeViewDropPosition.AFTER
-                                //Gtk.TreeViewDropPosition.BEFORE
-                                
-                                if (typeof(src.treepath) != 'undefined'  && 
-                                    src.treepath == data.path.to_string().substring(0,src.treepath.length)) {
-                                    print("subpath drag");
-                                     Gdk.drag_status(ctx, 0 ,time);
-                                    return false;
-                                }
-                                
-                                // check that 
-                                //print("DUMPING DATA");
-                                //console.dump(data);
-                                // path, pos
-                                
-                                print(data.path.to_string() +' => '+  data.pos);
-                                var tg = this.get('/LeftTree.model').findDropNodeByPath(
-                                    data.path.to_string(), src.dropList, data.pos);
-                                    
-                                this.get('/LeftTree.view').highlight(tg);
-                                if (!tg.length) {
-                                    print("Can not find drop node path");
-                                    this.targetData = false;
-                                    Gdk.drag_status(ctx, 0, time);
-                                    return true;
-                                }
-                                //console.dump(tg);
-                                this.targetData = tg;    
-                                
-                                
-                                Gdk.drag_status(ctx, action ,time);
-                                 
-                                return true;
+                        //print("GETTING POS");
+                        Gtk.TreePath path;
+                        var isOver = this.view.el.get_dest_row_at_pos(x,y, out path);
+                        
+                        //print("ISOVER? " + isOver);
+                        if (!isOver) {
+                            Gdk.drag_status(ctx, 0 ,time);
+                            return false; // not over apoint!?!
+                        }
+                        
+                        // drag node is parent of child..
+                        //console.log("SRC TREEPATH: " + src.treepath);
+                        //console.log("TARGET TREEPATH: " + data.path.to_string());
+                        
+                        // nned to check a  few here..
+                        //Gtk.TreeViewDropPosition.INTO_OR_AFTER
+                        //Gtk.TreeViewDropPosition.INTO_OR_BEFORE
+                        //Gtk.TreeViewDropPosition.AFTER
+                        //Gtk.TreeViewDropPosition.BEFORE
+                        
+                        if (typeof(src.treepath) != 'undefined'  && 
+                            src.treepath == data.path.to_string().substring(0,src.treepath.length)) {
+                            ///print("subpath drag");
+                             Gdk.drag_status(ctx, 0 ,time);
+                            //return false;
+                        }
+                        
+                        // check that 
+                        //print("DUMPING DATA");
+                        //console.dump(data);
+                        // path, pos
+                        
+                        print(data.path.to_string() +' => '+  data.pos);
+                        var tg = this.get('/LeftTree.model').findDropNodeByPath(
+                            data.path.to_string(), src.dropList, data.pos);
+                            
+                        this.get('/LeftTree.view').highlight(tg);
+                        if (!tg.length) {
+                            print("Can not find drop node path");
+                            this.targetData = false;
+                            Gdk.drag_status(ctx, 0, time);
+                            return true;
+                        }
+                        //console.dump(tg);
+                        this.targetData = tg;    
+                        
+                        
+                        Gdk.drag_status(ctx, action ,time);
+                         
+                        return true;
                 },
                 drag_drop : function (w, ctx, x, y, time) {
                       Seed.print("TARGET: drag-drop");
