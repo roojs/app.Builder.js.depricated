@@ -20,7 +20,7 @@ public static Xcls_DialogTemplateSelect  DialogTemplateSelect;
 public class Xcls_DialogTemplateSelect
 {
     public Gtk.Dialog el;
-    private static Xcls_DialogTemplateSelect  _this;
+    private Xcls_DialogTemplateSelect  _this;
 
     public Xcls_combo combo;
     public Xcls_cellrenderer cellrenderer;
@@ -41,9 +41,9 @@ public class Xcls_DialogTemplateSelect
         this.el.default_height = 200;
         this.el.default_width = 400;
         this.el.modal = true;
-        var child_0 = new Xcls_VBox2();
+        var child_0 = new Xcls_VBox2(_this);
         this.el.get_content_area().add  (  child_0.el  );
-        var child_1 = new Xcls_Button8();
+        var child_1 = new Xcls_Button8(_this);
         this.el.add_action_widget (  child_1.el , 0 );
 
         // listeners 
@@ -103,18 +103,21 @@ public class Xcls_DialogTemplateSelect
     public class Xcls_VBox2
     {
         public Gtk.VBox el;
+        private Xcls_DialogTemplateSelect  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_VBox2()
+        public Xcls_VBox2(Xcls_DialogTemplateSelect _owner)
         {
             this.el = new Gtk.VBox( true, 0 );
+            _this = _owner;
 
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_HBox3();
+            var child_0 = new Xcls_HBox3(_this);
             this.el.pack_start (  child_0.el , false,false,0 );
         }
 
@@ -137,20 +140,23 @@ public class Xcls_DialogTemplateSelect
     public class Xcls_HBox3
     {
         public Gtk.HBox el;
+        private Xcls_DialogTemplateSelect  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_HBox3()
+        public Xcls_HBox3(Xcls_DialogTemplateSelect _owner)
         {
             this.el = new Gtk.HBox( true, 0 );
+            _this = _owner;
 
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_Label4();
+            var child_0 = new Xcls_Label4(_this);
             this.el.pack_start (  child_0.el , false,false );
-            var child_1 = new Xcls_combo();
+            var child_1 = new Xcls_combo(_this);
             this.el.add (  child_1.el  );
 
             // listeners 
@@ -177,13 +183,16 @@ public class Xcls_DialogTemplateSelect
     public class Xcls_Label4
     {
         public Gtk.Label el;
+        private Xcls_DialogTemplateSelect  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_Label4()
+        public Xcls_Label4(Xcls_DialogTemplateSelect _owner)
         {
             this.el = new Gtk.Label( "Select Template : " );
+            _this = _owner;
 
             // my vars
 
@@ -209,21 +218,24 @@ public class Xcls_DialogTemplateSelect
     public class Xcls_combo
     {
         public Gtk.ComboBox el;
+        private Xcls_DialogTemplateSelect  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_combo()
+        public Xcls_combo(Xcls_DialogTemplateSelect _owner)
         {
             this.el = new Gtk.ComboBox();
+            _this = _owner;
             _this.combo = this;
 
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_cellrenderer();
+            var child_0 = new Xcls_cellrenderer(_this);
             this.el.pack_start (  child_0.el , true );
-            var child_1 = new Xcls_model();
+            var child_1 = new Xcls_model(_this);
             this.el.set_model (  child_1.el  );
         }
 
@@ -250,13 +262,16 @@ public class Xcls_DialogTemplateSelect
     public class Xcls_cellrenderer
     {
         public Gtk.CellRendererText el;
+        private Xcls_DialogTemplateSelect  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_cellrenderer()
+        public Xcls_cellrenderer(Xcls_DialogTemplateSelect _owner)
         {
             this.el = new Gtk.CellRendererText();
+            _this = _owner;
             _this.cellrenderer = this;
 
             // my vars
@@ -283,13 +298,16 @@ public class Xcls_DialogTemplateSelect
     public class Xcls_model
     {
         public Gtk.ListStore el;
+        private Xcls_DialogTemplateSelect  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_model()
+        public Xcls_model(Xcls_DialogTemplateSelect _owner)
         {
             this.el = new Gtk.ListStore( 2, typeof(string),typeof(string) );
+            _this = _owner;
             _this.model = this;
 
             // my vars
@@ -346,13 +364,16 @@ public class Xcls_DialogTemplateSelect
     public class Xcls_Button8
     {
         public Gtk.Button el;
+        private Xcls_DialogTemplateSelect  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_Button8()
+        public Xcls_Button8(Xcls_DialogTemplateSelect _owner)
         {
             this.el = new Gtk.Button();
+            _this = _owner;
 
             // my vars
 
