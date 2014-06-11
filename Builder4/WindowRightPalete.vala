@@ -20,7 +20,7 @@ public static Xcls_RightPalete  WindowRightPalete;
 public class Xcls_RightPalete
 {
     public Gtk.VBox el;
-    public Xcls_RightPalete  _this;
+    private static Xcls_RightPalete  _this;
 
     public Xcls_buttonbar buttonbar;
     public Xcls_viewbox viewbox;
@@ -82,13 +82,16 @@ public class Xcls_RightPalete
     public class Xcls_buttonbar
     {
         public Gtk.VBox el;
+        private static Xcls_RightPalete  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_buttonbar()
+        public Xcls_buttonbar(Xcls_RightPalete _owner)
         {
             this.el = new Gtk.VBox( true, 0 );
+            _this = _owner;
             _this.buttonbar = this;
 
             // my vars
@@ -121,11 +124,13 @@ public class Xcls_RightPalete
     public class Xcls_Button3
     {
         public Gtk.Button el;
+        private static Xcls_RightPalete  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_Button3()
+        public Xcls_Button3(Xcls_RightPalete _owner)
         {
             this.el = new Gtk.Button();
 
@@ -162,11 +167,13 @@ public class Xcls_RightPalete
     public class Xcls_Image4
     {
         public Gtk.Image el;
+        private static Xcls_RightPalete  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_Image4()
+        public Xcls_Image4(Xcls_RightPalete _owner)
         {
             this.el = new Gtk.Image();
 
@@ -198,11 +205,13 @@ public class Xcls_RightPalete
     public class Xcls_Label5
     {
         public Gtk.Label el;
+        private static Xcls_RightPalete  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_Label5()
+        public Xcls_Label5(Xcls_RightPalete _owner)
         {
             this.el = new Gtk.Label( "Palete" );
 
@@ -243,13 +252,16 @@ public class Xcls_RightPalete
     public class Xcls_viewbox
     {
         public Gtk.VBox el;
+        private static Xcls_RightPalete  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_viewbox()
+        public Xcls_viewbox(Xcls_RightPalete _owner)
         {
             this.el = new Gtk.VBox( true, 0 );
+            _this = _owner;
             _this.viewbox = this;
 
             // my vars
@@ -282,11 +294,13 @@ public class Xcls_RightPalete
     public class Xcls_HBox7
     {
         public Gtk.HBox el;
+        private static Xcls_RightPalete  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_HBox7()
+        public Xcls_HBox7(Xcls_RightPalete _owner)
         {
             this.el = new Gtk.HBox( true, 0 );
 
@@ -318,11 +332,13 @@ public class Xcls_RightPalete
     public class Xcls_Label8
     {
         public Gtk.Label el;
+        private static Xcls_RightPalete  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_Label8()
+        public Xcls_Label8(Xcls_RightPalete _owner)
         {
             this.el = new Gtk.Label( "Palete" );
 
@@ -350,11 +366,13 @@ public class Xcls_RightPalete
     public class Xcls_Button9
     {
         public Gtk.Button el;
+        private static Xcls_RightPalete  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_Button9()
+        public Xcls_Button9(Xcls_RightPalete _owner)
         {
             this.el = new Gtk.Button();
 
@@ -391,11 +409,13 @@ public class Xcls_RightPalete
     public class Xcls_Image10
     {
         public Gtk.Image el;
+        private static Xcls_RightPalete  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_Image10()
+        public Xcls_Image10(Xcls_RightPalete _owner)
         {
             this.el = new Gtk.Image();
 
@@ -427,11 +447,13 @@ public class Xcls_RightPalete
     public class Xcls_ScrolledWindow11
     {
         public Gtk.ScrolledWindow el;
+        private static Xcls_RightPalete  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_ScrolledWindow11()
+        public Xcls_ScrolledWindow11(Xcls_RightPalete _owner)
         {
             this.el = new Gtk.ScrolledWindow( null, null );
 
@@ -466,13 +488,15 @@ public class Xcls_RightPalete
     public class Xcls_TreeView12
     {
         public Gtk.TreeView el;
+        private static Xcls_RightPalete  _this;
+
 
             // my vars
         public GLib.List dropList;
         public string dragData;
 
             // ctor 
-        public Xcls_TreeView12()
+        public Xcls_TreeView12(Xcls_RightPalete _owner)
         {
             this.el = new Gtk.TreeView();
 
@@ -582,13 +606,16 @@ public class Xcls_RightPalete
     public class Xcls_model
     {
         public Gtk.ListStore el;
+        private static Xcls_RightPalete  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_model()
+        public Xcls_model(Xcls_RightPalete _owner)
         {
             this.el = new Gtk.ListStore( 2, "typeof(string),typeof(string)" );
+            _this = _owner;
             _this.model = this;
 
             // my vars
@@ -655,11 +682,13 @@ public class Xcls_RightPalete
     public class Xcls_TreeViewColumn14
     {
         public Gtk.TreeViewColumn el;
+        private static Xcls_RightPalete  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_TreeViewColumn14()
+        public Xcls_TreeViewColumn14(Xcls_RightPalete _owner)
         {
             this.el = new Gtk.TreeViewColumn();
 
@@ -691,13 +720,16 @@ public class Xcls_RightPalete
     public class Xcls_txtrender
     {
         public Gtk.CellRendererText el;
+        private static Xcls_RightPalete  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_txtrender()
+        public Xcls_txtrender(Xcls_RightPalete _owner)
         {
             this.el = new Gtk.CellRendererText();
+            _this = _owner;
             _this.txtrender = this;
 
             // my vars
