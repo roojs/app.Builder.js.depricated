@@ -720,13 +720,13 @@ public class Xcls_WindowLeftTree
                         
                         this.el.get_iter(out iter_after, after);
                         if ( int.parse(target_data[1]) >0 ) {
-                            this.el.insert_after(n_iter, iter_par, iter_after);
+                            this.el.insert_after(out n_iter, iter_par, iter_after);
                         } else {
-                            this.el.insert_before(n_iter, iter_par, iter_after);
+                            this.el.insert_before(out n_iter, iter_par, iter_after);
                         }
                         
                     } else {
-                        this.el.append(n_iter, iter_par);
+                        this.el.append(out n_iter, iter_par);
                         
                     }
                     
