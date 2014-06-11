@@ -7,7 +7,19 @@ namespace Palete
 		MISSING_FILE,
 		INVALID_VALUE
     }
-    
+
+	public class Usage : Object 
+	{
+		GLib.List<string> left;
+		GLib.List<string> right;
+		public Usage(GLib.List<string> ileft, GLib.List<string> iright)
+		{
+			this.left = ileft.copy();
+			this.right=  iright.copy();
+		}
+	}
+
+	
 
     static Gee.HashMap<string,Palete>? cache = null;
     
@@ -104,11 +116,12 @@ namespace Palete
             
         },
         */
-        GLib.List<string> getDropList : function(rval)
+        GLib.List<string> getDropList(rval)
         {
             
-            var ret = [];
-            this.map.forEach( function(m) {
+            var ret = new GLib.List<string>();
+
+			this.map.forEach( function(m) {
                 if (m.right.indexOf(rval) > -1) {
                     m.left.forEach(function(l) {
                         if (ret.indexOf(l) > -1) {
