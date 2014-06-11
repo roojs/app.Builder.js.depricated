@@ -204,7 +204,7 @@ public class Xcls_WindowLeftTree
                     
                     var pix = this.el.create_row_drag_icon ( path);
                     
-                    Gtk.drag_set_icon_surface (ctx, pix) 
+                    Gtk.drag_set_icon_surface (ctx, pix) ;
                     
                     return true;
             } );
