@@ -178,51 +178,53 @@ WindowLeftTree=new XObject({
                       //print("Tree: drag-data-received");
                 
                 
-                    if (this.drag_in_motion) {
-                
+                     
+                     
+                        //console.log("LEFT-TREE: drag-motion");
+                        var src = Gtk.drag_get_source_widget(ctx);
                         
-                     
-                     
-                            //console.log("LEFT-TREE: drag-motion");
-                            var src = Gtk.drag_get_source_widget(ctx);
-                            
-                            // a drag from  elsewhere...- prevent drop..
-                            if (src != this.el) {
-                                //print("no drag data!");
-                                // fix-me - this.. needs to handle comming from the palete...
-                                if (this.drag_in_motion) {
-                                    Gdk.drag_status(ctx, 0, time);
-                                    return;
-                                }
-                                // no drop action...
+                        // a drag from  elsewhere...- prevent drop..
+                        if (src != this.el) {
+                            //print("no drag data!");
+                            // fix-me - this.. needs to handle comming from the palete...
+                            if (this.drag_in_motion) {
+                                Gdk.drag_status(ctx, 0, time);
                                 return;
                             }
+                            // no drop action...
+                            return;
+                        }
                             
+                        var  targetData = "";
+                        //var action = Gdk.DragAction.COPY;
+                            // unless we are copying!!! ctl button..
+                        var action = ctx.actions & Gdk.DragAction.MOVE ? Gdk.DragAction.MOVE : Gdk.DragAction.COPY ;
+                        
+                        
+                        if (this.model.el.iter_n_children(null) < 1) {
+                            // no children.. -- asume it's ok..
                             
-                            //var action = Gdk.DragAction.COPY;
-                                // unless we are copying!!! ctl button..
-                            var action = ctx.actions & Gdk.DragAction.MOVE ? Gdk.DragAction.MOVE : Gdk.DragAction.COPY ;
-                            
-                            
-                            if (this.model.el.iter_n_children(null) < 1) {
-                	            // no children.. -- asume it's ok..
-                	            
-                	            this.targetData =  [ '' , Gtk.TreeViewDropPosition.INTO_OR_AFTER , ''];
-                	            
-                	            Gdk.drag_status(ctx, action ,time);
-                	            return true;
+                            targetData = "|%d|".printf((int)Gtk.TreeViewDropPosition.INTO_OR_AFTER);
+                            if (this.drag_in_motion) {            
+                                Gdk.drag_status(ctx, action ,time);
+                                return;
                             }
+                
+                        } else {
                             
                             
                 
                             //print("GETTING POS");
                             Gtk.TreePath path;
-                            var isOver = this.view.el.get_dest_row_at_pos(x,y, out path);
+                            Gtk.TreeViewDropPosition pos;
+                            var isOver = this.view.el.get_dest_row_at_pos(this.drag_x,this.drag_y, out path, out pos);
                             
                             //print("ISOVER? " + isOver);
                             if (!isOver) {
-                                Gdk.drag_status(ctx, 0 ,time);
-                                return false; // not over apoint!?!
+                                if (this.drag_in_motion) {
+                                    Gdk.drag_status(ctx, 0 ,time);
+                                }
+                                return; // not over apoint!?! - no action on drop or motion..
                             }
                             
                             // drag node is parent of child..
@@ -235,12 +237,19 @@ WindowLeftTree=new XObject({
                             //Gtk.TreeViewDropPosition.AFTER
                             //Gtk.TreeViewDropPosition.BEFORE
                             
-                            if (typeof(src.treepath) != 'undefined'  && 
-                                src.treepath == path.path.to_string().substring(0,src.treepath.length)
-                                ) {
+                            // what's in the selected data....
+                            var selection_text = sel.get_text();
+                            // see if we are dragging into ourself?
+                            
+                            
+                            
+                            if (selection_text  == path.to_string().substring(0,selection_text.length) {
                                 ///print("subpath drag");
-                                 Gdk.drag_status(ctx, 0 ,time);
-                                //return false;
+                                if (this.drag_in_motion) {
+                                     Gdk.drag_status(ctx, 0 ,time);
+                                 }
+                                 return; /// -- fixme -- this is not really correct..
+                
                             }
                             
                             // check that 
@@ -250,8 +259,11 @@ WindowLeftTree=new XObject({
                             
                             //print(data.path.to_string() +' => '+  data.pos);
                             
-                            var tg = this.model.findDropNodeByPath(
-                                path.path.to_string(), src.dropList, path.pos);
+                            // dropList is a list of xtypes that this node could be dropped on.
+                            // it is set up when we start to drag..
+                            
+                            
+                            var tg = this.model.findDropNodeByPath( path.to_string(), this.dropList, pos);
                                 
                             this.view.highlight(tg);
                             if (tg.length < 0) {
