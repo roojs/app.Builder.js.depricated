@@ -465,9 +465,11 @@ WindowLeftTree=new XObject({
                         
                         Gtk.TreeIter iter;
                         this.el.get_iter_from_string(out iter, path);
-                        
-                        
-                        
+                    
+                        GLib.Value value;
+                         this.el.get_value(iter, 2, out value);
+                         var data = (JsRender.Node)(value.value);
+                        data.remove();
                         this.el.remove(iter);
                         
                         
