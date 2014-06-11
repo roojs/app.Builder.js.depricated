@@ -491,6 +491,8 @@ WindowLeftTree=new XObject({
                             
                             //print("add " + tp + "@" + target_data[1]  );
                             
+                            JsRender.Node parentNode = null;
+                            
                             var parent = tp;
                             
                             Gtk.TreePath after = null;
@@ -544,9 +546,13 @@ WindowLeftTree=new XObject({
                             }
                             
                             
-                            // work out what kind of packing to use..
+                            // work out what kind of packing to use.. -- should be in 
                             if (typeof(node.pack) == 'undefined'  && parent !== false) {
-                                var pal = this.get('/LeftTree').getPaleteProvider();
+                            
+                            
+                                var pal = this.file.getPalete().fillPack(parent, node);
+                                
+                    
                                 if (pal.name == 'Gtk') {
                                     var pname = pal.guessName(this.singleNodeToJS(parent.to_string()));
                                     var cname = pal.guessName(node);
