@@ -9,7 +9,7 @@
             "id": "LeftTree",
             "pack": "add",
             "xtype": "ScrolledWindow",
-            "|getActiveElement": "function() { // return path to actie node.\n\n     var path = this.getActivePath();\n     if (!path) {\n        return false;\n     }\n     var iter = new Gtk.TreeIter();\n     this.get('model').el.get_iter_from_string(iter, path);\n     \n     var value = new GObject.Value('');\n     this.get('model').el.get_value(iter, 2, value);\n        \n     return JSON.parse(value.value);\n}\n",
+            "|getActiveElement": "function() { // return path to actie node.\n\n     var path = this.getActivePath();\n     if (path.length < 1) {\n        return null;\n     }\n     Gtk.TreeIter   iter = new ();\n     _this.model.el.get_iter_from_string(out iter, path);\n     \n     var value = new GObject.Value('');\n     this.get('model').el.get_value(iter, 2, value);\n        \n     return JSON.parse(value.value);\n}\n",
             "|getActiveFile": "function() {\n    return this.get('model').file;\n}\n",
             "|getActivePath": "function() {\n    var model = this.get('model');\n    var view = this.get('view');\n    if (view.selection.count_selected_rows() < 1) {\n        return false;\n    }\n    var iter = new Gtk.TreeIter();\n\n    view.selection.get_selected(model.el, iter);\n    return model.el.get_path(iter).to_string();\n}\n",
             "|getPaleteProvider": "function() {\n    var model = this.get('model');\n    var pm = imports.Builder.Provider.ProjectManager.ProjectManager;\n    return pm.getPalete(model.file.getType());\n}\n",
@@ -108,5 +108,7 @@
                 }
             ]
         }
-    ]
+    ],
+    "permname": "",
+    "modOrder": ""
 }
