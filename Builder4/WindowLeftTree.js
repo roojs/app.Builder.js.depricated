@@ -528,7 +528,7 @@ WindowLeftTree=new XObject({
                         
                         int pref = in_pref < 0  ?  Gtk.TreeViewDropPosition.INTO_OR_AFTER : in_pref;
                         
-                        var last = false;
+                        var last = "";
                         
                         //console.dump(this.treemap);
                         
