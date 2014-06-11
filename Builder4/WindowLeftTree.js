@@ -138,6 +138,10 @@ WindowLeftTree=new XObject({
                 //        return true;
                 },
                 drag_motion : ( ctx, x, y, time)  => {
+                 
+                    // the point of this is to detect where an item could be dropped..
+                    
+                 
                      //console.log("LEFT-TREE: drag-motion");
                         var src = Gtk.drag_get_source_widget(ctx);
                         
