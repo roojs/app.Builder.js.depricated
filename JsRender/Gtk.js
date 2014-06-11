@@ -407,8 +407,11 @@ Gtk = XObject.define(
              
             // ctor..
             strbuilder("\n" + ipad + "// ctor \n");
-            strbuilder(pad + "public " + xcls + "()\n" + pad + "{\n");
-            
+			if (!depth) {
+        		strbuilder(pad + "public " + xcls + "()\n" + pad + "{\n");
+			} else {
+				strbuilder(pad + "public " + xcls + "(" + this.top_xcls + " _owner)\n" + pad + "{\n");
+			}
             // wrapped ctor..
             // this may need to look up properties to fill in the arguments..
             // introspection does not workk..... - as things like gtkmessagedialog
