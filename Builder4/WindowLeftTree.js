@@ -559,12 +559,6 @@ WindowLeftTree=new XObject({
                             
                                 this.file.getPalete().fillPack(node,parentNode);
                                 
-                    
-                                if (pal.name == 'Gtk') {
-                                    var pname = pal.guessName(this.singleNodeToJS(parent.to_string()));
-                                    var cname = pal.guessName(node);
-                                    node.pack = pal.getDefaultPack(pname, cname);
-                                }
                                 
                             }
                             
@@ -576,9 +570,9 @@ WindowLeftTree=new XObject({
                             }
                     // load children - if it has any..
                     
-                            if (xitems) {
-                                this.load(xitems, n_iter);
-                                this.get('/LeftTree.view').el.expand_row(this.el.get_path(n_iter), true);
+                            if (node.items.length() > 0) {
+                                this.load(node.items, n_iter);
+                                this.view.el.expand_row(this.el.get_path(n_iter), true);
                             }
                             if (tp && (xitems || after)) {
                                 this.get('/LeftTree.view').el.expand_row(this.el.get_path(iter_par), true);
