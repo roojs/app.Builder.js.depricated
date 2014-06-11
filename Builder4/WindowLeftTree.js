@@ -561,7 +561,7 @@ WindowLeftTree=new XObject({
                             }
                             
                             if (match.length > 0) {
-                                if (last) { // pref is after/before..
+                                if (last.length > 0) { // pref is after/before..
                                     // then it's after last
                                     if (pref > 1) {
                                         return "";
