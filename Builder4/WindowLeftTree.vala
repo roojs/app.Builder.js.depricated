@@ -267,7 +267,8 @@ public class Xcls_WindowLeftTree
                     //Gtk.TreeViewDropPosition.BEFORE
                     
                     if (typeof(src.treepath) != 'undefined'  && 
-                        src.treepath == data.path.to_string().substring(0,src.treepath.length)) {
+                        src.treepath == path.path.to_string().substring(0,src.treepath.length)
+                        ) {
                         ///print("subpath drag");
                          Gdk.drag_status(ctx, 0 ,time);
                         //return false;
@@ -278,9 +279,10 @@ public class Xcls_WindowLeftTree
                     //console.dump(data);
                     // path, pos
                     
-                    print(data.path.to_string() +' => '+  data.pos);
-                    var tg = this.get('/LeftTree.model').findDropNodeByPath(
-                        data.path.to_string(), src.dropList, data.pos);
+                    //print(data.path.to_string() +' => '+  data.pos);
+                    
+                    var tg = this.model.findDropNodeByPath(
+                        path.path.to_string(), src.dropList, path.pos);
                         
                     this.get('/LeftTree.view').highlight(tg);
                     if (!tg.length) {
