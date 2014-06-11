@@ -88,13 +88,13 @@
                     "id": "LeftTreeMenu",
                     "items": [
                         {
-                            "|xns": "Gtk",
-                            "xtype": "MenuItem",
-                            "pack": "add",
-                            "label": "Delete Element",
                             "listeners": {
-                                "activate": "function (self) {\n\n     this.get('/LeftTree.model').deleteSelected();\n}"
-                            }
+                                "activate": "function (self) {\n\n     _this.model.deleteSelected();\n}"
+                            },
+                            "label": "Delete Element",
+                            "pack": "add",
+                            "xtype": "MenuItem",
+                            "|xns": "Gtk"
                         },
                         {
                             "listeners": {

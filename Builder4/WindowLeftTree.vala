@@ -1072,21 +1072,21 @@ public class Xcls_WindowLeftTree
             // listeners 
             this.el.activate.connect( function (self) {
             
-                 this.get('/LeftTree.model').deleteSelected();
+                 _this.model.deleteSelected();
             } );
         }
 
         // userdefined functions 
 
-        // skip |xns - no return type
-
-        // skip xtype - not pipe 
-
-        // skip pack - not pipe 
+        // skip listeners - not pipe 
 
         // skip label - already used 
 
-        // skip listeners - not pipe 
+        // skip pack - not pipe 
+
+        // skip xtype - not pipe 
+
+        // skip |xns - no return type
 
         // skip xvala_cls - not pipe 
 

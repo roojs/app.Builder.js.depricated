@@ -897,14 +897,14 @@ WindowLeftTree=new XObject({
             items : [
                 {
                     xtype: Gtk.MenuItem,
-                    pack : "add",
-                    label : "Delete Element",
                     listeners : {
                         activate : function (self) {
                         
-                             this.get('/LeftTree.model').deleteSelected();
+                             _this.model.deleteSelected();
                         }
-                    }
+                    },
+                    label : "Delete Element",
+                    pack : "add"
                 },
                 {
                     xtype: Gtk.MenuItem,
