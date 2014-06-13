@@ -287,7 +287,7 @@ namespace Palete {
 		/**
 		 * guess the fqn of a type == eg. gboolean or Widget etc...
 		 */
-		static fqtype(string type, string ns) {
+		public static string fqtype(string type, string ns) {
 			var g = factory(ns);
 			if (g.classes.has_key(type)) {
 				return ns + "." + type;
@@ -302,7 +302,15 @@ namespace Palete {
             }	
 			return type;
 		}
+
+		public static string guessDefaultValueForType(string type) {
 			
+
+
+		}
+
+
+		
 	 
         public Gir (string ns)  
         {
