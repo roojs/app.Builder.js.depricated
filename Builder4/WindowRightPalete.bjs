@@ -101,7 +101,6 @@
                                         "drag_end": "( drag_context)  => {\n \t//Seed.print('SOURCE: drag-end');\n\t\n\tthis.dragData = \"\";\n\tthis.dropList = null;\n\t_this.drag_end(); // call signal..\n\t//this.get('/LeftTree.view').highlight(false);\n\t \n}",
                                         "button_press_event": " ( event) => {\n\n //\tif (!this.get('/Editor').save()) {\n //\t    // popup!! - click handled.. \n// \t    return true;\n//        }\n    return false;\n}"
                                     },
-                                    ".GLib.List:dropList": "",
                                     ".string:dragData": "",
                                     "pack": "add",
                                     "xtype": "TreeView",

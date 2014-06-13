@@ -500,7 +500,6 @@ public class Xcls_RightPalete
 
 
             // my vars
-        public GLib.List dropList;
         public string dragData;
 
             // ctor 
@@ -587,8 +586,6 @@ public class Xcls_RightPalete
         // userdefined functions 
 
         // skip listeners - not pipe 
-
-        // skip .GLib.List:dropList - already used 
 
         // skip .string:dragData - already used 
 
