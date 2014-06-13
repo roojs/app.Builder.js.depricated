@@ -391,13 +391,14 @@ namespace Palete {
 		{   
 			
 			// parent.fqn() method ( node.fqn()
+			var methods = this.getPropertiesFor (parent.fqn());
 			
 			var cls = gir.classes.get(node.fqn());
 			if (cls == null) {
 				print("oops can not find class " + es
 				return;
 			}
-			
+			cl
 
 			
 		}
