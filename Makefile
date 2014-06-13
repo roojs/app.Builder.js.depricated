@@ -25,7 +25,6 @@ all:
 		Builder4/MainWindow.vala \
 		Builder4/WindowRightPalete.vala \
 		Builder4/WindowLeftTree.vala \
-
 		-o /tmp/test
 #		Builder4/*.vala \
 
