@@ -105,7 +105,7 @@ WindowLeftTree=new XObject({
                         this.dragData = "";
                         this.dropList = null;
                 //        this.targetData = "";
-                        this.highlightDropPath("");
+                        this.highlightDropPath("",0);
                 //        return true;
                 },
                 drag_motion : ( ctx, x, y, time)  => {
