@@ -577,13 +577,13 @@ public class JsRender.Node  {
 		return ret;
 
 	}
-    string nodeTitle() {
+    public string nodeTitle() {
   	    string[] txt = {};
 
 		//var sr = (typeof(c['+buildershow']) != 'undefined') &&  !c['+buildershow'] ? true : false;
 		//if (sr) txt.push('<s>');
 
-		if (typeof(this.has("*prop"))   { txt += (this.get("*prop") + ":"); }
+		if (this.has("*prop"))   { txt += (this.get("*prop") + ":"); }
 		
 		//if (renderfull && c['|xns']) {
 		    txt += this.fqn();
