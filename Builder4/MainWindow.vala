@@ -78,8 +78,9 @@ public class Xcls_Window
     // skip xtype - not pipe 
 
     // skip |init - already used 
-
-    // skip |setTitle - no return type
+    public void setTitle (string str) {
+            this.el.set_title(this.title + ' - ' + str);
+        }
 
     // skip |type - already used 
 
