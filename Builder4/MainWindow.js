@@ -11,7 +11,7 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 MainWindow=new XObject({
     xtype: Gtk.Window,
-    destroy : "function (self) {\n   Gtk.main_quit();\n}",
+    destroy : "() => {\n   Gtk.main_quit();\n}",
     listeners : {
         show : function (self) {
           print("WINDOW SHOWING - trying to hide");
