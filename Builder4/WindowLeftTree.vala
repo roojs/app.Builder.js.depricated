@@ -164,7 +164,7 @@ public class Xcls_WindowLeftTree
                  _this.LeftTreeMenu.el.show_all();
                   _this.LeftTreeMenu.el.popup(null, null, null, null, 3, ev.button.time);
                  //   print("click:" + res.path.to_string());
-                   return false;
+                  return true;
             } );
             this.el.drag_begin.connect( ( ctx)  => {
             	//print('SOURCE: drag-begin');
