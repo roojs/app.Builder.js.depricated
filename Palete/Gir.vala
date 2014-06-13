@@ -312,6 +312,8 @@ namespace Palete {
 					return "true";
 				case "guint":
 					return "0";
+				case "utf8":
+					return "\"\"";
 				default:
 					return "?"+  type + "?";
 			}
