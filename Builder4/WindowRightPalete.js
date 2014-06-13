@@ -154,7 +154,7 @@ WindowRightPalete=new XObject({
                                  	//Seed.print('SOURCE: drag-end');
                                 	
                                 	this.dragData = "";
-                                	this.dropList = null;
+                                	//this.dropList = null;
                                 	_this.drag_end(); // call signal..
                                 	//this.get('/LeftTree.view').highlight(false);
                                 	 
