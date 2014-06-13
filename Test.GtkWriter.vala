@@ -58,7 +58,7 @@ public static int main () {
 	//testBuilderFile("Editor", "JS");
 	//testBuilderFile("Editor", "VALA");
 	var w = new Xcls_MainWindow();
-	w.addChildren();
+	w.show();
 	 
 	Gtk.main();
 
