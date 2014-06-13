@@ -83,7 +83,7 @@ namespace Palete {
 
 		public string[] inheritsToStringArray()
 		{
-			string[] = {};
+			string[] ret = {};
 			for(var i =0;i<i this.inherits.length(); i++) {
 				ret += this.inherits.nth_data(i);
 			}
@@ -313,7 +313,7 @@ namespace Palete {
 				case "guint":
 					return 0;
 				default:
-					return "?"+  type "+?";
+					return "?"+  type + "?";
 			}
 
 		}
