@@ -266,11 +266,11 @@ WindowLeftTree=new XObject({
                 
                          var delete_selection_data = false;
                             
-                        if (ctx.action == Gdk.DragAction.ASK)  {
+                        if (ctx.get_actions() == Gdk.DragAction.ASK)  {
                             /* Ask the user to move or copy, then set the ctx action. */
                         }
                 
-                        if (ctx.action == Gdk.DragAction.MOVE) {
+                        if (ctx.get_actions() == Gdk.DragAction.MOVE) {
                             delete_selection_data = true;
                         }
                         
