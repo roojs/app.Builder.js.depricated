@@ -745,7 +745,7 @@ public class Xcls_RightPalete
             this.el.pack_start (  child_0.el , true );
 
             // init method 
-             this.el.add_attribute(_this.txtrender , "markup", 0 );
+             this.el.add_attribute(_this.txtrender.el , "markup", 0 );
              
         }
 

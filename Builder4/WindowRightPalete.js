@@ -246,7 +246,7 @@ WindowRightPalete=new XObject({
                                 {
                                     xtype: Gtk.TreeViewColumn,
                                     pack : "append_column",
-                                    init : this.el.add_attribute(_this.txtrender , "markup", 0 );,
+                                    init : this.el.add_attribute(_this.txtrender.el , "markup", 0 );,
                                     items : [
                                         {
                                             xtype: Gtk.CellRendererText,
