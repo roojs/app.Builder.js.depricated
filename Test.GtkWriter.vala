@@ -60,7 +60,7 @@ public static int main () {
 	var w = new Xcls_MainWindow();
 	w.addChildren();
 	w.show();
-	
+	Gtk.main();
 
     
 	
