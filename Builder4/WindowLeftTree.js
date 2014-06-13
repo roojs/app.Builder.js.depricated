@@ -295,7 +295,9 @@ WindowLeftTree=new XObject({
                      if (this.blockChanges) { // probably not needed.. 
                        return  ;
                      }
-                     
+                     if (this.file == null) {
+                         return;
+                     } 
                      
                      //var render = this.get('/LeftTree').getRenderer();                
                    

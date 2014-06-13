@@ -377,7 +377,9 @@ public class Xcls_WindowLeftTree
                  if (this.blockChanges) { // probably not needed.. 
                    return  ;
                  }
-                 
+                 if (this.file == null) {
+                     return;
+                 } 
                  
                  //var render = this.get('/LeftTree').getRenderer();                
                
