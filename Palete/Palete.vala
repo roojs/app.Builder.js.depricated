@@ -118,10 +118,10 @@ namespace Palete
             
         },
         */
-        public GLib.List<string> getDropList(string rval)
+        public string[] getDropList(string rval)
         {
             
-            var ret = new GLib.List<string>();
+            string[] ret = {}
 			for (var i = 0; i < this.map.length(); i++) {
 				var m = this.map.nth_data(i);
 				
@@ -132,7 +132,7 @@ namespace Palete
                         if (ret.index(l) > -1) {
                             continue;
                         }
-                        ret.append(l);
+                        strop.append(l);
                     }
                 }
                 
