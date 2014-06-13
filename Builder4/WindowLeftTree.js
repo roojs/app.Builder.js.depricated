@@ -867,11 +867,12 @@ WindowLeftTree=new XObject({
                         this.activePath= "";
                         this.changed(false,true);
                     },
-                    'void:updateNode' : (JsRender.Node? n, bool refresh) {
+                    'void:updateNode' : (JsRender.Node? n, bool refresh)
+                     {
                         //     print("MODEL CHANGED CALLED" + this.activePath);
                          if (n != null && this.activePath.length > 0) {
                             Gtk.TreeIter iter;
-                            this.el.get_iter(iter, new Gtk.TreePath.from_string(this.activePath));
+                            this.el.get_iter(out iter, new Gtk.TreePath.from_string(this.activePath));
                             this.el.set(iter, 0, n.displayTitle(), 1, n.displayTitle(), -1);
                             var v = new Value(typeof(Object));
                             v.set_object(n);
