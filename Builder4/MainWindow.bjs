@@ -1,9 +1,9 @@
 {
     "id": "file-gtk-1",
-    "name": "Window",
+    "name": "MainWindow",
     "parent": "",
     "title": false,
-    "path": "/home/alan/gitlive/app.Builder.js/Sample/Window.bjs",
+    "path": "/home/alan/gitlive/app.Builder.js/Sample/MainWindow.bjs",
     "items": [
         {
             "listeners": {
