@@ -72,7 +72,8 @@ public class JsRender.Node  {
         
     }
 	public void set(string key, string value) {
-		th
+		this.props.set(key,value);
+	}
 	 public bool has(string key)
     {
         var k = this.props.get(key);
