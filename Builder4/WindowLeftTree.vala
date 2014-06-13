@@ -203,7 +203,7 @@ public class Xcls_WindowLeftTree
                     (
                             this.el,         // will receive 'drag-data-received' signal 
                             ctx,        // represents the current state of the DnD 
-                            Atom.intern("STRING",true),    // the target type we want 
+                            Gdk.Atom.intern("STRING",true),    // the target type we want 
                             time            // time stamp 
                     );
                 return;
