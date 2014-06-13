@@ -42,7 +42,7 @@ namespace JsRender {
 		 * UI componenets
 		 * 
 		 */
-		Editor editor;
+		Xcls_Editor editor;
 		
 		
 		
