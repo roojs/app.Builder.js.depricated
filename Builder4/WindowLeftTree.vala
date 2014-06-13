@@ -143,7 +143,7 @@ public class Xcls_WindowLeftTree
             this.el.button_press_event.connect(   ( ev) => {
                 //console.log("button press?");
             
-                if (!_this.model.file.editorSave()) {
+                if (!_this.model.file.editor.save()) {
                 
                     // popup!! - click handled.. 
                     return;
