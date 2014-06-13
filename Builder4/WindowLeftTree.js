@@ -36,23 +36,6 @@ WindowLeftTree=new XObject({
         view.get_selection().get_selected(out mod, out iter);
         return mod.get_path(iter).to_string();
     },
-    'void:getRenderer' : () {
-    
-        /*
-        switch( this.getActiveFile().getType()) {
-            case 'Roo':
-                return this.get('/RightBrowser.view');
-            case 'Gtk':
-                return this.get('/RightGtkView');
-        }
-        */
-    
-    },
-    'void:renderView' : () {
-        
-        _this.model.file.renderJS();
-    
-    },
     items : [
         {
             xtype: Gtk.TreeView,

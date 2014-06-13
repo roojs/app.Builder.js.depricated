@@ -13,8 +13,6 @@
             "|init": " this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)\n \n",
             "|shadow_type": "Gtk.ShadowType.IN",
             "|string:getActivePath": " () {\n    var model = this.model;\n    var view = this.view.el;\n    if (view.get_selection().count_selected_rows() < 1) {\n        return \"\";\n    }\n    Gtk.TreeIter iter;\n    Gtk.TreeModel mod;\n    view.get_selection().get_selected(out mod, out iter);\n    return mod.get_path(iter).to_string();\n}\n",
-            "|void:getRenderer": "() {\n\n    /*\n    switch( this.getActiveFile().getType()) {\n        case 'Roo':\n            return this.get('/RightBrowser.view');\n        case 'Gtk':\n            return this.get('/RightGtkView');\n    }\n    */\n\n}\n",
-            "|void:renderView": "() {\n    \n    _this.model.file.renderJS();\n\n}\n",
             "|xns": "Gtk",
             "items": [
                 {

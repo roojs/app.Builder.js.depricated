@@ -77,23 +77,6 @@ public class Xcls_WindowLeftTree
             view.get_selection().get_selected(out mod, out iter);
             return mod.get_path(iter).to_string();
         }
-    public void getRenderer() {
-        
-            /*
-            switch( this.getActiveFile().getType()) {
-                case 'Roo':
-                    return this.get('/RightBrowser.view');
-                case 'Gtk':
-                    return this.get('/RightGtkView');
-            }
-            */
-        
-        }
-    public void renderView() {
-            
-            _this.model.file.renderJS();
-        
-        }
 
     // skip |xns - no return type
 
