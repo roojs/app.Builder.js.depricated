@@ -358,7 +358,7 @@ public class Xcls_WindowLeftTree
                     
                         
                                 // drag around.. - reorder..
-                    _this.model.moveNode(targetData, ctx.action);
+                    _this.model.moveNode(targetData, ctx.get_actions());
                         
                        
                         
