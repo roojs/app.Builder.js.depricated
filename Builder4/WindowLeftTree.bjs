@@ -72,7 +72,7 @@
                             "|xns": "Gtk",
                             "items": [
                                 {
-                                    "id": "renderer",
+                                    "id": "txtrenderer",
                                     "pack": "pack_start,true",
                                     "xtype": "CellRendererText",
                                     "|xns": "Gtk"

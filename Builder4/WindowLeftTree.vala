@@ -24,7 +24,7 @@ public class Xcls_WindowLeftTree
 
     public Xcls_view view;
     public Xcls_model model;
-    public Xcls_renderer renderer;
+    public Xcls_txtrenderer txtrenderer;
     public Xcls_LeftTreeMenu LeftTreeMenu;
 
         // my vars
@@ -996,7 +996,7 @@ public class Xcls_WindowLeftTree
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_renderer(_this);
+            var child_0 = new Xcls_txtrenderer(_this);
             this.el.pack_start (  child_0.el , true );
 
             // init method 
@@ -1022,7 +1022,7 @@ public class Xcls_WindowLeftTree
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_renderer
+    public class Xcls_txtrenderer
     {
         public Gtk.CellRendererText el;
         private Xcls_WindowLeftTree  _this;
@@ -1031,11 +1031,11 @@ public class Xcls_WindowLeftTree
             // my vars
 
             // ctor 
-        public Xcls_renderer(Xcls_WindowLeftTree _owner)
+        public Xcls_txtrenderer(Xcls_WindowLeftTree _owner)
         {
             this.el = new Gtk.CellRendererText();
             _this = _owner;
-            _this.renderer = this;
+            _this.txtrenderer = this;
 
             // my vars
 
