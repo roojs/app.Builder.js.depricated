@@ -482,6 +482,11 @@ public class JsRender.Node  {
 
 
     }
+	public Node  deepClone()
+	{
+		return this.loadFromJson(this.toJsonObject());
+
+	}
 	public string toJsonString()
     {
         if (Node.gen == null) {
