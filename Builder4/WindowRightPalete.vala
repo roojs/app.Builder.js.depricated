@@ -548,7 +548,7 @@ public class Xcls_RightPalete
                     //if (!this.get('/RightPalete').provider) {
                     //    return false;
                     //}
-                    this.dropList = _this.provider.getDropList((string)value);
+                    //this.dropList = _this.provider.getDropList((string)value);
                     this.dragData = (string) value;
                      
                     
