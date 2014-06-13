@@ -403,7 +403,7 @@ namespace Palete {
 				}
 				var fp = meth.paramset.params.nth_data(0);
 				var type = this.fqtype(fp.type, meth.ns);
-				if (!inherits.contains(" " + fp.type + " ")) {
+				if (!inherits.contains(" " + type + " ")) {
 					continue;
 				}
 				
