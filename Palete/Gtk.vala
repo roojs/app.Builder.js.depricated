@@ -409,7 +409,7 @@ namespace Palete {
 				}
 				var pack = meth.name;
 				for(var i =1; i < meth.paramset.params.length(); i++) {
-					var ty = Gir.fqtype(meth.paramset.params.nth_data(i).type);
+					var ty = Gir.fqtype(meth.paramset.params.nth_data(i).type, this.ns);
 					pack += "," + Gir.guessDefaultValueForType(ty);
 				}
 				node.set("pack", pack);
