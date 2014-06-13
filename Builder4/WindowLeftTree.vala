@@ -320,7 +320,7 @@ public class Xcls_WindowLeftTree
                         // it is set up when we start to drag..
                         
                         
-                        targetData = this.model.findDropNodeByPath( path.to_string(), this.dropList, pos);
+                        targetData = _this.model.findDropNodeByPath( path.to_string(), this.dropList, pos);
                             
             
                         
