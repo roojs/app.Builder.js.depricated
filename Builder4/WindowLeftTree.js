@@ -707,7 +707,7 @@ WindowLeftTree=new XObject({
                                 _this.view.el.expand_row(this.el.get_path(n_iter), true);
                             }
                             
-                            if (tp != null && (node.items.length() > 0 || after)) {
+                            if (tp != null && (node.items.length() > 0 || after != nul)) {
                                 _this.view.el.expand_row(this.el.get_path(iter_par), true);
                             }
                             // wee need to get the empty proptypes from somewhere..
