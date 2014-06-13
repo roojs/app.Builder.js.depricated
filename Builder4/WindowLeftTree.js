@@ -79,7 +79,7 @@ WindowLeftTree=new XObject({
                         
                      _this.LeftTreeMenu.el.set_screen(Gdk.Screen.get_default());
                      _this.LeftTreeMenu.el.show_all();
-                      _this.LeftTreeMenu.el.popup(null, null, null, null, 3, ev.time);
+                      _this.LeftTreeMenu.el.popup(null, null, null,  3, ev.time);
                      //   print("click:" + res.path.to_string());
                       return true;
                 },
