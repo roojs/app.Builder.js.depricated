@@ -173,7 +173,7 @@ WindowLeftTree=new XObject({
                         var action = (ctx.actions & Gdk.DragAction.MOVE) > 0 ? Gdk.DragAction.MOVE : Gdk.DragAction.COPY ;
                         
                         
-                        if (this.model.el.iter_n_children(null) < 1) {
+                        if (_this.model.el.iter_n_children(null) < 1) {
                             // no children.. -- asume it's ok..
                             
                             targetData = "|%d|".printf((int)Gtk.TreeViewDropPosition.INTO_OR_AFTER);
