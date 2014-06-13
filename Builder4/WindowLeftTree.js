@@ -91,7 +91,7 @@ WindowLeftTree=new XObject({
                         
                         // find what is selected in our tree...
                         Gtk.TreeIter iter;
-                        var s = this.view.el.get_selection();
+                        var s = _this.view.el.get_selection();
                         Gtk.TreeModel mod;
                         s.get_selected(out mod, out iter);
                 
