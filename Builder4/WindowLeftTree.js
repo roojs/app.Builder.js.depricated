@@ -63,7 +63,7 @@ WindowLeftTree=new XObject({
                     if (!_this.model.file.editorSave()) {
                     
                         // popup!! - click handled.. 
-                        return;
+                        return true;
                     }
                 
                     if (ev.type != Gdk.EventType.BUTTON_PRESS  || ev.button.button != 3) {

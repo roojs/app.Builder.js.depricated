@@ -113,8 +113,8 @@ public class Xcls_WindowLeftTree
 
 
             // my vars
-        public bool blockChanges;
         public GLib.List dragList;
+        public bool blockChanges;
         public bool drag_in_motion;
         public int drag_x;
         public int drag_y;
@@ -146,7 +146,7 @@ public class Xcls_WindowLeftTree
                 if (!_this.model.file.editorSave()) {
                 
                     // popup!! - click handled.. 
-                    return;
+                    return true;
                 }
             
                 if (ev.type != Gdk.EventType.BUTTON_PRESS  || ev.button.button != 3) {
@@ -436,9 +436,9 @@ public class Xcls_WindowLeftTree
 
         // skip listeners - not pipe 
 
-        // skip .bool:blockChanges - already used 
-
         // skip .GLib.List:dragList - already used 
+
+        // skip .bool:blockChanges - already used 
 
         // skip .bool:drag_in_motion - already used 
 
