@@ -149,7 +149,7 @@ public class Xcls_WindowLeftTree
                     return true;
                 }
             
-                if (ev.type != Gdk.EventType.BUTTON_PRESS  || ev.button.button != 3) {
+                if (ev.type != Gdk.EventType.BUTTON_PRESS  || ev.button != 3) {
                     //print("click" + ev.type);
                     return true;
                 }
