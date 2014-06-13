@@ -915,9 +915,7 @@ WindowLeftTree=new XObject({
                     listeners : {
                         activate : () => {
                         
-                        
-                              
-                             DialogSaveTemplate.show( _this.getActiveElement());
+                             DialogSaveTemplate.show(_this.model.file.palete(), _this.getActiveElement());
                              
                             
                         }
