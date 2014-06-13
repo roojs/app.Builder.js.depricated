@@ -250,7 +250,7 @@ WindowLeftTree=new XObject({
                                 return;
                             }
                             
-                            this.view.highlight(targetData, pos);
+                            this.view.highlightDropPath(targetData, pos);
                             //console.dump(tg);
                                
                             
