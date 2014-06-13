@@ -420,6 +420,7 @@ WindowLeftTree=new XObject({
                     
                     },
                     columns : typeof(string),typeof(string),typeof(Object),
+                    init : print("model initialized");,
                     listAllTypes : function() {
                         var s = this.get('/LeftTree.view').selection;
                         print ("LIST ALL TYPES: " + s.count_selected_rows() );
