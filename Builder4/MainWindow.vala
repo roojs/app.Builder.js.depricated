@@ -22,7 +22,7 @@ public class Xcls_Window
     public Gtk.Window el;
     private Xcls_Window  _this;
 
-    public Xcls_w-vbox w-vbox;
+    public Xcls_vbpx vbpx;
 
         // my vars
 
@@ -41,7 +41,7 @@ public class Xcls_Window
         this.el.default_width = 800;
         this.el.title = "Application Builder";
         this.el.type = Gtk.WindowType.TOPLEVEL;
-        var child_0 = new Xcls_w-vbox(_this);
+        var child_0 = new Xcls_vbpx(_this);
         this.el.add (  child_0.el  );
 
         // listeners 
@@ -93,7 +93,7 @@ public class Xcls_Window
     // skip xvala_xcls - not pipe 
 
     // skip xvala_id - not pipe 
-    public class Xcls_w-vbox
+    public class Xcls_vbpx
     {
         public Gtk.VBox el;
         private Xcls_Window  _this;
@@ -102,11 +102,11 @@ public class Xcls_Window
             // my vars
 
             // ctor 
-        public Xcls_w-vbox(Xcls_Window _owner)
+        public Xcls_vbpx(Xcls_Window _owner)
         {
             this.el = new Gtk.VBox( true, 0 );
             _this = _owner;
-            _this.w-vbox = this;
+            _this.vbpx = this;
 
             // my vars
 
@@ -115,11 +115,11 @@ public class Xcls_Window
 
         // userdefined functions 
 
-        // skip |xns - no return type
+        // skip id - not pipe 
 
         // skip xtype - not pipe 
 
-        // skip id - not pipe 
+        // skip |xns - no return type
 
         // skip xvala_cls - not pipe 
 
