@@ -45,7 +45,7 @@ namespace Palete
     }
        
 
-    public class Palete : Object 
+    public abstract class Palete : Object 
     {
         
        
@@ -251,8 +251,9 @@ namespace Palete
             return ret;
         }
             
-        
+        public abstract void fillPack(JsRender.Node,JsRender.Node); 
     }
+
 
 }
 
