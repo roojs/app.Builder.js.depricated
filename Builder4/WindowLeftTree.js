@@ -71,7 +71,7 @@ WindowLeftTree=new XObject({
                         return true;
                     }
                     Gtk.TreePath res;
-                    _this.view.el.get_path_at_pos((int)ev.x,(int)ev.y, out res);
+                    _this.view.el.get_path_at_pos((int)ev.x,(int)ev.y, out res, null, null, null);
                         
                       //if (!this.get('/LeftTreeMenu').el)  { 
                       //      this.get('/LeftTreeMenu').init(); 
