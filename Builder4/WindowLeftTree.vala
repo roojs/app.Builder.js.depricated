@@ -890,7 +890,7 @@ public class Xcls_WindowLeftTree
                 //print("MOVE NODE");
                 // console.dump(target_data);
                 Gtk.TreeIter old_iter;
-                var s = this.view.el.get_selection();
+                var s = _this.view.el.get_selection();
                 Gtk.ListStore mod;
                 s.get_selected(out mod , out old_iter);
                 
