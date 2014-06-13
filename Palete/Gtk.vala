@@ -369,7 +369,13 @@ namespace Palete {
             return ret; 
         }
       */
-        
+
+		public override void fillPack(JsRender.Node,JsRender.Node)
+		{   
+
+			
+		}
+	
     }
 }
  
