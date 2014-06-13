@@ -251,7 +251,7 @@ namespace Palete
             return ret;
         }
             
-        public abstract void fillPack(JsRender.Node,JsRender.Node); 
+        public abstract void fillPack(JsRender.Node node,JsRender.Node parent); 
     }
 
 
