@@ -123,6 +123,7 @@ namespace Palete
             // should be a bit more than this..
 			// -> it should look for all elements that inherit 
             string[] ret = {};
+			var rt = new GLib.List<string>();
 			for (var i = 0; i < this.map.length(); i++) {
 				var m = this.map.nth_data(i);
 				
@@ -130,10 +131,11 @@ namespace Palete
 					for(var ii =0; ii < m.left.length(); ii++) {
                 		var l = m.left.nth_data(ii);
 						
-                        if (ret.index(l) > -1) {
+                        if (rt.index(l) > -1) {
                             continue;
                         }
                         ret += l;
+						rt.append(l);
                     }
                 }
                 
