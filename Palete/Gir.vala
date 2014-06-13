@@ -81,9 +81,13 @@ namespace Palete {
 			this.paramset = null;
         }
 
-		public string[] allInherits()
+		public string[] inheritsToStringArray()
 		{
-
+			string[] = {};
+			for(var i =0;i<i this.inherits.length(); i++) {
+				ret += this.inherits.nth_data(i);
+			}
+			return ret;
 
 		}
 
