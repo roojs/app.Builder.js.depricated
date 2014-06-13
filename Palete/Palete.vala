@@ -120,7 +120,8 @@ namespace Palete
         */
         public string[] getDropList(string rval)
         {
-            
+            // should be a bit more than this..
+			// -> it should look for all elements that inherit 
             string[] ret = {}
 			for (var i = 0; i < this.map.length(); i++) {
 				var m = this.map.nth_data(i);
