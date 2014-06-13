@@ -8,14 +8,14 @@
         {
             "listeners": {
                 "show": "  ( ) => {\n\n    //imports.Builder.Provider.ProjectManager.ProjectManager.loadConfig();\n    //this.get('/MidPropTree').hideWin();\n    //this.get('/RightPalete').hide();\n    //this.get('/BottomPane').el.hide();\n    //this.get('/Editor').el.show_all();\n\n}",
-                "delete_event": "  (  event) => {\n    return false;\n}"
+                "delete_event": "  (   event) => {\n    return false;\n}"
             },
+            ".string:title": "\"Application Builder\"",
             "border_width": 0,
             "default_height": 500,
             "default_width": 800,
             "destroy": "() => {\n   Gtk.main_quit();\n}",
             "id": "Window",
-            ".string:title": "\"Application Builder\"",
             "xtype": "Window",
             "|init": " \n\t  \n    this.el.show_all();\n    \n    ",
             "|type": "Gtk.WindowType.TOPLEVEL",

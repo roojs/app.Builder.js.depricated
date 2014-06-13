@@ -30,7 +30,7 @@ public class Xcls_Window
         // ctor 
     public Xcls_Window()
     {
-        this.el = new Gtk.Window();
+        this.el = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
         _this = this;
         MainWindow = this;
 
@@ -41,7 +41,6 @@ public class Xcls_Window
         this.el.border_width = 0;
         this.el.default_height = 500;
         this.el.default_width = 800;
-        this.el.type = Gtk.WindowType.TOPLEVEL;
         var child_0 = new Xcls_vbox(_this);
         this.el.add (  child_0.el  );
 
@@ -55,7 +54,7 @@ public class Xcls_Window
             //this.get('/Editor').el.show_all();
         
         } );
-        this.el.delete_event.connect(   (  event) => {
+        this.el.delete_event.connect(   (   event) => {
             return false;
         } );
     }
@@ -63,6 +62,8 @@ public class Xcls_Window
     // userdefined functions 
 
     // skip listeners - not pipe 
+
+    // skip .string:title - already used 
 
     // skip border_width - already used 
 
@@ -73,8 +74,6 @@ public class Xcls_Window
     // skip destroy - not pipe 
 
     // skip id - not pipe 
-
-    // skip .string:title - already used 
 
     // skip xtype - not pipe 
 
