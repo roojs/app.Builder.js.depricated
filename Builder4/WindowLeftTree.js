@@ -60,7 +60,7 @@ WindowLeftTree=new XObject({
                 button_press_event : ( ev) => {
                     //console.log("button press?");
                 
-                    if (!_this.model.file.editorSave()) {
+                    if (!_this.model.file.editor.save()) {
                     
                         // popup!! - click handled.. 
                         return true;
