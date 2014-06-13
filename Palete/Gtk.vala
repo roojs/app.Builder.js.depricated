@@ -389,7 +389,8 @@ namespace Palete {
 
 		public override void fillPack(JsRender.Node node,JsRender.Node parent)
 		{   
-			
+
+			string inherits = " " + string.joinv(" ", this.getInheritsFor (node.fqn()) + " ";
 			// parent.fqn() method ( node.fqn()
 			var methods = this.getPropertiesFor (parent.fqn());
 			
@@ -397,6 +398,14 @@ namespace Palete {
 			while (map.next()) {
 				var n = map.get_key();
 				var meth = map.get_value();
+				if (meth.paramset == null || meth.paramset.params.length() < 1) {
+					continue;
+				}
+				var fp = meth.paramset.params.nth_data(0);
+				if (!inherits.contains(" " + fp.type + " ")) {
+					continue;
+				}
+				
 				
 
 			}
