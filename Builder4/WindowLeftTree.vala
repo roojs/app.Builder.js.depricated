@@ -298,7 +298,7 @@ public class Xcls_WindowLeftTree
                         // see if we are dragging into ourself?
                         
                          
-                        if (selection_text  == tg.substring(0,selection_text.length)) {
+                        if (selection_text  == path.to_string().substring(0,selection_text.length)) {
                             ///print("subpath drag");
                             if (this.drag_in_motion) {
                                  Gdk.drag_status(ctx, 0 ,time);
