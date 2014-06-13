@@ -319,11 +319,11 @@ public class Xcls_WindowLeftTree
                         // it is set up when we start to drag..
                         
                         
-                        var tg = _this.model.findDropNodeByPath( path.to_string(), this.dropList, pos);
+                         targetData = _this.model.findDropNodeByPath( path.to_string(), this.dropList, pos);
                             
             
                         
-                        if (tg.length < 1) {
+                        if (targetData.length < 1) {
                             //print("Can not find drop node path");
                             if (this.drag_in_motion) {
                                 Gdk.drag_status(ctx, 0, time);
@@ -332,9 +332,9 @@ public class Xcls_WindowLeftTree
                             return;
                         }
                         
-                        this.view.highlight(tg, pos);
+                        this.view.highlight(targetData, pos);
                         //console.dump(tg);
-                        targetData = tg;    
+                           
                         
                         if (this.drag_in_motion) { 
                             Gdk.drag_status(ctx, action ,time);
