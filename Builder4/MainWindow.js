@@ -31,24 +31,7 @@ MainWindow=new XObject({
     default_width : 800,
     id : "Window",
     title : "Application Builder",
-    init : function() {
-         this.atoms = {
-               "STRING" : Gdk.atom_intern("STRING")
-    	};
-    	this.targetList = new Gtk.TargetList();
-    	this.targetList.add( this.atoms["STRING"], 0, 0);
-    	//imports.Builder.Provider.ProjectManager.ProjectManager.loadConfig();
-    Gtk.rc_parse_string(
-                "style \"gtkcombobox-style\" {\n" + 
-                "    GtkComboBox::appears-as-list = 1\n" +
-                "}\n"+
-                "class \"GtkComboBox\" style \"gtkcombobox-style\"\n");
-        XObject.prototype.init.call(this);
-        this.el.show_all();
-        
-       
-                  
-    },
+    init : this.el.show_all();,
     setTitle : function(str) {
         this.el.set_title(this.title + ' - ' + str);
     },
