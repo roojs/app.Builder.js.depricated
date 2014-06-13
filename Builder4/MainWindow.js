@@ -22,8 +22,8 @@ MainWindow=new XObject({
             //this.get('/Editor').el.show_all();
         
         },
-        delete_event : function (self, event) {
-        
+        delete_event : (  event) => {
+            return true;
         }
     },
     border_width : 0,

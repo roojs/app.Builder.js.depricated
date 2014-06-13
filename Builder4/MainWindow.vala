@@ -54,8 +54,8 @@ public class Xcls_Window
             //this.get('/Editor').el.show_all();
         
         } );
-        this.el.delete_event.connect( function (self, event) {
-        
+        this.el.delete_event.connect(   (  event) => {
+            return true;
         } );
     }
 

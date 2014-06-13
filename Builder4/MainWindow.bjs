@@ -9,7 +9,7 @@
             "destroy": "() => {\n   Gtk.main_quit();\n}",
             "listeners": {
                 "show": "function (self) {\n  print(\"WINDOW SHOWING - trying to hide\");\nimports.Builder.Provider.ProjectManager.ProjectManager.loadConfig();\n \tthis.get('/MidPropTree').hideWin();\n    this.get('/RightPalete').hide();\n    this.get('/BottomPane').el.hide();\n    //this.get('/Editor').el.show_all();\n\n}",
-                "delete_event": "function (self, event) {\n\n}"
+                "delete_event": "  (  event) => {\n    return true;\n}"
             },
             "border_width": 0,
             "default_height": 500,
