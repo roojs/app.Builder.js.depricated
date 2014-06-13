@@ -13,12 +13,12 @@ MainWindow=new XObject({
     xtype: Gtk.Window,
     destroy : "() => {\n   Gtk.main_quit();\n}",
     listeners : {
-        show : function (self) {
-          print("WINDOW SHOWING - trying to hide");
-        imports.Builder.Provider.ProjectManager.ProjectManager.loadConfig();
-         	this.get('/MidPropTree').hideWin();
-            this.get('/RightPalete').hide();
-            this.get('/BottomPane').el.hide();
+        show : ( ) => {
+        
+            //imports.Builder.Provider.ProjectManager.ProjectManager.loadConfig();
+            //this.get('/MidPropTree').hideWin();
+            //this.get('/RightPalete').hide();
+            //this.get('/BottomPane').el.hide();
             //this.get('/Editor').el.show_all();
         
         },
