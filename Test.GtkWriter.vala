@@ -49,7 +49,8 @@ void testBuilderFile(string name, string test)
 	print("invalid test?\n");
 }
 
-public static int main () {
+int main (string[] args) {
+    Gtk.init (ref args);
     new JsRender.Lang_Class();
 	GLib.Log.set_always_fatal(LogLevelFlags.LEVEL_ERROR | LogLevelFlags.LEVEL_CRITICAL); 
 
