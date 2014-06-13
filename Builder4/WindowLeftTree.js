@@ -874,7 +874,7 @@ WindowLeftTree=new XObject({
                     items : [
                         {
                             xtype: Gtk.CellRendererText,
-                            id : "txtrenderer",
+                            id : "renderer",
                             pack : "pack_start,true"
                         }
                     ]
