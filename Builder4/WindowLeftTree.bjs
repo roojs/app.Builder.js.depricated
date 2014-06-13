@@ -44,8 +44,8 @@
                     "|xns": "Gtk",
                     "items": [
                         {
-                            ".JsRender.JsRender:file": "null",
-                            ".string:activePath": "",
+                            ".JsRender.JsRender?:file": "null",
+                            ".string:activePath": "\"\"",
                             "currentTree": false,
                             "id": "model",
                             "n_columns": 3,

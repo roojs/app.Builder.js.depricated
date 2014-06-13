@@ -478,7 +478,7 @@ public class Xcls_WindowLeftTree
 
 
             // my vars
-        public JsRender.JsRender file;
+        public JsRender.JsRender? file;
         public string activePath;
 
             // ctor 
@@ -490,13 +490,14 @@ public class Xcls_WindowLeftTree
 
             // my vars
             this.file = null;
+            this.activePath = "";
 
             // set gobject values
         }
 
         // userdefined functions 
 
-        // skip .JsRender.JsRender:file - already used 
+        // skip .JsRender.JsRender?:file - already used 
 
         // skip .string:activePath - already used 
 
