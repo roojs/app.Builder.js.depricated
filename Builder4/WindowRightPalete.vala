@@ -223,6 +223,10 @@ public class Xcls_RightPalete
             // set gobject values
             this.el.angle = 270;
 
+            // init method 
+             this.el.add_events ( Gdk.EventMask.BUTTON_MOTION_MASK );
+             
+
             // listeners 
             this.el.enter_notify_event.connect(  ( event) => {
                 _this.show();
@@ -471,6 +475,11 @@ public class Xcls_RightPalete
             this.el.shadow_type = Gtk.ShadowType.IN;
             var child_0 = new Xcls_TreeView12(_this);
             this.el.add (  child_0.el  );
+
+            // init method 
+              this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
+               this.el.set_size_request(-1,200);
+             
         }
 
         // userdefined functions 
@@ -517,6 +526,36 @@ public class Xcls_RightPalete
             this.el.set_model (  child_0.el  );
             var child_1 = new Xcls_TreeViewColumn14(_this);
             this.el.append_column (  child_1.el  );
+
+            // init method 
+             {
+                this.el.set_size_request(150,-1);
+                                      //  set_reorderable: [1]
+                                              
+                var description = new Pango.FontDescription();
+                description.set_size(8000);
+                this.el.modify_font(description);
+                
+                var selection = this.el.get_selection();
+                selection.set_mode( Gtk.SelectionMode.SINGLE);
+               // this.selection.signal['changed'].connect(function() {
+                //    _view.listeners['cursor-changed'].apply(_view, [ _view, '']);
+                //});
+                // see: http://live.gnome.org/GnomeLove/DragNDropTutorial
+                 
+                Gtk.drag_source_set (
+                        this.el,            /* widget will be drag-able */
+                        Gdk.ModifierType.BUTTON1_MASK,       /* modifier that will start a drag */
+                        null,            /* lists of target to support */
+                        0,              /* size of list */
+                        Gdk.DragAction.COPY         /* what to do with data after dropped */
+                );
+                //Gtk.drag_source_set_target_list(this.el, LeftTree.targetList);
+               
+                Gtk.drag_source_set_target_list(this.el, Application.targetList);
+                Gtk.drag_source_add_text_targets(this.el); 
+             
+            }
 
             // listeners 
             this.el.drag_begin.connect(   ( ctx) => {
@@ -704,6 +743,10 @@ public class Xcls_RightPalete
             // set gobject values
             var child_0 = new Xcls_txtrender(_this);
             this.el.pack_start (  child_0.el , true );
+
+            // init method 
+             this.el.add_attribute(_this.txtrender , "markup", 0 );
+             
         }
 
         // userdefined functions 

@@ -1,5 +1,5 @@
 {
-    "id": "file-gtk-12",
+    "id": "file-gtk-13",
     "name": "WindowRightPalete",
     "parent": "",
     "title": false,
@@ -143,5 +143,5 @@
         }
     ],
     "permname": "",
-    "modOrder": "0"
+    "modOrder": ""
 }
