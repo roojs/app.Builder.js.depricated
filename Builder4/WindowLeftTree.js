@@ -305,7 +305,7 @@ WindowLeftTree=new XObject({
                 
                         //??this.model.load( false);
                         
-                        this.model.file.setActiveNode(null);
+                        _this.model.file.setActiveNode(null);
                         
                         return  ;
                     }
@@ -319,8 +319,8 @@ WindowLeftTree=new XObject({
                         
                         // var val = "";
                         GLib.Value value;
-                        this.model.el.get_value(iter, 2, out value);
-                        this.model.activePath = mod.get_path(iter).to_string();
+                        _this.model.el.get_value(iter, 2, out value);
+                        _this.model.activePath = mod.get_path(iter).to_string();
                         
                         var node = (JsRender.Node)value.dup_object();
                 
