@@ -1,5 +1,5 @@
 {
-    "id": "file-gtk-11",
+    "id": "file-gtk-12",
     "name": "WindowLeftTree",
     "parent": "",
     "title": false,
@@ -44,7 +44,7 @@
                     "|xns": "Gtk",
                     "items": [
                         {
-                            ".JsRender.JsRender:file": "",
+                            ".JsRender.JsRender:file": "null",
                             ".string:activePath": "",
                             "currentTree": false,
                             "id": "model",

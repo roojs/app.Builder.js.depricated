@@ -489,6 +489,7 @@ public class Xcls_WindowLeftTree
             _this.model = this;
 
             // my vars
+            this.file = null;
 
             // set gobject values
         }
