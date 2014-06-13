@@ -895,7 +895,7 @@ public class Xcls_WindowLeftTree
                 s.get_selected(out mod , out old_iter);
                 mod.get_path(old_iter);
                 
-                var node = this.pathToNode(mod.get_path(old_iter));
+                var node = this.pathToNode(mod.get_path(old_iter).to_string());
                 //console.dump(node);
             
             
