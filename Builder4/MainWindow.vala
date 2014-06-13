@@ -64,7 +64,7 @@ public class Xcls_Window
     // skip listeners - not pipe 
     public void addChildren() {
             var left_tree =new Xcls_WindowLeftTree();
-            _this.vbox.el.pack_start(left_tree.el);
+            _this.vbox.el.pack_start(left_tree.el,true, true,0);
         
         }
 
