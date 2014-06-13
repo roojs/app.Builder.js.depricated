@@ -98,7 +98,7 @@ WindowLeftTree=new XObject({
                         // set some properties of the tree for use by the dropped element.
                         GLib.Value value;
                         _this.model.el.get_value(iter, 2, out value);
-                        var data = (JsRender.Node)(value.value);
+                        var data = (JsRender.Node)(value.get_object());
                         var xname = data.fqn();
                         
                         this.dragData = xname;
