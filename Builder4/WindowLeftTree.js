@@ -305,7 +305,7 @@ WindowLeftTree=new XObject({
                 
                         //??this.model.load( false);
                         
-                        _this.model.file.setActiveNode(null);
+                        _this.model.file.changed(null,"tree");
                         
                         return  ;
                     }
