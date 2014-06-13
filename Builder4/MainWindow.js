@@ -25,6 +25,11 @@ MainWindow=new XObject({
             return false;
         }
     },
+    'void:addChildre' : () {
+        var left_tree =new Xcls_WindowLeftTree();
+        this.vbox.el.pack(left_tree.el);
+    
+    },
     border_width : 0,
     default_height : 500,
     default_width : 800,
