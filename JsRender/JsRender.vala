@@ -37,6 +37,14 @@ namespace JsRender {
 		public bool hasParent; 
 
 		public signal void changed (Node? node, string source); 
+
+		/**
+		 * UI componenets
+		 * 
+		 */
+		Editor editor;
+		
+		
 		
 		public JsRender(Project.Project project, string path) {
 		    
