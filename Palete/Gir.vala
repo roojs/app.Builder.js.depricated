@@ -311,7 +311,7 @@ namespace Palete {
 				case "gboolean":
 					return "true";
 				case "guint":
-					return 0;
+					return "0";
 				default:
 					return "?"+  type + "?";
 			}
