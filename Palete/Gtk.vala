@@ -370,7 +370,7 @@ namespace Palete {
         }
       */
 
-		public override void fillPack(JsRender.Node,JsRender.Node)
+		public override void fillPack(JsRender.Node node,JsRender.Node parent)
 		{   
 			
 			
