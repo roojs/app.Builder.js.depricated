@@ -32,7 +32,7 @@ MainWindow=new XObject({
     id : "Window",
     title : "Application Builder",
     init : this.el.show_all();,
-    setTitle : function(str) {
+    setTitle : (string str) {
         this.el.set_title(this.title + ' - ' + str);
     },
     type : Gtk.WindowType.TOPLEVEL,

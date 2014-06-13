@@ -18,7 +18,7 @@
             "title": "Application Builder",
             "xtype": "Window",
             "|init": " \n\t  \n    this.el.show_all();\n    \n    ",
-            "|setTitle": "function(str) {\n    this.el.set_title(this.title + ' - ' + str);\n}\n",
+            "|void:setTitle": " (string str) {\n    this.el.set_title(this.title + ' - ' + str);\n}\n",
             "|type": "Gtk.WindowType.TOPLEVEL",
             "|xns": "Gtk",
             "items": [
