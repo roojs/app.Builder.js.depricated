@@ -145,8 +145,9 @@ namespace Palete {
 				case "ctors":
 					return cls.ctors;
 				default:
-					var ret = new Gee.HashMap<string,GirObject>();
-					return ret;
+					throw new Error.INVALID_VALUE( "getPropertiesFor called with: " + type);
+					//var ret = new Gee.HashMap<string,GirObject>();
+					//return ret;
 					
 			}
 					
@@ -392,7 +393,7 @@ namespace Palete {
 
 			string inherits = " " + string.joinv(" ", this.getInheritsFor (node.fqn())) + " ";
 			// parent.fqn() method ( node.fqn()
-			var methods = this.getPropertiesFor (parent.fqn());
+			var methods = this.getPropertiesFor (parent.fqn(), "methods");
 			
 			var map = methods.map_iterator();
 			while (map.next()) {
