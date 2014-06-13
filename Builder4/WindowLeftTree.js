@@ -190,7 +190,7 @@ WindowLeftTree=new XObject({
                             //print("GETTING POS");
                             Gtk.TreePath path;
                             Gtk.TreeViewDropPosition pos;
-                            var isOver = this.view.el.get_dest_row_at_pos(this.drag_x,this.drag_y, out path, out pos);
+                            var isOver = _this.view.el.get_dest_row_at_pos(this.drag_x,this.drag_y, out path, out pos);
                             
                             //print("ISOVER? " + isOver);
                             if (!isOver) {
