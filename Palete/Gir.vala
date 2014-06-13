@@ -293,7 +293,7 @@ namespace Palete {
 				return ns + "." + type;
 			}
 			// look at includes..
-			var iter = add.includes.map_iterator();
+			var iter = this.includes.map_iterator();
 			while(iter.next()) {
 				var ret = fqtype(type, iter_get_key());
 				if (ret != type) {
