@@ -49,6 +49,58 @@ typedef struct _Xcls_WindowXcls_vboxClass Xcls_WindowXcls_vboxClass;
 #define _xcls_window_xcls_vbox_unref0(var) ((var == NULL) ? NULL : (var = (xcls_window_xcls_vbox_unref (var), NULL)))
 #define _g_free0(var) (var = (g_free (var), NULL))
 typedef struct _Xcls_WindowXcls_vboxPrivate Xcls_WindowXcls_vboxPrivate;
+
+#define TYPE_XCLS_WINDOWLEFTTREE (xcls_windowlefttree_get_type ())
+#define XCLS_WINDOWLEFTTREE(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), TYPE_XCLS_WINDOWLEFTTREE, Xcls_WindowLeftTree))
+#define XCLS_WINDOWLEFTTREE_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), TYPE_XCLS_WINDOWLEFTTREE, Xcls_WindowLeftTreeClass))
+#define IS_XCLS_WINDOWLEFTTREE(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), TYPE_XCLS_WINDOWLEFTTREE))
+#define IS_XCLS_WINDOWLEFTTREE_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), TYPE_XCLS_WINDOWLEFTTREE))
+#define XCLS_WINDOWLEFTTREE_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), TYPE_XCLS_WINDOWLEFTTREE, Xcls_WindowLeftTreeClass))
+
+typedef struct _Xcls_WindowLeftTree Xcls_WindowLeftTree;
+typedef struct _Xcls_WindowLeftTreeClass Xcls_WindowLeftTreeClass;
+typedef struct _Xcls_WindowLeftTreePrivate Xcls_WindowLeftTreePrivate;
+
+#define XCLS_WINDOWLEFTTREE_TYPE_XCLS_VIEW (xcls_windowlefttree_xcls_view_get_type ())
+#define XCLS_WINDOWLEFTTREE_XCLS_VIEW(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), XCLS_WINDOWLEFTTREE_TYPE_XCLS_VIEW, Xcls_WindowLeftTreeXcls_view))
+#define XCLS_WINDOWLEFTTREE_XCLS_VIEW_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), XCLS_WINDOWLEFTTREE_TYPE_XCLS_VIEW, Xcls_WindowLeftTreeXcls_viewClass))
+#define XCLS_WINDOWLEFTTREE_IS_XCLS_VIEW(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), XCLS_WINDOWLEFTTREE_TYPE_XCLS_VIEW))
+#define XCLS_WINDOWLEFTTREE_IS_XCLS_VIEW_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), XCLS_WINDOWLEFTTREE_TYPE_XCLS_VIEW))
+#define XCLS_WINDOWLEFTTREE_XCLS_VIEW_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), XCLS_WINDOWLEFTTREE_TYPE_XCLS_VIEW, Xcls_WindowLeftTreeXcls_viewClass))
+
+typedef struct _Xcls_WindowLeftTreeXcls_view Xcls_WindowLeftTreeXcls_view;
+typedef struct _Xcls_WindowLeftTreeXcls_viewClass Xcls_WindowLeftTreeXcls_viewClass;
+
+#define XCLS_WINDOWLEFTTREE_TYPE_XCLS_MODEL (xcls_windowlefttree_xcls_model_get_type ())
+#define XCLS_WINDOWLEFTTREE_XCLS_MODEL(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), XCLS_WINDOWLEFTTREE_TYPE_XCLS_MODEL, Xcls_WindowLeftTreeXcls_model))
+#define XCLS_WINDOWLEFTTREE_XCLS_MODEL_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), XCLS_WINDOWLEFTTREE_TYPE_XCLS_MODEL, Xcls_WindowLeftTreeXcls_modelClass))
+#define XCLS_WINDOWLEFTTREE_IS_XCLS_MODEL(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), XCLS_WINDOWLEFTTREE_TYPE_XCLS_MODEL))
+#define XCLS_WINDOWLEFTTREE_IS_XCLS_MODEL_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), XCLS_WINDOWLEFTTREE_TYPE_XCLS_MODEL))
+#define XCLS_WINDOWLEFTTREE_XCLS_MODEL_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), XCLS_WINDOWLEFTTREE_TYPE_XCLS_MODEL, Xcls_WindowLeftTreeXcls_modelClass))
+
+typedef struct _Xcls_WindowLeftTreeXcls_model Xcls_WindowLeftTreeXcls_model;
+typedef struct _Xcls_WindowLeftTreeXcls_modelClass Xcls_WindowLeftTreeXcls_modelClass;
+
+#define XCLS_WINDOWLEFTTREE_TYPE_XCLS_RENDERER (xcls_windowlefttree_xcls_renderer_get_type ())
+#define XCLS_WINDOWLEFTTREE_XCLS_RENDERER(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), XCLS_WINDOWLEFTTREE_TYPE_XCLS_RENDERER, Xcls_WindowLeftTreeXcls_renderer))
+#define XCLS_WINDOWLEFTTREE_XCLS_RENDERER_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), XCLS_WINDOWLEFTTREE_TYPE_XCLS_RENDERER, Xcls_WindowLeftTreeXcls_rendererClass))
+#define XCLS_WINDOWLEFTTREE_IS_XCLS_RENDERER(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), XCLS_WINDOWLEFTTREE_TYPE_XCLS_RENDERER))
+#define XCLS_WINDOWLEFTTREE_IS_XCLS_RENDERER_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), XCLS_WINDOWLEFTTREE_TYPE_XCLS_RENDERER))
+#define XCLS_WINDOWLEFTTREE_XCLS_RENDERER_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), XCLS_WINDOWLEFTTREE_TYPE_XCLS_RENDERER, Xcls_WindowLeftTreeXcls_rendererClass))
+
+typedef struct _Xcls_WindowLeftTreeXcls_renderer Xcls_WindowLeftTreeXcls_renderer;
+typedef struct _Xcls_WindowLeftTreeXcls_rendererClass Xcls_WindowLeftTreeXcls_rendererClass;
+
+#define XCLS_WINDOWLEFTTREE_TYPE_XCLS_LEFTTREEMENU (xcls_windowlefttree_xcls_lefttreemenu_get_type ())
+#define XCLS_WINDOWLEFTTREE_XCLS_LEFTTREEMENU(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), XCLS_WINDOWLEFTTREE_TYPE_XCLS_LEFTTREEMENU, Xcls_WindowLeftTreeXcls_LeftTreeMenu))
+#define XCLS_WINDOWLEFTTREE_XCLS_LEFTTREEMENU_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), XCLS_WINDOWLEFTTREE_TYPE_XCLS_LEFTTREEMENU, Xcls_WindowLeftTreeXcls_LeftTreeMenuClass))
+#define XCLS_WINDOWLEFTTREE_IS_XCLS_LEFTTREEMENU(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), XCLS_WINDOWLEFTTREE_TYPE_XCLS_LEFTTREEMENU))
+#define XCLS_WINDOWLEFTTREE_IS_XCLS_LEFTTREEMENU_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), XCLS_WINDOWLEFTTREE_TYPE_XCLS_LEFTTREEMENU))
+#define XCLS_WINDOWLEFTTREE_XCLS_LEFTTREEMENU_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), XCLS_WINDOWLEFTTREE_TYPE_XCLS_LEFTTREEMENU, Xcls_WindowLeftTreeXcls_LeftTreeMenuClass))
+
+typedef struct _Xcls_WindowLeftTreeXcls_LeftTreeMenu Xcls_WindowLeftTreeXcls_LeftTreeMenu;
+typedef struct _Xcls_WindowLeftTreeXcls_LeftTreeMenuClass Xcls_WindowLeftTreeXcls_LeftTreeMenuClass;
+#define _xcls_windowlefttree_unref0(var) ((var == NULL) ? NULL : (var = (xcls_windowlefttree_unref (var), NULL)))
 typedef struct _Xcls_WindowParamSpecXcls_vbox Xcls_WindowParamSpecXcls_vbox;
 typedef struct _ParamSpecXcls_Window ParamSpecXcls_Window;
 
@@ -80,6 +132,22 @@ struct _Xcls_WindowXcls_vbox {
 struct _Xcls_WindowXcls_vboxClass {
 	GTypeClass parent_class;
 	void (*finalize) (Xcls_WindowXcls_vbox *self);
+};
+
+struct _Xcls_WindowLeftTree {
+	GTypeInstance parent_instance;
+	volatile int ref_count;
+	Xcls_WindowLeftTreePrivate * priv;
+	GtkScrolledWindow* el;
+	Xcls_WindowLeftTreeXcls_view* view;
+	Xcls_WindowLeftTreeXcls_model* model;
+	Xcls_WindowLeftTreeXcls_renderer* renderer;
+	Xcls_WindowLeftTreeXcls_LeftTreeMenu* LeftTreeMenu;
+};
+
+struct _Xcls_WindowLeftTreeClass {
+	GTypeClass parent_class;
+	void (*finalize) (Xcls_WindowLeftTree *self);
 };
 
 struct _Xcls_WindowXcls_vboxPrivate {
@@ -126,6 +194,44 @@ static void __lambda27_ (Xcls_Window* self);
 static void ___lambda27__gtk_widget_show (GtkWidget* _sender, gpointer self);
 static gboolean __lambda28_ (Xcls_Window* self, GdkEventAny* event);
 static gboolean ___lambda28__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self);
+void xcls_window_addChildren (Xcls_Window* self);
+gpointer xcls_windowlefttree_ref (gpointer instance);
+void xcls_windowlefttree_unref (gpointer instance);
+GParamSpec* param_spec_xcls_windowlefttree (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags);
+void value_set_xcls_windowlefttree (GValue* value, gpointer v_object);
+void value_take_xcls_windowlefttree (GValue* value, gpointer v_object);
+gpointer value_get_xcls_windowlefttree (const GValue* value);
+GType xcls_windowlefttree_get_type (void) G_GNUC_CONST;
+Xcls_WindowLeftTree* xcls_windowlefttree_new (void);
+Xcls_WindowLeftTree* xcls_windowlefttree_construct (GType object_type);
+gpointer xcls_windowlefttree_xcls_view_ref (gpointer instance);
+void xcls_windowlefttree_xcls_view_unref (gpointer instance);
+GParamSpec* xcls_windowlefttree_param_spec_xcls_view (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags);
+void xcls_windowlefttree_value_set_xcls_view (GValue* value, gpointer v_object);
+void xcls_windowlefttree_value_take_xcls_view (GValue* value, gpointer v_object);
+gpointer xcls_windowlefttree_value_get_xcls_view (const GValue* value);
+GType xcls_windowlefttree_xcls_view_get_type (void) G_GNUC_CONST;
+gpointer xcls_windowlefttree_xcls_model_ref (gpointer instance);
+void xcls_windowlefttree_xcls_model_unref (gpointer instance);
+GParamSpec* xcls_windowlefttree_param_spec_xcls_model (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags);
+void xcls_windowlefttree_value_set_xcls_model (GValue* value, gpointer v_object);
+void xcls_windowlefttree_value_take_xcls_model (GValue* value, gpointer v_object);
+gpointer xcls_windowlefttree_value_get_xcls_model (const GValue* value);
+GType xcls_windowlefttree_xcls_model_get_type (void) G_GNUC_CONST;
+gpointer xcls_windowlefttree_xcls_renderer_ref (gpointer instance);
+void xcls_windowlefttree_xcls_renderer_unref (gpointer instance);
+GParamSpec* xcls_windowlefttree_param_spec_xcls_renderer (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags);
+void xcls_windowlefttree_value_set_xcls_renderer (GValue* value, gpointer v_object);
+void xcls_windowlefttree_value_take_xcls_renderer (GValue* value, gpointer v_object);
+gpointer xcls_windowlefttree_value_get_xcls_renderer (const GValue* value);
+GType xcls_windowlefttree_xcls_renderer_get_type (void) G_GNUC_CONST;
+gpointer xcls_windowlefttree_xcls_lefttreemenu_ref (gpointer instance);
+void xcls_windowlefttree_xcls_lefttreemenu_unref (gpointer instance);
+GParamSpec* xcls_windowlefttree_param_spec_xcls_lefttreemenu (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags);
+void xcls_windowlefttree_value_set_xcls_lefttreemenu (GValue* value, gpointer v_object);
+void xcls_windowlefttree_value_take_xcls_lefttreemenu (GValue* value, gpointer v_object);
+gpointer xcls_windowlefttree_value_get_xcls_lefttreemenu (const GValue* value);
+GType xcls_windowlefttree_xcls_lefttreemenu_get_type (void) G_GNUC_CONST;
 void xcls_window_setTitle (Xcls_Window* self, const gchar* str);
 #define XCLS_WINDOW_XCLS_VBOX_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), XCLS_WINDOW_TYPE_XCLS_VBOX, Xcls_WindowXcls_vboxPrivate))
 enum  {
@@ -138,7 +244,7 @@ static void xcls_window_finalize (Xcls_Window* obj);
 static gpointer _xcls_window_ref0 (gpointer self) {
 #line 34 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return self ? xcls_window_ref (self) : NULL;
-#line 142 "MainWindow.vala.c"
+#line 248 "MainWindow.vala.c"
 }
 
 
@@ -149,7 +255,7 @@ static void __lambda27_ (Xcls_Window* self) {
 static void ___lambda27__gtk_widget_show (GtkWidget* _sender, gpointer self) {
 #line 48 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	__lambda27_ ((Xcls_Window*) self);
-#line 153 "MainWindow.vala.c"
+#line 259 "MainWindow.vala.c"
 }
 
 
@@ -161,7 +267,7 @@ static gboolean __lambda28_ (Xcls_Window* self, GdkEventAny* event) {
 	result = FALSE;
 #line 58 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return result;
-#line 165 "MainWindow.vala.c"
+#line 271 "MainWindow.vala.c"
 }
 
 
@@ -170,7 +276,7 @@ static gboolean ___lambda28__gtk_widget_delete_event (GtkWidget* _sender, GdkEve
 	result = __lambda28_ ((Xcls_Window*) self, event);
 #line 57 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return result;
-#line 174 "MainWindow.vala.c"
+#line 280 "MainWindow.vala.c"
 }
 
 
@@ -254,14 +360,43 @@ Xcls_Window* xcls_window_construct (GType object_type) {
 	_xcls_window_xcls_vbox_unref0 (child_0);
 #line 31 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return self;
-#line 258 "MainWindow.vala.c"
+#line 364 "MainWindow.vala.c"
 }
 
 
 Xcls_Window* xcls_window_new (void) {
 #line 31 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return xcls_window_construct (TYPE_XCLS_WINDOW);
-#line 265 "MainWindow.vala.c"
+#line 371 "MainWindow.vala.c"
+}
+
+
+void xcls_window_addChildren (Xcls_Window* self) {
+	Xcls_WindowLeftTree* left_tree = NULL;
+	Xcls_WindowLeftTree* _tmp0_ = NULL;
+	Xcls_Window* _tmp1_ = NULL;
+	Xcls_WindowXcls_vbox* _tmp2_ = NULL;
+	GtkVBox* _tmp3_ = NULL;
+	GtkScrolledWindow* _tmp4_ = NULL;
+#line 65 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+	g_return_if_fail (self != NULL);
+#line 66 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+	_tmp0_ = xcls_windowlefttree_new ();
+#line 66 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+	left_tree = _tmp0_;
+#line 67 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+	_tmp1_ = self->priv->_this;
+#line 67 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+	_tmp2_ = _tmp1_->vbox;
+#line 67 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+	_tmp3_ = _tmp2_->el;
+#line 67 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+	_tmp4_ = left_tree->el;
+#line 67 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+	gtk_box_pack_start ((GtkBox*) _tmp3_, (GtkWidget*) _tmp4_, TRUE, TRUE, (guint) 0);
+#line 65 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+	_xcls_windowlefttree_unref0 (left_tree);
+#line 400 "MainWindow.vala.c"
 }
 
 
@@ -273,38 +408,38 @@ void xcls_window_setTitle (Xcls_Window* self, const gchar* str) {
 	const gchar* _tmp4_ = NULL;
 	gchar* _tmp5_ = NULL;
 	gchar* _tmp6_ = NULL;
-#line 83 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 88 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	g_return_if_fail (self != NULL);
-#line 83 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 88 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	g_return_if_fail (str != NULL);
-#line 84 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 89 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	_tmp0_ = self->el;
-#line 84 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 89 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	_tmp1_ = self->title;
-#line 84 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 89 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	_tmp2_ = g_strconcat (_tmp1_, " - ", NULL);
-#line 84 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 89 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	_tmp3_ = _tmp2_;
-#line 84 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 89 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	_tmp4_ = str;
-#line 84 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 89 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	_tmp5_ = g_strconcat (_tmp3_, _tmp4_, NULL);
-#line 84 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 89 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	_tmp6_ = _tmp5_;
-#line 84 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 89 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	gtk_window_set_title (_tmp0_, _tmp6_);
-#line 84 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 89 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	_g_free0 (_tmp6_);
-#line 84 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 89 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	_g_free0 (_tmp3_);
-#line 301 "MainWindow.vala.c"
+#line 436 "MainWindow.vala.c"
 }
 
 
 static gpointer _xcls_window_xcls_vbox_ref0 (gpointer self) {
-#line 109 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 114 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return self ? xcls_window_xcls_vbox_ref (self) : NULL;
-#line 308 "MainWindow.vala.c"
+#line 443 "MainWindow.vala.c"
 }
 
 
@@ -315,256 +450,256 @@ Xcls_WindowXcls_vbox* xcls_window_xcls_vbox_construct (GType object_type, Xcls_W
 	Xcls_Window* _tmp2_ = NULL;
 	Xcls_Window* _tmp3_ = NULL;
 	Xcls_WindowXcls_vbox* _tmp4_ = NULL;
-#line 105 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 110 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 105 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 110 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	self = (Xcls_WindowXcls_vbox*) g_type_create_instance (object_type);
-#line 107 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 112 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	_tmp0_ = (GtkVBox*) gtk_vbox_new (TRUE, 0);
-#line 107 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 112 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	g_object_ref_sink (_tmp0_);
-#line 107 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 112 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	_g_object_unref0 (self->el);
-#line 107 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 112 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	self->el = _tmp0_;
-#line 108 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 113 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	_tmp1_ = _owner;
-#line 108 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 113 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	_tmp2_ = _xcls_window_ref0 (_tmp1_);
-#line 108 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 113 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	_xcls_window_unref0 (self->priv->_this);
-#line 108 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 113 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	self->priv->_this = _tmp2_;
-#line 109 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 114 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	_tmp3_ = self->priv->_this;
-#line 109 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 114 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	_tmp4_ = _xcls_window_xcls_vbox_ref0 (self);
-#line 109 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 114 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	_xcls_window_xcls_vbox_unref0 (_tmp3_->vbox);
-#line 109 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 114 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	_tmp3_->vbox = _tmp4_;
-#line 105 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 110 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return self;
-#line 349 "MainWindow.vala.c"
+#line 484 "MainWindow.vala.c"
 }
 
 
 Xcls_WindowXcls_vbox* xcls_window_xcls_vbox_new (Xcls_Window* _owner) {
-#line 105 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 110 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return xcls_window_xcls_vbox_construct (XCLS_WINDOW_TYPE_XCLS_VBOX, _owner);
-#line 356 "MainWindow.vala.c"
+#line 491 "MainWindow.vala.c"
 }
 
 
 static void xcls_window_value_xcls_vbox_init (GValue* value) {
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	value->data[0].v_pointer = NULL;
-#line 363 "MainWindow.vala.c"
+#line 498 "MainWindow.vala.c"
 }
 
 
 static void xcls_window_value_xcls_vbox_free_value (GValue* value) {
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	if (value->data[0].v_pointer) {
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		xcls_window_xcls_vbox_unref (value->data[0].v_pointer);
-#line 372 "MainWindow.vala.c"
+#line 507 "MainWindow.vala.c"
 	}
 }
 
 
 static void xcls_window_value_xcls_vbox_copy_value (const GValue* src_value, GValue* dest_value) {
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	if (src_value->data[0].v_pointer) {
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		dest_value->data[0].v_pointer = xcls_window_xcls_vbox_ref (src_value->data[0].v_pointer);
-#line 382 "MainWindow.vala.c"
+#line 517 "MainWindow.vala.c"
 	} else {
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		dest_value->data[0].v_pointer = NULL;
-#line 386 "MainWindow.vala.c"
+#line 521 "MainWindow.vala.c"
 	}
 }
 
 
 static gpointer xcls_window_value_xcls_vbox_peek_pointer (const GValue* value) {
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return value->data[0].v_pointer;
-#line 394 "MainWindow.vala.c"
+#line 529 "MainWindow.vala.c"
 }
 
 
 static gchar* xcls_window_value_xcls_vbox_collect_value (GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	if (collect_values[0].v_pointer) {
-#line 401 "MainWindow.vala.c"
+#line 536 "MainWindow.vala.c"
 		Xcls_WindowXcls_vbox* object;
 		object = collect_values[0].v_pointer;
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		if (object->parent_instance.g_class == NULL) {
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
-#line 408 "MainWindow.vala.c"
+#line 543 "MainWindow.vala.c"
 		} else if (!g_value_type_compatible (G_TYPE_FROM_INSTANCE (object), G_VALUE_TYPE (value))) {
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 			return g_strconcat ("invalid object type `", g_type_name (G_TYPE_FROM_INSTANCE (object)), "' for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
-#line 412 "MainWindow.vala.c"
+#line 547 "MainWindow.vala.c"
 		}
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		value->data[0].v_pointer = xcls_window_xcls_vbox_ref (object);
-#line 416 "MainWindow.vala.c"
+#line 551 "MainWindow.vala.c"
 	} else {
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		value->data[0].v_pointer = NULL;
-#line 420 "MainWindow.vala.c"
+#line 555 "MainWindow.vala.c"
 	}
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return NULL;
-#line 424 "MainWindow.vala.c"
+#line 559 "MainWindow.vala.c"
 }
 
 
 static gchar* xcls_window_value_xcls_vbox_lcopy_value (const GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
 	Xcls_WindowXcls_vbox** object_p;
 	object_p = collect_values[0].v_pointer;
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	if (!object_p) {
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
-#line 435 "MainWindow.vala.c"
+#line 570 "MainWindow.vala.c"
 	}
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	if (!value->data[0].v_pointer) {
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		*object_p = NULL;
-#line 441 "MainWindow.vala.c"
+#line 576 "MainWindow.vala.c"
 	} else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) {
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		*object_p = value->data[0].v_pointer;
-#line 445 "MainWindow.vala.c"
+#line 580 "MainWindow.vala.c"
 	} else {
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		*object_p = xcls_window_xcls_vbox_ref (value->data[0].v_pointer);
-#line 449 "MainWindow.vala.c"
+#line 584 "MainWindow.vala.c"
 	}
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return NULL;
-#line 453 "MainWindow.vala.c"
+#line 588 "MainWindow.vala.c"
 }
 
 
 GParamSpec* xcls_window_param_spec_xcls_vbox (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags) {
 	Xcls_WindowParamSpecXcls_vbox* spec;
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	g_return_val_if_fail (g_type_is_a (object_type, XCLS_WINDOW_TYPE_XCLS_VBOX), NULL);
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	G_PARAM_SPEC (spec)->value_type = object_type;
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return G_PARAM_SPEC (spec);
-#line 467 "MainWindow.vala.c"
+#line 602 "MainWindow.vala.c"
 }
 
 
 gpointer xcls_window_value_get_xcls_vbox (const GValue* value) {
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_WINDOW_TYPE_XCLS_VBOX), NULL);
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return value->data[0].v_pointer;
-#line 476 "MainWindow.vala.c"
+#line 611 "MainWindow.vala.c"
 }
 
 
 void xcls_window_value_set_xcls_vbox (GValue* value, gpointer v_object) {
 	Xcls_WindowXcls_vbox* old;
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_WINDOW_TYPE_XCLS_VBOX));
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	old = value->data[0].v_pointer;
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	if (v_object) {
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_WINDOW_TYPE_XCLS_VBOX));
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		value->data[0].v_pointer = v_object;
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		xcls_window_xcls_vbox_ref (value->data[0].v_pointer);
-#line 496 "MainWindow.vala.c"
+#line 631 "MainWindow.vala.c"
 	} else {
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		value->data[0].v_pointer = NULL;
-#line 500 "MainWindow.vala.c"
+#line 635 "MainWindow.vala.c"
 	}
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	if (old) {
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		xcls_window_xcls_vbox_unref (old);
-#line 506 "MainWindow.vala.c"
+#line 641 "MainWindow.vala.c"
 	}
 }
 
 
 void xcls_window_value_take_xcls_vbox (GValue* value, gpointer v_object) {
 	Xcls_WindowXcls_vbox* old;
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_WINDOW_TYPE_XCLS_VBOX));
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	old = value->data[0].v_pointer;
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	if (v_object) {
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_WINDOW_TYPE_XCLS_VBOX));
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		value->data[0].v_pointer = v_object;
-#line 525 "MainWindow.vala.c"
+#line 660 "MainWindow.vala.c"
 	} else {
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		value->data[0].v_pointer = NULL;
-#line 529 "MainWindow.vala.c"
+#line 664 "MainWindow.vala.c"
 	}
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	if (old) {
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		xcls_window_xcls_vbox_unref (old);
-#line 535 "MainWindow.vala.c"
+#line 670 "MainWindow.vala.c"
 	}
 }
 
 
 static void xcls_window_xcls_vbox_class_init (Xcls_WindowXcls_vboxClass * klass) {
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	xcls_window_xcls_vbox_parent_class = g_type_class_peek_parent (klass);
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	XCLS_WINDOW_XCLS_VBOX_CLASS (klass)->finalize = xcls_window_xcls_vbox_finalize;
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_WindowXcls_vboxPrivate));
-#line 547 "MainWindow.vala.c"
+#line 682 "MainWindow.vala.c"
 }
 
 
 static void xcls_window_xcls_vbox_instance_init (Xcls_WindowXcls_vbox * self) {
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	self->priv = XCLS_WINDOW_XCLS_VBOX_GET_PRIVATE (self);
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	self->ref_count = 1;
-#line 556 "MainWindow.vala.c"
+#line 691 "MainWindow.vala.c"
 }
 
 
 static void xcls_window_xcls_vbox_finalize (Xcls_WindowXcls_vbox* obj) {
 	Xcls_WindowXcls_vbox * self;
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_WINDOW_TYPE_XCLS_VBOX, Xcls_WindowXcls_vbox);
-#line 98 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 103 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	_g_object_unref0 (self->el);
-#line 99 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 104 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	_xcls_window_unref0 (self->priv->_this);
-#line 568 "MainWindow.vala.c"
+#line 703 "MainWindow.vala.c"
 }
 
 
@@ -585,24 +720,24 @@ GType xcls_window_xcls_vbox_get_type (void) {
 gpointer xcls_window_xcls_vbox_ref (gpointer instance) {
 	Xcls_WindowXcls_vbox* self;
 	self = instance;
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	g_atomic_int_inc (&self->ref_count);
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return instance;
-#line 593 "MainWindow.vala.c"
+#line 728 "MainWindow.vala.c"
 }
 
 
 void xcls_window_xcls_vbox_unref (gpointer instance) {
 	Xcls_WindowXcls_vbox* self;
 	self = instance;
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		XCLS_WINDOW_XCLS_VBOX_GET_CLASS (self)->finalize (self);
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		g_type_free_instance ((GTypeInstance *) self);
-#line 606 "MainWindow.vala.c"
+#line 741 "MainWindow.vala.c"
 	}
 }
 
@@ -610,7 +745,7 @@ void xcls_window_xcls_vbox_unref (gpointer instance) {
 static void value_xcls_window_init (GValue* value) {
 #line 20 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	value->data[0].v_pointer = NULL;
-#line 614 "MainWindow.vala.c"
+#line 749 "MainWindow.vala.c"
 }
 
 
@@ -619,7 +754,7 @@ static void value_xcls_window_free_value (GValue* value) {
 	if (value->data[0].v_pointer) {
 #line 20 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		xcls_window_unref (value->data[0].v_pointer);
-#line 623 "MainWindow.vala.c"
+#line 758 "MainWindow.vala.c"
 	}
 }
 
@@ -629,11 +764,11 @@ static void value_xcls_window_copy_value (const GValue* src_value, GValue* dest_
 	if (src_value->data[0].v_pointer) {
 #line 20 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		dest_value->data[0].v_pointer = xcls_window_ref (src_value->data[0].v_pointer);
-#line 633 "MainWindow.vala.c"
+#line 768 "MainWindow.vala.c"
 	} else {
 #line 20 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		dest_value->data[0].v_pointer = NULL;
-#line 637 "MainWindow.vala.c"
+#line 772 "MainWindow.vala.c"
 	}
 }
 
@@ -641,37 +776,37 @@ static void value_xcls_window_copy_value (const GValue* src_value, GValue* dest_
 static gpointer value_xcls_window_peek_pointer (const GValue* value) {
 #line 20 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return value->data[0].v_pointer;
-#line 645 "MainWindow.vala.c"
+#line 780 "MainWindow.vala.c"
 }
 
 
 static gchar* value_xcls_window_collect_value (GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
 #line 20 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	if (collect_values[0].v_pointer) {
-#line 652 "MainWindow.vala.c"
+#line 787 "MainWindow.vala.c"
 		Xcls_Window* object;
 		object = collect_values[0].v_pointer;
 #line 20 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		if (object->parent_instance.g_class == NULL) {
 #line 20 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
-#line 659 "MainWindow.vala.c"
+#line 794 "MainWindow.vala.c"
 		} else if (!g_value_type_compatible (G_TYPE_FROM_INSTANCE (object), G_VALUE_TYPE (value))) {
 #line 20 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 			return g_strconcat ("invalid object type `", g_type_name (G_TYPE_FROM_INSTANCE (object)), "' for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
-#line 663 "MainWindow.vala.c"
+#line 798 "MainWindow.vala.c"
 		}
 #line 20 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		value->data[0].v_pointer = xcls_window_ref (object);
-#line 667 "MainWindow.vala.c"
+#line 802 "MainWindow.vala.c"
 	} else {
 #line 20 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		value->data[0].v_pointer = NULL;
-#line 671 "MainWindow.vala.c"
+#line 806 "MainWindow.vala.c"
 	}
 #line 20 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return NULL;
-#line 675 "MainWindow.vala.c"
+#line 810 "MainWindow.vala.c"
 }
 
 
@@ -682,25 +817,25 @@ static gchar* value_xcls_window_lcopy_value (const GValue* value, guint n_collec
 	if (!object_p) {
 #line 20 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
-#line 686 "MainWindow.vala.c"
+#line 821 "MainWindow.vala.c"
 	}
 #line 20 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	if (!value->data[0].v_pointer) {
 #line 20 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		*object_p = NULL;
-#line 692 "MainWindow.vala.c"
+#line 827 "MainWindow.vala.c"
 	} else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) {
 #line 20 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		*object_p = value->data[0].v_pointer;
-#line 696 "MainWindow.vala.c"
+#line 831 "MainWindow.vala.c"
 	} else {
 #line 20 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		*object_p = xcls_window_ref (value->data[0].v_pointer);
-#line 700 "MainWindow.vala.c"
+#line 835 "MainWindow.vala.c"
 	}
 #line 20 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return NULL;
-#line 704 "MainWindow.vala.c"
+#line 839 "MainWindow.vala.c"
 }
 
 
@@ -714,7 +849,7 @@ GParamSpec* param_spec_xcls_window (const gchar* name, const gchar* nick, const 
 	G_PARAM_SPEC (spec)->value_type = object_type;
 #line 20 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return G_PARAM_SPEC (spec);
-#line 718 "MainWindow.vala.c"
+#line 853 "MainWindow.vala.c"
 }
 
 
@@ -723,7 +858,7 @@ gpointer value_get_xcls_window (const GValue* value) {
 	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, TYPE_XCLS_WINDOW), NULL);
 #line 20 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return value->data[0].v_pointer;
-#line 727 "MainWindow.vala.c"
+#line 862 "MainWindow.vala.c"
 }
 
 
@@ -743,17 +878,17 @@ void value_set_xcls_window (GValue* value, gpointer v_object) {
 		value->data[0].v_pointer = v_object;
 #line 20 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		xcls_window_ref (value->data[0].v_pointer);
-#line 747 "MainWindow.vala.c"
+#line 882 "MainWindow.vala.c"
 	} else {
 #line 20 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		value->data[0].v_pointer = NULL;
-#line 751 "MainWindow.vala.c"
+#line 886 "MainWindow.vala.c"
 	}
 #line 20 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	if (old) {
 #line 20 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		xcls_window_unref (old);
-#line 757 "MainWindow.vala.c"
+#line 892 "MainWindow.vala.c"
 	}
 }
 
@@ -772,17 +907,17 @@ void value_take_xcls_window (GValue* value, gpointer v_object) {
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 #line 20 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		value->data[0].v_pointer = v_object;
-#line 776 "MainWindow.vala.c"
+#line 911 "MainWindow.vala.c"
 	} else {
 #line 20 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		value->data[0].v_pointer = NULL;
-#line 780 "MainWindow.vala.c"
+#line 915 "MainWindow.vala.c"
 	}
 #line 20 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	if (old) {
 #line 20 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		xcls_window_unref (old);
-#line 786 "MainWindow.vala.c"
+#line 921 "MainWindow.vala.c"
 	}
 }
 
@@ -794,7 +929,7 @@ static void xcls_window_class_init (Xcls_WindowClass * klass) {
 	XCLS_WINDOW_CLASS (klass)->finalize = xcls_window_finalize;
 #line 20 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_WindowPrivate));
-#line 798 "MainWindow.vala.c"
+#line 933 "MainWindow.vala.c"
 }
 
 
@@ -803,7 +938,7 @@ static void xcls_window_instance_init (Xcls_Window * self) {
 	self->priv = XCLS_WINDOW_GET_PRIVATE (self);
 #line 20 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	self->ref_count = 1;
-#line 807 "MainWindow.vala.c"
+#line 942 "MainWindow.vala.c"
 }
 
 
@@ -819,7 +954,7 @@ static void xcls_window_finalize (Xcls_Window* obj) {
 	_xcls_window_xcls_vbox_unref0 (self->vbox);
 #line 28 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	_g_free0 (self->title);
-#line 823 "MainWindow.vala.c"
+#line 958 "MainWindow.vala.c"
 }
 
 
@@ -844,7 +979,7 @@ gpointer xcls_window_ref (gpointer instance) {
 	g_atomic_int_inc (&self->ref_count);
 #line 20 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return instance;
-#line 848 "MainWindow.vala.c"
+#line 983 "MainWindow.vala.c"
 }
 
 
@@ -857,7 +992,7 @@ void xcls_window_unref (gpointer instance) {
 		XCLS_WINDOW_GET_CLASS (self)->finalize (self);
 #line 20 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		g_type_free_instance ((GTypeInstance *) self);
-#line 861 "MainWindow.vala.c"
+#line 996 "MainWindow.vala.c"
 	}
 }
 

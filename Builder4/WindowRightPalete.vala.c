@@ -645,8 +645,8 @@ gpointer xcls_rightpalete_value_get_xcls_image4 (const GValue* value);
 GType xcls_rightpalete_xcls_image4_get_type (void) G_GNUC_CONST;
 Xcls_RightPaleteXcls_Image4* xcls_rightpalete_xcls_image4_new (Xcls_RightPalete* _owner);
 Xcls_RightPaleteXcls_Image4* xcls_rightpalete_xcls_image4_construct (GType object_type, Xcls_RightPalete* _owner);
-static void __lambda29_ (Xcls_RightPaleteXcls_Button3* self);
-static void ___lambda29__gtk_button_clicked (GtkButton* _sender, gpointer self);
+static void __lambda38_ (Xcls_RightPaleteXcls_Button3* self);
+static void ___lambda38__gtk_button_clicked (GtkButton* _sender, gpointer self);
 static void xcls_rightpalete_xcls_button3_finalize (Xcls_RightPaleteXcls_Button3* obj);
 #define XCLS_RIGHTPALETE_XCLS_IMAGE4_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), XCLS_RIGHTPALETE_TYPE_XCLS_IMAGE4, Xcls_RightPaleteXcls_Image4Private))
 enum  {
@@ -657,8 +657,8 @@ static void xcls_rightpalete_xcls_image4_finalize (Xcls_RightPaleteXcls_Image4* 
 enum  {
 	XCLS_RIGHTPALETE_XCLS_LABEL5_DUMMY_PROPERTY
 };
-static gboolean __lambda35_ (Xcls_RightPaleteXcls_Label5* self, GdkEventCrossing* event);
-static gboolean ___lambda35__gtk_widget_enter_notify_event (GtkWidget* _sender, GdkEventCrossing* event, gpointer self);
+static gboolean __lambda44_ (Xcls_RightPaleteXcls_Label5* self, GdkEventCrossing* event);
+static gboolean ___lambda44__gtk_widget_enter_notify_event (GtkWidget* _sender, GdkEventCrossing* event, gpointer self);
 static void xcls_rightpalete_xcls_label5_finalize (Xcls_RightPaleteXcls_Label5* obj);
 #define XCLS_RIGHTPALETE_XCLS_VIEWBOX_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), XCLS_RIGHTPALETE_TYPE_XCLS_VIEWBOX, Xcls_RightPaleteXcls_viewboxPrivate))
 enum  {
@@ -724,8 +724,8 @@ gpointer xcls_rightpalete_value_get_xcls_image10 (const GValue* value);
 GType xcls_rightpalete_xcls_image10_get_type (void) G_GNUC_CONST;
 Xcls_RightPaleteXcls_Image10* xcls_rightpalete_xcls_image10_new (Xcls_RightPalete* _owner);
 Xcls_RightPaleteXcls_Image10* xcls_rightpalete_xcls_image10_construct (GType object_type, Xcls_RightPalete* _owner);
-static void __lambda30_ (Xcls_RightPaleteXcls_Button9* self);
-static void ___lambda30__gtk_button_clicked (GtkButton* _sender, gpointer self);
+static void __lambda39_ (Xcls_RightPaleteXcls_Button9* self);
+static void ___lambda39__gtk_button_clicked (GtkButton* _sender, gpointer self);
 static void xcls_rightpalete_xcls_button9_finalize (Xcls_RightPaleteXcls_Button9* obj);
 #define XCLS_RIGHTPALETE_XCLS_IMAGE10_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), XCLS_RIGHTPALETE_TYPE_XCLS_IMAGE10, Xcls_RightPaleteXcls_Image10Private))
 enum  {
@@ -761,14 +761,14 @@ gpointer xcls_rightpalete_value_get_xcls_treeviewcolumn14 (const GValue* value);
 GType xcls_rightpalete_xcls_treeviewcolumn14_get_type (void) G_GNUC_CONST;
 Xcls_RightPaleteXcls_TreeViewColumn14* xcls_rightpalete_xcls_treeviewcolumn14_new (Xcls_RightPalete* _owner);
 Xcls_RightPaleteXcls_TreeViewColumn14* xcls_rightpalete_xcls_treeviewcolumn14_construct (GType object_type, Xcls_RightPalete* _owner);
-static void __lambda31_ (Xcls_RightPaleteXcls_TreeView12* self, GdkDragContext* ctx);
-static void ___lambda31__gtk_widget_drag_begin (GtkWidget* _sender, GdkDragContext* context, gpointer self);
-static void __lambda32_ (Xcls_RightPaleteXcls_TreeView12* self, GdkDragContext* drag_context, GtkSelectionData* selection_data, guint info, guint time);
-static void ___lambda32__gtk_widget_drag_data_get (GtkWidget* _sender, GdkDragContext* context, GtkSelectionData* selection_data, guint info, guint time_, gpointer self);
-static void __lambda33_ (Xcls_RightPaleteXcls_TreeView12* self, GdkDragContext* drag_context);
-static void ___lambda33__gtk_widget_drag_end (GtkWidget* _sender, GdkDragContext* context, gpointer self);
-static gboolean __lambda34_ (Xcls_RightPaleteXcls_TreeView12* self, GdkEventButton* event);
-static gboolean ___lambda34__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self);
+static void __lambda40_ (Xcls_RightPaleteXcls_TreeView12* self, GdkDragContext* ctx);
+static void ___lambda40__gtk_widget_drag_begin (GtkWidget* _sender, GdkDragContext* context, gpointer self);
+static void __lambda41_ (Xcls_RightPaleteXcls_TreeView12* self, GdkDragContext* drag_context, GtkSelectionData* selection_data, guint info, guint time);
+static void ___lambda41__gtk_widget_drag_data_get (GtkWidget* _sender, GdkDragContext* context, GtkSelectionData* selection_data, guint info, guint time_, gpointer self);
+static void __lambda42_ (Xcls_RightPaleteXcls_TreeView12* self, GdkDragContext* drag_context);
+static void ___lambda42__gtk_widget_drag_end (GtkWidget* _sender, GdkDragContext* context, gpointer self);
+static gboolean __lambda43_ (Xcls_RightPaleteXcls_TreeView12* self, GdkEventButton* event);
+static gboolean ___lambda43__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self);
 static void xcls_rightpalete_xcls_treeview12_finalize (Xcls_RightPaleteXcls_TreeView12* obj);
 #define XCLS_RIGHTPALETE_XCLS_MODEL_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), XCLS_RIGHTPALETE_TYPE_XCLS_MODEL, Xcls_RightPaleteXcls_modelPrivate))
 enum  {
@@ -1279,7 +1279,7 @@ void xcls_rightpalete_xcls_buttonbar_unref (gpointer instance) {
 }
 
 
-static void __lambda29_ (Xcls_RightPaleteXcls_Button3* self) {
+static void __lambda38_ (Xcls_RightPaleteXcls_Button3* self) {
 	Xcls_RightPalete* _tmp0_ = NULL;
 #line 146 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRightPalete.vala"
 	_tmp0_ = self->priv->_this;
@@ -1289,9 +1289,9 @@ static void __lambda29_ (Xcls_RightPaleteXcls_Button3* self) {
 }
 
 
-static void ___lambda29__gtk_button_clicked (GtkButton* _sender, gpointer self) {
+static void ___lambda38__gtk_button_clicked (GtkButton* _sender, gpointer self) {
 #line 145 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRightPalete.vala"
-	__lambda29_ ((Xcls_RightPaleteXcls_Button3*) self);
+	__lambda38_ ((Xcls_RightPaleteXcls_Button3*) self);
 #line 1296 "WindowRightPalete.vala.c"
 }
 
@@ -1342,7 +1342,7 @@ Xcls_RightPaleteXcls_Button3* xcls_rightpalete_xcls_button3_construct (GType obj
 #line 145 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRightPalete.vala"
 	_tmp7_ = self->el;
 #line 145 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRightPalete.vala"
-	g_signal_connect (_tmp7_, "clicked", (GCallback) ___lambda29__gtk_button_clicked, self);
+	g_signal_connect (_tmp7_, "clicked", (GCallback) ___lambda38__gtk_button_clicked, self);
 #line 133 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRightPalete.vala"
 	_xcls_rightpalete_xcls_image4_unref0 (child_0);
 #line 133 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRightPalete.vala"
@@ -1908,7 +1908,7 @@ void xcls_rightpalete_xcls_image4_unref (gpointer instance) {
 }
 
 
-static gboolean __lambda35_ (Xcls_RightPaleteXcls_Label5* self, GdkEventCrossing* event) {
+static gboolean __lambda44_ (Xcls_RightPaleteXcls_Label5* self, GdkEventCrossing* event) {
 	gboolean result = FALSE;
 	Xcls_RightPalete* _tmp0_ = NULL;
 #line 227 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRightPalete.vala"
@@ -1925,9 +1925,9 @@ static gboolean __lambda35_ (Xcls_RightPaleteXcls_Label5* self, GdkEventCrossing
 }
 
 
-static gboolean ___lambda35__gtk_widget_enter_notify_event (GtkWidget* _sender, GdkEventCrossing* event, gpointer self) {
+static gboolean ___lambda44__gtk_widget_enter_notify_event (GtkWidget* _sender, GdkEventCrossing* event, gpointer self) {
 	gboolean result;
-	result = __lambda35_ ((Xcls_RightPaleteXcls_Label5*) self, event);
+	result = __lambda44_ ((Xcls_RightPaleteXcls_Label5*) self, event);
 #line 227 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRightPalete.vala"
 	return result;
 #line 1934 "WindowRightPalete.vala.c"
@@ -1968,7 +1968,7 @@ Xcls_RightPaleteXcls_Label5* xcls_rightpalete_xcls_label5_construct (GType objec
 #line 227 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRightPalete.vala"
 	_tmp4_ = self->el;
 #line 227 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRightPalete.vala"
-	g_signal_connect ((GtkWidget*) _tmp4_, "enter-notify-event", (GCallback) ___lambda35__gtk_widget_enter_notify_event, self);
+	g_signal_connect ((GtkWidget*) _tmp4_, "enter-notify-event", (GCallback) ___lambda44__gtk_widget_enter_notify_event, self);
 #line 216 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRightPalete.vala"
 	return self;
 #line 1975 "WindowRightPalete.vala.c"
@@ -3193,7 +3193,7 @@ void xcls_rightpalete_xcls_label8_unref (gpointer instance) {
 }
 
 
-static void __lambda30_ (Xcls_RightPaleteXcls_Button9* self) {
+static void __lambda39_ (Xcls_RightPaleteXcls_Button9* self) {
 	Xcls_RightPalete* _tmp0_ = NULL;
 #line 393 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRightPalete.vala"
 	_tmp0_ = self->priv->_this;
@@ -3203,9 +3203,9 @@ static void __lambda30_ (Xcls_RightPaleteXcls_Button9* self) {
 }
 
 
-static void ___lambda30__gtk_button_clicked (GtkButton* _sender, gpointer self) {
+static void ___lambda39__gtk_button_clicked (GtkButton* _sender, gpointer self) {
 #line 392 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRightPalete.vala"
-	__lambda30_ ((Xcls_RightPaleteXcls_Button9*) self);
+	__lambda39_ ((Xcls_RightPaleteXcls_Button9*) self);
 #line 3210 "WindowRightPalete.vala.c"
 }
 
@@ -3256,7 +3256,7 @@ Xcls_RightPaleteXcls_Button9* xcls_rightpalete_xcls_button9_construct (GType obj
 #line 392 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRightPalete.vala"
 	_tmp7_ = self->el;
 #line 392 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRightPalete.vala"
-	g_signal_connect (_tmp7_, "clicked", (GCallback) ___lambda30__gtk_button_clicked, self);
+	g_signal_connect (_tmp7_, "clicked", (GCallback) ___lambda39__gtk_button_clicked, self);
 #line 380 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRightPalete.vala"
 	_xcls_rightpalete_xcls_image10_unref0 (child_0);
 #line 380 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRightPalete.vala"
@@ -4149,7 +4149,7 @@ static gpointer _cairo_surface_reference0 (gpointer self) {
 }
 
 
-static void __lambda31_ (Xcls_RightPaleteXcls_TreeView12* self, GdkDragContext* ctx) {
+static void __lambda40_ (Xcls_RightPaleteXcls_TreeView12* self, GdkDragContext* ctx) {
 	GtkTreeIter iter = {0};
 	GtkTreeSelection* s = NULL;
 	GtkTreeView* _tmp0_ = NULL;
@@ -4285,14 +4285,14 @@ static void __lambda31_ (Xcls_RightPaleteXcls_TreeView12* self, GdkDragContext* 
 }
 
 
-static void ___lambda31__gtk_widget_drag_begin (GtkWidget* _sender, GdkDragContext* context, gpointer self) {
+static void ___lambda40__gtk_widget_drag_begin (GtkWidget* _sender, GdkDragContext* context, gpointer self) {
 #line 522 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRightPalete.vala"
-	__lambda31_ ((Xcls_RightPaleteXcls_TreeView12*) self, context);
+	__lambda40_ ((Xcls_RightPaleteXcls_TreeView12*) self, context);
 #line 4292 "WindowRightPalete.vala.c"
 }
 
 
-static void __lambda32_ (Xcls_RightPaleteXcls_TreeView12* self, GdkDragContext* drag_context, GtkSelectionData* selection_data, guint info, guint time) {
+static void __lambda41_ (Xcls_RightPaleteXcls_TreeView12* self, GdkDragContext* drag_context, GtkSelectionData* selection_data, guint info, guint time) {
 	const gchar* _tmp0_ = NULL;
 	gint _tmp1_ = 0;
 	gint _tmp2_ = 0;
@@ -4331,14 +4331,14 @@ static void __lambda32_ (Xcls_RightPaleteXcls_TreeView12* self, GdkDragContext* 
 }
 
 
-static void ___lambda32__gtk_widget_drag_data_get (GtkWidget* _sender, GdkDragContext* context, GtkSelectionData* selection_data, guint info, guint time_, gpointer self) {
+static void ___lambda41__gtk_widget_drag_data_get (GtkWidget* _sender, GdkDragContext* context, GtkSelectionData* selection_data, guint info, guint time_, gpointer self) {
 #line 556 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRightPalete.vala"
-	__lambda32_ ((Xcls_RightPaleteXcls_TreeView12*) self, context, selection_data, info, time_);
+	__lambda41_ ((Xcls_RightPaleteXcls_TreeView12*) self, context, selection_data, info, time_);
 #line 4338 "WindowRightPalete.vala.c"
 }
 
 
-static void __lambda33_ (Xcls_RightPaleteXcls_TreeView12* self, GdkDragContext* drag_context) {
+static void __lambda42_ (Xcls_RightPaleteXcls_TreeView12* self, GdkDragContext* drag_context) {
 	gchar* _tmp0_ = NULL;
 	Xcls_RightPalete* _tmp1_ = NULL;
 #line 567 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRightPalete.vala"
@@ -4357,14 +4357,14 @@ static void __lambda33_ (Xcls_RightPaleteXcls_TreeView12* self, GdkDragContext* 
 }
 
 
-static void ___lambda33__gtk_widget_drag_end (GtkWidget* _sender, GdkDragContext* context, gpointer self) {
+static void ___lambda42__gtk_widget_drag_end (GtkWidget* _sender, GdkDragContext* context, gpointer self) {
 #line 567 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRightPalete.vala"
-	__lambda33_ ((Xcls_RightPaleteXcls_TreeView12*) self, context);
+	__lambda42_ ((Xcls_RightPaleteXcls_TreeView12*) self, context);
 #line 4364 "WindowRightPalete.vala.c"
 }
 
 
-static gboolean __lambda34_ (Xcls_RightPaleteXcls_TreeView12* self, GdkEventButton* event) {
+static gboolean __lambda43_ (Xcls_RightPaleteXcls_TreeView12* self, GdkEventButton* event) {
 	gboolean result = FALSE;
 #line 576 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRightPalete.vala"
 	g_return_val_if_fail (event != NULL, FALSE);
@@ -4376,9 +4376,9 @@ static gboolean __lambda34_ (Xcls_RightPaleteXcls_TreeView12* self, GdkEventButt
 }
 
 
-static gboolean ___lambda34__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self) {
+static gboolean ___lambda43__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self) {
 	gboolean result;
-	result = __lambda34_ ((Xcls_RightPaleteXcls_TreeView12*) self, event);
+	result = __lambda43_ ((Xcls_RightPaleteXcls_TreeView12*) self, event);
 #line 576 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRightPalete.vala"
 	return result;
 #line 4385 "WindowRightPalete.vala.c"
@@ -4461,19 +4461,19 @@ Xcls_RightPaleteXcls_TreeView12* xcls_rightpalete_xcls_treeview12_construct (GTy
 #line 522 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRightPalete.vala"
 	_tmp13_ = self->el;
 #line 522 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRightPalete.vala"
-	g_signal_connect ((GtkWidget*) _tmp13_, "drag-begin", (GCallback) ___lambda31__gtk_widget_drag_begin, self);
+	g_signal_connect ((GtkWidget*) _tmp13_, "drag-begin", (GCallback) ___lambda40__gtk_widget_drag_begin, self);
 #line 556 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRightPalete.vala"
 	_tmp14_ = self->el;
 #line 556 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRightPalete.vala"
-	g_signal_connect ((GtkWidget*) _tmp14_, "drag-data-get", (GCallback) ___lambda32__gtk_widget_drag_data_get, self);
+	g_signal_connect ((GtkWidget*) _tmp14_, "drag-data-get", (GCallback) ___lambda41__gtk_widget_drag_data_get, self);
 #line 567 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRightPalete.vala"
 	_tmp15_ = self->el;
 #line 567 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRightPalete.vala"
-	g_signal_connect ((GtkWidget*) _tmp15_, "drag-end", (GCallback) ___lambda33__gtk_widget_drag_end, self);
+	g_signal_connect ((GtkWidget*) _tmp15_, "drag-end", (GCallback) ___lambda42__gtk_widget_drag_end, self);
 #line 576 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRightPalete.vala"
 	_tmp16_ = self->el;
 #line 576 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRightPalete.vala"
-	g_signal_connect ((GtkWidget*) _tmp16_, "button-press-event", (GCallback) ___lambda34__gtk_widget_button_press_event, self);
+	g_signal_connect ((GtkWidget*) _tmp16_, "button-press-event", (GCallback) ___lambda43__gtk_widget_button_press_event, self);
 #line 506 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRightPalete.vala"
 	_xcls_rightpalete_xcls_treeviewcolumn14_unref0 (child_1);
 #line 506 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRightPalete.vala"
