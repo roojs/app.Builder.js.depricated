@@ -66,7 +66,7 @@ namespace Palete {
             this.is_instance = false;
             this.is_varargs = false;
             this.implements = new GLib.List<string>();
-			this.inherits  = new GLib.List<string>();
+			this.inherits  = new GLib.List<string>(); // list of all ancestors. (interfaces and parents)
             this.includes   = new Gee.HashMap<string,string>();
             
             this.params = new GLib.List<GirObject>();
@@ -81,6 +81,13 @@ namespace Palete {
 			this.paramset = null;
         }
 
+		public string[] allInherits()
+		{
+
+
+		}
+
+		
 		public void  overlayParent()
 		{
 			
