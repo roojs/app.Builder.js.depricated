@@ -26,6 +26,7 @@ var ctors = {
     "Gtk.ListStore": [ "n_columns", "columns" ],
     "Gtk.TreeStore": [ "n_columns", "columns" ],
     "Gtk.FileChooserWidget" : [ "action"],
+    "Gtk.Window" : [ "type"],
     //"Gtk.Entry": [  ],
 };
 
