@@ -925,9 +925,9 @@ public class Xcls_WindowLeftTree
                  if (n != null && this.activePath.length > 0) {
                     Gtk.TreeIter iter;
                     this.el.get_iter(out iter, new Gtk.TreePath.from_string(this.activePath));
-                    this.el.set(iter, 0, n.displayTitle(), 1, n.displayTitle(), -1);
+                    this.el.set(iter, 0, n.nodeTitle(), 1, n.nodeTip(), -1);
                     var v = new Value(typeof(Object));
-                    v.set_object(n);
+                    v.set_object((Object)n);
                 }
                           
             }
