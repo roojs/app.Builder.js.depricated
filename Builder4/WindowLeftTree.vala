@@ -444,7 +444,7 @@ public class Xcls_WindowLeftTree
         // skip |headers_visible - already used 
 
         // skip |init - already used 
-        public void highlightDropPath ( string treepath, TreeViewDropPosition pos) {
+        public void highlightDropPath ( string treepath, Gtk.TreeViewDropPosition pos) {
             
                     // highlighting for drag/drop
                     if (treepath.length > 0) {
