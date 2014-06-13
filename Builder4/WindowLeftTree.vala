@@ -74,7 +74,7 @@ public class Xcls_WindowLeftTree
             }
             Gtk.TreeIter iter;
             Gtk.TreeModel mod;
-            view.selection.get_selected(out mod, out iter);
+            view.get_selection().get_selected(out mod, out iter);
             return mod.get_path(iter).to_string();
         }
     public void getRenderer() {
