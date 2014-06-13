@@ -378,7 +378,7 @@ WindowLeftTree=new XObject({
                 Gtk.drag_dest_set_target_list(this.el, Builder.Application.targetList);
                 Gtk.drag_dest_add_text_targets(this.el);
             },
-            'void:highlight' : ( bool treepath_ar) {
+            'void:highlightDropPath' : ( bool treepath_ar) {
             
                     // highlighting for drag/drop
             //        if (treepath_ar.length && treepath_ar[0].length ) {

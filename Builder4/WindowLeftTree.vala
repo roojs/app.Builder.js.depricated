@@ -444,7 +444,7 @@ public class Xcls_WindowLeftTree
         // skip |headers_visible - already used 
 
         // skip |init - already used 
-        public void highlight ( bool treepath_ar) {
+        public void highlightDropPath ( bool treepath_ar) {
             
                     // highlighting for drag/drop
             //        if (treepath_ar.length && treepath_ar[0].length ) {
