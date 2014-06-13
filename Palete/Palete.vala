@@ -132,7 +132,7 @@ namespace Palete
                         if (ret.index(l) > -1) {
                             continue;
                         }
-                        strop.append(l);
+                        ret += l;
                     }
                 }
                 
