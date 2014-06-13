@@ -39,7 +39,7 @@ MainWindow=new XObject({
     items : [
         {
             xtype: Gtk.VBox,
-            id : "vbpx"
+            id : "vbox"
         }
     ]
 });

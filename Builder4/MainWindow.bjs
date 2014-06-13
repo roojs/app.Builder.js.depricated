@@ -23,7 +23,7 @@
             "|xns": "Gtk",
             "items": [
                 {
-                    "id": "vbpx",
+                    "id": "vbox",
                     "xtype": "VBox",
                     "|xns": "Gtk"
                 }
