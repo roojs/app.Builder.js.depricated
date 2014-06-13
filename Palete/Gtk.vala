@@ -158,7 +158,7 @@ namespace Palete {
         }
 		public string[] getInheritsFor(string ename)
 		{
-			string[] = {};
+			string[] ret = {};
 			var es = ename.split(".");
 			var gir = Gir.factory(es[0]);
 			
