@@ -309,7 +309,7 @@ namespace Palete {
 			}
 			switch(type) {
 				case "gboolean":
-					return "true":
+					return "true";
 				case "guint":
 					return 0;
 				default:
