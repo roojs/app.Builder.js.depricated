@@ -124,7 +124,7 @@ WindowLeftTree=new XObject({
                                 Gdk.Atom.intern("STRING",true),    // the target type we want 
                                 time            // time stamp 
                         );
-                    return;
+                    return true;
                        
                 },
                 drag_drop : (  ctx, x, y, time)  => {

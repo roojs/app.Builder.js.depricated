@@ -206,7 +206,7 @@ public class Xcls_WindowLeftTree
                             Gdk.Atom.intern("STRING",true),    // the target type we want 
                             time            // time stamp 
                     );
-                return;
+                return true;
                    
             } );
             this.el.drag_drop.connect(  (  ctx, x, y, time)  => {
