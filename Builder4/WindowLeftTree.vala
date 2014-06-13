@@ -377,7 +377,7 @@ public class Xcls_WindowLeftTree
                  if (this.blockChanges) { // probably not needed.. 
                    return  ;
                  }
-                 if (this.file == null) {
+                 if (_this.model.file == null) {
                      return;
                  } 
                  
