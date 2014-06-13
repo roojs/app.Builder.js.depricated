@@ -96,12 +96,12 @@ public class Xcls_WindowLeftTree
 
 
             // my vars
-        public string[] dropList;
         public bool blockChanges;
         public bool drag_in_motion;
         public int drag_x;
         public int drag_y;
         public string dragData;
+        public string[] dropList;
 
             // ctor 
         public Xcls_view(Xcls_WindowLeftTree _owner)
@@ -418,8 +418,6 @@ public class Xcls_WindowLeftTree
 
         // skip listeners - not pipe 
 
-        // skip .string[]:dropList - already used 
-
         // skip .bool:blockChanges - already used 
 
         // skip .bool:drag_in_motion - already used 
@@ -429,6 +427,8 @@ public class Xcls_WindowLeftTree
         // skip .int:drag_y - already used 
 
         // skip .string:dragData - already used 
+
+        // skip .string[]:dropList - already used 
 
         // skip id - not pipe 
 
