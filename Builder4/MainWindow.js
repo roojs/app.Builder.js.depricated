@@ -27,7 +27,7 @@ MainWindow=new XObject({
     },
     'void:addChildren' : () {
         var left_tree =new Xcls_WindowLeftTree();
-        _this.vbox.el.pack(left_tree.el);
+        _this.vbox.el.pack_start(left_tree.el);
     
     },
     border_width : 0,
