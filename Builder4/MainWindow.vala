@@ -62,6 +62,7 @@ public class Xcls_Window
     // userdefined functions 
 
     // skip listeners - not pipe 
+    public void addChildre
 
     // skip .string:title - already used 
 
