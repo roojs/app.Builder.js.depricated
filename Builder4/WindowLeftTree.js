@@ -215,9 +215,9 @@ WindowLeftTree=new XObject({
                             var selection_text = sel.get_text();
                             // see if we are dragging into ourself?
                             
+                            var tg = path.to_string();
                             
-                            
-                            if (selection_text  == path.to_string().substring(0,selection_text.length)) {
+                            if (selection_text  == tg.substring(0,selection_text.length)) {
                                 ///print("subpath drag");
                                 if (this.drag_in_motion) {
                                      Gdk.drag_status(ctx, 0 ,time);
@@ -251,7 +251,7 @@ WindowLeftTree=new XObject({
                                 return;
                             }
                             
-                            this.view.highlight(tg);
+                            this.view.highlight(tg, pos);
                             //console.dump(tg);
                             targetData = tg;    
                             
