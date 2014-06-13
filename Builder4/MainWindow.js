@@ -11,10 +11,8 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 MainWindow=new XObject({
     xtype: Gtk.Window,
+    destroy : "function (self) {\n   Gtk.main_quit();\n}",
     listeners : {
-        destroy : function (self) {
-           Gtk.main_quit();
-        },
         show : function (self) {
           print("WINDOW SHOWING - trying to hide");
         imports.Builder.Provider.ProjectManager.ProjectManager.loadConfig();
@@ -22,6 +20,9 @@ MainWindow=new XObject({
             this.get('/RightPalete').hide();
             this.get('/BottomPane').el.hide();
             //this.get('/Editor').el.show_all();
+        
+        },
+        delete_event : function (self, event) {
         
         }
     },

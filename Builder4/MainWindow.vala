@@ -45,9 +45,6 @@ public class Xcls_Window
         this.el.add (  child_0.el  );
 
         // listeners 
-        this.el.destroy.connect( function (self) {
-           Gtk.main_quit();
-        } );
         this.el.show.connect( function (self) {
           print("WINDOW SHOWING - trying to hide");
         imports.Builder.Provider.ProjectManager.ProjectManager.loadConfig();
@@ -57,9 +54,14 @@ public class Xcls_Window
             //this.get('/Editor').el.show_all();
         
         } );
+        this.el.delete_event.connect( function (self, event) {
+        
+        } );
     }
 
     // userdefined functions 
+
+    // skip destroy - not pipe 
 
     // skip listeners - not pipe 
 
