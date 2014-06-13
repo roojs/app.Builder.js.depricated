@@ -834,7 +834,7 @@ public class Xcls_WindowLeftTree
                 //console.dump(f.items);
                 var o = new GLib.List<JsRender.Node>();
                 o.append(f.tree);
-                this.load(o);
+                this.load(o,null);
                 
                 this.view.el.expand_all();
             
