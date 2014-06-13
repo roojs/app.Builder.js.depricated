@@ -304,8 +304,17 @@ namespace Palete {
 		}
 
 		public static string guessDefaultValueForType(string type) {
-			
-
+			if (type.contains(".")) {
+				return "null";
+			}
+			switch(type) {
+				case "gboolean":
+					return "true":
+				case "guint":
+					return 0;
+				default:
+					return "?"+  type "+?";
+			}
 
 		}
 
