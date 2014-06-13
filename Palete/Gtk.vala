@@ -406,7 +406,8 @@ namespace Palete {
 				if (!inherits.contains(" " + type + " ")) {
 					continue;
 				}
-				
+				var pack = meth.name;
+				for(var i =1; i < par
 				
 
 			}
