@@ -238,7 +238,7 @@ WindowLeftTree=new XObject({
                             // it is set up when we start to drag..
                             
                             
-                            targetData = _this.model.findDropNodeByPath( path.to_string(), this.dropList, pos);
+                            tg = _this.model.findDropNodeByPath( path.to_string(), this.dropList, pos);
                                 
                 
                             
