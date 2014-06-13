@@ -98,7 +98,7 @@ WindowLeftTree=new XObject({
                         
                         Gtk.drag_set_icon_surface (ctx, pix) ;
                         
-                        return true;
+                        return;
                 },
                 drag_end : (drag_context) => {
                 	//Seed.print('LEFT-TREE: drag-end');

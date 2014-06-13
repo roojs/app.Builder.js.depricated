@@ -180,7 +180,7 @@ public class Xcls_WindowLeftTree
                     
                     Gtk.drag_set_icon_surface (ctx, pix) ;
                     
-                    return true;
+                    return;
             } );
             this.el.drag_end.connect(   (drag_context) => {
             	//Seed.print('LEFT-TREE: drag-end');
