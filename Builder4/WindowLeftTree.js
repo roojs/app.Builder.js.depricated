@@ -91,7 +91,7 @@ WindowLeftTree=new XObject({
                         
                         // find what is selected in our tree...
                         Gtk.TreeIter iter;
-                        var s = this.model.get_selection();
+                        var s = this.view.el.get_selection();
                         Gtk.TreeStore mod;
                         s.get_selected(out mod, out iter);
                 
@@ -102,7 +102,7 @@ WindowLeftTree=new XObject({
                         var xname = data.fqn();
                         
                         this.dragData = xname;
-                        this.dropList = this.file.getPalete().getDropList(xname);
+                        this.dropList = this.file.palete().getDropList(xname);
                         
                 
                         // make the drag icon a picture of the node that was selected
