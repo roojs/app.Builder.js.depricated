@@ -170,7 +170,7 @@ WindowLeftTree=new XObject({
                         var  targetData = "";
                         //var action = Gdk.DragAction.COPY;
                             // unless we are copying!!! ctl button..
-                        var action = ctx.actions & Gdk.DragAction.MOVE ? Gdk.DragAction.MOVE : Gdk.DragAction.COPY ;
+                        var action = (ctx.actions & Gdk.DragAction.MOVE) > 0 ? Gdk.DragAction.MOVE : Gdk.DragAction.COPY ;
                         
                         
                         if (this.model.el.iter_n_children(null) < 1) {
