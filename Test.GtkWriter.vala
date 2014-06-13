@@ -56,7 +56,11 @@ public static int main () {
 
 	//testBuilderFile("Editor", "JSON");
 	//testBuilderFile("Editor", "JS");
-	testBuilderFile("Editor", "VALA");
+	//testBuilderFile("Editor", "VALA");
+	var w = new Xcls_MainWindow();
+	w.addChildren();
+	w.show();
+	
 
     
 	
