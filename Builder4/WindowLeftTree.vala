@@ -44,6 +44,10 @@ public class Xcls_WindowLeftTree
         this.el.add (  child_0.el  );
         var child_1 = new Xcls_LeftTreeMenu(_this);
         this.el.add (  child_1.el  );
+
+        // init method 
+         this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
+         
     }
 
     // userdefined functions 
@@ -121,6 +125,49 @@ public class Xcls_WindowLeftTree
             this.el.set_model (  child_0.el  );
             var child_1 = new Xcls_TreeViewColumn4(_this);
             this.el.append_column (  child_1.el  );
+
+            // init method 
+            {
+                var description = new Pango.FontDescription();
+                description.set_size(8000);
+                this.el.modify_font(description);
+            
+                var selection = this.el.get_selection();
+                selection.set_mode( Gtk.SelectionMode.SINGLE);
+            
+            
+                // is this really needed??
+                /*
+                this.selection.signal['changed'].connect(function() {
+            	    _this.get('/LeftTree.view').listeners.cursor_changed.apply(
+            	        _this.get('/LeftTree.view'), [ _this.get('/LeftTree.view'), '']
+            	    );
+                });
+                */
+                Gtk.drag_source_set (
+            	    this.el,            /* widget will be drag-able */
+            	    Gdk.ModifierType.BUTTON1_MASK,       /* modifier that will start a drag */
+            	    null,            /* lists of target to support */
+            	    0,              /* size of list */
+            	    Gdk.DragAction.COPY   | Gdk.DragAction.MOVE           /* what to do with data after dropped */
+                );
+            
+                Gtk.drag_source_set_target_list(this.el, Builder.Application.targetList);
+            
+                Gtk.drag_source_add_text_targets(this.el); 
+            
+                Gtk.drag_dest_set
+                (
+                    this.el,              /* widget that will accept a drop */
+                    Gtk.DestDefaults.MOTION  | Gtk.DestDefaults.HIGHLIGHT,
+                    null,            /* lists of target to support */
+                    0,              /* size of list */
+                    Gdk.DragAction.COPY   | Gdk.DragAction.MOVE       /* what to do with data after dropped */
+                );
+            
+                Gtk.drag_dest_set_target_list(this.el, Builder.Application.targetList);
+                Gtk.drag_dest_add_text_targets(this.el);
+            }
 
             // listeners 
             this.el.button_press_event.connect(   ( ev) => {
@@ -499,6 +546,9 @@ public class Xcls_WindowLeftTree
             this.activePath = "";
 
             // set gobject values
+
+            // init method 
+            print("model initialized");
         }
 
         // userdefined functions 
@@ -948,6 +998,10 @@ public class Xcls_WindowLeftTree
             // set gobject values
             var child_0 = new Xcls_renderer(_this);
             this.el.pack_start (  child_0.el , true );
+
+            // init method 
+              this.el.add_attribute(_this.renderer , "markup", 0 );
+             
         }
 
         // userdefined functions 

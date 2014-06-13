@@ -11,7 +11,7 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 WindowLeftTree=new XObject({
     xtype: Gtk.ScrolledWindow,
-    id : "",
+    id : "WindowLeftTree",
     pack : "add",
     'JsRender.JsRender:getActiveFile' : () {
         return this.model.file;
