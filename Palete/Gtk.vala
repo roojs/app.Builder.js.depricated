@@ -165,7 +165,7 @@ namespace Palete {
 			if (cls == null) {
 				return ret;
 			}
-
+			
 			
 
 		}
