@@ -418,9 +418,7 @@ namespace Palete {
 
 			
 		}
-
-		public 
-	
+ 
 	
     }
 }
