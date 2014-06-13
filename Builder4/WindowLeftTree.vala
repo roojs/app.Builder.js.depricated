@@ -836,14 +836,14 @@ public class Xcls_WindowLeftTree
                 o.append(f.tree);
                 this.load(o,null);
                 
-                this.view.el.expand_all();
+                _this.view.el.expand_all();
             
                 if (f.tree.items.length() < 1) {
                     // single item..
                     
                     //this.get('/Window.leftvpaned').el.set_position(80);
                     // select first...
-                    this.view.el.set_cursor( 
+                    _this.view.el.set_cursor( 
                         new  Gtk.TreePath.from_string('0'), null, false);
                     
                     
