@@ -785,7 +785,7 @@ public class Xcls_WindowLeftTree
                 //this.insert(citer,iter,0);
                 for(var i =0 ; i < tr.length(); i++) {
                     if (iter != null) {
-                        this.el.insert(out citer,iter,-1);
+                        this.el.insert(out citer,iter,-1); // why not append?
                     } else {
                         this.el.append(out citer,null);
                     }
