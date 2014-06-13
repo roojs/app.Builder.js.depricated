@@ -186,7 +186,7 @@ public class Xcls_WindowLeftTree
             	//Seed.print('LEFT-TREE: drag-end');
                     this.dragData = "";
                     this.dropList = null;
-                    this.targetData = "";
+            //        this.targetData = "";
                     this.view.highlight(false);
             //        return true;
             } );
