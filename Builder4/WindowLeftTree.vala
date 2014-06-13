@@ -382,7 +382,7 @@ public class Xcls_WindowLeftTree
                  //var render = this.get('/LeftTree').getRenderer();                
                
                 
-                if (_this.view.el.get_selection().count_selected_rows() < 1) {
+                if (this.el.get_selection().count_selected_rows() < 1) {
             
             
                     //??this.model.load( false);
@@ -396,7 +396,7 @@ public class Xcls_WindowLeftTree
                     var s = this.get_selection();
                      Gtk.TreeIter iter;
                      Gtk.TreeStore mod;
-                    s.get_selected(out mod, out iter);
+                    s.el.get_selected(out mod, out iter);
                     
                     
                     // var val = "";
