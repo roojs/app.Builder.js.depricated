@@ -11,7 +11,6 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 MainWindow=new XObject({
     xtype: Gtk.Window,
-    destroy : "() => {\n   Gtk.main_quit();\n}",
     listeners : {
         show : ( ) => {
         
@@ -29,13 +28,14 @@ MainWindow=new XObject({
     border_width : 0,
     default_height : 500,
     default_width : 800,
+    destroy : "() => {\n   Gtk.main_quit();\n}",
     id : "Window",
     title : "Application Builder",
     init : this.el.show_all();,
-    'void:setTitle' : (string str) {
-        this.el.set_title(this.title + ' - ' + str);
-    },
     type : Gtk.WindowType.TOPLEVEL,
+    'void:setTitle' : (string str) {
+        this.el.set_title(this.title + " - " + str);
+    },
     items : [
         {
             xtype: Gtk.VBox,

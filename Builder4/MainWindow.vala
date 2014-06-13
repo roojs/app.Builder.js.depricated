@@ -61,8 +61,6 @@ public class Xcls_Window
 
     // userdefined functions 
 
-    // skip destroy - not pipe 
-
     // skip listeners - not pipe 
 
     // skip border_width - already used 
@@ -71,6 +69,8 @@ public class Xcls_Window
 
     // skip default_width - already used 
 
+    // skip destroy - not pipe 
+
     // skip id - not pipe 
 
     // skip title - already used 
@@ -78,11 +78,11 @@ public class Xcls_Window
     // skip xtype - not pipe 
 
     // skip |init - already used 
-    public void setTitle (string str) {
-            this.el.set_title(this.title + ' - ' + str);
-        }
 
     // skip |type - already used 
+    public void setTitle (string str) {
+            this.el.set_title(this.title + " - " + str);
+        }
 
     // skip |xns - no return type
 
