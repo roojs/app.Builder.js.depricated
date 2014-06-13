@@ -24,7 +24,7 @@ WindowLeftTree=new XObject({
          }
          return _this.model.pathToNode(path);
     },
-    init : this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC),
+    init : this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);,
     shadow_type : Gtk.ShadowType.IN,
     'string:getActivePath' : () {
         var model = this.model;

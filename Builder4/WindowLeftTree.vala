@@ -46,7 +46,7 @@ public class Xcls_WindowLeftTree
         this.el.add (  child_1.el  );
 
         // init method 
-         this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
+         this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
          
     }
 
