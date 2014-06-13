@@ -752,7 +752,7 @@ WindowLeftTree=new XObject({
                          
                         }
                     },
-                    'void:loadFile' : function(JsRender.JsRender f) {
+                    'void:loadFile' : (JsRender.JsRender f) {
                         //console.dump(f);
                         this.el.clear();
                         this.file = f;

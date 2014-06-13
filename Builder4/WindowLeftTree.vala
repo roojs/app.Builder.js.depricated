@@ -804,7 +804,7 @@ public class Xcls_WindowLeftTree
                  
                 }
             }
-        public void loadFilefunction(JsRender.JsRender f) {
+        public void loadFile(JsRender.JsRender f) {
                 //console.dump(f);
                 this.el.clear();
                 this.file = f;
