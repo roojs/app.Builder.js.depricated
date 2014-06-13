@@ -55,7 +55,7 @@ public class Xcls_Window
         
         } );
         this.el.delete_event.connect(   (  event) => {
-            return true;
+            return false;
         } );
     }
 

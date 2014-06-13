@@ -23,7 +23,7 @@ MainWindow=new XObject({
         
         },
         delete_event : (  event) => {
-            return true;
+            return false;
         }
     },
     border_width : 0,
