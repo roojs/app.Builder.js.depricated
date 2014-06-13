@@ -332,7 +332,7 @@ public class Xcls_WindowLeftTree
                             return;
                         }
                         
-                        this.view.highlightDropPath(targetData, pos);
+                        this.highlightDropPath(targetData, pos);
                         //console.dump(tg);
                            
                         
