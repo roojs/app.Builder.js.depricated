@@ -295,19 +295,15 @@ namespace Palete {
 			// look at includes..
 			var iter = add.includes.map_iterator();
 			while(iter.next()) {
-            	g = factory(iter.get_key());
-				if (g.classes.has_key(type)) {
-					return ns + "." + type;
-				}	
+				var ret = fqtype(type, iter_get_key());
+				if (ret != type) {
+					return ret;
+				}
             }	
 			return type;
 		}
 			
-
-			
-			
-			
-		}
+	 
         public Gir (string ns)  
         {
 
