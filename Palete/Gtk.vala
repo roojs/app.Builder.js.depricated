@@ -105,7 +105,7 @@ namespace Palete {
 
 		// does not handle implements...
 		
-        public Gee.HashMap<string,GirObject>? getPropertiesFor(string ename, string type)
+        public Gee.HashMap<string,GirObject> getPropertiesFor(string ename, string type)
         {
             //print("Loading for " + ename);
             
@@ -393,12 +393,13 @@ namespace Palete {
 			// parent.fqn() method ( node.fqn()
 			var methods = this.getPropertiesFor (parent.fqn());
 			
-			var cls = gir.classes.get(node.fqn());
-			if (cls == null) {
-				print("oops can not find class " + es
-				return;
+			var map = methods.map_iterator();
+			while (map.next()) {
+				var n = map.get_key();
+				var meth = map.get_value();
+				
+
 			}
-			cl
 
 			
 		}
