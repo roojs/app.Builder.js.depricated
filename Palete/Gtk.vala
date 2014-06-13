@@ -159,13 +159,14 @@ namespace Palete {
 		public string[] getInheritsFor(string ename)
 		{
 			string[] = {};
+			var es = ename.split(".");
 			var gir = Gir.factory(es[0]);
 			
 			var cls = gir.classes.get(es[1]);
 			if (cls == null) {
 				return ret;
 			}
-			
+			return cls.inheritsToStringArray();
 			
 
 		}
@@ -391,6 +392,11 @@ namespace Palete {
 			
 			// parent.fqn() method ( node.fqn()
 			
+			var cls = gir.classes.get(node.fqn());
+			if (cls == null) {
+				print("oops can not find class " + es
+				return;
+			}
 
 			
 		}
