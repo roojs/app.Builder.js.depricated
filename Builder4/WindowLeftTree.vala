@@ -893,9 +893,9 @@ public class Xcls_WindowLeftTree
                 var s = _this.view.el.get_selection();
                 Gtk.TreeStore mod;
                 s.get_selected(out mod , out old_iter);
+                mod.get_path(old_iter);
                 
-                
-                var node = this.nodefFromIter(old_iter,false);
+                var node = this.pathToNode(mod.get_path(old_iter));
                 //console.dump(node);
             
             
