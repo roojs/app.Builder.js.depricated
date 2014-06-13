@@ -7,7 +7,7 @@ valac  --pkg gio-2.0  --pkg posix  --pkg gtk+-3.0 --pkg libnotify --pkg gtksourc
 /* -- to test class
 static int main (string[] args) {
     Gtk.init (ref args);
-    new Xcls_Window();
+    new Xcls_MainWindow();
     MainWindow.show_all();
      Gtk.main ();
     return 0;
@@ -15,12 +15,12 @@ static int main (string[] args) {
 */
 
 
-public static Xcls_Window  MainWindow;
+public static Xcls_MainWindow  MainWindow;
 
-public class Xcls_Window
+public class Xcls_MainWindow
 {
     public Gtk.Window el;
-    private Xcls_Window  _this;
+    private Xcls_MainWindow  _this;
 
     public Xcls_vbox vbox;
 
@@ -28,7 +28,7 @@ public class Xcls_Window
     public string title;
 
         // ctor 
-    public Xcls_Window()
+    public Xcls_MainWindow()
     {
         this.el = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
         _this = this;
@@ -102,13 +102,13 @@ public class Xcls_Window
     public class Xcls_vbox
     {
         public Gtk.VBox el;
-        private Xcls_Window  _this;
+        private Xcls_MainWindow  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_vbox(Xcls_Window _owner)
+        public Xcls_vbox(Xcls_MainWindow _owner)
         {
             this.el = new Gtk.VBox( true, 0 );
             _this = _owner;

@@ -16,7 +16,7 @@
             "default_height": 500,
             "default_width": 800,
             "destroy": "() => {\n   Gtk.main_quit();\n}",
-            "id": "Window",
+            "id": "MainWindow",
             "xtype": "Window",
             "|init": " \n\t  \n    this.el.show_all();\n    \n    ",
             "|type": "Gtk.WindowType.TOPLEVEL",

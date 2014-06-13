@@ -35,7 +35,7 @@ MainWindow=new XObject({
     default_height : 500,
     default_width : 800,
     destroy : "() => {\n   Gtk.main_quit();\n}",
-    id : "Window",
+    id : "MainWindow",
     init : this.el.show_all();,
     type : Gtk.WindowType.TOPLEVEL,
     'void:setTitle' : (string str) {
