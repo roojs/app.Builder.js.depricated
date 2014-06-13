@@ -547,10 +547,10 @@ Gtk = XObject.define(
             if (typeof(item['|init']) != 'undefined') {
                 
                 
-                    var v = item['|init'].split(/\/*--/);
+                    var v = item['|init']
                     if (v.length > 1) {
                         strbuilder("\n" + ipad + "// init method \n");            
-                         var vv = v[1].replace('*/', "");
+                         var vv = v;
                          //print(JSON.stringify(vv));Seed.quit();
                          vv = vv.replace(/^\n+/,'');
                          vv = vv.replace(/\n+$/,'');
