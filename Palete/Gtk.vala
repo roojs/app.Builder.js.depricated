@@ -122,7 +122,9 @@ namespace Palete {
 			
 			var cls = gir.classes.get(es[1]);
 			if (cls == null) {
-				throw new Error.INVALID_VALUE( "Could not find class: " + ename);
+				var ret = new Gee.HashMap<string,GirObject>();
+				return ret;
+				//throw new Error.INVALID_VALUE( "Could not find class: " + ename);
 				
 			}
 
@@ -143,7 +145,9 @@ namespace Palete {
 				case "ctors":
 					return cls.ctors;
 				default:
-					return null;
+					var ret = new Gee.HashMap<string,GirObject>();
+					return ret;
+					
 			}
 					
 				
@@ -152,7 +156,19 @@ namespace Palete {
             
              
         }
+		public string[] getInheritsFor(string ename)
+		{
+			string[] = {};
+			var gir = Gir.factory(es[0]);
+			
+			var cls = gir.classes.get(es[1]);
+			if (cls == null) {
+				return ret;
+			}
 
+			
+
+		}
         /*
         genParams: function(sig, meth)
         {
@@ -373,6 +389,9 @@ namespace Palete {
 		public override void fillPack(JsRender.Node node,JsRender.Node parent)
 		{   
 			
+			// parent.fqn() method ( node.fqn()
+			
+
 			
 		}
 	
