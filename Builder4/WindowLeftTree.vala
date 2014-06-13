@@ -908,7 +908,7 @@ public class Xcls_WindowLeftTree
                           //          print("REMOVING OLD NODE");
                         node.remove();
                         this.dropNode(target_data, node);
-                        this.el.remove(old_iter);
+                        this.el.remove(ref old_iter);
                         
                                      
                 } else {
