@@ -387,7 +387,7 @@ public class Xcls_WindowLeftTree
             
                     //??this.model.load( false);
                     
-                    this.file.setActiveNode(null);
+                    this.model.file.setActiveNode(null);
                     
                     return  ;
                 }
