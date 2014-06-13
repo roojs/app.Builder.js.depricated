@@ -174,7 +174,7 @@ public class Xcls_WindowLeftTree
                     // make the drag icon a picture of the node that was selected
                     var path = _this.model.el.get_path(iter);
             
-                    this.treepath = path.to_string();
+                    //this.treepath = path.to_string();
                     
                     var pix = this.el.create_row_drag_icon ( path);
                     
