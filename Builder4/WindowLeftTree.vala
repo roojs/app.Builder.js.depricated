@@ -768,7 +768,7 @@ public class Xcls_WindowLeftTree
                     this.activePath = this.el.get_path(n_iter).to_string();
             
               // changed actually set's the node data..
-                    this.changed(node, true);
+                    this.updateNode(node, true);
                     
                     
                     _this.view.el.set_cursor(this.el.get_path(n_iter), null, false);
