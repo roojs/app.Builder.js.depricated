@@ -382,7 +382,7 @@ public class Xcls_WindowLeftTree
                  //var render = this.get('/LeftTree').getRenderer();                
                
                 
-                if (_this.model.get_selection().count_selected_rows() < 1) {
+                if (_this.view.el.get_selection().count_selected_rows() < 1) {
             
             
                     //??this.model.load( false);
