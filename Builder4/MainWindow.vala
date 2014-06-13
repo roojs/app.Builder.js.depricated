@@ -35,7 +35,7 @@ public class Xcls_Window
         MainWindow = this;
 
         // my vars
-        this.title = Application Builder;
+        this.title = "Application Builder";
 
         // set gobject values
         this.el.border_width = 0;

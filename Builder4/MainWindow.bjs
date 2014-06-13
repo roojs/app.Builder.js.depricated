@@ -15,7 +15,7 @@
             "default_width": 800,
             "destroy": "() => {\n   Gtk.main_quit();\n}",
             "id": "Window",
-            ".string:title": "Application Builder",
+            ".string:title": "\"Application Builder\"",
             "xtype": "Window",
             "|init": " \n\t  \n    this.el.show_all();\n    \n    ",
             "|type": "Gtk.WindowType.TOPLEVEL",
