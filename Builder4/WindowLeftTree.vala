@@ -174,8 +174,8 @@ public class Xcls_WindowLeftTree
                     
                     // find what is selected in our tree...
                     Gtk.TreeIter iter;
-                    var s = this.model.get_selection();
-                    Gtk.TreeStore mod;
+                    var s = this.view.el.get_selection();
+                    Gtk.TreeModel mod;
                     s.get_selected(out mod, out iter);
             
                     // set some properties of the tree for use by the dropped element.
