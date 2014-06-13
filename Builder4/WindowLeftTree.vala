@@ -375,7 +375,7 @@ public class Xcls_WindowLeftTree
             
             
                  if (this.blockChanges) { // probably not needed.. 
-                   return true;
+                   return  ;
                  }
                  
                  
@@ -389,7 +389,7 @@ public class Xcls_WindowLeftTree
                     
                     this.file.setActiveNode(null);
                     
-                    return true;
+                    return  ;
                 }
                         
                         //console.log('changed');
@@ -409,7 +409,7 @@ public class Xcls_WindowLeftTree
                     this.file.setActiveNode(node);
                    
                     //Seed.print( value.get_string());
-                    return true;
+                    return  ;
                             
             } );
         }

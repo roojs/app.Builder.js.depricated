@@ -293,7 +293,7 @@ WindowLeftTree=new XObject({
                 
                 
                      if (this.blockChanges) { // probably not needed.. 
-                       return true;
+                       return  ;
                      }
                      
                      
@@ -307,7 +307,7 @@ WindowLeftTree=new XObject({
                         
                         this.file.setActiveNode(null);
                         
-                        return true;
+                        return  ;
                     }
                             
                             //console.log('changed');
@@ -327,7 +327,7 @@ WindowLeftTree=new XObject({
                         this.file.setActiveNode(node);
                        
                         //Seed.print( value.get_string());
-                        return true;
+                        return  ;
                                 
                 }
             },
