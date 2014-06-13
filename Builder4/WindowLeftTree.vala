@@ -444,19 +444,16 @@ public class Xcls_WindowLeftTree
         // skip |headers_visible - already used 
 
         // skip |init - already used 
-        public void highlightDropPath ( bool treepath_ar) {
+        public void highlightDropPath ( string treepath, TreeViewDropPosition pos) {
             
                     // highlighting for drag/drop
-            //        if (treepath_ar.length && treepath_ar[0].length ) {
-              //          this.el.set_drag_dest_row( 
-              //                  new  Gtk.TreePath.from_string( treepath_ar[0] ),  
-              //                    treepath_ar[1]
-            //            );
-              //          } else {
+                    if (treepath.length > 0) {
+                        this.el.set_drag_dest_row(  new  Gtk.TreePath.from_string( treepath ), pos);
+                      } else {
                             this.el.set_drag_dest_row(null, Gtk.TreeViewDropPosition.INTO_OR_AFTER);
-               //         }
+                     }
                          
-                    }
+            }
         public void selectNode(string treepath_str) {
                 //this.selection.select_path(new  Gtk.TreePath.from_string( treepath_str));
                  var tp = new Gtk.TreePath.from_string(treepath_str);
