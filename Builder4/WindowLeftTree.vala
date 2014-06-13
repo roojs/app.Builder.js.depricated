@@ -187,7 +187,7 @@ public class Xcls_WindowLeftTree
                     this.dragData = "";
                     this.dropList = null;
             //        this.targetData = "";
-                    this.view.highlight(false);
+                    this.view.highlightDropPath("");
             //        return true;
             } );
             this.el.drag_motion.connect(  ( ctx, x, y, time)  => {
