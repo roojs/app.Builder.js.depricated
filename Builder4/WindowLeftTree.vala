@@ -68,8 +68,8 @@ public class Xcls_WindowLeftTree
     // skip |shadow_type - already used 
     public string getActivePath () {
             var model = this.model;
-            var view = this.view;
-            if (view.el.get_selection().count_selected_rows() < 1) {
+            var view = this.view.el;
+            if (view.get_selection().count_selected_rows() < 1) {
                 return "";
             }
             Gtk.TreeIter iter;

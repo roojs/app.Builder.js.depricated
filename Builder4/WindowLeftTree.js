@@ -27,8 +27,8 @@ WindowLeftTree=new XObject({
     shadow_type : Gtk.ShadowType.IN,
     'string:getActivePath' : () {
         var model = this.model;
-        var view = this.view;
-        if (view.el.get_selection().count_selected_rows() < 1) {
+        var view = this.view.el;
+        if (view.get_selection().count_selected_rows() < 1) {
             return "";
         }
         Gtk.TreeIter iter;
