@@ -25,6 +25,7 @@ public class Xcls_Window
     public Xcls_vbox vbox;
 
         // my vars
+    public string title;
 
         // ctor 
     public Xcls_Window()
@@ -34,12 +35,12 @@ public class Xcls_Window
         MainWindow = this;
 
         // my vars
+        this.title = Application Builder;
 
         // set gobject values
         this.el.border_width = 0;
         this.el.default_height = 500;
         this.el.default_width = 800;
-        this.el.title = "Application Builder";
         this.el.type = Gtk.WindowType.TOPLEVEL;
         var child_0 = new Xcls_vbox(_this);
         this.el.add (  child_0.el  );
@@ -73,7 +74,7 @@ public class Xcls_Window
 
     // skip id - not pipe 
 
-    // skip title - already used 
+    // skip .string:title - already used 
 
     // skip xtype - not pipe 
 
