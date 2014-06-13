@@ -311,10 +311,10 @@ WindowLeftTree=new XObject({
                     }
                             
                             //console.log('changed');
-                        var s = this.get_selection();
+                        var s = this.el.get_selection();
                          Gtk.TreeIter iter;
                          Gtk.TreeStore mod;
-                        s.el.get_selected(out mod, out iter);
+                        s.get_selected(out mod, out iter);
                         
                         
                         // var val = "";
