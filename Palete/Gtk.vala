@@ -390,7 +390,7 @@ namespace Palete {
 		public override void fillPack(JsRender.Node node,JsRender.Node parent)
 		{   
 
-			string inherits = " " + string.joinv(" ", this.getInheritsFor (node.fqn()) + " ";
+			string inherits = " " + string.joinv(" ", this.getInheritsFor (node.fqn())) + " ";
 			// parent.fqn() method ( node.fqn()
 			var methods = this.getPropertiesFor (parent.fqn());
 			
