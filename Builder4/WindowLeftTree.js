@@ -865,7 +865,7 @@ WindowLeftTree=new XObject({
                         }
                     
                         this.activePath= "";
-                        this.changed(false,true);
+                        //this.updateNode(false,true);
                     },
                     'void:updateNode' : (JsRender.Node? n, bool refresh)
                      {

@@ -917,7 +917,7 @@ public class Xcls_WindowLeftTree
                 }
             
                 this.activePath= "";
-                this.changed(false,true);
+                //this.updateNode(false,true);
             }
         public void updateNode(JsRender.Node? n, bool refresh)
              {
