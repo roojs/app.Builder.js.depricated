@@ -284,6 +284,30 @@ namespace Palete {
 			return cache.get(ns);
 			
 		}
+		/**
+		 * guess the fqn of a type == eg. gboolean or Widget etc...
+		 */
+		static fqtype(string type, string ns) {
+			var g = factory(ns);
+			if (g.classes.has_key(type)) {
+				return ns + "." + type;
+			}
+			// look at includes..
+			var iter = add.includes.map_iterator();
+			while(iter.next()) {
+            	g = factory(iter.get_key());
+				if (g.classes.has_key(type)) {
+					return ns + "." + type;
+				}	
+            }	
+			return type;
+		}
+			
+
+			
+			
+			
+		}
         public Gir (string ns)  
         {
 
