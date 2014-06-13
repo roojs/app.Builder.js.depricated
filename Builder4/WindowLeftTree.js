@@ -839,7 +839,7 @@ WindowLeftTree=new XObject({
                         // console.dump(target_data);
                         Gtk.TreeIter old_iter;
                         var s = _this.view.el.get_selection();
-                        Gtk.ListStore mod;
+                        Gtk.TreeStore mod;
                         s.get_selected(out mod , out old_iter);
                         
                         
