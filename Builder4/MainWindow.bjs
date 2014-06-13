@@ -10,7 +10,7 @@
                 "show": "  ( ) => {\n\n    //imports.Builder.Provider.ProjectManager.ProjectManager.loadConfig();\n    //this.get('/MidPropTree').hideWin();\n    //this.get('/RightPalete').hide();\n    //this.get('/BottomPane').el.hide();\n    //this.get('/Editor').el.show_all();\n\n}",
                 "delete_event": "  (   event) => {\n    return false;\n}"
             },
-            "|void:addChildren": "() {\n    var left_tree =new Xcls_WindowLeftTree();\n    _this.vbox.el.pack_start(left_tree.el,true, true,0);\n\n}",
+            "|void:addChildren": "() {\n    var left_tree =new Xcls_WindowLeftTree();\n    _this.vbox.el.pack_start(left_tree.el,true, true,0);\n    this.el.show_all();\n\n}",
             ".string:title": "\"Application Builder\"",
             "border_width": 0,
             "default_height": 500,
