@@ -402,18 +402,25 @@ namespace Palete {
 					continue;
 				}
 				var fp = meth.paramset.params.nth_data(0);
-				var type = this.fqtype(fp.type, meth.ns);
+				var type = Gir.fqtype(fp.type, meth.ns);
 				if (!inherits.contains(" " + type + " ")) {
 					continue;
 				}
 				var pack = meth.name;
-				for(var i =1; i < par
-				
+				for(var i =1; i < meth.paramset.params.length(); i++) {
+					var ty = Gir.fqtype(meth.paramset.params.nth_data(i).type);
+					pack += "," + Gir.guessDefaultValueForType(ty);
+				}
+				node.set("pack", pack);
+				return;
 
 			}
 
 			
 		}
+
+		public 
+	
 	
     }
 }
