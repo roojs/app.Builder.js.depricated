@@ -170,7 +170,7 @@ public class Xcls_WindowLeftTree
             	//print('SOURCE: drag-begin');
                     
                     
-                    this.targetData = "";
+                    //this.targetData = "";
                     
                     // find what is selected in our tree...
                     Gtk.TreeIter iter;
