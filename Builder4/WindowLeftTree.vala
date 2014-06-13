@@ -96,7 +96,7 @@ public class Xcls_WindowLeftTree
 
 
             // my vars
-        public GLib.List dropList;
+        public string[] dropList;
         public bool blockChanges;
         public bool drag_in_motion;
         public int drag_x;
@@ -419,7 +419,7 @@ public class Xcls_WindowLeftTree
 
         // skip listeners - not pipe 
 
-        // skip .GLib.List:dropList - already used 
+        // skip .string[]:dropList - already used 
 
         // skip .bool:blockChanges - already used 
 
