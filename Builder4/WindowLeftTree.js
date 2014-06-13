@@ -792,7 +792,7 @@ WindowLeftTree=new XObject({
                             //this.get('/Window.leftvpaned').el.set_position(80);
                             // select first...
                             _this.view.el.set_cursor( 
-                                new  Gtk.TreePath.from_string('0'), null, false);
+                                new  Gtk.TreePath.from_string("0"), null, false);
                             
                             
                         } else {
