@@ -68,7 +68,7 @@ WindowLeftTree=new XObject({
                 
                     if (ev.type != Gdk.EventType.BUTTON_PRESS  || ev.button.button != 3) {
                         //print("click" + ev.type);
-                        return;
+                        return true;
                     }
                     Gtk.TreePath res;
                     _this.view.el.get_path_at_pos(ev.button.x,ev.button.y, out res);
@@ -81,7 +81,7 @@ WindowLeftTree=new XObject({
                      _this.LeftTreeMenu.el.show_all();
                       _this.LeftTreeMenu.el.popup(null, null, null, null, 3, ev.button.time);
                      //   print("click:" + res.path.to_string());
-                     //   return false;
+                       return false;
                 },
                 drag_begin : ( ctx)  => {
                 	//print('SOURCE: drag-begin');
