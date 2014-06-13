@@ -904,7 +904,7 @@ public class Xcls_WindowLeftTree
             
                 
                 
-                if (action & Gdk.DragAction.MOVE > 0) {
+                if ((action & Gdk.DragAction.MOVE) > 0) {
                           //          print("REMOVING OLD NODE");
                         node.remove();
                         this.dropNode(target_data, node);
