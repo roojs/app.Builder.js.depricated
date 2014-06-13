@@ -888,7 +888,7 @@ WindowLeftTree=new XObject({
                         {
                             xtype: Gtk.CellRendererText,
                             id : "renderer",
-                            pack : "pack_start"
+                            pack : "pack_start,true"
                         }
                     ]
                 }

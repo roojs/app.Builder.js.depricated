@@ -73,7 +73,7 @@
                             "items": [
                                 {
                                     "id": "renderer",
-                                    "pack": "pack_start",
+                                    "pack": "pack_start,true",
                                     "xtype": "CellRendererText",
                                     "|xns": "Gtk"
                                 }

@@ -958,7 +958,7 @@ public class Xcls_WindowLeftTree
 
             // set gobject values
             var child_0 = new Xcls_renderer(_this);
-            this.el.pack_start (  child_0.el  );
+            this.el.pack_start (  child_0.el , true );
         }
 
         // userdefined functions 
