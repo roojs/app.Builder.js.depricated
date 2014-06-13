@@ -779,12 +779,12 @@ public class Xcls_WindowLeftTree
                     
                         
             }
-        public void load(GLib.List<JsRender.Node> tr, Gtk.TreeIter iter) 
+        public void load(GLib.List<JsRender.Node> tr, Gtk.TreeIter? iter) 
             {
                 Gtk.TreeIter citer;
                 //this.insert(citer,iter,0);
                 for(var i =0 ; i < tr.length(); i++) {
-                    if (iter) {
+                    if (iter != null) {
                         this.el.insert(out citer,iter,-1);
                     } else {
                         this.el.append(out citer);
