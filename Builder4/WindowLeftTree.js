@@ -32,7 +32,7 @@ WindowLeftTree=new XObject({
             return "";
         }
         Gtk.TreeIter iter;
-        Gtk.TreeStore mod;
+        Gtk.TreeModel mod;
         view.selection.get_selected(out mod, out iter);
         return mod.get_path(iter).to_string();
     },
