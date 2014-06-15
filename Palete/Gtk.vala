@@ -55,7 +55,7 @@ namespace Palete {
             var right = new GLib.List<string>();
 			
 			for (var i = 0; i < data.length; i++) {
-				var d = data[\i].strip();
+				var d = data[i].strip();
 				//print("READ " + d + "\n");
 				if (
 					d.length < 1
@@ -81,11 +81,11 @@ namespace Palete {
                     continue;
                 }
                 if (state == 1) {
-					print("add left: " + d + "\n");
+					//print("add left: " + d + "\n");
                     left.append(d);
                     continue;
                 }
-				print("add Right: " + d + "\n");
+				//print("add Right: " + d + "\n");
                 right.append(d);
                 //Seed.quit();
                
