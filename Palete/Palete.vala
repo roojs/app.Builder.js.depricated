@@ -137,7 +137,7 @@ namespace Palete
                 if (m.right.index_of(rval) > -1) {
 					print("found RIGHT, adding left\n");
 					
-					for(var ii =0; ii < m.left.length(); ii++) {
+					for(var ii =0; ii < m.left.size; ii++) {
                 		var l = m.left.get(ii);
 						
                         if (rt.index(l) > -1) {
