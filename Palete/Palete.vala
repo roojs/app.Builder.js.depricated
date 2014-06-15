@@ -51,11 +51,12 @@ namespace Palete
        
         public string name;
 
-		public GLib.List<Usage> map;
+		public GLib.List<Usage>? map;
 		
         public Palete()
         {
             // nothing?
+			this.map = null;
         }
         
         
@@ -120,7 +121,13 @@ namespace Palete
         */
         public string[] getDropList(string rval)
         {
-            // should be a bit more than this..
+
+			if (this.map == null) {
+				this.load();
+			}
+
+				
+			// should be a bit more than this..
 			// -> it should look for all elements that inherit 
             string[] ret = {};
 			var rt = new GLib.List<string>();
