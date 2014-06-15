@@ -25,6 +25,7 @@ public class Xcls_MainWindow
     public Xcls_vbox vbox;
 
         // my vars
+    public Xcls_WindowLeftTree left_tree;
     public string title;
 
         // ctor 
@@ -35,6 +36,7 @@ public class Xcls_MainWindow
         MainWindow = this;
 
         // my vars
+        this.left_tree = null;
         this.title = "Application Builder";
 
         // set gobject values
@@ -69,6 +71,8 @@ public class Xcls_MainWindow
     // userdefined functions 
 
     // skip listeners - not pipe 
+
+    // skip .Xcls_WindowLeftTree:left_tree - already used 
 
     // skip .string:title - already used 
 
