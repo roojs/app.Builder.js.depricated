@@ -352,7 +352,7 @@ public class Xcls_WindowLeftTree
                         
                         
                         if (selection_text == null || selection_text.length < 1) {
-                            print("Error  - drag selection text returned NULL");
+                            //print("Error  - drag selection text returned NULL");
                             if (this.drag_in_motion) {
                                  Gdk.drag_status(ctx, 0 ,time);
                                  return;
@@ -364,11 +364,11 @@ public class Xcls_WindowLeftTree
                         // see if we are dragging into ourself?
                         print ("got selection text of  " + selection_text);
                         
-                        var target_path = path.to_string();
-                        print("target_path="+target_path);
+                        //var target_path = path.to_string();
+                        //print("target_path="+target_path);
                         // 
                         if (selection_text  == target_path.substring(0,int.min(target_path.length,selection_text.length))) {
-                            ///print("subpath drag");
+                            print("subpath drag\n");
                             if (this.drag_in_motion) {
                                  Gdk.drag_status(ctx, 0 ,time);
                                   return;
@@ -389,7 +389,7 @@ public class Xcls_WindowLeftTree
                         // it is set up when we start to drag..
                         
                         
-                         targetData = _this.model.findDropNodeByPath( path.to_string(), this.dropList, pos);
+                        targetData = _this.model.findDropNodeByPath( path.to_string(), this.dropList, pos);
                             
             
                         
@@ -402,7 +402,7 @@ public class Xcls_WindowLeftTree
                             Gtk.drag_finish (ctx, false, false, time);        // drop failed..
                             return;
                         }
-                        
+                        print ("highlight drop path\n");
                         this.highlightDropPath(targetData, pos);
                         //console.dump(tg);
                            
