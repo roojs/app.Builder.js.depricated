@@ -338,9 +338,28 @@ WindowLeftTree=new XObject({
                                 
                 },
                 drag_data_get : ( drag_context, data, info, time) => {
+                
+                
+                     var s = this.el.get_selection();
+                     if (s.count_selected_rows() < 1) {
+                            data.set_data("",0);     
+                            return;
+                        }
+                     
+                     Gtk.TreeIter iter;
+                     Gtk.TreeModel mod;
+                     
+                     s.get_selected(out mod, out iter);
+                     
+                        
                     
-                    var tp = 
-                    data.set_data
+                    // var val = "";
+                    GLib.Value value;
+                    _this.model.el.get_value(iter, 2, out value);
+                    _this.model.activePath = mod.get_path(iter).to_string();
+                    
+                    var tp = mod.get_path(iter).to_string();
+                    data.set_data(tp,tp.length);
                 }
             },
             id : "view",
