@@ -128,6 +128,8 @@ namespace Palete
 				var m = this.map.nth_data(i);
 				
                 if (m.right.index(rval) > -1) {
+					print("found RIGHT, adding left\n");
+					
 					for(var ii =0; ii < m.left.length(); ii++) {
                 		var l = m.left.nth_data(ii);
 						
