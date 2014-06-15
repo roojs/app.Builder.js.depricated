@@ -369,7 +369,7 @@ public class Xcls_WindowLeftTree
             
                         // 
                         if (selection_text  == target_path) {
-                            print("self drag\n");
+                            print("self drag ?? == we should perhaps allow copy onto self..\n");
                             if (this.drag_in_motion) {
                                  Gdk.drag_status(ctx, 0 ,time);
                                   return;
