@@ -38,7 +38,7 @@ namespace Palete {
             // no parent...
         }
       
-        void public override load () {
+        public override void  load () {
 
 
 
