@@ -145,7 +145,7 @@ namespace Palete
                         }
 						print("ADD " + string.joinv(", ", ret) + "\n");
                         ret += l;
-						rt.add(l);
+						rt.append(l);
                     }
                 }
                 
