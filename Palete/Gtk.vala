@@ -55,7 +55,7 @@ namespace Palete {
             var right = new GLib.List<string>();
 
 			for (var i = 0; i < data.length; i++) {
-				var d = data[0];
+				var d = data[0].strip();
 				if (
 					d.length < 1
 				    ||
@@ -80,7 +80,7 @@ namespace Palete {
                     continue;
                 }
                 if (state == 1) {
-					
+					print("add left: 
                     left.append(d.strip());
                     continue;
                 }
