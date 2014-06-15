@@ -130,7 +130,7 @@ namespace Palete
 				// should be a bit more than this..
 			// -> it should look for all elements that inherit 
             string[] ret = {};
-			var rt = new GLib.List<string>();
+			var rt = new Gee.ArrayList<string>();
 			for (var i = 0; i < this.map.size; i++) {
 				var m = this.map.get(i);
 				
@@ -145,7 +145,7 @@ namespace Palete
                         }
 						print("ADD " + string.joinv(", ", ret) + "\n");
                         ret += l;
-						rt.append(l);
+						rt.add(l);
                     }
                 }
                 
