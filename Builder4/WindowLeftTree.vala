@@ -222,6 +222,8 @@ public class Xcls_WindowLeftTree
                     this.dragData = xname;
                     this.dropList = _this.model.file.palete().getDropList(xname);
                     
+                    print ("DROP LIST IS " + string.joinv(", ", this.dropList);
+                    
             
                     // make the drag icon a picture of the node that was selected
                     var path = _this.model.el.get_path(iter);
