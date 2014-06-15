@@ -28,6 +28,7 @@ namespace Palete {
             
             base();
             this.name = "Gtk";
+			this.map = null;
 			//this.load();
             // various loader methods..
               //this.map = [];
