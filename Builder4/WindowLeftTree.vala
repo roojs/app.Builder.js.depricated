@@ -148,7 +148,6 @@ public class Xcls_WindowLeftTree
             	    this.el,            /* widget will be drag-able */
             	    Gdk.ModifierType.BUTTON1_MASK,       /* modifier that will start a drag */
             	    Builder4.Application.targetList,            /* lists of target to support */
-            	    0,              /* size of list */
             	    Gdk.DragAction.COPY   | Gdk.DragAction.MOVE           /* what to do with data after dropped */
                 );
             
@@ -160,7 +159,6 @@ public class Xcls_WindowLeftTree
                     this.el,              /* widget that will accept a drop */
                     Gtk.DestDefaults.MOTION  | Gtk.DestDefaults.HIGHLIGHT,
                     Builder4.Application.targetList,            /* lists of target to support */
-                    0,              /* size of list */
                     Gdk.DragAction.COPY   | Gdk.DragAction.MOVE       /* what to do with data after dropped */
                 );
             
