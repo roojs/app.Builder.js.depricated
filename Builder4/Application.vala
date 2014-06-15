@@ -6,9 +6,9 @@ namespace Builder4
 	class Application : Gtk.Application
 	{
 		
-		 private static  TargetEntry[] _targetList = null;
+		 private static  Gtk.TargetEntry[] _targetList = null;
 
-		 static TargetEntry[]  targetList {
+		 static Gtk.TargetEntry[]  targetList {
 			get {
 				if (_targetList == null) {
 					 
