@@ -8,6 +8,8 @@
         {
             ".Palete.Palete:provider": "",
             ".signal:void:drag_end()": "",
+			".signal:void:before_node_change(JSRender.Node? node)": "",
+			".signal:void:after_node_change(JSRender.Node? node)": "",
             "id": "RightPalete",
             "pack": "pack_start,false,false",
             "xtype": "VBox",
