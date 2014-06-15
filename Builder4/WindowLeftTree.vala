@@ -152,7 +152,7 @@ public class Xcls_WindowLeftTree
             	    Gdk.DragAction.COPY   | Gdk.DragAction.MOVE           /* what to do with data after dropped */
                 );
             
-                Gtk.drag_source_set_target_list(this.el, Builder.Application.targetList);
+                Gtk.drag_source_set_target_list(this.el, Builder4.Application.targetList);
             
                 Gtk.drag_source_add_text_targets(this.el); 
             
