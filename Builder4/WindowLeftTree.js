@@ -198,6 +198,7 @@ WindowLeftTree=new XObject({
                             if (!isOver) {
                                 if (this.drag_in_motion) {
                                     Gdk.drag_status(ctx, 0 ,time);
+                                     return;
                                 }
                                 Gtk.drag_finish (ctx, false, false, time);        // drop failed..
                                 return; // not over apoint!?! - no action on drop or motion..
@@ -222,6 +223,7 @@ WindowLeftTree=new XObject({
                                 print("Error  - drag selection text returned NULL");
                                 if (this.drag_in_motion) {
                                      Gdk.drag_status(ctx, 0 ,time);
+                                     return;
                                  }
                                  Gtk.drag_finish (ctx, false, false, time);        // drop failed..
                                  return; /// -- fixme -- this is not really correct..
@@ -237,6 +239,7 @@ WindowLeftTree=new XObject({
                                 ///print("subpath drag");
                                 if (this.drag_in_motion) {
                                      Gdk.drag_status(ctx, 0 ,time);
+                                      return;
                                  }
                                  Gtk.drag_finish (ctx, false, false, time);        // drop failed..
                                  return; /// -- fixme -- this is not really correct..
@@ -262,6 +265,7 @@ WindowLeftTree=new XObject({
                                 //print("Can not find drop node path");
                                 if (this.drag_in_motion) {
                                     Gdk.drag_status(ctx, 0, time);
+                                    return;
                                 }
                                 Gtk.drag_finish (ctx, false, false, time);        // drop failed..
                                 return;
@@ -273,6 +277,7 @@ WindowLeftTree=new XObject({
                             
                             if (this.drag_in_motion) { 
                                 Gdk.drag_status(ctx, action ,time);
+                                
                                 return;
                             }
                             // continue on to allow drop..

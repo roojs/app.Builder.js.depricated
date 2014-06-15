@@ -330,6 +330,7 @@ public class Xcls_WindowLeftTree
                         if (!isOver) {
                             if (this.drag_in_motion) {
                                 Gdk.drag_status(ctx, 0 ,time);
+                                 return;
                             }
                             Gtk.drag_finish (ctx, false, false, time);        // drop failed..
                             return; // not over apoint!?! - no action on drop or motion..
@@ -354,6 +355,7 @@ public class Xcls_WindowLeftTree
                             print("Error  - drag selection text returned NULL");
                             if (this.drag_in_motion) {
                                  Gdk.drag_status(ctx, 0 ,time);
+                                 return;
                              }
                              Gtk.drag_finish (ctx, false, false, time);        // drop failed..
                              return; /// -- fixme -- this is not really correct..
@@ -369,6 +371,7 @@ public class Xcls_WindowLeftTree
                             ///print("subpath drag");
                             if (this.drag_in_motion) {
                                  Gdk.drag_status(ctx, 0 ,time);
+                                  return;
                              }
                              Gtk.drag_finish (ctx, false, false, time);        // drop failed..
                              return; /// -- fixme -- this is not really correct..
@@ -394,6 +397,7 @@ public class Xcls_WindowLeftTree
                             //print("Can not find drop node path");
                             if (this.drag_in_motion) {
                                 Gdk.drag_status(ctx, 0, time);
+                                return;
                             }
                             Gtk.drag_finish (ctx, false, false, time);        // drop failed..
                             return;
@@ -405,6 +409,7 @@ public class Xcls_WindowLeftTree
                         
                         if (this.drag_in_motion) { 
                             Gdk.drag_status(ctx, action ,time);
+                            
                             return;
                         }
                         // continue on to allow drop..
