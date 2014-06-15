@@ -73,7 +73,7 @@ namespace Palete {
 				
                 if (Regex.match_simple ("^left:", d)) { 
                     state = 1;
-                    if (left.length() > 0 ){
+                    if (left.size > 0 ){
                         cfg.append(new Usage( left, right));
 					}
                     left = new Gee.ArrayList<string>();
@@ -94,7 +94,7 @@ namespace Palete {
                 //Seed.quit();
                
             }
-            if (left.length() > 0 ){
+            if (left.size > 0 ){
                   cfg.add(new Usage( left, right));
             }
             this.map = cfg;
