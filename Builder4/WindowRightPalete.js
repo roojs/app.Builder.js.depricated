@@ -189,14 +189,13 @@ WindowRightPalete=new XObject({
                                 Gtk.drag_source_set (
                                         this.el,            /* widget will be drag-able */
                                         Gdk.ModifierType.BUTTON1_MASK,       /* modifier that will start a drag */
-                                        null,            /* lists of target to support */
-                                        0,              /* size of list */
+                                        Builder4.Application.targetList,            /* lists of target to support */
                                         Gdk.DragAction.COPY         /* what to do with data after dropped */
                                 );
                                 //Gtk.drag_source_set_target_list(this.el, LeftTree.targetList);
                                
-                                Gtk.drag_source_set_target_list(this.el, Application.targetList);
-                                Gtk.drag_source_add_text_targets(this.el); 
+                               // Gtk.drag_source_set_target_list(this.el, Application.targetList);
+                               // Gtk.drag_source_add_text_targets(this.el); 
                              
                             },
                             items : [
