@@ -347,6 +347,16 @@ public class Xcls_WindowLeftTree
                         
                         // what's in the selected data....
                         var selection_text = sel.get_text();
+                        
+                        if (selection_text == null) {
+                            print("Error  - drag selection text returned NULL");
+                            if (this.drag_in_motion) {
+                                 Gdk.drag_status(ctx, 0 ,time);
+                             }
+                             Gtk.drag_finish (ctx, false, false, time);        // drop failed..
+                             return; /// -- fixme -- this is not really correct..
+                        }                
+                        
                         // see if we are dragging into ourself?
                         
                          
