@@ -291,6 +291,8 @@ WindowLeftTree=new XObject({
                      if (this.blockChanges) { // probably not needed.. 
                        return  ;
                      }
+                     this.before_node_change(null);
+                     
                      if (_this.model.file == null) {
                          return;
                      } 
