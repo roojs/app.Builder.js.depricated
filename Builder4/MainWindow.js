@@ -25,12 +25,6 @@ MainWindow=new XObject({
             return false;
         }
     },
-    'void:show' : () {
-        var left_tree =new Xcls_WindowLeftTree();
-        _this.vbox.el.pack_start(left_tree.el,true, true,0);
-        this.el.show_all();
-    
-    },
     border_width : 0,
     default_height : 500,
     default_width : 800,
@@ -40,6 +34,12 @@ MainWindow=new XObject({
     type : Gtk.WindowType.TOPLEVEL,
     'void:setTitle' : (string str) {
         this.el.set_title(this.title + " - " + str);
+    },
+    'void:show' : () {
+        var left_tree =new Xcls_WindowLeftTree();
+        _this.vbox.el.pack_start(left_tree.el,true, true,0);
+        this.el.show_all();
+    
     },
     items : [
         {

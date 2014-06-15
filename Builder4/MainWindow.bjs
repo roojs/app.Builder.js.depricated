@@ -10,7 +10,6 @@
                 "show": "  ( ) => {\n\n    //imports.Builder.Provider.ProjectManager.ProjectManager.loadConfig();\n    //this.get('/MidPropTree').hideWin();\n    //this.get('/RightPalete').hide();\n    //this.get('/BottomPane').el.hide();\n    //this.get('/Editor').el.show_all();\n\n}",
                 "delete_event": "  (   event) => {\n    return false;\n}"
             },
-            "|void:show": "() {\n    var left_tree =new Xcls_WindowLeftTree();\n    _this.vbox.el.pack_start(left_tree.el,true, true,0);\n    this.el.show_all();\n\n}",
             ".string:title": "\"Application Builder\"",
             "border_width": 0,
             "default_height": 500,
@@ -21,6 +20,7 @@
             "|init": " \n\t  \n    this.el.show_all();\n    \n    ",
             "|type": "Gtk.WindowType.TOPLEVEL",
             "|void:setTitle": " (string str) {\n    this.el.set_title(this.title + \" - \" + str);\n}\n",
+            "|void:show": "() {\n    var left_tree =new Xcls_WindowLeftTree();\n    _this.vbox.el.pack_start(left_tree.el,true, true,0);\n    this.el.show_all();\n\n}",
             "|xns": "Gtk",
             "items": [
                 {

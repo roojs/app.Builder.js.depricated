@@ -44,6 +44,13 @@ public class Xcls_MainWindow
         var child_0 = new Xcls_vbox(_this);
         this.el.add (  child_0.el  );
 
+        // init method 
+         
+        	  
+            this.el.show_all();
+            
+            
+
         // listeners 
         this.el.show.connect(   ( ) => {
         
@@ -62,12 +69,6 @@ public class Xcls_MainWindow
     // userdefined functions 
 
     // skip listeners - not pipe 
-    public void show() {
-            var left_tree =new Xcls_WindowLeftTree();
-            _this.vbox.el.pack_start(left_tree.el,true, true,0);
-            this.el.show_all();
-        
-        }
 
     // skip .string:title - already used 
 
@@ -88,6 +89,12 @@ public class Xcls_MainWindow
     // skip |type - already used 
     public void setTitle (string str) {
             this.el.set_title(this.title + " - " + str);
+        }
+    public void show() {
+            var left_tree =new Xcls_WindowLeftTree();
+            _this.vbox.el.pack_start(left_tree.el,true, true,0);
+            this.el.show_all();
+        
         }
 
     // skip |xns - no return type
