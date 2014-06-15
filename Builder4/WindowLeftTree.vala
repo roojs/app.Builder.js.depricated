@@ -367,7 +367,7 @@ public class Xcls_WindowLeftTree
                         var target_path = path.to_string();
                         print("target_path="+target_path);
                         // 
-                        if (selection_text  == target_path.substring(0,int.min(target_path,selection_text.length))) {
+                        if (selection_text  == target_path.substring(0,int.min(target_path.length,selection_text.length))) {
                             ///print("subpath drag");
                             if (this.drag_in_motion) {
                                  Gdk.drag_status(ctx, 0 ,time);
