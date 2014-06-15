@@ -28,6 +28,7 @@ public class Xcls_WindowLeftTree
     public Xcls_LeftTreeMenu LeftTreeMenu;
 
         // my vars
+    public signal beforeNodeChange undefined;
 
         // ctor 
     public Xcls_WindowLeftTree()
@@ -51,6 +52,8 @@ public class Xcls_WindowLeftTree
     }
 
     // userdefined functions 
+
+    // skip .signal:beforeNodeChange - already used 
 
     // skip id - not pipe 
 

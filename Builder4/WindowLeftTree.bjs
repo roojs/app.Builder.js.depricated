@@ -6,6 +6,7 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.bjs",
     "items": [
         {
+            ".signal:beforeNodeChange": "",
             "id": "WindowLeftTree",
             "pack": "add",
             "xtype": "ScrolledWindow",
