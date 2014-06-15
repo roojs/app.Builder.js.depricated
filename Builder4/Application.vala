@@ -13,7 +13,7 @@ namespace Builder4
 		}
 
 
-		const Gtk.TargetEntry[] targetList = {
+		public const Gtk.TargetEntry[] targetList = {
 		    { "INTEGER",    0, Target.INT32 },
 		    { "STRING",     0, Target.STRING },
 		    { "text/plain", 0, Target.STRING },
