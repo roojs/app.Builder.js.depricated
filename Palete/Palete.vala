@@ -136,7 +136,7 @@ namespace Palete
                         if (rt.index(l) > -1) {
                             continue;
                         }
-						print("ADD " + ret + "\n");
+						print("ADD " + string.joinv(", ", ret) + "\n");
                         ret += l;
 						rt.append(l);
                     }
