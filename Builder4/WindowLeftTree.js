@@ -216,6 +216,8 @@ WindowLeftTree=new XObject({
                             // what's in the selected data....
                             var selection_text = sel.get_text();
                             
+                            
+                            
                             if (selection_text == null) {
                                 print("Error  - drag selection text returned NULL");
                                 if (this.drag_in_motion) {
@@ -226,9 +228,12 @@ WindowLeftTree=new XObject({
                             }                
                             
                             // see if we are dragging into ourself?
+                            print ("got selection text of  " + selection_text);
                             
+                            var target_path = path.to_string();
+                            print("target_path="+target_path);
                              
-                            if (selection_text  == path.to_string().substring(0,selection_text.length)) {
+                            if (selection_text  == target_path.substring(0,selection_text.length)) {
                                 ///print("subpath drag");
                                 if (this.drag_in_motion) {
                                      Gdk.drag_status(ctx, 0 ,time);
