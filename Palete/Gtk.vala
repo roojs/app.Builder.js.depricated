@@ -39,7 +39,7 @@ namespace Palete {
       
         void load () {
                 
-         
+     	    print("Palete Load called\n");
     		string raw;
 			if (!FileUtils.test ("/usr/share/appBuilder/GtkUsage.txt", FileTest.EXISTS)) {
 				throw new Error.MISSING_FILE("/usr/share/appBuilder/GtkUsage.txt not found");
