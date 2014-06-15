@@ -392,7 +392,7 @@ public class Xcls_WindowLeftTree
                         
                         targetData = _this.model.findDropNodeByPath( path.to_string(), this.dropList, pos);
                             
-            
+                        print("targetDAta: " + targetData +"\n");
                         
                         if (targetData.length < 1) {
                             //print("Can not find drop node path");
