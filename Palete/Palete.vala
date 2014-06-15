@@ -10,9 +10,9 @@ namespace Palete
 
 	public class Usage : Object 
 	{
-		public Gee.List<string> left;
-		public Gee.List<string> right;
-		public Usage(Gee.List<string> ileft, Gee.List<string> iright)
+		public Gee.ArrayList<string> left;
+		public Gee.ArrayList<string> right;
+		public Usage(Gee.ArrayList<string> ileft, Gee.ArrayList<string> iright)
 		{
 			this.left = ileft;
 			this.right=  iright;
