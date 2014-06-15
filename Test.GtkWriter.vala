@@ -62,7 +62,7 @@ void testLeftTree(string name)
 	
 	var w = new Xcls_MainWindow();
 	w.show();
-	w.model.load(tf);
+	w.left_tree.model.load(tf);
 	
 }
 	
