@@ -483,12 +483,6 @@ public class Xcls_WindowLeftTree
                  
                  s.get_selected(out mod, out iter);
                  
-                    
-                
-                // var val = "";
-                GLib.Value value;
-                _this.model.el.get_value(iter, 2, out value);
-                _this.model.activePath = mod.get_path(iter).to_string();
                 
                 var tp = mod.get_path(iter).to_string();
                 data.set_data(tp,tp.length);
