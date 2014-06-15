@@ -45,7 +45,7 @@ WindowLeftTree=new XObject({
                     //console.log("button press?");
                 
                     
-                    _this.beforeNodeChanged();
+                    _this.before_node_change(null);
                     if (ev.type != Gdk.EventType.BUTTON_PRESS  || ev.button != 3) {
                         //print("click" + ev.type);
                         return true;

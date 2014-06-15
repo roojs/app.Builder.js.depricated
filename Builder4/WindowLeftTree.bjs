@@ -6,9 +6,9 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.bjs",
     "items": [
         {
-           ".signal:void:before_node_change(JSRender.Node? node)": "",
-			".signal:void:after_node_change(JSRender.Node? node)": "",
-            "id": "WindowLeftTree", 
+            ".signal:void:before_node_change(JSRender.Node? node)": "",
+            ".signal:void:after_node_change(JSRender.Node? node)": "",
+            "id": "WindowLeftTree",
             "pack": "add",
             "xtype": "ScrolledWindow",
             "|JsRender.JsRender:getActiveFile": "() {\n    return this.model.file;\n}\n",

@@ -28,7 +28,8 @@ public class Xcls_WindowLeftTree
     public Xcls_LeftTreeMenu LeftTreeMenu;
 
         // my vars
-    public signal void before_node_change;
+    public signal void before_node_change(JSRender.Node? node);
+    public signal void after_node_change(JSRender.Node? node);
 
         // ctor 
     public Xcls_WindowLeftTree()
@@ -53,7 +54,9 @@ public class Xcls_WindowLeftTree
 
     // userdefined functions 
 
-    // skip .signal:void:before_node_change - already used 
+    // skip .signal:void:before_node_change(JSRender.Node? node) - already used 
+
+    // skip .signal:void:after_node_change(JSRender.Node? node) - already used 
 
     // skip id - not pipe 
 
@@ -174,7 +177,7 @@ public class Xcls_WindowLeftTree
                 //console.log("button press?");
             
                 
-                _this.beforeNodeChanged();
+                _this.before_node_change(null);
                 if (ev.type != Gdk.EventType.BUTTON_PRESS  || ev.button != 3) {
                     //print("click" + ev.type);
                     return true;
