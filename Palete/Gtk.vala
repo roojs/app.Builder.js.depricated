@@ -56,7 +56,7 @@ namespace Palete {
             var state = 0;
             var cfg = new GLib.List<Usage>();
             string[] left = {} ;
-			string[] right = {}
+			string[] right = {};
             
 			
 			for (var i = 0; i < data.length; i++) {
