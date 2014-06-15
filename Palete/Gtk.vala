@@ -54,9 +54,9 @@ namespace Palete {
           // print(data);
             var data  = raw.split("\n");
             var state = 0;
-            var cfg = new GLib.List<Usage>();
-            var left = new GLib.List<string>();
-            var right = new GLib.List<string>();
+            var cfg = new Gee.List<Usage>();
+            var left = new Gee.List<string>();
+            var right = new Gee.List<string>();
 			
 			for (var i = 0; i < data.length; i++) {
 				var d = data[i].strip();
