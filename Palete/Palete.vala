@@ -134,7 +134,7 @@ namespace Palete
 			for (var i = 0; i < this.map.length(); i++) {
 				var m = this.map.nth_data(i);
 				
-                if (m.right.index(rval) > -1) {
+                if (m.right.index_of(rval) > -1) {
 					print("found RIGHT, adding left\n");
 					
 					for(var ii =0; ii < m.left.length(); ii++) {
