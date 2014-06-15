@@ -79,7 +79,7 @@ int main (string[] args) {
 	//testBuilderFile("Editor", "VALA");
 	testLeftTree("Editor");
 	
-	//Gtk.main();
+	Gtk.main();
 
     
 	
