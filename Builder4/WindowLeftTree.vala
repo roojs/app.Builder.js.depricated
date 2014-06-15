@@ -147,25 +147,23 @@ public class Xcls_WindowLeftTree
                 Gtk.drag_source_set (
             	    this.el,            /* widget will be drag-able */
             	    Gdk.ModifierType.BUTTON1_MASK,       /* modifier that will start a drag */
-            	    null,            /* lists of target to support */
+            	    Builder4.Application.targetList,            /* lists of target to support */
             	    0,              /* size of list */
             	    Gdk.DragAction.COPY   | Gdk.DragAction.MOVE           /* what to do with data after dropped */
                 );
-            
-                Gtk.drag_source_set_target_list(this.el, Builder4.Application.targetList);
-            
+             
                 Gtk.drag_source_add_text_targets(this.el); 
             
                 Gtk.drag_dest_set
                 (
                     this.el,              /* widget that will accept a drop */
                     Gtk.DestDefaults.MOTION  | Gtk.DestDefaults.HIGHLIGHT,
-                    null,            /* lists of target to support */
+                    Builder4.Application.targetList,            /* lists of target to support */
                     0,              /* size of list */
                     Gdk.DragAction.COPY   | Gdk.DragAction.MOVE       /* what to do with data after dropped */
                 );
             
-                Gtk.drag_dest_set_target_list(this.el, Builder.Application.targetList);
+                
                 Gtk.drag_dest_add_text_targets(this.el);
             }
 
