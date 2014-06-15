@@ -131,8 +131,8 @@ namespace Palete
 			// -> it should look for all elements that inherit 
             string[] ret = {};
 			var rt = new GLib.List<string>();
-			for (var i = 0; i < this.map.length(); i++) {
-				var m = this.map.nth_data(i);
+			for (var i = 0; i < this.map.size; i++) {
+				var m = this.map.get(i);
 				
                 if (m.right.index_of(rval) > -1) {
 					print("found RIGHT, adding left\n");
@@ -140,7 +140,7 @@ namespace Palete
 					for(var ii =0; ii < m.left.size; ii++) {
                 		var l = m.left.get(ii);
 						
-                        if (rt.index(l) > -1) {
+                        if (rt.index_of(l) > -1) {
                             continue;
                         }
 						print("ADD " + string.joinv(", ", ret) + "\n");
