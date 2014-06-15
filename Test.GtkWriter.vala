@@ -49,6 +49,23 @@ void testBuilderFile(string name, string test)
 	print("invalid test?\n");
 }
 
+
+
+void testLeftTree(string name)
+{
+	var dir = "/home/alan/gitlive/app.Builder.js/Builder4"; 
+	var proj = new Project.Gtk(dir );
+	proj.scanDirs();
+	 
+	var tf = proj.files.get(dir + "/" + name + ".bjs");
+	tf.loadItems();
+	
+	var w = new Xcls_MainWindow();
+	w.show();
+	w.model.load(tf);
+	
+}
+	
 int main (string[] args) {
     Gtk.init (ref args);
     new JsRender.Lang_Class();
@@ -58,9 +75,8 @@ int main (string[] args) {
 	//testBuilderFile("Editor", "JSON");
 	//testBuilderFile("Editor", "JS");
 	//testBuilderFile("Editor", "VALA");
-	var w = new Xcls_MainWindow();
-	w.show();
-	 
+	testLeftTree("Editor");
+	
 	Gtk.main();
 
     
