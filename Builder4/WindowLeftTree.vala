@@ -151,8 +151,9 @@ public class Xcls_WindowLeftTree
             	    0,              /* size of list */
             	    Gdk.DragAction.COPY   | Gdk.DragAction.MOVE           /* what to do with data after dropped */
                 );
-             
-                Gtk.drag_source_add_text_targets(this.el); 
+            
+                // ?? needed??
+                //Gtk.drag_source_add_text_targets(this.el); 
             
                 Gtk.drag_dest_set
                 (
@@ -163,8 +164,8 @@ public class Xcls_WindowLeftTree
                     Gdk.DragAction.COPY   | Gdk.DragAction.MOVE       /* what to do with data after dropped */
                 );
             
-                
-                Gtk.drag_dest_add_text_targets(this.el);
+                //Gtk.drag_dest_set_target_list(this.el, Builder.Application.targetList);
+                //Gtk.drag_dest_add_text_targets(this.el);
             }
 
             // listeners 
