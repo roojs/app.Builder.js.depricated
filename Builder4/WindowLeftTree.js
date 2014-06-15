@@ -271,6 +271,8 @@ WindowLeftTree=new XObject({
                                 Gtk.drag_finish (ctx, false, false, time);        // drop failed..
                                 return;
                             }
+                            
+                            
                             print ("highlight drop path\n");
                             this.highlightDropPath(targetData, pos);
                             //console.dump(tg);
