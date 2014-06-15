@@ -336,6 +336,9 @@ WindowLeftTree=new XObject({
                         //Seed.print( value.get_string());
                         return  ;
                                 
+                },
+                drag_data_get : ( drag_context, data, info, time) => {
+                
                 }
             },
             id : "view",

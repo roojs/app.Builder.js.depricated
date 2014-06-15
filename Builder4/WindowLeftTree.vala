@@ -469,6 +469,9 @@ public class Xcls_WindowLeftTree
                     return  ;
                             
             } );
+            this.el.drag_data_get.connect(  ( drag_context, data, info, time) => {
+            
+            } );
         }
 
         // userdefined functions 
