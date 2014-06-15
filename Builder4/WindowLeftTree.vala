@@ -180,7 +180,7 @@ public class Xcls_WindowLeftTree
                 _this.before_node_change(null);
                 if (ev.type != Gdk.EventType.BUTTON_PRESS  || ev.button != 3) {
                     //print("click" + ev.type);
-                    return true;
+                    return false;
                 }
                 Gtk.TreePath res;
                 _this.view.el.get_path_at_pos((int)ev.x,(int)ev.y, out res, null, null, null);
