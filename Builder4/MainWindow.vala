@@ -91,8 +91,8 @@ public class Xcls_MainWindow
             this.el.set_title(this.title + " - " + str);
         }
     public void show() {
-            var left_tree =new Xcls_WindowLeftTree();
-            _this.vbox.el.pack_start(left_tree.el,true, true,0);
+            this.left_tree =new Xcls_WindowLeftTree();
+            _this.vbox.el.pack_start(this.left_tree.el,true, true,0);
             this.el.show_all();
         
         }
