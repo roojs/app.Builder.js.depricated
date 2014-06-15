@@ -338,7 +338,9 @@ WindowLeftTree=new XObject({
                                 
                 },
                 drag_data_get : ( drag_context, data, info, time) => {
-                
+                    
+                    var tp = 
+                    data.set_data
                 }
             },
             id : "view",

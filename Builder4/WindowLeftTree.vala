@@ -470,7 +470,9 @@ public class Xcls_WindowLeftTree
                             
             } );
             this.el.drag_data_get.connect(  ( drag_context, data, info, time) => {
-            
+                
+                var tp = 
+                data.set_data
             } );
         }
 
