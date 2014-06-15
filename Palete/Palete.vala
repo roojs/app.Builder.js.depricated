@@ -14,8 +14,8 @@ namespace Palete
 		public Gee.List<string> right;
 		public Usage(Gee.List<string> ileft, Gee.List<string> iright)
 		{
-			this.left = ileft.copy();
-			this.right=  iright.copy();
+			this.left = ileft;
+			this.right=  iright;
 		}
 	}
 
