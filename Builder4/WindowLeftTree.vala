@@ -455,7 +455,9 @@ public class Xcls_WindowLeftTree
                     
                     var node = (JsRender.Node)value.dup_object();
             
-                    _this.model.file.changed(node, "tree");
+                    _this.after_node_change(node);
+            
+            //        _this.model.file.changed(node, "tree");
                    
                     //Seed.print( value.get_string());
                     return  ;
