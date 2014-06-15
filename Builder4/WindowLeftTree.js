@@ -44,15 +44,7 @@ WindowLeftTree=new XObject({
                 button_press_event : ( ev) => {
                     //console.log("button press?");
                 
-                    if (_this.model.file == null) {
-                        return true;
-                    }
-                
-                    if (!_this.model.file.editor.save()) {
-                        
-                        // popup!! - click handled.. 
-                        return true;
-                    }
+                    
                     _this.beforeNodeChanged();
                     if (ev.type != Gdk.EventType.BUTTON_PRESS  || ev.button != 3) {
                         //print("click" + ev.type);
