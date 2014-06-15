@@ -7,7 +7,7 @@
     "items": [
         {
             ".signal:void:after_node_change(JsRender.Node? node)": "",
-            ".signal:void:before_node_change": "",
+            ".signal:void:before_node_change(JsRender.Node? node)": "",
             "id": "WindowLeftTree",
             "pack": "add",
             "xtype": "ScrolledWindow",

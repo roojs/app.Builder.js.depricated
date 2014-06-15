@@ -29,7 +29,7 @@ public class Xcls_WindowLeftTree
 
         // my vars
     public signal void after_node_change(JsRender.Node? node);
-    public signal void before_node_change;
+    public signal void before_node_change(JsRender.Node? node);
 
         // ctor 
     public Xcls_WindowLeftTree()
@@ -56,7 +56,7 @@ public class Xcls_WindowLeftTree
 
     // skip .signal:void:after_node_change(JsRender.Node? node) - already used 
 
-    // skip .signal:void:before_node_change - already used 
+    // skip .signal:void:before_node_change(JsRender.Node? node) - already used 
 
     // skip id - not pipe 
 
