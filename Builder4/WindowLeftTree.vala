@@ -350,7 +350,7 @@ public class Xcls_WindowLeftTree
                         
                         
                         
-                        if (selection_text == null) {
+                        if (selection_text == null || selection_text.length < 1) {
                             print("Error  - drag selection text returned NULL");
                             if (this.drag_in_motion) {
                                  Gdk.drag_status(ctx, 0 ,time);
