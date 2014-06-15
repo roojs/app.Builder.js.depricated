@@ -138,14 +138,14 @@ namespace Palete
 					print("found RIGHT, adding left\n");
 					
 					for(var ii =0; ii < m.left.length(); ii++) {
-                		var l = m.left.nth_data(ii);
+                		var l = m.left.get(ii);
 						
                         if (rt.index(l) > -1) {
                             continue;
                         }
 						print("ADD " + string.joinv(", ", ret) + "\n");
                         ret += l;
-						rt.append(l);
+						rt.add(l);
                     }
                 }
                 
