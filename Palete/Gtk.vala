@@ -54,9 +54,9 @@ namespace Palete {
           // print(data);
             var data  = raw.split("\n");
             var state = 0;
-            var cfg = new Gee.List<Usage>();
-            var left = new Gee.List<string>();
-            var right = new Gee.List<string>();
+            var cfg = new Gee.ArrayList<Usage>();
+            var left = new Gee.ArrayList<string>();
+            var right = new Gee.ArrayList<string>();
 			
 			for (var i = 0; i < data.length; i++) {
 				var d = data[i].strip();
@@ -76,8 +76,8 @@ namespace Palete {
                     if (left.length() > 0 ){
                         cfg.append(new Usage( left, right));
 					}
-                    left = new Gee.List<string>();
-        			right = new Gee.List<string>();
+                    left = new Gee.ArrayList<string>();
+        			right = new Gee.ArrayList<string>();
                     continue;
                 }
                  if (Regex.match_simple ("^right:", d)) { 
