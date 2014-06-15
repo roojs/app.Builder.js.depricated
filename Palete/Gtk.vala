@@ -55,9 +55,8 @@ namespace Palete {
             var data  = raw.split("\n");
             var state = 0;
             var cfg = new GLib.List<Usage>();
-            string[] left = {} ;
-			string[] right = {};
-            
+            var left = new GLib.List<string>();
+            var right = new GLib.List<string>();
 			
 			for (var i = 0; i < data.length; i++) {
 				var d = data[i].strip();
@@ -77,8 +76,8 @@ namespace Palete {
                     if (left.length() > 0 ){
                         cfg.append(new Usage( left, right));
 					}
-                    left = {} ;
-        			right = {} ;
+                    left = new GLib.List<string>();
+        			right = new GLib.List<string>();
                     continue;
                 }
                  if (Regex.match_simple ("^right:", d)) { 
@@ -87,15 +86,15 @@ namespace Palete {
                 }
                 if (state == 1) {
 					//print("add left: " + d + "\n");
-                    left += d;
+                    left.append(d);
                     continue;
                 }
 				//print("add Right: " + d + "\n");
-                right += d;
+                right.append(d);
                 //Seed.quit();
                
             }
-            if (left.length > 0 ){
+            if (left.length() > 0 ){
                   cfg.append(new Usage( left, right));
             }
             this.map = cfg.copy();
