@@ -69,7 +69,6 @@ namespace Palete {
                 if (Regex.match_simple ("^left:", d)) { 
                     state = 1;
                     if (left.length() > 0 ){
-                        
                         cfg.append(new Usage( left, right));
 					}
                     left = new GLib.List<string>();
@@ -81,8 +80,9 @@ namespace Palete {
                     continue;
                 }
                 if (state == 1) {
+					
                     left.append(d.strip());
-                    return;
+                    continue;
                 }
                 right.append(d.strip());
                 //Seed.quit();
