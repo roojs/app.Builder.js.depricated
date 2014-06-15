@@ -1000,7 +1000,7 @@ public class Xcls_WindowLeftTree
             this.el.pack_start (  child_0.el , true );
 
             // init method 
-              this.el.add_attribute(_this.renderer , "markup", 0 );
+              this.el.add_attribute(_this.renderer.el , "markup", 0 );
              
         }
 

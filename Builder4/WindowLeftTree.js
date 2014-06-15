@@ -870,7 +870,7 @@ WindowLeftTree=new XObject({
                 {
                     xtype: Gtk.TreeViewColumn,
                     pack : "append_column",
-                    init : this.el.add_attribute(_this.renderer , "markup", 0 );,
+                    init : this.el.add_attribute(_this.renderer.el , "markup", 0 );,
                     items : [
                         {
                             xtype: Gtk.CellRendererText,

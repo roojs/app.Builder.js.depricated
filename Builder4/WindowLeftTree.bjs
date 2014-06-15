@@ -68,7 +68,7 @@
                         {
                             "pack": "append_column",
                             "xtype": "TreeViewColumn",
-                            "|init": "  this.el.add_attribute(_this.renderer , \"markup\", 0 );\n ",
+                            "|init": "  this.el.add_attribute(_this.renderer.el , \"markup\", 0 );\n ",
                             "|xns": "Gtk",
                             "items": [
                                 {
