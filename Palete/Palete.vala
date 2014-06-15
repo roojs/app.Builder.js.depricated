@@ -10,12 +10,12 @@ namespace Palete
 
 	public class Usage : Object 
 	{
-		public string[] left;
-		public string[] right;
-		public Usage(string[] ileft, string[] iright)
+		public GLib.List<string> left;
+		public GLib.List<string> right;
+		public Usage(GLib.List<string> ileft, GLib.List<string> iright)
 		{
-			this.left = ileft;;
-			this.right=  iright;
+			this.left = ileft.copy();
+			this.right=  iright.copy();
 		}
 	}
 
@@ -51,12 +51,12 @@ namespace Palete
        
         public string name;
 
-		public GLib.List<Usage>? map;
+		public GLib.List<Usage> map;
 		
         public Palete()
         {
             // nothing?
-			this.map = null;
+			this.
         }
         
         
@@ -127,7 +127,7 @@ namespace Palete
 			}
 
 				
-			// should be a bit more than this..
+				// should be a bit more than this..
 			// -> it should look for all elements that inherit 
             string[] ret = {};
 			var rt = new GLib.List<string>();
