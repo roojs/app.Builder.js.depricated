@@ -53,9 +53,10 @@ namespace Palete {
             var cfg = new GLib.List<Usage>();
             var left = new GLib.List<string>();
             var right = new GLib.List<string>();
-
+			
 			for (var i = 0; i < data.length; i++) {
 				var d = data[0].strip();
+				print("READ " + d + "\n");
 				if (
 					d.length < 1
 				    ||
