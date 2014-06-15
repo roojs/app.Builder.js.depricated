@@ -482,9 +482,11 @@ public class Xcls_WindowLeftTree
             this.el.drag_data_get.connect(  ( drag_context, data, info, time) => {
             
             
+                 print("drag-data-get");
                  var s = this.el.get_selection();
                  if (s.count_selected_rows() < 1) {
                         data.set_text("",0);     
+                         print("return empty string - no selection..");
                         return;
                     }
                  
@@ -496,6 +498,7 @@ public class Xcls_WindowLeftTree
                 
                 var tp = mod.get_path(iter).to_string();
                 data.set_text(tp,tp.length);
+                 print("return " + tp);
             } );
         }
 
