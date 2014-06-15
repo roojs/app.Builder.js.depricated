@@ -76,8 +76,8 @@ namespace Palete {
                     if (left.length() > 0 ){
                         cfg.append(new Usage( left, right));
 					}
-                    left = new GLib.List<string>();
-        			right = new GLib.List<string>();
+                    left = new Gee.List<string>();
+        			right = new Gee.List<string>();
                     continue;
                 }
                  if (Regex.match_simple ("^right:", d)) { 
@@ -86,18 +86,18 @@ namespace Palete {
                 }
                 if (state == 1) {
 					//print("add left: " + d + "\n");
-                    left.append(d);
+                    left.add(d);
                     continue;
                 }
 				//print("add Right: " + d + "\n");
-                right.append(d);
+                right.add(d);
                 //Seed.quit();
                
             }
             if (left.length() > 0 ){
-                  cfg.append(new Usage( left, right));
+                  cfg.add(new Usage( left, right));
             }
-            this.map = cfg.copy();
+            this.map = cfg;
              
         }
         
