@@ -74,7 +74,7 @@ namespace Palete {
                 if (Regex.match_simple ("^left:", d)) { 
                     state = 1;
                     if (left.size > 0 ){
-                        cfg.append(new Usage( left, right));
+                        cfg.add(new Usage( left, right));
 					}
                     left = new Gee.ArrayList<string>();
         			right = new Gee.ArrayList<string>();
