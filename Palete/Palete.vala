@@ -51,7 +51,7 @@ namespace Palete
        
         public string name;
 
-		public GLib.List<Usage>? map;
+		public GLib.List<Usage> map;
 		
         public Palete()
         {
