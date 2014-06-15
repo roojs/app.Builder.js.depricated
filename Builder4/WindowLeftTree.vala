@@ -701,14 +701,14 @@ public class Xcls_WindowLeftTree
                         }
                         return path + "|%d".printf( (int) Gtk.TreeViewDropPosition.INTO_OR_AFTER) + "|" + prop;
                     }
-                    
-                    var par = path.split(":");
-                    if (par.length < 2) {
-                        break;
-                    }
                     last = "" + path;
-                    par[par.length-1] = "";
-                    path = string.joinv(":", par).substring(0,-2);
+                    var par = path.split(":");
+                    string [] ppar = {};
+                    for (var i = 0; i < par.length-1; i++) {
+                        ppar += par[i];
+                    }
+                    
+                    path = string.joinv(":", ppar);
             
             
                 }
