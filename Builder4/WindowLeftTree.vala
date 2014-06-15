@@ -703,9 +703,14 @@ public class Xcls_WindowLeftTree
                     }
                     
                     var par = path.split(":");
+                    if (par.length < 2) {
+                        break;
+                    }
                     last = "" + path;
                     par[par.length-1] = "";
                     path = string.joinv(":", par).substring(0,-2);
+            
+            
                 }
                 
                 return "";
