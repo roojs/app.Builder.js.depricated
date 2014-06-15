@@ -206,6 +206,10 @@ public class Xcls_WindowLeftTree
                     var s = _this.view.el.get_selection();
                     Gtk.TreeModel mod;
                     s.get_selected(out mod, out iter);
+                    if (iter == null) {
+                        return;
+                    }
+                    
             
                     // set some properties of the tree for use by the dropped element.
                     GLib.Value value;
