@@ -78,11 +78,11 @@ public class JsRender.Node : Object {
     {
         var k = this.props.get(key);
         if (k != null) {
-			return false;
+			return true;
 		}
 		
 		
-        return true;
+        return false;
         
     }
 
