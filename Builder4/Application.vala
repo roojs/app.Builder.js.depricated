@@ -12,7 +12,7 @@ namespace Builder4
 			get {
 				if (_targetList == null) {
 					 
-					var tl = new Gtk.TargetList();
+					var tl = new Gtk.TargetEntry();
 					tl.add(  Gdk.atom_intern("STRING"), 0, 0);
 					_targetList+= tl;
 				}
