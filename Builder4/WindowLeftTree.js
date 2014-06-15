@@ -70,13 +70,15 @@ WindowLeftTree=new XObject({
                         //this.targetData = "";
                         
                         // find what is selected in our tree...
-                        Gtk.TreeIter iter;
+                        
                         var s = _this.view.el.get_selection();
-                        Gtk.TreeModel mod;
-                        s.get_selected(out mod, out iter);
-                        if (iter == null) {
+                        if (s.count_selected_rows() < 1) {
                             return;
                         }
+                        Gtk.TreeIter iter;
+                        Gtk.TreeModel mod;
+                        s.get_selected(out mod, out iter);
+                
                         
                 
                         // set some properties of the tree for use by the dropped element.
