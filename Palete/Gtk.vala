@@ -80,11 +80,12 @@ namespace Palete {
                     continue;
                 }
                 if (state == 1) {
-					print("add left: 
-                    left.append(d.strip());
+					print("add left: " + d + "\n");
+                    left.append(d);
                     continue;
                 }
-                right.append(d.strip());
+				print("add Right: " + d + "\n");
+                right.append(d);
                 //Seed.quit();
                
             }
