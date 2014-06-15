@@ -423,7 +423,7 @@ public class Xcls_WindowLeftTree
                  if (this.blockChanges) { // probably not needed.. 
                    return  ;
                  }
-                 this.before_node_change(null);
+                 _this.before_node_change(null);
                  
                  if (_this.model.file == null) {
                      return;
@@ -436,8 +436,7 @@ public class Xcls_WindowLeftTree
             
             
                     //??this.model.load( false);
-                    
-                    _this.model.file.changed(null,"tree");
+                    _this.before_after_change(null);
                     
                     return  ;
                 }
