@@ -317,7 +317,7 @@ WindowLeftTree=new XObject({
                         }
                 
                         if (ctx.get_actions() == Gdk.DragAction.MOVE) {
-                            delete_selection_data = true;
+                            //delete_selection_data = true;
                         }
                         
                             
