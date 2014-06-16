@@ -687,8 +687,8 @@ WindowLeftTree=new XObject({
                             
                             JsRender.Node parentNode = null;
                             
-                            Gtk.TreeIter? iter_after = null;
-                            Gtk.TreeIter? iter_par = null;
+                            Gtk.TreeIter iter_after;
+                            Gtk.TreeIter iter_par;
                             
                             if ( int.parse(target_data[1])  < 2) { // before or after..
                                 this.el.get_iter(out iter_after, tree_path );            
