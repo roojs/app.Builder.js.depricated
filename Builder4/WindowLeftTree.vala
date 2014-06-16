@@ -1009,7 +1009,11 @@ public class Xcls_WindowLeftTree
                 
                 var node = this.pathToNode(mod.get_path(old_iter).to_string());
                 //console.dump(node);
-            
+                if (node == null) {
+                    print("moveNode: ERROR - node is null?");
+                }
+                
+                
             
                 // needs to drop first, otherwise the target_data 
                 // treepath will be invalid.
