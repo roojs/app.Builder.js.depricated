@@ -692,33 +692,18 @@ WindowLeftTree=new XObject({
                             Gtk.TreeIter iter_after;
                             Gtk.TreeIter iter_par;
                             
-                            if ( pos < 2) { // before or after..
-                                this.el.get_iter(out iter_after, tree_path );            
-                                this.el.iter_parent(out iter_par, iter_after);
-                                
-                    
-                            } else {
-                                this.el.get_iter(out iter_par, tree_path);
-                            }
-                    
+                           
                     
                     
                             
-                            
-                            if ( parent_str.length  > 1) { // more than "0"
-                    
-                                GLib.Value value;
-                                this.el.get_value( iter_par, 2, out value);
-                                parentNode =  (JsRender.Node)value.dup_object();
-                            } else {
-                                //parentNode = null;
-                            }
-                            
+                          
                             
                              Gtk.TreeIter n_iter; 
                             
                             if ( parent_str.length > 1 && pos  < 2) {
                                 //print(target_data[1]  > 0 ? 'insert_after' : 'insert_before');
+                                this.el.get_iter(out iter_after, tree_path );            
+                                this.el.iter_parent(out iter_par, iter_after);
                                  
                                 if ( pos  > 0 ) {
                                  
@@ -728,9 +713,20 @@ WindowLeftTree=new XObject({
                                 }
                                 
                             } else {
+                                this.el.get_iter(out iter_par, tree_path);
                                 this.el.append(out n_iter, iter_par);
                                 
                             }
+                              
+                            if ( parent_str.length  > 1) { // more than "0"
+                    
+                                GLib.Value value;
+                                this.el.get_value( iter_par, 2, out value);
+                                parentNode =  (JsRender.Node)value.dup_object();
+                            } else {
+                                //parentNode = null;
+                            }
+                            
                             
                             if (node.parent == null) {
                             
