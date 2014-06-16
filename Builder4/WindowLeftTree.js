@@ -164,6 +164,7 @@ WindowLeftTree=new XObject({
                             // fix-me - this.. needs to handle comming from the palete...
                             if (this.drag_in_motion) {
                                 Gdk.drag_status(ctx, 0, time);
+                                this.highlightDropPath("", (Gtk.TreeViewDropPosition)0);
                                 return;
                             }
                             Gtk.drag_finish (ctx, false, false, time);        // drop failed..
@@ -181,7 +182,8 @@ WindowLeftTree=new XObject({
                             // no children.. -- asume it's ok..
                             
                             targetData = "|%d|".printf((int)Gtk.TreeViewDropPosition.INTO_OR_AFTER);
-                            if (this.drag_in_motion) {            
+                            if (this.drag_in_motion) {    
+                                this.highlightDropPath("", (Gtk.TreeViewDropPosition)0);        
                                 Gdk.drag_status(ctx, action ,time);
                                 return;
                             }
@@ -200,6 +202,7 @@ WindowLeftTree=new XObject({
                             if (!isOver) {
                                 if (this.drag_in_motion) {
                                     Gdk.drag_status(ctx, 0 ,time);
+                                     this.highlightDropPath("", (Gtk.TreeViewDropPosition)0);                    
                                      return;
                                 }
                                 Gtk.drag_finish (ctx, false, false, time);        // drop failed..
@@ -225,6 +228,7 @@ WindowLeftTree=new XObject({
                                 //print("Error  - drag selection text returned NULL");
                                 if (this.drag_in_motion) {
                                      Gdk.drag_status(ctx, 0 ,time);
+                                    this.highlightDropPath("", (Gtk.TreeViewDropPosition)0);
                                      return;
                                  }
                                  Gtk.drag_finish (ctx, false, false, time);        // drop failed..
@@ -242,9 +246,11 @@ WindowLeftTree=new XObject({
                                 print("self drag ?? == we should perhaps allow copy onto self..\n");
                                 if (this.drag_in_motion) {
                                      Gdk.drag_status(ctx, 0 ,time);
+                                      this.highlightDropPath("", (Gtk.TreeViewDropPosition)0);
                                       return;
                                  }
                                  Gtk.drag_finish (ctx, false, false, time);        // drop failed..
+                
                                  return; /// -- fixme -- this is not really correct..
                 
                             }
@@ -268,6 +274,7 @@ WindowLeftTree=new XObject({
                                 //print("Can not find drop node path");
                                 if (this.drag_in_motion) {
                                     Gdk.drag_status(ctx, 0, time);
+                                    this.highlightDropPath("", (Gtk.TreeViewDropPosition)0);
                                     return;
                                 }
                                 Gtk.drag_finish (ctx, false, false, time);        // drop failed..
@@ -276,13 +283,13 @@ WindowLeftTree=new XObject({
                             
                             var td_ar = targetData.split("|");
                             print ("highlight drop path\n");
-                            this.highlightDropPath(td_ar[0], (Gtk.TreeViewDropPosition)int.parse(td_ar[1]));
+                            
                             //console.dump(tg);
                                
                             
                             if (this.drag_in_motion) { 
                                 Gdk.drag_status(ctx, action ,time);
-                                
+                                this.highlightDropPath(td_ar[0], (Gtk.TreeViewDropPosition)int.parse(td_ar[1]));
                                 return;
                             }
                             // continue on to allow drop..
