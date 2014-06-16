@@ -820,15 +820,15 @@ public class Xcls_WindowLeftTree
                          
                         if ( pos  > 0 ) {
                          
-                            this.el.insert_after(out n_iter,   parent_str.length > 0  ? iter_par : null, iter_after);
+                            this.el.insert_after(out n_iter,    iter_par  , iter_after);
                         } else {
-                            this.el.insert_before(out n_iter, parent_str.length > 0  ? iter_par : null , iter_after);
+                            this.el.insert_before(out n_iter,  iter_par  , iter_after);
                         }
                         
                     } else {
                          
                         this.el.get_iter(out iter_par, tree_path);
-                        this.el.append(out n_iter, parent_str.length > 0  ? iter_par : null);
+                        this.el.append(out n_iter,   iter_par );
                         
                     }
                     
