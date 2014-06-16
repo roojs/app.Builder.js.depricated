@@ -713,6 +713,8 @@ WindowLeftTree=new XObject({
                             }
                             
                             
+                              Gtk.TreeIter n_iter; 
+                            
                             if ( target_data.length > 1 && int.parse(target_data[1])  < 2) {
                                 //print(target_data[1]  > 0 ? 'insert_after' : 'insert_before');
                                  
@@ -751,7 +753,7 @@ WindowLeftTree=new XObject({
                             
                             
                     // load children - if it has any..
-                            Gtk.TreeIter n_iter; 
+                          
                             if (node.items.length() > 0) {
                                 this.load(node.items, n_iter);
                                 _this.view.el.expand_row(this.el.get_path(n_iter), true);
