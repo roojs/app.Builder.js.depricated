@@ -705,7 +705,7 @@ WindowLeftTree=new XObject({
                     
                             
                             
-                            if ( target_data[0].length  > 0) {
+                            if ( parent_str  > 1) { // more than "0"
                     
                                 GLib.Value value;
                                 this.el.get_value( iter_par, 2, out value);
@@ -715,12 +715,12 @@ WindowLeftTree=new XObject({
                             }
                             
                             
-                              Gtk.TreeIter n_iter; 
+                             Gtk.TreeIter n_iter; 
                             
-                            if ( target_data.length > 1 && int.parse(target_data[1])  < 2) {
+                            if ( parent_str.length > 1 && pos  < 2) {
                                 //print(target_data[1]  > 0 ? 'insert_after' : 'insert_before');
                                  
-                                if ( int.parse(target_data[1]) >0 ) {
+                                if ( pos  > 0 ) {
                                  
                                     this.el.insert_after(out n_iter, iter_par, iter_after);
                                 } else {
