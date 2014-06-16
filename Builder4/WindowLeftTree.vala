@@ -787,52 +787,46 @@ public class Xcls_WindowLeftTree
               
                     var target_data= target_data_str.split("|");
               
-                    Gtk.TreePath tp = target_data[0].length > 0 ? new  Gtk.TreePath.from_string( target_data[0] ) : null;
+                    Gtk.TreePath tree_path  = target_data[0].length > 0 ? 
+                                new  Gtk.TreePath.from_string( target_data[0] ) : 
+                                new  Gtk.TreePath.from_string( "0" );
                     
-                     Gtk.TreePath parent = null;
+                    
+                    
                     //print("add " + tp + "@" + target_data[1]  );
                     
                     JsRender.Node parentNode = null;
                     
-                      parent = tp;
-                    
-                    Gtk.TreePath after = null;
-                    
-                    if (tp != null && int.parse(target_data[1])  < 2) { // before or after..
-                        var ar = target_data[0].split(":");
-                        ar[ar.length-1] = "";
-                        var npath = string.joinv(":", ar);
-                        
-                        
-                        parent  = new  Gtk.TreePath.from_string( npath.substring( 0, -2 ));
-                        
-                        
-                        
-                        
-                        after = tp;
-                    }
-                    Gtk.TreeIter? n_iter;
-                    Gtk.TreeIter? iter_par;
+                    Gtk.TreeIter? iter_after = null;
             
-                    Gtk.TreeIter? iter_after;
-                    
-                    
-                    
-                    if (parent != null) {
+                    if ( int.parse(target_data[1])  < 2) { // before or after..
+                        this.el.get_iter(out iter_after, target_data[1]);            
+                        this.el.iter_parent(out iter_par, iter_after);
+                        
+            
+                    } else {
                         this.el.get_iter(out iter_par, parent);
+                    }
+            
+            
+            
+                    
+                    
+                    if ( target_data[0].length ) {
+            
                         GLib.Value value;
                         this.el.get_value( iter_par, 2, out value);
-                          parentNode =  (JsRender.Node)value.dup_object();
+                        parentNode =  (JsRender.Node)value.dup_object();
                     } else {
-                        iter_par = null;
+                        //parentNode = null;
                     }
                     
                     
-                    if (tp != null && after != null) {
+                    if ( target_data.length ) {
                         //print(target_data[1]  > 0 ? 'insert_after' : 'insert_before');
-                        
-                        this.el.get_iter(out iter_after, after);
+                         
                         if ( int.parse(target_data[1]) >0 ) {
+                         
                             this.el.insert_after(out n_iter, iter_par, iter_after);
                         } else {
                             this.el.insert_before(out n_iter, iter_par, iter_after);
