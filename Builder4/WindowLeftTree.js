@@ -690,7 +690,7 @@ WindowLeftTree=new XObject({
                             Gtk.TreeIter? iter_after = null;
                     
                             if ( int.parse(target_data[1])  < 2) { // before or after..
-                                this.el.get_iter(out iter_after, target_data[1]);            
+                                this.el.get_iter(out iter_after, tree_path );            
                                 this.el.iter_parent(out iter_par, iter_after);
                                 
                     
