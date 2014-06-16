@@ -282,9 +282,9 @@ WindowLeftTree=new XObject({
                             }
                             
                             var td_ar = targetData.split("|");
-                            print ("highlight drop path\n");
-                            
-                            if (ctx.get_actions() == Gdk.DragAction.MOVE && td_ar[0] == selection_text && td_ar[1] == "0" ) {
+                            //print ("highlight drop path\n");
+                            // drop ontop of same node?
+                /*            if (ctx.get_actions() == Gdk.DragAction.MOVE && td_ar[0] == selection_text && td_ar[1] == "0" ) {
                                 if (this.drag_in_motion) {
                                     Gdk.drag_status(ctx, 0, time);
                                     this.highlightDropPath("", (Gtk.TreeViewDropPosition)0);
@@ -294,7 +294,7 @@ WindowLeftTree=new XObject({
                                 return;
                                 
                             }
-                            
+                  */          
                             
                             //console.dump(tg);
                                
