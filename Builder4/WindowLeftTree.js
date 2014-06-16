@@ -713,7 +713,7 @@ WindowLeftTree=new XObject({
                             }
                             
                             
-                            if ( target_data.length > 1 ) {
+                            if ( target_data.length > 1 && int.parse(target_data[1])  < 2) {
                                 //print(target_data[1]  > 0 ? 'insert_after' : 'insert_before');
                                  
                                 if ( int.parse(target_data[1]) >0 ) {
