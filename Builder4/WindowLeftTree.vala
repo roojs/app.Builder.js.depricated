@@ -406,9 +406,9 @@ public class Xcls_WindowLeftTree
                             return;
                         }
                         
-                        
+                        var td_ar = targetData.split("|");
                         print ("highlight drop path\n");
-                        this.highlightDropPath(targetData, pos);
+                        this.highlightDropPath(td_ar[0], int.parse(td_ar[1]));
                         //console.dump(tg);
                            
                         
