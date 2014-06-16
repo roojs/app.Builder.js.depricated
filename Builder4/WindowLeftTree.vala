@@ -833,6 +833,7 @@ public class Xcls_WindowLeftTree
                         GLib.Value value;
                         this.el.get_value( iter_par, 2, out value);
                         parentNode =  (JsRender.Node)value.dup_object();
+                        node.parent = parentNode;
                     } else {
                         //parentNode = null;
                     }
