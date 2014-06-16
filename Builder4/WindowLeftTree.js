@@ -701,7 +701,7 @@ WindowLeftTree=new XObject({
                              Gtk.TreeIter n_iter; 
                              
                              if ( parent_str.length < 1) {
-                                    this.el.append(out n_iter, null);
+                                  this.el.append(out n_iter, null);
                             } else   if (pos  < 2) {
                                 //print(target_data[1]  > 0 ? 'insert_after' : 'insert_before');
                     
@@ -724,7 +724,7 @@ WindowLeftTree=new XObject({
                             
                             // reparent node in tree...
                            
-                            if ( parent_str.length  > 0 && iter_par != null) {
+                            if ( parent_str.length  ) {
                     
                                 GLib.Value value;
                                 this.el.get_value( iter_par, 2, out value);
