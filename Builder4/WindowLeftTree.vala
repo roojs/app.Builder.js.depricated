@@ -416,6 +416,18 @@ public class Xcls_WindowLeftTree
                         var td_ar = targetData.split("|");
                         print ("highlight drop path\n");
                         
+                        if (ctx.get_actions() == Gdk.DragAction.MOVE && td_ar[0] == selection_text && td_ar[1] == "0" ) {
+                            if (this.drag_in_motion) {
+                                Gdk.drag_status(ctx, 0, time);
+                                this.highlightDropPath("", (Gtk.TreeViewDropPosition)0);
+                                return;
+                            }
+                            Gtk.drag_finish (ctx, false, false, time);        // drop failed..
+                            return;
+                            
+                        }
+                        
+                        
                         //console.dump(tg);
                            
                         
