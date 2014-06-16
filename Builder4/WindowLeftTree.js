@@ -718,7 +718,7 @@ WindowLeftTree=new XObject({
                             } else {
                                  
                                 this.el.get_iter(out iter_par, tree_path);
-                                this.el.append(out n_iter, parent_str.length > 0  ? iter_par : null iter_par);
+                                this.el.append(out n_iter, parent_str.length > 0  ? iter_par : null);
                                 
                             }
                             
