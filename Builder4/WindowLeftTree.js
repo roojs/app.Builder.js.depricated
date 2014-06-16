@@ -677,7 +677,7 @@ WindowLeftTree=new XObject({
                       
                             var target_data= target_data_str.split("|");
                       
-                            var parent_str = target_data[0].length > 0 ? target_data[0] : "0";
+                            var parent_str = target_data[0].length > 0 ? target_data[0] : "";
                             var pos = target_data.length > 1 ? int.parse(target_data[0]) : 2; // ontop..
                       
                       
