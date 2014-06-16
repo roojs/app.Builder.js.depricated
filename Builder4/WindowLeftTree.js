@@ -871,6 +871,10 @@ WindowLeftTree=new XObject({
                     },
                     'void:moveNode' : (string target_data, Gdk.DragAction action) 
                     {
+                       
+                       /// target_data = "path|pos");
+                       
+                       
                         //print("MOVE NODE");
                         // console.dump(target_data);
                         Gtk.TreeIter old_iter;
