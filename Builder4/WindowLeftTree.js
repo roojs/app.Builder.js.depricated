@@ -690,7 +690,7 @@ WindowLeftTree=new XObject({
                             JsRender.Node parentNode = null;
                             
                             Gtk.TreeIter iter_after;
-                            Gtk.TreeIter iter_par;
+                            Gtk.TreeIter iter_par = null;
                             
                            
                     
@@ -724,7 +724,7 @@ WindowLeftTree=new XObject({
                             
                             // reparent node in tree...
                            
-                            if ( parent_str.length  > 0) {
+                            if ( parent_str.length  > 0 && iter_par != null) {
                     
                                 GLib.Value value;
                                 this.el.get_value( iter_par, 2, out value);
