@@ -1048,7 +1048,7 @@ public class Xcls_WindowLeftTree
                     this.el.get_iter(out iter, new Gtk.TreePath.from_string(this.activePath));
                     this.el.set(iter, 0, n.nodeTitle(), 1, n.nodeTip(), -1);
                     var v = new Value(typeof(Object));
-                    v.set_object((Object)n);
+                    v.set_object((Object)n.ref());
                 }
                           
             }
