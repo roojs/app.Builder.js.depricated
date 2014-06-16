@@ -1026,6 +1026,7 @@ public class Xcls_WindowLeftTree
                         this.dropNode(target_data, node);
                         this.el.remove(ref old_iter);
                         
+                        
                                      
                 } else {
                     print("DROPPING NODE // copy");
