@@ -408,7 +408,7 @@ public class Xcls_WindowLeftTree
                         
                         var td_ar = targetData.split("|");
                         print ("highlight drop path\n");
-                        this.highlightDropPath(td_ar[0], int.parse(td_ar[1]));
+                        this.highlightDropPath(td_ar[0], (Gtk.TreeViewDropPosition)int.parse(td_ar[1]));
                         //console.dump(tg);
                            
                         
