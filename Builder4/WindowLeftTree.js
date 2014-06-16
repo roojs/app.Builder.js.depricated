@@ -729,7 +729,7 @@ WindowLeftTree=new XObject({
                             
                             
                             if (node.parent == null) {
-                            
+                                
                                 if (target_data.length == 3 && target_data[2].length > 0) {
                                     node.props.set("*prop", target_data[2]);
                                 }
