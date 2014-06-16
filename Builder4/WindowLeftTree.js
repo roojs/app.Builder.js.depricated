@@ -745,7 +745,7 @@ WindowLeftTree=new XObject({
                             
                             
                             // work out what kind of packing to use.. -- should be in 
-                            if (!node.has("pack")   && target_data[0].length > 0) {
+                            if (!node.has("pack")   && parent_str.length > 1) {
                             
                                 this.file.palete().fillPack(node,parentNode);
                                 
@@ -761,7 +761,7 @@ WindowLeftTree=new XObject({
                                 _this.view.el.expand_row(this.el.get_path(n_iter), true);
                             }
                             
-                            if (tp != null && (node.items.length() > 0 ||  int.parse(target_data[1]) > 1)) {
+                            if (tp != null && (node.items.length() > 0 || pos > 1)) {
                                 _this.view.el.expand_row(this.el.get_path(iter_par), true);
                             }
                             // wee need to get the empty proptypes from somewhere..
