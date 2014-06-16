@@ -813,7 +813,7 @@ public class Xcls_WindowLeftTree
             
                     
                     
-                    if ( target_data[0].length ) {
+                    if ( target_data[0].length  > 0) {
             
                         GLib.Value value;
                         this.el.get_value( iter_par, 2, out value);
@@ -823,7 +823,7 @@ public class Xcls_WindowLeftTree
                     }
                     
                     
-                    if ( target_data.length ) {
+                    if ( target_data.length > 1 ) {
                         //print(target_data[1]  > 0 ? 'insert_after' : 'insert_before');
                          
                         if ( int.parse(target_data[1]) >0 ) {
