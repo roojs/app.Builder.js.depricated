@@ -705,7 +705,7 @@ WindowLeftTree=new XObject({
                     
                             
                             
-                            if ( parent_str  > 1) { // more than "0"
+                            if ( parent_str.length  > 1) { // more than "0"
                     
                                 GLib.Value value;
                                 this.el.get_value( iter_par, 2, out value);
