@@ -800,7 +800,7 @@ public class Xcls_WindowLeftTree
                     JsRender.Node parentNode = null;
                     
                     Gtk.TreeIter iter_after;
-                    Gtk.TreeIter iter_par = null;
+                    Gtk.TreeIter iter_par ;
                     
                    
             
