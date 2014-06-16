@@ -702,6 +702,7 @@ WindowLeftTree=new XObject({
                              
                              if ( parent_str.length < 1) {
                                   this.el.append(out n_iter, null);
+                                   node.parent = null;
                             } else   if (pos  < 2) {
                                 //print(target_data[1]  > 0 ? 'insert_after' : 'insert_before');
                     
@@ -714,26 +715,22 @@ WindowLeftTree=new XObject({
                                 } else {
                                     this.el.insert_before(out n_iter,  iter_par  , iter_after);
                                 }
-                                
-                            } else {
-                                 
-                                this.el.get_iter(out iter_par, tree_path);
-                                this.el.append(out n_iter,   iter_par );
-                                
-                            }
-                            
-                            // reparent node in tree...
-                           
-                            if ( parent_str.length  ) {
-                    
                                 GLib.Value value;
                                 this.el.get_value( iter_par, 2, out value);
                                 parentNode =  (JsRender.Node)value.dup_object();
                                 node.parent = parentNode;
                             } else {
-                                 node.parent = null;
-                                //parentNode = null;
+                                 
+                                this.el.get_iter(out iter_par, tree_path);
+                                this.el.append(out n_iter,   iter_par );
+                                GLib.Value value;
+                                this.el.get_value( iter_par, 2, out value);
+                                parentNode =  (JsRender.Node)value.dup_object();
+                                node.parent = parentNode;
                             }
+                            
+                            // reparent node in tree...
+                           
                             
                             
                             if (node.parent == null) {
