@@ -907,13 +907,14 @@ WindowLeftTree=new XObject({
                         
                         
                         if ((action & Gdk.DragAction.MOVE) > 0) {
-                                  //          print("REMOVING OLD NODE");
+                                   print("REMOVING OLD NODE");
                                 node.remove();
                                 this.dropNode(target_data, node);
                                 this.el.remove(ref old_iter);
                                 
                                              
                         } else {
+                            print("DROPPING NODE // copy");
                             node = node.deepClone();
                             this.dropNode(target_data, node);
                         }
