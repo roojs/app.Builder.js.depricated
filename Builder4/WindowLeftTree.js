@@ -717,7 +717,9 @@ WindowLeftTree=new XObject({
                                 this.el.append(out n_iter, iter_par);
                                 
                             }
-                              
+                            
+                            // reparent node in tree...
+                            node.parent = null;
                             if ( parent_str.length  > 1) { // more than "0"
                     
                                 GLib.Value value;
