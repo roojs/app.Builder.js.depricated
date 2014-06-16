@@ -860,7 +860,7 @@ public class Xcls_WindowLeftTree
                     
                     
             // load children - if it has any..
-            
+                    Gtk.TreeIter n_iter; 
                     if (node.items.length() > 0) {
                         this.load(node.items, n_iter);
                         _this.view.el.expand_row(this.el.get_path(n_iter), true);
