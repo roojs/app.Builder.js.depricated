@@ -871,9 +871,9 @@ public class Xcls_WindowLeftTree
                         _this.view.el.expand_row(this.el.get_path(n_iter), true);
                     }
                     
-                    if (tp != null && (node.items.length() > 0 || pos > 1)) {
-                        _this.view.el.expand_row(this.el.get_path(iter_par), true);
-                    }
+                    //if (tp != null && (node.items.length() > 0 || pos > 1)) {
+                    //    _this.view.el.expand_row(this.el.get_path(iter_par), true);
+                   // }
                     // wee need to get the empty proptypes from somewhere..
                     
                     //var olditer = this.activeIter;
