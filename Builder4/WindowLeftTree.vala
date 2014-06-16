@@ -809,28 +809,31 @@ public class Xcls_WindowLeftTree
                   
                     
                      Gtk.TreeIter n_iter; 
-                    
-                    if ( parent_str.length > 1 && pos  < 2) {
+                     
+                     if ( parent_str.length < 1) {
+                            this.el.append(out n_iter, null);
+                    } else   if (pos  < 2) {
                         //print(target_data[1]  > 0 ? 'insert_after' : 'insert_before');
+            
                         this.el.get_iter(out iter_after, tree_path );            
                         this.el.iter_parent(out iter_par, iter_after);
                          
                         if ( pos  > 0 ) {
                          
-                            this.el.insert_after(out n_iter, iter_par, iter_after);
+                            this.el.insert_after(out n_iter,   parent_str.length > 0  ? iter_par : null, iter_after);
                         } else {
-                            this.el.insert_before(out n_iter, iter_par, iter_after);
+                            this.el.insert_before(out n_iter, parent_str.length > 0  ? iter_par : null , iter_after);
                         }
                         
                     } else {
                          
                         this.el.get_iter(out iter_par, tree_path);
-                        this.el.append(out n_iter, iter_par);
+                        this.el.append(out n_iter, parent_str.length > 0  ? iter_par : null iter_par);
                         
                     }
                     
                     // reparent node in tree...
-                    node.parent = null;
+                   
                     if ( parent_str.length  > 1) { // more than "0"
             
                         GLib.Value value;
@@ -838,6 +841,7 @@ public class Xcls_WindowLeftTree
                         parentNode =  (JsRender.Node)value.dup_object();
                         node.parent = parentNode;
                     } else {
+                         node.parent = null;
                         //parentNode = null;
                     }
                     
