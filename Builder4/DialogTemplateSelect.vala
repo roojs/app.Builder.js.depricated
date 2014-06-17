@@ -17,7 +17,7 @@ static int main (string[] args) {
 
 public static Xcls_DialogTemplateSelect  DialogTemplateSelect;
 
-public class Xcls_DialogTemplateSelect
+public class Xcls_DialogTemplateSelect : Object 
 {
     public Gtk.Dialog el;
     private Xcls_DialogTemplateSelect  _this;
@@ -42,8 +42,10 @@ public class Xcls_DialogTemplateSelect
         this.el.default_width = 400;
         this.el.modal = true;
         var child_0 = new Xcls_VBox2(_this);
+        child_0.ref();
         this.el.get_content_area().add  (  child_0.el  );
         var child_1 = new Xcls_Button8(_this);
+        child_1.ref();
         this.el.add_action_widget (  child_1.el , 0 );
 
         // listeners 
@@ -100,7 +102,7 @@ public class Xcls_DialogTemplateSelect
     // skip xvala_xcls - not pipe 
 
     // skip xvala_id - not pipe 
-    public class Xcls_VBox2
+    public class Xcls_VBox2 : Object 
     {
         public Gtk.VBox el;
         private Xcls_DialogTemplateSelect  _this;
@@ -118,6 +120,7 @@ public class Xcls_DialogTemplateSelect
 
             // set gobject values
             var child_0 = new Xcls_HBox3(_this);
+            child_0.ref();
             this.el.pack_start (  child_0.el , false,false,0 );
         }
 
@@ -137,7 +140,7 @@ public class Xcls_DialogTemplateSelect
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_HBox3
+    public class Xcls_HBox3 : Object 
     {
         public Gtk.HBox el;
         private Xcls_DialogTemplateSelect  _this;
@@ -155,8 +158,10 @@ public class Xcls_DialogTemplateSelect
 
             // set gobject values
             var child_0 = new Xcls_Label4(_this);
+            child_0.ref();
             this.el.pack_start (  child_0.el , false,false );
             var child_1 = new Xcls_combo(_this);
+            child_1.ref();
             this.el.add (  child_1.el  );
 
             // listeners 
@@ -180,7 +185,7 @@ public class Xcls_DialogTemplateSelect
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_Label4
+    public class Xcls_Label4 : Object 
     {
         public Gtk.Label el;
         private Xcls_DialogTemplateSelect  _this;
@@ -215,7 +220,7 @@ public class Xcls_DialogTemplateSelect
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_combo
+    public class Xcls_combo : Object 
     {
         public Gtk.ComboBox el;
         private Xcls_DialogTemplateSelect  _this;
@@ -234,9 +239,14 @@ public class Xcls_DialogTemplateSelect
 
             // set gobject values
             var child_0 = new Xcls_cellrenderer(_this);
+            child_0.ref();
             this.el.pack_start (  child_0.el , true );
             var child_1 = new Xcls_model(_this);
+            child_1.ref();
             this.el.set_model (  child_1.el  );
+
+            // init method 
+            this.el.add_attribute(_this.cellrenderer , "markup", 1 );
         }
 
         // userdefined functions 
@@ -259,7 +269,7 @@ public class Xcls_DialogTemplateSelect
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_cellrenderer
+    public class Xcls_cellrenderer : Object 
     {
         public Gtk.CellRendererText el;
         private Xcls_DialogTemplateSelect  _this;
@@ -295,7 +305,7 @@ public class Xcls_DialogTemplateSelect
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_model
+    public class Xcls_model : Object 
     {
         public Gtk.ListStore el;
         private Xcls_DialogTemplateSelect  _this;
@@ -361,7 +371,7 @@ public class Xcls_DialogTemplateSelect
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_Button8
+    public class Xcls_Button8 : Object 
     {
         public Gtk.Button el;
         private Xcls_DialogTemplateSelect  _this;
