@@ -48,10 +48,16 @@ DialogSaveTemplate=new XObject({
     default_width : 400,
     modal : true,
     'static void:show' : (Palete.Palete palete, JsRender.Node data) {
-        _this.data = data;
-        _this.palete = palete;
-        _this.name.el.set_text("");
-        this.el.show_all();
+     
+         var t =DialogSaveTemplate;
+        if (t == null) {
+           t =   new Xcls_DialogSaveTemplate();
+        }
+     
+        t.data = data;
+        t.palete = palete;
+        t.name.el.set_text("");
+        t.el.show_all();
     },
     items : [
         {
