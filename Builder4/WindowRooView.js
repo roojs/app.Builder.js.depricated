@@ -228,7 +228,7 @@ WindowRooView=new XObject({
                     
                         // this is the public redraw call..
                         // we refresh in a loop privately..
-                        var autodraw = this.AutoRedraw.el.active;
+                        var autodraw = _this.AutoRedraw.el.active;
                         if (!autodraw && !force) {
                             print("Skipping redraw - no force, and autodraw off");
                             return;
