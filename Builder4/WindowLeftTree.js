@@ -332,7 +332,7 @@ WindowLeftTree=new XObject({
                 
                 
                     // do we always say failure, so we handle the reall drop?
-                        Gtk.drag_finish (ctx, false, delete_selection_data, time);
+                        Gtk.drag_finish (ctx, false, false,time); //delete_selection_data, time);
                        
                 },
                 cursor_changed : ( ) => {
