@@ -366,7 +366,7 @@ public class Xcls_WindowRooView : Object
                // print("RB: TARGETS : " + LeftTree.atoms["STRING"]);
                 Gtk.drag_dest_set_target_list(this.el, this.get('/Window').targetList);
                 */
-                GLib.timeout_add_seconds(0, 1, function() {
+                GLib.timeout_add_seconds(0, 1,  ()  =>{
                     //    print("run refresh?");
                      this.runRefresh(); 
                      return true;
