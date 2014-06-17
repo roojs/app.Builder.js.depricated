@@ -742,13 +742,16 @@ public class Xcls_WindowLeftTree
         public void deleteSelected() {
                 
                 print("DELETE SELECTED?");
-                _this.view.blockChanges = true;
-                
-                Gtk.TreeIter iter;
+                //_this.view.blockChanges = true;
+                print("GET SELECTION?");
+            
                 var s = _this.view.el.get_selection();
-                Gtk.TreeModel mod;
                 
                 print("GET  SELECTED?");
+               Gtk.TreeIter iter;
+                Gtk.TreeModel mod;
+            
+                
                 if (!s.get_selected(out mod, out iter)) {
                     return; // nothing seleted..
                 }
