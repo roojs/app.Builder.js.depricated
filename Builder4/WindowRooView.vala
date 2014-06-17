@@ -501,7 +501,7 @@ public class Xcls_WindowRooView : Object
             	return  is_valid_drop_site;
             	*/
             } );
-            this.el.drag_data_received.connect( function (ctx,  x,  y, sel_data,  target_type,  time, ud) 
+            this.el.drag_data_received.connect(   (ctx,  x,  y, sel_data,  target_type,  time, ud) =>
                 {
                    return true;
                    /*
@@ -541,8 +541,8 @@ public class Xcls_WindowRooView : Object
                     return true;
                     */
                 } );
-            this.el.create_web_view.connect( function (self, object) {
-              print("CREATE WEB VIEW");
+            this.el.create_web_view.connect( ( object) => {
+              // print("CREATE WEB VIEW");
                return null; //new WebKit.WebView();
             } );
         }

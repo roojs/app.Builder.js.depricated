@@ -194,7 +194,7 @@ WindowRooView=new XObject({
                         	return  is_valid_drop_site;
                         	*/
                         },
-                        drag_data_received : function (ctx,  x,  y, sel_data,  target_type,  time, ud) 
+                        drag_data_received : (ctx,  x,  y, sel_data,  target_type,  time, ud) =>
                             {
                                return true;
                                /*
@@ -234,8 +234,8 @@ WindowRooView=new XObject({
                                 return true;
                                 */
                             },
-                        create_web_view : function (self, object) {
-                          print("CREATE WEB VIEW");
+                        create_web_view : ( object) => {
+                          // print("CREATE WEB VIEW");
                            return null; //new WebKit.WebView();
                         }
                     },
