@@ -1219,7 +1219,7 @@ public class Xcls_WindowLeftTree : Object
             //this.el.label = "Delete Element";
 			print("add activate\n");
             // listeners 
-            this.el.button_press_event.connect(   ( ) => {
+            this.el.activate.connect(   ( ) => {
                 
                 print("ACTIVATE?");
                 
