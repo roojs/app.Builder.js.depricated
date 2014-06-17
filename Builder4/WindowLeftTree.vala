@@ -187,7 +187,7 @@ public class Xcls_WindowLeftTree : Object
                 }
                 Gtk.TreePath res;
                 if (!_this.view.el.get_path_at_pos((int)ev.x,(int)ev.y, out res, null, null, null) ) {
-                    return;
+                    return true;
                 }
                  
                 this.el.get_selection().select_path(res);
