@@ -607,30 +607,37 @@ public class Xcls_WindowRooView : Object
             
                  //print (project.fn);
                  // set it to non-empty.
-                 string runhtml = "" + project.runhtml;
+                 
             //     runhtml = runhtml.length ?  runhtml : '<script type="text/javascript"></script>'; 
                 
             
               //   this.runhtml  = this.runhtml || '';
                 
-                 if ((runhtml != this.runhtml) || (this.redraws > 10)) {
+                 if ((project.runhtml != this.runhtml) || (this.redraws > 10)) {
                     // then we need to reload the browser using
                     // load_html_string..
                     
                     // then trigger a redraw once it's loaded..
                      this.pendingRedraw = true;
+                     
                      var runhtml = '<script type="text/javascript">' + "\n" ;
-                     runhtml +=imports.File.File.read(__script_path__ + '/../builder.html.js') + "\n";
+                     string builderhtml;
+                     GLib.FileUtils.get_contents("/home/alan/gitlive/app.Builder.js/builder.html.js", out builderhtml)
+                     
+                     runhtml += builderhtml + "\n";
                      runhtml += '</script>'+ "\n" ;
                     
+                    // fix to make sure they are the same..
                     this.runhtml = project.runhtml;
                     // need to modify paths
                     
+                    string html;
+                    GLib.FileUtils.get_contents("/home/alan/gitlive/app.Builder.js/builder.html", out html)
                     
                     
-                    var html = imports.File.File.read(__script_path__ + '/../builder.html');
-                    html = html.replace('</head>', runhtml + this.runhtml + '</head>');
-                    print("LOAD HTML " + html);
+                    html = html.replace("</head>", runhtml + this.runhtml + '</head>');
+                    //print("LOAD HTML " + html);
+                    
                     this.el.load_html_string( html , 
                         //fixme - should be a config option!
                         'http://localhost/app.Builder/'
