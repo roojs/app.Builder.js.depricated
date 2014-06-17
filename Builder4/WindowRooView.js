@@ -362,7 +362,7 @@ WindowRooView=new XObject({
                              GLib.FileUtils.get_contents("/home/alan/gitlive/app.Builder.js/builder.html.js", out builderhtml)
                              
                              runhtml += builderhtml + "\n";
-                             runhtml += '</script>'+ "\n" ;
+                             runhtml += "</script>\n" ;
                             
                             // fix to make sure they are the same..
                             this.runhtml = project.runhtml;
