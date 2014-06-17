@@ -126,8 +126,8 @@ public class Xcls_WindowRooView : Object
             this.el.label = "Redraw";
 
             // listeners 
-            this.el.clicked.connect(   ( ) => {
-              _this.view.renderJS(null,true);
+            this.el.clicked.connect( ( ) => {
+                _this.view.renderJS(null,true);
             } );
         }
 
