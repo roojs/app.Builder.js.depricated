@@ -323,7 +323,7 @@ public class Xcls_WindowRooView : Object
                  // init inspector..
                 this.el.get_inspector().signal.inspect_web_view.connect(function(wi, pg) {
                      _this.inspector.el.show();
-                     //return _this.get('/BottomPane.inspector').el;
+                     return _this..inspector.el;
                 
                 });
                  
@@ -337,22 +337,21 @@ public class Xcls_WindowRooView : Object
                     
                     
                //this.el.open('file:///' + __script_path__ + '/../builder.html');
-                                      
+                /*
                 Gtk.drag_dest_set
                 (
-                        this.el,              /* widget that will accept a drop */
+                        this.el,              //
                         Gtk.DestDefaults.MOTION  | Gtk.DestDefaults.HIGHLIGHT,
-                        null,            /* lists of target to support */
-                        0,              /* size of list */
-                        Gdk.DragAction.COPY         /* what to do with data after dropped */
+                        null,            // list of targets
+                        Gdk.DragAction.COPY         // what to do with data after dropped 
                 );
                                         
                // print("RB: TARGETS : " + LeftTree.atoms["STRING"]);
                 Gtk.drag_dest_set_target_list(this.el, this.get('/Window').targetList);
-                
+                */
                 GLib.timeout_add_seconds(0, 1, function() {
                     //    print("run refresh?");
-                     _this.runRefresh(); 
+                     this.runRefresh(); 
                      return true;
                  });
                 
