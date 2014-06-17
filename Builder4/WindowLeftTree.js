@@ -653,7 +653,7 @@ WindowLeftTree=new XObject({
                     
                         GLib.Value value;
                         this.el.get_value(iter, 2, out value);
-                        var data = (JsRender.Node)value.dup_object();
+                        var data = (JsRender.Node)(value.get_object());
                         data.remove();
                         this.el.remove(ref iter);
                         
