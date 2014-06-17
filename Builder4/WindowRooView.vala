@@ -563,7 +563,7 @@ public class Xcls_WindowRooView : Object
                     return;
                 }
             
-                if (this.lastRedraw) {
+                if (this.lastRedraw != null) {
                    // do not redraw if last redraw was less that 5 seconds ago.
                    if (((new Date()) -  this.lastRedraw) < 5000) {
                         return;
