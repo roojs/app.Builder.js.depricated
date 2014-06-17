@@ -1164,10 +1164,11 @@ public class Xcls_WindowLeftTree : Object
             // ctor 
         public Xcls_LeftTreeMenu(Xcls_WindowLeftTree _owner)
         {
-            
+            print("Ctor called\n");
             _this = _owner;
 		}
 		construct {
+			print("Ctor constuct called\n");
 			this.el = new Gtk.Menu();
             _this.LeftTreeMenu = this;
 
