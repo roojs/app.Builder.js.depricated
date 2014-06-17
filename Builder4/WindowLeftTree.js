@@ -675,6 +675,10 @@ WindowLeftTree=new XObject({
                          // console.dump(node);
                       //    console.dump(target_data);
                       
+                      
+                            // 
+                      
+                      
                             var target_data= target_data_str.split("|");
                       
                             var parent_str = target_data[0].length > 0 ? target_data[0] : "";
