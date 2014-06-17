@@ -560,8 +560,17 @@ public class Xcls_WindowRooView : Object
         // skip xtype - not pipe 
 
         // skip |init - already used 
-
-        // skip |renderJS - no return type
+        public void renderJS(bool force) {
+            
+                // this is the public redraw call..
+                // we refresh in a loop privately..
+                var autodraw = this.AutoRedraw.el.active;
+                if (!autodraw && !force) {
+                    print("Skipping redraw - no force, and autodraw off");
+                    return;
+                }
+                this.refreshRequired  = true;
+            }
 
         // skip |runRefresh - no return type
 

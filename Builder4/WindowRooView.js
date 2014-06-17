@@ -299,7 +299,7 @@ WindowRooView=new XObject({
                         
                         
                     },
-                    renderJS : (bool force) {
+                    'void:renderJS' : (bool force) {
                     
                         // this is the public redraw call..
                         // we refresh in a loop privately..
