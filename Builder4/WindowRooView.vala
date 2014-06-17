@@ -568,7 +568,7 @@ public class Xcls_WindowRooView : Object
                 //}
                 this.lastRedraw = new DateTime.now_local();
             
-                this.el.execute_script("Builder.render(" + this.renderedData + ");");
+                this.el.run_javascript("Builder.render(" + this.renderedData + ");");
             //     print( "before render" +    this.lastRedraw);
             //    print( "after render" +    (new Date()));
                 
