@@ -532,7 +532,7 @@ Gtk = XObject.define(
                     
                     strbuilder(ipad + "var child_" + i + " = new " + ci.xvala_xcls + "(_this);\n" );
                     
-                    if (ci.pack === false) {
+                    if (ci.pack === false || ci.pack == "false") {
                         continue;
                     }
                     
