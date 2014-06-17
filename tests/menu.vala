@@ -203,8 +203,7 @@ public class Xcls_WindowLeftTree : Object
             // listeners 
             this.el.activate.connect(   () => {
             
-                 DialogSaveTemplate.show(_this.model.file.palete(), _this.getActiveElement());
-                 
+                print("connect");  
                 
             } );
         }
