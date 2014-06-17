@@ -1034,7 +1034,7 @@ public class Xcls_WindowLeftTree
                         
                                      
                 } else {
-                    print("DROPPING NODE // copy");
+                    print("DROPPING NODE // copy: " + target_data + "\n");
                     node = node.deepClone();
                     this.dropNode(target_data, node);
                 }
