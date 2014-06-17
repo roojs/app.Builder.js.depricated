@@ -48,6 +48,8 @@ public class Xcls_WindowRooView : Object
         var child_2 = new Xcls_ScrolledWindow8(_this);
         child_2.ref();
         this.el.add (  child_2.el  );
+        var child_3 = new Xcls_VBox10(_this);
+        child_3.ref();
     }
 
     // userdefined functions 
@@ -616,6 +618,39 @@ public class Xcls_WindowRooView : Object
         // skip xtype - not pipe 
 
         // skip |xns - no return type
+
+        // skip xvala_cls - not pipe 
+
+        // skip xvala_xcls - not pipe 
+
+        // skip xvala_id - not pipe 
+    }
+    public class Xcls_VBox10 : Object 
+    {
+        public Gtk.VBox el;
+        private Xcls_WindowRooView  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_VBox10(Xcls_WindowRooView _owner)
+        {
+            this.el = new Gtk.VBox( true, 0 );
+            _this = _owner;
+
+            // my vars
+
+            // set gobject values
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+
+        // skip xtype - not pipe 
+
+        // skip pack - not pipe 
 
         // skip xvala_cls - not pipe 
 

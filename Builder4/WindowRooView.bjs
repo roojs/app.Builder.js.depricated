@@ -89,6 +89,11 @@
                             "|xns": "WebKit"
                         }
                     ]
+                },
+                {
+                    "|xns": "Gtk",
+                    "xtype": "VBox",
+                    "pack": false
                 }
             ]
         }

@@ -258,6 +258,10 @@ WindowRooView=new XObject({
                     pack : "add"
                 }
             ]
+        },
+        {
+            xtype: Gtk.VBox,
+            pack : false
         }
     ]
 });
