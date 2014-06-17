@@ -801,7 +801,7 @@ WindowLeftTree=new XObject({
                             
                             this.el.set_value(citer, 2, o);
                             
-                            if (tr.nth_data(i).items.length() > 0) {
+                            if (tr.get(i).items.size > 0) {
                                 this.load(tr.get(i).items, citer);
                             }
                          
