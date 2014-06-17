@@ -31,11 +31,11 @@ WindowRooView=new XObject({
                 {
                     xtype: Gtk.CheckButton,
                     listeners : {
-                        toggled : function (self, state) {
+                        toggled : (state) => {
                             this.el.set_label(this.el.active  ? "Auto Redraw On" : "Auto Redraw Off");
                         }
                     },
-                    active : true,
+                    active : "true",
                     id : "AutoRedraw",
                     label : "Auto Redraw On",
                     pack : "pack_start,false,false,0"

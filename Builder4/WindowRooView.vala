@@ -167,11 +167,11 @@ public class Xcls_WindowRooView : Object
             // my vars
 
             // set gobject values
-            this.el.active = true;
+            this.el.active = "true";
             this.el.label = "Auto Redraw On";
 
             // listeners 
-            this.el.toggled.connect( function (self, state) {
+            this.el.toggled.connect(  (state) => {
                 this.el.set_label(this.el.active  ? "Auto Redraw On" : "Auto Redraw Off");
             } );
         }
