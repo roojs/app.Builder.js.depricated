@@ -335,7 +335,7 @@ public class Xcls_WindowRooView : Object
                 // settings.enable_file_access_from_file_uris = true;
                 // settings.enable_offline_web_application_cache - true;
                 // settings.enable_universal_access_from_file_uris = true;
-                var _this = this;
+               
                  
                  // init inspector..
                 this.el.get_inspector().inspect_web_view.connect( (  pg) => {
