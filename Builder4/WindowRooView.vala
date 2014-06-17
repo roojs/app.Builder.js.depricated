@@ -435,7 +435,7 @@ public class Xcls_WindowRooView : Object
                     return ret;
                     */
             } );
-            this.el.drag_motion.connect( function (w, ctx,  x,   y,   time, ud) {
+            this.el.drag_motion.connect(   (  ctx,  x,   y,   time, ud) => {
                return;
                /*
                

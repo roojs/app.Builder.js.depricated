@@ -128,7 +128,7 @@ WindowRooView=new XObject({
                                 return ret;
                                 */
                         },
-                        drag_motion : function (w, ctx,  x,   y,   time, ud) {
+                        drag_motion : (  ctx,  x,   y,   time, ud) => {
                            return;
                            /*
                            
