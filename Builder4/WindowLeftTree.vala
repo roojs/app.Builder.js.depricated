@@ -1217,7 +1217,7 @@ public class Xcls_WindowLeftTree : Object
             // listeners 
             this.el.activate.connect(   ( ) => {
                 
-                
+                print("ACTIVATE?");
                 
                 print("_this : " + (_this == null  ? "NULL" : "yes"));
                 print(_this.get_class().get_type().name());

@@ -981,7 +981,7 @@ WindowLeftTree=new XObject({
                     listeners : {
                         activate : ( ) => {
                             
-                            
+                            print("ACTIVATE?");
                             
                             print("_this : " + (_this == null  ? "NULL" : "yes"));
                             print(_this.get_class().get_type().name());
