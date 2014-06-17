@@ -264,7 +264,7 @@ WindowRooView=new XObject({
                         this.el.load_html_string( "Render not ready" , 
                                 //fixme - should be a config option!
                                 // or should we catch stuff and fix it up..
-                                'http://localhost/app.Builder/'
+                                "http://localhost/app.Builder/"
                         );
                             
                             
