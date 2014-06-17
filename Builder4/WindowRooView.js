@@ -84,46 +84,6 @@ WindowRooView=new XObject({
                         	return  is_valid_drop_site;
                         	*/
                         },
-                        drag_data_received : (ctx,  x,  y, sel_data,  target_type,  time, ud) =>
-                            {
-                               return true;
-                               /*
-                                print("Browser: drag-data-received");
-                                var delete_selection_data = false;
-                                vardnd_success = false;
-                                /* Deal with what we are given from source 
-                                if( sel_data && sel_data.length ) {
-                                    
-                                    if (ctx.action == Gdk.DragAction.ASK)  {
-                                        /* Ask the user to move or copy, then set the ctx action. 
-                                    }
-                        
-                                    if (ctx.action == Gdk.DragAction.MOVE) {
-                                        delete_selection_data = true;
-                                    }
-                                    var source = Gtk.drag_get_source_widget(ctx);
-                        
-                                    print("Browser: source.DRAGDATA? " + source.dragData);
-                                    if (this.targetData) {
-                                        print(this.targetData);
-                                        this.get('/LeftTree.model').dropNode(this.targetData,  source.dragData);
-                                    }
-                                    
-                                    
-                                    
-                                    dnd_success = true;
-                        
-                                }
-                        
-                                if (dnd_success == false)
-                                {
-                                        Seed.print ("DnD data transfer failed!\n");
-                                }
-                                
-                                Gtk.drag_finish (ctx, dnd_success, delete_selection_data, time);
-                                return true;
-                                */
-                            },
                         create_web_view : ( object) => {
                           // print("CREATE WEB VIEW");
                            return null; //new WebKit.WebView();
