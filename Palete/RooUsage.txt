@@ -278,6 +278,7 @@ left:
   Roo.grid.EditorGrid:ds
   Roo.grid.Grid:ds
   Roo.form.ComboBox:store
+  Roo.form.ComboBoxArray:store
   Roo.View:store
   Roo.JsonView:store
   Roo.bootstrap.ComboBox:store
