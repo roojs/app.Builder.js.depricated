@@ -1210,11 +1210,11 @@ public class Xcls_WindowLeftTree : Object
             _this = _owner;
 		}
 		construct {
-			this.el = new Gtk.MenuItem();
+			this.el = new Gtk.MenuItem.with_label("Delete Element");
             // my vars
 
             // set gobject values
-            this.el.label = "Delete Element";
+            //this.el.label = "Delete Element";
 			print("add activate\n");
             // listeners 
             this.el.button_press_event.connect(   ( ) => {
