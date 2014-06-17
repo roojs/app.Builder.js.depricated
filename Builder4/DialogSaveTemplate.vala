@@ -43,10 +43,9 @@ public class Xcls_DialogSaveTemplate : Object
         this.el.modal = true;
         var child_0 = new Xcls_HBox2(_this);
         child_0.ref();
-        this.el.function(p (  child_0.el , e) {
-                    p.el.get_content_area().add(e.el)
-                }
- );
+        this.el. p.el.get_content_area().add(e.el);
+
+ (  child_0.el  );
         var child_1 = new Xcls_Button5(_this);
         child_1.ref();
         this.el.add_action_widget (  child_1.el , 0 );
