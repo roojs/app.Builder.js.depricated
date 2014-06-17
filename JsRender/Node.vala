@@ -96,7 +96,7 @@ public class JsRender.Node : Object {
 			if (this.parent.items.get(i) == this) {
 				continue;
 			}
-			nlist.append(this.parent.items.get(i));
+			nlist.add(this.parent.items.get(i));
 		}
 		this.parent.items = nlist;
 		this.parent = null;
@@ -193,7 +193,7 @@ public class JsRender.Node : Object {
                 }
                 // ignores the fact it might be duplciated...
                 oprops.get(prop).is_array = true;
-                oprops.get(prop).items.append(pl);
+                oprops.get(prop).items.add(pl);
               
                 
                 
