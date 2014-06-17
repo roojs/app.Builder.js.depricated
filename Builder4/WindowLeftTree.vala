@@ -78,7 +78,7 @@ public class Xcls_WindowLeftTree : Object
 
     // skip |shadow_type - already used 
     public string getActivePath () {
-            var model = this.model;
+           
             var view = this.view.el;
             if (view.get_selection().count_selected_rows() < 1) {
                 return "";
@@ -1219,14 +1219,12 @@ public class Xcls_WindowLeftTree : Object
             //this.el.label = "Delete Element";
 			print("add activate\n");
             // listeners 
-            this.el.activate.connect(   ( ) => {
+			
+			
+            this.el.select.connect(   ( ) => {
                 
-                print("ACTIVATE?");
+                print("SELECT?");
                 
-                print("_this : " + (_this == null  ? "NULL" : "yes"));
-                print(_this.get_class().get_type().name());
-                print("_this.model : " + (_this.model == null  ? "NULL" : "yes"));
-                 _this.model.deleteSelected();
 				return  ;
             } );
         }
