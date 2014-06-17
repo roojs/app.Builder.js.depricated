@@ -322,12 +322,12 @@ public class JsRender.Node : Object {
             }
             
             // strings..
-            if (doubleStringProps.length() < 1) {
+            if (doubleStringProps.size < 1) {
                 els.add(left + this.quoteString(v));
                 continue;
             }
            
-            if (doubleStringProps.index(k) > -1) {
+            if (doubleStringProps.index_of(k) > -1) {
                 els.add(left + this.quoteString(v));
                 continue;
             }
