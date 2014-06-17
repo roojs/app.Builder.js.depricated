@@ -87,7 +87,8 @@ right:
   Roo.form.NumberField         
   Roo.form.Checkbox         
   Roo.form.Radio         
-  Roo.form.ComboBox         
+  Roo.form.ComboBox
+  Roo.form.ComboBoxArray         
   Roo.form.TextArea         
   Roo.form.HtmlEditor         
   Roo.form.FCKeditor         
