@@ -69,7 +69,7 @@ public class Xcls_WindowLeftTree : Object
             // ctor 
         public void init(Xcls_WindowLeftTree _owner)
         {
-			base();
+			
 			this.el = new Gtk.Button.with_label ("Click me (0)");
             _this = _owner;
             _this.button = this;
@@ -115,7 +115,7 @@ public class Xcls_WindowLeftTree : Object
             // ctor 
         public void init(Xcls_WindowLeftTree _owner)
         {
-			base();
+			
 			print("Xcls_LeftTreeMenu:Ctor called\n");
             _this = _owner;
 		 
@@ -126,11 +126,12 @@ public class Xcls_WindowLeftTree : Object
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_MenuItem7(_this);
-			child_0.initListeners();
+            var child_0 = new Xcls_MenuItem7();
+			child_0.init(_this);
 			this.el.append (  child_0.el  );
 			
             var child_1 = new Xcls_MenuItem8(_this);
+			child_1.init(_this);
             this.el.append (  child_1.el  );
 			this.el.show_all();
         }
