@@ -59,9 +59,13 @@ void testLeftTree(string name)
 	 
 	var tf = proj.files.get(dir + "/" + name + ".bjs");
 	tf.loadItems();
-	
 	var w = new Xcls_MainWindow();
-	w.show();
+
+	var  left_tree =new Xcls_WindowLeftTree();
+
+	w.vbox.el.pack_start(left_tree.el,true, true,0);
+    w.el.show_all();
+ 
 	w.left_tree.model.loadFile(tf);
 	
 }
@@ -76,7 +80,12 @@ void rooWindowTest(string name)
 	tf.loadItems();
 	
 	var w = new Xcls_MainWindow();
-	w.show();
+
+	 var rv =new Xcls_WindowRooView();
+
+	w.vbox.el.pack_start(rv.el,true, true,0);
+    w.el.show_all();
+ 
 	w.left_tree.model.loadFile(tf);
 	
 }
