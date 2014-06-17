@@ -43,8 +43,10 @@ public class Xcls_WindowLeftTree : Object
         // set gobject values
         this.el.shadow_type = Gtk.ShadowType.IN;
         var child_0 = new Xcls_view(_this);
+        child_0.ref();
         this.el.add (  child_0.el  );
-        _this.LeftTreeMenu = new Xcls_LeftTreeMenu(_this);
+        var child_1 = new Xcls_LeftTreeMenu(_this);
+        child_1.ref();
 
         // init method 
          this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
@@ -78,7 +80,7 @@ public class Xcls_WindowLeftTree : Object
 
     // skip |shadow_type - already used 
     public string getActivePath () {
-           
+            var model = this.model;
             var view = this.view.el;
             if (view.get_selection().count_selected_rows() < 1) {
                 return "";
@@ -127,8 +129,10 @@ public class Xcls_WindowLeftTree : Object
             this.el.headers_visible = false;
             this.el.tooltip_column = 1;
             var child_0 = new Xcls_model(_this);
+            child_0.ref();
             this.el.set_model (  child_0.el  );
             var child_1 = new Xcls_TreeViewColumn4(_this);
+            child_1.ref();
             this.el.append_column (  child_1.el  );
 
             // init method 
@@ -190,7 +194,7 @@ public class Xcls_WindowLeftTree : Object
                     
                  _this.LeftTreeMenu.el.set_screen(Gdk.Screen.get_default());
                  _this.LeftTreeMenu.el.show_all();
-                  _this.LeftTreeMenu.el.popup(null, null, null,  ev.button, ev.time);
+                  _this.LeftTreeMenu.el.popup(null, null, null,  3, ev.time);
                  //   print("click:" + res.path.to_string());
                   return true;
             } );
@@ -1092,6 +1096,7 @@ public class Xcls_WindowLeftTree : Object
 
             // set gobject values
             var child_0 = new Xcls_renderer(_this);
+            child_0.ref();
             this.el.pack_start (  child_0.el , true );
 
             // init method 
@@ -1164,19 +1169,18 @@ public class Xcls_WindowLeftTree : Object
             // ctor 
         public Xcls_LeftTreeMenu(Xcls_WindowLeftTree _owner)
         {
-            print("Xcls_LeftTreeMenu:Ctor called\n");
+            this.el = new Gtk.Menu();
             _this = _owner;
-		 
-			
-			this.el = new Gtk.Menu();
             _this.LeftTreeMenu = this;
 
             // my vars
 
             // set gobject values
             var child_0 = new Xcls_MenuItem7(_this);
+            child_0.ref();
             this.el.add (  child_0.el  );
             var child_1 = new Xcls_MenuItem8(_this);
+            child_1.ref();
             this.el.add (  child_1.el  );
         }
 
@@ -1209,23 +1213,21 @@ public class Xcls_WindowLeftTree : Object
             // ctor 
         public Xcls_MenuItem7(Xcls_WindowLeftTree _owner)
         {
-            
+            this.el = new Gtk.MenuItem();
             _this = _owner;
-		 
-			this.el = new Gtk.MenuItem.with_label("Delete Element");
+
             // my vars
 
             // set gobject values
-            //this.el.label = "Delete Element";
-			print("add activate\n");
+            this.el.label = "Delete Element";
+
             // listeners 
-			
-			
-            this.el.select.connect(   ( ) => {
+            this.el.activate.connect(   ( ) => {
                 
-                print("SELECT?");
+                print("ACTIVATE?");
                 
-				return  ;
+              
+                 _this.model.deleteSelected();
             } );
         }
 
