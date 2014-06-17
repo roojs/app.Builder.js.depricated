@@ -763,8 +763,13 @@ public class Xcls_WindowLeftTree
                 GLib.Value value;
                 this.el.get_value(iter, 2, out value);
                 var data = (JsRender.Node)(value.get_object());
+                print("removing node from Render\n");
+                
                 data.remove();
+                    print("removing node from Tree\n");    
                 this.el.remove(ref iter);
+            
+                
                 
                 
                 // 
