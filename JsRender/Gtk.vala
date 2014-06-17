@@ -573,8 +573,8 @@ namespace JsRender {
             if (depth > 0) {
                 ret+=inpad + "}\n";
             }
-            for (var i = 0;i < item.items.length();i++) {
-				ret+= this.toValaItem(item.items.nth_data(i), 1); 
+            for (var i = 0;i < item.items.size;i++) {
+				ret+= this.toValaItem(item.items.get(i), 1); 
 			}
             
             if (depth < 1) {
