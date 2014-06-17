@@ -463,8 +463,8 @@ public class Xcls_WindowLeftTree
                         // we can send stuff to souce here...
             
             
-            
-                    Gtk.drag_finish (ctx, true, delete_selection_data, time);
+                // do we always say failure, so we handle the reall drop?
+                    Gtk.drag_finish (ctx, false, delete_selection_data, time);
                    
             } );
             this.el.cursor_changed.connect(  ( ) => {
