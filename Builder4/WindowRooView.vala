@@ -174,7 +174,7 @@ public class Xcls_WindowRooView : Object
             // my vars
 
             // set gobject values
-            this.el.active = "true";
+            this.el.active = true;
             this.el.label = "Auto Redraw On";
 
             // listeners 
@@ -187,7 +187,7 @@ public class Xcls_WindowRooView : Object
 
         // skip listeners - not pipe 
 
-        // skip active - already used 
+        // skip |active - already used 
 
         // skip id - not pipe 
 
