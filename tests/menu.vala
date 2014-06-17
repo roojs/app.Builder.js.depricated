@@ -20,7 +20,7 @@ int main (string[] args) {
 	GLib.Log.set_always_fatal(LogLevelFlags.LEVEL_ERROR | LogLevelFlags.LEVEL_CRITICAL); 
 	
 	var a  = new Xcls_WindowLeftTree();
-	a.init();
+	a.init();	
 	a.el.show_all();
 	
 	Gtk.main();
@@ -35,7 +35,7 @@ public static Xcls_WindowLeftTree  WindowLeftTree;
 public class Xcls_WindowLeftTree : Object 
 {
     public Gtk.Window el;
-    public Xcls_WindowLeftTree  _xthis;
+    private Xcls_WindowLeftTree _thiss;
 	public Xcls_button button;
     public Xcls_LeftTreeMenu LeftTreeMenu;
 
@@ -44,17 +44,17 @@ public class Xcls_WindowLeftTree : Object
     {
 		 
 		this.el = new Gtk.Window(  );
-        _xthis = this;
+       _thiss = this;
         WindowLeftTree = this;
 
         // my vars
 
         // set gobject values
         
-        var child_0 = new Xcls_button(); child_0.init( );
+        var child_0 = new Xcls_button(); child_0.init_thiss);
         this.el.add (  child_0.el  );
-        _xthis.LeftTreeMenu = new Xcls_LeftTreeMenu();
-		_xthis.LeftTreeMenu.init( );
+       _thiss.LeftTreeMenu = new Xcls_LeftTreeMenu();
+	_thiss.LeftTreeMenu.init();
 
         // init method 
          
@@ -66,15 +66,15 @@ public class Xcls_WindowLeftTree : Object
     public class Xcls_button : Object 
     {
         public Gtk.Button el;
-       
+        private Xcls_WindowLeftTree _thiss;
  
             // ctor 
-        public void init( )
+        public void init(Xcls_WindowLeftTree _owner)
         {
 			
 			this.el = new Gtk.Button.with_label ("Click me (0)");
-            
-            _xthis.button = this;
+           _thiss = _owner;
+           _thiss.button = this;
 
              
 
@@ -90,9 +90,9 @@ public class Xcls_WindowLeftTree : Object
                 }
  
                     
-                 //_xthis.LeftTreeMenu.el.set_screen(Gdk.Screen.get_default());
+                 /_thiss.LeftTreeMenu.el.set_screen(Gdk.Screen.get_default());
                  
-                 _xthis.LeftTreeMenu.el.popup(null, null, null,  ev.button, ev.time);
+                _thiss.LeftTreeMenu.el.popup(null, null, null,  ev.button, ev.time);
 			
 				//   print("click:" + res.path.to_string());
                   return true;
@@ -109,7 +109,7 @@ public class Xcls_WindowLeftTree : Object
     public class Xcls_LeftTreeMenu : Object 
     {
         public Gtk.Menu el;
-    
+        private Xcls_WindowLeftTree _thiss;
 
 
             // my vars
@@ -119,21 +119,21 @@ public class Xcls_WindowLeftTree : Object
         {
 			
 			print("Xcls_LeftTreeMenu:Ctor called\n");
-           
+           _thiss = _owner;
 		 
 			
 			this.el = new Gtk.Menu();
-            _xthis.LeftTreeMenu = this;
+           _thiss.LeftTreeMenu = this;
 
             // my vars
 
             // set gobject values
             var child_0 = new Xcls_MenuItem7();
-			child_0.init(   );
+			child_0.init_thiss);
 			this.el.append (  child_0.el  );
 			
-            var child_1 = new Xcls_MenuItem8();
-			child_1.init( );
+            var child_1 = new Xcls_MenuItem8_thiss);
+			child_1.init_thiss);
             this.el.append (  child_1.el  );
 			this.el.show_all();
         }
@@ -143,7 +143,7 @@ public class Xcls_WindowLeftTree : Object
     public class Xcls_MenuItem7 : Object 
     {
         public Gtk.MenuItem el;
-         
+        private Xcls_WindowLeftTree _thiss;
 
 
             // my vars
@@ -152,7 +152,7 @@ public class Xcls_WindowLeftTree : Object
         
 		public void init(Xcls_WindowLeftTree  _owner) {
 	 
-           
+           _thiss = _owner;
 		 
 			this.el = new Gtk.MenuItem.with_label("Delete Element");
             // my vars
@@ -175,7 +175,7 @@ public class Xcls_WindowLeftTree : Object
     public class Xcls_MenuItem8 : Object 
     {
         public Gtk.MenuItem el;
-        
+        private Xcls_WindowLeftTree _thiss;
 
 
             // my vars
@@ -185,7 +185,7 @@ public class Xcls_WindowLeftTree : Object
         {
 			
 			this.el = new Gtk.MenuItem();
-          
+           _thiss = _owner;
 
             // my vars
 
