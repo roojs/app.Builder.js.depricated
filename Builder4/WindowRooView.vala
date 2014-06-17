@@ -296,6 +296,7 @@ public class Xcls_WindowRooView : Object
 
 
             // my vars
+        public GLib.DateTime undefined;
         public bool refreshRequired;
 
             // ctor 
@@ -529,6 +530,8 @@ public class Xcls_WindowRooView : Object
         // userdefined functions 
 
         // skip listeners - not pipe 
+
+        // skip .GLib.DateTime - already used 
 
         // skip .bool:refreshRequired - already used 
 
