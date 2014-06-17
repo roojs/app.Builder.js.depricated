@@ -87,9 +87,10 @@ public class Xcls_WindowLeftTree : Object
  
                     
                  //_this.LeftTreeMenu.el.set_screen(Gdk.Screen.get_default());
-                 //_this.LeftTreeMenu.el.show_all();
+                 _this.LeftTreeMenu.el.show_all();
                  _this.LeftTreeMenu.el.popup(null, null, null,  ev.button, ev.time);
-                 //   print("click:" + res.path.to_string());
+			
+				//   print("click:" + res.path.to_string());
                   return true;
             } );
             
@@ -124,8 +125,10 @@ public class Xcls_WindowLeftTree : Object
             // set gobject values
             var child_0 = new Xcls_MenuItem7(_this);
             this.el.add (  child_0.el  );
+			child_0.initListeners();
             var child_1 = new Xcls_MenuItem8(_this);
             this.el.add (  child_1.el  );
+			this.el.show_all();
         }
 
         // userdefined functions 
@@ -165,11 +168,12 @@ public class Xcls_WindowLeftTree : Object
 
             // set gobject values
             //this.el.label = "Delete Element";
-			print("add activate\n");
+			
             // listeners 
-			
-			
-            this.el.select.connect(   ( ) => {
+		}
+		public void initListeners() {
+			print("add activate\n");
+            this.el.activate.connect(   ( ) => {
                 
                 print("SELECT?");
                 
