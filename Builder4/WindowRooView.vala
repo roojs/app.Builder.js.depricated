@@ -309,8 +309,7 @@ public class Xcls_WindowRooView : Object
             // set gobject values
 
             // init method 
-            function() {
-                XObject.prototype.init.call(this);
+             
                 // this may not work!?
                 var settings =  this.el.get_settings();
                 settings.enable_developer_extras = true;
@@ -323,8 +322,8 @@ public class Xcls_WindowRooView : Object
                  
                  // init inspector..
                 this.el.get_inspector().signal.inspect_web_view.connect(function(wi, pg) {
-                     _this.get('/BottomPane.inspector').el.show();
-                     return _this.get('/BottomPane.inspector').el;
+                     _this.inspector.el.show();
+                     //return _this.get('/BottomPane.inspector').el;
                 
                 });
                  

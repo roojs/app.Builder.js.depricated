@@ -252,9 +252,7 @@ WindowRooView=new XObject({
                     id : "view",
                     pack : "add",
                     redraws : 0,
-                    init : function() {
-                        XObject.prototype.init.call(this);
-                        // this may not work!?
+                    init : // this may not work!?
                         var settings =  this.el.get_settings();
                         settings.enable_developer_extras = true;
                         
@@ -266,8 +264,8 @@ WindowRooView=new XObject({
                          
                          // init inspector..
                         this.el.get_inspector().signal.inspect_web_view.connect(function(wi, pg) {
-                             _this.get('/BottomPane.inspector').el.show();
-                             return _this.get('/BottomPane.inspector').el;
+                             _this.inspector.el.show();
+                             //return _this.get('/BottomPane.inspector').el;
                         
                         });
                          
