@@ -525,6 +525,29 @@ public class Xcls_WindowRooView : Object
         }
 
         // userdefined functions 
+
+        // skip listeners - not pipe 
+
+        // skip id - not pipe 
+
+        // skip pack - not pipe 
+
+        // skip redraws - not pipe 
+
+        // skip xtype - not pipe 
+
+        // skip |init - already used 
+        public void renderJS(bool force) {
+            
+                // this is the public redraw call..
+                // we refresh in a loop privately..
+                var autodraw = this.AutoRedraw.el.active;
+                if (!autodraw && !force) {
+                    print("Skipping redraw - no force, and autodraw off");
+                    return;
+                }
+                this.refreshRequired  = true;
+            }
         public void runRefresh () 
             {
                 // this is run every 2 seconds from the init..
@@ -614,29 +637,6 @@ public class Xcls_WindowRooView : Object
                  print( "before render" +    this.lastRedraw);
                 print( "after render" +    (new Date()));
                 
-            }
-
-        // skip listeners - not pipe 
-
-        // skip id - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip redraws - not pipe 
-
-        // skip xtype - not pipe 
-
-        // skip |init - already used 
-        public void renderJS(bool force) {
-            
-                // this is the public redraw call..
-                // we refresh in a loop privately..
-                var autodraw = this.AutoRedraw.el.active;
-                if (!autodraw && !force) {
-                    print("Skipping redraw - no force, and autodraw off");
-                    return;
-                }
-                this.refreshRequired  = true;
             }
 
         // skip |xns - no return type
