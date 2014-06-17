@@ -867,7 +867,7 @@ public class Xcls_WindowLeftTree
                     
             // load children - if it has any..
                   
-                    if (node.items.length() > 0) {
+                    if (node.items.size > 0) {
                         this.load(node.items, n_iter);
                         _this.view.el.expand_row(this.el.get_path(n_iter), true);
                     }
