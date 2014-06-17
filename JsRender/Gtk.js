@@ -357,7 +357,7 @@ Gtk = XObject.define(
             
             // class header..
             // class xxx {   WrappedGtk  el; }
-            strbuilder(inpad + "public class " + xcls + "\n" + inpad + "{\n");
+            strbuilder(inpad + "public class " + xcls + " : Object \n" + inpad + "{\n");
             strbuilder(pad + "public " + cls + " el;\n");
             if (!depth) {
 				this.top_xcls = xcls;
