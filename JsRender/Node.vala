@@ -18,7 +18,7 @@ public class JsRender.Node : Object {
     
     public Node()
     {
-        this.items = new GLib.List<Node>();
+        this.items = new Gee.ArrayLis<Node>();
         this.props = new Gee.HashMap<string,string>();
 		this.listeners = new Gee.HashMap<string,string>();
         this.is_array = false;
@@ -91,7 +91,7 @@ public class JsRender.Node : Object {
 		if (this.parent == null) {
 			return;
 		}
-		var nlist = new GLib.List<Node>();
+		var nlist = new Gee.ArrayList<Node>();
 		for (var i =0;i < this.parent.items.length(); i++) {
 			if (this.parent.items.nth_data(i) == this) {
 				continue;
@@ -118,7 +118,7 @@ public class JsRender.Node : Object {
 
 	}
 
-	string gLibStringListJoin( string sep, GLib.List<string> ar) 
+	string gLibStringListJoin( string sep, Gee.ArrayList<string> ar) 
 	{
 		var ret = "";
 		for (var i = 0; i < ar.length(); i++) {
@@ -129,7 +129,7 @@ public class JsRender.Node : Object {
 
 	}
     
-    public string mungeToString (bool isListener, string pad,  GLib.List<string> doubleStringProps)
+    public string mungeToString (bool isListener, string pad,  Gee.ArrayList<string> doubleStringProps)
     {
         
          
@@ -144,7 +144,7 @@ public class JsRender.Node : Object {
         var isArray = this.isArray();
         
         
-        var els = new GLib.List<string>(); 
+        var els = new Gee.ArrayList<string>(); 
         var skip = new Gee.ArrayList<string>();
         if (!isArray && this.hasXnsType() ) {
                 // this.mungeXtype(obj['|xns'] + '.' + obj['xtype'], els); ??????
