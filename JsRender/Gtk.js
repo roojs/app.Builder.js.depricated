@@ -530,12 +530,18 @@ Gtk = XObject.define(
                 for(var i =0;i<item.items.length;i++) {
                     var ci = item.items[i];
                     
+                    strbuilder(ipad + "var child_" + i + " = new " + ci.xvala_xcls + "(_this);\n" );
+                    
+                    if (ci.pack === false) {
+                        continue;
+                    }
+                    
                     var packing = ci.pack ? ci.pack.split(',') : [ 'add' ];
                     if (typeof(ci['|pack']) != 'undefined') {
                         packing =ci['|pack'].split(',');
                     }
                     var pack = packing.shift();
-                    strbuilder(ipad + "var child_" + i + " = new " + ci.xvala_xcls + "(_this);\n" );
+                    
                     
                     strbuilder(ipad + "this.el." + pack + " (  child_" + i + ".el " +
                                (packing.length ? ", " + packing.join(",") : "") + " );\n"
