@@ -41,7 +41,7 @@ public class Xcls_WindowLeftTree : Object
         // ctor 
     public void init()
     {
-		base();
+		 
 		this.el = new Gtk.Window(  );
         _this = this;
         WindowLeftTree = this;
