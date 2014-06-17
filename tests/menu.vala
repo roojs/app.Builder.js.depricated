@@ -48,13 +48,13 @@ public class Xcls_WindowLeftTree : Object
         // my vars
 
         // set gobject values
-        this.el.shadow_type = Gtk.ShadowType.IN;
+        
         var child_0 = new Xcls_button(_this);
         this.el.add (  child_0.el  );
         _this.LeftTreeMenu = new Xcls_LeftTreeMenu(_this);
 
         // init method 
-         this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
+         
          
     }
  
