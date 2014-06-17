@@ -10,7 +10,7 @@ Vte = imports.gi.Vte;
 console = imports.console;
 XObject = imports.XObject.XObject;
 WindowRooView=new XObject({
-    xtype: Gtk.VBox,
+    xtype: Gtk.VPaned,
     id : "WindowRooView",
     pack : "add",
     items : [

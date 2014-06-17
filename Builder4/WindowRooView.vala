@@ -19,7 +19,7 @@ public static Xcls_WindowRooView  WindowRooView;
 
 public class Xcls_WindowRooView : Object 
 {
-    public Gtk.VBox el;
+    public Gtk.VPaned el;
     private Xcls_WindowRooView  _this;
 
     public Xcls_AutoRedraw AutoRedraw;
@@ -32,7 +32,7 @@ public class Xcls_WindowRooView : Object
         // ctor 
     public Xcls_WindowRooView()
     {
-        this.el = new Gtk.VBox( true, 0 );
+        this.el = new Gtk.VPaned();
         _this = this;
         WindowRooView = this;
 

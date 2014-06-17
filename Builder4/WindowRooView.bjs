@@ -9,7 +9,7 @@
             ".JsRender.JsRender:file": "",
             "id": "WindowRooView",
             "pack": "add",
-            "xtype": "VBox",
+            "xtype": "VPaned",
             "|xns": "Gtk",
             "items": [
                 {
