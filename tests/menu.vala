@@ -55,24 +55,24 @@ public class Xcls_Window : Object {
 		leftmenu.show_all();
 		w.show_all();
 
-}
-public class Xcls_MenuItem7 : Object  
-{
-    public Gtk.MenuItem el;
-	public Xcls_Window _this;
+	}
+	public class Xcls_MenuItem7 : Object  
+	{
+		public Gtk.MenuItem el;
+		public Xcls_Window _this;
 	
-	public void init(Xcls_Window _owner ) {
-		_this = _owner;
-	 
-		this.el = new Gtk.MenuItem.with_label("Delete Element");
-        print("add activate\n");
-        this.el.activate.connect(   ( ) => {
-            
-            print("SELECT?");
-            
-			return  ;
-        } );
-    }
+		public void init(Xcls_Window _owner ) {
+			_this = _owner;
+		 
+			this.el = new Gtk.MenuItem.with_label("Delete Element");
+		    print("add activate\n");
+		    this.el.activate.connect(   ( ) => {
+		        
+		        print("SELECT?");
+		        
+				return  ;
+		    } );
+		}
 
+	}
 }
-    
