@@ -43,9 +43,9 @@ WindowRooView=new XObject({
                 {
                     xtype: Gtk.Button,
                     listeners : {
-                        clicked : function (self) {
-                          this.get('/RightBrowser.view').redraws = 99;
-                          this.get('/RightBrowser.view').renderJS(null,true);
+                        clicked : () => {
+                          _this.view.redraws = 99;
+                          _this.view.renderJS(null,true);
                         }
                     },
                     label : "Full Redraw",

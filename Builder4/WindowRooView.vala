@@ -218,9 +218,9 @@ public class Xcls_WindowRooView : Object
             this.el.label = "Full Redraw";
 
             // listeners 
-            this.el.clicked.connect( function (self) {
-              this.get('/RightBrowser.view').redraws = 99;
-              this.get('/RightBrowser.view').renderJS(null,true);
+            this.el.clicked.connect(  () => {
+              _this.view.redraws = 99;
+              _this.view.renderJS(null,true);
             } );
         }
 

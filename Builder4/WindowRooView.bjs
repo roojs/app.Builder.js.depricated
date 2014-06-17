@@ -38,7 +38,7 @@
                         },
                         {
                             "listeners": {
-                                "clicked": "function (self) {\n  this.get('/RightBrowser.view').redraws = 99;\n  this.get('/RightBrowser.view').renderJS(null,true);\n}"
+                                "clicked": " () => {\n  _this.view.redraws = 99;\n  _this.view.renderJS(null,true);\n}"
                             },
                             "label": "Full Redraw",
                             "pack": "pack_start,false,false,0",
