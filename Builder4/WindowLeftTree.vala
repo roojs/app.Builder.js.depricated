@@ -279,7 +279,7 @@ public class Xcls_WindowLeftTree
                 // No target offered by source => error
                
             
-                return  true;
+                return  false;
             } );
             this.el.drag_data_received.connect(   (ctx, x, y, sel, info, time)  => {
                   //print("Tree: drag-data-received");

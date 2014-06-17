@@ -147,7 +147,7 @@ WindowLeftTree=new XObject({
                     // No target offered by source => error
                    
                 
-                    return  true;
+                    return  false;
                 },
                 drag_data_received : (ctx, x, y, sel, info, time)  => {
                       //print("Tree: drag-data-received");
