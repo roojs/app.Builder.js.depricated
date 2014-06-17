@@ -35,7 +35,7 @@ public class Xcls_WindowLeftTree : Object
 {
     public Gtk.Window el;
     private Xcls_WindowLeftTree  _this;
-
+	public Xcls_button button;
     public Xcls_LeftTreeMenu LeftTreeMenu;
 
         // ctor 
@@ -80,14 +80,14 @@ public class Xcls_WindowLeftTree : Object
             
                 
  
-                if (ev.type != Gdk.EventType.BUTTON_PRESS  || ev.button != 3) {
+                  if (ev.type != Gdk.EventType.BUTTON_PRESS  || ev.button != 3) {
                     //print("click" + ev.type);
                     return false;
                 }
  
                     
-                 _this.LeftTreeMenu.el.set_screen(Gdk.Screen.get_default());
-                 _this.LeftTreeMenu.el.show_all();
+                 //_this.LeftTreeMenu.el.set_screen(Gdk.Screen.get_default());
+                 //_this.LeftTreeMenu.el.show_all();
                  _this.LeftTreeMenu.el.popup(null, null, null,  ev.button, ev.time);
                  //   print("click:" + res.path.to_string());
                   return true;
