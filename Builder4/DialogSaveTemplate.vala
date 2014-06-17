@@ -110,7 +110,7 @@ public class Xcls_DialogSaveTemplate : Object
             if (t == null) {
                t =   new Xcls_DialogSaveTemplate();
             }
-            t.set_transient_for(parent);
+            t.el.set_transient_for(parent);
             t.data = data;
             t.palete = palete;
             t.name.el.set_text("");
