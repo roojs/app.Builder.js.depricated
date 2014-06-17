@@ -23,7 +23,7 @@ int main (string[] args) {
 	var w = new Gtk.Window(  );
 
 	var b = new Gtk.Button.with_label ("Click me (0)");
-
+	w.add(b);
 	var leftmenu = new Gtk.Menu();
 	
     b.button_press_event.connect(   ( ev) => {
