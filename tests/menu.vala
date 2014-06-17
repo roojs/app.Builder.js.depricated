@@ -35,7 +35,7 @@ public static Xcls_WindowLeftTree  WindowLeftTree;
 public class Xcls_WindowLeftTree : Object 
 {
     public Gtk.Window el;
-   privatee Xcls_WindowLeftTree __this;
+   private  Xcls_WindowLeftTree __this;
 	public Xcls_button button;
     public Xcls_LeftTreeMenu LeftTreeMenu;
 
