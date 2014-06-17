@@ -39,10 +39,7 @@ public class Xcls_Window : Object {
 		    if (ev.type != Gdk.EventType.BUTTON_PRESS  || ev.button != 3) {
 		        return false;
 		    }
-
-		        
-		    //leftmenu.el.set_screen(Gdk.Screen.get_default());
-		     
+ 
 		    leftmenu.popup(null, null, null,  ev.button, ev.time);
 	
 		      return true;
@@ -62,9 +59,8 @@ public class Xcls_Window : Object {
 		public Xcls_Window _this;
 	
 		public void init(Xcls_Window _owner ) {
-			_this = _owner;
-			var el = new Gtk.MenuItem.with_label("Delete Element");
-			this.el = el;
+			//_this = _owner;
+			this.el = new Gtk.MenuItem.with_label("Delete Element");
 		    print("add activate\n");
 		    this.el.activate.connect(   ( ) => {
 		        
