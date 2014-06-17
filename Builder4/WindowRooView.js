@@ -369,7 +369,7 @@ WindowRooView=new XObject({
                             // need to modify paths
                             
                             string inhtml;
-                            GLib.FileUtils.get_contents("/home/alan/gitlive/app.Builder.js/builder.html", out inhtml)
+                            GLib.FileUtils.get_contents("/home/alan/gitlive/app.Builder.js/builder.html", out inhtml);
                             
                             
                             var html = inhtml.replace("</head>", runhtml + this.runhtml + "</head>");
