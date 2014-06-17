@@ -44,7 +44,7 @@ public class Xcls_WindowLeftTree : Object
         this.el.shadow_type = Gtk.ShadowType.IN;
         var child_0 = new Xcls_view(_this);
         this.el.add (  child_0.el  );
-        var child_1 = new Xcls_LeftTreeMenu(_this);
+        _this.LeftTreeMenu = new Xcls_LeftTreeMenu(_this);
 
         // init method 
          this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
