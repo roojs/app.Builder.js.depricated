@@ -101,6 +101,11 @@ namespace JsRender {
             els.push('xtype: '+ xtype);
         },
         */
+		
+        public override string toSourcePreview()
+        {
+			return "";
+		}
       
         public override string toSource()
         {
