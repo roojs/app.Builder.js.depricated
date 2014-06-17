@@ -51,7 +51,7 @@ public class Xcls_WindowLeftTree : Object
 
         // set gobject values
         
-        var child_0 = new Xcls_button(); child_0.init__this);
+        var child_0 = new Xcls_button(); child_0.init(__this);
         this.el.add (  child_0.el  );
        __this.LeftTreeMenu = new Xcls_LeftTreeMenu();
 	__this.LeftTreeMenu.init_this();
@@ -129,11 +129,11 @@ public class Xcls_WindowLeftTree : Object
 
             // set gobject values
             var child_0 = new Xcls_MenuItem7();
-			child_0.init__this);
+			child_0.init(__this);
 			this.el.append (  child_0.el  );
 			
             var child_1 = new Xcls_MenuItem8s);
-			child_1.init__this);
+			child_1.init(__this);
             this.el.append (  child_1.el  );
 			this.el.show_all();
         }
