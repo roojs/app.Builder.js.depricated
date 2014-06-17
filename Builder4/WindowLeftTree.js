@@ -682,7 +682,7 @@ WindowLeftTree=new XObject({
                             var target_data= target_data_str.split("|");
                       
                             var parent_str = target_data[0].length > 0 ? target_data[0] : "";
-                            var pos = target_data.length > 1 ? int.parse(target_data[0]) : 2; // ontop..
+                            var pos = target_data.length > 1 ? int.parse(target_data[1]) : 2; // ontop..
                       
                       
                             Gtk.TreePath tree_path  =   parent_str.length > 0 ? new  Gtk.TreePath.from_string( parent_str ) : null;
@@ -700,7 +700,7 @@ WindowLeftTree=new XObject({
                     
                     
                             
-                            print("pos is %d  \n".printf(pos));
+                             //print("pos is %d  \n".printf(pos));
                             
                              Gtk.TreeIter n_iter; 
                              
