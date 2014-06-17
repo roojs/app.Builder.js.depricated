@@ -78,6 +78,20 @@
                             "|xns": "WebKit"
                         }
                     ]
+                },
+                {
+                    "xtype": "ScrolledWindow",
+                    "|xns": "Gtk",
+                    "pack": "add",
+                    "listeners": {},
+                    "items": [
+                        {
+                            "id": "inspector",
+                            "pack": "add",
+                            "xtype": "WebView",
+                            "|xns": "WebKit"
+                        }
+                    ]
                 }
             ]
         }
