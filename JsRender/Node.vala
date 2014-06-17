@@ -18,7 +18,7 @@ public class JsRender.Node : Object {
     
     public Node()
     {
-        this.items = new Gee.ArrayLis<Node>();
+        this.items = new Gee.ArrayList<Node>();
         this.props = new Gee.HashMap<string,string>();
 		this.listeners = new Gee.HashMap<string,string>();
         this.is_array = false;
@@ -35,7 +35,7 @@ public class JsRender.Node : Object {
     }
     public bool hasChildren()
     {
-        return this.items.length() > 0;
+        return this.items.size > 0;
     }
     public bool hasXnsType()
     {
@@ -92,26 +92,26 @@ public class JsRender.Node : Object {
 			return;
 		}
 		var nlist = new Gee.ArrayList<Node>();
-		for (var i =0;i < this.parent.items.length(); i++) {
-			if (this.parent.items.nth_data(i) == this) {
+		for (var i =0;i < this.parent.items.size; i++) {
+			if (this.parent.items.get(i) == this) {
 				continue;
 			}
-			nlist.append(this.parent.items.nth_data(i));
+			nlist.append(this.parent.items.get(i));
 		}
-		this.parent.items = nlist.copy();
+		this.parent.items = nlist;
 		this.parent = null;
 
 	}
      
     /* creates javascript based on the rules */
     public Node? findProp(string n) {
-		for(var i=0;i< this.items.length();i++) {
-			var p = this.items.nth_data(i).get("*prop");
-			if (this.items.nth_data(i).get("*prop").length < 1) {
+		for(var i=0;i< this.items.size;i++) {
+			var p = this.items.get(i).get("*prop");
+			if (this.items.get(i).get("*prop").length < 1) {
 				continue;
 			}
 			if (p == n) {
-				return this.items.nth_data(i);
+				return this.items.get(i);
 			}
 		}
 		return null;
@@ -121,9 +121,9 @@ public class JsRender.Node : Object {
 	string gLibStringListJoin( string sep, Gee.ArrayList<string> ar) 
 	{
 		var ret = "";
-		for (var i = 0; i < ar.length(); i++) {
+		for (var i = 0; i < ar.size; i++) {
 			ret += i>0 ? sep : "";
-			ret += ar.nth_data(i);
+			ret += ar.get(i);
 		}
 		return ret;
 
@@ -160,8 +160,8 @@ public class JsRender.Node : Object {
         if (!isArray && this.hasChildren()) {
             // look for '*props'
            
-            for (var ii =0; ii< this.items.length(); ii++) {
-                var pl = this.items.nth_data(ii);
+            for (var ii =0; ii< this.items.size; ii++) {
+                var pl = this.items.get(ii);
                 if (!pl.props.has_key("*prop")) {
                     //newitems.add(pl);
                     continue;
@@ -209,10 +209,10 @@ public class JsRender.Node : Object {
         if (this.isArray()) {
             
             
-            for (var i=0;i< this.items.length();i++) {
-                var el = this.items.nth_data(i);
+            for (var i=0;i< this.items.size;i++) {
+                var el = this.items.get(i);
                 
-                els.append("%d".printf(i) + " : " + el.mungeToString(false, pad,doubleStringProps));
+                els.add("%d".printf(i) + " : " + el.mungeToString(false, pad,doubleStringProps));
                 
             }
             var spad = pad.substring(0, pad.length-4);
@@ -282,7 +282,7 @@ public class JsRender.Node : Object {
                     str = string.joinv("\n" + pad, lines);
                 }
                 
-                els.append(left  + str);
+                els.add(left  + str);
                 continue;
             }
              
@@ -310,30 +310,30 @@ public class JsRender.Node : Object {
                     str =  string.joinv("\n" + pad, lines);
                 }
                 //print("==> " +  str + "\n");
-                els.append(left + str);
+                els.add(left + str);
                 continue;
             }
             // standard..
             
             
             if (Lang.isNumber(v) || Lang.isBoolean(v)) { // boolean or number...?
-                els.append(left + v );
+                els.add(left + v );
                 continue;
             }
             
             // strings..
             if (doubleStringProps.length() < 1) {
-                els.append(left + this.quoteString(v));
+                els.add(left + this.quoteString(v));
                 continue;
             }
            
             if (doubleStringProps.index(k) > -1) {
-                els.append(left + this.quoteString(v));
+                els.add(left + this.quoteString(v));
                 continue;
             }
              
             // single quote.. v.substring(1, v.length-1).replace("'", "\\'") + "'";
-            els.append(left + "'" + v.substring(1, v.length-1).replace("'", "\\'") + "'");
+            els.add(left + "'" + v.substring(1, v.length-1).replace("'", "\\'") + "'");
             
 
            
@@ -361,7 +361,7 @@ public class JsRender.Node : Object {
             //if (!left.length && isArray) print(right);
             
             if (right.length > 0){
-                els.append(left + right);
+                els.add(left + right);
             }
         
             
@@ -396,24 +396,24 @@ public class JsRender.Node : Object {
 			}
 			itms += "\n" + pad + "}";
 			//print ( "ADD " + itms); 
-			els.append(itms);
+			els.add(itms);
 
 		}
 
 
 		
 		// finally munge the children...
-		if (this.items.length()> 0) {
+		if (this.items.size> 0) {
 			var itms = "items : [\n";
-			for(var i = 0; i < this.items.length();i++) {
+			for(var i = 0; i < this.items.size;i++) {
 				// 
 				itms +=    pad + "    "  +
-					this.items.nth_data(i).mungeToString(false, pad + "        ",  doubleStringProps) + "\n";
+					this.items.get(i).mungeToString(false, pad + "        ",  doubleStringProps) + "\n";
 
 
 			}
 			
-			els.append(itms);
+			els.add(itms);
 		}
 
 		// finally output listeners...
@@ -424,7 +424,7 @@ public class JsRender.Node : Object {
 
 
 			
-        if (els.length() < 1) {
+        if (els.size < 1) {
             return "";
         }
         // oprops...    
@@ -462,7 +462,7 @@ public class JsRender.Node : Object {
                     var node = new Node();
 					node.parent = this;
                     node.loadFromJson(el.get_object());
-                    this.items.append(node);
+                    this.items.add(node);
                 });
                 return;
             }
@@ -525,8 +525,8 @@ public class JsRender.Node : Object {
 		ret.set_array_member("items", ar);
 		
 		// children..
-		for(var i =0;i < this.items.length();i++) {
-			ar.add_object_element(this.items.nth_data(i).toJsonObject());
+		for(var i =0;i < this.items.size;i++) {
+			ar.add_object_element(this.items.get(i).toJsonObject());
         }
 		return ret;
 		
