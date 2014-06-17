@@ -261,7 +261,48 @@ WindowRooView=new XObject({
         },
         {
             xtype: Gtk.VBox,
-            pack : false
+            pack : false,
+            items : [
+                {
+                    xtype: Gtk.HBox,
+                    pack : "pack_start,false,true,0",
+                    items : [
+                        {
+                            xtype: Gtk.Button,
+                            listeners : {
+                                clicked : ( ) => {
+                                    _this.view.renderJS(  true);
+                                }
+                            },
+                            label : "Redraw",
+                            pack : "pack_start,false,false,0"
+                        },
+                        {
+                            xtype: Gtk.CheckButton,
+                            listeners : {
+                                toggled : (state) => {
+                                    this.el.set_label(this.el.active  ? "Auto Redraw On" : "Auto Redraw Off");
+                                }
+                            },
+                            active : true,
+                            id : "AutoRedraw",
+                            label : "Auto Redraw On",
+                            pack : "pack_start,false,false,0"
+                        },
+                        {
+                            xtype: Gtk.Button,
+                            listeners : {
+                                clicked : () => {
+                                  _this.view.redraws = 99;
+                                  _this.view.renderJS(true);
+                                }
+                            },
+                            label : "Full Redraw",
+                            pack : "pack_start,false,false,0"
+                        }
+                    ]
+                }
+            ]
         }
     ]
 });

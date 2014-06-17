@@ -25,6 +25,7 @@ public class Xcls_WindowRooView : Object
     public Xcls_AutoRedraw AutoRedraw;
     public Xcls_view view;
     public Xcls_inspector inspector;
+    public Xcls_AutoRedraw AutoRedraw;
 
         // my vars
     public JsRender.JsRender file;
@@ -642,6 +643,9 @@ public class Xcls_WindowRooView : Object
             // my vars
 
             // set gobject values
+            var child_0 = new Xcls_HBox11(_this);
+            child_0.ref();
+            this.el.pack_start (  child_0.el , false,true,0 );
         }
 
         // userdefined functions 
@@ -651,6 +655,188 @@ public class Xcls_WindowRooView : Object
         // skip xtype - not pipe 
 
         // skip pack - not pipe 
+
+        // skip items - not pipe 
+
+        // skip xvala_cls - not pipe 
+
+        // skip xvala_xcls - not pipe 
+
+        // skip xvala_id - not pipe 
+    }
+    public class Xcls_HBox11 : Object 
+    {
+        public Gtk.HBox el;
+        private Xcls_WindowRooView  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_HBox11(Xcls_WindowRooView _owner)
+        {
+            this.el = new Gtk.HBox( true, 0 );
+            _this = _owner;
+
+            // my vars
+
+            // set gobject values
+            var child_0 = new Xcls_Button12(_this);
+            child_0.ref();
+            this.el.pack_start (  child_0.el , false,false,0 );
+            var child_1 = new Xcls_AutoRedraw(_this);
+            child_1.ref();
+            this.el.pack_start (  child_1.el , false,false,0 );
+            var child_2 = new Xcls_Button14(_this);
+            child_2.ref();
+            this.el.pack_start (  child_2.el , false,false,0 );
+        }
+
+        // userdefined functions 
+
+        // skip pack - not pipe 
+
+        // skip xtype - not pipe 
+
+        // skip |xns - no return type
+
+        // skip items - not pipe 
+
+        // skip xvala_cls - not pipe 
+
+        // skip xvala_xcls - not pipe 
+
+        // skip xvala_id - not pipe 
+    }
+    public class Xcls_Button12 : Object 
+    {
+        public Gtk.Button el;
+        private Xcls_WindowRooView  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_Button12(Xcls_WindowRooView _owner)
+        {
+            this.el = new Gtk.Button();
+            _this = _owner;
+
+            // my vars
+
+            // set gobject values
+            this.el.label = "Redraw";
+
+            // listeners 
+            this.el.clicked.connect( ( ) => {
+                _this.view.renderJS(  true);
+            } );
+        }
+
+        // userdefined functions 
+
+        // skip listeners - not pipe 
+
+        // skip label - already used 
+
+        // skip pack - not pipe 
+
+        // skip xtype - not pipe 
+
+        // skip |xns - no return type
+
+        // skip xvala_cls - not pipe 
+
+        // skip xvala_xcls - not pipe 
+
+        // skip xvala_id - not pipe 
+    }
+    public class Xcls_AutoRedraw : Object 
+    {
+        public Gtk.CheckButton el;
+        private Xcls_WindowRooView  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_AutoRedraw(Xcls_WindowRooView _owner)
+        {
+            this.el = new Gtk.CheckButton();
+            _this = _owner;
+            _this.AutoRedraw = this;
+
+            // my vars
+
+            // set gobject values
+            this.el.active = true;
+            this.el.label = "Auto Redraw On";
+
+            // listeners 
+            this.el.toggled.connect(  (state) => {
+                this.el.set_label(this.el.active  ? "Auto Redraw On" : "Auto Redraw Off");
+            } );
+        }
+
+        // userdefined functions 
+
+        // skip listeners - not pipe 
+
+        // skip |active - already used 
+
+        // skip id - not pipe 
+
+        // skip label - already used 
+
+        // skip pack - not pipe 
+
+        // skip xtype - not pipe 
+
+        // skip |xns - no return type
+
+        // skip xvala_cls - not pipe 
+
+        // skip xvala_xcls - not pipe 
+
+        // skip xvala_id - not pipe 
+    }
+    public class Xcls_Button14 : Object 
+    {
+        public Gtk.Button el;
+        private Xcls_WindowRooView  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_Button14(Xcls_WindowRooView _owner)
+        {
+            this.el = new Gtk.Button();
+            _this = _owner;
+
+            // my vars
+
+            // set gobject values
+            this.el.label = "Full Redraw";
+
+            // listeners 
+            this.el.clicked.connect(  () => {
+              _this.view.redraws = 99;
+              _this.view.renderJS(true);
+            } );
+        }
+
+        // userdefined functions 
+
+        // skip listeners - not pipe 
+
+        // skip label - already used 
+
+        // skip pack - not pipe 
+
+        // skip xtype - not pipe 
+
+        // skip |xns - no return type
 
         // skip xvala_cls - not pipe 
 
