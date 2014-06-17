@@ -39,7 +39,7 @@ public class Xcls_WindowLeftTree : Object
     public Xcls_LeftTreeMenu LeftTreeMenu;
 
         // ctor 
-    public Xcls_WindowLeftTree()
+    public void init()
     {
 		base();
 		this.el = new Gtk.Window(  );
@@ -67,7 +67,7 @@ public class Xcls_WindowLeftTree : Object
         private Xcls_WindowLeftTree  _this;
  
             // ctor 
-        public Xcls_button(Xcls_WindowLeftTree _owner)
+        public void init(Xcls_WindowLeftTree _owner)
         {
 			base();
 			this.el = new Gtk.Button.with_label ("Click me (0)");
@@ -135,23 +135,7 @@ public class Xcls_WindowLeftTree : Object
 			this.el.show_all();
         }
 
-        // userdefined functions 
-
-        // skip id - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
-        // skip |xns - no return type
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
+        
     }
     public class Xcls_MenuItem7 : Object 
     {
@@ -183,24 +167,7 @@ public class Xcls_WindowLeftTree : Object
 				return  ;
             } );
         }
-
-        // userdefined functions 
-
-        // skip listeners - not pipe 
-
-        // skip label - already used 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
-        // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
+ 
     }
     public class Xcls_MenuItem8 : Object 
     {
@@ -230,22 +197,6 @@ public class Xcls_WindowLeftTree : Object
             } );
         }
 
-        // userdefined functions 
-
-        // skip listeners - not pipe 
-
-        // skip label - already used 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
-        // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
+         
     }
 }
