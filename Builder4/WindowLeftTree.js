@@ -982,7 +982,7 @@ WindowLeftTree=new XObject({
                         activate : ( ) => {
                             
                             print("_this : " + (_this == null  ? "NULL" : "yes"));
-                            print(_this.get_type().name());
+                            print(_this.get_class().get_type().name());
                             print("_this.model : " + (_this.model == null  ? "NULL" : "yes"));
                              _this.model.deleteSelected();
                         }
