@@ -17,7 +17,7 @@ static int main (string[] args) {
 
 public static Xcls_WindowLeftTree  WindowLeftTree;
 
-public class Xcls_WindowLeftTree  
+public class Xcls_WindowLeftTree : Object 
 {
     public Gtk.ScrolledWindow el;
     private Xcls_WindowLeftTree  _this;
@@ -98,7 +98,7 @@ public class Xcls_WindowLeftTree
     // skip xvala_xcls - not pipe 
 
     // skip xvala_id - not pipe 
-    public class Xcls_view  
+    public class Xcls_view : Object 
     {
         public Gtk.TreeView el;
         private Xcls_WindowLeftTree  _this;
@@ -592,7 +592,7 @@ public class Xcls_WindowLeftTree
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_model  
+    public class Xcls_model : Object 
     {
         public Gtk.TreeStore el;
         private Xcls_WindowLeftTree  _this;
@@ -1074,7 +1074,7 @@ public class Xcls_WindowLeftTree
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_TreeViewColumn4  
+    public class Xcls_TreeViewColumn4 : Object 
     {
         public Gtk.TreeViewColumn el;
         private Xcls_WindowLeftTree  _this;
@@ -1117,7 +1117,7 @@ public class Xcls_WindowLeftTree
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_renderer  
+    public class Xcls_renderer : Object 
     {
         public Gtk.CellRendererText el;
         private Xcls_WindowLeftTree  _this;
@@ -1153,7 +1153,7 @@ public class Xcls_WindowLeftTree
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_LeftTreeMenu  
+    public class Xcls_LeftTreeMenu : Object 
     {
         public Gtk.Menu el;
         private Xcls_WindowLeftTree  _this;
@@ -1195,7 +1195,7 @@ public class Xcls_WindowLeftTree
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_MenuItem7  
+    public class Xcls_MenuItem7 : Object 
     {
         public Gtk.MenuItem el;
         private Xcls_WindowLeftTree  _this;
@@ -1208,6 +1208,7 @@ public class Xcls_WindowLeftTree
         {
             
             _this = _owner;
+		 
 			this.el = new Gtk.MenuItem.with_label("Delete Element");
             // my vars
 
@@ -1215,13 +1216,15 @@ public class Xcls_WindowLeftTree
             //this.el.label = "Delete Element";
 			print("add activate\n");
             // listeners 
-            this.el.activate.connect(   ( ) => {
+            this.el.button_press_event.connect(   ( ) => {
                 
                 print("ACTIVATE?");
                 
-               
+                print("_this : " + (_this == null  ? "NULL" : "yes"));
+                print(_this.get_class().get_type().name());
+                print("_this.model : " + (_this.model == null  ? "NULL" : "yes"));
                  _this.model.deleteSelected();
-				return ;
+				return false;
             } );
         }
 
@@ -1243,7 +1246,7 @@ public class Xcls_WindowLeftTree
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_MenuItem8  
+    public class Xcls_MenuItem8 : Object 
     {
         public Gtk.MenuItem el;
         private Xcls_WindowLeftTree  _this;
