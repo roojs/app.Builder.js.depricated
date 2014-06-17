@@ -50,7 +50,7 @@ public class Xcls_WindowLeftTree : Object
 
         // set gobject values
         
-        var child_0 = new Xcls_button(_this);
+        var child_0 = new Xcls_button(); child_0.init(_this);
         this.el.add (  child_0.el  );
         _this.LeftTreeMenu = new Xcls_LeftTreeMenu(_this);
 
