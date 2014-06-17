@@ -376,7 +376,7 @@ namespace JsRender {
         },
         */
         
-        string? toSourcePreview()
+        public override string? toSourcePreview()
         {
             
             var top = this.guessName(this.tree);
