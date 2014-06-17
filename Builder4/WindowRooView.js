@@ -336,7 +336,7 @@ WindowRooView=new XObject({
                     
                       //   this.runhtml  = this.runhtml || '';
                         
-                         if ((project.runhtml != this.runhtml) || (this.redraws > 10)) {
+                         if ((runhtml != this.runhtml) || (this.redraws > 10)) {
                             // then we need to reload the browser using
                             // load_html_string..
                             
