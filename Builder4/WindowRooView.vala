@@ -303,6 +303,7 @@ public class Xcls_WindowRooView : Object
 
 
             // my vars
+        public bool pendingRedraw;
         public GLib.DateTime lastRedraw;
         public bool refreshRequired;
         public int redraws;
@@ -317,6 +318,7 @@ public class Xcls_WindowRooView : Object
             _this.view = this;
 
             // my vars
+            this.pendingRedraw = false;
             this.lastRedraw = null;
             this.refreshRequired = false;
             this.redraws = 0;
@@ -491,6 +493,8 @@ public class Xcls_WindowRooView : Object
         // userdefined functions 
 
         // skip listeners - not pipe 
+
+        // skip .bool:pendingRedraw - already used 
 
         // skip .GLib.DateTime:lastRedraw - already used 
 
