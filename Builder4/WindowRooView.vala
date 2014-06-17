@@ -296,6 +296,7 @@ public class Xcls_WindowRooView : Object
 
 
             // my vars
+        public bool refreshRequired;
 
             // ctor 
         public Xcls_view(Xcls_WindowRooView _owner)
@@ -305,6 +306,7 @@ public class Xcls_WindowRooView : Object
             _this.view = this;
 
             // my vars
+            this.refreshRequired = false;
 
             // set gobject values
 
@@ -527,6 +529,8 @@ public class Xcls_WindowRooView : Object
         // userdefined functions 
 
         // skip listeners - not pipe 
+
+        // skip .bool:refreshRequired - already used 
 
         // skip id - not pipe 
 
