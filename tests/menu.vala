@@ -180,9 +180,9 @@ public class Xcls_WindowLeftTree : Object
             // my vars
 
             // ctor 
-        public Xcls_MenuItem8(Xcls_WindowLeftTree _owner)
+        public void init(Xcls_WindowLeftTree _owner)
         {
-			base();
+			
 			this.el = new Gtk.MenuItem();
             _this = _owner;
 
