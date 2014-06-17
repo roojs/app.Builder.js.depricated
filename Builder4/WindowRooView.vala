@@ -596,7 +596,7 @@ public class Xcls_WindowRooView : Object
                     var html = inhtml.replace("</head>", runhtml + this.runhtml + "</head>");
                     //print("LOAD HTML " + html);
                     
-                    this.el.load_html_string( html , 
+                    this.el.load_html( html , 
                         //fixme - should be a config option!
                         "http://localhost/app.Builder/"
                     );
