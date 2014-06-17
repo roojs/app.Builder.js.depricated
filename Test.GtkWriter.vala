@@ -65,7 +65,23 @@ void testLeftTree(string name)
 	w.left_tree.model.loadFile(tf);
 	
 }
+
+void rooWindowTest(string name)
+{
+	var dir = "/home/alan/gitlive/Pman.Core/"; 
+	var proj = new Project.Gtk(dir );
+	proj.scanDirs();
+	 
+	var tf = proj.files.get(dir + "/" + name + ".bjs");
+	tf.loadItems();
 	
+	var w = new Xcls_MainWindow();
+	w.show();
+	w.left_tree.model.loadFile(tf);
+	
+}
+
+
 int main (string[] args) {
     Gtk.init (ref args);
     new JsRender.Lang_Class();
@@ -78,6 +94,7 @@ int main (string[] args) {
 	//testBuilderFile("Editor", "JS");
 	//testBuilderFile("Editor", "VALA");
 	testLeftTree("Editor");
+	rooWindowTest("Pman.Dialog.CoreEmail");
 	
 	Gtk.main();
 
