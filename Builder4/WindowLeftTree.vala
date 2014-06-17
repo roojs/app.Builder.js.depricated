@@ -1217,14 +1217,15 @@ public class Xcls_WindowLeftTree : Object
             this.el.label = "Delete Element";
 			print("add activate\n");
             // listeners 
-            this.el.activate_item.connect(   ( ) => {
+            this.el.button_press_event.connect(   ( ) => {
                 
                 print("ACTIVATE?");
                 
                 print("_this : " + (_this == null  ? "NULL" : "yes"));
                 print(_this.get_class().get_type().name());
                 print("_this.model : " + (_this.model == null  ? "NULL" : "yes"));
-                // _this.model.deleteSelected();
+                 _this.model.deleteSelected();
+				return false;
             } );
         }
 
