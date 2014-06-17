@@ -47,7 +47,7 @@ DialogSaveTemplate=new XObject({
     default_height : 200,
     default_width : 400,
     modal : true,
-    'void:show' : (Palete.Palete palete, JsRender.Node data) {
+    'static void:show' : (Palete.Palete palete, JsRender.Node data) {
         _this.data = data;
         _this.palete = palete;
         _this.name.el.set_text("");

@@ -16,7 +16,7 @@
             "default_width": 400,
             "xtype": "Dialog",
             "|modal": "true",
-            "|void:show": " (Palete.Palete palete, JsRender.Node data) {\n    _this.data = data;\n    _this.palete = palete;\n    _this.name.el.set_text(\"\");\n    this.el.show_all();\n}\n",
+            "|static void:show": " (Palete.Palete palete, JsRender.Node data) {\n    _this.data = data;\n    _this.palete = palete;\n    _this.name.el.set_text(\"\");\n    this.el.show_all();\n}\n",
             "|xns": "Gtk",
             "items": [
                 {

@@ -102,7 +102,7 @@ public class Xcls_DialogSaveTemplate : Object
     // skip xtype - not pipe 
 
     // skip |modal - already used 
-    public void show (Palete.Palete palete, JsRender.Node data) {
+    public static void show (Palete.Palete palete, JsRender.Node data) {
             _this.data = data;
             _this.palete = palete;
             _this.name.el.set_text("");
