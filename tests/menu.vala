@@ -1,6 +1,6 @@
 /* -- to compile
 valac  --pkg gio-2.0  --pkg posix  --pkg gtk+-3.0  \
-    /tmp/WindowLeftTree.vala  -o /tmp/WindowLeftTree
+    menu.vala  -o /tmp/menutest
 */
 
 
