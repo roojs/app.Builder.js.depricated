@@ -539,7 +539,7 @@ public class Xcls_WindowRooView : Object
             
                 if (this.lastRedraw != null) {
                    // do not redraw if last redraw was less that 5 seconds ago.
-                   if ((int64)(new DateTime.now()).difference(this.lastRedraw) < 5000 ) {
+                   if ((int64)(new DateTime.now_local()).difference(this.lastRedraw) < 5000 ) {
                         return;
                     }
                 }
@@ -617,7 +617,7 @@ public class Xcls_WindowRooView : Object
                 //if (!this.ready) {
               //      console.log('not loaded yet');
                 //}
-                this.lastRedraw = new DateTime.now();
+                this.lastRedraw = new DateTime.now_local();
             
                 this.el.execute_script("Builder.render(" + this.renderedData + ");");
             //     print( "before render" +    this.lastRedraw);
