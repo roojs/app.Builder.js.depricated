@@ -369,7 +369,7 @@ public class Xcls_WindowRooView : Object
             }
 
             // listeners 
-            this.el.script_alert.connect( function (self, object, p0) {
+            this.el.script_alert.connect(   ( object, p0) => {
                 // 	print(p0);
                     return false;
                     return true; // do not display anything...

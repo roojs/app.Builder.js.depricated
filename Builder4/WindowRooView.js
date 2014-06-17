@@ -62,7 +62,7 @@ WindowRooView=new XObject({
                 {
                     xtype: WebKit.WebView,
                     listeners : {
-                        script_alert : function (self, object, p0) {
+                        script_alert : ( object, p0) => {
                             // 	print(p0);
                                 return false;
                                 return true; // do not display anything...
