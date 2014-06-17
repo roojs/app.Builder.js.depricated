@@ -282,7 +282,7 @@ WindowRooView=new XObject({
                        // print("RB: TARGETS : " + LeftTree.atoms["STRING"]);
                         Gtk.drag_dest_set_target_list(this.el, this.get('/Window').targetList);
                         */
-                        GLib.Timeout.add_seconds_full(0, 1,  ()  =>{
+                        GLib.Timeout.add_seconds(1,  ()  =>{
                             //    print("run refresh?");
                              this.runRefresh(); 
                              return true;
