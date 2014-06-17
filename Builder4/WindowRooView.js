@@ -244,7 +244,7 @@ WindowRooView=new XObject({
                                 //}
                                 this.lastRedraw = new DateTime.now_local();
                             
-                                this.el.run_javascript("Builder.render(" + this.renderedData + ");");
+                                this.el.run_javascript("Builder.render(" + this.renderedData + ");", null);
                             //     print( "before render" +    this.lastRedraw);
                             //    print( "after render" +    (new Date()));
                                 
