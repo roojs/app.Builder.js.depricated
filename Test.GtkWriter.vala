@@ -66,7 +66,7 @@ void testLeftTree(string name)
 	w.vbox.el.pack_start(left_tree.el,true, true,0);
     w.el.show_all();
  
-	w.left_tree.model.loadFile(tf);
+	left_tree.model.loadFile(tf);
 	
 }
 
@@ -86,7 +86,7 @@ void rooWindowTest(string name)
 	w.vbox.el.pack_start(rv.el,true, true,0);
     w.el.show_all();
  
-	w.left_tree.model.loadFile(tf);
+	rv.loadFile(tf);
 	
 }
 
