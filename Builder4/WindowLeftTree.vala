@@ -742,7 +742,7 @@ public class Xcls_WindowLeftTree
             }
         public void deleteSelected() {
                 
-                
+                print("DELETE SELECTED?");
                 _this.view.blockChanges = true;
                 
                 Gtk.TreeIter old_iter = new Gtk.TreeIter();
