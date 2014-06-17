@@ -1213,7 +1213,7 @@ public class Xcls_WindowLeftTree : Object
 
             // set gobject values
             this.el.label = "Delete Element";
-
+			print("add activate\n");
             // listeners 
             this.el.activate.connect(   ( ) => {
                 
