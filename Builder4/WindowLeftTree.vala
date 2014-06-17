@@ -1208,8 +1208,6 @@ public class Xcls_WindowLeftTree
         {
             
             _this = _owner;
-		}
-		construct {
 			this.el = new Gtk.MenuItem.with_label("Delete Element");
             // my vars
 
