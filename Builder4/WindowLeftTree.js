@@ -782,27 +782,27 @@ WindowLeftTree=new XObject({
                             
                                 
                     },
-                    'void:load' : (GLib.List<JsRender.Node> tr, Gtk.TreeIter? iter) 
+                    'void:load' : (Gee.ArrayList<JsRender.Node> tr, Gtk.TreeIter? iter) 
                     {
                         Gtk.TreeIter citer;
                         //this.insert(citer,iter,0);
-                        for(var i =0 ; i < tr.length(); i++) {
+                        for(var i =0 ; i < tr.size; i++) {
                             if (iter != null) {
                                 this.el.insert(out citer,iter,-1); // why not append?
                             } else {
                                 this.el.append(out citer,null);
                             }
                             
-                            this.el.set(citer, 0, tr.nth_data(i).nodeTitle(),
-                                    1, tr.nth_data(i).nodeTip(), -1
+                            this.el.set(citer, 0, tr.get(i).nodeTitle(),
+                                    1, tr.get(i).nodeTip(), -1
                             );
                             var o = new GLib.Value(typeof(Object));
-                            o.set_object((Object)tr.nth_data(i));
+                            o.set_object((Object)tr.get(i));
                             
                             this.el.set_value(citer, 2, o);
                             
                             if (tr.nth_data(i).items.length() > 0) {
-                                this.load(tr.nth_data(i).items, citer);
+                                this.load(tr.get(i).items, citer);
                             }
                          
                         }
