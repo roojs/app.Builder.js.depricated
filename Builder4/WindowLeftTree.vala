@@ -810,7 +810,7 @@ public class Xcls_WindowLeftTree
             
             
                     
-                  
+                    print("pos is %d  \n".printf(pos));
                     
                      Gtk.TreeIter n_iter; 
                      
@@ -819,7 +819,7 @@ public class Xcls_WindowLeftTree
                            node.parent = null;
                     } else   if (pos  < 2) {
                         //print(target_data[1]  > 0 ? 'insert_after' : 'insert_before');
-            
+                        
                         this.el.get_iter(out iter_after, tree_path );            
                         this.el.iter_parent(out iter_par, iter_after);
                          
