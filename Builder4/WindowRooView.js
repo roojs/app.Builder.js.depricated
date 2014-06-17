@@ -62,50 +62,6 @@ WindowRooView=new XObject({
                 {
                     xtype: WebKit.WebView,
                     listeners : {
-                        drag_motion : (  ctx,  x,   y,   time, ud) => {
-                           return;
-                           /*
-                           
-                           / console.log('DRAG MOTION'); 
-                                // status:
-                                // if lastCurrentNode == this.currentNode.. -- don't change anything..
-                                this.targetData = [];
-                                this.el.execute_script("Builder.overPos(" + x +','+ y + ");");
-                                
-                                // A) find out from drag all the places that node could be dropped.
-                                var src = Gtk.drag_get_source_widget(ctx);
-                                if (!src.dropList) {
-                                    Gdk.drag_status(ctx, 0, time);
-                                    return true;
-                                }
-                                // b) get what we are over.. (from activeNode)
-                                // tree is empty.. - list should be correct..
-                                if (!this.get('/LeftTree.model').currentTree) {
-                                    Gdk.drag_status(ctx, Gdk.DragAction.COPY,time);
-                                    return true;
-                                    
-                                }
-                                // c) ask tree where it should be dropped... - eg. parent.. (after node ontop)
-                                
-                                var tg = this.get('/LeftTree.model').findDropNode(this.activeNode, src.dropList);
-                                console.dump(tg);
-                                if (!tg.length) {
-                                    Gdk.drag_status(ctx, 0,time);
-                                    this.get('/LeftTree.view').highlight(false);
-                                    return true;
-                                }
-                                 
-                                // if we have a target..
-                                // -> highlight it! (in browser)
-                                // -> highlight it! (in tree)
-                                
-                                Gdk.drag_status(ctx, Gdk.DragAction.COPY,time);
-                                this.get('/LeftTree.view').highlight(tg);
-                                this.targetData = tg;
-                                // for tree we should handle this...
-                                return true;
-                                */
-                        },
                         drag_drop : ( ctx, x, y,time, ud) => {
                             return false;
                             /*

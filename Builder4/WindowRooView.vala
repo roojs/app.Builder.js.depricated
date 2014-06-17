@@ -303,8 +303,8 @@ public class Xcls_WindowRooView : Object
 
 
             // my vars
-        public bool pendingRedraw;
         public GLib.DateTime lastRedraw;
+        public bool pendingRedraw;
         public bool refreshRequired;
         public int redraws;
         public string renderedData;
@@ -318,8 +318,8 @@ public class Xcls_WindowRooView : Object
             _this.view = this;
 
             // my vars
-            this.pendingRedraw = false;
             this.lastRedraw = null;
+            this.pendingRedraw = false;
             this.refreshRequired = false;
             this.redraws = 0;
             this.renderedData = "";
@@ -378,50 +378,6 @@ public class Xcls_WindowRooView : Object
             }
 
             // listeners 
-            this.el.drag_motion.connect(   (  ctx,  x,   y,   time, ud) => {
-               return;
-               /*
-               
-               / console.log('DRAG MOTION'); 
-                    // status:
-                    // if lastCurrentNode == this.currentNode.. -- don't change anything..
-                    this.targetData = [];
-                    this.el.execute_script("Builder.overPos(" + x +','+ y + ");");
-                    
-                    // A) find out from drag all the places that node could be dropped.
-                    var src = Gtk.drag_get_source_widget(ctx);
-                    if (!src.dropList) {
-                        Gdk.drag_status(ctx, 0, time);
-                        return true;
-                    }
-                    // b) get what we are over.. (from activeNode)
-                    // tree is empty.. - list should be correct..
-                    if (!this.get('/LeftTree.model').currentTree) {
-                        Gdk.drag_status(ctx, Gdk.DragAction.COPY,time);
-                        return true;
-                        
-                    }
-                    // c) ask tree where it should be dropped... - eg. parent.. (after node ontop)
-                    
-                    var tg = this.get('/LeftTree.model').findDropNode(this.activeNode, src.dropList);
-                    console.dump(tg);
-                    if (!tg.length) {
-                        Gdk.drag_status(ctx, 0,time);
-                        this.get('/LeftTree.view').highlight(false);
-                        return true;
-                    }
-                     
-                    // if we have a target..
-                    // -> highlight it! (in browser)
-                    // -> highlight it! (in tree)
-                    
-                    Gdk.drag_status(ctx, Gdk.DragAction.COPY,time);
-                    this.get('/LeftTree.view').highlight(tg);
-                    this.targetData = tg;
-                    // for tree we should handle this...
-                    return true;
-                    */
-            } );
             this.el.drag_drop.connect(   ( ctx, x, y,time, ud) => {
                 return false;
                 /*
@@ -494,9 +450,9 @@ public class Xcls_WindowRooView : Object
 
         // skip listeners - not pipe 
 
-        // skip .bool:pendingRedraw - already used 
-
         // skip .GLib.DateTime:lastRedraw - already used 
+
+        // skip .bool:pendingRedraw - already used 
 
         // skip .bool:refreshRequired - already used 
 
