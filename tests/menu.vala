@@ -47,6 +47,7 @@ public class Xcls_Window : Object {
 
 
 		var child_0 = new Xcls_MenuItem7();
+		child_0.ref();
 		child_0.init(this);
 		leftmenu.append (  child_0.el  );
 		leftmenu.show_all();
@@ -61,6 +62,7 @@ public class Xcls_Window : Object {
 		public void init(Xcls_Window _owner ) {
 			//_this = _owner;
 			this.el = new Gtk.MenuItem.with_label("Delete Element");
+			this.el.ref();
 		    print("add activate\n");
 		    this.el.activate.connect(   ( ) => {
 		        
