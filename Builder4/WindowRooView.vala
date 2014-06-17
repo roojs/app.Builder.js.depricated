@@ -296,6 +296,7 @@ public class Xcls_WindowRooView : Object
 
 
             // my vars
+        public string runhtml;
         public GLib.DateTime lastRefresh;
         public bool refreshRequired;
 
@@ -307,6 +308,7 @@ public class Xcls_WindowRooView : Object
             _this.view = this;
 
             // my vars
+            this.runhtml = "";
             this.lastRefresh = null;
             this.refreshRequired = false;
 
@@ -531,6 +533,8 @@ public class Xcls_WindowRooView : Object
         // userdefined functions 
 
         // skip listeners - not pipe 
+
+        // skip .string:runhtml - already used 
 
         // skip .GLib.DateTime:lastRefresh - already used 
 
