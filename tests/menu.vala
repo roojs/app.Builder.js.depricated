@@ -150,7 +150,7 @@ public class Xcls_WindowLeftTree : Object
             // ctor 
         
 		public void init(Xcls_WindowLeftTree  _owner) {
-			base();
+	 
             _this = _owner;
 		 
 			this.el = new Gtk.MenuItem.with_label("Delete Element");
