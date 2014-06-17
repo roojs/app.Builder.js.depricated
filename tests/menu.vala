@@ -90,7 +90,7 @@ public class Xcls_WindowLeftTree : Object
                 }
  
                     
-                 /__this.LeftTreeMenu.el.set_screen(Gdk.Screen.get_default());
+                __this.LeftTreeMenu.el.set_screen(Gdk.Screen.get_default());
                  
                 __this.LeftTreeMenu.el.popup(null, null, null,  ev.button, ev.time);
 			
