@@ -644,7 +644,7 @@ public class Xcls_WindowRooView : Object
                     // then trigger a redraw once it's loaded..
                      this.pendingRedraw = true;
                      
-                     var runhtml = '<script type="text/javascript">' + "\n" ;
+                     var runhtml = "<script type=\"text/javascript\">\n" ;
                      string builderhtml;
                      GLib.FileUtils.get_contents("/home/alan/gitlive/app.Builder.js/builder.html.js", out builderhtml)
                      
@@ -655,16 +655,16 @@ public class Xcls_WindowRooView : Object
                     this.runhtml = project.runhtml;
                     // need to modify paths
                     
-                    string html;
-                    GLib.FileUtils.get_contents("/home/alan/gitlive/app.Builder.js/builder.html", out html)
+                    string inhtml;
+                    GLib.FileUtils.get_contents("/home/alan/gitlive/app.Builder.js/builder.html", out inhtml)
                     
                     
-                    html = html.replace("</head>", runhtml + this.runhtml + '</head>');
+                    var html = inhtml.replace("</head>", runhtml + this.runhtml + "</head>");
                     //print("LOAD HTML " + html);
                     
                     this.el.load_html_string( html , 
                         //fixme - should be a config option!
-                        'http://localhost/app.Builder/'
+                        "http://localhost/app.Builder/"
                     );
                     this.redraws = 0;
                     // should trigger load_finished! - which in truns shoudl set refresh Required;
