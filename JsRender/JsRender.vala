@@ -11,7 +11,7 @@ namespace JsRender {
 		/**
 		 * @cfg {Array} doubleStringProps list of properties that can be double quoted.
 		 */
-		public GLib.List<string> doubleStringProps;
+		public Gee.ArrayList<string> doubleStringProps;
 		
 		public string id;
 		public string name;   // is the JS name of the file.
