@@ -17,7 +17,7 @@ static int main (string[] args) {
 
 public static Xcls_WindowLeftTree  WindowLeftTree;
 
-public class Xcls_WindowLeftTree : Object 
+public class Xcls_WindowLeftTree  
 {
     public Gtk.ScrolledWindow el;
     private Xcls_WindowLeftTree  _this;
@@ -98,7 +98,7 @@ public class Xcls_WindowLeftTree : Object
     // skip xvala_xcls - not pipe 
 
     // skip xvala_id - not pipe 
-    public class Xcls_view : Object 
+    public class Xcls_view  
     {
         public Gtk.TreeView el;
         private Xcls_WindowLeftTree  _this;
@@ -592,7 +592,7 @@ public class Xcls_WindowLeftTree : Object
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_model : Object 
+    public class Xcls_model  
     {
         public Gtk.TreeStore el;
         private Xcls_WindowLeftTree  _this;
@@ -1074,7 +1074,7 @@ public class Xcls_WindowLeftTree : Object
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_TreeViewColumn4 : Object 
+    public class Xcls_TreeViewColumn4  
     {
         public Gtk.TreeViewColumn el;
         private Xcls_WindowLeftTree  _this;
@@ -1117,7 +1117,7 @@ public class Xcls_WindowLeftTree : Object
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_renderer : Object 
+    public class Xcls_renderer  
     {
         public Gtk.CellRendererText el;
         private Xcls_WindowLeftTree  _this;
@@ -1153,7 +1153,7 @@ public class Xcls_WindowLeftTree : Object
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_LeftTreeMenu : Object 
+    public class Xcls_LeftTreeMenu  
     {
         public Gtk.Menu el;
         private Xcls_WindowLeftTree  _this;
@@ -1195,7 +1195,7 @@ public class Xcls_WindowLeftTree : Object
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_MenuItem7 : Object 
+    public class Xcls_MenuItem7  
     {
         public Gtk.MenuItem el;
         private Xcls_WindowLeftTree  _this;
@@ -1245,7 +1245,7 @@ public class Xcls_WindowLeftTree : Object
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_MenuItem8 : Object 
+    public class Xcls_MenuItem8  
     {
         public Gtk.MenuItem el;
         private Xcls_WindowLeftTree  _this;
