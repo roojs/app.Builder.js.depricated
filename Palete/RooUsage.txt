@@ -278,7 +278,6 @@ left:
   Roo.grid.EditorGrid:ds
   Roo.grid.Grid:ds
   Roo.form.ComboBox:store
-  Roo.form.ComboBoxArray:store
   Roo.View:store
   Roo.JsonView:store
   Roo.bootstrap.ComboBox:store
@@ -287,6 +286,11 @@ left:
 right: 
   Roo.data.Store
   Roo.data.SimpleStore
+
+left:
+    Roo.form.ComboBoxArray:combo
+right:
+    Roo.form.ComboBox
 
 left:
   Roo.data.Store:proxy
