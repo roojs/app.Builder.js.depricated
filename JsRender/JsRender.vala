@@ -278,6 +278,7 @@ namespace JsRender {
 		    
 		}
 		public abstract string toSource() ;
+		public abstract string toSourcePreview() ;
 		public abstract string toValaSource(bool testcompile) ;
 
 		
