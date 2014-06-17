@@ -639,15 +639,15 @@ WindowLeftTree=new XObject({
                         var s = _this.view.el.get_selection();
                         Gtk.TreeModel mod;
                         
+                        print("GET  SELECTED?");
                         if (!s.get_selected(out mod, out iter)) {
                             return; // nothing seleted..
                         }
-                        
-                        this.activePath= "";      
+                          
                     
                     
                         this.activePath= "";      
-                        
+                        print("GET  vnode value?");
                     
                         GLib.Value value;
                         this.el.get_value(iter, 2, out value);
