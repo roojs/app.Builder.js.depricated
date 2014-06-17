@@ -374,8 +374,10 @@ public class Xcls_WindowRooView : Object
                     return false;
                     return true; // do not display anything...
             } );
-            this.el.console_message.connect( function (self, object, p0, p1) {
-                print(object);
+            this.el.console_message.connect( ( object, p0, p1)  => {
+            
+            
+            /*
                //  console.log(object);
                
             
@@ -431,6 +433,7 @@ public class Xcls_WindowRooView : Object
                     //Seed.print('b:'+b);
                     //Seed.print('c:'+c);
                     return ret;
+                    */
             } );
             this.el.drag_motion.connect( function (w, ctx,  x,   y,   time, ud) {
                // console.log('DRAG MOTION'); 

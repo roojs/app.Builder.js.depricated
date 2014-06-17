@@ -67,8 +67,10 @@ WindowRooView=new XObject({
                                 return false;
                                 return true; // do not display anything...
                         },
-                        console_message : function (self, object, p0, p1) {
-                            print(object);
+                        console_message : ( object, p0, p1)  => {
+                        
+                        
+                        /*
                            //  console.log(object);
                            
                         
@@ -124,6 +126,7 @@ WindowRooView=new XObject({
                                 //Seed.print('b:'+b);
                                 //Seed.print('c:'+c);
                                 return ret;
+                                */
                         },
                         drag_motion : function (w, ctx,  x,   y,   time, ud) {
                            // console.log('DRAG MOTION'); 
