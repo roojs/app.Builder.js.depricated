@@ -45,7 +45,7 @@ WindowRooView=new XObject({
                     listeners : {
                         clicked : () => {
                           _this.view.redraws = 99;
-                          _this.view.renderJS(null,true);
+                          _this.view.renderJS(true);
                         }
                     },
                     label : "Full Redraw",
