@@ -85,10 +85,10 @@
                     ]
                 },
                 {
-                    "|xns": "Gtk",
-                    "xtype": "Menu",
-                    "pack": false,
                     "id": "LeftTreeMenu",
+                    "pack": false,
+                    "xtype": "Menu",
+                    "|xns": "Gtk",
                     "items": [
                         {
                             "listeners": {

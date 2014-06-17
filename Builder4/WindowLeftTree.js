@@ -966,8 +966,8 @@ WindowLeftTree=new XObject({
         },
         {
             xtype: Gtk.Menu,
-            pack : false,
             id : "LeftTreeMenu",
+            pack : false,
             items : [
                 {
                     xtype: Gtk.MenuItem,

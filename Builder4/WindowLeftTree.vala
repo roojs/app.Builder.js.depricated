@@ -45,7 +45,6 @@ public class Xcls_WindowLeftTree
         var child_0 = new Xcls_view(_this);
         this.el.add (  child_0.el  );
         var child_1 = new Xcls_LeftTreeMenu(_this);
-        this.el.add (  child_1.el  );
 
         // init method 
          this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
@@ -1173,13 +1172,13 @@ public class Xcls_WindowLeftTree
 
         // userdefined functions 
 
-        // skip |xns - no return type
-
-        // skip xtype - not pipe 
+        // skip id - not pipe 
 
         // skip pack - not pipe 
 
-        // skip id - not pipe 
+        // skip xtype - not pipe 
+
+        // skip |xns - no return type
 
         // skip items - not pipe 
 
