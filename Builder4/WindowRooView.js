@@ -254,7 +254,7 @@ WindowRooView=new XObject({
                         var _this = this;
                          
                          // init inspector..
-                        this.el.get_inspector().signal.inspect_web_view.connect( (  pg) => {
+                        this.el.get_inspector().inspect_web_view.connect( (  pg) => {
                              _this.inspector.el.show();
                              return _this.inspector.el;
                         
@@ -262,7 +262,7 @@ WindowRooView=new XObject({
                          
                          // FIXME - base url of script..
                          // we need it so some of the database features work.
-                        this.el.load_html_string( "Render not ready" , 
+                        this.el.load_html( "Render not ready" , 
                                 //fixme - should be a config option!
                                 // or should we catch stuff and fix it up..
                                 "http://localhost/app.Builder/"
@@ -282,7 +282,7 @@ WindowRooView=new XObject({
                        // print("RB: TARGETS : " + LeftTree.atoms["STRING"]);
                         Gtk.drag_dest_set_target_list(this.el, this.get('/Window').targetList);
                         */
-                        GLib.timeout_add_seconds(0, 1,  ()  =>{
+                        GLib.Timeout.add_seconds_full(0, 1,  ()  =>{
                             //    print("run refresh?");
                              this.runRefresh(); 
                              return true;
