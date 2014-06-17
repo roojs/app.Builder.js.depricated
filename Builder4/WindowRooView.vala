@@ -296,9 +296,10 @@ public class Xcls_WindowRooView : Object
 
 
             // my vars
-        public int redraws;
+        public string renderedData;
         public GLib.DateTime lastRefresh;
         public bool refreshRequired;
+        public int redraws;
         public string runhtml;
 
             // ctor 
@@ -309,9 +310,10 @@ public class Xcls_WindowRooView : Object
             _this.view = this;
 
             // my vars
-            this.redraws = 0;
+            this.renderedData = "";
             this.lastRefresh = null;
             this.refreshRequired = false;
+            this.redraws = 0;
             this.runhtml = "";
 
             // set gobject values
@@ -536,11 +538,13 @@ public class Xcls_WindowRooView : Object
 
         // skip listeners - not pipe 
 
-        // skip .int:redraws - already used 
+        // skip .string:renderedData - already used 
 
         // skip .GLib.DateTime:lastRefresh - already used 
 
         // skip .bool:refreshRequired - already used 
+
+        // skip .int:redraws - already used 
 
         // skip .string:runhtml - already used 
 
