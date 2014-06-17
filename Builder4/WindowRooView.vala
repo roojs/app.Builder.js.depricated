@@ -501,16 +501,18 @@ public class Xcls_WindowRooView : Object
             	return  is_valid_drop_site;
             	*/
             } );
-            this.el.drag_data_received.connect( function (w, ctx,  x,  y, sel_data,  target_type,  time, ud) 
+            this.el.drag_data_received.connect( function (ctx,  x,  y, sel_data,  target_type,  time, ud) 
                 {
+                   return true;
+                   /*
                     print("Browser: drag-data-received");
                     var delete_selection_data = false;
                     vardnd_success = false;
-                    /* Deal with what we are given from source */
+                    /* Deal with what we are given from source 
                     if( sel_data && sel_data.length ) {
                         
                         if (ctx.action == Gdk.DragAction.ASK)  {
-                            /* Ask the user to move or copy, then set the ctx action. */
+                            /* Ask the user to move or copy, then set the ctx action. 
                         }
             
                         if (ctx.action == Gdk.DragAction.MOVE) {
@@ -537,6 +539,7 @@ public class Xcls_WindowRooView : Object
                     
                     Gtk.drag_finish (ctx, dnd_success, delete_selection_data, time);
                     return true;
+                    */
                 } );
             this.el.create_web_view.connect( function (self, object) {
               print("CREATE WEB VIEW");
