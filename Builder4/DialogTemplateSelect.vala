@@ -246,7 +246,7 @@ public class Xcls_DialogTemplateSelect : Object
             this.el.set_model (  child_1.el  );
 
             // init method 
-            this.el.add_attribute(_this.cellrenderer , "markup", 1 );
+            this.el.add_attribute(_this.cellrenderer.el , "markup", 1 );
         }
 
         // userdefined functions 

@@ -37,7 +37,7 @@
                                     "id": "combo",
                                     "pack": "add",
                                     "xtype": "ComboBox",
-                                    "|init": "this.el.add_attribute(_this.cellrenderer , \"markup\", 1 );",
+                                    "|init": "this.el.add_attribute(_this.cellrenderer.el , \"markup\", 1 );",
                                     "|xns": "Gtk",
                                     "items": [
                                         {

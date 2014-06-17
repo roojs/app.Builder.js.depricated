@@ -62,7 +62,7 @@ DialogTemplateSelect=new XObject({
                             xtype: Gtk.ComboBox,
                             id : "combo",
                             pack : "add",
-                            init : this.el.add_attribute(_this.cellrenderer , "markup", 1 );,
+                            init : this.el.add_attribute(_this.cellrenderer.el , "markup", 1 );,
                             items : [
                                 {
                                     xtype: Gtk.CellRendererText,
