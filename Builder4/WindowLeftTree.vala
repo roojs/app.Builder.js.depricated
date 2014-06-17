@@ -744,21 +744,17 @@ public class Xcls_WindowLeftTree
                 print("DELETE SELECTED?");
                 _this.view.blockChanges = true;
                 
-                Gtk.TreeIter old_iter = new Gtk.TreeIter();
+                Gtk.TreeIter iter = new Gtk.TreeIter();
                 var s = _this.view.el.get_selection();
                 Gtk.TreeModel mod;
                 
-                s.get_selected(out mod, out old_iter);
+                s.get_selected(out mod, out iter);
                 
-                var path = mod.get_path(old_iter).to_string();
-            
                 this.activePath= "";      
-                s.unselect_all();
+            
             
                 this.activePath= "";      
                 
-                Gtk.TreeIter iter;
-                this.el.get_iter_from_string(out iter, path);
             
                 GLib.Value value;
                 this.el.get_value(iter, 2, out value);
@@ -767,6 +763,7 @@ public class Xcls_WindowLeftTree
                 
                 data.remove();
                     print("removing node from Tree\n");    
+                s.unselect_all();
                 this.el.remove(ref iter);
             
                 
