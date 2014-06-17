@@ -303,10 +303,10 @@ public class Xcls_WindowRooView : Object
 
 
             // my vars
-        public string renderedData;
         public GLib.DateTime lastRefresh;
         public bool refreshRequired;
         public int redraws;
+        public string renderedData;
         public string runhtml;
 
             // ctor 
@@ -317,10 +317,10 @@ public class Xcls_WindowRooView : Object
             _this.view = this;
 
             // my vars
-            this.renderedData = "";
             this.lastRefresh = null;
             this.refreshRequired = false;
             this.redraws = 0;
+            this.renderedData = "";
             this.runhtml = "";
 
             // set gobject values
@@ -338,9 +338,9 @@ public class Xcls_WindowRooView : Object
                 var _this = this;
                  
                  // init inspector..
-                this.el.get_inspector().signal.inspect_web_view.connect(function(wi, pg) {
+                this.el.get_inspector().signal.inspect_web_view.connect( (  pg) => {
                      _this.inspector.el.show();
-                     return _this..inspector.el;
+                     return _this.inspector.el;
                 
                 });
                  
@@ -558,13 +558,13 @@ public class Xcls_WindowRooView : Object
 
         // skip listeners - not pipe 
 
-        // skip .string:renderedData - already used 
-
         // skip .GLib.DateTime:lastRefresh - already used 
 
         // skip .bool:refreshRequired - already used 
 
         // skip .int:redraws - already used 
+
+        // skip .string:renderedData - already used 
 
         // skip .string:runhtml - already used 
 

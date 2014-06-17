@@ -253,9 +253,9 @@ WindowRooView=new XObject({
                         var _this = this;
                          
                          // init inspector..
-                        this.el.get_inspector().signal.inspect_web_view.connect(function(wi, pg) {
+                        this.el.get_inspector().signal.inspect_web_view.connect( (  pg) => {
                              _this.inspector.el.show();
-                             return _this..inspector.el;
+                             return _this.inspector.el;
                         
                         });
                          
