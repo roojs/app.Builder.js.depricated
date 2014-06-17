@@ -17,10 +17,10 @@ static int main (string[] args) {
 
 public static Xcls_DialogSaveTemplate  DialogSaveTemplate;
 
-public class Xcls_DialogSaveTemplate
+public class Xcls_DialogSaveTemplate : Object 
 {
     public Gtk.Dialog el;
-    private static Xcls_DialogSaveTemplate  _this;
+    private Xcls_DialogSaveTemplate  _this;
 
     public Xcls_name name;
 
@@ -41,17 +41,24 @@ public class Xcls_DialogSaveTemplate
         this.el.default_height = 200;
         this.el.default_width = 400;
         this.el.modal = true;
-        var child_0 = new Xcls_HBox2();
-        this.el.add (  child_0.el  );
-        var child_1 = new Xcls_Button5();
+        var child_0 = new Xcls_HBox2(_this);
+        child_0.ref();
+        this.el.function(p (  child_0.el , e) {
+                    p.el.get_content_area().add(e.el)
+                }
+ );
+        var child_1 = new Xcls_Button5(_this);
+        child_1.ref();
         this.el.add_action_widget (  child_1.el , 0 );
-        var child_2 = new Xcls_Button6();
+        var child_2 = new Xcls_Button6(_this);
+        child_2.ref();
         this.el.add_action_widget (  child_2.el , 1 );
 
         // listeners 
         this.el.delete_event.connect(  (self, event) => {
             this.el.hide();
             return true;
+            
         } );
         this.el.response.connect( (self, response_id) => {
         
@@ -114,23 +121,28 @@ public class Xcls_DialogSaveTemplate
     // skip xvala_xcls - not pipe 
 
     // skip xvala_id - not pipe 
-    public class Xcls_HBox2
+    public class Xcls_HBox2 : Object 
     {
         public Gtk.HBox el;
+        private Xcls_DialogSaveTemplate  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_HBox2()
+        public Xcls_HBox2(Xcls_DialogSaveTemplate _owner)
         {
             this.el = new Gtk.HBox( true, 0 );
+            _this = _owner;
 
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_Label3();
+            var child_0 = new Xcls_Label3(_this);
+            child_0.ref();
             this.el.add (  child_0.el  );
-            var child_1 = new Xcls_name();
+            var child_1 = new Xcls_name(_this);
+            child_1.ref();
             this.el.add (  child_1.el  );
         }
 
@@ -150,16 +162,19 @@ public class Xcls_DialogSaveTemplate
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_Label3
+    public class Xcls_Label3 : Object 
     {
         public Gtk.Label el;
+        private Xcls_DialogSaveTemplate  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_Label3()
+        public Xcls_Label3(Xcls_DialogSaveTemplate _owner)
         {
             this.el = new Gtk.Label( "Name" );
+            _this = _owner;
 
             // my vars
 
@@ -186,16 +201,19 @@ public class Xcls_DialogSaveTemplate
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_name
+    public class Xcls_name : Object 
     {
         public Gtk.Entry el;
+        private Xcls_DialogSaveTemplate  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_name()
+        public Xcls_name(Xcls_DialogSaveTemplate _owner)
         {
             this.el = new Gtk.Entry();
+            _this = _owner;
             _this.name = this;
 
             // my vars
@@ -219,16 +237,19 @@ public class Xcls_DialogSaveTemplate
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_Button5
+    public class Xcls_Button5 : Object 
     {
         public Gtk.Button el;
+        private Xcls_DialogSaveTemplate  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_Button5()
+        public Xcls_Button5(Xcls_DialogSaveTemplate _owner)
         {
             this.el = new Gtk.Button();
+            _this = _owner;
 
             // my vars
 
@@ -252,16 +273,19 @@ public class Xcls_DialogSaveTemplate
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_Button6
+    public class Xcls_Button6 : Object 
     {
         public Gtk.Button el;
+        private Xcls_DialogSaveTemplate  _this;
+
 
             // my vars
 
             // ctor 
-        public Xcls_Button6()
+        public Xcls_Button6(Xcls_DialogSaveTemplate _owner)
         {
             this.el = new Gtk.Button();
+            _this = _owner;
 
             // my vars
 
