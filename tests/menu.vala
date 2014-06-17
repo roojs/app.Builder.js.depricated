@@ -20,6 +20,7 @@ int main (string[] args) {
 	GLib.Log.set_always_fatal(LogLevelFlags.LEVEL_ERROR | LogLevelFlags.LEVEL_CRITICAL); 
 	
 	var a  = new Xcls_WindowLeftTree();
+	a.init();
 	a.el.show_all();
 	
 	Gtk.main();
