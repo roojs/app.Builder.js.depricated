@@ -1024,7 +1024,7 @@ public class Xcls_WindowLeftTree
                 // needs to drop first, otherwise the target_data 
                 // treepath will be invalid.
             
-                
+                return;
                 
                 if ((action & Gdk.DragAction.MOVE) > 0) {
                         print("REMOVING OLD NODE : " + target_data + "\n");
