@@ -18,7 +18,7 @@ int main (string[] args) {
     Gtk.init (ref args);
     
 	GLib.Log.set_always_fatal(LogLevelFlags.LEVEL_ERROR | LogLevelFlags.LEVEL_CRITICAL); 
-
+    new Xcls_Window();
 
 	Gtk.main();
 	return 0;
@@ -50,7 +50,7 @@ public class Xcls_Window : Object {
 
 
 		var child_0 = new Xcls_MenuItem7();
-		child_0.init();
+		child_0.init(this);
 		leftmenu.append (  child_0.el  );
 		leftmenu.show_all();
 		w.show_all();
@@ -63,8 +63,8 @@ public class Xcls_Window : Object {
 	
 		public void init(Xcls_Window _owner ) {
 			_this = _owner;
-		 
-			this.el = new Gtk.MenuItem.with_label("Delete Element");
+			var el = new Gtk.MenuItem.with_label("Delete Element");
+			this.el = el;
 		    print("add activate\n");
 		    this.el.activate.connect(   ( ) => {
 		        
