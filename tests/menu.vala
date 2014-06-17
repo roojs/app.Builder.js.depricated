@@ -26,7 +26,7 @@ int main (string[] args) {
 
 	var leftmenu = new Gtk.Menu();
 	
-    this.el.button_press_event.connect(   ( ev) => {
+    b.button_press_event.connect(   ( ev) => {
         
         if (ev.type != Gdk.EventType.BUTTON_PRESS  || ev.button != 3) {
             return false;
