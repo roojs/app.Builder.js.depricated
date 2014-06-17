@@ -18,7 +18,7 @@
                     "items": [
                         {
                             "listeners": {
-                                "clicked": "( ) => {\n    _this.view.renderJS(null,true);\n}"
+                                "clicked": "( ) => {\n    _this.view.renderJS(  true);\n}"
                             },
                             "label": "Redraw",
                             "pack": "pack_start,false,false,0",

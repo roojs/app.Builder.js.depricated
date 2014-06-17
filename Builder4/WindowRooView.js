@@ -22,7 +22,7 @@ WindowRooView=new XObject({
                     xtype: Gtk.Button,
                     listeners : {
                         clicked : ( ) => {
-                            _this.view.renderJS(null,true);
+                            _this.view.renderJS(  true);
                         }
                     },
                     label : "Redraw",

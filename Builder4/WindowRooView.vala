@@ -127,7 +127,7 @@ public class Xcls_WindowRooView : Object
 
             // listeners 
             this.el.clicked.connect( ( ) => {
-                _this.view.renderJS(null,true);
+                _this.view.renderJS(  true);
             } );
         }
 
