@@ -92,7 +92,7 @@
                     "items": [
                         {
                             "listeners": {
-                                "activate": "  ( ) => {\n    \n    print(\"_this : \" + (_this == null  ? \"NULL\" : \"yes\");\n    print(\"_this.model : \" + (_this.model == null  ? \"NULL\" : \"yes\");\n     _this.model.deleteSelected();\n}"
+                                "activate": "  ( ) => {\n    \n    print(\"_this : \" + (_this == null  ? \"NULL\" : \"yes\"));\n    print(\"_this.model : \" + (_this.model == null  ? \"NULL\" : \"yes\"));\n     _this.model.deleteSelected();\n}"
                             },
                             "label": "Delete Element",
                             "pack": "add",
