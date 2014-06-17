@@ -296,7 +296,7 @@ public class Xcls_WindowRooView : Object
 
 
             // my vars
-        public GLib.DateTime undefined;
+        public GLib.DateTime lastRefresh;
         public bool refreshRequired;
 
             // ctor 
@@ -307,6 +307,7 @@ public class Xcls_WindowRooView : Object
             _this.view = this;
 
             // my vars
+            this.lastRefresh = null;
             this.refreshRequired = false;
 
             // set gobject values
@@ -531,7 +532,7 @@ public class Xcls_WindowRooView : Object
 
         // skip listeners - not pipe 
 
-        // skip .GLib.DateTime - already used 
+        // skip .GLib.DateTime:lastRefresh - already used 
 
         // skip .bool:refreshRequired - already used 
 
