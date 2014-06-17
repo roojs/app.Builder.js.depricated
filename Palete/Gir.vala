@@ -542,7 +542,9 @@ namespace Palete {
                     return;
                 case "prerequisite": // ignore?
                     return;
-                default:
+				case "union": // ignore?
+                    return;
+				default:
                     print("UNHANDLED Gir file element: " + element->name +"\n");
                     return;
             }
