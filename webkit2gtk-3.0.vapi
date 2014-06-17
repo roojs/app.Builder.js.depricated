@@ -492,6 +492,8 @@ namespace WebKit {
 		public WebView.with_related_view (WebKit.WebView related);
 		public async bool can_execute_editing_command (string command, GLib.Cancellable? cancellable) throws GLib.Error;
 		public bool can_go_back ();
+        public void execute_script (string script);
+
 		public bool can_go_forward ();
 		public bool can_show_mime_type (string mime_type);
 		public void execute_editing_command (string command);
