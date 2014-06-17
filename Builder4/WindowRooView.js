@@ -172,24 +172,27 @@ WindowRooView=new XObject({
                                 return true;
                                 */
                         },
-                        drag_drop : function (w, ctx, x, y,time, ud) {
+                        drag_drop : function ( ctx, x, y,time, ud) {
+                            return false;
+                            /*
                         	print("TARGET: drag-drop");
                                 var is_valid_drop_site = true;
                                 
                                  
                                 Gtk.drag_get_data
                                 (
-                                        w,         /* will receive 'drag-data-received' signal */
-                                        ctx,        /* represents the current state of the DnD */
-                                        this.get('/Window').atoms["STRING"],    /* the target type we want */
-                                        time            /* time stamp */
+                                        w,         // will receive 'drag-data-received' signal 
+                                        ctx,        /* represents the current state of the DnD 
+                                        this.get('/Window').atoms["STRING"],    /* the target type we want 
+                                        time            /* time stamp 
                                 );
                                                 
                                                 
-                                                /* No target offered by source => error */
+                                                /* No target offered by source => error 
                                                
                         
                         	return  is_valid_drop_site;
+                        	*/
                         },
                         drag_data_received : function (w, ctx,  x,  y, sel_data,  target_type,  time, ud) 
                             {
