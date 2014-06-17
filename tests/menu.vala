@@ -1,5 +1,5 @@
 /* -- to compile
-valac  --pkg gio-2.0  --pkg posix  --pkg gtk+-3.0 --pkg libnotify --pkg gtksourceview-3.0  --pkg  libwnck-3.0 \
+valac  --pkg gio-2.0  --pkg posix  --pkg gtk+-3.0  \
     /tmp/WindowLeftTree.vala  -o /tmp/WindowLeftTree
 */
 
@@ -13,7 +13,27 @@ static int main (string[] args) {
     return 0;
 }
 */
+	
+int main (string[] args) {
+    Gtk.init (ref args);
+    new JsRender.Lang_Class();
+	GLib.Log.set_always_fatal(LogLevelFlags.LEVEL_ERROR | LogLevelFlags.LEVEL_CRITICAL); 
+	//print ("Drop points for Gtk.ScrolledWindow are : " + 
+	//	string.joinv(", " , Palete.factory("Gtk").getDropList("Gtk.ScrolledWindow"))
+	//);
 
+	//testBuilderFile("Editor", "JSON");
+	//testBuilderFile("Editor", "JS");
+	//testBuilderFile("Editor", "VALA");
+	var a  = new Xcls_WindowLeftTree();
+	a.el.show_all();
+	
+	Gtk.main();
+
+    
+	
+	return 0;
+}
 
 public static Xcls_WindowLeftTree  WindowLeftTree;
 
