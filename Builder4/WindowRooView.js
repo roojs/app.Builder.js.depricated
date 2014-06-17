@@ -320,7 +320,7 @@ WindowRooView=new XObject({
                         }
                         
                         
-                        this.renderedData = this.toSourcePreview();
+                        this.renderedData = this.file.toSourcePreview();
                     
                         
                         //if (!this.ready) {

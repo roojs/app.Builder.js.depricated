@@ -611,7 +611,7 @@ public class Xcls_WindowRooView : Object
                 }
                 
                 
-                this.renderedData = this.toSourcePreview();
+                this.renderedData = this.file.toSourcePreview();
             
                 
                 //if (!this.ready) {
