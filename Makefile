@@ -9,6 +9,7 @@ all:
 		--pkg json-glib-1.0 \
 		--pkg gee-1.0 \
 		--pkg gobject-introspection-1.0 \
+		--pkg webkit2gtk-3.0 \
 		Test.GtkWriter.vala \
 		JsRender/*.vala \
 		Project/*.vala \
