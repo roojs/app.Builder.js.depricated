@@ -18,35 +18,28 @@ int main (string[] args) {
     Gtk.init (ref args);
     
 	GLib.Log.set_always_fatal(LogLevelFlags.LEVEL_ERROR | LogLevelFlags.LEVEL_CRITICAL); 
+
+
+	var w = new Gtk.Window(  );
+
+	var b = new Gtk.Button.with_label ("Click me (0)");
+
+	var leftmenu = new Gtk.Menu();
 	
-	var a  = new Xcls_WindowLeftTree();
-	a.init();	
-	a.el.show_all();
+    this.el.button_press_event.connect(   ( ev) => {
+        
+        if (ev.type != Gdk.EventType.BUTTON_PRESS  || ev.button != 3) {
+            return false;
+        }
+
+            
+        //leftmenu.el.set_screen(Gdk.Screen.get_default());
+         
+        leftmenu.popup(null, null, null,  ev.button, ev.time);
 	
-	Gtk.main();
-
-    
+          return true;
+    } );
 	
-	return 0;
-}
-
-public static Xcls_WindowLeftTree  WindowLeftTree;
-
-public class Xcls_WindowLeftTree : Object 
-{
-    public Gtk.Window el;
-   private  Xcls_WindowLeftTree __this;
-	public Xcls_button button;
-    public Xcls_LeftTreeMenu LeftTreeMenu;
-
-        // ctor 
-    public void init()
-    {
-		 
-		this.el = new Gtk.Window(  );
-       __this = this;
-        WindowLeftTree = this;
-
         // my vars
 
         // set gobject values
@@ -54,7 +47,7 @@ public class Xcls_WindowLeftTree : Object
         var child_0 = new Xcls_button(); child_0.init(__this);
         this.el.add (  child_0.el  );
        __this.LeftTreeMenu = new Xcls_LeftTreeMenu();
-	__this.LeftTreeMenu.init(_this);
+	__this.LeftTreeMenu.init(__this);
 
         // init method 
          
@@ -140,7 +133,7 @@ public class Xcls_WindowLeftTree : Object
 
         
     }
-    public class Xcls_MenuItem7 : Object 
+    public class Xcls_MenuItem7  
     {
         public Gtk.MenuItem el;
         private Xcls_WindowLeftTree __this;
