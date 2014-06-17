@@ -980,7 +980,9 @@ WindowLeftTree=new XObject({
                     xtype: Gtk.MenuItem,
                     listeners : {
                         activate : ( ) => {
-                        
+                            
+                            print("_this : " + (_this == null  ? "NULL" : "yes");
+                            print("_this.model : " + (_this.model == null  ? "NULL" : "yes");
                              _this.model.deleteSelected();
                         }
                     },
