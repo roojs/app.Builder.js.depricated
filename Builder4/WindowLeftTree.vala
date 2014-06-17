@@ -186,8 +186,12 @@ public class Xcls_WindowLeftTree : Object
                     return false;
                 }
                 Gtk.TreePath res;
-                _this.view.el.get_path_at_pos((int)ev.x,(int)ev.y, out res, null, null, null);
-                    
+                if (!_this.view.el.get_path_at_pos((int)ev.x,(int)ev.y, out res, null, null, null) ) {
+                    return;
+                }
+                 
+                this.el.get_selection().select_path(res);
+                 
                   //if (!this.get('/LeftTreeMenu').el)  { 
                   //      this.get('/LeftTreeMenu').init(); 
                   //  }
