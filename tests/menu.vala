@@ -16,15 +16,9 @@ static int main (string[] args) {
 	
 int main (string[] args) {
     Gtk.init (ref args);
-    new JsRender.Lang_Class();
+    
 	GLib.Log.set_always_fatal(LogLevelFlags.LEVEL_ERROR | LogLevelFlags.LEVEL_CRITICAL); 
-	//print ("Drop points for Gtk.ScrolledWindow are : " + 
-	//	string.joinv(", " , Palete.factory("Gtk").getDropList("Gtk.ScrolledWindow"))
-	//);
-
-	//testBuilderFile("Editor", "JSON");
-	//testBuilderFile("Editor", "JS");
-	//testBuilderFile("Editor", "VALA");
+	
 	var a  = new Xcls_WindowLeftTree();
 	a.el.show_all();
 	
