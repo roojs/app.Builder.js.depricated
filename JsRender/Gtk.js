@@ -531,6 +531,7 @@ Gtk = XObject.define(
                     var ci = item.items[i];
                     
                     strbuilder(ipad + "var child_" + i + " = new " + ci.xvala_xcls + "(_this);\n" );
+                    strbuilder(ipad + "child_" + i +".ref();\n" ); // we need to reference increase unnamed children...
                     
                     if (ci.pack === false || ci.pack == "false") {
                         continue;
