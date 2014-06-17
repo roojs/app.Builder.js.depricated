@@ -265,7 +265,7 @@ WindowRooView=new XObject({
                          //this.get('/BottomPane').el.show();
                          //this.get('/BottomPane').el.set_current_page(2);// webkit inspector
                     
-                        var js = this.file.toJS();
+                        var js = this.file.toSourcePreview();
                     
                         if (!js || !js.length) {
                             print("no data");
@@ -320,7 +320,7 @@ WindowRooView=new XObject({
                         }
                         
                         
-                        this.renderedData = this.file.toSourcePreview();
+                        this.renderedData = js;
                     
                         
                         //if (!this.ready) {

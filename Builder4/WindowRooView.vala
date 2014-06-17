@@ -556,7 +556,7 @@ public class Xcls_WindowRooView : Object
                  //this.get('/BottomPane').el.show();
                  //this.get('/BottomPane').el.set_current_page(2);// webkit inspector
             
-                var js = this.file.toJS();
+                var js = this.file.toSourcePreview();
             
                 if (!js || !js.length) {
                     print("no data");
@@ -611,7 +611,7 @@ public class Xcls_WindowRooView : Object
                 }
                 
                 
-                this.renderedData = this.file.toSourcePreview();
+                this.renderedData = js;
             
                 
                 //if (!this.ready) {
