@@ -132,7 +132,7 @@ public class Xcls_WindowLeftTree : Object
 			child_0.init(__this);
 			this.el.append (  child_0.el  );
 			
-            var child_1 = new Xcls_MenuItem8s);
+            var child_1 = new Xcls_MenuItem8();
 			child_1.init(__this);
             this.el.append (  child_1.el  );
 			this.el.show_all();
