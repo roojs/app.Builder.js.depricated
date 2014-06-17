@@ -639,7 +639,9 @@ WindowLeftTree=new XObject({
                         var s = _this.view.el.get_selection();
                         Gtk.TreeModel mod;
                         
-                        s.get_selected(out mod, out iter);
+                        if (!s.get_selected(out mod, out iter)) {
+                            return; // nothing seleted..
+                        }
                         
                         this.activePath= "";      
                     
