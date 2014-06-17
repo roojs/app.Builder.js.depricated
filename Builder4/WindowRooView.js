@@ -61,30 +61,97 @@ WindowRooView=new XObject({
             items : [
                 {
                     xtype: WebKit.WebView,
+                    'void:runRefresh' : function() 
+                    {
+                        // this is run every 2 seconds from the init..
+                    
+                      
+                        
+                        if (!this.refreshRequired) {
+                           // print("no refresh required");
+                            return;
+                        }
+                    
+                        if (this.lastRedraw) {
+                           // do not redraw if last redraw was less that 5 seconds ago.
+                           if (((new Date()) -  this.lastRedraw) < 5000) {
+                                return;
+                            }
+                        }
+                        
+                        
+                        
+                        
+                         if (!this.get('/Window.LeftTree').getActiveFile()) {
+                            return;
+                         }
+                         this.refreshRequired = false;
+                       //  print("HTML RENDERING");
+                         
+                         this.get('/BottomPane').el.show();
+                         this.get('/BottomPane').el.set_current_page(2);// webkit inspector
+                    
+                        
+                        var js = this.get('/LeftTree.model').toJS();
+                        if (!js || !js.length) {
+                            print("no data");
+                            return;
+                        }
+                        var  data = js[0];
+                        this.redraws++;
+                        
+                         var project = this.get('/Window.LeftTree').getActiveFile().project;
+                         //print (project.fn);
+                         // set it to non-empty.
+                         project.runhtml  =     project.runhtml  || '';
+                         project.runhtml  = project.runhtml.length ?  project.runhtml : '<script type="text/javascript"></script>'; 
+                        
+                    
+                         this.runhtml  = this.runhtml || '';
+                        
+                         if ((project.runhtml != this.runhtml) || (this.redraws > 10)) {
+                            // then we need to reload the browser using
+                            // load_html_string..
+                            
+                            // then trigger a redraw once it's loaded..
+                            this.pendingRedraw = true;
+                             var runhtml = '<script type="text/javascript">' + "\n" ;
+                             runhtml +=imports.File.File.read(__script_path__ + '/../builder.html.js') + "\n";
+                             runhtml += '</script>'+ "\n" ;
+                            
+                            this.runhtml = project.runhtml;
+                            // need to modify paths
+                            
+                            
+                            
+                            var html = imports.File.File.read(__script_path__ + '/../builder.html');
+                            html = html.replace('</head>', runhtml + this.runhtml + '</head>');
+                            print("LOAD HTML " + html);
+                            this.el.load_html_string( html , 
+                                //fixme - should be a config option!
+                                'http://localhost/app.Builder/'
+                            );
+                            this.redraws = 0;
+                            // should trigger load_finished! - which in truns shoudl set refresh Required;
+                            return;
+                        
+                        }
+                        
+                        
+                        this.renderedData = data;
+                        var str = JSON.stringify(data) ;
+                        
+                        if (!this.ready) {
+                            console.log('not loaded yet');
+                        }
+                        this.lastRedraw = new Date();
+                    
+                        this.el.execute_script("Builder.render(" + JSON.stringify(data) + ");");
+                         print( "before render" +    this.lastRedraw);
+                        print( "after render" +    (new Date()));
+                        
+                    },
                     listeners : {
-                        load_finished : function (self, object) {
-                            print("load finished");
-                        //    print("load_finished"); return;
-                        	// if (this.ready) { // dont do it twice!
-                        	 //   return; 
-                        	//}
-                        	if (!this.inspectorShown) {
-                                   this.el.get_inspector().show();
-                                   this.inspectorShown = true;
-                        	}
-                        
-                        	this.ready = true;
-                        	
-                                if (this.pendingRedraw) {
-                                    this.pendingRedraw = false;
-                                    this.refreshRequired  = true;
-                                }
-                                //var js = this.get('/LeftTree.model').toJS();
-                                //if (js && js[0]) {
-                            	//    this.renderJS(js[0]);
-                            	//}
-                        
-                        },
                         script_alert : function (self, object, p0) {
                             // 	print(p0);
                                 return false;
@@ -309,96 +376,6 @@ WindowRooView=new XObject({
                             return;
                         }
                         this.refreshRequired  = true;
-                    },
-                    runRefresh : function() 
-                    {
-                        // this is run every 2 seconds from the init..
-                    
-                      
-                        
-                        if (!this.refreshRequired) {
-                           // print("no refresh required");
-                            return;
-                        }
-                    
-                        if (this.lastRedraw) {
-                           // do not redraw if last redraw was less that 5 seconds ago.
-                           if (((new Date()) -  this.lastRedraw) < 5000) {
-                                return;
-                            }
-                        }
-                        
-                        
-                        
-                        
-                         if (!this.get('/Window.LeftTree').getActiveFile()) {
-                            return;
-                         }
-                         this.refreshRequired = false;
-                       //  print("HTML RENDERING");
-                         
-                         this.get('/BottomPane').el.show();
-                         this.get('/BottomPane').el.set_current_page(2);// webkit inspector
-                    
-                        
-                        var js = this.get('/LeftTree.model').toJS();
-                        if (!js || !js.length) {
-                            print("no data");
-                            return;
-                        }
-                        var  data = js[0];
-                        this.redraws++;
-                        
-                         var project = this.get('/Window.LeftTree').getActiveFile().project;
-                         //print (project.fn);
-                         // set it to non-empty.
-                         project.runhtml  =     project.runhtml  || '';
-                         project.runhtml  = project.runhtml.length ?  project.runhtml : '<script type="text/javascript"></script>'; 
-                        
-                    
-                         this.runhtml  = this.runhtml || '';
-                        
-                         if ((project.runhtml != this.runhtml) || (this.redraws > 10)) {
-                            // then we need to reload the browser using
-                            // load_html_string..
-                            
-                            // then trigger a redraw once it's loaded..
-                            this.pendingRedraw = true;
-                             var runhtml = '<script type="text/javascript">' + "\n" ;
-                             runhtml +=imports.File.File.read(__script_path__ + '/../builder.html.js') + "\n";
-                             runhtml += '</script>'+ "\n" ;
-                            
-                            this.runhtml = project.runhtml;
-                            // need to modify paths
-                            
-                            
-                            
-                            var html = imports.File.File.read(__script_path__ + '/../builder.html');
-                            html = html.replace('</head>', runhtml + this.runhtml + '</head>');
-                            print("LOAD HTML " + html);
-                            this.el.load_html_string( html , 
-                                //fixme - should be a config option!
-                                'http://localhost/app.Builder/'
-                            );
-                            this.redraws = 0;
-                            // should trigger load_finished! - which in truns shoudl set refresh Required;
-                            return;
-                        
-                        }
-                        
-                        
-                        this.renderedData = data;
-                        var str = JSON.stringify(data) ;
-                        
-                        if (!this.ready) {
-                            console.log('not loaded yet');
-                        }
-                        this.lastRedraw = new Date();
-                    
-                        this.el.execute_script("Builder.render(" + JSON.stringify(data) + ");");
-                         print( "before render" +    this.lastRedraw);
-                        print( "after render" +    (new Date()));
-                        
                     }
                 }
             ]
