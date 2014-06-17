@@ -303,7 +303,7 @@ public class Xcls_WindowRooView : Object
 
 
             // my vars
-        public GLib.DateTime lastRefresh;
+        public GLib.DateTime lastRedraw;
         public bool refreshRequired;
         public int redraws;
         public string renderedData;
@@ -317,7 +317,7 @@ public class Xcls_WindowRooView : Object
             _this.view = this;
 
             // my vars
-            this.lastRefresh = null;
+            this.lastRedraw = null;
             this.refreshRequired = false;
             this.redraws = 0;
             this.renderedData = "";
@@ -492,7 +492,7 @@ public class Xcls_WindowRooView : Object
 
         // skip listeners - not pipe 
 
-        // skip .GLib.DateTime:lastRefresh - already used 
+        // skip .GLib.DateTime:lastRedraw - already used 
 
         // skip .bool:refreshRequired - already used 
 
