@@ -525,7 +525,7 @@ public class Xcls_WindowRooView : Object
         }
 
         // userdefined functions 
-        public void runRefreshfunction() 
+        public void runRefresh () 
             {
                 // this is run every 2 seconds from the init..
             

@@ -61,7 +61,7 @@ WindowRooView=new XObject({
             items : [
                 {
                     xtype: WebKit.WebView,
-                    'void:runRefresh' : function() 
+                    'void:runRefresh' : () 
                     {
                         // this is run every 2 seconds from the init..
                     
