@@ -786,7 +786,7 @@ public class Xcls_WindowLeftTree
               //    console.dump(target_data);
               
               
-                    // 
+                    // 0 = before , 1=after 2/3 onto
               
               
                     var target_data= target_data_str.split("|");
@@ -834,7 +834,7 @@ public class Xcls_WindowLeftTree
                         parentNode =  (JsRender.Node)value.dup_object();
                         node.parent = parentNode;
                     } else {
-                         
+                         print("appending to  " + parent_str);
                         this.el.get_iter(out iter_par, tree_path);
                         this.el.append(out n_iter,   iter_par );
                         GLib.Value value;
