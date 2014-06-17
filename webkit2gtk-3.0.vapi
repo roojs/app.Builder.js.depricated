@@ -463,6 +463,8 @@ namespace WebKit {
 		[HasEmitter]
 		public signal bool detach ();
 		public signal bool open_window ();
+        public virtual signal unowned WebKit.WebView inspect_web_view (WebKit.WebView p0);
+
 	}
 	[CCode (cheader_filename = "webkit2/webkit2.h", type_id = "webkit_web_resource_get_type ()")]
 	public class WebResource : GLib.Object {
