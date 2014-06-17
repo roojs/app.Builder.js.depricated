@@ -1007,8 +1007,9 @@ public class Xcls_WindowLeftTree
                 //print("MOVE NODE");
                 // console.dump(target_data);
                 Gtk.TreeIter old_iter;
-                var s = _this.view.el.get_selection();
                 Gtk.TreeModel mod;
+                
+                var s = _this.view.el.get_selection();
                 s.get_selected(out mod , out old_iter);
                 mod.get_path(old_iter);
                 
