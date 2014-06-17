@@ -945,8 +945,8 @@ public class Xcls_WindowLeftTree
                 //print("LOAD");
                 //print(JSON.stringify(f.items, null,4));
                 //console.dump(f.items);
-                var o = new GLib.List<JsRender.Node>();
-                o.append(f.tree);
+                var o = new Gee.ArrayList<JsRender.Node>();
+                o.add(f.tree);
                 this.load(o,null);
                 
                 _this.view.el.expand_all();
