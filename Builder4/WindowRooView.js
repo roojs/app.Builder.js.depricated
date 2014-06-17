@@ -172,7 +172,7 @@ WindowRooView=new XObject({
                                 return true;
                                 */
                         },
-                        drag_drop : function ( ctx, x, y,time, ud) {
+                        drag_drop : ( ctx, x, y,time, ud) => {
                             return false;
                             /*
                         	print("TARGET: drag-drop");

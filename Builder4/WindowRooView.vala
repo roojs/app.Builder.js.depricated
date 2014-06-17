@@ -479,7 +479,7 @@ public class Xcls_WindowRooView : Object
                     return true;
                     */
             } );
-            this.el.drag_drop.connect( function ( ctx, x, y,time, ud) {
+            this.el.drag_drop.connect(   ( ctx, x, y,time, ud) => {
                 return false;
                 /*
             	print("TARGET: drag-drop");
