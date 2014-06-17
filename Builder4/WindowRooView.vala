@@ -558,7 +558,7 @@ public class Xcls_WindowRooView : Object
             
                 var js = this.file.toSourcePreview();
             
-                if (!js || !js.length) {
+                if (js.length < 1) {
                     print("no data");
                     return;
                 }

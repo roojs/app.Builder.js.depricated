@@ -267,7 +267,7 @@ WindowRooView=new XObject({
                     
                         var js = this.file.toSourcePreview();
                     
-                        if (!js || !js.length) {
+                        if (js.length < 1) {
                             print("no data");
                             return;
                         }
