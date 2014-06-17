@@ -52,7 +52,8 @@ public class Xcls_WindowLeftTree : Object
         
         var child_0 = new Xcls_button(); child_0.init(_this);
         this.el.add (  child_0.el  );
-        _this.LeftTreeMenu = new Xcls_LeftTreeMenu(_this);
+        _this.LeftTreeMenu = new Xcls_LeftTreeMenu();
+		_this.LeftTreeMenu.init();
 
         // init method 
          
