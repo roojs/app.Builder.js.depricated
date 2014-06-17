@@ -278,11 +278,11 @@ namespace JsRender {
             this.vitems.append(item);  
             // loop children..
 			                                                       
-            if (item.items.length() < 1) {
+            if (item.items.size < 1) {
                 return;
             }
-            for(var i =0;i<item.items.length();i++) {
-                this.toValaName(item.items.nth_data(i));
+            for(var i =0;i<item.items.size;i++) {
+                this.toValaName(item.items.get(i));
             }
 			          
         }
@@ -481,8 +481,8 @@ namespace JsRender {
             // add all the child items..
 
 
-            for(var i =0;i<item.items.length();i++) {
-        		var ci = item.items.nth_data(i);
+            for(var i =0;i<item.items.size;i++) {
+        		var ci = item.items.get(i);
 				var pk = ci.get("pack");
 				string[] packing = { "add" };
 				if (ci.get("pack").length > 0) {
