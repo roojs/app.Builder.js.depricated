@@ -556,7 +556,7 @@ public class Xcls_WindowRooView : Object
                  //this.get('/BottomPane').el.show();
                  //this.get('/BottomPane').el.set_current_page(2);// webkit inspector
             
-                var js = this.file.toSourcePreview();
+                var js = _this.file.toSourcePreview();
             
                 if (js.length < 1) {
                     print("no data");
