@@ -635,7 +635,7 @@ WindowLeftTree=new XObject({
                         print("DELETE SELECTED?");
                         _this.view.blockChanges = true;
                         
-                        Gtk.TreeIter iter = new Gtk.TreeIter();
+                        Gtk.TreeIter iter;
                         var s = _this.view.el.get_selection();
                         Gtk.TreeModel mod;
                         
