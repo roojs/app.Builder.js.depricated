@@ -841,7 +841,7 @@ WindowLeftTree=new XObject({
                         
                         _this.view.el.expand_all();
                     
-                        if (f.tree.items.length() < 1) {
+                        if (f.tree.items.size < 1) {
                             // single item..
                             
                             //this.get('/Window.leftvpaned').el.set_position(80);
