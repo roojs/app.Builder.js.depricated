@@ -400,10 +400,6 @@ public class Xcls_WindowRooView : Object
             	return  is_valid_drop_site;
             	*/
             } );
-            this.el.create_web_view.connect( ( object) => {
-              // print("CREATE WEB VIEW");
-               return null; //new WebKit.WebView();
-            } );
         }
 
         // userdefined functions 

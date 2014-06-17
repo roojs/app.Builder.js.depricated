@@ -83,10 +83,6 @@ WindowRooView=new XObject({
                         
                         	return  is_valid_drop_site;
                         	*/
-                        },
-                        create_web_view : ( object) => {
-                          // print("CREATE WEB VIEW");
-                           return null; //new WebKit.WebView();
                         }
                     },
                     id : "view",
