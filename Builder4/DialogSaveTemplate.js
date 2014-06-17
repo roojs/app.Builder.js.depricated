@@ -47,13 +47,15 @@ DialogSaveTemplate=new XObject({
     default_height : 200,
     default_width : 400,
     modal : true,
-    'static void:show' : (Palete.Palete palete, JsRender.Node data) {
+    'static void:show' : (Gtk.Window parent, Palete.Palete palete, JsRender.Node data) {
+     
+        
      
          var t =DialogSaveTemplate;
         if (t == null) {
            t =   new Xcls_DialogSaveTemplate();
         }
-     
+        t.set_transient_for(parent);
         t.data = data;
         t.palete = palete;
         t.name.el.set_text("");

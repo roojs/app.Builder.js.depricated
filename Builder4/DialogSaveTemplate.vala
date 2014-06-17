@@ -102,13 +102,15 @@ public class Xcls_DialogSaveTemplate : Object
     // skip xtype - not pipe 
 
     // skip |modal - already used 
-    public static void show (Palete.Palete palete, JsRender.Node data) {
+    public static void show (Gtk.Window parent, Palete.Palete palete, JsRender.Node data) {
+         
+            
          
              var t =DialogSaveTemplate;
             if (t == null) {
                t =   new Xcls_DialogSaveTemplate();
             }
-         
+            t.set_transient_for(parent);
             t.data = data;
             t.palete = palete;
             t.name.el.set_text("");
