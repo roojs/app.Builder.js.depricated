@@ -6,6 +6,7 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.bjs",
     "items": [
         {
+            ".JsRender.JsRender:file": "",
             "id": "WindowRooView",
             "pack": "add",
             "xtype": "VBox",

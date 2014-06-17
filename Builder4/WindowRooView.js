@@ -400,6 +400,17 @@ WindowRooView=new XObject({
                     }
                 }
             ]
+        },
+        {
+            xtype: Gtk.ScrolledWindow,
+            pack : "add",
+            items : [
+                {
+                    xtype: WebKit.WebView,
+                    id : "inspector",
+                    pack : "add"
+                }
+            ]
         }
     ]
 });

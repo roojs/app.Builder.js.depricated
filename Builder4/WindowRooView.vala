@@ -24,8 +24,10 @@ public class Xcls_WindowRooView : Object
 
     public Xcls_AutoRedraw AutoRedraw;
     public Xcls_view view;
+    public Xcls_inspector inspector;
 
         // my vars
+    public JsRender.JsRender file;
 
         // ctor 
     public Xcls_WindowRooView()
@@ -43,9 +45,14 @@ public class Xcls_WindowRooView : Object
         var child_1 = new Xcls_ScrolledWindow6(_this);
         child_1.ref();
         this.el.add (  child_1.el  );
+        var child_2 = new Xcls_ScrolledWindow8(_this);
+        child_2.ref();
+        this.el.add (  child_2.el  );
     }
 
     // userdefined functions 
+
+    // skip .JsRender.JsRender:file - already used 
 
     // skip id - not pipe 
 
@@ -679,6 +686,84 @@ public class Xcls_WindowRooView : Object
             //    print( "after render" +    (new Date()));
                 
             }
+
+        // skip |xns - no return type
+
+        // skip xvala_cls - not pipe 
+
+        // skip xvala_xcls - not pipe 
+
+        // skip xvala_id - not pipe 
+    }
+    public class Xcls_ScrolledWindow8 : Object 
+    {
+        public Gtk.ScrolledWindow el;
+        private Xcls_WindowRooView  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_ScrolledWindow8(Xcls_WindowRooView _owner)
+        {
+            this.el = new Gtk.ScrolledWindow( null, null );
+            _this = _owner;
+
+            // my vars
+
+            // set gobject values
+            var child_0 = new Xcls_inspector(_this);
+            child_0.ref();
+            this.el.add (  child_0.el  );
+
+            // listeners 
+        }
+
+        // userdefined functions 
+
+        // skip xtype - not pipe 
+
+        // skip |xns - no return type
+
+        // skip pack - not pipe 
+
+        // skip listeners - not pipe 
+
+        // skip items - not pipe 
+
+        // skip xvala_cls - not pipe 
+
+        // skip xvala_xcls - not pipe 
+
+        // skip xvala_id - not pipe 
+    }
+    public class Xcls_inspector : Object 
+    {
+        public WebKit.WebView el;
+        private Xcls_WindowRooView  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_inspector(Xcls_WindowRooView _owner)
+        {
+            this.el = new WebKit.WebView();
+            _this = _owner;
+            _this.inspector = this;
+
+            // my vars
+
+            // set gobject values
+        }
+
+        // userdefined functions 
+
+        // skip id - not pipe 
+
+        // skip pack - not pipe 
+
+        // skip xtype - not pipe 
 
         // skip |xns - no return type
 
