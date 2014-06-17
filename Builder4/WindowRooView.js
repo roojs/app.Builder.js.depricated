@@ -242,7 +242,8 @@ WindowRooView=new XObject({
                     id : "view",
                     pack : "add",
                     redraws : 0,
-                    init : // this may not work!?
+                    init : {
+                        // this may not work!?
                         var settings =  this.el.get_settings();
                         settings.enable_developer_extras = true;
                         

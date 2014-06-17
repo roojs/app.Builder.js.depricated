@@ -326,7 +326,7 @@ public class Xcls_WindowRooView : Object
             // set gobject values
 
             // init method 
-             
+             {
                 // this may not work!?
                 var settings =  this.el.get_settings();
                 settings.enable_developer_extras = true;
