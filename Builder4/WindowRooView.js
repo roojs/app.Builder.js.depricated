@@ -372,17 +372,17 @@ WindowRooView=new XObject({
                         }
                         
                         
-                        this.renderedData = data;
-                        var str = JSON.stringify(data) ;
-                        
-                        if (!this.ready) {
-                            console.log('not loaded yet');
-                        }
-                        this.lastRedraw = new Date();
+                        this.renderedData = this.toSourcePreview();
                     
-                        this.el.execute_script("Builder.render(" + JSON.stringify(data) + ");");
-                         print( "before render" +    this.lastRedraw);
-                        print( "after render" +    (new Date()));
+                        
+                        //if (!this.ready) {
+                      //      console.log('not loaded yet');
+                        //}
+                        this.lastRedraw = new DateTime.now();
+                    
+                        this.el.execute_script("Builder.render(" + this.renderedData + ");");
+                    //     print( "before render" +    this.lastRedraw);
+                    //    print( "after render" +    (new Date()));
                         
                     }
                 }
