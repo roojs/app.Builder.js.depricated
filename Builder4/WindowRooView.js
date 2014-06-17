@@ -129,7 +129,10 @@ WindowRooView=new XObject({
                                 */
                         },
                         drag_motion : function (w, ctx,  x,   y,   time, ud) {
-                           // console.log('DRAG MOTION'); 
+                           return;
+                           /*
+                           
+                           / console.log('DRAG MOTION'); 
                                 // status:
                                 // if lastCurrentNode == this.currentNode.. -- don't change anything..
                                 this.targetData = [];
@@ -167,6 +170,7 @@ WindowRooView=new XObject({
                                 this.targetData = tg;
                                 // for tree we should handle this...
                                 return true;
+                                */
                         },
                         drag_drop : function (w, ctx, x, y,time, ud) {
                         	print("TARGET: drag-drop");

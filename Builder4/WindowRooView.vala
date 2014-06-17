@@ -436,7 +436,10 @@ public class Xcls_WindowRooView : Object
                     */
             } );
             this.el.drag_motion.connect( function (w, ctx,  x,   y,   time, ud) {
-               // console.log('DRAG MOTION'); 
+               return;
+               /*
+               
+               / console.log('DRAG MOTION'); 
                     // status:
                     // if lastCurrentNode == this.currentNode.. -- don't change anything..
                     this.targetData = [];
@@ -474,6 +477,7 @@ public class Xcls_WindowRooView : Object
                     this.targetData = tg;
                     // for tree we should handle this...
                     return true;
+                    */
             } );
             this.el.drag_drop.connect( function (w, ctx, x, y,time, ud) {
             	print("TARGET: drag-drop");
