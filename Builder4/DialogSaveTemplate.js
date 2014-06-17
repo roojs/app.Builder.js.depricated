@@ -56,7 +56,7 @@ DialogSaveTemplate=new XObject({
     items : [
         {
             xtype: Gtk.HBox,
-            pack : p.el.get_content_area().add(e.el);,
+            pack : get_content_area().add,
             items : [
                 {
                     xtype: Gtk.Label,

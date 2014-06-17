@@ -21,7 +21,7 @@
             "items": [
                 {
                     "xtype": "HBox",
-                    "|pack": " p.el.get_content_area().add(e.el);\n\n",
+                    "|pack": " get_content_area().add\n\n",
                     "|xns": "Gtk",
                     "items": [
                         {
