@@ -376,14 +376,14 @@ namespace JsRender {
         },
         */
         
-        public override string? toSourcePreview()
+        public override string  toSourcePreview()
         {
             
             var top = this.guessName(this.tree);
             //print(JSON.stringify(this.items, null,4));
                        
             if (top == null) {
-                return null;
+                return "";
             }
             
             
