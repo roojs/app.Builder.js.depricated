@@ -175,6 +175,8 @@ public class JsRender.Node : Object {
                 //var prop = pl['*prop'] + '';
                 //delete pl['*prop'];
                 var prop = pl.get("*prop");
+				print("got prop "+ prop + "\n");
+				
                 // name ends in [];
                 if (! Regex.match_simple("\\[\\]$", prop)) {
                     // it's a standard prop..
