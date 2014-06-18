@@ -395,7 +395,7 @@ public class Xcls_WindowRooView : Object
                     }
                     return true;
                    
-                }
+                });
                   this.inspector.show();
                  // FIXME - base url of script..
                  // we need it so some of the database features work.
