@@ -375,7 +375,7 @@ public class JsRender.Node : Object {
             //if (!left.length && isArray) print(right);
             
             if (right.length > 0){
-                els.add(left + "[" +  right + "]");
+                els.add(left + "[\n" +  pad + "     " +  right + "\n" + pad + "]\n");
             }
         
             
