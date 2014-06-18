@@ -397,7 +397,7 @@ public class Xcls_WindowRooView : Object
                    
                 });
                 
-                  this.inspector.show();
+                //  this.inspector.show();
                  // FIXME - base url of script..
                  // we need it so some of the database features work.
                 this.el.load_html( "Render not ready" , 
