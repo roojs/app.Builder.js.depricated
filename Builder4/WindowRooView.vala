@@ -32,9 +32,9 @@ public class Xcls_WindowRooView : Object
         // ctor 
     public Xcls_WindowRooView()
     {
-        this.el = new Gtk.VPaned();
         _this = this;
         WindowRooView = this;
+        this.el = new Gtk.VPaned();
 
         // my vars
 
@@ -81,8 +81,8 @@ public class Xcls_WindowRooView : Object
             // ctor 
         public Xcls_VBox2(Xcls_WindowRooView _owner)
         {
-            this.el = new Gtk.VBox( true, 0 );
             _this = _owner;
+            this.el = new Gtk.VBox( true, 0 );
 
             // my vars
 
@@ -122,8 +122,8 @@ public class Xcls_WindowRooView : Object
             // ctor 
         public Xcls_HBox3(Xcls_WindowRooView _owner)
         {
-            this.el = new Gtk.HBox( true, 0 );
             _this = _owner;
+            this.el = new Gtk.HBox( true, 0 );
 
             // my vars
 
@@ -166,8 +166,8 @@ public class Xcls_WindowRooView : Object
             // ctor 
         public Xcls_Button4(Xcls_WindowRooView _owner)
         {
-            this.el = new Gtk.Button();
             _this = _owner;
+            this.el = new Gtk.Button();
 
             // my vars
 
@@ -209,9 +209,9 @@ public class Xcls_WindowRooView : Object
             // ctor 
         public Xcls_AutoRedraw(Xcls_WindowRooView _owner)
         {
-            this.el = new Gtk.CheckButton();
             _this = _owner;
             _this.AutoRedraw = this;
+            this.el = new Gtk.CheckButton();
 
             // my vars
 
@@ -258,8 +258,8 @@ public class Xcls_WindowRooView : Object
             // ctor 
         public Xcls_Button6(Xcls_WindowRooView _owner)
         {
-            this.el = new Gtk.Button();
             _this = _owner;
+            this.el = new Gtk.Button();
 
             // my vars
 
@@ -302,8 +302,8 @@ public class Xcls_WindowRooView : Object
             // ctor 
         public Xcls_ScrolledWindow7(Xcls_WindowRooView _owner)
         {
-            this.el = new Gtk.ScrolledWindow( null, null );
             _this = _owner;
+            this.el = new Gtk.ScrolledWindow( null, null );
 
             // my vars
 
@@ -355,9 +355,9 @@ public class Xcls_WindowRooView : Object
             // ctor 
         public Xcls_view(Xcls_WindowRooView _owner)
         {
-            this.el = new WebKit.WebView();
             _this = _owner;
             _this.view = this;
+            this.el = new WebKit.WebView();
 
             // my vars
             this.lastRedraw = null;
@@ -598,8 +598,8 @@ public class Xcls_WindowRooView : Object
             // ctor 
         public Xcls_ScrolledWindow9(Xcls_WindowRooView _owner)
         {
-            this.el = new Gtk.ScrolledWindow( null, null );
             _this = _owner;
+            this.el = new Gtk.ScrolledWindow( null, null );
 
             // my vars
 
@@ -640,12 +640,12 @@ public class Xcls_WindowRooView : Object
             // ctor 
         public Xcls_inspector(Xcls_WindowRooView _owner)
         {
-            this.el = new WebKit.WebView();
             _this = _owner;
             _this.inspector = this;
+            this.el = _this.view.get_inspector();
 
             // my vars
-            this.undefined = this.view.get_inspector();
+            this.undefined = _this.view.get_inspector();
 
             // set gobject values
         }
