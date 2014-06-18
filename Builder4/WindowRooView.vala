@@ -124,7 +124,7 @@ public class Xcls_WindowRooView : Object
         public Xcls_HBox3(Xcls_WindowRooView _owner)
         {
             _this = _owner;
-            this.el = new Gtk.HBox( "true", 0 );
+            this.el = new Gtk.HBox( true, 0 );
 
             // my vars
 
@@ -142,7 +142,7 @@ public class Xcls_WindowRooView : Object
 
         // userdefined functions 
 
-        // skip homogeneous - already used 
+        // skip |homogeneous - already used 
 
         // skip pack - not pipe 
 
