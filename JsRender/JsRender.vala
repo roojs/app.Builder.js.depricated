@@ -274,7 +274,7 @@ namespace JsRender {
 		
 		public string mungeToString(string pad)
 		{
-		    return this.tree.mungeToString(false, pad, this.doubleStringProps);
+		    return this.tree.mungeToString( pad, this.doubleStringProps);
 		    
 		}
 		public abstract string toSource() ;
