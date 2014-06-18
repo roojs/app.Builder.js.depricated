@@ -102,7 +102,7 @@ int main (string[] args) {
 	//testBuilderFile("Editor", "JSON");
 	//testBuilderFile("Editor", "JS");
 	//testBuilderFile("Editor", "VALA");
-	testLeftTree("Editor");
+	//testLeftTree("Editor");
 	rooWindowTest("Pman.Dialog.CoreEmail");
 	
 	Gtk.main();
