@@ -83,7 +83,7 @@ public class Xcls_WindowRooView : Object
         public Xcls_VBox2(Xcls_WindowRooView _owner)
         {
             _this = _owner;
-            this.el = new Gtk.VBox( true, 0 );
+            this.el = new Gtk.VBox( false, 0 );
 
             // my vars
 
@@ -97,6 +97,8 @@ public class Xcls_WindowRooView : Object
         }
 
         // userdefined functions 
+
+        // skip |homogeneous - already used 
 
         // skip pack - not pipe 
 

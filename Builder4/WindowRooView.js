@@ -21,6 +21,7 @@ WindowRooView=new XObject({
     items : [
         {
             xtype: Gtk.VBox,
+            homogeneous : false,
             pack : "pack1,true,false",
             items : [
                 {
