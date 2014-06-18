@@ -357,7 +357,7 @@ public class JsRender.Node : Object {
         var iter = ar_props.map_iterator();
         while (iter.next()) {
             var k = iter.get_key();
-            var vo = iter.get_value();
+            var right = iter.get_value();
 			
             string leftv = k[0] == '|' ? k.substring(1) : k;
             if (Lang.isKeyword(leftv) || Lang.isBuiltin(leftv)) {
@@ -371,8 +371,7 @@ public class JsRender.Node : Object {
             }
             left += " : ";
             
-            var right = vo;
-            
+             
             //if (!left.length && isArray) print(right);
             
             if (right.length > 0){
