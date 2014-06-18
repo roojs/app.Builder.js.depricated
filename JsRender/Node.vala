@@ -205,7 +205,7 @@ public class JsRender.Node : Object {
 					old = ar_props.get(sprop);
 				}
 				var nstr  = old += old.length > 0 ? ",\n" : "";
-				nstr += pl.mungeToString (false,  pad + "    ",  doubleStringProps);
+				nstr += pl.mungeToString (false,  pad + "        ",  doubleStringProps);
 				
           		ar_props.set(sprop, nstr);
                  
