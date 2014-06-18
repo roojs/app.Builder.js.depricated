@@ -90,6 +90,9 @@ public class Xcls_WindowRooView : Object
             var child_1 = new Xcls_ScrolledWindow7(_this);
             child_1.ref();
             this.el.add (  child_1.el  );
+            var child_2 = new Xcls_ScrolledWindow9(_this);
+            child_2.ref();
+            this.el.add (  child_2.el  );
         }
 
         // userdefined functions 
@@ -575,6 +578,48 @@ public class Xcls_WindowRooView : Object
             //    print( "after render" +    (new Date()));
                 
             }
+
+        // skip |xns - no return type
+
+        // skip xvala_cls - not pipe 
+
+        // skip xvala_xcls - not pipe 
+
+        // skip xvala_id - not pipe 
+    }
+    public class Xcls_ScrolledWindow9 : Object 
+    {
+        public Gtk.ScrolledWindow el;
+        private Xcls_WindowRooView  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_ScrolledWindow9(Xcls_WindowRooView _owner)
+        {
+            _this = _owner;
+            this.el = new Gtk.ScrolledWindow( null, null );
+
+            // my vars
+
+            // set gobject values
+            this.el.shadow_type = Gtk.ShadowType.IN;
+
+            // init method 
+              this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
+             
+        }
+
+        // userdefined functions 
+
+        // skip pack - not pipe 
+
+        // skip xtype - not pipe 
+
+        // skip |init - already used 
+
+        // skip |shadow_type - already used 
 
         // skip |xns - no return type
 
