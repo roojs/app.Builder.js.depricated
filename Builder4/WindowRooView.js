@@ -24,7 +24,7 @@ WindowRooView=new XObject({
             items : [
                 {
                     xtype: Gtk.HBox,
-                    pack : "pack_start,false,true,0",
+                    pack : "pack1,true,false",
                     items : [
                         {
                             xtype: Gtk.Button,
