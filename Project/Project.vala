@@ -87,6 +87,16 @@ namespace Project {
 		    
 
 		}
+
+		public static Project?  getProject(string name) 
+		{
+			if (projects.has_key(name)) {
+				return projects.get(name);
+			}
+			return null;
+
+		}
+		
 		public static void   factoryFromFile(string jsonfile)
 		{
 			 
