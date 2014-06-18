@@ -103,8 +103,9 @@ namespace Project {
             var pa = new Json.Parser();
             pa.load_from_file(jsonfile);
             var node = pa.get_root();
-            
-            if (node.get_node_type () != Json.NodeType.OBJECT) {
+
+			
+            if (node == null || node.get_node_type () != Json.NodeType.OBJECT) {
 				print("SKIP " + jsonfile + " - invalid format?\n");
 		        return;
 	        }
