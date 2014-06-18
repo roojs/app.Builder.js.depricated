@@ -155,7 +155,8 @@ public class JsRender.Node : Object {
                
         }
         //var newitems = new Gee.ArrayList<JsRender.Node>();
-        var oprops = new Gee.HashMap<string,Node>();
+
+		var ob_props = new Gee.HashMap<string,string>();
 		
 		// look throught he chilren == looking for * prop.. -- fixme might not work..
 		
@@ -182,7 +183,7 @@ public class JsRender.Node : Object {
                     // it's a standard prop..
                     
                     // munge property..??
-                    oprops.set(prop, pl);
+                    oprops.set(prop, pl.mungeToString (false,  pad + "    ",  doubleStringProps););
                     
                     
                     //keys.push(prop);
