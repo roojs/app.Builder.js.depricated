@@ -76,7 +76,7 @@ void testLeftTree(string name)
 void rooWindowTest(string name)
 {
 
-	var proj = Projects.Projects.get("Pman.Core");
+	var proj = Project.Project.get("Pman.Core");
 	
 	proj.scanDirs();
 	 
