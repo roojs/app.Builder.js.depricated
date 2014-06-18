@@ -405,7 +405,7 @@ public class JsRender.Node : Object {
 			for(var i = 0; i < this.items.size;i++) {
 				// 
 				if (i > 0) {
-					 items + ",\n";
+					 itms + ",\n";
 				}
 				itms +=    pad + "    "  +
 					this.items.get(i).mungeToString(false, pad + "        ",  doubleStringProps) +;
