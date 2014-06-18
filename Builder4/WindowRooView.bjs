@@ -14,11 +14,11 @@
             "|xns": "Gtk",
             "items": [
                 {
-                    "xtype": "VPaned",
+                    "xtype": "VBox",
                     "|xns": "Gtk",
                     "items": [
                         {
-                            "pack": "pack1,true,false",
+                            "pack": "pack_start,false,true,0",
                             "xtype": "HBox",
                             "|xns": "Gtk",
                             "items": [
