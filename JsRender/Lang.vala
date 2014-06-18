@@ -83,7 +83,8 @@ namespace JsRender {
             return this.newlineNames.get(str) != null;
         }
          public bool isBoolean (string str) {
-            return str == "false" || str == "true";
+			 var ss = str.down();
+            return ss == "false" || ss == "true";
         }
         
         
