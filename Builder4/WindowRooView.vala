@@ -385,7 +385,7 @@ public class Xcls_WindowRooView : Object
                 this.inspector = this.el.get_inspector();
                 this.inspector.attach.connect(() => {
                 
-                    
+                    print("inspector attach");
                     var wv = this.inspector.get_web_view();
                     if (wv != null) {
                         print("got inspector web view");
