@@ -53,8 +53,7 @@ void testBuilderFile(string ptype, string dir,  string name, string test)
 	print("invalid test?\n");
 }
 
-
-#if  1
+ 
 void testLeftTree(string name)
 {
 	var dir = "/home/alan/gitlive/app.Builder.js/Builder4"; 
@@ -93,8 +92,7 @@ void rooWindowTest(string name)
 	rv.loadFile(tf);
 	
 }
-
-#endif
+  
 int main (string[] args) {
     Gtk.init (ref args);
     new JsRender.Lang_Class();
