@@ -383,7 +383,7 @@ public class Xcls_WindowRooView : Object
                  
                 
                 this.inspector = this.el.get_inspector();
-                this.inspector.attach.connect(() => {
+                this.inspector.open_window.connect(() => {
                 
                     print("inspector attach\n");
                     var wv = this.inspector.get_web_view();
