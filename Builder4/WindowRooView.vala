@@ -393,7 +393,7 @@ public class Xcls_WindowRooView : Object
                     } else {
                         print("no web view yet");
                     }
-                    
+                    return true;
                    
                 }
                   this.inspector.show();

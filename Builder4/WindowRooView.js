@@ -119,7 +119,7 @@ WindowRooView=new XObject({
                                     } else {
                                         print("no web view yet");
                                     }
-                                    
+                                    return true;
                                    
                                 }
                                   this.inspector.show();
