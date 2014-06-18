@@ -31,7 +31,7 @@ Builder  = {
         // next.. we need to ensure that parent is set correctly..
         // done by sender... otherwise building becomes difficult..
         //data  += "\n" + 'Builder.' + ix + ".parent = '#renderel';\n";
-        
+        console.log(data);
         //Roo.log(data);return;
         //Roo.log(data);
         if (this.scriptTag) { 
