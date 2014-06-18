@@ -264,9 +264,9 @@ WindowRooView=new XObject({
                             
                                     var html = inhtml.replace("</head>", runhtml + this.runhtml + 
                                     
-                                            '<script type="text/javascript">' + "\n" +
+                                            "<script type="text/javascript">\n" +
                                             js_src + "\n" + 
-                                            '</script>' + 
+                                            "</script>" + 
                                                     
                                     "</head>");
                                     print("LOAD HTML " + html);
