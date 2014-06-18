@@ -29,7 +29,7 @@ void diff(string original, string data)
 void testBuilderFile(string ptype, string dir,  string name, string test)
 {
 	 
-	var proj = Project.factory( ptype, dir );
+	var proj = Project.Project.factory( ptype, dir );
 	proj.scanDirs();
 	//print(proj.toJSON(true));
 	//print("\ndone\n");
@@ -106,9 +106,9 @@ int main (string[] args) {
 	//testBuilderFile("Gtk", "/home/alan/gitlive/app.Builder.js/Builder4" , "Editor", "JSON");
 	//testBuilderFile("Gtk", "/home/alan/gitlive/app.Builder.js/Builder4, "Editor", "JS");
 	//testBuilderFile("Gtk", "/home/alan/gitlive/app.Builder.js/Builder4","Editor", "VALA");
-	testBuilderFile("Roo", "/home/alan/gitlive/Pman.Core/","Pman.Dialog.CoreEmail", "PREVIEW");
+	//testBuilderFile("Roo", "/home/alan/gitlive/Pman.Core/","Pman.Dialog.CoreEmail", "PREVIEW");
 	//testLeftTree("Editor");
-	//rooWindowTest("Pman.Dialog.CoreEmail"); Gtk.main();
+	rooWindowTest("Pman.Dialog.CoreEmail"); Gtk.main();
 
     
 	
