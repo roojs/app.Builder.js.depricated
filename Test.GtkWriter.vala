@@ -76,7 +76,7 @@ void testLeftTree(string name)
 void rooWindowTest(string name)
 {
 	var dir = "/home/alan/gitlive/Pman.Core/"; 
-	var proj = new Project.Gtk(dir );
+	var proj = Project.Project.factory( "Roo", dir );
 	proj.scanDirs();
 	 
 	var tf = proj.files.get(dir + "/" + name + ".bjs");
