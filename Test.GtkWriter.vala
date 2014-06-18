@@ -46,6 +46,7 @@ void testBuilderFile(string dir,  string name, string test)
 			diff(dir + "/" + name + ".vala", tf.toValaSource(false));
 			return;
 		case "PREVIEW":
+			print ("Calling to sourcepreview"); 
 			print( tf.toSourcePreview());
 			return;
 	}
@@ -53,7 +54,7 @@ void testBuilderFile(string dir,  string name, string test)
 }
 
 
-#ifdef UI
+#if  UI
 void testLeftTree(string name)
 {
 	var dir = "/home/alan/gitlive/app.Builder.js/Builder4"; 
