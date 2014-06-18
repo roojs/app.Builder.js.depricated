@@ -45,6 +45,9 @@ void testBuilderFile(string dir,  string name, string test)
 		case "VALA":
 			diff(dir + "/" + name + ".vala", tf.toValaSource(false));
 			return;
+		case "PREVIEW":
+			print( tf.toSourcePreview());
+			return;
 	}
 	print("invalid test?\n");
 }
