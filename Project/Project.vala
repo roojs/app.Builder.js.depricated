@@ -114,8 +114,9 @@ namespace Project {
 			var xtype =  obj.get_string_member("xtype");
 
 			var proj = factory(xtype, "");
-
-            proj.runhtml  = obj.get_string_member("runhtml"); // might not exist?
+			if (obj.has_member("runhtml")) {
+        		proj.runhtml  = obj.get_string_member("runhtml"); // might not exist?
+			}
 			proj.name = obj.get_string_member("name");
 
 			var paths =obj.get_object_member("paths");
