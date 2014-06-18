@@ -637,7 +637,7 @@ public class Xcls_WindowRooView : Object
         {
             _this = _owner;
             _this.inspector = this;
-            this.el = _this.view.el.get_inspector().get_view();
+            this.el = _this.view.el.get_inspector().get_web_view();
 
             // my vars
 

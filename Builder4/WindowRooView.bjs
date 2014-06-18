@@ -91,7 +91,7 @@
                     "listeners": {},
                     "items": [
                         {
-                            ".ctor": "_this.view.el.get_inspector().get_view()",
+                            ".ctor": "_this.view.el.get_inspector().get_web_view()",
                             "id": "inspector",
                             "pack": "add",
                             "xtype": "WebView",
