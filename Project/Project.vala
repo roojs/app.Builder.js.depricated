@@ -60,7 +60,7 @@ namespace Project {
 		{
 
 			var dirname = GLib.Environment.get_home_dir() + "/.Builder";
-			var dir = File.new_for_path(this.dirname);
+			var dir = File.new_for_path(dirname);
 		    if (!dir.query_exists()) {
 		        dir.make_directory();
 		        return;
