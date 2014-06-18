@@ -645,6 +645,7 @@ public class Xcls_WindowRooView : Object
             _this.inspector = this;
 
             // my vars
+            this.undefined = this.view.get_inspector();
 
             // set gobject values
         }
