@@ -182,7 +182,7 @@ public class JsRender.Node : Object {
                     // it's a standard prop..
                     
                     // munge property..??
-                    els.add(pad + " : " + pl.mungeToString (false,  pad + "    ",  doubleStringProps));
+                    els.add(pad + " : " + pl.mungeToString (  pad + "    ",  doubleStringProps));
                     
                     
                     //keys.push(prop);
@@ -205,7 +205,7 @@ public class JsRender.Node : Object {
 					old = ar_props.get(sprop);
 				}
 				var nstr  = old += old.length > 0 ? ",\n" : "";
-				nstr += pl.mungeToString (false,  pad + "        ",  doubleStringProps);
+				nstr += pl.mungeToString (  pad + "        ",  doubleStringProps);
 				
           		ar_props.set(sprop, nstr);
                  
@@ -389,7 +389,7 @@ public class JsRender.Node : Object {
 					 itms += ",\n";
 				}
 				itms +=    pad + "    "  +
-					this.items.get(i).mungeToString(false, pad + "        ",  doubleStringProps);
+					this.items.get(i).mungeToString( pad + "        ",  doubleStringProps);
 				
 				
 			}
