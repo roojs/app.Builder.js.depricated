@@ -600,6 +600,13 @@ public class Xcls_WindowRooView : Object
                 
                 this.renderedData = js;
             
+            
+                string js_src = js + "\n" +
+            	"Roo.onReady(function() {\n" +
+            	"if (" + _this.file.name +".show) " +  _this.file.name +".show({});\n" +
+            	"Roo.XComponent.build();\n" +
+            	"});\n";
+            	
                 print("render js: " + js);
                 //if (!this.ready) {
               //      console.log('not loaded yet');
