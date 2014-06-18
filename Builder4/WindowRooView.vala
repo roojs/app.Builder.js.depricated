@@ -626,7 +626,7 @@ public class Xcls_WindowRooView : Object
     }
     public class Xcls_inspector : Object 
     {
-        public WebKit.WebInspector el;
+        public WebKit.WebView el;
         private Xcls_WindowRooView  _this;
 
 
