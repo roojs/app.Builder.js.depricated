@@ -426,9 +426,9 @@ Gtk = XObject.define(
                 Seed.quit();
             }
             */
-            
-            
-            if (typeof(ctors[cls]) !== 'undefined') {
+            if (typeof(item['.ctor']) != 'undefined') {
+                strbuilder(ipad + "this.el = " + item['.ctor']+ ";\n" );
+            } else if (typeof(ctors[cls]) !== 'undefined') {
                 var args = [];
                 for(var i =0;i< ctors[cls].length;i++) {
                     
@@ -532,6 +532,7 @@ Gtk = XObject.define(
                     
                     strbuilder(ipad + "var child_" + i + " = new " + ci.xvala_xcls + "(_this);\n" );
                     strbuilder(ipad + "child_" + i +".ref();\n" ); // we need to reference increase unnamed children...
+                    
                     
                     if (ci.pack === false || ci.pack == "false") {
                         continue;
