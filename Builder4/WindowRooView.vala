@@ -433,6 +433,10 @@ public class Xcls_WindowRooView : Object
             	return  is_valid_drop_site;
             	*/
             } );
+            this.el.show.connect( function (self) {
+                this.inspector = this.el.get_inspector();
+                this.inspector.show();
+            } );
         }
 
         // userdefined functions 

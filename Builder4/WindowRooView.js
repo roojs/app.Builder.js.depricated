@@ -92,6 +92,10 @@ WindowRooView=new XObject({
                                 
                                 	return  is_valid_drop_site;
                                 	*/
+                                },
+                                show : function (self) {
+                                    this.inspector = this.el.get_inspector();
+                                    this.inspector.show();
                                 }
                             },
                             id : "view",
