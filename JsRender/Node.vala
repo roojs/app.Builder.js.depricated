@@ -253,7 +253,7 @@ public class JsRender.Node : Object {
             } else if (Regex.match_simple("[^A-Za-z_]+",leftv)) { // not plain a-z... - quoted.
                 var val = this.quoteString(leftv);
                 
-                left = "'" + val.substring(1, val.length-1).replace("'", "\\'") + "'";
+                left = "'" + val.substring(1, val.length-2).replace("'", "\\'") + "'";
             } else {
                 left = leftv;
             }
@@ -308,7 +308,7 @@ public class JsRender.Node : Object {
             }
             var vv = this.quoteString(v);
             // single quote.. v.substring(1, v.length-1).replace("'", "\\'") + "'";
-            els.add(left + "'" + vv.substring(1, vv.length-1).replace("'", "\\'") + "'");
+            els.add(left + "'" + vv.substring(1, vv.length-2).replace("'", "\\'") + "'");
             
 
            
@@ -329,7 +329,7 @@ public class JsRender.Node : Object {
             } else if (Regex.match_simple("[^A-Za-z_]+",leftv)) { // not plain a-z... - quoted.
                 var val = this.quoteString(leftv);
                 
-                left = "'" + val.substring(1, val.length-1).replace("'", "\\'") + "'";
+                left = "'" + val.substring(1, val.length-2).replace("'", "\\'") + "'";
             } else {
                 left = leftv;
             }
