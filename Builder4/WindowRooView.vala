@@ -389,13 +389,14 @@ public class Xcls_WindowRooView : Object
                     var wv = this.inspector.get_web_view();
                     if (wv != null) {
                         print("got inspector web view");
-                        wv.reparent(_this.inspectorcontainer.el);
+                        _this.inspectorcontainer.el.add(wv);
                     } else {
                         print("no web view yet");
                     }
                     return true;
                    
                 });
+                
                   this.inspector.show();
                  // FIXME - base url of script..
                  // we need it so some of the database features work.
