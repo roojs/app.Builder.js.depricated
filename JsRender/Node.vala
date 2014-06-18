@@ -383,11 +383,16 @@ public class JsRender.Node : Object {
 		// finally munge the children...
 		if (this.items.size> 0) {
 			var itms = "items : [\n";
+			var n = 0;
 			for(var i = 0; i < this.items.size;i++) {
-				// 
-				if (i > 0) {
+
+				if (this.items.get(i).props.has_key("*prop")) {
+					continue;
+				}
+				if (n > 0) {
 					 itms += ",\n";
 				}
+				n++;
 				itms +=    pad + "    "  +
 					this.items.get(i).mungeToString( pad + "        ",  doubleStringProps);
 				
