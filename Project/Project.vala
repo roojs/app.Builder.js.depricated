@@ -47,7 +47,9 @@ namespace Project {
 		    this.files = new Gee.HashMap<string,JsRender.JsRender>();
 		    //XObject.extend(this, cfg);
 		    //this.files = { }; 
-		    this.paths.set(path, "dir");
+			if (path.length) {
+				this.paths.set(path, "dir");
+			}
 		    
 		    
 		}
@@ -83,9 +85,34 @@ namespace Project {
 		    
 
 		}
-		public static Project factoryFromFile(string jsonfile)
+		public static void Project factoryFromFile(string jsonfile)
 		{
+			 
+            var pa = new Json.Parser();
+            pa.load_from_file(jsonfile);
+            var node = pa.get_root();
+            
+            if (node.get_node_type () != Json.NodeType.OBJECT) {
+				print("SKIP " + jsonfile + " - invalid format?\n");
+		        return;
+	        }
+			
+            var obj = node.get_object ();
+			var xtype =  obj.get_string_member("xtype");
 
+			
+            this.name = obj.get_string_member("name");
+            this.parent = obj.get_string_member("parent");
+            this.permname = obj.get_string_member("permname");
+            this.title = obj.get_string_member("title");
+            this.modOrder = obj.get_string_member("modOrder");
+             
+            // load items[0] ??? into tree...
+
+            var ar = obj.get_array_member("items");
+            var tree_base = ar.get_object_element(0);
+            this.tree = new Node();
+            this.tree.loadFromJson(tree_base);
 
 		}
 		
