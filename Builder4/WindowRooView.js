@@ -261,12 +261,13 @@ WindowRooView=new XObject({
                                 
                                 this.renderedData = js;
                             
-                                
+                                print("render js: " + js);
                                 //if (!this.ready) {
                               //      console.log('not loaded yet');
                                 //}
                                 this.lastRedraw = new DateTime.now_local();
                             
+                                
                                 this.el.run_javascript("Builder.render(" + this.renderedData + ");", null);
                             //     print( "before render" +    this.lastRedraw);
                             //    print( "after render" +    (new Date()));
