@@ -59,7 +59,7 @@
                             ]
                         },
                         {
-                            "pack": "pack_start,true,true,0",
+                            "pack": "pack_end,true,true,0",
                             "xtype": "ScrolledWindow",
                             "|init": "  this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);\n \n",
                             "|shadow_type": "Gtk.ShadowType.IN",

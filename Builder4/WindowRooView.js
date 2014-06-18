@@ -68,7 +68,7 @@ WindowRooView=new XObject({
                 },
                 {
                     xtype: Gtk.ScrolledWindow,
-                    pack : "pack_start,true,true,0",
+                    pack : "pack_end,true,true,0",
                     init : this.el.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);,
                     shadow_type : Gtk.ShadowType.IN,
                     items : [
