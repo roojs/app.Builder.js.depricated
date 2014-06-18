@@ -404,10 +404,13 @@ public class JsRender.Node : Object {
 			var itms = "items : [\n";
 			for(var i = 0; i < this.items.size;i++) {
 				// 
+				if (i > 0) {
+					 items + ",\n";
+				}
 				itms +=    pad + "    "  +
-					this.items.get(i).mungeToString(false, pad + "        ",  doubleStringProps) + "\n";
+					this.items.get(i).mungeToString(false, pad + "        ",  doubleStringProps) +;
 				
-
+				
 			}
 			itms +=    pad + "]"  + "\n";
 			els.add(itms);
