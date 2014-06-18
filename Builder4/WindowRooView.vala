@@ -556,7 +556,7 @@ public class Xcls_WindowRooView : Object
                 
             
               //   this.runhtml  = this.runhtml || '';
-                 if (!project.runhtml.length) {
+                 if (project.runhtml.length < 1) {
                       project.runhtml = "<!-- no run html yet -->";
                  }
                  
