@@ -192,7 +192,7 @@ public class JsRender.Node : Object {
 
 
 				
-                var sprop  = prop.substring(0,  -2); //strip []
+                var sprop  = prop.replace("[]", "");
 				print("sprop is : " + sprop + "\n");
 				
                 // it's an array type..
