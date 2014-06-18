@@ -29,7 +29,7 @@ void diff(string original, string data)
 void testBuilderFile(string dir,  string name, string test)
 {
 	 
-	var proj = new Project.Gtk(dir );
+	var proj = Project.factory(dir );
 	proj.scanDirs();
 	//print(proj.toJSON(true));
 	//print("\ndone\n");
