@@ -19,7 +19,7 @@ namespace Project {
 		}
 
 	// static array of all projects.
-	public Gee.ArrayList<Project> projects;
+	public Gee.HashMap<string,Project>  projects;
 
 	
 	public class Project : Object {
