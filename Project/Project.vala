@@ -56,7 +56,7 @@ namespace Project {
 
 
 		
-		public static void loadAdd()
+		public static void loadAll()
 		{
 
 			var dirname = GLib.Environment.get_home_dir() + "/.Builder";
