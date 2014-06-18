@@ -111,7 +111,7 @@ namespace Project {
 			paths.foreach_member((sobj, key, val) => {
 				proj.paths.set(key, "dir");
 			});
-			projects.add(proj);
+			projects.set(proj.name,proj);
 		}
 		
 		
