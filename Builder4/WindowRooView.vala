@@ -651,6 +651,8 @@ public class Xcls_WindowRooView : Object
 
         // userdefined functions 
 
+        // skip .ctor - not pipe 
+
         // skip id - not pipe 
 
         // skip pack - not pipe 
