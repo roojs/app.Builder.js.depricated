@@ -280,9 +280,9 @@ public class JsRender.Node : Object {
                 var str = v.strip();
 				  
                 var lines = str.split("\n");
-				  
+				var nstr = "" + str;
                 if (lines.length > 0) {
-                    str =  string.joinv("\n" + pad, lines);
+                    nstr =  string.joinv("\n" + pad, lines);
                 }
                 //print("==> " +  str + "\n");
                 els.add(left + str);
