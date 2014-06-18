@@ -159,6 +159,8 @@ public class JsRender.Node : Object {
 		
 		// look throught he chilren == looking for * prop.. -- fixme might not work..
 		
+		var ar_props = new Gee.HashMap<string,string>();
+
 		
         if (!isArray && this.hasChildren()) {
             // look for '*props'
@@ -186,14 +188,26 @@ public class JsRender.Node : Object {
                     //keys.push(prop);
                     continue;
                 }
-                
-                prop  = prop.substring(0,  -2); //strip []
+
+
+
+				
+                var sprop  = prop.substring(0,  -2); //strip []
                 // it's an array type..
-                if (!oprops.has_key(prop)) {
-                    var cn = new Node();
-                    oprops.set(prop, cn);
+				var old = "";
+                if (!ar_props.has_key(sprop)) {
                     
-                }
+                    ar_props.set(sprop, "");
+                    
+                } else {
+					old = ar_props.get(sprop);
+				}
+				old += old.length > 0 ? ",\n" : "";
+				old += pl.mungeToString (bool isListener, string pad,  Gee.ArrayList<string> doubleStringProps)
+				
+
+
+				
                 // ignores the fact it might be duplciated...
                 oprops.get(prop).is_array = true;
                 oprops.get(prop).items.add(pl);
