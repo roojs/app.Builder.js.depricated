@@ -482,6 +482,10 @@ Gtk = XObject.define(
                 if (k[0] != '.') {
                     continue;
                 }
+                if (k == '.ctor') {
+                    continue; 
+                }
+                
                 var kk = k.substring(1);
                 var v = item[k];
                 var vv = kk.split(':');
