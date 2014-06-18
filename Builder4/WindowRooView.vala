@@ -556,12 +556,8 @@ public class Xcls_WindowRooView : Object
                 
             
               //   this.runhtml  = this.runhtml || '';
-                 if (project.runhtml.length < 1) {
-                      project.runhtml = "<!-- no run html yet -->";
-                 }
                  
                  
-                 if ((project.runhtml != this.runhtml) || (this.redraws > 10)) {
                     // then we need to reload the browser using
                     // load_html_string..
                     
@@ -583,19 +579,6 @@ public class Xcls_WindowRooView : Object
                     GLib.FileUtils.get_contents("/home/alan/gitlive/app.Builder.js/builder.html", out inhtml);
                     
                     
-                    var html = inhtml.replace("</head>", runhtml + this.runhtml + "</head>");
-                    print("LOAD HTML " + html);
-                    
-                    this.el.load_html( html , 
-                        //fixme - should be a config option!
-                        "http://localhost/app.Builder/"
-                    );
-                    this.redraws = 0;
-                    this.refreshRequired = true;
-                    // should trigger load_finished! - which in truns shoudl set refresh Required;
-                    return;
-                
-                }
                 
                 
                 this.renderedData = js;
@@ -613,12 +596,20 @@ public class Xcls_WindowRooView : Object
                 //}
                 this.lastRedraw = new DateTime.now_local();
             
-                
-                this.el.run_javascript("Builder.render(" + 
-                        _this.file.tree.quoteString(js_src) +
-                        ", " +
-                        _this.file.tree.quoteString(_this.file.name) +
-                         ");", null);
+                    var html = inhtml.replace("</head>", runhtml + this.runhtml + 
+                    
+                            '<script type="text/javascript">' + "\n" +
+                            js_src + "\n" + 
+                            '</script>' + 
+                                    
+                    "</head>");
+                    print("LOAD HTML " + html);
+                    
+                    this.el.load_html( html , 
+                        //fixme - should be a config option!
+                        "http://localhost/app.Builder/"
+                    );
+                    
             //     print( "before render" +    this.lastRedraw);
             //    print( "after render" +    (new Date()));
                 
