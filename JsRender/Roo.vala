@@ -383,6 +383,7 @@ namespace JsRender {
             //print(JSON.stringify(this.items, null,4));
                        
             if (top == null) {
+				print ("guessname returned false");
                 return "";
             }
             
