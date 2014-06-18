@@ -24,6 +24,7 @@ public class Xcls_WindowRooView : Object
 
     public Xcls_AutoRedraw AutoRedraw;
     public Xcls_view view;
+    public Xcls_inspectorcontainer inspectorcontainer;
 
         // my vars
     public JsRender.JsRender file;
@@ -90,7 +91,7 @@ public class Xcls_WindowRooView : Object
             var child_1 = new Xcls_ScrolledWindow7(_this);
             child_1.ref();
             this.el.add (  child_1.el  );
-            var child_2 = new Xcls_ScrolledWindow9(_this);
+            var child_2 = new Xcls_inspectorcontainer(_this);
             child_2.ref();
             this.el.add (  child_2.el  );
         }
@@ -587,7 +588,7 @@ public class Xcls_WindowRooView : Object
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_ScrolledWindow9 : Object 
+    public class Xcls_inspectorcontainer : Object 
     {
         public Gtk.ScrolledWindow el;
         private Xcls_WindowRooView  _this;
@@ -596,9 +597,10 @@ public class Xcls_WindowRooView : Object
             // my vars
 
             // ctor 
-        public Xcls_ScrolledWindow9(Xcls_WindowRooView _owner)
+        public Xcls_inspectorcontainer(Xcls_WindowRooView _owner)
         {
             _this = _owner;
+            _this.inspectorcontainer = this;
             this.el = new Gtk.ScrolledWindow( null, null );
 
             // my vars
@@ -612,6 +614,8 @@ public class Xcls_WindowRooView : Object
         }
 
         // userdefined functions 
+
+        // skip id - not pipe 
 
         // skip pack - not pipe 
 
