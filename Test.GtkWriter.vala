@@ -80,7 +80,7 @@ void rooWindowTest(string name)
 	
 	proj.scanDirs();
 	 
-	var tf = proj.files.get(dir + "/" + name + ".bjs");
+	var tf = proj.getFile(name);
 	tf.loadItems();
 	
 	var w = new Xcls_MainWindow();
