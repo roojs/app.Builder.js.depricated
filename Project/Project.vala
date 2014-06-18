@@ -18,6 +18,10 @@ namespace Project {
 			INVALID_VALUE
 		}
 
+	// static array of all projects.
+	public Gee.ArrayList<Project> projects;
+
+	
 	public class Project : Object {
 		
 		public signal void on_changed (); 
@@ -53,9 +57,38 @@ namespace Project {
 		public static void loadAdd()
 		{
 
+			var dirname = GLib.get_home_dir() + "/.Builder";
+			var dir = File.new_for_path(this.dirname);
+		    if (!dir.query_exists()) {
+		        dir.make_directory();
+		        return;
+		    }
+			projects = new  Gee.ArrayList<Project>();
+			  
+		    var f = File.new_for_path(dir);
+		    try {
+		        var file_enum = f.enumerate_children(
+                     	   GLib.FileAttribute.STANDARD_DISPLAY_NAME, GLib.FileQueryInfoFlags.NONE, null);
+		        
+		         
+		        FileInfo next_file; 
+		        while ((next_file = file_enum.next_file(null)) != null) {
+		             var fn = next_file.get_display_name();
+					 if (!Regex.match_simple("\.json$", fn)) {
+						 continue;
+					 }
+            		 factoryFromFile(dir + "/" + fn);
+				}
+            }
+		    
+
+		}
+		public static Project factoryFromFile(string jsonfile)
+		{
 
 
 		}
+		
 		
 		public static Project factory(string xtype, string path)
 		{
