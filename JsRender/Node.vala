@@ -202,25 +202,14 @@ public class JsRender.Node : Object {
                 } else {
 					old = ar_props.get(sprop);
 				}
-				old += old.length > 0 ? ",\n" : "";
-				old += pl.mungeToString (bool isListener, string pad,  Gee.ArrayList<string> doubleStringProps)
+				var nstr  = old += old.length > 0 ? ",\n" : "";
+				nstr += pl.mungeToString (false,  pad + "    ",  doubleStringProps);
 				
-
-
-				
-                // ignores the fact it might be duplciated...
-                oprops.get(prop).is_array = true;
-                oprops.get(prop).items.add(pl);
-              
-                
-                
+          		ar_props.set(sprop, nstr);
+                 
                 
             }
-            
-            //obj.items = newitems;
-            //if (!obj.items.length) {
-            //    delete obj.items;
-            //}
+             
             
         }
         if (this.isArray()) {
