@@ -93,7 +93,7 @@ WindowRooView=new XObject({
                                 	*/
                                 },
                                 show : ( ) => {
-                                    _this.inspector.show();
+                                    this.inspector.show();
                                 }
                             },
                             id : "view",

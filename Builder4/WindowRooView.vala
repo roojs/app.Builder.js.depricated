@@ -454,7 +454,7 @@ public class Xcls_WindowRooView : Object
             	*/
             } );
             this.el.show.connect(   ( ) => {
-                _this.inspector.show();
+                this.inspector.show();
             } );
         }
 
