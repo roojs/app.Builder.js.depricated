@@ -442,7 +442,7 @@ public class Xcls_WindowRooView : Object
                 var wv = this.inspector.get_web_view();
                 if (wv != null) {
                     print("got inspector web view");
-                    wv.reparent(this.inspectorcontainer.el);
+                    wv.reparent(_this.inspectorcontainer.el);
                 }
                 
                 this.inspector.show();
