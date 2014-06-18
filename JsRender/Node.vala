@@ -311,7 +311,7 @@ public class JsRender.Node : Object {
             
             
             if (Lang.isNumber(v) || Lang.isBoolean(v)) { // boolean or number...?
-                els.add(left + v );
+                els.add(left + v.down() );
                 continue;
             }
             
