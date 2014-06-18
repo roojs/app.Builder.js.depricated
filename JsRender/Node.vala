@@ -156,7 +156,10 @@ public class JsRender.Node : Object {
         }
         //var newitems = new Gee.ArrayList<JsRender.Node>();
         var oprops = new Gee.HashMap<string,Node>();
-        
+
+		// look throught he chilren == looking for * prop.. -- fixme might not work..
+		
+		
         if (!isArray && this.hasChildren()) {
             // look for '*props'
            
