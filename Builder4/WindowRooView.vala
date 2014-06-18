@@ -591,6 +591,7 @@ public class Xcls_WindowRooView : Object
                         "http://localhost/app.Builder/"
                     );
                     this.redraws = 0;
+                    this.refreshRequired = true;
                     // should trigger load_finished! - which in truns shoudl set refresh Required;
                     return;
                 
