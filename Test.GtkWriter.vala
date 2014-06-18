@@ -80,7 +80,7 @@ void rooWindowTest(string name)
 	
 	proj.scanDirs();
 	 
-	var tf = proj.getFile(name);
+	var tf = proj.getByName(name);
 	tf.loadItems();
 	
 	var w = new Xcls_MainWindow();
