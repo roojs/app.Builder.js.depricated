@@ -65,7 +65,7 @@ namespace Project {
 		        dir.make_directory();
 		        return;
 		    }
-			projects = new  Gee.ArrayList<Project>();
+			projects = new  Gee.HashMap<string,Project>();
 			  
 		   
 		    try {
