@@ -94,7 +94,7 @@
                             ".ctor": "_this.view.el.get_inspector() ",
                             "id": "inspector",
                             "pack": "add",
-                            "xtype": "WebView",
+                            "xtype": "WebInspector",
                             "|xns": "WebKit"
                         }
                     ]
