@@ -358,7 +358,7 @@ public class JsRender.Node : Object {
             
             
             if (right.length > 0){
-                els.add(left + "[\n" +  pad + "     " +  right + "\n" + pad + "]\n");
+                els.add(left + "[\n" +  pad + "     " +  right + "\n" + pad + "]");
             }
         
             
