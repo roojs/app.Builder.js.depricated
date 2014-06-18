@@ -81,7 +81,7 @@ namespace Project {
 					 }
             		 factoryFromFile(dir + "/" + fn);
 				}
-            } catch(e) {
+            } catch(Error e) {
 				print("oops - something went wrong scanning the projects\n");
 			}
 		    
