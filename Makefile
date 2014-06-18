@@ -3,20 +3,6 @@
 
 
 
-datatest:
-	valac -g  --pkg gtk+-3.0 \
-		--pkg gtksourceview-3.0 \
-		--pkg libxml-2.0 \
-		--pkg json-glib-1.0 \
-		--pkg gee-1.0 \
-		--pkg gobject-introspection-1.0 \
-		Test.GtkWriter.vala \
-		JsRender/*.vala \
-		Project/*.vala \
-		Palete/*.vala \
-		-o /tmp/test
-#		Builder4/*.vala \
-
 all:
 	valac -DUI=1 -g  --pkg gtk+-3.0 \
 		--pkg gtksourceview-3.0 \
@@ -41,6 +27,20 @@ all:
 		Builder4/MainWindow.vala \
 		Builder4/WindowRightPalete.vala \
 		Builder4/WindowLeftTree.vala \
+		-o /tmp/test
+#		Builder4/*.vala \
+
+datatest:
+	valac -g  --pkg gtk+-3.0 \
+		--pkg gtksourceview-3.0 \
+		--pkg libxml-2.0 \
+		--pkg json-glib-1.0 \
+		--pkg gee-1.0 \
+		--pkg gobject-introspection-1.0 \
+		Test.GtkWriter.vala \
+		JsRender/*.vala \
+		Project/*.vala \
+		Palete/*.vala \
 		-o /tmp/test
 #		Builder4/*.vala \
 
