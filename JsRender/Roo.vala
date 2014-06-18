@@ -378,7 +378,7 @@ namespace JsRender {
         
         public override string  toSourcePreview()
         {
-            
+            print("to source preview\n");
             var top = this.guessName(this.tree);
             //print(JSON.stringify(this.items, null,4));
                        
