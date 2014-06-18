@@ -75,8 +75,9 @@ void testLeftTree(string name)
 
 void rooWindowTest(string name)
 {
-	var dir = "/home/alan/gitlive/Pman.Core/"; 
-	var proj = Project.Project.factory( "Roo", dir );
+
+	var proj = Projects.Projects.get("Pman.Core");
+	
 	proj.scanDirs();
 	 
 	var tf = proj.files.get(dir + "/" + name + ".bjs");
@@ -97,6 +98,8 @@ int main (string[] args) {
     Gtk.init (ref args);
     new JsRender.Lang_Class();
 	GLib.Log.set_always_fatal(LogLevelFlags.LEVEL_ERROR | LogLevelFlags.LEVEL_CRITICAL); 
+	Projects.Projects.loadAll();
+	
 	//print ("Drop points for Gtk.ScrolledWindow are : " + 
 	//	string.joinv(", " , Palete.factory("Gtk").getDropList("Gtk.ScrolledWindow"))
 	//);
