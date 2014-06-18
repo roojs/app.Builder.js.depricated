@@ -49,17 +49,17 @@ public class Xcls_WindowRooView : Object
     // userdefined functions 
 
     // skip .JsRender.JsRender:file - already used 
-    public void loadFile(JsRender.JsRender file)
-        {
-            this.file = file
-            this.view.renderJS(true);
-        }
 
     // skip id - not pipe 
 
     // skip pack - not pipe 
 
     // skip xtype - not pipe 
+    public void loadFile(JsRender.JsRender file)
+        {
+            this.file = file;
+            this.view.renderJS(true);
+        }
 
     // skip |xns - no return type
 

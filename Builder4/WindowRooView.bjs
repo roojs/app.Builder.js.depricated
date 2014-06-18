@@ -7,10 +7,10 @@
     "items": [
         {
             ".JsRender.JsRender:file": "",
-            "|void:loadFile": "(JsRender.JsRender file)\n{\n    this.file = file\n    this.view.renderJS(true);\n}",
             "id": "WindowRooView",
             "pack": "add",
             "xtype": "VPaned",
+            "|void:loadFile": "(JsRender.JsRender file)\n{\n    this.file = file;\n    this.view.renderJS(true);\n}",
             "|xns": "Gtk",
             "items": [
                 {
