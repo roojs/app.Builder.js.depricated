@@ -182,7 +182,7 @@ public class JsRender.Node : Object {
                     // it's a standard prop..
                     
                     // munge property..??
-                    els.add( prop + " : " + pl.mungeToString (  pad + "    ",  doubleStringProps));
+                    ar_props.set( prop , pl.mungeToString (  pad + "    ",  doubleStringProps));
                     
                     
                     //keys.push(prop);
