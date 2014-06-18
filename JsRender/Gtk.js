@@ -414,6 +414,23 @@ Gtk = XObject.define(
 			} else {
 				strbuilder(pad + "public " + xcls + "(" + this.top_xcls + " _owner)\n" + pad + "{\n");
 			}
+            
+            
+            
+            // public static?
+            if (!depth) {
+                strbuilder(ipad + "_this = this;\n");
+                strbuilder(ipad + this.name  + " = this;\n");
+            } else {
+                strbuilder(ipad + "_this = _owner;\n");
+                if (item.xvala_id !== false) {
+                    strbuilder(ipad + "_this." + item.xvala_id  + " = this;\n");
+                   
+                }
+                
+                
+            }
+            
             // wrapped ctor..
             // this may need to look up properties to fill in the arguments..
             // introspection does not workk..... - as things like gtkmessagedialog
@@ -459,19 +476,6 @@ Gtk = XObject.define(
             
              
             
-            // public static?
-            if (!depth) {
-                strbuilder(ipad + "_this = this;\n");
-                strbuilder(ipad + this.name  + " = this;\n");
-            } else {
-                strbuilder(ipad + "_this = _owner;\n");
-                if (item.xvala_id !== false) {
-                    strbuilder(ipad + "_this." + item.xvala_id  + " = this;\n");
-                   
-                }
-                
-                
-            }
             // initialize.. my vars..
             strbuilder("\n" + ipad + "// my vars\n");
             for (var k in item) {
