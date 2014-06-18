@@ -24,7 +24,6 @@ public class Xcls_WindowRooView : Object
 
     public Xcls_AutoRedraw AutoRedraw;
     public Xcls_view view;
-    public Xcls_inspector inspector;
 
         // my vars
     public JsRender.JsRender file;
@@ -41,9 +40,6 @@ public class Xcls_WindowRooView : Object
         // set gobject values
         var child_0 = new Xcls_VBox2(_this);
         child_0.ref();
-        var child_1 = new Xcls_ScrolledWindow9(_this);
-        child_1.ref();
-        this.el.add (  child_1.el  );
     }
 
     // userdefined functions 
@@ -573,86 +569,6 @@ public class Xcls_WindowRooView : Object
             //    print( "after render" +    (new Date()));
                 
             }
-
-        // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
-    }
-    public class Xcls_ScrolledWindow9 : Object 
-    {
-        public Gtk.ScrolledWindow el;
-        private Xcls_WindowRooView  _this;
-
-
-            // my vars
-
-            // ctor 
-        public Xcls_ScrolledWindow9(Xcls_WindowRooView _owner)
-        {
-            _this = _owner;
-            this.el = new Gtk.ScrolledWindow( null, null );
-
-            // my vars
-
-            // set gobject values
-            var child_0 = new Xcls_inspector(_this);
-            child_0.ref();
-            this.el.add (  child_0.el  );
-
-            // listeners 
-        }
-
-        // userdefined functions 
-
-        // skip xtype - not pipe 
-
-        // skip |xns - no return type
-
-        // skip pack - not pipe 
-
-        // skip listeners - not pipe 
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
-    }
-    public class Xcls_inspector : Object 
-    {
-        public WebKit.WebViewBase el;
-        private Xcls_WindowRooView  _this;
-
-
-            // my vars
-
-            // ctor 
-        public Xcls_inspector(Xcls_WindowRooView _owner)
-        {
-            _this = _owner;
-            _this.inspector = this;
-            this.el = _this.view.el.get_inspector().get_web_view();
-
-            // my vars
-
-            // set gobject values
-        }
-
-        // userdefined functions 
-
-        // skip .ctor - not pipe 
-
-        // skip id - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
 
         // skip |xns - no return type
 
