@@ -41,7 +41,7 @@ public class Xcls_WindowRooView : Object
         // set gobject values
         var child_0 = new Xcls_VBox2(_this);
         child_0.ref();
-        this.el.pack1 (  child_0.el , true,false );
+        this.el.pack1 (  child_0.el , true,true );
         var child_1 = new Xcls_inspectorcontainer(_this);
         child_1.ref();
         this.el.pack2 (  child_1.el , false,false );
@@ -98,11 +98,11 @@ public class Xcls_WindowRooView : Object
 
         // userdefined functions 
 
-        // skip |homogeneous - already used 
-
         // skip pack - not pipe 
 
         // skip xtype - not pipe 
+
+        // skip |homogeneous - already used 
 
         // skip |xns - no return type
 
