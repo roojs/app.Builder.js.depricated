@@ -14,6 +14,9 @@ Builder  = {
     
     render : function(data, clsname)
     {
+        
+        console.log(data);
+        console.log(clsname);
         // for debugging 
         // console.log(data);        return; 
         //Roo.log(data);
