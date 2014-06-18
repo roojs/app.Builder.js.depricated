@@ -105,8 +105,9 @@ int main (string[] args) {
 	//testBuilderFile("Gtk", "/home/alan/gitlive/app.Builder.js/Builder4, "Editor", "JS");
 	//testBuilderFile("Gtk", "/home/alan/gitlive/app.Builder.js/Builder4","Editor", "VALA");
 	//testBuilderFile("Roo", "/home/alan/gitlive/Pman.Core/","Pman.Dialog.CoreEmail", "PREVIEW");
+	testBuilderFile("Roo", "/home/alan/gitlive/Pman.Core/","Pman.DDialog.CoreEmailPreview", "PREVIEW");
 	//testLeftTree("Editor");
-	rooWindowTest("Pman.Dialog.CoreEmailPreview");Gtk.main();
+	//rooWindowTest("Pman.Dialog.CoreEmailPreview");Gtk.main();
 	//rooWindowTest("Pman.Dialog.CoreEmail"); 
 
     
