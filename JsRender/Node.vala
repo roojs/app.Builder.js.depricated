@@ -420,7 +420,7 @@ public class JsRender.Node : Object {
 		print ("STR PROPS: " + str_props);
 		
         return   "{\n" +
-            pad  + gLibStringListJoin(",\n" + pad , els) + 
+            pad  + str_props + 
             "\n" + spad +  "}";
            
            
