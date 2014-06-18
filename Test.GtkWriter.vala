@@ -26,9 +26,9 @@ void diff(string original, string data)
 
 }
 
-void testBuilderFile(string name, string test)
+void testBuilderFile(string dir,  string name, string test)
 {
-	var dir = "/home/alan/gitlive/app.Builder.js/Builder4"; 
+	 
 	var proj = new Project.Gtk(dir );
 	proj.scanDirs();
 	//print(proj.toJSON(true));
@@ -99,9 +99,10 @@ int main (string[] args) {
 	//	string.joinv(", " , Palete.factory("Gtk").getDropList("Gtk.ScrolledWindow"))
 	//);
 
-	//testBuilderFile("Editor", "JSON");
-	//testBuilderFile("Editor", "JS");
-	//testBuilderFile("Editor", "VALA");
+	//testBuilderFile("/home/alan/gitlive/app.Builder.js/Builder4" , "Editor", "JSON");
+	//testBuilderFile("/home/alan/gitlive/app.Builder.js/Builder4, "Editor", "JS");
+	//testBuilderFile("/home/alan/gitlive/app.Builder.js/Builder4","Editor", "VALA");
+	testBuilderFile("/home/alan/gitlive/app.Builder.js/Builder4","Editor", "PREVIEW");
 	//testLeftTree("Editor");
 	rooWindowTest("Pman.Dialog.CoreEmail");
 	
