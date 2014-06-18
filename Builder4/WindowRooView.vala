@@ -381,12 +381,7 @@ public class Xcls_WindowRooView : Object
                 // settings.enable_universal_access_from_file_uris = true;
                
                  
-                 // init inspector..
-                this.el.get_inspector().inspect_web_view.connect( (  pg) => {
-                     _this.inspector.el.show();
-                     return _this.inspector.el;
-                
-                });
+                 
                  
                  // FIXME - base url of script..
                  // we need it so some of the database features work.
