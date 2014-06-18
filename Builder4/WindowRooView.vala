@@ -93,7 +93,7 @@ public class Xcls_WindowRooView : Object
             this.el.pack_start (  child_0.el , false,false,0 );
             var child_1 = new Xcls_ScrolledWindow7(_this);
             child_1.ref();
-            this.el.pack_end (  child_1.el , false,true,0 );
+            this.el.pack_end (  child_1.el , true,true,0 );
         }
 
         // userdefined functions 
