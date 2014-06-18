@@ -98,7 +98,7 @@ int main (string[] args) {
     Gtk.init (ref args);
     new JsRender.Lang_Class();
 	GLib.Log.set_always_fatal(LogLevelFlags.LEVEL_ERROR | LogLevelFlags.LEVEL_CRITICAL); 
-	Projects.Projects.loadAll();
+	Project.Project.loadAll();
 	
 	//print ("Drop points for Gtk.ScrolledWindow are : " + 
 	//	string.joinv(", " , Palete.factory("Gtk").getDropList("Gtk.ScrolledWindow"))
