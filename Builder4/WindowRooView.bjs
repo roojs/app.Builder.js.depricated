@@ -14,7 +14,7 @@
             "|xns": "Gtk",
             "items": [
                 {
-                    "xtype": "VBox",
+                    "xtype": "VPaned",
                     "|xns": "Gtk",
                     "items": [
                         {

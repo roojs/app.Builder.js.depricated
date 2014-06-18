@@ -20,7 +20,7 @@ WindowRooView=new XObject({
     },
     items : [
         {
-            xtype: Gtk.VBox,
+            xtype: Gtk.VPaned,
             items : [
                 {
                     xtype: Gtk.HBox,

@@ -39,7 +39,7 @@ public class Xcls_WindowRooView : Object
         // my vars
 
         // set gobject values
-        var child_0 = new Xcls_VBox2(_this);
+        var child_0 = new Xcls_VPaned2(_this);
         child_0.ref();
         this.el.add (  child_0.el  );
     }
@@ -68,19 +68,19 @@ public class Xcls_WindowRooView : Object
     // skip xvala_xcls - not pipe 
 
     // skip xvala_id - not pipe 
-    public class Xcls_VBox2 : Object 
+    public class Xcls_VPaned2 : Object 
     {
-        public Gtk.VBox el;
+        public Gtk.VPaned el;
         private Xcls_WindowRooView  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_VBox2(Xcls_WindowRooView _owner)
+        public Xcls_VPaned2(Xcls_WindowRooView _owner)
         {
             _this = _owner;
-            this.el = new Gtk.VBox( true, 0 );
+            this.el = new Gtk.VPaned();
 
             // my vars
 
