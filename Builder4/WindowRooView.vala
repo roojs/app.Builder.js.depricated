@@ -437,18 +437,6 @@ public class Xcls_WindowRooView : Object
             	return  is_valid_drop_site;
             	*/
             } );
-            this.el.show.connect(   ( ) => {
-                this.inspector = this.el.get_inspector();
-                var wv = this.inspector.get_web_view();
-                if (wv != null) {
-                    print("got inspector web view");
-                    wv.reparent(_this.inspectorcontainer.el);
-                } else {
-                    print("no web view yet");
-                }
-                
-                this.inspector.show();
-            } );
         }
 
         // userdefined functions 

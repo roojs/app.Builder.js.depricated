@@ -91,18 +91,6 @@ WindowRooView=new XObject({
                                 
                                 	return  is_valid_drop_site;
                                 	*/
-                                },
-                                show : ( ) => {
-                                    this.inspector = this.el.get_inspector();
-                                    var wv = this.inspector.get_web_view();
-                                    if (wv != null) {
-                                        print("got inspector web view");
-                                        wv.reparent(_this.inspectorcontainer.el);
-                                    } else {
-                                        print("no web view yet");
-                                    }
-                                    
-                                    this.inspector.show();
                                 }
                             },
                             id : "view",
