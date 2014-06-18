@@ -47,7 +47,7 @@ namespace Project {
 		    this.files = new Gee.HashMap<string,JsRender.JsRender>();
 		    //XObject.extend(this, cfg);
 		    //this.files = { }; 
-			if (path.length) {
+			if (path.length > 0) {
 				this.paths.set(path, "dir");
 			}
 		    
