@@ -383,16 +383,18 @@ public class Xcls_WindowRooView : Object
                  
                 
                 this.inspector = this.el.get_inspector();
-                this.inspector.attach.connect(() => {
+            Render not ready
                 
                     
                     var wv = this.inspector.get_web_view();
                     if (wv != null) {
                         print("got inspector web view");
                         _this.inspectorcontainer.el.add(wv);
+                        wv.show();
                     } else {
                         print("no web view yet");
                     }
+                    
                     return true;
                    
                 });
