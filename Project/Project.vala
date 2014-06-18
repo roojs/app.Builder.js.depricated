@@ -67,9 +67,9 @@ namespace Project {
 		    }
 			projects = new  Gee.ArrayList<Project>();
 			  
-		    var f = File.new_for_path(dir);
+		   
 		    try {
-		        var file_enum = f.enumerate_children(
+		        var file_enum = dir.enumerate_children(
                      	   GLib.FileAttribute.STANDARD_DISPLAY_NAME, GLib.FileQueryInfoFlags.NONE, null);
 		        
 		         
