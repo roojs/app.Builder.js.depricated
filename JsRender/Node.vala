@@ -182,7 +182,7 @@ public class JsRender.Node : Object {
                     // it's a standard prop..
                     
                     // munge property..??
-                    els.add(pad + " : " + pl.mungeToString (  pad + "    ",  doubleStringProps));
+                    els.add(pad + prop + " : " + pl.mungeToString (  pad + "    ",  doubleStringProps));
                     
                     
                     //keys.push(prop);
@@ -417,7 +417,7 @@ public class JsRender.Node : Object {
             
         var spad = pad.substring(0, pad.length-4);
 		var str_props = gLibStringListJoin(",\n" + pad , els) ;
-		print ("STR PROPS: " + str_props);
+		//print ("STR PROPS: " + str_props);
 		
         return   "{\n" +
             pad  + str_props + 
