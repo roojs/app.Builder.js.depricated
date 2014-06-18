@@ -109,7 +109,8 @@ WindowRooView=new XObject({
                                  
                                 
                                 this.inspector = this.el.get_inspector();
-                            Render not ready
+                            
+                                    print("attach called");
                                 
                                     
                                     var wv = this.inspector.get_web_view();
