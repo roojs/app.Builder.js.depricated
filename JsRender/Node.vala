@@ -14,14 +14,14 @@ public class JsRender.Node : Object {
 	public string xvala_xcls; // 'Xcls_' + id;
     public string xvala_id; // item id or ""
             
-    public bool is_array;
+    
     
     public Node()
     {
         this.items = new Gee.ArrayList<Node>();
         this.props = new Gee.HashMap<string,string>();
 		this.listeners = new Gee.HashMap<string,string>();
-        this.is_array = false;
+        
         this.xvala_xcls = "";
 		this.parent = null;
     }
@@ -29,10 +29,7 @@ public class JsRender.Node : Object {
     
     
     
-    public bool isArray()
-    {
-        return this.is_array;
-    }
+    
     public bool hasChildren()
     {
         return this.items.size > 0;
@@ -141,12 +138,12 @@ public class JsRender.Node : Object {
         //isListener = isListener || false;
 
        //var keys = this.keys();
-        var isArray = this.isArray();
+        
         
         
         var els = new Gee.ArrayList<string>(); 
         var skip = new Gee.ArrayList<string>();
-        if (!isArray && this.hasXnsType() ) {
+        if (this.hasXnsType() ) {
                 // this.mungeXtype(obj['|xns'] + '.' + obj['xtype'], els); ??????
                 
                 
@@ -163,7 +160,7 @@ public class JsRender.Node : Object {
 		var ar_props = new Gee.HashMap<string,string>();
 
 		
-        if (!isArray && this.hasChildren()) {
+        if (this.hasChildren()) {
             // look for '*props'
            
             for (var ii =0; ii< this.items.size; ii++) {
@@ -213,26 +210,8 @@ public class JsRender.Node : Object {
              
             
         }
-        if (this.isArray()) {
-            
-            
-            for (var i=0;i< this.items.size;i++) {
-                var el = this.items.get(i);
-                
-                els.add("%d".printf(i) + " : " + el.mungeToString(false, pad,doubleStringProps));
-                
-            }
-            var spad = pad.substring(0, pad.length-4);
-            return   "{\n" +
-                pad  + this.gLibStringListJoin(",\n" + pad , els) + 
-                "\n" + spad +  "}";
-               
-            
-            
-            
-          
-        } 
-        string left;
+
+		string left;
         Regex func_regex ;
         try {
             func_regex = new Regex("^\\s+|\\s+$");
@@ -372,7 +351,7 @@ public class JsRender.Node : Object {
             left += " : ";
             
              
-            //if (!left.length && isArray) print(right);
+            
             
             if (right.length > 0){
                 els.add(left + "[\n" +  pad + "     " +  right + "\n" + pad + "]\n");
@@ -423,10 +402,10 @@ public class JsRender.Node : Object {
 				// 
 				itms +=    pad + "    "  +
 					this.items.get(i).mungeToString(false, pad + "        ",  doubleStringProps) + "\n";
-				itms +=    pad + "]"  + "\n";
+				
 
 			}
-			
+			itms +=    pad + "]"  + "\n";
 			els.add(itms);
 		}
 
