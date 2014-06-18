@@ -11,6 +11,11 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 WindowRooView=new XObject({
     xtype: Gtk.VPaned,
+    'void:loadFile' : (JsRender.JsRender file)
+    {
+        this.file = file
+        this.view.renderJS(true);
+    },
     id : "WindowRooView",
     pack : "add",
     items : [
