@@ -458,10 +458,7 @@ namespace JsRender {
             
             var o = this.mungeToString("            ");   
 
-print("GOT from munge\n");
-			print(o);
-			print("--end--");
-			
+ 
             string[] adda = { " = {",
                 "",
                 "    dialog : false,",
