@@ -398,7 +398,7 @@ public class JsRender.Node : Object {
 				
 				
 			}
-			itms +=    pad + "]"  + "\n";
+			itms +=  "\n"+  pad + "]"  + "\n";
 			els.add(itms);
 		}
 
