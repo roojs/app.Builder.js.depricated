@@ -183,6 +183,9 @@ namespace Project {
 
 		    builder.set_member_name ("xtype");
 		    builder.add_string_value (this.xtype);
+
+			builder.set_member_name ("runhtml");
+		    builder.add_string_value (this.runhtml);
 		    
 		    // file ??? try/false?
 		    builder.set_member_name ("paths");
