@@ -107,7 +107,7 @@ int main (string[] args) {
 	//testBuilderFile("/home/alan/gitlive/app.Builder.js/Builder4","Editor", "VALA");
 	testBuilderFile("/home/alan/gitlive/Pman.Core/","Pman.Dialog.CoreEmail", "PREVIEW");
 	//testLeftTree("Editor");
-	rooWindowTest("Pman.Dialog.CoreEmail"); Gtk.main();
+	//rooWindowTest("Pman.Dialog.CoreEmail"); Gtk.main();
 
     
 	
