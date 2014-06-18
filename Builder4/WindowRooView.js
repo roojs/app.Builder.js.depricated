@@ -107,8 +107,22 @@ WindowRooView=new XObject({
                                 // settings.enable_universal_access_from_file_uris = true;
                                
                                  
-                                 
-                                 
+                                
+                                this.inspector = this.el.get_inspector();
+                                this.inspector.attach.connect(() => {
+                                
+                                    
+                                    var wv = this.inspector.get_web_view();
+                                    if (wv != null) {
+                                        print("got inspector web view");
+                                        wv.reparent(_this.inspectorcontainer.el);
+                                    } else {
+                                        print("no web view yet");
+                                    }
+                                    
+                                   
+                                }
+                                  this.inspector.show();
                                  // FIXME - base url of script..
                                  // we need it so some of the database features work.
                                 this.el.load_html( "Render not ready" , 
