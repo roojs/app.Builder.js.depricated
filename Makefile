@@ -2,6 +2,22 @@
 #vapigen --library gobject-introspection-1.0 /usr/share/gir-1.0/GIRepository-2.0.gir
 
 
+
+datatest:
+	valac -g  --pkg gtk+-3.0 \
+		--pkg gtksourceview-3.0 \
+		--pkg libxml-2.0 \
+		--pkg json-glib-1.0 \
+		--pkg gee-1.0 \
+		--pkg gobject-introspection-1.0 \
+		Test.GtkWriter.vala \
+		JsRender/*.vala \
+		Project/*.vala \
+		Palete/*.vala \
+		
+		-o /tmp/test
+#		Builder4/*.vala \
+
 all:
 	valac -g  --pkg gtk+-3.0 \
 		--pkg gtksourceview-3.0 \
@@ -9,8 +25,6 @@ all:
 		--pkg json-glib-1.0 \
 		--pkg gee-1.0 \
 		--pkg gobject-introspection-1.0 \
-		--vapidir=. \
-		--pkg webkit2gtk-3.0 \
 		Test.GtkWriter.vala \
 		JsRender/*.vala \
 		Project/*.vala \
@@ -28,7 +42,6 @@ all:
 		Builder4/MainWindow.vala \
 		Builder4/WindowRightPalete.vala \
 		Builder4/WindowLeftTree.vala \
-		Builder4/WindowRooView.vala \
 		-o /tmp/test
 #		Builder4/*.vala \
 
