@@ -341,6 +341,7 @@ public class Xcls_WindowRooView : Object
 
 
             // my vars
+        public WebKit.WebInspector inspector;
         public GLib.DateTime lastRedraw;
         public bool pendingRedraw;
         public bool refreshRequired;
@@ -442,6 +443,8 @@ public class Xcls_WindowRooView : Object
         // userdefined functions 
 
         // skip listeners - not pipe 
+
+        // skip .WebKit.WebInspector:inspector - already used 
 
         // skip .GLib.DateTime:lastRedraw - already used 
 
