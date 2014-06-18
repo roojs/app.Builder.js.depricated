@@ -409,7 +409,7 @@ public class JsRender.Node : Object {
 				// 
 				itms +=    pad + "    "  +
 					this.items.get(i).mungeToString(false, pad + "        ",  doubleStringProps) + "\n";
-
+				itms +=    pad + "]"  + "\n";
 
 			}
 			
