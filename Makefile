@@ -18,7 +18,7 @@ datatest:
 #		Builder4/*.vala \
 
 all:
-	valac -D UI=1 -g  --pkg gtk+-3.0 \
+	valac -DUI=1 -g  --pkg gtk+-3.0 \
 		--pkg gtksourceview-3.0 \
 		--pkg libxml-2.0 \
 		--pkg json-glib-1.0 \
