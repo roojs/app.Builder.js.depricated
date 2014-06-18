@@ -40,6 +40,7 @@ public class Xcls_WindowRooView : Object
         // set gobject values
         var child_0 = new Xcls_VBox2(_this);
         child_0.ref();
+        this.el.add (  child_0.el  );
     }
 
     // userdefined functions 
@@ -93,11 +94,9 @@ public class Xcls_WindowRooView : Object
 
         // userdefined functions 
 
-        // skip |xns - no return type
-
         // skip xtype - not pipe 
 
-        // skip pack - not pipe 
+        // skip |xns - no return type
 
         // skip items - not pipe 
 
