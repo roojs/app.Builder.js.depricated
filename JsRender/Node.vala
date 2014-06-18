@@ -156,7 +156,7 @@ public class JsRender.Node : Object {
         }
         //var newitems = new Gee.ArrayList<JsRender.Node>();
         var oprops = new Gee.HashMap<string,Node>();
-
+		
 		// look throught he chilren == looking for * prop.. -- fixme might not work..
 		
 		
@@ -244,7 +244,11 @@ public class JsRender.Node : Object {
             if (skip.contains(k) ) {
                 continue;
             }
-            
+            if (  Regex.match_simple("\\[\\]$", k)) {
+				
+				
+
+			}
             
             string leftv = k[0] == '|' ? k.substring(1) : k;
             // skip builder stuff. prefixed with  '.' .. just like unix fs..
