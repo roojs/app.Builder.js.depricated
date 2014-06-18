@@ -366,7 +366,7 @@ public class JsRender.Node : Object {
                 
 
 				
-				itms +=  pad + "    "  + liter.get_key()  + " : " + str;
+				itms +=  pad + "    "  + liter.get_key().replace("|", "")  + " : " + str;
 
 				i++;
 			
