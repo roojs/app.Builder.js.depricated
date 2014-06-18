@@ -147,8 +147,8 @@ public class JsRender.Node : Object {
                 // this.mungeXtype(obj['|xns'] + '.' + obj['xtype'], els); ??????
                 
                 
-               skip.add("|xns");
-               skip.add("xtype");
+               //skip.add("|xns");
+               //skip.add("xtype");
                
         }
         //var newitems = new Gee.ArrayList<JsRender.Node>();
