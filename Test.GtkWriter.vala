@@ -26,10 +26,10 @@ void diff(string original, string data)
 
 }
 
-void testBuilderFile(string dir,  string name, string test)
+void testBuilderFile(string ptype, string dir,  string name, string test)
 {
 	 
-	var proj = Project.loadDir(dir );
+	var proj = Project.factory( ptype, dir );
 	proj.scanDirs();
 	//print(proj.toJSON(true));
 	//print("\ndone\n");
@@ -103,10 +103,10 @@ int main (string[] args) {
 	//	string.joinv(", " , Palete.factory("Gtk").getDropList("Gtk.ScrolledWindow"))
 	//);
 
-	//testBuilderFile("/home/alan/gitlive/app.Builder.js/Builder4" , "Editor", "JSON");
-	//testBuilderFile("/home/alan/gitlive/app.Builder.js/Builder4, "Editor", "JS");
-	//testBuilderFile("/home/alan/gitlive/app.Builder.js/Builder4","Editor", "VALA");
-	testBuilderFile("/home/alan/gitlive/Pman.Core/","Pman.Dialog.CoreEmail", "PREVIEW");
+	//testBuilderFile("Gtk", "/home/alan/gitlive/app.Builder.js/Builder4" , "Editor", "JSON");
+	//testBuilderFile("Gtk", "/home/alan/gitlive/app.Builder.js/Builder4, "Editor", "JS");
+	//testBuilderFile("Gtk", "/home/alan/gitlive/app.Builder.js/Builder4","Editor", "VALA");
+	testBuilderFile("Roo", "/home/alan/gitlive/Pman.Core/","Pman.Dialog.CoreEmail", "PREVIEW");
 	//testLeftTree("Editor");
 	//rooWindowTest("Pman.Dialog.CoreEmail"); Gtk.main();
 
