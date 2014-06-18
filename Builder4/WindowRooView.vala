@@ -42,6 +42,9 @@ public class Xcls_WindowRooView : Object
         var child_0 = new Xcls_VBox2(_this);
         child_0.ref();
         this.el.pack1 (  child_0.el , true,false );
+        var child_1 = new Xcls_inspectorcontainer(_this);
+        child_1.ref();
+        this.el.pack2 (  child_1.el , false,false );
     }
 
     // userdefined functions 
@@ -91,9 +94,6 @@ public class Xcls_WindowRooView : Object
             var child_1 = new Xcls_ScrolledWindow7(_this);
             child_1.ref();
             this.el.add (  child_1.el  );
-            var child_2 = new Xcls_inspectorcontainer(_this);
-            child_2.ref();
-            this.el.pack2 (  child_2.el , false,false );
         }
 
         // userdefined functions 
