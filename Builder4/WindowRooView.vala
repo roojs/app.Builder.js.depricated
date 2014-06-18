@@ -383,8 +383,7 @@ public class Xcls_WindowRooView : Object
                  
                 
                 this.inspector = this.el.get_inspector();
-            
-                    print("attach called");
+                this.inspector.attach.connect(() => {
                 
                     
                     var wv = this.inspector.get_web_view();
@@ -395,12 +394,11 @@ public class Xcls_WindowRooView : Object
                     } else {
                         print("no web view yet");
                     }
-                    
                     return true;
                    
                 });
                 
-                //  this.inspector.show();
+                  this.inspector.show();
                  // FIXME - base url of script..
                  // we need it so some of the database features work.
                 this.el.load_html( "Render not ready" , 
