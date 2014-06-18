@@ -50,7 +50,12 @@ namespace Project {
 
 
 		
+		public static void loadAdd()
+		{
 
+
+
+		}
 		
 		public static Project factory(string xtype, string path)
 		{
