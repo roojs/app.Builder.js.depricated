@@ -19,10 +19,11 @@
                     "|xns": "Gtk",
                     "items": [
                         {
+                            "|height_request": 20,
                             "pack": "pack_start,true,false,0",
-                            "|vexpand": "false",
                             "xtype": "HBox",
                             "|homogeneous": "true",
+                            "|vexpand": "false",
                             "|xns": "Gtk",
                             "items": [
                                 {

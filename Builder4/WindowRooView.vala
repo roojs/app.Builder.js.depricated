@@ -129,6 +129,7 @@ public class Xcls_WindowRooView : Object
             // my vars
 
             // set gobject values
+            this.el.height_request = 20;
             this.el.vexpand = false;
             var child_0 = new Xcls_Button4(_this);
             child_0.ref();
@@ -143,13 +144,15 @@ public class Xcls_WindowRooView : Object
 
         // userdefined functions 
 
-        // skip pack - not pipe 
+        // skip |height_request - already used 
 
-        // skip |vexpand - already used 
+        // skip pack - not pipe 
 
         // skip xtype - not pipe 
 
         // skip |homogeneous - already used 
+
+        // skip |vexpand - already used 
 
         // skip |xns - no return type
 
