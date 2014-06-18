@@ -129,6 +129,7 @@ public class Xcls_WindowRooView : Object
             // my vars
 
             // set gobject values
+            this.el.vexpand = false;
             var child_0 = new Xcls_Button4(_this);
             child_0.ref();
             this.el.pack_start (  child_0.el , false,false,0 );
@@ -143,6 +144,8 @@ public class Xcls_WindowRooView : Object
         // userdefined functions 
 
         // skip pack - not pipe 
+
+        // skip |vexpand - already used 
 
         // skip xtype - not pipe 
 
