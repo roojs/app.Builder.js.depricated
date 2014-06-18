@@ -285,7 +285,7 @@ public class JsRender.Node : Object {
                     nstr =  string.joinv("\n" + pad, lines);
                 }
                 //print("==> " +  str + "\n");
-                els.add(left + str);
+                els.add(left + nstr);
                 continue;
             }
             // standard..
