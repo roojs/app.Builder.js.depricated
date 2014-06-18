@@ -126,7 +126,7 @@ public class JsRender.Node : Object {
 
 	}
     
-    public string mungeToString (bool isListener, string pad,  Gee.ArrayList<string> doubleStringProps)
+    public string mungeToString ( string pad,  Gee.ArrayList<string> doubleStringProps)
     {
         
          
@@ -135,7 +135,7 @@ public class JsRender.Node : Object {
         
          
         
-        //isListener = isListener || false;
+        
 
        //var keys = this.keys();
         
@@ -259,26 +259,7 @@ public class JsRender.Node : Object {
             }
             left += " : ";
             
-            if (isListener) {
-            // change the lines...
-                /*           
-                string str = "";
-                try {
-                    str = func_regex.replace(v,v.length, 0, "");
-                } catch(Error e) {
-                    print("regex failed");
-                    return "";
-                }
-                */
-				var str = v.strip();
-                var lines = str.split("\n");
-                if (lines.length > 0) {
-                    str = string.joinv("\n" + pad, lines);
-                }
-                
-                els.add(left  + str);
-                continue;
-            }
+            
              
             // next.. is it a function..
             if (k[0] == '|') {
