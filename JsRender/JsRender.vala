@@ -54,7 +54,8 @@ namespace JsRender {
 		    this.hasParent = false;
 		    this.parent = "";
 		    this.tree = null;
-		    
+		    // should use basename reallly...
+			
 		    var ar = this.path.split("/");
 		        // name is in theory filename without .bjs (or .js eventually...)
 		    try {
