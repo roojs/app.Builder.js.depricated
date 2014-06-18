@@ -156,7 +156,7 @@ public class JsRender.Node : Object {
         }
         //var newitems = new Gee.ArrayList<JsRender.Node>();
 
-		var ob_props = new Gee.HashMap<string,string>();
+		 
 		
 		// look throught he chilren == looking for * prop.. -- fixme might not work..
 		
@@ -183,7 +183,7 @@ public class JsRender.Node : Object {
                     // it's a standard prop..
                     
                     // munge property..??
-                    oprops.set(prop, pl.mungeToString (false,  pad + "    ",  doubleStringProps););
+                    els.add(pad + " : " + pl.mungeToString (false,  pad + "    ",  doubleStringProps));
                     
                     
                     //keys.push(prop);
@@ -351,10 +351,14 @@ public class JsRender.Node : Object {
            
            
         }
-        var iter = oprops.map_iterator();
+		// handle the childitems  that are arrays.. eg. button[] = {  }...
+		
+		
+        var iter = ar_props.map_iterator();
         while (iter.next()) {
             var k = iter.get_key();
             var vo = iter.get_value();
+			
             string leftv = k[0] == '|' ? k.substring(1) : k;
             if (Lang.isKeyword(leftv) || Lang.isBuiltin(leftv)) {
                 left = "'" + leftv + "'";
@@ -367,7 +371,7 @@ public class JsRender.Node : Object {
             }
             left += " : ";
             
-            var right = vo.mungeToString(k == "listeners", pad + "    ",doubleStringProps);
+            var right = vo;
             
             //if (!left.length && isArray) print(right);
             
