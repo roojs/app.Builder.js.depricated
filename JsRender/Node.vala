@@ -193,6 +193,8 @@ public class JsRender.Node : Object {
 
 				
                 var sprop  = prop.substring(0,  -2); //strip []
+				print("sprop is : " + sprop + "\n");
+				
                 // it's an array type..
 				var old = "";
                 if (!ar_props.has_key(sprop)) {
