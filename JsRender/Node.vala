@@ -416,6 +416,9 @@ public class JsRender.Node : Object {
         // oprops...    
             
         var spad = pad.substring(0, pad.length-4);
+		var str_props = gLibStringListJoin(",\n" + pad , els) ;
+		print ("STR PROPS: " + str_props);
+		
         return   "{\n" +
             pad  + gLibStringListJoin(",\n" + pad , els) + 
             "\n" + spad +  "}";
