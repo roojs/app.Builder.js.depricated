@@ -443,6 +443,8 @@ public class Xcls_WindowRooView : Object
                 if (wv != null) {
                     print("got inspector web view");
                     wv.reparent(_this.inspectorcontainer.el);
+                } else {
+                    print("no web view yet");
                 }
                 
                 this.inspector.show();
