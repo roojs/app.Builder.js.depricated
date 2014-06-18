@@ -259,7 +259,7 @@ WindowRooView=new XObject({
             pack : "add",
             items : [
                 {
-                    xtype: WebKit.WebView,
+                    xtype: WebKit.WebViewBase,
                     id : "inspector",
                     pack : "add"
                 }
