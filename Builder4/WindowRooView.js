@@ -94,6 +94,12 @@ WindowRooView=new XObject({
                                 },
                                 show : ( ) => {
                                     this.inspector = this.el.get_inspector();
+                                    var wv = this.inspector.get_web_view();
+                                    if (wv != null) {
+                                        print("got inspector web view");
+                                        wv.reparent(this.inspectorcontainer.el);
+                                    }
+                                    
                                     this.inspector.show();
                                 }
                             },

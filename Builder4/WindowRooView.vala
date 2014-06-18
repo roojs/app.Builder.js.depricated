@@ -344,8 +344,8 @@ public class Xcls_WindowRooView : Object
 
 
             // my vars
-        public WebKit.WebInspector inspector;
         public GLib.DateTime lastRedraw;
+        public WebKit.WebInspector inspector;
         public bool pendingRedraw;
         public bool refreshRequired;
         public int redraws;
@@ -439,6 +439,12 @@ public class Xcls_WindowRooView : Object
             } );
             this.el.show.connect(   ( ) => {
                 this.inspector = this.el.get_inspector();
+                var wv = this.inspector.get_web_view();
+                if (wv != null) {
+                    print("got inspector web view");
+                    wv.reparent(this.inspectorcontainer.el);
+                }
+                
                 this.inspector.show();
             } );
         }
@@ -447,9 +453,9 @@ public class Xcls_WindowRooView : Object
 
         // skip listeners - not pipe 
 
-        // skip .WebKit.WebInspector:inspector - already used 
-
         // skip .GLib.DateTime:lastRedraw - already used 
+
+        // skip .WebKit.WebInspector:inspector - already used 
 
         // skip .bool:pendingRedraw - already used 
 
