@@ -54,7 +54,7 @@ void testBuilderFile(string ptype, string dir,  string name, string test)
 }
 
 
-#if  UI
+#if  1
 void testLeftTree(string name)
 {
 	var dir = "/home/alan/gitlive/app.Builder.js/Builder4"; 
