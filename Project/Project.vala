@@ -312,7 +312,22 @@ namespace Project {
 		        
 		}
 		
-		
+		public JsRender.JsRender? getByName(string name)
+		{
+		    
+			var fiter = files.map_iterator();
+		    while(fiter.next()) {
+		     
+		        var f = fiter.get_value();
+		        
+		        
+		        //console.log(f.id + '?=' + id);
+		        if (f.name == name) {
+		            return f;
+		        }
+		    };
+		    return null;
+		}
 		
 		public JsRender.JsRender? getById(string id)
 		{
