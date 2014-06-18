@@ -642,7 +642,7 @@ public class Xcls_WindowRooView : Object
         {
             _this = _owner;
             _this.inspector = this;
-            this.el = _this.view.get_inspector() ;
+            this.el = _this.view.get_inspector () ;
 
             // my vars
 
