@@ -79,7 +79,7 @@ namespace Project {
 					 if (!Regex.match_simple("\\.json$", fn)) {
 						 continue;
 					 }
-            		 factoryFromFile(dir + "/" + fn);
+            		 factoryFromFile(dirname + "/" + fn);
 				}
             } catch(Error e) {
 				print("oops - something went wrong scanning the projects\n");
