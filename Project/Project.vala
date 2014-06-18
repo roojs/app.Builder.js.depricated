@@ -100,19 +100,15 @@ namespace Project {
             var obj = node.get_object ();
 			var xtype =  obj.get_string_member("xtype");
 
-			
-            this.name = obj.get_string_member("name");
-            this.parent = obj.get_string_member("parent");
-            this.permname = obj.get_string_member("permname");
-            this.title = obj.get_string_member("title");
-            this.modOrder = obj.get_string_member("modOrder");
-             
-            // load items[0] ??? into tree...
+			var proj = factory(xtype, "");
 
-            var ar = obj.get_array_member("items");
-            var tree_base = ar.get_object_element(0);
-            this.tree = new Node();
-            this.tree.loadFromJson(tree_base);
+            proj.runhtml  = obj.get_string_member("runhtml"); // might not exist?
+			proj.name = obj.get_string_member("name");
+
+			var paths =obj.get_object_member("paths");
+			paths.foreach_member((sobj, key, val) => {
+				proj.paths.set(key, "dir");
+			});
 
 		}
 		
