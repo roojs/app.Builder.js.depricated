@@ -1653,7 +1653,7 @@ public class Xcls_LeftProps : Object
         public Xcls_ListStore33(Xcls_LeftProps _owner)
         {
             _this = _owner;
-            this.el = new Gtk.ListStore( "", null );
+            this.el = new Gtk.ListStore( 1, null );
 
             // my vars
 

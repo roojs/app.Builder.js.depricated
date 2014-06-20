@@ -288,7 +288,7 @@
                                             "|xns": "Gtk",
                                             "items": [
                                                 {
-                                                    "n_columns": "",
+                                                    "n_columns": 1,
                                                     "*prop": "model",
                                                     "pack": false,
                                                     "xtype": "ListStore",
