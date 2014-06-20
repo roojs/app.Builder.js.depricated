@@ -1355,7 +1355,7 @@ public class Xcls_LeftProps : Object
         {
             _this = _owner;
             _this.model = this;
-            this.el = new Gtk.TreeStore( null, null );
+            this.el = new Gtk.TreeStore( 6, "" );
 
             // my vars
 
@@ -1378,7 +1378,11 @@ public class Xcls_LeftProps : Object
 
         // userdefined functions 
 
+        // skip columns - already used 
+
         // skip id - not pipe 
+
+        // skip n_columns - already used 
 
         // skip pack - not pipe 
 
