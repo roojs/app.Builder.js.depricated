@@ -1588,12 +1588,6 @@ public class Xcls_LeftProps : Object
             var child_0 = new Xcls_ListStore33(_this);
             child_0.ref();
 
-            // init method 
-            function() {
-             
-               this.el.model = new Gtk.ListStore(1 , typeof(string));
-            }
-
             // listeners 
             this.el.edited.connect( function (self, object, p0) {
              	this.get('/LeftPanel').editing = false;
@@ -1629,8 +1623,6 @@ public class Xcls_LeftProps : Object
 
         // skip |has_entry - already used 
 
-        // skip |init - already used 
-
         // skip |xns - no return type
 
         // skip items - not pipe 
@@ -1653,7 +1645,7 @@ public class Xcls_LeftProps : Object
         public Xcls_ListStore33(Xcls_LeftProps _owner)
         {
             _this = _owner;
-            this.el = new Gtk.ListStore( 1, "" );
+            this.el = new Gtk.ListStore( 1, "typeof(string)" );
 
             // my vars
 

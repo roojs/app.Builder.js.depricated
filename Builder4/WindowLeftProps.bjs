@@ -284,11 +284,10 @@
                                             "text_column": 0,
                                             "xtype": "CellRendererCombo",
                                             "|has_entry": "true",
-                                            "|init": "function() {\n \n   this.el.model = new Gtk.ListStore(1 , typeof(string));\n}\n",
                                             "|xns": "Gtk",
                                             "items": [
                                                 {
-                                                    "columns": "",
+                                                    "columns": "typeof(string)",
                                                     "*prop": "model",
                                                     "n_columns": 1,
                                                     "pack": false,
