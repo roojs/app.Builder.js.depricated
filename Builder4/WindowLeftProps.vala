@@ -27,7 +27,7 @@ public class Xcls_WindowLeftProps : Object
     public Xcls_EditProps EditProps;
     public Xcls_view view;
     public Xcls_model model;
-    public Xcls_LeftPanelPopup LeftPanelPopup;
+    public Xcls_ContextMenu ContextMenu;
 
         // my vars
 
@@ -1135,7 +1135,7 @@ public class Xcls_WindowLeftProps : Object
             var child_0 = new Xcls_view(_this);
             child_0.ref();
             this.el.add (  child_0.el  );
-            var child_1 = new Xcls_LeftPanelPopup(_this);
+            var child_1 = new Xcls_ContextMenu(_this);
             child_1.ref();
 
             // init method 
@@ -1638,7 +1638,7 @@ public class Xcls_WindowLeftProps : Object
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_LeftPanelPopup : Object 
+    public class Xcls_ContextMenu : Object 
     {
         public Gtk.Menu el;
         private Xcls_WindowLeftProps  _this;
@@ -1647,10 +1647,10 @@ public class Xcls_WindowLeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_LeftPanelPopup(Xcls_WindowLeftProps _owner)
+        public Xcls_ContextMenu(Xcls_WindowLeftProps _owner)
         {
             _this = _owner;
-            _this.LeftPanelPopup = this;
+            _this.ContextMenu = this;
             this.el = new Gtk.Menu();
 
             // my vars
@@ -1666,13 +1666,13 @@ public class Xcls_WindowLeftProps : Object
 
         // userdefined functions 
 
-        // skip |xns - no return type
-
-        // skip xtype - not pipe 
+        // skip id - not pipe 
 
         // skip pack - not pipe 
 
-        // skip id - not pipe 
+        // skip xtype - not pipe 
+
+        // skip |xns - no return type
 
         // skip items - not pipe 
 

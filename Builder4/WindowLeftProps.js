@@ -845,8 +845,8 @@ WindowLeftProps=new XObject({
                 },
                 {
                     xtype: Gtk.Menu,
+                    id : "ContextMenu",
                     pack : false,
-                    id : "LeftPanelPopup",
                     items : [
                         {
                             xtype: Gtk.MenuItem,

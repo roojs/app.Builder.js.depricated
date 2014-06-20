@@ -279,10 +279,10 @@
                             ]
                         },
                         {
-                            "|xns": "Gtk",
-                            "xtype": "Menu",
+                            "id": "ContextMenu",
                             "pack": false,
-                            "id": "LeftPanelPopup",
+                            "xtype": "Menu",
+                            "|xns": "Gtk",
                             "items": [
                                 {
                                     "|xns": "Gtk",
