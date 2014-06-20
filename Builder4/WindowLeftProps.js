@@ -233,7 +233,6 @@ WindowLeftProps=new XObject({
         },
         {
             xtype: Gtk.ScrolledWindow,
-            editing : false,
             id : "EditProps",
             pack : "add",
             init : function() {

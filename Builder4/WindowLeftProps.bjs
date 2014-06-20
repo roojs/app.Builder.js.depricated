@@ -207,7 +207,7 @@
                     ]
                 },
                 {
-                    "editing": false,
+                    ".bool:editing": false,
                     "id": "EditProps",
                     "pack": "add",
                     "xtype": "ScrolledWindow",

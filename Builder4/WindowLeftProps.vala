@@ -1126,6 +1126,7 @@ public class Xcls_LeftProps : Object
 
 
             // my vars
+        public bool editing;
 
             // ctor 
         public Xcls_EditProps(Xcls_LeftProps _owner)
@@ -1135,6 +1136,7 @@ public class Xcls_LeftProps : Object
             this.el = new Gtk.ScrolledWindow( null, null );
 
             // my vars
+            this.editing = false;
 
             // set gobject values
             this.el.shadow_type = Gtk.ShadowType.IN;
@@ -1153,7 +1155,7 @@ public class Xcls_LeftProps : Object
 
         // userdefined functions 
 
-        // skip editing - not pipe 
+        // skip .bool:editing - already used 
 
         // skip id - not pipe 
 
