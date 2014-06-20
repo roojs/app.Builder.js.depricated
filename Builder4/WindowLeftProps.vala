@@ -133,7 +133,7 @@ public class Xcls_LeftProps : Object
 
             // listeners 
             this.el.button_press_event.connect(  ( event ) => {
-                _this.showAddProps();
+                _this.showAddProps("prop");
                 return false;
             } );
         }
