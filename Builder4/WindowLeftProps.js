@@ -379,62 +379,6 @@ WindowLeftProps=new XObject({
                             xtype: Gtk.TreeStore,
                             id : "model",
                             pack : "set_model",
-                            add : function(info) {
-                                  // info includes key, val, skel, etype..
-                                          console.dump(info);
-                                        type = info.type.toLowerCase();
-                                        var data = this.toJS();
-                                        
-                                        if (info.etype == 'events') {
-                                            data.listeners = data.listeners || { };
-                                            if (typeof(data.listeners[info.key]) != 'undefined') {
-                                                return; //already set!
-                                            }
-                                        } else {
-                                            if (typeof(data[info.key]) != 'undefined') {
-                                                return;
-                                            }
-                                        }
-                                        
-                                        if (typeof(info.val) == 'undefined') {
-                                                
-                                            info.val = '';
-                                            if (info.type.toLowerCase() == 'boolean') {
-                                                info.val = true;
-                                            }
-                                            if (type == 'number') {
-                                                info.val = 0;
-                                            }
-                                            // utf8 == string..
-                                            
-                                            
-                                        }
-                                        var k = info.key;
-                                        if (info.etype == 'events') {
-                                         
-                                            data.listeners[info.key] = info.val;
-                                            k = '!' + info.key;
-                                        } else {
-                                            data[info.key] = info.val;
-                                        }
-                                        
-                                        
-                                        var map = this.load(data);
-                                        
-                                        // flag it as changed to the interface..
-                            
-                                        this.get('/LeftTree.model').changed(data, true); 
-                                        
-                                        
-                                        this.startEditing(map[k]);
-                                         
-                                        /*
-                                        LeftPanel.get('view').el.row_activated(
-                                            new Gtk.TreePath.from_string(map[k]), 
-                                            LeftPanel.editableColumn.el
-                                        );
-                                        */
-                            },
                             changed : function(str, doRefresh) {
                                 if (!this.activePath) {
                                     return;

@@ -1384,8 +1384,6 @@ public class Xcls_LeftProps : Object
 
         // skip xtype - not pipe 
 
-        // skip |add - no return type
-
         // skip |changed - no return type
 
         // skip |deleteSelected - no return type
