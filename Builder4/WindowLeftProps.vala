@@ -1589,8 +1589,8 @@ public class Xcls_LeftProps : Object
             child_0.ref();
 
             // listeners 
-            this.el.edited.connect( function ( treepath, str) {
-             	_this..editing = false;
+            this.el.edited.connect(   ( treepath, str) => {
+             	_this .editing = false;
              	
              	//var ap = this.get('/LeftPanel.model').activePath
             	//print("EDITED? "  + ap + " - p:" + p0 + " t:" + p0);

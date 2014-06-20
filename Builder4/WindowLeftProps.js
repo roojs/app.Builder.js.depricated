@@ -728,8 +728,8 @@ WindowLeftProps=new XObject({
                                 {
                                     xtype: Gtk.CellRendererCombo,
                                     listeners : {
-                                        edited : function ( treepath, str) {
-                                         	_this..editing = false;
+                                        edited : ( treepath, str) => {
+                                         	_this .editing = false;
                                          	
                                          	//var ap = this.get('/LeftPanel.model').activePath
                                         	//print("EDITED? "  + ap + " - p:" + p0 + " t:" + p0);
