@@ -1597,11 +1597,8 @@ public class Xcls_LeftProps : Object
                     this.get('/LeftPanel.model').activePath = false;
                     this.el.editable = false;
             } );
-            this.el.editing_started.connect( function (self, editable, path) {
-               this.get('/LeftPanel').editing  = true;
-            	//  console.log('editing started');
-                   // r.has_entry = false;
-            
+            this.el.editing_started.connect( ( editable, path) {
+                _this.editing = true;
                 this.el.editable = false; // make sure it's not editor...
                
             } );

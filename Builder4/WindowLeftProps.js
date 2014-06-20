@@ -736,11 +736,8 @@ WindowLeftProps=new XObject({
                                                 this.get('/LeftPanel.model').activePath = false;
                                                 this.el.editable = false;
                                         },
-                                        editing_started : function (self, editable, path) {
-                                           this.get('/LeftPanel').editing  = true;
-                                        	//  console.log('editing started');
-                                               // r.has_entry = false;
-                                        
+                                        editing_started : ( editable, path) {
+                                            _this.editing = true;
                                             this.el.editable = false; // make sure it's not editor...
                                            
                                         }
