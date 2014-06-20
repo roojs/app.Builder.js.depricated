@@ -29,6 +29,7 @@ public class Xcls_LeftProps : Object
     public Xcls_keycol keycol;
     public Xcls_keyrender keyrender;
     public Xcls_valcol valcol;
+    public Xcls_valrender valrender;
     public Xcls_ContextMenu ContextMenu;
 
         // my vars
@@ -1546,7 +1547,7 @@ public class Xcls_LeftProps : Object
 
             // set gobject values
             this.el.title = "value";
-            var child_0 = new Xcls_CellRendererCombo32(_this);
+            var child_0 = new Xcls_valrender(_this);
             child_0.ref();
             this.el.pack_start (  child_0.el  );
 
@@ -1586,7 +1587,7 @@ public class Xcls_LeftProps : Object
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_CellRendererCombo32 : Object 
+    public class Xcls_valrender : Object 
     {
         public Gtk.CellRendererCombo el;
         private Xcls_LeftProps  _this;
@@ -1595,9 +1596,10 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_CellRendererCombo32(Xcls_LeftProps _owner)
+        public Xcls_valrender(Xcls_LeftProps _owner)
         {
             _this = _owner;
+            _this.valrender = this;
             this.el = new Gtk.CellRendererCombo();
 
             // my vars
@@ -1640,6 +1642,8 @@ public class Xcls_LeftProps : Object
         // skip listeners - not pipe 
 
         // skip editable - already used 
+
+        // skip id - not pipe 
 
         // skip pack - not pipe 
 

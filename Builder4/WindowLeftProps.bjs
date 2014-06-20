@@ -280,6 +280,7 @@
                                                 "editing_started": "function (self, editable, path) {\n   this.get('/LeftPanel').editing  = true;\n\t//  console.log('editing started');\n       // r.has_entry = false;\n\n    this.el.editable = false; // make sure it's not editor...\n   \n}"
                                             },
                                             "editable": "false",
+                                            "id": "valrender",
                                             "pack": "pack_start",
                                             "text_column": 0,
                                             "xtype": "CellRendererCombo",

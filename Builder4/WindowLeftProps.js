@@ -804,6 +804,7 @@ WindowLeftProps=new XObject({
                                         }
                                     },
                                     editable : "false",
+                                    id : "valrender",
                                     pack : "pack_start",
                                     text_column : 0,
                                     has_entry : true,
