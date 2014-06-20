@@ -1089,7 +1089,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // set gobject values
-            this.el.label = "Vala Function";
+            this.el.label = "Vala Method";
             this.el.tooltip_markup = "Add a user function boolean property";
 
             // listeners 
