@@ -307,23 +307,23 @@ WindowLeftProps=new XObject({
                              //   return false;
                            // }
                             
-                            var renderer = this.valcol.el; // set has_entry..
+                            var renderer = this.valrender.el; // set has_entry..
                             
-                            var type = this.get('/LeftPanel.model').getType(res.path.to_string());
+                            //var type = this.get('/LeftPanel.model').getType(res.path.to_string());
                                 
                             // get options for this type -- this is to support option lists etc..
-                            var provider = this.get('/LeftTree').getPaleteProvider();
-                            var opts = provider.findOptions(type);
+                            //var provider = this.get('/LeftTree').getPaleteProvider();
+                            //var opts = provider.findOptions(type);
                             
-                            if (opts === false) {
+                        //    if (opts === false) {
                                 // it's text etnry
-                                 this.get('/LeftPanel').editableColumn.setOptions([]);
-                                renderer.has_entry = true;
-                            } else {
-                                 this.get('/LeftPanel').editableColumn.setOptions(opts);
-                                renderer.has_entry = false;
-                            }
-                            this.get('/LeftPanel.model').startEditing(res.path.to_string(), 1);
+                        //         this.get('/LeftPanel').editableColumn.setOptions([]);
+                        //        renderer.has_entry = true;
+                        //    } else {
+                        //         this.get('/LeftPanel').editableColumn.setOptions(opts);
+                        //        renderer.has_entry = false;
+                        //    }
+                            _this.startEditing(res.path.to_string(), 1);
                                 
                            //Seed.print("click" + ev.type);
                             //console.dump(res);
