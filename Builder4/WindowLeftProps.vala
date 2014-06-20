@@ -1360,20 +1360,6 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // set gobject values
-
-            // init method 
-            function() {
-                XObject.prototype.init.call(this);
-            this.el.set_column_types ( 6, 
-                                            typeof(string),  // 0 real key
-                                            typeof(string), // 1 real value 
-                                             typeof(string),  // 2 visable key
-                                             typeof(string), // 3 visable value
-                                             typeof(string), // 4 need to store type of!!!
-                                              typeof(string) // 5 tooltip
-                                          
-                                        ]);
-            }
         }
 
         // userdefined functions 
@@ -1397,8 +1383,6 @@ public class Xcls_LeftProps : Object
         // skip |getType - no return type
 
         // skip |getValue - no return type
-
-        // skip |init - already used 
 
         // skip |load - no return type
 
