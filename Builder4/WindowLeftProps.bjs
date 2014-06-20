@@ -121,14 +121,14 @@
                                             "|xns": "Gtk"
                                         },
                                         {
-                                            "|xns": "Gtk",
-                                            "xtype": "MenuItem",
+                                            "listeners": {
+                                                "activate": "  ( ) => {\n\n    _this.addProp( \"*pack\",\"add\");\n}"
+                                            },
+                                            "label": "PACK",
                                             "pack": "append",
                                             "tooltip_markup": "Add what type of packing is to be used",
-                                            "label": "PACK",
-                                            "listeners": {
-                                                "activate": "function (self) {\n\n    this.get('/LeftPanel.model').add( {\n    \t key : 'pack', \n       \t type : 'string',\n       \t val : 'add',\n          etype : 'props'\n    });\n}"
-                                            }
+                                            "xtype": "MenuItem",
+                                            "|xns": "Gtk"
                                         },
                                         {
                                             "|xns": "Gtk",

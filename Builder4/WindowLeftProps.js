@@ -134,20 +134,15 @@ WindowLeftProps=new XObject({
                                 },
                                 {
                                     xtype: Gtk.MenuItem,
-                                    pack : "append",
-                                    tooltip_markup : "Add what type of packing is to be used",
-                                    label : "PACK",
                                     listeners : {
-                                        activate : function (self) {
+                                        activate : ( ) => {
                                         
-                                            this.get('/LeftPanel.model').add( {
-                                            	 key : 'pack', 
-                                               	 type : 'string',
-                                               	 val : 'add',
-                                                  etype : 'props'
-                                            });
+                                            _this.addProp( "*pack","add");
                                         }
-                                    }
+                                    },
+                                    label : "PACK",
+                                    pack : "append",
+                                    tooltip_markup : "Add what type of packing is to be used"
                                 },
                                 {
                                     xtype: Gtk.MenuItem,

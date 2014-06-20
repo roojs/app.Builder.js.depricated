@@ -741,30 +741,25 @@ public class Xcls_LeftProps : Object
             this.el.tooltip_markup = "Add what type of packing is to be used";
 
             // listeners 
-            this.el.activate.connect( function (self) {
+            this.el.activate.connect(   ( ) => {
             
-                this.get('/LeftPanel.model').add( {
-                	 key : 'pack', 
-                   	 type : 'string',
-                   	 val : 'add',
-                      etype : 'props'
-                });
+                _this.addProp( "*pack","add");
             } );
         }
 
         // userdefined functions 
 
-        // skip |xns - no return type
+        // skip listeners - not pipe 
 
-        // skip xtype - not pipe 
+        // skip label - already used 
 
         // skip pack - not pipe 
 
         // skip tooltip_markup - already used 
 
-        // skip label - already used 
+        // skip xtype - not pipe 
 
-        // skip listeners - not pipe 
+        // skip |xns - no return type
 
         // skip xvala_cls - not pipe 
 
