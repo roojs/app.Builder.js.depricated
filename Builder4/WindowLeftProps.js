@@ -337,16 +337,14 @@ WindowLeftProps=new XObject({
                     tooltip_column : 5,
                     enable_tree_lines : true,
                     headers_visible : false,
-                    init : function() {
-                         XObject.prototype.init.call(this); 
-                                           
-                                        this.selection = this.el.get_selection();
-                                        this.selection.set_mode( Gtk.SelectionMode.SINGLE);
-                                     
-                                        
-                                        var description = new Pango.FontDescription.c_new();
-                                        description.set_size(8000);
-                                        this.el.modify_font(description);
+                    init : {
+                        var selection = this.el.get_selection();
+                        selection.set_mode( Gtk.SelectionMode.SINGLE);
+                    
+                    
+                        var description = new Pango.FontDescription.c_new();
+                        description.set_size(8000);
+                        this.el.modify_font(description);
                     },
                     items : [
                         {

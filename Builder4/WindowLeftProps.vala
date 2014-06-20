@@ -1213,16 +1213,14 @@ public class Xcls_LeftProps : Object
             this.el.append_column (  child_2.el  );
 
             // init method 
-            function() {
-                 XObject.prototype.init.call(this); 
-                                   
-                                this.selection = this.el.get_selection();
-                                this.selection.set_mode( Gtk.SelectionMode.SINGLE);
-                             
-                                
-                                var description = new Pango.FontDescription.c_new();
-                                description.set_size(8000);
-                                this.el.modify_font(description);
+            {
+                var selection = this.el.get_selection();
+                selection.set_mode( Gtk.SelectionMode.SINGLE);
+            
+            
+                var description = new Pango.FontDescription.c_new();
+                description.set_size(8000);
+                this.el.modify_font(description);
             }
 
             // listeners 
