@@ -1424,12 +1424,9 @@ public class Xcls_LeftProps : Object
             this.el.pack_start (  child_0.el  );
 
             // init method 
-            function() {
-                XObject.prototype.init.call(this);
-            
+             
                 this.el.add_attribute(this.items[0].el , 'markup', 2 );
-                this.get('/LeftPanel').propertyColumn = this;
-            }
+              
         }
 
         // userdefined functions 

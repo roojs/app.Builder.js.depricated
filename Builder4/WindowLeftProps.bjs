@@ -250,7 +250,7 @@
                                     "pack": "append_column",
                                     "title": "key",
                                     "xtype": "TreeViewColumn",
-                                    "|init": "function() {\n    XObject.prototype.init.call(this);\n\n    this.el.add_attribute(this.items[0].el , 'markup', 2 );\n    this.get('/LeftPanel').propertyColumn = this;\n}\n",
+                                    "|init": " \n    this.el.add_attribute(this.items[0].el , 'markup', 2 );\n  ",
                                     "|xns": "Gtk",
                                     "items": [
                                         {
