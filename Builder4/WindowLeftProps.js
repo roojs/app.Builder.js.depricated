@@ -724,17 +724,6 @@ WindowLeftProps=new XObject({
                             
                              //	this.get('/LeftPanel').editableColumn= this;
                             },
-                            setOptions : function(ar) {
-                                   var m = this.items[0].el.model;
-                                        m.clear();
-                                        var iter = new Gtk.TreeIter();
-                                        ar.forEach(function(i) {
-                                               // sort!!!?
-                                            m.append(iter);
-                                            m.set_value(iter, 0, i);
-                                        });
-                                        
-                            },
                             items : [
                                 {
                                     xtype: Gtk.CellRendererCombo,

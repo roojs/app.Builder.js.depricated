@@ -1554,8 +1554,6 @@ public class Xcls_LeftProps : Object
 
         // skip |init - already used 
 
-        // skip |setOptions - no return type
-
         // skip |xns - no return type
 
         // skip items - not pipe 
