@@ -1588,11 +1588,8 @@ public class Xcls_LeftProps : Object
 
             // init method 
             function() {
-                XObject.prototype.init.call(this);
-               this.el.model = new Gtk.ListStore();
-                this.el.model.set_column_types ( 1, [
-                    GObject.TYPE_STRING  // 0 real key
-                  ]);
+             
+               this.el.model = new Gtk.ListStore(1 , typeof(string));
             }
 
             // listeners 
