@@ -6,7 +6,7 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.bjs",
     "items": [
         {
-            ".signal:void:showAddProps": "",
+            ".signal:void:showAddProps": "(string type)",
             "id": "LeftProps",
             "xtype": "VBox",
             "|xns": "Gtk",

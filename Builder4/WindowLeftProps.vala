@@ -29,7 +29,7 @@ public class Xcls_LeftProps : Object
     public Xcls_ContextMenu ContextMenu;
 
         // my vars
-    public signal void showAddProps;
+    public signal void showAddProps(string type);
 
         // ctor 
     public Xcls_LeftProps()
