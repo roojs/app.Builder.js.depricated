@@ -1364,13 +1364,13 @@ public class Xcls_LeftProps : Object
             // init method 
             function() {
                 XObject.prototype.init.call(this);
-            this.el.set_column_types ( 6, [
-                                            GObject.TYPE_STRING,  // 0 real key
-                                            GObject.TYPE_STRING, // 1 real value 
-                                             GObject.TYPE_STRING,  // 2 visable key
-                                             GObject.TYPE_STRING, // 3 visable value
-                                             GObject.TYPE_STRING, // 4 need to store type of!!!
-                                              GObject.TYPE_STRING // 5 tooltip
+            this.el.set_column_types ( 6, 
+                                            typeof(string),  // 0 real key
+                                            typeof(string), // 1 real value 
+                                             typeof(string),  // 2 visable key
+                                             typeof(string), // 3 visable value
+                                             typeof(string), // 4 need to store type of!!!
+                                              typeof(string) // 5 tooltip
                                           
                                         ]);
             }
