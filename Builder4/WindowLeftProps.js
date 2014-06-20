@@ -297,15 +297,17 @@ WindowLeftProps=new XObject({
                                     }
                                 }   
                                 */
+                                this.keycol.el.stop_editing();
+                                this.valcol.el.stop_editing();
                                 
-                                this.EditProps.editableColumn.items[0].el.stop_editing();
-                                this.get('/LeftPanel').editing = false;
+                                //this.EditProps.editableColumn.items[0].el.stop_editing();
+                                this.EditProps.editing = false;
                             
                             //    XObject.error("Currently editing?");
                              //   return false;
                            // }
                             
-                            var renderer = this.get('/LeftPanel').editableColumn.items[0].el; // set has_entry..
+                            var renderer = this.valcol.el; // set has_entry..
                             
                             var type = this.get('/LeftPanel.model').getType(res.path.to_string());
                                 
