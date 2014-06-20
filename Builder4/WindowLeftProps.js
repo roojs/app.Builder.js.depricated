@@ -728,12 +728,13 @@ WindowLeftProps=new XObject({
                                 {
                                     xtype: Gtk.CellRendererCombo,
                                     listeners : {
-                                        edited : function (self, object, p0) {
-                                         	this.get('/LeftPanel').editing = false;
-                                         	var ap = this.get('/LeftPanel.model').activePath
-                                        	print("EDITED? "  + ap + " - p:" + p0 + " t:" + p0);
-                                                this.get('/LeftPanel.model').changed(p0, true);
-                                                this.get('/LeftPanel.model').activePath = false;
+                                        edited : function ( treepath, str) {
+                                         	_this..editing = false;
+                                         	
+                                         	//var ap = this.get('/LeftPanel.model').activePath
+                                        	//print("EDITED? "  + ap + " - p:" + p0 + " t:" + p0);
+                                                _this.setCurrentValue(str, true);
+                                                //this.get('/LeftPanel.model').activePath = false;
                                                 this.el.editable = false;
                                         },
                                         editing_started : ( editable, path) {
