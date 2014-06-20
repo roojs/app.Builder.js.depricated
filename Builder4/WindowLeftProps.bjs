@@ -192,7 +192,7 @@
                                         },
                                         {
                                             "listeners": {
-                                                "activate": "  ( ) =>{\n\n    _this.addProp( \"|XXXX\", \"function() { }\");\n}"
+                                                "activate": "  ( ) =>{\n\n    _this.addProp( \"|.type:return_type:XXXX\", \"() {\\n\\n}\\n\");\n}"
                                             },
                                             "label": "Vala Method",
                                             "pack": "append",

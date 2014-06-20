@@ -218,7 +218,7 @@ WindowLeftProps=new XObject({
                                     listeners : {
                                         activate : ( ) =>{
                                         
-                                            _this.addProp( "|XXXX", "function() { }");
+                                            _this.addProp( "|.type:return_type:XXXX", "() {\n\n}\n");
                                         }
                                     },
                                     label : "Vala Method",
