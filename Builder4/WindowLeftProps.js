@@ -123,21 +123,14 @@ WindowLeftProps=new XObject({
                             items : [
                                 {
                                     xtype: Gtk.MenuItem,
-                                    pack : "append",
-                                    tooltip_markup : "Using this.get('*someid') will find any id in an application.",
-                                    label : "ID",
                                     listeners : {
-                                        activate : function (self) {
-                                        
-                                            this.get('/LeftPanel.model').add( {
-                                                key : 'id', 
-                                                type : 'string',
-                                                val : '',
-                                                //skel  : skel,
-                                                etype : 'props'
-                                            });
+                                        activate : ()  => {
+                                            _this.addProp( ".string:id", "");
                                         }
-                                    }
+                                    },
+                                    label : "ID",
+                                    pack : "append",
+                                    tooltip_markup : "Using this.get('*someid') will find any id in an application."
                                 },
                                 {
                                     xtype: Gtk.MenuItem,

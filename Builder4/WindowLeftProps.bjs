@@ -111,14 +111,14 @@
                                     "id": "AddPropertyPopup",
                                     "items": [
                                         {
-                                            "|xns": "Gtk",
-                                            "xtype": "MenuItem",
+                                            "listeners": {
+                                                "activate": " ()  => {\n    _this.addProp( \".string:id\", \"\");\n}"
+                                            },
+                                            "label": "ID",
                                             "pack": "append",
                                             "tooltip_markup": "Using this.get('*someid') will find any id in an application.",
-                                            "label": "ID",
-                                            "listeners": {
-                                                "activate": "function (self) {\n\n    this.get('/LeftPanel.model').add( {\n        key : 'id', \n        type : 'string',\n        val : '',\n        //skel  : skel,\n        etype : 'props'\n    });\n}"
-                                            }
+                                            "xtype": "MenuItem",
+                                            "|xns": "Gtk"
                                         },
                                         {
                                             "|xns": "Gtk",
