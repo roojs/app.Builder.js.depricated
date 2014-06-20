@@ -20,7 +20,7 @@ WindowLeftProps=new XObject({
                 {
                     xtype: Gtk.Button,
                     listeners : {
-                        button_press_event : function (self, event) {
+                        button_press_event : ( event ) => {
                             _this.showAddProps();
                             return false;
                         }
