@@ -1,19 +1,19 @@
- {
-    "id": "file-gtk-13",
-    "name": "WindowRightPalete",
+{
+    "id": "file-gtk-12",
+    "name": "WindowLeftProps",
     "parent": "",
     "title": false,
-    "path": "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.bjs",
+    "path": "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.bjs",
     "items": [
         {
-            "|xns": "Gtk",
-            "xtype": "ScrolledWindow",
-            "pack": "pack_end,false,true,0",
-            "id": "MidPropTree",
-            "|shadow_type": "Gtk.ShadowType.IN",
-            "|init": "function() {\n    XObject.prototype.init.call(this);\n       XObject.prototype.init.call(this); \n    this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)\n    this.el.set_size_request ( 150, -1 );\n    this.shown = true;\n}\n",
             "activeElement": false,
+            "id": "MidPropTree",
+            "pack": "pack_end,false,true,0",
+            "xtype": "ScrolledWindow",
             "|hideWin": "function() {\n     \n    if (!this.shown) {\n        return;\n    }\n    \n    \n    if (this.get('/Window.left').el.position < 160) {\n        return;\n    }\n    this.get('/Window.left').el.position = this.get('/Window.left').el.position  - 150;\n        \n    this.el.hide();\n    this.shown = false;\n}\n",
+            "|init": "function() {\n    XObject.prototype.init.call(this);\n       XObject.prototype.init.call(this); \n    this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)\n    this.el.set_size_request ( 150, -1 );\n    this.shown = true;\n}\n",
+            "|shadow_type": "Gtk.ShadowType.IN",
+            "|xns": "Gtk",
             "items": [
                 {
                     "listeners": {
@@ -53,5 +53,7 @@
                 }
             ]
         }
-    ]
+    ],
+    "permname": "",
+    "modOrder": ""
 }
