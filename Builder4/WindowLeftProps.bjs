@@ -9,7 +9,7 @@
             ".signal:void:showAddProps": "(string type)",
             "id": "LeftProps",
             "xtype": "VBox",
-            "|": "function() {\n    \n}\n",
+            "|": "function(string type, string key, string value) {\n      // info includes key, val, skel, etype..\n      //console.dump(info);\n        //type = info.type.toLowerCase();\n        //var data = this.toJS();\n        \n    var node = _this.activeNode;\n            \n    if (type == \"events\") {\n        if (node.listeners.has(key)) {\n            return;\n        }\n        node.listeners.set(key,value);\n    } else  {\n    \n        if (node.props.has(key)) {\n            return;\n        }\n        node.props.set(key,value);\n    }\n           \n      \n    // add a row???\n    \n            \n    this.startEditing(type, key);\n              \n}\n",
             "|xns": "Gtk",
             "items": [
                 {
