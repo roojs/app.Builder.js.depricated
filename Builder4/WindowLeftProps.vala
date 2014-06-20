@@ -916,7 +916,7 @@ public class Xcls_LeftProps : Object
             this.el.tooltip_markup = "Add a user defined number property";
 
             // listeners 
-            this.el.activate.connect( function (self) {
+            this.el.activate.connect(   ( ) =>{
             
                 _this.addProp( ".int:XXX", "0");
             } );

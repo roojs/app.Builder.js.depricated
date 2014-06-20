@@ -157,7 +157,7 @@
                                         },
                                         {
                                             "listeners": {
-                                                "activate": "function (self) {\n\n    _this.addProp( \".int:XXX\", \"0\");\n}"
+                                                "activate": "  ( ) =>{\n\n    _this.addProp( \".int:XXX\", \"0\");\n}"
                                             },
                                             "label": "Number",
                                             "pack": "append",
