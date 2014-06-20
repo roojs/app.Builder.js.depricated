@@ -1585,6 +1585,8 @@ public class Xcls_LeftProps : Object
             this.el.editable = "false";
             this.el.has_entry = true;
             this.el.text_column = 0;
+            var child_0 = new Xcls_ListStore33(_this);
+            child_0.ref();
 
             // init method 
             function() {
@@ -1631,6 +1633,43 @@ public class Xcls_LeftProps : Object
 
         // skip |xns - no return type
 
+        // skip items - not pipe 
+
+        // skip xvala_cls - not pipe 
+
+        // skip xvala_xcls - not pipe 
+
+        // skip xvala_id - not pipe 
+    }
+    public class Xcls_ListStore33 : Object 
+    {
+        public Gtk.ListStore el;
+        private Xcls_LeftProps  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_ListStore33(Xcls_LeftProps _owner)
+        {
+            _this = _owner;
+            this.el = new Gtk.ListStore( null, null );
+
+            // my vars
+
+            // set gobject values
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+
+        // skip xtype - not pipe 
+
+        // skip *prop - not pipe 
+
+        // skip pack - not pipe 
+
         // skip xvala_cls - not pipe 
 
         // skip xvala_xcls - not pipe 
@@ -1655,10 +1694,10 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_MenuItem34(_this);
+            var child_0 = new Xcls_MenuItem35(_this);
             child_0.ref();
             this.el.append (  child_0.el  );
-            var child_1 = new Xcls_MenuItem35(_this);
+            var child_1 = new Xcls_MenuItem36(_this);
             child_1.ref();
             this.el.append (  child_1.el  );
         }
@@ -1681,7 +1720,7 @@ public class Xcls_LeftProps : Object
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_MenuItem34 : Object 
+    public class Xcls_MenuItem35 : Object 
     {
         public Gtk.MenuItem el;
         private Xcls_LeftProps  _this;
@@ -1690,7 +1729,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_MenuItem34(Xcls_LeftProps _owner)
+        public Xcls_MenuItem35(Xcls_LeftProps _owner)
         {
             _this = _owner;
             this.el = new Gtk.MenuItem();
@@ -1724,7 +1763,7 @@ public class Xcls_LeftProps : Object
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_MenuItem35 : Object 
+    public class Xcls_MenuItem36 : Object 
     {
         public Gtk.MenuItem el;
         private Xcls_LeftProps  _this;
@@ -1733,7 +1772,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_MenuItem35(Xcls_LeftProps _owner)
+        public Xcls_MenuItem36(Xcls_LeftProps _owner)
         {
             _this = _owner;
             this.el = new Gtk.MenuItem();

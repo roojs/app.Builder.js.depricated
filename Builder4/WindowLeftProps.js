@@ -753,6 +753,10 @@ WindowLeftProps=new XObject({
                                     init : function() {
                                      
                                        this.el.model = new Gtk.ListStore(1 , typeof(string));
+                                    },
+                                    model : {
+                                        xtype: Gtk.ListStore,
+                                        pack : false
                                     }
                                 }
                             ]

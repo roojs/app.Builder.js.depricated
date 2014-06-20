@@ -285,7 +285,15 @@
                                             "xtype": "CellRendererCombo",
                                             "|has_entry": "true",
                                             "|init": "function() {\n \n   this.el.model = new Gtk.ListStore(1 , typeof(string));\n}\n",
-                                            "|xns": "Gtk"
+                                            "|xns": "Gtk",
+                                            "items": [
+                                                {
+                                                    "|xns": "Gtk",
+                                                    "xtype": "ListStore",
+                                                    "*prop": "model",
+                                                    "pack": false
+                                                }
+                                            ]
                                         }
                                     ]
                                 }
