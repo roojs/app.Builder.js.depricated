@@ -1147,8 +1147,8 @@ public class Xcls_LeftProps : Object
             child_1.ref();
 
             // init method 
-            function() {
-                XObject.prototype.init.call(this);
+              {
+              
                this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
             }
         }
