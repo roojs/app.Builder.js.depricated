@@ -299,7 +299,7 @@ public class Xcls_LeftProps : Object
             // 	    // popup!! - click handled.. 
             // 	    return true;
             //        }
-                _this.addProps("'events");
+                _this.showAddProps("'events");
                 return false;
             } );
         }

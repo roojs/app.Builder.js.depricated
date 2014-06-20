@@ -55,7 +55,7 @@ WindowLeftProps=new XObject({
                         // 	    // popup!! - click handled.. 
                         // 	    return true;
                         //        }
-                            _this.addProps("'events");
+                            _this.showAddProps("'events");
                             return false;
                         }
                     },
