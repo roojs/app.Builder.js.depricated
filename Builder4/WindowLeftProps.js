@@ -244,30 +244,26 @@ WindowLeftProps=new XObject({
                 {
                     xtype: Gtk.TreeView,
                     listeners : {
-                        button_press_event : function (self, ev) {
+                        button_press_event : function ( ev)  => {
                         
+                            _this.beforeEdit();
                             
-                            if (!this.get('/Editor').save()) {
-                                // popup!! - click handled.. 
-                                return true;
-                            }
-                            var res = { }; 
-                            
-                            if (!this.el.get_path_at_pos(ev.button.x,ev.button.y, res)) {
+                            Gtk.TreeViewColumn col;
+                            int cell_x;
+                            int cell_y;
+                            Gtk.TreePath path
+                            if (!this.el.get_path_at_pos(ev.x,ev.y, out path, out col, out cell_x, out cell_y )) {
                                 return false; //not on a element.
                             }
                             
                              // right click.
-                             if (ev.type == Gdk.EventType.BUTTON_PRESS  && ev.button.button == 3) {    
+                             if (ev.type == Gdk.EventType.BUTTON_PRESS  && ev.button == 3) {    
                                 // show popup!.   
-                                if (res.column.title == 'value' && this.get('/LeftPanel').editing) {
+                                if (col.title == "value" && this.EditProps.editing) {
                                     return false;
                                 }
-                                //if (! this.get('/LeftPanelPopup')LeftPanelPopup.el) LeftPanelPopup.init();
-                                var p = this.get('/LeftPanelPopup');
-                                if (!p.el) {
-                                    p.init();
-                                }
+                        
+                                var p = this.ContextMenu;
                         
                                 p.el.set_screen(Gdk.Screen.get_default());
                                 p.el.show_all();
@@ -279,7 +275,7 @@ WindowLeftProps=new XObject({
                             }
                             
                              
-                            if (res.column.title != 'value') {
+                            if (col.title != "value") {
                                   //  XObject.error("column is not value?");
                                 return false; // ignore.. - key click.. ??? should we do this??
                             }
@@ -289,6 +285,7 @@ WindowLeftProps=new XObject({
                                 
                              //   this.activePath = false;
                                // stop editing!!!!
+                             /*
                                 if (this.get('/Editor').dirty) {
                                     //if (!this.get('/Editor.buffer').checkSyntax()) {
                                     //   this.get('/StandardErrorDialog').show("Fix errors in code and save.."); 
@@ -299,7 +296,9 @@ WindowLeftProps=new XObject({
                                         return true;
                                     }
                                 }   
-                                this.get('/LeftPanel').editableColumn.items[0].el.stop_editing();
+                                */
+                                
+                                this.EditProps.editableColumn.items[0].el.stop_editing();
                                 this.get('/LeftPanel').editing = false;
                             
                             //    XObject.error("Currently editing?");
