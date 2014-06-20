@@ -146,20 +146,15 @@ WindowLeftProps=new XObject({
                                 },
                                 {
                                     xtype: Gtk.MenuItem,
-                                    pack : "append",
-                                    tooltip_markup : "Override the init method",
-                                    label : "INIT",
                                     listeners : {
                                         activate : function (self) {
                                         
-                                            this.get('/LeftPanel.model').add( {
-                                               key : '|init', 
-                                                type : 'function',
-                                                val  : "function() {\n    XObject.prototype.init.call(this);\n}\n",
-                                                etype : 'props'
-                                            });
+                                            this.addProp( "|init", "{\n\n}\n" );
                                         }
-                                    }
+                                    },
+                                    label : "INIT",
+                                    pack : "append",
+                                    tooltip_markup : "Override the init method"
                                 },
                                 {
                                     xtype: Gtk.SeparatorMenuItem,

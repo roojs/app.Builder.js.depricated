@@ -131,14 +131,14 @@
                                             "|xns": "Gtk"
                                         },
                                         {
-                                            "|xns": "Gtk",
-                                            "xtype": "MenuItem",
+                                            "listeners": {
+                                                "activate": "function (self) {\n\n    this.addProp( \"|init\", \"{\\n\\n}\\n\" );\n}"
+                                            },
+                                            "label": "INIT",
                                             "pack": "append",
                                             "tooltip_markup": "Override the init method",
-                                            "label": "INIT",
-                                            "listeners": {
-                                                "activate": "function (self) {\n\n    this.get('/LeftPanel.model').add( {\n       key : '|init', \n        type : 'function',\n        val  : \"function() {\\n    XObject.prototype.init.call(this);\\n}\\n\",\n        etype : 'props'\n    });\n}"
-                                            }
+                                            "xtype": "MenuItem",
+                                            "|xns": "Gtk"
                                         },
                                         {
                                             "|xns": "Gtk",

@@ -790,28 +790,23 @@ public class Xcls_LeftProps : Object
             // listeners 
             this.el.activate.connect( function (self) {
             
-                this.get('/LeftPanel.model').add( {
-                   key : '|init', 
-                    type : 'function',
-                    val  : "function() {\n    XObject.prototype.init.call(this);\n}\n",
-                    etype : 'props'
-                });
+                this.addProp( "|init", "{\n\n}\n" );
             } );
         }
 
         // userdefined functions 
 
-        // skip |xns - no return type
+        // skip listeners - not pipe 
 
-        // skip xtype - not pipe 
+        // skip label - already used 
 
         // skip pack - not pipe 
 
         // skip tooltip_markup - already used 
 
-        // skip label - already used 
+        // skip xtype - not pipe 
 
-        // skip listeners - not pipe 
+        // skip |xns - no return type
 
         // skip xvala_cls - not pipe 
 
