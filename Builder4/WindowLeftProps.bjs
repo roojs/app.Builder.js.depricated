@@ -1,5 +1,5 @@
 {
-    "id": "file-gtk-12",
+    "id": "file-gtk-13",
     "name": "WindowLeftProps",
     "parent": "",
     "title": false,
@@ -198,7 +198,7 @@
                 },
                 {
                     "editing": false,
-                    "id": "LeftPanel",
+                    "id": "EditProps",
                     "pack": "add",
                     "xtype": "ScrolledWindow",
                     "|init": "function() {\n    XObject.prototype.init.call(this);\n   this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);\n}\n",
@@ -307,7 +307,6 @@
                     ]
                 }
             ]
-        
         }
     ],
     "permname": "",
