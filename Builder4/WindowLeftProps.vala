@@ -1425,7 +1425,7 @@ public class Xcls_LeftProps : Object
 
             // init method 
              
-                this.el.add_attribute(this.items[0].el , 'markup', 2 );
+                this.el.add_attribute(this.keyrender.el , 'markup', 2 );
               
         }
 
