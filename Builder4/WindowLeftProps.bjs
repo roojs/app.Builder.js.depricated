@@ -254,13 +254,14 @@
                                     "|xns": "Gtk",
                                     "items": [
                                         {
-                                            "|xns": "Gtk",
-                                            "xtype": "CellRendererText",
-                                            "pack": "pack_start",
                                             "listeners": {
                                                 "editing_started": "function (self, editable, path) {\n\n        this.get('/LeftPanel.model').activePath  = path;\n\n}",
                                                 "edited": "function (self, object, p0) {\n\tvar model = this.get('/LeftPanel.model');\n        var path = model.activePath;\n        var iter = new Gtk.TreeIter();\n        model.el.get_iter(iter, new Gtk.TreePath.from_string(path));\n        model.el.set_value(iter, 0, p0);\n        model.el.set_value(iter, 2, p0);\n        \n\tmodel.activePath = false;\n\n\tthis.get('/LeftTree.model').changed(model.toJS(), true); \n        this.el.editable = false;\n}"
-                                            }
+                                            },
+                                            "id": "keyrender",
+                                            "pack": "pack_start",
+                                            "xtype": "CellRendererText",
+                                            "|xns": "Gtk"
                                         }
                                     ]
                                 },
@@ -278,11 +279,11 @@
                                                 "edited": "function (self, object, p0) {\n \tthis.get('/LeftPanel').editing = false;\n \tvar ap = this.get('/LeftPanel.model').activePath\n\tprint(\"EDITED? \"  + ap + \" - p:\" + p0 + \" t:\" + p0);\n        this.get('/LeftPanel.model').changed(p0, true);\n        this.get('/LeftPanel.model').activePath = false;\n        this.el.editable = false;\n}",
                                                 "editing_started": "function (self, editable, path) {\n   this.get('/LeftPanel').editing  = true;\n\t//  console.log('editing started');\n       // r.has_entry = false;\n\n    this.el.editable = false; // make sure it's not editor...\n   \n}"
                                             },
-                                            "editable": false,
+                                            "editable": "false",
                                             "pack": "pack_start",
                                             "text_column": 0,
                                             "xtype": "CellRendererCombo",
-                                            "|has_entry": true,
+                                            "|has_entry": "true",
                                             "|init": "function() {\n    XObject.prototype.init.call(this);\n   this.el.model = new Gtk.ListStore();\n    this.el.model.set_column_types ( 1, [\n        GObject.TYPE_STRING  // 0 real key\n      ]);\n}\n",
                                             "|xns": "Gtk"
                                         }

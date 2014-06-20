@@ -732,7 +732,6 @@ WindowLeftProps=new XObject({
                             items : [
                                 {
                                     xtype: Gtk.CellRendererText,
-                                    pack : "pack_start",
                                     listeners : {
                                         editing_started : function (self, editable, path) {
                                         
@@ -752,7 +751,9 @@ WindowLeftProps=new XObject({
                                         	this.get('/LeftTree.model').changed(model.toJS(), true); 
                                                 this.el.editable = false;
                                         }
-                                    }
+                                    },
+                                    id : "keyrender",
+                                    pack : "pack_start"
                                 }
                             ]
                         },
@@ -802,7 +803,7 @@ WindowLeftProps=new XObject({
                                            
                                         }
                                     },
-                                    editable : false,
+                                    editable : "false",
                                     pack : "pack_start",
                                     text_column : 0,
                                     has_entry : true,
