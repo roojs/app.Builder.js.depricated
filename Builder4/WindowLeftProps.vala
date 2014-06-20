@@ -7,7 +7,7 @@ valac  --pkg gio-2.0  --pkg posix  --pkg gtk+-3.0 --pkg libnotify --pkg gtksourc
 /* -- to test class
 static int main (string[] args) {
     Gtk.init (ref args);
-    new Xcls_WindowLeftProps();
+    new Xcls_LeftProps();
     WindowLeftProps.show_all();
      Gtk.main ();
     return 0;
@@ -15,14 +15,13 @@ static int main (string[] args) {
 */
 
 
-public static Xcls_WindowLeftProps  WindowLeftProps;
+public static Xcls_LeftProps  WindowLeftProps;
 
-public class Xcls_WindowLeftProps : Object 
+public class Xcls_LeftProps : Object 
 {
     public Gtk.VBox el;
-    private Xcls_WindowLeftProps  _this;
+    private Xcls_LeftProps  _this;
 
-    public Xcls_LeftProps LeftProps;
     public Xcls_AddPropertyPopup AddPropertyPopup;
     public Xcls_EditProps EditProps;
     public Xcls_view view;
@@ -32,7 +31,7 @@ public class Xcls_WindowLeftProps : Object
         // my vars
 
         // ctor 
-    public Xcls_WindowLeftProps()
+    public Xcls_LeftProps()
     {
         _this = this;
         WindowLeftProps = this;
@@ -41,7 +40,7 @@ public class Xcls_WindowLeftProps : Object
         // my vars
 
         // set gobject values
-        var child_0 = new Xcls_LeftProps(_this);
+        var child_0 = new Xcls_HBox2(_this);
         child_0.ref();
         this.el.pack_start (  child_0.el , false,true,0 );
         var child_1 = new Xcls_EditProps(_this);
@@ -64,19 +63,18 @@ public class Xcls_WindowLeftProps : Object
     // skip xvala_xcls - not pipe 
 
     // skip xvala_id - not pipe 
-    public class Xcls_LeftProps : Object 
+    public class Xcls_HBox2 : Object 
     {
         public Gtk.HBox el;
-        private Xcls_WindowLeftProps  _this;
+        private Xcls_LeftProps  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_LeftProps(Xcls_WindowLeftProps _owner)
+        public Xcls_HBox2(Xcls_LeftProps _owner)
         {
             _this = _owner;
-            _this.LeftProps = this;
             this.el = new Gtk.HBox( true, 0 );
 
             // my vars
@@ -95,13 +93,11 @@ public class Xcls_WindowLeftProps : Object
 
         // userdefined functions 
 
-        // skip |xns - no return type
+        // skip pack - not pipe 
 
         // skip xtype - not pipe 
 
-        // skip pack - not pipe 
-
-        // skip id - not pipe 
+        // skip |xns - no return type
 
         // skip items - not pipe 
 
@@ -114,13 +110,13 @@ public class Xcls_WindowLeftProps : Object
     public class Xcls_Button3 : Object 
     {
         public Gtk.Button el;
-        private Xcls_WindowLeftProps  _this;
+        private Xcls_LeftProps  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_Button3(Xcls_WindowLeftProps _owner)
+        public Xcls_Button3(Xcls_LeftProps _owner)
         {
             _this = _owner;
             this.el = new Gtk.Button();
@@ -160,13 +156,13 @@ public class Xcls_WindowLeftProps : Object
     public class Xcls_HBox4 : Object 
     {
         public Gtk.HBox el;
-        private Xcls_WindowLeftProps  _this;
+        private Xcls_LeftProps  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_HBox4(Xcls_WindowLeftProps _owner)
+        public Xcls_HBox4(Xcls_LeftProps _owner)
         {
             _this = _owner;
             this.el = new Gtk.HBox( true, 0 );
@@ -201,13 +197,13 @@ public class Xcls_WindowLeftProps : Object
     public class Xcls_Image5 : Object 
     {
         public Gtk.Image el;
-        private Xcls_WindowLeftProps  _this;
+        private Xcls_LeftProps  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_Image5(Xcls_WindowLeftProps _owner)
+        public Xcls_Image5(Xcls_LeftProps _owner)
         {
             _this = _owner;
             this.el = new Gtk.Image();
@@ -240,13 +236,13 @@ public class Xcls_WindowLeftProps : Object
     public class Xcls_Label6 : Object 
     {
         public Gtk.Label el;
-        private Xcls_WindowLeftProps  _this;
+        private Xcls_LeftProps  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_Label6(Xcls_WindowLeftProps _owner)
+        public Xcls_Label6(Xcls_LeftProps _owner)
         {
             _this = _owner;
             this.el = new Gtk.Label( "Property" );
@@ -275,13 +271,13 @@ public class Xcls_WindowLeftProps : Object
     public class Xcls_Button7 : Object 
     {
         public Gtk.Button el;
-        private Xcls_WindowLeftProps  _this;
+        private Xcls_LeftProps  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_Button7(Xcls_WindowLeftProps _owner)
+        public Xcls_Button7(Xcls_LeftProps _owner)
         {
             _this = _owner;
             this.el = new Gtk.Button();
@@ -326,13 +322,13 @@ public class Xcls_WindowLeftProps : Object
     public class Xcls_HBox8 : Object 
     {
         public Gtk.HBox el;
-        private Xcls_WindowLeftProps  _this;
+        private Xcls_LeftProps  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_HBox8(Xcls_WindowLeftProps _owner)
+        public Xcls_HBox8(Xcls_LeftProps _owner)
         {
             _this = _owner;
             this.el = new Gtk.HBox( true, 0 );
@@ -367,13 +363,13 @@ public class Xcls_WindowLeftProps : Object
     public class Xcls_Image9 : Object 
     {
         public Gtk.Image el;
-        private Xcls_WindowLeftProps  _this;
+        private Xcls_LeftProps  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_Image9(Xcls_WindowLeftProps _owner)
+        public Xcls_Image9(Xcls_LeftProps _owner)
         {
             _this = _owner;
             this.el = new Gtk.Image();
@@ -406,13 +402,13 @@ public class Xcls_WindowLeftProps : Object
     public class Xcls_Label10 : Object 
     {
         public Gtk.Label el;
-        private Xcls_WindowLeftProps  _this;
+        private Xcls_LeftProps  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_Label10(Xcls_WindowLeftProps _owner)
+        public Xcls_Label10(Xcls_LeftProps _owner)
         {
             _this = _owner;
             this.el = new Gtk.Label( "Handler" );
@@ -441,13 +437,13 @@ public class Xcls_WindowLeftProps : Object
     public class Xcls_Button11 : Object 
     {
         public Gtk.Button el;
-        private Xcls_WindowLeftProps  _this;
+        private Xcls_LeftProps  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_Button11(Xcls_WindowLeftProps _owner)
+        public Xcls_Button11(Xcls_LeftProps _owner)
         {
             _this = _owner;
             this.el = new Gtk.Button();
@@ -501,13 +497,13 @@ public class Xcls_WindowLeftProps : Object
     public class Xcls_HBox12 : Object 
     {
         public Gtk.HBox el;
-        private Xcls_WindowLeftProps  _this;
+        private Xcls_LeftProps  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_HBox12(Xcls_WindowLeftProps _owner)
+        public Xcls_HBox12(Xcls_LeftProps _owner)
         {
             _this = _owner;
             this.el = new Gtk.HBox( true, 0 );
@@ -542,13 +538,13 @@ public class Xcls_WindowLeftProps : Object
     public class Xcls_Image13 : Object 
     {
         public Gtk.Image el;
-        private Xcls_WindowLeftProps  _this;
+        private Xcls_LeftProps  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_Image13(Xcls_WindowLeftProps _owner)
+        public Xcls_Image13(Xcls_LeftProps _owner)
         {
             _this = _owner;
             this.el = new Gtk.Image();
@@ -581,13 +577,13 @@ public class Xcls_WindowLeftProps : Object
     public class Xcls_Label14 : Object 
     {
         public Gtk.Label el;
-        private Xcls_WindowLeftProps  _this;
+        private Xcls_LeftProps  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_Label14(Xcls_WindowLeftProps _owner)
+        public Xcls_Label14(Xcls_LeftProps _owner)
         {
             _this = _owner;
             this.el = new Gtk.Label( "Other" );
@@ -616,13 +612,13 @@ public class Xcls_WindowLeftProps : Object
     public class Xcls_AddPropertyPopup : Object 
     {
         public Gtk.Menu el;
-        private Xcls_WindowLeftProps  _this;
+        private Xcls_LeftProps  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_AddPropertyPopup(Xcls_WindowLeftProps _owner)
+        public Xcls_AddPropertyPopup(Xcls_LeftProps _owner)
         {
             _this = _owner;
             _this.AddPropertyPopup = this;
@@ -681,13 +677,13 @@ public class Xcls_WindowLeftProps : Object
     public class Xcls_MenuItem16 : Object 
     {
         public Gtk.MenuItem el;
-        private Xcls_WindowLeftProps  _this;
+        private Xcls_LeftProps  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_MenuItem16(Xcls_WindowLeftProps _owner)
+        public Xcls_MenuItem16(Xcls_LeftProps _owner)
         {
             _this = _owner;
             this.el = new Gtk.MenuItem();
@@ -734,13 +730,13 @@ public class Xcls_WindowLeftProps : Object
     public class Xcls_MenuItem17 : Object 
     {
         public Gtk.MenuItem el;
-        private Xcls_WindowLeftProps  _this;
+        private Xcls_LeftProps  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_MenuItem17(Xcls_WindowLeftProps _owner)
+        public Xcls_MenuItem17(Xcls_LeftProps _owner)
         {
             _this = _owner;
             this.el = new Gtk.MenuItem();
@@ -786,13 +782,13 @@ public class Xcls_WindowLeftProps : Object
     public class Xcls_MenuItem18 : Object 
     {
         public Gtk.MenuItem el;
-        private Xcls_WindowLeftProps  _this;
+        private Xcls_LeftProps  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_MenuItem18(Xcls_WindowLeftProps _owner)
+        public Xcls_MenuItem18(Xcls_LeftProps _owner)
         {
             _this = _owner;
             this.el = new Gtk.MenuItem();
@@ -838,13 +834,13 @@ public class Xcls_WindowLeftProps : Object
     public class Xcls_SeparatorMenuItem19 : Object 
     {
         public Gtk.SeparatorMenuItem el;
-        private Xcls_WindowLeftProps  _this;
+        private Xcls_LeftProps  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_SeparatorMenuItem19(Xcls_WindowLeftProps _owner)
+        public Xcls_SeparatorMenuItem19(Xcls_LeftProps _owner)
         {
             _this = _owner;
             this.el = new Gtk.SeparatorMenuItem();
@@ -871,13 +867,13 @@ public class Xcls_WindowLeftProps : Object
     public class Xcls_MenuItem20 : Object 
     {
         public Gtk.MenuItem el;
-        private Xcls_WindowLeftProps  _this;
+        private Xcls_LeftProps  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_MenuItem20(Xcls_WindowLeftProps _owner)
+        public Xcls_MenuItem20(Xcls_LeftProps _owner)
         {
             _this = _owner;
             this.el = new Gtk.MenuItem();
@@ -923,13 +919,13 @@ public class Xcls_WindowLeftProps : Object
     public class Xcls_MenuItem21 : Object 
     {
         public Gtk.MenuItem el;
-        private Xcls_WindowLeftProps  _this;
+        private Xcls_LeftProps  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_MenuItem21(Xcls_WindowLeftProps _owner)
+        public Xcls_MenuItem21(Xcls_LeftProps _owner)
         {
             _this = _owner;
             this.el = new Gtk.MenuItem();
@@ -975,13 +971,13 @@ public class Xcls_WindowLeftProps : Object
     public class Xcls_MenuItem22 : Object 
     {
         public Gtk.MenuItem el;
-        private Xcls_WindowLeftProps  _this;
+        private Xcls_LeftProps  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_MenuItem22(Xcls_WindowLeftProps _owner)
+        public Xcls_MenuItem22(Xcls_LeftProps _owner)
         {
             _this = _owner;
             this.el = new Gtk.MenuItem();
@@ -1027,13 +1023,13 @@ public class Xcls_WindowLeftProps : Object
     public class Xcls_SeparatorMenuItem23 : Object 
     {
         public Gtk.SeparatorMenuItem el;
-        private Xcls_WindowLeftProps  _this;
+        private Xcls_LeftProps  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_SeparatorMenuItem23(Xcls_WindowLeftProps _owner)
+        public Xcls_SeparatorMenuItem23(Xcls_LeftProps _owner)
         {
             _this = _owner;
             this.el = new Gtk.SeparatorMenuItem();
@@ -1060,13 +1056,13 @@ public class Xcls_WindowLeftProps : Object
     public class Xcls_MenuItem24 : Object 
     {
         public Gtk.MenuItem el;
-        private Xcls_WindowLeftProps  _this;
+        private Xcls_LeftProps  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_MenuItem24(Xcls_WindowLeftProps _owner)
+        public Xcls_MenuItem24(Xcls_LeftProps _owner)
         {
             _this = _owner;
             this.el = new Gtk.MenuItem();
@@ -1112,13 +1108,13 @@ public class Xcls_WindowLeftProps : Object
     public class Xcls_EditProps : Object 
     {
         public Gtk.ScrolledWindow el;
-        private Xcls_WindowLeftProps  _this;
+        private Xcls_LeftProps  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_EditProps(Xcls_WindowLeftProps _owner)
+        public Xcls_EditProps(Xcls_LeftProps _owner)
         {
             _this = _owner;
             _this.EditProps = this;
@@ -1168,13 +1164,13 @@ public class Xcls_WindowLeftProps : Object
     public class Xcls_view : Object 
     {
         public Gtk.TreeView el;
-        private Xcls_WindowLeftProps  _this;
+        private Xcls_LeftProps  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_view(Xcls_WindowLeftProps _owner)
+        public Xcls_view(Xcls_LeftProps _owner)
         {
             _this = _owner;
             _this.view = this;
@@ -1328,13 +1324,13 @@ public class Xcls_WindowLeftProps : Object
     public class Xcls_model : Object 
     {
         public Gtk.TreeStore el;
-        private Xcls_WindowLeftProps  _this;
+        private Xcls_LeftProps  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_model(Xcls_WindowLeftProps _owner)
+        public Xcls_model(Xcls_LeftProps _owner)
         {
             _this = _owner;
             _this.model = this;
@@ -1402,13 +1398,13 @@ public class Xcls_WindowLeftProps : Object
     public class Xcls_TreeViewColumn28 : Object 
     {
         public Gtk.TreeViewColumn el;
-        private Xcls_WindowLeftProps  _this;
+        private Xcls_LeftProps  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_TreeViewColumn28(Xcls_WindowLeftProps _owner)
+        public Xcls_TreeViewColumn28(Xcls_LeftProps _owner)
         {
             _this = _owner;
             this.el = new Gtk.TreeViewColumn();
@@ -1453,13 +1449,13 @@ public class Xcls_WindowLeftProps : Object
     public class Xcls_CellRendererText29 : Object 
     {
         public Gtk.CellRendererText el;
-        private Xcls_WindowLeftProps  _this;
+        private Xcls_LeftProps  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_CellRendererText29(Xcls_WindowLeftProps _owner)
+        public Xcls_CellRendererText29(Xcls_LeftProps _owner)
         {
             _this = _owner;
             this.el = new Gtk.CellRendererText();
@@ -1508,13 +1504,13 @@ public class Xcls_WindowLeftProps : Object
     public class Xcls_TreeViewColumn30 : Object 
     {
         public Gtk.TreeViewColumn el;
-        private Xcls_WindowLeftProps  _this;
+        private Xcls_LeftProps  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_TreeViewColumn30(Xcls_WindowLeftProps _owner)
+        public Xcls_TreeViewColumn30(Xcls_LeftProps _owner)
         {
             _this = _owner;
             this.el = new Gtk.TreeViewColumn();
@@ -1564,13 +1560,13 @@ public class Xcls_WindowLeftProps : Object
     public class Xcls_CellRendererCombo31 : Object 
     {
         public Gtk.CellRendererCombo el;
-        private Xcls_WindowLeftProps  _this;
+        private Xcls_LeftProps  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_CellRendererCombo31(Xcls_WindowLeftProps _owner)
+        public Xcls_CellRendererCombo31(Xcls_LeftProps _owner)
         {
             _this = _owner;
             this.el = new Gtk.CellRendererCombo();
@@ -1637,13 +1633,13 @@ public class Xcls_WindowLeftProps : Object
     public class Xcls_ContextMenu : Object 
     {
         public Gtk.Menu el;
-        private Xcls_WindowLeftProps  _this;
+        private Xcls_LeftProps  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_ContextMenu(Xcls_WindowLeftProps _owner)
+        public Xcls_ContextMenu(Xcls_LeftProps _owner)
         {
             _this = _owner;
             _this.ContextMenu = this;
@@ -1681,13 +1677,13 @@ public class Xcls_WindowLeftProps : Object
     public class Xcls_MenuItem33 : Object 
     {
         public Gtk.MenuItem el;
-        private Xcls_WindowLeftProps  _this;
+        private Xcls_LeftProps  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_MenuItem33(Xcls_WindowLeftProps _owner)
+        public Xcls_MenuItem33(Xcls_LeftProps _owner)
         {
             _this = _owner;
             this.el = new Gtk.MenuItem();
@@ -1724,13 +1720,13 @@ public class Xcls_WindowLeftProps : Object
     public class Xcls_MenuItem34 : Object 
     {
         public Gtk.MenuItem el;
-        private Xcls_WindowLeftProps  _this;
+        private Xcls_LeftProps  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_MenuItem34(Xcls_WindowLeftProps _owner)
+        public Xcls_MenuItem34(Xcls_LeftProps _owner)
         {
             _this = _owner;
             this.el = new Gtk.MenuItem();

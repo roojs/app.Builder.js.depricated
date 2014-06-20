@@ -6,15 +6,14 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.bjs",
     "items": [
         {
-            "id": "WindowLeftProps",
+            "id": "LeftProps",
             "xtype": "VBox",
             "|xns": "Gtk",
             "items": [
                 {
-                    "|xns": "Gtk",
-                    "xtype": "HBox",
                     "pack": "pack_start,false,true,0",
-                    "id": "LeftProps",
+                    "xtype": "HBox",
+                    "|xns": "Gtk",
                     "items": [
                         {
                             "listeners": {

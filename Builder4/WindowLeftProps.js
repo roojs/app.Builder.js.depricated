@@ -11,12 +11,11 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 WindowLeftProps=new XObject({
     xtype: Gtk.VBox,
-    id : "WindowLeftProps",
+    id : "LeftProps",
     items : [
         {
             xtype: Gtk.HBox,
             pack : "pack_start,false,true,0",
-            id : "LeftProps",
             items : [
                 {
                     xtype: Gtk.Button,
