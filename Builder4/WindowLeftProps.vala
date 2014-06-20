@@ -788,7 +788,7 @@ public class Xcls_LeftProps : Object
             this.el.tooltip_markup = "Override the init method";
 
             // listeners 
-            this.el.activate.connect( function (self) {
+            this.el.activate.connect(   ( ) => {
             
                 this.addProp( "|init", "{\n\n}\n" );
             } );

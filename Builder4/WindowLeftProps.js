@@ -147,7 +147,7 @@ WindowLeftProps=new XObject({
                                 {
                                     xtype: Gtk.MenuItem,
                                     listeners : {
-                                        activate : function (self) {
+                                        activate : ( ) => {
                                         
                                             this.addProp( "|init", "{\n\n}\n" );
                                         }

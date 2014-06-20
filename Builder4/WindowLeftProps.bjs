@@ -132,7 +132,7 @@
                                         },
                                         {
                                             "listeners": {
-                                                "activate": "function (self) {\n\n    this.addProp( \"|init\", \"{\\n\\n}\\n\" );\n}"
+                                                "activate": "  ( ) => {\n\n    this.addProp( \"|init\", \"{\\n\\n}\\n\" );\n}"
                                             },
                                             "label": "INIT",
                                             "pack": "append",
