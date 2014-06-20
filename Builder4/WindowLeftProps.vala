@@ -1653,7 +1653,7 @@ public class Xcls_LeftProps : Object
         public Xcls_ListStore33(Xcls_LeftProps _owner)
         {
             _this = _owner;
-            this.el = new Gtk.ListStore( 1, null );
+            this.el = new Gtk.ListStore( 1, "" );
 
             // my vars
 
@@ -1662,9 +1662,11 @@ public class Xcls_LeftProps : Object
 
         // userdefined functions 
 
-        // skip n_columns - already used 
+        // skip columns - already used 
 
         // skip *prop - not pipe 
+
+        // skip n_columns - already used 
 
         // skip pack - not pipe 
 
