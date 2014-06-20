@@ -162,20 +162,16 @@ WindowLeftProps=new XObject({
                                 },
                                 {
                                     xtype: Gtk.MenuItem,
-                                    pack : "append",
-                                    tooltip_markup : "Add a user defined string property",
-                                    label : "String",
                                     listeners : {
                                         activate : function (self) {
                                         
-                                            this.get('/LeftPanel.model').add( {
-                                          		  key : '', 
-                                                        type : 'string',
-                                                        val  : "",
-                                                        etype : 'props'
-                                            });
+                                            _this.addProp( ".string:XXXX", "");
+                                        
                                         }
-                                    }
+                                    },
+                                    label : "String",
+                                    pack : "append",
+                                    tooltip_markup : "Add a user defined string property"
                                 },
                                 {
                                     xtype: Gtk.MenuItem,

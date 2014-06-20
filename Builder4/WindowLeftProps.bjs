@@ -146,14 +146,14 @@
                                             "pack": "add"
                                         },
                                         {
-                                            "|xns": "Gtk",
-                                            "xtype": "MenuItem",
+                                            "listeners": {
+                                                "activate": "function (self) {\n\n    _this.addProp( \".string:XXXX\", \"\");\n\n}"
+                                            },
+                                            "label": "String",
                                             "pack": "append",
                                             "tooltip_markup": "Add a user defined string property",
-                                            "label": "String",
-                                            "listeners": {
-                                                "activate": "function (self) {\n\n    this.get('/LeftPanel.model').add( {\n  \t\t  key : '', \n                type : 'string',\n                val  : \"\",\n                etype : 'props'\n    });\n}"
-                                            }
+                                            "xtype": "MenuItem",
+                                            "|xns": "Gtk"
                                         },
                                         {
                                             "|xns": "Gtk",
