@@ -6,7 +6,7 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.bjs",
     "items": [
         {
-            ".signal:void:showAddProps()": "",
+            ".signal:void:showAddProps": "",
             "id": "LeftProps",
             "xtype": "VBox",
             "|xns": "Gtk",
@@ -48,7 +48,7 @@
                         },
                         {
                             "listeners": {
-                                "button_press_event": "function (self, event) {\n    \n \tif (!this.get('/Editor').save()) {\n \t    // popup!! - click handled.. \n \t    return true;\n        }\n        this.get('/MidPropTree.model').showData('events');\n    return false;\n}"
+                                "button_press_event": "function ( event)  => {\n    \n// \tif (!this.get('/Editor').save()) {\n// \t    // popup!! - click handled.. \n// \t    return true;\n//        }\n    _this.addProps(\"'events\");\n    return false;\n}"
                             },
                             "pack": "add",
                             "xtype": "Button",

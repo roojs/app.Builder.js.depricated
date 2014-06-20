@@ -49,13 +49,13 @@ WindowLeftProps=new XObject({
                 {
                     xtype: Gtk.Button,
                     listeners : {
-                        button_press_event : function (self, event) {
+                        button_press_event : function ( event)  => {
                             
-                         	if (!this.get('/Editor').save()) {
-                         	    // popup!! - click handled.. 
-                         	    return true;
-                                }
-                                this.get('/MidPropTree.model').showData('events');
+                        // 	if (!this.get('/Editor').save()) {
+                        // 	    // popup!! - click handled.. 
+                        // 	    return true;
+                        //        }
+                            _this.addProps("'events");
                             return false;
                         }
                     },

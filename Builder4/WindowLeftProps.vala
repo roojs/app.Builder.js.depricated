@@ -29,7 +29,7 @@ public class Xcls_LeftProps : Object
     public Xcls_ContextMenu ContextMenu;
 
         // my vars
-    public signal void showAddProps();
+    public signal void showAddProps;
 
         // ctor 
     public Xcls_LeftProps()
@@ -51,7 +51,7 @@ public class Xcls_LeftProps : Object
 
     // userdefined functions 
 
-    // skip .signal:void:showAddProps() - already used 
+    // skip .signal:void:showAddProps - already used 
 
     // skip id - not pipe 
 
@@ -293,13 +293,13 @@ public class Xcls_LeftProps : Object
             this.el.add (  child_0.el  );
 
             // listeners 
-            this.el.button_press_event.connect( function (self, event) {
+            this.el.button_press_event.connect( function ( event)  => {
                 
-             	if (!this.get('/Editor').save()) {
-             	    // popup!! - click handled.. 
-             	    return true;
-                    }
-                    this.get('/MidPropTree.model').showData('events');
+            // 	if (!this.get('/Editor').save()) {
+            // 	    // popup!! - click handled.. 
+            // 	    return true;
+            //        }
+                _this.addProps("'events");
                 return false;
             } );
         }
