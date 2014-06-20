@@ -1475,17 +1475,17 @@ public class Xcls_LeftProps : Object
                  //   this.get('/LeftPanel.model').activePath  = path;
             
             } );
-            this.el.edited.connect( function (self, object, p0) {
-            	var model = this.get('/LeftPanel.model');
-                    var path = model.activePath;
-                    var iter = new Gtk.TreeIter();
-                    model.el.get_iter(iter, new Gtk.TreePath.from_string(path));
-                    model.el.set_value(iter, 0, p0);
-                    model.el.set_value(iter, 2, p0);
-                    
-            	model.activePath = false;
+            this.el.edited.connect( function (path, newtext) {
             
-            	this.get('/LeftTree.model').changed(model.toJS(), true); 
+            
+            
+                    Gtk.TreeIter  iter;
+                    _this.model.el.get_iter(iter, new Gtk.TreePath.from_string(path));
+                    _this.model.el.set_value(iter, 0, newtext);
+                    this.model.el.set_value(iter, 2, p0);
+                    
+            	//model.activePath = false;
+                    _this.changed();
                     this.el.editable = false;
             } );
         }

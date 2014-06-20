@@ -256,7 +256,7 @@
                                         {
                                             "listeners": {
                                                 "editing_started": "(  editable, path) => {\n\n     //   this.get('/LeftPanel.model').activePath  = path;\n\n}",
-                                                "edited": "function (self, object, p0) {\n\tvar model = this.get('/LeftPanel.model');\n        var path = model.activePath;\n        var iter = new Gtk.TreeIter();\n        model.el.get_iter(iter, new Gtk.TreePath.from_string(path));\n        model.el.set_value(iter, 0, p0);\n        model.el.set_value(iter, 2, p0);\n        \n\tmodel.activePath = false;\n\n\tthis.get('/LeftTree.model').changed(model.toJS(), true); \n        this.el.editable = false;\n}"
+                                                "edited": "function (path, newtext) {\n\n\n\n        Gtk.TreeIter  iter;\n        _this.model.el.get_iter(iter, new Gtk.TreePath.from_string(path));\n        _this.model.el.set_value(iter, 0, newtext);\n        this.model.el.set_value(iter, 2, p0);\n        \n\t//model.activePath = false;\n        _this.changed();\n        this.el.editable = false;\n}"
                                             },
                                             "id": "keyrender",
                                             "pack": "pack_start",
