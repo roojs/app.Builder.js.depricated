@@ -963,30 +963,25 @@ public class Xcls_LeftProps : Object
             this.el.tooltip_markup = "Add a user defined boolean property";
 
             // listeners 
-            this.el.activate.connect( function (self) {
+            this.el.activate.connect(   ( ) =>{
             
-                this.get('/LeftPanel.model').add( {
-              		  key : '', 
-                            type : 'boolean',
-                            val  : false,
-                            etype : 'props'
-                });
+                _this.addProp( ".bool:XXX", "true");
             } );
         }
 
         // userdefined functions 
 
-        // skip |xns - no return type
+        // skip listeners - not pipe 
 
-        // skip xtype - not pipe 
+        // skip label - already used 
 
         // skip pack - not pipe 
 
         // skip tooltip_markup - already used 
 
-        // skip label - already used 
+        // skip xtype - not pipe 
 
-        // skip listeners - not pipe 
+        // skip |xns - no return type
 
         // skip xvala_cls - not pipe 
 

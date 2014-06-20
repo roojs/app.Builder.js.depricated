@@ -187,20 +187,15 @@ WindowLeftProps=new XObject({
                                 },
                                 {
                                     xtype: Gtk.MenuItem,
-                                    pack : "append",
-                                    tooltip_markup : "Add a user defined boolean property",
-                                    label : "Boolean",
                                     listeners : {
-                                        activate : function (self) {
+                                        activate : ( ) =>{
                                         
-                                            this.get('/LeftPanel.model').add( {
-                                          		  key : '', 
-                                                        type : 'boolean',
-                                                        val  : false,
-                                                        etype : 'props'
-                                            });
+                                            _this.addProp( ".bool:XXX", "true");
                                         }
-                                    }
+                                    },
+                                    label : "Boolean",
+                                    pack : "append",
+                                    tooltip_markup : "Add a user defined boolean property"
                                 },
                                 {
                                     xtype: Gtk.SeparatorMenuItem,
