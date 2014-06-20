@@ -654,6 +654,9 @@ public class Xcls_LeftProps : Object
             var child_8 = new Xcls_MenuItem24(_this);
             child_8.ref();
             this.el.append (  child_8.el  );
+            var child_9 = new Xcls_MenuItem25(_this);
+            child_9.ref();
+            this.el.append (  child_9.el  );
         }
 
         // userdefined functions 
@@ -1043,30 +1046,72 @@ public class Xcls_LeftProps : Object
             this.el.tooltip_markup = "Add a user function boolean property";
 
             // listeners 
-            this.el.activate.connect( function (self) {
+            this.el.activate.connect(   ( ) =>{
             
-                this.get('/LeftPanel.model').add( {
-              	    key : '|', 
-                                    type : 'function',
-                                    val  : "function() {\n    \n}\n",
-                                    etype : 'props'
-                });
+                _this.addProp( "|XXXX", "function() { }");
             } );
         }
 
         // userdefined functions 
 
-        // skip |xns - no return type
+        // skip listeners - not pipe 
 
-        // skip xtype - not pipe 
+        // skip label - already used 
 
         // skip pack - not pipe 
 
         // skip tooltip_markup - already used 
 
-        // skip label - already used 
+        // skip xtype - not pipe 
+
+        // skip |xns - no return type
+
+        // skip xvala_cls - not pipe 
+
+        // skip xvala_xcls - not pipe 
+
+        // skip xvala_id - not pipe 
+    }
+    public class Xcls_MenuItem25 : Object 
+    {
+        public Gtk.MenuItem el;
+        private Xcls_LeftProps  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_MenuItem25(Xcls_LeftProps _owner)
+        {
+            _this = _owner;
+            this.el = new Gtk.MenuItem();
+
+            // my vars
+
+            // set gobject values
+            this.el.label = "Function";
+            this.el.tooltip_markup = "Add a user function boolean property";
+
+            // listeners 
+            this.el.activate.connect(   ( ) =>{
+            
+                _this.addProp( "|XXXX", "function() { }");
+            } );
+        }
+
+        // userdefined functions 
 
         // skip listeners - not pipe 
+
+        // skip label - already used 
+
+        // skip pack - not pipe 
+
+        // skip tooltip_markup - already used 
+
+        // skip xtype - not pipe 
+
+        // skip |xns - no return type
 
         // skip xvala_cls - not pipe 
 
@@ -1154,10 +1199,10 @@ public class Xcls_LeftProps : Object
             var child_0 = new Xcls_model(_this);
             child_0.ref();
             this.el.set_model (  child_0.el  );
-            var child_1 = new Xcls_TreeViewColumn28(_this);
+            var child_1 = new Xcls_TreeViewColumn29(_this);
             child_1.ref();
             this.el.append_column (  child_1.el  );
-            var child_2 = new Xcls_TreeViewColumn30(_this);
+            var child_2 = new Xcls_TreeViewColumn31(_this);
             child_2.ref();
             this.el.append_column (  child_2.el  );
 
@@ -1364,7 +1409,7 @@ public class Xcls_LeftProps : Object
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_TreeViewColumn28 : Object 
+    public class Xcls_TreeViewColumn29 : Object 
     {
         public Gtk.TreeViewColumn el;
         private Xcls_LeftProps  _this;
@@ -1373,7 +1418,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_TreeViewColumn28(Xcls_LeftProps _owner)
+        public Xcls_TreeViewColumn29(Xcls_LeftProps _owner)
         {
             _this = _owner;
             this.el = new Gtk.TreeViewColumn();
@@ -1382,7 +1427,7 @@ public class Xcls_LeftProps : Object
 
             // set gobject values
             this.el.title = "key";
-            var child_0 = new Xcls_CellRendererText29(_this);
+            var child_0 = new Xcls_CellRendererText30(_this);
             child_0.ref();
             this.el.pack_start (  child_0.el  );
 
@@ -1415,7 +1460,7 @@ public class Xcls_LeftProps : Object
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_CellRendererText29 : Object 
+    public class Xcls_CellRendererText30 : Object 
     {
         public Gtk.CellRendererText el;
         private Xcls_LeftProps  _this;
@@ -1424,7 +1469,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_CellRendererText29(Xcls_LeftProps _owner)
+        public Xcls_CellRendererText30(Xcls_LeftProps _owner)
         {
             _this = _owner;
             this.el = new Gtk.CellRendererText();
@@ -1470,7 +1515,7 @@ public class Xcls_LeftProps : Object
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_TreeViewColumn30 : Object 
+    public class Xcls_TreeViewColumn31 : Object 
     {
         public Gtk.TreeViewColumn el;
         private Xcls_LeftProps  _this;
@@ -1479,7 +1524,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_TreeViewColumn30(Xcls_LeftProps _owner)
+        public Xcls_TreeViewColumn31(Xcls_LeftProps _owner)
         {
             _this = _owner;
             this.el = new Gtk.TreeViewColumn();
@@ -1488,7 +1533,7 @@ public class Xcls_LeftProps : Object
 
             // set gobject values
             this.el.title = "value";
-            var child_0 = new Xcls_CellRendererCombo31(_this);
+            var child_0 = new Xcls_CellRendererCombo32(_this);
             child_0.ref();
             this.el.pack_start (  child_0.el  );
 
@@ -1526,7 +1571,7 @@ public class Xcls_LeftProps : Object
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_CellRendererCombo31 : Object 
+    public class Xcls_CellRendererCombo32 : Object 
     {
         public Gtk.CellRendererCombo el;
         private Xcls_LeftProps  _this;
@@ -1535,7 +1580,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_CellRendererCombo31(Xcls_LeftProps _owner)
+        public Xcls_CellRendererCombo32(Xcls_LeftProps _owner)
         {
             _this = _owner;
             this.el = new Gtk.CellRendererCombo();
@@ -1617,10 +1662,10 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_MenuItem33(_this);
+            var child_0 = new Xcls_MenuItem34(_this);
             child_0.ref();
             this.el.append (  child_0.el  );
-            var child_1 = new Xcls_MenuItem34(_this);
+            var child_1 = new Xcls_MenuItem35(_this);
             child_1.ref();
             this.el.append (  child_1.el  );
         }
@@ -1643,7 +1688,7 @@ public class Xcls_LeftProps : Object
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_MenuItem33 : Object 
+    public class Xcls_MenuItem34 : Object 
     {
         public Gtk.MenuItem el;
         private Xcls_LeftProps  _this;
@@ -1652,7 +1697,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_MenuItem33(Xcls_LeftProps _owner)
+        public Xcls_MenuItem34(Xcls_LeftProps _owner)
         {
             _this = _owner;
             this.el = new Gtk.MenuItem();
@@ -1686,7 +1731,7 @@ public class Xcls_LeftProps : Object
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_MenuItem34 : Object 
+    public class Xcls_MenuItem35 : Object 
     {
         public Gtk.MenuItem el;
         private Xcls_LeftProps  _this;
@@ -1695,7 +1740,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_MenuItem34(Xcls_LeftProps _owner)
+        public Xcls_MenuItem35(Xcls_LeftProps _owner)
         {
             _this = _owner;
             this.el = new Gtk.MenuItem();

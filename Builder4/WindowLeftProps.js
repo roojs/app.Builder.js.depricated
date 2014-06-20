@@ -203,20 +203,27 @@ WindowLeftProps=new XObject({
                                 },
                                 {
                                     xtype: Gtk.MenuItem,
-                                    pack : "append",
-                                    tooltip_markup : "Add a user function boolean property",
-                                    label : "Function",
                                     listeners : {
-                                        activate : function (self) {
+                                        activate : ( ) =>{
                                         
-                                            this.get('/LeftPanel.model').add( {
-                                          	    key : '|', 
-                                                                type : 'function',
-                                                                val  : "function() {\n    \n}\n",
-                                                                etype : 'props'
-                                            });
+                                            _this.addProp( "|XXXX", "function() { }");
                                         }
-                                    }
+                                    },
+                                    label : "Function",
+                                    pack : "append",
+                                    tooltip_markup : "Add a user function boolean property"
+                                },
+                                {
+                                    xtype: Gtk.MenuItem,
+                                    listeners : {
+                                        activate : ( ) =>{
+                                        
+                                            _this.addProp( "|XXXX", "function() { }");
+                                        }
+                                    },
+                                    label : "Function",
+                                    pack : "append",
+                                    tooltip_markup : "Add a user function boolean property"
                                 }
                             ]
                         }

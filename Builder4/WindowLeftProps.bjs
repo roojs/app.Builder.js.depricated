@@ -181,14 +181,24 @@
                                             "pack": "add"
                                         },
                                         {
-                                            "|xns": "Gtk",
-                                            "xtype": "MenuItem",
+                                            "listeners": {
+                                                "activate": "  ( ) =>{\n\n    _this.addProp( \"|XXXX\", \"function() { }\");\n}"
+                                            },
+                                            "label": "Function",
                                             "pack": "append",
                                             "tooltip_markup": "Add a user function boolean property",
-                                            "label": "Function",
+                                            "xtype": "MenuItem",
+                                            "|xns": "Gtk"
+                                        },
+                                        {
                                             "listeners": {
-                                                "activate": "function (self) {\n\n    this.get('/LeftPanel.model').add( {\n  \t    key : '|', \n                        type : 'function',\n                        val  : \"function() {\\n    \\n}\\n\",\n                        etype : 'props'\n    });\n}"
-                                            }
+                                                "activate": "  ( ) =>{\n\n    _this.addProp( \"|XXXX\", \"function() { }\");\n}"
+                                            },
+                                            "label": "Function",
+                                            "pack": "append",
+                                            "tooltip_markup": "Add a user function boolean property",
+                                            "xtype": "MenuItem",
+                                            "|xns": "Gtk"
                                         }
                                     ]
                                 }
