@@ -1470,9 +1470,9 @@ public class Xcls_LeftProps : Object
             // set gobject values
 
             // listeners 
-            this.el.editing_started.connect( function (self, editable, path) {
+            this.el.editing_started.connect( (  editable, path) => {
             
-                    this.get('/LeftPanel.model').activePath  = path;
+                 //   this.get('/LeftPanel.model').activePath  = path;
             
             } );
             this.el.edited.connect( function (self, object, p0) {
