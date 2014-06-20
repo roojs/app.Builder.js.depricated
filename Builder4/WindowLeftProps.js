@@ -19,13 +19,13 @@ WindowLeftProps=new XObject({
             items : [
                 {
                     xtype: Gtk.Button,
-                    pack : "add",
                     listeners : {
                         button_press_event : function (self, event) {
-                            this.get('/MidPropTree.model').showData('props');
+                            _this.showAddProps();
                             return false;
                         }
                     },
+                    pack : "add",
                     items : [
                         {
                             xtype: Gtk.HBox,

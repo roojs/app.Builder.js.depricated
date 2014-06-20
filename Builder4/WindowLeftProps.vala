@@ -138,20 +138,20 @@ public class Xcls_WindowLeftProps : Object
 
             // listeners 
             this.el.button_press_event.connect( function (self, event) {
-                this.get('/MidPropTree.model').showData('props');
+                _this.showAddProps();
                 return false;
             } );
         }
 
         // userdefined functions 
 
-        // skip |xns - no return type
-
-        // skip xtype - not pipe 
+        // skip listeners - not pipe 
 
         // skip pack - not pipe 
 
-        // skip listeners - not pipe 
+        // skip xtype - not pipe 
+
+        // skip |xns - no return type
 
         // skip items - not pipe 
 

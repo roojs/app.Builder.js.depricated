@@ -17,12 +17,12 @@
                     "id": "LeftProps",
                     "items": [
                         {
-                            "|xns": "Gtk",
-                            "xtype": "Button",
-                            "pack": "add",
                             "listeners": {
-                                "button_press_event": "function (self, event) {\n    this.get('/MidPropTree.model').showData('props');\n    return false;\n}"
+                                "button_press_event": "function (self, event) {\n    _this.showAddProps();\n    return false;\n}"
                             },
+                            "pack": "add",
+                            "xtype": "Button",
+                            "|xns": "Gtk",
                             "items": [
                                 {
                                     "|xns": "Gtk",
