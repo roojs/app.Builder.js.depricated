@@ -692,7 +692,7 @@ WindowLeftProps=new XObject({
                                              //   this.get('/LeftPanel.model').activePath  = path;
                                         
                                         },
-                                        edited : function (path, newtext) {
+                                        edited : (path, newtext) => {
                                         
                                         
                                         

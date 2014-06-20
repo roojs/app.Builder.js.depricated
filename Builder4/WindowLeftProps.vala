@@ -1475,7 +1475,7 @@ public class Xcls_LeftProps : Object
                  //   this.get('/LeftPanel.model').activePath  = path;
             
             } );
-            this.el.edited.connect( function (path, newtext) {
+            this.el.edited.connect(   (path, newtext) => {
             
             
             
