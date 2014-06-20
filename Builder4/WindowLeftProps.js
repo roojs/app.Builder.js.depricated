@@ -717,8 +717,8 @@ WindowLeftProps=new XObject({
                             pack : "append_column",
                             title : "value",
                             init : {
-                            	this.el.add_attribute(this.items[0].el , 'text', 3 );
-                            	this.el.add_attribute(this.items[0].el , 'sensitive', 3 );
+                            	this.el.add_attribute(this.valrender.el , 'text', 3 );
+                            	this.el.add_attribute(this.valrender.el , 'sensitive', 3 );
                             	//this.el.add_attribute(this.items[0].el , 'editable', 3 );
                                       // this.el.set_cell_data_func(cell, age_cell_data_func, NULL, NULL);
                             
