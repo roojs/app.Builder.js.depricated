@@ -156,14 +156,14 @@
                                             "|xns": "Gtk"
                                         },
                                         {
-                                            "|xns": "Gtk",
-                                            "xtype": "MenuItem",
+                                            "listeners": {
+                                                "activate": "function (self) {\n\n    _this.addProp( \".int:XXX\", \"0\");\n}"
+                                            },
+                                            "label": "Number",
                                             "pack": "append",
                                             "tooltip_markup": "Add a user defined number property",
-                                            "label": "Number",
-                                            "listeners": {
-                                                "activate": "function (self) {\n\n    this.get('/LeftPanel.model').add( {\n  \t\t  key : '', \n                type : 'number',\n                val  : 0,\n                etype : 'props'\n    });\n}"
-                                            }
+                                            "xtype": "MenuItem",
+                                            "|xns": "Gtk"
                                         },
                                         {
                                             "|xns": "Gtk",

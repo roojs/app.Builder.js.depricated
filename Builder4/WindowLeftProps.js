@@ -175,20 +175,15 @@ WindowLeftProps=new XObject({
                                 },
                                 {
                                     xtype: Gtk.MenuItem,
-                                    pack : "append",
-                                    tooltip_markup : "Add a user defined number property",
-                                    label : "Number",
                                     listeners : {
                                         activate : function (self) {
                                         
-                                            this.get('/LeftPanel.model').add( {
-                                          		  key : '', 
-                                                        type : 'number',
-                                                        val  : 0,
-                                                        etype : 'props'
-                                            });
+                                            _this.addProp( ".int:XXX", "0");
                                         }
-                                    }
+                                    },
+                                    label : "Number",
+                                    pack : "append",
+                                    tooltip_markup : "Add a user defined number property"
                                 },
                                 {
                                     xtype: Gtk.MenuItem,
