@@ -209,7 +209,7 @@ WindowLeftProps=new XObject({
                                             _this.addProp( "|XXXX", "function() { }");
                                         }
                                     },
-                                    label : "Function",
+                                    label : "Javascript Function",
                                     pack : "append",
                                     tooltip_markup : "Add a user function boolean property"
                                 },
@@ -221,7 +221,7 @@ WindowLeftProps=new XObject({
                                             _this.addProp( "|XXXX", "function() { }");
                                         }
                                     },
-                                    label : "Function",
+                                    label : "Vala Function",
                                     pack : "append",
                                     tooltip_markup : "Add a user function boolean property"
                                 }
