@@ -26,6 +26,7 @@ public class Xcls_LeftProps : Object
     public Xcls_EditProps EditProps;
     public Xcls_view view;
     public Xcls_model model;
+    public Xcls_keycol keycol;
     public Xcls_ContextMenu ContextMenu;
 
         // my vars
@@ -1201,7 +1202,7 @@ public class Xcls_LeftProps : Object
             var child_0 = new Xcls_model(_this);
             child_0.ref();
             this.el.set_model (  child_0.el  );
-            var child_1 = new Xcls_TreeViewColumn29(_this);
+            var child_1 = new Xcls_keycol(_this);
             child_1.ref();
             this.el.append_column (  child_1.el  );
             var child_2 = new Xcls_TreeViewColumn31(_this);
@@ -1410,7 +1411,7 @@ public class Xcls_LeftProps : Object
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_TreeViewColumn29 : Object 
+    public class Xcls_keycol : Object 
     {
         public Gtk.TreeViewColumn el;
         private Xcls_LeftProps  _this;
@@ -1419,9 +1420,10 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // ctor 
-        public Xcls_TreeViewColumn29(Xcls_LeftProps _owner)
+        public Xcls_keycol(Xcls_LeftProps _owner)
         {
             _this = _owner;
+            _this.keycol = this;
             this.el = new Gtk.TreeViewColumn();
 
             // my vars
@@ -1443,15 +1445,17 @@ public class Xcls_LeftProps : Object
 
         // userdefined functions 
 
-        // skip |xns - no return type
-
-        // skip xtype - not pipe 
+        // skip id - not pipe 
 
         // skip pack - not pipe 
 
+        // skip title - already used 
+
+        // skip xtype - not pipe 
+
         // skip |init - already used 
 
-        // skip title - already used 
+        // skip |xns - no return type
 
         // skip items - not pipe 
 

@@ -246,11 +246,12 @@
                                     "|xns": "Gtk"
                                 },
                                 {
-                                    "|xns": "Gtk",
-                                    "xtype": "TreeViewColumn",
+                                    "id": "keycol",
                                     "pack": "append_column",
-                                    "|init": "function() {\n    XObject.prototype.init.call(this);\n\n    this.el.add_attribute(this.items[0].el , 'markup', 2 );\n    this.get('/LeftPanel').propertyColumn = this;\n}\n",
                                     "title": "key",
+                                    "xtype": "TreeViewColumn",
+                                    "|init": "function() {\n    XObject.prototype.init.call(this);\n\n    this.el.add_attribute(this.items[0].el , 'markup', 2 );\n    this.get('/LeftPanel').propertyColumn = this;\n}\n",
+                                    "|xns": "Gtk",
                                     "items": [
                                         {
                                             "|xns": "Gtk",
@@ -264,6 +265,7 @@
                                     ]
                                 },
                                 {
+                                    "id": "valcol",
                                     "pack": "append_column",
                                     "title": "value",
                                     "xtype": "TreeViewColumn",
