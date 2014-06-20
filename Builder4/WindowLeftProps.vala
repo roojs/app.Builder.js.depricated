@@ -61,6 +61,8 @@ public class Xcls_LeftProps : Object
 
     // skip xtype - not pipe 
 
+    // skip | - no return type
+
     // skip |xns - no return type
 
     // skip items - not pipe 

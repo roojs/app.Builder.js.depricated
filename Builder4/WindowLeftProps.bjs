@@ -9,6 +9,7 @@
             ".signal:void:showAddProps": "(string type)",
             "id": "LeftProps",
             "xtype": "VBox",
+            "|": "function() {\n    \n}\n",
             "|xns": "Gtk",
             "items": [
                 {
