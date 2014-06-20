@@ -1376,8 +1376,6 @@ public class Xcls_LeftProps : Object
 
         // userdefined functions 
 
-        // skip activePath - not pipe 
-
         // skip id - not pipe 
 
         // skip pack - not pipe 

@@ -228,7 +228,6 @@
                             "|xns": "Gtk",
                             "items": [
                                 {
-                                    "activePath": false,
                                     "id": "model",
                                     "pack": "set_model",
                                     "xtype": "TreeStore",
