@@ -468,13 +468,10 @@ public class Xcls_LeftProps : Object
              	    return true;
                     }
                     
-            	var p = this.get('/AddPropertyPopup');
-            	if (!p.el) {
-            		p.init();
-            	}
+            	var p = this.AddPropertyPopup;
              	p.el.set_screen(Gdk.Screen.get_default());
                     p.el.show_all();
-                     p.el.popup(null, null, null, null, 3, ev.button.time);
+                     p.el.popup(null, null, null, 3, ev.button.time);
                 return true;
             } );
         }
