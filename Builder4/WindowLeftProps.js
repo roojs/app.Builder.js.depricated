@@ -716,14 +716,13 @@ WindowLeftProps=new XObject({
                             id : "valcol",
                             pack : "append_column",
                             title : "value",
-                            init : function() {
-                                XObject.prototype.init.call(this);
+                            init : {
                             	this.el.add_attribute(this.items[0].el , 'text', 3 );
                             	this.el.add_attribute(this.items[0].el , 'sensitive', 3 );
                             	//this.el.add_attribute(this.items[0].el , 'editable', 3 );
                                       // this.el.set_cell_data_func(cell, age_cell_data_func, NULL, NULL);
                             
-                             	this.get('/LeftPanel').editableColumn= this;
+                             //	this.get('/LeftPanel').editableColumn= this;
                             },
                             setOptions : function(ar) {
                                    var m = this.items[0].el.model;
