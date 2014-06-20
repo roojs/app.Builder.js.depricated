@@ -47,21 +47,17 @@ public class Xcls_WindowLeftProps : Object
         var child_1 = new Xcls_EditProps(_this);
         child_1.ref();
         this.el.add (  child_1.el  );
-
-        // listeners 
     }
 
     // userdefined functions 
 
-    // skip |xns - no return type
+    // skip id - not pipe 
 
     // skip xtype - not pipe 
 
-    // skip listeners - not pipe 
+    // skip |xns - no return type
 
     // skip items - not pipe 
-
-    // skip id - not pipe 
 
     // skip xvala_cls - not pipe 
 

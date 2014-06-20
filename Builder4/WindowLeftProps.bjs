@@ -6,9 +6,9 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.bjs",
     "items": [
         {
-            "|xns": "Gtk",
+            "id": "WindowLeftProps",
             "xtype": "VBox",
-            "listeners": {},
+            "|xns": "Gtk",
             "items": [
                 {
                     "|xns": "Gtk",
