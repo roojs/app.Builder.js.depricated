@@ -1735,21 +1735,21 @@ public class Xcls_LeftProps : Object
 
             // listeners 
             this.el.activate.connect( function (self) {
-            	this.get('/LeftPanel.model').deleteSelected();
+            	_this.deleteSelected();
             } );
         }
 
         // userdefined functions 
 
-        // skip |xns - no return type
-
-        // skip xtype - not pipe 
-
-        // skip pack - not pipe 
+        // skip listeners - not pipe 
 
         // skip label - already used 
 
-        // skip listeners - not pipe 
+        // skip pack - not pipe 
+
+        // skip xtype - not pipe 
+
+        // skip |xns - no return type
 
         // skip xvala_cls - not pipe 
 

@@ -307,13 +307,13 @@
                             "|xns": "Gtk",
                             "items": [
                                 {
-                                    "|xns": "Gtk",
-                                    "xtype": "MenuItem",
-                                    "pack": "append",
-                                    "label": "Delete",
                                     "listeners": {
-                                        "activate": "function (self) {\n\tthis.get('/LeftPanel.model').deleteSelected();\n}"
-                                    }
+                                        "activate": "function (self) {\n\t_this.deleteSelected();\n}"
+                                    },
+                                    "label": "Delete",
+                                    "pack": "append",
+                                    "xtype": "MenuItem",
+                                    "|xns": "Gtk"
                                 },
                                 {
                                     "|xns": "Gtk",

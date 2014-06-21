@@ -766,13 +766,13 @@ WindowLeftProps=new XObject({
                     items : [
                         {
                             xtype: Gtk.MenuItem,
-                            pack : "append",
-                            label : "Delete",
                             listeners : {
                                 activate : function (self) {
-                                	this.get('/LeftPanel.model').deleteSelected();
+                                	_this.deleteSelected();
                                 }
-                            }
+                            },
+                            label : "Delete",
+                            pack : "append"
                         },
                         {
                             xtype: Gtk.MenuItem,
