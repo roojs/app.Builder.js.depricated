@@ -12,7 +12,115 @@ XObject = imports.XObject.XObject;
 WindowLeftProps=new XObject({
     xtype: Gtk.VBox,
     id : "LeftProps",
-    startEditing : function() {
+    startEditing : (string path, int col) {
+        
+        // alled by menu 'edit' currently..
+        /**
+        * start editing path (or selected if not set..)
+        * @param {String|false} path  (optional) treepath to edit - selected tree gets
+        *     edited by default.
+        * @param {Number} 0 or 1 (optional)- column to edit. 
+        */
+        // fix tp to be the 'treepath' string (eg. 0/1/2...)
+        Gtk.TreePath tp;
+        if (path.lenth > 0) {
+            tp = new Gtk.TreePath.from_string(path);
+        } else {
+            Gtk.TreeItervar iter;
+            var s = this.view.el.selection;
+            s.get_selected(this.el, out iter);
+            tp = this.model.el.get_path(iter);
+            path = tp.to_string();
+        }
+        
+       
+        // which colum is to be edited..
+        var colObj = false;
+        
+        // not sure what this does..
+        
+        if (typeof(col) == 'undefined') {
+            var k = this.getValue(path, 0);
+            col = 1;
+            colObj = (!k.length || k == '|') ? 
+                this.get('/LeftPanel').propertyColumn : this.get('/LeftPanel').editableColumn;
+        } else {
+            colObj = col ? this.get('/LeftPanel').editableColumn : this.get('/LeftPanel').propertyColumn;
+        }
+        
+        // make sure the pulldown is set correctly..
+        // not really needed for second col...
+        var showEditor = false;
+        this.get('/Editor').activePath = false;
+        this.get('/Editor').el.hide();
+         
+        if (col) {
+            var provider = this.get('/LeftTree').getPaleteProvider();
+            var type = this.get('/LeftPanel.model').getType(path);
+            var opts = provider.findOptions(type);
+            var renderer = this.get('/LeftPanel').editableColumn.items[0].el;
+            
+            if (opts === false) {
+                this.get('/LeftPanel').editableColumn.setOptions([]);
+                renderer.has_entry = true; 
+            } else {
+                this.get('/LeftPanel').editableColumn.setOptions(opts);
+                renderer.has_entry = false;/// - pulldowns do not have entries
+            }
+            // determine if we should use the Text editor...
+            var keyname = this.getValue(path, 0);
+            var data_value = this.getValue(path, 1);
+        
+            if ((keyname[0] == '|') || 
+                (   
+                    (typeof(data_value) == 'string' ) && 
+                    ( data_value.match(/function/g) || data_value.match(/\n/g)) // || (data_value.length > 20))
+                )) {
+                showEditor = true;
+            }
+            print("SHOW EDITOR" + showEditor ? 'YES' :'no');
+            
+        }
+        var _this = this;    
+        // end editing..
+       // this.get('/BottomPane').el.hide();
+        //this.get('/RightEditor').el.hide();
+         
+        
+        if (showEditor) {
+    
+            this.activePath = false;
+            
+            _this.get('/Editor').el.show_all();
+            GLib.timeout_add(0, 1, function() {
+    
+                //_this.get('/BottomPane').el.show();
+                 //_this.get('/RightEditor').el.show();
+                
+                _this.get('/Editor.RightEditor.view').load( _this.getValue(path, 1) );
+                
+                _this.get('/Editor').activePath = path;
+                _this.activePath = path ;
+              
+                return false;
+            });
+            return;
+        }
+          
+        
+        
+    
+        // iter now has row...
+        GLib.timeout_add(0, 100, function() {
+            _this.activePath = path;
+            colObj.items[0].el.editable = true; // esp. need for col 0..
+            _this.get('/LeftPanel.view').el.set_cursor_on_cell(
+                tp,
+                colObj.el,
+                colObj.items[0].el,
+                true
+            );
+        });
         
     },
     items : [
