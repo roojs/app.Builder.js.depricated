@@ -57,57 +57,8 @@ public class Xcls_LeftProps : Object
     // skip id - not pipe 
 
     // skip xtype - not pipe 
-    public .void load(JsRender.JsRender file, JsRender.Node? node) 
-        {
-            
-            this.before_edit();
-            this.node = node;
-            this.file = file;
-            
-         
-            this.model.el.clear();
-                      
-            //this.get('/RightEditor').el.hide();
-            if (node ==null) {
-                return ;
-            }
-             
-            
-        
-            //var provider = this.get('/LeftTree').getPaleteProvider();
-            Gtk.TreeIter iter;
-            
-            
-            // really need a way to sort the hashmap...
-            var m = this.model.el;
-            
-            var miter = node.listeners.map_iterator();
-            
-            while(miter.next()) {
-                m.append(iter);
-                m.set(iter, 
-                        0, "listener",
-                        1, miter.get_key(),
-                        2, "<b>" + miter.get_key() + "</b>",
-                        3, miter.get_value()
-                    ); 
-             }
-             
-              
-            miter = node.porps.map_iterator();
-            
-            
-           while(miter.next()) {
-                m.append(iter);
-                m.set(iter, 
-                        0, "props",
-                        1, miter.get_key(),
-                        2,  miter.get_key() ,
-                        3, miter.get_value()
-                    ); 
-           }
-            
-        }
+
+    // skip |startEditing - no return type
     public .void addPropfunction(string type, string key, string value) {
               // info includes key, val, skel, etype..
               //console.dump(info);
@@ -171,6 +122,57 @@ public class Xcls_LeftProps : Object
             
             this.load(data);
             this.get('/LeftTree.model').changed(data, true);
+            
+        }
+    public .void load(JsRender.JsRender file, JsRender.Node? node) 
+        {
+            
+            this.before_edit();
+            this.node = node;
+            this.file = file;
+            
+         
+            this.model.el.clear();
+                      
+            //this.get('/RightEditor').el.hide();
+            if (node ==null) {
+                return ;
+            }
+             
+            
+        
+            //var provider = this.get('/LeftTree').getPaleteProvider();
+            Gtk.TreeIter iter;
+            
+            
+            // really need a way to sort the hashmap...
+            var m = this.model.el;
+            
+            var miter = node.listeners.map_iterator();
+            
+            while(miter.next()) {
+                m.append(iter);
+                m.set(iter, 
+                        0, "listener",
+                        1, miter.get_key(),
+                        2, "<b>" + miter.get_key() + "</b>",
+                        3, miter.get_value()
+                    ); 
+             }
+             
+              
+            miter = node.porps.map_iterator();
+            
+            
+           while(miter.next()) {
+                m.append(iter);
+                m.set(iter, 
+                        0, "props",
+                        1, miter.get_key(),
+                        2,  miter.get_key() ,
+                        3, miter.get_value()
+                    ); 
+           }
             
         }
 
