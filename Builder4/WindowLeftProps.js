@@ -11,7 +11,6 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 WindowLeftProps=new XObject({
     xtype: Gtk.VBox,
-    id : "LeftProps",
      : function(string type, string key, string value) {
           // info includes key, val, skel, etype..
           //console.dump(info);
@@ -40,6 +39,7 @@ WindowLeftProps=new XObject({
         this.startEditing(type, key);
                   
     },
+    id : "LeftProps",
     items : [
         {
             xtype: Gtk.HBox,

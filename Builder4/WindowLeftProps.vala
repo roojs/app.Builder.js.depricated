@@ -33,7 +33,6 @@ public class Xcls_LeftProps : Object
     public Xcls_ContextMenu ContextMenu;
 
         // my vars
-    public signal void showAddProps(string type);
 
         // ctor 
     public Xcls_LeftProps()
@@ -55,13 +54,11 @@ public class Xcls_LeftProps : Object
 
     // userdefined functions 
 
-    // skip .signal:void:showAddProps - already used 
+    // skip | - no return type
 
     // skip id - not pipe 
 
     // skip xtype - not pipe 
-
-    // skip | - no return type
 
     // skip |xns - no return type
 
