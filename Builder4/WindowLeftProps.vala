@@ -57,6 +57,9 @@ public class Xcls_LeftProps : Object
     // skip id - not pipe 
 
     // skip xtype - not pipe 
+    public .void onChangedfunction() {
+            
+        }
     public .void addPropfunction(string type, string key, string value) {
               // info includes key, val, skel, etype..
               //console.dump(info);
