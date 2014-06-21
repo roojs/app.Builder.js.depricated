@@ -369,14 +369,6 @@ WindowLeftProps=new XObject({
                             
                                 this.get('/LeftTree.model').changed(this.toJS(), doRefresh); 
                             },
-                            getIterValue : function(iter, col) {
-                                 var gval = new GObject.Value('');
-                                this.get('/LeftPanel.model').el.get_value(iter, col ,gval);
-                                return '' + gval.value;
-                            },
-                            getType : function(treepath) {
-                                 return this.getValue(treepath, 4);
-                            },
                             toShort : function(str) {
                                 var a = typeof(str) == 'string' ? str.split("\n") : [];
                                     return a.length > 1 ? a[0] + '....' : '' + str;

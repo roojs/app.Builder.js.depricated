@@ -1593,10 +1593,6 @@ public class Xcls_LeftProps : Object
 
         // skip |changed - no return type
 
-        // skip |getIterValue - no return type
-
-        // skip |getType - no return type
-
         // skip |toShort - no return type
 
         // skip |xns - no return type
