@@ -767,7 +767,7 @@ WindowLeftProps=new XObject({
                         {
                             xtype: Gtk.MenuItem,
                             listeners : {
-                                activate : function (self) {
+                                activate : ( )  =>{
                                 	_this.deleteSelected();
                                 }
                             },

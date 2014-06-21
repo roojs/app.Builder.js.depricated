@@ -1734,7 +1734,7 @@ public class Xcls_LeftProps : Object
             this.el.label = "Delete";
 
             // listeners 
-            this.el.activate.connect( function (self) {
+            this.el.activate.connect(   ( )  =>{
             	_this.deleteSelected();
             } );
         }

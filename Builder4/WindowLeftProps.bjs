@@ -308,7 +308,7 @@
                             "items": [
                                 {
                                     "listeners": {
-                                        "activate": "function (self) {\n\t_this.deleteSelected();\n}"
+                                        "activate": "  ( )  =>{\n\t_this.deleteSelected();\n}"
                                     },
                                     "label": "Delete",
                                     "pack": "append",
