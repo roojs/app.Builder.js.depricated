@@ -77,49 +77,36 @@ public class Xcls_LeftProps : Object
             //var provider = this.get('/LeftTree').getPaleteProvider();
             Gtk.TreeIter iter;
             
-            var miter = node.listeners.map_iterator();
             
             // really need a way to sort the hashmap...
+            var m = this.model.el;
+            
+            var miter = node.listeners.map_iterator();
             
             while(miter.next()) {
-                this.el.append(iter);
-            
-            }
+                m.append(iter);
+                m.set(iter, 
+                        0, "listener",
+                        1, miter.get_key(),
+                        2, "<b>" + miter.get_key() + "</b>",
+                        3, miter.get_value()
+                    ); 
+             }
              
-                
-                var p = this.el.get_path(iter).to_string();
-                ret['!' + i] = p;
-                
-                this.el.set_value(iter, 0, '!'+  i  );
-                this.el.set_value(iter, 1, '' + ar.listeners[i]);
-                this.el.set_value(iter, 2, '<b>'+ i + '</b>');
-                
-                this.el.set_value(iter, 3, '' + this.toShort(ar.listeners[i]));
-                this.el.set_value(iter, 4, 'function');
-                this.el.set_value(iter, 5, i + ' : ' + ar.listeners[i]);
-            }
+              
+            miter = node.porps.map_iterator();
             
             
-           
-            var _this = this;
-            keys.forEach(function(i) {
-                if (typeof(ar[i]) == 'object') {
-                    return;
-                }
-                
-                var type = provider.findType(ar, i, ar[i]);
-                
-                _this.el.append(iter);
-                var p = _this.el.get_path(iter).to_string();
-                ret[i] = p;
-                _this.el.set_value(iter, 0, ''+i);
-                _this.el.set_value(iter, 1, '' + ar[i]);  
-                _this.el.set_value(iter, 2, ''+i);
-                _this.el.set_value(iter, 3, ''+ _this.toShort(ar[i]));
-                _this.el.set_value(iter, 4, ''+type);
-                _this.el.set_value(iter, 5, type + ' : ' + ar[i]);
-            })
-            return ret;
+           while(miter.next()) {
+                m.append(iter);
+                m.set(iter, 
+                        0, "props",
+                        1, miter.get_key(),
+                        2,  miter.get_key() ,
+                        3, miter.get_value()
+                    ); 
+           }
+            
         }
     public .void addPropfunction(string type, string key, string value) {
               // info includes key, val, skel, etype..
