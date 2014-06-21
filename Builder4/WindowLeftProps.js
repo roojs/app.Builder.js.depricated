@@ -377,41 +377,6 @@ WindowLeftProps=new XObject({
                             getType : function(treepath) {
                                  return this.getValue(treepath, 4);
                             },
-                            getValue : function(treepath_str, col) 
-                            {
-                               // get's the  value in a row.. - keys - returns string, values - formats it..
-                            
-                                var iter = new Gtk.TreeIter();
-                                this.el.get_iter(iter, new Gtk.TreePath.from_string(treepath_str));
-                                
-                                var gval = new GObject.Value('');
-                                this.get('/LeftPanel.model').el.get_value(iter, col ,gval);
-                                var val = '' + gval.value;
-                               
-                                if (col != 1) {
-                                    return val;
-                                }
-                                var type = this.getType(this.el.get_path(iter).to_string());
-                                //print("TYPE: " +type + " -  val:" + val);
-                                switch(type.toLowerCase()) {
-                                    case 'number':
-                                    case 'uint':
-                                    case 'int':
-                                        return parseFloat(val); // Nan ?? invalid!!?        
-                                    case 'float':
-                                    case 'gfloat':
-                                        return 1.0 * parseFloat(val); // Nan ?? invalid!!?
-                                    case 'boolean':
-                                        return val == 'true' ? true : false;
-                                    default: 
-                                        var nv = parseFloat(val);
-                                        if (!isNaN(nv) && (val == ''+nv)) {
-                                            return nv;
-                                        }
-                                        return val;
-                                }
-                                                        
-                            },
                             toShort : function(str) {
                                 var a = typeof(str) == 'string' ? str.split("\n") : [];
                                     return a.length > 1 ? a[0] + '....' : '' + str;
