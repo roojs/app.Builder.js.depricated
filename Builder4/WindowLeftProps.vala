@@ -57,8 +57,23 @@ public class Xcls_LeftProps : Object
     // skip id - not pipe 
 
     // skip xtype - not pipe 
-    public .void onChangedfunction() {
+    public .void onChanged(string str, bool doRefresh ) {
             
+            // used to use activePath...
+            Gtk.TreeModel mod,
+            Gtk.TreeIter iter;
+            var s = _this.model.get_selection();
+            s.get_selected(out mod, out iter);
+            
+            
+            this.el.set_value(iter, 1, '' +str);
+            this.el.set_value(iter, 3, '' + this.toShort(str));
+            var type = this.getIterValue(iter, 4);
+        
+            this.el.set_value(iter, 5, type + ' : ' + str);
+            // update the tree...  
+        
+            this.get('/LeftTree.model').changed(this.toJS(), doRefresh); 
         }
     public .void addPropfunction(string type, string key, string value) {
               // info includes key, val, skel, etype..
