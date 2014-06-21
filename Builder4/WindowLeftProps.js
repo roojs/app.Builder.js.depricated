@@ -369,39 +369,6 @@ WindowLeftProps=new XObject({
                             
                                 this.get('/LeftTree.model').changed(this.toJS(), doRefresh); 
                             },
-                            deleteSelected : function() {
-                                 var data = this.toJS();
-                                var iter = new Gtk.TreeIter();
-                                var s = this.get('/LeftPanel.view').selection;
-                                s.get_selected(this.el, iter);
-                                     
-                                   
-                                var gval = new GObject.Value('');
-                               this.get('/LeftPanel.model').el.get_value(iter, 0 ,gval);
-                                
-                                var val = gval.value;
-                                if (val[0] == '!') {
-                                    // listener..
-                                    if (!data.listeners || typeof(data.listeners[  val.substring(1)]) == 'undefined') {
-                                        return;
-                                    }
-                                    delete data.listeners[  val.substring(1)];
-                                    if (!XObject.keys(data.listeners).length) {
-                                        delete data.listeners;
-                                    }
-                                    
-                                } else {
-                                    if (typeof(data[val]) == 'undefined') {
-                                        return;
-                                    }
-                                    delete data[val];
-                                }
-                                
-                                
-                                this.load(data);
-                                this.get('/LeftTree.model').changed(data, true);
-                                
-                            },
                             getIterValue : function(iter, col) {
                                  var gval = new GObject.Value('');
                                 this.get('/LeftPanel.model').el.get_value(iter, col ,gval);
