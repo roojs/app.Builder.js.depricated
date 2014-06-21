@@ -17,7 +17,7 @@ static int main (string[] args) {
 
 public static Xcls_MainWindow  MainWindow;
 
-public class Xcls_MainWindow
+public class Xcls_MainWindow : Object 
 {
     public Gtk.Window el;
     private Xcls_MainWindow  _this;
@@ -44,6 +44,7 @@ public class Xcls_MainWindow
         this.el.default_height = 500;
         this.el.default_width = 800;
         var child_0 = new Xcls_vbox(_this);
+        child_0.ref();
         this.el.add (  child_0.el  );
 
         // init method 
@@ -110,7 +111,7 @@ public class Xcls_MainWindow
     // skip xvala_xcls - not pipe 
 
     // skip xvala_id - not pipe 
-    public class Xcls_vbox
+    public class Xcls_vbox : Object 
     {
         public Gtk.VBox el;
         private Xcls_MainWindow  _this;
