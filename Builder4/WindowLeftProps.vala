@@ -65,7 +65,7 @@ public class Xcls_LeftProps : Object
             this.file = file;
             
          
-            this.el.clear();
+            this.model.el.clear();
                       
             //this.get('/RightEditor').el.hide();
             if (node ==null) {
@@ -82,17 +82,11 @@ public class Xcls_LeftProps : Object
             // really need a way to sort the hashmap...
             
             while(miter.next()) {
-            
+                this.el.append(iter);
             
             }
-            
-            // sort!!!?
-            var keys  = XObject.keys(ar);
-            keys.sort();
-            ar.listeners = ar.listeners || {};
-            
-            for (var i in ar.listeners ) {
-                this.el.append(iter);
+             
+                
                 var p = this.el.get_path(iter).to_string();
                 ret['!' + i] = p;
                 
