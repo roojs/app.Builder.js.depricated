@@ -74,9 +74,18 @@ public class Xcls_LeftProps : Object
              
             
         
-            var provider = this.get('/LeftTree').getPaleteProvider();
-             var iter = new Gtk.TreeIter();
-             
+            //var provider = this.get('/LeftTree').getPaleteProvider();
+            Gtk.TreeIter iter;
+            
+            var miter = node.listeners.map_iterator();
+            
+            // really need a way to sort the hashmap...
+            
+            while(miter.next()) {
+            
+            
+            }
+            
             // sort!!!?
             var keys  = XObject.keys(ar);
             keys.sort();
