@@ -53,8 +53,7 @@ public class Xcls_LeftProps : Object
     }
 
     // userdefined functions 
-
-    // skip | - no return type
+    public .void deleteSelected(string type)
 
     // skip id - not pipe 
 
