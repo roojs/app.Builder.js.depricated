@@ -584,33 +584,6 @@ WindowLeftProps=new XObject({
                                 });
                                 
                             },
-                            toJS : function() {
-                                 var iter = new Gtk.TreeIter();
-                                this.get('/LeftPanel.model').el.get_iter_first(iter);
-                                var ar = {};
-                                   
-                                while (true) {
-                                    
-                                    var k = this.getValue(this.el.get_path(iter).to_string(), 0);
-                                   // Seed.print(k);
-                                    if (k[0] == '!') {
-                                        ar.listeners = ar.listeners || {};
-                                        ar.listeners[  k.substring(1)] = this.getValue(this.el.get_path(iter).to_string(), 1);
-                                        
-                                    } else {
-                                        ar[ k ] = this.getValue(this.el.get_path(iter).to_string(), 1);
-                                    }
-                                    
-                                    if (! this.get('/LeftPanel.model').el.iter_next(iter)) {
-                                        break;
-                                    }
-                                }
-                                
-                                
-                                //print(JSON.stringify(ar));
-                                return ar;
-                                // convert the l
-                            },
                             toShort : function(str) {
                                 var a = typeof(str) == 'string' ? str.split("\n") : [];
                                     return a.length > 1 ? a[0] + '....' : '' + str;

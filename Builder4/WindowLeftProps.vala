@@ -1497,8 +1497,6 @@ public class Xcls_LeftProps : Object
 
         // skip |startEditing - no return type
 
-        // skip |toJS - no return type
-
         // skip |toShort - no return type
 
         // skip |xns - no return type
