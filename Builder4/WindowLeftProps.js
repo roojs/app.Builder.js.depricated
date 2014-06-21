@@ -40,20 +40,15 @@ WindowLeftProps=new XObject({
         // not sure what this does..
         
         if (typeof(col) == 'undefined') {
-            var k = this.getValue(path, 0);
+            var k = this.model.el.get_value(path, 0);
             col = 1;
             colObj = (!k.length || k == '|') ? 
-                this.get('/LeftPanel').propertyColumn : this.get('/LeftPanel').editableColumn;
+                this.keycol  : this.valcol;
         } else {
-            colObj = col ? this.get('/LeftPanel').editableColumn : this.get('/LeftPanel').propertyColumn;
+            colObj = col ? this.valcol : this.keycol;
         }
         
-        // make sure the pulldown is set correctly..
-        // not really needed for second col...
-        var showEditor = false;
-        this.get('/Editor').activePath = false;
-        this.get('/Editor').el.hide();
-         
+           
         if (col) {
             var provider = this.get('/LeftTree').getPaleteProvider();
             var type = this.get('/LeftPanel.model').getType(path);
