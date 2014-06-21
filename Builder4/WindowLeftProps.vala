@@ -53,7 +53,9 @@ public class Xcls_LeftProps : Object
     }
 
     // userdefined functions 
-    public .void deleteSelected(string type)
+    public .void deleteSelected() {
+        
+        }
 
     // skip id - not pipe 
 
