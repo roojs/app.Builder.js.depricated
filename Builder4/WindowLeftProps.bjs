@@ -316,13 +316,13 @@
                                     "|xns": "Gtk"
                                 },
                                 {
-                                    "|xns": "Gtk",
-                                    "xtype": "MenuItem",
-                                    "pack": "append",
-                                    "label": "Edit",
                                     "listeners": {
-                                        "activate": "function (self) {\n\tthis.get('/LeftPanel.model').startEditing(false, 0);\n}"
-                                    }
+                                        "activate": "  ( ) => {\n    _this.startEditing(false, 0);\n}"
+                                    },
+                                    "label": "Edit",
+                                    "pack": "append",
+                                    "xtype": "MenuItem",
+                                    "|xns": "Gtk"
                                 }
                             ]
                         }

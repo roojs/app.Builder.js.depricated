@@ -776,13 +776,13 @@ WindowLeftProps=new XObject({
                         },
                         {
                             xtype: Gtk.MenuItem,
-                            pack : "append",
-                            label : "Edit",
                             listeners : {
-                                activate : function (self) {
-                                	this.get('/LeftPanel.model').startEditing(false, 0);
+                                activate : ( ) => {
+                                    _this.startEditing(false, 0);
                                 }
-                            }
+                            },
+                            label : "Edit",
+                            pack : "append"
                         }
                     ]
                 }
