@@ -186,7 +186,7 @@ public class Xcls_LeftProps : Object
              }
              
               
-            miter = node.porps.map_iterator();
+            miter = node.props.map_iterator();
             
             
            while(miter.next()) {
