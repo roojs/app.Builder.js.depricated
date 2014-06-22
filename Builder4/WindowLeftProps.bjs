@@ -6,7 +6,7 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.bjs",
     "items": [
         {
-            "|void.startEditingKey": "",
+            "|void.startEditingKey": "() {\n    \n     \n    \n    Gtk.TreeIter iter;\n    Gtk.TreeModel mod;\n    \n    var s = this.view.get_selection();\n    s.get_selected(out mod, out iter);\n         \n  \n    // others... - fill in options for true/false?\n    \n    this.keyrender.el.editable = true;\n    this.view.el.set_cursor_on_cell(\n        mod.get_path(iter),\n        this.keycol.el,\n        this.keyrender.el,\n        true\n    );\n    \n    \n}\n",
             ".JsRender.JsRender:file": "",
             ".JsRender.Node:node": "",
             "id": "LeftProps",
