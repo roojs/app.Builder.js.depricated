@@ -88,12 +88,18 @@ public class Xcls_LeftProps : Object
             // add a row???
             this.load(this.file, this.node);
             
+            
+            
             /// need to find the row which I've just added..
             
             
             var s = this.view.el.get_selection();
             s.unselect_all();
             
+            this.view.foreach((model, path, iter) {
+                    
+            
+            });
             
             
                         
