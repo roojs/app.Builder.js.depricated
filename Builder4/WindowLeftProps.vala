@@ -1062,7 +1062,7 @@ public class Xcls_LeftProps : Object
             this.el.tooltip_markup = "Add a user defined string property";
 
             // listeners 
-            this.el.activate.connect( function (self) {
+            this.el.activate.connect(   (self) {
             
                 _this.addProp( "prop", ".string:XXXX", "");
             
