@@ -41,19 +41,19 @@ WindowLeftProps=new XObject({
             //type = info.type.toLowerCase();
             //var data = this.toJS();
             
-        var node = _this.activeNode;
+     
                 
         if (type == "listener") {
-            if (node.listeners.has(key)) {
+            if (this.node.listeners.has(key)) {
                 return;
             }
-            node.listeners.set(key,value);
+            this.node.listeners.set(key,value);
         } else  {
         
-            if (node.props.has(key)) {
+            if (this.node.props.has(key)) {
                 return;
             }
-            node.props.set(key,value);
+            this.node.props.set(key,value);
         }
                
           
