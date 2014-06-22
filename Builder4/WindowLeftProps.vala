@@ -66,14 +66,14 @@ public class Xcls_LeftProps : Object
             s.get_selected(out mod, out iter);
             
             
-            this.el.set_value(iter, 1, '' +str);
-            this.el.set_value(iter, 3, '' + this.toShort(str));
-            var type = this.getIterValue(iter, 4);
-        
-            this.el.set_value(iter, 5, type + ' : ' + str);
-            // update the tree...  
-        
-            this.get('/LeftTree.model').changed(this.toJS(), doRefresh); 
+            m.set(iter, 
+                        0, "listener",
+                        1, miter.get_key(),
+                        2, "<b>" + miter.get_key() + "</b>",
+                        3, miter.get_value()
+                    ); 
+            
+            this.file.changed("props");
         }
     public .void addPropfunction(string type, string key, string value) {
               // info includes key, val, skel, etype..
