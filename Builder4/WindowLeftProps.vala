@@ -184,111 +184,42 @@ public class Xcls_LeftProps : Object
             var s = this.view.get_selection();
             s.get_selected(out mod, out iter);
                  
-            
-            var s  = this.view.el.get_selection();
-            
+            /*
+                m.set(iter, 
+                        0, "listener",
+                        1, miter.get_key(),
+                        2, "<b>" + miter.get_key() + "</b>",
+                        3, miter.get_value()
+                    ); 
+             
+            */
             GLib.Value gval;
-            mod.get_value(iter, 0 , out gval);
-            var type = (string)gval;
-            
+            mod.get_value(iter, 3 , out gval);
+            var val = (string)gval;
+        
             mod.get_value(iter, 1 , out gval);
             var key = (string)gval;
             
+            mod.get_value(iter, 0 , out gval);
+            var type = (string)gval;
             
+            var use_textarea = false;
             
-            // alled by menu 'edit' currently..
-            /**
-            * start editing path (or selected if not set..)
-            * @param {String|false} path  (optional) treepath to edit - selected tree gets
-            *     edited by default.
-            * @param {Number} 0 or 1 (optional)- column to edit. 
-            */
-            // fix tp to be the 'treepath' string (eg. 0/1/2...)
-            Gtk.TreePath tp;
-            if (path.lenth > 0) {
-                tp = new Gtk.TreePath.from_string(path);
-            } else {
-                Gtk.TreeIter  iter;
-                var s = this.view.el.selection;
-                s.get_selected(this.el, out iter);
-                tp = this.model.el.get_path(iter);
-                path = tp.to_string();
+            if (type = "listener") {
+                use_textarea = true;
             }
-            
-           
-           
-           
-           
-            // which colum is to be edited..
-            var colObj = false;
-            
-            // not sure what this does..
-            
-            if (typeof(col) == 'undefined') {
-                var k = this.model.el.get_value(path, 0);
-                col = 1;
-                colObj = (!k.length || k == '|') ? 
-                    this.keycol  : this.valcol;
-            } else {
-                colObj = col ? this.valcol : this.keycol;
+            if (key.length > 0 && key[0] == '|') {
+                use_textarea = true;
             }
-            
-               
-            if (col) {
-                var provider = this.get('/LeftTree').getPaleteProvider();
-                var type = this.get('/LeftPanel.model').getType(path);
-                var opts = provider.findOptions(type);
-                var renderer = this.get('/LeftPanel').editableColumn.items[0].el;
-                
-                if (opts === false) {
-                    this.get('/LeftPanel').editableColumn.setOptions([]);
-                    renderer.has_entry = true; 
-                } else {
-                    this.get('/LeftPanel').editableColumn.setOptions(opts);
-                    renderer.has_entry = false;/// - pulldowns do not have entries
-                }
-                // determine if we should use the Text editor...
-                var keyname = this.getValue(path, 0);
-                var data_value = this.getValue(path, 1);
-            
-                if ((keyname[0] == '|') || 
-                    (   
-                        (typeof(data_value) == 'string' ) && 
-                        ( data_value.match(/function/g) || data_value.match(/\n/g)) // || (data_value.length > 20))
-                    )) {
-                    showEditor = true;
-                }
-                print("SHOW EDITOR" + showEditor ? 'YES' :'no');
-                
-            }
-            var _this = this;    
-            // end editing..
-           // this.get('/BottomPane').el.hide();
-            //this.get('/RightEditor').el.hide();
-             
-            
-            if (showEditor) {
-        
-                this.activePath = false;
-                
-                _this.get('/Editor').el.show_all();
-                GLib.timeout_add(0, 1, function() {
-        
-                    //_this.get('/BottomPane').el.show();
-                     //_this.get('/RightEditor').el.show();
-                    
-                    _this.get('/Editor.RightEditor.view').load( _this.getValue(path, 1) );
-                    
-                    _this.get('/Editor').activePath = path;
-                    _this.activePath = path ;
-                  
-                    return false;
-                });
+            if (user_textarea) {
+                this.showEditor(file, node, type, key);
                 return;
             }
-              
+            // others... - fill in options for true/false?
             
+               
             
+           
         
             // iter now has row...
             GLib.timeout_add(0, 100, function() {
