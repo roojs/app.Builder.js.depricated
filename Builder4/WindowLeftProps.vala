@@ -97,9 +97,10 @@ public class Xcls_LeftProps : Object
             var data = this.toJS();
             
             Gtk.TreeIter iter;
+            Gtk.TreeModel mod;
             
-            var s = this.get('/LeftPanel.view').selection;
-            s.get_selected(this.el, iter);
+            var s = this.view.get_selection();
+            s.get_selected(out mod, out iter);
                  
                
             var gval = new GObject.Value('');
