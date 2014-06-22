@@ -98,8 +98,8 @@ public class Xcls_LeftProps : Object
                    
               
             // add a row???
-            
-                    
+            this.load(this.file, this.node);
+                        
             this.startEditing(type, key);
                       
         }
