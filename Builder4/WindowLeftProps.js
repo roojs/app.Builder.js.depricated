@@ -452,7 +452,7 @@ WindowLeftProps=new XObject({
                 {
                     xtype: Gtk.TreeView,
                     listeners : {
-                        button_press_event : function ( ev)  => {
+                        button_press_event : ( ev)  => {
                         
                             _this.beforeEdit();
                             

@@ -1414,7 +1414,7 @@ public class Xcls_LeftProps : Object
             }
 
             // listeners 
-            this.el.button_press_event.connect( function ( ev)  => {
+            this.el.button_press_event.connect(   ( ev)  => {
             
                 _this.beforeEdit();
                 
