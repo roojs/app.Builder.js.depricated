@@ -211,7 +211,7 @@ public class Xcls_LeftProps : Object
             if (key.length > 0 && key[0] == '|') {
                 use_textarea = true;
             }
-            if (user_textarea) {
+            if (use_textarea) {
                 this.showEditor(file, node, type, key);
                 return;
             }
