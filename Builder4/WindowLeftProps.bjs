@@ -173,7 +173,7 @@
                                         },
                                         {
                                             "listeners": {
-                                                "activate": "  ( ) =>{\n\n    _this.addProp( \".bool:XXX\", \"true\");\n}"
+                                                "activate": "  ( ) =>{\n\n    _this.addProp( \"prop\", \".bool:XXX\", \"true\");\n}"
                                             },
                                             "label": "Boolean",
                                             "pack": "append",
@@ -188,7 +188,7 @@
                                         },
                                         {
                                             "listeners": {
-                                                "activate": "  ( ) =>{\n\n    _this.addProp( \"|XXXX\", \"function() { }\");\n}"
+                                                "activate": "  ( ) =>{\n\n    _this.addProp(\"prop\",  \"|XXXX\", \"function() { }\");\n}"
                                             },
                                             "label": "Javascript Function",
                                             "pack": "append",

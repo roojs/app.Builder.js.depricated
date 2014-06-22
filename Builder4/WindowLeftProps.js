@@ -213,7 +213,7 @@ WindowLeftProps=new XObject({
                                     listeners : {
                                         activate : ( ) =>{
                                         
-                                            _this.addProp( ".bool:XXX", "true");
+                                            _this.addProp( "prop", ".bool:XXX", "true");
                                         }
                                     },
                                     label : "Boolean",
@@ -229,7 +229,7 @@ WindowLeftProps=new XObject({
                                     listeners : {
                                         activate : ( ) =>{
                                         
-                                            _this.addProp( "|XXXX", "function() { }");
+                                            _this.addProp("prop",  "|XXXX", "function() { }");
                                         }
                                     },
                                     label : "Javascript Function",
