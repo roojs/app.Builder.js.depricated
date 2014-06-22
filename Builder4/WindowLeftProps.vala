@@ -63,6 +63,9 @@ public class Xcls_LeftProps : Object
     // skip id - not pipe 
 
     // skip xtype - not pipe 
+    public void deleteSelectedfunction() {
+            
+        }
     public .void load(JsRender.JsRender file, JsRender.Node? node) 
         {
             

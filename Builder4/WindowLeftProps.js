@@ -12,6 +12,9 @@ XObject = imports.XObject.XObject;
 WindowLeftProps=new XObject({
     xtype: Gtk.VBox,
     id : "LeftProps",
+    'void:deleteSelected' : function() {
+        
+    },
     'void.startEditingKey' : () {
         
          
