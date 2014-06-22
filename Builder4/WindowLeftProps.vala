@@ -107,33 +107,21 @@ public class Xcls_LeftProps : Object
             mod.get_value(iter, 0 , out gval);
             var type = (string)gval;
             
-            mod.get_value(iter, 3 , out gval);
-            var type = (string)gval;
-            var val = gval.value;
+            mod.get_value(iter, 1 , out gval);
+            var key = (string)gval;
             
             switch(type) {
                 case "listener":
-                    node.listeners.remove(
-            if (val[0] == '!') {
-                // listener..
-                if (!data.listeners || typeof(data.listeners[  val.substring(1)]) == 'undefined') {
-                    return;
-                }
-                delete data.listeners[  val.substring(1)];
-                if (!XObject.keys(data.listeners).length) {
-                    delete data.listeners;
-                }
-                
-            } else {
-                if (typeof(data[val]) == 'undefined') {
-                    return;
-                }
-                delete data[val];
+                    node.listeners.remove(key);
+                    break;
+                    
+                case "prop":
+                    node.prop.remove(key);
+                    break;
             }
+            this.load(node);
             
             
-            this.load(data);
-            this.get('/LeftTree.model').changed(data, true);
             
         }
     public .void load(JsRender.JsRender file, JsRender.Node? node) 
