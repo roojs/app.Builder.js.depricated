@@ -268,7 +268,7 @@
                                     "pack": "append_column",
                                     "title": "value",
                                     "xtype": "TreeViewColumn",
-                                    "|init": "{\n\tthis.el.add_attribute(this.valrender.el , 'text', 3 );\n\tthis.el.add_attribute(this.valrender.el , 'sensitive', 3 );\n\t//this.el.add_attribute(this.items[0].el , 'editable', 3 );\n          // this.el.set_cell_data_func(cell, age_cell_data_func, NULL, NULL);\n\n //\tthis.get('/LeftPanel').editableColumn= this;\n}\n",
+                                    "|init": "{\n\tthis.el.add_attribute(this.valrender.el , \"text\", 3 );\n\tthis.el.add_attribute(this.valrender.el , \"sensitive\", 3 );\n\t//this.el.add_attribute(this.items[0].el , 'editable', 3 );\n          // this.el.set_cell_data_func(cell, age_cell_data_func, NULL, NULL);\n\n //\tthis.get('/LeftPanel').editableColumn= this;\n}\n",
                                     "|xns": "Gtk",
                                     "items": [
                                         {
