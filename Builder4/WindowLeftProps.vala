@@ -56,8 +56,6 @@ public class Xcls_LeftProps : Object
 
     // userdefined functions 
 
-    // skip |void.startEditingKey - no return type
-
     // skip .JsRender.JsRender:file - already used 
 
     // skip .JsRender.Node:node - already used 
@@ -229,6 +227,8 @@ public class Xcls_LeftProps : Object
             
             
         }
+
+    // skip |void.startEditingKey - no return type
 
     // skip |xns - no return type
 

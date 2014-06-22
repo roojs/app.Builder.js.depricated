@@ -11,6 +11,7 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 WindowLeftProps=new XObject({
     xtype: Gtk.VBox,
+    id : "LeftProps",
     'void.startEditingKey' : () {
         
          
@@ -34,7 +35,6 @@ WindowLeftProps=new XObject({
         
         
     },
-    id : "LeftProps",
     items : [
         {
             xtype: Gtk.HBox,
