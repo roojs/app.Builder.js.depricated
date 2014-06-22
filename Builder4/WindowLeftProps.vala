@@ -217,21 +217,14 @@ public class Xcls_LeftProps : Object
             }
             // others... - fill in options for true/false?
             
-               
+            this.keyrender.el.editable = true;
+            this.view.el.set_cursor_on_cell(
+                mod.get_path(iter),
+                this.keycol.el,
+                this.keyrender.el,
+                true
+            );
             
-           
-        
-            // iter now has row...
-            GLib.timeout_add(0, 100, function() {
-                _this.activePath = path;
-                colObj.items[0].el.editable = true; // esp. need for col 0..
-                _this.get('/LeftPanel.view').el.set_cursor_on_cell(
-                    tp,
-                    colObj.el,
-                    colObj.items[0].el,
-                    true
-                );
-            });
             
         }
 
