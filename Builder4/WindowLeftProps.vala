@@ -93,8 +93,7 @@ public class Xcls_LeftProps : Object
         }
     public .void deleteSelected () {
             
-            
-            var data = this.toJS();
+             
             
             Gtk.TreeIter iter;
             Gtk.TreeModel mod;
@@ -112,14 +111,14 @@ public class Xcls_LeftProps : Object
             
             switch(type) {
                 case "listener":
-                    node.listeners.remove(key);
+                    this.node.listeners.remove(key);
                     break;
                     
                 case "prop":
-                    node.prop.remove(key);
+                    this.node.prop.remove(key);
                     break;
             }
-            this.load(node);
+            this.load(dthis.file, this.node);
             
             this.file.changed("prop");
             
