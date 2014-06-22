@@ -74,13 +74,13 @@ public class Xcls_LeftProps : Object
          
                     
             if (type == "listener") {
-                if (this.node.listeners.has(key)) {
+                if (this.node.listeners.has_key(key)) {
                     return;
                 }
                 this.node.listeners.set(key,value);
             } else  {
             
-                if (this.node.props.has(key)) {
+                if (this.node.props.has_key(key)) {
                     return;
                 }
                 this.node.props.set(key,value);
