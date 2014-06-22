@@ -33,6 +33,7 @@ public class Xcls_LeftProps : Object
     public Xcls_ContextMenu ContextMenu;
 
         // my vars
+    public JsRender.Node node;
     public JsRender.JsRender node;
 
         // ctor 
@@ -54,6 +55,8 @@ public class Xcls_LeftProps : Object
     }
 
     // userdefined functions 
+
+    // skip .JsRender.Node:node - already used 
 
     // skip .JsRender.JsRender:node - already used 
 
