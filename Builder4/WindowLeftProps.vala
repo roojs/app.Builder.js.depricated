@@ -97,8 +97,16 @@ public class Xcls_LeftProps : Object
             s.unselect_all();
             
             this.view.foreach((model, path, iter) {
-                    
-            
+                
+                    m.append(iter);
+                    m.set(iter, 
+                            0, "listener",
+                            1, miter.get_key(),
+                            2, "<b>" + miter.get_key() + "</b>",
+                            3, miter.get_value()
+                        ); 
+                 }
+                
             });
             
             
