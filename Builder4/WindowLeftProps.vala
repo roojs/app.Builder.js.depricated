@@ -121,7 +121,7 @@ public class Xcls_LeftProps : Object
             }
             this.load(node);
             
-            
+            this.file.changed("prop");
             
         }
     public .void load(JsRender.JsRender file, JsRender.Node? node) 
