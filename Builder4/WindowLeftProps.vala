@@ -174,7 +174,13 @@ public class Xcls_LeftProps : Object
            }
             
         }
-    public .void startEditingValue(string path, int col) {
+    public .void startEditingValue() {
+            
+            
+            var s  = this.view.el.get_selection();
+            
+            s.
+            
             
             // alled by menu 'edit' currently..
             /**
