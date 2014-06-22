@@ -116,7 +116,7 @@ public class Xcls_LeftProps : Object
                     
                     
                 }
-    public .void load(JsRender.JsRender file, JsRender.Node? node) 
+    public void load(JsRender.JsRender file, JsRender.Node? node) 
         {
             
             this.before_edit();

@@ -65,6 +65,57 @@ WindowLeftProps=new XObject({
                 
                 
             },
+    'void:load' : (JsRender.JsRender file, JsRender.Node? node) 
+    {
+        
+        this.before_edit();
+        this.node = node;
+        this.file = file;
+        
+     
+        this.model.el.clear();
+                  
+        //this.get('/RightEditor').el.hide();
+        if (node ==null) {
+            return ;
+        }
+         
+        
+    
+        //var provider = this.get('/LeftTree').getPaleteProvider();
+        Gtk.TreeIter iter;
+        
+        
+        // really need a way to sort the hashmap...
+        var m = this.model.el;
+        
+        var miter = node.listeners.map_iterator();
+        
+        while(miter.next()) {
+            m.append(iter);
+            m.set(iter, 
+                    0, "listener",
+                    1, miter.get_key(),
+                    2, "<b>" + miter.get_key() + "</b>",
+                    3, miter.get_value()
+                ); 
+         }
+         
+          
+        miter = node.porps.map_iterator();
+        
+        
+       while(miter.next()) {
+            m.append(iter);
+            m.set(iter, 
+                    0, "props",
+                    1, miter.get_key(),
+                    2,  miter.get_key() ,
+                    3, miter.get_value()
+                ); 
+       }
+        
+    },
     'void.startEditingKey' : () {
         
          
