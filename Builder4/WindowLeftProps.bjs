@@ -6,6 +6,7 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.bjs",
     "items": [
         {
+            "|void.startEditingKey": "",
             ".JsRender.JsRender:file": "",
             ".JsRender.Node:node": "",
             "id": "LeftProps",
