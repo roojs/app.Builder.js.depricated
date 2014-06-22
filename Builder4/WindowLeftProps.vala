@@ -102,11 +102,18 @@ public class Xcls_LeftProps : Object
             var s = this.view.get_selection();
             s.get_selected(out mod, out iter);
                  
-               
-            var gval = new GObject.Value('');
-           this.get('/LeftPanel.model').el.get_value(iter, 0 ,gval);
+                  
+            GLib.Value gval;
+            mod.get_value(iter, 0 , out gval);
+            var type = (string)gval;
             
+            mod.get_value(iter, 3 , out gval);
+            var type = (string)gval;
             var val = gval.value;
+            
+            switch(type) {
+                case "listener":
+                    node.listeners.remove(
             if (val[0] == '!') {
                 // listener..
                 if (!data.listeners || typeof(data.listeners[  val.substring(1)]) == 'undefined') {
