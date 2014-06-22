@@ -12,9 +12,6 @@ XObject = imports.XObject.XObject;
 WindowLeftProps=new XObject({
     xtype: Gtk.VBox,
     id : "LeftProps",
-    'void:deleteSelected' : function() {
-        
-    },
     'void.startEditingKey' : () {
         
          
@@ -89,6 +86,35 @@ WindowLeftProps=new XObject({
         
         this.startEditingValue();
                   
+    },
+    'void:deleteSelected' : () {
+        
+                Gtk.TreeIter iter;
+                Gtk.TreeModel mod;
+                
+                var s = this.view.get_selection();
+                s.get_selected(out mod, out iter);
+                     
+                      
+                GLib.Value gval;
+                mod.get_value(iter, 0 , out gval);
+                var type = (string)gval;
+                
+                mod.get_value(iter, 1 , out gval);
+                var key = (string)gval;
+                
+                switch(type) {
+                    case "listener":
+                        this.node.listeners.remove(key);
+                        break;
+                        
+                    case "prop":
+                        this.node.prop.remove(key);
+                        break;
+                }
+                this.load(dthis.file, this.node);
+                
+                this.file.changed("prop");
     },
     items : [
         {

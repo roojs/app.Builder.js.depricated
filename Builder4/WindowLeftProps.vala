@@ -63,9 +63,6 @@ public class Xcls_LeftProps : Object
     // skip id - not pipe 
 
     // skip xtype - not pipe 
-    public void deleteSelectedfunction() {
-            
-        }
     public .void load(JsRender.JsRender file, JsRender.Node? node) 
         {
             
@@ -115,59 +112,6 @@ public class Xcls_LeftProps : Object
                         3, miter.get_value()
                     ); 
            }
-            
-        }
-    public .void startEditingValue() {
-            
-             
-            
-            Gtk.TreeIter iter;
-            Gtk.TreeModel mod;
-            
-            var s = this.view.get_selection();
-            s.get_selected(out mod, out iter);
-                 
-            /*
-                m.set(iter, 
-                        0, "listener",
-                        1, miter.get_key(),
-                        2, "<b>" + miter.get_key() + "</b>",
-                        3, miter.get_value()
-                    ); 
-             
-            */
-            GLib.Value gval;
-            mod.get_value(iter, 3 , out gval);
-            var val = (string)gval;
-        
-            mod.get_value(iter, 1 , out gval);
-            var key = (string)gval;
-            
-            mod.get_value(iter, 0 , out gval);
-            var type = (string)gval;
-            
-            var use_textarea = false;
-            
-            if (type = "listener") {
-                use_textarea = true;
-            }
-            if (key.length > 0 && key[0] == '|') {
-                use_textarea = true;
-            }
-            if (use_textarea) {
-                this.showEditor(file, node, type, key);
-                return;
-            }
-            // others... - fill in options for true/false?
-            
-            this.keyrender.el.editable = true;
-            this.view.el.set_cursor_on_cell(
-                mod.get_path(iter),
-                this.valcol.el,
-                this.valrender.el,
-                true
-            );
-            
             
         }
 
@@ -223,6 +167,35 @@ public class Xcls_LeftProps : Object
             
             this.startEditingValue();
                       
+        }
+    public void deleteSelected () {
+            
+                    Gtk.TreeIter iter;
+                    Gtk.TreeModel mod;
+                    
+                    var s = this.view.get_selection();
+                    s.get_selected(out mod, out iter);
+                         
+                          
+                    GLib.Value gval;
+                    mod.get_value(iter, 0 , out gval);
+                    var type = (string)gval;
+                    
+                    mod.get_value(iter, 1 , out gval);
+                    var key = (string)gval;
+                    
+                    switch(type) {
+                        case "listener":
+                            this.node.listeners.remove(key);
+                            break;
+                            
+                        case "prop":
+                            this.node.prop.remove(key);
+                            break;
+                    }
+                    this.load(dthis.file, this.node);
+                    
+                    this.file.changed("prop");
         }
 
     // skip |xns - no return type
