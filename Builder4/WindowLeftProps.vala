@@ -484,7 +484,7 @@ public class Xcls_LeftProps : Object
             // set gobject values
             var child_0 = new Xcls_HBox8(_this);
             child_0.ref();
-            this.el.add (  child_0.el  );
+            this.el.add (  child_0.el  );&
 
             // listeners 
             this.el.button_press_event.connect( function ( event)  => {
