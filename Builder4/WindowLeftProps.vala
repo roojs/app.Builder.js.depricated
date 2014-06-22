@@ -222,8 +222,8 @@ public class Xcls_LeftProps : Object
             this.keyrender.el.editable = true;
             this.view.el.set_cursor_on_cell(
                 mod.get_path(iter),
-                this.keycol.el,
-                this.keyrender.el,
+                this.valcol.el,
+                this.valrender.el,
                 true
             );
             
