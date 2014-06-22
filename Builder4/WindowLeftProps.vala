@@ -896,7 +896,7 @@ public class Xcls_LeftProps : Object
 
             // listeners 
             this.el.activate.connect(  ()  => {
-                _this.addProp( ".string:id", "");
+                _this.addProp( "prop", ".string:id", "");
             } );
         }
 
@@ -943,7 +943,7 @@ public class Xcls_LeftProps : Object
             // listeners 
             this.el.activate.connect(   ( ) => {
             
-                _this.addProp( "*pack","add");
+                _this.addProp( "prop", "*pack","add");
             } );
         }
 
@@ -990,7 +990,7 @@ public class Xcls_LeftProps : Object
             // listeners 
             this.el.activate.connect(   ( ) => {
             
-                this.addProp( "|init", "{\n\n}\n" );
+                this.addProp( "prop",  "|init", "{\n\n}\n" );
             } );
         }
 

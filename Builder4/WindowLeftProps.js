@@ -148,7 +148,7 @@ WindowLeftProps=new XObject({
                                     xtype: Gtk.MenuItem,
                                     listeners : {
                                         activate : ()  => {
-                                            _this.addProp( ".string:id", "");
+                                            _this.addProp( "prop", ".string:id", "");
                                         }
                                     },
                                     label : "ID",
@@ -160,7 +160,7 @@ WindowLeftProps=new XObject({
                                     listeners : {
                                         activate : ( ) => {
                                         
-                                            _this.addProp( "*pack","add");
+                                            _this.addProp( "prop", "*pack","add");
                                         }
                                     },
                                     label : "PACK",
@@ -172,7 +172,7 @@ WindowLeftProps=new XObject({
                                     listeners : {
                                         activate : ( ) => {
                                         
-                                            this.addProp( "|init", "{\n\n}\n" );
+                                            this.addProp( "prop",  "|init", "{\n\n}\n" );
                                         }
                                     },
                                     label : "INIT",
