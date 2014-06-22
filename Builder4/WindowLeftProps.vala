@@ -1292,7 +1292,7 @@ public class Xcls_LeftProps : Object
             // listeners 
             this.el.activate.connect(   ( ) =>{
             
-                _this.addProp( "|.type:return_type:XXXX", "() {\n\n}\n");
+                _this.addProp( "prop", "|.type:return_type:XXXX", "() {\n\n}\n");
             } );
         }
 
