@@ -174,7 +174,7 @@ public class Xcls_LeftProps : Object
            }
             
         }
-    public .void startEditing(string path, int col) {
+    public .void startEditingValue(string path, int col) {
             
             // alled by menu 'edit' currently..
             /**
