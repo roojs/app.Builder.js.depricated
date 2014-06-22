@@ -257,13 +257,13 @@ WindowLeftProps=new XObject({
                 {
                     xtype: Gtk.Button,
                     listeners : {
-                        button_press_event : function ( event)  => {
+                        button_press_event : ( event)  => {
                             
                         // 	if (!this.get('/Editor').save()) {
                         // 	    // popup!! - click handled.. 
                         // 	    return true;
                         //        }
-                            _this.showAddProps("'events");
+                            _this.showAddProps("listener");
                             return false;
                         }
                     },

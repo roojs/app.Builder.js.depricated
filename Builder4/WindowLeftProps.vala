@@ -487,13 +487,13 @@ public class Xcls_LeftProps : Object
             this.el.add (  child_0.el  );
 
             // listeners 
-            this.el.button_press_event.connect( function ( event)  => {
+            this.el.button_press_event.connect(   ( event)  => {
                 
             // 	if (!this.get('/Editor').save()) {
             // 	    // popup!! - click handled.. 
             // 	    return true;
             //        }
-                _this.showAddProps("'events");
+                _this.showAddProps("listener");
                 return false;
             } );
         }
