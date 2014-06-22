@@ -112,7 +112,7 @@ WindowLeftProps=new XObject({
                         this.node.prop.remove(key);
                         break;
                 }
-                this.load(dthis.file, this.node);
+                this.load(this.file, this.node);
                 
                 this.file.changed("prop");
     },
