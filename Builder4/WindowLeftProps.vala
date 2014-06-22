@@ -33,6 +33,7 @@ public class Xcls_LeftProps : Object
     public Xcls_ContextMenu ContextMenu;
 
         // my vars
+    public signal void before_edit();
     public JsRender.JsRender file;
     public JsRender.Node node;
 
@@ -55,7 +56,8 @@ public class Xcls_LeftProps : Object
     }
 
     // userdefined functions 
-    public signal void()
+
+    // skip .signal:void:before_edit - already used 
 
     // skip .JsRender.JsRender:file - already used 
 
