@@ -143,7 +143,7 @@ WindowLeftProps=new XObject({
         var miter = node.listeners.map_iterator();
         
         while(miter.next()) {
-            m.append(iter);
+            m.append(out iter);
             m.set(iter, 
                     0, "listener",
                     1, miter.get_key(),
@@ -157,7 +157,7 @@ WindowLeftProps=new XObject({
         
         
        while(miter.next()) {
-            m.append(iter);
+            m.append(out iter);
             m.set(iter, 
                     0, "props",
                     1, miter.get_key(),

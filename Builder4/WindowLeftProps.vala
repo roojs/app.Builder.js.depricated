@@ -176,7 +176,7 @@ public class Xcls_LeftProps : Object
             var miter = node.listeners.map_iterator();
             
             while(miter.next()) {
-                m.append(iter);
+                m.append(out iter);
                 m.set(iter, 
                         0, "listener",
                         1, miter.get_key(),
@@ -190,7 +190,7 @@ public class Xcls_LeftProps : Object
             
             
            while(miter.next()) {
-                m.append(iter);
+                m.append(out iter);
                 m.set(iter, 
                         0, "props",
                         1, miter.get_key(),
