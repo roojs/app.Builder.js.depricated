@@ -71,7 +71,7 @@ public class Xcls_LeftProps : Object
                 
             var node = _this.activeNode;
                     
-            if (type == "events") {
+            if (type == "listener") {
                 if (node.listeners.has(key)) {
                     return;
                 }
@@ -96,22 +96,23 @@ public class Xcls_LeftProps : Object
             var s = this.view.el.get_selection();
             s.unselect_all();
             
+            GLib.Value gval;
+            
             this.view.foreach((model, path, iter) {
-                
-                    m.append(iter);
-                    m.set(iter, 
-                            0, "listener",
-                            1, miter.get_key(),
-                            2, "<b>" + miter.get_key() + "</b>",
-                            3, miter.get_value()
-                        ); 
-                 }
-                
+        
+                this.model.el.get_value(iter, 0 , out gval);
+                if ((string)gval != type) {
+                    return;
+                }
+                this.model.el.get_value(iter, 1 , out gval);
+                if ((string)gval != key) {
+                    return;
+                }
+                s.set_selection(iter); 
             });
             
             
-                        
-            this.startEditing(type, key);
+            this.startEditingValue();
                       
         }
     public .void deleteSelected () {
