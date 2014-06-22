@@ -655,18 +655,15 @@ public class Xcls_LeftProps : Object
             child_1.ref();
 
             // listeners 
-            this.el.button_press_event.connect( function (self, ev) {
-            
-             	if (!this.get('/Editor').save()) {
-             	    // popup!! - click handled.. 
-             	    return true;
-                    }
+            this.el.button_press_event.connect(   (self, ev) => {
+                this.before_edit();
+                
                     
-            	var p = this.AddPropertyPopup;
-             	p.el.set_screen(Gdk.Screen.get_default());
-                    p.el.show_all();
-                     p.el.popup(null, null, null, 3, ev.button.time);
-                return true;
+                var p = this.AddPropertyPopup;
+                p.el.set_screen(Gdk.Screen.get_default());
+                p.el.show_all();
+                 p.el.popup(null, null, null, 3, ev.button.time);
+                 return true;
             } );
         }
 

@@ -291,18 +291,15 @@ WindowLeftProps=new XObject({
                 {
                     xtype: Gtk.Button,
                     listeners : {
-                        button_press_event : function (self, ev) {
-                        
-                         	if (!this.get('/Editor').save()) {
-                         	    // popup!! - click handled.. 
-                         	    return true;
-                                }
+                        button_press_event : (self, ev) => {
+                            this.before_edit();
+                            
                                 
-                        	var p = this.AddPropertyPopup;
-                         	p.el.set_screen(Gdk.Screen.get_default());
-                                p.el.show_all();
-                                 p.el.popup(null, null, null, 3, ev.button.time);
-                            return true;
+                            var p = this.AddPropertyPopup;
+                            p.el.set_screen(Gdk.Screen.get_default());
+                            p.el.show_all();
+                             p.el.popup(null, null, null, 3, ev.button.time);
+                             return true;
                         }
                     },
                     pack : "add",
