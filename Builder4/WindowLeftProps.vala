@@ -187,7 +187,13 @@ public class Xcls_LeftProps : Object
             
             var s  = this.view.el.get_selection();
             
-            s.
+            GLib.Value gval;
+            mod.get_value(iter, 0 , out gval);
+            var type = (string)gval;
+            
+            mod.get_value(iter, 1 , out gval);
+            var key = (string)gval;
+            
             
             
             // alled by menu 'edit' currently..
