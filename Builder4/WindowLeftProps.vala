@@ -169,7 +169,7 @@ public class Xcls_LeftProps : Object
         }
 
     // skip |void.startEditingKey - no return type
-    public void addPropfunction(string type, string key, string value) {
+    public void addProp (string type, string key, string value) {
               // info includes key, val, skel, etype..
               //console.dump(info);
                 //type = info.type.toLowerCase();

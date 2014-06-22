@@ -139,7 +139,7 @@ WindowLeftProps=new XObject({
         
         
     },
-    'void:addProp' : function(string type, string key, string value) {
+    'void:addProp' : (string type, string key, string value) {
           // info includes key, val, skel, etype..
           //console.dump(info);
             //type = info.type.toLowerCase();
