@@ -55,7 +55,7 @@ public class Xcls_LeftProps : Object
     }
 
     // userdefined functions 
-    public signal void
+    public signal void()
 
     // skip .JsRender.JsRender:file - already used 
 
