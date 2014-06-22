@@ -153,7 +153,7 @@
                                         },
                                         {
                                             "listeners": {
-                                                "activate": "function (self) {\n\n    _this.addProp( \".string:XXXX\", \"\");\n\n}"
+                                                "activate": "function (self) {\n\n    _this.addProp( \"prop\", \".string:XXXX\", \"\");\n\n}"
                                             },
                                             "label": "String",
                                             "pack": "append",
@@ -163,7 +163,7 @@
                                         },
                                         {
                                             "listeners": {
-                                                "activate": "  ( ) =>{\n\n    _this.addProp( \".int:XXX\", \"0\");\n}"
+                                                "activate": "  ( ) =>{\n\n    _this.addProp(\"prop\",  \".int:XXX\", \"0\");\n}"
                                             },
                                             "label": "Number",
                                             "pack": "append",

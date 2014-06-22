@@ -188,7 +188,7 @@ WindowLeftProps=new XObject({
                                     listeners : {
                                         activate : function (self) {
                                         
-                                            _this.addProp( ".string:XXXX", "");
+                                            _this.addProp( "prop", ".string:XXXX", "");
                                         
                                         }
                                     },
@@ -201,7 +201,7 @@ WindowLeftProps=new XObject({
                                     listeners : {
                                         activate : ( ) =>{
                                         
-                                            _this.addProp( ".int:XXX", "0");
+                                            _this.addProp("prop",  ".int:XXX", "0");
                                         }
                                     },
                                     label : "Number",

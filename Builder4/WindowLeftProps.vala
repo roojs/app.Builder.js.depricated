@@ -1070,7 +1070,7 @@ public class Xcls_LeftProps : Object
             // listeners 
             this.el.activate.connect( function (self) {
             
-                _this.addProp( ".string:XXXX", "");
+                _this.addProp( "prop", ".string:XXXX", "");
             
             } );
         }
@@ -1118,7 +1118,7 @@ public class Xcls_LeftProps : Object
             // listeners 
             this.el.activate.connect(   ( ) =>{
             
-                _this.addProp( ".int:XXX", "0");
+                _this.addProp("prop",  ".int:XXX", "0");
             } );
         }
 
