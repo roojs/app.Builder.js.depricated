@@ -34,7 +34,7 @@ public class Xcls_LeftProps : Object
 
         // my vars
     public JsRender.Node node;
-    public JsRender.JsRender node;
+    public JsRender.JsRender file;
 
         // ctor 
     public Xcls_LeftProps()
@@ -58,7 +58,7 @@ public class Xcls_LeftProps : Object
 
     // skip .JsRender.Node:node - already used 
 
-    // skip .JsRender.JsRender:node - already used 
+    // skip .JsRender.JsRender:file - already used 
 
     // skip id - not pipe 
 
