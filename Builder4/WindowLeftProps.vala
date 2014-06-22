@@ -188,13 +188,16 @@ public class Xcls_LeftProps : Object
             if (path.lenth > 0) {
                 tp = new Gtk.TreePath.from_string(path);
             } else {
-                Gtk.TreeItervar iter;
+                Gtk.TreeIter  iter;
                 var s = this.view.el.selection;
                 s.get_selected(this.el, out iter);
                 tp = this.model.el.get_path(iter);
                 path = tp.to_string();
             }
             
+           
+           
+           
            
             // which colum is to be edited..
             var colObj = false;
