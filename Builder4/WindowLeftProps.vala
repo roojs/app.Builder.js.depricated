@@ -63,90 +63,6 @@ public class Xcls_LeftProps : Object
     // skip id - not pipe 
 
     // skip xtype - not pipe 
-    public .void addPropfunction(string type, string key, string value) {
-              // info includes key, val, skel, etype..
-              //console.dump(info);
-                //type = info.type.toLowerCase();
-                //var data = this.toJS();
-                
-            var node = _this.activeNode;
-                    
-            if (type == "listener") {
-                if (node.listeners.has(key)) {
-                    return;
-                }
-                node.listeners.set(key,value);
-            } else  {
-            
-                if (node.props.has(key)) {
-                    return;
-                }
-                node.props.set(key,value);
-            }
-                   
-              
-            // add a row???
-            this.load(this.file, this.node);
-            
-            
-            
-            /// need to find the row which I've just added..
-            
-            
-            var s = this.view.el.get_selection();
-            s.unselect_all();
-            
-            GLib.Value gval;
-            
-            this.view.foreach((model, path, iter) {
-        
-                this.model.el.get_value(iter, 0 , out gval);
-                if ((string)gval != type) {
-                    return;
-                }
-                this.model.el.get_value(iter, 1 , out gval);
-                if ((string)gval != key) {
-                    return;
-                }
-                s.set_selection(iter); 
-            });
-            
-            
-            this.startEditingValue();
-                      
-        }
-    public .void deleteSelected () {
-            
-             
-            
-            Gtk.TreeIter iter;
-            Gtk.TreeModel mod;
-            
-            var s = this.view.get_selection();
-            s.get_selected(out mod, out iter);
-                 
-                  
-            GLib.Value gval;
-            mod.get_value(iter, 0 , out gval);
-            var type = (string)gval;
-            
-            mod.get_value(iter, 1 , out gval);
-            var key = (string)gval;
-            
-            switch(type) {
-                case "listener":
-                    this.node.listeners.remove(key);
-                    break;
-                    
-                case "prop":
-                    this.node.prop.remove(key);
-                    break;
-            }
-            this.load(dthis.file, this.node);
-            
-            this.file.changed("prop");
-            
-        }
     public .void load(JsRender.JsRender file, JsRender.Node? node) 
         {
             
@@ -253,6 +169,58 @@ public class Xcls_LeftProps : Object
         }
 
     // skip |void.startEditingKey - no return type
+    public void addPropfunction(string type, string key, string value) {
+              // info includes key, val, skel, etype..
+              //console.dump(info);
+                //type = info.type.toLowerCase();
+                //var data = this.toJS();
+                
+            var node = _this.activeNode;
+                    
+            if (type == "listener") {
+                if (node.listeners.has(key)) {
+                    return;
+                }
+                node.listeners.set(key,value);
+            } else  {
+            
+                if (node.props.has(key)) {
+                    return;
+                }
+                node.props.set(key,value);
+            }
+                   
+              
+            // add a row???
+            this.load(this.file, this.node);
+            
+            
+            
+            /// need to find the row which I've just added..
+            
+            
+            var s = this.view.el.get_selection();
+            s.unselect_all();
+            
+            GLib.Value gval;
+            
+            this.view.foreach((model, path, iter) {
+        
+                this.model.el.get_value(iter, 0 , out gval);
+                if ((string)gval != type) {
+                    return;
+                }
+                this.model.el.get_value(iter, 1 , out gval);
+                if ((string)gval != key) {
+                    return;
+                }
+                s.set_selection(iter); 
+            });
+            
+            
+            this.startEditingValue();
+                      
+        }
 
     // skip |xns - no return type
 

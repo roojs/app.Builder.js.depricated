@@ -35,6 +35,58 @@ WindowLeftProps=new XObject({
         
         
     },
+    'void:addProp' : function(string type, string key, string value) {
+          // info includes key, val, skel, etype..
+          //console.dump(info);
+            //type = info.type.toLowerCase();
+            //var data = this.toJS();
+            
+        var node = _this.activeNode;
+                
+        if (type == "listener") {
+            if (node.listeners.has(key)) {
+                return;
+            }
+            node.listeners.set(key,value);
+        } else  {
+        
+            if (node.props.has(key)) {
+                return;
+            }
+            node.props.set(key,value);
+        }
+               
+          
+        // add a row???
+        this.load(this.file, this.node);
+        
+        
+        
+        /// need to find the row which I've just added..
+        
+        
+        var s = this.view.el.get_selection();
+        s.unselect_all();
+        
+        GLib.Value gval;
+        
+        this.view.foreach((model, path, iter) {
+    
+            this.model.el.get_value(iter, 0 , out gval);
+            if ((string)gval != type) {
+                return;
+            }
+            this.model.el.get_value(iter, 1 , out gval);
+            if ((string)gval != key) {
+                return;
+            }
+            s.set_selection(iter); 
+        });
+        
+        
+        this.startEditingValue();
+                  
+    },
     items : [
         {
             xtype: Gtk.HBox,
