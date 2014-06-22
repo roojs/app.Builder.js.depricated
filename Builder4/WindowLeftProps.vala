@@ -33,6 +33,7 @@ public class Xcls_LeftProps : Object
     public Xcls_ContextMenu ContextMenu;
 
         // my vars
+    public JsRender.JsRender node;
 
         // ctor 
     public Xcls_LeftProps()
@@ -54,27 +55,11 @@ public class Xcls_LeftProps : Object
 
     // userdefined functions 
 
+    // skip .JsRender.JsRender:node - already used 
+
     // skip id - not pipe 
 
     // skip xtype - not pipe 
-    public .void onChanged(string str, bool doRefresh ) {
-            
-            // used to use activePath...
-            Gtk.TreeModel mod,
-            Gtk.TreeIter iter;
-            var s = _this.model.get_selection();
-            s.get_selected(out mod, out iter);
-            
-            
-            m.set(iter, 
-                        0, "listener",
-                        1, miter.get_key(),
-                        2, "<b>" + miter.get_key() + "</b>",
-                        3, miter.get_value()
-                    ); 
-            
-            this.file.changed("props");
-        }
     public .void addPropfunction(string type, string key, string value) {
               // info includes key, val, skel, etype..
               //console.dump(info);
@@ -190,6 +175,24 @@ public class Xcls_LeftProps : Object
                     ); 
            }
             
+        }
+    public .void onChanged(string str, bool doRefresh ) {
+            
+            // used to use activePath...
+            Gtk.TreeModel mod,
+            Gtk.TreeIter iter;
+            var s = _this.model.get_selection();
+            s.get_selected(out mod, out iter);
+            
+            
+            m.set(iter, 
+                        0, "listener",
+                        1, miter.get_key(),
+                        2, "<b>" + miter.get_key() + "</b>",
+                        3, miter.get_value()
+                    ); 
+            
+            this.file.changed("props");
         }
     public .void startEditing(string path, int col) {
             
