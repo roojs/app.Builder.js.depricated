@@ -613,12 +613,12 @@ WindowLeftProps=new XObject({
                                                 var oldval = (string)gval;
                                                 
                                                  _this.model.el.get_value(iter,0, out gval);
-                                                var oldtype = (string)gval;
+                                                var ktype = (string)gval;
                                                
                                                 _this.model.el.set_value(iter, 1, newtext);
                                                 
                                                 
-                                                switch(oldtype) {
+                                                switch(ktype) {
                                                     case "listener":
                                                         _this.node.listeners.set(newtext, _this.node.listeners.get(oldval));
                                                         _this.node.listeners.remove(oldval);
