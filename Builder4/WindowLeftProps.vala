@@ -111,13 +111,14 @@ public class Xcls_LeftProps : Object
         
                 this.model.el.get_value(iter, 0 , out gval);
                 if ((string)gval != type) {
-                    return;
+                    return false;
                 }
                 this.model.el.get_value(iter, 1 , out gval);
                 if ((string)gval != key) {
-                    return;
+                    return false;
                 }
-                s.set_selection(iter); 
+                s.set_selection(iter);
+                return true; 
             });
             
             
