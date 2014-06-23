@@ -35,7 +35,6 @@ public class Xcls_LeftProps : Object
         // my vars
     public JsRender.JsRender file;
     public JsRender.Node node;
-    public signal void before_edit();
     public signal void changed();
 
         // ctor 
@@ -61,8 +60,7 @@ public class Xcls_LeftProps : Object
     // skip .JsRender.JsRender:file - already used 
 
     // skip .JsRender.Node:node - already used 
-
-    // skip .signal:void:before_edit - already used 
+    public  void()
 
     // skip .signal:void:changed - already used 
 
