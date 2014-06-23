@@ -502,8 +502,8 @@ WindowLeftProps=new XObject({
                                     }
                                 }   
                                 */
-                                this.keycol.el.stop_editing();
-                                this.valcol.el.stop_editing();
+                                _this.keycol.el.stop_editing();
+                                _this.valcol.el.stop_editing();
                                 
                                 //this.EditProps.editableColumn.items[0].el.stop_editing();
                                 this.EditProps.editing = false;
