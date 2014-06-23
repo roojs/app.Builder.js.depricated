@@ -64,13 +64,34 @@ public class Xcls_LeftProps : Object
 
     // skip .signal:void:before_edit - already used 
 
+    // skip .signal:void:changed - already used 
+
     // skip id - not pipe 
 
     // skip xtype - not pipe 
-
-    // skip .signal:void:changed - already used 
-
-    // skip |void.startEditingKey - no return type
+    public void startEditingKey() {
+            
+             
+            
+            Gtk.TreeIter iter;
+            Gtk.TreeModel mod;
+            
+            var s = this.view.get_selection();
+            s.get_selected(out mod, out iter);
+                 
+          
+            // others... - fill in options for true/false?
+            
+            this.keyrender.el.editable = true;
+            this.view.el.set_cursor_on_cell(
+                mod.get_path(iter),
+                this.keycol.el,
+                this.keyrender.el,
+                true
+            );
+            
+            
+        }
     public void addProp (string type, string key, string value) {
               // info includes key, val, skel, etype..
               //console.dump(info);

@@ -12,7 +12,7 @@ XObject = imports.XObject.XObject;
 WindowLeftProps=new XObject({
     xtype: Gtk.VBox,
     id : "LeftProps",
-    'void.startEditingKey' : () {
+    'void:startEditingKey' : () {
         
          
         
