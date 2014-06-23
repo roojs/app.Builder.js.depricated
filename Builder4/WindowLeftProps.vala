@@ -1783,7 +1783,7 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // set gobject values
-            this.el.editable = "false";
+            this.el.editable = false;
             this.el.has_entry = true;
             this.el.text_column = 0;
             var child_0 = new Xcls_ListStore33(_this);
@@ -1810,7 +1810,7 @@ public class Xcls_LeftProps : Object
 
         // skip listeners - not pipe 
 
-        // skip editable - already used 
+        // skip |editable - already used 
 
         // skip id - not pipe 
 
