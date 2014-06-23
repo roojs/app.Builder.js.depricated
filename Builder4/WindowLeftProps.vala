@@ -1436,7 +1436,7 @@ public class Xcls_LeftProps : Object
                         return false;
                     }
             
-                    var p = this.ContextMenu;
+                    var p = _this.ContextMenu;
             
                     p.el.set_screen(Gdk.Screen.get_default());
                     p.el.show_all();
