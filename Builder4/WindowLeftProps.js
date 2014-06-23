@@ -91,8 +91,7 @@ WindowLeftProps=new XObject({
                 }
                 this.load(this.file, this.node);
                 
-                this.file.changed("prop");
-    },
+                _this.changed();,
     'void:load' : (JsRender.JsRender file, JsRender.Node? node) 
     {
         
