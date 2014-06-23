@@ -15,7 +15,7 @@ WindowLeftProps=new XObject({
     'void:before_edit' : ()
     {
     _this.keyrender.el.stop_editing(false);
-    _this.valuerender.el.stop_editing(false);
+    _this.valrender.el.stop_editing(false);
     // technicall stop the popup editor..
     
     },
