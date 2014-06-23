@@ -1662,22 +1662,29 @@ public class Xcls_LeftProps : Object
             
                     Gtk.TreeIter  iter;
                     _this.model.el.get_iter(out iter, new Gtk.TreePath.from_string(path));
+                    GLib.Value gval;
                     
                      _this.model.el.get_value(iter,1, out gval);
                     var oldval = (string)gval;
                     
-                     _this.model.el.get_value(iter,1, out gval);
-                    var oldval = (string)gval;
-                    
-                    
+                     _this.model.el.get_value(iter,0, out gval);
+                    var oldtype = (string)gval;
+                   
                     _this.model.el.set_value(iter, 1, newtext);
                     
                     
-                    this.node.props.set(newtext, 
-                     
-            	//model.activePath = false;
-                    _this.changed();
-                    this.el.editable = false;
+                    switch(oldtype) {
+                        case "listener":
+                            this.node.listeners.set(newtext, this.node.props.get(oldval));
+                            this.node.listeners.remove(oldval);
+                            break;
+                        case "prop":
+                            this.node.props.set(newtext, this.node.props.get(oldval));
+                            this.node.props.remove(oldval);
+                            break;
+                     }
+                     _this.changed();
+                      
             } );
         }
 
