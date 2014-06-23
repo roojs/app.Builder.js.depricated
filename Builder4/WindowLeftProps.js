@@ -595,7 +595,7 @@ WindowLeftProps=new XObject({
                                         
                                         },
                                         edited : (path, newtext) => {
-                                        
+                                        /*
                                          m.set(iter, 
                                                         0, "listener",
                                                         1, miter.get_key(),
@@ -603,7 +603,7 @@ WindowLeftProps=new XObject({
                                                         3, miter.get_value()
                                                     ); 
                                         
-                                                
+                                          */      
                                         
                                                 Gtk.TreeIter  iter;
                                                 _this.model.el.get_iter(out iter, new Gtk.TreePath.from_string(path));

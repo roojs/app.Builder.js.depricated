@@ -1650,7 +1650,7 @@ public class Xcls_LeftProps : Object
             
             } );
             this.el.edited.connect(   (path, newtext) => {
-            
+            /*
              m.set(iter, 
                             0, "listener",
                             1, miter.get_key(),
@@ -1658,7 +1658,7 @@ public class Xcls_LeftProps : Object
                             3, miter.get_value()
                         ); 
             
-                    
+              */      
             
                     Gtk.TreeIter  iter;
                     _this.model.el.get_iter(out iter, new Gtk.TreePath.from_string(path));
