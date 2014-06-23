@@ -724,21 +724,21 @@ WindowLeftProps=new XObject({
                         {
                             xtype: Gtk.MenuItem,
                             listeners : {
-                                activate : ( )  =>{
-                                	_this.deleteSelected();
-                                }
-                            },
-                            label : "Delete",
-                            pack : "append"
-                        },
-                        {
-                            xtype: Gtk.MenuItem,
-                            listeners : {
                                 activate : ( ) => {
                                     _this.startEditing(false, 0);
                                 }
                             },
                             label : "Edit",
+                            pack : "append"
+                        },
+                        {
+                            xtype: Gtk.MenuItem,
+                            listeners : {
+                                activate : ( )  =>{
+                                	_this.deleteSelected();
+                                }
+                            },
+                            label : "Delete",
                             pack : "append"
                         }
                     ]

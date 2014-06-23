@@ -308,18 +308,18 @@
                             "items": [
                                 {
                                     "listeners": {
-                                        "activate": "  ( )  =>{\n\t_this.deleteSelected();\n}"
+                                        "activate": "  ( ) => {\n    _this.startEditing(false, 0);\n}"
                                     },
-                                    "label": "Delete",
+                                    "label": "Edit",
                                     "pack": "append",
                                     "xtype": "MenuItem",
                                     "|xns": "Gtk"
                                 },
                                 {
                                     "listeners": {
-                                        "activate": "  ( ) => {\n    _this.startEditing(false, 0);\n}"
+                                        "activate": "  ( )  =>{\n\t_this.deleteSelected();\n}"
                                     },
-                                    "label": "Edit",
+                                    "label": "Delete",
                                     "pack": "append",
                                     "xtype": "MenuItem",
                                     "|xns": "Gtk"
