@@ -1806,6 +1806,10 @@ public class Xcls_LeftProps : Object
                     _this.model.el.get_iter(out iter, new Gtk.TreePath.from_string(path));
                     GLib.Value gval;
                     
+                     _this.model.el.get_value(iter,0, out gval);
+                    var ktype = (string)gval;
+                    
+                    
                      _this.model.el.get_value(iter,3, out gval);
                     var oldval = (string)gval;
                     
@@ -1814,7 +1818,7 @@ public class Xcls_LeftProps : Object
                     
                      
                     
-                    switch(oldtype) {
+                    switch(ktype) {
                         case "listener":
                             _this.node.listeners.set(key, newtext);
                             break;
