@@ -6,7 +6,7 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.bjs",
     "items": [
         {
-            ".signal:void:show_add_props": "",
+            ".signal:void:show_add_props": "(string type)",
             ".JsRender.JsRender:file": "",
             ".JsRender.Node:node": "",
             ".signal:void:changed": "()",

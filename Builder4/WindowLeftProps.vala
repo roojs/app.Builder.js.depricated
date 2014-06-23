@@ -33,7 +33,7 @@ public class Xcls_LeftProps : Object
     public Xcls_ContextMenu ContextMenu;
 
         // my vars
-    public signal void show_add_props;
+    public signal void show_add_props(string type);
     public JsRender.JsRender file;
     public JsRender.Node node;
     public signal void changed();
