@@ -8,7 +8,7 @@
         {
             ".JsRender.JsRender:file": "",
             ".JsRender.Node:node": "",
-            "|signal:void:before_edit": "()",
+            ".signal:void:before_edit": "()",
             "|signal:void:changed": "()",
             "id": "LeftProps",
             "xtype": "VBox",
