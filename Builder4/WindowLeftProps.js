@@ -654,14 +654,43 @@ WindowLeftProps=new XObject({
                                 {
                                     xtype: Gtk.CellRendererCombo,
                                     listeners : {
-                                        edited : ( treepath, str) => {
-                                         	_this .editing = false;
-                                         	
-                                         	//var ap = this.get('/LeftPanel.model').activePath
-                                        	//print("EDITED? "  + ap + " - p:" + p0 + " t:" + p0);
-                                                _this.setCurrentValue(str, true);
-                                                //this.get('/LeftPanel.model').activePath = false;
+                                        edited : (path, newtext) => {
                                                 this.el.editable = false;
+                                        /*  
+                                         m.set(iter, 
+                                                        0, "listener",
+                                                        1, miter.get_key(),
+                                                        2, "<b>" + miter.get_key() + "</b>",
+                                                        3, miter.get_value()
+                                                    ); 
+                                        
+                                          */      
+                                        
+                                                Gtk.TreeIter  iter;
+                                                _this.model.el.get_iter(out iter, new Gtk.TreePath.from_string(path));
+                                                GLib.Value gval;
+                                                
+                                                 _this.model.el.get_value(iter,1, out gval);
+                                                var oldval = (string)gval;
+                                                
+                                                 _this.model.el.get_value(iter,0, out gval);
+                                                var oldtype = (string)gval;
+                                               
+                                                _this.model.el.set_value(iter, 1, newtext);
+                                                
+                                                
+                                                switch(oldtype) {
+                                                    case "listener":
+                                                        _this.node.listeners.set(newtext, _this.node.listeners.get(oldval));
+                                                        _this.node.listeners.remove(oldval);
+                                                        break;
+                                                    case "prop":
+                                                        _this.node.props.set(newtext, _this.node.props.get(oldval));
+                                                        _this.node.props.remove(oldval);
+                                                        break;
+                                                 }
+                                                 _this.changed();
+                                                  
                                         },
                                         editing_started : ( editable, path) => {
                                             //_this.editing = true;
@@ -669,10 +698,10 @@ WindowLeftProps=new XObject({
                                            
                                         }
                                     },
-                                    editable : false,
                                     id : "valrender",
                                     pack : "pack_start,true",
                                     text_column : 0,
+                                    editable : false,
                                     has_entry : true,
                                     model : {
                                         xtype: Gtk.ListStore,

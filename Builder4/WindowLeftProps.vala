@@ -1790,14 +1790,43 @@ public class Xcls_LeftProps : Object
             child_0.ref();
 
             // listeners 
-            this.el.edited.connect(   ( treepath, str) => {
-             	_this .editing = false;
-             	
-             	//var ap = this.get('/LeftPanel.model').activePath
-            	//print("EDITED? "  + ap + " - p:" + p0 + " t:" + p0);
-                    _this.setCurrentValue(str, true);
-                    //this.get('/LeftPanel.model').activePath = false;
+            this.el.edited.connect(   (path, newtext) => {
                     this.el.editable = false;
+            /*  
+             m.set(iter, 
+                            0, "listener",
+                            1, miter.get_key(),
+                            2, "<b>" + miter.get_key() + "</b>",
+                            3, miter.get_value()
+                        ); 
+            
+              */      
+            
+                    Gtk.TreeIter  iter;
+                    _this.model.el.get_iter(out iter, new Gtk.TreePath.from_string(path));
+                    GLib.Value gval;
+                    
+                     _this.model.el.get_value(iter,1, out gval);
+                    var oldval = (string)gval;
+                    
+                     _this.model.el.get_value(iter,0, out gval);
+                    var oldtype = (string)gval;
+                   
+                    _this.model.el.set_value(iter, 1, newtext);
+                    
+                    
+                    switch(oldtype) {
+                        case "listener":
+                            _this.node.listeners.set(newtext, _this.node.listeners.get(oldval));
+                            _this.node.listeners.remove(oldval);
+                            break;
+                        case "prop":
+                            _this.node.props.set(newtext, _this.node.props.get(oldval));
+                            _this.node.props.remove(oldval);
+                            break;
+                     }
+                     _this.changed();
+                      
             } );
             this.el.editing_started.connect( ( editable, path) => {
                 //_this.editing = true;
@@ -1810,8 +1839,6 @@ public class Xcls_LeftProps : Object
 
         // skip listeners - not pipe 
 
-        // skip |editable - already used 
-
         // skip id - not pipe 
 
         // skip pack - not pipe 
@@ -1819,6 +1846,8 @@ public class Xcls_LeftProps : Object
         // skip text_column - already used 
 
         // skip xtype - not pipe 
+
+        // skip |editable - already used 
 
         // skip |has_entry - already used 
 
