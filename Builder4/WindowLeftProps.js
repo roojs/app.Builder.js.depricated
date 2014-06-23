@@ -305,7 +305,7 @@ WindowLeftProps=new XObject({
                             var p = _this.AddPropertyPopup;
                             p.el.set_screen(Gdk.Screen.get_default());
                             p.el.show_all();
-                             p.el.popup(null, null, null, 3, ev.button.time);
+                             p.el.popup(null, null, null, ev.button, ev.time);
                              return true;
                         }
                     },
