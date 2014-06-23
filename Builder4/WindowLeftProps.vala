@@ -684,7 +684,8 @@ public class Xcls_LeftProps : Object
             // listeners 
             this.el.button_press_event.connect(   (self, ev) => {
                 this.before_edit();
-                
+
+				
                     
                 var p = this.AddPropertyPopup;
                 p.el.set_screen(Gdk.Screen.get_default());
