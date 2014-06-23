@@ -60,20 +60,19 @@ public class Xcls_LeftProps : Object
     // skip .JsRender.JsRender:file - already used 
 
     // skip .JsRender.Node:node - already used 
-    public  void()
-        [
-        
-        _this.keyrender.el.stop_editing();
-        _this.valuerender.el.stop_editing();
-        // technicall stop the popup editor..
-        
-        }
 
     // skip .signal:void:changed - already used 
 
     // skip id - not pipe 
 
     // skip xtype - not pipe 
+    public  void()
+        
+        _this.keyrender.el.stop_editing();
+        _this.valuerender.el.stop_editing();
+        // technicall stop the popup editor..
+        
+        }
     public void addProp (string type, string key, string value) {
               // info includes key, val, skel, etype..
               //console.dump(info);
