@@ -35,7 +35,6 @@ public class Xcls_LeftProps : Object
         // my vars
     public JsRender.JsRender file;
     public JsRender.Node node;
-    public signal void changed();
 
         // ctor 
     public Xcls_LeftProps()
@@ -61,8 +60,7 @@ public class Xcls_LeftProps : Object
 
     // skip .JsRender.Node:node - already used 
     public signal void()
-
-    // skip .signal:void:changed - already used 
+    public signal void()
 
     // skip id - not pipe 
 

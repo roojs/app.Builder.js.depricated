@@ -12,6 +12,7 @@ XObject = imports.XObject.XObject;
 WindowLeftProps=new XObject({
     xtype: Gtk.VBox,
     'signal:void:before_edit' : (),
+    'signal:void:changed' : (),
     id : "LeftProps",
     'void:addProp' : (string type, string key, string value) {
           // info includes key, val, skel, etype..
