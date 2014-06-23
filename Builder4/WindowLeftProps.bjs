@@ -6,7 +6,7 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.bjs",
     "items": [
         {
-            ".signal.void.show_editor": "",
+            ".signal.void.show_editor": "(JsRender.JsRender file, JsRender.Node node, string type, string key)",
             ".JsRender.JsRender:file": "",
             ".JsRender.Node:node": "",
             ".signal:void:changed": "()",

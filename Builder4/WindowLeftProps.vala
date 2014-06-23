@@ -46,6 +46,7 @@ public class Xcls_LeftProps : Object
         this.el = new Gtk.VBox( true, 0 );
 
         // my vars
+        this.undefined = (JsRender.JsRender file, JsRender.Node node, string type, string key);
 
         // set gobject values
         var child_0 = new Xcls_HBox2(_this);
