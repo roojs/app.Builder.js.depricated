@@ -66,13 +66,6 @@ public class Xcls_LeftProps : Object
     // skip id - not pipe 
 
     // skip xtype - not pipe 
-    public void before_edit()
-        {
-        _this.keyrender.el.stop_editing(false);
-        _this.valrender.el.stop_editing(false);
-        // technicall stop the popup editor..
-        
-        }
     public void addProp (string type, string key, string value) {
               // info includes key, val, skel, etype..
               //console.dump(info);
@@ -124,6 +117,13 @@ public class Xcls_LeftProps : Object
             
             this.startEditingValue();
                       
+        }
+    public void before_edit()
+        {
+        _this.keyrender.el.stop_editing(false);
+        _this.valrender.el.stop_editing(false);
+        // technicall stop the popup editor..
+        
         }
     public void deleteSelected () {
             
@@ -235,7 +235,7 @@ public class Xcls_LeftProps : Object
                     Gtk.TreeIter iter;
                     Gtk.TreeModel mod;
                     
-                    var s = this.view.get_selection();
+                    var s = this.view.el.get_selection();
                     s.get_selected(out mod, out iter);
                          
                     /*
