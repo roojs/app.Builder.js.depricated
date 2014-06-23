@@ -76,7 +76,7 @@ public class Xcls_LeftProps : Object
             Gtk.TreeIter iter;
             Gtk.TreeModel mod;
             
-            var s = this.view.get_selection();
+            var s = this.view.el.get_selection();
             s.get_selected(out mod, out iter);
                  
           
