@@ -270,7 +270,7 @@ WindowLeftProps=new XObject({
                         // 	    // popup!! - click handled.. 
                         // 	    return true;
                         //        }
-                            _this.showAddProps("listener");
+                            _this.show_add_props("listener");
                             return false;
                         }
                     },

@@ -58,7 +58,7 @@
                         },
                         {
                             "listeners": {
-                                "button_press_event": "  ( event)  => {\n    \n// \tif (!this.get('/Editor').save()) {\n// \t    // popup!! - click handled.. \n// \t    return true;\n//        }\n    _this.showAddProps(\"listener\");\n    return false;\n}"
+                                "button_press_event": "  ( event)  => {\n    \n// \tif (!this.get('/Editor').save()) {\n// \t    // popup!! - click handled.. \n// \t    return true;\n//        }\n    _this.show_add_props(\"listener\");\n    return false;\n}"
                             },
                             "pack": "add",
                             "xtype": "Button",
