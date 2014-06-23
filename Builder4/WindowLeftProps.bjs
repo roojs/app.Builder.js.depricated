@@ -308,9 +308,9 @@
                             "items": [
                                 {
                                     "listeners": {
-                                        "activate": "  ( ) => {\n    _this.startEditing(false, 0);\n}"
+                                        "activate": "  ( )  =>{\n\t_this.deleteSelected();\n}"
                                     },
-                                    "label": "Edit",
+                                    "label": "Delete",
                                     "pack": "append",
                                     "xtype": "MenuItem",
                                     "|xns": "Gtk"

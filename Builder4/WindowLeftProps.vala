@@ -1963,11 +1963,11 @@ public class Xcls_LeftProps : Object
             // my vars
 
             // set gobject values
-            this.el.label = "Edit";
+            this.el.label = "Delete";
 
             // listeners 
-            this.el.activate.connect(   ( ) => {
-                _this.startEditing(false, 0);
+            this.el.activate.connect(   ( )  =>{
+            	_this.deleteSelected();
             } );
         }
 
