@@ -35,7 +35,6 @@ public class Xcls_LeftProps : Object
         // my vars
     public JsRender.JsRender file;
     public JsRender.Node node;
-    public signal void before_edit();
     public signal void changed();
 
         // ctor 
@@ -61,37 +60,13 @@ public class Xcls_LeftProps : Object
     // skip .JsRender.JsRender:file - already used 
 
     // skip .JsRender.Node:node - already used 
-
-    // skip .signal:void:before_edit - already used 
+    public signal void()
 
     // skip .signal:void:changed - already used 
 
     // skip id - not pipe 
 
     // skip xtype - not pipe 
-    public void startEditingKey() {
-            
-             
-            
-            Gtk.TreeIter iter;
-            Gtk.TreeModel mod;
-            
-            var s = this.view.el.get_selection();
-            s.get_selected(out mod, out iter);
-                 
-          
-            // others... - fill in options for true/false?
-            
-            this.keyrender.el.editable = true;
-            this.view.el.set_cursor_on_cell(
-                mod.get_path(iter),
-                this.keycol.el,
-                this.keyrender.el,
-                true
-            );
-            
-            
-        }
     public void addProp (string type, string key, string value) {
               // info includes key, val, skel, etype..
               //console.dump(info);
@@ -222,6 +197,29 @@ public class Xcls_LeftProps : Object
                         3, miter.get_value()
                     ); 
            }
+            
+        }
+    public void startEditingKey() {
+            
+             
+            
+            Gtk.TreeIter iter;
+            Gtk.TreeModel mod;
+            
+            var s = this.view.el.get_selection();
+            s.get_selected(out mod, out iter);
+                 
+          
+            // others... - fill in options for true/false?
+            
+            this.keyrender.el.editable = true;
+            this.view.el.set_cursor_on_cell(
+                mod.get_path(iter),
+                this.keycol.el,
+                this.keyrender.el,
+                true
+            );
+            
             
         }
     public void startEditingValue() {

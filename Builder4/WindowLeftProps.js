@@ -11,30 +11,8 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 WindowLeftProps=new XObject({
     xtype: Gtk.VBox,
+    'signal:void:before_edit' : (),
     id : "LeftProps",
-    'void:startEditingKey' : () {
-        
-         
-        
-        Gtk.TreeIter iter;
-        Gtk.TreeModel mod;
-        
-        var s = this.view.el.get_selection();
-        s.get_selected(out mod, out iter);
-             
-      
-        // others... - fill in options for true/false?
-        
-        this.keyrender.el.editable = true;
-        this.view.el.set_cursor_on_cell(
-            mod.get_path(iter),
-            this.keycol.el,
-            this.keyrender.el,
-            true
-        );
-        
-        
-    },
     'void:addProp' : (string type, string key, string value) {
           // info includes key, val, skel, etype..
           //console.dump(info);
@@ -165,6 +143,29 @@ WindowLeftProps=new XObject({
                     3, miter.get_value()
                 ); 
        }
+        
+    },
+    'void:startEditingKey' : () {
+        
+         
+        
+        Gtk.TreeIter iter;
+        Gtk.TreeModel mod;
+        
+        var s = this.view.el.get_selection();
+        s.get_selected(out mod, out iter);
+             
+      
+        // others... - fill in options for true/false?
+        
+        this.keyrender.el.editable = true;
+        this.view.el.set_cursor_on_cell(
+            mod.get_path(iter),
+            this.keycol.el,
+            this.keyrender.el,
+            true
+        );
+        
         
     },
     'void:startEditingValue' : () {
