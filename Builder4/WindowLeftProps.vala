@@ -1018,7 +1018,7 @@ public class Xcls_LeftProps : Object
             // listeners 
             this.el.activate.connect(   ( ) => {
             
-                this.addProp( "prop",  "|init", "{\n\n}\n" );
+                _this.addProp( "prop",  "|init", "{\n\n}\n" );
             } );
         }
 

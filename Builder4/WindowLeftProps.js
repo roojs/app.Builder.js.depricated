@@ -361,7 +361,7 @@ WindowLeftProps=new XObject({
                                     listeners : {
                                         activate : ( ) => {
                                         
-                                            this.addProp( "prop",  "|init", "{\n\n}\n" );
+                                            _this.addProp( "prop",  "|init", "{\n\n}\n" );
                                         }
                                     },
                                     label : "INIT",
