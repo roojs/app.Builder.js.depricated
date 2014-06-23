@@ -6,10 +6,11 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.bjs",
     "items": [
         {
-            ".signal:void:show_editor": "(JsRender.JsRender file, JsRender.Node node, string type, string key)",
+            ".signal:void:show_add_props": "",
             ".JsRender.JsRender:file": "",
             ".JsRender.Node:node": "",
             ".signal:void:changed": "()",
+            ".signal:void:show_editor": "(JsRender.JsRender file, JsRender.Node node, string type, string key)",
             "id": "LeftProps",
             "xtype": "VBox",
             "|void:addProp": " (string type, string key, string value) {\n      // info includes key, val, skel, etype..\n      //console.dump(info);\n        //type = info.type.toLowerCase();\n        //var data = this.toJS();\n        \n \n            \n    if (type == \"listener\") {\n        if (this.node.listeners.has_key(key)) {\n            return;\n        }\n        this.node.listeners.set(key,value);\n    } else  {\n    \n        if (this.node.props.has_key(key)) {\n            return;\n        }\n        this.node.props.set(key,value);\n    }\n           \n      \n    // add a row???\n    this.load(this.file, this.node);\n    \n    \n    \n    /// need to find the row which I've just added..\n    \n    \n    var s = this.view.el.get_selection();\n    s.unselect_all();\n    \n    GLib.Value gval;\n    \n    this.view.el.foreach((model, path, iter) => {\n\n        this.model.el.get_value(iter, 0 , out gval);\n        if ((string)gval != type) {\n            return;\n        }\n        this.model.el.get_value(iter, 1 , out gval);\n        if ((string)gval != key) {\n            return;\n        }\n        s.set_selection(iter); \n    });\n    \n    \n    this.startEditingValue();\n              \n}\n",
