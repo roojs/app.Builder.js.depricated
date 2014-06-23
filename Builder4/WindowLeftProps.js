@@ -57,7 +57,7 @@ WindowLeftProps=new XObject({
             if ((string)gval != key) {
                 return false;
             }
-            this.view.el.get_selection().set_selection(iter);
+            s.select_iter(iter);
             return true; 
         });
         

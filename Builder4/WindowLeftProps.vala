@@ -117,7 +117,7 @@ public class Xcls_LeftProps : Object
                 if ((string)gval != key) {
                     return false;
                 }
-                this.view.el.get_selection().set_selection(iter);
+                s.select_iter(iter);
                 return true; 
             });
             
