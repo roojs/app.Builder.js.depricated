@@ -205,7 +205,7 @@ WindowLeftProps=new XObject({
                 
                 var use_textarea = false;
                 
-                if (type = "listener") {
+                if (type == "listener") {
                     use_textarea = true;
                 }
                 if (key.length > 0 && key[0] == '|') {
