@@ -1504,7 +1504,7 @@ public class Xcls_LeftProps : Object
                  //   return false;
                // }
                 
-                var renderer = this.valrender.el; // set has_entry..
+               // var renderer = this.valrender.el; // set has_entry..
                 
                 //var type = this.get('/LeftPanel.model').getType(res.path.to_string());
                     
