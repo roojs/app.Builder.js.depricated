@@ -1419,7 +1419,7 @@ public class Xcls_LeftProps : Object
             // listeners 
             this.el.button_press_event.connect(   ( ev)  => {
             
-                _this.beforeEdit();
+                _this.before_edit();
                 
                 Gtk.TreeViewColumn col;
                 int cell_x;

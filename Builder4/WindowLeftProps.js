@@ -451,7 +451,7 @@ WindowLeftProps=new XObject({
                     listeners : {
                         button_press_event : ( ev)  => {
                         
-                            _this.beforeEdit();
+                            _this.before_edit();
                             
                             Gtk.TreeViewColumn col;
                             int cell_x;
