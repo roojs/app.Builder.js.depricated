@@ -266,7 +266,7 @@ public class Xcls_LeftProps : Object
                         use_textarea = true;
                     }
                     if (use_textarea) {
-                        this.showEditor(file, node, type, key);
+                        this.show_editor(file, node, type, key);
                         return;
                     }
                     // others... - fill in options for true/false?
