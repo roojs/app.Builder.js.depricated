@@ -1595,7 +1595,7 @@ public class Xcls_LeftProps : Object
             this.el.title = "key";
             var child_0 = new Xcls_keyrender(_this);
             child_0.ref();
-            this.el.pack_start (  child_0.el  );
+            this.el.pack_start (  child_0.el , false );
 
             // init method 
              this.el.add_attribute(this.keyrender.el , "markup", 2 );
@@ -1727,7 +1727,7 @@ public class Xcls_LeftProps : Object
             this.el.title = "value";
             var child_0 = new Xcls_valrender(_this);
             child_0.ref();
-            this.el.pack_start (  child_0.el  );
+            this.el.pack_start (  child_0.el , true );
 
             // init method 
             {

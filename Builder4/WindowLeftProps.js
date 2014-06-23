@@ -633,7 +633,7 @@ WindowLeftProps=new XObject({
                                         }
                                     },
                                     id : "keyrender",
-                                    pack : "pack_start"
+                                    pack : "pack_start,false"
                                 }
                             ]
                         },
@@ -671,7 +671,7 @@ WindowLeftProps=new XObject({
                                     },
                                     editable : "false",
                                     id : "valrender",
-                                    pack : "pack_start",
+                                    pack : "pack_start,true",
                                     text_column : 0,
                                     has_entry : true,
                                     model : {
