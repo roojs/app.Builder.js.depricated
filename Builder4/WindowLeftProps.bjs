@@ -8,7 +8,7 @@
         {
             ".JsRender.JsRender:file": "",
             ".JsRender.Node:node": "",
-            "|:void:before_edit": "()",
+            "|:void:before_edit": "()\n[\n\n_this.keyrender.el.stop_editing();\n_this.valuerender.el.stop_editing();\n// technicall stop the popup editor..\n\n}\n",
             ".signal:void:changed": "()",
             "id": "LeftProps",
             "xtype": "VBox",

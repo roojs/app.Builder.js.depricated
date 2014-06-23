@@ -11,7 +11,14 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 WindowLeftProps=new XObject({
     xtype: Gtk.VBox,
-    ':void:before_edit' : (),
+    ':void:before_edit' : ()
+    [
+    
+    _this.keyrender.el.stop_editing();
+    _this.valuerender.el.stop_editing();
+    // technicall stop the popup editor..
+    
+    },
     id : "LeftProps",
     'void:addProp' : (string type, string key, string value) {
           // info includes key, val, skel, etype..

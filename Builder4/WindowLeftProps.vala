@@ -61,6 +61,13 @@ public class Xcls_LeftProps : Object
 
     // skip .JsRender.Node:node - already used 
     public  void()
+        [
+        
+        _this.keyrender.el.stop_editing();
+        _this.valuerender.el.stop_editing();
+        // technicall stop the popup editor..
+        
+        }
 
     // skip .signal:void:changed - already used 
 
