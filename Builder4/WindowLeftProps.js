@@ -506,7 +506,7 @@ WindowLeftProps=new XObject({
                                 _this.valcol.el.stop_editing();
                                 
                                 //this.EditProps.editableColumn.items[0].el.stop_editing();
-                                this.EditProps.editing = false;
+                                //this.EditProps.editing = false;
                             
                             //    XObject.error("Currently editing?");
                              //   return false;
@@ -528,7 +528,7 @@ WindowLeftProps=new XObject({
                         //         this.get('/LeftPanel').editableColumn.setOptions(opts);
                         //        renderer.has_entry = false;
                         //    }
-                            _this.startEditing(res.path.to_string(), 1);
+                            _this.startEditingValue(res.path.to_string(), 1);
                                 
                            //Seed.print("click" + ev.type);
                             //console.dump(res);
