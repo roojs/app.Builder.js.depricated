@@ -67,7 +67,7 @@ public class Xcls_LeftProps : Object
 
     // skip xtype - not pipe 
     public  void()
-        
+        {
         _this.keyrender.el.stop_editing();
         _this.valuerender.el.stop_editing();
         // technicall stop the popup editor..

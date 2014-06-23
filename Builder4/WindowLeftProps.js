@@ -13,7 +13,7 @@ WindowLeftProps=new XObject({
     xtype: Gtk.VBox,
     id : "LeftProps",
     ':void:before_edit' : ()
-    
+    {
     _this.keyrender.el.stop_editing();
     _this.valuerender.el.stop_editing();
     // technicall stop the popup editor..
