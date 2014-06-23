@@ -1806,25 +1806,23 @@ public class Xcls_LeftProps : Object
                     _this.model.el.get_iter(out iter, new Gtk.TreePath.from_string(path));
                     GLib.Value gval;
                     
-                     _this.model.el.get_value(iter,1, out gval);
+                     _this.model.el.get_value(iter,3, out gval);
                     var oldval = (string)gval;
                     
-                     _this.model.el.get_value(iter,0, out gval);
-                    var oldtype = (string)gval;
-                   
-                    _this.model.el.set_value(iter, 1, newtext);
+                     _this.model.el.get_value(iter,1, out gval);
+                    var key = (string)gval;
                     
+                     
                     
                     switch(oldtype) {
                         case "listener":
-                            _this.node.listeners.set(newtext, _this.node.listeners.get(oldval));
-                            _this.node.listeners.remove(oldval);
+                            _this.node.listeners.set(key, newtext);
                             break;
                         case "prop":
-                            _this.node.props.set(newtext, _this.node.props.get(oldval));
-                            _this.node.props.remove(oldval);
+                            _this.node.props.set(key,newtext);
                             break;
                      }
+                     _this.load(_this.file,this.node);
                      _this.changed();
                       
             } );
