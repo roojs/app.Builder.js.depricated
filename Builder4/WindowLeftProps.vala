@@ -1654,7 +1654,7 @@ public class Xcls_LeftProps : Object
             
             
                     Gtk.TreeIter  iter;
-                    _this.model.el.get_iter(iter, new Gtk.TreePath.from_string(path));
+                    _this.model.el.get_iter(out iter, new Gtk.TreePath.from_string(path));
                     _this.model.el.set_value(iter, 0, newtext);
                     this.model.el.set_value(iter, 2, p0);
                     
