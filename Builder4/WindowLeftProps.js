@@ -45,10 +45,10 @@ WindowLeftProps=new XObject({
         var s = this.view.el.get_selection();
         s.unselect_all();
         
-        GLib.Value gval;
-        
+      
         this.model.el.foreach((model, path, iter) => {
-    
+            GLib.Value gval;
+        
             this.model.el.get_value(iter, 0 , out gval);
             if ((string)gval != type) {
                 return false;
