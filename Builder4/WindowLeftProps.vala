@@ -1520,7 +1520,7 @@ public class Xcls_LeftProps : Object
             //         this.get('/LeftPanel').editableColumn.setOptions(opts);
             //        renderer.has_entry = false;
             //    }
-                _this.startEditingValue(res.path.to_string(), 1);
+                _this.startEditingValue(); // assumes selected row..
                     
                //Seed.print("click" + ev.type);
                 //console.dump(res);
