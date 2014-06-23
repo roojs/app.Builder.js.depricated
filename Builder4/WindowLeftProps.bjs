@@ -276,7 +276,7 @@
                                         {
                                             "listeners": {
                                                 "edited": "  ( treepath, str) => {\n \t_this .editing = false;\n \t\n \t//var ap = this.get('/LeftPanel.model').activePath\n\t//print(\"EDITED? \"  + ap + \" - p:\" + p0 + \" t:\" + p0);\n        _this.setCurrentValue(str, true);\n        //this.get('/LeftPanel.model').activePath = false;\n        this.el.editable = false;\n}",
-                                                "editing_started": "( editable, path) => {\n    _this.editing = true;\n    this.el.editable = false; // make sure it's not editor...\n   \n}"
+                                                "editing_started": "( editable, path) => {\n    //_this.editing = true;\n    this.el.editable = false; // make sure it's not editor...\n   \n}"
                                             },
                                             "|editable": "false",
                                             "id": "valrender",
