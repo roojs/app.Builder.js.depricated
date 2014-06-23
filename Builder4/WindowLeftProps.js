@@ -472,7 +472,7 @@ WindowLeftProps=new XObject({
                         
                                 p.el.set_screen(Gdk.Screen.get_default());
                                 p.el.show_all();
-                                p.el.popup(null, null, null, null, 3, ev.button.time);
+                                p.el.popup(null, null, null,  3, ev.button.time);
                                 //Seed.print("click:" + res.column.title);
                                 
                                 
