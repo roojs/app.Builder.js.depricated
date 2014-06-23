@@ -1465,7 +1465,7 @@ public class Xcls_LeftProps : Object
             
                     p.el.set_screen(Gdk.Screen.get_default());
                     p.el.show_all();
-                    p.el.popup(null, null, null,  ev.button, ev.button.time);
+                    p.el.popup(null, null, null,  ev.button, ev.time);
                     //Seed.print("click:" + res.column.title);
                     
                     
