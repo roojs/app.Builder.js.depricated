@@ -1826,7 +1826,7 @@ public class Xcls_LeftProps : Object
                             _this.node.props.set(key,newtext);
                             break;
                      }
-                     _this.load(_this.file,this.node);
+                     _this.load(_this.file,_this.node);
                      _this.changed();
                       
             } );
