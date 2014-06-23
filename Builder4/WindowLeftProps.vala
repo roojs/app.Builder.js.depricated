@@ -127,7 +127,7 @@ public class Xcls_LeftProps : Object
             
             GLib.Value gval;
             
-            this.view.foreach((model, path, iter) => {
+            this.view.el.foreach((model, path, iter) => {
         
                 this.model.el.get_value(iter, 0 , out gval);
                 if ((string)gval != type) {
