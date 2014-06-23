@@ -292,10 +292,10 @@ WindowLeftProps=new XObject({
                     xtype: Gtk.Button,
                     listeners : {
                         button_press_event : (self, ev) => {
-                            this.before_edit();
+                            _this.before_edit();
                             
                                 
-                            var p = this.AddPropertyPopup;
+                            var p = _this.AddPropertyPopup;
                             p.el.set_screen(Gdk.Screen.get_default());
                             p.el.show_all();
                              p.el.popup(null, null, null, 3, ev.button.time);
