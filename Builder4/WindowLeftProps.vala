@@ -66,7 +66,7 @@ public class Xcls_LeftProps : Object
     // skip id - not pipe 
 
     // skip xtype - not pipe 
-    public  void()
+    public void before_edit()
         {
         _this.keyrender.el.stop_editing();
         _this.valuerender.el.stop_editing();
