@@ -86,7 +86,7 @@ WindowLeftProps=new XObject({
                         break;
                         
                     case "prop":
-                        this.node.prop.remove(key);
+                        this.node.props.remove(key);
                         break;
                 }
                 this.load(this.file, this.node);
