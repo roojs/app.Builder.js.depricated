@@ -725,10 +725,10 @@ WindowLeftProps=new XObject({
                             xtype: Gtk.MenuItem,
                             listeners : {
                                 activate : ( )  =>{
-                                	_this.deleteSelected();
+                                	_this.startEditingKey();
                                 }
                             },
-                            label : "Delete",
+                            label : "Edit",
                             pack : "append"
                         },
                         {
