@@ -620,12 +620,12 @@ WindowLeftProps=new XObject({
                                                 
                                                 switch(oldtype) {
                                                     case "listener":
-                                                        this.node.listeners.set(newtext, this.node.props.get(oldval));
-                                                        this.node.listeners.remove(oldval);
+                                                        _this.node.listeners.set(newtext, this.node.props.get(oldval));
+                                                        _this.node.listeners.remove(oldval);
                                                         break;
                                                     case "prop":
-                                                        this.node.props.set(newtext, this.node.props.get(oldval));
-                                                        this.node.props.remove(oldval);
+                                                        _this.node.props.set(newtext, this.node.props.get(oldval));
+                                                        _this.node.props.remove(oldval);
                                                         break;
                                                  }
                                                  _this.changed();
