@@ -181,15 +181,17 @@ public class Xcls_MainWindow : Object
 
         // userdefined functions 
 
+        // skip |homogeneous - already used 
+
         // skip id - not pipe 
 
         // skip pack - not pipe 
 
-        // skip |vexpand - already used 
-
         // skip xtype - not pipe 
 
         // skip |height_request - already used 
+
+        // skip |vexpand - already used 
 
         // skip |xns - no return type
 

@@ -31,11 +31,12 @@
                     "|xns": "Gtk",
                     "items": [
                         {
+                            "|homogeneous": "true",
                             "id": "topbar",
                             "pack": "pack_start,false,true,0",
-                            "|vexpand": "false  ",
                             "xtype": "HBox",
                             "|height_request": 20,
+                            "|vexpand": "false  ",
                             "|xns": "Gtk"
                         },
                         {

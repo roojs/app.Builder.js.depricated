@@ -49,10 +49,11 @@ MainWindow=new XObject({
             items : [
                 {
                     xtype: Gtk.HBox,
+                    homogeneous : true,
                     id : "topbar",
                     pack : "pack_start,false,true,0",
-                    vexpand : false,
-                    height_request : 20
+                    height_request : 20,
+                    vexpand : false
                 },
                 {
                     xtype: Gtk.HPaned,
