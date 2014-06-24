@@ -321,6 +321,43 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // set gobject values
+            var child_0 = new Xcls_Actor8(_this);
+            child_0.ref();
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+
+        // skip xtype - not pipe 
+
+        // skip pack - not pipe 
+
+        // skip items - not pipe 
+
+        // skip xvala_cls - not pipe 
+
+        // skip xvala_xcls - not pipe 
+
+        // skip xvala_id - not pipe 
+    }
+    public class Xcls_Actor8 : Object 
+    {
+        public GtkClutter.Actor el;
+        private Xcls_MainWindow  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_Actor8(Xcls_MainWindow _owner)
+        {
+            _this = _owner;
+            this.el = new GtkClutter.Actor();
+
+            // my vars
+
+            // set gobject values
         }
 
         // userdefined functions 

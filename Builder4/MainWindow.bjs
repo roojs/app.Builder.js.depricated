@@ -54,7 +54,14 @@
                                         {
                                             "|xns": "GtkClutter",
                                             "xtype": "Embed",
-                                            "pack": false
+                                            "pack": false,
+                                            "items": [
+                                                {
+                                                    "|xns": "GtkClutter",
+                                                    "xtype": "Actor",
+                                                    "pack": false
+                                                }
+                                            ]
                                         }
                                     ]
                                 }
