@@ -630,10 +630,6 @@ public class Xcls_MainWindow : Object
             }
 
             // listeners 
-            this.el.activate.connect(  () => {
-                print("pressed");
-                
-            } );
             this.el.clicked.connect(   ( ) => {
                 var el = _this.rooview.el;
                     el.save_easing_state();

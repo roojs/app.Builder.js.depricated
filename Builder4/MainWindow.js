@@ -134,10 +134,6 @@ MainWindow=new XObject({
                                                 {
                                                     xtype: Gtk.Button,
                                                     listeners : {
-                                                        activate : () => {
-                                                            print("pressed");
-                                                            
-                                                        },
                                                         clicked : ( ) => {
                                                             var el = _this.rooview.el;
                                                                 el.save_easing_state();
