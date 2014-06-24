@@ -121,7 +121,7 @@ MainWindow=new XObject({
                                                 this.el.add_constraint(
                                                     new Clutter.AlignConstraint(
                                                         _this.clutterembed.el.get_stage(), 
-                                                        Clutter.AlignAxis.LEFT,
+                                                        Clutter.AlignAxis.X_AXIS,
                                                         0.0f
                                                     )
                                                 );
