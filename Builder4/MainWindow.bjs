@@ -64,9 +64,8 @@
                                             "|xns": "GtkClutter",
                                             "items": [
                                                 {
-                                                    "xpack": "",
-                                                    "id": "rooview",
                                                     "pack": false,
+                                                    "id": "rooview",
                                                     "xtype": "Actor",
                                                     "|xns": "GtkClutter"
                                                 }
