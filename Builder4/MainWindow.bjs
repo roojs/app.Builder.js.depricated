@@ -47,6 +47,7 @@
                                     "|xns": "Gtk"
                                 },
                                 {
+                                    "pack": "add2",
                                     "xtype": "VBox",
                                     "|xns": "Gtk"
                                 }
