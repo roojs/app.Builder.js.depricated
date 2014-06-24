@@ -24,6 +24,7 @@ public class Xcls_MainWindow : Object
 
     public Xcls_vbox vbox;
     public Xcls_topbar topbar;
+    public Xcls_tree tree;
     public Xcls_clutterembed clutterembed;
 
         // my vars
@@ -301,7 +302,7 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_VBox7(_this);
+            var child_0 = new Xcls_tree(_this);
             child_0.ref();
             this.el.add1 (  child_0.el  );
             var child_1 = new Xcls_VBox8(_this);
@@ -325,7 +326,7 @@ public class Xcls_MainWindow : Object
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_VBox7 : Object 
+    public class Xcls_tree : Object 
     {
         public Gtk.VBox el;
         private Xcls_MainWindow  _this;
@@ -334,9 +335,10 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_VBox7(Xcls_MainWindow _owner)
+        public Xcls_tree(Xcls_MainWindow _owner)
         {
             _this = _owner;
+            _this.tree = this;
             this.el = new Gtk.VBox( true, 0 );
 
             // my vars
@@ -345,6 +347,8 @@ public class Xcls_MainWindow : Object
         }
 
         // userdefined functions 
+
+        // skip id - not pipe 
 
         // skip pack - not pipe 
 

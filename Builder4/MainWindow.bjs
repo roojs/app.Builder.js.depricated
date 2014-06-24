@@ -57,11 +57,13 @@
                                             "pack": false,
                                             "items": [
                                                 {
+                                                    "id": "tree",
                                                     "pack": "add1",
                                                     "xtype": "VBox",
                                                     "|xns": "Gtk"
                                                 },
                                                 {
+                                                    "id": "props",
                                                     "pack": "add2",
                                                     "xtype": "VBox",
                                                     "|xns": "Gtk"
