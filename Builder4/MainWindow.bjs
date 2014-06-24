@@ -31,8 +31,8 @@
                     "pack": "add",
                     "items": [
                         {
-                            "pack": "pack",
                             "id": "topbar",
+                            "pack": "pack",
                             "xtype": "HBox",
                             "|xns": "Gtk"
                         },
