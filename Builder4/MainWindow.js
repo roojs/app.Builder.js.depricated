@@ -99,7 +99,7 @@ MainWindow=new XObject({
                                             id : "rooview",
                                             pack : "get_stage().add_child",
                                             init : {
-                                                this.el.add_contraint(
+                                                this.el.add_constraint(
                                                     new Clutter.AlignConstraint(
                                                         _this.clutterembed.el, 
                                                         Clutter.AlignAxis.BOTH,

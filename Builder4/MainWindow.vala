@@ -507,7 +507,7 @@ public class Xcls_MainWindow : Object
 
             // init method 
             {
-                this.el.add_contraint(
+                this.el.add_constraint(
                     new Clutter.AlignConstraint(
                         _this.clutterembed.el, 
                         Clutter.AlignAxis.BOTH,
