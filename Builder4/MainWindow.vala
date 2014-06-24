@@ -175,9 +175,12 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // set gobject values
+            this.el.height_request = ;
         }
 
         // userdefined functions 
+
+        // skip |height_request - already used 
 
         // skip id - not pipe 
 
