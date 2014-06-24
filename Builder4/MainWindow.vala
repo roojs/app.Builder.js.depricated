@@ -524,12 +524,12 @@ public class Xcls_MainWindow : Object
                 this.el.add_constraint(
                     new Clutter.AlignConstraint(
                         _this.clutterembed.el.get_stage(), 
-                        Clutter.AlignAxis.BOTH,
-                        0.5f
+                        Clutter.AlignAxis.X_AXIS,
+                        1.0f
                     )
                 );
                     
-                this.el.set_position(100,100);
+                //this.el.set_position(100,100);
                 this.el.set_pivot_point(0.5f,0.5f);
                 this.el.set_size(500,500);
             }
