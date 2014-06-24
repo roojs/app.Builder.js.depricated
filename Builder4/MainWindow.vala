@@ -497,6 +497,7 @@ public class Xcls_MainWindow : Object
 
 
             // my vars
+        public bool undefined;
 
             // ctor 
         public Xcls_rooview(Xcls_MainWindow _owner)
@@ -526,6 +527,8 @@ public class Xcls_MainWindow : Object
         }
 
         // userdefined functions 
+
+        // skip .bool - already used 
 
         // skip id - not pipe 
 
