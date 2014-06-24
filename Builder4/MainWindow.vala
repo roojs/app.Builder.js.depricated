@@ -385,7 +385,7 @@ public class Xcls_MainWindow : Object
             // init method 
             {
                 this.el.set_position(100,100);
-                this.el.set_pivot_point(0.5,0.5);
+                this.el.set_pivot_point(0.5f,0.5f);
                 
             }
         }
