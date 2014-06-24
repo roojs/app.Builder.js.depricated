@@ -114,7 +114,7 @@ MainWindow=new XObject({
                                         },
                                         {
                                             xtype: GtkClutter.Actor,
-                                            id : "rooview",
+                                            id : "projectbutton",
                                             pack : "get_stage().add_child",
                                             init : {
                                                 this.el.add_constraint(
