@@ -532,7 +532,7 @@ public class Xcls_MainWindow : Object
         // skip pack - not pipe 
 
         // skip xtype - not pipe 
-        public .bool is_fullsizetrue
+        public bool is_fullsizetrue
 
         // skip |init - already used 
 

@@ -98,6 +98,7 @@ MainWindow=new XObject({
                                             xtype: GtkClutter.Actor,
                                             id : "rooview",
                                             pack : "get_stage().add_child",
+                                            'bool:is_fullsize' : true,
                                             init : {
                                                 this.el.add_constraint(
                                                     new Clutter.AlignConstraint(
