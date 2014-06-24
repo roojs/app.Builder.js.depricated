@@ -31,9 +31,9 @@ public class Xcls_MainWindow : Object
         // ctor 
     public Xcls_MainWindow()
     {
-        this.el = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
         _this = this;
         MainWindow = this;
+        this.el = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
 
         // my vars
         this.left_tree = null;
@@ -122,13 +122,15 @@ public class Xcls_MainWindow : Object
             // ctor 
         public Xcls_vbox(Xcls_MainWindow _owner)
         {
-            this.el = new Gtk.VBox( true, 0 );
             _this = _owner;
             _this.vbox = this;
+            this.el = new Gtk.VBox( true, 0 );
 
             // my vars
 
             // set gobject values
+            var child_0 = new Xcls_HPaned3(_this);
+            child_0.ref();
         }
 
         // userdefined functions 
@@ -138,6 +140,41 @@ public class Xcls_MainWindow : Object
         // skip xtype - not pipe 
 
         // skip |xns - no return type
+
+        // skip items - not pipe 
+
+        // skip xvala_cls - not pipe 
+
+        // skip xvala_xcls - not pipe 
+
+        // skip xvala_id - not pipe 
+    }
+    public class Xcls_HPaned3 : Object 
+    {
+        public Gtk.HPaned el;
+        private Xcls_MainWindow  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_HPaned3(Xcls_MainWindow _owner)
+        {
+            _this = _owner;
+            this.el = new Gtk.HPaned();
+
+            // my vars
+
+            // set gobject values
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+
+        // skip xtype - not pipe 
+
+        // skip pack - not pipe 
 
         // skip xvala_cls - not pipe 
 

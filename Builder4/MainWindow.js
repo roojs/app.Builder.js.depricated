@@ -44,7 +44,13 @@ MainWindow=new XObject({
     items : [
         {
             xtype: Gtk.VBox,
-            id : "vbox"
+            id : "vbox",
+            items : [
+                {
+                    xtype: Gtk.HPaned,
+                    pack : false
+                }
+            ]
         }
     ]
 });

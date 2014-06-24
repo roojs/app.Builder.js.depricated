@@ -27,7 +27,14 @@
                 {
                     "id": "vbox",
                     "xtype": "VBox",
-                    "|xns": "Gtk"
+                    "|xns": "Gtk",
+                    "items": [
+                        {
+                            "|xns": "Gtk",
+                            "xtype": "HPaned",
+                            "pack": false
+                        }
+                    ]
                 }
             ]
         }
