@@ -44,7 +44,7 @@ public class Xcls_LeftProps : Object
     {
         _this = this;
         WindowLeftProps = this;
-        this.el = new Gtk.VBox( true, 0 );
+        this.el = new Gtk.VBox( , 0 );
 
         // my vars
 
@@ -68,6 +68,8 @@ public class Xcls_LeftProps : Object
     // skip .signal:void:show_add_props - already used 
 
     // skip .signal:void:show_editor - already used 
+
+    // skip |homogeneous - already used 
 
     // skip id - not pipe 
 
