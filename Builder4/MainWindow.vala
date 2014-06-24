@@ -459,7 +459,7 @@ public class Xcls_MainWindow : Object
             // set gobject values
             var child_0 = new Xcls_rooview(_this);
             child_0.ref();
-            this.el.add (  child_0.el  );
+            this.el.add_child (  child_0.el  );
 
             // init method 
             var stage = this.el.get_stage();
@@ -517,7 +517,7 @@ public class Xcls_MainWindow : Object
 
         // skip id - not pipe 
 
-        // skip xpack - not pipe 
+        // skip pack - not pipe 
 
         // skip xtype - not pipe 
 

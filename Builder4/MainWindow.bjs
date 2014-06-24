@@ -86,7 +86,7 @@
                                             "items": [
                                                 {
                                                     "id": "rooview",
-                                                    "xpack": "",
+                                                    "pack": "add_child",
                                                     "xtype": "Actor",
                                                     "|init": "{\n    this.el.set_position(100,100);\n    this.el.set_pivot_point(0.5f,0.5f);\n    \n}",
                                                     "|xns": "GtkClutter"
