@@ -644,7 +644,7 @@ public class Xcls_MainWindow : Object
               
                 if (_this.rooview.is_fullsize) { 
                     _this.leftpane.lastWidth = _this.leftpane.el.get_position();
-                    _this.leftpane.el.hide();
+                    _this.leftpane.el.set_position(0);
                     // rotate y 180..
                     el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 360.0f);
                     el.set_scale(0.2f,0.2f);
@@ -653,7 +653,7 @@ public class Xcls_MainWindow : Object
                     el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 0.0f);
                     el.set_scale(1.0f,1.0f);
                     _this.rooview.is_fullsize = true;
-                    _this.leftpane.el.show();
+                    _this.leftpane.el.set_position(_this.leftpane.lastWidth);
                 }
                 el.restore_easing_state();
                     
