@@ -80,6 +80,9 @@
                                     "|xns": "Gtk",
                                     "items": [
                                         {
+                                            "listeners": {
+                                                "size_allocate": "  (  alloc) => {\n\n    \n\n}"
+                                            },
                                             "id": "clutterembed",
                                             "pack": "add",
                                             "xtype": "Embed",

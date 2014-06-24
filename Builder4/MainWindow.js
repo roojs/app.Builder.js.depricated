@@ -90,6 +90,13 @@ MainWindow=new XObject({
                             items : [
                                 {
                                     xtype: GtkClutter.Embed,
+                                    listeners : {
+                                        size_allocate : (  alloc) => {
+                                        
+                                            
+                                        
+                                        }
+                                    },
                                     id : "clutterembed",
                                     pack : "add",
                                     init : var stage = this.el.get_stage();

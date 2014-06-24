@@ -476,9 +476,18 @@ public class Xcls_MainWindow : Object
             // init method 
             var stage = this.el.get_stage();
             stage.set_background_color(  Clutter.Color.from_string("#000"));
+
+            // listeners 
+            this.el.size_allocate.connect(   (  alloc) => {
+            
+                
+            
+            } );
         }
 
         // userdefined functions 
+
+        // skip listeners - not pipe 
 
         // skip id - not pipe 
 
