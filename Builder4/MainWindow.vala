@@ -630,6 +630,9 @@ public class Xcls_MainWindow : Object
                 print("pressed");
                 
             } );
+            this.el.clicked.connect(   ( ) => {
+                print("clicked");
+            } );
         }
 
         // userdefined functions 

@@ -137,6 +137,9 @@ MainWindow=new XObject({
                                                         activate : () => {
                                                             print("pressed");
                                                             
+                                                        },
+                                                        clicked : ( ) => {
+                                                            print("clicked");
                                                         }
                                                     },
                                                     label : "P",

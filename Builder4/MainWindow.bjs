@@ -100,7 +100,8 @@
                                                     "items": [
                                                         {
                                                             "listeners": {
-                                                                "activate": " () => {\n    print(\"pressed\");\n    \n}"
+                                                                "activate": " () => {\n    print(\"pressed\");\n    \n}",
+                                                                "clicked": "  ( ) => {\n    print(\"clicked\");\n}"
                                                             },
                                                             "label": "P",
                                                             "pack": false,
