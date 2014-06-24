@@ -74,7 +74,13 @@ MainWindow=new XObject({
                                     id : "clutterembed",
                                     pack : "add",
                                     init : var stage = this.el.get_stage();
-                                    stage.set_background_color(  Clutter.Color.from_string("#000"));
+                                    stage.set_background_color(  Clutter.Color.from_string("#000"));,
+                                    items : [
+                                        {
+                                            xtype: GtkClutter.Actor,
+                                            pack : false
+                                        }
+                                    ]
                                 }
                             ]
                         }

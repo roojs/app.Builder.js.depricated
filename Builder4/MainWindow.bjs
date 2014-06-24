@@ -61,7 +61,14 @@
                                             "pack": "add",
                                             "xtype": "Embed",
                                             "|init": "var stage = this.el.get_stage();\nstage.set_background_color(  Clutter.Color.from_string(\"#000\"));\n",
-                                            "|xns": "GtkClutter"
+                                            "|xns": "GtkClutter",
+                                            "items": [
+                                                {
+                                                    "|xns": "GtkClutter",
+                                                    "xtype": "Actor",
+                                                    "pack": false
+                                                }
+                                            ]
                                         }
                                     ]
                                 }
