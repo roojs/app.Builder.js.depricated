@@ -99,6 +99,14 @@ MainWindow=new XObject({
                                             id : "rooview",
                                             pack : "get_stage().add_child",
                                             init : {
+                                                this.el.add_contraint(
+                                                    new Clutter.AlignConstraint(
+                                                        _this.clutterembed.el, 
+                                                        Clutter.AlignAxis.BOTH,
+                                                        0.5f
+                                                    )
+                                                );
+                                                    
                                                 this.el.set_position(100,100);
                                                 this.el.set_pivot_point(0.5f,0.5f);
                                                 
