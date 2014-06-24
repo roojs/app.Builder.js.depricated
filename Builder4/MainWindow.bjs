@@ -49,7 +49,14 @@
                                 {
                                     "pack": "add1",
                                     "xtype": "VBox",
-                                    "|xns": "Gtk"
+                                    "|xns": "Gtk",
+                                    "items": [
+                                        {
+                                            "|xns": "Gtk",
+                                            "xtype": "VPaned",
+                                            "pack": false
+                                        }
+                                    ]
                                 },
                                 {
                                     "pack": "add2",
