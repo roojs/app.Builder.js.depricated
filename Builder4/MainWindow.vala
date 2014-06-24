@@ -46,7 +46,7 @@ public class Xcls_MainWindow : Object
         this.el.default_width = 800;
         var child_0 = new Xcls_vbox(_this);
         child_0.ref();
-        this.el.add (  child_0.el  );
+        this.el.pack (  child_0.el  );
 
         // init method 
          
@@ -132,9 +132,10 @@ public class Xcls_MainWindow : Object
             // set gobject values
             var child_0 = new Xcls_topbar(_this);
             child_0.ref();
-            this.el.add (  child_0.el  );
+            this.el.pack (  child_0.el  );
             var child_1 = new Xcls_HPaned4(_this);
             child_1.ref();
+            this.el.add (  child_1.el  );
         }
 
         // userdefined functions 
@@ -144,6 +145,8 @@ public class Xcls_MainWindow : Object
         // skip xtype - not pipe 
 
         // skip |xns - no return type
+
+        // skip pack - not pipe 
 
         // skip items - not pipe 
 
@@ -206,19 +209,22 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // set gobject values
+            this.el.position = 400;
             var child_0 = new Xcls_VBox5(_this);
             child_0.ref();
+            this.el.add (  child_0.el  );
             var child_1 = new Xcls_VBox6(_this);
             child_1.ref();
+            this.el.add (  child_1.el  );
         }
 
         // userdefined functions 
 
-        // skip |xns - no return type
+        // skip position - already used 
 
         // skip xtype - not pipe 
 
-        // skip pack - not pipe 
+        // skip |xns - no return type
 
         // skip items - not pipe 
 
@@ -249,11 +255,9 @@ public class Xcls_MainWindow : Object
 
         // userdefined functions 
 
-        // skip |xns - no return type
-
         // skip xtype - not pipe 
 
-        // skip pack - not pipe 
+        // skip |xns - no return type
 
         // skip xvala_cls - not pipe 
 
@@ -282,11 +286,9 @@ public class Xcls_MainWindow : Object
 
         // userdefined functions 
 
-        // skip |xns - no return type
-
         // skip xtype - not pipe 
 
-        // skip pack - not pipe 
+        // skip |xns - no return type
 
         // skip xvala_cls - not pipe 
 

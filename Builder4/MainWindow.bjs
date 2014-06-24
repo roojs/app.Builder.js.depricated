@@ -37,20 +37,17 @@
                             "|xns": "Gtk"
                         },
                         {
-                            "|xns": "Gtk",
-                            "xtype": "HPaned",
                             "position": 400,
-                            "pack": false,
+                            "xtype": "HPaned",
+                            "|xns": "Gtk",
                             "items": [
                                 {
-                                    "|xns": "Gtk",
                                     "xtype": "VBox",
-                                    "pack": false
+                                    "|xns": "Gtk"
                                 },
                                 {
-                                    "|xns": "Gtk",
                                     "xtype": "VBox",
-                                    "pack": false
+                                    "|xns": "Gtk"
                                 }
                             ]
                         }
