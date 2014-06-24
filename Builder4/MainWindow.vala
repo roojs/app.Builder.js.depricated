@@ -268,8 +268,6 @@ public class Xcls_MainWindow : Object
 
         // userdefined functions 
 
-        // skip id - not pipe 
-
         // skip pack - not pipe 
 
         // skip xtype - not pipe 
