@@ -624,9 +624,17 @@ public class Xcls_MainWindow : Object
             {
                 ((Gtk.Container)(_this.projectbutton.el.get_widget())).add(this.el);
             }
+
+            // listeners 
+            this.el.activate.connect(  () => {
+                print("pressed");
+                return true;
+            } );
         }
 
         // userdefined functions 
+
+        // skip listeners - not pipe 
 
         // skip label - already used 
 

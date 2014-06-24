@@ -99,6 +99,9 @@
                                                     "|xns": "GtkClutter",
                                                     "items": [
                                                         {
+                                                            "listeners": {
+                                                                "activate": " () => {\n    print(\"pressed\");\n    return true;\n}"
+                                                            },
                                                             "label": "P",
                                                             "pack": false,
                                                             "xtype": "Button",

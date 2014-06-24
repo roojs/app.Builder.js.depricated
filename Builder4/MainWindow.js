@@ -133,6 +133,12 @@ MainWindow=new XObject({
                                             items : [
                                                 {
                                                     xtype: Gtk.Button,
+                                                    listeners : {
+                                                        activate : () => {
+                                                            print("pressed");
+                                                            return true;
+                                                        }
+                                                    },
                                                     label : "P",
                                                     pack : false,
                                                     init : {
