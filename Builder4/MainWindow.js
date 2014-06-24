@@ -78,8 +78,10 @@ MainWindow=new XObject({
                                     items : [
                                         {
                                             xtype: GtkClutter.Actor,
-                                            pack : false,
-                                            id : "rooview"
+                                            init : function() {
+                                                XObject.prototype.init.call(this);
+                                            },
+                                            pack : false
                                         }
                                     ]
                                 }

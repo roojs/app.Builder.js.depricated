@@ -64,8 +64,8 @@
                                             "|xns": "GtkClutter",
                                             "items": [
                                                 {
+                                                    "|init": "function() {\n    XObject.prototype.init.call(this);\n}\n",
                                                     "pack": false,
-                                                    "id": "rooview",
                                                     "xtype": "Actor",
                                                     "|xns": "GtkClutter"
                                                 }
