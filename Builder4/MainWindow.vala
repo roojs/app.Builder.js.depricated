@@ -176,6 +176,7 @@ public class Xcls_MainWindow : Object
 
             // set gobject values
             this.el.height_request = 20;
+            this.el.vexpand = ;
         }
 
         // userdefined functions 
@@ -183,6 +184,8 @@ public class Xcls_MainWindow : Object
         // skip id - not pipe 
 
         // skip pack - not pipe 
+
+        // skip |vexpand - already used 
 
         // skip xtype - not pipe 
 
