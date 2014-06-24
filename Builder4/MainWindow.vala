@@ -480,7 +480,8 @@ public class Xcls_MainWindow : Object
             // listeners 
             this.el.size_allocate.connect(   (  alloc) => {
             
-                
+                _this.rooview.el.set_size(this.el.get_stage().width-50,
+                        this.el.get_stage().height);
             
             } );
         }

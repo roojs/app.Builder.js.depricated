@@ -93,7 +93,8 @@ MainWindow=new XObject({
                                     listeners : {
                                         size_allocate : (  alloc) => {
                                         
-                                            
+                                            _this.rooview.el.set_size(this.el.get_stage().width-50,
+                                                    this.el.get_stage().height);
                                         
                                         }
                                     },
