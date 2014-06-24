@@ -54,7 +54,18 @@
                                         {
                                             "|xns": "Gtk",
                                             "xtype": "VPaned",
-                                            "pack": false
+                                            "pack": false,
+                                            "items": [
+                                                {
+                                                    "|xns": "Gtk",
+                                                    "xtype": "VBox",
+                                                    "pack": false
+                                                },
+                                                {
+                                                    "xtype": "VBox",
+                                                    "|xns": "Gtk"
+                                                }
+                                            ]
                                         }
                                     ]
                                 },
