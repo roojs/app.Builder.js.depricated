@@ -78,6 +78,7 @@ MainWindow=new XObject({
                                     items : [
                                         {
                                             xtype: GtkClutter.Actor,
+                                            id : "rooview",
                                             pack : false
                                         }
                                     ]
