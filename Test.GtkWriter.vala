@@ -110,7 +110,7 @@ void rooWindowClutter()
 
 	 var rv =new Xcls_WindowRooView();
 
-	w.rooview.el.get_widget().add(rv.el);
+	(Gtk.Container)(w.rooview.el.get_widget()).add(rv.el);
 	
 	
     w.el.show_all();
