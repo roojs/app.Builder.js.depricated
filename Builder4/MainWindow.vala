@@ -497,6 +497,7 @@ public class Xcls_MainWindow : Object
 
 
             // my vars
+        public bool is_fullsize;
 
             // ctor 
         public Xcls_rooview(Xcls_MainWindow _owner)
@@ -506,6 +507,7 @@ public class Xcls_MainWindow : Object
             this.el = new GtkClutter.Actor();
 
             // my vars
+            this.is_fullsize = true;
 
             // set gobject values
 
@@ -532,7 +534,8 @@ public class Xcls_MainWindow : Object
         // skip pack - not pipe 
 
         // skip xtype - not pipe 
-        public bool is_fullsizetrue
+
+        // skip .bool:is_fullsize - already used 
 
         // skip |init - already used 
 
