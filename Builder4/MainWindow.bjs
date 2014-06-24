@@ -57,11 +57,12 @@
                                             "pack": false,
                                             "items": [
                                                 {
-                                                    "|xns": "Gtk",
+                                                    "pack": "add1",
                                                     "xtype": "VBox",
-                                                    "pack": false
+                                                    "|xns": "Gtk"
                                                 },
                                                 {
+                                                    "pack": "add2",
                                                     "xtype": "VBox",
                                                     "|xns": "Gtk"
                                                 }

@@ -303,9 +303,10 @@ public class Xcls_MainWindow : Object
             // set gobject values
             var child_0 = new Xcls_VBox7(_this);
             child_0.ref();
+            this.el.add1 (  child_0.el  );
             var child_1 = new Xcls_VBox8(_this);
             child_1.ref();
-            this.el.add (  child_1.el  );
+            this.el.add2 (  child_1.el  );
         }
 
         // userdefined functions 
@@ -345,11 +346,11 @@ public class Xcls_MainWindow : Object
 
         // userdefined functions 
 
-        // skip |xns - no return type
+        // skip pack - not pipe 
 
         // skip xtype - not pipe 
 
-        // skip pack - not pipe 
+        // skip |xns - no return type
 
         // skip xvala_cls - not pipe 
 
@@ -377,6 +378,8 @@ public class Xcls_MainWindow : Object
         }
 
         // userdefined functions 
+
+        // skip pack - not pipe 
 
         // skip xtype - not pipe 
 
