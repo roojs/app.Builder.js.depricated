@@ -126,7 +126,7 @@ public class Xcls_MainWindow : Object
         {
             _this = _owner;
             _this.vbox = this;
-            this.el = new Gtk.VBox( true, 0 );
+            this.el = new Gtk.VBox( false, 0 );
 
             // my vars
 
@@ -140,6 +140,8 @@ public class Xcls_MainWindow : Object
         }
 
         // userdefined functions 
+
+        // skip |homogeneous - already used 
 
         // skip id - not pipe 
 
