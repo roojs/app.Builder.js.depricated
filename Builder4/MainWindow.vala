@@ -133,7 +133,7 @@ public class Xcls_MainWindow : Object
             // set gobject values
             var child_0 = new Xcls_topbar(_this);
             child_0.ref();
-            this.el.pack (  child_0.el  );
+            this.el.pack (  child_0.el , true );
             var child_1 = new Xcls_HPaned4(_this);
             child_1.ref();
             this.el.add (  child_1.el  );

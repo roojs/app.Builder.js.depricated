@@ -32,7 +32,7 @@
                     "items": [
                         {
                             "id": "topbar",
-                            "pack": "pack",
+                            "pack": "pack,true",
                             "xtype": "HBox",
                             "|xns": "Gtk"
                         },

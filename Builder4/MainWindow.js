@@ -50,7 +50,7 @@ MainWindow=new XObject({
                 {
                     xtype: Gtk.HBox,
                     id : "topbar",
-                    pack : "pack"
+                    pack : "pack,true"
                 },
                 {
                     xtype: Gtk.HPaned,
