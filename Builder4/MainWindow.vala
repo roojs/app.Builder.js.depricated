@@ -136,7 +136,7 @@ public class Xcls_MainWindow : Object
             this.el.pack_start (  child_0.el , false,true,0 );
             var child_1 = new Xcls_HPaned4(_this);
             child_1.ref();
-            this.el.pack (  child_1.el , true );
+            this.el.pack_end (  child_1.el , true,true,0 );
         }
 
         // userdefined functions 
@@ -221,11 +221,11 @@ public class Xcls_MainWindow : Object
 
         // userdefined functions 
 
+        // skip pack - not pipe 
+
         // skip position - already used 
 
         // skip xtype - not pipe 
-
-        // skip pack - not pipe 
 
         // skip |xns - no return type
 

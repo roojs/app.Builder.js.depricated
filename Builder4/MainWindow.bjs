@@ -37,9 +37,9 @@
                             "|xns": "Gtk"
                         },
                         {
+                            "pack": "pack_end,true,true,0",
                             "position": 400,
                             "xtype": "HPaned",
-                            "pack": "pack,true",
                             "|xns": "Gtk",
                             "items": [
                                 {

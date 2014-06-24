@@ -54,8 +54,8 @@ MainWindow=new XObject({
                 },
                 {
                     xtype: Gtk.HPaned,
+                    pack : "pack_end,true,true,0",
                     position : 400,
-                    pack : "pack,true",
                     items : [
                         {
                             xtype: Gtk.VBox,
