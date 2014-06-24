@@ -632,16 +632,20 @@ public class Xcls_MainWindow : Object
                 
             } );
             this.el.clicked.connect(   ( ) => {
-              
                 var el = _this.rooview.el;
-                el.save_easing_state();
-                    
-                // rotate y 180..
-                el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 360.0f);
-                el.set_scale(0.2f,0.2f);
-                
+                    el.save_easing_state();
+              
+                if (_this.rooview.is_fullsize) { 
+                        
+                    // rotate y 180..
+                    el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 360.0f);
+                    el.set_scale(0.2f,0.2f);
+                } else {
+                    el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 0.0f);
+                    el.set_scale(1.0f,1.0f);
+                }
                 el.restore_easing_state();
-                
+                    
                 print("clicked");
             } );
         }
