@@ -93,7 +93,18 @@ void rooWindowTest(string name)
 	rv.loadFile(tf);
 	
 }
-  
+
+void rooWindowClutter()
+{
+
+	var w = new Xcls_MainWindow();
+
+	w.el.show_all();
+ 
+	
+	
+}
+
 int main (string[] args) {
     Gtk.init (ref args);
     new JsRender.Lang_Class();
