@@ -111,7 +111,7 @@ void rooWindowClutter()
 	var rv =new Xcls_WindowRooView();
 	rv.ref();
 	((Gtk.Container)(w.rooview.el.get_widget())).add(rv.el);
-	
+	rv.el.show_all();
 	
     w.el.show_all();
     var tl = new Clutter.Timeline(6000);
