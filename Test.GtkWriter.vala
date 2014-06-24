@@ -111,8 +111,8 @@ int main (string[] args) {
 	//testBuilderFile("Roo", "/home/alan/gitlive/Pman.Core/","Pman.Dialog.CoreEmailPreview", "PREVIEW");
 	//testLeftTree("Editor");
 	//rooWindowTest("Pman.Dialog.CoreEmailPreview");Gtk.main();
-	rooWindowTest("Pman.Dialog.CoreEmail"); Gtk.main();
-
+	//rooWindowTest("Pman.Dialog.CoreEmail"); Gtk.main();
+	rooWindowClutter(); Gtk.main();
     
 	
 	return 0;
