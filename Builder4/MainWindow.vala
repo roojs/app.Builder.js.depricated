@@ -215,7 +215,7 @@ public class Xcls_MainWindow : Object
             this.el.add1 (  child_0.el  );
             var child_1 = new Xcls_VBox6(_this);
             child_1.ref();
-            this.el.add (  child_1.el  );
+            this.el.add2 (  child_1.el  );
         }
 
         // userdefined functions 
@@ -284,13 +284,52 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // set gobject values
+            var child_0 = new Xcls_Embed7(_this);
+            child_0.ref();
         }
 
         // userdefined functions 
 
+        // skip pack - not pipe 
+
         // skip xtype - not pipe 
 
         // skip |xns - no return type
+
+        // skip items - not pipe 
+
+        // skip xvala_cls - not pipe 
+
+        // skip xvala_xcls - not pipe 
+
+        // skip xvala_id - not pipe 
+    }
+    public class Xcls_Embed7 : Object 
+    {
+        public GtkClutter.Embed el;
+        private Xcls_MainWindow  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_Embed7(Xcls_MainWindow _owner)
+        {
+            _this = _owner;
+            this.el = new GtkClutter.Embed();
+
+            // my vars
+
+            // set gobject values
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+
+        // skip xtype - not pipe 
+
+        // skip pack - not pipe 
 
         // skip xvala_cls - not pipe 
 

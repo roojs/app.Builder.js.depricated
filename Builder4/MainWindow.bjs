@@ -49,7 +49,14 @@
                                 {
                                     "pack": "add2",
                                     "xtype": "VBox",
-                                    "|xns": "Gtk"
+                                    "|xns": "Gtk",
+                                    "items": [
+                                        {
+                                            "|xns": "GtkClutter",
+                                            "xtype": "Embed",
+                                            "pack": false
+                                        }
+                                    ]
                                 }
                             ]
                         }

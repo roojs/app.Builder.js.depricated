@@ -61,7 +61,14 @@ MainWindow=new XObject({
                             pack : "add1"
                         },
                         {
-                            xtype: Gtk.VBox
+                            xtype: Gtk.VBox,
+                            pack : "add2",
+                            items : [
+                                {
+                                    xtype: GtkClutter.Embed,
+                                    pack : false
+                                }
+                            ]
                         }
                     ]
                 }
