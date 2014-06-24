@@ -28,7 +28,7 @@
                     "id": "vbox",
                     "xtype": "VBox",
                     "|xns": "Gtk",
-                    "pack": "pack",
+                    "pack": "add",
                     "items": [
                         {
                             "pack": "pack",
