@@ -101,7 +101,7 @@
                                                         {
                                                             "listeners": {
                                                                 "activate": " () => {\n    print(\"pressed\");\n    \n}",
-                                                                "clicked": "  ( ) => {\n    print(\"clicked\");\n}"
+                                                                "clicked": "  ( ) => {\n  \n    var el = _this.rooview.el;\n    el.save_easing_state();\n        \n    // rotate y 180..\n    el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 180.0f);\n    \n    el.restore_easing_state();\n    \n    print(\"clicked\");\n}"
                                                             },
                                                             "label": "P",
                                                             "pack": false,

@@ -631,6 +631,15 @@ public class Xcls_MainWindow : Object
                 
             } );
             this.el.clicked.connect(   ( ) => {
+              
+                var el = _this.rooview.el;
+                el.save_easing_state();
+                    
+                // rotate y 180..
+                el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 180.0f);
+                
+                el.restore_easing_state();
+                
                 print("clicked");
             } );
         }
