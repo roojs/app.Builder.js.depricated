@@ -23,6 +23,7 @@ public class Xcls_MainWindow : Object
     private Xcls_MainWindow  _this;
 
     public Xcls_vbox vbox;
+    public Xcls_topbar topbar;
 
         // my vars
     public Xcls_WindowLeftTree left_tree;
@@ -129,8 +130,11 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_HPaned3(_this);
+            var child_0 = new Xcls_topbar(_this);
             child_0.ref();
+            this.el.add (  child_0.el  );
+            var child_1 = new Xcls_HPaned4(_this);
+            child_1.ref();
         }
 
         // userdefined functions 
@@ -149,7 +153,7 @@ public class Xcls_MainWindow : Object
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_HPaned3 : Object 
+    public class Xcls_topbar : Object 
     {
         public Gtk.HPaned el;
         private Xcls_MainWindow  _this;
@@ -158,7 +162,41 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_HPaned3(Xcls_MainWindow _owner)
+        public Xcls_topbar(Xcls_MainWindow _owner)
+        {
+            _this = _owner;
+            _this.topbar = this;
+            this.el = new Gtk.HPaned();
+
+            // my vars
+
+            // set gobject values
+        }
+
+        // userdefined functions 
+
+        // skip id - not pipe 
+
+        // skip xtype - not pipe 
+
+        // skip |xns - no return type
+
+        // skip xvala_cls - not pipe 
+
+        // skip xvala_xcls - not pipe 
+
+        // skip xvala_id - not pipe 
+    }
+    public class Xcls_HPaned4 : Object 
+    {
+        public Gtk.HPaned el;
+        private Xcls_MainWindow  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_HPaned4(Xcls_MainWindow _owner)
         {
             _this = _owner;
             this.el = new Gtk.HPaned();
@@ -166,9 +204,9 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_VBox4(_this);
+            var child_0 = new Xcls_VBox5(_this);
             child_0.ref();
-            var child_1 = new Xcls_VBox5(_this);
+            var child_1 = new Xcls_VBox6(_this);
             child_1.ref();
         }
 
@@ -188,7 +226,7 @@ public class Xcls_MainWindow : Object
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_VBox4 : Object 
+    public class Xcls_VBox5 : Object 
     {
         public Gtk.VBox el;
         private Xcls_MainWindow  _this;
@@ -197,7 +235,7 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_VBox4(Xcls_MainWindow _owner)
+        public Xcls_VBox5(Xcls_MainWindow _owner)
         {
             _this = _owner;
             this.el = new Gtk.VBox( true, 0 );
@@ -221,7 +259,7 @@ public class Xcls_MainWindow : Object
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_VBox5 : Object 
+    public class Xcls_VBox6 : Object 
     {
         public Gtk.VBox el;
         private Xcls_MainWindow  _this;
@@ -230,7 +268,7 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_VBox5(Xcls_MainWindow _owner)
+        public Xcls_VBox6(Xcls_MainWindow _owner)
         {
             _this = _owner;
             this.el = new Gtk.VBox( true, 0 );

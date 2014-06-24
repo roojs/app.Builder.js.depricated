@@ -30,6 +30,11 @@
                     "|xns": "Gtk",
                     "items": [
                         {
+                            "id": "topbar",
+                            "xtype": "HPaned",
+                            "|xns": "Gtk"
+                        },
+                        {
                             "|xns": "Gtk",
                             "xtype": "HPaned",
                             "pack": false,

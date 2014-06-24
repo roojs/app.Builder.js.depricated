@@ -48,6 +48,10 @@ MainWindow=new XObject({
             items : [
                 {
                     xtype: Gtk.HPaned,
+                    id : "topbar"
+                },
+                {
+                    xtype: Gtk.HPaned,
                     pack : false,
                     items : [
                         {
