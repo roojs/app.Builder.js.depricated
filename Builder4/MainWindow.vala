@@ -64,7 +64,7 @@ public class Xcls_MainWindow : Object
             //this.get('/RightPalete').hide();
             //this.get('/BottomPane').el.hide();
             //this.get('/Editor').el.show_all();
-         
+          
         } );
         this.el.delete_event.connect(   (   event) => {
             return false;
@@ -136,7 +136,7 @@ public class Xcls_MainWindow : Object
             this.el.pack (  child_0.el , true );
             var child_1 = new Xcls_HPaned4(_this);
             child_1.ref();
-            this.el.add (  child_1.el  );
+            this.el.pack (  child_1.el , true );
         }
 
         // userdefined functions 
@@ -224,6 +224,8 @@ public class Xcls_MainWindow : Object
         // skip position - already used 
 
         // skip xtype - not pipe 
+
+        // skip pack - not pipe 
 
         // skip |xns - no return type
 
