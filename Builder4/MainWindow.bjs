@@ -33,7 +33,7 @@
                         {
                             "id": "topbar",
                             "pack": "pack_start,false,true,0",
-                            "|vexpand": "",
+                            "|vexpand": "false  ",
                             "xtype": "HBox",
                             "|height_request": 20,
                             "|xns": "Gtk"

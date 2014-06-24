@@ -176,7 +176,7 @@ public class Xcls_MainWindow : Object
 
             // set gobject values
             this.el.height_request = 20;
-            this.el.vexpand = ;
+            this.el.vexpand = false  ;
         }
 
         // userdefined functions 
