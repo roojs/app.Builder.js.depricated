@@ -76,6 +76,7 @@ MainWindow=new XObject({
                                         },
                                         {
                                             xtype: Gtk.VBox,
+                                            id : "props",
                                             pack : "add2"
                                         }
                                     ]
