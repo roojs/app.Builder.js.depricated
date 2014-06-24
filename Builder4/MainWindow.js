@@ -47,7 +47,7 @@ MainWindow=new XObject({
             id : "vbox",
             items : [
                 {
-                    xtype: Gtk.HPaned,
+                    xtype: Gtk.HBox,
                     id : "topbar"
                 },
                 {
