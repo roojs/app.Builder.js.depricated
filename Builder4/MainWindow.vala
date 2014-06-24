@@ -289,6 +289,7 @@ public class Xcls_MainWindow : Object
             // set gobject values
             var child_0 = new Xcls_clutterembed(_this);
             child_0.ref();
+            this.el.add (  child_0.el  );
         }
 
         // userdefined functions 
@@ -332,8 +333,6 @@ public class Xcls_MainWindow : Object
         // userdefined functions 
 
         // skip id - not pipe 
-
-        // skip pack - not pipe 
 
         // skip xtype - not pipe 
 
