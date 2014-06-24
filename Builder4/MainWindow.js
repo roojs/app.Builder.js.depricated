@@ -67,7 +67,7 @@ MainWindow=new XObject({
                             items : [
                                 {
                                     xtype: Gtk.VPaned,
-                                    pack : false,
+                                    pack : "pack_start,false,true,0",
                                     items : [
                                         {
                                             xtype: Gtk.VBox,

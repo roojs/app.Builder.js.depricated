@@ -269,6 +269,7 @@ public class Xcls_MainWindow : Object
             // set gobject values
             var child_0 = new Xcls_VPaned6(_this);
             child_0.ref();
+            this.el.pack_start (  child_0.el , false,true,0 );
         }
 
         // userdefined functions 
@@ -314,11 +315,11 @@ public class Xcls_MainWindow : Object
 
         // userdefined functions 
 
-        // skip |xns - no return type
+        // skip pack - not pipe 
 
         // skip xtype - not pipe 
 
-        // skip pack - not pipe 
+        // skip |xns - no return type
 
         // skip items - not pipe 
 
