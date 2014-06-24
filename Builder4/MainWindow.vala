@@ -526,13 +526,13 @@ public class Xcls_MainWindow : Object
         }
 
         // userdefined functions 
-        public .bool is_fullsizefalse   
 
         // skip id - not pipe 
 
         // skip pack - not pipe 
 
         // skip xtype - not pipe 
+        public .bool is_fullsizetrue
 
         // skip |init - already used 
 
