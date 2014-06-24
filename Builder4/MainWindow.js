@@ -136,7 +136,7 @@ MainWindow=new XObject({
                                                     label : "P",
                                                     pack : false,
                                                     init : {
-                                                        ((Gtk.Container)(w.projectbutton.el.get_widget())).add(this.el);
+                                                        ((Gtk.Container)(_this.projectbutton.el.get_widget())).add(this.el);
                                                     }
                                                 }
                                             ]

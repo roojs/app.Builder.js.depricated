@@ -622,7 +622,7 @@ public class Xcls_MainWindow : Object
 
             // init method 
             {
-                ((Gtk.Container)(w.projectbutton.el.get_widget())).add(this.el);
+                ((Gtk.Container)(_this.projectbutton.el.get_widget())).add(this.el);
             }
         }
 

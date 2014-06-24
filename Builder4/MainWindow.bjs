@@ -102,7 +102,7 @@
                                                             "label": "P",
                                                             "pack": false,
                                                             "xtype": "Button",
-                                                            "|init": "{\n    ((Gtk.Container)(w.projectbutton.el.get_widget())).add(this.el);\n}",
+                                                            "|init": "{\n    ((Gtk.Container)(_this.projectbutton.el.get_widget())).add(this.el);\n}",
                                                             "|xns": "Gtk"
                                                         }
                                                     ]
