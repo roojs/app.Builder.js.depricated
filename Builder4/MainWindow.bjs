@@ -53,9 +53,10 @@
                                     "|xns": "Gtk",
                                     "items": [
                                         {
-                                            "pack": "add",
                                             "id": "clutterembed",
+                                            "pack": "add",
                                             "xtype": "Embed",
+                                            "|init": "var stage = this.el.get_stage();\nstage.set_background_color(Color.from_string(\"#fff\");\n",
                                             "|xns": "GtkClutter",
                                             "items": [
                                                 {

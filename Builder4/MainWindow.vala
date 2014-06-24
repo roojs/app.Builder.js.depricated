@@ -328,15 +328,21 @@ public class Xcls_MainWindow : Object
             // set gobject values
             var child_0 = new Xcls_Actor8(_this);
             child_0.ref();
+
+            // init method 
+            var stage = this.el.get_stage();
+            stage.set_background_color(Color.from_string("#fff");
         }
 
         // userdefined functions 
 
-        // skip pack - not pipe 
-
         // skip id - not pipe 
 
+        // skip pack - not pipe 
+
         // skip xtype - not pipe 
+
+        // skip |init - already used 
 
         // skip |xns - no return type
 
