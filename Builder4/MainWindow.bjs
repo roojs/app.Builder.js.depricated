@@ -41,6 +41,7 @@
                             "|xns": "Gtk"
                         },
                         {
+                            ".int:lastWidth": 0,
                             "id": "leftpane",
                             "pack": "pack_end,true,true,0",
                             "position": 400,
