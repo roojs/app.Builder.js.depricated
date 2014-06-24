@@ -24,6 +24,7 @@ public class Xcls_MainWindow : Object
 
     public Xcls_vbox vbox;
     public Xcls_topbar topbar;
+    public Xcls_clutterembed clutterembed;
 
         // my vars
     public Xcls_WindowLeftTree left_tree;
@@ -284,7 +285,7 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_Embed7(_this);
+            var child_0 = new Xcls_clutterembed(_this);
             child_0.ref();
         }
 
@@ -304,7 +305,7 @@ public class Xcls_MainWindow : Object
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_Embed7 : Object 
+    public class Xcls_clutterembed : Object 
     {
         public GtkClutter.Embed el;
         private Xcls_MainWindow  _this;
@@ -313,9 +314,10 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_Embed7(Xcls_MainWindow _owner)
+        public Xcls_clutterembed(Xcls_MainWindow _owner)
         {
             _this = _owner;
+            _this.clutterembed = this;
             this.el = new GtkClutter.Embed();
 
             // my vars
@@ -327,11 +329,13 @@ public class Xcls_MainWindow : Object
 
         // userdefined functions 
 
-        // skip |xns - no return type
+        // skip id - not pipe 
+
+        // skip pack - not pipe 
 
         // skip xtype - not pipe 
 
-        // skip pack - not pipe 
+        // skip |xns - no return type
 
         // skip items - not pipe 
 
