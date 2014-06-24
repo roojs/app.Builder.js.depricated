@@ -220,7 +220,7 @@
                 {
                     ".bool:editing": false,
                     "id": "EditProps",
-                    "pack": "add",
+                    "pack": "pack_end,true,true,0",
                     "xtype": "ScrolledWindow",
                     "|init": "  {\n  \n   this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);\n}\n",
                     "|shadow_type": "Gtk.ShadowType.IN",

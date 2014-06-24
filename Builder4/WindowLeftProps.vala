@@ -54,7 +54,7 @@ public class Xcls_LeftProps : Object
         this.el.pack_start (  child_0.el , false,true,0 );
         var child_1 = new Xcls_EditProps(_this);
         child_1.ref();
-        this.el.add (  child_1.el  );
+        this.el.pack_end (  child_1.el , true,true,0 );
     }
 
     // userdefined functions 
