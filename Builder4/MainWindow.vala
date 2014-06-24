@@ -24,6 +24,7 @@ public class Xcls_MainWindow : Object
 
     public Xcls_vbox vbox;
     public Xcls_topbar topbar;
+    public Xcls_leftpane leftpane;
     public Xcls_tree tree;
     public Xcls_props props;
     public Xcls_clutterembed clutterembed;
@@ -138,7 +139,7 @@ public class Xcls_MainWindow : Object
             var child_0 = new Xcls_topbar(_this);
             child_0.ref();
             this.el.pack_start (  child_0.el , false,true,0 );
-            var child_1 = new Xcls_HPaned4(_this);
+            var child_1 = new Xcls_leftpane(_this);
             child_1.ref();
             this.el.pack_end (  child_1.el , true,true,0 );
         }
@@ -207,7 +208,7 @@ public class Xcls_MainWindow : Object
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_HPaned4 : Object 
+    public class Xcls_leftpane : Object 
     {
         public Gtk.HPaned el;
         private Xcls_MainWindow  _this;
@@ -216,9 +217,10 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_HPaned4(Xcls_MainWindow _owner)
+        public Xcls_leftpane(Xcls_MainWindow _owner)
         {
             _this = _owner;
+            _this.leftpane = this;
             this.el = new Gtk.HPaned();
 
             // my vars
@@ -234,6 +236,8 @@ public class Xcls_MainWindow : Object
         }
 
         // userdefined functions 
+
+        // skip id - not pipe 
 
         // skip pack - not pipe 
 
