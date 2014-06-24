@@ -2087,7 +2087,7 @@ Xcls_MainWindowXcls_projectbutton* xcls_mainwindow_xcls_projectbutton_construct 
 #line 595 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		_tmp15_ = self->el;
 #line 595 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
-		clutter_actor_set_size ((ClutterActor*) _tmp15_, (gfloat) 100, (gfloat) 100);
+		clutter_actor_set_size ((ClutterActor*) _tmp15_, (gfloat) 50, (gfloat) 50);
 #line 2092 "MainWindow.vala.c"
 	}
 #line 570 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
