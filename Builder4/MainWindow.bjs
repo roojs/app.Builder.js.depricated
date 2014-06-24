@@ -28,9 +28,10 @@
                     "id": "vbox",
                     "xtype": "VBox",
                     "|xns": "Gtk",
+                    "pack": "pack",
                     "items": [
                         {
-                            "pack": "",
+                            "pack": "pack",
                             "id": "topbar",
                             "xtype": "HBox",
                             "|xns": "Gtk"
