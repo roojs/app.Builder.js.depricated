@@ -101,8 +101,14 @@ void rooWindowClutter()
 
 	w.el.show_all();
 	var  left_tree =new Xcls_WindowLeftTree();
-	left_tree.ref
-	w.vbox.el.pack_start(left_tree.el,true, true,0);
+	left_tree.ref();
+	w.tree.el.pack_start(left_tree.el,true, true,0);
+
+	var  left_props =new Xcls_WindowLeftProps();
+	left_props.ref();
+	w.props.el.pack_start(left_props.el,true, true,0);
+
+	
     w.el.show_all();
  
 	
