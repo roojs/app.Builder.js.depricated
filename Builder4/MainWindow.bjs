@@ -64,7 +64,7 @@
                                             "|xns": "GtkClutter",
                                             "items": [
                                                 {
-                                                    "|init": "function() {\n    XObject.prototype.init.call(this);\n}\n",
+                                                    "|init": "{\n    this.el.set_position(100,100);\n    this.el.set_pivot_point(0.5,0.5);\n    \n}",
                                                     "pack": false,
                                                     "xtype": "Actor",
                                                     "|xns": "GtkClutter"

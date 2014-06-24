@@ -78,8 +78,10 @@ MainWindow=new XObject({
                                     items : [
                                         {
                                             xtype: GtkClutter.Actor,
-                                            init : function() {
-                                                XObject.prototype.init.call(this);
+                                            init : {
+                                                this.el.set_position(100,100);
+                                                this.el.set_pivot_point(0.5,0.5);
+                                                
                                             },
                                             pack : false
                                         }

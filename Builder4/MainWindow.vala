@@ -383,8 +383,10 @@ public class Xcls_MainWindow : Object
             // set gobject values
 
             // init method 
-            function() {
-                XObject.prototype.init.call(this);
+            {
+                this.el.set_position(100,100);
+                this.el.set_pivot_point(0.5,0.5);
+                
             }
         }
 
