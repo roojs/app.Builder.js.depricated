@@ -459,7 +459,7 @@ public class Xcls_MainWindow : Object
             // set gobject values
             var child_0 = new Xcls_rooview(_this);
             child_0.ref();
-            this.el.add_child (  child_0.el  );
+            this.el.get_stage().add_child (  child_0.el  );
 
             // init method 
             var stage = this.el.get_stage();
