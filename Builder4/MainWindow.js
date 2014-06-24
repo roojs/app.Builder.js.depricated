@@ -58,7 +58,7 @@ MainWindow=new XObject({
                     items : [
                         {
                             xtype: Gtk.VBox,
-                            xpack : ""
+                            xpack : "pack"
                         },
                         {
                             xtype: Gtk.VBox
