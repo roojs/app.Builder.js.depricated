@@ -12,6 +12,7 @@ all:
 		--pkg gee-1.0 \
 		--pkg gobject-introspection-1.0 \
 		--pkg webkit2gtk-3.0 \
+		--pkg clutter-gtk-1.0 \
 		Test.GtkWriter.vala \
 		JsRender/*.vala \
 		Project/*.vala \
