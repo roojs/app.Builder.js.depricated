@@ -104,7 +104,7 @@ void rooWindowClutter()
 	left_tree.ref();
 	w.tree.el.pack_start(left_tree.el,true, true,0);
 
-	var  left_props =new Xcls_WindowLeftProps();
+	var  left_props =new Xcls_LeftProps();
 	left_props.ref();
 	w.props.el.pack_start(left_props.el,true, true,0);
 
