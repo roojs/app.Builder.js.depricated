@@ -99,9 +99,10 @@
                                                     "|xns": "GtkClutter",
                                                     "items": [
                                                         {
-                                                            "|xns": "Gtk",
+                                                            "label": "P",
+                                                            "pack": false,
                                                             "xtype": "Button",
-                                                            "pack": false
+                                                            "|xns": "Gtk"
                                                         }
                                                     ]
                                                 }

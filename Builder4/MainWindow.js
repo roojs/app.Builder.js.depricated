@@ -133,6 +133,7 @@ MainWindow=new XObject({
                                             items : [
                                                 {
                                                     xtype: Gtk.Button,
+                                                    label : "P",
                                                     pack : false
                                                 }
                                             ]

@@ -618,15 +618,18 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // set gobject values
+            this.el.label = "P";
         }
 
         // userdefined functions 
 
-        // skip |xns - no return type
+        // skip label - already used 
+
+        // skip pack - not pipe 
 
         // skip xtype - not pipe 
 
-        // skip pack - not pipe 
+        // skip |xns - no return type
 
         // skip xvala_cls - not pipe 
 
