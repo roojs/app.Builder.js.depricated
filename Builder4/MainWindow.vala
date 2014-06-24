@@ -255,6 +255,8 @@ public class Xcls_MainWindow : Object
 
         // userdefined functions 
 
+        // skip xpack - not pipe 
+
         // skip xtype - not pipe 
 
         // skip |xns - no return type
