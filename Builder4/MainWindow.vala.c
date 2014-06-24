@@ -462,10 +462,10 @@ Xcls_MainWindow* xcls_mainwindow_new (void);
 Xcls_MainWindow* xcls_mainwindow_construct (GType object_type);
 Xcls_MainWindowXcls_vbox* xcls_mainwindow_xcls_vbox_new (Xcls_MainWindow* _owner);
 Xcls_MainWindowXcls_vbox* xcls_mainwindow_xcls_vbox_construct (GType object_type, Xcls_MainWindow* _owner);
-static void __lambda23_ (Xcls_MainWindow* self);
-static void ___lambda23__gtk_widget_show (GtkWidget* _sender, gpointer self);
-static gboolean __lambda24_ (Xcls_MainWindow* self, GdkEventAny* event);
-static gboolean ___lambda24__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self);
+static void __lambda24_ (Xcls_MainWindow* self);
+static void ___lambda24__gtk_widget_show (GtkWidget* _sender, gpointer self);
+static gboolean __lambda25_ (Xcls_MainWindow* self, GdkEventAny* event);
+static gboolean ___lambda25__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self);
 void xcls_mainwindow_setTitle (Xcls_MainWindow* self, const gchar* str);
 void xcls_mainwindow_show (Xcls_MainWindow* self);
 Xcls_WindowLeftTree* xcls_windowlefttree_new (void);
@@ -560,6 +560,8 @@ static void xcls_mainwindow_xcls_projectbutton_finalize (GObject* obj);
 enum  {
 	XCLS_MAINWINDOW_XCLS_BUTTON13_DUMMY_PROPERTY
 };
+static void __lambda8_ (Xcls_MainWindowXcls_Button13* self);
+static void ___lambda8__gtk_button_activate (GtkButton* _sender, gpointer self);
 static void xcls_mainwindow_xcls_button13_finalize (GObject* obj);
 static void xcls_mainwindow_finalize (GObject* obj);
 
@@ -567,22 +569,22 @@ static void xcls_mainwindow_finalize (GObject* obj);
 static gpointer _g_object_ref0 (gpointer self) {
 #line 40 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return self ? g_object_ref (self) : NULL;
-#line 571 "MainWindow.vala.c"
+#line 573 "MainWindow.vala.c"
 }
 
 
-static void __lambda23_ (Xcls_MainWindow* self) {
+static void __lambda24_ (Xcls_MainWindow* self) {
 }
 
 
-static void ___lambda23__gtk_widget_show (GtkWidget* _sender, gpointer self) {
+static void ___lambda24__gtk_widget_show (GtkWidget* _sender, gpointer self) {
 #line 64 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
-	__lambda23_ ((Xcls_MainWindow*) self);
-#line 582 "MainWindow.vala.c"
+	__lambda24_ ((Xcls_MainWindow*) self);
+#line 584 "MainWindow.vala.c"
 }
 
 
-static gboolean __lambda24_ (Xcls_MainWindow* self, GdkEventAny* event) {
+static gboolean __lambda25_ (Xcls_MainWindow* self, GdkEventAny* event) {
 	gboolean result = FALSE;
 #line 73 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	g_return_val_if_fail (event != NULL, FALSE);
@@ -590,16 +592,16 @@ static gboolean __lambda24_ (Xcls_MainWindow* self, GdkEventAny* event) {
 	result = FALSE;
 #line 74 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return result;
-#line 594 "MainWindow.vala.c"
+#line 596 "MainWindow.vala.c"
 }
 
 
-static gboolean ___lambda24__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self) {
+static gboolean ___lambda25__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self) {
 	gboolean result;
-	result = __lambda24_ ((Xcls_MainWindow*) self, event);
+	result = __lambda25_ ((Xcls_MainWindow*) self, event);
 #line 73 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return result;
-#line 603 "MainWindow.vala.c"
+#line 605 "MainWindow.vala.c"
 }
 
 
@@ -685,23 +687,23 @@ Xcls_MainWindow* xcls_mainwindow_construct (GType object_type) {
 #line 64 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	_tmp12_ = self->el;
 #line 64 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
-	g_signal_connect_object ((GtkWidget*) _tmp12_, "show", (GCallback) ___lambda23__gtk_widget_show, self, 0);
+	g_signal_connect_object ((GtkWidget*) _tmp12_, "show", (GCallback) ___lambda24__gtk_widget_show, self, 0);
 #line 73 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	_tmp13_ = self->el;
 #line 73 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
-	g_signal_connect_object ((GtkWidget*) _tmp13_, "delete-event", (GCallback) ___lambda24__gtk_widget_delete_event, self, 0);
+	g_signal_connect_object ((GtkWidget*) _tmp13_, "delete-event", (GCallback) ___lambda25__gtk_widget_delete_event, self, 0);
 #line 38 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	_g_object_unref0 (child_0);
 #line 38 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return self;
-#line 698 "MainWindow.vala.c"
+#line 700 "MainWindow.vala.c"
 }
 
 
 Xcls_MainWindow* xcls_mainwindow_new (void) {
 #line 38 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return xcls_mainwindow_construct (TYPE_XCLS_MAINWINDOW);
-#line 705 "MainWindow.vala.c"
+#line 707 "MainWindow.vala.c"
 }
 
 
@@ -737,7 +739,7 @@ void xcls_mainwindow_setTitle (Xcls_MainWindow* self, const gchar* str) {
 	_g_free0 (_tmp6_);
 #line 102 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	_g_free0 (_tmp3_);
-#line 741 "MainWindow.vala.c"
+#line 743 "MainWindow.vala.c"
 }
 
 
@@ -773,7 +775,7 @@ void xcls_mainwindow_show (Xcls_MainWindow* self) {
 	_tmp6_ = self->el;
 #line 107 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	gtk_widget_show_all ((GtkWidget*) _tmp6_);
-#line 777 "MainWindow.vala.c"
+#line 779 "MainWindow.vala.c"
 }
 
 
@@ -856,14 +858,14 @@ Xcls_MainWindowXcls_vbox* xcls_mainwindow_xcls_vbox_construct (GType object_type
 	_g_object_unref0 (child_0);
 #line 129 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return self;
-#line 860 "MainWindow.vala.c"
+#line 862 "MainWindow.vala.c"
 }
 
 
 Xcls_MainWindowXcls_vbox* xcls_mainwindow_xcls_vbox_new (Xcls_MainWindow* _owner) {
 #line 129 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return xcls_mainwindow_xcls_vbox_construct (XCLS_MAINWINDOW_TYPE_XCLS_VBOX, _owner);
-#line 867 "MainWindow.vala.c"
+#line 869 "MainWindow.vala.c"
 }
 
 
@@ -874,14 +876,14 @@ static void xcls_mainwindow_xcls_vbox_class_init (Xcls_MainWindowXcls_vboxClass 
 	g_type_class_add_private (klass, sizeof (Xcls_MainWindowXcls_vboxPrivate));
 #line 120 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_mainwindow_xcls_vbox_finalize;
-#line 878 "MainWindow.vala.c"
+#line 880 "MainWindow.vala.c"
 }
 
 
 static void xcls_mainwindow_xcls_vbox_instance_init (Xcls_MainWindowXcls_vbox * self) {
 #line 120 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	self->priv = XCLS_MAINWINDOW_XCLS_VBOX_GET_PRIVATE (self);
-#line 885 "MainWindow.vala.c"
+#line 887 "MainWindow.vala.c"
 }
 
 
@@ -895,7 +897,7 @@ static void xcls_mainwindow_xcls_vbox_finalize (GObject* obj) {
 	_g_object_unref0 (self->priv->_this);
 #line 120 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	G_OBJECT_CLASS (xcls_mainwindow_xcls_vbox_parent_class)->finalize (obj);
-#line 899 "MainWindow.vala.c"
+#line 901 "MainWindow.vala.c"
 }
 
 
@@ -958,14 +960,14 @@ Xcls_MainWindowXcls_topbar* xcls_mainwindow_xcls_topbar_construct (GType object_
 	gtk_widget_set_vexpand ((GtkWidget*) _tmp6_, FALSE);
 #line 175 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return self;
-#line 962 "MainWindow.vala.c"
+#line 964 "MainWindow.vala.c"
 }
 
 
 Xcls_MainWindowXcls_topbar* xcls_mainwindow_xcls_topbar_new (Xcls_MainWindow* _owner) {
 #line 175 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return xcls_mainwindow_xcls_topbar_construct (XCLS_MAINWINDOW_TYPE_XCLS_TOPBAR, _owner);
-#line 969 "MainWindow.vala.c"
+#line 971 "MainWindow.vala.c"
 }
 
 
@@ -976,14 +978,14 @@ static void xcls_mainwindow_xcls_topbar_class_init (Xcls_MainWindowXcls_topbarCl
 	g_type_class_add_private (klass, sizeof (Xcls_MainWindowXcls_topbarPrivate));
 #line 166 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_mainwindow_xcls_topbar_finalize;
-#line 980 "MainWindow.vala.c"
+#line 982 "MainWindow.vala.c"
 }
 
 
 static void xcls_mainwindow_xcls_topbar_instance_init (Xcls_MainWindowXcls_topbar * self) {
 #line 166 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	self->priv = XCLS_MAINWINDOW_XCLS_TOPBAR_GET_PRIVATE (self);
-#line 987 "MainWindow.vala.c"
+#line 989 "MainWindow.vala.c"
 }
 
 
@@ -997,7 +999,7 @@ static void xcls_mainwindow_xcls_topbar_finalize (GObject* obj) {
 	_g_object_unref0 (self->priv->_this);
 #line 166 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	G_OBJECT_CLASS (xcls_mainwindow_xcls_topbar_parent_class)->finalize (obj);
-#line 1001 "MainWindow.vala.c"
+#line 1003 "MainWindow.vala.c"
 }
 
 
@@ -1087,14 +1089,14 @@ Xcls_MainWindowXcls_HPaned4* xcls_mainwindow_xcls_hpaned4_construct (GType objec
 	_g_object_unref0 (child_0);
 #line 219 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return self;
-#line 1091 "MainWindow.vala.c"
+#line 1093 "MainWindow.vala.c"
 }
 
 
 Xcls_MainWindowXcls_HPaned4* xcls_mainwindow_xcls_hpaned4_new (Xcls_MainWindow* _owner) {
 #line 219 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return xcls_mainwindow_xcls_hpaned4_construct (XCLS_MAINWINDOW_TYPE_XCLS_HPANED4, _owner);
-#line 1098 "MainWindow.vala.c"
+#line 1100 "MainWindow.vala.c"
 }
 
 
@@ -1105,14 +1107,14 @@ static void xcls_mainwindow_xcls_hpaned4_class_init (Xcls_MainWindowXcls_HPaned4
 	g_type_class_add_private (klass, sizeof (Xcls_MainWindowXcls_HPaned4Private));
 #line 210 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_mainwindow_xcls_hpaned4_finalize;
-#line 1109 "MainWindow.vala.c"
+#line 1111 "MainWindow.vala.c"
 }
 
 
 static void xcls_mainwindow_xcls_hpaned4_instance_init (Xcls_MainWindowXcls_HPaned4 * self) {
 #line 210 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	self->priv = XCLS_MAINWINDOW_XCLS_HPANED4_GET_PRIVATE (self);
-#line 1116 "MainWindow.vala.c"
+#line 1118 "MainWindow.vala.c"
 }
 
 
@@ -1126,7 +1128,7 @@ static void xcls_mainwindow_xcls_hpaned4_finalize (GObject* obj) {
 	_g_object_unref0 (self->priv->_this);
 #line 210 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	G_OBJECT_CLASS (xcls_mainwindow_xcls_hpaned4_parent_class)->finalize (obj);
-#line 1130 "MainWindow.vala.c"
+#line 1132 "MainWindow.vala.c"
 }
 
 
@@ -1190,14 +1192,14 @@ Xcls_MainWindowXcls_VBox5* xcls_mainwindow_xcls_vbox5_construct (GType object_ty
 	_g_object_unref0 (child_0);
 #line 263 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return self;
-#line 1194 "MainWindow.vala.c"
+#line 1196 "MainWindow.vala.c"
 }
 
 
 Xcls_MainWindowXcls_VBox5* xcls_mainwindow_xcls_vbox5_new (Xcls_MainWindow* _owner) {
 #line 263 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return xcls_mainwindow_xcls_vbox5_construct (XCLS_MAINWINDOW_TYPE_XCLS_VBOX5, _owner);
-#line 1201 "MainWindow.vala.c"
+#line 1203 "MainWindow.vala.c"
 }
 
 
@@ -1208,14 +1210,14 @@ static void xcls_mainwindow_xcls_vbox5_class_init (Xcls_MainWindowXcls_VBox5Clas
 	g_type_class_add_private (klass, sizeof (Xcls_MainWindowXcls_VBox5Private));
 #line 254 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_mainwindow_xcls_vbox5_finalize;
-#line 1212 "MainWindow.vala.c"
+#line 1214 "MainWindow.vala.c"
 }
 
 
 static void xcls_mainwindow_xcls_vbox5_instance_init (Xcls_MainWindowXcls_VBox5 * self) {
 #line 254 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	self->priv = XCLS_MAINWINDOW_XCLS_VBOX5_GET_PRIVATE (self);
-#line 1219 "MainWindow.vala.c"
+#line 1221 "MainWindow.vala.c"
 }
 
 
@@ -1229,7 +1231,7 @@ static void xcls_mainwindow_xcls_vbox5_finalize (GObject* obj) {
 	_g_object_unref0 (self->priv->_this);
 #line 254 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	G_OBJECT_CLASS (xcls_mainwindow_xcls_vbox5_parent_class)->finalize (obj);
-#line 1233 "MainWindow.vala.c"
+#line 1235 "MainWindow.vala.c"
 }
 
 
@@ -1314,14 +1316,14 @@ Xcls_MainWindowXcls_VPaned6* xcls_mainwindow_xcls_vpaned6_construct (GType objec
 	_g_object_unref0 (child_0);
 #line 301 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return self;
-#line 1318 "MainWindow.vala.c"
+#line 1320 "MainWindow.vala.c"
 }
 
 
 Xcls_MainWindowXcls_VPaned6* xcls_mainwindow_xcls_vpaned6_new (Xcls_MainWindow* _owner) {
 #line 301 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return xcls_mainwindow_xcls_vpaned6_construct (XCLS_MAINWINDOW_TYPE_XCLS_VPANED6, _owner);
-#line 1325 "MainWindow.vala.c"
+#line 1327 "MainWindow.vala.c"
 }
 
 
@@ -1332,14 +1334,14 @@ static void xcls_mainwindow_xcls_vpaned6_class_init (Xcls_MainWindowXcls_VPaned6
 	g_type_class_add_private (klass, sizeof (Xcls_MainWindowXcls_VPaned6Private));
 #line 292 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_mainwindow_xcls_vpaned6_finalize;
-#line 1336 "MainWindow.vala.c"
+#line 1338 "MainWindow.vala.c"
 }
 
 
 static void xcls_mainwindow_xcls_vpaned6_instance_init (Xcls_MainWindowXcls_VPaned6 * self) {
 #line 292 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	self->priv = XCLS_MAINWINDOW_XCLS_VPANED6_GET_PRIVATE (self);
-#line 1343 "MainWindow.vala.c"
+#line 1345 "MainWindow.vala.c"
 }
 
 
@@ -1353,7 +1355,7 @@ static void xcls_mainwindow_xcls_vpaned6_finalize (GObject* obj) {
 	_g_object_unref0 (self->priv->_this);
 #line 292 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	G_OBJECT_CLASS (xcls_mainwindow_xcls_vpaned6_parent_class)->finalize (obj);
-#line 1357 "MainWindow.vala.c"
+#line 1359 "MainWindow.vala.c"
 }
 
 
@@ -1406,14 +1408,14 @@ Xcls_MainWindowXcls_tree* xcls_mainwindow_xcls_tree_construct (GType object_type
 	self->el = _tmp4_;
 #line 342 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return self;
-#line 1410 "MainWindow.vala.c"
+#line 1412 "MainWindow.vala.c"
 }
 
 
 Xcls_MainWindowXcls_tree* xcls_mainwindow_xcls_tree_new (Xcls_MainWindow* _owner) {
 #line 342 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return xcls_mainwindow_xcls_tree_construct (XCLS_MAINWINDOW_TYPE_XCLS_TREE, _owner);
-#line 1417 "MainWindow.vala.c"
+#line 1419 "MainWindow.vala.c"
 }
 
 
@@ -1424,14 +1426,14 @@ static void xcls_mainwindow_xcls_tree_class_init (Xcls_MainWindowXcls_treeClass 
 	g_type_class_add_private (klass, sizeof (Xcls_MainWindowXcls_treePrivate));
 #line 333 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_mainwindow_xcls_tree_finalize;
-#line 1428 "MainWindow.vala.c"
+#line 1430 "MainWindow.vala.c"
 }
 
 
 static void xcls_mainwindow_xcls_tree_instance_init (Xcls_MainWindowXcls_tree * self) {
 #line 333 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	self->priv = XCLS_MAINWINDOW_XCLS_TREE_GET_PRIVATE (self);
-#line 1435 "MainWindow.vala.c"
+#line 1437 "MainWindow.vala.c"
 }
 
 
@@ -1445,7 +1447,7 @@ static void xcls_mainwindow_xcls_tree_finalize (GObject* obj) {
 	_g_object_unref0 (self->priv->_this);
 #line 333 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	G_OBJECT_CLASS (xcls_mainwindow_xcls_tree_parent_class)->finalize (obj);
-#line 1449 "MainWindow.vala.c"
+#line 1451 "MainWindow.vala.c"
 }
 
 
@@ -1498,14 +1500,14 @@ Xcls_MainWindowXcls_props* xcls_mainwindow_xcls_props_construct (GType object_ty
 	self->el = _tmp4_;
 #line 378 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return self;
-#line 1502 "MainWindow.vala.c"
+#line 1504 "MainWindow.vala.c"
 }
 
 
 Xcls_MainWindowXcls_props* xcls_mainwindow_xcls_props_new (Xcls_MainWindow* _owner) {
 #line 378 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return xcls_mainwindow_xcls_props_construct (XCLS_MAINWINDOW_TYPE_XCLS_PROPS, _owner);
-#line 1509 "MainWindow.vala.c"
+#line 1511 "MainWindow.vala.c"
 }
 
 
@@ -1516,14 +1518,14 @@ static void xcls_mainwindow_xcls_props_class_init (Xcls_MainWindowXcls_propsClas
 	g_type_class_add_private (klass, sizeof (Xcls_MainWindowXcls_propsPrivate));
 #line 369 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_mainwindow_xcls_props_finalize;
-#line 1520 "MainWindow.vala.c"
+#line 1522 "MainWindow.vala.c"
 }
 
 
 static void xcls_mainwindow_xcls_props_instance_init (Xcls_MainWindowXcls_props * self) {
 #line 369 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	self->priv = XCLS_MAINWINDOW_XCLS_PROPS_GET_PRIVATE (self);
-#line 1527 "MainWindow.vala.c"
+#line 1529 "MainWindow.vala.c"
 }
 
 
@@ -1537,7 +1539,7 @@ static void xcls_mainwindow_xcls_props_finalize (GObject* obj) {
 	_g_object_unref0 (self->priv->_this);
 #line 369 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	G_OBJECT_CLASS (xcls_mainwindow_xcls_props_parent_class)->finalize (obj);
-#line 1541 "MainWindow.vala.c"
+#line 1543 "MainWindow.vala.c"
 }
 
 
@@ -1601,14 +1603,14 @@ Xcls_MainWindowXcls_VBox9* xcls_mainwindow_xcls_vbox9_construct (GType object_ty
 	_g_object_unref0 (child_0);
 #line 414 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return self;
-#line 1605 "MainWindow.vala.c"
+#line 1607 "MainWindow.vala.c"
 }
 
 
 Xcls_MainWindowXcls_VBox9* xcls_mainwindow_xcls_vbox9_new (Xcls_MainWindow* _owner) {
 #line 414 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return xcls_mainwindow_xcls_vbox9_construct (XCLS_MAINWINDOW_TYPE_XCLS_VBOX9, _owner);
-#line 1612 "MainWindow.vala.c"
+#line 1614 "MainWindow.vala.c"
 }
 
 
@@ -1619,14 +1621,14 @@ static void xcls_mainwindow_xcls_vbox9_class_init (Xcls_MainWindowXcls_VBox9Clas
 	g_type_class_add_private (klass, sizeof (Xcls_MainWindowXcls_VBox9Private));
 #line 405 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_mainwindow_xcls_vbox9_finalize;
-#line 1623 "MainWindow.vala.c"
+#line 1625 "MainWindow.vala.c"
 }
 
 
 static void xcls_mainwindow_xcls_vbox9_instance_init (Xcls_MainWindowXcls_VBox9 * self) {
 #line 405 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	self->priv = XCLS_MAINWINDOW_XCLS_VBOX9_GET_PRIVATE (self);
-#line 1630 "MainWindow.vala.c"
+#line 1632 "MainWindow.vala.c"
 }
 
 
@@ -1640,7 +1642,7 @@ static void xcls_mainwindow_xcls_vbox9_finalize (GObject* obj) {
 	_g_object_unref0 (self->priv->_this);
 #line 405 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	G_OBJECT_CLASS (xcls_mainwindow_xcls_vbox9_parent_class)->finalize (obj);
-#line 1644 "MainWindow.vala.c"
+#line 1646 "MainWindow.vala.c"
 }
 
 
@@ -1760,14 +1762,14 @@ Xcls_MainWindowXcls_clutterembed* xcls_mainwindow_xcls_clutterembed_construct (G
 	_g_object_unref0 (child_0);
 #line 452 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return self;
-#line 1764 "MainWindow.vala.c"
+#line 1766 "MainWindow.vala.c"
 }
 
 
 Xcls_MainWindowXcls_clutterembed* xcls_mainwindow_xcls_clutterembed_new (Xcls_MainWindow* _owner) {
 #line 452 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return xcls_mainwindow_xcls_clutterembed_construct (XCLS_MAINWINDOW_TYPE_XCLS_CLUTTEREMBED, _owner);
-#line 1771 "MainWindow.vala.c"
+#line 1773 "MainWindow.vala.c"
 }
 
 
@@ -1778,14 +1780,14 @@ static void xcls_mainwindow_xcls_clutterembed_class_init (Xcls_MainWindowXcls_cl
 	g_type_class_add_private (klass, sizeof (Xcls_MainWindowXcls_clutterembedPrivate));
 #line 443 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_mainwindow_xcls_clutterembed_finalize;
-#line 1782 "MainWindow.vala.c"
+#line 1784 "MainWindow.vala.c"
 }
 
 
 static void xcls_mainwindow_xcls_clutterembed_instance_init (Xcls_MainWindowXcls_clutterembed * self) {
 #line 443 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	self->priv = XCLS_MAINWINDOW_XCLS_CLUTTEREMBED_GET_PRIVATE (self);
-#line 1789 "MainWindow.vala.c"
+#line 1791 "MainWindow.vala.c"
 }
 
 
@@ -1799,7 +1801,7 @@ static void xcls_mainwindow_xcls_clutterembed_finalize (GObject* obj) {
 	_g_object_unref0 (self->priv->_this);
 #line 443 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	G_OBJECT_CLASS (xcls_mainwindow_xcls_clutterembed_parent_class)->finalize (obj);
-#line 1803 "MainWindow.vala.c"
+#line 1805 "MainWindow.vala.c"
 }
 
 
@@ -1850,7 +1852,7 @@ Xcls_MainWindowXcls_rooview* xcls_mainwindow_xcls_rooview_construct (GType objec
 	_g_object_unref0 (self->el);
 #line 506 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	self->el = _tmp4_;
-#line 1854 "MainWindow.vala.c"
+#line 1856 "MainWindow.vala.c"
 	{
 		GtkClutterActor* _tmp5_ = NULL;
 		Xcls_MainWindow* _tmp6_ = NULL;
@@ -1894,18 +1896,18 @@ Xcls_MainWindowXcls_rooview* xcls_mainwindow_xcls_rooview_construct (GType objec
 		_tmp14_ = self->el;
 #line 524 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		clutter_actor_set_size ((ClutterActor*) _tmp14_, (gfloat) 500, (gfloat) 500);
-#line 1898 "MainWindow.vala.c"
+#line 1900 "MainWindow.vala.c"
 	}
 #line 502 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return self;
-#line 1902 "MainWindow.vala.c"
+#line 1904 "MainWindow.vala.c"
 }
 
 
 Xcls_MainWindowXcls_rooview* xcls_mainwindow_xcls_rooview_new (Xcls_MainWindow* _owner) {
 #line 502 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return xcls_mainwindow_xcls_rooview_construct (XCLS_MAINWINDOW_TYPE_XCLS_ROOVIEW, _owner);
-#line 1909 "MainWindow.vala.c"
+#line 1911 "MainWindow.vala.c"
 }
 
 
@@ -1916,14 +1918,14 @@ static void xcls_mainwindow_xcls_rooview_class_init (Xcls_MainWindowXcls_rooview
 	g_type_class_add_private (klass, sizeof (Xcls_MainWindowXcls_rooviewPrivate));
 #line 493 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_mainwindow_xcls_rooview_finalize;
-#line 1920 "MainWindow.vala.c"
+#line 1922 "MainWindow.vala.c"
 }
 
 
 static void xcls_mainwindow_xcls_rooview_instance_init (Xcls_MainWindowXcls_rooview * self) {
 #line 493 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	self->priv = XCLS_MAINWINDOW_XCLS_ROOVIEW_GET_PRIVATE (self);
-#line 1927 "MainWindow.vala.c"
+#line 1929 "MainWindow.vala.c"
 }
 
 
@@ -1937,7 +1939,7 @@ static void xcls_mainwindow_xcls_rooview_finalize (GObject* obj) {
 	_g_object_unref0 (self->priv->_this);
 #line 493 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	G_OBJECT_CLASS (xcls_mainwindow_xcls_rooview_parent_class)->finalize (obj);
-#line 1941 "MainWindow.vala.c"
+#line 1943 "MainWindow.vala.c"
 }
 
 
@@ -1999,7 +2001,7 @@ Xcls_MainWindowXcls_projectbutton* xcls_mainwindow_xcls_projectbutton_construct 
 	child_0 = _tmp6_;
 #line 565 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	g_object_ref ((GObject*) child_0);
-#line 2003 "MainWindow.vala.c"
+#line 2005 "MainWindow.vala.c"
 	{
 		GtkClutterActor* _tmp7_ = NULL;
 		Xcls_MainWindow* _tmp8_ = NULL;
@@ -2038,20 +2040,20 @@ Xcls_MainWindowXcls_projectbutton* xcls_mainwindow_xcls_projectbutton_construct 
 		_tmp15_ = self->el;
 #line 580 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		clutter_actor_set_size ((ClutterActor*) _tmp15_, (gfloat) 100, (gfloat) 100);
-#line 2042 "MainWindow.vala.c"
+#line 2044 "MainWindow.vala.c"
 	}
 #line 555 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	_g_object_unref0 (child_0);
 #line 555 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return self;
-#line 2048 "MainWindow.vala.c"
+#line 2050 "MainWindow.vala.c"
 }
 
 
 Xcls_MainWindowXcls_projectbutton* xcls_mainwindow_xcls_projectbutton_new (Xcls_MainWindow* _owner) {
 #line 555 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return xcls_mainwindow_xcls_projectbutton_construct (XCLS_MAINWINDOW_TYPE_XCLS_PROJECTBUTTON, _owner);
-#line 2055 "MainWindow.vala.c"
+#line 2057 "MainWindow.vala.c"
 }
 
 
@@ -2062,14 +2064,14 @@ static void xcls_mainwindow_xcls_projectbutton_class_init (Xcls_MainWindowXcls_p
 	g_type_class_add_private (klass, sizeof (Xcls_MainWindowXcls_projectbuttonPrivate));
 #line 546 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_mainwindow_xcls_projectbutton_finalize;
-#line 2066 "MainWindow.vala.c"
+#line 2068 "MainWindow.vala.c"
 }
 
 
 static void xcls_mainwindow_xcls_projectbutton_instance_init (Xcls_MainWindowXcls_projectbutton * self) {
 #line 546 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	self->priv = XCLS_MAINWINDOW_XCLS_PROJECTBUTTON_GET_PRIVATE (self);
-#line 2073 "MainWindow.vala.c"
+#line 2075 "MainWindow.vala.c"
 }
 
 
@@ -2083,7 +2085,7 @@ static void xcls_mainwindow_xcls_projectbutton_finalize (GObject* obj) {
 	_g_object_unref0 (self->priv->_this);
 #line 546 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	G_OBJECT_CLASS (xcls_mainwindow_xcls_projectbutton_parent_class)->finalize (obj);
-#line 2087 "MainWindow.vala.c"
+#line 2089 "MainWindow.vala.c"
 }
 
 
@@ -2099,12 +2101,27 @@ GType xcls_mainwindow_xcls_projectbutton_get_type (void) {
 }
 
 
+static void __lambda8_ (Xcls_MainWindowXcls_Button13* self) {
+#line 630 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+	g_print ("pressed");
+#line 2108 "MainWindow.vala.c"
+}
+
+
+static void ___lambda8__gtk_button_activate (GtkButton* _sender, gpointer self) {
+#line 629 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+	__lambda8_ ((Xcls_MainWindowXcls_Button13*) self);
+#line 2115 "MainWindow.vala.c"
+}
+
+
 Xcls_MainWindowXcls_Button13* xcls_mainwindow_xcls_button13_construct (GType object_type, Xcls_MainWindow* _owner) {
 	Xcls_MainWindowXcls_Button13 * self = NULL;
 	Xcls_MainWindow* _tmp0_ = NULL;
 	Xcls_MainWindow* _tmp1_ = NULL;
 	GtkButton* _tmp2_ = NULL;
 	GtkButton* _tmp3_ = NULL;
+	GtkButton* _tmp9_ = NULL;
 #line 613 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
 #line 613 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
@@ -2129,7 +2146,7 @@ Xcls_MainWindowXcls_Button13* xcls_mainwindow_xcls_button13_construct (GType obj
 	_tmp3_ = self->el;
 #line 621 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	gtk_button_set_label (_tmp3_, "P");
-#line 2133 "MainWindow.vala.c"
+#line 2150 "MainWindow.vala.c"
 	{
 		Xcls_MainWindow* _tmp4_ = NULL;
 		Xcls_MainWindowXcls_projectbutton* _tmp5_ = NULL;
@@ -2148,18 +2165,22 @@ Xcls_MainWindowXcls_Button13* xcls_mainwindow_xcls_button13_construct (GType obj
 		_tmp8_ = self->el;
 #line 625 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 		gtk_container_add (G_TYPE_CHECK_INSTANCE_CAST (_tmp7_, GTK_TYPE_CONTAINER, GtkContainer), (GtkWidget*) _tmp8_);
-#line 2152 "MainWindow.vala.c"
+#line 2169 "MainWindow.vala.c"
 	}
+#line 629 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+	_tmp9_ = self->el;
+#line 629 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
+	g_signal_connect_object (_tmp9_, "activate", (GCallback) ___lambda8__gtk_button_activate, self, 0);
 #line 613 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return self;
-#line 2156 "MainWindow.vala.c"
+#line 2177 "MainWindow.vala.c"
 }
 
 
 Xcls_MainWindowXcls_Button13* xcls_mainwindow_xcls_button13_new (Xcls_MainWindow* _owner) {
 #line 613 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return xcls_mainwindow_xcls_button13_construct (XCLS_MAINWINDOW_TYPE_XCLS_BUTTON13, _owner);
-#line 2163 "MainWindow.vala.c"
+#line 2184 "MainWindow.vala.c"
 }
 
 
@@ -2170,14 +2191,14 @@ static void xcls_mainwindow_xcls_button13_class_init (Xcls_MainWindowXcls_Button
 	g_type_class_add_private (klass, sizeof (Xcls_MainWindowXcls_Button13Private));
 #line 604 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_mainwindow_xcls_button13_finalize;
-#line 2174 "MainWindow.vala.c"
+#line 2195 "MainWindow.vala.c"
 }
 
 
 static void xcls_mainwindow_xcls_button13_instance_init (Xcls_MainWindowXcls_Button13 * self) {
 #line 604 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	self->priv = XCLS_MAINWINDOW_XCLS_BUTTON13_GET_PRIVATE (self);
-#line 2181 "MainWindow.vala.c"
+#line 2202 "MainWindow.vala.c"
 }
 
 
@@ -2191,7 +2212,7 @@ static void xcls_mainwindow_xcls_button13_finalize (GObject* obj) {
 	_g_object_unref0 (self->priv->_this);
 #line 604 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	G_OBJECT_CLASS (xcls_mainwindow_xcls_button13_parent_class)->finalize (obj);
-#line 2195 "MainWindow.vala.c"
+#line 2216 "MainWindow.vala.c"
 }
 
 
@@ -2214,14 +2235,14 @@ static void xcls_mainwindow_class_init (Xcls_MainWindowClass * klass) {
 	g_type_class_add_private (klass, sizeof (Xcls_MainWindowPrivate));
 #line 20 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_mainwindow_finalize;
-#line 2218 "MainWindow.vala.c"
+#line 2239 "MainWindow.vala.c"
 }
 
 
 static void xcls_mainwindow_instance_init (Xcls_MainWindow * self) {
 #line 20 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	self->priv = XCLS_MAINWINDOW_GET_PRIVATE (self);
-#line 2225 "MainWindow.vala.c"
+#line 2246 "MainWindow.vala.c"
 }
 
 
@@ -2253,7 +2274,7 @@ static void xcls_mainwindow_finalize (GObject* obj) {
 	_g_free0 (self->title);
 #line 20 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	G_OBJECT_CLASS (xcls_mainwindow_parent_class)->finalize (obj);
-#line 2257 "MainWindow.vala.c"
+#line 2278 "MainWindow.vala.c"
 }
 
 

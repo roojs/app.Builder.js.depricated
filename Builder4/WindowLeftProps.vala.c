@@ -1054,8 +1054,8 @@ void xcls_leftprops_addProp (Xcls_LeftProps* self, const gchar* type, const gcha
 static Block2Data* block2_data_ref (Block2Data* _data2_);
 static void block2_data_unref (void * _userdata_);
 void xcls_leftprops_load (Xcls_LeftProps* self, JsRenderJsRender* file, JsRenderNode* node);
-static gboolean __lambda40_ (Block2Data* _data2_, GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* iter);
-static gboolean ___lambda40__gtk_tree_model_foreach_func (GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* iter, gpointer self);
+static gboolean __lambda41_ (Block2Data* _data2_, GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* iter);
+static gboolean ___lambda41__gtk_tree_model_foreach_func (GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* iter, gpointer self);
 void xcls_leftprops_startEditingValue (Xcls_LeftProps* self);
 void xcls_leftprops_before_edit (Xcls_LeftProps* self);
 void xcls_leftprops_deleteSelected (Xcls_LeftProps* self);
@@ -1082,8 +1082,8 @@ enum  {
 GType xcls_leftprops_xcls_hbox4_get_type (void) G_GNUC_CONST;
 Xcls_LeftPropsXcls_HBox4* xcls_leftprops_xcls_hbox4_new (Xcls_LeftProps* _owner);
 Xcls_LeftPropsXcls_HBox4* xcls_leftprops_xcls_hbox4_construct (GType object_type, Xcls_LeftProps* _owner);
-static gboolean __lambda48_ (Xcls_LeftPropsXcls_Button3* self, GdkEventButton* event);
-static gboolean ___lambda48__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self);
+static gboolean __lambda49_ (Xcls_LeftPropsXcls_Button3* self, GdkEventButton* event);
+static gboolean ___lambda49__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self);
 static void xcls_leftprops_xcls_button3_finalize (GObject* obj);
 #define XCLS_LEFTPROPS_XCLS_HBOX4_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), XCLS_LEFTPROPS_TYPE_XCLS_HBOX4, Xcls_LeftPropsXcls_HBox4Private))
 enum  {
@@ -1113,8 +1113,8 @@ enum  {
 GType xcls_leftprops_xcls_hbox8_get_type (void) G_GNUC_CONST;
 Xcls_LeftPropsXcls_HBox8* xcls_leftprops_xcls_hbox8_new (Xcls_LeftProps* _owner);
 Xcls_LeftPropsXcls_HBox8* xcls_leftprops_xcls_hbox8_construct (GType object_type, Xcls_LeftProps* _owner);
-static gboolean __lambda49_ (Xcls_LeftPropsXcls_Button7* self, GdkEventButton* event);
-static gboolean ___lambda49__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self);
+static gboolean __lambda50_ (Xcls_LeftPropsXcls_Button7* self, GdkEventButton* event);
+static gboolean ___lambda50__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self);
 static void xcls_leftprops_xcls_button7_finalize (GObject* obj);
 #define XCLS_LEFTPROPS_XCLS_HBOX8_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), XCLS_LEFTPROPS_TYPE_XCLS_HBOX8, Xcls_LeftPropsXcls_HBox8Private))
 enum  {
@@ -1146,8 +1146,8 @@ Xcls_LeftPropsXcls_HBox12* xcls_leftprops_xcls_hbox12_new (Xcls_LeftProps* _owne
 Xcls_LeftPropsXcls_HBox12* xcls_leftprops_xcls_hbox12_construct (GType object_type, Xcls_LeftProps* _owner);
 Xcls_LeftPropsXcls_AddPropertyPopup* xcls_leftprops_xcls_addpropertypopup_new (Xcls_LeftProps* _owner);
 Xcls_LeftPropsXcls_AddPropertyPopup* xcls_leftprops_xcls_addpropertypopup_construct (GType object_type, Xcls_LeftProps* _owner);
-static gboolean __lambda50_ (Xcls_LeftPropsXcls_Button11* self, GtkWidget* _self_, GdkEventButton* ev);
-static gboolean ___lambda50__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self);
+static gboolean __lambda51_ (Xcls_LeftPropsXcls_Button11* self, GtkWidget* _self_, GdkEventButton* ev);
+static gboolean ___lambda51__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self);
 static void xcls_leftprops_xcls_button11_finalize (GObject* obj);
 #define XCLS_LEFTPROPS_XCLS_HBOX12_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), XCLS_LEFTPROPS_TYPE_XCLS_HBOX12, Xcls_LeftPropsXcls_HBox12Private))
 enum  {
@@ -1209,22 +1209,22 @@ static void xcls_leftprops_xcls_addpropertypopup_finalize (GObject* obj);
 enum  {
 	XCLS_LEFTPROPS_XCLS_MENUITEM16_DUMMY_PROPERTY
 };
-static void __lambda32_ (Xcls_LeftPropsXcls_MenuItem16* self);
-static void ___lambda32__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self);
+static void __lambda33_ (Xcls_LeftPropsXcls_MenuItem16* self);
+static void ___lambda33__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self);
 static void xcls_leftprops_xcls_menuitem16_finalize (GObject* obj);
 #define XCLS_LEFTPROPS_XCLS_MENUITEM17_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), XCLS_LEFTPROPS_TYPE_XCLS_MENUITEM17, Xcls_LeftPropsXcls_MenuItem17Private))
 enum  {
 	XCLS_LEFTPROPS_XCLS_MENUITEM17_DUMMY_PROPERTY
 };
-static void __lambda41_ (Xcls_LeftPropsXcls_MenuItem17* self);
-static void ___lambda41__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self);
+static void __lambda42_ (Xcls_LeftPropsXcls_MenuItem17* self);
+static void ___lambda42__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self);
 static void xcls_leftprops_xcls_menuitem17_finalize (GObject* obj);
 #define XCLS_LEFTPROPS_XCLS_MENUITEM18_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), XCLS_LEFTPROPS_TYPE_XCLS_MENUITEM18, Xcls_LeftPropsXcls_MenuItem18Private))
 enum  {
 	XCLS_LEFTPROPS_XCLS_MENUITEM18_DUMMY_PROPERTY
 };
-static void __lambda42_ (Xcls_LeftPropsXcls_MenuItem18* self);
-static void ___lambda42__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self);
+static void __lambda43_ (Xcls_LeftPropsXcls_MenuItem18* self);
+static void ___lambda43__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self);
 static void xcls_leftprops_xcls_menuitem18_finalize (GObject* obj);
 #define XCLS_LEFTPROPS_XCLS_SEPARATORMENUITEM19_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), XCLS_LEFTPROPS_TYPE_XCLS_SEPARATORMENUITEM19, Xcls_LeftPropsXcls_SeparatorMenuItem19Private))
 enum  {
@@ -1235,22 +1235,22 @@ static void xcls_leftprops_xcls_separatormenuitem19_finalize (GObject* obj);
 enum  {
 	XCLS_LEFTPROPS_XCLS_MENUITEM20_DUMMY_PROPERTY
 };
-static void __lambda43_ (Xcls_LeftPropsXcls_MenuItem20* self, GtkMenuItem* _self_);
-static void ___lambda43__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self);
+static void __lambda44_ (Xcls_LeftPropsXcls_MenuItem20* self, GtkMenuItem* _self_);
+static void ___lambda44__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self);
 static void xcls_leftprops_xcls_menuitem20_finalize (GObject* obj);
 #define XCLS_LEFTPROPS_XCLS_MENUITEM21_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), XCLS_LEFTPROPS_TYPE_XCLS_MENUITEM21, Xcls_LeftPropsXcls_MenuItem21Private))
 enum  {
 	XCLS_LEFTPROPS_XCLS_MENUITEM21_DUMMY_PROPERTY
 };
-static void __lambda44_ (Xcls_LeftPropsXcls_MenuItem21* self);
-static void ___lambda44__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self);
+static void __lambda45_ (Xcls_LeftPropsXcls_MenuItem21* self);
+static void ___lambda45__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self);
 static void xcls_leftprops_xcls_menuitem21_finalize (GObject* obj);
 #define XCLS_LEFTPROPS_XCLS_MENUITEM22_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), XCLS_LEFTPROPS_TYPE_XCLS_MENUITEM22, Xcls_LeftPropsXcls_MenuItem22Private))
 enum  {
 	XCLS_LEFTPROPS_XCLS_MENUITEM22_DUMMY_PROPERTY
 };
-static void __lambda45_ (Xcls_LeftPropsXcls_MenuItem22* self);
-static void ___lambda45__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self);
+static void __lambda46_ (Xcls_LeftPropsXcls_MenuItem22* self);
+static void ___lambda46__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self);
 static void xcls_leftprops_xcls_menuitem22_finalize (GObject* obj);
 #define XCLS_LEFTPROPS_XCLS_SEPARATORMENUITEM23_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), XCLS_LEFTPROPS_TYPE_XCLS_SEPARATORMENUITEM23, Xcls_LeftPropsXcls_SeparatorMenuItem23Private))
 enum  {
@@ -1261,15 +1261,15 @@ static void xcls_leftprops_xcls_separatormenuitem23_finalize (GObject* obj);
 enum  {
 	XCLS_LEFTPROPS_XCLS_MENUITEM24_DUMMY_PROPERTY
 };
-static void __lambda46_ (Xcls_LeftPropsXcls_MenuItem24* self);
-static void ___lambda46__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self);
+static void __lambda47_ (Xcls_LeftPropsXcls_MenuItem24* self);
+static void ___lambda47__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self);
 static void xcls_leftprops_xcls_menuitem24_finalize (GObject* obj);
 #define XCLS_LEFTPROPS_XCLS_MENUITEM25_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), XCLS_LEFTPROPS_TYPE_XCLS_MENUITEM25, Xcls_LeftPropsXcls_MenuItem25Private))
 enum  {
 	XCLS_LEFTPROPS_XCLS_MENUITEM25_DUMMY_PROPERTY
 };
-static void __lambda47_ (Xcls_LeftPropsXcls_MenuItem25* self);
-static void ___lambda47__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self);
+static void __lambda48_ (Xcls_LeftPropsXcls_MenuItem25* self);
+static void ___lambda48__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self);
 static void xcls_leftprops_xcls_menuitem25_finalize (GObject* obj);
 #define XCLS_LEFTPROPS_XCLS_EDITPROPS_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), XCLS_LEFTPROPS_TYPE_XCLS_EDITPROPS, Xcls_LeftPropsXcls_EditPropsPrivate))
 enum  {
@@ -1291,8 +1291,8 @@ Xcls_LeftPropsXcls_keycol* xcls_leftprops_xcls_keycol_construct (GType object_ty
 Xcls_LeftPropsXcls_valcol* xcls_leftprops_xcls_valcol_new (Xcls_LeftProps* _owner);
 Xcls_LeftPropsXcls_valcol* xcls_leftprops_xcls_valcol_construct (GType object_type, Xcls_LeftProps* _owner);
 static void _vala_PangoFontDescription_free (PangoFontDescription* self);
-static gboolean __lambda37_ (Xcls_LeftPropsXcls_view* self, GdkEventButton* ev);
-static gboolean ___lambda37__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self);
+static gboolean __lambda38_ (Xcls_LeftPropsXcls_view* self, GdkEventButton* ev);
+static gboolean ___lambda38__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self);
 static void xcls_leftprops_xcls_view_finalize (GObject* obj);
 #define XCLS_LEFTPROPS_XCLS_MODEL_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), XCLS_LEFTPROPS_TYPE_XCLS_MODEL, Xcls_LeftPropsXcls_modelPrivate))
 enum  {
@@ -1310,10 +1310,10 @@ static void xcls_leftprops_xcls_keycol_finalize (GObject* obj);
 enum  {
 	XCLS_LEFTPROPS_XCLS_KEYRENDER_DUMMY_PROPERTY
 };
-static void __lambda33_ (Xcls_LeftPropsXcls_keyrender* self, GtkCellEditable* editable, const gchar* path);
-static void ___lambda33__gtk_cell_renderer_editing_started (GtkCellRenderer* _sender, GtkCellEditable* editable, const gchar* path, gpointer self);
-static void __lambda34_ (Xcls_LeftPropsXcls_keyrender* self, const gchar* path, const gchar* newtext);
-static void ___lambda34__gtk_cell_renderer_text_edited (GtkCellRendererText* _sender, const gchar* path, const gchar* new_text, gpointer self);
+static void __lambda34_ (Xcls_LeftPropsXcls_keyrender* self, GtkCellEditable* editable, const gchar* path);
+static void ___lambda34__gtk_cell_renderer_editing_started (GtkCellRenderer* _sender, GtkCellEditable* editable, const gchar* path, gpointer self);
+static void __lambda35_ (Xcls_LeftPropsXcls_keyrender* self, const gchar* path, const gchar* newtext);
+static void ___lambda35__gtk_cell_renderer_text_edited (GtkCellRendererText* _sender, const gchar* path, const gchar* new_text, gpointer self);
 static void xcls_leftprops_xcls_keyrender_finalize (GObject* obj);
 #define XCLS_LEFTPROPS_XCLS_VALCOL_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), XCLS_LEFTPROPS_TYPE_XCLS_VALCOL, Xcls_LeftPropsXcls_valcolPrivate))
 enum  {
@@ -1329,10 +1329,10 @@ enum  {
 GType xcls_leftprops_xcls_liststore33_get_type (void) G_GNUC_CONST;
 Xcls_LeftPropsXcls_ListStore33* xcls_leftprops_xcls_liststore33_new (Xcls_LeftProps* _owner);
 Xcls_LeftPropsXcls_ListStore33* xcls_leftprops_xcls_liststore33_construct (GType object_type, Xcls_LeftProps* _owner);
-static void __lambda35_ (Xcls_LeftPropsXcls_valrender* self, const gchar* path, const gchar* newtext);
-static void ___lambda35__gtk_cell_renderer_text_edited (GtkCellRendererText* _sender, const gchar* path, const gchar* new_text, gpointer self);
-static void __lambda36_ (Xcls_LeftPropsXcls_valrender* self, GtkCellEditable* editable, const gchar* path);
-static void ___lambda36__gtk_cell_renderer_editing_started (GtkCellRenderer* _sender, GtkCellEditable* editable, const gchar* path, gpointer self);
+static void __lambda36_ (Xcls_LeftPropsXcls_valrender* self, const gchar* path, const gchar* newtext);
+static void ___lambda36__gtk_cell_renderer_text_edited (GtkCellRendererText* _sender, const gchar* path, const gchar* new_text, gpointer self);
+static void __lambda37_ (Xcls_LeftPropsXcls_valrender* self, GtkCellEditable* editable, const gchar* path);
+static void ___lambda37__gtk_cell_renderer_editing_started (GtkCellRenderer* _sender, GtkCellEditable* editable, const gchar* path, gpointer self);
 static void xcls_leftprops_xcls_valrender_finalize (GObject* obj);
 #define XCLS_LEFTPROPS_XCLS_LISTSTORE33_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), XCLS_LEFTPROPS_TYPE_XCLS_LISTSTORE33, Xcls_LeftPropsXcls_ListStore33Private))
 enum  {
@@ -1354,15 +1354,15 @@ static void xcls_leftprops_xcls_contextmenu_finalize (GObject* obj);
 enum  {
 	XCLS_LEFTPROPS_XCLS_MENUITEM35_DUMMY_PROPERTY
 };
-static void __lambda38_ (Xcls_LeftPropsXcls_MenuItem35* self);
-static void ___lambda38__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self);
+static void __lambda39_ (Xcls_LeftPropsXcls_MenuItem35* self);
+static void ___lambda39__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self);
 static void xcls_leftprops_xcls_menuitem35_finalize (GObject* obj);
 #define XCLS_LEFTPROPS_XCLS_MENUITEM36_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), XCLS_LEFTPROPS_TYPE_XCLS_MENUITEM36, Xcls_LeftPropsXcls_MenuItem36Private))
 enum  {
 	XCLS_LEFTPROPS_XCLS_MENUITEM36_DUMMY_PROPERTY
 };
-static void __lambda39_ (Xcls_LeftPropsXcls_MenuItem36* self);
-static void ___lambda39__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self);
+static void __lambda40_ (Xcls_LeftPropsXcls_MenuItem36* self);
+static void ___lambda40__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self);
 static void xcls_leftprops_xcls_menuitem36_finalize (GObject* obj);
 static void xcls_leftprops_finalize (GObject* obj);
 
@@ -1489,7 +1489,7 @@ static void block2_data_unref (void * _userdata_) {
 }
 
 
-static gboolean __lambda40_ (Block2Data* _data2_, GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* iter) {
+static gboolean __lambda41_ (Block2Data* _data2_, GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* iter) {
 	Xcls_LeftProps* self;
 	gboolean result = FALSE;
 	GValue gval = {0};
@@ -1583,9 +1583,9 @@ static gboolean __lambda40_ (Block2Data* _data2_, GtkTreeModel* model, GtkTreePa
 }
 
 
-static gboolean ___lambda40__gtk_tree_model_foreach_func (GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* iter, gpointer self) {
+static gboolean ___lambda41__gtk_tree_model_foreach_func (GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* iter, gpointer self) {
 	gboolean result;
-	result = __lambda40_ (self, model, path, iter);
+	result = __lambda41_ (self, model, path, iter);
 #line 111 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	return result;
 #line 1592 "WindowLeftProps.vala.c"
@@ -1744,7 +1744,7 @@ void xcls_leftprops_addProp (Xcls_LeftProps* self, const gchar* type, const gcha
 #line 111 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	_tmp29_ = _tmp28_->el;
 #line 111 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
-	gtk_tree_model_foreach ((GtkTreeModel*) _tmp29_, ___lambda40__gtk_tree_model_foreach_func, _data2_);
+	gtk_tree_model_foreach ((GtkTreeModel*) _tmp29_, ___lambda41__gtk_tree_model_foreach_func, _data2_);
 #line 127 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_startEditingValue (self);
 #line 77 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
@@ -2706,7 +2706,7 @@ GType xcls_leftprops_xcls_hbox2_get_type (void) {
 }
 
 
-static gboolean __lambda48_ (Xcls_LeftPropsXcls_Button3* self, GdkEventButton* event) {
+static gboolean __lambda49_ (Xcls_LeftPropsXcls_Button3* self, GdkEventButton* event) {
 	gboolean result = FALSE;
 	Xcls_LeftProps* _tmp0_ = NULL;
 #line 369 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
@@ -2723,9 +2723,9 @@ static gboolean __lambda48_ (Xcls_LeftPropsXcls_Button3* self, GdkEventButton* e
 }
 
 
-static gboolean ___lambda48__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self) {
+static gboolean ___lambda49__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self) {
 	gboolean result;
-	result = __lambda48_ ((Xcls_LeftPropsXcls_Button3*) self, event);
+	result = __lambda49_ ((Xcls_LeftPropsXcls_Button3*) self, event);
 #line 369 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	return result;
 #line 2732 "WindowLeftProps.vala.c"
@@ -2780,7 +2780,7 @@ Xcls_LeftPropsXcls_Button3* xcls_leftprops_xcls_button3_construct (GType object_
 #line 369 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	_tmp7_ = self->el;
 #line 369 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
-	g_signal_connect_object ((GtkWidget*) _tmp7_, "button-press-event", (GCallback) ___lambda48__gtk_widget_button_press_event, self, 0);
+	g_signal_connect_object ((GtkWidget*) _tmp7_, "button-press-event", (GCallback) ___lambda49__gtk_widget_button_press_event, self, 0);
 #line 356 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (child_0);
 #line 356 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
@@ -3138,7 +3138,7 @@ GType xcls_leftprops_xcls_label6_get_type (void) {
 }
 
 
-static gboolean __lambda49_ (Xcls_LeftPropsXcls_Button7* self, GdkEventButton* event) {
+static gboolean __lambda50_ (Xcls_LeftPropsXcls_Button7* self, GdkEventButton* event) {
 	gboolean result = FALSE;
 	Xcls_LeftProps* _tmp0_ = NULL;
 #line 530 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
@@ -3155,9 +3155,9 @@ static gboolean __lambda49_ (Xcls_LeftPropsXcls_Button7* self, GdkEventButton* e
 }
 
 
-static gboolean ___lambda49__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self) {
+static gboolean ___lambda50__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self) {
 	gboolean result;
-	result = __lambda49_ ((Xcls_LeftPropsXcls_Button7*) self, event);
+	result = __lambda50_ ((Xcls_LeftPropsXcls_Button7*) self, event);
 #line 530 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	return result;
 #line 3164 "WindowLeftProps.vala.c"
@@ -3212,7 +3212,7 @@ Xcls_LeftPropsXcls_Button7* xcls_leftprops_xcls_button7_construct (GType object_
 #line 530 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	_tmp7_ = self->el;
 #line 530 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
-	g_signal_connect_object ((GtkWidget*) _tmp7_, "button-press-event", (GCallback) ___lambda49__gtk_widget_button_press_event, self, 0);
+	g_signal_connect_object ((GtkWidget*) _tmp7_, "button-press-event", (GCallback) ___lambda50__gtk_widget_button_press_event, self, 0);
 #line 517 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (child_0);
 #line 517 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
@@ -3570,7 +3570,7 @@ GType xcls_leftprops_xcls_label10_get_type (void) {
 }
 
 
-static gboolean __lambda50_ (Xcls_LeftPropsXcls_Button11* self, GtkWidget* _self_, GdkEventButton* ev) {
+static gboolean __lambda51_ (Xcls_LeftPropsXcls_Button11* self, GtkWidget* _self_, GdkEventButton* ev) {
 	gboolean result = FALSE;
 	Xcls_LeftProps* _tmp0_ = NULL;
 	Xcls_LeftPropsXcls_AddPropertyPopup* p = NULL;
@@ -3633,9 +3633,9 @@ static gboolean __lambda50_ (Xcls_LeftPropsXcls_Button11* self, GtkWidget* _self
 }
 
 
-static gboolean ___lambda50__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self) {
+static gboolean ___lambda51__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self) {
 	gboolean result;
-	result = __lambda50_ ((Xcls_LeftPropsXcls_Button11*) self, _sender, event);
+	result = __lambda51_ ((Xcls_LeftPropsXcls_Button11*) self, _sender, event);
 #line 698 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	return result;
 #line 3642 "WindowLeftProps.vala.c"
@@ -3701,7 +3701,7 @@ Xcls_LeftPropsXcls_Button11* xcls_leftprops_xcls_button11_construct (GType objec
 #line 698 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	_tmp9_ = self->el;
 #line 698 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
-	g_signal_connect_object ((GtkWidget*) _tmp9_, "button-press-event", (GCallback) ___lambda50__gtk_widget_button_press_event, self, 0);
+	g_signal_connect_object ((GtkWidget*) _tmp9_, "button-press-event", (GCallback) ___lambda51__gtk_widget_button_press_event, self, 0);
 #line 683 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (child_1);
 #line 683 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
@@ -4363,7 +4363,7 @@ GType xcls_leftprops_xcls_addpropertypopup_get_type (void) {
 }
 
 
-static void __lambda32_ (Xcls_LeftPropsXcls_MenuItem16* self) {
+static void __lambda33_ (Xcls_LeftPropsXcls_MenuItem16* self) {
 	Xcls_LeftProps* _tmp0_ = NULL;
 #line 933 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	_tmp0_ = self->priv->_this;
@@ -4373,9 +4373,9 @@ static void __lambda32_ (Xcls_LeftPropsXcls_MenuItem16* self) {
 }
 
 
-static void ___lambda32__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self) {
+static void ___lambda33__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self) {
 #line 932 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
-	__lambda32_ ((Xcls_LeftPropsXcls_MenuItem16*) self);
+	__lambda33_ ((Xcls_LeftPropsXcls_MenuItem16*) self);
 #line 4380 "WindowLeftProps.vala.c"
 }
 
@@ -4419,7 +4419,7 @@ Xcls_LeftPropsXcls_MenuItem16* xcls_leftprops_xcls_menuitem16_construct (GType o
 #line 932 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	_tmp5_ = self->el;
 #line 932 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
-	g_signal_connect_object (_tmp5_, "activate", (GCallback) ___lambda32__gtk_menu_item_activate, self, 0);
+	g_signal_connect_object (_tmp5_, "activate", (GCallback) ___lambda33__gtk_menu_item_activate, self, 0);
 #line 920 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	return self;
 #line 4426 "WindowLeftProps.vala.c"
@@ -4477,7 +4477,7 @@ GType xcls_leftprops_xcls_menuitem16_get_type (void) {
 }
 
 
-static void __lambda41_ (Xcls_LeftPropsXcls_MenuItem17* self) {
+static void __lambda42_ (Xcls_LeftPropsXcls_MenuItem17* self) {
 	Xcls_LeftProps* _tmp0_ = NULL;
 #line 980 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	_tmp0_ = self->priv->_this;
@@ -4487,9 +4487,9 @@ static void __lambda41_ (Xcls_LeftPropsXcls_MenuItem17* self) {
 }
 
 
-static void ___lambda41__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self) {
+static void ___lambda42__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self) {
 #line 978 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
-	__lambda41_ ((Xcls_LeftPropsXcls_MenuItem17*) self);
+	__lambda42_ ((Xcls_LeftPropsXcls_MenuItem17*) self);
 #line 4494 "WindowLeftProps.vala.c"
 }
 
@@ -4533,7 +4533,7 @@ Xcls_LeftPropsXcls_MenuItem17* xcls_leftprops_xcls_menuitem17_construct (GType o
 #line 978 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	_tmp5_ = self->el;
 #line 978 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
-	g_signal_connect_object (_tmp5_, "activate", (GCallback) ___lambda41__gtk_menu_item_activate, self, 0);
+	g_signal_connect_object (_tmp5_, "activate", (GCallback) ___lambda42__gtk_menu_item_activate, self, 0);
 #line 966 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	return self;
 #line 4540 "WindowLeftProps.vala.c"
@@ -4591,7 +4591,7 @@ GType xcls_leftprops_xcls_menuitem17_get_type (void) {
 }
 
 
-static void __lambda42_ (Xcls_LeftPropsXcls_MenuItem18* self) {
+static void __lambda43_ (Xcls_LeftPropsXcls_MenuItem18* self) {
 	Xcls_LeftProps* _tmp0_ = NULL;
 #line 1027 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	_tmp0_ = self->priv->_this;
@@ -4601,9 +4601,9 @@ static void __lambda42_ (Xcls_LeftPropsXcls_MenuItem18* self) {
 }
 
 
-static void ___lambda42__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self) {
+static void ___lambda43__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self) {
 #line 1025 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
-	__lambda42_ ((Xcls_LeftPropsXcls_MenuItem18*) self);
+	__lambda43_ ((Xcls_LeftPropsXcls_MenuItem18*) self);
 #line 4608 "WindowLeftProps.vala.c"
 }
 
@@ -4647,7 +4647,7 @@ Xcls_LeftPropsXcls_MenuItem18* xcls_leftprops_xcls_menuitem18_construct (GType o
 #line 1025 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	_tmp5_ = self->el;
 #line 1025 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
-	g_signal_connect_object (_tmp5_, "activate", (GCallback) ___lambda42__gtk_menu_item_activate, self, 0);
+	g_signal_connect_object (_tmp5_, "activate", (GCallback) ___lambda43__gtk_menu_item_activate, self, 0);
 #line 1013 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	return self;
 #line 4654 "WindowLeftProps.vala.c"
@@ -4787,7 +4787,7 @@ GType xcls_leftprops_xcls_separatormenuitem19_get_type (void) {
 }
 
 
-static void __lambda43_ (Xcls_LeftPropsXcls_MenuItem20* self, GtkMenuItem* _self_) {
+static void __lambda44_ (Xcls_LeftPropsXcls_MenuItem20* self, GtkMenuItem* _self_) {
 	Xcls_LeftProps* _tmp0_ = NULL;
 #line 1105 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	g_return_if_fail (_self_ != NULL);
@@ -4799,9 +4799,9 @@ static void __lambda43_ (Xcls_LeftPropsXcls_MenuItem20* self, GtkMenuItem* _self
 }
 
 
-static void ___lambda43__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self) {
+static void ___lambda44__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self) {
 #line 1105 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
-	__lambda43_ ((Xcls_LeftPropsXcls_MenuItem20*) self, _sender);
+	__lambda44_ ((Xcls_LeftPropsXcls_MenuItem20*) self, _sender);
 #line 4806 "WindowLeftProps.vala.c"
 }
 
@@ -4845,7 +4845,7 @@ Xcls_LeftPropsXcls_MenuItem20* xcls_leftprops_xcls_menuitem20_construct (GType o
 #line 1105 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	_tmp5_ = self->el;
 #line 1105 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
-	g_signal_connect_object (_tmp5_, "activate", (GCallback) ___lambda43__gtk_menu_item_activate, self, 0);
+	g_signal_connect_object (_tmp5_, "activate", (GCallback) ___lambda44__gtk_menu_item_activate, self, 0);
 #line 1093 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	return self;
 #line 4852 "WindowLeftProps.vala.c"
@@ -4903,7 +4903,7 @@ GType xcls_leftprops_xcls_menuitem20_get_type (void) {
 }
 
 
-static void __lambda44_ (Xcls_LeftPropsXcls_MenuItem21* self) {
+static void __lambda45_ (Xcls_LeftPropsXcls_MenuItem21* self) {
 	Xcls_LeftProps* _tmp0_ = NULL;
 #line 1155 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	_tmp0_ = self->priv->_this;
@@ -4913,9 +4913,9 @@ static void __lambda44_ (Xcls_LeftPropsXcls_MenuItem21* self) {
 }
 
 
-static void ___lambda44__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self) {
+static void ___lambda45__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self) {
 #line 1153 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
-	__lambda44_ ((Xcls_LeftPropsXcls_MenuItem21*) self);
+	__lambda45_ ((Xcls_LeftPropsXcls_MenuItem21*) self);
 #line 4920 "WindowLeftProps.vala.c"
 }
 
@@ -4959,7 +4959,7 @@ Xcls_LeftPropsXcls_MenuItem21* xcls_leftprops_xcls_menuitem21_construct (GType o
 #line 1153 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	_tmp5_ = self->el;
 #line 1153 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
-	g_signal_connect_object (_tmp5_, "activate", (GCallback) ___lambda44__gtk_menu_item_activate, self, 0);
+	g_signal_connect_object (_tmp5_, "activate", (GCallback) ___lambda45__gtk_menu_item_activate, self, 0);
 #line 1141 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	return self;
 #line 4966 "WindowLeftProps.vala.c"
@@ -5017,7 +5017,7 @@ GType xcls_leftprops_xcls_menuitem21_get_type (void) {
 }
 
 
-static void __lambda45_ (Xcls_LeftPropsXcls_MenuItem22* self) {
+static void __lambda46_ (Xcls_LeftPropsXcls_MenuItem22* self) {
 	Xcls_LeftProps* _tmp0_ = NULL;
 #line 1202 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	_tmp0_ = self->priv->_this;
@@ -5027,9 +5027,9 @@ static void __lambda45_ (Xcls_LeftPropsXcls_MenuItem22* self) {
 }
 
 
-static void ___lambda45__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self) {
+static void ___lambda46__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self) {
 #line 1200 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
-	__lambda45_ ((Xcls_LeftPropsXcls_MenuItem22*) self);
+	__lambda46_ ((Xcls_LeftPropsXcls_MenuItem22*) self);
 #line 5034 "WindowLeftProps.vala.c"
 }
 
@@ -5073,7 +5073,7 @@ Xcls_LeftPropsXcls_MenuItem22* xcls_leftprops_xcls_menuitem22_construct (GType o
 #line 1200 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	_tmp5_ = self->el;
 #line 1200 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
-	g_signal_connect_object (_tmp5_, "activate", (GCallback) ___lambda45__gtk_menu_item_activate, self, 0);
+	g_signal_connect_object (_tmp5_, "activate", (GCallback) ___lambda46__gtk_menu_item_activate, self, 0);
 #line 1188 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	return self;
 #line 5080 "WindowLeftProps.vala.c"
@@ -5213,7 +5213,7 @@ GType xcls_leftprops_xcls_separatormenuitem23_get_type (void) {
 }
 
 
-static void __lambda46_ (Xcls_LeftPropsXcls_MenuItem24* self) {
+static void __lambda47_ (Xcls_LeftPropsXcls_MenuItem24* self) {
 	Xcls_LeftProps* _tmp0_ = NULL;
 #line 1282 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	_tmp0_ = self->priv->_this;
@@ -5223,9 +5223,9 @@ static void __lambda46_ (Xcls_LeftPropsXcls_MenuItem24* self) {
 }
 
 
-static void ___lambda46__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self) {
+static void ___lambda47__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self) {
 #line 1280 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
-	__lambda46_ ((Xcls_LeftPropsXcls_MenuItem24*) self);
+	__lambda47_ ((Xcls_LeftPropsXcls_MenuItem24*) self);
 #line 5230 "WindowLeftProps.vala.c"
 }
 
@@ -5269,7 +5269,7 @@ Xcls_LeftPropsXcls_MenuItem24* xcls_leftprops_xcls_menuitem24_construct (GType o
 #line 1280 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	_tmp5_ = self->el;
 #line 1280 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
-	g_signal_connect_object (_tmp5_, "activate", (GCallback) ___lambda46__gtk_menu_item_activate, self, 0);
+	g_signal_connect_object (_tmp5_, "activate", (GCallback) ___lambda47__gtk_menu_item_activate, self, 0);
 #line 1268 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	return self;
 #line 5276 "WindowLeftProps.vala.c"
@@ -5327,7 +5327,7 @@ GType xcls_leftprops_xcls_menuitem24_get_type (void) {
 }
 
 
-static void __lambda47_ (Xcls_LeftPropsXcls_MenuItem25* self) {
+static void __lambda48_ (Xcls_LeftPropsXcls_MenuItem25* self) {
 	Xcls_LeftProps* _tmp0_ = NULL;
 #line 1329 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	_tmp0_ = self->priv->_this;
@@ -5337,9 +5337,9 @@ static void __lambda47_ (Xcls_LeftPropsXcls_MenuItem25* self) {
 }
 
 
-static void ___lambda47__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self) {
+static void ___lambda48__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self) {
 #line 1327 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
-	__lambda47_ ((Xcls_LeftPropsXcls_MenuItem25*) self);
+	__lambda48_ ((Xcls_LeftPropsXcls_MenuItem25*) self);
 #line 5344 "WindowLeftProps.vala.c"
 }
 
@@ -5383,7 +5383,7 @@ Xcls_LeftPropsXcls_MenuItem25* xcls_leftprops_xcls_menuitem25_construct (GType o
 #line 1327 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	_tmp5_ = self->el;
 #line 1327 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
-	g_signal_connect_object (_tmp5_, "activate", (GCallback) ___lambda47__gtk_menu_item_activate, self, 0);
+	g_signal_connect_object (_tmp5_, "activate", (GCallback) ___lambda48__gtk_menu_item_activate, self, 0);
 #line 1315 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	return self;
 #line 5390 "WindowLeftProps.vala.c"
@@ -5590,7 +5590,7 @@ static void _vala_PangoFontDescription_free (PangoFontDescription* self) {
 }
 
 
-static gboolean __lambda37_ (Xcls_LeftPropsXcls_view* self, GdkEventButton* ev) {
+static gboolean __lambda38_ (Xcls_LeftPropsXcls_view* self, GdkEventButton* ev) {
 	gboolean result = FALSE;
 	Xcls_LeftProps* _tmp0_ = NULL;
 	GtkTreeViewColumn* col = NULL;
@@ -5801,9 +5801,9 @@ static gboolean __lambda37_ (Xcls_LeftPropsXcls_view* self, GdkEventButton* ev) 
 }
 
 
-static gboolean ___lambda37__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self) {
+static gboolean ___lambda38__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self) {
 	gboolean result;
-	result = __lambda37_ ((Xcls_LeftPropsXcls_view*) self, event);
+	result = __lambda38_ ((Xcls_LeftPropsXcls_view*) self, event);
 #line 1454 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	return result;
 #line 5810 "WindowLeftProps.vala.c"
@@ -5956,7 +5956,7 @@ Xcls_LeftPropsXcls_view* xcls_leftprops_xcls_view_construct (GType object_type, 
 #line 1454 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	_tmp25_ = self->el;
 #line 1454 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
-	g_signal_connect_object ((GtkWidget*) _tmp25_, "button-press-event", (GCallback) ___lambda37__gtk_widget_button_press_event, self, 0);
+	g_signal_connect_object ((GtkWidget*) _tmp25_, "button-press-event", (GCallback) ___lambda38__gtk_widget_button_press_event, self, 0);
 #line 1420 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (child_2);
 #line 1420 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
@@ -6247,7 +6247,7 @@ GType xcls_leftprops_xcls_keycol_get_type (void) {
 }
 
 
-static void __lambda33_ (Xcls_LeftPropsXcls_keyrender* self, GtkCellEditable* editable, const gchar* path) {
+static void __lambda34_ (Xcls_LeftPropsXcls_keyrender* self, GtkCellEditable* editable, const gchar* path) {
 #line 1682 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	g_return_if_fail (editable != NULL);
 #line 1682 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
@@ -6256,14 +6256,14 @@ static void __lambda33_ (Xcls_LeftPropsXcls_keyrender* self, GtkCellEditable* ed
 }
 
 
-static void ___lambda33__gtk_cell_renderer_editing_started (GtkCellRenderer* _sender, GtkCellEditable* editable, const gchar* path, gpointer self) {
+static void ___lambda34__gtk_cell_renderer_editing_started (GtkCellRenderer* _sender, GtkCellEditable* editable, const gchar* path, gpointer self) {
 #line 1682 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
-	__lambda33_ ((Xcls_LeftPropsXcls_keyrender*) self, editable, path);
+	__lambda34_ ((Xcls_LeftPropsXcls_keyrender*) self, editable, path);
 #line 6258 "WindowLeftProps.vala.c"
 }
 
 
-static void __lambda34_ (Xcls_LeftPropsXcls_keyrender* self, const gchar* path, const gchar* newtext) {
+static void __lambda35_ (Xcls_LeftPropsXcls_keyrender* self, const gchar* path, const gchar* newtext) {
 	GtkTreeIter iter = {0};
 	Xcls_LeftProps* _tmp0_ = NULL;
 	Xcls_LeftPropsXcls_model* _tmp1_ = NULL;
@@ -6524,9 +6524,9 @@ static void __lambda34_ (Xcls_LeftPropsXcls_keyrender* self, const gchar* path, 
 }
 
 
-static void ___lambda34__gtk_cell_renderer_text_edited (GtkCellRendererText* _sender, const gchar* path, const gchar* new_text, gpointer self) {
+static void ___lambda35__gtk_cell_renderer_text_edited (GtkCellRendererText* _sender, const gchar* path, const gchar* new_text, gpointer self) {
 #line 1687 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
-	__lambda34_ ((Xcls_LeftPropsXcls_keyrender*) self, path, new_text);
+	__lambda35_ ((Xcls_LeftPropsXcls_keyrender*) self, path, new_text);
 #line 6526 "WindowLeftProps.vala.c"
 }
 
@@ -6571,11 +6571,11 @@ Xcls_LeftPropsXcls_keyrender* xcls_leftprops_xcls_keyrender_construct (GType obj
 #line 1682 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	_tmp5_ = self->el;
 #line 1682 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
-	g_signal_connect_object ((GtkCellRenderer*) _tmp5_, "editing-started", (GCallback) ___lambda33__gtk_cell_renderer_editing_started, self, 0);
+	g_signal_connect_object ((GtkCellRenderer*) _tmp5_, "editing-started", (GCallback) ___lambda34__gtk_cell_renderer_editing_started, self, 0);
 #line 1687 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	_tmp6_ = self->el;
 #line 1687 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
-	g_signal_connect_object (_tmp6_, "edited", (GCallback) ___lambda34__gtk_cell_renderer_text_edited, self, 0);
+	g_signal_connect_object (_tmp6_, "edited", (GCallback) ___lambda35__gtk_cell_renderer_text_edited, self, 0);
 #line 1671 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	return self;
 #line 6577 "WindowLeftProps.vala.c"
@@ -6783,7 +6783,7 @@ GType xcls_leftprops_xcls_valcol_get_type (void) {
 }
 
 
-static void __lambda35_ (Xcls_LeftPropsXcls_valrender* self, const gchar* path, const gchar* newtext) {
+static void __lambda36_ (Xcls_LeftPropsXcls_valrender* self, const gchar* path, const gchar* newtext) {
 	GtkCellRendererCombo* _tmp0_ = NULL;
 	GtkTreeIter iter = {0};
 	Xcls_LeftProps* _tmp1_ = NULL;
@@ -7010,14 +7010,14 @@ static void __lambda35_ (Xcls_LeftPropsXcls_valrender* self, const gchar* path, 
 }
 
 
-static void ___lambda35__gtk_cell_renderer_text_edited (GtkCellRendererText* _sender, const gchar* path, const gchar* new_text, gpointer self) {
+static void ___lambda36__gtk_cell_renderer_text_edited (GtkCellRendererText* _sender, const gchar* path, const gchar* new_text, gpointer self) {
 #line 1825 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
-	__lambda35_ ((Xcls_LeftPropsXcls_valrender*) self, path, new_text);
+	__lambda36_ ((Xcls_LeftPropsXcls_valrender*) self, path, new_text);
 #line 7012 "WindowLeftProps.vala.c"
 }
 
 
-static void __lambda36_ (Xcls_LeftPropsXcls_valrender* self, GtkCellEditable* editable, const gchar* path) {
+static void __lambda37_ (Xcls_LeftPropsXcls_valrender* self, GtkCellEditable* editable, const gchar* path) {
 	GtkCellRendererCombo* _tmp0_ = NULL;
 #line 1865 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	g_return_if_fail (editable != NULL);
@@ -7031,9 +7031,9 @@ static void __lambda36_ (Xcls_LeftPropsXcls_valrender* self, GtkCellEditable* ed
 }
 
 
-static void ___lambda36__gtk_cell_renderer_editing_started (GtkCellRenderer* _sender, GtkCellEditable* editable, const gchar* path, gpointer self) {
+static void ___lambda37__gtk_cell_renderer_editing_started (GtkCellRenderer* _sender, GtkCellEditable* editable, const gchar* path, gpointer self) {
 #line 1865 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
-	__lambda36_ ((Xcls_LeftPropsXcls_valrender*) self, editable, path);
+	__lambda37_ ((Xcls_LeftPropsXcls_valrender*) self, editable, path);
 #line 7033 "WindowLeftProps.vala.c"
 }
 
@@ -7104,11 +7104,11 @@ Xcls_LeftPropsXcls_valrender* xcls_leftprops_xcls_valrender_construct (GType obj
 #line 1825 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	_tmp10_ = self->el;
 #line 1825 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
-	g_signal_connect_object ((GtkCellRendererText*) _tmp10_, "edited", (GCallback) ___lambda35__gtk_cell_renderer_text_edited, self, 0);
+	g_signal_connect_object ((GtkCellRendererText*) _tmp10_, "edited", (GCallback) ___lambda36__gtk_cell_renderer_text_edited, self, 0);
 #line 1865 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	_tmp11_ = self->el;
 #line 1865 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
-	g_signal_connect_object ((GtkCellRenderer*) _tmp11_, "editing-started", (GCallback) ___lambda36__gtk_cell_renderer_editing_started, self, 0);
+	g_signal_connect_object ((GtkCellRenderer*) _tmp11_, "editing-started", (GCallback) ___lambda37__gtk_cell_renderer_editing_started, self, 0);
 #line 1809 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (child_0);
 #line 1809 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
@@ -7382,7 +7382,7 @@ GType xcls_leftprops_xcls_contextmenu_get_type (void) {
 }
 
 
-static void __lambda38_ (Xcls_LeftPropsXcls_MenuItem35* self) {
+static void __lambda39_ (Xcls_LeftPropsXcls_MenuItem35* self) {
 	Xcls_LeftProps* _tmp0_ = NULL;
 #line 2002 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	_tmp0_ = self->priv->_this;
@@ -7392,9 +7392,9 @@ static void __lambda38_ (Xcls_LeftPropsXcls_MenuItem35* self) {
 }
 
 
-static void ___lambda38__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self) {
+static void ___lambda39__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self) {
 #line 2001 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
-	__lambda38_ ((Xcls_LeftPropsXcls_MenuItem35*) self);
+	__lambda39_ ((Xcls_LeftPropsXcls_MenuItem35*) self);
 #line 7394 "WindowLeftProps.vala.c"
 }
 
@@ -7433,7 +7433,7 @@ Xcls_LeftPropsXcls_MenuItem35* xcls_leftprops_xcls_menuitem35_construct (GType o
 #line 2001 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	_tmp4_ = self->el;
 #line 2001 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
-	g_signal_connect_object (_tmp4_, "activate", (GCallback) ___lambda38__gtk_menu_item_activate, self, 0);
+	g_signal_connect_object (_tmp4_, "activate", (GCallback) ___lambda39__gtk_menu_item_activate, self, 0);
 #line 1990 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	return self;
 #line 7435 "WindowLeftProps.vala.c"
@@ -7491,7 +7491,7 @@ GType xcls_leftprops_xcls_menuitem35_get_type (void) {
 }
 
 
-static void __lambda39_ (Xcls_LeftPropsXcls_MenuItem36* self) {
+static void __lambda40_ (Xcls_LeftPropsXcls_MenuItem36* self) {
 	Xcls_LeftProps* _tmp0_ = NULL;
 #line 2045 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	_tmp0_ = self->priv->_this;
@@ -7501,9 +7501,9 @@ static void __lambda39_ (Xcls_LeftPropsXcls_MenuItem36* self) {
 }
 
 
-static void ___lambda39__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self) {
+static void ___lambda40__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self) {
 #line 2044 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
-	__lambda39_ ((Xcls_LeftPropsXcls_MenuItem36*) self);
+	__lambda40_ ((Xcls_LeftPropsXcls_MenuItem36*) self);
 #line 7503 "WindowLeftProps.vala.c"
 }
 
@@ -7542,7 +7542,7 @@ Xcls_LeftPropsXcls_MenuItem36* xcls_leftprops_xcls_menuitem36_construct (GType o
 #line 2044 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	_tmp4_ = self->el;
 #line 2044 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
-	g_signal_connect_object (_tmp4_, "activate", (GCallback) ___lambda39__gtk_menu_item_activate, self, 0);
+	g_signal_connect_object (_tmp4_, "activate", (GCallback) ___lambda40__gtk_menu_item_activate, self, 0);
 #line 2033 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
 	return self;
 #line 7544 "WindowLeftProps.vala.c"

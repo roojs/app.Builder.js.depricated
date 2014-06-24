@@ -279,8 +279,8 @@ Xcls_DialogTemplateSelectXcls_VBox2* xcls_dialogtemplateselect_xcls_vbox2_constr
 GType xcls_dialogtemplateselect_xcls_button8_get_type (void) G_GNUC_CONST;
 Xcls_DialogTemplateSelectXcls_Button8* xcls_dialogtemplateselect_xcls_button8_new (Xcls_DialogTemplateSelect* _owner);
 Xcls_DialogTemplateSelectXcls_Button8* xcls_dialogtemplateselect_xcls_button8_construct (GType object_type, Xcls_DialogTemplateSelect* _owner);
-static gboolean __lambda8_ (Xcls_DialogTemplateSelect* self, GtkWidget* _self_, GdkEventAny* event);
-static gboolean ___lambda8__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self);
+static gboolean __lambda9_ (Xcls_DialogTemplateSelect* self, GtkWidget* _self_, GdkEventAny* event);
+static gboolean ___lambda9__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self);
 GType palete_palete_get_type (void) G_GNUC_CONST;
 GType js_render_node_get_type (void) G_GNUC_CONST;
 JsRenderNode* xcls_dialogtemplateselect_show (Xcls_DialogTemplateSelect* self, PaletePalete* pal, JsRenderNode* node);
@@ -346,7 +346,7 @@ static gpointer _g_object_ref0 (gpointer self) {
 }
 
 
-static gboolean __lambda8_ (Xcls_DialogTemplateSelect* self, GtkWidget* _self_, GdkEventAny* event) {
+static gboolean __lambda9_ (Xcls_DialogTemplateSelect* self, GtkWidget* _self_, GdkEventAny* event) {
 	gboolean result = FALSE;
 	GtkDialog* _tmp0_ = NULL;
 #line 52 "/home/alan/gitlive/app.Builder.js/Builder4/DialogTemplateSelect.vala"
@@ -365,9 +365,9 @@ static gboolean __lambda8_ (Xcls_DialogTemplateSelect* self, GtkWidget* _self_, 
 }
 
 
-static gboolean ___lambda8__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self) {
+static gboolean ___lambda9__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self) {
 	gboolean result;
-	result = __lambda8_ ((Xcls_DialogTemplateSelect*) self, _sender, event);
+	result = __lambda9_ ((Xcls_DialogTemplateSelect*) self, _sender, event);
 #line 52 "/home/alan/gitlive/app.Builder.js/Builder4/DialogTemplateSelect.vala"
 	return result;
 #line 374 "DialogTemplateSelect.vala.c"
@@ -461,7 +461,7 @@ Xcls_DialogTemplateSelect* xcls_dialogtemplateselect_construct (GType object_typ
 #line 52 "/home/alan/gitlive/app.Builder.js/Builder4/DialogTemplateSelect.vala"
 	_tmp15_ = self->el;
 #line 52 "/home/alan/gitlive/app.Builder.js/Builder4/DialogTemplateSelect.vala"
-	g_signal_connect_object ((GtkWidget*) _tmp15_, "delete-event", (GCallback) ___lambda8__gtk_widget_delete_event, self, 0);
+	g_signal_connect_object ((GtkWidget*) _tmp15_, "delete-event", (GCallback) ___lambda9__gtk_widget_delete_event, self, 0);
 #line 32 "/home/alan/gitlive/app.Builder.js/Builder4/DialogTemplateSelect.vala"
 	_g_object_unref0 (child_1);
 #line 32 "/home/alan/gitlive/app.Builder.js/Builder4/DialogTemplateSelect.vala"

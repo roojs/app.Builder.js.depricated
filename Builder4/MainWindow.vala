@@ -628,7 +628,7 @@ public class Xcls_MainWindow : Object
             // listeners 
             this.el.activate.connect(  () => {
                 print("pressed");
-                return true;
+                
             } );
         }
 

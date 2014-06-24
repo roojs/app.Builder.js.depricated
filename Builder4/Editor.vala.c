@@ -302,10 +302,10 @@ gpointer xcls_editor_value_get_xcls_vbox2 (const GValue* value);
 GType xcls_editor_xcls_vbox2_get_type (void) G_GNUC_CONST;
 Xcls_EditorXcls_VBox2* xcls_editor_xcls_vbox2_new (void);
 Xcls_EditorXcls_VBox2* xcls_editor_xcls_vbox2_construct (GType object_type);
-static gboolean __lambda62_ (Xcls_Editor* self, GdkEventConfigure* object);
-static gboolean ___lambda62__gtk_widget_configure_event (GtkWidget* _sender, GdkEventConfigure* event, gpointer self);
-static void __lambda63_ (Xcls_Editor* self);
-static void ___lambda63__gtk_widget_show (GtkWidget* _sender, gpointer self);
+static gboolean __lambda63_ (Xcls_Editor* self, GdkEventConfigure* object);
+static gboolean ___lambda63__gtk_widget_configure_event (GtkWidget* _sender, GdkEventConfigure* event, gpointer self);
+static void __lambda64_ (Xcls_Editor* self);
+static void ___lambda64__gtk_widget_show (GtkWidget* _sender, gpointer self);
 gboolean xcls_editor_save (Xcls_Editor* self);
 gboolean xcls_editor_xcls_righteditor_save (Xcls_EditorXcls_RightEditor* self);
 void xcls_editor_show_all (Xcls_Editor* self);
@@ -333,8 +333,8 @@ static void xcls_editor_xcls_toolbar3_finalize (Xcls_EditorXcls_Toolbar3* obj);
 enum  {
 	XCLS_EDITOR_XCLS_SAVE_BUTTON_DUMMY_PROPERTY
 };
-static void __lambda59_ (Xcls_EditorXcls_save_button* self);
-static void ___lambda59__gtk_tool_button_clicked (GtkToolButton* _sender, gpointer self);
+static void __lambda60_ (Xcls_EditorXcls_save_button* self);
+static void ___lambda60__gtk_tool_button_clicked (GtkToolButton* _sender, gpointer self);
 static void xcls_editor_xcls_save_button_finalize (Xcls_EditorXcls_save_button* obj);
 enum  {
 	XCLS_EDITOR_XCLS_RIGHTEDITOR_DUMMY_PROPERTY
@@ -349,16 +349,16 @@ enum  {
 };
 Xcls_EditorXcls_buffer* xcls_editor_xcls_buffer_new (void);
 Xcls_EditorXcls_buffer* xcls_editor_xcls_buffer_construct (GType object_type);
-static gboolean __lambda61_ (Xcls_EditorXcls_view* self, GdkEventKey* event);
+static gboolean __lambda62_ (Xcls_EditorXcls_view* self, GdkEventKey* event);
 void xcls_editor_xcls_view_save (Xcls_EditorXcls_view* self);
-static gboolean ___lambda61__gtk_widget_key_release_event (GtkWidget* _sender, GdkEventKey* event, gpointer self);
+static gboolean ___lambda62__gtk_widget_key_release_event (GtkWidget* _sender, GdkEventKey* event, gpointer self);
 void xcls_editor_xcls_view_load (Xcls_EditorXcls_view* self, const gchar* str);
 static void xcls_editor_xcls_view_finalize (Xcls_EditorXcls_view* obj);
 enum  {
 	XCLS_EDITOR_XCLS_BUFFER_DUMMY_PROPERTY
 };
-static void __lambda60_ (Xcls_EditorXcls_buffer* self);
-static void ___lambda60__gtk_text_buffer_changed (GtkTextBuffer* _sender, gpointer self);
+static void __lambda61_ (Xcls_EditorXcls_buffer* self);
+static void ___lambda61__gtk_text_buffer_changed (GtkTextBuffer* _sender, gpointer self);
 static void xcls_editor_xcls_buffer_finalize (Xcls_EditorXcls_buffer* obj);
 static void xcls_editor_finalize (Xcls_Editor* obj);
 
@@ -370,7 +370,7 @@ static gpointer _xcls_editor_ref0 (gpointer self) {
 }
 
 
-static gboolean __lambda62_ (Xcls_Editor* self, GdkEventConfigure* object) {
+static gboolean __lambda63_ (Xcls_Editor* self, GdkEventConfigure* object) {
 	gboolean result = FALSE;
 	Xcls_Editor* _tmp0_ = NULL;
 	GtkWindow* _tmp1_ = NULL;
@@ -404,16 +404,16 @@ static gboolean __lambda62_ (Xcls_Editor* self, GdkEventConfigure* object) {
 }
 
 
-static gboolean ___lambda62__gtk_widget_configure_event (GtkWidget* _sender, GdkEventConfigure* event, gpointer self) {
+static gboolean ___lambda63__gtk_widget_configure_event (GtkWidget* _sender, GdkEventConfigure* event, gpointer self) {
 	gboolean result;
-	result = __lambda62_ ((Xcls_Editor*) self, event);
+	result = __lambda63_ ((Xcls_Editor*) self, event);
 #line 59 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
 	return result;
 #line 413 "Editor.vala.c"
 }
 
 
-static void __lambda63_ (Xcls_Editor* self) {
+static void __lambda64_ (Xcls_Editor* self) {
 	gboolean _tmp0_ = FALSE;
 #line 69 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
 	_tmp0_ = self->pos;
@@ -439,9 +439,9 @@ static void __lambda63_ (Xcls_Editor* self) {
 }
 
 
-static void ___lambda63__gtk_widget_show (GtkWidget* _sender, gpointer self) {
+static void ___lambda64__gtk_widget_show (GtkWidget* _sender, gpointer self) {
 #line 68 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
-	__lambda63_ ((Xcls_Editor*) self);
+	__lambda64_ ((Xcls_Editor*) self);
 #line 446 "Editor.vala.c"
 }
 
@@ -525,11 +525,11 @@ Xcls_Editor* xcls_editor_construct (GType object_type) {
 #line 59 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
 	_tmp11_ = self->el;
 #line 59 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
-	g_signal_connect ((GtkWidget*) _tmp11_, "configure-event", (GCallback) ___lambda62__gtk_widget_configure_event, self);
+	g_signal_connect ((GtkWidget*) _tmp11_, "configure-event", (GCallback) ___lambda63__gtk_widget_configure_event, self);
 #line 68 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
 	_tmp12_ = self->el;
 #line 68 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
-	g_signal_connect ((GtkWidget*) _tmp12_, "show", (GCallback) ___lambda63__gtk_widget_show, self);
+	g_signal_connect ((GtkWidget*) _tmp12_, "show", (GCallback) ___lambda64__gtk_widget_show, self);
 #line 39 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
 	_xcls_editor_xcls_vbox2_unref0 (child_0);
 #line 39 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
@@ -1201,7 +1201,7 @@ static gpointer _xcls_editor_xcls_save_button_ref0 (gpointer self) {
 }
 
 
-static void __lambda59_ (Xcls_EditorXcls_save_button* self) {
+static void __lambda60_ (Xcls_EditorXcls_save_button* self) {
 	Xcls_Editor* _tmp0_ = NULL;
 	Xcls_EditorXcls_RightEditor* _tmp1_ = NULL;
 #line 221 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
@@ -1214,9 +1214,9 @@ static void __lambda59_ (Xcls_EditorXcls_save_button* self) {
 }
 
 
-static void ___lambda59__gtk_tool_button_clicked (GtkToolButton* _sender, gpointer self) {
+static void ___lambda60__gtk_tool_button_clicked (GtkToolButton* _sender, gpointer self) {
 #line 220 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
-	__lambda59_ ((Xcls_EditorXcls_save_button*) self);
+	__lambda60_ ((Xcls_EditorXcls_save_button*) self);
 #line 1221 "Editor.vala.c"
 }
 
@@ -1248,7 +1248,7 @@ Xcls_EditorXcls_save_button* xcls_editor_xcls_save_button_construct (GType objec
 #line 220 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
 	_tmp3_ = self->el;
 #line 220 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
-	g_signal_connect (_tmp3_, "clicked", (GCallback) ___lambda59__gtk_tool_button_clicked, self);
+	g_signal_connect (_tmp3_, "clicked", (GCallback) ___lambda60__gtk_tool_button_clicked, self);
 #line 210 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
 	return self;
 #line 1255 "Editor.vala.c"
@@ -1907,7 +1907,7 @@ static gpointer _xcls_editor_xcls_view_ref0 (gpointer self) {
 }
 
 
-static gboolean __lambda61_ (Xcls_EditorXcls_view* self, GdkEventKey* event) {
+static gboolean __lambda62_ (Xcls_EditorXcls_view* self, GdkEventKey* event) {
 	gboolean result = FALSE;
 	gboolean _tmp0_ = FALSE;
 	GdkEventKey* _tmp1_ = NULL;
@@ -1955,9 +1955,9 @@ static gboolean __lambda61_ (Xcls_EditorXcls_view* self, GdkEventKey* event) {
 }
 
 
-static gboolean ___lambda61__gtk_widget_key_release_event (GtkWidget* _sender, GdkEventKey* event, gpointer self) {
+static gboolean ___lambda62__gtk_widget_key_release_event (GtkWidget* _sender, GdkEventKey* event, gpointer self) {
 	gboolean result;
-	result = __lambda61_ ((Xcls_EditorXcls_view*) self, event);
+	result = __lambda62_ ((Xcls_EditorXcls_view*) self, event);
 #line 327 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
 	return result;
 #line 1964 "Editor.vala.c"
@@ -2025,7 +2025,7 @@ Xcls_EditorXcls_view* xcls_editor_xcls_view_construct (GType object_type) {
 #line 327 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
 	_tmp10_ = self->el;
 #line 327 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
-	g_signal_connect ((GtkWidget*) _tmp10_, "key-release-event", (GCallback) ___lambda61__gtk_widget_key_release_event, self);
+	g_signal_connect ((GtkWidget*) _tmp10_, "key-release-event", (GCallback) ___lambda62__gtk_widget_key_release_event, self);
 #line 311 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
 	_xcls_editor_xcls_buffer_unref0 (child_0);
 #line 311 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
@@ -2463,7 +2463,7 @@ static gpointer _xcls_editor_xcls_buffer_ref0 (gpointer self) {
 }
 
 
-static void __lambda60_ (Xcls_EditorXcls_buffer* self) {
+static void __lambda61_ (Xcls_EditorXcls_buffer* self) {
 	gboolean _tmp0_ = FALSE;
 	Xcls_Editor* _tmp4_ = NULL;
 #line 427 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
@@ -2494,9 +2494,9 @@ static void __lambda60_ (Xcls_EditorXcls_buffer* self) {
 }
 
 
-static void ___lambda60__gtk_text_buffer_changed (GtkTextBuffer* _sender, gpointer self) {
+static void ___lambda61__gtk_text_buffer_changed (GtkTextBuffer* _sender, gpointer self) {
 #line 425 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
-	__lambda60_ ((Xcls_EditorXcls_buffer*) self);
+	__lambda61_ ((Xcls_EditorXcls_buffer*) self);
 #line 2501 "Editor.vala.c"
 }
 
@@ -2526,7 +2526,7 @@ Xcls_EditorXcls_buffer* xcls_editor_xcls_buffer_construct (GType object_type) {
 #line 425 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
 	_tmp3_ = self->el;
 #line 425 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
-	g_signal_connect ((GtkTextBuffer*) _tmp3_, "changed", (GCallback) ___lambda60__gtk_text_buffer_changed, self);
+	g_signal_connect ((GtkTextBuffer*) _tmp3_, "changed", (GCallback) ___lambda61__gtk_text_buffer_changed, self);
 #line 415 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
 	return self;
 #line 2533 "Editor.vala.c"

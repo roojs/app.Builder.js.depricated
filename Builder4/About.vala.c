@@ -71,10 +71,10 @@ enum  {
 };
 Xcls_AboutDialog1* xcls_aboutdialog1_new (void);
 Xcls_AboutDialog1* xcls_aboutdialog1_construct (GType object_type);
-static void __lambda51_ (Xcls_AboutDialog1* self, gint rid);
-static void ___lambda51__gtk_dialog_response (GtkDialog* _sender, gint response_id, gpointer self);
-static gboolean __lambda52_ (Xcls_AboutDialog1* self, GtkWidget* _self_, GdkEventAny* event);
-static gboolean ___lambda52__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self);
+static void __lambda52_ (Xcls_AboutDialog1* self, gint rid);
+static void ___lambda52__gtk_dialog_response (GtkDialog* _sender, gint response_id, gpointer self);
+static gboolean __lambda53_ (Xcls_AboutDialog1* self, GtkWidget* _self_, GdkEventAny* event);
+static gboolean ___lambda53__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self);
 void xcls_aboutdialog1_show_all (Xcls_AboutDialog1* self);
 static void xcls_aboutdialog1_finalize (Xcls_AboutDialog1* obj);
 
@@ -86,7 +86,7 @@ static gpointer _xcls_aboutdialog1_ref0 (gpointer self) {
 }
 
 
-static void __lambda51_ (Xcls_AboutDialog1* self, gint rid) {
+static void __lambda52_ (Xcls_AboutDialog1* self, gint rid) {
 	GtkAboutDialog* _tmp0_ = NULL;
 #line 46 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
 	_tmp0_ = self->el;
@@ -96,14 +96,14 @@ static void __lambda51_ (Xcls_AboutDialog1* self, gint rid) {
 }
 
 
-static void ___lambda51__gtk_dialog_response (GtkDialog* _sender, gint response_id, gpointer self) {
+static void ___lambda52__gtk_dialog_response (GtkDialog* _sender, gint response_id, gpointer self) {
 #line 45 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
-	__lambda51_ ((Xcls_AboutDialog1*) self, response_id);
+	__lambda52_ ((Xcls_AboutDialog1*) self, response_id);
 #line 103 "About.vala.c"
 }
 
 
-static gboolean __lambda52_ (Xcls_AboutDialog1* self, GtkWidget* _self_, GdkEventAny* event) {
+static gboolean __lambda53_ (Xcls_AboutDialog1* self, GtkWidget* _self_, GdkEventAny* event) {
 	gboolean result = FALSE;
 	GtkAboutDialog* _tmp0_ = NULL;
 #line 49 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
@@ -122,9 +122,9 @@ static gboolean __lambda52_ (Xcls_AboutDialog1* self, GtkWidget* _self_, GdkEven
 }
 
 
-static gboolean ___lambda52__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self) {
+static gboolean ___lambda53__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self) {
 	gboolean result;
-	result = __lambda52_ ((Xcls_AboutDialog1*) self, _sender, event);
+	result = __lambda53_ ((Xcls_AboutDialog1*) self, _sender, event);
 #line 49 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
 	return result;
 #line 131 "About.vala.c"
@@ -188,11 +188,11 @@ Xcls_AboutDialog1* xcls_aboutdialog1_construct (GType object_type) {
 #line 45 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
 	_tmp8_ = self->el;
 #line 45 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
-	g_signal_connect ((GtkDialog*) _tmp8_, "response", (GCallback) ___lambda51__gtk_dialog_response, self);
+	g_signal_connect ((GtkDialog*) _tmp8_, "response", (GCallback) ___lambda52__gtk_dialog_response, self);
 #line 49 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
 	_tmp9_ = self->el;
 #line 49 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
-	g_signal_connect ((GtkWidget*) _tmp9_, "delete-event", (GCallback) ___lambda52__gtk_widget_delete_event, self);
+	g_signal_connect ((GtkWidget*) _tmp9_, "delete-event", (GCallback) ___lambda53__gtk_widget_delete_event, self);
 #line 29 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
 	return self;
 #line 199 "About.vala.c"
