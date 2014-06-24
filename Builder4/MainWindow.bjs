@@ -85,7 +85,7 @@
                                             "|xns": "GtkClutter",
                                             "items": [
                                                 {
-                                                    "|.bool:is_fullsize": "",
+                                                    "|.bool:is_fullsize": "false   ",
                                                     "id": "rooview",
                                                     "pack": "get_stage().add_child",
                                                     "xtype": "Actor",

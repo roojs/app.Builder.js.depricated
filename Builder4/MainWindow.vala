@@ -526,7 +526,7 @@ public class Xcls_MainWindow : Object
         }
 
         // userdefined functions 
-        public .bool is_fullsize
+        public .bool is_fullsizefalse   
 
         // skip id - not pipe 
 
