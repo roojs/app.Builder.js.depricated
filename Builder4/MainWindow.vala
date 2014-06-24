@@ -643,7 +643,7 @@ public class Xcls_MainWindow : Object
                     el.save_easing_state();
               
                 if (_this.rooview.is_fullsize) { 
-                    _this.leftpane.lastWidth = _this.leftpane.get_position();
+                    _this.leftpane.lastWidth = _this.leftpane.el.get_position();
                     _this.leftpane.el.hide();
                     // rotate y 180..
                     el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 360.0f);
