@@ -108,6 +108,10 @@ void rooWindowClutter()
 	left_props.ref();
 	w.props.el.pack_start(left_props.el,true, true,0);
 
+	 var rv =new Xcls_WindowRooView();
+
+	w.rooview.el.get_widget().add(rv.el);
+	
 	
     w.el.show_all();
  
