@@ -28,6 +28,7 @@ public class Xcls_MainWindow : Object
     public Xcls_props props;
     public Xcls_clutterembed clutterembed;
     public Xcls_rooview rooview;
+    public Xcls_rooview rooview;
 
         // my vars
     public Xcls_WindowLeftTree left_tree;
@@ -460,6 +461,9 @@ public class Xcls_MainWindow : Object
             var child_0 = new Xcls_rooview(_this);
             child_0.ref();
             this.el.get_stage().add_child (  child_0.el  );
+            var child_1 = new Xcls_rooview(_this);
+            child_1.ref();
+            this.el.get_stage().add_child (  child_1.el  );
 
             // init method 
             var stage = this.el.get_stage();
@@ -479,6 +483,59 @@ public class Xcls_MainWindow : Object
         // skip |xns - no return type
 
         // skip items - not pipe 
+
+        // skip xvala_cls - not pipe 
+
+        // skip xvala_xcls - not pipe 
+
+        // skip xvala_id - not pipe 
+    }
+    public class Xcls_rooview : Object 
+    {
+        public GtkClutter.Actor el;
+        private Xcls_MainWindow  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_rooview(Xcls_MainWindow _owner)
+        {
+            _this = _owner;
+            _this.rooview = this;
+            this.el = new GtkClutter.Actor();
+
+            // my vars
+
+            // set gobject values
+
+            // init method 
+            {
+                this.el.add_constraint(
+                    new Clutter.AlignConstraint(
+                        _this.clutterembed.el.get_stage(), 
+                        Clutter.AlignAxis.BOTH,
+                        0.5f
+                    )
+                );
+                    
+                this.el.set_position(100,100);
+                this.el.set_pivot_point(0.5f,0.5f);
+                this.el.set_size(500,500);
+            }
+        }
+
+        // userdefined functions 
+
+        // skip id - not pipe 
+
+        // skip pack - not pipe 
+
+        // skip xtype - not pipe 
+
+        // skip |init - already used 
+
+        // skip |xns - no return type
 
         // skip xvala_cls - not pipe 
 
