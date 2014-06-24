@@ -67,7 +67,6 @@ MainWindow=new XObject({
                             items : [
                                 {
                                     xtype: Gtk.VPaned,
-                                    id : "leftpane",
                                     pack : "pack_start,false,true,0",
                                     items : [
                                         {
