@@ -108,8 +108,8 @@ void rooWindowClutter()
 	left_props.ref();
 	w.props.el.pack_start(left_props.el,true, true,0);
 
-	 var rv =new Xcls_WindowRooView();
-
+	var rv =new Xcls_WindowRooView();
+	rv.ref();
 	((Gtk.Container)(w.rooview.el.get_widget())).add(rv.el);
 	
 	
