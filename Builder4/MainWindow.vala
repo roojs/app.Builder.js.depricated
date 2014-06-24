@@ -561,6 +561,8 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // set gobject values
+            var child_0 = new Xcls_Button13(_this);
+            child_0.ref();
 
             // init method 
             {
@@ -590,6 +592,41 @@ public class Xcls_MainWindow : Object
         // skip |init - already used 
 
         // skip |xns - no return type
+
+        // skip items - not pipe 
+
+        // skip xvala_cls - not pipe 
+
+        // skip xvala_xcls - not pipe 
+
+        // skip xvala_id - not pipe 
+    }
+    public class Xcls_Button13 : Object 
+    {
+        public Gtk.Button el;
+        private Xcls_MainWindow  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_Button13(Xcls_MainWindow _owner)
+        {
+            _this = _owner;
+            this.el = new Gtk.Button();
+
+            // my vars
+
+            // set gobject values
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+
+        // skip xtype - not pipe 
+
+        // skip pack - not pipe 
 
         // skip xvala_cls - not pipe 
 
