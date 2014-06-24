@@ -143,11 +143,11 @@ public class Xcls_MainWindow : Object
 
         // skip id - not pipe 
 
+        // skip pack - not pipe 
+
         // skip xtype - not pipe 
 
         // skip |xns - no return type
-
-        // skip pack - not pipe 
 
         // skip items - not pipe 
 

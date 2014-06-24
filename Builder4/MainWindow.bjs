@@ -26,9 +26,9 @@
             "items": [
                 {
                     "id": "vbox",
+                    "pack": "add",
                     "xtype": "VBox",
                     "|xns": "Gtk",
-                    "pack": "add",
                     "items": [
                         {
                             "id": "topbar",
