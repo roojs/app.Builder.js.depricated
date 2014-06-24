@@ -19,7 +19,7 @@ MainWindow=new XObject({
             //this.get('/RightPalete').hide();
             //this.get('/BottomPane').el.hide();
             //this.get('/Editor').el.show_all();
-        
+         
         },
         delete_event : (   event) => {
             return false;
@@ -45,7 +45,7 @@ MainWindow=new XObject({
         {
             xtype: Gtk.VBox,
             id : "vbox",
-            pack : "pack",
+            pack : "add",
             items : [
                 {
                     xtype: Gtk.HBox,

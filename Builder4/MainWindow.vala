@@ -46,7 +46,7 @@ public class Xcls_MainWindow : Object
         this.el.default_width = 800;
         var child_0 = new Xcls_vbox(_this);
         child_0.ref();
-        this.el.pack (  child_0.el  );
+        this.el.add (  child_0.el  );
 
         // init method 
          
@@ -63,7 +63,7 @@ public class Xcls_MainWindow : Object
             //this.get('/RightPalete').hide();
             //this.get('/BottomPane').el.hide();
             //this.get('/Editor').el.show_all();
-        
+         
         } );
         this.el.delete_event.connect(   (   event) => {
             return false;
