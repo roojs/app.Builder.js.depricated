@@ -53,6 +53,7 @@
                                     "|xns": "Gtk",
                                     "items": [
                                         {
+                                            "pack": "add",
                                             "id": "clutterembed",
                                             "xtype": "Embed",
                                             "|xns": "GtkClutter",

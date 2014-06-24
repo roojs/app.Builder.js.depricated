@@ -67,6 +67,7 @@ MainWindow=new XObject({
                             items : [
                                 {
                                     xtype: GtkClutter.Embed,
+                                    pack : "add",
                                     id : "clutterembed",
                                     items : [
                                         {
