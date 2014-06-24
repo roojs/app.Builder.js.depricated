@@ -619,6 +619,11 @@ public class Xcls_MainWindow : Object
 
             // set gobject values
             this.el.label = "P";
+
+            // init method 
+            {
+                ((Gtk.Container)(w.projectbutton.el.get_widget())).add(this.el);
+            }
         }
 
         // userdefined functions 
@@ -628,6 +633,8 @@ public class Xcls_MainWindow : Object
         // skip pack - not pipe 
 
         // skip xtype - not pipe 
+
+        // skip |init - already used 
 
         // skip |xns - no return type
 

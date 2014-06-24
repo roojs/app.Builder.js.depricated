@@ -134,7 +134,10 @@ MainWindow=new XObject({
                                                 {
                                                     xtype: Gtk.Button,
                                                     label : "P",
-                                                    pack : false
+                                                    pack : false,
+                                                    init : {
+                                                        ((Gtk.Container)(w.projectbutton.el.get_widget())).add(this.el);
+                                                    }
                                                 }
                                             ]
                                         }
