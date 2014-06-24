@@ -44,7 +44,7 @@ public class Xcls_LeftProps : Object
     {
         _this = this;
         WindowLeftProps = this;
-        this.el = new Gtk.VBox( , 0 );
+        this.el = new Gtk.VBox( false   , 0 );
 
         // my vars
 
