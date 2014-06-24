@@ -534,6 +534,7 @@ public class Xcls_MainWindow : Object
                 
                 this.el.set_size(_this.clutterembed.get_stage().width-50.,
                         _this.clutterembed.get_stage().height);
+                        
             }
         }
 
