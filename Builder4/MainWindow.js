@@ -48,6 +48,7 @@ MainWindow=new XObject({
             items : [
                 {
                     xtype: Gtk.HBox,
+                    pack : "",
                     id : "topbar"
                 },
                 {

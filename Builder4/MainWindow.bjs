@@ -30,6 +30,7 @@
                     "|xns": "Gtk",
                     "items": [
                         {
+                            "pack": "",
                             "id": "topbar",
                             "xtype": "HBox",
                             "|xns": "Gtk"
