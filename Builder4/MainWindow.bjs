@@ -56,7 +56,7 @@
                                             "id": "clutterembed",
                                             "pack": "add",
                                             "xtype": "Embed",
-                                            "|init": "var stage = this.el.get_stage();\nstage.set_background_color(Color.from_string(\"#fff\");\n",
+                                            "|init": "var stage = this.el.get_stage();\nstage.set_background_color(new Color.from_string(\"#fff\"));\n",
                                             "|xns": "GtkClutter",
                                             "items": [
                                                 {

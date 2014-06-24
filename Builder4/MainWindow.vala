@@ -331,7 +331,7 @@ public class Xcls_MainWindow : Object
 
             // init method 
             var stage = this.el.get_stage();
-            stage.set_background_color(Color.from_string("#fff");
+            stage.set_background_color(new Color.from_string("#fff"));
         }
 
         // userdefined functions 
