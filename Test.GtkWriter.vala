@@ -114,7 +114,10 @@ void rooWindowClutter()
 	
 	
     w.el.show_all();
- 
+    var tl = new Clutter.Timeline(6000);
+	tl.set_repeat_count(-1);
+	tl.start();
+	tl.ref();
 	
 	
 }
