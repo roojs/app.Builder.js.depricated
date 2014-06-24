@@ -42,7 +42,7 @@
                             "|xns": "Gtk",
                             "items": [
                                 {
-                                    "xpack": "pack",
+                                    "pack": "add1",
                                     "xtype": "VBox",
                                     "|xns": "Gtk"
                                 },

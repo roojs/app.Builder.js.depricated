@@ -212,7 +212,7 @@ public class Xcls_MainWindow : Object
             this.el.position = 400;
             var child_0 = new Xcls_VBox5(_this);
             child_0.ref();
-            this.el.add (  child_0.el  );
+            this.el.add1 (  child_0.el  );
             var child_1 = new Xcls_VBox6(_this);
             child_1.ref();
             this.el.add (  child_1.el  );
@@ -255,7 +255,7 @@ public class Xcls_MainWindow : Object
 
         // userdefined functions 
 
-        // skip xpack - not pipe 
+        // skip pack - not pipe 
 
         // skip xtype - not pipe 
 
