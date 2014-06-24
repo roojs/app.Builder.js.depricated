@@ -537,13 +537,13 @@ public class Xcls_MainWindow : Object
 
         // userdefined functions 
 
+        // skip .bool:is_fullsize - already used 
+
         // skip id - not pipe 
 
         // skip pack - not pipe 
 
         // skip xtype - not pipe 
-
-        // skip .bool:is_fullsize - already used 
 
         // skip |init - already used 
 
