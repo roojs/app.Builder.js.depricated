@@ -509,7 +509,7 @@ public class Xcls_MainWindow : Object
             {
                 this.el.add_constraint(
                     new Clutter.AlignConstraint(
-                        _this.clutterembed.el, 
+                        _this.clutterembed.el.get_stage(), 
                         Clutter.AlignAxis.BOTH,
                         0.5f
                     )
