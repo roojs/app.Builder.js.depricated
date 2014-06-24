@@ -96,12 +96,13 @@ MainWindow=new XObject({
                                     items : [
                                         {
                                             xtype: GtkClutter.Actor,
+                                            id : "rooview",
+                                            pack : false,
                                             init : {
                                                 this.el.set_position(100,100);
                                                 this.el.set_pivot_point(0.5f,0.5f);
                                                 
-                                            },
-                                            pack : false
+                                            }
                                         }
                                     ]
                                 }

@@ -27,6 +27,7 @@ public class Xcls_MainWindow : Object
     public Xcls_tree tree;
     public Xcls_props props;
     public Xcls_clutterembed clutterembed;
+    public Xcls_rooview rooview;
 
         // my vars
     public Xcls_WindowLeftTree left_tree;
@@ -455,7 +456,7 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_Actor11(_this);
+            var child_0 = new Xcls_rooview(_this);
             child_0.ref();
 
             // init method 
@@ -483,7 +484,7 @@ public class Xcls_MainWindow : Object
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_Actor11 : Object 
+    public class Xcls_rooview : Object 
     {
         public GtkClutter.Actor el;
         private Xcls_MainWindow  _this;
@@ -492,9 +493,10 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_Actor11(Xcls_MainWindow _owner)
+        public Xcls_rooview(Xcls_MainWindow _owner)
         {
             _this = _owner;
+            _this.rooview = this;
             this.el = new GtkClutter.Actor();
 
             // my vars
@@ -511,11 +513,13 @@ public class Xcls_MainWindow : Object
 
         // userdefined functions 
 
-        // skip |init - already used 
+        // skip id - not pipe 
 
         // skip pack - not pipe 
 
         // skip xtype - not pipe 
+
+        // skip |init - already used 
 
         // skip |xns - no return type
 
