@@ -52,6 +52,7 @@
                                     "|xns": "Gtk",
                                     "items": [
                                         {
+                                            ".int:lastWidth": 0,
                                             "id": "leftpane",
                                             "pack": "pack_start,false,true,0",
                                             "xtype": "VPaned",

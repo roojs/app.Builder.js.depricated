@@ -297,6 +297,7 @@ public class Xcls_MainWindow : Object
 
 
             // my vars
+        public int lastWidth;
 
             // ctor 
         public Xcls_leftpane(Xcls_MainWindow _owner)
@@ -306,6 +307,7 @@ public class Xcls_MainWindow : Object
             this.el = new Gtk.VPaned();
 
             // my vars
+            this.lastWidth = 0;
 
             // set gobject values
             var child_0 = new Xcls_tree(_this);
@@ -317,6 +319,8 @@ public class Xcls_MainWindow : Object
         }
 
         // userdefined functions 
+
+        // skip .int:lastWidth - already used 
 
         // skip id - not pipe 
 
