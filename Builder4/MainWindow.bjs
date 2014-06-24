@@ -31,10 +31,10 @@
                     "|xns": "Gtk",
                     "items": [
                         {
-                            "|height_request": "",
                             "id": "topbar",
                             "pack": "pack_start,false,true,0",
                             "xtype": "HBox",
+                            "|height_request": 20,
                             "|xns": "Gtk"
                         },
                         {

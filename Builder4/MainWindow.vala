@@ -175,18 +175,18 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // set gobject values
-            this.el.height_request = ;
+            this.el.height_request = 20;
         }
 
         // userdefined functions 
-
-        // skip |height_request - already used 
 
         // skip id - not pipe 
 
         // skip pack - not pipe 
 
         // skip xtype - not pipe 
+
+        // skip |height_request - already used 
 
         // skip |xns - no return type
 
