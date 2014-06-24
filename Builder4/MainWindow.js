@@ -144,7 +144,8 @@ MainWindow=new XObject({
                                                             el.save_easing_state();
                                                                 
                                                             // rotate y 180..
-                                                            el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 180.0f);
+                                                            el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 360.0f);
+                                                            el.set_scale(0.2f,0.2f);
                                                             
                                                             el.restore_easing_state();
                                                             
