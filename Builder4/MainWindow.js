@@ -110,7 +110,9 @@ MainWindow=new XObject({
                                                     
                                                 //this.el.set_position(100,100);
                                                 this.el.set_pivot_point(0.5f,0.5f);
-                                                this.el.set_size(500,500);
+                                                
+                                                this.el.set_size(_this.clutterembed.get_stage().width-50.,
+                                                        _this.clutterembed.get_stage().height);
                                             }
                                         },
                                         {
