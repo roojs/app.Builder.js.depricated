@@ -50,7 +50,6 @@ ClutterFiles=new XObject({
                     layout_manager : {
                         xtype: Clutter.BoxLayout,
                         spacing : 4,
-                        xpack : "",
                         init : this.el.set_size(100,100);,
                         orientation : Clutter.Orientation.VERTICAL
                     }
