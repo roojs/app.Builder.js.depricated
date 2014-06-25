@@ -103,6 +103,8 @@ public class Xcls_ClutterFiles : Object
 
 
             // my vars
+        public Xcls_fileitem fileitem;
+        public Xcls_fileitem fileitem;
 
             // ctor 
         public Xcls_fileitem(Xcls_ClutterFiles _owner , string fname, string title )
