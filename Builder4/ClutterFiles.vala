@@ -100,7 +100,9 @@ public class Xcls_ClutterFiles : Object
             // my vars
 
             // set gobject values
+            this.el.column_spacing = 100;
             this.el.homogeneous = true;
+            this.el.row_spacing = 120;
         }
 
         // userdefined functions 

@@ -20,8 +20,10 @@
                     "items": [
                         {
                             "*prop": "layout_manager",
-                            "|homogeneous": "true",
+                            "column_spacing": 100,
+                            "row_spacing": 120,
                             "xtype": "FlowLayout",
+                            "|homogeneous": "true",
                             "|orientation": "Clutter.FlowOrientation.HORIZONTAL",
                             "|xns": "Clutter"
                         },
