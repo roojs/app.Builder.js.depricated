@@ -43,7 +43,7 @@
                                     "|xns": "Clutter"
                                 },
                                 {
-                                    "*args": "",
+                                    "*args": "string name",
                                     "pack": false,
                                     "x_align": "Clutter.ActorAlign.START",
                                     "x_expand": "true",
