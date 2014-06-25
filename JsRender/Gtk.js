@@ -546,7 +546,7 @@ Gtk = XObject.define(
                 for(var i =0;i<item.items.length;i++) {
                     var ci = item.items[i];
                     if (ci.xvala_id[0] == '*') {
-                        contine; // skip generation of children?
+                        continue; // skip generation of children?
                         
                     }
                     strbuilder(ipad + "var child_" + i + " = new " + ci.xvala_xcls + "(_this);\n" );
