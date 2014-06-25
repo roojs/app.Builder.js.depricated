@@ -126,11 +126,7 @@ public class Xcls_ClutterFiles : Object
             this.title =  child_2;
 
             // init method 
-            function() {
-                XObject.prototype.init.call(this);
-            }
-
-            // listeners 
+            this.el.set_size(100,100);
         }
 
         // userdefined functions 

@@ -24,9 +24,7 @@ ClutterFiles=new XObject({
                     '*args' : "string fname, string title  ",
                     id : "*fileitem",
                     pack : false,
-                    init : function() {
-                        XObject.prototype.init.call(this);
-                    },
+                    init : this.el.set_size(100,100);,
                     items : [
                         {
                             xtype: Clutter.Texture,
