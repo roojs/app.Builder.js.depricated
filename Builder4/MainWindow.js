@@ -44,7 +44,7 @@ MainWindow=new XObject({
     
         el.restore_easing_state();
             
-        print("clicked");
+        print("show view browsing");
     },
     type : Gtk.WindowType.TOPLEVEL,
     'void:setTitle' : (string str) {
