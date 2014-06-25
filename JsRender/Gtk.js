@@ -415,6 +415,7 @@ Gtk = XObject.define(
                 citems[k] = true; 
                 
             }
+            // if id of child is '+' then it's a property of this..
             
             if (typeof(item.items) != 'undefined') {
                 for(var i =0;i<item.items.length;i++) {
@@ -424,7 +425,6 @@ Gtk = XObject.define(
                         
                     }
                     strbuilder(pad + "public " + item.xvala_xcls + " " + item.xvala_id.substring(1) + ";\n");
-
                                
                     
                 }
