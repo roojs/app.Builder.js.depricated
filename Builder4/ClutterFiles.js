@@ -27,7 +27,9 @@ ClutterFiles=new XObject({
                 default:
                     return false;
             }
-            y = float.max(0, y);
+            // range of scroll -- can go up -- eg.. -ve value.
+            
+            y = float.min(0, y);
            // y = float.min(0, y);    //??
             print("scroll event of %f  - new y = %f ".printf(event.y, y));
             this.filelayout.el.y = y;
