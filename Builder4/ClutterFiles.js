@@ -13,6 +13,9 @@ ClutterFiles=new XObject({
     xtype: Clutter.ScrollActor,
     id : "ClutterFiles",
     scroll_mode : "Clutter.ScrollMode.VERTICAL",
+     : function() {
+        
+    },
     'void:show' : (Project.Project pr) {
         // list all the files, and create new Xcls_fileitem for each one.
         
