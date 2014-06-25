@@ -143,7 +143,7 @@ public class Xcls_ClutterFiles : Object
             // my vars
 
             // ctor 
-        public Xcls_fileitem(Xcls_ClutterFiles _owner , string fname, string title  )
+        public Xcls_fileitem(Xcls_ClutterFiles _owner , string fname, string title)
         {
             _this = _owner;
             this.el = new Clutter.Actor();
