@@ -383,6 +383,9 @@ Gtk = XObject.define(
                     if (this.vitems[i].xvala_id[0] == '*') {
                         continue;
                     }
+                    if (this.vitems[i].xvala_id[0] == '+') {
+                        continue;
+                    }
                     strbuilder(pad + "public " + this.vitems[i].xvala_xcls + " " + this.vitems[i].xvala_id + ";\n");
                 }
                 
