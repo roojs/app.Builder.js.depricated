@@ -12,8 +12,25 @@ XObject = imports.XObject.XObject;
 ClutterFiles=new XObject({
     xtype: Clutter.ScrollActor,
     listeners : {
-        scroll_event : function (self, event) {
+        scroll_event : ( event)  => {
         
+            print("scroll event");
+            var y = this.filelayout.el.y;
+            var dir = event.direction;
+            switch (dir) {
+                case Clutter.ScrollDirection.UP:
+                    y += event.y;
+                    break;
+                case Clutter.ScrollDirection.DOWN:
+                    y -= event.y;
+                    break;
+                default:
+                    return false;
+            }
+            print("scroll event of %f  - new y = %f ".printf(event.y, y));
+            this.filelayout.el.y = y;
+            return true;
+                
         }
     },
     id : "ClutterFiles",

@@ -43,8 +43,25 @@ public class Xcls_ClutterFiles : Object
         this.el.add_child (  child_0.el  );
 
         // listeners 
-        this.el.scroll_event.connect( function (self, event) {
+        this.el.scroll_event.connect( ( event)  => {
         
+            print("scroll event");
+            var y = this.filelayout.el.y;
+            var dir = event.direction;
+            switch (dir) {
+                case Clutter.ScrollDirection.UP:
+                    y += event.y;
+                    break;
+                case Clutter.ScrollDirection.DOWN:
+                    y -= event.y;
+                    break;
+                default:
+                    return false;
+            }
+            print("scroll event of %f  - new y = %f ".printf(event.y, y));
+            this.filelayout.el.y = y;
+            return true;
+                
         } );
     }
 

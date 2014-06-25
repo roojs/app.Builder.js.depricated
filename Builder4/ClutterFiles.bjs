@@ -7,7 +7,7 @@
     "items": [
         {
             "listeners": {
-                "scroll_event": "function (self, event) {\n\n}"
+                "scroll_event": "( event)  => {\n\n    print(\"scroll event\");\n    var y = this.filelayout.el.y;\n    var dir = event.direction;\n    switch (dir) {\n        case Clutter.ScrollDirection.UP:\n            y += event.y;\n            break;\n        case Clutter.ScrollDirection.DOWN:\n            y -= event.y;\n            break;\n        default:\n            return false;\n    }\n    print(\"scroll event of %f  - new y = %f \".printf(event.y, y));\n    this.filelayout.el.y = y;\n    return true;\n        \n}"
             },
             "id": "ClutterFiles",
             "scroll_mode": "Clutter.ScrollMode.VERTICAL",
