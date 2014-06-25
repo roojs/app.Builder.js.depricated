@@ -373,7 +373,7 @@ Gtk = XObject.define(
                 
                 //public bool paused = false;
                 //public static StatusIconA statusicon;
-            if (!depth) {
+            
                 //strbuilder(pad + "public static " + xcls + "  _this;\n");
                 for(var i=1;i < this.vitems.length; i++) {
                     if (this.vitems[i].xvala_id  === false) {
@@ -383,7 +383,13 @@ Gtk = XObject.define(
                     if (this.vitems[i].xvala_id[0] == '*') {
                         continue;
                     }
-                    strbuilder(pad + "public " + this.vitems[i].xvala_xcls + " " + this.vitems[i].xvala_id + ";\n");
+                    if (!depth) {
+                        strbuilder(pad + "public " + this.vitems[i].xvala_xcls + " " + this.vitems[i].xvala_id + ";\n");
+                        continue;
+                    }
+                    if (this.vitems[i].xvala_id[0] == '+') {
+                        strbuilder(pad + "public " + this.vitems[i].xvala_xcls + " " + this.vitems[i].xvala_id.substring(1) + ";\n");
+                    }
                 }
                 
             }
