@@ -62,7 +62,7 @@
                                     "|margin_right": 5,
                                     "pack": "add_child",
                                     "xtype": "Texture",
-                                    "margin_left": 5,
+                                    "|margin_left": 5,
                                     "|x_align": "Clutter.ActorAlign.START",
                                     "|x_expand": "true",
                                     "|xns": "Clutter",
