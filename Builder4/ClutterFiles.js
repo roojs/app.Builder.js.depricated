@@ -13,7 +13,7 @@ ClutterFiles=new XObject({
     xtype: Clutter.ScrollActor,
     id : "ClutterFiles",
     scroll_mode : "Clutter.ScrollMode.VERTICAL",
-    resize : (float w, float h) {
+    set_size : (float w, float h) {
         _this.filelayout.el.layout_manager.max_column_width = w;
        this.el.set_size(this.el.get_stage().width-50,
                             this.el.get_stage().height);
