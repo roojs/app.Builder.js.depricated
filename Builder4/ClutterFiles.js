@@ -26,6 +26,7 @@ ClutterFiles=new XObject({
                             '*args' : "string fname",
                             '*nocreate' : 1,
                             ctor : "from_file(fname)",
+                            id : "image",
                             pack : false,
                             x_align : "Clutter.ActorAlign.START",
                             x_expand : "true",
