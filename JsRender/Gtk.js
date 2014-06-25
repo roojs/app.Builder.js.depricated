@@ -431,7 +431,7 @@ Gtk = XObject.define(
                 strbuilder(ipad + this.name  + " = this;\n");
             } else {
                 strbuilder(ipad + "_this = _owner;\n");
-                if (item.xvala_id !== false) {
+                if (item.xvala_id !== false && item.xvala_id[0] != '*' && item.xvala_id[0] != '+' ) {
                     strbuilder(ipad + "_this." + item.xvala_id  + " = this;\n");
                    
                 }
