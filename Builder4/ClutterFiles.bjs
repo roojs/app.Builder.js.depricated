@@ -9,7 +9,7 @@
             "id": "ClutterFiles",
             "scroll_mode": "Clutter.ScrollMode.VERTICAL",
             "xtype": "ScrollActor",
-            "|void:show": "(Project.Project pr) {\n    // list all the files, and create new Xcls_fileitem for each one.\n    \n    var fiter = pr.files.map_iterator();\n    while (fiter.next()) {\n        var a = new Xcls_fileitem(this,fiter.get_value());\n        print(\"add \" + fiter.get_value().name + \"\\n\");\n        this.filelayout.el.add_child(a.el);\n    }\n    this.el.show_all();\n}\n",
+            "|void:show": "(Project.Project pr) {\n    // list all the files, and create new Xcls_fileitem for each one.\n    \n    var fiter = pr.files.map_iterator();\n    while (fiter.next()) {\n        var a = new Xcls_fileitem(this,fiter.get_value());\n        a.ref();\n        print(\"add \" + fiter.get_value().name + \"\\n\");\n        this.filelayout.el.add_child(a.el);\n    }\n    this.el.show_all();\n}\n",
             "|xns": "Clutter",
             "items": [
                 {
