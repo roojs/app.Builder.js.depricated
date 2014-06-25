@@ -111,9 +111,8 @@ public class Xcls_ClutterFiles : Object
             var child_0 = new Xcls_BoxLayout4(_this);
             child_0.ref();
             this.el.add (  child_0.el  );
-            var child_1 = new Xcls_Image5(_this);
+            var child_1 = new Xcls_Text5(_this);
             child_1.ref();
-            this.el.add (  child_1.el  );
             var child_2 = new Xcls_Text6(_this);
             child_2.ref();
         }
@@ -181,19 +180,19 @@ public class Xcls_ClutterFiles : Object
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_Image5 : Object 
+    public class Xcls_Text5 : Object 
     {
-        public Clutter.Image el;
+        public Clutter.Text el;
         private Xcls_ClutterFiles  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_Image5(Xcls_ClutterFiles _owner)
+        public Xcls_Text5(Xcls_ClutterFiles _owner)
         {
             _this = _owner;
-            this.el = new Clutter.Image();
+            this.el = new Clutter.Text();
 
             // my vars
 

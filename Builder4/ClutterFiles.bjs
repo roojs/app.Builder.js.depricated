@@ -30,8 +30,8 @@
                                     "|xns": "Clutter"
                                 },
                                 {
-                                    "pack": "add",
-                                    "xtype": "Image",
+                                    "pack": false,
+                                    "xtype": "Text",
                                     "|xns": "Clutter"
                                 },
                                 {
