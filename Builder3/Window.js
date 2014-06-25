@@ -2196,7 +2196,7 @@ Window=new XObject({
                                                                                 var map = this.load(data);
                                                                                 
                                                                                 // flag it as changed to the interface..
-                                                                                this.get('/LeftTree.model').setFromNode(false,node);
+                                                                                this.get('/LeftTree.model').setFromNode(false,map);
                                                                                 this.get('/LeftTree.model').changed(true); 
                                                                                 
                                                                                 
