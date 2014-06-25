@@ -50,7 +50,7 @@ ClutterFiles=new XObject({
                         },
                         {
                             xtype: Clutter.Text,
-                            color : "",
+                            color : "new Clutter.Color.from_string(\"#fff\")",
                             '*args' : "JsRender.JsRender file",
                             '*ctor' : "with_text(\"Sans 14px\", file.nickName())",
                             id : "+title",
