@@ -91,7 +91,7 @@ public class Xcls_ClutterFiles : Object
             );
 
             // listeners 
-            this.el.scroll_event.connect( function (self, event) {
+            this.el.scroll_event.connect(  
             ( event)  => {
             
             
@@ -112,7 +112,7 @@ public class Xcls_ClutterFiles : Object
                 return true;
                     
             }
-            } );
+              );
         }
 
         // userdefined functions 

@@ -35,8 +35,7 @@ ClutterFiles=new XObject({
         {
             xtype: Clutter.Actor,
             listeners : {
-                scroll_event : function (self, event) {
-                ( event)  => {
+                scroll_event : ( event)  => {
                 
                 
                     var y = this.el.y;
@@ -55,7 +54,6 @@ ClutterFiles=new XObject({
                     this.el.y = y;
                     return true;
                         
-                }
                 }
             },
             id : "filelayout",
