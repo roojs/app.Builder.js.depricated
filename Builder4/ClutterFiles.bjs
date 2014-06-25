@@ -6,9 +6,10 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.bjs",
     "items": [
         {
-            "scroll_mode": "Clutter.ScrollMode.VERTICAL",
             "id": "ClutterFiles",
+            "scroll_mode": "Clutter.ScrollMode.VERTICAL",
             "xtype": "ScrollActor",
+            "|": "function() {\n    test\n}\n",
             "|xns": "Clutter",
             "items": [
                 {
