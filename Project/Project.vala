@@ -167,6 +167,13 @@ namespace Project {
 		{
 				// fixme..
 		}
+
+		public string nickName()
+		{
+			var ar = this.name.split(".");
+			return ar[ar.length-1];
+			
+		}
 		
 		
 		public string toJSON(bool show_all)
