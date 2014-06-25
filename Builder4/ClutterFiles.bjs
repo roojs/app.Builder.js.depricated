@@ -16,7 +16,7 @@
                     "pack": false,
                     "items": [
                         {
-                            "*args": "",
+                            "*args": "string fname, string title",
                             "*nocreate": 1,
                             "id": "fileitem",
                             "pack": false,

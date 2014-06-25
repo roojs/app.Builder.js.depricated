@@ -19,7 +19,7 @@ ClutterFiles=new XObject({
             items : [
                 {
                     xtype: Clutter.Actor,
-                    '*args' : "",
+                    '*args' : "string fname, string title",
                     '*nocreate' : 1,
                     id : "fileitem",
                     pack : false,
