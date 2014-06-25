@@ -159,9 +159,13 @@ public class Xcls_ClutterFiles : Object
 
         // userdefined functions 
 
-        // skip xpack - not pipe 
+        // skip *pack - not pipe 
+
+        // skip pack - not pipe 
 
         // skip spacing - already used 
+
+        // skip xpack - not pipe 
 
         // skip xtype - not pipe 
 
@@ -170,8 +174,6 @@ public class Xcls_ClutterFiles : Object
         // skip |orientation - already used 
 
         // skip |xns - no return type
-
-        // skip pack - not pipe 
 
         // skip items - not pipe 
 

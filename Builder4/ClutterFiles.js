@@ -23,11 +23,12 @@ ClutterFiles=new XObject({
                     items : [
                         {
                             xtype: Clutter.BoxLayout,
-                            xpack : "",
+                            '*pack' : "layout_manager",
+                            pack : false,
                             spacing : 4,
+                            xpack : "",
                             init : this.el.set_size(100,100);,
                             orientation : Clutter.Orientation,VERTICAL,
-                            pack : false,
                             items : [
                                 {
                                     xtype: Clutter.Image,

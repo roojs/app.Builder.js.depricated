@@ -21,13 +21,14 @@
                             "pack": false,
                             "items": [
                                 {
-                                    "xpack": "",
+                                    "*pack": "layout_manager",
+                                    "pack": false,
                                     "spacing": 4,
+                                    "xpack": "",
                                     "xtype": "BoxLayout",
                                     "|init": "this.el.set_size(100,100);\n ",
                                     "|orientation": "Clutter.Orientation,VERTICAL",
                                     "|xns": "Clutter",
-                                    "pack": false,
                                     "items": [
                                         {
                                             "|xns": "Clutter",
