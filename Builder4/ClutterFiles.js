@@ -27,8 +27,8 @@ ClutterFiles=new XObject({
                         {
                             xtype: Clutter.Texture,
                             '*args' : "string fname",
+                            id : "*image",
                             ctor : "from_file(fname)",
-                            '*id' : "image",
                             pack : false,
                             x_align : "Clutter.ActorAlign.START",
                             x_expand : "true",
@@ -39,7 +39,7 @@ ClutterFiles=new XObject({
                             xtype: Clutter.Text,
                             '*args' : "string name",
                             '*ctor' : "with_text(\"Arial\", name)",
-                            id : "title",
+                            id : "*title",
                             x_align : "Clutter.ActorAlign.START",
                             x_expand : "true",
                             y_align : "Clutter.ActorAlign.START",
