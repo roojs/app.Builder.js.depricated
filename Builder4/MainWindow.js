@@ -141,6 +141,7 @@ MainWindow=new XObject({
                                     this.clutterfiles = new Xcls_ClutterFiles();
                                     stage.add_child(this.clutterfiles.el);
                                     this.clutterfiles.open.connect((file) => { 
+                                        _this.showViewEditing();
                                         print("OPEN : " + file.name);
                                     
                                     });,
