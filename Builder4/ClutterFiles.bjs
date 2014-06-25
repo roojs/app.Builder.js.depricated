@@ -39,6 +39,7 @@
                                 {
                                     "pack": false,
                                     "x_align": "Clutter.ActorAlign.START",
+                                    "x_expand": "true",
                                     "xtype": "Text",
                                     "y_align": "Clutter.ActorAlign.START",
                                     "|xns": "Clutter"
