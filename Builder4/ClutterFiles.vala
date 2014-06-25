@@ -213,8 +213,8 @@ public class Xcls_ClutterFiles : Object
                 this.el.background_color = new Clutter.Color.from_string("#000");
                 return false;
             } );
-            this.el.button_press_event.connect( function (self, event) {
-            
+            this.el.button_press_event.connect(   (  event) => {
+                _this.open(this.file);
             } );
         }
 
