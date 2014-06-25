@@ -17,7 +17,7 @@
                     "id": "filelayout",
                     "pack": "add_child",
                     "xtype": "Actor",
-                    "|init": "\nthis.el.add_constraint(\n    new Clutter.BindConstraint(_this.el,Clutter.BindCoordinate.SIZE, 0.0f)\n);\nthis.clutterfiles.el.set_position(100,0);\n",
+                    "|init": "\nthis.el.add_constraint(\n    new Clutter.BindConstraint(_this.el,Clutter.BindCoordinate.SIZE, 0.0f)\n);\n\n",
                     "|xns": "Clutter",
                     "items": [
                         {

@@ -38,8 +38,7 @@ ClutterFiles=new XObject({
             pack : "add_child",
             init : this.el.add_constraint(
                 new Clutter.BindConstraint(_this.el,Clutter.BindCoordinate.SIZE, 0.0f)
-            );
-            this.clutterfiles.el.set_position(100,0);,
+            );,
             items : [
                 {
                     xtype: Clutter.Actor,
