@@ -16,7 +16,7 @@
                     "pack": false,
                     "items": [
                         {
-                            "xor": "",
+                            "|orientation": "Clutter.Orientation,VERTICAL",
                             "xtype": "BoxLayout",
                             "|init": " ",
                             "|xns": "Clutter",
