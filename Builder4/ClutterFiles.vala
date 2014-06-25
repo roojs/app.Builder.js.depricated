@@ -203,7 +203,7 @@ public class Xcls_ClutterFiles : Object
 
             // listeners 
             this.el.enter_event.connect( (  event)  => {
-                this.el.background_color = new Clutter.Color.from_string("#eee");
+                this.el.background_color = new Clutter.Color.from_string("#333");
                     return false;
             } );
             this.el.leave_event.connect( (  event)  => {
