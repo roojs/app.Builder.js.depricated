@@ -78,11 +78,13 @@ public class Xcls_MainWindow : Object
     }
 
     // userdefined functions 
-    public void setViewEditingfunction() {
-            
-        }
+
+    // skip | - no return type
     public void setTitle (string str) {
             this.el.set_title(this.title + " - " + str);
+        }
+    public void setViewEditing () {
+            
         }
     public void show() {
             this.left_tree =new Xcls_WindowLeftTree();

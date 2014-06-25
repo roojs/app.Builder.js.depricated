@@ -30,13 +30,16 @@ MainWindow=new XObject({
     default_width : 800,
     destroy : "() => {\n   Gtk.main_quit();\n}",
     id : "MainWindow",
-    'void:setViewEditing' : function() {
+     : function() {
         
     },
     init : this.el.show_all();,
     type : Gtk.WindowType.TOPLEVEL,
     'void:setTitle' : (string str) {
         this.el.set_title(this.title + " - " + str);
+    },
+    'void:setViewEditing' : () {
+        
     },
     'void:show' : () {
         this.left_tree =new Xcls_WindowLeftTree();
