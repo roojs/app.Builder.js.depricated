@@ -19,10 +19,10 @@ ClutterFiles=new XObject({
             var dir = event.direction;
             switch (dir) {
                 case Clutter.ScrollDirection.UP:
-                    y += event.y;
+                    y += event.y /2;
                     break;
                 case Clutter.ScrollDirection.DOWN:
-                    y -= event.y;
+                    y -= event.y /2 ;
                     break;
                 default:
                     return false;
@@ -30,6 +30,12 @@ ClutterFiles=new XObject({
             // range of scroll -- can go up -- eg.. -ve value.
             
             y = float.min(0, y);
+            
+            // to work out the max -ve number
+            // height of filelayout
+            // height of scrollactor..
+            
+            print("scroll event of %f  - new y = %f ".printf(event.y, y));    
            // y = float.min(0, y);    //??
             print("scroll event of %f  - new y = %f ".printf(event.y, y));
             this.filelayout.el.y = y;
