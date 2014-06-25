@@ -56,8 +56,7 @@ ClutterFiles=new XObject({
                 }
             ],
             layout_manager : {
-                xtype: Clutter.FlowLayout,
-                pack : false
+                xtype: Clutter.FlowLayout
             }
         }
     ]

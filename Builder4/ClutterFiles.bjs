@@ -19,7 +19,6 @@
                     "items": [
                         {
                             "*prop": "layout_manager",
-                            "pack": false,
                             "xtype": "FlowLayout",
                             "|xns": "Clutter"
                         },

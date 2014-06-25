@@ -23,8 +23,8 @@ public class Xcls_ClutterFiles : Object
     private Xcls_ClutterFiles  _this;
 
     public Xcls_filelayout filelayout;
-    public Xcls_+image +image;
-    public Xcls_+title +title;
+    public Xcls_image +image;
+    public Xcls_title +title;
 
         // my vars
 
@@ -80,8 +80,7 @@ public class Xcls_ClutterFiles : Object
             // set gobject values
             var child_0 = new Xcls_FlowLayout3(_this);
             child_0.ref();
-            var child_1 = new Xcls_*fileitem(_this);
-            child_1.ref();
+            this.el.add (  child_0.el  );
         }
 
         // userdefined functions 
@@ -125,8 +124,6 @@ public class Xcls_ClutterFiles : Object
 
         // skip *prop - not pipe 
 
-        // skip pack - not pipe 
-
         // skip xtype - not pipe 
 
         // skip |xns - no return type
@@ -137,7 +134,7 @@ public class Xcls_ClutterFiles : Object
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_*fileitem : Object 
+    public class Xcls_fileitem : Object 
     {
         public Clutter.Actor el;
         private Xcls_ClutterFiles  _this;
@@ -146,7 +143,7 @@ public class Xcls_ClutterFiles : Object
             // my vars
 
             // ctor 
-        public Xcls_*fileitem(Xcls_ClutterFiles _owner)
+        public Xcls_fileitem(Xcls_ClutterFiles _owner)
         {
             _this = _owner;
             _this.*fileitem = this;
@@ -158,9 +155,9 @@ public class Xcls_ClutterFiles : Object
             var child_0 = new Xcls_BoxLayout5(_this);
             child_0.ref();
             this.el.add (  child_0.el  );
-            var child_1 = new Xcls_+image(_this);
+            var child_1 = new Xcls_image(_this);
             child_1.ref();
-            var child_2 = new Xcls_+title(_this);
+            var child_2 = new Xcls_title(_this);
             child_2.ref();
             this.el.add (  child_2.el  );
         }
@@ -216,8 +213,6 @@ public class Xcls_ClutterFiles : Object
 
         // skip spacing - already used 
 
-        // skip xpack - not pipe 
-
         // skip xtype - not pipe 
 
         // skip |init - already used 
@@ -232,7 +227,7 @@ public class Xcls_ClutterFiles : Object
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_+image : Object 
+    public class Xcls_image : Object 
     {
         public Clutter.Texture el;
         private Xcls_ClutterFiles  _this;
@@ -241,7 +236,7 @@ public class Xcls_ClutterFiles : Object
             // my vars
 
             // ctor 
-        public Xcls_+image(Xcls_ClutterFiles _owner)
+        public Xcls_image(Xcls_ClutterFiles _owner)
         {
             _this = _owner;
             _this.+image = this;
@@ -284,7 +279,7 @@ public class Xcls_ClutterFiles : Object
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_+title : Object 
+    public class Xcls_title : Object 
     {
         public Clutter.Text el;
         private Xcls_ClutterFiles  _this;
@@ -293,7 +288,7 @@ public class Xcls_ClutterFiles : Object
             // my vars
 
             // ctor 
-        public Xcls_+title(Xcls_ClutterFiles _owner)
+        public Xcls_title(Xcls_ClutterFiles _owner)
         {
             _this = _owner;
             _this.+title = this;
