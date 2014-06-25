@@ -37,10 +37,15 @@ public class Xcls_ClutterFiles : Object
         // my vars
 
         // set gobject values
-        this.el.reactive = "true";
+        this.el.reactive = true;
         var child_0 = new Xcls_filelayout( _this );
         child_0.ref();
         this.el.add_child (  child_0.el  );
+
+        // listeners 
+        this.el.scroll_event.connect( function (self, event) {
+        
+        } );
     }
 
     // userdefined functions 
@@ -91,30 +96,6 @@ public class Xcls_ClutterFiles : Object
             this.el.add_constraint(
                 new Clutter.BindConstraint(_this.el,Clutter.BindCoordinate.SIZE, 0.0f)
             );
-
-            // listeners 
-            this.el.scroll_event.connect(  
-            ( event)  => {
-            
-                print("scroll event");
-                var y = this.el.y;
-                var dir = event.direction;
-                switch (dir) {
-                    case Clutter.ScrollDirection.UP:
-                        y += event.y;
-                        break;
-                    case Clutter.ScrollDirection.DOWN:
-                        y -= event.y;
-                        break;
-                    default:
-                        return false;
-                }
-                print("scroll event of %f  - new y = %f ".printf(event.y, y));
-                this.el.y = y;
-                return true;
-                    
-            }
-              );
         }
 
         // userdefined functions 

@@ -11,9 +11,14 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 ClutterFiles=new XObject({
     xtype: Clutter.ScrollActor,
+    listeners : {
+        scroll_event : function (self, event) {
+        
+        }
+    },
     id : "ClutterFiles",
-    reactive : "true",
     scroll_mode : "Clutter.ScrollMode.VERTICAL",
+    reactive : true,
     'void:set_size' : (float w, float h) {
         _this.filelayout_manager.el.max_column_width = w - 150;
        this.el.set_size(this.el.get_stage().width-150,
@@ -35,34 +40,12 @@ ClutterFiles=new XObject({
     items : [
         {
             xtype: Clutter.Actor,
-            listeners : {
-                scroll_event : ( event)  => {
-                
-                    print("scroll event");
-                    var y = this.el.y;
-                    var dir = event.direction;
-                    switch (dir) {
-                        case Clutter.ScrollDirection.UP:
-                            y += event.y;
-                            break;
-                        case Clutter.ScrollDirection.DOWN:
-                            y -= event.y;
-                            break;
-                        default:
-                            return false;
-                    }
-                    print("scroll event of %f  - new y = %f ".printf(event.y, y));
-                    this.el.y = y;
-                    return true;
-                        
-                }
-            },
             id : "filelayout",
             pack : "add_child",
-            reactive : true,
             init : this.el.add_constraint(
                 new Clutter.BindConstraint(_this.el,Clutter.BindCoordinate.SIZE, 0.0f)
             );,
+            reactive : true,
             items : [
                 {
                     xtype: Clutter.Actor,
