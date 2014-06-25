@@ -34,12 +34,6 @@
                                     "xtype": "Image",
                                     "y_align": "Clutter.ActorAlign.START",
                                     "|xns": "Clutter"
-                                },
-                                {
-                                    "pack": "0",
-                                    "x_align": "1",
-                                    "xtype": "2",
-                                    "|xns": "3"
                                 }
                             ]
                         }

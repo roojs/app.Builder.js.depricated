@@ -25,11 +25,6 @@ ClutterFiles=new XObject({
                             xtype: Clutter.Image,
                             pack : false,
                             y_align : "Clutter.ActorAlign.START"
-                        },
-                        {
-                            xtype: 3.2,
-                            pack : "0",
-                            x_align : "1"
                         }
                     ],
                     layout_manager : {

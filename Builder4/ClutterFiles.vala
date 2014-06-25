@@ -113,8 +113,6 @@ public class Xcls_ClutterFiles : Object
             this.el.add (  child_0.el  );
             var child_1 = new Xcls_Image5(_this);
             child_1.ref();
-            var child_2 = new Xcls_Text6(_this);
-            child_2.ref();
         }
 
         // userdefined functions 
@@ -208,39 +206,6 @@ public class Xcls_ClutterFiles : Object
         // skip y_align - not pipe 
 
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
-    }
-    public class Xcls_Text6 : Object 
-    {
-        public Clutter.Text el;
-        private Xcls_ClutterFiles  _this;
-
-
-            // my vars
-
-            // ctor 
-        public Xcls_Text6(Xcls_ClutterFiles _owner)
-        {
-            _this = _owner;
-            this.el = new Clutter.Text();
-
-            // my vars
-
-            // set gobject values
-        }
-
-        // userdefined functions 
-
-        // skip |xns - no return type
-
-        // skip xtype - not pipe 
-
-        // skip pack - not pipe 
 
         // skip xvala_cls - not pipe 
 
