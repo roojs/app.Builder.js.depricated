@@ -423,7 +423,7 @@ Gtk = XObject.define(
                 cargs_str = ", " + item['*args']
                 var ar = item['*args'].split(",");
                 for (var ari =0; ari < ar.length; ari++) {
-                    cargs.push(ar[ari].split(" ").pop());
+                    cargs.push(ar[ari].trim().split(" ").pop());
                 }
                     
             }
