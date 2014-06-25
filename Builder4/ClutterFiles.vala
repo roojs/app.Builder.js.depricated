@@ -150,7 +150,7 @@ public class Xcls_ClutterFiles : Object
             // my vars
 
             // set gobject values
-            this.el.orientation = Clutter.Orientation,VERTICAL;
+            this.el.orientation = Clutter.Orientation.VERTICAL;
             this.el.spacing = 4;
 
             // init method 

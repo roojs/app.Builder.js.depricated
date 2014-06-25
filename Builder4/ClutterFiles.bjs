@@ -26,7 +26,7 @@
                                     "xpack": "",
                                     "xtype": "BoxLayout",
                                     "|init": "this.el.set_size(100,100);\n ",
-                                    "|orientation": "Clutter.Orientation,VERTICAL",
+                                    "|orientation": "Clutter.Orientation.VERTICAL",
                                     "|xns": "Clutter"
                                 },
                                 {
