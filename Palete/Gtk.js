@@ -513,7 +513,13 @@ Gtk = XObject.define(
             }
             var gi = GIRepository.Repository.get_default();
             var bi = gi.find_by_name(es[0], es[1]);
-            var etype = GIRepository.object_info_get_type(bi);
+            var etype 
+            try {
+                etype = GIRepository.object_info_get_type(bi);    
+            } catch(e) {
+                return false;
+            }
+            
             if (etype != GIRepository.InfoType.ENUM) {
                 console.log("Options not handled yet!!!");
                 return false;
