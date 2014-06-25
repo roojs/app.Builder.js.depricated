@@ -201,6 +201,8 @@ public class Xcls_ClutterFiles : Object
             this.el.x_expand = "true";
             this.el.y_align = "Clutter.ActorAlign.START";
             this.el.y_expand = "false";
+
+            // listeners 
         }
 
         // userdefined functions 
@@ -220,6 +222,10 @@ public class Xcls_ClutterFiles : Object
         // skip y_expand - already used 
 
         // skip |xns - no return type
+
+        // skip  - not pipe 
+
+        // skip listeners - not pipe 
 
         // skip xvala_cls - not pipe 
 
