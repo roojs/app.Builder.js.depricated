@@ -18,13 +18,7 @@ right:
 	Gtk.OffScreenWindow
 	
     Clutter.ScrollActor
-    Clutter.GridLayout
-    Clutter.FlowLayout
-    Clutter.FixedLayout
-    Clutter.TableLayout
-    Clutter.BinLayout
-    Clutter.BoxLayout
-    
+    Clutter.Actor    
 // these should really be based on heirachy..
  
 left: 
@@ -272,7 +266,8 @@ right:
     
 
 left:
-    Clutter.ScrollActor
+    Clutter.ScrollActor:layout_manager
+    Clutter.Actor:layout_manager
 right:
     Clutter.GridLayout
     Clutter.FlowLayout
@@ -282,22 +277,12 @@ right:
     Clutter.BoxLayout
 
 left:
-    Clutter.GridLayout
-    Clutter.FlowLayout
-    Clutter.FixedLayout
-    Clutter.TableLayout
-    Clutter.BinLayout
-    Clutter.BoxLayout
+    
     Clutter.Actor
     
 right:
     Clutter.Actor
-    Clutter.GridLayout
-    Clutter.FlowLayout
-    Clutter.FixedLayout
-    Clutter.TableLayout
-    Clutter.BinLayout
-    Clutter.BoxLayout
+    
     Clutter.Image
     Clutter.Text
     Clutter.Rectangle
