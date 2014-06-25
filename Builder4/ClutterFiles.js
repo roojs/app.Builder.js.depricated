@@ -29,7 +29,6 @@ ClutterFiles=new XObject({
                         {
                             xtype: Clutter.Texture,
                             '*args' : "string fname",
-                            ctor : "from_file(fname)",
                             id : "+image",
                             pack : "add_child",
                             x_align : Clutter.ActorAlign.START,
