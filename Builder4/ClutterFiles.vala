@@ -58,6 +58,8 @@ public class Xcls_ClutterFiles : Object
                 default:
                     return false;
             }
+            y = float.max(0, y);
+           // y = float.min(0, y);    //??
             print("scroll event of %f  - new y = %f ".printf(event.y, y));
             this.filelayout.el.y = y;
             return true;
