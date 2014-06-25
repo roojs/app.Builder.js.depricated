@@ -393,6 +393,8 @@ Gtk = XObject.define(
             
             // Key = TYPE:name
             for (var k in item) {
+                
+                
                 if (k[0] != '.') {
                    
                     continue;
@@ -413,6 +415,23 @@ Gtk = XObject.define(
                 citems[k] = true; 
                 
             }
+            
+            if (typeof(item.items) != 'undefined') {
+                for(var i =0;i<item.items.length;i++) {
+                    var ci = item.items[i];
+                    if (ci.xvala_id[0] != '+') {
+                        continue; // skip generation of children?
+                        
+                    }
+                    strbuilder(pad + "public " + item.xvala_xcls + " " + item.xvala_id.substring(1) + ";\n");
+
+                               
+                    
+                }
+            }
+            
+            
+            
             // .vala props.. 
             
             var cargs = []; 
