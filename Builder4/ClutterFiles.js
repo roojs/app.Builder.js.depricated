@@ -12,6 +12,7 @@ XObject = imports.XObject.XObject;
 ClutterFiles=new XObject({
     xtype: Clutter.ScrollActor,
     id : "ClutterFiles",
+     : "",
     items : [
         {
             xtype: Clutter.Actor,
