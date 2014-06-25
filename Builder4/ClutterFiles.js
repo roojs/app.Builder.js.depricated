@@ -16,8 +16,8 @@ ClutterFiles=new XObject({
     items : [
         {
             xtype: Clutter.Actor,
-            pack : false,
             id : "filelayout",
+            pack : "add_child",
             items : [
                 {
                     xtype: Clutter.Actor,

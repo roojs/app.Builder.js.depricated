@@ -23,9 +23,6 @@ public class Xcls_ClutterFiles : Object
     private Xcls_ClutterFiles  _this;
 
     public Xcls_filelayout filelayout;
-    public Xcls_*fileitem *fileitem;
-    public Xcls_*image *image;
-    public Xcls_*title *title;
 
         // my vars
 
@@ -41,6 +38,7 @@ public class Xcls_ClutterFiles : Object
         // set gobject values
         var child_0 = new Xcls_filelayout(_this);
         child_0.ref();
+        this.el.add_child (  child_0.el  );
     }
 
     // userdefined functions 
@@ -86,9 +84,9 @@ public class Xcls_ClutterFiles : Object
 
         // userdefined functions 
 
-        // skip pack - not pipe 
-
         // skip id - not pipe 
+
+        // skip pack - not pipe 
 
         // skip xtype - not pipe 
 

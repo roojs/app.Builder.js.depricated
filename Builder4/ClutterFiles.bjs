@@ -12,8 +12,8 @@
             "|xns": "Clutter",
             "items": [
                 {
-                    "pack": false,
                     "id": "filelayout",
+                    "pack": "add_child",
                     "xtype": "Actor",
                     "|xns": "Clutter",
                     "items": [
