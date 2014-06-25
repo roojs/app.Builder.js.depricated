@@ -162,6 +162,7 @@ MainWindow=new XObject({
                                                                 el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 360.0f);
                                                                 el.set_scale(0.2f,0.2f);
                                                                 _this.rooview.is_fullsize = false;
+                                                        
                                                                 _this.clutterembed.clutterfiles.show(_this.project);
                                                                 
                                                             } else {
@@ -169,6 +170,7 @@ MainWindow=new XObject({
                                                                 el.set_scale(1.0f,1.0f);
                                                                 _this.rooview.is_fullsize = true;
                                                                 _this.leftpane.el.set_position(_this.leftpane.lastWidth);
+                                                                _this.clutterembed.clutterfiles.el.hide();
                                                             }
                                                             el.restore_easing_state();
                                                                 
