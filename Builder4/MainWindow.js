@@ -30,10 +30,22 @@ MainWindow=new XObject({
     default_width : 800,
     destroy : "() => {\n   Gtk.main_quit();\n}",
     id : "MainWindow",
-    setViewBrowsing : function() {
-        
-    },
     init : this.el.show_all();,
+    setViewBrowsing : ( ) => {
+        var el = _this.rooview.el;
+        el.save_easing_state();
+      
+         
+        el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 0.0f);
+        el.set_scale(1.0f,1.0f);
+        _this.rooview.is_fullsize = true;
+        _this.leftpane.el.set_position(_this.leftpane.lastWidth);
+        _this.clutterembed.clutterfiles.el.hide();
+    
+        el.restore_easing_state();
+            
+        print("clicked");
+    },
     type : Gtk.WindowType.TOPLEVEL,
     'void:setTitle' : (string str) {
         this.el.set_title(this.title + " - " + str);
