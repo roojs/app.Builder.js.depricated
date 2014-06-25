@@ -424,7 +424,7 @@ Gtk = XObject.define(
                         continue; // skip generation of children?
                         
                     }
-                    strbuilder(pad + "public " + item.xvala_xcls + " " + item.xvala_id.substring(1) + ";\n");
+                    strbuilder(pad + "public " + ci.xvala_xcls + " " + ci.xvala_id.substring(1) + ";\n");
                                
                     
                 }
