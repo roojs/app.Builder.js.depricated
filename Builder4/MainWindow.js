@@ -108,7 +108,7 @@ MainWindow=new XObject({
                                     stage.add_child(this.clutterfiles.el);
                                     
                                     this.clutterfiles.el.add_constraint(
-                                        new Clutter.BindConstraint(stage,Clutter.BindCoordinate.SIZE, 0.0)
+                                        new Clutter.BindConstraint(stage,Clutter.BindCoordinate.SIZE, 0.0f)
                                         );,
                                     items : [
                                         {
