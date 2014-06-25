@@ -44,7 +44,7 @@ public class Xcls_ClutterFiles : Object
         // listeners 
         this.el.scroll_event.connect( ( event)  => {
             var y = this.el.y;
-            var dir = event.get_scroll_direction();
+            var dir = event.direction;
             switch (dir) {
                 case Clutter.ScrollDirection.UP:
                     y += event.y;

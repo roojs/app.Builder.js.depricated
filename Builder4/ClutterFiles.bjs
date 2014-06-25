@@ -7,7 +7,7 @@
     "items": [
         {
             "listeners": {
-                "scroll_event": "( event)  => {\n    var y = this.el.y;\n    var dir = event.get_scroll_direction();\n    switch (dir) {\n        case Clutter.ScrollDirection.UP:\n            y += event.y;\n            break;\n        case Clutter.ScrollDirection.DOWN:\n            y -= event.y;\n            break;\n        default:\n            return false;\n    }\n    this.el.y = y;\n        \n}"
+                "scroll_event": "( event)  => {\n    var y = this.el.y;\n    var dir = event.direction;\n    switch (dir) {\n        case Clutter.ScrollDirection.UP:\n            y += event.y;\n            break;\n        case Clutter.ScrollDirection.DOWN:\n            y -= event.y;\n            break;\n        default:\n            return false;\n    }\n    this.el.y = y;\n        \n}"
             },
             "id": "ClutterFiles",
             "scroll_mode": "Clutter.ScrollMode.VERTICAL",
