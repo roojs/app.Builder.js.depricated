@@ -26,6 +26,7 @@ ClutterFiles=new XObject({
                     return false;
             }
             this.el.y = y;
+            return true;
                 
         }
     },

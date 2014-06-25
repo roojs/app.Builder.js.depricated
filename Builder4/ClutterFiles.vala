@@ -56,6 +56,7 @@ public class Xcls_ClutterFiles : Object
                     return false;
             }
             this.el.y = y;
+            return true;
                 
         } );
     }
