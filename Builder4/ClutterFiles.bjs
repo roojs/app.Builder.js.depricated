@@ -12,6 +12,7 @@
             "|xns": "Clutter",
             "items": [
                 {
+                    "*prop": "layout_manager",
                     "id": "filelayout",
                     "pack": false,
                     "xtype": "Actor",
