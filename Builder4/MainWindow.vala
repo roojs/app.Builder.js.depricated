@@ -83,7 +83,7 @@ public class Xcls_MainWindow : Object
     public void setTitle (string str) {
             this.el.set_title(this.title + " - " + str);
         }
-    public void setViewEditing  ( ) => {
+    public void setViewEditing  ( )  {
             var el = _this.rooview.el;
                 el.save_easing_state();
           

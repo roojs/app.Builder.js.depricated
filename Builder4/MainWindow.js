@@ -54,7 +54,7 @@ MainWindow=new XObject({
     'void:setTitle' : (string str) {
         this.el.set_title(this.title + " - " + str);
     },
-    'void:setViewEditing' : ( ) => {
+    'void:setViewEditing' : ( )  {
         var el = _this.rooview.el;
             el.save_easing_state();
       
