@@ -115,6 +115,10 @@ public class Xcls_ClutterFiles : Object
             child_0.ref();
             var child_1 = new Xcls_Text5(_this);
             child_1.ref();
+
+            // init method 
+            this.el.set_size(100,100);
+             
         }
 
         // userdefined functions 

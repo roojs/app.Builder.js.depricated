@@ -18,7 +18,7 @@
                         {
                             "spacing": 4,
                             "xtype": "BoxLayout",
-                            "|init": " ",
+                            "|init": "this.el.set_size(100,100);\n ",
                             "|orientation": "Clutter.Orientation,VERTICAL",
                             "|xns": "Clutter",
                             "items": [
