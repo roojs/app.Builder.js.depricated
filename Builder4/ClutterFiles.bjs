@@ -16,9 +16,11 @@
                     "pack": false,
                     "items": [
                         {
-                            "|xns": "Clutter",
-                            "xtype": "Actor",
+                            "*nocreate": 1,
+                            "id": "fileitem",
                             "pack": false,
+                            "xtype": "Actor",
+                            "|xns": "Clutter",
                             "items": [
                                 {
                                     "*prop": "layout_manager",
