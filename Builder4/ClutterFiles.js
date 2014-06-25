@@ -15,7 +15,7 @@ ClutterFiles=new XObject({
     scroll_mode : "Clutter.ScrollMode.VERTICAL",
     init : this.el.set_position(100,0);,
     'void:set_size' : (float w, float h) {
-        _this.filelayout_manager.el.max_column_width = w;
+        _this.filelayout_manager.el.max_column_width = w - 50;
        this.el.set_size(this.el.get_stage().width-50,
                             this.el.get_stage().height);
                 
