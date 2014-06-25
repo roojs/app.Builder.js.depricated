@@ -157,6 +157,7 @@ public class Xcls_ClutterFiles : Object
             this.el.layout_manager= child_0.el;
             var child_1 = new Xcls_image(_this);
             child_1.ref();
+            this.el.add_child (  child_1.el  );
             var child_2 = new Xcls_title(_this);
             child_2.ref();
             this.el.add (  child_2.el  );
@@ -259,11 +260,11 @@ public class Xcls_ClutterFiles : Object
 
         // skip id - not pipe 
 
-        // skip pack - not pipe 
-
         // skip x_align - already used 
 
         // skip x_expand - already used 
+
+        // skip pack - not pipe 
 
         // skip xtype - not pipe 
 
