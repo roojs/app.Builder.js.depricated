@@ -279,10 +279,9 @@ right:
 left:
     Clutter.ScrollActor
     Clutter.Actor
-    
 right:
     Clutter.Actor
-    
+    Clutter.ScrollActor
     Clutter.Texture
     Clutter.Text
     Clutter.Rectangle
