@@ -369,7 +369,7 @@ Gtk = XObject.define(
             //}
             
             
-            // properties??
+            // properties - global..??
                 
                 //public bool paused = false;
                 //public static StatusIconA statusicon;
