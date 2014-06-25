@@ -36,9 +36,10 @@ ClutterFiles=new XObject({
             xtype: Clutter.Actor,
             id : "filelayout",
             pack : "add_child",
-            init : function() {
-                XObject.prototype.init.call(this);
-            },
+            init : this.el.add_constraint(
+                new Clutter.BindConstraint(_this.el,Clutter.BindCoordinate.SIZE, 0.0f)
+            );
+            //this.clutterfiles.el.set_position(0,0);,
             items : [
                 {
                     xtype: Clutter.Actor,

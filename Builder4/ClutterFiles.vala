@@ -86,11 +86,10 @@ public class Xcls_ClutterFiles : Object
             this.el.layout_manager = child_0.el;
 
             // init method 
-            function() {
-                XObject.prototype.init.call(this);
-            }
-
-            // listeners 
+            this.el.add_constraint(
+                new Clutter.BindConstraint(_this.el,Clutter.BindCoordinate.SIZE, 0.0f)
+            );
+            //this.clutterfiles.el.set_position(0,0);
         }
 
         // userdefined functions 
