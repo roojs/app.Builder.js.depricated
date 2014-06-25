@@ -313,6 +313,7 @@ public class Xcls_MainWindow : Object
 
 
             // my vars
+        public Xcls_ClutterFiles undefined;
 
             // ctor 
         public Xcls_clutterembed(Xcls_MainWindow _owner )

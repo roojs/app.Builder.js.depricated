@@ -83,12 +83,12 @@
                                             "listeners": {
                                                 "size_allocate": "  (  alloc) => {\n\n    _this.rooview.el.set_size(this.el.get_stage().width-50,\n            this.el.get_stage().height);\n\n}"
                                             },
+                                            ".Xcls_ClutterFiles": "",
                                             "id": "clutterembed",
                                             "pack": "add",
                                             "xtype": "Embed",
                                             "|init": "var stage = this.el.get_stage();\nstage.set_background_color(  Clutter.Color.from_string(\"#000\"));\nthis.clutterfiles = new XCls_ClutterFiles();\nstage.add_child(this.clutterfiles.el);\n\n\n\n\n",
                                             "|xns": "GtkClutter",
-                                            "": "",
                                             "items": [
                                                 {
                                                     ".bool:is_fullsize": "true",

@@ -104,7 +104,6 @@ MainWindow=new XObject({
                                     stage.set_background_color(  Clutter.Color.from_string("#000"));
                                     this.clutterfiles = new XCls_ClutterFiles();
                                     stage.add_child(this.clutterfiles.el);,
-                                     : "",
                                     items : [
                                         {
                                             xtype: GtkClutter.Actor,
