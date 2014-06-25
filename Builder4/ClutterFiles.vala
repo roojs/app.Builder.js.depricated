@@ -110,6 +110,7 @@ public class Xcls_ClutterFiles : Object
             // set gobject values
             var child_0 = new Xcls_BoxLayout4(_this);
             child_0.ref();
+            this.el.add (  child_0.el  );
         }
 
         // userdefined functions 
@@ -160,8 +161,6 @@ public class Xcls_ClutterFiles : Object
         // userdefined functions 
 
         // skip *pack - not pipe 
-
-        // skip pack - not pipe 
 
         // skip spacing - already used 
 

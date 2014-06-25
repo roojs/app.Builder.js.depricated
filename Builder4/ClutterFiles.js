@@ -24,7 +24,6 @@ ClutterFiles=new XObject({
                         {
                             xtype: Clutter.BoxLayout,
                             '*pack' : "layout_manager",
-                            pack : false,
                             spacing : 4,
                             xpack : "",
                             init : this.el.set_size(100,100);,

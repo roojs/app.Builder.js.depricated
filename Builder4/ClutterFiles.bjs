@@ -22,7 +22,6 @@
                             "items": [
                                 {
                                     "*pack": "layout_manager",
-                                    "pack": false,
                                     "spacing": 4,
                                     "xpack": "",
                                     "xtype": "BoxLayout",
