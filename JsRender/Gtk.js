@@ -574,7 +574,7 @@ Gtk = XObject.define(
                
             });
                 //code
-            // add all the child items..
+            // add all the child items.. 
             if (typeof(item.items) != 'undefined') {
                 for(var i =0;i<item.items.length;i++) {
                     var ci = item.items[i];
@@ -604,8 +604,13 @@ Gtk = XObject.define(
                     strbuilder(ipad + "this.el." + pack + " (  child_" + i + ".el " +
                                (packing.length ? ", " + packing.join(",") : "") + " );\n"
                             );
-                               
-                    
+                              
+                    if (ci.xvala_id[0] != '+') {
+                        continue; // skip generation of children?
+                        
+                    }
+                    strbuilder(pad + "this. " + ci.xvala_id.substring(1) + " =  child_" + i +  ";\n");
+                          
                 }
             }
             if (typeof(item['|init']) != 'undefined') {
