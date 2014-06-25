@@ -1,17 +1,20 @@
 {
-    "id": "file-gtk-8",
+    "id": "file-gtk-2",
     "name": "ClutterFiles",
     "parent": "",
     "title": false,
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.bjs",
     "items": [
         {
-            
             "id": "ClutterFiles",
             "xtype": "ScrollActor",
             "|xns": "Clutter",
             "items": [
-                 
+                {
+                    "|xns": "Clutter",
+                    "xtype": "FlowLayout",
+                    "pack": false
+                }
             ]
         }
     ],
