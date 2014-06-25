@@ -19,7 +19,17 @@ ClutterFiles=new XObject({
             items : [
                 {
                     xtype: Clutter.BoxLayout,
-                    pack : false
+                    pack : false,
+                    items : [
+                        {
+                            xtype: Clutter.Image,
+                            pack : false
+                        },
+                        {
+                            xtype: Clutter.Text,
+                            pack : false
+                        }
+                    ]
                 }
             ]
         }

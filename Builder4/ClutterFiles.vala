@@ -108,6 +108,78 @@ public class Xcls_ClutterFiles : Object
             // my vars
 
             // set gobject values
+            var child_0 = new Xcls_Image4(_this);
+            child_0.ref();
+            var child_1 = new Xcls_Text5(_this);
+            child_1.ref();
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+
+        // skip xtype - not pipe 
+
+        // skip pack - not pipe 
+
+        // skip items - not pipe 
+
+        // skip xvala_cls - not pipe 
+
+        // skip xvala_xcls - not pipe 
+
+        // skip xvala_id - not pipe 
+    }
+    public class Xcls_Image4 : Object 
+    {
+        public Clutter.Image el;
+        private Xcls_ClutterFiles  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_Image4(Xcls_ClutterFiles _owner)
+        {
+            _this = _owner;
+            this.el = new Clutter.Image();
+
+            // my vars
+
+            // set gobject values
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+
+        // skip xtype - not pipe 
+
+        // skip pack - not pipe 
+
+        // skip xvala_cls - not pipe 
+
+        // skip xvala_xcls - not pipe 
+
+        // skip xvala_id - not pipe 
+    }
+    public class Xcls_Text5 : Object 
+    {
+        public Clutter.Text el;
+        private Xcls_ClutterFiles  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_Text5(Xcls_ClutterFiles _owner)
+        {
+            _this = _owner;
+            this.el = new Clutter.Text();
+
+            // my vars
+
+            // set gobject values
         }
 
         // userdefined functions 

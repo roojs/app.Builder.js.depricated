@@ -18,7 +18,19 @@
                         {
                             "|xns": "Clutter",
                             "xtype": "BoxLayout",
-                            "pack": false
+                            "pack": false,
+                            "items": [
+                                {
+                                    "|xns": "Clutter",
+                                    "xtype": "Image",
+                                    "pack": false
+                                },
+                                {
+                                    "|xns": "Clutter",
+                                    "xtype": "Text",
+                                    "pack": false
+                                }
+                            ]
                         }
                     ]
                 }
