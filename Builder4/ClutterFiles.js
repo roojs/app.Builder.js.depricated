@@ -75,10 +75,10 @@ ClutterFiles=new XObject({
             layout_manager : {
                 xtype: Clutter.FlowLayout,
                 column_spacing : 120,
+                id : "filelayout_manager",
                 row_spacing : 120,
                 homogeneous : true,
-                orientation : Clutter.FlowOrientation.HORIZONTAL,
-                id : ""
+                orientation : Clutter.FlowOrientation.HORIZONTAL
             }
         }
     ]

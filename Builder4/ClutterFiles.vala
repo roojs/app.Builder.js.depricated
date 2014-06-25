@@ -23,6 +23,7 @@ public class Xcls_ClutterFiles : Object
     private Xcls_ClutterFiles  _this;
 
     public Xcls_filelayout filelayout;
+    public Xcls_filelayout_manager filelayout_manager;
 
         // my vars
 
@@ -80,7 +81,7 @@ public class Xcls_ClutterFiles : Object
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_FlowLayout3( _this );
+            var child_0 = new Xcls_filelayout_manager( _this );
             child_0.ref();
             this.el.layout_manager = child_0.el;
         }
@@ -89,7 +90,7 @@ public class Xcls_ClutterFiles : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_FlowLayout3 : Object 
+    public class Xcls_filelayout_manager : Object 
     {
         public Clutter.FlowLayout el;
         private Xcls_ClutterFiles  _this;
@@ -98,9 +99,10 @@ public class Xcls_ClutterFiles : Object
             // my vars
 
             // ctor 
-        public Xcls_FlowLayout3(Xcls_ClutterFiles _owner )
+        public Xcls_filelayout_manager(Xcls_ClutterFiles _owner )
         {
             _this = _owner;
+            _this.filelayout_manager = this;
             this.el = new Clutter.FlowLayout( Clutter.FlowOrientation.HORIZONTAL );
 
             // my vars
@@ -109,8 +111,6 @@ public class Xcls_ClutterFiles : Object
             this.el.column_spacing = 120;
             this.el.homogeneous = true;
             this.el.row_spacing = 120;
-
-            // listeners 
         }
 
         // userdefined functions 

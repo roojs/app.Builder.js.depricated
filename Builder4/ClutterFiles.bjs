@@ -22,13 +22,12 @@
                         {
                             "*prop": "layout_manager",
                             "column_spacing": 120,
+                            "id": "filelayout_manager",
                             "row_spacing": 120,
                             "xtype": "FlowLayout",
                             "|homogeneous": "true",
                             "|orientation": "Clutter.FlowOrientation.HORIZONTAL",
-                            "|xns": "Clutter",
-                            "id": "",
-                            "listeners": {}
+                            "|xns": "Clutter"
                         },
                         {
                             "*args": "JsRender.JsRender file",
