@@ -32,6 +32,7 @@ all:
 		Builder4/WindowLeftTree.vala \
 		Builder4/WindowRooView.vala \
 		Builder4/WindowLeftProps.vala \
+		Builder4/ClutterFiles.vala \
 		-o /tmp/test
 #		Builder4/*.vala \
 
