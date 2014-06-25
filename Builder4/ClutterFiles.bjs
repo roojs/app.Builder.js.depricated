@@ -16,6 +16,7 @@
                     "pack": false,
                     "items": [
                         {
+                            "xpack": "",
                             "spacing": 4,
                             "xtype": "BoxLayout",
                             "|init": "this.el.set_size(100,100);\n ",

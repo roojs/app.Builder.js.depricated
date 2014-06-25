@@ -19,6 +19,7 @@ ClutterFiles=new XObject({
             items : [
                 {
                     xtype: Clutter.BoxLayout,
+                    xpack : "",
                     spacing : 4,
                     init : this.el.set_size(100,100);,
                     orientation : Clutter.Orientation,VERTICAL,
