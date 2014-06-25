@@ -97,7 +97,7 @@ public class Xcls_MainWindow : Object
                 _this.leftpane.el.set_position(0);
                 // rotate y 180..
                 el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 360.0f);
-                el.set_scale(0.2f,0.2f);
+                el.set_scale(0.0f,0.0f);
                 _this.rooview.is_fullsize = false;
         
                 _this.clutterembed.clutterfiles.show(_this.project);
