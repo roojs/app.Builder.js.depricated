@@ -29,8 +29,8 @@ ClutterFiles=new XObject({
                         items : [
                             {
                                 xtype: Clutter.Image,
-                                xpack : "",
-                                pack : false
+                                pack : false,
+                                xpack : "layout_pack,false,true,false"
                             },
                             {
                                 xtype: Clutter.Text,

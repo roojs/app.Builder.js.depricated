@@ -30,8 +30,8 @@
                                     "|xns": "Clutter",
                                     "items": [
                                         {
-                                            "xpack": "",
                                             "pack": false,
+                                            "xpack": "layout_pack,false,true,false",
                                             "xtype": "Image",
                                             "|xns": "Clutter"
                                         },
