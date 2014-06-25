@@ -315,7 +315,7 @@ public class Xcls_MainWindow : Object
 
 
             // my vars
-        public Xcls_ClutterFiles undefined;
+        public Xcls_ClutterFiles clutterfiles;
 
             // ctor 
         public Xcls_clutterembed(Xcls_MainWindow _owner )
@@ -325,7 +325,6 @@ public class Xcls_MainWindow : Object
             this.el = new GtkClutter.Embed();
 
             // my vars
-            this.undefined = clutterfiles;
 
             // set gobject values
             var child_0 = new Xcls_rooview( _this );
