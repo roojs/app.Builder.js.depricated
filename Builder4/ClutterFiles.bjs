@@ -17,8 +17,7 @@
                     "items": [
                         {
                             "*args": "string fname, string title",
-                            "*nocreate": 1,
-                            "id": "fileitem",
+                            "id": "*fileitem",
                             "pack": false,
                             "xtype": "Actor",
                             "|xns": "Clutter",
