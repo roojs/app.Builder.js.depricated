@@ -1,0 +1,20 @@
+{
+    "id": "file-gtk-8",
+    "name": "ClutterFiles",
+    "parent": "",
+    "title": false,
+    "path": "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.bjs",
+    "items": [
+        {
+            
+            "id": "ClutterFiles",
+            "xtype": "ScrollActor",
+            "|xns": "Clutter",
+            "items": [
+                 
+            ]
+        }
+    ],
+    "permname": "",
+    "modOrder": ""
+}
