@@ -341,7 +341,8 @@ public class Xcls_MainWindow : Object
             
             this.clutterfiles.el.add_constraint(
                 new Clutter.BindConstraint(stage,Clutter.BindCoordinate.SIZE, 0.0f)
-                );
+            );
+            this.clutterfiles.el.set_position(0,0);
 
             // listeners 
             this.el.size_allocate.connect(   (  alloc) => {
