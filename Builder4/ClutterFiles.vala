@@ -76,7 +76,7 @@ public class Xcls_ClutterFiles : Object
                     last_child_bottom - this.el.height,
                     y));    
            // y = float.min(0, y);    //??
-            print("scroll event of %f  - new y = %f ".printf(event.y, y));
+           // print("scroll event of %f  - new y = %f ".printf(event.y, y));
             this.filelayout.el.y = y;
             return true;
                 
