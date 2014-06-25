@@ -66,7 +66,9 @@ public class Xcls_ClutterFiles : Object
             // height of filelayout
             // height of scrollactor..
             
-            print("scroll event of %f  - new y = %f ".printf(event.y, y));    
+            
+            print("new y %f  - layout height = %f , sroll actor height %f ".printf( 
+                    y, this.filelayout.el.height, this.el.height));    
            // y = float.min(0, y);    //??
             print("scroll event of %f  - new y = %f ".printf(event.y, y));
             this.filelayout.el.y = y;
