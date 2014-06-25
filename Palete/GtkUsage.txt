@@ -286,4 +286,11 @@ right:
     Clutter.Image
     Clutter.Text
     Clutter.Rectangle
+    Clutter.GridLayout
+    Clutter.FlowLayout
+    Clutter.FixedLayout
+    Clutter.TableLayout
+    Clutter.BinLayout
+    Clutter.BoxLayout
+    Clutter.Actor
     
