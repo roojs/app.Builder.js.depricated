@@ -78,21 +78,17 @@ public class Xcls_ClutterFiles : Object
             child_0.ref();
             var child_1 = new Xcls_*fileitem(_this);
             child_1.ref();
-
-            // listeners 
         }
 
         // userdefined functions 
+
+        // skip id - not pipe 
 
         // skip pack - not pipe 
 
         // skip xtype - not pipe 
 
         // skip |xns - no return type
-
-        // skip id - not pipe 
-
-        // skip listeners - not pipe 
 
         // skip items - not pipe 
 

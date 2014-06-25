@@ -11,11 +11,10 @@
             "|xns": "Clutter",
             "items": [
                 {
+                    "id": "",
                     "pack": false,
                     "xtype": "Actor",
                     "|xns": "Clutter",
-                    "id": "",
-                    "listeners": {},
                     "items": [
                         {
                             "*prop": "layout_manager",
