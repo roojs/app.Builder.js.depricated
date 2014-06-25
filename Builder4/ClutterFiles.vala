@@ -111,6 +111,10 @@ public class Xcls_ClutterFiles : Object
             var child_0 = new Xcls_BoxLayout4(_this);
             child_0.ref();
             this.el.add (  child_0.el  );
+            var child_1 = new Xcls_Image5(_this);
+            child_1.ref();
+            var child_2 = new Xcls_Text6(_this);
+            child_2.ref();
         }
 
         // userdefined functions 
@@ -148,10 +152,6 @@ public class Xcls_ClutterFiles : Object
             // set gobject values
             this.el.orientation = Clutter.Orientation,VERTICAL;
             this.el.spacing = 4;
-            var child_0 = new Xcls_Image5(_this);
-            child_0.ref();
-            var child_1 = new Xcls_Text6(_this);
-            child_1.ref();
 
             // init method 
             this.el.set_size(100,100);
@@ -173,8 +173,6 @@ public class Xcls_ClutterFiles : Object
         // skip |orientation - already used 
 
         // skip |xns - no return type
-
-        // skip items - not pipe 
 
         // skip xvala_cls - not pipe 
 

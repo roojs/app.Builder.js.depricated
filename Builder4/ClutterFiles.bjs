@@ -27,19 +27,17 @@
                                     "xtype": "BoxLayout",
                                     "|init": "this.el.set_size(100,100);\n ",
                                     "|orientation": "Clutter.Orientation,VERTICAL",
+                                    "|xns": "Clutter"
+                                },
+                                {
                                     "|xns": "Clutter",
-                                    "items": [
-                                        {
-                                            "|xns": "Clutter",
-                                            "xtype": "Image",
-                                            "pack": false
-                                        },
-                                        {
-                                            "|xns": "Clutter",
-                                            "xtype": "Text",
-                                            "pack": false
-                                        }
-                                    ]
+                                    "xtype": "Image",
+                                    "pack": false
+                                },
+                                {
+                                    "|xns": "Clutter",
+                                    "xtype": "Text",
+                                    "pack": false
                                 }
                             ]
                         }

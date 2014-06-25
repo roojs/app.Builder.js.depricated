@@ -27,17 +27,15 @@ ClutterFiles=new XObject({
                             spacing : 4,
                             xpack : "",
                             init : this.el.set_size(100,100);,
-                            orientation : Clutter.Orientation,VERTICAL,
-                            items : [
-                                {
-                                    xtype: Clutter.Image,
-                                    pack : false
-                                },
-                                {
-                                    xtype: Clutter.Text,
-                                    pack : false
-                                }
-                            ]
+                            orientation : Clutter.Orientation,VERTICAL
+                        },
+                        {
+                            xtype: Clutter.Image,
+                            pack : false
+                        },
+                        {
+                            xtype: Clutter.Text,
+                            pack : false
                         }
                     ]
                 }
