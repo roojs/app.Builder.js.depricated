@@ -30,11 +30,11 @@ ClutterFiles=new XObject({
                             '*args' : "string fname",
                             ctor : "from_file(fname)",
                             id : "+image",
-                            x_align : "Clutter.ActorAlign.START",
-                            x_expand : "true",
                             pack : "add_child",
+                            x_align : Clutter.ActorAlign.START,
+                            x_expand : "true",
                             y_align : "Clutter.ActorAlign.START",
-                            y_expand : "false"
+                            y_expand : false
                         },
                         {
                             xtype: Clutter.Text,
