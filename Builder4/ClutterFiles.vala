@@ -86,7 +86,7 @@ public class Xcls_ClutterFiles : Object
 
         // userdefined functions 
 
-        // skip *prop - not pipe 
+        // skip xpack - not pipe 
 
         // skip id - not pipe 
 
