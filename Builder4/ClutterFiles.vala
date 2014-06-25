@@ -23,7 +23,6 @@ public class Xcls_ClutterFiles : Object
     private Xcls_ClutterFiles  _this;
 
     public Xcls_fileitem fileitem;
-    public Xcls_image image;
     public Xcls_title title;
 
         // my vars
@@ -115,7 +114,7 @@ public class Xcls_ClutterFiles : Object
             var child_0 = new Xcls_BoxLayout4(_this);
             child_0.ref();
             this.el.add (  child_0.el  );
-            var child_1 = new Xcls_image(_this);
+            var child_1 = new Xcls_Texture5(_this);
             child_1.ref();
             var child_2 = new Xcls_title(_this);
             child_2.ref();
@@ -191,7 +190,7 @@ public class Xcls_ClutterFiles : Object
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_image : Object 
+    public class Xcls_Texture5 : Object 
     {
         public Clutter.Texture el;
         private Xcls_ClutterFiles  _this;
@@ -200,10 +199,9 @@ public class Xcls_ClutterFiles : Object
             // my vars
 
             // ctor 
-        public Xcls_image(Xcls_ClutterFiles _owner)
+        public Xcls_Texture5(Xcls_ClutterFiles _owner)
         {
             _this = _owner;
-            _this.image = this;
             this.el = new Clutter.Texture();
 
             // my vars
@@ -219,11 +217,9 @@ public class Xcls_ClutterFiles : Object
 
         // skip *args - not pipe 
 
-        // skip *nocreate - not pipe 
-
         // skip ctor - not pipe 
 
-        // skip id - not pipe 
+        // skip *id - not pipe 
 
         // skip pack - not pipe 
 
