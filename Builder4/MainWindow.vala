@@ -338,11 +338,6 @@ public class Xcls_MainWindow : Object
             stage.set_background_color(  Clutter.Color.from_string("#000"));
             this.clutterfiles = new Xcls_ClutterFiles();
             stage.add_child(this.clutterfiles.el);
-            
-            this.clutterfiles.el.add_constraint(
-                new Clutter.BindConstraint(stage,Clutter.BindCoordinate.SIZE, 0.0f)
-            );
-            this.clutterfiles.el.set_position(0,0);
 
             // listeners 
             this.el.size_allocate.connect(   (  alloc) => {
