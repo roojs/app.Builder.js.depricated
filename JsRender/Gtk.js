@@ -609,7 +609,7 @@ Gtk = XObject.define(
                         continue; // skip generation of children?
                         
                     }
-                    strbuilder(pad + "this. " + ci.xvala_id.substring(1) + " =  child_" + i +  ";\n");
+                    strbuilder(ipad + "this." + ci.xvala_id.substring(1) + " =  child_" + i +  ";\n");
                           
                 }
             }
