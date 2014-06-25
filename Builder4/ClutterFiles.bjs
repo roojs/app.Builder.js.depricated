@@ -18,6 +18,8 @@
                     "pack": "add_child",
                     "xtype": "Actor",
                     "|xns": "Clutter",
+                    "|init": "function() {\n    XObject.prototype.init.call(this);\n}\n",
+                    "listeners": {},
                     "items": [
                         {
                             "*prop": "layout_manager",

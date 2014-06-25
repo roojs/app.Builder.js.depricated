@@ -36,6 +36,9 @@ ClutterFiles=new XObject({
             xtype: Clutter.Actor,
             id : "filelayout",
             pack : "add_child",
+            init : function() {
+                XObject.prototype.init.call(this);
+            },
             items : [
                 {
                     xtype: Clutter.Actor,

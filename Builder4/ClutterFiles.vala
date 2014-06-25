@@ -84,6 +84,13 @@ public class Xcls_ClutterFiles : Object
             var child_0 = new Xcls_filelayout_manager( _this );
             child_0.ref();
             this.el.layout_manager = child_0.el;
+
+            // init method 
+            function() {
+                XObject.prototype.init.call(this);
+            }
+
+            // listeners 
         }
 
         // userdefined functions 
