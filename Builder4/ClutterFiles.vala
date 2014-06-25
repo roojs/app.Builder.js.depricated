@@ -23,6 +23,7 @@ public class Xcls_ClutterFiles : Object
     private Xcls_ClutterFiles  _this;
 
     public Xcls_image image;
+    public Xcls_title title;
 
         // my vars
 
@@ -114,7 +115,7 @@ public class Xcls_ClutterFiles : Object
             this.el.add (  child_0.el  );
             var child_1 = new Xcls_image(_this);
             child_1.ref();
-            var child_2 = new Xcls_Text6(_this);
+            var child_2 = new Xcls_title(_this);
             child_2.ref();
             this.el.add (  child_2.el  );
         }
@@ -236,7 +237,7 @@ public class Xcls_ClutterFiles : Object
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_Text6 : Object 
+    public class Xcls_title : Object 
     {
         public Clutter.Text el;
         private Xcls_ClutterFiles  _this;
@@ -245,9 +246,10 @@ public class Xcls_ClutterFiles : Object
             // my vars
 
             // ctor 
-        public Xcls_Text6(Xcls_ClutterFiles _owner)
+        public Xcls_title(Xcls_ClutterFiles _owner)
         {
             _this = _owner;
+            _this.title = this;
             this.el = new Clutter.Text();
 
             // my vars
@@ -257,8 +259,6 @@ public class Xcls_ClutterFiles : Object
             this.el.x_expand = "true";
             this.el.y_align = "Clutter.ActorAlign.START";
             this.el.y_expand = "false";
-
-            // listeners 
         }
 
         // userdefined functions 
@@ -266,6 +266,8 @@ public class Xcls_ClutterFiles : Object
         // skip *args - not pipe 
 
         // skip *ctor - not pipe 
+
+        // skip id - not pipe 
 
         // skip x_align - already used 
 
@@ -278,10 +280,6 @@ public class Xcls_ClutterFiles : Object
         // skip y_expand - already used 
 
         // skip |xns - no return type
-
-        // skip id - not pipe 
-
-        // skip listeners - not pipe 
 
         // skip xvala_cls - not pipe 
 
