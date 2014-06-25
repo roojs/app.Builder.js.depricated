@@ -78,8 +78,9 @@ public class Xcls_MainWindow : Object
     }
 
     // userdefined functions 
-
-    // skip | - no return type
+    public void setViewEditingfunction() {
+            
+        }
     public void setTitle (string str) {
             this.el.set_title(this.title + " - " + str);
         }
