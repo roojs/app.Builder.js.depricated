@@ -174,6 +174,7 @@ public class Xcls_ClutterFiles : Object
 
 
             // my vars
+        public JsRender.JsRender file;
         public Xcls_image image;
         public Xcls_title title;
 
