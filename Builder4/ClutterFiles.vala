@@ -22,6 +22,7 @@ public class Xcls_ClutterFiles : Object
     public Clutter.ScrollActor el;
     private Xcls_ClutterFiles  _this;
 
+    public Xcls_filelayout filelayout;
     public Xcls_*fileitem *fileitem;
     public Xcls_*image *image;
     public Xcls_*title *title;
@@ -38,7 +39,7 @@ public class Xcls_ClutterFiles : Object
         // my vars
 
         // set gobject values
-        var child_0 = new Xcls_Actor2(_this);
+        var child_0 = new Xcls_filelayout(_this);
         child_0.ref();
     }
 
@@ -57,7 +58,7 @@ public class Xcls_ClutterFiles : Object
     // skip xvala_xcls - not pipe 
 
     // skip xvala_id - not pipe 
-    public class Xcls_Actor2 : Object 
+    public class Xcls_filelayout : Object 
     {
         public Clutter.Actor el;
         private Xcls_ClutterFiles  _this;
@@ -66,9 +67,10 @@ public class Xcls_ClutterFiles : Object
             // my vars
 
             // ctor 
-        public Xcls_Actor2(Xcls_ClutterFiles _owner)
+        public Xcls_filelayout(Xcls_ClutterFiles _owner)
         {
             _this = _owner;
+            _this.filelayout = this;
             this.el = new Clutter.Actor();
 
             // my vars
