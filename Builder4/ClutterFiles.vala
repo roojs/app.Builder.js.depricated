@@ -88,6 +88,9 @@ public class Xcls_ClutterFiles : Object
             // my vars
 
             // set gobject values
+            this.el.orientation = "";
+
+            // listeners 
         }
 
         // userdefined functions 

@@ -20,7 +20,9 @@
                         {
                             "*prop": "layout_manager",
                             "xtype": "FlowLayout",
-                            "|xns": "Clutter"
+                            "|xns": "Clutter",
+                            "orientation": "",
+                            "listeners": {}
                         },
                         {
                             "*args": "string fname, string title",
