@@ -77,7 +77,8 @@ ClutterFiles=new XObject({
                 column_spacing : 120,
                 row_spacing : 120,
                 homogeneous : true,
-                orientation : Clutter.FlowOrientation.HORIZONTAL
+                orientation : Clutter.FlowOrientation.HORIZONTAL,
+                id : ""
             }
         }
     ]
