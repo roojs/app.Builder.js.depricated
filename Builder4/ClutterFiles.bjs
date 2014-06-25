@@ -38,7 +38,7 @@
                         {
                             "listeners": {
                                 "enter_event": "(  event)  => {\n    this.el.background_color = new Clutter.Color.from_string(\"#eee\");\n}",
-                                "leave_event": "function (self, event) {\n\n}"
+                                "leave_event": "(  event)  => {\n    this.el.background_color = new Clutter.Color.from_string(\"#000\");\n}"
                             },
                             "*args": "JsRender.JsRender file",
                             "id": "*fileitem",

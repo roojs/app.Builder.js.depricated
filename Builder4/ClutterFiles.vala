@@ -205,8 +205,8 @@ public class Xcls_ClutterFiles : Object
             this.el.enter_event.connect( (  event)  => {
                 this.el.background_color = new Clutter.Color.from_string("#eee");
             } );
-            this.el.leave_event.connect( function (self, event) {
-            
+            this.el.leave_event.connect( (  event)  => {
+                this.el.background_color = new Clutter.Color.from_string("#000");
             } );
         }
 

@@ -90,8 +90,8 @@ ClutterFiles=new XObject({
                         enter_event : (  event)  => {
                             this.el.background_color = new Clutter.Color.from_string("#eee");
                         },
-                        leave_event : function (self, event) {
-                        
+                        leave_event : (  event)  => {
+                            this.el.background_color = new Clutter.Color.from_string("#000");
                         }
                     },
                     '*args' : "JsRender.JsRender file",
