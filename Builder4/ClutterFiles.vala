@@ -111,7 +111,7 @@ public class Xcls_ClutterFiles : Object
             var child_0 = new Xcls_BoxLayout4(_this);
             child_0.ref();
             this.el.add (  child_0.el  );
-            var child_1 = new Xcls_Image5(_this);
+            var child_1 = new Xcls_Texture5(_this);
             child_1.ref();
             var child_2 = new Xcls_Text6(_this);
             child_2.ref();
@@ -180,38 +180,42 @@ public class Xcls_ClutterFiles : Object
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_Image5 : Object 
+    public class Xcls_Texture5 : Object 
     {
-        public Clutter.Image el;
+        public Clutter.Texture el;
         private Xcls_ClutterFiles  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_Image5(Xcls_ClutterFiles _owner)
+        public Xcls_Texture5(Xcls_ClutterFiles _owner)
         {
             _this = _owner;
-            this.el = new Clutter.Image();
+            this.el = new Clutter.Texture();
 
             // my vars
 
             // set gobject values
+            this.el.x_align = "Clutter.ActorAlign.START";
+            this.el.x_expand = "true";
+            this.el.y_align = "Clutter.ActorAlign.START";
+            this.el.y_expand = "false";
         }
 
         // userdefined functions 
 
-        // skip y_expand - not pipe 
-
         // skip pack - not pipe 
 
-        // skip x_align - not pipe 
+        // skip x_align - already used 
 
-        // skip x_expand - not pipe 
+        // skip x_expand - already used 
 
         // skip xtype - not pipe 
 
-        // skip y_align - not pipe 
+        // skip y_align - already used 
+
+        // skip y_expand - already used 
 
         // skip |xns - no return type
 

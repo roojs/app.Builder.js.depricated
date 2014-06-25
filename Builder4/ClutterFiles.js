@@ -22,12 +22,12 @@ ClutterFiles=new XObject({
                     pack : false,
                     items : [
                         {
-                            xtype: Clutter.Image,
-                            y_expand : "false",
+                            xtype: Clutter.Texture,
                             pack : false,
                             x_align : "Clutter.ActorAlign.START",
                             x_expand : "true",
-                            y_align : "Clutter.ActorAlign.START"
+                            y_align : "Clutter.ActorAlign.START",
+                            y_expand : "false"
                         },
                         {
                             xtype: Clutter.Text,
