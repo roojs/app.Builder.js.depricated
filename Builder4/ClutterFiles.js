@@ -61,6 +61,11 @@ ClutterFiles=new XObject({
             init : this.el.add_constraint(
                 new Clutter.BindConstraint(_this.el,Clutter.BindCoordinate.SIZE, 0.0f)
             );,
+            listeners : {
+                scroll_event : function (self, event) {
+                
+                }
+            },
             items : [
                 {
                     xtype: Clutter.Actor,

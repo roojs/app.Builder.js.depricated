@@ -22,6 +22,9 @@
                     "xtype": "Actor",
                     "|init": "\nthis.el.add_constraint(\n    new Clutter.BindConstraint(_this.el,Clutter.BindCoordinate.SIZE, 0.0f)\n);\n\n",
                     "|xns": "Clutter",
+                    "listeners": {
+                        "scroll_event": "function (self, event) {\n\n}"
+                    },
                     "items": [
                         {
                             "*prop": "layout_manager",
