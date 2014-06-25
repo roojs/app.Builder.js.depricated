@@ -12,9 +12,8 @@
             "|xns": "Clutter",
             "items": [
                 {
-                    "xpack": "",
-                    "id": "filelayout",
                     "pack": false,
+                    "id": "filelayout",
                     "xtype": "Actor",
                     "|xns": "Clutter",
                     "items": [
