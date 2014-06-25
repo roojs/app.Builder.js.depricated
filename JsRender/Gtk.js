@@ -584,8 +584,17 @@ Gtk = XObject.define(
                     var ci = item.items[i];
                     if (ci.xvala_id[0] == '*') {
                         continue; // skip generation of children?
-                        
                     }
+                    
+                    var xargs = "";
+                    if (typeof(ci['*args']) != 'undefined') {
+                        
+                        var ar = ci['*args'].split(',');
+                        for (var ari = 0 ; ari < ar.length; ari++ ) {
+                            xargs += "," + ar[ari].trim().split(" ").pop();
+                        }
+                    }
+                    
                     strbuilder(ipad + "var child_" + i + " = new " + ci.xvala_xcls + "(_this);\n" );
                     strbuilder(ipad + "child_" + i +".ref();\n" ); // we need to reference increase unnamed children...
                     
