@@ -30,9 +30,10 @@
                                     "|xns": "Clutter"
                                 },
                                 {
-                                    "|xns": "Clutter",
+                                    "xpack": "",
+                                    "pack": false,
                                     "xtype": "Image",
-                                    "pack": false
+                                    "|xns": "Clutter"
                                 },
                                 {
                                     "|xns": "Clutter",

@@ -23,6 +23,7 @@ ClutterFiles=new XObject({
                     items : [
                         {
                             xtype: Clutter.Image,
+                            xpack : "",
                             pack : false
                         },
                         {

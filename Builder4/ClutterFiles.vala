@@ -201,11 +201,13 @@ public class Xcls_ClutterFiles : Object
 
         // userdefined functions 
 
-        // skip |xns - no return type
+        // skip xpack - not pipe 
+
+        // skip pack - not pipe 
 
         // skip xtype - not pipe 
 
-        // skip pack - not pipe 
+        // skip |xns - no return type
 
         // skip xvala_cls - not pipe 
 
