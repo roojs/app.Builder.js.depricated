@@ -21,9 +21,9 @@
                     "items": [
                         {
                             "*prop": "layout_manager",
-                            "column_spacing": 120,
+                            "column_spacing": 20,
                             "id": "filelayout_manager",
-                            "row_spacing": 120,
+                            "row_spacing": 20,
                             "xtype": "FlowLayout",
                             "|homogeneous": "true",
                             "|orientation": "Clutter.FlowOrientation.HORIZONTAL",
