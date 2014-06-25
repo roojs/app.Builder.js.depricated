@@ -16,9 +16,10 @@
                     "pack": false,
                     "items": [
                         {
-                            "|orientation": "Clutter.Orientation,VERTICAL",
+                            "spacing": 4,
                             "xtype": "BoxLayout",
                             "|init": " ",
+                            "|orientation": "Clutter.Orientation,VERTICAL",
                             "|xns": "Clutter",
                             "items": [
                                 {

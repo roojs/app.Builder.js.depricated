@@ -110,6 +110,7 @@ public class Xcls_ClutterFiles : Object
 
             // set gobject values
             this.el.orientation = Clutter.Orientation,VERTICAL;
+            this.el.spacing = 4;
             var child_0 = new Xcls_Image4(_this);
             child_0.ref();
             var child_1 = new Xcls_Text5(_this);
@@ -118,11 +119,13 @@ public class Xcls_ClutterFiles : Object
 
         // userdefined functions 
 
-        // skip |orientation - already used 
+        // skip spacing - already used 
 
         // skip xtype - not pipe 
 
         // skip |init - already used 
+
+        // skip |orientation - already used 
 
         // skip |xns - no return type
 
