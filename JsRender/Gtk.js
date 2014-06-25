@@ -542,7 +542,10 @@ Gtk = XObject.define(
             if (typeof(item.items) != 'undefined') {
                 for(var i =0;i<item.items.length;i++) {
                     var ci = item.items[i];
-                    
+                    if (ci.xvala_id[0] == '*') {
+                        contine; // skip generation of children?
+                        
+                    }
                     strbuilder(ipad + "var child_" + i + " = new " + ci.xvala_xcls + "(_this);\n" );
                     strbuilder(ipad + "child_" + i +".ref();\n" ); // we need to reference increase unnamed children...
                     
@@ -582,7 +585,7 @@ Gtk = XObject.define(
             
             citems['|pack'] = true;
             citems['|items'] = true;
-             citems['|init'] = true;
+            citems['|init'] = true;
             
             if (item.listeners) {
             //    print(JSON.stringify(item.listeners));Seed.quit();
