@@ -22,14 +22,6 @@ ClutterFiles=new XObject({
                     pack : false,
                     items : [
                         {
-                            xtype: Clutter.BoxLayout,
-                            '*pack' : "layout_manager",
-                            spacing : 4,
-                            xpack : "",
-                            init : this.el.set_size(100,100);,
-                            orientation : Clutter.Orientation,VERTICAL
-                        },
-                        {
                             xtype: Clutter.Image,
                             pack : false
                         },
@@ -37,7 +29,14 @@ ClutterFiles=new XObject({
                             xtype: Clutter.Text,
                             pack : false
                         }
-                    ]
+                    ],
+                    layout_manager : {
+                        xtype: Clutter.BoxLayout,
+                        spacing : 4,
+                        xpack : "",
+                        init : this.el.set_size(100,100);,
+                        orientation : Clutter.Orientation,VERTICAL
+                    }
                 }
             ]
         }

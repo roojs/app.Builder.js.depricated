@@ -21,7 +21,7 @@
                             "pack": false,
                             "items": [
                                 {
-                                    "*pack": "layout_manager",
+                                    "*prop": "layout_manager",
                                     "spacing": 4,
                                     "xpack": "",
                                     "xtype": "BoxLayout",

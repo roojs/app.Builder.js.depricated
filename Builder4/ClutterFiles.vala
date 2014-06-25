@@ -160,7 +160,7 @@ public class Xcls_ClutterFiles : Object
 
         // userdefined functions 
 
-        // skip *pack - not pipe 
+        // skip *prop - not pipe 
 
         // skip spacing - already used 
 
