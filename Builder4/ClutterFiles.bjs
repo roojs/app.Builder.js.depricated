@@ -6,9 +6,6 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.bjs",
     "items": [
         {
-            "listeners": {
-                "scroll_event": "( event)  => {\n\n\n    var y = this.el.y;\n    var dir = event.direction;\n    switch (dir) {\n        case Clutter.ScrollDirection.UP:\n            y += event.y;\n            break;\n        case Clutter.ScrollDirection.DOWN:\n            y -= event.y;\n            break;\n        default:\n            return false;\n    }\n    print(\"scroll event of %f  - new y = %f \".printf(event.y, y));\n    this.el.y = y;\n    return true;\n        \n}"
-            },
             "id": "ClutterFiles",
             "scroll_mode": "Clutter.ScrollMode.VERTICAL",
             "xtype": "ScrollActor",
@@ -17,14 +14,14 @@
             "|xns": "Clutter",
             "items": [
                 {
+                    "listeners": {
+                        "scroll_event": "function (self, event) {\n( event)  => {\n\n\n    var y = this.el.y;\n    var dir = event.direction;\n    switch (dir) {\n        case Clutter.ScrollDirection.UP:\n            y += event.y;\n            break;\n        case Clutter.ScrollDirection.DOWN:\n            y -= event.y;\n            break;\n        default:\n            return false;\n    }\n    print(\"scroll event of %f  - new y = %f \".printf(event.y, y));\n    this.el.y = y;\n    return true;\n        \n}\n}"
+                    },
                     "id": "filelayout",
                     "pack": "add_child",
                     "xtype": "Actor",
                     "|init": "\nthis.el.add_constraint(\n    new Clutter.BindConstraint(_this.el,Clutter.BindCoordinate.SIZE, 0.0f)\n);\n\n",
                     "|xns": "Clutter",
-                    "listeners": {
-                        "scroll_event": "function (self, event) {\n\n}"
-                    },
                     "items": [
                         {
                             "*prop": "layout_manager",
