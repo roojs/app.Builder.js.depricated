@@ -20,7 +20,7 @@
                     "items": [
                         {
                             "*prop": "layout_manager",
-                            "homogeneous": "true",
+                            "|homogeneous": "true",
                             "xtype": "FlowLayout",
                             "|orientation": "Clutter.FlowOrientation.HORIZONTAL",
                             "|xns": "Clutter"
