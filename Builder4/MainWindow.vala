@@ -78,6 +78,15 @@ public class Xcls_MainWindow : Object
     }
 
     // userdefined functions 
+    public void setTitle (string str) {
+            this.el.set_title(this.title + " - " + str);
+        }
+    public void show() {
+            this.left_tree =new Xcls_WindowLeftTree();
+            _this.vbox.el.pack_start(this.left_tree.el,true, true,0);
+            this.el.show_all();
+        
+        }
     public void showViewBrowsing  ( )   {
             var el = _this.rooview.el;
             el.save_easing_state();
@@ -96,15 +105,6 @@ public class Xcls_MainWindow : Object
             el.restore_easing_state();
                 
             print("show view browsing");
-        }
-    public void setTitle (string str) {
-            this.el.set_title(this.title + " - " + str);
-        }
-    public void show() {
-            this.left_tree =new Xcls_WindowLeftTree();
-            _this.vbox.el.pack_start(this.left_tree.el,true, true,0);
-            this.el.show_all();
-        
         }
     public void showViewEditing  ( )  {
             var el = _this.rooview.el;
