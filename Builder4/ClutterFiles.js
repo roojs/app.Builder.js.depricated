@@ -101,6 +101,7 @@ ClutterFiles=new XObject({
                     pack : false,
                     init : this.el.set_size(100,100);,
                     reactive : true,
+                     : "",
                     items : [
                         {
                             xtype: Clutter.Texture,
