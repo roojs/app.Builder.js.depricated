@@ -15,6 +15,9 @@ ClutterFiles=new XObject({
     scroll_mode : "Clutter.ScrollMode.VERTICAL",
     resize : (float w, float h) {
         _this.filelayout.el.layout_manager.max_column_width = w;
+       this.el.set_size(this.el.get_stage().width-50,
+                            this.el.get_stage().height);
+                
     },
     'void:show' : (Project.Project pr) {
         // list all the files, and create new Xcls_fileitem for each one.
