@@ -113,11 +113,6 @@ public class Xcls_ClutterFiles : Object
             child_0.ref();
             var child_1 = new Xcls_Text5(_this);
             child_1.ref();
-
-            // init method 
-            function() {
-                XObject.prototype.init.call(this);
-            }
         }
 
         // userdefined functions 
