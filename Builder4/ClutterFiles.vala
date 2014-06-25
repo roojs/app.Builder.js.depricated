@@ -150,6 +150,7 @@ public class Xcls_ClutterFiles : Object
             this.el.spacing = 4;
             var child_0 = new Xcls_Image5(_this);
             child_0.ref();
+            this.el.add (  child_0.el  );
             var child_1 = new Xcls_Text6(_this);
             child_1.ref();
 
@@ -204,8 +205,6 @@ public class Xcls_ClutterFiles : Object
         // userdefined functions 
 
         // skip pack - not pipe 
-
-        // skip xpack - not pipe 
 
         // skip xtype - not pipe 
 
