@@ -30,6 +30,8 @@
                                     "|xns": "Clutter"
                                 },
                                 {
+                                    "*args": "string fname",
+                                    "*nocreate": 1,
                                     "ctor": "from_file(fname)",
                                     "pack": false,
                                     "x_align": "Clutter.ActorAlign.START",
@@ -37,9 +39,7 @@
                                     "xtype": "Texture",
                                     "y_align": "Clutter.ActorAlign.START",
                                     "y_expand": "false",
-                                    "|xns": "Clutter",
-                                    "": "",
-                                    "listeners": {}
+                                    "|xns": "Clutter"
                                 },
                                 {
                                     "pack": false,

@@ -23,13 +23,14 @@ ClutterFiles=new XObject({
                     items : [
                         {
                             xtype: Clutter.Texture,
+                            '*args' : "string fname",
+                            '*nocreate' : 1,
                             ctor : "from_file(fname)",
                             pack : false,
                             x_align : "Clutter.ActorAlign.START",
                             x_expand : "true",
                             y_align : "Clutter.ActorAlign.START",
-                            y_expand : "false",
-                             : ""
+                            y_expand : "false"
                         },
                         {
                             xtype: Clutter.Text,
