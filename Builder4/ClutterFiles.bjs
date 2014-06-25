@@ -43,13 +43,13 @@
                                 "button_press_event": "  (  event) => {\n    _this.open(this.file);\n}"
                             },
                             "*args": "JsRender.JsRender file",
-                            ".JsRender.JsRender": "file",
                             "id": "*fileitem",
                             "pack": false,
                             "xtype": "Actor",
                             "|init": "this.file = file;\nthis.el.set_size(100,100);",
                             "|reactive": "true",
                             "|xns": "Clutter",
+                            "": "",
                             "items": [
                                 {
                                     "*prop": "layout_manager",
