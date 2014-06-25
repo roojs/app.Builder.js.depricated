@@ -9,6 +9,7 @@
             "id": "ClutterFiles",
             "scroll_mode": "Clutter.ScrollMode.VERTICAL",
             "xtype": "ScrollActor",
+            "|init": "this.el.set_position(100,0);",
             "|void:set_size": "(float w, float h) {\n    _this.filelayout_manager.el.max_column_width = w;\n   this.el.set_size(this.el.get_stage().width-50,\n                        this.el.get_stage().height);\n            \n}\n",
             "|void:show": "(Project.Project pr) {\n    // list all the files, and create new Xcls_fileitem for each one.\n    \n    var fiter = pr.files.map_iterator();\n    while (fiter.next()) {\n        var a = new Xcls_fileitem(this,fiter.get_value());\n        a.ref();\n        print(\"add \" + fiter.get_value().name + \"\\n\");\n        this.filelayout.el.add_child(a.el);\n    }\n    this.el.show_all();\n}\n",
             "|xns": "Clutter",
