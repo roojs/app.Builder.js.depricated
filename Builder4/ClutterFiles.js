@@ -19,6 +19,7 @@ ClutterFiles=new XObject({
             items : [
                 {
                     xtype: Clutter.BoxLayout,
+                    orientation : "",
                     init : ,
                     items : [
                         {
