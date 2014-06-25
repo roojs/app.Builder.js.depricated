@@ -59,7 +59,7 @@
                                     "*args": "JsRender.JsRender file",
                                     ".ctor": "new Clutter.Texture.from_file(file.getIconFile())",
                                     "id": "+image",
-                                    "margin_top": 5,
+                                    "|margin_top": 5,
                                     "pack": "add_child",
                                     "xtype": "Texture",
                                     "|margin_left": 5,
