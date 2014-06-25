@@ -209,7 +209,7 @@ public class Xcls_ClutterFiles : Object
         public Xcls_title(Xcls_ClutterFiles _owner , JsRender.JsRender file)
         {
             _this = _owner;
-            this.el = new Clutter.Text();
+            this.el = new Clutter.Text.with_text("Sans 14px", file.nickName(),new Clutter.Color.from_string("#fff")););
 
             // my vars
 
