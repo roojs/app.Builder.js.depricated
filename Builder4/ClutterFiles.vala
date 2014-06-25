@@ -124,6 +124,8 @@ public class Xcls_ClutterFiles : Object
 
         // userdefined functions 
 
+        // skip *args - not pipe 
+
         // skip *nocreate - not pipe 
 
         // skip id - not pipe 
