@@ -83,7 +83,7 @@ public class Xcls_ClutterFiles : Object
         public Xcls_FlowLayout3(Xcls_ClutterFiles _owner )
         {
             _this = _owner;
-            this.el = new Clutter.FlowLayout( Cutter.FlowOrientation.HORIZONTAL );
+            this.el = new Clutter.FlowLayout( Clutter.FlowOrientation.HORIZONTAL );
 
             // my vars
 

@@ -19,7 +19,7 @@
                     "items": [
                         {
                             "*prop": "layout_manager",
-                            "|orientation": "Cutter.FlowOrientation.HORIZONTAL",
+                            "|orientation": "Clutter.FlowOrientation.HORIZONTAL",
                             "xtype": "FlowLayout",
                             "|xns": "Clutter"
                         },
