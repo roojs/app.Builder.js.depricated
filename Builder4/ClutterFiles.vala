@@ -260,6 +260,8 @@ public class Xcls_ClutterFiles : Object
 
         // userdefined functions 
 
+        // skip *args - not pipe 
+
         // skip pack - not pipe 
 
         // skip x_align - already used 
