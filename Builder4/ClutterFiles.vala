@@ -76,15 +76,23 @@ public class Xcls_ClutterFiles : Object
             // set gobject values
             var child_0 = new Xcls_FlowLayout3(_this);
             child_0.ref();
+            var child_1 = new Xcls_*fileitem(_this);
+            child_1.ref();
+
+            // listeners 
         }
 
         // userdefined functions 
 
-        // skip |xns - no return type
+        // skip pack - not pipe 
 
         // skip xtype - not pipe 
 
-        // skip pack - not pipe 
+        // skip |xns - no return type
+
+        // skip id - not pipe 
+
+        // skip listeners - not pipe 
 
         // skip items - not pipe 
 
@@ -111,8 +119,6 @@ public class Xcls_ClutterFiles : Object
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_*fileitem(_this);
-            child_0.ref();
         }
 
         // userdefined functions 
@@ -124,8 +130,6 @@ public class Xcls_ClutterFiles : Object
         // skip xtype - not pipe 
 
         // skip |xns - no return type
-
-        // skip items - not pipe 
 
         // skip xvala_cls - not pipe 
 
