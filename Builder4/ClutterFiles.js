@@ -24,6 +24,9 @@ ClutterFiles=new XObject({
                     '*args' : "string fname, string title  ",
                     id : "*fileitem",
                     pack : false,
+                    init : function() {
+                        XObject.prototype.init.call(this);
+                    },
                     items : [
                         {
                             xtype: Clutter.Texture,
@@ -51,7 +54,6 @@ ClutterFiles=new XObject({
                     layout_manager : {
                         xtype: Clutter.BoxLayout,
                         spacing : 4,
-                        init : this.el.set_size(100,100);,
                         orientation : Clutter.Orientation.VERTICAL
                     }
                 }

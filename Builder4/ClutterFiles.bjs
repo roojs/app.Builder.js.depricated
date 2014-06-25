@@ -29,12 +29,13 @@
                             "pack": false,
                             "xtype": "Actor",
                             "|xns": "Clutter",
+                            "|init": "function() {\n    XObject.prototype.init.call(this);\n}\n",
+                            "listeners": {},
                             "items": [
                                 {
                                     "*prop": "layout_manager",
                                     "spacing": 4,
                                     "xtype": "BoxLayout",
-                                    "|init": "this.el.set_size(100,100);\n  ",
                                     "|orientation": "Clutter.Orientation.VERTICAL",
                                     "|xns": "Clutter"
                                 },

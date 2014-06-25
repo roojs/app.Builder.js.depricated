@@ -124,6 +124,13 @@ public class Xcls_ClutterFiles : Object
             child_2.ref();
             this.el.add_child (  child_2.el  );
             this.title =  child_2;
+
+            // init method 
+            function() {
+                XObject.prototype.init.call(this);
+            }
+
+            // listeners 
         }
 
         // userdefined functions 
@@ -149,10 +156,6 @@ public class Xcls_ClutterFiles : Object
             // set gobject values
             this.el.orientation = Clutter.Orientation.VERTICAL;
             this.el.spacing = 4;
-
-            // init method 
-            this.el.set_size(100,100);
-              
         }
 
         // userdefined functions 
