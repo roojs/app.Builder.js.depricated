@@ -11,6 +11,24 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 ClutterFiles=new XObject({
     xtype: Clutter.ScrollActor,
+    listeners : {
+        scroll_event : ( event)  => {
+            var y = this.el.y;
+            var dir = event.get_scroll_direction();
+            switch (dir) {
+                case Clutter.ScrollDirection.UP:
+                    y += event.y;
+                    break;
+                case Clutter.ScrollDirection.DOWN:
+                    y -= event.y;
+                    break;
+                default:
+                    return false;
+            }
+            this.el.y = y;
+                
+        }
+    },
     id : "ClutterFiles",
     scroll_mode : "Clutter.ScrollMode.VERTICAL",
     'void:set_size' : (float w, float h) {
@@ -30,11 +48,6 @@ ClutterFiles=new XObject({
             this.filelayout.el.add_child(a.el);
         }
         this.el.show_all();
-    },
-    listeners : {
-        scroll_event : function (self, event) {
-        
-        }
     },
     items : [
         {
