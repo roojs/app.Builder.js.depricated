@@ -30,7 +30,7 @@ ClutterFiles=new XObject({
             items : [
                 {
                     xtype: Clutter.Actor,
-                    '*args' : "string fname, string title  ",
+                    '*args' : "JsRender.JsRender file",
                     id : "*fileitem",
                     pack : false,
                     init : this.el.set_size(100,100);,
