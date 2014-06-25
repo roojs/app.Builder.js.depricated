@@ -31,7 +31,7 @@ MainWindow=new XObject({
     destroy : "() => {\n   Gtk.main_quit();\n}",
     id : "MainWindow",
     init : this.el.show_all();,
-    setViewBrowsing : ( ) => {
+    setViewBrowsing : ( )   {
         var el = _this.rooview.el;
         el.save_easing_state();
       
