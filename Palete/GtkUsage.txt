@@ -277,13 +277,13 @@ right:
     Clutter.BoxLayout
 
 left:
-    
+    Clutter.ScrollActor
     Clutter.Actor
     
 right:
     Clutter.Actor
     
-    Clutter.Image
+    Clutter.Texture
     Clutter.Text
     Clutter.Rectangle
     
