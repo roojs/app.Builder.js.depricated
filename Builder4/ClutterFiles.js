@@ -36,7 +36,7 @@ ClutterFiles=new XObject({
                     init : this.el.set_size(100,100);,
                     items : [
                         {
-                            xtype: Clutter.Image,
+                            xtype: Clutter.Texture,
                             '*args' : "JsRender.JsRender file",
                             id : "+image",
                             pack : "add_child",
