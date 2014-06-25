@@ -78,8 +78,25 @@ public class Xcls_MainWindow : Object
     }
 
     // userdefined functions 
-
-    // skip |showViewBrowsing - no return type
+    public void showViewBrowsing  ( )   {
+            var el = _this.rooview.el;
+            el.save_easing_state();
+          
+           
+                // show project / file view..
+                _this.leftpane.lastWidth = _this.leftpane.el.get_position();
+                _this.leftpane.el.set_position(0);
+                // rotate y 180..
+                el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 360.0f);
+                el.set_scale(0.2f,0.2f);
+                _this.rooview.is_fullsize = false;
+        
+                _this.clutterembed.clutterfiles.show(_this.project);
+           
+            el.restore_easing_state();
+                
+            print("show view browsing");
+        }
     public void setTitle (string str) {
             this.el.set_title(this.title + " - " + str);
         }
