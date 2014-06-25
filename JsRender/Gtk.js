@@ -552,6 +552,10 @@ Gtk = XObject.define(
                     strbuilder(ipad + "var child_" + i + " = new " + ci.xvala_xcls + "(_this);\n" );
                     strbuilder(ipad + "child_" + i +".ref();\n" ); // we need to reference increase unnamed children...
                     
+                    if (typeof(ci['*prop']) != 'undefined') {
+                        strbuilder(ipad + "this.el." + ci['*prop'] + "= child_" + i + ".el;\n" );
+                        continue
+                    }
                     
                     if (ci.pack === false || ci.pack == "false") {
                         continue;
