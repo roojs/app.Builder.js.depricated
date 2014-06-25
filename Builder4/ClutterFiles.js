@@ -89,9 +89,11 @@ ClutterFiles=new XObject({
                     listeners : {
                         enter_event : (  event)  => {
                             this.el.background_color = new Clutter.Color.from_string("#eee");
+                                return false;
                         },
                         leave_event : (  event)  => {
                             this.el.background_color = new Clutter.Color.from_string("#000");
+                            return false;
                         }
                     },
                     '*args' : "JsRender.JsRender file",
