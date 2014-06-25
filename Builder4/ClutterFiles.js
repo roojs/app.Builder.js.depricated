@@ -51,7 +51,7 @@ ClutterFiles=new XObject({
                         {
                             xtype: Clutter.Text,
                             '*args' : "JsRender.JsRender file",
-                            '*ctor' : "with_text(\"Sans 14px\", file.nickName())",
+                            ',ctor' : "with_text(\"Sans 14px\", file.nickName())",
                             color : "new Clutter.Color.from_string(\"#fff\")",
                             id : "+title",
                             pack : "add_child",
