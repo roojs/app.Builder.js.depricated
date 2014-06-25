@@ -94,6 +94,17 @@ namespace JsRender {
 		    return generator.to_data(null);
 		}
 	
+		public string nickName()
+		{
+			var ar = this.name.split(".");
+			return ar[ar.length-1];
+			
+		}
+		public string getIconFile()
+		{
+			return  GLib.Environment.get_home_dir() + "/.Builder/test.jpg";
+
+		}
 		 public abstract void save();
 		/*
 		{
