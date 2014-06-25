@@ -37,7 +37,7 @@ ClutterFiles=new XObject({
             
             var last_child_bottom = this.filelayout.el.last_child.y +  this.filelayout.el.last_child.height;
              if ( (-1 * y) > ( 100 + last_child_bottom - this.el.height)) {
-                retirm false;
+                return  false;
             }
         
         
