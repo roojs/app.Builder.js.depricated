@@ -27,7 +27,7 @@ ClutterFiles=new XObject({
                 default:
                     return false;
             }
-            print("scroll event of %d  - new y = %d ".printf(event.y, y));
+            print("scroll event of %f  - new y = %f ".printf(event.y, y));
             this.el.y = y;
             return true;
                 
