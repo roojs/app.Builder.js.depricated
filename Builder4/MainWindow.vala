@@ -478,7 +478,7 @@ public class Xcls_MainWindow : Object
                     el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 360.0f);
                     el.set_scale(0.2f,0.2f);
                     _this.rooview.is_fullsize = false;
-                    _this.clutterembed.clutterfiles.show(this.project);
+                    _this.clutterembed.clutterfiles.show(_this.project);
                     
                 } else {
                     el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 0.0f);
