@@ -79,9 +79,15 @@ public class Xcls_MainWindow : Object
 
     // userdefined functions 
 
-    // skip |setViewBrowsing - no return type
+    // skip |showViewBrowsing - no return type
     public void setTitle (string str) {
             this.el.set_title(this.title + " - " + str);
+        }
+    public void show() {
+            this.left_tree =new Xcls_WindowLeftTree();
+            _this.vbox.el.pack_start(this.left_tree.el,true, true,0);
+            this.el.show_all();
+        
         }
     public void showViewEditing  ( )  {
             var el = _this.rooview.el;
@@ -97,12 +103,6 @@ public class Xcls_MainWindow : Object
             el.restore_easing_state();
                 
             print("show view editing");
-        }
-    public void show() {
-            this.left_tree =new Xcls_WindowLeftTree();
-            _this.vbox.el.pack_start(this.left_tree.el,true, true,0);
-            this.el.show_all();
-        
         }
 
     // skip |xns - no return type

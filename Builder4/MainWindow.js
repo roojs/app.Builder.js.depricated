@@ -31,7 +31,7 @@ MainWindow=new XObject({
     destroy : "() => {\n   Gtk.main_quit();\n}",
     id : "MainWindow",
     init : this.el.show_all();,
-    setViewBrowsing : ( )   {
+    showViewBrowsing : ( )   {
         var el = _this.rooview.el;
         el.save_easing_state();
       
@@ -54,6 +54,12 @@ MainWindow=new XObject({
     'void:setTitle' : (string str) {
         this.el.set_title(this.title + " - " + str);
     },
+    'void:show' : () {
+        this.left_tree =new Xcls_WindowLeftTree();
+        _this.vbox.el.pack_start(this.left_tree.el,true, true,0);
+        this.el.show_all();
+    
+    },
     'void:showViewEditing' : ( )  {
         var el = _this.rooview.el;
             el.save_easing_state();
@@ -68,12 +74,6 @@ MainWindow=new XObject({
         el.restore_easing_state();
             
         print("show view editing");
-    },
-    'void:show' : () {
-        this.left_tree =new Xcls_WindowLeftTree();
-        _this.vbox.el.pack_start(this.left_tree.el,true, true,0);
-        this.el.show_all();
-    
     },
     items : [
         {
