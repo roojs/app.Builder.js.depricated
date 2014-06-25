@@ -36,7 +36,7 @@ ClutterFiles=new XObject({
             // height of scrollactor..
             
             
-            print("new y %f  - layout height = %f , sroll actor height %f\n ".printf( 
+            print("\nnew y %f  - layout height = %f , sroll actor height %f\n ".printf( 
                     y, this.filelayout.el.height, this.el.height));    
            // y = float.min(0, y);    //??
             print("scroll event of %f  - new y = %f ".printf(event.y, y));
