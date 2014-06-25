@@ -20,22 +20,22 @@ ClutterFiles=new XObject({
                 {
                     xtype: Clutter.Actor,
                     pack : false,
+                    items : [
+                        {
+                            xtype: Clutter.Image,
+                            pack : "add"
+                        },
+                        {
+                            xtype: Clutter.Text,
+                            pack : false
+                        }
+                    ],
                     layout_manager : {
                         xtype: Clutter.BoxLayout,
                         spacing : 4,
                         xpack : "",
                         init : this.el.set_size(100,100);,
-                        orientation : Clutter.Orientation,VERTICAL,
-                        items : [
-                            {
-                                xtype: Clutter.Image,
-                                pack : "add"
-                            },
-                            {
-                                xtype: Clutter.Text,
-                                pack : false
-                            }
-                        ]
+                        orientation : Clutter.Orientation,VERTICAL
                     }
                 }
             ]
