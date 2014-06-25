@@ -316,10 +316,13 @@ Gtk = XObject.define(
             var id = item.id ? item.id : (item.xtype + this.vcnt);
             var props = this.palete.getPropertiesFor(cls, 'props');
             
-            
+            var id_clsname = id;
+            if (id[0] == '+' || id[0] == '*') {
+                id_clsname = id_clsname.substring(1);
+            }
             
             item.xvala_cls = cls;
-            item.xvala_xcls = 'Xcls_' + (id[0] == '*') ? id.substring(1) :  id;
+            item.xvala_xcls = 'Xcls_' id_clsname;
             item.xvala_id = item.id ? item.id : false;
             this.vitems.push(item);  
             // loop children..
