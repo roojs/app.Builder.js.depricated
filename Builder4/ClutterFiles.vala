@@ -259,13 +259,11 @@ public class Xcls_ClutterFiles : Object
 
             // set gobject values
             this.el.margin_left = 5;
-            this.el.margin_right = "";
+            this.el.margin_right = 5;
             this.el.x_align = Clutter.ActorAlign.START;
             this.el.x_expand = true;
             this.el.y_align = Clutter.ActorAlign.START;
             this.el.y_expand = false;
-
-            // listeners 
         }
 
         // userdefined functions 

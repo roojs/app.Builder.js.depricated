@@ -59,16 +59,15 @@
                                     "*args": "JsRender.JsRender file",
                                     ".ctor": "new Clutter.Texture.from_file(file.getIconFile())",
                                     "id": "+image",
-                                    "|margin_left": 5,
+                                    "margin_right": 5,
                                     "pack": "add_child",
                                     "xtype": "Texture",
+                                    "|margin_left": 5,
                                     "|x_align": "Clutter.ActorAlign.START",
                                     "|x_expand": "true",
                                     "|xns": "Clutter",
                                     "|y_align": "Clutter.ActorAlign.START",
-                                    "|y_expand": "false",
-                                    "margin_right": "",
-                                    "listeners": {}
+                                    "|y_expand": "false"
                                 },
                                 {
                                     "*args": "JsRender.JsRender file",
