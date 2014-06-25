@@ -96,9 +96,12 @@ void rooWindowTest(string name)
 
 void rooWindowClutter()
 {
-
+	var proj = Project.Project.getProject("Pman.Core");
+	
+	proj.scanDirs();
+	
 	var w = new Xcls_MainWindow();
-
+	w.project = proj;
 	w.el.show_all();
 	var  left_tree =new Xcls_WindowLeftTree();
 	left_tree.ref();
