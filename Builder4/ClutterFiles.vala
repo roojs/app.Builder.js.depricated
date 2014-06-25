@@ -45,7 +45,7 @@ public class Xcls_ClutterFiles : Object
         // listeners 
         this.el.scroll_event.connect( ( event)  => {
         
-            print("scroll event");
+            //Sprint("scroll event");
             var y = this.filelayout.el.y;
             var dir = event.direction;
             switch (dir) {
@@ -66,11 +66,15 @@ public class Xcls_ClutterFiles : Object
             // height of filelayout
             // height of scrollactor..
             
+            var last_child_bottom = this.filelayout.el.last_child.y +  this.filelayout.el.last_child.height;
+        //     if ( last_child_bottom - this.el.height  > last_child_bottom);
+        
+        
             
-            print("\nnew y %f  sroll actor height %f = last child bottom %f\n ".printf( 
-                    y, 
-                    this.el.height, 
-                    this.filelayout.el.last_child.y +  this.filelayout.el.last_child.height));    
+            
+            print("\nlast child - this height = %f  ==== new y %f\n ".printf( 
+                    last_child_bottom - this.el.height
+                    y));    
            // y = float.min(0, y);    //??
             print("scroll event of %f  - new y = %f ".printf(event.y, y));
             this.filelayout.el.y = y;
