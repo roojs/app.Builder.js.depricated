@@ -49,7 +49,7 @@ public class Xcls_ClutterFiles : Object
             while (fiter.next()) {
                 var a = new Xcls_fileitem(this,fiter.get_value());
             }
-        
+            this.el.show_all();
         }
 
     // skip |xns - no return type
