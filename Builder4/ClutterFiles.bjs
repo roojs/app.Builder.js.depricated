@@ -53,7 +53,7 @@
                                 },
                                 {
                                     "*args": "JsRender.JsRender file",
-                                    "*ctor": "with_text(\"Arial\", name)",
+                                    "*ctor": "with_text(\"Arial\", file.nickName())",
                                     "id": "+title",
                                     "pack": "add_child",
                                     "xtype": "Text",
