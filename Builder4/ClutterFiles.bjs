@@ -40,7 +40,7 @@
                                 },
                                 {
                                     "*args": "string fname",
-                                    ".ctor": "from_file(fname)",
+                                    ".ctor": "new Clutter.Texture.from_file(fname)",
                                     "id": "+image",
                                     "pack": "add_child",
                                     "xtype": "Texture",

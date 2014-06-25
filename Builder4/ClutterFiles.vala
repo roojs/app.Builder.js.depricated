@@ -170,7 +170,7 @@ public class Xcls_ClutterFiles : Object
         public Xcls_image(Xcls_ClutterFiles _owner , string fname)
         {
             _this = _owner;
-            this.el = from_file(fname);
+            this.el = new Clutter.Texture.from_file(fname);
 
             // my vars
 
