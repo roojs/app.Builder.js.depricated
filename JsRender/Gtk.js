@@ -414,13 +414,27 @@ Gtk = XObject.define(
                 
             }
             // .vala props.. 
-             
+            
+            var cargs = []; 
+            var cargs_str = '';
             // ctor..
             strbuilder("\n" + ipad + "// ctor \n");
+            if (typeof(item['*args']) != 'undefined') {
+                cargs_str = ", " + item['*args']
+                var ar = item['*args'].split(",");
+                for (var ari =0; ari < ar.length; ari++) {
+                    cargs.push(ari.split(" ").pop());
+                }
+                    
+            }
+            
 			if (!depth) {
-        		strbuilder(pad + "public " + xcls + "()\n" + pad + "{\n");
+        		strbuilder(pad + "public " + xcls + "(" + cargs_str.substring(1) +")\n" + pad + "{\n");
 			} else {
-				strbuilder(pad + "public " + xcls + "(" + this.top_xcls + " _owner)\n" + pad + "{\n");
+                
+                    //code 
+                
+				strbuilder(pad + "public " + xcls + "(" + this.top_xcls + " _owner " + cargs_str + ")\n" + pad + "{\n");
 			}
             
             
