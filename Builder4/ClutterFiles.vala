@@ -43,6 +43,8 @@ public class Xcls_ClutterFiles : Object
 
         // listeners 
         this.el.scroll_event.connect( ( event)  => {
+        
+        
             var y = this.el.y;
             var dir = event.direction;
             switch (dir) {
@@ -55,6 +57,7 @@ public class Xcls_ClutterFiles : Object
                 default:
                     return false;
             }
+            print("scroll event of %f  - new y = %s".printf(event.y, y))
             this.el.y = y;
             return true;
                 

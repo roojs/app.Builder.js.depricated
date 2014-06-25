@@ -13,6 +13,8 @@ ClutterFiles=new XObject({
     xtype: Clutter.ScrollActor,
     listeners : {
         scroll_event : ( event)  => {
+        
+        
             var y = this.el.y;
             var dir = event.direction;
             switch (dir) {
@@ -25,6 +27,7 @@ ClutterFiles=new XObject({
                 default:
                     return false;
             }
+            print("scroll event of %f  - new y = %s".printf(event.y, y))
             this.el.y = y;
             return true;
                 
