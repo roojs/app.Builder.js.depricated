@@ -58,7 +58,7 @@ ClutterFiles=new XObject({
             },
             id : "filelayout",
             pack : "add_child",
-            reactive : "true",
+            reactive : true,
             init : this.el.add_constraint(
                 new Clutter.BindConstraint(_this.el,Clutter.BindCoordinate.SIZE, 0.0f)
             );,

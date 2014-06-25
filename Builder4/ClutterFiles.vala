@@ -81,7 +81,7 @@ public class Xcls_ClutterFiles : Object
             // my vars
 
             // set gobject values
-            this.el.reactive = "true";
+            this.el.reactive = true;
             var child_0 = new Xcls_filelayout_manager( _this );
             child_0.ref();
             this.el.layout_manager = child_0.el;
