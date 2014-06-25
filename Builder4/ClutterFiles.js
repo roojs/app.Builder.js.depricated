@@ -15,7 +15,13 @@ ClutterFiles=new XObject({
     items : [
         {
             xtype: Clutter.FlowLayout,
-            pack : false
+            pack : false,
+            items : [
+                {
+                    xtype: Clutter.BoxLayout,
+                    pack : false
+                }
+            ]
         }
     ]
 });

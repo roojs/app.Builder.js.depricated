@@ -13,7 +13,14 @@
                 {
                     "|xns": "Clutter",
                     "xtype": "FlowLayout",
-                    "pack": false
+                    "pack": false,
+                    "items": [
+                        {
+                            "|xns": "Clutter",
+                            "xtype": "BoxLayout",
+                            "pack": false
+                        }
+                    ]
                 }
             ]
         }
