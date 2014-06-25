@@ -78,17 +78,6 @@ typedef struct _ProjectProjectPrivate ProjectProjectPrivate;
 
 typedef struct _Xcls_ClutterFilesXcls_fileitem Xcls_ClutterFilesXcls_fileitem;
 typedef struct _Xcls_ClutterFilesXcls_fileitemClass Xcls_ClutterFilesXcls_fileitemClass;
-
-#define XCLS_CLUTTERFILES_TYPE_XCLS_FLOWLAYOUT3 (xcls_clutterfiles_xcls_flowlayout3_get_type ())
-#define XCLS_CLUTTERFILES_XCLS_FLOWLAYOUT3(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), XCLS_CLUTTERFILES_TYPE_XCLS_FLOWLAYOUT3, Xcls_ClutterFilesXcls_FlowLayout3))
-#define XCLS_CLUTTERFILES_XCLS_FLOWLAYOUT3_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), XCLS_CLUTTERFILES_TYPE_XCLS_FLOWLAYOUT3, Xcls_ClutterFilesXcls_FlowLayout3Class))
-#define XCLS_CLUTTERFILES_IS_XCLS_FLOWLAYOUT3(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), XCLS_CLUTTERFILES_TYPE_XCLS_FLOWLAYOUT3))
-#define XCLS_CLUTTERFILES_IS_XCLS_FLOWLAYOUT3_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), XCLS_CLUTTERFILES_TYPE_XCLS_FLOWLAYOUT3))
-#define XCLS_CLUTTERFILES_XCLS_FLOWLAYOUT3_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), XCLS_CLUTTERFILES_TYPE_XCLS_FLOWLAYOUT3, Xcls_ClutterFilesXcls_FlowLayout3Class))
-
-typedef struct _Xcls_ClutterFilesXcls_FlowLayout3 Xcls_ClutterFilesXcls_FlowLayout3;
-typedef struct _Xcls_ClutterFilesXcls_FlowLayout3Class Xcls_ClutterFilesXcls_FlowLayout3Class;
-typedef struct _Xcls_ClutterFilesXcls_FlowLayout3Private Xcls_ClutterFilesXcls_FlowLayout3Private;
 typedef struct _Xcls_ClutterFilesXcls_fileitemPrivate Xcls_ClutterFilesXcls_fileitemPrivate;
 
 #define XCLS_CLUTTERFILES_TYPE_XCLS_IMAGE (xcls_clutterfiles_xcls_image_get_type ())
@@ -110,6 +99,17 @@ typedef struct _Xcls_ClutterFilesXcls_imageClass Xcls_ClutterFilesXcls_imageClas
 
 typedef struct _Xcls_ClutterFilesXcls_title Xcls_ClutterFilesXcls_title;
 typedef struct _Xcls_ClutterFilesXcls_titleClass Xcls_ClutterFilesXcls_titleClass;
+
+#define XCLS_CLUTTERFILES_TYPE_XCLS_FLOWLAYOUT3 (xcls_clutterfiles_xcls_flowlayout3_get_type ())
+#define XCLS_CLUTTERFILES_XCLS_FLOWLAYOUT3(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), XCLS_CLUTTERFILES_TYPE_XCLS_FLOWLAYOUT3, Xcls_ClutterFilesXcls_FlowLayout3))
+#define XCLS_CLUTTERFILES_XCLS_FLOWLAYOUT3_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), XCLS_CLUTTERFILES_TYPE_XCLS_FLOWLAYOUT3, Xcls_ClutterFilesXcls_FlowLayout3Class))
+#define XCLS_CLUTTERFILES_IS_XCLS_FLOWLAYOUT3(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), XCLS_CLUTTERFILES_TYPE_XCLS_FLOWLAYOUT3))
+#define XCLS_CLUTTERFILES_IS_XCLS_FLOWLAYOUT3_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), XCLS_CLUTTERFILES_TYPE_XCLS_FLOWLAYOUT3))
+#define XCLS_CLUTTERFILES_XCLS_FLOWLAYOUT3_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), XCLS_CLUTTERFILES_TYPE_XCLS_FLOWLAYOUT3, Xcls_ClutterFilesXcls_FlowLayout3Class))
+
+typedef struct _Xcls_ClutterFilesXcls_FlowLayout3 Xcls_ClutterFilesXcls_FlowLayout3;
+typedef struct _Xcls_ClutterFilesXcls_FlowLayout3Class Xcls_ClutterFilesXcls_FlowLayout3Class;
+typedef struct _Xcls_ClutterFilesXcls_FlowLayout3Private Xcls_ClutterFilesXcls_FlowLayout3Private;
 
 #define XCLS_CLUTTERFILES_TYPE_XCLS_BOXLAYOUT5 (xcls_clutterfiles_xcls_boxlayout5_get_type ())
 #define XCLS_CLUTTERFILES_XCLS_BOXLAYOUT5(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), XCLS_CLUTTERFILES_TYPE_XCLS_BOXLAYOUT5, Xcls_ClutterFilesXcls_BoxLayout5))
@@ -166,6 +166,18 @@ struct _ProjectProjectClass {
 	GObjectClass parent_class;
 };
 
+struct _Xcls_ClutterFilesXcls_fileitem {
+	GObject parent_instance;
+	Xcls_ClutterFilesXcls_fileitemPrivate * priv;
+	ClutterActor* el;
+	Xcls_ClutterFilesXcls_image* image;
+	Xcls_ClutterFilesXcls_title* title;
+};
+
+struct _Xcls_ClutterFilesXcls_fileitemClass {
+	GObjectClass parent_class;
+};
+
 struct _Xcls_ClutterFilesXcls_filelayoutPrivate {
 	Xcls_ClutterFiles* _this;
 };
@@ -182,18 +194,6 @@ struct _Xcls_ClutterFilesXcls_FlowLayout3Class {
 
 struct _Xcls_ClutterFilesXcls_FlowLayout3Private {
 	Xcls_ClutterFiles* _this;
-};
-
-struct _Xcls_ClutterFilesXcls_fileitem {
-	GObject parent_instance;
-	Xcls_ClutterFilesXcls_fileitemPrivate * priv;
-	ClutterActor* el;
-	Xcls_ClutterFilesXcls_image* image;
-	Xcls_ClutterFilesXcls_title* title;
-};
-
-struct _Xcls_ClutterFilesXcls_fileitemClass {
-	GObjectClass parent_class;
 };
 
 struct _Xcls_ClutterFilesXcls_fileitemPrivate {
@@ -269,6 +269,8 @@ GType js_render_js_render_get_type (void) G_GNUC_CONST;
 GType xcls_clutterfiles_xcls_fileitem_get_type (void) G_GNUC_CONST;
 Xcls_ClutterFilesXcls_fileitem* xcls_clutterfiles_xcls_fileitem_new (Xcls_ClutterFiles* _owner, JsRenderJsRender* file);
 Xcls_ClutterFilesXcls_fileitem* xcls_clutterfiles_xcls_fileitem_construct (GType object_type, Xcls_ClutterFiles* _owner, JsRenderJsRender* file);
+GType xcls_clutterfiles_xcls_image_get_type (void) G_GNUC_CONST;
+GType xcls_clutterfiles_xcls_title_get_type (void) G_GNUC_CONST;
 #define XCLS_CLUTTERFILES_XCLS_FILELAYOUT_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), XCLS_CLUTTERFILES_TYPE_XCLS_FILELAYOUT, Xcls_ClutterFilesXcls_filelayoutPrivate))
 enum  {
 	XCLS_CLUTTERFILES_XCLS_FILELAYOUT_DUMMY_PROPERTY
@@ -282,8 +284,6 @@ enum  {
 	XCLS_CLUTTERFILES_XCLS_FLOWLAYOUT3_DUMMY_PROPERTY
 };
 static void xcls_clutterfiles_xcls_flowlayout3_finalize (GObject* obj);
-GType xcls_clutterfiles_xcls_image_get_type (void) G_GNUC_CONST;
-GType xcls_clutterfiles_xcls_title_get_type (void) G_GNUC_CONST;
 #define XCLS_CLUTTERFILES_XCLS_FILEITEM_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), XCLS_CLUTTERFILES_TYPE_XCLS_FILEITEM, Xcls_ClutterFilesXcls_fileitemPrivate))
 enum  {
 	XCLS_CLUTTERFILES_XCLS_FILEITEM_DUMMY_PROPERTY
@@ -388,7 +388,7 @@ void xcls_clutterfiles_show (Xcls_ClutterFiles* self, ProjectProject* pr) {
 	ProjectProject* _tmp0_ = NULL;
 	GeeHashMap* _tmp1_ = NULL;
 	GeeMapIterator* _tmp2_ = NULL;
-	ClutterScrollActor* _tmp10_ = NULL;
+	ClutterScrollActor* _tmp14_ = NULL;
 #line 45 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	g_return_if_fail (self != NULL);
 #line 45 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
@@ -412,6 +412,10 @@ void xcls_clutterfiles_show (Xcls_ClutterFiles* self, ProjectProject* pr) {
 		JsRenderJsRender* _tmp7_ = NULL;
 		Xcls_ClutterFilesXcls_fileitem* _tmp8_ = NULL;
 		Xcls_ClutterFilesXcls_fileitem* _tmp9_ = NULL;
+		Xcls_ClutterFilesXcls_filelayout* _tmp10_ = NULL;
+		ClutterActor* _tmp11_ = NULL;
+		Xcls_ClutterFilesXcls_fileitem* _tmp12_ = NULL;
+		ClutterActor* _tmp13_ = NULL;
 #line 49 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 		_tmp3_ = fiter;
 #line 49 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
@@ -420,7 +424,7 @@ void xcls_clutterfiles_show (Xcls_ClutterFiles* self, ProjectProject* pr) {
 		if (!_tmp4_) {
 #line 49 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 			break;
-#line 424 "ClutterFiles.vala.c"
+#line 428 "ClutterFiles.vala.c"
 		}
 #line 50 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 		_tmp5_ = fiter;
@@ -436,17 +440,27 @@ void xcls_clutterfiles_show (Xcls_ClutterFiles* self, ProjectProject* pr) {
 		_g_object_unref0 (_tmp7_);
 #line 50 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 		a = _tmp9_;
+#line 51 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+		_tmp10_ = self->filelayout;
+#line 51 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+		_tmp11_ = _tmp10_->el;
+#line 51 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+		_tmp12_ = a;
+#line 51 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+		_tmp13_ = _tmp12_->el;
+#line 51 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+		clutter_actor_add_child (_tmp11_, _tmp13_);
 #line 49 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 		_g_object_unref0 (a);
-#line 442 "ClutterFiles.vala.c"
+#line 456 "ClutterFiles.vala.c"
 	}
-#line 52 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
-	_tmp10_ = self->el;
-#line 52 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
-	clutter_actor_show_all ((ClutterActor*) _tmp10_);
+#line 53 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+	_tmp14_ = self->el;
+#line 53 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+	clutter_actor_show_all ((ClutterActor*) _tmp14_);
 #line 45 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_g_object_unref0 (fiter);
-#line 450 "ClutterFiles.vala.c"
+#line 464 "ClutterFiles.vala.c"
 }
 
 
@@ -462,92 +476,92 @@ Xcls_ClutterFilesXcls_filelayout* xcls_clutterfiles_xcls_filelayout_construct (G
 	Xcls_ClutterFilesXcls_FlowLayout3* _tmp6_ = NULL;
 	ClutterActor* _tmp7_ = NULL;
 	ClutterFlowLayout* _tmp8_ = NULL;
-#line 65 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 66 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 65 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 66 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	self = (Xcls_ClutterFilesXcls_filelayout*) g_object_new (object_type, NULL);
-#line 67 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 68 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp0_ = _owner;
-#line 67 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 68 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 67 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 68 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 67 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 68 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	self->priv->_this = _tmp1_;
-#line 68 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 69 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp2_ = self->priv->_this;
-#line 68 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 69 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp3_ = _g_object_ref0 (self);
-#line 68 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 69 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_g_object_unref0 (_tmp2_->filelayout);
-#line 68 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 69 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp2_->filelayout = _tmp3_;
-#line 69 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 70 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp4_ = clutter_actor_new ();
-#line 69 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 70 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	g_object_ref_sink (_tmp4_);
-#line 69 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 70 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_g_object_unref0 (self->el);
-#line 69 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 70 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	self->el = _tmp4_;
-#line 74 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
-	_tmp5_ = self->priv->_this;
-#line 74 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
-	_tmp6_ = xcls_clutterfiles_xcls_flowlayout3_new (_tmp5_);
-#line 74 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
-	child_0 = _tmp6_;
 #line 75 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+	_tmp5_ = self->priv->_this;
+#line 75 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+	_tmp6_ = xcls_clutterfiles_xcls_flowlayout3_new (_tmp5_);
+#line 75 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+	child_0 = _tmp6_;
+#line 76 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	g_object_ref ((GObject*) child_0);
-#line 76 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 77 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp7_ = self->el;
-#line 76 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 77 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp8_ = child_0->el;
-#line 76 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 77 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	clutter_actor_set_layout_manager (_tmp7_, (ClutterLayoutManager*) _tmp8_);
-#line 65 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 66 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_g_object_unref0 (child_0);
-#line 65 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 66 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	return self;
-#line 512 "ClutterFiles.vala.c"
+#line 526 "ClutterFiles.vala.c"
 }
 
 
 Xcls_ClutterFilesXcls_filelayout* xcls_clutterfiles_xcls_filelayout_new (Xcls_ClutterFiles* _owner) {
-#line 65 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 66 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	return xcls_clutterfiles_xcls_filelayout_construct (XCLS_CLUTTERFILES_TYPE_XCLS_FILELAYOUT, _owner);
-#line 519 "ClutterFiles.vala.c"
+#line 533 "ClutterFiles.vala.c"
 }
 
 
 static void xcls_clutterfiles_xcls_filelayout_class_init (Xcls_ClutterFilesXcls_filelayoutClass * klass) {
-#line 56 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 57 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	xcls_clutterfiles_xcls_filelayout_parent_class = g_type_class_peek_parent (klass);
-#line 56 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 57 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_ClutterFilesXcls_filelayoutPrivate));
-#line 56 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 57 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_clutterfiles_xcls_filelayout_finalize;
-#line 530 "ClutterFiles.vala.c"
+#line 544 "ClutterFiles.vala.c"
 }
 
 
 static void xcls_clutterfiles_xcls_filelayout_instance_init (Xcls_ClutterFilesXcls_filelayout * self) {
-#line 56 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 57 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	self->priv = XCLS_CLUTTERFILES_XCLS_FILELAYOUT_GET_PRIVATE (self);
-#line 537 "ClutterFiles.vala.c"
+#line 551 "ClutterFiles.vala.c"
 }
 
 
 static void xcls_clutterfiles_xcls_filelayout_finalize (GObject* obj) {
 	Xcls_ClutterFilesXcls_filelayout * self;
-#line 56 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 57 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_CLUTTERFILES_TYPE_XCLS_FILELAYOUT, Xcls_ClutterFilesXcls_filelayout);
-#line 58 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
-	_g_object_unref0 (self->el);
 #line 59 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+	_g_object_unref0 (self->el);
+#line 60 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 56 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 57 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	G_OBJECT_CLASS (xcls_clutterfiles_xcls_filelayout_parent_class)->finalize (obj);
-#line 551 "ClutterFiles.vala.c"
+#line 565 "ClutterFiles.vala.c"
 }
 
 
@@ -568,68 +582,68 @@ Xcls_ClutterFilesXcls_FlowLayout3* xcls_clutterfiles_xcls_flowlayout3_construct 
 	Xcls_ClutterFiles* _tmp0_ = NULL;
 	Xcls_ClutterFiles* _tmp1_ = NULL;
 	ClutterFlowLayout* _tmp2_ = NULL;
-#line 92 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 93 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 92 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 93 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	self = (Xcls_ClutterFilesXcls_FlowLayout3*) g_object_new (object_type, NULL);
-#line 94 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 95 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp0_ = _owner;
-#line 94 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 95 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 94 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 95 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 94 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 95 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	self->priv->_this = _tmp1_;
-#line 95 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp2_ = (ClutterFlowLayout*) clutter_flow_layout_new (CLUTTER_FLOW_HORIZONTAL);
-#line 95 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	g_object_ref_sink (_tmp2_);
-#line 95 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_g_object_unref0 (self->el);
-#line 95 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	self->el = _tmp2_;
-#line 92 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 93 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	return self;
-#line 594 "ClutterFiles.vala.c"
+#line 608 "ClutterFiles.vala.c"
 }
 
 
 Xcls_ClutterFilesXcls_FlowLayout3* xcls_clutterfiles_xcls_flowlayout3_new (Xcls_ClutterFiles* _owner) {
-#line 92 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 93 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	return xcls_clutterfiles_xcls_flowlayout3_construct (XCLS_CLUTTERFILES_TYPE_XCLS_FLOWLAYOUT3, _owner);
-#line 601 "ClutterFiles.vala.c"
+#line 615 "ClutterFiles.vala.c"
 }
 
 
 static void xcls_clutterfiles_xcls_flowlayout3_class_init (Xcls_ClutterFilesXcls_FlowLayout3Class * klass) {
-#line 83 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 84 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	xcls_clutterfiles_xcls_flowlayout3_parent_class = g_type_class_peek_parent (klass);
-#line 83 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 84 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_ClutterFilesXcls_FlowLayout3Private));
-#line 83 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 84 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_clutterfiles_xcls_flowlayout3_finalize;
-#line 612 "ClutterFiles.vala.c"
+#line 626 "ClutterFiles.vala.c"
 }
 
 
 static void xcls_clutterfiles_xcls_flowlayout3_instance_init (Xcls_ClutterFilesXcls_FlowLayout3 * self) {
-#line 83 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 84 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	self->priv = XCLS_CLUTTERFILES_XCLS_FLOWLAYOUT3_GET_PRIVATE (self);
-#line 619 "ClutterFiles.vala.c"
+#line 633 "ClutterFiles.vala.c"
 }
 
 
 static void xcls_clutterfiles_xcls_flowlayout3_finalize (GObject* obj) {
 	Xcls_ClutterFilesXcls_FlowLayout3 * self;
-#line 83 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 84 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_CLUTTERFILES_TYPE_XCLS_FLOWLAYOUT3, Xcls_ClutterFilesXcls_FlowLayout3);
-#line 85 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
-	_g_object_unref0 (self->el);
 #line 86 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+	_g_object_unref0 (self->el);
+#line 87 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 83 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 84 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	G_OBJECT_CLASS (xcls_clutterfiles_xcls_flowlayout3_parent_class)->finalize (obj);
-#line 633 "ClutterFiles.vala.c"
+#line 647 "ClutterFiles.vala.c"
 }
 
 
@@ -670,142 +684,142 @@ Xcls_ClutterFilesXcls_fileitem* xcls_clutterfiles_xcls_fileitem_construct (GType
 	ClutterText* _tmp17_ = NULL;
 	Xcls_ClutterFilesXcls_title* _tmp18_ = NULL;
 	ClutterActor* _tmp19_ = NULL;
-#line 117 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 118 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 117 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 118 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	g_return_val_if_fail (file != NULL, NULL);
-#line 117 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 118 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	self = (Xcls_ClutterFilesXcls_fileitem*) g_object_new (object_type, NULL);
-#line 119 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 120 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp0_ = _owner;
-#line 119 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 120 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 119 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 120 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 119 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 120 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	self->priv->_this = _tmp1_;
-#line 120 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 121 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp2_ = clutter_actor_new ();
-#line 120 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 121 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	g_object_ref_sink (_tmp2_);
-#line 120 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 121 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_g_object_unref0 (self->el);
-#line 120 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 121 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	self->el = _tmp2_;
-#line 125 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
-	_tmp3_ = self->priv->_this;
-#line 125 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
-	_tmp4_ = xcls_clutterfiles_xcls_boxlayout5_new (_tmp3_);
-#line 125 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
-	child_0 = _tmp4_;
 #line 126 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+	_tmp3_ = self->priv->_this;
+#line 126 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+	_tmp4_ = xcls_clutterfiles_xcls_boxlayout5_new (_tmp3_);
+#line 126 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+	child_0 = _tmp4_;
+#line 127 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	g_object_ref ((GObject*) child_0);
-#line 127 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 128 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp5_ = self->el;
-#line 127 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 128 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp6_ = child_0->el;
-#line 127 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 128 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	clutter_actor_set_layout_manager (_tmp5_, (ClutterLayoutManager*) _tmp6_);
-#line 128 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
-	_tmp7_ = self->priv->_this;
-#line 128 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
-	_tmp8_ = file;
-#line 128 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
-	_tmp9_ = xcls_clutterfiles_xcls_image_new (_tmp7_, _tmp8_);
-#line 128 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
-	child_1 = _tmp9_;
 #line 129 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+	_tmp7_ = self->priv->_this;
+#line 129 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+	_tmp8_ = file;
+#line 129 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+	_tmp9_ = xcls_clutterfiles_xcls_image_new (_tmp7_, _tmp8_);
+#line 129 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+	child_1 = _tmp9_;
+#line 130 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	g_object_ref ((GObject*) child_1);
-#line 130 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp10_ = self->el;
-#line 130 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp11_ = child_1->el;
-#line 130 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	clutter_actor_add_child (_tmp10_, (ClutterActor*) _tmp11_);
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 132 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp12_ = _g_object_ref0 (child_1);
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 132 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_g_object_unref0 (self->image);
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 132 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	self->image = _tmp12_;
-#line 132 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
-	_tmp13_ = self->priv->_this;
-#line 132 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
-	_tmp14_ = file;
-#line 132 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
-	_tmp15_ = xcls_clutterfiles_xcls_title_new (_tmp13_, _tmp14_);
-#line 132 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
-	child_2 = _tmp15_;
 #line 133 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+	_tmp13_ = self->priv->_this;
+#line 133 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+	_tmp14_ = file;
+#line 133 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+	_tmp15_ = xcls_clutterfiles_xcls_title_new (_tmp13_, _tmp14_);
+#line 133 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+	child_2 = _tmp15_;
+#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	g_object_ref ((GObject*) child_2);
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 135 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp16_ = self->el;
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 135 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp17_ = child_2->el;
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 135 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	clutter_actor_add_child (_tmp16_, (ClutterActor*) _tmp17_);
-#line 135 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 136 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp18_ = _g_object_ref0 (child_2);
-#line 135 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 136 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_g_object_unref0 (self->title);
-#line 135 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 136 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	self->title = _tmp18_;
-#line 138 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 139 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp19_ = self->el;
-#line 138 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 139 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	clutter_actor_set_size (_tmp19_, (gfloat) 100, (gfloat) 100);
-#line 117 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 118 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_g_object_unref0 (child_2);
-#line 117 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 118 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_g_object_unref0 (child_1);
-#line 117 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 118 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_g_object_unref0 (child_0);
-#line 117 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 118 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	return self;
-#line 766 "ClutterFiles.vala.c"
+#line 780 "ClutterFiles.vala.c"
 }
 
 
 Xcls_ClutterFilesXcls_fileitem* xcls_clutterfiles_xcls_fileitem_new (Xcls_ClutterFiles* _owner, JsRenderJsRender* file) {
-#line 117 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 118 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	return xcls_clutterfiles_xcls_fileitem_construct (XCLS_CLUTTERFILES_TYPE_XCLS_FILEITEM, _owner, file);
-#line 773 "ClutterFiles.vala.c"
+#line 787 "ClutterFiles.vala.c"
 }
 
 
 static void xcls_clutterfiles_xcls_fileitem_class_init (Xcls_ClutterFilesXcls_fileitemClass * klass) {
-#line 106 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 107 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	xcls_clutterfiles_xcls_fileitem_parent_class = g_type_class_peek_parent (klass);
-#line 106 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 107 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_ClutterFilesXcls_fileitemPrivate));
-#line 106 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 107 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_clutterfiles_xcls_fileitem_finalize;
-#line 784 "ClutterFiles.vala.c"
+#line 798 "ClutterFiles.vala.c"
 }
 
 
 static void xcls_clutterfiles_xcls_fileitem_instance_init (Xcls_ClutterFilesXcls_fileitem * self) {
-#line 106 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 107 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	self->priv = XCLS_CLUTTERFILES_XCLS_FILEITEM_GET_PRIVATE (self);
-#line 791 "ClutterFiles.vala.c"
+#line 805 "ClutterFiles.vala.c"
 }
 
 
 static void xcls_clutterfiles_xcls_fileitem_finalize (GObject* obj) {
 	Xcls_ClutterFilesXcls_fileitem * self;
-#line 106 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 107 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_CLUTTERFILES_TYPE_XCLS_FILEITEM, Xcls_ClutterFilesXcls_fileitem);
-#line 108 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
-	_g_object_unref0 (self->el);
 #line 109 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+	_g_object_unref0 (self->el);
+#line 110 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 113 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
-	_g_object_unref0 (self->image);
 #line 114 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+	_g_object_unref0 (self->image);
+#line 115 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_g_object_unref0 (self->title);
-#line 106 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 107 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	G_OBJECT_CLASS (xcls_clutterfiles_xcls_fileitem_parent_class)->finalize (obj);
-#line 809 "ClutterFiles.vala.c"
+#line 823 "ClutterFiles.vala.c"
 }
 
 
@@ -828,76 +842,76 @@ Xcls_ClutterFilesXcls_BoxLayout5* xcls_clutterfiles_xcls_boxlayout5_construct (G
 	ClutterBoxLayout* _tmp2_ = NULL;
 	ClutterBoxLayout* _tmp3_ = NULL;
 	ClutterBoxLayout* _tmp4_ = NULL;
-#line 154 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 155 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 154 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 155 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	self = (Xcls_ClutterFilesXcls_BoxLayout5*) g_object_new (object_type, NULL);
-#line 156 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 157 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp0_ = _owner;
-#line 156 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 157 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 156 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 157 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 156 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 157 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	self->priv->_this = _tmp1_;
-#line 157 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 158 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp2_ = (ClutterBoxLayout*) clutter_box_layout_new ();
-#line 157 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 158 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	g_object_ref_sink (_tmp2_);
-#line 157 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 158 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_g_object_unref0 (self->el);
-#line 157 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 158 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	self->el = _tmp2_;
-#line 162 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 163 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp3_ = self->el;
-#line 162 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 163 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	clutter_box_layout_set_orientation (_tmp3_, CLUTTER_ORIENTATION_VERTICAL);
-#line 163 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 164 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp4_ = self->el;
-#line 163 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 164 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	clutter_box_layout_set_spacing (_tmp4_, (guint) 4);
-#line 154 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 155 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	return self;
-#line 862 "ClutterFiles.vala.c"
+#line 876 "ClutterFiles.vala.c"
 }
 
 
 Xcls_ClutterFilesXcls_BoxLayout5* xcls_clutterfiles_xcls_boxlayout5_new (Xcls_ClutterFiles* _owner) {
-#line 154 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 155 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	return xcls_clutterfiles_xcls_boxlayout5_construct (XCLS_CLUTTERFILES_TYPE_XCLS_BOXLAYOUT5, _owner);
-#line 869 "ClutterFiles.vala.c"
+#line 883 "ClutterFiles.vala.c"
 }
 
 
 static void xcls_clutterfiles_xcls_boxlayout5_class_init (Xcls_ClutterFilesXcls_BoxLayout5Class * klass) {
-#line 145 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 146 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	xcls_clutterfiles_xcls_boxlayout5_parent_class = g_type_class_peek_parent (klass);
-#line 145 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 146 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_ClutterFilesXcls_BoxLayout5Private));
-#line 145 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 146 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_clutterfiles_xcls_boxlayout5_finalize;
-#line 880 "ClutterFiles.vala.c"
+#line 894 "ClutterFiles.vala.c"
 }
 
 
 static void xcls_clutterfiles_xcls_boxlayout5_instance_init (Xcls_ClutterFilesXcls_BoxLayout5 * self) {
-#line 145 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 146 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	self->priv = XCLS_CLUTTERFILES_XCLS_BOXLAYOUT5_GET_PRIVATE (self);
-#line 887 "ClutterFiles.vala.c"
+#line 901 "ClutterFiles.vala.c"
 }
 
 
 static void xcls_clutterfiles_xcls_boxlayout5_finalize (GObject* obj) {
 	Xcls_ClutterFilesXcls_BoxLayout5 * self;
-#line 145 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 146 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_CLUTTERFILES_TYPE_XCLS_BOXLAYOUT5, Xcls_ClutterFilesXcls_BoxLayout5);
-#line 147 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
-	_g_object_unref0 (self->el);
 #line 148 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+	_g_object_unref0 (self->el);
+#line 149 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 145 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 146 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	G_OBJECT_CLASS (xcls_clutterfiles_xcls_boxlayout5_parent_class)->finalize (obj);
-#line 901 "ClutterFiles.vala.c"
+#line 915 "ClutterFiles.vala.c"
 }
 
 
@@ -929,116 +943,116 @@ Xcls_ClutterFilesXcls_image* xcls_clutterfiles_xcls_image_construct (GType objec
 	ClutterTexture* _tmp11_ = NULL;
 	ClutterTexture* _tmp12_ = NULL;
 	GError * _inner_error_ = NULL;
-#line 179 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 180 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 179 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 180 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	g_return_val_if_fail (file != NULL, NULL);
-#line 179 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 180 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	self = (Xcls_ClutterFilesXcls_image*) g_object_new (object_type, NULL);
-#line 181 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 182 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp0_ = _owner;
-#line 181 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 182 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 181 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 182 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 181 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 182 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	self->priv->_this = _tmp1_;
-#line 182 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 183 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp3_ = file;
-#line 182 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 183 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp4_ = js_render_js_render_getIconFile (_tmp3_);
-#line 182 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 183 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp5_ = _tmp4_;
-#line 182 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 183 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp6_ = (ClutterTexture*) clutter_texture_new_from_file (_tmp5_, &_inner_error_);
-#line 182 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 183 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	g_object_ref_sink (_tmp6_);
-#line 182 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 183 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp7_ = _tmp6_;
-#line 182 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 183 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_g_free0 (_tmp5_);
-#line 182 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 183 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp2_ = _tmp7_;
-#line 182 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 183 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	if (_inner_error_ != NULL) {
-#line 182 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 183 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 		g_critical ("file %s: line %d: uncaught error: %s (%s, %d)", __FILE__, __LINE__, _inner_error_->message, g_quark_to_string (_inner_error_->domain), _inner_error_->code);
-#line 182 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 183 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 		g_clear_error (&_inner_error_);
-#line 182 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 183 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 		return NULL;
-#line 971 "ClutterFiles.vala.c"
+#line 985 "ClutterFiles.vala.c"
 	}
-#line 182 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 183 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp8_ = _tmp2_;
-#line 182 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 183 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp2_ = NULL;
-#line 182 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 183 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	g_object_ref_sink (_tmp8_);
-#line 182 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 183 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_g_object_unref0 (self->el);
-#line 182 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 183 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	self->el = _tmp8_;
-#line 187 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 188 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp9_ = self->el;
-#line 187 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 188 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	clutter_actor_set_x_align ((ClutterActor*) _tmp9_, CLUTTER_ACTOR_ALIGN_START);
-#line 188 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 189 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp10_ = self->el;
-#line 188 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 189 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	clutter_actor_set_x_expand ((ClutterActor*) _tmp10_, TRUE);
-#line 189 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 190 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp11_ = self->el;
-#line 189 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 190 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	clutter_actor_set_y_align ((ClutterActor*) _tmp11_, CLUTTER_ACTOR_ALIGN_START);
-#line 190 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 191 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp12_ = self->el;
-#line 190 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 191 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	clutter_actor_set_y_expand ((ClutterActor*) _tmp12_, FALSE);
-#line 179 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 180 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_g_object_unref0 (_tmp2_);
-#line 179 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 180 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	return self;
-#line 1003 "ClutterFiles.vala.c"
+#line 1017 "ClutterFiles.vala.c"
 }
 
 
 Xcls_ClutterFilesXcls_image* xcls_clutterfiles_xcls_image_new (Xcls_ClutterFiles* _owner, JsRenderJsRender* file) {
-#line 179 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 180 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	return xcls_clutterfiles_xcls_image_construct (XCLS_CLUTTERFILES_TYPE_XCLS_IMAGE, _owner, file);
-#line 1010 "ClutterFiles.vala.c"
+#line 1024 "ClutterFiles.vala.c"
 }
 
 
 static void xcls_clutterfiles_xcls_image_class_init (Xcls_ClutterFilesXcls_imageClass * klass) {
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 171 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	xcls_clutterfiles_xcls_image_parent_class = g_type_class_peek_parent (klass);
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 171 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_ClutterFilesXcls_imagePrivate));
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 171 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_clutterfiles_xcls_image_finalize;
-#line 1021 "ClutterFiles.vala.c"
+#line 1035 "ClutterFiles.vala.c"
 }
 
 
 static void xcls_clutterfiles_xcls_image_instance_init (Xcls_ClutterFilesXcls_image * self) {
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 171 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	self->priv = XCLS_CLUTTERFILES_XCLS_IMAGE_GET_PRIVATE (self);
-#line 1028 "ClutterFiles.vala.c"
+#line 1042 "ClutterFiles.vala.c"
 }
 
 
 static void xcls_clutterfiles_xcls_image_finalize (GObject* obj) {
 	Xcls_ClutterFilesXcls_image * self;
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 171 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_CLUTTERFILES_TYPE_XCLS_IMAGE, Xcls_ClutterFilesXcls_image);
-#line 172 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
-	_g_object_unref0 (self->el);
 #line 173 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+	_g_object_unref0 (self->el);
+#line 174 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 171 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	G_OBJECT_CLASS (xcls_clutterfiles_xcls_image_parent_class)->finalize (obj);
-#line 1042 "ClutterFiles.vala.c"
+#line 1056 "ClutterFiles.vala.c"
 }
 
 
@@ -1063,86 +1077,86 @@ Xcls_ClutterFilesXcls_title* xcls_clutterfiles_xcls_title_construct (GType objec
 	ClutterText* _tmp4_ = NULL;
 	ClutterText* _tmp5_ = NULL;
 	ClutterText* _tmp6_ = NULL;
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 207 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 207 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	g_return_val_if_fail (file != NULL, NULL);
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 207 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	self = (Xcls_ClutterFilesXcls_title*) g_object_new (object_type, NULL);
-#line 208 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 209 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp0_ = _owner;
-#line 208 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 209 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 208 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 209 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 208 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 209 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	self->priv->_this = _tmp1_;
-#line 209 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 210 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp2_ = (ClutterText*) clutter_text_new ();
-#line 209 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 210 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	g_object_ref_sink (_tmp2_);
-#line 209 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 210 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_g_object_unref0 (self->el);
-#line 209 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 210 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	self->el = _tmp2_;
-#line 214 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 215 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp3_ = self->el;
-#line 214 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 215 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	clutter_actor_set_x_align ((ClutterActor*) _tmp3_, CLUTTER_ACTOR_ALIGN_START);
-#line 215 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 216 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp4_ = self->el;
-#line 215 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 216 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	clutter_actor_set_x_expand ((ClutterActor*) _tmp4_, TRUE);
-#line 216 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 217 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp5_ = self->el;
-#line 216 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 217 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	clutter_actor_set_y_align ((ClutterActor*) _tmp5_, CLUTTER_ACTOR_ALIGN_START);
-#line 217 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 218 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_tmp6_ = self->el;
-#line 217 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 218 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	clutter_actor_set_y_expand ((ClutterActor*) _tmp6_, FALSE);
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 207 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	return self;
-#line 1107 "ClutterFiles.vala.c"
+#line 1121 "ClutterFiles.vala.c"
 }
 
 
 Xcls_ClutterFilesXcls_title* xcls_clutterfiles_xcls_title_new (Xcls_ClutterFiles* _owner, JsRenderJsRender* file) {
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 207 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	return xcls_clutterfiles_xcls_title_construct (XCLS_CLUTTERFILES_TYPE_XCLS_TITLE, _owner, file);
-#line 1114 "ClutterFiles.vala.c"
+#line 1128 "ClutterFiles.vala.c"
 }
 
 
 static void xcls_clutterfiles_xcls_title_class_init (Xcls_ClutterFilesXcls_titleClass * klass) {
-#line 197 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 198 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	xcls_clutterfiles_xcls_title_parent_class = g_type_class_peek_parent (klass);
-#line 197 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 198 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_ClutterFilesXcls_titlePrivate));
-#line 197 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 198 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_clutterfiles_xcls_title_finalize;
-#line 1125 "ClutterFiles.vala.c"
+#line 1139 "ClutterFiles.vala.c"
 }
 
 
 static void xcls_clutterfiles_xcls_title_instance_init (Xcls_ClutterFilesXcls_title * self) {
-#line 197 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 198 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	self->priv = XCLS_CLUTTERFILES_XCLS_TITLE_GET_PRIVATE (self);
-#line 1132 "ClutterFiles.vala.c"
+#line 1146 "ClutterFiles.vala.c"
 }
 
 
 static void xcls_clutterfiles_xcls_title_finalize (GObject* obj) {
 	Xcls_ClutterFilesXcls_title * self;
-#line 197 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 198 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_CLUTTERFILES_TYPE_XCLS_TITLE, Xcls_ClutterFilesXcls_title);
-#line 199 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
-	_g_object_unref0 (self->el);
 #line 200 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+	_g_object_unref0 (self->el);
+#line 201 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 197 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
+#line 198 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	G_OBJECT_CLASS (xcls_clutterfiles_xcls_title_parent_class)->finalize (obj);
-#line 1146 "ClutterFiles.vala.c"
+#line 1160 "ClutterFiles.vala.c"
 }
 
 
@@ -1165,14 +1179,14 @@ static void xcls_clutterfiles_class_init (Xcls_ClutterFilesClass * klass) {
 	g_type_class_add_private (klass, sizeof (Xcls_ClutterFilesPrivate));
 #line 20 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_clutterfiles_finalize;
-#line 1169 "ClutterFiles.vala.c"
+#line 1183 "ClutterFiles.vala.c"
 }
 
 
 static void xcls_clutterfiles_instance_init (Xcls_ClutterFiles * self) {
 #line 20 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	self->priv = XCLS_CLUTTERFILES_GET_PRIVATE (self);
-#line 1176 "ClutterFiles.vala.c"
+#line 1190 "ClutterFiles.vala.c"
 }
 
 
@@ -1188,7 +1202,7 @@ static void xcls_clutterfiles_finalize (GObject* obj) {
 	_g_object_unref0 (self->filelayout);
 #line 20 "/home/alan/gitlive/app.Builder.js/Builder4/ClutterFiles.vala"
 	G_OBJECT_CLASS (xcls_clutterfiles_parent_class)->finalize (obj);
-#line 1192 "ClutterFiles.vala.c"
+#line 1206 "ClutterFiles.vala.c"
 }
 
 
