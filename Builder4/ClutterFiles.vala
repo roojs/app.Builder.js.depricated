@@ -116,6 +116,7 @@ public class Xcls_ClutterFiles : Object
             child_1.ref();
             var child_2 = new Xcls_Text6(_this);
             child_2.ref();
+            this.el.add (  child_2.el  );
         }
 
         // userdefined functions 
@@ -260,11 +261,9 @@ public class Xcls_ClutterFiles : Object
 
         // userdefined functions 
 
-        // skip *ctor - not pipe 
-
         // skip *args - not pipe 
 
-        // skip pack - not pipe 
+        // skip *ctor - not pipe 
 
         // skip x_align - already used 
 

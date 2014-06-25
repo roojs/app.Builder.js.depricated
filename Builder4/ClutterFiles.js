@@ -35,9 +35,8 @@ ClutterFiles=new XObject({
                         },
                         {
                             xtype: Clutter.Text,
-                            '*ctor' : "",
                             '*args' : "string name",
-                            pack : false,
+                            '*ctor' : "with_text(\"Arial\", name)",
                             x_align : "Clutter.ActorAlign.START",
                             x_expand : "true",
                             y_align : "Clutter.ActorAlign.START",
