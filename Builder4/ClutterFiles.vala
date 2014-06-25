@@ -109,7 +109,6 @@ public class Xcls_ClutterFiles : Object
             // my vars
 
             // set gobject values
-            this.el.orientation = "";
             var child_0 = new Xcls_Image4(_this);
             child_0.ref();
             var child_1 = new Xcls_Text5(_this);
@@ -118,7 +117,7 @@ public class Xcls_ClutterFiles : Object
 
         // userdefined functions 
 
-        // skip orientation - already used 
+        // skip xor - not pipe 
 
         // skip xtype - not pipe 
 
