@@ -51,7 +51,7 @@ ClutterFiles=new XObject({
                         {
                             xtype: Clutter.Text,
                             '*args' : "JsRender.JsRender file",
-                            '*ctor' : "with_text(\"Arial\", file.nickName())",
+                            '*ctor' : "with_text(\"Sans 14px\", file.nickName())",
                             id : "+title",
                             pack : "add_child",
                             x_align : Clutter.ActorAlign.START,
