@@ -38,14 +38,14 @@ ClutterFiles=new XObject({
                         },
                         {
                             xtype: Clutter.Text,
-                            pack : "add_child",
                             '*args' : "string name",
                             '*ctor' : "with_text(\"Arial\", name)",
                             id : "+title",
-                            x_align : "Clutter.ActorAlign.START",
-                            x_expand : "true",
-                            y_align : "Clutter.ActorAlign.START",
-                            y_expand : "false"
+                            pack : "add_child",
+                            x_align : Clutter.ActorAlign.START,
+                            x_expand : true,
+                            y_align : Clutter.ActorAlign.START,
+                            y_expand : false
                         }
                     ],
                     layout_manager : {

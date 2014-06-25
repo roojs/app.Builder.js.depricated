@@ -205,10 +205,10 @@ public class Xcls_ClutterFiles : Object
             // my vars
 
             // set gobject values
-            this.el.x_align = "Clutter.ActorAlign.START";
-            this.el.x_expand = "true";
-            this.el.y_align = "Clutter.ActorAlign.START";
-            this.el.y_expand = "false";
+            this.el.x_align = Clutter.ActorAlign.START;
+            this.el.x_expand = true;
+            this.el.y_align = Clutter.ActorAlign.START;
+            this.el.y_expand = false;
         }
 
         // userdefined functions 
