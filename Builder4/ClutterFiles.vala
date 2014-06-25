@@ -80,7 +80,7 @@ public class Xcls_ClutterFiles : Object
             // set gobject values
             var child_0 = new Xcls_FlowLayout3(_this);
             child_0.ref();
-            this.el.add (  child_0.el  );
+            this.el.layout_manager= child_0.el;
         }
 
         // userdefined functions 
@@ -154,7 +154,7 @@ public class Xcls_ClutterFiles : Object
             // set gobject values
             var child_0 = new Xcls_BoxLayout5(_this);
             child_0.ref();
-            this.el.add (  child_0.el  );
+            this.el.layout_manager= child_0.el;
             var child_1 = new Xcls_image(_this);
             child_1.ref();
             var child_2 = new Xcls_title(_this);
@@ -204,7 +204,7 @@ public class Xcls_ClutterFiles : Object
 
             // init method 
             this.el.set_size(100,100);
-             
+              
         }
 
         // userdefined functions 
