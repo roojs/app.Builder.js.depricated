@@ -30,10 +30,10 @@
                                     "|xns": "Clutter"
                                 },
                                 {
-                                    "pack": "0",
-                                    "xtype": "1",
-                                    "y_align": "2",
-                                    "|xns": "3"
+                                    "pack": false,
+                                    "xtype": "Image",
+                                    "y_align": "Clutter.ActorAlign.START",
+                                    "|xns": "Clutter"
                                 },
                                 {
                                     "|xns": "Clutter",

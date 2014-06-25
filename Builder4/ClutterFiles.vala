@@ -205,6 +205,8 @@ public class Xcls_ClutterFiles : Object
 
         // skip xtype - not pipe 
 
+        // skip y_align - not pipe 
+
         // skip |xns - no return type
 
         // skip xvala_cls - not pipe 
