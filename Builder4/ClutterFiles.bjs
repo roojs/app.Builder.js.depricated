@@ -24,7 +24,7 @@
                             "|xns": "Clutter"
                         },
                         {
-                            "*args": "string fname, string title ",
+                            "*args": "string fname, string title  ",
                             "id": "*fileitem",
                             "pack": false,
                             "xtype": "Actor",

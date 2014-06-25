@@ -36,7 +36,7 @@ public class Xcls_ClutterFiles : Object
         // my vars
 
         // set gobject values
-        var child_0 = new Xcls_filelayout(_this);
+        var child_0 = new Xcls_filelayout( _this );
         child_0.ref();
         this.el.add_child (  child_0.el  );
     }
@@ -62,7 +62,7 @@ public class Xcls_ClutterFiles : Object
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_FlowLayout3(_this);
+            var child_0 = new Xcls_FlowLayout3( _this );
             child_0.ref();
             this.el.layout_manager = child_0.el;
         }
@@ -83,12 +83,11 @@ public class Xcls_ClutterFiles : Object
         public Xcls_FlowLayout3(Xcls_ClutterFiles _owner )
         {
             _this = _owner;
-            this.el = new Clutter.FlowLayout();
+            this.el = new Clutter.FlowLayout( "Cutter.FlowOrientation.HORIZONTAL" );
 
             // my vars
 
             // set gobject values
-            this.el.orientation = "Cutter.FlowOrientation.HORIZONTAL";
         }
 
         // userdefined functions 
@@ -106,7 +105,7 @@ public class Xcls_ClutterFiles : Object
         public Xcls_title title;
 
             // ctor 
-        public Xcls_fileitem(Xcls_ClutterFiles _owner , string fname, string title )
+        public Xcls_fileitem(Xcls_ClutterFiles _owner , string fname, string title  )
         {
             _this = _owner;
             this.el = new Clutter.Actor();
@@ -114,14 +113,14 @@ public class Xcls_ClutterFiles : Object
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_BoxLayout5(_this);
+            var child_0 = new Xcls_BoxLayout5( _this );
             child_0.ref();
             this.el.layout_manager = child_0.el;
-            var child_1 = new Xcls_image(_this);
+            var child_1 = new Xcls_image( _this ,fname);
             child_1.ref();
             this.el.add_child (  child_1.el  );
             this.image =  child_1;
-            var child_2 = new Xcls_title(_this);
+            var child_2 = new Xcls_title( _this ,name);
             child_2.ref();
             this.el.add_child (  child_2.el  );
             this.title =  child_2;
