@@ -107,7 +107,7 @@ public class Xcls_ClutterFiles : Object
         public Xcls_title title;
 
             // ctor 
-        public Xcls_fileitem(Xcls_ClutterFiles _owner , string fname, string title)
+        public Xcls_fileitem(Xcls_ClutterFiles _owner , string fname, string title )
         {
             _this = _owner;
             this.el = new Clutter.Actor();
@@ -121,9 +121,11 @@ public class Xcls_ClutterFiles : Object
             var child_1 = new Xcls_image(_this);
             child_1.ref();
             this.el.add_child (  child_1.el  );
+        this. image =  child_1;
             var child_2 = new Xcls_title(_this);
             child_2.ref();
             this.el.add_child (  child_2.el  );
+        this. title =  child_2;
         }
 
         // userdefined functions 
