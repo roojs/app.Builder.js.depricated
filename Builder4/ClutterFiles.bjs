@@ -9,7 +9,7 @@
             "id": "ClutterFiles",
             "scroll_mode": "Clutter.ScrollMode.VERTICAL",
             "xtype": "ScrollActor",
-            "|": "function() {\n    test\n}\n",
+            "|void:show": "function() {\n    test\n}\n",
             "|xns": "Clutter",
             "items": [
                 {

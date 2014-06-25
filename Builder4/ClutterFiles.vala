@@ -42,8 +42,9 @@ public class Xcls_ClutterFiles : Object
     }
 
     // userdefined functions 
-
-    // skip | - no return type
+    public void showfunction() {
+            test
+        }
 
     // skip |xns - no return type
     public class Xcls_filelayout : Object 

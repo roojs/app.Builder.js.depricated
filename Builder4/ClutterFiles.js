@@ -13,7 +13,7 @@ ClutterFiles=new XObject({
     xtype: Clutter.ScrollActor,
     id : "ClutterFiles",
     scroll_mode : "Clutter.ScrollMode.VERTICAL",
-     : function() {
+    'void:show' : function() {
         test
     },
     items : [
