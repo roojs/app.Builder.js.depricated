@@ -37,7 +37,7 @@ ClutterFiles=new XObject({
             listeners : {
                 scroll_event : ( event)  => {
                 
-                
+                    print("scroll event");
                     var y = this.el.y;
                     var dir = event.direction;
                     switch (dir) {
