@@ -201,9 +201,13 @@ public class Xcls_ClutterFiles : Object
 
         // userdefined functions 
 
-        // skip x_align - not pipe 
+        // skip y_expand - not pipe 
 
         // skip pack - not pipe 
+
+        // skip x_align - not pipe 
+
+        // skip x_expand - not pipe 
 
         // skip xtype - not pipe 
 
@@ -237,6 +241,7 @@ public class Xcls_ClutterFiles : Object
             this.el.x_align = "Clutter.ActorAlign.START";
             this.el.x_expand = "true";
             this.el.y_align = "Clutter.ActorAlign.START";
+            this.el.y_expand = "false";
         }
 
         // userdefined functions 
@@ -250,6 +255,8 @@ public class Xcls_ClutterFiles : Object
         // skip xtype - not pipe 
 
         // skip y_align - already used 
+
+        // skip y_expand - already used 
 
         // skip |xns - no return type
 

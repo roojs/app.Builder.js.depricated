@@ -30,8 +30,10 @@
                                     "|xns": "Clutter"
                                 },
                                 {
-                                    "x_align": "Clutter.ActorAlign.START",
+                                    "y_expand": "true",
                                     "pack": false,
+                                    "x_align": "Clutter.ActorAlign.START",
+                                    "x_expand": "true",
                                     "xtype": "Image",
                                     "y_align": "Clutter.ActorAlign.START",
                                     "|xns": "Clutter"
@@ -42,6 +44,7 @@
                                     "x_expand": "true",
                                     "xtype": "Text",
                                     "y_align": "Clutter.ActorAlign.START",
+                                    "y_expand": "false",
                                     "|xns": "Clutter"
                                 }
                             ]

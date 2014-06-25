@@ -23,8 +23,10 @@ ClutterFiles=new XObject({
                     items : [
                         {
                             xtype: Clutter.Image,
-                            x_align : "Clutter.ActorAlign.START",
+                            y_expand : "true",
                             pack : false,
+                            x_align : "Clutter.ActorAlign.START",
+                            x_expand : "true",
                             y_align : "Clutter.ActorAlign.START"
                         },
                         {
@@ -32,7 +34,8 @@ ClutterFiles=new XObject({
                             pack : false,
                             x_align : "Clutter.ActorAlign.START",
                             x_expand : "true",
-                            y_align : "Clutter.ActorAlign.START"
+                            y_align : "Clutter.ActorAlign.START",
+                            y_expand : "false"
                         }
                     ],
                     layout_manager : {
