@@ -34,6 +34,13 @@
                                     "xtype": "Image",
                                     "y_align": "Clutter.ActorAlign.START",
                                     "|xns": "Clutter"
+                                },
+                                {
+                                    "pack": false,
+                                    "xtype": "Text",
+                                    "|xns": "Clutter",
+                                    "y_align": "",
+                                    "listeners": {}
                                 }
                             ]
                         }
