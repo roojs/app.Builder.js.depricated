@@ -50,7 +50,7 @@ public class Xcls_MainWindow : Object
         this.el.border_width = 0;
         this.el.default_height = 500;
         this.el.default_width = 800;
-        var child_0 = new Xcls_vbox(_this);
+        var child_0 = new Xcls_vbox( _this );
         child_0.ref();
         this.el.add (  child_0.el  );
 
@@ -77,28 +77,6 @@ public class Xcls_MainWindow : Object
     }
 
     // userdefined functions 
-
-    // skip listeners - not pipe 
-
-    // skip .Xcls_WindowLeftTree:left_tree - already used 
-
-    // skip .string:title - already used 
-
-    // skip border_width - already used 
-
-    // skip default_height - already used 
-
-    // skip default_width - already used 
-
-    // skip destroy - not pipe 
-
-    // skip id - not pipe 
-
-    // skip xtype - not pipe 
-
-    // skip |init - already used 
-
-    // skip |type - already used 
     public void setTitle (string str) {
             this.el.set_title(this.title + " - " + str);
         }
@@ -110,14 +88,6 @@ public class Xcls_MainWindow : Object
         }
 
     // skip |xns - no return type
-
-    // skip items - not pipe 
-
-    // skip xvala_cls - not pipe 
-
-    // skip xvala_xcls - not pipe 
-
-    // skip xvala_id - not pipe 
     public class Xcls_vbox : Object 
     {
         public Gtk.VBox el;
@@ -127,7 +97,7 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_vbox(Xcls_MainWindow _owner)
+        public Xcls_vbox(Xcls_MainWindow _owner )
         {
             _this = _owner;
             _this.vbox = this;
@@ -136,33 +106,17 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_topbar(_this);
+            var child_0 = new Xcls_topbar( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,true,0 );
-            var child_1 = new Xcls_leftpane(_this);
+            var child_1 = new Xcls_leftpane( _this );
             child_1.ref();
             this.el.pack_end (  child_1.el , true,true,0 );
         }
 
         // userdefined functions 
 
-        // skip |homogeneous - already used 
-
-        // skip id - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_topbar : Object 
     {
@@ -173,7 +127,7 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_topbar(Xcls_MainWindow _owner)
+        public Xcls_topbar(Xcls_MainWindow _owner )
         {
             _this = _owner;
             _this.topbar = this;
@@ -188,25 +142,7 @@ public class Xcls_MainWindow : Object
 
         // userdefined functions 
 
-        // skip |homogeneous - already used 
-
-        // skip id - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
-        // skip |height_request - already used 
-
-        // skip |vexpand - already used 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_leftpane : Object 
     {
@@ -218,7 +154,7 @@ public class Xcls_MainWindow : Object
         public int lastWidth;
 
             // ctor 
-        public Xcls_leftpane(Xcls_MainWindow _owner)
+        public Xcls_leftpane(Xcls_MainWindow _owner )
         {
             _this = _owner;
             _this.leftpane = this;
@@ -229,35 +165,17 @@ public class Xcls_MainWindow : Object
 
             // set gobject values
             this.el.position = 400;
-            var child_0 = new Xcls_VBox5(_this);
+            var child_0 = new Xcls_VBox5( _this );
             child_0.ref();
             this.el.add1 (  child_0.el  );
-            var child_1 = new Xcls_VBox9(_this);
+            var child_1 = new Xcls_VBox9( _this );
             child_1.ref();
             this.el.add2 (  child_1.el  );
         }
 
         // userdefined functions 
 
-        // skip .int:lastWidth - already used 
-
-        // skip id - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip position - already used 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_VBox5 : Object 
     {
@@ -268,7 +186,7 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_VBox5(Xcls_MainWindow _owner)
+        public Xcls_VBox5(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Gtk.VBox( true, 0 );
@@ -276,26 +194,14 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_VPaned6(_this);
+            var child_0 = new Xcls_VPaned6( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,true,0 );
         }
 
         // userdefined functions 
 
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_VPaned6 : Object 
     {
@@ -306,7 +212,7 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_VPaned6(Xcls_MainWindow _owner)
+        public Xcls_VPaned6(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Gtk.VPaned();
@@ -314,29 +220,17 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_tree(_this);
+            var child_0 = new Xcls_tree( _this );
             child_0.ref();
             this.el.add1 (  child_0.el  );
-            var child_1 = new Xcls_props(_this);
+            var child_1 = new Xcls_props( _this );
             child_1.ref();
             this.el.add2 (  child_1.el  );
         }
 
         // userdefined functions 
 
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_tree : Object 
     {
@@ -347,7 +241,7 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_tree(Xcls_MainWindow _owner)
+        public Xcls_tree(Xcls_MainWindow _owner )
         {
             _this = _owner;
             _this.tree = this;
@@ -360,19 +254,7 @@ public class Xcls_MainWindow : Object
 
         // userdefined functions 
 
-        // skip id - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_props : Object 
     {
@@ -383,7 +265,7 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_props(Xcls_MainWindow _owner)
+        public Xcls_props(Xcls_MainWindow _owner )
         {
             _this = _owner;
             _this.props = this;
@@ -396,19 +278,7 @@ public class Xcls_MainWindow : Object
 
         // userdefined functions 
 
-        // skip id - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_VBox9 : Object 
     {
@@ -419,7 +289,7 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_VBox9(Xcls_MainWindow _owner)
+        public Xcls_VBox9(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Gtk.VBox( true, 0 );
@@ -427,26 +297,14 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_clutterembed(_this);
+            var child_0 = new Xcls_clutterembed( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
         }
 
         // userdefined functions 
 
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_clutterembed : Object 
     {
@@ -457,7 +315,7 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_clutterembed(Xcls_MainWindow _owner)
+        public Xcls_clutterembed(Xcls_MainWindow _owner )
         {
             _this = _owner;
             _this.clutterembed = this;
@@ -466,10 +324,10 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_rooview(_this);
+            var child_0 = new Xcls_rooview( _this );
             child_0.ref();
             this.el.get_stage().add_child (  child_0.el  );
-            var child_1 = new Xcls_projectbutton(_this);
+            var child_1 = new Xcls_projectbutton( _this );
             child_1.ref();
             this.el.get_stage().add_child (  child_1.el  );
 
@@ -488,25 +346,7 @@ public class Xcls_MainWindow : Object
 
         // userdefined functions 
 
-        // skip listeners - not pipe 
-
-        // skip id - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
-        // skip |init - already used 
-
         // skip |xns - no return type
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_rooview : Object 
     {
@@ -518,7 +358,7 @@ public class Xcls_MainWindow : Object
         public bool is_fullsize;
 
             // ctor 
-        public Xcls_rooview(Xcls_MainWindow _owner)
+        public Xcls_rooview(Xcls_MainWindow _owner )
         {
             _this = _owner;
             _this.rooview = this;
@@ -550,23 +390,7 @@ public class Xcls_MainWindow : Object
 
         // userdefined functions 
 
-        // skip .bool:is_fullsize - already used 
-
-        // skip id - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
-        // skip |init - already used 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_projectbutton : Object 
     {
@@ -577,7 +401,7 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_projectbutton(Xcls_MainWindow _owner)
+        public Xcls_projectbutton(Xcls_MainWindow _owner )
         {
             _this = _owner;
             _this.projectbutton = this;
@@ -586,7 +410,7 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_Button13(_this);
+            var child_0 = new Xcls_Button13( _this );
             child_0.ref();
 
             // init method 
@@ -608,23 +432,7 @@ public class Xcls_MainWindow : Object
 
         // userdefined functions 
 
-        // skip id - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
-        // skip |init - already used 
-
         // skip |xns - no return type
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_Button13 : Object 
     {
@@ -635,7 +443,7 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_Button13(Xcls_MainWindow _owner)
+        public Xcls_Button13(Xcls_MainWindow _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
@@ -676,22 +484,6 @@ public class Xcls_MainWindow : Object
 
         // userdefined functions 
 
-        // skip listeners - not pipe 
-
-        // skip label - already used 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
-        // skip |init - already used 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
 }
