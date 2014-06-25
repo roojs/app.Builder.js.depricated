@@ -43,6 +43,7 @@
                                     "|xns": "Clutter"
                                 },
                                 {
+                                    "*ctor": "",
                                     "*args": "string name",
                                     "pack": false,
                                     "x_align": "Clutter.ActorAlign.START",
@@ -50,9 +51,7 @@
                                     "xtype": "Text",
                                     "y_align": "Clutter.ActorAlign.START",
                                     "y_expand": "false",
-                                    "|xns": "Clutter",
-                                    "": "",
-                                    "listeners": {}
+                                    "|xns": "Clutter"
                                 }
                             ]
                         }
