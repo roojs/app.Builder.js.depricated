@@ -173,6 +173,7 @@ public class Xcls_ClutterFiles : Object
 
 
             // my vars
+        public JsRender.JsRender undefined;
         public Xcls_image image;
         public Xcls_title title;
 
@@ -183,6 +184,7 @@ public class Xcls_ClutterFiles : Object
             this.el = new Clutter.Actor();
 
             // my vars
+            this.undefined = file;
 
             // set gobject values
             this.el.reactive = true;
