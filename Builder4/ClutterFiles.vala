@@ -48,9 +48,9 @@ public class Xcls_ClutterFiles : Object
     // userdefined functions 
     public void set_size(float w, float h) {
             _this.filelayout_manager.el.max_column_width = w - 50;
-           this.el.set_size(this.el.get_stage().width-50,
+           this.el.set_size(this.el.get_stage().width-150,
                                 this.el.get_stage().height);
-                    this.el.set_position(50,0);
+                    this.el.set_position(100,0);
         }
     public void show(Project.Project pr) {
             // list all the files, and create new Xcls_fileitem for each one.
