@@ -13,8 +13,14 @@ ClutterFiles=new XObject({
     xtype: Clutter.ScrollActor,
     id : "ClutterFiles",
     scroll_mode : "Clutter.ScrollMode.VERTICAL",
-    'void:show' : function() {
-        test
+    'void:show' : (Project.Project pr) {
+        // list all the files, and create new Xcls_fileitem for each one.
+        
+        var fiter = pr.files.map_iterator();
+        while (fiter.next()) {
+            var a = new Xcls_fileitem(fiter.get_value());
+        }
+    
     },
     items : [
         {
