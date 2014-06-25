@@ -105,7 +105,11 @@ MainWindow=new XObject({
                                     init : var stage = this.el.get_stage();
                                     stage.set_background_color(  Clutter.Color.from_string("#000"));
                                     this.clutterfiles = new Xcls_ClutterFiles();
-                                    stage.add_child(this.clutterfiles.el);,
+                                    stage.add_child(this.clutterfiles.el);
+                                    this.clutterfiles.open.connect((file) { 
+                                        print("OPEN : " + file.name);
+                                    
+                                    });,
                                     items : [
                                         {
                                             xtype: GtkClutter.Actor,
