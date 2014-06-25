@@ -30,9 +30,10 @@
                                     "|xns": "Clutter"
                                 },
                                 {
-                                    "pack": false,
-                                    "xtype": "Text",
-                                    "|xns": "Clutter"
+                                    "pack": "0",
+                                    "xtype": "1",
+                                    "y_align": "2",
+                                    "|xns": "3"
                                 },
                                 {
                                     "|xns": "Clutter",
