@@ -319,7 +319,7 @@ Gtk = XObject.define(
             
             
             item.xvala_cls = cls;
-            item.xvala_xcls = 'Xcls_' + id;
+            item.xvala_xcls = 'Xcls_' + (id[0] == '*') ? id.substring(1), id;
             item.xvala_id = item.id ? item.id : false;
             this.vitems.push(item);  
             // loop children..
