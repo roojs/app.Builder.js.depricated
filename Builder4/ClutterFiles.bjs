@@ -43,9 +43,9 @@
                                     "id": "+image",
                                     "pack": "add_child",
                                     "|x_align": "Clutter.ActorAlign.START",
-                                    "x_expand": "true",
+                                    "|x_expand": "true",
                                     "xtype": "Texture",
-                                    "y_align": "Clutter.ActorAlign.START",
+                                    "|y_align": "Clutter.ActorAlign.START",
                                     "|y_expand": "false",
                                     "|xns": "Clutter"
                                 },

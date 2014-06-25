@@ -32,8 +32,8 @@ ClutterFiles=new XObject({
                             id : "+image",
                             pack : "add_child",
                             x_align : Clutter.ActorAlign.START,
-                            x_expand : "true",
-                            y_align : "Clutter.ActorAlign.START",
+                            x_expand : true,
+                            y_align : Clutter.ActorAlign.START,
                             y_expand : false
                         },
                         {
