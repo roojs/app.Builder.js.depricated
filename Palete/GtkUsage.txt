@@ -270,9 +270,18 @@ left:
 right:
 	Gdl.DockItem
     
-    
+
 left:
     Clutter.ScrollActor
+right:
+    Clutter.GridLayout
+    Clutter.FlowLayout
+    Clutter.FixedLayout
+    Clutter.TableLayout
+    Clutter.BinLayout
+    Clutter.BoxLayout
+
+left:
     Clutter.GridLayout
     Clutter.FlowLayout
     Clutter.FixedLayout
@@ -286,11 +295,5 @@ right:
     Clutter.Image
     Clutter.Text
     Clutter.Rectangle
-    Clutter.GridLayout
-    Clutter.FlowLayout
-    Clutter.FixedLayout
-    Clutter.TableLayout
-    Clutter.BinLayout
-    Clutter.BoxLayout
-    Clutter.Actor
+    
     
