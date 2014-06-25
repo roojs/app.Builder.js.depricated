@@ -18,19 +18,26 @@ ClutterFiles=new XObject({
             pack : false,
             items : [
                 {
-                    xtype: Clutter.BoxLayout,
-                    xpack : "",
-                    spacing : 4,
-                    init : this.el.set_size(100,100);,
-                    orientation : Clutter.Orientation,VERTICAL,
+                    xtype: Clutter.Actor,
+                    pack : false,
                     items : [
                         {
-                            xtype: Clutter.Image,
-                            pack : false
-                        },
-                        {
-                            xtype: Clutter.Text,
-                            pack : false
+                            xtype: Clutter.BoxLayout,
+                            xpack : "",
+                            spacing : 4,
+                            init : this.el.set_size(100,100);,
+                            orientation : Clutter.Orientation,VERTICAL,
+                            pack : false,
+                            items : [
+                                {
+                                    xtype: Clutter.Image,
+                                    pack : false
+                                },
+                                {
+                                    xtype: Clutter.Text,
+                                    pack : false
+                                }
+                            ]
                         }
                     ]
                 }

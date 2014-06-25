@@ -71,9 +71,8 @@ public class Xcls_ClutterFiles : Object
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_BoxLayout3(_this);
+            var child_0 = new Xcls_Actor3(_this);
             child_0.ref();
-            this.el.add (  child_0.el  );
         }
 
         // userdefined functions 
@@ -92,7 +91,44 @@ public class Xcls_ClutterFiles : Object
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_BoxLayout3 : Object 
+    public class Xcls_Actor3 : Object 
+    {
+        public Clutter.Actor el;
+        private Xcls_ClutterFiles  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_Actor3(Xcls_ClutterFiles _owner)
+        {
+            _this = _owner;
+            this.el = new Clutter.Actor();
+
+            // my vars
+
+            // set gobject values
+            var child_0 = new Xcls_BoxLayout4(_this);
+            child_0.ref();
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+
+        // skip xtype - not pipe 
+
+        // skip pack - not pipe 
+
+        // skip items - not pipe 
+
+        // skip xvala_cls - not pipe 
+
+        // skip xvala_xcls - not pipe 
+
+        // skip xvala_id - not pipe 
+    }
+    public class Xcls_BoxLayout4 : Object 
     {
         public Clutter.BoxLayout el;
         private Xcls_ClutterFiles  _this;
@@ -101,7 +137,7 @@ public class Xcls_ClutterFiles : Object
             // my vars
 
             // ctor 
-        public Xcls_BoxLayout3(Xcls_ClutterFiles _owner)
+        public Xcls_BoxLayout4(Xcls_ClutterFiles _owner)
         {
             _this = _owner;
             this.el = new Clutter.BoxLayout();
@@ -111,9 +147,9 @@ public class Xcls_ClutterFiles : Object
             // set gobject values
             this.el.orientation = Clutter.Orientation,VERTICAL;
             this.el.spacing = 4;
-            var child_0 = new Xcls_Image4(_this);
+            var child_0 = new Xcls_Image5(_this);
             child_0.ref();
-            var child_1 = new Xcls_Text5(_this);
+            var child_1 = new Xcls_Text6(_this);
             child_1.ref();
 
             // init method 
@@ -135,6 +171,8 @@ public class Xcls_ClutterFiles : Object
 
         // skip |xns - no return type
 
+        // skip pack - not pipe 
+
         // skip items - not pipe 
 
         // skip xvala_cls - not pipe 
@@ -143,7 +181,7 @@ public class Xcls_ClutterFiles : Object
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_Image4 : Object 
+    public class Xcls_Image5 : Object 
     {
         public Clutter.Image el;
         private Xcls_ClutterFiles  _this;
@@ -152,7 +190,7 @@ public class Xcls_ClutterFiles : Object
             // my vars
 
             // ctor 
-        public Xcls_Image4(Xcls_ClutterFiles _owner)
+        public Xcls_Image5(Xcls_ClutterFiles _owner)
         {
             _this = _owner;
             this.el = new Clutter.Image();
@@ -176,7 +214,7 @@ public class Xcls_ClutterFiles : Object
 
         // skip xvala_id - not pipe 
     }
-    public class Xcls_Text5 : Object 
+    public class Xcls_Text6 : Object 
     {
         public Clutter.Text el;
         private Xcls_ClutterFiles  _this;
@@ -185,7 +223,7 @@ public class Xcls_ClutterFiles : Object
             // my vars
 
             // ctor 
-        public Xcls_Text5(Xcls_ClutterFiles _owner)
+        public Xcls_Text6(Xcls_ClutterFiles _owner)
         {
             _this = _owner;
             this.el = new Clutter.Text();

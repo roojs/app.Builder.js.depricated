@@ -16,22 +16,30 @@
                     "pack": false,
                     "items": [
                         {
-                            "xpack": "",
-                            "spacing": 4,
-                            "xtype": "BoxLayout",
-                            "|init": "this.el.set_size(100,100);\n ",
-                            "|orientation": "Clutter.Orientation,VERTICAL",
                             "|xns": "Clutter",
+                            "xtype": "Actor",
+                            "pack": false,
                             "items": [
                                 {
+                                    "xpack": "",
+                                    "spacing": 4,
+                                    "xtype": "BoxLayout",
+                                    "|init": "this.el.set_size(100,100);\n ",
+                                    "|orientation": "Clutter.Orientation,VERTICAL",
                                     "|xns": "Clutter",
-                                    "xtype": "Image",
-                                    "pack": false
-                                },
-                                {
-                                    "|xns": "Clutter",
-                                    "xtype": "Text",
-                                    "pack": false
+                                    "pack": false,
+                                    "items": [
+                                        {
+                                            "|xns": "Clutter",
+                                            "xtype": "Image",
+                                            "pack": false
+                                        },
+                                        {
+                                            "|xns": "Clutter",
+                                            "xtype": "Text",
+                                            "pack": false
+                                        }
+                                    ]
                                 }
                             ]
                         }
