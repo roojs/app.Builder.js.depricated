@@ -11,8 +11,8 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 ClutterFiles=new XObject({
     xtype: Clutter.ScrollActor,
+    scroll_mode : "",
     id : "ClutterFiles",
-     : "",
     items : [
         {
             xtype: Clutter.Actor,

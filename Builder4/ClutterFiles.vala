@@ -41,21 +41,17 @@ public class Xcls_ClutterFiles : Object
         // set gobject values
         var child_0 = new Xcls_filelayout(_this);
         child_0.ref();
-
-        // listeners 
     }
 
     // userdefined functions 
+
+    // skip scroll_mode - not pipe 
 
     // skip id - not pipe 
 
     // skip xtype - not pipe 
 
     // skip |xns - no return type
-
-    // skip  - not pipe 
-
-    // skip listeners - not pipe 
 
     // skip items - not pipe 
 
