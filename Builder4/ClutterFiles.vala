@@ -160,7 +160,7 @@ public class Xcls_ClutterFiles : Object
     }
     public class Xcls_image : Object 
     {
-        public Clutter.Texture el;
+        public Clutter.Image el;
         private Xcls_ClutterFiles  _this;
 
 
@@ -175,15 +175,19 @@ public class Xcls_ClutterFiles : Object
             // my vars
 
             // set gobject values
-            this.el.x_align = Clutter.ActorAlign.START;
-            this.el.x_expand = true;
-            this.el.y_align = Clutter.ActorAlign.START;
-            this.el.y_expand = false;
         }
 
         // userdefined functions 
 
+        // skip |x_align - no return type
+
+        // skip |x_expand - no return type
+
         // skip |xns - no return type
+
+        // skip |y_align - no return type
+
+        // skip |y_expand - no return type
     }
     public class Xcls_title : Object 
     {
