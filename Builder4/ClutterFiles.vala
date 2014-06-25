@@ -179,7 +179,7 @@ public class Xcls_ClutterFiles : Object
         public Xcls_image(Xcls_ClutterFiles _owner , JsRender.JsRender file)
         {
             _this = _owner;
-            this.el = new Clutter.Texture.from_file(fname);
+            this.el = new Clutter.Texture.from_file(file.getIconFile());
 
             // my vars
 

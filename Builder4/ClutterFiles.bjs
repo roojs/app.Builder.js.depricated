@@ -41,7 +41,7 @@
                                 },
                                 {
                                     "*args": "JsRender.JsRender file",
-                                    ".ctor": "new Clutter.Texture.from_file(fname)",
+                                    ".ctor": "new Clutter.Texture.from_file(file.getIconFile())",
                                     "id": "+image",
                                     "pack": "add_child",
                                     "xtype": "Image",
