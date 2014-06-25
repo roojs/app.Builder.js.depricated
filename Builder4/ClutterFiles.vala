@@ -235,10 +235,8 @@ public class Xcls_ClutterFiles : Object
 
             // set gobject values
             this.el.x_align = "Clutter.ActorAlign.START";
-            this.el.x_expand = "";
+            this.el.x_expand = "true";
             this.el.y_align = "Clutter.ActorAlign.START";
-
-            // listeners 
         }
 
         // userdefined functions 
@@ -247,15 +245,13 @@ public class Xcls_ClutterFiles : Object
 
         // skip x_align - already used 
 
+        // skip x_expand - already used 
+
         // skip xtype - not pipe 
 
         // skip y_align - already used 
 
         // skip |xns - no return type
-
-        // skip x_expand - already used 
-
-        // skip listeners - not pipe 
 
         // skip xvala_cls - not pipe 
 
