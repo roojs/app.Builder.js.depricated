@@ -40,7 +40,7 @@
                                     "|xns": "Clutter"
                                 },
                                 {
-                                    "*args": "string fname",
+                                    "*args": "JsRender.JsRender file",
                                     ".ctor": "new Clutter.Texture.from_file(fname)",
                                     "id": "+image",
                                     "pack": "add_child",
@@ -52,7 +52,7 @@
                                     "|y_expand": "false"
                                 },
                                 {
-                                    "*args": "string title",
+                                    "*args": "JsRender.JsRender file",
                                     "*ctor": "with_text(\"Arial\", name)",
                                     "id": "+title",
                                     "pack": "add_child",

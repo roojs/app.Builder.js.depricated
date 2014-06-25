@@ -125,11 +125,11 @@ public class Xcls_ClutterFiles : Object
             var child_0 = new Xcls_BoxLayout5( _this );
             child_0.ref();
             this.el.layout_manager = child_0.el;
-            var child_1 = new Xcls_image( _this ,fname);
+            var child_1 = new Xcls_image( _this ,file);
             child_1.ref();
             this.el.add_child (  child_1.el  );
             this.image =  child_1;
-            var child_2 = new Xcls_title( _this ,title);
+            var child_2 = new Xcls_title( _this ,file);
             child_2.ref();
             this.el.add_child (  child_2.el  );
             this.title =  child_2;
@@ -176,7 +176,7 @@ public class Xcls_ClutterFiles : Object
             // my vars
 
             // ctor 
-        public Xcls_image(Xcls_ClutterFiles _owner , string fname)
+        public Xcls_image(Xcls_ClutterFiles _owner , JsRender.JsRender file)
         {
             _this = _owner;
             this.el = new Clutter.Texture.from_file(fname);
@@ -207,7 +207,7 @@ public class Xcls_ClutterFiles : Object
             // my vars
 
             // ctor 
-        public Xcls_title(Xcls_ClutterFiles _owner , string title)
+        public Xcls_title(Xcls_ClutterFiles _owner , JsRender.JsRender file)
         {
             _this = _owner;
             this.el = new Clutter.Text();

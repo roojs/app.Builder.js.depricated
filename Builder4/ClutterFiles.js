@@ -37,7 +37,7 @@ ClutterFiles=new XObject({
                     items : [
                         {
                             xtype: Clutter.Image,
-                            '*args' : "string fname",
+                            '*args' : "JsRender.JsRender file",
                             id : "+image",
                             pack : "add_child",
                             x_align : Clutter.ActorAlign.START,
@@ -47,7 +47,7 @@ ClutterFiles=new XObject({
                         },
                         {
                             xtype: Clutter.Text,
-                            '*args' : "string title",
+                            '*args' : "JsRender.JsRender file",
                             '*ctor' : "with_text(\"Arial\", name)",
                             id : "+title",
                             pack : "add_child",
