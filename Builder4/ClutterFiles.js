@@ -14,46 +14,50 @@ ClutterFiles=new XObject({
     id : "ClutterFiles",
     items : [
         {
-            xtype: Clutter.FlowLayout,
+            xtype: Clutter.Actor,
             pack : false,
-            items : [
-                {
-                    xtype: Clutter.Actor,
-                    '*args' : "string fname, string title",
-                    id : "*fileitem",
-                    pack : false,
-                    items : [
-                        {
-                            xtype: Clutter.Texture,
-                            '*args' : "string fname",
-                            id : "*image",
-                            ctor : "from_file(fname)",
-                            pack : false,
-                            x_align : "Clutter.ActorAlign.START",
-                            x_expand : "true",
-                            y_align : "Clutter.ActorAlign.START",
-                            y_expand : "false"
-                        },
-                        {
-                            xtype: Clutter.Text,
-                            '*args' : "string name",
-                            '*ctor' : "with_text(\"Arial\", name)",
-                            id : "*title",
-                            x_align : "Clutter.ActorAlign.START",
-                            x_expand : "true",
-                            y_align : "Clutter.ActorAlign.START",
-                            y_expand : "false"
+             : {
+                xtype: Clutter.FlowLayout,
+                pack : false,
+                items : [
+                    {
+                        xtype: Clutter.Actor,
+                        '*args' : "string fname, string title",
+                        id : "*fileitem",
+                        pack : false,
+                        items : [
+                            {
+                                xtype: Clutter.Texture,
+                                '*args' : "string fname",
+                                id : "*image",
+                                ctor : "from_file(fname)",
+                                pack : false,
+                                x_align : "Clutter.ActorAlign.START",
+                                x_expand : "true",
+                                y_align : "Clutter.ActorAlign.START",
+                                y_expand : "false"
+                            },
+                            {
+                                xtype: Clutter.Text,
+                                '*args' : "string name",
+                                '*ctor' : "with_text(\"Arial\", name)",
+                                id : "*title",
+                                x_align : "Clutter.ActorAlign.START",
+                                x_expand : "true",
+                                y_align : "Clutter.ActorAlign.START",
+                                y_expand : "false"
+                            }
+                        ],
+                        layout_manager : {
+                            xtype: Clutter.BoxLayout,
+                            spacing : 4,
+                            xpack : "",
+                            init : this.el.set_size(100,100);,
+                            orientation : Clutter.Orientation.VERTICAL
                         }
-                    ],
-                    layout_manager : {
-                        xtype: Clutter.BoxLayout,
-                        spacing : 4,
-                        xpack : "",
-                        init : this.el.set_size(100,100);,
-                        orientation : Clutter.Orientation.VERTICAL
                     }
-                }
-            ]
+                ]
+            }
         }
     ]
 });

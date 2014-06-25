@@ -12,47 +12,55 @@
             "items": [
                 {
                     "|xns": "Clutter",
-                    "xtype": "FlowLayout",
+                    "xtype": "Actor",
                     "pack": false,
                     "items": [
                         {
-                            "*args": "string fname, string title",
-                            "id": "*fileitem",
+                            "*prop": "",
                             "pack": false,
-                            "xtype": "Actor",
+                            "xtype": "FlowLayout",
                             "|xns": "Clutter",
                             "items": [
                                 {
-                                    "*prop": "layout_manager",
-                                    "spacing": 4,
-                                    "xpack": "",
-                                    "xtype": "BoxLayout",
-                                    "|init": "this.el.set_size(100,100);\n ",
-                                    "|orientation": "Clutter.Orientation.VERTICAL",
-                                    "|xns": "Clutter"
-                                },
-                                {
-                                    "*args": "string fname",
-                                    "id": "*image",
-                                    "ctor": "from_file(fname)",
+                                    "*args": "string fname, string title",
+                                    "id": "*fileitem",
                                     "pack": false,
-                                    "x_align": "Clutter.ActorAlign.START",
-                                    "x_expand": "true",
-                                    "xtype": "Texture",
-                                    "y_align": "Clutter.ActorAlign.START",
-                                    "y_expand": "false",
-                                    "|xns": "Clutter"
-                                },
-                                {
-                                    "*args": "string name",
-                                    "*ctor": "with_text(\"Arial\", name)",
-                                    "id": "*title",
-                                    "x_align": "Clutter.ActorAlign.START",
-                                    "x_expand": "true",
-                                    "xtype": "Text",
-                                    "y_align": "Clutter.ActorAlign.START",
-                                    "y_expand": "false",
-                                    "|xns": "Clutter"
+                                    "xtype": "Actor",
+                                    "|xns": "Clutter",
+                                    "items": [
+                                        {
+                                            "*prop": "layout_manager",
+                                            "spacing": 4,
+                                            "xpack": "",
+                                            "xtype": "BoxLayout",
+                                            "|init": "this.el.set_size(100,100);\n ",
+                                            "|orientation": "Clutter.Orientation.VERTICAL",
+                                            "|xns": "Clutter"
+                                        },
+                                        {
+                                            "*args": "string fname",
+                                            "id": "*image",
+                                            "ctor": "from_file(fname)",
+                                            "pack": false,
+                                            "x_align": "Clutter.ActorAlign.START",
+                                            "x_expand": "true",
+                                            "xtype": "Texture",
+                                            "y_align": "Clutter.ActorAlign.START",
+                                            "y_expand": "false",
+                                            "|xns": "Clutter"
+                                        },
+                                        {
+                                            "*args": "string name",
+                                            "*ctor": "with_text(\"Arial\", name)",
+                                            "id": "*title",
+                                            "x_align": "Clutter.ActorAlign.START",
+                                            "x_expand": "true",
+                                            "xtype": "Text",
+                                            "y_align": "Clutter.ActorAlign.START",
+                                            "y_expand": "false",
+                                            "|xns": "Clutter"
+                                        }
+                                    ]
                                 }
                             ]
                         }
