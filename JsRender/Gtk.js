@@ -27,6 +27,7 @@ var ctors = {
     "Gtk.TreeStore": [ "n_columns", "columns" ],
     "Gtk.FileChooserWidget" : [ "action"],
     "Gtk.Window" : [ "type"],
+    "Clutter.FlowOrientation" : [ "orientation"],
     //"Gtk.Entry": [  ],
 };
 
