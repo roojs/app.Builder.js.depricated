@@ -41,8 +41,10 @@ public class Xcls_ClutterFiles : Object
         child_0.ref();
         this.el.add_child (  child_0.el  );
 
-        // init method 
-        this.el.set_position(100,0);
+        // listeners 
+        this.el.scroll_event.connect( function (self, event) {
+        
+        } );
     }
 
     // userdefined functions 

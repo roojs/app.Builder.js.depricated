@@ -13,7 +13,6 @@ ClutterFiles=new XObject({
     xtype: Clutter.ScrollActor,
     id : "ClutterFiles",
     scroll_mode : "Clutter.ScrollMode.VERTICAL",
-    init : this.el.set_position(100,0);,
     'void:set_size' : (float w, float h) {
         _this.filelayout_manager.el.max_column_width = w - 150;
        this.el.set_size(this.el.get_stage().width-150,
@@ -31,6 +30,11 @@ ClutterFiles=new XObject({
             this.filelayout.el.add_child(a.el);
         }
         this.el.show_all();
+    },
+    listeners : {
+        scroll_event : function (self, event) {
+        
+        }
     },
     items : [
         {
