@@ -174,6 +174,11 @@ namespace Project {
 			return ar[ar.length-1];
 			
 		}
+		public string getIconFile()
+		{
+
+
+		}
 		
 		
 		public string toJSON(bool show_all)
