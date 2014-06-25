@@ -16,9 +16,9 @@
                     "pack": false,
                     "items": [
                         {
-                            "|xns": "Clutter",
+                            "|init": "function() {\n    XObject.prototype.init.call(this);\n}\n",
                             "xtype": "BoxLayout",
-                            "pack": false,
+                            "|xns": "Clutter",
                             "items": [
                                 {
                                     "|xns": "Clutter",

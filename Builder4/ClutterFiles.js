@@ -19,7 +19,9 @@ ClutterFiles=new XObject({
             items : [
                 {
                     xtype: Clutter.BoxLayout,
-                    pack : false,
+                    init : function() {
+                        XObject.prototype.init.call(this);
+                    },
                     items : [
                         {
                             xtype: Clutter.Image,

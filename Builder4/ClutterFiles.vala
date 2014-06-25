@@ -73,6 +73,7 @@ public class Xcls_ClutterFiles : Object
             // set gobject values
             var child_0 = new Xcls_BoxLayout3(_this);
             child_0.ref();
+            this.el.add (  child_0.el  );
         }
 
         // userdefined functions 
@@ -112,15 +113,20 @@ public class Xcls_ClutterFiles : Object
             child_0.ref();
             var child_1 = new Xcls_Text5(_this);
             child_1.ref();
+
+            // init method 
+            function() {
+                XObject.prototype.init.call(this);
+            }
         }
 
         // userdefined functions 
 
-        // skip |xns - no return type
+        // skip |init - already used 
 
         // skip xtype - not pipe 
 
-        // skip pack - not pipe 
+        // skip |xns - no return type
 
         // skip items - not pipe 
 
