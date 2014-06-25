@@ -50,7 +50,9 @@
                                     "xtype": "Text",
                                     "y_align": "Clutter.ActorAlign.START",
                                     "y_expand": "false",
-                                    "|xns": "Clutter"
+                                    "|xns": "Clutter",
+                                    "id": "",
+                                    "listeners": {}
                                 }
                             ]
                         }
