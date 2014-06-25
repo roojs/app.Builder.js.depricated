@@ -36,16 +36,16 @@
                             "|xns": "Clutter"
                         },
                         {
+                            "listeners": {
+                                "enter_event": "(  event)  => {\n    \n}"
+                            },
                             "*args": "JsRender.JsRender file",
                             "id": "*fileitem",
                             "pack": false,
-                            "|reactive": "true",
                             "xtype": "Actor",
                             "|init": "this.el.set_size(100,100);",
+                            "|reactive": "true",
                             "|xns": "Clutter",
-                            "listeners": {
-                                "enter_event": "function (self, event) {\n\n}"
-                            },
                             "items": [
                                 {
                                     "*prop": "layout_manager",

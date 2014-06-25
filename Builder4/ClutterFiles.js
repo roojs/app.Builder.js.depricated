@@ -86,16 +86,16 @@ ClutterFiles=new XObject({
             items : [
                 {
                     xtype: Clutter.Actor,
+                    listeners : {
+                        enter_event : (  event)  => {
+                            
+                        }
+                    },
                     '*args' : "JsRender.JsRender file",
                     id : "*fileitem",
                     pack : false,
-                    reactive : true,
                     init : this.el.set_size(100,100);,
-                    listeners : {
-                        enter_event : function (self, event) {
-                        
-                        }
-                    },
+                    reactive : true,
                     items : [
                         {
                             xtype: Clutter.Texture,
