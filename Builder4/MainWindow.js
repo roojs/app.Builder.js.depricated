@@ -30,7 +30,7 @@ MainWindow=new XObject({
     default_width : 800,
     destroy : "() => {\n   Gtk.main_quit();\n}",
     id : "MainWindow",
-     : function() {
+    setViewBrowsing : function() {
         
     },
     init : this.el.show_all();,

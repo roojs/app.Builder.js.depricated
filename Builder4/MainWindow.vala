@@ -79,7 +79,7 @@ public class Xcls_MainWindow : Object
 
     // userdefined functions 
 
-    // skip | - no return type
+    // skip |setViewBrowsing - no return type
     public void setTitle (string str) {
             this.el.set_title(this.title + " - " + str);
         }

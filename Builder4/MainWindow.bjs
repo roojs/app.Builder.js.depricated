@@ -19,7 +19,7 @@
             "destroy": "() => {\n   Gtk.main_quit();\n}",
             "id": "MainWindow",
             "xtype": "Window",
-            "|": "function() {\n    \n}\n",
+            "|setViewBrowsing": "function() {\n    \n}\n",
             "|init": " \n\t  \n    this.el.show_all();\n    \n    ",
             "|type": "Gtk.WindowType.TOPLEVEL",
             "|void:setTitle": " (string str) {\n    this.el.set_title(this.title + \" - \" + str);\n}\n",
