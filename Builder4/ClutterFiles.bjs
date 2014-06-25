@@ -52,6 +52,7 @@
                                     "|y_expand": "false"
                                 },
                                 {
+                                    "color": "",
                                     "*args": "JsRender.JsRender file",
                                     "*ctor": "with_text(\"Sans 14px\", file.nickName())",
                                     "id": "+title",
@@ -61,9 +62,7 @@
                                     "|x_expand": "true",
                                     "|xns": "Clutter",
                                     "|y_align": "Clutter.ActorAlign.START",
-                                    "|y_expand": "false",
-                                    "": "",
-                                    "listeners": {}
+                                    "|y_expand": "false"
                                 }
                             ]
                         }
