@@ -45,21 +45,7 @@ public class Xcls_ClutterFiles : Object
 
     // userdefined functions 
 
-    // skip scroll_mode - not pipe 
-
-    // skip id - not pipe 
-
-    // skip xtype - not pipe 
-
     // skip |xns - no return type
-
-    // skip items - not pipe 
-
-    // skip xvala_cls - not pipe 
-
-    // skip xvala_xcls - not pipe 
-
-    // skip xvala_id - not pipe 
     public class Xcls_filelayout : Object 
     {
         public Clutter.Actor el;
@@ -85,21 +71,7 @@ public class Xcls_ClutterFiles : Object
 
         // userdefined functions 
 
-        // skip id - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_FlowLayout3 : Object 
     {
@@ -122,17 +94,7 @@ public class Xcls_ClutterFiles : Object
 
         // userdefined functions 
 
-        // skip *prop - not pipe 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_fileitem : Object 
     {
@@ -143,7 +105,7 @@ public class Xcls_ClutterFiles : Object
             // my vars
 
             // ctor 
-        public Xcls_fileitem(Xcls_ClutterFiles _owner , string fname, string title)
+        public Xcls_fileitem(Xcls_ClutterFiles _owner , string fname, string title )
         {
             _this = _owner;
             this.el = new Clutter.Actor();
@@ -164,23 +126,7 @@ public class Xcls_ClutterFiles : Object
 
         // userdefined functions 
 
-        // skip *args - not pipe 
-
-        // skip id - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_BoxLayout5 : Object 
     {
@@ -209,23 +155,7 @@ public class Xcls_ClutterFiles : Object
 
         // userdefined functions 
 
-        // skip *prop - not pipe 
-
-        // skip spacing - already used 
-
-        // skip xtype - not pipe 
-
-        // skip |init - already used 
-
-        // skip |orientation - already used 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_image : Object 
     {
@@ -252,31 +182,7 @@ public class Xcls_ClutterFiles : Object
 
         // userdefined functions 
 
-        // skip *args - not pipe 
-
-        // skip ctor - not pipe 
-
-        // skip id - not pipe 
-
-        // skip x_align - already used 
-
-        // skip x_expand - already used 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
-        // skip y_align - already used 
-
-        // skip y_expand - already used 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_title : Object 
     {
@@ -303,30 +209,6 @@ public class Xcls_ClutterFiles : Object
 
         // userdefined functions 
 
-        // skip pack - not pipe 
-
-        // skip *args - not pipe 
-
-        // skip *ctor - not pipe 
-
-        // skip id - not pipe 
-
-        // skip x_align - already used 
-
-        // skip x_expand - already used 
-
-        // skip xtype - not pipe 
-
-        // skip y_align - already used 
-
-        // skip y_expand - already used 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
 }
