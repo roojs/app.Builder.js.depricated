@@ -44,7 +44,7 @@ public class Xcls_ClutterFiles : Object
 
     // userdefined functions 
     public void set_size(float w, float h) {
-            _this.filelayout.el.layout_manager.max_column_width = w;
+            _this.filelayout_manager.el.max_column_width = w;
            this.el.set_size(this.el.get_stage().width-50,
                                 this.el.get_stage().height);
                     
