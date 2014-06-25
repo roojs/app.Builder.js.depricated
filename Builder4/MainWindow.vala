@@ -32,7 +32,7 @@ public class Xcls_MainWindow : Object
     public Xcls_projectbutton projectbutton;
 
         // my vars
-    public Project.Project undefined;
+    public Project.Project project;
     public Xcls_WindowLeftTree left_tree;
     public string title;
 
@@ -44,7 +44,6 @@ public class Xcls_MainWindow : Object
         this.el = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
 
         // my vars
-        this.undefined = project;
         this.left_tree = null;
         this.title = "Application Builder";
 
