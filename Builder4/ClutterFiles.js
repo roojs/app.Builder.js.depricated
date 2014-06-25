@@ -18,7 +18,7 @@ ClutterFiles=new XObject({
         
         var fiter = pr.files.map_iterator();
         while (fiter.next()) {
-            var a = new Xcls_fileitem(fiter.get_value());
+            var a = new Xcls_fileitem(this,fiter.get_value());
         }
     
     },
