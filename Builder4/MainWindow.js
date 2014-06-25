@@ -95,8 +95,8 @@ MainWindow=new XObject({
                                         
                                             _this.rooview.el.set_size(this.el.get_stage().width-50,
                                                     this.el.get_stage().height);
-                                            this.clutterfiles.set_size(this.el.get_stage().width-50,
-                                                    this.el.get_stage().height);
+                                           // this.clutterfiles.set_size(this.el.get_stage().width-50,
+                                           //         this.el.get_stage().height);
                                         
                                         }
                                     },
