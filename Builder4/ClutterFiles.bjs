@@ -20,7 +20,7 @@
                     "items": [
                         {
                             "*prop": "layout_manager",
-                            "column_spacing": 100,
+                            "column_spacing": 120,
                             "row_spacing": 120,
                             "xtype": "FlowLayout",
                             "|homogeneous": "true",
