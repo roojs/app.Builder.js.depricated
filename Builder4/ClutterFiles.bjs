@@ -43,6 +43,9 @@
                             "xtype": "Actor",
                             "|init": "this.el.set_size(100,100);",
                             "|xns": "Clutter",
+                            "listeners": {
+                                "enter_event": "function (self, event) {\n\n}"
+                            },
                             "items": [
                                 {
                                     "*prop": "layout_manager",
