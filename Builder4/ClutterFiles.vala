@@ -70,7 +70,7 @@ public class Xcls_ClutterFiles : Object
             print("\nnew y %f  sroll actor height %f = last child bottom %f\n ".printf( 
                     y, 
                     this.el.height, 
-                    this.filelayout.el.last_child.y + , this.filelayout.el.last_child.height));    
+                    this.filelayout.el.last_child.y +  this.filelayout.el.last_child.height));    
            // y = float.min(0, y);    //??
             print("scroll event of %f  - new y = %f ".printf(event.y, y));
             this.filelayout.el.y = y;
