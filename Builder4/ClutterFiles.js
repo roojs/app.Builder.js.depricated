@@ -99,7 +99,8 @@ ClutterFiles=new XObject({
                     '*args' : "JsRender.JsRender file",
                     id : "*fileitem",
                     pack : false,
-                    init : this.el.set_size(100,100);,
+                    init : this.file = file;
+                    this.el.set_size(100,100);,
                     reactive : true,
                     items : [
                         {

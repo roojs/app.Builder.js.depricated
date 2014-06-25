@@ -201,6 +201,7 @@ public class Xcls_ClutterFiles : Object
             this.title =  child_2;
 
             // init method 
+            this.file = file;
             this.el.set_size(100,100);
 
             // listeners 
