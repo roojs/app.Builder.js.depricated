@@ -42,7 +42,7 @@ ClutterFiles=new XObject({
             
             
             print("\nlast child - this height = %f  ==== new y %f\n ".printf( 
-                    last_child_bottom - this.el.height
+                    last_child_bottom - this.el.height,
                     y));    
            // y = float.min(0, y);    //??
             print("scroll event of %f  - new y = %f ".printf(event.y, y));
