@@ -19,10 +19,9 @@
                     "items": [
                         {
                             "*prop": "layout_manager",
+                            "orientation": "Cutter.FlowOrientation.HORIZONTAL",
                             "xtype": "FlowLayout",
-                            "|xns": "Clutter",
-                            "orientation": "",
-                            "listeners": {}
+                            "|xns": "Clutter"
                         },
                         {
                             "*args": "string fname, string title",

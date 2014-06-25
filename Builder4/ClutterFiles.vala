@@ -88,9 +88,7 @@ public class Xcls_ClutterFiles : Object
             // my vars
 
             // set gobject values
-            this.el.orientation = "";
-
-            // listeners 
+            this.el.orientation = "Cutter.FlowOrientation.HORIZONTAL";
         }
 
         // userdefined functions 
