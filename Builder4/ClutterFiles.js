@@ -74,7 +74,6 @@ ClutterFiles=new XObject({
         }
         this.el.show_all();
     },
-     : "",
     items : [
         {
             xtype: Clutter.Actor,

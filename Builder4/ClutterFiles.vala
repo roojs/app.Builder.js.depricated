@@ -26,6 +26,7 @@ public class Xcls_ClutterFiles : Object
     public Xcls_filelayout_manager filelayout_manager;
 
         // my vars
+    public signal void open;
 
         // ctor 
     public Xcls_ClutterFiles()
