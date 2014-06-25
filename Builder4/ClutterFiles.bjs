@@ -51,16 +51,16 @@
                                     "|xns": "Clutter"
                                 },
                                 {
-                                    "*args": "string name",
+                                    "*args": "string title",
                                     "*ctor": "with_text(\"Arial\", name)",
                                     "id": "+title",
                                     "pack": "add_child",
+                                    "xtype": "Text",
                                     "|x_align": "Clutter.ActorAlign.START",
                                     "|x_expand": "true",
-                                    "xtype": "Text",
+                                    "|xns": "Clutter",
                                     "|y_align": "Clutter.ActorAlign.START",
-                                    "|y_expand": "false",
-                                    "|xns": "Clutter"
+                                    "|y_expand": "false"
                                 }
                             ]
                         }

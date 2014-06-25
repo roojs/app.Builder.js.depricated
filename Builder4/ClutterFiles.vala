@@ -120,7 +120,7 @@ public class Xcls_ClutterFiles : Object
             child_1.ref();
             this.el.add_child (  child_1.el  );
             this.image =  child_1;
-            var child_2 = new Xcls_title( _this ,name);
+            var child_2 = new Xcls_title( _this ,title);
             child_2.ref();
             this.el.add_child (  child_2.el  );
             this.title =  child_2;
@@ -195,7 +195,7 @@ public class Xcls_ClutterFiles : Object
             // my vars
 
             // ctor 
-        public Xcls_title(Xcls_ClutterFiles _owner , string name)
+        public Xcls_title(Xcls_ClutterFiles _owner , string title)
         {
             _this = _owner;
             this.el = new Clutter.Text();
