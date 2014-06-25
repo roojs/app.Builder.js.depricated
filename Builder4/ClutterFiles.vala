@@ -160,7 +160,7 @@ public class Xcls_ClutterFiles : Object
             this.el.add_child (  child_1.el  );
             var child_2 = new Xcls_title(_this);
             child_2.ref();
-            this.el.add (  child_2.el  );
+            this.el.add_child (  child_2.el  );
         }
 
         // userdefined functions 
@@ -305,6 +305,8 @@ public class Xcls_ClutterFiles : Object
         }
 
         // userdefined functions 
+
+        // skip pack - not pipe 
 
         // skip *args - not pipe 
 
