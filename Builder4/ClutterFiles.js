@@ -23,6 +23,7 @@ ClutterFiles=new XObject({
                     items : [
                         {
                             xtype: Clutter.Texture,
+                            ctor : "",
                             pack : false,
                             x_align : "Clutter.ActorAlign.START",
                             x_expand : "true",
