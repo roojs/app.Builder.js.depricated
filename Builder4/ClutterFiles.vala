@@ -215,6 +215,7 @@ public class Xcls_ClutterFiles : Object
             } );
             this.el.button_press_event.connect(   (  event) => {
                 _this.open(this.file);
+                return false;
             } );
         }
 

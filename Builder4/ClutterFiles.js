@@ -97,6 +97,7 @@ ClutterFiles=new XObject({
                         },
                         button_press_event : (  event) => {
                             _this.open(this.file);
+                            return false;
                         }
                     },
                     '*args' : "JsRender.JsRender file",

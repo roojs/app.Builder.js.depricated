@@ -40,10 +40,10 @@
                             "listeners": {
                                 "enter_event": "(  event)  => {\n    this.el.background_color = new Clutter.Color.from_string(\"#333\");\n        return false;\n}",
                                 "leave_event": "(  event)  => {\n    this.el.background_color = new Clutter.Color.from_string(\"#000\");\n    return false;\n}",
-                                "button_press_event": "  (  event) => {\n    _this.open(this.file);\n}"
+                                "button_press_event": "  (  event) => {\n    _this.open(this.file);\n    return false;\n}"
                             },
-                            ".JsRender.JsRender:file": "",
                             "*args": "JsRender.JsRender file",
+                            ".JsRender.JsRender:file": "",
                             "id": "*fileitem",
                             "pack": false,
                             "xtype": "Actor",
