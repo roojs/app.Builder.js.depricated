@@ -16,7 +16,7 @@ ClutterFiles=new XObject({
         {
             xtype: Clutter.Actor,
             pack : false,
-             : {
+            layout_manager : {
                 xtype: Clutter.FlowLayout,
                 pack : false,
                 items : [
