@@ -65,7 +65,9 @@
                                     "|x_expand": "true",
                                     "|xns": "Clutter",
                                     "|y_align": "Clutter.ActorAlign.START",
-                                    "|y_expand": "false"
+                                    "|y_expand": "false",
+                                    "margin_left": "",
+                                    "listeners": {}
                                 },
                                 {
                                     "*args": "JsRender.JsRender file",

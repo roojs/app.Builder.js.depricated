@@ -110,7 +110,8 @@ ClutterFiles=new XObject({
                             x_align : Clutter.ActorAlign.START,
                             x_expand : true,
                             y_align : Clutter.ActorAlign.START,
-                            y_expand : false
+                            y_expand : false,
+                            margin_left : ""
                         },
                         {
                             xtype: Clutter.Text,
