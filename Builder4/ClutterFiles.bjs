@@ -37,10 +37,10 @@
                                 },
                                 {
                                     "pack": false,
+                                    "x_align": "Clutter.ActorAlign.START",
                                     "xtype": "Text",
-                                    "|xns": "Clutter",
-                                    "y_align": "",
-                                    "listeners": {}
+                                    "y_align": "Clutter.ActorAlign.START",
+                                    "|xns": "Clutter"
                                 }
                             ]
                         }

@@ -232,22 +232,21 @@ public class Xcls_ClutterFiles : Object
             // my vars
 
             // set gobject values
-            this.el.y_align = "";
-
-            // listeners 
+            this.el.x_align = "Clutter.ActorAlign.START";
+            this.el.y_align = "Clutter.ActorAlign.START";
         }
 
         // userdefined functions 
 
         // skip pack - not pipe 
 
-        // skip xtype - not pipe 
+        // skip x_align - already used 
 
-        // skip |xns - no return type
+        // skip xtype - not pipe 
 
         // skip y_align - already used 
 
-        // skip listeners - not pipe 
+        // skip |xns - no return type
 
         // skip xvala_cls - not pipe 
 
