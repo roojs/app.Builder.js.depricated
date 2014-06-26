@@ -73,8 +73,8 @@ enum  {
 };
 Xcls_MessageDialog1* xcls_messagedialog1_new (void);
 Xcls_MessageDialog1* xcls_messagedialog1_construct (GType object_type);
-static gboolean __lambda54_ (Xcls_MessageDialog1* self, GdkEventAny* event);
-static gboolean ___lambda54__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self);
+static gboolean __lambda59_ (Xcls_MessageDialog1* self, GdkEventAny* event);
+static gboolean ___lambda59__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self);
 void xcls_messagedialog1_show_all (Xcls_MessageDialog1* self);
 void xcls_messagedialog1_show (Xcls_MessageDialog1* self, const gchar* msg);
 static void xcls_messagedialog1_finalize (Xcls_MessageDialog1* obj);
@@ -87,7 +87,7 @@ static gpointer _xcls_messagedialog1_ref0 (gpointer self) {
 }
 
 
-static gboolean __lambda54_ (Xcls_MessageDialog1* self, GdkEventAny* event) {
+static gboolean __lambda59_ (Xcls_MessageDialog1* self, GdkEventAny* event) {
 	gboolean result = FALSE;
 	GtkMessageDialog* _tmp0_;
 #line 43 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
@@ -104,9 +104,9 @@ static gboolean __lambda54_ (Xcls_MessageDialog1* self, GdkEventAny* event) {
 }
 
 
-static gboolean ___lambda54__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self) {
+static gboolean ___lambda59__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self) {
 	gboolean result;
-	result = __lambda54_ (self, event);
+	result = __lambda59_ (self, event);
 #line 43 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	return result;
 #line 113 "DialogConfirm.vala.c"
@@ -159,7 +159,7 @@ Xcls_MessageDialog1* xcls_messagedialog1_construct (GType object_type) {
 #line 43 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	_tmp6_ = self->el;
 #line 43 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
-	g_signal_connect ((GtkWidget*) _tmp6_, "delete-event", (GCallback) ___lambda54__gtk_widget_delete_event, self);
+	g_signal_connect ((GtkWidget*) _tmp6_, "delete-event", (GCallback) ___lambda59__gtk_widget_delete_event, self);
 #line 29 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	return self;
 #line 166 "DialogConfirm.vala.c"

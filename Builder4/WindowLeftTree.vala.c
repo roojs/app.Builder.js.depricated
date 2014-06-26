@@ -411,29 +411,29 @@ Xcls_WindowLeftTreeXcls_TreeViewColumn4* xcls_windowlefttree_xcls_treeviewcolumn
 GType xcls_windowlefttree_xcls_treeviewcolumn4_get_type (void) G_GNUC_CONST;
 static GType builder4_application_target_get_type (void) G_GNUC_UNUSED;
 static void _vala_PangoFontDescription_free (PangoFontDescription* self);
-static gboolean __lambda10_ (Xcls_WindowLeftTreeXcls_view* self, GdkEventButton* ev);
-static gboolean ___lambda10__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self);
-static void __lambda17_ (Xcls_WindowLeftTreeXcls_view* self, GdkDragContext* ctx);
+static gboolean __lambda15_ (Xcls_WindowLeftTreeXcls_view* self, GdkEventButton* ev);
+static gboolean ___lambda15__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self);
+static void __lambda22_ (Xcls_WindowLeftTreeXcls_view* self, GdkDragContext* ctx);
 gchar* js_render_node_fqn (JsRenderNode* self);
 GType palete_palete_get_type (void) G_GNUC_CONST;
 PaletePalete* js_render_js_render_palete (JsRenderJsRender* self);
 gchar** palete_palete_getDropList (PaletePalete* self, const gchar* rval, int* result_length1);
-static void ___lambda17__gtk_widget_drag_begin (GtkWidget* _sender, GdkDragContext* context, gpointer self);
-static void __lambda18_ (Xcls_WindowLeftTreeXcls_view* self, GdkDragContext* drag_context);
+static void ___lambda22__gtk_widget_drag_begin (GtkWidget* _sender, GdkDragContext* context, gpointer self);
+static void __lambda23_ (Xcls_WindowLeftTreeXcls_view* self, GdkDragContext* drag_context);
 void xcls_windowlefttree_xcls_view_highlightDropPath (Xcls_WindowLeftTreeXcls_view* self, const gchar* treepath, GtkTreeViewDropPosition pos);
-static void ___lambda18__gtk_widget_drag_end (GtkWidget* _sender, GdkDragContext* context, gpointer self);
-static gboolean __lambda19_ (Xcls_WindowLeftTreeXcls_view* self, GdkDragContext* ctx, gint x, gint y, guint time);
-static gboolean ___lambda19__gtk_widget_drag_motion (GtkWidget* _sender, GdkDragContext* context, gint x, gint y, guint time_, gpointer self);
-static gboolean __lambda20_ (Xcls_WindowLeftTreeXcls_view* self, GdkDragContext* ctx, gint x, gint y, guint time);
-static gboolean ___lambda20__gtk_widget_drag_drop (GtkWidget* _sender, GdkDragContext* context, gint x, gint y, guint time_, gpointer self);
-static void __lambda21_ (Xcls_WindowLeftTreeXcls_view* self, GdkDragContext* ctx, gint x, gint y, GtkSelectionData* sel, guint info, guint time);
+static void ___lambda23__gtk_widget_drag_end (GtkWidget* _sender, GdkDragContext* context, gpointer self);
+static gboolean __lambda24_ (Xcls_WindowLeftTreeXcls_view* self, GdkDragContext* ctx, gint x, gint y, guint time);
+static gboolean ___lambda24__gtk_widget_drag_motion (GtkWidget* _sender, GdkDragContext* context, gint x, gint y, guint time_, gpointer self);
+static gboolean __lambda25_ (Xcls_WindowLeftTreeXcls_view* self, GdkDragContext* ctx, gint x, gint y, guint time);
+static gboolean ___lambda25__gtk_widget_drag_drop (GtkWidget* _sender, GdkDragContext* context, gint x, gint y, guint time_, gpointer self);
+static void __lambda26_ (Xcls_WindowLeftTreeXcls_view* self, GdkDragContext* ctx, gint x, gint y, GtkSelectionData* sel, guint info, guint time);
 gchar* xcls_windowlefttree_xcls_model_findDropNodeByPath (Xcls_WindowLeftTreeXcls_model* self, const gchar* treepath_str, gchar** targets, int targets_length1, gint in_pref);
 void xcls_windowlefttree_xcls_model_moveNode (Xcls_WindowLeftTreeXcls_model* self, const gchar* target_data, GdkDragAction action);
-static void ___lambda21__gtk_widget_drag_data_received (GtkWidget* _sender, GdkDragContext* context, gint x, gint y, GtkSelectionData* selection_data, guint info, guint time_, gpointer self);
-static void __lambda22_ (Xcls_WindowLeftTreeXcls_view* self);
-static void ___lambda22__gtk_tree_view_cursor_changed (GtkTreeView* _sender, gpointer self);
-static void __lambda23_ (Xcls_WindowLeftTreeXcls_view* self, GdkDragContext* drag_context, GtkSelectionData* data, guint info, guint time);
-static void ___lambda23__gtk_widget_drag_data_get (GtkWidget* _sender, GdkDragContext* context, GtkSelectionData* selection_data, guint info, guint time_, gpointer self);
+static void ___lambda26__gtk_widget_drag_data_received (GtkWidget* _sender, GdkDragContext* context, gint x, gint y, GtkSelectionData* selection_data, guint info, guint time_, gpointer self);
+static void __lambda27_ (Xcls_WindowLeftTreeXcls_view* self);
+static void ___lambda27__gtk_tree_view_cursor_changed (GtkTreeView* _sender, gpointer self);
+static void __lambda28_ (Xcls_WindowLeftTreeXcls_view* self, GdkDragContext* drag_context, GtkSelectionData* data, guint info, guint time);
+static void ___lambda28__gtk_widget_drag_data_get (GtkWidget* _sender, GdkDragContext* context, GtkSelectionData* selection_data, guint info, guint time_, gpointer self);
 void xcls_windowlefttree_xcls_view_selectNode (Xcls_WindowLeftTreeXcls_view* self, const gchar* treepath_str);
 static void xcls_windowlefttree_xcls_view_finalize (GObject* obj);
 #define XCLS_WINDOWLEFTTREE_XCLS_MODEL_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), XCLS_WINDOWLEFTTREE_TYPE_XCLS_MODEL, Xcls_WindowLeftTreeXcls_modelPrivate))
@@ -486,17 +486,17 @@ static void xcls_windowlefttree_xcls_lefttreemenu_finalize (GObject* obj);
 enum  {
 	XCLS_WINDOWLEFTTREE_XCLS_MENUITEM7_DUMMY_PROPERTY
 };
-static void __lambda11_ (Xcls_WindowLeftTreeXcls_MenuItem7* self);
-static void ___lambda11__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self);
+static void __lambda16_ (Xcls_WindowLeftTreeXcls_MenuItem7* self);
+static void ___lambda16__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self);
 static void xcls_windowlefttree_xcls_menuitem7_finalize (GObject* obj);
 #define XCLS_WINDOWLEFTTREE_XCLS_MENUITEM8_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), XCLS_WINDOWLEFTTREE_TYPE_XCLS_MENUITEM8, Xcls_WindowLeftTreeXcls_MenuItem8Private))
 enum  {
 	XCLS_WINDOWLEFTTREE_XCLS_MENUITEM8_DUMMY_PROPERTY
 };
-static void __lambda12_ (Xcls_WindowLeftTreeXcls_MenuItem8* self);
+static void __lambda17_ (Xcls_WindowLeftTreeXcls_MenuItem8* self);
 GType xcls_dialogsavetemplate_get_type (void) G_GNUC_CONST;
 void xcls_dialogsavetemplate_show (GtkWindow* parent, PaletePalete* palete, JsRenderNode* data);
-static void ___lambda12__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self);
+static void ___lambda17__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self);
 static void xcls_windowlefttree_xcls_menuitem8_finalize (GObject* obj);
 static void xcls_windowlefttree_finalize (GObject* obj);
 static void _vala_array_destroy (gpointer array, gint array_length, GDestroyNotify destroy_func);
@@ -780,7 +780,7 @@ static void _vala_PangoFontDescription_free (PangoFontDescription* self) {
 }
 
 
-static gboolean __lambda10_ (Xcls_WindowLeftTreeXcls_view* self, GdkEventButton* ev) {
+static gboolean __lambda15_ (Xcls_WindowLeftTreeXcls_view* self, GdkEventButton* ev) {
 	gboolean result = FALSE;
 	Xcls_WindowLeftTree* _tmp0_;
 	gboolean _tmp1_ = FALSE;
@@ -926,9 +926,9 @@ static gboolean __lambda10_ (Xcls_WindowLeftTreeXcls_view* self, GdkEventButton*
 }
 
 
-static gboolean ___lambda10__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self) {
+static gboolean ___lambda15__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self) {
 	gboolean result;
-	result = __lambda10_ (self, event);
+	result = __lambda15_ (self, event);
 #line 179 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	return result;
 #line 935 "WindowLeftTree.vala.c"
@@ -942,7 +942,7 @@ static gpointer _cairo_surface_reference0 (gpointer self) {
 }
 
 
-static void __lambda17_ (Xcls_WindowLeftTreeXcls_view* self, GdkDragContext* ctx) {
+static void __lambda22_ (Xcls_WindowLeftTreeXcls_view* self, GdkDragContext* ctx) {
 	Xcls_WindowLeftTree* _tmp0_;
 	Xcls_WindowLeftTreeXcls_view* _tmp1_;
 	GtkTreeView* _tmp2_;
@@ -1184,14 +1184,14 @@ static void __lambda17_ (Xcls_WindowLeftTreeXcls_view* self, GdkDragContext* ctx
 }
 
 
-static void ___lambda17__gtk_widget_drag_begin (GtkWidget* _sender, GdkDragContext* context, gpointer self) {
+static void ___lambda22__gtk_widget_drag_begin (GtkWidget* _sender, GdkDragContext* context, gpointer self) {
 #line 205 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
-	__lambda17_ (self, context);
+	__lambda22_ (self, context);
 #line 1191 "WindowLeftTree.vala.c"
 }
 
 
-static void __lambda18_ (Xcls_WindowLeftTreeXcls_view* self, GdkDragContext* drag_context) {
+static void __lambda23_ (Xcls_WindowLeftTreeXcls_view* self, GdkDragContext* drag_context) {
 	gchar* _tmp0_;
 #line 246 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_return_if_fail (drag_context != NULL);
@@ -1213,14 +1213,14 @@ static void __lambda18_ (Xcls_WindowLeftTreeXcls_view* self, GdkDragContext* dra
 }
 
 
-static void ___lambda18__gtk_widget_drag_end (GtkWidget* _sender, GdkDragContext* context, gpointer self) {
+static void ___lambda23__gtk_widget_drag_end (GtkWidget* _sender, GdkDragContext* context, gpointer self) {
 #line 246 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
-	__lambda18_ (self, context);
+	__lambda23_ (self, context);
 #line 1220 "WindowLeftTree.vala.c"
 }
 
 
-static gboolean __lambda19_ (Xcls_WindowLeftTreeXcls_view* self, GdkDragContext* ctx, gint x, gint y, guint time) {
+static gboolean __lambda24_ (Xcls_WindowLeftTreeXcls_view* self, GdkDragContext* ctx, gint x, gint y, guint time) {
 	gboolean result = FALSE;
 	gint _tmp0_;
 	gint _tmp1_;
@@ -1258,16 +1258,16 @@ static gboolean __lambda19_ (Xcls_WindowLeftTreeXcls_view* self, GdkDragContext*
 }
 
 
-static gboolean ___lambda19__gtk_widget_drag_motion (GtkWidget* _sender, GdkDragContext* context, gint x, gint y, guint time_, gpointer self) {
+static gboolean ___lambda24__gtk_widget_drag_motion (GtkWidget* _sender, GdkDragContext* context, gint x, gint y, guint time_, gpointer self) {
 	gboolean result;
-	result = __lambda19_ (self, context, x, y, time_);
+	result = __lambda24_ (self, context, x, y, time_);
 #line 254 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	return result;
 #line 1267 "WindowLeftTree.vala.c"
 }
 
 
-static gboolean __lambda20_ (Xcls_WindowLeftTreeXcls_view* self, GdkDragContext* ctx, gint x, gint y, guint time) {
+static gboolean __lambda25_ (Xcls_WindowLeftTreeXcls_view* self, GdkDragContext* ctx, gint x, gint y, guint time) {
 	gboolean result = FALSE;
 	GtkTreeView* _tmp0_;
 	GdkDragContext* _tmp1_;
@@ -1295,16 +1295,16 @@ static gboolean __lambda20_ (Xcls_WindowLeftTreeXcls_view* self, GdkDragContext*
 }
 
 
-static gboolean ___lambda20__gtk_widget_drag_drop (GtkWidget* _sender, GdkDragContext* context, gint x, gint y, guint time_, gpointer self) {
+static gboolean ___lambda25__gtk_widget_drag_drop (GtkWidget* _sender, GdkDragContext* context, gint x, gint y, guint time_, gpointer self) {
 	gboolean result;
-	result = __lambda20_ (self, context, x, y, time_);
+	result = __lambda25_ (self, context, x, y, time_);
 #line 273 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	return result;
 #line 1304 "WindowLeftTree.vala.c"
 }
 
 
-static void __lambda21_ (Xcls_WindowLeftTreeXcls_view* self, GdkDragContext* ctx, gint x, gint y, GtkSelectionData* sel, guint info, guint time) {
+static void __lambda26_ (Xcls_WindowLeftTreeXcls_view* self, GdkDragContext* ctx, gint x, gint y, GtkSelectionData* sel, guint info, guint time) {
 	GdkDragContext* _tmp0_;
 	GtkWidget* _tmp1_ = NULL;
 	GtkWidget* _tmp2_;
@@ -1955,14 +1955,14 @@ static void __lambda21_ (Xcls_WindowLeftTreeXcls_view* self, GdkDragContext* ctx
 }
 
 
-static void ___lambda21__gtk_widget_drag_data_received (GtkWidget* _sender, GdkDragContext* context, gint x, gint y, GtkSelectionData* selection_data, guint info, guint time_, gpointer self) {
+static void ___lambda26__gtk_widget_drag_data_received (GtkWidget* _sender, GdkDragContext* context, gint x, gint y, GtkSelectionData* selection_data, guint info, guint time_, gpointer self) {
 #line 291 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
-	__lambda21_ (self, context, x, y, selection_data, info, time_);
+	__lambda26_ (self, context, x, y, selection_data, info, time_);
 #line 1962 "WindowLeftTree.vala.c"
 }
 
 
-static void __lambda22_ (Xcls_WindowLeftTreeXcls_view* self) {
+static void __lambda27_ (Xcls_WindowLeftTreeXcls_view* self) {
 	gboolean _tmp0_;
 	Xcls_WindowLeftTree* _tmp1_;
 	Xcls_WindowLeftTree* _tmp2_;
@@ -2118,14 +2118,14 @@ static void __lambda22_ (Xcls_WindowLeftTreeXcls_view* self) {
 }
 
 
-static void ___lambda22__gtk_tree_view_cursor_changed (GtkTreeView* _sender, gpointer self) {
+static void ___lambda27__gtk_tree_view_cursor_changed (GtkTreeView* _sender, gpointer self) {
 #line 477 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
-	__lambda22_ (self);
+	__lambda27_ (self);
 #line 2125 "WindowLeftTree.vala.c"
 }
 
 
-static void __lambda23_ (Xcls_WindowLeftTreeXcls_view* self, GdkDragContext* drag_context, GtkSelectionData* data, guint info, guint time) {
+static void __lambda28_ (Xcls_WindowLeftTreeXcls_view* self, GdkDragContext* drag_context, GtkSelectionData* data, guint info, guint time) {
 	GtkTreeView* _tmp0_;
 	GtkTreeSelection* _tmp1_ = NULL;
 	GtkTreeSelection* _tmp2_;
@@ -2247,9 +2247,9 @@ static void __lambda23_ (Xcls_WindowLeftTreeXcls_view* self, GdkDragContext* dra
 }
 
 
-static void ___lambda23__gtk_widget_drag_data_get (GtkWidget* _sender, GdkDragContext* context, GtkSelectionData* selection_data, guint info, guint time_, gpointer self) {
+static void ___lambda28__gtk_widget_drag_data_get (GtkWidget* _sender, GdkDragContext* context, GtkSelectionData* selection_data, guint info, guint time_, gpointer self) {
 #line 523 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
-	__lambda23_ (self, context, selection_data, info, time_);
+	__lambda28_ (self, context, selection_data, info, time_);
 #line 2254 "WindowLeftTree.vala.c"
 }
 
@@ -2400,35 +2400,35 @@ Xcls_WindowLeftTreeXcls_view* xcls_windowlefttree_xcls_view_construct (GType obj
 #line 179 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp23_ = self->el;
 #line 179 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
-	g_signal_connect_object ((GtkWidget*) _tmp23_, "button-press-event", (GCallback) ___lambda10__gtk_widget_button_press_event, self, 0);
+	g_signal_connect_object ((GtkWidget*) _tmp23_, "button-press-event", (GCallback) ___lambda15__gtk_widget_button_press_event, self, 0);
 #line 205 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp24_ = self->el;
 #line 205 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
-	g_signal_connect_object ((GtkWidget*) _tmp24_, "drag-begin", (GCallback) ___lambda17__gtk_widget_drag_begin, self, 0);
+	g_signal_connect_object ((GtkWidget*) _tmp24_, "drag-begin", (GCallback) ___lambda22__gtk_widget_drag_begin, self, 0);
 #line 246 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp25_ = self->el;
 #line 246 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
-	g_signal_connect_object ((GtkWidget*) _tmp25_, "drag-end", (GCallback) ___lambda18__gtk_widget_drag_end, self, 0);
+	g_signal_connect_object ((GtkWidget*) _tmp25_, "drag-end", (GCallback) ___lambda23__gtk_widget_drag_end, self, 0);
 #line 254 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp26_ = self->el;
 #line 254 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
-	g_signal_connect_object ((GtkWidget*) _tmp26_, "drag-motion", (GCallback) ___lambda19__gtk_widget_drag_motion, self, 0);
+	g_signal_connect_object ((GtkWidget*) _tmp26_, "drag-motion", (GCallback) ___lambda24__gtk_widget_drag_motion, self, 0);
 #line 273 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp27_ = self->el;
 #line 273 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
-	g_signal_connect_object ((GtkWidget*) _tmp27_, "drag-drop", (GCallback) ___lambda20__gtk_widget_drag_drop, self, 0);
+	g_signal_connect_object ((GtkWidget*) _tmp27_, "drag-drop", (GCallback) ___lambda25__gtk_widget_drag_drop, self, 0);
 #line 291 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp28_ = self->el;
 #line 291 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
-	g_signal_connect_object ((GtkWidget*) _tmp28_, "drag-data-received", (GCallback) ___lambda21__gtk_widget_drag_data_received, self, 0);
+	g_signal_connect_object ((GtkWidget*) _tmp28_, "drag-data-received", (GCallback) ___lambda26__gtk_widget_drag_data_received, self, 0);
 #line 477 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp29_ = self->el;
 #line 477 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
-	g_signal_connect_object (_tmp29_, "cursor-changed", (GCallback) ___lambda22__gtk_tree_view_cursor_changed, self, 0);
+	g_signal_connect_object (_tmp29_, "cursor-changed", (GCallback) ___lambda27__gtk_tree_view_cursor_changed, self, 0);
 #line 523 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp30_ = self->el;
 #line 523 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
-	g_signal_connect_object ((GtkWidget*) _tmp30_, "drag-data-get", (GCallback) ___lambda23__gtk_widget_drag_data_get, self, 0);
+	g_signal_connect_object ((GtkWidget*) _tmp30_, "drag-data-get", (GCallback) ___lambda28__gtk_widget_drag_data_get, self, 0);
 #line 118 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (child_1);
 #line 118 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
@@ -5224,7 +5224,7 @@ GType xcls_windowlefttree_xcls_lefttreemenu_get_type (void) {
 }
 
 
-static void __lambda11_ (Xcls_WindowLeftTreeXcls_MenuItem7* self) {
+static void __lambda16_ (Xcls_WindowLeftTreeXcls_MenuItem7* self) {
 	Xcls_WindowLeftTree* _tmp0_;
 	Xcls_WindowLeftTreeXcls_model* _tmp1_;
 #line 1231 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
@@ -5239,9 +5239,9 @@ static void __lambda11_ (Xcls_WindowLeftTreeXcls_MenuItem7* self) {
 }
 
 
-static void ___lambda11__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self) {
+static void ___lambda16__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self) {
 #line 1229 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
-	__lambda11_ (self);
+	__lambda16_ (self);
 #line 5246 "WindowLeftTree.vala.c"
 }
 
@@ -5280,7 +5280,7 @@ Xcls_WindowLeftTreeXcls_MenuItem7* xcls_windowlefttree_xcls_menuitem7_construct 
 #line 1229 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp4_ = self->el;
 #line 1229 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
-	g_signal_connect_object (_tmp4_, "activate", (GCallback) ___lambda11__gtk_menu_item_activate, self, 0);
+	g_signal_connect_object (_tmp4_, "activate", (GCallback) ___lambda16__gtk_menu_item_activate, self, 0);
 #line 1218 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	return self;
 #line 5287 "WindowLeftTree.vala.c"
@@ -5338,7 +5338,7 @@ GType xcls_windowlefttree_xcls_menuitem7_get_type (void) {
 }
 
 
-static void __lambda12_ (Xcls_WindowLeftTreeXcls_MenuItem8* self) {
+static void __lambda17_ (Xcls_WindowLeftTreeXcls_MenuItem8* self) {
 	Xcls_DialogSaveTemplate* _tmp0_;
 	Xcls_WindowLeftTree* _tmp1_;
 	GtkScrolledWindow* _tmp2_;
@@ -5385,9 +5385,9 @@ static void __lambda12_ (Xcls_WindowLeftTreeXcls_MenuItem8* self) {
 }
 
 
-static void ___lambda12__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self) {
+static void ___lambda17__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self) {
 #line 1276 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
-	__lambda12_ (self);
+	__lambda17_ (self);
 #line 5392 "WindowLeftTree.vala.c"
 }
 
@@ -5426,7 +5426,7 @@ Xcls_WindowLeftTreeXcls_MenuItem8* xcls_windowlefttree_xcls_menuitem8_construct 
 #line 1276 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp4_ = self->el;
 #line 1276 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
-	g_signal_connect_object (_tmp4_, "activate", (GCallback) ___lambda12__gtk_menu_item_activate, self, 0);
+	g_signal_connect_object (_tmp4_, "activate", (GCallback) ___lambda17__gtk_menu_item_activate, self, 0);
 #line 1265 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	return self;
 #line 5433 "WindowLeftTree.vala.c"

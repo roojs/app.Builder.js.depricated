@@ -238,9 +238,9 @@ GType xcls_dialogsavetemplate_xcls_button5_get_type (void) G_GNUC_CONST;
 Xcls_DialogSaveTemplateXcls_Button6* xcls_dialogsavetemplate_xcls_button6_new (Xcls_DialogSaveTemplate* _owner);
 Xcls_DialogSaveTemplateXcls_Button6* xcls_dialogsavetemplate_xcls_button6_construct (GType object_type, Xcls_DialogSaveTemplate* _owner);
 GType xcls_dialogsavetemplate_xcls_button6_get_type (void) G_GNUC_CONST;
-static gboolean __lambda13_ (Xcls_DialogSaveTemplate* self, GtkWidget* _self_, GdkEventAny* event);
-static gboolean ___lambda13__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self);
-static void __lambda14_ (Xcls_DialogSaveTemplate* self, GtkDialog* _self_, gint response_id);
+static gboolean __lambda18_ (Xcls_DialogSaveTemplate* self, GtkWidget* _self_, GdkEventAny* event);
+static gboolean ___lambda18__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self);
+static void __lambda19_ (Xcls_DialogSaveTemplate* self, GtkDialog* _self_, gint response_id);
 gpointer xcls_standarderrordialog_ref (gpointer instance);
 void xcls_standarderrordialog_unref (gpointer instance);
 GParamSpec* param_spec_xcls_standarderrordialog (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags);
@@ -250,7 +250,7 @@ gpointer value_get_xcls_standarderrordialog (const GValue* value);
 GType xcls_standarderrordialog_get_type (void) G_GNUC_CONST;
 void xcls_standarderrordialog_show (Xcls_StandardErrorDialog* self, const gchar* msg);
 void palete_palete_saveTemplate (PaletePalete* self, const gchar* name, JsRenderNode* data);
-static void ___lambda14__gtk_dialog_response (GtkDialog* _sender, gint response_id, gpointer self);
+static void ___lambda19__gtk_dialog_response (GtkDialog* _sender, gint response_id, gpointer self);
 void xcls_dialogsavetemplate_show (GtkWindow* parent, PaletePalete* palete, JsRenderNode* data);
 #define XCLS_DIALOGSAVETEMPLATE_XCLS_HBOX2_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), XCLS_DIALOGSAVETEMPLATE_TYPE_XCLS_HBOX2, Xcls_DialogSaveTemplateXcls_HBox2Private))
 enum  {
@@ -292,7 +292,7 @@ static gpointer _g_object_ref0 (gpointer self) {
 }
 
 
-static gboolean __lambda13_ (Xcls_DialogSaveTemplate* self, GtkWidget* _self_, GdkEventAny* event) {
+static gboolean __lambda18_ (Xcls_DialogSaveTemplate* self, GtkWidget* _self_, GdkEventAny* event) {
 	gboolean result = FALSE;
 	GtkDialog* _tmp0_;
 #line 57 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
@@ -311,16 +311,16 @@ static gboolean __lambda13_ (Xcls_DialogSaveTemplate* self, GtkWidget* _self_, G
 }
 
 
-static gboolean ___lambda13__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self) {
+static gboolean ___lambda18__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self) {
 	gboolean result;
-	result = __lambda13_ (self, _sender, event);
+	result = __lambda18_ (self, _sender, event);
 #line 57 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	return result;
 #line 320 "DialogSaveTemplate.vala.c"
 }
 
 
-static void __lambda14_ (Xcls_DialogSaveTemplate* self, GtkDialog* _self_, gint response_id) {
+static void __lambda19_ (Xcls_DialogSaveTemplate* self, GtkDialog* _self_, gint response_id) {
 	gint _tmp0_;
 	Xcls_DialogSaveTemplate* _tmp2_;
 	Xcls_DialogSaveTemplateXcls_name* _tmp3_;
@@ -447,9 +447,9 @@ static void __lambda14_ (Xcls_DialogSaveTemplate* self, GtkDialog* _self_, gint 
 }
 
 
-static void ___lambda14__gtk_dialog_response (GtkDialog* _sender, gint response_id, gpointer self) {
+static void ___lambda19__gtk_dialog_response (GtkDialog* _sender, gint response_id, gpointer self) {
 #line 62 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
-	__lambda14_ (self, _sender, response_id);
+	__lambda19_ (self, _sender, response_id);
 #line 454 "DialogSaveTemplate.vala.c"
 }
 
@@ -561,11 +561,11 @@ Xcls_DialogSaveTemplate* xcls_dialogsavetemplate_construct (GType object_type) {
 #line 57 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp19_ = self->el;
 #line 57 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
-	g_signal_connect_object ((GtkWidget*) _tmp19_, "delete-event", (GCallback) ___lambda13__gtk_widget_delete_event, self, 0);
+	g_signal_connect_object ((GtkWidget*) _tmp19_, "delete-event", (GCallback) ___lambda18__gtk_widget_delete_event, self, 0);
 #line 62 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp20_ = self->el;
 #line 62 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
-	g_signal_connect_object (_tmp20_, "response", (GCallback) ___lambda14__gtk_dialog_response, self, 0);
+	g_signal_connect_object (_tmp20_, "response", (GCallback) ___lambda19__gtk_dialog_response, self, 0);
 #line 32 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_g_object_unref0 (child_2);
 #line 32 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"

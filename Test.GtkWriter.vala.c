@@ -386,6 +386,7 @@ struct _Xcls_MainWindow {
 	Xcls_MainWindowXcls_clutterembed* clutterembed;
 	Xcls_MainWindowXcls_rooview* rooview;
 	Xcls_MainWindowXcls_projectbutton* projectbutton;
+	ProjectProject* project;
 	Xcls_WindowLeftTree* left_tree;
 	gchar* title;
 };
@@ -600,7 +601,7 @@ void diff (const gchar* original, const gchar* data) {
 		g_clear_error (&_inner_error_);
 #line 11 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 		return;
-#line 604 "Test.GtkWriter.vala.c"
+#line 605 "Test.GtkWriter.vala.c"
 	}
 #line 12 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp1_ = g_strdup ("diff");
@@ -664,13 +665,13 @@ void diff (const gchar* original, const gchar* data) {
 		g_clear_error (&_inner_error_);
 #line 17 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 		return;
-#line 668 "Test.GtkWriter.vala.c"
+#line 669 "Test.GtkWriter.vala.c"
 	}
 #line 8 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	spawn_env = (_vala_array_free (spawn_env, spawn_env_length1, (GDestroyNotify) g_free), NULL);
 #line 8 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	spawn_args = (_vala_array_free (spawn_args, spawn_args_length1, (GDestroyNotify) g_free), NULL);
-#line 674 "Test.GtkWriter.vala.c"
+#line 675 "Test.GtkWriter.vala.c"
 }
 
 
@@ -705,7 +706,7 @@ void testBuilderFile (const gchar* ptype, const gchar* dir, const gchar* name, c
 	static GQuark _tmp19_label2 = 0;
 #line 38 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	static GQuark _tmp19_label3 = 0;
-#line 709 "Test.GtkWriter.vala.c"
+#line 710 "Test.GtkWriter.vala.c"
 	GError * _inner_error_ = NULL;
 #line 29 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	g_return_if_fail (ptype != NULL);
@@ -775,7 +776,7 @@ void testBuilderFile (const gchar* ptype, const gchar* dir, const gchar* name, c
 		g_clear_error (&_inner_error_);
 #line 37 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 		return;
-#line 779 "Test.GtkWriter.vala.c"
+#line 780 "Test.GtkWriter.vala.c"
 	}
 #line 38 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp17_ = test;
@@ -787,7 +788,7 @@ void testBuilderFile (const gchar* ptype, const gchar* dir, const gchar* name, c
 	if (_tmp20_ == ((0 != _tmp19_label0) ? _tmp19_label0 : (_tmp19_label0 = g_quark_from_static_string ("JSON")))) {
 #line 38 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 		switch (0) {
-#line 791 "Test.GtkWriter.vala.c"
+#line 792 "Test.GtkWriter.vala.c"
 			default:
 			{
 				const gchar* _tmp21_;
@@ -839,13 +840,13 @@ void testBuilderFile (const gchar* ptype, const gchar* dir, const gchar* name, c
 				_g_object_unref0 (proj);
 #line 41 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				return;
-#line 843 "Test.GtkWriter.vala.c"
+#line 844 "Test.GtkWriter.vala.c"
 			}
 		}
 	} else if (_tmp20_ == ((0 != _tmp19_label1) ? _tmp19_label1 : (_tmp19_label1 = g_quark_from_static_string ("JS")))) {
 #line 38 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 		switch (0) {
-#line 849 "Test.GtkWriter.vala.c"
+#line 850 "Test.GtkWriter.vala.c"
 			default:
 			{
 				const gchar* _tmp32_;
@@ -897,13 +898,13 @@ void testBuilderFile (const gchar* ptype, const gchar* dir, const gchar* name, c
 				_g_object_unref0 (proj);
 #line 44 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				return;
-#line 901 "Test.GtkWriter.vala.c"
+#line 902 "Test.GtkWriter.vala.c"
 			}
 		}
 	} else if (_tmp20_ == ((0 != _tmp19_label2) ? _tmp19_label2 : (_tmp19_label2 = g_quark_from_static_string ("VALA")))) {
 #line 38 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 		switch (0) {
-#line 907 "Test.GtkWriter.vala.c"
+#line 908 "Test.GtkWriter.vala.c"
 			default:
 			{
 				const gchar* _tmp43_;
@@ -955,13 +956,13 @@ void testBuilderFile (const gchar* ptype, const gchar* dir, const gchar* name, c
 				_g_object_unref0 (proj);
 #line 47 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				return;
-#line 959 "Test.GtkWriter.vala.c"
+#line 960 "Test.GtkWriter.vala.c"
 			}
 		}
 	} else if (_tmp20_ == ((0 != _tmp19_label3) ? _tmp19_label3 : (_tmp19_label3 = g_quark_from_static_string ("PREVIEW")))) {
 #line 38 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 		switch (0) {
-#line 965 "Test.GtkWriter.vala.c"
+#line 966 "Test.GtkWriter.vala.c"
 			default:
 			{
 				JsRenderJsRender* _tmp54_;
@@ -985,7 +986,7 @@ void testBuilderFile (const gchar* ptype, const gchar* dir, const gchar* name, c
 				_g_object_unref0 (proj);
 #line 51 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				return;
-#line 989 "Test.GtkWriter.vala.c"
+#line 990 "Test.GtkWriter.vala.c"
 			}
 		}
 	}
@@ -995,7 +996,7 @@ void testBuilderFile (const gchar* ptype, const gchar* dir, const gchar* name, c
 	_g_object_unref0 (tf);
 #line 29 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_g_object_unref0 (proj);
-#line 999 "Test.GtkWriter.vala.c"
+#line 1000 "Test.GtkWriter.vala.c"
 }
 
 
@@ -1085,7 +1086,7 @@ void testLeftTree (const gchar* name) {
 		g_clear_error (&_inner_error_);
 #line 64 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 		return;
-#line 1089 "Test.GtkWriter.vala.c"
+#line 1090 "Test.GtkWriter.vala.c"
 	}
 #line 65 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp12_ = xcls_mainwindow_new ();
@@ -1129,7 +1130,7 @@ void testLeftTree (const gchar* name) {
 	_g_object_unref0 (proj);
 #line 57 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_g_free0 (dir);
-#line 1133 "Test.GtkWriter.vala.c"
+#line 1134 "Test.GtkWriter.vala.c"
 }
 
 
@@ -1180,7 +1181,7 @@ void rooWindowTest (const gchar* name) {
 		g_clear_error (&_inner_error_);
 #line 84 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 		return;
-#line 1184 "Test.GtkWriter.vala.c"
+#line 1185 "Test.GtkWriter.vala.c"
 	}
 #line 86 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp3_ = xcls_mainwindow_new ();
@@ -1220,103 +1221,125 @@ void rooWindowTest (const gchar* name) {
 	_g_object_unref0 (tf);
 #line 76 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_g_object_unref0 (proj);
-#line 1224 "Test.GtkWriter.vala.c"
+#line 1225 "Test.GtkWriter.vala.c"
+}
+
+
+static gpointer _g_object_ref0 (gpointer self) {
+#line 104 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+	return self ? g_object_ref (self) : NULL;
+#line 1232 "Test.GtkWriter.vala.c"
 }
 
 
 void rooWindowClutter (void) {
-	Xcls_MainWindow* _tmp0_;
+	ProjectProject* _tmp0_ = NULL;
+	ProjectProject* proj;
+	Xcls_MainWindow* _tmp1_;
 	Xcls_MainWindow* w;
-	GtkWindow* _tmp1_;
-	Xcls_WindowLeftTree* _tmp2_;
+	ProjectProject* _tmp2_;
+	GtkWindow* _tmp3_;
+	Xcls_WindowLeftTree* _tmp4_;
 	Xcls_WindowLeftTree* left_tree;
-	Xcls_MainWindowXcls_tree* _tmp3_;
-	GtkVBox* _tmp4_;
-	GtkScrolledWindow* _tmp5_;
-	Xcls_LeftProps* _tmp6_;
+	Xcls_MainWindowXcls_tree* _tmp5_;
+	GtkVBox* _tmp6_;
+	GtkScrolledWindow* _tmp7_;
+	Xcls_LeftProps* _tmp8_;
 	Xcls_LeftProps* left_props;
-	Xcls_MainWindowXcls_props* _tmp7_;
-	GtkVBox* _tmp8_;
-	GtkVBox* _tmp9_;
-	Xcls_WindowRooView* _tmp10_;
+	Xcls_MainWindowXcls_props* _tmp9_;
+	GtkVBox* _tmp10_;
+	GtkVBox* _tmp11_;
+	Xcls_WindowRooView* _tmp12_;
 	Xcls_WindowRooView* rv;
-	Xcls_MainWindowXcls_rooview* _tmp11_;
-	GtkClutterActor* _tmp12_;
-	GtkWidget* _tmp13_ = NULL;
-	GtkVPaned* _tmp14_;
-	GtkVPaned* _tmp15_;
-	GtkWindow* _tmp16_;
-	ClutterTimeline* _tmp17_;
+	Xcls_MainWindowXcls_rooview* _tmp13_;
+	GtkClutterActor* _tmp14_;
+	GtkWidget* _tmp15_ = NULL;
+	GtkVPaned* _tmp16_;
+	GtkVPaned* _tmp17_;
+	GtkWindow* _tmp18_;
+	ClutterTimeline* _tmp19_;
 	ClutterTimeline* tl;
-#line 100 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
-	_tmp0_ = xcls_mainwindow_new ();
-#line 100 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
-	w = _tmp0_;
-#line 102 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
-	_tmp1_ = w->el;
-#line 102 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
-	gtk_widget_show_all ((GtkWidget*) _tmp1_);
+#line 99 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+	_tmp0_ = project_project_getProject ("Pman.Core");
+#line 99 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+	proj = _tmp0_;
+#line 101 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+	project_project_scanDirs (proj);
 #line 103 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
-	_tmp2_ = xcls_windowlefttree_new ();
+	_tmp1_ = xcls_mainwindow_new ();
 #line 103 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
-	left_tree = _tmp2_;
+	w = _tmp1_;
 #line 104 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+	_tmp2_ = _g_object_ref0 (proj);
+#line 104 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+	_g_object_unref0 (w->project);
+#line 104 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+	w->project = _tmp2_;
+#line 105 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+	_tmp3_ = w->el;
+#line 105 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+	gtk_widget_show_all ((GtkWidget*) _tmp3_);
+#line 106 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+	_tmp4_ = xcls_windowlefttree_new ();
+#line 106 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+	left_tree = _tmp4_;
+#line 107 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	g_object_ref ((GObject*) left_tree);
-#line 105 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
-	_tmp3_ = w->tree;
-#line 105 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
-	_tmp4_ = _tmp3_->el;
-#line 105 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
-	_tmp5_ = left_tree->el;
-#line 105 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
-	gtk_box_pack_start ((GtkBox*) _tmp4_, (GtkWidget*) _tmp5_, TRUE, TRUE, (guint) 0);
-#line 107 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
-	_tmp6_ = xcls_leftprops_new ();
-#line 107 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
-	left_props = _tmp6_;
 #line 108 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+	_tmp5_ = w->tree;
+#line 108 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+	_tmp6_ = _tmp5_->el;
+#line 108 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+	_tmp7_ = left_tree->el;
+#line 108 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+	gtk_box_pack_start ((GtkBox*) _tmp6_, (GtkWidget*) _tmp7_, TRUE, TRUE, (guint) 0);
+#line 110 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+	_tmp8_ = xcls_leftprops_new ();
+#line 110 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+	left_props = _tmp8_;
+#line 111 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	g_object_ref ((GObject*) left_props);
-#line 109 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
-	_tmp7_ = w->props;
-#line 109 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
-	_tmp8_ = _tmp7_->el;
-#line 109 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
-	_tmp9_ = left_props->el;
-#line 109 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
-	gtk_box_pack_start ((GtkBox*) _tmp8_, (GtkWidget*) _tmp9_, TRUE, TRUE, (guint) 0);
-#line 111 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
-	_tmp10_ = xcls_windowrooview_new ();
-#line 111 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
-	rv = _tmp10_;
 #line 112 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+	_tmp9_ = w->props;
+#line 112 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+	_tmp10_ = _tmp9_->el;
+#line 112 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+	_tmp11_ = left_props->el;
+#line 112 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+	gtk_box_pack_start ((GtkBox*) _tmp10_, (GtkWidget*) _tmp11_, TRUE, TRUE, (guint) 0);
+#line 114 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+	_tmp12_ = xcls_windowrooview_new ();
+#line 114 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+	rv = _tmp12_;
+#line 115 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	g_object_ref ((GObject*) rv);
-#line 113 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
-	_tmp11_ = w->rooview;
-#line 113 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
-	_tmp12_ = _tmp11_->el;
-#line 113 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
-	_tmp13_ = gtk_clutter_actor_get_widget (_tmp12_);
-#line 113 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
-	_tmp14_ = rv->el;
-#line 113 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
-	gtk_container_add (G_TYPE_CHECK_INSTANCE_CAST (_tmp13_, GTK_TYPE_CONTAINER, GtkContainer), (GtkWidget*) _tmp14_);
-#line 114 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
-	_tmp15_ = rv->el;
-#line 114 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
-	gtk_widget_show_all ((GtkWidget*) _tmp15_);
 #line 116 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
-	_tmp16_ = w->el;
+	_tmp13_ = w->rooview;
 #line 116 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
-	gtk_widget_show_all ((GtkWidget*) _tmp16_);
+	_tmp14_ = _tmp13_->el;
+#line 116 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+	_tmp15_ = gtk_clutter_actor_get_widget (_tmp14_);
+#line 116 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+	_tmp16_ = rv->el;
+#line 116 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+	gtk_container_add (G_TYPE_CHECK_INSTANCE_CAST (_tmp15_, GTK_TYPE_CONTAINER, GtkContainer), (GtkWidget*) _tmp16_);
 #line 117 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
-	_tmp17_ = clutter_timeline_new ((guint) 6000);
+	_tmp17_ = rv->el;
 #line 117 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
-	tl = _tmp17_;
-#line 118 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
-	clutter_timeline_set_repeat_count (tl, -1);
+	gtk_widget_show_all ((GtkWidget*) _tmp17_);
 #line 119 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
-	clutter_timeline_start (tl);
+	_tmp18_ = w->el;
+#line 119 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+	gtk_widget_show_all ((GtkWidget*) _tmp18_);
 #line 120 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+	_tmp19_ = clutter_timeline_new ((guint) 6000);
+#line 120 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+	tl = _tmp19_;
+#line 121 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+	clutter_timeline_set_repeat_count (tl, -1);
+#line 122 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+	clutter_timeline_start (tl);
+#line 123 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	g_object_ref ((GObject*) tl);
 #line 97 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_g_object_unref0 (tl);
@@ -1328,7 +1351,9 @@ void rooWindowClutter (void) {
 	_g_object_unref0 (left_tree);
 #line 97 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_g_object_unref0 (w);
-#line 1332 "Test.GtkWriter.vala.c"
+#line 97 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+	_g_object_unref0 (proj);
+#line 1357 "Test.GtkWriter.vala.c"
 }
 
 
@@ -1336,38 +1361,38 @@ gint _vala_main (gchar** args, int args_length1) {
 	gint result = 0;
 	JsRenderLang_Class* _tmp0_;
 	JsRenderLang_Class* _tmp1_;
-#line 126 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
-	gtk_init (&args_length1, &args);
-#line 127 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
-	gtk_clutter_init (&args_length1, &args);
-#line 128 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
-	_tmp0_ = js_render_langclass_new ();
-#line 128 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
-	_tmp1_ = _tmp0_;
-#line 128 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
-	_g_object_unref0 (_tmp1_);
 #line 129 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
-	g_log_set_always_fatal (G_LOG_LEVEL_ERROR | G_LOG_LEVEL_CRITICAL);
+	gtk_init (&args_length1, &args);
 #line 130 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+	gtk_clutter_init (&args_length1, &args);
+#line 131 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+	_tmp0_ = js_render_langclass_new ();
+#line 131 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+	_tmp1_ = _tmp0_;
+#line 131 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+	_g_object_unref0 (_tmp1_);
+#line 132 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+	g_log_set_always_fatal (G_LOG_LEVEL_ERROR | G_LOG_LEVEL_CRITICAL);
+#line 133 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	project_project_loadAll ();
-#line 144 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+#line 147 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	rooWindowClutter ();
-#line 144 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+#line 147 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	gtk_main ();
-#line 147 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+#line 150 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	result = 0;
-#line 147 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+#line 150 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	return result;
-#line 1362 "Test.GtkWriter.vala.c"
+#line 1387 "Test.GtkWriter.vala.c"
 }
 
 
 int main (int argc, char ** argv) {
-#line 125 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+#line 128 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	g_type_init ();
-#line 125 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
+#line 128 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	return _vala_main (argv, argc);
-#line 1371 "Test.GtkWriter.vala.c"
+#line 1396 "Test.GtkWriter.vala.c"
 }
 
 

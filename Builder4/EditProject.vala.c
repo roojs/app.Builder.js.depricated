@@ -424,9 +424,9 @@ void xcls_editproject_value_set_xcls_button10 (GValue* value, gpointer v_object)
 void xcls_editproject_value_take_xcls_button10 (GValue* value, gpointer v_object);
 gpointer xcls_editproject_value_get_xcls_button10 (const GValue* value);
 GType xcls_editproject_xcls_button10_get_type (void) G_GNUC_CONST;
-static gboolean __lambda58_ (Xcls_EditProject* self, GtkWidget* _self_, GdkEventAny* event);
-static gboolean ___lambda58__gtk_widget_destroy_event (GtkWidget* _sender, GdkEventAny* event, gpointer self);
-static void __lambda59_ (Xcls_EditProject* self, GtkDialog* _self_, gint id);
+static gboolean __lambda63_ (Xcls_EditProject* self, GtkWidget* _self_, GdkEventAny* event);
+static gboolean ___lambda63__gtk_widget_destroy_event (GtkWidget* _sender, GdkEventAny* event, gpointer self);
+static void __lambda64_ (Xcls_EditProject* self, GtkDialog* _self_, gint id);
 gchar* xcls_editproject_xcls_xtype_getValue (Xcls_EditProjectXcls_xtype* self);
 gpointer xcls_standarderrordialog_ref (gpointer instance);
 void xcls_standarderrordialog_unref (gpointer instance);
@@ -438,7 +438,7 @@ GType xcls_standarderrordialog_get_type (void) G_GNUC_CONST;
 void xcls_standarderrordialog_show (Xcls_StandardErrorDialog* self, const gchar* msg);
 GType project_project_get_type (void) G_GNUC_CONST;
 ProjectProject* project_project_factory (const gchar* xtype, const gchar* path);
-static void ___lambda59__gtk_dialog_response (GtkDialog* _sender, gint response_id, gpointer self);
+static void ___lambda64__gtk_dialog_response (GtkDialog* _sender, gint response_id, gpointer self);
 void xcls_editproject_show (Xcls_EditProject* self);
 void xcls_editproject_xcls_model_loadData (Xcls_EditProjectXcls_model* self);
 enum  {
@@ -513,7 +513,7 @@ static gpointer _xcls_editproject_ref0 (gpointer self) {
 }
 
 
-static gboolean __lambda58_ (Xcls_EditProject* self, GtkWidget* _self_, GdkEventAny* event) {
+static gboolean __lambda63_ (Xcls_EditProject* self, GtkWidget* _self_, GdkEventAny* event) {
 	gboolean result = FALSE;
 	GtkDialog* _tmp0_;
 #line 59 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
@@ -532,16 +532,16 @@ static gboolean __lambda58_ (Xcls_EditProject* self, GtkWidget* _self_, GdkEvent
 }
 
 
-static gboolean ___lambda58__gtk_widget_destroy_event (GtkWidget* _sender, GdkEventAny* event, gpointer self) {
+static gboolean ___lambda63__gtk_widget_destroy_event (GtkWidget* _sender, GdkEventAny* event, gpointer self) {
 	gboolean result;
-	result = __lambda58_ (self, _sender, event);
+	result = __lambda63_ (self, _sender, event);
 #line 59 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return result;
 #line 541 "EditProject.vala.c"
 }
 
 
-static void __lambda59_ (Xcls_EditProject* self, GtkDialog* _self_, gint id) {
+static void __lambda64_ (Xcls_EditProject* self, GtkDialog* _self_, gint id) {
 	gint _tmp0_;
 	Xcls_EditProject* _tmp2_;
 	Xcls_EditProjectXcls_xtype* _tmp3_;
@@ -691,9 +691,9 @@ static void __lambda59_ (Xcls_EditProject* self, GtkDialog* _self_, gint id) {
 }
 
 
-static void ___lambda59__gtk_dialog_response (GtkDialog* _sender, gint response_id, gpointer self) {
+static void ___lambda64__gtk_dialog_response (GtkDialog* _sender, gint response_id, gpointer self) {
 #line 63 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
-	__lambda59_ (self, _sender, response_id);
+	__lambda64_ (self, _sender, response_id);
 #line 698 "EditProject.vala.c"
 }
 
@@ -805,11 +805,11 @@ Xcls_EditProject* xcls_editproject_construct (GType object_type) {
 #line 59 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp19_ = self->el;
 #line 59 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
-	g_signal_connect ((GtkWidget*) _tmp19_, "destroy-event", (GCallback) ___lambda58__gtk_widget_destroy_event, self);
+	g_signal_connect ((GtkWidget*) _tmp19_, "destroy-event", (GCallback) ___lambda63__gtk_widget_destroy_event, self);
 #line 63 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp20_ = self->el;
 #line 63 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
-	g_signal_connect (_tmp20_, "response", (GCallback) ___lambda59__gtk_dialog_response, self);
+	g_signal_connect (_tmp20_, "response", (GCallback) ___lambda64__gtk_dialog_response, self);
 #line 34 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_xcls_editproject_xcls_button10_unref0 (child_2);
 #line 34 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
