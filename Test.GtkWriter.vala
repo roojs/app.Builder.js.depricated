@@ -101,15 +101,12 @@ void rooWindowClutter()
 	proj.scanDirs();
 
 
-	
 	var w = new Xcls_MainWindow();
 	w.project = proj;
-	w.initChildren();
 
+	w.initChildren();
 	w.el.show_all();
-	
-	
-	
+		
 }
 
 int main (string[] args) {
