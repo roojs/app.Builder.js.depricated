@@ -23,7 +23,7 @@ public class Xcls_WindowLeftProjects : Object
     private Xcls_WindowLeftProjects  _this;
 
     public Xcls_model model;
-    public Xcls_name name;
+    public Xcls_namecol namecol;
 
         // my vars
 
@@ -194,15 +194,12 @@ public class Xcls_WindowLeftProjects : Object
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_name( _this );
+            var child_0 = new Xcls_namecol( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , true );
 
             // init method 
-            this.parent.el.append_column(this.el);
-                
-                XObject.prototype.init.call(this);
-                this.el.add_attribute(this.items[0].el , 'markup', 4  );
+                this.el.add_attribute(_this.namecol.el , "markup", 4  );
              
         }
 
@@ -210,7 +207,7 @@ public class Xcls_WindowLeftProjects : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_name : Object 
+    public class Xcls_namecol : Object 
     {
         public Gtk.CellRendererText el;
         private Xcls_WindowLeftProjects  _this;
@@ -219,10 +216,10 @@ public class Xcls_WindowLeftProjects : Object
             // my vars
 
             // ctor 
-        public Xcls_name(Xcls_WindowLeftProjects _owner )
+        public Xcls_namecol(Xcls_WindowLeftProjects _owner )
         {
             _this = _owner;
-            _this.name = this;
+            _this.namecol = this;
             this.el = new Gtk.CellRendererText();
 
             // my vars

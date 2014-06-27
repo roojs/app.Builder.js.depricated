@@ -37,11 +37,11 @@
                         {
                             "pack": "append_column",
                             "xtype": "TreeViewColumn",
-                            "|init": "\nthis.parent.el.append_column(this.el);\n    \n    XObject.prototype.init.call(this);\n    this.el.add_attribute(this.items[0].el , 'markup', 4  );\n ",
+                            "|init": "\n    this.el.add_attribute(_this.namecol.el , \"markup\", 4  );\n ",
                             "|xns": "Gtk",
                             "items": [
                                 {
-                                    "id": "name",
+                                    "id": "namecol",
                                     "pack": "pack_start,true",
                                     "xtype": "CellRendererText",
                                     "|xns": "Gtk"
