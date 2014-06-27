@@ -118,7 +118,7 @@ MainWindow=new XObject({
             el.set_scale(1.0f,1.0f);
             _this.is_editing = true;
            // _this.mainpane.el.set_position(_this.leftpane.lastWidth);
-            _this.clutterembed.clutterfiles.el.hide();
+            _this.clutterfiles.el.hide();
         
         el.restore_easing_state();
             

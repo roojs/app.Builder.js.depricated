@@ -33,8 +33,8 @@ public class Xcls_MainWindow : Object
     public Xcls_projectbutton projectbutton;
 
         // my vars
-    public Xcls_ClutterFiles clutterfiles;
     public Project.Project project;
+    public Xcls_ClutterFiles clutterfiles;
     public Xcls_LeftProps left_props;
     public Xcls_WindowLeftProjects left_projects;
     public Xcls_WindowLeftTree left_tree;
@@ -175,7 +175,7 @@ public class Xcls_MainWindow : Object
                 el.set_scale(1.0f,1.0f);
                 _this.is_editing = true;
                // _this.mainpane.el.set_position(_this.leftpane.lastWidth);
-                _this.clutterembed.clutterfiles.el.hide();
+                _this.clutterfiles.el.hide();
             
             el.restore_easing_state();
                 
