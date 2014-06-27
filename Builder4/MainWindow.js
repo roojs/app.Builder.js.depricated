@@ -70,6 +70,22 @@ MainWindow=new XObject({
         ((Gtk.Container)(w.rooview.el.get_widget())).add(this.rooview.el);
         //rv.el.show_all();
     
+        var stage = _this.rooview.get_stage();
+        stage.set_background_color(  Clutter.Color.from_string("#000"));
+        
+        
+        this.clutterfiles = new Xcls_ClutterFiles();
+        stage.add_child(this.clutterfiles.el);
+    
+    
+    
+        this.clutterfiles.open.connect((file) => { 
+            _this.showViewEditing();
+            print("OPEN : " + file.name);
+    
+        });
+    
+    
     
     
         //w.el.show_all();
