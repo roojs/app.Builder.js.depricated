@@ -178,9 +178,7 @@ MainWindow=new XObject({
                                     xtype: GtkClutter.Embed,
                                     listeners : {
                                         size_allocate : (  alloc) => {
-                                            if (!_this.children_loaded) {
-                                                return;
-                                            }
+                                            //if (!_this.children_loaded) {  return; }
                                             _this.rooview.el.set_size(this.el.get_stage().width-50,
                                                     this.el.get_stage().height);
                                             _this.clutterfiles.set_size(this.el.get_stage().width-50,
