@@ -229,7 +229,7 @@ public class Xcls_WindowLeftProjects : Object
             this.el.add (  child_0.el  );
 
             // init method 
-              this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
+              this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC);
         }
 
         // userdefined functions 
