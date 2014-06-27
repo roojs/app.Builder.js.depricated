@@ -11,7 +11,6 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 WindowLeftProjects=new XObject({
     xtype: Gtk.VBox,
-    'signal:void:show_new_project' : (),
     id : "WindowLeftProjects",
     pack : "pack_end,false,true,0",
     homogeneous : false,

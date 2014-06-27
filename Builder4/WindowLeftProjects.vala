@@ -26,6 +26,7 @@ public class Xcls_WindowLeftProjects : Object
     public Xcls_namecol namecol;
 
         // my vars
+    public signal void show_new_project();
 
         // ctor 
     public Xcls_WindowLeftProjects()
@@ -46,7 +47,6 @@ public class Xcls_WindowLeftProjects : Object
     }
 
     // userdefined functions 
-    public signal void()
     public void load() {
              // clear list...
              

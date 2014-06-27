@@ -6,7 +6,7 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProjects.bjs",
     "items": [
         {
-            "|signal:void:show_new_project": "()",
+            ".signal:void:show_new_project": "()",
             "id": "WindowLeftProjects",
             "pack": "pack_end,false,true,0",
             "xtype": "VBox",
