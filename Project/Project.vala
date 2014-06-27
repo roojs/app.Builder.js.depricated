@@ -97,7 +97,7 @@ namespace Project {
         public static Gee.ArrayList<Project> allProjectsByName()
         {
             var ret = new Gee.ArrayList<Project>();
-            var iter = projects.map_iter();
+            var iter = projects.map_iterator();
 		    while (iter.next()) {
 		        ret.add(iter.get_value());
 		    }
