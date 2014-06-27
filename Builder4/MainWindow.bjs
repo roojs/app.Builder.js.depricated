@@ -65,6 +65,7 @@
                                     "|xns": "Gtk",
                                     "items": [
                                         {
+                                            "id": "editpane",
                                             "pack": "pack_start,false,true,0",
                                             "xtype": "VPaned",
                                             "|xns": "Gtk",
