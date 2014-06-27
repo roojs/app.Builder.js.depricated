@@ -99,28 +99,15 @@ void rooWindowClutter()
 	var proj = Project.Project.getProject("Pman.Core");
 	
 	proj.scanDirs();
+
+
 	
 	var w = new Xcls_MainWindow();
 	w.project = proj;
+	w.initChildren();
+
 	w.el.show_all();
-	var  left_tree =new Xcls_WindowLeftTree();
-	left_tree.ref();
-	w.tree.el.pack_start(left_tree.el,true, true,0);
-
-	var  left_props =new Xcls_LeftProps();
-	left_props.ref();
-	w.props.el.pack_start(left_props.el,true, true,0);
-
-	var rv =new Xcls_WindowRooView();
-	rv.ref();
-	((Gtk.Container)(w.rooview.el.get_widget())).add(rv.el);
-	rv.el.show_all();
 	
-    w.el.show_all();
-    var tl = new Clutter.Timeline(6000);
-	tl.set_repeat_count(-1);
-	tl.start();
-	tl.ref();
 	
 	
 }
