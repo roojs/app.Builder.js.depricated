@@ -544,7 +544,7 @@ public class Xcls_WindowLeftProjects : Object
         {
             _this = _owner;
             _this.model = this;
-            this.el = new Gtk.ListStore( 2, "typeof(string), typeof(Object)" );
+            this.el = new Gtk.ListStore( 2, typeof(string), typeof(Object) );
 
             // my vars
 
