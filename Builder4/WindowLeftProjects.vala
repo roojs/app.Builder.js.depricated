@@ -52,7 +52,7 @@ public class Xcls_WindowLeftProjects : Object
     public void load() {
              // clear list...
              
-             Project.loadAll();
+             Project.Project.loadAll();
              var projects = Project.Project.allProjectsByName();
              
              Gtk.TreeIter iter;

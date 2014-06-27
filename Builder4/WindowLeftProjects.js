@@ -17,7 +17,7 @@ WindowLeftProjects=new XObject({
     'void:load' : () {
          // clear list...
          
-         Project.loadAll();
+         Project.Project.loadAll();
          var projects = Project.Project.allProjectsByName();
          
          Gtk.TreeIter iter;
