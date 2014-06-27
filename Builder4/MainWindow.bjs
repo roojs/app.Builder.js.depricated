@@ -13,7 +13,7 @@
             ".Project.Project:project": "",
             ".Xcls_LeftProps:left_props": "null",
             ".Xcls_WindowLeftTree:left_tree": "null",
-            ".Xcls_WindowRooView:rooview": "null",
+            ".Xcls_WindowRooView:window_rooview": "null",
             ".string:title": "\"Application Builder\"",
             "border_width": 0,
             "default_height": 500,

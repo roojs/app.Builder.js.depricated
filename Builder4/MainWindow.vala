@@ -36,7 +36,7 @@ public class Xcls_MainWindow : Object
     public Project.Project project;
     public Xcls_LeftProps left_props;
     public Xcls_WindowLeftTree left_tree;
-    public Xcls_WindowRooView rooview;
+    public Xcls_WindowRooView window_rooview;
     public string title;
 
         // ctor 
@@ -49,7 +49,7 @@ public class Xcls_MainWindow : Object
         // my vars
         this.left_props = null;
         this.left_tree = null;
-        this.rooview = null;
+        this.window_rooview = null;
         this.title = "Application Builder";
 
         // set gobject values
