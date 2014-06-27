@@ -6,7 +6,6 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProjects.bjs",
     "items": [
         {
-            "activeElement": false,
             "id": "WindowLeftProjects",
             "pack": "pack_end,false,true,0",
             "xtype": "ScrolledWindow",

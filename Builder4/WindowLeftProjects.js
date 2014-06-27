@@ -11,7 +11,6 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 WindowLeftProjects=new XObject({
     xtype: Gtk.ScrolledWindow,
-    activeElement : false,
     id : "WindowLeftProjects",
     pack : "pack_end,false,true,0",
     init : this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC),
