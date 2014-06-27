@@ -166,7 +166,6 @@ WindowLeftProjects=new XObject({
                     },
                     id : "view",
                     pack : "add",
-                    tooltip_column : 2,
                     enable_tree_lines : true,
                     headers_visible : false,
                     init : var description = new Pango.FontDescription();

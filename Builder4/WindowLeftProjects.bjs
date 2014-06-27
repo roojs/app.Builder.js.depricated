@@ -128,7 +128,6 @@
                             },
                             "id": "view",
                             "pack": "add",
-                            "tooltip_column": 2,
                             "xtype": "TreeView",
                             "|enable_tree_lines": "true",
                             "|headers_visible": "false",
