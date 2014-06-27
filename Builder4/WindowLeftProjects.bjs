@@ -8,43 +8,90 @@
         {
             "id": "WindowLeftProjects",
             "pack": "pack_end,false,true,0",
-            "xtype": "ScrolledWindow",
-            "|void:load": "() {\n     // clear list...\n     \n     Project.loadAll();\n     var projects = Project.allProjectsByName();\n     \n     Gtk.TreeIter iter;\n     var m = this.model.el;\n     m.clear();\n          \n     for (var i = 0; i < projects.size; i++) {\n        m.append(out iter,null);\n        m.set(iter,   0,projects.get(i).name );\n        \n      var o = new GLib.Value(typeof(Object));\n        o.set_object((Object)projects.get(i));\n                   \n        m.setValue(iter, 1, o);\n     \n     }\n     \n     \n}\n",
-            "|init": "  this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)\n",
-            "|shadow_type": "Gtk.ShadowType.IN",
+            "xtype": "VBox",
             "|xns": "Gtk",
+            "|homogeneous": "false",
+
             "items": [
-                {
-                    "listeners": {
-                        "cursor_changed": " () => {\n\n    Gtk.TreeIter iter;\n    Gtk.TreeModel mod;\n            \n    var s = this.view.el.get_selection();\n    s.get_selected(out mod, out iter);\n  \n    GLib.Value gval;\n\n    mod.get_value(iter, 1 , out gval);\n    var project = (Project.Project)gval.get_object();\n    \n    _this.project_selected(project);\n    \n}"
-                    },
-                    "pack": "add",
-                    "tooltip_column": 2,
-                    "xtype": "TreeView",
-                    "|enable_tree_lines": "true",
-                    "|headers_visible": "false",
-                    "|init": "function() {\n\tXObject.prototype.init.call(this); \n                    \n       var description = new Pango.FontDescription.c_new();\n     description.set_size(8000);\n    this.el.modify_font(description);     \n                    \n    //this.selection = this.el.get_selection();\n    // this.selection.set_mode( Gtk.SelectionMode.SINGLE);\n \n\n    \n  \n    \n}\n",
+                  {
+                    "pack": "pack_start,false,true,0",
+                    "xtype": "HBox",
                     "|xns": "Gtk",
                     "items": [
                         {
-                            "columns": "typeof(string), typeof(Object)",
-                            "id": "model",
-                            "n_columns": 2,
-                            "pack": "set_model",
-                            "xtype": "ListStore",
-                            "|xns": "Gtk"
-                        },
-                        {
-                            "pack": "append_column",
-                            "xtype": "TreeViewColumn",
-                            "|init": "\n    this.el.add_attribute(_this.namecol.el , \"markup\", 4  );\n ",
+                            "listeners": {
+                                "button_press_event": " ( event ) => {\n    _this.show_add_props(\"prop\");\n    return false;\n}"
+                            },
+                            "pack": "add",
+                            "xtype": "Button",
                             "|xns": "Gtk",
                             "items": [
                                 {
-                                    "id": "namecol",
-                                    "pack": "pack_start,true",
-                                    "xtype": "CellRendererText",
+                                    "|xns": "Gtk",
+                                    "xtype": "HBox",
+                                    "pack": "add",
+                                    "items": [
+                                        {
+                                            "|xns": "Gtk",
+                                            "xtype": "Image",
+                                            "pack": "add",
+                                            "|stock": "Gtk.STOCK_ADD",
+                                            "|icon_size": "Gtk.IconSize.MENU"
+                                        },
+                                        {
+                                            "|xns": "Gtk",
+                                            "xtype": "Label",
+                                            "pack": "add",
+                                            "label": "Property"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    
+                    "pack": "pack_end,true,true,0",
+                    "xtype": "ScrolledWindow",
+                    "|init": "  this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)\n",
+                    "|shadow_type": "Gtk.ShadowType.IN",
+                    "|xns": "Gtk",
+                
+                         "items": [
+                           {
+                            "listeners": {
+                                "cursor_changed": " () => {\n\n    Gtk.TreeIter iter;\n    Gtk.TreeModel mod;\n            \n    var s = this.view.el.get_selection();\n    s.get_selected(out mod, out iter);\n  \n    GLib.Value gval;\n\n    mod.get_value(iter, 1 , out gval);\n    var project = (Project.Project)gval.get_object();\n    \n    _this.project_selected(project);\n    \n}"
+                            },
+                            "pack": "add",
+                            "tooltip_column": 2,
+                            "xtype": "TreeView",
+                            "|enable_tree_lines": "true",
+                            "|headers_visible": "false",
+                            "|init": "function() {\n\tXObject.prototype.init.call(this); \n                    \n       var description = new Pango.FontDescription.c_new();\n     description.set_size(8000);\n    this.el.modify_font(description);     \n                    \n    //this.selection = this.el.get_selection();\n    // this.selection.set_mode( Gtk.SelectionMode.SINGLE);\n \n\n    \n  \n    \n}\n",
+                            "|xns": "Gtk",
+                            "items": [
+                                {
+                                    "columns": "typeof(string), typeof(Object)",
+                                    "id": "model",
+                                    "n_columns": 2,
+                                    "pack": "set_model",
+                                    "xtype": "ListStore",
                                     "|xns": "Gtk"
+                                },
+                                {
+                                    "pack": "append_column",
+                                    "xtype": "TreeViewColumn",
+                                    "|init": "\n    this.el.add_attribute(_this.namecol.el , \"markup\", 4  );\n ",
+                                    "|xns": "Gtk",
+                                    "items": [
+                                        {
+                                            "id": "namecol",
+                                            "pack": "pack_start,true",
+                                            "xtype": "CellRendererText",
+                                            "|xns": "Gtk"
+                                        }
+                                    ]
                                 }
                             ]
                         }
