@@ -91,7 +91,7 @@ MainWindow=new XObject({
         });
     
         this.left_projects.project_selected.connect((proj) => {
-            
+            _this.clutterfiles.show(proj);
         
         });
     
