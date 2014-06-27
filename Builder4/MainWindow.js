@@ -14,9 +14,7 @@ MainWindow=new XObject({
     listeners : {
         show : ( ) => {
             // hide the file editing..
-            this.editpane.el.hide();
-            this.rooview.el.hide();
-             this.left_projects.el.show();
+           
             this.hideViewEditing();
         },
         delete_event : (   event) => {

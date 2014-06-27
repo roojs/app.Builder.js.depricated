@@ -79,9 +79,7 @@ public class Xcls_MainWindow : Object
         // listeners 
         this.el.show.connect(   ( ) => {
             // hide the file editing..
-            this.editpane.el.hide();
-            this.rooview.el.hide();
-             this.left_projects.el.show();
+           
             this.hideViewEditing();
         } );
         this.el.delete_event.connect(   (   event) => {
