@@ -25,7 +25,7 @@ WindowLeftProjects=new XObject({
          m.clear();
               
          for (var i = 0; i < projects.size; i++) {
-            m.append(out iter,null);
+            m.append(out iter);
             m.set(iter,   0,projects.get(i).name );
             
           var o = new GLib.Value(typeof(Object));
