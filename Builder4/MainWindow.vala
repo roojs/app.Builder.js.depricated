@@ -172,6 +172,12 @@ public class Xcls_MainWindow : Object
         
         }
     public void showViewEditing  ( )  {
+            
+            
+             this.editpane.el.show();
+            this.rooview.el.show();
+             this.left_projects.el.hide();
+            
             var el = _this.rooview.el;
                 el.save_easing_state();
           
