@@ -93,7 +93,36 @@ WindowLeftProjects=new XObject({
                                 },
                                 {
                                     xtype: Gtk.Label,
-                                    label : "New Project",
+                                    label : "Edit Project",
+                                    pack : "add"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    xtype: Gtk.Button,
+                    listeners : {
+                        button_press_event : ( event ) => {
+                            _this.show_new_project();
+                            return false;
+                        }
+                    },
+                    pack : "add",
+                    items : [
+                        {
+                            xtype: Gtk.HBox,
+                            pack : "add",
+                            items : [
+                                {
+                                    xtype: Gtk.Image,
+                                    pack : "add",
+                                    stock : Gtk.STOCK_ADD,
+                                    icon_size : Gtk.IconSize.MENU
+                                },
+                                {
+                                    xtype: Gtk.Label,
+                                    label : "Delete Project",
                                     pack : "add"
                                 }
                             ]
