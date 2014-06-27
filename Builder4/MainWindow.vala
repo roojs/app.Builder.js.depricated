@@ -103,6 +103,8 @@ public class Xcls_MainWindow : Object
             ((Gtk.Container)(w.rooview.el.get_widget())).add(this.rooview.el);
             //rv.el.show_all();
         
+        
+        
             //w.el.show_all();
             var tl = new Clutter.Timeline(6000);
             tl.set_repeat_count(-1);
