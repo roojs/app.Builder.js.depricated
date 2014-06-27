@@ -88,8 +88,8 @@ WindowLeftProjects=new XObject({
                                 {
                                     xtype: Gtk.Image,
                                     pack : "add",
-                                    stock : Gtk.STOCK_ADD,
-                                    icon_size : Gtk.IconSize.MENU
+                                    icon_size : Gtk.IconSize.MENU,
+                                    stock : Gtk.STOCK_EDIT
                                 },
                                 {
                                     xtype: Gtk.Label,

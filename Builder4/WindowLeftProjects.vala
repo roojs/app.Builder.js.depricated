@@ -294,7 +294,7 @@ public class Xcls_WindowLeftProjects : Object
 
             // set gobject values
             this.el.icon_size = Gtk.IconSize.MENU;
-            this.el.stock = Gtk.STOCK_ADD;
+            this.el.stock = Gtk.STOCK_EDIT;
         }
 
         // userdefined functions 
