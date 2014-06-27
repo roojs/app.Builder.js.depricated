@@ -33,6 +33,7 @@ all:
 		Builder4/WindowRooView.vala \
 		Builder4/WindowLeftProps.vala \
 		Builder4/ClutterFiles.vala \
+		Builder4/WindowLeftProjects.vala \
 		-o /tmp/test
 #		Builder4/*.vala \
 
