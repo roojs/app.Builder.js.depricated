@@ -21,8 +21,8 @@
                     "pack": "add",
                     "tooltip_column": 2,
                     "xtype": "TreeView",
-                    "|enable_tree_lines": true,
-                    "|headers_visible": false,
+                    "|enable_tree_lines": "true",
+                    "|headers_visible": "false",
                     "|init": "function() {\n\tXObject.prototype.init.call(this); \n                    \n       var description = new Pango.FontDescription.c_new();\n     description.set_size(8000);\n    this.el.modify_font(description);     \n                    \n    //this.selection = this.el.get_selection();\n    // this.selection.set_mode( Gtk.SelectionMode.SINGLE);\n \n\n    \n  \n    \n}\n",
                     "|xns": "Gtk",
                     "items": [
