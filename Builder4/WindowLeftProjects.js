@@ -11,6 +11,11 @@ console = imports.console;
 XObject = imports.XObject.XObject;
 WindowLeftProjects=new XObject({
     xtype: Gtk.VBox,
+    listeners : {
+        show : function (self) {
+            this.load();
+        }
+    },
     id : "WindowLeftProjects",
     pack : "pack_end,false,true,0",
     homogeneous : false,
@@ -36,11 +41,6 @@ WindowLeftProjects=new XObject({
          }
          
          
-    },
-    listeners : {
-        show : function (self) {
-        
-        }
     },
     items : [
         {

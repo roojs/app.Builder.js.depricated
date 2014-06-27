@@ -49,7 +49,7 @@ public class Xcls_WindowLeftProjects : Object
 
         // listeners 
         this.el.show.connect( function (self) {
-        
+            this.load();
         } );
     }
 
