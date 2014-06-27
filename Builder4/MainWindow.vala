@@ -129,7 +129,7 @@ public class Xcls_MainWindow : Object
             this.window_rooview  =new Xcls_WindowRooView();
             this.window_rooview.ref();
             ((Gtk.Container)(this.rooview.el.get_widget())).add(this.window_rooview.el);
-            //rv.el.show_all();
+            this.window_rooview.el.show_all();
         
             var stage = _this.rooview.el.get_stage();
             stage.set_background_color(  Clutter.Color.from_string("#000"));
@@ -137,7 +137,7 @@ public class Xcls_MainWindow : Object
             this.clutterfiles = new Xcls_ClutterFiles();
             this.clutterfiles.ref();
             stage.add_child(this.clutterfiles.el);
-        
+            this.clutterfiles.el.show_all();
         
         
             this.clutterfiles.open.connect((file) => { 
