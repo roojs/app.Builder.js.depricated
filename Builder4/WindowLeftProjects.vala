@@ -27,6 +27,7 @@ public class Xcls_WindowLeftProjects : Object
     public Xcls_namecol namecol;
 
         // my vars
+    public signal void project_selected;
     public signal void show_new_project();
 
         // ctor 
@@ -45,8 +46,6 @@ public class Xcls_WindowLeftProjects : Object
         var child_1 = new Xcls_ScrolledWindow7( _this );
         child_1.ref();
         this.el.pack_end (  child_1.el , true,true,0 );
-
-        // listeners 
     }
 
     // userdefined functions 
