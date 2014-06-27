@@ -15,7 +15,7 @@ MainWindow=new XObject({
         show : ( ) => {
             // hide the file editing..
             this.editpane.el.hide();
-            //this.window_rooview.el.hide();
+            this.rooview.el.hide();
             //this.left_projects.el.show();
          
         },
@@ -186,8 +186,8 @@ MainWindow=new XObject({
                                             _this.clutterfiles.set_size(this.el.get_stage().width-50,
                                                    this.el.get_stage().height);
                                         */
-                                            this.el.set_size_request(alloc.width,alloc.height);
-                                            this.el.get_stage().set_size(alloc.width,alloc.height);
+                                           // this.el.set_size_request(alloc.width,alloc.height);
+                                           // this.el.get_stage().set_size(alloc.width,alloc.height);
                                             _this.rooview.el.set_size(alloc.width-50,
                                                     alloc.height);
                                             _this.clutterfiles.set_size(alloc.width-50,
