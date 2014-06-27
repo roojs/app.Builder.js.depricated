@@ -330,12 +330,12 @@ gpointer xcls_rooprojectproperties_value_get_xcls_button7 (const GValue* value);
 GType xcls_rooprojectproperties_xcls_button7_get_type (void) G_GNUC_CONST;
 Xcls_RooProjectPropertiesXcls_Button7* xcls_rooprojectproperties_xcls_button7_new (void);
 Xcls_RooProjectPropertiesXcls_Button7* xcls_rooprojectproperties_xcls_button7_construct (GType object_type);
-static gboolean __lambda75_ (Xcls_RooProjectProperties* self, GtkWidget* _self_, GdkEventAny* event);
-static gboolean ___lambda75__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self);
-static void __lambda76_ (Xcls_RooProjectProperties* self, GtkDialog* _self_, gint response_id);
+static gboolean __lambda76_ (Xcls_RooProjectProperties* self, GtkWidget* _self_, GdkEventAny* event);
+static gboolean ___lambda76__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self);
+static void __lambda77_ (Xcls_RooProjectProperties* self, GtkDialog* _self_, gint response_id);
 GType js_render_js_render_get_type (void) G_GNUC_CONST;
 void project_project_save (ProjectProject* self);
-static void ___lambda76__gtk_dialog_response (GtkDialog* _sender, gint response_id, gpointer self);
+static void ___lambda77__gtk_dialog_response (GtkDialog* _sender, gint response_id, gpointer self);
 void xcls_rooprojectproperties_show (Xcls_RooProjectProperties* self, ProjectProject* project);
 enum  {
 	XCLS_ROOPROJECTPROPERTIES_XCLS_VBOX2_DUMMY_PROPERTY
@@ -391,7 +391,7 @@ static gpointer _xcls_rooprojectproperties_ref0 (gpointer self) {
 }
 
 
-static gboolean __lambda75_ (Xcls_RooProjectProperties* self, GtkWidget* _self_, GdkEventAny* event) {
+static gboolean __lambda76_ (Xcls_RooProjectProperties* self, GtkWidget* _self_, GdkEventAny* event) {
 	gboolean result = FALSE;
 	GtkDialog* _tmp0_ = NULL;
 #line 51 "/home/alan/gitlive/app.Builder.js/Builder4/RooProjectProperties.vala"
@@ -410,9 +410,9 @@ static gboolean __lambda75_ (Xcls_RooProjectProperties* self, GtkWidget* _self_,
 }
 
 
-static gboolean ___lambda75__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self) {
+static gboolean ___lambda76__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self) {
 	gboolean result;
-	result = __lambda75_ ((Xcls_RooProjectProperties*) self, _sender, event);
+	result = __lambda76_ ((Xcls_RooProjectProperties*) self, _sender, event);
 #line 51 "/home/alan/gitlive/app.Builder.js/Builder4/RooProjectProperties.vala"
 	return result;
 #line 419 "RooProjectProperties.vala.c"
@@ -426,7 +426,7 @@ static gpointer _g_object_ref0 (gpointer self) {
 }
 
 
-static void __lambda76_ (Xcls_RooProjectProperties* self, GtkDialog* _self_, gint response_id) {
+static void __lambda77_ (Xcls_RooProjectProperties* self, GtkDialog* _self_, gint response_id) {
 	gint _tmp0_ = 0;
 	GtkTextBuffer* buf = NULL;
 	Xcls_RooProjectPropertiesXcls_view* _tmp2_ = NULL;
@@ -529,9 +529,9 @@ static void __lambda76_ (Xcls_RooProjectProperties* self, GtkDialog* _self_, gin
 }
 
 
-static void ___lambda76__gtk_dialog_response (GtkDialog* _sender, gint response_id, gpointer self) {
+static void ___lambda77__gtk_dialog_response (GtkDialog* _sender, gint response_id, gpointer self) {
 #line 55 "/home/alan/gitlive/app.Builder.js/Builder4/RooProjectProperties.vala"
-	__lambda76_ ((Xcls_RooProjectProperties*) self, _sender, response_id);
+	__lambda77_ ((Xcls_RooProjectProperties*) self, _sender, response_id);
 #line 536 "RooProjectProperties.vala.c"
 }
 
@@ -623,11 +623,11 @@ Xcls_RooProjectProperties* xcls_rooprojectproperties_construct (GType object_typ
 #line 51 "/home/alan/gitlive/app.Builder.js/Builder4/RooProjectProperties.vala"
 	_tmp15_ = self->el;
 #line 51 "/home/alan/gitlive/app.Builder.js/Builder4/RooProjectProperties.vala"
-	g_signal_connect ((GtkWidget*) _tmp15_, "delete-event", (GCallback) ___lambda75__gtk_widget_delete_event, self);
+	g_signal_connect ((GtkWidget*) _tmp15_, "delete-event", (GCallback) ___lambda76__gtk_widget_delete_event, self);
 #line 55 "/home/alan/gitlive/app.Builder.js/Builder4/RooProjectProperties.vala"
 	_tmp16_ = self->el;
 #line 55 "/home/alan/gitlive/app.Builder.js/Builder4/RooProjectProperties.vala"
-	g_signal_connect (_tmp16_, "response", (GCallback) ___lambda76__gtk_dialog_response, self);
+	g_signal_connect (_tmp16_, "response", (GCallback) ___lambda77__gtk_dialog_response, self);
 #line 31 "/home/alan/gitlive/app.Builder.js/Builder4/RooProjectProperties.vala"
 	_xcls_rooprojectproperties_xcls_button7_unref0 (child_2);
 #line 31 "/home/alan/gitlive/app.Builder.js/Builder4/RooProjectProperties.vala"

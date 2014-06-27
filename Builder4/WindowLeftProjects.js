@@ -12,7 +12,7 @@ XObject = imports.XObject.XObject;
 WindowLeftProjects=new XObject({
     xtype: Gtk.VBox,
     listeners : {
-        show : function (self) {
+        show : ( ) => {
             this.load();
         }
     },

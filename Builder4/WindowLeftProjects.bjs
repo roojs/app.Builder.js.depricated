@@ -7,7 +7,7 @@
     "items": [
         {
             "listeners": {
-                "show": "function (self) {\n    this.load();\n}"
+                "show": "  ( ) => {\n    this.load();\n}"
             },
             ".signal:void:project_selected": "(Project.Project project)",
             ".signal:void:show_new_project": "()",

@@ -820,13 +820,13 @@ Xcls_MainWindow* xcls_mainwindow_new (void);
 Xcls_MainWindow* xcls_mainwindow_construct (GType object_type);
 Xcls_MainWindowXcls_vbox* xcls_mainwindow_xcls_vbox_new (Xcls_MainWindow* _owner);
 Xcls_MainWindowXcls_vbox* xcls_mainwindow_xcls_vbox_construct (GType object_type, Xcls_MainWindow* _owner);
-static void __lambda59_ (Xcls_MainWindow* self);
+static void __lambda60_ (Xcls_MainWindow* self);
 GType xcls_windowleftprojects_xcls_view_get_type (void) G_GNUC_CONST;
 GType xcls_windowleftprojects_xcls_model_get_type (void) G_GNUC_CONST;
 GType xcls_windowleftprojects_xcls_namecol_get_type (void) G_GNUC_CONST;
-static void ___lambda59__gtk_widget_show (GtkWidget* _sender, gpointer self);
-static gboolean __lambda60_ (Xcls_MainWindow* self, GdkEventAny* event);
-static gboolean ___lambda60__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self);
+static void ___lambda60__gtk_widget_show (GtkWidget* _sender, gpointer self);
+static gboolean __lambda61_ (Xcls_MainWindow* self, GdkEventAny* event);
+static gboolean ___lambda61__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self);
 void xcls_mainwindow_hideViewEditing (Xcls_MainWindow* self);
 void xcls_mainwindow_initChildren (Xcls_MainWindow* self);
 Xcls_WindowLeftTree* xcls_windowlefttree_new (void);
@@ -859,10 +859,10 @@ Xcls_ClutterFiles* xcls_clutterfiles_new (void);
 Xcls_ClutterFiles* xcls_clutterfiles_construct (GType object_type);
 GType xcls_clutterfiles_xcls_filelayout_get_type (void) G_GNUC_CONST;
 GType xcls_clutterfiles_xcls_filelayout_manager_get_type (void) G_GNUC_CONST;
-static void __lambda61_ (Xcls_MainWindow* self, JsRenderJsRender* file);
+static void __lambda62_ (Xcls_MainWindow* self, JsRenderJsRender* file);
 void xcls_mainwindow_showViewEditing (Xcls_MainWindow* self);
 GQuark js_render_error_quark (void);
-static void ___lambda61__xcls_clutterfiles_open (Xcls_ClutterFiles* _sender, JsRenderJsRender* file, gpointer self);
+static void ___lambda62__xcls_clutterfiles_open (Xcls_ClutterFiles* _sender, JsRenderJsRender* file, gpointer self);
 void xcls_mainwindow_setTitle (Xcls_MainWindow* self, const gchar* str);
 void xcls_mainwindow_show (Xcls_MainWindow* self);
 #define XCLS_MAINWINDOW_XCLS_VBOX_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), XCLS_MAINWINDOW_TYPE_XCLS_VBOX, Xcls_MainWindowXcls_vboxPrivate))
@@ -964,7 +964,7 @@ static gpointer _g_object_ref0 (gpointer self) {
 }
 
 
-static void __lambda59_ (Xcls_MainWindow* self) {
+static void __lambda60_ (Xcls_MainWindow* self) {
 	Xcls_MainWindowXcls_editpane* _tmp0_ = NULL;
 	GtkVPaned* _tmp1_ = NULL;
 	Xcls_MainWindowXcls_rooview* _tmp2_ = NULL;
@@ -993,14 +993,14 @@ static void __lambda59_ (Xcls_MainWindow* self) {
 }
 
 
-static void ___lambda59__gtk_widget_show (GtkWidget* _sender, gpointer self) {
+static void ___lambda60__gtk_widget_show (GtkWidget* _sender, gpointer self) {
 #line 80 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
-	__lambda59_ ((Xcls_MainWindow*) self);
+	__lambda60_ ((Xcls_MainWindow*) self);
 #line 1000 "MainWindow.vala.c"
 }
 
 
-static gboolean __lambda60_ (Xcls_MainWindow* self, GdkEventAny* event) {
+static gboolean __lambda61_ (Xcls_MainWindow* self, GdkEventAny* event) {
 	gboolean result = FALSE;
 #line 87 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	g_return_val_if_fail (event != NULL, FALSE);
@@ -1012,9 +1012,9 @@ static gboolean __lambda60_ (Xcls_MainWindow* self, GdkEventAny* event) {
 }
 
 
-static gboolean ___lambda60__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self) {
+static gboolean ___lambda61__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self) {
 	gboolean result;
-	result = __lambda60_ ((Xcls_MainWindow*) self, event);
+	result = __lambda61_ ((Xcls_MainWindow*) self, event);
 #line 87 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	return result;
 #line 1021 "MainWindow.vala.c"
@@ -1118,11 +1118,11 @@ Xcls_MainWindow* xcls_mainwindow_construct (GType object_type) {
 #line 80 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	_tmp11_ = self->el;
 #line 80 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
-	g_signal_connect_object ((GtkWidget*) _tmp11_, "show", (GCallback) ___lambda59__gtk_widget_show, self, 0);
+	g_signal_connect_object ((GtkWidget*) _tmp11_, "show", (GCallback) ___lambda60__gtk_widget_show, self, 0);
 #line 87 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	_tmp12_ = self->el;
 #line 87 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
-	g_signal_connect_object ((GtkWidget*) _tmp12_, "delete-event", (GCallback) ___lambda60__gtk_widget_delete_event, self, 0);
+	g_signal_connect_object ((GtkWidget*) _tmp12_, "delete-event", (GCallback) ___lambda61__gtk_widget_delete_event, self, 0);
 #line 48 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	_g_object_unref0 (child_0);
 #line 48 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
@@ -1177,7 +1177,7 @@ void xcls_mainwindow_hideViewEditing (Xcls_MainWindow* self) {
 }
 
 
-static void __lambda61_ (Xcls_MainWindow* self, JsRenderJsRender* file) {
+static void __lambda62_ (Xcls_MainWindow* self, JsRenderJsRender* file) {
 	Xcls_MainWindow* _tmp0_ = NULL;
 	JsRenderJsRender* _tmp1_ = NULL;
 	const gchar* _tmp2_ = NULL;
@@ -1205,9 +1205,9 @@ static void __lambda61_ (Xcls_MainWindow* self, JsRenderJsRender* file) {
 }
 
 
-static void ___lambda61__xcls_clutterfiles_open (Xcls_ClutterFiles* _sender, JsRenderJsRender* file, gpointer self) {
+static void ___lambda62__xcls_clutterfiles_open (Xcls_ClutterFiles* _sender, JsRenderJsRender* file, gpointer self) {
 #line 143 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
-	__lambda61_ ((Xcls_MainWindow*) self, file);
+	__lambda62_ ((Xcls_MainWindow*) self, file);
 #line 1212 "MainWindow.vala.c"
 }
 
@@ -1384,7 +1384,7 @@ void xcls_mainwindow_initChildren (Xcls_MainWindow* self) {
 #line 143 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	_tmp38_ = self->clutterfiles;
 #line 143 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
-	g_signal_connect_object (_tmp38_, "open", (GCallback) ___lambda61__xcls_clutterfiles_open, self, 0);
+	g_signal_connect_object (_tmp38_, "open", (GCallback) ___lambda62__xcls_clutterfiles_open, self, 0);
 #line 153 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"
 	_tmp39_ = clutter_timeline_new ((guint) 6000);
 #line 153 "/home/alan/gitlive/app.Builder.js/Builder4/MainWindow.vala"

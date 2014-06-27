@@ -48,7 +48,7 @@ public class Xcls_WindowLeftProjects : Object
         this.el.pack_end (  child_1.el , true,true,0 );
 
         // listeners 
-        this.el.show.connect( function (self) {
+        this.el.show.connect(   ( ) => {
             this.load();
         } );
     }

@@ -73,10 +73,10 @@ enum  {
 };
 Xcls_StandardErrorDialog* xcls_standarderrordialog_new (void);
 Xcls_StandardErrorDialog* xcls_standarderrordialog_construct (GType object_type);
-static gboolean __lambda43_ (Xcls_StandardErrorDialog* self, GtkWidget* _self_, GdkEventAny* event);
-static gboolean ___lambda43__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self);
-static void __lambda44_ (Xcls_StandardErrorDialog* self, GtkDialog* _self_, gint response_id);
-static void ___lambda44__gtk_dialog_response (GtkDialog* _sender, gint response_id, gpointer self);
+static gboolean __lambda44_ (Xcls_StandardErrorDialog* self, GtkWidget* _self_, GdkEventAny* event);
+static gboolean ___lambda44__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self);
+static void __lambda45_ (Xcls_StandardErrorDialog* self, GtkDialog* _self_, gint response_id);
+static void ___lambda45__gtk_dialog_response (GtkDialog* _sender, gint response_id, gpointer self);
 void xcls_standarderrordialog_show (Xcls_StandardErrorDialog* self, const gchar* msg);
 void xcls_standarderrordialog_show_all (Xcls_StandardErrorDialog* self);
 static void xcls_standarderrordialog_finalize (Xcls_StandardErrorDialog* obj);
@@ -89,7 +89,7 @@ static gpointer _xcls_standarderrordialog_ref0 (gpointer self) {
 }
 
 
-static gboolean __lambda43_ (Xcls_StandardErrorDialog* self, GtkWidget* _self_, GdkEventAny* event) {
+static gboolean __lambda44_ (Xcls_StandardErrorDialog* self, GtkWidget* _self_, GdkEventAny* event) {
 	gboolean result = FALSE;
 	GtkMessageDialog* _tmp0_ = NULL;
 #line 42 "/home/alan/gitlive/app.Builder.js/Builder4/StandardErrorDialog.vala"
@@ -108,16 +108,16 @@ static gboolean __lambda43_ (Xcls_StandardErrorDialog* self, GtkWidget* _self_, 
 }
 
 
-static gboolean ___lambda43__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self) {
+static gboolean ___lambda44__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self) {
 	gboolean result;
-	result = __lambda43_ ((Xcls_StandardErrorDialog*) self, _sender, event);
+	result = __lambda44_ ((Xcls_StandardErrorDialog*) self, _sender, event);
 #line 42 "/home/alan/gitlive/app.Builder.js/Builder4/StandardErrorDialog.vala"
 	return result;
 #line 117 "StandardErrorDialog.vala.c"
 }
 
 
-static void __lambda44_ (Xcls_StandardErrorDialog* self, GtkDialog* _self_, gint response_id) {
+static void __lambda45_ (Xcls_StandardErrorDialog* self, GtkDialog* _self_, gint response_id) {
 	GtkMessageDialog* _tmp0_ = NULL;
 #line 47 "/home/alan/gitlive/app.Builder.js/Builder4/StandardErrorDialog.vala"
 	g_return_if_fail (_self_ != NULL);
@@ -129,9 +129,9 @@ static void __lambda44_ (Xcls_StandardErrorDialog* self, GtkDialog* _self_, gint
 }
 
 
-static void ___lambda44__gtk_dialog_response (GtkDialog* _sender, gint response_id, gpointer self) {
+static void ___lambda45__gtk_dialog_response (GtkDialog* _sender, gint response_id, gpointer self) {
 #line 47 "/home/alan/gitlive/app.Builder.js/Builder4/StandardErrorDialog.vala"
-	__lambda44_ ((Xcls_StandardErrorDialog*) self, _sender, response_id);
+	__lambda45_ ((Xcls_StandardErrorDialog*) self, _sender, response_id);
 #line 136 "StandardErrorDialog.vala.c"
 }
 
@@ -178,11 +178,11 @@ Xcls_StandardErrorDialog* xcls_standarderrordialog_construct (GType object_type)
 #line 42 "/home/alan/gitlive/app.Builder.js/Builder4/StandardErrorDialog.vala"
 	_tmp5_ = self->el;
 #line 42 "/home/alan/gitlive/app.Builder.js/Builder4/StandardErrorDialog.vala"
-	g_signal_connect ((GtkWidget*) _tmp5_, "delete-event", (GCallback) ___lambda43__gtk_widget_delete_event, self);
+	g_signal_connect ((GtkWidget*) _tmp5_, "delete-event", (GCallback) ___lambda44__gtk_widget_delete_event, self);
 #line 47 "/home/alan/gitlive/app.Builder.js/Builder4/StandardErrorDialog.vala"
 	_tmp6_ = self->el;
 #line 47 "/home/alan/gitlive/app.Builder.js/Builder4/StandardErrorDialog.vala"
-	g_signal_connect ((GtkDialog*) _tmp6_, "response", (GCallback) ___lambda44__gtk_dialog_response, self);
+	g_signal_connect ((GtkDialog*) _tmp6_, "response", (GCallback) ___lambda45__gtk_dialog_response, self);
 #line 29 "/home/alan/gitlive/app.Builder.js/Builder4/StandardErrorDialog.vala"
 	return self;
 #line 189 "StandardErrorDialog.vala.c"

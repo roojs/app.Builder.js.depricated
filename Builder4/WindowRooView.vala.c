@@ -407,22 +407,22 @@ static void xcls_windowrooview_xcls_hbox3_finalize (GObject* obj);
 enum  {
 	XCLS_WINDOWROOVIEW_XCLS_BUTTON4_DUMMY_PROPERTY
 };
-static void __lambda57_ (Xcls_WindowRooViewXcls_Button4* self);
-static void ___lambda57__gtk_button_clicked (GtkButton* _sender, gpointer self);
+static void __lambda58_ (Xcls_WindowRooViewXcls_Button4* self);
+static void ___lambda58__gtk_button_clicked (GtkButton* _sender, gpointer self);
 static void xcls_windowrooview_xcls_button4_finalize (GObject* obj);
 #define XCLS_WINDOWROOVIEW_XCLS_AUTOREDRAW_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), XCLS_WINDOWROOVIEW_TYPE_XCLS_AUTOREDRAW, Xcls_WindowRooViewXcls_AutoRedrawPrivate))
 enum  {
 	XCLS_WINDOWROOVIEW_XCLS_AUTOREDRAW_DUMMY_PROPERTY
 };
-static void __lambda52_ (Xcls_WindowRooViewXcls_AutoRedraw* self, GtkToggleButton* state);
-static void ___lambda52__gtk_toggle_button_toggled (GtkToggleButton* _sender, gpointer self);
+static void __lambda53_ (Xcls_WindowRooViewXcls_AutoRedraw* self, GtkToggleButton* state);
+static void ___lambda53__gtk_toggle_button_toggled (GtkToggleButton* _sender, gpointer self);
 static void xcls_windowrooview_xcls_autoredraw_finalize (GObject* obj);
 #define XCLS_WINDOWROOVIEW_XCLS_BUTTON6_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), XCLS_WINDOWROOVIEW_TYPE_XCLS_BUTTON6, Xcls_WindowRooViewXcls_Button6Private))
 enum  {
 	XCLS_WINDOWROOVIEW_XCLS_BUTTON6_DUMMY_PROPERTY
 };
-static void __lambda58_ (Xcls_WindowRooViewXcls_Button6* self);
-static void ___lambda58__gtk_button_clicked (GtkButton* _sender, gpointer self);
+static void __lambda59_ (Xcls_WindowRooViewXcls_Button6* self);
+static void ___lambda59__gtk_button_clicked (GtkButton* _sender, gpointer self);
 static void xcls_windowrooview_xcls_button6_finalize (GObject* obj);
 #define XCLS_WINDOWROOVIEW_XCLS_SCROLLEDWINDOW7_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), XCLS_WINDOWROOVIEW_TYPE_XCLS_SCROLLEDWINDOW7, Xcls_WindowRooViewXcls_ScrolledWindow7Private))
 enum  {
@@ -435,15 +435,15 @@ static void xcls_windowrooview_xcls_scrolledwindow7_finalize (GObject* obj);
 enum  {
 	XCLS_WINDOWROOVIEW_XCLS_VIEW_DUMMY_PROPERTY
 };
-static gboolean ___lambda53_ (Xcls_WindowRooViewXcls_view* self);
-static gboolean ____lambda53__webkit_web_inspector_open_window (WebKitWebInspector* _sender, gpointer self);
 static gboolean ___lambda54_ (Xcls_WindowRooViewXcls_view* self);
+static gboolean ____lambda54__webkit_web_inspector_open_window (WebKitWebInspector* _sender, gpointer self);
+static gboolean ___lambda55_ (Xcls_WindowRooViewXcls_view* self);
 void xcls_windowrooview_xcls_view_runRefresh (Xcls_WindowRooViewXcls_view* self);
-static gboolean ____lambda54__gsource_func (gpointer self);
-static gboolean __lambda55_ (Xcls_WindowRooViewXcls_view* self, GtkWidget* ctx, GdkDragContext* x, gint y, gint time, guint ud);
-static gboolean ___lambda55__gtk_widget_drag_drop (GtkWidget* _sender, GdkDragContext* context, gint x, gint y, guint time_, gpointer self);
-static void __lambda56_ (Xcls_WindowRooViewXcls_view* self);
-static void ___lambda56__gtk_widget_show (GtkWidget* _sender, gpointer self);
+static gboolean ____lambda55__gsource_func (gpointer self);
+static gboolean __lambda56_ (Xcls_WindowRooViewXcls_view* self, GtkWidget* ctx, GdkDragContext* x, gint y, gint time, guint ud);
+static gboolean ___lambda56__gtk_widget_drag_drop (GtkWidget* _sender, GdkDragContext* context, gint x, gint y, guint time_, gpointer self);
+static void __lambda57_ (Xcls_WindowRooViewXcls_view* self);
+static void ___lambda57__gtk_widget_show (GtkWidget* _sender, gpointer self);
 gchar* js_render_js_render_toSourcePreview (JsRenderJsRender* self);
 GType project_project_get_type (void) G_GNUC_CONST;
 GQuark js_render_error_quark (void);
@@ -849,7 +849,7 @@ GType xcls_windowrooview_xcls_hbox3_get_type (void) {
 }
 
 
-static void __lambda57_ (Xcls_WindowRooViewXcls_Button4* self) {
+static void __lambda58_ (Xcls_WindowRooViewXcls_Button4* self) {
 	Xcls_WindowRooView* _tmp0_ = NULL;
 	Xcls_WindowRooViewXcls_view* _tmp1_ = NULL;
 #line 190 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
@@ -862,9 +862,9 @@ static void __lambda57_ (Xcls_WindowRooViewXcls_Button4* self) {
 }
 
 
-static void ___lambda57__gtk_button_clicked (GtkButton* _sender, gpointer self) {
+static void ___lambda58__gtk_button_clicked (GtkButton* _sender, gpointer self) {
 #line 189 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
-	__lambda57_ ((Xcls_WindowRooViewXcls_Button4*) self);
+	__lambda58_ ((Xcls_WindowRooViewXcls_Button4*) self);
 #line 869 "WindowRooView.vala.c"
 }
 
@@ -903,7 +903,7 @@ Xcls_WindowRooViewXcls_Button4* xcls_windowrooview_xcls_button4_construct (GType
 #line 189 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
 	_tmp4_ = self->el;
 #line 189 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
-	g_signal_connect_object (_tmp4_, "clicked", (GCallback) ___lambda57__gtk_button_clicked, self, 0);
+	g_signal_connect_object (_tmp4_, "clicked", (GCallback) ___lambda58__gtk_button_clicked, self, 0);
 #line 178 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
 	return self;
 #line 910 "WindowRooView.vala.c"
@@ -961,7 +961,7 @@ GType xcls_windowrooview_xcls_button4_get_type (void) {
 }
 
 
-static void __lambda52_ (Xcls_WindowRooViewXcls_AutoRedraw* self, GtkToggleButton* state) {
+static void __lambda53_ (Xcls_WindowRooViewXcls_AutoRedraw* self, GtkToggleButton* state) {
 	const gchar* _tmp0_ = NULL;
 	GtkCheckButton* _tmp1_ = NULL;
 	gboolean _tmp2_ = FALSE;
@@ -993,9 +993,9 @@ static void __lambda52_ (Xcls_WindowRooViewXcls_AutoRedraw* self, GtkToggleButto
 }
 
 
-static void ___lambda52__gtk_toggle_button_toggled (GtkToggleButton* _sender, gpointer self) {
+static void ___lambda53__gtk_toggle_button_toggled (GtkToggleButton* _sender, gpointer self) {
 #line 234 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
-	__lambda52_ ((Xcls_WindowRooViewXcls_AutoRedraw*) self, _sender);
+	__lambda53_ ((Xcls_WindowRooViewXcls_AutoRedraw*) self, _sender);
 #line 1000 "WindowRooView.vala.c"
 }
 
@@ -1049,7 +1049,7 @@ Xcls_WindowRooViewXcls_AutoRedraw* xcls_windowrooview_xcls_autoredraw_construct 
 #line 234 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
 	_tmp7_ = self->el;
 #line 234 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
-	g_signal_connect_object ((GtkToggleButton*) _tmp7_, "toggled", (GCallback) ___lambda52__gtk_toggle_button_toggled, self, 0);
+	g_signal_connect_object ((GtkToggleButton*) _tmp7_, "toggled", (GCallback) ___lambda53__gtk_toggle_button_toggled, self, 0);
 #line 221 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
 	return self;
 #line 1056 "WindowRooView.vala.c"
@@ -1107,7 +1107,7 @@ GType xcls_windowrooview_xcls_autoredraw_get_type (void) {
 }
 
 
-static void __lambda58_ (Xcls_WindowRooViewXcls_Button6* self) {
+static void __lambda59_ (Xcls_WindowRooViewXcls_Button6* self) {
 	Xcls_WindowRooView* _tmp0_ = NULL;
 	Xcls_WindowRooViewXcls_view* _tmp1_ = NULL;
 	Xcls_WindowRooView* _tmp2_ = NULL;
@@ -1128,9 +1128,9 @@ static void __lambda58_ (Xcls_WindowRooViewXcls_Button6* self) {
 }
 
 
-static void ___lambda58__gtk_button_clicked (GtkButton* _sender, gpointer self) {
+static void ___lambda59__gtk_button_clicked (GtkButton* _sender, gpointer self) {
 #line 281 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
-	__lambda58_ ((Xcls_WindowRooViewXcls_Button6*) self);
+	__lambda59_ ((Xcls_WindowRooViewXcls_Button6*) self);
 #line 1135 "WindowRooView.vala.c"
 }
 
@@ -1169,7 +1169,7 @@ Xcls_WindowRooViewXcls_Button6* xcls_windowrooview_xcls_button6_construct (GType
 #line 281 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
 	_tmp4_ = self->el;
 #line 281 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
-	g_signal_connect_object (_tmp4_, "clicked", (GCallback) ___lambda58__gtk_button_clicked, self, 0);
+	g_signal_connect_object (_tmp4_, "clicked", (GCallback) ___lambda59__gtk_button_clicked, self, 0);
 #line 270 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
 	return self;
 #line 1176 "WindowRooView.vala.c"
@@ -1340,7 +1340,7 @@ GType xcls_windowrooview_xcls_scrolledwindow7_get_type (void) {
 }
 
 
-static gboolean ___lambda53_ (Xcls_WindowRooViewXcls_view* self) {
+static gboolean ___lambda54_ (Xcls_WindowRooViewXcls_view* self) {
 	gboolean result = FALSE;
 	WebKitWebViewBase* wv = NULL;
 	WebKitWebInspector* _tmp0_ = NULL;
@@ -1399,16 +1399,16 @@ static gboolean ___lambda53_ (Xcls_WindowRooViewXcls_view* self) {
 }
 
 
-static gboolean ____lambda53__webkit_web_inspector_open_window (WebKitWebInspector* _sender, gpointer self) {
+static gboolean ____lambda54__webkit_web_inspector_open_window (WebKitWebInspector* _sender, gpointer self) {
 	gboolean result;
-	result = ___lambda53_ ((Xcls_WindowRooViewXcls_view*) self);
+	result = ___lambda54_ ((Xcls_WindowRooViewXcls_view*) self);
 #line 398 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
 	return result;
 #line 1408 "WindowRooView.vala.c"
 }
 
 
-static gboolean ___lambda54_ (Xcls_WindowRooViewXcls_view* self) {
+static gboolean ___lambda55_ (Xcls_WindowRooViewXcls_view* self) {
 	gboolean result = FALSE;
 #line 437 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
 	g_print ("run refresh?");
@@ -1422,16 +1422,16 @@ static gboolean ___lambda54_ (Xcls_WindowRooViewXcls_view* self) {
 }
 
 
-static gboolean ____lambda54__gsource_func (gpointer self) {
+static gboolean ____lambda55__gsource_func (gpointer self) {
 	gboolean result;
-	result = ___lambda54_ ((Xcls_WindowRooViewXcls_view*) self);
+	result = ___lambda55_ ((Xcls_WindowRooViewXcls_view*) self);
 #line 436 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
 	return result;
 #line 1431 "WindowRooView.vala.c"
 }
 
 
-static gboolean __lambda55_ (Xcls_WindowRooViewXcls_view* self, GtkWidget* ctx, GdkDragContext* x, gint y, gint time, guint ud) {
+static gboolean __lambda56_ (Xcls_WindowRooViewXcls_view* self, GtkWidget* ctx, GdkDragContext* x, gint y, gint time, guint ud) {
 	gboolean result = FALSE;
 #line 446 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
 	g_return_val_if_fail (ctx != NULL, FALSE);
@@ -1445,16 +1445,16 @@ static gboolean __lambda55_ (Xcls_WindowRooViewXcls_view* self, GtkWidget* ctx, 
 }
 
 
-static gboolean ___lambda55__gtk_widget_drag_drop (GtkWidget* _sender, GdkDragContext* context, gint x, gint y, guint time_, gpointer self) {
+static gboolean ___lambda56__gtk_widget_drag_drop (GtkWidget* _sender, GdkDragContext* context, gint x, gint y, guint time_, gpointer self) {
 	gboolean result;
-	result = __lambda55_ ((Xcls_WindowRooViewXcls_view*) self, _sender, context, x, y, time_);
+	result = __lambda56_ ((Xcls_WindowRooViewXcls_view*) self, _sender, context, x, y, time_);
 #line 446 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
 	return result;
 #line 1454 "WindowRooView.vala.c"
 }
 
 
-static void __lambda56_ (Xcls_WindowRooViewXcls_view* self) {
+static void __lambda57_ (Xcls_WindowRooViewXcls_view* self) {
 	WebKitWebInspector* _tmp0_ = NULL;
 #line 469 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
 	_tmp0_ = self->inspector;
@@ -1464,9 +1464,9 @@ static void __lambda56_ (Xcls_WindowRooViewXcls_view* self) {
 }
 
 
-static void ___lambda56__gtk_widget_show (GtkWidget* _sender, gpointer self) {
+static void ___lambda57__gtk_widget_show (GtkWidget* _sender, gpointer self) {
 #line 468 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
-	__lambda56_ ((Xcls_WindowRooViewXcls_view*) self);
+	__lambda57_ ((Xcls_WindowRooViewXcls_view*) self);
 #line 1471 "WindowRooView.vala.c"
 }
 
@@ -1566,13 +1566,13 @@ Xcls_WindowRooViewXcls_view* xcls_windowrooview_xcls_view_construct (GType objec
 #line 398 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
 		_tmp13_ = self->inspector;
 #line 398 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
-		g_signal_connect_object (_tmp13_, "open-window", (GCallback) ____lambda53__webkit_web_inspector_open_window, self, 0);
+		g_signal_connect_object (_tmp13_, "open-window", (GCallback) ____lambda54__webkit_web_inspector_open_window, self, 0);
 #line 416 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
 		_tmp14_ = self->el;
 #line 416 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
 		webkit_web_view_load_html (_tmp14_, "Render not ready", "http://localhost/app.Builder/");
 #line 436 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
-		g_timeout_add_seconds_full (G_PRIORITY_DEFAULT, (guint) 1, ____lambda54__gsource_func, g_object_ref (self), g_object_unref);
+		g_timeout_add_seconds_full (G_PRIORITY_DEFAULT, (guint) 1, ____lambda55__gsource_func, g_object_ref (self), g_object_unref);
 #line 385 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
 		_g_object_unref0 (settings);
 #line 1579 "WindowRooView.vala.c"
@@ -1580,11 +1580,11 @@ Xcls_WindowRooViewXcls_view* xcls_windowrooview_xcls_view_construct (GType objec
 #line 446 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
 	_tmp15_ = self->el;
 #line 446 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
-	g_signal_connect_object ((GtkWidget*) _tmp15_, "drag-drop", (GCallback) ___lambda55__gtk_widget_drag_drop, self, 0);
+	g_signal_connect_object ((GtkWidget*) _tmp15_, "drag-drop", (GCallback) ___lambda56__gtk_widget_drag_drop, self, 0);
 #line 468 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
 	_tmp16_ = self->el;
 #line 468 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
-	g_signal_connect_object ((GtkWidget*) _tmp16_, "show", (GCallback) ___lambda56__gtk_widget_show, self, 0);
+	g_signal_connect_object ((GtkWidget*) _tmp16_, "show", (GCallback) ___lambda57__gtk_widget_show, self, 0);
 #line 368 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
 	return self;
 #line 1591 "WindowRooView.vala.c"

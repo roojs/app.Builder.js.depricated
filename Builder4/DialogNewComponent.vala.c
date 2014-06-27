@@ -710,9 +710,9 @@ gpointer xcls_dialognewcomponent_value_get_xcls_button17 (const GValue* value);
 GType xcls_dialognewcomponent_xcls_button17_get_type (void) G_GNUC_CONST;
 Xcls_DialogNewComponentXcls_Button17* xcls_dialognewcomponent_xcls_button17_new (void);
 Xcls_DialogNewComponentXcls_Button17* xcls_dialognewcomponent_xcls_button17_construct (GType object_type);
-static gboolean __lambda65_ (Xcls_DialogNewComponent* self, GtkWidget* _self_, GdkEventAny* event);
-static gboolean ___lambda65__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self);
-static void __lambda66_ (Xcls_DialogNewComponent* self, GtkDialog* _self_, gint response_id);
+static gboolean __lambda66_ (Xcls_DialogNewComponent* self, GtkWidget* _self_, GdkEventAny* event);
+static gboolean ___lambda66__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self);
+static void __lambda67_ (Xcls_DialogNewComponent* self, GtkDialog* _self_, gint response_id);
 gpointer xcls_standarderrordialog_ref (gpointer instance);
 void xcls_standarderrordialog_unref (gpointer instance);
 GParamSpec* param_spec_xcls_standarderrordialog (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags);
@@ -726,9 +726,9 @@ GType js_render_node_get_type (void) G_GNUC_CONST;
 void js_render_js_render_save (JsRenderJsRender* self);
 gchar* project_project_firstPath (ProjectProject* self);
 JsRenderJsRender* project_project_create (ProjectProject* self, const gchar* filename);
-static void ___lambda66__gtk_dialog_response (GtkDialog* _sender, gint response_id, gpointer self);
-static void __lambda67_ (Xcls_DialogNewComponent* self, GtkWidget* _self_);
-static void ___lambda67__gtk_widget_show (GtkWidget* _sender, gpointer self);
+static void ___lambda67__gtk_dialog_response (GtkDialog* _sender, gint response_id, gpointer self);
+static void __lambda68_ (Xcls_DialogNewComponent* self, GtkWidget* _self_);
+static void ___lambda68__gtk_widget_show (GtkWidget* _sender, gpointer self);
 void xcls_dialognewcomponent_show (Xcls_DialogNewComponent* self, JsRenderJsRender* c);
 static void g_cclosure_user_marshal_VOID__OBJECT_OBJECT (GClosure * closure, GValue * return_value, guint n_param_values, const GValue * param_values, gpointer invocation_hint, gpointer marshal_data);
 enum  {
@@ -880,7 +880,7 @@ static gpointer _xcls_dialognewcomponent_ref0 (gpointer self) {
 }
 
 
-static gboolean __lambda65_ (Xcls_DialogNewComponent* self, GtkWidget* _self_, GdkEventAny* event) {
+static gboolean __lambda66_ (Xcls_DialogNewComponent* self, GtkWidget* _self_, GdkEventAny* event) {
 	gboolean result = FALSE;
 	GtkDialog* _tmp0_ = NULL;
 #line 60 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
@@ -899,16 +899,16 @@ static gboolean __lambda65_ (Xcls_DialogNewComponent* self, GtkWidget* _self_, G
 }
 
 
-static gboolean ___lambda65__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self) {
+static gboolean ___lambda66__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self) {
 	gboolean result;
-	result = __lambda65_ ((Xcls_DialogNewComponent*) self, _sender, event);
+	result = __lambda66_ ((Xcls_DialogNewComponent*) self, _sender, event);
 #line 60 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
 	return result;
 #line 908 "DialogNewComponent.vala.c"
 }
 
 
-static void __lambda66_ (Xcls_DialogNewComponent* self, GtkDialog* _self_, gint response_id) {
+static void __lambda67_ (Xcls_DialogNewComponent* self, GtkDialog* _self_, gint response_id) {
 	gint _tmp0_ = 0;
 	Xcls_DialogNewComponent* _tmp2_ = NULL;
 	Xcls_DialogNewComponentXcls_name* _tmp3_ = NULL;
@@ -1192,14 +1192,14 @@ static void __lambda66_ (Xcls_DialogNewComponent* self, GtkDialog* _self_, gint 
 }
 
 
-static void ___lambda66__gtk_dialog_response (GtkDialog* _sender, gint response_id, gpointer self) {
+static void ___lambda67__gtk_dialog_response (GtkDialog* _sender, gint response_id, gpointer self) {
 #line 65 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
-	__lambda66_ ((Xcls_DialogNewComponent*) self, _sender, response_id);
+	__lambda67_ ((Xcls_DialogNewComponent*) self, _sender, response_id);
 #line 1199 "DialogNewComponent.vala.c"
 }
 
 
-static void __lambda67_ (Xcls_DialogNewComponent* self, GtkWidget* _self_) {
+static void __lambda68_ (Xcls_DialogNewComponent* self, GtkWidget* _self_) {
 	GtkDialog* _tmp0_ = NULL;
 #line 137 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
 	g_return_if_fail (_self_ != NULL);
@@ -1211,9 +1211,9 @@ static void __lambda67_ (Xcls_DialogNewComponent* self, GtkWidget* _self_) {
 }
 
 
-static void ___lambda67__gtk_widget_show (GtkWidget* _sender, gpointer self) {
+static void ___lambda68__gtk_widget_show (GtkWidget* _sender, gpointer self) {
 #line 137 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
-	__lambda67_ ((Xcls_DialogNewComponent*) self, _sender);
+	__lambda68_ ((Xcls_DialogNewComponent*) self, _sender);
 #line 1218 "DialogNewComponent.vala.c"
 }
 
@@ -1318,15 +1318,15 @@ Xcls_DialogNewComponent* xcls_dialognewcomponent_construct (GType object_type) {
 #line 60 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
 	_tmp17_ = self->el;
 #line 60 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
-	g_signal_connect ((GtkWidget*) _tmp17_, "delete-event", (GCallback) ___lambda65__gtk_widget_delete_event, self);
+	g_signal_connect ((GtkWidget*) _tmp17_, "delete-event", (GCallback) ___lambda66__gtk_widget_delete_event, self);
 #line 65 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
 	_tmp18_ = self->el;
 #line 65 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
-	g_signal_connect (_tmp18_, "response", (GCallback) ___lambda66__gtk_dialog_response, self);
+	g_signal_connect (_tmp18_, "response", (GCallback) ___lambda67__gtk_dialog_response, self);
 #line 137 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
 	_tmp19_ = self->el;
 #line 137 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
-	g_signal_connect ((GtkWidget*) _tmp19_, "show", (GCallback) ___lambda67__gtk_widget_show, self);
+	g_signal_connect ((GtkWidget*) _tmp19_, "show", (GCallback) ___lambda68__gtk_widget_show, self);
 #line 38 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
 	_xcls_dialognewcomponent_xcls_button17_unref0 (child_2);
 #line 38 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
