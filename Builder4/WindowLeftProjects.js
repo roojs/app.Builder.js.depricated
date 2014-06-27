@@ -14,21 +14,6 @@ WindowLeftProjects=new XObject({
     activeElement : false,
     id : "WindowLeftProjects",
     pack : "pack_end,false,true,0",
-    hideWin : function() {
-         
-        if (!this.shown) {
-            return;
-        }
-        
-        
-        if (this.get('/Window.left').el.position < 160) {
-            return;
-        }
-        this.get('/Window.left').el.position = this.get('/Window.left').el.position  - 150;
-            
-        this.el.hide();
-        this.shown = false;
-    },
     init : function() {
         XObject.prototype.init.call(this);
            XObject.prototype.init.call(this); 

@@ -53,8 +53,6 @@ public class Xcls_WindowLeftProjects : Object
 
     // userdefined functions 
 
-    // skip |hideWin - no return type
-
     // skip |xns - no return type
     public class Xcls_TreeView2 : Object 
     {
