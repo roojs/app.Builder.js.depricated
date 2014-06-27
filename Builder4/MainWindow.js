@@ -29,6 +29,11 @@ MainWindow=new XObject({
     init : //this.el.show_all();,
     type : Gtk.WindowType.TOPLEVEL,
     'void:hideViewEditing' : ( )   {
+        
+         this.editpane.el.show();
+        this.rooview.el.show();
+         this.left_projects.el.hide();
+        
         var el = _this.rooview.el;
         el.save_easing_state();
        
