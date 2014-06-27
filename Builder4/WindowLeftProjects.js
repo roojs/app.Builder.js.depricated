@@ -14,15 +14,36 @@ WindowLeftProjects=new XObject({
     id : "WindowLeftProjects",
     pack : "pack_end,false,true,0",
     'void:load' : () {
+         // clear list...
+         
          Project.loadAll();
          var projects = Project.allProjectsByName();
-         for (var i = 0; i < projects.size; i++) {
          
+         Gtk.TreeIter iter;
+         var m = this.model.el;
+              
+         for (var i = 0; i < projects.size; i++) {
+            m.append(out iter,null);
          
          
          }
          
-         
+        
+                
+                
+                // really need a way to sort the hashmap...
+                
+                var miter = node.listeners.map_iterator();
+                
+                while(miter.next()) {
+                    m.append(out iter,null);
+                    m.set(iter, 
+                            0, "listener",
+                            1, miter.get_key(),
+                            2, "<b>" + miter.get_key() + "</b>",
+                            3, miter.get_value()
+                        ); 
+                 }
          
     },
     init : this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC),
