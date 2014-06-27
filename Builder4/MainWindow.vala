@@ -80,8 +80,8 @@ public class Xcls_MainWindow : Object
         this.el.show.connect(   ( ) => {
             // hide the file editing..
             this.editpane.el.hide();
-            this.window_rooview.el.hide();
-            this.left_projects.el.show();
+            //this.window_rooview.el.hide();
+            //this.left_projects.el.show();
          
         } );
         this.el.delete_event.connect(   (   event) => {
