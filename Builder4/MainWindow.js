@@ -235,9 +235,9 @@ MainWindow=new XObject({
                                                         clicked : ( ) => {
                                                              
                                                             if (_this.is_editing) { 
-                                                                _this.showViewBrowsing();
-                                                            } else {
                                                                 _this.hideViewEditing();
+                                                            } else {
+                                                                _this.showViewEditing();
                                                             }
                                                                 
                                                         

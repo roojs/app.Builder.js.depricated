@@ -560,9 +560,9 @@ public class Xcls_MainWindow : Object
             this.el.clicked.connect(   ( ) => {
                  
                 if (_this.is_editing) { 
-                    _this.showViewBrowsing();
-                } else {
                     _this.hideViewEditing();
+                } else {
+                    _this.showViewEditing();
                 }
                     
             
