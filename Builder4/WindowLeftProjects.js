@@ -100,28 +100,6 @@ WindowLeftProjects=new XObject({
                     id : "model",
                     n_columns : 2,
                     pack : "set_model",
-                    getValue : function(treepath, col)
-                    {
-                        var tp = new Gtk.TreePath.from_string (treepath);
-                        var iter = new Gtk.TreeIter();
-                        this.el.get_iter (iter, tp);
-                        var value = new GObject.Value('');
-                        this.el.get_value(iter, col, value);
-                        return value.value;
-                        
-                    },
-                    init : function() {
-                        XObject.prototype.init.call(this);
-                       this.el.set_column_types ( 6, [
-                            GObject.TYPE_STRING,  // real key
-                             GObject.TYPE_STRING, // real type
-                             GObject.TYPE_STRING, // docs ?
-                             GObject.TYPE_STRING, // visable desc
-                             GObject.TYPE_STRING, // function desc
-                             GObject.TYPE_STRING // element type (event|prop)
-                            
-                        ] );
-                    },
                     showData : function(type) {
                         this.el.clear();
                                 if (!this.get('/MidPropTree').activeElement || !type) {

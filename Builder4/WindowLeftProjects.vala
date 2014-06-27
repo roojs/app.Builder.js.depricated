@@ -169,25 +169,9 @@ public class Xcls_WindowLeftProjects : Object
             // my vars
 
             // set gobject values
-
-            // init method 
-            function() {
-                XObject.prototype.init.call(this);
-               this.el.set_column_types ( 6, [
-                    GObject.TYPE_STRING,  // real key
-                     GObject.TYPE_STRING, // real type
-                     GObject.TYPE_STRING, // docs ?
-                     GObject.TYPE_STRING, // visable desc
-                     GObject.TYPE_STRING, // function desc
-                     GObject.TYPE_STRING // element type (event|prop)
-                    
-                ] );
-            }
         }
 
         // userdefined functions 
-
-        // skip |getValue - no return type
 
         // skip |showData - no return type
 
