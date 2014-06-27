@@ -409,15 +409,10 @@ public class Xcls_MainWindow : Object
             this.el.get_stage().add_child (  child_1.el  );
 
             // init method 
-            var stage = this.el.get_stage();
-            stage.set_background_color(  Clutter.Color.from_string("#000"));
-            this.clutterfiles = new Xcls_ClutterFiles();
-            stage.add_child(this.clutterfiles.el);
-            this.clutterfiles.open.connect((file) => { 
-                _this.showViewEditing();
-                print("OPEN : " + file.name);
-            
-            });
+                var stage = this.el.get_stage();
+                stage.set_background_color(  Clutter.Color.from_string("#000"));
+                
+                
 
             // listeners 
             this.el.size_allocate.connect(   (  alloc) => {

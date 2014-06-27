@@ -171,14 +171,7 @@ MainWindow=new XObject({
                                     id : "clutterembed",
                                     pack : "add",
                                     init : var stage = this.el.get_stage();
-                                    stage.set_background_color(  Clutter.Color.from_string("#000"));
-                                    this.clutterfiles = new Xcls_ClutterFiles();
-                                    stage.add_child(this.clutterfiles.el);
-                                    this.clutterfiles.open.connect((file) => { 
-                                        _this.showViewEditing();
-                                        print("OPEN : " + file.name);
-                                    
-                                    });,
+                                        stage.set_background_color(  Clutter.Color.from_string("#000"));,
                                     items : [
                                         {
                                             xtype: GtkClutter.Actor,
