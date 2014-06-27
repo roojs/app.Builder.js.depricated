@@ -49,6 +49,36 @@
                                     ]
                                 }
                             ]
+                        },
+                        {
+                            "listeners": {
+                                "button_press_event": " ( event ) => {\n    _this.show_new_project();\n    return false;\n}"
+                            },
+                            "pack": "add",
+                            "xtype": "Button",
+                            "|xns": "Gtk",
+                            "items": [
+                                {
+                                    "|xns": "Gtk",
+                                    "xtype": "HBox",
+                                    "pack": "add",
+                                    "items": [
+                                        {
+                                            "|xns": "Gtk",
+                                            "xtype": "Image",
+                                            "pack": "add",
+                                            "|stock": "Gtk.STOCK_ADD",
+                                            "|icon_size": "Gtk.IconSize.MENU"
+                                        },
+                                        {
+                                            "label": "New Project",
+                                            "pack": "add",
+                                            "xtype": "Label",
+                                            "|xns": "Gtk"
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 },
