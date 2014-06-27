@@ -78,8 +78,34 @@ public class Xcls_MainWindow : Object
     }
 
     // userdefined functions 
-
-    // skip | - no return type
+    public void initChildren () {
+        
+            this.left_tree =new Xcls_WindowLeftTree();
+            this.tree.el.pack_start(this.left_tree.el,true, true,0);
+        
+        
+            this.left_props =new Xcls_LeftProps();
+            //left_props.ref();
+            this..props.el.pack_start(this.left_props.el,true, true,0);
+        
+        
+            this.rooview  =new Xcls_WindowRooView();
+            //rv.ref();
+            ((Gtk.Container)(w.rooview.el.get_widget())).add(this.rooview .el);
+            //rv.el.show_all();
+        
+            //w.el.show_all();
+            var tl = new Clutter.Timeline(6000);
+            tl.set_repeat_count(-1);
+            tl.start();
+            tl.ref();
+        
+        
+        
+        
+        
+        
+        }
     public void setTitle (string str) {
             this.el.set_title(this.title + " - " + str);
         }
