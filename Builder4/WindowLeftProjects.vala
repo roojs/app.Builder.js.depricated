@@ -313,7 +313,7 @@ public class Xcls_WindowLeftProjects : Object
         public Xcls_Label10(Xcls_WindowLeftProjects _owner )
         {
             _this = _owner;
-            this.el = new Gtk.Label( "Edit Project" );
+            this.el = new Gtk.Label( "Edit  " );
 
             // my vars
 

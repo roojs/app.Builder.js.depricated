@@ -71,7 +71,7 @@
                                             "|icon_size": "Gtk.IconSize.MENU"
                                         },
                                         {
-                                            "label": "Edit Project",
+                                            "label": "Edit  ",
                                             "pack": "add",
                                             "xtype": "Label",
                                             "|xns": "Gtk"
