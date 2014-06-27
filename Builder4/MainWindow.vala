@@ -33,6 +33,7 @@ public class Xcls_MainWindow : Object
     public Xcls_projectbutton projectbutton;
 
         // my vars
+    public bool children_loaded;
     public Project.Project project;
     public Xcls_ClutterFiles clutterfiles;
     public Xcls_LeftProps left_props;
@@ -50,6 +51,7 @@ public class Xcls_MainWindow : Object
         this.el = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
 
         // my vars
+        this.children_loaded = false;
         this.clutterfiles = null;
         this.left_props = null;
         this.left_projects = null;
@@ -119,7 +121,7 @@ public class Xcls_MainWindow : Object
         
             // left projects..
             this.left_projects = new Xcls_WindowLeftProjects();
-            this.vbox.el.pack_start(this.left_projects.el,true, true,0);
+            this.vbox.el.pack_start(this.left_props.el,true, true,0);
            
             
            
@@ -152,7 +154,7 @@ public class Xcls_MainWindow : Object
             tl.start();
             tl.ref();
         
-            
+            this.children_loaded = true;
         
         
         
@@ -436,7 +438,9 @@ public class Xcls_MainWindow : Object
 
             // listeners 
             this.el.size_allocate.connect(   (  alloc) => {
-            
+                if (!_this.children_loaded) {
+                    return;
+                }
                 _this.rooview.el.set_size(this.el.get_stage().width-50,
                         this.el.get_stage().height);
                 _this.clutterfiles.set_size(this.el.get_stage().width-50,
