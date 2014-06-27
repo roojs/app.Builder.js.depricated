@@ -115,7 +115,7 @@
                                                     "items": [
                                                         {
                                                             "listeners": {
-                                                                "clicked": "  ( ) => {\n     \n    if (_this.rooview.is_fullsize) { \n        _this.showViewBrowsing();\n    } else {\n            _this.showViewEditing();\n    }\n        \n\n}"
+                                                                "clicked": "  ( ) => {\n     \n    if (_this.rooview.is_fullsize) { \n        _this.showViewBrowsing();\n    } else {\n        _this.hideViewEditing();\n    }\n        \n\n}"
                                                             },
                                                             "label": "P",
                                                             "pack": false,
