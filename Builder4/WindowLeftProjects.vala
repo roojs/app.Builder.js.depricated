@@ -120,7 +120,7 @@ public class Xcls_WindowLeftProjects : Object
 
             // listeners 
             this.el.button_press_event.connect(  ( event ) => {
-                _this.show_add_props("prop");
+                _this.show_new_project();
                 return false;
             } );
         }

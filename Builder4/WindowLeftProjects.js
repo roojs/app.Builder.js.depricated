@@ -46,7 +46,7 @@ WindowLeftProjects=new XObject({
                     xtype: Gtk.Button,
                     listeners : {
                         button_press_event : ( event ) => {
-                            _this.show_add_props("prop");
+                            _this.show_new_project();
                             return false;
                         }
                     },
