@@ -164,7 +164,7 @@ public class Xcls_WindowLeftProjects : Object
         {
             _this = _owner;
             _this.model = this;
-            this.el = new Gtk.ListStore( null, null );
+            this.el = new Gtk.ListStore( "", null );
 
             // my vars
 
