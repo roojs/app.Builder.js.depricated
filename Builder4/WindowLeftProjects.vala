@@ -173,8 +173,6 @@ public class Xcls_WindowLeftProjects : Object
 
         // userdefined functions 
 
-        // skip |showData - no return type
-
         // skip |xns - no return type
     }
     public class Xcls_TreeViewColumn4 : Object 
