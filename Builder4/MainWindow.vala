@@ -441,7 +441,6 @@ public class Xcls_MainWindow : Object
 
 
             // my vars
-        public bool is_fullsize;
 
             // ctor 
         public Xcls_rooview(Xcls_MainWindow _owner )
@@ -451,7 +450,6 @@ public class Xcls_MainWindow : Object
             this.el = new GtkClutter.Actor();
 
             // my vars
-            this.is_fullsize = true;
 
             // set gobject values
 
@@ -547,7 +545,7 @@ public class Xcls_MainWindow : Object
             // listeners 
             this.el.clicked.connect(   ( ) => {
                  
-                if (_this.rooview.is_fullsize) { 
+                if (_this.is_editing) { 
                     _this.showViewBrowsing();
                 } else {
                     _this.hideViewEditing();

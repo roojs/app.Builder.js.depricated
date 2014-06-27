@@ -225,7 +225,7 @@ MainWindow=new XObject({
                                                     listeners : {
                                                         clicked : ( ) => {
                                                              
-                                                            if (_this.rooview.is_fullsize) { 
+                                                            if (_this.is_editing) { 
                                                                 _this.showViewBrowsing();
                                                             } else {
                                                                 _this.hideViewEditing();
