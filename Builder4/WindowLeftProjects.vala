@@ -23,6 +23,7 @@ public class Xcls_WindowLeftProjects : Object
     private Xcls_WindowLeftProjects  _this;
 
     public Xcls_model model;
+    public Xcls_name name;
 
         // my vars
 
@@ -192,7 +193,7 @@ public class Xcls_WindowLeftProjects : Object
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_CellRendererText5( _this );
+            var child_0 = new Xcls_name( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , true );
 
@@ -210,7 +211,7 @@ public class Xcls_WindowLeftProjects : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_CellRendererText5 : Object 
+    public class Xcls_name : Object 
     {
         public Gtk.CellRendererText el;
         private Xcls_WindowLeftProjects  _this;
@@ -219,9 +220,10 @@ public class Xcls_WindowLeftProjects : Object
             // my vars
 
             // ctor 
-        public Xcls_CellRendererText5(Xcls_WindowLeftProjects _owner )
+        public Xcls_name(Xcls_WindowLeftProjects _owner )
         {
             _this = _owner;
+            _this.name = this;
             this.el = new Gtk.CellRendererText();
 
             // my vars

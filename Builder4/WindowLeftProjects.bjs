@@ -41,9 +41,10 @@
                             "|xns": "Gtk",
                             "items": [
                                 {
-                                    "|xns": "Gtk",
+                                    "id": "name",
+                                    "pack": "pack_start,true",
                                     "xtype": "CellRendererText",
-                                    "pack": "pack_start,true"
+                                    "|xns": "Gtk"
                                 }
                             ]
                         }

@@ -114,6 +114,7 @@ WindowLeftProjects=new XObject({
                     items : [
                         {
                             xtype: Gtk.CellRendererText,
+                            id : "name",
                             pack : "pack_start,true"
                         }
                     ]
