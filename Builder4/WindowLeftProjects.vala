@@ -46,8 +46,6 @@ public class Xcls_WindowLeftProjects : Object
     }
 
     // userdefined functions 
-
-    // skip |xns - no return type
     public void load() {
              // clear list...
              
@@ -71,6 +69,8 @@ public class Xcls_WindowLeftProjects : Object
              
              
         }
+
+    // skip |xns - no return type
     public class Xcls_HBox2 : Object 
     {
         public Gtk.HBox el;
