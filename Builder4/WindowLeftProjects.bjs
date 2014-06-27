@@ -101,7 +101,7 @@
                                             "|icon_size": "Gtk.IconSize.MENU"
                                         },
                                         {
-                                            "label": "Delete Project",
+                                            "label": "Delete  ",
                                             "pack": "add",
                                             "xtype": "Label",
                                             "|xns": "Gtk"

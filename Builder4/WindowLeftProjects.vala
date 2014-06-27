@@ -422,7 +422,7 @@ public class Xcls_WindowLeftProjects : Object
         public Xcls_Label14(Xcls_WindowLeftProjects _owner )
         {
             _this = _owner;
-            this.el = new Gtk.Label( "Delete Project" );
+            this.el = new Gtk.Label( "Delete  " );
 
             // my vars
 
