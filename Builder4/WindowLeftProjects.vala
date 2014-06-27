@@ -27,7 +27,7 @@ public class Xcls_WindowLeftProjects : Object
     public Xcls_namecol namecol;
 
         // my vars
-    public signal void project_selected;
+    public signal void project_selected(Project.Project project);
     public signal void show_new_project();
 
         // ctor 
