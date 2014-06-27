@@ -96,8 +96,9 @@ WindowLeftProjects=new XObject({
             items : [
                 {
                     xtype: Gtk.ListStore,
-                    n_columns : 2,
+                    columns : "",
                     id : "model",
+                    n_columns : 2,
                     pack : "set_model",
                     getValue : function(treepath, col)
                     {

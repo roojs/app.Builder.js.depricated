@@ -27,8 +27,9 @@
                     "|xns": "Gtk",
                     "items": [
                         {
-                            "n_columns": 2,
+                            "columns": "",
                             "id": "model",
+                            "n_columns": 2,
                             "pack": "set_model",
                             "xtype": "ListStore",
                             "|getValue": "function(treepath, col)\n{\n    var tp = new Gtk.TreePath.from_string (treepath);\n    var iter = new Gtk.TreeIter();\n    this.el.get_iter (iter, tp);\n    var value = new GObject.Value('');\n    this.el.get_value(iter, col, value);\n    return value.value;\n    \n}",
