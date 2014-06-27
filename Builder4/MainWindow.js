@@ -95,7 +95,7 @@ MainWindow=new XObject({
         tl.start();
         tl.ref();
     
-        
+        this.children_loaded = true;
     
     
     
