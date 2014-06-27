@@ -55,6 +55,7 @@ public class Xcls_WindowLeftProjects : Object
              
              Gtk.TreeIter iter;
              var m = this.model.el;
+             m.clear();
                   
              for (var i = 0; i < projects.size; i++) {
                 m.append(out iter,null);

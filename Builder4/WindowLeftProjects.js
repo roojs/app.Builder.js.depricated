@@ -21,6 +21,7 @@ WindowLeftProjects=new XObject({
          
          Gtk.TreeIter iter;
          var m = this.model.el;
+         m.clear();
               
          for (var i = 0; i < projects.size; i++) {
             m.append(out iter,null);
