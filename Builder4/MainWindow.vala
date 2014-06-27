@@ -121,7 +121,7 @@ public class Xcls_MainWindow : Object
         
             // left projects..
             this.left_projects = new Xcls_WindowLeftProjects();
-            this.vbox.el.pack_start(this.left_projects.el,true, true,0);
+            this.leftpane.el.pack_start(this.left_projects.el,true, true,0);
            
             
            
