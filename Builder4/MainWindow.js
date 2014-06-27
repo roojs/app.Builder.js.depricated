@@ -61,8 +61,8 @@ MainWindow=new XObject({
     
     
         // left projects..
-        this.left_projects = new Xcls_WindowLeftProjects();
-        this.leftpane.el.pack_start(this.left_projects.el,true, true,0);
+        //this.left_projects = new Xcls_WindowLeftProjects();
+        //this.leftpane.el.pack_start(this.left_projects.el,true, true,0);
        
         
        
