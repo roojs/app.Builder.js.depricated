@@ -22,6 +22,7 @@ public class Xcls_WindowLeftProjects : Object
     public Gtk.VBox el;
     private Xcls_WindowLeftProjects  _this;
 
+    public Xcls_view view;
     public Xcls_model model;
     public Xcls_namecol namecol;
 
@@ -225,7 +226,7 @@ public class Xcls_WindowLeftProjects : Object
 
             // set gobject values
             this.el.shadow_type = Gtk.ShadowType.IN;
-            var child_0 = new Xcls_TreeView8( _this );
+            var child_0 = new Xcls_view( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
 
@@ -237,7 +238,7 @@ public class Xcls_WindowLeftProjects : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_TreeView8 : Object 
+    public class Xcls_view : Object 
     {
         public Gtk.TreeView el;
         private Xcls_WindowLeftProjects  _this;
@@ -246,9 +247,10 @@ public class Xcls_WindowLeftProjects : Object
             // my vars
 
             // ctor 
-        public Xcls_TreeView8(Xcls_WindowLeftProjects _owner )
+        public Xcls_view(Xcls_WindowLeftProjects _owner )
         {
             _this = _owner;
+            _this.view = this;
             this.el = new Gtk.TreeView();
 
             // my vars

@@ -62,6 +62,7 @@
                             "listeners": {
                                 "cursor_changed": " () => {\n\n    Gtk.TreeIter iter;\n    Gtk.TreeModel mod;\n            \n    var s = this.view.el.get_selection();\n    s.get_selected(out mod, out iter);\n  \n    GLib.Value gval;\n\n    mod.get_value(iter, 1 , out gval);\n    var project = (Project.Project)gval.get_object();\n    \n    _this.project_selected(project);\n    \n}"
                             },
+                            "id": "view",
                             "pack": "add",
                             "tooltip_column": 2,
                             "xtype": "TreeView",
