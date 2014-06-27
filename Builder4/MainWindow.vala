@@ -122,6 +122,7 @@ public class Xcls_MainWindow : Object
         
             // left projects..
              this.left_projects = new Xcls_WindowLeftProjects();
+             this.left_projects.ref();
             this.leftpane.el.pack_start(this.left_projects.el,true, true,0);
            
             
