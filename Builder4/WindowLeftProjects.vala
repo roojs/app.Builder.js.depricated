@@ -265,8 +265,7 @@ public class Xcls_WindowLeftProjects : Object
             this.el.append_column (  child_1.el  );
 
             // init method 
-                        
-                   var description = new Pango.FontDescription.c_new();
+              var description = new Pango.FontDescription();
                  description.set_size(8000);
                 this.el.modify_font(description);     
                                 

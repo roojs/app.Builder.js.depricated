@@ -103,7 +103,7 @@ WindowLeftProjects=new XObject({
                     tooltip_column : 2,
                     enable_tree_lines : true,
                     headers_visible : false,
-                    init : var description = new Pango.FontDescription.c_new();
+                    init : var description = new Pango.FontDescription();
                          description.set_size(8000);
                         this.el.modify_font(description);     
                                         
