@@ -6,14 +6,13 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProjects.bjs",
     "items": [
         {
+            "|signal:void:show_new_project": "()",
             "id": "WindowLeftProjects",
             "pack": "pack_end,false,true,0",
             "xtype": "VBox",
             "|homogeneous": "false",
             "|void:load": "() {\n     // clear list...\n     \n     Project.loadAll();\n     var projects = Project.allProjectsByName();\n     \n     Gtk.TreeIter iter;\n     var m = this.model.el;\n     m.clear();\n          \n     for (var i = 0; i < projects.size; i++) {\n        m.append(out iter,null);\n        m.set(iter,   0,projects.get(i).name );\n        \n      var o = new GLib.Value(typeof(Object));\n        o.set_object((Object)projects.get(i));\n                   \n        m.setValue(iter, 1, o);\n     \n     }\n     \n     \n}\n",
             "|xns": "Gtk",
-            "": "",
-            "listeners": {},
             "items": [
                 {
                     "pack": "pack_start,false,true,0",
