@@ -15,7 +15,7 @@ MainWindow=new XObject({
         show : ( ) => {
             // hide the file editing..
             this.leftpane.el.hide();
-            this.window_rooview.hide();
+            this.window_rooview.el.hide();
             this.left_projects.el.show();
          
         },
