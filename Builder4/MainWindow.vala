@@ -25,6 +25,7 @@ public class Xcls_MainWindow : Object
     public Xcls_vbox vbox;
     public Xcls_topbar topbar;
     public Xcls_leftpane leftpane;
+    public Xcls_leftpane leftpane;
     public Xcls_tree tree;
     public Xcls_props props;
     public Xcls_clutterembed clutterembed;
@@ -236,7 +237,7 @@ public class Xcls_MainWindow : Object
 
             // set gobject values
             this.el.position = 400;
-            var child_0 = new Xcls_VBox5( _this );
+            var child_0 = new Xcls_leftpane( _this );
             child_0.ref();
             this.el.add1 (  child_0.el  );
             var child_1 = new Xcls_VBox9( _this );
@@ -248,7 +249,7 @@ public class Xcls_MainWindow : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_VBox5 : Object 
+    public class Xcls_leftpane : Object 
     {
         public Gtk.VBox el;
         private Xcls_MainWindow  _this;
@@ -257,9 +258,10 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_VBox5(Xcls_MainWindow _owner )
+        public Xcls_leftpane(Xcls_MainWindow _owner )
         {
             _this = _owner;
+            _this.leftpane = this;
             this.el = new Gtk.VBox( true, 0 );
 
             // my vars
@@ -268,8 +270,6 @@ public class Xcls_MainWindow : Object
             var child_0 = new Xcls_VPaned6( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,true,0 );
-
-            // listeners 
         }
 
         // userdefined functions 
