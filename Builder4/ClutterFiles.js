@@ -70,6 +70,10 @@ ClutterFiles=new XObject({
     'void:show' : (Project.Project pr) {
         // list all the files, and create new Xcls_fileitem for each one.
         
+        // LEAK --- we should unref all the chilren...
+        this.filelayout.el.remove_all_children();
+        
+        
         var fiter = pr.files.map_iterator();
         while (fiter.next()) {
             var a = new Xcls_fileitem(this,fiter.get_value());
