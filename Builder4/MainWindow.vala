@@ -108,12 +108,12 @@ public class Xcls_MainWindow : Object
     public void initChildren () {
         
             this.left_tree =new Xcls_WindowLeftTree();
-            this.left_tree.ref();
+           // this.left_tree.ref();
             this.tree.el.pack_start(this.left_tree.el,true, true,0);
         
         
             this.left_props =new Xcls_LeftProps();
-            this.left_props.ref();
+            //this.left_props.ref();
             this.props.el.pack_start(this.left_props.el,true, true,0);
         
         
@@ -124,7 +124,7 @@ public class Xcls_MainWindow : Object
             
            
             this.window_rooview  =new Xcls_WindowRooView();
-            this.window_rooview.ref();
+           // this.window_rooview.ref();
             ((Gtk.Container)(this.rooview.el.get_widget())).add(this.window_rooview.el);
             //rv.el.show_all();
         
@@ -132,7 +132,7 @@ public class Xcls_MainWindow : Object
             stage.set_background_color(  Clutter.Color.from_string("#000"));
             
             this.clutterfiles = new Xcls_ClutterFiles();
-            this.clutterfiles.ref();
+           // this.clutterfiles.ref();
             stage.add_child(this.clutterfiles.el);
         
         
