@@ -90,9 +90,9 @@ public class Xcls_MainWindow : Object
     // userdefined functions 
     public void hideViewEditing  ( )   {
             
-             this.editpane.el.show();
-            this.rooview.el.show();
-             this.left_projects.el.hide();
+             this.editpane.el.hide();
+            this.rooview.el.hide();
+             this.left_projects.el.show();
             
             var el = _this.rooview.el;
             el.save_easing_state();
