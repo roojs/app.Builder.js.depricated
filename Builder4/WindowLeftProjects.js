@@ -37,6 +37,11 @@ WindowLeftProjects=new XObject({
          
          
     },
+    listeners : {
+        show : function (self) {
+        
+        }
+    },
     items : [
         {
             xtype: Gtk.HBox,
