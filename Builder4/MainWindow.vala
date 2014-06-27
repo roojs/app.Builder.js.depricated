@@ -438,7 +438,7 @@ public class Xcls_MainWindow : Object
             
                 _this.rooview.el.set_size(this.el.get_stage().width-50,
                         this.el.get_stage().height);
-                this.clutterfiles.set_size(this.el.get_stage().width-50,
+                _this.clutterfiles.set_size(this.el.get_stage().width-50,
                        this.el.get_stage().height);
             
             } );
