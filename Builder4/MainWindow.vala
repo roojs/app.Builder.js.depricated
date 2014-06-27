@@ -33,6 +33,7 @@ public class Xcls_MainWindow : Object
     public Xcls_projectbutton projectbutton;
 
         // my vars
+    public bool is_editing;
     public Project.Project project;
     public Xcls_LeftProps left_props;
     public Xcls_WindowLeftTree left_tree;
@@ -47,6 +48,7 @@ public class Xcls_MainWindow : Object
         this.el = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
 
         // my vars
+        this.is_editing = false;
         this.left_props = null;
         this.left_tree = null;
         this.window_rooview = null;
