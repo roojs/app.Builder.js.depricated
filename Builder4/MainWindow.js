@@ -17,7 +17,7 @@ MainWindow=new XObject({
             this.editpane.el.hide();
             this.rooview.el.hide();
              this.left_projects.el.show();
-         
+            this.hideViewEditing();
         },
         delete_event : (   event) => {
             return false;

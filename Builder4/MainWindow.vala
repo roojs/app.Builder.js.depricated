@@ -82,7 +82,7 @@ public class Xcls_MainWindow : Object
             this.editpane.el.hide();
             this.rooview.el.hide();
              this.left_projects.el.show();
-         
+            this.hideViewEditing();
         } );
         this.el.delete_event.connect(   (   event) => {
             return false;
