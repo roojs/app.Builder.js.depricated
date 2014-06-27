@@ -78,18 +78,17 @@ MainWindow=new XObject({
     'void:showViewBrowsing' : ( )   {
         var el = _this.rooview.el;
         el.save_easing_state();
-      
        
-            // show project / file view..
-            _this.leftpane.lastWidth = _this.leftpane.el.get_position();
-            _this.leftpane.el.set_position(0);
-            // rotate y 180..
-            el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 360.0f);
-            el.set_scale(0.0f,0.0f);
-            _this.rooview.is_fullsize = false;
+        // show project / file view..
+        _this.leftpane.lastWidth = _this.leftpane.el.get_position();
+        _this.leftpane.el.set_position(0);
+        // rotate y 180..
+        el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 360.0f);
+        el.set_scale(0.0f,0.0f);
+        _this.rooview.is_fullsize = false;
     
-            _this.clutterembed.clutterfiles.show(_this.project);
-       
+       // _this.clutterembed.clutterfiles.show(_this.project);
+    
         el.restore_easing_state();
             
         print("show view browsing");
