@@ -11,9 +11,9 @@
             "xtype": "VBox",
             "|xns": "Gtk",
             "|homogeneous": "false",
-            "|void:load": "() {\n     // clear list...\n     \n     Project.loadAll();\n     var projects = Project.allProjectsByName();\n     \n     Gtk.TreeIter iter;\n     var m = this.model.el;\n     m.clear();\n          \n     for (var i = 0; i < projects.size; i++) {\n        m.append(out iter,null);\n        m.set(iter,   0,projects.get(i).name );\n        \n      var o = new GLib.Value(typeof(Object));\n        o.set_object((Object)projects.get(i));\n                   \n        m.setValue(iter, 1, o);\n     \n     }\n     \n     \n}\n", 
+            "|void:load": "() {\n     // clear list...\n     \n     Project.loadAll();\n     var projects = Project.allProjectsByName();\n     \n     Gtk.TreeIter iter;\n     var m = this.model.el;\n     m.clear();\n          \n     for (var i = 0; i < projects.size; i++) {\n        m.append(out iter,null);\n        m.set(iter,   0,projects.get(i).name );\n        \n      var o = new GLib.Value(typeof(Object));\n        o.set_object((Object)projects.get(i));\n                   \n        m.setValue(iter, 1, o);\n     \n     }\n     \n     \n}\n",
             "items": [
-                  {
+                {
                     "pack": "pack_start,false,true,0",
                     "xtype": "HBox",
                     "|xns": "Gtk",
@@ -39,10 +39,10 @@
                                             "|icon_size": "Gtk.IconSize.MENU"
                                         },
                                         {
-                                            "|xns": "Gtk",
-                                            "xtype": "Label",
+                                            "label": "New Project",
                                             "pack": "add",
-                                            "label": "Property"
+                                            "xtype": "Label",
+                                            "|xns": "Gtk"
                                         }
                                     ]
                                 }
@@ -51,15 +51,13 @@
                     ]
                 },
                 {
-                    
                     "pack": "pack_end,true,true,0",
                     "xtype": "ScrolledWindow",
                     "|init": "  this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)\n",
                     "|shadow_type": "Gtk.ShadowType.IN",
                     "|xns": "Gtk",
-                
-                         "items": [
-                           {
+                    "items": [
+                        {
                             "listeners": {
                                 "cursor_changed": " () => {\n\n    Gtk.TreeIter iter;\n    Gtk.TreeModel mod;\n            \n    var s = this.view.el.get_selection();\n    s.get_selected(out mod, out iter);\n  \n    GLib.Value gval;\n\n    mod.get_value(iter, 1 , out gval);\n    var project = (Project.Project)gval.get_object();\n    \n    _this.project_selected(project);\n    \n}"
                             },

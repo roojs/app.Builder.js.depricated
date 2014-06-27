@@ -19,7 +19,7 @@ public static Xcls_WindowLeftProjects  WindowLeftProjects;
 
 public class Xcls_WindowLeftProjects : Object 
 {
-    public Gtk.ScrolledWindow el;
+    public Gtk.VBox el;
     private Xcls_WindowLeftProjects  _this;
 
     public Xcls_model model;
@@ -32,21 +32,22 @@ public class Xcls_WindowLeftProjects : Object
     {
         _this = this;
         WindowLeftProjects = this;
-        this.el = new Gtk.ScrolledWindow( null, null );
+        this.el = new Gtk.VBox( false, 0 );
 
         // my vars
 
         // set gobject values
-        this.el.shadow_type = Gtk.ShadowType.IN;
-        var child_0 = new Xcls_TreeView2( _this );
+        var child_0 = new Xcls_HBox2( _this );
         child_0.ref();
-        this.el.add (  child_0.el  );
-
-        // init method 
-          this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
+        this.el.pack_start (  child_0.el , false,true,0 );
+        var child_1 = new Xcls_ScrolledWindow7( _this );
+        child_1.ref();
+        this.el.pack_end (  child_1.el , true,true,0 );
     }
 
     // userdefined functions 
+
+    // skip |xns - no return type
     public void load() {
              // clear list...
              
@@ -70,9 +71,172 @@ public class Xcls_WindowLeftProjects : Object
              
              
         }
+    public class Xcls_HBox2 : Object 
+    {
+        public Gtk.HBox el;
+        private Xcls_WindowLeftProjects  _this;
 
-    // skip |xns - no return type
-    public class Xcls_TreeView2 : Object 
+
+            // my vars
+
+            // ctor 
+        public Xcls_HBox2(Xcls_WindowLeftProjects _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.HBox( true, 0 );
+
+            // my vars
+
+            // set gobject values
+            var child_0 = new Xcls_Button3( _this );
+            child_0.ref();
+            this.el.add (  child_0.el  );
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+    }
+    public class Xcls_Button3 : Object 
+    {
+        public Gtk.Button el;
+        private Xcls_WindowLeftProjects  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_Button3(Xcls_WindowLeftProjects _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.Button();
+
+            // my vars
+
+            // set gobject values
+            var child_0 = new Xcls_HBox4( _this );
+            child_0.ref();
+            this.el.add (  child_0.el  );
+
+            // listeners 
+            this.el.button_press_event.connect(  ( event ) => {
+                _this.show_add_props("prop");
+                return false;
+            } );
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+    }
+    public class Xcls_HBox4 : Object 
+    {
+        public Gtk.HBox el;
+        private Xcls_WindowLeftProjects  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_HBox4(Xcls_WindowLeftProjects _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.HBox( true, 0 );
+
+            // my vars
+
+            // set gobject values
+            var child_0 = new Xcls_Image5( _this );
+            child_0.ref();
+            this.el.add (  child_0.el  );
+            var child_1 = new Xcls_Label6( _this );
+            child_1.ref();
+            this.el.add (  child_1.el  );
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+    }
+    public class Xcls_Image5 : Object 
+    {
+        public Gtk.Image el;
+        private Xcls_WindowLeftProjects  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_Image5(Xcls_WindowLeftProjects _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.Image();
+
+            // my vars
+
+            // set gobject values
+            this.el.icon_size = Gtk.IconSize.MENU;
+            this.el.stock = Gtk.STOCK_ADD;
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+    }
+    public class Xcls_Label6 : Object 
+    {
+        public Gtk.Label el;
+        private Xcls_WindowLeftProjects  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_Label6(Xcls_WindowLeftProjects _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.Label( "New Project" );
+
+            // my vars
+
+            // set gobject values
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+    }
+    public class Xcls_ScrolledWindow7 : Object 
+    {
+        public Gtk.ScrolledWindow el;
+        private Xcls_WindowLeftProjects  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_ScrolledWindow7(Xcls_WindowLeftProjects _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.ScrolledWindow( null, null );
+
+            // my vars
+
+            // set gobject values
+            this.el.shadow_type = Gtk.ShadowType.IN;
+            var child_0 = new Xcls_TreeView8( _this );
+            child_0.ref();
+            this.el.add (  child_0.el  );
+
+            // init method 
+              this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
+        }
+
+        // userdefined functions 
+
+        // skip |xns - no return type
+    }
+    public class Xcls_TreeView8 : Object 
     {
         public Gtk.TreeView el;
         private Xcls_WindowLeftProjects  _this;
@@ -81,7 +245,7 @@ public class Xcls_WindowLeftProjects : Object
             // my vars
 
             // ctor 
-        public Xcls_TreeView2(Xcls_WindowLeftProjects _owner )
+        public Xcls_TreeView8(Xcls_WindowLeftProjects _owner )
         {
             _this = _owner;
             this.el = new Gtk.TreeView();
@@ -95,7 +259,7 @@ public class Xcls_WindowLeftProjects : Object
             var child_0 = new Xcls_model( _this );
             child_0.ref();
             this.el.set_model (  child_0.el  );
-            var child_1 = new Xcls_TreeViewColumn4( _this );
+            var child_1 = new Xcls_TreeViewColumn10( _this );
             child_1.ref();
             this.el.append_column (  child_1.el  );
 
@@ -163,7 +327,7 @@ public class Xcls_WindowLeftProjects : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_TreeViewColumn4 : Object 
+    public class Xcls_TreeViewColumn10 : Object 
     {
         public Gtk.TreeViewColumn el;
         private Xcls_WindowLeftProjects  _this;
@@ -172,7 +336,7 @@ public class Xcls_WindowLeftProjects : Object
             // my vars
 
             // ctor 
-        public Xcls_TreeViewColumn4(Xcls_WindowLeftProjects _owner )
+        public Xcls_TreeViewColumn10(Xcls_WindowLeftProjects _owner )
         {
             _this = _owner;
             this.el = new Gtk.TreeViewColumn();
