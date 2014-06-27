@@ -1,5 +1,5 @@
 {
-    "id": "file-gtk-12",
+    "id": "file-gtk-14",
     "name": "WindowLeftProjects",
     "parent": "",
     "title": false,
@@ -7,7 +7,7 @@
     "items": [
         {
             "activeElement": false,
-            "id": "MidPropTree",
+            "id": "WindowLeftProjects",
             "pack": "pack_end,false,true,0",
             "xtype": "ScrolledWindow",
             "|hideWin": "function() {\n     \n    if (!this.shown) {\n        return;\n    }\n    \n    \n    if (this.get('/Window.left').el.position < 160) {\n        return;\n    }\n    this.get('/Window.left').el.position = this.get('/Window.left').el.position  - 150;\n        \n    this.el.hide();\n    this.shown = false;\n}\n",
