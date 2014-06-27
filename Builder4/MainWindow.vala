@@ -32,8 +32,9 @@ public class Xcls_MainWindow : Object
     public Xcls_projectbutton projectbutton;
 
         // my vars
-    public Xcls_LeftProps left_props;
+    public Xcls_WindowRooView rooview;
     public Project.Project project;
+    public Xcls_LeftProps left_props;
     public Xcls_WindowLeftTree left_tree;
     public string title;
 
@@ -45,6 +46,7 @@ public class Xcls_MainWindow : Object
         this.el = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
 
         // my vars
+        this.rooview = null;
         this.left_props = null;
         this.left_tree = null;
         this.title = "Application Builder";
