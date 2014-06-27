@@ -103,21 +103,12 @@ WindowLeftProjects=new XObject({
                     tooltip_column : 2,
                     enable_tree_lines : true,
                     headers_visible : false,
-                    init : function() {
-                    	XObject.prototype.init.call(this); 
-                                        
-                           var description = new Pango.FontDescription.c_new();
+                    init : var description = new Pango.FontDescription.c_new();
                          description.set_size(8000);
                         this.el.modify_font(description);     
                                         
-                        //this.selection = this.el.get_selection();
-                        // this.selection.set_mode( Gtk.SelectionMode.SINGLE);
-                     
-                    
-                        
-                      
-                        
-                    },
+                        var selection = this.el.get_selection();
+                        selection.set_mode( Gtk.SelectionMode.SINGLE);,
                     items : [
                         {
                             xtype: Gtk.ListStore,

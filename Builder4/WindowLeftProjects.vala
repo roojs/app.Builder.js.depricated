@@ -264,21 +264,17 @@ public class Xcls_WindowLeftProjects : Object
             this.el.append_column (  child_1.el  );
 
             // init method 
-            function() {
-            	XObject.prototype.init.call(this); 
-                                
+                        
                    var description = new Pango.FontDescription.c_new();
                  description.set_size(8000);
                 this.el.modify_font(description);     
                                 
-                //this.selection = this.el.get_selection();
-                // this.selection.set_mode( Gtk.SelectionMode.SINGLE);
+                var selection = this.el.get_selection();
+                selection.set_mode( Gtk.SelectionMode.SINGLE);
              
             
                 
               
-                
-            }
 
             // listeners 
             this.el.cursor_changed.connect(  () => {
