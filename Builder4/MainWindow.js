@@ -13,7 +13,7 @@ MainWindow=new XObject({
     xtype: Gtk.Window,
     listeners : {
         show : ( ) => {
-        
+            this.window.leftpanel.el.hide();
             //imports.Builder.Provider.ProjectManager.ProjectManager.loadConfig();
             //this.get('/MidPropTree').hideWin();
             //this.get('/RightPalete').hide();

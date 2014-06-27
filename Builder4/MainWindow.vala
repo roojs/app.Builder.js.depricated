@@ -69,7 +69,7 @@ public class Xcls_MainWindow : Object
 
         // listeners 
         this.el.show.connect(   ( ) => {
-        
+            this.window.leftpanel.el.hide();
             //imports.Builder.Provider.ProjectManager.ProjectManager.loadConfig();
             //this.get('/MidPropTree').hideWin();
             //this.get('/RightPalete').hide();
