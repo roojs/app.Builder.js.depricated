@@ -47,8 +47,8 @@ public class Xcls_WindowLeftProjects : Object
     }
 
     // userdefined functions 
-    public void loadfunction() {
-            
+    public void load() {
+                
         }
 
     // skip |xns - no return type
