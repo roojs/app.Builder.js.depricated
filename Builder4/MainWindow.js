@@ -75,6 +75,9 @@ MainWindow=new XObject({
             
         print("show view editing");
     },
+     : function() {
+        
+    },
     items : [
         {
             xtype: Gtk.VBox,

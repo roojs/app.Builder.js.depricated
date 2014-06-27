@@ -123,6 +123,8 @@ public class Xcls_MainWindow : Object
         }
 
     // skip |xns - no return type
+
+    // skip | - no return type
     public class Xcls_vbox : Object 
     {
         public Gtk.VBox el;
