@@ -7,7 +7,7 @@
     "items": [
         {
             "listeners": {
-                "show": "  ( ) => {\n    // hide the file editing..\n    this.leftpane.el.hide();\n    this.window_rooview.el.hide();\n    this.left_projects.el.show();\n \n}",
+                "show": "  ( ) => {\n    // hide the file editing..\n    this.editpane.el.hide();\n    this.window_rooview.el.hide();\n    this.left_projects.el.show();\n \n}",
                 "delete_event": "  (   event) => {\n    return false;\n}"
             },
             ".Project.Project:project": "",
