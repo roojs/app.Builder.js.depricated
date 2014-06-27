@@ -33,9 +33,10 @@ public class Xcls_MainWindow : Object
     public Xcls_projectbutton projectbutton;
 
         // my vars
-    public Xcls_WindowLeftProjects left_projects;
+    public Xcls_ClutterFiles clutterfiles;
     public Project.Project project;
     public Xcls_LeftProps left_props;
+    public Xcls_WindowLeftProjects left_projects;
     public Xcls_WindowLeftTree left_tree;
     public Xcls_WindowRooView window_rooview;
     public bool is_editing;
@@ -49,8 +50,9 @@ public class Xcls_MainWindow : Object
         this.el = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
 
         // my vars
-        this.left_projects = null;
+        this.clutterfiles = null;
         this.left_props = null;
+        this.left_projects = null;
         this.left_tree = null;
         this.window_rooview = null;
         this.is_editing = false;
@@ -407,7 +409,6 @@ public class Xcls_MainWindow : Object
 
 
             // my vars
-        public Xcls_ClutterFiles clutterfiles;
 
             // ctor 
         public Xcls_clutterembed(Xcls_MainWindow _owner )

@@ -10,9 +10,10 @@
                 "show": "  ( ) => {\n    // hide the file editing..\n    this.leftpane.el.hide();\n    this.window_rooview.el.hide();\n    this.left_projects.el.show();\n \n}",
                 "delete_event": "  (   event) => {\n    return false;\n}"
             },
-            ".Xcls_WindowLeftProjects:left_projects": "null",
+            ".Xcls_ClutterFiles:clutterfiles": "null",
             ".Project.Project:project": "",
             ".Xcls_LeftProps:left_props": "null",
+            ".Xcls_WindowLeftProjects:left_projects": "null",
             ".Xcls_WindowLeftTree:left_tree": "null",
             ".Xcls_WindowRooView:window_rooview": "null",
             ".bool:is_editing": "false",
@@ -92,7 +93,6 @@
                                             "listeners": {
                                                 "size_allocate": "  (  alloc) => {\n\n    _this.rooview.el.set_size(this.el.get_stage().width-50,\n            this.el.get_stage().height);\n    this.clutterfiles.set_size(this.el.get_stage().width-50,\n           this.el.get_stage().height);\n\n}"
                                             },
-                                            ".Xcls_ClutterFiles:clutterfiles": "",
                                             "id": "clutterembed",
                                             "pack": "add",
                                             "xtype": "Embed",
