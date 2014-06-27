@@ -47,6 +47,9 @@ public class Xcls_WindowLeftProjects : Object
     }
 
     // userdefined functions 
+    public void loadfunction() {
+            
+        }
 
     // skip |xns - no return type
     public class Xcls_TreeView2 : Object 

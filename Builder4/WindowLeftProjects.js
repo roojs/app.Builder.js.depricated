@@ -13,6 +13,9 @@ WindowLeftProjects=new XObject({
     xtype: Gtk.ScrolledWindow,
     id : "WindowLeftProjects",
     pack : "pack_end,false,true,0",
+    'void:load' : function() {
+        
+    },
     init : this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC),
     shadow_type : Gtk.ShadowType.IN,
     items : [
