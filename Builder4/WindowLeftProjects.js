@@ -64,7 +64,7 @@ WindowLeftProjects=new XObject({
                                 },
                                 {
                                     xtype: Gtk.Label,
-                                    label : "New Project",
+                                    label : "Add",
                                     pack : "add"
                                 }
                             ]

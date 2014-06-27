@@ -41,7 +41,7 @@
                                             "|icon_size": "Gtk.IconSize.MENU"
                                         },
                                         {
-                                            "label": "New Project",
+                                            "label": "Add",
                                             "pack": "add",
                                             "xtype": "Label",
                                             "|xns": "Gtk"
