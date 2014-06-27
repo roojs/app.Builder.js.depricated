@@ -146,7 +146,7 @@
                                 {
                                     "pack": "append_column",
                                     "xtype": "TreeViewColumn",
-                                    "|init": "\n    this.el.add_attribute(_this.namecol.el , \"markup\", 4  );\n ",
+                                    "|init": "\n    this.el.add_attribute(_this.namecol.el , \"markup\", 0  );\n ",
                                     "|xns": "Gtk",
                                     "items": [
                                         {

@@ -186,7 +186,7 @@ WindowLeftProjects=new XObject({
                         {
                             xtype: Gtk.TreeViewColumn,
                             pack : "append_column",
-                            init : this.el.add_attribute(_this.namecol.el , "markup", 4  );,
+                            init : this.el.add_attribute(_this.namecol.el , "markup", 0  );,
                             items : [
                                 {
                                     xtype: Gtk.CellRendererText,

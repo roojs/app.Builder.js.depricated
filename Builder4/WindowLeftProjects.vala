@@ -579,7 +579,7 @@ public class Xcls_WindowLeftProjects : Object
             this.el.pack_start (  child_0.el , true );
 
             // init method 
-                this.el.add_attribute(_this.namecol.el , "markup", 4  );
+                this.el.add_attribute(_this.namecol.el , "markup", 0  );
              
         }
 
