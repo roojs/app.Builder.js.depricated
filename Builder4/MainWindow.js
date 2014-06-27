@@ -186,6 +186,7 @@ MainWindow=new XObject({
                                             _this.clutterfiles.set_size(this.el.get_stage().width-50,
                                                    this.el.get_stage().height);
                                         */
+                                            this.el.set_size(alloc.width,alloc.height);
                                             _this.rooview.el.set_size(alloc.width-50,
                                                     alloc.height);
                                             _this.clutterfiles.set_size(alloc.width-50,
