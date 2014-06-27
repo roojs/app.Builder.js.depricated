@@ -268,6 +268,8 @@ public class Xcls_MainWindow : Object
             var child_0 = new Xcls_VPaned6( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,true,0 );
+
+            // listeners 
         }
 
         // userdefined functions 

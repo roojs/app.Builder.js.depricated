@@ -58,6 +58,8 @@
                                     "pack": "add1",
                                     "xtype": "VBox",
                                     "|xns": "Gtk",
+                                    "id": "",
+                                    "listeners": {},
                                     "items": [
                                         {
                                             "pack": "pack_start,false,true,0",
