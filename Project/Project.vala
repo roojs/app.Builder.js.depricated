@@ -55,7 +55,9 @@ namespace Project {
 		    
 		}
 
-
+        
+        
+        
 		
 		public static void loadAll(bool force = false)
 		{
@@ -91,6 +93,18 @@ namespace Project {
 		    
 
 		}
+
+        public static Gee.ArrayList<Project> allProjectsByName()
+        {
+            var ret = new Gee.ArrayList<Project>();
+            var iter = projects;
+		    while (iter.next()) {
+		        ret.add(iter.get_value());
+		    }
+            // fixme -- sort...
+            return ret;
+        
+        }
 
 		public static Project?  getProject(string name) 
 		{
