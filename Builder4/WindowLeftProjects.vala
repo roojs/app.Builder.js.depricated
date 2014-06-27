@@ -42,13 +42,7 @@ public class Xcls_WindowLeftProjects : Object
         this.el.add (  child_0.el  );
 
         // init method 
-        function() {
-            XObject.prototype.init.call(this);
-               XObject.prototype.init.call(this); 
-            this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
-            this.el.set_size_request ( 150, -1 );
-            this.shown = true;
-        }
+          this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
     }
 
     // userdefined functions 

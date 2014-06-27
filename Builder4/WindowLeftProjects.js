@@ -14,13 +14,7 @@ WindowLeftProjects=new XObject({
     activeElement : false,
     id : "WindowLeftProjects",
     pack : "pack_end,false,true,0",
-    init : function() {
-        XObject.prototype.init.call(this);
-           XObject.prototype.init.call(this); 
-        this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
-        this.el.set_size_request ( 150, -1 );
-        this.shown = true;
-    },
+    init : this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC),
     shadow_type : Gtk.ShadowType.IN,
     items : [
         {
