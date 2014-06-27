@@ -24,26 +24,15 @@ WindowLeftProjects=new XObject({
               
          for (var i = 0; i < projects.size; i++) {
             m.append(out iter,null);
-         
+            m.set(iter,   0,projects.get(i).name );
+            
+          var o = new GLib.Value(typeof(Object));
+            o.set_object((Object)projects.get(i));
+                       
+            m.setValue(iter, 1, o);
          
          }
          
-        
-                
-                
-                // really need a way to sort the hashmap...
-                
-                var miter = node.listeners.map_iterator();
-                
-                while(miter.next()) {
-                    m.append(out iter,null);
-                    m.set(iter, 
-                            0, "listener",
-                            1, miter.get_key(),
-                            2, "<b>" + miter.get_key() + "</b>",
-                            3, miter.get_value()
-                        ); 
-                 }
          
     },
     init : this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC),
