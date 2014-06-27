@@ -9,7 +9,7 @@
             "id": "WindowLeftProjects",
             "pack": "pack_end,false,true,0",
             "xtype": "ScrolledWindow",
-            "|void:load": "() {\n        \n}\n",
+            "|void:load": "() {\n     Project.loadAll();\n     var projects = Project.allProjectsByName();\n     for (var i = 0; i < projects.size; i++) {\n     \n     \n     \n     }\n     \n     \n     \n}\n",
             "|init": "  this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)\n",
             "|shadow_type": "Gtk.ShadowType.IN",
             "|xns": "Gtk",

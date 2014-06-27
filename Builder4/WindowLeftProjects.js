@@ -14,7 +14,16 @@ WindowLeftProjects=new XObject({
     id : "WindowLeftProjects",
     pack : "pack_end,false,true,0",
     'void:load' : () {
-            
+         Project.loadAll();
+         var projects = Project.allProjectsByName();
+         for (var i = 0; i < projects.size; i++) {
+         
+         
+         
+         }
+         
+         
+         
     },
     init : this.el.set_policy (Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC),
     shadow_type : Gtk.ShadowType.IN,

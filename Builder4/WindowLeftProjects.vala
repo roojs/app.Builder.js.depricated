@@ -48,7 +48,16 @@ public class Xcls_WindowLeftProjects : Object
 
     // userdefined functions 
     public void load() {
-                
+             Project.loadAll();
+             var projects = Project.allProjectsByName();
+             for (var i = 0; i < projects.size; i++) {
+             
+             
+             
+             }
+             
+             
+             
         }
 
     // skip |xns - no return type
