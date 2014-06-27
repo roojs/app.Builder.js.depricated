@@ -43,9 +43,14 @@ MainWindow=new XObject({
         this..props.el.pack_start(this.left_props.el,true, true,0);
     
     
-        this.rooview  =new Xcls_WindowRooView();
+    
+        this.left_projects = new Xcls_WindowLeftProjects();
+        
+        
+    
+        this.windowrooview  =new Xcls_WindowRooView();
         //rv.ref();
-        ((Gtk.Container)(w.rooview.el.get_widget())).add(this.rooview .el);
+        ((Gtk.Container)(w.rooview.el.get_widget())).add(this.rooview.el);
         //rv.el.show_all();
     
         //w.el.show_all();
@@ -54,7 +59,7 @@ MainWindow=new XObject({
         tl.start();
         tl.ref();
     
-    
+        
     
     
     
