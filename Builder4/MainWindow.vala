@@ -70,8 +70,8 @@ public class Xcls_MainWindow : Object
         // listeners 
         this.el.show.connect(   ( ) => {
             // hide the file editing..
-            this.window.leftpanel.el.hide();
-        
+            this.leftpane.el.hide();
+            this.projectview.el.show();
         
           
         } );
