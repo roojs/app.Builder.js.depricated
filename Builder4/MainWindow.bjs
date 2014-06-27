@@ -10,6 +10,7 @@
                 "show": "  ( ) => {\n\n    //imports.Builder.Provider.ProjectManager.ProjectManager.loadConfig();\n    //this.get('/MidPropTree').hideWin();\n    //this.get('/RightPalete').hide();\n    //this.get('/BottomPane').el.hide();\n    //this.get('/Editor').el.show_all();\n  \n}",
                 "delete_event": "  (   event) => {\n    return false;\n}"
             },
+            ".Xcls_LeftProps:left_props": "null",
             ".Project.Project:project": "",
             ".Xcls_WindowLeftTree:left_tree": "null",
             ".string:title": "\"Application Builder\"",
@@ -19,15 +20,14 @@
             "destroy": "() => {\n   Gtk.main_quit();\n}",
             "id": "MainWindow",
             "xtype": "Window",
-            "|void:initChildren": " () {\n\n    this.left_tree =new Xcls_WindowLeftTree();\n    this.tree.el.pack_start(this.left_tree.el,true, true,0);\n\n\n    this.left_props =new Xcls_LeftProps();\n    //left_props.ref();\n    this..props.el.pack_start(this.left_props.el,true, true,0);\n\n\n    this.rooview  =new Xcls_WindowRooView();\n    //rv.ref();\n    ((Gtk.Container)(w.rooview.el.get_widget())).add(this.rooview .el);\n    //rv.el.show_all();\n\n    //w.el.show_all();\n    var tl = new Clutter.Timeline(6000);\n    tl.set_repeat_count(-1);\n    tl.start();\n    tl.ref();\n\n\n\n\n\n\n}\n",
             "|init": " \n\t  \n    this.el.show_all();\n    \n    ",
             "|type": "Gtk.WindowType.TOPLEVEL",
+            "|void:initChildren": " () {\n\n    this.left_tree =new Xcls_WindowLeftTree();\n    this.tree.el.pack_start(this.left_tree.el,true, true,0);\n\n\n    this.left_props =new Xcls_LeftProps();\n    //left_props.ref();\n    this..props.el.pack_start(this.left_props.el,true, true,0);\n\n\n    this.rooview  =new Xcls_WindowRooView();\n    //rv.ref();\n    ((Gtk.Container)(w.rooview.el.get_widget())).add(this.rooview .el);\n    //rv.el.show_all();\n\n    //w.el.show_all();\n    var tl = new Clutter.Timeline(6000);\n    tl.set_repeat_count(-1);\n    tl.start();\n    tl.ref();\n\n\n\n\n\n\n}\n",
             "|void:setTitle": " (string str) {\n    this.el.set_title(this.title + \" - \" + str);\n}\n",
             "|void:show": "() {\n    this.left_tree =new Xcls_WindowLeftTree();\n    _this.vbox.el.pack_start(this.left_tree.el,true, true,0);\n    this.el.show_all();\n\n}",
             "|void:showViewBrowsing": "  ( )   {\n    var el = _this.rooview.el;\n    el.save_easing_state();\n  \n   \n        // show project / file view..\n        _this.leftpane.lastWidth = _this.leftpane.el.get_position();\n        _this.leftpane.el.set_position(0);\n        // rotate y 180..\n        el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 360.0f);\n        el.set_scale(0.0f,0.0f);\n        _this.rooview.is_fullsize = false;\n\n        _this.clutterembed.clutterfiles.show(_this.project);\n   \n    el.restore_easing_state();\n        \n    print(\"show view browsing\");\n}",
             "|void:showViewEditing": "  ( )  {\n    var el = _this.rooview.el;\n        el.save_easing_state();\n  \n    \n        el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 0.0f);\n        el.set_scale(1.0f,1.0f);\n        _this.rooview.is_fullsize = true;\n        _this.leftpane.el.set_position(_this.leftpane.lastWidth);\n        _this.clutterembed.clutterfiles.el.hide();\n    \n    el.restore_easing_state();\n        \n    print(\"show view editing\");\n}",
             "|xns": "Gtk",
-            "": "",
             "items": [
                 {
                     "|homogeneous": "false",

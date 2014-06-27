@@ -30,6 +30,8 @@ MainWindow=new XObject({
     default_width : 800,
     destroy : "() => {\n   Gtk.main_quit();\n}",
     id : "MainWindow",
+    init : this.el.show_all();,
+    type : Gtk.WindowType.TOPLEVEL,
     'void:initChildren' : () {
     
         this.left_tree =new Xcls_WindowLeftTree();
@@ -58,8 +60,6 @@ MainWindow=new XObject({
     
     
     },
-    init : this.el.show_all();,
-    type : Gtk.WindowType.TOPLEVEL,
     'void:setTitle' : (string str) {
         this.el.set_title(this.title + " - " + str);
     },
@@ -103,7 +103,6 @@ MainWindow=new XObject({
             
         print("show view editing");
     },
-     : "",
     items : [
         {
             xtype: Gtk.VBox,
