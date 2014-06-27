@@ -92,10 +92,12 @@ public class Xcls_MainWindow : Object
             this.props.el.pack_start(this.left_props.el,true, true,0);
         
         
-        
+            // left projects..
             this.left_projects = new Xcls_WindowLeftProjects();
             this.vbox.el.pack_start(this.left_props.el,true, true,0);
+           
             
+           
             this.window_rooview  =new Xcls_WindowRooView();
             //rv.ref();
             ((Gtk.Container)(w.rooview.el.get_widget())).add(this.rooview.el);
