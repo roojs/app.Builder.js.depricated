@@ -31,7 +31,7 @@ MainWindow=new XObject({
     'void:hideViewEditing' : ( )   {
         
          this.editpane.el.hide();
-        this.rooview.el.hide();
+        //this.rooview.el.hide();
          this.left_projects.el.show();
         
         var el = _this.rooview.el;
