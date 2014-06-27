@@ -106,7 +106,7 @@ public class Xcls_MainWindow : Object
             print("show view browsing");
         }
     public void initChildren () {
-        
+            print("init children");
             this.left_tree =new Xcls_WindowLeftTree();
             this.left_tree.ref();
             this.tree.el.pack_start(this.left_tree.el,true, true,0);
