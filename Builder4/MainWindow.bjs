@@ -96,7 +96,7 @@
                                                 "size_allocate": "  (  alloc) => {\n    //if (!_this.children_loaded) {  return; }\n    _this.rooview.el.set_size(this.el.get_stage().width-50,\n            this.el.get_stage().height);\n    _this.clutterfiles.set_size(this.el.get_stage().width-50,\n           this.el.get_stage().height);\n\n}"
                                             },
                                             "id": "clutterembed",
-                                            "pack": "add",
+                                            "pack": "pack_start(true,true,0)",
                                             "xtype": "Embed",
                                             "|init": "    var stage = this.el.get_stage();\n    stage.set_background_color(  Clutter.Color.from_string(\"#000\"));\n    \n    \n",
                                             "|xns": "GtkClutter",

@@ -400,7 +400,7 @@ public class Xcls_MainWindow : Object
             // set gobject values
             var child_0 = new Xcls_clutterembed( _this );
             child_0.ref();
-            this.el.add (  child_0.el  );
+            this.el.pack_start(true (  child_0.el , true,0) );
         }
 
         // userdefined functions 
