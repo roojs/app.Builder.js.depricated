@@ -20,6 +20,7 @@ namespace Project {
 
 	// static array of all projects.
 	public Gee.HashMap<string,Project>  projects;
+    public bool  projects_loaded = false;
 
 	
 	public class Project : Object {
@@ -56,9 +57,12 @@ namespace Project {
 
 
 		
-		public static void loadAll()
+		public static void loadAll(bool force = false)
 		{
-
+            if (projects_loaded && !force) {
+                return;
+            }
+            
 			var dirname = GLib.Environment.get_home_dir() + "/.Builder";
 			var dir = File.new_for_path(dirname);
 		    if (!dir.query_exists()) {
