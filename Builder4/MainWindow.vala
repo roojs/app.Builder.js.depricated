@@ -128,7 +128,7 @@ public class Xcls_MainWindow : Object
             this.el.show_all();
         
         }
-    public void showViewBrowsing  ( )   {
+    public void hideViewEditing  ( )   {
             var el = _this.rooview.el;
             el.save_easing_state();
            

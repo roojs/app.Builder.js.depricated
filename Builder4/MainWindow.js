@@ -75,7 +75,7 @@ MainWindow=new XObject({
         this.el.show_all();
     
     },
-    'void:showViewBrowsing' : ( )   {
+    'void:hideViewEditing' : ( )   {
         var el = _this.rooview.el;
         el.save_easing_state();
        
