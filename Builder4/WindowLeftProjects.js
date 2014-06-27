@@ -31,7 +31,7 @@ WindowLeftProjects=new XObject({
           var o = new GLib.Value(typeof(Object));
             o.set_object((Object)projects.get(i));
                        
-            m.setValue(iter, 1, o);
+            m.set_value(iter, 1, o);
          
          }
          
