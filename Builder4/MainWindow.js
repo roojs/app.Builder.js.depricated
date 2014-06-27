@@ -28,7 +28,7 @@ MainWindow=new XObject({
     default_width : 800,
     destroy : "() => {\n   Gtk.main_quit();\n}",
     id : "MainWindow",
-    init : this.el.show_all();,
+    init : //this.el.show_all();,
     type : Gtk.WindowType.TOPLEVEL,
     'void:hideViewEditing' : ( )   {
         var el = _this.rooview.el;

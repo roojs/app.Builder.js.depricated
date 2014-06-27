@@ -33,13 +33,13 @@ public class Xcls_MainWindow : Object
     public Xcls_projectbutton projectbutton;
 
         // my vars
-    public bool children_loaded;
     public Project.Project project;
     public Xcls_ClutterFiles clutterfiles;
     public Xcls_LeftProps left_props;
     public Xcls_WindowLeftProjects left_projects;
     public Xcls_WindowLeftTree left_tree;
     public Xcls_WindowRooView window_rooview;
+    public bool children_loaded;
     public bool is_editing;
     public string title;
 
@@ -51,12 +51,12 @@ public class Xcls_MainWindow : Object
         this.el = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
 
         // my vars
-        this.children_loaded = false;
         this.clutterfiles = null;
         this.left_props = null;
         this.left_projects = null;
         this.left_tree = null;
         this.window_rooview = null;
+        this.children_loaded = false;
         this.is_editing = false;
         this.title = "Application Builder";
 
@@ -71,7 +71,7 @@ public class Xcls_MainWindow : Object
         // init method 
          
         	  
-            this.el.show_all();
+            //this.el.show_all();
             
             
 
