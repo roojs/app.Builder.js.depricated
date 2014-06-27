@@ -78,6 +78,8 @@ public class Xcls_MainWindow : Object
     }
 
     // userdefined functions 
+
+    // skip | - no return type
     public void setTitle (string str) {
             this.el.set_title(this.title + " - " + str);
         }
@@ -123,8 +125,6 @@ public class Xcls_MainWindow : Object
         }
 
     // skip |xns - no return type
-
-    // skip | - no return type
     public class Xcls_vbox : Object 
     {
         public Gtk.VBox el;

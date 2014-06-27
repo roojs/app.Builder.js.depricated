@@ -30,6 +30,29 @@ MainWindow=new XObject({
     default_width : 800,
     destroy : "() => {\n   Gtk.main_quit();\n}",
     id : "MainWindow",
+     : function() {
+    
+        this.left_tree =new Xcls_WindowLeftTree();
+        this.tree.el.pack_start(this.left_tree.el,true, true,0);
+    
+    
+        this.left_props =new Xcls_LeftProps();
+        //left_props.ref();
+        this..props.el.pack_start(this.left_props.el,true, true,0);
+    
+    
+        this.rooview  =new Xcls_WindowRooView();
+        //rv.ref();
+        ((Gtk.Container)(w.rooview.el.get_widget())).add(this.rooview .el);
+        //rv.el.show_all();
+    
+        //w.el.show_all();
+        var tl = new Clutter.Timeline(6000);
+        tl.set_repeat_count(-1);
+        tl.start();
+        tl.ref();
+    
+    },
     init : this.el.show_all();,
     type : Gtk.WindowType.TOPLEVEL,
     'void:setTitle' : (string str) {
@@ -74,9 +97,6 @@ MainWindow=new XObject({
         el.restore_easing_state();
             
         print("show view editing");
-    },
-     : function() {
-        
     },
     items : [
         {
