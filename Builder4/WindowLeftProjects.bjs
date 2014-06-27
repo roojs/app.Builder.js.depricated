@@ -35,9 +35,9 @@
                             "|xns": "Gtk"
                         },
                         {
-                            "pack": false,
+                            "pack": "append_column",
                             "xtype": "TreeViewColumn",
-                            "|init": "function() {\n    this.el = new Gtk.TreeViewColumn();\n    this.parent.el.append_column(this.el);\n    \n    XObject.prototype.init.call(this);\n    this.el.add_attribute(this.items[0].el , 'markup', 4  );\n}\n",
+                            "|init": "\nthis.parent.el.append_column(this.el);\n    \n    XObject.prototype.init.call(this);\n    this.el.add_attribute(this.items[0].el , 'markup', 4  );\n ",
                             "|xns": "Gtk",
                             "items": [
                                 {

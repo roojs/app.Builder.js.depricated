@@ -74,6 +74,7 @@ public class Xcls_WindowLeftProjects : Object
             this.el.set_model (  child_0.el  );
             var child_1 = new Xcls_TreeViewColumn4( _this );
             child_1.ref();
+            this.el.append_column (  child_1.el  );
 
             // init method 
             function() {
@@ -198,13 +199,11 @@ public class Xcls_WindowLeftProjects : Object
             this.el.pack_start (  child_0.el , true );
 
             // init method 
-            function() {
-                this.el = new Gtk.TreeViewColumn();
-                this.parent.el.append_column(this.el);
+            this.parent.el.append_column(this.el);
                 
                 XObject.prototype.init.call(this);
                 this.el.add_attribute(this.items[0].el , 'markup', 4  );
-            }
+             
         }
 
         // userdefined functions 
