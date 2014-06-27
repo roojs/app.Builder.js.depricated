@@ -94,11 +94,11 @@
                                     "pack": "add",
                                     "items": [
                                         {
-                                            "|xns": "Gtk",
-                                            "xtype": "Image",
                                             "pack": "add",
-                                            "|stock": "Gtk.STOCK_ADD",
-                                            "|icon_size": "Gtk.IconSize.MENU"
+                                            "xtype": "Image",
+                                            "|icon_size": "Gtk.IconSize.MENU",
+                                            "|stock": "Gtk.STOCK_DELETE",
+                                            "|xns": "Gtk"
                                         },
                                         {
                                             "label": "Delete  ",

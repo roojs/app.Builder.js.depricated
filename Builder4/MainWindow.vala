@@ -26,7 +26,6 @@ public class Xcls_MainWindow : Object
     public Xcls_topbar topbar;
     public Xcls_mainpane mainpane;
     public Xcls_leftpane leftpane;
-    public Xcls_editpane editpane;
     public Xcls_tree tree;
     public Xcls_props props;
     public Xcls_clutterembed clutterembed;
@@ -34,13 +33,13 @@ public class Xcls_MainWindow : Object
     public Xcls_projectbutton projectbutton;
 
         // my vars
+    public bool children_loaded;
     public Project.Project project;
     public Xcls_ClutterFiles clutterfiles;
     public Xcls_LeftProps left_props;
     public Xcls_WindowLeftProjects left_projects;
     public Xcls_WindowLeftTree left_tree;
     public Xcls_WindowRooView window_rooview;
-    public bool children_loaded;
     public bool is_editing;
     public string title;
 
@@ -52,12 +51,12 @@ public class Xcls_MainWindow : Object
         this.el = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
 
         // my vars
+        this.children_loaded = false;
         this.clutterfiles = null;
         this.left_props = null;
         this.left_projects = null;
         this.left_tree = null;
         this.window_rooview = null;
-        this.children_loaded = false;
         this.is_editing = false;
         this.title = "Application Builder";
 
@@ -72,16 +71,16 @@ public class Xcls_MainWindow : Object
         // init method 
          
         	  
-            //this.el.show_all();
+            this.el.show_all();
             
             
 
         // listeners 
         this.el.show.connect(   ( ) => {
             // hide the file editing..
-            this.editpane.el.hide();
-            this.rooview.el.hide();
-             this.left_projects.el.show();
+            this.leftpane.el.hide();
+            this.window_rooview.el.hide();
+            this.left_projects.el.show();
          
         } );
         this.el.delete_event.connect(   (   event) => {
@@ -121,15 +120,15 @@ public class Xcls_MainWindow : Object
         
         
             // left projects..
-             this.left_projects = new Xcls_WindowLeftProjects();
-            this.leftpane.el.pack_start(this.left_projects.el,true, true,0);
+            this.left_projects = new Xcls_WindowLeftProjects();
+            this.vbox.el.pack_start(this.left_props.el,true, true,0);
            
             
            
             this.window_rooview  =new Xcls_WindowRooView();
             this.window_rooview.ref();
             ((Gtk.Container)(this.rooview.el.get_widget())).add(this.window_rooview.el);
-            this.window_rooview.el.show_all();
+            //rv.el.show_all();
         
             var stage = _this.rooview.el.get_stage();
             stage.set_background_color(  Clutter.Color.from_string("#000"));
@@ -137,7 +136,7 @@ public class Xcls_MainWindow : Object
             this.clutterfiles = new Xcls_ClutterFiles();
             this.clutterfiles.ref();
             stage.add_child(this.clutterfiles.el);
-            this.clutterfiles.el.show_all();
+        
         
         
             this.clutterfiles.open.connect((file) => { 
@@ -294,7 +293,7 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_editpane( _this );
+            var child_0 = new Xcls_VPaned6( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,true,0 );
         }
@@ -303,7 +302,7 @@ public class Xcls_MainWindow : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_editpane : Object 
+    public class Xcls_VPaned6 : Object 
     {
         public Gtk.VPaned el;
         private Xcls_MainWindow  _this;
@@ -312,10 +311,9 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // ctor 
-        public Xcls_editpane(Xcls_MainWindow _owner )
+        public Xcls_VPaned6(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            _this.editpane = this;
             this.el = new Gtk.VPaned();
 
             // my vars
@@ -400,7 +398,7 @@ public class Xcls_MainWindow : Object
             // set gobject values
             var child_0 = new Xcls_clutterembed( _this );
             child_0.ref();
-            this.el.pack_start (  child_0.el , true,true,0 );
+            this.el.add (  child_0.el  );
         }
 
         // userdefined functions 
@@ -440,20 +438,14 @@ public class Xcls_MainWindow : Object
 
             // listeners 
             this.el.size_allocate.connect(   (  alloc) => {
-                //if (!_this.children_loaded) {  return; }
-                print("size_allocation %d,%d\n".printf(alloc.width, alloc.height));
-            
-            /*    _this.rooview.el.set_size(this.el.get_stage().width-50,
+                if (!_this.children_loaded) {
+                    return;
+                }
+                _this.rooview.el.set_size(this.el.get_stage().width-50,
                         this.el.get_stage().height);
                 _this.clutterfiles.set_size(this.el.get_stage().width-50,
                        this.el.get_stage().height);
-            */
-               // this.el.set_size_request(alloc.width,alloc.height);
-               // this.el.get_stage().set_size(alloc.width,alloc.height);
-                _this.rooview.el.set_size(alloc.width-50,
-                        alloc.height);
-                _this.clutterfiles.set_size(alloc.width-50,
-                       alloc.height);
+            
             } );
         }
 
@@ -462,7 +454,7 @@ public class Xcls_MainWindow : Object
         // skip |xns - no return type
     }
     public class Xcls_rooview : Object 
-    {
+    
         public GtkClutter.Actor el;
         private Xcls_MainWindow  _this;
 
