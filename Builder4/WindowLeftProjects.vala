@@ -94,58 +94,21 @@ public class Xcls_WindowLeftProjects : Object
             }
 
             // listeners 
-            this.el.cursor_changed.connect( function (self) {
-                   var iter = new Gtk.TreeIter();
-                                    
-                                    //console.log('changed');
-                    var m = this.get('model');
-            	if (!this.selection){
-            		this.selection = this.el.get_selection();
-            	}
+            this.el.cursor_changed.connect(  () => {
             
-                    var s = this.selection;
-                    if (!s.get_selected(m.el, iter)) {
-            		return; 
-            	}
-                    var tp = m.el.get_path(iter).to_string();
-                    
-                    
-                    // var val = "";
-                    
-                    var key = m.getValue(tp, 0);
-                    
-                    var type = m.getValue(tp, 1);
-                    var skel = m.getValue(tp, 3);
-                    var etype = m.getValue(tp, 5);
-                    
-                    
-                    this.get('/MidPropTree').hideWin();
+                Gtk.TreeIter iter;
+                Gtk.TreeModel mod;
+                        
+                var s = this.view.el.get_selection();
+                s.get_selected(out mod, out iter);
+              
+                GLib.Value gval;
             
-                    if (type.toLowerCase() == 'function') {
-                        
-                        if (etype != 'events') {
-                            key = '|' + key;
-                        }
-                        
-                        this.get('/LeftPanel.model').add({
-                            key :  key, 
-                            type : type,
-                            val  : skel,
-                            etype : etype
-                        })  
-                        return;
-                    }
-                    // has dot in name, and is boolean???? this does not make sense..
-                    //if (type.indexOf('.') > -1 ||  type.toLowerCase() == 'boolean') {
-                    //     key = '|' + key;
-                   // }
-                    
-                    this.get('/LeftPanel.model').add( {
-                        key : key, 
-                        type : type,
-                        //skel  : skel,
-                        etype : etype
-                       }) //, 
+                mod.get_value(iter, 1 , out gval);
+                var project = (Project.Project)gval.get_object();
+                
+                _this.project_selected(project);
+                
             } );
         }
 
