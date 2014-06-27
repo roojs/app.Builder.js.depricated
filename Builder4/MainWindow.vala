@@ -69,12 +69,10 @@ public class Xcls_MainWindow : Object
 
         // listeners 
         this.el.show.connect(   ( ) => {
+            // hide the file editing..
             this.window.leftpanel.el.hide();
-            //imports.Builder.Provider.ProjectManager.ProjectManager.loadConfig();
-            //this.get('/MidPropTree').hideWin();
-            //this.get('/RightPalete').hide();
-            //this.get('/BottomPane').el.hide();
-            //this.get('/Editor').el.show_all();
+        
+        
           
         } );
         this.el.delete_event.connect(   (   event) => {
