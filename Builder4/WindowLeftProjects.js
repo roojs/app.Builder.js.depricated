@@ -151,8 +151,10 @@ WindowLeftProjects=new XObject({
                             Gtk.TreeModel mod;
                                     
                             var s = this.el.get_selection();
-                            s.get_selected(out mod, out iter);
-                          
+                            if (!s.get_selected(out mod, out iter)) {
+                                return;
+                            }
+                            
                             GLib.Value gval;
                         
                             mod.get_value(iter, 1 , out gval);
