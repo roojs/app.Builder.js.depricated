@@ -52,6 +52,11 @@ MainWindow=new XObject({
         tl.start();
         tl.ref();
     
+    
+    
+    
+    
+    
     },
     init : this.el.show_all();,
     type : Gtk.WindowType.TOPLEVEL,

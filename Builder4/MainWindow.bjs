@@ -19,7 +19,7 @@
             "destroy": "() => {\n   Gtk.main_quit();\n}",
             "id": "MainWindow",
             "xtype": "Window",
-            "|": "function() {\n\n    this.left_tree =new Xcls_WindowLeftTree();\n    this.tree.el.pack_start(this.left_tree.el,true, true,0);\n\n\n    this.left_props =new Xcls_LeftProps();\n    //left_props.ref();\n    this..props.el.pack_start(this.left_props.el,true, true,0);\n\n\n    this.rooview  =new Xcls_WindowRooView();\n    //rv.ref();\n    ((Gtk.Container)(w.rooview.el.get_widget())).add(this.rooview .el);\n    //rv.el.show_all();\n\n    //w.el.show_all();\n    var tl = new Clutter.Timeline(6000);\n    tl.set_repeat_count(-1);\n    tl.start();\n    tl.ref();\n\n}\n",
+            "|": "function() {\n\n    this.left_tree =new Xcls_WindowLeftTree();\n    this.tree.el.pack_start(this.left_tree.el,true, true,0);\n\n\n    this.left_props =new Xcls_LeftProps();\n    //left_props.ref();\n    this..props.el.pack_start(this.left_props.el,true, true,0);\n\n\n    this.rooview  =new Xcls_WindowRooView();\n    //rv.ref();\n    ((Gtk.Container)(w.rooview.el.get_widget())).add(this.rooview .el);\n    //rv.el.show_all();\n\n    //w.el.show_all();\n    var tl = new Clutter.Timeline(6000);\n    tl.set_repeat_count(-1);\n    tl.start();\n    tl.ref();\n\n\n\n\n\n\n}\n",
             "|init": " \n\t  \n    this.el.show_all();\n    \n    ",
             "|type": "Gtk.WindowType.TOPLEVEL",
             "|void:setTitle": " (string str) {\n    this.el.set_title(this.title + \" - \" + str);\n}\n",
