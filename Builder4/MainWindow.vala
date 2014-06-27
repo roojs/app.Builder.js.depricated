@@ -71,9 +71,8 @@ public class Xcls_MainWindow : Object
         this.el.show.connect(   ( ) => {
             // hide the file editing..
             this.leftpane.el.hide();
-            this.projectview.el.show();
-        
-          
+            this.left_projects.el.show();
+         
         } );
         this.el.delete_event.connect(   (   event) => {
             return false;
