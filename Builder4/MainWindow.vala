@@ -146,6 +146,7 @@ public class Xcls_MainWindow : Object
         
             this.clutterfiles.open.connect((file) => { 
                 _this.showViewEditing();
+                left_tree.model.loadFile(tf);
                 print("OPEN : " + file.name);
         
             });
