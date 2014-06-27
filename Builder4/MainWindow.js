@@ -67,7 +67,7 @@ MainWindow=new XObject({
        
         this.window_rooview  =new Xcls_WindowRooView();
         //rv.ref();
-        ((Gtk.Container)(w.rooview.el.get_widget())).add(this.rooview.el);
+        ((Gtk.Container)(this.rooview.el.get_widget())).add(this.rooview.el);
         //rv.el.show_all();
     
         var stage = _this.rooview.get_stage();
