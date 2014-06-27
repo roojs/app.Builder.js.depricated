@@ -33,11 +33,11 @@ public class Xcls_MainWindow : Object
     public Xcls_projectbutton projectbutton;
 
         // my vars
-    public bool is_editing;
     public Project.Project project;
     public Xcls_LeftProps left_props;
     public Xcls_WindowLeftTree left_tree;
     public Xcls_WindowRooView window_rooview;
+    public bool is_editing;
     public string title;
 
         // ctor 
@@ -48,10 +48,10 @@ public class Xcls_MainWindow : Object
         this.el = new Gtk.Window( Gtk.WindowType.TOPLEVEL );
 
         // my vars
-        this.is_editing = false;
         this.left_props = null;
         this.left_tree = null;
         this.window_rooview = null;
+        this.is_editing = false;
         this.title = "Application Builder";
 
         // set gobject values
@@ -83,6 +83,24 @@ public class Xcls_MainWindow : Object
     }
 
     // userdefined functions 
+    public void hideViewEditing  ( )   {
+            var el = _this.rooview.el;
+            el.save_easing_state();
+           
+            // show project / file view..
+            _this.leftpane.lastWidth = _this.leftpane.el.get_position();
+            _this.leftpane.el.set_position(0);
+            // rotate y 180..
+            el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 360.0f);
+            el.set_scale(0.0f,0.0f);
+            _this.rooview.is_fullsize = false;
+        
+           // _this.clutterembed.clutterfiles.show(_this.project);
+        
+            el.restore_easing_state();
+                
+            print("show view browsing");
+        }
     public void initChildren () {
         
             this.left_tree =new Xcls_WindowLeftTree();
@@ -127,24 +145,6 @@ public class Xcls_MainWindow : Object
             _this.vbox.el.pack_start(this.left_tree.el,true, true,0);
             this.el.show_all();
         
-        }
-    public void hideViewEditing  ( )   {
-            var el = _this.rooview.el;
-            el.save_easing_state();
-           
-            // show project / file view..
-            _this.leftpane.lastWidth = _this.leftpane.el.get_position();
-            _this.leftpane.el.set_position(0);
-            // rotate y 180..
-            el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 360.0f);
-            el.set_scale(0.0f,0.0f);
-            _this.rooview.is_fullsize = false;
-        
-           // _this.clutterembed.clutterfiles.show(_this.project);
-        
-            el.restore_easing_state();
-                
-            print("show view browsing");
         }
     public void showViewEditing  ( )  {
             var el = _this.rooview.el;
