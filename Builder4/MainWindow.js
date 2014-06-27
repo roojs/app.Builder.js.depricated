@@ -187,7 +187,7 @@ MainWindow=new XObject({
                                         }
                                     },
                                     id : "clutterembed",
-                                    pack : "pack_start(true,true,0)",
+                                    pack : "pack_start,true,true,0",
                                     init : var stage = this.el.get_stage();
                                         stage.set_background_color(  Clutter.Color.from_string("#000"));,
                                     items : [
