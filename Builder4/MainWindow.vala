@@ -106,7 +106,7 @@ public class Xcls_MainWindow : Object
             _this.is_editing = false;
         
         print("\n --- calling clutter files to show project: " + _this.project.name + "\n");
-            _this.clutterfiles.show(_this.project);
+            _this.clutterfiles.loadProject(_this.project);
         
             el.restore_easing_state();
                 
