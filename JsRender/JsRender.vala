@@ -129,7 +129,7 @@ namespace JsRender {
 		    // NOOP
 		}
 
-		public abstract void loadItems() throws Error;
+		public abstract void loadItems() throws GLib.Error;
 		
 		/**
 		 *
