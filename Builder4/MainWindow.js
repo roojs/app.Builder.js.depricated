@@ -130,9 +130,10 @@ MainWindow=new XObject({
         
           
         
-        var el = _this.rooview.el;
+           var el = _this.rooview.el;
             el.save_easing_state();
-      
+            // longer as it takes a while to load..
+            clutter_actor_set_easing_duration (actor, 1500);
         
             el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 0.0f);
             el.set_scale(1.0f,1.0f);
