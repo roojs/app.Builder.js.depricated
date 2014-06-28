@@ -509,7 +509,10 @@ public class Xcls_WindowLeftProjects : Object
 
             // listeners 
             this.el.cursor_changed.connect(  () => {
-            
+                if (_this.is_loading) {
+                    return;
+                }
+                
                 Gtk.TreeIter iter;
                 Gtk.TreeModel mod;
                         

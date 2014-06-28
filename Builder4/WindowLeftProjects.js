@@ -146,7 +146,10 @@ WindowLeftProjects=new XObject({
                     xtype: Gtk.TreeView,
                     listeners : {
                         cursor_changed : () => {
-                        
+                            if (_this.is_loading) {
+                                return;
+                            }
+                            
                             Gtk.TreeIter iter;
                             Gtk.TreeModel mod;
                                     
