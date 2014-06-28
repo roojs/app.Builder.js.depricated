@@ -62,7 +62,12 @@ namespace JsRender {
         },
 
     */
-      
+		public string jsonHasOr(Json.Object obj, string key, string def) {
+			return obj.has_string_member(key) ? 
+						obj.get_string_member(key) : def;
+		}
+
+		
         public  override void  loadItems() throws Error // : function(cb, sync) == original was async.
         {
             
@@ -81,6 +86,8 @@ namespace JsRender {
 		        throw new Error.INVALID_FORMAT ("Unexpected element type %s", node.type_name ());
 	        }
             var obj = node.get_object ();
+			
+			
             this.modOrder = obj.get_string_member("modOrder");
             this.name = obj.get_string_member("name");
             this.parent = obj.get_string_member("parent");
