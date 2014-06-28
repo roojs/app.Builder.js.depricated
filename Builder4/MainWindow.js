@@ -94,6 +94,7 @@ MainWindow=new XObject({
         });
     
         this.left_projects.project_selected.connect((proj) => {
+            print("---project_selected called -> triggering scanDirs/ show project\n");
             proj.scanDirs();
             _this.clutterfiles.show(proj);
         
