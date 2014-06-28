@@ -56,7 +56,7 @@ public class Xcls_WindowLeftProjects : Object
     // userdefined functions 
     public void load() {
              // clear list...
-             
+             _this.is_loading = true;
              Project.Project.loadAll();
              var projects = Project.Project.allProjectsByName();
              
@@ -75,7 +75,7 @@ public class Xcls_WindowLeftProjects : Object
              
              }
              
-             
+             _this.is_loading = false;     
         }
 
     // skip |xns - no return type

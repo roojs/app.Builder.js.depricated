@@ -21,7 +21,7 @@ WindowLeftProjects=new XObject({
     homogeneous : false,
     'void:load' : () {
          // clear list...
-         
+         _this.is_loading = true;
          Project.Project.loadAll();
          var projects = Project.Project.allProjectsByName();
          
@@ -40,7 +40,7 @@ WindowLeftProjects=new XObject({
          
          }
          
-         
+         _this.is_loading = false;     
     },
     items : [
         {
