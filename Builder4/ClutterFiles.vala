@@ -104,7 +104,7 @@ public class Xcls_ClutterFiles : Object
             // LEAK --- we should unref all the chilren...
             this.filelayout.el.remove_all_children();
             
-            print("clutter files - load project: " + pr.name);
+            print("clutter files - load project: " + pr.name +"\n");
             var fiter = pr.files.map_iterator();
             while (fiter.next()) {
                 var a = new Xcls_fileitem(this,fiter.get_value());
