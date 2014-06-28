@@ -36,14 +36,14 @@ namespace Project {
 		//tree : false,
 		public  string xtype;
 		 
-		
+		bool is_scanned; 
 	   
 		
 		public Project (string path) {
 		    
 		    //this.name = name;
 		    
-		    
+		    this.is_scanned = false;
 		    this.paths = new Gee.HashMap<string,string>();
 		    this.files = new Gee.HashMap<string,JsRender.JsRender>();
 		    //XObject.extend(this, cfg);
