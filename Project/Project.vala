@@ -498,6 +498,9 @@ namespace Project {
 		    } catch (GLib.Error e) {
 				print("Project::scanDirs failed : " + e.message + "\n");
 			}
+			return; 
+
+			// we skip subdirectory scanning at present.
 		    for (var i = 0; i < subs.length(); i++) {
 		        
 		         this.scanDir(subs.nth_data(i), dp+1);
