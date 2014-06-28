@@ -27,6 +27,7 @@ public class Xcls_WindowLeftProjects : Object
     public Xcls_namecol namecol;
 
         // my vars
+    public bool is_loaded;
     public bool is_loading;
     public signal void project_selected(Project.Project project);
     public signal void show_new_project();
@@ -39,6 +40,7 @@ public class Xcls_WindowLeftProjects : Object
         this.el = new Gtk.VBox( false, 0 );
 
         // my vars
+        this.is_loaded = false;
         this.is_loading = false;
 
         // set gobject values
