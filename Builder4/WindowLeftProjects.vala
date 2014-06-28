@@ -66,7 +66,7 @@ public class Xcls_WindowLeftProjects : Object
                  return;
              }
                  
-             _this.is_loaded = true
+             _this.is_loaded = true;
              
              Project.Project.loadAll();
              var projects = Project.Project.allProjectsByName();

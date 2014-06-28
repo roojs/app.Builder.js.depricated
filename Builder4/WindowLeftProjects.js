@@ -27,7 +27,7 @@ WindowLeftProjects=new XObject({
              return;
          }
              
-         _this.is_loaded = true
+         _this.is_loaded = true;
          
          Project.Project.loadAll();
          var projects = Project.Project.allProjectsByName();
