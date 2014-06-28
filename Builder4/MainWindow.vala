@@ -156,7 +156,7 @@ public class Xcls_MainWindow : Object
             this.left_projects.project_selected.connect((proj) => {
                 print("---project_selected called -> triggering scanDirs/ show project\n");
                 proj.scanDirs();
-                _this.clutterfiles.show(proj);
+                _this.clutterfiles.loadProject(proj);
             
             });
         
