@@ -286,7 +286,7 @@ static void xcls_dialogsavetemplate_finalize (GObject* obj);
 
 
 static gpointer _g_object_ref0 (gpointer self) {
-#line 35 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 35 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	return self ? g_object_ref (self) : NULL;
 #line 292 "DialogSaveTemplate.vala.c"
 }
@@ -295,17 +295,17 @@ static gpointer _g_object_ref0 (gpointer self) {
 static gboolean __lambda41_ (Xcls_DialogSaveTemplate* self, GtkWidget* _self_, GdkEventAny* event) {
 	gboolean result = FALSE;
 	GtkDialog* _tmp0_;
-#line 57 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 57 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	g_return_val_if_fail (_self_ != NULL, FALSE);
-#line 57 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 57 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	g_return_val_if_fail (event != NULL, FALSE);
-#line 58 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 58 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp0_ = self->el;
-#line 58 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 58 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	gtk_widget_hide ((GtkWidget*) _tmp0_);
-#line 59 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 59 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	result = TRUE;
-#line 59 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 59 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	return result;
 #line 311 "DialogSaveTemplate.vala.c"
 }
@@ -314,7 +314,7 @@ static gboolean __lambda41_ (Xcls_DialogSaveTemplate* self, GtkWidget* _self_, G
 static gboolean ___lambda41__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self) {
 	gboolean result;
 	result = __lambda41_ (self, _sender, event);
-#line 57 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 57 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	return result;
 #line 320 "DialogSaveTemplate.vala.c"
 }
@@ -341,114 +341,114 @@ static void __lambda42_ (Xcls_DialogSaveTemplate* self, GtkDialog* _self_, gint 
 	Xcls_DialogSaveTemplate* _tmp21_;
 	JsRenderNode* _tmp22_;
 	GtkDialog* _tmp23_;
-#line 62 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 62 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	g_return_if_fail (_self_ != NULL);
-#line 64 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 64 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp0_ = response_id;
-#line 64 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 64 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	if (_tmp0_ < 1) {
 #line 351 "DialogSaveTemplate.vala.c"
 		GtkDialog* _tmp1_;
-#line 65 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 65 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 		_tmp1_ = self->el;
-#line 65 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 65 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 		gtk_widget_hide ((GtkWidget*) _tmp1_);
-#line 66 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 66 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 		return;
 #line 359 "DialogSaveTemplate.vala.c"
 	}
-#line 68 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 68 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp2_ = self->priv->_this;
-#line 68 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 68 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp3_ = _tmp2_->name;
-#line 68 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 68 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp4_ = _tmp3_->el;
-#line 68 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 68 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp5_ = gtk_entry_get_text (_tmp4_);
-#line 68 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 68 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp6_ = g_strdup (_tmp5_);
-#line 68 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 68 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	name = _tmp6_;
-#line 69 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 69 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp7_ = name;
-#line 69 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 69 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp8_ = strlen (_tmp7_);
-#line 69 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 69 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp9_ = _tmp8_;
-#line 69 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 69 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	if (_tmp9_ < 1) {
 #line 381 "DialogSaveTemplate.vala.c"
 		Xcls_StandardErrorDialog* _tmp10_;
-#line 70 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 70 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 		_tmp10_ = StandardErrorDialog;
-#line 70 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 70 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 		xcls_standarderrordialog_show (_tmp10_, "You must give the template a name. ");
-#line 73 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 73 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 		_g_free0 (name);
-#line 73 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 73 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 		return;
 #line 391 "DialogSaveTemplate.vala.c"
 	}
-#line 75 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 75 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp12_ = name;
-#line 75 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 75 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp13_ = g_regex_match_simple ("^[A-Za-z]+$", _tmp12_, 0, 0);
-#line 75 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 75 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	if (!_tmp13_) {
-#line 75 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 75 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 		_tmp11_ = TRUE;
 #line 401 "DialogSaveTemplate.vala.c"
 	} else {
 		const gchar* _tmp14_;
 		gboolean _tmp15_ = FALSE;
-#line 76 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 76 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 		_tmp14_ = name;
-#line 76 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 76 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 		_tmp15_ = g_regex_match_simple ("^[A-Za-z ]+$", _tmp14_, 0, 0);
-#line 76 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 76 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 		_tmp11_ = !_tmp15_;
 #line 411 "DialogSaveTemplate.vala.c"
 	}
-#line 75 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 75 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp16_ = _tmp11_;
-#line 75 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 75 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	if (_tmp16_) {
 #line 417 "DialogSaveTemplate.vala.c"
 		Xcls_StandardErrorDialog* _tmp17_;
-#line 78 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 78 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 		_tmp17_ = StandardErrorDialog;
-#line 78 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 78 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 		xcls_standarderrordialog_show (_tmp17_, "Template Nane must contain only letters and spaces. ");
-#line 81 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 81 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 		_g_free0 (name);
-#line 81 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 81 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 		return;
 #line 427 "DialogSaveTemplate.vala.c"
 	}
-#line 83 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp18_ = self->priv->_this;
-#line 83 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp19_ = _tmp18_->palete;
-#line 83 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp20_ = name;
-#line 83 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp21_ = self->priv->_this;
-#line 83 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp22_ = _tmp21_->data;
-#line 83 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	palete_palete_saveTemplate (_tmp19_, _tmp20_, _tmp22_);
-#line 85 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 85 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp23_ = self->el;
-#line 85 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 85 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	gtk_widget_hide ((GtkWidget*) _tmp23_);
-#line 62 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 62 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_g_free0 (name);
 #line 447 "DialogSaveTemplate.vala.c"
 }
 
 
 static void ___lambda42__gtk_dialog_response (GtkDialog* _sender, gint response_id, gpointer self) {
-#line 62 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 62 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	__lambda42_ (self, _sender, response_id);
 #line 454 "DialogSaveTemplate.vala.c"
 }
@@ -480,106 +480,106 @@ Xcls_DialogSaveTemplate* xcls_dialogsavetemplate_construct (GType object_type) {
 	GtkButton* _tmp18_;
 	GtkDialog* _tmp19_;
 	GtkDialog* _tmp20_;
-#line 32 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 32 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	self = (Xcls_DialogSaveTemplate*) g_object_new (object_type, NULL);
-#line 34 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 34 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp0_ = (GtkDialog*) gtk_dialog_new ();
-#line 34 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 34 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	g_object_ref_sink (_tmp0_);
-#line 34 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 34 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_g_object_unref0 (self->el);
-#line 34 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 34 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	self->el = _tmp0_;
-#line 35 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 35 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp1_ = _g_object_ref0 (self);
-#line 35 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 35 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 35 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 35 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	self->priv->_this = _tmp1_;
-#line 36 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 36 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp2_ = _g_object_ref0 (self);
-#line 36 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 36 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_g_object_unref0 (DialogSaveTemplate);
-#line 36 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 36 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	DialogSaveTemplate = _tmp2_;
-#line 41 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 41 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp3_ = self->el;
-#line 41 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 41 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	g_object_set ((GtkWindow*) _tmp3_, "default-height", 200, NULL);
-#line 42 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 42 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp4_ = self->el;
-#line 42 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 42 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	g_object_set ((GtkWindow*) _tmp4_, "default-width", 400, NULL);
-#line 43 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 43 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp5_ = self->el;
-#line 43 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 43 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	gtk_window_set_modal ((GtkWindow*) _tmp5_, TRUE);
-#line 44 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 44 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp6_ = self->priv->_this;
-#line 44 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 44 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp7_ = xcls_dialogsavetemplate_xcls_hbox2_new (_tmp6_);
-#line 44 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 44 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	child_0 = _tmp7_;
-#line 45 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 45 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	g_object_ref ((GObject*) child_0);
-#line 46 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 46 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp8_ = self->el;
-#line 46 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 46 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp9_ = gtk_dialog_get_content_area (_tmp8_);
-#line 46 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 46 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp10_ = child_0->el;
-#line 46 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 46 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	gtk_container_add ((GtkContainer*) _tmp9_, (GtkWidget*) _tmp10_);
-#line 49 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 49 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp11_ = self->priv->_this;
-#line 49 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 49 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp12_ = xcls_dialogsavetemplate_xcls_button5_new (_tmp11_);
-#line 49 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 49 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	child_1 = _tmp12_;
-#line 50 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 50 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	g_object_ref ((GObject*) child_1);
-#line 51 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 51 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp13_ = self->el;
-#line 51 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 51 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp14_ = child_1->el;
-#line 51 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 51 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	gtk_dialog_add_action_widget (_tmp13_, (GtkWidget*) _tmp14_, 0);
-#line 52 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 52 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp15_ = self->priv->_this;
-#line 52 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 52 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp16_ = xcls_dialogsavetemplate_xcls_button6_new (_tmp15_);
-#line 52 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 52 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	child_2 = _tmp16_;
-#line 53 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 53 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	g_object_ref ((GObject*) child_2);
-#line 54 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 54 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp17_ = self->el;
-#line 54 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 54 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp18_ = child_2->el;
-#line 54 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 54 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	gtk_dialog_add_action_widget (_tmp17_, (GtkWidget*) _tmp18_, 1);
-#line 57 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 57 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp19_ = self->el;
-#line 57 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 57 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	g_signal_connect_object ((GtkWidget*) _tmp19_, "delete-event", (GCallback) ___lambda41__gtk_widget_delete_event, self, 0);
-#line 62 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 62 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp20_ = self->el;
-#line 62 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 62 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	g_signal_connect_object (_tmp20_, "response", (GCallback) ___lambda42__gtk_dialog_response, self, 0);
-#line 32 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 32 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_g_object_unref0 (child_2);
-#line 32 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 32 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_g_object_unref0 (child_1);
-#line 32 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 32 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_g_object_unref0 (child_0);
-#line 32 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 32 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	return self;
 #line 578 "DialogSaveTemplate.vala.c"
 }
 
 
 Xcls_DialogSaveTemplate* xcls_dialogsavetemplate_new (void) {
-#line 32 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 32 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	return xcls_dialogsavetemplate_construct (TYPE_XCLS_DIALOGSAVETEMPLATE);
 #line 585 "DialogSaveTemplate.vala.c"
 }
@@ -604,75 +604,75 @@ void xcls_dialogsavetemplate_show (GtkWindow* parent, PaletePalete* palete, JsRe
 	GtkEntry* _tmp15_;
 	Xcls_DialogSaveTemplate* _tmp16_;
 	GtkDialog* _tmp17_;
-#line 105 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 105 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	g_return_if_fail (parent != NULL);
-#line 105 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 105 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	g_return_if_fail (palete != NULL);
-#line 105 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 105 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	g_return_if_fail (data != NULL);
-#line 109 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 109 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp0_ = DialogSaveTemplate;
-#line 109 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 109 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 109 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 109 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	t = _tmp1_;
-#line 110 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 110 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp2_ = t;
-#line 110 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 110 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	if (_tmp2_ == NULL) {
 #line 624 "DialogSaveTemplate.vala.c"
 		Xcls_DialogSaveTemplate* _tmp3_;
-#line 111 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 111 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 		_tmp3_ = xcls_dialogsavetemplate_new ();
-#line 111 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 111 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 		_g_object_unref0 (t);
-#line 111 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 111 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 		t = _tmp3_;
 #line 632 "DialogSaveTemplate.vala.c"
 	}
-#line 113 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 113 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp4_ = t;
-#line 113 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 113 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp5_ = _tmp4_->el;
-#line 113 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 113 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp6_ = parent;
-#line 113 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 113 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	gtk_window_set_transient_for ((GtkWindow*) _tmp5_, _tmp6_);
-#line 114 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 114 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp7_ = t;
-#line 114 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 114 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp8_ = data;
-#line 114 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 114 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp9_ = _g_object_ref0 (_tmp8_);
-#line 114 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 114 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_g_object_unref0 (_tmp7_->data);
-#line 114 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 114 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp7_->data = _tmp9_;
-#line 115 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 115 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp10_ = t;
-#line 115 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 115 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp11_ = palete;
-#line 115 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 115 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp12_ = _g_object_ref0 (_tmp11_);
-#line 115 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 115 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_g_object_unref0 (_tmp10_->palete);
-#line 115 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 115 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp10_->palete = _tmp12_;
-#line 116 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 116 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp13_ = t;
-#line 116 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 116 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp14_ = _tmp13_->name;
-#line 116 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 116 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp15_ = _tmp14_->el;
-#line 116 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 116 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	gtk_entry_set_text (_tmp15_, "");
-#line 117 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 117 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp16_ = t;
-#line 117 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 117 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp17_ = _tmp16_->el;
-#line 117 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 117 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	gtk_widget_show_all ((GtkWidget*) _tmp17_);
-#line 105 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 105 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_g_object_unref0 (t);
 #line 678 "DialogSaveTemplate.vala.c"
 }
@@ -693,84 +693,84 @@ Xcls_DialogSaveTemplateXcls_HBox2* xcls_dialogsavetemplate_xcls_hbox2_construct 
 	Xcls_DialogSaveTemplateXcls_name* child_1;
 	GtkHBox* _tmp9_;
 	GtkEntry* _tmp10_;
-#line 140 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 140 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 140 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 140 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	self = (Xcls_DialogSaveTemplateXcls_HBox2*) g_object_new (object_type, NULL);
-#line 142 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 142 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp0_ = (GtkHBox*) gtk_hbox_new (TRUE, 0);
-#line 142 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 142 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	g_object_ref_sink (_tmp0_);
-#line 142 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 142 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_g_object_unref0 (self->el);
-#line 142 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 142 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	self->el = _tmp0_;
-#line 143 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 143 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp1_ = _owner;
-#line 143 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 143 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp2_ = _g_object_ref0 (_tmp1_);
-#line 143 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 143 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 143 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 143 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	self->priv->_this = _tmp2_;
-#line 148 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 148 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp3_ = self->priv->_this;
-#line 148 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 148 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp4_ = xcls_dialogsavetemplate_xcls_label3_new (_tmp3_);
-#line 148 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 148 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	child_0 = _tmp4_;
-#line 149 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 149 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	g_object_ref ((GObject*) child_0);
-#line 150 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 150 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp5_ = self->el;
-#line 150 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 150 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp6_ = child_0->el;
-#line 150 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 150 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	gtk_container_add ((GtkContainer*) _tmp5_, (GtkWidget*) _tmp6_);
-#line 151 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 151 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp7_ = self->priv->_this;
-#line 151 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 151 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp8_ = xcls_dialogsavetemplate_xcls_name_new (_tmp7_);
-#line 151 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 151 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	child_1 = _tmp8_;
-#line 152 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 152 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	g_object_ref ((GObject*) child_1);
-#line 153 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 153 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp9_ = self->el;
-#line 153 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 153 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp10_ = child_1->el;
-#line 153 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 153 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	gtk_container_add ((GtkContainer*) _tmp9_, (GtkWidget*) _tmp10_);
-#line 140 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 140 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_g_object_unref0 (child_1);
-#line 140 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 140 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_g_object_unref0 (child_0);
-#line 140 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 140 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	return self;
 #line 751 "DialogSaveTemplate.vala.c"
 }
 
 
 Xcls_DialogSaveTemplateXcls_HBox2* xcls_dialogsavetemplate_xcls_hbox2_new (Xcls_DialogSaveTemplate* _owner) {
-#line 140 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 140 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	return xcls_dialogsavetemplate_xcls_hbox2_construct (XCLS_DIALOGSAVETEMPLATE_TYPE_XCLS_HBOX2, _owner);
 #line 758 "DialogSaveTemplate.vala.c"
 }
 
 
 static void xcls_dialogsavetemplate_xcls_hbox2_class_init (Xcls_DialogSaveTemplateXcls_HBox2Class * klass) {
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	xcls_dialogsavetemplate_xcls_hbox2_parent_class = g_type_class_peek_parent (klass);
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_DialogSaveTemplateXcls_HBox2Private));
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_dialogsavetemplate_xcls_hbox2_finalize;
 #line 769 "DialogSaveTemplate.vala.c"
 }
 
 
 static void xcls_dialogsavetemplate_xcls_hbox2_instance_init (Xcls_DialogSaveTemplateXcls_HBox2 * self) {
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	self->priv = XCLS_DIALOGSAVETEMPLATE_XCLS_HBOX2_GET_PRIVATE (self);
 #line 776 "DialogSaveTemplate.vala.c"
 }
@@ -778,13 +778,13 @@ static void xcls_dialogsavetemplate_xcls_hbox2_instance_init (Xcls_DialogSaveTem
 
 static void xcls_dialogsavetemplate_xcls_hbox2_finalize (GObject* obj) {
 	Xcls_DialogSaveTemplateXcls_HBox2 * self;
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_DIALOGSAVETEMPLATE_TYPE_XCLS_HBOX2, Xcls_DialogSaveTemplateXcls_HBox2);
-#line 133 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 133 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_g_object_unref0 (self->el);
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	G_OBJECT_CLASS (xcls_dialogsavetemplate_xcls_hbox2_parent_class)->finalize (obj);
 #line 790 "DialogSaveTemplate.vala.c"
 }
@@ -807,52 +807,52 @@ Xcls_DialogSaveTemplateXcls_Label3* xcls_dialogsavetemplate_xcls_label3_construc
 	GtkLabel* _tmp0_;
 	Xcls_DialogSaveTemplate* _tmp1_;
 	Xcls_DialogSaveTemplate* _tmp2_;
-#line 181 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 181 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 181 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 181 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	self = (Xcls_DialogSaveTemplateXcls_Label3*) g_object_new (object_type, NULL);
-#line 183 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 183 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp0_ = (GtkLabel*) gtk_label_new ("Name");
-#line 183 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 183 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	g_object_ref_sink (_tmp0_);
-#line 183 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 183 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_g_object_unref0 (self->el);
-#line 183 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 183 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	self->el = _tmp0_;
-#line 184 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 184 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp1_ = _owner;
-#line 184 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 184 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp2_ = _g_object_ref0 (_tmp1_);
-#line 184 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 184 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 184 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 184 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	self->priv->_this = _tmp2_;
-#line 181 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 181 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	return self;
 #line 833 "DialogSaveTemplate.vala.c"
 }
 
 
 Xcls_DialogSaveTemplateXcls_Label3* xcls_dialogsavetemplate_xcls_label3_new (Xcls_DialogSaveTemplate* _owner) {
-#line 181 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 181 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	return xcls_dialogsavetemplate_xcls_label3_construct (XCLS_DIALOGSAVETEMPLATE_TYPE_XCLS_LABEL3, _owner);
 #line 840 "DialogSaveTemplate.vala.c"
 }
 
 
 static void xcls_dialogsavetemplate_xcls_label3_class_init (Xcls_DialogSaveTemplateXcls_Label3Class * klass) {
-#line 172 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 172 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	xcls_dialogsavetemplate_xcls_label3_parent_class = g_type_class_peek_parent (klass);
-#line 172 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 172 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_DialogSaveTemplateXcls_Label3Private));
-#line 172 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 172 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_dialogsavetemplate_xcls_label3_finalize;
 #line 851 "DialogSaveTemplate.vala.c"
 }
 
 
 static void xcls_dialogsavetemplate_xcls_label3_instance_init (Xcls_DialogSaveTemplateXcls_Label3 * self) {
-#line 172 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 172 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	self->priv = XCLS_DIALOGSAVETEMPLATE_XCLS_LABEL3_GET_PRIVATE (self);
 #line 858 "DialogSaveTemplate.vala.c"
 }
@@ -860,13 +860,13 @@ static void xcls_dialogsavetemplate_xcls_label3_instance_init (Xcls_DialogSaveTe
 
 static void xcls_dialogsavetemplate_xcls_label3_finalize (GObject* obj) {
 	Xcls_DialogSaveTemplateXcls_Label3 * self;
-#line 172 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 172 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_DIALOGSAVETEMPLATE_TYPE_XCLS_LABEL3, Xcls_DialogSaveTemplateXcls_Label3);
-#line 174 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 174 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_g_object_unref0 (self->el);
-#line 175 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 175 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 172 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 172 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	G_OBJECT_CLASS (xcls_dialogsavetemplate_xcls_label3_parent_class)->finalize (obj);
 #line 872 "DialogSaveTemplate.vala.c"
 }
@@ -891,60 +891,60 @@ Xcls_DialogSaveTemplateXcls_name* xcls_dialogsavetemplate_xcls_name_construct (G
 	Xcls_DialogSaveTemplate* _tmp2_;
 	Xcls_DialogSaveTemplate* _tmp3_;
 	Xcls_DialogSaveTemplateXcls_name* _tmp4_;
-#line 220 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 220 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 220 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 220 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	self = (Xcls_DialogSaveTemplateXcls_name*) g_object_new (object_type, NULL);
-#line 222 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 222 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp0_ = (GtkEntry*) gtk_entry_new ();
-#line 222 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 222 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	g_object_ref_sink (_tmp0_);
-#line 222 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 222 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_g_object_unref0 (self->el);
-#line 222 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 222 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	self->el = _tmp0_;
-#line 223 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 223 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp1_ = _owner;
-#line 223 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 223 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp2_ = _g_object_ref0 (_tmp1_);
-#line 223 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 223 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 223 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 223 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	self->priv->_this = _tmp2_;
-#line 224 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 224 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp3_ = self->priv->_this;
-#line 224 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 224 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp4_ = _g_object_ref0 (self);
-#line 224 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 224 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_g_object_unref0 (_tmp3_->name);
-#line 224 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 224 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp3_->name = _tmp4_;
-#line 220 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 220 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	return self;
 #line 925 "DialogSaveTemplate.vala.c"
 }
 
 
 Xcls_DialogSaveTemplateXcls_name* xcls_dialogsavetemplate_xcls_name_new (Xcls_DialogSaveTemplate* _owner) {
-#line 220 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 220 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	return xcls_dialogsavetemplate_xcls_name_construct (XCLS_DIALOGSAVETEMPLATE_TYPE_XCLS_NAME, _owner);
 #line 932 "DialogSaveTemplate.vala.c"
 }
 
 
 static void xcls_dialogsavetemplate_xcls_name_class_init (Xcls_DialogSaveTemplateXcls_nameClass * klass) {
-#line 211 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 211 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	xcls_dialogsavetemplate_xcls_name_parent_class = g_type_class_peek_parent (klass);
-#line 211 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 211 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_DialogSaveTemplateXcls_namePrivate));
-#line 211 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 211 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_dialogsavetemplate_xcls_name_finalize;
 #line 943 "DialogSaveTemplate.vala.c"
 }
 
 
 static void xcls_dialogsavetemplate_xcls_name_instance_init (Xcls_DialogSaveTemplateXcls_name * self) {
-#line 211 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 211 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	self->priv = XCLS_DIALOGSAVETEMPLATE_XCLS_NAME_GET_PRIVATE (self);
 #line 950 "DialogSaveTemplate.vala.c"
 }
@@ -952,13 +952,13 @@ static void xcls_dialogsavetemplate_xcls_name_instance_init (Xcls_DialogSaveTemp
 
 static void xcls_dialogsavetemplate_xcls_name_finalize (GObject* obj) {
 	Xcls_DialogSaveTemplateXcls_name * self;
-#line 211 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 211 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_DIALOGSAVETEMPLATE_TYPE_XCLS_NAME, Xcls_DialogSaveTemplateXcls_name);
-#line 213 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 213 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_g_object_unref0 (self->el);
-#line 214 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 214 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 211 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 211 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	G_OBJECT_CLASS (xcls_dialogsavetemplate_xcls_name_parent_class)->finalize (obj);
 #line 964 "DialogSaveTemplate.vala.c"
 }
@@ -982,56 +982,56 @@ Xcls_DialogSaveTemplateXcls_Button5* xcls_dialogsavetemplate_xcls_button5_constr
 	Xcls_DialogSaveTemplate* _tmp1_;
 	Xcls_DialogSaveTemplate* _tmp2_;
 	GtkButton* _tmp3_;
-#line 256 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 256 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 256 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 256 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	self = (Xcls_DialogSaveTemplateXcls_Button5*) g_object_new (object_type, NULL);
-#line 258 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 258 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp0_ = (GtkButton*) gtk_button_new ();
-#line 258 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 258 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	g_object_ref_sink (_tmp0_);
-#line 258 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 258 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_g_object_unref0 (self->el);
-#line 258 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 258 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	self->el = _tmp0_;
-#line 259 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 259 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp1_ = _owner;
-#line 259 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 259 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp2_ = _g_object_ref0 (_tmp1_);
-#line 259 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 259 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 259 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 259 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	self->priv->_this = _tmp2_;
-#line 264 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 264 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp3_ = self->el;
-#line 264 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 264 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	gtk_button_set_label (_tmp3_, "Cancel");
-#line 256 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 256 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	return self;
 #line 1012 "DialogSaveTemplate.vala.c"
 }
 
 
 Xcls_DialogSaveTemplateXcls_Button5* xcls_dialogsavetemplate_xcls_button5_new (Xcls_DialogSaveTemplate* _owner) {
-#line 256 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 256 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	return xcls_dialogsavetemplate_xcls_button5_construct (XCLS_DIALOGSAVETEMPLATE_TYPE_XCLS_BUTTON5, _owner);
 #line 1019 "DialogSaveTemplate.vala.c"
 }
 
 
 static void xcls_dialogsavetemplate_xcls_button5_class_init (Xcls_DialogSaveTemplateXcls_Button5Class * klass) {
-#line 247 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 247 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	xcls_dialogsavetemplate_xcls_button5_parent_class = g_type_class_peek_parent (klass);
-#line 247 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 247 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_DialogSaveTemplateXcls_Button5Private));
-#line 247 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 247 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_dialogsavetemplate_xcls_button5_finalize;
 #line 1030 "DialogSaveTemplate.vala.c"
 }
 
 
 static void xcls_dialogsavetemplate_xcls_button5_instance_init (Xcls_DialogSaveTemplateXcls_Button5 * self) {
-#line 247 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 247 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	self->priv = XCLS_DIALOGSAVETEMPLATE_XCLS_BUTTON5_GET_PRIVATE (self);
 #line 1037 "DialogSaveTemplate.vala.c"
 }
@@ -1039,13 +1039,13 @@ static void xcls_dialogsavetemplate_xcls_button5_instance_init (Xcls_DialogSaveT
 
 static void xcls_dialogsavetemplate_xcls_button5_finalize (GObject* obj) {
 	Xcls_DialogSaveTemplateXcls_Button5 * self;
-#line 247 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 247 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_DIALOGSAVETEMPLATE_TYPE_XCLS_BUTTON5, Xcls_DialogSaveTemplateXcls_Button5);
-#line 249 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 249 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_g_object_unref0 (self->el);
-#line 250 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 250 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 247 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 247 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	G_OBJECT_CLASS (xcls_dialogsavetemplate_xcls_button5_parent_class)->finalize (obj);
 #line 1051 "DialogSaveTemplate.vala.c"
 }
@@ -1069,56 +1069,56 @@ Xcls_DialogSaveTemplateXcls_Button6* xcls_dialogsavetemplate_xcls_button6_constr
 	Xcls_DialogSaveTemplate* _tmp1_;
 	Xcls_DialogSaveTemplate* _tmp2_;
 	GtkButton* _tmp3_;
-#line 292 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 292 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 292 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 292 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	self = (Xcls_DialogSaveTemplateXcls_Button6*) g_object_new (object_type, NULL);
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp0_ = (GtkButton*) gtk_button_new ();
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	g_object_ref_sink (_tmp0_);
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_g_object_unref0 (self->el);
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	self->el = _tmp0_;
-#line 295 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 295 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp1_ = _owner;
-#line 295 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 295 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp2_ = _g_object_ref0 (_tmp1_);
-#line 295 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 295 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 295 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 295 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	self->priv->_this = _tmp2_;
-#line 300 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 300 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_tmp3_ = self->el;
-#line 300 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 300 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	gtk_button_set_label (_tmp3_, "OK");
-#line 292 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 292 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	return self;
 #line 1099 "DialogSaveTemplate.vala.c"
 }
 
 
 Xcls_DialogSaveTemplateXcls_Button6* xcls_dialogsavetemplate_xcls_button6_new (Xcls_DialogSaveTemplate* _owner) {
-#line 292 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 292 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	return xcls_dialogsavetemplate_xcls_button6_construct (XCLS_DIALOGSAVETEMPLATE_TYPE_XCLS_BUTTON6, _owner);
 #line 1106 "DialogSaveTemplate.vala.c"
 }
 
 
 static void xcls_dialogsavetemplate_xcls_button6_class_init (Xcls_DialogSaveTemplateXcls_Button6Class * klass) {
-#line 283 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 283 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	xcls_dialogsavetemplate_xcls_button6_parent_class = g_type_class_peek_parent (klass);
-#line 283 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 283 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_DialogSaveTemplateXcls_Button6Private));
-#line 283 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 283 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_dialogsavetemplate_xcls_button6_finalize;
 #line 1117 "DialogSaveTemplate.vala.c"
 }
 
 
 static void xcls_dialogsavetemplate_xcls_button6_instance_init (Xcls_DialogSaveTemplateXcls_Button6 * self) {
-#line 283 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 283 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	self->priv = XCLS_DIALOGSAVETEMPLATE_XCLS_BUTTON6_GET_PRIVATE (self);
 #line 1124 "DialogSaveTemplate.vala.c"
 }
@@ -1126,13 +1126,13 @@ static void xcls_dialogsavetemplate_xcls_button6_instance_init (Xcls_DialogSaveT
 
 static void xcls_dialogsavetemplate_xcls_button6_finalize (GObject* obj) {
 	Xcls_DialogSaveTemplateXcls_Button6 * self;
-#line 283 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 283 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_DIALOGSAVETEMPLATE_TYPE_XCLS_BUTTON6, Xcls_DialogSaveTemplateXcls_Button6);
-#line 285 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 285 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_g_object_unref0 (self->el);
-#line 286 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 286 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 283 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 283 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	G_OBJECT_CLASS (xcls_dialogsavetemplate_xcls_button6_parent_class)->finalize (obj);
 #line 1138 "DialogSaveTemplate.vala.c"
 }
@@ -1151,18 +1151,18 @@ GType xcls_dialogsavetemplate_xcls_button6_get_type (void) {
 
 
 static void xcls_dialogsavetemplate_class_init (Xcls_DialogSaveTemplateClass * klass) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	xcls_dialogsavetemplate_parent_class = g_type_class_peek_parent (klass);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_DialogSaveTemplatePrivate));
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_dialogsavetemplate_finalize;
 #line 1161 "DialogSaveTemplate.vala.c"
 }
 
 
 static void xcls_dialogsavetemplate_instance_init (Xcls_DialogSaveTemplate * self) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	self->priv = XCLS_DIALOGSAVETEMPLATE_GET_PRIVATE (self);
 #line 1168 "DialogSaveTemplate.vala.c"
 }
@@ -1170,19 +1170,19 @@ static void xcls_dialogsavetemplate_instance_init (Xcls_DialogSaveTemplate * sel
 
 static void xcls_dialogsavetemplate_finalize (GObject* obj) {
 	Xcls_DialogSaveTemplate * self;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, TYPE_XCLS_DIALOGSAVETEMPLATE, Xcls_DialogSaveTemplate);
-#line 22 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 22 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_g_object_unref0 (self->el);
-#line 23 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 23 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 25 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 25 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_g_object_unref0 (self->name);
-#line 28 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 28 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_g_object_unref0 (self->data);
-#line 29 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 29 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	_g_object_unref0 (self->palete);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogSaveTemplate.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogSaveTemplate.vala"
 	G_OBJECT_CLASS (xcls_dialogsavetemplate_parent_class)->finalize (obj);
 #line 1188 "DialogSaveTemplate.vala.c"
 }

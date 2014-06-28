@@ -507,7 +507,7 @@ static void xcls_editproject_finalize (Xcls_EditProject* obj);
 
 
 static gpointer _xcls_editproject_ref0 (gpointer self) {
-#line 37 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 37 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return self ? xcls_editproject_ref (self) : NULL;
 #line 513 "EditProject.vala.c"
 }
@@ -516,17 +516,17 @@ static gpointer _xcls_editproject_ref0 (gpointer self) {
 static gboolean __lambda69_ (Xcls_EditProject* self, GtkWidget* _self_, GdkEventAny* event) {
 	gboolean result = FALSE;
 	GtkDialog* _tmp0_;
-#line 59 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 59 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_val_if_fail (_self_ != NULL, FALSE);
-#line 59 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 59 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_val_if_fail (event != NULL, FALSE);
-#line 60 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 60 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp0_ = self->el;
-#line 60 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 60 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	gtk_widget_hide ((GtkWidget*) _tmp0_);
-#line 61 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 61 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	result = FALSE;
-#line 61 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 61 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return result;
 #line 532 "EditProject.vala.c"
 }
@@ -535,7 +535,7 @@ static gboolean __lambda69_ (Xcls_EditProject* self, GtkWidget* _self_, GdkEvent
 static gboolean ___lambda69__gtk_widget_destroy_event (GtkWidget* _sender, GdkEventAny* event, gpointer self) {
 	gboolean result;
 	result = __lambda69_ (self, _sender, event);
-#line 59 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 59 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return result;
 #line 541 "EditProject.vala.c"
 }
@@ -573,126 +573,126 @@ static void __lambda70_ (Xcls_EditProject* self, GtkDialog* _self_, gint id) {
 	ProjectProject* _tmp30_;
 	ProjectProject* project;
 	ProjectProject* _tmp31_;
-#line 63 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 63 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_if_fail (_self_ != NULL);
-#line 64 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 64 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp0_ = id;
-#line 64 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 64 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (_tmp0_ < 1) {
 #line 583 "EditProject.vala.c"
 		GtkDialog* _tmp1_;
-#line 65 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 65 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		_tmp1_ = self->el;
-#line 65 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 65 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		gtk_widget_hide ((GtkWidget*) _tmp1_);
-#line 66 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 66 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		return;
 #line 591 "EditProject.vala.c"
 	}
-#line 68 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 68 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp2_ = xcls_editproject__this;
-#line 68 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 68 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp3_ = _tmp2_->xtype;
-#line 68 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 68 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp4_ = xcls_editproject_xcls_xtype_getValue (_tmp3_);
-#line 68 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 68 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp5_ = _tmp4_;
-#line 68 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 68 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp6_ = strlen (_tmp5_);
-#line 68 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 68 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp7_ = _tmp6_;
-#line 68 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 68 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp8_ = _tmp7_ < 1;
-#line 68 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 68 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_g_free0 (_tmp5_);
-#line 68 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 68 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (_tmp8_) {
 #line 611 "EditProject.vala.c"
 		Xcls_StandardErrorDialog* _tmp9_;
-#line 69 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 69 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		_tmp9_ = StandardErrorDialog;
-#line 69 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 69 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		xcls_standarderrordialog_show (_tmp9_, "You have to set Project type");
-#line 70 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 70 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		return;
 #line 619 "EditProject.vala.c"
 	}
-#line 72 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 72 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp10_ = xcls_editproject__this;
-#line 72 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 72 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp11_ = _tmp10_->dir;
-#line 72 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 72 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp12_ = _tmp11_->el;
-#line 72 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 72 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp13_ = gtk_file_chooser_get_filename ((GtkFileChooser*) _tmp12_);
-#line 72 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 72 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp14_ = _tmp13_;
-#line 72 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 72 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp15_ = strlen (_tmp14_);
-#line 72 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 72 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp16_ = _tmp15_;
-#line 72 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 72 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp17_ = _tmp16_ < 1;
-#line 72 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 72 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_g_free0 (_tmp14_);
-#line 72 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 72 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (_tmp17_) {
 #line 641 "EditProject.vala.c"
 		Xcls_StandardErrorDialog* _tmp18_;
-#line 73 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 73 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		_tmp18_ = StandardErrorDialog;
-#line 73 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 73 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		xcls_standarderrordialog_show (_tmp18_, "You have to select a folder");
-#line 74 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 74 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		return;
 #line 649 "EditProject.vala.c"
 	}
-#line 77 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp19_ = self->el;
-#line 77 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	gtk_widget_hide ((GtkWidget*) _tmp19_);
-#line 80 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 80 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp20_ = xcls_editproject__this;
-#line 80 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 80 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp21_ = _tmp20_->dir;
-#line 80 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 80 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp22_ = _tmp21_->el;
-#line 80 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 80 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp23_ = gtk_file_chooser_get_filename ((GtkFileChooser*) _tmp22_);
-#line 80 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 80 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	fn = _tmp23_;
-#line 82 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 82 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp24_ = xcls_editproject__this;
-#line 82 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 82 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp25_ = _tmp24_->xtype;
-#line 82 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 82 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp26_ = xcls_editproject_xcls_xtype_getValue (_tmp25_);
-#line 82 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 82 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp27_ = _tmp26_;
-#line 82 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 82 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp28_ = fn;
-#line 82 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 82 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp29_ = project_project_factory (_tmp27_, _tmp28_);
-#line 82 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 82 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp30_ = _tmp29_;
-#line 82 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 82 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_g_free0 (_tmp27_);
-#line 82 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 82 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	project = _tmp30_;
-#line 87 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 87 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp31_ = project;
-#line 87 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 87 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_signal_emit_by_name (self, "success", _tmp31_);
-#line 63 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 63 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_g_object_unref0 (project);
-#line 63 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 63 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_g_free0 (fn);
 #line 691 "EditProject.vala.c"
 }
 
 
 static void ___lambda70__gtk_dialog_response (GtkDialog* _sender, gint response_id, gpointer self) {
-#line 63 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 63 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	__lambda70_ (self, _sender, response_id);
 #line 698 "EditProject.vala.c"
 }
@@ -724,106 +724,106 @@ Xcls_EditProject* xcls_editproject_construct (GType object_type) {
 	GtkButton* _tmp18_;
 	GtkDialog* _tmp19_;
 	GtkDialog* _tmp20_;
-#line 34 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 34 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	self = (Xcls_EditProject*) g_type_create_instance (object_type);
-#line 36 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 36 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp0_ = (GtkDialog*) gtk_dialog_new ();
-#line 36 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 36 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_object_ref_sink (_tmp0_);
-#line 36 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 36 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_g_object_unref0 (self->el);
-#line 36 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 36 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	self->el = _tmp0_;
-#line 37 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 37 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp1_ = _xcls_editproject_ref0 (self);
-#line 37 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 37 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_xcls_editproject_unref0 (xcls_editproject__this);
-#line 37 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 37 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	xcls_editproject__this = _tmp1_;
-#line 38 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 38 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp2_ = _xcls_editproject_ref0 (self);
-#line 38 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 38 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_xcls_editproject_unref0 (EditProject);
-#line 38 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 38 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	EditProject = _tmp2_;
-#line 43 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 43 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp3_ = self->el;
-#line 43 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 43 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	gtk_container_set_border_width ((GtkContainer*) _tmp3_, (guint) 3);
-#line 44 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 44 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp4_ = self->el;
-#line 44 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 44 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_object_set ((GtkWindow*) _tmp4_, "default-height", 500, NULL);
-#line 45 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 45 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp5_ = self->el;
-#line 45 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 45 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_object_set ((GtkWindow*) _tmp5_, "default-width", 600, NULL);
-#line 46 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 46 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp6_ = self->el;
-#line 46 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 46 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	gtk_window_set_deletable ((GtkWindow*) _tmp6_, TRUE);
-#line 47 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 47 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp7_ = self->el;
-#line 47 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 47 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	gtk_window_set_modal ((GtkWindow*) _tmp7_, TRUE);
-#line 48 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 48 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp8_ = self->el;
-#line 48 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 48 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	gtk_window_set_title ((GtkWindow*) _tmp8_, "Project Properties");
-#line 49 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 49 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp9_ = xcls_editproject_xcls_vbox2_new ();
-#line 49 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 49 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	child_0 = _tmp9_;
-#line 50 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 50 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp10_ = self->el;
-#line 50 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 50 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp11_ = gtk_dialog_get_content_area (_tmp10_);
-#line 50 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 50 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp12_ = child_0->el;
-#line 50 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 50 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	gtk_container_add ((GtkContainer*) _tmp11_, (GtkWidget*) _tmp12_);
-#line 53 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 53 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp13_ = xcls_editproject_xcls_button9_new ();
-#line 53 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 53 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	child_1 = _tmp13_;
-#line 54 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 54 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp14_ = self->el;
-#line 54 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 54 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp15_ = child_1->el;
-#line 54 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 54 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	gtk_dialog_add_action_widget (_tmp14_, (GtkWidget*) _tmp15_, 1);
-#line 55 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 55 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp16_ = xcls_editproject_xcls_button10_new ();
-#line 55 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 55 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	child_2 = _tmp16_;
-#line 56 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 56 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp17_ = self->el;
-#line 56 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 56 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp18_ = child_2->el;
-#line 56 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 56 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	gtk_dialog_add_action_widget (_tmp17_, (GtkWidget*) _tmp18_, 0);
-#line 59 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 59 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp19_ = self->el;
-#line 59 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 59 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_signal_connect ((GtkWidget*) _tmp19_, "destroy-event", (GCallback) ___lambda69__gtk_widget_destroy_event, self);
-#line 63 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 63 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp20_ = self->el;
-#line 63 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 63 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_signal_connect (_tmp20_, "response", (GCallback) ___lambda70__gtk_dialog_response, self);
-#line 34 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 34 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_xcls_editproject_xcls_button10_unref0 (child_2);
-#line 34 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 34 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_xcls_editproject_xcls_button9_unref0 (child_1);
-#line 34 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 34 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_xcls_editproject_xcls_vbox2_unref0 (child_0);
-#line 34 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 34 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return self;
 #line 822 "EditProject.vala.c"
 }
 
 
 Xcls_EditProject* xcls_editproject_new (void) {
-#line 34 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 34 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return xcls_editproject_construct (TYPE_XCLS_EDITPROJECT);
 #line 829 "EditProject.vala.c"
 }
@@ -833,17 +833,17 @@ void xcls_editproject_show (Xcls_EditProject* self) {
 	Xcls_EditProject* _tmp0_;
 	Xcls_EditProjectXcls_model* _tmp1_;
 	GtkDialog* _tmp2_;
-#line 111 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 111 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_if_fail (self != NULL);
-#line 118 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 118 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp0_ = xcls_editproject__this;
-#line 118 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 118 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp1_ = _tmp0_->model;
-#line 118 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 118 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	xcls_editproject_xcls_model_loadData (_tmp1_);
-#line 119 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 119 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp2_ = self->el;
-#line 119 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 119 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	gtk_widget_show_all ((GtkWidget*) _tmp2_);
 #line 849 "EditProject.vala.c"
 }
@@ -860,64 +860,64 @@ Xcls_EditProjectXcls_VBox2* xcls_editproject_xcls_vbox2_construct (GType object_
 	Xcls_EditProjectXcls_dir* child_1;
 	GtkVBox* _tmp5_;
 	GtkFileChooserWidget* _tmp6_;
-#line 141 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 141 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	self = (Xcls_EditProjectXcls_VBox2*) g_type_create_instance (object_type);
-#line 143 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 143 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp0_ = (GtkVBox*) gtk_vbox_new (TRUE, 0);
-#line 143 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 143 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_object_ref_sink (_tmp0_);
-#line 143 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 143 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_g_object_unref0 (self->el);
-#line 143 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 143 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	self->el = _tmp0_;
-#line 148 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 148 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp1_ = xcls_editproject_xcls_hbox3_new ();
-#line 148 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 148 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	child_0 = _tmp1_;
-#line 149 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 149 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp2_ = self->el;
-#line 149 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 149 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp3_ = child_0->el;
-#line 149 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 149 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	gtk_box_pack_start ((GtkBox*) _tmp2_, (GtkWidget*) _tmp3_, FALSE, TRUE, (guint) 3);
-#line 150 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 150 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp4_ = xcls_editproject_xcls_dir_new ();
-#line 150 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 150 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	child_1 = _tmp4_;
-#line 151 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 151 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp5_ = self->el;
-#line 151 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 151 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp6_ = child_1->el;
-#line 151 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 151 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	gtk_box_pack_end ((GtkBox*) _tmp5_, (GtkWidget*) _tmp6_, TRUE, TRUE, (guint) 5);
-#line 141 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 141 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_xcls_editproject_xcls_dir_unref0 (child_1);
-#line 141 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 141 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_xcls_editproject_xcls_hbox3_unref0 (child_0);
-#line 141 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 141 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return self;
 #line 900 "EditProject.vala.c"
 }
 
 
 Xcls_EditProjectXcls_VBox2* xcls_editproject_xcls_vbox2_new (void) {
-#line 141 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 141 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return xcls_editproject_xcls_vbox2_construct (XCLS_EDITPROJECT_TYPE_XCLS_VBOX2);
 #line 907 "EditProject.vala.c"
 }
 
 
 static void xcls_editproject_value_xcls_vbox2_init (GValue* value) {
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	value->data[0].v_pointer = NULL;
 #line 914 "EditProject.vala.c"
 }
 
 
 static void xcls_editproject_value_xcls_vbox2_free_value (GValue* value) {
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (value->data[0].v_pointer) {
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		xcls_editproject_xcls_vbox2_unref (value->data[0].v_pointer);
 #line 923 "EditProject.vala.c"
 	}
@@ -925,13 +925,13 @@ static void xcls_editproject_value_xcls_vbox2_free_value (GValue* value) {
 
 
 static void xcls_editproject_value_xcls_vbox2_copy_value (const GValue* src_value, GValue* dest_value) {
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (src_value->data[0].v_pointer) {
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		dest_value->data[0].v_pointer = xcls_editproject_xcls_vbox2_ref (src_value->data[0].v_pointer);
 #line 933 "EditProject.vala.c"
 	} else {
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		dest_value->data[0].v_pointer = NULL;
 #line 937 "EditProject.vala.c"
 	}
@@ -939,37 +939,37 @@ static void xcls_editproject_value_xcls_vbox2_copy_value (const GValue* src_valu
 
 
 static gpointer xcls_editproject_value_xcls_vbox2_peek_pointer (const GValue* value) {
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return value->data[0].v_pointer;
 #line 945 "EditProject.vala.c"
 }
 
 
 static gchar* xcls_editproject_value_xcls_vbox2_collect_value (GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (collect_values[0].v_pointer) {
 #line 952 "EditProject.vala.c"
 		Xcls_EditProjectXcls_VBox2* object;
 		object = collect_values[0].v_pointer;
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		if (object->parent_instance.g_class == NULL) {
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 959 "EditProject.vala.c"
 		} else if (!g_value_type_compatible (G_TYPE_FROM_INSTANCE (object), G_VALUE_TYPE (value))) {
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 			return g_strconcat ("invalid object type `", g_type_name (G_TYPE_FROM_INSTANCE (object)), "' for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 963 "EditProject.vala.c"
 		}
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = xcls_editproject_xcls_vbox2_ref (object);
 #line 967 "EditProject.vala.c"
 	} else {
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = NULL;
 #line 971 "EditProject.vala.c"
 	}
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return NULL;
 #line 975 "EditProject.vala.c"
 }
@@ -978,27 +978,27 @@ static gchar* xcls_editproject_value_xcls_vbox2_collect_value (GValue* value, gu
 static gchar* xcls_editproject_value_xcls_vbox2_lcopy_value (const GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
 	Xcls_EditProjectXcls_VBox2** object_p;
 	object_p = collect_values[0].v_pointer;
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (!object_p) {
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
 #line 986 "EditProject.vala.c"
 	}
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (!value->data[0].v_pointer) {
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		*object_p = NULL;
 #line 992 "EditProject.vala.c"
 	} else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) {
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		*object_p = value->data[0].v_pointer;
 #line 996 "EditProject.vala.c"
 	} else {
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		*object_p = xcls_editproject_xcls_vbox2_ref (value->data[0].v_pointer);
 #line 1000 "EditProject.vala.c"
 	}
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return NULL;
 #line 1004 "EditProject.vala.c"
 }
@@ -1006,22 +1006,22 @@ static gchar* xcls_editproject_value_xcls_vbox2_lcopy_value (const GValue* value
 
 GParamSpec* xcls_editproject_param_spec_xcls_vbox2 (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags) {
 	Xcls_EditProjectParamSpecXcls_VBox2* spec;
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_val_if_fail (g_type_is_a (object_type, XCLS_EDITPROJECT_TYPE_XCLS_VBOX2), NULL);
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	G_PARAM_SPEC (spec)->value_type = object_type;
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return G_PARAM_SPEC (spec);
 #line 1018 "EditProject.vala.c"
 }
 
 
 gpointer xcls_editproject_value_get_xcls_vbox2 (const GValue* value) {
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITPROJECT_TYPE_XCLS_VBOX2), NULL);
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return value->data[0].v_pointer;
 #line 1027 "EditProject.vala.c"
 }
@@ -1029,29 +1029,29 @@ gpointer xcls_editproject_value_get_xcls_vbox2 (const GValue* value) {
 
 void xcls_editproject_value_set_xcls_vbox2 (GValue* value, gpointer v_object) {
 	Xcls_EditProjectXcls_VBox2* old;
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITPROJECT_TYPE_XCLS_VBOX2));
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	old = value->data[0].v_pointer;
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (v_object) {
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_EDITPROJECT_TYPE_XCLS_VBOX2));
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = v_object;
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		xcls_editproject_xcls_vbox2_ref (value->data[0].v_pointer);
 #line 1047 "EditProject.vala.c"
 	} else {
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = NULL;
 #line 1051 "EditProject.vala.c"
 	}
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (old) {
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		xcls_editproject_xcls_vbox2_unref (old);
 #line 1057 "EditProject.vala.c"
 	}
@@ -1060,27 +1060,27 @@ void xcls_editproject_value_set_xcls_vbox2 (GValue* value, gpointer v_object) {
 
 void xcls_editproject_value_take_xcls_vbox2 (GValue* value, gpointer v_object) {
 	Xcls_EditProjectXcls_VBox2* old;
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITPROJECT_TYPE_XCLS_VBOX2));
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	old = value->data[0].v_pointer;
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (v_object) {
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_EDITPROJECT_TYPE_XCLS_VBOX2));
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = v_object;
 #line 1076 "EditProject.vala.c"
 	} else {
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = NULL;
 #line 1080 "EditProject.vala.c"
 	}
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (old) {
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		xcls_editproject_xcls_vbox2_unref (old);
 #line 1086 "EditProject.vala.c"
 	}
@@ -1088,16 +1088,16 @@ void xcls_editproject_value_take_xcls_vbox2 (GValue* value, gpointer v_object) {
 
 
 static void xcls_editproject_xcls_vbox2_class_init (Xcls_EditProjectXcls_VBox2Class * klass) {
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	xcls_editproject_xcls_vbox2_parent_class = g_type_class_peek_parent (klass);
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	XCLS_EDITPROJECT_XCLS_VBOX2_CLASS (klass)->finalize = xcls_editproject_xcls_vbox2_finalize;
 #line 1096 "EditProject.vala.c"
 }
 
 
 static void xcls_editproject_xcls_vbox2_instance_init (Xcls_EditProjectXcls_VBox2 * self) {
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	self->ref_count = 1;
 #line 1103 "EditProject.vala.c"
 }
@@ -1105,9 +1105,9 @@ static void xcls_editproject_xcls_vbox2_instance_init (Xcls_EditProjectXcls_VBox
 
 static void xcls_editproject_xcls_vbox2_finalize (Xcls_EditProjectXcls_VBox2* obj) {
 	Xcls_EditProjectXcls_VBox2 * self;
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_EDITPROJECT_TYPE_XCLS_VBOX2, Xcls_EditProjectXcls_VBox2);
-#line 136 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 136 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_g_object_unref0 (self->el);
 #line 1113 "EditProject.vala.c"
 }
@@ -1130,9 +1130,9 @@ GType xcls_editproject_xcls_vbox2_get_type (void) {
 gpointer xcls_editproject_xcls_vbox2_ref (gpointer instance) {
 	Xcls_EditProjectXcls_VBox2* self;
 	self = instance;
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_atomic_int_inc (&self->ref_count);
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return instance;
 #line 1138 "EditProject.vala.c"
 }
@@ -1141,11 +1141,11 @@ gpointer xcls_editproject_xcls_vbox2_ref (gpointer instance) {
 void xcls_editproject_xcls_vbox2_unref (gpointer instance) {
 	Xcls_EditProjectXcls_VBox2* self;
 	self = instance;
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		XCLS_EDITPROJECT_XCLS_VBOX2_GET_CLASS (self)->finalize (self);
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_type_free_instance ((GTypeInstance *) self);
 #line 1151 "EditProject.vala.c"
 	}
@@ -1163,64 +1163,64 @@ Xcls_EditProjectXcls_HBox3* xcls_editproject_xcls_hbox3_construct (GType object_
 	Xcls_EditProjectXcls_xtype* child_1;
 	GtkHBox* _tmp5_;
 	GtkComboBox* _tmp6_;
-#line 177 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 177 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	self = (Xcls_EditProjectXcls_HBox3*) g_type_create_instance (object_type);
-#line 179 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 179 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp0_ = (GtkHBox*) gtk_hbox_new (TRUE, 0);
-#line 179 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 179 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_object_ref_sink (_tmp0_);
-#line 179 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 179 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_g_object_unref0 (self->el);
-#line 179 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 179 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	self->el = _tmp0_;
-#line 184 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 184 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp1_ = xcls_editproject_xcls_label4_new ();
-#line 184 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 184 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	child_0 = _tmp1_;
-#line 185 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 185 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp2_ = self->el;
-#line 185 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 185 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp3_ = child_0->el;
-#line 185 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 185 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	gtk_box_pack_start ((GtkBox*) _tmp2_, (GtkWidget*) _tmp3_, FALSE, TRUE, (guint) 3);
-#line 186 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 186 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp4_ = xcls_editproject_xcls_xtype_new ();
-#line 186 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 186 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	child_1 = _tmp4_;
-#line 187 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 187 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp5_ = self->el;
-#line 187 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 187 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp6_ = child_1->el;
-#line 187 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 187 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	gtk_box_pack_end ((GtkBox*) _tmp5_, (GtkWidget*) _tmp6_, TRUE, TRUE, (guint) 3);
-#line 177 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 177 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_xcls_editproject_xcls_xtype_unref0 (child_1);
-#line 177 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 177 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_xcls_editproject_xcls_label4_unref0 (child_0);
-#line 177 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 177 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return self;
 #line 1203 "EditProject.vala.c"
 }
 
 
 Xcls_EditProjectXcls_HBox3* xcls_editproject_xcls_hbox3_new (void) {
-#line 177 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 177 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return xcls_editproject_xcls_hbox3_construct (XCLS_EDITPROJECT_TYPE_XCLS_HBOX3);
 #line 1210 "EditProject.vala.c"
 }
 
 
 static void xcls_editproject_value_xcls_hbox3_init (GValue* value) {
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	value->data[0].v_pointer = NULL;
 #line 1217 "EditProject.vala.c"
 }
 
 
 static void xcls_editproject_value_xcls_hbox3_free_value (GValue* value) {
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (value->data[0].v_pointer) {
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		xcls_editproject_xcls_hbox3_unref (value->data[0].v_pointer);
 #line 1226 "EditProject.vala.c"
 	}
@@ -1228,13 +1228,13 @@ static void xcls_editproject_value_xcls_hbox3_free_value (GValue* value) {
 
 
 static void xcls_editproject_value_xcls_hbox3_copy_value (const GValue* src_value, GValue* dest_value) {
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (src_value->data[0].v_pointer) {
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		dest_value->data[0].v_pointer = xcls_editproject_xcls_hbox3_ref (src_value->data[0].v_pointer);
 #line 1236 "EditProject.vala.c"
 	} else {
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		dest_value->data[0].v_pointer = NULL;
 #line 1240 "EditProject.vala.c"
 	}
@@ -1242,37 +1242,37 @@ static void xcls_editproject_value_xcls_hbox3_copy_value (const GValue* src_valu
 
 
 static gpointer xcls_editproject_value_xcls_hbox3_peek_pointer (const GValue* value) {
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return value->data[0].v_pointer;
 #line 1248 "EditProject.vala.c"
 }
 
 
 static gchar* xcls_editproject_value_xcls_hbox3_collect_value (GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (collect_values[0].v_pointer) {
 #line 1255 "EditProject.vala.c"
 		Xcls_EditProjectXcls_HBox3* object;
 		object = collect_values[0].v_pointer;
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		if (object->parent_instance.g_class == NULL) {
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 1262 "EditProject.vala.c"
 		} else if (!g_value_type_compatible (G_TYPE_FROM_INSTANCE (object), G_VALUE_TYPE (value))) {
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 			return g_strconcat ("invalid object type `", g_type_name (G_TYPE_FROM_INSTANCE (object)), "' for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 1266 "EditProject.vala.c"
 		}
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = xcls_editproject_xcls_hbox3_ref (object);
 #line 1270 "EditProject.vala.c"
 	} else {
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = NULL;
 #line 1274 "EditProject.vala.c"
 	}
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return NULL;
 #line 1278 "EditProject.vala.c"
 }
@@ -1281,27 +1281,27 @@ static gchar* xcls_editproject_value_xcls_hbox3_collect_value (GValue* value, gu
 static gchar* xcls_editproject_value_xcls_hbox3_lcopy_value (const GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
 	Xcls_EditProjectXcls_HBox3** object_p;
 	object_p = collect_values[0].v_pointer;
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (!object_p) {
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
 #line 1289 "EditProject.vala.c"
 	}
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (!value->data[0].v_pointer) {
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		*object_p = NULL;
 #line 1295 "EditProject.vala.c"
 	} else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) {
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		*object_p = value->data[0].v_pointer;
 #line 1299 "EditProject.vala.c"
 	} else {
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		*object_p = xcls_editproject_xcls_hbox3_ref (value->data[0].v_pointer);
 #line 1303 "EditProject.vala.c"
 	}
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return NULL;
 #line 1307 "EditProject.vala.c"
 }
@@ -1309,22 +1309,22 @@ static gchar* xcls_editproject_value_xcls_hbox3_lcopy_value (const GValue* value
 
 GParamSpec* xcls_editproject_param_spec_xcls_hbox3 (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags) {
 	Xcls_EditProjectParamSpecXcls_HBox3* spec;
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_val_if_fail (g_type_is_a (object_type, XCLS_EDITPROJECT_TYPE_XCLS_HBOX3), NULL);
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	G_PARAM_SPEC (spec)->value_type = object_type;
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return G_PARAM_SPEC (spec);
 #line 1321 "EditProject.vala.c"
 }
 
 
 gpointer xcls_editproject_value_get_xcls_hbox3 (const GValue* value) {
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITPROJECT_TYPE_XCLS_HBOX3), NULL);
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return value->data[0].v_pointer;
 #line 1330 "EditProject.vala.c"
 }
@@ -1332,29 +1332,29 @@ gpointer xcls_editproject_value_get_xcls_hbox3 (const GValue* value) {
 
 void xcls_editproject_value_set_xcls_hbox3 (GValue* value, gpointer v_object) {
 	Xcls_EditProjectXcls_HBox3* old;
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITPROJECT_TYPE_XCLS_HBOX3));
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	old = value->data[0].v_pointer;
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (v_object) {
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_EDITPROJECT_TYPE_XCLS_HBOX3));
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = v_object;
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		xcls_editproject_xcls_hbox3_ref (value->data[0].v_pointer);
 #line 1350 "EditProject.vala.c"
 	} else {
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = NULL;
 #line 1354 "EditProject.vala.c"
 	}
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (old) {
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		xcls_editproject_xcls_hbox3_unref (old);
 #line 1360 "EditProject.vala.c"
 	}
@@ -1363,27 +1363,27 @@ void xcls_editproject_value_set_xcls_hbox3 (GValue* value, gpointer v_object) {
 
 void xcls_editproject_value_take_xcls_hbox3 (GValue* value, gpointer v_object) {
 	Xcls_EditProjectXcls_HBox3* old;
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITPROJECT_TYPE_XCLS_HBOX3));
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	old = value->data[0].v_pointer;
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (v_object) {
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_EDITPROJECT_TYPE_XCLS_HBOX3));
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = v_object;
 #line 1379 "EditProject.vala.c"
 	} else {
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = NULL;
 #line 1383 "EditProject.vala.c"
 	}
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (old) {
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		xcls_editproject_xcls_hbox3_unref (old);
 #line 1389 "EditProject.vala.c"
 	}
@@ -1391,16 +1391,16 @@ void xcls_editproject_value_take_xcls_hbox3 (GValue* value, gpointer v_object) {
 
 
 static void xcls_editproject_xcls_hbox3_class_init (Xcls_EditProjectXcls_HBox3Class * klass) {
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	xcls_editproject_xcls_hbox3_parent_class = g_type_class_peek_parent (klass);
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	XCLS_EDITPROJECT_XCLS_HBOX3_CLASS (klass)->finalize = xcls_editproject_xcls_hbox3_finalize;
 #line 1399 "EditProject.vala.c"
 }
 
 
 static void xcls_editproject_xcls_hbox3_instance_init (Xcls_EditProjectXcls_HBox3 * self) {
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	self->ref_count = 1;
 #line 1406 "EditProject.vala.c"
 }
@@ -1408,9 +1408,9 @@ static void xcls_editproject_xcls_hbox3_instance_init (Xcls_EditProjectXcls_HBox
 
 static void xcls_editproject_xcls_hbox3_finalize (Xcls_EditProjectXcls_HBox3* obj) {
 	Xcls_EditProjectXcls_HBox3 * self;
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_EDITPROJECT_TYPE_XCLS_HBOX3, Xcls_EditProjectXcls_HBox3);
-#line 172 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 172 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_g_object_unref0 (self->el);
 #line 1416 "EditProject.vala.c"
 }
@@ -1433,9 +1433,9 @@ GType xcls_editproject_xcls_hbox3_get_type (void) {
 gpointer xcls_editproject_xcls_hbox3_ref (gpointer instance) {
 	Xcls_EditProjectXcls_HBox3* self;
 	self = instance;
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_atomic_int_inc (&self->ref_count);
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return instance;
 #line 1441 "EditProject.vala.c"
 }
@@ -1444,11 +1444,11 @@ gpointer xcls_editproject_xcls_hbox3_ref (gpointer instance) {
 void xcls_editproject_xcls_hbox3_unref (gpointer instance) {
 	Xcls_EditProjectXcls_HBox3* self;
 	self = instance;
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		XCLS_EDITPROJECT_XCLS_HBOX3_GET_CLASS (self)->finalize (self);
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_type_free_instance ((GTypeInstance *) self);
 #line 1454 "EditProject.vala.c"
 	}
@@ -1458,40 +1458,40 @@ void xcls_editproject_xcls_hbox3_unref (gpointer instance) {
 Xcls_EditProjectXcls_Label4* xcls_editproject_xcls_label4_construct (GType object_type) {
 	Xcls_EditProjectXcls_Label4* self = NULL;
 	GtkLabel* _tmp0_;
-#line 213 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 213 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	self = (Xcls_EditProjectXcls_Label4*) g_type_create_instance (object_type);
-#line 215 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 215 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp0_ = (GtkLabel*) gtk_label_new ("Project type :");
-#line 215 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 215 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_object_ref_sink (_tmp0_);
-#line 215 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 215 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_g_object_unref0 (self->el);
-#line 215 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 215 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	self->el = _tmp0_;
-#line 213 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 213 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return self;
 #line 1474 "EditProject.vala.c"
 }
 
 
 Xcls_EditProjectXcls_Label4* xcls_editproject_xcls_label4_new (void) {
-#line 213 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 213 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return xcls_editproject_xcls_label4_construct (XCLS_EDITPROJECT_TYPE_XCLS_LABEL4);
 #line 1481 "EditProject.vala.c"
 }
 
 
 static void xcls_editproject_value_xcls_label4_init (GValue* value) {
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	value->data[0].v_pointer = NULL;
 #line 1488 "EditProject.vala.c"
 }
 
 
 static void xcls_editproject_value_xcls_label4_free_value (GValue* value) {
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (value->data[0].v_pointer) {
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		xcls_editproject_xcls_label4_unref (value->data[0].v_pointer);
 #line 1497 "EditProject.vala.c"
 	}
@@ -1499,13 +1499,13 @@ static void xcls_editproject_value_xcls_label4_free_value (GValue* value) {
 
 
 static void xcls_editproject_value_xcls_label4_copy_value (const GValue* src_value, GValue* dest_value) {
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (src_value->data[0].v_pointer) {
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		dest_value->data[0].v_pointer = xcls_editproject_xcls_label4_ref (src_value->data[0].v_pointer);
 #line 1507 "EditProject.vala.c"
 	} else {
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		dest_value->data[0].v_pointer = NULL;
 #line 1511 "EditProject.vala.c"
 	}
@@ -1513,37 +1513,37 @@ static void xcls_editproject_value_xcls_label4_copy_value (const GValue* src_val
 
 
 static gpointer xcls_editproject_value_xcls_label4_peek_pointer (const GValue* value) {
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return value->data[0].v_pointer;
 #line 1519 "EditProject.vala.c"
 }
 
 
 static gchar* xcls_editproject_value_xcls_label4_collect_value (GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (collect_values[0].v_pointer) {
 #line 1526 "EditProject.vala.c"
 		Xcls_EditProjectXcls_Label4* object;
 		object = collect_values[0].v_pointer;
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		if (object->parent_instance.g_class == NULL) {
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 1533 "EditProject.vala.c"
 		} else if (!g_value_type_compatible (G_TYPE_FROM_INSTANCE (object), G_VALUE_TYPE (value))) {
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 			return g_strconcat ("invalid object type `", g_type_name (G_TYPE_FROM_INSTANCE (object)), "' for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 1537 "EditProject.vala.c"
 		}
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = xcls_editproject_xcls_label4_ref (object);
 #line 1541 "EditProject.vala.c"
 	} else {
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = NULL;
 #line 1545 "EditProject.vala.c"
 	}
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return NULL;
 #line 1549 "EditProject.vala.c"
 }
@@ -1552,27 +1552,27 @@ static gchar* xcls_editproject_value_xcls_label4_collect_value (GValue* value, g
 static gchar* xcls_editproject_value_xcls_label4_lcopy_value (const GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
 	Xcls_EditProjectXcls_Label4** object_p;
 	object_p = collect_values[0].v_pointer;
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (!object_p) {
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
 #line 1560 "EditProject.vala.c"
 	}
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (!value->data[0].v_pointer) {
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		*object_p = NULL;
 #line 1566 "EditProject.vala.c"
 	} else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) {
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		*object_p = value->data[0].v_pointer;
 #line 1570 "EditProject.vala.c"
 	} else {
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		*object_p = xcls_editproject_xcls_label4_ref (value->data[0].v_pointer);
 #line 1574 "EditProject.vala.c"
 	}
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return NULL;
 #line 1578 "EditProject.vala.c"
 }
@@ -1580,22 +1580,22 @@ static gchar* xcls_editproject_value_xcls_label4_lcopy_value (const GValue* valu
 
 GParamSpec* xcls_editproject_param_spec_xcls_label4 (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags) {
 	Xcls_EditProjectParamSpecXcls_Label4* spec;
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_val_if_fail (g_type_is_a (object_type, XCLS_EDITPROJECT_TYPE_XCLS_LABEL4), NULL);
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	G_PARAM_SPEC (spec)->value_type = object_type;
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return G_PARAM_SPEC (spec);
 #line 1592 "EditProject.vala.c"
 }
 
 
 gpointer xcls_editproject_value_get_xcls_label4 (const GValue* value) {
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITPROJECT_TYPE_XCLS_LABEL4), NULL);
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return value->data[0].v_pointer;
 #line 1601 "EditProject.vala.c"
 }
@@ -1603,29 +1603,29 @@ gpointer xcls_editproject_value_get_xcls_label4 (const GValue* value) {
 
 void xcls_editproject_value_set_xcls_label4 (GValue* value, gpointer v_object) {
 	Xcls_EditProjectXcls_Label4* old;
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITPROJECT_TYPE_XCLS_LABEL4));
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	old = value->data[0].v_pointer;
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (v_object) {
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_EDITPROJECT_TYPE_XCLS_LABEL4));
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = v_object;
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		xcls_editproject_xcls_label4_ref (value->data[0].v_pointer);
 #line 1621 "EditProject.vala.c"
 	} else {
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = NULL;
 #line 1625 "EditProject.vala.c"
 	}
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (old) {
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		xcls_editproject_xcls_label4_unref (old);
 #line 1631 "EditProject.vala.c"
 	}
@@ -1634,27 +1634,27 @@ void xcls_editproject_value_set_xcls_label4 (GValue* value, gpointer v_object) {
 
 void xcls_editproject_value_take_xcls_label4 (GValue* value, gpointer v_object) {
 	Xcls_EditProjectXcls_Label4* old;
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITPROJECT_TYPE_XCLS_LABEL4));
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	old = value->data[0].v_pointer;
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (v_object) {
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_EDITPROJECT_TYPE_XCLS_LABEL4));
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = v_object;
 #line 1650 "EditProject.vala.c"
 	} else {
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = NULL;
 #line 1654 "EditProject.vala.c"
 	}
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (old) {
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		xcls_editproject_xcls_label4_unref (old);
 #line 1660 "EditProject.vala.c"
 	}
@@ -1662,16 +1662,16 @@ void xcls_editproject_value_take_xcls_label4 (GValue* value, gpointer v_object) 
 
 
 static void xcls_editproject_xcls_label4_class_init (Xcls_EditProjectXcls_Label4Class * klass) {
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	xcls_editproject_xcls_label4_parent_class = g_type_class_peek_parent (klass);
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	XCLS_EDITPROJECT_XCLS_LABEL4_CLASS (klass)->finalize = xcls_editproject_xcls_label4_finalize;
 #line 1670 "EditProject.vala.c"
 }
 
 
 static void xcls_editproject_xcls_label4_instance_init (Xcls_EditProjectXcls_Label4 * self) {
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	self->ref_count = 1;
 #line 1677 "EditProject.vala.c"
 }
@@ -1679,9 +1679,9 @@ static void xcls_editproject_xcls_label4_instance_init (Xcls_EditProjectXcls_Lab
 
 static void xcls_editproject_xcls_label4_finalize (Xcls_EditProjectXcls_Label4* obj) {
 	Xcls_EditProjectXcls_Label4 * self;
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_EDITPROJECT_TYPE_XCLS_LABEL4, Xcls_EditProjectXcls_Label4);
-#line 208 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 208 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_g_object_unref0 (self->el);
 #line 1687 "EditProject.vala.c"
 }
@@ -1704,9 +1704,9 @@ GType xcls_editproject_xcls_label4_get_type (void) {
 gpointer xcls_editproject_xcls_label4_ref (gpointer instance) {
 	Xcls_EditProjectXcls_Label4* self;
 	self = instance;
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_atomic_int_inc (&self->ref_count);
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return instance;
 #line 1712 "EditProject.vala.c"
 }
@@ -1715,11 +1715,11 @@ gpointer xcls_editproject_xcls_label4_ref (gpointer instance) {
 void xcls_editproject_xcls_label4_unref (gpointer instance) {
 	Xcls_EditProjectXcls_Label4* self;
 	self = instance;
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		XCLS_EDITPROJECT_XCLS_LABEL4_GET_CLASS (self)->finalize (self);
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_type_free_instance ((GTypeInstance *) self);
 #line 1725 "EditProject.vala.c"
 	}
@@ -1727,7 +1727,7 @@ void xcls_editproject_xcls_label4_unref (gpointer instance) {
 
 
 static gpointer _xcls_editproject_xcls_xtype_ref0 (gpointer self) {
-#line 248 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 248 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return self ? xcls_editproject_xcls_xtype_ref (self) : NULL;
 #line 1733 "EditProject.vala.c"
 }
@@ -1746,56 +1746,56 @@ Xcls_EditProjectXcls_xtype* xcls_editproject_xcls_xtype_construct (GType object_
 	Xcls_EditProjectXcls_model* child_1;
 	GtkComboBox* _tmp7_;
 	GtkListStore* _tmp8_;
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	self = (Xcls_EditProjectXcls_xtype*) g_type_create_instance (object_type);
-#line 247 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 247 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp0_ = (GtkComboBox*) gtk_combo_box_new ();
-#line 247 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 247 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_object_ref_sink (_tmp0_);
-#line 247 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 247 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_g_object_unref0 (self->el);
-#line 247 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 247 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	self->el = _tmp0_;
-#line 248 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 248 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp1_ = xcls_editproject__this;
-#line 248 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 248 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp2_ = _xcls_editproject_xcls_xtype_ref0 (self);
-#line 248 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 248 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_xcls_editproject_xcls_xtype_unref0 (_tmp1_->xtype);
-#line 248 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 248 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp1_->xtype = _tmp2_;
-#line 253 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 253 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp3_ = xcls_editproject_xcls_cellrender_new ();
-#line 253 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 253 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	child_0 = _tmp3_;
-#line 254 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 254 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp4_ = self->el;
-#line 254 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 254 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp5_ = child_0->el;
-#line 254 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 254 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	gtk_cell_layout_pack_start ((GtkCellLayout*) _tmp4_, (GtkCellRenderer*) _tmp5_, TRUE);
-#line 255 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 255 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp6_ = xcls_editproject_xcls_model_new ();
-#line 255 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 255 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	child_1 = _tmp6_;
-#line 256 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 256 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp7_ = self->el;
-#line 256 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 256 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp8_ = child_1->el;
-#line 256 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 256 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	gtk_combo_box_set_model (_tmp7_, (GtkTreeModel*) _tmp8_);
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_xcls_editproject_xcls_model_unref0 (child_1);
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_xcls_editproject_xcls_cellrender_unref0 (child_0);
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return self;
 #line 1794 "EditProject.vala.c"
 }
 
 
 Xcls_EditProjectXcls_xtype* xcls_editproject_xcls_xtype_new (void) {
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return xcls_editproject_xcls_xtype_construct (XCLS_EDITPROJECT_TYPE_XCLS_XTYPE);
 #line 1801 "EditProject.vala.c"
 }
@@ -1809,84 +1809,84 @@ gchar* xcls_editproject_xcls_xtype_getValue (Xcls_EditProjectXcls_xtype* self) {
 	gint _tmp2_;
 	gint _tmp4_;
 	gchar* _tmp7_;
-#line 270 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 270 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 271 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 271 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp0_ = self->el;
-#line 271 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 271 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp1_ = gtk_combo_box_get_active (_tmp0_);
-#line 271 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 271 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	ix = _tmp1_;
-#line 272 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 272 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp2_ = ix;
-#line 272 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 272 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (_tmp2_ < 0) {
 #line 1825 "EditProject.vala.c"
 		gchar* _tmp3_;
-#line 273 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 273 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		_tmp3_ = g_strdup ("");
-#line 273 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 273 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		result = _tmp3_;
-#line 273 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 273 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		return result;
 #line 1833 "EditProject.vala.c"
 	}
-#line 275 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 275 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp4_ = ix;
-#line 275 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 275 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	switch (_tmp4_) {
-#line 275 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 275 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		case 0:
 #line 1841 "EditProject.vala.c"
 		{
 			gchar* _tmp5_;
-#line 277 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 277 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 			_tmp5_ = g_strdup ("Roo");
-#line 277 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 277 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 			result = _tmp5_;
-#line 277 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 277 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 			return result;
 #line 1850 "EditProject.vala.c"
 		}
-#line 275 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 275 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		case 1:
 #line 1854 "EditProject.vala.c"
 		{
 			gchar* _tmp6_;
-#line 279 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 279 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 			_tmp6_ = g_strdup ("Gtk");
-#line 279 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 279 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 			result = _tmp6_;
-#line 279 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 279 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 			return result;
 #line 1863 "EditProject.vala.c"
 		}
 		default:
-#line 275 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 275 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		break;
 #line 1868 "EditProject.vala.c"
 	}
-#line 281 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 281 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp7_ = g_strdup ("");
-#line 281 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 281 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	result = _tmp7_;
-#line 281 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 281 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return result;
 #line 1876 "EditProject.vala.c"
 }
 
 
 static void xcls_editproject_value_xcls_xtype_init (GValue* value) {
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	value->data[0].v_pointer = NULL;
 #line 1883 "EditProject.vala.c"
 }
 
 
 static void xcls_editproject_value_xcls_xtype_free_value (GValue* value) {
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (value->data[0].v_pointer) {
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		xcls_editproject_xcls_xtype_unref (value->data[0].v_pointer);
 #line 1892 "EditProject.vala.c"
 	}
@@ -1894,13 +1894,13 @@ static void xcls_editproject_value_xcls_xtype_free_value (GValue* value) {
 
 
 static void xcls_editproject_value_xcls_xtype_copy_value (const GValue* src_value, GValue* dest_value) {
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (src_value->data[0].v_pointer) {
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		dest_value->data[0].v_pointer = xcls_editproject_xcls_xtype_ref (src_value->data[0].v_pointer);
 #line 1902 "EditProject.vala.c"
 	} else {
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		dest_value->data[0].v_pointer = NULL;
 #line 1906 "EditProject.vala.c"
 	}
@@ -1908,37 +1908,37 @@ static void xcls_editproject_value_xcls_xtype_copy_value (const GValue* src_valu
 
 
 static gpointer xcls_editproject_value_xcls_xtype_peek_pointer (const GValue* value) {
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return value->data[0].v_pointer;
 #line 1914 "EditProject.vala.c"
 }
 
 
 static gchar* xcls_editproject_value_xcls_xtype_collect_value (GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (collect_values[0].v_pointer) {
 #line 1921 "EditProject.vala.c"
 		Xcls_EditProjectXcls_xtype* object;
 		object = collect_values[0].v_pointer;
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		if (object->parent_instance.g_class == NULL) {
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 1928 "EditProject.vala.c"
 		} else if (!g_value_type_compatible (G_TYPE_FROM_INSTANCE (object), G_VALUE_TYPE (value))) {
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 			return g_strconcat ("invalid object type `", g_type_name (G_TYPE_FROM_INSTANCE (object)), "' for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 1932 "EditProject.vala.c"
 		}
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = xcls_editproject_xcls_xtype_ref (object);
 #line 1936 "EditProject.vala.c"
 	} else {
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = NULL;
 #line 1940 "EditProject.vala.c"
 	}
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return NULL;
 #line 1944 "EditProject.vala.c"
 }
@@ -1947,27 +1947,27 @@ static gchar* xcls_editproject_value_xcls_xtype_collect_value (GValue* value, gu
 static gchar* xcls_editproject_value_xcls_xtype_lcopy_value (const GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
 	Xcls_EditProjectXcls_xtype** object_p;
 	object_p = collect_values[0].v_pointer;
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (!object_p) {
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
 #line 1955 "EditProject.vala.c"
 	}
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (!value->data[0].v_pointer) {
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		*object_p = NULL;
 #line 1961 "EditProject.vala.c"
 	} else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) {
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		*object_p = value->data[0].v_pointer;
 #line 1965 "EditProject.vala.c"
 	} else {
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		*object_p = xcls_editproject_xcls_xtype_ref (value->data[0].v_pointer);
 #line 1969 "EditProject.vala.c"
 	}
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return NULL;
 #line 1973 "EditProject.vala.c"
 }
@@ -1975,22 +1975,22 @@ static gchar* xcls_editproject_value_xcls_xtype_lcopy_value (const GValue* value
 
 GParamSpec* xcls_editproject_param_spec_xcls_xtype (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags) {
 	Xcls_EditProjectParamSpecXcls_xtype* spec;
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_val_if_fail (g_type_is_a (object_type, XCLS_EDITPROJECT_TYPE_XCLS_XTYPE), NULL);
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	G_PARAM_SPEC (spec)->value_type = object_type;
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return G_PARAM_SPEC (spec);
 #line 1987 "EditProject.vala.c"
 }
 
 
 gpointer xcls_editproject_value_get_xcls_xtype (const GValue* value) {
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITPROJECT_TYPE_XCLS_XTYPE), NULL);
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return value->data[0].v_pointer;
 #line 1996 "EditProject.vala.c"
 }
@@ -1998,29 +1998,29 @@ gpointer xcls_editproject_value_get_xcls_xtype (const GValue* value) {
 
 void xcls_editproject_value_set_xcls_xtype (GValue* value, gpointer v_object) {
 	Xcls_EditProjectXcls_xtype* old;
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITPROJECT_TYPE_XCLS_XTYPE));
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	old = value->data[0].v_pointer;
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (v_object) {
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_EDITPROJECT_TYPE_XCLS_XTYPE));
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = v_object;
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		xcls_editproject_xcls_xtype_ref (value->data[0].v_pointer);
 #line 2016 "EditProject.vala.c"
 	} else {
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = NULL;
 #line 2020 "EditProject.vala.c"
 	}
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (old) {
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		xcls_editproject_xcls_xtype_unref (old);
 #line 2026 "EditProject.vala.c"
 	}
@@ -2029,27 +2029,27 @@ void xcls_editproject_value_set_xcls_xtype (GValue* value, gpointer v_object) {
 
 void xcls_editproject_value_take_xcls_xtype (GValue* value, gpointer v_object) {
 	Xcls_EditProjectXcls_xtype* old;
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITPROJECT_TYPE_XCLS_XTYPE));
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	old = value->data[0].v_pointer;
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (v_object) {
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_EDITPROJECT_TYPE_XCLS_XTYPE));
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = v_object;
 #line 2045 "EditProject.vala.c"
 	} else {
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = NULL;
 #line 2049 "EditProject.vala.c"
 	}
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (old) {
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		xcls_editproject_xcls_xtype_unref (old);
 #line 2055 "EditProject.vala.c"
 	}
@@ -2057,16 +2057,16 @@ void xcls_editproject_value_take_xcls_xtype (GValue* value, gpointer v_object) {
 
 
 static void xcls_editproject_xcls_xtype_class_init (Xcls_EditProjectXcls_xtypeClass * klass) {
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	xcls_editproject_xcls_xtype_parent_class = g_type_class_peek_parent (klass);
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	XCLS_EDITPROJECT_XCLS_XTYPE_CLASS (klass)->finalize = xcls_editproject_xcls_xtype_finalize;
 #line 2065 "EditProject.vala.c"
 }
 
 
 static void xcls_editproject_xcls_xtype_instance_init (Xcls_EditProjectXcls_xtype * self) {
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	self->ref_count = 1;
 #line 2072 "EditProject.vala.c"
 }
@@ -2074,9 +2074,9 @@ static void xcls_editproject_xcls_xtype_instance_init (Xcls_EditProjectXcls_xtyp
 
 static void xcls_editproject_xcls_xtype_finalize (Xcls_EditProjectXcls_xtype* obj) {
 	Xcls_EditProjectXcls_xtype * self;
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_EDITPROJECT_TYPE_XCLS_XTYPE, Xcls_EditProjectXcls_xtype);
-#line 240 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 240 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_g_object_unref0 (self->el);
 #line 2082 "EditProject.vala.c"
 }
@@ -2099,9 +2099,9 @@ GType xcls_editproject_xcls_xtype_get_type (void) {
 gpointer xcls_editproject_xcls_xtype_ref (gpointer instance) {
 	Xcls_EditProjectXcls_xtype* self;
 	self = instance;
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_atomic_int_inc (&self->ref_count);
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return instance;
 #line 2107 "EditProject.vala.c"
 }
@@ -2110,11 +2110,11 @@ gpointer xcls_editproject_xcls_xtype_ref (gpointer instance) {
 void xcls_editproject_xcls_xtype_unref (gpointer instance) {
 	Xcls_EditProjectXcls_xtype* self;
 	self = instance;
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		XCLS_EDITPROJECT_XCLS_XTYPE_GET_CLASS (self)->finalize (self);
-#line 238 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_type_free_instance ((GTypeInstance *) self);
 #line 2120 "EditProject.vala.c"
 	}
@@ -2122,7 +2122,7 @@ void xcls_editproject_xcls_xtype_unref (gpointer instance) {
 
 
 static gpointer _xcls_editproject_xcls_cellrender_ref0 (gpointer self) {
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return self ? xcls_editproject_xcls_cellrender_ref (self) : NULL;
 #line 2128 "EditProject.vala.c"
 }
@@ -2133,48 +2133,48 @@ Xcls_EditProjectXcls_cellrender* xcls_editproject_xcls_cellrender_construct (GTy
 	GtkCellRendererText* _tmp0_;
 	Xcls_EditProject* _tmp1_;
 	Xcls_EditProjectXcls_cellrender* _tmp2_;
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	self = (Xcls_EditProjectXcls_cellrender*) g_type_create_instance (object_type);
-#line 303 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 303 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp0_ = (GtkCellRendererText*) gtk_cell_renderer_text_new ();
-#line 303 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 303 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_object_ref_sink (_tmp0_);
-#line 303 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 303 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_g_object_unref0 (self->el);
-#line 303 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 303 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	self->el = _tmp0_;
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp1_ = xcls_editproject__this;
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp2_ = _xcls_editproject_xcls_cellrender_ref0 (self);
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_xcls_editproject_xcls_cellrender_unref0 (_tmp1_->cellrender);
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp1_->cellrender = _tmp2_;
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return self;
 #line 2157 "EditProject.vala.c"
 }
 
 
 Xcls_EditProjectXcls_cellrender* xcls_editproject_xcls_cellrender_new (void) {
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return xcls_editproject_xcls_cellrender_construct (XCLS_EDITPROJECT_TYPE_XCLS_CELLRENDER);
 #line 2164 "EditProject.vala.c"
 }
 
 
 static void xcls_editproject_value_xcls_cellrender_init (GValue* value) {
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	value->data[0].v_pointer = NULL;
 #line 2171 "EditProject.vala.c"
 }
 
 
 static void xcls_editproject_value_xcls_cellrender_free_value (GValue* value) {
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (value->data[0].v_pointer) {
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		xcls_editproject_xcls_cellrender_unref (value->data[0].v_pointer);
 #line 2180 "EditProject.vala.c"
 	}
@@ -2182,13 +2182,13 @@ static void xcls_editproject_value_xcls_cellrender_free_value (GValue* value) {
 
 
 static void xcls_editproject_value_xcls_cellrender_copy_value (const GValue* src_value, GValue* dest_value) {
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (src_value->data[0].v_pointer) {
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		dest_value->data[0].v_pointer = xcls_editproject_xcls_cellrender_ref (src_value->data[0].v_pointer);
 #line 2190 "EditProject.vala.c"
 	} else {
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		dest_value->data[0].v_pointer = NULL;
 #line 2194 "EditProject.vala.c"
 	}
@@ -2196,37 +2196,37 @@ static void xcls_editproject_value_xcls_cellrender_copy_value (const GValue* src
 
 
 static gpointer xcls_editproject_value_xcls_cellrender_peek_pointer (const GValue* value) {
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return value->data[0].v_pointer;
 #line 2202 "EditProject.vala.c"
 }
 
 
 static gchar* xcls_editproject_value_xcls_cellrender_collect_value (GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (collect_values[0].v_pointer) {
 #line 2209 "EditProject.vala.c"
 		Xcls_EditProjectXcls_cellrender* object;
 		object = collect_values[0].v_pointer;
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		if (object->parent_instance.g_class == NULL) {
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 2216 "EditProject.vala.c"
 		} else if (!g_value_type_compatible (G_TYPE_FROM_INSTANCE (object), G_VALUE_TYPE (value))) {
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 			return g_strconcat ("invalid object type `", g_type_name (G_TYPE_FROM_INSTANCE (object)), "' for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 2220 "EditProject.vala.c"
 		}
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = xcls_editproject_xcls_cellrender_ref (object);
 #line 2224 "EditProject.vala.c"
 	} else {
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = NULL;
 #line 2228 "EditProject.vala.c"
 	}
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return NULL;
 #line 2232 "EditProject.vala.c"
 }
@@ -2235,27 +2235,27 @@ static gchar* xcls_editproject_value_xcls_cellrender_collect_value (GValue* valu
 static gchar* xcls_editproject_value_xcls_cellrender_lcopy_value (const GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
 	Xcls_EditProjectXcls_cellrender** object_p;
 	object_p = collect_values[0].v_pointer;
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (!object_p) {
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
 #line 2243 "EditProject.vala.c"
 	}
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (!value->data[0].v_pointer) {
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		*object_p = NULL;
 #line 2249 "EditProject.vala.c"
 	} else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) {
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		*object_p = value->data[0].v_pointer;
 #line 2253 "EditProject.vala.c"
 	} else {
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		*object_p = xcls_editproject_xcls_cellrender_ref (value->data[0].v_pointer);
 #line 2257 "EditProject.vala.c"
 	}
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return NULL;
 #line 2261 "EditProject.vala.c"
 }
@@ -2263,22 +2263,22 @@ static gchar* xcls_editproject_value_xcls_cellrender_lcopy_value (const GValue* 
 
 GParamSpec* xcls_editproject_param_spec_xcls_cellrender (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags) {
 	Xcls_EditProjectParamSpecXcls_cellrender* spec;
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_val_if_fail (g_type_is_a (object_type, XCLS_EDITPROJECT_TYPE_XCLS_CELLRENDER), NULL);
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	G_PARAM_SPEC (spec)->value_type = object_type;
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return G_PARAM_SPEC (spec);
 #line 2275 "EditProject.vala.c"
 }
 
 
 gpointer xcls_editproject_value_get_xcls_cellrender (const GValue* value) {
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITPROJECT_TYPE_XCLS_CELLRENDER), NULL);
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return value->data[0].v_pointer;
 #line 2284 "EditProject.vala.c"
 }
@@ -2286,29 +2286,29 @@ gpointer xcls_editproject_value_get_xcls_cellrender (const GValue* value) {
 
 void xcls_editproject_value_set_xcls_cellrender (GValue* value, gpointer v_object) {
 	Xcls_EditProjectXcls_cellrender* old;
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITPROJECT_TYPE_XCLS_CELLRENDER));
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	old = value->data[0].v_pointer;
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (v_object) {
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_EDITPROJECT_TYPE_XCLS_CELLRENDER));
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = v_object;
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		xcls_editproject_xcls_cellrender_ref (value->data[0].v_pointer);
 #line 2304 "EditProject.vala.c"
 	} else {
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = NULL;
 #line 2308 "EditProject.vala.c"
 	}
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (old) {
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		xcls_editproject_xcls_cellrender_unref (old);
 #line 2314 "EditProject.vala.c"
 	}
@@ -2317,27 +2317,27 @@ void xcls_editproject_value_set_xcls_cellrender (GValue* value, gpointer v_objec
 
 void xcls_editproject_value_take_xcls_cellrender (GValue* value, gpointer v_object) {
 	Xcls_EditProjectXcls_cellrender* old;
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITPROJECT_TYPE_XCLS_CELLRENDER));
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	old = value->data[0].v_pointer;
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (v_object) {
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_EDITPROJECT_TYPE_XCLS_CELLRENDER));
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = v_object;
 #line 2333 "EditProject.vala.c"
 	} else {
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = NULL;
 #line 2337 "EditProject.vala.c"
 	}
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (old) {
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		xcls_editproject_xcls_cellrender_unref (old);
 #line 2343 "EditProject.vala.c"
 	}
@@ -2345,16 +2345,16 @@ void xcls_editproject_value_take_xcls_cellrender (GValue* value, gpointer v_obje
 
 
 static void xcls_editproject_xcls_cellrender_class_init (Xcls_EditProjectXcls_cellrenderClass * klass) {
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	xcls_editproject_xcls_cellrender_parent_class = g_type_class_peek_parent (klass);
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	XCLS_EDITPROJECT_XCLS_CELLRENDER_CLASS (klass)->finalize = xcls_editproject_xcls_cellrender_finalize;
 #line 2353 "EditProject.vala.c"
 }
 
 
 static void xcls_editproject_xcls_cellrender_instance_init (Xcls_EditProjectXcls_cellrender * self) {
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	self->ref_count = 1;
 #line 2360 "EditProject.vala.c"
 }
@@ -2362,9 +2362,9 @@ static void xcls_editproject_xcls_cellrender_instance_init (Xcls_EditProjectXcls
 
 static void xcls_editproject_xcls_cellrender_finalize (Xcls_EditProjectXcls_cellrender* obj) {
 	Xcls_EditProjectXcls_cellrender * self;
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_EDITPROJECT_TYPE_XCLS_CELLRENDER, Xcls_EditProjectXcls_cellrender);
-#line 296 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 296 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_g_object_unref0 (self->el);
 #line 2370 "EditProject.vala.c"
 }
@@ -2387,9 +2387,9 @@ GType xcls_editproject_xcls_cellrender_get_type (void) {
 gpointer xcls_editproject_xcls_cellrender_ref (gpointer instance) {
 	Xcls_EditProjectXcls_cellrender* self;
 	self = instance;
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_atomic_int_inc (&self->ref_count);
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return instance;
 #line 2395 "EditProject.vala.c"
 }
@@ -2398,11 +2398,11 @@ gpointer xcls_editproject_xcls_cellrender_ref (gpointer instance) {
 void xcls_editproject_xcls_cellrender_unref (gpointer instance) {
 	Xcls_EditProjectXcls_cellrender* self;
 	self = instance;
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		XCLS_EDITPROJECT_XCLS_CELLRENDER_GET_CLASS (self)->finalize (self);
-#line 294 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_type_free_instance ((GTypeInstance *) self);
 #line 2408 "EditProject.vala.c"
 	}
@@ -2410,7 +2410,7 @@ void xcls_editproject_xcls_cellrender_unref (gpointer instance) {
 
 
 static gpointer _xcls_editproject_xcls_model_ref0 (gpointer self) {
-#line 337 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 337 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return self ? xcls_editproject_xcls_model_ref (self) : NULL;
 #line 2416 "EditProject.vala.c"
 }
@@ -2421,30 +2421,30 @@ Xcls_EditProjectXcls_model* xcls_editproject_xcls_model_construct (GType object_
 	GtkListStore* _tmp0_;
 	Xcls_EditProject* _tmp1_;
 	Xcls_EditProjectXcls_model* _tmp2_;
-#line 334 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 334 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	self = (Xcls_EditProjectXcls_model*) g_type_create_instance (object_type);
-#line 336 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 336 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp0_ = gtk_list_store_new (3, "typeof(string),typeof(string)");
-#line 336 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 336 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_g_object_unref0 (self->el);
-#line 336 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 336 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	self->el = _tmp0_;
-#line 337 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 337 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp1_ = xcls_editproject__this;
-#line 337 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 337 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp2_ = _xcls_editproject_xcls_model_ref0 (self);
-#line 337 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 337 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_xcls_editproject_xcls_model_unref0 (_tmp1_->model);
-#line 337 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 337 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp1_->model = _tmp2_;
-#line 334 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 334 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return self;
 #line 2443 "EditProject.vala.c"
 }
 
 
 Xcls_EditProjectXcls_model* xcls_editproject_xcls_model_new (void) {
-#line 334 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 334 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return xcls_editproject_xcls_model_construct (XCLS_EDITPROJECT_TYPE_XCLS_MODEL);
 #line 2450 "EditProject.vala.c"
 }
@@ -2469,87 +2469,87 @@ void xcls_editproject_xcls_model_loadData (Xcls_EditProjectXcls_model* self) {
 	GtkListStore* _tmp14_;
 	GtkTreeIter _tmp15_;
 	GValue _tmp16_ = {0};
-#line 355 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 355 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_if_fail (self != NULL);
-#line 356 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 356 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp0_ = self->el;
-#line 356 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 356 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	gtk_list_store_clear (_tmp0_);
-#line 360 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 360 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp1_ = self->el;
-#line 360 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 360 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	gtk_list_store_append (_tmp1_, &_tmp2_);
-#line 360 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 360 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	iter = _tmp2_;
-#line 362 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 362 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp3_ = self->el;
-#line 362 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 362 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp4_ = iter;
-#line 362 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 362 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_value_init (&_tmp5_, G_TYPE_STRING);
-#line 362 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 362 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_value_set_string (&_tmp5_, "Roo");
-#line 362 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 362 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	gtk_list_store_set_value (_tmp3_, &_tmp4_, 0, &_tmp5_);
-#line 362 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 362 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	G_IS_VALUE (&_tmp5_) ? (g_value_unset (&_tmp5_), NULL) : NULL;
-#line 363 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 363 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp6_ = self->el;
-#line 363 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 363 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp7_ = iter;
-#line 363 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 363 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_value_init (&_tmp8_, G_TYPE_STRING);
-#line 363 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 363 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_value_set_string (&_tmp8_, "Roo Project");
-#line 363 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 363 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	gtk_list_store_set_value (_tmp6_, &_tmp7_, 1, &_tmp8_);
-#line 363 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 363 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	G_IS_VALUE (&_tmp8_) ? (g_value_unset (&_tmp8_), NULL) : NULL;
-#line 364 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 364 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp9_ = self->el;
-#line 364 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 364 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	gtk_list_store_append (_tmp9_, &_tmp10_);
-#line 364 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 364 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	iter = _tmp10_;
-#line 366 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 366 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp11_ = self->el;
-#line 366 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 366 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp12_ = iter;
-#line 366 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 366 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_value_init (&_tmp13_, G_TYPE_STRING);
-#line 366 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 366 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_value_set_string (&_tmp13_, "Gtk");
-#line 366 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 366 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	gtk_list_store_set_value (_tmp11_, &_tmp12_, 0, &_tmp13_);
-#line 366 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 366 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	G_IS_VALUE (&_tmp13_) ? (g_value_unset (&_tmp13_), NULL) : NULL;
-#line 367 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 367 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp14_ = self->el;
-#line 367 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 367 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp15_ = iter;
-#line 367 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 367 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_value_init (&_tmp16_, G_TYPE_STRING);
-#line 367 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 367 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_value_set_string (&_tmp16_, "Gtk Project");
-#line 367 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 367 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	gtk_list_store_set_value (_tmp14_, &_tmp15_, 1, &_tmp16_);
-#line 367 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 367 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	G_IS_VALUE (&_tmp16_) ? (g_value_unset (&_tmp16_), NULL) : NULL;
 #line 2539 "EditProject.vala.c"
 }
 
 
 static void xcls_editproject_value_xcls_model_init (GValue* value) {
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	value->data[0].v_pointer = NULL;
 #line 2546 "EditProject.vala.c"
 }
 
 
 static void xcls_editproject_value_xcls_model_free_value (GValue* value) {
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (value->data[0].v_pointer) {
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		xcls_editproject_xcls_model_unref (value->data[0].v_pointer);
 #line 2555 "EditProject.vala.c"
 	}
@@ -2557,13 +2557,13 @@ static void xcls_editproject_value_xcls_model_free_value (GValue* value) {
 
 
 static void xcls_editproject_value_xcls_model_copy_value (const GValue* src_value, GValue* dest_value) {
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (src_value->data[0].v_pointer) {
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		dest_value->data[0].v_pointer = xcls_editproject_xcls_model_ref (src_value->data[0].v_pointer);
 #line 2565 "EditProject.vala.c"
 	} else {
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		dest_value->data[0].v_pointer = NULL;
 #line 2569 "EditProject.vala.c"
 	}
@@ -2571,37 +2571,37 @@ static void xcls_editproject_value_xcls_model_copy_value (const GValue* src_valu
 
 
 static gpointer xcls_editproject_value_xcls_model_peek_pointer (const GValue* value) {
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return value->data[0].v_pointer;
 #line 2577 "EditProject.vala.c"
 }
 
 
 static gchar* xcls_editproject_value_xcls_model_collect_value (GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (collect_values[0].v_pointer) {
 #line 2584 "EditProject.vala.c"
 		Xcls_EditProjectXcls_model* object;
 		object = collect_values[0].v_pointer;
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		if (object->parent_instance.g_class == NULL) {
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 2591 "EditProject.vala.c"
 		} else if (!g_value_type_compatible (G_TYPE_FROM_INSTANCE (object), G_VALUE_TYPE (value))) {
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 			return g_strconcat ("invalid object type `", g_type_name (G_TYPE_FROM_INSTANCE (object)), "' for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 2595 "EditProject.vala.c"
 		}
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = xcls_editproject_xcls_model_ref (object);
 #line 2599 "EditProject.vala.c"
 	} else {
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = NULL;
 #line 2603 "EditProject.vala.c"
 	}
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return NULL;
 #line 2607 "EditProject.vala.c"
 }
@@ -2610,27 +2610,27 @@ static gchar* xcls_editproject_value_xcls_model_collect_value (GValue* value, gu
 static gchar* xcls_editproject_value_xcls_model_lcopy_value (const GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
 	Xcls_EditProjectXcls_model** object_p;
 	object_p = collect_values[0].v_pointer;
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (!object_p) {
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
 #line 2618 "EditProject.vala.c"
 	}
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (!value->data[0].v_pointer) {
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		*object_p = NULL;
 #line 2624 "EditProject.vala.c"
 	} else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) {
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		*object_p = value->data[0].v_pointer;
 #line 2628 "EditProject.vala.c"
 	} else {
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		*object_p = xcls_editproject_xcls_model_ref (value->data[0].v_pointer);
 #line 2632 "EditProject.vala.c"
 	}
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return NULL;
 #line 2636 "EditProject.vala.c"
 }
@@ -2638,22 +2638,22 @@ static gchar* xcls_editproject_value_xcls_model_lcopy_value (const GValue* value
 
 GParamSpec* xcls_editproject_param_spec_xcls_model (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags) {
 	Xcls_EditProjectParamSpecXcls_model* spec;
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_val_if_fail (g_type_is_a (object_type, XCLS_EDITPROJECT_TYPE_XCLS_MODEL), NULL);
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	G_PARAM_SPEC (spec)->value_type = object_type;
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return G_PARAM_SPEC (spec);
 #line 2650 "EditProject.vala.c"
 }
 
 
 gpointer xcls_editproject_value_get_xcls_model (const GValue* value) {
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITPROJECT_TYPE_XCLS_MODEL), NULL);
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return value->data[0].v_pointer;
 #line 2659 "EditProject.vala.c"
 }
@@ -2661,29 +2661,29 @@ gpointer xcls_editproject_value_get_xcls_model (const GValue* value) {
 
 void xcls_editproject_value_set_xcls_model (GValue* value, gpointer v_object) {
 	Xcls_EditProjectXcls_model* old;
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITPROJECT_TYPE_XCLS_MODEL));
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	old = value->data[0].v_pointer;
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (v_object) {
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_EDITPROJECT_TYPE_XCLS_MODEL));
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = v_object;
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		xcls_editproject_xcls_model_ref (value->data[0].v_pointer);
 #line 2679 "EditProject.vala.c"
 	} else {
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = NULL;
 #line 2683 "EditProject.vala.c"
 	}
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (old) {
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		xcls_editproject_xcls_model_unref (old);
 #line 2689 "EditProject.vala.c"
 	}
@@ -2692,27 +2692,27 @@ void xcls_editproject_value_set_xcls_model (GValue* value, gpointer v_object) {
 
 void xcls_editproject_value_take_xcls_model (GValue* value, gpointer v_object) {
 	Xcls_EditProjectXcls_model* old;
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITPROJECT_TYPE_XCLS_MODEL));
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	old = value->data[0].v_pointer;
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (v_object) {
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_EDITPROJECT_TYPE_XCLS_MODEL));
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = v_object;
 #line 2708 "EditProject.vala.c"
 	} else {
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = NULL;
 #line 2712 "EditProject.vala.c"
 	}
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (old) {
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		xcls_editproject_xcls_model_unref (old);
 #line 2718 "EditProject.vala.c"
 	}
@@ -2720,16 +2720,16 @@ void xcls_editproject_value_take_xcls_model (GValue* value, gpointer v_object) {
 
 
 static void xcls_editproject_xcls_model_class_init (Xcls_EditProjectXcls_modelClass * klass) {
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	xcls_editproject_xcls_model_parent_class = g_type_class_peek_parent (klass);
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	XCLS_EDITPROJECT_XCLS_MODEL_CLASS (klass)->finalize = xcls_editproject_xcls_model_finalize;
 #line 2728 "EditProject.vala.c"
 }
 
 
 static void xcls_editproject_xcls_model_instance_init (Xcls_EditProjectXcls_model * self) {
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	self->ref_count = 1;
 #line 2735 "EditProject.vala.c"
 }
@@ -2737,9 +2737,9 @@ static void xcls_editproject_xcls_model_instance_init (Xcls_EditProjectXcls_mode
 
 static void xcls_editproject_xcls_model_finalize (Xcls_EditProjectXcls_model* obj) {
 	Xcls_EditProjectXcls_model * self;
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_EDITPROJECT_TYPE_XCLS_MODEL, Xcls_EditProjectXcls_model);
-#line 329 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 329 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_g_object_unref0 (self->el);
 #line 2745 "EditProject.vala.c"
 }
@@ -2762,9 +2762,9 @@ GType xcls_editproject_xcls_model_get_type (void) {
 gpointer xcls_editproject_xcls_model_ref (gpointer instance) {
 	Xcls_EditProjectXcls_model* self;
 	self = instance;
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_atomic_int_inc (&self->ref_count);
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return instance;
 #line 2770 "EditProject.vala.c"
 }
@@ -2773,11 +2773,11 @@ gpointer xcls_editproject_xcls_model_ref (gpointer instance) {
 void xcls_editproject_xcls_model_unref (gpointer instance) {
 	Xcls_EditProjectXcls_model* self;
 	self = instance;
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		XCLS_EDITPROJECT_XCLS_MODEL_GET_CLASS (self)->finalize (self);
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_type_free_instance ((GTypeInstance *) self);
 #line 2783 "EditProject.vala.c"
 	}
@@ -2785,7 +2785,7 @@ void xcls_editproject_xcls_model_unref (gpointer instance) {
 
 
 static gpointer _xcls_editproject_xcls_dir_ref0 (gpointer self) {
-#line 391 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 391 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return self ? xcls_editproject_xcls_dir_ref (self) : NULL;
 #line 2791 "EditProject.vala.c"
 }
@@ -2797,52 +2797,52 @@ Xcls_EditProjectXcls_dir* xcls_editproject_xcls_dir_construct (GType object_type
 	Xcls_EditProject* _tmp1_;
 	Xcls_EditProjectXcls_dir* _tmp2_;
 	GtkFileChooserWidget* _tmp3_;
-#line 388 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 388 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	self = (Xcls_EditProjectXcls_dir*) g_type_create_instance (object_type);
-#line 390 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 390 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp0_ = (GtkFileChooserWidget*) gtk_file_chooser_widget_new (GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER);
-#line 390 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 390 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_object_ref_sink (_tmp0_);
-#line 390 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 390 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_g_object_unref0 (self->el);
-#line 390 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 390 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	self->el = _tmp0_;
-#line 391 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 391 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp1_ = xcls_editproject__this;
-#line 391 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 391 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp2_ = _xcls_editproject_xcls_dir_ref0 (self);
-#line 391 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 391 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_xcls_editproject_xcls_dir_unref0 (_tmp1_->dir);
-#line 391 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 391 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp1_->dir = _tmp2_;
-#line 396 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 396 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp3_ = self->el;
-#line 396 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 396 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	gtk_file_chooser_set_select_multiple ((GtkFileChooser*) _tmp3_, FALSE);
-#line 388 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 388 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return self;
 #line 2825 "EditProject.vala.c"
 }
 
 
 Xcls_EditProjectXcls_dir* xcls_editproject_xcls_dir_new (void) {
-#line 388 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 388 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return xcls_editproject_xcls_dir_construct (XCLS_EDITPROJECT_TYPE_XCLS_DIR);
 #line 2832 "EditProject.vala.c"
 }
 
 
 static void xcls_editproject_value_xcls_dir_init (GValue* value) {
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	value->data[0].v_pointer = NULL;
 #line 2839 "EditProject.vala.c"
 }
 
 
 static void xcls_editproject_value_xcls_dir_free_value (GValue* value) {
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (value->data[0].v_pointer) {
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		xcls_editproject_xcls_dir_unref (value->data[0].v_pointer);
 #line 2848 "EditProject.vala.c"
 	}
@@ -2850,13 +2850,13 @@ static void xcls_editproject_value_xcls_dir_free_value (GValue* value) {
 
 
 static void xcls_editproject_value_xcls_dir_copy_value (const GValue* src_value, GValue* dest_value) {
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (src_value->data[0].v_pointer) {
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		dest_value->data[0].v_pointer = xcls_editproject_xcls_dir_ref (src_value->data[0].v_pointer);
 #line 2858 "EditProject.vala.c"
 	} else {
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		dest_value->data[0].v_pointer = NULL;
 #line 2862 "EditProject.vala.c"
 	}
@@ -2864,37 +2864,37 @@ static void xcls_editproject_value_xcls_dir_copy_value (const GValue* src_value,
 
 
 static gpointer xcls_editproject_value_xcls_dir_peek_pointer (const GValue* value) {
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return value->data[0].v_pointer;
 #line 2870 "EditProject.vala.c"
 }
 
 
 static gchar* xcls_editproject_value_xcls_dir_collect_value (GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (collect_values[0].v_pointer) {
 #line 2877 "EditProject.vala.c"
 		Xcls_EditProjectXcls_dir* object;
 		object = collect_values[0].v_pointer;
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		if (object->parent_instance.g_class == NULL) {
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 2884 "EditProject.vala.c"
 		} else if (!g_value_type_compatible (G_TYPE_FROM_INSTANCE (object), G_VALUE_TYPE (value))) {
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 			return g_strconcat ("invalid object type `", g_type_name (G_TYPE_FROM_INSTANCE (object)), "' for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 2888 "EditProject.vala.c"
 		}
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = xcls_editproject_xcls_dir_ref (object);
 #line 2892 "EditProject.vala.c"
 	} else {
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = NULL;
 #line 2896 "EditProject.vala.c"
 	}
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return NULL;
 #line 2900 "EditProject.vala.c"
 }
@@ -2903,27 +2903,27 @@ static gchar* xcls_editproject_value_xcls_dir_collect_value (GValue* value, guin
 static gchar* xcls_editproject_value_xcls_dir_lcopy_value (const GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
 	Xcls_EditProjectXcls_dir** object_p;
 	object_p = collect_values[0].v_pointer;
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (!object_p) {
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
 #line 2911 "EditProject.vala.c"
 	}
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (!value->data[0].v_pointer) {
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		*object_p = NULL;
 #line 2917 "EditProject.vala.c"
 	} else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) {
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		*object_p = value->data[0].v_pointer;
 #line 2921 "EditProject.vala.c"
 	} else {
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		*object_p = xcls_editproject_xcls_dir_ref (value->data[0].v_pointer);
 #line 2925 "EditProject.vala.c"
 	}
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return NULL;
 #line 2929 "EditProject.vala.c"
 }
@@ -2931,22 +2931,22 @@ static gchar* xcls_editproject_value_xcls_dir_lcopy_value (const GValue* value, 
 
 GParamSpec* xcls_editproject_param_spec_xcls_dir (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags) {
 	Xcls_EditProjectParamSpecXcls_dir* spec;
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_val_if_fail (g_type_is_a (object_type, XCLS_EDITPROJECT_TYPE_XCLS_DIR), NULL);
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	G_PARAM_SPEC (spec)->value_type = object_type;
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return G_PARAM_SPEC (spec);
 #line 2943 "EditProject.vala.c"
 }
 
 
 gpointer xcls_editproject_value_get_xcls_dir (const GValue* value) {
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITPROJECT_TYPE_XCLS_DIR), NULL);
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return value->data[0].v_pointer;
 #line 2952 "EditProject.vala.c"
 }
@@ -2954,29 +2954,29 @@ gpointer xcls_editproject_value_get_xcls_dir (const GValue* value) {
 
 void xcls_editproject_value_set_xcls_dir (GValue* value, gpointer v_object) {
 	Xcls_EditProjectXcls_dir* old;
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITPROJECT_TYPE_XCLS_DIR));
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	old = value->data[0].v_pointer;
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (v_object) {
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_EDITPROJECT_TYPE_XCLS_DIR));
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = v_object;
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		xcls_editproject_xcls_dir_ref (value->data[0].v_pointer);
 #line 2972 "EditProject.vala.c"
 	} else {
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = NULL;
 #line 2976 "EditProject.vala.c"
 	}
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (old) {
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		xcls_editproject_xcls_dir_unref (old);
 #line 2982 "EditProject.vala.c"
 	}
@@ -2985,27 +2985,27 @@ void xcls_editproject_value_set_xcls_dir (GValue* value, gpointer v_object) {
 
 void xcls_editproject_value_take_xcls_dir (GValue* value, gpointer v_object) {
 	Xcls_EditProjectXcls_dir* old;
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITPROJECT_TYPE_XCLS_DIR));
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	old = value->data[0].v_pointer;
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (v_object) {
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_EDITPROJECT_TYPE_XCLS_DIR));
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = v_object;
 #line 3001 "EditProject.vala.c"
 	} else {
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = NULL;
 #line 3005 "EditProject.vala.c"
 	}
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (old) {
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		xcls_editproject_xcls_dir_unref (old);
 #line 3011 "EditProject.vala.c"
 	}
@@ -3013,16 +3013,16 @@ void xcls_editproject_value_take_xcls_dir (GValue* value, gpointer v_object) {
 
 
 static void xcls_editproject_xcls_dir_class_init (Xcls_EditProjectXcls_dirClass * klass) {
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	xcls_editproject_xcls_dir_parent_class = g_type_class_peek_parent (klass);
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	XCLS_EDITPROJECT_XCLS_DIR_CLASS (klass)->finalize = xcls_editproject_xcls_dir_finalize;
 #line 3021 "EditProject.vala.c"
 }
 
 
 static void xcls_editproject_xcls_dir_instance_init (Xcls_EditProjectXcls_dir * self) {
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	self->ref_count = 1;
 #line 3028 "EditProject.vala.c"
 }
@@ -3030,9 +3030,9 @@ static void xcls_editproject_xcls_dir_instance_init (Xcls_EditProjectXcls_dir * 
 
 static void xcls_editproject_xcls_dir_finalize (Xcls_EditProjectXcls_dir* obj) {
 	Xcls_EditProjectXcls_dir * self;
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_EDITPROJECT_TYPE_XCLS_DIR, Xcls_EditProjectXcls_dir);
-#line 383 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 383 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_g_object_unref0 (self->el);
 #line 3038 "EditProject.vala.c"
 }
@@ -3055,9 +3055,9 @@ GType xcls_editproject_xcls_dir_get_type (void) {
 gpointer xcls_editproject_xcls_dir_ref (gpointer instance) {
 	Xcls_EditProjectXcls_dir* self;
 	self = instance;
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_atomic_int_inc (&self->ref_count);
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return instance;
 #line 3063 "EditProject.vala.c"
 }
@@ -3066,11 +3066,11 @@ gpointer xcls_editproject_xcls_dir_ref (gpointer instance) {
 void xcls_editproject_xcls_dir_unref (gpointer instance) {
 	Xcls_EditProjectXcls_dir* self;
 	self = instance;
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		XCLS_EDITPROJECT_XCLS_DIR_GET_CLASS (self)->finalize (self);
-#line 381 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_type_free_instance ((GTypeInstance *) self);
 #line 3076 "EditProject.vala.c"
 	}
@@ -3081,44 +3081,44 @@ Xcls_EditProjectXcls_Button9* xcls_editproject_xcls_button9_construct (GType obj
 	Xcls_EditProjectXcls_Button9* self = NULL;
 	GtkButton* _tmp0_;
 	GtkButton* _tmp1_;
-#line 426 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 426 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	self = (Xcls_EditProjectXcls_Button9*) g_type_create_instance (object_type);
-#line 428 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 428 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp0_ = (GtkButton*) gtk_button_new ();
-#line 428 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 428 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_object_ref_sink (_tmp0_);
-#line 428 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 428 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_g_object_unref0 (self->el);
-#line 428 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 428 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	self->el = _tmp0_;
-#line 433 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 433 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp1_ = self->el;
-#line 433 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 433 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	gtk_button_set_label (_tmp1_, "OK");
-#line 426 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 426 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return self;
 #line 3101 "EditProject.vala.c"
 }
 
 
 Xcls_EditProjectXcls_Button9* xcls_editproject_xcls_button9_new (void) {
-#line 426 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 426 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return xcls_editproject_xcls_button9_construct (XCLS_EDITPROJECT_TYPE_XCLS_BUTTON9);
 #line 3108 "EditProject.vala.c"
 }
 
 
 static void xcls_editproject_value_xcls_button9_init (GValue* value) {
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	value->data[0].v_pointer = NULL;
 #line 3115 "EditProject.vala.c"
 }
 
 
 static void xcls_editproject_value_xcls_button9_free_value (GValue* value) {
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (value->data[0].v_pointer) {
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		xcls_editproject_xcls_button9_unref (value->data[0].v_pointer);
 #line 3124 "EditProject.vala.c"
 	}
@@ -3126,13 +3126,13 @@ static void xcls_editproject_value_xcls_button9_free_value (GValue* value) {
 
 
 static void xcls_editproject_value_xcls_button9_copy_value (const GValue* src_value, GValue* dest_value) {
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (src_value->data[0].v_pointer) {
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		dest_value->data[0].v_pointer = xcls_editproject_xcls_button9_ref (src_value->data[0].v_pointer);
 #line 3134 "EditProject.vala.c"
 	} else {
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		dest_value->data[0].v_pointer = NULL;
 #line 3138 "EditProject.vala.c"
 	}
@@ -3140,37 +3140,37 @@ static void xcls_editproject_value_xcls_button9_copy_value (const GValue* src_va
 
 
 static gpointer xcls_editproject_value_xcls_button9_peek_pointer (const GValue* value) {
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return value->data[0].v_pointer;
 #line 3146 "EditProject.vala.c"
 }
 
 
 static gchar* xcls_editproject_value_xcls_button9_collect_value (GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (collect_values[0].v_pointer) {
 #line 3153 "EditProject.vala.c"
 		Xcls_EditProjectXcls_Button9* object;
 		object = collect_values[0].v_pointer;
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		if (object->parent_instance.g_class == NULL) {
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 3160 "EditProject.vala.c"
 		} else if (!g_value_type_compatible (G_TYPE_FROM_INSTANCE (object), G_VALUE_TYPE (value))) {
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 			return g_strconcat ("invalid object type `", g_type_name (G_TYPE_FROM_INSTANCE (object)), "' for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 3164 "EditProject.vala.c"
 		}
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = xcls_editproject_xcls_button9_ref (object);
 #line 3168 "EditProject.vala.c"
 	} else {
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = NULL;
 #line 3172 "EditProject.vala.c"
 	}
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return NULL;
 #line 3176 "EditProject.vala.c"
 }
@@ -3179,27 +3179,27 @@ static gchar* xcls_editproject_value_xcls_button9_collect_value (GValue* value, 
 static gchar* xcls_editproject_value_xcls_button9_lcopy_value (const GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
 	Xcls_EditProjectXcls_Button9** object_p;
 	object_p = collect_values[0].v_pointer;
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (!object_p) {
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
 #line 3187 "EditProject.vala.c"
 	}
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (!value->data[0].v_pointer) {
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		*object_p = NULL;
 #line 3193 "EditProject.vala.c"
 	} else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) {
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		*object_p = value->data[0].v_pointer;
 #line 3197 "EditProject.vala.c"
 	} else {
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		*object_p = xcls_editproject_xcls_button9_ref (value->data[0].v_pointer);
 #line 3201 "EditProject.vala.c"
 	}
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return NULL;
 #line 3205 "EditProject.vala.c"
 }
@@ -3207,22 +3207,22 @@ static gchar* xcls_editproject_value_xcls_button9_lcopy_value (const GValue* val
 
 GParamSpec* xcls_editproject_param_spec_xcls_button9 (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags) {
 	Xcls_EditProjectParamSpecXcls_Button9* spec;
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_val_if_fail (g_type_is_a (object_type, XCLS_EDITPROJECT_TYPE_XCLS_BUTTON9), NULL);
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	G_PARAM_SPEC (spec)->value_type = object_type;
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return G_PARAM_SPEC (spec);
 #line 3219 "EditProject.vala.c"
 }
 
 
 gpointer xcls_editproject_value_get_xcls_button9 (const GValue* value) {
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITPROJECT_TYPE_XCLS_BUTTON9), NULL);
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return value->data[0].v_pointer;
 #line 3228 "EditProject.vala.c"
 }
@@ -3230,29 +3230,29 @@ gpointer xcls_editproject_value_get_xcls_button9 (const GValue* value) {
 
 void xcls_editproject_value_set_xcls_button9 (GValue* value, gpointer v_object) {
 	Xcls_EditProjectXcls_Button9* old;
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITPROJECT_TYPE_XCLS_BUTTON9));
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	old = value->data[0].v_pointer;
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (v_object) {
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_EDITPROJECT_TYPE_XCLS_BUTTON9));
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = v_object;
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		xcls_editproject_xcls_button9_ref (value->data[0].v_pointer);
 #line 3248 "EditProject.vala.c"
 	} else {
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = NULL;
 #line 3252 "EditProject.vala.c"
 	}
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (old) {
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		xcls_editproject_xcls_button9_unref (old);
 #line 3258 "EditProject.vala.c"
 	}
@@ -3261,27 +3261,27 @@ void xcls_editproject_value_set_xcls_button9 (GValue* value, gpointer v_object) 
 
 void xcls_editproject_value_take_xcls_button9 (GValue* value, gpointer v_object) {
 	Xcls_EditProjectXcls_Button9* old;
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITPROJECT_TYPE_XCLS_BUTTON9));
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	old = value->data[0].v_pointer;
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (v_object) {
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_EDITPROJECT_TYPE_XCLS_BUTTON9));
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = v_object;
 #line 3277 "EditProject.vala.c"
 	} else {
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = NULL;
 #line 3281 "EditProject.vala.c"
 	}
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (old) {
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		xcls_editproject_xcls_button9_unref (old);
 #line 3287 "EditProject.vala.c"
 	}
@@ -3289,16 +3289,16 @@ void xcls_editproject_value_take_xcls_button9 (GValue* value, gpointer v_object)
 
 
 static void xcls_editproject_xcls_button9_class_init (Xcls_EditProjectXcls_Button9Class * klass) {
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	xcls_editproject_xcls_button9_parent_class = g_type_class_peek_parent (klass);
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	XCLS_EDITPROJECT_XCLS_BUTTON9_CLASS (klass)->finalize = xcls_editproject_xcls_button9_finalize;
 #line 3297 "EditProject.vala.c"
 }
 
 
 static void xcls_editproject_xcls_button9_instance_init (Xcls_EditProjectXcls_Button9 * self) {
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	self->ref_count = 1;
 #line 3304 "EditProject.vala.c"
 }
@@ -3306,9 +3306,9 @@ static void xcls_editproject_xcls_button9_instance_init (Xcls_EditProjectXcls_Bu
 
 static void xcls_editproject_xcls_button9_finalize (Xcls_EditProjectXcls_Button9* obj) {
 	Xcls_EditProjectXcls_Button9 * self;
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_EDITPROJECT_TYPE_XCLS_BUTTON9, Xcls_EditProjectXcls_Button9);
-#line 421 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 421 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_g_object_unref0 (self->el);
 #line 3314 "EditProject.vala.c"
 }
@@ -3331,9 +3331,9 @@ GType xcls_editproject_xcls_button9_get_type (void) {
 gpointer xcls_editproject_xcls_button9_ref (gpointer instance) {
 	Xcls_EditProjectXcls_Button9* self;
 	self = instance;
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_atomic_int_inc (&self->ref_count);
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return instance;
 #line 3339 "EditProject.vala.c"
 }
@@ -3342,11 +3342,11 @@ gpointer xcls_editproject_xcls_button9_ref (gpointer instance) {
 void xcls_editproject_xcls_button9_unref (gpointer instance) {
 	Xcls_EditProjectXcls_Button9* self;
 	self = instance;
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		XCLS_EDITPROJECT_XCLS_BUTTON9_GET_CLASS (self)->finalize (self);
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_type_free_instance ((GTypeInstance *) self);
 #line 3352 "EditProject.vala.c"
 	}
@@ -3357,44 +3357,44 @@ Xcls_EditProjectXcls_Button10* xcls_editproject_xcls_button10_construct (GType o
 	Xcls_EditProjectXcls_Button10* self = NULL;
 	GtkButton* _tmp0_;
 	GtkButton* _tmp1_;
-#line 459 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 459 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	self = (Xcls_EditProjectXcls_Button10*) g_type_create_instance (object_type);
-#line 461 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 461 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp0_ = (GtkButton*) gtk_button_new ();
-#line 461 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 461 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_object_ref_sink (_tmp0_);
-#line 461 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 461 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_g_object_unref0 (self->el);
-#line 461 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 461 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	self->el = _tmp0_;
-#line 466 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 466 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_tmp1_ = self->el;
-#line 466 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 466 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	gtk_button_set_label (_tmp1_, "Cancel");
-#line 459 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 459 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return self;
 #line 3377 "EditProject.vala.c"
 }
 
 
 Xcls_EditProjectXcls_Button10* xcls_editproject_xcls_button10_new (void) {
-#line 459 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 459 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return xcls_editproject_xcls_button10_construct (XCLS_EDITPROJECT_TYPE_XCLS_BUTTON10);
 #line 3384 "EditProject.vala.c"
 }
 
 
 static void xcls_editproject_value_xcls_button10_init (GValue* value) {
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	value->data[0].v_pointer = NULL;
 #line 3391 "EditProject.vala.c"
 }
 
 
 static void xcls_editproject_value_xcls_button10_free_value (GValue* value) {
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (value->data[0].v_pointer) {
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		xcls_editproject_xcls_button10_unref (value->data[0].v_pointer);
 #line 3400 "EditProject.vala.c"
 	}
@@ -3402,13 +3402,13 @@ static void xcls_editproject_value_xcls_button10_free_value (GValue* value) {
 
 
 static void xcls_editproject_value_xcls_button10_copy_value (const GValue* src_value, GValue* dest_value) {
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (src_value->data[0].v_pointer) {
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		dest_value->data[0].v_pointer = xcls_editproject_xcls_button10_ref (src_value->data[0].v_pointer);
 #line 3410 "EditProject.vala.c"
 	} else {
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		dest_value->data[0].v_pointer = NULL;
 #line 3414 "EditProject.vala.c"
 	}
@@ -3416,37 +3416,37 @@ static void xcls_editproject_value_xcls_button10_copy_value (const GValue* src_v
 
 
 static gpointer xcls_editproject_value_xcls_button10_peek_pointer (const GValue* value) {
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return value->data[0].v_pointer;
 #line 3422 "EditProject.vala.c"
 }
 
 
 static gchar* xcls_editproject_value_xcls_button10_collect_value (GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (collect_values[0].v_pointer) {
 #line 3429 "EditProject.vala.c"
 		Xcls_EditProjectXcls_Button10* object;
 		object = collect_values[0].v_pointer;
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		if (object->parent_instance.g_class == NULL) {
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 3436 "EditProject.vala.c"
 		} else if (!g_value_type_compatible (G_TYPE_FROM_INSTANCE (object), G_VALUE_TYPE (value))) {
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 			return g_strconcat ("invalid object type `", g_type_name (G_TYPE_FROM_INSTANCE (object)), "' for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 3440 "EditProject.vala.c"
 		}
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = xcls_editproject_xcls_button10_ref (object);
 #line 3444 "EditProject.vala.c"
 	} else {
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = NULL;
 #line 3448 "EditProject.vala.c"
 	}
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return NULL;
 #line 3452 "EditProject.vala.c"
 }
@@ -3455,27 +3455,27 @@ static gchar* xcls_editproject_value_xcls_button10_collect_value (GValue* value,
 static gchar* xcls_editproject_value_xcls_button10_lcopy_value (const GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
 	Xcls_EditProjectXcls_Button10** object_p;
 	object_p = collect_values[0].v_pointer;
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (!object_p) {
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
 #line 3463 "EditProject.vala.c"
 	}
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (!value->data[0].v_pointer) {
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		*object_p = NULL;
 #line 3469 "EditProject.vala.c"
 	} else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) {
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		*object_p = value->data[0].v_pointer;
 #line 3473 "EditProject.vala.c"
 	} else {
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		*object_p = xcls_editproject_xcls_button10_ref (value->data[0].v_pointer);
 #line 3477 "EditProject.vala.c"
 	}
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return NULL;
 #line 3481 "EditProject.vala.c"
 }
@@ -3483,22 +3483,22 @@ static gchar* xcls_editproject_value_xcls_button10_lcopy_value (const GValue* va
 
 GParamSpec* xcls_editproject_param_spec_xcls_button10 (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags) {
 	Xcls_EditProjectParamSpecXcls_Button10* spec;
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_val_if_fail (g_type_is_a (object_type, XCLS_EDITPROJECT_TYPE_XCLS_BUTTON10), NULL);
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	G_PARAM_SPEC (spec)->value_type = object_type;
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return G_PARAM_SPEC (spec);
 #line 3495 "EditProject.vala.c"
 }
 
 
 gpointer xcls_editproject_value_get_xcls_button10 (const GValue* value) {
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITPROJECT_TYPE_XCLS_BUTTON10), NULL);
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return value->data[0].v_pointer;
 #line 3504 "EditProject.vala.c"
 }
@@ -3506,29 +3506,29 @@ gpointer xcls_editproject_value_get_xcls_button10 (const GValue* value) {
 
 void xcls_editproject_value_set_xcls_button10 (GValue* value, gpointer v_object) {
 	Xcls_EditProjectXcls_Button10* old;
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITPROJECT_TYPE_XCLS_BUTTON10));
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	old = value->data[0].v_pointer;
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (v_object) {
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_EDITPROJECT_TYPE_XCLS_BUTTON10));
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = v_object;
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		xcls_editproject_xcls_button10_ref (value->data[0].v_pointer);
 #line 3524 "EditProject.vala.c"
 	} else {
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = NULL;
 #line 3528 "EditProject.vala.c"
 	}
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (old) {
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		xcls_editproject_xcls_button10_unref (old);
 #line 3534 "EditProject.vala.c"
 	}
@@ -3537,27 +3537,27 @@ void xcls_editproject_value_set_xcls_button10 (GValue* value, gpointer v_object)
 
 void xcls_editproject_value_take_xcls_button10 (GValue* value, gpointer v_object) {
 	Xcls_EditProjectXcls_Button10* old;
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITPROJECT_TYPE_XCLS_BUTTON10));
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	old = value->data[0].v_pointer;
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (v_object) {
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_EDITPROJECT_TYPE_XCLS_BUTTON10));
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = v_object;
 #line 3553 "EditProject.vala.c"
 	} else {
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = NULL;
 #line 3557 "EditProject.vala.c"
 	}
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (old) {
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		xcls_editproject_xcls_button10_unref (old);
 #line 3563 "EditProject.vala.c"
 	}
@@ -3565,16 +3565,16 @@ void xcls_editproject_value_take_xcls_button10 (GValue* value, gpointer v_object
 
 
 static void xcls_editproject_xcls_button10_class_init (Xcls_EditProjectXcls_Button10Class * klass) {
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	xcls_editproject_xcls_button10_parent_class = g_type_class_peek_parent (klass);
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	XCLS_EDITPROJECT_XCLS_BUTTON10_CLASS (klass)->finalize = xcls_editproject_xcls_button10_finalize;
 #line 3573 "EditProject.vala.c"
 }
 
 
 static void xcls_editproject_xcls_button10_instance_init (Xcls_EditProjectXcls_Button10 * self) {
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	self->ref_count = 1;
 #line 3580 "EditProject.vala.c"
 }
@@ -3582,9 +3582,9 @@ static void xcls_editproject_xcls_button10_instance_init (Xcls_EditProjectXcls_B
 
 static void xcls_editproject_xcls_button10_finalize (Xcls_EditProjectXcls_Button10* obj) {
 	Xcls_EditProjectXcls_Button10 * self;
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_EDITPROJECT_TYPE_XCLS_BUTTON10, Xcls_EditProjectXcls_Button10);
-#line 454 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 454 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_g_object_unref0 (self->el);
 #line 3590 "EditProject.vala.c"
 }
@@ -3607,9 +3607,9 @@ GType xcls_editproject_xcls_button10_get_type (void) {
 gpointer xcls_editproject_xcls_button10_ref (gpointer instance) {
 	Xcls_EditProjectXcls_Button10* self;
 	self = instance;
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_atomic_int_inc (&self->ref_count);
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return instance;
 #line 3615 "EditProject.vala.c"
 }
@@ -3618,11 +3618,11 @@ gpointer xcls_editproject_xcls_button10_ref (gpointer instance) {
 void xcls_editproject_xcls_button10_unref (gpointer instance) {
 	Xcls_EditProjectXcls_Button10* self;
 	self = instance;
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		XCLS_EDITPROJECT_XCLS_BUTTON10_GET_CLASS (self)->finalize (self);
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_type_free_instance ((GTypeInstance *) self);
 #line 3628 "EditProject.vala.c"
 	}
@@ -3630,16 +3630,16 @@ void xcls_editproject_xcls_button10_unref (gpointer instance) {
 
 
 static void value_xcls_editproject_init (GValue* value) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	value->data[0].v_pointer = NULL;
 #line 3636 "EditProject.vala.c"
 }
 
 
 static void value_xcls_editproject_free_value (GValue* value) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (value->data[0].v_pointer) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		xcls_editproject_unref (value->data[0].v_pointer);
 #line 3645 "EditProject.vala.c"
 	}
@@ -3647,13 +3647,13 @@ static void value_xcls_editproject_free_value (GValue* value) {
 
 
 static void value_xcls_editproject_copy_value (const GValue* src_value, GValue* dest_value) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (src_value->data[0].v_pointer) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		dest_value->data[0].v_pointer = xcls_editproject_ref (src_value->data[0].v_pointer);
 #line 3655 "EditProject.vala.c"
 	} else {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		dest_value->data[0].v_pointer = NULL;
 #line 3659 "EditProject.vala.c"
 	}
@@ -3661,37 +3661,37 @@ static void value_xcls_editproject_copy_value (const GValue* src_value, GValue* 
 
 
 static gpointer value_xcls_editproject_peek_pointer (const GValue* value) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return value->data[0].v_pointer;
 #line 3667 "EditProject.vala.c"
 }
 
 
 static gchar* value_xcls_editproject_collect_value (GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (collect_values[0].v_pointer) {
 #line 3674 "EditProject.vala.c"
 		Xcls_EditProject* object;
 		object = collect_values[0].v_pointer;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		if (object->parent_instance.g_class == NULL) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 3681 "EditProject.vala.c"
 		} else if (!g_value_type_compatible (G_TYPE_FROM_INSTANCE (object), G_VALUE_TYPE (value))) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 			return g_strconcat ("invalid object type `", g_type_name (G_TYPE_FROM_INSTANCE (object)), "' for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 3685 "EditProject.vala.c"
 		}
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = xcls_editproject_ref (object);
 #line 3689 "EditProject.vala.c"
 	} else {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = NULL;
 #line 3693 "EditProject.vala.c"
 	}
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return NULL;
 #line 3697 "EditProject.vala.c"
 }
@@ -3700,27 +3700,27 @@ static gchar* value_xcls_editproject_collect_value (GValue* value, guint n_colle
 static gchar* value_xcls_editproject_lcopy_value (const GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
 	Xcls_EditProject** object_p;
 	object_p = collect_values[0].v_pointer;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (!object_p) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
 #line 3708 "EditProject.vala.c"
 	}
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (!value->data[0].v_pointer) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		*object_p = NULL;
 #line 3714 "EditProject.vala.c"
 	} else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		*object_p = value->data[0].v_pointer;
 #line 3718 "EditProject.vala.c"
 	} else {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		*object_p = xcls_editproject_ref (value->data[0].v_pointer);
 #line 3722 "EditProject.vala.c"
 	}
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return NULL;
 #line 3726 "EditProject.vala.c"
 }
@@ -3728,22 +3728,22 @@ static gchar* value_xcls_editproject_lcopy_value (const GValue* value, guint n_c
 
 GParamSpec* param_spec_xcls_editproject (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags) {
 	ParamSpecXcls_EditProject* spec;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_val_if_fail (g_type_is_a (object_type, TYPE_XCLS_EDITPROJECT), NULL);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	G_PARAM_SPEC (spec)->value_type = object_type;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return G_PARAM_SPEC (spec);
 #line 3740 "EditProject.vala.c"
 }
 
 
 gpointer value_get_xcls_editproject (const GValue* value) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, TYPE_XCLS_EDITPROJECT), NULL);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return value->data[0].v_pointer;
 #line 3749 "EditProject.vala.c"
 }
@@ -3751,29 +3751,29 @@ gpointer value_get_xcls_editproject (const GValue* value) {
 
 void value_set_xcls_editproject (GValue* value, gpointer v_object) {
 	Xcls_EditProject* old;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, TYPE_XCLS_EDITPROJECT));
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	old = value->data[0].v_pointer;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (v_object) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, TYPE_XCLS_EDITPROJECT));
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = v_object;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		xcls_editproject_ref (value->data[0].v_pointer);
 #line 3769 "EditProject.vala.c"
 	} else {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = NULL;
 #line 3773 "EditProject.vala.c"
 	}
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (old) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		xcls_editproject_unref (old);
 #line 3779 "EditProject.vala.c"
 	}
@@ -3782,27 +3782,27 @@ void value_set_xcls_editproject (GValue* value, gpointer v_object) {
 
 void value_take_xcls_editproject (GValue* value, gpointer v_object) {
 	Xcls_EditProject* old;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, TYPE_XCLS_EDITPROJECT));
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	old = value->data[0].v_pointer;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (v_object) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, TYPE_XCLS_EDITPROJECT));
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = v_object;
 #line 3798 "EditProject.vala.c"
 	} else {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		value->data[0].v_pointer = NULL;
 #line 3802 "EditProject.vala.c"
 	}
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (old) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		xcls_editproject_unref (old);
 #line 3808 "EditProject.vala.c"
 	}
@@ -3810,18 +3810,18 @@ void value_take_xcls_editproject (GValue* value, gpointer v_object) {
 
 
 static void xcls_editproject_class_init (Xcls_EditProjectClass * klass) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	xcls_editproject_parent_class = g_type_class_peek_parent (klass);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	XCLS_EDITPROJECT_CLASS (klass)->finalize = xcls_editproject_finalize;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_signal_new ("success", TYPE_XCLS_EDITPROJECT, G_SIGNAL_RUN_LAST, 0, NULL, NULL, g_cclosure_marshal_VOID__OBJECT, G_TYPE_NONE, 1, PROJECT_TYPE_PROJECT);
 #line 3820 "EditProject.vala.c"
 }
 
 
 static void xcls_editproject_instance_init (Xcls_EditProject * self) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	self->ref_count = 1;
 #line 3827 "EditProject.vala.c"
 }
@@ -3829,17 +3829,17 @@ static void xcls_editproject_instance_init (Xcls_EditProject * self) {
 
 static void xcls_editproject_finalize (Xcls_EditProject* obj) {
 	Xcls_EditProject * self;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, TYPE_XCLS_EDITPROJECT, Xcls_EditProject);
-#line 22 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 22 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_g_object_unref0 (self->el);
-#line 25 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 25 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_xcls_editproject_xcls_xtype_unref0 (self->xtype);
-#line 26 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 26 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_xcls_editproject_xcls_cellrender_unref0 (self->cellrender);
-#line 27 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 27 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_xcls_editproject_xcls_model_unref0 (self->model);
-#line 28 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 28 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	_xcls_editproject_xcls_dir_unref0 (self->dir);
 #line 3845 "EditProject.vala.c"
 }
@@ -3862,9 +3862,9 @@ GType xcls_editproject_get_type (void) {
 gpointer xcls_editproject_ref (gpointer instance) {
 	Xcls_EditProject* self;
 	self = instance;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	g_atomic_int_inc (&self->ref_count);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	return instance;
 #line 3870 "EditProject.vala.c"
 }
@@ -3873,11 +3873,11 @@ gpointer xcls_editproject_ref (gpointer instance) {
 void xcls_editproject_unref (gpointer instance) {
 	Xcls_EditProject* self;
 	self = instance;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		XCLS_EDITPROJECT_GET_CLASS (self)->finalize (self);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/EditProject.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/EditProject.vala"
 		g_type_free_instance ((GTypeInstance *) self);
 #line 3883 "EditProject.vala.c"
 	}

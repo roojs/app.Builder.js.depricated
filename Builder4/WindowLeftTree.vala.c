@@ -506,7 +506,7 @@ static gint _vala_array_length (gpointer array);
 extern const GtkTargetEntry BUILDER4_APPLICATION_targetList[4];
 
 static gpointer _g_object_ref0 (gpointer self) {
-#line 38 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 38 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	return self ? g_object_ref (self) : NULL;
 #line 512 "WindowLeftTree.vala.c"
 }
@@ -527,70 +527,70 @@ Xcls_WindowLeftTree* xcls_windowlefttree_construct (GType object_type) {
 	Xcls_WindowLeftTreeXcls_LeftTreeMenu* _tmp9_;
 	Xcls_WindowLeftTreeXcls_LeftTreeMenu* child_1;
 	GtkScrolledWindow* _tmp10_;
-#line 35 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 35 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self = (Xcls_WindowLeftTree*) g_object_new (object_type, NULL);
-#line 37 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 37 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp0_ = (GtkScrolledWindow*) gtk_scrolled_window_new (NULL, NULL);
-#line 37 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 37 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_object_ref_sink (_tmp0_);
-#line 37 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 37 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (self->el);
-#line 37 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 37 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->el = _tmp0_;
-#line 38 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 38 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp1_ = _g_object_ref0 (self);
-#line 38 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 38 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 38 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 38 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->priv->_this = _tmp1_;
-#line 39 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 39 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp2_ = _g_object_ref0 (self);
-#line 39 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 39 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (WindowLeftTree);
-#line 39 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 39 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	WindowLeftTree = _tmp2_;
-#line 44 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 44 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp3_ = self->el;
-#line 44 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 44 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	gtk_scrolled_window_set_shadow_type (_tmp3_, GTK_SHADOW_IN);
-#line 45 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 45 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp4_ = self->priv->_this;
-#line 45 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 45 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp5_ = xcls_windowlefttree_xcls_view_new (_tmp4_);
-#line 45 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 45 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	child_0 = _tmp5_;
-#line 46 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 46 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_object_ref ((GObject*) child_0);
-#line 47 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 47 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp6_ = self->el;
-#line 47 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 47 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp7_ = child_0->el;
-#line 47 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 47 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	gtk_container_add ((GtkContainer*) _tmp6_, (GtkWidget*) _tmp7_);
-#line 48 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 48 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp8_ = self->priv->_this;
-#line 48 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 48 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp9_ = xcls_windowlefttree_xcls_lefttreemenu_new (_tmp8_);
-#line 48 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 48 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	child_1 = _tmp9_;
-#line 49 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 49 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_object_ref ((GObject*) child_1);
-#line 52 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 52 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp10_ = self->el;
-#line 52 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 52 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	gtk_scrolled_window_set_policy (_tmp10_, GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
-#line 35 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 35 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (child_1);
-#line 35 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 35 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (child_0);
-#line 35 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 35 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	return self;
 #line 589 "WindowLeftTree.vala.c"
 }
 
 
 Xcls_WindowLeftTree* xcls_windowlefttree_new (void) {
-#line 35 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 35 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	return xcls_windowlefttree_construct (TYPE_XCLS_WINDOWLEFTTREE);
 #line 596 "WindowLeftTree.vala.c"
 }
@@ -601,17 +601,17 @@ JsRenderJsRender* xcls_windowlefttree_getActiveFile (Xcls_WindowLeftTree* self) 
 	Xcls_WindowLeftTreeXcls_model* _tmp0_;
 	JsRenderJsRender* _tmp1_;
 	JsRenderJsRender* _tmp2_;
-#line 67 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 67 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 68 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 68 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp0_ = self->model;
-#line 68 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 68 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp1_ = _tmp0_->file;
-#line 68 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 68 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp2_ = _g_object_ref0 (_tmp1_);
-#line 68 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 68 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	result = _tmp2_;
-#line 68 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 68 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	return result;
 #line 617 "WindowLeftTree.vala.c"
 }
@@ -628,41 +628,41 @@ JsRenderNode* xcls_windowlefttree_getActiveElement (Xcls_WindowLeftTree* self) {
 	Xcls_WindowLeftTreeXcls_model* _tmp5_;
 	const gchar* _tmp6_;
 	JsRenderNode* _tmp7_ = NULL;
-#line 70 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 70 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 72 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 72 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp0_ = xcls_windowlefttree_getActivePath (self);
-#line 72 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 72 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	path = _tmp0_;
-#line 73 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 73 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp1_ = path;
-#line 73 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 73 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp2_ = strlen (_tmp1_);
-#line 73 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 73 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp3_ = _tmp2_;
-#line 73 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 73 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	if (_tmp3_ < 1) {
-#line 74 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 74 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		result = NULL;
-#line 74 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 74 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_g_free0 (path);
-#line 74 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 74 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		return result;
 #line 652 "WindowLeftTree.vala.c"
 	}
-#line 76 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 76 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp4_ = self->priv->_this;
-#line 76 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 76 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp5_ = _tmp4_->model;
-#line 76 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 76 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp6_ = path;
-#line 76 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 76 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp7_ = xcls_windowlefttree_xcls_model_pathToNode (_tmp5_, _tmp6_);
-#line 76 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 76 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	result = _tmp7_;
-#line 76 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 76 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_free0 (path);
-#line 76 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 76 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	return result;
 #line 668 "WindowLeftTree.vala.c"
 }
@@ -693,88 +693,88 @@ gchar* xcls_windowlefttree_getActivePath (Xcls_WindowLeftTree* self) {
 	GtkTreePath* _tmp17_;
 	gchar* _tmp18_ = NULL;
 	gchar* _tmp19_;
-#line 82 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 82 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 83 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp0_ = self->model;
-#line 83 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 83 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	model = _tmp1_;
-#line 84 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 84 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp2_ = self->view;
-#line 84 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 84 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp3_ = _tmp2_->el;
-#line 84 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 84 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp4_ = _g_object_ref0 (_tmp3_);
-#line 84 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 84 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	view = _tmp4_;
-#line 85 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 85 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp5_ = view;
-#line 85 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 85 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp6_ = gtk_tree_view_get_selection (_tmp5_);
-#line 85 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 85 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp7_ = gtk_tree_selection_count_selected_rows (_tmp6_);
-#line 85 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 85 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	if (_tmp7_ < 1) {
 #line 721 "WindowLeftTree.vala.c"
 		gchar* _tmp8_;
-#line 86 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 86 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp8_ = g_strdup ("");
-#line 86 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 86 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		result = _tmp8_;
-#line 86 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 86 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_g_object_unref0 (view);
-#line 86 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 86 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_g_object_unref0 (model);
-#line 86 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 86 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		return result;
 #line 733 "WindowLeftTree.vala.c"
 	}
-#line 90 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 90 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp9_ = view;
-#line 90 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 90 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp10_ = gtk_tree_view_get_selection (_tmp9_);
-#line 90 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 90 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	gtk_tree_selection_get_selected (_tmp10_, &_tmp11_, &_tmp12_);
-#line 90 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 90 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (mod);
-#line 90 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 90 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp13_ = _g_object_ref0 (_tmp11_);
-#line 90 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 90 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	mod = _tmp13_;
-#line 90 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 90 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	iter = _tmp12_;
-#line 91 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 91 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp14_ = mod;
-#line 91 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 91 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp15_ = iter;
-#line 91 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 91 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp16_ = gtk_tree_model_get_path (_tmp14_, &_tmp15_);
-#line 91 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 91 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp17_ = _tmp16_;
-#line 91 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 91 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp18_ = gtk_tree_path_to_string (_tmp17_);
-#line 91 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 91 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp19_ = _tmp18_;
-#line 91 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 91 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_gtk_tree_path_free0 (_tmp17_);
-#line 91 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 91 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	result = _tmp19_;
-#line 91 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 91 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (mod);
-#line 91 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 91 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (view);
-#line 91 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 91 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (model);
-#line 91 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 91 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	return result;
 #line 773 "WindowLeftTree.vala.c"
 }
 
 
 static void _vala_PangoFontDescription_free (PangoFontDescription* self) {
-#line 139 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 139 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_boxed_free (pango_font_description_get_type (), self);
 #line 780 "WindowLeftTree.vala.c"
 }
@@ -812,115 +812,115 @@ static gboolean __lambda38_ (Xcls_WindowLeftTreeXcls_view* self, GdkEventButton*
 	GtkMenu* _tmp28_;
 	GdkEventButton _tmp29_;
 	guint32 _tmp30_;
-#line 179 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 179 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_return_val_if_fail (ev != NULL, FALSE);
-#line 183 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 183 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp0_ = self->priv->_this;
-#line 183 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 183 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_signal_emit_by_name (_tmp0_, "before-node-change", NULL);
-#line 184 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 184 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp2_ = *ev;
-#line 184 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 184 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp3_ = _tmp2_.type;
-#line 184 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 184 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	if (_tmp3_ != GDK_BUTTON_PRESS) {
-#line 184 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 184 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp1_ = TRUE;
 #line 830 "WindowLeftTree.vala.c"
 	} else {
 		GdkEventButton _tmp4_;
 		guint _tmp5_;
-#line 184 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 184 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp4_ = *ev;
-#line 184 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 184 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp5_ = _tmp4_.button;
-#line 184 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 184 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp1_ = _tmp5_ != ((guint) 3);
 #line 840 "WindowLeftTree.vala.c"
 	}
-#line 184 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 184 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp6_ = _tmp1_;
-#line 184 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 184 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	if (_tmp6_) {
-#line 186 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 186 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		result = FALSE;
-#line 186 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 186 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		return result;
 #line 850 "WindowLeftTree.vala.c"
 	}
-#line 189 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 189 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp7_ = self->priv->_this;
-#line 189 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 189 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp8_ = _tmp7_->view;
-#line 189 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 189 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp9_ = _tmp8_->el;
-#line 189 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 189 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp10_ = *ev;
-#line 189 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 189 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp11_ = _tmp10_.x;
-#line 189 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 189 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp12_ = *ev;
-#line 189 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 189 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp13_ = _tmp12_.y;
-#line 189 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 189 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp15_ = gtk_tree_view_get_path_at_pos (_tmp9_, (gint) _tmp11_, (gint) _tmp13_, &_tmp14_, NULL, NULL, NULL);
-#line 189 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 189 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_gtk_tree_path_free0 (res);
-#line 189 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 189 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	res = _tmp14_;
-#line 189 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 189 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	if (!_tmp15_) {
-#line 190 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 190 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		result = TRUE;
-#line 190 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 190 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_gtk_tree_path_free0 (res);
-#line 190 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 190 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		return result;
 #line 880 "WindowLeftTree.vala.c"
 	}
-#line 193 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 193 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp16_ = self->el;
-#line 193 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 193 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp17_ = gtk_tree_view_get_selection (_tmp16_);
-#line 193 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 193 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp18_ = res;
-#line 193 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 193 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	gtk_tree_selection_select_path (_tmp17_, _tmp18_);
-#line 199 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 199 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp19_ = self->priv->_this;
-#line 199 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 199 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp20_ = _tmp19_->LeftTreeMenu;
-#line 199 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 199 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp21_ = _tmp20_->el;
-#line 199 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 199 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp22_ = gdk_screen_get_default ();
-#line 199 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 199 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	gtk_menu_set_screen (_tmp21_, _tmp22_);
-#line 200 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 200 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp23_ = self->priv->_this;
-#line 200 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 200 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp24_ = _tmp23_->LeftTreeMenu;
-#line 200 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 200 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp25_ = _tmp24_->el;
-#line 200 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 200 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	gtk_widget_show_all ((GtkWidget*) _tmp25_);
-#line 201 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 201 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp26_ = self->priv->_this;
-#line 201 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 201 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp27_ = _tmp26_->LeftTreeMenu;
-#line 201 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 201 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp28_ = _tmp27_->el;
-#line 201 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 201 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp29_ = *ev;
-#line 201 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 201 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp30_ = _tmp29_.time;
-#line 201 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 201 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	gtk_menu_popup (_tmp28_, NULL, NULL, NULL, NULL, (guint) 3, _tmp30_);
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	result = TRUE;
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_gtk_tree_path_free0 (res);
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	return result;
 #line 926 "WindowLeftTree.vala.c"
 }
@@ -929,14 +929,14 @@ static gboolean __lambda38_ (Xcls_WindowLeftTreeXcls_view* self, GdkEventButton*
 static gboolean ___lambda38__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self) {
 	gboolean result;
 	result = __lambda38_ (self, event);
-#line 179 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 179 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	return result;
 #line 935 "WindowLeftTree.vala.c"
 }
 
 
 static gpointer _cairo_surface_reference0 (gpointer self) {
-#line 240 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 240 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	return self ? cairo_surface_reference (self) : NULL;
 #line 942 "WindowLeftTree.vala.c"
 }
@@ -1004,188 +1004,188 @@ static void __lambda45_ (Xcls_WindowLeftTreeXcls_view* self, GdkDragContext* ctx
 	cairo_surface_t* pix;
 	GdkDragContext* _tmp50_;
 	cairo_surface_t* _tmp51_;
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_return_if_fail (ctx != NULL);
-#line 213 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 213 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp0_ = self->priv->_this;
-#line 213 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 213 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp1_ = _tmp0_->view;
-#line 213 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 213 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp2_ = _tmp1_->el;
-#line 213 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 213 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp3_ = gtk_tree_view_get_selection (_tmp2_);
-#line 213 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 213 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp4_ = _g_object_ref0 (_tmp3_);
-#line 213 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 213 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	s = _tmp4_;
-#line 214 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 214 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp5_ = s;
-#line 214 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 214 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp6_ = gtk_tree_selection_count_selected_rows (_tmp5_);
-#line 214 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 214 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	if (_tmp6_ < 1) {
-#line 215 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 215 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_g_object_unref0 (s);
-#line 215 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 215 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		return;
 #line 1032 "WindowLeftTree.vala.c"
 	}
-#line 219 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 219 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp7_ = s;
-#line 219 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 219 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	gtk_tree_selection_get_selected (_tmp7_, &_tmp8_, &_tmp9_);
-#line 219 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 219 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (mod);
-#line 219 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 219 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp10_ = _g_object_ref0 (_tmp8_);
-#line 219 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 219 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	mod = _tmp10_;
-#line 219 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 219 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	iter = _tmp9_;
-#line 225 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 225 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp11_ = self->priv->_this;
-#line 225 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 225 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp12_ = _tmp11_->model;
-#line 225 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 225 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp13_ = _tmp12_->el;
-#line 225 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 225 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp14_ = iter;
-#line 225 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 225 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	gtk_tree_model_get_value ((GtkTreeModel*) _tmp13_, &_tmp14_, 2, &_tmp15_);
-#line 225 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 225 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	G_IS_VALUE (&value) ? (g_value_unset (&value), NULL) : NULL;
-#line 225 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 225 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	value = _tmp15_;
-#line 226 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 226 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp16_ = g_value_dup_object (&value);
-#line 226 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 226 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	data = G_TYPE_CHECK_INSTANCE_CAST (_tmp16_, JS_RENDER_TYPE_NODE, JsRenderNode);
-#line 227 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 227 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp17_ = data;
-#line 227 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 227 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp18_ = js_render_node_fqn (_tmp17_);
-#line 227 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 227 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	xname = _tmp18_;
-#line 228 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 228 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp19_ = xname;
-#line 228 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 228 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp20_ = g_strconcat ("XNAME  IS ", _tmp19_, NULL);
-#line 228 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 228 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp21_ = _tmp20_;
-#line 228 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 228 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp22_ = g_strconcat (_tmp21_, "\n", NULL);
-#line 228 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 228 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp23_ = _tmp22_;
-#line 228 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 228 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_print ("%s", _tmp23_);
-#line 228 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 228 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_free0 (_tmp23_);
-#line 228 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 228 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_free0 (_tmp21_);
-#line 229 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 229 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp24_ = xname;
-#line 229 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 229 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp25_ = g_strdup (_tmp24_);
-#line 229 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 229 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_free0 (self->dragData);
-#line 229 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 229 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->dragData = _tmp25_;
-#line 230 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 230 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp26_ = self->priv->_this;
-#line 230 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 230 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp27_ = _tmp26_->model;
-#line 230 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 230 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp28_ = _tmp27_->file;
-#line 230 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 230 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp29_ = js_render_js_render_palete (_tmp28_);
-#line 230 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 230 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp30_ = _tmp29_;
-#line 230 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 230 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp31_ = xname;
-#line 230 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 230 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp33_ = palete_palete_getDropList (_tmp30_, _tmp31_, &_tmp32_);
-#line 230 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 230 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->dropList = (_vala_array_free (self->dropList, self->dropList_length1, (GDestroyNotify) g_free), NULL);
-#line 230 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 230 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->dropList = _tmp33_;
-#line 230 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 230 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->dropList_length1 = _tmp32_;
-#line 230 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 230 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (_tmp30_);
-#line 232 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 232 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp34_ = self->dropList;
-#line 232 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 232 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp34__length1 = self->dropList_length1;
-#line 232 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 232 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp35_ = g_strjoinv (", ", _tmp34_);
-#line 232 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 232 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp36_ = _tmp35_;
-#line 232 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 232 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp37_ = g_strconcat ("DROP LIST IS ", _tmp36_, NULL);
-#line 232 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 232 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp38_ = _tmp37_;
-#line 232 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 232 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp39_ = g_strconcat (_tmp38_, "\n", NULL);
-#line 232 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 232 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp40_ = _tmp39_;
-#line 232 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 232 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_print ("%s", _tmp40_);
-#line 232 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 232 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_free0 (_tmp40_);
-#line 232 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 232 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_free0 (_tmp38_);
-#line 232 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 232 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_free0 (_tmp36_);
-#line 236 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 236 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp41_ = self->priv->_this;
-#line 236 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 236 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp42_ = _tmp41_->model;
-#line 236 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 236 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp43_ = _tmp42_->el;
-#line 236 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 236 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp44_ = iter;
-#line 236 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 236 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp45_ = gtk_tree_model_get_path ((GtkTreeModel*) _tmp43_, &_tmp44_);
-#line 236 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 236 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	path = _tmp45_;
-#line 240 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 240 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp46_ = self->el;
-#line 240 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 240 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp47_ = path;
-#line 240 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 240 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp48_ = gtk_tree_view_create_row_drag_icon (_tmp46_, _tmp47_);
-#line 240 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 240 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp49_ = _cairo_surface_reference0 (_tmp48_);
-#line 240 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 240 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	pix = _tmp49_;
-#line 242 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 242 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp50_ = ctx;
-#line 242 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 242 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp51_ = pix;
-#line 242 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 242 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	gtk_drag_set_icon_surface (_tmp50_, _tmp51_);
-#line 244 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 244 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_cairo_surface_destroy0 (pix);
-#line 244 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 244 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_gtk_tree_path_free0 (path);
-#line 244 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 244 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_free0 (xname);
-#line 244 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 244 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (data);
-#line 244 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 244 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	G_IS_VALUE (&value) ? (g_value_unset (&value), NULL) : NULL;
-#line 244 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 244 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (mod);
-#line 244 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 244 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (s);
-#line 244 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 244 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	return;
 #line 1184 "WindowLeftTree.vala.c"
 }
 
 
 static void ___lambda45__gtk_widget_drag_begin (GtkWidget* _sender, GdkDragContext* context, gpointer self) {
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	__lambda45_ (self, context);
 #line 1191 "WindowLeftTree.vala.c"
 }
@@ -1193,28 +1193,28 @@ static void ___lambda45__gtk_widget_drag_begin (GtkWidget* _sender, GdkDragConte
 
 static void __lambda46_ (Xcls_WindowLeftTreeXcls_view* self, GdkDragContext* drag_context) {
 	gchar* _tmp0_;
-#line 246 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 246 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_return_if_fail (drag_context != NULL);
-#line 248 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 248 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp0_ = g_strdup ("");
-#line 248 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 248 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_free0 (self->dragData);
-#line 248 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 248 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->dragData = _tmp0_;
-#line 249 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 249 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->dropList = (_vala_array_free (self->dropList, self->dropList_length1, (GDestroyNotify) g_free), NULL);
-#line 249 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 249 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->dropList = NULL;
-#line 249 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 249 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->dropList_length1 = 0;
-#line 251 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 251 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	xcls_windowlefttree_xcls_view_highlightDropPath (self, "", 0);
 #line 1213 "WindowLeftTree.vala.c"
 }
 
 
 static void ___lambda46__gtk_widget_drag_end (GtkWidget* _sender, GdkDragContext* context, gpointer self) {
-#line 246 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 246 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	__lambda46_ (self, context);
 #line 1220 "WindowLeftTree.vala.c"
 }
@@ -1228,31 +1228,31 @@ static gboolean __lambda47_ (Xcls_WindowLeftTreeXcls_view* self, GdkDragContext*
 	GdkDragContext* _tmp3_;
 	GdkAtom _tmp4_ = 0U;
 	guint _tmp5_;
-#line 254 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 254 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_return_val_if_fail (ctx != NULL, FALSE);
-#line 258 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 258 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->drag_in_motion = TRUE;
-#line 259 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 259 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp0_ = x;
-#line 259 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 259 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->drag_x = _tmp0_;
-#line 260 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 260 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp1_ = y;
-#line 260 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 260 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->drag_y = _tmp1_;
-#line 263 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 263 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp2_ = self->el;
-#line 263 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 263 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp3_ = ctx;
-#line 263 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 263 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp4_ = gdk_atom_intern ("STRING", TRUE);
-#line 263 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 263 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp5_ = time;
-#line 263 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 263 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	gtk_drag_get_data ((GtkWidget*) _tmp2_, _tmp3_, _tmp4_, (guint32) _tmp5_);
-#line 270 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 270 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	result = TRUE;
-#line 270 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 270 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	return result;
 #line 1258 "WindowLeftTree.vala.c"
 }
@@ -1261,7 +1261,7 @@ static gboolean __lambda47_ (Xcls_WindowLeftTreeXcls_view* self, GdkDragContext*
 static gboolean ___lambda47__gtk_widget_drag_motion (GtkWidget* _sender, GdkDragContext* context, gint x, gint y, guint time_, gpointer self) {
 	gboolean result;
 	result = __lambda47_ (self, context, x, y, time_);
-#line 254 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 254 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	return result;
 #line 1267 "WindowLeftTree.vala.c"
 }
@@ -1273,23 +1273,23 @@ static gboolean __lambda48_ (Xcls_WindowLeftTreeXcls_view* self, GdkDragContext*
 	GdkDragContext* _tmp1_;
 	GdkAtom _tmp2_ = 0U;
 	guint _tmp3_;
-#line 273 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 273 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_return_val_if_fail (ctx != NULL, FALSE);
-#line 275 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 275 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->drag_in_motion = FALSE;
-#line 277 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 277 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp0_ = self->el;
-#line 277 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 277 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp1_ = ctx;
-#line 277 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 277 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp2_ = gdk_atom_intern ("STRING", TRUE);
-#line 277 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 277 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp3_ = time;
-#line 277 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 277 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	gtk_drag_get_data ((GtkWidget*) _tmp0_, _tmp1_, _tmp2_, (guint32) _tmp3_);
-#line 289 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 289 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	result = FALSE;
-#line 289 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 289 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	return result;
 #line 1295 "WindowLeftTree.vala.c"
 }
@@ -1298,7 +1298,7 @@ static gboolean __lambda48_ (Xcls_WindowLeftTreeXcls_view* self, GdkDragContext*
 static gboolean ___lambda48__gtk_widget_drag_drop (GtkWidget* _sender, GdkDragContext* context, gint x, gint y, guint time_, gpointer self) {
 	gboolean result;
 	result = __lambda48_ (self, context, x, y, time_);
-#line 273 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 273 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	return result;
 #line 1304 "WindowLeftTree.vala.c"
 }
@@ -1334,125 +1334,125 @@ static void __lambda49_ (Xcls_WindowLeftTreeXcls_view* self, GdkDragContext* ctx
 	GdkDragAction _tmp104_ = 0;
 	GdkDragContext* _tmp105_;
 	guint _tmp106_;
-#line 291 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 291 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_return_if_fail (ctx != NULL);
-#line 291 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 291 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_return_if_fail (sel != NULL);
-#line 298 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 298 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp0_ = ctx;
-#line 298 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 298 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp1_ = gtk_drag_get_source_widget (_tmp0_);
-#line 298 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 298 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp2_ = _g_object_ref0 (_tmp1_);
-#line 298 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 298 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	src = _tmp2_;
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp3_ = src;
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp4_ = self->el;
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	if (_tmp3_ != G_TYPE_CHECK_INSTANCE_CAST (_tmp4_, GTK_TYPE_WIDGET, GtkWidget)) {
 #line 1356 "WindowLeftTree.vala.c"
 		gboolean _tmp5_;
 		GdkDragContext* _tmp8_;
 		guint _tmp9_;
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp5_ = self->drag_in_motion;
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		if (_tmp5_) {
 #line 1364 "WindowLeftTree.vala.c"
 			GdkDragContext* _tmp6_;
 			guint _tmp7_;
-#line 305 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 305 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp6_ = ctx;
-#line 305 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 305 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp7_ = time;
-#line 305 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 305 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			gdk_drag_status (_tmp6_, 0, (guint32) _tmp7_);
-#line 306 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 306 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			xcls_windowlefttree_xcls_view_highlightDropPath (self, "", (GtkTreeViewDropPosition) 0);
-#line 307 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 307 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_g_object_unref0 (src);
-#line 307 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 307 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			return;
 #line 1379 "WindowLeftTree.vala.c"
 		}
-#line 309 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 309 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp8_ = ctx;
-#line 309 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 309 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp9_ = time;
-#line 309 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 309 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		gtk_drag_finish (_tmp8_, FALSE, FALSE, (guint32) _tmp9_);
-#line 311 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 311 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_g_object_unref0 (src);
-#line 311 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 311 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		return;
 #line 1391 "WindowLeftTree.vala.c"
 	}
-#line 314 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 314 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp10_ = g_strdup ("");
-#line 314 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 314 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	targetData = _tmp10_;
-#line 317 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 317 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp12_ = ctx;
-#line 317 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 317 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp13_ = gdk_drag_context_get_actions (_tmp12_);
-#line 317 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 317 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	if ((_tmp13_ & GDK_ACTION_MOVE) > 0) {
-#line 317 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 317 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp11_ = GDK_ACTION_MOVE;
 #line 1405 "WindowLeftTree.vala.c"
 	} else {
-#line 317 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 317 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp11_ = GDK_ACTION_COPY;
 #line 1409 "WindowLeftTree.vala.c"
 	}
-#line 317 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 317 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp14_ = _tmp11_;
-#line 317 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 317 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	action = _tmp14_;
-#line 320 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 320 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp15_ = self->priv->_this;
-#line 320 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 320 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp16_ = _tmp15_->model;
-#line 320 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 320 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp17_ = _tmp16_->el;
-#line 320 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 320 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp18_ = gtk_tree_model_iter_n_children ((GtkTreeModel*) _tmp17_, NULL);
-#line 320 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 320 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	if (_tmp18_ < 1) {
 #line 1425 "WindowLeftTree.vala.c"
 		gchar* _tmp19_ = NULL;
 		gboolean _tmp20_;
-#line 323 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 323 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp19_ = g_strdup_printf ("|%d|", (gint) GTK_TREE_VIEW_DROP_INTO_OR_AFTER);
-#line 323 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 323 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_g_free0 (targetData);
-#line 323 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 323 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		targetData = _tmp19_;
-#line 324 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 324 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp20_ = self->drag_in_motion;
-#line 324 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 324 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		if (_tmp20_) {
 #line 1438 "WindowLeftTree.vala.c"
 			GdkDragContext* _tmp21_;
 			GdkDragAction _tmp22_;
 			guint _tmp23_;
-#line 325 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 325 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			xcls_windowlefttree_xcls_view_highlightDropPath (self, "", (GtkTreeViewDropPosition) 0);
-#line 326 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 326 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp21_ = ctx;
-#line 326 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 326 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp22_ = action;
-#line 326 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 326 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp23_ = time;
-#line 326 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 326 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			gdk_drag_status (_tmp21_, _tmp22_, (guint32) _tmp23_);
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_g_free0 (targetData);
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_g_object_unref0 (src);
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			return;
 #line 1458 "WindowLeftTree.vala.c"
 		}
@@ -1507,346 +1507,346 @@ static void __lambda49_ (Xcls_WindowLeftTreeXcls_view* self, GdkDragContext* ctx
 		gint td_ar_length1;
 		gint _td_ar_size_;
 		gboolean _tmp87_;
-#line 338 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 338 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp24_ = self->priv->_this;
-#line 338 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 338 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp25_ = _tmp24_->view;
-#line 338 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 338 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp26_ = _tmp25_->el;
-#line 338 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 338 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp27_ = self->drag_x;
-#line 338 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 338 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp28_ = self->drag_y;
-#line 338 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 338 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp31_ = gtk_tree_view_get_dest_row_at_pos (_tmp26_, _tmp27_, _tmp28_, &_tmp29_, &_tmp30_);
-#line 338 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 338 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_gtk_tree_path_free0 (path);
-#line 338 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 338 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		path = _tmp29_;
-#line 338 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 338 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		pos = _tmp30_;
-#line 338 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 338 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		isOver = _tmp31_;
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp32_ = isOver;
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		if (!_tmp32_) {
 #line 1535 "WindowLeftTree.vala.c"
 			gboolean _tmp33_;
 			GdkDragContext* _tmp36_;
 			guint _tmp37_;
-#line 342 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 342 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp33_ = self->drag_in_motion;
-#line 342 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 342 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			if (_tmp33_) {
 #line 1543 "WindowLeftTree.vala.c"
 				GdkDragContext* _tmp34_;
 				guint _tmp35_;
-#line 343 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 343 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp34_ = ctx;
-#line 343 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 343 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp35_ = time;
-#line 343 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 343 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				gdk_drag_status (_tmp34_, 0, (guint32) _tmp35_);
-#line 344 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 344 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				xcls_windowlefttree_xcls_view_highlightDropPath (self, "", (GtkTreeViewDropPosition) 0);
-#line 345 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 345 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_gtk_tree_path_free0 (path);
-#line 345 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 345 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_g_free0 (targetData);
-#line 345 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 345 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_g_object_unref0 (src);
-#line 345 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 345 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				return;
 #line 1562 "WindowLeftTree.vala.c"
 			}
-#line 347 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 347 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp36_ = ctx;
-#line 347 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 347 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp37_ = time;
-#line 347 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 347 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			gtk_drag_finish (_tmp36_, FALSE, FALSE, (guint32) _tmp37_);
-#line 348 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 348 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_gtk_tree_path_free0 (path);
-#line 348 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 348 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_g_free0 (targetData);
-#line 348 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 348 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_g_object_unref0 (src);
-#line 348 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 348 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			return;
 #line 1578 "WindowLeftTree.vala.c"
 		}
-#line 362 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 362 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp38_ = sel;
-#line 362 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 362 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp39_ = gtk_selection_data_get_text (_tmp38_);
-#line 362 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 362 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		selection_text = _tmp39_;
-#line 366 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 366 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp41_ = selection_text;
-#line 366 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 366 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		if (_tmp41_ == NULL) {
-#line 366 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 366 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp40_ = TRUE;
 #line 1592 "WindowLeftTree.vala.c"
 		} else {
 			const gchar* _tmp42_;
 			gint _tmp43_;
 			gint _tmp44_;
-#line 366 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 366 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp42_ = selection_text;
-#line 366 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 366 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp43_ = strlen (_tmp42_);
-#line 366 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 366 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp44_ = _tmp43_;
-#line 366 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 366 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp40_ = _tmp44_ < 1;
 #line 1605 "WindowLeftTree.vala.c"
 		}
-#line 366 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 366 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp45_ = _tmp40_;
-#line 366 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 366 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		if (_tmp45_) {
 #line 1611 "WindowLeftTree.vala.c"
 			gboolean _tmp46_;
 			GdkDragContext* _tmp49_;
 			guint _tmp50_;
-#line 368 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 368 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp46_ = self->drag_in_motion;
-#line 368 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 368 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			if (_tmp46_) {
 #line 1619 "WindowLeftTree.vala.c"
 				GdkDragContext* _tmp47_;
 				guint _tmp48_;
-#line 369 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 369 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp47_ = ctx;
-#line 369 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 369 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp48_ = time;
-#line 369 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 369 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				gdk_drag_status (_tmp47_, 0, (guint32) _tmp48_);
-#line 370 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 370 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				xcls_windowlefttree_xcls_view_highlightDropPath (self, "", (GtkTreeViewDropPosition) 0);
-#line 371 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 371 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_g_free0 (selection_text);
-#line 371 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 371 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_gtk_tree_path_free0 (path);
-#line 371 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 371 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_g_free0 (targetData);
-#line 371 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 371 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_g_object_unref0 (src);
-#line 371 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 371 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				return;
 #line 1640 "WindowLeftTree.vala.c"
 			}
-#line 373 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 373 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp49_ = ctx;
-#line 373 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 373 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp50_ = time;
-#line 373 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 373 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			gtk_drag_finish (_tmp49_, FALSE, FALSE, (guint32) _tmp50_);
-#line 374 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 374 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_g_free0 (selection_text);
-#line 374 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 374 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_gtk_tree_path_free0 (path);
-#line 374 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 374 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_g_free0 (targetData);
-#line 374 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 374 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_g_object_unref0 (src);
-#line 374 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 374 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			return;
 #line 1658 "WindowLeftTree.vala.c"
 		}
-#line 378 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 378 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp51_ = selection_text;
-#line 378 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 378 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp52_ = g_strconcat ("got selection text of  ", _tmp51_, NULL);
-#line 378 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 378 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp53_ = _tmp52_;
-#line 378 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 378 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		g_print ("%s", _tmp53_);
-#line 378 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 378 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_g_free0 (_tmp53_);
-#line 380 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 380 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp54_ = path;
-#line 380 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 380 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp55_ = gtk_tree_path_to_string (_tmp54_);
-#line 380 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 380 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		target_path = _tmp55_;
-#line 384 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 384 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp56_ = selection_text;
-#line 384 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 384 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp57_ = target_path;
-#line 384 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 384 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		if (g_strcmp0 (_tmp56_, _tmp57_) == 0) {
 #line 1682 "WindowLeftTree.vala.c"
 			gboolean _tmp58_;
 			GdkDragContext* _tmp61_;
 			guint _tmp62_;
-#line 385 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 385 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			g_print ("self drag ?? == we should perhaps allow copy onto self..\n");
-#line 386 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 386 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp58_ = self->drag_in_motion;
-#line 386 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 386 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			if (_tmp58_) {
 #line 1692 "WindowLeftTree.vala.c"
 				GdkDragContext* _tmp59_;
 				guint _tmp60_;
-#line 387 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 387 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp59_ = ctx;
-#line 387 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 387 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp60_ = time;
-#line 387 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 387 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				gdk_drag_status (_tmp59_, 0, (guint32) _tmp60_);
-#line 388 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 388 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				xcls_windowlefttree_xcls_view_highlightDropPath (self, "", (GtkTreeViewDropPosition) 0);
-#line 389 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 389 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_g_free0 (target_path);
-#line 389 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 389 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_g_free0 (selection_text);
-#line 389 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 389 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_gtk_tree_path_free0 (path);
-#line 389 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 389 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_g_free0 (targetData);
-#line 389 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 389 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_g_object_unref0 (src);
-#line 389 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 389 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				return;
 #line 1715 "WindowLeftTree.vala.c"
 			}
-#line 391 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 391 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp61_ = ctx;
-#line 391 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 391 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp62_ = time;
-#line 391 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 391 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			gtk_drag_finish (_tmp61_, FALSE, FALSE, (guint32) _tmp62_);
-#line 393 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 393 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_g_free0 (target_path);
-#line 393 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 393 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_g_free0 (selection_text);
-#line 393 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 393 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_gtk_tree_path_free0 (path);
-#line 393 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 393 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_g_free0 (targetData);
-#line 393 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 393 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_g_object_unref0 (src);
-#line 393 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 393 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			return;
 #line 1735 "WindowLeftTree.vala.c"
 		}
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp63_ = self->priv->_this;
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp64_ = _tmp63_->model;
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp65_ = path;
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp66_ = gtk_tree_path_to_string (_tmp65_);
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp67_ = _tmp66_;
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp68_ = self->dropList;
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp68__length1 = self->dropList_length1;
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp69_ = pos;
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp70_ = xcls_windowlefttree_xcls_model_findDropNodeByPath (_tmp64_, _tmp67_, _tmp68_, _tmp68__length1, (gint) _tmp69_);
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_g_free0 (targetData);
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		targetData = _tmp70_;
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_g_free0 (_tmp67_);
-#line 410 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 410 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp71_ = targetData;
-#line 410 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 410 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp72_ = g_strconcat ("targetDAta: ", _tmp71_, NULL);
-#line 410 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 410 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp73_ = _tmp72_;
-#line 410 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 410 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp74_ = g_strconcat (_tmp73_, "\n", NULL);
-#line 410 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 410 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp75_ = _tmp74_;
-#line 410 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 410 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		g_print ("%s", _tmp75_);
-#line 410 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 410 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_g_free0 (_tmp75_);
-#line 410 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 410 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_g_free0 (_tmp73_);
-#line 412 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 412 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp76_ = targetData;
-#line 412 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 412 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp77_ = strlen (_tmp76_);
-#line 412 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 412 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp78_ = _tmp77_;
-#line 412 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 412 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		if (_tmp78_ < 1) {
 #line 1785 "WindowLeftTree.vala.c"
 			gboolean _tmp79_;
 			GdkDragContext* _tmp82_;
 			guint _tmp83_;
-#line 414 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 414 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp79_ = self->drag_in_motion;
-#line 414 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 414 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			if (_tmp79_) {
 #line 1793 "WindowLeftTree.vala.c"
 				GdkDragContext* _tmp80_;
 				guint _tmp81_;
-#line 415 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 415 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp80_ = ctx;
-#line 415 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 415 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp81_ = time;
-#line 415 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 415 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				gdk_drag_status (_tmp80_, 0, (guint32) _tmp81_);
-#line 416 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 416 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				xcls_windowlefttree_xcls_view_highlightDropPath (self, "", (GtkTreeViewDropPosition) 0);
-#line 417 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 417 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_g_free0 (target_path);
-#line 417 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 417 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_g_free0 (selection_text);
-#line 417 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 417 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_gtk_tree_path_free0 (path);
-#line 417 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 417 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_g_free0 (targetData);
-#line 417 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 417 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_g_object_unref0 (src);
-#line 417 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 417 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				return;
 #line 1816 "WindowLeftTree.vala.c"
 			}
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp82_ = ctx;
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp83_ = time;
-#line 419 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			gtk_drag_finish (_tmp82_, FALSE, FALSE, (guint32) _tmp83_);
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_g_free0 (target_path);
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_g_free0 (selection_text);
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_gtk_tree_path_free0 (path);
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_g_free0 (targetData);
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_g_object_unref0 (src);
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			return;
 #line 1836 "WindowLeftTree.vala.c"
 		}
-#line 423 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 423 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp84_ = targetData;
-#line 423 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 423 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp86_ = _tmp85_ = g_strsplit (_tmp84_, "|", 0);
-#line 423 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 423 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		td_ar = _tmp86_;
-#line 423 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 423 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		td_ar_length1 = _vala_array_length (_tmp85_);
-#line 423 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 423 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_td_ar_size_ = td_ar_length1;
-#line 441 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 441 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp87_ = self->drag_in_motion;
-#line 441 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 441 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		if (_tmp87_) {
 #line 1852 "WindowLeftTree.vala.c"
 			GdkDragContext* _tmp88_;
@@ -1859,104 +1859,104 @@ static void __lambda49_ (Xcls_WindowLeftTreeXcls_view* self, GdkDragContext* ctx
 			gint _tmp93__length1;
 			const gchar* _tmp94_;
 			gint _tmp95_ = 0;
-#line 442 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 442 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp88_ = ctx;
-#line 442 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 442 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp89_ = action;
-#line 442 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 442 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp90_ = time;
-#line 442 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 442 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			gdk_drag_status (_tmp88_, _tmp89_, (guint32) _tmp90_);
-#line 443 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 443 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp91_ = td_ar;
-#line 443 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 443 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp91__length1 = td_ar_length1;
-#line 443 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 443 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp92_ = _tmp91_[0];
-#line 443 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 443 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp93_ = td_ar;
-#line 443 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 443 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp93__length1 = td_ar_length1;
-#line 443 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 443 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp94_ = _tmp93_[1];
-#line 443 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 443 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp95_ = atoi (_tmp94_);
-#line 443 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 443 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			xcls_windowlefttree_xcls_view_highlightDropPath (self, _tmp92_, (GtkTreeViewDropPosition) _tmp95_);
-#line 444 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 444 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			td_ar = (_vala_array_free (td_ar, td_ar_length1, (GDestroyNotify) g_free), NULL);
-#line 444 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 444 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_g_free0 (target_path);
-#line 444 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 444 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_g_free0 (selection_text);
-#line 444 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 444 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_gtk_tree_path_free0 (path);
-#line 444 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 444 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_g_free0 (targetData);
-#line 444 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 444 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_g_object_unref0 (src);
-#line 444 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 444 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			return;
 #line 1901 "WindowLeftTree.vala.c"
 		}
-#line 320 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 320 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		td_ar = (_vala_array_free (td_ar, td_ar_length1, (GDestroyNotify) g_free), NULL);
-#line 320 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 320 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_g_free0 (target_path);
-#line 320 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 320 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_g_free0 (selection_text);
-#line 320 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 320 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_gtk_tree_path_free0 (path);
 #line 1911 "WindowLeftTree.vala.c"
 	}
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	delete_selection_data = FALSE;
-#line 454 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 454 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp96_ = ctx;
-#line 454 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 454 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp97_ = gdk_drag_context_get_actions (_tmp96_);
-#line 454 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 454 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	if (_tmp97_ == GDK_ACTION_ASK) {
 #line 1921 "WindowLeftTree.vala.c"
 	}
-#line 458 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 458 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp98_ = ctx;
-#line 458 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 458 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp99_ = gdk_drag_context_get_actions (_tmp98_);
-#line 458 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 458 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	if (_tmp99_ == GDK_ACTION_MOVE) {
-#line 459 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 459 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		delete_selection_data = TRUE;
 #line 1931 "WindowLeftTree.vala.c"
 	}
-#line 464 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 464 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp100_ = self->priv->_this;
-#line 464 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 464 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp101_ = _tmp100_->model;
-#line 464 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 464 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp102_ = targetData;
-#line 464 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 464 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp103_ = ctx;
-#line 464 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 464 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp104_ = gdk_drag_context_get_actions (_tmp103_);
-#line 464 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 464 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	xcls_windowlefttree_xcls_model_moveNode (_tmp101_, _tmp102_, _tmp104_);
-#line 474 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 474 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp105_ = ctx;
-#line 474 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 474 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp106_ = time;
-#line 474 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 474 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	gtk_drag_finish (_tmp105_, FALSE, FALSE, (guint32) _tmp106_);
-#line 291 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 291 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_free0 (targetData);
-#line 291 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 291 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (src);
 #line 1955 "WindowLeftTree.vala.c"
 }
 
 
 static void ___lambda49__gtk_widget_drag_data_received (GtkWidget* _sender, GdkDragContext* context, gint x, gint y, GtkSelectionData* selection_data, guint info, guint time_, gpointer self) {
-#line 291 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 291 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	__lambda49_ (self, context, x, y, selection_data, info, time_);
 #line 1962 "WindowLeftTree.vala.c"
 }
@@ -1998,128 +1998,128 @@ static void __lambda50_ (Xcls_WindowLeftTreeXcls_view* self) {
 	JsRenderNode* node;
 	Xcls_WindowLeftTree* _tmp29_;
 	JsRenderNode* _tmp30_;
-#line 480 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 480 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp0_ = self->blockChanges;
-#line 480 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 480 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	if (_tmp0_) {
-#line 481 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 481 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		return;
 #line 2008 "WindowLeftTree.vala.c"
 	}
-#line 483 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 483 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp1_ = self->priv->_this;
-#line 483 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 483 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_signal_emit_by_name (_tmp1_, "before-node-change", NULL);
-#line 485 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 485 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp2_ = self->priv->_this;
-#line 485 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 485 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp3_ = _tmp2_->model;
-#line 485 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 485 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp4_ = _tmp3_->file;
-#line 485 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 485 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	if (_tmp4_ == NULL) {
-#line 486 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 486 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		return;
 #line 2024 "WindowLeftTree.vala.c"
 	}
-#line 492 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 492 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp5_ = self->el;
-#line 492 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 492 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp6_ = gtk_tree_view_get_selection (_tmp5_);
-#line 492 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 492 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp7_ = gtk_tree_selection_count_selected_rows (_tmp6_);
-#line 492 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 492 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	if (_tmp7_ < 1) {
 #line 2034 "WindowLeftTree.vala.c"
 		Xcls_WindowLeftTree* _tmp8_;
-#line 496 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 496 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp8_ = self->priv->_this;
-#line 496 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 496 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		g_signal_emit_by_name (_tmp8_, "after-node-change", NULL);
-#line 498 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 498 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		return;
 #line 2042 "WindowLeftTree.vala.c"
 	}
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp9_ = self->el;
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp10_ = gtk_tree_view_get_selection (_tmp9_);
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp11_ = _g_object_ref0 (_tmp10_);
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	s = _tmp11_;
-#line 505 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 505 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp12_ = s;
-#line 505 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 505 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	gtk_tree_selection_get_selected (_tmp12_, &_tmp13_, &_tmp14_);
-#line 505 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 505 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (mod);
-#line 505 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 505 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp15_ = _g_object_ref0 (_tmp13_);
-#line 505 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 505 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	mod = _tmp15_;
-#line 505 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 505 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	iter = _tmp14_;
-#line 510 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 510 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp16_ = self->priv->_this;
-#line 510 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 510 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp17_ = _tmp16_->model;
-#line 510 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 510 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp18_ = _tmp17_->el;
-#line 510 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 510 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp19_ = iter;
-#line 510 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 510 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	gtk_tree_model_get_value ((GtkTreeModel*) _tmp18_, &_tmp19_, 2, &_tmp20_);
-#line 510 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 510 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	G_IS_VALUE (&value) ? (g_value_unset (&value), NULL) : NULL;
-#line 510 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 510 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	value = _tmp20_;
-#line 511 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 511 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp21_ = self->priv->_this;
-#line 511 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 511 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp22_ = _tmp21_->model;
-#line 511 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 511 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp23_ = mod;
-#line 511 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 511 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp24_ = iter;
-#line 511 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 511 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp25_ = gtk_tree_model_get_path (_tmp23_, &_tmp24_);
-#line 511 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 511 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp26_ = _tmp25_;
-#line 511 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 511 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp27_ = gtk_tree_path_to_string (_tmp26_);
-#line 511 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 511 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_free0 (_tmp22_->activePath);
-#line 511 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 511 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp22_->activePath = _tmp27_;
-#line 511 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 511 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_gtk_tree_path_free0 (_tmp26_);
-#line 513 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 513 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp28_ = g_value_dup_object (&value);
-#line 513 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 513 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	node = G_TYPE_CHECK_INSTANCE_CAST (_tmp28_, JS_RENDER_TYPE_NODE, JsRenderNode);
-#line 515 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 515 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp29_ = self->priv->_this;
-#line 515 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 515 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp30_ = node;
-#line 515 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 515 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_signal_emit_by_name (_tmp29_, "after-node-change", _tmp30_);
-#line 520 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 520 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (node);
-#line 520 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 520 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	G_IS_VALUE (&value) ? (g_value_unset (&value), NULL) : NULL;
-#line 520 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 520 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (mod);
-#line 520 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 520 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (s);
-#line 520 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 520 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	return;
 #line 2118 "WindowLeftTree.vala.c"
 }
 
 
 static void ___lambda50__gtk_tree_view_cursor_changed (GtkTreeView* _sender, gpointer self) {
-#line 477 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 477 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	__lambda50_ (self);
 #line 2125 "WindowLeftTree.vala.c"
 }
@@ -2153,102 +2153,102 @@ static void __lambda51_ (Xcls_WindowLeftTreeXcls_view* self, GdkDragContext* dra
 	const gchar* _tmp21_;
 	gchar* _tmp22_;
 	gchar* _tmp23_;
-#line 523 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 523 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_return_if_fail (drag_context != NULL);
-#line 523 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 523 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_return_if_fail (data != NULL);
-#line 526 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 526 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_print ("drag-data-get");
-#line 527 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 527 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp0_ = self->el;
-#line 527 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 527 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp1_ = gtk_tree_view_get_selection (_tmp0_);
-#line 527 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 527 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp2_ = _g_object_ref0 (_tmp1_);
-#line 527 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 527 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	s = _tmp2_;
-#line 528 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 528 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp3_ = s;
-#line 528 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 528 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp4_ = gtk_tree_selection_count_selected_rows (_tmp3_);
-#line 528 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 528 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	if (_tmp4_ < 1) {
 #line 2177 "WindowLeftTree.vala.c"
 		GtkSelectionData* _tmp5_;
-#line 529 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 529 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp5_ = data;
-#line 529 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 529 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		gtk_selection_data_set_text (_tmp5_, "", 0);
-#line 530 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 530 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		g_print ("return empty string - no selection..");
-#line 531 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 531 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_g_object_unref0 (s);
-#line 531 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 531 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		return;
 #line 2189 "WindowLeftTree.vala.c"
 	}
-#line 537 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 537 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp6_ = s;
-#line 537 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 537 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	gtk_tree_selection_get_selected (_tmp6_, &_tmp7_, &_tmp8_);
-#line 537 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 537 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (mod);
-#line 537 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 537 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp9_ = _g_object_ref0 (_tmp7_);
-#line 537 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 537 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	mod = _tmp9_;
-#line 537 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 537 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	iter = _tmp8_;
-#line 540 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 540 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp10_ = mod;
-#line 540 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 540 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp11_ = iter;
-#line 540 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 540 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp12_ = gtk_tree_model_get_path (_tmp10_, &_tmp11_);
-#line 540 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 540 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp13_ = _tmp12_;
-#line 540 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 540 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp14_ = gtk_tree_path_to_string (_tmp13_);
-#line 540 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 540 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp15_ = _tmp14_;
-#line 540 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 540 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_gtk_tree_path_free0 (_tmp13_);
-#line 540 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 540 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	tp = _tmp15_;
-#line 541 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 541 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp16_ = data;
-#line 541 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 541 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp17_ = tp;
-#line 541 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 541 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp18_ = tp;
-#line 541 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 541 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp19_ = strlen (_tmp18_);
-#line 541 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 541 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp20_ = _tmp19_;
-#line 541 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 541 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	gtk_selection_data_set_text (_tmp16_, _tmp17_, _tmp20_);
-#line 542 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 542 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp21_ = tp;
-#line 542 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 542 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp22_ = g_strconcat ("return ", _tmp21_, NULL);
-#line 542 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 542 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp23_ = _tmp22_;
-#line 542 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 542 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_print ("%s", _tmp23_);
-#line 542 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 542 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_free0 (_tmp23_);
-#line 523 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 523 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_free0 (tp);
-#line 523 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 523 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (mod);
-#line 523 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 523 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (s);
 #line 2247 "WindowLeftTree.vala.c"
 }
 
 
 static void ___lambda51__gtk_widget_drag_data_get (GtkWidget* _sender, GdkDragContext* context, GtkSelectionData* selection_data, guint info, guint time_, gpointer self) {
-#line 523 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 523 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	__lambda51_ (self, context, selection_data, info, time_);
 #line 2254 "WindowLeftTree.vala.c"
 }
@@ -2282,75 +2282,75 @@ Xcls_WindowLeftTreeXcls_view* xcls_windowlefttree_xcls_view_construct (GType obj
 	GtkTreeView* _tmp28_;
 	GtkTreeView* _tmp29_;
 	GtkTreeView* _tmp30_;
-#line 118 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 118 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 118 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 118 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self = (Xcls_WindowLeftTreeXcls_view*) g_object_new (object_type, NULL);
-#line 120 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 120 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp0_ = (GtkTreeView*) gtk_tree_view_new ();
-#line 120 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 120 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_object_ref_sink (_tmp0_);
-#line 120 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 120 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (self->el);
-#line 120 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 120 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->el = _tmp0_;
-#line 121 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 121 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp1_ = _owner;
-#line 121 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 121 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp2_ = _g_object_ref0 (_tmp1_);
-#line 121 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 121 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 121 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 121 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->priv->_this = _tmp2_;
-#line 122 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 122 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp3_ = self->priv->_this;
-#line 122 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 122 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp4_ = _g_object_ref0 (self);
-#line 122 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 122 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (_tmp3_->view);
-#line 122 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 122 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp3_->view = _tmp4_;
-#line 125 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 125 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->blockChanges = FALSE;
-#line 128 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 128 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp5_ = self->el;
-#line 128 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 128 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	gtk_tree_view_set_enable_tree_lines (_tmp5_, TRUE);
-#line 129 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 129 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp6_ = self->el;
-#line 129 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 129 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	gtk_tree_view_set_headers_visible (_tmp6_, FALSE);
-#line 130 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 130 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp7_ = self->el;
-#line 130 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 130 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	gtk_tree_view_set_tooltip_column (_tmp7_, 1);
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp8_ = self->priv->_this;
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp9_ = xcls_windowlefttree_xcls_model_new (_tmp8_);
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	child_0 = _tmp9_;
-#line 132 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 132 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_object_ref ((GObject*) child_0);
-#line 133 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 133 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp10_ = self->el;
-#line 133 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 133 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp11_ = child_0->el;
-#line 133 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 133 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	gtk_tree_view_set_model (_tmp10_, (GtkTreeModel*) _tmp11_);
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp12_ = self->priv->_this;
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp13_ = xcls_windowlefttree_xcls_treeviewcolumn4_new (_tmp12_);
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	child_1 = _tmp13_;
-#line 135 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 135 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_object_ref ((GObject*) child_1);
-#line 136 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 136 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp14_ = self->el;
-#line 136 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 136 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp15_ = child_1->el;
-#line 136 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 136 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	gtk_tree_view_append_column (_tmp14_, _tmp15_);
 #line 2356 "WindowLeftTree.vala.c"
 	{
@@ -2363,84 +2363,84 @@ Xcls_WindowLeftTreeXcls_view* xcls_windowlefttree_xcls_view_construct (GType obj
 		GtkTreeSelection* selection;
 		GtkTreeView* _tmp21_;
 		GtkTreeView* _tmp22_;
-#line 140 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 140 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp16_ = pango_font_description_new ();
-#line 140 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 140 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		description = _tmp16_;
-#line 141 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 141 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		pango_font_description_set_size (description, 8000);
-#line 142 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 142 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp17_ = self->el;
-#line 142 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 142 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		gtk_widget_modify_font ((GtkWidget*) _tmp17_, description);
-#line 144 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 144 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp18_ = self->el;
-#line 144 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 144 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp19_ = gtk_tree_view_get_selection (_tmp18_);
-#line 144 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 144 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp20_ = _g_object_ref0 (_tmp19_);
-#line 144 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 144 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		selection = _tmp20_;
-#line 145 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 145 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		gtk_tree_selection_set_mode (selection, GTK_SELECTION_SINGLE);
-#line 156 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 156 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp21_ = self->el;
-#line 156 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 156 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		gtk_drag_source_set ((GtkWidget*) _tmp21_, GDK_BUTTON1_MASK, BUILDER4_APPLICATION_targetList, G_N_ELEMENTS (BUILDER4_APPLICATION_targetList), GDK_ACTION_COPY | GDK_ACTION_MOVE);
-#line 166 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 166 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp22_ = self->el;
-#line 166 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 166 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		gtk_drag_dest_set ((GtkWidget*) _tmp22_, GTK_DEST_DEFAULT_MOTION | GTK_DEST_DEFAULT_HIGHLIGHT, BUILDER4_APPLICATION_targetList, G_N_ELEMENTS (BUILDER4_APPLICATION_targetList), GDK_ACTION_COPY | GDK_ACTION_MOVE);
-#line 139 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 139 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_g_object_unref0 (selection);
-#line 139 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 139 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		__vala_PangoFontDescription_free0 (description);
 #line 2399 "WindowLeftTree.vala.c"
 	}
-#line 179 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 179 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp23_ = self->el;
-#line 179 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 179 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_signal_connect_object ((GtkWidget*) _tmp23_, "button-press-event", (GCallback) ___lambda38__gtk_widget_button_press_event, self, 0);
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp24_ = self->el;
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_signal_connect_object ((GtkWidget*) _tmp24_, "drag-begin", (GCallback) ___lambda45__gtk_widget_drag_begin, self, 0);
-#line 246 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 246 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp25_ = self->el;
-#line 246 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 246 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_signal_connect_object ((GtkWidget*) _tmp25_, "drag-end", (GCallback) ___lambda46__gtk_widget_drag_end, self, 0);
-#line 254 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 254 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp26_ = self->el;
-#line 254 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 254 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_signal_connect_object ((GtkWidget*) _tmp26_, "drag-motion", (GCallback) ___lambda47__gtk_widget_drag_motion, self, 0);
-#line 273 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 273 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp27_ = self->el;
-#line 273 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 273 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_signal_connect_object ((GtkWidget*) _tmp27_, "drag-drop", (GCallback) ___lambda48__gtk_widget_drag_drop, self, 0);
-#line 291 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 291 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp28_ = self->el;
-#line 291 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 291 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_signal_connect_object ((GtkWidget*) _tmp28_, "drag-data-received", (GCallback) ___lambda49__gtk_widget_drag_data_received, self, 0);
-#line 477 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 477 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp29_ = self->el;
-#line 477 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 477 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_signal_connect_object (_tmp29_, "cursor-changed", (GCallback) ___lambda50__gtk_tree_view_cursor_changed, self, 0);
-#line 523 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 523 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp30_ = self->el;
-#line 523 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 523 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_signal_connect_object ((GtkWidget*) _tmp30_, "drag-data-get", (GCallback) ___lambda51__gtk_widget_drag_data_get, self, 0);
-#line 118 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 118 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (child_1);
-#line 118 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 118 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (child_0);
-#line 118 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 118 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	return self;
 #line 2439 "WindowLeftTree.vala.c"
 }
 
 
 Xcls_WindowLeftTreeXcls_view* xcls_windowlefttree_xcls_view_new (Xcls_WindowLeftTree* _owner) {
-#line 118 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 118 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	return xcls_windowlefttree_xcls_view_construct (XCLS_WINDOWLEFTTREE_TYPE_XCLS_VIEW, _owner);
 #line 2446 "WindowLeftTree.vala.c"
 }
@@ -2450,17 +2450,17 @@ void xcls_windowlefttree_xcls_view_highlightDropPath (Xcls_WindowLeftTreeXcls_vi
 	const gchar* _tmp0_;
 	gint _tmp1_;
 	gint _tmp2_;
-#line 575 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 575 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_return_if_fail (self != NULL);
-#line 575 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 575 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_return_if_fail (treepath != NULL);
-#line 578 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 578 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp0_ = treepath;
-#line 578 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 578 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp1_ = strlen (_tmp0_);
-#line 578 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 578 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp2_ = _tmp1_;
-#line 578 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 578 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	if (_tmp2_ > 0) {
 #line 2466 "WindowLeftTree.vala.c"
 		GtkTreeView* _tmp3_;
@@ -2468,26 +2468,26 @@ void xcls_windowlefttree_xcls_view_highlightDropPath (Xcls_WindowLeftTreeXcls_vi
 		GtkTreePath* _tmp5_;
 		GtkTreePath* _tmp6_;
 		GtkTreeViewDropPosition _tmp7_;
-#line 579 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 579 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp3_ = self->el;
-#line 579 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 579 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp4_ = treepath;
-#line 579 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 579 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp5_ = gtk_tree_path_new_from_string (_tmp4_);
-#line 579 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 579 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp6_ = _tmp5_;
-#line 579 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 579 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp7_ = pos;
-#line 579 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 579 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		gtk_tree_view_set_drag_dest_row (_tmp3_, _tmp6_, _tmp7_);
-#line 579 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 579 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_gtk_tree_path_free0 (_tmp6_);
 #line 2486 "WindowLeftTree.vala.c"
 	} else {
 		GtkTreeView* _tmp8_;
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp8_ = self->el;
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		gtk_tree_view_set_drag_dest_row (_tmp8_, NULL, GTK_TREE_VIEW_DROP_INTO_OR_AFTER);
 #line 2493 "WindowLeftTree.vala.c"
 	}
@@ -2500,43 +2500,43 @@ void xcls_windowlefttree_xcls_view_selectNode (Xcls_WindowLeftTreeXcls_view* sel
 	GtkTreePath* tp;
 	GtkTreeView* _tmp2_;
 	GtkTreeView* _tmp3_;
-#line 585 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 585 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_return_if_fail (self != NULL);
-#line 585 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 585 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_return_if_fail (treepath_str != NULL);
-#line 587 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 587 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp0_ = treepath_str;
-#line 587 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 587 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp1_ = gtk_tree_path_new_from_string (_tmp0_);
-#line 587 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 587 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	tp = _tmp1_;
-#line 589 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 589 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp2_ = self->el;
-#line 589 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 589 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	gtk_tree_view_set_cursor (_tmp2_, tp, NULL, FALSE);
-#line 590 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 590 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp3_ = self->el;
-#line 590 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 590 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	gtk_tree_view_scroll_to_cell (_tmp3_, tp, NULL, FALSE, (gfloat) 0, (gfloat) 0);
-#line 585 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 585 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_gtk_tree_path_free0 (tp);
 #line 2524 "WindowLeftTree.vala.c"
 }
 
 
 static void xcls_windowlefttree_xcls_view_class_init (Xcls_WindowLeftTreeXcls_viewClass * klass) {
-#line 103 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 103 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	xcls_windowlefttree_xcls_view_parent_class = g_type_class_peek_parent (klass);
-#line 103 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 103 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_WindowLeftTreeXcls_viewPrivate));
-#line 103 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 103 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_windowlefttree_xcls_view_finalize;
 #line 2535 "WindowLeftTree.vala.c"
 }
 
 
 static void xcls_windowlefttree_xcls_view_instance_init (Xcls_WindowLeftTreeXcls_view * self) {
-#line 103 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 103 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->priv = XCLS_WINDOWLEFTTREE_XCLS_VIEW_GET_PRIVATE (self);
 #line 2542 "WindowLeftTree.vala.c"
 }
@@ -2544,17 +2544,17 @@ static void xcls_windowlefttree_xcls_view_instance_init (Xcls_WindowLeftTreeXcls
 
 static void xcls_windowlefttree_xcls_view_finalize (GObject* obj) {
 	Xcls_WindowLeftTreeXcls_view * self;
-#line 103 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 103 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_WINDOWLEFTTREE_TYPE_XCLS_VIEW, Xcls_WindowLeftTreeXcls_view);
-#line 105 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 105 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (self->el);
-#line 106 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 106 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 114 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 114 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_free0 (self->dragData);
-#line 115 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 115 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->dropList = (_vala_array_free (self->dropList, self->dropList_length1, (GDestroyNotify) g_free), NULL);
-#line 103 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 103 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	G_OBJECT_CLASS (xcls_windowlefttree_xcls_view_parent_class)->finalize (obj);
 #line 2560 "WindowLeftTree.vala.c"
 }
@@ -2580,52 +2580,52 @@ Xcls_WindowLeftTreeXcls_model* xcls_windowlefttree_xcls_model_construct (GType o
 	Xcls_WindowLeftTree* _tmp3_;
 	Xcls_WindowLeftTreeXcls_model* _tmp4_;
 	gchar* _tmp5_;
-#line 614 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 614 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 614 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 614 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self = (Xcls_WindowLeftTreeXcls_model*) g_object_new (object_type, NULL);
-#line 616 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 616 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp0_ = gtk_tree_store_new (3, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_OBJECT);
-#line 616 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 616 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (self->el);
-#line 616 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 616 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->el = _tmp0_;
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp1_ = _owner;
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp2_ = _g_object_ref0 (_tmp1_);
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->priv->_this = _tmp2_;
-#line 618 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 618 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp3_ = self->priv->_this;
-#line 618 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 618 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp4_ = _g_object_ref0 (self);
-#line 618 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 618 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (_tmp3_->model);
-#line 618 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 618 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp3_->model = _tmp4_;
-#line 621 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 621 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (self->file);
-#line 621 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 621 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->file = NULL;
-#line 622 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 622 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp5_ = g_strdup ("");
-#line 622 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 622 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_free0 (self->activePath);
-#line 622 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 622 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->activePath = _tmp5_;
-#line 627 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 627 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_print ("model initialized");
-#line 614 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 614 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	return self;
 #line 2624 "WindowLeftTree.vala.c"
 }
 
 
 Xcls_WindowLeftTreeXcls_model* xcls_windowlefttree_xcls_model_new (Xcls_WindowLeftTree* _owner) {
-#line 614 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 614 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	return xcls_windowlefttree_xcls_model_construct (XCLS_WINDOWLEFTTREE_TYPE_XCLS_MODEL, _owner);
 #line 2631 "WindowLeftTree.vala.c"
 }
@@ -2646,43 +2646,43 @@ JsRenderNode* xcls_windowlefttree_xcls_model_pathToNode (Xcls_WindowLeftTreeXcls
 	GtkTreeIter _tmp8_;
 	GValue _tmp9_ = {0};
 	GObject* _tmp10_ = NULL;
-#line 645 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 645 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 645 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 645 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_return_val_if_fail (path != NULL, NULL);
-#line 649 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 649 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp0_ = self->priv->_this;
-#line 649 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 649 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp1_ = _tmp0_->model;
-#line 649 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 649 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp2_ = _tmp1_->el;
-#line 649 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 649 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp3_ = path;
-#line 649 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 649 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	gtk_tree_model_get_iter_from_string ((GtkTreeModel*) _tmp2_, &_tmp4_, _tmp3_);
-#line 649 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 649 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	iter = _tmp4_;
-#line 652 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 652 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp5_ = self->priv->_this;
-#line 652 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 652 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp6_ = _tmp5_->model;
-#line 652 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 652 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp7_ = _tmp6_->el;
-#line 652 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 652 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp8_ = iter;
-#line 652 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 652 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	gtk_tree_model_get_value ((GtkTreeModel*) _tmp7_, &_tmp8_, 2, &_tmp9_);
-#line 652 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 652 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	G_IS_VALUE (&value) ? (g_value_unset (&value), NULL) : NULL;
-#line 652 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 652 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	value = _tmp9_;
-#line 654 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 654 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp10_ = g_value_dup_object (&value);
-#line 654 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 654 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	result = G_TYPE_CHECK_INSTANCE_CAST (_tmp10_, JS_RENDER_TYPE_NODE, JsRenderNode);
-#line 654 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 654 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	G_IS_VALUE (&value) ? (g_value_unset (&value), NULL) : NULL;
-#line 654 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 654 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	return result;
 #line 2688 "WindowLeftTree.vala.c"
 }
@@ -2700,78 +2700,78 @@ gchar* xcls_windowlefttree_xcls_model_findDropNode (Xcls_WindowLeftTreeXcls_mode
 	gchar** _tmp11_;
 	gint _tmp11__length1;
 	gchar* _tmp12_ = NULL;
-#line 663 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 663 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 663 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 663 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_return_val_if_fail (treepath_str != NULL, NULL);
-#line 670 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 670 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp0_ = self->el;
-#line 670 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 670 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp1_ = gtk_tree_model_iter_n_children ((GtkTreeModel*) _tmp0_, NULL);
-#line 670 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 670 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	if (_tmp1_ < 1) {
 #line 2714 "WindowLeftTree.vala.c"
 		gchar* _tmp2_ = NULL;
-#line 672 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 672 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp2_ = g_strdup_printf ("|%d", (gint) GTK_TREE_VIEW_DROP_INTO_OR_AFTER);
-#line 672 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 672 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		result = _tmp2_;
-#line 672 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 672 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		return result;
 #line 2722 "WindowLeftTree.vala.c"
 	}
-#line 680 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 680 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp4_ = targets;
-#line 680 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 680 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp4__length1 = targets_length1;
-#line 680 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 680 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	if (_tmp4__length1 > 0) {
 #line 2730 "WindowLeftTree.vala.c"
 		gchar** _tmp5_;
 		gint _tmp5__length1;
 		const gchar* _tmp6_;
-#line 680 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 680 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp5_ = targets;
-#line 680 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 680 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp5__length1 = targets_length1;
-#line 680 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 680 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp6_ = _tmp5_[0];
-#line 680 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 680 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp3_ = g_strcmp0 (_tmp6_, "*") == 0;
 #line 2742 "WindowLeftTree.vala.c"
 	} else {
-#line 680 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 680 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp3_ = FALSE;
 #line 2746 "WindowLeftTree.vala.c"
 	}
-#line 680 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 680 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp7_ = _tmp3_;
-#line 680 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 680 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	if (_tmp7_) {
 #line 2752 "WindowLeftTree.vala.c"
 		const gchar* _tmp8_;
 		gchar* _tmp9_;
-#line 681 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 681 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp8_ = treepath_str;
-#line 681 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 681 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp9_ = g_strdup (_tmp8_);
-#line 681 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 681 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		result = _tmp9_;
-#line 681 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 681 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		return result;
 #line 2763 "WindowLeftTree.vala.c"
 	}
-#line 683 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 683 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp10_ = treepath_str;
-#line 683 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 683 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp11_ = targets;
-#line 683 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 683 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp11__length1 = targets_length1;
-#line 683 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 683 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp12_ = xcls_windowlefttree_xcls_model_findDropNodeByPath (self, _tmp10_, _tmp11_, _tmp11__length1, -1);
-#line 683 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 683 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	result = _tmp12_;
-#line 683 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 683 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	return result;
 #line 2777 "WindowLeftTree.vala.c"
 }
@@ -2798,17 +2798,17 @@ static gboolean string_contains (const gchar* self, const gchar* needle) {
 
 
 static void _vala_array_add19 (gchar*** array, int* length, int* size, gchar* value) {
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	if ((*length) == (*size)) {
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		*size = (*size) ? (2 * (*size)) : 4;
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		*array = g_renew (gchar*, *array, (*size) + 1);
 #line 2808 "WindowLeftTree.vala.c"
 	}
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	(*array)[(*length)++] = value;
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	(*array)[*length] = NULL;
 #line 2814 "WindowLeftTree.vala.c"
 }
@@ -2826,40 +2826,40 @@ gchar* xcls_windowlefttree_xcls_model_findDropNodeByPath (Xcls_WindowLeftTreeXcl
 	gchar* _tmp6_;
 	gchar* last;
 	gchar* _tmp91_;
-#line 685 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 685 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 685 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 685 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_return_val_if_fail (treepath_str != NULL, NULL);
-#line 687 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 687 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp0_ = treepath_str;
-#line 687 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 687 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp1_ = g_strdup (_tmp0_);
-#line 687 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 687 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	path = _tmp1_;
-#line 689 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 689 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp3_ = in_pref;
-#line 689 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 689 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	if (_tmp3_ < 0) {
-#line 689 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 689 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp2_ = (gint) GTK_TREE_VIEW_DROP_INTO_OR_AFTER;
 #line 2846 "WindowLeftTree.vala.c"
 	} else {
 		gint _tmp4_;
-#line 689 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 689 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp4_ = in_pref;
-#line 689 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 689 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp2_ = _tmp4_;
 #line 2853 "WindowLeftTree.vala.c"
 	}
-#line 689 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 689 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp5_ = _tmp2_;
-#line 689 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 689 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	pref = _tmp5_;
-#line 691 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 691 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp6_ = g_strdup ("");
-#line 691 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 691 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	last = _tmp6_;
-#line 695 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 695 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	while (TRUE) {
 #line 2865 "WindowLeftTree.vala.c"
 		const gchar* _tmp7_;
@@ -2894,67 +2894,67 @@ gchar* xcls_windowlefttree_xcls_model_findDropNodeByPath (Xcls_WindowLeftTreeXcl
 		gchar** _tmp89_;
 		gint _tmp89__length1;
 		gchar* _tmp90_ = NULL;
-#line 695 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 695 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp7_ = path;
-#line 695 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 695 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp8_ = strlen (_tmp7_);
-#line 695 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 695 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp9_ = _tmp8_;
-#line 695 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 695 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		if (!(_tmp9_ > 0)) {
-#line 695 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 695 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			break;
 #line 2908 "WindowLeftTree.vala.c"
 		}
-#line 697 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 697 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp10_ = path;
-#line 697 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 697 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp11_ = xcls_windowlefttree_xcls_model_pathToNode (self, _tmp10_);
-#line 697 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 697 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		node_data = _tmp11_;
-#line 699 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 699 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp12_ = node_data;
-#line 699 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 699 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		if (_tmp12_ == NULL) {
-#line 700 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 700 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			g_print ("node not found");
-#line 701 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 701 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			result = NULL;
-#line 701 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 701 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_g_object_unref0 (node_data);
-#line 701 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 701 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_g_free0 (last);
-#line 701 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 701 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_g_free0 (path);
-#line 701 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 701 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			return result;
 #line 2932 "WindowLeftTree.vala.c"
 		}
-#line 704 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 704 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp13_ = node_data;
-#line 704 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 704 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp14_ = js_render_node_fqn (_tmp13_);
-#line 704 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 704 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		xname = _tmp14_;
-#line 705 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 705 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp15_ = g_strdup ("");
-#line 705 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 705 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		match = _tmp15_;
-#line 706 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 706 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp16_ = g_strdup ("");
-#line 706 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 706 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		prop = _tmp16_;
 #line 2948 "WindowLeftTree.vala.c"
 		{
 			gint i;
-#line 708 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 708 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			i = 0;
 #line 2953 "WindowLeftTree.vala.c"
 			{
 				gboolean _tmp17_;
-#line 708 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 708 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp17_ = TRUE;
-#line 708 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 708 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				while (TRUE) {
 #line 2960 "WindowLeftTree.vala.c"
 					gboolean _tmp18_;
@@ -2975,82 +2975,82 @@ gchar* xcls_windowlefttree_xcls_model_findDropNodeByPath (Xcls_WindowLeftTreeXcl
 					gchar* _tmp33_;
 					gboolean _tmp34_ = FALSE;
 					gboolean _tmp35_;
-#line 708 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 708 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_tmp18_ = _tmp17_;
-#line 708 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 708 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					if (!_tmp18_) {
 #line 2983 "WindowLeftTree.vala.c"
 						gint _tmp19_;
-#line 708 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 708 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 						_tmp19_ = i;
-#line 708 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 708 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 						i = _tmp19_ + 1;
 #line 2989 "WindowLeftTree.vala.c"
 					}
-#line 708 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 708 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_tmp17_ = FALSE;
-#line 708 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 708 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_tmp20_ = i;
-#line 708 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 708 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_tmp21_ = targets;
-#line 708 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 708 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_tmp21__length1 = targets_length1;
-#line 708 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 708 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					if (!(_tmp20_ < _tmp21__length1)) {
-#line 708 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 708 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 						break;
 #line 3003 "WindowLeftTree.vala.c"
 					}
-#line 709 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 709 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_tmp22_ = targets;
-#line 709 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 709 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_tmp22__length1 = targets_length1;
-#line 709 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 709 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_tmp23_ = i;
-#line 709 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 709 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_tmp24_ = _tmp22_[_tmp23_];
-#line 709 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 709 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_tmp25_ = g_strdup (_tmp24_);
-#line 709 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 709 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					tg = _tmp25_;
-#line 710 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 710 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_tmp26_ = tg;
-#line 710 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 710 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_tmp27_ = xname;
-#line 710 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 710 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					if (g_strcmp0 (_tmp26_, _tmp27_) == 0) {
 #line 3023 "WindowLeftTree.vala.c"
 						const gchar* _tmp28_;
 						gchar* _tmp29_;
-#line 711 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 711 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 						_tmp28_ = tg;
-#line 711 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 711 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 						_tmp29_ = g_strdup (_tmp28_);
-#line 711 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 711 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 						_g_free0 (match);
-#line 711 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 711 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 						match = _tmp29_;
-#line 712 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 712 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 						_g_free0 (tg);
-#line 712 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 712 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 						break;
 #line 3038 "WindowLeftTree.vala.c"
 					}
-#line 715 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 715 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_tmp30_ = tg;
-#line 715 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 715 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_tmp31_ = xname;
-#line 715 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 715 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_tmp32_ = g_strconcat (_tmp31_, ":", NULL);
-#line 715 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 715 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_tmp33_ = _tmp32_;
-#line 715 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 715 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_tmp34_ = string_contains (_tmp30_, _tmp33_);
-#line 715 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 715 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_tmp35_ = _tmp34_;
-#line 715 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 715 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_g_free0 (_tmp33_);
-#line 715 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 715 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					if (_tmp35_) {
 #line 3056 "WindowLeftTree.vala.c"
 						const gchar* _tmp36_;
@@ -3065,57 +3065,57 @@ gchar* xcls_windowlefttree_xcls_model_findDropNodeByPath (Xcls_WindowLeftTreeXcl
 						gint _tmp41__length1;
 						const gchar* _tmp42_;
 						gchar* _tmp43_;
-#line 716 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 716 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 						_tmp36_ = tg;
-#line 716 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 716 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 						_tmp37_ = g_strdup (_tmp36_);
-#line 716 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 716 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 						_g_free0 (match);
-#line 716 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 716 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 						match = _tmp37_;
-#line 717 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 717 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 						_tmp38_ = tg;
-#line 717 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 717 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 						_tmp40_ = _tmp39_ = g_strsplit (_tmp38_, ":", 0);
-#line 717 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 717 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 						ar = _tmp40_;
-#line 717 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 717 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 						ar_length1 = _vala_array_length (_tmp39_);
-#line 717 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 717 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 						_ar_size_ = ar_length1;
-#line 718 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 718 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 						_tmp41_ = ar;
-#line 718 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 718 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 						_tmp41__length1 = ar_length1;
-#line 718 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 718 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 						_tmp42_ = _tmp41_[1];
-#line 718 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 718 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 						_tmp43_ = g_strdup (_tmp42_);
-#line 718 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 718 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 						_g_free0 (prop);
-#line 718 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 718 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 						prop = _tmp43_;
-#line 719 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 719 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 						ar = (_vala_array_free (ar, ar_length1, (GDestroyNotify) g_free), NULL);
-#line 719 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 719 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 						_g_free0 (tg);
-#line 719 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 719 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 						break;
 #line 3105 "WindowLeftTree.vala.c"
 					}
-#line 708 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 708 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_g_free0 (tg);
 #line 3109 "WindowLeftTree.vala.c"
 				}
 			}
 		}
-#line 723 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 723 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp44_ = match;
-#line 723 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 723 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp45_ = strlen (_tmp44_);
-#line 723 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 723 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp46_ = _tmp45_;
-#line 723 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 723 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		if (_tmp46_ > 0) {
 #line 3121 "WindowLeftTree.vala.c"
 			const gchar* _tmp47_;
@@ -3131,13 +3131,13 @@ gchar* xcls_windowlefttree_xcls_model_findDropNodeByPath (Xcls_WindowLeftTreeXcl
 			const gchar* _tmp70_;
 			gchar* _tmp71_;
 			gchar* _tmp72_;
-#line 724 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 724 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp47_ = last;
-#line 724 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 724 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp48_ = strlen (_tmp47_);
-#line 724 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 724 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp49_ = _tmp48_;
-#line 724 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 724 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			if (_tmp49_ > 0) {
 #line 3143 "WindowLeftTree.vala.c"
 				gint _tmp50_;
@@ -3152,159 +3152,159 @@ gchar* xcls_windowlefttree_xcls_model_findDropNodeByPath (Xcls_WindowLeftTreeXcl
 				const gchar* _tmp60_;
 				gchar* _tmp61_;
 				gchar* _tmp62_;
-#line 726 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 726 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp50_ = pref;
-#line 726 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 726 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				if (_tmp50_ > 1) {
 #line 3160 "WindowLeftTree.vala.c"
 					gchar* _tmp51_;
-#line 727 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 727 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_tmp51_ = g_strdup ("");
-#line 727 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 727 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					result = _tmp51_;
-#line 727 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 727 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_g_free0 (prop);
-#line 727 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 727 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_g_free0 (match);
-#line 727 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 727 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_g_free0 (xname);
-#line 727 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 727 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_g_object_unref0 (node_data);
-#line 727 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 727 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_g_free0 (last);
-#line 727 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 727 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_g_free0 (path);
-#line 727 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 727 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					return result;
 #line 3180 "WindowLeftTree.vala.c"
 				}
-#line 729 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 729 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp52_ = last;
-#line 729 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 729 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp53_ = pref;
-#line 729 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 729 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp54_ = g_strdup_printf ("|%d", (gint) _tmp53_);
-#line 729 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 729 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp55_ = _tmp54_;
-#line 729 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 729 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp56_ = g_strconcat (_tmp52_, _tmp55_, NULL);
-#line 729 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 729 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp57_ = _tmp56_;
-#line 729 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 729 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp58_ = g_strconcat (_tmp57_, "|", NULL);
-#line 729 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 729 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp59_ = _tmp58_;
-#line 729 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 729 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp60_ = prop;
-#line 729 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 729 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp61_ = g_strconcat (_tmp59_, _tmp60_, NULL);
-#line 729 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 729 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp62_ = _tmp61_;
-#line 729 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 729 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_g_free0 (_tmp59_);
-#line 729 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 729 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_g_free0 (_tmp57_);
-#line 729 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 729 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_g_free0 (_tmp55_);
-#line 729 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 729 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				result = _tmp62_;
-#line 729 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 729 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_g_free0 (prop);
-#line 729 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 729 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_g_free0 (match);
-#line 729 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 729 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_g_free0 (xname);
-#line 729 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 729 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_g_object_unref0 (node_data);
-#line 729 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 729 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_g_free0 (last);
-#line 729 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 729 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_g_free0 (path);
-#line 729 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 729 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				return result;
 #line 3226 "WindowLeftTree.vala.c"
 			}
-#line 733 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 733 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp63_ = path;
-#line 733 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 733 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp64_ = g_strdup_printf ("|%d", (gint) GTK_TREE_VIEW_DROP_INTO_OR_AFTER);
-#line 733 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 733 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp65_ = _tmp64_;
-#line 733 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 733 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp66_ = g_strconcat (_tmp63_, _tmp65_, NULL);
-#line 733 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 733 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp67_ = _tmp66_;
-#line 733 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 733 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp68_ = g_strconcat (_tmp67_, "|", NULL);
-#line 733 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 733 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp69_ = _tmp68_;
-#line 733 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 733 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp70_ = prop;
-#line 733 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 733 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp71_ = g_strconcat (_tmp69_, _tmp70_, NULL);
-#line 733 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 733 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp72_ = _tmp71_;
-#line 733 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 733 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_g_free0 (_tmp69_);
-#line 733 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 733 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_g_free0 (_tmp67_);
-#line 733 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 733 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_g_free0 (_tmp65_);
-#line 733 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 733 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			result = _tmp72_;
-#line 733 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 733 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_g_free0 (prop);
-#line 733 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 733 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_g_free0 (match);
-#line 733 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 733 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_g_free0 (xname);
-#line 733 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 733 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_g_object_unref0 (node_data);
-#line 733 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 733 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_g_free0 (last);
-#line 733 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 733 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_g_free0 (path);
-#line 733 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 733 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			return result;
 #line 3270 "WindowLeftTree.vala.c"
 		}
-#line 735 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 735 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp73_ = path;
-#line 735 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 735 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp74_ = g_strconcat ("", _tmp73_, NULL);
-#line 735 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 735 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_g_free0 (last);
-#line 735 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 735 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		last = _tmp74_;
-#line 736 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 736 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp75_ = path;
-#line 736 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 736 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp77_ = _tmp76_ = g_strsplit (_tmp75_, ":", 0);
-#line 736 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 736 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		par = _tmp77_;
-#line 736 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 736 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		par_length1 = _vala_array_length (_tmp76_);
-#line 736 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 736 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_par_size_ = par_length1;
-#line 737 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 737 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp78_ = g_new0 (gchar*, 0 + 1);
-#line 737 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 737 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		ppar = _tmp78_;
-#line 737 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 737 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		ppar_length1 = 0;
-#line 737 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 737 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_ppar_size_ = ppar_length1;
 #line 3298 "WindowLeftTree.vala.c"
 		{
 			gint i;
-#line 738 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 738 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			i = 0;
 #line 3303 "WindowLeftTree.vala.c"
 			{
 				gboolean _tmp79_;
-#line 738 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 738 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp79_ = TRUE;
-#line 738 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 738 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				while (TRUE) {
 #line 3310 "WindowLeftTree.vala.c"
 					gboolean _tmp80_;
@@ -3318,85 +3318,85 @@ gchar* xcls_windowlefttree_xcls_model_findDropNodeByPath (Xcls_WindowLeftTreeXcl
 					gint _tmp86_;
 					const gchar* _tmp87_;
 					gchar* _tmp88_;
-#line 738 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 738 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_tmp80_ = _tmp79_;
-#line 738 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 738 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					if (!_tmp80_) {
 #line 3326 "WindowLeftTree.vala.c"
 						gint _tmp81_;
-#line 738 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 738 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 						_tmp81_ = i;
-#line 738 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 738 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 						i = _tmp81_ + 1;
 #line 3332 "WindowLeftTree.vala.c"
 					}
-#line 738 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 738 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_tmp79_ = FALSE;
-#line 738 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 738 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_tmp82_ = i;
-#line 738 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 738 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_tmp83_ = par;
-#line 738 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 738 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_tmp83__length1 = par_length1;
-#line 738 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 738 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					if (!(_tmp82_ < (_tmp83__length1 - 1))) {
-#line 738 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 738 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 						break;
 #line 3346 "WindowLeftTree.vala.c"
 					}
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_tmp84_ = ppar;
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_tmp84__length1 = ppar_length1;
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_tmp85_ = par;
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_tmp85__length1 = par_length1;
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_tmp86_ = i;
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_tmp87_ = _tmp85_[_tmp86_];
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_tmp88_ = g_strdup (_tmp87_);
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_vala_array_add19 (&ppar, &ppar_length1, &_ppar_size_, _tmp88_);
 #line 3364 "WindowLeftTree.vala.c"
 				}
 			}
 		}
-#line 742 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 742 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp89_ = ppar;
-#line 742 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 742 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp89__length1 = ppar_length1;
-#line 742 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 742 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp90_ = g_strjoinv (":", _tmp89_);
-#line 742 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 742 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_g_free0 (path);
-#line 742 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 742 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		path = _tmp90_;
-#line 695 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 695 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		ppar = (_vala_array_free (ppar, ppar_length1, (GDestroyNotify) g_free), NULL);
-#line 695 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 695 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		par = (_vala_array_free (par, par_length1, (GDestroyNotify) g_free), NULL);
-#line 695 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 695 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_g_free0 (prop);
-#line 695 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 695 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_g_free0 (match);
-#line 695 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 695 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_g_free0 (xname);
-#line 695 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 695 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_g_object_unref0 (node_data);
 #line 3390 "WindowLeftTree.vala.c"
 	}
-#line 747 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 747 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp91_ = g_strdup ("");
-#line 747 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 747 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	result = _tmp91_;
-#line 747 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 747 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_free0 (last);
-#line 747 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 747 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_free0 (path);
-#line 747 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 747 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	return result;
 #line 3402 "WindowLeftTree.vala.c"
 }
@@ -3431,118 +3431,118 @@ void xcls_windowlefttree_xcls_model_deleteSelected (Xcls_WindowLeftTreeXcls_mode
 	JsRenderJsRender* _tmp20_;
 	Xcls_WindowLeftTree* _tmp21_;
 	Xcls_WindowLeftTreeXcls_view* _tmp22_;
-#line 750 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 750 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_return_if_fail (self != NULL);
-#line 752 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 752 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_print ("DELETE SELECTED?");
-#line 754 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 754 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_print ("GET SELECTION?");
-#line 756 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 756 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp0_ = self->priv->_this;
-#line 756 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 756 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp1_ = _tmp0_->view;
-#line 756 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 756 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp2_ = _tmp1_->el;
-#line 756 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 756 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp3_ = gtk_tree_view_get_selection (_tmp2_);
-#line 756 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 756 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp4_ = _g_object_ref0 (_tmp3_);
-#line 756 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 756 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	s = _tmp4_;
-#line 758 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 758 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_print ("GET  SELECTED?");
-#line 763 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 763 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp5_ = s;
-#line 763 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 763 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp8_ = gtk_tree_selection_get_selected (_tmp5_, &_tmp6_, &_tmp7_);
-#line 763 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 763 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (mod);
-#line 763 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 763 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp9_ = _g_object_ref0 (_tmp6_);
-#line 763 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 763 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	mod = _tmp9_;
-#line 763 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 763 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	iter = _tmp7_;
-#line 763 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 763 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	if (!_tmp8_) {
-#line 764 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 764 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_g_object_unref0 (mod);
-#line 764 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 764 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_g_object_unref0 (s);
-#line 764 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 764 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		return;
 #line 3475 "WindowLeftTree.vala.c"
 	}
-#line 769 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 769 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp10_ = g_strdup ("");
-#line 769 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 769 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_free0 (self->activePath);
-#line 769 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 769 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->activePath = _tmp10_;
-#line 770 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 770 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_print ("GET  vnode value?");
-#line 773 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 773 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp11_ = self->el;
-#line 773 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 773 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp12_ = iter;
-#line 773 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 773 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	gtk_tree_model_get_value ((GtkTreeModel*) _tmp11_, &_tmp12_, 2, &_tmp13_);
-#line 773 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 773 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	G_IS_VALUE (&value) ? (g_value_unset (&value), NULL) : NULL;
-#line 773 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 773 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	value = _tmp13_;
-#line 774 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 774 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp14_ = g_value_get_object (&value);
-#line 774 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 774 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp15_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp14_, JS_RENDER_TYPE_NODE, JsRenderNode));
-#line 774 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 774 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	data = _tmp15_;
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_print ("removing node from Render\n");
-#line 777 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 777 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp16_ = data;
-#line 777 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 777 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	js_render_node_remove (_tmp16_);
-#line 778 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 778 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_print ("removing node from Tree\n");
-#line 779 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 779 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp17_ = s;
-#line 779 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 779 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	gtk_tree_selection_unselect_all (_tmp17_);
-#line 780 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 780 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp18_ = self->el;
-#line 780 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 780 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	gtk_tree_store_remove (_tmp18_, &iter);
-#line 790 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 790 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp19_ = g_strdup ("");
-#line 790 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 790 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_free0 (self->activePath);
-#line 790 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 790 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->activePath = _tmp19_;
-#line 793 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 793 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp20_ = self->file;
-#line 793 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 793 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_signal_emit_by_name (_tmp20_, "changed", NULL, "tree");
-#line 795 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 795 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp21_ = self->priv->_this;
-#line 795 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 795 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp22_ = _tmp21_->view;
-#line 795 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 795 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp22_->blockChanges = FALSE;
-#line 750 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 750 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (data);
-#line 750 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 750 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	G_IS_VALUE (&value) ? (g_value_unset (&value), NULL) : NULL;
-#line 750 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 750 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (mod);
-#line 750 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 750 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (s);
 #line 3541 "WindowLeftTree.vala.c"
 }
 
 
 static gpointer _gtk_tree_path_copy0 (gpointer self) {
-#line 812 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 812 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	return self ? gtk_tree_path_copy (self) : NULL;
 #line 3548 "WindowLeftTree.vala.c"
 }
@@ -3606,154 +3606,154 @@ void xcls_windowlefttree_xcls_model_dropNode (Xcls_WindowLeftTreeXcls_model* sel
 	GtkTreeIter _tmp125_;
 	GtkTreePath* _tmp126_ = NULL;
 	GtkTreePath* _tmp127_;
-#line 797 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 797 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_return_if_fail (self != NULL);
-#line 797 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 797 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_return_if_fail (target_data_str != NULL);
-#line 797 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 797 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_return_if_fail (node != NULL);
-#line 806 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 806 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp0_ = target_data_str;
-#line 806 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 806 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp2_ = _tmp1_ = g_strsplit (_tmp0_, "|", 0);
-#line 806 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 806 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	target_data = _tmp2_;
-#line 806 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 806 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	target_data_length1 = _vala_array_length (_tmp1_);
-#line 806 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 806 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_target_data_size_ = target_data_length1;
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp4_ = target_data;
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp4__length1 = target_data_length1;
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp5_ = _tmp4_[0];
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp6_ = strlen (_tmp5_);
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp7_ = _tmp6_;
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	if (_tmp7_ > 0) {
 #line 3638 "WindowLeftTree.vala.c"
 		gchar** _tmp8_;
 		gint _tmp8__length1;
 		const gchar* _tmp9_;
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp8_ = target_data;
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp8__length1 = target_data_length1;
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp9_ = _tmp8_[0];
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp3_ = _tmp9_;
 #line 3650 "WindowLeftTree.vala.c"
 	} else {
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp3_ = "";
 #line 3654 "WindowLeftTree.vala.c"
 	}
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp10_ = _tmp3_;
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp11_ = g_strdup (_tmp10_);
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	parent_str = _tmp11_;
-#line 809 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 809 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp13_ = target_data;
-#line 809 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 809 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp13__length1 = target_data_length1;
-#line 809 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 809 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	if (_tmp13__length1 > 1) {
 #line 3668 "WindowLeftTree.vala.c"
 		gchar** _tmp14_;
 		gint _tmp14__length1;
 		const gchar* _tmp15_;
 		gint _tmp16_ = 0;
-#line 809 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 809 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp14_ = target_data;
-#line 809 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 809 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp14__length1 = target_data_length1;
-#line 809 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 809 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp15_ = _tmp14_[1];
-#line 809 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 809 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp16_ = atoi (_tmp15_);
-#line 809 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 809 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp12_ = _tmp16_;
 #line 3683 "WindowLeftTree.vala.c"
 	} else {
-#line 809 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 809 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp12_ = 2;
 #line 3687 "WindowLeftTree.vala.c"
 	}
-#line 809 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 809 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp17_ = _tmp12_;
-#line 809 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 809 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	pos = _tmp17_;
-#line 812 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 812 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp19_ = parent_str;
-#line 812 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 812 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp20_ = strlen (_tmp19_);
-#line 812 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 812 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp21_ = _tmp20_;
-#line 812 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 812 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	if (_tmp21_ > 0) {
 #line 3701 "WindowLeftTree.vala.c"
 		const gchar* _tmp22_;
 		GtkTreePath* _tmp23_;
-#line 812 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 812 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp22_ = parent_str;
-#line 812 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 812 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp23_ = gtk_tree_path_new_from_string (_tmp22_);
-#line 812 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 812 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_gtk_tree_path_free0 (_tmp18_);
-#line 812 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 812 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp18_ = _tmp23_;
 #line 3712 "WindowLeftTree.vala.c"
 	} else {
-#line 812 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 812 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_gtk_tree_path_free0 (_tmp18_);
-#line 812 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 812 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp18_ = NULL;
 #line 3718 "WindowLeftTree.vala.c"
 	}
-#line 812 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 812 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp24_ = _tmp18_;
-#line 812 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 812 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp25_ = _gtk_tree_path_copy0 (_tmp24_);
-#line 812 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 812 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	tree_path = _tmp25_;
-#line 818 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 818 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	parentNode = NULL;
-#line 831 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 831 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp26_ = parent_str;
-#line 831 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 831 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp27_ = strlen (_tmp26_);
-#line 831 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 831 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp28_ = _tmp27_;
-#line 831 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 831 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	if (_tmp28_ < 1) {
 #line 3736 "WindowLeftTree.vala.c"
 		GtkTreeStore* _tmp29_;
 		GtkTreeIter _tmp30_ = {0};
 		JsRenderNode* _tmp31_;
-#line 832 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 832 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp29_ = self->el;
-#line 832 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 832 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		gtk_tree_store_append (_tmp29_, &_tmp30_, NULL);
-#line 832 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 832 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		n_iter = _tmp30_;
-#line 833 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 833 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp31_ = node;
-#line 833 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 833 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_g_object_unref0 (_tmp31_->parent);
-#line 833 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 833 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp31_->parent = NULL;
 #line 3752 "WindowLeftTree.vala.c"
 	} else {
 		gint _tmp32_;
-#line 834 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 834 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp32_ = pos;
-#line 834 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 834 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		if (_tmp32_ < 2) {
 #line 3759 "WindowLeftTree.vala.c"
 			GtkTreeStore* _tmp33_;
@@ -3771,40 +3771,40 @@ void xcls_windowlefttree_xcls_model_dropNode (Xcls_WindowLeftTreeXcls_model* sel
 			JsRenderNode* _tmp52_;
 			JsRenderNode* _tmp53_;
 			JsRenderNode* _tmp54_;
-#line 837 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 837 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp33_ = self->el;
-#line 837 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 837 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp34_ = tree_path;
-#line 837 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 837 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			gtk_tree_model_get_iter ((GtkTreeModel*) _tmp33_, &_tmp35_, _tmp34_);
-#line 837 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 837 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			iter_after = _tmp35_;
-#line 838 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 838 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp36_ = self->el;
-#line 838 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 838 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp37_ = iter_after;
-#line 838 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 838 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			gtk_tree_model_iter_parent ((GtkTreeModel*) _tmp36_, &_tmp38_, &_tmp37_);
-#line 838 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 838 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			iter_par = _tmp38_;
-#line 840 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 840 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp39_ = pos;
-#line 840 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 840 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			if (_tmp39_ > 0) {
 #line 3795 "WindowLeftTree.vala.c"
 				GtkTreeStore* _tmp40_;
 				GtkTreeIter _tmp41_;
 				GtkTreeIter _tmp42_;
 				GtkTreeIter _tmp43_ = {0};
-#line 842 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 842 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp40_ = self->el;
-#line 842 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 842 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp41_ = iter_par;
-#line 842 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 842 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp42_ = iter_after;
-#line 842 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 842 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				gtk_tree_store_insert_after (_tmp40_, &_tmp43_, &_tmp41_, &_tmp42_);
-#line 842 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 842 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				n_iter = _tmp43_;
 #line 3810 "WindowLeftTree.vala.c"
 			} else {
@@ -3812,45 +3812,45 @@ void xcls_windowlefttree_xcls_model_dropNode (Xcls_WindowLeftTreeXcls_model* sel
 				GtkTreeIter _tmp45_;
 				GtkTreeIter _tmp46_;
 				GtkTreeIter _tmp47_ = {0};
-#line 844 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 844 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp44_ = self->el;
-#line 844 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 844 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp45_ = iter_par;
-#line 844 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 844 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp46_ = iter_after;
-#line 844 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 844 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				gtk_tree_store_insert_before (_tmp44_, &_tmp47_, &_tmp45_, &_tmp46_);
-#line 844 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 844 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				n_iter = _tmp47_;
 #line 3826 "WindowLeftTree.vala.c"
 			}
-#line 847 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 847 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp48_ = self->el;
-#line 847 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 847 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp49_ = iter_par;
-#line 847 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 847 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			gtk_tree_model_get_value ((GtkTreeModel*) _tmp48_, &_tmp49_, 2, &_tmp50_);
-#line 847 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 847 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			G_IS_VALUE (&value) ? (g_value_unset (&value), NULL) : NULL;
-#line 847 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 847 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			value = _tmp50_;
-#line 848 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 848 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp51_ = g_value_dup_object (&value);
-#line 848 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 848 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_g_object_unref0 (parentNode);
-#line 848 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 848 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			parentNode = G_TYPE_CHECK_INSTANCE_CAST (_tmp51_, JS_RENDER_TYPE_NODE, JsRenderNode);
-#line 849 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 849 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp52_ = node;
-#line 849 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 849 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp53_ = parentNode;
-#line 849 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 849 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp54_ = _g_object_ref0 (_tmp53_);
-#line 849 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 849 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_g_object_unref0 (_tmp52_->parent);
-#line 849 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 849 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp52_->parent = _tmp54_;
-#line 834 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 834 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			G_IS_VALUE (&value) ? (g_value_unset (&value), NULL) : NULL;
 #line 3856 "WindowLeftTree.vala.c"
 		} else {
@@ -3868,58 +3868,58 @@ void xcls_windowlefttree_xcls_model_dropNode (Xcls_WindowLeftTreeXcls_model* sel
 			JsRenderNode* _tmp65_;
 			JsRenderNode* _tmp66_;
 			JsRenderNode* _tmp67_;
-#line 852 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 852 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp55_ = self->el;
-#line 852 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 852 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp56_ = tree_path;
-#line 852 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 852 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			gtk_tree_model_get_iter ((GtkTreeModel*) _tmp55_, &_tmp57_, _tmp56_);
-#line 852 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 852 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			iter_par = _tmp57_;
-#line 853 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 853 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp58_ = self->el;
-#line 853 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 853 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp59_ = iter_par;
-#line 853 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 853 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			gtk_tree_store_append (_tmp58_, &_tmp60_, &_tmp59_);
-#line 853 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 853 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			n_iter = _tmp60_;
-#line 855 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 855 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp61_ = self->el;
-#line 855 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 855 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp62_ = iter_par;
-#line 855 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 855 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			gtk_tree_model_get_value ((GtkTreeModel*) _tmp61_, &_tmp62_, 2, &_tmp63_);
-#line 855 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 855 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			G_IS_VALUE (&value) ? (g_value_unset (&value), NULL) : NULL;
-#line 855 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 855 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			value = _tmp63_;
-#line 856 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 856 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp64_ = g_value_dup_object (&value);
-#line 856 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 856 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_g_object_unref0 (parentNode);
-#line 856 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 856 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			parentNode = G_TYPE_CHECK_INSTANCE_CAST (_tmp64_, JS_RENDER_TYPE_NODE, JsRenderNode);
-#line 857 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 857 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp65_ = node;
-#line 857 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 857 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp66_ = parentNode;
-#line 857 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 857 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp67_ = _g_object_ref0 (_tmp66_);
-#line 857 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 857 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_g_object_unref0 (_tmp65_->parent);
-#line 857 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 857 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp65_->parent = _tmp67_;
-#line 834 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 834 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			G_IS_VALUE (&value) ? (g_value_unset (&value), NULL) : NULL;
 #line 3916 "WindowLeftTree.vala.c"
 		}
 	}
-#line 864 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 864 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp68_ = node;
-#line 864 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 864 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp69_ = _tmp68_->parent;
-#line 864 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 864 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	if (_tmp69_ == NULL) {
 #line 3925 "WindowLeftTree.vala.c"
 		gboolean _tmp70_ = FALSE;
@@ -3935,11 +3935,11 @@ void xcls_windowlefttree_xcls_model_dropNode (Xcls_WindowLeftTreeXcls_model* sel
 		JsRenderNode* _tmp87_;
 		JsRenderNode* new_node;
 		JsRenderNode* _tmp88_;
-#line 866 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 866 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp71_ = target_data;
-#line 866 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 866 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp71__length1 = target_data_length1;
-#line 866 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 866 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		if (_tmp71__length1 == 3) {
 #line 3945 "WindowLeftTree.vala.c"
 			gchar** _tmp72_;
@@ -3947,27 +3947,27 @@ void xcls_windowlefttree_xcls_model_dropNode (Xcls_WindowLeftTreeXcls_model* sel
 			const gchar* _tmp73_;
 			gint _tmp74_;
 			gint _tmp75_;
-#line 866 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 866 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp72_ = target_data;
-#line 866 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 866 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp72__length1 = target_data_length1;
-#line 866 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 866 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp73_ = _tmp72_[2];
-#line 866 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 866 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp74_ = strlen (_tmp73_);
-#line 866 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 866 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp75_ = _tmp74_;
-#line 866 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 866 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp70_ = _tmp75_ > 0;
 #line 3963 "WindowLeftTree.vala.c"
 		} else {
-#line 866 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 866 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp70_ = FALSE;
 #line 3967 "WindowLeftTree.vala.c"
 		}
-#line 866 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 866 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp76_ = _tmp70_;
-#line 866 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 866 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		if (_tmp76_) {
 #line 3973 "WindowLeftTree.vala.c"
 			JsRenderNode* _tmp77_;
@@ -3975,73 +3975,73 @@ void xcls_windowlefttree_xcls_model_dropNode (Xcls_WindowLeftTreeXcls_model* sel
 			gchar** _tmp79_;
 			gint _tmp79__length1;
 			const gchar* _tmp80_;
-#line 867 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 867 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp77_ = node;
-#line 867 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 867 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp78_ = _tmp77_->props;
-#line 867 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 867 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp79_ = target_data;
-#line 867 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 867 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp79__length1 = target_data_length1;
-#line 867 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 867 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp80_ = _tmp79_[2];
-#line 867 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 867 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			gee_abstract_map_set ((GeeAbstractMap*) _tmp78_, "*prop", _tmp80_);
 #line 3991 "WindowLeftTree.vala.c"
 		}
-#line 870 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 870 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp81_ = DialogTemplateSelect;
-#line 870 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 870 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp82_ = self->file;
-#line 870 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 870 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp83_ = js_render_js_render_palete (_tmp82_);
-#line 870 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 870 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp84_ = _tmp83_;
-#line 870 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 870 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp85_ = node;
-#line 870 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 870 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp86_ = xcls_dialogtemplateselect_show (_tmp81_, _tmp84_, _tmp85_);
-#line 870 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 870 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp87_ = _tmp86_;
-#line 870 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 870 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_g_object_unref0 (_tmp84_);
-#line 870 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 870 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		new_node = _tmp87_;
-#line 871 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 871 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp88_ = new_node;
-#line 871 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 871 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		node = _tmp88_;
-#line 864 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 864 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_g_object_unref0 (new_node);
 #line 4017 "WindowLeftTree.vala.c"
 	}
-#line 877 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 877 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp90_ = node;
-#line 877 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 877 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp91_ = js_render_node_has (_tmp90_, "pack");
-#line 877 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 877 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	if (!_tmp91_) {
 #line 4025 "WindowLeftTree.vala.c"
 		const gchar* _tmp92_;
 		gint _tmp93_;
 		gint _tmp94_;
-#line 877 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 877 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp92_ = parent_str;
-#line 877 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 877 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp93_ = strlen (_tmp92_);
-#line 877 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 877 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp94_ = _tmp93_;
-#line 877 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 877 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp89_ = _tmp94_ > 1;
 #line 4037 "WindowLeftTree.vala.c"
 	} else {
-#line 877 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 877 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp89_ = FALSE;
 #line 4041 "WindowLeftTree.vala.c"
 	}
-#line 877 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 877 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp95_ = _tmp89_;
-#line 877 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 877 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	if (_tmp95_) {
 #line 4047 "WindowLeftTree.vala.c"
 		JsRenderJsRender* _tmp96_;
@@ -4049,31 +4049,31 @@ void xcls_windowlefttree_xcls_model_dropNode (Xcls_WindowLeftTreeXcls_model* sel
 		PaletePalete* _tmp98_;
 		JsRenderNode* _tmp99_;
 		JsRenderNode* _tmp100_;
-#line 879 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 879 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp96_ = self->file;
-#line 879 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 879 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp97_ = js_render_js_render_palete (_tmp96_);
-#line 879 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 879 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp98_ = _tmp97_;
-#line 879 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 879 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp99_ = node;
-#line 879 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 879 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp100_ = parentNode;
-#line 879 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 879 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		palete_palete_fillPack (_tmp98_, _tmp99_, _tmp100_);
-#line 879 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 879 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_g_object_unref0 (_tmp98_);
 #line 4067 "WindowLeftTree.vala.c"
 	}
-#line 888 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 888 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp101_ = node;
-#line 888 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 888 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp102_ = _tmp101_->items;
-#line 888 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 888 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp103_ = gee_abstract_collection_get_size ((GeeCollection*) _tmp102_);
-#line 888 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 888 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp104_ = _tmp103_;
-#line 888 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 888 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	if (_tmp104_ > 0) {
 #line 4079 "WindowLeftTree.vala.c"
 		JsRenderNode* _tmp105_;
@@ -4086,81 +4086,81 @@ void xcls_windowlefttree_xcls_model_dropNode (Xcls_WindowLeftTreeXcls_model* sel
 		GtkTreeIter _tmp112_;
 		GtkTreePath* _tmp113_ = NULL;
 		GtkTreePath* _tmp114_;
-#line 889 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 889 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp105_ = node;
-#line 889 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 889 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp106_ = _tmp105_->items;
-#line 889 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 889 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp107_ = n_iter;
-#line 889 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 889 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		xcls_windowlefttree_xcls_model_load (self, _tmp106_, &_tmp107_);
-#line 890 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 890 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp108_ = self->priv->_this;
-#line 890 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 890 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp109_ = _tmp108_->view;
-#line 890 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 890 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp110_ = _tmp109_->el;
-#line 890 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 890 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp111_ = self->el;
-#line 890 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 890 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp112_ = n_iter;
-#line 890 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 890 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp113_ = gtk_tree_model_get_path ((GtkTreeModel*) _tmp111_, &_tmp112_);
-#line 890 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 890 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp114_ = _tmp113_;
-#line 890 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 890 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		gtk_tree_view_expand_row (_tmp110_, _tmp114_, TRUE);
-#line 890 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 890 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_gtk_tree_path_free0 (_tmp114_);
 #line 4116 "WindowLeftTree.vala.c"
 	}
-#line 899 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 899 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp115_ = self->el;
-#line 899 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 899 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp116_ = n_iter;
-#line 899 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 899 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp117_ = gtk_tree_model_get_path ((GtkTreeModel*) _tmp115_, &_tmp116_);
-#line 899 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 899 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp118_ = _tmp117_;
-#line 899 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 899 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp119_ = gtk_tree_path_to_string (_tmp118_);
-#line 899 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 899 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_free0 (self->activePath);
-#line 899 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 899 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->activePath = _tmp119_;
-#line 899 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 899 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_gtk_tree_path_free0 (_tmp118_);
-#line 902 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 902 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp120_ = node;
-#line 902 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 902 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	xcls_windowlefttree_xcls_model_updateNode (self, _tmp120_, TRUE);
-#line 905 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 905 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp121_ = self->priv->_this;
-#line 905 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 905 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp122_ = _tmp121_->view;
-#line 905 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 905 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp123_ = _tmp122_->el;
-#line 905 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 905 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp124_ = self->el;
-#line 905 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 905 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp125_ = n_iter;
-#line 905 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 905 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp126_ = gtk_tree_model_get_path ((GtkTreeModel*) _tmp124_, &_tmp125_);
-#line 905 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 905 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp127_ = _tmp126_;
-#line 905 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 905 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	gtk_tree_view_set_cursor (_tmp123_, _tmp127_, NULL, FALSE);
-#line 905 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 905 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_gtk_tree_path_free0 (_tmp127_);
-#line 797 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 797 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (parentNode);
-#line 797 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 797 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_gtk_tree_path_free0 (tree_path);
-#line 797 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 797 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_gtk_tree_path_free0 (_tmp18_);
-#line 797 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 797 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_free0 (parent_str);
-#line 797 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 797 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	target_data = (_vala_array_free (target_data, target_data_length1, (GDestroyNotify) g_free), NULL);
 #line 4166 "WindowLeftTree.vala.c"
 }
@@ -4168,21 +4168,21 @@ void xcls_windowlefttree_xcls_model_dropNode (Xcls_WindowLeftTreeXcls_model* sel
 
 void xcls_windowlefttree_xcls_model_load (Xcls_WindowLeftTreeXcls_model* self, GeeArrayList* tr, GtkTreeIter* iter) {
 	GtkTreeIter citer = {0};
-#line 913 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 913 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_return_if_fail (self != NULL);
-#line 913 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 913 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_return_if_fail (tr != NULL);
 #line 4176 "WindowLeftTree.vala.c"
 	{
 		gint i;
-#line 917 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 917 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		i = 0;
 #line 4181 "WindowLeftTree.vala.c"
 		{
 			gboolean _tmp0_;
-#line 917 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 917 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			_tmp0_ = TRUE;
-#line 917 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 917 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			while (TRUE) {
 #line 4188 "WindowLeftTree.vala.c"
 				gboolean _tmp1_;
@@ -4222,143 +4222,143 @@ void xcls_windowlefttree_xcls_model_load (Xcls_WindowLeftTreeXcls_model* self, G
 				gint _tmp40_;
 				gint _tmp41_;
 				gboolean _tmp42_;
-#line 917 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 917 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp1_ = _tmp0_;
-#line 917 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 917 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				if (!_tmp1_) {
 #line 4230 "WindowLeftTree.vala.c"
 					gint _tmp2_;
-#line 917 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 917 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_tmp2_ = i;
-#line 917 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 917 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					i = _tmp2_ + 1;
 #line 4236 "WindowLeftTree.vala.c"
 				}
-#line 917 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 917 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp0_ = FALSE;
-#line 917 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 917 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp3_ = i;
-#line 917 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 917 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp4_ = tr;
-#line 917 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 917 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp5_ = gee_abstract_collection_get_size ((GeeCollection*) _tmp4_);
-#line 917 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 917 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp6_ = _tmp5_;
-#line 917 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 917 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				if (!(_tmp3_ < _tmp6_)) {
-#line 917 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 917 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					break;
 #line 4252 "WindowLeftTree.vala.c"
 				}
-#line 918 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 918 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp7_ = iter;
-#line 918 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 918 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				if (_tmp7_ != NULL) {
 #line 4258 "WindowLeftTree.vala.c"
 					GtkTreeStore* _tmp8_;
 					GtkTreeIter* _tmp9_;
 					GtkTreeIter _tmp10_ = {0};
-#line 919 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 919 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_tmp8_ = self->el;
-#line 919 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 919 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_tmp9_ = iter;
-#line 919 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 919 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					gtk_tree_store_insert (_tmp8_, &_tmp10_, _tmp9_, -1);
-#line 919 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 919 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					citer = _tmp10_;
 #line 4270 "WindowLeftTree.vala.c"
 				} else {
 					GtkTreeStore* _tmp11_;
 					GtkTreeIter _tmp12_ = {0};
-#line 921 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 921 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_tmp11_ = self->el;
-#line 921 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 921 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					gtk_tree_store_append (_tmp11_, &_tmp12_, NULL);
-#line 921 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 921 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					citer = _tmp12_;
 #line 4280 "WindowLeftTree.vala.c"
 				}
-#line 924 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 924 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp13_ = self->el;
-#line 924 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 924 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp14_ = citer;
-#line 924 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 924 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp15_ = tr;
-#line 924 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 924 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp16_ = i;
-#line 924 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 924 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp17_ = gee_abstract_list_get ((GeeAbstractList*) _tmp15_, _tmp16_);
-#line 924 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 924 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp18_ = (JsRenderNode*) _tmp17_;
-#line 924 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 924 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp19_ = js_render_node_nodeTitle (_tmp18_);
-#line 924 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 924 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp20_ = _tmp19_;
-#line 924 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 924 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp21_ = tr;
-#line 924 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 924 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp22_ = i;
-#line 924 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 924 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp23_ = gee_abstract_list_get ((GeeAbstractList*) _tmp21_, _tmp22_);
-#line 924 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 924 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp24_ = (JsRenderNode*) _tmp23_;
-#line 924 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 924 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp25_ = js_render_node_nodeTip (_tmp24_);
-#line 924 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 924 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp26_ = _tmp25_;
-#line 924 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 924 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				gtk_tree_store_set (_tmp13_, &_tmp14_, 0, _tmp20_, 1, _tmp26_, -1, -1);
-#line 924 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 924 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_g_free0 (_tmp26_);
-#line 924 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 924 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_g_object_unref0 (_tmp24_);
-#line 924 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 924 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_g_free0 (_tmp20_);
-#line 924 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 924 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_g_object_unref0 (_tmp18_);
-#line 927 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 927 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				g_value_init (&_tmp27_, G_TYPE_OBJECT);
-#line 927 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 927 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				o = _tmp27_;
-#line 928 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 928 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp28_ = tr;
-#line 928 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 928 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp29_ = i;
-#line 928 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 928 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp30_ = gee_abstract_list_get ((GeeAbstractList*) _tmp28_, _tmp29_);
-#line 928 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 928 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp31_ = G_TYPE_CHECK_INSTANCE_CAST ((JsRenderNode*) _tmp30_, G_TYPE_OBJECT, GObject);
-#line 928 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 928 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				g_value_set_object (&o, _tmp31_);
-#line 928 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 928 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_g_object_unref0 (_tmp31_);
-#line 930 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 930 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp32_ = self->el;
-#line 930 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 930 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp33_ = citer;
-#line 930 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 930 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp34_ = o;
-#line 930 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 930 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				gtk_tree_store_set_value (_tmp32_, &_tmp33_, 2, &_tmp34_);
-#line 932 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 932 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp35_ = tr;
-#line 932 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 932 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp36_ = i;
-#line 932 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 932 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp37_ = gee_abstract_list_get ((GeeAbstractList*) _tmp35_, _tmp36_);
-#line 932 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 932 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp38_ = (JsRenderNode*) _tmp37_;
-#line 932 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 932 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp39_ = _tmp38_->items;
-#line 932 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 932 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp40_ = gee_abstract_collection_get_size ((GeeCollection*) _tmp39_);
-#line 932 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 932 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp41_ = _tmp40_;
-#line 932 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 932 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_tmp42_ = _tmp41_ > 0;
-#line 932 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 932 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				_g_object_unref0 (_tmp38_);
-#line 932 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 932 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				if (_tmp42_) {
 #line 4364 "WindowLeftTree.vala.c"
 					GeeArrayList* _tmp43_;
@@ -4367,25 +4367,25 @@ void xcls_windowlefttree_xcls_model_load (Xcls_WindowLeftTreeXcls_model* self, G
 					JsRenderNode* _tmp46_;
 					GeeArrayList* _tmp47_;
 					GtkTreeIter _tmp48_;
-#line 933 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 933 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_tmp43_ = tr;
-#line 933 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 933 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_tmp44_ = i;
-#line 933 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 933 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_tmp45_ = gee_abstract_list_get ((GeeAbstractList*) _tmp43_, _tmp44_);
-#line 933 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 933 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_tmp46_ = (JsRenderNode*) _tmp45_;
-#line 933 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 933 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_tmp47_ = _tmp46_->items;
-#line 933 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 933 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_tmp48_ = citer;
-#line 933 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 933 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					xcls_windowlefttree_xcls_model_load (self, _tmp47_, &_tmp48_);
-#line 933 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 933 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 					_g_object_unref0 (_tmp46_);
 #line 4387 "WindowLeftTree.vala.c"
 				}
-#line 917 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 917 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 				G_IS_VALUE (&o) ? (g_value_unset (&o), NULL) : NULL;
 #line 4391 "WindowLeftTree.vala.c"
 			}
@@ -4415,80 +4415,80 @@ void xcls_windowlefttree_xcls_model_loadFile (Xcls_WindowLeftTreeXcls_model* sel
 	gint _tmp17_;
 	gint _tmp18_;
 	GError * _inner_error_ = NULL;
-#line 938 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 938 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_return_if_fail (self != NULL);
-#line 938 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 938 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_return_if_fail (f != NULL);
-#line 940 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 940 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp0_ = self->el;
-#line 940 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 940 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	gtk_tree_store_clear (_tmp0_);
-#line 941 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 941 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp1_ = f;
-#line 941 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 941 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp2_ = _g_object_ref0 (_tmp1_);
-#line 941 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 941 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (self->file);
-#line 941 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 941 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->file = _tmp2_;
-#line 949 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 949 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp3_ = f;
-#line 949 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 949 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp4_ = _tmp3_->tree;
-#line 949 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 949 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	if (_tmp4_ == NULL) {
 #line 4441 "WindowLeftTree.vala.c"
 		JsRenderJsRender* _tmp5_;
-#line 950 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 950 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp5_ = f;
-#line 950 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 950 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		js_render_js_render_loadItems (_tmp5_, &_inner_error_);
-#line 950 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 950 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		if (_inner_error_ != NULL) {
-#line 950 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 950 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			g_critical ("file %s: line %d: uncaught error: %s (%s, %d)", __FILE__, __LINE__, _inner_error_->message, g_quark_to_string (_inner_error_->domain), _inner_error_->code);
-#line 950 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 950 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			g_clear_error (&_inner_error_);
-#line 950 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 950 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 			return;
 #line 4455 "WindowLeftTree.vala.c"
 		}
 	}
-#line 966 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 966 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp6_ = gee_array_list_new (JS_RENDER_TYPE_NODE, (GBoxedCopyFunc) g_object_ref, g_object_unref, NULL);
-#line 966 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 966 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	o = _tmp6_;
-#line 967 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 967 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp7_ = o;
-#line 967 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 967 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp8_ = f;
-#line 967 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 967 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp9_ = _tmp8_->tree;
-#line 967 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 967 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	gee_abstract_collection_add ((GeeAbstractCollection*) _tmp7_, _tmp9_);
-#line 968 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 968 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp10_ = o;
-#line 968 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 968 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	xcls_windowlefttree_xcls_model_load (self, _tmp10_, NULL);
-#line 970 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 970 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp11_ = self->priv->_this;
-#line 970 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 970 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp12_ = _tmp11_->view;
-#line 970 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 970 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp13_ = _tmp12_->el;
-#line 970 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 970 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	gtk_tree_view_expand_all (_tmp13_);
-#line 972 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 972 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp14_ = f;
-#line 972 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 972 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp15_ = _tmp14_->tree;
-#line 972 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 972 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp16_ = _tmp15_->items;
-#line 972 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 972 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp17_ = gee_abstract_collection_get_size ((GeeCollection*) _tmp16_);
-#line 972 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 972 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp18_ = _tmp17_;
-#line 972 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 972 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	if (_tmp18_ < 1) {
 #line 4494 "WindowLeftTree.vala.c"
 		Xcls_WindowLeftTree* _tmp19_;
@@ -4496,26 +4496,26 @@ void xcls_windowlefttree_xcls_model_loadFile (Xcls_WindowLeftTreeXcls_model* sel
 		GtkTreeView* _tmp21_;
 		GtkTreePath* _tmp22_;
 		GtkTreePath* _tmp23_;
-#line 977 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 977 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp19_ = self->priv->_this;
-#line 977 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 977 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp20_ = _tmp19_->view;
-#line 977 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 977 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp21_ = _tmp20_->el;
-#line 977 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 977 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp22_ = gtk_tree_path_new_from_string ("0");
-#line 977 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 977 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp23_ = _tmp22_;
-#line 977 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 977 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		gtk_tree_view_set_cursor (_tmp21_, _tmp23_, NULL, FALSE);
-#line 977 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 977 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_gtk_tree_path_free0 (_tmp23_);
 #line 4514 "WindowLeftTree.vala.c"
 	} else {
 	}
-#line 985 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 985 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (o);
-#line 985 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 985 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	return;
 #line 4521 "WindowLeftTree.vala.c"
 }
@@ -4550,77 +4550,77 @@ void xcls_windowlefttree_xcls_model_moveNode (Xcls_WindowLeftTreeXcls_model* sel
 	JsRenderNode* _tmp21_;
 	GdkDragAction _tmp22_;
 	gchar* _tmp41_;
-#line 1019 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1019 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_return_if_fail (self != NULL);
-#line 1019 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1019 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_return_if_fail (target_data != NULL);
-#line 1030 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1030 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp0_ = self->priv->_this;
-#line 1030 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1030 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp1_ = _tmp0_->view;
-#line 1030 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1030 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp2_ = _tmp1_->el;
-#line 1030 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1030 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp3_ = gtk_tree_view_get_selection (_tmp2_);
-#line 1030 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1030 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp4_ = _g_object_ref0 (_tmp3_);
-#line 1030 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1030 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	s = _tmp4_;
-#line 1031 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1031 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp5_ = s;
-#line 1031 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1031 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	gtk_tree_selection_get_selected (_tmp5_, &_tmp6_, &_tmp7_);
-#line 1031 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1031 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (mod);
-#line 1031 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1031 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp8_ = _g_object_ref0 (_tmp6_);
-#line 1031 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1031 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	mod = _tmp8_;
-#line 1031 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1031 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	old_iter = _tmp7_;
-#line 1032 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1032 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp9_ = mod;
-#line 1032 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1032 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp10_ = old_iter;
-#line 1032 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1032 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp11_ = gtk_tree_model_get_path (_tmp9_, &_tmp10_);
-#line 1032 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1032 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp12_ = _tmp11_;
-#line 1032 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1032 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_gtk_tree_path_free0 (_tmp12_);
-#line 1034 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1034 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp13_ = mod;
-#line 1034 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1034 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp14_ = old_iter;
-#line 1034 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1034 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp15_ = gtk_tree_model_get_path (_tmp13_, &_tmp14_);
-#line 1034 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1034 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp16_ = _tmp15_;
-#line 1034 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1034 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp17_ = gtk_tree_path_to_string (_tmp16_);
-#line 1034 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1034 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp18_ = _tmp17_;
-#line 1034 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1034 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp19_ = xcls_windowlefttree_xcls_model_pathToNode (self, _tmp18_);
-#line 1034 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1034 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp20_ = _tmp19_;
-#line 1034 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1034 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_free0 (_tmp18_);
-#line 1034 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1034 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_gtk_tree_path_free0 (_tmp16_);
-#line 1034 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1034 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	node = _tmp20_;
-#line 1036 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1036 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp21_ = node;
-#line 1036 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1036 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	if (_tmp21_ == NULL) {
-#line 1037 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1037 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		g_print ("moveNode: ERROR - node is null?");
 #line 4620 "WindowLeftTree.vala.c"
 	}
-#line 1046 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1046 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp22_ = action;
-#line 1046 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1046 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	if ((_tmp22_ & GDK_ACTION_MOVE) > 0) {
 #line 4626 "WindowLeftTree.vala.c"
 		const gchar* _tmp23_;
@@ -4632,35 +4632,35 @@ void xcls_windowlefttree_xcls_model_moveNode (Xcls_WindowLeftTreeXcls_model* sel
 		const gchar* _tmp29_;
 		JsRenderNode* _tmp30_;
 		GtkTreeStore* _tmp31_;
-#line 1047 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1047 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp23_ = target_data;
-#line 1047 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1047 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp24_ = g_strconcat ("REMOVING OLD NODE : ", _tmp23_, NULL);
-#line 1047 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1047 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp25_ = _tmp24_;
-#line 1047 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1047 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp26_ = g_strconcat (_tmp25_, "\n", NULL);
-#line 1047 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1047 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp27_ = _tmp26_;
-#line 1047 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1047 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		g_print ("%s", _tmp27_);
-#line 1047 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1047 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_g_free0 (_tmp27_);
-#line 1047 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1047 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_g_free0 (_tmp25_);
-#line 1048 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1048 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp28_ = node;
-#line 1048 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1048 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		js_render_node_remove (_tmp28_);
-#line 1049 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1049 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp29_ = target_data;
-#line 1049 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1049 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp30_ = node;
-#line 1049 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1049 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		xcls_windowlefttree_xcls_model_dropNode (self, _tmp29_, _tmp30_);
-#line 1050 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1050 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp31_ = self->el;
-#line 1050 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1050 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		gtk_tree_store_remove (_tmp31_, &old_iter);
 #line 4666 "WindowLeftTree.vala.c"
 	} else {
@@ -4673,49 +4673,49 @@ void xcls_windowlefttree_xcls_model_moveNode (Xcls_WindowLeftTreeXcls_model* sel
 		JsRenderNode* _tmp38_ = NULL;
 		const gchar* _tmp39_;
 		JsRenderNode* _tmp40_;
-#line 1055 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1055 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp32_ = target_data;
-#line 1055 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1055 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp33_ = g_strconcat ("DROPPING NODE // copy: ", _tmp32_, NULL);
-#line 1055 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1055 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp34_ = _tmp33_;
-#line 1055 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1055 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp35_ = g_strconcat (_tmp34_, "\n", NULL);
-#line 1055 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1055 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp36_ = _tmp35_;
-#line 1055 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1055 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		g_print ("%s", _tmp36_);
-#line 1055 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1055 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_g_free0 (_tmp36_);
-#line 1055 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1055 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_g_free0 (_tmp34_);
-#line 1056 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1056 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp37_ = node;
-#line 1056 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1056 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp38_ = js_render_node_deepClone (_tmp37_);
-#line 1056 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1056 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_g_object_unref0 (node);
-#line 1056 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1056 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		node = _tmp38_;
-#line 1057 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1057 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp39_ = target_data;
-#line 1057 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1057 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp40_ = node;
-#line 1057 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1057 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		xcls_windowlefttree_xcls_model_dropNode (self, _tmp39_, _tmp40_);
 #line 4707 "WindowLeftTree.vala.c"
 	}
-#line 1060 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1060 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp41_ = g_strdup ("");
-#line 1060 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1060 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_free0 (self->activePath);
-#line 1060 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1060 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->activePath = _tmp41_;
-#line 1019 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1019 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (node);
-#line 1019 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1019 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (s);
-#line 1019 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1019 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (mod);
 #line 4721 "WindowLeftTree.vala.c"
 }
@@ -4725,33 +4725,33 @@ void xcls_windowlefttree_xcls_model_updateNode (Xcls_WindowLeftTreeXcls_model* s
 	gboolean _tmp0_ = FALSE;
 	JsRenderNode* _tmp1_;
 	gboolean _tmp5_;
-#line 1063 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1063 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_return_if_fail (self != NULL);
-#line 1066 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1066 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp1_ = n;
-#line 1066 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1066 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	if (_tmp1_ != NULL) {
 #line 4735 "WindowLeftTree.vala.c"
 		const gchar* _tmp2_;
 		gint _tmp3_;
 		gint _tmp4_;
-#line 1066 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1066 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp2_ = self->activePath;
-#line 1066 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1066 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp3_ = strlen (_tmp2_);
-#line 1066 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1066 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp4_ = _tmp3_;
-#line 1066 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1066 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp0_ = _tmp4_ > 0;
 #line 4747 "WindowLeftTree.vala.c"
 	} else {
-#line 1066 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1066 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp0_ = FALSE;
 #line 4751 "WindowLeftTree.vala.c"
 	}
-#line 1066 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1066 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp5_ = _tmp0_;
-#line 1066 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1066 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	if (_tmp5_) {
 #line 4757 "WindowLeftTree.vala.c"
 		GtkTreeIter iter = {0};
@@ -4774,59 +4774,59 @@ void xcls_windowlefttree_xcls_model_updateNode (Xcls_WindowLeftTreeXcls_model* s
 		GtkTreeStore* _tmp21_;
 		GtkTreeIter _tmp22_;
 		GValue _tmp23_;
-#line 1068 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1068 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp6_ = self->el;
-#line 1068 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1068 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp7_ = self->activePath;
-#line 1068 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1068 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp8_ = gtk_tree_path_new_from_string (_tmp7_);
-#line 1068 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1068 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp9_ = _tmp8_;
-#line 1068 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1068 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		gtk_tree_model_get_iter ((GtkTreeModel*) _tmp6_, &_tmp10_, _tmp9_);
-#line 1068 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1068 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		iter = _tmp10_;
-#line 1068 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1068 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_gtk_tree_path_free0 (_tmp9_);
-#line 1069 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1069 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp11_ = self->el;
-#line 1069 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1069 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp12_ = iter;
-#line 1069 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1069 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp13_ = n;
-#line 1069 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1069 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp14_ = js_render_node_nodeTitle (_tmp13_);
-#line 1069 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1069 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp15_ = _tmp14_;
-#line 1069 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1069 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp16_ = n;
-#line 1069 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1069 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp17_ = js_render_node_nodeTip (_tmp16_);
-#line 1069 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1069 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp18_ = _tmp17_;
-#line 1069 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1069 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		gtk_tree_store_set (_tmp11_, &_tmp12_, 0, _tmp15_, 1, _tmp18_, -1, -1);
-#line 1069 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1069 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_g_free0 (_tmp18_);
-#line 1069 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1069 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_g_free0 (_tmp15_);
-#line 1070 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1070 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		g_value_init (&_tmp19_, G_TYPE_OBJECT);
-#line 1070 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1070 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		v = _tmp19_;
-#line 1071 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1071 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp20_ = n;
-#line 1071 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1071 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		g_value_set_object (&v, G_TYPE_CHECK_INSTANCE_CAST (_tmp20_, G_TYPE_OBJECT, GObject));
-#line 1072 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1072 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp21_ = self->el;
-#line 1072 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1072 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp22_ = iter;
-#line 1072 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1072 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		_tmp23_ = v;
-#line 1072 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1072 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		gtk_tree_store_set_value (_tmp21_, &_tmp22_, 2, &_tmp23_);
-#line 1066 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1066 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 		G_IS_VALUE (&v) ? (g_value_unset (&v), NULL) : NULL;
 #line 4832 "WindowLeftTree.vala.c"
 	}
@@ -4834,18 +4834,18 @@ void xcls_windowlefttree_xcls_model_updateNode (Xcls_WindowLeftTreeXcls_model* s
 
 
 static void xcls_windowlefttree_xcls_model_class_init (Xcls_WindowLeftTreeXcls_modelClass * klass) {
-#line 603 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 603 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	xcls_windowlefttree_xcls_model_parent_class = g_type_class_peek_parent (klass);
-#line 603 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 603 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_WindowLeftTreeXcls_modelPrivate));
-#line 603 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 603 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_windowlefttree_xcls_model_finalize;
 #line 4844 "WindowLeftTree.vala.c"
 }
 
 
 static void xcls_windowlefttree_xcls_model_instance_init (Xcls_WindowLeftTreeXcls_model * self) {
-#line 603 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 603 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->priv = XCLS_WINDOWLEFTTREE_XCLS_MODEL_GET_PRIVATE (self);
 #line 4851 "WindowLeftTree.vala.c"
 }
@@ -4853,17 +4853,17 @@ static void xcls_windowlefttree_xcls_model_instance_init (Xcls_WindowLeftTreeXcl
 
 static void xcls_windowlefttree_xcls_model_finalize (GObject* obj) {
 	Xcls_WindowLeftTreeXcls_model * self;
-#line 603 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 603 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_WINDOWLEFTTREE_TYPE_XCLS_MODEL, Xcls_WindowLeftTreeXcls_model);
-#line 605 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 605 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (self->el);
-#line 606 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 606 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 610 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 610 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (self->file);
-#line 611 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 611 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_free0 (self->activePath);
-#line 603 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 603 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	G_OBJECT_CLASS (xcls_windowlefttree_xcls_model_parent_class)->finalize (obj);
 #line 4869 "WindowLeftTree.vala.c"
 }
@@ -4895,78 +4895,78 @@ Xcls_WindowLeftTreeXcls_TreeViewColumn4* xcls_windowlefttree_xcls_treeviewcolumn
 	Xcls_WindowLeftTree* _tmp8_;
 	Xcls_WindowLeftTreeXcls_renderer* _tmp9_;
 	GtkCellRendererText* _tmp10_;
-#line 1094 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1094 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 1094 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1094 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self = (Xcls_WindowLeftTreeXcls_TreeViewColumn4*) g_object_new (object_type, NULL);
-#line 1096 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1096 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp0_ = gtk_tree_view_column_new ();
-#line 1096 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1096 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_object_ref_sink (_tmp0_);
-#line 1096 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1096 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (self->el);
-#line 1096 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1096 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->el = _tmp0_;
-#line 1097 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1097 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp1_ = _owner;
-#line 1097 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1097 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp2_ = _g_object_ref0 (_tmp1_);
-#line 1097 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1097 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1097 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1097 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->priv->_this = _tmp2_;
-#line 1102 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1102 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp3_ = self->priv->_this;
-#line 1102 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1102 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp4_ = xcls_windowlefttree_xcls_renderer_new (_tmp3_);
-#line 1102 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1102 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	child_0 = _tmp4_;
-#line 1103 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1103 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_object_ref ((GObject*) child_0);
-#line 1104 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1104 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp5_ = self->el;
-#line 1104 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1104 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp6_ = child_0->el;
-#line 1104 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1104 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	gtk_cell_layout_pack_start ((GtkCellLayout*) _tmp5_, (GtkCellRenderer*) _tmp6_, TRUE);
-#line 1107 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1107 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp7_ = self->el;
-#line 1107 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1107 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp8_ = self->priv->_this;
-#line 1107 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1107 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp9_ = _tmp8_->renderer;
-#line 1107 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1107 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp10_ = _tmp9_->el;
-#line 1107 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1107 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	gtk_cell_layout_add_attribute ((GtkCellLayout*) _tmp7_, (GtkCellRenderer*) _tmp10_, "markup", 0);
-#line 1094 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1094 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (child_0);
-#line 1094 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1094 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	return self;
 #line 4947 "WindowLeftTree.vala.c"
 }
 
 
 Xcls_WindowLeftTreeXcls_TreeViewColumn4* xcls_windowlefttree_xcls_treeviewcolumn4_new (Xcls_WindowLeftTree* _owner) {
-#line 1094 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1094 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	return xcls_windowlefttree_xcls_treeviewcolumn4_construct (XCLS_WINDOWLEFTTREE_TYPE_XCLS_TREEVIEWCOLUMN4, _owner);
 #line 4954 "WindowLeftTree.vala.c"
 }
 
 
 static void xcls_windowlefttree_xcls_treeviewcolumn4_class_init (Xcls_WindowLeftTreeXcls_TreeViewColumn4Class * klass) {
-#line 1085 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1085 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	xcls_windowlefttree_xcls_treeviewcolumn4_parent_class = g_type_class_peek_parent (klass);
-#line 1085 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1085 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_WindowLeftTreeXcls_TreeViewColumn4Private));
-#line 1085 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1085 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_windowlefttree_xcls_treeviewcolumn4_finalize;
 #line 4965 "WindowLeftTree.vala.c"
 }
 
 
 static void xcls_windowlefttree_xcls_treeviewcolumn4_instance_init (Xcls_WindowLeftTreeXcls_TreeViewColumn4 * self) {
-#line 1085 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1085 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->priv = XCLS_WINDOWLEFTTREE_XCLS_TREEVIEWCOLUMN4_GET_PRIVATE (self);
 #line 4972 "WindowLeftTree.vala.c"
 }
@@ -4974,13 +4974,13 @@ static void xcls_windowlefttree_xcls_treeviewcolumn4_instance_init (Xcls_WindowL
 
 static void xcls_windowlefttree_xcls_treeviewcolumn4_finalize (GObject* obj) {
 	Xcls_WindowLeftTreeXcls_TreeViewColumn4 * self;
-#line 1085 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1085 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_WINDOWLEFTTREE_TYPE_XCLS_TREEVIEWCOLUMN4, Xcls_WindowLeftTreeXcls_TreeViewColumn4);
-#line 1087 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1087 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (self->el);
-#line 1088 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1088 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1085 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1085 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	G_OBJECT_CLASS (xcls_windowlefttree_xcls_treeviewcolumn4_parent_class)->finalize (obj);
 #line 4986 "WindowLeftTree.vala.c"
 }
@@ -5005,60 +5005,60 @@ Xcls_WindowLeftTreeXcls_renderer* xcls_windowlefttree_xcls_renderer_construct (G
 	Xcls_WindowLeftTree* _tmp2_;
 	Xcls_WindowLeftTree* _tmp3_;
 	Xcls_WindowLeftTreeXcls_renderer* _tmp4_;
-#line 1138 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1138 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 1138 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1138 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self = (Xcls_WindowLeftTreeXcls_renderer*) g_object_new (object_type, NULL);
-#line 1140 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1140 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp0_ = (GtkCellRendererText*) gtk_cell_renderer_text_new ();
-#line 1140 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1140 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_object_ref_sink (_tmp0_);
-#line 1140 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1140 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (self->el);
-#line 1140 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1140 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->el = _tmp0_;
-#line 1141 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1141 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp1_ = _owner;
-#line 1141 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1141 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp2_ = _g_object_ref0 (_tmp1_);
-#line 1141 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1141 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1141 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1141 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->priv->_this = _tmp2_;
-#line 1142 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1142 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp3_ = self->priv->_this;
-#line 1142 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1142 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp4_ = _g_object_ref0 (self);
-#line 1142 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1142 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (_tmp3_->renderer);
-#line 1142 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1142 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp3_->renderer = _tmp4_;
-#line 1138 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1138 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	return self;
 #line 5039 "WindowLeftTree.vala.c"
 }
 
 
 Xcls_WindowLeftTreeXcls_renderer* xcls_windowlefttree_xcls_renderer_new (Xcls_WindowLeftTree* _owner) {
-#line 1138 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1138 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	return xcls_windowlefttree_xcls_renderer_construct (XCLS_WINDOWLEFTTREE_TYPE_XCLS_RENDERER, _owner);
 #line 5046 "WindowLeftTree.vala.c"
 }
 
 
 static void xcls_windowlefttree_xcls_renderer_class_init (Xcls_WindowLeftTreeXcls_rendererClass * klass) {
-#line 1129 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1129 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	xcls_windowlefttree_xcls_renderer_parent_class = g_type_class_peek_parent (klass);
-#line 1129 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1129 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_WindowLeftTreeXcls_rendererPrivate));
-#line 1129 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1129 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_windowlefttree_xcls_renderer_finalize;
 #line 5057 "WindowLeftTree.vala.c"
 }
 
 
 static void xcls_windowlefttree_xcls_renderer_instance_init (Xcls_WindowLeftTreeXcls_renderer * self) {
-#line 1129 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1129 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->priv = XCLS_WINDOWLEFTTREE_XCLS_RENDERER_GET_PRIVATE (self);
 #line 5064 "WindowLeftTree.vala.c"
 }
@@ -5066,13 +5066,13 @@ static void xcls_windowlefttree_xcls_renderer_instance_init (Xcls_WindowLeftTree
 
 static void xcls_windowlefttree_xcls_renderer_finalize (GObject* obj) {
 	Xcls_WindowLeftTreeXcls_renderer * self;
-#line 1129 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1129 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_WINDOWLEFTTREE_TYPE_XCLS_RENDERER, Xcls_WindowLeftTreeXcls_renderer);
-#line 1131 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1131 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (self->el);
-#line 1132 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1132 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1129 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1129 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	G_OBJECT_CLASS (xcls_windowlefttree_xcls_renderer_parent_class)->finalize (obj);
 #line 5078 "WindowLeftTree.vala.c"
 }
@@ -5107,92 +5107,92 @@ Xcls_WindowLeftTreeXcls_LeftTreeMenu* xcls_windowlefttree_xcls_lefttreemenu_cons
 	Xcls_WindowLeftTreeXcls_MenuItem8* child_1;
 	GtkMenu* _tmp11_;
 	GtkMenuItem* _tmp12_;
-#line 1174 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1174 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 1174 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1174 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self = (Xcls_WindowLeftTreeXcls_LeftTreeMenu*) g_object_new (object_type, NULL);
-#line 1176 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1176 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp0_ = (GtkMenu*) gtk_menu_new ();
-#line 1176 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1176 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_object_ref_sink (_tmp0_);
-#line 1176 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1176 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (self->el);
-#line 1176 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1176 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->el = _tmp0_;
-#line 1177 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1177 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp1_ = _owner;
-#line 1177 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1177 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp2_ = _g_object_ref0 (_tmp1_);
-#line 1177 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1177 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1177 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1177 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->priv->_this = _tmp2_;
-#line 1178 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1178 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp3_ = self->priv->_this;
-#line 1178 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1178 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp4_ = _g_object_ref0 (self);
-#line 1178 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1178 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (_tmp3_->LeftTreeMenu);
-#line 1178 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1178 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp3_->LeftTreeMenu = _tmp4_;
-#line 1183 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1183 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp5_ = self->priv->_this;
-#line 1183 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1183 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp6_ = xcls_windowlefttree_xcls_menuitem7_new (_tmp5_);
-#line 1183 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1183 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	child_0 = _tmp6_;
-#line 1184 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1184 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_object_ref ((GObject*) child_0);
-#line 1185 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1185 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp7_ = self->el;
-#line 1185 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1185 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp8_ = child_0->el;
-#line 1185 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1185 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	gtk_container_add ((GtkContainer*) _tmp7_, (GtkWidget*) _tmp8_);
-#line 1186 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1186 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp9_ = self->priv->_this;
-#line 1186 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1186 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp10_ = xcls_windowlefttree_xcls_menuitem8_new (_tmp9_);
-#line 1186 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1186 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	child_1 = _tmp10_;
-#line 1187 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1187 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_object_ref ((GObject*) child_1);
-#line 1188 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1188 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp11_ = self->el;
-#line 1188 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1188 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp12_ = child_1->el;
-#line 1188 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1188 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	gtk_container_add ((GtkContainer*) _tmp11_, (GtkWidget*) _tmp12_);
-#line 1174 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1174 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (child_1);
-#line 1174 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1174 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (child_0);
-#line 1174 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1174 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	return self;
 #line 5173 "WindowLeftTree.vala.c"
 }
 
 
 Xcls_WindowLeftTreeXcls_LeftTreeMenu* xcls_windowlefttree_xcls_lefttreemenu_new (Xcls_WindowLeftTree* _owner) {
-#line 1174 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1174 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	return xcls_windowlefttree_xcls_lefttreemenu_construct (XCLS_WINDOWLEFTTREE_TYPE_XCLS_LEFTTREEMENU, _owner);
 #line 5180 "WindowLeftTree.vala.c"
 }
 
 
 static void xcls_windowlefttree_xcls_lefttreemenu_class_init (Xcls_WindowLeftTreeXcls_LeftTreeMenuClass * klass) {
-#line 1165 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1165 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	xcls_windowlefttree_xcls_lefttreemenu_parent_class = g_type_class_peek_parent (klass);
-#line 1165 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1165 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_WindowLeftTreeXcls_LeftTreeMenuPrivate));
-#line 1165 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1165 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_windowlefttree_xcls_lefttreemenu_finalize;
 #line 5191 "WindowLeftTree.vala.c"
 }
 
 
 static void xcls_windowlefttree_xcls_lefttreemenu_instance_init (Xcls_WindowLeftTreeXcls_LeftTreeMenu * self) {
-#line 1165 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1165 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->priv = XCLS_WINDOWLEFTTREE_XCLS_LEFTTREEMENU_GET_PRIVATE (self);
 #line 5198 "WindowLeftTree.vala.c"
 }
@@ -5200,13 +5200,13 @@ static void xcls_windowlefttree_xcls_lefttreemenu_instance_init (Xcls_WindowLeft
 
 static void xcls_windowlefttree_xcls_lefttreemenu_finalize (GObject* obj) {
 	Xcls_WindowLeftTreeXcls_LeftTreeMenu * self;
-#line 1165 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1165 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_WINDOWLEFTTREE_TYPE_XCLS_LEFTTREEMENU, Xcls_WindowLeftTreeXcls_LeftTreeMenu);
-#line 1167 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1167 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (self->el);
-#line 1168 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1168 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1165 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1165 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	G_OBJECT_CLASS (xcls_windowlefttree_xcls_lefttreemenu_parent_class)->finalize (obj);
 #line 5212 "WindowLeftTree.vala.c"
 }
@@ -5227,20 +5227,20 @@ GType xcls_windowlefttree_xcls_lefttreemenu_get_type (void) {
 static void __lambda39_ (Xcls_WindowLeftTreeXcls_MenuItem7* self) {
 	Xcls_WindowLeftTree* _tmp0_;
 	Xcls_WindowLeftTreeXcls_model* _tmp1_;
-#line 1231 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1231 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_print ("ACTIVATE?");
-#line 1234 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1234 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp0_ = self->priv->_this;
-#line 1234 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1234 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp1_ = _tmp0_->model;
-#line 1234 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1234 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	xcls_windowlefttree_xcls_model_deleteSelected (_tmp1_);
 #line 5239 "WindowLeftTree.vala.c"
 }
 
 
 static void ___lambda39__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self) {
-#line 1229 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1229 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	__lambda39_ (self);
 #line 5246 "WindowLeftTree.vala.c"
 }
@@ -5253,60 +5253,60 @@ Xcls_WindowLeftTreeXcls_MenuItem7* xcls_windowlefttree_xcls_menuitem7_construct 
 	Xcls_WindowLeftTree* _tmp2_;
 	GtkMenuItem* _tmp3_;
 	GtkMenuItem* _tmp4_;
-#line 1218 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1218 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 1218 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1218 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self = (Xcls_WindowLeftTreeXcls_MenuItem7*) g_object_new (object_type, NULL);
-#line 1220 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1220 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp0_ = (GtkMenuItem*) gtk_menu_item_new ();
-#line 1220 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1220 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_object_ref_sink (_tmp0_);
-#line 1220 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1220 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (self->el);
-#line 1220 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1220 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->el = _tmp0_;
-#line 1221 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1221 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp1_ = _owner;
-#line 1221 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1221 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp2_ = _g_object_ref0 (_tmp1_);
-#line 1221 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1221 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1221 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1221 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->priv->_this = _tmp2_;
-#line 1226 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1226 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp3_ = self->el;
-#line 1226 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1226 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	gtk_menu_item_set_label (_tmp3_, "Delete Element");
-#line 1229 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1229 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp4_ = self->el;
-#line 1229 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1229 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_signal_connect_object (_tmp4_, "activate", (GCallback) ___lambda39__gtk_menu_item_activate, self, 0);
-#line 1218 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1218 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	return self;
 #line 5287 "WindowLeftTree.vala.c"
 }
 
 
 Xcls_WindowLeftTreeXcls_MenuItem7* xcls_windowlefttree_xcls_menuitem7_new (Xcls_WindowLeftTree* _owner) {
-#line 1218 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1218 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	return xcls_windowlefttree_xcls_menuitem7_construct (XCLS_WINDOWLEFTTREE_TYPE_XCLS_MENUITEM7, _owner);
 #line 5294 "WindowLeftTree.vala.c"
 }
 
 
 static void xcls_windowlefttree_xcls_menuitem7_class_init (Xcls_WindowLeftTreeXcls_MenuItem7Class * klass) {
-#line 1209 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1209 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	xcls_windowlefttree_xcls_menuitem7_parent_class = g_type_class_peek_parent (klass);
-#line 1209 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1209 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_WindowLeftTreeXcls_MenuItem7Private));
-#line 1209 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1209 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_windowlefttree_xcls_menuitem7_finalize;
 #line 5305 "WindowLeftTree.vala.c"
 }
 
 
 static void xcls_windowlefttree_xcls_menuitem7_instance_init (Xcls_WindowLeftTreeXcls_MenuItem7 * self) {
-#line 1209 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1209 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->priv = XCLS_WINDOWLEFTTREE_XCLS_MENUITEM7_GET_PRIVATE (self);
 #line 5312 "WindowLeftTree.vala.c"
 }
@@ -5314,13 +5314,13 @@ static void xcls_windowlefttree_xcls_menuitem7_instance_init (Xcls_WindowLeftTre
 
 static void xcls_windowlefttree_xcls_menuitem7_finalize (GObject* obj) {
 	Xcls_WindowLeftTreeXcls_MenuItem7 * self;
-#line 1209 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1209 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_WINDOWLEFTTREE_TYPE_XCLS_MENUITEM7, Xcls_WindowLeftTreeXcls_MenuItem7);
-#line 1211 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1211 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (self->el);
-#line 1212 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1212 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1209 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1209 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	G_OBJECT_CLASS (xcls_windowlefttree_xcls_menuitem7_parent_class)->finalize (obj);
 #line 5326 "WindowLeftTree.vala.c"
 }
@@ -5351,42 +5351,42 @@ static void __lambda40_ (Xcls_WindowLeftTreeXcls_MenuItem8* self) {
 	Xcls_WindowLeftTree* _tmp9_;
 	JsRenderNode* _tmp10_ = NULL;
 	JsRenderNode* _tmp11_;
-#line 1278 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1278 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp0_ = DialogSaveTemplate;
-#line 1278 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1278 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp1_ = self->priv->_this;
-#line 1278 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1278 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp2_ = _tmp1_->el;
-#line 1278 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1278 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp3_ = gtk_widget_get_toplevel ((GtkWidget*) _tmp2_);
-#line 1278 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1278 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp4_ = self->priv->_this;
-#line 1278 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1278 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp5_ = _tmp4_->model;
-#line 1278 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1278 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp6_ = _tmp5_->file;
-#line 1278 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1278 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp7_ = js_render_js_render_palete (_tmp6_);
-#line 1278 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1278 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp8_ = _tmp7_;
-#line 1278 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1278 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp9_ = self->priv->_this;
-#line 1278 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1278 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp10_ = xcls_windowlefttree_getActiveElement (_tmp9_);
-#line 1278 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1278 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp11_ = _tmp10_;
-#line 1278 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1278 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	xcls_dialogsavetemplate_show (G_TYPE_CHECK_INSTANCE_CAST (_tmp3_, GTK_TYPE_WINDOW, GtkWindow), _tmp8_, _tmp11_);
-#line 1278 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1278 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (_tmp11_);
-#line 1278 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1278 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (_tmp8_);
 #line 5385 "WindowLeftTree.vala.c"
 }
 
 
 static void ___lambda40__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self) {
-#line 1276 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1276 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	__lambda40_ (self);
 #line 5392 "WindowLeftTree.vala.c"
 }
@@ -5399,60 +5399,60 @@ Xcls_WindowLeftTreeXcls_MenuItem8* xcls_windowlefttree_xcls_menuitem8_construct 
 	Xcls_WindowLeftTree* _tmp2_;
 	GtkMenuItem* _tmp3_;
 	GtkMenuItem* _tmp4_;
-#line 1265 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1265 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 1265 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1265 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self = (Xcls_WindowLeftTreeXcls_MenuItem8*) g_object_new (object_type, NULL);
-#line 1267 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1267 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp0_ = (GtkMenuItem*) gtk_menu_item_new ();
-#line 1267 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1267 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_object_ref_sink (_tmp0_);
-#line 1267 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1267 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (self->el);
-#line 1267 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1267 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->el = _tmp0_;
-#line 1268 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1268 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp1_ = _owner;
-#line 1268 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1268 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp2_ = _g_object_ref0 (_tmp1_);
-#line 1268 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1268 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1268 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1268 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->priv->_this = _tmp2_;
-#line 1273 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1273 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp3_ = self->el;
-#line 1273 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1273 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	gtk_menu_item_set_label (_tmp3_, "Save as Template");
-#line 1276 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1276 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_tmp4_ = self->el;
-#line 1276 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1276 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_signal_connect_object (_tmp4_, "activate", (GCallback) ___lambda40__gtk_menu_item_activate, self, 0);
-#line 1265 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1265 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	return self;
 #line 5433 "WindowLeftTree.vala.c"
 }
 
 
 Xcls_WindowLeftTreeXcls_MenuItem8* xcls_windowlefttree_xcls_menuitem8_new (Xcls_WindowLeftTree* _owner) {
-#line 1265 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1265 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	return xcls_windowlefttree_xcls_menuitem8_construct (XCLS_WINDOWLEFTTREE_TYPE_XCLS_MENUITEM8, _owner);
 #line 5440 "WindowLeftTree.vala.c"
 }
 
 
 static void xcls_windowlefttree_xcls_menuitem8_class_init (Xcls_WindowLeftTreeXcls_MenuItem8Class * klass) {
-#line 1256 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1256 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	xcls_windowlefttree_xcls_menuitem8_parent_class = g_type_class_peek_parent (klass);
-#line 1256 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1256 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_WindowLeftTreeXcls_MenuItem8Private));
-#line 1256 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1256 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_windowlefttree_xcls_menuitem8_finalize;
 #line 5451 "WindowLeftTree.vala.c"
 }
 
 
 static void xcls_windowlefttree_xcls_menuitem8_instance_init (Xcls_WindowLeftTreeXcls_MenuItem8 * self) {
-#line 1256 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1256 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->priv = XCLS_WINDOWLEFTTREE_XCLS_MENUITEM8_GET_PRIVATE (self);
 #line 5458 "WindowLeftTree.vala.c"
 }
@@ -5460,13 +5460,13 @@ static void xcls_windowlefttree_xcls_menuitem8_instance_init (Xcls_WindowLeftTre
 
 static void xcls_windowlefttree_xcls_menuitem8_finalize (GObject* obj) {
 	Xcls_WindowLeftTreeXcls_MenuItem8 * self;
-#line 1256 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1256 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_WINDOWLEFTTREE_TYPE_XCLS_MENUITEM8, Xcls_WindowLeftTreeXcls_MenuItem8);
-#line 1258 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1258 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (self->el);
-#line 1259 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1259 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1256 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 1256 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	G_OBJECT_CLASS (xcls_windowlefttree_xcls_menuitem8_parent_class)->finalize (obj);
 #line 5472 "WindowLeftTree.vala.c"
 }
@@ -5485,22 +5485,22 @@ GType xcls_windowlefttree_xcls_menuitem8_get_type (void) {
 
 
 static void xcls_windowlefttree_class_init (Xcls_WindowLeftTreeClass * klass) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	xcls_windowlefttree_parent_class = g_type_class_peek_parent (klass);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_WindowLeftTreePrivate));
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_windowlefttree_finalize;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_signal_new ("after_node_change", TYPE_XCLS_WINDOWLEFTTREE, G_SIGNAL_RUN_LAST, 0, NULL, NULL, g_cclosure_marshal_VOID__OBJECT, G_TYPE_NONE, 1, JS_RENDER_TYPE_NODE);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	g_signal_new ("before_node_change", TYPE_XCLS_WINDOWLEFTTREE, G_SIGNAL_RUN_LAST, 0, NULL, NULL, g_cclosure_marshal_VOID__OBJECT, G_TYPE_NONE, 1, JS_RENDER_TYPE_NODE);
 #line 5499 "WindowLeftTree.vala.c"
 }
 
 
 static void xcls_windowlefttree_instance_init (Xcls_WindowLeftTree * self) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self->priv = XCLS_WINDOWLEFTTREE_GET_PRIVATE (self);
 #line 5506 "WindowLeftTree.vala.c"
 }
@@ -5508,21 +5508,21 @@ static void xcls_windowlefttree_instance_init (Xcls_WindowLeftTree * self) {
 
 static void xcls_windowlefttree_finalize (GObject* obj) {
 	Xcls_WindowLeftTree * self;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, TYPE_XCLS_WINDOWLEFTTREE, Xcls_WindowLeftTree);
-#line 22 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 22 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (self->el);
-#line 23 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 23 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 25 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 25 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (self->view);
-#line 26 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 26 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (self->model);
-#line 27 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 27 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (self->renderer);
-#line 28 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 28 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	_g_object_unref0 (self->LeftTreeMenu);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftTree.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftTree.vala"
 	G_OBJECT_CLASS (xcls_windowlefttree_parent_class)->finalize (obj);
 #line 5528 "WindowLeftTree.vala.c"
 }

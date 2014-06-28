@@ -212,51 +212,51 @@ ProjectProject* project_project_construct (GType object_type, const gchar* path)
 	const gchar* _tmp2_;
 	gint _tmp3_;
 	gint _tmp4_;
-#line 42 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 42 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_return_val_if_fail (path != NULL, NULL);
-#line 42 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 42 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	self = (ProjectProject*) g_object_new (object_type, NULL);
-#line 46 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 46 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	self->priv->is_scanned = FALSE;
-#line 47 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 47 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp0_ = gee_hash_map_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, g_free, G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, g_free, NULL, NULL, NULL);
-#line 47 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 47 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_g_object_unref0 (self->paths);
-#line 47 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 47 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	self->paths = _tmp0_;
-#line 48 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 48 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp1_ = gee_hash_map_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, g_free, JS_RENDER_TYPE_JS_RENDER, (GBoxedCopyFunc) g_object_ref, g_object_unref, NULL, NULL, NULL);
-#line 48 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 48 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_g_object_unref0 (self->files);
-#line 48 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 48 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	self->files = _tmp1_;
-#line 51 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 51 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp2_ = path;
-#line 51 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 51 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp3_ = strlen (_tmp2_);
-#line 51 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 51 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp4_ = _tmp3_;
-#line 51 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 51 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	if (_tmp4_ > 0) {
 #line 242 "Project.vala.c"
 		GeeHashMap* _tmp5_;
 		const gchar* _tmp6_;
-#line 52 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 52 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp5_ = self->paths;
-#line 52 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 52 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp6_ = path;
-#line 52 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 52 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		gee_abstract_map_set ((GeeAbstractMap*) _tmp5_, _tmp6_, "dir");
 #line 251 "Project.vala.c"
 	}
-#line 42 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 42 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	return self;
 #line 255 "Project.vala.c"
 }
 
 
 ProjectProject* project_project_new (const gchar* path) {
-#line 42 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 42 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	return project_project_construct (PROJECT_TYPE_PROJECT, path);
 #line 262 "Project.vala.c"
 }
@@ -276,81 +276,81 @@ void project_project_loadAll (gboolean force) {
 	gboolean _tmp9_ = FALSE;
 	GeeHashMap* _tmp11_;
 	GError * _inner_error_ = NULL;
-#line 64 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 64 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp1_ = project_projects_loaded;
-#line 64 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 64 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	if (_tmp1_) {
 #line 284 "Project.vala.c"
 		gboolean _tmp2_;
-#line 64 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 64 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp2_ = force;
-#line 64 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 64 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp0_ = !_tmp2_;
 #line 290 "Project.vala.c"
 	} else {
-#line 64 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 64 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp0_ = FALSE;
 #line 294 "Project.vala.c"
 	}
-#line 64 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 64 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp3_ = _tmp0_;
-#line 64 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 64 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	if (_tmp3_) {
-#line 65 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 65 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		return;
 #line 302 "Project.vala.c"
 	}
-#line 68 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 68 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp4_ = g_get_home_dir ();
-#line 68 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 68 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp5_ = g_strconcat (_tmp4_, "/.Builder", NULL);
-#line 68 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 68 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	dirname = _tmp5_;
-#line 69 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 69 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp6_ = dirname;
-#line 69 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 69 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp7_ = g_file_new_for_path (_tmp6_);
-#line 69 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 69 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	dir = _tmp7_;
-#line 70 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 70 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp8_ = dir;
-#line 70 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 70 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp9_ = g_file_query_exists (_tmp8_, NULL);
-#line 70 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 70 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	if (!_tmp9_) {
 #line 322 "Project.vala.c"
 		GFile* _tmp10_;
-#line 71 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 71 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp10_ = dir;
-#line 71 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 71 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		g_file_make_directory (_tmp10_, NULL, &_inner_error_);
-#line 71 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 71 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		if (_inner_error_ != NULL) {
-#line 71 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 71 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_g_object_unref0 (dir);
-#line 71 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 71 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_g_free0 (dirname);
-#line 71 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 71 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			g_critical ("file %s: line %d: uncaught error: %s (%s, %d)", __FILE__, __LINE__, _inner_error_->message, g_quark_to_string (_inner_error_->domain), _inner_error_->code);
-#line 71 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 71 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			g_clear_error (&_inner_error_);
-#line 71 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 71 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			return;
 #line 340 "Project.vala.c"
 		}
-#line 72 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 72 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_g_object_unref0 (dir);
-#line 72 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 72 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_g_free0 (dirname);
-#line 72 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 72 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		return;
 #line 348 "Project.vala.c"
 	}
-#line 74 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 74 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp11_ = gee_hash_map_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, g_free, PROJECT_TYPE_PROJECT, (GBoxedCopyFunc) g_object_ref, g_object_unref, NULL, NULL, NULL);
-#line 74 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 74 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_g_object_unref0 (project_projects);
-#line 74 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 74 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	project_projects = _tmp11_;
 #line 356 "Project.vala.c"
 	{
@@ -358,22 +358,22 @@ void project_project_loadAll (gboolean force) {
 		GFileEnumerator* _tmp13_ = NULL;
 		GFileEnumerator* file_enum;
 		GFileInfo* next_file = NULL;
-#line 78 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 78 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp12_ = dir;
-#line 78 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 78 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp13_ = g_file_enumerate_children (_tmp12_, G_FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME, G_FILE_QUERY_INFO_NONE, NULL, &_inner_error_);
-#line 78 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 78 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		file_enum = _tmp13_;
-#line 78 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 78 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		if (_inner_error_ != NULL) {
-#line 78 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 78 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			if (_inner_error_->domain == PROJECT_ERROR) {
 #line 372 "Project.vala.c"
 				goto __catch5_project_error;
 			}
 			goto __finally5;
 		}
-#line 83 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		while (TRUE) {
 #line 379 "Project.vala.c"
 			GFileEnumerator* _tmp14_;
@@ -392,82 +392,82 @@ void project_project_loadAll (gboolean force) {
 			const gchar* _tmp26_;
 			gchar* _tmp27_;
 			gchar* _tmp28_;
-#line 83 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp14_ = file_enum;
-#line 83 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp15_ = g_file_enumerator_next_file (_tmp14_, NULL, &_inner_error_);
-#line 83 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp16_ = _tmp15_;
-#line 83 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			if (_inner_error_ != NULL) {
-#line 83 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				_g_object_unref0 (next_file);
-#line 83 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				_g_object_unref0 (file_enum);
-#line 83 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				if (_inner_error_->domain == PROJECT_ERROR) {
 #line 410 "Project.vala.c"
 					goto __catch5_project_error;
 				}
 				goto __finally5;
 			}
-#line 83 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_g_object_unref0 (next_file);
-#line 83 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			next_file = _tmp16_;
-#line 83 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp17_ = next_file;
-#line 83 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			if (!(_tmp17_ != NULL)) {
-#line 83 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				break;
 #line 425 "Project.vala.c"
 			}
-#line 84 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 84 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp18_ = next_file;
-#line 84 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 84 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp19_ = g_file_info_get_display_name (_tmp18_);
-#line 84 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 84 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp20_ = g_strdup (_tmp19_);
-#line 84 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 84 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			fn = _tmp20_;
-#line 85 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 85 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp21_ = fn;
-#line 85 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 85 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp22_ = g_regex_match_simple ("\\.json$", _tmp21_, 0, 0);
-#line 85 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 85 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			if (!_tmp22_) {
-#line 86 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 86 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				_g_free0 (fn);
-#line 86 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 86 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				continue;
 #line 445 "Project.vala.c"
 			}
-#line 88 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 88 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp23_ = dirname;
-#line 88 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 88 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp24_ = g_strconcat (_tmp23_, "/", NULL);
-#line 88 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 88 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp25_ = _tmp24_;
-#line 88 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 88 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp26_ = fn;
-#line 88 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 88 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp27_ = g_strconcat (_tmp25_, _tmp26_, NULL);
-#line 88 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 88 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp28_ = _tmp27_;
-#line 88 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 88 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			project_project_factoryFromFile (_tmp28_);
-#line 88 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 88 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_g_free0 (_tmp28_);
-#line 88 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 88 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_g_free0 (_tmp25_);
-#line 83 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_g_free0 (fn);
 #line 467 "Project.vala.c"
 		}
-#line 77 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_g_object_unref0 (next_file);
-#line 77 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_g_object_unref0 (file_enum);
 #line 473 "Project.vala.c"
 	}
@@ -475,34 +475,34 @@ void project_project_loadAll (gboolean force) {
 	__catch5_project_error:
 	{
 		GError* e = NULL;
-#line 77 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		e = _inner_error_;
-#line 77 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_inner_error_ = NULL;
-#line 91 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 91 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		g_print ("oops - something went wrong scanning the projects\n");
-#line 77 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_g_error_free0 (e);
 #line 487 "Project.vala.c"
 	}
 	__finally5:
-#line 77 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	if (_inner_error_ != NULL) {
-#line 77 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_g_object_unref0 (dir);
-#line 77 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_g_free0 (dirname);
-#line 77 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		g_critical ("file %s: line %d: uncaught error: %s (%s, %d)", __FILE__, __LINE__, _inner_error_->message, g_quark_to_string (_inner_error_->domain), _inner_error_->code);
-#line 77 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		g_clear_error (&_inner_error_);
-#line 77 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		return;
 #line 502 "Project.vala.c"
 	}
-#line 62 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 62 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_g_object_unref0 (dir);
-#line 62 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 62 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_g_free0 (dirname);
 #line 508 "Project.vala.c"
 }
@@ -515,17 +515,17 @@ GeeArrayList* project_project_allProjectsByName (void) {
 	GeeHashMap* _tmp1_;
 	GeeMapIterator* _tmp2_ = NULL;
 	GeeMapIterator* iter;
-#line 99 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 99 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp0_ = gee_array_list_new (PROJECT_TYPE_PROJECT, (GBoxedCopyFunc) g_object_ref, g_object_unref, NULL);
-#line 99 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 99 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	ret = _tmp0_;
-#line 100 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 100 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp1_ = project_projects;
-#line 100 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 100 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp2_ = gee_abstract_map_map_iterator ((GeeAbstractMap*) _tmp1_);
-#line 100 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 100 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	iter = _tmp2_;
-#line 101 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 101 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	while (TRUE) {
 #line 531 "Project.vala.c"
 		GeeMapIterator* _tmp3_;
@@ -534,35 +534,35 @@ GeeArrayList* project_project_allProjectsByName (void) {
 		GeeMapIterator* _tmp6_;
 		gpointer _tmp7_ = NULL;
 		ProjectProject* _tmp8_;
-#line 101 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 101 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp3_ = iter;
-#line 101 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 101 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp4_ = gee_map_iterator_next (_tmp3_);
-#line 101 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 101 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		if (!_tmp4_) {
-#line 101 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 101 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			break;
 #line 546 "Project.vala.c"
 		}
-#line 102 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 102 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp5_ = ret;
-#line 102 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 102 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp6_ = iter;
-#line 102 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 102 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp7_ = gee_map_iterator_get_value (_tmp6_);
-#line 102 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 102 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp8_ = (ProjectProject*) _tmp7_;
-#line 102 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 102 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		gee_abstract_collection_add ((GeeAbstractCollection*) _tmp5_, _tmp8_);
-#line 102 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 102 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_g_object_unref0 (_tmp8_);
 #line 560 "Project.vala.c"
 	}
-#line 105 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 105 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	result = ret;
-#line 105 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 105 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_g_object_unref0 (iter);
-#line 105 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 105 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	return result;
 #line 568 "Project.vala.c"
 }
@@ -573,44 +573,44 @@ ProjectProject* project_project_getProject (const gchar* name) {
 	GeeHashMap* _tmp0_;
 	const gchar* _tmp1_;
 	gboolean _tmp2_ = FALSE;
-#line 109 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 109 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_return_val_if_fail (name != NULL, NULL);
-#line 111 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 111 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp0_ = project_projects;
-#line 111 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 111 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp1_ = name;
-#line 111 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 111 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp2_ = gee_abstract_map_has_key ((GeeAbstractMap*) _tmp0_, _tmp1_);
-#line 111 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 111 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	if (_tmp2_) {
 #line 587 "Project.vala.c"
 		GeeHashMap* _tmp3_;
 		const gchar* _tmp4_;
 		gpointer _tmp5_ = NULL;
-#line 112 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 112 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp3_ = project_projects;
-#line 112 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 112 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp4_ = name;
-#line 112 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 112 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp5_ = gee_abstract_map_get ((GeeAbstractMap*) _tmp3_, _tmp4_);
-#line 112 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 112 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		result = (ProjectProject*) _tmp5_;
-#line 112 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 112 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		return result;
 #line 601 "Project.vala.c"
 	}
-#line 114 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 114 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	result = NULL;
-#line 114 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 114 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	return result;
 #line 607 "Project.vala.c"
 }
 
 
 static Block1Data* block1_data_ref (Block1Data* _data1_) {
-#line 118 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 118 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_atomic_int_inc (&_data1_->_ref_count_);
-#line 118 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 118 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	return _data1_;
 #line 616 "Project.vala.c"
 }
@@ -619,11 +619,11 @@ static Block1Data* block1_data_ref (Block1Data* _data1_) {
 static void block1_data_unref (void * _userdata_) {
 	Block1Data* _data1_;
 	_data1_ = (Block1Data*) _userdata_;
-#line 118 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 118 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	if (g_atomic_int_dec_and_test (&_data1_->_ref_count_)) {
-#line 118 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 118 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_g_object_unref0 (_data1_->proj);
-#line 118 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 118 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		g_slice_free (Block1Data, _data1_);
 #line 629 "Project.vala.c"
 	}
@@ -631,35 +631,35 @@ static void block1_data_unref (void * _userdata_) {
 
 
 static JsonNode* _vala_JsonNode_copy (JsonNode* self) {
-#line 123 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 123 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	return g_boxed_copy (json_node_get_type (), self);
 #line 637 "Project.vala.c"
 }
 
 
 static gpointer __vala_JsonNode_copy0 (gpointer self) {
-#line 123 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 123 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	return self ? _vala_JsonNode_copy (self) : NULL;
 #line 644 "Project.vala.c"
 }
 
 
 static void _vala_JsonNode_free (JsonNode* self) {
-#line 128 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 128 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_boxed_free (json_node_get_type (), self);
 #line 651 "Project.vala.c"
 }
 
 
 static JsonObject* _vala_JsonObject_copy (JsonObject* self) {
-#line 131 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	return g_boxed_copy (json_object_get_type (), self);
 #line 658 "Project.vala.c"
 }
 
 
 static gpointer __vala_JsonObject_copy0 (gpointer self) {
-#line 131 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	return self ? _vala_JsonObject_copy (self) : NULL;
 #line 665 "Project.vala.c"
 }
@@ -669,33 +669,33 @@ static void __lambda5_ (Block1Data* _data1_, JsonObject* sobj, const gchar* key,
 	ProjectProject* _tmp0_;
 	GeeHashMap* _tmp1_;
 	const gchar* _tmp2_;
-#line 141 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 141 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_return_if_fail (sobj != NULL);
-#line 141 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 141 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_return_if_fail (key != NULL);
-#line 141 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 141 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_return_if_fail (val != NULL);
-#line 142 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 142 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp0_ = _data1_->proj;
-#line 142 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 142 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp1_ = _tmp0_->paths;
-#line 142 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 142 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp2_ = key;
-#line 142 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 142 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	gee_abstract_map_set ((GeeAbstractMap*) _tmp1_, _tmp2_, "dir");
 #line 687 "Project.vala.c"
 }
 
 
 static void ___lambda5__json_object_foreach (JsonObject* object, const gchar* member_name, JsonNode* member_node, gpointer self) {
-#line 141 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 141 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	__lambda5_ (self, object, member_name, member_node);
 #line 694 "Project.vala.c"
 }
 
 
 static void _vala_JsonObject_free (JsonObject* self) {
-#line 118 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 118 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_boxed_free (json_object_get_type (), self);
 #line 701 "Project.vala.c"
 }
@@ -738,63 +738,63 @@ void project_project_factoryFromFile (const gchar* jsonfile) {
 	const gchar* _tmp38_;
 	ProjectProject* _tmp39_;
 	GError * _inner_error_ = NULL;
-#line 118 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 118 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_return_if_fail (jsonfile != NULL);
-#line 118 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 118 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_data1_ = g_slice_new0 (Block1Data);
-#line 118 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 118 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_data1_->_ref_count_ = 1;
-#line 121 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 121 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp0_ = json_parser_new ();
-#line 121 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 121 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	pa = _tmp0_;
-#line 122 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 122 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp1_ = jsonfile;
-#line 122 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 122 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	json_parser_load_from_file (pa, _tmp1_, &_inner_error_);
-#line 122 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 122 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	if (_inner_error_ != NULL) {
-#line 122 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 122 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_g_object_unref0 (pa);
-#line 122 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 122 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		block1_data_unref (_data1_);
-#line 122 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 122 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_data1_ = NULL;
-#line 122 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 122 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		g_critical ("file %s: line %d: uncaught error: %s (%s, %d)", __FILE__, __LINE__, _inner_error_->message, g_quark_to_string (_inner_error_->domain), _inner_error_->code);
-#line 122 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 122 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		g_clear_error (&_inner_error_);
-#line 122 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 122 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		return;
 #line 770 "Project.vala.c"
 	}
-#line 123 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 123 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp2_ = json_parser_get_root (pa);
-#line 123 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 123 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp3_ = __vala_JsonNode_copy0 (_tmp2_);
-#line 123 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 123 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	node = _tmp3_;
-#line 126 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 126 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp5_ = node;
-#line 126 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 126 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	if (_tmp5_ == NULL) {
-#line 126 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 126 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp4_ = TRUE;
 #line 784 "Project.vala.c"
 	} else {
 		JsonNode* _tmp6_;
 		JsonNodeType _tmp7_ = 0;
-#line 126 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 126 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp6_ = node;
-#line 126 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 126 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp7_ = json_node_get_node_type (_tmp6_);
-#line 126 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 126 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp4_ = _tmp7_ != JSON_NODE_OBJECT;
 #line 794 "Project.vala.c"
 	}
-#line 126 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 126 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp8_ = _tmp4_;
-#line 126 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 126 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	if (_tmp8_) {
 #line 800 "Project.vala.c"
 		const gchar* _tmp9_;
@@ -802,128 +802,128 @@ void project_project_factoryFromFile (const gchar* jsonfile) {
 		gchar* _tmp11_;
 		gchar* _tmp12_;
 		gchar* _tmp13_;
-#line 127 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 127 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp9_ = jsonfile;
-#line 127 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 127 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp10_ = g_strconcat ("SKIP ", _tmp9_, NULL);
-#line 127 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 127 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp11_ = _tmp10_;
-#line 127 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 127 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp12_ = g_strconcat (_tmp11_, " - invalid format?\n", NULL);
-#line 127 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 127 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp13_ = _tmp12_;
-#line 127 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 127 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		g_print ("%s", _tmp13_);
-#line 127 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 127 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_g_free0 (_tmp13_);
-#line 127 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 127 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_g_free0 (_tmp11_);
-#line 128 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 128 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		__vala_JsonNode_free0 (node);
-#line 128 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 128 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_g_object_unref0 (pa);
-#line 128 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 128 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		block1_data_unref (_data1_);
-#line 128 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 128 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_data1_ = NULL;
-#line 128 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 128 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		return;
 #line 832 "Project.vala.c"
 	}
-#line 131 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp14_ = node;
-#line 131 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp15_ = json_node_get_object (_tmp14_);
-#line 131 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp16_ = __vala_JsonObject_copy0 (_tmp15_);
-#line 131 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	obj = _tmp16_;
-#line 132 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 132 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp17_ = obj;
-#line 132 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 132 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp18_ = json_object_get_string_member (_tmp17_, "xtype");
-#line 132 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 132 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp19_ = g_strdup (_tmp18_);
-#line 132 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 132 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	xtype = _tmp19_;
-#line 134 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp20_ = xtype;
-#line 134 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp21_ = project_project_factory (_tmp20_, "");
-#line 134 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_data1_->proj = _tmp21_;
-#line 135 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 135 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp22_ = obj;
-#line 135 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 135 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp23_ = json_object_has_member (_tmp22_, "runhtml");
-#line 135 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 135 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	if (_tmp23_) {
 #line 862 "Project.vala.c"
 		ProjectProject* _tmp24_;
 		JsonObject* _tmp25_;
 		const gchar* _tmp26_ = NULL;
 		gchar* _tmp27_;
-#line 136 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 136 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp24_ = _data1_->proj;
-#line 136 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 136 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp25_ = obj;
-#line 136 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 136 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp26_ = json_object_get_string_member (_tmp25_, "runhtml");
-#line 136 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 136 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp27_ = g_strdup (_tmp26_);
-#line 136 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 136 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_g_free0 (_tmp24_->runhtml);
-#line 136 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 136 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp24_->runhtml = _tmp27_;
 #line 879 "Project.vala.c"
 	}
-#line 138 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 138 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp28_ = _data1_->proj;
-#line 138 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 138 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp29_ = obj;
-#line 138 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 138 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp30_ = json_object_get_string_member (_tmp29_, "name");
-#line 138 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 138 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp31_ = g_strdup (_tmp30_);
-#line 138 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 138 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_g_free0 (_tmp28_->name);
-#line 138 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 138 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp28_->name = _tmp31_;
-#line 140 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 140 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp32_ = obj;
-#line 140 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 140 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp33_ = json_object_get_object_member (_tmp32_, "paths");
-#line 140 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 140 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp34_ = __vala_JsonObject_copy0 (_tmp33_);
-#line 140 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 140 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	paths = _tmp34_;
-#line 141 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 141 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp35_ = paths;
-#line 141 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 141 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	json_object_foreach_member (_tmp35_, ___lambda5__json_object_foreach, _data1_);
-#line 144 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 144 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp36_ = project_projects;
-#line 144 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 144 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp37_ = _data1_->proj;
-#line 144 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 144 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp38_ = _tmp37_->name;
-#line 144 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 144 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp39_ = _data1_->proj;
-#line 144 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 144 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	gee_abstract_map_set ((GeeAbstractMap*) _tmp36_, _tmp38_, _tmp39_);
-#line 118 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 118 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	__vala_JsonObject_free0 (paths);
-#line 118 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 118 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_g_free0 (xtype);
-#line 118 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 118 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	__vala_JsonObject_free0 (obj);
-#line 118 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 118 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	__vala_JsonNode_free0 (node);
-#line 118 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 118 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_g_object_unref0 (pa);
-#line 118 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 118 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	block1_data_unref (_data1_);
-#line 118 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 118 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_data1_ = NULL;
 #line 929 "Project.vala.c"
 }
@@ -934,79 +934,79 @@ ProjectProject* project_project_factory (const gchar* xtype, const gchar* path) 
 	const gchar* _tmp0_;
 	const gchar* _tmp1_;
 	GQuark _tmp3_ = 0U;
-#line 150 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 150 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	static GQuark _tmp2_label0 = 0;
-#line 150 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 150 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	static GQuark _tmp2_label1 = 0;
 #line 942 "Project.vala.c"
 	GError* _tmp8_;
 	GError * _inner_error_ = NULL;
-#line 148 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 148 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_return_val_if_fail (xtype != NULL, NULL);
-#line 148 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 148 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_return_val_if_fail (path != NULL, NULL);
-#line 150 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 150 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp0_ = xtype;
-#line 150 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 150 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp1_ = _tmp0_;
-#line 150 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 150 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp3_ = (NULL == _tmp1_) ? 0 : g_quark_from_string (_tmp1_);
-#line 150 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 150 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	if (_tmp3_ == ((0 != _tmp2_label0) ? _tmp2_label0 : (_tmp2_label0 = g_quark_from_static_string ("Gtk")))) {
-#line 150 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 150 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		switch (0) {
 #line 959 "Project.vala.c"
 			default:
 			{
 				const gchar* _tmp4_;
 				ProjectGtk* _tmp5_;
-#line 152 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 152 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				_tmp4_ = path;
-#line 152 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 152 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				_tmp5_ = project_gtk_new (_tmp4_);
-#line 152 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 152 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				result = (ProjectProject*) _tmp5_;
-#line 152 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 152 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				return result;
 #line 972 "Project.vala.c"
 			}
 		}
 	} else if (_tmp3_ == ((0 != _tmp2_label1) ? _tmp2_label1 : (_tmp2_label1 = g_quark_from_static_string ("Roo")))) {
-#line 150 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 150 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		switch (0) {
 #line 978 "Project.vala.c"
 			default:
 			{
 				const gchar* _tmp6_;
 				ProjectRoo* _tmp7_;
-#line 154 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 154 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				_tmp6_ = path;
-#line 154 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 154 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				_tmp7_ = project_roo_new (_tmp6_);
-#line 154 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 154 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				result = (ProjectProject*) _tmp7_;
-#line 154 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 154 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				return result;
 #line 991 "Project.vala.c"
 			}
 		}
 	}
-#line 156 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 156 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp8_ = g_error_new_literal (PROJECT_ERROR, PROJECT_ERROR_INVALID_TYPE, "invalid project type");
-#line 156 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 156 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_inner_error_ = _tmp8_;
-#line 156 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 156 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_critical ("file %s: line %d: uncaught error: %s (%s, %d)", __FILE__, __LINE__, _inner_error_->message, g_quark_to_string (_inner_error_->domain), _inner_error_->code);
-#line 156 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 156 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_clear_error (&_inner_error_);
-#line 156 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 156 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	return NULL;
 #line 1005 "Project.vala.c"
 }
 
 
 void project_project_save (ProjectProject* self) {
-#line 184 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 184 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_return_if_fail (self != NULL);
 #line 1012 "Project.vala.c"
 }
@@ -1047,71 +1047,71 @@ gchar* project_project_toJSON (ProjectProject* self, gboolean show_all) {
 	gboolean _tmp43_;
 	JsonGenerator* _tmp46_;
 	gchar* _tmp47_ = NULL;
-#line 191 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 191 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 194 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 194 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp0_ = json_builder_new ();
-#line 194 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 194 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	builder = _tmp0_;
-#line 196 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 196 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp1_ = builder;
-#line 196 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 196 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	json_builder_begin_object (_tmp1_);
-#line 198 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 198 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp2_ = builder;
-#line 198 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 198 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	json_builder_set_member_name (_tmp2_, "name");
-#line 199 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 199 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp3_ = builder;
-#line 199 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 199 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp4_ = self->name;
-#line 199 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 199 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	json_builder_add_string_value (_tmp3_, _tmp4_);
-#line 202 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 202 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp5_ = builder;
-#line 202 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 202 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	json_builder_set_member_name (_tmp5_, "fn");
-#line 203 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp6_ = builder;
-#line 203 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp7_ = self->fn;
-#line 203 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	json_builder_add_string_value (_tmp6_, _tmp7_);
-#line 205 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp8_ = builder;
-#line 205 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	json_builder_set_member_name (_tmp8_, "xtype");
-#line 206 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp9_ = builder;
-#line 206 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp10_ = self->xtype;
-#line 206 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	json_builder_add_string_value (_tmp9_, _tmp10_);
-#line 208 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 208 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp11_ = builder;
-#line 208 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 208 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	json_builder_set_member_name (_tmp11_, "runhtml");
-#line 209 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 209 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp12_ = builder;
-#line 209 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 209 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp13_ = self->runhtml;
-#line 209 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 209 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	json_builder_add_string_value (_tmp12_, _tmp13_);
-#line 212 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 212 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp14_ = builder;
-#line 212 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 212 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	json_builder_set_member_name (_tmp14_, "paths");
-#line 215 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 215 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp15_ = builder;
-#line 215 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 215 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	json_builder_begin_array (_tmp15_);
-#line 218 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 218 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp16_ = self->paths;
-#line 218 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 218 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp17_ = gee_abstract_map_map_iterator ((GeeAbstractMap*) _tmp16_);
-#line 218 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 218 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	iter = _tmp17_;
-#line 219 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 219 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	while (TRUE) {
 #line 1117 "Project.vala.c"
 		GeeMapIterator* _tmp18_;
@@ -1120,37 +1120,37 @@ gchar* project_project_toJSON (ProjectProject* self, gboolean show_all) {
 		GeeMapIterator* _tmp21_;
 		gpointer _tmp22_ = NULL;
 		gchar* _tmp23_;
-#line 219 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 219 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp18_ = iter;
-#line 219 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 219 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp19_ = gee_map_iterator_next (_tmp18_);
-#line 219 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 219 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		if (!_tmp19_) {
-#line 219 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 219 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			break;
 #line 1132 "Project.vala.c"
 		}
-#line 220 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 220 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp20_ = builder;
-#line 220 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 220 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp21_ = iter;
-#line 220 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 220 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp22_ = gee_map_iterator_get_key (_tmp21_);
-#line 220 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 220 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp23_ = (gchar*) _tmp22_;
-#line 220 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 220 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		json_builder_add_string_value (_tmp20_, _tmp23_);
-#line 220 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 220 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_g_free0 (_tmp23_);
 #line 1146 "Project.vala.c"
 	}
-#line 222 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 222 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp24_ = builder;
-#line 222 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 222 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	json_builder_end_array (_tmp24_);
-#line 223 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 223 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp25_ = show_all;
-#line 223 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 223 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	if (_tmp25_) {
 #line 1156 "Project.vala.c"
 		JsonBuilder* _tmp26_;
@@ -1159,21 +1159,21 @@ gchar* project_project_toJSON (ProjectProject* self, gboolean show_all) {
 		GeeMapIterator* _tmp29_ = NULL;
 		GeeMapIterator* fiter;
 		JsonBuilder* _tmp36_;
-#line 224 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 224 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp26_ = builder;
-#line 224 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 224 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		json_builder_set_member_name (_tmp26_, "files");
-#line 225 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 225 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp27_ = builder;
-#line 225 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 225 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		json_builder_begin_array (_tmp27_);
-#line 226 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 226 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp28_ = self->files;
-#line 226 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 226 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp29_ = gee_abstract_map_map_iterator ((GeeAbstractMap*) _tmp28_);
-#line 226 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 226 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		fiter = _tmp29_;
-#line 227 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 227 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		while (TRUE) {
 #line 1179 "Project.vala.c"
 			GeeMapIterator* _tmp30_;
@@ -1182,90 +1182,90 @@ gchar* project_project_toJSON (ProjectProject* self, gboolean show_all) {
 			GeeMapIterator* _tmp33_;
 			gpointer _tmp34_ = NULL;
 			gchar* _tmp35_;
-#line 227 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 227 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp30_ = fiter;
-#line 227 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 227 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp31_ = gee_map_iterator_next (_tmp30_);
-#line 227 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 227 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			if (!_tmp31_) {
-#line 227 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 227 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				break;
 #line 1194 "Project.vala.c"
 			}
-#line 228 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 228 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp32_ = builder;
-#line 228 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 228 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp33_ = fiter;
-#line 228 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 228 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp34_ = gee_map_iterator_get_key (_tmp33_);
-#line 228 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 228 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp35_ = (gchar*) _tmp34_;
-#line 228 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 228 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			json_builder_add_string_value (_tmp32_, _tmp35_);
-#line 228 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 228 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_g_free0 (_tmp35_);
 #line 1208 "Project.vala.c"
 		}
-#line 232 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 232 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp36_ = builder;
-#line 232 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 232 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		json_builder_end_array (_tmp36_);
-#line 223 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 223 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_g_object_unref0 (fiter);
 #line 1216 "Project.vala.c"
 	}
-#line 236 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 236 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp37_ = builder;
-#line 236 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 236 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	json_builder_end_object (_tmp37_);
-#line 238 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp38_ = json_generator_new ();
-#line 238 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 238 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	generator = _tmp38_;
-#line 239 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp39_ = builder;
-#line 239 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp40_ = json_builder_get_root (_tmp39_);
-#line 239 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	root = _tmp40_;
-#line 240 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 240 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp41_ = generator;
-#line 240 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 240 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp42_ = root;
-#line 240 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 240 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	json_generator_set_root (_tmp41_, _tmp42_);
-#line 241 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 241 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp43_ = show_all;
-#line 241 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 241 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	if (_tmp43_) {
 #line 1242 "Project.vala.c"
 		JsonGenerator* _tmp44_;
 		JsonGenerator* _tmp45_;
-#line 242 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 242 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp44_ = generator;
-#line 242 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 242 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		json_generator_set_pretty (_tmp44_, TRUE);
-#line 243 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 243 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp45_ = generator;
-#line 243 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 243 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		json_generator_set_indent (_tmp45_, (guint) 4);
 #line 1253 "Project.vala.c"
 	}
-#line 246 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 246 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp46_ = generator;
-#line 246 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 246 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp47_ = json_generator_to_data (_tmp46_, NULL);
-#line 246 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 246 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	result = _tmp47_;
-#line 246 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 246 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	__vala_JsonNode_free0 (root);
-#line 246 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 246 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_g_object_unref0 (generator);
-#line 246 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 246 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_g_object_unref0 (iter);
-#line 246 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 246 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_g_object_unref0 (builder);
-#line 246 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 246 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	return result;
 #line 1271 "Project.vala.c"
 }
@@ -1277,50 +1277,50 @@ gchar* project_project_firstPath (ProjectProject* self) {
 	GeeMapIterator* _tmp1_ = NULL;
 	GeeMapIterator* iter;
 	gchar* _tmp6_;
-#line 250 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 250 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 252 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 252 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp0_ = self->paths;
-#line 252 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 252 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp1_ = gee_abstract_map_map_iterator ((GeeAbstractMap*) _tmp0_);
-#line 252 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 252 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	iter = _tmp1_;
-#line 253 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 253 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	while (TRUE) {
 #line 1291 "Project.vala.c"
 		GeeMapIterator* _tmp2_;
 		gboolean _tmp3_ = FALSE;
 		GeeMapIterator* _tmp4_;
 		gpointer _tmp5_ = NULL;
-#line 253 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 253 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp2_ = iter;
-#line 253 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 253 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp3_ = gee_map_iterator_next (_tmp2_);
-#line 253 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 253 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		if (!_tmp3_) {
-#line 253 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 253 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			break;
 #line 1304 "Project.vala.c"
 		}
-#line 254 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 254 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp4_ = iter;
-#line 254 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 254 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp5_ = gee_map_iterator_get_key (_tmp4_);
-#line 254 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 254 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		result = (gchar*) _tmp5_;
-#line 254 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 254 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_g_object_unref0 (iter);
-#line 254 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 254 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		return result;
 #line 1316 "Project.vala.c"
 	}
-#line 257 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 257 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp6_ = g_strdup ("");
-#line 257 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 257 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	result = _tmp6_;
-#line 257 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 257 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_g_object_unref0 (iter);
-#line 257 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 257 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	return result;
 #line 1326 "Project.vala.c"
 }
@@ -1332,15 +1332,15 @@ gchar* project_project_getName (ProjectProject* self) {
 	GeeMapIterator* _tmp1_ = NULL;
 	GeeMapIterator* iter;
 	gchar* _tmp9_;
-#line 261 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 261 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 263 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 263 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp0_ = self->paths;
-#line 263 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 263 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp1_ = gee_abstract_map_map_iterator ((GeeAbstractMap*) _tmp0_);
-#line 263 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 263 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	iter = _tmp1_;
-#line 264 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 264 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	while (TRUE) {
 #line 1346 "Project.vala.c"
 		GeeMapIterator* _tmp2_;
@@ -1350,43 +1350,43 @@ gchar* project_project_getName (ProjectProject* self) {
 		gchar* _tmp6_;
 		gchar* _tmp7_ = NULL;
 		gchar* _tmp8_;
-#line 264 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 264 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp2_ = iter;
-#line 264 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 264 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp3_ = gee_map_iterator_next (_tmp2_);
-#line 264 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 264 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		if (!_tmp3_) {
-#line 264 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 264 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			break;
 #line 1362 "Project.vala.c"
 		}
-#line 265 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 265 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp4_ = iter;
-#line 265 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 265 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp5_ = gee_map_iterator_get_key (_tmp4_);
-#line 265 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 265 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp6_ = (gchar*) _tmp5_;
-#line 265 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 265 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp7_ = g_path_get_basename (_tmp6_);
-#line 265 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 265 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp8_ = _tmp7_;
-#line 265 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 265 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_g_free0 (_tmp6_);
-#line 265 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 265 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		result = _tmp8_;
-#line 265 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 265 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_g_object_unref0 (iter);
-#line 265 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 265 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		return result;
 #line 1382 "Project.vala.c"
 	}
-#line 268 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 268 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp9_ = g_strdup ("");
-#line 268 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 268 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	result = _tmp9_;
-#line 268 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 268 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_g_object_unref0 (iter);
-#line 268 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 268 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	return result;
 #line 1392 "Project.vala.c"
 }
@@ -1397,23 +1397,23 @@ gchar* project_project_getName (ProjectProject* self) {
  * to tree - > should
  */
 static void _g_object_unref0_ (gpointer var) {
-#line 287 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 287 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	(var == NULL) ? NULL : (var = (g_object_unref (var), NULL));
 #line 1403 "Project.vala.c"
 }
 
 
 static void _g_list_free__g_object_unref0_ (GList* self) {
-#line 287 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 287 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_list_foreach (self, (GFunc) _g_object_unref0_, NULL);
-#line 287 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 287 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_list_free (self);
 #line 1412 "Project.vala.c"
 }
 
 
 static gpointer _g_object_ref0 (gpointer self) {
-#line 305 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 305 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	return self ? g_object_ref (self) : NULL;
 #line 1419 "Project.vala.c"
 }
@@ -1427,33 +1427,33 @@ static gint __lambda6_ (JsRenderJsRender* a, JsRenderJsRender* b) {
 	JsRenderJsRender* _tmp3_;
 	const gchar* _tmp4_;
 	gint _tmp5_;
-#line 324 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 324 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_return_val_if_fail (a != NULL, 0);
-#line 324 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 324 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_return_val_if_fail (b != NULL, 0);
-#line 325 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 325 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp1_ = a;
-#line 325 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 325 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp2_ = _tmp1_->path;
-#line 325 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 325 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp3_ = b;
-#line 325 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 325 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp4_ = _tmp3_->path;
-#line 325 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 325 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	if (g_strcmp0 (_tmp2_, _tmp4_) > 0) {
-#line 325 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 325 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp0_ = 1;
 #line 1447 "Project.vala.c"
 	} else {
-#line 325 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 325 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp0_ = -1;
 #line 1451 "Project.vala.c"
 	}
-#line 325 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 325 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp5_ = _tmp0_;
-#line 325 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 325 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	result = _tmp5_;
-#line 325 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 325 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	return result;
 #line 1459 "Project.vala.c"
 }
@@ -1462,7 +1462,7 @@ static gint __lambda6_ (JsRenderJsRender* a, JsRenderJsRender* b) {
 static gint ___lambda6__gcompare_func (gconstpointer a, gconstpointer b) {
 	gint result;
 	result = __lambda6_ (a, b);
-#line 324 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 324 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	return result;
 #line 1468 "Project.vala.c"
 }
@@ -1481,19 +1481,19 @@ GList* project_project_toTree (ProjectProject* self) {
 	GList* ret;
 	GeeHashMap* _tmp39_;
 	GeeMapIterator* _tmp40_ = NULL;
-#line 275 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 275 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 280 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 280 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp0_ = gee_hash_map_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, g_free, JS_RENDER_TYPE_JS_RENDER, (GBoxedCopyFunc) g_object_ref, g_object_unref, NULL, NULL, NULL);
-#line 280 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 280 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	files = _tmp0_;
-#line 282 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 282 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp1_ = self->files;
-#line 282 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 282 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp2_ = gee_abstract_map_map_iterator ((GeeAbstractMap*) _tmp1_);
-#line 282 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 282 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	fiter = _tmp2_;
-#line 283 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 283 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	while (TRUE) {
 #line 1499 "Project.vala.c"
 		GeeMapIterator* _tmp3_;
@@ -1507,70 +1507,70 @@ GList* project_project_toTree (ProjectProject* self) {
 		const gchar* _tmp10_;
 		gint _tmp11_;
 		gint _tmp12_;
-#line 283 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 283 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp3_ = fiter;
-#line 283 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 283 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp4_ = gee_map_iterator_next (_tmp3_);
-#line 283 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 283 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		if (!_tmp4_) {
-#line 283 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 283 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			break;
 #line 1519 "Project.vala.c"
 		}
-#line 284 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 284 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp5_ = fiter;
-#line 284 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 284 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp6_ = gee_map_iterator_get_value (_tmp5_);
-#line 284 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 284 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		fo = (JsRenderJsRender*) _tmp6_;
-#line 286 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 286 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp7_ = fo;
-#line 286 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 286 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp7_->hasParent = FALSE;
-#line 287 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 287 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp8_ = fo;
-#line 287 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 287 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		__g_list_free__g_object_unref0_0 (_tmp8_->cn);
-#line 287 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 287 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp8_->cn = NULL;
-#line 289 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 289 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp9_ = fo;
-#line 289 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 289 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp10_ = _tmp9_->fullname;
-#line 289 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 289 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp11_ = strlen (_tmp10_);
-#line 289 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 289 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp12_ = _tmp11_;
-#line 289 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 289 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		if (_tmp12_ > 0) {
 #line 1547 "Project.vala.c"
 			GeeHashMap* _tmp13_;
 			JsRenderJsRender* _tmp14_;
 			const gchar* _tmp15_;
 			JsRenderJsRender* _tmp16_;
-#line 290 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 290 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp13_ = files;
-#line 290 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 290 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp14_ = fo;
-#line 290 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 290 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp15_ = _tmp14_->fullname;
-#line 290 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 290 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp16_ = fo;
-#line 290 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 290 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			gee_abstract_map_set ((GeeAbstractMap*) _tmp13_, _tmp15_, _tmp16_);
 #line 1562 "Project.vala.c"
 		}
-#line 283 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 283 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_g_object_unref0 (fo);
 #line 1566 "Project.vala.c"
 	}
-#line 294 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp17_ = files;
-#line 294 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp18_ = gee_abstract_map_map_iterator ((GeeAbstractMap*) _tmp17_);
-#line 294 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 294 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	iter = _tmp18_;
-#line 295 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 295 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	while (TRUE) {
 #line 1576 "Project.vala.c"
 		GeeMapIterator* _tmp19_;
@@ -1595,99 +1595,99 @@ GList* project_project_toTree (ProjectProject* self) {
 		JsRenderJsRender* _tmp36_;
 		JsRenderJsRender* _tmp37_;
 		JsRenderJsRender* _tmp38_;
-#line 295 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 295 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp19_ = iter;
-#line 295 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 295 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp20_ = gee_map_iterator_next (_tmp19_);
-#line 295 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 295 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		if (!_tmp20_) {
-#line 295 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 295 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			break;
 #line 1607 "Project.vala.c"
 		}
-#line 296 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 296 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp21_ = iter;
-#line 296 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 296 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp22_ = gee_map_iterator_get_value (_tmp21_);
-#line 296 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 296 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		f = (JsRenderJsRender*) _tmp22_;
-#line 298 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 298 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp23_ = f;
-#line 298 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 298 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp24_ = _tmp23_->parent;
-#line 298 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 298 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp25_ = g_strdup (_tmp24_);
-#line 298 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 298 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		par = _tmp25_;
-#line 299 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 299 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp26_ = par;
-#line 299 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 299 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp27_ = strlen (_tmp26_);
-#line 299 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 299 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp28_ = _tmp27_;
-#line 299 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 299 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		if (_tmp28_ < 1) {
-#line 300 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 300 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_g_free0 (par);
-#line 300 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 300 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_g_object_unref0 (f);
-#line 300 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 300 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			continue;
 #line 1637 "Project.vala.c"
 		}
-#line 302 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 302 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp29_ = files;
-#line 302 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 302 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp30_ = par;
-#line 302 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 302 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp31_ = gee_abstract_map_has_key ((GeeAbstractMap*) _tmp29_, _tmp30_);
-#line 302 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 302 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		if (!_tmp31_) {
-#line 303 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 303 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_g_free0 (par);
-#line 303 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 303 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_g_object_unref0 (f);
-#line 303 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 303 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			continue;
 #line 1653 "Project.vala.c"
 		}
-#line 305 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 305 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp32_ = files;
-#line 305 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 305 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp33_ = par;
-#line 305 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 305 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp34_ = gee_abstract_map_get ((GeeAbstractMap*) _tmp32_, _tmp33_);
-#line 305 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 305 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp35_ = (JsRenderJsRender*) _tmp34_;
-#line 305 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 305 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp36_ = f;
-#line 305 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 305 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp37_ = _g_object_ref0 (_tmp36_);
-#line 305 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 305 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp35_->cn = g_list_append (_tmp35_->cn, _tmp37_);
-#line 305 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 305 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_g_object_unref0 (_tmp35_);
-#line 306 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 306 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp38_ = f;
-#line 306 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 306 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp38_->hasParent = TRUE;
-#line 295 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 295 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_g_free0 (par);
-#line 295 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 295 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_g_object_unref0 (f);
 #line 1679 "Project.vala.c"
 	}
-#line 310 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 310 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	ret = NULL;
-#line 311 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 311 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp39_ = files;
-#line 311 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 311 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp40_ = gee_abstract_map_map_iterator ((GeeAbstractMap*) _tmp39_);
-#line 311 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 311 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_g_object_unref0 (iter);
-#line 311 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 311 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	iter = _tmp40_;
-#line 312 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 312 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	while (TRUE) {
 #line 1693 "Project.vala.c"
 		GeeMapIterator* _tmp41_;
@@ -1701,70 +1701,70 @@ GList* project_project_toTree (ProjectProject* self) {
 		JsRenderJsRender* _tmp48_;
 		const gchar* _tmp49_;
 		gboolean _tmp50_ = FALSE;
-#line 312 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 312 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp41_ = iter;
-#line 312 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 312 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp42_ = gee_map_iterator_next (_tmp41_);
-#line 312 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 312 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		if (!_tmp42_) {
-#line 312 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 312 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			break;
 #line 1713 "Project.vala.c"
 		}
-#line 313 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 313 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp43_ = iter;
-#line 313 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 313 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp44_ = gee_map_iterator_get_value (_tmp43_);
-#line 313 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 313 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		f = (JsRenderJsRender*) _tmp44_;
-#line 316 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 316 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp45_ = f;
-#line 316 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 316 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp46_ = _tmp45_->hasParent;
-#line 316 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 316 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		if (_tmp46_) {
-#line 317 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 317 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_g_object_unref0 (f);
-#line 317 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 317 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			continue;
 #line 1731 "Project.vala.c"
 		}
-#line 319 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 319 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp47_ = files;
-#line 319 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 319 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp48_ = f;
-#line 319 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 319 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp49_ = _tmp48_->fullname;
-#line 319 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 319 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp50_ = gee_abstract_map_has_key ((GeeAbstractMap*) _tmp47_, _tmp49_);
-#line 319 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 319 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		if (_tmp50_) {
 #line 1743 "Project.vala.c"
 			JsRenderJsRender* _tmp51_;
 			JsRenderJsRender* _tmp52_;
-#line 321 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 321 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp51_ = f;
-#line 321 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 321 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp52_ = _g_object_ref0 (_tmp51_);
-#line 321 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 321 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			ret = g_list_append (ret, _tmp52_);
 #line 1752 "Project.vala.c"
 		}
-#line 312 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 312 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_g_object_unref0 (f);
 #line 1756 "Project.vala.c"
 	}
-#line 324 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 324 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	ret = g_list_sort (ret, ___lambda6__gcompare_func);
-#line 331 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 331 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	result = ret;
-#line 331 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 331 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_g_object_unref0 (iter);
-#line 331 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 331 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_g_object_unref0 (fiter);
-#line 331 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 331 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_g_object_unref0 (files);
-#line 331 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 331 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	return result;
 #line 1770 "Project.vala.c"
 }
@@ -1775,17 +1775,17 @@ JsRenderJsRender* project_project_getByName (ProjectProject* self, const gchar* 
 	GeeHashMap* _tmp0_;
 	GeeMapIterator* _tmp1_ = NULL;
 	GeeMapIterator* fiter;
-#line 336 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 336 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 336 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 336 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_return_val_if_fail (name != NULL, NULL);
-#line 339 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 339 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp0_ = self->files;
-#line 339 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 339 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp1_ = gee_abstract_map_map_iterator ((GeeAbstractMap*) _tmp0_);
-#line 339 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 339 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	fiter = _tmp1_;
-#line 340 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 340 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	while (TRUE) {
 #line 1791 "Project.vala.c"
 		GeeMapIterator* _tmp2_;
@@ -1796,47 +1796,47 @@ JsRenderJsRender* project_project_getByName (ProjectProject* self, const gchar* 
 		JsRenderJsRender* _tmp6_;
 		const gchar* _tmp7_;
 		const gchar* _tmp8_;
-#line 340 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 340 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp2_ = fiter;
-#line 340 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 340 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp3_ = gee_map_iterator_next (_tmp2_);
-#line 340 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 340 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		if (!_tmp3_) {
-#line 340 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 340 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			break;
 #line 1808 "Project.vala.c"
 		}
-#line 342 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 342 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp4_ = fiter;
-#line 342 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 342 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp5_ = gee_map_iterator_get_value (_tmp4_);
-#line 342 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 342 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		f = (JsRenderJsRender*) _tmp5_;
-#line 346 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 346 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp6_ = f;
-#line 346 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 346 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp7_ = _tmp6_->name;
-#line 346 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 346 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp8_ = name;
-#line 346 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 346 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		if (g_strcmp0 (_tmp7_, _tmp8_) == 0) {
-#line 347 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 347 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			result = f;
-#line 347 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 347 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_g_object_unref0 (fiter);
-#line 347 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 347 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			return result;
 #line 1830 "Project.vala.c"
 		}
-#line 340 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 340 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_g_object_unref0 (f);
 #line 1834 "Project.vala.c"
 	}
-#line 350 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 350 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	result = NULL;
-#line 350 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 350 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_g_object_unref0 (fiter);
-#line 350 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 350 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	return result;
 #line 1842 "Project.vala.c"
 }
@@ -1847,17 +1847,17 @@ JsRenderJsRender* project_project_getById (ProjectProject* self, const gchar* id
 	GeeHashMap* _tmp0_;
 	GeeMapIterator* _tmp1_ = NULL;
 	GeeMapIterator* fiter;
-#line 353 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 353 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 353 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 353 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_return_val_if_fail (id != NULL, NULL);
-#line 356 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 356 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp0_ = self->files;
-#line 356 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 356 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp1_ = gee_abstract_map_map_iterator ((GeeAbstractMap*) _tmp0_);
-#line 356 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 356 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	fiter = _tmp1_;
-#line 357 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 357 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	while (TRUE) {
 #line 1863 "Project.vala.c"
 		GeeMapIterator* _tmp2_;
@@ -1868,47 +1868,47 @@ JsRenderJsRender* project_project_getById (ProjectProject* self, const gchar* id
 		JsRenderJsRender* _tmp6_;
 		const gchar* _tmp7_;
 		const gchar* _tmp8_;
-#line 357 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 357 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp2_ = fiter;
-#line 357 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 357 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp3_ = gee_map_iterator_next (_tmp2_);
-#line 357 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 357 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		if (!_tmp3_) {
-#line 357 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 357 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			break;
 #line 1880 "Project.vala.c"
 		}
-#line 359 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 359 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp4_ = fiter;
-#line 359 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 359 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp5_ = gee_map_iterator_get_value (_tmp4_);
-#line 359 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 359 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		f = (JsRenderJsRender*) _tmp5_;
-#line 363 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 363 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp6_ = f;
-#line 363 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 363 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp7_ = _tmp6_->id;
-#line 363 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 363 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp8_ = id;
-#line 363 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 363 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		if (g_strcmp0 (_tmp7_, _tmp8_) == 0) {
-#line 364 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 364 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			result = f;
-#line 364 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 364 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_g_object_unref0 (fiter);
-#line 364 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 364 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			return result;
 #line 1902 "Project.vala.c"
 		}
-#line 357 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 357 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_g_object_unref0 (f);
 #line 1906 "Project.vala.c"
 	}
-#line 367 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 367 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	result = NULL;
-#line 367 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 367 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_g_object_unref0 (fiter);
-#line 367 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 367 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	return result;
 #line 1914 "Project.vala.c"
 }
@@ -1921,25 +1921,25 @@ JsRenderJsRender* project_project_loadFileOnly (ProjectProject* self, const gcha
 	gchar* xt;
 	const gchar* _tmp2_;
 	JsRenderJsRender* _tmp3_ = NULL;
-#line 370 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 370 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 370 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 370 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_return_val_if_fail (path != NULL, NULL);
-#line 372 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 372 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp0_ = self->xtype;
-#line 372 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 372 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp1_ = g_strdup (_tmp0_);
-#line 372 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 372 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	xt = _tmp1_;
-#line 373 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 373 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp2_ = path;
-#line 373 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 373 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp3_ = js_render_js_render_factory (xt, self, _tmp2_);
-#line 373 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 373 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	result = _tmp3_;
-#line 373 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 373 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_g_free0 (xt);
-#line 373 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 373 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	return result;
 #line 1945 "Project.vala.c"
 }
@@ -1950,23 +1950,23 @@ JsRenderJsRender* project_project_create (ProjectProject* self, const gchar* fil
 	const gchar* _tmp0_;
 	JsRenderJsRender* _tmp1_ = NULL;
 	JsRenderJsRender* ret;
-#line 377 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 377 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_return_val_if_fail (filename != NULL, NULL);
-#line 379 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 379 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp0_ = filename;
-#line 379 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 379 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp1_ = project_project_loadFileOnly (self, _tmp0_);
-#line 379 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 379 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	ret = _tmp1_;
-#line 380 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 380 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	js_render_js_render_save (ret);
-#line 381 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 381 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	project_project_addFile (self, ret);
-#line 382 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 382 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	result = ret;
-#line 382 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 382 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	return result;
 #line 1972 "Project.vala.c"
 }
@@ -1977,21 +1977,21 @@ void project_project_addFile (ProjectProject* self, JsRenderJsRender* pfile) {
 	JsRenderJsRender* _tmp1_;
 	const gchar* _tmp2_;
 	JsRenderJsRender* _tmp3_;
-#line 387 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 387 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_return_if_fail (self != NULL);
-#line 387 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 387 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_return_if_fail (pfile != NULL);
-#line 390 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 390 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp0_ = self->files;
-#line 390 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 390 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp1_ = pfile;
-#line 390 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 390 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp2_ = _tmp1_->path;
-#line 390 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 390 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp3_ = pfile;
-#line 390 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 390 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	gee_abstract_map_set ((GeeAbstractMap*) _tmp0_, _tmp2_, _tmp3_);
-#line 391 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 391 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_signal_emit_by_name (self, "on-changed");
 #line 1997 "Project.vala.c"
 }
@@ -2003,35 +2003,35 @@ void project_project_add (ProjectProject* self, const gchar* path, const gchar* 
 	const gchar* _tmp2_;
 	const gchar* _tmp3_;
 	const gchar* _tmp5_;
-#line 394 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 394 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_return_if_fail (self != NULL);
-#line 394 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 394 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_return_if_fail (path != NULL);
-#line 394 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 394 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_return_if_fail (type != NULL);
-#line 396 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 396 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp0_ = self->paths;
-#line 396 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 396 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp1_ = path;
-#line 396 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 396 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp2_ = type;
-#line 396 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 396 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	gee_abstract_map_set ((GeeAbstractMap*) _tmp0_, _tmp1_, _tmp2_);
-#line 398 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 398 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp3_ = type;
-#line 398 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 398 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	if (g_strcmp0 (_tmp3_, "dir") == 0) {
 #line 2025 "Project.vala.c"
 		const gchar* _tmp4_;
-#line 399 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 399 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp4_ = path;
-#line 399 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 399 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		project_project_scanDir (self, _tmp4_, 0);
 #line 2031 "Project.vala.c"
 	}
-#line 402 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 402 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp5_ = type;
-#line 402 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 402 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	if (g_strcmp0 (_tmp5_, "file") == 0) {
 #line 2037 "Project.vala.c"
 		GeeHashMap* _tmp6_;
@@ -2039,23 +2039,23 @@ void project_project_add (ProjectProject* self, const gchar* path, const gchar* 
 		const gchar* _tmp8_;
 		JsRenderJsRender* _tmp9_ = NULL;
 		JsRenderJsRender* _tmp10_;
-#line 404 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 404 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp6_ = self->files;
-#line 404 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 404 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp7_ = path;
-#line 404 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 404 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp8_ = path;
-#line 404 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 404 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp9_ = project_project_loadFileOnly (self, _tmp8_);
-#line 404 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 404 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp10_ = _tmp9_;
-#line 404 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 404 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		gee_abstract_map_set ((GeeAbstractMap*) _tmp6_, _tmp7_, _tmp10_);
-#line 404 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 404 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_g_object_unref0 (_tmp10_);
 #line 2057 "Project.vala.c"
 	}
-#line 406 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 406 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_signal_emit_by_name (self, "on-changed");
 #line 2061 "Project.vala.c"
 }
@@ -2063,17 +2063,17 @@ void project_project_add (ProjectProject* self, const gchar* path, const gchar* 
 
 void project_project_scanDirs (ProjectProject* self) {
 	gboolean _tmp0_;
-#line 409 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 409 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_return_if_fail (self != NULL);
-#line 411 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 411 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp0_ = self->priv->is_scanned;
-#line 411 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 411 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	if (_tmp0_) {
-#line 412 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 412 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		return;
 #line 2075 "Project.vala.c"
 	}
-#line 414 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 414 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	project_project_scanDirsForce (self);
 #line 2079 "Project.vala.c"
 }
@@ -2083,15 +2083,15 @@ void project_project_scanDirsForce (ProjectProject* self) {
 	GeeHashMap* _tmp0_;
 	GeeMapIterator* _tmp1_ = NULL;
 	GeeMapIterator* iter;
-#line 419 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_return_if_fail (self != NULL);
-#line 421 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 421 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp0_ = self->paths;
-#line 421 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 421 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp1_ = gee_abstract_map_map_iterator ((GeeAbstractMap*) _tmp0_);
-#line 421 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 421 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	iter = _tmp1_;
-#line 422 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 422 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	while (TRUE) {
 #line 2097 "Project.vala.c"
 		GeeMapIterator* _tmp2_;
@@ -2103,45 +2103,45 @@ void project_project_scanDirsForce (ProjectProject* self) {
 		GeeMapIterator* _tmp8_;
 		gpointer _tmp9_ = NULL;
 		gchar* _tmp10_;
-#line 422 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 422 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp2_ = iter;
-#line 422 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 422 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp3_ = gee_map_iterator_next (_tmp2_);
-#line 422 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 422 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		if (!_tmp3_) {
-#line 422 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 422 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			break;
 #line 2115 "Project.vala.c"
 		}
-#line 424 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 424 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp4_ = iter;
-#line 424 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 424 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp5_ = gee_map_iterator_get_value (_tmp4_);
-#line 424 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 424 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp6_ = (gchar*) _tmp5_;
-#line 424 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 424 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp7_ = g_strcmp0 (_tmp6_, "dir") != 0;
-#line 424 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 424 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_g_free0 (_tmp6_);
-#line 424 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 424 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		if (_tmp7_) {
-#line 425 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 425 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			continue;
 #line 2131 "Project.vala.c"
 		}
-#line 427 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 427 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp8_ = iter;
-#line 427 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 427 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp9_ = gee_map_iterator_get_key (_tmp8_);
-#line 427 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 427 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp10_ = (gchar*) _tmp9_;
-#line 427 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 427 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		project_project_scanDir (self, _tmp10_, 0);
-#line 427 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 427 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_g_free0 (_tmp10_);
 #line 2143 "Project.vala.c"
 	}
-#line 419 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_g_object_unref0 (iter);
 #line 2147 "Project.vala.c"
 }
@@ -2166,16 +2166,16 @@ static gchar string_get (const gchar* self, glong index) {
 
 
 static void _g_free0_ (gpointer var) {
-#line 444 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 444 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	var = (g_free (var), NULL);
 #line 2172 "Project.vala.c"
 }
 
 
 static void _g_list_free__g_free0_ (GList* self) {
-#line 444 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 444 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_list_foreach (self, (GFunc) _g_free0_, NULL);
-#line 444 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 444 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_list_free (self);
 #line 2181 "Project.vala.c"
 }
@@ -2188,25 +2188,25 @@ void project_project_scanDir (ProjectProject* self, const gchar* dir, gint dp) {
 	GFile* _tmp2_ = NULL;
 	GFile* f;
 	GError * _inner_error_ = NULL;
-#line 433 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 433 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_return_if_fail (self != NULL);
-#line 433 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 433 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_return_if_fail (dir != NULL);
-#line 437 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 437 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp0_ = dp;
-#line 437 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 437 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	if (_tmp0_ > 5) {
-#line 438 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 438 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		return;
 #line 2202 "Project.vala.c"
 	}
-#line 442 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 442 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	subs = NULL;
-#line 443 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 443 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp1_ = dir;
-#line 443 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 443 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp2_ = g_file_new_for_path (_tmp1_);
-#line 443 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 443 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	f = _tmp2_;
 #line 2212 "Project.vala.c"
 	{
@@ -2214,22 +2214,22 @@ void project_project_scanDir (ProjectProject* self, const gchar* dir, gint dp) {
 		GFileEnumerator* _tmp4_ = NULL;
 		GFileEnumerator* file_enum;
 		GFileInfo* next_file = NULL;
-#line 445 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 445 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp3_ = f;
-#line 445 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 445 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp4_ = g_file_enumerate_children (_tmp3_, G_FILE_ATTRIBUTE_STANDARD_DISPLAY_NAME, G_FILE_QUERY_INFO_NONE, NULL, &_inner_error_);
-#line 445 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 445 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		file_enum = _tmp4_;
-#line 445 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 445 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		if (_inner_error_ != NULL) {
-#line 445 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 445 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			if (_inner_error_->domain == PROJECT_ERROR) {
 #line 2228 "Project.vala.c"
 				goto __catch6_project_error;
 			}
 			goto __catch6_g_error;
 		}
-#line 449 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 449 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		while (TRUE) {
 #line 2235 "Project.vala.c"
 			GFileEnumerator* _tmp5_;
@@ -2273,78 +2273,78 @@ void project_project_scanDir (ProjectProject* self, const gchar* dir, gint dp) {
 			gchar* _tmp45_;
 			gchar* _tmp46_;
 			JsRenderJsRender* _tmp47_;
-#line 449 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 449 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp5_ = file_enum;
-#line 449 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 449 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp6_ = g_file_enumerator_next_file (_tmp5_, NULL, &_inner_error_);
-#line 449 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 449 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp7_ = _tmp6_;
-#line 449 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 449 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			if (_inner_error_ != NULL) {
-#line 449 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 449 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				_g_object_unref0 (next_file);
-#line 449 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 449 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				_g_object_unref0 (file_enum);
-#line 449 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 449 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				if (_inner_error_->domain == PROJECT_ERROR) {
 #line 2291 "Project.vala.c"
 					goto __catch6_project_error;
 				}
 				goto __catch6_g_error;
 			}
-#line 449 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 449 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_g_object_unref0 (next_file);
-#line 449 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 449 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			next_file = _tmp7_;
-#line 449 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 449 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp8_ = next_file;
-#line 449 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 449 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			if (!(_tmp8_ != NULL)) {
-#line 449 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 449 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				break;
 #line 2306 "Project.vala.c"
 			}
-#line 450 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 450 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp9_ = next_file;
-#line 450 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 450 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp10_ = g_file_info_get_display_name (_tmp9_);
-#line 450 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 450 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp11_ = g_strdup (_tmp10_);
-#line 450 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 450 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			fn = _tmp11_;
-#line 455 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 455 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp12_ = fn;
-#line 455 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 455 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp13_ = string_get (_tmp12_, (glong) 0);
-#line 455 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 455 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			if (_tmp13_ == '.') {
-#line 456 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				_g_free0 (fn);
-#line 456 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				continue;
 #line 2326 "Project.vala.c"
 			}
-#line 459 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 459 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp14_ = dir;
-#line 459 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 459 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp15_ = g_strconcat (_tmp14_, "/", NULL);
-#line 459 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 459 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp16_ = _tmp15_;
-#line 459 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 459 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp17_ = fn;
-#line 459 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 459 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp18_ = g_strconcat (_tmp16_, _tmp17_, NULL);
-#line 459 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 459 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp19_ = _tmp18_;
-#line 459 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 459 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp20_ = g_file_test (_tmp19_, G_FILE_TEST_IS_DIR);
-#line 459 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 459 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp21_ = _tmp20_;
-#line 459 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 459 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_g_free0 (_tmp19_);
-#line 459 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 459 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_g_free0 (_tmp16_);
-#line 459 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 459 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			if (_tmp21_) {
 #line 2350 "Project.vala.c"
 				const gchar* _tmp22_;
@@ -2352,101 +2352,101 @@ void project_project_scanDir (ProjectProject* self, const gchar* dir, gint dp) {
 				gchar* _tmp24_;
 				const gchar* _tmp25_;
 				gchar* _tmp26_;
-#line 460 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 460 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				_tmp22_ = dir;
-#line 460 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 460 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				_tmp23_ = g_strconcat (_tmp22_, "/", NULL);
-#line 460 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 460 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				_tmp24_ = _tmp23_;
-#line 460 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 460 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				_tmp25_ = fn;
-#line 460 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 460 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				_tmp26_ = g_strconcat (_tmp24_, _tmp25_, NULL);
-#line 460 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 460 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				subs = g_list_append (subs, _tmp26_);
-#line 460 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 460 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				_g_free0 (_tmp24_);
-#line 461 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 461 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				_g_free0 (fn);
-#line 461 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 461 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				continue;
 #line 2374 "Project.vala.c"
 			}
-#line 464 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 464 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp27_ = fn;
-#line 464 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 464 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp28_ = g_regex_match_simple ("\\.bjs$", _tmp27_, 0, 0);
-#line 464 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 464 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			if (!_tmp28_) {
-#line 466 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 466 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				_g_free0 (fn);
-#line 466 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 466 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				continue;
 #line 2386 "Project.vala.c"
 			}
-#line 489 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 489 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp29_ = self->xtype;
-#line 489 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 489 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp30_ = g_strdup (_tmp29_);
-#line 489 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 489 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			xt = _tmp30_;
-#line 490 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 490 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp31_ = xt;
-#line 490 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 490 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp32_ = dir;
-#line 490 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 490 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp33_ = g_strconcat (_tmp32_, "/", NULL);
-#line 490 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 490 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp34_ = _tmp33_;
-#line 490 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 490 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp35_ = fn;
-#line 490 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 490 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp36_ = g_strconcat (_tmp34_, _tmp35_, NULL);
-#line 490 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 490 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp37_ = _tmp36_;
-#line 490 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 490 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp38_ = js_render_js_render_factory (_tmp31_, self, _tmp37_);
-#line 490 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 490 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp39_ = _tmp38_;
-#line 490 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 490 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_g_free0 (_tmp37_);
-#line 490 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 490 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_g_free0 (_tmp34_);
-#line 490 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 490 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			el = _tmp39_;
-#line 491 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 491 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp40_ = self->files;
-#line 491 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 491 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp41_ = dir;
-#line 491 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 491 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp42_ = g_strconcat (_tmp41_, "/", NULL);
-#line 491 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 491 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp43_ = _tmp42_;
-#line 491 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 491 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp44_ = fn;
-#line 491 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 491 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp45_ = g_strconcat (_tmp43_, _tmp44_, NULL);
-#line 491 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 491 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp46_ = _tmp45_;
-#line 491 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 491 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp47_ = el;
-#line 491 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 491 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			gee_abstract_map_set ((GeeAbstractMap*) _tmp40_, _tmp46_, _tmp47_);
-#line 491 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 491 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_g_free0 (_tmp46_);
-#line 491 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 491 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_g_free0 (_tmp43_);
-#line 449 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 449 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_g_object_unref0 (el);
-#line 449 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 449 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_g_free0 (xt);
-#line 449 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 449 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_g_free0 (fn);
 #line 2446 "Project.vala.c"
 		}
-#line 444 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 444 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_g_object_unref0 (next_file);
-#line 444 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 444 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_g_object_unref0 (file_enum);
 #line 2452 "Project.vala.c"
 	}
@@ -2460,29 +2460,29 @@ void project_project_scanDir (ProjectProject* self, const gchar* dir, gint dp) {
 		gchar* _tmp51_;
 		gchar* _tmp52_;
 		gchar* _tmp53_;
-#line 444 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 444 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		e = _inner_error_;
-#line 444 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 444 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_inner_error_ = NULL;
-#line 497 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 497 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp48_ = e;
-#line 497 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 497 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp49_ = _tmp48_->message;
-#line 497 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 497 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp50_ = g_strconcat ("Project::scanDirs failed : ", _tmp49_, NULL);
-#line 497 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 497 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp51_ = _tmp50_;
-#line 497 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 497 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp52_ = g_strconcat (_tmp51_, "\n", NULL);
-#line 497 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 497 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp53_ = _tmp52_;
-#line 497 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 497 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		g_print ("%s", _tmp53_);
-#line 497 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 497 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_g_free0 (_tmp53_);
-#line 497 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 497 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_g_free0 (_tmp51_);
-#line 444 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 444 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_g_error_free0 (e);
 #line 2488 "Project.vala.c"
 	}
@@ -2496,57 +2496,57 @@ void project_project_scanDir (ProjectProject* self, const gchar* dir, gint dp) {
 		gchar* _tmp57_;
 		gchar* _tmp58_;
 		gchar* _tmp59_;
-#line 444 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 444 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		e = _inner_error_;
-#line 444 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 444 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_inner_error_ = NULL;
-#line 499 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 499 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp54_ = e;
-#line 499 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 499 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp55_ = _tmp54_->message;
-#line 499 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 499 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp56_ = g_strconcat ("Project::scanDirs failed : ", _tmp55_, NULL);
-#line 499 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 499 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp57_ = _tmp56_;
-#line 499 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 499 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp58_ = g_strconcat (_tmp57_, "\n", NULL);
-#line 499 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 499 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_tmp59_ = _tmp58_;
-#line 499 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 499 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		g_print ("%s", _tmp59_);
-#line 499 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 499 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_g_free0 (_tmp59_);
-#line 499 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 499 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_g_free0 (_tmp57_);
-#line 444 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 444 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_g_error_free0 (e);
 #line 2524 "Project.vala.c"
 	}
 	__finally6:
-#line 444 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 444 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	if (_inner_error_ != NULL) {
-#line 444 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 444 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		_g_object_unref0 (f);
-#line 444 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 444 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		__g_list_free__g_free0_0 (subs);
-#line 444 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 444 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		g_critical ("file %s: line %d: uncaught error: %s (%s, %d)", __FILE__, __LINE__, _inner_error_->message, g_quark_to_string (_inner_error_->domain), _inner_error_->code);
-#line 444 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 444 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		g_clear_error (&_inner_error_);
-#line 444 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 444 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		return;
 #line 2539 "Project.vala.c"
 	}
 	{
 		gint i;
-#line 501 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 501 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 		i = 0;
 #line 2545 "Project.vala.c"
 		{
 			gboolean _tmp60_;
-#line 501 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 501 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			_tmp60_ = TRUE;
-#line 501 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 501 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 			while (TRUE) {
 #line 2552 "Project.vala.c"
 				gboolean _tmp61_;
@@ -2557,62 +2557,62 @@ void project_project_scanDir (ProjectProject* self, const gchar* dir, gint dp) {
 				gint _tmp67_;
 				gconstpointer _tmp68_ = NULL;
 				gint _tmp69_;
-#line 501 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 501 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				_tmp61_ = _tmp60_;
-#line 501 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 501 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				if (!_tmp61_) {
 #line 2565 "Project.vala.c"
 					gint _tmp62_;
-#line 501 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 501 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 					_tmp62_ = i;
-#line 501 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 501 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 					i = _tmp62_ + 1;
 #line 2571 "Project.vala.c"
 				}
-#line 501 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 501 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				_tmp60_ = FALSE;
-#line 501 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 501 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				_tmp63_ = i;
-#line 501 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 501 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				_tmp64_ = subs;
-#line 501 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 501 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				_tmp65_ = g_list_length (_tmp64_);
-#line 501 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 501 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				if (!(((guint) _tmp63_) < _tmp65_)) {
-#line 501 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 501 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 					break;
 #line 2585 "Project.vala.c"
 				}
-#line 503 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 503 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				_tmp66_ = subs;
-#line 503 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 503 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				_tmp67_ = i;
-#line 503 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 503 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				_tmp68_ = g_list_nth_data (_tmp66_, (guint) _tmp67_);
-#line 503 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 503 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				_tmp69_ = dp;
-#line 503 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 503 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 				project_project_scanDir (self, (const gchar*) _tmp68_, _tmp69_ + 1);
 #line 2597 "Project.vala.c"
 			}
 		}
 	}
-#line 433 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 433 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_g_object_unref0 (f);
-#line 433 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 433 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	__g_list_free__g_free0_0 (subs);
 #line 2605 "Project.vala.c"
 }
 
 
 static void project_project_class_init (ProjectProjectClass * klass) {
-#line 26 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 26 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	project_project_parent_class = g_type_class_peek_parent (klass);
-#line 26 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 26 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_type_class_add_private (klass, sizeof (ProjectProjectPrivate));
-#line 26 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 26 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	G_OBJECT_CLASS (klass)->finalize = project_project_finalize;
-#line 26 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 26 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	g_signal_new ("on_changed", PROJECT_TYPE_PROJECT, G_SIGNAL_RUN_LAST, 0, NULL, NULL, g_cclosure_marshal_VOID__VOID, G_TYPE_NONE, 0);
 #line 2618 "Project.vala.c"
 }
@@ -2622,19 +2622,19 @@ static void project_project_instance_init (ProjectProject * self) {
 	gchar* _tmp0_;
 	gchar* _tmp1_;
 	gchar* _tmp2_;
-#line 26 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 26 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	self->priv = PROJECT_PROJECT_GET_PRIVATE (self);
-#line 31 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 31 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp0_ = g_strdup ("");
-#line 31 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 31 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	self->fn = _tmp0_;
-#line 32 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 32 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp1_ = g_strdup ("");
-#line 32 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 32 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	self->name = _tmp1_;
-#line 33 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 33 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_tmp2_ = g_strdup ("");
-#line 33 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 33 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	self->runhtml = _tmp2_;
 #line 2640 "Project.vala.c"
 }
@@ -2642,23 +2642,23 @@ static void project_project_instance_init (ProjectProject * self) {
 
 static void project_project_finalize (GObject* obj) {
 	ProjectProject * self;
-#line 26 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 26 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, PROJECT_TYPE_PROJECT, ProjectProject);
-#line 30 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 30 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_g_free0 (self->id);
-#line 31 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 31 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_g_free0 (self->fn);
-#line 32 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 32 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_g_free0 (self->name);
-#line 33 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 33 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_g_free0 (self->runhtml);
-#line 34 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 34 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_g_object_unref0 (self->paths);
-#line 35 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 35 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_g_object_unref0 (self->files);
-#line 37 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 37 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	_g_free0 (self->xtype);
-#line 26 "/home/alan/gitlive/app.Builder.js/Project/Project.vala"
+#line 26 "/home/alan/gitlive/app.Builder/Project/Project.vala"
 	G_OBJECT_CLASS (project_project_parent_class)->finalize (obj);
 #line 2664 "Project.vala.c"
 }

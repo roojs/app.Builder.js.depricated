@@ -81,7 +81,7 @@ static void xcls_messagedialog1_finalize (Xcls_MessageDialog1* obj);
 
 
 static gpointer _xcls_messagedialog1_ref0 (gpointer self) {
-#line 32 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 32 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	return self ? xcls_messagedialog1_ref (self) : NULL;
 #line 87 "DialogConfirm.vala.c"
 }
@@ -90,15 +90,15 @@ static gpointer _xcls_messagedialog1_ref0 (gpointer self) {
 static gboolean __lambda65_ (Xcls_MessageDialog1* self, GdkEventAny* event) {
 	gboolean result = FALSE;
 	GtkMessageDialog* _tmp0_;
-#line 43 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 43 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	g_return_val_if_fail (event != NULL, FALSE);
-#line 44 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 44 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	_tmp0_ = self->el;
-#line 44 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 44 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	gtk_widget_hide ((GtkWidget*) _tmp0_);
-#line 45 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 45 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	result = TRUE;
-#line 45 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 45 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	return result;
 #line 104 "DialogConfirm.vala.c"
 }
@@ -107,7 +107,7 @@ static gboolean __lambda65_ (Xcls_MessageDialog1* self, GdkEventAny* event) {
 static gboolean ___lambda65__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self) {
 	gboolean result;
 	result = __lambda65_ (self, event);
-#line 43 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 43 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	return result;
 #line 113 "DialogConfirm.vala.c"
 }
@@ -122,61 +122,61 @@ Xcls_MessageDialog1* xcls_messagedialog1_construct (GType object_type) {
 	GtkMessageDialog* _tmp4_;
 	GtkMessageDialog* _tmp5_;
 	GtkMessageDialog* _tmp6_;
-#line 29 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 29 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	self = (Xcls_MessageDialog1*) g_type_create_instance (object_type);
-#line 31 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 31 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	_tmp0_ = (GtkMessageDialog*) gtk_message_dialog_new (NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_QUESTION, GTK_BUTTONS_YES_NO, "Tests");
-#line 31 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 31 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	g_object_ref_sink (_tmp0_);
-#line 31 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 31 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	_g_object_unref0 (self->el);
-#line 31 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 31 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	self->el = _tmp0_;
-#line 32 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 32 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	_tmp1_ = _xcls_messagedialog1_ref0 (self);
-#line 32 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 32 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	_xcls_messagedialog1_unref0 (xcls_messagedialog1__this);
-#line 32 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 32 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	xcls_messagedialog1__this = _tmp1_;
-#line 33 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 33 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	_tmp2_ = _xcls_messagedialog1_ref0 (self);
-#line 33 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 33 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	_xcls_messagedialog1_unref0 (DialogConfirm);
-#line 33 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 33 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	DialogConfirm = _tmp2_;
-#line 38 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 38 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	_tmp3_ = self->el;
-#line 38 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 38 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	gtk_window_set_modal ((GtkWindow*) _tmp3_, TRUE);
-#line 39 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 39 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	_tmp4_ = self->el;
-#line 39 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 39 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	gtk_window_set_title ((GtkWindow*) _tmp4_, "Please Confirm d");
-#line 40 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 40 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	_tmp5_ = self->el;
-#line 40 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 40 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	g_object_set (_tmp5_, "use-markup", TRUE, NULL);
-#line 43 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 43 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	_tmp6_ = self->el;
-#line 43 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 43 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	g_signal_connect ((GtkWidget*) _tmp6_, "delete-event", (GCallback) ___lambda65__gtk_widget_delete_event, self);
-#line 29 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 29 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	return self;
 #line 166 "DialogConfirm.vala.c"
 }
 
 
 Xcls_MessageDialog1* xcls_messagedialog1_new (void) {
-#line 29 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 29 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	return xcls_messagedialog1_construct (TYPE_XCLS_MESSAGEDIALOG1);
 #line 173 "DialogConfirm.vala.c"
 }
 
 
 void xcls_messagedialog1_show_all (Xcls_MessageDialog1* self) {
-#line 51 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 51 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	g_return_if_fail (self != NULL);
-#line 52 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 52 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	xcls_messagedialog1_show (self, "test");
 #line 182 "DialogConfirm.vala.c"
 }
@@ -186,35 +186,35 @@ void xcls_messagedialog1_show (Xcls_MessageDialog1* self, const gchar* msg) {
 	GtkMessageDialog* _tmp0_;
 	const gchar* _tmp1_;
 	GtkMessageDialog* _tmp2_;
-#line 69 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 69 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	g_return_if_fail (self != NULL);
-#line 69 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 69 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	g_return_if_fail (msg != NULL);
-#line 72 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 72 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	_tmp0_ = self->el;
-#line 72 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 72 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	_tmp1_ = msg;
-#line 72 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 72 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	g_object_set (_tmp0_, "text", _tmp1_, NULL);
-#line 73 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 73 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	_tmp2_ = self->el;
-#line 73 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 73 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	gtk_widget_show_all ((GtkWidget*) _tmp2_);
 #line 204 "DialogConfirm.vala.c"
 }
 
 
 static void value_xcls_messagedialog1_init (GValue* value) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	value->data[0].v_pointer = NULL;
 #line 211 "DialogConfirm.vala.c"
 }
 
 
 static void value_xcls_messagedialog1_free_value (GValue* value) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	if (value->data[0].v_pointer) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 		xcls_messagedialog1_unref (value->data[0].v_pointer);
 #line 220 "DialogConfirm.vala.c"
 	}
@@ -222,13 +222,13 @@ static void value_xcls_messagedialog1_free_value (GValue* value) {
 
 
 static void value_xcls_messagedialog1_copy_value (const GValue* src_value, GValue* dest_value) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	if (src_value->data[0].v_pointer) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 		dest_value->data[0].v_pointer = xcls_messagedialog1_ref (src_value->data[0].v_pointer);
 #line 230 "DialogConfirm.vala.c"
 	} else {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 		dest_value->data[0].v_pointer = NULL;
 #line 234 "DialogConfirm.vala.c"
 	}
@@ -236,37 +236,37 @@ static void value_xcls_messagedialog1_copy_value (const GValue* src_value, GValu
 
 
 static gpointer value_xcls_messagedialog1_peek_pointer (const GValue* value) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	return value->data[0].v_pointer;
 #line 242 "DialogConfirm.vala.c"
 }
 
 
 static gchar* value_xcls_messagedialog1_collect_value (GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	if (collect_values[0].v_pointer) {
 #line 249 "DialogConfirm.vala.c"
 		Xcls_MessageDialog1* object;
 		object = collect_values[0].v_pointer;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 		if (object->parent_instance.g_class == NULL) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 256 "DialogConfirm.vala.c"
 		} else if (!g_value_type_compatible (G_TYPE_FROM_INSTANCE (object), G_VALUE_TYPE (value))) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 			return g_strconcat ("invalid object type `", g_type_name (G_TYPE_FROM_INSTANCE (object)), "' for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 260 "DialogConfirm.vala.c"
 		}
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 		value->data[0].v_pointer = xcls_messagedialog1_ref (object);
 #line 264 "DialogConfirm.vala.c"
 	} else {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 		value->data[0].v_pointer = NULL;
 #line 268 "DialogConfirm.vala.c"
 	}
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	return NULL;
 #line 272 "DialogConfirm.vala.c"
 }
@@ -275,27 +275,27 @@ static gchar* value_xcls_messagedialog1_collect_value (GValue* value, guint n_co
 static gchar* value_xcls_messagedialog1_lcopy_value (const GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
 	Xcls_MessageDialog1** object_p;
 	object_p = collect_values[0].v_pointer;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	if (!object_p) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
 #line 283 "DialogConfirm.vala.c"
 	}
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	if (!value->data[0].v_pointer) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 		*object_p = NULL;
 #line 289 "DialogConfirm.vala.c"
 	} else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 		*object_p = value->data[0].v_pointer;
 #line 293 "DialogConfirm.vala.c"
 	} else {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 		*object_p = xcls_messagedialog1_ref (value->data[0].v_pointer);
 #line 297 "DialogConfirm.vala.c"
 	}
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	return NULL;
 #line 301 "DialogConfirm.vala.c"
 }
@@ -303,22 +303,22 @@ static gchar* value_xcls_messagedialog1_lcopy_value (const GValue* value, guint 
 
 GParamSpec* param_spec_xcls_messagedialog1 (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags) {
 	ParamSpecXcls_MessageDialog1* spec;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	g_return_val_if_fail (g_type_is_a (object_type, TYPE_XCLS_MESSAGEDIALOG1), NULL);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	G_PARAM_SPEC (spec)->value_type = object_type;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	return G_PARAM_SPEC (spec);
 #line 315 "DialogConfirm.vala.c"
 }
 
 
 gpointer value_get_xcls_messagedialog1 (const GValue* value) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, TYPE_XCLS_MESSAGEDIALOG1), NULL);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	return value->data[0].v_pointer;
 #line 324 "DialogConfirm.vala.c"
 }
@@ -326,29 +326,29 @@ gpointer value_get_xcls_messagedialog1 (const GValue* value) {
 
 void value_set_xcls_messagedialog1 (GValue* value, gpointer v_object) {
 	Xcls_MessageDialog1* old;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, TYPE_XCLS_MESSAGEDIALOG1));
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	old = value->data[0].v_pointer;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	if (v_object) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, TYPE_XCLS_MESSAGEDIALOG1));
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 		value->data[0].v_pointer = v_object;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 		xcls_messagedialog1_ref (value->data[0].v_pointer);
 #line 344 "DialogConfirm.vala.c"
 	} else {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 		value->data[0].v_pointer = NULL;
 #line 348 "DialogConfirm.vala.c"
 	}
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	if (old) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 		xcls_messagedialog1_unref (old);
 #line 354 "DialogConfirm.vala.c"
 	}
@@ -357,27 +357,27 @@ void value_set_xcls_messagedialog1 (GValue* value, gpointer v_object) {
 
 void value_take_xcls_messagedialog1 (GValue* value, gpointer v_object) {
 	Xcls_MessageDialog1* old;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, TYPE_XCLS_MESSAGEDIALOG1));
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	old = value->data[0].v_pointer;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	if (v_object) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, TYPE_XCLS_MESSAGEDIALOG1));
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 		value->data[0].v_pointer = v_object;
 #line 373 "DialogConfirm.vala.c"
 	} else {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 		value->data[0].v_pointer = NULL;
 #line 377 "DialogConfirm.vala.c"
 	}
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	if (old) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 		xcls_messagedialog1_unref (old);
 #line 383 "DialogConfirm.vala.c"
 	}
@@ -385,16 +385,16 @@ void value_take_xcls_messagedialog1 (GValue* value, gpointer v_object) {
 
 
 static void xcls_messagedialog1_class_init (Xcls_MessageDialog1Class * klass) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	xcls_messagedialog1_parent_class = g_type_class_peek_parent (klass);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	XCLS_MESSAGEDIALOG1_CLASS (klass)->finalize = xcls_messagedialog1_finalize;
 #line 393 "DialogConfirm.vala.c"
 }
 
 
 static void xcls_messagedialog1_instance_init (Xcls_MessageDialog1 * self) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	self->ref_count = 1;
 #line 400 "DialogConfirm.vala.c"
 }
@@ -402,9 +402,9 @@ static void xcls_messagedialog1_instance_init (Xcls_MessageDialog1 * self) {
 
 static void xcls_messagedialog1_finalize (Xcls_MessageDialog1* obj) {
 	Xcls_MessageDialog1 * self;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, TYPE_XCLS_MESSAGEDIALOG1, Xcls_MessageDialog1);
-#line 22 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 22 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	_g_object_unref0 (self->el);
 #line 410 "DialogConfirm.vala.c"
 }
@@ -427,9 +427,9 @@ GType xcls_messagedialog1_get_type (void) {
 gpointer xcls_messagedialog1_ref (gpointer instance) {
 	Xcls_MessageDialog1* self;
 	self = instance;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	g_atomic_int_inc (&self->ref_count);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	return instance;
 #line 435 "DialogConfirm.vala.c"
 }
@@ -438,11 +438,11 @@ gpointer xcls_messagedialog1_ref (gpointer instance) {
 void xcls_messagedialog1_unref (gpointer instance) {
 	Xcls_MessageDialog1* self;
 	self = instance;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 		XCLS_MESSAGEDIALOG1_GET_CLASS (self)->finalize (self);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogConfirm.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogConfirm.vala"
 		g_type_free_instance ((GTypeInstance *) self);
 #line 448 "DialogConfirm.vala.c"
 	}

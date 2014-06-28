@@ -62,23 +62,23 @@ static GType builder4_application_target_get_type (void) {
 
 Builder4Application* builder4_application_construct (GType object_type) {
 	Builder4Application * self = NULL;
-#line 7 "/home/alan/gitlive/app.Builder.js/Builder4/Application.vala"
+#line 7 "/home/alan/gitlive/app.Builder/Builder4/Application.vala"
 	self = (Builder4Application*) g_object_new (object_type, NULL);
-#line 7 "/home/alan/gitlive/app.Builder.js/Builder4/Application.vala"
+#line 7 "/home/alan/gitlive/app.Builder/Builder4/Application.vala"
 	return self;
 #line 70 "Application.vala.c"
 }
 
 
 Builder4Application* builder4_application_new (void) {
-#line 7 "/home/alan/gitlive/app.Builder.js/Builder4/Application.vala"
+#line 7 "/home/alan/gitlive/app.Builder/Builder4/Application.vala"
 	return builder4_application_construct (BUILDER4_TYPE_APPLICATION);
 #line 77 "Application.vala.c"
 }
 
 
 static void builder4_application_class_init (Builder4ApplicationClass * klass) {
-#line 7 "/home/alan/gitlive/app.Builder.js/Builder4/Application.vala"
+#line 7 "/home/alan/gitlive/app.Builder/Builder4/Application.vala"
 	builder4_application_parent_class = g_type_class_peek_parent (klass);
 #line 84 "Application.vala.c"
 }

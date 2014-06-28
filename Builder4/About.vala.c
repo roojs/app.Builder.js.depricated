@@ -80,7 +80,7 @@ static void xcls_aboutdialog1_finalize (Xcls_AboutDialog1* obj);
 
 
 static gpointer _xcls_aboutdialog1_ref0 (gpointer self) {
-#line 32 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 32 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	return self ? xcls_aboutdialog1_ref (self) : NULL;
 #line 86 "About.vala.c"
 }
@@ -88,16 +88,16 @@ static gpointer _xcls_aboutdialog1_ref0 (gpointer self) {
 
 static void __lambda63_ (Xcls_AboutDialog1* self, gint rid) {
 	GtkAboutDialog* _tmp0_;
-#line 46 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 46 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	_tmp0_ = self->el;
-#line 46 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 46 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	gtk_widget_hide ((GtkWidget*) _tmp0_);
 #line 96 "About.vala.c"
 }
 
 
 static void ___lambda63__gtk_dialog_response (GtkDialog* _sender, gint response_id, gpointer self) {
-#line 45 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 45 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	__lambda63_ (self, response_id);
 #line 103 "About.vala.c"
 }
@@ -106,17 +106,17 @@ static void ___lambda63__gtk_dialog_response (GtkDialog* _sender, gint response_
 static gboolean __lambda64_ (Xcls_AboutDialog1* self, GtkWidget* _self_, GdkEventAny* event) {
 	gboolean result = FALSE;
 	GtkAboutDialog* _tmp0_;
-#line 49 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 49 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	g_return_val_if_fail (_self_ != NULL, FALSE);
-#line 49 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 49 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	g_return_val_if_fail (event != NULL, FALSE);
-#line 50 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 50 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	_tmp0_ = self->el;
-#line 50 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 50 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	gtk_widget_hide ((GtkWidget*) _tmp0_);
-#line 51 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 51 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	result = TRUE;
-#line 51 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 51 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	return result;
 #line 122 "About.vala.c"
 }
@@ -125,7 +125,7 @@ static gboolean __lambda64_ (Xcls_AboutDialog1* self, GtkWidget* _self_, GdkEven
 static gboolean ___lambda64__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self) {
 	gboolean result;
 	result = __lambda64_ (self, _sender, event);
-#line 49 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 49 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	return result;
 #line 131 "About.vala.c"
 }
@@ -143,64 +143,64 @@ Xcls_AboutDialog1* xcls_aboutdialog1_construct (GType object_type) {
 	GtkAboutDialog* _tmp7_;
 	GtkAboutDialog* _tmp8_;
 	GtkAboutDialog* _tmp9_;
-#line 29 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 29 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	self = (Xcls_AboutDialog1*) g_type_create_instance (object_type);
-#line 31 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 31 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	_tmp0_ = (GtkAboutDialog*) gtk_about_dialog_new ();
-#line 31 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 31 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	g_object_ref_sink (_tmp0_);
-#line 31 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 31 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	_g_object_unref0 (self->el);
-#line 31 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 31 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	self->el = _tmp0_;
-#line 32 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 32 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	_tmp1_ = _xcls_aboutdialog1_ref0 (self);
-#line 32 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 32 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	_xcls_aboutdialog1_unref0 (xcls_aboutdialog1__this);
-#line 32 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 32 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	xcls_aboutdialog1__this = _tmp1_;
-#line 33 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 33 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	_tmp2_ = _xcls_aboutdialog1_ref0 (self);
-#line 33 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 33 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	_xcls_aboutdialog1_unref0 (About);
-#line 33 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 33 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	About = _tmp2_;
-#line 38 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 38 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	_tmp3_ = self->el;
-#line 38 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 38 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	gtk_about_dialog_set_copyright (_tmp3_, "LGPL");
-#line 39 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 39 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	_tmp4_ = self->el;
-#line 39 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 39 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	gtk_about_dialog_set_license (_tmp4_, "LGPL");
-#line 40 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 40 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	_tmp5_ = self->el;
-#line 40 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 40 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	gtk_window_set_modal ((GtkWindow*) _tmp5_, TRUE);
-#line 41 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 41 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	_tmp6_ = self->el;
-#line 41 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 41 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	gtk_about_dialog_set_program_name (_tmp6_, "app.Builder.js");
-#line 42 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 42 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	_tmp7_ = self->el;
-#line 42 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 42 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	gtk_about_dialog_set_website (_tmp7_, "http://www.akbkhome.com/blog.php");
-#line 45 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 45 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	_tmp8_ = self->el;
-#line 45 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 45 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	g_signal_connect ((GtkDialog*) _tmp8_, "response", (GCallback) ___lambda63__gtk_dialog_response, self);
-#line 49 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 49 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	_tmp9_ = self->el;
-#line 49 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 49 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	g_signal_connect ((GtkWidget*) _tmp9_, "delete-event", (GCallback) ___lambda64__gtk_widget_delete_event, self);
-#line 29 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 29 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	return self;
 #line 199 "About.vala.c"
 }
 
 
 Xcls_AboutDialog1* xcls_aboutdialog1_new (void) {
-#line 29 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 29 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	return xcls_aboutdialog1_construct (TYPE_XCLS_ABOUTDIALOG1);
 #line 206 "About.vala.c"
 }
@@ -208,27 +208,27 @@ Xcls_AboutDialog1* xcls_aboutdialog1_new (void) {
 
 void xcls_aboutdialog1_show_all (Xcls_AboutDialog1* self) {
 	GtkAboutDialog* _tmp0_;
-#line 73 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 73 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	g_return_if_fail (self != NULL);
-#line 74 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 74 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	_tmp0_ = self->el;
-#line 74 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 74 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	gtk_widget_show_all ((GtkWidget*) _tmp0_);
 #line 218 "About.vala.c"
 }
 
 
 static void value_xcls_aboutdialog1_init (GValue* value) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	value->data[0].v_pointer = NULL;
 #line 225 "About.vala.c"
 }
 
 
 static void value_xcls_aboutdialog1_free_value (GValue* value) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	if (value->data[0].v_pointer) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 		xcls_aboutdialog1_unref (value->data[0].v_pointer);
 #line 234 "About.vala.c"
 	}
@@ -236,13 +236,13 @@ static void value_xcls_aboutdialog1_free_value (GValue* value) {
 
 
 static void value_xcls_aboutdialog1_copy_value (const GValue* src_value, GValue* dest_value) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	if (src_value->data[0].v_pointer) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 		dest_value->data[0].v_pointer = xcls_aboutdialog1_ref (src_value->data[0].v_pointer);
 #line 244 "About.vala.c"
 	} else {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 		dest_value->data[0].v_pointer = NULL;
 #line 248 "About.vala.c"
 	}
@@ -250,37 +250,37 @@ static void value_xcls_aboutdialog1_copy_value (const GValue* src_value, GValue*
 
 
 static gpointer value_xcls_aboutdialog1_peek_pointer (const GValue* value) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	return value->data[0].v_pointer;
 #line 256 "About.vala.c"
 }
 
 
 static gchar* value_xcls_aboutdialog1_collect_value (GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	if (collect_values[0].v_pointer) {
 #line 263 "About.vala.c"
 		Xcls_AboutDialog1* object;
 		object = collect_values[0].v_pointer;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 		if (object->parent_instance.g_class == NULL) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 270 "About.vala.c"
 		} else if (!g_value_type_compatible (G_TYPE_FROM_INSTANCE (object), G_VALUE_TYPE (value))) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 			return g_strconcat ("invalid object type `", g_type_name (G_TYPE_FROM_INSTANCE (object)), "' for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 274 "About.vala.c"
 		}
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 		value->data[0].v_pointer = xcls_aboutdialog1_ref (object);
 #line 278 "About.vala.c"
 	} else {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 		value->data[0].v_pointer = NULL;
 #line 282 "About.vala.c"
 	}
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	return NULL;
 #line 286 "About.vala.c"
 }
@@ -289,27 +289,27 @@ static gchar* value_xcls_aboutdialog1_collect_value (GValue* value, guint n_coll
 static gchar* value_xcls_aboutdialog1_lcopy_value (const GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
 	Xcls_AboutDialog1** object_p;
 	object_p = collect_values[0].v_pointer;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	if (!object_p) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
 #line 297 "About.vala.c"
 	}
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	if (!value->data[0].v_pointer) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 		*object_p = NULL;
 #line 303 "About.vala.c"
 	} else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 		*object_p = value->data[0].v_pointer;
 #line 307 "About.vala.c"
 	} else {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 		*object_p = xcls_aboutdialog1_ref (value->data[0].v_pointer);
 #line 311 "About.vala.c"
 	}
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	return NULL;
 #line 315 "About.vala.c"
 }
@@ -317,22 +317,22 @@ static gchar* value_xcls_aboutdialog1_lcopy_value (const GValue* value, guint n_
 
 GParamSpec* param_spec_xcls_aboutdialog1 (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags) {
 	ParamSpecXcls_AboutDialog1* spec;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	g_return_val_if_fail (g_type_is_a (object_type, TYPE_XCLS_ABOUTDIALOG1), NULL);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	G_PARAM_SPEC (spec)->value_type = object_type;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	return G_PARAM_SPEC (spec);
 #line 329 "About.vala.c"
 }
 
 
 gpointer value_get_xcls_aboutdialog1 (const GValue* value) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, TYPE_XCLS_ABOUTDIALOG1), NULL);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	return value->data[0].v_pointer;
 #line 338 "About.vala.c"
 }
@@ -340,29 +340,29 @@ gpointer value_get_xcls_aboutdialog1 (const GValue* value) {
 
 void value_set_xcls_aboutdialog1 (GValue* value, gpointer v_object) {
 	Xcls_AboutDialog1* old;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, TYPE_XCLS_ABOUTDIALOG1));
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	old = value->data[0].v_pointer;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	if (v_object) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, TYPE_XCLS_ABOUTDIALOG1));
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 		value->data[0].v_pointer = v_object;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 		xcls_aboutdialog1_ref (value->data[0].v_pointer);
 #line 358 "About.vala.c"
 	} else {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 		value->data[0].v_pointer = NULL;
 #line 362 "About.vala.c"
 	}
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	if (old) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 		xcls_aboutdialog1_unref (old);
 #line 368 "About.vala.c"
 	}
@@ -371,27 +371,27 @@ void value_set_xcls_aboutdialog1 (GValue* value, gpointer v_object) {
 
 void value_take_xcls_aboutdialog1 (GValue* value, gpointer v_object) {
 	Xcls_AboutDialog1* old;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, TYPE_XCLS_ABOUTDIALOG1));
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	old = value->data[0].v_pointer;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	if (v_object) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, TYPE_XCLS_ABOUTDIALOG1));
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 		value->data[0].v_pointer = v_object;
 #line 387 "About.vala.c"
 	} else {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 		value->data[0].v_pointer = NULL;
 #line 391 "About.vala.c"
 	}
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	if (old) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 		xcls_aboutdialog1_unref (old);
 #line 397 "About.vala.c"
 	}
@@ -399,16 +399,16 @@ void value_take_xcls_aboutdialog1 (GValue* value, gpointer v_object) {
 
 
 static void xcls_aboutdialog1_class_init (Xcls_AboutDialog1Class * klass) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	xcls_aboutdialog1_parent_class = g_type_class_peek_parent (klass);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	XCLS_ABOUTDIALOG1_CLASS (klass)->finalize = xcls_aboutdialog1_finalize;
 #line 407 "About.vala.c"
 }
 
 
 static void xcls_aboutdialog1_instance_init (Xcls_AboutDialog1 * self) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	self->ref_count = 1;
 #line 414 "About.vala.c"
 }
@@ -416,9 +416,9 @@ static void xcls_aboutdialog1_instance_init (Xcls_AboutDialog1 * self) {
 
 static void xcls_aboutdialog1_finalize (Xcls_AboutDialog1* obj) {
 	Xcls_AboutDialog1 * self;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, TYPE_XCLS_ABOUTDIALOG1, Xcls_AboutDialog1);
-#line 22 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 22 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	_g_object_unref0 (self->el);
 #line 424 "About.vala.c"
 }
@@ -441,9 +441,9 @@ GType xcls_aboutdialog1_get_type (void) {
 gpointer xcls_aboutdialog1_ref (gpointer instance) {
 	Xcls_AboutDialog1* self;
 	self = instance;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	g_atomic_int_inc (&self->ref_count);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	return instance;
 #line 449 "About.vala.c"
 }
@@ -452,11 +452,11 @@ gpointer xcls_aboutdialog1_ref (gpointer instance) {
 void xcls_aboutdialog1_unref (gpointer instance) {
 	Xcls_AboutDialog1* self;
 	self = instance;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 		XCLS_ABOUTDIALOG1_GET_CLASS (self)->finalize (self);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/About.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/About.vala"
 		g_type_free_instance ((GTypeInstance *) self);
 #line 462 "About.vala.c"
 	}

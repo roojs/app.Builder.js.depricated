@@ -364,7 +364,7 @@ static void xcls_editor_finalize (Xcls_Editor* obj);
 
 
 static gpointer _xcls_editor_ref0 (gpointer self) {
-#line 42 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 42 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return self ? xcls_editor_ref (self) : NULL;
 #line 370 "Editor.vala.c"
 }
@@ -378,27 +378,27 @@ static gboolean __lambda74_ (Xcls_Editor* self, GdkEventConfigure* object) {
 	Xcls_Editor* _tmp3_;
 	gint _tmp4_ = 0;
 	gint _tmp5_ = 0;
-#line 59 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 59 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_return_val_if_fail (object != NULL, FALSE);
-#line 60 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 60 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp0_ = xcls_editor__this;
-#line 60 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 60 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp0_->pos = TRUE;
-#line 61 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 61 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp1_ = self->el;
-#line 61 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 61 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp2_ = xcls_editor__this;
-#line 61 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 61 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp3_ = xcls_editor__this;
-#line 61 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 61 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	gtk_window_get_position (_tmp1_, &_tmp4_, &_tmp5_);
-#line 61 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 61 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp2_->pos_root_x = _tmp4_;
-#line 61 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 61 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp3_->pos_root_y = _tmp5_;
-#line 64 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 64 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	result = FALSE;
-#line 64 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 64 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return result;
 #line 404 "Editor.vala.c"
 }
@@ -407,7 +407,7 @@ static gboolean __lambda74_ (Xcls_Editor* self, GdkEventConfigure* object) {
 static gboolean ___lambda74__gtk_widget_configure_event (GtkWidget* _sender, GdkEventConfigure* event, gpointer self) {
 	gboolean result;
 	result = __lambda74_ (self, event);
-#line 59 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 59 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return result;
 #line 413 "Editor.vala.c"
 }
@@ -415,24 +415,24 @@ static gboolean ___lambda74__gtk_widget_configure_event (GtkWidget* _sender, Gdk
 
 static void __lambda75_ (Xcls_Editor* self) {
 	gboolean _tmp0_;
-#line 69 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 69 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp0_ = self->pos;
-#line 69 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 69 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (_tmp0_) {
 #line 423 "Editor.vala.c"
 		Xcls_Editor* _tmp1_;
 		GtkWindow* _tmp2_;
 		gint _tmp3_;
 		gint _tmp4_;
-#line 70 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 70 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		_tmp1_ = xcls_editor__this;
-#line 70 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 70 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		_tmp2_ = _tmp1_->el;
-#line 70 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 70 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		_tmp3_ = self->pos_root_x;
-#line 70 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 70 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		_tmp4_ = self->pos_root_y;
-#line 70 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 70 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		gtk_window_move (_tmp2_, _tmp3_, _tmp4_);
 #line 438 "Editor.vala.c"
 	}
@@ -440,7 +440,7 @@ static void __lambda75_ (Xcls_Editor* self) {
 
 
 static void ___lambda75__gtk_widget_show (GtkWidget* _sender, gpointer self) {
-#line 68 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 68 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	__lambda75_ (self);
 #line 446 "Editor.vala.c"
 }
@@ -462,84 +462,84 @@ Xcls_Editor* xcls_editor_construct (GType object_type) {
 	GtkVBox* _tmp10_;
 	GtkWindow* _tmp11_;
 	GtkWindow* _tmp12_;
-#line 39 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 39 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	self = (Xcls_Editor*) g_type_create_instance (object_type);
-#line 41 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 41 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp0_ = (GtkWindow*) gtk_window_new (GTK_WINDOW_TOPLEVEL);
-#line 41 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 41 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_object_ref_sink (_tmp0_);
-#line 41 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 41 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_g_object_unref0 (self->el);
-#line 41 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 41 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	self->el = _tmp0_;
-#line 42 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 42 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp1_ = _xcls_editor_ref0 (self);
-#line 42 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 42 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_xcls_editor_unref0 (xcls_editor__this);
-#line 42 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 42 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	xcls_editor__this = _tmp1_;
-#line 43 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 43 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp2_ = _xcls_editor_ref0 (self);
-#line 43 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 43 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_xcls_editor_unref0 (Editor);
-#line 43 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 43 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	Editor = _tmp2_;
-#line 46 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 46 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	self->dirty = FALSE;
-#line 47 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 47 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	self->pos = FALSE;
-#line 48 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 48 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp3_ = g_strdup ("");
-#line 48 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 48 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_g_free0 (self->activeEditor);
-#line 48 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 48 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	self->activeEditor = _tmp3_;
-#line 49 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 49 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp4_ = g_strdup ("");
-#line 49 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 49 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_g_free0 (self->active_path);
-#line 49 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 49 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	self->active_path = _tmp4_;
-#line 52 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 52 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp5_ = self->el;
-#line 52 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 52 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_object_set ((GtkWidget*) _tmp5_, "height-request", 300, NULL);
-#line 53 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 53 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp6_ = self->el;
-#line 53 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 53 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	gtk_window_set_title (_tmp6_, "Application Builder -  Code  Editor");
-#line 54 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 54 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp7_ = self->el;
-#line 54 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 54 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_object_set ((GtkWidget*) _tmp7_, "width-request", 500, NULL);
-#line 55 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 55 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp8_ = xcls_editor_xcls_vbox2_new ();
-#line 55 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 55 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	child_0 = _tmp8_;
-#line 56 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 56 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp9_ = self->el;
-#line 56 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 56 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp10_ = child_0->el;
-#line 56 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 56 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	gtk_container_add ((GtkContainer*) _tmp9_, (GtkWidget*) _tmp10_);
-#line 59 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 59 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp11_ = self->el;
-#line 59 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 59 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_signal_connect ((GtkWidget*) _tmp11_, "configure-event", (GCallback) ___lambda74__gtk_widget_configure_event, self);
-#line 68 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 68 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp12_ = self->el;
-#line 68 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 68 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_signal_connect ((GtkWidget*) _tmp12_, "show", (GCallback) ___lambda75__gtk_widget_show, self);
-#line 39 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 39 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_xcls_editor_xcls_vbox2_unref0 (child_0);
-#line 39 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 39 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return self;
 #line 538 "Editor.vala.c"
 }
 
 
 Xcls_Editor* xcls_editor_new (void) {
-#line 39 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 39 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return xcls_editor_construct (TYPE_XCLS_EDITOR);
 #line 545 "Editor.vala.c"
 }
@@ -554,39 +554,39 @@ gboolean xcls_editor_save (Xcls_Editor* self) {
 	gchar* _tmp4_;
 	Xcls_Editor* _tmp5_;
 	GtkWindow* _tmp6_;
-#line 101 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 101 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_return_val_if_fail (self != NULL, FALSE);
-#line 103 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 103 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp0_ = Editor;
-#line 103 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 103 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp1_ = _tmp0_->RightEditor;
-#line 103 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 103 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp2_ = xcls_editor_xcls_righteditor_save (_tmp1_);
-#line 103 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 103 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (!_tmp2_) {
-#line 105 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 105 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		result = TRUE;
-#line 105 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 105 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		return result;
 #line 572 "Editor.vala.c"
 	}
-#line 107 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 107 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp3_ = xcls_editor__this;
-#line 107 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 107 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp4_ = g_strdup ("");
-#line 107 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 107 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_g_free0 (_tmp3_->active_path);
-#line 107 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 107 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp3_->active_path = _tmp4_;
-#line 108 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 108 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp5_ = xcls_editor__this;
-#line 108 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 108 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp6_ = _tmp5_->el;
-#line 108 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 108 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	gtk_widget_hide ((GtkWidget*) _tmp6_);
-#line 109 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 109 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	result = TRUE;
-#line 109 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 109 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return result;
 #line 592 "Editor.vala.c"
 }
@@ -594,11 +594,11 @@ gboolean xcls_editor_save (Xcls_Editor* self) {
 
 void xcls_editor_show_all (Xcls_Editor* self) {
 	GtkWindow* _tmp0_;
-#line 116 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 116 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_return_if_fail (self != NULL);
-#line 117 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 117 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp0_ = self->el;
-#line 117 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 117 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	gtk_widget_show_all ((GtkWidget*) _tmp0_);
 #line 604 "Editor.vala.c"
 }
@@ -615,64 +615,64 @@ Xcls_EditorXcls_VBox2* xcls_editor_xcls_vbox2_construct (GType object_type) {
 	Xcls_EditorXcls_RightEditor* child_1;
 	GtkVBox* _tmp5_;
 	GtkScrolledWindow* _tmp6_;
-#line 138 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 138 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	self = (Xcls_EditorXcls_VBox2*) g_type_create_instance (object_type);
-#line 140 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 140 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp0_ = (GtkVBox*) gtk_vbox_new (TRUE, 0);
-#line 140 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 140 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_object_ref_sink (_tmp0_);
-#line 140 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 140 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_g_object_unref0 (self->el);
-#line 140 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 140 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	self->el = _tmp0_;
-#line 145 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 145 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp1_ = xcls_editor_xcls_toolbar3_new ();
-#line 145 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 145 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	child_0 = _tmp1_;
-#line 146 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 146 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp2_ = self->el;
-#line 146 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 146 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp3_ = child_0->el;
-#line 146 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 146 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	gtk_box_pack_start ((GtkBox*) _tmp2_, (GtkWidget*) _tmp3_, FALSE, TRUE, (guint) 0);
-#line 147 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 147 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp4_ = xcls_editor_xcls_righteditor_new ();
-#line 147 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 147 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	child_1 = _tmp4_;
-#line 148 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 148 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp5_ = self->el;
-#line 148 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 148 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp6_ = child_1->el;
-#line 148 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 148 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	gtk_container_add ((GtkContainer*) _tmp5_, (GtkWidget*) _tmp6_);
-#line 138 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 138 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_xcls_editor_xcls_righteditor_unref0 (child_1);
-#line 138 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 138 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_xcls_editor_xcls_toolbar3_unref0 (child_0);
-#line 138 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 138 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return self;
 #line 655 "Editor.vala.c"
 }
 
 
 Xcls_EditorXcls_VBox2* xcls_editor_xcls_vbox2_new (void) {
-#line 138 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 138 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return xcls_editor_xcls_vbox2_construct (XCLS_EDITOR_TYPE_XCLS_VBOX2);
 #line 662 "Editor.vala.c"
 }
 
 
 static void xcls_editor_value_xcls_vbox2_init (GValue* value) {
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	value->data[0].v_pointer = NULL;
 #line 669 "Editor.vala.c"
 }
 
 
 static void xcls_editor_value_xcls_vbox2_free_value (GValue* value) {
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (value->data[0].v_pointer) {
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		xcls_editor_xcls_vbox2_unref (value->data[0].v_pointer);
 #line 678 "Editor.vala.c"
 	}
@@ -680,13 +680,13 @@ static void xcls_editor_value_xcls_vbox2_free_value (GValue* value) {
 
 
 static void xcls_editor_value_xcls_vbox2_copy_value (const GValue* src_value, GValue* dest_value) {
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (src_value->data[0].v_pointer) {
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		dest_value->data[0].v_pointer = xcls_editor_xcls_vbox2_ref (src_value->data[0].v_pointer);
 #line 688 "Editor.vala.c"
 	} else {
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		dest_value->data[0].v_pointer = NULL;
 #line 692 "Editor.vala.c"
 	}
@@ -694,37 +694,37 @@ static void xcls_editor_value_xcls_vbox2_copy_value (const GValue* src_value, GV
 
 
 static gpointer xcls_editor_value_xcls_vbox2_peek_pointer (const GValue* value) {
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return value->data[0].v_pointer;
 #line 700 "Editor.vala.c"
 }
 
 
 static gchar* xcls_editor_value_xcls_vbox2_collect_value (GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (collect_values[0].v_pointer) {
 #line 707 "Editor.vala.c"
 		Xcls_EditorXcls_VBox2* object;
 		object = collect_values[0].v_pointer;
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		if (object->parent_instance.g_class == NULL) {
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 714 "Editor.vala.c"
 		} else if (!g_value_type_compatible (G_TYPE_FROM_INSTANCE (object), G_VALUE_TYPE (value))) {
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 			return g_strconcat ("invalid object type `", g_type_name (G_TYPE_FROM_INSTANCE (object)), "' for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 718 "Editor.vala.c"
 		}
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		value->data[0].v_pointer = xcls_editor_xcls_vbox2_ref (object);
 #line 722 "Editor.vala.c"
 	} else {
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		value->data[0].v_pointer = NULL;
 #line 726 "Editor.vala.c"
 	}
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return NULL;
 #line 730 "Editor.vala.c"
 }
@@ -733,27 +733,27 @@ static gchar* xcls_editor_value_xcls_vbox2_collect_value (GValue* value, guint n
 static gchar* xcls_editor_value_xcls_vbox2_lcopy_value (const GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
 	Xcls_EditorXcls_VBox2** object_p;
 	object_p = collect_values[0].v_pointer;
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (!object_p) {
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
 #line 741 "Editor.vala.c"
 	}
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (!value->data[0].v_pointer) {
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		*object_p = NULL;
 #line 747 "Editor.vala.c"
 	} else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) {
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		*object_p = value->data[0].v_pointer;
 #line 751 "Editor.vala.c"
 	} else {
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		*object_p = xcls_editor_xcls_vbox2_ref (value->data[0].v_pointer);
 #line 755 "Editor.vala.c"
 	}
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return NULL;
 #line 759 "Editor.vala.c"
 }
@@ -761,22 +761,22 @@ static gchar* xcls_editor_value_xcls_vbox2_lcopy_value (const GValue* value, gui
 
 GParamSpec* xcls_editor_param_spec_xcls_vbox2 (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags) {
 	Xcls_EditorParamSpecXcls_VBox2* spec;
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_return_val_if_fail (g_type_is_a (object_type, XCLS_EDITOR_TYPE_XCLS_VBOX2), NULL);
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	G_PARAM_SPEC (spec)->value_type = object_type;
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return G_PARAM_SPEC (spec);
 #line 773 "Editor.vala.c"
 }
 
 
 gpointer xcls_editor_value_get_xcls_vbox2 (const GValue* value) {
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITOR_TYPE_XCLS_VBOX2), NULL);
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return value->data[0].v_pointer;
 #line 782 "Editor.vala.c"
 }
@@ -784,29 +784,29 @@ gpointer xcls_editor_value_get_xcls_vbox2 (const GValue* value) {
 
 void xcls_editor_value_set_xcls_vbox2 (GValue* value, gpointer v_object) {
 	Xcls_EditorXcls_VBox2* old;
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITOR_TYPE_XCLS_VBOX2));
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	old = value->data[0].v_pointer;
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (v_object) {
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_EDITOR_TYPE_XCLS_VBOX2));
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		value->data[0].v_pointer = v_object;
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		xcls_editor_xcls_vbox2_ref (value->data[0].v_pointer);
 #line 802 "Editor.vala.c"
 	} else {
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		value->data[0].v_pointer = NULL;
 #line 806 "Editor.vala.c"
 	}
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (old) {
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		xcls_editor_xcls_vbox2_unref (old);
 #line 812 "Editor.vala.c"
 	}
@@ -815,27 +815,27 @@ void xcls_editor_value_set_xcls_vbox2 (GValue* value, gpointer v_object) {
 
 void xcls_editor_value_take_xcls_vbox2 (GValue* value, gpointer v_object) {
 	Xcls_EditorXcls_VBox2* old;
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITOR_TYPE_XCLS_VBOX2));
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	old = value->data[0].v_pointer;
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (v_object) {
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_EDITOR_TYPE_XCLS_VBOX2));
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		value->data[0].v_pointer = v_object;
 #line 831 "Editor.vala.c"
 	} else {
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		value->data[0].v_pointer = NULL;
 #line 835 "Editor.vala.c"
 	}
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (old) {
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		xcls_editor_xcls_vbox2_unref (old);
 #line 841 "Editor.vala.c"
 	}
@@ -843,16 +843,16 @@ void xcls_editor_value_take_xcls_vbox2 (GValue* value, gpointer v_object) {
 
 
 static void xcls_editor_xcls_vbox2_class_init (Xcls_EditorXcls_VBox2Class * klass) {
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	xcls_editor_xcls_vbox2_parent_class = g_type_class_peek_parent (klass);
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	XCLS_EDITOR_XCLS_VBOX2_CLASS (klass)->finalize = xcls_editor_xcls_vbox2_finalize;
 #line 851 "Editor.vala.c"
 }
 
 
 static void xcls_editor_xcls_vbox2_instance_init (Xcls_EditorXcls_VBox2 * self) {
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	self->ref_count = 1;
 #line 858 "Editor.vala.c"
 }
@@ -860,9 +860,9 @@ static void xcls_editor_xcls_vbox2_instance_init (Xcls_EditorXcls_VBox2 * self) 
 
 static void xcls_editor_xcls_vbox2_finalize (Xcls_EditorXcls_VBox2* obj) {
 	Xcls_EditorXcls_VBox2 * self;
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_EDITOR_TYPE_XCLS_VBOX2, Xcls_EditorXcls_VBox2);
-#line 133 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 133 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_g_object_unref0 (self->el);
 #line 868 "Editor.vala.c"
 }
@@ -885,9 +885,9 @@ GType xcls_editor_xcls_vbox2_get_type (void) {
 gpointer xcls_editor_xcls_vbox2_ref (gpointer instance) {
 	Xcls_EditorXcls_VBox2* self;
 	self = instance;
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_atomic_int_inc (&self->ref_count);
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return instance;
 #line 893 "Editor.vala.c"
 }
@@ -896,11 +896,11 @@ gpointer xcls_editor_xcls_vbox2_ref (gpointer instance) {
 void xcls_editor_xcls_vbox2_unref (gpointer instance) {
 	Xcls_EditorXcls_VBox2* self;
 	self = instance;
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		XCLS_EDITOR_XCLS_VBOX2_GET_CLASS (self)->finalize (self);
-#line 131 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		g_type_free_instance ((GTypeInstance *) self);
 #line 906 "Editor.vala.c"
 	}
@@ -914,52 +914,52 @@ Xcls_EditorXcls_Toolbar3* xcls_editor_xcls_toolbar3_construct (GType object_type
 	Xcls_EditorXcls_save_button* child_0;
 	GtkToolbar* _tmp2_;
 	GtkToolButton* _tmp3_;
-#line 176 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 176 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	self = (Xcls_EditorXcls_Toolbar3*) g_type_create_instance (object_type);
-#line 178 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 178 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp0_ = (GtkToolbar*) gtk_toolbar_new ();
-#line 178 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 178 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_object_ref_sink (_tmp0_);
-#line 178 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 178 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_g_object_unref0 (self->el);
-#line 178 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 178 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	self->el = _tmp0_;
-#line 183 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 183 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp1_ = xcls_editor_xcls_save_button_new ();
-#line 183 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 183 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	child_0 = _tmp1_;
-#line 184 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 184 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp2_ = self->el;
-#line 184 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 184 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp3_ = child_0->el;
-#line 184 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 184 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	gtk_container_add ((GtkContainer*) _tmp2_, (GtkWidget*) _tmp3_);
-#line 176 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 176 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_xcls_editor_xcls_save_button_unref0 (child_0);
-#line 176 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 176 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return self;
 #line 942 "Editor.vala.c"
 }
 
 
 Xcls_EditorXcls_Toolbar3* xcls_editor_xcls_toolbar3_new (void) {
-#line 176 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 176 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return xcls_editor_xcls_toolbar3_construct (XCLS_EDITOR_TYPE_XCLS_TOOLBAR3);
 #line 949 "Editor.vala.c"
 }
 
 
 static void xcls_editor_value_xcls_toolbar3_init (GValue* value) {
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	value->data[0].v_pointer = NULL;
 #line 956 "Editor.vala.c"
 }
 
 
 static void xcls_editor_value_xcls_toolbar3_free_value (GValue* value) {
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (value->data[0].v_pointer) {
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		xcls_editor_xcls_toolbar3_unref (value->data[0].v_pointer);
 #line 965 "Editor.vala.c"
 	}
@@ -967,13 +967,13 @@ static void xcls_editor_value_xcls_toolbar3_free_value (GValue* value) {
 
 
 static void xcls_editor_value_xcls_toolbar3_copy_value (const GValue* src_value, GValue* dest_value) {
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (src_value->data[0].v_pointer) {
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		dest_value->data[0].v_pointer = xcls_editor_xcls_toolbar3_ref (src_value->data[0].v_pointer);
 #line 975 "Editor.vala.c"
 	} else {
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		dest_value->data[0].v_pointer = NULL;
 #line 979 "Editor.vala.c"
 	}
@@ -981,37 +981,37 @@ static void xcls_editor_value_xcls_toolbar3_copy_value (const GValue* src_value,
 
 
 static gpointer xcls_editor_value_xcls_toolbar3_peek_pointer (const GValue* value) {
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return value->data[0].v_pointer;
 #line 987 "Editor.vala.c"
 }
 
 
 static gchar* xcls_editor_value_xcls_toolbar3_collect_value (GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (collect_values[0].v_pointer) {
 #line 994 "Editor.vala.c"
 		Xcls_EditorXcls_Toolbar3* object;
 		object = collect_values[0].v_pointer;
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		if (object->parent_instance.g_class == NULL) {
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 1001 "Editor.vala.c"
 		} else if (!g_value_type_compatible (G_TYPE_FROM_INSTANCE (object), G_VALUE_TYPE (value))) {
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 			return g_strconcat ("invalid object type `", g_type_name (G_TYPE_FROM_INSTANCE (object)), "' for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 1005 "Editor.vala.c"
 		}
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		value->data[0].v_pointer = xcls_editor_xcls_toolbar3_ref (object);
 #line 1009 "Editor.vala.c"
 	} else {
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		value->data[0].v_pointer = NULL;
 #line 1013 "Editor.vala.c"
 	}
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return NULL;
 #line 1017 "Editor.vala.c"
 }
@@ -1020,27 +1020,27 @@ static gchar* xcls_editor_value_xcls_toolbar3_collect_value (GValue* value, guin
 static gchar* xcls_editor_value_xcls_toolbar3_lcopy_value (const GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
 	Xcls_EditorXcls_Toolbar3** object_p;
 	object_p = collect_values[0].v_pointer;
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (!object_p) {
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
 #line 1028 "Editor.vala.c"
 	}
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (!value->data[0].v_pointer) {
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		*object_p = NULL;
 #line 1034 "Editor.vala.c"
 	} else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) {
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		*object_p = value->data[0].v_pointer;
 #line 1038 "Editor.vala.c"
 	} else {
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		*object_p = xcls_editor_xcls_toolbar3_ref (value->data[0].v_pointer);
 #line 1042 "Editor.vala.c"
 	}
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return NULL;
 #line 1046 "Editor.vala.c"
 }
@@ -1048,22 +1048,22 @@ static gchar* xcls_editor_value_xcls_toolbar3_lcopy_value (const GValue* value, 
 
 GParamSpec* xcls_editor_param_spec_xcls_toolbar3 (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags) {
 	Xcls_EditorParamSpecXcls_Toolbar3* spec;
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_return_val_if_fail (g_type_is_a (object_type, XCLS_EDITOR_TYPE_XCLS_TOOLBAR3), NULL);
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	G_PARAM_SPEC (spec)->value_type = object_type;
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return G_PARAM_SPEC (spec);
 #line 1060 "Editor.vala.c"
 }
 
 
 gpointer xcls_editor_value_get_xcls_toolbar3 (const GValue* value) {
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITOR_TYPE_XCLS_TOOLBAR3), NULL);
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return value->data[0].v_pointer;
 #line 1069 "Editor.vala.c"
 }
@@ -1071,29 +1071,29 @@ gpointer xcls_editor_value_get_xcls_toolbar3 (const GValue* value) {
 
 void xcls_editor_value_set_xcls_toolbar3 (GValue* value, gpointer v_object) {
 	Xcls_EditorXcls_Toolbar3* old;
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITOR_TYPE_XCLS_TOOLBAR3));
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	old = value->data[0].v_pointer;
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (v_object) {
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_EDITOR_TYPE_XCLS_TOOLBAR3));
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		value->data[0].v_pointer = v_object;
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		xcls_editor_xcls_toolbar3_ref (value->data[0].v_pointer);
 #line 1089 "Editor.vala.c"
 	} else {
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		value->data[0].v_pointer = NULL;
 #line 1093 "Editor.vala.c"
 	}
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (old) {
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		xcls_editor_xcls_toolbar3_unref (old);
 #line 1099 "Editor.vala.c"
 	}
@@ -1102,27 +1102,27 @@ void xcls_editor_value_set_xcls_toolbar3 (GValue* value, gpointer v_object) {
 
 void xcls_editor_value_take_xcls_toolbar3 (GValue* value, gpointer v_object) {
 	Xcls_EditorXcls_Toolbar3* old;
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITOR_TYPE_XCLS_TOOLBAR3));
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	old = value->data[0].v_pointer;
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (v_object) {
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_EDITOR_TYPE_XCLS_TOOLBAR3));
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		value->data[0].v_pointer = v_object;
 #line 1118 "Editor.vala.c"
 	} else {
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		value->data[0].v_pointer = NULL;
 #line 1122 "Editor.vala.c"
 	}
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (old) {
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		xcls_editor_xcls_toolbar3_unref (old);
 #line 1128 "Editor.vala.c"
 	}
@@ -1130,16 +1130,16 @@ void xcls_editor_value_take_xcls_toolbar3 (GValue* value, gpointer v_object) {
 
 
 static void xcls_editor_xcls_toolbar3_class_init (Xcls_EditorXcls_Toolbar3Class * klass) {
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	xcls_editor_xcls_toolbar3_parent_class = g_type_class_peek_parent (klass);
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	XCLS_EDITOR_XCLS_TOOLBAR3_CLASS (klass)->finalize = xcls_editor_xcls_toolbar3_finalize;
 #line 1138 "Editor.vala.c"
 }
 
 
 static void xcls_editor_xcls_toolbar3_instance_init (Xcls_EditorXcls_Toolbar3 * self) {
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	self->ref_count = 1;
 #line 1145 "Editor.vala.c"
 }
@@ -1147,9 +1147,9 @@ static void xcls_editor_xcls_toolbar3_instance_init (Xcls_EditorXcls_Toolbar3 * 
 
 static void xcls_editor_xcls_toolbar3_finalize (Xcls_EditorXcls_Toolbar3* obj) {
 	Xcls_EditorXcls_Toolbar3 * self;
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_EDITOR_TYPE_XCLS_TOOLBAR3, Xcls_EditorXcls_Toolbar3);
-#line 171 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 171 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_g_object_unref0 (self->el);
 #line 1155 "Editor.vala.c"
 }
@@ -1172,9 +1172,9 @@ GType xcls_editor_xcls_toolbar3_get_type (void) {
 gpointer xcls_editor_xcls_toolbar3_ref (gpointer instance) {
 	Xcls_EditorXcls_Toolbar3* self;
 	self = instance;
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_atomic_int_inc (&self->ref_count);
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return instance;
 #line 1180 "Editor.vala.c"
 }
@@ -1183,11 +1183,11 @@ gpointer xcls_editor_xcls_toolbar3_ref (gpointer instance) {
 void xcls_editor_xcls_toolbar3_unref (gpointer instance) {
 	Xcls_EditorXcls_Toolbar3* self;
 	self = instance;
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		XCLS_EDITOR_XCLS_TOOLBAR3_GET_CLASS (self)->finalize (self);
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		g_type_free_instance ((GTypeInstance *) self);
 #line 1193 "Editor.vala.c"
 	}
@@ -1195,7 +1195,7 @@ void xcls_editor_xcls_toolbar3_unref (gpointer instance) {
 
 
 static gpointer _xcls_editor_xcls_save_button_ref0 (gpointer self) {
-#line 213 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 213 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return self ? xcls_editor_xcls_save_button_ref (self) : NULL;
 #line 1201 "Editor.vala.c"
 }
@@ -1204,18 +1204,18 @@ static gpointer _xcls_editor_xcls_save_button_ref0 (gpointer self) {
 static void __lambda71_ (Xcls_EditorXcls_save_button* self) {
 	Xcls_Editor* _tmp0_;
 	Xcls_EditorXcls_RightEditor* _tmp1_;
-#line 221 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 221 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp0_ = Editor;
-#line 221 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 221 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp1_ = _tmp0_->RightEditor;
-#line 221 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 221 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	xcls_editor_xcls_righteditor_save (_tmp1_);
 #line 1214 "Editor.vala.c"
 }
 
 
 static void ___lambda71__gtk_tool_button_clicked (GtkToolButton* _sender, gpointer self) {
-#line 220 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 220 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	__lambda71_ (self);
 #line 1221 "Editor.vala.c"
 }
@@ -1227,52 +1227,52 @@ Xcls_EditorXcls_save_button* xcls_editor_xcls_save_button_construct (GType objec
 	Xcls_Editor* _tmp1_;
 	Xcls_EditorXcls_save_button* _tmp2_;
 	GtkToolButton* _tmp3_;
-#line 210 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 210 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	self = (Xcls_EditorXcls_save_button*) g_type_create_instance (object_type);
-#line 212 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 212 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp0_ = (GtkToolButton*) gtk_tool_button_new (NULL, "Save");
-#line 212 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 212 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_object_ref_sink (_tmp0_);
-#line 212 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 212 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_g_object_unref0 (self->el);
-#line 212 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 212 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	self->el = _tmp0_;
-#line 213 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 213 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp1_ = xcls_editor__this;
-#line 213 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 213 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp2_ = _xcls_editor_xcls_save_button_ref0 (self);
-#line 213 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 213 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_xcls_editor_xcls_save_button_unref0 (_tmp1_->save_button);
-#line 213 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 213 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp1_->save_button = _tmp2_;
-#line 220 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 220 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp3_ = self->el;
-#line 220 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 220 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_signal_connect (_tmp3_, "clicked", (GCallback) ___lambda71__gtk_tool_button_clicked, self);
-#line 210 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 210 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return self;
 #line 1255 "Editor.vala.c"
 }
 
 
 Xcls_EditorXcls_save_button* xcls_editor_xcls_save_button_new (void) {
-#line 210 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 210 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return xcls_editor_xcls_save_button_construct (XCLS_EDITOR_TYPE_XCLS_SAVE_BUTTON);
 #line 1262 "Editor.vala.c"
 }
 
 
 static void xcls_editor_value_xcls_save_button_init (GValue* value) {
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	value->data[0].v_pointer = NULL;
 #line 1269 "Editor.vala.c"
 }
 
 
 static void xcls_editor_value_xcls_save_button_free_value (GValue* value) {
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (value->data[0].v_pointer) {
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		xcls_editor_xcls_save_button_unref (value->data[0].v_pointer);
 #line 1278 "Editor.vala.c"
 	}
@@ -1280,13 +1280,13 @@ static void xcls_editor_value_xcls_save_button_free_value (GValue* value) {
 
 
 static void xcls_editor_value_xcls_save_button_copy_value (const GValue* src_value, GValue* dest_value) {
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (src_value->data[0].v_pointer) {
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		dest_value->data[0].v_pointer = xcls_editor_xcls_save_button_ref (src_value->data[0].v_pointer);
 #line 1288 "Editor.vala.c"
 	} else {
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		dest_value->data[0].v_pointer = NULL;
 #line 1292 "Editor.vala.c"
 	}
@@ -1294,37 +1294,37 @@ static void xcls_editor_value_xcls_save_button_copy_value (const GValue* src_val
 
 
 static gpointer xcls_editor_value_xcls_save_button_peek_pointer (const GValue* value) {
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return value->data[0].v_pointer;
 #line 1300 "Editor.vala.c"
 }
 
 
 static gchar* xcls_editor_value_xcls_save_button_collect_value (GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (collect_values[0].v_pointer) {
 #line 1307 "Editor.vala.c"
 		Xcls_EditorXcls_save_button* object;
 		object = collect_values[0].v_pointer;
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		if (object->parent_instance.g_class == NULL) {
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 1314 "Editor.vala.c"
 		} else if (!g_value_type_compatible (G_TYPE_FROM_INSTANCE (object), G_VALUE_TYPE (value))) {
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 			return g_strconcat ("invalid object type `", g_type_name (G_TYPE_FROM_INSTANCE (object)), "' for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 1318 "Editor.vala.c"
 		}
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		value->data[0].v_pointer = xcls_editor_xcls_save_button_ref (object);
 #line 1322 "Editor.vala.c"
 	} else {
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		value->data[0].v_pointer = NULL;
 #line 1326 "Editor.vala.c"
 	}
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return NULL;
 #line 1330 "Editor.vala.c"
 }
@@ -1333,27 +1333,27 @@ static gchar* xcls_editor_value_xcls_save_button_collect_value (GValue* value, g
 static gchar* xcls_editor_value_xcls_save_button_lcopy_value (const GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
 	Xcls_EditorXcls_save_button** object_p;
 	object_p = collect_values[0].v_pointer;
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (!object_p) {
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
 #line 1341 "Editor.vala.c"
 	}
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (!value->data[0].v_pointer) {
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		*object_p = NULL;
 #line 1347 "Editor.vala.c"
 	} else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) {
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		*object_p = value->data[0].v_pointer;
 #line 1351 "Editor.vala.c"
 	} else {
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		*object_p = xcls_editor_xcls_save_button_ref (value->data[0].v_pointer);
 #line 1355 "Editor.vala.c"
 	}
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return NULL;
 #line 1359 "Editor.vala.c"
 }
@@ -1361,22 +1361,22 @@ static gchar* xcls_editor_value_xcls_save_button_lcopy_value (const GValue* valu
 
 GParamSpec* xcls_editor_param_spec_xcls_save_button (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags) {
 	Xcls_EditorParamSpecXcls_save_button* spec;
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_return_val_if_fail (g_type_is_a (object_type, XCLS_EDITOR_TYPE_XCLS_SAVE_BUTTON), NULL);
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	G_PARAM_SPEC (spec)->value_type = object_type;
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return G_PARAM_SPEC (spec);
 #line 1373 "Editor.vala.c"
 }
 
 
 gpointer xcls_editor_value_get_xcls_save_button (const GValue* value) {
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITOR_TYPE_XCLS_SAVE_BUTTON), NULL);
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return value->data[0].v_pointer;
 #line 1382 "Editor.vala.c"
 }
@@ -1384,29 +1384,29 @@ gpointer xcls_editor_value_get_xcls_save_button (const GValue* value) {
 
 void xcls_editor_value_set_xcls_save_button (GValue* value, gpointer v_object) {
 	Xcls_EditorXcls_save_button* old;
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITOR_TYPE_XCLS_SAVE_BUTTON));
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	old = value->data[0].v_pointer;
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (v_object) {
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_EDITOR_TYPE_XCLS_SAVE_BUTTON));
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		value->data[0].v_pointer = v_object;
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		xcls_editor_xcls_save_button_ref (value->data[0].v_pointer);
 #line 1402 "Editor.vala.c"
 	} else {
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		value->data[0].v_pointer = NULL;
 #line 1406 "Editor.vala.c"
 	}
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (old) {
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		xcls_editor_xcls_save_button_unref (old);
 #line 1412 "Editor.vala.c"
 	}
@@ -1415,27 +1415,27 @@ void xcls_editor_value_set_xcls_save_button (GValue* value, gpointer v_object) {
 
 void xcls_editor_value_take_xcls_save_button (GValue* value, gpointer v_object) {
 	Xcls_EditorXcls_save_button* old;
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITOR_TYPE_XCLS_SAVE_BUTTON));
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	old = value->data[0].v_pointer;
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (v_object) {
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_EDITOR_TYPE_XCLS_SAVE_BUTTON));
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		value->data[0].v_pointer = v_object;
 #line 1431 "Editor.vala.c"
 	} else {
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		value->data[0].v_pointer = NULL;
 #line 1435 "Editor.vala.c"
 	}
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (old) {
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		xcls_editor_xcls_save_button_unref (old);
 #line 1441 "Editor.vala.c"
 	}
@@ -1443,16 +1443,16 @@ void xcls_editor_value_take_xcls_save_button (GValue* value, gpointer v_object) 
 
 
 static void xcls_editor_xcls_save_button_class_init (Xcls_EditorXcls_save_buttonClass * klass) {
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	xcls_editor_xcls_save_button_parent_class = g_type_class_peek_parent (klass);
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	XCLS_EDITOR_XCLS_SAVE_BUTTON_CLASS (klass)->finalize = xcls_editor_xcls_save_button_finalize;
 #line 1451 "Editor.vala.c"
 }
 
 
 static void xcls_editor_xcls_save_button_instance_init (Xcls_EditorXcls_save_button * self) {
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	self->ref_count = 1;
 #line 1458 "Editor.vala.c"
 }
@@ -1460,9 +1460,9 @@ static void xcls_editor_xcls_save_button_instance_init (Xcls_EditorXcls_save_but
 
 static void xcls_editor_xcls_save_button_finalize (Xcls_EditorXcls_save_button* obj) {
 	Xcls_EditorXcls_save_button * self;
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_EDITOR_TYPE_XCLS_SAVE_BUTTON, Xcls_EditorXcls_save_button);
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_g_object_unref0 (self->el);
 #line 1468 "Editor.vala.c"
 }
@@ -1485,9 +1485,9 @@ GType xcls_editor_xcls_save_button_get_type (void) {
 gpointer xcls_editor_xcls_save_button_ref (gpointer instance) {
 	Xcls_EditorXcls_save_button* self;
 	self = instance;
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_atomic_int_inc (&self->ref_count);
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return instance;
 #line 1493 "Editor.vala.c"
 }
@@ -1496,11 +1496,11 @@ gpointer xcls_editor_xcls_save_button_ref (gpointer instance) {
 void xcls_editor_xcls_save_button_unref (gpointer instance) {
 	Xcls_EditorXcls_save_button* self;
 	self = instance;
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		XCLS_EDITOR_XCLS_SAVE_BUTTON_GET_CLASS (self)->finalize (self);
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		g_type_free_instance ((GTypeInstance *) self);
 #line 1506 "Editor.vala.c"
 	}
@@ -1508,7 +1508,7 @@ void xcls_editor_xcls_save_button_unref (gpointer instance) {
 
 
 static gpointer _xcls_editor_xcls_righteditor_ref0 (gpointer self) {
-#line 255 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 255 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return self ? xcls_editor_xcls_righteditor_ref (self) : NULL;
 #line 1514 "Editor.vala.c"
 }
@@ -1523,44 +1523,44 @@ Xcls_EditorXcls_RightEditor* xcls_editor_xcls_righteditor_construct (GType objec
 	Xcls_EditorXcls_view* child_0;
 	GtkScrolledWindow* _tmp4_;
 	GtkSourceView* _tmp5_;
-#line 252 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 252 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	self = (Xcls_EditorXcls_RightEditor*) g_type_create_instance (object_type);
-#line 254 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 254 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp0_ = (GtkScrolledWindow*) gtk_scrolled_window_new (NULL, NULL);
-#line 254 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 254 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_object_ref_sink (_tmp0_);
-#line 254 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 254 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_g_object_unref0 (self->el);
-#line 254 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 254 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	self->el = _tmp0_;
-#line 255 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 255 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp1_ = xcls_editor__this;
-#line 255 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 255 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp2_ = _xcls_editor_xcls_righteditor_ref0 (self);
-#line 255 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 255 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_xcls_editor_xcls_righteditor_unref0 (_tmp1_->RightEditor);
-#line 255 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 255 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp1_->RightEditor = _tmp2_;
-#line 260 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 260 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp3_ = xcls_editor_xcls_view_new ();
-#line 260 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 260 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	child_0 = _tmp3_;
-#line 261 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 261 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp4_ = self->el;
-#line 261 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 261 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp5_ = child_0->el;
-#line 261 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 261 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	gtk_container_add ((GtkContainer*) _tmp4_, (GtkWidget*) _tmp5_);
-#line 252 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 252 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_xcls_editor_xcls_view_unref0 (child_0);
-#line 252 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 252 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return self;
 #line 1559 "Editor.vala.c"
 }
 
 
 Xcls_EditorXcls_RightEditor* xcls_editor_xcls_righteditor_new (void) {
-#line 252 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 252 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return xcls_editor_xcls_righteditor_construct (XCLS_EDITOR_TYPE_XCLS_RIGHTEDITOR);
 #line 1566 "Editor.vala.c"
 }
@@ -1583,89 +1583,89 @@ gboolean xcls_editor_xcls_righteditor_save (Xcls_EditorXcls_RightEditor* self) {
 	Xcls_Editor* _tmp11_;
 	Xcls_EditorXcls_save_button* _tmp12_;
 	GtkToolButton* _tmp13_;
-#line 271 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 271 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_return_val_if_fail (self != NULL, FALSE);
-#line 272 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 272 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_print ("editor.rightbutton.save");
-#line 273 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 273 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp0_ = xcls_editor__this;
-#line 273 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 273 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp1_ = _tmp0_->active_path;
-#line 273 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 273 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp2_ = strlen (_tmp1_);
-#line 273 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 273 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp3_ = _tmp2_;
-#line 273 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 273 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (_tmp3_ < 1) {
-#line 274 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 274 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		g_print ("skip - no active path");
-#line 275 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 275 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		result = TRUE;
-#line 275 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 275 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		return result;
 #line 1607 "Editor.vala.c"
 	}
-#line 278 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 278 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp4_ = Editor;
-#line 278 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 278 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp5_ = _tmp4_->buffer;
-#line 278 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 278 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp6_ = xcls_editor_xcls_buffer_toString (_tmp5_);
-#line 278 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 278 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	str = _tmp6_;
-#line 280 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 280 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp7_ = Editor;
-#line 280 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 280 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp8_ = _tmp7_->buffer;
-#line 280 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 280 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp9_ = xcls_editor_xcls_buffer_checkSyntax (_tmp8_);
-#line 280 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 280 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (!_tmp9_) {
-#line 281 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 281 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		g_print ("check syntax failed");
-#line 283 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 283 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		result = FALSE;
-#line 283 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 283 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		_g_free0 (str);
-#line 283 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 283 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		return result;
 #line 1633 "Editor.vala.c"
 	}
-#line 287 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 287 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp10_ = xcls_editor__this;
-#line 287 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 287 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp10_->dirty = FALSE;
-#line 288 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 288 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp11_ = xcls_editor__this;
-#line 288 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 288 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp12_ = _tmp11_->save_button;
-#line 288 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 288 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp13_ = _tmp12_->el;
-#line 288 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 288 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	gtk_widget_set_sensitive ((GtkWidget*) _tmp13_, FALSE);
-#line 289 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 289 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_print ("set save button grey");
-#line 290 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 290 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	result = TRUE;
-#line 290 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 290 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_g_free0 (str);
-#line 290 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 290 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return result;
 #line 1655 "Editor.vala.c"
 }
 
 
 static void xcls_editor_value_xcls_righteditor_init (GValue* value) {
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	value->data[0].v_pointer = NULL;
 #line 1662 "Editor.vala.c"
 }
 
 
 static void xcls_editor_value_xcls_righteditor_free_value (GValue* value) {
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (value->data[0].v_pointer) {
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		xcls_editor_xcls_righteditor_unref (value->data[0].v_pointer);
 #line 1671 "Editor.vala.c"
 	}
@@ -1673,13 +1673,13 @@ static void xcls_editor_value_xcls_righteditor_free_value (GValue* value) {
 
 
 static void xcls_editor_value_xcls_righteditor_copy_value (const GValue* src_value, GValue* dest_value) {
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (src_value->data[0].v_pointer) {
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		dest_value->data[0].v_pointer = xcls_editor_xcls_righteditor_ref (src_value->data[0].v_pointer);
 #line 1681 "Editor.vala.c"
 	} else {
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		dest_value->data[0].v_pointer = NULL;
 #line 1685 "Editor.vala.c"
 	}
@@ -1687,37 +1687,37 @@ static void xcls_editor_value_xcls_righteditor_copy_value (const GValue* src_val
 
 
 static gpointer xcls_editor_value_xcls_righteditor_peek_pointer (const GValue* value) {
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return value->data[0].v_pointer;
 #line 1693 "Editor.vala.c"
 }
 
 
 static gchar* xcls_editor_value_xcls_righteditor_collect_value (GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (collect_values[0].v_pointer) {
 #line 1700 "Editor.vala.c"
 		Xcls_EditorXcls_RightEditor* object;
 		object = collect_values[0].v_pointer;
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		if (object->parent_instance.g_class == NULL) {
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 1707 "Editor.vala.c"
 		} else if (!g_value_type_compatible (G_TYPE_FROM_INSTANCE (object), G_VALUE_TYPE (value))) {
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 			return g_strconcat ("invalid object type `", g_type_name (G_TYPE_FROM_INSTANCE (object)), "' for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 1711 "Editor.vala.c"
 		}
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		value->data[0].v_pointer = xcls_editor_xcls_righteditor_ref (object);
 #line 1715 "Editor.vala.c"
 	} else {
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		value->data[0].v_pointer = NULL;
 #line 1719 "Editor.vala.c"
 	}
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return NULL;
 #line 1723 "Editor.vala.c"
 }
@@ -1726,27 +1726,27 @@ static gchar* xcls_editor_value_xcls_righteditor_collect_value (GValue* value, g
 static gchar* xcls_editor_value_xcls_righteditor_lcopy_value (const GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
 	Xcls_EditorXcls_RightEditor** object_p;
 	object_p = collect_values[0].v_pointer;
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (!object_p) {
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
 #line 1734 "Editor.vala.c"
 	}
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (!value->data[0].v_pointer) {
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		*object_p = NULL;
 #line 1740 "Editor.vala.c"
 	} else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) {
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		*object_p = value->data[0].v_pointer;
 #line 1744 "Editor.vala.c"
 	} else {
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		*object_p = xcls_editor_xcls_righteditor_ref (value->data[0].v_pointer);
 #line 1748 "Editor.vala.c"
 	}
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return NULL;
 #line 1752 "Editor.vala.c"
 }
@@ -1754,22 +1754,22 @@ static gchar* xcls_editor_value_xcls_righteditor_lcopy_value (const GValue* valu
 
 GParamSpec* xcls_editor_param_spec_xcls_righteditor (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags) {
 	Xcls_EditorParamSpecXcls_RightEditor* spec;
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_return_val_if_fail (g_type_is_a (object_type, XCLS_EDITOR_TYPE_XCLS_RIGHTEDITOR), NULL);
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	G_PARAM_SPEC (spec)->value_type = object_type;
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return G_PARAM_SPEC (spec);
 #line 1766 "Editor.vala.c"
 }
 
 
 gpointer xcls_editor_value_get_xcls_righteditor (const GValue* value) {
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITOR_TYPE_XCLS_RIGHTEDITOR), NULL);
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return value->data[0].v_pointer;
 #line 1775 "Editor.vala.c"
 }
@@ -1777,29 +1777,29 @@ gpointer xcls_editor_value_get_xcls_righteditor (const GValue* value) {
 
 void xcls_editor_value_set_xcls_righteditor (GValue* value, gpointer v_object) {
 	Xcls_EditorXcls_RightEditor* old;
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITOR_TYPE_XCLS_RIGHTEDITOR));
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	old = value->data[0].v_pointer;
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (v_object) {
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_EDITOR_TYPE_XCLS_RIGHTEDITOR));
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		value->data[0].v_pointer = v_object;
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		xcls_editor_xcls_righteditor_ref (value->data[0].v_pointer);
 #line 1795 "Editor.vala.c"
 	} else {
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		value->data[0].v_pointer = NULL;
 #line 1799 "Editor.vala.c"
 	}
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (old) {
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		xcls_editor_xcls_righteditor_unref (old);
 #line 1805 "Editor.vala.c"
 	}
@@ -1808,27 +1808,27 @@ void xcls_editor_value_set_xcls_righteditor (GValue* value, gpointer v_object) {
 
 void xcls_editor_value_take_xcls_righteditor (GValue* value, gpointer v_object) {
 	Xcls_EditorXcls_RightEditor* old;
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITOR_TYPE_XCLS_RIGHTEDITOR));
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	old = value->data[0].v_pointer;
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (v_object) {
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_EDITOR_TYPE_XCLS_RIGHTEDITOR));
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		value->data[0].v_pointer = v_object;
 #line 1824 "Editor.vala.c"
 	} else {
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		value->data[0].v_pointer = NULL;
 #line 1828 "Editor.vala.c"
 	}
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (old) {
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		xcls_editor_xcls_righteditor_unref (old);
 #line 1834 "Editor.vala.c"
 	}
@@ -1836,16 +1836,16 @@ void xcls_editor_value_take_xcls_righteditor (GValue* value, gpointer v_object) 
 
 
 static void xcls_editor_xcls_righteditor_class_init (Xcls_EditorXcls_RightEditorClass * klass) {
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	xcls_editor_xcls_righteditor_parent_class = g_type_class_peek_parent (klass);
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	XCLS_EDITOR_XCLS_RIGHTEDITOR_CLASS (klass)->finalize = xcls_editor_xcls_righteditor_finalize;
 #line 1844 "Editor.vala.c"
 }
 
 
 static void xcls_editor_xcls_righteditor_instance_init (Xcls_EditorXcls_RightEditor * self) {
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	self->ref_count = 1;
 #line 1851 "Editor.vala.c"
 }
@@ -1853,9 +1853,9 @@ static void xcls_editor_xcls_righteditor_instance_init (Xcls_EditorXcls_RightEdi
 
 static void xcls_editor_xcls_righteditor_finalize (Xcls_EditorXcls_RightEditor* obj) {
 	Xcls_EditorXcls_RightEditor * self;
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_EDITOR_TYPE_XCLS_RIGHTEDITOR, Xcls_EditorXcls_RightEditor);
-#line 247 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 247 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_g_object_unref0 (self->el);
 #line 1861 "Editor.vala.c"
 }
@@ -1878,9 +1878,9 @@ GType xcls_editor_xcls_righteditor_get_type (void) {
 gpointer xcls_editor_xcls_righteditor_ref (gpointer instance) {
 	Xcls_EditorXcls_RightEditor* self;
 	self = instance;
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_atomic_int_inc (&self->ref_count);
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return instance;
 #line 1886 "Editor.vala.c"
 }
@@ -1889,11 +1889,11 @@ gpointer xcls_editor_xcls_righteditor_ref (gpointer instance) {
 void xcls_editor_xcls_righteditor_unref (gpointer instance) {
 	Xcls_EditorXcls_RightEditor* self;
 	self = instance;
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		XCLS_EDITOR_XCLS_RIGHTEDITOR_GET_CLASS (self)->finalize (self);
-#line 245 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 245 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		g_type_free_instance ((GTypeInstance *) self);
 #line 1899 "Editor.vala.c"
 	}
@@ -1901,7 +1901,7 @@ void xcls_editor_xcls_righteditor_unref (gpointer instance) {
 
 
 static gpointer _xcls_editor_xcls_view_ref0 (gpointer self) {
-#line 314 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 314 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return self ? xcls_editor_xcls_view_ref (self) : NULL;
 #line 1907 "Editor.vala.c"
 }
@@ -1913,46 +1913,46 @@ static gboolean __lambda73_ (Xcls_EditorXcls_view* self, GdkEventKey* event) {
 	GdkEventKey _tmp1_;
 	guint _tmp2_;
 	gboolean _tmp5_;
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_return_val_if_fail (event != NULL, FALSE);
-#line 329 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 329 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp1_ = *event;
-#line 329 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 329 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp2_ = _tmp1_.keyval;
-#line 329 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 329 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (_tmp2_ == ((guint) 115)) {
 #line 1925 "Editor.vala.c"
 		GdkEventKey _tmp3_;
 		GdkModifierType _tmp4_;
-#line 329 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 329 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		_tmp3_ = *event;
-#line 329 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 329 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		_tmp4_ = _tmp3_.state;
-#line 329 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 329 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		_tmp0_ = (_tmp4_ & GDK_CONTROL_MASK) > 0;
 #line 1934 "Editor.vala.c"
 	} else {
-#line 329 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 329 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		_tmp0_ = FALSE;
 #line 1938 "Editor.vala.c"
 	}
-#line 329 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 329 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp5_ = _tmp0_;
-#line 329 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 329 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (_tmp5_) {
-#line 330 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 330 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		g_print ("SAVE: ctrl-S  pressed");
-#line 331 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 331 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		xcls_editor_xcls_view_save (self);
-#line 332 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 332 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		result = FALSE;
-#line 332 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 332 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		return result;
 #line 1952 "Editor.vala.c"
 	}
-#line 336 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 336 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	result = FALSE;
-#line 336 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 336 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return result;
 #line 1958 "Editor.vala.c"
 }
@@ -1961,7 +1961,7 @@ static gboolean __lambda73_ (Xcls_EditorXcls_view* self, GdkEventKey* event) {
 static gboolean ___lambda73__gtk_widget_key_release_event (GtkWidget* _sender, GdkEventKey* event, gpointer self) {
 	gboolean result;
 	result = __lambda73_ (self, event);
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return result;
 #line 1967 "Editor.vala.c"
 }
@@ -1981,71 +1981,71 @@ Xcls_EditorXcls_view* xcls_editor_xcls_view_construct (GType object_type) {
 	GtkSourceView* _tmp8_;
 	GtkSourceBuffer* _tmp9_;
 	GtkSourceView* _tmp10_;
-#line 311 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 311 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	self = (Xcls_EditorXcls_view*) g_type_create_instance (object_type);
-#line 313 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 313 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp0_ = (GtkSourceView*) gtk_source_view_new ();
-#line 313 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 313 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_object_ref_sink (_tmp0_);
-#line 313 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 313 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_g_object_unref0 (self->el);
-#line 313 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 313 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	self->el = _tmp0_;
-#line 314 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 314 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp1_ = xcls_editor__this;
-#line 314 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 314 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp2_ = _xcls_editor_xcls_view_ref0 (self);
-#line 314 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 314 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_xcls_editor_xcls_view_unref0 (_tmp1_->view);
-#line 314 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 314 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp1_->view = _tmp2_;
-#line 319 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 319 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp3_ = self->el;
-#line 319 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 319 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	gtk_source_view_set_auto_indent (_tmp3_, TRUE);
-#line 320 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 320 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp4_ = self->el;
-#line 320 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 320 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	gtk_source_view_set_indent_width (_tmp4_, 4);
-#line 321 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 321 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp5_ = self->el;
-#line 321 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 321 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	gtk_source_view_set_insert_spaces_instead_of_tabs (_tmp5_, TRUE);
-#line 322 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 322 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp6_ = self->el;
-#line 322 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 322 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	gtk_source_view_set_show_line_numbers (_tmp6_, TRUE);
-#line 323 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 323 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp7_ = xcls_editor_xcls_buffer_new ();
-#line 323 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 323 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	child_0 = _tmp7_;
-#line 324 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 324 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp8_ = self->el;
-#line 324 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 324 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp9_ = child_0->el;
-#line 324 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 324 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	gtk_text_view_set_buffer ((GtkTextView*) _tmp8_, (GtkTextBuffer*) _tmp9_);
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp10_ = self->el;
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_signal_connect ((GtkWidget*) _tmp10_, "key-release-event", (GCallback) ___lambda73__gtk_widget_key_release_event, self);
-#line 311 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 311 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_xcls_editor_xcls_buffer_unref0 (child_0);
-#line 311 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 311 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return self;
 #line 2037 "Editor.vala.c"
 }
 
 
 Xcls_EditorXcls_view* xcls_editor_xcls_view_new (void) {
-#line 311 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 311 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return xcls_editor_xcls_view_construct (XCLS_EDITOR_TYPE_XCLS_VIEW);
 #line 2044 "Editor.vala.c"
 }
 
 
 static gpointer _g_object_ref0 (gpointer self) {
-#line 370 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 370 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return self ? g_object_ref (self) : NULL;
 #line 2051 "Editor.vala.c"
 }
@@ -2087,113 +2087,113 @@ void xcls_editor_xcls_view_load (Xcls_EditorXcls_view* self, const gchar* str) {
 	Xcls_Editor* _tmp28_;
 	Xcls_EditorXcls_save_button* _tmp29_;
 	GtkToolButton* _tmp30_;
-#line 362 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 362 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_return_if_fail (self != NULL);
-#line 362 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 362 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_return_if_fail (str != NULL);
-#line 369 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 369 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp0_ = self->el;
-#line 369 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 369 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp1_ = gtk_text_view_get_buffer ((GtkTextView*) _tmp0_);
-#line 369 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 369 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp2_ = str;
-#line 369 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 369 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp3_ = str;
-#line 369 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 369 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp4_ = strlen (_tmp3_);
-#line 369 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 369 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp5_ = _tmp4_;
-#line 369 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 369 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	gtk_text_buffer_set_text (_tmp1_, _tmp2_, _tmp5_);
-#line 370 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 370 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp6_ = gtk_source_language_manager_get_default ();
-#line 370 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 370 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp7_ = _g_object_ref0 (_tmp6_);
-#line 370 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 370 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	lm = _tmp7_;
-#line 372 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 372 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp8_ = self->el;
-#line 372 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 372 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp9_ = gtk_text_view_get_buffer ((GtkTextView*) _tmp8_);
-#line 372 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 372 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp10_ = gtk_source_language_manager_get_language (lm, "js");
-#line 372 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 372 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	gtk_source_buffer_set_language (G_TYPE_CHECK_INSTANCE_CAST (_tmp9_, gtk_source_buffer_get_type (), GtkSourceBuffer), _tmp10_);
-#line 373 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 373 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp11_ = self->el;
-#line 373 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 373 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp12_ = gtk_text_view_get_buffer ((GtkTextView*) _tmp11_);
-#line 373 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 373 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp13_ = _g_object_ref0 (_tmp12_);
-#line 373 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 373 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	buf = _tmp13_;
-#line 374 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 374 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp14_ = gtk_text_buffer_get_mark (buf, "insert");
-#line 374 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 374 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp15_ = _g_object_ref0 (_tmp14_);
-#line 374 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 374 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	cursor = _tmp15_;
-#line 376 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 376 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp16_ = cursor;
-#line 376 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 376 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	gtk_text_buffer_get_iter_at_mark (buf, &_tmp17_, _tmp16_);
-#line 376 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 376 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	iter = _tmp17_;
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	gtk_text_iter_set_line (&iter, 1);
-#line 378 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 378 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	gtk_text_iter_set_line_offset (&iter, 4);
-#line 379 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 379 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp18_ = cursor;
-#line 379 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 379 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp19_ = iter;
-#line 379 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 379 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	gtk_text_buffer_move_mark (buf, _tmp18_, &_tmp19_);
-#line 382 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 382 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp20_ = gtk_text_buffer_get_mark (buf, "selection_bound");
-#line 382 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 382 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp21_ = _g_object_ref0 (_tmp20_);
-#line 382 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 382 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_g_object_unref0 (cursor);
-#line 382 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 382 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	cursor = _tmp21_;
-#line 384 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 384 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp22_ = cursor;
-#line 384 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 384 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	gtk_text_buffer_get_iter_at_mark (buf, &_tmp23_, _tmp22_);
-#line 384 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 384 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	iter = _tmp23_;
-#line 385 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 385 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	gtk_text_iter_set_line (&iter, 1);
-#line 386 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 386 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	gtk_text_iter_set_line_offset (&iter, 4);
-#line 387 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 387 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp24_ = cursor;
-#line 387 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 387 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp25_ = iter;
-#line 387 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 387 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	gtk_text_buffer_move_mark (buf, _tmp24_, &_tmp25_);
-#line 388 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 388 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp26_ = Editor;
-#line 388 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 388 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp26_->dirty = FALSE;
-#line 389 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 389 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp27_ = self->el;
-#line 389 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 389 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	gtk_widget_grab_focus ((GtkWidget*) _tmp27_);
-#line 390 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 390 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp28_ = xcls_editor__this;
-#line 390 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 390 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp29_ = _tmp28_->save_button;
-#line 390 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 390 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp30_ = _tmp29_->el;
-#line 390 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 390 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	gtk_widget_set_sensitive ((GtkWidget*) _tmp30_, FALSE);
-#line 362 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 362 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_g_object_unref0 (cursor);
-#line 362 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 362 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_g_object_unref0 (buf);
-#line 362 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 362 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_g_object_unref0 (lm);
 #line 2199 "Editor.vala.c"
 }
@@ -2202,29 +2202,29 @@ void xcls_editor_xcls_view_load (Xcls_EditorXcls_view* self, const gchar* str) {
 void xcls_editor_xcls_view_save (Xcls_EditorXcls_view* self) {
 	Xcls_Editor* _tmp0_;
 	Xcls_EditorXcls_RightEditor* _tmp1_;
-#line 392 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 392 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_return_if_fail (self != NULL);
-#line 394 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 394 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp0_ = Editor;
-#line 394 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 394 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp1_ = _tmp0_->RightEditor;
-#line 394 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 394 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	xcls_editor_xcls_righteditor_save (_tmp1_);
 #line 2214 "Editor.vala.c"
 }
 
 
 static void xcls_editor_value_xcls_view_init (GValue* value) {
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	value->data[0].v_pointer = NULL;
 #line 2221 "Editor.vala.c"
 }
 
 
 static void xcls_editor_value_xcls_view_free_value (GValue* value) {
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (value->data[0].v_pointer) {
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		xcls_editor_xcls_view_unref (value->data[0].v_pointer);
 #line 2230 "Editor.vala.c"
 	}
@@ -2232,13 +2232,13 @@ static void xcls_editor_value_xcls_view_free_value (GValue* value) {
 
 
 static void xcls_editor_value_xcls_view_copy_value (const GValue* src_value, GValue* dest_value) {
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (src_value->data[0].v_pointer) {
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		dest_value->data[0].v_pointer = xcls_editor_xcls_view_ref (src_value->data[0].v_pointer);
 #line 2240 "Editor.vala.c"
 	} else {
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		dest_value->data[0].v_pointer = NULL;
 #line 2244 "Editor.vala.c"
 	}
@@ -2246,37 +2246,37 @@ static void xcls_editor_value_xcls_view_copy_value (const GValue* src_value, GVa
 
 
 static gpointer xcls_editor_value_xcls_view_peek_pointer (const GValue* value) {
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return value->data[0].v_pointer;
 #line 2252 "Editor.vala.c"
 }
 
 
 static gchar* xcls_editor_value_xcls_view_collect_value (GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (collect_values[0].v_pointer) {
 #line 2259 "Editor.vala.c"
 		Xcls_EditorXcls_view* object;
 		object = collect_values[0].v_pointer;
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		if (object->parent_instance.g_class == NULL) {
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 2266 "Editor.vala.c"
 		} else if (!g_value_type_compatible (G_TYPE_FROM_INSTANCE (object), G_VALUE_TYPE (value))) {
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 			return g_strconcat ("invalid object type `", g_type_name (G_TYPE_FROM_INSTANCE (object)), "' for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 2270 "Editor.vala.c"
 		}
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		value->data[0].v_pointer = xcls_editor_xcls_view_ref (object);
 #line 2274 "Editor.vala.c"
 	} else {
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		value->data[0].v_pointer = NULL;
 #line 2278 "Editor.vala.c"
 	}
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return NULL;
 #line 2282 "Editor.vala.c"
 }
@@ -2285,27 +2285,27 @@ static gchar* xcls_editor_value_xcls_view_collect_value (GValue* value, guint n_
 static gchar* xcls_editor_value_xcls_view_lcopy_value (const GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
 	Xcls_EditorXcls_view** object_p;
 	object_p = collect_values[0].v_pointer;
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (!object_p) {
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
 #line 2293 "Editor.vala.c"
 	}
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (!value->data[0].v_pointer) {
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		*object_p = NULL;
 #line 2299 "Editor.vala.c"
 	} else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) {
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		*object_p = value->data[0].v_pointer;
 #line 2303 "Editor.vala.c"
 	} else {
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		*object_p = xcls_editor_xcls_view_ref (value->data[0].v_pointer);
 #line 2307 "Editor.vala.c"
 	}
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return NULL;
 #line 2311 "Editor.vala.c"
 }
@@ -2313,22 +2313,22 @@ static gchar* xcls_editor_value_xcls_view_lcopy_value (const GValue* value, guin
 
 GParamSpec* xcls_editor_param_spec_xcls_view (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags) {
 	Xcls_EditorParamSpecXcls_view* spec;
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_return_val_if_fail (g_type_is_a (object_type, XCLS_EDITOR_TYPE_XCLS_VIEW), NULL);
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	G_PARAM_SPEC (spec)->value_type = object_type;
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return G_PARAM_SPEC (spec);
 #line 2325 "Editor.vala.c"
 }
 
 
 gpointer xcls_editor_value_get_xcls_view (const GValue* value) {
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITOR_TYPE_XCLS_VIEW), NULL);
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return value->data[0].v_pointer;
 #line 2334 "Editor.vala.c"
 }
@@ -2336,29 +2336,29 @@ gpointer xcls_editor_value_get_xcls_view (const GValue* value) {
 
 void xcls_editor_value_set_xcls_view (GValue* value, gpointer v_object) {
 	Xcls_EditorXcls_view* old;
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITOR_TYPE_XCLS_VIEW));
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	old = value->data[0].v_pointer;
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (v_object) {
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_EDITOR_TYPE_XCLS_VIEW));
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		value->data[0].v_pointer = v_object;
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		xcls_editor_xcls_view_ref (value->data[0].v_pointer);
 #line 2354 "Editor.vala.c"
 	} else {
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		value->data[0].v_pointer = NULL;
 #line 2358 "Editor.vala.c"
 	}
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (old) {
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		xcls_editor_xcls_view_unref (old);
 #line 2364 "Editor.vala.c"
 	}
@@ -2367,27 +2367,27 @@ void xcls_editor_value_set_xcls_view (GValue* value, gpointer v_object) {
 
 void xcls_editor_value_take_xcls_view (GValue* value, gpointer v_object) {
 	Xcls_EditorXcls_view* old;
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITOR_TYPE_XCLS_VIEW));
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	old = value->data[0].v_pointer;
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (v_object) {
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_EDITOR_TYPE_XCLS_VIEW));
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		value->data[0].v_pointer = v_object;
 #line 2383 "Editor.vala.c"
 	} else {
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		value->data[0].v_pointer = NULL;
 #line 2387 "Editor.vala.c"
 	}
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (old) {
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		xcls_editor_xcls_view_unref (old);
 #line 2393 "Editor.vala.c"
 	}
@@ -2395,16 +2395,16 @@ void xcls_editor_value_take_xcls_view (GValue* value, gpointer v_object) {
 
 
 static void xcls_editor_xcls_view_class_init (Xcls_EditorXcls_viewClass * klass) {
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	xcls_editor_xcls_view_parent_class = g_type_class_peek_parent (klass);
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	XCLS_EDITOR_XCLS_VIEW_CLASS (klass)->finalize = xcls_editor_xcls_view_finalize;
 #line 2403 "Editor.vala.c"
 }
 
 
 static void xcls_editor_xcls_view_instance_init (Xcls_EditorXcls_view * self) {
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	self->ref_count = 1;
 #line 2410 "Editor.vala.c"
 }
@@ -2412,9 +2412,9 @@ static void xcls_editor_xcls_view_instance_init (Xcls_EditorXcls_view * self) {
 
 static void xcls_editor_xcls_view_finalize (Xcls_EditorXcls_view* obj) {
 	Xcls_EditorXcls_view * self;
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_EDITOR_TYPE_XCLS_VIEW, Xcls_EditorXcls_view);
-#line 306 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 306 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_g_object_unref0 (self->el);
 #line 2420 "Editor.vala.c"
 }
@@ -2437,9 +2437,9 @@ GType xcls_editor_xcls_view_get_type (void) {
 gpointer xcls_editor_xcls_view_ref (gpointer instance) {
 	Xcls_EditorXcls_view* self;
 	self = instance;
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_atomic_int_inc (&self->ref_count);
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return instance;
 #line 2445 "Editor.vala.c"
 }
@@ -2448,11 +2448,11 @@ gpointer xcls_editor_xcls_view_ref (gpointer instance) {
 void xcls_editor_xcls_view_unref (gpointer instance) {
 	Xcls_EditorXcls_view* self;
 	self = instance;
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		XCLS_EDITOR_XCLS_VIEW_GET_CLASS (self)->finalize (self);
-#line 304 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 304 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		g_type_free_instance ((GTypeInstance *) self);
 #line 2458 "Editor.vala.c"
 	}
@@ -2460,7 +2460,7 @@ void xcls_editor_xcls_view_unref (gpointer instance) {
 
 
 static gpointer _xcls_editor_xcls_buffer_ref0 (gpointer self) {
-#line 418 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 418 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return self ? xcls_editor_xcls_buffer_ref (self) : NULL;
 #line 2466 "Editor.vala.c"
 }
@@ -2469,36 +2469,36 @@ static gpointer _xcls_editor_xcls_buffer_ref0 (gpointer self) {
 static void __lambda72_ (Xcls_EditorXcls_buffer* self) {
 	gboolean _tmp0_ = FALSE;
 	Xcls_Editor* _tmp4_;
-#line 427 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 427 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp0_ = xcls_editor_xcls_buffer_checkSyntax (self);
-#line 427 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 427 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (_tmp0_) {
 #line 2477 "Editor.vala.c"
 		Xcls_Editor* _tmp1_;
 		Xcls_EditorXcls_save_button* _tmp2_;
 		GtkToolButton* _tmp3_;
-#line 428 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 428 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		_tmp1_ = Editor;
-#line 428 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 428 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		_tmp2_ = _tmp1_->save_button;
-#line 428 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 428 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		_tmp3_ = _tmp2_->el;
-#line 428 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 428 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		gtk_widget_set_sensitive ((GtkWidget*) _tmp3_, TRUE);
 #line 2489 "Editor.vala.c"
 	}
-#line 431 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 431 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp4_ = Editor;
-#line 431 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 431 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp4_->dirty = TRUE;
-#line 434 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 434 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return;
 #line 2497 "Editor.vala.c"
 }
 
 
 static void ___lambda72__gtk_text_buffer_changed (GtkTextBuffer* _sender, gpointer self) {
-#line 425 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 425 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	__lambda72_ (self);
 #line 2504 "Editor.vala.c"
 }
@@ -2510,34 +2510,34 @@ Xcls_EditorXcls_buffer* xcls_editor_xcls_buffer_construct (GType object_type) {
 	Xcls_Editor* _tmp1_;
 	Xcls_EditorXcls_buffer* _tmp2_;
 	GtkSourceBuffer* _tmp3_;
-#line 415 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 415 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	self = (Xcls_EditorXcls_buffer*) g_type_create_instance (object_type);
-#line 417 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 417 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp0_ = gtk_source_buffer_new (NULL);
-#line 417 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 417 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_g_object_unref0 (self->el);
-#line 417 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 417 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	self->el = _tmp0_;
-#line 418 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 418 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp1_ = xcls_editor__this;
-#line 418 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 418 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp2_ = _xcls_editor_xcls_buffer_ref0 (self);
-#line 418 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 418 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_xcls_editor_xcls_buffer_unref0 (_tmp1_->buffer);
-#line 418 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 418 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp1_->buffer = _tmp2_;
-#line 425 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 425 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp3_ = self->el;
-#line 425 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 425 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_signal_connect ((GtkTextBuffer*) _tmp3_, "changed", (GCallback) ___lambda72__gtk_text_buffer_changed, self);
-#line 415 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 415 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return self;
 #line 2536 "Editor.vala.c"
 }
 
 
 Xcls_EditorXcls_buffer* xcls_editor_xcls_buffer_new (void) {
-#line 415 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 415 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return xcls_editor_xcls_buffer_construct (XCLS_EDITOR_TYPE_XCLS_BUFFER);
 #line 2543 "Editor.vala.c"
 }
@@ -2545,11 +2545,11 @@ Xcls_EditorXcls_buffer* xcls_editor_xcls_buffer_new (void) {
 
 gboolean xcls_editor_xcls_buffer_checkSyntax (Xcls_EditorXcls_buffer* self) {
 	gboolean result = FALSE;
-#line 450 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 450 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_return_val_if_fail (self != NULL, FALSE);
-#line 475 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 475 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	result = TRUE;
-#line 475 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 475 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return result;
 #line 2555 "Editor.vala.c"
 }
@@ -2568,49 +2568,49 @@ gchar* xcls_editor_xcls_buffer_toString (Xcls_EditorXcls_buffer* self) {
 	GtkTextIter _tmp6_;
 	gchar* _tmp7_ = NULL;
 	gchar* ret;
-#line 477 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 477 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 481 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 481 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp0_ = self->el;
-#line 481 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 481 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	gtk_text_buffer_get_start_iter ((GtkTextBuffer*) _tmp0_, &_tmp1_);
-#line 481 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 481 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	s = _tmp1_;
-#line 482 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 482 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp2_ = self->el;
-#line 482 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 482 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	gtk_text_buffer_get_end_iter ((GtkTextBuffer*) _tmp2_, &_tmp3_);
-#line 482 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 482 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	e = _tmp3_;
-#line 483 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 483 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp4_ = self->el;
-#line 483 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 483 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp5_ = s;
-#line 483 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 483 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp6_ = e;
-#line 483 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 483 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_tmp7_ = gtk_text_buffer_get_text ((GtkTextBuffer*) _tmp4_, &_tmp5_, &_tmp6_, TRUE);
-#line 483 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 483 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	ret = _tmp7_;
-#line 485 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 485 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	result = ret;
-#line 485 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 485 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return result;
 #line 2600 "Editor.vala.c"
 }
 
 
 static void xcls_editor_value_xcls_buffer_init (GValue* value) {
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	value->data[0].v_pointer = NULL;
 #line 2607 "Editor.vala.c"
 }
 
 
 static void xcls_editor_value_xcls_buffer_free_value (GValue* value) {
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (value->data[0].v_pointer) {
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		xcls_editor_xcls_buffer_unref (value->data[0].v_pointer);
 #line 2616 "Editor.vala.c"
 	}
@@ -2618,13 +2618,13 @@ static void xcls_editor_value_xcls_buffer_free_value (GValue* value) {
 
 
 static void xcls_editor_value_xcls_buffer_copy_value (const GValue* src_value, GValue* dest_value) {
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (src_value->data[0].v_pointer) {
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		dest_value->data[0].v_pointer = xcls_editor_xcls_buffer_ref (src_value->data[0].v_pointer);
 #line 2626 "Editor.vala.c"
 	} else {
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		dest_value->data[0].v_pointer = NULL;
 #line 2630 "Editor.vala.c"
 	}
@@ -2632,37 +2632,37 @@ static void xcls_editor_value_xcls_buffer_copy_value (const GValue* src_value, G
 
 
 static gpointer xcls_editor_value_xcls_buffer_peek_pointer (const GValue* value) {
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return value->data[0].v_pointer;
 #line 2638 "Editor.vala.c"
 }
 
 
 static gchar* xcls_editor_value_xcls_buffer_collect_value (GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (collect_values[0].v_pointer) {
 #line 2645 "Editor.vala.c"
 		Xcls_EditorXcls_buffer* object;
 		object = collect_values[0].v_pointer;
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		if (object->parent_instance.g_class == NULL) {
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 2652 "Editor.vala.c"
 		} else if (!g_value_type_compatible (G_TYPE_FROM_INSTANCE (object), G_VALUE_TYPE (value))) {
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 			return g_strconcat ("invalid object type `", g_type_name (G_TYPE_FROM_INSTANCE (object)), "' for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 2656 "Editor.vala.c"
 		}
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		value->data[0].v_pointer = xcls_editor_xcls_buffer_ref (object);
 #line 2660 "Editor.vala.c"
 	} else {
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		value->data[0].v_pointer = NULL;
 #line 2664 "Editor.vala.c"
 	}
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return NULL;
 #line 2668 "Editor.vala.c"
 }
@@ -2671,27 +2671,27 @@ static gchar* xcls_editor_value_xcls_buffer_collect_value (GValue* value, guint 
 static gchar* xcls_editor_value_xcls_buffer_lcopy_value (const GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
 	Xcls_EditorXcls_buffer** object_p;
 	object_p = collect_values[0].v_pointer;
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (!object_p) {
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
 #line 2679 "Editor.vala.c"
 	}
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (!value->data[0].v_pointer) {
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		*object_p = NULL;
 #line 2685 "Editor.vala.c"
 	} else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) {
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		*object_p = value->data[0].v_pointer;
 #line 2689 "Editor.vala.c"
 	} else {
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		*object_p = xcls_editor_xcls_buffer_ref (value->data[0].v_pointer);
 #line 2693 "Editor.vala.c"
 	}
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return NULL;
 #line 2697 "Editor.vala.c"
 }
@@ -2699,22 +2699,22 @@ static gchar* xcls_editor_value_xcls_buffer_lcopy_value (const GValue* value, gu
 
 GParamSpec* xcls_editor_param_spec_xcls_buffer (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags) {
 	Xcls_EditorParamSpecXcls_buffer* spec;
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_return_val_if_fail (g_type_is_a (object_type, XCLS_EDITOR_TYPE_XCLS_BUFFER), NULL);
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	G_PARAM_SPEC (spec)->value_type = object_type;
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return G_PARAM_SPEC (spec);
 #line 2711 "Editor.vala.c"
 }
 
 
 gpointer xcls_editor_value_get_xcls_buffer (const GValue* value) {
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITOR_TYPE_XCLS_BUFFER), NULL);
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return value->data[0].v_pointer;
 #line 2720 "Editor.vala.c"
 }
@@ -2722,29 +2722,29 @@ gpointer xcls_editor_value_get_xcls_buffer (const GValue* value) {
 
 void xcls_editor_value_set_xcls_buffer (GValue* value, gpointer v_object) {
 	Xcls_EditorXcls_buffer* old;
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITOR_TYPE_XCLS_BUFFER));
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	old = value->data[0].v_pointer;
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (v_object) {
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_EDITOR_TYPE_XCLS_BUFFER));
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		value->data[0].v_pointer = v_object;
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		xcls_editor_xcls_buffer_ref (value->data[0].v_pointer);
 #line 2740 "Editor.vala.c"
 	} else {
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		value->data[0].v_pointer = NULL;
 #line 2744 "Editor.vala.c"
 	}
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (old) {
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		xcls_editor_xcls_buffer_unref (old);
 #line 2750 "Editor.vala.c"
 	}
@@ -2753,27 +2753,27 @@ void xcls_editor_value_set_xcls_buffer (GValue* value, gpointer v_object) {
 
 void xcls_editor_value_take_xcls_buffer (GValue* value, gpointer v_object) {
 	Xcls_EditorXcls_buffer* old;
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_EDITOR_TYPE_XCLS_BUFFER));
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	old = value->data[0].v_pointer;
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (v_object) {
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_EDITOR_TYPE_XCLS_BUFFER));
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		value->data[0].v_pointer = v_object;
 #line 2769 "Editor.vala.c"
 	} else {
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		value->data[0].v_pointer = NULL;
 #line 2773 "Editor.vala.c"
 	}
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (old) {
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		xcls_editor_xcls_buffer_unref (old);
 #line 2779 "Editor.vala.c"
 	}
@@ -2781,16 +2781,16 @@ void xcls_editor_value_take_xcls_buffer (GValue* value, gpointer v_object) {
 
 
 static void xcls_editor_xcls_buffer_class_init (Xcls_EditorXcls_bufferClass * klass) {
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	xcls_editor_xcls_buffer_parent_class = g_type_class_peek_parent (klass);
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	XCLS_EDITOR_XCLS_BUFFER_CLASS (klass)->finalize = xcls_editor_xcls_buffer_finalize;
 #line 2789 "Editor.vala.c"
 }
 
 
 static void xcls_editor_xcls_buffer_instance_init (Xcls_EditorXcls_buffer * self) {
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	self->ref_count = 1;
 #line 2796 "Editor.vala.c"
 }
@@ -2798,9 +2798,9 @@ static void xcls_editor_xcls_buffer_instance_init (Xcls_EditorXcls_buffer * self
 
 static void xcls_editor_xcls_buffer_finalize (Xcls_EditorXcls_buffer* obj) {
 	Xcls_EditorXcls_buffer * self;
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_EDITOR_TYPE_XCLS_BUFFER, Xcls_EditorXcls_buffer);
-#line 410 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 410 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_g_object_unref0 (self->el);
 #line 2806 "Editor.vala.c"
 }
@@ -2823,9 +2823,9 @@ GType xcls_editor_xcls_buffer_get_type (void) {
 gpointer xcls_editor_xcls_buffer_ref (gpointer instance) {
 	Xcls_EditorXcls_buffer* self;
 	self = instance;
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_atomic_int_inc (&self->ref_count);
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return instance;
 #line 2831 "Editor.vala.c"
 }
@@ -2834,11 +2834,11 @@ gpointer xcls_editor_xcls_buffer_ref (gpointer instance) {
 void xcls_editor_xcls_buffer_unref (gpointer instance) {
 	Xcls_EditorXcls_buffer* self;
 	self = instance;
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		XCLS_EDITOR_XCLS_BUFFER_GET_CLASS (self)->finalize (self);
-#line 408 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		g_type_free_instance ((GTypeInstance *) self);
 #line 2844 "Editor.vala.c"
 	}
@@ -2846,16 +2846,16 @@ void xcls_editor_xcls_buffer_unref (gpointer instance) {
 
 
 static void value_xcls_editor_init (GValue* value) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	value->data[0].v_pointer = NULL;
 #line 2852 "Editor.vala.c"
 }
 
 
 static void value_xcls_editor_free_value (GValue* value) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (value->data[0].v_pointer) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		xcls_editor_unref (value->data[0].v_pointer);
 #line 2861 "Editor.vala.c"
 	}
@@ -2863,13 +2863,13 @@ static void value_xcls_editor_free_value (GValue* value) {
 
 
 static void value_xcls_editor_copy_value (const GValue* src_value, GValue* dest_value) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (src_value->data[0].v_pointer) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		dest_value->data[0].v_pointer = xcls_editor_ref (src_value->data[0].v_pointer);
 #line 2871 "Editor.vala.c"
 	} else {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		dest_value->data[0].v_pointer = NULL;
 #line 2875 "Editor.vala.c"
 	}
@@ -2877,37 +2877,37 @@ static void value_xcls_editor_copy_value (const GValue* src_value, GValue* dest_
 
 
 static gpointer value_xcls_editor_peek_pointer (const GValue* value) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return value->data[0].v_pointer;
 #line 2883 "Editor.vala.c"
 }
 
 
 static gchar* value_xcls_editor_collect_value (GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (collect_values[0].v_pointer) {
 #line 2890 "Editor.vala.c"
 		Xcls_Editor* object;
 		object = collect_values[0].v_pointer;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		if (object->parent_instance.g_class == NULL) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 2897 "Editor.vala.c"
 		} else if (!g_value_type_compatible (G_TYPE_FROM_INSTANCE (object), G_VALUE_TYPE (value))) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 			return g_strconcat ("invalid object type `", g_type_name (G_TYPE_FROM_INSTANCE (object)), "' for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 2901 "Editor.vala.c"
 		}
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		value->data[0].v_pointer = xcls_editor_ref (object);
 #line 2905 "Editor.vala.c"
 	} else {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		value->data[0].v_pointer = NULL;
 #line 2909 "Editor.vala.c"
 	}
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return NULL;
 #line 2913 "Editor.vala.c"
 }
@@ -2916,27 +2916,27 @@ static gchar* value_xcls_editor_collect_value (GValue* value, guint n_collect_va
 static gchar* value_xcls_editor_lcopy_value (const GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
 	Xcls_Editor** object_p;
 	object_p = collect_values[0].v_pointer;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (!object_p) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
 #line 2924 "Editor.vala.c"
 	}
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (!value->data[0].v_pointer) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		*object_p = NULL;
 #line 2930 "Editor.vala.c"
 	} else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		*object_p = value->data[0].v_pointer;
 #line 2934 "Editor.vala.c"
 	} else {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		*object_p = xcls_editor_ref (value->data[0].v_pointer);
 #line 2938 "Editor.vala.c"
 	}
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return NULL;
 #line 2942 "Editor.vala.c"
 }
@@ -2944,22 +2944,22 @@ static gchar* value_xcls_editor_lcopy_value (const GValue* value, guint n_collec
 
 GParamSpec* param_spec_xcls_editor (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags) {
 	ParamSpecXcls_Editor* spec;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_return_val_if_fail (g_type_is_a (object_type, TYPE_XCLS_EDITOR), NULL);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	G_PARAM_SPEC (spec)->value_type = object_type;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return G_PARAM_SPEC (spec);
 #line 2956 "Editor.vala.c"
 }
 
 
 gpointer value_get_xcls_editor (const GValue* value) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, TYPE_XCLS_EDITOR), NULL);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return value->data[0].v_pointer;
 #line 2965 "Editor.vala.c"
 }
@@ -2967,29 +2967,29 @@ gpointer value_get_xcls_editor (const GValue* value) {
 
 void value_set_xcls_editor (GValue* value, gpointer v_object) {
 	Xcls_Editor* old;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, TYPE_XCLS_EDITOR));
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	old = value->data[0].v_pointer;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (v_object) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, TYPE_XCLS_EDITOR));
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		value->data[0].v_pointer = v_object;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		xcls_editor_ref (value->data[0].v_pointer);
 #line 2985 "Editor.vala.c"
 	} else {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		value->data[0].v_pointer = NULL;
 #line 2989 "Editor.vala.c"
 	}
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (old) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		xcls_editor_unref (old);
 #line 2995 "Editor.vala.c"
 	}
@@ -2998,27 +2998,27 @@ void value_set_xcls_editor (GValue* value, gpointer v_object) {
 
 void value_take_xcls_editor (GValue* value, gpointer v_object) {
 	Xcls_Editor* old;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, TYPE_XCLS_EDITOR));
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	old = value->data[0].v_pointer;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (v_object) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, TYPE_XCLS_EDITOR));
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		value->data[0].v_pointer = v_object;
 #line 3014 "Editor.vala.c"
 	} else {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		value->data[0].v_pointer = NULL;
 #line 3018 "Editor.vala.c"
 	}
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (old) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		xcls_editor_unref (old);
 #line 3024 "Editor.vala.c"
 	}
@@ -3026,16 +3026,16 @@ void value_take_xcls_editor (GValue* value, gpointer v_object) {
 
 
 static void xcls_editor_class_init (Xcls_EditorClass * klass) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	xcls_editor_parent_class = g_type_class_peek_parent (klass);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	XCLS_EDITOR_CLASS (klass)->finalize = xcls_editor_finalize;
 #line 3034 "Editor.vala.c"
 }
 
 
 static void xcls_editor_instance_init (Xcls_Editor * self) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	self->ref_count = 1;
 #line 3041 "Editor.vala.c"
 }
@@ -3043,21 +3043,21 @@ static void xcls_editor_instance_init (Xcls_Editor * self) {
 
 static void xcls_editor_finalize (Xcls_Editor* obj) {
 	Xcls_Editor * self;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, TYPE_XCLS_EDITOR, Xcls_Editor);
-#line 22 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 22 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_g_object_unref0 (self->el);
-#line 25 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 25 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_xcls_editor_xcls_save_button_unref0 (self->save_button);
-#line 26 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 26 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_xcls_editor_xcls_righteditor_unref0 (self->RightEditor);
-#line 27 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 27 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_xcls_editor_xcls_view_unref0 (self->view);
-#line 28 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 28 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_xcls_editor_xcls_buffer_unref0 (self->buffer);
-#line 35 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 35 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_g_free0 (self->activeEditor);
-#line 36 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 36 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	_g_free0 (self->active_path);
 #line 3063 "Editor.vala.c"
 }
@@ -3080,9 +3080,9 @@ GType xcls_editor_get_type (void) {
 gpointer xcls_editor_ref (gpointer instance) {
 	Xcls_Editor* self;
 	self = instance;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	g_atomic_int_inc (&self->ref_count);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	return instance;
 #line 3088 "Editor.vala.c"
 }
@@ -3091,11 +3091,11 @@ gpointer xcls_editor_ref (gpointer instance) {
 void xcls_editor_unref (gpointer instance) {
 	Xcls_Editor* self;
 	self = instance;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		XCLS_EDITOR_GET_CLASS (self)->finalize (self);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/Editor.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/Editor.vala"
 		g_type_free_instance ((GTypeInstance *) self);
 #line 3101 "Editor.vala.c"
 	}

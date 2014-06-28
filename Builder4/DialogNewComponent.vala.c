@@ -874,7 +874,7 @@ static void xcls_dialognewcomponent_finalize (Xcls_DialogNewComponent* obj);
 
 
 static gpointer _xcls_dialognewcomponent_ref0 (gpointer self) {
-#line 41 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 41 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return self ? xcls_dialognewcomponent_ref (self) : NULL;
 #line 880 "DialogNewComponent.vala.c"
 }
@@ -883,17 +883,17 @@ static gpointer _xcls_dialognewcomponent_ref0 (gpointer self) {
 static gboolean __lambda66_ (Xcls_DialogNewComponent* self, GtkWidget* _self_, GdkEventAny* event) {
 	gboolean result = FALSE;
 	GtkDialog* _tmp0_;
-#line 60 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 60 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_val_if_fail (_self_ != NULL, FALSE);
-#line 60 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 60 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_val_if_fail (event != NULL, FALSE);
-#line 61 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 61 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp0_ = self->el;
-#line 61 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 61 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_widget_hide ((GtkWidget*) _tmp0_);
-#line 62 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 62 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	result = TRUE;
-#line 62 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 62 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return result;
 #line 899 "DialogNewComponent.vala.c"
 }
@@ -902,7 +902,7 @@ static gboolean __lambda66_ (Xcls_DialogNewComponent* self, GtkWidget* _self_, G
 static gboolean ___lambda66__gtk_widget_delete_event (GtkWidget* _sender, GdkEventAny* event, gpointer self) {
 	gboolean result;
 	result = __lambda66_ (self, _sender, event);
-#line 60 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 60 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return result;
 #line 908 "DialogNewComponent.vala.c"
 }
@@ -963,81 +963,81 @@ static void __lambda67_ (Xcls_DialogNewComponent* self, GtkDialog* _self_, gint 
 	Xcls_DialogNewComponent* _tmp61_;
 	ProjectProject* _tmp62_;
 	JsRenderJsRender* _tmp63_;
-#line 65 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 65 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_if_fail (_self_ != NULL);
-#line 67 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 67 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp0_ = response_id;
-#line 67 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 67 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (_tmp0_ < 1) {
 #line 973 "DialogNewComponent.vala.c"
 		GtkDialog* _tmp1_;
-#line 68 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 68 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		_tmp1_ = self->el;
-#line 68 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 68 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		gtk_widget_hide ((GtkWidget*) _tmp1_);
-#line 69 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 69 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		return;
 #line 981 "DialogNewComponent.vala.c"
 	}
-#line 72 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 72 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp2_ = xcls_dialognewcomponent__this;
-#line 72 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 72 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp3_ = _tmp2_->name;
-#line 72 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 72 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp4_ = _tmp3_->el;
-#line 72 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 72 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp5_ = gtk_entry_get_text (_tmp4_);
-#line 72 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 72 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp6_ = strlen (_tmp5_);
-#line 72 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 72 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp7_ = _tmp6_;
-#line 72 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 72 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (_tmp7_ < 1) {
 #line 997 "DialogNewComponent.vala.c"
 		Xcls_StandardErrorDialog* _tmp8_;
-#line 73 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 73 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		_tmp8_ = StandardErrorDialog;
-#line 73 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 73 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_standarderrordialog_show (_tmp8_, "You have to set Project name ");
-#line 77 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		return;
 #line 1005 "DialogNewComponent.vala.c"
 	}
-#line 81 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 81 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp10_ = xcls_dialognewcomponent__this;
-#line 81 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 81 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp11_ = _tmp10_->file;
-#line 81 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 81 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp12_ = _tmp11_->name;
-#line 81 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 81 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp13_ = strlen (_tmp12_);
-#line 81 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 81 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp14_ = _tmp13_;
-#line 81 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 81 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (_tmp14_ > 0) {
-#line 81 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 81 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		_tmp9_ = FALSE;
 #line 1021 "DialogNewComponent.vala.c"
 	} else {
-#line 81 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 81 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		_tmp9_ = TRUE;
 #line 1025 "DialogNewComponent.vala.c"
 	}
-#line 81 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 81 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp15_ = _tmp9_;
-#line 81 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 81 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	isNew = _tmp15_;
-#line 83 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp17_ = xcls_dialognewcomponent__this;
-#line 83 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp18_ = _tmp17_->file;
-#line 83 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp19_ = _tmp18_->name;
-#line 83 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp20_ = strlen (_tmp19_);
-#line 83 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp21_ = _tmp20_;
-#line 83 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (_tmp21_ > 0) {
 #line 1043 "DialogNewComponent.vala.c"
 		JsRenderJsRender* _tmp22_;
@@ -1046,160 +1046,160 @@ static void __lambda67_ (Xcls_DialogNewComponent* self, GtkDialog* _self_, gint 
 		Xcls_DialogNewComponentXcls_name* _tmp25_;
 		GtkEntry* _tmp26_;
 		const gchar* _tmp27_ = NULL;
-#line 83 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		_tmp22_ = self->file;
-#line 83 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		_tmp23_ = _tmp22_->name;
-#line 83 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		_tmp24_ = xcls_dialognewcomponent__this;
-#line 83 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		_tmp25_ = _tmp24_->name;
-#line 83 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		_tmp26_ = _tmp25_->el;
-#line 83 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		_tmp27_ = gtk_entry_get_text (_tmp26_);
-#line 83 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		_tmp16_ = g_strcmp0 (_tmp23_, _tmp27_) != 0;
 #line 1064 "DialogNewComponent.vala.c"
 	} else {
-#line 83 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		_tmp16_ = FALSE;
 #line 1068 "DialogNewComponent.vala.c"
 	}
-#line 83 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp28_ = _tmp16_;
-#line 83 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (_tmp28_) {
 #line 1074 "DialogNewComponent.vala.c"
 		Xcls_StandardErrorDialog* _tmp29_;
-#line 84 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 84 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		_tmp29_ = StandardErrorDialog;
-#line 84 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 84 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_standarderrordialog_show (_tmp29_, "Sorry changing names does not work yet. ");
-#line 88 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 88 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		return;
 #line 1082 "DialogNewComponent.vala.c"
 	}
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 96 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp30_ = isNew;
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 96 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (!_tmp30_) {
 #line 1088 "DialogNewComponent.vala.c"
 		Xcls_DialogNewComponent* _tmp31_;
 		JsRenderJsRender* _tmp32_;
 		GtkDialog* _tmp33_;
-#line 97 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 97 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		_tmp31_ = xcls_dialognewcomponent__this;
-#line 97 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 97 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		_tmp32_ = _tmp31_->file;
-#line 97 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 97 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		js_render_js_render_save (_tmp32_);
-#line 98 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 98 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		_tmp33_ = self->el;
-#line 98 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 98 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		gtk_widget_hide ((GtkWidget*) _tmp33_);
-#line 99 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 99 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		return;
 #line 1104 "DialogNewComponent.vala.c"
 	}
-#line 103 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 103 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp34_ = xcls_dialognewcomponent__this;
-#line 103 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 103 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp35_ = _tmp34_->project;
-#line 103 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 103 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp36_ = project_project_firstPath (_tmp35_);
-#line 103 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 103 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	dir = _tmp36_;
-#line 113 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 113 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp37_ = xcls_dialognewcomponent__this;
-#line 113 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 113 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp38_ = _tmp37_->file;
-#line 113 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 113 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp39_ = _tmp38_->name;
-#line 113 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 113 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp40_ = g_strconcat (_tmp39_, ".bjs", NULL);
-#line 113 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 113 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp41_ = _tmp40_;
-#line 113 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 113 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp42_ = g_file_test (_tmp41_, G_FILE_TEST_EXISTS);
-#line 113 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 113 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp43_ = _tmp42_;
-#line 113 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 113 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_free0 (_tmp41_);
-#line 113 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 113 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (_tmp43_) {
 #line 1132 "DialogNewComponent.vala.c"
 		Xcls_StandardErrorDialog* _tmp44_;
-#line 114 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 114 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		_tmp44_ = StandardErrorDialog;
-#line 114 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 114 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_standarderrordialog_show (_tmp44_, "That file already exists");
-#line 117 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 117 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		_g_free0 (dir);
-#line 117 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 117 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		return;
 #line 1142 "DialogNewComponent.vala.c"
 	}
-#line 119 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 119 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp45_ = self->el;
-#line 119 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 119 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_widget_hide ((GtkWidget*) _tmp45_);
-#line 124 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 124 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp46_ = xcls_dialognewcomponent__this;
-#line 124 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 124 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp47_ = _tmp46_->project;
-#line 124 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 124 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp48_ = dir;
-#line 124 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 124 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp49_ = g_strconcat (_tmp48_, "/", NULL);
-#line 124 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 124 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp50_ = _tmp49_;
-#line 124 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 124 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp51_ = xcls_dialognewcomponent__this;
-#line 124 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 124 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp52_ = _tmp51_->file;
-#line 124 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 124 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp53_ = _tmp52_->name;
-#line 124 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 124 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp54_ = g_strconcat (_tmp50_, _tmp53_, NULL);
-#line 124 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 124 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp55_ = _tmp54_;
-#line 124 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 124 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp56_ = g_strconcat (_tmp55_, ".bjs", NULL);
-#line 124 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 124 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp57_ = _tmp56_;
-#line 124 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 124 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp58_ = project_project_create (_tmp47_, _tmp57_);
-#line 124 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 124 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp59_ = _tmp58_;
-#line 124 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 124 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_free0 (_tmp57_);
-#line 124 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 124 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_free0 (_tmp55_);
-#line 124 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 124 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_free0 (_tmp50_);
-#line 124 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 124 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	nf = _tmp59_;
-#line 128 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 128 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp60_ = xcls_dialognewcomponent__this;
-#line 128 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 128 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp61_ = xcls_dialognewcomponent__this;
-#line 128 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 128 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp62_ = _tmp61_->project;
-#line 128 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 128 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp63_ = nf;
-#line 128 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 128 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_signal_emit_by_name (_tmp60_, "success", _tmp62_, _tmp63_);
-#line 65 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 65 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_object_unref0 (nf);
-#line 65 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 65 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_free0 (dir);
 #line 1198 "DialogNewComponent.vala.c"
 }
 
 
 static void ___lambda67__gtk_dialog_response (GtkDialog* _sender, gint response_id, gpointer self) {
-#line 65 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 65 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	__lambda67_ (self, _sender, response_id);
 #line 1205 "DialogNewComponent.vala.c"
 }
@@ -1207,18 +1207,18 @@ static void ___lambda67__gtk_dialog_response (GtkDialog* _sender, gint response_
 
 static void __lambda68_ (Xcls_DialogNewComponent* self, GtkWidget* _self_) {
 	GtkDialog* _tmp0_;
-#line 137 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 137 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_if_fail (_self_ != NULL);
-#line 138 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 138 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp0_ = self->el;
-#line 138 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 138 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_widget_show_all ((GtkWidget*) _tmp0_);
 #line 1217 "DialogNewComponent.vala.c"
 }
 
 
 static void ___lambda68__gtk_widget_show (GtkWidget* _sender, gpointer self) {
-#line 137 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 137 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	__lambda68_ (self, _sender);
 #line 1224 "DialogNewComponent.vala.c"
 }
@@ -1249,111 +1249,111 @@ Xcls_DialogNewComponent* xcls_dialognewcomponent_construct (GType object_type) {
 	GtkDialog* _tmp17_;
 	GtkDialog* _tmp18_;
 	GtkDialog* _tmp19_;
-#line 38 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 38 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self = (Xcls_DialogNewComponent*) g_type_create_instance (object_type);
-#line 40 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 40 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp0_ = (GtkDialog*) gtk_dialog_new ();
-#line 40 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 40 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_object_ref_sink (_tmp0_);
-#line 40 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 40 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_object_unref0 (self->el);
-#line 40 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 40 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self->el = _tmp0_;
-#line 41 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 41 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp1_ = _xcls_dialognewcomponent_ref0 (self);
-#line 41 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 41 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_xcls_dialognewcomponent_unref0 (xcls_dialognewcomponent__this);
-#line 41 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 41 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	xcls_dialognewcomponent__this = _tmp1_;
-#line 42 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 42 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp2_ = _xcls_dialognewcomponent_ref0 (self);
-#line 42 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 42 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_xcls_dialognewcomponent_unref0 (DialogNewComponent);
-#line 42 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 42 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	DialogNewComponent = _tmp2_;
-#line 47 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 47 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp3_ = self->el;
-#line 47 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 47 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_object_set ((GtkWindow*) _tmp3_, "default-height", 200, NULL);
-#line 48 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 48 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp4_ = self->el;
-#line 48 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 48 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_object_set ((GtkWindow*) _tmp4_, "default-width", 500, NULL);
-#line 49 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 49 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp5_ = self->el;
-#line 49 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 49 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_window_set_deletable ((GtkWindow*) _tmp5_, FALSE);
-#line 50 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 50 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp6_ = self->el;
-#line 50 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 50 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_window_set_modal ((GtkWindow*) _tmp6_, TRUE);
-#line 51 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 51 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp7_ = self->el;
-#line 51 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 51 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_window_set_title ((GtkWindow*) _tmp7_, "New Component");
-#line 52 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 52 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp8_ = xcls_dialognewcomponent_xcls_vbox2_new ();
-#line 52 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 52 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	child_0 = _tmp8_;
-#line 53 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 53 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp9_ = self->el;
-#line 53 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 53 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp10_ = child_0->el;
-#line 53 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 53 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_container_add ((GtkContainer*) _tmp9_, (GtkWidget*) _tmp10_);
-#line 54 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 54 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp11_ = xcls_dialognewcomponent_xcls_button16_new ();
-#line 54 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 54 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	child_1 = _tmp11_;
-#line 55 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 55 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp12_ = self->el;
-#line 55 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 55 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp13_ = child_1->el;
-#line 55 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 55 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_dialog_add_action_widget (_tmp12_, (GtkWidget*) _tmp13_, 0);
-#line 56 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 56 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp14_ = xcls_dialognewcomponent_xcls_button17_new ();
-#line 56 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 56 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	child_2 = _tmp14_;
-#line 57 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 57 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp15_ = self->el;
-#line 57 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 57 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp16_ = child_2->el;
-#line 57 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 57 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_dialog_add_action_widget (_tmp15_, (GtkWidget*) _tmp16_, 1);
-#line 60 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 60 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp17_ = self->el;
-#line 60 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 60 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_signal_connect ((GtkWidget*) _tmp17_, "delete-event", (GCallback) ___lambda66__gtk_widget_delete_event, self);
-#line 65 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 65 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp18_ = self->el;
-#line 65 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 65 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_signal_connect (_tmp18_, "response", (GCallback) ___lambda67__gtk_dialog_response, self);
-#line 137 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 137 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp19_ = self->el;
-#line 137 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 137 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_signal_connect ((GtkWidget*) _tmp19_, "show", (GCallback) ___lambda68__gtk_widget_show, self);
-#line 38 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 38 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_xcls_dialognewcomponent_xcls_button17_unref0 (child_2);
-#line 38 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 38 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_xcls_dialognewcomponent_xcls_button16_unref0 (child_1);
-#line 38 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 38 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_xcls_dialognewcomponent_xcls_vbox2_unref0 (child_0);
-#line 38 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 38 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return self;
 #line 1345 "DialogNewComponent.vala.c"
 }
 
 
 Xcls_DialogNewComponent* xcls_dialognewcomponent_new (void) {
-#line 38 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 38 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return xcls_dialognewcomponent_construct (TYPE_XCLS_DIALOGNEWCOMPONENT);
 #line 1352 "DialogNewComponent.vala.c"
 }
 
 
 static gpointer _g_object_ref0 (gpointer self) {
-#line 168 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 168 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return self ? g_object_ref (self) : NULL;
 #line 1359 "DialogNewComponent.vala.c"
 }
@@ -1401,101 +1401,101 @@ void xcls_dialognewcomponent_show (Xcls_DialogNewComponent* self, JsRenderJsRend
 	JsRenderJsRender* _tmp44_;
 	JsRenderJsRender* _tmp45_;
 	GtkDialog* _tmp46_;
-#line 166 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 166 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_if_fail (self != NULL);
-#line 166 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 166 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_if_fail (c != NULL);
-#line 168 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 168 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp0_ = c;
-#line 168 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 168 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp1_ = _tmp0_->project;
-#line 168 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 168 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp2_ = _g_object_ref0 (_tmp1_);
-#line 168 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 168 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_object_unref0 (self->project);
-#line 168 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 168 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self->project = _tmp2_;
-#line 174 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 174 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp3_ = xcls_dialognewcomponent__this;
-#line 174 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 174 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp4_ = _tmp3_->name;
-#line 174 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 174 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp5_ = _tmp4_->el;
-#line 174 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 174 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp6_ = c;
-#line 174 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 174 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp7_ = _tmp6_->name;
-#line 174 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 174 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_entry_set_text (_tmp5_, _tmp7_);
-#line 175 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 175 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp8_ = xcls_dialognewcomponent__this;
-#line 175 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 175 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp9_ = _tmp8_->title;
-#line 175 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 175 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp10_ = _tmp9_->el;
-#line 175 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 175 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp11_ = c;
-#line 175 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 175 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp12_ = _tmp11_->title;
-#line 175 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 175 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_entry_set_text (_tmp10_, _tmp12_);
-#line 176 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 176 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp13_ = xcls_dialognewcomponent__this;
-#line 176 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 176 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp14_ = _tmp13_->parent;
-#line 176 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 176 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp15_ = _tmp14_->el;
-#line 176 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 176 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp16_ = c;
-#line 176 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 176 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp17_ = _tmp16_->parent;
-#line 176 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 176 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_entry_set_text (_tmp15_, _tmp17_);
-#line 177 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 177 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp18_ = xcls_dialognewcomponent__this;
-#line 177 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 177 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp19_ = _tmp18_->region;
-#line 177 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 177 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp20_ = _tmp19_->el;
-#line 177 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 177 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp21_ = c;
-#line 177 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 177 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp22_ = _tmp21_->region;
-#line 177 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 177 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_entry_set_text (_tmp20_, _tmp22_);
-#line 178 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 178 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp23_ = xcls_dialognewcomponent__this;
-#line 178 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 178 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp24_ = _tmp23_->modOrder;
-#line 178 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 178 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp25_ = _tmp24_->el;
-#line 178 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 178 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp26_ = c;
-#line 178 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 178 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp27_ = _tmp26_->modOrder;
-#line 178 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 178 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_entry_set_text (_tmp25_, _tmp27_);
-#line 179 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 179 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp28_ = xcls_dialognewcomponent__this;
-#line 179 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 179 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp29_ = _tmp28_->permname;
-#line 179 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 179 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp30_ = _tmp29_->el;
-#line 179 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 179 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp31_ = c;
-#line 179 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 179 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp32_ = _tmp31_->permname;
-#line 179 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 179 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_entry_set_text (_tmp30_, _tmp32_);
-#line 181 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 181 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp33_ = c;
-#line 181 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 181 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp34_ = _tmp33_->path;
-#line 181 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 181 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp35_ = strlen (_tmp34_);
-#line 181 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 181 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp36_ = _tmp35_;
-#line 181 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 181 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (_tmp36_ > 0) {
 #line 1501 "DialogNewComponent.vala.c"
 		GtkDialog* _tmp37_;
@@ -1503,42 +1503,42 @@ void xcls_dialognewcomponent_show (Xcls_DialogNewComponent* self, JsRenderJsRend
 		const gchar* _tmp39_;
 		gchar* _tmp40_;
 		gchar* _tmp41_;
-#line 182 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 182 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		_tmp37_ = self->el;
-#line 182 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 182 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		_tmp38_ = c;
-#line 182 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 182 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		_tmp39_ = _tmp38_->name;
-#line 182 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 182 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		_tmp40_ = g_strconcat ("Edit File Details - ", _tmp39_, NULL);
-#line 182 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 182 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		_tmp41_ = _tmp40_;
-#line 182 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 182 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		gtk_window_set_title ((GtkWindow*) _tmp37_, _tmp41_);
-#line 182 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 182 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		_g_free0 (_tmp41_);
 #line 1521 "DialogNewComponent.vala.c"
 	} else {
 		GtkDialog* _tmp42_;
-#line 184 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 184 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		_tmp42_ = self->el;
-#line 184 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 184 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		gtk_window_set_title ((GtkWindow*) _tmp42_, "Create New File");
 #line 1528 "DialogNewComponent.vala.c"
 	}
-#line 187 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 187 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp43_ = xcls_dialognewcomponent__this;
-#line 187 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 187 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp44_ = c;
-#line 187 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 187 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp45_ = _g_object_ref0 (_tmp44_);
-#line 187 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 187 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_object_unref0 (_tmp43_->file);
-#line 187 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 187 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp43_->file = _tmp45_;
-#line 189 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 189 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp46_ = self->el;
-#line 189 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 189 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_widget_show_all ((GtkWidget*) _tmp46_);
 #line 1544 "DialogNewComponent.vala.c"
 }
@@ -1551,25 +1551,25 @@ static void g_cclosure_user_marshal_VOID__OBJECT_OBJECT (GClosure * closure, GVa
 	register gpointer data1;
 	register gpointer data2;
 	cc = (GCClosure *) closure;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_if_fail (n_param_values == 3);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (G_CCLOSURE_SWAP_DATA (closure)) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		data1 = closure->data;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		data2 = param_values->data[0].v_pointer;
 #line 1563 "DialogNewComponent.vala.c"
 	} else {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		data1 = param_values->data[0].v_pointer;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		data2 = closure->data;
 #line 1569 "DialogNewComponent.vala.c"
 	}
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	callback = (GMarshalFunc_VOID__OBJECT_OBJECT) (marshal_data ? marshal_data : cc->callback);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	callback (data1, g_value_get_object (param_values + 1), g_value_get_object (param_values + 2), data2);
 #line 1575 "DialogNewComponent.vala.c"
 }
@@ -1582,52 +1582,52 @@ Xcls_DialogNewComponentXcls_VBox2* xcls_dialognewcomponent_xcls_vbox2_construct 
 	Xcls_DialogNewComponentXcls_Table3* child_0;
 	GtkVBox* _tmp2_;
 	GtkTable* _tmp3_;
-#line 212 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 212 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self = (Xcls_DialogNewComponentXcls_VBox2*) g_type_create_instance (object_type);
-#line 214 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 214 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp0_ = (GtkVBox*) gtk_vbox_new (TRUE, 0);
-#line 214 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 214 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_object_ref_sink (_tmp0_);
-#line 214 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 214 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_object_unref0 (self->el);
-#line 214 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 214 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self->el = _tmp0_;
-#line 219 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 219 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp1_ = xcls_dialognewcomponent_xcls_table3_new ();
-#line 219 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 219 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	child_0 = _tmp1_;
-#line 220 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 220 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp2_ = self->el;
-#line 220 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 220 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp3_ = child_0->el;
-#line 220 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 220 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_box_pack_start ((GtkBox*) _tmp2_, (GtkWidget*) _tmp3_, FALSE, FALSE, (guint) 0);
-#line 212 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 212 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_xcls_dialognewcomponent_xcls_table3_unref0 (child_0);
-#line 212 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 212 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return self;
 #line 1610 "DialogNewComponent.vala.c"
 }
 
 
 Xcls_DialogNewComponentXcls_VBox2* xcls_dialognewcomponent_xcls_vbox2_new (void) {
-#line 212 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 212 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return xcls_dialognewcomponent_xcls_vbox2_construct (XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_VBOX2);
 #line 1617 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_value_xcls_vbox2_init (GValue* value) {
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	value->data[0].v_pointer = NULL;
 #line 1624 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_value_xcls_vbox2_free_value (GValue* value) {
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (value->data[0].v_pointer) {
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_vbox2_unref (value->data[0].v_pointer);
 #line 1633 "DialogNewComponent.vala.c"
 	}
@@ -1635,13 +1635,13 @@ static void xcls_dialognewcomponent_value_xcls_vbox2_free_value (GValue* value) 
 
 
 static void xcls_dialognewcomponent_value_xcls_vbox2_copy_value (const GValue* src_value, GValue* dest_value) {
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (src_value->data[0].v_pointer) {
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		dest_value->data[0].v_pointer = xcls_dialognewcomponent_xcls_vbox2_ref (src_value->data[0].v_pointer);
 #line 1643 "DialogNewComponent.vala.c"
 	} else {
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		dest_value->data[0].v_pointer = NULL;
 #line 1647 "DialogNewComponent.vala.c"
 	}
@@ -1649,37 +1649,37 @@ static void xcls_dialognewcomponent_value_xcls_vbox2_copy_value (const GValue* s
 
 
 static gpointer xcls_dialognewcomponent_value_xcls_vbox2_peek_pointer (const GValue* value) {
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return value->data[0].v_pointer;
 #line 1655 "DialogNewComponent.vala.c"
 }
 
 
 static gchar* xcls_dialognewcomponent_value_xcls_vbox2_collect_value (GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (collect_values[0].v_pointer) {
 #line 1662 "DialogNewComponent.vala.c"
 		Xcls_DialogNewComponentXcls_VBox2* object;
 		object = collect_values[0].v_pointer;
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		if (object->parent_instance.g_class == NULL) {
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 1669 "DialogNewComponent.vala.c"
 		} else if (!g_value_type_compatible (G_TYPE_FROM_INSTANCE (object), G_VALUE_TYPE (value))) {
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 			return g_strconcat ("invalid object type `", g_type_name (G_TYPE_FROM_INSTANCE (object)), "' for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 1673 "DialogNewComponent.vala.c"
 		}
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = xcls_dialognewcomponent_xcls_vbox2_ref (object);
 #line 1677 "DialogNewComponent.vala.c"
 	} else {
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 1681 "DialogNewComponent.vala.c"
 	}
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return NULL;
 #line 1685 "DialogNewComponent.vala.c"
 }
@@ -1688,27 +1688,27 @@ static gchar* xcls_dialognewcomponent_value_xcls_vbox2_collect_value (GValue* va
 static gchar* xcls_dialognewcomponent_value_xcls_vbox2_lcopy_value (const GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
 	Xcls_DialogNewComponentXcls_VBox2** object_p;
 	object_p = collect_values[0].v_pointer;
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (!object_p) {
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
 #line 1696 "DialogNewComponent.vala.c"
 	}
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (!value->data[0].v_pointer) {
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = NULL;
 #line 1702 "DialogNewComponent.vala.c"
 	} else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) {
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = value->data[0].v_pointer;
 #line 1706 "DialogNewComponent.vala.c"
 	} else {
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = xcls_dialognewcomponent_xcls_vbox2_ref (value->data[0].v_pointer);
 #line 1710 "DialogNewComponent.vala.c"
 	}
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return NULL;
 #line 1714 "DialogNewComponent.vala.c"
 }
@@ -1716,22 +1716,22 @@ static gchar* xcls_dialognewcomponent_value_xcls_vbox2_lcopy_value (const GValue
 
 GParamSpec* xcls_dialognewcomponent_param_spec_xcls_vbox2 (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags) {
 	Xcls_DialogNewComponentParamSpecXcls_VBox2* spec;
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_val_if_fail (g_type_is_a (object_type, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_VBOX2), NULL);
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	G_PARAM_SPEC (spec)->value_type = object_type;
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return G_PARAM_SPEC (spec);
 #line 1728 "DialogNewComponent.vala.c"
 }
 
 
 gpointer xcls_dialognewcomponent_value_get_xcls_vbox2 (const GValue* value) {
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_VBOX2), NULL);
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return value->data[0].v_pointer;
 #line 1737 "DialogNewComponent.vala.c"
 }
@@ -1739,29 +1739,29 @@ gpointer xcls_dialognewcomponent_value_get_xcls_vbox2 (const GValue* value) {
 
 void xcls_dialognewcomponent_value_set_xcls_vbox2 (GValue* value, gpointer v_object) {
 	Xcls_DialogNewComponentXcls_VBox2* old;
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_VBOX2));
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	old = value->data[0].v_pointer;
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (v_object) {
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_VBOX2));
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = v_object;
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_vbox2_ref (value->data[0].v_pointer);
 #line 1757 "DialogNewComponent.vala.c"
 	} else {
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 1761 "DialogNewComponent.vala.c"
 	}
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (old) {
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_vbox2_unref (old);
 #line 1767 "DialogNewComponent.vala.c"
 	}
@@ -1770,27 +1770,27 @@ void xcls_dialognewcomponent_value_set_xcls_vbox2 (GValue* value, gpointer v_obj
 
 void xcls_dialognewcomponent_value_take_xcls_vbox2 (GValue* value, gpointer v_object) {
 	Xcls_DialogNewComponentXcls_VBox2* old;
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_VBOX2));
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	old = value->data[0].v_pointer;
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (v_object) {
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_VBOX2));
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = v_object;
 #line 1786 "DialogNewComponent.vala.c"
 	} else {
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 1790 "DialogNewComponent.vala.c"
 	}
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (old) {
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_vbox2_unref (old);
 #line 1796 "DialogNewComponent.vala.c"
 	}
@@ -1798,16 +1798,16 @@ void xcls_dialognewcomponent_value_take_xcls_vbox2 (GValue* value, gpointer v_ob
 
 
 static void xcls_dialognewcomponent_xcls_vbox2_class_init (Xcls_DialogNewComponentXcls_VBox2Class * klass) {
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	xcls_dialognewcomponent_xcls_vbox2_parent_class = g_type_class_peek_parent (klass);
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	XCLS_DIALOGNEWCOMPONENT_XCLS_VBOX2_CLASS (klass)->finalize = xcls_dialognewcomponent_xcls_vbox2_finalize;
 #line 1806 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_xcls_vbox2_instance_init (Xcls_DialogNewComponentXcls_VBox2 * self) {
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self->ref_count = 1;
 #line 1813 "DialogNewComponent.vala.c"
 }
@@ -1815,9 +1815,9 @@ static void xcls_dialognewcomponent_xcls_vbox2_instance_init (Xcls_DialogNewComp
 
 static void xcls_dialognewcomponent_xcls_vbox2_finalize (Xcls_DialogNewComponentXcls_VBox2* obj) {
 	Xcls_DialogNewComponentXcls_VBox2 * self;
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_VBOX2, Xcls_DialogNewComponentXcls_VBox2);
-#line 207 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 207 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_object_unref0 (self->el);
 #line 1823 "DialogNewComponent.vala.c"
 }
@@ -1840,9 +1840,9 @@ GType xcls_dialognewcomponent_xcls_vbox2_get_type (void) {
 gpointer xcls_dialognewcomponent_xcls_vbox2_ref (gpointer instance) {
 	Xcls_DialogNewComponentXcls_VBox2* self;
 	self = instance;
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_atomic_int_inc (&self->ref_count);
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return instance;
 #line 1848 "DialogNewComponent.vala.c"
 }
@@ -1851,11 +1851,11 @@ gpointer xcls_dialognewcomponent_xcls_vbox2_ref (gpointer instance) {
 void xcls_dialognewcomponent_xcls_vbox2_unref (gpointer instance) {
 	Xcls_DialogNewComponentXcls_VBox2* self;
 	self = instance;
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		XCLS_DIALOGNEWCOMPONENT_XCLS_VBOX2_GET_CLASS (self)->finalize (self);
-#line 205 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 205 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_type_free_instance ((GTypeInstance *) self);
 #line 1861 "DialogNewComponent.vala.c"
 	}
@@ -1913,184 +1913,184 @@ Xcls_DialogNewComponentXcls_Table3* xcls_dialognewcomponent_xcls_table3_construc
 	Xcls_DialogNewComponentXcls_modOrder* child_11;
 	GtkTable* _tmp35_;
 	GtkEntry* _tmp36_;
-#line 246 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 246 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self = (Xcls_DialogNewComponentXcls_Table3*) g_type_create_instance (object_type);
-#line 248 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 248 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp0_ = (GtkTable*) gtk_table_new ((guint) 3, (guint) 2, FALSE);
-#line 248 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 248 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_object_ref_sink (_tmp0_);
-#line 248 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 248 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_object_unref0 (self->el);
-#line 248 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 248 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self->el = _tmp0_;
-#line 253 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 253 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp1_ = xcls_dialognewcomponent_xcls_label4_new ();
-#line 253 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 253 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	child_0 = _tmp1_;
-#line 254 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 254 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp2_ = self->el;
-#line 254 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 254 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp3_ = child_0->el;
-#line 254 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 254 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_container_add ((GtkContainer*) _tmp2_, (GtkWidget*) _tmp3_);
-#line 255 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 255 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp4_ = xcls_dialognewcomponent_xcls_name_new ();
-#line 255 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 255 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	child_1 = _tmp4_;
-#line 256 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 256 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp5_ = self->el;
-#line 256 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 256 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp6_ = child_1->el;
-#line 256 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 256 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_container_add ((GtkContainer*) _tmp5_, (GtkWidget*) _tmp6_);
-#line 257 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 257 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp7_ = xcls_dialognewcomponent_xcls_label6_new ();
-#line 257 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 257 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	child_2 = _tmp7_;
-#line 258 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 258 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp8_ = self->el;
-#line 258 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 258 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp9_ = child_2->el;
-#line 258 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 258 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_container_add ((GtkContainer*) _tmp8_, (GtkWidget*) _tmp9_);
-#line 259 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 259 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp10_ = xcls_dialognewcomponent_xcls_title_new ();
-#line 259 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 259 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	child_3 = _tmp10_;
-#line 260 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 260 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp11_ = self->el;
-#line 260 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 260 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp12_ = child_3->el;
-#line 260 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 260 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_container_add ((GtkContainer*) _tmp11_, (GtkWidget*) _tmp12_);
-#line 261 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 261 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp13_ = xcls_dialognewcomponent_xcls_label8_new ();
-#line 261 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 261 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	child_4 = _tmp13_;
-#line 262 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 262 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp14_ = self->el;
-#line 262 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 262 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp15_ = child_4->el;
-#line 262 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 262 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_container_add ((GtkContainer*) _tmp14_, (GtkWidget*) _tmp15_);
-#line 263 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 263 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp16_ = xcls_dialognewcomponent_xcls_region_new ();
-#line 263 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 263 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	child_5 = _tmp16_;
-#line 264 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 264 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp17_ = self->el;
-#line 264 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 264 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp18_ = child_5->el;
-#line 264 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 264 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_container_add ((GtkContainer*) _tmp17_, (GtkWidget*) _tmp18_);
-#line 265 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 265 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp19_ = xcls_dialognewcomponent_xcls_label10_new ();
-#line 265 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 265 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	child_6 = _tmp19_;
-#line 266 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 266 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp20_ = self->el;
-#line 266 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 266 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp21_ = child_6->el;
-#line 266 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 266 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_container_add ((GtkContainer*) _tmp20_, (GtkWidget*) _tmp21_);
-#line 267 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 267 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp22_ = xcls_dialognewcomponent_xcls_parent_new ();
-#line 267 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 267 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	child_7 = _tmp22_;
-#line 268 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 268 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp23_ = self->el;
-#line 268 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 268 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp24_ = child_7->el;
-#line 268 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 268 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_container_add ((GtkContainer*) _tmp23_, (GtkWidget*) _tmp24_);
-#line 269 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 269 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp25_ = xcls_dialognewcomponent_xcls_label12_new ();
-#line 269 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 269 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	child_8 = _tmp25_;
-#line 270 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 270 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp26_ = self->el;
-#line 270 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 270 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp27_ = child_8->el;
-#line 270 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 270 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_container_add ((GtkContainer*) _tmp26_, (GtkWidget*) _tmp27_);
-#line 271 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 271 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp28_ = xcls_dialognewcomponent_xcls_permname_new ();
-#line 271 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 271 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	child_9 = _tmp28_;
-#line 272 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 272 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp29_ = self->el;
-#line 272 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 272 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp30_ = child_9->el;
-#line 272 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 272 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_container_add ((GtkContainer*) _tmp29_, (GtkWidget*) _tmp30_);
-#line 273 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 273 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp31_ = xcls_dialognewcomponent_xcls_label14_new ();
-#line 273 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 273 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	child_10 = _tmp31_;
-#line 274 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 274 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp32_ = self->el;
-#line 274 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 274 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp33_ = child_10->el;
-#line 274 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 274 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_container_add ((GtkContainer*) _tmp32_, (GtkWidget*) _tmp33_);
-#line 275 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 275 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp34_ = xcls_dialognewcomponent_xcls_modorder_new ();
-#line 275 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 275 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	child_11 = _tmp34_;
-#line 276 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 276 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp35_ = self->el;
-#line 276 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 276 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp36_ = child_11->el;
-#line 276 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 276 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_container_add ((GtkContainer*) _tmp35_, (GtkWidget*) _tmp36_);
-#line 246 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 246 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_xcls_dialognewcomponent_xcls_modorder_unref0 (child_11);
-#line 246 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 246 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_xcls_dialognewcomponent_xcls_label14_unref0 (child_10);
-#line 246 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 246 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_xcls_dialognewcomponent_xcls_permname_unref0 (child_9);
-#line 246 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 246 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_xcls_dialognewcomponent_xcls_label12_unref0 (child_8);
-#line 246 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 246 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_xcls_dialognewcomponent_xcls_parent_unref0 (child_7);
-#line 246 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 246 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_xcls_dialognewcomponent_xcls_label10_unref0 (child_6);
-#line 246 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 246 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_xcls_dialognewcomponent_xcls_region_unref0 (child_5);
-#line 246 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 246 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_xcls_dialognewcomponent_xcls_label8_unref0 (child_4);
-#line 246 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 246 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_xcls_dialognewcomponent_xcls_title_unref0 (child_3);
-#line 246 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 246 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_xcls_dialognewcomponent_xcls_label6_unref0 (child_2);
-#line 246 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 246 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_xcls_dialognewcomponent_xcls_name_unref0 (child_1);
-#line 246 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 246 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_xcls_dialognewcomponent_xcls_label4_unref0 (child_0);
-#line 246 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 246 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return self;
 #line 2073 "DialogNewComponent.vala.c"
 }
 
 
 Xcls_DialogNewComponentXcls_Table3* xcls_dialognewcomponent_xcls_table3_new (void) {
-#line 246 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 246 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return xcls_dialognewcomponent_xcls_table3_construct (XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_TABLE3);
 #line 2080 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_value_xcls_table3_init (GValue* value) {
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	value->data[0].v_pointer = NULL;
 #line 2087 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_value_xcls_table3_free_value (GValue* value) {
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (value->data[0].v_pointer) {
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_table3_unref (value->data[0].v_pointer);
 #line 2096 "DialogNewComponent.vala.c"
 	}
@@ -2098,13 +2098,13 @@ static void xcls_dialognewcomponent_value_xcls_table3_free_value (GValue* value)
 
 
 static void xcls_dialognewcomponent_value_xcls_table3_copy_value (const GValue* src_value, GValue* dest_value) {
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (src_value->data[0].v_pointer) {
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		dest_value->data[0].v_pointer = xcls_dialognewcomponent_xcls_table3_ref (src_value->data[0].v_pointer);
 #line 2106 "DialogNewComponent.vala.c"
 	} else {
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		dest_value->data[0].v_pointer = NULL;
 #line 2110 "DialogNewComponent.vala.c"
 	}
@@ -2112,37 +2112,37 @@ static void xcls_dialognewcomponent_value_xcls_table3_copy_value (const GValue* 
 
 
 static gpointer xcls_dialognewcomponent_value_xcls_table3_peek_pointer (const GValue* value) {
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return value->data[0].v_pointer;
 #line 2118 "DialogNewComponent.vala.c"
 }
 
 
 static gchar* xcls_dialognewcomponent_value_xcls_table3_collect_value (GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (collect_values[0].v_pointer) {
 #line 2125 "DialogNewComponent.vala.c"
 		Xcls_DialogNewComponentXcls_Table3* object;
 		object = collect_values[0].v_pointer;
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		if (object->parent_instance.g_class == NULL) {
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 2132 "DialogNewComponent.vala.c"
 		} else if (!g_value_type_compatible (G_TYPE_FROM_INSTANCE (object), G_VALUE_TYPE (value))) {
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 			return g_strconcat ("invalid object type `", g_type_name (G_TYPE_FROM_INSTANCE (object)), "' for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 2136 "DialogNewComponent.vala.c"
 		}
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = xcls_dialognewcomponent_xcls_table3_ref (object);
 #line 2140 "DialogNewComponent.vala.c"
 	} else {
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 2144 "DialogNewComponent.vala.c"
 	}
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return NULL;
 #line 2148 "DialogNewComponent.vala.c"
 }
@@ -2151,27 +2151,27 @@ static gchar* xcls_dialognewcomponent_value_xcls_table3_collect_value (GValue* v
 static gchar* xcls_dialognewcomponent_value_xcls_table3_lcopy_value (const GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
 	Xcls_DialogNewComponentXcls_Table3** object_p;
 	object_p = collect_values[0].v_pointer;
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (!object_p) {
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
 #line 2159 "DialogNewComponent.vala.c"
 	}
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (!value->data[0].v_pointer) {
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = NULL;
 #line 2165 "DialogNewComponent.vala.c"
 	} else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) {
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = value->data[0].v_pointer;
 #line 2169 "DialogNewComponent.vala.c"
 	} else {
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = xcls_dialognewcomponent_xcls_table3_ref (value->data[0].v_pointer);
 #line 2173 "DialogNewComponent.vala.c"
 	}
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return NULL;
 #line 2177 "DialogNewComponent.vala.c"
 }
@@ -2179,22 +2179,22 @@ static gchar* xcls_dialognewcomponent_value_xcls_table3_lcopy_value (const GValu
 
 GParamSpec* xcls_dialognewcomponent_param_spec_xcls_table3 (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags) {
 	Xcls_DialogNewComponentParamSpecXcls_Table3* spec;
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_val_if_fail (g_type_is_a (object_type, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_TABLE3), NULL);
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	G_PARAM_SPEC (spec)->value_type = object_type;
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return G_PARAM_SPEC (spec);
 #line 2191 "DialogNewComponent.vala.c"
 }
 
 
 gpointer xcls_dialognewcomponent_value_get_xcls_table3 (const GValue* value) {
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_TABLE3), NULL);
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return value->data[0].v_pointer;
 #line 2200 "DialogNewComponent.vala.c"
 }
@@ -2202,29 +2202,29 @@ gpointer xcls_dialognewcomponent_value_get_xcls_table3 (const GValue* value) {
 
 void xcls_dialognewcomponent_value_set_xcls_table3 (GValue* value, gpointer v_object) {
 	Xcls_DialogNewComponentXcls_Table3* old;
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_TABLE3));
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	old = value->data[0].v_pointer;
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (v_object) {
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_TABLE3));
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = v_object;
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_table3_ref (value->data[0].v_pointer);
 #line 2220 "DialogNewComponent.vala.c"
 	} else {
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 2224 "DialogNewComponent.vala.c"
 	}
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (old) {
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_table3_unref (old);
 #line 2230 "DialogNewComponent.vala.c"
 	}
@@ -2233,27 +2233,27 @@ void xcls_dialognewcomponent_value_set_xcls_table3 (GValue* value, gpointer v_ob
 
 void xcls_dialognewcomponent_value_take_xcls_table3 (GValue* value, gpointer v_object) {
 	Xcls_DialogNewComponentXcls_Table3* old;
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_TABLE3));
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	old = value->data[0].v_pointer;
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (v_object) {
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_TABLE3));
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = v_object;
 #line 2249 "DialogNewComponent.vala.c"
 	} else {
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 2253 "DialogNewComponent.vala.c"
 	}
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (old) {
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_table3_unref (old);
 #line 2259 "DialogNewComponent.vala.c"
 	}
@@ -2261,16 +2261,16 @@ void xcls_dialognewcomponent_value_take_xcls_table3 (GValue* value, gpointer v_o
 
 
 static void xcls_dialognewcomponent_xcls_table3_class_init (Xcls_DialogNewComponentXcls_Table3Class * klass) {
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	xcls_dialognewcomponent_xcls_table3_parent_class = g_type_class_peek_parent (klass);
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	XCLS_DIALOGNEWCOMPONENT_XCLS_TABLE3_CLASS (klass)->finalize = xcls_dialognewcomponent_xcls_table3_finalize;
 #line 2269 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_xcls_table3_instance_init (Xcls_DialogNewComponentXcls_Table3 * self) {
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self->ref_count = 1;
 #line 2276 "DialogNewComponent.vala.c"
 }
@@ -2278,9 +2278,9 @@ static void xcls_dialognewcomponent_xcls_table3_instance_init (Xcls_DialogNewCom
 
 static void xcls_dialognewcomponent_xcls_table3_finalize (Xcls_DialogNewComponentXcls_Table3* obj) {
 	Xcls_DialogNewComponentXcls_Table3 * self;
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_TABLE3, Xcls_DialogNewComponentXcls_Table3);
-#line 241 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 241 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_object_unref0 (self->el);
 #line 2286 "DialogNewComponent.vala.c"
 }
@@ -2303,9 +2303,9 @@ GType xcls_dialognewcomponent_xcls_table3_get_type (void) {
 gpointer xcls_dialognewcomponent_xcls_table3_ref (gpointer instance) {
 	Xcls_DialogNewComponentXcls_Table3* self;
 	self = instance;
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_atomic_int_inc (&self->ref_count);
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return instance;
 #line 2311 "DialogNewComponent.vala.c"
 }
@@ -2314,11 +2314,11 @@ gpointer xcls_dialognewcomponent_xcls_table3_ref (gpointer instance) {
 void xcls_dialognewcomponent_xcls_table3_unref (gpointer instance) {
 	Xcls_DialogNewComponentXcls_Table3* self;
 	self = instance;
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		XCLS_DIALOGNEWCOMPONENT_XCLS_TABLE3_GET_CLASS (self)->finalize (self);
-#line 239 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 239 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_type_free_instance ((GTypeInstance *) self);
 #line 2324 "DialogNewComponent.vala.c"
 	}
@@ -2330,48 +2330,48 @@ Xcls_DialogNewComponentXcls_Label4* xcls_dialognewcomponent_xcls_label4_construc
 	GtkLabel* _tmp0_;
 	GtkLabel* _tmp1_;
 	GtkLabel* _tmp2_;
-#line 308 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 308 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self = (Xcls_DialogNewComponentXcls_Label4*) g_type_create_instance (object_type);
-#line 310 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 310 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp0_ = (GtkLabel*) gtk_label_new ("Component Name");
-#line 310 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 310 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_object_ref_sink (_tmp0_);
-#line 310 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 310 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_object_unref0 (self->el);
-#line 310 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 310 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self->el = _tmp0_;
-#line 315 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 315 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp1_ = self->el;
-#line 315 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 315 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_label_set_justify (_tmp1_, GTK_JUSTIFY_RIGHT);
-#line 316 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 316 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp2_ = self->el;
-#line 316 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 316 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_object_set ((GtkMisc*) _tmp2_, "xalign", 0.9f, NULL);
-#line 308 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 308 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return self;
 #line 2354 "DialogNewComponent.vala.c"
 }
 
 
 Xcls_DialogNewComponentXcls_Label4* xcls_dialognewcomponent_xcls_label4_new (void) {
-#line 308 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 308 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return xcls_dialognewcomponent_xcls_label4_construct (XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL4);
 #line 2361 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_value_xcls_label4_init (GValue* value) {
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	value->data[0].v_pointer = NULL;
 #line 2368 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_value_xcls_label4_free_value (GValue* value) {
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (value->data[0].v_pointer) {
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_label4_unref (value->data[0].v_pointer);
 #line 2377 "DialogNewComponent.vala.c"
 	}
@@ -2379,13 +2379,13 @@ static void xcls_dialognewcomponent_value_xcls_label4_free_value (GValue* value)
 
 
 static void xcls_dialognewcomponent_value_xcls_label4_copy_value (const GValue* src_value, GValue* dest_value) {
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (src_value->data[0].v_pointer) {
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		dest_value->data[0].v_pointer = xcls_dialognewcomponent_xcls_label4_ref (src_value->data[0].v_pointer);
 #line 2387 "DialogNewComponent.vala.c"
 	} else {
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		dest_value->data[0].v_pointer = NULL;
 #line 2391 "DialogNewComponent.vala.c"
 	}
@@ -2393,37 +2393,37 @@ static void xcls_dialognewcomponent_value_xcls_label4_copy_value (const GValue* 
 
 
 static gpointer xcls_dialognewcomponent_value_xcls_label4_peek_pointer (const GValue* value) {
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return value->data[0].v_pointer;
 #line 2399 "DialogNewComponent.vala.c"
 }
 
 
 static gchar* xcls_dialognewcomponent_value_xcls_label4_collect_value (GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (collect_values[0].v_pointer) {
 #line 2406 "DialogNewComponent.vala.c"
 		Xcls_DialogNewComponentXcls_Label4* object;
 		object = collect_values[0].v_pointer;
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		if (object->parent_instance.g_class == NULL) {
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 2413 "DialogNewComponent.vala.c"
 		} else if (!g_value_type_compatible (G_TYPE_FROM_INSTANCE (object), G_VALUE_TYPE (value))) {
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 			return g_strconcat ("invalid object type `", g_type_name (G_TYPE_FROM_INSTANCE (object)), "' for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 2417 "DialogNewComponent.vala.c"
 		}
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = xcls_dialognewcomponent_xcls_label4_ref (object);
 #line 2421 "DialogNewComponent.vala.c"
 	} else {
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 2425 "DialogNewComponent.vala.c"
 	}
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return NULL;
 #line 2429 "DialogNewComponent.vala.c"
 }
@@ -2432,27 +2432,27 @@ static gchar* xcls_dialognewcomponent_value_xcls_label4_collect_value (GValue* v
 static gchar* xcls_dialognewcomponent_value_xcls_label4_lcopy_value (const GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
 	Xcls_DialogNewComponentXcls_Label4** object_p;
 	object_p = collect_values[0].v_pointer;
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (!object_p) {
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
 #line 2440 "DialogNewComponent.vala.c"
 	}
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (!value->data[0].v_pointer) {
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = NULL;
 #line 2446 "DialogNewComponent.vala.c"
 	} else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) {
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = value->data[0].v_pointer;
 #line 2450 "DialogNewComponent.vala.c"
 	} else {
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = xcls_dialognewcomponent_xcls_label4_ref (value->data[0].v_pointer);
 #line 2454 "DialogNewComponent.vala.c"
 	}
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return NULL;
 #line 2458 "DialogNewComponent.vala.c"
 }
@@ -2460,22 +2460,22 @@ static gchar* xcls_dialognewcomponent_value_xcls_label4_lcopy_value (const GValu
 
 GParamSpec* xcls_dialognewcomponent_param_spec_xcls_label4 (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags) {
 	Xcls_DialogNewComponentParamSpecXcls_Label4* spec;
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_val_if_fail (g_type_is_a (object_type, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL4), NULL);
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	G_PARAM_SPEC (spec)->value_type = object_type;
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return G_PARAM_SPEC (spec);
 #line 2472 "DialogNewComponent.vala.c"
 }
 
 
 gpointer xcls_dialognewcomponent_value_get_xcls_label4 (const GValue* value) {
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL4), NULL);
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return value->data[0].v_pointer;
 #line 2481 "DialogNewComponent.vala.c"
 }
@@ -2483,29 +2483,29 @@ gpointer xcls_dialognewcomponent_value_get_xcls_label4 (const GValue* value) {
 
 void xcls_dialognewcomponent_value_set_xcls_label4 (GValue* value, gpointer v_object) {
 	Xcls_DialogNewComponentXcls_Label4* old;
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL4));
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	old = value->data[0].v_pointer;
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (v_object) {
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL4));
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = v_object;
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_label4_ref (value->data[0].v_pointer);
 #line 2501 "DialogNewComponent.vala.c"
 	} else {
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 2505 "DialogNewComponent.vala.c"
 	}
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (old) {
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_label4_unref (old);
 #line 2511 "DialogNewComponent.vala.c"
 	}
@@ -2514,27 +2514,27 @@ void xcls_dialognewcomponent_value_set_xcls_label4 (GValue* value, gpointer v_ob
 
 void xcls_dialognewcomponent_value_take_xcls_label4 (GValue* value, gpointer v_object) {
 	Xcls_DialogNewComponentXcls_Label4* old;
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL4));
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	old = value->data[0].v_pointer;
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (v_object) {
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL4));
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = v_object;
 #line 2530 "DialogNewComponent.vala.c"
 	} else {
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 2534 "DialogNewComponent.vala.c"
 	}
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (old) {
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_label4_unref (old);
 #line 2540 "DialogNewComponent.vala.c"
 	}
@@ -2542,16 +2542,16 @@ void xcls_dialognewcomponent_value_take_xcls_label4 (GValue* value, gpointer v_o
 
 
 static void xcls_dialognewcomponent_xcls_label4_class_init (Xcls_DialogNewComponentXcls_Label4Class * klass) {
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	xcls_dialognewcomponent_xcls_label4_parent_class = g_type_class_peek_parent (klass);
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	XCLS_DIALOGNEWCOMPONENT_XCLS_LABEL4_CLASS (klass)->finalize = xcls_dialognewcomponent_xcls_label4_finalize;
 #line 2550 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_xcls_label4_instance_init (Xcls_DialogNewComponentXcls_Label4 * self) {
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self->ref_count = 1;
 #line 2557 "DialogNewComponent.vala.c"
 }
@@ -2559,9 +2559,9 @@ static void xcls_dialognewcomponent_xcls_label4_instance_init (Xcls_DialogNewCom
 
 static void xcls_dialognewcomponent_xcls_label4_finalize (Xcls_DialogNewComponentXcls_Label4* obj) {
 	Xcls_DialogNewComponentXcls_Label4 * self;
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL4, Xcls_DialogNewComponentXcls_Label4);
-#line 303 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 303 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_object_unref0 (self->el);
 #line 2567 "DialogNewComponent.vala.c"
 }
@@ -2584,9 +2584,9 @@ GType xcls_dialognewcomponent_xcls_label4_get_type (void) {
 gpointer xcls_dialognewcomponent_xcls_label4_ref (gpointer instance) {
 	Xcls_DialogNewComponentXcls_Label4* self;
 	self = instance;
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_atomic_int_inc (&self->ref_count);
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return instance;
 #line 2592 "DialogNewComponent.vala.c"
 }
@@ -2595,11 +2595,11 @@ gpointer xcls_dialognewcomponent_xcls_label4_ref (gpointer instance) {
 void xcls_dialognewcomponent_xcls_label4_unref (gpointer instance) {
 	Xcls_DialogNewComponentXcls_Label4* self;
 	self = instance;
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		XCLS_DIALOGNEWCOMPONENT_XCLS_LABEL4_GET_CLASS (self)->finalize (self);
-#line 301 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 301 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_type_free_instance ((GTypeInstance *) self);
 #line 2605 "DialogNewComponent.vala.c"
 	}
@@ -2607,7 +2607,7 @@ void xcls_dialognewcomponent_xcls_label4_unref (gpointer instance) {
 
 
 static gpointer _xcls_dialognewcomponent_xcls_name_ref0 (gpointer self) {
-#line 351 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 351 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return self ? xcls_dialognewcomponent_xcls_name_ref (self) : NULL;
 #line 2613 "DialogNewComponent.vala.c"
 }
@@ -2619,52 +2619,52 @@ Xcls_DialogNewComponentXcls_name* xcls_dialognewcomponent_xcls_name_construct (G
 	Xcls_DialogNewComponent* _tmp1_;
 	Xcls_DialogNewComponentXcls_name* _tmp2_;
 	GtkEntry* _tmp3_;
-#line 348 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 348 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self = (Xcls_DialogNewComponentXcls_name*) g_type_create_instance (object_type);
-#line 350 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 350 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp0_ = (GtkEntry*) gtk_entry_new ();
-#line 350 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 350 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_object_ref_sink (_tmp0_);
-#line 350 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 350 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_object_unref0 (self->el);
-#line 350 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 350 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self->el = _tmp0_;
-#line 351 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 351 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp1_ = xcls_dialognewcomponent__this;
-#line 351 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 351 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp2_ = _xcls_dialognewcomponent_xcls_name_ref0 (self);
-#line 351 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 351 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_xcls_dialognewcomponent_xcls_name_unref0 (_tmp1_->name);
-#line 351 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 351 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp1_->name = _tmp2_;
-#line 356 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 356 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp3_ = self->el;
-#line 356 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 356 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_widget_set_visible ((GtkWidget*) _tmp3_, TRUE);
-#line 348 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 348 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return self;
 #line 2647 "DialogNewComponent.vala.c"
 }
 
 
 Xcls_DialogNewComponentXcls_name* xcls_dialognewcomponent_xcls_name_new (void) {
-#line 348 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 348 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return xcls_dialognewcomponent_xcls_name_construct (XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_NAME);
 #line 2654 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_value_xcls_name_init (GValue* value) {
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	value->data[0].v_pointer = NULL;
 #line 2661 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_value_xcls_name_free_value (GValue* value) {
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (value->data[0].v_pointer) {
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_name_unref (value->data[0].v_pointer);
 #line 2670 "DialogNewComponent.vala.c"
 	}
@@ -2672,13 +2672,13 @@ static void xcls_dialognewcomponent_value_xcls_name_free_value (GValue* value) {
 
 
 static void xcls_dialognewcomponent_value_xcls_name_copy_value (const GValue* src_value, GValue* dest_value) {
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (src_value->data[0].v_pointer) {
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		dest_value->data[0].v_pointer = xcls_dialognewcomponent_xcls_name_ref (src_value->data[0].v_pointer);
 #line 2680 "DialogNewComponent.vala.c"
 	} else {
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		dest_value->data[0].v_pointer = NULL;
 #line 2684 "DialogNewComponent.vala.c"
 	}
@@ -2686,37 +2686,37 @@ static void xcls_dialognewcomponent_value_xcls_name_copy_value (const GValue* sr
 
 
 static gpointer xcls_dialognewcomponent_value_xcls_name_peek_pointer (const GValue* value) {
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return value->data[0].v_pointer;
 #line 2692 "DialogNewComponent.vala.c"
 }
 
 
 static gchar* xcls_dialognewcomponent_value_xcls_name_collect_value (GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (collect_values[0].v_pointer) {
 #line 2699 "DialogNewComponent.vala.c"
 		Xcls_DialogNewComponentXcls_name* object;
 		object = collect_values[0].v_pointer;
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		if (object->parent_instance.g_class == NULL) {
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 2706 "DialogNewComponent.vala.c"
 		} else if (!g_value_type_compatible (G_TYPE_FROM_INSTANCE (object), G_VALUE_TYPE (value))) {
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 			return g_strconcat ("invalid object type `", g_type_name (G_TYPE_FROM_INSTANCE (object)), "' for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 2710 "DialogNewComponent.vala.c"
 		}
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = xcls_dialognewcomponent_xcls_name_ref (object);
 #line 2714 "DialogNewComponent.vala.c"
 	} else {
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 2718 "DialogNewComponent.vala.c"
 	}
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return NULL;
 #line 2722 "DialogNewComponent.vala.c"
 }
@@ -2725,27 +2725,27 @@ static gchar* xcls_dialognewcomponent_value_xcls_name_collect_value (GValue* val
 static gchar* xcls_dialognewcomponent_value_xcls_name_lcopy_value (const GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
 	Xcls_DialogNewComponentXcls_name** object_p;
 	object_p = collect_values[0].v_pointer;
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (!object_p) {
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
 #line 2733 "DialogNewComponent.vala.c"
 	}
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (!value->data[0].v_pointer) {
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = NULL;
 #line 2739 "DialogNewComponent.vala.c"
 	} else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) {
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = value->data[0].v_pointer;
 #line 2743 "DialogNewComponent.vala.c"
 	} else {
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = xcls_dialognewcomponent_xcls_name_ref (value->data[0].v_pointer);
 #line 2747 "DialogNewComponent.vala.c"
 	}
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return NULL;
 #line 2751 "DialogNewComponent.vala.c"
 }
@@ -2753,22 +2753,22 @@ static gchar* xcls_dialognewcomponent_value_xcls_name_lcopy_value (const GValue*
 
 GParamSpec* xcls_dialognewcomponent_param_spec_xcls_name (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags) {
 	Xcls_DialogNewComponentParamSpecXcls_name* spec;
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_val_if_fail (g_type_is_a (object_type, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_NAME), NULL);
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	G_PARAM_SPEC (spec)->value_type = object_type;
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return G_PARAM_SPEC (spec);
 #line 2765 "DialogNewComponent.vala.c"
 }
 
 
 gpointer xcls_dialognewcomponent_value_get_xcls_name (const GValue* value) {
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_NAME), NULL);
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return value->data[0].v_pointer;
 #line 2774 "DialogNewComponent.vala.c"
 }
@@ -2776,29 +2776,29 @@ gpointer xcls_dialognewcomponent_value_get_xcls_name (const GValue* value) {
 
 void xcls_dialognewcomponent_value_set_xcls_name (GValue* value, gpointer v_object) {
 	Xcls_DialogNewComponentXcls_name* old;
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_NAME));
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	old = value->data[0].v_pointer;
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (v_object) {
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_NAME));
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = v_object;
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_name_ref (value->data[0].v_pointer);
 #line 2794 "DialogNewComponent.vala.c"
 	} else {
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 2798 "DialogNewComponent.vala.c"
 	}
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (old) {
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_name_unref (old);
 #line 2804 "DialogNewComponent.vala.c"
 	}
@@ -2807,27 +2807,27 @@ void xcls_dialognewcomponent_value_set_xcls_name (GValue* value, gpointer v_obje
 
 void xcls_dialognewcomponent_value_take_xcls_name (GValue* value, gpointer v_object) {
 	Xcls_DialogNewComponentXcls_name* old;
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_NAME));
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	old = value->data[0].v_pointer;
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (v_object) {
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_NAME));
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = v_object;
 #line 2823 "DialogNewComponent.vala.c"
 	} else {
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 2827 "DialogNewComponent.vala.c"
 	}
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (old) {
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_name_unref (old);
 #line 2833 "DialogNewComponent.vala.c"
 	}
@@ -2835,16 +2835,16 @@ void xcls_dialognewcomponent_value_take_xcls_name (GValue* value, gpointer v_obj
 
 
 static void xcls_dialognewcomponent_xcls_name_class_init (Xcls_DialogNewComponentXcls_nameClass * klass) {
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	xcls_dialognewcomponent_xcls_name_parent_class = g_type_class_peek_parent (klass);
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	XCLS_DIALOGNEWCOMPONENT_XCLS_NAME_CLASS (klass)->finalize = xcls_dialognewcomponent_xcls_name_finalize;
 #line 2843 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_xcls_name_instance_init (Xcls_DialogNewComponentXcls_name * self) {
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self->ref_count = 1;
 #line 2850 "DialogNewComponent.vala.c"
 }
@@ -2852,9 +2852,9 @@ static void xcls_dialognewcomponent_xcls_name_instance_init (Xcls_DialogNewCompo
 
 static void xcls_dialognewcomponent_xcls_name_finalize (Xcls_DialogNewComponentXcls_name* obj) {
 	Xcls_DialogNewComponentXcls_name * self;
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_NAME, Xcls_DialogNewComponentXcls_name);
-#line 343 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 343 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_object_unref0 (self->el);
 #line 2860 "DialogNewComponent.vala.c"
 }
@@ -2877,9 +2877,9 @@ GType xcls_dialognewcomponent_xcls_name_get_type (void) {
 gpointer xcls_dialognewcomponent_xcls_name_ref (gpointer instance) {
 	Xcls_DialogNewComponentXcls_name* self;
 	self = instance;
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_atomic_int_inc (&self->ref_count);
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return instance;
 #line 2885 "DialogNewComponent.vala.c"
 }
@@ -2888,11 +2888,11 @@ gpointer xcls_dialognewcomponent_xcls_name_ref (gpointer instance) {
 void xcls_dialognewcomponent_xcls_name_unref (gpointer instance) {
 	Xcls_DialogNewComponentXcls_name* self;
 	self = instance;
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		XCLS_DIALOGNEWCOMPONENT_XCLS_NAME_GET_CLASS (self)->finalize (self);
-#line 341 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 341 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_type_free_instance ((GTypeInstance *) self);
 #line 2898 "DialogNewComponent.vala.c"
 	}
@@ -2905,52 +2905,52 @@ Xcls_DialogNewComponentXcls_Label6* xcls_dialognewcomponent_xcls_label6_construc
 	GtkLabel* _tmp1_;
 	GtkLabel* _tmp2_;
 	GtkLabel* _tmp3_;
-#line 384 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 384 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self = (Xcls_DialogNewComponentXcls_Label6*) g_type_create_instance (object_type);
-#line 386 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 386 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp0_ = (GtkLabel*) gtk_label_new ("Title");
-#line 386 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 386 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_object_ref_sink (_tmp0_);
-#line 386 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 386 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_object_unref0 (self->el);
-#line 386 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 386 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self->el = _tmp0_;
-#line 391 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 391 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp1_ = self->el;
-#line 391 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 391 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_label_set_justify (_tmp1_, GTK_JUSTIFY_RIGHT);
-#line 392 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 392 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp2_ = self->el;
-#line 392 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 392 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_widget_set_visible ((GtkWidget*) _tmp2_, TRUE);
-#line 393 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 393 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp3_ = self->el;
-#line 393 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 393 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_object_set ((GtkMisc*) _tmp3_, "xalign", 0.9f, NULL);
-#line 384 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 384 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return self;
 #line 2933 "DialogNewComponent.vala.c"
 }
 
 
 Xcls_DialogNewComponentXcls_Label6* xcls_dialognewcomponent_xcls_label6_new (void) {
-#line 384 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 384 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return xcls_dialognewcomponent_xcls_label6_construct (XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL6);
 #line 2940 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_value_xcls_label6_init (GValue* value) {
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	value->data[0].v_pointer = NULL;
 #line 2947 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_value_xcls_label6_free_value (GValue* value) {
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (value->data[0].v_pointer) {
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_label6_unref (value->data[0].v_pointer);
 #line 2956 "DialogNewComponent.vala.c"
 	}
@@ -2958,13 +2958,13 @@ static void xcls_dialognewcomponent_value_xcls_label6_free_value (GValue* value)
 
 
 static void xcls_dialognewcomponent_value_xcls_label6_copy_value (const GValue* src_value, GValue* dest_value) {
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (src_value->data[0].v_pointer) {
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		dest_value->data[0].v_pointer = xcls_dialognewcomponent_xcls_label6_ref (src_value->data[0].v_pointer);
 #line 2966 "DialogNewComponent.vala.c"
 	} else {
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		dest_value->data[0].v_pointer = NULL;
 #line 2970 "DialogNewComponent.vala.c"
 	}
@@ -2972,37 +2972,37 @@ static void xcls_dialognewcomponent_value_xcls_label6_copy_value (const GValue* 
 
 
 static gpointer xcls_dialognewcomponent_value_xcls_label6_peek_pointer (const GValue* value) {
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return value->data[0].v_pointer;
 #line 2978 "DialogNewComponent.vala.c"
 }
 
 
 static gchar* xcls_dialognewcomponent_value_xcls_label6_collect_value (GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (collect_values[0].v_pointer) {
 #line 2985 "DialogNewComponent.vala.c"
 		Xcls_DialogNewComponentXcls_Label6* object;
 		object = collect_values[0].v_pointer;
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		if (object->parent_instance.g_class == NULL) {
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 2992 "DialogNewComponent.vala.c"
 		} else if (!g_value_type_compatible (G_TYPE_FROM_INSTANCE (object), G_VALUE_TYPE (value))) {
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 			return g_strconcat ("invalid object type `", g_type_name (G_TYPE_FROM_INSTANCE (object)), "' for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 2996 "DialogNewComponent.vala.c"
 		}
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = xcls_dialognewcomponent_xcls_label6_ref (object);
 #line 3000 "DialogNewComponent.vala.c"
 	} else {
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 3004 "DialogNewComponent.vala.c"
 	}
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return NULL;
 #line 3008 "DialogNewComponent.vala.c"
 }
@@ -3011,27 +3011,27 @@ static gchar* xcls_dialognewcomponent_value_xcls_label6_collect_value (GValue* v
 static gchar* xcls_dialognewcomponent_value_xcls_label6_lcopy_value (const GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
 	Xcls_DialogNewComponentXcls_Label6** object_p;
 	object_p = collect_values[0].v_pointer;
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (!object_p) {
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
 #line 3019 "DialogNewComponent.vala.c"
 	}
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (!value->data[0].v_pointer) {
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = NULL;
 #line 3025 "DialogNewComponent.vala.c"
 	} else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) {
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = value->data[0].v_pointer;
 #line 3029 "DialogNewComponent.vala.c"
 	} else {
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = xcls_dialognewcomponent_xcls_label6_ref (value->data[0].v_pointer);
 #line 3033 "DialogNewComponent.vala.c"
 	}
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return NULL;
 #line 3037 "DialogNewComponent.vala.c"
 }
@@ -3039,22 +3039,22 @@ static gchar* xcls_dialognewcomponent_value_xcls_label6_lcopy_value (const GValu
 
 GParamSpec* xcls_dialognewcomponent_param_spec_xcls_label6 (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags) {
 	Xcls_DialogNewComponentParamSpecXcls_Label6* spec;
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_val_if_fail (g_type_is_a (object_type, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL6), NULL);
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	G_PARAM_SPEC (spec)->value_type = object_type;
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return G_PARAM_SPEC (spec);
 #line 3051 "DialogNewComponent.vala.c"
 }
 
 
 gpointer xcls_dialognewcomponent_value_get_xcls_label6 (const GValue* value) {
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL6), NULL);
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return value->data[0].v_pointer;
 #line 3060 "DialogNewComponent.vala.c"
 }
@@ -3062,29 +3062,29 @@ gpointer xcls_dialognewcomponent_value_get_xcls_label6 (const GValue* value) {
 
 void xcls_dialognewcomponent_value_set_xcls_label6 (GValue* value, gpointer v_object) {
 	Xcls_DialogNewComponentXcls_Label6* old;
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL6));
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	old = value->data[0].v_pointer;
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (v_object) {
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL6));
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = v_object;
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_label6_ref (value->data[0].v_pointer);
 #line 3080 "DialogNewComponent.vala.c"
 	} else {
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 3084 "DialogNewComponent.vala.c"
 	}
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (old) {
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_label6_unref (old);
 #line 3090 "DialogNewComponent.vala.c"
 	}
@@ -3093,27 +3093,27 @@ void xcls_dialognewcomponent_value_set_xcls_label6 (GValue* value, gpointer v_ob
 
 void xcls_dialognewcomponent_value_take_xcls_label6 (GValue* value, gpointer v_object) {
 	Xcls_DialogNewComponentXcls_Label6* old;
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL6));
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	old = value->data[0].v_pointer;
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (v_object) {
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL6));
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = v_object;
 #line 3109 "DialogNewComponent.vala.c"
 	} else {
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 3113 "DialogNewComponent.vala.c"
 	}
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (old) {
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_label6_unref (old);
 #line 3119 "DialogNewComponent.vala.c"
 	}
@@ -3121,16 +3121,16 @@ void xcls_dialognewcomponent_value_take_xcls_label6 (GValue* value, gpointer v_o
 
 
 static void xcls_dialognewcomponent_xcls_label6_class_init (Xcls_DialogNewComponentXcls_Label6Class * klass) {
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	xcls_dialognewcomponent_xcls_label6_parent_class = g_type_class_peek_parent (klass);
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	XCLS_DIALOGNEWCOMPONENT_XCLS_LABEL6_CLASS (klass)->finalize = xcls_dialognewcomponent_xcls_label6_finalize;
 #line 3129 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_xcls_label6_instance_init (Xcls_DialogNewComponentXcls_Label6 * self) {
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self->ref_count = 1;
 #line 3136 "DialogNewComponent.vala.c"
 }
@@ -3138,9 +3138,9 @@ static void xcls_dialognewcomponent_xcls_label6_instance_init (Xcls_DialogNewCom
 
 static void xcls_dialognewcomponent_xcls_label6_finalize (Xcls_DialogNewComponentXcls_Label6* obj) {
 	Xcls_DialogNewComponentXcls_Label6 * self;
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL6, Xcls_DialogNewComponentXcls_Label6);
-#line 379 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 379 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_object_unref0 (self->el);
 #line 3146 "DialogNewComponent.vala.c"
 }
@@ -3163,9 +3163,9 @@ GType xcls_dialognewcomponent_xcls_label6_get_type (void) {
 gpointer xcls_dialognewcomponent_xcls_label6_ref (gpointer instance) {
 	Xcls_DialogNewComponentXcls_Label6* self;
 	self = instance;
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_atomic_int_inc (&self->ref_count);
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return instance;
 #line 3171 "DialogNewComponent.vala.c"
 }
@@ -3174,11 +3174,11 @@ gpointer xcls_dialognewcomponent_xcls_label6_ref (gpointer instance) {
 void xcls_dialognewcomponent_xcls_label6_unref (gpointer instance) {
 	Xcls_DialogNewComponentXcls_Label6* self;
 	self = instance;
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		XCLS_DIALOGNEWCOMPONENT_XCLS_LABEL6_GET_CLASS (self)->finalize (self);
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_type_free_instance ((GTypeInstance *) self);
 #line 3184 "DialogNewComponent.vala.c"
 	}
@@ -3186,7 +3186,7 @@ void xcls_dialognewcomponent_xcls_label6_unref (gpointer instance) {
 
 
 static gpointer _xcls_dialognewcomponent_xcls_title_ref0 (gpointer self) {
-#line 430 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 430 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return self ? xcls_dialognewcomponent_xcls_title_ref (self) : NULL;
 #line 3192 "DialogNewComponent.vala.c"
 }
@@ -3198,52 +3198,52 @@ Xcls_DialogNewComponentXcls_title* xcls_dialognewcomponent_xcls_title_construct 
 	Xcls_DialogNewComponent* _tmp1_;
 	Xcls_DialogNewComponentXcls_title* _tmp2_;
 	GtkEntry* _tmp3_;
-#line 427 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 427 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self = (Xcls_DialogNewComponentXcls_title*) g_type_create_instance (object_type);
-#line 429 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 429 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp0_ = (GtkEntry*) gtk_entry_new ();
-#line 429 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 429 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_object_ref_sink (_tmp0_);
-#line 429 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 429 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_object_unref0 (self->el);
-#line 429 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 429 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self->el = _tmp0_;
-#line 430 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 430 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp1_ = xcls_dialognewcomponent__this;
-#line 430 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 430 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp2_ = _xcls_dialognewcomponent_xcls_title_ref0 (self);
-#line 430 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 430 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_xcls_dialognewcomponent_xcls_title_unref0 (_tmp1_->title);
-#line 430 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 430 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp1_->title = _tmp2_;
-#line 435 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 435 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp3_ = self->el;
-#line 435 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 435 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_widget_set_visible ((GtkWidget*) _tmp3_, TRUE);
-#line 427 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 427 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return self;
 #line 3226 "DialogNewComponent.vala.c"
 }
 
 
 Xcls_DialogNewComponentXcls_title* xcls_dialognewcomponent_xcls_title_new (void) {
-#line 427 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 427 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return xcls_dialognewcomponent_xcls_title_construct (XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_TITLE);
 #line 3233 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_value_xcls_title_init (GValue* value) {
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	value->data[0].v_pointer = NULL;
 #line 3240 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_value_xcls_title_free_value (GValue* value) {
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (value->data[0].v_pointer) {
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_title_unref (value->data[0].v_pointer);
 #line 3249 "DialogNewComponent.vala.c"
 	}
@@ -3251,13 +3251,13 @@ static void xcls_dialognewcomponent_value_xcls_title_free_value (GValue* value) 
 
 
 static void xcls_dialognewcomponent_value_xcls_title_copy_value (const GValue* src_value, GValue* dest_value) {
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (src_value->data[0].v_pointer) {
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		dest_value->data[0].v_pointer = xcls_dialognewcomponent_xcls_title_ref (src_value->data[0].v_pointer);
 #line 3259 "DialogNewComponent.vala.c"
 	} else {
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		dest_value->data[0].v_pointer = NULL;
 #line 3263 "DialogNewComponent.vala.c"
 	}
@@ -3265,37 +3265,37 @@ static void xcls_dialognewcomponent_value_xcls_title_copy_value (const GValue* s
 
 
 static gpointer xcls_dialognewcomponent_value_xcls_title_peek_pointer (const GValue* value) {
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return value->data[0].v_pointer;
 #line 3271 "DialogNewComponent.vala.c"
 }
 
 
 static gchar* xcls_dialognewcomponent_value_xcls_title_collect_value (GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (collect_values[0].v_pointer) {
 #line 3278 "DialogNewComponent.vala.c"
 		Xcls_DialogNewComponentXcls_title* object;
 		object = collect_values[0].v_pointer;
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		if (object->parent_instance.g_class == NULL) {
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 3285 "DialogNewComponent.vala.c"
 		} else if (!g_value_type_compatible (G_TYPE_FROM_INSTANCE (object), G_VALUE_TYPE (value))) {
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 			return g_strconcat ("invalid object type `", g_type_name (G_TYPE_FROM_INSTANCE (object)), "' for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 3289 "DialogNewComponent.vala.c"
 		}
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = xcls_dialognewcomponent_xcls_title_ref (object);
 #line 3293 "DialogNewComponent.vala.c"
 	} else {
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 3297 "DialogNewComponent.vala.c"
 	}
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return NULL;
 #line 3301 "DialogNewComponent.vala.c"
 }
@@ -3304,27 +3304,27 @@ static gchar* xcls_dialognewcomponent_value_xcls_title_collect_value (GValue* va
 static gchar* xcls_dialognewcomponent_value_xcls_title_lcopy_value (const GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
 	Xcls_DialogNewComponentXcls_title** object_p;
 	object_p = collect_values[0].v_pointer;
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (!object_p) {
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
 #line 3312 "DialogNewComponent.vala.c"
 	}
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (!value->data[0].v_pointer) {
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = NULL;
 #line 3318 "DialogNewComponent.vala.c"
 	} else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) {
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = value->data[0].v_pointer;
 #line 3322 "DialogNewComponent.vala.c"
 	} else {
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = xcls_dialognewcomponent_xcls_title_ref (value->data[0].v_pointer);
 #line 3326 "DialogNewComponent.vala.c"
 	}
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return NULL;
 #line 3330 "DialogNewComponent.vala.c"
 }
@@ -3332,22 +3332,22 @@ static gchar* xcls_dialognewcomponent_value_xcls_title_lcopy_value (const GValue
 
 GParamSpec* xcls_dialognewcomponent_param_spec_xcls_title (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags) {
 	Xcls_DialogNewComponentParamSpecXcls_title* spec;
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_val_if_fail (g_type_is_a (object_type, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_TITLE), NULL);
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	G_PARAM_SPEC (spec)->value_type = object_type;
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return G_PARAM_SPEC (spec);
 #line 3344 "DialogNewComponent.vala.c"
 }
 
 
 gpointer xcls_dialognewcomponent_value_get_xcls_title (const GValue* value) {
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_TITLE), NULL);
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return value->data[0].v_pointer;
 #line 3353 "DialogNewComponent.vala.c"
 }
@@ -3355,29 +3355,29 @@ gpointer xcls_dialognewcomponent_value_get_xcls_title (const GValue* value) {
 
 void xcls_dialognewcomponent_value_set_xcls_title (GValue* value, gpointer v_object) {
 	Xcls_DialogNewComponentXcls_title* old;
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_TITLE));
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	old = value->data[0].v_pointer;
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (v_object) {
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_TITLE));
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = v_object;
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_title_ref (value->data[0].v_pointer);
 #line 3373 "DialogNewComponent.vala.c"
 	} else {
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 3377 "DialogNewComponent.vala.c"
 	}
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (old) {
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_title_unref (old);
 #line 3383 "DialogNewComponent.vala.c"
 	}
@@ -3386,27 +3386,27 @@ void xcls_dialognewcomponent_value_set_xcls_title (GValue* value, gpointer v_obj
 
 void xcls_dialognewcomponent_value_take_xcls_title (GValue* value, gpointer v_object) {
 	Xcls_DialogNewComponentXcls_title* old;
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_TITLE));
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	old = value->data[0].v_pointer;
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (v_object) {
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_TITLE));
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = v_object;
 #line 3402 "DialogNewComponent.vala.c"
 	} else {
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 3406 "DialogNewComponent.vala.c"
 	}
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (old) {
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_title_unref (old);
 #line 3412 "DialogNewComponent.vala.c"
 	}
@@ -3414,16 +3414,16 @@ void xcls_dialognewcomponent_value_take_xcls_title (GValue* value, gpointer v_ob
 
 
 static void xcls_dialognewcomponent_xcls_title_class_init (Xcls_DialogNewComponentXcls_titleClass * klass) {
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	xcls_dialognewcomponent_xcls_title_parent_class = g_type_class_peek_parent (klass);
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	XCLS_DIALOGNEWCOMPONENT_XCLS_TITLE_CLASS (klass)->finalize = xcls_dialognewcomponent_xcls_title_finalize;
 #line 3422 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_xcls_title_instance_init (Xcls_DialogNewComponentXcls_title * self) {
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self->ref_count = 1;
 #line 3429 "DialogNewComponent.vala.c"
 }
@@ -3431,9 +3431,9 @@ static void xcls_dialognewcomponent_xcls_title_instance_init (Xcls_DialogNewComp
 
 static void xcls_dialognewcomponent_xcls_title_finalize (Xcls_DialogNewComponentXcls_title* obj) {
 	Xcls_DialogNewComponentXcls_title * self;
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_TITLE, Xcls_DialogNewComponentXcls_title);
-#line 422 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 422 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_object_unref0 (self->el);
 #line 3439 "DialogNewComponent.vala.c"
 }
@@ -3456,9 +3456,9 @@ GType xcls_dialognewcomponent_xcls_title_get_type (void) {
 gpointer xcls_dialognewcomponent_xcls_title_ref (gpointer instance) {
 	Xcls_DialogNewComponentXcls_title* self;
 	self = instance;
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_atomic_int_inc (&self->ref_count);
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return instance;
 #line 3464 "DialogNewComponent.vala.c"
 }
@@ -3467,11 +3467,11 @@ gpointer xcls_dialognewcomponent_xcls_title_ref (gpointer instance) {
 void xcls_dialognewcomponent_xcls_title_unref (gpointer instance) {
 	Xcls_DialogNewComponentXcls_title* self;
 	self = instance;
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		XCLS_DIALOGNEWCOMPONENT_XCLS_TITLE_GET_CLASS (self)->finalize (self);
-#line 420 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 420 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_type_free_instance ((GTypeInstance *) self);
 #line 3477 "DialogNewComponent.vala.c"
 	}
@@ -3485,56 +3485,56 @@ Xcls_DialogNewComponentXcls_Label8* xcls_dialognewcomponent_xcls_label8_construc
 	GtkLabel* _tmp2_;
 	GtkLabel* _tmp3_;
 	GtkLabel* _tmp4_;
-#line 463 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 463 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self = (Xcls_DialogNewComponentXcls_Label8*) g_type_create_instance (object_type);
-#line 465 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 465 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp0_ = (GtkLabel*) gtk_label_new ("Region");
-#line 465 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 465 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_object_ref_sink (_tmp0_);
-#line 465 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 465 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_object_unref0 (self->el);
-#line 465 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 465 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self->el = _tmp0_;
-#line 470 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 470 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp1_ = self->el;
-#line 470 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 470 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_label_set_justify (_tmp1_, GTK_JUSTIFY_RIGHT);
-#line 471 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 471 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp2_ = self->el;
-#line 471 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 471 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_widget_set_tooltip_text ((GtkWidget*) _tmp2_, "center, north, south, east, west");
-#line 472 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 472 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp3_ = self->el;
-#line 472 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 472 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_widget_set_visible ((GtkWidget*) _tmp3_, TRUE);
-#line 473 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 473 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp4_ = self->el;
-#line 473 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 473 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_object_set ((GtkMisc*) _tmp4_, "xalign", 0.9f, NULL);
-#line 463 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 463 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return self;
 #line 3517 "DialogNewComponent.vala.c"
 }
 
 
 Xcls_DialogNewComponentXcls_Label8* xcls_dialognewcomponent_xcls_label8_new (void) {
-#line 463 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 463 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return xcls_dialognewcomponent_xcls_label8_construct (XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL8);
 #line 3524 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_value_xcls_label8_init (GValue* value) {
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	value->data[0].v_pointer = NULL;
 #line 3531 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_value_xcls_label8_free_value (GValue* value) {
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (value->data[0].v_pointer) {
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_label8_unref (value->data[0].v_pointer);
 #line 3540 "DialogNewComponent.vala.c"
 	}
@@ -3542,13 +3542,13 @@ static void xcls_dialognewcomponent_value_xcls_label8_free_value (GValue* value)
 
 
 static void xcls_dialognewcomponent_value_xcls_label8_copy_value (const GValue* src_value, GValue* dest_value) {
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (src_value->data[0].v_pointer) {
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		dest_value->data[0].v_pointer = xcls_dialognewcomponent_xcls_label8_ref (src_value->data[0].v_pointer);
 #line 3550 "DialogNewComponent.vala.c"
 	} else {
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		dest_value->data[0].v_pointer = NULL;
 #line 3554 "DialogNewComponent.vala.c"
 	}
@@ -3556,37 +3556,37 @@ static void xcls_dialognewcomponent_value_xcls_label8_copy_value (const GValue* 
 
 
 static gpointer xcls_dialognewcomponent_value_xcls_label8_peek_pointer (const GValue* value) {
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return value->data[0].v_pointer;
 #line 3562 "DialogNewComponent.vala.c"
 }
 
 
 static gchar* xcls_dialognewcomponent_value_xcls_label8_collect_value (GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (collect_values[0].v_pointer) {
 #line 3569 "DialogNewComponent.vala.c"
 		Xcls_DialogNewComponentXcls_Label8* object;
 		object = collect_values[0].v_pointer;
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		if (object->parent_instance.g_class == NULL) {
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 3576 "DialogNewComponent.vala.c"
 		} else if (!g_value_type_compatible (G_TYPE_FROM_INSTANCE (object), G_VALUE_TYPE (value))) {
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 			return g_strconcat ("invalid object type `", g_type_name (G_TYPE_FROM_INSTANCE (object)), "' for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 3580 "DialogNewComponent.vala.c"
 		}
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = xcls_dialognewcomponent_xcls_label8_ref (object);
 #line 3584 "DialogNewComponent.vala.c"
 	} else {
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 3588 "DialogNewComponent.vala.c"
 	}
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return NULL;
 #line 3592 "DialogNewComponent.vala.c"
 }
@@ -3595,27 +3595,27 @@ static gchar* xcls_dialognewcomponent_value_xcls_label8_collect_value (GValue* v
 static gchar* xcls_dialognewcomponent_value_xcls_label8_lcopy_value (const GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
 	Xcls_DialogNewComponentXcls_Label8** object_p;
 	object_p = collect_values[0].v_pointer;
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (!object_p) {
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
 #line 3603 "DialogNewComponent.vala.c"
 	}
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (!value->data[0].v_pointer) {
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = NULL;
 #line 3609 "DialogNewComponent.vala.c"
 	} else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) {
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = value->data[0].v_pointer;
 #line 3613 "DialogNewComponent.vala.c"
 	} else {
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = xcls_dialognewcomponent_xcls_label8_ref (value->data[0].v_pointer);
 #line 3617 "DialogNewComponent.vala.c"
 	}
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return NULL;
 #line 3621 "DialogNewComponent.vala.c"
 }
@@ -3623,22 +3623,22 @@ static gchar* xcls_dialognewcomponent_value_xcls_label8_lcopy_value (const GValu
 
 GParamSpec* xcls_dialognewcomponent_param_spec_xcls_label8 (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags) {
 	Xcls_DialogNewComponentParamSpecXcls_Label8* spec;
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_val_if_fail (g_type_is_a (object_type, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL8), NULL);
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	G_PARAM_SPEC (spec)->value_type = object_type;
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return G_PARAM_SPEC (spec);
 #line 3635 "DialogNewComponent.vala.c"
 }
 
 
 gpointer xcls_dialognewcomponent_value_get_xcls_label8 (const GValue* value) {
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL8), NULL);
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return value->data[0].v_pointer;
 #line 3644 "DialogNewComponent.vala.c"
 }
@@ -3646,29 +3646,29 @@ gpointer xcls_dialognewcomponent_value_get_xcls_label8 (const GValue* value) {
 
 void xcls_dialognewcomponent_value_set_xcls_label8 (GValue* value, gpointer v_object) {
 	Xcls_DialogNewComponentXcls_Label8* old;
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL8));
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	old = value->data[0].v_pointer;
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (v_object) {
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL8));
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = v_object;
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_label8_ref (value->data[0].v_pointer);
 #line 3664 "DialogNewComponent.vala.c"
 	} else {
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 3668 "DialogNewComponent.vala.c"
 	}
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (old) {
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_label8_unref (old);
 #line 3674 "DialogNewComponent.vala.c"
 	}
@@ -3677,27 +3677,27 @@ void xcls_dialognewcomponent_value_set_xcls_label8 (GValue* value, gpointer v_ob
 
 void xcls_dialognewcomponent_value_take_xcls_label8 (GValue* value, gpointer v_object) {
 	Xcls_DialogNewComponentXcls_Label8* old;
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL8));
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	old = value->data[0].v_pointer;
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (v_object) {
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL8));
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = v_object;
 #line 3693 "DialogNewComponent.vala.c"
 	} else {
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 3697 "DialogNewComponent.vala.c"
 	}
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (old) {
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_label8_unref (old);
 #line 3703 "DialogNewComponent.vala.c"
 	}
@@ -3705,16 +3705,16 @@ void xcls_dialognewcomponent_value_take_xcls_label8 (GValue* value, gpointer v_o
 
 
 static void xcls_dialognewcomponent_xcls_label8_class_init (Xcls_DialogNewComponentXcls_Label8Class * klass) {
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	xcls_dialognewcomponent_xcls_label8_parent_class = g_type_class_peek_parent (klass);
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	XCLS_DIALOGNEWCOMPONENT_XCLS_LABEL8_CLASS (klass)->finalize = xcls_dialognewcomponent_xcls_label8_finalize;
 #line 3713 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_xcls_label8_instance_init (Xcls_DialogNewComponentXcls_Label8 * self) {
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self->ref_count = 1;
 #line 3720 "DialogNewComponent.vala.c"
 }
@@ -3722,9 +3722,9 @@ static void xcls_dialognewcomponent_xcls_label8_instance_init (Xcls_DialogNewCom
 
 static void xcls_dialognewcomponent_xcls_label8_finalize (Xcls_DialogNewComponentXcls_Label8* obj) {
 	Xcls_DialogNewComponentXcls_Label8 * self;
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL8, Xcls_DialogNewComponentXcls_Label8);
-#line 458 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 458 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_object_unref0 (self->el);
 #line 3730 "DialogNewComponent.vala.c"
 }
@@ -3747,9 +3747,9 @@ GType xcls_dialognewcomponent_xcls_label8_get_type (void) {
 gpointer xcls_dialognewcomponent_xcls_label8_ref (gpointer instance) {
 	Xcls_DialogNewComponentXcls_Label8* self;
 	self = instance;
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_atomic_int_inc (&self->ref_count);
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return instance;
 #line 3755 "DialogNewComponent.vala.c"
 }
@@ -3758,11 +3758,11 @@ gpointer xcls_dialognewcomponent_xcls_label8_ref (gpointer instance) {
 void xcls_dialognewcomponent_xcls_label8_unref (gpointer instance) {
 	Xcls_DialogNewComponentXcls_Label8* self;
 	self = instance;
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		XCLS_DIALOGNEWCOMPONENT_XCLS_LABEL8_GET_CLASS (self)->finalize (self);
-#line 456 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 456 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_type_free_instance ((GTypeInstance *) self);
 #line 3768 "DialogNewComponent.vala.c"
 	}
@@ -3770,7 +3770,7 @@ void xcls_dialognewcomponent_xcls_label8_unref (gpointer instance) {
 
 
 static gpointer _xcls_dialognewcomponent_xcls_region_ref0 (gpointer self) {
-#line 512 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 512 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return self ? xcls_dialognewcomponent_xcls_region_ref (self) : NULL;
 #line 3776 "DialogNewComponent.vala.c"
 }
@@ -3782,52 +3782,52 @@ Xcls_DialogNewComponentXcls_region* xcls_dialognewcomponent_xcls_region_construc
 	Xcls_DialogNewComponent* _tmp1_;
 	Xcls_DialogNewComponentXcls_region* _tmp2_;
 	GtkEntry* _tmp3_;
-#line 509 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 509 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self = (Xcls_DialogNewComponentXcls_region*) g_type_create_instance (object_type);
-#line 511 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 511 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp0_ = (GtkEntry*) gtk_entry_new ();
-#line 511 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 511 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_object_ref_sink (_tmp0_);
-#line 511 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 511 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_object_unref0 (self->el);
-#line 511 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 511 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self->el = _tmp0_;
-#line 512 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 512 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp1_ = xcls_dialognewcomponent__this;
-#line 512 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 512 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp2_ = _xcls_dialognewcomponent_xcls_region_ref0 (self);
-#line 512 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 512 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_xcls_dialognewcomponent_xcls_region_unref0 (_tmp1_->region);
-#line 512 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 512 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp1_->region = _tmp2_;
-#line 517 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 517 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp3_ = self->el;
-#line 517 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 517 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_widget_set_visible ((GtkWidget*) _tmp3_, TRUE);
-#line 509 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 509 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return self;
 #line 3810 "DialogNewComponent.vala.c"
 }
 
 
 Xcls_DialogNewComponentXcls_region* xcls_dialognewcomponent_xcls_region_new (void) {
-#line 509 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 509 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return xcls_dialognewcomponent_xcls_region_construct (XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_REGION);
 #line 3817 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_value_xcls_region_init (GValue* value) {
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	value->data[0].v_pointer = NULL;
 #line 3824 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_value_xcls_region_free_value (GValue* value) {
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (value->data[0].v_pointer) {
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_region_unref (value->data[0].v_pointer);
 #line 3833 "DialogNewComponent.vala.c"
 	}
@@ -3835,13 +3835,13 @@ static void xcls_dialognewcomponent_value_xcls_region_free_value (GValue* value)
 
 
 static void xcls_dialognewcomponent_value_xcls_region_copy_value (const GValue* src_value, GValue* dest_value) {
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (src_value->data[0].v_pointer) {
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		dest_value->data[0].v_pointer = xcls_dialognewcomponent_xcls_region_ref (src_value->data[0].v_pointer);
 #line 3843 "DialogNewComponent.vala.c"
 	} else {
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		dest_value->data[0].v_pointer = NULL;
 #line 3847 "DialogNewComponent.vala.c"
 	}
@@ -3849,37 +3849,37 @@ static void xcls_dialognewcomponent_value_xcls_region_copy_value (const GValue* 
 
 
 static gpointer xcls_dialognewcomponent_value_xcls_region_peek_pointer (const GValue* value) {
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return value->data[0].v_pointer;
 #line 3855 "DialogNewComponent.vala.c"
 }
 
 
 static gchar* xcls_dialognewcomponent_value_xcls_region_collect_value (GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (collect_values[0].v_pointer) {
 #line 3862 "DialogNewComponent.vala.c"
 		Xcls_DialogNewComponentXcls_region* object;
 		object = collect_values[0].v_pointer;
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		if (object->parent_instance.g_class == NULL) {
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 3869 "DialogNewComponent.vala.c"
 		} else if (!g_value_type_compatible (G_TYPE_FROM_INSTANCE (object), G_VALUE_TYPE (value))) {
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 			return g_strconcat ("invalid object type `", g_type_name (G_TYPE_FROM_INSTANCE (object)), "' for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 3873 "DialogNewComponent.vala.c"
 		}
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = xcls_dialognewcomponent_xcls_region_ref (object);
 #line 3877 "DialogNewComponent.vala.c"
 	} else {
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 3881 "DialogNewComponent.vala.c"
 	}
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return NULL;
 #line 3885 "DialogNewComponent.vala.c"
 }
@@ -3888,27 +3888,27 @@ static gchar* xcls_dialognewcomponent_value_xcls_region_collect_value (GValue* v
 static gchar* xcls_dialognewcomponent_value_xcls_region_lcopy_value (const GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
 	Xcls_DialogNewComponentXcls_region** object_p;
 	object_p = collect_values[0].v_pointer;
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (!object_p) {
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
 #line 3896 "DialogNewComponent.vala.c"
 	}
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (!value->data[0].v_pointer) {
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = NULL;
 #line 3902 "DialogNewComponent.vala.c"
 	} else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) {
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = value->data[0].v_pointer;
 #line 3906 "DialogNewComponent.vala.c"
 	} else {
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = xcls_dialognewcomponent_xcls_region_ref (value->data[0].v_pointer);
 #line 3910 "DialogNewComponent.vala.c"
 	}
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return NULL;
 #line 3914 "DialogNewComponent.vala.c"
 }
@@ -3916,22 +3916,22 @@ static gchar* xcls_dialognewcomponent_value_xcls_region_lcopy_value (const GValu
 
 GParamSpec* xcls_dialognewcomponent_param_spec_xcls_region (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags) {
 	Xcls_DialogNewComponentParamSpecXcls_region* spec;
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_val_if_fail (g_type_is_a (object_type, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_REGION), NULL);
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	G_PARAM_SPEC (spec)->value_type = object_type;
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return G_PARAM_SPEC (spec);
 #line 3928 "DialogNewComponent.vala.c"
 }
 
 
 gpointer xcls_dialognewcomponent_value_get_xcls_region (const GValue* value) {
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_REGION), NULL);
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return value->data[0].v_pointer;
 #line 3937 "DialogNewComponent.vala.c"
 }
@@ -3939,29 +3939,29 @@ gpointer xcls_dialognewcomponent_value_get_xcls_region (const GValue* value) {
 
 void xcls_dialognewcomponent_value_set_xcls_region (GValue* value, gpointer v_object) {
 	Xcls_DialogNewComponentXcls_region* old;
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_REGION));
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	old = value->data[0].v_pointer;
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (v_object) {
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_REGION));
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = v_object;
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_region_ref (value->data[0].v_pointer);
 #line 3957 "DialogNewComponent.vala.c"
 	} else {
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 3961 "DialogNewComponent.vala.c"
 	}
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (old) {
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_region_unref (old);
 #line 3967 "DialogNewComponent.vala.c"
 	}
@@ -3970,27 +3970,27 @@ void xcls_dialognewcomponent_value_set_xcls_region (GValue* value, gpointer v_ob
 
 void xcls_dialognewcomponent_value_take_xcls_region (GValue* value, gpointer v_object) {
 	Xcls_DialogNewComponentXcls_region* old;
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_REGION));
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	old = value->data[0].v_pointer;
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (v_object) {
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_REGION));
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = v_object;
 #line 3986 "DialogNewComponent.vala.c"
 	} else {
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 3990 "DialogNewComponent.vala.c"
 	}
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (old) {
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_region_unref (old);
 #line 3996 "DialogNewComponent.vala.c"
 	}
@@ -3998,16 +3998,16 @@ void xcls_dialognewcomponent_value_take_xcls_region (GValue* value, gpointer v_o
 
 
 static void xcls_dialognewcomponent_xcls_region_class_init (Xcls_DialogNewComponentXcls_regionClass * klass) {
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	xcls_dialognewcomponent_xcls_region_parent_class = g_type_class_peek_parent (klass);
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	XCLS_DIALOGNEWCOMPONENT_XCLS_REGION_CLASS (klass)->finalize = xcls_dialognewcomponent_xcls_region_finalize;
 #line 4006 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_xcls_region_instance_init (Xcls_DialogNewComponentXcls_region * self) {
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self->ref_count = 1;
 #line 4013 "DialogNewComponent.vala.c"
 }
@@ -4015,9 +4015,9 @@ static void xcls_dialognewcomponent_xcls_region_instance_init (Xcls_DialogNewCom
 
 static void xcls_dialognewcomponent_xcls_region_finalize (Xcls_DialogNewComponentXcls_region* obj) {
 	Xcls_DialogNewComponentXcls_region * self;
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_REGION, Xcls_DialogNewComponentXcls_region);
-#line 504 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 504 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_object_unref0 (self->el);
 #line 4023 "DialogNewComponent.vala.c"
 }
@@ -4040,9 +4040,9 @@ GType xcls_dialognewcomponent_xcls_region_get_type (void) {
 gpointer xcls_dialognewcomponent_xcls_region_ref (gpointer instance) {
 	Xcls_DialogNewComponentXcls_region* self;
 	self = instance;
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_atomic_int_inc (&self->ref_count);
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return instance;
 #line 4048 "DialogNewComponent.vala.c"
 }
@@ -4051,11 +4051,11 @@ gpointer xcls_dialognewcomponent_xcls_region_ref (gpointer instance) {
 void xcls_dialognewcomponent_xcls_region_unref (gpointer instance) {
 	Xcls_DialogNewComponentXcls_region* self;
 	self = instance;
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		XCLS_DIALOGNEWCOMPONENT_XCLS_REGION_GET_CLASS (self)->finalize (self);
-#line 502 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 502 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_type_free_instance ((GTypeInstance *) self);
 #line 4061 "DialogNewComponent.vala.c"
 	}
@@ -4068,52 +4068,52 @@ Xcls_DialogNewComponentXcls_Label10* xcls_dialognewcomponent_xcls_label10_constr
 	GtkLabel* _tmp1_;
 	GtkLabel* _tmp2_;
 	GtkLabel* _tmp3_;
-#line 545 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 545 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self = (Xcls_DialogNewComponentXcls_Label10*) g_type_create_instance (object_type);
-#line 547 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 547 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp0_ = (GtkLabel*) gtk_label_new ("Parent Name");
-#line 547 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 547 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_object_ref_sink (_tmp0_);
-#line 547 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 547 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_object_unref0 (self->el);
-#line 547 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 547 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self->el = _tmp0_;
-#line 552 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 552 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp1_ = self->el;
-#line 552 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 552 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_label_set_justify (_tmp1_, GTK_JUSTIFY_RIGHT);
-#line 553 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 553 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp2_ = self->el;
-#line 553 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 553 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_widget_set_visible ((GtkWidget*) _tmp2_, TRUE);
-#line 554 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 554 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp3_ = self->el;
-#line 554 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 554 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_object_set ((GtkMisc*) _tmp3_, "xalign", 0.9f, NULL);
-#line 545 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 545 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return self;
 #line 4096 "DialogNewComponent.vala.c"
 }
 
 
 Xcls_DialogNewComponentXcls_Label10* xcls_dialognewcomponent_xcls_label10_new (void) {
-#line 545 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 545 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return xcls_dialognewcomponent_xcls_label10_construct (XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL10);
 #line 4103 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_value_xcls_label10_init (GValue* value) {
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	value->data[0].v_pointer = NULL;
 #line 4110 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_value_xcls_label10_free_value (GValue* value) {
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (value->data[0].v_pointer) {
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_label10_unref (value->data[0].v_pointer);
 #line 4119 "DialogNewComponent.vala.c"
 	}
@@ -4121,13 +4121,13 @@ static void xcls_dialognewcomponent_value_xcls_label10_free_value (GValue* value
 
 
 static void xcls_dialognewcomponent_value_xcls_label10_copy_value (const GValue* src_value, GValue* dest_value) {
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (src_value->data[0].v_pointer) {
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		dest_value->data[0].v_pointer = xcls_dialognewcomponent_xcls_label10_ref (src_value->data[0].v_pointer);
 #line 4129 "DialogNewComponent.vala.c"
 	} else {
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		dest_value->data[0].v_pointer = NULL;
 #line 4133 "DialogNewComponent.vala.c"
 	}
@@ -4135,37 +4135,37 @@ static void xcls_dialognewcomponent_value_xcls_label10_copy_value (const GValue*
 
 
 static gpointer xcls_dialognewcomponent_value_xcls_label10_peek_pointer (const GValue* value) {
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return value->data[0].v_pointer;
 #line 4141 "DialogNewComponent.vala.c"
 }
 
 
 static gchar* xcls_dialognewcomponent_value_xcls_label10_collect_value (GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (collect_values[0].v_pointer) {
 #line 4148 "DialogNewComponent.vala.c"
 		Xcls_DialogNewComponentXcls_Label10* object;
 		object = collect_values[0].v_pointer;
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		if (object->parent_instance.g_class == NULL) {
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 4155 "DialogNewComponent.vala.c"
 		} else if (!g_value_type_compatible (G_TYPE_FROM_INSTANCE (object), G_VALUE_TYPE (value))) {
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 			return g_strconcat ("invalid object type `", g_type_name (G_TYPE_FROM_INSTANCE (object)), "' for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 4159 "DialogNewComponent.vala.c"
 		}
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = xcls_dialognewcomponent_xcls_label10_ref (object);
 #line 4163 "DialogNewComponent.vala.c"
 	} else {
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 4167 "DialogNewComponent.vala.c"
 	}
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return NULL;
 #line 4171 "DialogNewComponent.vala.c"
 }
@@ -4174,27 +4174,27 @@ static gchar* xcls_dialognewcomponent_value_xcls_label10_collect_value (GValue* 
 static gchar* xcls_dialognewcomponent_value_xcls_label10_lcopy_value (const GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
 	Xcls_DialogNewComponentXcls_Label10** object_p;
 	object_p = collect_values[0].v_pointer;
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (!object_p) {
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
 #line 4182 "DialogNewComponent.vala.c"
 	}
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (!value->data[0].v_pointer) {
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = NULL;
 #line 4188 "DialogNewComponent.vala.c"
 	} else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) {
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = value->data[0].v_pointer;
 #line 4192 "DialogNewComponent.vala.c"
 	} else {
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = xcls_dialognewcomponent_xcls_label10_ref (value->data[0].v_pointer);
 #line 4196 "DialogNewComponent.vala.c"
 	}
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return NULL;
 #line 4200 "DialogNewComponent.vala.c"
 }
@@ -4202,22 +4202,22 @@ static gchar* xcls_dialognewcomponent_value_xcls_label10_lcopy_value (const GVal
 
 GParamSpec* xcls_dialognewcomponent_param_spec_xcls_label10 (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags) {
 	Xcls_DialogNewComponentParamSpecXcls_Label10* spec;
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_val_if_fail (g_type_is_a (object_type, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL10), NULL);
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	G_PARAM_SPEC (spec)->value_type = object_type;
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return G_PARAM_SPEC (spec);
 #line 4214 "DialogNewComponent.vala.c"
 }
 
 
 gpointer xcls_dialognewcomponent_value_get_xcls_label10 (const GValue* value) {
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL10), NULL);
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return value->data[0].v_pointer;
 #line 4223 "DialogNewComponent.vala.c"
 }
@@ -4225,29 +4225,29 @@ gpointer xcls_dialognewcomponent_value_get_xcls_label10 (const GValue* value) {
 
 void xcls_dialognewcomponent_value_set_xcls_label10 (GValue* value, gpointer v_object) {
 	Xcls_DialogNewComponentXcls_Label10* old;
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL10));
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	old = value->data[0].v_pointer;
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (v_object) {
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL10));
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = v_object;
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_label10_ref (value->data[0].v_pointer);
 #line 4243 "DialogNewComponent.vala.c"
 	} else {
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 4247 "DialogNewComponent.vala.c"
 	}
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (old) {
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_label10_unref (old);
 #line 4253 "DialogNewComponent.vala.c"
 	}
@@ -4256,27 +4256,27 @@ void xcls_dialognewcomponent_value_set_xcls_label10 (GValue* value, gpointer v_o
 
 void xcls_dialognewcomponent_value_take_xcls_label10 (GValue* value, gpointer v_object) {
 	Xcls_DialogNewComponentXcls_Label10* old;
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL10));
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	old = value->data[0].v_pointer;
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (v_object) {
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL10));
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = v_object;
 #line 4272 "DialogNewComponent.vala.c"
 	} else {
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 4276 "DialogNewComponent.vala.c"
 	}
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (old) {
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_label10_unref (old);
 #line 4282 "DialogNewComponent.vala.c"
 	}
@@ -4284,16 +4284,16 @@ void xcls_dialognewcomponent_value_take_xcls_label10 (GValue* value, gpointer v_
 
 
 static void xcls_dialognewcomponent_xcls_label10_class_init (Xcls_DialogNewComponentXcls_Label10Class * klass) {
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	xcls_dialognewcomponent_xcls_label10_parent_class = g_type_class_peek_parent (klass);
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	XCLS_DIALOGNEWCOMPONENT_XCLS_LABEL10_CLASS (klass)->finalize = xcls_dialognewcomponent_xcls_label10_finalize;
 #line 4292 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_xcls_label10_instance_init (Xcls_DialogNewComponentXcls_Label10 * self) {
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self->ref_count = 1;
 #line 4299 "DialogNewComponent.vala.c"
 }
@@ -4301,9 +4301,9 @@ static void xcls_dialognewcomponent_xcls_label10_instance_init (Xcls_DialogNewCo
 
 static void xcls_dialognewcomponent_xcls_label10_finalize (Xcls_DialogNewComponentXcls_Label10* obj) {
 	Xcls_DialogNewComponentXcls_Label10 * self;
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL10, Xcls_DialogNewComponentXcls_Label10);
-#line 540 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 540 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_object_unref0 (self->el);
 #line 4309 "DialogNewComponent.vala.c"
 }
@@ -4326,9 +4326,9 @@ GType xcls_dialognewcomponent_xcls_label10_get_type (void) {
 gpointer xcls_dialognewcomponent_xcls_label10_ref (gpointer instance) {
 	Xcls_DialogNewComponentXcls_Label10* self;
 	self = instance;
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_atomic_int_inc (&self->ref_count);
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return instance;
 #line 4334 "DialogNewComponent.vala.c"
 }
@@ -4337,11 +4337,11 @@ gpointer xcls_dialognewcomponent_xcls_label10_ref (gpointer instance) {
 void xcls_dialognewcomponent_xcls_label10_unref (gpointer instance) {
 	Xcls_DialogNewComponentXcls_Label10* self;
 	self = instance;
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		XCLS_DIALOGNEWCOMPONENT_XCLS_LABEL10_GET_CLASS (self)->finalize (self);
-#line 538 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 538 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_type_free_instance ((GTypeInstance *) self);
 #line 4347 "DialogNewComponent.vala.c"
 	}
@@ -4349,7 +4349,7 @@ void xcls_dialognewcomponent_xcls_label10_unref (gpointer instance) {
 
 
 static gpointer _xcls_dialognewcomponent_xcls_parent_ref0 (gpointer self) {
-#line 591 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 591 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return self ? xcls_dialognewcomponent_xcls_parent_ref (self) : NULL;
 #line 4355 "DialogNewComponent.vala.c"
 }
@@ -4361,52 +4361,52 @@ Xcls_DialogNewComponentXcls_parent* xcls_dialognewcomponent_xcls_parent_construc
 	Xcls_DialogNewComponent* _tmp1_;
 	Xcls_DialogNewComponentXcls_parent* _tmp2_;
 	GtkEntry* _tmp3_;
-#line 588 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 588 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self = (Xcls_DialogNewComponentXcls_parent*) g_type_create_instance (object_type);
-#line 590 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 590 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp0_ = (GtkEntry*) gtk_entry_new ();
-#line 590 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 590 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_object_ref_sink (_tmp0_);
-#line 590 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 590 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_object_unref0 (self->el);
-#line 590 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 590 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self->el = _tmp0_;
-#line 591 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 591 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp1_ = xcls_dialognewcomponent__this;
-#line 591 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 591 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp2_ = _xcls_dialognewcomponent_xcls_parent_ref0 (self);
-#line 591 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 591 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_xcls_dialognewcomponent_xcls_parent_unref0 (_tmp1_->parent);
-#line 591 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 591 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp1_->parent = _tmp2_;
-#line 596 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 596 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp3_ = self->el;
-#line 596 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 596 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_widget_set_visible ((GtkWidget*) _tmp3_, TRUE);
-#line 588 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 588 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return self;
 #line 4389 "DialogNewComponent.vala.c"
 }
 
 
 Xcls_DialogNewComponentXcls_parent* xcls_dialognewcomponent_xcls_parent_new (void) {
-#line 588 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 588 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return xcls_dialognewcomponent_xcls_parent_construct (XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_PARENT);
 #line 4396 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_value_xcls_parent_init (GValue* value) {
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	value->data[0].v_pointer = NULL;
 #line 4403 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_value_xcls_parent_free_value (GValue* value) {
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (value->data[0].v_pointer) {
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_parent_unref (value->data[0].v_pointer);
 #line 4412 "DialogNewComponent.vala.c"
 	}
@@ -4414,13 +4414,13 @@ static void xcls_dialognewcomponent_value_xcls_parent_free_value (GValue* value)
 
 
 static void xcls_dialognewcomponent_value_xcls_parent_copy_value (const GValue* src_value, GValue* dest_value) {
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (src_value->data[0].v_pointer) {
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		dest_value->data[0].v_pointer = xcls_dialognewcomponent_xcls_parent_ref (src_value->data[0].v_pointer);
 #line 4422 "DialogNewComponent.vala.c"
 	} else {
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		dest_value->data[0].v_pointer = NULL;
 #line 4426 "DialogNewComponent.vala.c"
 	}
@@ -4428,37 +4428,37 @@ static void xcls_dialognewcomponent_value_xcls_parent_copy_value (const GValue* 
 
 
 static gpointer xcls_dialognewcomponent_value_xcls_parent_peek_pointer (const GValue* value) {
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return value->data[0].v_pointer;
 #line 4434 "DialogNewComponent.vala.c"
 }
 
 
 static gchar* xcls_dialognewcomponent_value_xcls_parent_collect_value (GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (collect_values[0].v_pointer) {
 #line 4441 "DialogNewComponent.vala.c"
 		Xcls_DialogNewComponentXcls_parent* object;
 		object = collect_values[0].v_pointer;
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		if (object->parent_instance.g_class == NULL) {
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 4448 "DialogNewComponent.vala.c"
 		} else if (!g_value_type_compatible (G_TYPE_FROM_INSTANCE (object), G_VALUE_TYPE (value))) {
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 			return g_strconcat ("invalid object type `", g_type_name (G_TYPE_FROM_INSTANCE (object)), "' for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 4452 "DialogNewComponent.vala.c"
 		}
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = xcls_dialognewcomponent_xcls_parent_ref (object);
 #line 4456 "DialogNewComponent.vala.c"
 	} else {
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 4460 "DialogNewComponent.vala.c"
 	}
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return NULL;
 #line 4464 "DialogNewComponent.vala.c"
 }
@@ -4467,27 +4467,27 @@ static gchar* xcls_dialognewcomponent_value_xcls_parent_collect_value (GValue* v
 static gchar* xcls_dialognewcomponent_value_xcls_parent_lcopy_value (const GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
 	Xcls_DialogNewComponentXcls_parent** object_p;
 	object_p = collect_values[0].v_pointer;
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (!object_p) {
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
 #line 4475 "DialogNewComponent.vala.c"
 	}
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (!value->data[0].v_pointer) {
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = NULL;
 #line 4481 "DialogNewComponent.vala.c"
 	} else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) {
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = value->data[0].v_pointer;
 #line 4485 "DialogNewComponent.vala.c"
 	} else {
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = xcls_dialognewcomponent_xcls_parent_ref (value->data[0].v_pointer);
 #line 4489 "DialogNewComponent.vala.c"
 	}
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return NULL;
 #line 4493 "DialogNewComponent.vala.c"
 }
@@ -4495,22 +4495,22 @@ static gchar* xcls_dialognewcomponent_value_xcls_parent_lcopy_value (const GValu
 
 GParamSpec* xcls_dialognewcomponent_param_spec_xcls_parent (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags) {
 	Xcls_DialogNewComponentParamSpecXcls_parent* spec;
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_val_if_fail (g_type_is_a (object_type, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_PARENT), NULL);
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	G_PARAM_SPEC (spec)->value_type = object_type;
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return G_PARAM_SPEC (spec);
 #line 4507 "DialogNewComponent.vala.c"
 }
 
 
 gpointer xcls_dialognewcomponent_value_get_xcls_parent (const GValue* value) {
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_PARENT), NULL);
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return value->data[0].v_pointer;
 #line 4516 "DialogNewComponent.vala.c"
 }
@@ -4518,29 +4518,29 @@ gpointer xcls_dialognewcomponent_value_get_xcls_parent (const GValue* value) {
 
 void xcls_dialognewcomponent_value_set_xcls_parent (GValue* value, gpointer v_object) {
 	Xcls_DialogNewComponentXcls_parent* old;
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_PARENT));
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	old = value->data[0].v_pointer;
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (v_object) {
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_PARENT));
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = v_object;
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_parent_ref (value->data[0].v_pointer);
 #line 4536 "DialogNewComponent.vala.c"
 	} else {
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 4540 "DialogNewComponent.vala.c"
 	}
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (old) {
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_parent_unref (old);
 #line 4546 "DialogNewComponent.vala.c"
 	}
@@ -4549,27 +4549,27 @@ void xcls_dialognewcomponent_value_set_xcls_parent (GValue* value, gpointer v_ob
 
 void xcls_dialognewcomponent_value_take_xcls_parent (GValue* value, gpointer v_object) {
 	Xcls_DialogNewComponentXcls_parent* old;
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_PARENT));
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	old = value->data[0].v_pointer;
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (v_object) {
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_PARENT));
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = v_object;
 #line 4565 "DialogNewComponent.vala.c"
 	} else {
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 4569 "DialogNewComponent.vala.c"
 	}
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (old) {
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_parent_unref (old);
 #line 4575 "DialogNewComponent.vala.c"
 	}
@@ -4577,16 +4577,16 @@ void xcls_dialognewcomponent_value_take_xcls_parent (GValue* value, gpointer v_o
 
 
 static void xcls_dialognewcomponent_xcls_parent_class_init (Xcls_DialogNewComponentXcls_parentClass * klass) {
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	xcls_dialognewcomponent_xcls_parent_parent_class = g_type_class_peek_parent (klass);
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	XCLS_DIALOGNEWCOMPONENT_XCLS_PARENT_CLASS (klass)->finalize = xcls_dialognewcomponent_xcls_parent_finalize;
 #line 4585 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_xcls_parent_instance_init (Xcls_DialogNewComponentXcls_parent * self) {
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self->ref_count = 1;
 #line 4592 "DialogNewComponent.vala.c"
 }
@@ -4594,9 +4594,9 @@ static void xcls_dialognewcomponent_xcls_parent_instance_init (Xcls_DialogNewCom
 
 static void xcls_dialognewcomponent_xcls_parent_finalize (Xcls_DialogNewComponentXcls_parent* obj) {
 	Xcls_DialogNewComponentXcls_parent * self;
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_PARENT, Xcls_DialogNewComponentXcls_parent);
-#line 583 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 583 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_object_unref0 (self->el);
 #line 4602 "DialogNewComponent.vala.c"
 }
@@ -4619,9 +4619,9 @@ GType xcls_dialognewcomponent_xcls_parent_get_type (void) {
 gpointer xcls_dialognewcomponent_xcls_parent_ref (gpointer instance) {
 	Xcls_DialogNewComponentXcls_parent* self;
 	self = instance;
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_atomic_int_inc (&self->ref_count);
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return instance;
 #line 4627 "DialogNewComponent.vala.c"
 }
@@ -4630,11 +4630,11 @@ gpointer xcls_dialognewcomponent_xcls_parent_ref (gpointer instance) {
 void xcls_dialognewcomponent_xcls_parent_unref (gpointer instance) {
 	Xcls_DialogNewComponentXcls_parent* self;
 	self = instance;
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		XCLS_DIALOGNEWCOMPONENT_XCLS_PARENT_GET_CLASS (self)->finalize (self);
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_type_free_instance ((GTypeInstance *) self);
 #line 4640 "DialogNewComponent.vala.c"
 	}
@@ -4647,52 +4647,52 @@ Xcls_DialogNewComponentXcls_Label12* xcls_dialognewcomponent_xcls_label12_constr
 	GtkLabel* _tmp1_;
 	GtkLabel* _tmp2_;
 	GtkLabel* _tmp3_;
-#line 624 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 624 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self = (Xcls_DialogNewComponentXcls_Label12*) g_type_create_instance (object_type);
-#line 626 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 626 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp0_ = (GtkLabel*) gtk_label_new ("Permission Name");
-#line 626 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 626 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_object_ref_sink (_tmp0_);
-#line 626 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 626 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_object_unref0 (self->el);
-#line 626 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 626 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self->el = _tmp0_;
-#line 631 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 631 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp1_ = self->el;
-#line 631 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 631 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_label_set_justify (_tmp1_, GTK_JUSTIFY_RIGHT);
-#line 632 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 632 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp2_ = self->el;
-#line 632 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 632 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_widget_set_visible ((GtkWidget*) _tmp2_, TRUE);
-#line 633 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 633 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp3_ = self->el;
-#line 633 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 633 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_object_set ((GtkMisc*) _tmp3_, "xalign", 0.9f, NULL);
-#line 624 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 624 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return self;
 #line 4675 "DialogNewComponent.vala.c"
 }
 
 
 Xcls_DialogNewComponentXcls_Label12* xcls_dialognewcomponent_xcls_label12_new (void) {
-#line 624 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 624 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return xcls_dialognewcomponent_xcls_label12_construct (XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL12);
 #line 4682 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_value_xcls_label12_init (GValue* value) {
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	value->data[0].v_pointer = NULL;
 #line 4689 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_value_xcls_label12_free_value (GValue* value) {
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (value->data[0].v_pointer) {
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_label12_unref (value->data[0].v_pointer);
 #line 4698 "DialogNewComponent.vala.c"
 	}
@@ -4700,13 +4700,13 @@ static void xcls_dialognewcomponent_value_xcls_label12_free_value (GValue* value
 
 
 static void xcls_dialognewcomponent_value_xcls_label12_copy_value (const GValue* src_value, GValue* dest_value) {
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (src_value->data[0].v_pointer) {
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		dest_value->data[0].v_pointer = xcls_dialognewcomponent_xcls_label12_ref (src_value->data[0].v_pointer);
 #line 4708 "DialogNewComponent.vala.c"
 	} else {
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		dest_value->data[0].v_pointer = NULL;
 #line 4712 "DialogNewComponent.vala.c"
 	}
@@ -4714,37 +4714,37 @@ static void xcls_dialognewcomponent_value_xcls_label12_copy_value (const GValue*
 
 
 static gpointer xcls_dialognewcomponent_value_xcls_label12_peek_pointer (const GValue* value) {
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return value->data[0].v_pointer;
 #line 4720 "DialogNewComponent.vala.c"
 }
 
 
 static gchar* xcls_dialognewcomponent_value_xcls_label12_collect_value (GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (collect_values[0].v_pointer) {
 #line 4727 "DialogNewComponent.vala.c"
 		Xcls_DialogNewComponentXcls_Label12* object;
 		object = collect_values[0].v_pointer;
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		if (object->parent_instance.g_class == NULL) {
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 4734 "DialogNewComponent.vala.c"
 		} else if (!g_value_type_compatible (G_TYPE_FROM_INSTANCE (object), G_VALUE_TYPE (value))) {
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 			return g_strconcat ("invalid object type `", g_type_name (G_TYPE_FROM_INSTANCE (object)), "' for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 4738 "DialogNewComponent.vala.c"
 		}
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = xcls_dialognewcomponent_xcls_label12_ref (object);
 #line 4742 "DialogNewComponent.vala.c"
 	} else {
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 4746 "DialogNewComponent.vala.c"
 	}
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return NULL;
 #line 4750 "DialogNewComponent.vala.c"
 }
@@ -4753,27 +4753,27 @@ static gchar* xcls_dialognewcomponent_value_xcls_label12_collect_value (GValue* 
 static gchar* xcls_dialognewcomponent_value_xcls_label12_lcopy_value (const GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
 	Xcls_DialogNewComponentXcls_Label12** object_p;
 	object_p = collect_values[0].v_pointer;
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (!object_p) {
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
 #line 4761 "DialogNewComponent.vala.c"
 	}
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (!value->data[0].v_pointer) {
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = NULL;
 #line 4767 "DialogNewComponent.vala.c"
 	} else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) {
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = value->data[0].v_pointer;
 #line 4771 "DialogNewComponent.vala.c"
 	} else {
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = xcls_dialognewcomponent_xcls_label12_ref (value->data[0].v_pointer);
 #line 4775 "DialogNewComponent.vala.c"
 	}
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return NULL;
 #line 4779 "DialogNewComponent.vala.c"
 }
@@ -4781,22 +4781,22 @@ static gchar* xcls_dialognewcomponent_value_xcls_label12_lcopy_value (const GVal
 
 GParamSpec* xcls_dialognewcomponent_param_spec_xcls_label12 (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags) {
 	Xcls_DialogNewComponentParamSpecXcls_Label12* spec;
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_val_if_fail (g_type_is_a (object_type, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL12), NULL);
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	G_PARAM_SPEC (spec)->value_type = object_type;
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return G_PARAM_SPEC (spec);
 #line 4793 "DialogNewComponent.vala.c"
 }
 
 
 gpointer xcls_dialognewcomponent_value_get_xcls_label12 (const GValue* value) {
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL12), NULL);
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return value->data[0].v_pointer;
 #line 4802 "DialogNewComponent.vala.c"
 }
@@ -4804,29 +4804,29 @@ gpointer xcls_dialognewcomponent_value_get_xcls_label12 (const GValue* value) {
 
 void xcls_dialognewcomponent_value_set_xcls_label12 (GValue* value, gpointer v_object) {
 	Xcls_DialogNewComponentXcls_Label12* old;
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL12));
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	old = value->data[0].v_pointer;
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (v_object) {
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL12));
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = v_object;
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_label12_ref (value->data[0].v_pointer);
 #line 4822 "DialogNewComponent.vala.c"
 	} else {
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 4826 "DialogNewComponent.vala.c"
 	}
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (old) {
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_label12_unref (old);
 #line 4832 "DialogNewComponent.vala.c"
 	}
@@ -4835,27 +4835,27 @@ void xcls_dialognewcomponent_value_set_xcls_label12 (GValue* value, gpointer v_o
 
 void xcls_dialognewcomponent_value_take_xcls_label12 (GValue* value, gpointer v_object) {
 	Xcls_DialogNewComponentXcls_Label12* old;
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL12));
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	old = value->data[0].v_pointer;
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (v_object) {
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL12));
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = v_object;
 #line 4851 "DialogNewComponent.vala.c"
 	} else {
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 4855 "DialogNewComponent.vala.c"
 	}
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (old) {
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_label12_unref (old);
 #line 4861 "DialogNewComponent.vala.c"
 	}
@@ -4863,16 +4863,16 @@ void xcls_dialognewcomponent_value_take_xcls_label12 (GValue* value, gpointer v_
 
 
 static void xcls_dialognewcomponent_xcls_label12_class_init (Xcls_DialogNewComponentXcls_Label12Class * klass) {
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	xcls_dialognewcomponent_xcls_label12_parent_class = g_type_class_peek_parent (klass);
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	XCLS_DIALOGNEWCOMPONENT_XCLS_LABEL12_CLASS (klass)->finalize = xcls_dialognewcomponent_xcls_label12_finalize;
 #line 4871 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_xcls_label12_instance_init (Xcls_DialogNewComponentXcls_Label12 * self) {
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self->ref_count = 1;
 #line 4878 "DialogNewComponent.vala.c"
 }
@@ -4880,9 +4880,9 @@ static void xcls_dialognewcomponent_xcls_label12_instance_init (Xcls_DialogNewCo
 
 static void xcls_dialognewcomponent_xcls_label12_finalize (Xcls_DialogNewComponentXcls_Label12* obj) {
 	Xcls_DialogNewComponentXcls_Label12 * self;
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL12, Xcls_DialogNewComponentXcls_Label12);
-#line 619 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 619 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_object_unref0 (self->el);
 #line 4888 "DialogNewComponent.vala.c"
 }
@@ -4905,9 +4905,9 @@ GType xcls_dialognewcomponent_xcls_label12_get_type (void) {
 gpointer xcls_dialognewcomponent_xcls_label12_ref (gpointer instance) {
 	Xcls_DialogNewComponentXcls_Label12* self;
 	self = instance;
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_atomic_int_inc (&self->ref_count);
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return instance;
 #line 4913 "DialogNewComponent.vala.c"
 }
@@ -4916,11 +4916,11 @@ gpointer xcls_dialognewcomponent_xcls_label12_ref (gpointer instance) {
 void xcls_dialognewcomponent_xcls_label12_unref (gpointer instance) {
 	Xcls_DialogNewComponentXcls_Label12* self;
 	self = instance;
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		XCLS_DIALOGNEWCOMPONENT_XCLS_LABEL12_GET_CLASS (self)->finalize (self);
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_type_free_instance ((GTypeInstance *) self);
 #line 4926 "DialogNewComponent.vala.c"
 	}
@@ -4928,7 +4928,7 @@ void xcls_dialognewcomponent_xcls_label12_unref (gpointer instance) {
 
 
 static gpointer _xcls_dialognewcomponent_xcls_permname_ref0 (gpointer self) {
-#line 670 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 670 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return self ? xcls_dialognewcomponent_xcls_permname_ref (self) : NULL;
 #line 4934 "DialogNewComponent.vala.c"
 }
@@ -4940,52 +4940,52 @@ Xcls_DialogNewComponentXcls_permname* xcls_dialognewcomponent_xcls_permname_cons
 	Xcls_DialogNewComponent* _tmp1_;
 	Xcls_DialogNewComponentXcls_permname* _tmp2_;
 	GtkEntry* _tmp3_;
-#line 667 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 667 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self = (Xcls_DialogNewComponentXcls_permname*) g_type_create_instance (object_type);
-#line 669 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 669 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp0_ = (GtkEntry*) gtk_entry_new ();
-#line 669 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 669 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_object_ref_sink (_tmp0_);
-#line 669 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 669 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_object_unref0 (self->el);
-#line 669 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 669 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self->el = _tmp0_;
-#line 670 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 670 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp1_ = xcls_dialognewcomponent__this;
-#line 670 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 670 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp2_ = _xcls_dialognewcomponent_xcls_permname_ref0 (self);
-#line 670 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 670 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_xcls_dialognewcomponent_xcls_permname_unref0 (_tmp1_->permname);
-#line 670 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 670 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp1_->permname = _tmp2_;
-#line 675 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 675 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp3_ = self->el;
-#line 675 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 675 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_widget_set_visible ((GtkWidget*) _tmp3_, TRUE);
-#line 667 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 667 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return self;
 #line 4968 "DialogNewComponent.vala.c"
 }
 
 
 Xcls_DialogNewComponentXcls_permname* xcls_dialognewcomponent_xcls_permname_new (void) {
-#line 667 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 667 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return xcls_dialognewcomponent_xcls_permname_construct (XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_PERMNAME);
 #line 4975 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_value_xcls_permname_init (GValue* value) {
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	value->data[0].v_pointer = NULL;
 #line 4982 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_value_xcls_permname_free_value (GValue* value) {
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (value->data[0].v_pointer) {
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_permname_unref (value->data[0].v_pointer);
 #line 4991 "DialogNewComponent.vala.c"
 	}
@@ -4993,13 +4993,13 @@ static void xcls_dialognewcomponent_value_xcls_permname_free_value (GValue* valu
 
 
 static void xcls_dialognewcomponent_value_xcls_permname_copy_value (const GValue* src_value, GValue* dest_value) {
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (src_value->data[0].v_pointer) {
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		dest_value->data[0].v_pointer = xcls_dialognewcomponent_xcls_permname_ref (src_value->data[0].v_pointer);
 #line 5001 "DialogNewComponent.vala.c"
 	} else {
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		dest_value->data[0].v_pointer = NULL;
 #line 5005 "DialogNewComponent.vala.c"
 	}
@@ -5007,37 +5007,37 @@ static void xcls_dialognewcomponent_value_xcls_permname_copy_value (const GValue
 
 
 static gpointer xcls_dialognewcomponent_value_xcls_permname_peek_pointer (const GValue* value) {
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return value->data[0].v_pointer;
 #line 5013 "DialogNewComponent.vala.c"
 }
 
 
 static gchar* xcls_dialognewcomponent_value_xcls_permname_collect_value (GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (collect_values[0].v_pointer) {
 #line 5020 "DialogNewComponent.vala.c"
 		Xcls_DialogNewComponentXcls_permname* object;
 		object = collect_values[0].v_pointer;
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		if (object->parent_instance.g_class == NULL) {
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 5027 "DialogNewComponent.vala.c"
 		} else if (!g_value_type_compatible (G_TYPE_FROM_INSTANCE (object), G_VALUE_TYPE (value))) {
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 			return g_strconcat ("invalid object type `", g_type_name (G_TYPE_FROM_INSTANCE (object)), "' for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 5031 "DialogNewComponent.vala.c"
 		}
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = xcls_dialognewcomponent_xcls_permname_ref (object);
 #line 5035 "DialogNewComponent.vala.c"
 	} else {
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 5039 "DialogNewComponent.vala.c"
 	}
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return NULL;
 #line 5043 "DialogNewComponent.vala.c"
 }
@@ -5046,27 +5046,27 @@ static gchar* xcls_dialognewcomponent_value_xcls_permname_collect_value (GValue*
 static gchar* xcls_dialognewcomponent_value_xcls_permname_lcopy_value (const GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
 	Xcls_DialogNewComponentXcls_permname** object_p;
 	object_p = collect_values[0].v_pointer;
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (!object_p) {
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
 #line 5054 "DialogNewComponent.vala.c"
 	}
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (!value->data[0].v_pointer) {
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = NULL;
 #line 5060 "DialogNewComponent.vala.c"
 	} else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) {
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = value->data[0].v_pointer;
 #line 5064 "DialogNewComponent.vala.c"
 	} else {
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = xcls_dialognewcomponent_xcls_permname_ref (value->data[0].v_pointer);
 #line 5068 "DialogNewComponent.vala.c"
 	}
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return NULL;
 #line 5072 "DialogNewComponent.vala.c"
 }
@@ -5074,22 +5074,22 @@ static gchar* xcls_dialognewcomponent_value_xcls_permname_lcopy_value (const GVa
 
 GParamSpec* xcls_dialognewcomponent_param_spec_xcls_permname (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags) {
 	Xcls_DialogNewComponentParamSpecXcls_permname* spec;
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_val_if_fail (g_type_is_a (object_type, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_PERMNAME), NULL);
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	G_PARAM_SPEC (spec)->value_type = object_type;
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return G_PARAM_SPEC (spec);
 #line 5086 "DialogNewComponent.vala.c"
 }
 
 
 gpointer xcls_dialognewcomponent_value_get_xcls_permname (const GValue* value) {
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_PERMNAME), NULL);
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return value->data[0].v_pointer;
 #line 5095 "DialogNewComponent.vala.c"
 }
@@ -5097,29 +5097,29 @@ gpointer xcls_dialognewcomponent_value_get_xcls_permname (const GValue* value) {
 
 void xcls_dialognewcomponent_value_set_xcls_permname (GValue* value, gpointer v_object) {
 	Xcls_DialogNewComponentXcls_permname* old;
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_PERMNAME));
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	old = value->data[0].v_pointer;
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (v_object) {
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_PERMNAME));
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = v_object;
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_permname_ref (value->data[0].v_pointer);
 #line 5115 "DialogNewComponent.vala.c"
 	} else {
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 5119 "DialogNewComponent.vala.c"
 	}
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (old) {
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_permname_unref (old);
 #line 5125 "DialogNewComponent.vala.c"
 	}
@@ -5128,27 +5128,27 @@ void xcls_dialognewcomponent_value_set_xcls_permname (GValue* value, gpointer v_
 
 void xcls_dialognewcomponent_value_take_xcls_permname (GValue* value, gpointer v_object) {
 	Xcls_DialogNewComponentXcls_permname* old;
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_PERMNAME));
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	old = value->data[0].v_pointer;
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (v_object) {
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_PERMNAME));
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = v_object;
 #line 5144 "DialogNewComponent.vala.c"
 	} else {
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 5148 "DialogNewComponent.vala.c"
 	}
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (old) {
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_permname_unref (old);
 #line 5154 "DialogNewComponent.vala.c"
 	}
@@ -5156,16 +5156,16 @@ void xcls_dialognewcomponent_value_take_xcls_permname (GValue* value, gpointer v
 
 
 static void xcls_dialognewcomponent_xcls_permname_class_init (Xcls_DialogNewComponentXcls_permnameClass * klass) {
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	xcls_dialognewcomponent_xcls_permname_parent_class = g_type_class_peek_parent (klass);
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	XCLS_DIALOGNEWCOMPONENT_XCLS_PERMNAME_CLASS (klass)->finalize = xcls_dialognewcomponent_xcls_permname_finalize;
 #line 5164 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_xcls_permname_instance_init (Xcls_DialogNewComponentXcls_permname * self) {
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self->ref_count = 1;
 #line 5171 "DialogNewComponent.vala.c"
 }
@@ -5173,9 +5173,9 @@ static void xcls_dialognewcomponent_xcls_permname_instance_init (Xcls_DialogNewC
 
 static void xcls_dialognewcomponent_xcls_permname_finalize (Xcls_DialogNewComponentXcls_permname* obj) {
 	Xcls_DialogNewComponentXcls_permname * self;
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_PERMNAME, Xcls_DialogNewComponentXcls_permname);
-#line 662 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 662 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_object_unref0 (self->el);
 #line 5181 "DialogNewComponent.vala.c"
 }
@@ -5198,9 +5198,9 @@ GType xcls_dialognewcomponent_xcls_permname_get_type (void) {
 gpointer xcls_dialognewcomponent_xcls_permname_ref (gpointer instance) {
 	Xcls_DialogNewComponentXcls_permname* self;
 	self = instance;
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_atomic_int_inc (&self->ref_count);
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return instance;
 #line 5206 "DialogNewComponent.vala.c"
 }
@@ -5209,11 +5209,11 @@ gpointer xcls_dialognewcomponent_xcls_permname_ref (gpointer instance) {
 void xcls_dialognewcomponent_xcls_permname_unref (gpointer instance) {
 	Xcls_DialogNewComponentXcls_permname* self;
 	self = instance;
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		XCLS_DIALOGNEWCOMPONENT_XCLS_PERMNAME_GET_CLASS (self)->finalize (self);
-#line 660 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 660 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_type_free_instance ((GTypeInstance *) self);
 #line 5219 "DialogNewComponent.vala.c"
 	}
@@ -5226,52 +5226,52 @@ Xcls_DialogNewComponentXcls_Label14* xcls_dialognewcomponent_xcls_label14_constr
 	GtkLabel* _tmp1_;
 	GtkLabel* _tmp2_;
 	GtkLabel* _tmp3_;
-#line 703 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 703 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self = (Xcls_DialogNewComponentXcls_Label14*) g_type_create_instance (object_type);
-#line 705 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 705 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp0_ = (GtkLabel*) gtk_label_new ("Order (for tabs)");
-#line 705 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 705 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_object_ref_sink (_tmp0_);
-#line 705 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 705 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_object_unref0 (self->el);
-#line 705 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 705 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self->el = _tmp0_;
-#line 710 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 710 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp1_ = self->el;
-#line 710 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 710 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_label_set_justify (_tmp1_, GTK_JUSTIFY_RIGHT);
-#line 711 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 711 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp2_ = self->el;
-#line 711 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 711 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_widget_set_visible ((GtkWidget*) _tmp2_, TRUE);
-#line 712 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 712 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp3_ = self->el;
-#line 712 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 712 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_object_set ((GtkMisc*) _tmp3_, "xalign", 0.9f, NULL);
-#line 703 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 703 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return self;
 #line 5254 "DialogNewComponent.vala.c"
 }
 
 
 Xcls_DialogNewComponentXcls_Label14* xcls_dialognewcomponent_xcls_label14_new (void) {
-#line 703 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 703 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return xcls_dialognewcomponent_xcls_label14_construct (XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL14);
 #line 5261 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_value_xcls_label14_init (GValue* value) {
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	value->data[0].v_pointer = NULL;
 #line 5268 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_value_xcls_label14_free_value (GValue* value) {
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (value->data[0].v_pointer) {
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_label14_unref (value->data[0].v_pointer);
 #line 5277 "DialogNewComponent.vala.c"
 	}
@@ -5279,13 +5279,13 @@ static void xcls_dialognewcomponent_value_xcls_label14_free_value (GValue* value
 
 
 static void xcls_dialognewcomponent_value_xcls_label14_copy_value (const GValue* src_value, GValue* dest_value) {
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (src_value->data[0].v_pointer) {
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		dest_value->data[0].v_pointer = xcls_dialognewcomponent_xcls_label14_ref (src_value->data[0].v_pointer);
 #line 5287 "DialogNewComponent.vala.c"
 	} else {
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		dest_value->data[0].v_pointer = NULL;
 #line 5291 "DialogNewComponent.vala.c"
 	}
@@ -5293,37 +5293,37 @@ static void xcls_dialognewcomponent_value_xcls_label14_copy_value (const GValue*
 
 
 static gpointer xcls_dialognewcomponent_value_xcls_label14_peek_pointer (const GValue* value) {
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return value->data[0].v_pointer;
 #line 5299 "DialogNewComponent.vala.c"
 }
 
 
 static gchar* xcls_dialognewcomponent_value_xcls_label14_collect_value (GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (collect_values[0].v_pointer) {
 #line 5306 "DialogNewComponent.vala.c"
 		Xcls_DialogNewComponentXcls_Label14* object;
 		object = collect_values[0].v_pointer;
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		if (object->parent_instance.g_class == NULL) {
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 5313 "DialogNewComponent.vala.c"
 		} else if (!g_value_type_compatible (G_TYPE_FROM_INSTANCE (object), G_VALUE_TYPE (value))) {
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 			return g_strconcat ("invalid object type `", g_type_name (G_TYPE_FROM_INSTANCE (object)), "' for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 5317 "DialogNewComponent.vala.c"
 		}
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = xcls_dialognewcomponent_xcls_label14_ref (object);
 #line 5321 "DialogNewComponent.vala.c"
 	} else {
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 5325 "DialogNewComponent.vala.c"
 	}
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return NULL;
 #line 5329 "DialogNewComponent.vala.c"
 }
@@ -5332,27 +5332,27 @@ static gchar* xcls_dialognewcomponent_value_xcls_label14_collect_value (GValue* 
 static gchar* xcls_dialognewcomponent_value_xcls_label14_lcopy_value (const GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
 	Xcls_DialogNewComponentXcls_Label14** object_p;
 	object_p = collect_values[0].v_pointer;
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (!object_p) {
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
 #line 5340 "DialogNewComponent.vala.c"
 	}
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (!value->data[0].v_pointer) {
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = NULL;
 #line 5346 "DialogNewComponent.vala.c"
 	} else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) {
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = value->data[0].v_pointer;
 #line 5350 "DialogNewComponent.vala.c"
 	} else {
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = xcls_dialognewcomponent_xcls_label14_ref (value->data[0].v_pointer);
 #line 5354 "DialogNewComponent.vala.c"
 	}
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return NULL;
 #line 5358 "DialogNewComponent.vala.c"
 }
@@ -5360,22 +5360,22 @@ static gchar* xcls_dialognewcomponent_value_xcls_label14_lcopy_value (const GVal
 
 GParamSpec* xcls_dialognewcomponent_param_spec_xcls_label14 (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags) {
 	Xcls_DialogNewComponentParamSpecXcls_Label14* spec;
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_val_if_fail (g_type_is_a (object_type, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL14), NULL);
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	G_PARAM_SPEC (spec)->value_type = object_type;
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return G_PARAM_SPEC (spec);
 #line 5372 "DialogNewComponent.vala.c"
 }
 
 
 gpointer xcls_dialognewcomponent_value_get_xcls_label14 (const GValue* value) {
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL14), NULL);
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return value->data[0].v_pointer;
 #line 5381 "DialogNewComponent.vala.c"
 }
@@ -5383,29 +5383,29 @@ gpointer xcls_dialognewcomponent_value_get_xcls_label14 (const GValue* value) {
 
 void xcls_dialognewcomponent_value_set_xcls_label14 (GValue* value, gpointer v_object) {
 	Xcls_DialogNewComponentXcls_Label14* old;
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL14));
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	old = value->data[0].v_pointer;
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (v_object) {
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL14));
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = v_object;
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_label14_ref (value->data[0].v_pointer);
 #line 5401 "DialogNewComponent.vala.c"
 	} else {
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 5405 "DialogNewComponent.vala.c"
 	}
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (old) {
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_label14_unref (old);
 #line 5411 "DialogNewComponent.vala.c"
 	}
@@ -5414,27 +5414,27 @@ void xcls_dialognewcomponent_value_set_xcls_label14 (GValue* value, gpointer v_o
 
 void xcls_dialognewcomponent_value_take_xcls_label14 (GValue* value, gpointer v_object) {
 	Xcls_DialogNewComponentXcls_Label14* old;
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL14));
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	old = value->data[0].v_pointer;
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (v_object) {
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL14));
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = v_object;
 #line 5430 "DialogNewComponent.vala.c"
 	} else {
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 5434 "DialogNewComponent.vala.c"
 	}
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (old) {
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_label14_unref (old);
 #line 5440 "DialogNewComponent.vala.c"
 	}
@@ -5442,16 +5442,16 @@ void xcls_dialognewcomponent_value_take_xcls_label14 (GValue* value, gpointer v_
 
 
 static void xcls_dialognewcomponent_xcls_label14_class_init (Xcls_DialogNewComponentXcls_Label14Class * klass) {
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	xcls_dialognewcomponent_xcls_label14_parent_class = g_type_class_peek_parent (klass);
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	XCLS_DIALOGNEWCOMPONENT_XCLS_LABEL14_CLASS (klass)->finalize = xcls_dialognewcomponent_xcls_label14_finalize;
 #line 5450 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_xcls_label14_instance_init (Xcls_DialogNewComponentXcls_Label14 * self) {
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self->ref_count = 1;
 #line 5457 "DialogNewComponent.vala.c"
 }
@@ -5459,9 +5459,9 @@ static void xcls_dialognewcomponent_xcls_label14_instance_init (Xcls_DialogNewCo
 
 static void xcls_dialognewcomponent_xcls_label14_finalize (Xcls_DialogNewComponentXcls_Label14* obj) {
 	Xcls_DialogNewComponentXcls_Label14 * self;
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_LABEL14, Xcls_DialogNewComponentXcls_Label14);
-#line 698 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 698 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_object_unref0 (self->el);
 #line 5467 "DialogNewComponent.vala.c"
 }
@@ -5484,9 +5484,9 @@ GType xcls_dialognewcomponent_xcls_label14_get_type (void) {
 gpointer xcls_dialognewcomponent_xcls_label14_ref (gpointer instance) {
 	Xcls_DialogNewComponentXcls_Label14* self;
 	self = instance;
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_atomic_int_inc (&self->ref_count);
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return instance;
 #line 5492 "DialogNewComponent.vala.c"
 }
@@ -5495,11 +5495,11 @@ gpointer xcls_dialognewcomponent_xcls_label14_ref (gpointer instance) {
 void xcls_dialognewcomponent_xcls_label14_unref (gpointer instance) {
 	Xcls_DialogNewComponentXcls_Label14* self;
 	self = instance;
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		XCLS_DIALOGNEWCOMPONENT_XCLS_LABEL14_GET_CLASS (self)->finalize (self);
-#line 696 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 696 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_type_free_instance ((GTypeInstance *) self);
 #line 5505 "DialogNewComponent.vala.c"
 	}
@@ -5507,7 +5507,7 @@ void xcls_dialognewcomponent_xcls_label14_unref (gpointer instance) {
 
 
 static gpointer _xcls_dialognewcomponent_xcls_modorder_ref0 (gpointer self) {
-#line 749 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 749 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return self ? xcls_dialognewcomponent_xcls_modorder_ref (self) : NULL;
 #line 5513 "DialogNewComponent.vala.c"
 }
@@ -5519,52 +5519,52 @@ Xcls_DialogNewComponentXcls_modOrder* xcls_dialognewcomponent_xcls_modorder_cons
 	Xcls_DialogNewComponent* _tmp1_;
 	Xcls_DialogNewComponentXcls_modOrder* _tmp2_;
 	GtkEntry* _tmp3_;
-#line 746 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 746 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self = (Xcls_DialogNewComponentXcls_modOrder*) g_type_create_instance (object_type);
-#line 748 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 748 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp0_ = (GtkEntry*) gtk_entry_new ();
-#line 748 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 748 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_object_ref_sink (_tmp0_);
-#line 748 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 748 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_object_unref0 (self->el);
-#line 748 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 748 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self->el = _tmp0_;
-#line 749 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 749 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp1_ = xcls_dialognewcomponent__this;
-#line 749 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 749 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp2_ = _xcls_dialognewcomponent_xcls_modorder_ref0 (self);
-#line 749 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 749 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_xcls_dialognewcomponent_xcls_modorder_unref0 (_tmp1_->modOrder);
-#line 749 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 749 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp1_->modOrder = _tmp2_;
-#line 754 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 754 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp3_ = self->el;
-#line 754 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 754 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_widget_set_visible ((GtkWidget*) _tmp3_, TRUE);
-#line 746 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 746 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return self;
 #line 5547 "DialogNewComponent.vala.c"
 }
 
 
 Xcls_DialogNewComponentXcls_modOrder* xcls_dialognewcomponent_xcls_modorder_new (void) {
-#line 746 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 746 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return xcls_dialognewcomponent_xcls_modorder_construct (XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_MODORDER);
 #line 5554 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_value_xcls_modorder_init (GValue* value) {
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	value->data[0].v_pointer = NULL;
 #line 5561 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_value_xcls_modorder_free_value (GValue* value) {
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (value->data[0].v_pointer) {
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_modorder_unref (value->data[0].v_pointer);
 #line 5570 "DialogNewComponent.vala.c"
 	}
@@ -5572,13 +5572,13 @@ static void xcls_dialognewcomponent_value_xcls_modorder_free_value (GValue* valu
 
 
 static void xcls_dialognewcomponent_value_xcls_modorder_copy_value (const GValue* src_value, GValue* dest_value) {
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (src_value->data[0].v_pointer) {
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		dest_value->data[0].v_pointer = xcls_dialognewcomponent_xcls_modorder_ref (src_value->data[0].v_pointer);
 #line 5580 "DialogNewComponent.vala.c"
 	} else {
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		dest_value->data[0].v_pointer = NULL;
 #line 5584 "DialogNewComponent.vala.c"
 	}
@@ -5586,37 +5586,37 @@ static void xcls_dialognewcomponent_value_xcls_modorder_copy_value (const GValue
 
 
 static gpointer xcls_dialognewcomponent_value_xcls_modorder_peek_pointer (const GValue* value) {
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return value->data[0].v_pointer;
 #line 5592 "DialogNewComponent.vala.c"
 }
 
 
 static gchar* xcls_dialognewcomponent_value_xcls_modorder_collect_value (GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (collect_values[0].v_pointer) {
 #line 5599 "DialogNewComponent.vala.c"
 		Xcls_DialogNewComponentXcls_modOrder* object;
 		object = collect_values[0].v_pointer;
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		if (object->parent_instance.g_class == NULL) {
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 5606 "DialogNewComponent.vala.c"
 		} else if (!g_value_type_compatible (G_TYPE_FROM_INSTANCE (object), G_VALUE_TYPE (value))) {
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 			return g_strconcat ("invalid object type `", g_type_name (G_TYPE_FROM_INSTANCE (object)), "' for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 5610 "DialogNewComponent.vala.c"
 		}
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = xcls_dialognewcomponent_xcls_modorder_ref (object);
 #line 5614 "DialogNewComponent.vala.c"
 	} else {
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 5618 "DialogNewComponent.vala.c"
 	}
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return NULL;
 #line 5622 "DialogNewComponent.vala.c"
 }
@@ -5625,27 +5625,27 @@ static gchar* xcls_dialognewcomponent_value_xcls_modorder_collect_value (GValue*
 static gchar* xcls_dialognewcomponent_value_xcls_modorder_lcopy_value (const GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
 	Xcls_DialogNewComponentXcls_modOrder** object_p;
 	object_p = collect_values[0].v_pointer;
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (!object_p) {
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
 #line 5633 "DialogNewComponent.vala.c"
 	}
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (!value->data[0].v_pointer) {
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = NULL;
 #line 5639 "DialogNewComponent.vala.c"
 	} else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) {
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = value->data[0].v_pointer;
 #line 5643 "DialogNewComponent.vala.c"
 	} else {
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = xcls_dialognewcomponent_xcls_modorder_ref (value->data[0].v_pointer);
 #line 5647 "DialogNewComponent.vala.c"
 	}
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return NULL;
 #line 5651 "DialogNewComponent.vala.c"
 }
@@ -5653,22 +5653,22 @@ static gchar* xcls_dialognewcomponent_value_xcls_modorder_lcopy_value (const GVa
 
 GParamSpec* xcls_dialognewcomponent_param_spec_xcls_modorder (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags) {
 	Xcls_DialogNewComponentParamSpecXcls_modOrder* spec;
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_val_if_fail (g_type_is_a (object_type, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_MODORDER), NULL);
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	G_PARAM_SPEC (spec)->value_type = object_type;
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return G_PARAM_SPEC (spec);
 #line 5665 "DialogNewComponent.vala.c"
 }
 
 
 gpointer xcls_dialognewcomponent_value_get_xcls_modorder (const GValue* value) {
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_MODORDER), NULL);
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return value->data[0].v_pointer;
 #line 5674 "DialogNewComponent.vala.c"
 }
@@ -5676,29 +5676,29 @@ gpointer xcls_dialognewcomponent_value_get_xcls_modorder (const GValue* value) {
 
 void xcls_dialognewcomponent_value_set_xcls_modorder (GValue* value, gpointer v_object) {
 	Xcls_DialogNewComponentXcls_modOrder* old;
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_MODORDER));
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	old = value->data[0].v_pointer;
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (v_object) {
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_MODORDER));
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = v_object;
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_modorder_ref (value->data[0].v_pointer);
 #line 5694 "DialogNewComponent.vala.c"
 	} else {
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 5698 "DialogNewComponent.vala.c"
 	}
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (old) {
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_modorder_unref (old);
 #line 5704 "DialogNewComponent.vala.c"
 	}
@@ -5707,27 +5707,27 @@ void xcls_dialognewcomponent_value_set_xcls_modorder (GValue* value, gpointer v_
 
 void xcls_dialognewcomponent_value_take_xcls_modorder (GValue* value, gpointer v_object) {
 	Xcls_DialogNewComponentXcls_modOrder* old;
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_MODORDER));
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	old = value->data[0].v_pointer;
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (v_object) {
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_MODORDER));
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = v_object;
 #line 5723 "DialogNewComponent.vala.c"
 	} else {
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 5727 "DialogNewComponent.vala.c"
 	}
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (old) {
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_modorder_unref (old);
 #line 5733 "DialogNewComponent.vala.c"
 	}
@@ -5735,16 +5735,16 @@ void xcls_dialognewcomponent_value_take_xcls_modorder (GValue* value, gpointer v
 
 
 static void xcls_dialognewcomponent_xcls_modorder_class_init (Xcls_DialogNewComponentXcls_modOrderClass * klass) {
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	xcls_dialognewcomponent_xcls_modorder_parent_class = g_type_class_peek_parent (klass);
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	XCLS_DIALOGNEWCOMPONENT_XCLS_MODORDER_CLASS (klass)->finalize = xcls_dialognewcomponent_xcls_modorder_finalize;
 #line 5743 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_xcls_modorder_instance_init (Xcls_DialogNewComponentXcls_modOrder * self) {
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self->ref_count = 1;
 #line 5750 "DialogNewComponent.vala.c"
 }
@@ -5752,9 +5752,9 @@ static void xcls_dialognewcomponent_xcls_modorder_instance_init (Xcls_DialogNewC
 
 static void xcls_dialognewcomponent_xcls_modorder_finalize (Xcls_DialogNewComponentXcls_modOrder* obj) {
 	Xcls_DialogNewComponentXcls_modOrder * self;
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_MODORDER, Xcls_DialogNewComponentXcls_modOrder);
-#line 741 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 741 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_object_unref0 (self->el);
 #line 5760 "DialogNewComponent.vala.c"
 }
@@ -5777,9 +5777,9 @@ GType xcls_dialognewcomponent_xcls_modorder_get_type (void) {
 gpointer xcls_dialognewcomponent_xcls_modorder_ref (gpointer instance) {
 	Xcls_DialogNewComponentXcls_modOrder* self;
 	self = instance;
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_atomic_int_inc (&self->ref_count);
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return instance;
 #line 5785 "DialogNewComponent.vala.c"
 }
@@ -5788,11 +5788,11 @@ gpointer xcls_dialognewcomponent_xcls_modorder_ref (gpointer instance) {
 void xcls_dialognewcomponent_xcls_modorder_unref (gpointer instance) {
 	Xcls_DialogNewComponentXcls_modOrder* self;
 	self = instance;
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		XCLS_DIALOGNEWCOMPONENT_XCLS_MODORDER_GET_CLASS (self)->finalize (self);
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_type_free_instance ((GTypeInstance *) self);
 #line 5798 "DialogNewComponent.vala.c"
 	}
@@ -5803,44 +5803,44 @@ Xcls_DialogNewComponentXcls_Button16* xcls_dialognewcomponent_xcls_button16_cons
 	Xcls_DialogNewComponentXcls_Button16* self = NULL;
 	GtkButton* _tmp0_;
 	GtkButton* _tmp1_;
-#line 782 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 782 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self = (Xcls_DialogNewComponentXcls_Button16*) g_type_create_instance (object_type);
-#line 784 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 784 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp0_ = (GtkButton*) gtk_button_new ();
-#line 784 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 784 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_object_ref_sink (_tmp0_);
-#line 784 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 784 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_object_unref0 (self->el);
-#line 784 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 784 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self->el = _tmp0_;
-#line 789 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 789 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp1_ = self->el;
-#line 789 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 789 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_button_set_label (_tmp1_, "Cancel");
-#line 782 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 782 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return self;
 #line 5823 "DialogNewComponent.vala.c"
 }
 
 
 Xcls_DialogNewComponentXcls_Button16* xcls_dialognewcomponent_xcls_button16_new (void) {
-#line 782 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 782 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return xcls_dialognewcomponent_xcls_button16_construct (XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_BUTTON16);
 #line 5830 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_value_xcls_button16_init (GValue* value) {
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	value->data[0].v_pointer = NULL;
 #line 5837 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_value_xcls_button16_free_value (GValue* value) {
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (value->data[0].v_pointer) {
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_button16_unref (value->data[0].v_pointer);
 #line 5846 "DialogNewComponent.vala.c"
 	}
@@ -5848,13 +5848,13 @@ static void xcls_dialognewcomponent_value_xcls_button16_free_value (GValue* valu
 
 
 static void xcls_dialognewcomponent_value_xcls_button16_copy_value (const GValue* src_value, GValue* dest_value) {
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (src_value->data[0].v_pointer) {
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		dest_value->data[0].v_pointer = xcls_dialognewcomponent_xcls_button16_ref (src_value->data[0].v_pointer);
 #line 5856 "DialogNewComponent.vala.c"
 	} else {
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		dest_value->data[0].v_pointer = NULL;
 #line 5860 "DialogNewComponent.vala.c"
 	}
@@ -5862,37 +5862,37 @@ static void xcls_dialognewcomponent_value_xcls_button16_copy_value (const GValue
 
 
 static gpointer xcls_dialognewcomponent_value_xcls_button16_peek_pointer (const GValue* value) {
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return value->data[0].v_pointer;
 #line 5868 "DialogNewComponent.vala.c"
 }
 
 
 static gchar* xcls_dialognewcomponent_value_xcls_button16_collect_value (GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (collect_values[0].v_pointer) {
 #line 5875 "DialogNewComponent.vala.c"
 		Xcls_DialogNewComponentXcls_Button16* object;
 		object = collect_values[0].v_pointer;
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		if (object->parent_instance.g_class == NULL) {
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 5882 "DialogNewComponent.vala.c"
 		} else if (!g_value_type_compatible (G_TYPE_FROM_INSTANCE (object), G_VALUE_TYPE (value))) {
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 			return g_strconcat ("invalid object type `", g_type_name (G_TYPE_FROM_INSTANCE (object)), "' for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 5886 "DialogNewComponent.vala.c"
 		}
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = xcls_dialognewcomponent_xcls_button16_ref (object);
 #line 5890 "DialogNewComponent.vala.c"
 	} else {
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 5894 "DialogNewComponent.vala.c"
 	}
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return NULL;
 #line 5898 "DialogNewComponent.vala.c"
 }
@@ -5901,27 +5901,27 @@ static gchar* xcls_dialognewcomponent_value_xcls_button16_collect_value (GValue*
 static gchar* xcls_dialognewcomponent_value_xcls_button16_lcopy_value (const GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
 	Xcls_DialogNewComponentXcls_Button16** object_p;
 	object_p = collect_values[0].v_pointer;
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (!object_p) {
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
 #line 5909 "DialogNewComponent.vala.c"
 	}
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (!value->data[0].v_pointer) {
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = NULL;
 #line 5915 "DialogNewComponent.vala.c"
 	} else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) {
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = value->data[0].v_pointer;
 #line 5919 "DialogNewComponent.vala.c"
 	} else {
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = xcls_dialognewcomponent_xcls_button16_ref (value->data[0].v_pointer);
 #line 5923 "DialogNewComponent.vala.c"
 	}
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return NULL;
 #line 5927 "DialogNewComponent.vala.c"
 }
@@ -5929,22 +5929,22 @@ static gchar* xcls_dialognewcomponent_value_xcls_button16_lcopy_value (const GVa
 
 GParamSpec* xcls_dialognewcomponent_param_spec_xcls_button16 (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags) {
 	Xcls_DialogNewComponentParamSpecXcls_Button16* spec;
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_val_if_fail (g_type_is_a (object_type, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_BUTTON16), NULL);
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	G_PARAM_SPEC (spec)->value_type = object_type;
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return G_PARAM_SPEC (spec);
 #line 5941 "DialogNewComponent.vala.c"
 }
 
 
 gpointer xcls_dialognewcomponent_value_get_xcls_button16 (const GValue* value) {
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_BUTTON16), NULL);
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return value->data[0].v_pointer;
 #line 5950 "DialogNewComponent.vala.c"
 }
@@ -5952,29 +5952,29 @@ gpointer xcls_dialognewcomponent_value_get_xcls_button16 (const GValue* value) {
 
 void xcls_dialognewcomponent_value_set_xcls_button16 (GValue* value, gpointer v_object) {
 	Xcls_DialogNewComponentXcls_Button16* old;
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_BUTTON16));
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	old = value->data[0].v_pointer;
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (v_object) {
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_BUTTON16));
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = v_object;
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_button16_ref (value->data[0].v_pointer);
 #line 5970 "DialogNewComponent.vala.c"
 	} else {
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 5974 "DialogNewComponent.vala.c"
 	}
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (old) {
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_button16_unref (old);
 #line 5980 "DialogNewComponent.vala.c"
 	}
@@ -5983,27 +5983,27 @@ void xcls_dialognewcomponent_value_set_xcls_button16 (GValue* value, gpointer v_
 
 void xcls_dialognewcomponent_value_take_xcls_button16 (GValue* value, gpointer v_object) {
 	Xcls_DialogNewComponentXcls_Button16* old;
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_BUTTON16));
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	old = value->data[0].v_pointer;
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (v_object) {
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_BUTTON16));
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = v_object;
 #line 5999 "DialogNewComponent.vala.c"
 	} else {
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 6003 "DialogNewComponent.vala.c"
 	}
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (old) {
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_button16_unref (old);
 #line 6009 "DialogNewComponent.vala.c"
 	}
@@ -6011,16 +6011,16 @@ void xcls_dialognewcomponent_value_take_xcls_button16 (GValue* value, gpointer v
 
 
 static void xcls_dialognewcomponent_xcls_button16_class_init (Xcls_DialogNewComponentXcls_Button16Class * klass) {
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	xcls_dialognewcomponent_xcls_button16_parent_class = g_type_class_peek_parent (klass);
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	XCLS_DIALOGNEWCOMPONENT_XCLS_BUTTON16_CLASS (klass)->finalize = xcls_dialognewcomponent_xcls_button16_finalize;
 #line 6019 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_xcls_button16_instance_init (Xcls_DialogNewComponentXcls_Button16 * self) {
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self->ref_count = 1;
 #line 6026 "DialogNewComponent.vala.c"
 }
@@ -6028,9 +6028,9 @@ static void xcls_dialognewcomponent_xcls_button16_instance_init (Xcls_DialogNewC
 
 static void xcls_dialognewcomponent_xcls_button16_finalize (Xcls_DialogNewComponentXcls_Button16* obj) {
 	Xcls_DialogNewComponentXcls_Button16 * self;
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_BUTTON16, Xcls_DialogNewComponentXcls_Button16);
-#line 777 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 777 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_object_unref0 (self->el);
 #line 6036 "DialogNewComponent.vala.c"
 }
@@ -6053,9 +6053,9 @@ GType xcls_dialognewcomponent_xcls_button16_get_type (void) {
 gpointer xcls_dialognewcomponent_xcls_button16_ref (gpointer instance) {
 	Xcls_DialogNewComponentXcls_Button16* self;
 	self = instance;
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_atomic_int_inc (&self->ref_count);
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return instance;
 #line 6061 "DialogNewComponent.vala.c"
 }
@@ -6064,11 +6064,11 @@ gpointer xcls_dialognewcomponent_xcls_button16_ref (gpointer instance) {
 void xcls_dialognewcomponent_xcls_button16_unref (gpointer instance) {
 	Xcls_DialogNewComponentXcls_Button16* self;
 	self = instance;
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		XCLS_DIALOGNEWCOMPONENT_XCLS_BUTTON16_GET_CLASS (self)->finalize (self);
-#line 775 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 775 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_type_free_instance ((GTypeInstance *) self);
 #line 6074 "DialogNewComponent.vala.c"
 	}
@@ -6079,44 +6079,44 @@ Xcls_DialogNewComponentXcls_Button17* xcls_dialognewcomponent_xcls_button17_cons
 	Xcls_DialogNewComponentXcls_Button17* self = NULL;
 	GtkButton* _tmp0_;
 	GtkButton* _tmp1_;
-#line 815 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 815 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self = (Xcls_DialogNewComponentXcls_Button17*) g_type_create_instance (object_type);
-#line 817 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 817 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp0_ = (GtkButton*) gtk_button_new ();
-#line 817 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 817 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_object_ref_sink (_tmp0_);
-#line 817 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 817 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_object_unref0 (self->el);
-#line 817 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 817 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self->el = _tmp0_;
-#line 822 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 822 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_tmp1_ = self->el;
-#line 822 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 822 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	gtk_button_set_label (_tmp1_, "OK");
-#line 815 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 815 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return self;
 #line 6099 "DialogNewComponent.vala.c"
 }
 
 
 Xcls_DialogNewComponentXcls_Button17* xcls_dialognewcomponent_xcls_button17_new (void) {
-#line 815 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 815 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return xcls_dialognewcomponent_xcls_button17_construct (XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_BUTTON17);
 #line 6106 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_value_xcls_button17_init (GValue* value) {
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	value->data[0].v_pointer = NULL;
 #line 6113 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_value_xcls_button17_free_value (GValue* value) {
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (value->data[0].v_pointer) {
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_button17_unref (value->data[0].v_pointer);
 #line 6122 "DialogNewComponent.vala.c"
 	}
@@ -6124,13 +6124,13 @@ static void xcls_dialognewcomponent_value_xcls_button17_free_value (GValue* valu
 
 
 static void xcls_dialognewcomponent_value_xcls_button17_copy_value (const GValue* src_value, GValue* dest_value) {
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (src_value->data[0].v_pointer) {
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		dest_value->data[0].v_pointer = xcls_dialognewcomponent_xcls_button17_ref (src_value->data[0].v_pointer);
 #line 6132 "DialogNewComponent.vala.c"
 	} else {
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		dest_value->data[0].v_pointer = NULL;
 #line 6136 "DialogNewComponent.vala.c"
 	}
@@ -6138,37 +6138,37 @@ static void xcls_dialognewcomponent_value_xcls_button17_copy_value (const GValue
 
 
 static gpointer xcls_dialognewcomponent_value_xcls_button17_peek_pointer (const GValue* value) {
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return value->data[0].v_pointer;
 #line 6144 "DialogNewComponent.vala.c"
 }
 
 
 static gchar* xcls_dialognewcomponent_value_xcls_button17_collect_value (GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (collect_values[0].v_pointer) {
 #line 6151 "DialogNewComponent.vala.c"
 		Xcls_DialogNewComponentXcls_Button17* object;
 		object = collect_values[0].v_pointer;
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		if (object->parent_instance.g_class == NULL) {
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 6158 "DialogNewComponent.vala.c"
 		} else if (!g_value_type_compatible (G_TYPE_FROM_INSTANCE (object), G_VALUE_TYPE (value))) {
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 			return g_strconcat ("invalid object type `", g_type_name (G_TYPE_FROM_INSTANCE (object)), "' for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 6162 "DialogNewComponent.vala.c"
 		}
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = xcls_dialognewcomponent_xcls_button17_ref (object);
 #line 6166 "DialogNewComponent.vala.c"
 	} else {
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 6170 "DialogNewComponent.vala.c"
 	}
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return NULL;
 #line 6174 "DialogNewComponent.vala.c"
 }
@@ -6177,27 +6177,27 @@ static gchar* xcls_dialognewcomponent_value_xcls_button17_collect_value (GValue*
 static gchar* xcls_dialognewcomponent_value_xcls_button17_lcopy_value (const GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
 	Xcls_DialogNewComponentXcls_Button17** object_p;
 	object_p = collect_values[0].v_pointer;
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (!object_p) {
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
 #line 6185 "DialogNewComponent.vala.c"
 	}
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (!value->data[0].v_pointer) {
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = NULL;
 #line 6191 "DialogNewComponent.vala.c"
 	} else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) {
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = value->data[0].v_pointer;
 #line 6195 "DialogNewComponent.vala.c"
 	} else {
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = xcls_dialognewcomponent_xcls_button17_ref (value->data[0].v_pointer);
 #line 6199 "DialogNewComponent.vala.c"
 	}
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return NULL;
 #line 6203 "DialogNewComponent.vala.c"
 }
@@ -6205,22 +6205,22 @@ static gchar* xcls_dialognewcomponent_value_xcls_button17_lcopy_value (const GVa
 
 GParamSpec* xcls_dialognewcomponent_param_spec_xcls_button17 (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags) {
 	Xcls_DialogNewComponentParamSpecXcls_Button17* spec;
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_val_if_fail (g_type_is_a (object_type, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_BUTTON17), NULL);
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	G_PARAM_SPEC (spec)->value_type = object_type;
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return G_PARAM_SPEC (spec);
 #line 6217 "DialogNewComponent.vala.c"
 }
 
 
 gpointer xcls_dialognewcomponent_value_get_xcls_button17 (const GValue* value) {
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_BUTTON17), NULL);
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return value->data[0].v_pointer;
 #line 6226 "DialogNewComponent.vala.c"
 }
@@ -6228,29 +6228,29 @@ gpointer xcls_dialognewcomponent_value_get_xcls_button17 (const GValue* value) {
 
 void xcls_dialognewcomponent_value_set_xcls_button17 (GValue* value, gpointer v_object) {
 	Xcls_DialogNewComponentXcls_Button17* old;
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_BUTTON17));
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	old = value->data[0].v_pointer;
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (v_object) {
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_BUTTON17));
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = v_object;
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_button17_ref (value->data[0].v_pointer);
 #line 6246 "DialogNewComponent.vala.c"
 	} else {
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 6250 "DialogNewComponent.vala.c"
 	}
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (old) {
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_button17_unref (old);
 #line 6256 "DialogNewComponent.vala.c"
 	}
@@ -6259,27 +6259,27 @@ void xcls_dialognewcomponent_value_set_xcls_button17 (GValue* value, gpointer v_
 
 void xcls_dialognewcomponent_value_take_xcls_button17 (GValue* value, gpointer v_object) {
 	Xcls_DialogNewComponentXcls_Button17* old;
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_BUTTON17));
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	old = value->data[0].v_pointer;
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (v_object) {
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_BUTTON17));
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = v_object;
 #line 6275 "DialogNewComponent.vala.c"
 	} else {
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 6279 "DialogNewComponent.vala.c"
 	}
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (old) {
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_xcls_button17_unref (old);
 #line 6285 "DialogNewComponent.vala.c"
 	}
@@ -6287,16 +6287,16 @@ void xcls_dialognewcomponent_value_take_xcls_button17 (GValue* value, gpointer v
 
 
 static void xcls_dialognewcomponent_xcls_button17_class_init (Xcls_DialogNewComponentXcls_Button17Class * klass) {
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	xcls_dialognewcomponent_xcls_button17_parent_class = g_type_class_peek_parent (klass);
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	XCLS_DIALOGNEWCOMPONENT_XCLS_BUTTON17_CLASS (klass)->finalize = xcls_dialognewcomponent_xcls_button17_finalize;
 #line 6295 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_xcls_button17_instance_init (Xcls_DialogNewComponentXcls_Button17 * self) {
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self->ref_count = 1;
 #line 6302 "DialogNewComponent.vala.c"
 }
@@ -6304,9 +6304,9 @@ static void xcls_dialognewcomponent_xcls_button17_instance_init (Xcls_DialogNewC
 
 static void xcls_dialognewcomponent_xcls_button17_finalize (Xcls_DialogNewComponentXcls_Button17* obj) {
 	Xcls_DialogNewComponentXcls_Button17 * self;
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_DIALOGNEWCOMPONENT_TYPE_XCLS_BUTTON17, Xcls_DialogNewComponentXcls_Button17);
-#line 810 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 810 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_object_unref0 (self->el);
 #line 6312 "DialogNewComponent.vala.c"
 }
@@ -6329,9 +6329,9 @@ GType xcls_dialognewcomponent_xcls_button17_get_type (void) {
 gpointer xcls_dialognewcomponent_xcls_button17_ref (gpointer instance) {
 	Xcls_DialogNewComponentXcls_Button17* self;
 	self = instance;
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_atomic_int_inc (&self->ref_count);
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return instance;
 #line 6337 "DialogNewComponent.vala.c"
 }
@@ -6340,11 +6340,11 @@ gpointer xcls_dialognewcomponent_xcls_button17_ref (gpointer instance) {
 void xcls_dialognewcomponent_xcls_button17_unref (gpointer instance) {
 	Xcls_DialogNewComponentXcls_Button17* self;
 	self = instance;
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		XCLS_DIALOGNEWCOMPONENT_XCLS_BUTTON17_GET_CLASS (self)->finalize (self);
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_type_free_instance ((GTypeInstance *) self);
 #line 6350 "DialogNewComponent.vala.c"
 	}
@@ -6352,16 +6352,16 @@ void xcls_dialognewcomponent_xcls_button17_unref (gpointer instance) {
 
 
 static void value_xcls_dialognewcomponent_init (GValue* value) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	value->data[0].v_pointer = NULL;
 #line 6358 "DialogNewComponent.vala.c"
 }
 
 
 static void value_xcls_dialognewcomponent_free_value (GValue* value) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (value->data[0].v_pointer) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_unref (value->data[0].v_pointer);
 #line 6367 "DialogNewComponent.vala.c"
 	}
@@ -6369,13 +6369,13 @@ static void value_xcls_dialognewcomponent_free_value (GValue* value) {
 
 
 static void value_xcls_dialognewcomponent_copy_value (const GValue* src_value, GValue* dest_value) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (src_value->data[0].v_pointer) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		dest_value->data[0].v_pointer = xcls_dialognewcomponent_ref (src_value->data[0].v_pointer);
 #line 6377 "DialogNewComponent.vala.c"
 	} else {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		dest_value->data[0].v_pointer = NULL;
 #line 6381 "DialogNewComponent.vala.c"
 	}
@@ -6383,37 +6383,37 @@ static void value_xcls_dialognewcomponent_copy_value (const GValue* src_value, G
 
 
 static gpointer value_xcls_dialognewcomponent_peek_pointer (const GValue* value) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return value->data[0].v_pointer;
 #line 6389 "DialogNewComponent.vala.c"
 }
 
 
 static gchar* value_xcls_dialognewcomponent_collect_value (GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (collect_values[0].v_pointer) {
 #line 6396 "DialogNewComponent.vala.c"
 		Xcls_DialogNewComponent* object;
 		object = collect_values[0].v_pointer;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		if (object->parent_instance.g_class == NULL) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 6403 "DialogNewComponent.vala.c"
 		} else if (!g_value_type_compatible (G_TYPE_FROM_INSTANCE (object), G_VALUE_TYPE (value))) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 			return g_strconcat ("invalid object type `", g_type_name (G_TYPE_FROM_INSTANCE (object)), "' for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
 #line 6407 "DialogNewComponent.vala.c"
 		}
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = xcls_dialognewcomponent_ref (object);
 #line 6411 "DialogNewComponent.vala.c"
 	} else {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 6415 "DialogNewComponent.vala.c"
 	}
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return NULL;
 #line 6419 "DialogNewComponent.vala.c"
 }
@@ -6422,27 +6422,27 @@ static gchar* value_xcls_dialognewcomponent_collect_value (GValue* value, guint 
 static gchar* value_xcls_dialognewcomponent_lcopy_value (const GValue* value, guint n_collect_values, GTypeCValue* collect_values, guint collect_flags) {
 	Xcls_DialogNewComponent** object_p;
 	object_p = collect_values[0].v_pointer;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (!object_p) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
 #line 6430 "DialogNewComponent.vala.c"
 	}
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (!value->data[0].v_pointer) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = NULL;
 #line 6436 "DialogNewComponent.vala.c"
 	} else if (collect_flags & G_VALUE_NOCOPY_CONTENTS) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = value->data[0].v_pointer;
 #line 6440 "DialogNewComponent.vala.c"
 	} else {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		*object_p = xcls_dialognewcomponent_ref (value->data[0].v_pointer);
 #line 6444 "DialogNewComponent.vala.c"
 	}
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return NULL;
 #line 6448 "DialogNewComponent.vala.c"
 }
@@ -6450,22 +6450,22 @@ static gchar* value_xcls_dialognewcomponent_lcopy_value (const GValue* value, gu
 
 GParamSpec* param_spec_xcls_dialognewcomponent (const gchar* name, const gchar* nick, const gchar* blurb, GType object_type, GParamFlags flags) {
 	ParamSpecXcls_DialogNewComponent* spec;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_val_if_fail (g_type_is_a (object_type, TYPE_XCLS_DIALOGNEWCOMPONENT), NULL);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	G_PARAM_SPEC (spec)->value_type = object_type;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return G_PARAM_SPEC (spec);
 #line 6462 "DialogNewComponent.vala.c"
 }
 
 
 gpointer value_get_xcls_dialognewcomponent (const GValue* value) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, TYPE_XCLS_DIALOGNEWCOMPONENT), NULL);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return value->data[0].v_pointer;
 #line 6471 "DialogNewComponent.vala.c"
 }
@@ -6473,29 +6473,29 @@ gpointer value_get_xcls_dialognewcomponent (const GValue* value) {
 
 void value_set_xcls_dialognewcomponent (GValue* value, gpointer v_object) {
 	Xcls_DialogNewComponent* old;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, TYPE_XCLS_DIALOGNEWCOMPONENT));
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	old = value->data[0].v_pointer;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (v_object) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, TYPE_XCLS_DIALOGNEWCOMPONENT));
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = v_object;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_ref (value->data[0].v_pointer);
 #line 6491 "DialogNewComponent.vala.c"
 	} else {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 6495 "DialogNewComponent.vala.c"
 	}
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (old) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_unref (old);
 #line 6501 "DialogNewComponent.vala.c"
 	}
@@ -6504,27 +6504,27 @@ void value_set_xcls_dialognewcomponent (GValue* value, gpointer v_object) {
 
 void value_take_xcls_dialognewcomponent (GValue* value, gpointer v_object) {
 	Xcls_DialogNewComponent* old;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, TYPE_XCLS_DIALOGNEWCOMPONENT));
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	old = value->data[0].v_pointer;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (v_object) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, TYPE_XCLS_DIALOGNEWCOMPONENT));
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = v_object;
 #line 6520 "DialogNewComponent.vala.c"
 	} else {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		value->data[0].v_pointer = NULL;
 #line 6524 "DialogNewComponent.vala.c"
 	}
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (old) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		xcls_dialognewcomponent_unref (old);
 #line 6530 "DialogNewComponent.vala.c"
 	}
@@ -6532,18 +6532,18 @@ void value_take_xcls_dialognewcomponent (GValue* value, gpointer v_object) {
 
 
 static void xcls_dialognewcomponent_class_init (Xcls_DialogNewComponentClass * klass) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	xcls_dialognewcomponent_parent_class = g_type_class_peek_parent (klass);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	XCLS_DIALOGNEWCOMPONENT_CLASS (klass)->finalize = xcls_dialognewcomponent_finalize;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_signal_new ("success", TYPE_XCLS_DIALOGNEWCOMPONENT, G_SIGNAL_RUN_LAST, 0, NULL, NULL, g_cclosure_user_marshal_VOID__OBJECT_OBJECT, G_TYPE_NONE, 2, PROJECT_TYPE_PROJECT, JS_RENDER_TYPE_JS_RENDER);
 #line 6542 "DialogNewComponent.vala.c"
 }
 
 
 static void xcls_dialognewcomponent_instance_init (Xcls_DialogNewComponent * self) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self->ref_count = 1;
 #line 6549 "DialogNewComponent.vala.c"
 }
@@ -6551,25 +6551,25 @@ static void xcls_dialognewcomponent_instance_init (Xcls_DialogNewComponent * sel
 
 static void xcls_dialognewcomponent_finalize (Xcls_DialogNewComponent* obj) {
 	Xcls_DialogNewComponent * self;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, TYPE_XCLS_DIALOGNEWCOMPONENT, Xcls_DialogNewComponent);
-#line 22 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 22 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_object_unref0 (self->el);
-#line 25 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 25 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_xcls_dialognewcomponent_xcls_name_unref0 (self->name);
-#line 26 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 26 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_xcls_dialognewcomponent_xcls_title_unref0 (self->title);
-#line 27 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 27 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_xcls_dialognewcomponent_xcls_region_unref0 (self->region);
-#line 28 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 28 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_xcls_dialognewcomponent_xcls_parent_unref0 (self->parent);
-#line 29 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 29 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_xcls_dialognewcomponent_xcls_permname_unref0 (self->permname);
-#line 30 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 30 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_xcls_dialognewcomponent_xcls_modorder_unref0 (self->modOrder);
-#line 33 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 33 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_object_unref0 (self->file);
-#line 34 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 34 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	_g_object_unref0 (self->project);
 #line 6575 "DialogNewComponent.vala.c"
 }
@@ -6592,9 +6592,9 @@ GType xcls_dialognewcomponent_get_type (void) {
 gpointer xcls_dialognewcomponent_ref (gpointer instance) {
 	Xcls_DialogNewComponent* self;
 	self = instance;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	g_atomic_int_inc (&self->ref_count);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	return instance;
 #line 6600 "DialogNewComponent.vala.c"
 }
@@ -6603,11 +6603,11 @@ gpointer xcls_dialognewcomponent_ref (gpointer instance) {
 void xcls_dialognewcomponent_unref (gpointer instance) {
 	Xcls_DialogNewComponent* self;
 	self = instance;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		XCLS_DIALOGNEWCOMPONENT_GET_CLASS (self)->finalize (self);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/DialogNewComponent.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/DialogNewComponent.vala"
 		g_type_free_instance ((GTypeInstance *) self);
 #line 6613 "DialogNewComponent.vala.c"
 	}

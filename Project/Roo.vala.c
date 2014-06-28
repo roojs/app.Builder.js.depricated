@@ -90,43 +90,43 @@ ProjectRoo* project_roo_construct (GType object_type, const gchar* path) {
 	gchar* _tmp1_;
 	gint _tmp2_;
 	gchar* _tmp3_ = NULL;
-#line 9 "/home/alan/gitlive/app.Builder.js/Project/Roo.vala"
+#line 9 "/home/alan/gitlive/app.Builder/Project/Roo.vala"
 	g_return_val_if_fail (path != NULL, NULL);
-#line 12 "/home/alan/gitlive/app.Builder.js/Project/Roo.vala"
+#line 12 "/home/alan/gitlive/app.Builder/Project/Roo.vala"
 	_tmp0_ = path;
-#line 12 "/home/alan/gitlive/app.Builder.js/Project/Roo.vala"
+#line 12 "/home/alan/gitlive/app.Builder/Project/Roo.vala"
 	self = (ProjectRoo*) project_project_construct (object_type, _tmp0_);
-#line 13 "/home/alan/gitlive/app.Builder.js/Project/Roo.vala"
+#line 13 "/home/alan/gitlive/app.Builder/Project/Roo.vala"
 	_tmp1_ = g_strdup ("Roo");
-#line 13 "/home/alan/gitlive/app.Builder.js/Project/Roo.vala"
+#line 13 "/home/alan/gitlive/app.Builder/Project/Roo.vala"
 	_g_free0 (((ProjectProject*) self)->xtype);
-#line 13 "/home/alan/gitlive/app.Builder.js/Project/Roo.vala"
+#line 13 "/home/alan/gitlive/app.Builder/Project/Roo.vala"
 	((ProjectProject*) self)->xtype = _tmp1_;
-#line 15 "/home/alan/gitlive/app.Builder.js/Project/Roo.vala"
+#line 15 "/home/alan/gitlive/app.Builder/Project/Roo.vala"
 	_tmp2_ = rid;
-#line 15 "/home/alan/gitlive/app.Builder.js/Project/Roo.vala"
+#line 15 "/home/alan/gitlive/app.Builder/Project/Roo.vala"
 	rid = _tmp2_ + 1;
-#line 15 "/home/alan/gitlive/app.Builder.js/Project/Roo.vala"
+#line 15 "/home/alan/gitlive/app.Builder/Project/Roo.vala"
 	_tmp3_ = g_strdup_printf ("project-roo-%d", _tmp2_);
-#line 15 "/home/alan/gitlive/app.Builder.js/Project/Roo.vala"
+#line 15 "/home/alan/gitlive/app.Builder/Project/Roo.vala"
 	_g_free0 (((ProjectProject*) self)->id);
-#line 15 "/home/alan/gitlive/app.Builder.js/Project/Roo.vala"
+#line 15 "/home/alan/gitlive/app.Builder/Project/Roo.vala"
 	((ProjectProject*) self)->id = _tmp3_;
-#line 9 "/home/alan/gitlive/app.Builder.js/Project/Roo.vala"
+#line 9 "/home/alan/gitlive/app.Builder/Project/Roo.vala"
 	return self;
 #line 118 "Roo.vala.c"
 }
 
 
 ProjectRoo* project_roo_new (const gchar* path) {
-#line 9 "/home/alan/gitlive/app.Builder.js/Project/Roo.vala"
+#line 9 "/home/alan/gitlive/app.Builder/Project/Roo.vala"
 	return project_roo_construct (PROJECT_TYPE_ROO, path);
 #line 125 "Roo.vala.c"
 }
 
 
 static void project_roo_class_init (ProjectRooClass * klass) {
-#line 5 "/home/alan/gitlive/app.Builder.js/Project/Roo.vala"
+#line 5 "/home/alan/gitlive/app.Builder/Project/Roo.vala"
 	project_roo_parent_class = g_type_class_peek_parent (klass);
 #line 132 "Roo.vala.c"
 }

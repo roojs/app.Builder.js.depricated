@@ -469,91 +469,91 @@ void diff (const gchar* original, const gchar* data) {
 	gint _tmp11__length1;
 	gint _tmp12_ = 0;
 	GError * _inner_error_ = NULL;
-#line 8 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 8 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	g_return_if_fail (original != NULL);
-#line 8 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 8 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	g_return_if_fail (data != NULL);
-#line 11 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 11 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp0_ = data;
-#line 11 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 11 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	g_file_set_contents ("/tmp/test.out", _tmp0_, (gssize) (-1), &_inner_error_);
-#line 11 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 11 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	if (_inner_error_ != NULL) {
-#line 11 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 11 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 		g_critical ("file %s: line %d: uncaught error: %s (%s, %d)", __FILE__, __LINE__, _inner_error_->message, g_quark_to_string (_inner_error_->domain), _inner_error_->code);
-#line 11 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 11 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 		g_clear_error (&_inner_error_);
-#line 11 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 11 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 		return;
 #line 489 "Test.GtkWriter.vala.c"
 	}
-#line 12 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 12 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp1_ = g_strdup ("diff");
-#line 12 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 12 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp2_ = g_strdup ("-w");
-#line 12 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 12 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp3_ = g_strdup ("-u");
-#line 12 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 12 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp4_ = original;
-#line 12 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 12 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp5_ = g_strdup (_tmp4_);
-#line 12 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 12 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp6_ = g_strdup ("/tmp/test.out");
-#line 12 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 12 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp7_ = g_new0 (gchar*, 5 + 1);
-#line 12 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 12 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp7_[0] = _tmp1_;
-#line 12 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 12 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp7_[1] = _tmp2_;
-#line 12 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 12 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp7_[2] = _tmp3_;
-#line 12 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 12 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp7_[3] = _tmp5_;
-#line 12 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 12 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp7_[4] = _tmp6_;
-#line 12 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 12 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	spawn_args = _tmp7_;
-#line 12 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 12 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	spawn_args_length1 = 5;
-#line 12 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 12 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_spawn_args_size_ = spawn_args_length1;
-#line 15 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 15 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp9_ = _tmp8_ = g_get_environ ();
-#line 15 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 15 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	spawn_env = _tmp9_;
-#line 15 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 15 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	spawn_env_length1 = _vala_array_length (_tmp8_);
-#line 15 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 15 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_spawn_env_size_ = spawn_env_length1;
-#line 17 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 17 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp10_ = spawn_args;
-#line 17 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 17 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp10__length1 = spawn_args_length1;
-#line 17 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 17 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp11_ = spawn_env;
-#line 17 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 17 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp11__length1 = spawn_env_length1;
-#line 17 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 17 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	g_spawn_sync ("/", _tmp10_, _tmp11_, G_SPAWN_SEARCH_PATH, NULL, NULL, NULL, NULL, &_tmp12_, &_inner_error_);
-#line 17 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 17 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	ls_status = _tmp12_;
-#line 17 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 17 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	if (_inner_error_ != NULL) {
-#line 17 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 17 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 		spawn_env = (_vala_array_free (spawn_env, spawn_env_length1, (GDestroyNotify) g_free), NULL);
-#line 17 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 17 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 		spawn_args = (_vala_array_free (spawn_args, spawn_args_length1, (GDestroyNotify) g_free), NULL);
-#line 17 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 17 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 		g_critical ("file %s: line %d: uncaught error: %s (%s, %d)", __FILE__, __LINE__, _inner_error_->message, g_quark_to_string (_inner_error_->domain), _inner_error_->code);
-#line 17 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 17 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 		g_clear_error (&_inner_error_);
-#line 17 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 17 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 		return;
 #line 553 "Test.GtkWriter.vala.c"
 	}
-#line 8 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 8 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	spawn_env = (_vala_array_free (spawn_env, spawn_env_length1, (GDestroyNotify) g_free), NULL);
-#line 8 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 8 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	spawn_args = (_vala_array_free (spawn_args, spawn_args_length1, (GDestroyNotify) g_free), NULL);
 #line 559 "Test.GtkWriter.vala.c"
 }
@@ -582,95 +582,95 @@ void testBuilderFile (const gchar* ptype, const gchar* dir, const gchar* name, c
 	const gchar* _tmp17_;
 	const gchar* _tmp18_;
 	GQuark _tmp20_ = 0U;
-#line 38 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 38 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	static GQuark _tmp19_label0 = 0;
-#line 38 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 38 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	static GQuark _tmp19_label1 = 0;
-#line 38 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 38 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	static GQuark _tmp19_label2 = 0;
-#line 38 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 38 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	static GQuark _tmp19_label3 = 0;
 #line 594 "Test.GtkWriter.vala.c"
 	GError * _inner_error_ = NULL;
-#line 29 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 29 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	g_return_if_fail (ptype != NULL);
-#line 29 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 29 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	g_return_if_fail (dir != NULL);
-#line 29 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 29 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	g_return_if_fail (name != NULL);
-#line 29 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 29 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	g_return_if_fail (test != NULL);
-#line 32 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 32 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp0_ = ptype;
-#line 32 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 32 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp1_ = dir;
-#line 32 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 32 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp2_ = project_project_factory (_tmp0_, _tmp1_);
-#line 32 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 32 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	proj = _tmp2_;
-#line 33 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 33 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp3_ = proj;
-#line 33 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 33 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	project_project_scanDirs (_tmp3_);
-#line 36 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 36 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp4_ = proj;
-#line 36 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 36 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp5_ = _tmp4_->files;
-#line 36 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 36 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp6_ = dir;
-#line 36 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 36 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp7_ = g_strconcat (_tmp6_, "/", NULL);
-#line 36 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 36 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp8_ = _tmp7_;
-#line 36 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 36 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp9_ = name;
-#line 36 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 36 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp10_ = g_strconcat (_tmp8_, _tmp9_, NULL);
-#line 36 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 36 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp11_ = _tmp10_;
-#line 36 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 36 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp12_ = g_strconcat (_tmp11_, ".bjs", NULL);
-#line 36 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 36 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp13_ = _tmp12_;
-#line 36 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 36 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp14_ = gee_abstract_map_get ((GeeAbstractMap*) _tmp5_, _tmp13_);
-#line 36 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 36 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp15_ = (JsRenderJsRender*) _tmp14_;
-#line 36 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 36 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_g_free0 (_tmp13_);
-#line 36 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 36 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_g_free0 (_tmp11_);
-#line 36 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 36 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_g_free0 (_tmp8_);
-#line 36 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 36 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	tf = _tmp15_;
-#line 37 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 37 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp16_ = tf;
-#line 37 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 37 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	js_render_js_render_loadItems (_tmp16_, &_inner_error_);
-#line 37 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 37 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	if (_inner_error_ != NULL) {
-#line 37 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 37 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 		_g_object_unref0 (tf);
-#line 37 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 37 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 		_g_object_unref0 (proj);
-#line 37 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 37 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 		g_critical ("file %s: line %d: uncaught error: %s (%s, %d)", __FILE__, __LINE__, _inner_error_->message, g_quark_to_string (_inner_error_->domain), _inner_error_->code);
-#line 37 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 37 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 		g_clear_error (&_inner_error_);
-#line 37 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 37 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 		return;
 #line 664 "Test.GtkWriter.vala.c"
 	}
-#line 38 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 38 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp17_ = test;
-#line 38 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 38 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp18_ = _tmp17_;
-#line 38 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 38 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp20_ = (NULL == _tmp18_) ? 0 : g_quark_from_string (_tmp18_);
-#line 38 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 38 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	if (_tmp20_ == ((0 != _tmp19_label0) ? _tmp19_label0 : (_tmp19_label0 = g_quark_from_static_string ("JSON")))) {
-#line 38 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 38 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 		switch (0) {
 #line 676 "Test.GtkWriter.vala.c"
 			default:
@@ -686,49 +686,49 @@ void testBuilderFile (const gchar* ptype, const gchar* dir, const gchar* name, c
 				JsRenderJsRender* _tmp29_;
 				gchar* _tmp30_ = NULL;
 				gchar* _tmp31_;
-#line 40 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 40 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_tmp21_ = dir;
-#line 40 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 40 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_tmp22_ = g_strconcat (_tmp21_, "/", NULL);
-#line 40 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 40 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_tmp23_ = _tmp22_;
-#line 40 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 40 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_tmp24_ = name;
-#line 40 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 40 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_tmp25_ = g_strconcat (_tmp23_, _tmp24_, NULL);
-#line 40 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 40 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_tmp26_ = _tmp25_;
-#line 40 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 40 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_tmp27_ = g_strconcat (_tmp26_, ".bjs", NULL);
-#line 40 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 40 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_tmp28_ = _tmp27_;
-#line 40 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 40 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_tmp29_ = tf;
-#line 40 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 40 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_tmp30_ = js_render_js_render_toJsonString (_tmp29_);
-#line 40 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 40 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_tmp31_ = _tmp30_;
-#line 40 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 40 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				diff (_tmp28_, _tmp31_);
-#line 40 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 40 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_g_free0 (_tmp31_);
-#line 40 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 40 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_g_free0 (_tmp28_);
-#line 40 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 40 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_g_free0 (_tmp26_);
-#line 40 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 40 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_g_free0 (_tmp23_);
-#line 41 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 41 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_g_object_unref0 (tf);
-#line 41 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 41 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_g_object_unref0 (proj);
-#line 41 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 41 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				return;
 #line 728 "Test.GtkWriter.vala.c"
 			}
 		}
 	} else if (_tmp20_ == ((0 != _tmp19_label1) ? _tmp19_label1 : (_tmp19_label1 = g_quark_from_static_string ("JS")))) {
-#line 38 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 38 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 		switch (0) {
 #line 734 "Test.GtkWriter.vala.c"
 			default:
@@ -744,49 +744,49 @@ void testBuilderFile (const gchar* ptype, const gchar* dir, const gchar* name, c
 				JsRenderJsRender* _tmp40_;
 				gchar* _tmp41_ = NULL;
 				gchar* _tmp42_;
-#line 43 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 43 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_tmp32_ = dir;
-#line 43 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 43 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_tmp33_ = g_strconcat (_tmp32_, "/", NULL);
-#line 43 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 43 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_tmp34_ = _tmp33_;
-#line 43 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 43 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_tmp35_ = name;
-#line 43 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 43 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_tmp36_ = g_strconcat (_tmp34_, _tmp35_, NULL);
-#line 43 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 43 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_tmp37_ = _tmp36_;
-#line 43 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 43 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_tmp38_ = g_strconcat (_tmp37_, ".js", NULL);
-#line 43 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 43 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_tmp39_ = _tmp38_;
-#line 43 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 43 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_tmp40_ = tf;
-#line 43 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 43 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_tmp41_ = js_render_js_render_toSource (_tmp40_);
-#line 43 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 43 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_tmp42_ = _tmp41_;
-#line 43 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 43 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				diff (_tmp39_, _tmp42_);
-#line 43 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 43 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_g_free0 (_tmp42_);
-#line 43 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 43 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_g_free0 (_tmp39_);
-#line 43 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 43 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_g_free0 (_tmp37_);
-#line 43 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 43 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_g_free0 (_tmp34_);
-#line 44 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 44 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_g_object_unref0 (tf);
-#line 44 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 44 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_g_object_unref0 (proj);
-#line 44 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 44 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				return;
 #line 786 "Test.GtkWriter.vala.c"
 			}
 		}
 	} else if (_tmp20_ == ((0 != _tmp19_label2) ? _tmp19_label2 : (_tmp19_label2 = g_quark_from_static_string ("VALA")))) {
-#line 38 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 38 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 		switch (0) {
 #line 792 "Test.GtkWriter.vala.c"
 			default:
@@ -802,49 +802,49 @@ void testBuilderFile (const gchar* ptype, const gchar* dir, const gchar* name, c
 				JsRenderJsRender* _tmp51_;
 				gchar* _tmp52_ = NULL;
 				gchar* _tmp53_;
-#line 46 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 46 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_tmp43_ = dir;
-#line 46 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 46 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_tmp44_ = g_strconcat (_tmp43_, "/", NULL);
-#line 46 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 46 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_tmp45_ = _tmp44_;
-#line 46 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 46 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_tmp46_ = name;
-#line 46 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 46 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_tmp47_ = g_strconcat (_tmp45_, _tmp46_, NULL);
-#line 46 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 46 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_tmp48_ = _tmp47_;
-#line 46 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 46 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_tmp49_ = g_strconcat (_tmp48_, ".vala", NULL);
-#line 46 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 46 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_tmp50_ = _tmp49_;
-#line 46 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 46 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_tmp51_ = tf;
-#line 46 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 46 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_tmp52_ = js_render_js_render_toValaSource (_tmp51_, FALSE);
-#line 46 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 46 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_tmp53_ = _tmp52_;
-#line 46 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 46 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				diff (_tmp50_, _tmp53_);
-#line 46 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 46 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_g_free0 (_tmp53_);
-#line 46 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 46 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_g_free0 (_tmp50_);
-#line 46 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 46 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_g_free0 (_tmp48_);
-#line 46 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 46 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_g_free0 (_tmp45_);
-#line 47 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 47 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_g_object_unref0 (tf);
-#line 47 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 47 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_g_object_unref0 (proj);
-#line 47 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 47 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				return;
 #line 844 "Test.GtkWriter.vala.c"
 			}
 		}
 	} else if (_tmp20_ == ((0 != _tmp19_label3) ? _tmp19_label3 : (_tmp19_label3 = g_quark_from_static_string ("PREVIEW")))) {
-#line 38 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 38 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 		switch (0) {
 #line 850 "Test.GtkWriter.vala.c"
 			default:
@@ -852,33 +852,33 @@ void testBuilderFile (const gchar* ptype, const gchar* dir, const gchar* name, c
 				JsRenderJsRender* _tmp54_;
 				gchar* _tmp55_ = NULL;
 				gchar* _tmp56_;
-#line 49 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 49 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				g_print ("Calling to sourcepreview");
-#line 50 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 50 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_tmp54_ = tf;
-#line 50 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 50 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_tmp55_ = js_render_js_render_toSourcePreview (_tmp54_);
-#line 50 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 50 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_tmp56_ = _tmp55_;
-#line 50 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 50 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				g_print ("%s", _tmp56_);
-#line 50 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 50 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_g_free0 (_tmp56_);
-#line 51 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 51 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_g_object_unref0 (tf);
-#line 51 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 51 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				_g_object_unref0 (proj);
-#line 51 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 51 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 				return;
 #line 874 "Test.GtkWriter.vala.c"
 			}
 		}
 	}
-#line 53 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 53 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	g_print ("invalid test?\n");
-#line 29 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 29 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_g_object_unref0 (tf);
-#line 29 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 29 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_g_object_unref0 (proj);
 #line 884 "Test.GtkWriter.vala.c"
 }
@@ -914,105 +914,105 @@ void testLeftTree (const gchar* name) {
 	Xcls_WindowLeftTree* _tmp21_;
 	Xcls_WindowLeftTreeXcls_model* _tmp22_;
 	GError * _inner_error_ = NULL;
-#line 57 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 57 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	g_return_if_fail (name != NULL);
-#line 59 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 59 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp0_ = g_strdup ("/home/alan/gitlive/app.Builder.js/Builder4");
-#line 59 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 59 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	dir = _tmp0_;
-#line 60 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 60 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp1_ = project_gtk_new (dir);
-#line 60 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 60 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	proj = _tmp1_;
-#line 61 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 61 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	project_project_scanDirs ((ProjectProject*) proj);
-#line 63 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 63 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp2_ = ((ProjectProject*) proj)->files;
-#line 63 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 63 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp3_ = g_strconcat (dir, "/", NULL);
-#line 63 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 63 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp4_ = _tmp3_;
-#line 63 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 63 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp5_ = name;
-#line 63 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 63 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp6_ = g_strconcat (_tmp4_, _tmp5_, NULL);
-#line 63 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 63 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp7_ = _tmp6_;
-#line 63 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 63 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp8_ = g_strconcat (_tmp7_, ".bjs", NULL);
-#line 63 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 63 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp9_ = _tmp8_;
-#line 63 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 63 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp10_ = gee_abstract_map_get ((GeeAbstractMap*) _tmp2_, _tmp9_);
-#line 63 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 63 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp11_ = (JsRenderJsRender*) _tmp10_;
-#line 63 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 63 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_g_free0 (_tmp9_);
-#line 63 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 63 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_g_free0 (_tmp7_);
-#line 63 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 63 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_g_free0 (_tmp4_);
-#line 63 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 63 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	tf = _tmp11_;
-#line 64 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 64 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	js_render_js_render_loadItems (tf, &_inner_error_);
-#line 64 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 64 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	if (_inner_error_ != NULL) {
-#line 64 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 64 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 		_g_object_unref0 (tf);
-#line 64 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 64 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 		_g_object_unref0 (proj);
-#line 64 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 64 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 		_g_free0 (dir);
-#line 64 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 64 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 		g_critical ("file %s: line %d: uncaught error: %s (%s, %d)", __FILE__, __LINE__, _inner_error_->message, g_quark_to_string (_inner_error_->domain), _inner_error_->code);
-#line 64 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 64 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 		g_clear_error (&_inner_error_);
-#line 64 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 64 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 		return;
 #line 974 "Test.GtkWriter.vala.c"
 	}
-#line 65 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 65 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp12_ = xcls_mainwindow_new ();
-#line 65 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 65 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	w = _tmp12_;
-#line 67 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 67 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp13_ = xcls_windowlefttree_new ();
-#line 67 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 67 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	left_tree = _tmp13_;
-#line 69 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 69 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp14_ = w;
-#line 69 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 69 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp15_ = _tmp14_->vbox;
-#line 69 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 69 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp16_ = _tmp15_->el;
-#line 69 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 69 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp17_ = left_tree;
-#line 69 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 69 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp18_ = _tmp17_->el;
-#line 69 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 69 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	gtk_box_pack_start ((GtkBox*) _tmp16_, (GtkWidget*) _tmp18_, TRUE, TRUE, (guint) 0);
-#line 70 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 70 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp19_ = w;
-#line 70 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 70 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp20_ = _tmp19_->el;
-#line 70 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 70 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	gtk_widget_show_all ((GtkWidget*) _tmp20_);
-#line 72 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 72 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp21_ = left_tree;
-#line 72 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 72 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp22_ = _tmp21_->model;
-#line 72 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 72 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	xcls_windowlefttree_xcls_model_loadFile (_tmp22_, tf);
-#line 57 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 57 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_g_object_unref0 (left_tree);
-#line 57 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 57 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_g_object_unref0 (w);
-#line 57 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 57 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_g_object_unref0 (tf);
-#line 57 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 57 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_g_object_unref0 (proj);
-#line 57 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 57 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_g_free0 (dir);
 #line 1018 "Test.GtkWriter.vala.c"
 }
@@ -1037,80 +1037,80 @@ void rooWindowTest (const gchar* name) {
 	GtkWindow* _tmp11_;
 	Xcls_WindowRooView* _tmp12_;
 	GError * _inner_error_ = NULL;
-#line 76 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 76 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	g_return_if_fail (name != NULL);
-#line 79 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 79 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp0_ = project_project_getProject ("Pman.Core");
-#line 79 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 79 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	proj = _tmp0_;
-#line 81 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 81 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	project_project_scanDirs (proj);
-#line 83 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp1_ = name;
-#line 83 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp2_ = project_project_getByName (proj, _tmp1_);
-#line 83 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	tf = _tmp2_;
-#line 84 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 84 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	js_render_js_render_loadItems (tf, &_inner_error_);
-#line 84 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 84 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	if (_inner_error_ != NULL) {
-#line 84 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 84 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 		_g_object_unref0 (tf);
-#line 84 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 84 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 		_g_object_unref0 (proj);
-#line 84 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 84 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 		g_critical ("file %s: line %d: uncaught error: %s (%s, %d)", __FILE__, __LINE__, _inner_error_->message, g_quark_to_string (_inner_error_->domain), _inner_error_->code);
-#line 84 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 84 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 		g_clear_error (&_inner_error_);
-#line 84 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 84 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 		return;
 #line 1069 "Test.GtkWriter.vala.c"
 	}
-#line 86 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 86 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp3_ = xcls_mainwindow_new ();
-#line 86 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 86 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	w = _tmp3_;
-#line 88 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 88 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp4_ = xcls_windowrooview_new ();
-#line 88 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 88 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	rv = _tmp4_;
-#line 90 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 90 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp5_ = w;
-#line 90 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 90 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp6_ = _tmp5_->vbox;
-#line 90 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 90 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp7_ = _tmp6_->el;
-#line 90 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 90 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp8_ = rv;
-#line 90 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 90 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp9_ = _tmp8_->el;
-#line 90 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 90 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	gtk_box_pack_start ((GtkBox*) _tmp7_, (GtkWidget*) _tmp9_, TRUE, TRUE, (guint) 0);
-#line 91 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 91 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp10_ = w;
-#line 91 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 91 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp11_ = _tmp10_->el;
-#line 91 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 91 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	gtk_widget_show_all ((GtkWidget*) _tmp11_);
-#line 93 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 93 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp12_ = rv;
-#line 93 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 93 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	xcls_windowrooview_loadFile (_tmp12_, tf);
-#line 76 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 76 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_g_object_unref0 (rv);
-#line 76 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 76 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_g_object_unref0 (w);
-#line 76 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 76 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_g_object_unref0 (tf);
-#line 76 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 76 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_g_object_unref0 (proj);
 #line 1109 "Test.GtkWriter.vala.c"
 }
 
 
 static gpointer _g_object_ref0 (gpointer self) {
-#line 106 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 106 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	return self ? g_object_ref (self) : NULL;
 #line 1116 "Test.GtkWriter.vala.c"
 }
@@ -1123,33 +1123,33 @@ void rooWindowClutter (void) {
 	Xcls_MainWindow* w;
 	ProjectProject* _tmp2_;
 	GtkWindow* _tmp3_;
-#line 99 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 99 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp0_ = project_project_getProject ("Pman.Core");
-#line 99 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 99 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	proj = _tmp0_;
-#line 101 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 101 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	project_project_scanDirs (proj);
-#line 104 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 104 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp1_ = xcls_mainwindow_new ();
-#line 104 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 104 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	w = _tmp1_;
-#line 105 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 105 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	g_object_ref ((GObject*) w);
-#line 106 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 106 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp2_ = _g_object_ref0 (proj);
-#line 106 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 106 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_g_object_unref0 (w->project);
-#line 106 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 106 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	w->project = _tmp2_;
-#line 109 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 109 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	xcls_mainwindow_initChildren (w);
-#line 110 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 110 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp3_ = w->el;
-#line 110 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 110 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	gtk_widget_show_all ((GtkWidget*) _tmp3_);
-#line 97 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 97 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_g_object_unref0 (w);
-#line 97 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 97 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_g_object_unref0 (proj);
 #line 1155 "Test.GtkWriter.vala.c"
 }
@@ -1159,36 +1159,36 @@ gint _vala_main (gchar** args, int args_length1) {
 	gint result = 0;
 	JsRenderLang_Class* _tmp0_;
 	JsRenderLang_Class* _tmp1_;
-#line 115 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 115 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	gtk_init (&args_length1, &args);
-#line 116 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 116 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	gtk_clutter_init (&args_length1, &args);
-#line 117 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 117 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp0_ = js_render_langclass_new ();
-#line 117 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 117 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_tmp1_ = _tmp0_;
-#line 117 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 117 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	_g_object_unref0 (_tmp1_);
-#line 118 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 118 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	g_log_set_always_fatal (G_LOG_LEVEL_ERROR | G_LOG_LEVEL_CRITICAL);
-#line 119 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 119 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	project_project_loadAll (FALSE);
-#line 133 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 133 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	rooWindowClutter ();
-#line 133 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 133 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	gtk_main ();
-#line 136 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 136 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	result = 0;
-#line 136 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 136 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	return result;
 #line 1185 "Test.GtkWriter.vala.c"
 }
 
 
 int main (int argc, char ** argv) {
-#line 114 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 114 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	g_type_init ();
-#line 114 "/home/alan/gitlive/app.Builder.js/Test.GtkWriter.vala"
+#line 114 "/home/alan/gitlive/app.Builder/Test.GtkWriter.vala"
 	return _vala_main (argv, argc);
 #line 1194 "Test.GtkWriter.vala.c"
 }

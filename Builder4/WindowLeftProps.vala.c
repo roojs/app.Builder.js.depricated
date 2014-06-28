@@ -1368,7 +1368,7 @@ static void xcls_leftprops_finalize (GObject* obj);
 
 
 static gpointer _g_object_ref0 (gpointer self) {
-#line 45 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 45 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return self ? g_object_ref (self) : NULL;
 #line 1374 "WindowLeftProps.vala.c"
 }
@@ -1389,77 +1389,77 @@ Xcls_LeftProps* xcls_leftprops_construct (GType object_type) {
 	Xcls_LeftPropsXcls_EditProps* child_1;
 	GtkVBox* _tmp9_;
 	GtkScrolledWindow* _tmp10_;
-#line 43 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 43 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = (Xcls_LeftProps*) g_object_new (object_type, NULL);
-#line 45 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 45 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = _g_object_ref0 (self);
-#line 45 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 45 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 45 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 45 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv->_this = _tmp0_;
-#line 46 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 46 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _g_object_ref0 (self);
-#line 46 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 46 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (WindowLeftProps);
-#line 46 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 46 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	WindowLeftProps = _tmp1_;
-#line 47 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 47 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = (GtkVBox*) gtk_vbox_new (FALSE, 0);
-#line 47 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 47 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref_sink (_tmp2_);
-#line 47 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 47 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 47 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 47 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->el = _tmp2_;
-#line 52 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 52 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp3_ = self->priv->_this;
-#line 52 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 52 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp4_ = xcls_leftprops_xcls_hbox2_new (_tmp3_);
-#line 52 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 52 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	child_0 = _tmp4_;
-#line 53 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 53 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref ((GObject*) child_0);
-#line 54 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 54 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp5_ = self->el;
-#line 54 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 54 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp6_ = child_0->el;
-#line 54 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 54 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_box_pack_start ((GtkBox*) _tmp5_, (GtkWidget*) _tmp6_, FALSE, TRUE, (guint) 0);
-#line 55 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 55 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp7_ = self->priv->_this;
-#line 55 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 55 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp8_ = xcls_leftprops_xcls_editprops_new (_tmp7_);
-#line 55 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 55 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	child_1 = _tmp8_;
-#line 56 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 56 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref ((GObject*) child_1);
-#line 57 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 57 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp9_ = self->el;
-#line 57 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 57 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp10_ = child_1->el;
-#line 57 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 57 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_box_pack_end ((GtkBox*) _tmp9_, (GtkWidget*) _tmp10_, TRUE, TRUE, (guint) 0);
-#line 43 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 43 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (child_1);
-#line 43 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 43 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (child_0);
-#line 43 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 43 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return self;
 #line 1449 "WindowLeftProps.vala.c"
 }
 
 
 Xcls_LeftProps* xcls_leftprops_new (void) {
-#line 43 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 43 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return xcls_leftprops_construct (TYPE_XCLS_LEFTPROPS);
 #line 1456 "WindowLeftProps.vala.c"
 }
 
 
 static Block2Data* block2_data_ref (Block2Data* _data2_) {
-#line 77 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_atomic_int_inc (&_data2_->_ref_count_);
-#line 77 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return _data2_;
 #line 1465 "WindowLeftProps.vala.c"
 }
@@ -1468,21 +1468,21 @@ static Block2Data* block2_data_ref (Block2Data* _data2_) {
 static void block2_data_unref (void * _userdata_) {
 	Block2Data* _data2_;
 	_data2_ = (Block2Data*) _userdata_;
-#line 77 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	if (g_atomic_int_dec_and_test (&_data2_->_ref_count_)) {
 #line 1474 "WindowLeftProps.vala.c"
 		Xcls_LeftProps * self;
-#line 77 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		self = _data2_->self;
-#line 77 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_g_object_unref0 (_data2_->s);
-#line 77 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_g_free0 (_data2_->type);
-#line 77 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_g_free0 (_data2_->key);
-#line 77 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_g_object_unref0 (self);
-#line 77 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		g_slice_free (Block2Data, _data2_);
 #line 1488 "WindowLeftProps.vala.c"
 	}
@@ -1507,77 +1507,77 @@ static gboolean __lambda26_ (Block2Data* _data2_, GtkTreeModel* model, GtkTreePa
 	const gchar* _tmp11_;
 	GtkTreeSelection* _tmp12_;
 	GtkTreeIter _tmp13_;
-#line 111 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 111 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = _data2_->self;
-#line 111 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 111 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (model != NULL, FALSE);
-#line 111 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 111 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (path != NULL, FALSE);
-#line 111 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 111 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (iter != NULL, FALSE);
-#line 114 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 114 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = self->model;
-#line 114 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 114 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _tmp0_->el;
-#line 114 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 114 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = *iter;
-#line 114 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 114 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_tree_model_get_value ((GtkTreeModel*) _tmp1_, &_tmp2_, 0, &_tmp3_);
-#line 114 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 114 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_IS_VALUE (&gval) ? (g_value_unset (&gval), NULL) : NULL;
-#line 114 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 114 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gval = _tmp3_;
-#line 115 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 115 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp4_ = gval;
-#line 115 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 115 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp5_ = _data2_->type;
-#line 115 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 115 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	if (g_strcmp0 (g_value_get_string (&_tmp4_), _tmp5_) != 0) {
-#line 116 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 116 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		result = FALSE;
-#line 116 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 116 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		G_IS_VALUE (&gval) ? (g_value_unset (&gval), NULL) : NULL;
-#line 116 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 116 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		return result;
 #line 1543 "WindowLeftProps.vala.c"
 	}
-#line 118 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 118 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp6_ = self->model;
-#line 118 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 118 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp7_ = _tmp6_->el;
-#line 118 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 118 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp8_ = *iter;
-#line 118 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 118 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_tree_model_get_value ((GtkTreeModel*) _tmp7_, &_tmp8_, 1, &_tmp9_);
-#line 118 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 118 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_IS_VALUE (&gval) ? (g_value_unset (&gval), NULL) : NULL;
-#line 118 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 118 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gval = _tmp9_;
-#line 119 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 119 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp10_ = gval;
-#line 119 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 119 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp11_ = _data2_->key;
-#line 119 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 119 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	if (g_strcmp0 (g_value_get_string (&_tmp10_), _tmp11_) != 0) {
-#line 120 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 120 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		result = FALSE;
-#line 120 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 120 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		G_IS_VALUE (&gval) ? (g_value_unset (&gval), NULL) : NULL;
-#line 120 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 120 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		return result;
 #line 1569 "WindowLeftProps.vala.c"
 	}
-#line 122 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 122 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp12_ = _data2_->s;
-#line 122 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 122 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp13_ = *iter;
-#line 122 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 122 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_tree_selection_select_iter (_tmp12_, &_tmp13_);
-#line 123 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 123 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	result = TRUE;
-#line 123 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 123 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_IS_VALUE (&gval) ? (g_value_unset (&gval), NULL) : NULL;
-#line 123 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 123 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return result;
 #line 1583 "WindowLeftProps.vala.c"
 }
@@ -1586,7 +1586,7 @@ static gboolean __lambda26_ (Block2Data* _data2_, GtkTreeModel* model, GtkTreePa
 static gboolean ___lambda26__gtk_tree_model_foreach_func (GtkTreeModel* model, GtkTreePath* path, GtkTreeIter* iter, gpointer self) {
 	gboolean result;
 	result = __lambda26_ (self, model, path, iter);
-#line 111 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 111 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return result;
 #line 1592 "WindowLeftProps.vala.c"
 }
@@ -1608,39 +1608,39 @@ void xcls_leftprops_addProp (Xcls_LeftProps* self, const gchar* type, const gcha
 	GtkTreeSelection* _tmp27_;
 	Xcls_LeftPropsXcls_model* _tmp28_;
 	GtkTreeStore* _tmp29_;
-#line 77 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_if_fail (self != NULL);
-#line 77 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_if_fail (type != NULL);
-#line 77 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_if_fail (key != NULL);
-#line 77 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_if_fail (value != NULL);
-#line 77 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_data2_ = g_slice_new0 (Block2Data);
-#line 77 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_data2_->_ref_count_ = 1;
-#line 77 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_data2_->self = g_object_ref (self);
-#line 77 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = type;
-#line 77 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = g_strdup (_tmp0_);
-#line 77 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_free0 (_data2_->type);
-#line 77 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_data2_->type = _tmp1_;
-#line 77 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = key;
-#line 77 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp3_ = g_strdup (_tmp2_);
-#line 77 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_free0 (_data2_->key);
-#line 77 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_data2_->key = _tmp3_;
-#line 85 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 85 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp4_ = _data2_->type;
-#line 85 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 85 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	if (g_strcmp0 (_tmp4_, "listener") == 0) {
 #line 1646 "WindowLeftProps.vala.c"
 		JsRenderNode* _tmp5_;
@@ -1651,33 +1651,33 @@ void xcls_leftprops_addProp (Xcls_LeftProps* self, const gchar* type, const gcha
 		GeeHashMap* _tmp10_;
 		const gchar* _tmp11_;
 		const gchar* _tmp12_;
-#line 86 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 86 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp5_ = self->node;
-#line 86 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 86 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp6_ = _tmp5_->listeners;
-#line 86 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 86 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp7_ = _data2_->key;
-#line 86 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 86 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp8_ = gee_abstract_map_has_key ((GeeAbstractMap*) _tmp6_, _tmp7_);
-#line 86 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 86 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		if (_tmp8_) {
-#line 87 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 87 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 			block2_data_unref (_data2_);
-#line 87 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 87 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 			_data2_ = NULL;
-#line 87 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 87 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 			return;
 #line 1671 "WindowLeftProps.vala.c"
 		}
-#line 89 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 89 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp9_ = self->node;
-#line 89 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 89 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp10_ = _tmp9_->listeners;
-#line 89 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 89 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp11_ = _data2_->key;
-#line 89 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 89 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp12_ = value;
-#line 89 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 89 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		gee_abstract_map_set ((GeeAbstractMap*) _tmp10_, _tmp11_, _tmp12_);
 #line 1683 "WindowLeftProps.vala.c"
 	} else {
@@ -1689,67 +1689,67 @@ void xcls_leftprops_addProp (Xcls_LeftProps* self, const gchar* type, const gcha
 		GeeHashMap* _tmp18_;
 		const gchar* _tmp19_;
 		const gchar* _tmp20_;
-#line 92 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 92 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp13_ = self->node;
-#line 92 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 92 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp14_ = _tmp13_->props;
-#line 92 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 92 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp15_ = _data2_->key;
-#line 92 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 92 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp16_ = gee_abstract_map_has_key ((GeeAbstractMap*) _tmp14_, _tmp15_);
-#line 92 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 92 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		if (_tmp16_) {
-#line 93 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 93 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 			block2_data_unref (_data2_);
-#line 93 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 93 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 			_data2_ = NULL;
-#line 93 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 93 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 			return;
 #line 1709 "WindowLeftProps.vala.c"
 		}
-#line 95 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 95 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp17_ = self->node;
-#line 95 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 95 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp18_ = _tmp17_->props;
-#line 95 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 95 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp19_ = _data2_->key;
-#line 95 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 95 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp20_ = value;
-#line 95 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 95 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		gee_abstract_map_set ((GeeAbstractMap*) _tmp18_, _tmp19_, _tmp20_);
 #line 1721 "WindowLeftProps.vala.c"
 	}
-#line 100 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 100 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp21_ = self->file;
-#line 100 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 100 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp22_ = self->node;
-#line 100 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 100 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_load (self, _tmp21_, _tmp22_);
-#line 107 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 107 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp23_ = self->view;
-#line 107 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 107 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp24_ = _tmp23_->el;
-#line 107 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 107 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp25_ = gtk_tree_view_get_selection (_tmp24_);
-#line 107 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 107 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp26_ = _g_object_ref0 (_tmp25_);
-#line 107 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 107 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_data2_->s = _tmp26_;
-#line 108 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 108 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp27_ = _data2_->s;
-#line 108 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 108 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_tree_selection_unselect_all (_tmp27_);
-#line 111 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 111 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp28_ = self->model;
-#line 111 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 111 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp29_ = _tmp28_->el;
-#line 111 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 111 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_tree_model_foreach ((GtkTreeModel*) _tmp29_, ___lambda26__gtk_tree_model_foreach_func, _data2_);
-#line 127 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 127 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_startEditingValue (self);
-#line 77 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	block2_data_unref (_data2_);
-#line 77 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_data2_ = NULL;
 #line 1755 "WindowLeftProps.vala.c"
 }
@@ -1762,23 +1762,23 @@ void xcls_leftprops_before_edit (Xcls_LeftProps* self) {
 	Xcls_LeftProps* _tmp3_;
 	Xcls_LeftPropsXcls_valrender* _tmp4_;
 	GtkCellRendererCombo* _tmp5_;
-#line 130 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 130 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_if_fail (self != NULL);
-#line 132 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 132 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = self->priv->_this;
-#line 132 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 132 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _tmp0_->keyrender;
-#line 132 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 132 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = _tmp1_->el;
-#line 132 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 132 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_cell_renderer_stop_editing ((GtkCellRenderer*) _tmp2_, FALSE);
-#line 133 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 133 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp3_ = self->priv->_this;
-#line 133 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 133 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp4_ = _tmp3_->valrender;
-#line 133 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 133 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp5_ = _tmp4_->el;
-#line 133 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 133 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_cell_renderer_stop_editing ((GtkCellRenderer*) _tmp5_, FALSE);
 #line 1784 "WindowLeftProps.vala.c"
 }
@@ -1812,79 +1812,79 @@ void xcls_leftprops_deleteSelected (Xcls_LeftProps* self) {
 	const gchar* _tmp18_;
 	const gchar* _tmp19_;
 	GQuark _tmp21_ = 0U;
-#line 153 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 153 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	static GQuark _tmp20_label0 = 0;
-#line 153 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 153 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	static GQuark _tmp20_label1 = 0;
 #line 1820 "WindowLeftProps.vala.c"
 	JsRenderJsRender* _tmp28_;
 	JsRenderNode* _tmp29_;
 	Xcls_LeftProps* _tmp30_;
-#line 137 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 137 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_if_fail (self != NULL);
-#line 142 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 142 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = self->view;
-#line 142 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 142 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _tmp0_->el;
-#line 142 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 142 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = gtk_tree_view_get_selection (_tmp1_);
-#line 142 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 142 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp3_ = _g_object_ref0 (_tmp2_);
-#line 142 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 142 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	s = _tmp3_;
-#line 143 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 143 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp4_ = s;
-#line 143 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 143 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_tree_selection_get_selected (_tmp4_, &_tmp5_, &_tmp6_);
-#line 143 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 143 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (mod);
-#line 143 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 143 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp7_ = _g_object_ref0 (_tmp5_);
-#line 143 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 143 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	mod = _tmp7_;
-#line 143 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 143 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	iter = _tmp6_;
-#line 147 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 147 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp8_ = mod;
-#line 147 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 147 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp9_ = iter;
-#line 147 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 147 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_tree_model_get_value (_tmp8_, &_tmp9_, 0, &_tmp10_);
-#line 147 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 147 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_IS_VALUE (&gval) ? (g_value_unset (&gval), NULL) : NULL;
-#line 147 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 147 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gval = _tmp10_;
-#line 148 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 148 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp11_ = gval;
-#line 148 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 148 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp12_ = g_strdup (g_value_get_string (&_tmp11_));
-#line 148 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 148 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	type = _tmp12_;
-#line 150 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 150 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp13_ = mod;
-#line 150 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 150 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp14_ = iter;
-#line 150 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 150 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_tree_model_get_value (_tmp13_, &_tmp14_, 1, &_tmp15_);
-#line 150 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 150 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_IS_VALUE (&gval) ? (g_value_unset (&gval), NULL) : NULL;
-#line 150 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 150 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gval = _tmp15_;
-#line 151 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 151 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp16_ = gval;
-#line 151 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 151 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp17_ = g_strdup (g_value_get_string (&_tmp16_));
-#line 151 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 151 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	key = _tmp17_;
-#line 153 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 153 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp18_ = type;
-#line 153 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 153 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp19_ = _tmp18_;
-#line 153 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 153 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp21_ = (NULL == _tmp19_) ? 0 : g_quark_from_string (_tmp19_);
-#line 153 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 153 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	if (_tmp21_ == ((0 != _tmp20_label0) ? _tmp20_label0 : (_tmp20_label0 = g_quark_from_static_string ("listener")))) {
-#line 153 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 153 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		switch (0) {
 #line 1890 "WindowLeftProps.vala.c"
 			default:
@@ -1892,21 +1892,21 @@ void xcls_leftprops_deleteSelected (Xcls_LeftProps* self) {
 				JsRenderNode* _tmp22_;
 				GeeHashMap* _tmp23_;
 				const gchar* _tmp24_;
-#line 155 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 155 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp22_ = self->node;
-#line 155 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 155 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp23_ = _tmp22_->listeners;
-#line 155 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 155 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp24_ = key;
-#line 155 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 155 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				gee_map_remove ((GeeMap*) _tmp23_, _tmp24_, NULL);
-#line 156 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 156 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				break;
 #line 1906 "WindowLeftProps.vala.c"
 			}
 		}
 	} else if (_tmp21_ == ((0 != _tmp20_label1) ? _tmp20_label1 : (_tmp20_label1 = g_quark_from_static_string ("prop")))) {
-#line 153 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 153 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		switch (0) {
 #line 1912 "WindowLeftProps.vala.c"
 			default:
@@ -1914,39 +1914,39 @@ void xcls_leftprops_deleteSelected (Xcls_LeftProps* self) {
 				JsRenderNode* _tmp25_;
 				GeeHashMap* _tmp26_;
 				const gchar* _tmp27_;
-#line 159 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 159 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp25_ = self->node;
-#line 159 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 159 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp26_ = _tmp25_->props;
-#line 159 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 159 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp27_ = key;
-#line 159 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 159 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				gee_map_remove ((GeeMap*) _tmp26_, _tmp27_, NULL);
-#line 160 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 160 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				break;
 #line 1928 "WindowLeftProps.vala.c"
 			}
 		}
 	}
-#line 162 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 162 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp28_ = self->file;
-#line 162 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 162 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp29_ = self->node;
-#line 162 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 162 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_load (self, _tmp28_, _tmp29_);
-#line 164 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 164 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp30_ = self->priv->_this;
-#line 164 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 164 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_signal_emit_by_name (_tmp30_, "changed");
-#line 137 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 137 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_free0 (key);
-#line 137 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 137 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_free0 (type);
-#line 137 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 137 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_IS_VALUE (&gval) ? (g_value_unset (&gval), NULL) : NULL;
-#line 137 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 137 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (s);
-#line 137 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 137 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (mod);
 #line 1952 "WindowLeftProps.vala.c"
 }
@@ -1972,59 +1972,59 @@ void xcls_leftprops_load (Xcls_LeftProps* self, JsRenderJsRender* file, JsRender
 	JsRenderNode* _tmp32_;
 	GeeHashMap* _tmp33_;
 	GeeMapIterator* _tmp34_ = NULL;
-#line 166 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 166 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_if_fail (self != NULL);
-#line 166 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 166 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_if_fail (file != NULL);
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_before_edit (self);
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = node;
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->node);
-#line 170 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->node = _tmp1_;
-#line 171 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 171 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = file;
-#line 171 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 171 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp3_ = _g_object_ref0 (_tmp2_);
-#line 171 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 171 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->file);
-#line 171 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 171 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->file = _tmp3_;
-#line 174 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 174 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp4_ = self->model;
-#line 174 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 174 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp5_ = _tmp4_->el;
-#line 174 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 174 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_tree_store_clear (_tmp5_);
-#line 177 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 177 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp6_ = node;
-#line 177 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 177 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	if (_tmp6_ == NULL) {
-#line 178 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 178 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		return;
 #line 2010 "WindowLeftProps.vala.c"
 	}
-#line 188 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 188 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp7_ = self->model;
-#line 188 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 188 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp8_ = _tmp7_->el;
-#line 188 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 188 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp9_ = _g_object_ref0 (_tmp8_);
-#line 188 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 188 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	m = _tmp9_;
-#line 190 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 190 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp10_ = node;
-#line 190 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 190 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp11_ = _tmp10_->listeners;
-#line 190 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 190 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp12_ = gee_abstract_map_map_iterator ((GeeAbstractMap*) _tmp11_);
-#line 190 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 190 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	miter = _tmp12_;
-#line 192 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 192 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	while (TRUE) {
 #line 2030 "WindowLeftProps.vala.c"
 		GeeMapIterator* _tmp13_;
@@ -2046,77 +2046,77 @@ void xcls_leftprops_load (Xcls_LeftProps* self, JsRenderJsRender* file, JsRender
 		GeeMapIterator* _tmp29_;
 		gpointer _tmp30_ = NULL;
 		gchar* _tmp31_;
-#line 192 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 192 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp13_ = miter;
-#line 192 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 192 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp14_ = gee_map_iterator_next (_tmp13_);
-#line 192 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 192 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		if (!_tmp14_) {
-#line 192 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 192 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 			break;
 #line 2058 "WindowLeftProps.vala.c"
 		}
-#line 193 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 193 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp15_ = m;
-#line 193 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 193 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		gtk_tree_store_append (_tmp15_, &_tmp16_, NULL);
-#line 193 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 193 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		iter = _tmp16_;
-#line 194 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 194 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp17_ = m;
-#line 194 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 194 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp18_ = iter;
-#line 194 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 194 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp19_ = miter;
-#line 194 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 194 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp20_ = gee_map_iterator_get_key (_tmp19_);
-#line 194 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 194 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp21_ = (gchar*) _tmp20_;
-#line 194 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 194 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp22_ = miter;
-#line 194 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 194 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp23_ = gee_map_iterator_get_key (_tmp22_);
-#line 194 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 194 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp24_ = (gchar*) _tmp23_;
-#line 194 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 194 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp25_ = g_strconcat ("<b>", _tmp24_, NULL);
-#line 194 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 194 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp26_ = _tmp25_;
-#line 194 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 194 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp27_ = g_strconcat (_tmp26_, "</b>", NULL);
-#line 194 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 194 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp28_ = _tmp27_;
-#line 194 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 194 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp29_ = miter;
-#line 194 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 194 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp30_ = gee_map_iterator_get_value (_tmp29_);
-#line 194 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 194 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp31_ = (gchar*) _tmp30_;
-#line 194 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 194 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		gtk_tree_store_set (_tmp17_, &_tmp18_, 0, "listener", 1, _tmp21_, 2, _tmp28_, 3, _tmp31_, -1);
-#line 194 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 194 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_g_free0 (_tmp31_);
-#line 194 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 194 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_g_free0 (_tmp28_);
-#line 194 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 194 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_g_free0 (_tmp26_);
-#line 194 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 194 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_g_free0 (_tmp24_);
-#line 194 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 194 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_g_free0 (_tmp21_);
 #line 2108 "WindowLeftProps.vala.c"
 	}
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp32_ = node;
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp33_ = _tmp32_->props;
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp34_ = gee_abstract_map_map_iterator ((GeeAbstractMap*) _tmp33_);
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (miter);
-#line 203 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 203 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	miter = _tmp34_;
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	while (TRUE) {
 #line 2122 "WindowLeftProps.vala.c"
 		GeeMapIterator* _tmp35_;
@@ -2134,57 +2134,57 @@ void xcls_leftprops_load (Xcls_LeftProps* self, JsRenderJsRender* file, JsRender
 		GeeMapIterator* _tmp47_;
 		gpointer _tmp48_ = NULL;
 		gchar* _tmp49_;
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp35_ = miter;
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp36_ = gee_map_iterator_next (_tmp35_);
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		if (!_tmp36_) {
-#line 206 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 206 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 			break;
 #line 2146 "WindowLeftProps.vala.c"
 		}
-#line 207 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 207 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp37_ = m;
-#line 207 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 207 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		gtk_tree_store_append (_tmp37_, &_tmp38_, NULL);
-#line 207 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 207 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		iter = _tmp38_;
-#line 208 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 208 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp39_ = m;
-#line 208 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 208 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp40_ = iter;
-#line 208 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 208 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp41_ = miter;
-#line 208 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 208 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp42_ = gee_map_iterator_get_key (_tmp41_);
-#line 208 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 208 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp43_ = (gchar*) _tmp42_;
-#line 208 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 208 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp44_ = miter;
-#line 208 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 208 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp45_ = gee_map_iterator_get_key (_tmp44_);
-#line 208 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 208 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp46_ = (gchar*) _tmp45_;
-#line 208 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 208 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp47_ = miter;
-#line 208 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 208 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp48_ = gee_map_iterator_get_value (_tmp47_);
-#line 208 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 208 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp49_ = (gchar*) _tmp48_;
-#line 208 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 208 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		gtk_tree_store_set (_tmp39_, &_tmp40_, 0, "props", 1, _tmp43_, 2, _tmp46_, 3, _tmp49_, -1);
-#line 208 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 208 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_g_free0 (_tmp49_);
-#line 208 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 208 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_g_free0 (_tmp46_);
-#line 208 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 208 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_g_free0 (_tmp43_);
 #line 2184 "WindowLeftProps.vala.c"
 	}
-#line 166 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 166 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (miter);
-#line 166 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 166 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (m);
 #line 2190 "WindowLeftProps.vala.c"
 }
@@ -2212,59 +2212,59 @@ void xcls_leftprops_startEditingKey (Xcls_LeftProps* self) {
 	GtkTreeViewColumn* _tmp15_;
 	Xcls_LeftPropsXcls_keyrender* _tmp16_;
 	GtkCellRendererText* _tmp17_;
-#line 217 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 217 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_if_fail (self != NULL);
-#line 224 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 224 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = self->view;
-#line 224 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 224 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _tmp0_->el;
-#line 224 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 224 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = gtk_tree_view_get_selection (_tmp1_);
-#line 224 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 224 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp3_ = _g_object_ref0 (_tmp2_);
-#line 224 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 224 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	s = _tmp3_;
-#line 225 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 225 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_tree_selection_get_selected (s, &_tmp4_, &_tmp5_);
-#line 225 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 225 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (mod);
-#line 225 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 225 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp6_ = _g_object_ref0 (_tmp4_);
-#line 225 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 225 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	mod = _tmp6_;
-#line 225 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 225 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	iter = _tmp5_;
-#line 230 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 230 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp7_ = self->keyrender;
-#line 230 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 230 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp8_ = _tmp7_->el;
-#line 230 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 230 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_set (_tmp8_, "editable", TRUE, NULL);
-#line 231 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 231 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp9_ = self->view;
-#line 231 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 231 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp10_ = _tmp9_->el;
-#line 231 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 231 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp11_ = iter;
-#line 231 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 231 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp12_ = gtk_tree_model_get_path (mod, &_tmp11_);
-#line 231 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 231 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp13_ = _tmp12_;
-#line 231 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 231 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp14_ = self->keycol;
-#line 231 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 231 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp15_ = _tmp14_->el;
-#line 231 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 231 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp16_ = self->keyrender;
-#line 231 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 231 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp17_ = _tmp16_->el;
-#line 231 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 231 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_tree_view_set_cursor_on_cell (_tmp10_, _tmp13_, _tmp15_, (GtkCellRenderer*) _tmp17_, TRUE);
-#line 231 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 231 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_gtk_tree_path_free0 (_tmp13_);
-#line 217 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 217 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (s);
-#line 217 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 217 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (mod);
 #line 2270 "WindowLeftProps.vala.c"
 }
@@ -2339,195 +2339,195 @@ void xcls_leftprops_startEditingValue (Xcls_LeftProps* self) {
 	GtkTreeViewColumn* _tmp45_;
 	Xcls_LeftPropsXcls_valrender* _tmp46_;
 	GtkCellRendererCombo* _tmp47_;
-#line 240 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 240 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_if_fail (self != NULL);
-#line 247 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 247 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = self->view;
-#line 247 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 247 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _tmp0_->el;
-#line 247 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 247 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = gtk_tree_view_get_selection (_tmp1_);
-#line 247 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 247 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp3_ = _g_object_ref0 (_tmp2_);
-#line 247 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 247 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	s = _tmp3_;
-#line 248 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 248 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp4_ = s;
-#line 248 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 248 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_tree_selection_get_selected (_tmp4_, &_tmp5_, &_tmp6_);
-#line 248 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 248 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (mod);
-#line 248 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 248 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp7_ = _g_object_ref0 (_tmp5_);
-#line 248 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 248 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	mod = _tmp7_;
-#line 248 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 248 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	iter = _tmp6_;
-#line 260 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 260 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp8_ = mod;
-#line 260 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 260 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp9_ = iter;
-#line 260 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 260 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_tree_model_get_value (_tmp8_, &_tmp9_, 3, &_tmp10_);
-#line 260 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 260 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_IS_VALUE (&gval) ? (g_value_unset (&gval), NULL) : NULL;
-#line 260 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 260 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gval = _tmp10_;
-#line 261 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 261 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp11_ = gval;
-#line 261 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 261 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp12_ = g_strdup (g_value_get_string (&_tmp11_));
-#line 261 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 261 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	val = _tmp12_;
-#line 263 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 263 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp13_ = mod;
-#line 263 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 263 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp14_ = iter;
-#line 263 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 263 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_tree_model_get_value (_tmp13_, &_tmp14_, 1, &_tmp15_);
-#line 263 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 263 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_IS_VALUE (&gval) ? (g_value_unset (&gval), NULL) : NULL;
-#line 263 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 263 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gval = _tmp15_;
-#line 264 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 264 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp16_ = gval;
-#line 264 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 264 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp17_ = g_strdup (g_value_get_string (&_tmp16_));
-#line 264 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 264 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	key = _tmp17_;
-#line 266 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 266 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp18_ = mod;
-#line 266 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 266 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp19_ = iter;
-#line 266 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 266 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_tree_model_get_value (_tmp18_, &_tmp19_, 0, &_tmp20_);
-#line 266 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 266 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_IS_VALUE (&gval) ? (g_value_unset (&gval), NULL) : NULL;
-#line 266 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 266 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gval = _tmp20_;
-#line 267 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 267 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp21_ = gval;
-#line 267 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 267 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp22_ = g_strdup (g_value_get_string (&_tmp21_));
-#line 267 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 267 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	type = _tmp22_;
-#line 269 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 269 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	use_textarea = FALSE;
-#line 271 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 271 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp23_ = type;
-#line 271 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 271 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	if (g_strcmp0 (_tmp23_, "listener") == 0) {
-#line 272 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 272 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		use_textarea = TRUE;
 #line 2423 "WindowLeftProps.vala.c"
 	}
-#line 274 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 274 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp25_ = key;
-#line 274 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 274 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp26_ = strlen (_tmp25_);
-#line 274 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 274 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp27_ = _tmp26_;
-#line 274 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 274 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	if (_tmp27_ > 0) {
 #line 2433 "WindowLeftProps.vala.c"
 		const gchar* _tmp28_;
 		gchar _tmp29_ = '\0';
-#line 274 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 274 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp28_ = key;
-#line 274 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 274 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp29_ = string_get (_tmp28_, (glong) 0);
-#line 274 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 274 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp24_ = _tmp29_ == '|';
 #line 2442 "WindowLeftProps.vala.c"
 	} else {
-#line 274 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 274 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp24_ = FALSE;
 #line 2446 "WindowLeftProps.vala.c"
 	}
-#line 274 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 274 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp30_ = _tmp24_;
-#line 274 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 274 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	if (_tmp30_) {
-#line 275 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 275 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		use_textarea = TRUE;
 #line 2454 "WindowLeftProps.vala.c"
 	}
-#line 277 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 277 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp31_ = use_textarea;
-#line 277 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 277 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	if (_tmp31_) {
 #line 2460 "WindowLeftProps.vala.c"
 		JsRenderJsRender* _tmp32_;
 		JsRenderNode* _tmp33_;
 		const gchar* _tmp34_;
 		const gchar* _tmp35_;
-#line 278 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 278 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp32_ = self->file;
-#line 278 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 278 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp33_ = self->node;
-#line 278 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 278 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp34_ = type;
-#line 278 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 278 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp35_ = key;
-#line 278 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 278 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		g_signal_emit_by_name (self, "show-editor", _tmp32_, _tmp33_, _tmp34_, _tmp35_);
-#line 279 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 279 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_g_free0 (type);
-#line 279 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 279 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_g_free0 (key);
-#line 279 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 279 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_g_free0 (val);
-#line 279 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 279 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		G_IS_VALUE (&gval) ? (g_value_unset (&gval), NULL) : NULL;
-#line 279 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 279 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_g_object_unref0 (s);
-#line 279 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 279 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_g_object_unref0 (mod);
-#line 279 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 279 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		return;
 #line 2489 "WindowLeftProps.vala.c"
 	}
-#line 283 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 283 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp36_ = self->keyrender;
-#line 283 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 283 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp37_ = _tmp36_->el;
-#line 283 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 283 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_set (_tmp37_, "editable", TRUE, NULL);
-#line 284 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 284 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp38_ = self->view;
-#line 284 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 284 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp39_ = _tmp38_->el;
-#line 284 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 284 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp40_ = mod;
-#line 284 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 284 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp41_ = iter;
-#line 284 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 284 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp42_ = gtk_tree_model_get_path (_tmp40_, &_tmp41_);
-#line 284 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 284 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp43_ = _tmp42_;
-#line 284 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 284 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp44_ = self->valcol;
-#line 284 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 284 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp45_ = _tmp44_->el;
-#line 284 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 284 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp46_ = self->valrender;
-#line 284 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 284 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp47_ = _tmp46_->el;
-#line 284 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 284 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_tree_view_set_cursor_on_cell (_tmp39_, _tmp43_, _tmp45_, (GtkCellRenderer*) _tmp47_, TRUE);
-#line 284 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 284 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_gtk_tree_path_free0 (_tmp43_);
-#line 240 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 240 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_free0 (type);
-#line 240 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 240 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_free0 (key);
-#line 240 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 240 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_free0 (val);
-#line 240 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 240 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_IS_VALUE (&gval) ? (g_value_unset (&gval), NULL) : NULL;
-#line 240 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 240 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (s);
-#line 240 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 240 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (mod);
 #line 2533 "WindowLeftProps.vala.c"
 }
@@ -2540,25 +2540,25 @@ static void g_cclosure_user_marshal_VOID__OBJECT_OBJECT_STRING_STRING (GClosure 
 	register gpointer data1;
 	register gpointer data2;
 	cc = (GCClosure *) closure;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_if_fail (n_param_values == 5);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	if (G_CCLOSURE_SWAP_DATA (closure)) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		data1 = closure->data;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		data2 = param_values->data[0].v_pointer;
 #line 2552 "WindowLeftProps.vala.c"
 	} else {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		data1 = param_values->data[0].v_pointer;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		data2 = closure->data;
 #line 2558 "WindowLeftProps.vala.c"
 	}
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	callback = (GMarshalFunc_VOID__OBJECT_OBJECT_STRING_STRING) (marshal_data ? marshal_data : cc->callback);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	callback (data1, g_value_get_object (param_values + 1), g_value_get_object (param_values + 2), g_value_get_string (param_values + 3), g_value_get_string (param_values + 4), data2);
 #line 2564 "WindowLeftProps.vala.c"
 }
@@ -2584,100 +2584,100 @@ Xcls_LeftPropsXcls_HBox2* xcls_leftprops_xcls_hbox2_construct (GType object_type
 	Xcls_LeftPropsXcls_Button11* child_2;
 	GtkHBox* _tmp13_;
 	GtkButton* _tmp14_;
-#line 312 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 312 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 312 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 312 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = (Xcls_LeftPropsXcls_HBox2*) g_object_new (object_type, NULL);
-#line 314 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 314 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = _owner;
-#line 314 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 314 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 314 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 314 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 314 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 314 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv->_this = _tmp1_;
-#line 315 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 315 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = (GtkHBox*) gtk_hbox_new (TRUE, 0);
-#line 315 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 315 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref_sink (_tmp2_);
-#line 315 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 315 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 315 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 315 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->el = _tmp2_;
-#line 320 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 320 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp3_ = self->priv->_this;
-#line 320 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 320 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp4_ = xcls_leftprops_xcls_button3_new (_tmp3_);
-#line 320 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 320 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	child_0 = _tmp4_;
-#line 321 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 321 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref ((GObject*) child_0);
-#line 322 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 322 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp5_ = self->el;
-#line 322 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 322 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp6_ = child_0->el;
-#line 322 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 322 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_container_add ((GtkContainer*) _tmp5_, (GtkWidget*) _tmp6_);
-#line 323 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 323 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp7_ = self->priv->_this;
-#line 323 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 323 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp8_ = xcls_leftprops_xcls_button7_new (_tmp7_);
-#line 323 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 323 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	child_1 = _tmp8_;
-#line 324 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 324 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref ((GObject*) child_1);
-#line 325 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 325 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp9_ = self->el;
-#line 325 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 325 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp10_ = child_1->el;
-#line 325 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 325 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_container_add ((GtkContainer*) _tmp9_, (GtkWidget*) _tmp10_);
-#line 326 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 326 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp11_ = self->priv->_this;
-#line 326 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 326 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp12_ = xcls_leftprops_xcls_button11_new (_tmp11_);
-#line 326 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 326 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	child_2 = _tmp12_;
-#line 327 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 327 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref ((GObject*) child_2);
-#line 328 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 328 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp13_ = self->el;
-#line 328 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 328 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp14_ = child_2->el;
-#line 328 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 328 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_container_add ((GtkContainer*) _tmp13_, (GtkWidget*) _tmp14_);
-#line 312 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 312 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (child_2);
-#line 312 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 312 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (child_1);
-#line 312 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 312 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (child_0);
-#line 312 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 312 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return self;
 #line 2658 "WindowLeftProps.vala.c"
 }
 
 
 Xcls_LeftPropsXcls_HBox2* xcls_leftprops_xcls_hbox2_new (Xcls_LeftProps* _owner) {
-#line 312 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 312 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return xcls_leftprops_xcls_hbox2_construct (XCLS_LEFTPROPS_TYPE_XCLS_HBOX2, _owner);
 #line 2665 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_hbox2_class_init (Xcls_LeftPropsXcls_HBox2Class * klass) {
-#line 303 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 303 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_xcls_hbox2_parent_class = g_type_class_peek_parent (klass);
-#line 303 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 303 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_LeftPropsXcls_HBox2Private));
-#line 303 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 303 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_leftprops_xcls_hbox2_finalize;
 #line 2676 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_hbox2_instance_init (Xcls_LeftPropsXcls_HBox2 * self) {
-#line 303 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 303 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv = XCLS_LEFTPROPS_XCLS_HBOX2_GET_PRIVATE (self);
 #line 2683 "WindowLeftProps.vala.c"
 }
@@ -2685,13 +2685,13 @@ static void xcls_leftprops_xcls_hbox2_instance_init (Xcls_LeftPropsXcls_HBox2 * 
 
 static void xcls_leftprops_xcls_hbox2_finalize (GObject* obj) {
 	Xcls_LeftPropsXcls_HBox2 * self;
-#line 303 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 303 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_LEFTPROPS_TYPE_XCLS_HBOX2, Xcls_LeftPropsXcls_HBox2);
-#line 305 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 305 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 306 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 306 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 303 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 303 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (xcls_leftprops_xcls_hbox2_parent_class)->finalize (obj);
 #line 2697 "WindowLeftProps.vala.c"
 }
@@ -2712,15 +2712,15 @@ GType xcls_leftprops_xcls_hbox2_get_type (void) {
 static gboolean __lambda34_ (Xcls_LeftPropsXcls_Button3* self, GdkEventButton* event) {
 	gboolean result = FALSE;
 	Xcls_LeftProps* _tmp0_;
-#line 369 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 369 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (event != NULL, FALSE);
-#line 370 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 370 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = self->priv->_this;
-#line 370 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 370 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_signal_emit_by_name (_tmp0_, "show-add-props", "prop");
-#line 371 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 371 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	result = FALSE;
-#line 371 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 371 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return result;
 #line 2726 "WindowLeftProps.vala.c"
 }
@@ -2729,7 +2729,7 @@ static gboolean __lambda34_ (Xcls_LeftPropsXcls_Button3* self, GdkEventButton* e
 static gboolean ___lambda34__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self) {
 	gboolean result;
 	result = __lambda34_ (self, event);
-#line 369 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 369 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return result;
 #line 2735 "WindowLeftProps.vala.c"
 }
@@ -2746,72 +2746,72 @@ Xcls_LeftPropsXcls_Button3* xcls_leftprops_xcls_button3_construct (GType object_
 	GtkButton* _tmp5_;
 	GtkHBox* _tmp6_;
 	GtkButton* _tmp7_;
-#line 356 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 356 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 356 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 356 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = (Xcls_LeftPropsXcls_Button3*) g_object_new (object_type, NULL);
-#line 358 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 358 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = _owner;
-#line 358 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 358 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 358 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 358 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 358 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 358 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv->_this = _tmp1_;
-#line 359 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 359 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = (GtkButton*) gtk_button_new ();
-#line 359 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 359 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref_sink (_tmp2_);
-#line 359 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 359 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 359 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 359 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->el = _tmp2_;
-#line 364 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 364 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp3_ = self->priv->_this;
-#line 364 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 364 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp4_ = xcls_leftprops_xcls_hbox4_new (_tmp3_);
-#line 364 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 364 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	child_0 = _tmp4_;
-#line 365 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 365 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref ((GObject*) child_0);
-#line 366 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 366 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp5_ = self->el;
-#line 366 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 366 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp6_ = child_0->el;
-#line 366 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 366 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_container_add ((GtkContainer*) _tmp5_, (GtkWidget*) _tmp6_);
-#line 369 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 369 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp7_ = self->el;
-#line 369 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 369 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_signal_connect_object ((GtkWidget*) _tmp7_, "button-press-event", (GCallback) ___lambda34__gtk_widget_button_press_event, self, 0);
-#line 356 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 356 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (child_0);
-#line 356 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 356 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return self;
 #line 2792 "WindowLeftProps.vala.c"
 }
 
 
 Xcls_LeftPropsXcls_Button3* xcls_leftprops_xcls_button3_new (Xcls_LeftProps* _owner) {
-#line 356 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 356 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return xcls_leftprops_xcls_button3_construct (XCLS_LEFTPROPS_TYPE_XCLS_BUTTON3, _owner);
 #line 2799 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_button3_class_init (Xcls_LeftPropsXcls_Button3Class * klass) {
-#line 347 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 347 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_xcls_button3_parent_class = g_type_class_peek_parent (klass);
-#line 347 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 347 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_LeftPropsXcls_Button3Private));
-#line 347 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 347 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_leftprops_xcls_button3_finalize;
 #line 2810 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_button3_instance_init (Xcls_LeftPropsXcls_Button3 * self) {
-#line 347 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 347 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv = XCLS_LEFTPROPS_XCLS_BUTTON3_GET_PRIVATE (self);
 #line 2817 "WindowLeftProps.vala.c"
 }
@@ -2819,13 +2819,13 @@ static void xcls_leftprops_xcls_button3_instance_init (Xcls_LeftPropsXcls_Button
 
 static void xcls_leftprops_xcls_button3_finalize (GObject* obj) {
 	Xcls_LeftPropsXcls_Button3 * self;
-#line 347 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 347 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_LEFTPROPS_TYPE_XCLS_BUTTON3, Xcls_LeftPropsXcls_Button3);
-#line 349 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 349 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 350 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 350 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 347 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 347 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (xcls_leftprops_xcls_button3_parent_class)->finalize (obj);
 #line 2831 "WindowLeftProps.vala.c"
 }
@@ -2858,84 +2858,84 @@ Xcls_LeftPropsXcls_HBox4* xcls_leftprops_xcls_hbox4_construct (GType object_type
 	Xcls_LeftPropsXcls_Label6* child_1;
 	GtkHBox* _tmp9_;
 	GtkLabel* _tmp10_;
-#line 402 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 402 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 402 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 402 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = (Xcls_LeftPropsXcls_HBox4*) g_object_new (object_type, NULL);
-#line 404 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 404 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = _owner;
-#line 404 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 404 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 404 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 404 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 404 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 404 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv->_this = _tmp1_;
-#line 405 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 405 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = (GtkHBox*) gtk_hbox_new (TRUE, 0);
-#line 405 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 405 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref_sink (_tmp2_);
-#line 405 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 405 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 405 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 405 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->el = _tmp2_;
-#line 410 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 410 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp3_ = self->priv->_this;
-#line 410 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 410 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp4_ = xcls_leftprops_xcls_image5_new (_tmp3_);
-#line 410 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 410 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	child_0 = _tmp4_;
-#line 411 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 411 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref ((GObject*) child_0);
-#line 412 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 412 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp5_ = self->el;
-#line 412 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 412 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp6_ = child_0->el;
-#line 412 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 412 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_container_add ((GtkContainer*) _tmp5_, (GtkWidget*) _tmp6_);
-#line 413 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 413 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp7_ = self->priv->_this;
-#line 413 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 413 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp8_ = xcls_leftprops_xcls_label6_new (_tmp7_);
-#line 413 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 413 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	child_1 = _tmp8_;
-#line 414 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 414 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref ((GObject*) child_1);
-#line 415 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 415 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp9_ = self->el;
-#line 415 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 415 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp10_ = child_1->el;
-#line 415 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 415 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_container_add ((GtkContainer*) _tmp9_, (GtkWidget*) _tmp10_);
-#line 402 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 402 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (child_1);
-#line 402 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 402 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (child_0);
-#line 402 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 402 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return self;
 #line 2916 "WindowLeftProps.vala.c"
 }
 
 
 Xcls_LeftPropsXcls_HBox4* xcls_leftprops_xcls_hbox4_new (Xcls_LeftProps* _owner) {
-#line 402 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 402 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return xcls_leftprops_xcls_hbox4_construct (XCLS_LEFTPROPS_TYPE_XCLS_HBOX4, _owner);
 #line 2923 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_hbox4_class_init (Xcls_LeftPropsXcls_HBox4Class * klass) {
-#line 393 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 393 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_xcls_hbox4_parent_class = g_type_class_peek_parent (klass);
-#line 393 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 393 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_LeftPropsXcls_HBox4Private));
-#line 393 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 393 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_leftprops_xcls_hbox4_finalize;
 #line 2934 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_hbox4_instance_init (Xcls_LeftPropsXcls_HBox4 * self) {
-#line 393 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 393 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv = XCLS_LEFTPROPS_XCLS_HBOX4_GET_PRIVATE (self);
 #line 2941 "WindowLeftProps.vala.c"
 }
@@ -2943,13 +2943,13 @@ static void xcls_leftprops_xcls_hbox4_instance_init (Xcls_LeftPropsXcls_HBox4 * 
 
 static void xcls_leftprops_xcls_hbox4_finalize (GObject* obj) {
 	Xcls_LeftPropsXcls_HBox4 * self;
-#line 393 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 393 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_LEFTPROPS_TYPE_XCLS_HBOX4, Xcls_LeftPropsXcls_HBox4);
-#line 395 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 395 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 396 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 396 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 393 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 393 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (xcls_leftprops_xcls_hbox4_parent_class)->finalize (obj);
 #line 2955 "WindowLeftProps.vala.c"
 }
@@ -2974,60 +2974,60 @@ Xcls_LeftPropsXcls_Image5* xcls_leftprops_xcls_image5_construct (GType object_ty
 	GtkImage* _tmp2_;
 	GtkImage* _tmp3_;
 	GtkImage* _tmp4_;
-#line 443 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 443 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 443 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 443 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = (Xcls_LeftPropsXcls_Image5*) g_object_new (object_type, NULL);
-#line 445 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 445 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = _owner;
-#line 445 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 445 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 445 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 445 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 445 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 445 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv->_this = _tmp1_;
-#line 446 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 446 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = (GtkImage*) gtk_image_new ();
-#line 446 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 446 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref_sink (_tmp2_);
-#line 446 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 446 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 446 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 446 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->el = _tmp2_;
-#line 451 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 451 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp3_ = self->el;
-#line 451 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 451 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_set (_tmp3_, "icon-size", (gint) GTK_ICON_SIZE_MENU, NULL);
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp4_ = self->el;
-#line 452 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 452 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_set (_tmp4_, "stock", GTK_STOCK_ADD, NULL);
-#line 443 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 443 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return self;
 #line 3008 "WindowLeftProps.vala.c"
 }
 
 
 Xcls_LeftPropsXcls_Image5* xcls_leftprops_xcls_image5_new (Xcls_LeftProps* _owner) {
-#line 443 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 443 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return xcls_leftprops_xcls_image5_construct (XCLS_LEFTPROPS_TYPE_XCLS_IMAGE5, _owner);
 #line 3015 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_image5_class_init (Xcls_LeftPropsXcls_Image5Class * klass) {
-#line 434 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 434 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_xcls_image5_parent_class = g_type_class_peek_parent (klass);
-#line 434 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 434 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_LeftPropsXcls_Image5Private));
-#line 434 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 434 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_leftprops_xcls_image5_finalize;
 #line 3026 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_image5_instance_init (Xcls_LeftPropsXcls_Image5 * self) {
-#line 434 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 434 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv = XCLS_LEFTPROPS_XCLS_IMAGE5_GET_PRIVATE (self);
 #line 3033 "WindowLeftProps.vala.c"
 }
@@ -3035,13 +3035,13 @@ static void xcls_leftprops_xcls_image5_instance_init (Xcls_LeftPropsXcls_Image5 
 
 static void xcls_leftprops_xcls_image5_finalize (GObject* obj) {
 	Xcls_LeftPropsXcls_Image5 * self;
-#line 434 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 434 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_LEFTPROPS_TYPE_XCLS_IMAGE5, Xcls_LeftPropsXcls_Image5);
-#line 436 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 436 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 437 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 437 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 434 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 434 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (xcls_leftprops_xcls_image5_parent_class)->finalize (obj);
 #line 3047 "WindowLeftProps.vala.c"
 }
@@ -3064,52 +3064,52 @@ Xcls_LeftPropsXcls_Label6* xcls_leftprops_xcls_label6_construct (GType object_ty
 	Xcls_LeftProps* _tmp0_;
 	Xcls_LeftProps* _tmp1_;
 	GtkLabel* _tmp2_;
-#line 482 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 482 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 482 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 482 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = (Xcls_LeftPropsXcls_Label6*) g_object_new (object_type, NULL);
-#line 484 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 484 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = _owner;
-#line 484 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 484 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 484 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 484 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 484 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 484 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv->_this = _tmp1_;
-#line 485 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 485 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = (GtkLabel*) gtk_label_new ("Property");
-#line 485 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 485 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref_sink (_tmp2_);
-#line 485 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 485 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 485 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 485 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->el = _tmp2_;
-#line 482 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 482 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return self;
 #line 3090 "WindowLeftProps.vala.c"
 }
 
 
 Xcls_LeftPropsXcls_Label6* xcls_leftprops_xcls_label6_new (Xcls_LeftProps* _owner) {
-#line 482 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 482 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return xcls_leftprops_xcls_label6_construct (XCLS_LEFTPROPS_TYPE_XCLS_LABEL6, _owner);
 #line 3097 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_label6_class_init (Xcls_LeftPropsXcls_Label6Class * klass) {
-#line 473 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 473 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_xcls_label6_parent_class = g_type_class_peek_parent (klass);
-#line 473 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 473 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_LeftPropsXcls_Label6Private));
-#line 473 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 473 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_leftprops_xcls_label6_finalize;
 #line 3108 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_label6_instance_init (Xcls_LeftPropsXcls_Label6 * self) {
-#line 473 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 473 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv = XCLS_LEFTPROPS_XCLS_LABEL6_GET_PRIVATE (self);
 #line 3115 "WindowLeftProps.vala.c"
 }
@@ -3117,13 +3117,13 @@ static void xcls_leftprops_xcls_label6_instance_init (Xcls_LeftPropsXcls_Label6 
 
 static void xcls_leftprops_xcls_label6_finalize (GObject* obj) {
 	Xcls_LeftPropsXcls_Label6 * self;
-#line 473 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 473 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_LEFTPROPS_TYPE_XCLS_LABEL6, Xcls_LeftPropsXcls_Label6);
-#line 475 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 475 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 476 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 476 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 473 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 473 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (xcls_leftprops_xcls_label6_parent_class)->finalize (obj);
 #line 3129 "WindowLeftProps.vala.c"
 }
@@ -3144,15 +3144,15 @@ GType xcls_leftprops_xcls_label6_get_type (void) {
 static gboolean __lambda35_ (Xcls_LeftPropsXcls_Button7* self, GdkEventButton* event) {
 	gboolean result = FALSE;
 	Xcls_LeftProps* _tmp0_;
-#line 530 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 530 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (event != NULL, FALSE);
-#line 536 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 536 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = self->priv->_this;
-#line 536 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 536 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_signal_emit_by_name (_tmp0_, "show-add-props", "listener");
-#line 537 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 537 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	result = FALSE;
-#line 537 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 537 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return result;
 #line 3158 "WindowLeftProps.vala.c"
 }
@@ -3161,7 +3161,7 @@ static gboolean __lambda35_ (Xcls_LeftPropsXcls_Button7* self, GdkEventButton* e
 static gboolean ___lambda35__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self) {
 	gboolean result;
 	result = __lambda35_ (self, event);
-#line 530 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 530 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return result;
 #line 3167 "WindowLeftProps.vala.c"
 }
@@ -3178,72 +3178,72 @@ Xcls_LeftPropsXcls_Button7* xcls_leftprops_xcls_button7_construct (GType object_
 	GtkButton* _tmp5_;
 	GtkHBox* _tmp6_;
 	GtkButton* _tmp7_;
-#line 517 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 517 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 517 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 517 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = (Xcls_LeftPropsXcls_Button7*) g_object_new (object_type, NULL);
-#line 519 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 519 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = _owner;
-#line 519 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 519 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 519 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 519 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 519 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 519 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv->_this = _tmp1_;
-#line 520 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 520 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = (GtkButton*) gtk_button_new ();
-#line 520 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 520 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref_sink (_tmp2_);
-#line 520 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 520 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 520 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 520 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->el = _tmp2_;
-#line 525 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 525 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp3_ = self->priv->_this;
-#line 525 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 525 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp4_ = xcls_leftprops_xcls_hbox8_new (_tmp3_);
-#line 525 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 525 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	child_0 = _tmp4_;
-#line 526 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 526 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref ((GObject*) child_0);
-#line 527 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 527 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp5_ = self->el;
-#line 527 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 527 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp6_ = child_0->el;
-#line 527 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 527 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_container_add ((GtkContainer*) _tmp5_, (GtkWidget*) _tmp6_);
-#line 530 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 530 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp7_ = self->el;
-#line 530 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 530 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_signal_connect_object ((GtkWidget*) _tmp7_, "button-press-event", (GCallback) ___lambda35__gtk_widget_button_press_event, self, 0);
-#line 517 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 517 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (child_0);
-#line 517 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 517 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return self;
 #line 3224 "WindowLeftProps.vala.c"
 }
 
 
 Xcls_LeftPropsXcls_Button7* xcls_leftprops_xcls_button7_new (Xcls_LeftProps* _owner) {
-#line 517 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 517 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return xcls_leftprops_xcls_button7_construct (XCLS_LEFTPROPS_TYPE_XCLS_BUTTON7, _owner);
 #line 3231 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_button7_class_init (Xcls_LeftPropsXcls_Button7Class * klass) {
-#line 508 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 508 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_xcls_button7_parent_class = g_type_class_peek_parent (klass);
-#line 508 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 508 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_LeftPropsXcls_Button7Private));
-#line 508 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 508 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_leftprops_xcls_button7_finalize;
 #line 3242 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_button7_instance_init (Xcls_LeftPropsXcls_Button7 * self) {
-#line 508 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 508 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv = XCLS_LEFTPROPS_XCLS_BUTTON7_GET_PRIVATE (self);
 #line 3249 "WindowLeftProps.vala.c"
 }
@@ -3251,13 +3251,13 @@ static void xcls_leftprops_xcls_button7_instance_init (Xcls_LeftPropsXcls_Button
 
 static void xcls_leftprops_xcls_button7_finalize (GObject* obj) {
 	Xcls_LeftPropsXcls_Button7 * self;
-#line 508 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 508 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_LEFTPROPS_TYPE_XCLS_BUTTON7, Xcls_LeftPropsXcls_Button7);
-#line 510 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 510 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 511 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 511 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 508 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 508 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (xcls_leftprops_xcls_button7_parent_class)->finalize (obj);
 #line 3263 "WindowLeftProps.vala.c"
 }
@@ -3290,84 +3290,84 @@ Xcls_LeftPropsXcls_HBox8* xcls_leftprops_xcls_hbox8_construct (GType object_type
 	Xcls_LeftPropsXcls_Label10* child_1;
 	GtkHBox* _tmp9_;
 	GtkLabel* _tmp10_;
-#line 568 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 568 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 568 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 568 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = (Xcls_LeftPropsXcls_HBox8*) g_object_new (object_type, NULL);
-#line 570 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 570 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = _owner;
-#line 570 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 570 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 570 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 570 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 570 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 570 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv->_this = _tmp1_;
-#line 571 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 571 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = (GtkHBox*) gtk_hbox_new (TRUE, 0);
-#line 571 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 571 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref_sink (_tmp2_);
-#line 571 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 571 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 571 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 571 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->el = _tmp2_;
-#line 576 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 576 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp3_ = self->priv->_this;
-#line 576 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 576 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp4_ = xcls_leftprops_xcls_image9_new (_tmp3_);
-#line 576 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 576 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	child_0 = _tmp4_;
-#line 577 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 577 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref ((GObject*) child_0);
-#line 578 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 578 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp5_ = self->el;
-#line 578 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 578 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp6_ = child_0->el;
-#line 578 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 578 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_container_add ((GtkContainer*) _tmp5_, (GtkWidget*) _tmp6_);
-#line 579 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 579 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp7_ = self->priv->_this;
-#line 579 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 579 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp8_ = xcls_leftprops_xcls_label10_new (_tmp7_);
-#line 579 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 579 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	child_1 = _tmp8_;
-#line 580 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 580 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref ((GObject*) child_1);
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp9_ = self->el;
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp10_ = child_1->el;
-#line 581 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 581 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_container_add ((GtkContainer*) _tmp9_, (GtkWidget*) _tmp10_);
-#line 568 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 568 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (child_1);
-#line 568 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 568 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (child_0);
-#line 568 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 568 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return self;
 #line 3348 "WindowLeftProps.vala.c"
 }
 
 
 Xcls_LeftPropsXcls_HBox8* xcls_leftprops_xcls_hbox8_new (Xcls_LeftProps* _owner) {
-#line 568 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 568 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return xcls_leftprops_xcls_hbox8_construct (XCLS_LEFTPROPS_TYPE_XCLS_HBOX8, _owner);
 #line 3355 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_hbox8_class_init (Xcls_LeftPropsXcls_HBox8Class * klass) {
-#line 559 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 559 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_xcls_hbox8_parent_class = g_type_class_peek_parent (klass);
-#line 559 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 559 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_LeftPropsXcls_HBox8Private));
-#line 559 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 559 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_leftprops_xcls_hbox8_finalize;
 #line 3366 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_hbox8_instance_init (Xcls_LeftPropsXcls_HBox8 * self) {
-#line 559 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 559 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv = XCLS_LEFTPROPS_XCLS_HBOX8_GET_PRIVATE (self);
 #line 3373 "WindowLeftProps.vala.c"
 }
@@ -3375,13 +3375,13 @@ static void xcls_leftprops_xcls_hbox8_instance_init (Xcls_LeftPropsXcls_HBox8 * 
 
 static void xcls_leftprops_xcls_hbox8_finalize (GObject* obj) {
 	Xcls_LeftPropsXcls_HBox8 * self;
-#line 559 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 559 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_LEFTPROPS_TYPE_XCLS_HBOX8, Xcls_LeftPropsXcls_HBox8);
-#line 561 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 561 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 562 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 562 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 559 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 559 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (xcls_leftprops_xcls_hbox8_parent_class)->finalize (obj);
 #line 3387 "WindowLeftProps.vala.c"
 }
@@ -3406,60 +3406,60 @@ Xcls_LeftPropsXcls_Image9* xcls_leftprops_xcls_image9_construct (GType object_ty
 	GtkImage* _tmp2_;
 	GtkImage* _tmp3_;
 	GtkImage* _tmp4_;
-#line 609 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 609 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 609 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 609 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = (Xcls_LeftPropsXcls_Image9*) g_object_new (object_type, NULL);
-#line 611 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 611 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = _owner;
-#line 611 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 611 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 611 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 611 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 611 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 611 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv->_this = _tmp1_;
-#line 612 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 612 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = (GtkImage*) gtk_image_new ();
-#line 612 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 612 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref_sink (_tmp2_);
-#line 612 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 612 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 612 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 612 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->el = _tmp2_;
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp3_ = self->el;
-#line 617 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 617 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_set (_tmp3_, "icon-size", (gint) GTK_ICON_SIZE_MENU, NULL);
-#line 618 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 618 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp4_ = self->el;
-#line 618 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 618 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_set (_tmp4_, "stock", GTK_STOCK_ADD, NULL);
-#line 609 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 609 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return self;
 #line 3440 "WindowLeftProps.vala.c"
 }
 
 
 Xcls_LeftPropsXcls_Image9* xcls_leftprops_xcls_image9_new (Xcls_LeftProps* _owner) {
-#line 609 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 609 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return xcls_leftprops_xcls_image9_construct (XCLS_LEFTPROPS_TYPE_XCLS_IMAGE9, _owner);
 #line 3447 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_image9_class_init (Xcls_LeftPropsXcls_Image9Class * klass) {
-#line 600 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 600 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_xcls_image9_parent_class = g_type_class_peek_parent (klass);
-#line 600 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 600 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_LeftPropsXcls_Image9Private));
-#line 600 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 600 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_leftprops_xcls_image9_finalize;
 #line 3458 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_image9_instance_init (Xcls_LeftPropsXcls_Image9 * self) {
-#line 600 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 600 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv = XCLS_LEFTPROPS_XCLS_IMAGE9_GET_PRIVATE (self);
 #line 3465 "WindowLeftProps.vala.c"
 }
@@ -3467,13 +3467,13 @@ static void xcls_leftprops_xcls_image9_instance_init (Xcls_LeftPropsXcls_Image9 
 
 static void xcls_leftprops_xcls_image9_finalize (GObject* obj) {
 	Xcls_LeftPropsXcls_Image9 * self;
-#line 600 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 600 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_LEFTPROPS_TYPE_XCLS_IMAGE9, Xcls_LeftPropsXcls_Image9);
-#line 602 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 602 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 603 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 603 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 600 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 600 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (xcls_leftprops_xcls_image9_parent_class)->finalize (obj);
 #line 3479 "WindowLeftProps.vala.c"
 }
@@ -3496,52 +3496,52 @@ Xcls_LeftPropsXcls_Label10* xcls_leftprops_xcls_label10_construct (GType object_
 	Xcls_LeftProps* _tmp0_;
 	Xcls_LeftProps* _tmp1_;
 	GtkLabel* _tmp2_;
-#line 648 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 648 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 648 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 648 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = (Xcls_LeftPropsXcls_Label10*) g_object_new (object_type, NULL);
-#line 650 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 650 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = _owner;
-#line 650 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 650 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 650 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 650 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 650 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 650 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv->_this = _tmp1_;
-#line 651 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 651 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = (GtkLabel*) gtk_label_new ("Handler");
-#line 651 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 651 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref_sink (_tmp2_);
-#line 651 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 651 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 651 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 651 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->el = _tmp2_;
-#line 648 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 648 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return self;
 #line 3522 "WindowLeftProps.vala.c"
 }
 
 
 Xcls_LeftPropsXcls_Label10* xcls_leftprops_xcls_label10_new (Xcls_LeftProps* _owner) {
-#line 648 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 648 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return xcls_leftprops_xcls_label10_construct (XCLS_LEFTPROPS_TYPE_XCLS_LABEL10, _owner);
 #line 3529 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_label10_class_init (Xcls_LeftPropsXcls_Label10Class * klass) {
-#line 639 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 639 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_xcls_label10_parent_class = g_type_class_peek_parent (klass);
-#line 639 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 639 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_LeftPropsXcls_Label10Private));
-#line 639 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 639 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_leftprops_xcls_label10_finalize;
 #line 3540 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_label10_instance_init (Xcls_LeftPropsXcls_Label10 * self) {
-#line 639 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 639 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv = XCLS_LEFTPROPS_XCLS_LABEL10_GET_PRIVATE (self);
 #line 3547 "WindowLeftProps.vala.c"
 }
@@ -3549,13 +3549,13 @@ static void xcls_leftprops_xcls_label10_instance_init (Xcls_LeftPropsXcls_Label1
 
 static void xcls_leftprops_xcls_label10_finalize (GObject* obj) {
 	Xcls_LeftPropsXcls_Label10 * self;
-#line 639 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 639 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_LEFTPROPS_TYPE_XCLS_LABEL10, Xcls_LeftPropsXcls_Label10);
-#line 641 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 641 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 642 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 642 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 639 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 639 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (xcls_leftprops_xcls_label10_parent_class)->finalize (obj);
 #line 3561 "WindowLeftProps.vala.c"
 }
@@ -3588,49 +3588,49 @@ static gboolean __lambda36_ (Xcls_LeftPropsXcls_Button11* self, GtkWidget* _self
 	guint _tmp9_;
 	GdkEventButton _tmp10_;
 	guint32 _tmp11_;
-#line 698 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 698 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (_self_ != NULL, FALSE);
-#line 698 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 698 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (ev != NULL, FALSE);
-#line 699 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 699 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = self->priv->_this;
-#line 699 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 699 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_before_edit (_tmp0_);
-#line 702 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 702 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = self->priv->_this;
-#line 702 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 702 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = _tmp1_->AddPropertyPopup;
-#line 702 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 702 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp3_ = _g_object_ref0 (_tmp2_);
-#line 702 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 702 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	p = _tmp3_;
-#line 703 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 703 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp4_ = p->el;
-#line 703 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 703 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp5_ = gdk_screen_get_default ();
-#line 703 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 703 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_menu_set_screen (_tmp4_, _tmp5_);
-#line 704 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 704 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp6_ = p->el;
-#line 704 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 704 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_widget_show_all ((GtkWidget*) _tmp6_);
-#line 705 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 705 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp7_ = p->el;
-#line 705 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 705 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp8_ = *ev;
-#line 705 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 705 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp9_ = _tmp8_.button;
-#line 705 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 705 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp10_ = *ev;
-#line 705 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 705 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp11_ = _tmp10_.time;
-#line 705 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 705 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_menu_popup (_tmp7_, NULL, NULL, NULL, NULL, _tmp9_, _tmp11_);
-#line 706 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 706 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	result = TRUE;
-#line 706 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 706 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (p);
-#line 706 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 706 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return result;
 #line 3636 "WindowLeftProps.vala.c"
 }
@@ -3639,7 +3639,7 @@ static gboolean __lambda36_ (Xcls_LeftPropsXcls_Button11* self, GtkWidget* _self
 static gboolean ___lambda36__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self) {
 	gboolean result;
 	result = __lambda36_ (self, _sender, event);
-#line 698 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 698 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return result;
 #line 3645 "WindowLeftProps.vala.c"
 }
@@ -3659,82 +3659,82 @@ Xcls_LeftPropsXcls_Button11* xcls_leftprops_xcls_button11_construct (GType objec
 	Xcls_LeftPropsXcls_AddPropertyPopup* _tmp8_;
 	Xcls_LeftPropsXcls_AddPropertyPopup* child_1;
 	GtkButton* _tmp9_;
-#line 683 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 683 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 683 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 683 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = (Xcls_LeftPropsXcls_Button11*) g_object_new (object_type, NULL);
-#line 685 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 685 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = _owner;
-#line 685 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 685 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 685 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 685 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 685 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 685 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv->_this = _tmp1_;
-#line 686 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 686 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = (GtkButton*) gtk_button_new ();
-#line 686 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 686 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref_sink (_tmp2_);
-#line 686 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 686 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 686 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 686 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->el = _tmp2_;
-#line 691 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 691 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp3_ = self->priv->_this;
-#line 691 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 691 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp4_ = xcls_leftprops_xcls_hbox12_new (_tmp3_);
-#line 691 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 691 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	child_0 = _tmp4_;
-#line 692 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 692 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref ((GObject*) child_0);
-#line 693 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 693 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp5_ = self->el;
-#line 693 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 693 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp6_ = child_0->el;
-#line 693 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 693 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_container_add ((GtkContainer*) _tmp5_, (GtkWidget*) _tmp6_);
-#line 694 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 694 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp7_ = self->priv->_this;
-#line 694 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 694 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp8_ = xcls_leftprops_xcls_addpropertypopup_new (_tmp7_);
-#line 694 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 694 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	child_1 = _tmp8_;
-#line 695 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 695 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref ((GObject*) child_1);
-#line 698 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 698 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp9_ = self->el;
-#line 698 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 698 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_signal_connect_object ((GtkWidget*) _tmp9_, "button-press-event", (GCallback) ___lambda36__gtk_widget_button_press_event, self, 0);
-#line 683 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 683 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (child_1);
-#line 683 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 683 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (child_0);
-#line 683 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 683 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return self;
 #line 3715 "WindowLeftProps.vala.c"
 }
 
 
 Xcls_LeftPropsXcls_Button11* xcls_leftprops_xcls_button11_new (Xcls_LeftProps* _owner) {
-#line 683 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 683 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return xcls_leftprops_xcls_button11_construct (XCLS_LEFTPROPS_TYPE_XCLS_BUTTON11, _owner);
 #line 3722 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_button11_class_init (Xcls_LeftPropsXcls_Button11Class * klass) {
-#line 674 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 674 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_xcls_button11_parent_class = g_type_class_peek_parent (klass);
-#line 674 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 674 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_LeftPropsXcls_Button11Private));
-#line 674 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 674 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_leftprops_xcls_button11_finalize;
 #line 3733 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_button11_instance_init (Xcls_LeftPropsXcls_Button11 * self) {
-#line 674 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 674 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv = XCLS_LEFTPROPS_XCLS_BUTTON11_GET_PRIVATE (self);
 #line 3740 "WindowLeftProps.vala.c"
 }
@@ -3742,13 +3742,13 @@ static void xcls_leftprops_xcls_button11_instance_init (Xcls_LeftPropsXcls_Butto
 
 static void xcls_leftprops_xcls_button11_finalize (GObject* obj) {
 	Xcls_LeftPropsXcls_Button11 * self;
-#line 674 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 674 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_LEFTPROPS_TYPE_XCLS_BUTTON11, Xcls_LeftPropsXcls_Button11);
-#line 676 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 676 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 677 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 677 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 674 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 674 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (xcls_leftprops_xcls_button11_parent_class)->finalize (obj);
 #line 3754 "WindowLeftProps.vala.c"
 }
@@ -3781,84 +3781,84 @@ Xcls_LeftPropsXcls_HBox12* xcls_leftprops_xcls_hbox12_construct (GType object_ty
 	Xcls_LeftPropsXcls_Label14* child_1;
 	GtkHBox* _tmp9_;
 	GtkLabel* _tmp10_;
-#line 737 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 737 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 737 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 737 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = (Xcls_LeftPropsXcls_HBox12*) g_object_new (object_type, NULL);
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = _owner;
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 739 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 739 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv->_this = _tmp1_;
-#line 740 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 740 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = (GtkHBox*) gtk_hbox_new (TRUE, 0);
-#line 740 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 740 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref_sink (_tmp2_);
-#line 740 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 740 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 740 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 740 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->el = _tmp2_;
-#line 745 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 745 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp3_ = self->priv->_this;
-#line 745 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 745 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp4_ = xcls_leftprops_xcls_image13_new (_tmp3_);
-#line 745 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 745 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	child_0 = _tmp4_;
-#line 746 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 746 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref ((GObject*) child_0);
-#line 747 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 747 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp5_ = self->el;
-#line 747 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 747 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp6_ = child_0->el;
-#line 747 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 747 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_container_add ((GtkContainer*) _tmp5_, (GtkWidget*) _tmp6_);
-#line 748 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 748 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp7_ = self->priv->_this;
-#line 748 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 748 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp8_ = xcls_leftprops_xcls_label14_new (_tmp7_);
-#line 748 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 748 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	child_1 = _tmp8_;
-#line 749 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 749 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref ((GObject*) child_1);
-#line 750 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 750 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp9_ = self->el;
-#line 750 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 750 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp10_ = child_1->el;
-#line 750 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 750 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_container_add ((GtkContainer*) _tmp9_, (GtkWidget*) _tmp10_);
-#line 737 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 737 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (child_1);
-#line 737 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 737 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (child_0);
-#line 737 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 737 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return self;
 #line 3839 "WindowLeftProps.vala.c"
 }
 
 
 Xcls_LeftPropsXcls_HBox12* xcls_leftprops_xcls_hbox12_new (Xcls_LeftProps* _owner) {
-#line 737 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 737 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return xcls_leftprops_xcls_hbox12_construct (XCLS_LEFTPROPS_TYPE_XCLS_HBOX12, _owner);
 #line 3846 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_hbox12_class_init (Xcls_LeftPropsXcls_HBox12Class * klass) {
-#line 728 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 728 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_xcls_hbox12_parent_class = g_type_class_peek_parent (klass);
-#line 728 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 728 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_LeftPropsXcls_HBox12Private));
-#line 728 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 728 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_leftprops_xcls_hbox12_finalize;
 #line 3857 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_hbox12_instance_init (Xcls_LeftPropsXcls_HBox12 * self) {
-#line 728 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 728 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv = XCLS_LEFTPROPS_XCLS_HBOX12_GET_PRIVATE (self);
 #line 3864 "WindowLeftProps.vala.c"
 }
@@ -3866,13 +3866,13 @@ static void xcls_leftprops_xcls_hbox12_instance_init (Xcls_LeftPropsXcls_HBox12 
 
 static void xcls_leftprops_xcls_hbox12_finalize (GObject* obj) {
 	Xcls_LeftPropsXcls_HBox12 * self;
-#line 728 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 728 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_LEFTPROPS_TYPE_XCLS_HBOX12, Xcls_LeftPropsXcls_HBox12);
-#line 730 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 730 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 731 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 731 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 728 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 728 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (xcls_leftprops_xcls_hbox12_parent_class)->finalize (obj);
 #line 3878 "WindowLeftProps.vala.c"
 }
@@ -3897,60 +3897,60 @@ Xcls_LeftPropsXcls_Image13* xcls_leftprops_xcls_image13_construct (GType object_
 	GtkImage* _tmp2_;
 	GtkImage* _tmp3_;
 	GtkImage* _tmp4_;
-#line 778 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 778 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 778 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 778 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = (Xcls_LeftPropsXcls_Image13*) g_object_new (object_type, NULL);
-#line 780 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 780 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = _owner;
-#line 780 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 780 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 780 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 780 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 780 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 780 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv->_this = _tmp1_;
-#line 781 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 781 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = (GtkImage*) gtk_image_new ();
-#line 781 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 781 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref_sink (_tmp2_);
-#line 781 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 781 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 781 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 781 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->el = _tmp2_;
-#line 786 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 786 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp3_ = self->el;
-#line 786 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 786 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_set (_tmp3_, "icon-size", (gint) GTK_ICON_SIZE_MENU, NULL);
-#line 787 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 787 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp4_ = self->el;
-#line 787 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 787 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_set (_tmp4_, "stock", GTK_STOCK_ADD, NULL);
-#line 778 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 778 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return self;
 #line 3931 "WindowLeftProps.vala.c"
 }
 
 
 Xcls_LeftPropsXcls_Image13* xcls_leftprops_xcls_image13_new (Xcls_LeftProps* _owner) {
-#line 778 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 778 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return xcls_leftprops_xcls_image13_construct (XCLS_LEFTPROPS_TYPE_XCLS_IMAGE13, _owner);
 #line 3938 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_image13_class_init (Xcls_LeftPropsXcls_Image13Class * klass) {
-#line 769 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 769 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_xcls_image13_parent_class = g_type_class_peek_parent (klass);
-#line 769 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 769 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_LeftPropsXcls_Image13Private));
-#line 769 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 769 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_leftprops_xcls_image13_finalize;
 #line 3949 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_image13_instance_init (Xcls_LeftPropsXcls_Image13 * self) {
-#line 769 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 769 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv = XCLS_LEFTPROPS_XCLS_IMAGE13_GET_PRIVATE (self);
 #line 3956 "WindowLeftProps.vala.c"
 }
@@ -3958,13 +3958,13 @@ static void xcls_leftprops_xcls_image13_instance_init (Xcls_LeftPropsXcls_Image1
 
 static void xcls_leftprops_xcls_image13_finalize (GObject* obj) {
 	Xcls_LeftPropsXcls_Image13 * self;
-#line 769 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 769 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_LEFTPROPS_TYPE_XCLS_IMAGE13, Xcls_LeftPropsXcls_Image13);
-#line 771 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 771 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 772 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 772 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 769 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 769 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (xcls_leftprops_xcls_image13_parent_class)->finalize (obj);
 #line 3970 "WindowLeftProps.vala.c"
 }
@@ -3987,52 +3987,52 @@ Xcls_LeftPropsXcls_Label14* xcls_leftprops_xcls_label14_construct (GType object_
 	Xcls_LeftProps* _tmp0_;
 	Xcls_LeftProps* _tmp1_;
 	GtkLabel* _tmp2_;
-#line 817 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 817 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 817 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 817 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = (Xcls_LeftPropsXcls_Label14*) g_object_new (object_type, NULL);
-#line 819 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 819 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = _owner;
-#line 819 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 819 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 819 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 819 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 819 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 819 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv->_this = _tmp1_;
-#line 820 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 820 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = (GtkLabel*) gtk_label_new ("Other");
-#line 820 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 820 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref_sink (_tmp2_);
-#line 820 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 820 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 820 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 820 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->el = _tmp2_;
-#line 817 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 817 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return self;
 #line 4013 "WindowLeftProps.vala.c"
 }
 
 
 Xcls_LeftPropsXcls_Label14* xcls_leftprops_xcls_label14_new (Xcls_LeftProps* _owner) {
-#line 817 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 817 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return xcls_leftprops_xcls_label14_construct (XCLS_LEFTPROPS_TYPE_XCLS_LABEL14, _owner);
 #line 4020 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_label14_class_init (Xcls_LeftPropsXcls_Label14Class * klass) {
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_xcls_label14_parent_class = g_type_class_peek_parent (klass);
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_LeftPropsXcls_Label14Private));
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_leftprops_xcls_label14_finalize;
 #line 4031 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_label14_instance_init (Xcls_LeftPropsXcls_Label14 * self) {
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv = XCLS_LEFTPROPS_XCLS_LABEL14_GET_PRIVATE (self);
 #line 4038 "WindowLeftProps.vala.c"
 }
@@ -4040,13 +4040,13 @@ static void xcls_leftprops_xcls_label14_instance_init (Xcls_LeftPropsXcls_Label1
 
 static void xcls_leftprops_xcls_label14_finalize (GObject* obj) {
 	Xcls_LeftPropsXcls_Label14 * self;
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_LEFTPROPS_TYPE_XCLS_LABEL14, Xcls_LeftPropsXcls_Label14);
-#line 810 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 810 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 811 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 811 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 808 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 808 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (xcls_leftprops_xcls_label14_parent_class)->finalize (obj);
 #line 4052 "WindowLeftProps.vala.c"
 }
@@ -4121,220 +4121,220 @@ Xcls_LeftPropsXcls_AddPropertyPopup* xcls_leftprops_xcls_addpropertypopup_constr
 	Xcls_LeftPropsXcls_MenuItem25* child_9;
 	GtkMenu* _tmp43_;
 	GtkMenuItem* _tmp44_;
-#line 852 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 852 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 852 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 852 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = (Xcls_LeftPropsXcls_AddPropertyPopup*) g_object_new (object_type, NULL);
-#line 854 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 854 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = _owner;
-#line 854 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 854 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 854 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 854 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 854 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 854 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv->_this = _tmp1_;
-#line 855 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 855 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = self->priv->_this;
-#line 855 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 855 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp3_ = _g_object_ref0 (self);
-#line 855 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 855 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (_tmp2_->AddPropertyPopup);
-#line 855 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 855 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_->AddPropertyPopup = _tmp3_;
-#line 856 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 856 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp4_ = (GtkMenu*) gtk_menu_new ();
-#line 856 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 856 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref_sink (_tmp4_);
-#line 856 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 856 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 856 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 856 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->el = _tmp4_;
-#line 861 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 861 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp5_ = self->priv->_this;
-#line 861 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 861 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp6_ = xcls_leftprops_xcls_menuitem16_new (_tmp5_);
-#line 861 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 861 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	child_0 = _tmp6_;
-#line 862 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 862 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref ((GObject*) child_0);
-#line 863 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 863 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp7_ = self->el;
-#line 863 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 863 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp8_ = child_0->el;
-#line 863 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 863 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_menu_shell_append ((GtkMenuShell*) _tmp7_, (GtkWidget*) _tmp8_);
-#line 864 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 864 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp9_ = self->priv->_this;
-#line 864 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 864 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp10_ = xcls_leftprops_xcls_menuitem17_new (_tmp9_);
-#line 864 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 864 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	child_1 = _tmp10_;
-#line 865 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 865 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref ((GObject*) child_1);
-#line 866 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 866 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp11_ = self->el;
-#line 866 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 866 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp12_ = child_1->el;
-#line 866 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 866 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_menu_shell_append ((GtkMenuShell*) _tmp11_, (GtkWidget*) _tmp12_);
-#line 867 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 867 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp13_ = self->priv->_this;
-#line 867 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 867 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp14_ = xcls_leftprops_xcls_menuitem18_new (_tmp13_);
-#line 867 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 867 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	child_2 = _tmp14_;
-#line 868 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 868 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref ((GObject*) child_2);
-#line 869 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 869 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp15_ = self->el;
-#line 869 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 869 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp16_ = child_2->el;
-#line 869 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 869 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_menu_shell_append ((GtkMenuShell*) _tmp15_, (GtkWidget*) _tmp16_);
-#line 870 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 870 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp17_ = self->priv->_this;
-#line 870 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 870 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp18_ = xcls_leftprops_xcls_separatormenuitem19_new (_tmp17_);
-#line 870 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 870 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	child_3 = _tmp18_;
-#line 871 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 871 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref ((GObject*) child_3);
-#line 872 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 872 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp19_ = self->el;
-#line 872 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 872 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp20_ = child_3->el;
-#line 872 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 872 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_container_add ((GtkContainer*) _tmp19_, (GtkWidget*) _tmp20_);
-#line 873 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 873 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp21_ = self->priv->_this;
-#line 873 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 873 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp22_ = xcls_leftprops_xcls_menuitem20_new (_tmp21_);
-#line 873 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 873 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	child_4 = _tmp22_;
-#line 874 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 874 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref ((GObject*) child_4);
-#line 875 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 875 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp23_ = self->el;
-#line 875 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 875 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp24_ = child_4->el;
-#line 875 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 875 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_menu_shell_append ((GtkMenuShell*) _tmp23_, (GtkWidget*) _tmp24_);
-#line 876 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 876 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp25_ = self->priv->_this;
-#line 876 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 876 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp26_ = xcls_leftprops_xcls_menuitem21_new (_tmp25_);
-#line 876 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 876 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	child_5 = _tmp26_;
-#line 877 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 877 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref ((GObject*) child_5);
-#line 878 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 878 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp27_ = self->el;
-#line 878 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 878 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp28_ = child_5->el;
-#line 878 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 878 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_menu_shell_append ((GtkMenuShell*) _tmp27_, (GtkWidget*) _tmp28_);
-#line 879 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 879 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp29_ = self->priv->_this;
-#line 879 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 879 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp30_ = xcls_leftprops_xcls_menuitem22_new (_tmp29_);
-#line 879 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 879 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	child_6 = _tmp30_;
-#line 880 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 880 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref ((GObject*) child_6);
-#line 881 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 881 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp31_ = self->el;
-#line 881 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 881 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp32_ = child_6->el;
-#line 881 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 881 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_menu_shell_append ((GtkMenuShell*) _tmp31_, (GtkWidget*) _tmp32_);
-#line 882 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 882 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp33_ = self->priv->_this;
-#line 882 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 882 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp34_ = xcls_leftprops_xcls_separatormenuitem23_new (_tmp33_);
-#line 882 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 882 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	child_7 = _tmp34_;
-#line 883 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 883 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref ((GObject*) child_7);
-#line 884 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 884 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp35_ = self->el;
-#line 884 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 884 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp36_ = child_7->el;
-#line 884 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 884 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_container_add ((GtkContainer*) _tmp35_, (GtkWidget*) _tmp36_);
-#line 885 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 885 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp37_ = self->priv->_this;
-#line 885 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 885 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp38_ = xcls_leftprops_xcls_menuitem24_new (_tmp37_);
-#line 885 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 885 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	child_8 = _tmp38_;
-#line 886 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 886 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref ((GObject*) child_8);
-#line 887 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 887 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp39_ = self->el;
-#line 887 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 887 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp40_ = child_8->el;
-#line 887 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 887 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_menu_shell_append ((GtkMenuShell*) _tmp39_, (GtkWidget*) _tmp40_);
-#line 888 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 888 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp41_ = self->priv->_this;
-#line 888 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 888 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp42_ = xcls_leftprops_xcls_menuitem25_new (_tmp41_);
-#line 888 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 888 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	child_9 = _tmp42_;
-#line 889 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 889 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref ((GObject*) child_9);
-#line 890 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 890 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp43_ = self->el;
-#line 890 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 890 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp44_ = child_9->el;
-#line 890 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 890 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_menu_shell_append ((GtkMenuShell*) _tmp43_, (GtkWidget*) _tmp44_);
-#line 852 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 852 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (child_9);
-#line 852 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 852 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (child_8);
-#line 852 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 852 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (child_7);
-#line 852 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 852 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (child_6);
-#line 852 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 852 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (child_5);
-#line 852 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 852 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (child_4);
-#line 852 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 852 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (child_3);
-#line 852 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 852 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (child_2);
-#line 852 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 852 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (child_1);
-#line 852 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 852 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (child_0);
-#line 852 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 852 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return self;
 #line 4315 "WindowLeftProps.vala.c"
 }
 
 
 Xcls_LeftPropsXcls_AddPropertyPopup* xcls_leftprops_xcls_addpropertypopup_new (Xcls_LeftProps* _owner) {
-#line 852 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 852 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return xcls_leftprops_xcls_addpropertypopup_construct (XCLS_LEFTPROPS_TYPE_XCLS_ADDPROPERTYPOPUP, _owner);
 #line 4322 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_addpropertypopup_class_init (Xcls_LeftPropsXcls_AddPropertyPopupClass * klass) {
-#line 843 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 843 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_xcls_addpropertypopup_parent_class = g_type_class_peek_parent (klass);
-#line 843 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 843 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_LeftPropsXcls_AddPropertyPopupPrivate));
-#line 843 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 843 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_leftprops_xcls_addpropertypopup_finalize;
 #line 4333 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_addpropertypopup_instance_init (Xcls_LeftPropsXcls_AddPropertyPopup * self) {
-#line 843 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 843 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv = XCLS_LEFTPROPS_XCLS_ADDPROPERTYPOPUP_GET_PRIVATE (self);
 #line 4340 "WindowLeftProps.vala.c"
 }
@@ -4342,13 +4342,13 @@ static void xcls_leftprops_xcls_addpropertypopup_instance_init (Xcls_LeftPropsXc
 
 static void xcls_leftprops_xcls_addpropertypopup_finalize (GObject* obj) {
 	Xcls_LeftPropsXcls_AddPropertyPopup * self;
-#line 843 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 843 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_LEFTPROPS_TYPE_XCLS_ADDPROPERTYPOPUP, Xcls_LeftPropsXcls_AddPropertyPopup);
-#line 845 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 845 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 846 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 846 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 843 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 843 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (xcls_leftprops_xcls_addpropertypopup_parent_class)->finalize (obj);
 #line 4354 "WindowLeftProps.vala.c"
 }
@@ -4368,16 +4368,16 @@ GType xcls_leftprops_xcls_addpropertypopup_get_type (void) {
 
 static void __lambda18_ (Xcls_LeftPropsXcls_MenuItem16* self) {
 	Xcls_LeftProps* _tmp0_;
-#line 933 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 933 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = self->priv->_this;
-#line 933 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 933 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_addProp (_tmp0_, "prop", ".string:id", "");
 #line 4376 "WindowLeftProps.vala.c"
 }
 
 
 static void ___lambda18__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self) {
-#line 932 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 932 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	__lambda18_ (self);
 #line 4383 "WindowLeftProps.vala.c"
 }
@@ -4391,64 +4391,64 @@ Xcls_LeftPropsXcls_MenuItem16* xcls_leftprops_xcls_menuitem16_construct (GType o
 	GtkMenuItem* _tmp3_;
 	GtkMenuItem* _tmp4_;
 	GtkMenuItem* _tmp5_;
-#line 920 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 920 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 920 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 920 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = (Xcls_LeftPropsXcls_MenuItem16*) g_object_new (object_type, NULL);
-#line 922 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 922 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = _owner;
-#line 922 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 922 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 922 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 922 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 922 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 922 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv->_this = _tmp1_;
-#line 923 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 923 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = (GtkMenuItem*) gtk_menu_item_new ();
-#line 923 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 923 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref_sink (_tmp2_);
-#line 923 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 923 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 923 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 923 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->el = _tmp2_;
-#line 928 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 928 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp3_ = self->el;
-#line 928 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 928 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_menu_item_set_label (_tmp3_, "ID");
-#line 929 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 929 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp4_ = self->el;
-#line 929 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 929 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_widget_set_tooltip_markup ((GtkWidget*) _tmp4_, "Using this.get('*someid') will find any id in an application.");
-#line 932 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 932 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp5_ = self->el;
-#line 932 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 932 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_signal_connect_object (_tmp5_, "activate", (GCallback) ___lambda18__gtk_menu_item_activate, self, 0);
-#line 920 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 920 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return self;
 #line 4429 "WindowLeftProps.vala.c"
 }
 
 
 Xcls_LeftPropsXcls_MenuItem16* xcls_leftprops_xcls_menuitem16_new (Xcls_LeftProps* _owner) {
-#line 920 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 920 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return xcls_leftprops_xcls_menuitem16_construct (XCLS_LEFTPROPS_TYPE_XCLS_MENUITEM16, _owner);
 #line 4436 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_menuitem16_class_init (Xcls_LeftPropsXcls_MenuItem16Class * klass) {
-#line 911 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 911 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_xcls_menuitem16_parent_class = g_type_class_peek_parent (klass);
-#line 911 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 911 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_LeftPropsXcls_MenuItem16Private));
-#line 911 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 911 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_leftprops_xcls_menuitem16_finalize;
 #line 4447 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_menuitem16_instance_init (Xcls_LeftPropsXcls_MenuItem16 * self) {
-#line 911 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 911 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv = XCLS_LEFTPROPS_XCLS_MENUITEM16_GET_PRIVATE (self);
 #line 4454 "WindowLeftProps.vala.c"
 }
@@ -4456,13 +4456,13 @@ static void xcls_leftprops_xcls_menuitem16_instance_init (Xcls_LeftPropsXcls_Men
 
 static void xcls_leftprops_xcls_menuitem16_finalize (GObject* obj) {
 	Xcls_LeftPropsXcls_MenuItem16 * self;
-#line 911 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 911 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_LEFTPROPS_TYPE_XCLS_MENUITEM16, Xcls_LeftPropsXcls_MenuItem16);
-#line 913 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 913 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 914 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 914 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 911 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 911 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (xcls_leftprops_xcls_menuitem16_parent_class)->finalize (obj);
 #line 4468 "WindowLeftProps.vala.c"
 }
@@ -4482,16 +4482,16 @@ GType xcls_leftprops_xcls_menuitem16_get_type (void) {
 
 static void __lambda27_ (Xcls_LeftPropsXcls_MenuItem17* self) {
 	Xcls_LeftProps* _tmp0_;
-#line 980 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 980 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = self->priv->_this;
-#line 980 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 980 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_addProp (_tmp0_, "prop", "*pack", "add");
 #line 4490 "WindowLeftProps.vala.c"
 }
 
 
 static void ___lambda27__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self) {
-#line 978 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 978 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	__lambda27_ (self);
 #line 4497 "WindowLeftProps.vala.c"
 }
@@ -4505,64 +4505,64 @@ Xcls_LeftPropsXcls_MenuItem17* xcls_leftprops_xcls_menuitem17_construct (GType o
 	GtkMenuItem* _tmp3_;
 	GtkMenuItem* _tmp4_;
 	GtkMenuItem* _tmp5_;
-#line 966 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 966 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 966 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 966 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = (Xcls_LeftPropsXcls_MenuItem17*) g_object_new (object_type, NULL);
-#line 968 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 968 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = _owner;
-#line 968 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 968 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 968 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 968 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 968 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 968 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv->_this = _tmp1_;
-#line 969 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 969 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = (GtkMenuItem*) gtk_menu_item_new ();
-#line 969 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 969 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref_sink (_tmp2_);
-#line 969 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 969 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 969 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 969 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->el = _tmp2_;
-#line 974 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 974 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp3_ = self->el;
-#line 974 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 974 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_menu_item_set_label (_tmp3_, "PACK");
-#line 975 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 975 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp4_ = self->el;
-#line 975 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 975 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_widget_set_tooltip_markup ((GtkWidget*) _tmp4_, "Add what type of packing is to be used");
-#line 978 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 978 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp5_ = self->el;
-#line 978 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 978 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_signal_connect_object (_tmp5_, "activate", (GCallback) ___lambda27__gtk_menu_item_activate, self, 0);
-#line 966 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 966 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return self;
 #line 4543 "WindowLeftProps.vala.c"
 }
 
 
 Xcls_LeftPropsXcls_MenuItem17* xcls_leftprops_xcls_menuitem17_new (Xcls_LeftProps* _owner) {
-#line 966 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 966 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return xcls_leftprops_xcls_menuitem17_construct (XCLS_LEFTPROPS_TYPE_XCLS_MENUITEM17, _owner);
 #line 4550 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_menuitem17_class_init (Xcls_LeftPropsXcls_MenuItem17Class * klass) {
-#line 957 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 957 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_xcls_menuitem17_parent_class = g_type_class_peek_parent (klass);
-#line 957 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 957 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_LeftPropsXcls_MenuItem17Private));
-#line 957 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 957 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_leftprops_xcls_menuitem17_finalize;
 #line 4561 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_menuitem17_instance_init (Xcls_LeftPropsXcls_MenuItem17 * self) {
-#line 957 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 957 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv = XCLS_LEFTPROPS_XCLS_MENUITEM17_GET_PRIVATE (self);
 #line 4568 "WindowLeftProps.vala.c"
 }
@@ -4570,13 +4570,13 @@ static void xcls_leftprops_xcls_menuitem17_instance_init (Xcls_LeftPropsXcls_Men
 
 static void xcls_leftprops_xcls_menuitem17_finalize (GObject* obj) {
 	Xcls_LeftPropsXcls_MenuItem17 * self;
-#line 957 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 957 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_LEFTPROPS_TYPE_XCLS_MENUITEM17, Xcls_LeftPropsXcls_MenuItem17);
-#line 959 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 959 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 960 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 960 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 957 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 957 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (xcls_leftprops_xcls_menuitem17_parent_class)->finalize (obj);
 #line 4582 "WindowLeftProps.vala.c"
 }
@@ -4596,16 +4596,16 @@ GType xcls_leftprops_xcls_menuitem17_get_type (void) {
 
 static void __lambda28_ (Xcls_LeftPropsXcls_MenuItem18* self) {
 	Xcls_LeftProps* _tmp0_;
-#line 1027 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1027 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = self->priv->_this;
-#line 1027 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1027 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_addProp (_tmp0_, "prop", "|init", "{\n\n}\n");
 #line 4604 "WindowLeftProps.vala.c"
 }
 
 
 static void ___lambda28__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self) {
-#line 1025 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1025 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	__lambda28_ (self);
 #line 4611 "WindowLeftProps.vala.c"
 }
@@ -4619,64 +4619,64 @@ Xcls_LeftPropsXcls_MenuItem18* xcls_leftprops_xcls_menuitem18_construct (GType o
 	GtkMenuItem* _tmp3_;
 	GtkMenuItem* _tmp4_;
 	GtkMenuItem* _tmp5_;
-#line 1013 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1013 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 1013 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1013 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = (Xcls_LeftPropsXcls_MenuItem18*) g_object_new (object_type, NULL);
-#line 1015 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1015 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = _owner;
-#line 1015 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1015 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 1015 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1015 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1015 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1015 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv->_this = _tmp1_;
-#line 1016 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1016 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = (GtkMenuItem*) gtk_menu_item_new ();
-#line 1016 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1016 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref_sink (_tmp2_);
-#line 1016 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1016 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 1016 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1016 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->el = _tmp2_;
-#line 1021 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1021 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp3_ = self->el;
-#line 1021 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1021 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_menu_item_set_label (_tmp3_, "INIT");
-#line 1022 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1022 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp4_ = self->el;
-#line 1022 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1022 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_widget_set_tooltip_markup ((GtkWidget*) _tmp4_, "Override the init method");
-#line 1025 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1025 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp5_ = self->el;
-#line 1025 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1025 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_signal_connect_object (_tmp5_, "activate", (GCallback) ___lambda28__gtk_menu_item_activate, self, 0);
-#line 1013 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1013 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return self;
 #line 4657 "WindowLeftProps.vala.c"
 }
 
 
 Xcls_LeftPropsXcls_MenuItem18* xcls_leftprops_xcls_menuitem18_new (Xcls_LeftProps* _owner) {
-#line 1013 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1013 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return xcls_leftprops_xcls_menuitem18_construct (XCLS_LEFTPROPS_TYPE_XCLS_MENUITEM18, _owner);
 #line 4664 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_menuitem18_class_init (Xcls_LeftPropsXcls_MenuItem18Class * klass) {
-#line 1004 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1004 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_xcls_menuitem18_parent_class = g_type_class_peek_parent (klass);
-#line 1004 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1004 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_LeftPropsXcls_MenuItem18Private));
-#line 1004 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1004 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_leftprops_xcls_menuitem18_finalize;
 #line 4675 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_menuitem18_instance_init (Xcls_LeftPropsXcls_MenuItem18 * self) {
-#line 1004 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1004 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv = XCLS_LEFTPROPS_XCLS_MENUITEM18_GET_PRIVATE (self);
 #line 4682 "WindowLeftProps.vala.c"
 }
@@ -4684,13 +4684,13 @@ static void xcls_leftprops_xcls_menuitem18_instance_init (Xcls_LeftPropsXcls_Men
 
 static void xcls_leftprops_xcls_menuitem18_finalize (GObject* obj) {
 	Xcls_LeftPropsXcls_MenuItem18 * self;
-#line 1004 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1004 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_LEFTPROPS_TYPE_XCLS_MENUITEM18, Xcls_LeftPropsXcls_MenuItem18);
-#line 1006 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1006 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 1007 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1007 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1004 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1004 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (xcls_leftprops_xcls_menuitem18_parent_class)->finalize (obj);
 #line 4696 "WindowLeftProps.vala.c"
 }
@@ -4713,52 +4713,52 @@ Xcls_LeftPropsXcls_SeparatorMenuItem19* xcls_leftprops_xcls_separatormenuitem19_
 	Xcls_LeftProps* _tmp0_;
 	Xcls_LeftProps* _tmp1_;
 	GtkSeparatorMenuItem* _tmp2_;
-#line 1060 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1060 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 1060 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1060 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = (Xcls_LeftPropsXcls_SeparatorMenuItem19*) g_object_new (object_type, NULL);
-#line 1062 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1062 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = _owner;
-#line 1062 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1062 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 1062 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1062 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1062 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1062 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv->_this = _tmp1_;
-#line 1063 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1063 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = (GtkSeparatorMenuItem*) gtk_separator_menu_item_new ();
-#line 1063 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1063 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref_sink (_tmp2_);
-#line 1063 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1063 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 1063 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1063 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->el = _tmp2_;
-#line 1060 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1060 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return self;
 #line 4739 "WindowLeftProps.vala.c"
 }
 
 
 Xcls_LeftPropsXcls_SeparatorMenuItem19* xcls_leftprops_xcls_separatormenuitem19_new (Xcls_LeftProps* _owner) {
-#line 1060 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1060 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return xcls_leftprops_xcls_separatormenuitem19_construct (XCLS_LEFTPROPS_TYPE_XCLS_SEPARATORMENUITEM19, _owner);
 #line 4746 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_separatormenuitem19_class_init (Xcls_LeftPropsXcls_SeparatorMenuItem19Class * klass) {
-#line 1051 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1051 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_xcls_separatormenuitem19_parent_class = g_type_class_peek_parent (klass);
-#line 1051 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1051 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_LeftPropsXcls_SeparatorMenuItem19Private));
-#line 1051 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1051 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_leftprops_xcls_separatormenuitem19_finalize;
 #line 4757 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_separatormenuitem19_instance_init (Xcls_LeftPropsXcls_SeparatorMenuItem19 * self) {
-#line 1051 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1051 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv = XCLS_LEFTPROPS_XCLS_SEPARATORMENUITEM19_GET_PRIVATE (self);
 #line 4764 "WindowLeftProps.vala.c"
 }
@@ -4766,13 +4766,13 @@ static void xcls_leftprops_xcls_separatormenuitem19_instance_init (Xcls_LeftProp
 
 static void xcls_leftprops_xcls_separatormenuitem19_finalize (GObject* obj) {
 	Xcls_LeftPropsXcls_SeparatorMenuItem19 * self;
-#line 1051 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1051 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_LEFTPROPS_TYPE_XCLS_SEPARATORMENUITEM19, Xcls_LeftPropsXcls_SeparatorMenuItem19);
-#line 1053 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1053 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 1054 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1054 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1051 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1051 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (xcls_leftprops_xcls_separatormenuitem19_parent_class)->finalize (obj);
 #line 4778 "WindowLeftProps.vala.c"
 }
@@ -4792,18 +4792,18 @@ GType xcls_leftprops_xcls_separatormenuitem19_get_type (void) {
 
 static void __lambda29_ (Xcls_LeftPropsXcls_MenuItem20* self, GtkMenuItem* _self_) {
 	Xcls_LeftProps* _tmp0_;
-#line 1105 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1105 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_if_fail (_self_ != NULL);
-#line 1107 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1107 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = self->priv->_this;
-#line 1107 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1107 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_addProp (_tmp0_, "prop", ".string:XXXX", "");
 #line 4802 "WindowLeftProps.vala.c"
 }
 
 
 static void ___lambda29__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self) {
-#line 1105 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1105 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	__lambda29_ (self, _sender);
 #line 4809 "WindowLeftProps.vala.c"
 }
@@ -4817,64 +4817,64 @@ Xcls_LeftPropsXcls_MenuItem20* xcls_leftprops_xcls_menuitem20_construct (GType o
 	GtkMenuItem* _tmp3_;
 	GtkMenuItem* _tmp4_;
 	GtkMenuItem* _tmp5_;
-#line 1093 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1093 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 1093 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1093 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = (Xcls_LeftPropsXcls_MenuItem20*) g_object_new (object_type, NULL);
-#line 1095 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1095 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = _owner;
-#line 1095 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1095 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 1095 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1095 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1095 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1095 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv->_this = _tmp1_;
-#line 1096 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1096 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = (GtkMenuItem*) gtk_menu_item_new ();
-#line 1096 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1096 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref_sink (_tmp2_);
-#line 1096 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1096 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 1096 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1096 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->el = _tmp2_;
-#line 1101 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1101 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp3_ = self->el;
-#line 1101 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1101 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_menu_item_set_label (_tmp3_, "String");
-#line 1102 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1102 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp4_ = self->el;
-#line 1102 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1102 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_widget_set_tooltip_markup ((GtkWidget*) _tmp4_, "Add a user defined string property");
-#line 1105 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1105 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp5_ = self->el;
-#line 1105 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1105 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_signal_connect_object (_tmp5_, "activate", (GCallback) ___lambda29__gtk_menu_item_activate, self, 0);
-#line 1093 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1093 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return self;
 #line 4855 "WindowLeftProps.vala.c"
 }
 
 
 Xcls_LeftPropsXcls_MenuItem20* xcls_leftprops_xcls_menuitem20_new (Xcls_LeftProps* _owner) {
-#line 1093 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1093 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return xcls_leftprops_xcls_menuitem20_construct (XCLS_LEFTPROPS_TYPE_XCLS_MENUITEM20, _owner);
 #line 4862 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_menuitem20_class_init (Xcls_LeftPropsXcls_MenuItem20Class * klass) {
-#line 1084 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1084 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_xcls_menuitem20_parent_class = g_type_class_peek_parent (klass);
-#line 1084 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1084 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_LeftPropsXcls_MenuItem20Private));
-#line 1084 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1084 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_leftprops_xcls_menuitem20_finalize;
 #line 4873 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_menuitem20_instance_init (Xcls_LeftPropsXcls_MenuItem20 * self) {
-#line 1084 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1084 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv = XCLS_LEFTPROPS_XCLS_MENUITEM20_GET_PRIVATE (self);
 #line 4880 "WindowLeftProps.vala.c"
 }
@@ -4882,13 +4882,13 @@ static void xcls_leftprops_xcls_menuitem20_instance_init (Xcls_LeftPropsXcls_Men
 
 static void xcls_leftprops_xcls_menuitem20_finalize (GObject* obj) {
 	Xcls_LeftPropsXcls_MenuItem20 * self;
-#line 1084 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1084 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_LEFTPROPS_TYPE_XCLS_MENUITEM20, Xcls_LeftPropsXcls_MenuItem20);
-#line 1086 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1086 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 1087 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1087 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1084 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1084 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (xcls_leftprops_xcls_menuitem20_parent_class)->finalize (obj);
 #line 4894 "WindowLeftProps.vala.c"
 }
@@ -4908,16 +4908,16 @@ GType xcls_leftprops_xcls_menuitem20_get_type (void) {
 
 static void __lambda30_ (Xcls_LeftPropsXcls_MenuItem21* self) {
 	Xcls_LeftProps* _tmp0_;
-#line 1155 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1155 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = self->priv->_this;
-#line 1155 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1155 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_addProp (_tmp0_, "prop", ".int:XXX", "0");
 #line 4916 "WindowLeftProps.vala.c"
 }
 
 
 static void ___lambda30__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self) {
-#line 1153 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1153 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	__lambda30_ (self);
 #line 4923 "WindowLeftProps.vala.c"
 }
@@ -4931,64 +4931,64 @@ Xcls_LeftPropsXcls_MenuItem21* xcls_leftprops_xcls_menuitem21_construct (GType o
 	GtkMenuItem* _tmp3_;
 	GtkMenuItem* _tmp4_;
 	GtkMenuItem* _tmp5_;
-#line 1141 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1141 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 1141 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1141 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = (Xcls_LeftPropsXcls_MenuItem21*) g_object_new (object_type, NULL);
-#line 1143 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1143 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = _owner;
-#line 1143 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1143 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 1143 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1143 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1143 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1143 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv->_this = _tmp1_;
-#line 1144 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1144 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = (GtkMenuItem*) gtk_menu_item_new ();
-#line 1144 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1144 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref_sink (_tmp2_);
-#line 1144 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1144 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 1144 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1144 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->el = _tmp2_;
-#line 1149 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1149 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp3_ = self->el;
-#line 1149 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1149 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_menu_item_set_label (_tmp3_, "Number");
-#line 1150 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1150 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp4_ = self->el;
-#line 1150 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1150 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_widget_set_tooltip_markup ((GtkWidget*) _tmp4_, "Add a user defined number property");
-#line 1153 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1153 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp5_ = self->el;
-#line 1153 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1153 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_signal_connect_object (_tmp5_, "activate", (GCallback) ___lambda30__gtk_menu_item_activate, self, 0);
-#line 1141 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1141 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return self;
 #line 4969 "WindowLeftProps.vala.c"
 }
 
 
 Xcls_LeftPropsXcls_MenuItem21* xcls_leftprops_xcls_menuitem21_new (Xcls_LeftProps* _owner) {
-#line 1141 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1141 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return xcls_leftprops_xcls_menuitem21_construct (XCLS_LEFTPROPS_TYPE_XCLS_MENUITEM21, _owner);
 #line 4976 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_menuitem21_class_init (Xcls_LeftPropsXcls_MenuItem21Class * klass) {
-#line 1132 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1132 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_xcls_menuitem21_parent_class = g_type_class_peek_parent (klass);
-#line 1132 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1132 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_LeftPropsXcls_MenuItem21Private));
-#line 1132 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1132 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_leftprops_xcls_menuitem21_finalize;
 #line 4987 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_menuitem21_instance_init (Xcls_LeftPropsXcls_MenuItem21 * self) {
-#line 1132 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1132 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv = XCLS_LEFTPROPS_XCLS_MENUITEM21_GET_PRIVATE (self);
 #line 4994 "WindowLeftProps.vala.c"
 }
@@ -4996,13 +4996,13 @@ static void xcls_leftprops_xcls_menuitem21_instance_init (Xcls_LeftPropsXcls_Men
 
 static void xcls_leftprops_xcls_menuitem21_finalize (GObject* obj) {
 	Xcls_LeftPropsXcls_MenuItem21 * self;
-#line 1132 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1132 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_LEFTPROPS_TYPE_XCLS_MENUITEM21, Xcls_LeftPropsXcls_MenuItem21);
-#line 1134 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1134 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 1135 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1135 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1132 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1132 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (xcls_leftprops_xcls_menuitem21_parent_class)->finalize (obj);
 #line 5008 "WindowLeftProps.vala.c"
 }
@@ -5022,16 +5022,16 @@ GType xcls_leftprops_xcls_menuitem21_get_type (void) {
 
 static void __lambda31_ (Xcls_LeftPropsXcls_MenuItem22* self) {
 	Xcls_LeftProps* _tmp0_;
-#line 1202 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1202 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = self->priv->_this;
-#line 1202 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1202 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_addProp (_tmp0_, "prop", ".bool:XXX", "true");
 #line 5030 "WindowLeftProps.vala.c"
 }
 
 
 static void ___lambda31__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self) {
-#line 1200 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1200 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	__lambda31_ (self);
 #line 5037 "WindowLeftProps.vala.c"
 }
@@ -5045,64 +5045,64 @@ Xcls_LeftPropsXcls_MenuItem22* xcls_leftprops_xcls_menuitem22_construct (GType o
 	GtkMenuItem* _tmp3_;
 	GtkMenuItem* _tmp4_;
 	GtkMenuItem* _tmp5_;
-#line 1188 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1188 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 1188 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1188 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = (Xcls_LeftPropsXcls_MenuItem22*) g_object_new (object_type, NULL);
-#line 1190 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1190 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = _owner;
-#line 1190 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1190 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 1190 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1190 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1190 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1190 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv->_this = _tmp1_;
-#line 1191 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1191 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = (GtkMenuItem*) gtk_menu_item_new ();
-#line 1191 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1191 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref_sink (_tmp2_);
-#line 1191 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1191 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 1191 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1191 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->el = _tmp2_;
-#line 1196 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1196 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp3_ = self->el;
-#line 1196 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1196 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_menu_item_set_label (_tmp3_, "Boolean");
-#line 1197 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1197 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp4_ = self->el;
-#line 1197 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1197 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_widget_set_tooltip_markup ((GtkWidget*) _tmp4_, "Add a user defined boolean property");
-#line 1200 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1200 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp5_ = self->el;
-#line 1200 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1200 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_signal_connect_object (_tmp5_, "activate", (GCallback) ___lambda31__gtk_menu_item_activate, self, 0);
-#line 1188 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1188 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return self;
 #line 5083 "WindowLeftProps.vala.c"
 }
 
 
 Xcls_LeftPropsXcls_MenuItem22* xcls_leftprops_xcls_menuitem22_new (Xcls_LeftProps* _owner) {
-#line 1188 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1188 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return xcls_leftprops_xcls_menuitem22_construct (XCLS_LEFTPROPS_TYPE_XCLS_MENUITEM22, _owner);
 #line 5090 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_menuitem22_class_init (Xcls_LeftPropsXcls_MenuItem22Class * klass) {
-#line 1179 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1179 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_xcls_menuitem22_parent_class = g_type_class_peek_parent (klass);
-#line 1179 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1179 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_LeftPropsXcls_MenuItem22Private));
-#line 1179 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1179 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_leftprops_xcls_menuitem22_finalize;
 #line 5101 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_menuitem22_instance_init (Xcls_LeftPropsXcls_MenuItem22 * self) {
-#line 1179 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1179 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv = XCLS_LEFTPROPS_XCLS_MENUITEM22_GET_PRIVATE (self);
 #line 5108 "WindowLeftProps.vala.c"
 }
@@ -5110,13 +5110,13 @@ static void xcls_leftprops_xcls_menuitem22_instance_init (Xcls_LeftPropsXcls_Men
 
 static void xcls_leftprops_xcls_menuitem22_finalize (GObject* obj) {
 	Xcls_LeftPropsXcls_MenuItem22 * self;
-#line 1179 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1179 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_LEFTPROPS_TYPE_XCLS_MENUITEM22, Xcls_LeftPropsXcls_MenuItem22);
-#line 1181 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1181 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 1182 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1182 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1179 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1179 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (xcls_leftprops_xcls_menuitem22_parent_class)->finalize (obj);
 #line 5122 "WindowLeftProps.vala.c"
 }
@@ -5139,52 +5139,52 @@ Xcls_LeftPropsXcls_SeparatorMenuItem23* xcls_leftprops_xcls_separatormenuitem23_
 	Xcls_LeftProps* _tmp0_;
 	Xcls_LeftProps* _tmp1_;
 	GtkSeparatorMenuItem* _tmp2_;
-#line 1235 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1235 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 1235 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1235 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = (Xcls_LeftPropsXcls_SeparatorMenuItem23*) g_object_new (object_type, NULL);
-#line 1237 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1237 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = _owner;
-#line 1237 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1237 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 1237 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1237 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1237 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1237 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv->_this = _tmp1_;
-#line 1238 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1238 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = (GtkSeparatorMenuItem*) gtk_separator_menu_item_new ();
-#line 1238 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1238 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref_sink (_tmp2_);
-#line 1238 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1238 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 1238 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1238 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->el = _tmp2_;
-#line 1235 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1235 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return self;
 #line 5165 "WindowLeftProps.vala.c"
 }
 
 
 Xcls_LeftPropsXcls_SeparatorMenuItem23* xcls_leftprops_xcls_separatormenuitem23_new (Xcls_LeftProps* _owner) {
-#line 1235 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1235 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return xcls_leftprops_xcls_separatormenuitem23_construct (XCLS_LEFTPROPS_TYPE_XCLS_SEPARATORMENUITEM23, _owner);
 #line 5172 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_separatormenuitem23_class_init (Xcls_LeftPropsXcls_SeparatorMenuItem23Class * klass) {
-#line 1226 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1226 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_xcls_separatormenuitem23_parent_class = g_type_class_peek_parent (klass);
-#line 1226 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1226 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_LeftPropsXcls_SeparatorMenuItem23Private));
-#line 1226 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1226 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_leftprops_xcls_separatormenuitem23_finalize;
 #line 5183 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_separatormenuitem23_instance_init (Xcls_LeftPropsXcls_SeparatorMenuItem23 * self) {
-#line 1226 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1226 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv = XCLS_LEFTPROPS_XCLS_SEPARATORMENUITEM23_GET_PRIVATE (self);
 #line 5190 "WindowLeftProps.vala.c"
 }
@@ -5192,13 +5192,13 @@ static void xcls_leftprops_xcls_separatormenuitem23_instance_init (Xcls_LeftProp
 
 static void xcls_leftprops_xcls_separatormenuitem23_finalize (GObject* obj) {
 	Xcls_LeftPropsXcls_SeparatorMenuItem23 * self;
-#line 1226 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1226 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_LEFTPROPS_TYPE_XCLS_SEPARATORMENUITEM23, Xcls_LeftPropsXcls_SeparatorMenuItem23);
-#line 1228 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1228 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 1229 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1229 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1226 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1226 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (xcls_leftprops_xcls_separatormenuitem23_parent_class)->finalize (obj);
 #line 5204 "WindowLeftProps.vala.c"
 }
@@ -5218,16 +5218,16 @@ GType xcls_leftprops_xcls_separatormenuitem23_get_type (void) {
 
 static void __lambda32_ (Xcls_LeftPropsXcls_MenuItem24* self) {
 	Xcls_LeftProps* _tmp0_;
-#line 1282 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1282 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = self->priv->_this;
-#line 1282 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1282 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_addProp (_tmp0_, "prop", "|XXXX", "function() { }");
 #line 5226 "WindowLeftProps.vala.c"
 }
 
 
 static void ___lambda32__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self) {
-#line 1280 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1280 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	__lambda32_ (self);
 #line 5233 "WindowLeftProps.vala.c"
 }
@@ -5241,64 +5241,64 @@ Xcls_LeftPropsXcls_MenuItem24* xcls_leftprops_xcls_menuitem24_construct (GType o
 	GtkMenuItem* _tmp3_;
 	GtkMenuItem* _tmp4_;
 	GtkMenuItem* _tmp5_;
-#line 1268 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1268 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 1268 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1268 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = (Xcls_LeftPropsXcls_MenuItem24*) g_object_new (object_type, NULL);
-#line 1270 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1270 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = _owner;
-#line 1270 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1270 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 1270 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1270 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1270 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1270 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv->_this = _tmp1_;
-#line 1271 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1271 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = (GtkMenuItem*) gtk_menu_item_new ();
-#line 1271 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1271 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref_sink (_tmp2_);
-#line 1271 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1271 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 1271 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1271 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->el = _tmp2_;
-#line 1276 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1276 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp3_ = self->el;
-#line 1276 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1276 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_menu_item_set_label (_tmp3_, "Javascript Function");
-#line 1277 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1277 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp4_ = self->el;
-#line 1277 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1277 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_widget_set_tooltip_markup ((GtkWidget*) _tmp4_, "Add a user function boolean property");
-#line 1280 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1280 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp5_ = self->el;
-#line 1280 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1280 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_signal_connect_object (_tmp5_, "activate", (GCallback) ___lambda32__gtk_menu_item_activate, self, 0);
-#line 1268 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1268 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return self;
 #line 5279 "WindowLeftProps.vala.c"
 }
 
 
 Xcls_LeftPropsXcls_MenuItem24* xcls_leftprops_xcls_menuitem24_new (Xcls_LeftProps* _owner) {
-#line 1268 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1268 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return xcls_leftprops_xcls_menuitem24_construct (XCLS_LEFTPROPS_TYPE_XCLS_MENUITEM24, _owner);
 #line 5286 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_menuitem24_class_init (Xcls_LeftPropsXcls_MenuItem24Class * klass) {
-#line 1259 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1259 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_xcls_menuitem24_parent_class = g_type_class_peek_parent (klass);
-#line 1259 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1259 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_LeftPropsXcls_MenuItem24Private));
-#line 1259 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1259 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_leftprops_xcls_menuitem24_finalize;
 #line 5297 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_menuitem24_instance_init (Xcls_LeftPropsXcls_MenuItem24 * self) {
-#line 1259 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1259 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv = XCLS_LEFTPROPS_XCLS_MENUITEM24_GET_PRIVATE (self);
 #line 5304 "WindowLeftProps.vala.c"
 }
@@ -5306,13 +5306,13 @@ static void xcls_leftprops_xcls_menuitem24_instance_init (Xcls_LeftPropsXcls_Men
 
 static void xcls_leftprops_xcls_menuitem24_finalize (GObject* obj) {
 	Xcls_LeftPropsXcls_MenuItem24 * self;
-#line 1259 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1259 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_LEFTPROPS_TYPE_XCLS_MENUITEM24, Xcls_LeftPropsXcls_MenuItem24);
-#line 1261 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1261 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 1262 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1262 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1259 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1259 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (xcls_leftprops_xcls_menuitem24_parent_class)->finalize (obj);
 #line 5318 "WindowLeftProps.vala.c"
 }
@@ -5332,16 +5332,16 @@ GType xcls_leftprops_xcls_menuitem24_get_type (void) {
 
 static void __lambda33_ (Xcls_LeftPropsXcls_MenuItem25* self) {
 	Xcls_LeftProps* _tmp0_;
-#line 1329 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1329 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = self->priv->_this;
-#line 1329 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1329 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_addProp (_tmp0_, "prop", "|.type:return_type:XXXX", "() {\n\n}\n");
 #line 5340 "WindowLeftProps.vala.c"
 }
 
 
 static void ___lambda33__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self) {
-#line 1327 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1327 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	__lambda33_ (self);
 #line 5347 "WindowLeftProps.vala.c"
 }
@@ -5355,64 +5355,64 @@ Xcls_LeftPropsXcls_MenuItem25* xcls_leftprops_xcls_menuitem25_construct (GType o
 	GtkMenuItem* _tmp3_;
 	GtkMenuItem* _tmp4_;
 	GtkMenuItem* _tmp5_;
-#line 1315 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1315 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 1315 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1315 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = (Xcls_LeftPropsXcls_MenuItem25*) g_object_new (object_type, NULL);
-#line 1317 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1317 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = _owner;
-#line 1317 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1317 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 1317 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1317 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1317 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1317 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv->_this = _tmp1_;
-#line 1318 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1318 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = (GtkMenuItem*) gtk_menu_item_new ();
-#line 1318 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1318 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref_sink (_tmp2_);
-#line 1318 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1318 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 1318 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1318 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->el = _tmp2_;
-#line 1323 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1323 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp3_ = self->el;
-#line 1323 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1323 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_menu_item_set_label (_tmp3_, "Vala Method");
-#line 1324 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1324 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp4_ = self->el;
-#line 1324 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1324 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_widget_set_tooltip_markup ((GtkWidget*) _tmp4_, "Add a user function boolean property");
-#line 1327 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1327 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp5_ = self->el;
-#line 1327 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1327 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_signal_connect_object (_tmp5_, "activate", (GCallback) ___lambda33__gtk_menu_item_activate, self, 0);
-#line 1315 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1315 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return self;
 #line 5393 "WindowLeftProps.vala.c"
 }
 
 
 Xcls_LeftPropsXcls_MenuItem25* xcls_leftprops_xcls_menuitem25_new (Xcls_LeftProps* _owner) {
-#line 1315 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1315 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return xcls_leftprops_xcls_menuitem25_construct (XCLS_LEFTPROPS_TYPE_XCLS_MENUITEM25, _owner);
 #line 5400 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_menuitem25_class_init (Xcls_LeftPropsXcls_MenuItem25Class * klass) {
-#line 1306 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1306 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_xcls_menuitem25_parent_class = g_type_class_peek_parent (klass);
-#line 1306 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1306 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_LeftPropsXcls_MenuItem25Private));
-#line 1306 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1306 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_leftprops_xcls_menuitem25_finalize;
 #line 5411 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_menuitem25_instance_init (Xcls_LeftPropsXcls_MenuItem25 * self) {
-#line 1306 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1306 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv = XCLS_LEFTPROPS_XCLS_MENUITEM25_GET_PRIVATE (self);
 #line 5418 "WindowLeftProps.vala.c"
 }
@@ -5420,13 +5420,13 @@ static void xcls_leftprops_xcls_menuitem25_instance_init (Xcls_LeftPropsXcls_Men
 
 static void xcls_leftprops_xcls_menuitem25_finalize (GObject* obj) {
 	Xcls_LeftPropsXcls_MenuItem25 * self;
-#line 1306 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1306 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_LEFTPROPS_TYPE_XCLS_MENUITEM25, Xcls_LeftPropsXcls_MenuItem25);
-#line 1308 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1308 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 1309 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1309 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1306 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1306 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (xcls_leftprops_xcls_menuitem25_parent_class)->finalize (obj);
 #line 5432 "WindowLeftProps.vala.c"
 }
@@ -5460,101 +5460,101 @@ Xcls_LeftPropsXcls_EditProps* xcls_leftprops_xcls_editprops_construct (GType obj
 	Xcls_LeftProps* _tmp10_;
 	Xcls_LeftPropsXcls_ContextMenu* _tmp11_;
 	Xcls_LeftPropsXcls_ContextMenu* child_1;
-#line 1363 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1363 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 1363 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1363 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = (Xcls_LeftPropsXcls_EditProps*) g_object_new (object_type, NULL);
-#line 1365 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1365 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = _owner;
-#line 1365 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1365 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 1365 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1365 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1365 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1365 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv->_this = _tmp1_;
-#line 1366 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1366 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = self->priv->_this;
-#line 1366 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1366 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp3_ = _g_object_ref0 (self);
-#line 1366 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1366 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (_tmp2_->EditProps);
-#line 1366 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1366 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_->EditProps = _tmp3_;
-#line 1367 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1367 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp4_ = (GtkScrolledWindow*) gtk_scrolled_window_new (NULL, NULL);
-#line 1367 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1367 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref_sink (_tmp4_);
-#line 1367 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1367 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 1367 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1367 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->el = _tmp4_;
-#line 1370 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1370 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->editing = FALSE;
-#line 1373 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1373 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp5_ = self->el;
-#line 1373 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1373 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_scrolled_window_set_shadow_type (_tmp5_, GTK_SHADOW_IN);
-#line 1374 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1374 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp6_ = self->priv->_this;
-#line 1374 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1374 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp7_ = xcls_leftprops_xcls_view_new (_tmp6_);
-#line 1374 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1374 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	child_0 = _tmp7_;
-#line 1375 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1375 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref ((GObject*) child_0);
-#line 1376 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1376 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp8_ = self->el;
-#line 1376 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1376 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp9_ = child_0->el;
-#line 1376 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1376 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_container_add ((GtkContainer*) _tmp8_, (GtkWidget*) _tmp9_);
-#line 1377 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1377 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp10_ = self->priv->_this;
-#line 1377 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1377 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp11_ = xcls_leftprops_xcls_contextmenu_new (_tmp10_);
-#line 1377 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1377 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	child_1 = _tmp11_;
-#line 1378 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1378 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref ((GObject*) child_1);
 #line 5520 "WindowLeftProps.vala.c"
 	{
 		GtkScrolledWindow* _tmp12_;
-#line 1383 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1383 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp12_ = self->el;
-#line 1383 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1383 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		gtk_scrolled_window_set_policy (_tmp12_, GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
 #line 5527 "WindowLeftProps.vala.c"
 	}
-#line 1363 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1363 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (child_1);
-#line 1363 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1363 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (child_0);
-#line 1363 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1363 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return self;
 #line 5535 "WindowLeftProps.vala.c"
 }
 
 
 Xcls_LeftPropsXcls_EditProps* xcls_leftprops_xcls_editprops_new (Xcls_LeftProps* _owner) {
-#line 1363 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1363 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return xcls_leftprops_xcls_editprops_construct (XCLS_LEFTPROPS_TYPE_XCLS_EDITPROPS, _owner);
 #line 5542 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_editprops_class_init (Xcls_LeftPropsXcls_EditPropsClass * klass) {
-#line 1353 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1353 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_xcls_editprops_parent_class = g_type_class_peek_parent (klass);
-#line 1353 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1353 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_LeftPropsXcls_EditPropsPrivate));
-#line 1353 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1353 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_leftprops_xcls_editprops_finalize;
 #line 5553 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_editprops_instance_init (Xcls_LeftPropsXcls_EditProps * self) {
-#line 1353 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1353 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv = XCLS_LEFTPROPS_XCLS_EDITPROPS_GET_PRIVATE (self);
 #line 5560 "WindowLeftProps.vala.c"
 }
@@ -5562,13 +5562,13 @@ static void xcls_leftprops_xcls_editprops_instance_init (Xcls_LeftPropsXcls_Edit
 
 static void xcls_leftprops_xcls_editprops_finalize (GObject* obj) {
 	Xcls_LeftPropsXcls_EditProps * self;
-#line 1353 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1353 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_LEFTPROPS_TYPE_XCLS_EDITPROPS, Xcls_LeftPropsXcls_EditProps);
-#line 1355 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1355 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 1356 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1356 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1353 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1353 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (xcls_leftprops_xcls_editprops_parent_class)->finalize (obj);
 #line 5574 "WindowLeftProps.vala.c"
 }
@@ -5587,7 +5587,7 @@ GType xcls_leftprops_xcls_editprops_get_type (void) {
 
 
 static void _vala_PangoFontDescription_free (PangoFontDescription* self) {
-#line 1443 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1443 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_boxed_free (pango_font_description_get_type (), self);
 #line 5593 "WindowLeftProps.vala.c"
 }
@@ -5619,74 +5619,74 @@ static gboolean __lambda23_ (Xcls_LeftPropsXcls_view* self, GdkEventButton* ev) 
 	const gchar* _tmp36_;
 	const gchar* _tmp37_;
 	Xcls_LeftProps* _tmp38_;
-#line 1454 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1454 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (ev != NULL, FALSE);
-#line 1456 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1456 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = self->priv->_this;
-#line 1456 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1456 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_before_edit (_tmp0_);
-#line 1462 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1462 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = self->el;
-#line 1462 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1462 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = *ev;
-#line 1462 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1462 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp3_ = _tmp2_.x;
-#line 1462 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1462 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp4_ = *ev;
-#line 1462 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1462 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp5_ = _tmp4_.y;
-#line 1462 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1462 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp10_ = gtk_tree_view_get_path_at_pos (_tmp1_, (gint) _tmp3_, (gint) _tmp5_, &_tmp6_, &_tmp7_, &_tmp8_, &_tmp9_);
-#line 1462 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1462 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_gtk_tree_path_free0 (path);
-#line 1462 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1462 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	path = _tmp6_;
-#line 1462 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1462 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (col);
-#line 1462 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1462 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp11_ = _g_object_ref0 (_tmp7_);
-#line 1462 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1462 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	col = _tmp11_;
-#line 1462 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1462 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	cell_x = _tmp8_;
-#line 1462 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1462 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	cell_y = _tmp9_;
-#line 1462 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1462 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	if (!_tmp10_) {
-#line 1463 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1463 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		result = FALSE;
-#line 1463 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1463 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_gtk_tree_path_free0 (path);
-#line 1463 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1463 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_g_object_unref0 (col);
-#line 1463 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1463 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		return result;
 #line 5665 "WindowLeftProps.vala.c"
 	}
-#line 1467 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1467 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp13_ = *ev;
-#line 1467 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1467 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp14_ = _tmp13_.type;
-#line 1467 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1467 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	if (_tmp14_ == GDK_BUTTON_PRESS) {
 #line 5673 "WindowLeftProps.vala.c"
 		GdkEventButton _tmp15_;
 		guint _tmp16_;
-#line 1467 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1467 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp15_ = *ev;
-#line 1467 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1467 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp16_ = _tmp15_.button;
-#line 1467 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1467 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp12_ = _tmp16_ == ((guint) 3);
 #line 5682 "WindowLeftProps.vala.c"
 	} else {
-#line 1467 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1467 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp12_ = FALSE;
 #line 5686 "WindowLeftProps.vala.c"
 	}
-#line 1467 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1467 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp17_ = _tmp12_;
-#line 1467 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1467 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	if (_tmp17_) {
 #line 5692 "WindowLeftProps.vala.c"
 		GtkTreeViewColumn* _tmp18_;
@@ -5707,101 +5707,101 @@ static gboolean __lambda23_ (Xcls_LeftPropsXcls_view* self, GdkEventButton* ev) 
 		guint _tmp32_;
 		GdkEventButton _tmp33_;
 		guint32 _tmp34_;
-#line 1469 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1469 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp18_ = col;
-#line 1469 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1469 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp19_ = gtk_tree_view_column_get_title (_tmp18_);
-#line 1469 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1469 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp20_ = _tmp19_;
-#line 1469 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1469 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		if (g_strcmp0 (_tmp20_, "value") == 0) {
-#line 1470 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1470 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 			result = FALSE;
-#line 1470 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1470 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 			_gtk_tree_path_free0 (path);
-#line 1470 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1470 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 			_g_object_unref0 (col);
-#line 1470 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1470 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 			return result;
 #line 5727 "WindowLeftProps.vala.c"
 		}
-#line 1473 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1473 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp21_ = self->priv->_this;
-#line 1473 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1473 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp22_ = _tmp21_->ContextMenu;
-#line 1473 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1473 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp23_ = _g_object_ref0 (_tmp22_);
-#line 1473 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1473 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		p = _tmp23_;
-#line 1475 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1475 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp24_ = p;
-#line 1475 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1475 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp25_ = _tmp24_->el;
-#line 1475 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1475 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp26_ = gdk_screen_get_default ();
-#line 1475 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1475 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		gtk_menu_set_screen (_tmp25_, _tmp26_);
-#line 1476 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1476 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp27_ = p;
-#line 1476 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1476 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp28_ = _tmp27_->el;
-#line 1476 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1476 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		gtk_widget_show_all ((GtkWidget*) _tmp28_);
-#line 1477 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1477 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp29_ = p;
-#line 1477 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1477 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp30_ = _tmp29_->el;
-#line 1477 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1477 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp31_ = *ev;
-#line 1477 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1477 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp32_ = _tmp31_.button;
-#line 1477 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1477 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp33_ = *ev;
-#line 1477 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1477 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp34_ = _tmp33_.time;
-#line 1477 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1477 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		gtk_menu_popup (_tmp30_, NULL, NULL, NULL, NULL, _tmp32_, _tmp34_);
-#line 1481 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1481 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		result = FALSE;
-#line 1481 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1481 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_g_object_unref0 (p);
-#line 1481 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1481 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_gtk_tree_path_free0 (path);
-#line 1481 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1481 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_g_object_unref0 (col);
-#line 1481 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1481 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		return result;
 #line 5775 "WindowLeftProps.vala.c"
 	}
-#line 1485 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1485 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp35_ = col;
-#line 1485 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1485 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp36_ = gtk_tree_view_column_get_title (_tmp35_);
-#line 1485 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1485 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp37_ = _tmp36_;
-#line 1485 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1485 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	if (g_strcmp0 (_tmp37_, "value") != 0) {
-#line 1487 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1487 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		result = FALSE;
-#line 1487 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1487 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_gtk_tree_path_free0 (path);
-#line 1487 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1487 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_g_object_unref0 (col);
-#line 1487 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1487 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		return result;
 #line 5793 "WindowLeftProps.vala.c"
 	}
-#line 1531 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1531 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp38_ = self->priv->_this;
-#line 1531 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1531 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_startEditingValue (_tmp38_);
-#line 1535 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1535 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	result = FALSE;
-#line 1535 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1535 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_gtk_tree_path_free0 (path);
-#line 1535 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1535 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (col);
-#line 1535 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1535 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return result;
 #line 5807 "WindowLeftProps.vala.c"
 }
@@ -5810,7 +5810,7 @@ static gboolean __lambda23_ (Xcls_LeftPropsXcls_view* self, GdkEventButton* ev) 
 static gboolean ___lambda23__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self) {
 	gboolean result;
 	result = __lambda23_ (self, event);
-#line 1454 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1454 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return result;
 #line 5816 "WindowLeftProps.vala.c"
 }
@@ -5842,87 +5842,87 @@ Xcls_LeftPropsXcls_view* xcls_leftprops_xcls_view_construct (GType object_type, 
 	GtkTreeView* _tmp18_;
 	GtkTreeViewColumn* _tmp19_;
 	GtkTreeView* _tmp25_;
-#line 1420 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1420 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 1420 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1420 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = (Xcls_LeftPropsXcls_view*) g_object_new (object_type, NULL);
-#line 1422 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1422 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = _owner;
-#line 1422 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1422 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 1422 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1422 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1422 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1422 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv->_this = _tmp1_;
-#line 1423 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1423 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = self->priv->_this;
-#line 1423 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1423 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp3_ = _g_object_ref0 (self);
-#line 1423 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1423 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (_tmp2_->view);
-#line 1423 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1423 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_->view = _tmp3_;
-#line 1424 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1424 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp4_ = (GtkTreeView*) gtk_tree_view_new ();
-#line 1424 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1424 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref_sink (_tmp4_);
-#line 1424 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1424 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 1424 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1424 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->el = _tmp4_;
-#line 1429 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1429 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp5_ = self->el;
-#line 1429 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1429 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_tree_view_set_enable_tree_lines (_tmp5_, TRUE);
-#line 1430 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1430 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp6_ = self->el;
-#line 1430 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1430 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_tree_view_set_headers_visible (_tmp6_, FALSE);
-#line 1431 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1431 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp7_ = self->el;
-#line 1431 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1431 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_tree_view_set_tooltip_column (_tmp7_, 5);
-#line 1432 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1432 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp8_ = self->priv->_this;
-#line 1432 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1432 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp9_ = xcls_leftprops_xcls_model_new (_tmp8_);
-#line 1432 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1432 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	child_0 = _tmp9_;
-#line 1433 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1433 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref ((GObject*) child_0);
-#line 1434 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1434 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp10_ = self->el;
-#line 1434 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1434 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp11_ = child_0->el;
-#line 1434 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1434 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_tree_view_set_model (_tmp10_, (GtkTreeModel*) _tmp11_);
-#line 1435 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1435 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp12_ = self->priv->_this;
-#line 1435 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1435 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp13_ = xcls_leftprops_xcls_keycol_new (_tmp12_);
-#line 1435 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1435 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	child_1 = _tmp13_;
-#line 1436 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1436 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref ((GObject*) child_1);
-#line 1437 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1437 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp14_ = self->el;
-#line 1437 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1437 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp15_ = child_1->el;
-#line 1437 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1437 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_tree_view_append_column (_tmp14_, _tmp15_);
-#line 1438 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1438 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp16_ = self->priv->_this;
-#line 1438 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1438 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp17_ = xcls_leftprops_xcls_valcol_new (_tmp16_);
-#line 1438 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1438 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	child_2 = _tmp17_;
-#line 1439 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1439 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref ((GObject*) child_2);
-#line 1440 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1440 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp18_ = self->el;
-#line 1440 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1440 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp19_ = child_2->el;
-#line 1440 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1440 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_tree_view_append_column (_tmp18_, _tmp19_);
 #line 5928 "WindowLeftProps.vala.c"
 	{
@@ -5933,68 +5933,68 @@ Xcls_LeftPropsXcls_view* xcls_leftprops_xcls_view_construct (GType object_type, 
 		PangoFontDescription* _tmp23_;
 		PangoFontDescription* description;
 		GtkTreeView* _tmp24_;
-#line 1444 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1444 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp20_ = self->el;
-#line 1444 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1444 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp21_ = gtk_tree_view_get_selection (_tmp20_);
-#line 1444 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1444 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp22_ = _g_object_ref0 (_tmp21_);
-#line 1444 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1444 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		selection = _tmp22_;
-#line 1445 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1445 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		gtk_tree_selection_set_mode (selection, GTK_SELECTION_SINGLE);
-#line 1448 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1448 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp23_ = pango_font_description_new ();
-#line 1448 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1448 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		description = _tmp23_;
-#line 1449 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1449 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		pango_font_description_set_size (description, 8000);
-#line 1450 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1450 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp24_ = self->el;
-#line 1450 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1450 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		gtk_widget_modify_font ((GtkWidget*) _tmp24_, description);
-#line 1443 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1443 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		__vala_PangoFontDescription_free0 (description);
-#line 1443 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1443 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_g_object_unref0 (selection);
 #line 5961 "WindowLeftProps.vala.c"
 	}
-#line 1454 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1454 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp25_ = self->el;
-#line 1454 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1454 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_signal_connect_object ((GtkWidget*) _tmp25_, "button-press-event", (GCallback) ___lambda23__gtk_widget_button_press_event, self, 0);
-#line 1420 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1420 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (child_2);
-#line 1420 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1420 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (child_1);
-#line 1420 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1420 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (child_0);
-#line 1420 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1420 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return self;
 #line 5975 "WindowLeftProps.vala.c"
 }
 
 
 Xcls_LeftPropsXcls_view* xcls_leftprops_xcls_view_new (Xcls_LeftProps* _owner) {
-#line 1420 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1420 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return xcls_leftprops_xcls_view_construct (XCLS_LEFTPROPS_TYPE_XCLS_VIEW, _owner);
 #line 5982 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_view_class_init (Xcls_LeftPropsXcls_viewClass * klass) {
-#line 1411 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1411 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_xcls_view_parent_class = g_type_class_peek_parent (klass);
-#line 1411 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1411 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_LeftPropsXcls_viewPrivate));
-#line 1411 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1411 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_leftprops_xcls_view_finalize;
 #line 5993 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_view_instance_init (Xcls_LeftPropsXcls_view * self) {
-#line 1411 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1411 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv = XCLS_LEFTPROPS_XCLS_VIEW_GET_PRIVATE (self);
 #line 6000 "WindowLeftProps.vala.c"
 }
@@ -6002,13 +6002,13 @@ static void xcls_leftprops_xcls_view_instance_init (Xcls_LeftPropsXcls_view * se
 
 static void xcls_leftprops_xcls_view_finalize (GObject* obj) {
 	Xcls_LeftPropsXcls_view * self;
-#line 1411 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1411 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_LEFTPROPS_TYPE_XCLS_VIEW, Xcls_LeftPropsXcls_view);
-#line 1413 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1413 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 1414 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1414 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1411 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1411 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (xcls_leftprops_xcls_view_parent_class)->finalize (obj);
 #line 6014 "WindowLeftProps.vala.c"
 }
@@ -6033,63 +6033,63 @@ Xcls_LeftPropsXcls_model* xcls_leftprops_xcls_model_construct (GType object_type
 	Xcls_LeftProps* _tmp2_;
 	Xcls_LeftPropsXcls_model* _tmp3_;
 	GtkTreeStore* _tmp4_;
-#line 1577 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1577 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 1577 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1577 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = (Xcls_LeftPropsXcls_model*) g_object_new (object_type, NULL);
-#line 1579 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1579 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = _owner;
-#line 1579 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1579 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 1579 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1579 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1579 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1579 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv->_this = _tmp1_;
-#line 1580 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1580 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = self->priv->_this;
-#line 1580 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1580 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp3_ = _g_object_ref0 (self);
-#line 1580 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1580 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (_tmp2_->model);
-#line 1580 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1580 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_->model = _tmp3_;
-#line 1581 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1581 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp4_ = gtk_tree_store_new (6, "    typeof(Object),  // 0 real key\n" \
 "    typeof(string),  // 1 property type (prop|event)\n" \
 "    typeof(string),  // 2 real key\n" \
 "    typeof(string),  // 4 visable key\n" \
 "    typeof(string)  // 5 visable value\n" \
 "     ");
-#line 1581 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1581 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 1581 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1581 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->el = _tmp4_;
-#line 1577 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1577 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return self;
 #line 6065 "WindowLeftProps.vala.c"
 }
 
 
 Xcls_LeftPropsXcls_model* xcls_leftprops_xcls_model_new (Xcls_LeftProps* _owner) {
-#line 1577 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1577 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return xcls_leftprops_xcls_model_construct (XCLS_LEFTPROPS_TYPE_XCLS_MODEL, _owner);
 #line 6072 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_model_class_init (Xcls_LeftPropsXcls_modelClass * klass) {
-#line 1568 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1568 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_xcls_model_parent_class = g_type_class_peek_parent (klass);
-#line 1568 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1568 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_LeftPropsXcls_modelPrivate));
-#line 1568 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1568 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_leftprops_xcls_model_finalize;
 #line 6083 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_model_instance_init (Xcls_LeftPropsXcls_model * self) {
-#line 1568 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1568 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv = XCLS_LEFTPROPS_XCLS_MODEL_GET_PRIVATE (self);
 #line 6090 "WindowLeftProps.vala.c"
 }
@@ -6097,13 +6097,13 @@ static void xcls_leftprops_xcls_model_instance_init (Xcls_LeftPropsXcls_model * 
 
 static void xcls_leftprops_xcls_model_finalize (GObject* obj) {
 	Xcls_LeftPropsXcls_model * self;
-#line 1568 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1568 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_LEFTPROPS_TYPE_XCLS_MODEL, Xcls_LeftPropsXcls_model);
-#line 1570 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1570 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 1571 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1571 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1568 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1568 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (xcls_leftprops_xcls_model_parent_class)->finalize (obj);
 #line 6104 "WindowLeftProps.vala.c"
 }
@@ -6138,90 +6138,90 @@ Xcls_LeftPropsXcls_keycol* xcls_leftprops_xcls_keycol_construct (GType object_ty
 	Xcls_LeftProps* _tmp11_;
 	Xcls_LeftPropsXcls_keyrender* _tmp12_;
 	GtkCellRendererText* _tmp13_;
-#line 1621 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1621 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 1621 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1621 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = (Xcls_LeftPropsXcls_keycol*) g_object_new (object_type, NULL);
-#line 1623 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1623 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = _owner;
-#line 1623 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1623 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 1623 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1623 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1623 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1623 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv->_this = _tmp1_;
-#line 1624 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1624 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = self->priv->_this;
-#line 1624 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1624 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp3_ = _g_object_ref0 (self);
-#line 1624 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1624 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (_tmp2_->keycol);
-#line 1624 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1624 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_->keycol = _tmp3_;
-#line 1625 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1625 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp4_ = gtk_tree_view_column_new ();
-#line 1625 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1625 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref_sink (_tmp4_);
-#line 1625 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1625 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 1625 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1625 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->el = _tmp4_;
-#line 1630 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1630 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp5_ = self->el;
-#line 1630 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1630 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_tree_view_column_set_title (_tmp5_, "key");
-#line 1631 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1631 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp6_ = self->priv->_this;
-#line 1631 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1631 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp7_ = xcls_leftprops_xcls_keyrender_new (_tmp6_);
-#line 1631 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1631 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	child_0 = _tmp7_;
-#line 1632 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1632 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref ((GObject*) child_0);
-#line 1633 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1633 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp8_ = self->el;
-#line 1633 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1633 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp9_ = child_0->el;
-#line 1633 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1633 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_cell_layout_pack_start ((GtkCellLayout*) _tmp8_, (GtkCellRenderer*) _tmp9_, FALSE);
-#line 1636 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1636 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp10_ = self->el;
-#line 1636 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1636 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp11_ = self->priv->_this;
-#line 1636 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1636 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp12_ = _tmp11_->keyrender;
-#line 1636 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1636 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp13_ = _tmp12_->el;
-#line 1636 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1636 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_cell_layout_add_attribute ((GtkCellLayout*) _tmp10_, (GtkCellRenderer*) _tmp13_, "markup", 2);
-#line 1621 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1621 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (child_0);
-#line 1621 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1621 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return self;
 #line 6197 "WindowLeftProps.vala.c"
 }
 
 
 Xcls_LeftPropsXcls_keycol* xcls_leftprops_xcls_keycol_new (Xcls_LeftProps* _owner) {
-#line 1621 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1621 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return xcls_leftprops_xcls_keycol_construct (XCLS_LEFTPROPS_TYPE_XCLS_KEYCOL, _owner);
 #line 6204 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_keycol_class_init (Xcls_LeftPropsXcls_keycolClass * klass) {
-#line 1612 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1612 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_xcls_keycol_parent_class = g_type_class_peek_parent (klass);
-#line 1612 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1612 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_LeftPropsXcls_keycolPrivate));
-#line 1612 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1612 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_leftprops_xcls_keycol_finalize;
 #line 6215 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_keycol_instance_init (Xcls_LeftPropsXcls_keycol * self) {
-#line 1612 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1612 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv = XCLS_LEFTPROPS_XCLS_KEYCOL_GET_PRIVATE (self);
 #line 6222 "WindowLeftProps.vala.c"
 }
@@ -6229,13 +6229,13 @@ static void xcls_leftprops_xcls_keycol_instance_init (Xcls_LeftPropsXcls_keycol 
 
 static void xcls_leftprops_xcls_keycol_finalize (GObject* obj) {
 	Xcls_LeftPropsXcls_keycol * self;
-#line 1612 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1612 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_LEFTPROPS_TYPE_XCLS_KEYCOL, Xcls_LeftPropsXcls_keycol);
-#line 1614 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1614 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 1615 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1615 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1612 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1612 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (xcls_leftprops_xcls_keycol_parent_class)->finalize (obj);
 #line 6236 "WindowLeftProps.vala.c"
 }
@@ -6254,16 +6254,16 @@ GType xcls_leftprops_xcls_keycol_get_type (void) {
 
 
 static void __lambda19_ (Xcls_LeftPropsXcls_keyrender* self, GtkCellEditable* editable, const gchar* path) {
-#line 1682 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1682 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_if_fail (editable != NULL);
-#line 1682 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1682 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_if_fail (path != NULL);
 #line 6257 "WindowLeftProps.vala.c"
 }
 
 
 static void ___lambda19__gtk_cell_renderer_editing_started (GtkCellRenderer* _sender, GtkCellEditable* editable, const gchar* path, gpointer self) {
-#line 1682 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1682 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	__lambda19_ (self, editable, path);
 #line 6264 "WindowLeftProps.vala.c"
 }
@@ -6304,101 +6304,101 @@ static void __lambda20_ (Xcls_LeftPropsXcls_keyrender* self, const gchar* path, 
 	const gchar* _tmp27_;
 	const gchar* _tmp28_;
 	GQuark _tmp30_ = 0U;
-#line 1711 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1711 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	static GQuark _tmp29_label0 = 0;
-#line 1711 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1711 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	static GQuark _tmp29_label1 = 0;
 #line 6307 "WindowLeftProps.vala.c"
 	Xcls_LeftProps* _tmp59_;
-#line 1687 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1687 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_if_fail (path != NULL);
-#line 1687 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1687 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_if_fail (newtext != NULL);
-#line 1699 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1699 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = self->priv->_this;
-#line 1699 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1699 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _tmp0_->model;
-#line 1699 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1699 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = _tmp1_->el;
-#line 1699 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1699 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp3_ = path;
-#line 1699 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1699 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp4_ = gtk_tree_path_new_from_string (_tmp3_);
-#line 1699 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1699 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp5_ = _tmp4_;
-#line 1699 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1699 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_tree_model_get_iter ((GtkTreeModel*) _tmp2_, &_tmp6_, _tmp5_);
-#line 1699 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1699 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	iter = _tmp6_;
-#line 1699 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1699 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_gtk_tree_path_free0 (_tmp5_);
-#line 1702 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1702 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp7_ = self->priv->_this;
-#line 1702 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1702 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp8_ = _tmp7_->model;
-#line 1702 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1702 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp9_ = _tmp8_->el;
-#line 1702 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1702 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp10_ = iter;
-#line 1702 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1702 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_tree_model_get_value ((GtkTreeModel*) _tmp9_, &_tmp10_, 1, &_tmp11_);
-#line 1702 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1702 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_IS_VALUE (&gval) ? (g_value_unset (&gval), NULL) : NULL;
-#line 1702 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1702 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gval = _tmp11_;
-#line 1703 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1703 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp12_ = gval;
-#line 1703 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1703 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp13_ = g_strdup (g_value_get_string (&_tmp12_));
-#line 1703 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1703 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	oldval = _tmp13_;
-#line 1705 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1705 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp14_ = self->priv->_this;
-#line 1705 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1705 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp15_ = _tmp14_->model;
-#line 1705 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1705 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp16_ = _tmp15_->el;
-#line 1705 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1705 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp17_ = iter;
-#line 1705 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1705 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_tree_model_get_value ((GtkTreeModel*) _tmp16_, &_tmp17_, 0, &_tmp18_);
-#line 1705 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1705 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_IS_VALUE (&gval) ? (g_value_unset (&gval), NULL) : NULL;
-#line 1705 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1705 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gval = _tmp18_;
-#line 1706 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1706 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp19_ = gval;
-#line 1706 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1706 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp20_ = g_strdup (g_value_get_string (&_tmp19_));
-#line 1706 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1706 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	ktype = _tmp20_;
-#line 1708 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1708 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp21_ = self->priv->_this;
-#line 1708 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1708 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp22_ = _tmp21_->model;
-#line 1708 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1708 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp23_ = _tmp22_->el;
-#line 1708 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1708 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp24_ = iter;
-#line 1708 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1708 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp25_ = newtext;
-#line 1708 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1708 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_value_init (&_tmp26_, G_TYPE_STRING);
-#line 1708 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1708 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_value_set_string (&_tmp26_, _tmp25_);
-#line 1708 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1708 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_tree_store_set_value (_tmp23_, &_tmp24_, 1, &_tmp26_);
-#line 1708 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1708 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_IS_VALUE (&_tmp26_) ? (g_value_unset (&_tmp26_), NULL) : NULL;
-#line 1711 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1711 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp27_ = ktype;
-#line 1711 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1711 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp28_ = _tmp27_;
-#line 1711 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1711 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp30_ = (NULL == _tmp28_) ? 0 : g_quark_from_string (_tmp28_);
-#line 1711 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1711 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	if (_tmp30_ == ((0 != _tmp29_label0) ? _tmp29_label0 : (_tmp29_label0 = g_quark_from_static_string ("listener")))) {
-#line 1711 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1711 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		switch (0) {
 #line 6399 "WindowLeftProps.vala.c"
 			default:
@@ -6417,47 +6417,47 @@ static void __lambda20_ (Xcls_LeftPropsXcls_keyrender* self, const gchar* path, 
 				JsRenderNode* _tmp42_;
 				GeeHashMap* _tmp43_;
 				const gchar* _tmp44_;
-#line 1713 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1713 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp31_ = self->priv->_this;
-#line 1713 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1713 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp32_ = _tmp31_->node;
-#line 1713 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1713 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp33_ = _tmp32_->listeners;
-#line 1713 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1713 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp34_ = newtext;
-#line 1713 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1713 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp35_ = self->priv->_this;
-#line 1713 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1713 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp36_ = _tmp35_->node;
-#line 1713 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1713 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp37_ = _tmp36_->listeners;
-#line 1713 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1713 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp38_ = oldval;
-#line 1713 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1713 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp39_ = gee_abstract_map_get ((GeeAbstractMap*) _tmp37_, _tmp38_);
-#line 1713 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1713 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp40_ = (gchar*) _tmp39_;
-#line 1713 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1713 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				gee_abstract_map_set ((GeeAbstractMap*) _tmp33_, _tmp34_, _tmp40_);
-#line 1713 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1713 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_g_free0 (_tmp40_);
-#line 1714 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1714 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp41_ = self->priv->_this;
-#line 1714 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1714 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp42_ = _tmp41_->node;
-#line 1714 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1714 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp43_ = _tmp42_->listeners;
-#line 1714 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1714 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp44_ = oldval;
-#line 1714 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1714 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				gee_map_remove ((GeeMap*) _tmp43_, _tmp44_, NULL);
-#line 1715 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1715 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				break;
 #line 6452 "WindowLeftProps.vala.c"
 			}
 		}
 	} else if (_tmp30_ == ((0 != _tmp29_label1) ? _tmp29_label1 : (_tmp29_label1 = g_quark_from_static_string ("prop")))) {
-#line 1711 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1711 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		switch (0) {
 #line 6458 "WindowLeftProps.vala.c"
 			default:
@@ -6476,62 +6476,62 @@ static void __lambda20_ (Xcls_LeftPropsXcls_keyrender* self, const gchar* path, 
 				JsRenderNode* _tmp56_;
 				GeeHashMap* _tmp57_;
 				const gchar* _tmp58_;
-#line 1717 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1717 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp45_ = self->priv->_this;
-#line 1717 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1717 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp46_ = _tmp45_->node;
-#line 1717 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1717 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp47_ = _tmp46_->props;
-#line 1717 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1717 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp48_ = newtext;
-#line 1717 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1717 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp49_ = self->priv->_this;
-#line 1717 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1717 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp50_ = _tmp49_->node;
-#line 1717 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1717 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp51_ = _tmp50_->props;
-#line 1717 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1717 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp52_ = oldval;
-#line 1717 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1717 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp53_ = gee_abstract_map_get ((GeeAbstractMap*) _tmp51_, _tmp52_);
-#line 1717 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1717 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp54_ = (gchar*) _tmp53_;
-#line 1717 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1717 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				gee_abstract_map_set ((GeeAbstractMap*) _tmp47_, _tmp48_, _tmp54_);
-#line 1717 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1717 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_g_free0 (_tmp54_);
-#line 1718 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1718 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp55_ = self->priv->_this;
-#line 1718 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1718 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp56_ = _tmp55_->node;
-#line 1718 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1718 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp57_ = _tmp56_->props;
-#line 1718 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1718 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp58_ = oldval;
-#line 1718 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1718 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				gee_map_remove ((GeeMap*) _tmp57_, _tmp58_, NULL);
-#line 1719 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1719 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				break;
 #line 6511 "WindowLeftProps.vala.c"
 			}
 		}
 	}
-#line 1721 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1721 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp59_ = self->priv->_this;
-#line 1721 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1721 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_signal_emit_by_name (_tmp59_, "changed");
-#line 1687 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1687 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_free0 (ktype);
-#line 1687 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1687 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_free0 (oldval);
-#line 1687 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1687 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_IS_VALUE (&gval) ? (g_value_unset (&gval), NULL) : NULL;
 #line 6525 "WindowLeftProps.vala.c"
 }
 
 
 static void ___lambda20__gtk_cell_renderer_text_edited (GtkCellRendererText* _sender, const gchar* path, const gchar* new_text, gpointer self) {
-#line 1687 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1687 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	__lambda20_ (self, path, new_text);
 #line 6532 "WindowLeftProps.vala.c"
 }
@@ -6546,68 +6546,68 @@ Xcls_LeftPropsXcls_keyrender* xcls_leftprops_xcls_keyrender_construct (GType obj
 	GtkCellRendererText* _tmp4_;
 	GtkCellRendererText* _tmp5_;
 	GtkCellRendererText* _tmp6_;
-#line 1671 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1671 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 1671 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1671 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = (Xcls_LeftPropsXcls_keyrender*) g_object_new (object_type, NULL);
-#line 1673 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1673 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = _owner;
-#line 1673 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1673 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 1673 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1673 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1673 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1673 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv->_this = _tmp1_;
-#line 1674 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1674 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = self->priv->_this;
-#line 1674 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1674 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp3_ = _g_object_ref0 (self);
-#line 1674 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1674 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (_tmp2_->keyrender);
-#line 1674 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1674 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_->keyrender = _tmp3_;
-#line 1675 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1675 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp4_ = (GtkCellRendererText*) gtk_cell_renderer_text_new ();
-#line 1675 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1675 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref_sink (_tmp4_);
-#line 1675 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1675 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 1675 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1675 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->el = _tmp4_;
-#line 1682 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1682 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp5_ = self->el;
-#line 1682 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1682 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_signal_connect_object ((GtkCellRenderer*) _tmp5_, "editing-started", (GCallback) ___lambda19__gtk_cell_renderer_editing_started, self, 0);
-#line 1687 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1687 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp6_ = self->el;
-#line 1687 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1687 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_signal_connect_object (_tmp6_, "edited", (GCallback) ___lambda20__gtk_cell_renderer_text_edited, self, 0);
-#line 1671 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1671 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return self;
 #line 6583 "WindowLeftProps.vala.c"
 }
 
 
 Xcls_LeftPropsXcls_keyrender* xcls_leftprops_xcls_keyrender_new (Xcls_LeftProps* _owner) {
-#line 1671 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1671 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return xcls_leftprops_xcls_keyrender_construct (XCLS_LEFTPROPS_TYPE_XCLS_KEYRENDER, _owner);
 #line 6590 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_keyrender_class_init (Xcls_LeftPropsXcls_keyrenderClass * klass) {
-#line 1662 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1662 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_xcls_keyrender_parent_class = g_type_class_peek_parent (klass);
-#line 1662 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1662 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_LeftPropsXcls_keyrenderPrivate));
-#line 1662 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1662 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_leftprops_xcls_keyrender_finalize;
 #line 6601 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_keyrender_instance_init (Xcls_LeftPropsXcls_keyrender * self) {
-#line 1662 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1662 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv = XCLS_LEFTPROPS_XCLS_KEYRENDER_GET_PRIVATE (self);
 #line 6608 "WindowLeftProps.vala.c"
 }
@@ -6615,13 +6615,13 @@ static void xcls_leftprops_xcls_keyrender_instance_init (Xcls_LeftPropsXcls_keyr
 
 static void xcls_leftprops_xcls_keyrender_finalize (GObject* obj) {
 	Xcls_LeftPropsXcls_keyrender * self;
-#line 1662 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1662 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_LEFTPROPS_TYPE_XCLS_KEYRENDER, Xcls_LeftPropsXcls_keyrender);
-#line 1664 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1664 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 1665 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1665 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1662 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1662 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (xcls_leftprops_xcls_keyrender_parent_class)->finalize (obj);
 #line 6622 "WindowLeftProps.vala.c"
 }
@@ -6652,51 +6652,51 @@ Xcls_LeftPropsXcls_valcol* xcls_leftprops_xcls_valcol_construct (GType object_ty
 	Xcls_LeftPropsXcls_valrender* child_0;
 	GtkTreeViewColumn* _tmp8_;
 	GtkCellRendererCombo* _tmp9_;
-#line 1753 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1753 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 1753 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1753 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = (Xcls_LeftPropsXcls_valcol*) g_object_new (object_type, NULL);
-#line 1755 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1755 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = _owner;
-#line 1755 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1755 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 1755 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1755 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1755 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1755 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv->_this = _tmp1_;
-#line 1756 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1756 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = self->priv->_this;
-#line 1756 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1756 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp3_ = _g_object_ref0 (self);
-#line 1756 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1756 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (_tmp2_->valcol);
-#line 1756 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1756 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_->valcol = _tmp3_;
-#line 1757 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1757 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp4_ = gtk_tree_view_column_new ();
-#line 1757 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1757 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref_sink (_tmp4_);
-#line 1757 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1757 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 1757 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1757 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->el = _tmp4_;
-#line 1762 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1762 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp5_ = self->el;
-#line 1762 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1762 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_tree_view_column_set_title (_tmp5_, "value");
-#line 1763 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1763 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp6_ = self->priv->_this;
-#line 1763 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1763 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp7_ = xcls_leftprops_xcls_valrender_new (_tmp6_);
-#line 1763 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1763 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	child_0 = _tmp7_;
-#line 1764 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1764 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref ((GObject*) child_0);
-#line 1765 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1765 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp8_ = self->el;
-#line 1765 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1765 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp9_ = child_0->el;
-#line 1765 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1765 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_cell_layout_pack_start ((GtkCellLayout*) _tmp8_, (GtkCellRenderer*) _tmp9_, TRUE);
 #line 6697 "WindowLeftProps.vala.c"
 	{
@@ -6708,56 +6708,56 @@ Xcls_LeftPropsXcls_valcol* xcls_leftprops_xcls_valcol_construct (GType object_ty
 		Xcls_LeftProps* _tmp15_;
 		Xcls_LeftPropsXcls_valrender* _tmp16_;
 		GtkCellRendererCombo* _tmp17_;
-#line 1769 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1769 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp10_ = self->el;
-#line 1769 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1769 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp11_ = self->priv->_this;
-#line 1769 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1769 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp12_ = _tmp11_->valrender;
-#line 1769 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1769 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp13_ = _tmp12_->el;
-#line 1769 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1769 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		gtk_cell_layout_add_attribute ((GtkCellLayout*) _tmp10_, (GtkCellRenderer*) _tmp13_, "text", 3);
-#line 1770 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1770 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp14_ = self->el;
-#line 1770 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1770 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp15_ = self->priv->_this;
-#line 1770 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1770 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp16_ = _tmp15_->valrender;
-#line 1770 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1770 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		_tmp17_ = _tmp16_->el;
-#line 1770 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1770 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		gtk_cell_layout_add_attribute ((GtkCellLayout*) _tmp14_, (GtkCellRenderer*) _tmp17_, "sensitive", 3);
 #line 6727 "WindowLeftProps.vala.c"
 	}
-#line 1753 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1753 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (child_0);
-#line 1753 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1753 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return self;
 #line 6733 "WindowLeftProps.vala.c"
 }
 
 
 Xcls_LeftPropsXcls_valcol* xcls_leftprops_xcls_valcol_new (Xcls_LeftProps* _owner) {
-#line 1753 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1753 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return xcls_leftprops_xcls_valcol_construct (XCLS_LEFTPROPS_TYPE_XCLS_VALCOL, _owner);
 #line 6740 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_valcol_class_init (Xcls_LeftPropsXcls_valcolClass * klass) {
-#line 1744 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1744 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_xcls_valcol_parent_class = g_type_class_peek_parent (klass);
-#line 1744 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1744 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_LeftPropsXcls_valcolPrivate));
-#line 1744 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1744 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_leftprops_xcls_valcol_finalize;
 #line 6751 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_valcol_instance_init (Xcls_LeftPropsXcls_valcol * self) {
-#line 1744 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1744 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv = XCLS_LEFTPROPS_XCLS_VALCOL_GET_PRIVATE (self);
 #line 6758 "WindowLeftProps.vala.c"
 }
@@ -6765,13 +6765,13 @@ static void xcls_leftprops_xcls_valcol_instance_init (Xcls_LeftPropsXcls_valcol 
 
 static void xcls_leftprops_xcls_valcol_finalize (GObject* obj) {
 	Xcls_LeftPropsXcls_valcol * self;
-#line 1744 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1744 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_LEFTPROPS_TYPE_XCLS_VALCOL, Xcls_LeftPropsXcls_valcol);
-#line 1746 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1746 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 1747 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1747 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1744 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1744 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (xcls_leftprops_xcls_valcol_parent_class)->finalize (obj);
 #line 6772 "WindowLeftProps.vala.c"
 }
@@ -6827,9 +6827,9 @@ static void __lambda21_ (Xcls_LeftPropsXcls_valrender* self, const gchar* path, 
 	const gchar* _tmp29_;
 	const gchar* _tmp30_;
 	GQuark _tmp32_ = 0U;
-#line 1853 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1853 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	static GQuark _tmp31_label0 = 0;
-#line 1853 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1853 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	static GQuark _tmp31_label1 = 0;
 #line 6830 "WindowLeftProps.vala.c"
 	Xcls_LeftProps* _tmp43_;
@@ -6838,101 +6838,101 @@ static void __lambda21_ (Xcls_LeftPropsXcls_valrender* self, const gchar* path, 
 	Xcls_LeftProps* _tmp46_;
 	JsRenderNode* _tmp47_;
 	Xcls_LeftProps* _tmp48_;
-#line 1825 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1825 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_if_fail (path != NULL);
-#line 1825 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1825 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_if_fail (newtext != NULL);
-#line 1826 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1826 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = self->el;
-#line 1826 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1826 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_set ((GtkCellRendererText*) _tmp0_, "editable", FALSE, NULL);
-#line 1838 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1838 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = self->priv->_this;
-#line 1838 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1838 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = _tmp1_->model;
-#line 1838 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1838 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp3_ = _tmp2_->el;
-#line 1838 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1838 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp4_ = path;
-#line 1838 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1838 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp5_ = gtk_tree_path_new_from_string (_tmp4_);
-#line 1838 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1838 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp6_ = _tmp5_;
-#line 1838 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1838 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_tree_model_get_iter ((GtkTreeModel*) _tmp3_, &_tmp7_, _tmp6_);
-#line 1838 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1838 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	iter = _tmp7_;
-#line 1838 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1838 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_gtk_tree_path_free0 (_tmp6_);
-#line 1841 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1841 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp8_ = self->priv->_this;
-#line 1841 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1841 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp9_ = _tmp8_->model;
-#line 1841 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1841 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp10_ = _tmp9_->el;
-#line 1841 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1841 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp11_ = iter;
-#line 1841 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1841 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_tree_model_get_value ((GtkTreeModel*) _tmp10_, &_tmp11_, 0, &_tmp12_);
-#line 1841 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1841 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_IS_VALUE (&gval) ? (g_value_unset (&gval), NULL) : NULL;
-#line 1841 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1841 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gval = _tmp12_;
-#line 1842 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1842 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp13_ = gval;
-#line 1842 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1842 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp14_ = g_strdup (g_value_get_string (&_tmp13_));
-#line 1842 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1842 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	ktype = _tmp14_;
-#line 1845 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1845 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp15_ = self->priv->_this;
-#line 1845 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1845 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp16_ = _tmp15_->model;
-#line 1845 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1845 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp17_ = _tmp16_->el;
-#line 1845 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1845 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp18_ = iter;
-#line 1845 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1845 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_tree_model_get_value ((GtkTreeModel*) _tmp17_, &_tmp18_, 3, &_tmp19_);
-#line 1845 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1845 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_IS_VALUE (&gval) ? (g_value_unset (&gval), NULL) : NULL;
-#line 1845 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1845 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gval = _tmp19_;
-#line 1846 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1846 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp20_ = gval;
-#line 1846 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1846 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp21_ = g_strdup (g_value_get_string (&_tmp20_));
-#line 1846 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1846 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	oldval = _tmp21_;
-#line 1848 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1848 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp22_ = self->priv->_this;
-#line 1848 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1848 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp23_ = _tmp22_->model;
-#line 1848 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1848 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp24_ = _tmp23_->el;
-#line 1848 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1848 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp25_ = iter;
-#line 1848 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1848 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_tree_model_get_value ((GtkTreeModel*) _tmp24_, &_tmp25_, 1, &_tmp26_);
-#line 1848 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1848 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_IS_VALUE (&gval) ? (g_value_unset (&gval), NULL) : NULL;
-#line 1848 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1848 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gval = _tmp26_;
-#line 1849 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1849 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp27_ = gval;
-#line 1849 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1849 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp28_ = g_strdup (g_value_get_string (&_tmp27_));
-#line 1849 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1849 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	key = _tmp28_;
-#line 1853 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1853 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp29_ = ktype;
-#line 1853 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1853 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp30_ = _tmp29_;
-#line 1853 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1853 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp32_ = (NULL == _tmp30_) ? 0 : g_quark_from_string (_tmp30_);
-#line 1853 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1853 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	if (_tmp32_ == ((0 != _tmp31_label0) ? _tmp31_label0 : (_tmp31_label0 = g_quark_from_static_string ("listener")))) {
-#line 1853 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1853 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		switch (0) {
 #line 6933 "WindowLeftProps.vala.c"
 			default:
@@ -6942,25 +6942,25 @@ static void __lambda21_ (Xcls_LeftPropsXcls_valrender* self, const gchar* path, 
 				GeeHashMap* _tmp35_;
 				const gchar* _tmp36_;
 				const gchar* _tmp37_;
-#line 1855 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1855 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp33_ = self->priv->_this;
-#line 1855 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1855 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp34_ = _tmp33_->node;
-#line 1855 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1855 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp35_ = _tmp34_->listeners;
-#line 1855 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1855 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp36_ = key;
-#line 1855 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1855 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp37_ = newtext;
-#line 1855 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1855 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				gee_abstract_map_set ((GeeAbstractMap*) _tmp35_, _tmp36_, _tmp37_);
-#line 1856 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1856 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				break;
 #line 6955 "WindowLeftProps.vala.c"
 			}
 		}
 	} else if (_tmp32_ == ((0 != _tmp31_label1) ? _tmp31_label1 : (_tmp31_label1 = g_quark_from_static_string ("prop")))) {
-#line 1853 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1853 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 		switch (0) {
 #line 6961 "WindowLeftProps.vala.c"
 			default:
@@ -6970,54 +6970,54 @@ static void __lambda21_ (Xcls_LeftPropsXcls_valrender* self, const gchar* path, 
 				GeeHashMap* _tmp40_;
 				const gchar* _tmp41_;
 				const gchar* _tmp42_;
-#line 1858 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1858 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp38_ = self->priv->_this;
-#line 1858 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1858 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp39_ = _tmp38_->node;
-#line 1858 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1858 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp40_ = _tmp39_->props;
-#line 1858 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1858 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp41_ = key;
-#line 1858 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1858 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				_tmp42_ = newtext;
-#line 1858 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1858 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				gee_abstract_map_set ((GeeAbstractMap*) _tmp40_, _tmp41_, _tmp42_);
-#line 1859 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1859 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 				break;
 #line 6983 "WindowLeftProps.vala.c"
 			}
 		}
 	}
-#line 1861 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1861 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp43_ = self->priv->_this;
-#line 1861 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1861 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp44_ = self->priv->_this;
-#line 1861 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1861 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp45_ = _tmp44_->file;
-#line 1861 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1861 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp46_ = self->priv->_this;
-#line 1861 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1861 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp47_ = _tmp46_->node;
-#line 1861 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1861 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_load (_tmp43_, _tmp45_, _tmp47_);
-#line 1862 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1862 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp48_ = self->priv->_this;
-#line 1862 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1862 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_signal_emit_by_name (_tmp48_, "changed");
-#line 1825 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1825 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_free0 (key);
-#line 1825 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1825 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_free0 (oldval);
-#line 1825 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1825 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_free0 (ktype);
-#line 1825 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1825 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_IS_VALUE (&gval) ? (g_value_unset (&gval), NULL) : NULL;
 #line 7011 "WindowLeftProps.vala.c"
 }
 
 
 static void ___lambda21__gtk_cell_renderer_text_edited (GtkCellRendererText* _sender, const gchar* path, const gchar* new_text, gpointer self) {
-#line 1825 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1825 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	__lambda21_ (self, path, new_text);
 #line 7018 "WindowLeftProps.vala.c"
 }
@@ -7025,20 +7025,20 @@ static void ___lambda21__gtk_cell_renderer_text_edited (GtkCellRendererText* _se
 
 static void __lambda22_ (Xcls_LeftPropsXcls_valrender* self, GtkCellEditable* editable, const gchar* path) {
 	GtkCellRendererCombo* _tmp0_;
-#line 1865 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1865 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_if_fail (editable != NULL);
-#line 1865 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1865 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_if_fail (path != NULL);
-#line 1867 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1867 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = self->el;
-#line 1867 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1867 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_set ((GtkCellRendererText*) _tmp0_, "editable", FALSE, NULL);
 #line 7032 "WindowLeftProps.vala.c"
 }
 
 
 static void ___lambda22__gtk_cell_renderer_editing_started (GtkCellRenderer* _sender, GtkCellEditable* editable, const gchar* path, gpointer self) {
-#line 1865 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1865 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	__lambda22_ (self, editable, path);
 #line 7039 "WindowLeftProps.vala.c"
 }
@@ -7059,90 +7059,90 @@ Xcls_LeftPropsXcls_valrender* xcls_leftprops_xcls_valrender_construct (GType obj
 	Xcls_LeftPropsXcls_ListStore33* child_0;
 	GtkCellRendererCombo* _tmp10_;
 	GtkCellRendererCombo* _tmp11_;
-#line 1809 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1809 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 1809 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1809 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = (Xcls_LeftPropsXcls_valrender*) g_object_new (object_type, NULL);
-#line 1811 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1811 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = _owner;
-#line 1811 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1811 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 1811 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1811 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1811 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1811 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv->_this = _tmp1_;
-#line 1812 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1812 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = self->priv->_this;
-#line 1812 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1812 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp3_ = _g_object_ref0 (self);
-#line 1812 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1812 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (_tmp2_->valrender);
-#line 1812 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1812 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_->valrender = _tmp3_;
-#line 1813 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1813 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp4_ = (GtkCellRendererCombo*) gtk_cell_renderer_combo_new ();
-#line 1813 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1813 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref_sink (_tmp4_);
-#line 1813 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1813 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 1813 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1813 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->el = _tmp4_;
-#line 1818 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1818 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp5_ = self->el;
-#line 1818 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1818 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_set ((GtkCellRendererText*) _tmp5_, "editable", FALSE, NULL);
-#line 1819 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1819 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp6_ = self->el;
-#line 1819 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1819 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_set (_tmp6_, "has-entry", TRUE, NULL);
-#line 1820 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1820 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp7_ = self->el;
-#line 1820 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1820 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_set (_tmp7_, "text-column", 0, NULL);
-#line 1821 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1821 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp8_ = self->priv->_this;
-#line 1821 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1821 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp9_ = xcls_leftprops_xcls_liststore33_new (_tmp8_);
-#line 1821 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1821 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	child_0 = _tmp9_;
-#line 1822 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1822 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref ((GObject*) child_0);
-#line 1825 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1825 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp10_ = self->el;
-#line 1825 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1825 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_signal_connect_object ((GtkCellRendererText*) _tmp10_, "edited", (GCallback) ___lambda21__gtk_cell_renderer_text_edited, self, 0);
-#line 1865 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1865 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp11_ = self->el;
-#line 1865 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1865 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_signal_connect_object ((GtkCellRenderer*) _tmp11_, "editing-started", (GCallback) ___lambda22__gtk_cell_renderer_editing_started, self, 0);
-#line 1809 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1809 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (child_0);
-#line 1809 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1809 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return self;
 #line 7118 "WindowLeftProps.vala.c"
 }
 
 
 Xcls_LeftPropsXcls_valrender* xcls_leftprops_xcls_valrender_new (Xcls_LeftProps* _owner) {
-#line 1809 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1809 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return xcls_leftprops_xcls_valrender_construct (XCLS_LEFTPROPS_TYPE_XCLS_VALRENDER, _owner);
 #line 7125 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_valrender_class_init (Xcls_LeftPropsXcls_valrenderClass * klass) {
-#line 1800 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1800 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_xcls_valrender_parent_class = g_type_class_peek_parent (klass);
-#line 1800 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1800 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_LeftPropsXcls_valrenderPrivate));
-#line 1800 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1800 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_leftprops_xcls_valrender_finalize;
 #line 7136 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_valrender_instance_init (Xcls_LeftPropsXcls_valrender * self) {
-#line 1800 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1800 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv = XCLS_LEFTPROPS_XCLS_VALRENDER_GET_PRIVATE (self);
 #line 7143 "WindowLeftProps.vala.c"
 }
@@ -7150,13 +7150,13 @@ static void xcls_leftprops_xcls_valrender_instance_init (Xcls_LeftPropsXcls_valr
 
 static void xcls_leftprops_xcls_valrender_finalize (GObject* obj) {
 	Xcls_LeftPropsXcls_valrender * self;
-#line 1800 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1800 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_LEFTPROPS_TYPE_XCLS_VALRENDER, Xcls_LeftPropsXcls_valrender);
-#line 1802 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1802 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 1803 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1803 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1800 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1800 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (xcls_leftprops_xcls_valrender_parent_class)->finalize (obj);
 #line 7157 "WindowLeftProps.vala.c"
 }
@@ -7179,50 +7179,50 @@ Xcls_LeftPropsXcls_ListStore33* xcls_leftprops_xcls_liststore33_construct (GType
 	Xcls_LeftProps* _tmp0_;
 	Xcls_LeftProps* _tmp1_;
 	GtkListStore* _tmp2_;
-#line 1907 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1907 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 1907 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1907 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = (Xcls_LeftPropsXcls_ListStore33*) g_object_new (object_type, NULL);
-#line 1909 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1909 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = _owner;
-#line 1909 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1909 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 1909 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1909 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1909 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1909 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv->_this = _tmp1_;
-#line 1910 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1910 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = gtk_list_store_new (1, "typeof(string)");
-#line 1910 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1910 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 1910 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1910 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->el = _tmp2_;
-#line 1907 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1907 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return self;
 #line 7198 "WindowLeftProps.vala.c"
 }
 
 
 Xcls_LeftPropsXcls_ListStore33* xcls_leftprops_xcls_liststore33_new (Xcls_LeftProps* _owner) {
-#line 1907 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1907 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return xcls_leftprops_xcls_liststore33_construct (XCLS_LEFTPROPS_TYPE_XCLS_LISTSTORE33, _owner);
 #line 7205 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_liststore33_class_init (Xcls_LeftPropsXcls_ListStore33Class * klass) {
-#line 1898 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1898 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_xcls_liststore33_parent_class = g_type_class_peek_parent (klass);
-#line 1898 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1898 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_LeftPropsXcls_ListStore33Private));
-#line 1898 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1898 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_leftprops_xcls_liststore33_finalize;
 #line 7216 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_liststore33_instance_init (Xcls_LeftPropsXcls_ListStore33 * self) {
-#line 1898 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1898 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv = XCLS_LEFTPROPS_XCLS_LISTSTORE33_GET_PRIVATE (self);
 #line 7223 "WindowLeftProps.vala.c"
 }
@@ -7230,13 +7230,13 @@ static void xcls_leftprops_xcls_liststore33_instance_init (Xcls_LeftPropsXcls_Li
 
 static void xcls_leftprops_xcls_liststore33_finalize (GObject* obj) {
 	Xcls_LeftPropsXcls_ListStore33 * self;
-#line 1898 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1898 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_LEFTPROPS_TYPE_XCLS_LISTSTORE33, Xcls_LeftPropsXcls_ListStore33);
-#line 1900 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1900 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 1901 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1901 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1898 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1898 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (xcls_leftprops_xcls_liststore33_parent_class)->finalize (obj);
 #line 7237 "WindowLeftProps.vala.c"
 }
@@ -7271,92 +7271,92 @@ Xcls_LeftPropsXcls_ContextMenu* xcls_leftprops_xcls_contextmenu_construct (GType
 	Xcls_LeftPropsXcls_MenuItem36* child_1;
 	GtkMenu* _tmp11_;
 	GtkMenuItem* _tmp12_;
-#line 1946 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1946 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 1946 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1946 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = (Xcls_LeftPropsXcls_ContextMenu*) g_object_new (object_type, NULL);
-#line 1948 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1948 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = _owner;
-#line 1948 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1948 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 1948 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1948 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1948 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1948 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv->_this = _tmp1_;
-#line 1949 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1949 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = self->priv->_this;
-#line 1949 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1949 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp3_ = _g_object_ref0 (self);
-#line 1949 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1949 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (_tmp2_->ContextMenu);
-#line 1949 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1949 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_->ContextMenu = _tmp3_;
-#line 1950 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1950 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp4_ = (GtkMenu*) gtk_menu_new ();
-#line 1950 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1950 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref_sink (_tmp4_);
-#line 1950 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1950 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 1950 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1950 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->el = _tmp4_;
-#line 1955 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1955 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp5_ = self->priv->_this;
-#line 1955 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1955 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp6_ = xcls_leftprops_xcls_menuitem35_new (_tmp5_);
-#line 1955 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1955 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	child_0 = _tmp6_;
-#line 1956 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1956 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref ((GObject*) child_0);
-#line 1957 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1957 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp7_ = self->el;
-#line 1957 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1957 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp8_ = child_0->el;
-#line 1957 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1957 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_menu_shell_append ((GtkMenuShell*) _tmp7_, (GtkWidget*) _tmp8_);
-#line 1958 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1958 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp9_ = self->priv->_this;
-#line 1958 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1958 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp10_ = xcls_leftprops_xcls_menuitem36_new (_tmp9_);
-#line 1958 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1958 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	child_1 = _tmp10_;
-#line 1959 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1959 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref ((GObject*) child_1);
-#line 1960 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1960 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp11_ = self->el;
-#line 1960 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1960 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp12_ = child_1->el;
-#line 1960 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1960 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_menu_shell_append ((GtkMenuShell*) _tmp11_, (GtkWidget*) _tmp12_);
-#line 1946 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1946 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (child_1);
-#line 1946 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1946 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (child_0);
-#line 1946 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1946 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return self;
 #line 7332 "WindowLeftProps.vala.c"
 }
 
 
 Xcls_LeftPropsXcls_ContextMenu* xcls_leftprops_xcls_contextmenu_new (Xcls_LeftProps* _owner) {
-#line 1946 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1946 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return xcls_leftprops_xcls_contextmenu_construct (XCLS_LEFTPROPS_TYPE_XCLS_CONTEXTMENU, _owner);
 #line 7339 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_contextmenu_class_init (Xcls_LeftPropsXcls_ContextMenuClass * klass) {
-#line 1937 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1937 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_xcls_contextmenu_parent_class = g_type_class_peek_parent (klass);
-#line 1937 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1937 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_LeftPropsXcls_ContextMenuPrivate));
-#line 1937 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1937 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_leftprops_xcls_contextmenu_finalize;
 #line 7350 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_contextmenu_instance_init (Xcls_LeftPropsXcls_ContextMenu * self) {
-#line 1937 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1937 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv = XCLS_LEFTPROPS_XCLS_CONTEXTMENU_GET_PRIVATE (self);
 #line 7357 "WindowLeftProps.vala.c"
 }
@@ -7364,13 +7364,13 @@ static void xcls_leftprops_xcls_contextmenu_instance_init (Xcls_LeftPropsXcls_Co
 
 static void xcls_leftprops_xcls_contextmenu_finalize (GObject* obj) {
 	Xcls_LeftPropsXcls_ContextMenu * self;
-#line 1937 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1937 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_LEFTPROPS_TYPE_XCLS_CONTEXTMENU, Xcls_LeftPropsXcls_ContextMenu);
-#line 1939 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1939 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 1940 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1940 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1937 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1937 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (xcls_leftprops_xcls_contextmenu_parent_class)->finalize (obj);
 #line 7371 "WindowLeftProps.vala.c"
 }
@@ -7390,16 +7390,16 @@ GType xcls_leftprops_xcls_contextmenu_get_type (void) {
 
 static void __lambda24_ (Xcls_LeftPropsXcls_MenuItem35* self) {
 	Xcls_LeftProps* _tmp0_;
-#line 2002 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 2002 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = self->priv->_this;
-#line 2002 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 2002 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_startEditingKey (_tmp0_);
 #line 7393 "WindowLeftProps.vala.c"
 }
 
 
 static void ___lambda24__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self) {
-#line 2001 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 2001 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	__lambda24_ (self);
 #line 7400 "WindowLeftProps.vala.c"
 }
@@ -7412,60 +7412,60 @@ Xcls_LeftPropsXcls_MenuItem35* xcls_leftprops_xcls_menuitem35_construct (GType o
 	GtkMenuItem* _tmp2_;
 	GtkMenuItem* _tmp3_;
 	GtkMenuItem* _tmp4_;
-#line 1990 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1990 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 1990 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1990 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = (Xcls_LeftPropsXcls_MenuItem35*) g_object_new (object_type, NULL);
-#line 1992 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1992 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = _owner;
-#line 1992 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1992 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 1992 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1992 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1992 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1992 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv->_this = _tmp1_;
-#line 1993 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1993 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = (GtkMenuItem*) gtk_menu_item_new ();
-#line 1993 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1993 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref_sink (_tmp2_);
-#line 1993 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1993 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 1993 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1993 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->el = _tmp2_;
-#line 1998 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1998 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp3_ = self->el;
-#line 1998 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1998 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_menu_item_set_label (_tmp3_, "Edit");
-#line 2001 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 2001 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp4_ = self->el;
-#line 2001 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 2001 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_signal_connect_object (_tmp4_, "activate", (GCallback) ___lambda24__gtk_menu_item_activate, self, 0);
-#line 1990 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1990 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return self;
 #line 7441 "WindowLeftProps.vala.c"
 }
 
 
 Xcls_LeftPropsXcls_MenuItem35* xcls_leftprops_xcls_menuitem35_new (Xcls_LeftProps* _owner) {
-#line 1990 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1990 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return xcls_leftprops_xcls_menuitem35_construct (XCLS_LEFTPROPS_TYPE_XCLS_MENUITEM35, _owner);
 #line 7448 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_menuitem35_class_init (Xcls_LeftPropsXcls_MenuItem35Class * klass) {
-#line 1981 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1981 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_xcls_menuitem35_parent_class = g_type_class_peek_parent (klass);
-#line 1981 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1981 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_LeftPropsXcls_MenuItem35Private));
-#line 1981 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1981 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_leftprops_xcls_menuitem35_finalize;
 #line 7459 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_menuitem35_instance_init (Xcls_LeftPropsXcls_MenuItem35 * self) {
-#line 1981 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1981 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv = XCLS_LEFTPROPS_XCLS_MENUITEM35_GET_PRIVATE (self);
 #line 7466 "WindowLeftProps.vala.c"
 }
@@ -7473,13 +7473,13 @@ static void xcls_leftprops_xcls_menuitem35_instance_init (Xcls_LeftPropsXcls_Men
 
 static void xcls_leftprops_xcls_menuitem35_finalize (GObject* obj) {
 	Xcls_LeftPropsXcls_MenuItem35 * self;
-#line 1981 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1981 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_LEFTPROPS_TYPE_XCLS_MENUITEM35, Xcls_LeftPropsXcls_MenuItem35);
-#line 1983 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1983 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 1984 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1984 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 1981 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 1981 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (xcls_leftprops_xcls_menuitem35_parent_class)->finalize (obj);
 #line 7480 "WindowLeftProps.vala.c"
 }
@@ -7499,16 +7499,16 @@ GType xcls_leftprops_xcls_menuitem35_get_type (void) {
 
 static void __lambda25_ (Xcls_LeftPropsXcls_MenuItem36* self) {
 	Xcls_LeftProps* _tmp0_;
-#line 2045 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 2045 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = self->priv->_this;
-#line 2045 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 2045 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_deleteSelected (_tmp0_);
 #line 7502 "WindowLeftProps.vala.c"
 }
 
 
 static void ___lambda25__gtk_menu_item_activate (GtkMenuItem* _sender, gpointer self) {
-#line 2044 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 2044 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	__lambda25_ (self);
 #line 7509 "WindowLeftProps.vala.c"
 }
@@ -7521,60 +7521,60 @@ Xcls_LeftPropsXcls_MenuItem36* xcls_leftprops_xcls_menuitem36_construct (GType o
 	GtkMenuItem* _tmp2_;
 	GtkMenuItem* _tmp3_;
 	GtkMenuItem* _tmp4_;
-#line 2033 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 2033 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 2033 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 2033 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = (Xcls_LeftPropsXcls_MenuItem36*) g_object_new (object_type, NULL);
-#line 2035 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 2035 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp0_ = _owner;
-#line 2035 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 2035 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 2035 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 2035 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 2035 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 2035 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv->_this = _tmp1_;
-#line 2036 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 2036 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp2_ = (GtkMenuItem*) gtk_menu_item_new ();
-#line 2036 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 2036 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_object_ref_sink (_tmp2_);
-#line 2036 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 2036 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 2036 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 2036 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->el = _tmp2_;
-#line 2041 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 2041 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp3_ = self->el;
-#line 2041 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 2041 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	gtk_menu_item_set_label (_tmp3_, "Delete");
-#line 2044 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 2044 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_tmp4_ = self->el;
-#line 2044 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 2044 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_signal_connect_object (_tmp4_, "activate", (GCallback) ___lambda25__gtk_menu_item_activate, self, 0);
-#line 2033 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 2033 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return self;
 #line 7550 "WindowLeftProps.vala.c"
 }
 
 
 Xcls_LeftPropsXcls_MenuItem36* xcls_leftprops_xcls_menuitem36_new (Xcls_LeftProps* _owner) {
-#line 2033 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 2033 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	return xcls_leftprops_xcls_menuitem36_construct (XCLS_LEFTPROPS_TYPE_XCLS_MENUITEM36, _owner);
 #line 7557 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_menuitem36_class_init (Xcls_LeftPropsXcls_MenuItem36Class * klass) {
-#line 2024 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 2024 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_xcls_menuitem36_parent_class = g_type_class_peek_parent (klass);
-#line 2024 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 2024 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_LeftPropsXcls_MenuItem36Private));
-#line 2024 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 2024 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_leftprops_xcls_menuitem36_finalize;
 #line 7568 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_xcls_menuitem36_instance_init (Xcls_LeftPropsXcls_MenuItem36 * self) {
-#line 2024 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 2024 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv = XCLS_LEFTPROPS_XCLS_MENUITEM36_GET_PRIVATE (self);
 #line 7575 "WindowLeftProps.vala.c"
 }
@@ -7582,13 +7582,13 @@ static void xcls_leftprops_xcls_menuitem36_instance_init (Xcls_LeftPropsXcls_Men
 
 static void xcls_leftprops_xcls_menuitem36_finalize (GObject* obj) {
 	Xcls_LeftPropsXcls_MenuItem36 * self;
-#line 2024 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 2024 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_LEFTPROPS_TYPE_XCLS_MENUITEM36, Xcls_LeftPropsXcls_MenuItem36);
-#line 2026 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 2026 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 2027 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 2027 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 2024 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 2024 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (xcls_leftprops_xcls_menuitem36_parent_class)->finalize (obj);
 #line 7589 "WindowLeftProps.vala.c"
 }
@@ -7607,24 +7607,24 @@ GType xcls_leftprops_xcls_menuitem36_get_type (void) {
 
 
 static void xcls_leftprops_class_init (Xcls_LeftPropsClass * klass) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	xcls_leftprops_parent_class = g_type_class_peek_parent (klass);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_LeftPropsPrivate));
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_leftprops_finalize;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_signal_new ("changed", TYPE_XCLS_LEFTPROPS, G_SIGNAL_RUN_LAST, 0, NULL, NULL, g_cclosure_marshal_VOID__VOID, G_TYPE_NONE, 0);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_signal_new ("show_add_props", TYPE_XCLS_LEFTPROPS, G_SIGNAL_RUN_LAST, 0, NULL, NULL, g_cclosure_marshal_VOID__STRING, G_TYPE_NONE, 1, G_TYPE_STRING);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	g_signal_new ("show_editor", TYPE_XCLS_LEFTPROPS, G_SIGNAL_RUN_LAST, 0, NULL, NULL, g_cclosure_user_marshal_VOID__OBJECT_OBJECT_STRING_STRING, G_TYPE_NONE, 4, JS_RENDER_TYPE_JS_RENDER, JS_RENDER_TYPE_NODE, G_TYPE_STRING, G_TYPE_STRING);
 #line 7618 "WindowLeftProps.vala.c"
 }
 
 
 static void xcls_leftprops_instance_init (Xcls_LeftProps * self) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self->priv = XCLS_LEFTPROPS_GET_PRIVATE (self);
 #line 7625 "WindowLeftProps.vala.c"
 }
@@ -7632,35 +7632,35 @@ static void xcls_leftprops_instance_init (Xcls_LeftProps * self) {
 
 static void xcls_leftprops_finalize (GObject* obj) {
 	Xcls_LeftProps * self;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, TYPE_XCLS_LEFTPROPS, Xcls_LeftProps);
-#line 22 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 22 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->el);
-#line 23 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 23 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 25 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 25 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->AddPropertyPopup);
-#line 26 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 26 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->EditProps);
-#line 27 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 27 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->view);
-#line 28 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 28 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->model);
-#line 29 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 29 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->keycol);
-#line 30 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 30 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->keyrender);
-#line 31 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 31 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->valcol);
-#line 32 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 32 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->valrender);
-#line 33 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 33 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->ContextMenu);
-#line 36 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 36 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->file);
-#line 37 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 37 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	_g_object_unref0 (self->node);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/WindowLeftProps.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/WindowLeftProps.vala"
 	G_OBJECT_CLASS (xcls_leftprops_parent_class)->finalize (obj);
 #line 7661 "WindowLeftProps.vala.c"
 }

@@ -180,101 +180,101 @@ JsRenderRoo* js_render_roo_construct (GType object_type, ProjectProject* project
 	gchar** dsp;
 	gint dsp_length1;
 	gint _dsp_size_;
-#line 12 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 12 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	g_return_val_if_fail (project != NULL, NULL);
-#line 12 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 12 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	g_return_val_if_fail (path != NULL, NULL);
-#line 13 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 13 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp0_ = project;
-#line 13 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 13 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp1_ = path;
-#line 13 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 13 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	self = (JsRenderRoo*) js_render_js_render_construct (object_type, _tmp0_, _tmp1_);
-#line 14 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 14 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp2_ = g_strdup ("Roo");
-#line 14 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 14 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (((JsRenderJsRender*) self)->xtype);
-#line 14 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 14 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	((JsRenderJsRender*) self)->xtype = _tmp2_;
-#line 25 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 25 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp3_ = g_strdup ("001");
-#line 25 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 25 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (((JsRenderJsRender*) self)->modOrder);
-#line 25 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 25 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	((JsRenderJsRender*) self)->modOrder = _tmp3_;
-#line 26 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 26 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp4_ = g_strdup ("center");
-#line 26 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 26 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (self->priv->region);
-#line 26 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 26 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	self->priv->region = _tmp4_;
-#line 27 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 27 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	self->priv->disabled = FALSE;
-#line 30 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 30 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp5_ = js_render_rid;
-#line 30 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 30 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	js_render_rid = _tmp5_ + 1;
-#line 30 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 30 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp6_ = g_strdup_printf ("file-roo-%d", _tmp5_);
-#line 30 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 30 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (((JsRenderJsRender*) self)->id);
-#line 30 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 30 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	((JsRenderJsRender*) self)->id = _tmp6_;
-#line 34 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 34 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp7_ = g_strdup ("title");
-#line 34 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 34 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp8_ = g_strdup ("legend");
-#line 34 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 34 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp9_ = g_strdup ("loadingText");
-#line 34 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 34 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp10_ = g_strdup ("emptyText");
-#line 34 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 34 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp11_ = g_strdup ("qtip");
-#line 34 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 34 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp12_ = g_strdup ("value");
-#line 34 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 34 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp13_ = g_strdup ("text");
-#line 34 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 34 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp14_ = g_strdup ("emptyMsg");
-#line 34 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 34 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp15_ = g_strdup ("displayMsg");
-#line 34 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 34 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp16_ = g_new0 (gchar*, 9 + 1);
-#line 34 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 34 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp16_[0] = _tmp7_;
-#line 34 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 34 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp16_[1] = _tmp8_;
-#line 34 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 34 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp16_[2] = _tmp9_;
-#line 34 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 34 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp16_[3] = _tmp10_;
-#line 34 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 34 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp16_[4] = _tmp11_;
-#line 34 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 34 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp16_[5] = _tmp12_;
-#line 34 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 34 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp16_[6] = _tmp13_;
-#line 34 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 34 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp16_[7] = _tmp14_;
-#line 34 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 34 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp16_[8] = _tmp15_;
-#line 34 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 34 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	dsp = _tmp16_;
-#line 34 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 34 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	dsp_length1 = 9;
-#line 34 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 34 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_dsp_size_ = dsp_length1;
 #line 268 "Roo.vala.c"
 	{
 		gint i;
-#line 43 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 43 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		i = 0;
 #line 273 "Roo.vala.c"
 		{
 			gboolean _tmp17_;
-#line 43 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 43 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 			_tmp17_ = TRUE;
-#line 43 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 43 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 			while (TRUE) {
 #line 280 "Roo.vala.c"
 				gboolean _tmp18_;
@@ -286,121 +286,121 @@ JsRenderRoo* js_render_roo_construct (GType object_type, ProjectProject* project
 				gint _tmp23__length1;
 				gint _tmp24_;
 				const gchar* _tmp25_;
-#line 43 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 43 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 				_tmp18_ = _tmp17_;
-#line 43 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 43 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 				if (!_tmp18_) {
 #line 294 "Roo.vala.c"
 					gint _tmp19_;
-#line 43 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 43 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 					_tmp19_ = i;
-#line 43 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 43 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 					i = _tmp19_ + 1;
 #line 300 "Roo.vala.c"
 				}
-#line 43 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 43 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 				_tmp17_ = FALSE;
-#line 43 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 43 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 				_tmp20_ = i;
-#line 43 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 43 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 				_tmp21_ = dsp;
-#line 43 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 43 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 				_tmp21__length1 = dsp_length1;
-#line 43 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 43 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 				if (!(_tmp20_ < _tmp21__length1)) {
-#line 43 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 43 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 					break;
 #line 314 "Roo.vala.c"
 				}
-#line 44 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 44 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 				_tmp22_ = ((JsRenderJsRender*) self)->doubleStringProps;
-#line 44 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 44 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 				_tmp23_ = dsp;
-#line 44 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 44 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 				_tmp23__length1 = dsp_length1;
-#line 44 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 44 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 				_tmp24_ = i;
-#line 44 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 44 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 				_tmp25_ = _tmp23_[_tmp24_];
-#line 44 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 44 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 				gee_abstract_collection_add ((GeeAbstractCollection*) _tmp22_, _tmp25_);
 #line 328 "Roo.vala.c"
 			}
 		}
 	}
-#line 12 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 12 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	dsp = (_vala_array_free (dsp, dsp_length1, (GDestroyNotify) g_free), NULL);
-#line 12 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 12 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	return self;
 #line 336 "Roo.vala.c"
 }
 
 
 JsRenderRoo* js_render_roo_new (ProjectProject* project, const gchar* path) {
-#line 12 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 12 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	return js_render_roo_construct (JS_RENDER_TYPE_ROO, project, path);
 #line 343 "Roo.vala.c"
 }
 
 
 static JsonNode* _vala_JsonNode_copy (JsonNode* self) {
-#line 78 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 78 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	return g_boxed_copy (json_node_get_type (), self);
 #line 350 "Roo.vala.c"
 }
 
 
 static gpointer __vala_JsonNode_copy0 (gpointer self) {
-#line 78 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 78 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	return self ? _vala_JsonNode_copy (self) : NULL;
 #line 357 "Roo.vala.c"
 }
 
 
 static void _vala_JsonNode_free (JsonNode* self) {
-#line 81 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 81 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	g_boxed_free (json_node_get_type (), self);
 #line 364 "Roo.vala.c"
 }
 
 
 static JsonObject* _vala_JsonObject_copy (JsonObject* self) {
-#line 83 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 83 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	return g_boxed_copy (json_object_get_type (), self);
 #line 371 "Roo.vala.c"
 }
 
 
 static gpointer __vala_JsonObject_copy0 (gpointer self) {
-#line 83 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 83 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	return self ? _vala_JsonObject_copy (self) : NULL;
 #line 378 "Roo.vala.c"
 }
 
 
 static JsonArray* _vala_JsonArray_copy (JsonArray* self) {
-#line 93 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 93 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	return g_boxed_copy (json_array_get_type (), self);
 #line 385 "Roo.vala.c"
 }
 
 
 static gpointer __vala_JsonArray_copy0 (gpointer self) {
-#line 93 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 93 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	return self ? _vala_JsonArray_copy (self) : NULL;
 #line 392 "Roo.vala.c"
 }
 
 
 static void _vala_JsonObject_free (JsonObject* self) {
-#line 66 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 66 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	g_boxed_free (json_object_get_type (), self);
 #line 399 "Roo.vala.c"
 }
 
 
 static void _vala_JsonArray_free (JsonArray* self) {
-#line 66 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 66 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	g_boxed_free (json_array_get_type (), self);
 #line 406 "Roo.vala.c"
 }
@@ -456,217 +456,217 @@ static void js_render_roo_real_loadItems (JsRenderJsRender* base, GError** error
 	JsRenderNode* _tmp43_;
 	JsonObject* _tmp44_;
 	GError * _inner_error_ = NULL;
-#line 66 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 66 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	self = (JsRenderRoo*) base;
-#line 70 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 70 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	g_print ("load Items!");
-#line 71 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 71 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp0_ = ((JsRenderJsRender*) self)->tree;
-#line 71 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 71 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	if (_tmp0_ != NULL) {
-#line 72 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 72 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		return;
 #line 470 "Roo.vala.c"
 	}
-#line 74 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 74 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp1_ = ((JsRenderJsRender*) self)->path;
-#line 74 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 74 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp2_ = g_strconcat ("load ", _tmp1_, NULL);
-#line 74 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 74 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp3_ = _tmp2_;
-#line 74 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 74 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	g_print ("%s", _tmp3_);
-#line 74 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 74 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp3_);
-#line 76 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 76 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp4_ = json_parser_new ();
-#line 76 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 76 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	pa = _tmp4_;
-#line 77 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 77 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp5_ = pa;
-#line 77 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 77 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp6_ = ((JsRenderJsRender*) self)->path;
-#line 77 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 77 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	json_parser_load_from_file (_tmp5_, _tmp6_, &_inner_error_);
-#line 77 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 77 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	if (_inner_error_ != NULL) {
-#line 77 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 77 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		if (_inner_error_->domain == JS_RENDER_ERROR) {
-#line 77 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 77 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 			g_propagate_error (error, _inner_error_);
-#line 77 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 77 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 			_g_object_unref0 (pa);
-#line 77 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 77 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 			return;
 #line 502 "Roo.vala.c"
 		} else {
-#line 77 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 77 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 			_g_object_unref0 (pa);
-#line 77 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 77 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 			g_critical ("file %s: line %d: uncaught error: %s (%s, %d)", __FILE__, __LINE__, _inner_error_->message, g_quark_to_string (_inner_error_->domain), _inner_error_->code);
-#line 77 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 77 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 			g_clear_error (&_inner_error_);
-#line 77 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 77 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 			return;
 #line 512 "Roo.vala.c"
 		}
 	}
-#line 78 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 78 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp7_ = pa;
-#line 78 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 78 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp8_ = json_parser_get_root (_tmp7_);
-#line 78 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 78 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp9_ = __vala_JsonNode_copy0 (_tmp8_);
-#line 78 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 78 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	node = _tmp9_;
-#line 80 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 80 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp10_ = node;
-#line 80 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 80 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp11_ = json_node_get_node_type (_tmp10_);
-#line 80 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 80 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	if (_tmp11_ != JSON_NODE_OBJECT) {
 #line 529 "Roo.vala.c"
 		JsonNode* _tmp12_;
 		const gchar* _tmp13_ = NULL;
 		GError* _tmp14_;
-#line 81 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 81 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp12_ = node;
-#line 81 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 81 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp13_ = json_node_type_name (_tmp12_);
-#line 81 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 81 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp14_ = g_error_new (JS_RENDER_ERROR, JS_RENDER_ERROR_INVALID_FORMAT, "Unexpected element type %s", _tmp13_);
-#line 81 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 81 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_inner_error_ = _tmp14_;
-#line 81 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 81 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		if (_inner_error_->domain == JS_RENDER_ERROR) {
-#line 81 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 81 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 			g_propagate_error (error, _inner_error_);
-#line 81 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 81 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 			__vala_JsonNode_free0 (node);
-#line 81 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 81 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 			_g_object_unref0 (pa);
-#line 81 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 81 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 			return;
 #line 551 "Roo.vala.c"
 		} else {
-#line 81 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 81 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 			__vala_JsonNode_free0 (node);
-#line 81 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 81 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 			_g_object_unref0 (pa);
-#line 81 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 81 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 			g_critical ("file %s: line %d: uncaught error: %s (%s, %d)", __FILE__, __LINE__, _inner_error_->message, g_quark_to_string (_inner_error_->domain), _inner_error_->code);
-#line 81 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 81 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 			g_clear_error (&_inner_error_);
-#line 81 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 81 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 			return;
 #line 563 "Roo.vala.c"
 		}
 	}
-#line 83 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 83 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp15_ = node;
-#line 83 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 83 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp16_ = json_node_get_object (_tmp15_);
-#line 83 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 83 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp17_ = __vala_JsonObject_copy0 (_tmp16_);
-#line 83 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 83 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	obj = _tmp17_;
-#line 84 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 84 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp18_ = obj;
-#line 84 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 84 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp19_ = json_object_get_string_member (_tmp18_, "modOrder");
-#line 84 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 84 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp20_ = g_strdup (_tmp19_);
-#line 84 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 84 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (((JsRenderJsRender*) self)->modOrder);
-#line 84 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 84 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	((JsRenderJsRender*) self)->modOrder = _tmp20_;
-#line 85 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 85 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp21_ = obj;
-#line 85 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 85 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp22_ = json_object_get_string_member (_tmp21_, "name");
-#line 85 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 85 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp23_ = g_strdup (_tmp22_);
-#line 85 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 85 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (((JsRenderJsRender*) self)->name);
-#line 85 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 85 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	((JsRenderJsRender*) self)->name = _tmp23_;
-#line 86 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 86 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp24_ = obj;
-#line 86 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 86 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp25_ = json_object_get_string_member (_tmp24_, "parent");
-#line 86 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 86 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp26_ = g_strdup (_tmp25_);
-#line 86 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 86 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (((JsRenderJsRender*) self)->parent);
-#line 86 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 86 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	((JsRenderJsRender*) self)->parent = _tmp26_;
-#line 87 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 87 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_ = obj;
-#line 87 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 87 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp28_ = json_object_get_string_member (_tmp27_, "permname");
-#line 87 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 87 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp29_ = g_strdup (_tmp28_);
-#line 87 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 87 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (((JsRenderJsRender*) self)->permname);
-#line 87 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 87 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	((JsRenderJsRender*) self)->permname = _tmp29_;
-#line 88 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 88 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp30_ = obj;
-#line 88 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 88 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp31_ = json_object_get_string_member (_tmp30_, "title");
-#line 88 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 88 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp32_ = g_strdup (_tmp31_);
-#line 88 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 88 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (((JsRenderJsRender*) self)->title);
-#line 88 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 88 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	((JsRenderJsRender*) self)->title = _tmp32_;
-#line 89 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 89 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp33_ = obj;
-#line 89 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 89 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp34_ = json_object_get_string_member (_tmp33_, "modOrder");
-#line 89 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 89 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp35_ = g_strdup (_tmp34_);
-#line 89 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 89 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (((JsRenderJsRender*) self)->modOrder);
-#line 89 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 89 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	((JsRenderJsRender*) self)->modOrder = _tmp35_;
-#line 93 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 93 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp36_ = obj;
-#line 93 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 93 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp37_ = json_object_get_array_member (_tmp36_, "items");
-#line 93 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 93 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp38_ = __vala_JsonArray_copy0 (_tmp37_);
-#line 93 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 93 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	ar = _tmp38_;
-#line 94 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 94 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp39_ = ar;
-#line 94 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 94 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp40_ = json_array_get_object_element (_tmp39_, (guint) 0);
-#line 94 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 94 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp41_ = __vala_JsonObject_copy0 (_tmp40_);
-#line 94 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 94 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	tree_base = _tmp41_;
-#line 95 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 95 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp42_ = js_render_node_new ();
-#line 95 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 95 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_object_unref0 (((JsRenderJsRender*) self)->tree);
-#line 95 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 95 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	((JsRenderJsRender*) self)->tree = _tmp42_;
-#line 96 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 96 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp43_ = ((JsRenderJsRender*) self)->tree;
-#line 96 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 96 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp44_ = tree_base;
-#line 96 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 96 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	js_render_node_loadFromJson (_tmp43_, _tmp44_);
-#line 66 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 66 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	__vala_JsonObject_free0 (tree_base);
-#line 66 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 66 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	__vala_JsonArray_free0 (ar);
-#line 66 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 66 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	__vala_JsonObject_free0 (obj);
-#line 66 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 66 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	__vala_JsonNode_free0 (node);
-#line 66 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 66 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_object_unref0 (pa);
 #line 672 "Roo.vala.c"
 }
@@ -748,11 +748,11 @@ static void js_render_roo_real_save (JsRenderJsRender* base) {
 	gchar* _tmp9_ = NULL;
 	gchar* js_src;
 	GError * _inner_error_ = NULL;
-#line 171 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 171 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	self = (JsRenderRoo*) base;
-#line 174 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 174 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	g_print ("--- JsRender.Roo.save");
-#line 175 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 175 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	JS_RENDER_JS_RENDER_CLASS (js_render_roo_parent_class)->save (G_TYPE_CHECK_INSTANCE_CAST (self, JS_RENDER_TYPE_JS_RENDER, JsRenderJsRender));
 #line 758 "Roo.vala.c"
 	{
@@ -765,67 +765,67 @@ static void js_render_roo_real_save (JsRenderJsRender* base) {
 		gint _tmp5_;
 		gchar* _tmp6_ = NULL;
 		gchar* _tmp7_;
-#line 180 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 180 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp0_ = g_regex_new ("\\.(bjs|js)$", 0, 0, &_inner_error_);
-#line 180 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 180 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		regex = _tmp0_;
-#line 180 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 180 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		if (_inner_error_ != NULL) {
-#line 180 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 180 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 			if (_inner_error_->domain == G_REGEX_ERROR) {
 #line 777 "Roo.vala.c"
 				goto __catch3_g_regex_error;
 			}
-#line 180 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 180 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 			_g_free0 (js);
-#line 180 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 180 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 			g_critical ("file %s: line %d: unexpected error: %s (%s, %d)", __FILE__, __LINE__, _inner_error_->message, g_quark_to_string (_inner_error_->domain), _inner_error_->code);
-#line 180 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 180 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 			g_clear_error (&_inner_error_);
-#line 180 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 180 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 			return;
 #line 788 "Roo.vala.c"
 		}
-#line 182 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 182 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp1_ = regex;
-#line 182 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 182 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp2_ = ((JsRenderJsRender*) self)->path;
-#line 182 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 182 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp3_ = ((JsRenderJsRender*) self)->path;
-#line 182 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 182 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp4_ = strlen (_tmp3_);
-#line 182 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 182 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp5_ = _tmp4_;
-#line 182 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 182 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp6_ = g_regex_replace (_tmp1_, _tmp2_, (gssize) _tmp5_, 0, "", 0, &_inner_error_);
-#line 182 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 182 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp7_ = _tmp6_;
-#line 182 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 182 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		if (_inner_error_ != NULL) {
-#line 182 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 182 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 			_g_regex_unref0 (regex);
-#line 182 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 182 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 			if (_inner_error_->domain == G_REGEX_ERROR) {
 #line 810 "Roo.vala.c"
 				goto __catch3_g_regex_error;
 			}
-#line 182 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 182 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 			_g_regex_unref0 (regex);
-#line 182 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 182 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 			_g_free0 (js);
-#line 182 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 182 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 			g_critical ("file %s: line %d: unexpected error: %s (%s, %d)", __FILE__, __LINE__, _inner_error_->message, g_quark_to_string (_inner_error_->domain), _inner_error_->code);
-#line 182 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 182 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 			g_clear_error (&_inner_error_);
-#line 182 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 182 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 			return;
 #line 823 "Roo.vala.c"
 		}
-#line 182 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 182 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_g_free0 (js);
-#line 182 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 182 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		js = _tmp7_;
-#line 179 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 179 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_g_regex_unref0 (regex);
 #line 831 "Roo.vala.c"
 	}
@@ -834,42 +834,42 @@ static void js_render_roo_real_save (JsRenderJsRender* base) {
 	{
 		GError* e = NULL;
 		gchar* _tmp8_;
-#line 179 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 179 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		e = _inner_error_;
-#line 179 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 179 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_inner_error_ = NULL;
-#line 184 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 184 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp8_ = g_strdup ("???");
-#line 184 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 184 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_g_free0 (((JsRenderJsRender*) self)->name);
-#line 184 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 184 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		((JsRenderJsRender*) self)->name = _tmp8_;
-#line 185 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 185 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		g_print ("count not make filename from path");
-#line 186 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 186 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_g_error_free0 (e);
-#line 186 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 186 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_g_free0 (js);
-#line 186 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 186 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		return;
 #line 856 "Roo.vala.c"
 	}
 	__finally3:
-#line 179 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 179 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	if (_inner_error_ != NULL) {
-#line 179 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 179 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_g_free0 (js);
-#line 179 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 179 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		g_critical ("file %s: line %d: uncaught error: %s (%s, %d)", __FILE__, __LINE__, _inner_error_->message, g_quark_to_string (_inner_error_->domain), _inner_error_->code);
-#line 179 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 179 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		g_clear_error (&_inner_error_);
-#line 179 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 179 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		return;
 #line 869 "Roo.vala.c"
 	}
-#line 190 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 190 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp9_ = js_render_js_render_toSource ((JsRenderJsRender*) self);
-#line 190 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 190 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	js_src = _tmp9_;
 #line 875 "Roo.vala.c"
 	{
@@ -878,34 +878,34 @@ static void js_render_roo_real_save (JsRenderJsRender* base) {
 		const gchar* _tmp12_;
 		gint _tmp13_;
 		gint _tmp14_;
-#line 193 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 193 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp10_ = js;
-#line 193 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 193 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp11_ = js_src;
-#line 193 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 193 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp12_ = js_src;
-#line 193 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 193 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp13_ = strlen (_tmp12_);
-#line 193 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 193 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp14_ = _tmp13_;
-#line 193 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 193 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		g_file_set_contents (_tmp10_, _tmp11_, (gssize) _tmp14_, &_inner_error_);
-#line 193 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 193 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		if (_inner_error_ != NULL) {
-#line 193 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 193 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 			if (_inner_error_->domain == G_FILE_ERROR) {
 #line 898 "Roo.vala.c"
 				goto __catch4_g_file_error;
 			}
-#line 193 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 193 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 			_g_free0 (js_src);
-#line 193 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 193 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 			_g_free0 (js);
-#line 193 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 193 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 			g_critical ("file %s: line %d: unexpected error: %s (%s, %d)", __FILE__, __LINE__, _inner_error_->message, g_quark_to_string (_inner_error_->domain), _inner_error_->code);
-#line 193 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 193 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 			g_clear_error (&_inner_error_);
-#line 193 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 193 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 			return;
 #line 911 "Roo.vala.c"
 		}
@@ -914,34 +914,34 @@ static void js_render_roo_real_save (JsRenderJsRender* base) {
 	__catch4_g_file_error:
 	{
 		GError* e = NULL;
-#line 192 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 192 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		e = _inner_error_;
-#line 192 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 192 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_inner_error_ = NULL;
-#line 195 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 195 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		g_print ("Save failed\n");
-#line 192 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 192 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_g_error_free0 (e);
 #line 926 "Roo.vala.c"
 	}
 	__finally4:
-#line 192 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 192 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	if (_inner_error_ != NULL) {
-#line 192 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 192 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_g_free0 (js_src);
-#line 192 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 192 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_g_free0 (js);
-#line 192 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 192 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		g_critical ("file %s: line %d: uncaught error: %s (%s, %d)", __FILE__, __LINE__, _inner_error_->message, g_quark_to_string (_inner_error_->domain), _inner_error_->code);
-#line 192 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 192 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		g_clear_error (&_inner_error_);
-#line 192 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 192 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		return;
 #line 941 "Roo.vala.c"
 	}
-#line 171 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 171 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (js_src);
-#line 171 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 171 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (js);
 #line 947 "Roo.vala.c"
 }
@@ -983,77 +983,77 @@ static gchar* js_render_roo_real_toSourcePreview (JsRenderJsRender* base) {
 	const gchar* _tmp7_;
 	gboolean _tmp8_ = FALSE;
 	gchar* _tmp10_ = NULL;
-#line 379 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 379 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	self = (JsRenderRoo*) base;
-#line 381 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 381 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	g_print ("to source preview\n");
-#line 382 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 382 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp0_ = ((JsRenderJsRender*) self)->tree;
-#line 382 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 382 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp1_ = js_render_roo_guessName (self, _tmp0_);
-#line 382 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 382 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	top = _tmp1_;
-#line 385 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 385 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp2_ = top;
-#line 385 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 385 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	if (_tmp2_ == NULL) {
 #line 1001 "Roo.vala.c"
 		gchar* _tmp3_;
-#line 386 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 386 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		g_print ("guessname returned false");
-#line 387 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 387 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp3_ = g_strdup ("");
-#line 387 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 387 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		result = _tmp3_;
-#line 387 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 387 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_g_free0 (top);
-#line 387 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 387 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		return result;
 #line 1013 "Roo.vala.c"
 	}
-#line 391 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 391 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp4_ = top;
-#line 391 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 391 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp5_ = string_contains (_tmp4_, "Dialog");
-#line 391 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 391 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	if (_tmp5_) {
 #line 1021 "Roo.vala.c"
 		gchar* _tmp6_ = NULL;
-#line 392 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 392 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp6_ = js_render_roo_toSourceDialog (self, TRUE);
-#line 392 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 392 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		result = _tmp6_;
-#line 392 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 392 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_g_free0 (top);
-#line 392 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 392 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		return result;
 #line 1031 "Roo.vala.c"
 	}
-#line 395 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 395 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp7_ = top;
-#line 395 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 395 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp8_ = string_contains (_tmp7_, "Modal");
-#line 395 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 395 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	if (_tmp8_) {
 #line 1039 "Roo.vala.c"
 		gchar* _tmp9_ = NULL;
-#line 396 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 396 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp9_ = js_render_roo_toSourceModal (self, TRUE);
-#line 396 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 396 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		result = _tmp9_;
-#line 396 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 396 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_g_free0 (top);
-#line 396 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 396 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		return result;
 #line 1049 "Roo.vala.c"
 	}
-#line 399 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 399 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp10_ = js_render_roo_toSourceLayout (self, TRUE);
-#line 399 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 399 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	result = _tmp10_;
-#line 399 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 399 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (top);
-#line 399 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 399 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	return result;
 #line 1059 "Roo.vala.c"
 }
@@ -1079,73 +1079,73 @@ static gchar* js_render_roo_real_toSource (JsRenderJsRender* base) {
 	const gchar* _tmp7_;
 	gboolean _tmp8_ = FALSE;
 	gchar* _tmp10_ = NULL;
-#line 413 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 413 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	self = (JsRenderRoo*) base;
-#line 419 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 419 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp0_ = ((JsRenderJsRender*) self)->tree;
-#line 419 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 419 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp1_ = js_render_roo_guessName (self, _tmp0_);
-#line 419 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 419 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	top = _tmp1_;
-#line 420 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 420 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp2_ = top;
-#line 420 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 420 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	if (_tmp2_ != NULL) {
 #line 1095 "Roo.vala.c"
 		gchar* _tmp3_;
-#line 421 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 421 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp3_ = g_strdup ("");
-#line 421 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 421 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		result = _tmp3_;
-#line 421 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 421 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_g_free0 (top);
-#line 421 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 421 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		return result;
 #line 1105 "Roo.vala.c"
 	}
-#line 423 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 423 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp4_ = top;
-#line 423 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 423 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp5_ = string_contains (_tmp4_, "Dialog");
-#line 423 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 423 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	if (_tmp5_) {
 #line 1113 "Roo.vala.c"
 		gchar* _tmp6_ = NULL;
-#line 424 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 424 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp6_ = js_render_roo_toSourceDialog (self, FALSE);
-#line 424 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 424 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		result = _tmp6_;
-#line 424 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 424 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_g_free0 (top);
-#line 424 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 424 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		return result;
 #line 1123 "Roo.vala.c"
 	}
-#line 427 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 427 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp7_ = top;
-#line 427 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 427 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp8_ = string_contains (_tmp7_, "Modal");
-#line 427 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 427 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	if (_tmp8_) {
 #line 1131 "Roo.vala.c"
 		gchar* _tmp9_ = NULL;
-#line 428 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 428 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp9_ = js_render_roo_toSourceModal (self, TRUE);
-#line 428 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 428 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		result = _tmp9_;
-#line 428 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 428 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_g_free0 (top);
-#line 428 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 428 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		return result;
 #line 1141 "Roo.vala.c"
 	}
-#line 430 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 430 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp10_ = js_render_roo_toSourceLayout (self, FALSE);
-#line 430 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 430 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	result = _tmp10_;
-#line 430 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 430 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (top);
-#line 430 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 430 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	return result;
 #line 1151 "Roo.vala.c"
 }
@@ -1162,40 +1162,40 @@ gchar* js_render_roo_outputHeader (JsRenderRoo* self) {
 	gint s_length1;
 	gint _s_size_;
 	gchar* _tmp5_ = NULL;
-#line 439 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 439 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 441 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 441 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp0_ = g_strdup ("//<script type=\"text/javascript\">");
-#line 441 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 441 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp1_ = g_strdup ("");
-#line 441 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 441 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp2_ = g_strdup ("// Auto generated file - created by app.Builder.js- do not edit direct" \
 "ly (at present!)");
-#line 441 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 441 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp3_ = g_strdup ("");
-#line 441 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 441 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp4_ = g_new0 (gchar*, 4 + 1);
-#line 441 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 441 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp4_[0] = _tmp0_;
-#line 441 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 441 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp4_[1] = _tmp1_;
-#line 441 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 441 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp4_[2] = _tmp2_;
-#line 441 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 441 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp4_[3] = _tmp3_;
-#line 441 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 441 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	s = _tmp4_;
-#line 441 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 441 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	s_length1 = 4;
-#line 441 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 441 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_s_size_ = s_length1;
-#line 447 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 447 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp5_ = g_strjoinv ("\n", s);
-#line 447 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 447 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	result = _tmp5_;
-#line 447 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 447 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	s = (_vala_array_free (s, s_length1, (GDestroyNotify) g_free), NULL);
-#line 447 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 447 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	return result;
 #line 1200 "Roo.vala.c"
 }
@@ -1260,206 +1260,206 @@ gchar* js_render_roo_toSourceDialog (JsRenderRoo* self, gboolean isPreview) {
 	gchar* _tmp47_;
 	gchar* _tmp48_;
 	gchar* _tmp49_;
-#line 453 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 453 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 459 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 459 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp0_ = js_render_js_render_mungeToString ((JsRenderJsRender*) self, "            ");
-#line 459 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 459 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	o = _tmp0_;
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp1_ = g_strdup (" = {");
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp2_ = g_strdup ("");
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp3_ = g_strdup ("    dialog : false,");
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp4_ = g_strdup ("    callback:  false,");
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp5_ = g_strdup ("");
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp6_ = g_strdup ("    show : function(data, cb)");
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp7_ = g_strdup ("    {");
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp8_ = g_strdup ("        if (!this.dialog) {");
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp9_ = g_strdup ("            this.create();");
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp10_ = g_strdup ("        }");
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp11_ = g_strdup ("");
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp12_ = g_strdup ("        this.callback = cb;");
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp13_ = g_strdup ("        this.data = data;");
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp14_ = g_strdup ("        this.dialog.show(this.data._el);");
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp15_ = g_strdup ("        if (this.form) {");
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp16_ = g_strdup ("           this.form.reset();");
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp17_ = g_strdup ("           this.form.setValues(data);");
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp18_ = g_strdup ("           this.form.fireEvent('actioncomplete', this.form,  { type: '" \
 "setdata', data: data });");
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp19_ = g_strdup ("        }");
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp20_ = g_strdup ("");
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp21_ = g_strdup ("    },");
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp22_ = g_strdup ("");
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp23_ = g_strdup ("    create : function()");
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp24_ = g_strdup ("    {");
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp25_ = g_strdup ("        var _this = this;");
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp26_ = g_strdup ("        this.dialog = Roo.factory(");
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_ = g_new0 (gchar*, 26 + 1);
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[0] = _tmp1_;
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[1] = _tmp2_;
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[2] = _tmp3_;
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[3] = _tmp4_;
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[4] = _tmp5_;
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[5] = _tmp6_;
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[6] = _tmp7_;
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[7] = _tmp8_;
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[8] = _tmp9_;
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[9] = _tmp10_;
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[10] = _tmp11_;
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[11] = _tmp12_;
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[12] = _tmp13_;
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[13] = _tmp14_;
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[14] = _tmp15_;
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[15] = _tmp16_;
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[16] = _tmp17_;
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[17] = _tmp18_;
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[18] = _tmp19_;
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[19] = _tmp20_;
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[20] = _tmp21_;
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[21] = _tmp22_;
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[22] = _tmp23_;
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[23] = _tmp24_;
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[24] = _tmp25_;
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[25] = _tmp26_;
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	adda = _tmp27_;
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	adda_length1 = 26;
-#line 462 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 462 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_adda_size_ = adda_length1;
-#line 489 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 489 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp28_ = g_strdup (");");
-#line 489 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 489 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp29_ = g_strdup ("    }");
-#line 489 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 489 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp30_ = g_strdup ("};");
-#line 489 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 489 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp31_ = g_strdup ("");
-#line 489 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 489 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp32_ = g_new0 (gchar*, 4 + 1);
-#line 489 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 489 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp32_[0] = _tmp28_;
-#line 489 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 489 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp32_[1] = _tmp29_;
-#line 489 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 489 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp32_[2] = _tmp30_;
-#line 489 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 489 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp32_[3] = _tmp31_;
-#line 489 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 489 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	addb = _tmp32_;
-#line 489 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 489 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	addb_length1 = 4;
-#line 489 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 489 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_addb_size_ = addb_length1;
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 495 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp33_ = js_render_roo_outputHeader (self);
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 495 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp34_ = _tmp33_;
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 495 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp35_ = g_strconcat (_tmp34_, "\n", NULL);
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 495 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp36_ = _tmp35_;
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 495 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp37_ = ((JsRenderJsRender*) self)->name;
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 495 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp38_ = g_strconcat (_tmp36_, _tmp37_, NULL);
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 495 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp39_ = _tmp38_;
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 495 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp40_ = g_strjoinv ("\n", adda);
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 495 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp41_ = _tmp40_;
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 495 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp42_ = g_strconcat (_tmp39_, _tmp41_, NULL);
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 495 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp43_ = _tmp42_;
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 495 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp44_ = g_strconcat (_tmp43_, o, NULL);
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 495 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp45_ = _tmp44_;
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 495 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp46_ = g_strjoinv ("\n", addb);
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 495 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp47_ = _tmp46_;
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 495 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp48_ = g_strconcat (_tmp45_, _tmp47_, NULL);
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 495 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp49_ = _tmp48_;
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 495 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp47_);
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 495 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp45_);
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 495 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp43_);
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 495 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp41_);
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 495 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp39_);
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 495 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp36_);
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 495 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp34_);
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 495 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	result = _tmp49_;
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 495 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	addb = (_vala_array_free (addb, addb_length1, (GDestroyNotify) g_free), NULL);
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 495 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	adda = (_vala_array_free (adda, adda_length1, (GDestroyNotify) g_free), NULL);
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 495 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (o);
-#line 495 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 495 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	return result;
 #line 1463 "Roo.vala.c"
 }
@@ -1524,206 +1524,206 @@ gchar* js_render_roo_toSourceModal (JsRenderRoo* self, gboolean isPreview) {
 	gchar* _tmp47_;
 	gchar* _tmp48_;
 	gchar* _tmp49_;
-#line 503 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 503 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 508 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 508 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp0_ = js_render_js_render_mungeToString ((JsRenderJsRender*) self, "            ");
-#line 508 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 508 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	o = _tmp0_;
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp1_ = g_strdup (" = {");
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp2_ = g_strdup ("");
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp3_ = g_strdup ("    dialog : false,");
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp4_ = g_strdup ("    callback:  false,");
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp5_ = g_strdup ("");
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp6_ = g_strdup ("    show : function(data, cb)");
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp7_ = g_strdup ("    {");
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp8_ = g_strdup ("        if (!this.dialog) {");
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp9_ = g_strdup ("            this.create();");
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp10_ = g_strdup ("        }");
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp11_ = g_strdup ("");
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp12_ = g_strdup ("        this.callback = cb;");
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp13_ = g_strdup ("        this.data = data;");
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp14_ = g_strdup ("        this.dialog.show(this.data._el);");
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp15_ = g_strdup ("        if (this.form) {");
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp16_ = g_strdup ("           this.form.reset();");
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp17_ = g_strdup ("           this.form.setValues(data);");
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp18_ = g_strdup ("           this.form.fireEvent('actioncomplete', this.form,  { type: '" \
 "setdata', data: data });");
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp19_ = g_strdup ("        }");
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp20_ = g_strdup ("");
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp21_ = g_strdup ("    },");
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp22_ = g_strdup ("");
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp23_ = g_strdup ("    create : function()");
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp24_ = g_strdup ("    {");
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp25_ = g_strdup ("        var _this = this;");
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp26_ = g_strdup ("        this.dialog = Roo.factory(");
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_ = g_new0 (gchar*, 26 + 1);
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[0] = _tmp1_;
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[1] = _tmp2_;
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[2] = _tmp3_;
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[3] = _tmp4_;
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[4] = _tmp5_;
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[5] = _tmp6_;
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[6] = _tmp7_;
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[7] = _tmp8_;
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[8] = _tmp9_;
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[9] = _tmp10_;
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[10] = _tmp11_;
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[11] = _tmp12_;
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[12] = _tmp13_;
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[13] = _tmp14_;
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[14] = _tmp15_;
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[15] = _tmp16_;
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[16] = _tmp17_;
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[17] = _tmp18_;
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[18] = _tmp19_;
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[19] = _tmp20_;
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[20] = _tmp21_;
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[21] = _tmp22_;
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[22] = _tmp23_;
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[23] = _tmp24_;
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[24] = _tmp25_;
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_[25] = _tmp26_;
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	adda = _tmp27_;
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	adda_length1 = 26;
-#line 510 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 510 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_adda_size_ = adda_length1;
-#line 537 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 537 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp28_ = g_strdup (");");
-#line 537 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 537 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp29_ = g_strdup ("    }");
-#line 537 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 537 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp30_ = g_strdup ("};");
-#line 537 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 537 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp31_ = g_strdup ("");
-#line 537 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 537 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp32_ = g_new0 (gchar*, 4 + 1);
-#line 537 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 537 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp32_[0] = _tmp28_;
-#line 537 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 537 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp32_[1] = _tmp29_;
-#line 537 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 537 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp32_[2] = _tmp30_;
-#line 537 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 537 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp32_[3] = _tmp31_;
-#line 537 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 537 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	addb = _tmp32_;
-#line 537 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 537 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	addb_length1 = 4;
-#line 537 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 537 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_addb_size_ = addb_length1;
-#line 543 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 543 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp33_ = js_render_roo_outputHeader (self);
-#line 543 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 543 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp34_ = _tmp33_;
-#line 543 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 543 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp35_ = g_strconcat (_tmp34_, "\n", NULL);
-#line 543 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 543 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp36_ = _tmp35_;
-#line 543 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 543 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp37_ = ((JsRenderJsRender*) self)->name;
-#line 543 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 543 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp38_ = g_strconcat (_tmp36_, _tmp37_, NULL);
-#line 543 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 543 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp39_ = _tmp38_;
-#line 543 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 543 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp40_ = g_strjoinv ("\n", adda);
-#line 543 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 543 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp41_ = _tmp40_;
-#line 543 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 543 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp42_ = g_strconcat (_tmp39_, _tmp41_, NULL);
-#line 543 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 543 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp43_ = _tmp42_;
-#line 543 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 543 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp44_ = g_strconcat (_tmp43_, o, NULL);
-#line 543 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 543 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp45_ = _tmp44_;
-#line 543 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 543 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp46_ = g_strjoinv ("\n", addb);
-#line 543 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 543 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp47_ = _tmp46_;
-#line 543 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 543 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp48_ = g_strconcat (_tmp45_, _tmp47_, NULL);
-#line 543 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 543 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp49_ = _tmp48_;
-#line 543 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 543 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp47_);
-#line 543 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 543 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp45_);
-#line 543 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 543 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp43_);
-#line 543 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 543 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp41_);
-#line 543 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 543 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp39_);
-#line 543 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 543 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp36_);
-#line 543 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 543 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp34_);
-#line 543 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 543 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	result = _tmp49_;
-#line 543 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 543 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	addb = (_vala_array_free (addb, addb_length1, (GDestroyNotify) g_free), NULL);
-#line 543 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 543 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	adda = (_vala_array_free (adda, adda_length1, (GDestroyNotify) g_free), NULL);
-#line 543 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 543 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (o);
-#line 543 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 543 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	return result;
 #line 1726 "Roo.vala.c"
 }
@@ -1962,99 +1962,99 @@ gchar* js_render_roo_pathToPart (JsRenderRoo* self) {
 	gchar* _tmp48_;
 	gchar* _tmp49_;
 	gchar* _tmp50_;
-#line 551 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 551 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 553 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 553 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp0_ = ((JsRenderJsRender*) self)->path;
-#line 553 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 553 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp1_ = g_path_get_dirname (_tmp0_);
-#line 553 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 553 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp2_ = _tmp1_;
-#line 553 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 553 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp3_ = g_path_get_basename (_tmp2_);
-#line 553 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 553 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp4_ = _tmp3_;
-#line 553 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 553 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp2_);
-#line 553 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 553 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	dir = _tmp4_;
-#line 554 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 554 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp5_ = dir;
-#line 554 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 554 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp7_ = _tmp6_ = g_strsplit (_tmp5_, ".", 0);
-#line 554 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 554 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	ar = _tmp7_;
-#line 554 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 554 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	ar_length1 = _vala_array_length (_tmp6_);
-#line 554 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 554 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_ar_size_ = ar_length1;
-#line 555 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 555 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp8_ = ar;
-#line 555 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 555 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp8__length1 = ar_length1;
-#line 555 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 555 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp9_ = ar;
-#line 555 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 555 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp9__length1 = ar_length1;
-#line 555 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 555 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp10_ = _tmp8_[_tmp9__length1 - 1];
-#line 555 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 555 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp11_ = g_strdup (_tmp10_);
-#line 555 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 555 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	modname = _tmp11_;
-#line 558 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 558 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp12_ = ((JsRenderJsRender*) self)->path;
-#line 558 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 558 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp13_ = g_path_get_basename (_tmp12_);
-#line 558 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 558 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp14_ = _tmp13_;
-#line 558 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 558 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp16_ = _tmp15_ = g_strsplit (_tmp14_, ".", 0);
-#line 558 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 558 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp17_ = _tmp16_;
-#line 558 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 558 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp17__length1 = _vala_array_length (_tmp15_);
-#line 558 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 558 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp14_);
-#line 558 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 558 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	fbits = _tmp17_;
-#line 558 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 558 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	fbits_length1 = _tmp17__length1;
-#line 558 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 558 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_fbits_size_ = fbits_length1;
-#line 561 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 561 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp18_ = fbits;
-#line 561 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 561 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp18__length1 = fbits_length1;
-#line 561 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 561 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp19_ = fbits;
-#line 561 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 561 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp19__length1 = fbits_length1;
-#line 561 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 561 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp20_ = _tmp18_[_tmp19__length1 - 2];
-#line 561 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 561 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp21_ = g_strdup (_tmp20_);
-#line 561 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 561 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	npart = _tmp21_;
-#line 562 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 562 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp22_ = npart;
-#line 562 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 562 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp23_ = modname;
-#line 562 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 562 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp24_ = strlen (_tmp23_);
-#line 562 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 562 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp25_ = _tmp24_;
-#line 562 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 562 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp26_ = string_substring (_tmp22_, (glong) 0, (glong) _tmp25_);
-#line 562 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 562 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_ = _tmp26_;
-#line 562 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 562 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp28_ = modname;
-#line 562 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 562 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp29_ = g_strcmp0 (_tmp27_, _tmp28_) == 0;
-#line 562 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 562 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp27_);
-#line 562 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 562 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	if (_tmp29_) {
 #line 2057 "Roo.vala.c"
 		const gchar* _tmp30_;
@@ -2062,77 +2062,77 @@ gchar* js_render_roo_pathToPart (JsRenderRoo* self) {
 		gint _tmp32_;
 		gint _tmp33_;
 		gchar* _tmp34_ = NULL;
-#line 563 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 563 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp30_ = npart;
-#line 563 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 563 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp31_ = modname;
-#line 563 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 563 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp32_ = strlen (_tmp31_);
-#line 563 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 563 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp33_ = _tmp32_;
-#line 563 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 563 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp34_ = string_substring (_tmp30_, (glong) _tmp33_, (glong) (-1));
-#line 563 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 563 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_g_free0 (npart);
-#line 563 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 563 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		npart = _tmp34_;
 #line 2077 "Roo.vala.c"
 	}
-#line 565 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 565 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp35_ = ((JsRenderJsRender*) self)->tree;
-#line 565 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 565 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp36_ = modname;
-#line 565 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 565 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp37_ = js_render_node_quoteString (_tmp35_, _tmp36_);
-#line 565 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 565 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp38_ = _tmp37_;
-#line 565 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 565 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp39_ = g_strconcat ("[", _tmp38_, NULL);
-#line 565 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 565 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp40_ = _tmp39_;
-#line 565 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 565 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp41_ = g_strconcat (_tmp40_, ", ", NULL);
-#line 565 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 565 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp42_ = _tmp41_;
-#line 565 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 565 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp43_ = ((JsRenderJsRender*) self)->tree;
-#line 565 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 565 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp44_ = npart;
-#line 565 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 565 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp45_ = js_render_node_quoteString (_tmp43_, _tmp44_);
-#line 565 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 565 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp46_ = _tmp45_;
-#line 565 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 565 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp47_ = g_strconcat (_tmp42_, _tmp46_, NULL);
-#line 565 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 565 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp48_ = _tmp47_;
-#line 565 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 565 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp49_ = g_strconcat (_tmp48_, " ]", NULL);
-#line 565 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 565 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp50_ = _tmp49_;
-#line 565 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 565 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp48_);
-#line 565 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 565 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp46_);
-#line 565 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 565 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp42_);
-#line 565 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 565 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp40_);
-#line 565 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 565 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp38_);
-#line 565 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 565 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	result = _tmp50_;
-#line 565 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 565 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (npart);
-#line 565 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 565 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	fbits = (_vala_array_free (fbits, fbits_length1, (GDestroyNotify) g_free), NULL);
-#line 565 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 565 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (modname);
-#line 565 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 565 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	ar = (_vala_array_free (ar, ar_length1, (GDestroyNotify) g_free), NULL);
-#line 565 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 565 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (dir);
-#line 565 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 565 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	return result;
 #line 2135 "Roo.vala.c"
 }
@@ -2259,452 +2259,452 @@ gchar* js_render_roo_toSourceLayout (JsRenderRoo* self, gboolean isPreview) {
 	gchar* _tmp120_;
 	gchar* _tmp121_;
 	GError * _inner_error_ = NULL;
-#line 574 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 574 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 578 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 578 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp0_ = isPreview;
-#line 578 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 578 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	if (_tmp0_) {
 #line 2266 "Roo.vala.c"
 	}
-#line 583 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 583 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp1_ = js_render_js_render_mungeToString ((JsRenderJsRender*) self, "            ");
-#line 583 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 583 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	o = _tmp1_;
-#line 584 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 584 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp2_ = g_regex_new ("[^A-Za-z.]+", 0, 0, &_inner_error_);
-#line 584 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 584 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	reg = _tmp2_;
-#line 584 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 584 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	if (_inner_error_ != NULL) {
-#line 584 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 584 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_g_free0 (o);
-#line 584 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 584 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		g_critical ("file %s: line %d: uncaught error: %s (%s, %d)", __FILE__, __LINE__, _inner_error_->message, g_quark_to_string (_inner_error_->domain), _inner_error_->code);
-#line 584 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 584 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		g_clear_error (&_inner_error_);
-#line 584 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 584 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		return NULL;
 #line 2286 "Roo.vala.c"
 	}
-#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 586 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp3_ = reg;
-#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 586 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp4_ = ((JsRenderJsRender*) self)->name;
-#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 586 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp5_ = ((JsRenderJsRender*) self)->name;
-#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 586 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp6_ = strlen (_tmp5_);
-#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 586 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp7_ = _tmp6_;
-#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 586 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp8_ = g_regex_replace (_tmp3_, _tmp4_, (gssize) _tmp7_, 0, "-", 0, &_inner_error_);
-#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 586 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp9_ = _tmp8_;
-#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 586 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	if (_inner_error_ != NULL) {
-#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 586 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_g_regex_unref0 (reg);
-#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 586 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_g_free0 (o);
-#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 586 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		g_critical ("file %s: line %d: uncaught error: %s (%s, %d)", __FILE__, __LINE__, _inner_error_->message, g_quark_to_string (_inner_error_->domain), _inner_error_->code);
-#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 586 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		g_clear_error (&_inner_error_);
-#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 586 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		return NULL;
 #line 2314 "Roo.vala.c"
 	}
-#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 586 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp10_ = ((JsRenderJsRender*) self)->modOrder;
-#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 586 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp11_ = g_strconcat (_tmp10_, "-", NULL);
-#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 586 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp12_ = _tmp11_;
-#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 586 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp13_ = _tmp9_;
-#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 586 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp14_ = g_strconcat (_tmp12_, _tmp13_, NULL);
-#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 586 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp15_ = _tmp14_;
-#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 586 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp13_);
-#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 586 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp12_);
-#line 586 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 586 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	modkey = _tmp15_;
-#line 588 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 588 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp17_ = ((JsRenderJsRender*) self)->parent;
-#line 588 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 588 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp18_ = strlen (_tmp17_);
-#line 588 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 588 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp19_ = _tmp18_;
-#line 588 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 588 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	if (_tmp19_ > 0) {
 #line 2342 "Roo.vala.c"
 		const gchar* _tmp20_;
 		gchar* _tmp21_;
 		gchar* _tmp22_;
 		gchar* _tmp23_;
-#line 588 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 588 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp20_ = ((JsRenderJsRender*) self)->parent;
-#line 588 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 588 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp21_ = g_strconcat ("'", _tmp20_, NULL);
-#line 588 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 588 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp22_ = _tmp21_;
-#line 588 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 588 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp23_ = g_strconcat (_tmp22_, "'", NULL);
-#line 588 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 588 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_g_free0 (_tmp16_);
-#line 588 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 588 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp16_ = _tmp23_;
-#line 588 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 588 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_g_free0 (_tmp22_);
 #line 2361 "Roo.vala.c"
 	} else {
 		gchar* _tmp24_;
-#line 588 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 588 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp24_ = g_strdup ("false");
-#line 588 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 588 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_g_free0 (_tmp16_);
-#line 588 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 588 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp16_ = _tmp24_;
 #line 2370 "Roo.vala.c"
 	}
-#line 588 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 588 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp25_ = _tmp16_;
-#line 588 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 588 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp26_ = g_strdup (_tmp25_);
-#line 588 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 588 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	parent = _tmp26_;
-#line 590 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 590 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_ = isPreview;
-#line 590 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 590 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	if (_tmp27_) {
 #line 2382 "Roo.vala.c"
 		gchar* _tmp28_;
-#line 591 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 591 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp28_ = g_strdup ("false");
-#line 591 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 591 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_g_free0 (parent);
-#line 591 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 591 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		parent = _tmp28_;
 #line 2390 "Roo.vala.c"
 	}
-#line 604 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 604 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp30_ = ((JsRenderJsRender*) self)->title;
-#line 604 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 604 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp31_ = strlen (_tmp30_);
-#line 604 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 604 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp32_ = _tmp31_;
-#line 604 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 604 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	if (_tmp32_ > 0) {
 #line 2400 "Roo.vala.c"
 		const gchar* _tmp33_;
-#line 604 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 604 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp33_ = ((JsRenderJsRender*) self)->title;
-#line 604 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 604 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp29_ = _tmp33_;
 #line 2406 "Roo.vala.c"
 	} else {
-#line 604 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 604 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp29_ = "unnamed module";
 #line 2410 "Roo.vala.c"
 	}
-#line 605 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 605 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp35_ = self->priv->disabled;
-#line 605 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 605 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	if (_tmp35_) {
-#line 605 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 605 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp34_ = "true";
 #line 2418 "Roo.vala.c"
 	} else {
-#line 605 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 605 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp34_ = "false";
 #line 2422 "Roo.vala.c"
 	}
-#line 606 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 606 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp37_ = ((JsRenderJsRender*) self)->permname;
-#line 606 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 606 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp38_ = strlen (_tmp37_);
-#line 606 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 606 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp39_ = _tmp38_;
-#line 606 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 606 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	if (_tmp39_ > 0) {
 #line 2432 "Roo.vala.c"
 		const gchar* _tmp40_;
-#line 606 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 606 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp40_ = ((JsRenderJsRender*) self)->permname;
-#line 606 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 606 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp36_ = _tmp40_;
 #line 2438 "Roo.vala.c"
 	} else {
-#line 606 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 606 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp36_ = "";
 #line 2442 "Roo.vala.c"
 	}
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp41_ = js_render_roo_outputHeader (self);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp42_ = _tmp41_;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp43_ = g_strconcat (_tmp42_, "\n", NULL);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp44_ = _tmp43_;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp45_ = ((JsRenderJsRender*) self)->name;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp46_ = g_strconcat (_tmp44_, _tmp45_, NULL);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp47_ = _tmp46_;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp48_ = g_strconcat (_tmp47_, " = new Roo.XComponent({\n", NULL);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp49_ = _tmp48_;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp50_ = g_strconcat (_tmp49_, "    part     :  ", NULL);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp51_ = _tmp50_;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp52_ = js_render_roo_pathToPart (self);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp53_ = _tmp52_;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp54_ = g_strconcat (_tmp51_, _tmp53_, NULL);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp55_ = _tmp54_;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp56_ = g_strconcat (_tmp55_, ",\n", NULL);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp57_ = _tmp56_;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp58_ = g_strconcat (_tmp57_, "    order    : '", NULL);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp59_ = _tmp58_;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp60_ = modkey;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp61_ = g_strconcat (_tmp59_, _tmp60_, NULL);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp62_ = _tmp61_;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp63_ = g_strconcat (_tmp62_, "',\n", NULL);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp64_ = _tmp63_;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp65_ = g_strconcat (_tmp64_, "    region   : '", NULL);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp66_ = _tmp65_;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp67_ = self->priv->region;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp68_ = g_strconcat (_tmp66_, _tmp67_, NULL);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp69_ = _tmp68_;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp70_ = g_strconcat (_tmp69_, "',\n", NULL);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp71_ = _tmp70_;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp72_ = g_strconcat (_tmp71_, "    parent   : ", NULL);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp73_ = _tmp72_;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp74_ = parent;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp75_ = g_strconcat (_tmp73_, _tmp74_, NULL);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp76_ = _tmp75_;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp77_ = g_strconcat (_tmp76_, ",\n", NULL);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp78_ = _tmp77_;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp79_ = g_strconcat (_tmp78_, "    name     : ", NULL);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp80_ = _tmp79_;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp81_ = ((JsRenderJsRender*) self)->tree;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp82_ = _tmp29_;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp83_ = js_render_node_quoteString (_tmp81_, _tmp82_);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp84_ = _tmp83_;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp85_ = g_strconcat (_tmp80_, _tmp84_, NULL);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp86_ = _tmp85_;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp87_ = g_strconcat (_tmp86_, ",\n", NULL);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp88_ = _tmp87_;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp89_ = g_strconcat (_tmp88_, "    disabled : ", NULL);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp90_ = _tmp89_;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp91_ = _tmp34_;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp92_ = g_strconcat (_tmp90_, _tmp91_, NULL);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp93_ = _tmp92_;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp94_ = g_strconcat (_tmp93_, ", \n", NULL);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp95_ = _tmp94_;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp96_ = g_strconcat (_tmp95_, "    permname : '", NULL);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp97_ = _tmp96_;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp98_ = _tmp36_;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp99_ = g_strconcat (_tmp97_, _tmp98_, NULL);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp100_ = _tmp99_;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp101_ = g_strconcat (_tmp100_, "', \n", NULL);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp102_ = _tmp101_;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp103_ = g_strconcat (_tmp102_, "    _tree : function()\n", NULL);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp104_ = _tmp103_;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp105_ = g_strconcat (_tmp104_, "    {\n", NULL);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp106_ = _tmp105_;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp107_ = g_strconcat (_tmp106_, "        var _this = this;\n", NULL);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp108_ = _tmp107_;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp109_ = g_strconcat (_tmp108_, "        var MODULE = this;\n", NULL);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp110_ = _tmp109_;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp111_ = g_strconcat (_tmp110_, "        return ", NULL);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp112_ = _tmp111_;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp113_ = o;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp114_ = g_strconcat (_tmp112_, _tmp113_, NULL);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp115_ = _tmp114_;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp116_ = g_strconcat (_tmp115_, ";", NULL);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp117_ = _tmp116_;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp118_ = g_strconcat (_tmp117_, "    }\n", NULL);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp119_ = _tmp118_;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp120_ = g_strconcat (_tmp119_, "});\n", NULL);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp121_ = _tmp120_;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp119_);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp117_);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp115_);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp112_);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp110_);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp108_);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp106_);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp104_);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp102_);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp100_);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp97_);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp95_);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp93_);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp90_);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp88_);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp86_);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp84_);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp80_);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp78_);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp76_);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp73_);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp71_);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp69_);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp66_);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp64_);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp62_);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp59_);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp57_);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp55_);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp53_);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp51_);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp49_);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp47_);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp44_);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp42_);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	result = _tmp121_;
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (parent);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp16_);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (modkey);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_regex_unref0 (reg);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (o);
-#line 595 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 595 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	return result;
 #line 2690 "Roo.vala.c"
 }
 
 
 static void _vala_array_add15 (gchar*** array, int* length, int* size, gchar* value) {
-#line 629 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 629 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	if ((*length) == (*size)) {
-#line 629 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 629 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		*size = (*size) ? (2 * (*size)) : 4;
-#line 629 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 629 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		*array = g_renew (gchar*, *array, (*size) + 1);
 #line 2701 "Roo.vala.c"
 	}
-#line 629 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 629 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	(*array)[(*length)++] = value;
-#line 629 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 629 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	(*array)[*length] = NULL;
 #line 2707 "Roo.vala.c"
 }
@@ -2729,17 +2729,17 @@ static gchar string_get (const gchar* self, glong index) {
 
 
 static void _vala_array_add16 (gchar*** array, int* length, int* size, gchar* value) {
-#line 646 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 646 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	if ((*length) == (*size)) {
-#line 646 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 646 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		*size = (*size) ? (2 * (*size)) : 4;
-#line 646 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 646 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		*array = g_renew (gchar*, *array, (*size) + 1);
 #line 2736 "Roo.vala.c"
 	}
-#line 646 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 646 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	(*array)[(*length)++] = value;
-#line 646 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 646 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	(*array)[*length] = NULL;
 #line 2742 "Roo.vala.c"
 }
@@ -2784,172 +2784,172 @@ gchar* js_render_roo_guessName (JsRenderRoo* self, JsRenderNode* ar) {
 	gint _tmp33__length1;
 	gchar* _tmp34_ = NULL;
 	gchar* str;
-#line 621 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 621 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 624 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 624 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp0_ = ar;
-#line 624 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 624 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	if (_tmp0_ == NULL) {
-#line 625 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 625 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		result = NULL;
-#line 625 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 625 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		return result;
 #line 2795 "Roo.vala.c"
 	}
-#line 628 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 628 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp1_ = g_new0 (gchar*, 0 + 1);
-#line 628 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 628 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	ret = _tmp1_;
-#line 628 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 628 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	ret_length1 = 0;
-#line 628 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 628 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_ret_size_ = ret_length1;
-#line 629 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 629 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp3_ = ar;
-#line 629 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 629 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp4_ = js_render_node_get (_tmp3_, "|xns");
-#line 629 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 629 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp5_ = _tmp4_;
-#line 629 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 629 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp6_ = strlen (_tmp5_);
-#line 629 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 629 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp7_ = _tmp6_;
-#line 629 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 629 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp8_ = _tmp7_ < 1;
-#line 629 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 629 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp5_);
-#line 629 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 629 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	if (_tmp8_) {
 #line 2821 "Roo.vala.c"
 		gchar* _tmp9_;
-#line 629 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 629 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp9_ = g_strdup ("Roo");
-#line 629 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 629 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_g_free0 (_tmp2_);
-#line 629 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 629 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp2_ = _tmp9_;
 #line 2829 "Roo.vala.c"
 	} else {
 		JsRenderNode* _tmp10_;
 		gchar* _tmp11_ = NULL;
-#line 629 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 629 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp10_ = ar;
-#line 629 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 629 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp11_ = js_render_node_get (_tmp10_, "|xns");
-#line 629 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 629 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_g_free0 (_tmp2_);
-#line 629 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 629 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp2_ = _tmp11_;
 #line 2841 "Roo.vala.c"
 	}
-#line 629 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 629 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp12_ = ret;
-#line 629 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 629 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp12__length1 = ret_length1;
-#line 629 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 629 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp13_ = _tmp2_;
-#line 629 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 629 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp14_ = g_strdup (_tmp13_);
-#line 629 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 629 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_vala_array_add15 (&ret, &ret_length1, &_ret_size_, _tmp14_);
-#line 632 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 632 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp15_ = ar;
-#line 632 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 632 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp16_ = js_render_node_get (_tmp15_, "xtype");
-#line 632 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 632 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp17_ = _tmp16_;
-#line 632 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 632 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp18_ = strlen (_tmp17_);
-#line 632 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 632 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp19_ = _tmp18_;
-#line 632 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 632 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp20_ = _tmp19_ < 1;
-#line 632 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 632 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp17_);
-#line 632 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 632 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	if (_tmp20_) {
-#line 633 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 633 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		result = NULL;
-#line 633 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 633 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_g_free0 (_tmp2_);
-#line 633 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 633 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		ret = (_vala_array_free (ret, ret_length1, (GDestroyNotify) g_free), NULL);
-#line 633 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 633 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		return result;
 #line 2877 "Roo.vala.c"
 	}
-#line 636 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 636 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp21_ = ar;
-#line 636 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 636 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp22_ = js_render_node_get (_tmp21_, "xtype");
-#line 636 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 636 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	xtype = _tmp22_;
-#line 638 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 638 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp23_ = xtype;
-#line 638 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 638 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp24_ = string_get (_tmp23_, (glong) 0);
-#line 638 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 638 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	if (_tmp24_ == '*') {
 #line 2891 "Roo.vala.c"
 		const gchar* _tmp25_;
 		gchar* _tmp26_ = NULL;
-#line 639 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 639 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp25_ = xtype;
-#line 639 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 639 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp26_ = string_substring (_tmp25_, (glong) 1, (glong) (-1));
-#line 639 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 639 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_g_free0 (xtype);
-#line 639 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 639 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		xtype = _tmp26_;
 #line 2902 "Roo.vala.c"
 	}
-#line 641 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 641 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp27_ = xtype;
-#line 641 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 641 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp28_ = g_regex_match_simple ("^Roo", _tmp27_, 0, 0);
-#line 641 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 641 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	if (!_tmp28_) {
 #line 2910 "Roo.vala.c"
 		gchar** _tmp29_ = NULL;
-#line 644 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 644 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_tmp29_ = g_new0 (gchar*, 0 + 1);
-#line 644 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 644 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		ret = (_vala_array_free (ret, ret_length1, (GDestroyNotify) g_free), NULL);
-#line 644 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 644 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		ret = _tmp29_;
-#line 644 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 644 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		ret_length1 = 0;
-#line 644 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 644 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 		_ret_size_ = ret_length1;
 #line 2922 "Roo.vala.c"
 	}
-#line 646 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 646 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp30_ = ret;
-#line 646 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 646 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp30__length1 = ret_length1;
-#line 646 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 646 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp31_ = xtype;
-#line 646 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 646 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp32_ = g_strdup (_tmp31_);
-#line 646 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 646 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_vala_array_add16 (&ret, &ret_length1, &_ret_size_, _tmp32_);
-#line 647 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 647 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp33_ = ret;
-#line 647 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 647 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp33__length1 = ret_length1;
-#line 647 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 647 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp34_ = g_strjoinv (".", _tmp33_);
-#line 647 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 647 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	str = _tmp34_;
-#line 649 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 649 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	result = str;
-#line 649 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 649 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (xtype);
-#line 649 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 649 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp2_);
-#line 649 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 649 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	ret = (_vala_array_free (ret, ret_length1, (GDestroyNotify) g_free), NULL);
-#line 649 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 649 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	return result;
 #line 2952 "Roo.vala.c"
 }
@@ -2962,25 +2962,25 @@ static gchar* js_render_roo_getHelpUrl (JsRenderRoo* self, const gchar* cls) {
 	gchar* _tmp2_;
 	gchar* _tmp3_;
 	gchar* _tmp4_;
-#line 657 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 657 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 657 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 657 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	g_return_val_if_fail (cls != NULL, NULL);
-#line 659 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 659 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp0_ = cls;
-#line 659 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 659 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp1_ = g_strconcat ("http://www.roojs.com/roojs1/docs/symbols/", _tmp0_, NULL);
-#line 659 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 659 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp2_ = _tmp1_;
-#line 659 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 659 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp3_ = g_strconcat (_tmp2_, ".html", NULL);
-#line 659 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 659 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp4_ = _tmp3_;
-#line 659 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 659 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (_tmp2_);
-#line 659 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 659 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	result = _tmp4_;
-#line 659 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 659 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	return result;
 #line 2983 "Roo.vala.c"
 }
@@ -2990,41 +2990,41 @@ static gchar* js_render_roo_real_toValaSource (JsRenderJsRender* base, gboolean 
 	JsRenderRoo * self;
 	gchar* result = NULL;
 	gchar* _tmp0_;
-#line 661 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 661 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	self = (JsRenderRoo*) base;
-#line 662 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 662 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_tmp0_ = g_strdup ("");
-#line 662 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 662 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	result = _tmp0_;
-#line 662 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 662 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	return result;
 #line 2999 "Roo.vala.c"
 }
 
 
 static void js_render_roo_class_init (JsRenderRooClass * klass) {
-#line 7 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 7 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	js_render_roo_parent_class = g_type_class_peek_parent (klass);
-#line 7 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 7 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	g_type_class_add_private (klass, sizeof (JsRenderRooPrivate));
-#line 7 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 7 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	JS_RENDER_JS_RENDER_CLASS (klass)->loadItems = js_render_roo_real_loadItems;
-#line 7 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 7 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	JS_RENDER_JS_RENDER_CLASS (klass)->save = js_render_roo_real_save;
-#line 7 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 7 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	JS_RENDER_JS_RENDER_CLASS (klass)->toSourcePreview = js_render_roo_real_toSourcePreview;
-#line 7 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 7 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	JS_RENDER_JS_RENDER_CLASS (klass)->toSource = js_render_roo_real_toSource;
-#line 7 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 7 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	JS_RENDER_JS_RENDER_CLASS (klass)->toValaSource = js_render_roo_real_toValaSource;
-#line 7 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 7 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	G_OBJECT_CLASS (klass)->finalize = js_render_roo_finalize;
 #line 3020 "Roo.vala.c"
 }
 
 
 static void js_render_roo_instance_init (JsRenderRoo * self) {
-#line 7 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 7 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	self->priv = JS_RENDER_ROO_GET_PRIVATE (self);
 #line 3027 "Roo.vala.c"
 }
@@ -3032,11 +3032,11 @@ static void js_render_roo_instance_init (JsRenderRoo * self) {
 
 static void js_render_roo_finalize (GObject* obj) {
 	JsRenderRoo * self;
-#line 7 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 7 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, JS_RENDER_TYPE_ROO, JsRenderRoo);
-#line 9 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 9 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	_g_free0 (self->priv->region);
-#line 7 "/home/alan/gitlive/app.Builder.js/JsRender/Roo.vala"
+#line 7 "/home/alan/gitlive/app.Builder/JsRender/Roo.vala"
 	G_OBJECT_CLASS (js_render_roo_parent_class)->finalize (obj);
 #line 3039 "Roo.vala.c"
 }

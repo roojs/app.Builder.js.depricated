@@ -93,49 +93,49 @@ ProjectGtk* project_gtk_construct (GType object_type, const gchar* path) {
 	gchar* _tmp3_ = NULL;
 	gchar* gid;
 	gchar* _tmp4_;
-#line 13 "/home/alan/gitlive/app.Builder.js/Project/Gtk.vala"
+#line 13 "/home/alan/gitlive/app.Builder/Project/Gtk.vala"
 	g_return_val_if_fail (path != NULL, NULL);
-#line 16 "/home/alan/gitlive/app.Builder.js/Project/Gtk.vala"
+#line 16 "/home/alan/gitlive/app.Builder/Project/Gtk.vala"
 	_tmp0_ = path;
-#line 16 "/home/alan/gitlive/app.Builder.js/Project/Gtk.vala"
+#line 16 "/home/alan/gitlive/app.Builder/Project/Gtk.vala"
 	self = (ProjectGtk*) project_project_construct (object_type, _tmp0_);
-#line 17 "/home/alan/gitlive/app.Builder.js/Project/Gtk.vala"
+#line 17 "/home/alan/gitlive/app.Builder/Project/Gtk.vala"
 	_tmp1_ = g_strdup ("Gtk");
-#line 17 "/home/alan/gitlive/app.Builder.js/Project/Gtk.vala"
+#line 17 "/home/alan/gitlive/app.Builder/Project/Gtk.vala"
 	_g_free0 (((ProjectProject*) self)->xtype);
-#line 17 "/home/alan/gitlive/app.Builder.js/Project/Gtk.vala"
+#line 17 "/home/alan/gitlive/app.Builder/Project/Gtk.vala"
 	((ProjectProject*) self)->xtype = _tmp1_;
-#line 18 "/home/alan/gitlive/app.Builder.js/Project/Gtk.vala"
+#line 18 "/home/alan/gitlive/app.Builder/Project/Gtk.vala"
 	_tmp2_ = project_gtk_id;
-#line 18 "/home/alan/gitlive/app.Builder.js/Project/Gtk.vala"
+#line 18 "/home/alan/gitlive/app.Builder/Project/Gtk.vala"
 	project_gtk_id = _tmp2_ + 1;
-#line 18 "/home/alan/gitlive/app.Builder.js/Project/Gtk.vala"
+#line 18 "/home/alan/gitlive/app.Builder/Project/Gtk.vala"
 	_tmp3_ = g_strdup_printf ("project-gtk-%d", _tmp2_);
-#line 18 "/home/alan/gitlive/app.Builder.js/Project/Gtk.vala"
+#line 18 "/home/alan/gitlive/app.Builder/Project/Gtk.vala"
 	gid = _tmp3_;
-#line 19 "/home/alan/gitlive/app.Builder.js/Project/Gtk.vala"
+#line 19 "/home/alan/gitlive/app.Builder/Project/Gtk.vala"
 	_tmp4_ = g_strdup (gid);
-#line 19 "/home/alan/gitlive/app.Builder.js/Project/Gtk.vala"
+#line 19 "/home/alan/gitlive/app.Builder/Project/Gtk.vala"
 	_g_free0 (((ProjectProject*) self)->id);
-#line 19 "/home/alan/gitlive/app.Builder.js/Project/Gtk.vala"
+#line 19 "/home/alan/gitlive/app.Builder/Project/Gtk.vala"
 	((ProjectProject*) self)->id = _tmp4_;
-#line 13 "/home/alan/gitlive/app.Builder.js/Project/Gtk.vala"
+#line 13 "/home/alan/gitlive/app.Builder/Project/Gtk.vala"
 	_g_free0 (gid);
-#line 13 "/home/alan/gitlive/app.Builder.js/Project/Gtk.vala"
+#line 13 "/home/alan/gitlive/app.Builder/Project/Gtk.vala"
 	return self;
 #line 127 "Gtk.vala.c"
 }
 
 
 ProjectGtk* project_gtk_new (const gchar* path) {
-#line 13 "/home/alan/gitlive/app.Builder.js/Project/Gtk.vala"
+#line 13 "/home/alan/gitlive/app.Builder/Project/Gtk.vala"
 	return project_gtk_construct (PROJECT_TYPE_GTK, path);
 #line 134 "Gtk.vala.c"
 }
 
 
 static void project_gtk_class_init (ProjectGtkClass * klass) {
-#line 10 "/home/alan/gitlive/app.Builder.js/Project/Gtk.vala"
+#line 10 "/home/alan/gitlive/app.Builder/Project/Gtk.vala"
 	project_gtk_parent_class = g_type_class_peek_parent (klass);
 #line 141 "Gtk.vala.c"
 }

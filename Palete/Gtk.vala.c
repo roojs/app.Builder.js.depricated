@@ -226,25 +226,25 @@ GType palete_introspect_el_eltype_get_type (void) {
 
 PaleteIntrospectEl* palete_introspect_el_construct (GType object_type) {
 	PaleteIntrospectEl * self = NULL;
-#line 7 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 7 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	self = (PaleteIntrospectEl*) g_object_new (object_type, NULL);
-#line 7 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 7 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	return self;
 #line 234 "Gtk.vala.c"
 }
 
 
 PaleteIntrospectEl* palete_introspect_el_new (void) {
-#line 7 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 7 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	return palete_introspect_el_construct (PALETE_INTROSPECT_TYPE_EL);
 #line 241 "Gtk.vala.c"
 }
 
 
 static void palete_introspect_el_class_init (PaleteIntrospectElClass * klass) {
-#line 7 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 7 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	palete_introspect_el_parent_class = g_type_class_peek_parent (klass);
-#line 7 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 7 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	G_OBJECT_CLASS (klass)->finalize = palete_introspect_el_finalize;
 #line 250 "Gtk.vala.c"
 }
@@ -256,9 +256,9 @@ static void palete_introspect_el_instance_init (PaleteIntrospectEl * self) {
 
 static void palete_introspect_el_finalize (GObject* obj) {
 	PaleteIntrospectEl * self;
-#line 7 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 7 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, PALETE_INTROSPECT_TYPE_EL, PaleteIntrospectEl);
-#line 7 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 7 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	G_OBJECT_CLASS (palete_introspect_el_parent_class)->finalize (obj);
 #line 264 "Gtk.vala.c"
 }
@@ -279,22 +279,22 @@ GType palete_introspect_el_get_type (void) {
 PaleteGtk* palete_gtk_construct (GType object_type) {
 	PaleteGtk * self = NULL;
 	gchar* _tmp0_;
-#line 29 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 29 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	self = (PaleteGtk*) palete_palete_construct (object_type);
-#line 30 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 30 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp0_ = g_strdup ("Gtk");
-#line 30 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 30 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_g_free0 (((PaletePalete*) self)->name);
-#line 30 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 30 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	((PaletePalete*) self)->name = _tmp0_;
-#line 24 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 24 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	return self;
 #line 293 "Gtk.vala.c"
 }
 
 
 PaleteGtk* palete_gtk_new (void) {
-#line 24 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 24 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	return palete_gtk_construct (PALETE_TYPE_GTK);
 #line 300 "Gtk.vala.c"
 }
@@ -324,7 +324,7 @@ static gchar* string_strip (const gchar* self) {
 
 
 static gpointer _g_object_ref0 (gpointer self) {
-#line 100 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 100 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	return self ? g_object_ref (self) : NULL;
 #line 330 "Gtk.vala.c"
 }
@@ -354,83 +354,83 @@ static void palete_gtk_real_load (PaletePalete* base) {
 	GeeArrayList* _tmp56_;
 	GeeArrayList* _tmp57_;
 	GError * _inner_error_ = NULL;
-#line 41 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 41 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	self = (PaleteGtk*) base;
-#line 46 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 46 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	g_print ("Palete Load called\n");
-#line 48 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 48 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp0_ = g_file_test ("/usr/share/appBuilder/GtkUsage.txt", G_FILE_TEST_EXISTS);
-#line 48 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 48 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	if (!_tmp0_) {
 #line 366 "Gtk.vala.c"
 		GError* _tmp1_;
-#line 49 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 49 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_tmp1_ = g_error_new_literal (PALETE_ERROR, PALETE_ERROR_MISSING_FILE, "/usr/share/appBuilder/GtkUsage.txt not found");
-#line 49 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 49 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_inner_error_ = _tmp1_;
-#line 49 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 49 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_g_free0 (raw);
-#line 49 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 49 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		g_critical ("file %s: line %d: uncaught error: %s (%s, %d)", __FILE__, __LINE__, _inner_error_->message, g_quark_to_string (_inner_error_->domain), _inner_error_->code);
-#line 49 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 49 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		g_clear_error (&_inner_error_);
-#line 49 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 49 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		return;
 #line 380 "Gtk.vala.c"
 	}
-#line 53 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 53 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	g_file_get_contents ("/usr/share/appBuilder/GtkUsage.txt", &_tmp2_, NULL, &_inner_error_);
-#line 53 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 53 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_g_free0 (raw);
-#line 53 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 53 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	raw = _tmp2_;
-#line 53 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 53 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	if (_inner_error_ != NULL) {
-#line 53 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 53 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_g_free0 (raw);
-#line 53 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 53 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		g_critical ("file %s: line %d: uncaught error: %s (%s, %d)", __FILE__, __LINE__, _inner_error_->message, g_quark_to_string (_inner_error_->domain), _inner_error_->code);
-#line 53 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 53 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		g_clear_error (&_inner_error_);
-#line 53 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 53 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		return;
 #line 398 "Gtk.vala.c"
 	}
-#line 55 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 55 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp3_ = raw;
-#line 55 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 55 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp5_ = _tmp4_ = g_strsplit (_tmp3_, "\n", 0);
-#line 55 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 55 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	data = _tmp5_;
-#line 55 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 55 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	data_length1 = _vala_array_length (_tmp4_);
-#line 55 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 55 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_data_size_ = data_length1;
-#line 56 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 56 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	state = 0;
-#line 57 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 57 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp6_ = gee_array_list_new (PALETE_TYPE_USAGE, (GBoxedCopyFunc) g_object_ref, g_object_unref, NULL);
-#line 57 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 57 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	cfg = _tmp6_;
-#line 58 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 58 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp7_ = gee_array_list_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, g_free, NULL);
-#line 58 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 58 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	left = _tmp7_;
-#line 59 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 59 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp8_ = gee_array_list_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, g_free, NULL);
-#line 59 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 59 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	right = _tmp8_;
 #line 424 "Gtk.vala.c"
 	{
 		gint i;
-#line 61 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 61 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		i = 0;
 #line 429 "Gtk.vala.c"
 		{
 			gboolean _tmp9_;
-#line 61 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 61 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 			_tmp9_ = TRUE;
-#line 61 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 61 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 			while (TRUE) {
 #line 436 "Gtk.vala.c"
 				gboolean _tmp10_;
@@ -457,99 +457,99 @@ static void palete_gtk_real_load (PaletePalete* base) {
 				gint _tmp43_;
 				GeeArrayList* _tmp46_;
 				const gchar* _tmp47_;
-#line 61 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 61 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_tmp10_ = _tmp9_;
-#line 61 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 61 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				if (!_tmp10_) {
 #line 465 "Gtk.vala.c"
 					gint _tmp11_;
-#line 61 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 61 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_tmp11_ = i;
-#line 61 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 61 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					i = _tmp11_ + 1;
 #line 471 "Gtk.vala.c"
 				}
-#line 61 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 61 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_tmp9_ = FALSE;
-#line 61 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 61 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_tmp12_ = i;
-#line 61 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 61 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_tmp13_ = data;
-#line 61 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 61 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_tmp13__length1 = data_length1;
-#line 61 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 61 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				if (!(_tmp12_ < _tmp13__length1)) {
-#line 61 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 61 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					break;
 #line 485 "Gtk.vala.c"
 				}
-#line 62 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 62 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_tmp14_ = data;
-#line 62 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 62 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_tmp14__length1 = data_length1;
-#line 62 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 62 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_tmp15_ = i;
-#line 62 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 62 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_tmp16_ = _tmp14_[_tmp15_];
-#line 62 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 62 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_tmp17_ = string_strip (_tmp16_);
-#line 62 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 62 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				d = _tmp17_;
-#line 65 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 65 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_tmp20_ = d;
-#line 65 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 65 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_tmp21_ = strlen (_tmp20_);
-#line 65 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 65 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_tmp22_ = _tmp21_;
-#line 65 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 65 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				if (_tmp22_ < 1) {
-#line 65 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 65 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_tmp19_ = TRUE;
 #line 509 "Gtk.vala.c"
 				} else {
 					const gchar* _tmp23_;
 					gboolean _tmp24_ = FALSE;
-#line 67 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 67 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_tmp23_ = d;
-#line 67 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 67 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_tmp24_ = g_regex_match_simple ("^\\s+$", _tmp23_, 0, 0);
-#line 67 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 67 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_tmp19_ = _tmp24_;
 #line 519 "Gtk.vala.c"
 				}
-#line 65 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 65 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_tmp25_ = _tmp19_;
-#line 65 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 65 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				if (_tmp25_) {
-#line 65 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 65 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_tmp18_ = TRUE;
 #line 527 "Gtk.vala.c"
 				} else {
 					const gchar* _tmp26_;
 					gboolean _tmp27_ = FALSE;
-#line 69 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 69 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_tmp26_ = d;
-#line 69 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 69 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_tmp27_ = g_regex_match_simple ("^\\s*/", _tmp26_, 0, 0);
-#line 69 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 69 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_tmp18_ = _tmp27_;
 #line 537 "Gtk.vala.c"
 				}
-#line 64 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 64 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_tmp28_ = _tmp18_;
-#line 64 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 64 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				if (_tmp28_) {
-#line 71 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 71 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_g_free0 (d);
-#line 71 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 71 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					continue;
 #line 547 "Gtk.vala.c"
 				}
-#line 74 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 74 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_tmp29_ = d;
-#line 74 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 74 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_tmp30_ = g_regex_match_simple ("^left:", _tmp29_, 0, 0);
-#line 74 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 74 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				if (_tmp30_) {
 #line 555 "Gtk.vala.c"
 					GeeArrayList* _tmp31_;
@@ -557,15 +557,15 @@ static void palete_gtk_real_load (PaletePalete* base) {
 					gint _tmp33_;
 					GeeArrayList* _tmp39_;
 					GeeArrayList* _tmp40_;
-#line 75 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 75 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					state = 1;
-#line 76 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 76 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_tmp31_ = left;
-#line 76 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 76 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_tmp32_ = gee_abstract_collection_get_size ((GeeCollection*) _tmp31_);
-#line 76 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 76 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_tmp33_ = _tmp32_;
-#line 76 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 76 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					if (_tmp33_ > 0) {
 #line 571 "Gtk.vala.c"
 						GeeArrayList* _tmp34_;
@@ -573,92 +573,92 @@ static void palete_gtk_real_load (PaletePalete* base) {
 						GeeArrayList* _tmp36_;
 						PaleteUsage* _tmp37_;
 						PaleteUsage* _tmp38_;
-#line 77 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 						_tmp34_ = cfg;
-#line 77 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 						_tmp35_ = left;
-#line 77 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 						_tmp36_ = right;
-#line 77 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 						_tmp37_ = palete_usage_new (_tmp35_, _tmp36_);
-#line 77 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 						_tmp38_ = _tmp37_;
-#line 77 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 						gee_abstract_collection_add ((GeeAbstractCollection*) _tmp34_, _tmp38_);
-#line 77 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 						_g_object_unref0 (_tmp38_);
 #line 591 "Gtk.vala.c"
 					}
-#line 79 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 79 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_tmp39_ = gee_array_list_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, g_free, NULL);
-#line 79 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 79 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_g_object_unref0 (left);
-#line 79 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 79 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					left = _tmp39_;
-#line 80 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 80 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_tmp40_ = gee_array_list_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, g_free, NULL);
-#line 80 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 80 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_g_object_unref0 (right);
-#line 80 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 80 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					right = _tmp40_;
-#line 81 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 81 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_g_free0 (d);
-#line 81 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 81 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					continue;
 #line 609 "Gtk.vala.c"
 				}
-#line 83 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_tmp41_ = d;
-#line 83 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_tmp42_ = g_regex_match_simple ("^right:", _tmp41_, 0, 0);
-#line 83 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				if (_tmp42_) {
-#line 84 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 84 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					state = 2;
-#line 85 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 85 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_g_free0 (d);
-#line 85 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 85 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					continue;
 #line 623 "Gtk.vala.c"
 				}
-#line 87 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 87 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_tmp43_ = state;
-#line 87 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 87 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				if (_tmp43_ == 1) {
 #line 629 "Gtk.vala.c"
 					GeeArrayList* _tmp44_;
 					const gchar* _tmp45_;
-#line 89 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 89 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_tmp44_ = left;
-#line 89 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 89 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_tmp45_ = d;
-#line 89 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 89 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					gee_abstract_collection_add ((GeeAbstractCollection*) _tmp44_, _tmp45_);
-#line 90 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 90 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_g_free0 (d);
-#line 90 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 90 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					continue;
 #line 642 "Gtk.vala.c"
 				}
-#line 93 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 93 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_tmp46_ = right;
-#line 93 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 93 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_tmp47_ = d;
-#line 93 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 93 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				gee_abstract_collection_add ((GeeAbstractCollection*) _tmp46_, _tmp47_);
-#line 61 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 61 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_g_free0 (d);
 #line 652 "Gtk.vala.c"
 			}
 		}
 	}
-#line 97 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 97 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp48_ = left;
-#line 97 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 97 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp49_ = gee_abstract_collection_get_size ((GeeCollection*) _tmp48_);
-#line 97 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 97 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp50_ = _tmp49_;
-#line 97 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 97 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	if (_tmp50_ > 0) {
 #line 664 "Gtk.vala.c"
 		GeeArrayList* _tmp51_;
@@ -666,39 +666,39 @@ static void palete_gtk_real_load (PaletePalete* base) {
 		GeeArrayList* _tmp53_;
 		PaleteUsage* _tmp54_;
 		PaleteUsage* _tmp55_;
-#line 98 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 98 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_tmp51_ = cfg;
-#line 98 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 98 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_tmp52_ = left;
-#line 98 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 98 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_tmp53_ = right;
-#line 98 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 98 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_tmp54_ = palete_usage_new (_tmp52_, _tmp53_);
-#line 98 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 98 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_tmp55_ = _tmp54_;
-#line 98 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 98 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		gee_abstract_collection_add ((GeeAbstractCollection*) _tmp51_, _tmp55_);
-#line 98 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 98 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_g_object_unref0 (_tmp55_);
 #line 684 "Gtk.vala.c"
 	}
-#line 100 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 100 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp56_ = cfg;
-#line 100 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 100 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp57_ = _g_object_ref0 (_tmp56_);
-#line 100 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 100 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_g_object_unref0 (((PaletePalete*) self)->map);
-#line 100 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 100 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	((PaletePalete*) self)->map = _tmp57_;
-#line 41 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 41 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_g_object_unref0 (right);
-#line 41 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 41 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_g_object_unref0 (left);
-#line 41 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 41 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_g_object_unref0 (cfg);
-#line 41 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 41 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	data = (_vala_array_free (data, data_length1, (GDestroyNotify) g_free), NULL);
-#line 41 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 41 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_g_free0 (raw);
 #line 704 "Gtk.vala.c"
 }
@@ -719,43 +719,43 @@ gchar* palete_gtk_doc (PaleteGtk* self, const gchar* what) {
 	PaleteGir* gir;
 	const gchar* _tmp8_;
 	gchar* _tmp9_ = NULL;
-#line 104 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 104 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 104 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 104 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	g_return_val_if_fail (what != NULL, NULL);
-#line 105 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 105 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp0_ = what;
-#line 105 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 105 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp2_ = _tmp1_ = g_strsplit (_tmp0_, ".", 0);
-#line 105 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 105 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp3_ = _tmp2_;
-#line 105 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 105 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp3__length1 = _vala_array_length (_tmp1_);
-#line 105 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 105 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp4_ = _tmp3_[0];
-#line 105 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 105 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp5_ = g_strdup (_tmp4_);
-#line 105 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 105 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp6_ = _tmp5_;
-#line 105 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 105 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp3_ = (_vala_array_free (_tmp3_, _tmp3__length1, (GDestroyNotify) g_free), NULL);
-#line 105 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 105 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	ns = _tmp6_;
-#line 106 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 106 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp7_ = palete_gir_factory (ns);
-#line 106 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 106 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	gir = _tmp7_;
-#line 107 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 107 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp8_ = what;
-#line 107 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 107 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp9_ = palete_gir_doc (gir, _tmp8_);
-#line 107 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 107 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	result = _tmp9_;
-#line 107 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 107 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_g_object_unref0 (gir);
-#line 107 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 107 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_g_free0 (ns);
-#line 107 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 107 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	return result;
 #line 761 "Gtk.vala.c"
 }
@@ -786,92 +786,92 @@ GeeHashMap* palete_gtk_getPropertiesFor (PaleteGtk* self, const gchar* ename, co
 	const gchar* _tmp14_;
 	const gchar* _tmp15_;
 	GQuark _tmp17_ = 0U;
-#line 144 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 144 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	static GQuark _tmp16_label0 = 0;
-#line 144 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 144 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	static GQuark _tmp16_label1 = 0;
-#line 144 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 144 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	static GQuark _tmp16_label2 = 0;
-#line 144 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 144 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	static GQuark _tmp16_label3 = 0;
 #line 798 "Gtk.vala.c"
 	GError * _inner_error_ = NULL;
-#line 114 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 114 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 114 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 114 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	g_return_val_if_fail (ename != NULL, NULL);
-#line 114 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 114 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	g_return_val_if_fail (type != NULL, NULL);
-#line 126 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 126 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp0_ = ename;
-#line 126 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 126 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp2_ = _tmp1_ = g_strsplit (_tmp0_, ".", 0);
-#line 126 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 126 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	es = _tmp2_;
-#line 126 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 126 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	es_length1 = _vala_array_length (_tmp1_);
-#line 126 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 126 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_es_size_ = es_length1;
-#line 127 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 127 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp3_ = es;
-#line 127 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 127 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp3__length1 = es_length1;
-#line 127 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 127 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp4_ = _tmp3_[0];
-#line 127 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 127 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp5_ = palete_gir_factory (_tmp4_);
-#line 127 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 127 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	gir = _tmp5_;
-#line 129 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 129 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp6_ = gir;
-#line 129 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 129 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp7_ = ((PaleteGirObject*) _tmp6_)->classes;
-#line 129 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 129 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp8_ = es;
-#line 129 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 129 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp8__length1 = es_length1;
-#line 129 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 129 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp9_ = _tmp8_[1];
-#line 129 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 129 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp10_ = gee_abstract_map_get ((GeeAbstractMap*) _tmp7_, _tmp9_);
-#line 129 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 129 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	cls = (PaleteGirObject*) _tmp10_;
-#line 130 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 130 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp11_ = cls;
-#line 130 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 130 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	if (_tmp11_ == NULL) {
 #line 844 "Gtk.vala.c"
 		GeeHashMap* _tmp12_;
 		GeeHashMap* ret;
-#line 131 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_tmp12_ = gee_hash_map_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, g_free, PALETE_TYPE_GIR_OBJECT, (GBoxedCopyFunc) g_object_ref, g_object_unref, NULL, NULL, NULL);
-#line 131 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 131 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		ret = _tmp12_;
-#line 132 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 132 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		result = ret;
-#line 132 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 132 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_g_object_unref0 (cls);
-#line 132 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 132 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_g_object_unref0 (gir);
-#line 132 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 132 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		es = (_vala_array_free (es, es_length1, (GDestroyNotify) g_free), NULL);
-#line 132 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 132 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		return result;
 #line 861 "Gtk.vala.c"
 	}
-#line 142 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 142 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp13_ = cls;
-#line 142 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 142 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	palete_gir_object_overlayParent (_tmp13_);
-#line 144 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 144 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp14_ = type;
-#line 144 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 144 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp15_ = _tmp14_;
-#line 144 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 144 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp17_ = (NULL == _tmp15_) ? 0 : g_quark_from_string (_tmp15_);
-#line 144 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 144 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	if (_tmp17_ == ((0 != _tmp16_label0) ? _tmp16_label0 : (_tmp16_label0 = g_quark_from_static_string ("props")))) {
-#line 144 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 144 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		switch (0) {
 #line 877 "Gtk.vala.c"
 			default:
@@ -879,27 +879,27 @@ GeeHashMap* palete_gtk_getPropertiesFor (PaleteGtk* self, const gchar* ename, co
 				PaleteGirObject* _tmp18_;
 				GeeHashMap* _tmp19_;
 				GeeHashMap* _tmp20_;
-#line 146 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 146 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_tmp18_ = cls;
-#line 146 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 146 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_tmp19_ = _tmp18_->props;
-#line 146 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 146 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_tmp20_ = _g_object_ref0 (_tmp19_);
-#line 146 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 146 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				result = _tmp20_;
-#line 146 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 146 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_g_object_unref0 (cls);
-#line 146 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 146 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_g_object_unref0 (gir);
-#line 146 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 146 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				es = (_vala_array_free (es, es_length1, (GDestroyNotify) g_free), NULL);
-#line 146 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 146 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				return result;
 #line 899 "Gtk.vala.c"
 			}
 		}
 	} else if (_tmp17_ == ((0 != _tmp16_label1) ? _tmp16_label1 : (_tmp16_label1 = g_quark_from_static_string ("signals")))) {
-#line 144 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 144 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		switch (0) {
 #line 905 "Gtk.vala.c"
 			default:
@@ -907,27 +907,27 @@ GeeHashMap* palete_gtk_getPropertiesFor (PaleteGtk* self, const gchar* ename, co
 				PaleteGirObject* _tmp21_;
 				GeeHashMap* _tmp22_;
 				GeeHashMap* _tmp23_;
-#line 148 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 148 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_tmp21_ = cls;
-#line 148 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 148 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_tmp22_ = _tmp21_->signals;
-#line 148 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 148 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_tmp23_ = _g_object_ref0 (_tmp22_);
-#line 148 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 148 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				result = _tmp23_;
-#line 148 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 148 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_g_object_unref0 (cls);
-#line 148 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 148 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_g_object_unref0 (gir);
-#line 148 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 148 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				es = (_vala_array_free (es, es_length1, (GDestroyNotify) g_free), NULL);
-#line 148 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 148 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				return result;
 #line 927 "Gtk.vala.c"
 			}
 		}
 	} else if (_tmp17_ == ((0 != _tmp16_label2) ? _tmp16_label2 : (_tmp16_label2 = g_quark_from_static_string ("methods")))) {
-#line 144 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 144 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		switch (0) {
 #line 933 "Gtk.vala.c"
 			default:
@@ -935,27 +935,27 @@ GeeHashMap* palete_gtk_getPropertiesFor (PaleteGtk* self, const gchar* ename, co
 				PaleteGirObject* _tmp24_;
 				GeeHashMap* _tmp25_;
 				GeeHashMap* _tmp26_;
-#line 150 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 150 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_tmp24_ = cls;
-#line 150 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 150 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_tmp25_ = _tmp24_->methods;
-#line 150 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 150 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_tmp26_ = _g_object_ref0 (_tmp25_);
-#line 150 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 150 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				result = _tmp26_;
-#line 150 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 150 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_g_object_unref0 (cls);
-#line 150 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 150 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_g_object_unref0 (gir);
-#line 150 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 150 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				es = (_vala_array_free (es, es_length1, (GDestroyNotify) g_free), NULL);
-#line 150 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 150 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				return result;
 #line 955 "Gtk.vala.c"
 			}
 		}
 	} else if (_tmp17_ == ((0 != _tmp16_label3) ? _tmp16_label3 : (_tmp16_label3 = g_quark_from_static_string ("ctors")))) {
-#line 144 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 144 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		switch (0) {
 #line 961 "Gtk.vala.c"
 			default:
@@ -963,27 +963,27 @@ GeeHashMap* palete_gtk_getPropertiesFor (PaleteGtk* self, const gchar* ename, co
 				PaleteGirObject* _tmp27_;
 				GeeHashMap* _tmp28_;
 				GeeHashMap* _tmp29_;
-#line 152 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 152 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_tmp27_ = cls;
-#line 152 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 152 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_tmp28_ = _tmp27_->ctors;
-#line 152 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 152 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_tmp29_ = _g_object_ref0 (_tmp28_);
-#line 152 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 152 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				result = _tmp29_;
-#line 152 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 152 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_g_object_unref0 (cls);
-#line 152 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 152 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_g_object_unref0 (gir);
-#line 152 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 152 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				es = (_vala_array_free (es, es_length1, (GDestroyNotify) g_free), NULL);
-#line 152 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 152 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				return result;
 #line 983 "Gtk.vala.c"
 			}
 		}
 	} else {
-#line 144 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 144 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		switch (0) {
 #line 989 "Gtk.vala.c"
 			default:
@@ -993,41 +993,41 @@ GeeHashMap* palete_gtk_getPropertiesFor (PaleteGtk* self, const gchar* ename, co
 				gchar* _tmp32_;
 				GError* _tmp33_;
 				GError* _tmp34_;
-#line 154 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 154 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_tmp30_ = type;
-#line 154 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 154 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_tmp31_ = g_strconcat ("getPropertiesFor called with: ", _tmp30_, NULL);
-#line 154 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 154 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_tmp32_ = _tmp31_;
-#line 154 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 154 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_tmp33_ = g_error_new_literal (PALETE_ERROR, PALETE_ERROR_INVALID_VALUE, _tmp32_);
-#line 154 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 154 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_tmp34_ = _tmp33_;
-#line 154 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 154 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_g_free0 (_tmp32_);
-#line 154 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 154 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_inner_error_ = _tmp34_;
-#line 154 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 154 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_g_object_unref0 (cls);
-#line 154 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 154 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_g_object_unref0 (gir);
-#line 154 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 154 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				es = (_vala_array_free (es, es_length1, (GDestroyNotify) g_free), NULL);
-#line 154 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 154 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				g_critical ("file %s: line %d: uncaught error: %s (%s, %d)", __FILE__, __LINE__, _inner_error_->message, g_quark_to_string (_inner_error_->domain), _inner_error_->code);
-#line 154 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 154 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				g_clear_error (&_inner_error_);
-#line 154 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 154 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				return NULL;
 #line 1023 "Gtk.vala.c"
 			}
 		}
 	}
-#line 114 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 114 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_g_object_unref0 (cls);
-#line 114 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 114 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_g_object_unref0 (gir);
-#line 114 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 114 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	es = (_vala_array_free (es, es_length1, (GDestroyNotify) g_free), NULL);
 #line 1033 "Gtk.vala.c"
 }
@@ -1063,106 +1063,106 @@ gchar** palete_gtk_getInheritsFor (PaleteGtk* self, const gchar* ename, int* res
 	gchar** _tmp16_ = NULL;
 	gchar** _tmp17_;
 	gint _tmp17__length1;
-#line 166 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 166 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	g_return_val_if_fail (self != NULL, NULL);
-#line 166 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 166 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	g_return_val_if_fail (ename != NULL, NULL);
-#line 168 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 168 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp0_ = g_new0 (gchar*, 0 + 1);
-#line 168 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 168 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	ret = _tmp0_;
-#line 168 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 168 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	ret_length1 = 0;
-#line 168 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 168 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_ret_size_ = ret_length1;
-#line 169 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp1_ = ename;
-#line 169 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp3_ = _tmp2_ = g_strsplit (_tmp1_, ".", 0);
-#line 169 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	es = _tmp3_;
-#line 169 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	es_length1 = _vala_array_length (_tmp2_);
-#line 169 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_es_size_ = es_length1;
-#line 170 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp4_ = es;
-#line 170 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp4__length1 = es_length1;
-#line 170 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp5_ = _tmp4_[0];
-#line 170 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp6_ = palete_gir_factory (_tmp5_);
-#line 170 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 170 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	gir = _tmp6_;
-#line 172 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 172 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp7_ = gir;
-#line 172 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 172 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp8_ = ((PaleteGirObject*) _tmp7_)->classes;
-#line 172 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 172 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp9_ = es;
-#line 172 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 172 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp9__length1 = es_length1;
-#line 172 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 172 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp10_ = _tmp9_[1];
-#line 172 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 172 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp11_ = gee_abstract_map_get ((GeeAbstractMap*) _tmp8_, _tmp10_);
-#line 172 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 172 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	cls = (PaleteGirObject*) _tmp11_;
-#line 173 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 173 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp12_ = cls;
-#line 173 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 173 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	if (_tmp12_ == NULL) {
 #line 1117 "Gtk.vala.c"
 		gchar** _tmp13_;
 		gint _tmp13__length1;
-#line 174 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 174 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_tmp13_ = ret;
-#line 174 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 174 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_tmp13__length1 = ret_length1;
-#line 174 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 174 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		if (result_length1) {
-#line 174 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 174 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 			*result_length1 = _tmp13__length1;
 #line 1128 "Gtk.vala.c"
 		}
-#line 174 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 174 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		result = _tmp13_;
-#line 174 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 174 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_g_object_unref0 (cls);
-#line 174 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 174 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_g_object_unref0 (gir);
-#line 174 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 174 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		es = (_vala_array_free (es, es_length1, (GDestroyNotify) g_free), NULL);
-#line 174 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 174 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		return result;
 #line 1140 "Gtk.vala.c"
 	}
-#line 176 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 176 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp14_ = cls;
-#line 176 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 176 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp16_ = palete_gir_object_inheritsToStringArray (_tmp14_, &_tmp15_);
-#line 176 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 176 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp17_ = _tmp16_;
-#line 176 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 176 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp17__length1 = _tmp15_;
-#line 176 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 176 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	if (result_length1) {
-#line 176 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 176 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		*result_length1 = _tmp17__length1;
 #line 1154 "Gtk.vala.c"
 	}
-#line 176 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 176 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	result = _tmp17_;
-#line 176 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 176 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_g_object_unref0 (cls);
-#line 176 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 176 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_g_object_unref0 (gir);
-#line 176 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 176 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	es = (_vala_array_free (es, es_length1, (GDestroyNotify) g_free), NULL);
-#line 176 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 176 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	ret = (_vala_array_free (ret, ret_length1, (GDestroyNotify) g_free), NULL);
-#line 176 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 176 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	return result;
 #line 1168 "Gtk.vala.c"
 }
@@ -1213,67 +1213,67 @@ static void palete_gtk_real_fillPack (PaletePalete* base, JsRenderNode* node, Js
 	GeeHashMap* _tmp17_;
 	GeeMapIterator* _tmp18_ = NULL;
 	GeeMapIterator* map;
-#line 397 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 397 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	self = (PaleteGtk*) base;
-#line 397 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 397 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	g_return_if_fail (node != NULL);
-#line 397 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 397 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	g_return_if_fail (parent != NULL);
-#line 400 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 400 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp0_ = node;
-#line 400 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 400 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp1_ = js_render_node_fqn (_tmp0_);
-#line 400 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 400 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp2_ = _tmp1_;
-#line 400 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 400 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp4_ = palete_gtk_getInheritsFor (self, _tmp2_, &_tmp3_);
-#line 400 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 400 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp5_ = _tmp4_;
-#line 400 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 400 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp5__length1 = _tmp3_;
-#line 400 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 400 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp6_ = g_strjoinv (" ", _tmp5_);
-#line 400 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 400 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp7_ = _tmp6_;
-#line 400 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 400 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp8_ = g_strconcat (" ", _tmp7_, NULL);
-#line 400 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 400 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp9_ = _tmp8_;
-#line 400 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 400 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp10_ = g_strconcat (_tmp9_, " ", NULL);
-#line 400 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 400 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp11_ = _tmp10_;
-#line 400 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 400 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_g_free0 (_tmp9_);
-#line 400 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 400 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_g_free0 (_tmp7_);
-#line 400 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 400 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp5_ = (_vala_array_free (_tmp5_, _tmp5__length1, (GDestroyNotify) g_free), NULL);
-#line 400 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 400 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_g_free0 (_tmp2_);
-#line 400 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 400 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	inherits = _tmp11_;
-#line 402 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 402 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp12_ = parent;
-#line 402 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 402 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp13_ = js_render_node_fqn (_tmp12_);
-#line 402 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 402 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp14_ = _tmp13_;
-#line 402 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 402 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp15_ = palete_gtk_getPropertiesFor (self, _tmp14_, "methods");
-#line 402 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 402 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp16_ = _tmp15_;
-#line 402 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 402 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_g_free0 (_tmp14_);
-#line 402 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 402 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	methods = _tmp16_;
-#line 404 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 404 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp17_ = methods;
-#line 404 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 404 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_tmp18_ = gee_abstract_map_map_iterator ((GeeAbstractMap*) _tmp17_);
-#line 404 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 404 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	map = _tmp18_;
-#line 405 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 405 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	while (TRUE) {
 #line 1279 "Gtk.vala.c"
 		GeeMapIterator* _tmp19_;
@@ -1314,35 +1314,35 @@ static void palete_gtk_real_fillPack (PaletePalete* base, JsRenderNode* node, Js
 		gchar* pack;
 		JsRenderNode* _tmp78_;
 		const gchar* _tmp79_;
-#line 405 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 405 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_tmp19_ = map;
-#line 405 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 405 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_tmp20_ = gee_map_iterator_next (_tmp19_);
-#line 405 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 405 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		if (!_tmp20_) {
-#line 405 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 405 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 			break;
 #line 1326 "Gtk.vala.c"
 		}
-#line 406 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 406 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_tmp21_ = map;
-#line 406 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 406 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_tmp22_ = gee_map_iterator_get_key (_tmp21_);
-#line 406 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 406 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		n = (gchar*) _tmp22_;
-#line 407 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 407 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_tmp23_ = map;
-#line 407 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 407 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_tmp24_ = gee_map_iterator_get_value (_tmp23_);
-#line 407 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 407 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		meth = (PaleteGirObject*) _tmp24_;
-#line 408 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_tmp26_ = meth;
-#line 408 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_tmp27_ = _tmp26_->paramset;
-#line 408 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		if (_tmp27_ == NULL) {
-#line 408 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 			_tmp25_ = TRUE;
 #line 1348 "Gtk.vala.c"
 		} else {
@@ -1350,107 +1350,107 @@ static void palete_gtk_real_fillPack (PaletePalete* base, JsRenderNode* node, Js
 			PaleteGirObject* _tmp29_;
 			GList* _tmp30_;
 			guint _tmp31_ = 0U;
-#line 408 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 			_tmp28_ = meth;
-#line 408 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 			_tmp29_ = _tmp28_->paramset;
-#line 408 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 			_tmp30_ = _tmp29_->params;
-#line 408 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 			_tmp31_ = g_list_length (_tmp30_);
-#line 408 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 			_tmp25_ = _tmp31_ < ((guint) 1);
 #line 1364 "Gtk.vala.c"
 		}
-#line 408 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_tmp32_ = _tmp25_;
-#line 408 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 408 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		if (_tmp32_) {
-#line 409 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 409 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 			_g_object_unref0 (meth);
-#line 409 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 409 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 			_g_free0 (n);
-#line 409 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 409 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 			continue;
 #line 1376 "Gtk.vala.c"
 		}
-#line 411 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 411 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_tmp33_ = meth;
-#line 411 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 411 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_tmp34_ = _tmp33_->paramset;
-#line 411 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 411 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_tmp35_ = _tmp34_->params;
-#line 411 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 411 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_tmp36_ = g_list_nth_data (_tmp35_, (guint) 0);
-#line 411 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 411 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_tmp37_ = _g_object_ref0 ((PaleteGirObject*) _tmp36_);
-#line 411 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 411 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		fp = _tmp37_;
-#line 412 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 412 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_tmp38_ = fp;
-#line 412 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 412 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_tmp39_ = _tmp38_->type;
-#line 412 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 412 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_tmp40_ = meth;
-#line 412 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 412 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_tmp41_ = _tmp40_->ns;
-#line 412 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 412 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_tmp42_ = palete_gir_fqtype (_tmp39_, _tmp41_);
-#line 412 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 412 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		type = _tmp42_;
-#line 413 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 413 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_tmp43_ = inherits;
-#line 413 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 413 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_tmp44_ = type;
-#line 413 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 413 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_tmp45_ = g_strconcat (" ", _tmp44_, NULL);
-#line 413 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 413 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_tmp46_ = _tmp45_;
-#line 413 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 413 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_tmp47_ = g_strconcat (_tmp46_, " ", NULL);
-#line 413 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 413 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_tmp48_ = _tmp47_;
-#line 413 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 413 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_tmp49_ = string_contains (_tmp43_, _tmp48_);
-#line 413 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 413 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_tmp50_ = !_tmp49_;
-#line 413 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 413 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_g_free0 (_tmp48_);
-#line 413 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 413 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_g_free0 (_tmp46_);
-#line 413 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 413 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		if (_tmp50_) {
-#line 414 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 414 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 			_g_free0 (type);
-#line 414 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 414 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 			_g_object_unref0 (fp);
-#line 414 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 414 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 			_g_object_unref0 (meth);
-#line 414 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 414 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 			_g_free0 (n);
-#line 414 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 414 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 			continue;
 #line 1434 "Gtk.vala.c"
 		}
-#line 416 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 416 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_tmp51_ = meth;
-#line 416 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 416 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_tmp52_ = _tmp51_->name;
-#line 416 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 416 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_tmp53_ = g_strdup (_tmp52_);
-#line 416 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 416 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		pack = _tmp53_;
 #line 1444 "Gtk.vala.c"
 		{
 			gint i;
-#line 417 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 417 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 			i = 1;
 #line 1449 "Gtk.vala.c"
 			{
 				gboolean _tmp54_;
-#line 417 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 417 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				_tmp54_ = TRUE;
-#line 417 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 417 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 				while (TRUE) {
 #line 1456 "Gtk.vala.c"
 					gboolean _tmp55_;
@@ -1476,126 +1476,126 @@ static void palete_gtk_real_fillPack (PaletePalete* base, JsRenderNode* node, Js
 					gchar* _tmp75_;
 					gchar* _tmp76_;
 					gchar* _tmp77_;
-#line 417 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 417 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_tmp55_ = _tmp54_;
-#line 417 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 417 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					if (!_tmp55_) {
 #line 1484 "Gtk.vala.c"
 						gint _tmp56_;
-#line 417 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 417 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 						_tmp56_ = i;
-#line 417 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 417 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 						i = _tmp56_ + 1;
 #line 1490 "Gtk.vala.c"
 					}
-#line 417 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 417 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_tmp54_ = FALSE;
-#line 417 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 417 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_tmp57_ = i;
-#line 417 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 417 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_tmp58_ = meth;
-#line 417 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 417 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_tmp59_ = _tmp58_->paramset;
-#line 417 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 417 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_tmp60_ = _tmp59_->params;
-#line 417 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 417 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_tmp61_ = g_list_length (_tmp60_);
-#line 417 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 417 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					if (!(((guint) _tmp57_) < _tmp61_)) {
-#line 417 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 417 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 						break;
 #line 1508 "Gtk.vala.c"
 					}
-#line 418 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 418 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_tmp62_ = meth;
-#line 418 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 418 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_tmp63_ = _tmp62_->paramset;
-#line 418 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 418 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_tmp64_ = _tmp63_->params;
-#line 418 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 418 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_tmp65_ = i;
-#line 418 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 418 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_tmp66_ = g_list_nth_data (_tmp64_, (guint) _tmp65_);
-#line 418 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 418 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_tmp67_ = ((PaleteGirObject*) _tmp66_)->type;
-#line 418 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 418 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_tmp68_ = meth;
-#line 418 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 418 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_tmp69_ = _tmp68_->ns;
-#line 418 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 418 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_tmp70_ = palete_gir_fqtype (_tmp67_, _tmp69_);
-#line 418 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 418 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					ty = _tmp70_;
-#line 419 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_tmp71_ = pack;
-#line 419 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_tmp72_ = ty;
-#line 419 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_tmp73_ = palete_gir_guessDefaultValueForType (_tmp72_);
-#line 419 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_tmp74_ = _tmp73_;
-#line 419 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_tmp75_ = g_strconcat (",", _tmp74_, NULL);
-#line 419 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_tmp76_ = _tmp75_;
-#line 419 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_tmp77_ = g_strconcat (_tmp71_, _tmp76_, NULL);
-#line 419 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_g_free0 (pack);
-#line 419 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					pack = _tmp77_;
-#line 419 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_g_free0 (_tmp76_);
-#line 419 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 419 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_g_free0 (_tmp74_);
-#line 417 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 417 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 					_g_free0 (ty);
 #line 1554 "Gtk.vala.c"
 				}
 			}
 		}
-#line 421 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 421 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_tmp78_ = node;
-#line 421 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 421 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_tmp79_ = pack;
-#line 421 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 421 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		js_render_node_set (_tmp78_, "pack", _tmp79_);
-#line 422 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 422 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_g_free0 (pack);
-#line 422 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 422 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_g_free0 (type);
-#line 422 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 422 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_g_object_unref0 (fp);
-#line 422 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 422 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_g_object_unref0 (meth);
-#line 422 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 422 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_g_free0 (n);
-#line 422 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 422 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_g_object_unref0 (map);
-#line 422 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 422 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_g_object_unref0 (methods);
-#line 422 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 422 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		_g_free0 (inherits);
-#line 422 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 422 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 		return;
 #line 1582 "Gtk.vala.c"
 	}
-#line 397 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 397 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_g_object_unref0 (map);
-#line 397 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 397 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_g_object_unref0 (methods);
-#line 397 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 397 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	_g_free0 (inherits);
 #line 1590 "Gtk.vala.c"
 }
 
 
 static void palete_gtk_class_init (PaleteGtkClass * klass) {
-#line 21 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 21 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	palete_gtk_parent_class = g_type_class_peek_parent (klass);
-#line 21 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 21 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	PALETE_PALETE_CLASS (klass)->load = palete_gtk_real_load;
-#line 21 "/home/alan/gitlive/app.Builder.js/Palete/Gtk.vala"
+#line 21 "/home/alan/gitlive/app.Builder/Palete/Gtk.vala"
 	PALETE_PALETE_CLASS (klass)->fillPack = palete_gtk_real_fillPack;
 #line 1601 "Gtk.vala.c"
 }

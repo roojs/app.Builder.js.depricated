@@ -458,7 +458,7 @@ static void xcls_windowrooview_finalize (GObject* obj);
 
 
 static gpointer _g_object_ref0 (gpointer self) {
-#line 35 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 35 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	return self ? g_object_ref (self) : NULL;
 #line 464 "WindowRooView.vala.c"
 }
@@ -479,68 +479,68 @@ Xcls_WindowRooView* xcls_windowrooview_construct (GType object_type) {
 	Xcls_WindowRooViewXcls_inspectorcontainer* child_1;
 	GtkVPaned* _tmp9_;
 	GtkScrolledWindow* _tmp10_;
-#line 33 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 33 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self = (Xcls_WindowRooView*) g_object_new (object_type, NULL);
-#line 35 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 35 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp0_ = _g_object_ref0 (self);
-#line 35 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 35 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 35 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 35 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self->priv->_this = _tmp0_;
-#line 36 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 36 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp1_ = _g_object_ref0 (self);
-#line 36 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 36 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (WindowRooView);
-#line 36 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 36 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	WindowRooView = _tmp1_;
-#line 37 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 37 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp2_ = (GtkVPaned*) gtk_vpaned_new ();
-#line 37 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 37 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_object_ref_sink (_tmp2_);
-#line 37 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 37 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (self->el);
-#line 37 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 37 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self->el = _tmp2_;
-#line 42 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 42 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp3_ = self->priv->_this;
-#line 42 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 42 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp4_ = xcls_windowrooview_xcls_vbox2_new (_tmp3_);
-#line 42 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 42 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	child_0 = _tmp4_;
-#line 43 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 43 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_object_ref ((GObject*) child_0);
-#line 44 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 44 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp5_ = self->el;
-#line 44 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 44 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp6_ = child_0->el;
-#line 44 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 44 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	gtk_paned_pack1 ((GtkPaned*) _tmp5_, (GtkWidget*) _tmp6_, TRUE, TRUE);
-#line 45 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 45 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp7_ = self->priv->_this;
-#line 45 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 45 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp8_ = xcls_windowrooview_xcls_inspectorcontainer_new (_tmp7_);
-#line 45 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 45 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	child_1 = _tmp8_;
-#line 46 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 46 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_object_ref ((GObject*) child_1);
-#line 47 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 47 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp9_ = self->el;
-#line 47 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 47 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp10_ = child_1->el;
-#line 47 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 47 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	gtk_paned_pack2 ((GtkPaned*) _tmp9_, (GtkWidget*) _tmp10_, TRUE, TRUE);
-#line 33 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 33 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (child_1);
-#line 33 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 33 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (child_0);
-#line 33 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 33 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	return self;
 #line 539 "WindowRooView.vala.c"
 }
 
 
 Xcls_WindowRooView* xcls_windowrooview_new (void) {
-#line 33 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 33 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	return xcls_windowrooview_construct (TYPE_XCLS_WINDOWROOVIEW);
 #line 546 "WindowRooView.vala.c"
 }
@@ -550,21 +550,21 @@ void xcls_windowrooview_loadFile (Xcls_WindowRooView* self, JsRenderJsRender* fi
 	JsRenderJsRender* _tmp0_;
 	JsRenderJsRender* _tmp1_;
 	Xcls_WindowRooViewXcls_view* _tmp2_;
-#line 59 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 59 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_return_if_fail (self != NULL);
-#line 59 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 59 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_return_if_fail (file != NULL);
-#line 61 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 61 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp0_ = file;
-#line 61 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 61 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 61 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 61 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (self->file);
-#line 61 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 61 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self->file = _tmp1_;
-#line 62 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 62 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp2_ = self->view;
-#line 62 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 62 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	xcls_windowrooview_xcls_view_renderJS (_tmp2_, TRUE);
 #line 570 "WindowRooView.vala.c"
 }
@@ -585,84 +585,84 @@ Xcls_WindowRooViewXcls_VBox2* xcls_windowrooview_xcls_vbox2_construct (GType obj
 	Xcls_WindowRooViewXcls_ScrolledWindow7* child_1;
 	GtkVBox* _tmp9_;
 	GtkScrolledWindow* _tmp10_;
-#line 83 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 83 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self = (Xcls_WindowRooViewXcls_VBox2*) g_object_new (object_type, NULL);
-#line 85 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 85 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp0_ = _owner;
-#line 85 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 85 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 85 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 85 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 85 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 85 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self->priv->_this = _tmp1_;
-#line 86 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 86 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp2_ = (GtkVBox*) gtk_vbox_new (FALSE, 0);
-#line 86 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 86 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_object_ref_sink (_tmp2_);
-#line 86 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 86 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (self->el);
-#line 86 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 86 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self->el = _tmp2_;
-#line 91 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 91 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp3_ = self->priv->_this;
-#line 91 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 91 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp4_ = xcls_windowrooview_xcls_hbox3_new (_tmp3_);
-#line 91 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 91 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	child_0 = _tmp4_;
-#line 92 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 92 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_object_ref ((GObject*) child_0);
-#line 93 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 93 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp5_ = self->el;
-#line 93 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 93 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp6_ = child_0->el;
-#line 93 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 93 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	gtk_box_pack_start ((GtkBox*) _tmp5_, (GtkWidget*) _tmp6_, FALSE, TRUE, (guint) 0);
-#line 94 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 94 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp7_ = self->priv->_this;
-#line 94 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 94 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp8_ = xcls_windowrooview_xcls_scrolledwindow7_new (_tmp7_);
-#line 94 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 94 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	child_1 = _tmp8_;
-#line 95 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 95 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_object_ref ((GObject*) child_1);
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 96 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp9_ = self->el;
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 96 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp10_ = child_1->el;
-#line 96 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 96 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	gtk_box_pack_end ((GtkBox*) _tmp9_, (GtkWidget*) _tmp10_, TRUE, TRUE, (guint) 0);
-#line 83 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (child_1);
-#line 83 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (child_0);
-#line 83 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	return self;
 #line 643 "WindowRooView.vala.c"
 }
 
 
 Xcls_WindowRooViewXcls_VBox2* xcls_windowrooview_xcls_vbox2_new (Xcls_WindowRooView* _owner) {
-#line 83 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 83 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	return xcls_windowrooview_xcls_vbox2_construct (XCLS_WINDOWROOVIEW_TYPE_XCLS_VBOX2, _owner);
 #line 650 "WindowRooView.vala.c"
 }
 
 
 static void xcls_windowrooview_xcls_vbox2_class_init (Xcls_WindowRooViewXcls_VBox2Class * klass) {
-#line 74 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 74 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	xcls_windowrooview_xcls_vbox2_parent_class = g_type_class_peek_parent (klass);
-#line 74 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 74 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_WindowRooViewXcls_VBox2Private));
-#line 74 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 74 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_windowrooview_xcls_vbox2_finalize;
 #line 661 "WindowRooView.vala.c"
 }
 
 
 static void xcls_windowrooview_xcls_vbox2_instance_init (Xcls_WindowRooViewXcls_VBox2 * self) {
-#line 74 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 74 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self->priv = XCLS_WINDOWROOVIEW_XCLS_VBOX2_GET_PRIVATE (self);
 #line 668 "WindowRooView.vala.c"
 }
@@ -670,13 +670,13 @@ static void xcls_windowrooview_xcls_vbox2_instance_init (Xcls_WindowRooViewXcls_
 
 static void xcls_windowrooview_xcls_vbox2_finalize (GObject* obj) {
 	Xcls_WindowRooViewXcls_VBox2 * self;
-#line 74 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 74 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_WINDOWROOVIEW_TYPE_XCLS_VBOX2, Xcls_WindowRooViewXcls_VBox2);
-#line 76 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 76 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (self->el);
-#line 77 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 77 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 74 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 74 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	G_OBJECT_CLASS (xcls_windowrooview_xcls_vbox2_parent_class)->finalize (obj);
 #line 682 "WindowRooView.vala.c"
 }
@@ -716,108 +716,108 @@ Xcls_WindowRooViewXcls_HBox3* xcls_windowrooview_xcls_hbox3_construct (GType obj
 	Xcls_WindowRooViewXcls_Button6* child_2;
 	GtkHBox* _tmp15_;
 	GtkButton* _tmp16_;
-#line 126 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 126 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 126 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 126 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self = (Xcls_WindowRooViewXcls_HBox3*) g_object_new (object_type, NULL);
-#line 128 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 128 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp0_ = _owner;
-#line 128 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 128 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 128 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 128 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 128 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 128 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self->priv->_this = _tmp1_;
-#line 129 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 129 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp2_ = (GtkHBox*) gtk_hbox_new (TRUE, 0);
-#line 129 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 129 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_object_ref_sink (_tmp2_);
-#line 129 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 129 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (self->el);
-#line 129 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 129 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self->el = _tmp2_;
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp3_ = self->el;
-#line 134 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 134 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_object_set ((GtkWidget*) _tmp3_, "height-request", 20, NULL);
-#line 135 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 135 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp4_ = self->el;
-#line 135 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 135 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	gtk_widget_set_vexpand ((GtkWidget*) _tmp4_, FALSE);
-#line 136 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 136 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp5_ = self->priv->_this;
-#line 136 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 136 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp6_ = xcls_windowrooview_xcls_button4_new (_tmp5_);
-#line 136 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 136 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	child_0 = _tmp6_;
-#line 137 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 137 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_object_ref ((GObject*) child_0);
-#line 138 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 138 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp7_ = self->el;
-#line 138 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 138 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp8_ = child_0->el;
-#line 138 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 138 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	gtk_box_pack_start ((GtkBox*) _tmp7_, (GtkWidget*) _tmp8_, FALSE, FALSE, (guint) 0);
-#line 139 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 139 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp9_ = self->priv->_this;
-#line 139 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 139 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp10_ = xcls_windowrooview_xcls_autoredraw_new (_tmp9_);
-#line 139 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 139 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	child_1 = _tmp10_;
-#line 140 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 140 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_object_ref ((GObject*) child_1);
-#line 141 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 141 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp11_ = self->el;
-#line 141 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 141 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp12_ = child_1->el;
-#line 141 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 141 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	gtk_box_pack_start ((GtkBox*) _tmp11_, (GtkWidget*) _tmp12_, FALSE, FALSE, (guint) 0);
-#line 142 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 142 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp13_ = self->priv->_this;
-#line 142 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 142 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp14_ = xcls_windowrooview_xcls_button6_new (_tmp13_);
-#line 142 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 142 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	child_2 = _tmp14_;
-#line 143 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 143 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_object_ref ((GObject*) child_2);
-#line 144 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 144 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp15_ = self->el;
-#line 144 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 144 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp16_ = child_2->el;
-#line 144 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 144 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	gtk_box_pack_start ((GtkBox*) _tmp15_, (GtkWidget*) _tmp16_, FALSE, FALSE, (guint) 0);
-#line 126 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 126 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (child_2);
-#line 126 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 126 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (child_1);
-#line 126 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 126 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (child_0);
-#line 126 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 126 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	return self;
 #line 798 "WindowRooView.vala.c"
 }
 
 
 Xcls_WindowRooViewXcls_HBox3* xcls_windowrooview_xcls_hbox3_new (Xcls_WindowRooView* _owner) {
-#line 126 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 126 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	return xcls_windowrooview_xcls_hbox3_construct (XCLS_WINDOWROOVIEW_TYPE_XCLS_HBOX3, _owner);
 #line 805 "WindowRooView.vala.c"
 }
 
 
 static void xcls_windowrooview_xcls_hbox3_class_init (Xcls_WindowRooViewXcls_HBox3Class * klass) {
-#line 117 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 117 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	xcls_windowrooview_xcls_hbox3_parent_class = g_type_class_peek_parent (klass);
-#line 117 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 117 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_WindowRooViewXcls_HBox3Private));
-#line 117 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 117 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_windowrooview_xcls_hbox3_finalize;
 #line 816 "WindowRooView.vala.c"
 }
 
 
 static void xcls_windowrooview_xcls_hbox3_instance_init (Xcls_WindowRooViewXcls_HBox3 * self) {
-#line 117 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 117 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self->priv = XCLS_WINDOWROOVIEW_XCLS_HBOX3_GET_PRIVATE (self);
 #line 823 "WindowRooView.vala.c"
 }
@@ -825,13 +825,13 @@ static void xcls_windowrooview_xcls_hbox3_instance_init (Xcls_WindowRooViewXcls_
 
 static void xcls_windowrooview_xcls_hbox3_finalize (GObject* obj) {
 	Xcls_WindowRooViewXcls_HBox3 * self;
-#line 117 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 117 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_WINDOWROOVIEW_TYPE_XCLS_HBOX3, Xcls_WindowRooViewXcls_HBox3);
-#line 119 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 119 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (self->el);
-#line 120 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 120 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 117 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 117 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	G_OBJECT_CLASS (xcls_windowrooview_xcls_hbox3_parent_class)->finalize (obj);
 #line 837 "WindowRooView.vala.c"
 }
@@ -852,18 +852,18 @@ GType xcls_windowrooview_xcls_hbox3_get_type (void) {
 static void __lambda57_ (Xcls_WindowRooViewXcls_Button4* self) {
 	Xcls_WindowRooView* _tmp0_;
 	Xcls_WindowRooViewXcls_view* _tmp1_;
-#line 190 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 190 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp0_ = self->priv->_this;
-#line 190 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 190 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp1_ = _tmp0_->view;
-#line 190 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 190 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	xcls_windowrooview_xcls_view_renderJS (_tmp1_, TRUE);
 #line 862 "WindowRooView.vala.c"
 }
 
 
 static void ___lambda57__gtk_button_clicked (GtkButton* _sender, gpointer self) {
-#line 189 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 189 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	__lambda57_ (self);
 #line 869 "WindowRooView.vala.c"
 }
@@ -876,60 +876,60 @@ Xcls_WindowRooViewXcls_Button4* xcls_windowrooview_xcls_button4_construct (GType
 	GtkButton* _tmp2_;
 	GtkButton* _tmp3_;
 	GtkButton* _tmp4_;
-#line 178 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 178 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 178 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 178 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self = (Xcls_WindowRooViewXcls_Button4*) g_object_new (object_type, NULL);
-#line 180 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 180 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp0_ = _owner;
-#line 180 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 180 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 180 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 180 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 180 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 180 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self->priv->_this = _tmp1_;
-#line 181 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 181 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp2_ = (GtkButton*) gtk_button_new ();
-#line 181 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 181 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_object_ref_sink (_tmp2_);
-#line 181 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 181 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (self->el);
-#line 181 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 181 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self->el = _tmp2_;
-#line 186 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 186 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp3_ = self->el;
-#line 186 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 186 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	gtk_button_set_label (_tmp3_, "Redraw");
-#line 189 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 189 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp4_ = self->el;
-#line 189 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 189 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_signal_connect_object (_tmp4_, "clicked", (GCallback) ___lambda57__gtk_button_clicked, self, 0);
-#line 178 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 178 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	return self;
 #line 910 "WindowRooView.vala.c"
 }
 
 
 Xcls_WindowRooViewXcls_Button4* xcls_windowrooview_xcls_button4_new (Xcls_WindowRooView* _owner) {
-#line 178 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 178 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	return xcls_windowrooview_xcls_button4_construct (XCLS_WINDOWROOVIEW_TYPE_XCLS_BUTTON4, _owner);
 #line 917 "WindowRooView.vala.c"
 }
 
 
 static void xcls_windowrooview_xcls_button4_class_init (Xcls_WindowRooViewXcls_Button4Class * klass) {
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	xcls_windowrooview_xcls_button4_parent_class = g_type_class_peek_parent (klass);
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_WindowRooViewXcls_Button4Private));
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_windowrooview_xcls_button4_finalize;
 #line 928 "WindowRooView.vala.c"
 }
 
 
 static void xcls_windowrooview_xcls_button4_instance_init (Xcls_WindowRooViewXcls_Button4 * self) {
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self->priv = XCLS_WINDOWROOVIEW_XCLS_BUTTON4_GET_PRIVATE (self);
 #line 935 "WindowRooView.vala.c"
 }
@@ -937,13 +937,13 @@ static void xcls_windowrooview_xcls_button4_instance_init (Xcls_WindowRooViewXcl
 
 static void xcls_windowrooview_xcls_button4_finalize (GObject* obj) {
 	Xcls_WindowRooViewXcls_Button4 * self;
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_WINDOWROOVIEW_TYPE_XCLS_BUTTON4, Xcls_WindowRooViewXcls_Button4);
-#line 171 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 171 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (self->el);
-#line 172 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 172 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 169 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 169 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	G_OBJECT_CLASS (xcls_windowrooview_xcls_button4_parent_class)->finalize (obj);
 #line 949 "WindowRooView.vala.c"
 }
@@ -968,36 +968,36 @@ static void __lambda52_ (Xcls_WindowRooViewXcls_AutoRedraw* self, GtkToggleButto
 	gboolean _tmp3_;
 	GtkCheckButton* _tmp4_;
 	const gchar* _tmp5_;
-#line 234 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 234 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_return_if_fail (state != NULL);
-#line 235 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 235 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp1_ = self->el;
-#line 235 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 235 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp2_ = gtk_toggle_button_get_active ((GtkToggleButton*) _tmp1_);
-#line 235 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 235 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp3_ = _tmp2_;
-#line 235 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 235 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	if (_tmp3_) {
-#line 235 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 235 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		_tmp0_ = "Auto Redraw On";
 #line 984 "WindowRooView.vala.c"
 	} else {
-#line 235 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 235 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		_tmp0_ = "Auto Redraw Off";
 #line 988 "WindowRooView.vala.c"
 	}
-#line 235 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 235 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp4_ = self->el;
-#line 235 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 235 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp5_ = _tmp0_;
-#line 235 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 235 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	gtk_button_set_label ((GtkButton*) _tmp4_, _tmp5_);
 #line 996 "WindowRooView.vala.c"
 }
 
 
 static void ___lambda52__gtk_toggle_button_toggled (GtkToggleButton* _sender, gpointer self) {
-#line 234 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 234 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	__lambda52_ (self, _sender);
 #line 1003 "WindowRooView.vala.c"
 }
@@ -1013,72 +1013,72 @@ Xcls_WindowRooViewXcls_AutoRedraw* xcls_windowrooview_xcls_autoredraw_construct 
 	GtkCheckButton* _tmp5_;
 	GtkCheckButton* _tmp6_;
 	GtkCheckButton* _tmp7_;
-#line 221 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 221 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 221 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 221 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self = (Xcls_WindowRooViewXcls_AutoRedraw*) g_object_new (object_type, NULL);
-#line 223 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 223 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp0_ = _owner;
-#line 223 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 223 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 223 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 223 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 223 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 223 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self->priv->_this = _tmp1_;
-#line 224 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 224 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp2_ = self->priv->_this;
-#line 224 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 224 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp3_ = _g_object_ref0 (self);
-#line 224 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 224 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (_tmp2_->AutoRedraw);
-#line 224 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 224 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp2_->AutoRedraw = _tmp3_;
-#line 225 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 225 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp4_ = (GtkCheckButton*) gtk_check_button_new ();
-#line 225 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 225 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_object_ref_sink (_tmp4_);
-#line 225 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 225 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (self->el);
-#line 225 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 225 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self->el = _tmp4_;
-#line 230 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 230 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp5_ = self->el;
-#line 230 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 230 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	gtk_toggle_button_set_active ((GtkToggleButton*) _tmp5_, TRUE);
-#line 231 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 231 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp6_ = self->el;
-#line 231 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 231 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	gtk_button_set_label ((GtkButton*) _tmp6_, "Auto Redraw On");
-#line 234 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 234 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp7_ = self->el;
-#line 234 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 234 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_signal_connect_object ((GtkToggleButton*) _tmp7_, "toggled", (GCallback) ___lambda52__gtk_toggle_button_toggled, self, 0);
-#line 221 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 221 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	return self;
 #line 1059 "WindowRooView.vala.c"
 }
 
 
 Xcls_WindowRooViewXcls_AutoRedraw* xcls_windowrooview_xcls_autoredraw_new (Xcls_WindowRooView* _owner) {
-#line 221 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 221 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	return xcls_windowrooview_xcls_autoredraw_construct (XCLS_WINDOWROOVIEW_TYPE_XCLS_AUTOREDRAW, _owner);
 #line 1066 "WindowRooView.vala.c"
 }
 
 
 static void xcls_windowrooview_xcls_autoredraw_class_init (Xcls_WindowRooViewXcls_AutoRedrawClass * klass) {
-#line 212 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 212 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	xcls_windowrooview_xcls_autoredraw_parent_class = g_type_class_peek_parent (klass);
-#line 212 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 212 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_WindowRooViewXcls_AutoRedrawPrivate));
-#line 212 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 212 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_windowrooview_xcls_autoredraw_finalize;
 #line 1077 "WindowRooView.vala.c"
 }
 
 
 static void xcls_windowrooview_xcls_autoredraw_instance_init (Xcls_WindowRooViewXcls_AutoRedraw * self) {
-#line 212 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 212 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self->priv = XCLS_WINDOWROOVIEW_XCLS_AUTOREDRAW_GET_PRIVATE (self);
 #line 1084 "WindowRooView.vala.c"
 }
@@ -1086,13 +1086,13 @@ static void xcls_windowrooview_xcls_autoredraw_instance_init (Xcls_WindowRooView
 
 static void xcls_windowrooview_xcls_autoredraw_finalize (GObject* obj) {
 	Xcls_WindowRooViewXcls_AutoRedraw * self;
-#line 212 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 212 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_WINDOWROOVIEW_TYPE_XCLS_AUTOREDRAW, Xcls_WindowRooViewXcls_AutoRedraw);
-#line 214 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 214 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (self->el);
-#line 215 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 215 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 212 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 212 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	G_OBJECT_CLASS (xcls_windowrooview_xcls_autoredraw_parent_class)->finalize (obj);
 #line 1098 "WindowRooView.vala.c"
 }
@@ -1115,24 +1115,24 @@ static void __lambda58_ (Xcls_WindowRooViewXcls_Button6* self) {
 	Xcls_WindowRooViewXcls_view* _tmp1_;
 	Xcls_WindowRooView* _tmp2_;
 	Xcls_WindowRooViewXcls_view* _tmp3_;
-#line 282 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 282 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp0_ = self->priv->_this;
-#line 282 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 282 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp1_ = _tmp0_->view;
-#line 282 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 282 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp1_->redraws = 99;
-#line 283 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 283 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp2_ = self->priv->_this;
-#line 283 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 283 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp3_ = _tmp2_->view;
-#line 283 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 283 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	xcls_windowrooview_xcls_view_renderJS (_tmp3_, TRUE);
 #line 1131 "WindowRooView.vala.c"
 }
 
 
 static void ___lambda58__gtk_button_clicked (GtkButton* _sender, gpointer self) {
-#line 281 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 281 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	__lambda58_ (self);
 #line 1138 "WindowRooView.vala.c"
 }
@@ -1145,60 +1145,60 @@ Xcls_WindowRooViewXcls_Button6* xcls_windowrooview_xcls_button6_construct (GType
 	GtkButton* _tmp2_;
 	GtkButton* _tmp3_;
 	GtkButton* _tmp4_;
-#line 270 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 270 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 270 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 270 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self = (Xcls_WindowRooViewXcls_Button6*) g_object_new (object_type, NULL);
-#line 272 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 272 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp0_ = _owner;
-#line 272 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 272 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 272 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 272 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 272 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 272 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self->priv->_this = _tmp1_;
-#line 273 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 273 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp2_ = (GtkButton*) gtk_button_new ();
-#line 273 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 273 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_object_ref_sink (_tmp2_);
-#line 273 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 273 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (self->el);
-#line 273 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 273 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self->el = _tmp2_;
-#line 278 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 278 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp3_ = self->el;
-#line 278 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 278 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	gtk_button_set_label (_tmp3_, "Full Redraw");
-#line 281 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 281 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp4_ = self->el;
-#line 281 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 281 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_signal_connect_object (_tmp4_, "clicked", (GCallback) ___lambda58__gtk_button_clicked, self, 0);
-#line 270 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 270 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	return self;
 #line 1179 "WindowRooView.vala.c"
 }
 
 
 Xcls_WindowRooViewXcls_Button6* xcls_windowrooview_xcls_button6_new (Xcls_WindowRooView* _owner) {
-#line 270 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 270 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	return xcls_windowrooview_xcls_button6_construct (XCLS_WINDOWROOVIEW_TYPE_XCLS_BUTTON6, _owner);
 #line 1186 "WindowRooView.vala.c"
 }
 
 
 static void xcls_windowrooview_xcls_button6_class_init (Xcls_WindowRooViewXcls_Button6Class * klass) {
-#line 261 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 261 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	xcls_windowrooview_xcls_button6_parent_class = g_type_class_peek_parent (klass);
-#line 261 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 261 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_WindowRooViewXcls_Button6Private));
-#line 261 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 261 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_windowrooview_xcls_button6_finalize;
 #line 1197 "WindowRooView.vala.c"
 }
 
 
 static void xcls_windowrooview_xcls_button6_instance_init (Xcls_WindowRooViewXcls_Button6 * self) {
-#line 261 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 261 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self->priv = XCLS_WINDOWROOVIEW_XCLS_BUTTON6_GET_PRIVATE (self);
 #line 1204 "WindowRooView.vala.c"
 }
@@ -1206,13 +1206,13 @@ static void xcls_windowrooview_xcls_button6_instance_init (Xcls_WindowRooViewXcl
 
 static void xcls_windowrooview_xcls_button6_finalize (GObject* obj) {
 	Xcls_WindowRooViewXcls_Button6 * self;
-#line 261 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 261 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_WINDOWROOVIEW_TYPE_XCLS_BUTTON6, Xcls_WindowRooViewXcls_Button6);
-#line 263 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 263 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (self->el);
-#line 264 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 264 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 261 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 261 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	G_OBJECT_CLASS (xcls_windowrooview_xcls_button6_parent_class)->finalize (obj);
 #line 1218 "WindowRooView.vala.c"
 }
@@ -1242,76 +1242,76 @@ Xcls_WindowRooViewXcls_ScrolledWindow7* xcls_windowrooview_xcls_scrolledwindow7_
 	GtkScrolledWindow* _tmp6_;
 	WebKitWebView* _tmp7_;
 	GtkScrolledWindow* _tmp8_;
-#line 314 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 314 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 314 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 314 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self = (Xcls_WindowRooViewXcls_ScrolledWindow7*) g_object_new (object_type, NULL);
-#line 316 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 316 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp0_ = _owner;
-#line 316 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 316 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 316 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 316 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 316 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 316 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self->priv->_this = _tmp1_;
-#line 317 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 317 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp2_ = (GtkScrolledWindow*) gtk_scrolled_window_new (NULL, NULL);
-#line 317 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 317 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_object_ref_sink (_tmp2_);
-#line 317 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 317 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (self->el);
-#line 317 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 317 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self->el = _tmp2_;
-#line 322 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 322 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp3_ = self->el;
-#line 322 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 322 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	gtk_scrolled_window_set_shadow_type (_tmp3_, GTK_SHADOW_IN);
-#line 323 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 323 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp4_ = self->priv->_this;
-#line 323 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 323 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp5_ = xcls_windowrooview_xcls_view_new (_tmp4_);
-#line 323 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 323 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	child_0 = _tmp5_;
-#line 324 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 324 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_object_ref ((GObject*) child_0);
-#line 325 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 325 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp6_ = self->el;
-#line 325 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 325 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp7_ = child_0->el;
-#line 325 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 325 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	gtk_container_add ((GtkContainer*) _tmp6_, (GtkWidget*) _tmp7_);
-#line 328 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 328 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp8_ = self->el;
-#line 328 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 328 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	gtk_scrolled_window_set_policy (_tmp8_, GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
-#line 314 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 314 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (child_0);
-#line 314 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 314 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	return self;
 #line 1292 "WindowRooView.vala.c"
 }
 
 
 Xcls_WindowRooViewXcls_ScrolledWindow7* xcls_windowrooview_xcls_scrolledwindow7_new (Xcls_WindowRooView* _owner) {
-#line 314 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 314 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	return xcls_windowrooview_xcls_scrolledwindow7_construct (XCLS_WINDOWROOVIEW_TYPE_XCLS_SCROLLEDWINDOW7, _owner);
 #line 1299 "WindowRooView.vala.c"
 }
 
 
 static void xcls_windowrooview_xcls_scrolledwindow7_class_init (Xcls_WindowRooViewXcls_ScrolledWindow7Class * klass) {
-#line 305 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 305 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	xcls_windowrooview_xcls_scrolledwindow7_parent_class = g_type_class_peek_parent (klass);
-#line 305 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 305 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_WindowRooViewXcls_ScrolledWindow7Private));
-#line 305 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 305 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_windowrooview_xcls_scrolledwindow7_finalize;
 #line 1310 "WindowRooView.vala.c"
 }
 
 
 static void xcls_windowrooview_xcls_scrolledwindow7_instance_init (Xcls_WindowRooViewXcls_ScrolledWindow7 * self) {
-#line 305 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 305 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self->priv = XCLS_WINDOWROOVIEW_XCLS_SCROLLEDWINDOW7_GET_PRIVATE (self);
 #line 1317 "WindowRooView.vala.c"
 }
@@ -1319,13 +1319,13 @@ static void xcls_windowrooview_xcls_scrolledwindow7_instance_init (Xcls_WindowRo
 
 static void xcls_windowrooview_xcls_scrolledwindow7_finalize (GObject* obj) {
 	Xcls_WindowRooViewXcls_ScrolledWindow7 * self;
-#line 305 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 305 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_WINDOWROOVIEW_TYPE_XCLS_SCROLLEDWINDOW7, Xcls_WindowRooViewXcls_ScrolledWindow7);
-#line 307 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 307 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (self->el);
-#line 308 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 308 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 305 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 305 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	G_OBJECT_CLASS (xcls_windowrooview_xcls_scrolledwindow7_parent_class)->finalize (obj);
 #line 1331 "WindowRooView.vala.c"
 }
@@ -1350,19 +1350,19 @@ static gboolean ___lambda53_ (Xcls_WindowRooViewXcls_view* self) {
 	WebKitWebViewBase* _tmp2_;
 	WebKitWebViewBase* wv;
 	WebKitWebViewBase* _tmp3_;
-#line 400 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 400 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_print ("inspector attach\n");
-#line 401 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 401 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp0_ = self->inspector;
-#line 401 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 401 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp1_ = webkit_web_inspector_get_web_view (_tmp0_);
-#line 401 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 401 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp2_ = _g_object_ref0 (_tmp1_);
-#line 401 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 401 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	wv = _tmp2_;
-#line 402 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 402 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp3_ = wv;
-#line 402 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 402 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	if (_tmp3_ != NULL) {
 #line 1368 "WindowRooView.vala.c"
 		Xcls_WindowRooView* _tmp4_;
@@ -1370,33 +1370,33 @@ static gboolean ___lambda53_ (Xcls_WindowRooViewXcls_view* self) {
 		GtkScrolledWindow* _tmp6_;
 		WebKitWebViewBase* _tmp7_;
 		WebKitWebViewBase* _tmp8_;
-#line 403 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 403 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		g_print ("got inspector web view\n");
-#line 404 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 404 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		_tmp4_ = self->priv->_this;
-#line 404 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 404 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		_tmp5_ = _tmp4_->inspectorcontainer;
-#line 404 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 404 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		_tmp6_ = _tmp5_->el;
-#line 404 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 404 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		_tmp7_ = wv;
-#line 404 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 404 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		gtk_container_add ((GtkContainer*) _tmp6_, (GtkWidget*) _tmp7_);
-#line 405 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 405 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		_tmp8_ = wv;
-#line 405 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 405 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		gtk_widget_show ((GtkWidget*) _tmp8_);
 #line 1390 "WindowRooView.vala.c"
 	} else {
-#line 407 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 407 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		g_print ("no web view yet\n");
 #line 1394 "WindowRooView.vala.c"
 	}
-#line 409 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 409 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	result = TRUE;
-#line 409 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 409 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (wv);
-#line 409 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 409 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	return result;
 #line 1402 "WindowRooView.vala.c"
 }
@@ -1405,7 +1405,7 @@ static gboolean ___lambda53_ (Xcls_WindowRooViewXcls_view* self) {
 static gboolean ____lambda53__webkit_web_inspector_open_window (WebKitWebInspector* _sender, gpointer self) {
 	gboolean result;
 	result = ___lambda53_ (self);
-#line 398 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 398 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	return result;
 #line 1411 "WindowRooView.vala.c"
 }
@@ -1413,13 +1413,13 @@ static gboolean ____lambda53__webkit_web_inspector_open_window (WebKitWebInspect
 
 static gboolean ___lambda54_ (Xcls_WindowRooViewXcls_view* self) {
 	gboolean result = FALSE;
-#line 437 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 437 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_print ("run refresh?");
-#line 438 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 438 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	xcls_windowrooview_xcls_view_runRefresh (self);
-#line 439 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 439 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	result = TRUE;
-#line 439 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 439 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	return result;
 #line 1425 "WindowRooView.vala.c"
 }
@@ -1428,7 +1428,7 @@ static gboolean ___lambda54_ (Xcls_WindowRooViewXcls_view* self) {
 static gboolean ____lambda54__gsource_func (gpointer self) {
 	gboolean result;
 	result = ___lambda54_ (self);
-#line 436 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 436 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	return result;
 #line 1434 "WindowRooView.vala.c"
 }
@@ -1436,13 +1436,13 @@ static gboolean ____lambda54__gsource_func (gpointer self) {
 
 static gboolean __lambda55_ (Xcls_WindowRooViewXcls_view* self, GtkWidget* ctx, GdkDragContext* x, gint y, gint time, guint ud) {
 	gboolean result = FALSE;
-#line 446 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 446 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_return_val_if_fail (ctx != NULL, FALSE);
-#line 446 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 446 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_return_val_if_fail (x != NULL, FALSE);
-#line 447 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 447 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	result = FALSE;
-#line 447 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 447 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	return result;
 #line 1448 "WindowRooView.vala.c"
 }
@@ -1451,7 +1451,7 @@ static gboolean __lambda55_ (Xcls_WindowRooViewXcls_view* self, GtkWidget* ctx, 
 static gboolean ___lambda55__gtk_widget_drag_drop (GtkWidget* _sender, GdkDragContext* context, gint x, gint y, guint time_, gpointer self) {
 	gboolean result;
 	result = __lambda55_ (self, _sender, context, x, y, time_);
-#line 446 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 446 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	return result;
 #line 1457 "WindowRooView.vala.c"
 }
@@ -1459,16 +1459,16 @@ static gboolean ___lambda55__gtk_widget_drag_drop (GtkWidget* _sender, GdkDragCo
 
 static void __lambda56_ (Xcls_WindowRooViewXcls_view* self) {
 	WebKitWebInspector* _tmp0_;
-#line 469 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 469 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp0_ = self->inspector;
-#line 469 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 469 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	webkit_web_inspector_show (_tmp0_);
 #line 1467 "WindowRooView.vala.c"
 }
 
 
 static void ___lambda56__gtk_widget_show (GtkWidget* _sender, gpointer self) {
-#line 468 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 468 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	__lambda56_ (self);
 #line 1474 "WindowRooView.vala.c"
 }
@@ -1485,55 +1485,55 @@ Xcls_WindowRooViewXcls_view* xcls_windowrooview_xcls_view_construct (GType objec
 	gchar* _tmp6_;
 	WebKitWebView* _tmp15_;
 	WebKitWebView* _tmp16_;
-#line 368 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 368 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 368 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 368 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self = (Xcls_WindowRooViewXcls_view*) g_object_new (object_type, NULL);
-#line 370 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 370 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp0_ = _owner;
-#line 370 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 370 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 370 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 370 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 370 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 370 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self->priv->_this = _tmp1_;
-#line 371 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 371 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp2_ = self->priv->_this;
-#line 371 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 371 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp3_ = _g_object_ref0 (self);
-#line 371 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 371 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (_tmp2_->view);
-#line 371 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 371 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp2_->view = _tmp3_;
-#line 372 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 372 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp4_ = (WebKitWebView*) webkit_web_view_new ();
-#line 372 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 372 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_object_ref_sink (_tmp4_);
-#line 372 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 372 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (self->el);
-#line 372 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 372 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self->el = _tmp4_;
-#line 375 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 375 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_date_time_unref0 (self->lastRedraw);
-#line 375 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 375 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self->lastRedraw = NULL;
-#line 376 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 376 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self->pendingRedraw = FALSE;
-#line 377 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 377 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self->refreshRequired = FALSE;
-#line 378 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 378 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self->redraws = 0;
-#line 379 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 379 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp5_ = g_strdup ("");
-#line 379 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 379 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_free0 (self->renderedData);
-#line 379 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 379 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self->renderedData = _tmp5_;
-#line 380 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 380 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp6_ = g_strdup ("");
-#line 380 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 380 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_free0 (self->runhtml);
-#line 380 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 380 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self->runhtml = _tmp6_;
 #line 1539 "WindowRooView.vala.c"
 	{
@@ -1546,56 +1546,56 @@ Xcls_WindowRooViewXcls_view* xcls_windowrooview_xcls_view_construct (GType objec
 		WebKitWebInspector* _tmp12_;
 		WebKitWebInspector* _tmp13_;
 		WebKitWebView* _tmp14_;
-#line 387 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 387 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		_tmp7_ = self->el;
-#line 387 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 387 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		_tmp8_ = webkit_web_view_get_settings (_tmp7_);
-#line 387 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 387 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		_tmp9_ = _g_object_ref0 (_tmp8_);
-#line 387 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 387 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		settings = _tmp9_;
-#line 388 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 388 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		webkit_settings_set_enable_developer_extras (settings, TRUE);
-#line 397 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 397 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		_tmp10_ = self->el;
-#line 397 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 397 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		_tmp11_ = webkit_web_view_get_inspector (_tmp10_);
-#line 397 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 397 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		_tmp12_ = _g_object_ref0 (_tmp11_);
-#line 397 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 397 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		_g_object_unref0 (self->inspector);
-#line 397 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 397 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		self->inspector = _tmp12_;
-#line 398 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 398 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		_tmp13_ = self->inspector;
-#line 398 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 398 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		g_signal_connect_object (_tmp13_, "open-window", (GCallback) ____lambda53__webkit_web_inspector_open_window, self, 0);
-#line 416 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 416 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		_tmp14_ = self->el;
-#line 416 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 416 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		webkit_web_view_load_html (_tmp14_, "Render not ready", "http://localhost/app.Builder/");
-#line 436 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 436 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		g_timeout_add_seconds_full (G_PRIORITY_DEFAULT, (guint) 1, ____lambda54__gsource_func, g_object_ref (self), g_object_unref);
-#line 385 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 385 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		_g_object_unref0 (settings);
 #line 1582 "WindowRooView.vala.c"
 	}
-#line 446 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 446 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp15_ = self->el;
-#line 446 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 446 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_signal_connect_object ((GtkWidget*) _tmp15_, "drag-drop", (GCallback) ___lambda55__gtk_widget_drag_drop, self, 0);
-#line 468 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 468 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp16_ = self->el;
-#line 468 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 468 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_signal_connect_object ((GtkWidget*) _tmp16_, "show", (GCallback) ___lambda56__gtk_widget_show, self, 0);
-#line 368 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 368 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	return self;
 #line 1594 "WindowRooView.vala.c"
 }
 
 
 Xcls_WindowRooViewXcls_view* xcls_windowrooview_xcls_view_new (Xcls_WindowRooView* _owner) {
-#line 368 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 368 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	return xcls_windowrooview_xcls_view_construct (XCLS_WINDOWROOVIEW_TYPE_XCLS_VIEW, _owner);
 #line 1601 "WindowRooView.vala.c"
 }
@@ -1611,47 +1611,47 @@ void xcls_windowrooview_xcls_view_renderJS (Xcls_WindowRooViewXcls_view* self, g
 	gboolean _tmp5_ = FALSE;
 	gboolean _tmp6_;
 	gboolean _tmp8_;
-#line 500 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 500 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_return_if_fail (self != NULL);
-#line 504 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 504 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp0_ = self->priv->_this;
-#line 504 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 504 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp1_ = _tmp0_->AutoRedraw;
-#line 504 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 504 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp2_ = _tmp1_->el;
-#line 504 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 504 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp3_ = gtk_toggle_button_get_active ((GtkToggleButton*) _tmp2_);
-#line 504 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 504 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp4_ = _tmp3_;
-#line 504 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 504 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	autodraw = _tmp4_;
-#line 505 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 505 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp6_ = autodraw;
-#line 505 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 505 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	if (!_tmp6_) {
 #line 1633 "WindowRooView.vala.c"
 		gboolean _tmp7_;
-#line 505 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 505 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		_tmp7_ = force;
-#line 505 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 505 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		_tmp5_ = !_tmp7_;
 #line 1639 "WindowRooView.vala.c"
 	} else {
-#line 505 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 505 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		_tmp5_ = FALSE;
 #line 1643 "WindowRooView.vala.c"
 	}
-#line 505 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 505 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp8_ = _tmp5_;
-#line 505 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 505 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	if (_tmp8_) {
-#line 506 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 506 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		g_print ("Skipping redraw - no force, and autodraw off");
-#line 507 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 507 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		return;
 #line 1653 "WindowRooView.vala.c"
 	}
-#line 509 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 509 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self->refreshRequired = TRUE;
 #line 1657 "WindowRooView.vala.c"
 }
@@ -1861,19 +1861,19 @@ void xcls_windowrooview_xcls_view_runRefresh (Xcls_WindowRooViewXcls_view* self)
 	WebKitWebView* _tmp85_;
 	const gchar* _tmp86_;
 	GError * _inner_error_ = NULL;
-#line 511 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 511 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_return_if_fail (self != NULL);
-#line 517 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 517 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp0_ = self->refreshRequired;
-#line 517 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 517 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	if (!_tmp0_) {
-#line 519 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 519 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		return;
 #line 1873 "WindowRooView.vala.c"
 	}
-#line 522 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 522 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp1_ = self->lastRedraw;
-#line 522 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 522 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	if (_tmp1_ != NULL) {
 #line 1879 "WindowRooView.vala.c"
 		GDateTime* _tmp2_;
@@ -1881,354 +1881,354 @@ void xcls_windowrooview_xcls_view_runRefresh (Xcls_WindowRooViewXcls_view* self)
 		GDateTime* _tmp4_;
 		GTimeSpan _tmp5_ = 0LL;
 		gboolean _tmp6_;
-#line 524 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 524 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		_tmp2_ = g_date_time_new_now_local ();
-#line 524 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 524 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		_tmp3_ = _tmp2_;
-#line 524 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 524 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		_tmp4_ = self->lastRedraw;
-#line 524 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 524 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		_tmp5_ = g_date_time_difference (_tmp3_, _tmp4_);
-#line 524 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 524 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		_tmp6_ = ((gint64) _tmp5_) < ((gint64) 5000);
-#line 524 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 524 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		_g_date_time_unref0 (_tmp3_);
-#line 524 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 524 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		if (_tmp6_) {
-#line 525 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 525 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 			return;
 #line 1901 "WindowRooView.vala.c"
 		}
 	}
-#line 529 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 529 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp7_ = self->priv->_this;
-#line 529 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 529 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp8_ = _tmp7_->file;
-#line 529 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 529 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	if (_tmp8_ == NULL) {
-#line 530 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 530 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		return;
 #line 1912 "WindowRooView.vala.c"
 	}
-#line 534 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 534 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self->refreshRequired = FALSE;
-#line 541 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 541 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp9_ = self->priv->_this;
-#line 541 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 541 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp10_ = _tmp9_->file;
-#line 541 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 541 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp11_ = js_render_js_render_toSourcePreview (_tmp10_);
-#line 541 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 541 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	js = _tmp11_;
-#line 543 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 543 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp12_ = js;
-#line 543 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 543 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp13_ = strlen (_tmp12_);
-#line 543 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 543 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp14_ = _tmp13_;
-#line 543 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 543 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	if (_tmp14_ < 1) {
-#line 544 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 544 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		g_print ("no data");
-#line 545 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 545 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		_g_free0 (js);
-#line 545 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 545 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		return;
 #line 1938 "WindowRooView.vala.c"
 	}
-#line 548 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 548 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp15_ = self->redraws;
-#line 548 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 548 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self->redraws = _tmp15_ + 1;
-#line 550 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 550 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp16_ = self->priv->_this;
-#line 550 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 550 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp17_ = _tmp16_->file;
-#line 550 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 550 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp18_ = _tmp17_->project;
-#line 550 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 550 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp19_ = _g_object_ref0 (_tmp18_);
-#line 550 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 550 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	project = _tmp19_;
-#line 565 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 565 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self->pendingRedraw = TRUE;
-#line 567 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 567 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp20_ = g_strdup ("<script type=\"text/javascript\">\n");
-#line 567 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 567 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	runhtml = _tmp20_;
-#line 569 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 569 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_file_get_contents ("/home/alan/gitlive/app.Builder.js/builder.html.js", &_tmp21_, NULL, &_inner_error_);
-#line 569 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 569 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_free0 (builderhtml);
-#line 569 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 569 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	builderhtml = _tmp21_;
-#line 569 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 569 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	if (_inner_error_ != NULL) {
-#line 569 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 569 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		_g_free0 (builderhtml);
-#line 569 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 569 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		_g_free0 (runhtml);
-#line 569 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 569 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		_g_object_unref0 (project);
-#line 569 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 569 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		_g_free0 (js);
-#line 569 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 569 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		g_critical ("file %s: line %d: uncaught error: %s (%s, %d)", __FILE__, __LINE__, _inner_error_->message, g_quark_to_string (_inner_error_->domain), _inner_error_->code);
-#line 569 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 569 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		g_clear_error (&_inner_error_);
-#line 569 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 569 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		return;
 #line 1982 "WindowRooView.vala.c"
 	}
-#line 571 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 571 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp22_ = runhtml;
-#line 571 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 571 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp23_ = builderhtml;
-#line 571 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 571 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp24_ = g_strconcat (_tmp23_, "\n", NULL);
-#line 571 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 571 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp25_ = _tmp24_;
-#line 571 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 571 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp26_ = g_strconcat (_tmp22_, _tmp25_, NULL);
-#line 571 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 571 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_free0 (runhtml);
-#line 571 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 571 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	runhtml = _tmp26_;
-#line 571 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 571 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_free0 (_tmp25_);
-#line 572 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 572 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp27_ = runhtml;
-#line 572 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 572 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp28_ = g_strconcat (_tmp27_, "</script>\n", NULL);
-#line 572 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 572 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_free0 (runhtml);
-#line 572 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 572 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	runhtml = _tmp28_;
-#line 575 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 575 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp29_ = project;
-#line 575 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 575 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp30_ = _tmp29_->runhtml;
-#line 575 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 575 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp31_ = g_strdup (_tmp30_);
-#line 575 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 575 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_free0 (self->runhtml);
-#line 575 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 575 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self->runhtml = _tmp31_;
-#line 579 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 579 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_file_get_contents ("/home/alan/gitlive/app.Builder.js/builder.html", &_tmp32_, NULL, &_inner_error_);
-#line 579 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 579 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_free0 (inhtml);
-#line 579 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 579 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	inhtml = _tmp32_;
-#line 579 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 579 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	if (_inner_error_ != NULL) {
-#line 579 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 579 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		_g_free0 (inhtml);
-#line 579 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 579 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		_g_free0 (builderhtml);
-#line 579 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 579 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		_g_free0 (runhtml);
-#line 579 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 579 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		_g_object_unref0 (project);
-#line 579 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 579 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		_g_free0 (js);
-#line 579 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 579 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		g_critical ("file %s: line %d: uncaught error: %s (%s, %d)", __FILE__, __LINE__, _inner_error_->message, g_quark_to_string (_inner_error_->domain), _inner_error_->code);
-#line 579 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 579 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		g_clear_error (&_inner_error_);
-#line 579 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 579 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 		return;
 #line 2042 "WindowRooView.vala.c"
 	}
-#line 584 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 584 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp33_ = js;
-#line 584 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 584 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp34_ = g_strdup (_tmp33_);
-#line 584 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 584 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_free0 (self->renderedData);
-#line 584 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 584 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self->renderedData = _tmp34_;
-#line 587 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 587 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp35_ = js;
-#line 587 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 587 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp36_ = g_strconcat (_tmp35_, "\n", NULL);
-#line 587 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 587 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp37_ = _tmp36_;
-#line 587 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 587 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp38_ = g_strconcat (_tmp37_, "Roo.onReady(function() {\n", NULL);
-#line 587 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 587 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp39_ = _tmp38_;
-#line 587 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 587 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp40_ = g_strconcat (_tmp39_, "if (", NULL);
-#line 587 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 587 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp41_ = _tmp40_;
-#line 587 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 587 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp42_ = self->priv->_this;
-#line 587 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 587 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp43_ = _tmp42_->file;
-#line 587 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 587 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp44_ = _tmp43_->name;
-#line 587 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 587 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp45_ = g_strconcat (_tmp41_, _tmp44_, NULL);
-#line 587 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 587 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp46_ = _tmp45_;
-#line 587 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 587 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp47_ = g_strconcat (_tmp46_, ".show) ", NULL);
-#line 587 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 587 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp48_ = _tmp47_;
-#line 587 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 587 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp49_ = self->priv->_this;
-#line 587 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 587 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp50_ = _tmp49_->file;
-#line 587 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 587 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp51_ = _tmp50_->name;
-#line 587 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 587 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp52_ = g_strconcat (_tmp48_, _tmp51_, NULL);
-#line 587 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 587 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp53_ = _tmp52_;
-#line 587 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 587 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp54_ = g_strconcat (_tmp53_, ".show({});\n", NULL);
-#line 587 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 587 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp55_ = _tmp54_;
-#line 587 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 587 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp56_ = g_strconcat (_tmp55_, "Roo.XComponent.build();\n", NULL);
-#line 587 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 587 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp57_ = _tmp56_;
-#line 587 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 587 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp58_ = g_strconcat (_tmp57_, "});\n", NULL);
-#line 587 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 587 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp59_ = _tmp58_;
-#line 587 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 587 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_free0 (_tmp57_);
-#line 587 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 587 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_free0 (_tmp55_);
-#line 587 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 587 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_free0 (_tmp53_);
-#line 587 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 587 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_free0 (_tmp48_);
-#line 587 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 587 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_free0 (_tmp46_);
-#line 587 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 587 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_free0 (_tmp41_);
-#line 587 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 587 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_free0 (_tmp39_);
-#line 587 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 587 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_free0 (_tmp37_);
-#line 587 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 587 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	js_src = _tmp59_;
-#line 593 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 593 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp60_ = js;
-#line 593 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 593 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp61_ = g_strconcat ("render js: ", _tmp60_, NULL);
-#line 593 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 593 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp62_ = _tmp61_;
-#line 593 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 593 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_print ("%s", _tmp62_);
-#line 593 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 593 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_free0 (_tmp62_);
-#line 597 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 597 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp63_ = g_date_time_new_now_local ();
-#line 597 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 597 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_date_time_unref0 (self->lastRedraw);
-#line 597 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 597 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self->lastRedraw = _tmp63_;
-#line 599 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 599 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp64_ = inhtml;
-#line 599 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 599 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp65_ = runhtml;
-#line 599 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 599 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp66_ = self->runhtml;
-#line 599 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 599 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp67_ = g_strconcat (_tmp65_, _tmp66_, NULL);
-#line 599 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 599 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp68_ = _tmp67_;
-#line 599 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 599 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp69_ = g_strconcat (_tmp68_, "<script type=\"text/javascript\">\n", NULL);
-#line 599 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 599 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp70_ = _tmp69_;
-#line 599 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 599 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp71_ = js_src;
-#line 599 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 599 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp72_ = g_strconcat (_tmp70_, _tmp71_, NULL);
-#line 599 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 599 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp73_ = _tmp72_;
-#line 599 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 599 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp74_ = g_strconcat (_tmp73_, "\n", NULL);
-#line 599 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 599 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp75_ = _tmp74_;
-#line 599 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 599 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp76_ = g_strconcat (_tmp75_, "</script>", NULL);
-#line 599 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 599 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp77_ = _tmp76_;
-#line 599 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 599 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp78_ = g_strconcat (_tmp77_, "</head>", NULL);
-#line 599 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 599 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp79_ = _tmp78_;
-#line 599 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 599 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp80_ = string_replace (_tmp64_, "</head>", _tmp79_);
-#line 599 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 599 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp81_ = _tmp80_;
-#line 599 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 599 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_free0 (_tmp79_);
-#line 599 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 599 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_free0 (_tmp77_);
-#line 599 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 599 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_free0 (_tmp75_);
-#line 599 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 599 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_free0 (_tmp73_);
-#line 599 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 599 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_free0 (_tmp70_);
-#line 599 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 599 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_free0 (_tmp68_);
-#line 599 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 599 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	html = _tmp81_;
-#line 606 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 606 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp82_ = html;
-#line 606 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 606 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp83_ = g_strconcat ("LOAD HTML ", _tmp82_, NULL);
-#line 606 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 606 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp84_ = _tmp83_;
-#line 606 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 606 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_print ("%s", _tmp84_);
-#line 606 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 606 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_free0 (_tmp84_);
-#line 608 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 608 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp85_ = self->el;
-#line 608 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 608 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp86_ = html;
-#line 608 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 608 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	webkit_web_view_load_html (_tmp85_, _tmp86_, "http://localhost/app.Builder/");
-#line 511 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 511 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_free0 (html);
-#line 511 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 511 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_free0 (js_src);
-#line 511 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 511 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_free0 (inhtml);
-#line 511 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 511 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_free0 (builderhtml);
-#line 511 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 511 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_free0 (runhtml);
-#line 511 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 511 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (project);
-#line 511 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 511 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_free0 (js);
 #line 2216 "WindowRooView.vala.c"
 }
 
 
 static void xcls_windowrooview_xcls_view_class_init (Xcls_WindowRooViewXcls_viewClass * klass) {
-#line 352 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 352 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	xcls_windowrooview_xcls_view_parent_class = g_type_class_peek_parent (klass);
-#line 352 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 352 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_WindowRooViewXcls_viewPrivate));
-#line 352 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 352 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_windowrooview_xcls_view_finalize;
 #line 2227 "WindowRooView.vala.c"
 }
 
 
 static void xcls_windowrooview_xcls_view_instance_init (Xcls_WindowRooViewXcls_view * self) {
-#line 352 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 352 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self->priv = XCLS_WINDOWROOVIEW_XCLS_VIEW_GET_PRIVATE (self);
 #line 2234 "WindowRooView.vala.c"
 }
@@ -2236,21 +2236,21 @@ static void xcls_windowrooview_xcls_view_instance_init (Xcls_WindowRooViewXcls_v
 
 static void xcls_windowrooview_xcls_view_finalize (GObject* obj) {
 	Xcls_WindowRooViewXcls_view * self;
-#line 352 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 352 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_WINDOWROOVIEW_TYPE_XCLS_VIEW, Xcls_WindowRooViewXcls_view);
-#line 354 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 354 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (self->el);
-#line 355 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 355 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 359 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 359 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_date_time_unref0 (self->lastRedraw);
-#line 360 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 360 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (self->inspector);
-#line 364 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 364 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_free0 (self->renderedData);
-#line 365 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 365 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_free0 (self->runhtml);
-#line 352 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 352 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	G_OBJECT_CLASS (xcls_windowrooview_xcls_view_parent_class)->finalize (obj);
 #line 2256 "WindowRooView.vala.c"
 }
@@ -2277,68 +2277,68 @@ Xcls_WindowRooViewXcls_inspectorcontainer* xcls_windowrooview_xcls_inspectorcont
 	GtkScrolledWindow* _tmp4_;
 	GtkScrolledWindow* _tmp5_;
 	GtkScrolledWindow* _tmp6_;
-#line 635 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 635 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_return_val_if_fail (_owner != NULL, NULL);
-#line 635 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 635 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self = (Xcls_WindowRooViewXcls_inspectorcontainer*) g_object_new (object_type, NULL);
-#line 637 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 637 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp0_ = _owner;
-#line 637 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 637 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp1_ = _g_object_ref0 (_tmp0_);
-#line 637 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 637 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 637 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 637 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self->priv->_this = _tmp1_;
-#line 638 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 638 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp2_ = self->priv->_this;
-#line 638 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 638 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp3_ = _g_object_ref0 (self);
-#line 638 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 638 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (_tmp2_->inspectorcontainer);
-#line 638 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 638 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp2_->inspectorcontainer = _tmp3_;
-#line 639 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 639 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp4_ = (GtkScrolledWindow*) gtk_scrolled_window_new (NULL, NULL);
-#line 639 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 639 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_object_ref_sink (_tmp4_);
-#line 639 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 639 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (self->el);
-#line 639 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 639 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self->el = _tmp4_;
-#line 644 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 644 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp5_ = self->el;
-#line 644 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 644 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	gtk_scrolled_window_set_shadow_type (_tmp5_, GTK_SHADOW_IN);
-#line 647 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 647 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_tmp6_ = self->el;
-#line 647 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 647 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	gtk_scrolled_window_set_policy (_tmp6_, GTK_POLICY_AUTOMATIC, GTK_POLICY_AUTOMATIC);
-#line 635 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 635 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	return self;
 #line 2319 "WindowRooView.vala.c"
 }
 
 
 Xcls_WindowRooViewXcls_inspectorcontainer* xcls_windowrooview_xcls_inspectorcontainer_new (Xcls_WindowRooView* _owner) {
-#line 635 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 635 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	return xcls_windowrooview_xcls_inspectorcontainer_construct (XCLS_WINDOWROOVIEW_TYPE_XCLS_INSPECTORCONTAINER, _owner);
 #line 2326 "WindowRooView.vala.c"
 }
 
 
 static void xcls_windowrooview_xcls_inspectorcontainer_class_init (Xcls_WindowRooViewXcls_inspectorcontainerClass * klass) {
-#line 626 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 626 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	xcls_windowrooview_xcls_inspectorcontainer_parent_class = g_type_class_peek_parent (klass);
-#line 626 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 626 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_WindowRooViewXcls_inspectorcontainerPrivate));
-#line 626 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 626 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_windowrooview_xcls_inspectorcontainer_finalize;
 #line 2337 "WindowRooView.vala.c"
 }
 
 
 static void xcls_windowrooview_xcls_inspectorcontainer_instance_init (Xcls_WindowRooViewXcls_inspectorcontainer * self) {
-#line 626 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 626 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self->priv = XCLS_WINDOWROOVIEW_XCLS_INSPECTORCONTAINER_GET_PRIVATE (self);
 #line 2344 "WindowRooView.vala.c"
 }
@@ -2346,13 +2346,13 @@ static void xcls_windowrooview_xcls_inspectorcontainer_instance_init (Xcls_Windo
 
 static void xcls_windowrooview_xcls_inspectorcontainer_finalize (GObject* obj) {
 	Xcls_WindowRooViewXcls_inspectorcontainer * self;
-#line 626 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 626 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, XCLS_WINDOWROOVIEW_TYPE_XCLS_INSPECTORCONTAINER, Xcls_WindowRooViewXcls_inspectorcontainer);
-#line 628 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 628 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (self->el);
-#line 629 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 629 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 626 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 626 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	G_OBJECT_CLASS (xcls_windowrooview_xcls_inspectorcontainer_parent_class)->finalize (obj);
 #line 2358 "WindowRooView.vala.c"
 }
@@ -2371,18 +2371,18 @@ GType xcls_windowrooview_xcls_inspectorcontainer_get_type (void) {
 
 
 static void xcls_windowrooview_class_init (Xcls_WindowRooViewClass * klass) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	xcls_windowrooview_parent_class = g_type_class_peek_parent (klass);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	g_type_class_add_private (klass, sizeof (Xcls_WindowRooViewPrivate));
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	G_OBJECT_CLASS (klass)->finalize = xcls_windowrooview_finalize;
 #line 2381 "WindowRooView.vala.c"
 }
 
 
 static void xcls_windowrooview_instance_init (Xcls_WindowRooView * self) {
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self->priv = XCLS_WINDOWROOVIEW_GET_PRIVATE (self);
 #line 2388 "WindowRooView.vala.c"
 }
@@ -2390,21 +2390,21 @@ static void xcls_windowrooview_instance_init (Xcls_WindowRooView * self) {
 
 static void xcls_windowrooview_finalize (GObject* obj) {
 	Xcls_WindowRooView * self;
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	self = G_TYPE_CHECK_INSTANCE_CAST (obj, TYPE_XCLS_WINDOWROOVIEW, Xcls_WindowRooView);
-#line 22 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 22 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (self->el);
-#line 23 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 23 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (self->priv->_this);
-#line 25 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 25 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (self->AutoRedraw);
-#line 26 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 26 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (self->view);
-#line 27 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 27 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (self->inspectorcontainer);
-#line 30 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 30 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	_g_object_unref0 (self->file);
-#line 20 "/home/alan/gitlive/app.Builder.js/Builder4/WindowRooView.vala"
+#line 20 "/home/alan/gitlive/app.Builder/Builder4/WindowRooView.vala"
 	G_OBJECT_CLASS (xcls_windowrooview_parent_class)->finalize (obj);
 #line 2410 "WindowRooView.vala.c"
 }
