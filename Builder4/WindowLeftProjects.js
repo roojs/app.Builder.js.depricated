@@ -22,6 +22,13 @@ WindowLeftProjects=new XObject({
     'void:load' : () {
          // clear list...
          _this.is_loading = true;
+         
+         if (_this.is_loaded) {
+             return;
+         }
+             
+         _this.is_loaded = true
+         
          Project.Project.loadAll();
          var projects = Project.Project.allProjectsByName();
          
@@ -42,6 +49,7 @@ WindowLeftProjects=new XObject({
          
          _this.is_loading = false;     
     },
+     : "",
     items : [
         {
             xtype: Gtk.HBox,
