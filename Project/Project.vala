@@ -418,7 +418,8 @@ namespace Project {
 		
 		public void  scanDirsForce()
 		{
-		    var iter = this.paths.map_iterator();
+			this.is_scanned = true;	 
+			var iter = this.paths.map_iterator();
 		    while (iter.next()) {
 				//print("path: " + iter.get_key() + " : " + iter.get_value() +"\n");
 		        if (iter.get_value() != "dir") {
@@ -498,10 +499,7 @@ namespace Project {
 		    } catch (GLib.Error e) {
 				print("Project::scanDirs failed : " + e.message + "\n");
 			}
-			return; 
-
-			// we skip subdirectory scanning at present.
-		    for (var i = 0; i < subs.length(); i++) {
+			for (var i = 0; i < subs.length(); i++) {
 		        
 		         this.scanDir(subs.nth_data(i), dp+1);
 		    }
