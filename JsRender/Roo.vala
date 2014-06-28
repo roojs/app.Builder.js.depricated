@@ -62,9 +62,9 @@ namespace JsRender {
         },
 
     */
-		public string jsonHasOr(Json.Object obj, string key, string def) {
+		public string jsonHasOrEmpty(Json.Object obj, string key) {
 			return obj.has_string_member(key) ? 
-						obj.get_string_member(key) : def;
+						obj.get_string_member(key) : "";
 		}
 
 		
@@ -88,12 +88,12 @@ namespace JsRender {
             var obj = node.get_object ();
 			
 			
-            this.modOrder = obj.get_string_member("modOrder");
-            this.name = obj.get_string_member("name");
-            this.parent = obj.get_string_member("parent");
-            this.permname = obj.get_string_member("permname");
-            this.title = obj.get_string_member("title");
-            this.modOrder = obj.get_string_member("modOrder");
+            this.modOrder = this.jsonHasOrEmpty(obj, "modOrder");
+            this.name = this.jsonHasOrEmpty(obj, "name");
+            this.parent = this.jsonHasOrEmpty(obj, "parent");
+            this.permname = this.jsonHasOrEmpty(obj, "permname");
+            this.title = this.jsonHasOrEmpty(obj, "title");
+            this.modOrder = this.jsonHasOrEmpty(obj, "modOrder");
              
             // load items[0] ??? into tree...
 
