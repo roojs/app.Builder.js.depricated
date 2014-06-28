@@ -67,7 +67,7 @@ ClutterFiles=new XObject({
                             this.el.get_stage().height);
                 this.el.set_position(100,50);
     },
-    'void:show' : (Project.Project pr) {
+    'void:loadProject' : (Project.Project pr) {
         // list all the files, and create new Xcls_fileitem for each one.
         
         // LEAK --- we should unref all the chilren...
