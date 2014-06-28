@@ -495,7 +495,9 @@ namespace Project {
 		        }
 		    } catch (Error e) {
 		        print("Project::scanDirs failed : " + e.message + "\n");
-		    }
+		    } catch (GLib.Error e) {
+				print("Project::scanDirs failed : " + e.message + "\n");
+			}
 		    for (var i = 0; i < subs.length(); i++) {
 		        
 		         this.scanDir(subs.nth_data(i), dp+1);
