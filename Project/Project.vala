@@ -406,7 +406,17 @@ namespace Project {
 		    this.on_changed();
 		    
 		}
-		public void  scanDirs()
+		public void  scanDirs() // cached version
+		{
+		    if (this.is_scanned) {
+				return;
+			}
+			this.scanDirsForce();
+		    //console.dump(this.files);
+		    
+		}
+		
+		public void  scanDirsForce()
 		{
 		    var iter = this.paths.map_iterator();
 		    while (iter.next()) {
