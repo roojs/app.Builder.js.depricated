@@ -60,12 +60,12 @@ public class Xcls_WindowLeftProjects : Object
     // userdefined functions 
     public void load() {
              // clear list...
-             _this.is_loading = true;
-             
+            
              if (_this.is_loaded) {
                  return;
              }
-                 
+               _this.is_loading = true;
+                
              _this.is_loaded = true;
              
              Project.Project.loadAll();
