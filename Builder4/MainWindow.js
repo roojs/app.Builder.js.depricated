@@ -45,6 +45,7 @@ MainWindow=new XObject({
         el.set_scale(0.0f,0.0f);
         _this.is_editing = false;
     
+    print("\n --- calling clutter files to show project: " + _this.project.name + "\n");
         _this.clutterfiles.show(_this.project);
     
         el.restore_easing_state();
