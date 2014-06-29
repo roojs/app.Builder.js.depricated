@@ -592,9 +592,11 @@ public class Xcls_WindowLeftProjects : Object
                    GLib.Value ga, gb;
                    mod.get_value(a,0, out ga);
                    mod.get_value(b,0, out gb);
-                   
-                   
-                   
+                    
+                    if ((string)ga == (string)gb) {
+                        return 0;
+                    }
+                    return (string)ga > (string)gb ? 1 : -1;
                }); 
             
             
