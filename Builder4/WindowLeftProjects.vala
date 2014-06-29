@@ -96,7 +96,7 @@ public class Xcls_WindowLeftProjects : Object
             
             GLib.Value val;
             
-            _this.model.foreach((mod, path, iter) => {el.
+            _this.model.el.foreach((mod, path, iter) => {el.
                 mod.get_value(iter, 1, out val);
                 if ( ( (Project.Project)val.get_object()) != project) {
                     return false;//continue
