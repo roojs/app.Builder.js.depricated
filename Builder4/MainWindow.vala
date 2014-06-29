@@ -186,6 +186,10 @@ public class Xcls_MainWindow : Object
         
         }
     public void showViewEditing  ( )  {
+          
+            // shows the editing panes, hides the file list..
+            
+          
              this.editpane.el.show();
           //   this.rooview.el.show();
              this.left_projects.el.hide();
@@ -199,6 +203,7 @@ public class Xcls_MainWindow : Object
             
                 el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 0.0f);
                 el.set_scale(1.0f,1.0f);
+                el.set_opacity(255);
                 _this.is_editing = true;
                // _this.mainpane.el.set_position(_this.leftpane.lastWidth);
                 _this.clutterfiles.el.hide();
