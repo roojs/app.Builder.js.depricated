@@ -87,8 +87,9 @@ public class Xcls_ClutterFiles : Object
     }
 
     // userdefined functions 
-
-    // skip | - no return type
+    public void clearFiles() {
+            
+        }
     public void loadProject(Project.Project pr) {
             // list all the files, and create new Xcls_fileitem for each one.
             

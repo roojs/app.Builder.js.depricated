@@ -55,7 +55,7 @@ ClutterFiles=new XObject({
     },
     id : "ClutterFiles",
     scroll_mode : "Clutter.ScrollMode.VERTICAL",
-     : function() {
+    'void:clearFiles' : () {
         
     },
     reactive : true,
