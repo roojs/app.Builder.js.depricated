@@ -87,17 +87,8 @@ public class Xcls_ClutterFiles : Object
     }
 
     // userdefined functions 
-    public void set_size(float w, float h) 
-        {
-             if (this.el == null) {
-                print("object not ready yet?");
-                return;
-            }
-           _this.filelayout_manager.el.max_column_width = w - 150;
-           this.el.set_size(this.el.get_stage().width-150,
-                                this.el.get_stage().height);
-                    this.el.set_position(100,50);
-        }
+
+    // skip | - no return type
     public void loadProject(Project.Project pr) {
             // list all the files, and create new Xcls_fileitem for each one.
             
@@ -113,6 +104,17 @@ public class Xcls_ClutterFiles : Object
                 this.filelayout.el.add_child(a.el);
             }
             this.el.show_all();
+        }
+    public void set_size(float w, float h) 
+        {
+             if (this.el == null) {
+                print("object not ready yet?");
+                return;
+            }
+           _this.filelayout_manager.el.max_column_width = w - 150;
+           this.el.set_size(this.el.get_stage().width-150,
+                                this.el.get_stage().height);
+                    this.el.set_position(100,50);
         }
 
     // skip |xns - no return type
