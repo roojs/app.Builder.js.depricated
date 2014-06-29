@@ -91,7 +91,7 @@ public class Xcls_MainWindow : Object
     public void hideViewEditing  ( )   {
             
             // hide the browser - show the files..
-            
+             _this.clutterfiles.clearFiles();
              this.editpane.el.hide();
             //this.rooview.el.hide();
              this.left_projects.el.show();
