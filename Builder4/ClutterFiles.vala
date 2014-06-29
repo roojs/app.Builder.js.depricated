@@ -96,7 +96,7 @@ public class Xcls_ClutterFiles : Object
             // list all the files, and create new Xcls_fileitem for each one.
             
             // LEAK --- we should unref all the chilren...
-            this.loadProject();
+            this.clearFiles();
             
             print("clutter files - load project: " + pr.name +"\n");
             var fiter = pr.files.map_iterator();
