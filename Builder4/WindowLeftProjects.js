@@ -46,7 +46,7 @@ WindowLeftProjects=new XObject({
             m.set_value(iter, 1, o);
          
          }
-         
+         m.set_sort_colum_id(0, Gtk.SortType.ASCENDING);
          _this.is_loading = false;     
     },
     'void:selectProject' : (Project.Project project) {
