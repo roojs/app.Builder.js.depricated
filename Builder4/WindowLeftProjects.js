@@ -213,7 +213,7 @@ WindowLeftProjects=new XObject({
                             pack : "set_model",
                             columns : typeof(string), typeof(Object),
                             init : {
-                               this.set_sort_func(0, (mod,a,b) => {
+                               this.el.set_sort_func(0, (mod,a,b) => {
                                    GLib.Value ga, gb;
                                    mod.get_value(a,0, out ga);
                                    mod.get_value(b,0, out gb);

@@ -588,7 +588,7 @@ public class Xcls_WindowLeftProjects : Object
 
             // init method 
             {
-               this.set_sort_func(0, (mod,a,b) => {
+               this.el.set_sort_func(0, (mod,a,b) => {
                    GLib.Value ga, gb;
                    mod.get_value(a,0, out ga);
                    mod.get_value(b,0, out gb);
