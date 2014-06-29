@@ -60,7 +60,10 @@ public class Xcls_WindowLeftProjects : Object
     // userdefined functions 
     public void selectProject(Project project) {
             
+            _this.model.foreach((mod, path, iter) => {
             
+            
+            });
             
         }
     public void load() {

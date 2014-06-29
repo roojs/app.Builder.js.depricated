@@ -20,7 +20,10 @@ WindowLeftProjects=new XObject({
     pack : "pack_end,false,true,0",
     'void:selectProject' : (Project project) {
         
+        _this.model.foreach((mod, path, iter) => {
         
+        
+        });
         
     },
     homogeneous : false,
