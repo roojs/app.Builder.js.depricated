@@ -18,7 +18,7 @@ WindowLeftProjects=new XObject({
     },
     id : "WindowLeftProjects",
     pack : "pack_end,false,true,0",
-     : function() {
+    'void:selectProject' : function() {
         
     },
     homogeneous : false,

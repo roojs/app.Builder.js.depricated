@@ -58,8 +58,9 @@ public class Xcls_WindowLeftProjects : Object
     }
 
     // userdefined functions 
-
-    // skip | - no return type
+    public void selectProjectfunction() {
+            
+        }
     public void load() {
              // clear list...
             
