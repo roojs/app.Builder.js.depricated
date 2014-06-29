@@ -35,7 +35,7 @@ MainWindow=new XObject({
          this.editpane.el.hide();
         //this.rooview.el.hide();
          this.left_projects.el.show();
-         this.left_project.selectProject(_this.project);
+         this.left_projects.selectProject(_this.project);
         
         var el = _this.rooview.el;
         el.save_easing_state();
