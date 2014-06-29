@@ -138,12 +138,14 @@
                             "|xns": "Gtk",
                             "items": [
                                 {
-                                    "|columns": "typeof(string), typeof(Object)",
                                     "id": "model",
                                     "n_columns": 2,
                                     "pack": "set_model",
                                     "xtype": "ListStore",
-                                    "|xns": "Gtk"
+                                    "|columns": "typeof(string), typeof(Object)",
+                                    "|xns": "Gtk",
+                                    "|init": "function() {\n    XObject.prototype.init.call(this);\n}\n",
+                                    "listeners": {}
                                 },
                                 {
                                     "pack": "append_column",

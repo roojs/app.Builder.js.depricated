@@ -585,6 +585,13 @@ public class Xcls_WindowLeftProjects : Object
             // my vars
 
             // set gobject values
+
+            // init method 
+            function() {
+                XObject.prototype.init.call(this);
+            }
+
+            // listeners 
         }
 
         // userdefined functions 

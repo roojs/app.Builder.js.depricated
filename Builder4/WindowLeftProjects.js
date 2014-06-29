@@ -208,10 +208,13 @@ WindowLeftProjects=new XObject({
                     items : [
                         {
                             xtype: Gtk.ListStore,
-                            columns : typeof(string), typeof(Object),
                             id : "model",
                             n_columns : 2,
-                            pack : "set_model"
+                            pack : "set_model",
+                            columns : typeof(string), typeof(Object),
+                            init : function() {
+                                XObject.prototype.init.call(this);
+                            }
                         },
                         {
                             xtype: Gtk.TreeViewColumn,
