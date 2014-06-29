@@ -55,9 +55,10 @@ WindowLeftProjects=new XObject({
         
         sel.unselect_all();
         
-        GLib.Value val;
         
         _this.model.el.foreach((mod, path, iter) => {
+            GLib.Value val;
+        
             mod.get_value(iter, 1, out val);
             if ( ( (Project.Project)val.get_object()) != project) {
                 return false;//continue
