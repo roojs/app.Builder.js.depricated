@@ -30,6 +30,8 @@ MainWindow=new XObject({
     type : Gtk.WindowType.TOPLEVEL,
     'void:hideViewEditing' : ( )   {
         
+        // hide the browser - show the files..
+        
          this.editpane.el.hide();
         //this.rooview.el.hide();
          this.left_projects.el.show();
