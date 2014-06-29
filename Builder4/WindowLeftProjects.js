@@ -51,7 +51,7 @@ WindowLeftProjects=new XObject({
     },
     'void:selectProject' : (Project.Project project) {
         
-        var sel = _this.view.get_selection();
+        var sel = _this.view.el.get_selection();
         
         sel.unselect_all();
         
