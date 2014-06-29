@@ -143,9 +143,8 @@
                                     "pack": "set_model",
                                     "xtype": "ListStore",
                                     "|columns": "typeof(string), typeof(Object)",
-                                    "|xns": "Gtk",
-                                    "|init": "function() {\n    XObject.prototype.init.call(this);\n}\n",
-                                    "listeners": {}
+                                    "|init": "{\n   this.set_sort_func(0, (mod,a,b) => {\n        \n   \n   }); \n\n\n}\n",
+                                    "|xns": "Gtk"
                                 },
                                 {
                                     "pack": "append_column",

@@ -587,11 +587,14 @@ public class Xcls_WindowLeftProjects : Object
             // set gobject values
 
             // init method 
-            function() {
-                XObject.prototype.init.call(this);
+            {
+               this.set_sort_func(0, (mod,a,b) => {
+                    
+               
+               }); 
+            
+            
             }
-
-            // listeners 
         }
 
         // userdefined functions 

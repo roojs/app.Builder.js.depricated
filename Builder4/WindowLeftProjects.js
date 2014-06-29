@@ -212,8 +212,13 @@ WindowLeftProjects=new XObject({
                             n_columns : 2,
                             pack : "set_model",
                             columns : typeof(string), typeof(Object),
-                            init : function() {
-                                XObject.prototype.init.call(this);
+                            init : {
+                               this.set_sort_func(0, (mod,a,b) => {
+                                    
+                               
+                               }); 
+                            
+                            
                             }
                         },
                         {
