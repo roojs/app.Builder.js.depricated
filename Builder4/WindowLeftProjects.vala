@@ -58,7 +58,9 @@ public class Xcls_WindowLeftProjects : Object
     }
 
     // userdefined functions 
-    public void selectProjectfunction() {
+    public void selectProject(Project project) {
+            
+            
             
         }
     public void load() {
