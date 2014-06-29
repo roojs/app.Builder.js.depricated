@@ -64,9 +64,15 @@ public class Xcls_WindowLeftProjects : Object
             
             sel.unselect_all();
             
-            GValue val;
+            GLib.Value val;
             
             _this.model.foreach((mod, path, iter) => {
+                mod.get_value(iter, 1, out val);
+                if ( ( (Project)val.get_object()) != project) {
+                    return false;//continue
+                }
+                sel.select_iter(iter);
+                return true;
                 
             
             });
