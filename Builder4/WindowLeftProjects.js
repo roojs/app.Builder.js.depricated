@@ -18,6 +18,9 @@ WindowLeftProjects=new XObject({
     },
     id : "WindowLeftProjects",
     pack : "pack_end,false,true,0",
+     : function() {
+        
+    },
     homogeneous : false,
     'void:load' : () {
          // clear list...
