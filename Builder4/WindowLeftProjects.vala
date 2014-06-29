@@ -61,10 +61,11 @@ public class Xcls_WindowLeftProjects : Object
     public void selectProject(Project project) {
             
             var sel = _this.view.get_selection();
-                
+            
+            sel.unselect_all();
             
             _this.model.foreach((mod, path, iter) => {
-            
+                
             
             });
             
