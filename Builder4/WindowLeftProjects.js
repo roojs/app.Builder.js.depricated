@@ -20,6 +20,9 @@ WindowLeftProjects=new XObject({
     pack : "pack_end,false,true,0",
     'void:selectProject' : (Project project) {
         
+        var sel = _this.view.get_selection();
+            
+        
         _this.model.foreach((mod, path, iter) => {
         
         

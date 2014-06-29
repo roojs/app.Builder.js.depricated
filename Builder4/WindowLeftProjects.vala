@@ -60,6 +60,9 @@ public class Xcls_WindowLeftProjects : Object
     // userdefined functions 
     public void selectProject(Project project) {
             
+            var sel = _this.view.get_selection();
+                
+            
             _this.model.foreach((mod, path, iter) => {
             
             
