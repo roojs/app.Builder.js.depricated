@@ -58,26 +58,6 @@ public class Xcls_WindowLeftProjects : Object
     }
 
     // userdefined functions 
-    public void selectProject(Project project) {
-            
-            var sel = _this.view.get_selection();
-            
-            sel.unselect_all();
-            
-            GLib.Value val;
-            
-            _this.model.foreach((mod, path, iter) => {
-                mod.get_value(iter, 1, out val);
-                if ( ( (Project)val.get_object()) != project) {
-                    return false;//continue
-                }
-                sel.select_iter(iter);
-                return true;
-                
-            
-            });
-            
-        }
     public void load() {
              // clear list...
             
@@ -107,6 +87,26 @@ public class Xcls_WindowLeftProjects : Object
              }
              
              _this.is_loading = false;     
+        }
+    public void selectProject(Project.Project project) {
+            
+            var sel = _this.view.get_selection();
+            
+            sel.unselect_all();
+            
+            GLib.Value val;
+            
+            _this.model.foreach((mod, path, iter) => {
+                mod.get_value(iter, 1, out val);
+                if ( ( (Project.Project)val.get_object()) != project) {
+                    return false;//continue
+                }
+                sel.select_iter(iter);
+                return true;
+                
+            
+            });
+            
         }
 
     // skip |xns - no return type

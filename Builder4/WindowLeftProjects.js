@@ -18,26 +18,6 @@ WindowLeftProjects=new XObject({
     },
     id : "WindowLeftProjects",
     pack : "pack_end,false,true,0",
-    'void:selectProject' : (Project project) {
-        
-        var sel = _this.view.get_selection();
-        
-        sel.unselect_all();
-        
-        GLib.Value val;
-        
-        _this.model.foreach((mod, path, iter) => {
-            mod.get_value(iter, 1, out val);
-            if ( ( (Project)val.get_object()) != project) {
-                return false;//continue
-            }
-            sel.select_iter(iter);
-            return true;
-            
-        
-        });
-        
-    },
     homogeneous : false,
     'void:load' : () {
          // clear list...
@@ -68,6 +48,26 @@ WindowLeftProjects=new XObject({
          }
          
          _this.is_loading = false;     
+    },
+    'void:selectProject' : (Project.Project project) {
+        
+        var sel = _this.view.get_selection();
+        
+        sel.unselect_all();
+        
+        GLib.Value val;
+        
+        _this.model.foreach((mod, path, iter) => {
+            mod.get_value(iter, 1, out val);
+            if ( ( (Project.Project)val.get_object()) != project) {
+                return false;//continue
+            }
+            sel.select_iter(iter);
+            return true;
+            
+        
+        });
+        
     },
     items : [
         {
