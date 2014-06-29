@@ -64,6 +64,8 @@ public class Xcls_WindowLeftProjects : Object
             
             sel.unselect_all();
             
+            GValue val;
+            
             _this.model.foreach((mod, path, iter) => {
                 
             
