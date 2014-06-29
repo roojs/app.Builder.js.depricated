@@ -25,7 +25,7 @@ WindowLeftProjects=new XObject({
          if (_this.is_loaded) {
              return;
          }
-           _this.is_loading = true;
+         _this.is_loading = true;
             
          _this.is_loaded = true;
          
