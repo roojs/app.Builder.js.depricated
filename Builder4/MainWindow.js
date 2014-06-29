@@ -43,7 +43,7 @@ MainWindow=new XObject({
         //_this.mainpane.lastWidth = _this.leftpane.el.get_position();
         //_this.mainpane.el.set_position(0);
         // rotate y 180..
-        el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 360.0f);
+        el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 180.0f);
         el.set_scale(0.2f,0.2f);
          el.set_opacity(0);
          
