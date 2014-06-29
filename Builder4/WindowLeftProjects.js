@@ -64,6 +64,7 @@ WindowLeftProjects=new XObject({
                 return false;//continue
             }
             sel.select_iter(iter);
+            this.project_selected(project);
             return true;
             
         
