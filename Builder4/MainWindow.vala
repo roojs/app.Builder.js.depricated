@@ -90,12 +90,9 @@ public class Xcls_MainWindow : Object
     // userdefined functions 
     public void hideViewEditing  ( )   {
             
-            // hide the browser - show the files..
-             _this.clutterfiles.clearFiles();
              this.editpane.el.hide();
             //this.rooview.el.hide();
              this.left_projects.el.show();
-             this.left_projects.selectProject(_this.project);
             
             var el = _this.rooview.el;
             el.save_easing_state();
@@ -104,14 +101,11 @@ public class Xcls_MainWindow : Object
             //_this.mainpane.lastWidth = _this.leftpane.el.get_position();
             //_this.mainpane.el.set_position(0);
             // rotate y 180..
-            el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 180.0f);
-            el.set_scale(0.2f,0.2f);
-             el.set_opacity(0);
-             
+            el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 360.0f);
+            el.set_scale(0.0f,0.0f);
             _this.is_editing = false;
         
-        print("\n --- calling clutter files to show project: " + _this.project.name + "\n");
-           // _this.clutterfiles.loadProject(_this.project);
+            _this.clutterfiles.show(_this.project);
         
             el.restore_easing_state();
                 
@@ -153,16 +147,14 @@ public class Xcls_MainWindow : Object
             this.clutterfiles.open.connect((file) => { 
                 _this.showViewEditing();
                 this.left_tree.model.loadFile(file);
-                this.project = file.project;
                 this.window_rooview.loadFile(file);
                 print("OPEN : " + file.name);
         
             });
         
             this.left_projects.project_selected.connect((proj) => {
-                print("---project_selected called -> triggering scanDirs/ show project\n");
                 proj.scanDirs();
-                _this.clutterfiles.loadProject(proj);
+                _this.clutterfiles.show(proj);
             
             });
         
@@ -192,24 +184,18 @@ public class Xcls_MainWindow : Object
         
         }
     public void showViewEditing  ( )  {
-          
-            // shows the editing panes, hides the file list..
-            
-          
              this.editpane.el.show();
           //   this.rooview.el.show();
              this.left_projects.el.hide();
             
               
             
-               var el = _this.rooview.el;
+            var el = _this.rooview.el;
                 el.save_easing_state();
-                // longer as it takes a while to load..
-                el.set_easing_duration ( 750);
+          
             
                 el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 0.0f);
                 el.set_scale(1.0f,1.0f);
-                el.set_opacity(255);
                 _this.is_editing = true;
                // _this.mainpane.el.set_position(_this.leftpane.lastWidth);
                 _this.clutterfiles.el.hide();
