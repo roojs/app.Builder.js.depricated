@@ -52,7 +52,7 @@ public class Xcls_WindowRooView : Object
             
             
             
-            var p = new Webkit.PrintOperation(_this.view.el);
+            var p = new WebKit.PrintOperation(_this.view.el);
              
             var ps = new Gtk.PrintSettings();
             ps.set("output-file-format", "pdf");

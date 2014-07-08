@@ -17,7 +17,7 @@ WindowRooView=new XObject({
         
         
         
-        var p = new Webkit.PrintOperation(_this.view.el);
+        var p = new WebKit.PrintOperation(_this.view.el);
          
         var ps = new Gtk.PrintSettings();
         ps.set("output-file-format", "pdf");
