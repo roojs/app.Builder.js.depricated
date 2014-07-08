@@ -80,7 +80,7 @@ public class Xcls_WindowRooView : Object
                 
                 var f = GLib.File.new_for_path (filename + ".pdf");
                 f.delete();
-            })
+            });
             
             p.print();
             
