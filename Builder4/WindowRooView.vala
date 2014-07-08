@@ -62,9 +62,9 @@ public class Xcls_WindowRooView : Object
             
             var ar = Gtk.PaperSize.get_paper_sizes(false);
             var psetup = new Gtk.PageSetup();
-            for(var i = 0; i < ar.size(); i++) {
-                if (ar.get(i).get_name() =="iso_a4") {
-                    psetup.set_paper_size(ar.get(i));
+            for(var i = 0; i < ar.length(); i++) {
+                if (ar.nth_data(i).get_name() =="iso_a4") {
+                    psetup.set_paper_size(ar.nth_data(i));
                 }
             }
             psetup.set_orientation(Gtk.PageOrientation.LANDSCAPE);
