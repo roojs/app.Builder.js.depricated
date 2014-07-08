@@ -13,8 +13,57 @@ WindowRooView=new XObject({
     xtype: Gtk.VPaned,
     id : "WindowRooView",
     pack : "add",
-     : function() {
+     : (string filename) {
         
+        
+        
+        var mf = _this.view.el.get_main_frame();
+                    
+        var ar = Gtk.PaperSize.get_paper_sizes();
+        var psetup = new Gtk.PageSetup();
+        for(var i = 0; i < ar.length; i++) {
+            if (ar[i].get_name() =='iso_a4') {
+                psetup.set_paper_size(ar[i]);
+            }
+        }
+        
+        var p = new Gtk.PrintOperation({ export_filename : filename });
+        p.set_default_page_setup(psetup);
+        mf.print_full(p, Gtk.PrintOperationAction.EXPORT);
+        print("made image - exiting");
+        
+        
+        var wv = _this.view;
+        var h = wv.get_allocated_height();
+        var w = wv.get_allocated_width();
+        var win = wv.get_window().
+        
+        
+        width = win.get_width();
+        height = win.get_height();
+    
+        Gdk.Pixbuf screenshot = Gdk.pixbuf_get_from_window(win, 0, 0, width, height);
+    
+        screenshot.save("screenshot.png","png");
+        
+       // colormap = gdk_window_get_colormap(GDK_WINDOW(window));
+     
+      /* gdk-pixbuf api: http://library.gnome.org/devel/gdk-pixbuf/stable/  */
+        pixbuf = gdk_pixbuf_new(GDK_COLORSPACE_RGB, FALSE, 8, width, height);
+        
+        
+        thumb_buf = gdk_pixbuf_new(GDK_COLORSPACE_RGB, FALSE, 8,
+                                 thumb->width, thumb->height);
+    
+        gdk_pixbuf_get_from_drawable(pixbuf, GDK_DRAWABLE(window), colormap,
+                                   0, 0, 0, 0, width, height);
+      gdk_pixbuf_scale(pixbuf, thumb_buf,
+                       0, 0, thumb->width, thumb->height,
+                       0.0, 0.0,
+                       thumb->width / (double) width,
+                       thumb->height / (double) height,
+                       GDK_INTERP_HYPER);
+      gdk_pixbuf_save(thumb_buf, thumb->filename->str, "png", NULL, NULL);
     },
     'void:loadFile' : (JsRender.JsRender file)
     {
