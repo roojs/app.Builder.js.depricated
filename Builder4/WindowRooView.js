@@ -22,7 +22,7 @@ WindowRooView=new XObject({
         var ar = Gtk.PaperSize.get_paper_sizes();
         var psetup = new Gtk.PageSetup();
         for(var i = 0; i < ar.length; i++) {
-            if (ar[i].get_name() =='iso_a4') {
+            if (ar[i].get_name() =="iso_a4") {
                 psetup.set_paper_size(ar[i]);
             }
         }
