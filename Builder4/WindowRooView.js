@@ -26,8 +26,11 @@ WindowRooView=new XObject({
                 psetup.set_paper_size(ar[i]);
             }
         }
+        psetup.set_orientation(Gtk.PageOrientation.LANDSCAPE);
         
-        var p = new Gtk.PrintOperation({ export_filename : filename });
+        var p = new Gtk.PrintOperation();
+        p.export_filename = filename ;
+        
         p.set_default_page_setup(psetup);
         mf.print_full(p, Gtk.PrintOperationAction.EXPORT);
         print("made image - exiting");
