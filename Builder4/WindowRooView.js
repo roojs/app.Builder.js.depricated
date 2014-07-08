@@ -13,6 +13,9 @@ WindowRooView=new XObject({
     xtype: Gtk.VPaned,
     id : "WindowRooView",
     pack : "add",
+     : function() {
+        
+    },
     'void:loadFile' : (JsRender.JsRender file)
     {
         this.file = file;

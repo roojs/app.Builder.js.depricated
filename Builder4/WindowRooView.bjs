@@ -1,5 +1,5 @@
 {
-    "id": "file-gtk-14",
+    "id": "file-gtk-18",
     "name": "WindowRooView",
     "parent": "",
     "title": false,
@@ -10,6 +10,7 @@
             "id": "WindowRooView",
             "pack": "add",
             "xtype": "VPaned",
+            "|": "function() {\n    \n}\n",
             "|void:loadFile": "(JsRender.JsRender file)\n{\n    this.file = file;\n    this.view.renderJS(true);\n}",
             "|xns": "Gtk",
             "items": [

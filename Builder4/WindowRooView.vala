@@ -39,23 +39,17 @@ public class Xcls_WindowRooView : Object
         // my vars
 
         // set gobject values
-        var child_0 = new Xcls_VBox2(_this);
+        var child_0 = new Xcls_VBox2( _this );
         child_0.ref();
         this.el.pack1 (  child_0.el , true,true );
-        var child_1 = new Xcls_inspectorcontainer(_this);
+        var child_1 = new Xcls_inspectorcontainer( _this );
         child_1.ref();
         this.el.pack2 (  child_1.el , true,true );
     }
 
     // userdefined functions 
 
-    // skip .JsRender.JsRender:file - already used 
-
-    // skip id - not pipe 
-
-    // skip pack - not pipe 
-
-    // skip xtype - not pipe 
+    // skip | - no return type
     public void loadFile(JsRender.JsRender file)
         {
             this.file = file;
@@ -63,14 +57,6 @@ public class Xcls_WindowRooView : Object
         }
 
     // skip |xns - no return type
-
-    // skip items - not pipe 
-
-    // skip xvala_cls - not pipe 
-
-    // skip xvala_xcls - not pipe 
-
-    // skip xvala_id - not pipe 
     public class Xcls_VBox2 : Object 
     {
         public Gtk.VBox el;
@@ -80,7 +66,7 @@ public class Xcls_WindowRooView : Object
             // my vars
 
             // ctor 
-        public Xcls_VBox2(Xcls_WindowRooView _owner)
+        public Xcls_VBox2(Xcls_WindowRooView _owner )
         {
             _this = _owner;
             this.el = new Gtk.VBox( false, 0 );
@@ -88,31 +74,17 @@ public class Xcls_WindowRooView : Object
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_HBox3(_this);
+            var child_0 = new Xcls_HBox3( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,true,0 );
-            var child_1 = new Xcls_ScrolledWindow7(_this);
+            var child_1 = new Xcls_ScrolledWindow7( _this );
             child_1.ref();
             this.el.pack_end (  child_1.el , true,true,0 );
         }
 
         // userdefined functions 
 
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
-        // skip |homogeneous - already used 
-
         // skip |xns - no return type
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_HBox3 : Object 
     {
@@ -123,7 +95,7 @@ public class Xcls_WindowRooView : Object
             // my vars
 
             // ctor 
-        public Xcls_HBox3(Xcls_WindowRooView _owner)
+        public Xcls_HBox3(Xcls_WindowRooView _owner )
         {
             _this = _owner;
             this.el = new Gtk.HBox( true, 0 );
@@ -133,38 +105,20 @@ public class Xcls_WindowRooView : Object
             // set gobject values
             this.el.height_request = 20;
             this.el.vexpand = false;
-            var child_0 = new Xcls_Button4(_this);
+            var child_0 = new Xcls_Button4( _this );
             child_0.ref();
             this.el.pack_start (  child_0.el , false,false,0 );
-            var child_1 = new Xcls_AutoRedraw(_this);
+            var child_1 = new Xcls_AutoRedraw( _this );
             child_1.ref();
             this.el.pack_start (  child_1.el , false,false,0 );
-            var child_2 = new Xcls_Button6(_this);
+            var child_2 = new Xcls_Button6( _this );
             child_2.ref();
             this.el.pack_start (  child_2.el , false,false,0 );
         }
 
         // userdefined functions 
 
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
-        // skip |height_request - already used 
-
-        // skip |homogeneous - already used 
-
-        // skip |vexpand - already used 
-
         // skip |xns - no return type
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_Button4 : Object 
     {
@@ -175,7 +129,7 @@ public class Xcls_WindowRooView : Object
             // my vars
 
             // ctor 
-        public Xcls_Button4(Xcls_WindowRooView _owner)
+        public Xcls_Button4(Xcls_WindowRooView _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
@@ -193,21 +147,7 @@ public class Xcls_WindowRooView : Object
 
         // userdefined functions 
 
-        // skip listeners - not pipe 
-
-        // skip label - already used 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_AutoRedraw : Object 
     {
@@ -218,7 +158,7 @@ public class Xcls_WindowRooView : Object
             // my vars
 
             // ctor 
-        public Xcls_AutoRedraw(Xcls_WindowRooView _owner)
+        public Xcls_AutoRedraw(Xcls_WindowRooView _owner )
         {
             _this = _owner;
             _this.AutoRedraw = this;
@@ -238,25 +178,7 @@ public class Xcls_WindowRooView : Object
 
         // userdefined functions 
 
-        // skip listeners - not pipe 
-
-        // skip |active - already used 
-
-        // skip id - not pipe 
-
-        // skip label - already used 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_Button6 : Object 
     {
@@ -267,7 +189,7 @@ public class Xcls_WindowRooView : Object
             // my vars
 
             // ctor 
-        public Xcls_Button6(Xcls_WindowRooView _owner)
+        public Xcls_Button6(Xcls_WindowRooView _owner )
         {
             _this = _owner;
             this.el = new Gtk.Button();
@@ -286,21 +208,7 @@ public class Xcls_WindowRooView : Object
 
         // userdefined functions 
 
-        // skip listeners - not pipe 
-
-        // skip label - already used 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_ScrolledWindow7 : Object 
     {
@@ -311,7 +219,7 @@ public class Xcls_WindowRooView : Object
             // my vars
 
             // ctor 
-        public Xcls_ScrolledWindow7(Xcls_WindowRooView _owner)
+        public Xcls_ScrolledWindow7(Xcls_WindowRooView _owner )
         {
             _this = _owner;
             this.el = new Gtk.ScrolledWindow( null, null );
@@ -320,7 +228,7 @@ public class Xcls_WindowRooView : Object
 
             // set gobject values
             this.el.shadow_type = Gtk.ShadowType.IN;
-            var child_0 = new Xcls_view(_this);
+            var child_0 = new Xcls_view( _this );
             child_0.ref();
             this.el.add (  child_0.el  );
 
@@ -331,23 +239,7 @@ public class Xcls_WindowRooView : Object
 
         // userdefined functions 
 
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
-        // skip |init - already used 
-
-        // skip |shadow_type - already used 
-
         // skip |xns - no return type
-
-        // skip items - not pipe 
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_view : Object 
     {
@@ -365,7 +257,7 @@ public class Xcls_WindowRooView : Object
         public string runhtml;
 
             // ctor 
-        public Xcls_view(Xcls_WindowRooView _owner)
+        public Xcls_view(Xcls_WindowRooView _owner )
         {
             _this = _owner;
             _this.view = this;
@@ -471,32 +363,6 @@ public class Xcls_WindowRooView : Object
         }
 
         // userdefined functions 
-
-        // skip listeners - not pipe 
-
-        // skip .GLib.DateTime:lastRedraw - already used 
-
-        // skip .WebKit.WebInspector:inspector - already used 
-
-        // skip .bool:pendingRedraw - already used 
-
-        // skip .bool:refreshRequired - already used 
-
-        // skip .int:redraws - already used 
-
-        // skip .string:renderedData - already used 
-
-        // skip .string:runhtml - already used 
-
-        // skip id - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip redraws - not pipe 
-
-        // skip xtype - not pipe 
-
-        // skip |init - already used 
         public void renderJS(bool force) {
             
                 // this is the public redraw call..
@@ -616,12 +482,6 @@ public class Xcls_WindowRooView : Object
             }
 
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
     public class Xcls_inspectorcontainer : Object 
     {
@@ -632,7 +492,7 @@ public class Xcls_WindowRooView : Object
             // my vars
 
             // ctor 
-        public Xcls_inspectorcontainer(Xcls_WindowRooView _owner)
+        public Xcls_inspectorcontainer(Xcls_WindowRooView _owner )
         {
             _this = _owner;
             _this.inspectorcontainer = this;
@@ -650,22 +510,6 @@ public class Xcls_WindowRooView : Object
 
         // userdefined functions 
 
-        // skip id - not pipe 
-
-        // skip pack - not pipe 
-
-        // skip xtype - not pipe 
-
-        // skip |init - already used 
-
-        // skip |shadow_type - already used 
-
         // skip |xns - no return type
-
-        // skip xvala_cls - not pipe 
-
-        // skip xvala_xcls - not pipe 
-
-        // skip xvala_id - not pipe 
     }
 }
