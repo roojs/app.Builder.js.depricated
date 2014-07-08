@@ -48,8 +48,30 @@ public class Xcls_WindowRooView : Object
     }
 
     // userdefined functions 
-
-    // skip | - no return type
+    public void createThumb(string filename) {
+            
+            
+            
+            var mf = _this.view.el.get_main_frame();
+                        
+            var ar = Gtk.PaperSize.get_paper_sizes();
+            var psetup = new Gtk.PageSetup();
+            for(var i = 0; i < ar.length; i++) {
+                if (ar[i].get_name() =='iso_a4') {
+                    psetup.set_paper_size(ar[i]);
+                }
+            }
+            psetup.set_orientation(Gtk.PageOrientation.LANDSCAPE);
+            
+            var p = new Gtk.PrintOperation();
+            p.export_filename = filename ;
+            
+            p.set_default_page_setup(psetup);
+            mf.print_full(p, Gtk.PrintOperationAction.EXPORT);
+            print("made image - exiting");
+            
+             
+        }
     public void loadFile(JsRender.JsRender file)
         {
             this.file = file;

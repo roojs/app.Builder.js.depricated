@@ -13,7 +13,7 @@ WindowRooView=new XObject({
     xtype: Gtk.VPaned,
     id : "WindowRooView",
     pack : "add",
-     : (string filename) {
+    'void:createThumb' : (string filename) {
         
         
         
