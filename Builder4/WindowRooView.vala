@@ -64,11 +64,20 @@ public class Xcls_WindowRooView : Object
             psetup.set_orientation(Gtk.PageOrientation.LANDSCAPE);
             
             var p = new Gtk.PrintOperation();
-            p.export_filename = filename ;
+            p.export_filename = filename + ".pdf" ;
             
             p.set_default_page_setup(psetup);
             mf.print_full(p, Gtk.PrintOperationAction.EXPORT);
-            print("made image - exiting");
+            var s = new Cairo.PdfSurface(filename + ".pdf", 400,400);
+            
+            s.write_to_png (filename);
+            
+            var f = GLib.File.new_for_path (filename + ".pdf");
+            f.delete();
+            
+            
+        
+        
             
              
         }
