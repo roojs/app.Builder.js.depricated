@@ -17,8 +17,14 @@ WindowRooView=new XObject({
         
         
         
-        var mf = _this.view.el.get_main_frame();
-                    
+        var p = new Webkit.PrintOperation(_this.view.el);
+         
+        var ps = new Gtk.PrintSettings();
+        ps.set("output-file-format", "pdf");
+        ps.set("output-uri", "file://" + filename + ".pdf");
+        
+        
+        
         var ar = Gtk.PaperSize.get_paper_sizes();
         var psetup = new Gtk.PageSetup();
         for(var i = 0; i < ar.length; i++) {
@@ -28,17 +34,25 @@ WindowRooView=new XObject({
         }
         psetup.set_orientation(Gtk.PageOrientation.LANDSCAPE);
         
-        var p = new Gtk.PrintOperation();
-        p.export_filename = filename + ".pdf" ;
+         
+        p.set_page_setup(psetup);
+        p.set_print_settings(ps);
         
-        p.set_default_page_setup(psetup);
-        mf.print_full(p, Gtk.PrintOperationAction.EXPORT);
-        var s = new Cairo.PdfSurface(filename + ".pdf", 400,400);
+        p.finished.connect(() => {
+            var s = new Cairo.PdfSurface(filename + ".pdf", 400,400);
         
-        s.write_to_png (filename);
+            s.write_to_png (filename);
+            
+            var f = GLib.File.new_for_path (filename + ".pdf");
+            f.delete();
+        })
         
-        var f = GLib.File.new_for_path (filename + ".pdf");
-        f.delete();
+        p.print();
+        
+        // should we hold until it's printed...
+        
+          
+    
         
         
     
