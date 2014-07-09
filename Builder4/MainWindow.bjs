@@ -117,7 +117,8 @@
                                                     "|xns": "GtkClutter",
                                                     "items": [
                                                         {
-                                                            "xtype": "VBox",
+                                                            "*prop": "",
+                                                            "xtype": "BoxLayout",
                                                             "|xns": "Clutter"
                                                         }
                                                     ]

@@ -560,9 +560,9 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // set gobject values
-            var child_0 = new Xcls_VBox13( _this );
+            var child_0 = new Xcls_BoxLayout13( _this );
             child_0.ref();
-            this.el.add (  child_0.el  );
+            this.el. = child_0.el;
 
             // init method 
             {
@@ -598,19 +598,19 @@ public class Xcls_MainWindow : Object
 
         // skip |xns - no return type
     }
-    public class Xcls_VBox13 : Object 
+    public class Xcls_BoxLayout13 : Object 
     {
-        public Clutter.VBox el;
+        public Clutter.BoxLayout el;
         private Xcls_MainWindow  _this;
 
 
             // my vars
 
             // ctor 
-        public Xcls_VBox13(Xcls_MainWindow _owner )
+        public Xcls_BoxLayout13(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            this.el = new Clutter.VBox();
+            this.el = new Clutter.BoxLayout();
 
             // my vars
 

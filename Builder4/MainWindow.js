@@ -282,11 +282,9 @@ MainWindow=new XObject({
                                                  
                                                //  this.el.set_size(50,50);
                                             },
-                                            items : [
-                                                {
-                                                    xtype: Clutter.VBox
-                                                }
-                                            ]
+                                             : {
+                                                xtype: Clutter.BoxLayout
+                                            }
                                         },
                                         {
                                             xtype: GtkClutter.Actor,
