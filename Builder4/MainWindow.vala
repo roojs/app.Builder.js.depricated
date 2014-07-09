@@ -89,8 +89,9 @@ public class Xcls_MainWindow : Object
     }
 
     // userdefined functions 
-
-    // skip |hideProjectEdit - no return type
+    public void hideProjectEdit () {
+            // return to editing state..
+        }
     public void hideViewEditing  ( )   {
             
              this.window_rooview.createThumb();

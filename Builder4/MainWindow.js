@@ -26,8 +26,8 @@ MainWindow=new XObject({
     default_width : 800,
     destroy : "() => {\n   Gtk.main_quit();\n}",
     id : "MainWindow",
-    hideProjectEdit : function() {
-        
+    'void:hideProjectEdit' : () {
+        // return to editing state..
     },
     init : this.state = "files";
     	  
