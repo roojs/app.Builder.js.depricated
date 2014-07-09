@@ -37,6 +37,7 @@ public class Xcls_MainWindow : Object
     public Xcls_projecteditbutton projecteditbutton;
 
         // my vars
+    public Xcls_ProjectSetting projectsetting;
     public Project.Project project;
     public Xcls_ClutterFiles clutterfiles;
     public Xcls_LeftProps left_props;
