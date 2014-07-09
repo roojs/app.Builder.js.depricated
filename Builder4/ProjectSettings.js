@@ -14,7 +14,6 @@ ProjectSettings=new XObject({
     border_width : 5,
     id : "ProjectSettings",
     homogeneous : false,
-    pack : get_content_area().add,
     'void:show' : (Project.Project project) {
         _this.project = project;
         // get the active project.
