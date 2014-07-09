@@ -119,7 +119,7 @@ namespace JsRender {
 
 			var dir = GLib.Environment.get_home_dir() + "/.Builder/icons";
 			if (!FileUtils.test(dir, FileTest.IS_DIR)) {
-				 File.new_from_path(dir).make_directory();
+				 File.new_for_path(dir).make_directory();
 			}
 			var fname = dir + "/" + m5 + ".png";
 			
