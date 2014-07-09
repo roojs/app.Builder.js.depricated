@@ -39,11 +39,16 @@
                     "|xns": "Gtk",
                     "items": [
                         {
+                            "label": "Apply",
                             "pack": false,
                             "xtype": "Button",
-                            "|xns": "Gtk",
-                            "label": "",
-                            "listeners": {}
+                            "|xns": "Gtk"
+                        },
+                        {
+                            "label": "Apply",
+                            "pack": false,
+                            "xtype": "Button",
+                            "|xns": "Gtk"
                         }
                     ]
                 }

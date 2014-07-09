@@ -153,6 +153,8 @@ public class Xcls_ProjectSettings : Object
             // set gobject values
             var child_0 = new Xcls_Button6( _this );
             child_0.ref();
+            var child_1 = new Xcls_Button7( _this );
+            child_1.ref();
         }
 
         // userdefined functions 
@@ -176,9 +178,31 @@ public class Xcls_ProjectSettings : Object
             // my vars
 
             // set gobject values
-            this.el.label = "";
+            this.el.label = "Apply";
+        }
 
-            // listeners 
+        // userdefined functions 
+
+        // skip |xns - no return type
+    }
+    public class Xcls_Button7 : Object 
+    {
+        public Gtk.Button el;
+        private Xcls_ProjectSettings  _this;
+
+
+            // my vars
+
+            // ctor 
+        public Xcls_Button7(Xcls_ProjectSettings _owner )
+        {
+            _this = _owner;
+            this.el = new Gtk.Button();
+
+            // my vars
+
+            // set gobject values
+            this.el.label = "Apply";
         }
 
         // userdefined functions 
