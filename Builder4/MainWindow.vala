@@ -89,8 +89,8 @@ public class Xcls_MainWindow : Object
     }
 
     // userdefined functions 
-    public void showProjectEditfunction() {
-            
+    public void showProjectEdit () {
+            // make the browser smaller, and show the edit dialog
         }
     public void hideViewEditing  ( )   {
             

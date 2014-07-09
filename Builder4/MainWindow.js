@@ -26,8 +26,8 @@ MainWindow=new XObject({
     default_width : 800,
     destroy : "() => {\n   Gtk.main_quit();\n}",
     id : "MainWindow",
-    'void:showProjectEdit' : function() {
-        
+    'void:showProjectEdit' : () {
+        // make the browser smaller, and show the edit dialog
     },
     init : //this.el.show_all();,
     type : Gtk.WindowType.TOPLEVEL,
