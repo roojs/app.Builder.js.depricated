@@ -45,6 +45,8 @@ public class Xcls_ClutterFiles : Object
 
         // init method 
         this.fileitems = new Gee.ArrayList<Xcls_fileitem>();
+
+        // listeners 
     }
 
     // userdefined functions 
@@ -88,6 +90,8 @@ public class Xcls_ClutterFiles : Object
         }
 
     // skip |xns - no return type
+
+    // skip | - no return type
     public class Xcls_filelayout : Object 
     {
         public Clutter.Actor el;
