@@ -28,6 +28,7 @@ ClutterFiles=new XObject({
         this.clearFiles();
         
         print("clutter files - load project: " + pr.name +"\n");
+        // should unref.. them hopefully.
         this.fileitems = new Gee.ArrayList<Xcls_fileitem>();
     
         var fiter = pr.files.map_iterator();
