@@ -36,7 +36,16 @@
                 {
                     "pack": "pack_end,true,true,0",
                     "xtype": "HBox",
-                    "|xns": "Gtk"
+                    "|xns": "Gtk",
+                    "items": [
+                        {
+                            "pack": false,
+                            "xtype": "Button",
+                            "|xns": "Gtk",
+                            "label": "",
+                            "listeners": {}
+                        }
+                    ]
                 }
             ]
         }

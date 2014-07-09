@@ -44,7 +44,14 @@ ProjectSettings=new XObject({
         },
         {
             xtype: Gtk.HBox,
-            pack : "pack_end,true,true,0"
+            pack : "pack_end,true,true,0",
+            items : [
+                {
+                    xtype: Gtk.Button,
+                    pack : false,
+                    label : ""
+                }
+            ]
         }
     ]
 });
