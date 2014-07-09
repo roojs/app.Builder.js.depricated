@@ -7,7 +7,7 @@
     "items": [
         {
             ".signal:void:open": "(JsRender.JsRender file)",
-            "Gee.ArrayList<Xcls_fileitem>:fileitems": "",
+            ".Gee.ArrayList<Xcls_fileitem>:fileitems": "",
             "id": "ClutterFiles",
             "scroll_mode": "Clutter.ScrollMode.VERTICAL",
             "xtype": "ScrollActor",
