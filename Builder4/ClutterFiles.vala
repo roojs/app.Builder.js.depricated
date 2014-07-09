@@ -43,11 +43,11 @@ public class Xcls_ClutterFiles : Object
         var child_0 = new Xcls_filelayout( _this );
         child_0.ref();
         this.el.add_child (  child_0.el  );
-
-        // listeners 
     }
 
     // userdefined functions 
+
+    // skip | - no return type
     public void clearFiles() {
             
             this.filelayout.el.remove_all_children();
@@ -83,8 +83,6 @@ public class Xcls_ClutterFiles : Object
         }
 
     // skip |xns - no return type
-
-    // skip | - no return type
     public class Xcls_filelayout : Object 
     {
         public Clutter.Actor el;

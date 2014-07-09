@@ -13,6 +13,7 @@ ClutterFiles=new XObject({
     xtype: Clutter.ScrollActor,
     id : "ClutterFiles",
     scroll_mode : "Clutter.ScrollMode.VERTICAL",
+     : this.fileitems = new Gee.ArrayList<Xcls_fileitem>();,
     reactive : true,
     'void:clearFiles' : () {
         
@@ -46,9 +47,6 @@ ClutterFiles=new XObject({
        this.el.set_size(this.el.get_stage().width-150,
                             this.el.get_stage().height);
                 this.el.set_position(100,50);
-    },
-     : function() {
-        
     },
     items : [
         {
