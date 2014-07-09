@@ -638,6 +638,7 @@ public class Xcls_MainWindow : Object
             this.el.reactive = true;
             var child_0 = new Xcls_Text15( _this );
             child_0.ref();
+            this.el.add_child (  child_0.el  );
 
             // init method 
             this.el.set_size(50,50);
@@ -669,7 +670,7 @@ public class Xcls_MainWindow : Object
         public Xcls_Text15(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            this.el = ;
+            this.el = new Clutter.Text.full("Sans 10px","Project Edit",new Clutter.Color.from_string("#fff"));
 
             // my vars
 

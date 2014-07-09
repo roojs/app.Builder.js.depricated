@@ -134,8 +134,8 @@
                                                             "|xns": "Clutter",
                                                             "items": [
                                                                 {
-                                                                    ".ctor": "",
-                                                                    "pack": false,
+                                                                    "pack": "add_child",
+                                                                    ".ctor": "new Clutter.Text.full(\"Sans 10px\",\"Project Edit\",new Clutter.Color.from_string(\"#fff\"))",
                                                                     "xtype": "Text",
                                                                     "|xns": "Clutter"
                                                                 }

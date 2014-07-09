@@ -291,7 +291,7 @@ MainWindow=new XObject({
                                                     items : [
                                                         {
                                                             xtype: Clutter.Text,
-                                                            pack : false
+                                                            pack : "add_child"
                                                         }
                                                     ]
                                                 }
