@@ -727,11 +727,7 @@ public class Xcls_MainWindow : Object
             } );
             this.el.button_press_event.connect(   ( ) => {
                  
-                if (_this.is_editing) { 
-                    _this.hideViewEditing();
-                } else {
-                    _this.showViewEditing();
-                }
+                  _this.showProjectEdit();
                     
             
             } );
