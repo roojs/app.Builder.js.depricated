@@ -106,8 +106,8 @@ MainWindow=new XObject({
         
        
         // roo view
-        this.window_rooview  =new Xcls_WindowRooView();
-        this.window_rooview.ref();
+        this.window_projectsettings  =new Xcls_ProjectSettings();
+        this.window_projectsettings.ref();
         ((Gtk.Container)(this.rooview.el.get_widget())).add(this.window_rooview.el);
         this.window_rooview.el.show_all();
     
@@ -117,7 +117,15 @@ MainWindow=new XObject({
         
         // project edit..
         
+         this.window_rooview  =new Xcls_WindowRooView();
+        this.window_rooview.ref();
+        ((Gtk.Container)(this.rooview.el.get_widget())).add(this.window_rooview.el);
+        this.window_rooview.el.show_all();
+    
+        var stage = _this.rooview.el.get_stage();
+        stage.set_background_color(  Clutter.Color.from_string("#000"));
         
+       
         
         // clutter files
         
