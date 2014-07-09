@@ -51,7 +51,10 @@
                             "label": "Apply",
                             "pack": "add",
                             "xtype": "Button",
-                            "|xns": "Gtk"
+                            "|xns": "Gtk",
+                            "listeners": {
+                                "button_press_event": "function (self, event) {\n\n}"
+                            }
                         },
                         {
                             "pack": "add",

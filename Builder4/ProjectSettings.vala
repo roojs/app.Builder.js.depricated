@@ -213,6 +213,11 @@ public class Xcls_ProjectSettings : Object
 
             // set gobject values
             this.el.label = "Apply";
+
+            // listeners 
+            this.el.button_press_event.connect( function (self, event) {
+            
+            } );
         }
 
         // userdefined functions 
