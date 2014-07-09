@@ -105,9 +105,9 @@ MainWindow=new XObject({
         });
         
        
-        // roo view
-        this.window_projectsettings  =new Xcls_ProjectSettings();
-        this.window_projectsettings.ref();  /// really?
+        // project edit..
+        this.projectsettings  =new Xcls_ProjectSettings();
+        this.projectsettings.ref();  /// really?
         ((Gtk.Container)(this.projecteditiew.el.get_widget())).add(this.window_rooview.el);
         //this.window_projectsettings.el.show_all();
     
@@ -115,7 +115,7 @@ MainWindow=new XObject({
         stage.set_background_color(  Clutter.Color.from_string("#000"));
         
         
-        // project edit..
+        //  roo view
         
          this.window_rooview  =new Xcls_WindowRooView();
         this.window_rooview.ref();
