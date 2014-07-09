@@ -47,6 +47,9 @@ ClutterFiles=new XObject({
                             this.el.get_stage().height);
                 this.el.set_position(100,50);
     },
+     : function() {
+        
+    },
     items : [
         {
             xtype: Clutter.Actor,
