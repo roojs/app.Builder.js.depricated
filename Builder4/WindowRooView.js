@@ -13,9 +13,13 @@ WindowRooView=new XObject({
     xtype: Gtk.VPaned,
     id : "WindowRooView",
     pack : "add",
-    'void:createThumb' : (string filename) {
+    'void:createThumb' : () {
         
         
+        if (this.file == null) {
+            return;
+        }
+        var filename = this.file.getIconFileName(false);
         
         var p = new WebKit.PrintOperation(_this.view.el);
          
