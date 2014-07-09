@@ -161,10 +161,10 @@
                                                             "|xns": "Clutter",
                                                             "items": [
                                                                 {
-                                                                    ".ctor": "new Clutter.Text.full(\"Sans 10px\",\"Project Edit\",new Clutter.Color.from_string(\"#fff\"))",
+                                                                    ".ctor": "new Clutter.Text.full(\"Sans 10px\",\"Edit\\nProject\\nDetails\",new Clutter.Color.from_string(\"#fff\"))",
                                                                     "pack": "add_child",
                                                                     "xtype": "Text",
-                                                                    "|x_align": "Clutter.ActorAlign.START",
+                                                                    "|x_align": "Clutter.ActorAlign.CENTER",
                                                                     "|x_expand": "true",
                                                                     "|xns": "Clutter",
                                                                     "|y_align": "Clutter.ActorAlign.CENTER",

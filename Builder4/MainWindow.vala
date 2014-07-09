@@ -749,12 +749,12 @@ public class Xcls_MainWindow : Object
         public Xcls_Text17(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            this.el = new Clutter.Text.full("Sans 10px","Project Edit",new Clutter.Color.from_string("#fff"));
+            this.el = new Clutter.Text.full("Sans 10px","Edit\nProject\nDetails",new Clutter.Color.from_string("#fff"));
 
             // my vars
 
             // set gobject values
-            this.el.x_align = Clutter.ActorAlign.START;
+            this.el.x_align = Clutter.ActorAlign.CENTER;
             this.el.x_expand = true;
             this.el.y_align = Clutter.ActorAlign.CENTER;
             this.el.y_expand = true;
