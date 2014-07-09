@@ -654,6 +654,16 @@ public class Xcls_MainWindow : Object
                 this.el.background_color = new Clutter.Color.from_string("#000");
                 return false;
             } );
+            this.el.button_press_event.connect(   ( ) => {
+                 
+                if (_this.is_editing) { 
+                    _this.hideViewEditing();
+                } else {
+                    _this.showViewEditing();
+                }
+                    
+            
+            } );
         }
 
         // userdefined functions 

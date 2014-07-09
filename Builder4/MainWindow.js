@@ -283,6 +283,16 @@ MainWindow=new XObject({
                                                         leave_event : (  event)  => {
                                                             this.el.background_color = new Clutter.Color.from_string("#000");
                                                             return false;
+                                                        },
+                                                        button_press_event : ( ) => {
+                                                             
+                                                            if (_this.is_editing) { 
+                                                                _this.hideViewEditing();
+                                                            } else {
+                                                                _this.showViewEditing();
+                                                            }
+                                                                
+                                                        
                                                         }
                                                     },
                                                     id : "projectbutton",
