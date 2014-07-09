@@ -21,7 +21,7 @@ WindowRooView=new XObject({
         }
         var filename = this.file.getIconFileName(false);
         
-        win = this.el.get_parent_window();
+       var  win = this.el.get_parent_window();
         var width = win.get_width();
         var height = win.get_height();
     
