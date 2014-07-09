@@ -47,8 +47,8 @@ WindowRooView=new XObject({
         
             s.write_to_png (filename);
             
-            var f = GLib.File.new_for_path (filename + ".pdf");
-            f.delete();
+           // var f = GLib.File.new_for_path (filename + ".pdf");
+           // f.delete();
         });
         
         p.print();
