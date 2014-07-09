@@ -59,7 +59,14 @@ ProjectSettings=new XObject({
                     xtype: Gtk.Button,
                     listeners : {
                         button_press_event : () => {
-                            _this.project.runhtml =   _this.view.el.get_buffer().get_text();
+                            var buf =    _this.view.el.get_buffer();
+                           Gtk.TextIter s;
+                             Gtk.TextIter e;
+                            buf.get_start_iter(out s);
+                            buf.get_end_iter(out e);
+                              _this.project.runhtml = buf.get_text(s,e,true);
+                            
+                                  
                             _this.buttonPressed("apply");
                         }
                     },
@@ -70,7 +77,14 @@ ProjectSettings=new XObject({
                     xtype: Gtk.Button,
                     listeners : {
                         button_press_event : () => {
-                            _this.project.runhtml = "";
+                            var buf =    _this.view.el.get_buffer();
+                           Gtk.TextIter s;
+                             Gtk.TextIter e;
+                            buf.get_start_iter(out s);
+                            buf.get_end_iter(out e);
+                              _this.project.runhtml = buf.get_text(s,e,true);
+                            
+                                  
                             _this.buttonPressed("save");
                         }
                     },
