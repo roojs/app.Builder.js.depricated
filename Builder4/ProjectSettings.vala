@@ -186,8 +186,8 @@ public class Xcls_ProjectSettings : Object
             this.el.label = "Cancel";
 
             // listeners 
-            this.el.button_press_event.connect( function (self, event) {
-            
+            this.el.button_press_event.connect( () => {
+                _this.buttonPressed("cancel");
             } );
         }
 

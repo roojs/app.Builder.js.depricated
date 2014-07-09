@@ -39,13 +39,13 @@
                     "|xns": "Gtk",
                     "items": [
                         {
+                            "listeners": {
+                                "button_press_event": "() => {\n    _this.buttonPressed(\"cancel\");\n}"
+                            },
                             "label": "Cancel",
                             "pack": "add",
                             "xtype": "Button",
-                            "|xns": "Gtk",
-                            "listeners": {
-                                "button_press_event": "function (self, event) {\n\n}"
-                            }
+                            "|xns": "Gtk"
                         },
                         {
                             "label": "Apply",
