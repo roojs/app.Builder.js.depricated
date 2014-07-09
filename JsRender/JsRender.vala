@@ -114,8 +114,8 @@ namespace JsRender {
 		
 		public string getIconFileName(bool return_default = true)
 		{
-			var checksum = new GLib.Checksum (GLib.ChecksumType.MD5);
-			var m5 = GLib.Checksum.compute_for_string(this.path); 
+			 
+			var m5 = GLib.Checksum.compute_for_string(GLib.ChecksumType.MD5,this.path); 
 
 			var dir = GLib.Environment.get_home_dir() + "/.Builder/icons";
 			if (!FileUtils.test(dir, FileTest.IS_DIR)) {
