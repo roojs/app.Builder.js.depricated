@@ -26,7 +26,6 @@ public class Xcls_ClutterFiles : Object
     public Xcls_filelayout_manager filelayout_manager;
 
         // my vars
-    public Gee.ArrayList fileitems<Xcls_fileitem>;
     public signal void open(JsRender.JsRender file);
 
         // ctor 
@@ -43,11 +42,14 @@ public class Xcls_ClutterFiles : Object
         var child_0 = new Xcls_filelayout( _this );
         child_0.ref();
         this.el.add_child (  child_0.el  );
+
+        // init method 
+        this.fileitems = new Gee.ArrayList<Xcls_fileitem>();
     }
 
     // userdefined functions 
 
-    // skip | - no return type
+    // skip |xns - no return type
     public void clearFiles() {
             
             this.filelayout.el.remove_all_children();
@@ -86,8 +88,6 @@ public class Xcls_ClutterFiles : Object
                                 this.el.get_stage().height);
                     this.el.set_position(100,50);
         }
-
-    // skip |xns - no return type
     public class Xcls_filelayout : Object 
     {
         public Clutter.Actor el;
