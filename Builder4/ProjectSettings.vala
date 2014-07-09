@@ -31,7 +31,7 @@ public class Xcls_ProjectSettings : Object
     {
         _this = this;
         ProjectSettings = this;
-        this.el = new Gtk.VBox( true, 0 );
+        this.el = new Gtk.VBox( false, 0 );
 
         // my vars
 
@@ -49,8 +49,6 @@ public class Xcls_ProjectSettings : Object
     }
 
     // userdefined functions 
-
-    // skip |xns - no return type
     public void show (Project.Project project) {
             _this.project = project;
             // get the active project.
@@ -61,6 +59,8 @@ public class Xcls_ProjectSettings : Object
             
             this.el.show_all();
         }
+
+    // skip |xns - no return type
     public class Xcls_Label2 : Object 
     {
         public Gtk.Label el;

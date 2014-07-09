@@ -12,6 +12,7 @@ XObject = imports.XObject.XObject;
 ProjectSettings=new XObject({
     xtype: Gtk.VBox,
     border_width : 5,
+    homogeneous : false,
     id : "ProjectSettings",
     pack : get_content_area().add,
     'void:show' : (Project.Project project) {
