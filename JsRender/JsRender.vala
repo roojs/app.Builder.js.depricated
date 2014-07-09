@@ -112,7 +112,7 @@ namespace JsRender {
 		}
 
 		
-		public string getIconFileName(bool return_default = true)
+		public string getIconFileName(bool return_default)
 		{
 			 
 			var m5 = GLib.Checksum.compute_for_string(GLib.ChecksumType.MD5,this.path); 
