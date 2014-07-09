@@ -635,6 +635,7 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // set gobject values
+            this.el.reactive = true;
 
             // init method 
             this.el.set_size(50,50);

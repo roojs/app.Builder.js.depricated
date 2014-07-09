@@ -124,6 +124,7 @@
                                                         },
                                                         {
                                                             "pack": false,
+                                                            "|reactive": "true",
                                                             "xtype": "Actor",
                                                             "|init": "this.el.set_size(50,50);",
                                                             "|xns": "Clutter"
