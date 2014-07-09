@@ -280,8 +280,9 @@ MainWindow=new XObject({
                                                             this.el.background_color = new Clutter.Color.from_string("#333");
                                                                 return false;
                                                         },
-                                                        leave_event : function (self, event) {
-                                                        
+                                                        leave_event : (  event)  => {
+                                                            this.el.background_color = new Clutter.Color.from_string("#000");
+                                                            return false;
                                                         }
                                                     },
                                                     pack : false,
