@@ -284,8 +284,7 @@ MainWindow=new XObject({
                                             },
                                             items : [
                                                 {
-                                                    xtype: Clutter.VBox,
-                                                    pack : false
+                                                    xtype: Clutter.VBox
                                                 }
                                             ]
                                         },
