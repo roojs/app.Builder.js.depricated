@@ -26,7 +26,7 @@ all:
 		Builder4/DialogTemplateSelect.vala \
 		Builder4/EditProject.vala \
 		Builder4/Editor.vala \
-		Builder4/RooProjectProperties.vala \
+		Builder4/ProjectEdit.vala \
 		Builder4/MainWindow.vala \
 		Builder4/WindowRightPalete.vala \
 		Builder4/WindowLeftTree.vala \
