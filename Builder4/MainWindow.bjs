@@ -137,12 +137,11 @@
                                                                 {
                                                                     ".ctor": "new Clutter.Text.full(\"Sans 10px\",\"Project Edit\",new Clutter.Color.from_string(\"#fff\"))",
                                                                     "pack": "add_child",
-                                                                    "|x_expand": "true",
                                                                     "xtype": "Text",
+                                                                    "y_align": "Clutter.ActorAlign.CENTER",
                                                                     "|x_align": "Clutter.ActorAlign.START",
-                                                                    "|xns": "Clutter",
-                                                                    "y_align": "",
-                                                                    "listeners": {}
+                                                                    "|x_expand": "true",
+                                                                    "|xns": "Clutter"
                                                                 }
                                                             ]
                                                         }
