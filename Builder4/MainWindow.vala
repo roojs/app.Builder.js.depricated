@@ -89,8 +89,9 @@ public class Xcls_MainWindow : Object
     }
 
     // userdefined functions 
-
-    // skip | - no return type
+    public void showProjectEditfunction() {
+            
+        }
     public void hideViewEditing  ( )   {
             
              this.window_rooview.createThumb();
