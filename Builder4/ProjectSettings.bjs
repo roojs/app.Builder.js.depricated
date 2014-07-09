@@ -45,6 +45,7 @@
                             "|xns": "Gtk"
                         },
                         {
+                            "xpack": "add",
                             "label": "Apply",
                             "xtype": "Button",
                             "|xns": "Gtk"
