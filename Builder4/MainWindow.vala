@@ -599,7 +599,7 @@ public class Xcls_MainWindow : Object
     }
     public class Xcls_VBox13 : Object 
     {
-        public Gtk.VBox el;
+        public Clutter.VBox el;
         private Xcls_MainWindow  _this;
 
 
@@ -609,7 +609,7 @@ public class Xcls_MainWindow : Object
         public Xcls_VBox13(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            this.el = new Gtk.VBox( true, 0 );
+            this.el = new Clutter.VBox();
 
             // my vars
 

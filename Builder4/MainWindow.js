@@ -284,7 +284,7 @@ MainWindow=new XObject({
                                             },
                                             items : [
                                                 {
-                                                    xtype: Gtk.VBox,
+                                                    xtype: Clutter.VBox,
                                                     pack : false
                                                 }
                                             ]
