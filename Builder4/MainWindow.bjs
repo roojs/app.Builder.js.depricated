@@ -136,7 +136,7 @@
                                                     "items": [
                                                         {
                                                             "listeners": {
-                                                                "clicked": "  ( ) => {\n     \n    if (_this.is_editing) { \n        _this.hideViewEditing();\n    } else {\n        _this.showViewEditing();\n    }\n        \n\n}"
+                                                                "clicked": "  ( ) => {\n     _this.showProjectEdit();\n        \n\n}"
                                                             },
                                                             "label": "PE",
                                                             "pack": false,

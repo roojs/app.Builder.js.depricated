@@ -312,12 +312,7 @@ MainWindow=new XObject({
                                                     xtype: Gtk.Button,
                                                     listeners : {
                                                         clicked : ( ) => {
-                                                             
-                                                            if (_this.is_editing) { 
-                                                                _this.hideViewEditing();
-                                                            } else {
-                                                                _this.showViewEditing();
-                                                            }
+                                                             _this.showProjectEdit();
                                                                 
                                                         
                                                         }

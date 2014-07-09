@@ -686,12 +686,7 @@ public class Xcls_MainWindow : Object
 
             // listeners 
             this.el.clicked.connect(   ( ) => {
-                 
-                if (_this.is_editing) { 
-                    _this.hideViewEditing();
-                } else {
-                    _this.showViewEditing();
-                }
+                 _this.showProjectEdit();
                     
             
             } );
