@@ -130,7 +130,7 @@ namespace JsRender {
 			if (FileUtils.test(fname, FileTest.EXISTS)) {
 				return fname;
 			}
-			
+			// we need to create this somehow...
 			return  GLib.Environment.get_home_dir() + "/.Builder/test.jpg";
 
 		}
