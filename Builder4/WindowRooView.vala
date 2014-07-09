@@ -78,6 +78,7 @@ public class Xcls_WindowRooView : Object
             p.set_print_settings(ps);
             
             p.finished.connect(() => {
+                print("creating thumbnail for " + filename + ".pdf\n")
                 var s = new Cairo.PdfSurface(filename + ".pdf", 400,400);
             
                 s.write_to_png (filename);
