@@ -638,7 +638,7 @@ public class Xcls_MainWindow : Object
                     
                 //this.el.set_position(100,100);
                 this.el.set_pivot_point(0.0f,0.0f);
-                
+                this.el.set_scale(1.0f,0.0f);
                 this.el.set_size(_this.clutterembed.el.get_stage().width-50,
                         _this.clutterembed.el.get_stage().height /2);
                         
