@@ -94,12 +94,24 @@ namespace JsRender {
 		    return generator.to_data(null);
 		}
 	
+		public string nickType()
+		{
+			var ar = this.name.split(".");
+			string[] ret = {};
+			for (var i =0; i < ar.length -1; i++) {
+				ret += ar[i];
+			}
+			return string.joinv(".", ret);
+			
+		}
 		public string nickName()
 		{
 			var ar = this.name.split(".");
 			return ar[ar.length-1];
 			
 		}
+
+		
 		public string getIconFile()
 		{
 			return  GLib.Environment.get_home_dir() + "/.Builder/test.jpg";
