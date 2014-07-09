@@ -1,0 +1,42 @@
+{
+    "id": "file-gtk-8",
+    "name": "RooProjectProperties",
+    "parent": "",
+    "title": false,
+    "path": "/home/alan/gitlive/app.Builder.js/Builder4/RooProjectProperties.bjs",
+   
+        {
+            "border_width": 5,
+            "xtype": "VBox",
+            "|pack": " get_content_area().add\n",
+            "|xns": "Gtk",
+            "|void:show": " (Project.Project project) {\n    _this.project = project;\n    // get the active project.\n    \n    //print (project.fn);\n    //project.runhtml = project.runhtml || '';\n    _this.view.el.get_buffer().set_text(project.runhtml);\n    \n    this.el.show_all();\n}\n",
+    
+            "items": [
+                {
+                    "|xns": "Gtk",
+                    "xtype": "Label",
+                    "pack": "pack_start,false,false,0",
+                    "label": "HTML To insert at end of <HEAD>"
+                },
+                {
+                    "|xns": "Gtk",
+                    "xtype": "ScrolledWindow",
+                    "pack": "pack_end,true,true,0",
+                    "items": [
+                        {
+                            "|xns": "GtkSource",
+                            "xtype": "View",
+                            "pack": "add",
+                            "id": "view"
+                        }
+                    ]
+                }
+            ]
+        } 
+                
+        
+    ],
+    "permname": "",
+    "modOrder": ""
+}
