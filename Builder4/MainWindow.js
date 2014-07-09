@@ -180,7 +180,7 @@ MainWindow=new XObject({
          
         //this.rooview.el.hide();
         this.projectsettings.el.show_all();
-    
+        this.projectsettings.show(this.project);
         _this.projecteditview.el.save_easing_state();
             
         var el = _this.rooview.el;
