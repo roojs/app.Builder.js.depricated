@@ -108,10 +108,10 @@ MainWindow=new XObject({
         // project edit..
         this.projectsettings  =new Xcls_ProjectSettings();
         this.projectsettings.ref();  /// really?
-        ((Gtk.Container)(this.projecteditiew.el.get_widget())).add(this.projectsettings.el);
+        ((Gtk.Container)(this.projecteditview.el.get_widget())).add(this.projectsettings.el);
         //this.projectsettings.el.show_all();
     
-        var stage = _this.projecteditiew.el.get_stage();
+        var stage = _this.projecteditview.el.get_stage();
         stage.set_background_color(  Clutter.Color.from_string("#000"));
         
         
