@@ -253,7 +253,7 @@ MainWindow=new XObject({
                                         },
                                         {
                                             xtype: GtkClutter.Actor,
-                                            id : "projectbutton",
+                                            id : "buttonlayout",
                                             pack : "get_stage().add_child",
                                             init : {
                                                 
@@ -281,29 +281,7 @@ MainWindow=new XObject({
                                               ///          _this.clutterembed.el.get_stage().height * 0.1f);
                                                  
                                                //  this.el.set_size(50,50);
-                                            },
-                                            items : [
-                                                {
-                                                    xtype: Gtk.Button,
-                                                    listeners : {
-                                                        clicked : ( ) => {
-                                                             
-                                                            if (_this.is_editing) { 
-                                                                _this.hideViewEditing();
-                                                            } else {
-                                                                _this.showViewEditing();
-                                                            }
-                                                                
-                                                        
-                                                        }
-                                                    },
-                                                    label : "P",
-                                                    pack : false,
-                                                    init : {
-                                                        ((Gtk.Container)(_this.projectbutton.el.get_widget())).add(this.el);
-                                                    }
-                                                }
-                                            ]
+                                            }
                                         },
                                         {
                                             xtype: GtkClutter.Actor,
