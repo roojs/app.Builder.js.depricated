@@ -241,7 +241,7 @@ public class Xcls_MainWindow : Object
              
              
             //this.rooview.el.hide();
-             //this.edit_project.el.show();
+            this.projectsettings.el.show_all();
             
             var el = _this.rooview.el;
             el.save_easing_state();
@@ -249,8 +249,10 @@ public class Xcls_MainWindow : Object
             
             el.set_scale(1.0f,0.5f);
            
+            
+           
             _this.state = "projectedit";
-        
+            projecteditview
          
             //_this.clutterfiles.loadProject(_this.project);
         

@@ -179,7 +179,7 @@ MainWindow=new XObject({
          
          
         //this.rooview.el.hide();
-         //this.edit_project.el.show();
+        this.projectsettings.el.show_all();
         
         var el = _this.rooview.el;
         el.save_easing_state();
@@ -187,8 +187,10 @@ MainWindow=new XObject({
         
         el.set_scale(1.0f,0.5f);
        
+        
+       
         _this.state = "projectedit";
-    
+        projecteditview
      
         //_this.clutterfiles.loadProject(_this.project);
     
