@@ -677,7 +677,7 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // set gobject values
-            this.el.x_align = "Clutter.ActorAlign.START";
+            this.el.x_align = Clutter.ActorAlign.START;
         }
 
         // userdefined functions 
