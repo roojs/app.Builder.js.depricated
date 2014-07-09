@@ -6,14 +6,13 @@
     "path": "/home/alan/gitlive/app.Builder.js/Builder4/ProjectSettings.bjs",
     "items": [
         {
+            ".Project.Project:project": "",
             "border_width": 5,
             "id": "ProjectSettings",
             "xtype": "VBox",
             "|homogeneous": "false",
             "|void:show": " (Project.Project project) {\n    _this.project = project;\n    // get the active project.\n    \n    //print (project.fn);\n    //project.runhtml = project.runhtml || '';\n    _this.view.el.get_buffer().set_text(project.runhtml);\n    \n    //this.el.show_all();\n}\n",
             "|xns": "Gtk",
-            "": "",
-            "listeners": {},
             "items": [
                 {
                     "|xns": "Gtk",

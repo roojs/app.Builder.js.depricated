@@ -25,6 +25,7 @@ public class Xcls_ProjectSettings : Object
     public Xcls_view view;
 
         // my vars
+    public Project.Project project;
 
         // ctor 
     public Xcls_ProjectSettings()
@@ -46,8 +47,6 @@ public class Xcls_ProjectSettings : Object
         var child_2 = new Xcls_HBox5( _this );
         child_2.ref();
         this.el.pack_end (  child_2.el , true,true,0 );
-
-        // listeners 
     }
 
     // userdefined functions 
