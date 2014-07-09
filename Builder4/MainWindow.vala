@@ -635,6 +635,13 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // set gobject values
+
+            // init method 
+            function() {
+                XObject.prototype.init.call(this);
+            }
+
+            // listeners 
         }
 
         // userdefined functions 

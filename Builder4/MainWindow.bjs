@@ -123,9 +123,11 @@
                                                             "|xns": "Clutter"
                                                         },
                                                         {
-                                                            "|xns": "Clutter",
+                                                            "pack": false,
                                                             "xtype": "Actor",
-                                                            "pack": false
+                                                            "|xns": "Clutter",
+                                                            "|init": "function() {\n    XObject.prototype.init.call(this);\n}\n",
+                                                            "listeners": {}
                                                         }
                                                     ]
                                                 },

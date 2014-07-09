@@ -275,7 +275,10 @@ MainWindow=new XObject({
                                             items : [
                                                 {
                                                     xtype: Clutter.Actor,
-                                                    pack : false
+                                                    pack : false,
+                                                    init : function() {
+                                                        XObject.prototype.init.call(this);
+                                                    }
                                                 }
                                             ],
                                             layout_manager : {
