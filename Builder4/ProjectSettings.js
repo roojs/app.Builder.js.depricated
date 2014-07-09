@@ -58,7 +58,7 @@ ProjectSettings=new XObject({
                 },
                 {
                     xtype: Gtk.Button,
-                    label : "Apply",
+                    label : "Save",
                     pack : false
                 }
             ]

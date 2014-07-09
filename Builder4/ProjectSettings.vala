@@ -228,7 +228,7 @@ public class Xcls_ProjectSettings : Object
             // my vars
 
             // set gobject values
-            this.el.label = "Apply";
+            this.el.label = "Save";
         }
 
         // userdefined functions 

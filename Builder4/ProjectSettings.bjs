@@ -51,7 +51,7 @@
                             "|xns": "Gtk"
                         },
                         {
-                            "label": "Apply",
+                            "label": "Save",
                             "pack": false,
                             "xtype": "Button",
                             "|xns": "Gtk"
