@@ -105,7 +105,7 @@ public class Xcls_MainWindow : Object
             el.set_scale(0.0f,0.0f);
             _this.is_editing = false;
         
-            _this.clutterfiles.show(_this.project);
+            _this.clutterfiles.loadProject(_this.project);
         
             el.restore_easing_state();
                 
