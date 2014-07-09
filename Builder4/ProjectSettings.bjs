@@ -33,10 +33,9 @@
                     ]
                 },
                 {
+                    "xpack": "",
                     "xtype": "HBox",
-                    "|xns": "Gtk",
-                    "": "",
-                    "listeners": {}
+                    "|xns": "Gtk"
                 }
             ]
         }

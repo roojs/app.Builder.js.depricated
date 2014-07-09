@@ -43,7 +43,7 @@ ProjectSettings=new XObject({
         },
         {
             xtype: Gtk.HBox,
-             : ""
+            xpack : ""
         }
     ]
 });
