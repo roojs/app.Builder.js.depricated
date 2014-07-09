@@ -570,6 +570,7 @@ public class Xcls_MainWindow : Object
             this.el.layout_manager = child_0.el;
             var child_1 = new Xcls_projectbutton( _this );
             child_1.ref();
+            this.el.add (  child_1.el  );
 
             // init method 
             {

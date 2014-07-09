@@ -295,8 +295,8 @@ MainWindow=new XObject({
                                                         
                                                         }
                                                     },
+                                                    xpack : "",
                                                     id : "projectbutton",
-                                                    pack : false,
                                                     init : this.el.set_size(50,50);,
                                                     reactive : true,
                                                     items : [
