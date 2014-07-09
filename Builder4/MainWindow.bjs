@@ -134,11 +134,10 @@
                                                             "|xns": "Clutter",
                                                             "items": [
                                                                 {
+                                                                    ".ctor": "",
                                                                     "pack": false,
                                                                     "xtype": "Text",
-                                                                    "|xns": "Clutter",
-                                                                    "": "",
-                                                                    "listeners": {}
+                                                                    "|xns": "Clutter"
                                                                 }
                                                             ]
                                                         }

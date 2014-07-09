@@ -669,13 +669,11 @@ public class Xcls_MainWindow : Object
         public Xcls_Text15(Xcls_MainWindow _owner )
         {
             _this = _owner;
-            this.el = new Clutter.Text();
+            this.el = ;
 
             // my vars
 
             // set gobject values
-
-            // listeners 
         }
 
         // userdefined functions 
