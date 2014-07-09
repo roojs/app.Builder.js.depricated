@@ -309,9 +309,9 @@ MainWindow=new XObject({
                                                     )
                                                 );
                                                 this.el.add_constraint(
-                                                    new Clutter.AlignConstraint(
+                                                    new Clutter.BindConstraint(
                                                         _this.clutterembed.el.get_stage(), 
-                                                        Clutter.AlignAxis.Y_AXIS,
+                                                        Clutter.BindCoordinate.Y,
                                                         0.1f
                                                     )
                                                 );    
