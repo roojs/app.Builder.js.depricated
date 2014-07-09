@@ -98,7 +98,7 @@ public class Xcls_MainWindow : Object
             
             var el = _this.rooview.el;
             el.save_easing_state();
-           
+           el.set_easing_duration(1000);
             
             el.set_scale(1.0f,1.0f);
            
