@@ -323,17 +323,13 @@ MainWindow=new XObject({
                                                         },
                                                         button_press_event : ( ) => {
                                                              
-                                                            if (_this.is_editing) { 
-                                                                _this.hideViewEditing();
-                                                            } else {
-                                                                _this.showViewEditing();
-                                                            }
+                                                              _this.showProjectEdit();
                                                                 
                                                         
                                                         }
                                                     },
-                                                    pack : "add_child",
                                                     id : "projectbutton",
+                                                    pack : "add_child",
                                                     init : this.el.set_size(50,50);,
                                                     reactive : true,
                                                     items : [
@@ -352,60 +348,6 @@ MainWindow=new XObject({
                                                 xtype: Clutter.BoxLayout,
                                                 orientation : Clutter.Orientation.VERTICAL
                                             }
-                                        },
-                                        {
-                                            xtype: GtkClutter.Actor,
-                                            id : "projecteditbutton",
-                                            pack : "get_stage().add_child",
-                                            init : {
-                                                
-                                                this.el.add_constraint(
-                                                    new Clutter.AlignConstraint(
-                                                        _this.clutterembed.el.get_stage(), 
-                                                        Clutter.AlignAxis.X_AXIS,
-                                                        0.0f
-                                                    )
-                                                );
-                                                // top 10%
-                                                this.el.add_constraint(
-                                                    new Clutter.BindConstraint(
-                                                        _this.clutterembed.el.get_stage(), 
-                                                        Clutter.BindCoordinate.Y,
-                                                        0.1f
-                                                    )
-                                                );    
-                                                // height 10%
-                                                 this.el.add_constraint(
-                                                    new Clutter.BindConstraint(
-                                                        _this.clutterembed.el.get_stage(), 
-                                                        Clutter.BindCoordinate.HEIGHT,
-                                                        0.1f
-                                                    )
-                                                );    
-                                                //this.el.set_position(100,100);
-                                                //this.el.set_pivot_point(0.5f,0.5f);
-                                                 this.el.set_width(50);
-                                                 
-                                                 
-                                                
-                                            },
-                                            items : [
-                                                {
-                                                    xtype: Gtk.Button,
-                                                    listeners : {
-                                                        clicked : ( ) => {
-                                                             _this.showProjectEdit();
-                                                                
-                                                        
-                                                        }
-                                                    },
-                                                    label : "PE",
-                                                    pack : false,
-                                                    init : {
-                                                        ((Gtk.Container)(_this.projectbutton.el.get_widget())).add(this.el);
-                                                    }
-                                                }
-                                            ]
                                         }
                                     ]
                                 }

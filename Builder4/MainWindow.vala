@@ -34,7 +34,6 @@ public class Xcls_MainWindow : Object
     public Xcls_buttonlayout buttonlayout;
     public Xcls_projectbutton projectbutton;
     public Xcls_projectbutton projectbutton;
-    public Xcls_projecteditbutton projecteditbutton;
 
         // my vars
     public Project.Project project;
@@ -463,9 +462,6 @@ public class Xcls_MainWindow : Object
             var child_1 = new Xcls_buttonlayout( _this );
             child_1.ref();
             this.el.get_stage().add_child (  child_1.el  );
-            var child_2 = new Xcls_projecteditbutton( _this );
-            child_2.ref();
-            this.el.get_stage().add_child (  child_2.el  );
 
             // init method 
                 var stage = this.el.get_stage();
@@ -766,102 +762,6 @@ public class Xcls_MainWindow : Object
             this.el.x_expand = true;
             this.el.y_align = Clutter.ActorAlign.CENTER;
             this.el.y_expand = true;
-        }
-
-        // userdefined functions 
-
-        // skip |xns - no return type
-    }
-    public class Xcls_projecteditbutton : Object 
-    {
-        public GtkClutter.Actor el;
-        private Xcls_MainWindow  _this;
-
-
-            // my vars
-
-            // ctor 
-        public Xcls_projecteditbutton(Xcls_MainWindow _owner )
-        {
-            _this = _owner;
-            _this.projecteditbutton = this;
-            this.el = new GtkClutter.Actor();
-
-            // my vars
-
-            // set gobject values
-            var child_0 = new Xcls_Button19( _this );
-            child_0.ref();
-
-            // init method 
-            {
-                
-                this.el.add_constraint(
-                    new Clutter.AlignConstraint(
-                        _this.clutterembed.el.get_stage(), 
-                        Clutter.AlignAxis.X_AXIS,
-                        0.0f
-                    )
-                );
-                // top 10%
-                this.el.add_constraint(
-                    new Clutter.BindConstraint(
-                        _this.clutterembed.el.get_stage(), 
-                        Clutter.BindCoordinate.Y,
-                        0.1f
-                    )
-                );    
-                // height 10%
-                 this.el.add_constraint(
-                    new Clutter.BindConstraint(
-                        _this.clutterembed.el.get_stage(), 
-                        Clutter.BindCoordinate.HEIGHT,
-                        0.1f
-                    )
-                );    
-                //this.el.set_position(100,100);
-                //this.el.set_pivot_point(0.5f,0.5f);
-                 this.el.set_width(50);
-                 
-                 
-                
-            }
-        }
-
-        // userdefined functions 
-
-        // skip |xns - no return type
-    }
-    public class Xcls_Button19 : Object 
-    {
-        public Gtk.Button el;
-        private Xcls_MainWindow  _this;
-
-
-            // my vars
-
-            // ctor 
-        public Xcls_Button19(Xcls_MainWindow _owner )
-        {
-            _this = _owner;
-            this.el = new Gtk.Button();
-
-            // my vars
-
-            // set gobject values
-            this.el.label = "PE";
-
-            // init method 
-            {
-                ((Gtk.Container)(_this.projectbutton.el.get_widget())).add(this.el);
-            }
-
-            // listeners 
-            this.el.clicked.connect(   ( ) => {
-                 _this.showProjectEdit();
-                    
-            
-            } );
         }
 
         // userdefined functions 
