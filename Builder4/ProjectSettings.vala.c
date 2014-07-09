@@ -333,22 +333,22 @@ static void xcls_projectsettings_xcls_hbox5_finalize (GObject* obj);
 enum  {
 	XCLS_PROJECTSETTINGS_XCLS_BUTTON6_DUMMY_PROPERTY
 };
-static gboolean __lambda52_ (Xcls_ProjectSettingsXcls_Button6* self);
-static gboolean ___lambda52__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self);
+static gboolean __lambda32_ (Xcls_ProjectSettingsXcls_Button6* self);
+static gboolean ___lambda32__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self);
 static void xcls_projectsettings_xcls_button6_finalize (GObject* obj);
 #define XCLS_PROJECTSETTINGS_XCLS_BUTTON7_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), XCLS_PROJECTSETTINGS_TYPE_XCLS_BUTTON7, Xcls_ProjectSettingsXcls_Button7Private))
 enum  {
 	XCLS_PROJECTSETTINGS_XCLS_BUTTON7_DUMMY_PROPERTY
 };
-static gboolean __lambda53_ (Xcls_ProjectSettingsXcls_Button7* self);
-static gboolean ___lambda53__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self);
+static gboolean __lambda33_ (Xcls_ProjectSettingsXcls_Button7* self);
+static gboolean ___lambda33__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self);
 static void xcls_projectsettings_xcls_button7_finalize (GObject* obj);
 #define XCLS_PROJECTSETTINGS_XCLS_BUTTON8_GET_PRIVATE(o) (G_TYPE_INSTANCE_GET_PRIVATE ((o), XCLS_PROJECTSETTINGS_TYPE_XCLS_BUTTON8, Xcls_ProjectSettingsXcls_Button8Private))
 enum  {
 	XCLS_PROJECTSETTINGS_XCLS_BUTTON8_DUMMY_PROPERTY
 };
-static gboolean __lambda54_ (Xcls_ProjectSettingsXcls_Button8* self);
-static gboolean ___lambda54__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self);
+static gboolean __lambda34_ (Xcls_ProjectSettingsXcls_Button8* self);
+static gboolean ___lambda34__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self);
 static void xcls_projectsettings_xcls_button8_finalize (GObject* obj);
 static void xcls_projectsettings_finalize (GObject* obj);
 
@@ -932,7 +932,7 @@ GType xcls_projectsettings_xcls_hbox5_get_type (void) {
 }
 
 
-static gboolean __lambda52_ (Xcls_ProjectSettingsXcls_Button6* self) {
+static gboolean __lambda32_ (Xcls_ProjectSettingsXcls_Button6* self) {
 	gboolean result = FALSE;
 	Xcls_ProjectSettings* _tmp0_ = NULL;
 #line 192 "/home/alan/gitlive/app.Builder.js/Builder4/ProjectSettings.vala"
@@ -947,9 +947,9 @@ static gboolean __lambda52_ (Xcls_ProjectSettingsXcls_Button6* self) {
 }
 
 
-static gboolean ___lambda52__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self) {
+static gboolean ___lambda32__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self) {
 	gboolean result;
-	result = __lambda52_ ((Xcls_ProjectSettingsXcls_Button6*) self);
+	result = __lambda32_ ((Xcls_ProjectSettingsXcls_Button6*) self);
 #line 191 "/home/alan/gitlive/app.Builder.js/Builder4/ProjectSettings.vala"
 	return result;
 #line 956 "ProjectSettings.vala.c"
@@ -990,7 +990,7 @@ Xcls_ProjectSettingsXcls_Button6* xcls_projectsettings_xcls_button6_construct (G
 #line 191 "/home/alan/gitlive/app.Builder.js/Builder4/ProjectSettings.vala"
 	_tmp4_ = self->el;
 #line 191 "/home/alan/gitlive/app.Builder.js/Builder4/ProjectSettings.vala"
-	g_signal_connect_object ((GtkWidget*) _tmp4_, "button-press-event", (GCallback) ___lambda52__gtk_widget_button_press_event, self, 0);
+	g_signal_connect_object ((GtkWidget*) _tmp4_, "button-press-event", (GCallback) ___lambda32__gtk_widget_button_press_event, self, 0);
 #line 180 "/home/alan/gitlive/app.Builder.js/Builder4/ProjectSettings.vala"
 	return self;
 #line 997 "ProjectSettings.vala.c"
@@ -1048,7 +1048,7 @@ GType xcls_projectsettings_xcls_button6_get_type (void) {
 }
 
 
-static gboolean __lambda53_ (Xcls_ProjectSettingsXcls_Button7* self) {
+static gboolean __lambda33_ (Xcls_ProjectSettingsXcls_Button7* self) {
 	gboolean result = FALSE;
 	GtkTextBuffer* buf = NULL;
 	Xcls_ProjectSettings* _tmp0_ = NULL;
@@ -1114,9 +1114,9 @@ static gboolean __lambda53_ (Xcls_ProjectSettingsXcls_Button7* self) {
 }
 
 
-static gboolean ___lambda53__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self) {
+static gboolean ___lambda33__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self) {
 	gboolean result;
-	result = __lambda53_ ((Xcls_ProjectSettingsXcls_Button7*) self);
+	result = __lambda33_ ((Xcls_ProjectSettingsXcls_Button7*) self);
 #line 221 "/home/alan/gitlive/app.Builder.js/Builder4/ProjectSettings.vala"
 	return result;
 #line 1123 "ProjectSettings.vala.c"
@@ -1157,7 +1157,7 @@ Xcls_ProjectSettingsXcls_Button7* xcls_projectsettings_xcls_button7_construct (G
 #line 221 "/home/alan/gitlive/app.Builder.js/Builder4/ProjectSettings.vala"
 	_tmp4_ = self->el;
 #line 221 "/home/alan/gitlive/app.Builder.js/Builder4/ProjectSettings.vala"
-	g_signal_connect_object ((GtkWidget*) _tmp4_, "button-press-event", (GCallback) ___lambda53__gtk_widget_button_press_event, self, 0);
+	g_signal_connect_object ((GtkWidget*) _tmp4_, "button-press-event", (GCallback) ___lambda33__gtk_widget_button_press_event, self, 0);
 #line 210 "/home/alan/gitlive/app.Builder.js/Builder4/ProjectSettings.vala"
 	return self;
 #line 1164 "ProjectSettings.vala.c"
@@ -1215,7 +1215,7 @@ GType xcls_projectsettings_xcls_button7_get_type (void) {
 }
 
 
-static gboolean __lambda54_ (Xcls_ProjectSettingsXcls_Button8* self) {
+static gboolean __lambda34_ (Xcls_ProjectSettingsXcls_Button8* self) {
 	gboolean result = FALSE;
 	GtkTextBuffer* buf = NULL;
 	Xcls_ProjectSettings* _tmp0_ = NULL;
@@ -1281,9 +1281,9 @@ static gboolean __lambda54_ (Xcls_ProjectSettingsXcls_Button8* self) {
 }
 
 
-static gboolean ___lambda54__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self) {
+static gboolean ___lambda34__gtk_widget_button_press_event (GtkWidget* _sender, GdkEventButton* event, gpointer self) {
 	gboolean result;
-	result = __lambda54_ ((Xcls_ProjectSettingsXcls_Button8*) self);
+	result = __lambda34_ ((Xcls_ProjectSettingsXcls_Button8*) self);
 #line 259 "/home/alan/gitlive/app.Builder.js/Builder4/ProjectSettings.vala"
 	return result;
 #line 1290 "ProjectSettings.vala.c"
@@ -1324,7 +1324,7 @@ Xcls_ProjectSettingsXcls_Button8* xcls_projectsettings_xcls_button8_construct (G
 #line 259 "/home/alan/gitlive/app.Builder.js/Builder4/ProjectSettings.vala"
 	_tmp4_ = self->el;
 #line 259 "/home/alan/gitlive/app.Builder.js/Builder4/ProjectSettings.vala"
-	g_signal_connect_object ((GtkWidget*) _tmp4_, "button-press-event", (GCallback) ___lambda54__gtk_widget_button_press_event, self, 0);
+	g_signal_connect_object ((GtkWidget*) _tmp4_, "button-press-event", (GCallback) ___lambda34__gtk_widget_button_press_event, self, 0);
 #line 248 "/home/alan/gitlive/app.Builder.js/Builder4/ProjectSettings.vala"
 	return self;
 #line 1331 "ProjectSettings.vala.c"
