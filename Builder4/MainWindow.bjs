@@ -35,6 +35,7 @@
             "|void:showProjectEdit": " () {\n    // make the browser smaller, and show the edit dialog\n    \n    \n     \n     \n    //this.rooview.el.hide();\n     //this.edit_project.el.show();\n    \n    var el = _this.rooview.el;\n    el.save_easing_state();\n   \n    \n    el.set_scale(1.0f,0.5f);\n   \n    _this.state = \"projectedit\";\n\n \n    //_this.clutterfiles.loadProject(_this.project);\n\n    el.restore_easing_state();\n        \n    print(\"show view browsing\");\n    \n}\n",
             "|void:showViewEditing": "  ( )  {\n     this.editpane.el.show();\n  //   this.rooview.el.show();\n     this.left_projects.el.hide();\n    \n      \n    \n    var el = _this.rooview.el;\n        el.save_easing_state();\n  \n    \n        el.set_rotation_angle(Clutter.RotateAxis.Y_AXIS, 0.0f);\n        el.set_scale(1.0f,1.0f);\n        _this.state = \"edit\";\n       // _this.mainpane.el.set_position(_this.leftpane.lastWidth);\n        _this.clutterfiles.el.hide();\n    \n    el.restore_easing_state();\n        \n    print(\"show view editing\");\n}",
             "|xns": "Gtk",
+            "": "",
             "items": [
                 {
                     "|homogeneous": "false",
