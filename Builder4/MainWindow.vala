@@ -615,7 +615,7 @@ public class Xcls_MainWindow : Object
             // my vars
 
             // set gobject values
-            this.el.orientation = ;
+            this.el.orientation = Clutter.Orientation.VERTICAL;
         }
 
         // userdefined functions 
